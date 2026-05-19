@@ -1,0 +1,4552 @@
+{
+  "absence_packet_proof_passed": true,
+  "absence_packets": [
+    {
+      "absence_confirmed": true,
+      "checked_sources": [
+        "internet_archive_metadata"
+      ],
+      "download_performed": false,
+      "limitations": [
+        "local reviewed index only",
+        "absence does not prove no matching source exists",
+        "absence does not inspect live sources",
+        "local reviewed index absence only"
+      ],
+      "master_index_record": false,
+      "public_hosted_record": false,
+      "query": "definitely-not-present-ia-07",
+      "raw_response_committed": false,
+      "result_count": 0,
+      "schema_version": "ia_reviewed_local_absence_packet.v0",
+      "task": "IA-07",
+      "warnings": []
+    }
+  ],
+  "committed_data_public_index_mutated": false,
+  "deployment_performed": false,
+  "download_performed": false,
+  "dry_run": false,
+  "extraction_executed": false,
+  "fixture_reviewed_record_count": 30,
+  "fixture_reviewed_records_written_to_temp": true,
+  "instance_state_committed": false,
+  "live_preview_reviewed_record_count": 9,
+  "live_preview_reviewed_records_written_to_temp": true,
+  "master_index_mutated": false,
+  "model_provider_used": false,
+  "object_packet_proof_passed": true,
+  "object_packets": [
+    {
+      "download_performed": false,
+      "found": true,
+      "master_index_record": false,
+      "public_hosted_record": false,
+      "raw_response_committed": false,
+      "record": {
+        "limitations": [
+          "committed metadata fixture input",
+          "item metadata is not accepted truth",
+          "file entries are metadata only",
+          "evidence candidate requires review",
+          "metadata does not establish rights clearance, compatibility, safety, installability, or final identity",
+          "candidate index record is not reviewed truth",
+          "no reviewed or master index mutation occurred",
+          "preview is not a final reviewed record",
+          "preview does not establish accepted truth",
+          "reviewed local record is limited to explicit temp/local instance",
+          "does not establish rights clearance, safety, compatibility, installability, or final provenance",
+          "no committed data/public_index mutation occurred"
+        ],
+        "normalized_fields": {
+          "candidate_id": "iacand_6ac6a146d2ba35fd",
+          "checksum_summary": {
+            "algorithms": [
+              "md5",
+              "sha1"
+            ],
+            "checksum_metadata_count": 2,
+            "source_provided_metadata_only": true
+          },
+          "collection_refs": [
+            "eureka-fixture-software"
+          ],
+          "file_summary": {
+            "file_metadata_count": 2,
+            "metadata_only": true,
+            "sample_names": [
+              "DXSDK_Jun10_stub.txt",
+              "DXSDK_Jun10_manifest.json"
+            ]
+          },
+          "item_identifier": "identifier_hash:a6e90399ed34ab09",
+          "limitations": [
+            "committed metadata fixture input",
+            "item metadata is not accepted truth",
+            "file entries are metadata only",
+            "evidence candidate requires review",
+            "metadata does not establish rights clearance, compatibility, safety, installability, or final identity",
+            "candidate index record is not reviewed truth",
+            "no reviewed or master index mutation occurred",
+            "preview is not a final reviewed record",
+            "preview does not establish accepted truth",
+            "reviewed local record is limited to explicit temp/local instance",
+            "does not establish rights clearance, safety, compatibility, installability, or final provenance",
+            "no committed data/public_index mutation occurred"
+          ],
+          "mediatype": "software",
+          "promotion_preview_id": "iaprv_825a66933cb28ee6",
+          "provenance": {
+            "endpoint_class": "item_file_list_metadata_read",
+            "metadata_only": true,
+            "observation_kind": "item_file_list",
+            "source_kind": "ia_fixture_replay"
+          },
+          "review_status": "locally_reviewed_from_promotion_preview",
+          "rights_flags": [
+            "rights_not_inferred",
+            "safety_not_inferred",
+            "compatibility_not_inferred"
+          ],
+          "risk_flags": [
+            "metadata_not_truth",
+            "file_metadata_requires_review"
+          ],
+          "schema_version": "ia_reviewed_local_record_projection.v0",
+          "source_family": "preservation_metadata",
+          "source_locator": {
+            "kind": "internet_archive_identifier",
+            "label": "Internet Archive metadata fixture locator",
+            "value_hash": "a6e90399ed34ab09"
+          },
+          "uncertainty": [
+            "reconstructed from local review queue decision",
+            "promotion is dry-run only",
+            "reviewed index write is disabled",
+            "master index write is disabled",
+            "local reviewed index projection only",
+            "master index was not mutated",
+            "hosted public search was not mutated"
+          ]
+        },
+        "reviewed_record_id": "iarli_b1305e00cf1e3f17",
+        "source_id": "internet_archive_metadata",
+        "summary": "Provisional ia_collection_member_candidate from 11 IA evidence candidate(s); review is required before any promotion. Promotion remains preview-only and preserves uncertainty.",
+        "title": "Provisional ia_collection_member_candidate from 11 IA evidence candidate(s)",
+        "warnings": [
+          "metadata_not_truth",
+          "file_metadata_requires_review",
+          "rights_not_inferred",
+          "safety_not_inferred",
+          "compatibility_not_inferred"
+        ]
+      },
+      "reviewed_local_index_record": true,
+      "reviewed_record_id": "iarli_b1305e00cf1e3f17",
+      "schema_version": "ia_reviewed_local_object_packet.v0",
+      "task": "IA-07"
+    }
+  ],
+  "operator_instance_mutated": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "raw_response_committed": false,
+  "reviewed_index_mutated": true,
+  "reviewed_record_count": 39,
+  "reviewed_record_ids": [
+    "iarli_b1305e00cf1e3f17",
+    "iarli_4dcd25314f4e74fb",
+    "iarli_999b392c7716f90a",
+    "iarli_d2333ab568ae5ffc",
+    "iarli_fda30f6d6d4f2a5c",
+    "iarli_a15b5fbabbee579a",
+    "iarli_3ca157485dfab444",
+    "iarli_450150b9199f178e",
+    "iarli_3162eaa850694e70",
+    "iarli_8c27770358265f7b",
+    "iarli_40022cbc86ce8337",
+    "iarli_1fc5c99af763d915",
+    "iarli_a51494b29dc1537d",
+    "iarli_5646825bec032bd2",
+    "iarli_cfaddd0ce1b316ed",
+    "iarli_21482f303b8ca846",
+    "iarli_ea9002bc0dbc506a",
+    "iarli_fc53fa6543e82190",
+    "iarli_fb7d2298ff556309",
+    "iarli_3b91b7c4712bbb2e",
+    "iarli_673ba5353bb02e1d",
+    "iarli_c5662ef32bf76cff",
+    "iarli_0ea8cba87e1948ec",
+    "iarli_34cb9f5d8456fe5c",
+    "iarli_3c6aaa96d6b96c69",
+    "iarli_b184dc4ec8cec05b",
+    "iarli_9d81d56ac1862e37",
+    "iarli_aff0029b3551998d",
+    "iarli_6bad1d477c85a792",
+    "iarli_221e8f4a1516b38c",
+    "iarli_00627d34e9f9fcb0",
+    "iarli_898b943e64efa1a3",
+    "iarli_6f76a204f24857e0",
+    "iarli_6d7b9b838d9d8d76",
+    "iarli_34579c12f3ef275b",
+    "iarli_93edc6262025501c",
+    "iarli_135b3a6dc00568ca",
+    "iarli_2b40d23ce0d4daea",
+    "iarli_15b83962dd00cf09"
+  ],
+  "reviewed_records": [
+    {
+      "accepted_truth": false,
+      "candidate_id": "iacand_6ac6a146d2ba35fd",
+      "checksum_summary": {
+        "algorithms": [
+          "md5",
+          "sha1"
+        ],
+        "checksum_metadata_count": 2,
+        "source_provided_metadata_only": true
+      },
+      "collection_refs": [
+        "eureka-fixture-software"
+      ],
+      "created_at": "2026-05-19T00:00:00Z",
+      "deployment_performed": false,
+      "download_performed": false,
+      "evidence_ids": [
+        "iaev_157ad61c6baab6da",
+        "iaev_1c432bf1a5f83c40",
+        "iaev_342d3753fdc2c7d6",
+        "iaev_3a70ed860094c732",
+        "iaev_3fcce8890bf5f5c6",
+        "iaev_4a39dc74f5bafc1b",
+        "iaev_6b9d599e68d63ba4",
+        "iaev_e033900a1acbdd8c",
+        "iaev_e214299a3878d59c",
+        "iaev_ec518630a912adab",
+        "iaev_f5803eb8571905b4"
+      ],
+      "extraction_executed": false,
+      "file_summary": {
+        "file_metadata_count": 2,
+        "metadata_only": true,
+        "sample_names": [
+          "DXSDK_Jun10_stub.txt",
+          "DXSDK_Jun10_manifest.json"
+        ]
+      },
+      "item_identifier": "identifier_hash:a6e90399ed34ab09",
+      "limitations": [
+        "committed metadata fixture input",
+        "item metadata is not accepted truth",
+        "file entries are metadata only",
+        "evidence candidate requires review",
+        "metadata does not establish rights clearance, compatibility, safety, installability, or final identity",
+        "candidate index record is not reviewed truth",
+        "no reviewed or master index mutation occurred",
+        "preview is not a final reviewed record",
+        "preview does not establish accepted truth",
+        "reviewed local record is limited to explicit temp/local instance",
+        "does not establish rights clearance, safety, compatibility, installability, or final provenance",
+        "no committed data/public_index mutation occurred"
+      ],
+      "master_index_record": false,
+      "mediatype": "software",
+      "model_provider_used": false,
+      "observation_ids": [
+        "iaobs_item_file_list"
+      ],
+      "production_readiness_claimed": false,
+      "promotion_preview_id": "iaprv_825a66933cb28ee6",
+      "provenance": {
+        "endpoint_class": "item_file_list_metadata_read",
+        "metadata_only": true,
+        "observation_kind": "item_file_list",
+        "source_kind": "ia_fixture_replay"
+      },
+      "public_hosted_record": false,
+      "public_launch_readiness_claimed": false,
+      "raw_response_committed": false,
+      "review_decision_id": "iard_021990f4374ab44a",
+      "review_item_id": "iarv_44a95ff3c6acb80e",
+      "review_status": "locally_reviewed_from_promotion_preview",
+      "reviewed_local_index_record": true,
+      "reviewed_record_id": "iarli_b1305e00cf1e3f17",
+      "rights_flags": [
+        "rights_not_inferred",
+        "safety_not_inferred",
+        "compatibility_not_inferred"
+      ],
+      "risk_flags": [
+        "metadata_not_truth",
+        "file_metadata_requires_review"
+      ],
+      "schema_version": "ia_reviewed_local_record.v0",
+      "source_cache_record_ids": [
+        "iasc_d70a6f39da5837c6"
+      ],
+      "source_family": "preservation_metadata",
+      "source_id": "internet_archive_metadata",
+      "source_locator": {
+        "kind": "internet_archive_identifier",
+        "label": "Internet Archive metadata fixture locator",
+        "value_hash": "a6e90399ed34ab09"
+      },
+      "summary": "Provisional ia_collection_member_candidate from 11 IA evidence candidate(s); review is required before any promotion. Promotion remains preview-only and preserves uncertainty.",
+      "title": "Provisional ia_collection_member_candidate from 11 IA evidence candidate(s)",
+      "uncertainty": [
+        "reconstructed from local review queue decision",
+        "promotion is dry-run only",
+        "reviewed index write is disabled",
+        "master index write is disabled",
+        "local reviewed index projection only",
+        "master index was not mutated",
+        "hosted public search was not mutated"
+      ],
+      "upload_performed": false
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "iacand_b191bafcddcb4203",
+      "checksum_summary": {},
+      "collection_refs": [],
+      "created_at": "2026-05-19T00:00:00Z",
+      "deployment_performed": false,
+      "download_performed": false,
+      "evidence_ids": [
+        "iaev_41c375106d6ae233"
+      ],
+      "extraction_executed": false,
+      "file_summary": {},
+      "item_identifier": "identifier_hash:84545f09784eeb66",
+      "limitations": [
+        "committed metadata fixture input",
+        "source reported missing item",
+        "absence is local source-miss material only",
+        "evidence candidate requires review",
+        "metadata does not establish rights clearance, compatibility, safety, installability, or final identity",
+        "candidate index record is not reviewed truth",
+        "no reviewed or master index mutation occurred",
+        "preview is not a final reviewed record",
+        "preview does not establish accepted truth",
+        "reviewed local record is limited to explicit temp/local instance",
+        "does not establish rights clearance, safety, compatibility, installability, or final provenance",
+        "no committed data/public_index mutation occurred"
+      ],
+      "master_index_record": false,
+      "mediatype": "",
+      "model_provider_used": false,
+      "observation_ids": [
+        "iaobs_missing_item"
+      ],
+      "production_readiness_claimed": false,
+      "promotion_preview_id": "iaprv_b0087008166d5c77",
+      "provenance": {
+        "endpoint_class": "item_metadata_read",
+        "metadata_only": true,
+        "observation_kind": "missing_item",
+        "source_kind": "ia_fixture_replay"
+      },
+      "public_hosted_record": false,
+      "public_launch_readiness_claimed": false,
+      "raw_response_committed": false,
+      "review_decision_id": "iard_08be8dbeb029236f",
+      "review_item_id": "iarv_6e14b60fe6fad2e0",
+      "review_status": "locally_reviewed_from_promotion_preview",
+      "reviewed_local_index_record": true,
+      "reviewed_record_id": "iarli_4dcd25314f4e74fb",
+      "rights_flags": [
+        "rights_not_inferred",
+        "safety_not_inferred",
+        "compatibility_not_inferred"
+      ],
+      "risk_flags": [
+        "source_miss",
+        "metadata_not_truth"
+      ],
+      "schema_version": "ia_reviewed_local_record.v0",
+      "source_cache_record_ids": [
+        "iasc_81b540787730eadc"
+      ],
+      "source_family": "preservation_metadata",
+      "source_id": "internet_archive_metadata",
+      "source_locator": {
+        "kind": "internet_archive_identifier",
+        "label": "Internet Archive metadata fixture locator",
+        "value_hash": "84545f09784eeb66"
+      },
+      "summary": "Provisional ia_absence_or_missing_item_candidate from 1 IA evidence candidate(s); review is required before any promotion. Promotion remains preview-only and preserves uncertainty.",
+      "title": "Provisional ia_absence_or_missing_item_candidate from 1 IA evidence candidate(s)",
+      "uncertainty": [
+        "reconstructed from local review queue decision",
+        "promotion is dry-run only",
+        "reviewed index write is disabled",
+        "master index write is disabled",
+        "local reviewed index projection only",
+        "master index was not mutated",
+        "hosted public search was not mutated"
+      ],
+      "upload_performed": false
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "iacand_8f7d2f7319467454",
+      "checksum_summary": {},
+      "collection_refs": [
+        "eureka-fixture-collection"
+      ],
+      "created_at": "2026-05-19T00:00:00Z",
+      "deployment_performed": false,
+      "download_performed": false,
+      "evidence_ids": [
+        "iaev_01960f45b5bcbf17",
+        "iaev_26c84b4efff1dc71",
+        "iaev_296760a3253cd530",
+        "iaev_3aa13442c9f9e114",
+        "iaev_813f11e247d10f88",
+        "iaev_8c3fb0ca3c9d558a",
+        "iaev_e88b611d7f07fe5a",
+        "iaev_f93f62c86fd367fc"
+      ],
+      "extraction_executed": false,
+      "file_summary": {},
+      "item_identifier": "identifier_hash:6903aadb44eda3c2",
+      "limitations": [
+        "committed metadata fixture input",
+        "metadata search result is not accepted truth",
+        "bounded search rows observed: 2",
+        "evidence candidate requires review",
+        "metadata does not establish rights clearance, compatibility, safety, installability, or final identity",
+        "candidate index record is not reviewed truth",
+        "no reviewed or master index mutation occurred",
+        "preview is not a final reviewed record",
+        "preview does not establish accepted truth",
+        "reviewed local record is limited to explicit temp/local instance",
+        "does not establish rights clearance, safety, compatibility, installability, or final provenance",
+        "no committed data/public_index mutation occurred"
+      ],
+      "master_index_record": false,
+      "mediatype": "movies",
+      "model_provider_used": false,
+      "observation_ids": [
+        "iaobs_metadata_search_small"
+      ],
+      "production_readiness_claimed": false,
+      "promotion_preview_id": "iaprv_dbe6e1140a3e32a2",
+      "provenance": {
+        "endpoint_class": "metadata_search_small",
+        "metadata_only": true,
+        "observation_kind": "metadata_search_result",
+        "source_kind": "ia_fixture_replay"
+      },
+      "public_hosted_record": false,
+      "public_launch_readiness_claimed": false,
+      "raw_response_committed": false,
+      "review_decision_id": "iard_0f0c52fd9e992b86",
+      "review_item_id": "iarv_12335f98d01abe42",
+      "review_status": "locally_reviewed_from_promotion_preview",
+      "reviewed_local_index_record": true,
+      "reviewed_record_id": "iarli_999b392c7716f90a",
+      "rights_flags": [
+        "rights_not_inferred",
+        "safety_not_inferred",
+        "compatibility_not_inferred"
+      ],
+      "risk_flags": [
+        "metadata_not_truth",
+        "search_result_requires_review"
+      ],
+      "schema_version": "ia_reviewed_local_record.v0",
+      "source_cache_record_ids": [
+        "iasc_acd68738edd11325"
+      ],
+      "source_family": "preservation_metadata",
+      "source_id": "internet_archive_metadata",
+      "source_locator": {
+        "kind": "internet_archive_identifier",
+        "label": "Internet Archive metadata fixture locator",
+        "value_hash": "6903aadb44eda3c2"
+      },
+      "summary": "Provisional ia_item_candidate from 8 IA evidence candidate(s); review is required before any promotion. Promotion remains preview-only and preserves uncertainty.",
+      "title": "Provisional ia_item_candidate from 8 IA evidence candidate(s)",
+      "uncertainty": [
+        "reconstructed from local review queue decision",
+        "promotion is dry-run only",
+        "reviewed index write is disabled",
+        "master index write is disabled",
+        "local reviewed index projection only",
+        "master index was not mutated",
+        "hosted public search was not mutated"
+      ],
+      "upload_performed": false
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "iacand_21d5ce27d16a7c73",
+      "checksum_summary": {
+        "algorithms": [
+          "md5",
+          "sha1"
+        ],
+        "checksum_metadata_count": 2,
+        "source_provided_metadata_only": true
+      },
+      "collection_refs": [
+        "eureka-fixture-software"
+      ],
+      "created_at": "2026-05-19T00:00:00Z",
+      "deployment_performed": false,
+      "download_performed": false,
+      "evidence_ids": [
+        "iaev_157ad61c6baab6da",
+        "iaev_1c432bf1a5f83c40",
+        "iaev_342d3753fdc2c7d6",
+        "iaev_3a70ed860094c732",
+        "iaev_3fcce8890bf5f5c6",
+        "iaev_4a39dc74f5bafc1b",
+        "iaev_6b9d599e68d63ba4",
+        "iaev_e033900a1acbdd8c",
+        "iaev_e214299a3878d59c",
+        "iaev_ec518630a912adab",
+        "iaev_f5803eb8571905b4"
+      ],
+      "extraction_executed": false,
+      "file_summary": {
+        "file_metadata_count": 2,
+        "metadata_only": true,
+        "sample_names": [
+          "DXSDK_Jun10_stub.txt",
+          "DXSDK_Jun10_manifest.json"
+        ]
+      },
+      "item_identifier": "identifier_hash:a6e90399ed34ab09",
+      "limitations": [
+        "committed metadata fixture input",
+        "item metadata is not accepted truth",
+        "file entries are metadata only",
+        "evidence candidate requires review",
+        "metadata does not establish rights clearance, compatibility, safety, installability, or final identity",
+        "candidate index record is not reviewed truth",
+        "no reviewed or master index mutation occurred",
+        "preview is not a final reviewed record",
+        "preview does not establish accepted truth",
+        "reviewed local record is limited to explicit temp/local instance",
+        "does not establish rights clearance, safety, compatibility, installability, or final provenance",
+        "no committed data/public_index mutation occurred"
+      ],
+      "master_index_record": false,
+      "mediatype": "software",
+      "model_provider_used": false,
+      "observation_ids": [
+        "iaobs_item_file_list"
+      ],
+      "production_readiness_claimed": false,
+      "promotion_preview_id": "iaprv_c67d19ee26765bae",
+      "provenance": {
+        "endpoint_class": "item_file_list_metadata_read",
+        "metadata_only": true,
+        "observation_kind": "item_file_list",
+        "source_kind": "ia_fixture_replay"
+      },
+      "public_hosted_record": false,
+      "public_launch_readiness_claimed": false,
+      "raw_response_committed": false,
+      "review_decision_id": "iard_1ae4306922dd7cd8",
+      "review_item_id": "iarv_a27478265abdfb35",
+      "review_status": "locally_reviewed_from_promotion_preview",
+      "reviewed_local_index_record": true,
+      "reviewed_record_id": "iarli_d2333ab568ae5ffc",
+      "rights_flags": [
+        "rights_not_inferred",
+        "safety_not_inferred",
+        "compatibility_not_inferred"
+      ],
+      "risk_flags": [
+        "metadata_not_truth",
+        "file_metadata_requires_review"
+      ],
+      "schema_version": "ia_reviewed_local_record.v0",
+      "source_cache_record_ids": [
+        "iasc_d70a6f39da5837c6"
+      ],
+      "source_family": "preservation_metadata",
+      "source_id": "internet_archive_metadata",
+      "source_locator": {
+        "kind": "internet_archive_identifier",
+        "label": "Internet Archive metadata fixture locator",
+        "value_hash": "a6e90399ed34ab09"
+      },
+      "summary": "Provisional ia_item_candidate from 11 IA evidence candidate(s); review is required before any promotion. Promotion remains preview-only and preserves uncertainty.",
+      "title": "Provisional ia_item_candidate from 11 IA evidence candidate(s)",
+      "uncertainty": [
+        "reconstructed from local review queue decision",
+        "promotion is dry-run only",
+        "reviewed index write is disabled",
+        "master index write is disabled",
+        "local reviewed index projection only",
+        "master index was not mutated",
+        "hosted public search was not mutated"
+      ],
+      "upload_performed": false
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "iacand_609fc06957ca7940",
+      "checksum_summary": {},
+      "collection_refs": [
+        "eureka-fixture-collection"
+      ],
+      "created_at": "2026-05-19T00:00:00Z",
+      "deployment_performed": false,
+      "download_performed": false,
+      "evidence_ids": [
+        "iaev_01960f45b5bcbf17",
+        "iaev_26c84b4efff1dc71",
+        "iaev_296760a3253cd530",
+        "iaev_3aa13442c9f9e114",
+        "iaev_813f11e247d10f88",
+        "iaev_8c3fb0ca3c9d558a",
+        "iaev_e88b611d7f07fe5a",
+        "iaev_f93f62c86fd367fc"
+      ],
+      "extraction_executed": false,
+      "file_summary": {},
+      "item_identifier": "identifier_hash:6903aadb44eda3c2",
+      "limitations": [
+        "committed metadata fixture input",
+        "metadata search result is not accepted truth",
+        "bounded search rows observed: 2",
+        "evidence candidate requires review",
+        "metadata does not establish rights clearance, compatibility, safety, installability, or final identity",
+        "candidate index record is not reviewed truth",
+        "no reviewed or master index mutation occurred",
+        "preview is not a final reviewed record",
+        "preview does not establish accepted truth",
+        "reviewed local record is limited to explicit temp/local instance",
+        "does not establish rights clearance, safety, compatibility, installability, or final provenance",
+        "no committed data/public_index mutation occurred"
+      ],
+      "master_index_record": false,
+      "mediatype": "movies",
+      "model_provider_used": false,
+      "observation_ids": [
+        "iaobs_metadata_search_small"
+      ],
+      "production_readiness_claimed": false,
+      "promotion_preview_id": "iaprv_78b60251da10c2a9",
+      "provenance": {
+        "endpoint_class": "metadata_search_small",
+        "metadata_only": true,
+        "observation_kind": "metadata_search_result",
+        "source_kind": "ia_fixture_replay"
+      },
+      "public_hosted_record": false,
+      "public_launch_readiness_claimed": false,
+      "raw_response_committed": false,
+      "review_decision_id": "iard_25a70edf72e7304b",
+      "review_item_id": "iarv_9241ce2eab679c7a",
+      "review_status": "locally_reviewed_from_promotion_preview",
+      "reviewed_local_index_record": true,
+      "reviewed_record_id": "iarli_fda30f6d6d4f2a5c",
+      "rights_flags": [
+        "rights_not_inferred",
+        "safety_not_inferred",
+        "compatibility_not_inferred"
+      ],
+      "risk_flags": [
+        "metadata_not_truth",
+        "search_result_requires_review"
+      ],
+      "schema_version": "ia_reviewed_local_record.v0",
+      "source_cache_record_ids": [
+        "iasc_acd68738edd11325"
+      ],
+      "source_family": "preservation_metadata",
+      "source_id": "internet_archive_metadata",
+      "source_locator": {
+        "kind": "internet_archive_identifier",
+        "label": "Internet Archive metadata fixture locator",
+        "value_hash": "6903aadb44eda3c2"
+      },
+      "summary": "Provisional ia_collection_member_candidate from 8 IA evidence candidate(s); review is required before any promotion. Promotion remains preview-only and preserves uncertainty.",
+      "title": "Provisional ia_collection_member_candidate from 8 IA evidence candidate(s)",
+      "uncertainty": [
+        "reconstructed from local review queue decision",
+        "promotion is dry-run only",
+        "reviewed index write is disabled",
+        "master index write is disabled",
+        "local reviewed index projection only",
+        "master index was not mutated",
+        "hosted public search was not mutated"
+      ],
+      "upload_performed": false
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "iacand_49a74e536a219084",
+      "checksum_summary": {},
+      "collection_refs": [],
+      "created_at": "2026-05-19T00:00:00Z",
+      "deployment_performed": false,
+      "download_performed": false,
+      "evidence_ids": [
+        "iaev_0592b810e0c28fc6",
+        "iaev_cec186a4567f9e54"
+      ],
+      "extraction_executed": false,
+      "file_summary": {},
+      "item_identifier": "identifier_hash:fb32b5d7cb8a07d0",
+      "limitations": [
+        "committed metadata fixture input",
+        "Retry-After required: 60 seconds",
+        "no retry or live request performed",
+        "evidence candidate requires review",
+        "metadata does not establish rights clearance, compatibility, safety, installability, or final identity",
+        "candidate index record is not reviewed truth",
+        "no reviewed or master index mutation occurred",
+        "preview is not a final reviewed record",
+        "preview does not establish accepted truth",
+        "reviewed local record is limited to explicit temp/local instance",
+        "does not establish rights clearance, safety, compatibility, installability, or final provenance",
+        "no committed data/public_index mutation occurred"
+      ],
+      "master_index_record": false,
+      "mediatype": "",
+      "model_provider_used": false,
+      "observation_ids": [
+        "iaobs_retry_after_429"
+      ],
+      "production_readiness_claimed": false,
+      "promotion_preview_id": "iaprv_ae3533e0d89950c0",
+      "provenance": {
+        "endpoint_class": "metadata_search_small",
+        "metadata_only": true,
+        "observation_kind": "retry_after",
+        "source_kind": "ia_fixture_replay"
+      },
+      "public_hosted_record": false,
+      "public_launch_readiness_claimed": false,
+      "raw_response_committed": false,
+      "review_decision_id": "iard_28de4f0f07e36a01",
+      "review_item_id": "iarv_bd1c20d1eb9f47a1",
+      "review_status": "locally_reviewed_from_promotion_preview",
+      "reviewed_local_index_record": true,
+      "reviewed_record_id": "iarli_a15b5fbabbee579a",
+      "rights_flags": [
+        "rights_not_inferred",
+        "safety_not_inferred",
+        "compatibility_not_inferred"
+      ],
+      "risk_flags": [
+        "quota_or_rate_limit",
+        "retry_after_required"
+      ],
+      "schema_version": "ia_reviewed_local_record.v0",
+      "source_cache_record_ids": [
+        "iasc_d6d80b9ab9d56df1"
+      ],
+      "source_family": "preservation_metadata",
+      "source_id": "internet_archive_metadata",
+      "source_locator": {
+        "kind": "internet_archive_metadata_state",
+        "label": "Internet Archive metadata fixture locator",
+        "value_hash": "fb32b5d7cb8a07d0"
+      },
+      "summary": "Provisional ia_near_miss_candidate from 2 IA evidence candidate(s); review is required before any promotion. Promotion remains preview-only and preserves uncertainty.",
+      "title": "Provisional ia_near_miss_candidate from 2 IA evidence candidate(s)",
+      "uncertainty": [
+        "reconstructed from local review queue decision",
+        "promotion is dry-run only",
+        "reviewed index write is disabled",
+        "master index write is disabled",
+        "local reviewed index projection only",
+        "master index was not mutated",
+        "hosted public search was not mutated"
+      ],
+      "upload_performed": false
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "iacand_7f880dde79ab2fc2",
+      "checksum_summary": {
+        "algorithms": [
+          "md5"
+        ],
+        "checksum_metadata_count": 1,
+        "source_provided_metadata_only": true
+      },
+      "collection_refs": [
+        "eureka-fixture-policy"
+      ],
+      "created_at": "2026-05-19T00:00:00Z",
+      "deployment_performed": false,
+      "download_performed": false,
+      "evidence_ids": [
+        "iaev_244f3f40f4b4e155",
+        "iaev_27beb00a8459b575",
+        "iaev_2a5d708879332beb",
+        "iaev_52c98a85728eb107",
+        "iaev_5f20b07d08d794bb",
+        "iaev_78cea459fb1d361c",
+        "iaev_a28ea6cad45e95f7",
+        "iaev_a7b77010c7b7765c",
+        "iaev_b1e1dbce2bed598d",
+        "iaev_f11594d83ac319ef",
+        "iaev_f8c3705d3fc21050"
+      ],
+      "extraction_executed": false,
+      "file_summary": {
+        "file_metadata_count": 1,
+        "metadata_only": true,
+        "sample_names": [
+          "metadata_only_entry.txt"
+        ]
+      },
+      "item_identifier": "identifier_hash:16e6e44ce79c85f2",
+      "limitations": [
+        "committed metadata fixture input",
+        "item metadata is not accepted truth",
+        "file entries are metadata only",
+        "no file content included or fetched",
+        "evidence candidate requires review",
+        "metadata does not establish rights clearance, compatibility, safety, installability, or final identity",
+        "candidate index record is not reviewed truth",
+        "no reviewed or master index mutation occurred",
+        "preview is not a final reviewed record",
+        "preview does not establish accepted truth",
+        "reviewed local record is limited to explicit temp/local instance",
+        "does not establish rights clearance, safety, compatibility, installability, or final provenance",
+        "no committed data/public_index mutation occurred"
+      ],
+      "master_index_record": false,
+      "mediatype": "software",
+      "model_provider_used": false,
+      "observation_ids": [
+        "iaobs_no_download_proof"
+      ],
+      "production_readiness_claimed": false,
+      "promotion_preview_id": "iaprv_ae944e3cbe8d26bd",
+      "provenance": {
+        "endpoint_class": "item_file_list_metadata_read",
+        "metadata_only": true,
+        "observation_kind": "no_download_proof",
+        "source_kind": "ia_fixture_replay"
+      },
+      "public_hosted_record": false,
+      "public_launch_readiness_claimed": false,
+      "raw_response_committed": false,
+      "review_decision_id": "iard_32e972cda0386964",
+      "review_item_id": "iarv_3a833e5e3f17c9c7",
+      "review_status": "locally_reviewed_from_promotion_preview",
+      "reviewed_local_index_record": true,
+      "reviewed_record_id": "iarli_3ca157485dfab444",
+      "rights_flags": [
+        "rights_not_inferred",
+        "safety_not_inferred",
+        "compatibility_not_inferred"
+      ],
+      "risk_flags": [
+        "metadata_not_truth",
+        "file_metadata_requires_review"
+      ],
+      "schema_version": "ia_reviewed_local_record.v0",
+      "source_cache_record_ids": [
+        "iasc_cda081026e612d40"
+      ],
+      "source_family": "preservation_metadata",
+      "source_id": "internet_archive_metadata",
+      "source_locator": {
+        "kind": "internet_archive_identifier",
+        "label": "Internet Archive metadata fixture locator",
+        "value_hash": "16e6e44ce79c85f2"
+      },
+      "summary": "Provisional ia_collection_member_candidate from 11 IA evidence candidate(s); review is required before any promotion. Promotion remains preview-only and preserves uncertainty.",
+      "title": "Provisional ia_collection_member_candidate from 11 IA evidence candidate(s)",
+      "uncertainty": [
+        "reconstructed from local review queue decision",
+        "promotion is dry-run only",
+        "reviewed index write is disabled",
+        "master index write is disabled",
+        "local reviewed index projection only",
+        "master index was not mutated",
+        "hosted public search was not mutated"
+      ],
+      "upload_performed": false
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "iacand_14bda52ecbad44a7",
+      "checksum_summary": {
+        "algorithms": [
+          "md5",
+          "sha1"
+        ],
+        "checksum_metadata_count": 1,
+        "source_provided_metadata_only": true
+      },
+      "collection_refs": [
+        "eureka-fixture-software"
+      ],
+      "created_at": "2026-05-19T00:00:00Z",
+      "deployment_performed": false,
+      "download_performed": false,
+      "evidence_ids": [
+        "iaev_2e4597bf2d0205f2",
+        "iaev_3a935120fad455e5",
+        "iaev_79665430d7ad709c",
+        "iaev_8c364b463c33ed9b",
+        "iaev_90c55021014df176",
+        "iaev_976e5cae841c84db",
+        "iaev_a706a99df5123bd5",
+        "iaev_ae6357bcacd9e25a",
+        "iaev_c54b48f4aa183ee6",
+        "iaev_f68fca1af5f2aa81",
+        "iaev_ff9f3f66bdb6125c"
+      ],
+      "extraction_executed": false,
+      "file_summary": {
+        "file_metadata_count": 1,
+        "metadata_only": true,
+        "sample_names": [
+          "StyleWriter_2500_Readme.txt"
+        ]
+      },
+      "item_identifier": "identifier_hash:a9113b0907d33abf",
+      "limitations": [
+        "committed metadata fixture input",
+        "item metadata is not accepted truth",
+        "file entries are metadata only",
+        "evidence candidate requires review",
+        "metadata does not establish rights clearance, compatibility, safety, installability, or final identity",
+        "candidate index record is not reviewed truth",
+        "no reviewed or master index mutation occurred",
+        "preview is not a final reviewed record",
+        "preview does not establish accepted truth",
+        "reviewed local record is limited to explicit temp/local instance",
+        "does not establish rights clearance, safety, compatibility, installability, or final provenance",
+        "no committed data/public_index mutation occurred"
+      ],
+      "master_index_record": false,
+      "mediatype": "software",
+      "model_provider_used": false,
+      "observation_ids": [
+        "iaobs_item_metadata"
+      ],
+      "production_readiness_claimed": false,
+      "promotion_preview_id": "iaprv_fc13d5f0f7825470",
+      "provenance": {
+        "endpoint_class": "item_metadata_read",
+        "metadata_only": true,
+        "observation_kind": "item_metadata",
+        "source_kind": "ia_fixture_replay"
+      },
+      "public_hosted_record": false,
+      "public_launch_readiness_claimed": false,
+      "raw_response_committed": false,
+      "review_decision_id": "iard_49ba9f8d90a758ac",
+      "review_item_id": "iarv_656e08cca85c280f",
+      "review_status": "locally_reviewed_from_promotion_preview",
+      "reviewed_local_index_record": true,
+      "reviewed_record_id": "iarli_450150b9199f178e",
+      "rights_flags": [
+        "rights_not_inferred",
+        "safety_not_inferred",
+        "compatibility_not_inferred"
+      ],
+      "risk_flags": [
+        "metadata_not_truth",
+        "file_metadata_requires_review"
+      ],
+      "schema_version": "ia_reviewed_local_record.v0",
+      "source_cache_record_ids": [
+        "iasc_486af3662118be4b"
+      ],
+      "source_family": "preservation_metadata",
+      "source_id": "internet_archive_metadata",
+      "source_locator": {
+        "kind": "internet_archive_identifier",
+        "label": "Internet Archive metadata fixture locator",
+        "value_hash": "a9113b0907d33abf"
+      },
+      "summary": "Provisional ia_collection_member_candidate from 11 IA evidence candidate(s); review is required before any promotion. Promotion remains preview-only and preserves uncertainty.",
+      "title": "Provisional ia_collection_member_candidate from 11 IA evidence candidate(s)",
+      "uncertainty": [
+        "reconstructed from local review queue decision",
+        "promotion is dry-run only",
+        "reviewed index write is disabled",
+        "master index write is disabled",
+        "local reviewed index projection only",
+        "master index was not mutated",
+        "hosted public search was not mutated"
+      ],
+      "upload_performed": false
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "iacand_d2931ec9491d9221",
+      "checksum_summary": {
+        "algorithms": [
+          "md5",
+          "sha1"
+        ],
+        "checksum_metadata_count": 2,
+        "source_provided_metadata_only": true
+      },
+      "collection_refs": [
+        "eureka-fixture-software"
+      ],
+      "created_at": "2026-05-19T00:00:00Z",
+      "deployment_performed": false,
+      "download_performed": false,
+      "evidence_ids": [
+        "iaev_157ad61c6baab6da",
+        "iaev_1c432bf1a5f83c40",
+        "iaev_342d3753fdc2c7d6",
+        "iaev_3a70ed860094c732",
+        "iaev_3fcce8890bf5f5c6",
+        "iaev_4a39dc74f5bafc1b",
+        "iaev_6b9d599e68d63ba4",
+        "iaev_e033900a1acbdd8c",
+        "iaev_e214299a3878d59c",
+        "iaev_ec518630a912adab",
+        "iaev_f5803eb8571905b4"
+      ],
+      "extraction_executed": false,
+      "file_summary": {
+        "file_metadata_count": 2,
+        "metadata_only": true,
+        "sample_names": [
+          "DXSDK_Jun10_stub.txt",
+          "DXSDK_Jun10_manifest.json"
+        ]
+      },
+      "item_identifier": "identifier_hash:a6e90399ed34ab09",
+      "limitations": [
+        "committed metadata fixture input",
+        "item metadata is not accepted truth",
+        "file entries are metadata only",
+        "evidence candidate requires review",
+        "metadata does not establish rights clearance, compatibility, safety, installability, or final identity",
+        "candidate index record is not reviewed truth",
+        "no reviewed or master index mutation occurred",
+        "preview is not a final reviewed record",
+        "preview does not establish accepted truth",
+        "reviewed local record is limited to explicit temp/local instance",
+        "does not establish rights clearance, safety, compatibility, installability, or final provenance",
+        "no committed data/public_index mutation occurred"
+      ],
+      "master_index_record": false,
+      "mediatype": "software",
+      "model_provider_used": false,
+      "observation_ids": [
+        "iaobs_item_file_list"
+      ],
+      "production_readiness_claimed": false,
+      "promotion_preview_id": "iaprv_43690dad449c92b1",
+      "provenance": {
+        "endpoint_class": "item_file_list_metadata_read",
+        "metadata_only": true,
+        "observation_kind": "item_file_list",
+        "source_kind": "ia_fixture_replay"
+      },
+      "public_hosted_record": false,
+      "public_launch_readiness_claimed": false,
+      "raw_response_committed": false,
+      "review_decision_id": "iard_4c3b51794202f708",
+      "review_item_id": "iarv_0a013adb18c6326e",
+      "review_status": "locally_reviewed_from_promotion_preview",
+      "reviewed_local_index_record": true,
+      "reviewed_record_id": "iarli_3162eaa850694e70",
+      "rights_flags": [
+        "rights_not_inferred",
+        "safety_not_inferred",
+        "compatibility_not_inferred"
+      ],
+      "risk_flags": [
+        "metadata_not_truth",
+        "file_metadata_requires_review"
+      ],
+      "schema_version": "ia_reviewed_local_record.v0",
+      "source_cache_record_ids": [
+        "iasc_d70a6f39da5837c6"
+      ],
+      "source_family": "preservation_metadata",
+      "source_id": "internet_archive_metadata",
+      "source_locator": {
+        "kind": "internet_archive_identifier",
+        "label": "Internet Archive metadata fixture locator",
+        "value_hash": "a6e90399ed34ab09"
+      },
+      "summary": "Provisional ia_source_locator_candidate from 11 IA evidence candidate(s); review is required before any promotion. Promotion remains preview-only and preserves uncertainty.",
+      "title": "Provisional ia_source_locator_candidate from 11 IA evidence candidate(s)",
+      "uncertainty": [
+        "reconstructed from local review queue decision",
+        "promotion is dry-run only",
+        "reviewed index write is disabled",
+        "master index write is disabled",
+        "local reviewed index projection only",
+        "master index was not mutated",
+        "hosted public search was not mutated"
+      ],
+      "upload_performed": false
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "iacand_0aabf5f6e5ce806a",
+      "checksum_summary": {},
+      "collection_refs": [
+        {
+          "collection_metadata_count": 2
+        }
+      ],
+      "created_at": "2026-05-19T00:00:00Z",
+      "deployment_performed": false,
+      "download_performed": false,
+      "evidence_ids": [
+        "iaev_0f4c6372808cff0b",
+        "iaev_5541d091e20c5bcd",
+        "iaev_764263872435608b",
+        "iaev_92764c5cbcc65320",
+        "iaev_f5e8db03b2b996f6"
+      ],
+      "extraction_executed": false,
+      "file_summary": {},
+      "item_identifier": "identifier_hash:1b18e0c3ed14344e",
+      "limitations": [
+        "committed metadata fixture input",
+        "metadata search result is not accepted truth",
+        "bounded search rows observed: 1",
+        "evidence candidate requires review",
+        "metadata does not establish rights clearance, compatibility, safety, installability, or final identity",
+        "candidate index record is not reviewed truth",
+        "no reviewed or master index mutation occurred",
+        "preview is not a final reviewed record",
+        "preview does not establish accepted truth",
+        "reviewed local record is limited to explicit temp/local instance",
+        "does not establish rights clearance, safety, compatibility, installability, or final provenance",
+        "no committed data/public_index mutation occurred"
+      ],
+      "master_index_record": false,
+      "mediatype": "data",
+      "model_provider_used": false,
+      "observation_ids": [
+        "iaobs_live_metadata_search_small"
+      ],
+      "production_readiness_claimed": false,
+      "promotion_preview_id": "iaprv_04c0977125e1b199",
+      "provenance": {
+        "endpoint_class": "metadata_search_small",
+        "metadata_only": true,
+        "observation_kind": "metadata_search_result",
+        "source_kind": "ia_live_probe_preview",
+        "source_query": "sampleproject"
+      },
+      "public_hosted_record": false,
+      "public_launch_readiness_claimed": false,
+      "raw_response_committed": false,
+      "review_decision_id": "iard_63689daf15ba0e2f",
+      "review_item_id": "iarv_a818ca03773b839c",
+      "review_status": "locally_reviewed_from_promotion_preview",
+      "reviewed_local_index_record": true,
+      "reviewed_record_id": "iarli_8c27770358265f7b",
+      "rights_flags": [
+        "rights_not_inferred",
+        "safety_not_inferred",
+        "compatibility_not_inferred"
+      ],
+      "risk_flags": [
+        "metadata_not_truth",
+        "search_result_requires_review"
+      ],
+      "schema_version": "ia_reviewed_local_record.v0",
+      "source_cache_record_ids": [
+        "iasc_20f8f95fdcf7ace3"
+      ],
+      "source_family": "preservation_metadata",
+      "source_id": "internet_archive_metadata",
+      "source_locator": {
+        "kind": "internet_archive_identifier_hash",
+        "label": "Internet Archive redacted live metadata preview locator",
+        "value_hash": "1b18e0c3ed14344e"
+      },
+      "summary": "Provisional ia_collection_member_candidate from 5 IA evidence candidate(s); review is required before any promotion. Promotion remains preview-only and preserves uncertainty.",
+      "title": "Provisional ia_collection_member_candidate from 5 IA evidence candidate(s)",
+      "uncertainty": [
+        "reconstructed from local review queue decision",
+        "promotion is dry-run only",
+        "reviewed index write is disabled",
+        "master index write is disabled",
+        "local reviewed index projection only",
+        "master index was not mutated",
+        "hosted public search was not mutated"
+      ],
+      "upload_performed": false
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "iacand_c01c2c64a64fba23",
+      "checksum_summary": {
+        "algorithms": [
+          "md5"
+        ],
+        "checksum_metadata_count": 5,
+        "source_provided_metadata_only": true
+      },
+      "collection_refs": [
+        "eureka-fixture-software"
+      ],
+      "created_at": "2026-05-19T00:00:00Z",
+      "deployment_performed": false,
+      "download_performed": false,
+      "evidence_ids": [
+        "iaev_0178360374d0d58d",
+        "iaev_220304b424601f3c",
+        "iaev_3629751c04340905",
+        "iaev_46ceee78e9429a6f",
+        "iaev_6d91c63287f7d9c7",
+        "iaev_7a06c7cef7535a7b",
+        "iaev_94dd95c5bc84b603",
+        "iaev_a342a599a0211a08",
+        "iaev_bc862a54606481de",
+        "iaev_bcfefdfba989d734",
+        "iaev_e0174a14adea8df3"
+      ],
+      "extraction_executed": false,
+      "file_summary": {
+        "file_metadata_count": 5,
+        "metadata_only": true,
+        "sample_names": [
+          "file_001.txt",
+          "file_002.txt",
+          "file_003.txt"
+        ]
+      },
+      "item_identifier": "identifier_hash:abcf9ffbd90b5b54",
+      "limitations": [
+        "committed metadata fixture input",
+        "item metadata is not accepted truth",
+        "file entries are metadata only",
+        "file metadata candidates capped at 5 of 8",
+        "evidence candidate requires review",
+        "metadata does not establish rights clearance, compatibility, safety, installability, or final identity",
+        "candidate index record is not reviewed truth",
+        "no reviewed or master index mutation occurred",
+        "preview is not a final reviewed record",
+        "preview does not establish accepted truth",
+        "reviewed local record is limited to explicit temp/local instance",
+        "does not establish rights clearance, safety, compatibility, installability, or final provenance",
+        "no committed data/public_index mutation occurred"
+      ],
+      "master_index_record": false,
+      "mediatype": "software",
+      "model_provider_used": false,
+      "observation_ids": [
+        "iaobs_large_file_list"
+      ],
+      "production_readiness_claimed": false,
+      "promotion_preview_id": "iaprv_56996c86b01e0dff",
+      "provenance": {
+        "endpoint_class": "item_file_list_metadata_read",
+        "metadata_only": true,
+        "observation_kind": "large_file_list",
+        "source_kind": "ia_fixture_replay"
+      },
+      "public_hosted_record": false,
+      "public_launch_readiness_claimed": false,
+      "raw_response_committed": false,
+      "review_decision_id": "iard_639eb1213e88bcf0",
+      "review_item_id": "iarv_11c893d8704d641b",
+      "review_status": "locally_reviewed_from_promotion_preview",
+      "reviewed_local_index_record": true,
+      "reviewed_record_id": "iarli_40022cbc86ce8337",
+      "rights_flags": [
+        "rights_not_inferred",
+        "safety_not_inferred",
+        "compatibility_not_inferred"
+      ],
+      "risk_flags": [
+        "metadata_not_truth",
+        "file_metadata_requires_review"
+      ],
+      "schema_version": "ia_reviewed_local_record.v0",
+      "source_cache_record_ids": [
+        "iasc_0942d6dacc0c596b"
+      ],
+      "source_family": "preservation_metadata",
+      "source_id": "internet_archive_metadata",
+      "source_locator": {
+        "kind": "internet_archive_identifier",
+        "label": "Internet Archive metadata fixture locator",
+        "value_hash": "abcf9ffbd90b5b54"
+      },
+      "summary": "Provisional ia_file_list_candidate from 11 IA evidence candidate(s); review is required before any promotion. Promotion remains preview-only and preserves uncertainty.",
+      "title": "Provisional ia_file_list_candidate from 11 IA evidence candidate(s)",
+      "uncertainty": [
+        "reconstructed from local review queue decision",
+        "promotion is dry-run only",
+        "reviewed index write is disabled",
+        "master index write is disabled",
+        "local reviewed index projection only",
+        "master index was not mutated",
+        "hosted public search was not mutated"
+      ],
+      "upload_performed": false
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "iacand_abf8c2b8653229ec",
+      "checksum_summary": {
+        "algorithms": [
+          "md5",
+          "sha1"
+        ],
+        "checksum_metadata_count": 1,
+        "source_provided_metadata_only": true
+      },
+      "collection_refs": [
+        "eureka-fixture-software"
+      ],
+      "created_at": "2026-05-19T00:00:00Z",
+      "deployment_performed": false,
+      "download_performed": false,
+      "evidence_ids": [
+        "iaev_2e4597bf2d0205f2",
+        "iaev_3a935120fad455e5",
+        "iaev_79665430d7ad709c",
+        "iaev_8c364b463c33ed9b",
+        "iaev_90c55021014df176",
+        "iaev_976e5cae841c84db",
+        "iaev_a706a99df5123bd5",
+        "iaev_ae6357bcacd9e25a",
+        "iaev_c54b48f4aa183ee6",
+        "iaev_f68fca1af5f2aa81",
+        "iaev_ff9f3f66bdb6125c"
+      ],
+      "extraction_executed": false,
+      "file_summary": {
+        "file_metadata_count": 1,
+        "metadata_only": true,
+        "sample_names": [
+          "StyleWriter_2500_Readme.txt"
+        ]
+      },
+      "item_identifier": "identifier_hash:a9113b0907d33abf",
+      "limitations": [
+        "committed metadata fixture input",
+        "item metadata is not accepted truth",
+        "file entries are metadata only",
+        "evidence candidate requires review",
+        "metadata does not establish rights clearance, compatibility, safety, installability, or final identity",
+        "candidate index record is not reviewed truth",
+        "no reviewed or master index mutation occurred",
+        "preview is not a final reviewed record",
+        "preview does not establish accepted truth",
+        "reviewed local record is limited to explicit temp/local instance",
+        "does not establish rights clearance, safety, compatibility, installability, or final provenance",
+        "no committed data/public_index mutation occurred"
+      ],
+      "master_index_record": false,
+      "mediatype": "software",
+      "model_provider_used": false,
+      "observation_ids": [
+        "iaobs_item_metadata"
+      ],
+      "production_readiness_claimed": false,
+      "promotion_preview_id": "iaprv_706f0c4e2d68a532",
+      "provenance": {
+        "endpoint_class": "item_metadata_read",
+        "metadata_only": true,
+        "observation_kind": "item_metadata",
+        "source_kind": "ia_fixture_replay"
+      },
+      "public_hosted_record": false,
+      "public_launch_readiness_claimed": false,
+      "raw_response_committed": false,
+      "review_decision_id": "iard_67c6e29705297340",
+      "review_item_id": "iarv_8be1d7b7d6c72dad",
+      "review_status": "locally_reviewed_from_promotion_preview",
+      "reviewed_local_index_record": true,
+      "reviewed_record_id": "iarli_1fc5c99af763d915",
+      "rights_flags": [
+        "rights_not_inferred",
+        "safety_not_inferred",
+        "compatibility_not_inferred"
+      ],
+      "risk_flags": [
+        "metadata_not_truth",
+        "file_metadata_requires_review"
+      ],
+      "schema_version": "ia_reviewed_local_record.v0",
+      "source_cache_record_ids": [
+        "iasc_486af3662118be4b"
+      ],
+      "source_family": "preservation_metadata",
+      "source_id": "internet_archive_metadata",
+      "source_locator": {
+        "kind": "internet_archive_identifier",
+        "label": "Internet Archive metadata fixture locator",
+        "value_hash": "a9113b0907d33abf"
+      },
+      "summary": "Provisional ia_item_candidate from 11 IA evidence candidate(s); review is required before any promotion. Promotion remains preview-only and preserves uncertainty.",
+      "title": "Provisional ia_item_candidate from 11 IA evidence candidate(s)",
+      "uncertainty": [
+        "reconstructed from local review queue decision",
+        "promotion is dry-run only",
+        "reviewed index write is disabled",
+        "master index write is disabled",
+        "local reviewed index projection only",
+        "master index was not mutated",
+        "hosted public search was not mutated"
+      ],
+      "upload_performed": false
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "iacand_4288ccd950a63e09",
+      "checksum_summary": {
+        "algorithms": [],
+        "checksum_metadata_count": 5,
+        "source_provided_metadata_only": true
+      },
+      "collection_refs": [
+        {
+          "collection_metadata_count": 2
+        }
+      ],
+      "created_at": "2026-05-19T00:00:00Z",
+      "deployment_performed": false,
+      "download_performed": false,
+      "evidence_ids": [
+        "iaev_0791b8b130b67d35",
+        "iaev_09aa75883d835dd8",
+        "iaev_20211833e49b1b62",
+        "iaev_79dd683dbacc6833",
+        "iaev_8bfe4d4d4da0eb3f",
+        "iaev_8deab278d0406b26",
+        "iaev_ae814b9c1885f1e2",
+        "iaev_cf0b62e356700e9b"
+      ],
+      "extraction_executed": false,
+      "file_summary": {
+        "file_metadata_count": 5,
+        "metadata_only": true,
+        "sample_names": []
+      },
+      "item_identifier": "identifier_hash:1b18e0c3ed14344e",
+      "limitations": [
+        "committed metadata fixture input",
+        "item metadata is not accepted truth",
+        "file entries are metadata only",
+        "evidence candidate requires review",
+        "metadata does not establish rights clearance, compatibility, safety, installability, or final identity",
+        "candidate index record is not reviewed truth",
+        "no reviewed or master index mutation occurred",
+        "preview is not a final reviewed record",
+        "preview does not establish accepted truth",
+        "reviewed local record is limited to explicit temp/local instance",
+        "does not establish rights clearance, safety, compatibility, installability, or final provenance",
+        "no committed data/public_index mutation occurred"
+      ],
+      "master_index_record": false,
+      "mediatype": "data",
+      "model_provider_used": false,
+      "observation_ids": [
+        "iaobs_live_item_metadata"
+      ],
+      "production_readiness_claimed": false,
+      "promotion_preview_id": "iaprv_78afe667f6265cec",
+      "provenance": {
+        "endpoint_class": "item_metadata_read",
+        "metadata_only": true,
+        "observation_kind": "item_metadata",
+        "source_kind": "ia_live_probe_preview",
+        "source_query": "sampleproject"
+      },
+      "public_hosted_record": false,
+      "public_launch_readiness_claimed": false,
+      "raw_response_committed": false,
+      "review_decision_id": "iard_6f541fedca285077",
+      "review_item_id": "iarv_35d52e7eb6056c35",
+      "review_status": "locally_reviewed_from_promotion_preview",
+      "reviewed_local_index_record": true,
+      "reviewed_record_id": "iarli_a51494b29dc1537d",
+      "rights_flags": [
+        "rights_not_inferred",
+        "safety_not_inferred",
+        "compatibility_not_inferred"
+      ],
+      "risk_flags": [
+        "metadata_not_truth",
+        "file_metadata_requires_review"
+      ],
+      "schema_version": "ia_reviewed_local_record.v0",
+      "source_cache_record_ids": [
+        "iasc_86a3e225f319eb4c"
+      ],
+      "source_family": "preservation_metadata",
+      "source_id": "internet_archive_metadata",
+      "source_locator": {
+        "kind": "internet_archive_identifier_hash",
+        "label": "Internet Archive redacted live metadata preview locator",
+        "value_hash": "1b18e0c3ed14344e"
+      },
+      "summary": "Provisional ia_collection_member_candidate from 8 IA evidence candidate(s); review is required before any promotion. Promotion remains preview-only and preserves uncertainty.",
+      "title": "Provisional ia_collection_member_candidate from 8 IA evidence candidate(s)",
+      "uncertainty": [
+        "reconstructed from local review queue decision",
+        "promotion is dry-run only",
+        "reviewed index write is disabled",
+        "master index write is disabled",
+        "local reviewed index projection only",
+        "master index was not mutated",
+        "hosted public search was not mutated"
+      ],
+      "upload_performed": false
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "iacand_1c647d25186ce705",
+      "checksum_summary": {
+        "algorithms": [
+          "md5"
+        ],
+        "checksum_metadata_count": 1,
+        "source_provided_metadata_only": true
+      },
+      "collection_refs": [
+        "eureka-fixture-policy"
+      ],
+      "created_at": "2026-05-19T00:00:00Z",
+      "deployment_performed": false,
+      "download_performed": false,
+      "evidence_ids": [
+        "iaev_244f3f40f4b4e155",
+        "iaev_27beb00a8459b575",
+        "iaev_2a5d708879332beb",
+        "iaev_52c98a85728eb107",
+        "iaev_5f20b07d08d794bb",
+        "iaev_78cea459fb1d361c",
+        "iaev_a28ea6cad45e95f7",
+        "iaev_a7b77010c7b7765c",
+        "iaev_b1e1dbce2bed598d",
+        "iaev_f11594d83ac319ef",
+        "iaev_f8c3705d3fc21050"
+      ],
+      "extraction_executed": false,
+      "file_summary": {
+        "file_metadata_count": 1,
+        "metadata_only": true,
+        "sample_names": [
+          "metadata_only_entry.txt"
+        ]
+      },
+      "item_identifier": "identifier_hash:16e6e44ce79c85f2",
+      "limitations": [
+        "committed metadata fixture input",
+        "item metadata is not accepted truth",
+        "file entries are metadata only",
+        "no file content included or fetched",
+        "evidence candidate requires review",
+        "metadata does not establish rights clearance, compatibility, safety, installability, or final identity",
+        "candidate index record is not reviewed truth",
+        "no reviewed or master index mutation occurred",
+        "preview is not a final reviewed record",
+        "preview does not establish accepted truth",
+        "reviewed local record is limited to explicit temp/local instance",
+        "does not establish rights clearance, safety, compatibility, installability, or final provenance",
+        "no committed data/public_index mutation occurred"
+      ],
+      "master_index_record": false,
+      "mediatype": "software",
+      "model_provider_used": false,
+      "observation_ids": [
+        "iaobs_no_download_proof"
+      ],
+      "production_readiness_claimed": false,
+      "promotion_preview_id": "iaprv_53c09bcff39010ae",
+      "provenance": {
+        "endpoint_class": "item_file_list_metadata_read",
+        "metadata_only": true,
+        "observation_kind": "no_download_proof",
+        "source_kind": "ia_fixture_replay"
+      },
+      "public_hosted_record": false,
+      "public_launch_readiness_claimed": false,
+      "raw_response_committed": false,
+      "review_decision_id": "iard_72babb5532297f0b",
+      "review_item_id": "iarv_e5575a47109e7cdb",
+      "review_status": "locally_reviewed_from_promotion_preview",
+      "reviewed_local_index_record": true,
+      "reviewed_record_id": "iarli_5646825bec032bd2",
+      "rights_flags": [
+        "rights_not_inferred",
+        "safety_not_inferred",
+        "compatibility_not_inferred"
+      ],
+      "risk_flags": [
+        "metadata_not_truth",
+        "file_metadata_requires_review"
+      ],
+      "schema_version": "ia_reviewed_local_record.v0",
+      "source_cache_record_ids": [
+        "iasc_cda081026e612d40"
+      ],
+      "source_family": "preservation_metadata",
+      "source_id": "internet_archive_metadata",
+      "source_locator": {
+        "kind": "internet_archive_identifier",
+        "label": "Internet Archive metadata fixture locator",
+        "value_hash": "16e6e44ce79c85f2"
+      },
+      "summary": "Provisional ia_item_candidate from 11 IA evidence candidate(s); review is required before any promotion. Promotion remains preview-only and preserves uncertainty.",
+      "title": "Provisional ia_item_candidate from 11 IA evidence candidate(s)",
+      "uncertainty": [
+        "reconstructed from local review queue decision",
+        "promotion is dry-run only",
+        "reviewed index write is disabled",
+        "master index write is disabled",
+        "local reviewed index projection only",
+        "master index was not mutated",
+        "hosted public search was not mutated"
+      ],
+      "upload_performed": false
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "iacand_8974fec87fea7bd7",
+      "checksum_summary": {
+        "algorithms": [],
+        "checksum_metadata_count": 5,
+        "source_provided_metadata_only": true
+      },
+      "collection_refs": [
+        {
+          "collection_metadata_count": 2
+        }
+      ],
+      "created_at": "2026-05-19T00:00:00Z",
+      "deployment_performed": false,
+      "download_performed": false,
+      "evidence_ids": [
+        "iaev_0791b8b130b67d35",
+        "iaev_09aa75883d835dd8",
+        "iaev_20211833e49b1b62",
+        "iaev_79dd683dbacc6833",
+        "iaev_8bfe4d4d4da0eb3f",
+        "iaev_8deab278d0406b26",
+        "iaev_ae814b9c1885f1e2",
+        "iaev_cf0b62e356700e9b"
+      ],
+      "extraction_executed": false,
+      "file_summary": {
+        "file_metadata_count": 5,
+        "metadata_only": true,
+        "sample_names": []
+      },
+      "item_identifier": "identifier_hash:1b18e0c3ed14344e",
+      "limitations": [
+        "committed metadata fixture input",
+        "item metadata is not accepted truth",
+        "file entries are metadata only",
+        "evidence candidate requires review",
+        "metadata does not establish rights clearance, compatibility, safety, installability, or final identity",
+        "candidate index record is not reviewed truth",
+        "no reviewed or master index mutation occurred",
+        "preview is not a final reviewed record",
+        "preview does not establish accepted truth",
+        "reviewed local record is limited to explicit temp/local instance",
+        "does not establish rights clearance, safety, compatibility, installability, or final provenance",
+        "no committed data/public_index mutation occurred"
+      ],
+      "master_index_record": false,
+      "mediatype": "data",
+      "model_provider_used": false,
+      "observation_ids": [
+        "iaobs_live_item_metadata"
+      ],
+      "production_readiness_claimed": false,
+      "promotion_preview_id": "iaprv_34b2d2c7d30ccdbd",
+      "provenance": {
+        "endpoint_class": "item_metadata_read",
+        "metadata_only": true,
+        "observation_kind": "item_metadata",
+        "source_kind": "ia_live_probe_preview",
+        "source_query": "sampleproject"
+      },
+      "public_hosted_record": false,
+      "public_launch_readiness_claimed": false,
+      "raw_response_committed": false,
+      "review_decision_id": "iard_796994c9245e65b2",
+      "review_item_id": "iarv_0c2e20e467c221c3",
+      "review_status": "locally_reviewed_from_promotion_preview",
+      "reviewed_local_index_record": true,
+      "reviewed_record_id": "iarli_cfaddd0ce1b316ed",
+      "rights_flags": [
+        "rights_not_inferred",
+        "safety_not_inferred",
+        "compatibility_not_inferred"
+      ],
+      "risk_flags": [
+        "metadata_not_truth",
+        "file_metadata_requires_review"
+      ],
+      "schema_version": "ia_reviewed_local_record.v0",
+      "source_cache_record_ids": [
+        "iasc_86a3e225f319eb4c"
+      ],
+      "source_family": "preservation_metadata",
+      "source_id": "internet_archive_metadata",
+      "source_locator": {
+        "kind": "internet_archive_identifier_hash",
+        "label": "Internet Archive redacted live metadata preview locator",
+        "value_hash": "1b18e0c3ed14344e"
+      },
+      "summary": "Provisional ia_media_metadata_candidate from 8 IA evidence candidate(s); review is required before any promotion. Promotion remains preview-only and preserves uncertainty.",
+      "title": "Provisional ia_media_metadata_candidate from 8 IA evidence candidate(s)",
+      "uncertainty": [
+        "reconstructed from local review queue decision",
+        "promotion is dry-run only",
+        "reviewed index write is disabled",
+        "master index write is disabled",
+        "local reviewed index projection only",
+        "master index was not mutated",
+        "hosted public search was not mutated"
+      ],
+      "upload_performed": false
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "iacand_9296cc2c16465d56",
+      "checksum_summary": {},
+      "collection_refs": [],
+      "created_at": "2026-05-19T00:00:00Z",
+      "deployment_performed": false,
+      "download_performed": false,
+      "evidence_ids": [
+        "iaev_2f6d5fa64bee4bb3",
+        "iaev_64dcbd31bd4a39de",
+        "iaev_8fe077f498f3c523",
+        "iaev_90f029588c97120c",
+        "iaev_a297f63f2d595b0c"
+      ],
+      "extraction_executed": false,
+      "file_summary": {
+        "file_metadata_count": 1,
+        "metadata_only": true,
+        "sample_names": [
+          ""
+        ]
+      },
+      "item_identifier": "identifier_hash:79d168167eefa3ce",
+      "limitations": [
+        "committed metadata fixture input",
+        "required item identifier missing",
+        "partial metadata requires review before use",
+        "evidence candidate requires review",
+        "metadata does not establish rights clearance, compatibility, safety, installability, or final identity",
+        "candidate index record is not reviewed truth",
+        "no reviewed or master index mutation occurred",
+        "preview is not a final reviewed record",
+        "preview does not establish accepted truth",
+        "reviewed local record is limited to explicit temp/local instance",
+        "does not establish rights clearance, safety, compatibility, installability, or final provenance",
+        "no committed data/public_index mutation occurred"
+      ],
+      "master_index_record": false,
+      "mediatype": "software",
+      "model_provider_used": false,
+      "observation_ids": [
+        "iaobs_malformed_partial"
+      ],
+      "production_readiness_claimed": false,
+      "promotion_preview_id": "iaprv_03916d0cf8ba2dc6",
+      "provenance": {
+        "endpoint_class": "item_metadata_read",
+        "metadata_only": true,
+        "observation_kind": "malformed_partial",
+        "source_kind": "ia_fixture_replay"
+      },
+      "public_hosted_record": false,
+      "public_launch_readiness_claimed": false,
+      "raw_response_committed": false,
+      "review_decision_id": "iard_854e33bf833ccf35",
+      "review_item_id": "iarv_bf4dbe6afa28e0b0",
+      "review_status": "locally_reviewed_from_promotion_preview",
+      "reviewed_local_index_record": true,
+      "reviewed_record_id": "iarli_21482f303b8ca846",
+      "rights_flags": [
+        "rights_not_inferred",
+        "safety_not_inferred",
+        "compatibility_not_inferred"
+      ],
+      "risk_flags": [
+        "malformed_partial",
+        "metadata_not_truth"
+      ],
+      "schema_version": "ia_reviewed_local_record.v0",
+      "source_cache_record_ids": [
+        "iasc_014c05bb568f514f"
+      ],
+      "source_family": "preservation_metadata",
+      "source_id": "internet_archive_metadata",
+      "source_locator": {
+        "kind": "internet_archive_identifier",
+        "label": "Internet Archive metadata fixture locator",
+        "value_hash": "79d168167eefa3ce"
+      },
+      "summary": "Provisional ia_source_locator_candidate from 5 IA evidence candidate(s); review is required before any promotion. Promotion remains preview-only and preserves uncertainty.",
+      "title": "Provisional ia_source_locator_candidate from 5 IA evidence candidate(s)",
+      "uncertainty": [
+        "reconstructed from local review queue decision",
+        "promotion is dry-run only",
+        "reviewed index write is disabled",
+        "master index write is disabled",
+        "local reviewed index projection only",
+        "master index was not mutated",
+        "hosted public search was not mutated"
+      ],
+      "upload_performed": false
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "iacand_91b0851160195ad0",
+      "checksum_summary": {
+        "algorithms": [
+          "md5",
+          "sha1"
+        ],
+        "checksum_metadata_count": 2,
+        "source_provided_metadata_only": true
+      },
+      "collection_refs": [
+        "eureka-fixture-software"
+      ],
+      "created_at": "2026-05-19T00:00:00Z",
+      "deployment_performed": false,
+      "download_performed": false,
+      "evidence_ids": [
+        "iaev_157ad61c6baab6da",
+        "iaev_1c432bf1a5f83c40",
+        "iaev_342d3753fdc2c7d6",
+        "iaev_3a70ed860094c732",
+        "iaev_3fcce8890bf5f5c6",
+        "iaev_4a39dc74f5bafc1b",
+        "iaev_6b9d599e68d63ba4",
+        "iaev_e033900a1acbdd8c",
+        "iaev_e214299a3878d59c",
+        "iaev_ec518630a912adab",
+        "iaev_f5803eb8571905b4"
+      ],
+      "extraction_executed": false,
+      "file_summary": {
+        "file_metadata_count": 2,
+        "metadata_only": true,
+        "sample_names": [
+          "DXSDK_Jun10_stub.txt",
+          "DXSDK_Jun10_manifest.json"
+        ]
+      },
+      "item_identifier": "identifier_hash:a6e90399ed34ab09",
+      "limitations": [
+        "committed metadata fixture input",
+        "item metadata is not accepted truth",
+        "file entries are metadata only",
+        "evidence candidate requires review",
+        "metadata does not establish rights clearance, compatibility, safety, installability, or final identity",
+        "candidate index record is not reviewed truth",
+        "no reviewed or master index mutation occurred",
+        "preview is not a final reviewed record",
+        "preview does not establish accepted truth",
+        "reviewed local record is limited to explicit temp/local instance",
+        "does not establish rights clearance, safety, compatibility, installability, or final provenance",
+        "no committed data/public_index mutation occurred"
+      ],
+      "master_index_record": false,
+      "mediatype": "software",
+      "model_provider_used": false,
+      "observation_ids": [
+        "iaobs_item_file_list"
+      ],
+      "production_readiness_claimed": false,
+      "promotion_preview_id": "iaprv_f9ba16166a121da3",
+      "provenance": {
+        "endpoint_class": "item_file_list_metadata_read",
+        "metadata_only": true,
+        "observation_kind": "item_file_list",
+        "source_kind": "ia_fixture_replay"
+      },
+      "public_hosted_record": false,
+      "public_launch_readiness_claimed": false,
+      "raw_response_committed": false,
+      "review_decision_id": "iard_86051c88744ad173",
+      "review_item_id": "iarv_013f1761390c5b7f",
+      "review_status": "locally_reviewed_from_promotion_preview",
+      "reviewed_local_index_record": true,
+      "reviewed_record_id": "iarli_ea9002bc0dbc506a",
+      "rights_flags": [
+        "rights_not_inferred",
+        "safety_not_inferred",
+        "compatibility_not_inferred"
+      ],
+      "risk_flags": [
+        "metadata_not_truth",
+        "file_metadata_requires_review"
+      ],
+      "schema_version": "ia_reviewed_local_record.v0",
+      "source_cache_record_ids": [
+        "iasc_d70a6f39da5837c6"
+      ],
+      "source_family": "preservation_metadata",
+      "source_id": "internet_archive_metadata",
+      "source_locator": {
+        "kind": "internet_archive_identifier",
+        "label": "Internet Archive metadata fixture locator",
+        "value_hash": "a6e90399ed34ab09"
+      },
+      "summary": "Provisional ia_media_metadata_candidate from 11 IA evidence candidate(s); review is required before any promotion. Promotion remains preview-only and preserves uncertainty.",
+      "title": "Provisional ia_media_metadata_candidate from 11 IA evidence candidate(s)",
+      "uncertainty": [
+        "reconstructed from local review queue decision",
+        "promotion is dry-run only",
+        "reviewed index write is disabled",
+        "master index write is disabled",
+        "local reviewed index projection only",
+        "master index was not mutated",
+        "hosted public search was not mutated"
+      ],
+      "upload_performed": false
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "iacand_15fb9235073854d5",
+      "checksum_summary": {},
+      "collection_refs": [
+        {
+          "collection_metadata_count": 2
+        }
+      ],
+      "created_at": "2026-05-19T00:00:00Z",
+      "deployment_performed": false,
+      "download_performed": false,
+      "evidence_ids": [
+        "iaev_0f4c6372808cff0b",
+        "iaev_5541d091e20c5bcd",
+        "iaev_764263872435608b",
+        "iaev_92764c5cbcc65320",
+        "iaev_f5e8db03b2b996f6"
+      ],
+      "extraction_executed": false,
+      "file_summary": {},
+      "item_identifier": "identifier_hash:1b18e0c3ed14344e",
+      "limitations": [
+        "committed metadata fixture input",
+        "metadata search result is not accepted truth",
+        "bounded search rows observed: 1",
+        "evidence candidate requires review",
+        "metadata does not establish rights clearance, compatibility, safety, installability, or final identity",
+        "candidate index record is not reviewed truth",
+        "no reviewed or master index mutation occurred",
+        "preview is not a final reviewed record",
+        "preview does not establish accepted truth",
+        "reviewed local record is limited to explicit temp/local instance",
+        "does not establish rights clearance, safety, compatibility, installability, or final provenance",
+        "no committed data/public_index mutation occurred"
+      ],
+      "master_index_record": false,
+      "mediatype": "data",
+      "model_provider_used": false,
+      "observation_ids": [
+        "iaobs_live_metadata_search_small"
+      ],
+      "production_readiness_claimed": false,
+      "promotion_preview_id": "iaprv_fd9b49aa38afa90b",
+      "provenance": {
+        "endpoint_class": "metadata_search_small",
+        "metadata_only": true,
+        "observation_kind": "metadata_search_result",
+        "source_kind": "ia_live_probe_preview",
+        "source_query": "sampleproject"
+      },
+      "public_hosted_record": false,
+      "public_launch_readiness_claimed": false,
+      "raw_response_committed": false,
+      "review_decision_id": "iard_8a0f08179f482390",
+      "review_item_id": "iarv_1f35a8f9b694e8bb",
+      "review_status": "locally_reviewed_from_promotion_preview",
+      "reviewed_local_index_record": true,
+      "reviewed_record_id": "iarli_fc53fa6543e82190",
+      "rights_flags": [
+        "rights_not_inferred",
+        "safety_not_inferred",
+        "compatibility_not_inferred"
+      ],
+      "risk_flags": [
+        "metadata_not_truth",
+        "search_result_requires_review"
+      ],
+      "schema_version": "ia_reviewed_local_record.v0",
+      "source_cache_record_ids": [
+        "iasc_20f8f95fdcf7ace3"
+      ],
+      "source_family": "preservation_metadata",
+      "source_id": "internet_archive_metadata",
+      "source_locator": {
+        "kind": "internet_archive_identifier_hash",
+        "label": "Internet Archive redacted live metadata preview locator",
+        "value_hash": "1b18e0c3ed14344e"
+      },
+      "summary": "Provisional ia_item_candidate from 5 IA evidence candidate(s); review is required before any promotion. Promotion remains preview-only and preserves uncertainty.",
+      "title": "Provisional ia_item_candidate from 5 IA evidence candidate(s)",
+      "uncertainty": [
+        "reconstructed from local review queue decision",
+        "promotion is dry-run only",
+        "reviewed index write is disabled",
+        "master index write is disabled",
+        "local reviewed index projection only",
+        "master index was not mutated",
+        "hosted public search was not mutated"
+      ],
+      "upload_performed": false
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "iacand_9233bc36d43cd91e",
+      "checksum_summary": {
+        "algorithms": [
+          "md5",
+          "sha1"
+        ],
+        "checksum_metadata_count": 2,
+        "source_provided_metadata_only": true
+      },
+      "collection_refs": [
+        "eureka-fixture-software"
+      ],
+      "created_at": "2026-05-19T00:00:00Z",
+      "deployment_performed": false,
+      "download_performed": false,
+      "evidence_ids": [
+        "iaev_157ad61c6baab6da",
+        "iaev_1c432bf1a5f83c40",
+        "iaev_342d3753fdc2c7d6",
+        "iaev_3a70ed860094c732",
+        "iaev_3fcce8890bf5f5c6",
+        "iaev_4a39dc74f5bafc1b",
+        "iaev_6b9d599e68d63ba4",
+        "iaev_e033900a1acbdd8c",
+        "iaev_e214299a3878d59c",
+        "iaev_ec518630a912adab",
+        "iaev_f5803eb8571905b4"
+      ],
+      "extraction_executed": false,
+      "file_summary": {
+        "file_metadata_count": 2,
+        "metadata_only": true,
+        "sample_names": [
+          "DXSDK_Jun10_stub.txt",
+          "DXSDK_Jun10_manifest.json"
+        ]
+      },
+      "item_identifier": "identifier_hash:a6e90399ed34ab09",
+      "limitations": [
+        "committed metadata fixture input",
+        "item metadata is not accepted truth",
+        "file entries are metadata only",
+        "evidence candidate requires review",
+        "metadata does not establish rights clearance, compatibility, safety, installability, or final identity",
+        "candidate index record is not reviewed truth",
+        "no reviewed or master index mutation occurred",
+        "preview is not a final reviewed record",
+        "preview does not establish accepted truth",
+        "reviewed local record is limited to explicit temp/local instance",
+        "does not establish rights clearance, safety, compatibility, installability, or final provenance",
+        "no committed data/public_index mutation occurred"
+      ],
+      "master_index_record": false,
+      "mediatype": "software",
+      "model_provider_used": false,
+      "observation_ids": [
+        "iaobs_item_file_list"
+      ],
+      "production_readiness_claimed": false,
+      "promotion_preview_id": "iaprv_1c59589ec00ebadb",
+      "provenance": {
+        "endpoint_class": "item_file_list_metadata_read",
+        "metadata_only": true,
+        "observation_kind": "item_file_list",
+        "source_kind": "ia_fixture_replay"
+      },
+      "public_hosted_record": false,
+      "public_launch_readiness_claimed": false,
+      "raw_response_committed": false,
+      "review_decision_id": "iard_8b8a0e3ba3fc3e9d",
+      "review_item_id": "iarv_3a02371d53187aac",
+      "review_status": "locally_reviewed_from_promotion_preview",
+      "reviewed_local_index_record": true,
+      "reviewed_record_id": "iarli_fb7d2298ff556309",
+      "rights_flags": [
+        "rights_not_inferred",
+        "safety_not_inferred",
+        "compatibility_not_inferred"
+      ],
+      "risk_flags": [
+        "metadata_not_truth",
+        "file_metadata_requires_review"
+      ],
+      "schema_version": "ia_reviewed_local_record.v0",
+      "source_cache_record_ids": [
+        "iasc_d70a6f39da5837c6"
+      ],
+      "source_family": "preservation_metadata",
+      "source_id": "internet_archive_metadata",
+      "source_locator": {
+        "kind": "internet_archive_identifier",
+        "label": "Internet Archive metadata fixture locator",
+        "value_hash": "a6e90399ed34ab09"
+      },
+      "summary": "Provisional ia_file_list_candidate from 11 IA evidence candidate(s); review is required before any promotion. Promotion remains preview-only and preserves uncertainty.",
+      "title": "Provisional ia_file_list_candidate from 11 IA evidence candidate(s)",
+      "uncertainty": [
+        "reconstructed from local review queue decision",
+        "promotion is dry-run only",
+        "reviewed index write is disabled",
+        "master index write is disabled",
+        "local reviewed index projection only",
+        "master index was not mutated",
+        "hosted public search was not mutated"
+      ],
+      "upload_performed": false
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "iacand_54246a37b681cf04",
+      "checksum_summary": {
+        "algorithms": [
+          "md5",
+          "sha1"
+        ],
+        "checksum_metadata_count": 1,
+        "source_provided_metadata_only": true
+      },
+      "collection_refs": [
+        "eureka-fixture-software"
+      ],
+      "created_at": "2026-05-19T00:00:00Z",
+      "deployment_performed": false,
+      "download_performed": false,
+      "evidence_ids": [
+        "iaev_2e4597bf2d0205f2",
+        "iaev_3a935120fad455e5",
+        "iaev_79665430d7ad709c",
+        "iaev_8c364b463c33ed9b",
+        "iaev_90c55021014df176",
+        "iaev_976e5cae841c84db",
+        "iaev_a706a99df5123bd5",
+        "iaev_ae6357bcacd9e25a",
+        "iaev_c54b48f4aa183ee6",
+        "iaev_f68fca1af5f2aa81",
+        "iaev_ff9f3f66bdb6125c"
+      ],
+      "extraction_executed": false,
+      "file_summary": {
+        "file_metadata_count": 1,
+        "metadata_only": true,
+        "sample_names": [
+          "StyleWriter_2500_Readme.txt"
+        ]
+      },
+      "item_identifier": "identifier_hash:a9113b0907d33abf",
+      "limitations": [
+        "committed metadata fixture input",
+        "item metadata is not accepted truth",
+        "file entries are metadata only",
+        "evidence candidate requires review",
+        "metadata does not establish rights clearance, compatibility, safety, installability, or final identity",
+        "candidate index record is not reviewed truth",
+        "no reviewed or master index mutation occurred",
+        "preview is not a final reviewed record",
+        "preview does not establish accepted truth",
+        "reviewed local record is limited to explicit temp/local instance",
+        "does not establish rights clearance, safety, compatibility, installability, or final provenance",
+        "no committed data/public_index mutation occurred"
+      ],
+      "master_index_record": false,
+      "mediatype": "software",
+      "model_provider_used": false,
+      "observation_ids": [
+        "iaobs_item_metadata"
+      ],
+      "production_readiness_claimed": false,
+      "promotion_preview_id": "iaprv_99fa383a3a14319d",
+      "provenance": {
+        "endpoint_class": "item_metadata_read",
+        "metadata_only": true,
+        "observation_kind": "item_metadata",
+        "source_kind": "ia_fixture_replay"
+      },
+      "public_hosted_record": false,
+      "public_launch_readiness_claimed": false,
+      "raw_response_committed": false,
+      "review_decision_id": "iard_8f2e65df7eb6364a",
+      "review_item_id": "iarv_a869264efb22ff69",
+      "review_status": "locally_reviewed_from_promotion_preview",
+      "reviewed_local_index_record": true,
+      "reviewed_record_id": "iarli_3b91b7c4712bbb2e",
+      "rights_flags": [
+        "rights_not_inferred",
+        "safety_not_inferred",
+        "compatibility_not_inferred"
+      ],
+      "risk_flags": [
+        "metadata_not_truth",
+        "file_metadata_requires_review"
+      ],
+      "schema_version": "ia_reviewed_local_record.v0",
+      "source_cache_record_ids": [
+        "iasc_486af3662118be4b"
+      ],
+      "source_family": "preservation_metadata",
+      "source_id": "internet_archive_metadata",
+      "source_locator": {
+        "kind": "internet_archive_identifier",
+        "label": "Internet Archive metadata fixture locator",
+        "value_hash": "a9113b0907d33abf"
+      },
+      "summary": "Provisional ia_media_metadata_candidate from 11 IA evidence candidate(s); review is required before any promotion. Promotion remains preview-only and preserves uncertainty.",
+      "title": "Provisional ia_media_metadata_candidate from 11 IA evidence candidate(s)",
+      "uncertainty": [
+        "reconstructed from local review queue decision",
+        "promotion is dry-run only",
+        "reviewed index write is disabled",
+        "master index write is disabled",
+        "local reviewed index projection only",
+        "master index was not mutated",
+        "hosted public search was not mutated"
+      ],
+      "upload_performed": false
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "iacand_586f24d90e3814d9",
+      "checksum_summary": {},
+      "collection_refs": [],
+      "created_at": "2026-05-19T00:00:00Z",
+      "deployment_performed": false,
+      "download_performed": false,
+      "evidence_ids": [
+        "iaev_2f6d5fa64bee4bb3",
+        "iaev_64dcbd31bd4a39de",
+        "iaev_8fe077f498f3c523",
+        "iaev_90f029588c97120c",
+        "iaev_a297f63f2d595b0c"
+      ],
+      "extraction_executed": false,
+      "file_summary": {
+        "file_metadata_count": 1,
+        "metadata_only": true,
+        "sample_names": [
+          ""
+        ]
+      },
+      "item_identifier": "identifier_hash:79d168167eefa3ce",
+      "limitations": [
+        "committed metadata fixture input",
+        "required item identifier missing",
+        "partial metadata requires review before use",
+        "evidence candidate requires review",
+        "metadata does not establish rights clearance, compatibility, safety, installability, or final identity",
+        "candidate index record is not reviewed truth",
+        "no reviewed or master index mutation occurred",
+        "preview is not a final reviewed record",
+        "preview does not establish accepted truth",
+        "reviewed local record is limited to explicit temp/local instance",
+        "does not establish rights clearance, safety, compatibility, installability, or final provenance",
+        "no committed data/public_index mutation occurred"
+      ],
+      "master_index_record": false,
+      "mediatype": "software",
+      "model_provider_used": false,
+      "observation_ids": [
+        "iaobs_malformed_partial"
+      ],
+      "production_readiness_claimed": false,
+      "promotion_preview_id": "iaprv_95f3f494be5b42df",
+      "provenance": {
+        "endpoint_class": "item_metadata_read",
+        "metadata_only": true,
+        "observation_kind": "malformed_partial",
+        "source_kind": "ia_fixture_replay"
+      },
+      "public_hosted_record": false,
+      "public_launch_readiness_claimed": false,
+      "raw_response_committed": false,
+      "review_decision_id": "iard_91aad68f5b363d4d",
+      "review_item_id": "iarv_4656cd1c4cf7293b",
+      "review_status": "locally_reviewed_from_promotion_preview",
+      "reviewed_local_index_record": true,
+      "reviewed_record_id": "iarli_673ba5353bb02e1d",
+      "rights_flags": [
+        "rights_not_inferred",
+        "safety_not_inferred",
+        "compatibility_not_inferred"
+      ],
+      "risk_flags": [
+        "malformed_partial",
+        "metadata_not_truth"
+      ],
+      "schema_version": "ia_reviewed_local_record.v0",
+      "source_cache_record_ids": [
+        "iasc_014c05bb568f514f"
+      ],
+      "source_family": "preservation_metadata",
+      "source_id": "internet_archive_metadata",
+      "source_locator": {
+        "kind": "internet_archive_identifier",
+        "label": "Internet Archive metadata fixture locator",
+        "value_hash": "79d168167eefa3ce"
+      },
+      "summary": "Provisional ia_near_miss_candidate from 5 IA evidence candidate(s); review is required before any promotion. Promotion remains preview-only and preserves uncertainty.",
+      "title": "Provisional ia_near_miss_candidate from 5 IA evidence candidate(s)",
+      "uncertainty": [
+        "reconstructed from local review queue decision",
+        "promotion is dry-run only",
+        "reviewed index write is disabled",
+        "master index write is disabled",
+        "local reviewed index projection only",
+        "master index was not mutated",
+        "hosted public search was not mutated"
+      ],
+      "upload_performed": false
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "iacand_c228621ddc615ea5",
+      "checksum_summary": {
+        "algorithms": [
+          "md5"
+        ],
+        "checksum_metadata_count": 1,
+        "source_provided_metadata_only": true
+      },
+      "collection_refs": [
+        "eureka-fixture-policy"
+      ],
+      "created_at": "2026-05-19T00:00:00Z",
+      "deployment_performed": false,
+      "download_performed": false,
+      "evidence_ids": [
+        "iaev_244f3f40f4b4e155",
+        "iaev_27beb00a8459b575",
+        "iaev_2a5d708879332beb",
+        "iaev_52c98a85728eb107",
+        "iaev_5f20b07d08d794bb",
+        "iaev_78cea459fb1d361c",
+        "iaev_a28ea6cad45e95f7",
+        "iaev_a7b77010c7b7765c",
+        "iaev_b1e1dbce2bed598d",
+        "iaev_f11594d83ac319ef",
+        "iaev_f8c3705d3fc21050"
+      ],
+      "extraction_executed": false,
+      "file_summary": {
+        "file_metadata_count": 1,
+        "metadata_only": true,
+        "sample_names": [
+          "metadata_only_entry.txt"
+        ]
+      },
+      "item_identifier": "identifier_hash:16e6e44ce79c85f2",
+      "limitations": [
+        "committed metadata fixture input",
+        "item metadata is not accepted truth",
+        "file entries are metadata only",
+        "no file content included or fetched",
+        "evidence candidate requires review",
+        "metadata does not establish rights clearance, compatibility, safety, installability, or final identity",
+        "candidate index record is not reviewed truth",
+        "no reviewed or master index mutation occurred",
+        "preview is not a final reviewed record",
+        "preview does not establish accepted truth",
+        "reviewed local record is limited to explicit temp/local instance",
+        "does not establish rights clearance, safety, compatibility, installability, or final provenance",
+        "no committed data/public_index mutation occurred"
+      ],
+      "master_index_record": false,
+      "mediatype": "software",
+      "model_provider_used": false,
+      "observation_ids": [
+        "iaobs_no_download_proof"
+      ],
+      "production_readiness_claimed": false,
+      "promotion_preview_id": "iaprv_b0773c3c0c616101",
+      "provenance": {
+        "endpoint_class": "item_file_list_metadata_read",
+        "metadata_only": true,
+        "observation_kind": "no_download_proof",
+        "source_kind": "ia_fixture_replay"
+      },
+      "public_hosted_record": false,
+      "public_launch_readiness_claimed": false,
+      "raw_response_committed": false,
+      "review_decision_id": "iard_92a86402af4afe32",
+      "review_item_id": "iarv_b3ab85b0eb2a327a",
+      "review_status": "locally_reviewed_from_promotion_preview",
+      "reviewed_local_index_record": true,
+      "reviewed_record_id": "iarli_c5662ef32bf76cff",
+      "rights_flags": [
+        "rights_not_inferred",
+        "safety_not_inferred",
+        "compatibility_not_inferred"
+      ],
+      "risk_flags": [
+        "metadata_not_truth",
+        "file_metadata_requires_review"
+      ],
+      "schema_version": "ia_reviewed_local_record.v0",
+      "source_cache_record_ids": [
+        "iasc_cda081026e612d40"
+      ],
+      "source_family": "preservation_metadata",
+      "source_id": "internet_archive_metadata",
+      "source_locator": {
+        "kind": "internet_archive_identifier",
+        "label": "Internet Archive metadata fixture locator",
+        "value_hash": "16e6e44ce79c85f2"
+      },
+      "summary": "Provisional ia_source_locator_candidate from 11 IA evidence candidate(s); review is required before any promotion. Promotion remains preview-only and preserves uncertainty.",
+      "title": "Provisional ia_source_locator_candidate from 11 IA evidence candidate(s)",
+      "uncertainty": [
+        "reconstructed from local review queue decision",
+        "promotion is dry-run only",
+        "reviewed index write is disabled",
+        "master index write is disabled",
+        "local reviewed index projection only",
+        "master index was not mutated",
+        "hosted public search was not mutated"
+      ],
+      "upload_performed": false
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "iacand_763ffc98d1ecac71",
+      "checksum_summary": {},
+      "collection_refs": [],
+      "created_at": "2026-05-19T00:00:00Z",
+      "deployment_performed": false,
+      "download_performed": false,
+      "evidence_ids": [
+        "iaev_0592b810e0c28fc6",
+        "iaev_cec186a4567f9e54"
+      ],
+      "extraction_executed": false,
+      "file_summary": {},
+      "item_identifier": "identifier_hash:fb32b5d7cb8a07d0",
+      "limitations": [
+        "committed metadata fixture input",
+        "Retry-After required: 60 seconds",
+        "no retry or live request performed",
+        "evidence candidate requires review",
+        "metadata does not establish rights clearance, compatibility, safety, installability, or final identity",
+        "candidate index record is not reviewed truth",
+        "no reviewed or master index mutation occurred",
+        "preview is not a final reviewed record",
+        "preview does not establish accepted truth",
+        "reviewed local record is limited to explicit temp/local instance",
+        "does not establish rights clearance, safety, compatibility, installability, or final provenance",
+        "no committed data/public_index mutation occurred"
+      ],
+      "master_index_record": false,
+      "mediatype": "",
+      "model_provider_used": false,
+      "observation_ids": [
+        "iaobs_retry_after_429"
+      ],
+      "production_readiness_claimed": false,
+      "promotion_preview_id": "iaprv_2a2fd4a7bdabd7b0",
+      "provenance": {
+        "endpoint_class": "metadata_search_small",
+        "metadata_only": true,
+        "observation_kind": "retry_after",
+        "source_kind": "ia_fixture_replay"
+      },
+      "public_hosted_record": false,
+      "public_launch_readiness_claimed": false,
+      "raw_response_committed": false,
+      "review_decision_id": "iard_932c2a8d576170f8",
+      "review_item_id": "iarv_c69487a263f27f00",
+      "review_status": "locally_reviewed_from_promotion_preview",
+      "reviewed_local_index_record": true,
+      "reviewed_record_id": "iarli_0ea8cba87e1948ec",
+      "rights_flags": [
+        "rights_not_inferred",
+        "safety_not_inferred",
+        "compatibility_not_inferred"
+      ],
+      "risk_flags": [
+        "quota_or_rate_limit",
+        "retry_after_required"
+      ],
+      "schema_version": "ia_reviewed_local_record.v0",
+      "source_cache_record_ids": [
+        "iasc_d6d80b9ab9d56df1"
+      ],
+      "source_family": "preservation_metadata",
+      "source_id": "internet_archive_metadata",
+      "source_locator": {
+        "kind": "internet_archive_metadata_state",
+        "label": "Internet Archive metadata fixture locator",
+        "value_hash": "fb32b5d7cb8a07d0"
+      },
+      "summary": "Provisional ia_source_locator_candidate from 2 IA evidence candidate(s); review is required before any promotion. Promotion remains preview-only and preserves uncertainty.",
+      "title": "Provisional ia_source_locator_candidate from 2 IA evidence candidate(s)",
+      "uncertainty": [
+        "reconstructed from local review queue decision",
+        "promotion is dry-run only",
+        "reviewed index write is disabled",
+        "master index write is disabled",
+        "local reviewed index projection only",
+        "master index was not mutated",
+        "hosted public search was not mutated"
+      ],
+      "upload_performed": false
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "iacand_f1ac694409e5d441",
+      "checksum_summary": {},
+      "collection_refs": [],
+      "created_at": "2026-05-19T00:00:00Z",
+      "deployment_performed": false,
+      "download_performed": false,
+      "evidence_ids": [
+        "iaev_41c375106d6ae233"
+      ],
+      "extraction_executed": false,
+      "file_summary": {},
+      "item_identifier": "identifier_hash:84545f09784eeb66",
+      "limitations": [
+        "committed metadata fixture input",
+        "source reported missing item",
+        "absence is local source-miss material only",
+        "evidence candidate requires review",
+        "metadata does not establish rights clearance, compatibility, safety, installability, or final identity",
+        "candidate index record is not reviewed truth",
+        "no reviewed or master index mutation occurred",
+        "preview is not a final reviewed record",
+        "preview does not establish accepted truth",
+        "reviewed local record is limited to explicit temp/local instance",
+        "does not establish rights clearance, safety, compatibility, installability, or final provenance",
+        "no committed data/public_index mutation occurred"
+      ],
+      "master_index_record": false,
+      "mediatype": "",
+      "model_provider_used": false,
+      "observation_ids": [
+        "iaobs_missing_item"
+      ],
+      "production_readiness_claimed": false,
+      "promotion_preview_id": "iaprv_bb79426e8dcca8e5",
+      "provenance": {
+        "endpoint_class": "item_metadata_read",
+        "metadata_only": true,
+        "observation_kind": "missing_item",
+        "source_kind": "ia_fixture_replay"
+      },
+      "public_hosted_record": false,
+      "public_launch_readiness_claimed": false,
+      "raw_response_committed": false,
+      "review_decision_id": "iard_a1a28ab2f6a0bd54",
+      "review_item_id": "iarv_51cacfb5a77deead",
+      "review_status": "locally_reviewed_from_promotion_preview",
+      "reviewed_local_index_record": true,
+      "reviewed_record_id": "iarli_34cb9f5d8456fe5c",
+      "rights_flags": [
+        "rights_not_inferred",
+        "safety_not_inferred",
+        "compatibility_not_inferred"
+      ],
+      "risk_flags": [
+        "source_miss",
+        "metadata_not_truth"
+      ],
+      "schema_version": "ia_reviewed_local_record.v0",
+      "source_cache_record_ids": [
+        "iasc_81b540787730eadc"
+      ],
+      "source_family": "preservation_metadata",
+      "source_id": "internet_archive_metadata",
+      "source_locator": {
+        "kind": "internet_archive_identifier",
+        "label": "Internet Archive metadata fixture locator",
+        "value_hash": "84545f09784eeb66"
+      },
+      "summary": "Provisional ia_source_locator_candidate from 1 IA evidence candidate(s); review is required before any promotion. Promotion remains preview-only and preserves uncertainty.",
+      "title": "Provisional ia_source_locator_candidate from 1 IA evidence candidate(s)",
+      "uncertainty": [
+        "reconstructed from local review queue decision",
+        "promotion is dry-run only",
+        "reviewed index write is disabled",
+        "master index write is disabled",
+        "local reviewed index projection only",
+        "master index was not mutated",
+        "hosted public search was not mutated"
+      ],
+      "upload_performed": false
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "iacand_14724afa6a849eff",
+      "checksum_summary": {},
+      "collection_refs": [
+        "eureka-fixture-collection"
+      ],
+      "created_at": "2026-05-19T00:00:00Z",
+      "deployment_performed": false,
+      "download_performed": false,
+      "evidence_ids": [
+        "iaev_01960f45b5bcbf17",
+        "iaev_26c84b4efff1dc71",
+        "iaev_296760a3253cd530",
+        "iaev_3aa13442c9f9e114",
+        "iaev_813f11e247d10f88",
+        "iaev_8c3fb0ca3c9d558a",
+        "iaev_e88b611d7f07fe5a",
+        "iaev_f93f62c86fd367fc"
+      ],
+      "extraction_executed": false,
+      "file_summary": {},
+      "item_identifier": "identifier_hash:6903aadb44eda3c2",
+      "limitations": [
+        "committed metadata fixture input",
+        "metadata search result is not accepted truth",
+        "bounded search rows observed: 2",
+        "evidence candidate requires review",
+        "metadata does not establish rights clearance, compatibility, safety, installability, or final identity",
+        "candidate index record is not reviewed truth",
+        "no reviewed or master index mutation occurred",
+        "preview is not a final reviewed record",
+        "preview does not establish accepted truth",
+        "reviewed local record is limited to explicit temp/local instance",
+        "does not establish rights clearance, safety, compatibility, installability, or final provenance",
+        "no committed data/public_index mutation occurred"
+      ],
+      "master_index_record": false,
+      "mediatype": "movies",
+      "model_provider_used": false,
+      "observation_ids": [
+        "iaobs_metadata_search_small"
+      ],
+      "production_readiness_claimed": false,
+      "promotion_preview_id": "iaprv_84118d83ab9eb625",
+      "provenance": {
+        "endpoint_class": "metadata_search_small",
+        "metadata_only": true,
+        "observation_kind": "metadata_search_result",
+        "source_kind": "ia_fixture_replay"
+      },
+      "public_hosted_record": false,
+      "public_launch_readiness_claimed": false,
+      "raw_response_committed": false,
+      "review_decision_id": "iard_a40a8ca05eed2a1c",
+      "review_item_id": "iarv_000e8a37aaf87b78",
+      "review_status": "locally_reviewed_from_promotion_preview",
+      "reviewed_local_index_record": true,
+      "reviewed_record_id": "iarli_3c6aaa96d6b96c69",
+      "rights_flags": [
+        "rights_not_inferred",
+        "safety_not_inferred",
+        "compatibility_not_inferred"
+      ],
+      "risk_flags": [
+        "metadata_not_truth",
+        "search_result_requires_review"
+      ],
+      "schema_version": "ia_reviewed_local_record.v0",
+      "source_cache_record_ids": [
+        "iasc_acd68738edd11325"
+      ],
+      "source_family": "preservation_metadata",
+      "source_id": "internet_archive_metadata",
+      "source_locator": {
+        "kind": "internet_archive_identifier",
+        "label": "Internet Archive metadata fixture locator",
+        "value_hash": "6903aadb44eda3c2"
+      },
+      "summary": "Provisional ia_media_metadata_candidate from 8 IA evidence candidate(s); review is required before any promotion. Promotion remains preview-only and preserves uncertainty.",
+      "title": "Provisional ia_media_metadata_candidate from 8 IA evidence candidate(s)",
+      "uncertainty": [
+        "reconstructed from local review queue decision",
+        "promotion is dry-run only",
+        "reviewed index write is disabled",
+        "master index write is disabled",
+        "local reviewed index projection only",
+        "master index was not mutated",
+        "hosted public search was not mutated"
+      ],
+      "upload_performed": false
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "iacand_47da10ac0188774a",
+      "checksum_summary": {
+        "algorithms": [],
+        "checksum_metadata_count": 5,
+        "source_provided_metadata_only": true
+      },
+      "collection_refs": [
+        {
+          "collection_metadata_count": 2
+        }
+      ],
+      "created_at": "2026-05-19T00:00:00Z",
+      "deployment_performed": false,
+      "download_performed": false,
+      "evidence_ids": [
+        "iaev_0791b8b130b67d35",
+        "iaev_09aa75883d835dd8",
+        "iaev_20211833e49b1b62",
+        "iaev_79dd683dbacc6833",
+        "iaev_8bfe4d4d4da0eb3f",
+        "iaev_8deab278d0406b26",
+        "iaev_ae814b9c1885f1e2",
+        "iaev_cf0b62e356700e9b"
+      ],
+      "extraction_executed": false,
+      "file_summary": {
+        "file_metadata_count": 5,
+        "metadata_only": true,
+        "sample_names": []
+      },
+      "item_identifier": "identifier_hash:1b18e0c3ed14344e",
+      "limitations": [
+        "committed metadata fixture input",
+        "item metadata is not accepted truth",
+        "file entries are metadata only",
+        "evidence candidate requires review",
+        "metadata does not establish rights clearance, compatibility, safety, installability, or final identity",
+        "candidate index record is not reviewed truth",
+        "no reviewed or master index mutation occurred",
+        "preview is not a final reviewed record",
+        "preview does not establish accepted truth",
+        "reviewed local record is limited to explicit temp/local instance",
+        "does not establish rights clearance, safety, compatibility, installability, or final provenance",
+        "no committed data/public_index mutation occurred"
+      ],
+      "master_index_record": false,
+      "mediatype": "data",
+      "model_provider_used": false,
+      "observation_ids": [
+        "iaobs_live_item_metadata"
+      ],
+      "production_readiness_claimed": false,
+      "promotion_preview_id": "iaprv_8936b07eeeea21af",
+      "provenance": {
+        "endpoint_class": "item_metadata_read",
+        "metadata_only": true,
+        "observation_kind": "item_metadata",
+        "source_kind": "ia_live_probe_preview",
+        "source_query": "sampleproject"
+      },
+      "public_hosted_record": false,
+      "public_launch_readiness_claimed": false,
+      "raw_response_committed": false,
+      "review_decision_id": "iard_b1237f126e8e5170",
+      "review_item_id": "iarv_d515b3637201aedd",
+      "review_status": "locally_reviewed_from_promotion_preview",
+      "reviewed_local_index_record": true,
+      "reviewed_record_id": "iarli_b184dc4ec8cec05b",
+      "rights_flags": [
+        "rights_not_inferred",
+        "safety_not_inferred",
+        "compatibility_not_inferred"
+      ],
+      "risk_flags": [
+        "metadata_not_truth",
+        "file_metadata_requires_review"
+      ],
+      "schema_version": "ia_reviewed_local_record.v0",
+      "source_cache_record_ids": [
+        "iasc_86a3e225f319eb4c"
+      ],
+      "source_family": "preservation_metadata",
+      "source_id": "internet_archive_metadata",
+      "source_locator": {
+        "kind": "internet_archive_identifier_hash",
+        "label": "Internet Archive redacted live metadata preview locator",
+        "value_hash": "1b18e0c3ed14344e"
+      },
+      "summary": "Provisional ia_item_candidate from 8 IA evidence candidate(s); review is required before any promotion. Promotion remains preview-only and preserves uncertainty.",
+      "title": "Provisional ia_item_candidate from 8 IA evidence candidate(s)",
+      "uncertainty": [
+        "reconstructed from local review queue decision",
+        "promotion is dry-run only",
+        "reviewed index write is disabled",
+        "master index write is disabled",
+        "local reviewed index projection only",
+        "master index was not mutated",
+        "hosted public search was not mutated"
+      ],
+      "upload_performed": false
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "iacand_278d1a6314e8b6ed",
+      "checksum_summary": {},
+      "collection_refs": [
+        {
+          "collection_metadata_count": 2
+        }
+      ],
+      "created_at": "2026-05-19T00:00:00Z",
+      "deployment_performed": false,
+      "download_performed": false,
+      "evidence_ids": [
+        "iaev_0f4c6372808cff0b",
+        "iaev_5541d091e20c5bcd",
+        "iaev_764263872435608b",
+        "iaev_92764c5cbcc65320",
+        "iaev_f5e8db03b2b996f6"
+      ],
+      "extraction_executed": false,
+      "file_summary": {},
+      "item_identifier": "identifier_hash:1b18e0c3ed14344e",
+      "limitations": [
+        "committed metadata fixture input",
+        "metadata search result is not accepted truth",
+        "bounded search rows observed: 1",
+        "evidence candidate requires review",
+        "metadata does not establish rights clearance, compatibility, safety, installability, or final identity",
+        "candidate index record is not reviewed truth",
+        "no reviewed or master index mutation occurred",
+        "preview is not a final reviewed record",
+        "preview does not establish accepted truth",
+        "reviewed local record is limited to explicit temp/local instance",
+        "does not establish rights clearance, safety, compatibility, installability, or final provenance",
+        "no committed data/public_index mutation occurred"
+      ],
+      "master_index_record": false,
+      "mediatype": "data",
+      "model_provider_used": false,
+      "observation_ids": [
+        "iaobs_live_metadata_search_small"
+      ],
+      "production_readiness_claimed": false,
+      "promotion_preview_id": "iaprv_0fd571c4099239c9",
+      "provenance": {
+        "endpoint_class": "metadata_search_small",
+        "metadata_only": true,
+        "observation_kind": "metadata_search_result",
+        "source_kind": "ia_live_probe_preview",
+        "source_query": "sampleproject"
+      },
+      "public_hosted_record": false,
+      "public_launch_readiness_claimed": false,
+      "raw_response_committed": false,
+      "review_decision_id": "iard_bd6133eaf96139bd",
+      "review_item_id": "iarv_cd6ccedf8935bd6d",
+      "review_status": "locally_reviewed_from_promotion_preview",
+      "reviewed_local_index_record": true,
+      "reviewed_record_id": "iarli_9d81d56ac1862e37",
+      "rights_flags": [
+        "rights_not_inferred",
+        "safety_not_inferred",
+        "compatibility_not_inferred"
+      ],
+      "risk_flags": [
+        "metadata_not_truth",
+        "search_result_requires_review"
+      ],
+      "schema_version": "ia_reviewed_local_record.v0",
+      "source_cache_record_ids": [
+        "iasc_20f8f95fdcf7ace3"
+      ],
+      "source_family": "preservation_metadata",
+      "source_id": "internet_archive_metadata",
+      "source_locator": {
+        "kind": "internet_archive_identifier_hash",
+        "label": "Internet Archive redacted live metadata preview locator",
+        "value_hash": "1b18e0c3ed14344e"
+      },
+      "summary": "Provisional ia_media_metadata_candidate from 5 IA evidence candidate(s); review is required before any promotion. Promotion remains preview-only and preserves uncertainty.",
+      "title": "Provisional ia_media_metadata_candidate from 5 IA evidence candidate(s)",
+      "uncertainty": [
+        "reconstructed from local review queue decision",
+        "promotion is dry-run only",
+        "reviewed index write is disabled",
+        "master index write is disabled",
+        "local reviewed index projection only",
+        "master index was not mutated",
+        "hosted public search was not mutated"
+      ],
+      "upload_performed": false
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "iacand_4b1a20d736f471d3",
+      "checksum_summary": {
+        "algorithms": [
+          "md5",
+          "sha1"
+        ],
+        "checksum_metadata_count": 1,
+        "source_provided_metadata_only": true
+      },
+      "collection_refs": [
+        "eureka-fixture-software"
+      ],
+      "created_at": "2026-05-19T00:00:00Z",
+      "deployment_performed": false,
+      "download_performed": false,
+      "evidence_ids": [
+        "iaev_2e4597bf2d0205f2",
+        "iaev_3a935120fad455e5",
+        "iaev_79665430d7ad709c",
+        "iaev_8c364b463c33ed9b",
+        "iaev_90c55021014df176",
+        "iaev_976e5cae841c84db",
+        "iaev_a706a99df5123bd5",
+        "iaev_ae6357bcacd9e25a",
+        "iaev_c54b48f4aa183ee6",
+        "iaev_f68fca1af5f2aa81",
+        "iaev_ff9f3f66bdb6125c"
+      ],
+      "extraction_executed": false,
+      "file_summary": {
+        "file_metadata_count": 1,
+        "metadata_only": true,
+        "sample_names": [
+          "StyleWriter_2500_Readme.txt"
+        ]
+      },
+      "item_identifier": "identifier_hash:a9113b0907d33abf",
+      "limitations": [
+        "committed metadata fixture input",
+        "item metadata is not accepted truth",
+        "file entries are metadata only",
+        "evidence candidate requires review",
+        "metadata does not establish rights clearance, compatibility, safety, installability, or final identity",
+        "candidate index record is not reviewed truth",
+        "no reviewed or master index mutation occurred",
+        "preview is not a final reviewed record",
+        "preview does not establish accepted truth",
+        "reviewed local record is limited to explicit temp/local instance",
+        "does not establish rights clearance, safety, compatibility, installability, or final provenance",
+        "no committed data/public_index mutation occurred"
+      ],
+      "master_index_record": false,
+      "mediatype": "software",
+      "model_provider_used": false,
+      "observation_ids": [
+        "iaobs_item_metadata"
+      ],
+      "production_readiness_claimed": false,
+      "promotion_preview_id": "iaprv_5e5139a865b5ac89",
+      "provenance": {
+        "endpoint_class": "item_metadata_read",
+        "metadata_only": true,
+        "observation_kind": "item_metadata",
+        "source_kind": "ia_fixture_replay"
+      },
+      "public_hosted_record": false,
+      "public_launch_readiness_claimed": false,
+      "raw_response_committed": false,
+      "review_decision_id": "iard_c26fd8dcacdb132c",
+      "review_item_id": "iarv_4520161d56bf1f6b",
+      "review_status": "locally_reviewed_from_promotion_preview",
+      "reviewed_local_index_record": true,
+      "reviewed_record_id": "iarli_aff0029b3551998d",
+      "rights_flags": [
+        "rights_not_inferred",
+        "safety_not_inferred",
+        "compatibility_not_inferred"
+      ],
+      "risk_flags": [
+        "metadata_not_truth",
+        "file_metadata_requires_review"
+      ],
+      "schema_version": "ia_reviewed_local_record.v0",
+      "source_cache_record_ids": [
+        "iasc_486af3662118be4b"
+      ],
+      "source_family": "preservation_metadata",
+      "source_id": "internet_archive_metadata",
+      "source_locator": {
+        "kind": "internet_archive_identifier",
+        "label": "Internet Archive metadata fixture locator",
+        "value_hash": "a9113b0907d33abf"
+      },
+      "summary": "Provisional ia_source_locator_candidate from 11 IA evidence candidate(s); review is required before any promotion. Promotion remains preview-only and preserves uncertainty.",
+      "title": "Provisional ia_source_locator_candidate from 11 IA evidence candidate(s)",
+      "uncertainty": [
+        "reconstructed from local review queue decision",
+        "promotion is dry-run only",
+        "reviewed index write is disabled",
+        "master index write is disabled",
+        "local reviewed index projection only",
+        "master index was not mutated",
+        "hosted public search was not mutated"
+      ],
+      "upload_performed": false
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "iacand_21108e06acfef8f8",
+      "checksum_summary": {
+        "algorithms": [
+          "md5"
+        ],
+        "checksum_metadata_count": 5,
+        "source_provided_metadata_only": true
+      },
+      "collection_refs": [
+        "eureka-fixture-software"
+      ],
+      "created_at": "2026-05-19T00:00:00Z",
+      "deployment_performed": false,
+      "download_performed": false,
+      "evidence_ids": [
+        "iaev_0178360374d0d58d",
+        "iaev_220304b424601f3c",
+        "iaev_3629751c04340905",
+        "iaev_46ceee78e9429a6f",
+        "iaev_6d91c63287f7d9c7",
+        "iaev_7a06c7cef7535a7b",
+        "iaev_94dd95c5bc84b603",
+        "iaev_a342a599a0211a08",
+        "iaev_bc862a54606481de",
+        "iaev_bcfefdfba989d734",
+        "iaev_e0174a14adea8df3"
+      ],
+      "extraction_executed": false,
+      "file_summary": {
+        "file_metadata_count": 5,
+        "metadata_only": true,
+        "sample_names": [
+          "file_001.txt",
+          "file_002.txt",
+          "file_003.txt"
+        ]
+      },
+      "item_identifier": "identifier_hash:abcf9ffbd90b5b54",
+      "limitations": [
+        "committed metadata fixture input",
+        "item metadata is not accepted truth",
+        "file entries are metadata only",
+        "file metadata candidates capped at 5 of 8",
+        "evidence candidate requires review",
+        "metadata does not establish rights clearance, compatibility, safety, installability, or final identity",
+        "candidate index record is not reviewed truth",
+        "no reviewed or master index mutation occurred",
+        "preview is not a final reviewed record",
+        "preview does not establish accepted truth",
+        "reviewed local record is limited to explicit temp/local instance",
+        "does not establish rights clearance, safety, compatibility, installability, or final provenance",
+        "no committed data/public_index mutation occurred"
+      ],
+      "master_index_record": false,
+      "mediatype": "software",
+      "model_provider_used": false,
+      "observation_ids": [
+        "iaobs_large_file_list"
+      ],
+      "production_readiness_claimed": false,
+      "promotion_preview_id": "iaprv_43ac5b53e99827b8",
+      "provenance": {
+        "endpoint_class": "item_file_list_metadata_read",
+        "metadata_only": true,
+        "observation_kind": "large_file_list",
+        "source_kind": "ia_fixture_replay"
+      },
+      "public_hosted_record": false,
+      "public_launch_readiness_claimed": false,
+      "raw_response_committed": false,
+      "review_decision_id": "iard_c279e6cbdfa37089",
+      "review_item_id": "iarv_d869da26388348e4",
+      "review_status": "locally_reviewed_from_promotion_preview",
+      "reviewed_local_index_record": true,
+      "reviewed_record_id": "iarli_6bad1d477c85a792",
+      "rights_flags": [
+        "rights_not_inferred",
+        "safety_not_inferred",
+        "compatibility_not_inferred"
+      ],
+      "risk_flags": [
+        "metadata_not_truth",
+        "file_metadata_requires_review"
+      ],
+      "schema_version": "ia_reviewed_local_record.v0",
+      "source_cache_record_ids": [
+        "iasc_0942d6dacc0c596b"
+      ],
+      "source_family": "preservation_metadata",
+      "source_id": "internet_archive_metadata",
+      "source_locator": {
+        "kind": "internet_archive_identifier",
+        "label": "Internet Archive metadata fixture locator",
+        "value_hash": "abcf9ffbd90b5b54"
+      },
+      "summary": "Provisional ia_source_locator_candidate from 11 IA evidence candidate(s); review is required before any promotion. Promotion remains preview-only and preserves uncertainty.",
+      "title": "Provisional ia_source_locator_candidate from 11 IA evidence candidate(s)",
+      "uncertainty": [
+        "reconstructed from local review queue decision",
+        "promotion is dry-run only",
+        "reviewed index write is disabled",
+        "master index write is disabled",
+        "local reviewed index projection only",
+        "master index was not mutated",
+        "hosted public search was not mutated"
+      ],
+      "upload_performed": false
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "iacand_4aaf89e0e011f790",
+      "checksum_summary": {
+        "algorithms": [],
+        "checksum_metadata_count": 5,
+        "source_provided_metadata_only": true
+      },
+      "collection_refs": [
+        {
+          "collection_metadata_count": 2
+        }
+      ],
+      "created_at": "2026-05-19T00:00:00Z",
+      "deployment_performed": false,
+      "download_performed": false,
+      "evidence_ids": [
+        "iaev_0791b8b130b67d35",
+        "iaev_09aa75883d835dd8",
+        "iaev_20211833e49b1b62",
+        "iaev_79dd683dbacc6833",
+        "iaev_8bfe4d4d4da0eb3f",
+        "iaev_8deab278d0406b26",
+        "iaev_ae814b9c1885f1e2",
+        "iaev_cf0b62e356700e9b"
+      ],
+      "extraction_executed": false,
+      "file_summary": {
+        "file_metadata_count": 5,
+        "metadata_only": true,
+        "sample_names": []
+      },
+      "item_identifier": "identifier_hash:1b18e0c3ed14344e",
+      "limitations": [
+        "committed metadata fixture input",
+        "item metadata is not accepted truth",
+        "file entries are metadata only",
+        "evidence candidate requires review",
+        "metadata does not establish rights clearance, compatibility, safety, installability, or final identity",
+        "candidate index record is not reviewed truth",
+        "no reviewed or master index mutation occurred",
+        "preview is not a final reviewed record",
+        "preview does not establish accepted truth",
+        "reviewed local record is limited to explicit temp/local instance",
+        "does not establish rights clearance, safety, compatibility, installability, or final provenance",
+        "no committed data/public_index mutation occurred"
+      ],
+      "master_index_record": false,
+      "mediatype": "data",
+      "model_provider_used": false,
+      "observation_ids": [
+        "iaobs_live_item_metadata"
+      ],
+      "production_readiness_claimed": false,
+      "promotion_preview_id": "iaprv_1aad722c34878c9f",
+      "provenance": {
+        "endpoint_class": "item_metadata_read",
+        "metadata_only": true,
+        "observation_kind": "item_metadata",
+        "source_kind": "ia_live_probe_preview",
+        "source_query": "sampleproject"
+      },
+      "public_hosted_record": false,
+      "public_launch_readiness_claimed": false,
+      "raw_response_committed": false,
+      "review_decision_id": "iard_c27cf49d02a2a536",
+      "review_item_id": "iarv_34f1b60169d5a493",
+      "review_status": "locally_reviewed_from_promotion_preview",
+      "reviewed_local_index_record": true,
+      "reviewed_record_id": "iarli_221e8f4a1516b38c",
+      "rights_flags": [
+        "rights_not_inferred",
+        "safety_not_inferred",
+        "compatibility_not_inferred"
+      ],
+      "risk_flags": [
+        "metadata_not_truth",
+        "file_metadata_requires_review"
+      ],
+      "schema_version": "ia_reviewed_local_record.v0",
+      "source_cache_record_ids": [
+        "iasc_86a3e225f319eb4c"
+      ],
+      "source_family": "preservation_metadata",
+      "source_id": "internet_archive_metadata",
+      "source_locator": {
+        "kind": "internet_archive_identifier_hash",
+        "label": "Internet Archive redacted live metadata preview locator",
+        "value_hash": "1b18e0c3ed14344e"
+      },
+      "summary": "Provisional ia_file_list_candidate from 8 IA evidence candidate(s); review is required before any promotion. Promotion remains preview-only and preserves uncertainty.",
+      "title": "Provisional ia_file_list_candidate from 8 IA evidence candidate(s)",
+      "uncertainty": [
+        "reconstructed from local review queue decision",
+        "promotion is dry-run only",
+        "reviewed index write is disabled",
+        "master index write is disabled",
+        "local reviewed index projection only",
+        "master index was not mutated",
+        "hosted public search was not mutated"
+      ],
+      "upload_performed": false
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "iacand_9ede0c7d2d671c5d",
+      "checksum_summary": {
+        "algorithms": [
+          "md5"
+        ],
+        "checksum_metadata_count": 5,
+        "source_provided_metadata_only": true
+      },
+      "collection_refs": [
+        "eureka-fixture-software"
+      ],
+      "created_at": "2026-05-19T00:00:00Z",
+      "deployment_performed": false,
+      "download_performed": false,
+      "evidence_ids": [
+        "iaev_0178360374d0d58d",
+        "iaev_220304b424601f3c",
+        "iaev_3629751c04340905",
+        "iaev_46ceee78e9429a6f",
+        "iaev_6d91c63287f7d9c7",
+        "iaev_7a06c7cef7535a7b",
+        "iaev_94dd95c5bc84b603",
+        "iaev_a342a599a0211a08",
+        "iaev_bc862a54606481de",
+        "iaev_bcfefdfba989d734",
+        "iaev_e0174a14adea8df3"
+      ],
+      "extraction_executed": false,
+      "file_summary": {
+        "file_metadata_count": 5,
+        "metadata_only": true,
+        "sample_names": [
+          "file_001.txt",
+          "file_002.txt",
+          "file_003.txt"
+        ]
+      },
+      "item_identifier": "identifier_hash:abcf9ffbd90b5b54",
+      "limitations": [
+        "committed metadata fixture input",
+        "item metadata is not accepted truth",
+        "file entries are metadata only",
+        "file metadata candidates capped at 5 of 8",
+        "evidence candidate requires review",
+        "metadata does not establish rights clearance, compatibility, safety, installability, or final identity",
+        "candidate index record is not reviewed truth",
+        "no reviewed or master index mutation occurred",
+        "preview is not a final reviewed record",
+        "preview does not establish accepted truth",
+        "reviewed local record is limited to explicit temp/local instance",
+        "does not establish rights clearance, safety, compatibility, installability, or final provenance",
+        "no committed data/public_index mutation occurred"
+      ],
+      "master_index_record": false,
+      "mediatype": "software",
+      "model_provider_used": false,
+      "observation_ids": [
+        "iaobs_large_file_list"
+      ],
+      "production_readiness_claimed": false,
+      "promotion_preview_id": "iaprv_d051337ad0956173",
+      "provenance": {
+        "endpoint_class": "item_file_list_metadata_read",
+        "metadata_only": true,
+        "observation_kind": "large_file_list",
+        "source_kind": "ia_fixture_replay"
+      },
+      "public_hosted_record": false,
+      "public_launch_readiness_claimed": false,
+      "raw_response_committed": false,
+      "review_decision_id": "iard_c8eda984aea4148f",
+      "review_item_id": "iarv_d767726f690435bb",
+      "review_status": "locally_reviewed_from_promotion_preview",
+      "reviewed_local_index_record": true,
+      "reviewed_record_id": "iarli_00627d34e9f9fcb0",
+      "rights_flags": [
+        "rights_not_inferred",
+        "safety_not_inferred",
+        "compatibility_not_inferred"
+      ],
+      "risk_flags": [
+        "metadata_not_truth",
+        "file_metadata_requires_review"
+      ],
+      "schema_version": "ia_reviewed_local_record.v0",
+      "source_cache_record_ids": [
+        "iasc_0942d6dacc0c596b"
+      ],
+      "source_family": "preservation_metadata",
+      "source_id": "internet_archive_metadata",
+      "source_locator": {
+        "kind": "internet_archive_identifier",
+        "label": "Internet Archive metadata fixture locator",
+        "value_hash": "abcf9ffbd90b5b54"
+      },
+      "summary": "Provisional ia_collection_member_candidate from 11 IA evidence candidate(s); review is required before any promotion. Promotion remains preview-only and preserves uncertainty.",
+      "title": "Provisional ia_collection_member_candidate from 11 IA evidence candidate(s)",
+      "uncertainty": [
+        "reconstructed from local review queue decision",
+        "promotion is dry-run only",
+        "reviewed index write is disabled",
+        "master index write is disabled",
+        "local reviewed index projection only",
+        "master index was not mutated",
+        "hosted public search was not mutated"
+      ],
+      "upload_performed": false
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "iacand_68255099a5a7a4ab",
+      "checksum_summary": {
+        "algorithms": [
+          "md5"
+        ],
+        "checksum_metadata_count": 1,
+        "source_provided_metadata_only": true
+      },
+      "collection_refs": [
+        "eureka-fixture-policy"
+      ],
+      "created_at": "2026-05-19T00:00:00Z",
+      "deployment_performed": false,
+      "download_performed": false,
+      "evidence_ids": [
+        "iaev_244f3f40f4b4e155",
+        "iaev_27beb00a8459b575",
+        "iaev_2a5d708879332beb",
+        "iaev_52c98a85728eb107",
+        "iaev_5f20b07d08d794bb",
+        "iaev_78cea459fb1d361c",
+        "iaev_a28ea6cad45e95f7",
+        "iaev_a7b77010c7b7765c",
+        "iaev_b1e1dbce2bed598d",
+        "iaev_f11594d83ac319ef",
+        "iaev_f8c3705d3fc21050"
+      ],
+      "extraction_executed": false,
+      "file_summary": {
+        "file_metadata_count": 1,
+        "metadata_only": true,
+        "sample_names": [
+          "metadata_only_entry.txt"
+        ]
+      },
+      "item_identifier": "identifier_hash:16e6e44ce79c85f2",
+      "limitations": [
+        "committed metadata fixture input",
+        "item metadata is not accepted truth",
+        "file entries are metadata only",
+        "no file content included or fetched",
+        "evidence candidate requires review",
+        "metadata does not establish rights clearance, compatibility, safety, installability, or final identity",
+        "candidate index record is not reviewed truth",
+        "no reviewed or master index mutation occurred",
+        "preview is not a final reviewed record",
+        "preview does not establish accepted truth",
+        "reviewed local record is limited to explicit temp/local instance",
+        "does not establish rights clearance, safety, compatibility, installability, or final provenance",
+        "no committed data/public_index mutation occurred"
+      ],
+      "master_index_record": false,
+      "mediatype": "software",
+      "model_provider_used": false,
+      "observation_ids": [
+        "iaobs_no_download_proof"
+      ],
+      "production_readiness_claimed": false,
+      "promotion_preview_id": "iaprv_185807d69ee70f68",
+      "provenance": {
+        "endpoint_class": "item_file_list_metadata_read",
+        "metadata_only": true,
+        "observation_kind": "no_download_proof",
+        "source_kind": "ia_fixture_replay"
+      },
+      "public_hosted_record": false,
+      "public_launch_readiness_claimed": false,
+      "raw_response_committed": false,
+      "review_decision_id": "iard_cd664e045bdff639",
+      "review_item_id": "iarv_67079faa0fa950fb",
+      "review_status": "locally_reviewed_from_promotion_preview",
+      "reviewed_local_index_record": true,
+      "reviewed_record_id": "iarli_898b943e64efa1a3",
+      "rights_flags": [
+        "rights_not_inferred",
+        "safety_not_inferred",
+        "compatibility_not_inferred"
+      ],
+      "risk_flags": [
+        "metadata_not_truth",
+        "file_metadata_requires_review"
+      ],
+      "schema_version": "ia_reviewed_local_record.v0",
+      "source_cache_record_ids": [
+        "iasc_cda081026e612d40"
+      ],
+      "source_family": "preservation_metadata",
+      "source_id": "internet_archive_metadata",
+      "source_locator": {
+        "kind": "internet_archive_identifier",
+        "label": "Internet Archive metadata fixture locator",
+        "value_hash": "16e6e44ce79c85f2"
+      },
+      "summary": "Provisional ia_file_list_candidate from 11 IA evidence candidate(s); review is required before any promotion. Promotion remains preview-only and preserves uncertainty.",
+      "title": "Provisional ia_file_list_candidate from 11 IA evidence candidate(s)",
+      "uncertainty": [
+        "reconstructed from local review queue decision",
+        "promotion is dry-run only",
+        "reviewed index write is disabled",
+        "master index write is disabled",
+        "local reviewed index projection only",
+        "master index was not mutated",
+        "hosted public search was not mutated"
+      ],
+      "upload_performed": false
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "iacand_12ab9bb95169f2e7",
+      "checksum_summary": {
+        "algorithms": [],
+        "checksum_metadata_count": 5,
+        "source_provided_metadata_only": true
+      },
+      "collection_refs": [
+        {
+          "collection_metadata_count": 2
+        }
+      ],
+      "created_at": "2026-05-19T00:00:00Z",
+      "deployment_performed": false,
+      "download_performed": false,
+      "evidence_ids": [
+        "iaev_0791b8b130b67d35",
+        "iaev_09aa75883d835dd8",
+        "iaev_20211833e49b1b62",
+        "iaev_79dd683dbacc6833",
+        "iaev_8bfe4d4d4da0eb3f",
+        "iaev_8deab278d0406b26",
+        "iaev_ae814b9c1885f1e2",
+        "iaev_cf0b62e356700e9b"
+      ],
+      "extraction_executed": false,
+      "file_summary": {
+        "file_metadata_count": 5,
+        "metadata_only": true,
+        "sample_names": []
+      },
+      "item_identifier": "identifier_hash:1b18e0c3ed14344e",
+      "limitations": [
+        "committed metadata fixture input",
+        "item metadata is not accepted truth",
+        "file entries are metadata only",
+        "evidence candidate requires review",
+        "metadata does not establish rights clearance, compatibility, safety, installability, or final identity",
+        "candidate index record is not reviewed truth",
+        "no reviewed or master index mutation occurred",
+        "preview is not a final reviewed record",
+        "preview does not establish accepted truth",
+        "reviewed local record is limited to explicit temp/local instance",
+        "does not establish rights clearance, safety, compatibility, installability, or final provenance",
+        "no committed data/public_index mutation occurred"
+      ],
+      "master_index_record": false,
+      "mediatype": "data",
+      "model_provider_used": false,
+      "observation_ids": [
+        "iaobs_live_item_metadata"
+      ],
+      "production_readiness_claimed": false,
+      "promotion_preview_id": "iaprv_d0729a54d7f8a786",
+      "provenance": {
+        "endpoint_class": "item_metadata_read",
+        "metadata_only": true,
+        "observation_kind": "item_metadata",
+        "source_kind": "ia_live_probe_preview",
+        "source_query": "sampleproject"
+      },
+      "public_hosted_record": false,
+      "public_launch_readiness_claimed": false,
+      "raw_response_committed": false,
+      "review_decision_id": "iard_cf5bb051a250c68d",
+      "review_item_id": "iarv_cec2f592725cc6a6",
+      "review_status": "locally_reviewed_from_promotion_preview",
+      "reviewed_local_index_record": true,
+      "reviewed_record_id": "iarli_6f76a204f24857e0",
+      "rights_flags": [
+        "rights_not_inferred",
+        "safety_not_inferred",
+        "compatibility_not_inferred"
+      ],
+      "risk_flags": [
+        "metadata_not_truth",
+        "file_metadata_requires_review"
+      ],
+      "schema_version": "ia_reviewed_local_record.v0",
+      "source_cache_record_ids": [
+        "iasc_86a3e225f319eb4c"
+      ],
+      "source_family": "preservation_metadata",
+      "source_id": "internet_archive_metadata",
+      "source_locator": {
+        "kind": "internet_archive_identifier_hash",
+        "label": "Internet Archive redacted live metadata preview locator",
+        "value_hash": "1b18e0c3ed14344e"
+      },
+      "summary": "Provisional ia_source_locator_candidate from 8 IA evidence candidate(s); review is required before any promotion. Promotion remains preview-only and preserves uncertainty.",
+      "title": "Provisional ia_source_locator_candidate from 8 IA evidence candidate(s)",
+      "uncertainty": [
+        "reconstructed from local review queue decision",
+        "promotion is dry-run only",
+        "reviewed index write is disabled",
+        "master index write is disabled",
+        "local reviewed index projection only",
+        "master index was not mutated",
+        "hosted public search was not mutated"
+      ],
+      "upload_performed": false
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "iacand_c8a5985c96bd512b",
+      "checksum_summary": {},
+      "collection_refs": [
+        "eureka-fixture-collection"
+      ],
+      "created_at": "2026-05-19T00:00:00Z",
+      "deployment_performed": false,
+      "download_performed": false,
+      "evidence_ids": [
+        "iaev_01960f45b5bcbf17",
+        "iaev_26c84b4efff1dc71",
+        "iaev_296760a3253cd530",
+        "iaev_3aa13442c9f9e114",
+        "iaev_813f11e247d10f88",
+        "iaev_8c3fb0ca3c9d558a",
+        "iaev_e88b611d7f07fe5a",
+        "iaev_f93f62c86fd367fc"
+      ],
+      "extraction_executed": false,
+      "file_summary": {},
+      "item_identifier": "identifier_hash:6903aadb44eda3c2",
+      "limitations": [
+        "committed metadata fixture input",
+        "metadata search result is not accepted truth",
+        "bounded search rows observed: 2",
+        "evidence candidate requires review",
+        "metadata does not establish rights clearance, compatibility, safety, installability, or final identity",
+        "candidate index record is not reviewed truth",
+        "no reviewed or master index mutation occurred",
+        "preview is not a final reviewed record",
+        "preview does not establish accepted truth",
+        "reviewed local record is limited to explicit temp/local instance",
+        "does not establish rights clearance, safety, compatibility, installability, or final provenance",
+        "no committed data/public_index mutation occurred"
+      ],
+      "master_index_record": false,
+      "mediatype": "movies",
+      "model_provider_used": false,
+      "observation_ids": [
+        "iaobs_metadata_search_small"
+      ],
+      "production_readiness_claimed": false,
+      "promotion_preview_id": "iaprv_16fc0a508b727757",
+      "provenance": {
+        "endpoint_class": "metadata_search_small",
+        "metadata_only": true,
+        "observation_kind": "metadata_search_result",
+        "source_kind": "ia_fixture_replay"
+      },
+      "public_hosted_record": false,
+      "public_launch_readiness_claimed": false,
+      "raw_response_committed": false,
+      "review_decision_id": "iard_e1ec8fdeff6383ec",
+      "review_item_id": "iarv_0367dc75007158bb",
+      "review_status": "locally_reviewed_from_promotion_preview",
+      "reviewed_local_index_record": true,
+      "reviewed_record_id": "iarli_6d7b9b838d9d8d76",
+      "rights_flags": [
+        "rights_not_inferred",
+        "safety_not_inferred",
+        "compatibility_not_inferred"
+      ],
+      "risk_flags": [
+        "metadata_not_truth",
+        "search_result_requires_review"
+      ],
+      "schema_version": "ia_reviewed_local_record.v0",
+      "source_cache_record_ids": [
+        "iasc_acd68738edd11325"
+      ],
+      "source_family": "preservation_metadata",
+      "source_id": "internet_archive_metadata",
+      "source_locator": {
+        "kind": "internet_archive_identifier",
+        "label": "Internet Archive metadata fixture locator",
+        "value_hash": "6903aadb44eda3c2"
+      },
+      "summary": "Provisional ia_source_locator_candidate from 8 IA evidence candidate(s); review is required before any promotion. Promotion remains preview-only and preserves uncertainty.",
+      "title": "Provisional ia_source_locator_candidate from 8 IA evidence candidate(s)",
+      "uncertainty": [
+        "reconstructed from local review queue decision",
+        "promotion is dry-run only",
+        "reviewed index write is disabled",
+        "master index write is disabled",
+        "local reviewed index projection only",
+        "master index was not mutated",
+        "hosted public search was not mutated"
+      ],
+      "upload_performed": false
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "iacand_cc2ccfa95b5ddb46",
+      "checksum_summary": {},
+      "collection_refs": [
+        {
+          "collection_metadata_count": 2
+        }
+      ],
+      "created_at": "2026-05-19T00:00:00Z",
+      "deployment_performed": false,
+      "download_performed": false,
+      "evidence_ids": [
+        "iaev_0f4c6372808cff0b",
+        "iaev_5541d091e20c5bcd",
+        "iaev_764263872435608b",
+        "iaev_92764c5cbcc65320",
+        "iaev_f5e8db03b2b996f6"
+      ],
+      "extraction_executed": false,
+      "file_summary": {},
+      "item_identifier": "identifier_hash:1b18e0c3ed14344e",
+      "limitations": [
+        "committed metadata fixture input",
+        "metadata search result is not accepted truth",
+        "bounded search rows observed: 1",
+        "evidence candidate requires review",
+        "metadata does not establish rights clearance, compatibility, safety, installability, or final identity",
+        "candidate index record is not reviewed truth",
+        "no reviewed or master index mutation occurred",
+        "preview is not a final reviewed record",
+        "preview does not establish accepted truth",
+        "reviewed local record is limited to explicit temp/local instance",
+        "does not establish rights clearance, safety, compatibility, installability, or final provenance",
+        "no committed data/public_index mutation occurred"
+      ],
+      "master_index_record": false,
+      "mediatype": "data",
+      "model_provider_used": false,
+      "observation_ids": [
+        "iaobs_live_metadata_search_small"
+      ],
+      "production_readiness_claimed": false,
+      "promotion_preview_id": "iaprv_1e93902a1cc41809",
+      "provenance": {
+        "endpoint_class": "metadata_search_small",
+        "metadata_only": true,
+        "observation_kind": "metadata_search_result",
+        "source_kind": "ia_live_probe_preview",
+        "source_query": "sampleproject"
+      },
+      "public_hosted_record": false,
+      "public_launch_readiness_claimed": false,
+      "raw_response_committed": false,
+      "review_decision_id": "iard_ea9ffc16eac6b5d5",
+      "review_item_id": "iarv_e41c994252602970",
+      "review_status": "locally_reviewed_from_promotion_preview",
+      "reviewed_local_index_record": true,
+      "reviewed_record_id": "iarli_34579c12f3ef275b",
+      "rights_flags": [
+        "rights_not_inferred",
+        "safety_not_inferred",
+        "compatibility_not_inferred"
+      ],
+      "risk_flags": [
+        "metadata_not_truth",
+        "search_result_requires_review"
+      ],
+      "schema_version": "ia_reviewed_local_record.v0",
+      "source_cache_record_ids": [
+        "iasc_20f8f95fdcf7ace3"
+      ],
+      "source_family": "preservation_metadata",
+      "source_id": "internet_archive_metadata",
+      "source_locator": {
+        "kind": "internet_archive_identifier_hash",
+        "label": "Internet Archive redacted live metadata preview locator",
+        "value_hash": "1b18e0c3ed14344e"
+      },
+      "summary": "Provisional ia_source_locator_candidate from 5 IA evidence candidate(s); review is required before any promotion. Promotion remains preview-only and preserves uncertainty.",
+      "title": "Provisional ia_source_locator_candidate from 5 IA evidence candidate(s)",
+      "uncertainty": [
+        "reconstructed from local review queue decision",
+        "promotion is dry-run only",
+        "reviewed index write is disabled",
+        "master index write is disabled",
+        "local reviewed index projection only",
+        "master index was not mutated",
+        "hosted public search was not mutated"
+      ],
+      "upload_performed": false
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "iacand_efb50e8c2b5f9ec1",
+      "checksum_summary": {
+        "algorithms": [
+          "md5"
+        ],
+        "checksum_metadata_count": 1,
+        "source_provided_metadata_only": true
+      },
+      "collection_refs": [
+        "eureka-fixture-policy"
+      ],
+      "created_at": "2026-05-19T00:00:00Z",
+      "deployment_performed": false,
+      "download_performed": false,
+      "evidence_ids": [
+        "iaev_244f3f40f4b4e155",
+        "iaev_27beb00a8459b575",
+        "iaev_2a5d708879332beb",
+        "iaev_52c98a85728eb107",
+        "iaev_5f20b07d08d794bb",
+        "iaev_78cea459fb1d361c",
+        "iaev_a28ea6cad45e95f7",
+        "iaev_a7b77010c7b7765c",
+        "iaev_b1e1dbce2bed598d",
+        "iaev_f11594d83ac319ef",
+        "iaev_f8c3705d3fc21050"
+      ],
+      "extraction_executed": false,
+      "file_summary": {
+        "file_metadata_count": 1,
+        "metadata_only": true,
+        "sample_names": [
+          "metadata_only_entry.txt"
+        ]
+      },
+      "item_identifier": "identifier_hash:16e6e44ce79c85f2",
+      "limitations": [
+        "committed metadata fixture input",
+        "item metadata is not accepted truth",
+        "file entries are metadata only",
+        "no file content included or fetched",
+        "evidence candidate requires review",
+        "metadata does not establish rights clearance, compatibility, safety, installability, or final identity",
+        "candidate index record is not reviewed truth",
+        "no reviewed or master index mutation occurred",
+        "preview is not a final reviewed record",
+        "preview does not establish accepted truth",
+        "reviewed local record is limited to explicit temp/local instance",
+        "does not establish rights clearance, safety, compatibility, installability, or final provenance",
+        "no committed data/public_index mutation occurred"
+      ],
+      "master_index_record": false,
+      "mediatype": "software",
+      "model_provider_used": false,
+      "observation_ids": [
+        "iaobs_no_download_proof"
+      ],
+      "production_readiness_claimed": false,
+      "promotion_preview_id": "iaprv_9e4df701d1fa7eb3",
+      "provenance": {
+        "endpoint_class": "item_file_list_metadata_read",
+        "metadata_only": true,
+        "observation_kind": "no_download_proof",
+        "source_kind": "ia_fixture_replay"
+      },
+      "public_hosted_record": false,
+      "public_launch_readiness_claimed": false,
+      "raw_response_committed": false,
+      "review_decision_id": "iard_f352a2fc04e2b4ea",
+      "review_item_id": "iarv_48f3e90693249e03",
+      "review_status": "locally_reviewed_from_promotion_preview",
+      "reviewed_local_index_record": true,
+      "reviewed_record_id": "iarli_93edc6262025501c",
+      "rights_flags": [
+        "rights_not_inferred",
+        "safety_not_inferred",
+        "compatibility_not_inferred"
+      ],
+      "risk_flags": [
+        "metadata_not_truth",
+        "file_metadata_requires_review"
+      ],
+      "schema_version": "ia_reviewed_local_record.v0",
+      "source_cache_record_ids": [
+        "iasc_cda081026e612d40"
+      ],
+      "source_family": "preservation_metadata",
+      "source_id": "internet_archive_metadata",
+      "source_locator": {
+        "kind": "internet_archive_identifier",
+        "label": "Internet Archive metadata fixture locator",
+        "value_hash": "16e6e44ce79c85f2"
+      },
+      "summary": "Provisional ia_media_metadata_candidate from 11 IA evidence candidate(s); review is required before any promotion. Promotion remains preview-only and preserves uncertainty.",
+      "title": "Provisional ia_media_metadata_candidate from 11 IA evidence candidate(s)",
+      "uncertainty": [
+        "reconstructed from local review queue decision",
+        "promotion is dry-run only",
+        "reviewed index write is disabled",
+        "master index write is disabled",
+        "local reviewed index projection only",
+        "master index was not mutated",
+        "hosted public search was not mutated"
+      ],
+      "upload_performed": false
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "iacand_bca0ba1e680efc2c",
+      "checksum_summary": {
+        "algorithms": [
+          "md5",
+          "sha1"
+        ],
+        "checksum_metadata_count": 1,
+        "source_provided_metadata_only": true
+      },
+      "collection_refs": [
+        "eureka-fixture-software"
+      ],
+      "created_at": "2026-05-19T00:00:00Z",
+      "deployment_performed": false,
+      "download_performed": false,
+      "evidence_ids": [
+        "iaev_2e4597bf2d0205f2",
+        "iaev_3a935120fad455e5",
+        "iaev_79665430d7ad709c",
+        "iaev_8c364b463c33ed9b",
+        "iaev_90c55021014df176",
+        "iaev_976e5cae841c84db",
+        "iaev_a706a99df5123bd5",
+        "iaev_ae6357bcacd9e25a",
+        "iaev_c54b48f4aa183ee6",
+        "iaev_f68fca1af5f2aa81",
+        "iaev_ff9f3f66bdb6125c"
+      ],
+      "extraction_executed": false,
+      "file_summary": {
+        "file_metadata_count": 1,
+        "metadata_only": true,
+        "sample_names": [
+          "StyleWriter_2500_Readme.txt"
+        ]
+      },
+      "item_identifier": "identifier_hash:a9113b0907d33abf",
+      "limitations": [
+        "committed metadata fixture input",
+        "item metadata is not accepted truth",
+        "file entries are metadata only",
+        "evidence candidate requires review",
+        "metadata does not establish rights clearance, compatibility, safety, installability, or final identity",
+        "candidate index record is not reviewed truth",
+        "no reviewed or master index mutation occurred",
+        "preview is not a final reviewed record",
+        "preview does not establish accepted truth",
+        "reviewed local record is limited to explicit temp/local instance",
+        "does not establish rights clearance, safety, compatibility, installability, or final provenance",
+        "no committed data/public_index mutation occurred"
+      ],
+      "master_index_record": false,
+      "mediatype": "software",
+      "model_provider_used": false,
+      "observation_ids": [
+        "iaobs_item_metadata"
+      ],
+      "production_readiness_claimed": false,
+      "promotion_preview_id": "iaprv_f008a51f1bf84a95",
+      "provenance": {
+        "endpoint_class": "item_metadata_read",
+        "metadata_only": true,
+        "observation_kind": "item_metadata",
+        "source_kind": "ia_fixture_replay"
+      },
+      "public_hosted_record": false,
+      "public_launch_readiness_claimed": false,
+      "raw_response_committed": false,
+      "review_decision_id": "iard_f56938babdef368a",
+      "review_item_id": "iarv_d8d00cebe7d12d33",
+      "review_status": "locally_reviewed_from_promotion_preview",
+      "reviewed_local_index_record": true,
+      "reviewed_record_id": "iarli_135b3a6dc00568ca",
+      "rights_flags": [
+        "rights_not_inferred",
+        "safety_not_inferred",
+        "compatibility_not_inferred"
+      ],
+      "risk_flags": [
+        "metadata_not_truth",
+        "file_metadata_requires_review"
+      ],
+      "schema_version": "ia_reviewed_local_record.v0",
+      "source_cache_record_ids": [
+        "iasc_486af3662118be4b"
+      ],
+      "source_family": "preservation_metadata",
+      "source_id": "internet_archive_metadata",
+      "source_locator": {
+        "kind": "internet_archive_identifier",
+        "label": "Internet Archive metadata fixture locator",
+        "value_hash": "a9113b0907d33abf"
+      },
+      "summary": "Provisional ia_file_list_candidate from 11 IA evidence candidate(s); review is required before any promotion. Promotion remains preview-only and preserves uncertainty.",
+      "title": "Provisional ia_file_list_candidate from 11 IA evidence candidate(s)",
+      "uncertainty": [
+        "reconstructed from local review queue decision",
+        "promotion is dry-run only",
+        "reviewed index write is disabled",
+        "master index write is disabled",
+        "local reviewed index projection only",
+        "master index was not mutated",
+        "hosted public search was not mutated"
+      ],
+      "upload_performed": false
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "iacand_a8b46e42efc6ae82",
+      "checksum_summary": {
+        "algorithms": [
+          "md5"
+        ],
+        "checksum_metadata_count": 5,
+        "source_provided_metadata_only": true
+      },
+      "collection_refs": [
+        "eureka-fixture-software"
+      ],
+      "created_at": "2026-05-19T00:00:00Z",
+      "deployment_performed": false,
+      "download_performed": false,
+      "evidence_ids": [
+        "iaev_0178360374d0d58d",
+        "iaev_220304b424601f3c",
+        "iaev_3629751c04340905",
+        "iaev_46ceee78e9429a6f",
+        "iaev_6d91c63287f7d9c7",
+        "iaev_7a06c7cef7535a7b",
+        "iaev_94dd95c5bc84b603",
+        "iaev_a342a599a0211a08",
+        "iaev_bc862a54606481de",
+        "iaev_bcfefdfba989d734",
+        "iaev_e0174a14adea8df3"
+      ],
+      "extraction_executed": false,
+      "file_summary": {
+        "file_metadata_count": 5,
+        "metadata_only": true,
+        "sample_names": [
+          "file_001.txt",
+          "file_002.txt",
+          "file_003.txt"
+        ]
+      },
+      "item_identifier": "identifier_hash:abcf9ffbd90b5b54",
+      "limitations": [
+        "committed metadata fixture input",
+        "item metadata is not accepted truth",
+        "file entries are metadata only",
+        "file metadata candidates capped at 5 of 8",
+        "evidence candidate requires review",
+        "metadata does not establish rights clearance, compatibility, safety, installability, or final identity",
+        "candidate index record is not reviewed truth",
+        "no reviewed or master index mutation occurred",
+        "preview is not a final reviewed record",
+        "preview does not establish accepted truth",
+        "reviewed local record is limited to explicit temp/local instance",
+        "does not establish rights clearance, safety, compatibility, installability, or final provenance",
+        "no committed data/public_index mutation occurred"
+      ],
+      "master_index_record": false,
+      "mediatype": "software",
+      "model_provider_used": false,
+      "observation_ids": [
+        "iaobs_large_file_list"
+      ],
+      "production_readiness_claimed": false,
+      "promotion_preview_id": "iaprv_d6742ff4027be66a",
+      "provenance": {
+        "endpoint_class": "item_file_list_metadata_read",
+        "metadata_only": true,
+        "observation_kind": "large_file_list",
+        "source_kind": "ia_fixture_replay"
+      },
+      "public_hosted_record": false,
+      "public_launch_readiness_claimed": false,
+      "raw_response_committed": false,
+      "review_decision_id": "iard_f997f8c5c39a6cf5",
+      "review_item_id": "iarv_a5109eb27781b60e",
+      "review_status": "locally_reviewed_from_promotion_preview",
+      "reviewed_local_index_record": true,
+      "reviewed_record_id": "iarli_2b40d23ce0d4daea",
+      "rights_flags": [
+        "rights_not_inferred",
+        "safety_not_inferred",
+        "compatibility_not_inferred"
+      ],
+      "risk_flags": [
+        "metadata_not_truth",
+        "file_metadata_requires_review"
+      ],
+      "schema_version": "ia_reviewed_local_record.v0",
+      "source_cache_record_ids": [
+        "iasc_0942d6dacc0c596b"
+      ],
+      "source_family": "preservation_metadata",
+      "source_id": "internet_archive_metadata",
+      "source_locator": {
+        "kind": "internet_archive_identifier",
+        "label": "Internet Archive metadata fixture locator",
+        "value_hash": "abcf9ffbd90b5b54"
+      },
+      "summary": "Provisional ia_media_metadata_candidate from 11 IA evidence candidate(s); review is required before any promotion. Promotion remains preview-only and preserves uncertainty.",
+      "title": "Provisional ia_media_metadata_candidate from 11 IA evidence candidate(s)",
+      "uncertainty": [
+        "reconstructed from local review queue decision",
+        "promotion is dry-run only",
+        "reviewed index write is disabled",
+        "master index write is disabled",
+        "local reviewed index projection only",
+        "master index was not mutated",
+        "hosted public search was not mutated"
+      ],
+      "upload_performed": false
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "iacand_ccad5f6414aaf3c9",
+      "checksum_summary": {
+        "algorithms": [
+          "md5"
+        ],
+        "checksum_metadata_count": 5,
+        "source_provided_metadata_only": true
+      },
+      "collection_refs": [
+        "eureka-fixture-software"
+      ],
+      "created_at": "2026-05-19T00:00:00Z",
+      "deployment_performed": false,
+      "download_performed": false,
+      "evidence_ids": [
+        "iaev_0178360374d0d58d",
+        "iaev_220304b424601f3c",
+        "iaev_3629751c04340905",
+        "iaev_46ceee78e9429a6f",
+        "iaev_6d91c63287f7d9c7",
+        "iaev_7a06c7cef7535a7b",
+        "iaev_94dd95c5bc84b603",
+        "iaev_a342a599a0211a08",
+        "iaev_bc862a54606481de",
+        "iaev_bcfefdfba989d734",
+        "iaev_e0174a14adea8df3"
+      ],
+      "extraction_executed": false,
+      "file_summary": {
+        "file_metadata_count": 5,
+        "metadata_only": true,
+        "sample_names": [
+          "file_001.txt",
+          "file_002.txt",
+          "file_003.txt"
+        ]
+      },
+      "item_identifier": "identifier_hash:abcf9ffbd90b5b54",
+      "limitations": [
+        "committed metadata fixture input",
+        "item metadata is not accepted truth",
+        "file entries are metadata only",
+        "file metadata candidates capped at 5 of 8",
+        "evidence candidate requires review",
+        "metadata does not establish rights clearance, compatibility, safety, installability, or final identity",
+        "candidate index record is not reviewed truth",
+        "no reviewed or master index mutation occurred",
+        "preview is not a final reviewed record",
+        "preview does not establish accepted truth",
+        "reviewed local record is limited to explicit temp/local instance",
+        "does not establish rights clearance, safety, compatibility, installability, or final provenance",
+        "no committed data/public_index mutation occurred"
+      ],
+      "master_index_record": false,
+      "mediatype": "software",
+      "model_provider_used": false,
+      "observation_ids": [
+        "iaobs_large_file_list"
+      ],
+      "production_readiness_claimed": false,
+      "promotion_preview_id": "iaprv_32a21118b30520f4",
+      "provenance": {
+        "endpoint_class": "item_file_list_metadata_read",
+        "metadata_only": true,
+        "observation_kind": "large_file_list",
+        "source_kind": "ia_fixture_replay"
+      },
+      "public_hosted_record": false,
+      "public_launch_readiness_claimed": false,
+      "raw_response_committed": false,
+      "review_decision_id": "iard_fdd6ed25a808b9d1",
+      "review_item_id": "iarv_90a2f1b45afc72d0",
+      "review_status": "locally_reviewed_from_promotion_preview",
+      "reviewed_local_index_record": true,
+      "reviewed_record_id": "iarli_15b83962dd00cf09",
+      "rights_flags": [
+        "rights_not_inferred",
+        "safety_not_inferred",
+        "compatibility_not_inferred"
+      ],
+      "risk_flags": [
+        "metadata_not_truth",
+        "file_metadata_requires_review"
+      ],
+      "schema_version": "ia_reviewed_local_record.v0",
+      "source_cache_record_ids": [
+        "iasc_0942d6dacc0c596b"
+      ],
+      "source_family": "preservation_metadata",
+      "source_id": "internet_archive_metadata",
+      "source_locator": {
+        "kind": "internet_archive_identifier",
+        "label": "Internet Archive metadata fixture locator",
+        "value_hash": "abcf9ffbd90b5b54"
+      },
+      "summary": "Provisional ia_item_candidate from 11 IA evidence candidate(s); review is required before any promotion. Promotion remains preview-only and preserves uncertainty.",
+      "title": "Provisional ia_item_candidate from 11 IA evidence candidate(s)",
+      "uncertainty": [
+        "reconstructed from local review queue decision",
+        "promotion is dry-run only",
+        "reviewed index write is disabled",
+        "master index write is disabled",
+        "local reviewed index projection only",
+        "master index was not mutated",
+        "hosted public search was not mutated"
+      ],
+      "upload_performed": false
+    }
+  ],
+  "schema_version": "ia_reviewed_index_rebuild_report.v0",
+  "search_result_proof_passed": true,
+  "search_results": [
+    {
+      "download_performed": false,
+      "master_index_record": false,
+      "matched_terms": [
+        "sampleproject"
+      ],
+      "public_hosted_record": false,
+      "query": "sampleproject",
+      "raw_response_committed": false,
+      "reviewed_local_index_record": true,
+      "reviewed_record_id": "iarli_221e8f4a1516b38c",
+      "schema_version": "ia_reviewed_local_search_result.v0",
+      "score": 1.0,
+      "source_id": "internet_archive_metadata",
+      "summary": "Provisional ia_file_list_candidate from 8 IA evidence candidate(s); review is required before any promotion. Promotion remains preview-only and preserves uncertainty.",
+      "task": "IA-07",
+      "title": "Provisional ia_file_list_candidate from 8 IA evidence candidate(s)"
+    },
+    {
+      "download_performed": false,
+      "master_index_record": false,
+      "matched_terms": [
+        "sampleproject"
+      ],
+      "public_hosted_record": false,
+      "query": "sampleproject",
+      "raw_response_committed": false,
+      "reviewed_local_index_record": true,
+      "reviewed_record_id": "iarli_34579c12f3ef275b",
+      "schema_version": "ia_reviewed_local_search_result.v0",
+      "score": 1.0,
+      "source_id": "internet_archive_metadata",
+      "summary": "Provisional ia_source_locator_candidate from 5 IA evidence candidate(s); review is required before any promotion. Promotion remains preview-only and preserves uncertainty.",
+      "task": "IA-07",
+      "title": "Provisional ia_source_locator_candidate from 5 IA evidence candidate(s)"
+    },
+    {
+      "download_performed": false,
+      "master_index_record": false,
+      "matched_terms": [
+        "sampleproject"
+      ],
+      "public_hosted_record": false,
+      "query": "sampleproject",
+      "raw_response_committed": false,
+      "reviewed_local_index_record": true,
+      "reviewed_record_id": "iarli_6f76a204f24857e0",
+      "schema_version": "ia_reviewed_local_search_result.v0",
+      "score": 1.0,
+      "source_id": "internet_archive_metadata",
+      "summary": "Provisional ia_source_locator_candidate from 8 IA evidence candidate(s); review is required before any promotion. Promotion remains preview-only and preserves uncertainty.",
+      "task": "IA-07",
+      "title": "Provisional ia_source_locator_candidate from 8 IA evidence candidate(s)"
+    },
+    {
+      "download_performed": false,
+      "master_index_record": false,
+      "matched_terms": [
+        "sampleproject"
+      ],
+      "public_hosted_record": false,
+      "query": "sampleproject",
+      "raw_response_committed": false,
+      "reviewed_local_index_record": true,
+      "reviewed_record_id": "iarli_8c27770358265f7b",
+      "schema_version": "ia_reviewed_local_search_result.v0",
+      "score": 1.0,
+      "source_id": "internet_archive_metadata",
+      "summary": "Provisional ia_collection_member_candidate from 5 IA evidence candidate(s); review is required before any promotion. Promotion remains preview-only and preserves uncertainty.",
+      "task": "IA-07",
+      "title": "Provisional ia_collection_member_candidate from 5 IA evidence candidate(s)"
+    },
+    {
+      "download_performed": false,
+      "master_index_record": false,
+      "matched_terms": [
+        "sampleproject"
+      ],
+      "public_hosted_record": false,
+      "query": "sampleproject",
+      "raw_response_committed": false,
+      "reviewed_local_index_record": true,
+      "reviewed_record_id": "iarli_9d81d56ac1862e37",
+      "schema_version": "ia_reviewed_local_search_result.v0",
+      "score": 1.0,
+      "source_id": "internet_archive_metadata",
+      "summary": "Provisional ia_media_metadata_candidate from 5 IA evidence candidate(s); review is required before any promotion. Promotion remains preview-only and preserves uncertainty.",
+      "task": "IA-07",
+      "title": "Provisional ia_media_metadata_candidate from 5 IA evidence candidate(s)"
+    },
+    {
+      "download_performed": false,
+      "master_index_record": false,
+      "matched_terms": [
+        "sampleproject"
+      ],
+      "public_hosted_record": false,
+      "query": "sampleproject",
+      "raw_response_committed": false,
+      "reviewed_local_index_record": true,
+      "reviewed_record_id": "iarli_a51494b29dc1537d",
+      "schema_version": "ia_reviewed_local_search_result.v0",
+      "score": 1.0,
+      "source_id": "internet_archive_metadata",
+      "summary": "Provisional ia_collection_member_candidate from 8 IA evidence candidate(s); review is required before any promotion. Promotion remains preview-only and preserves uncertainty.",
+      "task": "IA-07",
+      "title": "Provisional ia_collection_member_candidate from 8 IA evidence candidate(s)"
+    },
+    {
+      "download_performed": false,
+      "master_index_record": false,
+      "matched_terms": [
+        "sampleproject"
+      ],
+      "public_hosted_record": false,
+      "query": "sampleproject",
+      "raw_response_committed": false,
+      "reviewed_local_index_record": true,
+      "reviewed_record_id": "iarli_b184dc4ec8cec05b",
+      "schema_version": "ia_reviewed_local_search_result.v0",
+      "score": 1.0,
+      "source_id": "internet_archive_metadata",
+      "summary": "Provisional ia_item_candidate from 8 IA evidence candidate(s); review is required before any promotion. Promotion remains preview-only and preserves uncertainty.",
+      "task": "IA-07",
+      "title": "Provisional ia_item_candidate from 8 IA evidence candidate(s)"
+    },
+    {
+      "download_performed": false,
+      "master_index_record": false,
+      "matched_terms": [
+        "sampleproject"
+      ],
+      "public_hosted_record": false,
+      "query": "sampleproject",
+      "raw_response_committed": false,
+      "reviewed_local_index_record": true,
+      "reviewed_record_id": "iarli_cfaddd0ce1b316ed",
+      "schema_version": "ia_reviewed_local_search_result.v0",
+      "score": 1.0,
+      "source_id": "internet_archive_metadata",
+      "summary": "Provisional ia_media_metadata_candidate from 8 IA evidence candidate(s); review is required before any promotion. Promotion remains preview-only and preserves uncertainty.",
+      "task": "IA-07",
+      "title": "Provisional ia_media_metadata_candidate from 8 IA evidence candidate(s)"
+    },
+    {
+      "download_performed": false,
+      "master_index_record": false,
+      "matched_terms": [
+        "sampleproject"
+      ],
+      "public_hosted_record": false,
+      "query": "sampleproject",
+      "raw_response_committed": false,
+      "reviewed_local_index_record": true,
+      "reviewed_record_id": "iarli_fc53fa6543e82190",
+      "schema_version": "ia_reviewed_local_search_result.v0",
+      "score": 1.0,
+      "source_id": "internet_archive_metadata",
+      "summary": "Provisional ia_item_candidate from 5 IA evidence candidate(s); review is required before any promotion. Promotion remains preview-only and preserves uncertainty.",
+      "task": "IA-07",
+      "title": "Provisional ia_item_candidate from 5 IA evidence candidate(s)"
+    }
+  ],
+  "source_kind_counts": {
+    "ia_fixture_replay": 30,
+    "ia_live_probe_preview": 9
+  },
+  "status": "pass",
+  "store_result": {
+    "dry_run": false,
+    "integrity": {
+      "applied_migrations": [
+        {
+          "applied_at": "2026-05-19T01:37:55Z",
+          "checksum": "cb2591e37945b116d245c51124240cc7fb37f43cacc4f1148cecefb768c31cc9",
+          "id": "public_index_initial_schema",
+          "version": "public_index_store.v0"
+        }
+      ],
+      "missing_tables": [],
+      "schema_version": "public_index_store.v0",
+      "sqlite_integrity": "ok",
+      "status": "pass"
+    },
+    "reviewed_record_count": 39,
+    "schema_version": "ia_reviewed_local_index_store_write_result.v0",
+    "store_path": "<explicit-local-instance>/db/public_index.sqlite",
+    "summary": {
+      "evidence_ref_count": 39,
+      "rebuild_count": 1,
+      "record_count": 39,
+      "review_ref_count": 39,
+      "source_counts": {
+        "internet_archive_metadata": 39
+      },
+      "source_ref_count": 39
+    },
+    "write_applied": true,
+    "writes": [
+      {
+        "record_id": "iareb_9c371a50f7738ccd",
+        "status": "applied",
+        "table": "public_index_rebuilds"
+      },
+      {
+        "record_id": "iarli_b1305e00cf1e3f17",
+        "status": "stored",
+        "table": "public_index_records"
+      },
+      {
+        "record_id": "iarli_4dcd25314f4e74fb",
+        "status": "stored",
+        "table": "public_index_records"
+      },
+      {
+        "record_id": "iarli_999b392c7716f90a",
+        "status": "stored",
+        "table": "public_index_records"
+      },
+      {
+        "record_id": "iarli_d2333ab568ae5ffc",
+        "status": "stored",
+        "table": "public_index_records"
+      },
+      {
+        "record_id": "iarli_fda30f6d6d4f2a5c",
+        "status": "stored",
+        "table": "public_index_records"
+      },
+      {
+        "record_id": "iarli_a15b5fbabbee579a",
+        "status": "stored",
+        "table": "public_index_records"
+      },
+      {
+        "record_id": "iarli_3ca157485dfab444",
+        "status": "stored",
+        "table": "public_index_records"
+      },
+      {
+        "record_id": "iarli_450150b9199f178e",
+        "status": "stored",
+        "table": "public_index_records"
+      },
+      {
+        "record_id": "iarli_3162eaa850694e70",
+        "status": "stored",
+        "table": "public_index_records"
+      },
+      {
+        "record_id": "iarli_8c27770358265f7b",
+        "status": "stored",
+        "table": "public_index_records"
+      },
+      {
+        "record_id": "iarli_40022cbc86ce8337",
+        "status": "stored",
+        "table": "public_index_records"
+      },
+      {
+        "record_id": "iarli_1fc5c99af763d915",
+        "status": "stored",
+        "table": "public_index_records"
+      },
+      {
+        "record_id": "iarli_a51494b29dc1537d",
+        "status": "stored",
+        "table": "public_index_records"
+      },
+      {
+        "record_id": "iarli_5646825bec032bd2",
+        "status": "stored",
+        "table": "public_index_records"
+      },
+      {
+        "record_id": "iarli_cfaddd0ce1b316ed",
+        "status": "stored",
+        "table": "public_index_records"
+      },
+      {
+        "record_id": "iarli_21482f303b8ca846",
+        "status": "stored",
+        "table": "public_index_records"
+      },
+      {
+        "record_id": "iarli_ea9002bc0dbc506a",
+        "status": "stored",
+        "table": "public_index_records"
+      },
+      {
+        "record_id": "iarli_fc53fa6543e82190",
+        "status": "stored",
+        "table": "public_index_records"
+      },
+      {
+        "record_id": "iarli_fb7d2298ff556309",
+        "status": "stored",
+        "table": "public_index_records"
+      },
+      {
+        "record_id": "iarli_3b91b7c4712bbb2e",
+        "status": "stored",
+        "table": "public_index_records"
+      },
+      {
+        "record_id": "iarli_673ba5353bb02e1d",
+        "status": "stored",
+        "table": "public_index_records"
+      },
+      {
+        "record_id": "iarli_c5662ef32bf76cff",
+        "status": "stored",
+        "table": "public_index_records"
+      },
+      {
+        "record_id": "iarli_0ea8cba87e1948ec",
+        "status": "stored",
+        "table": "public_index_records"
+      },
+      {
+        "record_id": "iarli_34cb9f5d8456fe5c",
+        "status": "stored",
+        "table": "public_index_records"
+      },
+      {
+        "record_id": "iarli_3c6aaa96d6b96c69",
+        "status": "stored",
+        "table": "public_index_records"
+      },
+      {
+        "record_id": "iarli_b184dc4ec8cec05b",
+        "status": "stored",
+        "table": "public_index_records"
+      },
+      {
+        "record_id": "iarli_9d81d56ac1862e37",
+        "status": "stored",
+        "table": "public_index_records"
+      },
+      {
+        "record_id": "iarli_aff0029b3551998d",
+        "status": "stored",
+        "table": "public_index_records"
+      },
+      {
+        "record_id": "iarli_6bad1d477c85a792",
+        "status": "stored",
+        "table": "public_index_records"
+      },
+      {
+        "record_id": "iarli_221e8f4a1516b38c",
+        "status": "stored",
+        "table": "public_index_records"
+      },
+      {
+        "record_id": "iarli_00627d34e9f9fcb0",
+        "status": "stored",
+        "table": "public_index_records"
+      },
+      {
+        "record_id": "iarli_898b943e64efa1a3",
+        "status": "stored",
+        "table": "public_index_records"
+      },
+      {
+        "record_id": "iarli_6f76a204f24857e0",
+        "status": "stored",
+        "table": "public_index_records"
+      },
+      {
+        "record_id": "iarli_6d7b9b838d9d8d76",
+        "status": "stored",
+        "table": "public_index_records"
+      },
+      {
+        "record_id": "iarli_34579c12f3ef275b",
+        "status": "stored",
+        "table": "public_index_records"
+      },
+      {
+        "record_id": "iarli_93edc6262025501c",
+        "status": "stored",
+        "table": "public_index_records"
+      },
+      {
+        "record_id": "iarli_135b3a6dc00568ca",
+        "status": "stored",
+        "table": "public_index_records"
+      },
+      {
+        "record_id": "iarli_2b40d23ce0d4daea",
+        "status": "stored",
+        "table": "public_index_records"
+      },
+      {
+        "record_id": "iarli_15b83962dd00cf09",
+        "status": "stored",
+        "table": "public_index_records"
+      }
+    ]
+  },
+  "task": "IA-07",
+  "upload_performed": false,
+  "write_scope": "temp_explicit_instance_only"
+}

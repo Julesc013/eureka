@@ -1,0 +1,12 @@
+{
+  "schema_version": "ia_reviewed_search_result_matrix.v0",
+  "task": "IA-07",
+  "status": "pass",
+  "query": "sampleproject",
+  "search_result_proof_passed": true,
+  "expected_result_count_minimum": 1,
+  "result_class": "ia_reviewed_local_search_result",
+  "reviewed_local_index_record": true,
+  "master_index_record": false,
+  "public_hosted_record": false
+}

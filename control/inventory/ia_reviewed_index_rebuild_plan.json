@@ -1,0 +1,27 @@
+{
+  "schema_version": "ia_reviewed_index_rebuild_plan.v0",
+  "task": "IA-07",
+  "dry_run_default": true,
+  "explicit_apply_required": true,
+  "apply_target": "temporary_explicit_local_instance",
+  "input_path": [
+    "ia_fixture_records",
+    "ia_live_preview_records",
+    "ia_source_cache_records",
+    "ia_evidence_candidates",
+    "ia_candidate_records",
+    "ia_review_decisions",
+    "ia_promotion_previews"
+  ],
+  "output_path": [
+    "ia_reviewed_local_record",
+    "ia_reviewed_local_search_result",
+    "ia_reviewed_local_object_packet",
+    "ia_reviewed_local_absence_packet"
+  ],
+  "search_query": "sampleproject",
+  "absence_query": "definitely-not-present-ia-07",
+  "raw_response_committed": false,
+  "committed_data_public_index_mutated": false,
+  "master_index_mutated": false
+}

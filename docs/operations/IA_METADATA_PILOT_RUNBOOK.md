@@ -131,7 +131,24 @@ python scripts/eureka_ia_promotion_dry_run.py --from-review-decisions --from-rev
 IA-06 does not write the reviewed index or master index. Promotion previews are
 not accepted truth and do not create final reviewed records.
 
+## IA-07
+
+IA-07 rebuilds reviewed local index records from IA promotion previews in a
+temporary explicit instance. It proves local search, object packet, and absence
+packet consumption of the rebuilt reviewed index.
+
+Run:
+
+```powershell
+python scripts/validate_ia_reviewed_index_rebuild.py
+python scripts/eureka_ia_reviewed_index_rebuild.py --from-promotion-previews --dry-run --json
+```
+
+IA-07 reviewed local records are not master records, not hosted public records,
+and not production or public launch claims. The gate must not mutate
+`data/public_index`.
+
 ## Later Gates
 
-IA-07 may define a reviewed local index rebuild. No gate may convert live
+IA-PILOT-CLOSEOUT-01 may summarize the metadata pilot. No gate may convert live
 metadata directly into public truth.

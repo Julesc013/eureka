@@ -1,0 +1,10 @@
+{
+  "schema_version": "ia_reviewed_live_preview_rebuild_result.v0",
+  "task": "IA-07",
+  "status": "pass",
+  "live_preview_reviewed_records_written_to_temp": true,
+  "live_preview_reviewed_record_count": 9,
+  "reviewed_index_write_scope": "temp_explicit_instance_only",
+  "raw_response_committed": false,
+  "master_index_mutated": false
+}

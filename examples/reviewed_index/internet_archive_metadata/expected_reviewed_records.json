@@ -1,0 +1,30 @@
+{
+  "schema_version": "ia_reviewed_expected_records.v0",
+  "task": "IA-07",
+  "expected_reviewed_record_count_minimum": 6,
+  "expected_source_kinds": [
+    "ia_fixture_replay",
+    "ia_live_probe_preview"
+  ],
+  "required_invariants": {
+    "reviewed_local_index_record": true,
+    "master_index_record": false,
+    "public_hosted_record": false,
+    "raw_response_committed": false,
+    "download_performed": false
+  },
+  "sample_record_shape": {
+    "schema_version": "ia_reviewed_local_record.v0",
+    "source_id": "internet_archive_metadata",
+    "reviewed_record_id": "required",
+    "promotion_preview_id": "required",
+    "review_decision_id": "required",
+    "evidence_ids": [
+      "required"
+    ],
+    "provenance": {
+      "metadata_only": true
+    },
+    "reviewed_local_index_record": true
+  }
+}

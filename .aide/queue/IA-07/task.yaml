@@ -1,6 +1,6 @@
 id: IA-07
 title: IA Reviewed Local Index Rebuild
-status: queued
+status: completed
 purpose: Define reviewed local index rebuild behavior after IA review queue and promotion dry-run previews exist.
 allowed_scope_summary: IA reviewed-index rebuild policy, validators, tests, docs, inventories, and audit evidence only when explicitly scoped.
 gate:
@@ -8,7 +8,9 @@ gate:
   - promotion previews are preview-only
   - no accepted truth created in IA-06
   - no reviewed or master index mutation occurred in IA-06
+  - reviewed local index writes are temp explicit instance only
+  - search/object/absence proofs pass over the rebuilt local index
   - no downloads or uploads
   - no extraction, model/provider calls, deployment, production readiness, or public launch claim
 recommended_after: IA-06
-recommended_next: SYN-00
+recommended_next: IA-PILOT-CLOSEOUT-01

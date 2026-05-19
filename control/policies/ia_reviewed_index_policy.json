@@ -1,0 +1,32 @@
+{
+  "schema_version": "ia_reviewed_index_policy.v0",
+  "task": "IA-07",
+  "source_id": "internet_archive_metadata",
+  "reviewed_local_index_rebuild_enabled_for_IA_07": true,
+  "allowed_write_scope": "temp_or_explicit_local_instance_only",
+  "operator_instance_mutation_default": false,
+  "dry_run_default": true,
+  "explicit_apply_required": true,
+  "accepted_inputs": [
+    "ia_promotion_previews_from_fixtures",
+    "ia_promotion_previews_from_live_preview"
+  ],
+  "master_index_mutation_enabled": false,
+  "committed_data_public_index_mutation_enabled": false,
+  "hosted_public_search_mutation_enabled": false,
+  "raw_live_response_write_forbidden": true,
+  "review_decision_required": true,
+  "evidence_ids_required": true,
+  "provenance_required": true,
+  "uncertainty_required": true,
+  "limitations_required": true,
+  "rights_clearance_forbidden": true,
+  "malware_safety_claim_forbidden": true,
+  "compatibility_truth_forbidden": true,
+  "download_install_execute_enabled": false,
+  "extraction_enabled": false,
+  "model_provider_enabled": false,
+  "deployment_enabled": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}

@@ -1,0 +1,11 @@
+{
+  "schema_version": "ia_reviewed_absence_packet_matrix.v0",
+  "task": "IA-07",
+  "status": "pass",
+  "query": "definitely-not-present-ia-07",
+  "absence_packet_proof_passed": true,
+  "packet_class": "ia_reviewed_local_absence_packet",
+  "absence_confirmed": true,
+  "master_index_record": false,
+  "public_hosted_record": false
+}

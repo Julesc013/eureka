@@ -7,6 +7,7 @@ Required fields include:
 
 - `promotion_preview_id`
 - `review_decision_id`
+- `review_item_id`
 - `candidate_id`
 - `proposed_reviewed_record_id`
 - `proposed_title`
@@ -14,6 +15,12 @@ Required fields include:
 - `source_locator`
 - `evidence_ids`
 - `source_cache_record_ids`
+- `observation_ids`
+- `item_identifier`
+- `mediatype`
+- `collection_refs`
+- `file_summary`
+- `checksum_summary`
 - `provenance`
 - `uncertainty`
 - `limitations`

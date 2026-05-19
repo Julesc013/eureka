@@ -2,37 +2,39 @@
 
 ## TASK
 
-IA-06 - IA Review/Promotion Dry-Run.
+IA-07 - IA Reviewed Local Index Rebuild.
 
 ## PHASE
 
-IA-06 completed as `PASS`.
+IA-07 completed as `PASS`.
 
 ## GOAL
 
-Load Internet Archive metadata candidate-index records into a local review queue,
-record local review decisions, and build promotion previews without mutating the
-reviewed index or master index.
+Rebuild a reviewed local index from Internet Archive promotion previews in a
+temporary explicit instance, then prove local search, object, and absence reads
+can consume the rebuilt reviewed index.
 
 ## WHY
 
-IA-05 proved IA evidence candidates can become provisional candidate-index
-records. IA-06 adds the next gate: candidates can be queued for local review and
-can produce promotion previews, while reviewed/master indexes remain unchanged.
+IA-06 proved IA provisional candidates can enter a review queue and produce
+promotion previews without reviewed/master index writes. IA-07 completes the
+local pilot loop by projecting approved promotion previews into reviewed local
+records inside a temp instance only.
 
 ## CONTEXT_REFS
 
-- IA-06 queue item
-- IA-06 result inventory
-- IA-06 audit pack
-- IA review and promotion adapters
-- .aide/context/latest-context-packet.md
-- .aide/context/repo-map.json
-- .aide/context/test-map.json
-- .aide/context/context-index.json
+- IA-07 queue item
+- IA-07 result inventory
+- IA-07 audit pack
+- IA reviewed-index adapter and CLI
+- `.aide/context/latest-context-packet.md`
+- `.aide/context/repo-map.json`
+- `.aide/context/test-map.json`
+- `.aide/context/context-index.json`
 
 ## ALLOWED_PATHS
 
+- `runtime/public_index/**`
 - `runtime/review_queue/**`
 - `runtime/candidate_index/**`
 - `runtime/candidate_store/**`
@@ -40,35 +42,29 @@ can produce promotion previews, while reviewed/master indexes remain unchanged.
 - `runtime/source_cache/**`
 - `runtime/source_observation/internet_archive_review.py`
 - `runtime/source_observation/internet_archive_promotion.py`
+- `runtime/source_observation/internet_archive_reviewed_index.py`
 - `runtime/source_observation/internet_archive_candidate_index.py`
 - `runtime/source_observation/internet_archive_evidence.py`
 - `runtime/source_observation/internet_archive_source_cache.py`
-- `scripts/eureka_ia_review_queue.py`
+- `scripts/eureka_ia_reviewed_index_rebuild.py`
 - `scripts/eureka_ia_promotion_dry_run.py`
-- `scripts/validate_ia_review_promotion_dry_run.py`
-- `tests/runtime/test_ia_review_queue_integration.py`
-- `tests/runtime/test_ia_review_decisions.py`
-- `tests/runtime/test_ia_promotion_dry_run.py`
-- `tests/runtime/test_ia_promotion_boundaries.py`
-- `tests/operations/test_ia_review_promotion_scripts.py`
-- `examples/review_queue/**`
-- `control/policies/ia_review_policy.json`
-- `control/policies/ia_promotion_dry_run_policy.json`
-- `control/inventory/ia_06_*.json`
-- `control/inventory/ia_review_*.json`
-- `control/inventory/ia_promotion_*.json`
-- `control/audits/ia-06-review-promotion-dry-run-v0/**`
-- `docs/operations/IA_REVIEW_PROMOTION_DRY_RUN.md`
+- `scripts/validate_ia_reviewed_index_rebuild.py`
+- IA source-cache/evidence/candidate/review prerequisite scripts
+- `tests/runtime/test_ia_reviewed_*.py`
+- `tests/operations/test_ia_reviewed_index_scripts.py`
+- `examples/reviewed_index/**`
+- `examples/reviewed_index/internet_archive_metadata/**`
+- `control/policies/ia_reviewed_index_policy.json`
+- `control/inventory/ia_07_*.json`
+- `control/inventory/ia_reviewed_*.json`
+- `control/audits/ia-07-reviewed-local-index-rebuild-v0/**`
+- `docs/operations/IA_REVIEWED_INDEX_REBUILD_RUNBOOK.md`
 - `docs/operations/IA_METADATA_PILOT_RUNBOOK.md`
-- `docs/reference/IA_REVIEW_ITEM.md`
-- `docs/reference/IA_REVIEW_DECISION.md`
+- `docs/reference/IA_REVIEWED_LOCAL_RECORD.md`
 - `docs/reference/IA_PROMOTION_PREVIEW.md`
-- `docs/reference/IA_CANDIDATE_RECORD.md`
-- `docs/reference/IA_EVIDENCE_RECORD.md`
-- `docs/reference/IA_SOURCE_CACHE_RECORD.md`
-- `.aide/queue/IA-06/task.yaml`
 - `.aide/queue/IA-07/task.yaml`
-- `.aide/queue/IA-07/**`
+- `.aide/queue/IA-PILOT-CLOSEOUT-01/task.yaml`
+- `.aide/queue/IA-PILOT-CLOSEOUT-01/**`
 - `.aide/queue/index.yaml`
 - `.aide/context/latest-task-packet.md`
 - `.aide/context/latest-review-packet.md`
@@ -94,22 +90,23 @@ can produce promotion previews, while reviewed/master indexes remain unchanged.
 
 ## IMPLEMENTATION
 
-IA-06 added:
+IA-07 added:
 
-- `control/policies/ia_review_policy.json`
-- `control/policies/ia_promotion_dry_run_policy.json`
-- review item, review decision, and promotion preview schema inventories
-- `runtime/source_observation/internet_archive_review.py`
-- `runtime/source_observation/internet_archive_promotion.py`
-- `scripts/eureka_ia_review_queue.py`
-- `scripts/eureka_ia_promotion_dry_run.py`
-- `scripts/validate_ia_review_promotion_dry_run.py`
+- `control/policies/ia_reviewed_index_policy.json`
+- reviewed local record schema inventory and policy matrix
+- `runtime/source_observation/internet_archive_reviewed_index.py`
+- `scripts/eureka_ia_reviewed_index_rebuild.py`
+- `scripts/validate_ia_reviewed_index_rebuild.py`
+- reviewed-index examples, docs, inventories, and audit evidence
 - focused runtime and operations tests
-- review/promotion examples, docs, inventories, and audit evidence
 
-The temp-instance proof wrote IA review queue records and review decisions to a
-temporary explicit instance only. Promotion produced preview-only records and did
-not write reviewed or master indexes.
+Promotion preview detail is now preserved through review and promotion records so
+reviewed local records retain source locator, evidence IDs, provenance,
+uncertainty, limitations, rights/risk flags, and source metadata summaries.
+
+The temp-instance proof wrote reviewed local records only to a temporary
+explicit instance. It then proved search, object packet, and absence packet
+behavior over that temp reviewed local index.
 
 ## NON_GOALS
 
@@ -118,17 +115,20 @@ not write reviewed or master indexes.
 - no extraction
 - no model/provider calls
 - no operator instance mutation
-- no accepted truth
-- no final reviewed record creation
-- no reviewed or master index mutation
+- no committed `data/public_index` mutation
+- no master index mutation
+- no public hosted index mutation
 - no production/public launch claim
 
 ## EVIDENCE
 
-- `control/inventory/ia_06_result.json`
-- `control/inventory/ia_review_promotion_boundary_report.json`
-- `control/audits/ia-06-review-promotion-dry-run-v0/`
-- `examples/review_queue/internet_archive_metadata/expected_promotion_preview.json`
+- `control/inventory/ia_07_result.json`
+- `control/inventory/ia_reviewed_index_boundary_report.json`
+- `control/inventory/ia_reviewed_search_result_matrix.json`
+- `control/inventory/ia_reviewed_object_packet_matrix.json`
+- `control/inventory/ia_reviewed_absence_packet_matrix.json`
+- `control/audits/ia-07-reviewed-local-index-rebuild-v0/`
+- `examples/reviewed_index/internet_archive_metadata/expected_reviewed_records.json`
 
 ## VALIDATION
 
@@ -139,24 +139,26 @@ not write reviewed or master indexes.
 - `python scripts/validate_ia_evidence_ledger_integration.py`
 - `python scripts/validate_ia_candidate_index_integration.py`
 - `python scripts/validate_ia_review_promotion_dry_run.py`
-- IA review/promotion focused tests
+- `python scripts/validate_ia_reviewed_index_rebuild.py`
+- IA reviewed-index focused tests
 
 ## ACCEPTANCE
 
-- IA review and promotion policies exist.
-- Review and promotion adapters, CLIs, validator, examples, docs, tests,
+- IA reviewed-index policy, schema, adapter, CLI, validator, examples, docs,
   inventories, and audit pack exist.
 - Dry-run passes without mutation.
-- Temp-instance proof writes fixture and live-preview review items.
-- Promotion previews are created and preview-only.
-- No accepted truth, reviewed-index mutation, master-index mutation, raw
-  response commit, downloads, uploads, extraction, model/provider calls, or
-  deployment occur.
+- Temp-instance proof writes fixture and live-preview reviewed local records.
+- Search result, object packet, and absence packet proofs pass.
+- Operator instance, committed public index, hosted public index, and master
+  index remain untouched.
+- No raw response commit, download, upload, extraction, model/provider call,
+  deployment, production readiness claim, or public launch readiness claim
+  occurs.
 
 ## OUTPUT_SCHEMA
 
-Final result is recorded in `control/inventory/ia_06_result.json` using
-`ia_06_result.v0`.
+Final result is recorded in `control/inventory/ia_07_result.json` using
+`ia_07_result.v0`.
 
 ## TOKEN_ESTIMATE
 
@@ -165,6 +167,8 @@ Final result is recorded in `control/inventory/ia_06_result.json` using
 
 ## NEXT
 
-Recommended next task: IA-07 - IA Reviewed Local Index Rebuild.
+Recommended next task: IA-PILOT-CLOSEOUT-01 - Internet Archive Metadata Pilot
+Closeout.
 
-Alternative: SYN-00 - Synthetic Query Foundry planning over Local/HUNT/PLAY/IA.
+Alternative: SYN-00 - Synthetic Query Foundry planning over
+Local/HUNT/PLAY/IA.

@@ -1,0 +1,12 @@
+{
+  "schema_version": "ia_reviewed_expected_object_packets.v0",
+  "task": "IA-07",
+  "expected_found": true,
+  "required_invariants": {
+    "reviewed_local_index_record": true,
+    "master_index_record": false,
+    "public_hosted_record": false,
+    "raw_response_committed": false,
+    "download_performed": false
+  }
+}

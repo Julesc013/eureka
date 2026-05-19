@@ -1,0 +1,11 @@
+{
+  "schema_version": "ia_reviewed_object_packet_matrix.v0",
+  "task": "IA-07",
+  "status": "pass",
+  "object_packet_proof_passed": true,
+  "packet_class": "ia_reviewed_local_object_packet",
+  "found": true,
+  "reviewed_local_index_record": true,
+  "master_index_record": false,
+  "public_hosted_record": false
+}

@@ -1,0 +1,26 @@
+{
+  "schema_version": "ia_reviewed_index_policy_matrix.v0",
+  "task": "IA-07",
+  "policy": "control/policies/ia_reviewed_index_policy.json",
+  "allowed": {
+    "reviewed_local_index_rebuild": true,
+    "write_scope": "temp_or_explicit_local_instance_only",
+    "accepted_inputs": [
+      "ia_promotion_previews_from_fixtures",
+      "ia_promotion_previews_from_live_preview"
+    ],
+    "search_object_absence_proof": true
+  },
+  "forbidden": {
+    "operator_instance_mutation": true,
+    "committed_data_public_index_mutation": true,
+    "master_index_mutation": true,
+    "hosted_public_search_mutation": true,
+    "raw_live_response_write": true,
+    "downloads_uploads": true,
+    "extraction": true,
+    "model_provider_calls": true,
+    "deployment": true,
+    "production_public_launch_claims": true
+  }
+}

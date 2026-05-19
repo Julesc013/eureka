@@ -1,0 +1,23 @@
+{
+  "schema_version": "ia_reviewed_expected_boundary_report.v0",
+  "task": "IA-07",
+  "expected_passed": true,
+  "required_false_flags": [
+    "operator_instance_mutated",
+    "instance_state_committed",
+    "raw_response_committed",
+    "committed_data_public_index_mutated",
+    "master_index_mutated",
+    "download_performed",
+    "upload_performed",
+    "extraction_executed",
+    "model_provider_used",
+    "deployment_performed",
+    "production_readiness_claimed",
+    "public_launch_readiness_claimed"
+  ],
+  "allowed_true_flags": [
+    "reviewed_index_mutated"
+  ],
+  "allowed_write_scope": "temp_explicit_instance_only"
+}

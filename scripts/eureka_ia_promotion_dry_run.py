@@ -82,12 +82,16 @@ def _load_review_decisions(args: argparse.Namespace) -> list[dict[str, Any]]:
             with ReviewQueueStore.open(paths.review_queue_db) as store:
                 store.init()
                 decisions = store.list_decisions(limit=1000)
-            values: list[dict[str, Any]] = []
-            for decision in decisions:
-                payload = dict(decision.payload)
-                if payload.get("schema_version") == "ia_review_decision_payload.v0":
-                    values.append(_decision_from_store_payload(decision.to_dict(), payload))
-            return values
+                values: list[dict[str, Any]] = []
+                for decision in decisions:
+                    payload = dict(decision.payload)
+                    if payload.get("schema_version") == "ia_review_decision_payload.v0":
+                        item = store.get_review_item(decision.review_item_id)
+                        item_payload = dict(item.payload) if item else {}
+                        values.append(
+                            _decision_from_store_payload(decision.to_dict(), payload, item_payload, item.to_dict() if item else {})
+                        )
+                return values
     return []
 
 
@@ -111,8 +115,16 @@ def _review_decisions_from_report(path: Path) -> list[dict[str, Any]]:
     return []
 
 
-def _decision_from_store_payload(decision: Mapping[str, Any], payload: Mapping[str, Any]) -> dict[str, Any]:
+def _decision_from_store_payload(
+    decision: Mapping[str, Any],
+    payload: Mapping[str, Any],
+    item_payload: Mapping[str, Any] | None = None,
+    item: Mapping[str, Any] | None = None,
+) -> dict[str, Any]:
+    item_payload = dict(item_payload or {})
+    item = dict(item or {})
     source_refs = dict(payload.get("source_refs", {}) or {})
+    detail = dict(payload.get("candidate_detail", {}) or item_payload.get("candidate_detail", {}) or {})
     return {
         "schema_version": "ia_review_decision.v0",
         "review_decision_id": str(decision.get("decision_id", "")),
@@ -130,18 +142,24 @@ def _decision_from_store_payload(decision: Mapping[str, Any], payload: Mapping[s
         "created_at": str(decision.get("created_at", "")),
         "candidate_snapshot": {
             "candidate_id": str(payload.get("ia_candidate_id", "")),
-            "candidate_kind": "ia_candidate",
-            "title": "IA promotion preview candidate",
-            "summary": "Promotion preview reconstructed from durable review decision payload.",
-            "source_locator": {},
+            "candidate_kind": str(item_payload.get("ia_candidate_kind", "ia_candidate")),
+            "title": str(item.get("summary", "")).split(";")[0] or "IA promotion preview candidate",
+            "summary": str(item.get("summary", "")) or "Promotion preview reconstructed from durable review decision payload.",
+            "source_locator": dict(item_payload.get("source_locator", {}) or {}),
             "evidence_ids": list(source_refs.get("evidence_refs", []) or []),
             "source_cache_record_ids": list(source_refs.get("source_cache_refs", []) or []),
             "observation_ids": list(source_refs.get("observation_refs", []) or []),
-            "provenance": {"source_id": "internet_archive_metadata", "metadata_only": True},
+            "item_identifier": str(detail.get("item_identifier", "")),
+            "mediatype": str(detail.get("mediatype", "")),
+            "collection_refs": list(detail.get("collection_refs", []) or []),
+            "file_summary": dict(detail.get("file_summary", {}) or {}),
+            "checksum_summary": dict(detail.get("checksum_summary", {}) or {}),
+            "claim_summary": dict(detail.get("claim_summary", {}) or {}),
+            "provenance": dict(item_payload.get("provenance", {}) or {"source_id": "internet_archive_metadata", "metadata_only": True}),
             "uncertainty": ["reconstructed from durable review decision payload"],
-            "limitations": ["preview-only reconstruction"],
-            "risk_flags": [],
-            "rights_flags": [],
+            "limitations": list(item.get("limitations", []) or []) or ["preview-only reconstruction"],
+            "risk_flags": list(item.get("warnings", []) or []) or ["metadata_not_truth"],
+            "rights_flags": ["rights_not_inferred", "safety_not_inferred", "compatibility_not_inferred"],
         },
     }
 

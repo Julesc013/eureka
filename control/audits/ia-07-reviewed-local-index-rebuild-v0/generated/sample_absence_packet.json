@@ -1,0 +1,10 @@
+{
+  "schema_version": "ia_reviewed_local_absence_packet.v0",
+  "task": "IA-07",
+  "query": "definitely-not-present-ia-07",
+  "absence_confirmed": true,
+  "master_index_record": false,
+  "public_hosted_record": false,
+  "raw_response_committed": false,
+  "download_performed": false
+}

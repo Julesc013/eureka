@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (5519 chars, 1380 approximate tokens)
+- `.aide/context/latest-task-packet.md` (5858 chars, 1465 approximate tokens)
 
 ## Context Packet Reference
 
@@ -33,31 +33,31 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Changed Files Summary
 
-- allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/IA-06/task.yaml` (M; matches active task allowed path)
-- unknown: `.aide/queue/IA-07` (??; does not match active task allowed paths)
+- allowed: `.aide/queue/IA-07/task.yaml` (M; matches active task allowed path)
+- allowed: `.aide/queue/IA-PILOT-CLOSEOUT-01` (??; matches active task allowed path)
 - allowed: `.aide/queue/index.yaml` (M; matches active task allowed path)
 - allowed: `.aide/reports/eureka-repo-health.json` (M; matches active task allowed path)
 - allowed: `.aide/reports/eureka-repo-health.md` (M; matches active task allowed path)
-- allowed: `control/audits/ia-06-review-promotion-dry-run-v0` (??; matches active task allowed path)
-- allowed: `control/inventory/ia_06_input_state.json` (??; matches active task allowed path)
-- allowed: `control/inventory/ia_06_next_task_decision.json` (??; matches active task allowed path)
-- allowed: `control/inventory/ia_06_result.json` (??; matches active task allowed path)
-- allowed: `control/inventory/ia_promotion_dry_run_result.json` (??; matches active task allowed path)
-- allowed: `control/inventory/ia_promotion_preview_schema.json` (??; matches active task allowed path)
-- allowed: `control/inventory/ia_review_decision_schema.json` (??; matches active task allowed path)
-- allowed: `control/inventory/ia_review_fixture_result.json` (??; matches active task allowed path)
-- allowed: `control/inventory/ia_review_item_schema.json` (??; matches active task allowed path)
-- allowed: `control/inventory/ia_review_live_preview_result.json` (??; matches active task allowed path)
-- allowed: `control/inventory/ia_review_policy_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/ia_review_promotion_boundary_report.json` (??; matches active task allowed path)
-- allowed: `control/inventory/ia_review_queue_write_plan.json` (??; matches active task allowed path)
-- allowed: `control/policies/ia_promotion_dry_run_policy.json` (??; matches active task allowed path)
-- allowed: `control/policies/ia_review_policy.json` (??; matches active task allowed path)
+- allowed: `control/audits/ia-07-reviewed-local-index-rebuild-v0` (??; matches active task allowed path)
+- allowed: `control/inventory/ia_07_input_state.json` (??; matches active task allowed path)
+- allowed: `control/inventory/ia_07_next_task_decision.json` (??; matches active task allowed path)
+- allowed: `control/inventory/ia_07_result.json` (??; matches active task allowed path)
+- allowed: `control/inventory/ia_reviewed_absence_packet_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/ia_reviewed_fixture_rebuild_result.json` (??; matches active task allowed path)
+- allowed: `control/inventory/ia_reviewed_index_boundary_report.json` (??; matches active task allowed path)
+- allowed: `control/inventory/ia_reviewed_index_policy_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/ia_reviewed_index_rebuild_plan.json` (??; matches active task allowed path)
+- allowed: `control/inventory/ia_reviewed_live_preview_rebuild_result.json` (??; matches active task allowed path)
+- allowed: `control/inventory/ia_reviewed_object_packet_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/ia_reviewed_record_schema.json` (??; matches active task allowed path)
+- allowed: `control/inventory/ia_reviewed_search_result_matrix.json` (??; matches active task allowed path)
+- allowed: `control/policies/ia_reviewed_index_policy.json` (??; matches active task allowed path)
 - allowed: `docs/operations/IA_METADATA_PILOT_RUNBOOK.md` (M; matches active task allowed path)
-- allowed: `docs/operations/IA_REVIEW_PROMOTION_DRY_RUN.md` (??; matches active task allowed path)
-- additional changed paths omitted from compact packet: 17; see task evidence changed-files report
+- allowed: `docs/operations/IA_REVIEWED_INDEX_REBUILD_RUNBOOK.md` (??; matches active task allowed path)
+- allowed: `docs/reference/IA_PROMOTION_PREVIEW.md` (M; matches active task allowed path)
+- allowed: `docs/reference/IA_REVIEWED_LOCAL_RECORD.md` (??; matches active task allowed path)
+- additional changed paths omitted from compact packet: 12; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -67,8 +67,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 6617
-- approx_tokens: 1655
+- chars: 6688
+- approx_tokens: 1672
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

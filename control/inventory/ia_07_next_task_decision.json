@@ -1,0 +1,8 @@
+{
+  "schema_version": "ia_07_next_task_decision.v0",
+  "task": "IA-07",
+  "status": "pass",
+  "recommended_next_task": "IA-PILOT-CLOSEOUT-01 - Internet Archive Metadata Pilot Closeout",
+  "alternative_next_task": "SYN-00 - Synthetic Query Foundry planning over Local/HUNT/PLAY/IA",
+  "do_not_start_next_task_in_ia_07": true
+}

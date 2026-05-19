@@ -1,0 +1,22 @@
+{
+  "schema_version": "ia_reviewed_local_record.v0",
+  "reviewed_record_id": "iarli_sample",
+  "source_id": "internet_archive_metadata",
+  "reviewed_local_index_record": true,
+  "master_index_record": false,
+  "public_hosted_record": false,
+  "raw_response_committed": false,
+  "download_performed": false,
+  "evidence_ids": [
+    "iaev_sample"
+  ],
+  "provenance": {
+    "metadata_only": true
+  },
+  "uncertainty": [
+    "local reviewed projection only"
+  ],
+  "limitations": [
+    "not master truth"
+  ]
+}

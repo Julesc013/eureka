@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-18
 repo: julesc013/eureka
-current_recommended_task: IA-07 — IA Reviewed Local Index Rebuild
+current_recommended_task: IA-PILOT-CLOSEOUT-01 — Internet Archive Metadata Pilot Closeout
 entries:
   - id: LOCAL-00
     title: Fork plan from F0 to local hosted workbench
@@ -394,12 +394,21 @@ entries:
     recommended_next: IA-07
   - id: IA-07
     title: IA Reviewed Local Index Rebuild
-    status: queued
+    status: completed
     purpose: Define reviewed local index rebuild behavior after IA review queue and promotion dry-run previews exist.
     allowed_scope_summary: IA reviewed-index rebuild policy, validators, tests, docs, inventories, and audit evidence only when explicitly scoped.
-    gate: IA-06 completed with review queue writes only to a temp explicit instance and promotion previews only; no accepted truth, downloads, extraction, model/provider calls, deployment, production readiness, or public launch claim.
+    gate: IA-06 completed with review queue writes only to a temp explicit instance and promotion previews only; IA-07 reviewed local index rebuild writes only to a temp explicit instance; no accepted truth, committed public index mutation, master index mutation, downloads, extraction, model/provider calls, deployment, production readiness, or public launch claim.
     task: .aide/queue/IA-07/task.yaml
     recommended_after: IA-06
+    recommended_next: IA-PILOT-CLOSEOUT-01
+  - id: IA-PILOT-CLOSEOUT-01
+    title: Internet Archive Metadata Pilot Closeout
+    status: queued
+    purpose: Close out the Internet Archive metadata local pilot after reviewed local index rebuild proof passes.
+    allowed_scope_summary: IA pilot closeout evidence, boundary rollup, docs, validators, inventories, and AIDE queue/context metadata only.
+    gate: IA-07 completed with reviewed local index writes only to a temp explicit instance; search/object/absence proofs passed; no operator instance mutation, committed public index mutation, master index mutation, downloads, extraction, model/provider calls, deployment, production readiness, or public launch claim.
+    task: .aide/queue/IA-PILOT-CLOSEOUT-01/task.yaml
+    recommended_after: IA-07
     recommended_next: SYN-00
   - id: SYN-00
     title: Synthetic Query Foundry planning over Local/HUNT/PLAY/IA
