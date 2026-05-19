@@ -33,19 +33,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Changed Files Summary
 
-- allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/DEV-AND-IA-TO-MAIN-PROMOTION-REVIEW/task.yaml` (M; matches active task allowed path)
-- allowed: `.aide/queue/REPO-LAYOUT-CANON-01` (??; matches active task allowed path)
-- allowed: `.aide/queue/index.yaml` (M; matches active task allowed path)
-- allowed: `.aide/reports/eureka-repo-health.json` (M; matches active task allowed path)
-- allowed: `.aide/reports/eureka-repo-health.md` (M; matches active task allowed path)
-- allowed: `control/audits/dev-and-ia-to-main-promotion-review-v0/README.md` (M; matches active task allowed path)
-- allowed: `control/audits/dev-and-ia-to-main-promotion-review-v0/branch_matrix.md` (M; matches active task allowed path)
-- allowed: `control/audits/dev-and-ia-to-main-promotion-review-v0/dev_and_ia_to_main_promotion_report.json` (M; matches active task allowed path)
-- allowed: `control/audits/dev-and-ia-to-main-promotion-review-v0/generated/sample_branch_matrix.json` (M; matches active task allowed path)
-- allowed: `control/inventory/dev_and_ia_to_main_promotion_branch_matrix.json` (M; matches active task allowed path)
-- allowed: `control/inventory/dev_and_ia_to_main_promotion_input_state.json` (M; matches active task allowed path)
-- allowed: `control/inventory/dev_and_ia_to_main_promotion_result.json` (M; matches active task allowed path)
+- none
 
 ## Validation Summary
 
@@ -55,8 +43,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 5641
-- approx_tokens: 1411
+- chars: 4251
+- approx_tokens: 1063
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:
