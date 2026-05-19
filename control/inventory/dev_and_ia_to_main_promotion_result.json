@@ -7,7 +7,7 @@
   "promotion_method": "fast_forward_only",
   "origin_main_equals_origin_dev": false,
   "main_pushed": false,
-  "dev_pushed": false,
+  "dev_pushed": true,
   "force_push_performed": false,
   "history_rewrite_performed": false,
   "branch_deleted": false,

@@ -17,6 +17,8 @@ Result:
 - Architecture boundaries: pass.
 - AIDE doctor/validate/test/selftest/verify/review-pack: pass.
 - Full unittest discovery: fail, blocking promotion.
+- Blocked audit evidence was committed and pushed to `dev`; `main` was not
+  pushed or fast-forwarded.
 
 Full discovery failed with `17` failures and `5` errors. Blocking groups:
 
