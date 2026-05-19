@@ -1,0 +1,90 @@
+{
+  "schema_version": "ia_pilot_reuse_matrix.v0",
+  "task": "IA-PILOT-CLOSEOUT-01",
+  "future_source_families": [
+    "Wayback/CDX",
+    "GitHub Releases",
+    "PyPI/npm/package registries",
+    "Software Heritage",
+    "Wikidata/Open Library",
+    "media metadata sources",
+    "future source packs"
+  ],
+  "rows": [
+    {
+      "pattern_id": "source_policy_gate",
+      "description": "Explicit policy files define endpoint, write, non-claim, and boundary posture before runtime work.",
+      "reusable_for": ["Wayback/CDX", "GitHub Releases", "PyPI/npm/package registries", "Software Heritage", "Wikidata/Open Library", "media metadata sources", "future source packs"]
+    },
+    {
+      "pattern_id": "fixture_replay",
+      "description": "Representative committed fixtures harden parser and normalizer behavior before live source access.",
+      "reusable_for": ["Wayback/CDX", "GitHub Releases", "PyPI/npm/package registries", "Software Heritage", "Wikidata/Open Library", "media metadata sources", "future source packs"]
+    },
+    {
+      "pattern_id": "bounded_live_metadata_probe",
+      "description": "Approved live metadata probes require caps, contact, redaction, and no raw body commits.",
+      "reusable_for": ["Wayback/CDX", "GitHub Releases", "PyPI/npm/package registries", "Software Heritage", "Wikidata/Open Library", "media metadata sources", "future source packs"]
+    },
+    {
+      "pattern_id": "tls_diagnostics",
+      "description": "TLS trust is diagnosed without disabling verification or committing machine-local trust state.",
+      "reusable_for": ["Wayback/CDX", "GitHub Releases", "PyPI/npm/package registries", "Software Heritage", "Wikidata/Open Library", "media metadata sources", "future source packs"]
+    },
+    {
+      "pattern_id": "redaction_policy",
+      "description": "Live responses are summarized into safe metadata and normalized previews only.",
+      "reusable_for": ["Wayback/CDX", "GitHub Releases", "PyPI/npm/package registries", "Software Heritage", "Wikidata/Open Library", "media metadata sources", "future source packs"]
+    },
+    {
+      "pattern_id": "source_cache_write_path",
+      "description": "Source observations can be written to temp explicit source cache without evidence or index mutation.",
+      "reusable_for": ["Wayback/CDX", "GitHub Releases", "PyPI/npm/package registries", "Software Heritage", "Wikidata/Open Library", "media metadata sources", "future source packs"]
+    },
+    {
+      "pattern_id": "evidence_candidate_generation",
+      "description": "Source-cache records become review-required claim candidates without accepted truth.",
+      "reusable_for": ["Wayback/CDX", "GitHub Releases", "PyPI/npm/package registries", "Software Heritage", "Wikidata/Open Library", "media metadata sources", "future source packs"]
+    },
+    {
+      "pattern_id": "provisional_candidate_generation",
+      "description": "Evidence candidates can become provisional candidate-index records in temp explicit instances only.",
+      "reusable_for": ["Wayback/CDX", "GitHub Releases", "PyPI/npm/package registries", "Software Heritage", "Wikidata/Open Library", "media metadata sources", "future source packs"]
+    },
+    {
+      "pattern_id": "review_queue_integration",
+      "description": "Candidates enter a review queue and receive local decisions without reviewed/master mutation.",
+      "reusable_for": ["Wayback/CDX", "GitHub Releases", "PyPI/npm/package registries", "Software Heritage", "Wikidata/Open Library", "media metadata sources", "future source packs"]
+    },
+    {
+      "pattern_id": "promotion_dry_run",
+      "description": "Approved review decisions produce preview-only reviewed-record candidates.",
+      "reusable_for": ["Wayback/CDX", "GitHub Releases", "PyPI/npm/package registries", "Software Heritage", "Wikidata/Open Library", "media metadata sources", "future source packs"]
+    },
+    {
+      "pattern_id": "reviewed_local_index_rebuild",
+      "description": "Promotion previews rebuild reviewed local records in temp explicit instances only.",
+      "reusable_for": ["Wayback/CDX", "GitHub Releases", "PyPI/npm/package registries", "Software Heritage", "Wikidata/Open Library", "media metadata sources", "future source packs"]
+    },
+    {
+      "pattern_id": "search_object_absence_proof",
+      "description": "Reviewed local records support search result, object packet, and absence packet proof.",
+      "reusable_for": ["Wayback/CDX", "GitHub Releases", "PyPI/npm/package registries", "Software Heritage", "Wikidata/Open Library", "media metadata sources", "future source packs"]
+    },
+    {
+      "pattern_id": "temp_instance_proof_pattern",
+      "description": "Mutation proofs use temporary explicit instances and leave the operator instance untouched.",
+      "reusable_for": ["Wayback/CDX", "GitHub Releases", "PyPI/npm/package registries", "Software Heritage", "Wikidata/Open Library", "media metadata sources", "future source packs"]
+    },
+    {
+      "pattern_id": "non_claim_policy",
+      "description": "Each stage records what the source material must not be used to claim.",
+      "reusable_for": ["Wayback/CDX", "GitHub Releases", "PyPI/npm/package registries", "Software Heritage", "Wikidata/Open Library", "media metadata sources", "future source packs"]
+    },
+    {
+      "pattern_id": "boundary_report_pattern",
+      "description": "Each write or probe emits a boundary report with forbidden mutations and non-claims.",
+      "reusable_for": ["Wayback/CDX", "GitHub Releases", "PyPI/npm/package registries", "Software Heritage", "Wikidata/Open Library", "media metadata sources", "future source packs"]
+    }
+  ]
+}

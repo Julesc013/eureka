@@ -1,0 +1,166 @@
+{
+  "schema_version": "ia_pilot_validation_matrix.v0",
+  "task": "IA-PILOT-CLOSEOUT-01",
+  "rows": [
+    {
+      "validation_id": "policy_validator",
+      "command": "python scripts/validate_ia_metadata_policy.py",
+      "status": "pass",
+      "blocks_closeout": true,
+      "notes": "IA-00 policy gate passes.",
+      "evidence_path": "control/inventory/ia_00_result.json"
+    },
+    {
+      "validation_id": "fixture_replay_validator",
+      "command": "python scripts/validate_ia_fixture_replay.py",
+      "status": "pass",
+      "blocks_closeout": true,
+      "notes": "IA-01 fixture replay passes.",
+      "evidence_path": "control/inventory/ia_01_result.json"
+    },
+    {
+      "validation_id": "live_probe_validator",
+      "command": "python scripts/validate_ia_live_metadata_probe.py",
+      "status": "pass",
+      "blocks_closeout": true,
+      "notes": "IA-02 redacted live metadata probe passes with two HTTP requests.",
+      "evidence_path": "control/inventory/ia_02_result.json"
+    },
+    {
+      "validation_id": "tls_validator",
+      "command": "python scripts/validate_ia_tls_trust.py",
+      "status": "pass",
+      "blocks_closeout": true,
+      "notes": "TLS verification remains enabled and no insecure bypass is used.",
+      "evidence_path": "control/inventory/ia_02_tls_continue_result.json"
+    },
+    {
+      "validation_id": "source_cache_validator",
+      "command": "python scripts/validate_ia_source_cache_write.py",
+      "status": "pass",
+      "blocks_closeout": true,
+      "notes": "IA-03 source-cache temp-instance write proof passes.",
+      "evidence_path": "control/inventory/ia_03_result.json"
+    },
+    {
+      "validation_id": "evidence_validator",
+      "command": "python scripts/validate_ia_evidence_ledger_integration.py",
+      "status": "pass",
+      "blocks_closeout": true,
+      "notes": "IA-04 evidence candidates remain review-required.",
+      "evidence_path": "control/inventory/ia_04_result.json"
+    },
+    {
+      "validation_id": "candidate_validator",
+      "command": "python scripts/validate_ia_candidate_index_integration.py",
+      "status": "pass",
+      "blocks_closeout": true,
+      "notes": "IA-05 candidate index temp-instance write proof passes.",
+      "evidence_path": "control/inventory/ia_05_result.json"
+    },
+    {
+      "validation_id": "review_promotion_validator",
+      "command": "python scripts/validate_ia_review_promotion_dry_run.py",
+      "status": "pass",
+      "blocks_closeout": true,
+      "notes": "IA-06 review queue and promotion preview proof passes.",
+      "evidence_path": "control/inventory/ia_06_result.json"
+    },
+    {
+      "validation_id": "reviewed_index_validator",
+      "command": "python scripts/validate_ia_reviewed_index_rebuild.py",
+      "status": "pass",
+      "blocks_closeout": true,
+      "notes": "IA-07 reviewed local index rebuild and search/object/absence proof passes.",
+      "evidence_path": "control/inventory/ia_07_result.json"
+    },
+    {
+      "validation_id": "architecture_boundaries",
+      "command": "python scripts/check_architecture_boundaries.py",
+      "status": "pass",
+      "blocks_closeout": true,
+      "notes": "No architecture-boundary violations found.",
+      "evidence_path": "control/audits/ia-pilot-closeout-01-v0/validation.md"
+    },
+    {
+      "validation_id": "generated_artifact_cleanliness",
+      "command": "python scripts/check_generated_artifact_cleanliness.py --check --json",
+      "status": "pass",
+      "blocks_closeout": true,
+      "notes": "Expected to be rerun after commit for final clean state.",
+      "evidence_path": "control/audits/ia-pilot-closeout-01-v0/validation.md"
+    },
+    {
+      "validation_id": "aide_doctor",
+      "command": "python .aide/scripts/aide_lite.py doctor",
+      "status": "pass",
+      "blocks_closeout": true,
+      "notes": "AIDE doctor passes.",
+      "evidence_path": ".aide/context/latest-review-packet.md"
+    },
+    {
+      "validation_id": "aide_validate",
+      "command": "python .aide/scripts/aide_lite.py validate",
+      "status": "pass",
+      "blocks_closeout": true,
+      "notes": "AIDE validation passes.",
+      "evidence_path": ".aide/context/latest-review-packet.md"
+    },
+    {
+      "validation_id": "aide_test",
+      "command": "python .aide/scripts/aide_lite.py test",
+      "status": "pass",
+      "blocks_closeout": true,
+      "notes": "AIDE Lite tests pass.",
+      "evidence_path": ".aide/context/latest-review-packet.md"
+    },
+    {
+      "validation_id": "aide_selftest",
+      "command": "python .aide/scripts/aide_lite.py selftest",
+      "status": "pass",
+      "blocks_closeout": true,
+      "notes": "AIDE Lite selftest passes.",
+      "evidence_path": ".aide/context/latest-review-packet.md"
+    },
+    {
+      "validation_id": "aide_verify",
+      "command": "python .aide/scripts/aide_lite.py verify",
+      "status": "pass",
+      "blocks_closeout": true,
+      "notes": "AIDE verify passes for the closeout scope.",
+      "evidence_path": ".aide/context/latest-review-packet.md"
+    },
+    {
+      "validation_id": "aide_review_pack",
+      "command": "python .aide/scripts/aide_lite.py review-pack",
+      "status": "pass",
+      "blocks_closeout": true,
+      "notes": "AIDE review packet generated under token budget.",
+      "evidence_path": ".aide/context/latest-review-packet.md"
+    },
+    {
+      "validation_id": "aide_commit_check",
+      "command": "python .aide/scripts/aide_lite.py commit check --latest",
+      "status": "pass",
+      "blocks_closeout": true,
+      "notes": "To be rerun after closeout commit.",
+      "evidence_path": ".aide/context/latest-review-packet.md"
+    },
+    {
+      "validation_id": "focused_ia_tests",
+      "command": "python -m unittest tests.operations.test_ia_pilot_closeout tests.operations.test_ia_pilot_closeout_gates tests.operations.test_ia_pilot_syn_handoff",
+      "status": "pass",
+      "blocks_closeout": true,
+      "notes": "IA pilot closeout focused tests pass.",
+      "evidence_path": "tests/operations/"
+    },
+    {
+      "validation_id": "full_unittest_discovery",
+      "command": "python -m unittest discover -s tests -t .",
+      "status": "fail",
+      "blocks_closeout": false,
+      "notes": "Ran 4717 tests in 2983.319s; FAILED with failures=9, errors=5. Failures/errors are outside the IA closeout focused lane: candidate-index contract validators, HUNT main-promotion state expectations, R0 runtime leakage gates, and source-observation validation broad gate.",
+      "evidence_path": "control/audits/ia-pilot-closeout-01-v0/validation.md"
+    }
+  ]
+}

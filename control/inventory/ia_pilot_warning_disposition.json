@@ -1,0 +1,8 @@
+{
+  "schema_version": "ia_pilot_warning_disposition.v0",
+  "task": "IA-PILOT-CLOSEOUT-01",
+  "hard_blockers_remaining": 0,
+  "warnings_remaining": 0,
+  "warnings": [],
+  "disposition": "no IA pilot warnings remain open for SYN handoff or promotion review"
+}

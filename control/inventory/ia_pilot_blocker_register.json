@@ -1,0 +1,14 @@
+{
+  "schema_version": "ia_pilot_blocker_register.v0",
+  "task": "IA-PILOT-CLOSEOUT-01",
+  "hard_blockers_remaining": 0,
+  "blockers": [],
+  "closed_blockers": [
+    {
+      "blocker_id": "ia_02_tls_trust_failure",
+      "closed_by": "IA-02-TLS-TRUST-CONTINUE",
+      "status": "closed",
+      "evidence": "control/inventory/ia_02_tls_continue_result.json"
+    }
+  ]
+}

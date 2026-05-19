@@ -152,3 +152,21 @@ and not production or public launch claims. The gate must not mutate
 
 IA-PILOT-CLOSEOUT-01 may summarize the metadata pilot. No gate may convert live
 metadata directly into public truth.
+
+## IA-PILOT-CLOSEOUT-01
+
+Closeout validates IA-00 through IA-07 as one bounded local-source vertical
+slice:
+
+```powershell
+python scripts/validate_ia_pilot_closeout.py
+python scripts/summarize_ia_pilot.py --json
+```
+
+The closeout records capability, validation, boundary, and reuse matrices. It
+confirms SYN-00 can start as planning over Local/HUNT/PLAY/IA evidence.
+
+Closeout still does not start SYN, run a new IA live probe, download files,
+mutate the operator instance, mutate committed `data/public_index`, mutate the
+master index, run extraction, call model/provider APIs, deploy, or claim
+production/public launch readiness.

@@ -1,0 +1,10 @@
+{
+  "schema_version": "ia_pilot_validation_matrix_sample.v0",
+  "task": "IA-PILOT-CLOSEOUT-01",
+  "sample_validation": {
+    "validation_id": "reviewed_index_validator",
+    "command": "python scripts/validate_ia_reviewed_index_rebuild.py",
+    "status": "pass",
+    "blocks_closeout": true
+  }
+}

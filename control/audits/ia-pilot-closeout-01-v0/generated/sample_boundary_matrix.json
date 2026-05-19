@@ -1,0 +1,16 @@
+{
+  "schema_version": "ia_pilot_boundary_matrix_sample.v0",
+  "task": "IA-PILOT-CLOSEOUT-01",
+  "forbidden_boundaries": {
+    "raw_response_committed": false,
+    "operator_instance_mutated": false,
+    "committed_data_public_index_mutated": false,
+    "master_index_mutated": false
+  },
+  "intentionally_allowed_actions": {
+    "live_metadata_probe_performed": true,
+    "total_http_requests": 2,
+    "reviewed_index_mutated": true,
+    "reviewed_index_write_scope": "temp_explicit_instance_only"
+  }
+}

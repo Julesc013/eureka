@@ -1,0 +1,9 @@
+{
+  "schema_version": "ia_pilot_next_task_decision.v0",
+  "task": "IA-PILOT-CLOSEOUT-01",
+  "recommended_next_task": "SYN-00 \u2014 Synthetic Query Foundry planning over Local/HUNT/PLAY/IA",
+  "alternative_next_task": "IA-TO-MAIN-PROMOTION-REVIEW \u2014 Promote IA metadata pilot baseline",
+  "syn_can_start": true,
+  "ia_to_main_promotion_review_recommended": true,
+  "reason": "IA metadata pilot vertical slice is complete through reviewed local index proof; SYN should now pressure-test Local/HUNT/PLAY/IA behavior before extraction or broad source expansion."
+}

@@ -62,3 +62,25 @@ parses representative IA metadata shapes, normalizes them into source-
 observation candidate records, and emits boundary reports. It does not add a
 network-capable connector and it does not write source cache, evidence ledger,
 candidate index, reviewed index, or master index state.
+
+## Closed Pilot Model
+
+IA-PILOT-CLOSEOUT-01 closes the metadata-only pilot through IA-07. The proven
+local path is:
+
+```text
+fixture/live-preview metadata
+-> source cache
+-> evidence candidates
+-> provisional candidates
+-> review decisions
+-> promotion previews
+-> reviewed local records in a temp explicit instance
+-> local search/object/absence proof
+```
+
+The reusable connector model is a gated source-observation pipeline, not a full
+Archive.org integration. Broad source search, public fanout, downloads,
+extraction, compatibility truth, rights clearance, malware safety, hosted
+public search, master index mutation, production readiness, and public launch
+readiness remain outside the approved pilot.

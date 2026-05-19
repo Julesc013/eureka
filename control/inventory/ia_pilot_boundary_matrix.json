@@ -1,0 +1,43 @@
+{
+  "schema_version": "ia_pilot_boundary_matrix.v0",
+  "task": "IA-PILOT-CLOSEOUT-01",
+  "forbidden_boundaries": {
+    "raw_response_committed": false,
+    "operator_instance_mutated": false,
+    "instance_state_committed": false,
+    "committed_data_public_index_mutated": false,
+    "master_index_mutated": false,
+    "hosted_public_search_mutated": false,
+    "public_search_fanout_enabled": false,
+    "downloads_performed": false,
+    "uploads_performed": false,
+    "extraction_executed": false,
+    "model_provider_used": false,
+    "deployment_performed": false,
+    "production_readiness_claimed": false,
+    "public_launch_readiness_claimed": false
+  },
+  "intentionally_allowed_actions": {
+    "live_metadata_probe_performed": true,
+    "total_http_requests": 2,
+    "source_cache_write_performed": true,
+    "source_cache_write_scope": "temp_explicit_instance_only",
+    "evidence_ledger_write_performed": true,
+    "evidence_ledger_write_scope": "temp_explicit_instance_only",
+    "candidate_index_mutated": true,
+    "candidate_index_write_scope": "temp_explicit_instance_only",
+    "review_queue_mutated": true,
+    "review_queue_write_scope": "temp_explicit_instance_only",
+    "reviewed_index_mutated": true,
+    "reviewed_index_write_scope": "temp_explicit_instance_only"
+  },
+  "non_claims": [
+    "no full Archive.org integration claim",
+    "no rights clearance claim",
+    "no malware safety claim",
+    "no compatibility truth claim",
+    "no hosted public search claim",
+    "no production readiness claim",
+    "no public launch readiness claim"
+  ]
+}

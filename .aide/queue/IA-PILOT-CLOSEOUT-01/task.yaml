@@ -1,6 +1,6 @@
 id: IA-PILOT-CLOSEOUT-01
 title: Internet Archive Metadata Pilot Closeout
-status: queued
+status: completed
 purpose: Close out the Internet Archive metadata local pilot after reviewed local index rebuild proof passes.
 allowed_scope_summary: IA pilot closeout evidence, boundary rollup, docs, validators, inventories, and AIDE queue/context metadata only.
 gate:

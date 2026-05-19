@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (5858 chars, 1465 approximate tokens)
+- `.aide/context/latest-task-packet.md` (4796 chars, 1199 approximate tokens)
 
 ## Context Packet Reference
 
@@ -34,30 +34,30 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 ## Changed Files Summary
 
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/IA-07/task.yaml` (M; matches active task allowed path)
-- allowed: `.aide/queue/IA-PILOT-CLOSEOUT-01` (??; matches active task allowed path)
+- allowed: `.aide/queue/IA-PILOT-CLOSEOUT-01/task.yaml` (M; matches active task allowed path)
+- allowed: `.aide/queue/IA-TO-MAIN-PROMOTION-REVIEW` (??; matches active task allowed path)
 - allowed: `.aide/queue/index.yaml` (M; matches active task allowed path)
 - allowed: `.aide/reports/eureka-repo-health.json` (M; matches active task allowed path)
 - allowed: `.aide/reports/eureka-repo-health.md` (M; matches active task allowed path)
-- allowed: `control/audits/ia-07-reviewed-local-index-rebuild-v0` (??; matches active task allowed path)
-- allowed: `control/inventory/ia_07_input_state.json` (??; matches active task allowed path)
-- allowed: `control/inventory/ia_07_next_task_decision.json` (??; matches active task allowed path)
-- allowed: `control/inventory/ia_07_result.json` (??; matches active task allowed path)
-- allowed: `control/inventory/ia_reviewed_absence_packet_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/ia_reviewed_fixture_rebuild_result.json` (??; matches active task allowed path)
-- allowed: `control/inventory/ia_reviewed_index_boundary_report.json` (??; matches active task allowed path)
-- allowed: `control/inventory/ia_reviewed_index_policy_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/ia_reviewed_index_rebuild_plan.json` (??; matches active task allowed path)
-- allowed: `control/inventory/ia_reviewed_live_preview_rebuild_result.json` (??; matches active task allowed path)
-- allowed: `control/inventory/ia_reviewed_object_packet_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/ia_reviewed_record_schema.json` (??; matches active task allowed path)
-- allowed: `control/inventory/ia_reviewed_search_result_matrix.json` (??; matches active task allowed path)
-- allowed: `control/policies/ia_reviewed_index_policy.json` (??; matches active task allowed path)
+- allowed: `control/audits/ia-pilot-closeout-01-v0` (??; matches active task allowed path)
+- allowed: `control/inventory/ia_pilot_blocker_register.json` (??; matches active task allowed path)
+- allowed: `control/inventory/ia_pilot_boundary_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/ia_pilot_capability_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/ia_pilot_closeout_input_state.json` (??; matches active task allowed path)
+- allowed: `control/inventory/ia_pilot_closeout_result.json` (??; matches active task allowed path)
+- allowed: `control/inventory/ia_pilot_next_task_decision.json` (??; matches active task allowed path)
+- allowed: `control/inventory/ia_pilot_reuse_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/ia_pilot_validation_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/ia_pilot_warning_disposition.json` (??; matches active task allowed path)
+- allowed: `docs/architecture/IA_METADATA_CONNECTOR_MODEL.md` (M; matches active task allowed path)
+- allowed: `docs/operations/IA_METADATA_PILOT_CLOSEOUT.md` (??; matches active task allowed path)
 - allowed: `docs/operations/IA_METADATA_PILOT_RUNBOOK.md` (M; matches active task allowed path)
-- allowed: `docs/operations/IA_REVIEWED_INDEX_REBUILD_RUNBOOK.md` (??; matches active task allowed path)
-- allowed: `docs/reference/IA_PROMOTION_PREVIEW.md` (M; matches active task allowed path)
-- allowed: `docs/reference/IA_REVIEWED_LOCAL_RECORD.md` (??; matches active task allowed path)
-- additional changed paths omitted from compact packet: 12; see task evidence changed-files report
+- allowed: `docs/operations/POST_IA_SYN_ENTRY_PLAN.md` (??; matches active task allowed path)
+- allowed: `scripts/summarize_ia_pilot.py` (??; matches active task allowed path)
+- allowed: `scripts/validate_ia_pilot_closeout.py` (??; matches active task allowed path)
+- allowed: `tests/operations/test_ia_pilot_closeout.py` (??; matches active task allowed path)
+- allowed: `tests/operations/test_ia_pilot_closeout_gates.py` (??; matches active task allowed path)
+- additional changed paths omitted from compact packet: 1; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -67,8 +67,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 6688
-- approx_tokens: 1672
+- chars: 6626
+- approx_tokens: 1657
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

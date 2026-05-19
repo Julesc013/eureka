@@ -2,29 +2,31 @@
 
 Updated: 2026-05-19
 
-Current recommended task: IA-PILOT-CLOSEOUT-01 - Internet Archive Metadata
-Pilot Closeout.
+Current recommended task: SYN-00 - Synthetic Query Foundry planning over
+Local/HUNT/PLAY/IA.
 
-Last completed task: IA-07 - IA Reviewed Local Index Rebuild.
+Last completed task: IA-PILOT-CLOSEOUT-01 - Internet Archive Metadata Pilot
+Closeout.
 
 Status: pass. The preferred local instance path remains
 `../instances/default`, with legacy sibling `../eureka-instance`
 explicit-only.
 
-IA-07 added the Internet Archive metadata reviewed local index rebuild path.
-IA promotion previews from fixture replay and the IA-02 redacted live preview
-can now produce reviewed local records inside a temporary explicit instance.
+The Internet Archive metadata pilot is closed as a metadata-only local-source
+vertical slice. IA-00 through IA-07 validate through reviewed local index
+rebuild, search result proof, object packet proof, and absence packet proof.
 
-The temp-instance proof wrote 39 reviewed local records:
+The pilot proves reusable source-family patterns: policy gates, fixture replay,
+bounded metadata probes, TLS diagnostics, redaction, source cache, evidence
+candidates, provisional candidates, review queue, promotion dry-run, reviewed
+local index rebuild, temp-instance proofs, non-claims, and boundary reports.
 
-- 30 from fixture promotion previews
-- 9 from redacted live-preview promotion previews
+All write-capable stages remain `temp_explicit_instance_only`. The operator
+instance was not mutated. No raw response body, committed `data/public_index`
+mutation, master index mutation, hosted public search mutation, extraction,
+model/provider call, download, upload, deployment, production readiness claim,
+or public launch readiness claim occurred.
 
-Search, object packet, and absence packet proofs passed over the rebuilt
-reviewed local index. The reviewed index write scope was
-`temp_explicit_instance_only`; the operator instance was not mutated.
-
-No raw response body, committed `data/public_index` mutation, master index
-mutation, extraction, model/provider call, download, upload, public fanout,
-deployment, production readiness claim, or public launch readiness claim
-occurred. IA-PILOT-CLOSEOUT-01 is now the next gated task.
+SYN-00 is now the recommended next task. IA-TO-MAIN-PROMOTION-REVIEW is queued
+as an alternative governance review for promoting the IA metadata pilot
+baseline.

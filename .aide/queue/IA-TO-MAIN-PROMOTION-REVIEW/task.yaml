@@ -1,0 +1,16 @@
+id: IA-TO-MAIN-PROMOTION-REVIEW
+title: Promote IA metadata pilot baseline
+status: queued
+purpose: Review whether the completed IA metadata pilot baseline should be promoted to main after closeout.
+allowed_scope_summary: promotion review evidence, branch comparison, validation rollup, and AIDE queue/context metadata only.
+gate:
+  - IA-PILOT-CLOSEOUT-01 completed
+  - IA-00 through IA-07 validators pass
+  - no raw response commit
+  - no operator instance mutation
+  - no committed data/public_index mutation
+  - no master index mutation
+  - no downloads or uploads
+  - no extraction, model/provider calls, deployment, production readiness, or public launch claim
+recommended_after: IA-PILOT-CLOSEOUT-01
+recommended_next: SYN-00

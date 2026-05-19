@@ -1,0 +1,19 @@
+{
+  "schema_version": "ia_pilot_closeout_report.v0",
+  "task": "IA-PILOT-CLOSEOUT-01",
+  "status": "pass",
+  "ia_00_policy_validated": true,
+  "ia_01_fixture_replay_validated": true,
+  "ia_02_live_probe_validated": true,
+  "ia_03_source_cache_validated": true,
+  "ia_04_evidence_ledger_validated": true,
+  "ia_05_candidate_index_validated": true,
+  "ia_06_review_promotion_validated": true,
+  "ia_07_reviewed_index_validated": true,
+  "full_ia_metadata_vertical_slice_complete": true,
+  "full_archive_org_integration_claimed": false,
+  "hard_blockers_remaining": 0,
+  "warnings_remaining": 0,
+  "syn_can_start": true,
+  "recommended_next_task": "SYN-00 \u2014 Synthetic Query Foundry planning over Local/HUNT/PLAY/IA"
+}

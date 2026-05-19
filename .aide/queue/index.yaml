@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-18
 repo: julesc013/eureka
-current_recommended_task: IA-PILOT-CLOSEOUT-01 — Internet Archive Metadata Pilot Closeout
+current_recommended_task: SYN-00 — Synthetic Query Foundry planning over Local/HUNT/PLAY/IA
 entries:
   - id: LOCAL-00
     title: Fork plan from F0 to local hosted workbench
@@ -403,16 +403,25 @@ entries:
     recommended_next: IA-PILOT-CLOSEOUT-01
   - id: IA-PILOT-CLOSEOUT-01
     title: Internet Archive Metadata Pilot Closeout
-    status: queued
+    status: completed
     purpose: Close out the Internet Archive metadata local pilot after reviewed local index rebuild proof passes.
     allowed_scope_summary: IA pilot closeout evidence, boundary rollup, docs, validators, inventories, and AIDE queue/context metadata only.
     gate: IA-07 completed with reviewed local index writes only to a temp explicit instance; search/object/absence proofs passed; no operator instance mutation, committed public index mutation, master index mutation, downloads, extraction, model/provider calls, deployment, production readiness, or public launch claim.
     task: .aide/queue/IA-PILOT-CLOSEOUT-01/task.yaml
     recommended_after: IA-07
     recommended_next: SYN-00
+  - id: IA-TO-MAIN-PROMOTION-REVIEW
+    title: Promote IA metadata pilot baseline
+    status: queued
+    purpose: Review whether the completed IA metadata pilot baseline should be promoted to main after closeout.
+    allowed_scope_summary: promotion review evidence, branch comparison, validation rollup, and AIDE queue/context metadata only.
+    gate: IA-PILOT-CLOSEOUT-01 completed with no raw response commit, operator instance mutation, committed public index mutation, master index mutation, downloads, extraction, model/provider calls, deployment, production readiness, or public launch claim.
+    task: .aide/queue/IA-TO-MAIN-PROMOTION-REVIEW/task.yaml
+    recommended_after: IA-PILOT-CLOSEOUT-01
+    recommended_next: SYN-00
   - id: SYN-00
     title: Synthetic Query Foundry planning over Local/HUNT/PLAY/IA
-    status: queued
+    status: ready
     purpose: Plan Synthetic Query Foundry over the completed Local Appliance, HUNT spine, PLAY demo pack, and IA approval boundary.
     allowed_scope_summary: SYN planning, taxonomy preparation, policies, docs, and audit evidence only until explicitly scoped; no SYN runtime implementation yet.
     gate: PLAY-00 and IA approval closure context reviewed; use HUNT/SearchNeed/WorkUnit/local eval boundaries; no synthetic generation runtime, model calls, deployment, production readiness claim, or public launch claim.

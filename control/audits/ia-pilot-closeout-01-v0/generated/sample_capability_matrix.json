@@ -1,0 +1,11 @@
+{
+  "schema_version": "ia_pilot_capability_matrix_sample.v0",
+  "task": "IA-PILOT-CLOSEOUT-01",
+  "sample_capability": {
+    "capability_id": "ia_07_reviewed_local_index_rebuild",
+    "implemented": true,
+    "tested": true,
+    "write_scope": "temp_explicit_instance_only",
+    "reusable_for_future_sources": true
+  }
+}
