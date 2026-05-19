@@ -1,0 +1,182 @@
+{
+  "schema_version": "dev_and_ia_to_main_promotion_validation_matrix.v0",
+  "task": "DEV-AND-IA-TO-MAIN-PROMOTION-REVIEW",
+  "rows": [
+    {
+      "validation_id": "ia_metadata_policy",
+      "command": "python scripts/validate_ia_metadata_policy.py",
+      "status": "pass",
+      "blocks_promotion": true,
+      "reason": "IA-00 policy gate validates metadata-only posture.",
+      "evidence_path": "control/inventory/ia_00_result.json"
+    },
+    {
+      "validation_id": "ia_fixture_replay",
+      "command": "python scripts/validate_ia_fixture_replay.py",
+      "status": "pass",
+      "blocks_promotion": true,
+      "reason": "IA-01 fixture replay hardening validates.",
+      "evidence_path": "control/inventory/ia_01_result.json"
+    },
+    {
+      "validation_id": "ia_live_metadata_probe",
+      "command": "python scripts/validate_ia_live_metadata_probe.py",
+      "status": "pass",
+      "blocks_promotion": true,
+      "reason": "IA-02 bounded live metadata probe evidence validates without new live calls.",
+      "evidence_path": "control/inventory/ia_02_result.json"
+    },
+    {
+      "validation_id": "ia_source_cache",
+      "command": "python scripts/validate_ia_source_cache_write.py",
+      "status": "pass",
+      "blocks_promotion": true,
+      "reason": "IA-03 source-cache write path validates as temp explicit instance only.",
+      "evidence_path": "control/inventory/ia_03_result.json"
+    },
+    {
+      "validation_id": "ia_evidence",
+      "command": "python scripts/validate_ia_evidence_ledger_integration.py",
+      "status": "pass",
+      "blocks_promotion": true,
+      "reason": "IA-04 evidence-ledger integration validates as temp explicit instance only.",
+      "evidence_path": "control/inventory/ia_04_result.json"
+    },
+    {
+      "validation_id": "ia_candidate",
+      "command": "python scripts/validate_ia_candidate_index_integration.py",
+      "status": "pass",
+      "blocks_promotion": true,
+      "reason": "IA-05 candidate-index integration validates as provisional and review-bound.",
+      "evidence_path": "control/inventory/ia_05_result.json"
+    },
+    {
+      "validation_id": "ia_review_promotion",
+      "command": "python scripts/validate_ia_review_promotion_dry_run.py",
+      "status": "pass",
+      "blocks_promotion": true,
+      "reason": "IA-06 review/promotion dry-run validates as preview only.",
+      "evidence_path": "control/inventory/ia_06_result.json"
+    },
+    {
+      "validation_id": "ia_reviewed_index",
+      "command": "python scripts/validate_ia_reviewed_index_rebuild.py",
+      "status": "pass",
+      "blocks_promotion": true,
+      "reason": "IA-07 reviewed-index rebuild validates in temp explicit instance only.",
+      "evidence_path": "control/inventory/ia_07_result.json"
+    },
+    {
+      "validation_id": "ia_pilot_closeout",
+      "command": "python scripts/validate_ia_pilot_closeout.py",
+      "status": "pass",
+      "blocks_promotion": true,
+      "reason": "IA closeout records zero blockers and zero warnings.",
+      "evidence_path": "control/inventory/ia_pilot_closeout_result.json"
+    },
+    {
+      "validation_id": "repo_structure_canon",
+      "command": "python scripts/validate_repo_structure_canon.py",
+      "status": "pass",
+      "blocks_promotion": true,
+      "reason": "REPO-LAYOUT-CANON-01 validator passes with recorded layout debt only.",
+      "evidence_path": "control/inventory/repo_layout_canon_result.json"
+    },
+    {
+      "validation_id": "repo_structure_canon_tests",
+      "command": "python -m unittest tests.operations.test_repo_structure_canon && python -m unittest tests.scripts.test_validate_repo_structure_canon",
+      "status": "pass",
+      "blocks_promotion": true,
+      "reason": "Focused layout canon tests pass.",
+      "evidence_path": "tests/operations/test_repo_structure_canon.py"
+    },
+    {
+      "validation_id": "architecture_boundaries",
+      "command": "python scripts/check_architecture_boundaries.py",
+      "status": "pass",
+      "blocks_promotion": true,
+      "reason": "Architecture boundary checker passes.",
+      "evidence_path": "scripts/check_architecture_boundaries.py"
+    },
+    {
+      "validation_id": "generated_artifact_cleanliness",
+      "command": "python scripts/check_generated_artifact_cleanliness.py --check --json",
+      "status": "pass",
+      "blocks_promotion": true,
+      "reason": "Generated artifact cleanliness passes after the promotion-review evidence commit.",
+      "evidence_path": "control/audits/dev-and-ia-to-main-promotion-review-v0/validation.md"
+    },
+    {
+      "validation_id": "git_diff_check",
+      "command": "git diff --check",
+      "status": "pass",
+      "blocks_promotion": true,
+      "reason": "Whitespace check passes.",
+      "evidence_path": "control/audits/dev-and-ia-to-main-promotion-review-v0/validation.md"
+    },
+    {
+      "validation_id": "aide_doctor",
+      "command": "python .aide/scripts/aide_lite.py doctor",
+      "status": "pass",
+      "blocks_promotion": true,
+      "reason": "AIDE doctor passes.",
+      "evidence_path": ".aide/context/latest-task-packet.md"
+    },
+    {
+      "validation_id": "aide_validate",
+      "command": "python .aide/scripts/aide_lite.py validate",
+      "status": "pass",
+      "blocks_promotion": true,
+      "reason": "AIDE validate passes.",
+      "evidence_path": ".aide/context/latest-task-packet.md"
+    },
+    {
+      "validation_id": "aide_test",
+      "command": "python .aide/scripts/aide_lite.py test",
+      "status": "pass",
+      "blocks_promotion": true,
+      "reason": "AIDE test passes.",
+      "evidence_path": ".aide/context/latest-task-packet.md"
+    },
+    {
+      "validation_id": "aide_selftest",
+      "command": "python .aide/scripts/aide_lite.py selftest",
+      "status": "pass",
+      "blocks_promotion": true,
+      "reason": "AIDE selftest passes.",
+      "evidence_path": ".aide/context/latest-task-packet.md"
+    },
+    {
+      "validation_id": "aide_verify",
+      "command": "python .aide/scripts/aide_lite.py verify",
+      "status": "pass",
+      "blocks_promotion": true,
+      "reason": "AIDE verifier passes for this scoped promotion review.",
+      "evidence_path": ".aide/verification/latest-verification-report.md"
+    },
+    {
+      "validation_id": "aide_review_pack",
+      "command": "python .aide/scripts/aide_lite.py review-pack",
+      "status": "pass",
+      "blocks_promotion": true,
+      "reason": "AIDE review packet generation passes.",
+      "evidence_path": ".aide/context/latest-review-packet.md"
+    },
+    {
+      "validation_id": "aide_commit_check",
+      "command": "python .aide/scripts/aide_lite.py commit check --latest",
+      "status": "pass",
+      "blocks_promotion": true,
+      "reason": "Latest committed baseline has a valid structured commit message.",
+      "evidence_path": ".aide/reports/aide-commit-message-standard.md"
+    },
+    {
+      "validation_id": "full_unittest_discovery",
+      "command": "python -m unittest discover -s tests -t .",
+      "status": "fail",
+      "blocks_promotion": true,
+      "reason": "Full discovery failed with 17 failures and 5 errors, including blocking candidate-index contract/record errors, source-observation/runtime leakage failures, HUNT/LOCAL promotion-state failures, and contract taxonomy inventory failure.",
+      "evidence_path": "control/audits/dev-and-ia-to-main-promotion-review-v0/validation.md"
+    }
+  ]
+}

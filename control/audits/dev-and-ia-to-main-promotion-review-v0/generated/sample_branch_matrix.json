@@ -1,0 +1,6 @@
+{
+  "schema_version": "dev_and_ia_to_main_sample_branch_matrix.v0",
+  "origin_main_to_origin_dev_ahead_behind": "0 23",
+  "main_can_fast_forward_to_dev": true,
+  "promotion_method": "fast_forward_only"
+}

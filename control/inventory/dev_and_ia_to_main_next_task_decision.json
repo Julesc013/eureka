@@ -1,0 +1,18 @@
+{
+  "schema_version": "dev_and_ia_to_main_next_task_decision.v0",
+  "task": "DEV-AND-IA-TO-MAIN-PROMOTION-REVIEW",
+  "decision": "DEV-AND-IA-PROMOTION-BLOCKER-01 \u2014 Resolve blocking full-discovery failures before main promotion",
+  "reason": "Main promotion is blocked until full unittest discovery blockers in candidate-index, source-observation/runtime leakage, HUNT/LOCAL promotion-state, and contract taxonomy lanes are resolved or explicitly reclassified.",
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "full_archive_org_integration_claimed": false,
+  "marketplace_or_app_store_readiness_claimed": false,
+  "must_not_start_yet": [
+    "public launch",
+    "production deployment",
+    "full Archive.org integration",
+    "downloads",
+    "extraction",
+    "marketplace or app-store readiness"
+  ]
+}

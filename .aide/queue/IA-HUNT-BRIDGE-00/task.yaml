@@ -1,0 +1,11 @@
+id: IA-HUNT-BRIDGE-00
+title: Bridge IA metadata candidates into Hunt and WorkUnit lanes
+status: queued
+purpose: Connect the reviewed IA metadata vertical slice into Hunt/WorkUnit result lanes after Workbench lanes are governed.
+allowed_scope_summary: IA-Hunt bridge planning and bounded implementation only when future gates explicitly allow it.
+gate:
+  - WORKBENCH-RESULT-LANES-01 completed
+  - no new live IA call unless a future reviewed policy enables it
+  - no downloads, extraction, model/provider calls, deployment, or public fanout
+recommended_after: WORKBENCH-RESULT-LANES-01
+recommended_next: SYN-00

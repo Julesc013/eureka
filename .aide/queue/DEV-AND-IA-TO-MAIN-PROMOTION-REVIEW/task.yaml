@@ -1,0 +1,17 @@
+id: DEV-AND-IA-TO-MAIN-PROMOTION-REVIEW
+title: Review dev IA pilot plus repo layout canon baseline for main promotion
+status: blocked
+purpose: Review current dev for main promotion as the combined IA metadata pilot plus repo layout canon baseline.
+allowed_scope_summary: Promotion review evidence, validators, docs, audit pack, branch comparison, and AIDE queue/context metadata only.
+gate:
+  - IA-PILOT-CLOSEOUT-01 completed
+  - REPO-LAYOUT-CANON-01 present on dev
+  - IA validators pass
+  - repo layout canon validator passes
+  - architecture boundaries pass
+  - generated artifact cleanliness passes
+  - full unittest discovery blockers are resolved or explicitly reclassified
+  - no production/public launch/full Archive.org/marketplace claim
+  - fast-forward only
+recommended_after: REPO-LAYOUT-CANON-01
+recommended_next: DEV-AND-IA-PROMOTION-BLOCKER-01

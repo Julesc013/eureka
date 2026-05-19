@@ -2,11 +2,11 @@
 
 ## PHASE
 
-UNSPECIFIED - REPO-LAYOUT-CANON-01
+UNSPECIFIED - DEV-AND-IA-TO-MAIN-PROMOTION-REVIEW
 
 ## GOAL
 
-REPO-LAYOUT-CANON-01
+DEV-AND-IA-TO-MAIN-PROMOTION-REVIEW
 
 ## WHY
 
@@ -49,13 +49,10 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 - `control/inventory/**`
 - `control/audits/**`
 - `control/policies/**`
-- `contracts/repo/**`
-- `docs/architecture/REPOSITORY_LAYOUT_CANON.md`
 - `scripts/local_queue_progress.py`
 - `scripts/validate_*.py`
 - `scripts/check_*.py`
 - `tests/operations/**`
-- `tests/scripts/test_validate_repo_structure_canon.py`
 - `tests/aide/**`
 
 ## FORBIDDEN_PATHS
@@ -142,8 +139,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4760
-- approx_tokens: 1190
+- chars: 4790
+- approx_tokens: 1198
 - budget_status: PASS
 - warnings:
   - none

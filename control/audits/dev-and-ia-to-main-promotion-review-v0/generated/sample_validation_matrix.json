@@ -1,0 +1,12 @@
+{
+  "schema_version": "dev_and_ia_to_main_sample_validation_matrix.v0",
+  "blocking_lanes": [
+    "ia_validators",
+    "repo_layout_canon",
+    "architecture_boundaries",
+    "generated_artifact_cleanliness",
+    "aide_checks",
+    "full_unittest_discovery"
+  ],
+  "status": "blocked_by_full_unittest_discovery"
+}

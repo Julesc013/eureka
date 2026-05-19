@@ -2,13 +2,13 @@
 
 Updated: 2026-05-19
 
-Current recommended task: SYN-00 - Synthetic Query Foundry planning over
-Local/HUNT/PLAY/IA.
+Current recommended task: DEV-AND-IA-PROMOTION-BLOCKER-01 - Resolve blocking
+full-discovery failures before main promotion.
 
 Last completed task: IA-PILOT-CLOSEOUT-01 - Internet Archive Metadata Pilot
 Closeout.
 
-Status: pass. The preferred local instance path remains
+Status: blocked for main promotion. The preferred local instance path remains
 `../instances/default`, with legacy sibling `../eureka-instance`
 explicit-only.
 
@@ -27,6 +27,11 @@ mutation, master index mutation, hosted public search mutation, extraction,
 model/provider call, download, upload, deployment, production readiness claim,
 or public launch readiness claim occurred.
 
-SYN-00 is now the recommended next task. IA-TO-MAIN-PROMOTION-REVIEW is queued
-as an alternative governance review for promoting the IA metadata pilot
-baseline.
+DEV-AND-IA-TO-MAIN-PROMOTION-REVIEW checked current `dev`, including the IA
+metadata pilot and REPO-LAYOUT-CANON-01. Focused IA/layout/AIDE gates passed,
+but full unittest discovery failed with `17` failures and `5` errors in
+candidate-index, contract taxonomy, runtime/source-observation leakage, and
+HUNT/LOCAL promotion-state lanes. `main` was not promoted.
+
+Workbench Foundation remains the next product-shaping task after the promotion
+blockers are resolved and `main` is safely fast-forwarded.

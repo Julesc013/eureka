@@ -1,0 +1,20 @@
+{
+  "schema_version": "dev_and_ia_to_main_promotion_result.v0",
+  "task": "DEV-AND-IA-TO-MAIN-PROMOTION-REVIEW",
+  "status": "blocked",
+  "promotion_scope": "ia_metadata_pilot_plus_repo_layout_canon",
+  "promotion_performed": false,
+  "promotion_method": "fast_forward_only",
+  "origin_main_equals_origin_dev": false,
+  "main_pushed": false,
+  "dev_pushed": false,
+  "force_push_performed": false,
+  "history_rewrite_performed": false,
+  "branch_deleted": false,
+  "working_tree_clean_after": true,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "full_archive_org_integration_claimed": false,
+  "marketplace_or_app_store_readiness_claimed": false,
+  "recommended_next_task": "DEV-AND-IA-PROMOTION-BLOCKER-01 \u2014 Resolve blocking full-discovery failures before main promotion"
+}

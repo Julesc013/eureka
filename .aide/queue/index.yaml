@@ -1,8 +1,53 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-18
 repo: julesc013/eureka
-current_recommended_task: SYN-00 — Synthetic Query Foundry planning over Local/HUNT/PLAY/IA
+current_recommended_task: DEV-AND-IA-PROMOTION-BLOCKER-01 — Resolve blocking full-discovery failures before main promotion
 entries:
+  - id: DEV-AND-IA-TO-MAIN-PROMOTION-REVIEW
+    title: Promote dev IA pilot plus repo layout canon baseline to main
+    status: blocked
+    purpose: Review current dev for main promotion as the combined IA metadata pilot plus repo layout canon baseline.
+    allowed_scope_summary: Promotion review evidence, validators, docs, audit pack, branch comparison, and AIDE queue/context metadata only.
+    gate: Blocked until full unittest discovery failures in candidate-index, source-observation/runtime leakage, HUNT/LOCAL promotion-state, and contract taxonomy lanes are resolved or explicitly reclassified.
+    task: .aide/queue/DEV-AND-IA-TO-MAIN-PROMOTION-REVIEW/task.yaml
+    recommended_after: REPO-LAYOUT-CANON-01
+    recommended_next: DEV-AND-IA-PROMOTION-BLOCKER-01
+  - id: WORKBENCH-FOUNDATION-00
+    title: Mission Control doctrine, route/view matrix, and projection model
+    status: queued
+    purpose: Define the Workbench as the internal/operator superset of the final Eureka product before implementing new result lanes.
+    allowed_scope_summary: Workbench doctrine, route/view matrix, permission/projection matrix, packet inventory, docs, contracts if explicitly scoped, and audit evidence only.
+    gate: dev/main promotion complete; no public launch, production deployment, source probes, downloads, extraction, model/provider calls, or marketplace readiness.
+    task: .aide/queue/WORKBENCH-FOUNDATION-00/task.yaml
+    recommended_after: DEV-AND-IA-TO-MAIN-PROMOTION-REVIEW
+    recommended_next: SEARCH-INTERACTION-00
+  - id: SEARCH-INTERACTION-00
+    title: Search interaction contract
+    status: queued
+    purpose: Define the query, compiled intent, resolution run, result lane, control command, feedback, absence, and coverage packet contract.
+    allowed_scope_summary: Search interaction contracts, route/view implications, docs, validators, tests, and audit evidence only until explicitly scoped.
+    gate: WORKBENCH-FOUNDATION-00 completed; no public fanout, source execution, or model/provider calls.
+    task: .aide/queue/SEARCH-INTERACTION-00/task.yaml
+    recommended_after: WORKBENCH-FOUNDATION-00
+    recommended_next: WORKBENCH-RESULT-LANES-01
+  - id: WORKBENCH-RESULT-LANES-01
+    title: Workbench result lanes
+    status: queued
+    purpose: Define and then implement governed Workbench result lanes for reviewed, candidate, source-cache, IA metadata, review, absence, blocked, and WorkUnit states.
+    allowed_scope_summary: Workbench lane contracts and bounded UI/runtime integration only when explicitly scoped by a future task.
+    gate: SEARCH-INTERACTION-00 completed; no broad source crawling, downloads, extraction, production readiness, or public launch claim.
+    task: .aide/queue/WORKBENCH-RESULT-LANES-01/task.yaml
+    recommended_after: SEARCH-INTERACTION-00
+    recommended_next: IA-HUNT-BRIDGE-00
+  - id: IA-HUNT-BRIDGE-00
+    title: Bridge IA metadata candidates into Hunt and WorkUnit lanes
+    status: queued
+    purpose: Connect the reviewed IA metadata vertical slice into Hunt/WorkUnit result lanes after Workbench lanes are governed.
+    allowed_scope_summary: IA-Hunt bridge planning and bounded implementation only when future gates explicitly allow it.
+    gate: WORKBENCH-RESULT-LANES-01 completed; no new live IA call unless a future reviewed policy enables it; no downloads, extraction, model/provider calls, deployment, or public fanout.
+    task: .aide/queue/IA-HUNT-BRIDGE-00/task.yaml
+    recommended_after: WORKBENCH-RESULT-LANES-01
+    recommended_next: SYN-00
   - id: LOCAL-00
     title: Fork plan from F0 to local hosted workbench
     status: completed

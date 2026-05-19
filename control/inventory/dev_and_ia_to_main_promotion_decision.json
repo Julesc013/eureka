@@ -1,0 +1,15 @@
+{
+  "schema_version": "dev_and_ia_to_main_promotion_decision.v0",
+  "task": "DEV-AND-IA-TO-MAIN-PROMOTION-REVIEW",
+  "decision": "blocked",
+  "promotion_scope": "ia_metadata_pilot_plus_repo_layout_canon",
+  "main_can_fast_forward_to_dev": true,
+  "hard_blockers_remaining": 1,
+  "warnings_remaining": 0,
+  "safe_to_push_main": false,
+  "promotion_method": "fast_forward_only",
+  "force_push_required": false,
+  "history_rewrite_required": false,
+  "delete_branch_required": false,
+  "recommended_next_task": "DEV-AND-IA-PROMOTION-BLOCKER-01 \u2014 Resolve blocking full-discovery failures before main promotion"
+}

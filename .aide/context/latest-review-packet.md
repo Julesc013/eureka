@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (4796 chars, 1199 approximate tokens)
+- `.aide/context/latest-task-packet.md` (4790 chars, 1198 approximate tokens)
 
 ## Context Packet Reference
 
@@ -33,31 +33,29 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Changed Files Summary
 
+- allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/IA-PILOT-CLOSEOUT-01/task.yaml` (M; matches active task allowed path)
-- allowed: `.aide/queue/IA-TO-MAIN-PROMOTION-REVIEW` (??; matches active task allowed path)
+- allowed: `.aide/queue/DEV-AND-IA-TO-MAIN-PROMOTION-REVIEW` (??; matches active task allowed path)
+- allowed: `.aide/queue/IA-HUNT-BRIDGE-00` (??; matches active task allowed path)
+- allowed: `.aide/queue/SEARCH-INTERACTION-00` (??; matches active task allowed path)
+- allowed: `.aide/queue/WORKBENCH-FOUNDATION-00` (??; matches active task allowed path)
+- allowed: `.aide/queue/WORKBENCH-RESULT-LANES-01` (??; matches active task allowed path)
 - allowed: `.aide/queue/index.yaml` (M; matches active task allowed path)
 - allowed: `.aide/reports/eureka-repo-health.json` (M; matches active task allowed path)
 - allowed: `.aide/reports/eureka-repo-health.md` (M; matches active task allowed path)
-- allowed: `control/audits/ia-pilot-closeout-01-v0` (??; matches active task allowed path)
-- allowed: `control/inventory/ia_pilot_blocker_register.json` (??; matches active task allowed path)
-- allowed: `control/inventory/ia_pilot_boundary_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/ia_pilot_capability_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/ia_pilot_closeout_input_state.json` (??; matches active task allowed path)
-- allowed: `control/inventory/ia_pilot_closeout_result.json` (??; matches active task allowed path)
-- allowed: `control/inventory/ia_pilot_next_task_decision.json` (??; matches active task allowed path)
-- allowed: `control/inventory/ia_pilot_reuse_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/ia_pilot_validation_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/ia_pilot_warning_disposition.json` (??; matches active task allowed path)
-- allowed: `docs/architecture/IA_METADATA_CONNECTOR_MODEL.md` (M; matches active task allowed path)
-- allowed: `docs/operations/IA_METADATA_PILOT_CLOSEOUT.md` (??; matches active task allowed path)
-- allowed: `docs/operations/IA_METADATA_PILOT_RUNBOOK.md` (M; matches active task allowed path)
-- allowed: `docs/operations/POST_IA_SYN_ENTRY_PLAN.md` (??; matches active task allowed path)
-- allowed: `scripts/summarize_ia_pilot.py` (??; matches active task allowed path)
-- allowed: `scripts/validate_ia_pilot_closeout.py` (??; matches active task allowed path)
-- allowed: `tests/operations/test_ia_pilot_closeout.py` (??; matches active task allowed path)
-- allowed: `tests/operations/test_ia_pilot_closeout_gates.py` (??; matches active task allowed path)
-- additional changed paths omitted from compact packet: 1; see task evidence changed-files report
+- allowed: `control/audits/dev-and-ia-to-main-promotion-review-v0` (??; matches active task allowed path)
+- allowed: `control/inventory/dev_and_ia_to_main_next_task_decision.json` (??; matches active task allowed path)
+- allowed: `control/inventory/dev_and_ia_to_main_promotion_boundary_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/dev_and_ia_to_main_promotion_branch_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/dev_and_ia_to_main_promotion_decision.json` (??; matches active task allowed path)
+- allowed: `control/inventory/dev_and_ia_to_main_promotion_input_state.json` (??; matches active task allowed path)
+- allowed: `control/inventory/dev_and_ia_to_main_promotion_result.json` (??; matches active task allowed path)
+- allowed: `control/inventory/dev_and_ia_to_main_promotion_validation_matrix.json` (??; matches active task allowed path)
+- allowed: `docs/operations/DEV_AND_IA_TO_MAIN_PROMOTION_REVIEW.md` (??; matches active task allowed path)
+- allowed: `docs/operations/POST_DEV_IA_PROMOTION_PLAN.md` (??; matches active task allowed path)
+- allowed: `scripts/validate_dev_and_ia_to_main_promotion.py` (??; matches active task allowed path)
+- allowed: `tests/operations/test_dev_and_ia_to_main_promotion.py` (??; matches active task allowed path)
+- allowed: `tests/operations/test_dev_and_ia_to_main_promotion_gates.py` (??; matches active task allowed path)
 
 ## Validation Summary
 
@@ -67,8 +65,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 6626
-- approx_tokens: 1657
+- chars: 6559
+- approx_tokens: 1640
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

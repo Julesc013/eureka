@@ -1,0 +1,12 @@
+id: SEARCH-INTERACTION-00
+title: Search interaction contract
+status: queued
+purpose: Define the query, compiled intent, resolution run, result lane, control command, feedback, absence, and coverage packet contract.
+allowed_scope_summary: Search interaction contracts, route/view implications, docs, validators, tests, and audit evidence only until explicitly scoped.
+gate:
+  - WORKBENCH-FOUNDATION-00 completed
+  - no public fanout
+  - no source execution
+  - no model/provider calls
+recommended_after: WORKBENCH-FOUNDATION-00
+recommended_next: WORKBENCH-RESULT-LANES-01
