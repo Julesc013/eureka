@@ -1,7 +1,8 @@
 # Next Task Decision
 
-Next task: `DEV-AND-IA-PROMOTION-BLOCKER-01`.
+Next task: `REPO-LAYOUT-CANON-01`.
 
-Reason: promotion is blocked until the full-discovery failures in blocking lanes
-are fixed or explicitly reclassified. `WORKBENCH-FOUNDATION-00` remains the next
-product-shaping task after main promotion is green.
+Reason: the repaired dev baseline is promotion-clean. After main is
+fast-forwarded, run a layout-canon verification/re-run before
+`WORKBENCH-FOUNDATION-00`, because the Workbench work will cross runtime,
+surfaces, contracts, docs, tools, and AIDE governance boundaries.

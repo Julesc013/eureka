@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (5531 chars, 1383 approximate tokens)
+- `.aide/context/latest-task-packet.md` (4934 chars, 1234 approximate tokens)
 
 ## Context Packet Reference
 
@@ -33,31 +33,31 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Changed Files Summary
 
-- allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/DEV-AND-IA-PROMOTION-BLOCKER-01` (??; matches active task allowed path)
-- allowed: `.aide/queue/index.yaml` (M; matches active task allowed path)
-- allowed: `.aide/reports/eureka-repo-health.json` (M; matches active task allowed path)
-- allowed: `.aide/reports/eureka-repo-health.md` (M; matches active task allowed path)
-- allowed: `contracts/repo/root_allowlist.contract.toml` (M; matches active task allowed path)
-- allowed: `control/audits/dev-and-ia-promotion-blocker-01-v0` (??; matches active task allowed path)
-- allowed: `control/inventory/contract_taxonomy_inventory.json` (M; matches active task allowed path)
-- allowed: `control/inventory/dev_and_ia_promotion_blocker_failure_inventory.json` (??; matches active task allowed path)
-- allowed: `control/inventory/dev_and_ia_promotion_blocker_input_state.json` (??; matches active task allowed path)
-- allowed: `control/inventory/dev_and_ia_promotion_blocker_next_task_decision.json` (??; matches active task allowed path)
-- allowed: `control/inventory/dev_and_ia_promotion_blocker_repair_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/dev_and_ia_promotion_blocker_result.json` (??; matches active task allowed path)
-- allowed: `control/inventory/dev_and_ia_promotion_blocker_root_cause_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/dev_and_ia_promotion_blocker_validation_matrix.json` (??; matches active task allowed path)
-- allowed: `docs/operations/DEV_AND_IA_PROMOTION_BLOCKER_REPAIR.md` (??; matches active task allowed path)
+- allowed: `.aide/queue/DEV-AND-IA-TO-MAIN-PROMOTION-REVIEW/task.yaml` (M; matches active task allowed path)
+- allowed: `control/audits/dev-and-ia-to-main-promotion-review-v0/README.md` (M; matches active task allowed path)
+- allowed: `control/audits/dev-and-ia-to-main-promotion-review-v0/boundary_matrix.md` (M; matches active task allowed path)
+- allowed: `control/audits/dev-and-ia-to-main-promotion-review-v0/branch_matrix.md` (M; matches active task allowed path)
+- allowed: `control/audits/dev-and-ia-to-main-promotion-review-v0/dev_and_ia_to_main_promotion_report.json` (M; matches active task allowed path)
+- allowed: `control/audits/dev-and-ia-to-main-promotion-review-v0/generated/sample_branch_matrix.json` (M; matches active task allowed path)
+- allowed: `control/audits/dev-and-ia-to-main-promotion-review-v0/generated/sample_summary.md` (M; matches active task allowed path)
+- allowed: `control/audits/dev-and-ia-to-main-promotion-review-v0/generated/sample_validation_matrix.json` (M; matches active task allowed path)
+- allowed: `control/audits/dev-and-ia-to-main-promotion-review-v0/next_task_decision.md` (M; matches active task allowed path)
+- allowed: `control/audits/dev-and-ia-to-main-promotion-review-v0/promotion_decision.md` (M; matches active task allowed path)
+- allowed: `control/audits/dev-and-ia-to-main-promotion-review-v0/validation.md` (M; matches active task allowed path)
+- allowed: `control/audits/dev-and-ia-to-main-promotion-review-v0/validation_matrix.md` (M; matches active task allowed path)
+- allowed: `control/inventory/dev_and_ia_to_main_next_task_decision.json` (M; matches active task allowed path)
+- allowed: `control/inventory/dev_and_ia_to_main_promotion_boundary_matrix.json` (M; matches active task allowed path)
+- allowed: `control/inventory/dev_and_ia_to_main_promotion_branch_matrix.json` (M; matches active task allowed path)
+- allowed: `control/inventory/dev_and_ia_to_main_promotion_decision.json` (M; matches active task allowed path)
+- allowed: `control/inventory/dev_and_ia_to_main_promotion_input_state.json` (M; matches active task allowed path)
+- allowed: `control/inventory/dev_and_ia_to_main_promotion_result.json` (M; matches active task allowed path)
+- allowed: `control/inventory/dev_and_ia_to_main_promotion_validation_matrix.json` (M; matches active task allowed path)
+- allowed: `docs/operations/DEV_AND_IA_TO_MAIN_PROMOTION_REVIEW.md` (M; matches active task allowed path)
 - allowed: `docs/operations/POST_DEV_IA_PROMOTION_PLAN.md` (M; matches active task allowed path)
-- allowed: `runtime/source_observation/internet_archive_candidate_index.py` (M; matches active task allowed path)
-- allowed: `runtime/source_observation/internet_archive_live_probe.py` (M; matches active task allowed path)
-- allowed: `runtime/source_observation/internet_archive_live_transport.py` (M; matches active task allowed path)
-- allowed: `runtime/source_observation/internet_archive_promotion.py` (M; matches active task allowed path)
-- allowed: `scripts/audit_hunt_main_promotion.py` (M; matches active task allowed path)
-- allowed: `scripts/eureka_ia_live_metadata_probe.py` (M; matches active task allowed path)
-- additional changed paths omitted from compact packet: 19; see task evidence changed-files report
+- allowed: `scripts/validate_dev_and_ia_to_main_promotion.py` (M; matches active task allowed path)
+- allowed: `tests/operations/test_dev_and_ia_to_main_promotion.py` (M; matches active task allowed path)
+- additional changed paths omitted from compact packet: 1; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -67,8 +67,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 6826
-- approx_tokens: 1707
+- chars: 7177
+- approx_tokens: 1795
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

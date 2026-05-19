@@ -19,5 +19,5 @@ The promotion preserves these non-claims:
 - no marketplace/app-store readiness claim
 - no repo layout moves
 
-The positive baseline is limited to IA metadata-only local vertical-slice proof
-and repo layout canon policy/validation.
+The positive baseline is limited to IA metadata-only local vertical-slice proof,
+repo layout canon policy/validation, and full-discovery blocker repair evidence.

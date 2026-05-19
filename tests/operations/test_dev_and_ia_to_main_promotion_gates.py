@@ -33,6 +33,14 @@ class DevAndIAToMainPromotionGateTests(unittest.TestCase):
         mutated["repo_layout_canon_found"] = False
         self.assertIn("input_expected_true:repo_layout_canon_found", validate_input_state(mutated))
 
+    def test_blocks_if_promotion_blocker_repair_missing(self):
+        state = json.loads(
+            (ROOT / "control/inventory/dev_and_ia_to_main_promotion_input_state.json").read_text(encoding="utf-8")
+        )
+        mutated = copy.deepcopy(state)
+        mutated["promotion_blocker_repair_found"] = False
+        self.assertIn("input_expected_true:promotion_blocker_repair_found", validate_input_state(mutated))
+
     def test_blocks_if_main_cannot_fast_forward(self):
         matrix = json.loads(
             (ROOT / "control/inventory/dev_and_ia_to_main_promotion_branch_matrix.json").read_text(encoding="utf-8")
@@ -72,10 +80,10 @@ class DevAndIAToMainPromotionGateTests(unittest.TestCase):
         )
         mutated = copy.deepcopy(matrix)
         mutated["full_archive_org_integration_claimed"] = True
-        mutated["marketplace_or_app_store_claimed"] = True
+        mutated["marketplace_or_app_store_readiness_claimed"] = True
         errors = validate_boundary_matrix(mutated)
         self.assertIn("boundary_expected_false:full_archive_org_integration_claimed", errors)
-        self.assertIn("boundary_expected_false:marketplace_or_app_store_claimed", errors)
+        self.assertIn("boundary_expected_false:marketplace_or_app_store_readiness_claimed", errors)
 
     def test_blocks_if_repo_layout_moves_occurred(self):
         matrix = json.loads(
@@ -87,7 +95,7 @@ class DevAndIAToMainPromotionGateTests(unittest.TestCase):
         mutated["repo_layout_moves_performed"] = True
         self.assertIn("boundary_expected_false:repo_layout_moves_performed", validate_boundary_matrix(mutated))
 
-    def test_accepts_blocked_decision_and_blocker_next(self):
+    def test_accepts_promotion_decision_and_repo_layout_next(self):
         decision = json.loads(
             (ROOT / "control/inventory/dev_and_ia_to_main_promotion_decision.json").read_text(encoding="utf-8")
         )
@@ -112,7 +120,7 @@ class DevAndIAToMainPromotionGateTests(unittest.TestCase):
         promoted_decision["hard_blockers_remaining"] = 0
         promoted_decision[
             "recommended_next_task"
-        ] = "WORKBENCH-FOUNDATION-00 \u2014 Mission Control doctrine, route/view matrix, and projection model"
+        ] = "REPO-LAYOUT-CANON-01 \u2014 Verify repository root and naming canon before Workbench Foundation"
         green_matrix = copy.deepcopy(matrix)
         for row in green_matrix["rows"]:
             row["status"] = "pass"

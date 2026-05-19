@@ -3,13 +3,14 @@
 | Field | Value |
 | --- | --- |
 | branch before | `dev` |
-| head before | `fb0d8f9ff8534bf30e0e389da4db9bd19375b63d` |
+| head before | `28128d489e4e8a4ddbadc98e73d6fcabb9b575b8` |
 | origin/main before | `d78f8a83da1a1f9dec18b5e4eff7fbe690e826ed` |
-| origin/dev before | `fb0d8f9ff8534bf30e0e389da4db9bd19375b63d` |
+| origin/dev before | `28128d489e4e8a4ddbadc98e73d6fcabb9b575b8` |
 | merge base | `d78f8a83da1a1f9dec18b5e4eff7fbe690e826ed` |
-| ahead/behind origin/main...origin/dev | `0 23` |
+| ahead/behind origin/main...origin/dev | `0 26` |
 | IA closeout present | true |
 | repo layout canon present | true |
+| promotion blocker repair present | true |
 | main can fast-forward | true |
 | force push required | false |
 | history rewrite required | false |

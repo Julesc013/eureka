@@ -2,17 +2,18 @@
   "schema_version": "dev_and_ia_to_main_promotion_branch_matrix.v0",
   "task": "DEV-AND-IA-TO-MAIN-PROMOTION-REVIEW",
   "branch_before": "dev",
-  "head_before": "fb0d8f9ff8534bf30e0e389da4db9bd19375b63d",
+  "head_before": "28128d489e4e8a4ddbadc98e73d6fcabb9b575b8",
   "origin_main_before": "d78f8a83da1a1f9dec18b5e4eff7fbe690e826ed",
-  "origin_dev_before": "fb0d8f9ff8534bf30e0e389da4db9bd19375b63d",
+  "origin_dev_before": "28128d489e4e8a4ddbadc98e73d6fcabb9b575b8",
   "merge_base_before": "d78f8a83da1a1f9dec18b5e4eff7fbe690e826ed",
-  "origin_main_to_origin_dev_ahead_behind": "0 23",
+  "origin_main_to_origin_dev_ahead_behind": "0 26",
   "origin_dev_contains_ia_closeout": true,
   "origin_dev_contains_repo_layout_canon": true,
+  "origin_dev_contains_promotion_blocker_repair": true,
   "main_can_fast_forward_to_dev": true,
   "promotion_method": "fast_forward_only",
   "force_push_required": false,
   "history_rewrite_required": false,
   "branch_delete_required": false,
-  "safe_to_promote": false
+  "safe_to_promote": true
 }

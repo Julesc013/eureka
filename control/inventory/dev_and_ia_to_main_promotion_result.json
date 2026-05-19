@@ -1,8 +1,8 @@
 {
   "schema_version": "dev_and_ia_to_main_promotion_result.v0",
   "task": "DEV-AND-IA-TO-MAIN-PROMOTION-REVIEW",
-  "status": "blocked",
-  "promotion_scope": "ia_metadata_pilot_plus_repo_layout_canon",
+  "status": "partial",
+  "promotion_scope": "ia_metadata_pilot_plus_repo_layout_canon_plus_blocker_repair",
   "promotion_performed": false,
   "promotion_method": "fast_forward_only",
   "origin_main_equals_origin_dev": false,
@@ -16,5 +16,5 @@
   "public_launch_readiness_claimed": false,
   "full_archive_org_integration_claimed": false,
   "marketplace_or_app_store_readiness_claimed": false,
-  "recommended_next_task": "DEV-AND-IA-PROMOTION-BLOCKER-01 \u2014 Resolve blocking full-discovery failures before main promotion"
+  "recommended_next_task": "REPO-LAYOUT-CANON-01 \u2014 Verify repository root and naming canon before Workbench Foundation"
 }

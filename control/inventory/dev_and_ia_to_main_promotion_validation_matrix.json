@@ -91,6 +91,22 @@
       "evidence_path": "tests/operations/test_repo_structure_canon.py"
     },
     {
+      "validation_id": "promotion_blocker_result",
+      "command": "python -m json.tool control/inventory/dev_and_ia_promotion_blocker_result.json",
+      "status": "pass",
+      "blocks_promotion": true,
+      "reason": "DEV-AND-IA-PROMOTION-BLOCKER-01 result records full discovery pass with zero failures and zero errors.",
+      "evidence_path": "control/inventory/dev_and_ia_promotion_blocker_result.json"
+    },
+    {
+      "validation_id": "runtime_leakage_validators",
+      "command": "python scripts/audit_runtime_architecture_leakage.py --check --json && python scripts/validate_runtime_architecture_leakage.py",
+      "status": "pass",
+      "blocks_promotion": true,
+      "reason": "Runtime leakage validators pass; audit has only existing allowlisted historical warnings.",
+      "evidence_path": "control/audits/dev-and-ia-to-main-promotion-review-v0/validation.md"
+    },
+    {
       "validation_id": "architecture_boundaries",
       "command": "python scripts/check_architecture_boundaries.py",
       "status": "pass",
@@ -173,9 +189,9 @@
     {
       "validation_id": "full_unittest_discovery",
       "command": "python -m unittest discover -s tests -t .",
-      "status": "fail",
+      "status": "pass",
       "blocks_promotion": true,
-      "reason": "Full discovery failed with 17 failures and 5 errors, including blocking candidate-index contract/record errors, source-observation/runtime leakage failures, HUNT/LOCAL promotion-state failures, and contract taxonomy inventory failure.",
+      "reason": "Full discovery passed after DEV-AND-IA-PROMOTION-BLOCKER-01 repaired the blocking lanes.",
       "evidence_path": "control/audits/dev-and-ia-to-main-promotion-review-v0/validation.md"
     }
   ]

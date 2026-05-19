@@ -1,27 +1,37 @@
 # Dev And IA To Main Promotion Review
 
-This review evaluates the current `dev` baseline for promotion to `main`. The
-promotion is blocked unless the full gate set passes.
-
-The promotion scope is deliberately narrow:
+This review evaluates the repaired `dev` baseline for fast-forward promotion to
+`main`. The promotion scope now includes three completed baselines:
 
 - IA metadata-only local vertical slice through `IA-PILOT-CLOSEOUT-01`.
 - Repo layout canon from `REPO-LAYOUT-CANON-01`.
+- `DEV-AND-IA-PROMOTION-BLOCKER-01` full-discovery blocker repair.
 
-The IA baseline is not production readiness, not public launch readiness, and
-not full Archive.org integration. It is a reviewed metadata-only local vertical
-slice with a bounded live metadata probe already committed as evidence.
+This is a stable main-baseline promotion review. It is not production readiness,
+not public launch readiness, not full Archive.org integration, and not
+marketplace or app-store readiness. It is also not marketplace launch posture.
 
-The repo layout canon is policy and validation only. It is the repo layout canon
-for root ownership, naming, generated artifact exceptions, and validator gates.
-It is not a file-move task and does not perform repo layout moves.
+## Repaired Gate
+
+The previous review was blocked by full unittest discovery failures in
+candidate-index records, contract taxonomy inventory, runtime/source-observation
+leakage, and HUNT/LOCAL promotion-state tests.
+
+`DEV-AND-IA-PROMOTION-BLOCKER-01` repaired those lanes and recorded:
+
+- full unittest discovery: pass
+- current full-discovery failures: 0
+- current full-discovery errors: 0
+- candidate-index failures resolved
+- contract taxonomy failures resolved
+- runtime/source-observation leakage resolved
+- HUNT/LOCAL promotion-state failures resolved
 
 ## Boundaries
 
 The promotion does not enable public source fanout, downloads, uploads,
 extraction, AI/model-provider use, deployment, marketplace/app-store readiness,
-or broad Archive.org crawling. It is explicitly not marketplace readiness and
-not app-store readiness.
+or broad Archive.org crawling.
 
 All write-capable IA stages remain scoped to temp explicit instance proof:
 
@@ -31,36 +41,28 @@ All write-capable IA stages remain scoped to temp explicit instance proof:
 - review queue write proof
 - reviewed-index rebuild proof
 
-No operator instance state, committed `data/public_index`, master index, or
-hosted public state is mutated by this promotion review.
+No operator instance state, committed `data/public_index`, master index, hosted
+public state, repo layout move, or `site/dist` regeneration is performed by this
+promotion review.
 
 ## Decision
 
-The current decision is blocked. `origin/main` can fast-forward to `origin/dev`,
-and the IA/layout focused gates pass, but full unittest discovery is red in
-blocking lanes.
-
-Promote by fast-forward only when:
+The current decision is to promote `dev` to `main` by fast-forward only if the
+fresh gate run remains green:
 
 - local `dev` equals `origin/dev`
 - `origin/main` is an ancestor of `origin/dev`
 - IA validators pass
 - repo layout canon validator and focused tests pass
+- blocker repair result confirms full discovery pass
+- runtime leakage validators pass
 - architecture boundaries pass
 - generated artifact cleanliness passes
 - AIDE checks pass
-- full discovery passes or has exact accepted non-blocking failures
-
-Blocking full-discovery groups found in this review:
-
-- candidate-index contract and record validators.
-- contract taxonomy inventory for the new repo layout canon contracts.
-- runtime/source-observation leakage gates.
-- HUNT/LOCAL promotion-state expectations.
+- full unittest discovery passes
 
 ## Next
 
-Before Workbench work, run `DEV-AND-IA-PROMOTION-BLOCKER-01`: resolve or
-explicitly reclassify the blocking full-discovery failures, then rerun this
-promotion review. After promotion, the next product-shaping task remains
-`WORKBENCH-FOUNDATION-00`.
+After successful promotion, run `REPO-LAYOUT-CANON-01` as a verification pass
+before Workbench Foundation. Workbench Foundation, Search Interaction, Workbench
+Result Lanes, and IA-HUNT bridge remain after that verification step.

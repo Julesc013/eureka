@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate dev-to-main promotion evidence for IA plus layout canon."""
+"""Validate dev-to-main promotion evidence for IA, layout canon, and blocker repair."""
 
 from __future__ import annotations
 
@@ -11,6 +11,10 @@ from typing import Any, Mapping, Sequence, TextIO
 
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
+PROMOTION_SCOPE = "ia_metadata_pilot_plus_repo_layout_canon_plus_blocker_repair"
+BLOCKER_REPAIR_COMMIT = "28128d489e4e8a4ddbadc98e73d6fcabb9b575b8"
+LAYOUT_CANON_COMMIT = "fb0d8f9ff8534bf30e0e389da4db9bd19375b63d"
+NEXT_TASK_ID = "REPO-LAYOUT-CANON-01"
 
 REQUIRED_FILES = (
     "control/inventory/dev_and_ia_to_main_promotion_input_state.json",
@@ -20,6 +24,7 @@ REQUIRED_FILES = (
     "control/inventory/dev_and_ia_to_main_promotion_decision.json",
     "control/inventory/dev_and_ia_to_main_promotion_result.json",
     "control/inventory/dev_and_ia_to_main_next_task_decision.json",
+    "control/inventory/dev_and_ia_promotion_blocker_result.json",
     "control/inventory/ia_pilot_closeout_result.json",
     "control/inventory/repo_layout_canon_result.json",
     "docs/operations/DEV_AND_IA_TO_MAIN_PROMOTION_REVIEW.md",
@@ -38,6 +43,8 @@ REQUIRED_VALIDATION_IDS = {
     "ia_pilot_closeout",
     "repo_structure_canon",
     "repo_structure_canon_tests",
+    "promotion_blocker_result",
+    "runtime_leakage_validators",
     "architecture_boundaries",
     "generated_artifact_cleanliness",
     "git_diff_check",
@@ -67,7 +74,7 @@ FORBIDDEN_BOUNDARY_FALSE_FIELDS = (
     "production_readiness_claimed",
     "public_launch_readiness_claimed",
     "full_archive_org_integration_claimed",
-    "marketplace_or_app_store_claimed",
+    "marketplace_or_app_store_readiness_claimed",
     "repo_layout_moves_performed",
 )
 
@@ -75,6 +82,8 @@ REQUIRED_BOUNDARY_TRUE_FIELDS = (
     "ia_metadata_pilot_closeout_passed",
     "ia_metadata_full_vertical_slice_complete",
     "repo_layout_canon_present",
+    "promotion_blocker_repair_present",
+    "full_unittest_discovery_passed",
     "live_metadata_probe_performed",
     "source_cache_temp_write_passed",
     "evidence_temp_write_passed",
@@ -108,6 +117,7 @@ def validate_dev_and_ia_to_main_promotion(repo_root: Path = REPO_ROOT) -> dict[s
     decision = _load_json(repo_root / "control/inventory/dev_and_ia_to_main_promotion_decision.json", errors)
     result = _load_json(repo_root / "control/inventory/dev_and_ia_to_main_promotion_result.json", errors)
     next_task = _load_json(repo_root / "control/inventory/dev_and_ia_to_main_next_task_decision.json", errors)
+    blocker_result = _load_json(repo_root / "control/inventory/dev_and_ia_promotion_blocker_result.json", errors)
     ia_closeout = _load_json(repo_root / "control/inventory/ia_pilot_closeout_result.json", errors)
     layout_result = _load_json(repo_root / "control/inventory/repo_layout_canon_result.json", errors)
 
@@ -118,7 +128,7 @@ def validate_dev_and_ia_to_main_promotion(repo_root: Path = REPO_ROOT) -> dict[s
     errors.extend(validate_decision(decision))
     errors.extend(validate_result(result))
     errors.extend(validate_next_task(next_task))
-    errors.extend(validate_source_baselines(ia_closeout, layout_result))
+    errors.extend(validate_source_baselines(ia_closeout, layout_result, blocker_result))
     errors.extend(validate_docs(repo_root))
     errors.extend(validate_git_forbidden_paths(repo_root))
 
@@ -128,9 +138,10 @@ def validate_dev_and_ia_to_main_promotion(repo_root: Path = REPO_ROOT) -> dict[s
         "status": "pass" if not errors else "fail",
         "errors": errors,
         "warnings": warnings,
-        "promotion_scope": "ia_metadata_pilot_plus_repo_layout_canon",
+        "promotion_scope": PROMOTION_SCOPE,
         "ia_metadata_pilot_closeout_passed": ia_closeout.get("status") == "pass",
         "repo_layout_canon_present": layout_result.get("task_id") == "REPO-LAYOUT-CANON-01",
+        "promotion_blocker_repair_present": blocker_result.get("task") == "DEV-AND-IA-PROMOTION-BLOCKER-01",
         "production_readiness_claimed": False,
         "public_launch_readiness_claimed": False,
         "full_archive_org_integration_claimed": False,
@@ -146,6 +157,8 @@ def validate_input_state(input_state: Mapping[str, Any]) -> list[str]:
         "dev_contains_main",
         "ia_pilot_closeout_found",
         "repo_layout_canon_found",
+        "promotion_blocker_repair_found",
+        "full_unittest_discovery_previously_passed",
         "working_tree_clean_before",
     )
     for key in expected_true:
@@ -160,8 +173,10 @@ def validate_input_state(input_state: Mapping[str, Any]) -> list[str]:
     for key in expected_false:
         if input_state.get(key) is not False:
             errors.append(f"input_expected_false:{key}")
-    if input_state.get("repo_layout_canon_commit") != "fb0d8f9ff8534bf30e0e389da4db9bd19375b63d":
+    if input_state.get("repo_layout_canon_commit") != LAYOUT_CANON_COMMIT:
         errors.append("input_repo_layout_canon_commit_mismatch")
+    if input_state.get("promotion_blocker_repair_commit") != BLOCKER_REPAIR_COMMIT:
+        errors.append("input_promotion_blocker_repair_commit_mismatch")
     return errors
 
 
@@ -170,6 +185,7 @@ def validate_branch_matrix(branch: Mapping[str, Any]) -> list[str]:
     expected_true = (
         "origin_dev_contains_ia_closeout",
         "origin_dev_contains_repo_layout_canon",
+        "origin_dev_contains_promotion_blocker_repair",
         "main_can_fast_forward_to_dev",
     )
     for key in expected_true:
@@ -224,7 +240,7 @@ def validate_decision(decision: Mapping[str, Any]) -> list[str]:
     decision_value = decision.get("decision")
     if decision_value not in {"promote_dev_to_main", "blocked"}:
         errors.append("decision_not_promote_or_blocked")
-    if decision.get("promotion_scope") != "ia_metadata_pilot_plus_repo_layout_canon":
+    if decision.get("promotion_scope") != PROMOTION_SCOPE:
         errors.append("decision_scope_mismatch")
     if decision.get("main_can_fast_forward_to_dev") is not True:
         errors.append("decision_expected_true:main_can_fast_forward_to_dev")
@@ -244,8 +260,8 @@ def validate_decision(decision: Mapping[str, Any]) -> list[str]:
     if decision.get("promotion_method") != "fast_forward_only":
         errors.append("decision_promotion_method_not_fast_forward_only")
     next_task = str(decision.get("recommended_next_task", ""))
-    if decision_value == "promote_dev_to_main" and "WORKBENCH-FOUNDATION-00" not in next_task:
-        errors.append("decision_next_task_not_workbench_foundation")
+    if decision_value == "promote_dev_to_main" and NEXT_TASK_ID not in next_task:
+        errors.append("decision_next_task_not_repo_layout_canon")
     if decision_value == "blocked" and "PROMOTION-BLOCKER" not in next_task:
         errors.append("decision_blocked_next_task_not_blocker")
     return errors
@@ -253,7 +269,7 @@ def validate_decision(decision: Mapping[str, Any]) -> list[str]:
 
 def validate_result(result: Mapping[str, Any]) -> list[str]:
     errors: list[str] = []
-    if result.get("promotion_scope") != "ia_metadata_pilot_plus_repo_layout_canon":
+    if result.get("promotion_scope") != PROMOTION_SCOPE:
         errors.append("result_scope_mismatch")
     if result.get("status") not in {"pass", "pass_with_warnings", "partial", "blocked", "fail"}:
         errors.append("result_status_not_accepted")
@@ -275,8 +291,8 @@ def validate_result(result: Mapping[str, Any]) -> list[str]:
             if result.get(key) is not True:
                 errors.append(f"result_expected_true_after_promotion:{key}")
     next_task = str(result.get("recommended_next_task", ""))
-    if result.get("status") in {"pass", "pass_with_warnings"} and "WORKBENCH-FOUNDATION-00" not in next_task:
-        errors.append("result_next_task_not_workbench_foundation")
+    if result.get("status") in {"pass", "pass_with_warnings"} and NEXT_TASK_ID not in next_task:
+        errors.append("result_next_task_not_repo_layout_canon")
     if result.get("status") == "blocked" and "PROMOTION-BLOCKER" not in next_task:
         errors.append("result_blocked_next_task_not_blocker")
     return errors
@@ -285,8 +301,8 @@ def validate_result(result: Mapping[str, Any]) -> list[str]:
 def validate_next_task(next_task: Mapping[str, Any]) -> list[str]:
     errors: list[str] = []
     decision_text = str(next_task.get("decision", ""))
-    if "WORKBENCH-FOUNDATION-00" not in decision_text and "PROMOTION-BLOCKER" not in decision_text:
-        errors.append("next_task_decision_not_workbench_or_blocker")
+    if NEXT_TASK_ID not in decision_text and "PROMOTION-BLOCKER" not in decision_text:
+        errors.append("next_task_decision_not_repo_layout_or_blocker")
     if next_task.get("production_readiness_claimed") is not False:
         errors.append("next_task_production_claim_not_false")
     if next_task.get("public_launch_readiness_claimed") is not False:
@@ -294,7 +310,11 @@ def validate_next_task(next_task: Mapping[str, Any]) -> list[str]:
     return errors
 
 
-def validate_source_baselines(ia_closeout: Mapping[str, Any], layout_result: Mapping[str, Any]) -> list[str]:
+def validate_source_baselines(
+    ia_closeout: Mapping[str, Any],
+    layout_result: Mapping[str, Any],
+    blocker_result: Mapping[str, Any],
+) -> list[str]:
     errors: list[str] = []
     if ia_closeout.get("status") != "pass":
         errors.append("ia_closeout_not_pass")
@@ -310,6 +330,18 @@ def validate_source_baselines(ia_closeout: Mapping[str, Any], layout_result: Map
         errors.append("layout_files_moved")
     if layout_result.get("runtime_behavior_changed") is not False:
         errors.append("layout_runtime_behavior_changed")
+    if blocker_result.get("task") != "DEV-AND-IA-PROMOTION-BLOCKER-01":
+        errors.append("promotion_blocker_result_task_missing")
+    if blocker_result.get("full_unittest_discovery_pass") is not True:
+        errors.append("promotion_blocker_full_discovery_not_pass")
+    for key in (
+        "candidate_index_failures_resolved",
+        "contract_taxonomy_failures_resolved",
+        "runtime_source_observation_leakage_resolved",
+        "hunt_local_promotion_state_failures_resolved",
+    ):
+        if blocker_result.get(key) is not True:
+            errors.append(f"promotion_blocker_expected_true:{key}")
     return errors
 
 

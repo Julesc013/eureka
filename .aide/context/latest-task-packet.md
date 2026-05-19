@@ -2,11 +2,11 @@
 
 ## PHASE
 
-UNSPECIFIED - DEV-AND-IA-PROMOTION-BLOCKER-01 - Resolve blocking full-discovery failures before main promotion
+UNSPECIFIED - DEV-AND-IA-TO-MAIN-PROMOTION-REVIEW - Promote repaired dev IA pilot plus repo layout canon baseline to main
 
 ## GOAL
 
-DEV-AND-IA-PROMOTION-BLOCKER-01 - Resolve blocking full-discovery failures before main promotion
+DEV-AND-IA-TO-MAIN-PROMOTION-REVIEW - Promote repaired dev IA pilot plus repo layout canon baseline to main
 
 ## WHY
 
@@ -49,30 +49,10 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 - `control/inventory/**`
 - `control/audits/**`
 - `control/policies/**`
-- `contracts/repo/**`
-- `contracts/**` when repairing contract taxonomy inventory failures
-- `runtime/source_observation/**`
-- `runtime/source_cache/**`
-- `runtime/evidence_ledger/**`
-- `runtime/candidate_index/**`
-- `runtime/candidate_store/**`
-- `runtime/review_queue/**`
-- `runtime/public_index/**`
-- `runtime/local_appliance/**`
-- `runtime/search_hunt/**`
-- `runtime/search_need/**`
-- `runtime/workunit_queue/**`
-- `scripts/audit_hunt_main_promotion.py`
-- `scripts/eureka_ia_live_metadata_probe.py`
-- `scripts/hunt_queue_progress.py`
 - `scripts/local_queue_progress.py`
 - `scripts/validate_*.py`
 - `scripts/check_*.py`
-- `scripts/audit_runtime_architecture_leakage.py`
 - `tests/operations/**`
-- `tests/runtime/**`
-- `tests/scripts/**`
-- `tests/contracts/**`
 - `tests/aide/**`
 
 ## FORBIDDEN_PATHS
@@ -84,14 +64,16 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 - `.local/**`
 - `.cache/**`
 - `eureka-instance/**`
+- `runtime/**`
+- `contracts/**`
 - `surfaces/**`
 - `site/**`
 - `native/**`
 - `crates/**`
 - `examples/**`
 - `evals/**`
-- `tests/**` outside the explicitly allowed repair lanes
-- `scripts/**` outside the explicitly allowed validators/checks
+- `tests/**` unless this is an AIDE/control-plane test repair
+- `scripts/**` unless this is an AIDE validator/check repair
 - raw provider credentials, API keys, local caches, raw prompt logs, raw responses, and source AIDE repository state
 
 ## IMPLEMENTATION
@@ -157,8 +139,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4912
-- approx_tokens: 1228
+- chars: 4934
+- approx_tokens: 1234
 - budget_status: PASS
 - warnings:
   - none

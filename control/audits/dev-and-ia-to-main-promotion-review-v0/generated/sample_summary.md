@@ -1,5 +1,6 @@
 # Sample Summary
 
-Do not promote current `dev` to `main` yet. IA metadata pilot, repo layout canon,
-architecture, and AIDE focused gates pass, but full unittest discovery is red in
-blocking lanes that must be resolved or explicitly reclassified first.
+Promote current `dev` to `main` by fast-forward only if the final branch check
+still proves the fast-forward. IA metadata pilot, repo layout canon,
+full-discovery blocker repair, architecture, generated artifact, AIDE, and full
+unittest discovery gates pass.

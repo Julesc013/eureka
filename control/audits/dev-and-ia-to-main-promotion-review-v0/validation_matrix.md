@@ -16,6 +16,8 @@ Required blocking lanes:
 - IA pilot closeout
 - repo structure canon validator
 - repo structure canon focused tests
+- promotion blocker repair result
+- runtime leakage validators
 - architecture boundaries
 - generated artifact cleanliness
 - AIDE doctor/validate/test/selftest/verify/review-pack/commit check
