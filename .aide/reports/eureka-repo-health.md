@@ -1,15 +1,15 @@
 # Eureka Repo Health
 
-Updated: 2026-05-19
+Updated: 2026-05-20
 
-Current recommended task: DEV-AND-IA-TO-MAIN-PROMOTION-REVIEW - Promote dev IA
-pilot plus repo layout canon baseline to main.
+Current recommended task: REPO-LAYOUT-CANON-01 - Verify repository root and
+naming canon before Workbench Foundation.
 
-Last completed task: DEV-AND-IA-PROMOTION-BLOCKER-01 - Resolve blocking
-full-discovery failures before main promotion.
+Last completed task: DEV-AND-IA-TO-MAIN-PROMOTION-REVIEW - Promote repaired
+dev IA pilot plus repo layout canon baseline to main.
 
-Status: promotion blockers repaired; main promotion not performed in the repair
-task. The preferred local instance path remains `../instances/default`, with
+Status: repaired dev baseline promoted to main by fast-forward only. The
+preferred local instance path remains `../instances/default`, with
 legacy sibling `../eureka-instance` explicit-only.
 
 The Internet Archive metadata pilot is closed as a metadata-only local-source
@@ -28,9 +28,11 @@ model/provider call, download, upload, deployment, production readiness claim,
 or public launch readiness claim occurred.
 
 DEV-AND-IA-TO-MAIN-PROMOTION-REVIEW checked current `dev`, including the IA
-metadata pilot and REPO-LAYOUT-CANON-01. The follow-up blocker repair resolved
-candidate-index, contract taxonomy, runtime/source-observation leakage, and
-HUNT/LOCAL promotion-state failures. `main` was not promoted by the repair task.
+metadata pilot, REPO-LAYOUT-CANON-01, and the full-discovery blocker repair.
+The blocker repair resolved candidate-index, contract taxonomy,
+runtime/source-observation leakage, and HUNT/LOCAL promotion-state failures.
+`main` was promoted by fast-forward only.
 
-The next task is to rerun the dev/IA promotion review. Workbench Foundation
-remains the next product-shaping task after `main` is safely fast-forwarded.
+The next task is REPO-LAYOUT-CANON-01 verification/re-run before Workbench
+Foundation. Workbench Foundation remains the next product-shaping task after
+that layout-canon verification.

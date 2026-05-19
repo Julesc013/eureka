@@ -13,5 +13,5 @@ AI/model-provider use, deployment, or marketplace/app-store readiness.
 
 Promotion method: fast-forward only.
 
-Current decision: promote if the final re-fetch still shows `origin/main` as an
-ancestor of `dev` and no remote branch advanced unexpectedly.
+Current result: promoted. `main` was fast-forwarded after the repaired gate set
+passed and after `dev` promotion-review evidence was pushed.

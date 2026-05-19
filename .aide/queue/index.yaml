@@ -1,17 +1,17 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-18
 repo: julesc013/eureka
-current_recommended_task: DEV-AND-IA-TO-MAIN-PROMOTION-REVIEW — Promote dev IA pilot plus repo layout canon baseline to main
+current_recommended_task: REPO-LAYOUT-CANON-01 — Verify repository root and naming canon before Workbench Foundation
 entries:
   - id: DEV-AND-IA-TO-MAIN-PROMOTION-REVIEW
-    title: Promote dev IA pilot plus repo layout canon baseline to main
-    status: ready
-    purpose: Review current dev for main promotion as the combined IA metadata pilot plus repo layout canon baseline.
+    title: Promote repaired dev IA pilot plus repo layout canon baseline to main
+    status: completed
+    purpose: Reviewed and promoted current dev to main as the combined IA metadata pilot, repo layout canon, and full-discovery blocker repair baseline.
     allowed_scope_summary: Promotion review evidence, validators, docs, audit pack, branch comparison, and AIDE queue/context metadata only.
-    gate: Ready to rerun after DEV-AND-IA-PROMOTION-BLOCKER-01 full-discovery repair; still requires promotion review gates before any main push.
+    gate: Completed by fast-forward only; no production/public launch/full Archive.org/marketplace claim.
     task: .aide/queue/DEV-AND-IA-TO-MAIN-PROMOTION-REVIEW/task.yaml
     recommended_after: DEV-AND-IA-PROMOTION-BLOCKER-01
-    recommended_next: WORKBENCH-FOUNDATION-00
+    recommended_next: REPO-LAYOUT-CANON-01
   - id: DEV-AND-IA-PROMOTION-BLOCKER-01
     title: Resolve blocking full-discovery failures before main promotion
     status: completed
@@ -21,6 +21,15 @@ entries:
     task: .aide/queue/DEV-AND-IA-PROMOTION-BLOCKER-01/task.yaml
     recommended_after: DEV-AND-IA-TO-MAIN-PROMOTION-REVIEW
     recommended_next: DEV-AND-IA-TO-MAIN-PROMOTION-REVIEW
+  - id: REPO-LAYOUT-CANON-01
+    title: Verify repository root and naming canon before Workbench Foundation
+    status: ready
+    purpose: Re-run and verify the repository root/naming canon after dev/main promotion, before layout-sensitive Workbench Foundation work.
+    allowed_scope_summary: Repo layout contracts, validators, docs, inventories, audit evidence, and AIDE queue/context metadata only unless a future task explicitly allows moves.
+    gate: Dev/main promotion complete; no repo layout moves, Workbench implementation, SYN, IA-HUNT, extraction, deployment, public launch, or production-readiness implementation.
+    task: .aide/queue/REPO-LAYOUT-CANON-01/task.yaml
+    recommended_after: DEV-AND-IA-TO-MAIN-PROMOTION-REVIEW
+    recommended_next: WORKBENCH-FOUNDATION-00
   - id: WORKBENCH-FOUNDATION-00
     title: Mission Control doctrine, route/view matrix, and projection model
     status: queued
@@ -28,7 +37,7 @@ entries:
     allowed_scope_summary: Workbench doctrine, route/view matrix, permission/projection matrix, packet inventory, docs, contracts if explicitly scoped, and audit evidence only.
     gate: dev/main promotion complete; no public launch, production deployment, source probes, downloads, extraction, model/provider calls, or marketplace readiness.
     task: .aide/queue/WORKBENCH-FOUNDATION-00/task.yaml
-    recommended_after: DEV-AND-IA-TO-MAIN-PROMOTION-REVIEW
+    recommended_after: REPO-LAYOUT-CANON-01
     recommended_next: SEARCH-INTERACTION-00
   - id: SEARCH-INTERACTION-00
     title: Search interaction contract

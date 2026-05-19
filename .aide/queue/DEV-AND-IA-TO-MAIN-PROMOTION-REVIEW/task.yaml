@@ -1,6 +1,6 @@
 id: DEV-AND-IA-TO-MAIN-PROMOTION-REVIEW
 title: Promote repaired dev IA pilot plus repo layout canon baseline to main
-status: ready
+status: completed
 purpose: Review current dev for main promotion as the combined IA metadata pilot, repo layout canon, and full-discovery blocker repair baseline.
 allowed_scope_summary: Promotion review evidence, validators, docs, audit pack, branch comparison, and AIDE queue/context metadata only.
 gate:

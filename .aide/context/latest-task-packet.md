@@ -2,11 +2,11 @@
 
 ## PHASE
 
-UNSPECIFIED - DEV-AND-IA-TO-MAIN-PROMOTION-REVIEW - Promote repaired dev IA pilot plus repo layout canon baseline to main
+UNSPECIFIED - REPO-LAYOUT-CANON-01 - Verify repository root and naming canon before Workbench Foundation
 
 ## GOAL
 
-DEV-AND-IA-TO-MAIN-PROMOTION-REVIEW - Promote repaired dev IA pilot plus repo layout canon baseline to main
+REPO-LAYOUT-CANON-01 - Verify repository root and naming canon before Workbench Foundation
 
 ## WHY
 
@@ -139,8 +139,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4934
-- approx_tokens: 1234
+- chars: 4900
+- approx_tokens: 1225
 - budget_status: PASS
 - warnings:
   - none

@@ -1,0 +1,13 @@
+id: REPO-LAYOUT-CANON-01
+title: Verify repository root and naming canon before Workbench Foundation
+status: ready
+purpose: Re-run and verify the repository root/naming canon after dev/main promotion, before layout-sensitive Workbench Foundation work.
+allowed_scope_summary: Repo layout contracts, validators, docs, inventories, audit evidence, and AIDE queue/context metadata only unless a future task explicitly allows moves.
+gate:
+  - dev/main promotion complete
+  - no repo layout moves unless explicitly scoped by a future task
+  - no Workbench, SYN, IA-HUNT, extraction, deployment, public launch, or production-readiness implementation
+  - preserve native as top-level canonical native client/project root
+  - keep generated/local state classified and ignored or retained only by explicit artifact policy
+recommended_after: DEV-AND-IA-TO-MAIN-PROMOTION-REVIEW
+recommended_next: WORKBENCH-FOUNDATION-00
