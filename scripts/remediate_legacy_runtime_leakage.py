@@ -100,8 +100,27 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr:
         return 1
 
     dry_run = not args.apply
+    legacy_connector_names = find_legacy_connector_names(root)
+    if dry_run and not legacy_connector_names and standard_outputs_exist(root):
+        plan = load_json(root / "control/inventory/legacy_runtime_leakage_remediation_plan.json")
+        result = load_json(root / "control/inventory/legacy_runtime_leakage_remediation_result.json")
+        if args.output:
+            write_json(root / args.output, result)
+        if args.summary_output:
+            write_text(root / args.summary_output, render_summary(result, plan))
+        payload = {
+            "schema_version": "legacy_runtime_leakage_remediation_run.v0",
+            "task": TASK,
+            "dry_run": True,
+            "applied": False,
+            "plan": plan,
+            "result": result,
+        }
+        emit(payload, args.json, stdout)
+        return 0 if result["status"] in {"pass", "pass_with_warnings"} else 1
+
     before = build_current_state(root)
-    plan = build_plan(root, before)
+    plan = build_plan(root, before, legacy_connector_names=legacy_connector_names)
     result = build_result(before, before, plan, applied=False, dry_run=dry_run)
     inventory = build_inventory(before)
     remaining = build_remaining_allowlist(root, before)
@@ -243,8 +262,15 @@ def clean_r0_seams(findings: Sequence[Mapping[str, Any]]) -> bool:
     return not any(str(item.get("path", "")).startswith(R0_SEAMS) for item in findings)
 
 
-def build_plan(root: Path, state: Mapping[str, Any]) -> dict[str, Any]:
-    names = sorted(path.name for path in (root / "runtime/connectors").iterdir() if path.is_dir() and is_legacy_connector_name(path.name))
+def find_legacy_connector_names(root: Path) -> list[str]:
+    connector_root = root / "runtime/connectors"
+    if not connector_root.exists():
+        return []
+    return sorted(path.name for path in connector_root.iterdir() if path.is_dir() and is_legacy_connector_name(path.name))
+
+
+def build_plan(root: Path, state: Mapping[str, Any], *, legacy_connector_names: Sequence[str] | None = None) -> dict[str, Any]:
+    names = list(legacy_connector_names) if legacy_connector_names is not None else find_legacy_connector_names(root)
     return {
         "schema_version": "legacy_runtime_leakage_remediation_plan.v0",
         "task": TASK,
