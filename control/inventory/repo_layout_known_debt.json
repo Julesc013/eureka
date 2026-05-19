@@ -1,0 +1,58 @@
+{
+  "schema_version": "repo_layout_known_debt.v0",
+  "task_id": "REPO-LAYOUT-CANON-01",
+  "status": "recorded_not_moved",
+  "known_debt": [
+    {
+      "debt_id": "top_level_data",
+      "path": "data",
+      "class": "generated_artifact_debt",
+      "future_task": "REPO-LAYOUT-GENERATED-03",
+      "required_disposition": "move, rename, or tightly reapprove with generator and check policy"
+    },
+    {
+      "debt_id": "data_public_index",
+      "path": "data/public_index",
+      "class": "committed_public_index_artifact",
+      "future_task": "REPO-LAYOUT-GENERATED-03",
+      "required_disposition": "classify as generated artifact projection and remove ambiguity with source content"
+    },
+    {
+      "debt_id": "top_level_deploy",
+      "path": "deploy",
+      "class": "release_definition_debt",
+      "future_task": "REPO-LAYOUT-INVENTORY-02",
+      "required_disposition": "move or map deployment definitions under release/"
+    },
+    {
+      "debt_id": "control_prototypes_legacy_runtime",
+      "path": "control/prototypes/legacy_runtime",
+      "class": "prototype_runtime_under_control",
+      "future_task": "REPO-LAYOUT-ARCHIVE-05",
+      "required_disposition": "archive historical prototype material or promote selected slices through runtime ownership"
+    },
+    {
+      "debt_id": "runtime_local_workbench_presentation",
+      "path": "runtime/local_workbench",
+      "class": "presentation_under_runtime",
+      "future_task": "REPO-LAYOUT-WORKBENCH-SURFACE-07",
+      "required_disposition": "move Workbench presentation to surfaces/web/workbench after route and packet contracts are locked"
+    },
+    {
+      "debt_id": "control_schemas_contract_authority_overlap",
+      "path": "control/schemas",
+      "class": "duplicate_contract_authority_risk",
+      "future_task": "REPO-LAYOUT-CONTRACT-AUTHORITY-06",
+      "required_disposition": "eliminate, archive, or scope as governance-only material so contracts/ remains product authority"
+    },
+    {
+      "debt_id": "scripts_large_tool_tree",
+      "path": "scripts",
+      "class": "thin_wrapper_root_with_substantive_tools",
+      "future_task": "REPO-LAYOUT-TOOLS-04",
+      "required_disposition": "move substantive validators, auditors, builders, and reporters into tools/ in phases"
+    }
+  ],
+  "no_file_moves": true,
+  "no_runtime_behavior_change": true
+}

@@ -1,0 +1,82 @@
+schema_version = "0.1.0"
+contract_id = "eureka.repo.generated_artifact_exceptions.v0"
+created_by_task = "REPO-LAYOUT-CANON-01"
+status = "draft_canon"
+description = "Committed generated or generated-like artifact exceptions. Exceptions require an owner, generator or governing command, check command, and no-manual-edit policy."
+
+[[exceptions]]
+path = "site/dist"
+artifact_id = "static_site_dist"
+class = "committed_static_public_artifact"
+status = "accepted_exception"
+generator_command = "python site/build.py --clean"
+check_command = "python site/build.py --check"
+manual_edits_allowed = false
+future_disposition = "keep_only_while_publication_policy_requires_committed_static_artifact"
+
+[[exceptions]]
+path = "snapshots/examples/static_snapshot_v0"
+artifact_id = "static_snapshot_example"
+class = "committed_snapshot_seed_example"
+status = "accepted_exception"
+generator_command = "python scripts/generate_static_snapshot.py --update"
+check_command = "python scripts/generate_static_snapshot.py --check"
+manual_edits_allowed = false
+future_disposition = "keep_as_deterministic_seed_example"
+
+[[exceptions]]
+path = "data/public_index"
+artifact_id = "public_search_index"
+class = "committed_public_index_artifact"
+status = "known_debt_exception"
+generator_command = "python scripts/build_public_search_index.py --rebuild"
+check_command = "python scripts/build_public_search_index.py --check"
+manual_edits_allowed = false
+future_disposition = "move_rename_or_tightly_reapprove"
+
+[[pattern_exceptions]]
+path_pattern = "control/audits/*/generated"
+class = "retained_audit_generated_material"
+status = "accepted_exception"
+manual_edits_allowed = false
+future_disposition = "retain_only_as_audit_evidence"
+
+[[exceptions]]
+path = ".aide/generated"
+artifact_id = "aide_generated"
+class = "control_plane_generated_exception"
+status = "accepted_exception"
+generator_command = "py -3 .aide/scripts/aide_lite.py"
+check_command = "py -3 .aide/scripts/aide_lite.py validate"
+manual_edits_allowed = false
+future_disposition = "keep_under_aide_control_plane_policy"
+
+[[exceptions]]
+path = ".aide/cache"
+artifact_id = "aide_cache_metadata"
+class = "control_plane_cache_exception"
+status = "accepted_exception"
+generator_command = "py -3 .aide/scripts/aide_lite.py"
+check_command = "py -3 .aide/scripts/aide_lite.py doctor"
+manual_edits_allowed = false
+future_disposition = "keep_under_aide_control_plane_policy"
+
+[[exceptions]]
+path = ".aide/export"
+artifact_id = "aide_export_pack"
+class = "control_plane_export_exception"
+status = "accepted_exception"
+generator_command = "py -3 .aide/scripts/aide_lite.py"
+check_command = "py -3 .aide/scripts/aide_lite.py validate"
+manual_edits_allowed = false
+future_disposition = "move_retained_exports_to_archive_generated_if_export_volume_grows"
+
+[[exceptions]]
+path = ".aide/reports"
+artifact_id = "aide_reports"
+class = "control_plane_report_exception"
+status = "accepted_exception"
+generator_command = "py -3 .aide/scripts/aide_lite.py"
+check_command = "py -3 .aide/scripts/aide_lite.py doctor"
+manual_edits_allowed = false
+future_disposition = "keep_reports_that_are_operating_metadata_only"

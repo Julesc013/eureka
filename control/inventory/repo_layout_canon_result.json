@@ -1,0 +1,27 @@
+{
+  "schema_version": "repo_layout_canon_result.v0",
+  "task_id": "REPO-LAYOUT-CANON-01",
+  "status": "canon_defined",
+  "contracts": [
+    "contracts/repo/root_allowlist.contract.toml",
+    "contracts/repo/naming.contract.toml",
+    "contracts/repo/generated_artifact_exceptions.contract.toml",
+    "contracts/repo/root_ownership.contract.toml"
+  ],
+  "validator": "scripts/validate_repo_structure_canon.py",
+  "inventories": [
+    "control/inventory/repo_layout_root_inventory.json",
+    "control/inventory/repo_layout_known_debt.json",
+    "control/inventory/repo_layout_next_task_decision.json"
+  ],
+  "native_surface_rule": {
+    "native": "top-level canonical native client/project root",
+    "surfaces_native": "non-authoritative projection adapter area only"
+  },
+  "known_layout_debt_recorded": true,
+  "files_moved": false,
+  "files_deleted": false,
+  "runtime_behavior_changed": false,
+  "production_readiness_claim": false,
+  "next_task": "REPO-LAYOUT-INVENTORY-02"
+}

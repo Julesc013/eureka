@@ -1,0 +1,74 @@
+schema_version = "0.1.0"
+contract_id = "eureka.repo.root_ownership.v0"
+created_by_task = "REPO-LAYOUT-CANON-01"
+status = "draft_canon"
+description = "Canonical ownership intent for active Eureka repository roots."
+
+[[ownership]]
+root = "control"
+owns = ["governance", "inventories", "audits", "policies", "queue_state", "planning_evidence"]
+must_not_own = ["active_product_runtime", "presentation_runtime", "product_truth"]
+
+[[ownership]]
+root = "contracts"
+owns = ["schemas", "packets", "view_models", "public_contracts", "machine_readable_product_authority"]
+must_not_own = ["content_payloads", "runtime_implementations", "generated_runtime_state"]
+
+[[ownership]]
+root = "runtime"
+owns = ["python_reference_backend", "kernel_behavior", "runtime_services", "gateway", "connectors", "stores"]
+must_not_own = ["surface_presentation_templates", "native_project_authority", "canonical_contract_authority"]
+transitional_debt = ["runtime/local_workbench"]
+
+[[ownership]]
+root = "surfaces"
+owns = ["web_projection", "api_projection", "cli_projection", "tui_projection", "surface_adapters"]
+must_not_own = ["native_project_authority", "engine_internals", "connector_truth"]
+notes = "Workbench presentation belongs under surfaces/web/workbench. surfaces/native, if retained, may only own projection adapters, docs, or examples."
+
+[[ownership]]
+root = "native"
+owns = ["native_client_projects", "native_build_metadata", "native_platform_matrix", "native_shared_libraries"]
+must_not_own = ["source_connector_runtime", "truth_acceptance", "python_runtime_internals"]
+notes = "Top-level native/ remains canonical for real native client and project ownership."
+
+[[ownership]]
+root = "crates"
+owns = ["rust_parity_candidates", "future_rust_backend_lane", "rust_contract_struct_experiments"]
+must_not_own = ["active_python_runtime_replacement_without_promotion", "surface_authority"]
+
+[[ownership]]
+root = "site"
+owns = ["static_site_sources", "templates", "assets", "inventoried_static_artifact_exceptions"]
+must_not_own = ["live_backend_runtime", "source_probe_runtime", "private_state"]
+
+[[ownership]]
+root = "snapshots"
+owns = ["snapshot_schemas", "deterministic_seed_snapshot_examples", "offline_interchange_artifacts"]
+must_not_own = ["real_signing_keys", "executable_downloads", "live_backend_output"]
+
+[[ownership]]
+root = "examples"
+owns = ["fixtures", "examples", "demo_corpora", "synthetic_packs"]
+must_not_own = ["canonical_registry_truth", "source_of_truth_contracts", "private_data"]
+
+[[ownership]]
+root = "tools"
+owns = ["validators", "auditors", "builders", "reporters", "generators", "migration_tools"]
+must_not_own = ["product_runtime_library_code", "user_facing_app_authority"]
+
+[[ownership]]
+root = "scripts"
+owns = ["thin_wrappers", "command_entrypoints"]
+must_not_own = ["substantive_tool_implementation_long_term", "product_runtime_library_code"]
+transitional_debt = ["scripts"]
+
+[[ownership]]
+root = "release"
+owns = ["deployment_definitions", "package_recipes", "release_promotion_definitions"]
+must_not_own = ["release_engine_implementation", "generated_release_output"]
+
+[[ownership]]
+root = "archive"
+owns = ["retired_material", "quarantined_material", "superseded_material", "retained_generated_history"]
+must_not_own = ["active_source_authority", "active_build_inputs_without_exception"]

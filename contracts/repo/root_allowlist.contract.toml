@@ -1,0 +1,167 @@
+schema_version = "0.1.0"
+contract_id = "eureka.repo.root_allowlist.v0"
+created_by_task = "REPO-LAYOUT-CANON-01"
+status = "draft_canon"
+description = "Allowed top-level repository roots and explicitly classified non-root exceptions."
+
+conventional_root_files = [
+  ".dockerignore",
+  ".gitignore",
+  "AGENTS.md",
+  "CODE_OF_CONDUCT.md",
+  "CONTRIBUTING.md",
+  "Dockerfile",
+  "README.md",
+  "SECURITY.md",
+]
+
+[[roots]]
+name = ".aide"
+class = "control_plane"
+required = true
+purpose = "Repo-local AIDE Lite policy, commands, adapters, prompts, eval definitions, and compact context support."
+must_not_own = ["product_runtime_behavior", "product_truth", "secrets", "local_private_state"]
+
+[[roots]]
+name = ".github"
+class = "automation"
+required = true
+purpose = "Repository automation and GitHub workflow definitions."
+must_not_own = ["product_runtime_behavior", "deployment_success_evidence", "secrets"]
+
+[[roots]]
+name = "control"
+class = "governance"
+required = true
+purpose = "Governance, inventories, audits, policies, task state, and planning evidence."
+must_not_own = ["active_product_runtime", "presentation_runtime", "canonical_contract_schemas"]
+
+[[roots]]
+name = "contracts"
+class = "contract_authority"
+required = true
+purpose = "Schemas, packet formats, public contracts, view models, and governed machine-readable product authority."
+must_not_own = ["content_payloads", "generated_runtime_state", "implementation_code"]
+
+[[roots]]
+name = "runtime"
+class = "product_runtime"
+required = true
+purpose = "Python reference backend, kernel behavior, runtime services, gateway, connectors, stores, and local service boundaries."
+must_not_own = ["surface_presentation_templates", "native_project_authority", "canonical_contract_schemas"]
+
+[[roots]]
+name = "surfaces"
+class = "surface_projection"
+required = true
+purpose = "Web, API, CLI, and TUI projection surfaces and adapters over runtime and contract packets."
+must_not_own = ["native_project_authority", "engine_internals", "source_connector_truth"]
+
+[[roots]]
+name = "native"
+class = "native_client_project"
+required = true
+purpose = "Native client projects, native build metadata, native platform matrix, and native shared libraries."
+must_not_own = ["python_runtime_behavior", "source_connector_runtime", "truth_acceptance"]
+
+[[roots]]
+name = "crates"
+class = "rust_lane"
+required = true
+purpose = "Rust parity and future production-lane experiments isolated from the active Python runtime."
+must_not_own = ["active_python_runtime_replacement", "surface_presentation_authority"]
+
+[[roots]]
+name = "site"
+class = "static_site"
+required = true
+purpose = "Static site source and explicitly inventoried committed static artifact exceptions."
+must_not_own = ["live_backend_runtime", "source_probe_runtime", "private_state"]
+
+[[roots]]
+name = "snapshots"
+class = "interchange_artifact"
+required = true
+purpose = "Snapshot schemas, deterministic seed examples, and future offline interchange artifacts."
+must_not_own = ["live_backend_runtime", "real_signing_keys", "executable_downloads"]
+
+[[roots]]
+name = "examples"
+class = "examples_and_fixtures"
+required = true
+purpose = "Fixtures, examples, demo corpora, and synthetic packs used for validation and documentation."
+must_not_own = ["canonical_registry_truth", "generated_runtime_state", "private_data"]
+
+[[roots]]
+name = "docs"
+class = "human_documentation"
+required = true
+purpose = "Architecture, operations, references, roadmap, and human explanation of machine-readable authority."
+must_not_own = ["machine_readable_contract_authority_without_contract_file", "runtime_behavior"]
+
+[[roots]]
+name = "tests"
+class = "verification"
+required = true
+purpose = "Cross-component tests, operations tests, script tests, hardening tests, parity tests, and fixtures owned by tests."
+must_not_own = ["product_runtime_behavior", "canonical_content_payloads"]
+
+[[roots]]
+name = "evals"
+class = "evaluation"
+required = true
+purpose = "Evaluation packets, query benchmarks, replay material, and audit/eval scaffolding."
+must_not_own = ["production_ranking_truth", "external_observation_fabrication"]
+
+[[roots]]
+name = "tools"
+class = "developer_tooling"
+required = false
+purpose = "Substantive validators, auditors, builders, reporters, generators, migration tools, and release helpers."
+must_not_own = ["product_runtime_library_code", "user_facing_app_authority"]
+
+[[roots]]
+name = "scripts"
+class = "thin_wrappers"
+required = true
+purpose = "Thin executable entry-point wrappers for tools and repo-local commands."
+must_not_own = ["large_tool_implementation_long_term", "product_runtime_library_code"]
+
+[[roots]]
+name = "release"
+class = "release_definition"
+required = false
+purpose = "Deploy, package, promotion, and release definitions or recipes."
+must_not_own = ["executable_release_engine", "generated_release_output"]
+
+[[roots]]
+name = "external"
+class = "external_reference"
+required = true
+purpose = "Pinned outside references, specs, upstream snapshots, and license notes."
+must_not_own = ["vendored_runtime_without_policy", "generated_output", "private_data"]
+
+[[roots]]
+name = "archive"
+class = "historical_archive"
+required = false
+purpose = "Retired, quarantined, superseded, generated, or historical material excluded from active source scans."
+must_not_own = ["active_product_authority", "active_build_inputs_without_exception"]
+
+[[classified_top_level_exceptions]]
+name = ".aide.local.example"
+class = "control_plane_local_state_template"
+reason = "Committed example for ignored local AIDE state. It is not a product root."
+future_disposition = "keep_as_template_exception"
+
+[[classified_top_level_debt]]
+name = "data"
+class = "generated_artifact_debt"
+reason = "Currently contains committed public index artifacts under data/public_index."
+future_disposition = "move_rename_or_tightly_reapprove"
+
+[[classified_top_level_debt]]
+name = "deploy"
+class = "release_definition_debt"
+reason = "Contains deployment templates that should be governed by release/."
+future_disposition = "move_to_release"

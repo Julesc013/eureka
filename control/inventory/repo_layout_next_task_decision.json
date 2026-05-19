@@ -1,0 +1,20 @@
+{
+  "schema_version": "repo_layout_next_task_decision.v0",
+  "task_id": "REPO-LAYOUT-CANON-01",
+  "decision": "REPO-LAYOUT-INVENTORY-02",
+  "reason": "The canon now defines root ownership and naming policy. The next safe step is a tracked inventory and move map before any source layout changes.",
+  "must_not_start_yet": [
+    "large file moves",
+    "Workbench implementation",
+    "SYN implementation",
+    "IA bridge implementation",
+    "deployment",
+    "public launch"
+  ],
+  "acceptance_for_next_task": [
+    "tracked inventory is captured",
+    "generated/local/archive/source classifications are separated",
+    "move candidates are mapped without moving files",
+    "known debts are linked to future phases"
+  ]
+}

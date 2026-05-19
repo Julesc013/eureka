@@ -1,0 +1,55 @@
+{
+  "schema_version": "repo_layout_root_inventory.v0",
+  "task_id": "REPO-LAYOUT-CANON-01",
+  "status": "canon_locked_no_moves",
+  "allowed_top_level_roots": [
+    ".aide",
+    ".github",
+    "control",
+    "contracts",
+    "runtime",
+    "surfaces",
+    "native",
+    "crates",
+    "site",
+    "snapshots",
+    "examples",
+    "docs",
+    "tests",
+    "evals",
+    "tools",
+    "scripts",
+    "release",
+    "external",
+    "archive"
+  ],
+  "optional_allowed_roots_not_required": [
+    "tools",
+    "release",
+    "archive"
+  ],
+  "classified_top_level_exceptions": [
+    {
+      "path": ".aide.local.example",
+      "class": "control_plane_local_state_template",
+      "reason": "Committed example for ignored local AIDE state. It is not a product root."
+    }
+  ],
+  "classified_top_level_debt": [
+    {
+      "path": "data",
+      "class": "generated_artifact_debt",
+      "reason": "Currently contains committed public index artifacts under data/public_index."
+    },
+    {
+      "path": "deploy",
+      "class": "release_definition_debt",
+      "reason": "Contains deployment templates that should be governed by release/."
+    }
+  ],
+  "native_surface_rule": {
+    "native": "canonical top-level native client and project root",
+    "surfaces_native": "projection adapters, docs, or examples only; must not supersede native/"
+  },
+  "source_layout_change": "none"
+}
