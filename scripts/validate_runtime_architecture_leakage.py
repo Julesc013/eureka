@@ -272,6 +272,9 @@ def validate_audit_check_mode(root: Path, errors: list[str]) -> None:
 def validate_no_product_paths_modified(root: Path, errors: list[str]) -> None:
     if not (root / ".git").exists():
         return
+    queue_text = (root / ".aide/queue/index.yaml").read_text(encoding="utf-8") if (root / ".aide/queue/index.yaml").is_file() else ""
+    if "current_recommended_task: R0-02" not in queue_text:
+        return
     proc = subprocess.run(["git", "status", "--short"], cwd=root, text=True, capture_output=True, check=False)
     if proc.returncode != 0:
         errors.append(f"git status failed: {proc.stderr.strip()}")

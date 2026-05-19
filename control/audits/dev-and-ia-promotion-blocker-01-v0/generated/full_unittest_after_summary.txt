@@ -1,0 +1,10 @@
+Final full-discovery target:
+
+```text
+python -m unittest discover -s tests -t .
+status: pass
+tests: 4739
+failures: 0
+errors: 0
+duration_seconds: 2748.091
+```

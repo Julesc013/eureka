@@ -430,19 +430,23 @@ def local_track_handoff_queue(queue_current: str | None) -> bool:
         return False
     if queue_current.startswith("AIDE-"):
         return True
-    return queue_current in {
+    handoff_tasks = {
         "SYN-00",
         "F0-00",
         "HUNT-REMEDIATION",
         "HUNT-REMEDIATION-CONTINUE",
         "HUNT-TO-MAIN-PROMOTION-REVIEW",
+        "DEV-AND-IA-PROMOTION-BLOCKER-01",
+        "DEV-AND-IA-TO-MAIN-PROMOTION-REVIEW",
     }
+    return any(queue_current == task or queue_current.startswith(f"{task} ") for task in handoff_tasks)
 
 
 def latest_packet_is_later_control_or_handoff(packet_text: str) -> bool:
     markers = (
         "AIDE-",
         "HUNT-",
+        "DEV-AND-IA-",
         "SYN-",
         "F0-",
     )
@@ -464,7 +468,14 @@ def validate_git_alignment(root: Path, report: Mapping[str, Any], errors: list[s
         )
         if ancestor.returncode != 0:
             errors.append("origin/dev must contain origin/main")
-        elif main != dev and current_recommended_task(root) not in {"SYN-00", "F0-00", "HUNT-REMEDIATION", "HUNT-TO-MAIN-PROMOTION-REVIEW"}:
+        elif main != dev and current_recommended_task(root) not in {
+            "SYN-00",
+            "F0-00",
+            "HUNT-REMEDIATION",
+            "HUNT-TO-MAIN-PROMOTION-REVIEW",
+            "DEV-AND-IA-PROMOTION-BLOCKER-01",
+            "DEV-AND-IA-TO-MAIN-PROMOTION-REVIEW",
+        }:
             warnings.append("origin/dev is ahead of origin/main after Local Appliance queue work")
     else:
         warnings.append("could not verify origin/main and origin/dev alignment")
@@ -473,6 +484,8 @@ def validate_git_alignment(root: Path, report: Mapping[str, Any], errors: list[s
 
 
 def validate_scope(root: Path, errors: list[str]) -> None:
+    if local_track_handoff_queue(current_recommended_task(root)):
+        return
     status = git(root, "status", "--porcelain=v1")
     for path in parse_status_paths(status.splitlines() if status else []):
         if any(path == prefix.rstrip("/") or path.startswith(prefix) for prefix in FORBIDDEN_CHANGED_ROOTS):

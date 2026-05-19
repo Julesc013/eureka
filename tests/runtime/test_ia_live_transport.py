@@ -45,20 +45,20 @@ class IALiveTransportTests(unittest.TestCase):
                 transport.get_json(
                     url="https://archive.org/advancedsearch.php?q=sampleproject",
                     endpoint_class="metadata_search_small",
-                    user_agent="EurekaLocalPilot/0.1 (metadata-only; contact: local-operator)",
+                    client_label="EurekaLocalPilot/0.1 (metadata-only; contact: local-operator)",
                     contact="local-operator",
                     timeout_seconds=10,
                     kill_switch_enabled=False,
                 )
             urlopen.assert_not_called()
 
-    def test_user_agent_required(self):
+    def test_client_label_required(self):
         transport = IALiveTransport(policy())
         with self.assertRaises(RuntimeError):
             transport.get_json(
                 url="https://archive.org/advancedsearch.php?q=sampleproject",
                 endpoint_class="metadata_search_small",
-                user_agent="Python-urllib/3",
+                client_label="Python-urllib/3",
                 contact="local-operator",
                 timeout_seconds=10,
                 kill_switch_enabled=True,
@@ -70,7 +70,7 @@ class IALiveTransportTests(unittest.TestCase):
             transport.get_json(
                 url="https://example.com/advancedsearch.php?q=sampleproject",
                 endpoint_class="metadata_search_small",
-                user_agent="EurekaLocalPilot/0.1 (metadata-only; contact: local-operator)",
+                client_label="EurekaLocalPilot/0.1 (metadata-only; contact: local-operator)",
                 contact="local-operator",
                 timeout_seconds=10,
                 kill_switch_enabled=True,
@@ -82,7 +82,7 @@ class IALiveTransportTests(unittest.TestCase):
             transport.get_json(
                 url="https://archive.org/advancedsearch.php?q=sampleproject",
                 endpoint_class="metadata_search_small",
-                user_agent="EurekaLocalPilot/0.1 (metadata-only; contact: local-operator)",
+                client_label="EurekaLocalPilot/0.1 (metadata-only; contact: local-operator)",
                 contact="local-operator",
                 timeout_seconds=10,
                 kill_switch_enabled=True,
@@ -91,7 +91,7 @@ class IALiveTransportTests(unittest.TestCase):
                 transport.get_json(
                     url="https://archive.org/metadata/sampleproject",
                     endpoint_class="item_metadata_read",
-                    user_agent="EurekaLocalPilot/0.1 (metadata-only; contact: local-operator)",
+                    client_label="EurekaLocalPilot/0.1 (metadata-only; contact: local-operator)",
                     contact="local-operator",
                     timeout_seconds=10,
                     kill_switch_enabled=True,
@@ -112,7 +112,7 @@ class IALiveTransportTests(unittest.TestCase):
             response = transport.get_json(
                 url="https://archive.org/advancedsearch.php?q=sampleproject",
                 endpoint_class="metadata_search_small",
-                user_agent="EurekaLocalPilot/0.1 (metadata-only; contact: local-operator)",
+                client_label="EurekaLocalPilot/0.1 (metadata-only; contact: local-operator)",
                 contact="local-operator",
                 timeout_seconds=10,
                 kill_switch_enabled=True,
@@ -126,7 +126,7 @@ class IALiveTransportTests(unittest.TestCase):
             response = transport.get_json(
                 url="https://archive.org/metadata/sampleproject",
                 endpoint_class="item_metadata_read",
-                user_agent="EurekaLocalPilot/0.1 (metadata-only; contact: local-operator)",
+                client_label="EurekaLocalPilot/0.1 (metadata-only; contact: local-operator)",
                 contact="local-operator",
                 timeout_seconds=10,
                 kill_switch_enabled=True,

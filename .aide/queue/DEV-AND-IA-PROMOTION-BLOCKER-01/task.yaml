@@ -1,0 +1,23 @@
+id: DEV-AND-IA-PROMOTION-BLOCKER-01
+title: Resolve blocking full-discovery failures before main promotion
+status: completed
+purpose: Repair full-discovery blockers that prevented dev IA pilot plus repo layout canon promotion.
+scope:
+  - candidate-index record validation ownership
+  - contract taxonomy inventory for contracts/repo
+  - runtime/source-observation leakage repair
+  - HUNT/LOCAL promotion-state repair
+  - audit evidence
+forbidden:
+  - main promotion
+  - main push
+  - force push
+  - history rewrite
+  - new live source probe
+  - downloads
+  - extraction
+  - model/provider calls
+  - deployment
+  - production readiness claim
+  - public launch readiness claim
+recommended_next: DEV-AND-IA-TO-MAIN-PROMOTION-REVIEW

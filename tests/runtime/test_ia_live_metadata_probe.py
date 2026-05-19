@@ -100,7 +100,7 @@ class IALiveMetadataProbeTests(unittest.TestCase):
         report = run_live_metadata_probe(
             self.policy,
             approve_live=True,
-            user_agent="EurekaLocalPilot/0.1 (metadata-only; contact: local-operator)",
+            client_label="EurekaLocalPilot/0.1 (metadata-only; contact: local-operator)",
             contact="local-operator",
             transport_factory=FakeTransport,
         )
@@ -133,7 +133,7 @@ class IALiveMetadataProbeTests(unittest.TestCase):
         report = run_live_metadata_probe(
             self.policy,
             approve_live=True,
-            user_agent="EurekaLocalPilot/0.1 (metadata-only; contact: local-operator)",
+            client_label="EurekaLocalPilot/0.1 (metadata-only; contact: local-operator)",
             contact="local-operator",
             transport_factory=RateLimitedTransport,
         )

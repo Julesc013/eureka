@@ -19,14 +19,14 @@ ROOT = Path(__file__).resolve().parents[2]
 
 
 class IAPromotionDryRunTests(unittest.TestCase):
-    def test_approve_decision_creates_preview_only_record(self):
+    def test_approve_decision_creates_dry_run_record(self):
         review_policy = load_ia_review_policy(ROOT / "control/policies/ia_review_policy.json")
         promotion_policy = load_ia_promotion_dry_run_policy(ROOT / "control/policies/ia_promotion_dry_run_policy.json")
         item = build_ia_review_items_from_candidates(load_default_ia_candidate_records()[:1], review_policy)[0]
         decision = apply_ia_review_decision(item, "approve_for_reviewed_index_dry_run", review_policy)
         preview = build_ia_promotion_preview(decision, None, promotion_policy)
         self.assertIsNotNone(preview)
-        self.assertTrue(preview["preview_only"])
+        self.assertTrue(preview["promotion_dry_run_only"])
         self.assertFalse(preview["reviewed_index_write_performed"])
         self.assertFalse(preview["master_index_write_performed"])
         self.assertEqual((), validate_ia_promotion_preview(preview, promotion_policy))

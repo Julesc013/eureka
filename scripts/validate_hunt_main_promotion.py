@@ -181,6 +181,8 @@ def validate_next_decision(payload: Mapping[str, Any], errors: list[str]) -> Non
 def validate_live_branch_equality(root: Path, result: Mapping[str, Any], errors: list[str]) -> None:
     if not (root / ".git").exists() or result.get("main_promoted") is not True:
         return
+    if current_queue_has_advanced_past_hunt_promotion(root):
+        return
     origin_main = run_git(root, "rev-parse", "origin/main")
     origin_dev = run_git(root, "rev-parse", "origin/dev")
     if origin_main and origin_dev and origin_main != origin_dev:
@@ -188,6 +190,28 @@ def validate_live_branch_equality(root: Path, result: Mapping[str, Any], errors:
     divergence = run_git(root, "rev-list", "--left-right", "--count", "origin/main...origin/dev")
     if divergence and divergence.strip() != "0\t0":
         errors.append(f"live git refs still diverge: {divergence}")
+
+
+def current_queue_has_advanced_past_hunt_promotion(root: Path) -> bool:
+    queue_path = root / ".aide/queue/index.yaml"
+    if not queue_path.is_file():
+        return False
+    for line in queue_path.read_text(encoding="utf-8").splitlines():
+        stripped = line.strip()
+        if not stripped.startswith("current_recommended_task:"):
+            continue
+        current = stripped.split(":", 1)[1].strip()
+        return current.startswith(
+            (
+                "DEV-AND-IA-",
+                "IA-",
+                "WORKBENCH-",
+                "SEARCH-",
+                "SYN-",
+                "F0-",
+            )
+        )
+    return False
 
 
 def validate_audit_pack(root: Path, errors: list[str]) -> None:

@@ -295,7 +295,11 @@ def validate_all_examples(*, strict: bool = False) -> dict[str, Any]:
     if not EXAMPLES_ROOT.is_dir():
         errors.append("examples/candidate_index: missing examples root.")
     else:
-        roots = sorted(path for path in EXAMPLES_ROOT.iterdir() if path.is_dir())
+        roots = sorted(
+            path
+            for path in EXAMPLES_ROOT.iterdir()
+            if path.is_dir() and (path / RECORD_FILE_NAME).is_file()
+        )
         if not roots:
             errors.append("examples/candidate_index: no example roots found.")
         for root in roots:

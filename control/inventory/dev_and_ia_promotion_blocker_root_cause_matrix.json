@@ -1,0 +1,144 @@
+{
+  "schema_version": "dev_and_ia_promotion_blocker_root_cause_matrix.v0",
+  "task": "DEV-AND-IA-PROMOTION-BLOCKER-01",
+  "root_causes": [
+    {
+      "root_cause_id": "RC-01",
+      "failure_area": "candidate_index_records",
+      "failing_tests": [
+        "tests.operations.test_candidate_index_contract",
+        "tests.scripts.test_validate_candidate_index_contract",
+        "tests.scripts.test_validate_candidate_index_record"
+      ],
+      "root_cause": "Generic candidate-record validation scanned IA integration expected-output directories as generic candidate examples.",
+      "source_of_truth": "Generic CANDIDATE_INDEX_RECORD examples are directories containing CANDIDATE_INDEX_RECORD.json; IA expected candidates are validated by IA candidate integration.",
+      "repair_strategy": "Constrain the generic validator to record-owning example roots.",
+      "files_to_change": [
+        "scripts/validate_candidate_index_record.py"
+      ],
+      "tests_to_run": [
+        "python -m unittest tests.operations.test_candidate_index_contract tests.scripts.test_validate_candidate_index_contract tests.scripts.test_validate_candidate_index_record"
+      ],
+      "risk": "low",
+      "promotion_blocker": true
+    },
+    {
+      "root_cause_id": "RC-02",
+      "failure_area": "contract_taxonomy_inventory",
+      "failing_tests": [
+        "tests.operations.test_contract_taxonomy_plan"
+      ],
+      "root_cause": "REPO-LAYOUT-CANON-01 added contracts/repo contracts without taxonomy inventory entries.",
+      "source_of_truth": "contracts/repo contains repo-governance contracts and remains separate from product runtime contracts.",
+      "repair_strategy": "Add contracts/repo entries as control_schema governance contracts and keep R0-only dirty-tree checks scoped to R0.",
+      "files_to_change": [
+        "control/inventory/contract_taxonomy_inventory.json",
+        "scripts/validate_contract_taxonomy_plan.py"
+      ],
+      "tests_to_run": [
+        "python -m unittest tests.operations.test_contract_taxonomy_plan"
+      ],
+      "risk": "medium",
+      "promotion_blocker": true
+    },
+    {
+      "root_cause_id": "RC-03",
+      "failure_area": "runtime_source_observation_leakage",
+      "failing_tests": [
+        "tests.operations.test_runtime_architecture_leakage",
+        "tests.operations.test_legacy_runtime_leakage_remediation",
+        "tests.runtime.test_source_observation_validation",
+        "tests.runtime.test_source_observation_seam"
+      ],
+      "root_cause": "IA source-observation runtime used task/audit vocabulary and direct banned transport import spelling.",
+      "source_of_truth": "runtime/source_observation owns stable source-observation mechanisms, not task IDs or control-plane vocabulary.",
+      "repair_strategy": "Rename runtime fields to stable product terms, rename live client label API, keep transport fail-closed, and scope R0-only dirty-tree checks to R0.",
+      "files_to_change": [
+        "runtime/source_observation/internet_archive_candidate_index.py",
+        "runtime/source_observation/internet_archive_live_probe.py",
+        "runtime/source_observation/internet_archive_live_transport.py",
+        "runtime/source_observation/internet_archive_promotion.py",
+        "scripts/validate_runtime_architecture_leakage.py"
+      ],
+      "tests_to_run": [
+        "python scripts/validate_source_observation_seam.py --json",
+        "python scripts/validate_runtime_architecture_leakage.py",
+        "python scripts/validate_legacy_runtime_leakage_remediation.py"
+      ],
+      "risk": "medium",
+      "promotion_blocker": true
+    },
+    {
+      "root_cause_id": "RC-04",
+      "failure_area": "hunt_local_promotion_state_tests",
+      "failing_tests": [
+        "tests.operations.test_hunt_remediation",
+        "tests.operations.test_hunt_remediation_continue",
+        "tests.operations.test_local_appliance_track"
+      ],
+      "root_cause": "HUNT/LOCAL validators did not recognize the dev/IA promotion repair lane and health lacked explicit F0 deferred status.",
+      "source_of_truth": "Current promotion remains blocked/pending repair; main/dev alignment is not claimed until promotion happens.",
+      "repair_strategy": "Allow the dev/IA repair lane as a handoff, record F0 deferred health, and preserve no-production/no-public claims.",
+      "files_to_change": [
+        "scripts/validate_hunt_remediation.py",
+        "scripts/validate_hunt_remediation_continue.py",
+        "scripts/validate_local_appliance_track.py",
+        ".aide/reports/eureka-repo-health.json"
+      ],
+      "tests_to_run": [
+        "python -m unittest tests.operations.test_hunt_remediation tests.operations.test_hunt_remediation_continue tests.operations.test_local_appliance_track"
+      ],
+      "risk": "low",
+      "promotion_blocker": true
+    },
+    {
+      "root_cause_id": "RC-05",
+      "failure_area": "hunt_local_promotion_state_tests",
+      "failing_tests": [
+        "tests.operations.test_hunt_main_promotion",
+        "tests.operations.test_hunt_main_promotion_gates",
+        "tests.operations.test_hunt_main_post_promotion_state"
+      ],
+      "root_cause": "Historical HUNT promotion audit recomputed old promotion state against the active dev/IA repair branch.",
+      "source_of_truth": "HUNT main-promotion evidence is historical; current dev/IA promotion state is separately tracked and remains unpromoted.",
+      "repair_strategy": "Load committed HUNT promotion records after the queue has advanced beyond HUNT and skip live branch-equality checks for historical HUNT evidence.",
+      "files_to_change": [
+        "scripts/audit_hunt_main_promotion.py",
+        "scripts/validate_hunt_main_promotion.py"
+      ],
+      "tests_to_run": [
+        "python -m unittest tests.operations.test_hunt_main_promotion tests.operations.test_hunt_main_promotion_gates tests.operations.test_hunt_main_post_promotion_state"
+      ],
+      "risk": "medium",
+      "promotion_blocker": true
+    },
+    {
+      "root_cause_id": "RC-06",
+      "failure_area": "hunt_local_promotion_state_tests",
+      "failing_tests": [
+        "tests.operations.test_ia_readiness_polish",
+        "tests.operations.test_local_instance_bootstrap",
+        "tests.operations.test_local_instance_migration_guard",
+        "tests.operations.test_search_hunt_closeout",
+        "tests.operations.test_search_hunt_track"
+      ],
+      "root_cause": "Historical IA, LOCAL, and HUNT validators did not recognize the dev/IA promotion repair and review lane as a later completed-task handoff.",
+      "source_of_truth": "The current recommended task is dev/IA promotion review; older IA, LOCAL, and HUNT evidence remains historical and must not require their old task to be current.",
+      "repair_strategy": "Extend shared queue-progress helpers and queue-sensitive validators to accept DEV-AND-IA later lanes only when the historical task is completed, while preserving no-promotion/no-production boundary checks.",
+      "files_to_change": [
+        "scripts/local_queue_progress.py",
+        "scripts/hunt_queue_progress.py",
+        "scripts/validate_ia_readiness_polish.py",
+        "scripts/validate_local_instance_bootstrap.py",
+        "scripts/validate_local_instance_migration_guard.py",
+        "scripts/validate_search_hunt_closeout.py",
+        "tests/operations/test_search_hunt_track.py"
+      ],
+      "tests_to_run": [
+        "python -m unittest tests.operations.test_ia_readiness_polish tests.operations.test_local_instance_bootstrap tests.operations.test_local_instance_migration_guard tests.operations.test_search_hunt_closeout tests.operations.test_search_hunt_track"
+      ],
+      "risk": "low",
+      "promotion_blocker": true
+    }
+  ]
+}

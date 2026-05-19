@@ -23,12 +23,12 @@ class IAPromotionBoundaryTests(unittest.TestCase):
         self.assertFalse(boundary["reviewed_index_mutated"])
         self.assertFalse(boundary["master_index_mutated"])
 
-    def test_promotion_boundary_keeps_preview_only(self):
+    def test_promotion_boundary_keeps_dry_run_only(self):
         policy = load_ia_promotion_dry_run_policy()
         report = build_ia_promotion_dry_run_report([], policy)
         boundary = build_ia_promotion_boundary_report(report)
         self.assertTrue(boundary["passed"])
-        self.assertTrue(boundary["all_promotion_previews_preview_only"])
+        self.assertTrue(boundary["all_promotion_previews_dry_run_only"])
         self.assertFalse(boundary["accepted_truth_created"])
         self.assertFalse(boundary["reviewed_index_mutated"])
         self.assertFalse(boundary["master_index_mutated"])

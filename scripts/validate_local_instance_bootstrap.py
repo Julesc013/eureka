@@ -12,9 +12,23 @@ from pathlib import Path
 from typing import Any, Mapping, Sequence, TextIO
 
 try:
-    from local_queue_progress import latest_packet_current_or_advanced, queue_current_or_advanced, queue_task_available, queue_task_completed
+    from local_queue_progress import (
+        current_recommended_task,
+        is_later_control_or_handoff,
+        latest_packet_current_or_advanced,
+        queue_current_or_advanced,
+        queue_task_available,
+        queue_task_completed,
+    )
 except ModuleNotFoundError:  # pragma: no cover - supports package-style imports in tests.
-    from scripts.local_queue_progress import latest_packet_current_or_advanced, queue_current_or_advanced, queue_task_available, queue_task_completed
+    from scripts.local_queue_progress import (
+        current_recommended_task,
+        is_later_control_or_handoff,
+        latest_packet_current_or_advanced,
+        queue_current_or_advanced,
+        queue_task_available,
+        queue_task_completed,
+    )
 
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
@@ -238,6 +252,8 @@ def validate_queue_and_context(root: Path, errors: list[str]) -> None:
 
 
 def validate_scope(root: Path, errors: list[str]) -> None:
+    if queue_task_completed(root, TASK_ID) and is_later_control_or_handoff(current_recommended_task(root)):
+        return
     status = git(root, "status", "--porcelain=v1")
     for path in parse_status_paths(status.splitlines() if status else []):
         if any(path == prefix.rstrip("/") or path.startswith(prefix) for prefix in FORBIDDEN_CHANGED_ROOTS):

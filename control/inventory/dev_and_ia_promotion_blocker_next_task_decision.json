@@ -1,0 +1,13 @@
+{
+  "schema_version": "dev_and_ia_promotion_blocker_next_task_decision.v0",
+  "task": "DEV-AND-IA-PROMOTION-BLOCKER-01",
+  "status": "pass",
+  "recommended_next_task": "DEV-AND-IA-TO-MAIN-PROMOTION-REVIEW \u2014 Promote dev IA pilot plus repo layout canon baseline to main",
+  "promotion_review_required": true,
+  "main_promotion_allowed_without_review": false,
+  "workbench_foundation_after_promotion": true,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "full_archive_org_integration_claimed": false,
+  "marketplace_or_app_store_readiness_claimed": false
+}

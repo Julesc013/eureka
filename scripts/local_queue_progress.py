@@ -12,7 +12,17 @@ from pathlib import Path
 
 QUEUE_INDEX = Path(".aide/queue/index.yaml")
 TASK_PACKET = Path(".aide/context/latest-task-packet.md")
-LATER_CONTROL_OR_HANDOFF_PREFIXES = ("AIDE-", "HUNT-", "SYN-", "F0-")
+LATER_CONTROL_OR_HANDOFF_PREFIXES = (
+    "AIDE-",
+    "HUNT-",
+    "SYN-",
+    "F0-",
+    "IA-",
+    "DEV-AND-IA-",
+    "REPO-LAYOUT-",
+    "WORKBENCH-",
+    "SEARCH-INTERACTION-",
+)
 
 
 def read_repo_text(root: Path, relative: Path) -> str:

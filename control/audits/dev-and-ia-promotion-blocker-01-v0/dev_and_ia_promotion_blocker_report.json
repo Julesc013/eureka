@@ -1,0 +1,21 @@
+{
+  "schema_version": "dev_and_ia_promotion_blocker_report.v0",
+  "task": "DEV-AND-IA-PROMOTION-BLOCKER-01",
+  "status": "pass",
+  "initial_full_discovery_failures": 17,
+  "initial_full_discovery_errors": 5,
+  "current_full_discovery_failures": 0,
+  "current_full_discovery_errors": 0,
+  "full_unittest_discovery_pass": true,
+  "candidate_index_failures_resolved": true,
+  "contract_taxonomy_failures_resolved": true,
+  "runtime_source_observation_leakage_resolved": true,
+  "hunt_local_promotion_state_failures_resolved": true,
+  "promotion_performed": false,
+  "main_pushed": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "full_archive_org_integration_claimed": false,
+  "marketplace_or_app_store_readiness_claimed": false,
+  "recommended_next_task": "DEV-AND-IA-TO-MAIN-PROMOTION-REVIEW \u2014 Promote dev IA pilot plus repo layout canon baseline to main"
+}

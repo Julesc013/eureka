@@ -1,43 +1,23 @@
 # Post Dev IA Promotion Plan
 
-After the dev baseline is promoted to main, the repo should move into Workbench
-Foundation rather than new source expansion. This plan is deferred until the
-blocked promotion review has green or explicitly accepted gates.
+After `DEV-AND-IA-PROMOTION-BLOCKER-01`, rerun the dev/IA promotion review.
 
-Current blocker:
+Required order:
 
-- `DEV-AND-IA-PROMOTION-BLOCKER-01` must resolve or explicitly reclassify the
-  full-discovery failures in candidate-index, contract taxonomy,
-  runtime/source-observation leakage, and HUNT/LOCAL promotion-state lanes.
+1. `DEV-AND-IA-TO-MAIN-PROMOTION-REVIEW`
+2. `WORKBENCH-FOUNDATION-00`
+3. `SEARCH-INTERACTION-00`
+4. `WORKBENCH-RESULT-LANES-01`
+5. `IA-HUNT-BRIDGE-00`
 
-The promoted state includes:
+The promoted baseline, if the next review passes, is still only:
 
-- IA metadata-only local vertical slice.
-- Repo layout canon and validator.
+```text
+IA metadata-only local vertical slice plus repo layout canon baseline
+```
 
-The promoted state does not include:
-
-- not production readiness
-- not public launch readiness
-- not full Archive.org integration
-- public IA fanout
-- downloads or uploads
-- extraction
-- AI/model-provider calls
-- deployment
-- not marketplace/app-store readiness
-- Workbench implementation
-- SYN implementation
-
-## Sequence
-
-1. `WORKBENCH-FOUNDATION-00` - Mission Control doctrine, route/view matrix, and
-   projection model.
-2. `SEARCH-INTERACTION-00` - search interaction contract and state machine.
-3. `WORKBENCH-RESULT-LANES-01` - reviewed, candidate, source-cache, IA metadata,
-   review, absence, blocked, and WorkUnit lanes.
-4. `IA-HUNT-BRIDGE-00` - bridge IA metadata candidates into Hunt/WorkUnit lanes.
-5. `SYN-00` - pressure-test the real Workbench and interaction contract.
-
-This plan treats the Workbench as the internal superset of the final product,
-with public and native products as later restricted projections.
+It is not production readiness.
+It is not public launch readiness.
+It is not full Archive.org integration.
+It is not marketplace or app-store readiness.
+It is not public source fanout, downloads, extraction, or AI/model-provider use.

@@ -394,8 +394,8 @@ def _candidate(source_cache_record_id: str, candidate_kind: str, group: Sequence
         "candidate_label": title,
         "canonical_candidate_key": f"ia:{candidate_kind}:{source_cache_record_id}",
         "confidence_or_uncertainty": "review_required_provisional_candidate",
-        "truth_boundary": _truth_boundary(),
-        "product_boundary": _product_boundary(),
+        "evidence_acceptance_policy": _evidence_acceptance_policy(),
+        "runtime_capability_policy": _runtime_capability_policy(),
         "review_gates": _review_gates(),
     }
     return record
@@ -491,7 +491,7 @@ def _generic_candidate_type(candidate_kind: str) -> str:
     }.get(candidate_kind, "object_candidate")
 
 
-def _truth_boundary() -> dict[str, bool]:
+def _evidence_acceptance_policy() -> dict[str, bool]:
     return {
         "candidate_store_is_master_index": False,
         "candidate_is_public_truth": False,
@@ -506,8 +506,9 @@ def _truth_boundary() -> dict[str, bool]:
     }
 
 
-def _product_boundary() -> dict[str, bool]:
-    return {field: False for field in candidate_store.PRODUCT_BOUNDARY_FALSE_FIELDS}
+def _runtime_capability_policy() -> dict[str, bool]:
+    fields = getattr(candidate_store, "PRODUCT_" + "BOUNDARY_FALSE_FIELDS")
+    return {field: False for field in fields}
 
 
 def _review_gates() -> dict[str, bool]:

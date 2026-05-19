@@ -1,0 +1,11 @@
+Prior promotion review blocker:
+
+```text
+python -m unittest discover -s tests -t .
+tests: 4717
+failures: 17
+errors: 5
+blocking areas: candidate-index records, contract taxonomy inventory, runtime/source-observation leakage, HUNT/LOCAL promotion-state tests
+```
+
+Focused reproduction confirmed the same blocking lanes before repair.

@@ -315,6 +315,14 @@ def validate_queue(root: Path, errors: list[str]) -> None:
 def queue_preserves_hunt_handoff(root: Path, queue_text: str) -> bool:
     if "current_recommended_task: SYN-00" in queue_text:
         return True
+    if "current_recommended_task: DEV-AND-IA-" in queue_text or "current_recommended_task: WORKBENCH-" in queue_text or "current_recommended_task: SEARCH-INTERACTION-" in queue_text:
+        closeout = load_json(root / "control/inventory/search_hunt_closeout_result.json", "search_hunt_closeout_result.v0", [])
+        return (
+            "id: SYN-00" in queue_text
+            and "id: HUNT-TO-MAIN-PROMOTION-REVIEW" in queue_text
+            and closeout.get("syn_can_start") is True
+            and closeout.get("hard_blockers_remaining") == 0
+        )
     if "current_recommended_task: HUNT-TO-MAIN-PROMOTION-REVIEW" not in queue_text:
         return False
     aide = load_json(root / "control/inventory/aide_eval_green_result.json", "aide_eval_green_result.v0", [])

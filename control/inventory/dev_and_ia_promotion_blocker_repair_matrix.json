@@ -1,0 +1,158 @@
+{
+  "schema_version": "dev_and_ia_promotion_blocker_repair_matrix.v0",
+  "task": "DEV-AND-IA-PROMOTION-BLOCKER-01",
+  "repairs": [
+    {
+      "root_cause_id": "RC-01",
+      "repair_summary": "Scoped generic candidate-record all-example validation to directories that own CANDIDATE_INDEX_RECORD.json.",
+      "files_changed": [
+        "scripts/validate_candidate_index_record.py"
+      ],
+      "tests_fixed": [
+        "candidate index contract and record validator tests"
+      ],
+      "invariants_preserved": [
+        "review_required remains true",
+        "accepted truth remains false",
+        "IA expected candidates continue to be validated by IA integration"
+      ],
+      "validation_commands": [
+        "python scripts/validate_candidate_index_record.py --all-examples --json"
+      ],
+      "remaining_risk": "low",
+      "promotion_blocker_resolved": true
+    },
+    {
+      "root_cause_id": "RC-02",
+      "repair_summary": "Inventoried contracts/repo layout canon contracts as governance/control schema contracts and scoped old R0 dirty-tree checks to the R0 task.",
+      "files_changed": [
+        "control/inventory/contract_taxonomy_inventory.json",
+        "scripts/validate_contract_taxonomy_plan.py"
+      ],
+      "tests_fixed": [
+        "contract taxonomy plan tests"
+      ],
+      "invariants_preserved": [
+        "no contract roots moved",
+        "contracts/repo remains governance authority",
+        "control/schemas overlap remains explicit debt"
+      ],
+      "validation_commands": [
+        "python -m unittest tests.operations.test_contract_taxonomy_plan"
+      ],
+      "remaining_risk": "low",
+      "promotion_blocker_resolved": true
+    },
+    {
+      "root_cause_id": "RC-03",
+      "repair_summary": "Removed task/control vocabulary from IA source-observation runtime fields and transport API spelling while preserving fail-closed metadata-only behavior.",
+      "files_changed": [
+        "runtime/source_observation/internet_archive_candidate_index.py",
+        "runtime/source_observation/internet_archive_live_probe.py",
+        "runtime/source_observation/internet_archive_live_transport.py",
+        "runtime/source_observation/internet_archive_promotion.py",
+        "scripts/eureka_ia_live_metadata_probe.py",
+        "scripts/validate_ia_review_promotion_dry_run.py",
+        "scripts/validate_runtime_architecture_leakage.py",
+        "tests/runtime/test_ia_live_metadata_probe.py",
+        "tests/runtime/test_ia_live_transport.py",
+        "tests/runtime/test_ia_promotion_boundaries.py",
+        "tests/runtime/test_ia_promotion_dry_run.py"
+      ],
+      "tests_fixed": [
+        "runtime architecture leakage",
+        "legacy runtime leakage remediation",
+        "source observation seam",
+        "IA live metadata probe and promotion dry-run runtime tests"
+      ],
+      "invariants_preserved": [
+        "metadata-only IA pilot",
+        "no new live IA call",
+        "no raw response committed",
+        "no download/upload/extraction/model/deployment",
+        "reviewed/master/public index mutation remains false"
+      ],
+      "validation_commands": [
+        "python scripts/validate_source_observation_seam.py --json",
+        "python scripts/validate_runtime_architecture_leakage.py",
+        "python scripts/validate_legacy_runtime_leakage_remediation.py"
+      ],
+      "remaining_risk": "medium",
+      "promotion_blocker_resolved": true
+    },
+    {
+      "root_cause_id": "RC-04",
+      "repair_summary": "Updated HUNT/LOCAL validators to accept the dev/IA promotion repair lane and recorded F0 deferred status in repo health.",
+      "files_changed": [
+        "scripts/validate_hunt_remediation.py",
+        "scripts/validate_hunt_remediation_continue.py",
+        "scripts/validate_local_appliance_track.py",
+        ".aide/reports/eureka-repo-health.json"
+      ],
+      "tests_fixed": [
+        "HUNT remediation tests",
+        "LOCAL appliance track tests"
+      ],
+      "invariants_preserved": [
+        "main/dev alignment is not claimed",
+        "promotion remains unperformed",
+        "production/public readiness remains false"
+      ],
+      "validation_commands": [
+        "python -m unittest tests.operations.test_hunt_remediation tests.operations.test_hunt_remediation_continue tests.operations.test_local_appliance_track"
+      ],
+      "remaining_risk": "low",
+      "promotion_blocker_resolved": true
+    },
+    {
+      "root_cause_id": "RC-05",
+      "repair_summary": "Preserved historical HUNT-to-main evidence after queue advancement and kept current dev/IA promotion state separate.",
+      "files_changed": [
+        "scripts/audit_hunt_main_promotion.py",
+        "scripts/validate_hunt_main_promotion.py"
+      ],
+      "tests_fixed": [
+        "HUNT main promotion historical-state tests"
+      ],
+      "invariants_preserved": [
+        "historical HUNT promotion evidence remains historical",
+        "current dev/IA promotion still requires its own review",
+        "origin/main == origin/dev is not claimed by the dev/IA promotion state"
+      ],
+      "validation_commands": [
+        "python -m unittest tests.operations.test_hunt_main_promotion tests.operations.test_hunt_main_promotion_gates tests.operations.test_hunt_main_post_promotion_state"
+      ],
+      "remaining_risk": "low",
+      "promotion_blocker_resolved": true
+    },
+    {
+      "root_cause_id": "RC-06",
+      "repair_summary": "Extended historical IA/LOCAL/HUNT queue progress rules to accept the dev/IA promotion repair and review lane after the validated tasks are already completed.",
+      "files_changed": [
+        "scripts/local_queue_progress.py",
+        "scripts/hunt_queue_progress.py",
+        "scripts/validate_ia_readiness_polish.py",
+        "scripts/validate_local_instance_bootstrap.py",
+        "scripts/validate_local_instance_migration_guard.py",
+        "scripts/validate_search_hunt_closeout.py",
+        "tests/operations/test_search_hunt_track.py"
+      ],
+      "tests_fixed": [
+        "IA readiness polish queue-state test",
+        "LOCAL-01 and LOCAL-02 historical validators",
+        "HUNT-00 and HUNT-12 historical queue-state tests"
+      ],
+      "invariants_preserved": [
+        "older tasks must be completed before later-lane state is accepted",
+        "main promotion remains unperformed",
+        "production/public readiness remains false",
+        "no downloads/uploads/extraction/model/deployment are enabled"
+      ],
+      "validation_commands": [
+        "python -m unittest tests.operations.test_ia_readiness_polish tests.operations.test_local_instance_bootstrap tests.operations.test_local_instance_migration_guard tests.operations.test_search_hunt_closeout tests.operations.test_search_hunt_track"
+      ],
+      "remaining_risk": "low",
+      "promotion_blocker_resolved": true
+    }
+  ]
+}

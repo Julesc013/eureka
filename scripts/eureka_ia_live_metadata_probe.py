@@ -58,7 +58,7 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout) -> int:
             identifier=args.identifier,
             rows=args.rows,
             max_requests=args.max_requests,
-            user_agent=args.user_agent,
+            client_label=args.user_agent,
             contact=args.contact,
             kill_switch_enabled=args.kill_switch == "enabled",
         )

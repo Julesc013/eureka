@@ -1,17 +1,26 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-18
 repo: julesc013/eureka
-current_recommended_task: DEV-AND-IA-PROMOTION-BLOCKER-01 — Resolve blocking full-discovery failures before main promotion
+current_recommended_task: DEV-AND-IA-TO-MAIN-PROMOTION-REVIEW — Promote dev IA pilot plus repo layout canon baseline to main
 entries:
   - id: DEV-AND-IA-TO-MAIN-PROMOTION-REVIEW
     title: Promote dev IA pilot plus repo layout canon baseline to main
-    status: blocked
+    status: ready
     purpose: Review current dev for main promotion as the combined IA metadata pilot plus repo layout canon baseline.
     allowed_scope_summary: Promotion review evidence, validators, docs, audit pack, branch comparison, and AIDE queue/context metadata only.
-    gate: Blocked until full unittest discovery failures in candidate-index, source-observation/runtime leakage, HUNT/LOCAL promotion-state, and contract taxonomy lanes are resolved or explicitly reclassified.
+    gate: Ready to rerun after DEV-AND-IA-PROMOTION-BLOCKER-01 full-discovery repair; still requires promotion review gates before any main push.
     task: .aide/queue/DEV-AND-IA-TO-MAIN-PROMOTION-REVIEW/task.yaml
-    recommended_after: REPO-LAYOUT-CANON-01
-    recommended_next: DEV-AND-IA-PROMOTION-BLOCKER-01
+    recommended_after: DEV-AND-IA-PROMOTION-BLOCKER-01
+    recommended_next: WORKBENCH-FOUNDATION-00
+  - id: DEV-AND-IA-PROMOTION-BLOCKER-01
+    title: Resolve blocking full-discovery failures before main promotion
+    status: completed
+    purpose: Repair candidate-index, contract taxonomy, runtime/source-observation leakage, and HUNT/LOCAL state failures that blocked dev/IA promotion.
+    allowed_scope_summary: Focused repair of blocking full-discovery lanes plus audit evidence and queue/context metadata.
+    gate: No main promotion, no main push, no live source probe, no downloads, no extraction, no model/provider calls, no deployment, no production/public readiness claim.
+    task: .aide/queue/DEV-AND-IA-PROMOTION-BLOCKER-01/task.yaml
+    recommended_after: DEV-AND-IA-TO-MAIN-PROMOTION-REVIEW
+    recommended_next: DEV-AND-IA-TO-MAIN-PROMOTION-REVIEW
   - id: WORKBENCH-FOUNDATION-00
     title: Mission Control doctrine, route/view matrix, and projection model
     status: queued

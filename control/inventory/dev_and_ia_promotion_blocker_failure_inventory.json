@@ -1,0 +1,124 @@
+{
+  "schema_version": "dev_and_ia_promotion_blocker_failure_inventory.v0",
+  "task": "DEV-AND-IA-PROMOTION-BLOCKER-01",
+  "prior_full_discovery_failures": 17,
+  "prior_full_discovery_errors": 5,
+  "current_reproduced_failure_groups": 6,
+  "failures": [
+    {
+      "failure_id": "candidate_index_examples_overbroad_scan",
+      "test_module": "tests.operations.test_candidate_index_contract / tests.scripts.test_validate_candidate_index_record",
+      "test_name": "candidate-index example and validator cluster",
+      "failure_type": "failure_and_error",
+      "failure_area": "candidate_index_records",
+      "traceback_summary": "Generic candidate record validator treated the IA integration expected-output directory as a CANDIDATE_INDEX_RECORD example.",
+      "failing_assertion_summary": "Expected four generic candidate record examples and valid all-example scan; got missing record under examples/candidate_index/internet_archive_metadata.",
+      "suspected_root_cause": "IA metadata expected-candidate fixtures shared the generic examples root but are validated by the IA candidate integration validator, not by the generic CANDIDATE_INDEX_RECORD example validator.",
+      "related_files": [
+        "scripts/validate_candidate_index_record.py",
+        "examples/candidate_index/internet_archive_metadata/expected_candidates.json"
+      ],
+      "introduced_by_dev_baseline": true,
+      "blocks_promotion": true,
+      "repair_required": true
+    },
+    {
+      "failure_id": "contract_taxonomy_missing_repo_contracts",
+      "test_module": "tests.operations.test_contract_taxonomy_plan",
+      "test_name": "test_validator_confirms_no_contract_files_moved_and_recommends_r0_03b",
+      "failure_type": "failure",
+      "failure_area": "contract_taxonomy_inventory",
+      "traceback_summary": "Contract taxonomy inventory did not include the four contracts/repo layout canon contracts added by REPO-LAYOUT-CANON-01.",
+      "failing_assertion_summary": "validate_contract_taxonomy_plan reported missing contract taxonomy inventory paths.",
+      "suspected_root_cause": "Layout canon introduced repo-governance contracts without updating the older taxonomy inventory.",
+      "related_files": [
+        "control/inventory/contract_taxonomy_inventory.json",
+        "contracts/repo/root_allowlist.contract.toml",
+        "contracts/repo/naming.contract.toml",
+        "contracts/repo/generated_artifact_exceptions.contract.toml",
+        "contracts/repo/root_ownership.contract.toml"
+      ],
+      "introduced_by_dev_baseline": true,
+      "blocks_promotion": true,
+      "repair_required": true
+    },
+    {
+      "failure_id": "runtime_source_observation_leakage",
+      "test_module": "tests.operations.test_runtime_architecture_leakage / tests.runtime.test_source_observation_validation",
+      "test_name": "runtime leakage validator and source observation seam cluster",
+      "failure_type": "failure",
+      "failure_area": "runtime_source_observation_leakage",
+      "traceback_summary": "Runtime/source-observation modules contained task/control vocabulary and a banned direct urllib.request import.",
+      "failing_assertion_summary": "Source-observation seam flagged truth_boundary, product_boundary, preview_only, user_agent/agent vocabulary, and urllib.request in the IA live transport path.",
+      "suspected_root_cause": "IA pilot runtime carried audit-era vocabulary into product runtime modules.",
+      "related_files": [
+        "runtime/source_observation/internet_archive_candidate_index.py",
+        "runtime/source_observation/internet_archive_live_probe.py",
+        "runtime/source_observation/internet_archive_live_transport.py",
+        "runtime/source_observation/internet_archive_promotion.py",
+        "contracts/repo/root_allowlist.contract.toml"
+      ],
+      "introduced_by_dev_baseline": true,
+      "blocks_promotion": true,
+      "repair_required": true
+    },
+    {
+      "failure_id": "hunt_local_current_queue_state",
+      "test_module": "tests.operations.test_hunt_remediation / tests.operations.test_local_appliance_track",
+      "test_name": "HUNT remediation continuation and LOCAL queue-state validators",
+      "failure_type": "failure",
+      "failure_area": "hunt_local_promotion_state_tests",
+      "traceback_summary": "Historical HUNT/LOCAL validators accepted SYN/HUNT handoff states but not the active dev/IA promotion repair lane.",
+      "failing_assertion_summary": "Validators rejected the DEV-AND-IA-PROMOTION-BLOCKER-01 queue state and missing F0 deferral health status.",
+      "suspected_root_cause": "Queue and health validators were stale after the dev/IA promotion review blocked on full discovery.",
+      "related_files": [
+        "scripts/validate_hunt_remediation.py",
+        "scripts/validate_hunt_remediation_continue.py",
+        "scripts/validate_local_appliance_track.py",
+        ".aide/reports/eureka-repo-health.json"
+      ],
+      "introduced_by_dev_baseline": true,
+      "blocks_promotion": true,
+      "repair_required": true
+    },
+    {
+      "failure_id": "historical_hunt_promotion_recomputed_against_current_repair_branch",
+      "test_module": "tests.operations.test_hunt_main_promotion / tests.operations.test_hunt_main_post_promotion_state",
+      "test_name": "HUNT main promotion historical-state tests",
+      "failure_type": "failure",
+      "failure_area": "hunt_local_promotion_state_tests",
+      "traceback_summary": "Historical HUNT-to-main promotion records were recomputed against the current dirty dev/IA repair branch.",
+      "failing_assertion_summary": "Tests expected historical HUNT promotion pass evidence, while dynamic recomputation reported current repair-branch blockers.",
+      "suspected_root_cause": "The HUNT promotion audit did not preserve committed HUNT promotion evidence once the queue advanced into later dev/IA work.",
+      "related_files": [
+        "scripts/audit_hunt_main_promotion.py",
+        "scripts/validate_hunt_main_promotion.py"
+      ],
+      "introduced_by_dev_baseline": true,
+      "blocks_promotion": true,
+      "repair_required": true
+    },
+    {
+      "failure_id": "historical_lane_validators_rejected_dev_ia_promotion_state",
+      "test_module": "tests.operations.test_ia_readiness_polish / tests.operations.test_local_instance_bootstrap / tests.operations.test_local_instance_migration_guard / tests.operations.test_search_hunt_closeout / tests.operations.test_search_hunt_track",
+      "test_name": "historical IA/LOCAL/HUNT queue-sensitive validator cluster",
+      "failure_type": "failure",
+      "failure_area": "hunt_local_promotion_state_tests",
+      "traceback_summary": "After the first repair pass, full discovery still found historical IA readiness, LOCAL bootstrap/migration, and HUNT closeout validators rejecting DEV-AND-IA-TO-MAIN-PROMOTION-REVIEW as the current lane.",
+      "failing_assertion_summary": "Validators expected IA-BUNDLE, LOCAL, SYN, or HUNT task packet/current queue state and treated current dev/IA repair edits as forbidden product path drift.",
+      "suspected_root_cause": "Shared queue progress helpers and historical validators had not been taught that dev/IA promotion repair/review is a later lane after IA, LOCAL, and HUNT tasks are already completed.",
+      "related_files": [
+        "scripts/local_queue_progress.py",
+        "scripts/hunt_queue_progress.py",
+        "scripts/validate_ia_readiness_polish.py",
+        "scripts/validate_local_instance_bootstrap.py",
+        "scripts/validate_local_instance_migration_guard.py",
+        "scripts/validate_search_hunt_closeout.py",
+        "tests/operations/test_search_hunt_track.py"
+      ],
+      "introduced_by_dev_baseline": true,
+      "blocks_promotion": true,
+      "repair_required": true
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "schema_version": "dev_and_ia_promotion_blocker_validation_matrix.v0",
+  "task": "DEV-AND-IA-PROMOTION-BLOCKER-01",
+  "status": "pass",
+  "validations": [
+    {
+      "command": "python -m unittest tests.operations.test_candidate_index_contract tests.scripts.test_validate_candidate_index_contract tests.scripts.test_validate_candidate_index_record",
+      "status": "pass",
+      "blocks_promotion": true,
+      "reason": "Candidate-index record ownership and examples validate.",
+      "evidence_path": "control/audits/dev-and-ia-promotion-blocker-01-v0/validation.md"
+    },
+    {
+      "command": "python -m unittest tests.operations.test_contract_taxonomy_plan",
+      "status": "pass",
+      "blocks_promotion": true,
+      "reason": "contracts/repo layout canon contracts are inventoried.",
+      "evidence_path": "control/audits/dev-and-ia-promotion-blocker-01-v0/validation.md"
+    },
+    {
+      "command": "python scripts/validate_source_observation_seam.py --json",
+      "status": "pass",
+      "blocks_promotion": true,
+      "reason": "No forbidden source-observation vocabulary remains.",
+      "evidence_path": "control/audits/dev-and-ia-promotion-blocker-01-v0/validation.md"
+    },
+    {
+      "command": "python scripts/validate_runtime_architecture_leakage.py",
+      "status": "pass",
+      "blocks_promotion": true,
+      "reason": "Runtime leakage validator reports zero errors.",
+      "evidence_path": "control/audits/dev-and-ia-promotion-blocker-01-v0/validation.md"
+    },
+    {
+      "command": "python scripts/validate_legacy_runtime_leakage_remediation.py",
+      "status": "pass",
+      "blocks_promotion": true,
+      "reason": "Legacy runtime leakage remediation validator reports zero errors.",
+      "evidence_path": "control/audits/dev-and-ia-promotion-blocker-01-v0/validation.md"
+    },
+    {
+      "command": "python -m unittest tests.operations.test_hunt_main_promotion tests.operations.test_hunt_main_promotion_gates tests.operations.test_hunt_main_post_promotion_state tests.operations.test_hunt_remediation tests.operations.test_hunt_remediation_continue tests.operations.test_local_appliance_track",
+      "status": "pass",
+      "blocks_promotion": true,
+      "reason": "HUNT/LOCAL promotion-state tests pass with historical HUNT evidence and current dev/IA repair lane separated.",
+      "evidence_path": "control/audits/dev-and-ia-promotion-blocker-01-v0/validation.md"
+    },
+    {
+      "command": "python -m unittest tests.operations.test_ia_readiness_polish tests.operations.test_local_instance_bootstrap tests.operations.test_local_instance_migration_guard tests.operations.test_search_hunt_closeout tests.operations.test_search_hunt_track",
+      "status": "pass",
+      "blocks_promotion": true,
+      "reason": "Historical IA, LOCAL, and HUNT queue-sensitive validators accept the dev/IA promotion lane after their own tasks are completed.",
+      "evidence_path": "control/audits/dev-and-ia-promotion-blocker-01-v0/validation.md"
+    },
+    {
+      "command": "python -m unittest discover -s tests -t .",
+      "status": "pass",
+      "blocks_promotion": true,
+      "reason": "Full discovery must pass before dev/IA promotion resumes.",
+      "evidence_path": "control/audits/dev-and-ia-promotion-blocker-01-v0/generated/full_unittest_after_summary.txt"
+    }
+  ]
+}

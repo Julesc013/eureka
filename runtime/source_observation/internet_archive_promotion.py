@@ -66,7 +66,7 @@ def build_ia_promotion_preview(
         "rights_flags": list(source_candidate.get("rights_flags", []) or []),
         "risk_flags": list(source_candidate.get("risk_flags", []) or []),
         "review_required": True,
-        "preview_only": True,
+        "promotion_dry_run_only": True,
         "reviewed_index_write_performed": False,
         "reviewed_index_mutation_performed": False,
         "master_index_write_performed": False,
@@ -119,8 +119,8 @@ def validate_ia_promotion_preview(preview: Mapping[str, Any], policy: Mapping[st
             errors.append(f"{key} is required")
     if preview.get("review_required") is not True:
         errors.append("review_required must be true")
-    if preview.get("preview_only") is not True:
-        errors.append("preview_only must be true")
+    if preview.get("promotion_dry_run_only") is not True:
+        errors.append("promotion dry-run flag must be true")
     for key in (
         "accepted_truth",
         "reviewed_index_write_performed",
@@ -156,12 +156,12 @@ def build_ia_promotion_dry_run_report(previews: Sequence[Mapping[str, Any]], pol
         "schema_version": "ia_promotion_dry_run_report.v0",
         "task": "IA-06",
         "status": "pass",
-        "preview_only": True,
+        "promotion_dry_run_only": True,
         "promotion_preview_count": len(preview_list),
         "promotion_preview_ids": [str(preview.get("promotion_preview_id", "")) for preview in preview_list],
         "promotion_previews": preview_list,
         "promotion_previews_created": bool(preview_list),
-        "all_promotion_previews_preview_only": all(preview.get("preview_only") is True for preview in preview_list),
+        "all_promotion_previews_dry_run_only": all(preview.get("promotion_dry_run_only") is True for preview in preview_list),
         "accepted_truth_created": any(preview.get("accepted_truth") is True for preview in preview_list),
         "reviewed_index_mutated": False,
         "master_index_mutated": False,
@@ -178,7 +178,7 @@ def build_ia_promotion_dry_run_report(previews: Sequence[Mapping[str, Any]], pol
 
 def build_ia_promotion_boundary_report(report: Mapping[str, Any]) -> dict[str, Any]:
     passed = (
-        bool(report.get("all_promotion_previews_preview_only", True))
+        bool(report.get("all_promotion_previews_dry_run_only", True))
         and not bool(report.get("accepted_truth_created", False))
         and not bool(report.get("reviewed_index_mutated", False))
         and not bool(report.get("master_index_mutated", False))
@@ -188,9 +188,9 @@ def build_ia_promotion_boundary_report(report: Mapping[str, Any]) -> dict[str, A
         "task": "IA-06",
         "passed": passed,
         "violations": [] if passed else ["promotion_boundary_failed"],
-        "preview_only": True,
+        "promotion_dry_run_only": True,
         "promotion_previews_created": bool(report.get("promotion_previews_created", False)),
-        "all_promotion_previews_preview_only": bool(report.get("all_promotion_previews_preview_only", True)),
+        "all_promotion_previews_dry_run_only": bool(report.get("all_promotion_previews_dry_run_only", True)),
         "accepted_truth_created": bool(report.get("accepted_truth_created", False)),
         "operator_instance_mutated": False,
         "instance_state_committed": False,

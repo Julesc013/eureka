@@ -151,8 +151,12 @@ def validate_ia_review_promotion_dry_run(repo_root: Path = REPO_ROOT) -> dict[st
         "fixture_review_items_written_to_temp": bool(apply_result.get("fixture_review_items_written_to_temp", False)),
         "live_preview_review_items_written_to_temp": bool(apply_result.get("live_preview_review_items_written_to_temp", False)),
         "promotion_previews_created": bool(apply_result.get("promotion_previews_created", False)) or bool(previews),
-        "all_promotion_previews_preview_only": bool(apply_result.get("all_promotion_previews_preview_only", False))
-        or all(preview.get("preview_only") is True for preview in previews),
+        "all_promotion_previews_dry_run_only": bool(apply_result.get("all_promotion_previews_dry_run_only", False))
+        or bool(apply_result.get("all_promotion_previews_preview_only", False))
+        or all(
+            preview.get("promotion_dry_run_only") is True or preview.get("preview_only") is True
+            for preview in previews
+        ),
         "accepted_truth_created": False,
         "operator_instance_mutated": False,
         "instance_state_committed": False,
@@ -276,7 +280,8 @@ def _run_temp_apply(repo_root: Path) -> dict[str, Any]:
             "live_preview_review_items_written_to_temp": bool(review_report.get("live_preview_review_items_written_to_temp", False)),
             "promotion_dry_run_passed": promotion_boundary_payload.get("passed") is True,
             "promotion_previews_created": bool(promotion_report.get("promotion_previews_created", False)),
-            "all_promotion_previews_preview_only": bool(promotion_report.get("all_promotion_previews_preview_only", False)),
+            "all_promotion_previews_dry_run_only": bool(promotion_report.get("all_promotion_previews_dry_run_only", False))
+            or bool(promotion_report.get("all_promotion_previews_preview_only", False)),
         }
 
 

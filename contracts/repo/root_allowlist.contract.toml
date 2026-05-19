@@ -19,7 +19,7 @@ conventional_root_files = [
 name = ".aide"
 class = "control_plane"
 required = true
-purpose = "Repo-local AIDE Lite policy, commands, adapters, prompts, eval definitions, and compact context support."
+purpose = "Repo-local automation policy, commands, adapters, prompts, eval definitions, and compact context support."
 must_not_own = ["product_runtime_behavior", "product_truth", "secrets", "local_private_state"]
 
 [[roots]]
@@ -151,7 +151,7 @@ must_not_own = ["active_product_authority", "active_build_inputs_without_excepti
 [[classified_top_level_exceptions]]
 name = ".aide.local.example"
 class = "control_plane_local_state_template"
-reason = "Committed example for ignored local AIDE state. It is not a product root."
+reason = "Committed example for ignored local automation state. It is not a product root."
 future_disposition = "keep_as_template_exception"
 
 [[classified_top_level_debt]]

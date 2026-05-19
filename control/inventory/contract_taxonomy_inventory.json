@@ -1,5 +1,5 @@
 {
-  "contract_count": 639,
+  "contract_count": 643,
   "contracts": [
     {
       "contract_class": "source_policy_contract",
@@ -5232,6 +5232,106 @@
       ],
       "target_path": "contracts/domain/semantic_renderer_parity.v0.json",
       "target_root": "contracts/domain/"
+    },
+    {
+      "contract_class": "control_schema",
+      "current_root": "contracts/repo/",
+      "maturity": "control_schema_candidate",
+      "notes": [
+        "Repository layout canon contract introduced by REPO-LAYOUT-CANON-01; governance authority, not product runtime payload."
+      ],
+      "path": "contracts/repo/generated_artifact_exceptions.contract.toml",
+      "recommended_action": "keep",
+      "references": [
+        "contracts/repo/generated_artifact_exceptions.contract.toml",
+        "docs/architecture/REPOSITORY_LAYOUT_CANON.md",
+        "scripts/validate_repo_structure_canon.py"
+      ],
+      "risks": [
+        "control_contract_authority_overlap"
+      ],
+      "signals": [
+        "repo_layout_contract_path",
+        "size:3122",
+        "suffix:.toml"
+      ],
+      "target_path": "contracts/repo/generated_artifact_exceptions.contract.toml",
+      "target_root": "contracts/repo/"
+    },
+    {
+      "contract_class": "control_schema",
+      "current_root": "contracts/repo/",
+      "maturity": "control_schema_candidate",
+      "notes": [
+        "Repository naming canon contract introduced by REPO-LAYOUT-CANON-01; governance authority, not product runtime payload."
+      ],
+      "path": "contracts/repo/naming.contract.toml",
+      "recommended_action": "keep",
+      "references": [
+        "contracts/repo/naming.contract.toml",
+        "docs/architecture/REPOSITORY_LAYOUT_CANON.md",
+        "scripts/validate_repo_structure_canon.py"
+      ],
+      "risks": [
+        "control_contract_authority_overlap"
+      ],
+      "signals": [
+        "repo_layout_contract_path",
+        "size:1968",
+        "suffix:.toml"
+      ],
+      "target_path": "contracts/repo/naming.contract.toml",
+      "target_root": "contracts/repo/"
+    },
+    {
+      "contract_class": "control_schema",
+      "current_root": "contracts/repo/",
+      "maturity": "control_schema_candidate",
+      "notes": [
+        "Repository top-level root allowlist contract introduced by REPO-LAYOUT-CANON-01; governance authority, not product runtime payload."
+      ],
+      "path": "contracts/repo/root_allowlist.contract.toml",
+      "recommended_action": "keep",
+      "references": [
+        "contracts/repo/root_allowlist.contract.toml",
+        "docs/architecture/REPOSITORY_LAYOUT_CANON.md",
+        "scripts/validate_repo_structure_canon.py"
+      ],
+      "risks": [
+        "control_contract_authority_overlap"
+      ],
+      "signals": [
+        "repo_layout_contract_path",
+        "size:6018",
+        "suffix:.toml"
+      ],
+      "target_path": "contracts/repo/root_allowlist.contract.toml",
+      "target_root": "contracts/repo/"
+    },
+    {
+      "contract_class": "control_schema",
+      "current_root": "contracts/repo/",
+      "maturity": "control_schema_candidate",
+      "notes": [
+        "Repository root ownership contract introduced by REPO-LAYOUT-CANON-01; governance authority, not product runtime payload."
+      ],
+      "path": "contracts/repo/root_ownership.contract.toml",
+      "recommended_action": "keep",
+      "references": [
+        "contracts/repo/root_ownership.contract.toml",
+        "docs/architecture/REPOSITORY_LAYOUT_CANON.md",
+        "scripts/validate_repo_structure_canon.py"
+      ],
+      "risks": [
+        "control_contract_authority_overlap"
+      ],
+      "signals": [
+        "repo_layout_contract_path",
+        "size:3303",
+        "suffix:.toml"
+      ],
+      "target_path": "contracts/repo/root_ownership.contract.toml",
+      "target_root": "contracts/repo/"
     },
     {
       "contract_class": "product_runtime_contract",
@@ -19978,7 +20078,7 @@
     "contract_class": {
       "audit_schema": 88,
       "connector_interface_contract": 21,
-      "control_schema": 31,
+      "control_schema": 35,
       "durable_store_contract": 29,
       "fixture_schema": 32,
       "native_contract": 15,
@@ -19992,13 +20092,13 @@
       "unknown": 3
     },
     "maturity": {
-      "control_schema_candidate": 312,
+      "control_schema_candidate": 316,
       "placeholder": 18,
       "stable_boundary_candidate": 309
     },
     "recommended_action": {
       "investigate": 3,
-      "keep": 425,
+      "keep": 429,
       "move": 211
     }
   },

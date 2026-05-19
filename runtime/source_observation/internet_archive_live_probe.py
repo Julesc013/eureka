@@ -85,7 +85,7 @@ def run_live_metadata_probe(
     identifier: str | None = None,
     rows: int | None = None,
     max_requests: int | None = None,
-    user_agent: str = "",
+    client_label: str = "",
     contact: str = "",
     kill_switch_enabled: bool = True,
     transport_factory: Callable[[IALiveTransportPolicy], IALiveTransport] | None = None,
@@ -108,7 +108,7 @@ def run_live_metadata_probe(
             request_plan=request_plan,
             approved_live=False,
             dry_run=True,
-            user_agent=user_agent,
+            client_label=client_label,
             contact=contact,
         )
         boundary = build_live_probe_boundary_report(
@@ -128,8 +128,8 @@ def run_live_metadata_probe(
             dry_run=True,
         )
 
-    if not user_agent.strip():
-        raise RuntimeError("User-Agent is required for approved IA-02 live probe")
+    if not client_label.strip():
+        raise RuntimeError("HTTP client label is required for approved IA-02 live probe")
     if not contact.strip():
         raise RuntimeError("contact is required for approved IA-02 live probe")
 
@@ -150,7 +150,7 @@ def run_live_metadata_probe(
     search_response = transport.get_json(
         url=request_plan[0]["url"],
         endpoint_class="metadata_search_small",
-        user_agent=user_agent,
+        client_label=client_label,
         contact=contact,
         timeout_seconds=int(policy.get("timeout_seconds_max", 10)),
         kill_switch_enabled=kill_switch_enabled,
@@ -174,7 +174,7 @@ def run_live_metadata_probe(
             item_response = transport.get_json(
                 url=item_request["url"],
                 endpoint_class="item_metadata_read",
-                user_agent=user_agent,
+                client_label=client_label,
                 contact=contact,
                 timeout_seconds=int(policy.get("timeout_seconds_max", 10)),
                 kill_switch_enabled=kill_switch_enabled,
@@ -198,7 +198,7 @@ def run_live_metadata_probe(
         request_plan=request_plan,
         responses=responses,
         normalized_preview=redacted_preview,
-        user_agent=user_agent,
+        client_label=client_label,
         contact=contact,
         requested_rows=requested_rows,
         returned_rows=len(search_docs),
@@ -373,7 +373,7 @@ def _base_summary(
     request_plan: list[Mapping[str, Any]],
     approved_live: bool,
     dry_run: bool,
-    user_agent: str,
+    client_label: str,
     contact: str,
 ) -> dict[str, Any]:
     return {
@@ -393,7 +393,7 @@ def _base_summary(
         "identifier_count": 0,
         "identifier_hashes": [],
         "normalized_preview_count": 0,
-        "user_agent_present": bool(str(user_agent).strip()),
+        "client_label_present": bool(str(client_label).strip()),
         "contact_present": bool(str(contact).strip()),
         "http_responses": [],
         "raw_response_committed": False,
@@ -407,7 +407,7 @@ def _live_summary(
     request_plan: list[Mapping[str, Any]],
     responses: list[IALiveTransportResponse],
     normalized_preview: list[Mapping[str, Any]],
-    user_agent: str,
+    client_label: str,
     contact: str,
     requested_rows: int,
     returned_rows: int,
@@ -433,7 +433,7 @@ def _live_summary(
         request_plan=request_plan,
         approved_live=True,
         dry_run=False,
-        user_agent=user_agent,
+        client_label=client_label,
         contact=contact,
     )
     summary.update(

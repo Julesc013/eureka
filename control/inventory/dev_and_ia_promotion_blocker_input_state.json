@@ -1,0 +1,22 @@
+{
+  "schema_version": "dev_and_ia_promotion_blocker_input_state.v0",
+  "task": "DEV-AND-IA-PROMOTION-BLOCKER-01",
+  "branch": "dev",
+  "head": "c04ed24e7db9353ff0c1b18d743e63af4bbfedc2",
+  "origin_main": "d78f8a83da1a1f9dec18b5e4eff7fbe690e826ed",
+  "origin_dev": "c04ed24e7db9353ff0c1b18d743e63af4bbfedc2",
+  "merge_base": "d78f8a83da1a1f9dec18b5e4eff7fbe690e826ed",
+  "working_tree_clean_before": true,
+  "blocked_promotion_commit_found": true,
+  "blocked_failure_count_reported": 17,
+  "blocked_error_count_reported": 5,
+  "failure_areas_reported": [
+    "candidate_index_records",
+    "contract_taxonomy_inventory",
+    "runtime_source_observation_leakage",
+    "hunt_local_promotion_state_tests"
+  ],
+  "promotion_performed": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}

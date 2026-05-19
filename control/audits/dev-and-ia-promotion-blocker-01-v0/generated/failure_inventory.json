@@ -1,0 +1,12 @@
+{
+  "schema_version": "dev_and_ia_promotion_blocker_failure_inventory_sample.v0",
+  "task": "DEV-AND-IA-PROMOTION-BLOCKER-01",
+  "prior_failures": 17,
+  "prior_errors": 5,
+  "failure_areas": [
+    "candidate_index_records",
+    "contract_taxonomy_inventory",
+    "runtime_source_observation_leakage",
+    "hunt_local_promotion_state_tests"
+  ]
+}

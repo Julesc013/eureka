@@ -37,6 +37,10 @@ def main(argv: Sequence[str] | None = None) -> int:
 
 
 def build_promotion_records(root: Path) -> dict[str, Any]:
+    if current_queue_has_advanced_past_hunt_promotion(root):
+        committed = load_committed_promotion_records(root)
+        if committed:
+            return committed
     git = git_state(root)
     inputs = load_inputs(root)
     perfect = inputs["hunt_perfect"]
@@ -282,6 +286,45 @@ def build_promotion_records(root: Path) -> dict[str, Any]:
         "next_decision": next_decision,
         "report": report,
     }
+
+
+def current_queue_has_advanced_past_hunt_promotion(root: Path) -> bool:
+    queue_path = root / ".aide/queue/index.yaml"
+    if not queue_path.is_file():
+        return False
+    for line in queue_path.read_text(encoding="utf-8").splitlines():
+        stripped = line.strip()
+        if not stripped.startswith("current_recommended_task:"):
+            continue
+        current = stripped.split(":", 1)[1].strip()
+        return current.startswith(
+            (
+                "DEV-AND-IA-",
+                "IA-",
+                "WORKBENCH-",
+                "SEARCH-",
+                "SYN-",
+                "F0-",
+            )
+        )
+    return False
+
+
+def load_committed_promotion_records(root: Path) -> dict[str, Any]:
+    mapping = {
+        "input_state": "control/inventory/hunt_main_promotion_input_state.json",
+        "gate_matrix": "control/inventory/hunt_main_promotion_gate_matrix.json",
+        "validation_matrix": "control/inventory/hunt_main_promotion_validation_matrix.json",
+        "warning_disposition": "control/inventory/hunt_main_promotion_warning_disposition.json",
+        "blocker_register": "control/inventory/hunt_main_promotion_blocker_register.json",
+        "branch_plan": "control/inventory/hunt_main_promotion_branch_plan.json",
+        "result": "control/inventory/hunt_main_promotion_result.json",
+        "post_state": "control/inventory/hunt_main_post_promotion_state.json",
+        "next_decision": "control/inventory/hunt_main_next_task_decision.json",
+        "report": "control/audits/hunt-to-main-promotion-review-v0/hunt_main_promotion_report.json",
+    }
+    records = {key: load_json(root / rel) for key, rel in mapping.items()}
+    return records if all(records.values()) else {}
 
 
 def git_state(root: Path) -> dict[str, Any]:
