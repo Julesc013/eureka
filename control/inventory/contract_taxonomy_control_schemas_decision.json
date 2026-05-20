@@ -1,0 +1,11 @@
+{
+  "schema_version": "contract_taxonomy_control_schemas_decision.v0",
+  "task": "R0-03",
+  "decision": "retain_as_control_schema_authority_with_migration_backlog",
+  "control_schemas_allowed_now": true,
+  "control_schemas_scope": "control/governance schemas only",
+  "product_contracts_allowed_under_control_schemas": false,
+  "migration_required": true,
+  "migration_task": "REPO-LAYOUT-CONTRACT-AUTHORITY-MIGRATION-01",
+  "notes": "control/schemas is retained for audit, fixture, preview, policy, validator, task, and deprecated schemas. Product/public contract authority remains under contracts/. Migration is planned, not performed, in R0-03."
+}

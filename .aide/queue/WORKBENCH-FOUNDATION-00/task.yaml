@@ -9,5 +9,5 @@ gate:
   - no production deployment
   - no new source probes
   - no downloads, extraction, model/provider calls, or marketplace readiness
-recommended_after: DEV-AND-IA-TO-MAIN-PROMOTION-REVIEW
+recommended_after: R0-03
 recommended_next: SEARCH-INTERACTION-00

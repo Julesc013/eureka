@@ -1,0 +1,6 @@
+id: REPO-LAYOUT-CONTRACT-TAXONOMY-CLEANUP
+alias_of: R0-03
+title: Resolve contracts/control schema authority before Workbench Foundation
+status: completed
+task: .aide/queue/R0-03/task.yaml
+recommended_next: WORKBENCH-FOUNDATION-00

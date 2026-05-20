@@ -1,0 +1,15 @@
+{
+  "schema_version": "contract_taxonomy_next_task_decision.v0",
+  "task": "R0-03",
+  "decision": "WORKBENCH-FOUNDATION-00",
+  "recommended_next_task": "WORKBENCH-FOUNDATION-00 - Mission Control doctrine, route/view matrix, and projection model",
+  "planned_sequence": [
+    "WORKBENCH-FOUNDATION-00",
+    "SEARCH-INTERACTION-00",
+    "WORKBENCH-RESULT-LANES-01",
+    "IA-HUNT-BRIDGE-00"
+  ],
+  "reason": "Contract/schema authority is classified and Workbench/Search contract locations are reserved without file moves.",
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}

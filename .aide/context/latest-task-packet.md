@@ -2,11 +2,11 @@
 
 ## PHASE
 
-UNSPECIFIED - REPO-LAYOUT-CANON-01 - Verify repository root and naming canon before Workbench Foundation
+UNSPECIFIED - WORKBENCH-FOUNDATION-00 - Mission Control doctrine, route/view matrix, and projection model
 
 ## GOAL
 
-REPO-LAYOUT-CANON-01 - Verify repository root and naming canon before Workbench Foundation
+WORKBENCH-FOUNDATION-00 - Mission Control doctrine, route/view matrix, and projection model
 
 ## WHY
 
@@ -45,14 +45,20 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 - `.aide/**`
 - `AGENTS.md`
 - `docs/operations/**`
+- `docs/architecture/**`
 - `docs/reference/**`
+- `contracts/repo/**`
+- `contracts/**`
 - `control/inventory/**`
 - `control/audits/**`
 - `control/policies/**`
+- `control/schemas/**`
 - `scripts/local_queue_progress.py`
 - `scripts/validate_*.py`
 - `scripts/check_*.py`
 - `tests/operations/**`
+- `tests/scripts/**`
+- `tests/contracts/**`
 - `tests/aide/**`
 
 ## FORBIDDEN_PATHS
@@ -120,7 +126,8 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 ## NON_GOALS
 
-- No Eureka product behavior change.
+- R0-03 contract taxonomy authority is classified; next work may define Workbench doctrine and route/view models.
+- No Eureka product behavior change until the next reviewed task explicitly scopes it.
 - No source probes, extraction, model/provider calls, deployment, production-readiness claim, public-launch claim, main promotion, force-push, history rewrite, SYN implementation, or F0 implementation.
 - No Gateway, provider calls, live model routing, local model setup, exact tokenizer, provider billing ledger, Runtime, Service, Commander, Mobile, MCP/A2A, UI, host/app implementation, or autonomous loop unless a future reviewed queue item explicitly authorizes it.
 

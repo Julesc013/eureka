@@ -1,0 +1,66 @@
+{
+  "schema_version": "contract_taxonomy_duplicate_authority_report.v0",
+  "task": "R0-03",
+  "duplicate_risks": [
+    {
+      "risk_id": "control_schemas_policies_packs_vs_contracts_packs",
+      "paths": ["control/schemas/policies/packs/**", "contracts/packs/**"],
+      "problem": "Control policy schemas can look like pack contract authority if not scoped.",
+      "canonical_authority": "contracts/packs/",
+      "secondary_role": "control schema for policy/governance records only",
+      "immediate_decision": "retain control/schemas as control-only with migration backlog",
+      "later_task": "REPO-LAYOUT-CONTRACT-AUTHORITY-MIGRATION-01",
+      "blocks_workbench_foundation": false
+    },
+    {
+      "risk_id": "contracts_source_registry_vs_contracts_sources",
+      "paths": ["contracts/source_registry/**", "contracts/sources/**"],
+      "problem": "Older YAML registry schemas and newer JSON source contracts both describe source records/registry concepts.",
+      "canonical_authority": "contracts/sources/",
+      "secondary_role": "legacy schema reference pending migration",
+      "immediate_decision": "prefer contracts/sources for new source-family work",
+      "later_task": "REPO-LAYOUT-SOURCE-CONTRACT-MIGRATION-01",
+      "blocks_workbench_foundation": false
+    },
+    {
+      "risk_id": "contracts_source_cache_vs_contracts_stores",
+      "paths": ["contracts/source_cache/**", "contracts/stores/source_cache_*.json"],
+      "problem": "Source-cache domain records and physical store schemas overlap.",
+      "canonical_authority": "contracts/stores/ for durable store schema; contracts/runtime or contracts/sources for packets",
+      "secondary_role": "source-cache aliases until migration",
+      "immediate_decision": "classify overlap and defer moves",
+      "later_task": "REPO-LAYOUT-STORE-CONTRACT-MIGRATION-01",
+      "blocks_workbench_foundation": false
+    },
+    {
+      "risk_id": "contracts_runtime_vs_runtime_helpers",
+      "paths": ["contracts/runtime/**", "runtime/**"],
+      "problem": "Runtime implementation-local validation helpers can be mistaken for stable contract law.",
+      "canonical_authority": "contracts/runtime/",
+      "secondary_role": "implementation-local validation only",
+      "immediate_decision": "runtime is not contract authority",
+      "later_task": "R0-04-SOURCE-OBSERVATION-SEAM-01",
+      "blocks_workbench_foundation": false
+    },
+    {
+      "risk_id": "contracts_archive_vs_archive_root",
+      "paths": ["contracts/archive/**", "archive/**"],
+      "problem": "The contracts/archive product domain root and archive/ historical root share a name but not authority.",
+      "canonical_authority": "contracts/archive/ for archive-domain contracts",
+      "secondary_role": "archive/ is historical, retired, generated, or quarantined material only",
+      "immediate_decision": "document the name distinction",
+      "later_task": "REPO-LAYOUT-ARCHIVE-05",
+      "blocks_workbench_foundation": false
+    },
+    {
+      "risk_id": "control_inventory_schemas_vs_contracts_repo",
+      "paths": ["control/inventory/repo_layout_*.json", "contracts/repo/*.contract.toml"],
+      "problem": "Inventory result files can look like layout law if contracts/repo is not named as source of truth.",
+      "canonical_authority": "contracts/repo/",
+      "secondary_role": "observed state, validation result, and audit evidence",
+      "immediate_decision": "contracts win over inventory records for layout law",
+      "later_task": "REPO-LAYOUT-INVENTORY-02",
+      "blocks_workbench_foundation": false
+    }
+  ]
+}

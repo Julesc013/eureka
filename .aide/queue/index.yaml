@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-18
 repo: julesc013/eureka
-current_recommended_task: REPO-LAYOUT-CANON-01 — Verify repository root and naming canon before Workbench Foundation
+current_recommended_task: WORKBENCH-FOUNDATION-00 — Mission Control doctrine, route/view matrix, and projection model
 entries:
   - id: DEV-AND-IA-TO-MAIN-PROMOTION-REVIEW
     title: Promote repaired dev IA pilot plus repo layout canon baseline to main
@@ -23,12 +23,21 @@ entries:
     recommended_next: DEV-AND-IA-TO-MAIN-PROMOTION-REVIEW
   - id: REPO-LAYOUT-CANON-01
     title: Verify repository root and naming canon before Workbench Foundation
-    status: ready
+    status: completed
     purpose: Re-run and verify the repository root/naming canon after dev/main promotion, before layout-sensitive Workbench Foundation work.
     allowed_scope_summary: Repo layout contracts, validators, docs, inventories, audit evidence, and AIDE queue/context metadata only unless a future task explicitly allows moves.
     gate: Dev/main promotion complete; no repo layout moves, Workbench implementation, SYN, IA-HUNT, extraction, deployment, public launch, or production-readiness implementation.
     task: .aide/queue/REPO-LAYOUT-CANON-01/task.yaml
     recommended_after: DEV-AND-IA-TO-MAIN-PROMOTION-REVIEW
+    recommended_next: R0-03
+  - id: R0-03
+    title: Repo layout contract taxonomy cleanup
+    status: completed
+    purpose: Classify contract/schema authority before Workbench Foundation without moving files or changing runtime behavior.
+    allowed_scope_summary: Contract taxonomy inventories, authority matrix, duplicate authority report, control/schemas decision, migration backlog, validator, tests, docs, and audit evidence.
+    gate: No file moves, runtime behavior changes, source probes, extraction, model/provider calls, deployment, production readiness claim, or public launch claim.
+    task: .aide/queue/R0-03/task.yaml
+    recommended_after: REPO-LAYOUT-CANON-01
     recommended_next: WORKBENCH-FOUNDATION-00
   - id: WORKBENCH-FOUNDATION-00
     title: Mission Control doctrine, route/view matrix, and projection model
@@ -37,7 +46,7 @@ entries:
     allowed_scope_summary: Workbench doctrine, route/view matrix, permission/projection matrix, packet inventory, docs, contracts if explicitly scoped, and audit evidence only.
     gate: dev/main promotion complete; no public launch, production deployment, source probes, downloads, extraction, model/provider calls, or marketplace readiness.
     task: .aide/queue/WORKBENCH-FOUNDATION-00/task.yaml
-    recommended_after: REPO-LAYOUT-CANON-01
+    recommended_after: R0-03
     recommended_next: SEARCH-INTERACTION-00
   - id: SEARCH-INTERACTION-00
     title: Search interaction contract

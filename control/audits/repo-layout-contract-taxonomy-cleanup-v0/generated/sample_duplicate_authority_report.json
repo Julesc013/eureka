@@ -1,0 +1,15 @@
+{
+  "schema_version": "contract_taxonomy_duplicate_authority_report_sample.v0",
+  "duplicate_risks": [
+    {
+      "risk_id": "control_schemas_policies_packs_vs_contracts_packs",
+      "canonical_authority": "contracts/packs/",
+      "secondary_role": "control schema for policy/governance records only"
+    },
+    {
+      "risk_id": "contracts_runtime_vs_runtime_helpers",
+      "canonical_authority": "contracts/runtime/",
+      "secondary_role": "implementation-local validation only"
+    }
+  ]
+}
