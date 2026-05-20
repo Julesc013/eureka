@@ -2,15 +2,15 @@
 
 ## PHASE
 
-UNSPECIFIED - R0-03A-CONTRACT-TAXONOMY-TESTING-REPAIR
+AIDE-BATCH-IA-HUNT-WORKBENCH-01 - IA-HUNT-BRIDGE-00
 
 ## GOAL
 
-R0-03A-CONTRACT-TAXONOMY-TESTING-REPAIR
+Implement the local IA metadata to Hunt, WorkUnit, and Workbench result-lane bridge.
 
 ## WHY
 
-Continue AIDE token survival by using repo-local context refs, compact objectives, deterministic validation, and evidence packets instead of long chat history.
+Connect the existing IA metadata pilot pieces to Search Hunt, IA WorkUnits, temp-instance proof writes, and Workbench result-lane projections without live IA calls, source probes, downloads, extraction, model/provider calls, deployment, operator-instance mutation, or production/public launch claims.
 
 ## CONTEXT_REFS
 
@@ -44,19 +44,56 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 - `.aide/**`
 - `AGENTS.md`
-- `docs/architecture/**`
+- `runtime/search_hunt/**`
+- `runtime/search_need/**`
+- `runtime/workunit_queue/**`
+- `runtime/source_observation/**`
+- `runtime/source_cache/**`
+- `runtime/evidence_ledger/**`
+- `runtime/candidate_index/**`
+- `runtime/candidate_store/**`
+- `runtime/review_queue/**`
+- `runtime/public_index/**`
+- `runtime/local_workbench/**`
+- `runtime/local_service/**`
+- `runtime/local_eval/**`
+- `surfaces/web/workbench/**`
+- `surfaces/api/**`
+- `contracts/search_interaction/**`
+- `contracts/workbench/**`
+- `contracts/view_models/**`
+- `contracts/projections/**`
+- `contracts/workunits/**`
+- `contracts/sources/**`
+- `contracts/source_cache/**`
+- `contracts/evidence/**`
+- `contracts/candidates/**`
+- `contracts/review/**`
+- `scripts/eureka_ia_hunt_bridge.py`
+- `scripts/eureka_workbench_result_lanes.py`
+- `scripts/validate_ia_hunt_bridge.py`
+- `scripts/validate_workbench_result_lanes.py`
+- `scripts/validate_search_interaction_contract.py`
+- `scripts/eureka_test_select.py`
+- `tests/runtime/test_ia_hunt_bridge.py`
+- `tests/runtime/test_ia_hunt_workunits.py`
+- `tests/runtime/test_ia_hunt_result_lanes.py`
+- `tests/runtime/test_workbench_result_lanes.py`
+- `tests/operations/test_ia_hunt_bridge_scripts.py`
+- `tests/operations/test_ia_hunt_bridge_smoke.py`
+- `tests/scripts/test_validate_ia_hunt_bridge.py`
+- `examples/ia_hunt_bridge/**`
+- `examples/workbench/result_lanes/**`
 - `docs/operations/**`
+- `docs/architecture/IA_HUNT_BRIDGE.md`
 - `docs/reference/**`
 - `control/inventory/**`
 - `control/audits/**`
 - `control/policies/**`
-- `scripts/eureka_test_select.py`
 - `scripts/local_queue_progress.py`
 - `scripts/validate_*.py`
 - `scripts/check_*.py`
 - `tests/operations/**`
-- `tests/scripts/test_eureka_test_select.py`
-- `tests/scripts/test_validate_contract_taxonomy.py`
 - `tests/aide/**`
 
 ## FORBIDDEN_PATHS
@@ -68,24 +105,23 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 - `.local/**`
 - `.cache/**`
 - `eureka-instance/**`
-- `runtime/**`
-- `contracts/**`
-- `surfaces/**`
 - `site/**`
 - `native/**`
 - `crates/**`
-- `examples/**`
 - `evals/**`
-- `tests/**` unless this is an AIDE/control-plane test repair
-- `scripts/**` unless this is an AIDE validator/check repair
+- `runtime/connectors/**`
+- `runtime/extraction/**`
+- `runtime/search_quality/**`
+- `data/public_index/**`
+- `instances/**`
 - raw provider credentials, API keys, local caches, raw prompt logs, raw responses, and source AIDE repository state
 
 ## IMPLEMENTATION
 
 - Read the queue packet and relevant repo refs first.
 - Keep changes inside the allowed paths.
-- Make the smallest coherent diff that satisfies acceptance.
-- Preserve generated/manual boundaries.
+- Implement the bridge as an orchestrator over existing IA metadata pieces.
+- Preserve generated/manual boundaries and temp-instance-only write posture.
 - Do not inline whole source files unless exact contents are required.
 - Use exact refs such as `path#Lstart-Lend` when file details are load-bearing.
 
@@ -96,7 +132,7 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 - `py -3 .aide/scripts/aide_lite.py snapshot`
 - `py -3 .aide/scripts/aide_lite.py index`
 - `py -3 .aide/scripts/aide_lite.py context`
-- `py -3 .aide/scripts/aide_lite.py pack --task "AIDE-EVAL-GREEN-01"`
+- `py -3 .aide/scripts/aide_lite.py pack --task "IA-HUNT-BRIDGE-00"`
 - `py -3 .aide/scripts/aide_lite.py test`
 - `py -3 .aide/scripts/aide_lite.py selftest`
 - `py -3 .aide/scripts/aide_lite.py verify`
@@ -124,14 +160,14 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 ## NON_GOALS
 
-- No Eureka product behavior change.
-- No source probes, extraction, model/provider calls, deployment, production-readiness claim, public-launch claim, main promotion, force-push, history rewrite, SYN implementation, or F0 implementation.
-- No Gateway, provider calls, live model routing, local model setup, exact tokenizer, provider billing ledger, Runtime, Service, Commander, Mobile, MCP/A2A, UI, host/app implementation, or autonomous loop unless a future reviewed queue item explicitly authorizes it.
+- No live IA calls by default.
+- No source probes, downloads, extraction, model/provider calls, deployment, production-readiness claim, public-launch claim, main promotion, force-push, history rewrite, SYN implementation, DOMAIN/SCOUT implementation, or F0 implementation.
+- No operator instance mutation, master-index mutation, committed public-index mutation, public fanout, or full Archive.org integration claim.
 
 ## ACCEPTANCE
 
-- Task-specific acceptance criteria are met.
-- Validation is run and recorded.
+- IA Hunt bridge policy, WorkUnit schema, runtime bridge, CLI, result-lane integration, examples, docs, validator, tests, and audit evidence are added.
+- Dry-run plan, temp-instance bridge, operator/public/native projections, focused tests, selected tests, AIDE checks, and full unittest discovery pass.
 - Evidence is written.
 - No secrets, raw prompt logs, local caches, or `.aide.local` contents are committed.
 
@@ -143,8 +179,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4798
-- approx_tokens: 1200
+- chars: 4754
+- approx_tokens: 1189
 - budget_status: PASS
 - warnings:
   - none

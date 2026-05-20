@@ -1,0 +1,77 @@
+{
+  "schema_version": "ia_hunt_workunit_sample.v0",
+  "task": "IA-HUNT-BRIDGE-00",
+  "source_family": "internet_archive_metadata",
+  "workunits": [
+    {
+      "schema_version": "ia_hunt_workunit.v0",
+      "workunit_id": "iawu_sample_metadata_search",
+      "hunt_id": "shs_sample_ia_hunt_bridge",
+      "source_family": "internet_archive_metadata",
+      "workunit_type": "ia_metadata_search",
+      "state": "queued",
+      "input_ref": {
+        "hunt_id": "shs_sample_ia_hunt_bridge",
+        "query": "sampleproject",
+        "input_kind": "fixture_metadata"
+      },
+      "output_ref": {
+        "hunt_id": "shs_sample_ia_hunt_bridge",
+        "output_kind": "metadata_search",
+        "artifact_ref": "ia_hunt_bridge/shs_sample_ia_hunt_bridge/ia_metadata_search"
+      },
+      "policy_ref": "control/policies/ia_hunt_bridge_policy.json",
+      "dry_run": true,
+      "writes_instance_state": false,
+      "write_scope": "none",
+      "blocked_actions": [
+        "run_source_probe",
+        "live_ia_call",
+        "download",
+        "extract",
+        "call_model_provider",
+        "deploy"
+      ],
+      "created_at": "2026-05-21T00:00:00Z",
+      "completed_at": "",
+      "limitations": [
+        "WorkUnit is local IA metadata orchestration only."
+      ]
+    },
+    {
+      "schema_version": "ia_hunt_workunit.v0",
+      "workunit_id": "iawu_sample_source_cache_write",
+      "hunt_id": "shs_sample_ia_hunt_bridge",
+      "source_family": "internet_archive_metadata",
+      "workunit_type": "ia_source_cache_write",
+      "state": "queued",
+      "input_ref": {
+        "hunt_id": "shs_sample_ia_hunt_bridge",
+        "query": "sampleproject",
+        "input_kind": "local_bridge_output"
+      },
+      "output_ref": {
+        "hunt_id": "shs_sample_ia_hunt_bridge",
+        "output_kind": "source_cache_write",
+        "artifact_ref": "ia_hunt_bridge/shs_sample_ia_hunt_bridge/ia_source_cache_write"
+      },
+      "policy_ref": "control/policies/ia_hunt_bridge_policy.json",
+      "dry_run": true,
+      "writes_instance_state": true,
+      "write_scope": "temp_or_explicit_instance_only",
+      "blocked_actions": [
+        "run_source_probe",
+        "live_ia_call",
+        "download",
+        "extract",
+        "call_model_provider",
+        "deploy"
+      ],
+      "created_at": "2026-05-21T00:00:00Z",
+      "completed_at": "",
+      "limitations": [
+        "Writes are allowed only for dry-run or explicit temp-instance proof."
+      ]
+    }
+  ]
+}

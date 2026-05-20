@@ -1,7 +1,7 @@
 id: SYN-00
-title: Synthetic Query Foundry planning over Local/HUNT/PLAY/IA
+title: Synthetic Query Foundry planning over Local/HUNT/PLAY/IA/Workbench
 status: ready
-scope: control-plane planning metadata only over Local, HUNT, PLAY, and IA approval inputs
+scope: control-plane planning metadata only over Local, HUNT, PLAY, IA approval inputs, and Workbench result-lane bridge outputs
 forbidden:
   - source probes
   - extraction

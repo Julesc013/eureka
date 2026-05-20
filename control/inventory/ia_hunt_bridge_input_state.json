@@ -1,0 +1,23 @@
+{
+  "schema_version": "ia_hunt_bridge_input_state.v0",
+  "task": "IA-HUNT-BRIDGE-00",
+  "branch": "dev",
+  "head": "13520890b083d546dcc49e5004c08daf6e52aa82",
+  "origin_main": "8119871469cc61b47fa565b9d1e78642e3935d2a",
+  "origin_dev": "13520890b083d546dcc49e5004c08daf6e52aa82",
+  "working_tree_clean_before": true,
+  "workbench_result_lanes_closeout_passed": true,
+  "r0_03a_testing_taxonomy_repair_found": true,
+  "ia_metadata_pilot_found": true,
+  "search_hunt_found": true,
+  "workunit_queue_found": true,
+  "workbench_result_lanes_found": true,
+  "test_lane_router_found": true,
+  "dry_run_default": true,
+  "temp_instance_allowed": true,
+  "operator_instance_mutation_default": false,
+  "source_probe_executed": false,
+  "live_ia_call_performed": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}

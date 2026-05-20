@@ -1,0 +1,25 @@
+{
+  "schema_version": "ia_hunt_pipeline_plan.v0",
+  "task": "IA-HUNT-BRIDGE-00",
+  "query": "sampleproject",
+  "source_family": "internet_archive_metadata",
+  "dry_run": true,
+  "from_fixtures": true,
+  "from_ia_live_preview": false,
+  "workunit_count": 10,
+  "blocked_actions": [
+    "run_source_probe",
+    "live_ia_call",
+    "download",
+    "upload",
+    "extract",
+    "call_model_provider",
+    "deploy",
+    "mutate_master_index",
+    "mutate_operator_instance"
+  ],
+  "limitations": [
+    "Plan is local and deterministic.",
+    "Internet Archive live metadata calls remain disabled by default."
+  ]
+}

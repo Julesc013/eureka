@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-21
 repo: julesc013/eureka
-current_recommended_task: IA-HUNT-BRIDGE-00 - Connect IA metadata source work to Hunt, WorkUnits, and result lanes
+current_recommended_task: SYN-00 - Synthetic Query Foundry planning over Local/HUNT/PLAY/IA/Workbench
 entries:
   - id: DEV-AND-IA-TO-MAIN-PROMOTION-REVIEW
     title: Promote repaired dev IA pilot plus repo layout canon baseline to main
@@ -95,10 +95,10 @@ entries:
     recommended_next: IA-HUNT-BRIDGE-00
   - id: IA-HUNT-BRIDGE-00
     title: Bridge IA metadata candidates into Hunt and WorkUnit lanes
-    status: queued
-    purpose: Connect the reviewed IA metadata vertical slice into Hunt/WorkUnit result lanes after Workbench lanes are governed.
-    allowed_scope_summary: IA-Hunt bridge planning and bounded implementation only when future gates explicitly allow it.
-    gate: WORKBENCH-RESULT-LANES-01 completed and WORKBENCH-RESULT-LANES-CLOSEOUT-01 full discovery passed; no new live IA call unless a future reviewed policy enables it; no downloads, extraction, model/provider calls, deployment, or public fanout.
+    status: completed
+    purpose: Connected the reviewed IA metadata vertical slice into Hunt/WorkUnit result lanes after Workbench lanes are governed.
+    allowed_scope_summary: IA-Hunt bridge policy, WorkUnits, dry-run/temp-instance runtime proof, CLI, validator, docs, tests, and audit evidence.
+    gate: Full discovery passed; no live IA call, source probe, operator instance mutation, master-index mutation, downloads, extraction, model/provider calls, deployment, public fanout, production readiness, or public launch claim.
     task: .aide/queue/IA-HUNT-BRIDGE-00/task.yaml
     recommended_after: WORKBENCH-RESULT-LANES-01
     recommended_next: SYN-00
@@ -519,9 +519,9 @@ entries:
     recommended_after: IA-PILOT-CLOSEOUT-01
     recommended_next: SYN-00
   - id: SYN-00
-    title: Synthetic Query Foundry planning over Local/HUNT/PLAY/IA
+    title: Synthetic Query Foundry planning over Local/HUNT/PLAY/IA/Workbench
     status: ready
-    purpose: Plan Synthetic Query Foundry over the completed Local Appliance, HUNT spine, PLAY demo pack, and IA approval boundary.
+    purpose: Plan Synthetic Query Foundry over the completed Local Appliance, HUNT spine, PLAY demo pack, IA approval boundary, and Workbench result-lane bridge.
     allowed_scope_summary: SYN planning, taxonomy preparation, policies, docs, and audit evidence only until explicitly scoped; no SYN runtime implementation yet.
     gate: PLAY-00 and IA approval closure context reviewed; use HUNT/SearchNeed/WorkUnit/local eval boundaries; no synthetic generation runtime, model calls, deployment, production readiness claim, or public launch claim.
     task: .aide/queue/SYN-00/task.yaml

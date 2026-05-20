@@ -1,0 +1,63 @@
+{
+  "schema_version": "ia_hunt_bridge_report.v0",
+  "task": "IA-HUNT-BRIDGE-00",
+  "status": "pass",
+  "summary": [
+    "Connected IA metadata fixture replay to Hunt and WorkUnit planning.",
+    "Added dry-run and temp-instance bridge execution.",
+    "Projected bridge outputs into governed Workbench result lanes.",
+    "Validated policy boundaries and full unittest discovery."
+  ],
+  "artifacts": {
+    "policy": [
+      "control/policies/ia_hunt_bridge_policy.json",
+      "control/policies/ia_workunit_policy.json",
+      "control/policies/ia_hunt_non_claim_policy.json"
+    ],
+    "runtime": [
+      "runtime/search_hunt/ia_bridge.py"
+    ],
+    "cli": [
+      "scripts/eureka_ia_hunt_bridge.py"
+    ],
+    "validator": [
+      "scripts/validate_ia_hunt_bridge.py"
+    ],
+    "tests": [
+      "tests/runtime/test_ia_hunt_bridge.py",
+      "tests/runtime/test_ia_hunt_workunits.py",
+      "tests/runtime/test_ia_hunt_result_lanes.py",
+      "tests/operations/test_ia_hunt_bridge_scripts.py",
+      "tests/operations/test_ia_hunt_bridge_smoke.py",
+      "tests/scripts/test_validate_ia_hunt_bridge.py"
+    ]
+  },
+  "validation": {
+    "test_selector_used": true,
+    "ia_hunt_bridge_validator_passed": true,
+    "focused_tests_passed": true,
+    "full_unittest_discovery_passed": true,
+    "full_unittest_discovery_count": 4809,
+    "full_unittest_discovery_duration_seconds": 2915.768
+  },
+  "boundaries": {
+    "source_probe_executed": false,
+    "live_ia_call_performed": false,
+    "source_cache_write_scope": "temp_instance",
+    "evidence_write_scope": "temp_instance",
+    "candidate_index_write_scope": "temp_instance",
+    "review_queue_write_scope": "temp_instance",
+    "reviewed_index_write_scope": "temp_instance",
+    "operator_instance_mutated": false,
+    "master_index_mutated": false,
+    "download_performed": false,
+    "upload_performed": false,
+    "extraction_executed": false,
+    "model_provider_used": false,
+    "deployment_performed": false,
+    "production_readiness_claimed": false,
+    "public_launch_readiness_claimed": false,
+    "full_archive_org_integration_claimed": false
+  },
+  "recommended_next_task": "SYN-00 - Synthetic Query Foundry planning over Local/HUNT/PLAY/IA/Workbench"
+}

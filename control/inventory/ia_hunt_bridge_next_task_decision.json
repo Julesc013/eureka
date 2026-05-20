@@ -1,0 +1,19 @@
+{
+  "schema_version": "ia_hunt_bridge_next_task_decision.v0",
+  "task": "IA-HUNT-BRIDGE-00",
+  "status": "pass",
+  "current_task_completed": true,
+  "next_task": "SYN-00",
+  "next_task_title": "Synthetic Query Foundry planning over Local/HUNT/PLAY/IA/Workbench",
+  "reason": "The IA metadata bridge now has policy, WorkUnit schema, dry-run and temp-instance proof, result-lane projection, validator coverage, focused tests, and passing full unittest discovery.",
+  "blocked_tasks": [],
+  "do_not_start_in_this_batch": [
+    "SYN implementation",
+    "DOMAIN/SCOUT/F0 implementation",
+    "public fanout",
+    "downloads",
+    "extraction",
+    "model/provider calls",
+    "deployment"
+  ]
+}
