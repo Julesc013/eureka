@@ -1,0 +1,56 @@
+schema_version: aide.task.v0
+id: TEST-LANE-ROUTER-01
+title: Add test selection, failure ledger, and promotion-grade test policy
+status: completed
+task_kind: test_governance
+purpose: Replace ad hoc full unittest discovery before every commit with explicit lane-based selection, failure tracking, and promotion-grade policy.
+scope:
+  allowed:
+    - contracts/testing/**
+    - control/policies/test_lane_policy.json
+    - control/inventory/test_lane_*.json
+    - control/inventory/test_impact_map.json
+    - control/inventory/test_failure_ledger.json
+    - control/inventory/test_selection_result_schema.json
+    - scripts/eureka_test_select.py
+    - scripts/validate_test_lane_policy.py
+    - tests/operations/test_test_*.py
+    - tests/scripts/test_eureka_test_select.py
+    - tests/scripts/test_validate_test_lane_policy.py
+    - docs/operations/TEST_*.md
+    - docs/operations/PROMOTION_TEST_POLICY.md
+    - docs/architecture/TEST_AND_VALIDATION_ARCHITECTURE.md
+    - control/audits/test-lane-router-01-v0/**
+    - .aide/**
+  forbidden:
+    - runtime/connectors/**
+    - runtime/extraction/**
+    - native/**
+    - crates/**
+    - site/dist/**
+    - data/public_index/**
+    - eureka-instance/**
+    - instances/**
+    - .aide.local/**
+    - secrets/**
+    - .env
+boundaries:
+  runtime_behavior_changed: false
+  tests_deleted: false
+  test_requirements_weakened: false
+  source_probe_executed: false
+  extraction_executed: false
+  model_provider_used: false
+  deployment_performed: false
+  production_readiness_claimed: false
+  public_launch_readiness_claimed: false
+validation:
+  required:
+    - python scripts/validate_test_lane_policy.py
+    - python -m unittest tests.operations.test_test_lane_policy
+    - python -m unittest tests.operations.test_test_impact_map
+    - python -m unittest tests.operations.test_test_failure_ledger
+    - python -m unittest tests.scripts.test_eureka_test_select
+    - python -m unittest tests.scripts.test_validate_test_lane_policy
+  full_discovery: optional_for_this_tooling_task
+recommended_next: WORKBENCH-RESULT-LANES-CLOSEOUT-01

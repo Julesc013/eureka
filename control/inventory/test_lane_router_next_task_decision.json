@@ -1,0 +1,17 @@
+{
+  "schema_version": "test_lane_router_next_task_decision.v0",
+  "task": "TEST-LANE-ROUTER-01",
+  "recommended_next_task": "WORKBENCH-RESULT-LANES-CLOSEOUT-01",
+  "reason": "Lane routing now exists; use it to close the result-lane fixed-pending-full failures without making full discovery the default per-commit gate.",
+  "planned_sequence": [
+    "WORKBENCH-RESULT-LANES-CLOSEOUT-01",
+    "IA-HUNT-BRIDGE-00",
+    "SYN-00",
+    "DOMAIN-00",
+    "SCOUT-SCHEMA-00"
+  ],
+  "main_promotion_required": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}
+

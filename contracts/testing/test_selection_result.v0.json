@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema_version": "test_selection_result_schema.v0",
+  "title": "Eureka Test Selection Result",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "mode",
+    "changed_paths",
+    "selected_lanes",
+    "selected_commands",
+    "skipped_commands",
+    "skip_reasons",
+    "known_failures",
+    "failed_first_commands",
+    "full_discovery_required",
+    "full_discovery_deferred_until",
+    "promotion_allowed",
+    "warnings"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "test_selection_result.v0"
+    },
+    "mode": {
+      "type": "string"
+    },
+    "changed_paths": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "selected_lanes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "selected_commands": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "skipped_commands": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "skip_reasons": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "known_failures": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "failed_first_commands": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "full_discovery_required": {
+      "type": "boolean"
+    },
+    "full_discovery_deferred_until": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "promotion_allowed": {
+      "type": "boolean"
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}
+

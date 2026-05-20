@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
-updated: 2026-05-18
+updated: 2026-05-20
 repo: julesc013/eureka
-current_recommended_task: IA-HUNT-BRIDGE-00 - Connect IA metadata source work to Hunt, WorkUnits, and result lanes
+current_recommended_task: WORKBENCH-RESULT-LANES-CLOSEOUT-01 - Close result-lane fixed-pending-full validation state
 entries:
   - id: DEV-AND-IA-TO-MAIN-PROMOTION-REVIEW
     title: Promote repaired dev IA pilot plus repo layout canon baseline to main
@@ -65,6 +65,24 @@ entries:
     gate: SEARCH-INTERACTION-00 completed; no broad source crawling, downloads, extraction, production readiness, or public launch claim.
     task: .aide/queue/WORKBENCH-RESULT-LANES-01/task.yaml
     recommended_after: SEARCH-INTERACTION-00
+    recommended_next: TEST-LANE-ROUTER-01
+  - id: TEST-LANE-ROUTER-01
+    title: Add test selection, failure ledger, and promotion-grade test policy
+    status: completed
+    purpose: Replace ad hoc full unittest discovery before every commit with explicit lane-based test selection and failure tracking.
+    allowed_scope_summary: Testing contracts, policies, inventories, selector, validator, focused tests, docs, audit evidence, and AIDE queue/context metadata only.
+    gate: No tests deleted or weakened; full discovery remains required for promotion; no runtime product behavior change, live source calls, extraction, model/provider calls, deployment, or production/public launch claim.
+    task: .aide/queue/TEST-LANE-ROUTER-01/task.yaml
+    recommended_after: WORKBENCH-RESULT-LANES-01
+    recommended_next: WORKBENCH-RESULT-LANES-CLOSEOUT-01
+  - id: WORKBENCH-RESULT-LANES-CLOSEOUT-01
+    title: Close Workbench result-lane fixed-pending-full validation state
+    status: queued
+    purpose: Use the lane selector to rerun failed-first and impact-selected result-lane closeout checks before IA-HUNT.
+    allowed_scope_summary: Selected validation, failure-ledger update, and closeout evidence only.
+    gate: TEST-LANE-ROUTER-01 completed; no IA-HUNT bridge, live IA call, source probe, extraction, model/provider call, deployment, or production/public launch claim.
+    task: .aide/queue/WORKBENCH-RESULT-LANES-CLOSEOUT-01/task.yaml
+    recommended_after: TEST-LANE-ROUTER-01
     recommended_next: IA-HUNT-BRIDGE-00
   - id: IA-HUNT-BRIDGE-00
     title: Bridge IA metadata candidates into Hunt and WorkUnit lanes

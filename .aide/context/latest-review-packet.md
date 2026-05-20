@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (5249 chars, 1313 approximate tokens)
+- `.aide/context/latest-task-packet.md` (6022 chars, 1506 approximate tokens)
 
 ## Context Packet Reference
 
@@ -33,7 +33,31 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Changed Files Summary
 
-- none
+- allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
+- allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
+- allowed: `.aide/queue/TEST-LANE-ROUTER-01` (??; matches active task allowed path)
+- allowed: `.aide/queue/WORKBENCH-RESULT-LANES-CLOSEOUT-01` (??; matches active task allowed path)
+- allowed: `.aide/queue/index.yaml` (M; matches active task allowed path)
+- allowed: `.aide/reports/eureka-repo-health.json` (M; matches active task allowed path)
+- allowed: `.aide/reports/eureka-repo-health.md` (M; matches active task allowed path)
+- allowed: `contracts/testing` (??; matches active task allowed path)
+- allowed: `control/audits/test-lane-router-01-v0` (??; matches active task allowed path)
+- allowed: `control/inventory/test_failure_ledger.json` (??; matches active task allowed path)
+- allowed: `control/inventory/test_impact_map.json` (??; matches active task allowed path)
+- allowed: `control/inventory/test_lane_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/test_lane_router_next_task_decision.json` (??; matches active task allowed path)
+- allowed: `control/inventory/test_lane_router_result.json` (??; matches active task allowed path)
+- allowed: `control/inventory/test_selection_result_schema.json` (??; matches active task allowed path)
+- allowed: `control/policies/test_lane_policy.json` (??; matches active task allowed path)
+- allowed: `docs/architecture/TEST_AND_VALIDATION_ARCHITECTURE.md` (??; matches active task allowed path)
+- allowed: `docs/operations/PROMOTION_TEST_POLICY.md` (??; matches active task allowed path)
+- allowed: `docs/operations/TEST_LANE_POLICY.md` (??; matches active task allowed path)
+- allowed: `docs/operations/TEST_SELECTION_RUNBOOK.md` (??; matches active task allowed path)
+- allowed: `scripts/eureka_test_select.py` (??; matches active task allowed path)
+- allowed: `scripts/validate_test_lane_policy.py` (??; matches active task allowed path)
+- allowed: `tests/operations/test_test_failure_ledger.py` (??; matches active task allowed path)
+- allowed: `tests/operations/test_test_impact_map.py` (??; matches active task allowed path)
+- additional changed paths omitted from compact packet: 3; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -43,8 +67,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 4251
-- approx_tokens: 1063
+- chars: 6536
+- approx_tokens: 1634
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

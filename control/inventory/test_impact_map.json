@@ -1,0 +1,317 @@
+{
+  "schema_version": "test_impact_map.v0",
+  "task": "TEST-LANE-ROUTER-01",
+  "mappings": [
+    {
+      "path_pattern": "contracts/**",
+      "owning_subsystem": "contracts",
+      "validators": [
+        "python scripts/validate_contract_taxonomy.py",
+        "python scripts/validate_repo_structure_canon.py"
+      ],
+      "test_modules": [
+        "tests.operations.test_contract_taxonomy",
+        "tests.operations.test_repo_structure_canon"
+      ],
+      "smoke_commands": [],
+      "full_discovery_required_before_promotion": true,
+      "skip_conditions": [
+        "no contracts changed"
+      ]
+    },
+    {
+      "path_pattern": "contracts/search_interaction/**",
+      "owning_subsystem": "search_interaction_contracts",
+      "validators": [
+        "python scripts/validate_search_interaction_contract.py",
+        "python scripts/validate_workbench_foundation.py",
+        "python scripts/validate_contract_taxonomy.py"
+      ],
+      "test_modules": [
+        "tests.operations.test_search_interaction_contract",
+        "tests.operations.test_search_interaction_state_machine",
+        "tests.operations.test_search_interaction_controls",
+        "tests.scripts.test_validate_search_interaction_contract"
+      ],
+      "smoke_commands": [],
+      "full_discovery_required_before_promotion": true,
+      "skip_conditions": [
+        "no search interaction contracts changed"
+      ]
+    },
+    {
+      "path_pattern": "contracts/workbench/**",
+      "owning_subsystem": "workbench_contracts",
+      "validators": [
+        "python scripts/validate_workbench_foundation.py",
+        "python scripts/validate_workbench_result_lanes.py"
+      ],
+      "test_modules": [
+        "tests.operations.test_workbench_foundation",
+        "tests.operations.test_workbench_result_lanes"
+      ],
+      "smoke_commands": [],
+      "full_discovery_required_before_promotion": true,
+      "skip_conditions": [
+        "no workbench contracts changed"
+      ]
+    },
+    {
+      "path_pattern": "runtime/source_observation/**",
+      "owning_subsystem": "source_observation_runtime",
+      "validators": [
+        "python scripts/audit_runtime_architecture_leakage.py --check --json",
+        "python scripts/validate_runtime_architecture_leakage.py"
+      ],
+      "test_modules": [
+        "tests.operations.test_runtime_architecture_leakage"
+      ],
+      "smoke_commands": [],
+      "full_discovery_required_before_promotion": true,
+      "skip_conditions": [
+        "source observation runtime untouched"
+      ]
+    },
+    {
+      "path_pattern": "runtime/source_cache/**",
+      "owning_subsystem": "source_cache_runtime",
+      "validators": [
+        "python scripts/validate_ia_source_cache_write.py"
+      ],
+      "test_modules": [
+        "tests.runtime.test_source_cache_store"
+      ],
+      "smoke_commands": [],
+      "full_discovery_required_before_promotion": true,
+      "skip_conditions": [
+        "source cache runtime untouched"
+      ]
+    },
+    {
+      "path_pattern": "runtime/evidence_ledger/**",
+      "owning_subsystem": "evidence_ledger_runtime",
+      "validators": [
+        "python scripts/validate_ia_evidence_ledger_integration.py"
+      ],
+      "test_modules": [
+        "tests.runtime.test_evidence_ledger_store"
+      ],
+      "smoke_commands": [],
+      "full_discovery_required_before_promotion": true,
+      "skip_conditions": [
+        "evidence ledger runtime untouched"
+      ]
+    },
+    {
+      "path_pattern": "runtime/candidate_index/**",
+      "owning_subsystem": "candidate_index_runtime",
+      "validators": [
+        "python scripts/validate_ia_candidate_index_integration.py"
+      ],
+      "test_modules": [
+        "tests.runtime.test_candidate_index_store"
+      ],
+      "smoke_commands": [],
+      "full_discovery_required_before_promotion": true,
+      "skip_conditions": [
+        "candidate index runtime untouched"
+      ]
+    },
+    {
+      "path_pattern": "runtime/review_queue/**",
+      "owning_subsystem": "review_queue_runtime",
+      "validators": [
+        "python scripts/validate_ia_review_promotion_dry_run.py"
+      ],
+      "test_modules": [
+        "tests.runtime.test_review_queue_store"
+      ],
+      "smoke_commands": [],
+      "full_discovery_required_before_promotion": true,
+      "skip_conditions": [
+        "review queue runtime untouched"
+      ]
+    },
+    {
+      "path_pattern": "runtime/public_index/**",
+      "owning_subsystem": "public_index_runtime",
+      "validators": [
+        "python scripts/validate_ia_reviewed_index_rebuild.py"
+      ],
+      "test_modules": [
+        "tests.runtime.test_public_index_store"
+      ],
+      "smoke_commands": [],
+      "full_discovery_required_before_promotion": true,
+      "skip_conditions": [
+        "public/reviewed index runtime untouched"
+      ]
+    },
+    {
+      "path_pattern": "runtime/local_workbench/**",
+      "owning_subsystem": "local_workbench_runtime",
+      "validators": [
+        "python scripts/validate_workbench_result_lanes.py"
+      ],
+      "test_modules": [
+        "tests.runtime.test_workbench_result_lanes",
+        "tests.runtime.test_workbench_lane_view_models",
+        "tests.runtime.test_workbench_lane_boundaries"
+      ],
+      "smoke_commands": [
+        "python scripts/eureka_workbench_result_lanes.py --query sampleproject --projection operator_workbench --from-play-demo --from-ia-examples --json"
+      ],
+      "full_discovery_required_before_promotion": true,
+      "skip_conditions": [
+        "local workbench runtime untouched"
+      ]
+    },
+    {
+      "path_pattern": "runtime/local_service/**",
+      "owning_subsystem": "local_service_runtime",
+      "validators": [
+        "python scripts/validate_workbench_result_lanes.py",
+        "python scripts/validate_runtime_architecture_leakage.py"
+      ],
+      "test_modules": [
+        "tests.runtime.test_workbench_result_lanes",
+        "tests.runtime.test_workbench_lane_view_models",
+        "tests.runtime.test_workbench_lane_boundaries"
+      ],
+      "smoke_commands": [
+        "python scripts/eureka_workbench_result_lanes.py --query sampleproject --projection public_web --from-play-demo --from-ia-examples --json"
+      ],
+      "full_discovery_required_before_promotion": true,
+      "skip_conditions": [
+        "local service runtime untouched"
+      ],
+      "task_ids": [
+        "WORKBENCH-RESULT-LANES-01"
+      ]
+    },
+    {
+      "path_pattern": "surfaces/**",
+      "owning_subsystem": "surface_projection",
+      "validators": [
+        "python scripts/validate_workbench_foundation.py"
+      ],
+      "test_modules": [
+        "tests.operations.test_workbench_projection_model"
+      ],
+      "smoke_commands": [],
+      "full_discovery_required_before_promotion": true,
+      "skip_conditions": [
+        "surfaces untouched"
+      ]
+    },
+    {
+      "path_pattern": "scripts/validate_*.py",
+      "owning_subsystem": "validator_scripts",
+      "validators": [],
+      "test_modules": [
+        "tests.scripts.test_validate_test_lane_policy"
+      ],
+      "smoke_commands": [
+        "python scripts/validate_test_lane_policy.py"
+      ],
+      "full_discovery_required_before_promotion": true,
+      "skip_conditions": [
+        "validator scripts untouched"
+      ],
+      "task_ids": [
+        "TEST-LANE-ROUTER-01"
+      ]
+    },
+    {
+      "path_pattern": "scripts/eureka_*.py",
+      "owning_subsystem": "repo_tooling_scripts",
+      "validators": [
+        "python scripts/validate_test_lane_policy.py"
+      ],
+      "test_modules": [
+        "tests.scripts.test_eureka_test_select"
+      ],
+      "smoke_commands": [
+        "python scripts/eureka_test_select.py --changed --failed-first --json"
+      ],
+      "full_discovery_required_before_promotion": true,
+      "skip_conditions": [
+        "repo tooling scripts untouched"
+      ],
+      "task_ids": [
+        "TEST-LANE-ROUTER-01"
+      ]
+    },
+    {
+      "path_pattern": "control/policies/**",
+      "owning_subsystem": "control_policy",
+      "validators": [
+        "python scripts/validate_test_lane_policy.py"
+      ],
+      "test_modules": [
+        "tests.operations.test_test_lane_policy"
+      ],
+      "smoke_commands": [],
+      "full_discovery_required_before_promotion": false,
+      "skip_conditions": [
+        "control policies untouched"
+      ],
+      "task_ids": [
+        "TEST-LANE-ROUTER-01"
+      ]
+    },
+    {
+      "path_pattern": "control/inventory/**",
+      "owning_subsystem": "control_inventory",
+      "validators": [
+        "python scripts/validate_test_lane_policy.py"
+      ],
+      "test_modules": [
+        "tests.operations.test_test_impact_map",
+        "tests.operations.test_test_failure_ledger"
+      ],
+      "smoke_commands": [],
+      "full_discovery_required_before_promotion": false,
+      "skip_conditions": [
+        "control inventory untouched"
+      ],
+      "task_ids": [
+        "TEST-LANE-ROUTER-01"
+      ]
+    },
+    {
+      "path_pattern": "examples/**",
+      "owning_subsystem": "examples_fixtures",
+      "validators": [
+        "python scripts/check_generated_artifact_cleanliness.py --check --json"
+      ],
+      "test_modules": [],
+      "smoke_commands": [],
+      "full_discovery_required_before_promotion": false,
+      "skip_conditions": [
+        "examples untouched"
+      ]
+    },
+    {
+      "path_pattern": "tests/**",
+      "owning_subsystem": "tests",
+      "validators": [
+        "python scripts/validate_test_lane_policy.py"
+      ],
+      "test_modules": [
+        "tests.operations.test_test_lane_policy",
+        "tests.scripts.test_eureka_test_select",
+        "tests.scripts.test_validate_test_lane_policy"
+      ],
+      "smoke_commands": [],
+      "full_discovery_required_before_promotion": true,
+      "skip_conditions": [
+        "tests untouched"
+      ],
+      "task_ids": [
+        "TEST-LANE-ROUTER-01"
+      ]
+    }
+  ]
+}
+

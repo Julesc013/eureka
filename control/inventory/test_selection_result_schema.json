@@ -1,0 +1,23 @@
+{
+  "schema_version": "test_selection_result_schema.v0",
+  "contract_path": "contracts/testing/test_selection_result.v0.json",
+  "required_fields": [
+    "schema_version",
+    "mode",
+    "changed_paths",
+    "selected_lanes",
+    "selected_commands",
+    "skipped_commands",
+    "skip_reasons",
+    "known_failures",
+    "failed_first_commands",
+    "full_discovery_required",
+    "full_discovery_deferred_until",
+    "promotion_allowed",
+    "warnings"
+  ],
+  "skip_reasons_required": true,
+  "full_discovery_required_for_promotion": true,
+  "promotion_allowed_requires_no_blocking_failures": true
+}
+
