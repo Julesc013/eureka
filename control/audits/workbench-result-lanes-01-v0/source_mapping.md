@@ -1,0 +1,24 @@
+# Source Mapping
+
+- reviewed_local_results
+  - source_mapping: reviewed local index
+- local_candidate_results
+  - source_mapping: candidate index
+- source_cache_hits
+  - source_mapping: source cache
+- ia_metadata_candidates
+  - source_mapping: IA candidate/index/source-cache/evidence preview records
+- review_queue_items
+  - source_mapping: review queue
+- known_absence
+  - source_mapping: absence records/absence packets
+- near_misses
+  - source_mapping: candidate/absence/coverage records where available
+- blocked_actions
+  - source_mapping: policy/action posture
+- running_workunits
+  - source_mapping: WorkUnit queue
+- deferred_deepening
+  - source_mapping: SearchNeed/WorkUnit future work
+- future_extraction_work
+  - source_mapping: extraction-deferred WorkUnits only

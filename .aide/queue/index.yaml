@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-18
 repo: julesc013/eureka
-current_recommended_task: WORKBENCH-RESULT-LANES-01 - Implement result lane view models and Workbench lane projection
+current_recommended_task: IA-HUNT-BRIDGE-00 - Connect IA metadata source work to Hunt, WorkUnits, and result lanes
 entries:
   - id: DEV-AND-IA-TO-MAIN-PROMOTION-REVIEW
     title: Promote repaired dev IA pilot plus repo layout canon baseline to main
@@ -59,7 +59,7 @@ entries:
     recommended_next: WORKBENCH-RESULT-LANES-01
   - id: WORKBENCH-RESULT-LANES-01
     title: Implement result lane view models and Workbench lane projection
-    status: queued
+    status: completed
     purpose: Define and then implement governed Workbench result lanes for reviewed, candidate, source-cache, IA metadata, review, absence, blocked, and WorkUnit states.
     allowed_scope_summary: Workbench lane contracts and bounded UI/runtime integration only when explicitly scoped by a future task.
     gate: SEARCH-INTERACTION-00 completed; no broad source crawling, downloads, extraction, production readiness, or public launch claim.

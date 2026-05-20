@@ -1,0 +1,19 @@
+# Boundary Report
+
+- runtime_behavior_changed: true, limited to view-model builder code.
+- html_ui_implemented: false.
+- ia_hunt_bridge_implemented: false.
+- source_probe_executed: false.
+- live_ia_call_performed: false.
+- source_cache_write_performed: false.
+- evidence_write_performed: false.
+- candidate_index_mutated: false.
+- reviewed_index_mutated: false.
+- master_index_mutated: false.
+- operator_instance_mutated: false.
+- extraction_executed: false.
+- model_provider_used: false.
+- deployment_performed: false.
+- production_readiness_claimed: false.
+- public_launch_readiness_claimed: false.
+- marketplace_or_app_store_readiness_claimed: false.

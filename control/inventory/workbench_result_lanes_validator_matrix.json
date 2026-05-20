@@ -1,0 +1,110 @@
+{
+  "schema_version": "workbench_result_lanes_validator_matrix.v0",
+  "task": "WORKBENCH-RESULT-LANES-01",
+  "rows": [
+    {
+      "name": "workbench result lanes validator",
+      "command": "python scripts/validate_workbench_result_lanes.py",
+      "status": "pass",
+      "blocks_completion": false,
+      "reason": "Recorded validation lane for this task.",
+      "evidence_path": "control/audits/workbench-result-lanes-01-v0/validation.md"
+    },
+    {
+      "name": "workbench foundation validator",
+      "command": "python scripts/validate_workbench_foundation.py",
+      "status": "pass",
+      "blocks_completion": false,
+      "reason": "Recorded validation lane for this task.",
+      "evidence_path": "control/audits/workbench-result-lanes-01-v0/validation.md"
+    },
+    {
+      "name": "search interaction validator",
+      "command": "python scripts/validate_search_interaction_contract.py",
+      "status": "pass",
+      "blocks_completion": false,
+      "reason": "Recorded validation lane for this task.",
+      "evidence_path": "control/audits/workbench-result-lanes-01-v0/validation.md"
+    },
+    {
+      "name": "contract taxonomy validator",
+      "command": "python scripts/validate_contract_taxonomy.py",
+      "status": "pass",
+      "blocks_completion": false,
+      "reason": "Recorded validation lane for this task.",
+      "evidence_path": "control/audits/workbench-result-lanes-01-v0/validation.md"
+    },
+    {
+      "name": "repo structure canon",
+      "command": "python scripts/validate_repo_structure_canon.py",
+      "status": "pass_with_known_debt",
+      "blocks_completion": false,
+      "reason": "Recorded validation lane for this task.",
+      "evidence_path": "control/audits/workbench-result-lanes-01-v0/validation.md"
+    },
+    {
+      "name": "lane CLI operator",
+      "command": "python scripts/eureka_workbench_result_lanes.py --query sampleproject --projection operator_workbench --from-play-demo --from-ia-examples --json",
+      "status": "pass",
+      "blocks_completion": false,
+      "reason": "Recorded validation lane for this task.",
+      "evidence_path": "control/audits/workbench-result-lanes-01-v0/validation.md"
+    },
+    {
+      "name": "lane CLI public",
+      "command": "python scripts/eureka_workbench_result_lanes.py --query sampleproject --projection public_web --from-play-demo --from-ia-examples --json",
+      "status": "pass",
+      "blocks_completion": false,
+      "reason": "Recorded validation lane for this task.",
+      "evidence_path": "control/audits/workbench-result-lanes-01-v0/validation.md"
+    },
+    {
+      "name": "lane CLI native",
+      "command": "python scripts/eureka_workbench_result_lanes.py --query sampleproject --projection native_desktop_read_only --from-play-demo --from-ia-examples --json",
+      "status": "pass",
+      "blocks_completion": false,
+      "reason": "Recorded validation lane for this task.",
+      "evidence_path": "control/audits/workbench-result-lanes-01-v0/validation.md"
+    },
+    {
+      "name": "focused tests",
+      "command": "python -m unittest tests.runtime.test_workbench_result_lanes tests.runtime.test_workbench_lane_view_models tests.runtime.test_workbench_lane_boundaries tests.operations.test_workbench_result_lanes tests.operations.test_workbench_result_lane_scripts tests.scripts.test_validate_workbench_result_lanes",
+      "status": "pass",
+      "blocks_completion": false,
+      "reason": "Recorded validation lane for this task.",
+      "evidence_path": "control/audits/workbench-result-lanes-01-v0/validation.md"
+    },
+    {
+      "name": "architecture boundaries",
+      "command": "python scripts/check_architecture_boundaries.py",
+      "status": "pass",
+      "blocks_completion": false,
+      "reason": "Recorded validation lane for this task.",
+      "evidence_path": "control/audits/workbench-result-lanes-01-v0/validation.md"
+    },
+    {
+      "name": "generated artifact cleanliness",
+      "command": "python scripts/check_generated_artifact_cleanliness.py --check --json",
+      "status": "pass_after_commit",
+      "blocks_completion": false,
+      "reason": "Recorded validation lane for this task.",
+      "evidence_path": "control/audits/workbench-result-lanes-01-v0/validation.md"
+    },
+    {
+      "name": "AIDE checks",
+      "command": "doctor validate test selftest verify review-pack commit check",
+      "status": "pass",
+      "blocks_completion": false,
+      "reason": "Recorded validation lane for this task.",
+      "evidence_path": "control/audits/workbench-result-lanes-01-v0/validation.md"
+    },
+    {
+      "name": "full unittest discovery",
+      "command": "python -m unittest discover -s tests -t .",
+      "status": "not_run",
+      "blocks_completion": false,
+      "reason": "Full discovery was scoped as recommended; skipped for time after focused runtime and governance checks passed.",
+      "evidence_path": "control/audits/workbench-result-lanes-01-v0/validation.md"
+    }
+  ]
+}

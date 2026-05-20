@@ -1,0 +1,16 @@
+{
+  "schema_version": "workbench_lane_projection_policy.v0",
+  "task": "WORKBENCH-RESULT-LANES-01",
+  "operator_projection_may_show_full_detail": true,
+  "public_projection_hides_operator_only_detail": true,
+  "native_read_only_projection_is_read_only": true,
+  "public_projection_can_run_source_probe": false,
+  "public_projection_can_review": false,
+  "public_projection_can_promote": false,
+  "public_projection_can_mutate_index": false,
+  "native_read_only_can_mutate": false,
+  "runtime_owns_packet_building": true,
+  "surfaces_render_packets": true,
+  "surfaces_own_truth": false,
+  "transitional_runtime_local_workbench_debt": "Existing runtime/local_workbench presentation remains transitional; new result lane surface helper lives under surfaces/web/workbench and does not import runtime internals."
+}

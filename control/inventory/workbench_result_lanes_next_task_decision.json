@@ -1,0 +1,14 @@
+{
+  "schema_version": "workbench_result_lanes_next_task_decision.v0",
+  "task": "WORKBENCH-RESULT-LANES-01",
+  "recommended_next_task": "IA-HUNT-BRIDGE-00 - Connect IA metadata source work to Hunt, WorkUnits, and result lanes",
+  "planned_sequence": [
+    "IA-HUNT-BRIDGE-00",
+    "SYN-00",
+    "DOMAIN-00",
+    "SCOUT-SCHEMA-00",
+    "F0"
+  ],
+  "reason": "Result lanes are now available as read-only projections; IA metadata source work can be connected to Hunt and WorkUnit lanes next.",
+  "promotion_or_main_push_required": false
+}

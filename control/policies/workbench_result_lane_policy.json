@@ -1,0 +1,16 @@
+{
+  "schema_version": "workbench_result_lane_policy.v0",
+  "task": "WORKBENCH-RESULT-LANES-01",
+  "lane_projection_read_only_by_default": true,
+  "lanes_create_truth": false,
+  "lanes_mutate_source_cache": false,
+  "lanes_mutate_evidence": false,
+  "lanes_mutate_candidate_index": false,
+  "lanes_mutate_review_queue": false,
+  "lanes_mutate_reviewed_index": false,
+  "lane_renderer_preserves_truth_level": true,
+  "lane_renderer_preserves_review_required": true,
+  "blocked_actions_explicit": true,
+  "source_probes_disabled": true,
+  "public_fanout_disabled": true
+}

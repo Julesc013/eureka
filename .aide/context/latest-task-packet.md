@@ -2,11 +2,11 @@
 
 ## PHASE
 
-UNSPECIFIED - SEARCH-INTERACTION-00 - Search request, compiled query, resolution run, controls, and feedback contract
+UNSPECIFIED - WORKBENCH-RESULT-LANES-01 - Implement result lane view models and Workbench lane projection
 
 ## GOAL
 
-SEARCH-INTERACTION-00 - Search request, compiled query, resolution run, controls, and feedback contract
+WORKBENCH-RESULT-LANES-01 - Implement result lane view models and Workbench lane projection
 
 ## WHY
 
@@ -44,19 +44,24 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 - `.aide/**`
 - `AGENTS.md`
-- `contracts/search_interaction/**`
 - `contracts/view_models/**`
 - `contracts/workbench/**`
+- `contracts/search_interaction/**`
 - `contracts/projections/**`
+- `runtime/local_service/**`
+- `surfaces/web/workbench/**`
+- `examples/workbench/result_lanes/**`
 - `docs/architecture/**`
 - `docs/operations/**`
 - `docs/reference/**`
 - `control/inventory/**`
 - `control/audits/**`
 - `control/policies/**`
+- `scripts/eureka_workbench_result_lanes.py`
 - `scripts/local_queue_progress.py`
 - `scripts/validate_*.py`
 - `scripts/check_*.py`
+- `tests/runtime/**`
 - `tests/operations/**`
 - `tests/scripts/**`
 - `tests/aide/**`
@@ -70,15 +75,16 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 - `.local/**`
 - `.cache/**`
 - `eureka-instance/**`
-- `runtime/**`
-- `surfaces/**`
+- `instances/**`
 - `site/**`
+- `site/dist/**`
+- `data/public_index/**`
+- `runtime/connectors/**`
+- `runtime/extraction/**`
+- `runtime/search_quality/**`
 - `native/**`
 - `crates/**`
-- `examples/**`
 - `evals/**`
-- `tests/**` unless this is an AIDE/control-plane test repair
-- `scripts/**` unless this is an AIDE validator/check repair
 - raw provider credentials, API keys, local caches, raw prompt logs, raw responses, and source AIDE repository state
 
 ## IMPLEMENTATION
@@ -125,9 +131,9 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 ## NON_GOALS
 
-- No Eureka product behavior change.
-- No source probes, extraction, model/provider calls, deployment, production-readiness claim, public-launch claim, main promotion, force-push, history rewrite, SYN implementation, or F0 implementation.
-- No Gateway, provider calls, live model routing, local model setup, exact tokenizer, provider billing ledger, Runtime, Service, Commander, Mobile, MCP/A2A, UI, host/app implementation, or autonomous loop unless a future reviewed queue item explicitly authorizes it.
+- No IA-HUNT bridge, live IA calls, source probes, extraction, model/provider calls, deployment, production-readiness claim, public-launch claim, marketplace/app-store readiness claim, main promotion, force-push, history rewrite, SYN implementation, or F0 implementation.
+- No store mutation, no operator instance mutation, no committed data/public_index mutation, no repo layout moves, no broad Workbench UI rewrite, and no Search Interaction state-control implementation.
+- Runtime behavior change is limited to read-only result lane packet/view-model builder code.
 
 ## ACCEPTANCE
 
@@ -144,8 +150,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4926
-- approx_tokens: 1232
+- chars: 4902
+- approx_tokens: 1226
 - budget_status: PASS
 - warnings:
   - none
