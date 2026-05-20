@@ -1,6 +1,6 @@
 # Eureka Repo Health
 
-- current_recommended_task: WORKBENCH-RESULT-LANES-CLOSEOUT-01 - Close result-lane fixed-pending-full validation state
+- current_recommended_task: IA-HUNT-BRIDGE-00 - Connect IA metadata source work to Hunt, WorkUnits, and result lanes
 - last_completed_task: TEST-LANE-ROUTER-01
 - last_completed_status: pass
 - test_lane_router_completed: true
@@ -10,12 +10,14 @@
 - full_discovery_for_promotion_required: true
 - skip_reasons_required: true
 - known_failure_ledger_active_count: 2
-- known_failure_ledger_active_status: fixed_pending_full
+- known_failure_ledger_active_status: reproduced_or_fixed_pending_full
+- f0_current_status: deferred
+- f0_deferred_until: LOCAL-14
 - last_full_unittest_discovery_status: fail
-- last_full_unittest_discovery_tests: 4784
+- last_full_unittest_discovery_tests: 4793
 - last_full_unittest_discovery_failures: 2
 - last_full_unittest_discovery_errors: 0
-- last_full_unittest_discovery_disposition: Stale Search Hunt queue-handoff allowlists for IA-HUNT-BRIDGE-00 were patched after the run; full discovery is tracked as fixed_pending_full in the failure ledger.
+- last_full_unittest_discovery_disposition: WORKBENCH-RESULT-LANES-CLOSEOUT-01 reran full discovery and found two blockers: R0-03A taxonomy inventory missing contracts/testing/test_selection_result.v0.json and stale repo-health LOCAL metadata. IA-HUNT remains blocked until the ledger blockers are resolved and full discovery passes.
 - workbench_result_lanes_completed: true
 - result_lane_closeout_required: true
 - ia_hunt_bridge_can_start: false
@@ -27,4 +29,5 @@
 - production_readiness_claimed: false
 - public_launch_readiness_claimed: false
 - marketplace_or_app_store_readiness_claimed: false
-- warning: Failure ledger contains two fixed_pending_full full-discovery failures; WORKBENCH-RESULT-LANES-CLOSEOUT-01 should rerun failed-first and selected impact lanes before IA-HUNT.
+- warning: Failure ledger contains active closeout blockers; IA-HUNT-BRIDGE-00 must not start until they are resolved and full discovery passes.
+- hard_blockers_remaining: 2

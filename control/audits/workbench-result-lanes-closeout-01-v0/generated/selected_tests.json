@@ -1,0 +1,125 @@
+{
+  "changed_paths": [
+    ".aide/context/latest-review-packet.md",
+    ".aide/context/latest-task-packet.md",
+    ".aide/queue/index.yaml",
+    ".aide/reports/eureka-repo-health.json",
+    ".aide/reports/eureka-repo-health.md",
+    "control/audits/workbench-result-lanes-closeout-01-v0/generated/failed_first_result.txt",
+    "control/audits/workbench-result-lanes-closeout-01-v0/generated/full_unittest_summary.txt",
+    "control/audits/workbench-result-lanes-closeout-01-v0/generated/sample_summary.md",
+    "control/audits/workbench-result-lanes-closeout-01-v0/generated/selected_tests.json",
+    "control/inventory/test_failure_ledger.json",
+    "control/inventory/workbench_result_lanes_closeout_input_state.json"
+  ],
+  "failed_first_commands": [
+    "python -m unittest tests.operations.test_contract_taxonomy_plan",
+    "python -m unittest tests.operations.test_local_appliance_track"
+  ],
+  "full_discovery_deferred_until": [],
+  "full_discovery_required": false,
+  "known_failures": [
+    {
+      "blocking_level": "promotion_blocker",
+      "failure_id": "full-discovery-2026-05-21-contract-taxonomy-testing-selection-result",
+      "failure_type": "failure",
+      "first_seen_commit": "792a226f-closeout-full-discovery",
+      "last_seen_commit": "792a226f-closeout-full-discovery",
+      "linked_repair_task": "TBD-CONTRACT-TAXONOMY-TESTING-CONTRACT-INVENTORY",
+      "notes": "Focused rerun reproduced after full discovery. Do not start IA-HUNT-BRIDGE-00 until this is repaired and full discovery passes.",
+      "owning_subsystem": "contract_taxonomy_inventory",
+      "rerun_command": "python -m unittest tests.operations.test_contract_taxonomy_plan",
+      "status": "reproduced",
+      "suspected_root_cause": "TEST-LANE-ROUTER-01 added contracts/testing/test_selection_result.v0.json without updating the R0-03A contract taxonomy inventory. The needed inventory repair is outside the WORKBENCH-RESULT-LANES-CLOSEOUT-01 allowed paths.",
+      "test_module": "tests.operations.test_contract_taxonomy_plan",
+      "test_name": "ContractTaxonomyPlanTests.test_validator_confirms_no_contract_files_moved_and_recommends_r0_03b"
+    },
+    {
+      "blocking_level": "promotion_blocker",
+      "failure_id": "full-discovery-2026-05-21-local-appliance-repo-health",
+      "failure_type": "failure",
+      "first_seen_commit": "792a226f-closeout-full-discovery",
+      "last_seen_commit": "792a226f-closeout-full-discovery",
+      "linked_repair_task": "WORKBENCH-RESULT-LANES-CLOSEOUT-01",
+      "notes": "Updated .aide/reports/eureka-repo-health.json and .md, and the focused rerun passed. Full discovery has not been rerun after this metadata repair.",
+      "owning_subsystem": "aide_repo_health_metadata",
+      "rerun_command": "python -m unittest tests.operations.test_local_appliance_track",
+      "status": "fixed_pending_full",
+      "suspected_root_cause": "Repo health metadata lacked the current queue handoff and F0 deferral fields expected by legacy LOCAL validators after the closeout queue advanced.",
+      "test_module": "tests.operations.test_local_appliance_track",
+      "test_name": "LocalApplianceTrackTests.test_validator_passes"
+    }
+  ],
+  "matched_impact_patterns": [
+    "control/inventory/**"
+  ],
+  "mode": "changed+failed_first",
+  "promotion_allowed": true,
+  "schema_version": "test_selection_result.v0",
+  "selected_commands": [
+    {
+      "command": "git diff --check",
+      "lane_id": "L0_static_preflight",
+      "reason": "base preflight",
+      "source": "test_lane_policy"
+    },
+    {
+      "command": "python scripts/check_architecture_boundaries.py",
+      "lane_id": "L0_static_preflight",
+      "reason": "base preflight",
+      "source": "test_lane_policy"
+    },
+    {
+      "command": "python scripts/check_generated_artifact_cleanliness.py --check --json",
+      "lane_id": "L0_static_preflight",
+      "reason": "base preflight",
+      "source": "test_lane_policy"
+    },
+    {
+      "command": "python scripts/validate_test_lane_policy.py",
+      "lane_id": "L1_focused_unit",
+      "reason": "control_inventory validator",
+      "source": "control/inventory/**"
+    },
+    {
+      "command": "python -m unittest tests.operations.test_test_impact_map",
+      "lane_id": "L1_focused_unit",
+      "reason": "control_inventory focused test",
+      "source": "control/inventory/**"
+    },
+    {
+      "command": "python -m unittest tests.operations.test_test_failure_ledger",
+      "lane_id": "L1_focused_unit",
+      "reason": "control_inventory focused test",
+      "source": "control/inventory/**"
+    },
+    {
+      "command": "python -m unittest tests.operations.test_contract_taxonomy_plan",
+      "lane_id": "L1_focused_unit",
+      "reason": "failed-first full-discovery-2026-05-21-contract-taxonomy-testing-selection-result",
+      "source": "test_failure_ledger"
+    },
+    {
+      "command": "python -m unittest tests.operations.test_local_appliance_track",
+      "lane_id": "L1_focused_unit",
+      "reason": "failed-first full-discovery-2026-05-21-local-appliance-repo-health",
+      "source": "test_failure_ledger"
+    }
+  ],
+  "selected_lanes": [
+    "L0_static_preflight",
+    "L1_focused_unit"
+  ],
+  "skip_reasons": [
+    "not selected for per-commit default; required before promotion/high-risk gates"
+  ],
+  "skipped_commands": [
+    {
+      "command": "python -m unittest discover -s tests -t .",
+      "lane_id": "L3_full_discovery",
+      "reason": "not selected for per-commit default; required before promotion/high-risk gates"
+    }
+  ],
+  "task": "",
+  "warnings": []
+}

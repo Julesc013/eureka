@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-20
 repo: julesc013/eureka
-current_recommended_task: WORKBENCH-RESULT-LANES-CLOSEOUT-01 - Close result-lane fixed-pending-full validation state
+current_recommended_task: IA-HUNT-BRIDGE-00 - Connect IA metadata source work to Hunt, WorkUnits, and result lanes
 entries:
   - id: DEV-AND-IA-TO-MAIN-PROMOTION-REVIEW
     title: Promote repaired dev IA pilot plus repo layout canon baseline to main
@@ -77,7 +77,7 @@ entries:
     recommended_next: WORKBENCH-RESULT-LANES-CLOSEOUT-01
   - id: WORKBENCH-RESULT-LANES-CLOSEOUT-01
     title: Close Workbench result-lane fixed-pending-full validation state
-    status: queued
+    status: blocked
     purpose: Use the lane selector to rerun failed-first and impact-selected result-lane closeout checks before IA-HUNT.
     allowed_scope_summary: Selected validation, failure-ledger update, and closeout evidence only.
     gate: TEST-LANE-ROUTER-01 completed; no IA-HUNT bridge, live IA call, source probe, extraction, model/provider call, deployment, or production/public launch claim.
@@ -89,7 +89,7 @@ entries:
     status: queued
     purpose: Connect the reviewed IA metadata vertical slice into Hunt/WorkUnit result lanes after Workbench lanes are governed.
     allowed_scope_summary: IA-Hunt bridge planning and bounded implementation only when future gates explicitly allow it.
-    gate: WORKBENCH-RESULT-LANES-01 completed; no new live IA call unless a future reviewed policy enables it; no downloads, extraction, model/provider calls, deployment, or public fanout.
+    gate: WORKBENCH-RESULT-LANES-01 completed and WORKBENCH-RESULT-LANES-CLOSEOUT-01 full discovery passed; no new live IA call unless a future reviewed policy enables it; no downloads, extraction, model/provider calls, deployment, or public fanout.
     task: .aide/queue/IA-HUNT-BRIDGE-00/task.yaml
     recommended_after: WORKBENCH-RESULT-LANES-01
     recommended_next: SYN-00

@@ -2,174 +2,146 @@
 
 ## PHASE
 
-TEST-LANE-ROUTER-01 - Add test selection, failure ledger, and promotion-grade test policy
+UNSPECIFIED - WORKBENCH-RESULT-LANES-CLOSEOUT-01
 
 ## GOAL
 
-Replace ad hoc full unittest discovery before every commit with an explicit test-lane system that is faster, safer, and auditable.
+WORKBENCH-RESULT-LANES-CLOSEOUT-01
 
 ## WHY
 
-WORKBENCH-RESULT-LANES-01 added runtime view-model code and then full discovery found two stale Search Hunt queue-handoff failures. Those failures were patched, but full discovery was intentionally not rerun before this task. The repo now needs a selector and failure ledger so the next closeout can rerun failed-first and impact-selected lanes instead of paying a one-hour blind gate on every small commit.
-
-## BOUNDARIES
-
-- no tests deleted
-- no test requirements weakened
-- no runtime product behavior change
-- no IA live call
-- no source probe
-- no extraction
-- no model/provider call
-- no deployment
-- no production/public launch claim
-
-## KEY FILES
-
-- `contracts/testing/`
-- `control/policies/test_lane_policy.json`
-- `control/inventory/test_lane_matrix.json`
-- `control/inventory/test_impact_map.json`
-- `control/inventory/test_failure_ledger.json`
-- `control/inventory/test_selection_result_schema.json`
-- `scripts/eureka_test_select.py`
-- `scripts/validate_test_lane_policy.py`
-- `docs/operations/TEST_LANE_POLICY.md`
-- `docs/operations/TEST_SELECTION_RUNBOOK.md`
-- `docs/operations/PROMOTION_TEST_POLICY.md`
-- `docs/architecture/TEST_AND_VALIDATION_ARCHITECTURE.md`
+Continue AIDE token survival by using repo-local context refs, compact objectives, deterministic validation, and evidence packets instead of long chat history.
 
 ## CONTEXT_REFS
 
 - `AGENTS.md`
 - `.aide/queue/index.yaml`
-- `.aide/context/latest-context-packet.md`
-- `.aide/context/context-index.json`
-- `.aide/context/repo-map.json`
-- `.aide/context/test-map.json`
-- `.aide/reports/eureka-repo-health.json`
-- `control/inventory/tests/command_matrix.json`
-- `docs/operations/TEST_AND_EVAL_LANES.md`
+- `.aide/memory/project-state.md`
+- `.aide/memory/decisions.md`
+- `.aide/memory/open-risks.md`
+- `.aide/context/repo-snapshot.json` (present)
+- `.aide/context/repo-map.json` (present)
+- `.aide/context/repo-map.md` (present)
+- `.aide/context/test-map.json` (present)
+- `.aide/context/context-index.json` (present)
+- `.aide/context/latest-context-packet.md` (present)
+- `.aide/repo/latest-repo-intelligence.md` (present)
+- `.aide/repo/file-inventory.json` (present)
+- `.aide/reports/file-quality-summary.md` (present)
+- `.aide/reports/file-quality-ledger.json` (present)
+- `.aide/refactors/latest-refactor-readiness.md` (present)
+- `.aide/refactors/latest-refactor-plan.example.json` (present)
+- `.aide/routing/latest-route-decision.json` (present)
+- `.aide/routing/latest-route-decision.md` (present)
+- `.aide/cache/latest-cache-keys.json` (present)
+- `.aide/cache/latest-cache-keys.md` (present)
+- `.aide/prompts/compact-task.md`
+- `.aide/policies/token-budget.yaml`
+- `.aide/policies/cache.yaml`
+- `.aide/policies/local-state.yaml`
 
 ## ALLOWED_PATHS
 
-- `contracts/testing/**`
-- `control/policies/test_lane_policy.json`
-- `control/inventory/test_lane_matrix.json`
-- `control/inventory/test_impact_map.json`
-- `control/inventory/test_failure_ledger.json`
-- `control/inventory/test_selection_result_schema.json`
-- `control/inventory/test_lane_router_result.json`
-- `control/inventory/test_lane_router_next_task_decision.json`
-- `scripts/eureka_test_select.py`
-- `scripts/validate_test_lane_policy.py`
-- `tests/operations/test_test_lane_policy.py`
-- `tests/operations/test_test_impact_map.py`
-- `tests/operations/test_test_failure_ledger.py`
-- `tests/scripts/test_eureka_test_select.py`
-- `tests/scripts/test_validate_test_lane_policy.py`
-- `docs/operations/TEST_LANE_POLICY.md`
-- `docs/operations/TEST_SELECTION_RUNBOOK.md`
-- `docs/operations/PROMOTION_TEST_POLICY.md`
-- `docs/architecture/TEST_AND_VALIDATION_ARCHITECTURE.md`
-- `.aide/queue/TEST-LANE-ROUTER-01/task.yaml`
-- `.aide/queue/TEST-LANE-ROUTER-01/**`
-- `.aide/queue/WORKBENCH-RESULT-LANES-CLOSEOUT-01/task.yaml`
-- `.aide/queue/WORKBENCH-RESULT-LANES-CLOSEOUT-01/**`
-- `.aide/queue/index.yaml`
-- `.aide/context/latest-task-packet.md`
-- `.aide/context/latest-review-packet.md`
-- `.aide/reports/eureka-repo-health.json`
-- `.aide/reports/eureka-repo-health.md`
-- `control/audits/test-lane-router-01-v0/**`
+- `.aide/**`
+- `AGENTS.md`
+- `docs/operations/**`
+- `docs/reference/**`
+- `control/inventory/**`
+- `control/audits/**`
+- `control/policies/**`
+- `scripts/local_queue_progress.py`
+- `scripts/validate_*.py`
+- `scripts/check_*.py`
+- `tests/operations/**`
+- `tests/aide/**`
 
 ## FORBIDDEN_PATHS
 
-- `runtime/connectors/**`
-- `runtime/extraction/**`
+- `.git/**`
+- `.env`
+- `secrets/**`
+- `.aide.local/**`
+- `.local/**`
+- `.cache/**`
+- `eureka-instance/**`
+- `runtime/**`
+- `contracts/**`
+- `surfaces/**`
+- `site/**`
 - `native/**`
 - `crates/**`
-- `site/dist/**`
-- `data/public_index/**`
-- `eureka-instance/**`
-- `instances/**`
-- `.aide.local/**`
-- `secrets/**`
-- `.env`
+- `examples/**`
+- `evals/**`
+- `tests/**` unless this is an AIDE/control-plane test repair
+- `scripts/**` unless this is an AIDE validator/check repair
+- raw provider credentials, API keys, local caches, raw prompt logs, raw responses, and source AIDE repository state
 
 ## IMPLEMENTATION
 
-- Add explicit L0/L1/L2/L3/L4 test lane policy.
-- Add machine-readable path impact map.
-- Add failure ledger with the two fixed-pending-full full-discovery failures from the Workbench result-lane closeout.
-- Add selector script for changed-path, failed-first, promotion, and full-suite selection.
-- Add validator and focused tests.
-- Update AIDE queue state so the next task is WORKBENCH-RESULT-LANES-CLOSEOUT-01.
-
-## VALIDATION LANES
-
-- L0 static/preflight
-- L1 focused tests
-- L2 selected integration tests
-- L3 full discovery, required for promotion/high-risk gates
-- L4 promotion/release suite
+- Read the queue packet and relevant repo refs first.
+- Keep changes inside the allowed paths.
+- Make the smallest coherent diff that satisfies acceptance.
+- Preserve generated/manual boundaries.
+- Do not inline whole source files unless exact contents are required.
+- Use exact refs such as `path#Lstart-Lend` when file details are load-bearing.
 
 ## VALIDATION
 
-- `git diff --check`
-- `python scripts/eureka_test_select.py --changed --failed-first --json`
-- `python scripts/eureka_test_select.py --promotion --json`
-- `python scripts/validate_test_lane_policy.py`
-- `python -m unittest tests.operations.test_test_lane_policy`
-- `python -m unittest tests.operations.test_test_impact_map`
-- `python -m unittest tests.operations.test_test_failure_ledger`
-- `python -m unittest tests.scripts.test_eureka_test_select`
-- `python -m unittest tests.scripts.test_validate_test_lane_policy`
+- `py -3 .aide/scripts/aide_lite.py doctor`
+- `py -3 .aide/scripts/aide_lite.py validate`
+- `py -3 .aide/scripts/aide_lite.py snapshot`
+- `py -3 .aide/scripts/aide_lite.py index`
+- `py -3 .aide/scripts/aide_lite.py context`
+- `py -3 .aide/scripts/aide_lite.py pack --task "AIDE-EVAL-GREEN-01"`
+- `py -3 .aide/scripts/aide_lite.py test`
+- `py -3 .aide/scripts/aide_lite.py selftest`
+- `py -3 .aide/scripts/aide_lite.py verify`
+- `py -3 .aide/scripts/aide_lite.py review-pack`
+- `py -3 .aide/scripts/aide_lite.py eval run`
 - `python scripts/check_architecture_boundaries.py`
 - `python scripts/check_generated_artifact_cleanliness.py --check --json`
-- `python .aide/scripts/aide_lite.py doctor`
-- `python .aide/scripts/aide_lite.py validate`
-- `python .aide/scripts/aide_lite.py test`
-- `python .aide/scripts/aide_lite.py selftest`
-- `python .aide/scripts/aide_lite.py verify`
-- `python .aide/scripts/aide_lite.py review-pack`
+- `python -m unittest discover -s tests -t .`
+- `git diff --check`
+
+## COMMITS
+
+- Commit coherent subdeliverables with verbose bodies.
+- Stop at review gates.
 
 ## EVIDENCE
 
-- `control/audits/test-lane-router-01-v0/`
-- `control/audits/test-lane-router-01-v0/generated/sample_test_selection_result.json`
-- `control/audits/test-lane-router-01-v0/generated/sample_failure_ledger.json`
+- changed files
+- validation commands and results
+- verifier result
+- review packet path and result when review-pack is available
+- advisory route decision path and result when Q17 routing is available
+- compact packet size and budget status
+- unresolved risks and deferrals
 
 ## NON_GOALS
 
-- No weakening or deleting tests.
-- No runtime product behavior change.
-- No promotion to main.
-- No IA live call, source probe, extraction, model/provider call, deployment, or production/public launch claim.
+- No Eureka product behavior change.
+- No source probes, extraction, model/provider calls, deployment, production-readiness claim, public-launch claim, main promotion, force-push, history rewrite, SYN implementation, or F0 implementation.
+- No Gateway, provider calls, live model routing, local model setup, exact tokenizer, provider billing ledger, Runtime, Service, Commander, Mobile, MCP/A2A, UI, host/app implementation, or autonomous loop unless a future reviewed queue item explicitly authorizes it.
 
 ## ACCEPTANCE
 
-- Test lane policy exists.
-- Test impact map exists.
-- Failure ledger exists.
-- Selector exists and changed/failed-first/promotion modes work.
-- Validator exists and passes.
-- Focused tests pass.
-- Full discovery is not required per commit.
-- Full discovery remains required for promotion.
-- Skip reasons are required.
-- Queue points to WORKBENCH-RESULT-LANES-CLOSEOUT-01.
+- Task-specific acceptance criteria are met.
+- Validation is run and recorded.
+- Evidence is written.
+- No secrets, raw prompt logs, local caches, or `.aide.local` contents are committed.
 
 ## OUTPUT_SCHEMA
 
-- status: PASS / PASS_WITH_WARNINGS / PARTIAL / BLOCKED / FAIL
-- include summary, commits, test lane fields, validation fields, boundaries, and next task.
+Return a compact final report with `STATUS`, `SUMMARY`, `COMMITS`, `CHANGED_FILES`, `VALIDATION`, route/verifier/token results, `RISKS`, and `NEXT`.
+Include the verifier result when Q12 verifier behavior is available.
 
 ## TOKEN_ESTIMATE
 
-- approx_tokens: 1050
+- method: chars / 4, rounded up
+- chars: 4788
+- approx_tokens: 1197
 - budget_status: PASS
-
-## NEXT TASK
-
-WORKBENCH-RESULT-LANES-CLOSEOUT-01
+- warnings:
+  - none
+- formal ledger: `.aide/reports/token-ledger.jsonl`

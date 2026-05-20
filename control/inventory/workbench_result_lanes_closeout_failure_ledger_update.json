@@ -1,0 +1,44 @@
+{
+  "schema_version": "workbench_result_lanes_closeout_failure_ledger_update.v0",
+  "task": "WORKBENCH-RESULT-LANES-CLOSEOUT-01",
+  "fixed_pending_full_before": [
+    "full-discovery-2026-05-20-search-hunt-closeout-ia-hunt-handoff",
+    "full-discovery-2026-05-20-search-hunt-track-ia-hunt-handoff"
+  ],
+  "fixed_confirmed_after": [
+    "full-discovery-2026-05-20-search-hunt-closeout-ia-hunt-handoff",
+    "full-discovery-2026-05-20-search-hunt-track-ia-hunt-handoff"
+  ],
+  "new_failures_added": [
+    {
+      "failure_id": "full-discovery-2026-05-21-contract-taxonomy-testing-selection-result",
+      "status": "reproduced",
+      "rerun_command": "python -m unittest tests.operations.test_contract_taxonomy_plan",
+      "rerun_result": "fail",
+      "repair_scope": "outside_allowed_paths"
+    },
+    {
+      "failure_id": "full-discovery-2026-05-21-local-appliance-repo-health",
+      "status": "fixed_pending_full",
+      "rerun_command": "python -m unittest tests.operations.test_local_appliance_track",
+      "rerun_result": "pass",
+      "repair_scope": "allowed_aide_repo_health_metadata"
+    }
+  ],
+  "active_blocking_failures_after": 2,
+  "fixed_pending_full_after": [
+    "full-discovery-2026-05-21-local-appliance-repo-health"
+  ],
+  "reproduced_after": [
+    "full-discovery-2026-05-21-contract-taxonomy-testing-selection-result"
+  ],
+  "last_full_discovery_pass_commit": "8119871469cc61b47fa565b9d1e78642e3935d2a",
+  "last_full_discovery_pass_count": 4740,
+  "last_full_discovery_pass_duration_seconds": null,
+  "last_full_discovery_run_status": "fail",
+  "last_full_discovery_run_count": 4793,
+  "last_full_discovery_run_duration_seconds": 2536.23,
+  "ia_hunt_bridge_can_start": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}

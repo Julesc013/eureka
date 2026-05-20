@@ -1,0 +1,125 @@
+{
+  "schema_version": "workbench_result_lanes_closeout_validation_matrix.v0",
+  "task": "WORKBENCH-RESULT-LANES-CLOSEOUT-01",
+  "status": "blocked",
+  "validations": [
+    {
+      "lane": "failed_first",
+      "command": "python -m unittest tests.operations.test_search_hunt_closeout",
+      "status": "pass"
+    },
+    {
+      "lane": "failed_first",
+      "command": "python -m unittest tests.operations.test_search_hunt_track",
+      "status": "pass_after_queue_handoff"
+    },
+    {
+      "lane": "focused_result_lane",
+      "command": "python scripts/validate_workbench_result_lanes.py",
+      "status": "pass"
+    },
+    {
+      "lane": "focused_result_lane",
+      "command": "python -m unittest tests.runtime.test_workbench_result_lanes",
+      "status": "pass"
+    },
+    {
+      "lane": "focused_result_lane",
+      "command": "python -m unittest tests.runtime.test_workbench_lane_view_models",
+      "status": "pass"
+    },
+    {
+      "lane": "focused_result_lane",
+      "command": "python -m unittest tests.runtime.test_workbench_lane_boundaries",
+      "status": "pass"
+    },
+    {
+      "lane": "focused_result_lane",
+      "command": "python -m unittest tests.operations.test_workbench_result_lanes",
+      "status": "pass"
+    },
+    {
+      "lane": "focused_result_lane",
+      "command": "python -m unittest tests.operations.test_workbench_result_lane_scripts",
+      "status": "pass"
+    },
+    {
+      "lane": "focused_result_lane",
+      "command": "python -m unittest tests.scripts.test_validate_workbench_result_lanes",
+      "status": "pass"
+    },
+    {
+      "lane": "global",
+      "command": "git diff --check",
+      "status": "pass"
+    },
+    {
+      "lane": "global",
+      "command": "python scripts/check_architecture_boundaries.py",
+      "status": "pass"
+    },
+    {
+      "lane": "global",
+      "command": "python scripts/check_generated_artifact_cleanliness.py --check --json",
+      "status": "fail_precommit_expected_uncommitted_audit_pack"
+    },
+    {
+      "lane": "global",
+      "command": "python .aide/scripts/aide_lite.py doctor",
+      "status": "pass"
+    },
+    {
+      "lane": "global",
+      "command": "python .aide/scripts/aide_lite.py validate",
+      "status": "pass"
+    },
+    {
+      "lane": "global",
+      "command": "python .aide/scripts/aide_lite.py test",
+      "status": "pass"
+    },
+    {
+      "lane": "global",
+      "command": "python .aide/scripts/aide_lite.py selftest",
+      "status": "pass"
+    },
+    {
+      "lane": "global",
+      "command": "python .aide/scripts/aide_lite.py verify",
+      "status": "pass"
+    },
+    {
+      "lane": "global",
+      "command": "python .aide/scripts/aide_lite.py review-pack",
+      "status": "pass"
+    },
+    {
+      "lane": "global",
+      "command": "python .aide/scripts/aide_lite.py commit check --latest",
+      "status": "pass"
+    },
+    {
+      "lane": "full_discovery",
+      "command": "python -m unittest discover -s tests -t .",
+      "status": "fail",
+      "test_count": 4793,
+      "duration_seconds": 2536.23,
+      "failures": [
+        "tests.operations.test_contract_taxonomy_plan.ContractTaxonomyPlanTests.test_validator_confirms_no_contract_files_moved_and_recommends_r0_03b",
+        "tests.operations.test_local_appliance_track.LocalApplianceTrackTests.test_validator_passes"
+      ]
+    },
+    {
+      "lane": "targeted_repair",
+      "command": "python -m unittest tests.operations.test_local_appliance_track",
+      "status": "pass_after_repo_health_update"
+    },
+    {
+      "lane": "targeted_reproduction",
+      "command": "python -m unittest tests.operations.test_contract_taxonomy_plan",
+      "status": "fail_reproduced"
+    }
+  ],
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}
