@@ -45,7 +45,7 @@ UNSAFE_ACTIONS = (
     "extract",
     "execute",
     "call_model_provider",
-    "deploy_public_site",
+    "deploy_public_projection",
     "run_source_probe",
     "mutate_master_index",
 )
@@ -446,7 +446,7 @@ def _normalize_item(lane_kind: str, index: int, item: Mapping[str, Any]) -> dict
     normalized["action_posture"] = _action_posture(lane_kind, "operator_workbench")
     normalized.setdefault("operator_notes", "Operator-only detail.")
     normalized.setdefault("private_local_path_refs", [])
-    normalized.setdefault("debug", {"fixture_only": True})
+    normalized.setdefault("debug", {"committed_example_record": True})
     return normalized
 
 

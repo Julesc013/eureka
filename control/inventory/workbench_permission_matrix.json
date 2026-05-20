@@ -311,7 +311,7 @@
       "enabling_future_task": "future_reviewed_gate"
     },
     {
-      "permission_id": "deploy_public_site",
+      "permission_id": "deploy_public_projection",
       "operator_workbench": false,
       "local_user_read_only": false,
       "public_web": false,

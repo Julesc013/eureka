@@ -30,7 +30,7 @@ REQUIRED_PERMISSIONS = {
     "create_workunit", "run_workunit", "run_source_probe", "inspect_source_cache",
     "create_evidence_candidate", "review_candidate", "promote_preview", "rebuild_reviewed_index",
     "export_packet", "manage_domain_pack", "view_scout_trails", "run_extraction",
-    "call_model_provider", "deploy_public_site", "mutate_master_index",
+    "call_model_provider", "deploy_public_projection", "mutate_master_index",
 }
 REQUIRED_VIEWS = {
     "SearchView", "HuntView", "SearchNeedView", "WorkUnitView", "SourceView", "SourceCacheView",
@@ -151,7 +151,7 @@ def validate_repo(root: Path = REPO_ROOT) -> dict[str, Any]:
     permissions = {str(item.get("permission_id")): item for item in payloads["control/inventory/workbench_permission_matrix.json"].get("permissions", []) if isinstance(item, Mapping)}
     if REQUIRED_PERMISSIONS - set(permissions):
         errors.append(f"permission matrix missing permissions: {', '.join(sorted(REQUIRED_PERMISSIONS - set(permissions)))}")
-    for permission in ("run_source_probe", "run_extraction", "call_model_provider", "deploy_public_site", "mutate_master_index"):
+    for permission in ("run_source_probe", "run_extraction", "call_model_provider", "deploy_public_projection", "mutate_master_index"):
         row = permissions.get(permission, {})
         if row.get("public_web") is not False:
             errors.append(f"{permission} must be false for public_web")

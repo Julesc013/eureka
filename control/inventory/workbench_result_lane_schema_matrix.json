@@ -61,7 +61,7 @@
         "extract",
         "execute",
         "call_model_provider",
-        "deploy_public_site",
+        "deploy_public_projection",
         "run_source_probe",
         "mutate_master_index"
       ],
@@ -127,7 +127,7 @@
         "extract",
         "execute",
         "call_model_provider",
-        "deploy_public_site",
+        "deploy_public_projection",
         "run_source_probe",
         "mutate_master_index"
       ],
@@ -193,7 +193,7 @@
         "extract",
         "execute",
         "call_model_provider",
-        "deploy_public_site",
+        "deploy_public_projection",
         "run_source_probe",
         "mutate_master_index"
       ],
@@ -259,7 +259,7 @@
         "extract",
         "execute",
         "call_model_provider",
-        "deploy_public_site",
+        "deploy_public_projection",
         "run_source_probe",
         "mutate_master_index"
       ],
@@ -325,7 +325,7 @@
         "extract",
         "execute",
         "call_model_provider",
-        "deploy_public_site",
+        "deploy_public_projection",
         "run_source_probe",
         "mutate_master_index"
       ],
@@ -391,7 +391,7 @@
         "extract",
         "execute",
         "call_model_provider",
-        "deploy_public_site",
+        "deploy_public_projection",
         "run_source_probe",
         "mutate_master_index"
       ],
@@ -457,7 +457,7 @@
         "extract",
         "execute",
         "call_model_provider",
-        "deploy_public_site",
+        "deploy_public_projection",
         "run_source_probe",
         "mutate_master_index"
       ],
@@ -523,7 +523,7 @@
         "extract",
         "execute",
         "call_model_provider",
-        "deploy_public_site",
+        "deploy_public_projection",
         "run_source_probe",
         "mutate_master_index"
       ],
@@ -589,7 +589,7 @@
         "extract",
         "execute",
         "call_model_provider",
-        "deploy_public_site",
+        "deploy_public_projection",
         "run_source_probe",
         "mutate_master_index"
       ],
@@ -655,7 +655,7 @@
         "extract",
         "execute",
         "call_model_provider",
-        "deploy_public_site",
+        "deploy_public_projection",
         "run_source_probe",
         "mutate_master_index"
       ],
@@ -721,7 +721,7 @@
         "extract",
         "execute",
         "call_model_provider",
-        "deploy_public_site",
+        "deploy_public_projection",
         "run_source_probe",
         "mutate_master_index"
       ],

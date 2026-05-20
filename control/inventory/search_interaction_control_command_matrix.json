@@ -490,7 +490,7 @@
     "download",
     "extract",
     "call_model_provider",
-    "deploy_public_site",
+    "deploy_public_projection",
     "mutate_master_index",
     "run_source_probe"
   ]

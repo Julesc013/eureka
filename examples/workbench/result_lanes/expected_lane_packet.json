@@ -55,7 +55,7 @@
           "extract",
           "execute",
           "call_model_provider",
-          "deploy_public_site",
+          "deploy_public_projection",
           "run_source_probe",
           "mutate_master_index",
           "promote_preview",
@@ -68,7 +68,7 @@
       },
       "private_local_path_refs": [],
       "debug": {
-        "fixture_only": true
+        "committed_example_record": true
       }
     }
   ],
@@ -103,7 +103,7 @@
       "extract",
       "execute",
       "call_model_provider",
-      "deploy_public_site",
+      "deploy_public_projection",
       "run_source_probe",
       "mutate_master_index",
       "promote_preview",
@@ -119,7 +119,7 @@
     "extract",
     "execute",
     "call_model_provider",
-    "deploy_public_site",
+    "deploy_public_projection",
     "run_source_probe",
     "mutate_master_index",
     "promote_preview",

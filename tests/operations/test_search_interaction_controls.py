@@ -20,7 +20,7 @@ class SearchInteractionControlsTest(unittest.TestCase):
 
     def test_unsafe_commands_are_unavailable(self) -> None:
         matrix = json.loads((REPO_ROOT / "control/inventory/search_interaction_control_command_matrix.json").read_text(encoding="utf-8"))
-        for command in ["download", "extract", "call_model_provider", "deploy_public_site", "run_source_probe"]:
+        for command in ["download", "extract", "call_model_provider", "deploy_public_projection", "run_source_probe"]:
             self.assertIn(command, matrix["unavailable_commands"])
 
 

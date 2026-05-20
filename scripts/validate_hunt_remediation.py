@@ -223,6 +223,8 @@ def queue_preserves_hunt_handoff(root: Path, queue_text: str) -> bool:
         return True
     if "current_recommended_task: REPO-LAYOUT-CANON-01" in queue_text:
         return True
+    if "current_recommended_task: IA-HUNT-BRIDGE-00" in queue_text:
+        return True
     if "current_recommended_task: HUNT-TO-MAIN-PROMOTION-REVIEW" not in queue_text:
         return False
     aide = load_json(root / "control/inventory/aide_eval_green_result.json", "aide_eval_green_result.v0", [])

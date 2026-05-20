@@ -62,7 +62,7 @@
               "extract",
               "execute",
               "call_model_provider",
-              "deploy_public_site",
+              "deploy_public_projection",
               "run_source_probe",
               "mutate_master_index",
               "promote_preview",
@@ -75,7 +75,7 @@
           },
           "private_local_path_refs": [],
           "debug": {
-            "fixture_only": true
+            "committed_example_record": true
           }
         }
       ],
@@ -110,7 +110,7 @@
           "extract",
           "execute",
           "call_model_provider",
-          "deploy_public_site",
+          "deploy_public_projection",
           "run_source_probe",
           "mutate_master_index",
           "promote_preview",
@@ -126,7 +126,7 @@
         "extract",
         "execute",
         "call_model_provider",
-        "deploy_public_site",
+        "deploy_public_projection",
         "run_source_probe",
         "mutate_master_index",
         "promote_preview",
@@ -190,7 +190,7 @@
               "extract",
               "execute",
               "call_model_provider",
-              "deploy_public_site",
+              "deploy_public_projection",
               "run_source_probe",
               "mutate_master_index",
               "promote_preview",
@@ -203,7 +203,7 @@
           },
           "private_local_path_refs": [],
           "debug": {
-            "fixture_only": true
+            "committed_example_record": true
           }
         }
       ],
@@ -238,7 +238,7 @@
           "extract",
           "execute",
           "call_model_provider",
-          "deploy_public_site",
+          "deploy_public_projection",
           "run_source_probe",
           "mutate_master_index",
           "promote_preview",
@@ -254,7 +254,7 @@
         "extract",
         "execute",
         "call_model_provider",
-        "deploy_public_site",
+        "deploy_public_projection",
         "run_source_probe",
         "mutate_master_index",
         "promote_preview",
@@ -315,7 +315,7 @@
               "extract",
               "execute",
               "call_model_provider",
-              "deploy_public_site",
+              "deploy_public_projection",
               "run_source_probe",
               "mutate_master_index",
               "promote_preview",
@@ -328,7 +328,7 @@
           },
           "private_local_path_refs": [],
           "debug": {
-            "fixture_only": true
+            "committed_example_record": true
           }
         }
       ],
@@ -363,7 +363,7 @@
           "extract",
           "execute",
           "call_model_provider",
-          "deploy_public_site",
+          "deploy_public_projection",
           "run_source_probe",
           "mutate_master_index",
           "promote_preview",
@@ -379,7 +379,7 @@
         "extract",
         "execute",
         "call_model_provider",
-        "deploy_public_site",
+        "deploy_public_projection",
         "run_source_probe",
         "mutate_master_index",
         "promote_preview",
@@ -443,7 +443,7 @@
               "extract",
               "execute",
               "call_model_provider",
-              "deploy_public_site",
+              "deploy_public_projection",
               "run_source_probe",
               "mutate_master_index",
               "promote_preview",
@@ -456,7 +456,7 @@
           },
           "private_local_path_refs": [],
           "debug": {
-            "fixture_only": true
+            "committed_example_record": true
           }
         }
       ],
@@ -491,7 +491,7 @@
           "extract",
           "execute",
           "call_model_provider",
-          "deploy_public_site",
+          "deploy_public_projection",
           "run_source_probe",
           "mutate_master_index",
           "promote_preview",
@@ -507,7 +507,7 @@
         "extract",
         "execute",
         "call_model_provider",
-        "deploy_public_site",
+        "deploy_public_projection",
         "run_source_probe",
         "mutate_master_index",
         "promote_preview",
@@ -568,7 +568,7 @@
               "extract",
               "execute",
               "call_model_provider",
-              "deploy_public_site",
+              "deploy_public_projection",
               "run_source_probe",
               "mutate_master_index",
               "promote_preview",
@@ -581,7 +581,7 @@
           },
           "private_local_path_refs": [],
           "debug": {
-            "fixture_only": true
+            "committed_example_record": true
           }
         }
       ],
@@ -616,7 +616,7 @@
           "extract",
           "execute",
           "call_model_provider",
-          "deploy_public_site",
+          "deploy_public_projection",
           "run_source_probe",
           "mutate_master_index",
           "promote_preview",
@@ -632,7 +632,7 @@
         "extract",
         "execute",
         "call_model_provider",
-        "deploy_public_site",
+        "deploy_public_projection",
         "run_source_probe",
         "mutate_master_index",
         "promote_preview",
@@ -693,7 +693,7 @@
               "extract",
               "execute",
               "call_model_provider",
-              "deploy_public_site",
+              "deploy_public_projection",
               "run_source_probe",
               "mutate_master_index",
               "promote_preview",
@@ -706,7 +706,7 @@
           },
           "private_local_path_refs": [],
           "debug": {
-            "fixture_only": true
+            "committed_example_record": true
           }
         }
       ],
@@ -741,7 +741,7 @@
           "extract",
           "execute",
           "call_model_provider",
-          "deploy_public_site",
+          "deploy_public_projection",
           "run_source_probe",
           "mutate_master_index",
           "promote_preview",
@@ -757,7 +757,7 @@
         "extract",
         "execute",
         "call_model_provider",
-        "deploy_public_site",
+        "deploy_public_projection",
         "run_source_probe",
         "mutate_master_index",
         "promote_preview",
@@ -818,7 +818,7 @@
               "extract",
               "execute",
               "call_model_provider",
-              "deploy_public_site",
+              "deploy_public_projection",
               "run_source_probe",
               "mutate_master_index",
               "promote_preview",
@@ -831,7 +831,7 @@
           },
           "private_local_path_refs": [],
           "debug": {
-            "fixture_only": true
+            "committed_example_record": true
           }
         }
       ],
@@ -866,7 +866,7 @@
           "extract",
           "execute",
           "call_model_provider",
-          "deploy_public_site",
+          "deploy_public_projection",
           "run_source_probe",
           "mutate_master_index",
           "promote_preview",
@@ -882,7 +882,7 @@
         "extract",
         "execute",
         "call_model_provider",
-        "deploy_public_site",
+        "deploy_public_projection",
         "run_source_probe",
         "mutate_master_index",
         "promote_preview",
@@ -907,7 +907,7 @@
         "blocked-extract",
         "blocked-execute",
         "blocked-call_model_provider",
-        "blocked-deploy_public_site",
+        "blocked-deploy_public_projection",
         "blocked-run_source_probe",
         "blocked-mutate_master_index"
       ],
@@ -947,7 +947,7 @@
               "extract",
               "execute",
               "call_model_provider",
-              "deploy_public_site",
+              "deploy_public_projection",
               "run_source_probe",
               "mutate_master_index",
               "promote_preview",
@@ -960,7 +960,7 @@
           },
           "private_local_path_refs": [],
           "debug": {
-            "fixture_only": true
+            "committed_example_record": true
           }
         },
         {
@@ -998,7 +998,7 @@
               "extract",
               "execute",
               "call_model_provider",
-              "deploy_public_site",
+              "deploy_public_projection",
               "run_source_probe",
               "mutate_master_index",
               "promote_preview",
@@ -1011,7 +1011,7 @@
           },
           "private_local_path_refs": [],
           "debug": {
-            "fixture_only": true
+            "committed_example_record": true
           }
         },
         {
@@ -1049,7 +1049,7 @@
               "extract",
               "execute",
               "call_model_provider",
-              "deploy_public_site",
+              "deploy_public_projection",
               "run_source_probe",
               "mutate_master_index",
               "promote_preview",
@@ -1062,7 +1062,7 @@
           },
           "private_local_path_refs": [],
           "debug": {
-            "fixture_only": true
+            "committed_example_record": true
           }
         },
         {
@@ -1100,7 +1100,7 @@
               "extract",
               "execute",
               "call_model_provider",
-              "deploy_public_site",
+              "deploy_public_projection",
               "run_source_probe",
               "mutate_master_index",
               "promote_preview",
@@ -1113,14 +1113,14 @@
           },
           "private_local_path_refs": [],
           "debug": {
-            "fixture_only": true
+            "committed_example_record": true
           }
         },
         {
-          "item_id": "blocked-deploy_public_site",
+          "item_id": "blocked-deploy_public_projection",
           "title": "deploy public site",
           "summary": "Blocked under current Workbench result-lane policy.",
-          "blocked_action": "deploy_public_site",
+          "blocked_action": "deploy_public_projection",
           "operator_notes": "Blocked action lane is policy posture, not evidence of permanent unsupported status.",
           "truth_level": "policy_block_not_capability_absence",
           "review_required": false,
@@ -1151,7 +1151,7 @@
               "extract",
               "execute",
               "call_model_provider",
-              "deploy_public_site",
+              "deploy_public_projection",
               "run_source_probe",
               "mutate_master_index",
               "promote_preview",
@@ -1164,7 +1164,7 @@
           },
           "private_local_path_refs": [],
           "debug": {
-            "fixture_only": true
+            "committed_example_record": true
           }
         },
         {
@@ -1202,7 +1202,7 @@
               "extract",
               "execute",
               "call_model_provider",
-              "deploy_public_site",
+              "deploy_public_projection",
               "run_source_probe",
               "mutate_master_index",
               "promote_preview",
@@ -1215,7 +1215,7 @@
           },
           "private_local_path_refs": [],
           "debug": {
-            "fixture_only": true
+            "committed_example_record": true
           }
         },
         {
@@ -1253,7 +1253,7 @@
               "extract",
               "execute",
               "call_model_provider",
-              "deploy_public_site",
+              "deploy_public_projection",
               "run_source_probe",
               "mutate_master_index",
               "promote_preview",
@@ -1266,7 +1266,7 @@
           },
           "private_local_path_refs": [],
           "debug": {
-            "fixture_only": true
+            "committed_example_record": true
           }
         }
       ],
@@ -1301,7 +1301,7 @@
           "extract",
           "execute",
           "call_model_provider",
-          "deploy_public_site",
+          "deploy_public_projection",
           "run_source_probe",
           "mutate_master_index",
           "promote_preview",
@@ -1317,7 +1317,7 @@
         "extract",
         "execute",
         "call_model_provider",
-        "deploy_public_site",
+        "deploy_public_projection",
         "run_source_probe",
         "mutate_master_index",
         "promote_preview",
@@ -1378,7 +1378,7 @@
               "extract",
               "execute",
               "call_model_provider",
-              "deploy_public_site",
+              "deploy_public_projection",
               "run_source_probe",
               "mutate_master_index",
               "promote_preview",
@@ -1391,7 +1391,7 @@
           },
           "private_local_path_refs": [],
           "debug": {
-            "fixture_only": true
+            "committed_example_record": true
           }
         }
       ],
@@ -1426,7 +1426,7 @@
           "extract",
           "execute",
           "call_model_provider",
-          "deploy_public_site",
+          "deploy_public_projection",
           "run_source_probe",
           "mutate_master_index",
           "promote_preview",
@@ -1442,7 +1442,7 @@
         "extract",
         "execute",
         "call_model_provider",
-        "deploy_public_site",
+        "deploy_public_projection",
         "run_source_probe",
         "mutate_master_index",
         "promote_preview",
@@ -1501,7 +1501,7 @@
               "extract",
               "execute",
               "call_model_provider",
-              "deploy_public_site",
+              "deploy_public_projection",
               "run_source_probe",
               "mutate_master_index",
               "promote_preview",
@@ -1514,7 +1514,7 @@
           },
           "private_local_path_refs": [],
           "debug": {
-            "fixture_only": true
+            "committed_example_record": true
           }
         }
       ],
@@ -1549,7 +1549,7 @@
           "extract",
           "execute",
           "call_model_provider",
-          "deploy_public_site",
+          "deploy_public_projection",
           "run_source_probe",
           "mutate_master_index",
           "promote_preview",
@@ -1565,7 +1565,7 @@
         "extract",
         "execute",
         "call_model_provider",
-        "deploy_public_site",
+        "deploy_public_projection",
         "run_source_probe",
         "mutate_master_index",
         "promote_preview",
@@ -1624,7 +1624,7 @@
               "extract",
               "execute",
               "call_model_provider",
-              "deploy_public_site",
+              "deploy_public_projection",
               "run_source_probe",
               "mutate_master_index",
               "promote_preview",
@@ -1637,7 +1637,7 @@
           },
           "private_local_path_refs": [],
           "debug": {
-            "fixture_only": true
+            "committed_example_record": true
           }
         }
       ],
@@ -1672,7 +1672,7 @@
           "extract",
           "execute",
           "call_model_provider",
-          "deploy_public_site",
+          "deploy_public_projection",
           "run_source_probe",
           "mutate_master_index",
           "promote_preview",
@@ -1688,7 +1688,7 @@
         "extract",
         "execute",
         "call_model_provider",
-        "deploy_public_site",
+        "deploy_public_projection",
         "run_source_probe",
         "mutate_master_index",
         "promote_preview",

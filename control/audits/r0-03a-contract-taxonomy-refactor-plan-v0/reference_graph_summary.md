@@ -1,27 +1,27 @@
 # Reference Graph Summary
 
-nodes: 1367
-edges: 14872
+nodes: 1230
+edges: 7298
 
 ## Top Referenced Contracts
 
-- contracts/README.md: 360
-- contracts/ai/README.md: 360
-- contracts/archive/README.md: 360
-- contracts/archive/fixtures/README.md: 360
-- contracts/archive/fixtures/software/README.md: 360
-- contracts/archive/protocols/README.md: 360
-- contracts/archive/schemas/README.md: 360
-- contracts/archive/trust/README.md: 360
-- contracts/archive/versions/README.md: 360
-- contracts/connectors/README.md: 360
-- contracts/evidence/README.md: 360
-- contracts/evidence_ledger/README.md: 360
-- contracts/extraction/README.md: 360
-- contracts/gateway/README.md: 360
-- contracts/gateway/public_api/README.md: 360
-- contracts/identity/README.md: 360
-- contracts/master_index/README.md: 360
-- contracts/packs/README.md: 360
-- contracts/pages/README.md: 360
-- contracts/query/README.md: 360
+- contracts/api/search_result_card.v0.json: 55
+- contracts/connectors/live_probe_result.v0.json: 50
+- control/schemas/audits/h1/connectors/integration_audit.v0.json: 50
+- control/schemas/previews/h1/connectors/live_probe_result.v0.json: 50
+- contracts/connectors/live_probe_request.v0.json: 49
+- control/schemas/previews/h1/connectors/live_probe_request.v0.json: 49
+- control/schemas/audits/h1/connectors/quality_delta_report.v0.json: 48
+- control/schemas/audits/h1/connectors/connector_wave_postmortem.v0.json: 46
+- control/schemas/audits/h1/connectors/review_integration_result.v0.json: 46
+- control/schemas/previews/h1/connectors/live_probe_output_bundle.v0.json: 43
+- contracts/evidence_ledger/evidence_ledger_record.v0.json: 41
+- contracts/source_cache/source_cache_record.v0.json: 39
+- control/schemas/policies/node/work_unit_result.v0.json: 38
+- contracts/api/search_response.v0.json: 37
+- control/schemas/policies/node/work_unit.v0.json: 35
+- control/schemas/fixtures/archive/software/synthetic_resolution_fixture.json: 34
+- control/schemas/previews/query/candidate_promotion_assessment.v0.json: 34
+- contracts/query/query_observation.v0.json: 33
+- contracts/source_sync/source_sync_worker_job.v0.json: 29
+- control/schemas/previews/query/candidate_index_record.v0.json: 28

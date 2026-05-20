@@ -438,6 +438,7 @@ def local_track_handoff_queue(queue_current: str | None) -> bool:
         "HUNT-TO-MAIN-PROMOTION-REVIEW",
         "DEV-AND-IA-PROMOTION-BLOCKER-01",
         "DEV-AND-IA-TO-MAIN-PROMOTION-REVIEW",
+        "IA-HUNT-BRIDGE-00",
     }
     return any(queue_current == task or queue_current.startswith(f"{task} ") for task in handoff_tasks)
 
@@ -447,6 +448,7 @@ def latest_packet_is_later_control_or_handoff(packet_text: str) -> bool:
         "AIDE-",
         "HUNT-",
         "DEV-AND-IA-",
+        "IA-HUNT-",
         "SYN-",
         "F0-",
     )
@@ -475,6 +477,7 @@ def validate_git_alignment(root: Path, report: Mapping[str, Any], errors: list[s
             "HUNT-TO-MAIN-PROMOTION-REVIEW",
             "DEV-AND-IA-PROMOTION-BLOCKER-01",
             "DEV-AND-IA-TO-MAIN-PROMOTION-REVIEW",
+            "IA-HUNT-BRIDGE-00",
         }:
             warnings.append("origin/dev is ahead of origin/main after Local Appliance queue work")
     else:
