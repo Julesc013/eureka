@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-18
 repo: julesc013/eureka
-current_recommended_task: WORKBENCH-FOUNDATION-00 — Mission Control doctrine, route/view matrix, and projection model
+current_recommended_task: SEARCH-INTERACTION-00 - Search request, compiled query, resolution run, controls, and feedback contract
 entries:
   - id: DEV-AND-IA-TO-MAIN-PROMOTION-REVIEW
     title: Promote repaired dev IA pilot plus repo layout canon baseline to main
@@ -41,7 +41,7 @@ entries:
     recommended_next: WORKBENCH-FOUNDATION-00
   - id: WORKBENCH-FOUNDATION-00
     title: Mission Control doctrine, route/view matrix, and projection model
-    status: queued
+    status: completed
     purpose: Define the Workbench as the internal/operator superset of the final Eureka product before implementing new result lanes.
     allowed_scope_summary: Workbench doctrine, route/view matrix, permission/projection matrix, packet inventory, docs, contracts if explicitly scoped, and audit evidence only.
     gate: dev/main promotion complete; no public launch, production deployment, source probes, downloads, extraction, model/provider calls, or marketplace readiness.

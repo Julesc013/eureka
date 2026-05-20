@@ -1,0 +1,13 @@
+{
+  "schema_version": "workbench_foundation_next_task_decision.v0",
+  "task": "WORKBENCH-FOUNDATION-00",
+  "decision": "SEARCH-INTERACTION-00",
+  "recommended_next_task": "SEARCH-INTERACTION-00 - Search request, compiled query, resolution run, controls, and feedback contract",
+  "planned_sequence": [
+    "WORKBENCH-RESULT-LANES-01",
+    "IA-HUNT-BRIDGE-00",
+    "SYN-00"
+  ],
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}

@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (5197 chars, 1300 approximate tokens)
+- `.aide/context/latest-task-packet.md` (5170 chars, 1293 approximate tokens)
 
 ## Context Packet Reference
 
@@ -35,27 +35,29 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/R0-03` (??; matches active task allowed path)
-- allowed: `.aide/queue/REPO-LAYOUT-CONTRACT-TAXONOMY-CLEANUP` (??; matches active task allowed path)
+- allowed: `.aide/queue/DOMAIN-00` (??; matches active task allowed path)
+- allowed: `.aide/queue/SCOUT-SCHEMA-00` (??; matches active task allowed path)
 - allowed: `.aide/queue/WORKBENCH-FOUNDATION-00/task.yaml` (M; matches active task allowed path)
 - allowed: `.aide/queue/index.yaml` (M; matches active task allowed path)
-- allowed: `control/audits/repo-layout-contract-taxonomy-cleanup-v0` (??; matches active task allowed path)
-- allowed: `control/inventory/contract_taxonomy_authority_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/contract_taxonomy_control_schemas_decision.json` (??; matches active task allowed path)
-- allowed: `control/inventory/contract_taxonomy_duplicate_authority_report.json` (??; matches active task allowed path)
-- allowed: `control/inventory/contract_taxonomy_input_state.json` (??; matches active task allowed path)
-- allowed: `control/inventory/contract_taxonomy_migration_backlog.json` (??; matches active task allowed path)
-- allowed: `control/inventory/contract_taxonomy_next_task_decision.json` (??; matches active task allowed path)
-- allowed: `control/inventory/contract_taxonomy_result.json` (??; matches active task allowed path)
-- allowed: `control/inventory/contract_taxonomy_root_inventory.json` (??; matches active task allowed path)
-- allowed: `control/inventory/contract_taxonomy_validator_matrix.json` (??; matches active task allowed path)
-- allowed: `docs/architecture/CONTRACT_TAXONOMY.md` (M; matches active task allowed path)
-- allowed: `docs/architecture/REPOSITORY_LAYOUT_CANON.md` (M; matches active task allowed path)
-- allowed: `docs/operations/CONTRACT_TAXONOMY_CLEANUP_PLAN.md` (??; matches active task allowed path)
-- allowed: `docs/operations/REPOSITORY_LAYOUT_MIGRATION_PLAN.md` (M; matches active task allowed path)
-- allowed: `scripts/validate_contract_taxonomy.py` (??; matches active task allowed path)
-- allowed: `tests/operations/test_contract_taxonomy.py` (??; matches active task allowed path)
-- allowed: `tests/scripts/test_validate_contract_taxonomy.py` (??; matches active task allowed path)
+- allowed: `.aide/reports/eureka-repo-health.json` (M; matches active task allowed path)
+- allowed: `.aide/reports/eureka-repo-health.md` (M; matches active task allowed path)
+- allowed: `contracts/domain/README.md` (??; matches active task allowed path)
+- allowed: `contracts/projections` (??; matches active task allowed path)
+- allowed: `contracts/relay/README.md` (??; matches active task allowed path)
+- allowed: `contracts/scout` (??; matches active task allowed path)
+- allowed: `contracts/search_interaction` (??; matches active task allowed path)
+- allowed: `contracts/snapshots/README.md` (??; matches active task allowed path)
+- allowed: `contracts/view_models` (??; matches active task allowed path)
+- allowed: `contracts/workbench` (??; matches active task allowed path)
+- allowed: `control/audits/workbench-foundation-00-v0` (??; matches active task allowed path)
+- allowed: `control/inventory/workbench_foundation_input_state.json` (??; matches active task allowed path)
+- allowed: `control/inventory/workbench_foundation_next_task_decision.json` (??; matches active task allowed path)
+- allowed: `control/inventory/workbench_foundation_result.json` (??; matches active task allowed path)
+- allowed: `control/inventory/workbench_foundation_validator_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/workbench_future_module_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/workbench_native_projection_boundary.json` (??; matches active task allowed path)
+- allowed: `control/inventory/workbench_packet_location_matrix.json` (??; matches active task allowed path)
+- additional changed paths omitted from compact packet: 21; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -65,8 +67,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 6542
-- approx_tokens: 1636
+- chars: 6487
+- approx_tokens: 1622
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

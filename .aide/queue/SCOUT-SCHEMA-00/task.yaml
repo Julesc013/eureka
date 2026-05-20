@@ -1,0 +1,10 @@
+id: SCOUT-SCHEMA-00
+title: SCOUT discovery trail contract schema
+status: queued
+purpose: Reserved follow-up after WORKBENCH-FOUNDATION-00.
+allowed_scope_summary: Future task must provide its own reviewed scope before implementation.
+gate:
+  - no production/public launch claim by default
+  - no unsafe actions unless future policy enables them
+recommended_after: WORKBENCH-FOUNDATION-00
+recommended_next: WORKBENCH-RESULT-LANES-01

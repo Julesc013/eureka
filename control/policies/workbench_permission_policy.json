@@ -1,0 +1,12 @@
+{
+  "schema_version": "workbench_permission_policy.v0",
+  "task": "WORKBENCH-FOUNDATION-00",
+  "operator_actions_require_explicit_policy": true,
+  "public_web_can_run_source_probe_by_default": false,
+  "public_web_can_mutate_reviewed_index": false,
+  "native_read_only_can_mutate_instance": false,
+  "downloads_enabled_by_default": false,
+  "extraction_enabled_by_default": false,
+  "model_provider_enabled_by_default": false,
+  "deployment_enabled_by_default": false
+}

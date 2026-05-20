@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": true,
+  "$id": "https://eureka.local/contracts/workbench/workbench_route.v0.json",
+  "title": "workbench_route.v0",
+  "required": [
+    "schema_version",
+    "route_id",
+    "path",
+    "module",
+    "api_packet_family",
+    "projection_profiles",
+    "blocked_actions"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "workbench_route.v0"
+    }
+  }
+}

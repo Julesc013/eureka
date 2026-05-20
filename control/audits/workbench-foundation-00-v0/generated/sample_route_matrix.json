@@ -1,0 +1,74 @@
+{
+  "schema_version": "workbench_route_matrix_sample.v0",
+  "routes": [
+    {
+      "route_id": "search",
+      "path": "/search",
+      "module": "Search Console",
+      "purpose": "Reserve Search Console route /search.",
+      "operator_projection": "visible_internal_operator",
+      "public_projection": "restricted_read_only",
+      "api_packet_family": "SearchPacket",
+      "cli_equivalent": "eureka search",
+      "current_status": "planned",
+      "implementation_owner": "contract_only",
+      "write_actions_allowed_operator": false,
+      "write_actions_allowed_public": false,
+      "blocked_actions": [
+        "download",
+        "upload",
+        "extraction",
+        "model_provider_call",
+        "deployment",
+        "master_index_mutation"
+      ],
+      "next_task": "SEARCH-INTERACTION-00"
+    },
+    {
+      "route_id": "hunt",
+      "path": "/hunt",
+      "module": "Hunt Console",
+      "purpose": "Reserve Hunt Console route /hunt.",
+      "operator_projection": "visible_internal_operator",
+      "public_projection": "hidden_or_future",
+      "api_packet_family": "HuntStatePacket",
+      "cli_equivalent": "eureka hunt",
+      "current_status": "planned",
+      "implementation_owner": "contract_only",
+      "write_actions_allowed_operator": false,
+      "write_actions_allowed_public": false,
+      "blocked_actions": [
+        "download",
+        "upload",
+        "extraction",
+        "model_provider_call",
+        "deployment",
+        "master_index_mutation"
+      ],
+      "next_task": "WORKBENCH-RESULT-LANES-01"
+    },
+    {
+      "route_id": "hunt_detail",
+      "path": "/hunt/{id}",
+      "module": "Hunt Console",
+      "purpose": "Reserve Hunt Console route /hunt/{id}.",
+      "operator_projection": "visible_internal_operator",
+      "public_projection": "hidden_or_future",
+      "api_packet_family": "HuntStatePacket",
+      "cli_equivalent": "eureka hunt-detail",
+      "current_status": "reserved",
+      "implementation_owner": "contract_only",
+      "write_actions_allowed_operator": false,
+      "write_actions_allowed_public": false,
+      "blocked_actions": [
+        "download",
+        "upload",
+        "extraction",
+        "model_provider_call",
+        "deployment",
+        "master_index_mutation"
+      ],
+      "next_task": "WORKBENCH-RESULT-LANES-01"
+    }
+  ]
+}

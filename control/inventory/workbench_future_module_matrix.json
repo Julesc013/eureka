@@ -1,0 +1,270 @@
+{
+  "schema_version": "workbench_future_module_matrix.v0",
+  "task": "WORKBENCH-FOUNDATION-00",
+  "modules": [
+    {
+      "module_id": "search_console",
+      "name": "Search Console",
+      "purpose": "Reserve Search Console as part of Eureka Mission Control.",
+      "dependencies": [
+        "SEARCH-INTERACTION-00"
+      ],
+      "current_readiness": "contract_reserved",
+      "first_runnable_task": "SEARCH-INTERACTION-00",
+      "blocked_actions": [
+        "download",
+        "upload",
+        "extraction",
+        "model_provider_call",
+        "deployment",
+        "public_fanout"
+      ],
+      "public_projection": "restricted_or_hidden",
+      "native_projection": "read_only_future"
+    },
+    {
+      "module_id": "hunt_console",
+      "name": "Hunt Console",
+      "purpose": "Reserve Hunt Console as part of Eureka Mission Control.",
+      "dependencies": [
+        "SEARCH-INTERACTION-00",
+        "WORKBENCH-RESULT-LANES-01"
+      ],
+      "current_readiness": "contract_reserved",
+      "first_runnable_task": "WORKBENCH-RESULT-LANES-01",
+      "blocked_actions": [
+        "download",
+        "upload",
+        "extraction",
+        "model_provider_call",
+        "deployment",
+        "public_fanout"
+      ],
+      "public_projection": "restricted_or_hidden",
+      "native_projection": "read_only_future"
+    },
+    {
+      "module_id": "ia_source_lab",
+      "name": "IA Source Lab",
+      "purpose": "Reserve IA Source Lab as part of Eureka Mission Control.",
+      "dependencies": [
+        "IA metadata pilot closeout"
+      ],
+      "current_readiness": "contract_reserved",
+      "first_runnable_task": "IA-HUNT-BRIDGE-00",
+      "blocked_actions": [
+        "download",
+        "upload",
+        "extraction",
+        "model_provider_call",
+        "deployment",
+        "public_fanout"
+      ],
+      "public_projection": "restricted_or_hidden",
+      "native_projection": "read_only_future"
+    },
+    {
+      "module_id": "evidence_studio",
+      "name": "Evidence Studio",
+      "purpose": "Reserve Evidence Studio as part of Eureka Mission Control.",
+      "dependencies": [
+        "EvidencePacket",
+        "CandidatePacket"
+      ],
+      "current_readiness": "contract_reserved",
+      "first_runnable_task": "WORKBENCH-RESULT-LANES-01",
+      "blocked_actions": [
+        "download",
+        "upload",
+        "extraction",
+        "model_provider_call",
+        "deployment",
+        "public_fanout"
+      ],
+      "public_projection": "restricted_or_hidden",
+      "native_projection": "read_only_future"
+    },
+    {
+      "module_id": "candidate_review",
+      "name": "Candidate Review",
+      "purpose": "Reserve Candidate Review as part of Eureka Mission Control.",
+      "dependencies": [
+        "ReviewPacket",
+        "PromotionPreviewPacket"
+      ],
+      "current_readiness": "contract_reserved",
+      "first_runnable_task": "WORKBENCH-RESULT-LANES-01",
+      "blocked_actions": [
+        "download",
+        "upload",
+        "extraction",
+        "model_provider_call",
+        "deployment",
+        "public_fanout"
+      ],
+      "public_projection": "restricted_or_hidden",
+      "native_projection": "read_only_future"
+    },
+    {
+      "module_id": "reviewed_index_builder",
+      "name": "Reviewed Index Builder",
+      "purpose": "Reserve Reviewed Index Builder as part of Eureka Mission Control.",
+      "dependencies": [
+        "ReviewedRecordPacket"
+      ],
+      "current_readiness": "contract_reserved",
+      "first_runnable_task": "WORKBENCH-RESULT-LANES-01",
+      "blocked_actions": [
+        "download",
+        "upload",
+        "extraction",
+        "model_provider_call",
+        "deployment",
+        "public_fanout"
+      ],
+      "public_projection": "restricted_or_hidden",
+      "native_projection": "read_only_future"
+    },
+    {
+      "module_id": "syn_foundry",
+      "name": "SYN Foundry",
+      "purpose": "Reserve SYN Foundry as part of Eureka Mission Control.",
+      "dependencies": [
+        "CoverageReportPacket"
+      ],
+      "current_readiness": "contract_reserved",
+      "first_runnable_task": "SYN-00",
+      "blocked_actions": [
+        "download",
+        "upload",
+        "extraction",
+        "model_provider_call",
+        "deployment",
+        "public_fanout"
+      ],
+      "public_projection": "restricted_or_hidden",
+      "native_projection": "read_only_future"
+    },
+    {
+      "module_id": "domain_pack_console",
+      "name": "DOMAIN Pack Console",
+      "purpose": "Reserve DOMAIN Pack Console as part of Eureka Mission Control.",
+      "dependencies": [
+        "contracts/domain"
+      ],
+      "current_readiness": "contract_reserved",
+      "first_runnable_task": "DOMAIN-00",
+      "blocked_actions": [
+        "download",
+        "upload",
+        "extraction",
+        "model_provider_call",
+        "deployment",
+        "public_fanout"
+      ],
+      "public_projection": "restricted_or_hidden",
+      "native_projection": "read_only_future"
+    },
+    {
+      "module_id": "scout_trail_console",
+      "name": "SCOUT Trail Console",
+      "purpose": "Reserve SCOUT Trail Console as part of Eureka Mission Control.",
+      "dependencies": [
+        "contracts/scout"
+      ],
+      "current_readiness": "contract_reserved",
+      "first_runnable_task": "SCOUT-SCHEMA-00",
+      "blocked_actions": [
+        "download",
+        "upload",
+        "extraction",
+        "model_provider_call",
+        "deployment",
+        "public_fanout"
+      ],
+      "public_projection": "restricted_or_hidden",
+      "native_projection": "read_only_future"
+    },
+    {
+      "module_id": "extraction_lab",
+      "name": "Extraction Lab",
+      "purpose": "Reserve Extraction Lab as part of Eureka Mission Control.",
+      "dependencies": [
+        "ActionPosturePacket"
+      ],
+      "current_readiness": "contract_reserved",
+      "first_runnable_task": "F0",
+      "blocked_actions": [
+        "download",
+        "upload",
+        "extraction",
+        "model_provider_call",
+        "deployment",
+        "public_fanout"
+      ],
+      "public_projection": "restricted_or_hidden",
+      "native_projection": "read_only_future"
+    },
+    {
+      "module_id": "snapshot_console",
+      "name": "Snapshot Console",
+      "purpose": "Reserve Snapshot Console as part of Eureka Mission Control.",
+      "dependencies": [
+        "contracts/snapshots"
+      ],
+      "current_readiness": "contract_reserved",
+      "first_runnable_task": "SNAPSHOT-00",
+      "blocked_actions": [
+        "download",
+        "upload",
+        "extraction",
+        "model_provider_call",
+        "deployment",
+        "public_fanout"
+      ],
+      "public_projection": "restricted_or_hidden",
+      "native_projection": "read_only_future"
+    },
+    {
+      "module_id": "relay_console",
+      "name": "Relay Console",
+      "purpose": "Reserve Relay Console as part of Eureka Mission Control.",
+      "dependencies": [
+        "contracts/relay"
+      ],
+      "current_readiness": "contract_reserved",
+      "first_runnable_task": "RELAY-00",
+      "blocked_actions": [
+        "download",
+        "upload",
+        "extraction",
+        "model_provider_call",
+        "deployment",
+        "public_fanout"
+      ],
+      "public_projection": "restricted_or_hidden",
+      "native_projection": "read_only_future"
+    },
+    {
+      "module_id": "ops_audit_console",
+      "name": "Ops/Audit Console",
+      "purpose": "Reserve Ops/Audit Console as part of Eureka Mission Control.",
+      "dependencies": [
+        "AIDE reports",
+        "control/audits"
+      ],
+      "current_readiness": "contract_reserved",
+      "first_runnable_task": "WORKBENCH-FOUNDATION-00",
+      "blocked_actions": [
+        "download",
+        "upload",
+        "extraction",
+        "model_provider_call",
+        "deployment",
+        "public_fanout"
+      ],
+      "public_projection": "restricted_or_hidden",
+      "native_projection": "read_only_future"
+    }
+  ]
+}

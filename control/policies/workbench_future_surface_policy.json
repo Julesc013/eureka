@@ -1,0 +1,9 @@
+{
+  "schema_version": "workbench_future_surface_policy.v0",
+  "task": "WORKBENCH-FOUNDATION-00",
+  "public_web_future_projection": "restricted_same_packets",
+  "public_api_future_projection": "restricted_same_packets",
+  "native_future_projection": "read_only_initially",
+  "relay_snapshot_future_projection": "read_only_initially",
+  "future_marketplace_admin_status": "reserved_not_ready"
+}

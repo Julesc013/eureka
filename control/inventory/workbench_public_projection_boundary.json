@@ -1,0 +1,32 @@
+{
+  "schema_version": "workbench_public_projection_boundary.v0",
+  "task": "WORKBENCH-FOUNDATION-00",
+  "projection_profile": "public_web",
+  "default_mode": "restricted_read_only",
+  "forbidden_default_actions": [
+    "source_probe",
+    "download",
+    "upload",
+    "extraction",
+    "model_provider_call",
+    "reviewed_index_mutation",
+    "master_index_mutation",
+    "deployment",
+    "raw_source_cache_access",
+    "private_local_path_access",
+    "operator_token_access",
+    "unreviewed_truth_claim"
+  ],
+  "source_probes_allowed": false,
+  "downloads_allowed": false,
+  "uploads_allowed": false,
+  "extraction_allowed": false,
+  "model_provider_calls_allowed": false,
+  "reviewed_index_mutation_allowed": false,
+  "master_index_mutation_allowed": false,
+  "deployment_allowed": false,
+  "raw_source_cache_access_allowed": false,
+  "private_local_paths_allowed": false,
+  "operator_tokens_allowed": false,
+  "unreviewed_truth_claims_allowed": false
+}

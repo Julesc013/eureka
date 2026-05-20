@@ -1,0 +1,9 @@
+{
+  "schema_version": "workbench_projection_policy.v0",
+  "task": "WORKBENCH-FOUNDATION-00",
+  "workbench_is_internal_superset": true,
+  "public_projections_are_restricted": true,
+  "native_read_only_by_default": true,
+  "surfaces_must_not_fork_packet_semantics": true,
+  "unsafe_actions_disabled_by_default": true
+}
