@@ -5,8 +5,8 @@
   "roots": [
     {
       "path": "contracts",
-      "file_count": 324,
-      "json_count": 227,
+      "file_count": 326,
+      "json_count": 228,
       "toml_count": 4,
       "yaml_count": 66,
       "python_count": 0,
@@ -16,6 +16,20 @@
       "authority_class": "PRODUCT_PUBLIC_CONTRACT",
       "migration_needed": false,
       "notes": "Subroots may still need taxonomy cleanup, but product contract authority remains under contracts/."
+    },
+    {
+      "path": "contracts/testing",
+      "file_count": 2,
+      "json_count": 1,
+      "toml_count": 0,
+      "yaml_count": 0,
+      "python_count": 0,
+      "apparent_owner": "test selection contract authority",
+      "current_role": "test lane, test selection, and test result packet schemas consumed by repo tooling",
+      "proposed_role": "PRODUCT_INTERNAL_CONTRACT for repo-internal testing packet contracts",
+      "authority_class": "PRODUCT_INTERNAL_CONTRACT",
+      "migration_needed": false,
+      "notes": "Not runtime implementation, product data, example payload authority, generated output, or test result storage."
     },
     {
       "path": "contracts/repo",

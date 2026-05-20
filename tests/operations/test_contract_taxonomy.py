@@ -53,6 +53,7 @@ class ContractTaxonomyOperationsTest(unittest.TestCase):
             "control_policy_schemas",
             "control_inventory_schemas",
             "generated_artifact_contracts",
+            "testing_contracts",
             "IA_metadata_pilot_contracts",
             "Workbench_future_view_models",
             "Search_Interaction_future_packets",
@@ -91,6 +92,24 @@ class ContractTaxonomyOperationsTest(unittest.TestCase):
         self.assertEqual("EXAMPLE_PAYLOAD", roots["examples"]["authority_class"])
         self.assertEqual("NOT_CONTRACT_AUTHORITY", roots["runtime"]["authority_class"])
         self.assertEqual("NOT_CONTRACT_AUTHORITY", roots["scripts"]["authority_class"])
+
+    def test_testing_contracts_are_product_internal_contracts(self) -> None:
+        matrix = load_json("control/inventory/contract_taxonomy_authority_matrix.json")
+        families = {item["family_id"]: item for item in matrix["families"]}
+        testing = families["testing_contracts"]
+
+        self.assertEqual("PRODUCT_INTERNAL_CONTRACT", testing["authority_class"])
+        self.assertEqual("contracts/testing/", testing["canonical_authority_path"])
+        self.assertIn("contracts/testing/**", testing["current_paths"])
+        self.assertFalse(testing["duplicate_authority_risk"])
+        self.assertFalse(testing["migration_required"])
+
+        inventory = load_json("control/inventory/contract_taxonomy_root_inventory.json")
+        roots = {item["path"]: item for item in inventory["roots"]}
+        self.assertEqual("PRODUCT_INTERNAL_CONTRACT", roots["contracts/testing"]["authority_class"])
+        self.assertNotEqual("EXAMPLE_PAYLOAD", roots["contracts/testing"]["authority_class"])
+        self.assertNotEqual("NOT_CONTRACT_AUTHORITY", roots["contracts/testing"]["authority_class"])
+        self.assertTrue((REPO_ROOT / "contracts/testing/test_selection_result.v0.json").is_file())
 
     def test_future_contract_locations_are_reserved(self) -> None:
         matrix = load_json("control/inventory/contract_taxonomy_authority_matrix.json")

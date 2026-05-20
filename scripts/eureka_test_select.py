@@ -32,14 +32,16 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout) -> int:
     parser.add_argument("--full", action="store_true", help="Select L3 full discovery.")
     parser.add_argument("--json", action="store_true", help="Emit JSON.")
     parser.add_argument("--output", help="Write JSON result to this path.")
+    parser.add_argument("--repo-root", default=str(REPO_ROOT), help=argparse.SUPPRESS)
     args = parser.parse_args(argv)
 
-    result = select_tests(args)
+    root = Path(args.repo_root).resolve()
+    result = select_tests(args, root)
     text = json.dumps(result, indent=2, sort_keys=True)
     if args.output:
         output_path = Path(args.output)
         if not output_path.is_absolute():
-            output_path = REPO_ROOT / output_path
+            output_path = root / output_path
         output_path.parent.mkdir(parents=True, exist_ok=True)
         output_path.write_text(text + "\n", encoding="utf-8")
     if args.json:
@@ -50,9 +52,9 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout) -> int:
 
 
 def select_tests(args: argparse.Namespace, root: Path = REPO_ROOT) -> dict[str, Any]:
-    policy = load_json(POLICY_PATH)
-    impact_map = load_json(IMPACT_MAP_PATH)
-    ledger = load_json(FAILURE_LEDGER_PATH)
+    policy = load_json(root / POLICY_PATH.relative_to(REPO_ROOT))
+    impact_map = load_json(root / IMPACT_MAP_PATH.relative_to(REPO_ROOT))
+    ledger = load_json(root / FAILURE_LEDGER_PATH.relative_to(REPO_ROOT))
 
     changed_paths = collect_changed_paths(args, root)
     mode = determine_mode(args)

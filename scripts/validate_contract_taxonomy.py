@@ -29,6 +29,7 @@ REQUIRED_FAMILIES = {
     "control_policy_schemas",
     "control_inventory_schemas",
     "generated_artifact_contracts",
+    "testing_contracts",
     "IA_metadata_pilot_contracts",
     "Workbench_future_view_models",
     "Search_Interaction_future_packets",
@@ -101,7 +102,7 @@ def validate_repo(root: Path = REPO_ROOT) -> dict[str, Any]:
     validate_markdown(root, errors)
     validate_input_state(payloads["control/inventory/contract_taxonomy_input_state.json"], errors)
     validate_root_inventory(payloads["control/inventory/contract_taxonomy_root_inventory.json"], errors)
-    validate_authority_matrix(payloads["control/inventory/contract_taxonomy_authority_matrix.json"], errors)
+    validate_authority_matrix(payloads["control/inventory/contract_taxonomy_authority_matrix.json"], root, errors)
     validate_duplicate_report(payloads["control/inventory/contract_taxonomy_duplicate_authority_report.json"], errors)
     validate_control_schemas_decision(payloads["control/inventory/contract_taxonomy_control_schemas_decision.json"], errors)
     validate_backlog(payloads["control/inventory/contract_taxonomy_migration_backlog.json"], errors)
@@ -158,6 +159,7 @@ def validate_root_inventory(payload: Mapping[str, Any], errors: list[str]) -> No
     for path in (
         "contracts",
         "contracts/repo",
+        "contracts/testing",
         "control/schemas",
         "control/policies",
         "control/inventory",
@@ -176,9 +178,16 @@ def validate_root_inventory(payload: Mapping[str, Any], errors: list[str]) -> No
         errors.append("runtime must not be classified as contract authority")
     if roots.get("contracts/repo", {}).get("authority_class") != "PRODUCT_INTERNAL_CONTRACT":
         errors.append("contracts/repo files must be classified")
+    testing = roots.get("contracts/testing", {})
+    if testing.get("authority_class") != "PRODUCT_INTERNAL_CONTRACT":
+        errors.append("contracts/testing must be classified as PRODUCT_INTERNAL_CONTRACT")
+    if testing.get("authority_class") in {"EXAMPLE_PAYLOAD", "FIXTURE_SCHEMA"}:
+        errors.append("contracts/testing must not be classified as example or fixture authority")
+    if testing.get("authority_class") == "NOT_CONTRACT_AUTHORITY":
+        errors.append("contracts/testing must not be classified as runtime or generated implementation state")
 
 
-def validate_authority_matrix(payload: Mapping[str, Any], errors: list[str]) -> None:
+def validate_authority_matrix(payload: Mapping[str, Any], root: Path, errors: list[str]) -> None:
     families = {str(item.get("family_id")): item for item in payload.get("families", []) if isinstance(item, Mapping)}
     missing = REQUIRED_FAMILIES - set(families)
     if missing:
@@ -197,12 +206,64 @@ def validate_authority_matrix(payload: Mapping[str, Any], errors: list[str]) -> 
         if item.get("duplicate_authority_risk") is True and not item.get("migration_required"):
             errors.append(f"{family_id} records duplicate authority without migration_required")
 
+    testing = families.get("testing_contracts", {})
+    if testing:
+        if testing.get("authority_class") != "PRODUCT_INTERNAL_CONTRACT":
+            errors.append("testing_contracts must be PRODUCT_INTERNAL_CONTRACT")
+        if testing.get("canonical_authority_path") != "contracts/testing/":
+            errors.append("testing_contracts must use contracts/testing/ as canonical authority")
+        if "contracts/testing/**" not in set(testing.get("current_paths", [])):
+            errors.append("testing_contracts must include contracts/testing/**")
+        if testing.get("duplicate_authority_risk") not in {False, "low"}:
+            errors.append("testing_contracts duplicate_authority_risk must be false or low")
+        if testing.get("migration_required") is not False:
+            errors.append("testing_contracts migration_required must be false")
+        if not testing.get("validator_required"):
+            errors.append("testing_contracts validator_required must be set")
+        secondary = str(testing.get("allowed_secondary_role", ""))
+        for required in ("control/inventory", "tests", "scripts"):
+            if required not in secondary:
+                errors.append(f"testing_contracts allowed_secondary_role must mention {required}")
+        if testing.get("authority_class") in {"EXAMPLE_PAYLOAD", "FIXTURE_SCHEMA"}:
+            errors.append("testing_contracts must not be example payload authority")
+        if str(testing.get("canonical_authority_path", "")).startswith("runtime/"):
+            errors.append("testing_contracts must not be runtime implementation authority")
+
     workbench = families.get("Workbench_future_view_models", {})
     if workbench.get("canonical_authority_path") != "contracts/views/workbench/":
         errors.append("Workbench future view models must reserve contracts/views/workbench/")
     search = families.get("Search_Interaction_future_packets", {})
     if search.get("canonical_authority_path") != "contracts/search/interaction/":
         errors.append("Search Interaction future packets must reserve contracts/search/interaction/")
+    validate_testing_contracts_on_disk(root, families, errors)
+
+
+def validate_testing_contracts_on_disk(
+    root: Path, families: Mapping[str, Mapping[str, Any]], errors: list[str]
+) -> None:
+    testing_root = root / "contracts/testing"
+    selector_contract = testing_root / "test_selection_result.v0.json"
+    test_lane_router_present = (root / "scripts/eureka_test_select.py").is_file() or (
+        root / "control/inventory/test_lane_router_result.json"
+    ).is_file()
+
+    if testing_root.exists() and "testing_contracts" not in families:
+        errors.append("contracts/testing exists but testing_contracts is missing from authority matrix")
+    if test_lane_router_present and not testing_root.is_dir():
+        errors.append("test lane router requires contracts/testing")
+    if test_lane_router_present and not selector_contract.is_file():
+        errors.append("test lane router requires contracts/testing/test_selection_result.v0.json")
+    if selector_contract.is_file():
+        try:
+            payload = json.loads(selector_contract.read_text(encoding="utf-8"))
+        except json.JSONDecodeError as exc:
+            errors.append(f"contracts/testing/test_selection_result.v0.json must be valid JSON: {exc}")
+        else:
+            if payload.get("schema_version") != "test_selection_result_schema.v0":
+                errors.append("test_selection_result contract schema_version must be test_selection_result_schema.v0")
+            properties = payload.get("properties", {})
+            if not isinstance(properties, Mapping) or properties.get("schema_version", {}).get("const") != "test_selection_result.v0":
+                errors.append("test_selection_result contract must recognize test_selection_result.v0 packets")
 
 
 def validate_duplicate_report(payload: Mapping[str, Any], errors: list[str]) -> None:
@@ -260,6 +321,8 @@ def validate_result(payload: Mapping[str, Any], errors: list[str]) -> None:
         "runtime_classified_not_contract_authority",
         "workbench_contract_location_reserved",
         "search_interaction_contract_location_reserved",
+        "testing_contract_location_classified",
+        "test_selection_result_contract_recognized",
     ):
         require_true(payload, key, errors)
     for key in ("large_file_moves_performed", "files_deleted", "runtime_behavior_changed"):

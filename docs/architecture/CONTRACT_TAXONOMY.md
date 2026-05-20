@@ -63,6 +63,13 @@ Future Workbench view-model contracts are reserved under
 `contracts/views/workbench/`. Future Search Interaction packets are reserved
 under `contracts/search/interaction/`.
 
+`contracts/testing/` owns `PRODUCT_INTERNAL_CONTRACT` records for
+machine-readable test-lane, test-selection, and test-result packet schemas such
+as `contracts/testing/test_selection_result.v0.json`. These contracts may be
+consumed by scripts, validators, tests, AIDE, and future CI tooling. They must
+not become runtime implementation, product data, example payload authority,
+generated artifact output, or test result storage.
+
 `control/schemas/` may own `CONTROL_SCHEMA` only. Product contracts are not
 allowed under `control/schemas/`. Current control schemas are retained for audit,
 fixture, preview, policy, validator, task, and deprecated records, with migration

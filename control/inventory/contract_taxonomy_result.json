@@ -17,6 +17,8 @@
   "runtime_classified_not_contract_authority": true,
   "workbench_contract_location_reserved": true,
   "search_interaction_contract_location_reserved": true,
+  "testing_contract_location_classified": true,
+  "test_selection_result_contract_recognized": true,
   "large_file_moves_performed": false,
   "files_deleted": false,
   "runtime_behavior_changed": false,

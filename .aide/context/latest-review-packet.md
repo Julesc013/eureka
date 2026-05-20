@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (4788 chars, 1197 approximate tokens)
+- `.aide/context/latest-task-packet.md` (4955 chars, 1239 approximate tokens)
 
 ## Context Packet Reference
 
@@ -35,21 +35,29 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/IA-HUNT-BRIDGE-00/task.yaml` (M; matches active task allowed path)
+- allowed: `.aide/queue/R0-03A-CONTRACT-TAXONOMY-TESTING-REPAIR` (??; matches active task allowed path)
 - allowed: `.aide/queue/WORKBENCH-RESULT-LANES-CLOSEOUT-01/task.yaml` (M; matches active task allowed path)
 - allowed: `.aide/queue/index.yaml` (M; matches active task allowed path)
 - allowed: `.aide/reports/eureka-repo-health.json` (M; matches active task allowed path)
 - allowed: `.aide/reports/eureka-repo-health.md` (M; matches active task allowed path)
-- allowed: `control/audits/workbench-result-lanes-closeout-01-v0` (??; matches active task allowed path)
+- allowed: `control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json` (M; matches active task allowed path)
+- allowed: `control/audits/r0-03a-contract-taxonomy-testing-repair-v0` (??; matches active task allowed path)
+- allowed: `control/inventory/contract_taxonomy_authority_matrix.json` (M; matches active task allowed path)
+- allowed: `control/inventory/contract_taxonomy_inventory.json` (M; matches active task allowed path)
+- allowed: `control/inventory/contract_taxonomy_result.json` (M; matches active task allowed path)
+- allowed: `control/inventory/contract_taxonomy_root_inventory.json` (M; matches active task allowed path)
+- allowed: `control/inventory/r0_03a_contract_taxonomy_testing_input_state.json` (??; matches active task allowed path)
+- allowed: `control/inventory/r0_03a_contract_taxonomy_testing_next_task_decision.json` (??; matches active task allowed path)
+- allowed: `control/inventory/r0_03a_contract_taxonomy_testing_repair_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/r0_03a_contract_taxonomy_testing_result.json` (??; matches active task allowed path)
+- allowed: `control/inventory/r0_03a_contract_taxonomy_testing_validation_matrix.json` (??; matches active task allowed path)
 - allowed: `control/inventory/test_failure_ledger.json` (M; matches active task allowed path)
-- allowed: `control/inventory/workbench_result_lanes_closeout_failure_ledger_update.json` (??; matches active task allowed path)
-- allowed: `control/inventory/workbench_result_lanes_closeout_input_state.json` (??; matches active task allowed path)
-- allowed: `control/inventory/workbench_result_lanes_closeout_next_task_decision.json` (??; matches active task allowed path)
-- allowed: `control/inventory/workbench_result_lanes_closeout_result.json` (??; matches active task allowed path)
-- allowed: `control/inventory/workbench_result_lanes_closeout_test_selection.json` (??; matches active task allowed path)
-- allowed: `control/inventory/workbench_result_lanes_closeout_validation_matrix.json` (??; matches active task allowed path)
-- allowed: `docs/operations/POST_RESULT_LANES_PLAN.md` (M; matches active task allowed path)
-- allowed: `docs/operations/WORKBENCH_RESULT_LANES_CLOSEOUT.md` (??; matches active task allowed path)
+- allowed: `control/inventory/workbench_result_lanes_closeout_failure_ledger_update.json` (M; matches active task allowed path)
+- allowed: `control/inventory/workbench_result_lanes_closeout_next_task_decision.json` (M; matches active task allowed path)
+- allowed: `control/inventory/workbench_result_lanes_closeout_result.json` (M; matches active task allowed path)
+- allowed: `docs/architecture/CONTRACT_TAXONOMY.md` (M; matches active task allowed path)
+- allowed: `scripts/eureka_test_select.py` (M; matches active task allowed path)
+- additional changed paths omitted from compact packet: 5; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -59,8 +67,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 5999
-- approx_tokens: 1500
+- chars: 6906
+- approx_tokens: 1727
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

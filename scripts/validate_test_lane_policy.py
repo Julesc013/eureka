@@ -147,6 +147,11 @@ def validate_repo(root: Path) -> dict[str, Any]:
         ):
             if key not in failure:
                 errors.append(f"failure ledger entry missing {key}")
+    active_failures = [
+        failure
+        for failure in failures
+        if failure.get("status") in {"new", "reproduced", "fixed_pending_full"}
+    ]
 
     changed = run_selector(root, "--changed", "--json")
     failed_first = run_selector(root, "--failed-first", "--json")
@@ -157,7 +162,7 @@ def validate_repo(root: Path) -> dict[str, Any]:
             errors.append(f"{label} selector returned wrong schema")
         if not payload.get("skip_reasons"):
             errors.append(f"{label} selector omitted skip reasons")
-    if not failed_first.get("failed_first_commands"):
+    if active_failures and not failed_first.get("failed_first_commands"):
         errors.append("failed-first selector must prioritize known failures")
     if "L3_full_discovery" not in set(promotion.get("selected_lanes", [])):
         errors.append("promotion selector must include L3 full discovery")
@@ -167,7 +172,7 @@ def validate_repo(root: Path) -> dict[str, Any]:
         errors.append("promotion selector must mark full discovery required")
     active_blockers = [
         failure for failure in failures
-        if failure.get("status") in {"new", "reproduced", "fixed_pending_full"}
+        if failure in active_failures
         and failure.get("blocking_level") in {"promotion_blocker", "release_blocker", "commit_blocker"}
     ]
     if active_blockers and promotion.get("promotion_allowed") is not False:
@@ -189,7 +194,7 @@ def validate_repo(root: Path) -> dict[str, Any]:
         "status": "valid" if not errors else "invalid",
         "errors": errors,
         "selector_changed_mode_passed": not errors_in_selector(changed),
-        "selector_failed_first_mode_passed": bool(failed_first.get("failed_first_commands")),
+        "selector_failed_first_mode_passed": not active_failures or bool(failed_first.get("failed_first_commands")),
         "selector_promotion_mode_passed": "L3_full_discovery" in set(promotion.get("selected_lanes", [])),
         "production_readiness_claimed": False,
         "public_launch_readiness_claimed": False,
@@ -236,4 +241,3 @@ def rel(path: Path) -> str:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

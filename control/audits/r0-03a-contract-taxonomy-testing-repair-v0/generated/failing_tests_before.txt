@@ -1,0 +1,112 @@
+R0-03A-CONTRACT-TAXONOMY-TESTING-REPAIR before-state reproduction
+
+COMMAND: python -m unittest tests.operations.test_contract_taxonomy -v
+EXIT_CODE: 0
+DURATION_SECONDS: 0.074
+OUTPUT_TAIL:
+test_docs_define_authority_classes (tests.operations.test_contract_taxonomy.ContractTaxonomyOperationsTest.test_docs_define_authority_classes) ... ok
+test_duplicate_risks_and_control_schema_decision_are_recorded (tests.operations.test_contract_taxonomy.ContractTaxonomyOperationsTest.test_duplicate_risks_and_control_schema_decision_are_recorded) ... ok
+test_examples_and_runtime_do_not_own_contract_authority (tests.operations.test_contract_taxonomy.ContractTaxonomyOperationsTest.test_examples_and_runtime_do_not_own_contract_authority) ... ok
+test_future_contract_locations_are_reserved (tests.operations.test_contract_taxonomy.ContractTaxonomyOperationsTest.test_future_contract_locations_are_reserved) ... ok
+test_required_families_are_inventoried (tests.operations.test_contract_taxonomy.ContractTaxonomyOperationsTest.test_required_families_are_inventoried) ... ok
+test_result_records_no_moves_or_runtime_changes (tests.operations.test_contract_taxonomy.ContractTaxonomyOperationsTest.test_result_records_no_moves_or_runtime_changes) ... ok
+System.Management.Automation.RemoteException
+----------------------------------------------------------------------
+Ran 6 tests in 0.001s
+System.Management.Automation.RemoteException
+OK
+COMMAND: python -m unittest tests.scripts.test_validate_contract_taxonomy -v
+EXIT_CODE: 0
+DURATION_SECONDS: 0.372
+OUTPUT_TAIL:
+test_validator_json_passes_and_records_non_claims (tests.scripts.test_validate_contract_taxonomy.ContractTaxonomyValidatorScriptTest.test_validator_json_passes_and_records_non_claims) ... ok
+test_validator_plain_passes (tests.scripts.test_validate_contract_taxonomy.ContractTaxonomyValidatorScriptTest.test_validator_plain_passes) ... ok
+test_validator_rejects_missing_duplicate_risk (tests.scripts.test_validate_contract_taxonomy.ContractTaxonomyValidatorScriptTest.test_validator_rejects_missing_duplicate_risk) ... ok
+test_validator_rejects_runtime_as_contract_authority (tests.scripts.test_validate_contract_taxonomy.ContractTaxonomyValidatorScriptTest.test_validator_rejects_runtime_as_contract_authority) ... ok
+System.Management.Automation.RemoteException
+----------------------------------------------------------------------
+Ran 4 tests in 0.299s
+System.Management.Automation.RemoteException
+OK
+
+COMMAND: python scripts/validate_contract_taxonomy.py
+EXIT_CODE: 0
+DURATION_SECONDS: 0.057
+OUTPUT_TAIL:
+Contract taxonomy validation
+status: valid
+error_count: 0
+
+COMMAND: python -m unittest tests.operations.test_contract_taxonomy_plan -v
+EXIT_CODE: 1
+DURATION_SECONDS: 22.514
+OUTPUT_TAIL:
+test_audit_script_runs_in_check_mode (tests.operations.test_contract_taxonomy_plan.ContractTaxonomyPlanTests.test_audit_script_runs_in_check_mode) ... ok
+test_builds_reference_graph (tests.operations.test_contract_taxonomy_plan.ContractTaxonomyPlanTests.test_builds_reference_graph) ... ok
+test_classifies_audit_schema_fixture (tests.operations.test_contract_taxonomy_plan.ContractTaxonomyPlanTests.test_classifies_audit_schema_fixture) ... ok
+test_classifies_fixture_schema_fixture (tests.operations.test_contract_taxonomy_plan.ContractTaxonomyPlanTests.test_classifies_fixture_schema_fixture) ... ok
+test_classifies_preview_schema_fixture (tests.operations.test_contract_taxonomy_plan.ContractTaxonomyPlanTests.test_classifies_preview_schema_fixture) ... ok
+test_classifies_product_contract_fixture (tests.operations.test_contract_taxonomy_plan.ContractTaxonomyPlanTests.test_classifies_product_contract_fixture) ... ok
+test_detects_phase_bundle_quality_delta_in_product_contract_like_path (tests.operations.test_contract_taxonomy_plan.ContractTaxonomyPlanTests.test_detects_phase_bundle_quality_delta_in_product_contract_like_path) ... ok
+test_detects_zero_byte_or_near_empty_contract_fixture (tests.operations.test_contract_taxonomy_plan.ContractTaxonomyPlanTests.test_detects_zero_byte_or_near_empty_contract_fixture) ... ok
+test_migration_policy_validates (tests.operations.test_contract_taxonomy_plan.ContractTaxonomyPlanTests.test_migration_policy_validates) ... ok
+test_proposes_target_path (tests.operations.test_contract_taxonomy_plan.ContractTaxonomyPlanTests.test_proposes_target_path) ... ok
+test_r0_report_blocks_f0_and_dev_to_main (tests.operations.test_contract_taxonomy_plan.ContractTaxonomyPlanTests.test_r0_report_blocks_f0_and_dev_to_main) ... ok
+test_refuses_forbidden_output_roots (tests.operations.test_contract_taxonomy_plan.ContractTaxonomyPlanTests.test_refuses_forbidden_output_roots) ... ok
+test_taxonomy_policy_validates (tests.operations.test_contract_taxonomy_plan.ContractTaxonomyPlanTests.test_taxonomy_policy_validates) ... ok
+test_validator_confirms_no_contract_files_moved_and_recommends_r0_03b (tests.operations.test_contract_taxonomy_plan.ContractTaxonomyPlanTests.test_validator_confirms_no_contract_files_moved_and_recommends_r0_03b) ... FAIL
+test_validator_does_not_call_network_or_provider (tests.operations.test_contract_taxonomy_plan.ContractTaxonomyPlanTests.test_validator_does_not_call_network_or_provider) ... ok
+test_writes_explicit_outputs_to_temp_paths (tests.operations.test_contract_taxonomy_plan.ContractTaxonomyPlanTests.test_writes_explicit_outputs_to_temp_paths) ... ok
+test_writes_no_files_by_default (tests.operations.test_contract_taxonomy_plan.ContractTaxonomyPlanTests.test_writes_no_files_by_default) ... ok
+System.Management.Automation.RemoteException
+======================================================================
+FAIL: test_validator_confirms_no_contract_files_moved_and_recommends_r0_03b (tests.operations.test_contract_taxonomy_plan.ContractTaxonomyPlanTests.test_validator_confirms_no_contract_files_moved_and_recommends_r0_03b)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Projects\Eureka\eureka\tests\operations\test_contract_taxonomy_plan.py", line 211, in test_validator_confirms_no_contract_files_moved_and_recommends_r0_03b
+    self.assertEqual(0, proc.returncode, proc.stdout + proc.stderr)
+AssertionError: 0 != 1 : {
+  "contracts_moved": false,
+  "dev_to_main_should_remain_blocked": true,
+  "errors": [
+    "inventory must classify every contract-like file; missing=['contracts/testing/test_selection_result.v0.json'] extra=[]"
+  ],
+  "f0_should_remain_blocked": true,
+  "model_provider_calls_made": false,
+  "network_calls_made": false,
+  "planning_only": true,
+  "recommended_next_task": "R0-03B \u2014 Contract taxonomy refactor execution",
+  "runtime_modified": false,
+  "schema_version": "r0_03a_validation.v0",
+  "status": "invalid",
+  "task": "R0-03A"
+}
+System.Management.Automation.RemoteException
+System.Management.Automation.RemoteException
+----------------------------------------------------------------------
+Ran 17 tests in 22.440s
+System.Management.Automation.RemoteException
+FAILED (failures=1)
+
+COMMAND: python -m unittest tests.operations.test_local_appliance_track -v
+EXIT_CODE: 0
+DURATION_SECONDS: 0.081
+OUTPUT_TAIL:
+test_agent_policy_blocks_direct_public_index_mutation (tests.operations.test_local_appliance_track.LocalApplianceTrackTests.test_agent_policy_blocks_direct_public_index_mutation) ... ok
+test_agent_policy_blocks_package_download_install_execute (tests.operations.test_local_appliance_track.LocalApplianceTrackTests.test_agent_policy_blocks_package_download_install_execute) ... ok
+test_agent_policy_blocks_truth_acceptance (tests.operations.test_local_appliance_track.LocalApplianceTrackTests.test_agent_policy_blocks_truth_acceptance) ... ok
+test_explicit_instance_path_required (tests.operations.test_local_appliance_track.LocalApplianceTrackTests.test_explicit_instance_path_required) ... ok
+test_f0_deferred_until_local_14 (tests.operations.test_local_appliance_track.LocalApplianceTrackTests.test_f0_deferred_until_local_14) ... ok
+test_future_task_gate_rejects_scaffold_only_product_completion (tests.operations.test_local_appliance_track.LocalApplianceTrackTests.test_future_task_gate_rejects_scaffold_only_product_completion) ... ok
+test_hidden_local_state_roots_forbidden (tests.operations.test_local_appliance_track.LocalApplianceTrackTests.test_hidden_local_state_roots_forbidden) ... ok
+test_lan_disabled_by_default (tests.operations.test_local_appliance_track.LocalApplianceTrackTests.test_lan_disabled_by_default) ... ok
+test_localhost_default_true (tests.operations.test_local_appliance_track.LocalApplianceTrackTests.test_localhost_default_true) ... ok
+test_proof_levels_are_defined (tests.operations.test_local_appliance_track.LocalApplianceTrackTests.test_proof_levels_are_defined) ... ok
+test_queue_points_to_local_track_successor (tests.operations.test_local_appliance_track.LocalApplianceTrackTests.test_queue_points_to_local_track_successor) ... ok
+test_read_only_default_true (tests.operations.test_local_appliance_track.LocalApplianceTrackTests.test_read_only_default_true) ... ok
+test_validator_passes (tests.operations.test_local_appliance_track.LocalApplianceTrackTests.test_validator_passes) ... ok
+System.Management.Automation.RemoteException
+----------------------------------------------------------------------
+Ran 13 tests in 0.011s
+System.Management.Automation.RemoteException
+OK

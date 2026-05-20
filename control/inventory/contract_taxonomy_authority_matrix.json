@@ -15,6 +15,18 @@
       "notes": "Machine-readable repo layout contracts remain under contracts/repo."
     },
     {
+      "family_id": "testing_contracts",
+      "current_paths": ["contracts/testing/**"],
+      "authority_class": "PRODUCT_INTERNAL_CONTRACT",
+      "canonical_authority_path": "contracts/testing/",
+      "secondary_paths": ["control/inventory/test_*.json", "tests/**", "scripts/eureka_test_select.py", "scripts/validate_test_lane_policy.py"],
+      "allowed_secondary_role": "control/inventory may store current test lane state and failure ledgers; tests may validate schemas; scripts may consume or emit packets",
+      "duplicate_authority_risk": false,
+      "migration_required": false,
+      "validator_required": "scripts/validate_contract_taxonomy.py",
+      "notes": "Machine-readable test lane, test selection, and test result packet contracts consumed by repo tooling; not runtime implementation, product data, example payload authority, generated output, or test result storage."
+    },
+    {
       "family_id": "source_registry_contracts",
       "current_paths": ["contracts/source_registry/*.schema.yaml", "contracts/sources/source_registry.v2.json"],
       "authority_class": "PRODUCT_PUBLIC_CONTRACT",

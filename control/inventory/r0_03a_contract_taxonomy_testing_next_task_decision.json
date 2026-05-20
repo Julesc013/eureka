@@ -1,0 +1,14 @@
+{
+  "schema_version": "r0_03a_contract_taxonomy_testing_next_task_decision.v0",
+  "task": "R0-03A-CONTRACT-TAXONOMY-TESTING-REPAIR",
+  "status": "pass",
+  "decision": "IA-HUNT-BRIDGE-00",
+  "recommended_next_task": "IA-HUNT-BRIDGE-00 \u2014 Connect IA metadata source work to Hunt, WorkUnits, and result lanes",
+  "ia_hunt_bridge_can_start": true,
+  "full_discovery_passed": true,
+  "active_blocking_failures_remaining": 0,
+  "fixed_pending_full_remaining": 0,
+  "ia_hunt_bridge_started": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}

@@ -2,11 +2,11 @@
 
 ## PHASE
 
-UNSPECIFIED - WORKBENCH-RESULT-LANES-CLOSEOUT-01
+UNSPECIFIED - R0-03A-CONTRACT-TAXONOMY-TESTING-REPAIR
 
 ## GOAL
 
-WORKBENCH-RESULT-LANES-CLOSEOUT-01
+R0-03A-CONTRACT-TAXONOMY-TESTING-REPAIR
 
 ## WHY
 
@@ -44,15 +44,19 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 - `.aide/**`
 - `AGENTS.md`
+- `docs/architecture/**`
 - `docs/operations/**`
 - `docs/reference/**`
 - `control/inventory/**`
 - `control/audits/**`
 - `control/policies/**`
+- `scripts/eureka_test_select.py`
 - `scripts/local_queue_progress.py`
 - `scripts/validate_*.py`
 - `scripts/check_*.py`
 - `tests/operations/**`
+- `tests/scripts/test_eureka_test_select.py`
+- `tests/scripts/test_validate_contract_taxonomy.py`
 - `tests/aide/**`
 
 ## FORBIDDEN_PATHS
@@ -139,8 +143,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4788
-- approx_tokens: 1197
+- chars: 4798
+- approx_tokens: 1200
 - budget_status: PASS
 - warnings:
   - none

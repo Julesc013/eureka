@@ -1,0 +1,199 @@
+R0-03A-CONTRACT-TAXONOMY-TESTING-REPAIR after-state targeted validation
+
+COMMAND: python scripts/validate_contract_taxonomy.py
+EXIT_CODE: 0
+DURATION_SECONDS: 0.086
+OUTPUT_TAIL:
+Contract taxonomy validation
+status: valid
+error_count: 0
+
+COMMAND: python scripts/validate_test_lane_policy.py
+EXIT_CODE: 0
+DURATION_SECONDS: 0.734
+OUTPUT_TAIL:
+Test lane policy validation
+status: valid
+error_count: 0
+
+COMMAND: python scripts/eureka_test_select.py --changed --failed-first --json
+EXIT_CODE: 0
+DURATION_SECONDS: 0.309
+OUTPUT_TAIL:
+    },
+    {
+      "command": "python scripts/check_generated_artifact_cleanliness.py --check --json",
+      "lane_id": "L0_static_preflight",
+      "reason": "base preflight",
+      "source": "test_lane_policy"
+    },
+    {
+      "command": "python -m unittest tests.scripts.test_validate_test_lane_policy",
+      "lane_id": "L1_focused_unit",
+      "reason": "validator_scripts focused test",
+      "source": "scripts/validate_*.py"
+    },
+    {
+      "command": "python scripts/validate_test_lane_policy.py",
+      "lane_id": "L2_impact_integration",
+      "reason": "validator_scripts smoke",
+      "source": "scripts/validate_*.py"
+    },
+    {
+      "command": "python -m unittest tests.scripts.test_eureka_test_select",
+      "lane_id": "L1_focused_unit",
+      "reason": "repo_tooling_scripts focused test",
+      "source": "scripts/eureka_*.py"
+    },
+    {
+      "command": "python scripts/eureka_test_select.py --changed --failed-first --json",
+      "lane_id": "L2_impact_integration",
+      "reason": "repo_tooling_scripts smoke",
+      "source": "scripts/eureka_*.py"
+    },
+    {
+      "command": "python -m unittest tests.operations.test_test_impact_map",
+      "lane_id": "L1_focused_unit",
+      "reason": "control_inventory focused test",
+      "source": "control/inventory/**"
+    },
+    {
+      "command": "python -m unittest tests.operations.test_test_failure_ledger",
+      "lane_id": "L1_focused_unit",
+      "reason": "control_inventory focused test",
+      "source": "control/inventory/**"
+    },
+    {
+      "command": "python -m unittest tests.operations.test_test_lane_policy",
+      "lane_id": "L1_focused_unit",
+      "reason": "tests focused test",
+      "source": "tests/**"
+    },
+    {
+      "command": "python -m unittest tests.operations.test_contract_taxonomy_plan",
+      "lane_id": "L1_focused_unit",
+      "reason": "failed-first full-discovery-2026-05-21-contract-taxonomy-testing-selection-result",
+      "source": "test_failure_ledger"
+    },
+    {
+      "command": "python -m unittest tests.operations.test_local_appliance_track",
+      "lane_id": "L1_focused_unit",
+      "reason": "failed-first full-discovery-2026-05-21-local-appliance-repo-health",
+      "source": "test_failure_ledger"
+    }
+  ],
+  "selected_lanes": [
+    "L0_static_preflight",
+    "L1_focused_unit",
+    "L2_impact_integration"
+  ],
+  "skip_reasons": [
+    "not selected for per-commit default; required before promotion/high-risk gates"
+  ],
+  "skipped_commands": [
+    {
+      "command": "python -m unittest discover -s tests -t .",
+      "lane_id": "L3_full_discovery",
+      "reason": "not selected for per-commit default; required before promotion/high-risk gates"
+    }
+  ],
+  "task": "",
+  "warnings": []
+}
+
+COMMAND: python -m unittest tests.operations.test_contract_taxonomy -v
+EXIT_CODE: 0
+DURATION_SECONDS: 0.099
+OUTPUT_TAIL:
+test_docs_define_authority_classes (tests.operations.test_contract_taxonomy.ContractTaxonomyOperationsTest.test_docs_define_authority_classes) ... ok
+test_duplicate_risks_and_control_schema_decision_are_recorded (tests.operations.test_contract_taxonomy.ContractTaxonomyOperationsTest.test_duplicate_risks_and_control_schema_decision_are_recorded) ... ok
+test_examples_and_runtime_do_not_own_contract_authority (tests.operations.test_contract_taxonomy.ContractTaxonomyOperationsTest.test_examples_and_runtime_do_not_own_contract_authority) ... ok
+test_future_contract_locations_are_reserved (tests.operations.test_contract_taxonomy.ContractTaxonomyOperationsTest.test_future_contract_locations_are_reserved) ... ok
+test_required_families_are_inventoried (tests.operations.test_contract_taxonomy.ContractTaxonomyOperationsTest.test_required_families_are_inventoried) ... ok
+test_result_records_no_moves_or_runtime_changes (tests.operations.test_contract_taxonomy.ContractTaxonomyOperationsTest.test_result_records_no_moves_or_runtime_changes) ... ok
+test_testing_contracts_are_product_internal_contracts (tests.operations.test_contract_taxonomy.ContractTaxonomyOperationsTest.test_testing_contracts_are_product_internal_contracts) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.001s
+
+OK
+
+COMMAND: python -m unittest tests.scripts.test_validate_contract_taxonomy -v
+EXIT_CODE: 0
+DURATION_SECONDS: 0.894
+OUTPUT_TAIL:
+test_validator_json_passes_and_records_non_claims (tests.scripts.test_validate_contract_taxonomy.ContractTaxonomyValidatorScriptTest.test_validator_json_passes_and_records_non_claims) ... ok
+test_validator_plain_passes (tests.scripts.test_validate_contract_taxonomy.ContractTaxonomyValidatorScriptTest.test_validator_plain_passes) ... ok
+test_validator_rejects_missing_duplicate_risk (tests.scripts.test_validate_contract_taxonomy.ContractTaxonomyValidatorScriptTest.test_validator_rejects_missing_duplicate_risk) ... ok
+test_validator_rejects_missing_test_selection_result_contract (tests.scripts.test_validate_contract_taxonomy.ContractTaxonomyValidatorScriptTest.test_validator_rejects_missing_test_selection_result_contract) ... ok
+test_validator_rejects_missing_testing_contract_family (tests.scripts.test_validate_contract_taxonomy.ContractTaxonomyValidatorScriptTest.test_validator_rejects_missing_testing_contract_family) ... ok
+test_validator_rejects_runtime_as_contract_authority (tests.scripts.test_validate_contract_taxonomy.ContractTaxonomyValidatorScriptTest.test_validator_rejects_runtime_as_contract_authority) ... ok
+test_validator_rejects_testing_contract_as_example_or_runtime (tests.scripts.test_validate_contract_taxonomy.ContractTaxonomyValidatorScriptTest.test_validator_rejects_testing_contract_as_example_or_runtime) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.788s
+
+OK
+
+COMMAND: python -m unittest tests.operations.test_contract_taxonomy_plan -v
+EXIT_CODE: 0
+DURATION_SECONDS: 23.005
+OUTPUT_TAIL:
+test_audit_script_runs_in_check_mode (tests.operations.test_contract_taxonomy_plan.ContractTaxonomyPlanTests.test_audit_script_runs_in_check_mode) ... ok
+test_builds_reference_graph (tests.operations.test_contract_taxonomy_plan.ContractTaxonomyPlanTests.test_builds_reference_graph) ... ok
+test_classifies_audit_schema_fixture (tests.operations.test_contract_taxonomy_plan.ContractTaxonomyPlanTests.test_classifies_audit_schema_fixture) ... ok
+test_classifies_fixture_schema_fixture (tests.operations.test_contract_taxonomy_plan.ContractTaxonomyPlanTests.test_classifies_fixture_schema_fixture) ... ok
+test_classifies_preview_schema_fixture (tests.operations.test_contract_taxonomy_plan.ContractTaxonomyPlanTests.test_classifies_preview_schema_fixture) ... ok
+test_classifies_product_contract_fixture (tests.operations.test_contract_taxonomy_plan.ContractTaxonomyPlanTests.test_classifies_product_contract_fixture) ... ok
+test_detects_phase_bundle_quality_delta_in_product_contract_like_path (tests.operations.test_contract_taxonomy_plan.ContractTaxonomyPlanTests.test_detects_phase_bundle_quality_delta_in_product_contract_like_path) ... ok
+test_detects_zero_byte_or_near_empty_contract_fixture (tests.operations.test_contract_taxonomy_plan.ContractTaxonomyPlanTests.test_detects_zero_byte_or_near_empty_contract_fixture) ... ok
+test_migration_policy_validates (tests.operations.test_contract_taxonomy_plan.ContractTaxonomyPlanTests.test_migration_policy_validates) ... ok
+test_proposes_target_path (tests.operations.test_contract_taxonomy_plan.ContractTaxonomyPlanTests.test_proposes_target_path) ... ok
+test_r0_report_blocks_f0_and_dev_to_main (tests.operations.test_contract_taxonomy_plan.ContractTaxonomyPlanTests.test_r0_report_blocks_f0_and_dev_to_main) ... ok
+test_refuses_forbidden_output_roots (tests.operations.test_contract_taxonomy_plan.ContractTaxonomyPlanTests.test_refuses_forbidden_output_roots) ... ok
+test_taxonomy_policy_validates (tests.operations.test_contract_taxonomy_plan.ContractTaxonomyPlanTests.test_taxonomy_policy_validates) ... ok
+test_validator_confirms_no_contract_files_moved_and_recommends_r0_03b (tests.operations.test_contract_taxonomy_plan.ContractTaxonomyPlanTests.test_validator_confirms_no_contract_files_moved_and_recommends_r0_03b) ... ok
+test_validator_does_not_call_network_or_provider (tests.operations.test_contract_taxonomy_plan.ContractTaxonomyPlanTests.test_validator_does_not_call_network_or_provider) ... ok
+test_writes_explicit_outputs_to_temp_paths (tests.operations.test_contract_taxonomy_plan.ContractTaxonomyPlanTests.test_writes_explicit_outputs_to_temp_paths) ... ok
+test_writes_no_files_by_default (tests.operations.test_contract_taxonomy_plan.ContractTaxonomyPlanTests.test_writes_no_files_by_default) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 22.908s
+
+OK
+
+COMMAND: python -m unittest tests.operations.test_test_lane_policy -v
+EXIT_CODE: 0
+DURATION_SECONDS: 0.093
+OUTPUT_TAIL:
+test_required_lanes_and_promotion_policy (tests.operations.test_test_lane_policy.TestLanePolicyTests.test_required_lanes_and_promotion_policy) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+OK
+
+COMMAND: python -m unittest tests.scripts.test_validate_test_lane_policy -v
+EXIT_CODE: 0
+DURATION_SECONDS: 1.525
+OUTPUT_TAIL:
+test_validator_json_records_selector_modes (tests.scripts.test_validate_test_lane_policy.ValidateTestLanePolicyScriptTests.test_validator_json_records_selector_modes) ... ok
+test_validator_plain_passes (tests.scripts.test_validate_test_lane_policy.ValidateTestLanePolicyScriptTests.test_validator_plain_passes) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 1.428s
+
+OK
+
+COMMAND: python -m unittest tests.scripts.test_eureka_test_select -v
+EXIT_CODE: 0
+DURATION_SECONDS: 0.3
+OUTPUT_TAIL:
+test_failed_first_prioritizes_failure_ledger (tests.scripts.test_eureka_test_select.EurekaTestSelectScriptTests.test_failed_first_prioritizes_failure_ledger) ... ok
+test_promotion_includes_full_discovery_and_refuses_active_blockers (tests.scripts.test_eureka_test_select.EurekaTestSelectScriptTests.test_promotion_includes_full_discovery_and_refuses_active_blockers) ... ok
+test_task_mode_selects_workbench_result_lane_tests (tests.scripts.test_eureka_test_select.EurekaTestSelectScriptTests.test_task_mode_selects_workbench_result_lane_tests) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.203s
+
+OK

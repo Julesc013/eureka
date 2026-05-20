@@ -1,0 +1,15 @@
+schema_version: aide.task.v0
+id: R0-03A-CONTRACT-TAXONOMY-TESTING-REPAIR
+title: Classify contracts/testing and unblock result-lane closeout
+status: completed
+task_kind: repair
+purpose: Repair contract taxonomy authority inventory for testing contracts and confirm full discovery before IA-HUNT-BRIDGE-00.
+scope:
+  allowed_summary: Contract taxonomy/testing inventories, validators, tests, closeout ledger, audit evidence, and AIDE queue metadata.
+  forbidden_summary: No IA-HUNT bridge, live IA calls, source probes, store mutations, extraction, model/provider calls, deployment, or production/public launch claim.
+gate:
+  result: full discovery passed
+  full_unittest_discovery_count: 4797
+  active_blocking_failures_remaining: 0
+recommended_after: WORKBENCH-RESULT-LANES-CLOSEOUT-01
+recommended_next: IA-HUNT-BRIDGE-00

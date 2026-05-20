@@ -1,0 +1,92 @@
+{
+  "schema_version": "r0_03a_contract_taxonomy_testing_validation_matrix.v0",
+  "task": "R0-03A-CONTRACT-TAXONOMY-TESTING-REPAIR",
+  "before_reproduction": [
+    {
+      "command": "python -m unittest tests.operations.test_contract_taxonomy_plan -v",
+      "status": "fail",
+      "finding": "missing contracts/testing/test_selection_result.v0.json in R0-03A taxonomy inventory"
+    },
+    {
+      "command": "python -m unittest tests.operations.test_local_appliance_track -v",
+      "status": "pass"
+    }
+  ],
+  "targeted_validation": [
+    {
+      "command": "python scripts/validate_contract_taxonomy.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_test_lane_policy.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/eureka_test_select.py --changed --failed-first --json",
+      "status": "pass"
+    },
+    {
+      "command": "python -m unittest tests.operations.test_contract_taxonomy -v",
+      "status": "pass"
+    },
+    {
+      "command": "python -m unittest tests.scripts.test_validate_contract_taxonomy -v",
+      "status": "pass"
+    },
+    {
+      "command": "python -m unittest tests.operations.test_contract_taxonomy_plan -v",
+      "status": "pass"
+    },
+    {
+      "command": "python -m unittest tests.operations.test_test_lane_policy -v",
+      "status": "pass"
+    },
+    {
+      "command": "python -m unittest tests.scripts.test_validate_test_lane_policy -v",
+      "status": "pass"
+    },
+    {
+      "command": "python -m unittest tests.scripts.test_eureka_test_select -v",
+      "status": "pass"
+    }
+  ],
+  "result_lane_closeout_validation": [
+    {
+      "command": "python scripts/validate_workbench_result_lanes.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_workbench_foundation.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_search_interaction_contract.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_contract_taxonomy.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_repo_structure_canon.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_test_lane_policy.py",
+      "status": "pass"
+    },
+    {
+      "command": "focused Workbench/result-lane unittest modules",
+      "status": "pass"
+    }
+  ],
+  "full_unittest_discovery": {
+    "command": "python -m unittest discover -s tests -t .",
+    "status": "pass",
+    "count": 4797,
+    "duration_seconds": 2711.943,
+    "summary_path": "control/audits/r0-03a-contract-taxonomy-testing-repair-v0/generated/full_unittest_summary.txt"
+  },
+  "active_blocking_failures_remaining": 0,
+  "fixed_pending_full_remaining": 0
+}

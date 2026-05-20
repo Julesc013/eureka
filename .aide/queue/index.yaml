@@ -1,5 +1,5 @@
 schema_version: aide.queue-index.v0
-updated: 2026-05-20
+updated: 2026-05-21
 repo: julesc013/eureka
 current_recommended_task: IA-HUNT-BRIDGE-00 - Connect IA metadata source work to Hunt, WorkUnits, and result lanes
 entries:
@@ -77,12 +77,21 @@ entries:
     recommended_next: WORKBENCH-RESULT-LANES-CLOSEOUT-01
   - id: WORKBENCH-RESULT-LANES-CLOSEOUT-01
     title: Close Workbench result-lane fixed-pending-full validation state
-    status: blocked
+    status: completed
     purpose: Use the lane selector to rerun failed-first and impact-selected result-lane closeout checks before IA-HUNT.
     allowed_scope_summary: Selected validation, failure-ledger update, and closeout evidence only.
     gate: TEST-LANE-ROUTER-01 completed; no IA-HUNT bridge, live IA call, source probe, extraction, model/provider call, deployment, or production/public launch claim.
     task: .aide/queue/WORKBENCH-RESULT-LANES-CLOSEOUT-01/task.yaml
     recommended_after: TEST-LANE-ROUTER-01
+    recommended_next: IA-HUNT-BRIDGE-00
+  - id: R0-03A-CONTRACT-TAXONOMY-TESTING-REPAIR
+    title: Classify contracts/testing and unblock result-lane closeout
+    status: completed
+    purpose: Classify contracts/testing test-selection contracts in taxonomy authority inventory and confirm full discovery.
+    allowed_scope_summary: Contract taxonomy/testing inventories, validators, tests, closeout ledger, audit evidence, and AIDE queue metadata only.
+    gate: WORKBENCH-RESULT-LANES-CLOSEOUT-01 was blocked by R0-03A taxonomy inventory; full discovery now passed with no active blockers.
+    task: .aide/queue/R0-03A-CONTRACT-TAXONOMY-TESTING-REPAIR/task.yaml
+    recommended_after: WORKBENCH-RESULT-LANES-CLOSEOUT-01
     recommended_next: IA-HUNT-BRIDGE-00
   - id: IA-HUNT-BRIDGE-00
     title: Bridge IA metadata candidates into Hunt and WorkUnit lanes

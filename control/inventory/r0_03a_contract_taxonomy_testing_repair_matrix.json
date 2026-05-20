@@ -1,0 +1,38 @@
+{
+  "schema_version": "r0_03a_contract_taxonomy_testing_repair_matrix.v0",
+  "task": "R0-03A-CONTRACT-TAXONOMY-TESTING-REPAIR",
+  "root_cause": "contracts/testing was introduced by test lane router but omitted from R0-03 contract taxonomy authority inventory",
+  "repaired_paths": [
+    "control/inventory/contract_taxonomy_authority_matrix.json",
+    "control/inventory/contract_taxonomy_root_inventory.json",
+    "control/inventory/contract_taxonomy_inventory.json",
+    "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
+    "scripts/validate_contract_taxonomy.py",
+    "scripts/validate_test_lane_policy.py",
+    "tests/operations/test_contract_taxonomy.py",
+    "tests/scripts/test_validate_contract_taxonomy.py",
+    "tests/scripts/test_eureka_test_select.py",
+    "docs/architecture/CONTRACT_TAXONOMY.md",
+    "control/inventory/test_failure_ledger.json",
+    "control/inventory/workbench_result_lanes_closeout_failure_ledger_update.json",
+    "control/inventory/workbench_result_lanes_closeout_result.json",
+    "control/inventory/workbench_result_lanes_closeout_next_task_decision.json"
+  ],
+  "tests_repaired": [
+    "tests/operations/test_contract_taxonomy.py",
+    "tests/scripts/test_validate_contract_taxonomy.py",
+    "tests/scripts/test_eureka_test_select.py"
+  ],
+  "validator_repaired": "scripts/validate_contract_taxonomy.py",
+  "invariants_preserved": [
+    "contracts/testing remains PRODUCT_INTERNAL_CONTRACT only",
+    "contracts/testing is not example payload authority",
+    "contracts/testing is not runtime implementation",
+    "contracts/testing is not generated state or test result storage",
+    "no tests were deleted",
+    "test requirements were not weakened",
+    "runtime behavior did not change"
+  ],
+  "remaining_risk": "low; legacy R0-03A static taxonomy inventory was updated minimally and full discovery passed",
+  "promotion_or_next_task_blocker_resolved": true
+}

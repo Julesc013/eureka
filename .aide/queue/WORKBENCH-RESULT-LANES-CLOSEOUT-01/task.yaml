@@ -1,7 +1,7 @@
 schema_version: aide.task.v0
 id: WORKBENCH-RESULT-LANES-CLOSEOUT-01
 title: Close Workbench result-lane fixed-pending-full validation state
-status: blocked
+status: completed
 task_kind: validation_closeout
 purpose: Use the lane selector to rerun failed-first and impact-selected result-lane closeout checks before IA-HUNT.
 scope:

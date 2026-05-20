@@ -1,5 +1,5 @@
 {
-  "contract_count": 663,
+  "contract_count": 664,
   "contracts": [
     {
       "contract_class": "source_policy_contract",
@@ -7704,6 +7704,33 @@
       ],
       "target_path": "contracts/stores/source_cache_store.v0.json",
       "target_root": "contracts/stores/"
+    },
+    {
+      "contract_class": "product_domain_contract",
+      "current_root": "contracts/testing/",
+      "maturity": "stable_boundary_candidate",
+      "notes": [
+        "R0-03A testing repair classifies this as a product-internal testing packet contract under contracts/testing/.",
+        "It is not runtime implementation, product data, example payload authority, generated output, or test result storage."
+      ],
+      "path": "contracts/testing/test_selection_result.v0.json",
+      "recommended_action": "keep",
+      "references": [
+        "contracts/testing/test_selection_result.v0.json",
+        "scripts/eureka_test_select.py",
+        "scripts/validate_test_lane_policy.py",
+        "tests/scripts/test_eureka_test_select.py",
+        "tests/scripts/test_validate_test_lane_policy.py"
+      ],
+      "risks": [],
+      "signals": [
+        "json_schema_like",
+        "size:1745",
+        "suffix:.json",
+        "testing_contract_path"
+      ],
+      "target_path": "contracts/testing/test_selection_result.v0.json",
+      "target_root": "contracts/testing/"
     },
     {
       "contract_class": "public_api_contract",
@@ -20653,7 +20680,7 @@
       "fixture_schema": 32,
       "native_contract": 15,
       "preview_schema": 172,
-      "product_domain_contract": 33,
+      "product_domain_contract": 34,
       "product_runtime_contract": 52,
       "public_api_contract": 90,
       "snapshot_contract": 16,
@@ -20664,11 +20691,11 @@
     "maturity": {
       "control_schema_candidate": 314,
       "placeholder": 18,
-      "stable_boundary_candidate": 331
+      "stable_boundary_candidate": 332
     },
     "recommended_action": {
       "investigate": 7,
-      "keep": 425,
+      "keep": 426,
       "move": 231
     }
   },
