@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (4902 chars, 1226 approximate tokens)
+- `.aide/context/latest-task-packet.md` (5249 chars, 1313 approximate tokens)
 
 ## Context Packet Reference
 
@@ -33,31 +33,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Changed Files Summary
 
-- allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
-- allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/IA-HUNT-BRIDGE-00/task.yaml` (M; matches active task allowed path)
-- allowed: `.aide/queue/WORKBENCH-RESULT-LANES-01/task.yaml` (M; matches active task allowed path)
-- allowed: `.aide/queue/index.yaml` (M; matches active task allowed path)
-- allowed: `.aide/reports/eureka-repo-health.json` (M; matches active task allowed path)
-- allowed: `.aide/reports/eureka-repo-health.md` (M; matches active task allowed path)
-- forbidden: `contracts/view_models/result_lane_view_model.v0.json` (??; matches forbidden path policy)
-- forbidden: `contracts/workbench/workbench_result_lane_projection.v0.json` (??; matches forbidden path policy)
-- allowed: `control/audits/workbench-result-lanes-01-v0` (??; matches active task allowed path)
-- allowed: `control/inventory/workbench_result_lane_action_posture_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/workbench_result_lane_boundary_report.json` (??; matches active task allowed path)
-- allowed: `control/inventory/workbench_result_lane_projection_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/workbench_result_lane_schema_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/workbench_result_lane_source_mapping.json` (??; matches active task allowed path)
-- allowed: `control/inventory/workbench_result_lane_view_model_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/workbench_result_lanes_input_state.json` (??; matches active task allowed path)
-- allowed: `control/inventory/workbench_result_lanes_next_task_decision.json` (??; matches active task allowed path)
-- allowed: `control/inventory/workbench_result_lanes_result.json` (??; matches active task allowed path)
-- allowed: `control/inventory/workbench_result_lanes_validator_matrix.json` (??; matches active task allowed path)
-- allowed: `control/policies/workbench_lane_non_claim_policy.json` (??; matches active task allowed path)
-- allowed: `control/policies/workbench_lane_projection_policy.json` (??; matches active task allowed path)
-- allowed: `control/policies/workbench_result_lane_policy.json` (??; matches active task allowed path)
-- unknown: `docs/architecture/RESULT_LANE_VIEW_MODEL.md` (??; does not match active task allowed paths)
-- additional changed paths omitted from compact packet: 15; see task evidence changed-files report
+- none
 
 ## Validation Summary
 
@@ -67,8 +43,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 6823
-- approx_tokens: 1706
+- chars: 4251
+- approx_tokens: 1063
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:
