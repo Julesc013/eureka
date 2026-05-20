@@ -1,0 +1,106 @@
+{
+  "schema_version": "search_interaction_projection_matrix.v0",
+  "task": "SEARCH-INTERACTION-00",
+  "profiles": [
+    {
+      "projection_profile": "operator_workbench",
+      "can_submit_query": true,
+      "can_view_public_safe_lanes": true,
+      "can_control_runs": true,
+      "can_run_source_probe": false,
+      "can_review_promote": true,
+      "can_mutate": true,
+      "unsafe_actions_blocked": true
+    },
+    {
+      "projection_profile": "local_user_read_only",
+      "can_submit_query": true,
+      "can_view_public_safe_lanes": true,
+      "can_control_runs": false,
+      "can_run_source_probe": false,
+      "can_review_promote": false,
+      "can_mutate": false,
+      "unsafe_actions_blocked": true
+    },
+    {
+      "projection_profile": "public_web",
+      "can_submit_query": true,
+      "can_view_public_safe_lanes": true,
+      "can_control_runs": false,
+      "can_run_source_probe": false,
+      "can_review_promote": false,
+      "can_mutate": false,
+      "unsafe_actions_blocked": true
+    },
+    {
+      "projection_profile": "public_api",
+      "can_submit_query": true,
+      "can_view_public_safe_lanes": true,
+      "can_control_runs": false,
+      "can_run_source_probe": false,
+      "can_review_promote": false,
+      "can_mutate": false,
+      "unsafe_actions_blocked": true
+    },
+    {
+      "projection_profile": "cli",
+      "can_submit_query": true,
+      "can_view_public_safe_lanes": true,
+      "can_control_runs": true,
+      "can_run_source_probe": false,
+      "can_review_promote": false,
+      "can_mutate": false,
+      "unsafe_actions_blocked": true
+    },
+    {
+      "projection_profile": "tui",
+      "can_submit_query": true,
+      "can_view_public_safe_lanes": true,
+      "can_control_runs": true,
+      "can_run_source_probe": false,
+      "can_review_promote": false,
+      "can_mutate": false,
+      "unsafe_actions_blocked": true
+    },
+    {
+      "projection_profile": "relay_client",
+      "can_submit_query": false,
+      "can_view_public_safe_lanes": true,
+      "can_control_runs": false,
+      "can_run_source_probe": false,
+      "can_review_promote": false,
+      "can_mutate": false,
+      "unsafe_actions_blocked": true
+    },
+    {
+      "projection_profile": "snapshot_client",
+      "can_submit_query": false,
+      "can_view_public_safe_lanes": true,
+      "can_control_runs": false,
+      "can_run_source_probe": false,
+      "can_review_promote": false,
+      "can_mutate": false,
+      "unsafe_actions_blocked": true
+    },
+    {
+      "projection_profile": "native_desktop_read_only",
+      "can_submit_query": false,
+      "can_view_public_safe_lanes": true,
+      "can_control_runs": false,
+      "can_run_source_probe": false,
+      "can_review_promote": false,
+      "can_mutate": false,
+      "unsafe_actions_blocked": true
+    },
+    {
+      "projection_profile": "mobile_read_only",
+      "can_submit_query": false,
+      "can_view_public_safe_lanes": true,
+      "can_control_runs": false,
+      "can_run_source_probe": false,
+      "can_review_promote": false,
+      "can_mutate": false,
+      "unsafe_actions_blocked": true
+    }
+  ]
+}

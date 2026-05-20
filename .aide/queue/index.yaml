@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-18
 repo: julesc013/eureka
-current_recommended_task: SEARCH-INTERACTION-00 - Search request, compiled query, resolution run, controls, and feedback contract
+current_recommended_task: WORKBENCH-RESULT-LANES-01 - Implement result lane view models and Workbench lane projection
 entries:
   - id: DEV-AND-IA-TO-MAIN-PROMOTION-REVIEW
     title: Promote repaired dev IA pilot plus repo layout canon baseline to main
@@ -50,7 +50,7 @@ entries:
     recommended_next: SEARCH-INTERACTION-00
   - id: SEARCH-INTERACTION-00
     title: Search interaction contract
-    status: queued
+    status: completed
     purpose: Define the query, compiled intent, resolution run, result lane, control command, feedback, absence, and coverage packet contract.
     allowed_scope_summary: Search interaction contracts, route/view implications, docs, validators, tests, and audit evidence only until explicitly scoped.
     gate: WORKBENCH-FOUNDATION-00 completed; no public fanout, source execution, or model/provider calls.
@@ -58,7 +58,7 @@ entries:
     recommended_after: WORKBENCH-FOUNDATION-00
     recommended_next: WORKBENCH-RESULT-LANES-01
   - id: WORKBENCH-RESULT-LANES-01
-    title: Workbench result lanes
+    title: Implement result lane view models and Workbench lane projection
     status: queued
     purpose: Define and then implement governed Workbench result lanes for reviewed, candidate, source-cache, IA metadata, review, absence, blocked, and WorkUnit states.
     allowed_scope_summary: Workbench lane contracts and bounded UI/runtime integration only when explicitly scoped by a future task.

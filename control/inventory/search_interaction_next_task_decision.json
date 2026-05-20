@@ -1,0 +1,14 @@
+{
+  "schema_version": "search_interaction_next_task_decision.v0",
+  "task": "SEARCH-INTERACTION-00",
+  "decision": "WORKBENCH-RESULT-LANES-01",
+  "recommended_next_task": "WORKBENCH-RESULT-LANES-01 - Implement result lane view models and Workbench lane projection",
+  "planned_sequence": [
+    "IA-HUNT-BRIDGE-00",
+    "SYN-00",
+    "DOMAIN-00",
+    "SCOUT-SCHEMA-00"
+  ],
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}

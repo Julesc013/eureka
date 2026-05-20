@@ -1,0 +1,17 @@
+{
+  "schema_version": "compiled_query_packet.v0",
+  "packet_type": "CompiledQueryPacket",
+  "created_at": "2026-05-20T00:00:00Z",
+  "compiled_query_id": "cq_example",
+  "request_id": "req_example",
+  "raw_query": "I am looking for Windows 7-compatible utilities, preferably portable, not the Windows 7 ISO itself. I want things that are safe to install on an offline retro PC.",
+  "interpreted_intent": "find software applications compatible with windows_7",
+  "constraints": [
+    "windows_7"
+  ],
+  "exclusions": [
+    "operating_system_iso"
+  ],
+  "confidence": 0.72,
+  "user_visible_interpretation": "Find portable, low-risk Windows 7 utility applications, not Windows 7 install media."
+}

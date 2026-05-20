@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/search_interaction/resolution_run_packet.v0.json",
+  "title": "ResolutionRunPacket",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "packet_type",
+    "created_at",
+    "run_id",
+    "request_id",
+    "compiled_query_id",
+    "state",
+    "state_history",
+    "active_lanes",
+    "controls_available",
+    "coverage_report_id"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "resolution_run_packet.v0"
+    },
+    "packet_type": {
+      "const": "ResolutionRunPacket"
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "run_id": {
+      "type": "string"
+    },
+    "request_id": {
+      "type": "string"
+    },
+    "compiled_query_id": {
+      "type": "string"
+    },
+    "state": {
+      "type": "string"
+    },
+    "state_history": {
+      "type": "array"
+    },
+    "active_lanes": {
+      "type": "array"
+    },
+    "controls_available": {
+      "type": "array"
+    },
+    "coverage_report_id": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

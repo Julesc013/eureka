@@ -1,0 +1,11 @@
+{
+  "schema_version": "search_request_packet.v0",
+  "packet_type": "SearchRequestPacket",
+  "created_at": "2026-05-20T00:00:00Z",
+  "request_id": "req_example",
+  "raw_query": "I am looking for Windows 7-compatible utilities, preferably portable, not the Windows 7 ISO itself. I want things that are safe to install on an offline retro PC.",
+  "projection_profile": "operator_workbench",
+  "requested_depth": "normal",
+  "user_visible_mode": "interactive",
+  "privacy_class": "local"
+}

@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/search_interaction/search_control_command.v0.json",
+  "title": "SearchControlCommand",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "packet_type",
+    "created_at",
+    "command_id",
+    "run_id",
+    "command_type",
+    "reason",
+    "requested_by_projection",
+    "allowed_by_policy"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "search_control_command.v0"
+    },
+    "packet_type": {
+      "const": "SearchControlCommand"
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "command_id": {
+      "type": "string"
+    },
+    "run_id": {
+      "type": "string"
+    },
+    "command_type": {
+      "type": "string"
+    },
+    "reason": {
+      "type": "string"
+    },
+    "requested_by_projection": {
+      "type": "string"
+    },
+    "allowed_by_policy": {
+      "type": "boolean"
+    }
+  },
+  "additionalProperties": true
+}

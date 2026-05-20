@@ -1,0 +1,14 @@
+{
+  "schema_version": "result_lane_packet.v0",
+  "packet_type": "ResultLanePacket",
+  "emitted_at": "2026-05-20T00:00:00Z",
+  "lane_id": "lane_reviewed",
+  "lane_kind": "reviewed_local_results",
+  "state": "local_results_available",
+  "result_count": 0,
+  "result_ids": [],
+  "confidence": 0.0,
+  "limitations": [
+    "current local reviewed index only"
+  ]
+}

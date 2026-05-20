@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (5170 chars, 1293 approximate tokens)
+- `.aide/context/latest-task-packet.md` (5076 chars, 1269 approximate tokens)
 
 ## Context Packet Reference
 
@@ -33,31 +33,31 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Changed Files Summary
 
-- allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/DOMAIN-00` (??; matches active task allowed path)
-- allowed: `.aide/queue/SCOUT-SCHEMA-00` (??; matches active task allowed path)
-- allowed: `.aide/queue/WORKBENCH-FOUNDATION-00/task.yaml` (M; matches active task allowed path)
+- allowed: `.aide/queue/SEARCH-INTERACTION-00/task.yaml` (M; matches active task allowed path)
+- allowed: `.aide/queue/WORKBENCH-RESULT-LANES-01/task.yaml` (M; matches active task allowed path)
 - allowed: `.aide/queue/index.yaml` (M; matches active task allowed path)
 - allowed: `.aide/reports/eureka-repo-health.json` (M; matches active task allowed path)
 - allowed: `.aide/reports/eureka-repo-health.md` (M; matches active task allowed path)
-- allowed: `contracts/domain/README.md` (??; matches active task allowed path)
-- allowed: `contracts/projections` (??; matches active task allowed path)
-- allowed: `contracts/relay/README.md` (??; matches active task allowed path)
-- allowed: `contracts/scout` (??; matches active task allowed path)
-- allowed: `contracts/search_interaction` (??; matches active task allowed path)
-- allowed: `contracts/snapshots/README.md` (??; matches active task allowed path)
-- allowed: `contracts/view_models` (??; matches active task allowed path)
-- allowed: `contracts/workbench` (??; matches active task allowed path)
-- allowed: `control/audits/workbench-foundation-00-v0` (??; matches active task allowed path)
-- allowed: `control/inventory/workbench_foundation_input_state.json` (??; matches active task allowed path)
-- allowed: `control/inventory/workbench_foundation_next_task_decision.json` (??; matches active task allowed path)
-- allowed: `control/inventory/workbench_foundation_result.json` (??; matches active task allowed path)
-- allowed: `control/inventory/workbench_foundation_validator_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/workbench_future_module_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/workbench_native_projection_boundary.json` (??; matches active task allowed path)
-- allowed: `control/inventory/workbench_packet_location_matrix.json` (??; matches active task allowed path)
-- additional changed paths omitted from compact packet: 21; see task evidence changed-files report
+- allowed: `contracts/search_interaction/README.md` (M; matches active task allowed path)
+- allowed: `contracts/search_interaction/absence_packet.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/search_interaction/action_posture_packet.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/search_interaction/candidate_cluster_packet.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/search_interaction/compiled_query_packet.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/search_interaction/coverage_report_packet.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/search_interaction/discovery_trail_packet.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/search_interaction/partial_result_packet.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/search_interaction/resolution_run_packet.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/search_interaction/result_lane_packet.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/search_interaction/search_control_command.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/search_interaction/search_plan_patch.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/search_interaction/search_request_packet.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/search_interaction/user_feedback_event.v0.json` (??; matches active task allowed path)
+- allowed: `control/audits/search-interaction-00-v0` (??; matches active task allowed path)
+- allowed: `control/inventory/search_interaction_control_command_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/search_interaction_feedback_event_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/search_interaction_handoff_matrix.json` (??; matches active task allowed path)
+- additional changed paths omitted from compact packet: 26; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -67,8 +67,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 6487
-- approx_tokens: 1622
+- chars: 6831
+- approx_tokens: 1708
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

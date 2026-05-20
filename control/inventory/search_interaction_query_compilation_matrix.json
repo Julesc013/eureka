@@ -1,0 +1,404 @@
+{
+  "schema_version": "search_interaction_query_compilation_matrix.v0",
+  "task": "SEARCH-INTERACTION-00",
+  "query_classes": [
+    {
+      "query_class": "exact_artifact",
+      "expected_intent_fields": [
+        "raw_query",
+        "normalized_query",
+        "interpreted_intent",
+        "object_kind",
+        "constraints",
+        "exclusions",
+        "confidence",
+        "user_visible_interpretation"
+      ],
+      "likely_source_families": [
+        "local_reviewed_index",
+        "candidate_index",
+        "source_cache"
+      ],
+      "suppressions": [
+        "unsafe_actions",
+        "unrelated_bundle_without_member_index"
+      ],
+      "promoted_result_types": [
+        "reviewed_record",
+        "candidate",
+        "source_cache_hit"
+      ],
+      "risk_flags": [],
+      "default_depth": "shallow",
+      "clarification_triggers": [
+        "ambiguous_object_family",
+        "ambiguous_platform",
+        "unsafe_action_request"
+      ]
+    },
+    {
+      "query_class": "old_platform_software",
+      "expected_intent_fields": [
+        "raw_query",
+        "normalized_query",
+        "interpreted_intent",
+        "object_kind",
+        "constraints",
+        "exclusions",
+        "confidence",
+        "user_visible_interpretation"
+      ],
+      "likely_source_families": [
+        "local_reviewed_index",
+        "candidate_index",
+        "source_cache"
+      ],
+      "suppressions": [
+        "unsafe_actions",
+        "unrelated_bundle_without_member_index"
+      ],
+      "promoted_result_types": [
+        "reviewed_record",
+        "candidate",
+        "source_cache_hit"
+      ],
+      "risk_flags": [],
+      "default_depth": "normal",
+      "clarification_triggers": [
+        "ambiguous_object_family",
+        "ambiguous_platform",
+        "unsafe_action_request"
+      ]
+    },
+    {
+      "query_class": "driver_support_media",
+      "expected_intent_fields": [
+        "raw_query",
+        "normalized_query",
+        "interpreted_intent",
+        "object_kind",
+        "constraints",
+        "exclusions",
+        "confidence",
+        "user_visible_interpretation"
+      ],
+      "likely_source_families": [
+        "local_reviewed_index",
+        "candidate_index",
+        "source_cache"
+      ],
+      "suppressions": [
+        "unsafe_actions",
+        "unrelated_bundle_without_member_index"
+      ],
+      "promoted_result_types": [
+        "reviewed_record",
+        "candidate",
+        "source_cache_hit"
+      ],
+      "risk_flags": [],
+      "default_depth": "normal",
+      "clarification_triggers": [
+        "ambiguous_object_family",
+        "ambiguous_platform",
+        "unsafe_action_request"
+      ]
+    },
+    {
+      "query_class": "frontier_resolution_media",
+      "expected_intent_fields": [
+        "raw_query",
+        "normalized_query",
+        "interpreted_intent",
+        "object_kind",
+        "constraints",
+        "exclusions",
+        "confidence",
+        "user_visible_interpretation"
+      ],
+      "likely_source_families": [
+        "local_reviewed_index",
+        "candidate_index",
+        "source_cache"
+      ],
+      "suppressions": [
+        "unsafe_actions",
+        "unrelated_bundle_without_member_index"
+      ],
+      "promoted_result_types": [
+        "reviewed_record",
+        "candidate",
+        "source_cache_hit"
+      ],
+      "risk_flags": [],
+      "default_depth": "normal",
+      "clarification_triggers": [
+        "ambiguous_object_family",
+        "ambiguous_platform",
+        "unsafe_action_request"
+      ]
+    },
+    {
+      "query_class": "package_source_release",
+      "expected_intent_fields": [
+        "raw_query",
+        "normalized_query",
+        "interpreted_intent",
+        "object_kind",
+        "constraints",
+        "exclusions",
+        "confidence",
+        "user_visible_interpretation"
+      ],
+      "likely_source_families": [
+        "local_reviewed_index",
+        "candidate_index",
+        "source_cache"
+      ],
+      "suppressions": [
+        "unsafe_actions",
+        "unrelated_bundle_without_member_index"
+      ],
+      "promoted_result_types": [
+        "reviewed_record",
+        "candidate",
+        "source_cache_hit"
+      ],
+      "risk_flags": [],
+      "default_depth": "normal",
+      "clarification_triggers": [
+        "ambiguous_object_family",
+        "ambiguous_platform",
+        "unsafe_action_request"
+      ]
+    },
+    {
+      "query_class": "manual_or_scan",
+      "expected_intent_fields": [
+        "raw_query",
+        "normalized_query",
+        "interpreted_intent",
+        "object_kind",
+        "constraints",
+        "exclusions",
+        "confidence",
+        "user_visible_interpretation"
+      ],
+      "likely_source_families": [
+        "local_reviewed_index",
+        "candidate_index",
+        "source_cache"
+      ],
+      "suppressions": [
+        "unsafe_actions",
+        "unrelated_bundle_without_member_index"
+      ],
+      "promoted_result_types": [
+        "reviewed_record",
+        "candidate",
+        "source_cache_hit"
+      ],
+      "risk_flags": [],
+      "default_depth": "normal",
+      "clarification_triggers": [
+        "ambiguous_object_family",
+        "ambiguous_platform",
+        "unsafe_action_request"
+      ]
+    },
+    {
+      "query_class": "compatibility_query",
+      "expected_intent_fields": [
+        "raw_query",
+        "normalized_query",
+        "interpreted_intent",
+        "object_kind",
+        "constraints",
+        "exclusions",
+        "confidence",
+        "user_visible_interpretation"
+      ],
+      "likely_source_families": [
+        "local_reviewed_index",
+        "candidate_index",
+        "source_cache"
+      ],
+      "suppressions": [
+        "unsafe_actions",
+        "unrelated_bundle_without_member_index"
+      ],
+      "promoted_result_types": [
+        "reviewed_record",
+        "candidate",
+        "source_cache_hit"
+      ],
+      "risk_flags": [],
+      "default_depth": "normal",
+      "clarification_triggers": [
+        "ambiguous_object_family",
+        "ambiguous_platform",
+        "unsafe_action_request"
+      ]
+    },
+    {
+      "query_class": "provenance_query",
+      "expected_intent_fields": [
+        "raw_query",
+        "normalized_query",
+        "interpreted_intent",
+        "object_kind",
+        "constraints",
+        "exclusions",
+        "confidence",
+        "user_visible_interpretation"
+      ],
+      "likely_source_families": [
+        "local_reviewed_index",
+        "candidate_index",
+        "source_cache"
+      ],
+      "suppressions": [
+        "unsafe_actions",
+        "unrelated_bundle_without_member_index"
+      ],
+      "promoted_result_types": [
+        "reviewed_record",
+        "candidate",
+        "source_cache_hit"
+      ],
+      "risk_flags": [],
+      "default_depth": "normal",
+      "clarification_triggers": [
+        "ambiguous_object_family",
+        "ambiguous_platform",
+        "unsafe_action_request"
+      ]
+    },
+    {
+      "query_class": "absence_query",
+      "expected_intent_fields": [
+        "raw_query",
+        "normalized_query",
+        "interpreted_intent",
+        "object_kind",
+        "constraints",
+        "exclusions",
+        "confidence",
+        "user_visible_interpretation"
+      ],
+      "likely_source_families": [
+        "local_reviewed_index",
+        "candidate_index",
+        "source_cache"
+      ],
+      "suppressions": [
+        "unsafe_actions",
+        "unrelated_bundle_without_member_index"
+      ],
+      "promoted_result_types": [
+        "reviewed_record",
+        "candidate",
+        "source_cache_hit"
+      ],
+      "risk_flags": [],
+      "default_depth": "shallow",
+      "clarification_triggers": [
+        "ambiguous_object_family",
+        "ambiguous_platform",
+        "unsafe_action_request"
+      ]
+    },
+    {
+      "query_class": "policy_blocked_query",
+      "expected_intent_fields": [
+        "raw_query",
+        "normalized_query",
+        "interpreted_intent",
+        "object_kind",
+        "constraints",
+        "exclusions",
+        "confidence",
+        "user_visible_interpretation"
+      ],
+      "likely_source_families": [
+        "local_reviewed_index",
+        "candidate_index",
+        "source_cache"
+      ],
+      "suppressions": [
+        "unsafe_actions",
+        "unrelated_bundle_without_member_index"
+      ],
+      "promoted_result_types": [
+        "reviewed_record",
+        "candidate",
+        "source_cache_hit"
+      ],
+      "risk_flags": [
+        "policy_check_required"
+      ],
+      "default_depth": "normal",
+      "clarification_triggers": [
+        "ambiguous_object_family",
+        "ambiguous_platform",
+        "unsafe_action_request"
+      ]
+    },
+    {
+      "query_class": "unsafe_action_query",
+      "expected_intent_fields": [
+        "raw_query",
+        "normalized_query",
+        "interpreted_intent",
+        "object_kind",
+        "constraints",
+        "exclusions",
+        "confidence",
+        "user_visible_interpretation"
+      ],
+      "likely_source_families": [
+        "local_reviewed_index",
+        "candidate_index",
+        "source_cache"
+      ],
+      "suppressions": [
+        "unsafe_actions",
+        "unrelated_bundle_without_member_index"
+      ],
+      "promoted_result_types": [
+        "reviewed_record",
+        "candidate",
+        "source_cache_hit"
+      ],
+      "risk_flags": [
+        "policy_check_required"
+      ],
+      "default_depth": "normal",
+      "clarification_triggers": [
+        "ambiguous_object_family",
+        "ambiguous_platform",
+        "unsafe_action_request"
+      ]
+    }
+  ],
+  "example_full_sentence_query": "I am looking for Windows 7-compatible utilities, preferably portable, not the Windows 7 ISO itself. I want things that are safe to install on an offline retro PC.",
+  "example_compiled_fields": {
+    "object_kind": "software_application",
+    "platform_constraint": "windows_7",
+    "preferences": [
+      "portable",
+      "offline_usable",
+      "low_risk"
+    ],
+    "suppress": [
+      "operating_system_iso",
+      "unrelated_bundle_without_member_index"
+    ],
+    "promote": [
+      "individual_installer",
+      "portable_package",
+      "compatibility_evidenced_release"
+    ],
+    "safety_posture": "conservative"
+  }
+}

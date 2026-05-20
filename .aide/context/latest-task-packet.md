@@ -2,11 +2,11 @@
 
 ## PHASE
 
-UNSPECIFIED - WORKBENCH-FOUNDATION-00 - Mission Control doctrine, route/view matrix, and projection model
+UNSPECIFIED - SEARCH-INTERACTION-00 - Search request, compiled query, resolution run, controls, and feedback contract
 
 ## GOAL
 
-WORKBENCH-FOUNDATION-00 - Mission Control doctrine, route/view matrix, and projection model
+SEARCH-INTERACTION-00 - Search request, compiled query, resolution run, controls, and feedback contract
 
 ## WHY
 
@@ -44,14 +44,10 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 - `.aide/**`
 - `AGENTS.md`
+- `contracts/search_interaction/**`
+- `contracts/view_models/**`
 - `contracts/workbench/**`
 - `contracts/projections/**`
-- `contracts/view_models/**`
-- `contracts/search_interaction/**`
-- `contracts/domain/README.md`
-- `contracts/scout/**`
-- `contracts/snapshots/README.md`
-- `contracts/relay/README.md`
 - `docs/architecture/**`
 - `docs/operations/**`
 - `docs/reference/**`
@@ -148,8 +144,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4902
-- approx_tokens: 1226
+- chars: 4926
+- approx_tokens: 1232
 - budget_status: PASS
 - warnings:
   - none

@@ -1,0 +1,18 @@
+{
+  "schema_version": "search_interaction_input_state.v0",
+  "task": "SEARCH-INTERACTION-00",
+  "branch": "dev",
+  "head": "8c035ce49d2e4e169f42e9bfb7b3f9c1cfa4c048",
+  "origin_main": "8119871469cc61b47fa565b9d1e78642e3935d2a",
+  "origin_dev": "8c035ce49d2e4e169f42e9bfb7b3f9c1cfa4c048",
+  "working_tree_clean_before": true,
+  "repo_layout_canon_found": true,
+  "contract_taxonomy_found": true,
+  "workbench_foundation_found": true,
+  "ia_pilot_closeout_found": true,
+  "local_instance_state_tracked": false,
+  "runtime_behavior_change_allowed": false,
+  "deployment_performed": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}

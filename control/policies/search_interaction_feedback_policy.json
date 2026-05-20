@@ -1,0 +1,8 @@
+{
+  "schema_version": "search_interaction_feedback_policy.v0",
+  "task": "SEARCH-INTERACTION-00",
+  "feedback_is_truth": false,
+  "feedback_creates_plan_patch": true,
+  "feedback_auditable": true,
+  "feedback_mutates_master_index": false
+}

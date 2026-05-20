@@ -1,0 +1,68 @@
+{
+  "schema_version": "search_interaction_validator_matrix.v0",
+  "task": "SEARCH-INTERACTION-00",
+  "rows": [
+    {
+      "name": "search interaction validator",
+      "command": "python scripts/validate_search_interaction_contract.py",
+      "status": "pass",
+      "blocks_completion": true
+    },
+    {
+      "name": "focused tests",
+      "command": "python -m unittest tests.operations.test_search_interaction_contract tests.operations.test_search_interaction_state_machine tests.operations.test_search_interaction_controls tests.scripts.test_validate_search_interaction_contract",
+      "status": "pass",
+      "blocks_completion": true
+    },
+    {
+      "name": "workbench foundation validator",
+      "command": "python scripts/validate_workbench_foundation.py",
+      "status": "pass",
+      "blocks_completion": true
+    },
+    {
+      "name": "contract taxonomy validator",
+      "command": "python scripts/validate_contract_taxonomy.py",
+      "status": "pass",
+      "blocks_completion": true
+    },
+    {
+      "name": "repo structure canon",
+      "command": "python scripts/validate_repo_structure_canon.py",
+      "status": "pass_with_known_debt",
+      "blocks_completion": true
+    },
+    {
+      "name": "git diff check",
+      "command": "git diff --check",
+      "status": "pass",
+      "blocks_completion": true
+    },
+    {
+      "name": "architecture boundaries",
+      "command": "python scripts/check_architecture_boundaries.py",
+      "status": "pass",
+      "blocks_completion": true
+    },
+    {
+      "name": "generated artifact cleanliness",
+      "command": "python scripts/check_generated_artifact_cleanliness.py --check --json",
+      "status": "pending_post_commit",
+      "blocks_completion": true,
+      "reason": "Pre-commit run only reports the new untracked audit-generated pack; rerun after commit."
+    },
+    {
+      "name": "AIDE checks",
+      "command": "python .aide/scripts/aide_lite.py doctor; validate; test; selftest; verify; review-pack",
+      "status": "pass",
+      "blocks_completion": true
+    },
+    {
+      "name": "full unittest discovery",
+      "command": "python -m unittest discover -s tests -t .",
+      "status": "not_run",
+      "blocks_completion": false,
+      "reason": "Planning-only contract task with focused validator/test coverage."
+    }
+  ]
+}

@@ -1,12 +1,10 @@
 id: WORKBENCH-RESULT-LANES-01
-title: Workbench result lanes
+title: Implement result lane view models and Workbench lane projection
 status: queued
-purpose: Define and then implement governed Workbench result lanes for reviewed, candidate, source-cache, IA metadata, review, absence, blocked, and WorkUnit states.
-allowed_scope_summary: Workbench lane contracts and bounded UI/runtime integration only when explicitly scoped by a future task.
+purpose: Implement governed Workbench result lane view models and projection after Search Interaction contracts.
+allowed_scope_summary: Future task must provide scoped implementation rules before runtime or surface changes.
 gate:
   - SEARCH-INTERACTION-00 completed
-  - no broad source crawling
-  - no downloads or extraction
-  - no production/public launch claim
+  - no unsafe source probes, downloads, extraction, model calls, deployment, or public launch claim by default
 recommended_after: SEARCH-INTERACTION-00
 recommended_next: IA-HUNT-BRIDGE-00

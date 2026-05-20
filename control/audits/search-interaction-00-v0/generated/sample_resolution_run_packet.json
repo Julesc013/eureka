@@ -1,0 +1,19 @@
+{
+  "schema_version": "resolution_run_packet.v0",
+  "packet_type": "ResolutionRunPacket",
+  "created_at": "2026-05-20T00:00:00Z",
+  "run_id": "run_example",
+  "request_id": "req_example",
+  "compiled_query_id": "cq_example",
+  "state": "compiled",
+  "state_history": [],
+  "active_lanes": [
+    "reviewed_local_results",
+    "local_candidate_results"
+  ],
+  "controls_available": [
+    "pause",
+    "refine_query"
+  ],
+  "coverage_report_id": "cov_example"
+}

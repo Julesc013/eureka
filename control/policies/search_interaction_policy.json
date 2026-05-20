@@ -1,0 +1,12 @@
+{
+  "schema_version": "search_interaction_policy.v0",
+  "task": "SEARCH-INTERACTION-00",
+  "live_sources_enabled": false,
+  "extraction_enabled": false,
+  "model_provider_calls_enabled": false,
+  "downloads_enabled": false,
+  "deployment_enabled": false,
+  "public_fanout_enabled": false,
+  "search_is_resolution_run": true,
+  "full_sentence_queries_supported": true
+}
