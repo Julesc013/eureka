@@ -33,31 +33,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Changed Files Summary
 
-- allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/AIDE-BATCH-DOMAIN-FOUNDATION-01` (??; matches active task allowed path)
-- allowed: `.aide/queue/DOMAIN-00/task.yaml` (M; matches active task allowed path)
-- allowed: `.aide/queue/G0` (??; matches active task allowed path)
-- allowed: `.aide/queue/index.yaml` (M; matches active task allowed path)
-- allowed: `.aide/reports/eureka-repo-health.json` (M; matches active task allowed path)
-- allowed: `.aide/reports/eureka-repo-health.md` (M; matches active task allowed path)
-- forbidden: `contracts/domain/README.md` (M; matches forbidden path policy)
-- forbidden: `contracts/domain/domain_action_posture.v0.json` (??; matches forbidden path policy)
-- forbidden: `contracts/domain/domain_console_view.v0.json` (??; matches forbidden path policy)
-- forbidden: `contracts/domain/domain_identity_rule.v0.json` (??; matches forbidden path policy)
-- forbidden: `contracts/domain/domain_pack.v0.json` (??; matches forbidden path policy)
-- forbidden: `contracts/domain/domain_query_hint.v0.json` (??; matches forbidden path policy)
-- forbidden: `contracts/domain/domain_result_expectation.v0.json` (??; matches forbidden path policy)
-- forbidden: `contracts/domain/domain_seed_manifest.v0.json` (??; matches forbidden path policy)
-- forbidden: `contracts/domain/domain_source_preference.v0.json` (??; matches forbidden path policy)
-- allowed: `control/audits/domain-foundation-01-v0` (??; matches active task allowed path)
-- allowed: `control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/contract_taxonomy_summary.md` (M; matches active task allowed path)
-- allowed: `control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json` (M; matches active task allowed path)
-- allowed: `control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json` (M; matches active task allowed path)
-- allowed: `control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json` (M; matches active task allowed path)
-- allowed: `control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_summary.md` (M; matches active task allowed path)
-- allowed: `control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md` (M; matches active task allowed path)
-- allowed: `control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md` (M; matches active task allowed path)
-- additional changed paths omitted from compact packet: 47; see task evidence changed-files report
+- none
 
 ## Validation Summary
 
@@ -67,8 +43,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 6877
-- approx_tokens: 1720
+- chars: 4251
+- approx_tokens: 1063
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:
