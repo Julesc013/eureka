@@ -2,7 +2,7 @@
 
 migration allowed now: false
 R0-03B ready: true
-move records: 238
+move records: 241
 
 - move: contracts/actions/acquisition_manifest.v0.json -> contracts/connectors/acquisition_manifest.v0.json (medium)
 - move: contracts/actions/action_manifest.v0.json -> contracts/connectors/action_manifest.v0.json (medium)
@@ -57,11 +57,11 @@ move records: 238
 - move: contracts/identity/identity_cluster.v0.json -> contracts/domain/identity_cluster.v0.json (medium)
 - move: contracts/identity/identity_relation.v0.json -> contracts/domain/identity_relation.v0.json (medium)
 - move: contracts/identity/identity_resolution_assessment.v0.json -> contracts/domain/identity_resolution_assessment.v0.json (medium)
-- move: contracts/master_index/review_decision.v0.json -> contracts/stores/review_decision.v0.json (medium)
+- move: contracts/master_index/review_decision.v0.json -> contracts/stores/review_decision.v0.json (high)
 - move: contracts/master_index/reviewed_public_index_rebuild.v0.json -> contracts/stores/reviewed_public_index_rebuild.v0.json (medium)
 - move: contracts/master_index/reviewed_public_record_proposal.v0.json -> contracts/stores/reviewed_public_record_proposal.v0.json (medium)
-- move: contracts/node/eureka_node_manifest.v0.json -> contracts/connectors/eureka_node_manifest.v0.json (medium)
-- move: contracts/node/node_policy.v0.json -> contracts/connectors/node_policy.v0.json (medium)
+- move: contracts/node/eureka_node_manifest.v0.json -> contracts/connectors/eureka_node_manifest.v0.json (high)
+- move: contracts/node/node_policy.v0.json -> contracts/connectors/node_policy.v0.json (high)
 - move: contracts/packs/local_staging_manifest.v0.json -> contracts/connectors/local_staging_manifest.v0.json (medium)
 - move: contracts/packs/pack_signature_envelope.v0.json -> contracts/connectors/pack_signature_envelope.v0.json (medium)
 - move: contracts/packs/source_pack_manifest.v0.json -> contracts/connectors/source_pack_manifest.v0.json (medium)
@@ -102,7 +102,9 @@ move records: 238
 - move: contracts/query/search_quality_query_set.v0.json -> contracts/runtime/search_quality_query_set.v0.json (medium)
 - move: contracts/query/search_result_cache_entry.v0.json -> contracts/runtime/search_result_cache_entry.v0.json (high)
 - move: contracts/query/search_result_explanation.v0.json -> contracts/runtime/search_result_explanation.v0.json (medium)
-- move: contracts/query/workunit_seed.v0.json -> contracts/runtime/workunit_seed.v0.json (medium)
+- move: contracts/query/synthetic_query_case.v0.json -> contracts/runtime/synthetic_query_case.v0.json (medium)
+- move: contracts/query/synthetic_query_set.v0.json -> contracts/runtime/synthetic_query_set.v0.json (medium)
+- move: contracts/query/workunit_seed.v0.json -> contracts/runtime/workunit_seed.v0.json (high)
 - move: contracts/query/workunit_seed_conversion.v0.json -> contracts/runtime/workunit_seed_conversion.v0.json (medium)
 - move: contracts/relay/old_browser_profile.v0.json -> contracts/snapshot/old_browser_profile.v0.json (medium)
 - move: contracts/relay/relay_manifest.v0.json -> contracts/snapshot/relay_manifest.v0.json (medium)
@@ -176,6 +178,7 @@ move records: 238
 - move: contracts/sources/source_record.v2.json -> contracts/connectors/source_record.v2.json (medium)
 - move: contracts/sources/source_registry.v2.json -> contracts/connectors/source_registry.v2.json (medium)
 - move: contracts/sources/source_trust_lane.v0.json -> contracts/connectors/source_trust_lane.v0.json (medium)
+- move: contracts/testing/test_selection_result.v0.json -> contracts/domain/test_selection_result.v0.json (medium)
 - move: contracts/ui/design_tokens.v0.json -> contracts/api/design_tokens.v0.json (medium)
 - move: contracts/ui/temporal_minimal_search.v0.json -> contracts/api/temporal_minimal_search.v0.json (medium)
 - move: contracts/ui/ui_contracts/absence_report.ui_contract.yaml -> contracts/api/ui_contracts/absence_report.ui_contract.yaml (medium)
@@ -201,7 +204,4 @@ move records: 238
 - move: contracts/ui/ui_contracts/subject_states.ui_contract.yaml -> contracts/api/ui_contracts/subject_states.ui_contract.yaml (medium)
 - move: contracts/ui/view_models/absence_report.view_model.yaml -> contracts/api/view_models/absence_report.view_model.yaml (medium)
 - move: contracts/ui/view_models/acquisition.view_model.yaml -> contracts/api/view_models/acquisition.view_model.yaml (medium)
-- move: contracts/ui/view_models/action_plan.view_model.yaml -> contracts/api/view_models/action_plan.view_model.yaml (medium)
-- move: contracts/ui/view_models/bundle_inspection.view_model.yaml -> contracts/api/view_models/bundle_inspection.view_model.yaml (medium)
-- move: contracts/ui/view_models/comparison.view_model.yaml -> contracts/api/view_models/comparison.view_model.yaml (medium)
-- ... 38 additional move records in JSON plan.
+- ... 41 additional move records in JSON plan.

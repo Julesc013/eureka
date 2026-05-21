@@ -1,0 +1,57 @@
+{
+  "canonical_registry_truth_claimed": false,
+  "required_domain_ids": [
+    "legacy_software",
+    "driver_support_media",
+    "frontier_resolution_media",
+    "manuals_docs_scans",
+    "package_source_release",
+    "web_archive_trace",
+    "games_emulation",
+    "hardware_firmware_support"
+  ],
+  "schema_version": "domain_seed_inventory.v0",
+  "seed_packs": [
+    {
+      "domain_id": "legacy_software",
+      "path": "examples/domain/legacy_software.domain_pack.json",
+      "present": true
+    },
+    {
+      "domain_id": "driver_support_media",
+      "path": "examples/domain/driver_support_media.domain_pack.json",
+      "present": true
+    },
+    {
+      "domain_id": "frontier_resolution_media",
+      "path": "examples/domain/frontier_resolution_media.domain_pack.json",
+      "present": true
+    },
+    {
+      "domain_id": "manuals_docs_scans",
+      "path": "examples/domain/manuals_docs_scans.domain_pack.json",
+      "present": true
+    },
+    {
+      "domain_id": "package_source_release",
+      "path": "examples/domain/package_source_release.domain_pack.json",
+      "present": true
+    },
+    {
+      "domain_id": "web_archive_trace",
+      "path": "examples/domain/web_archive_trace.domain_pack.json",
+      "present": true
+    },
+    {
+      "domain_id": "games_emulation",
+      "path": "examples/domain/games_emulation.domain_pack.json",
+      "present": true
+    },
+    {
+      "domain_id": "hardware_firmware_support",
+      "path": "examples/domain/hardware_firmware_support.domain_pack.json",
+      "present": true
+    }
+  ],
+  "seed_status": "example_only"
+}

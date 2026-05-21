@@ -1,0 +1,12 @@
+{
+  "domain_pack_registry_is_canonical_truth": false,
+  "f0_extraction_implemented": false,
+  "fake_evidence_created": false,
+  "fake_verified_records_created": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "ranking_engine_implemented": false,
+  "schema_version": "domain_non_claim_policy.v0",
+  "scout_runtime_implemented": false,
+  "source_behavior_enabled": false
+}

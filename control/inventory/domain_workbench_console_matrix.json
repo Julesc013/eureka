@@ -1,0 +1,31 @@
+{
+  "html_implementation_required": false,
+  "projections": {
+    "native_desktop_read_only": {
+      "detail": "summary",
+      "read_only": true
+    },
+    "operator_workbench": {
+      "detail": "full",
+      "read_only": true
+    },
+    "public_web": {
+      "detail": "summary",
+      "read_only": true
+    }
+  },
+  "routes": [
+    "/domain",
+    "/domain/{domain_id}"
+  ],
+  "schema_version": "domain_workbench_console_matrix.v0",
+  "views": [
+    "DomainListView",
+    "DomainPackView",
+    "DomainQueryHintView",
+    "DomainSourcePreferenceView",
+    "DomainResultExpectationView",
+    "DomainActionPostureView",
+    "DomainSynCoverageView"
+  ]
+}

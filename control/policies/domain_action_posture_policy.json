@@ -1,0 +1,29 @@
+{
+  "allowed_read_only_actions": [
+    "inspect",
+    "cite",
+    "export_metadata",
+    "request_review"
+  ],
+  "blocked_by_default": [
+    "download",
+    "upload",
+    "extract",
+    "execute",
+    "install",
+    "call_model_provider",
+    "run_source_probe",
+    "public_fanout",
+    "mutate_master_index",
+    "mutate_operator_instance",
+    "deploy"
+  ],
+  "cite_export_inspect_allowed_where_evidence_exists": true,
+  "downloads_blocked_by_default": true,
+  "execute_install_blocked_by_default": true,
+  "extraction_blocked_by_default": true,
+  "model_provider_calls_blocked_by_default": true,
+  "public_fanout_blocked_by_default": true,
+  "review_promote_operator_gated": true,
+  "schema_version": "domain_action_posture_policy.v0"
+}

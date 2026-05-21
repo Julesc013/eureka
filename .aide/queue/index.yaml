@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-21
 repo: julesc013/eureka
-current_recommended_task: DOMAIN-00 - DOMAIN pack console and contracts
+current_recommended_task: SCOUT-SCHEMA-00 - Discovery trail, source trust, and relation contracts
 entries:
   - id: DEV-AND-IA-TO-MAIN-PROMOTION-REVIEW
     title: Promote repaired dev IA pilot plus repo layout canon baseline to main
@@ -529,11 +529,20 @@ entries:
     recommended_next: DOMAIN-00
   - id: DOMAIN-00
     title: DOMAIN pack console and contracts
-    status: queued
-    purpose: Define DOMAIN pack console and contracts after SYN-00 pressure-query foundation.
-    allowed_scope_summary: Future task must provide its own reviewed scope before implementation.
-    gate: SYN-00 completed with full discovery pass; no production/public launch claim by default and no unsafe actions unless future policy enables them.
+    status: completed
+    purpose: Defined DOMAIN pack contracts, seed domains, query hints, SYN integration, and a read-only Workbench console model after SYN-00 pressure-query foundation.
+    allowed_scope_summary: DOMAIN contracts, policies, example-only seed packs, read-only local-eval helpers, scripts, validator, tests, docs, audit evidence, and queue/context metadata.
+    gate: DOMAIN foundation passed focused validation; no fake evidence, live source calls, source probes, downloads/uploads, extraction, model/provider calls, operator/master index mutation, deployment, or production/public launch claim.
     task: .aide/queue/DOMAIN-00/task.yaml
+    recommended_after: SYN-00
+    recommended_next: SCOUT-SCHEMA-00
+  - id: AIDE-BATCH-DOMAIN-FOUNDATION-01
+    title: DOMAIN pack console, contracts, seed domains, and validation foundation
+    status: completed
+    purpose: Added the first DOMAIN foundation so Eureka can interpret and evaluate searches differently by artefact domain while preserving one generic artefact-resolution kernel.
+    allowed_scope_summary: DOMAIN contracts, policies, seed packs, matrices, read-only local-eval helpers, CLIs, validator, tests, docs, audit evidence, and queue/context metadata.
+    gate: No fake evidence, fake verified records, live source calls, source probes, downloads/uploads, extraction, model/provider calls, operator/master index mutation, deployment, or production/public launch claim.
+    task: .aide/queue/AIDE-BATCH-DOMAIN-FOUNDATION-01/task.yaml
     recommended_after: SYN-00
     recommended_next: SCOUT-SCHEMA-00
   - id: SCOUT-SCHEMA-00

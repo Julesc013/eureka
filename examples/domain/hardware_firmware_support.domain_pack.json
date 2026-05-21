@@ -1,0 +1,256 @@
+{
+  "action_posture_defaults": {
+    "allowed_read_only_actions": [
+      "inspect",
+      "cite",
+      "export_metadata",
+      "request_review"
+    ],
+    "blocked_actions": [
+      "download",
+      "upload",
+      "extract",
+      "execute",
+      "install",
+      "call_model_provider",
+      "run_source_probe",
+      "public_fanout",
+      "mutate_master_index",
+      "mutate_operator_instance",
+      "deploy"
+    ],
+    "downloads_blocked_by_default": true,
+    "extraction_blocked_by_default": true,
+    "model_provider_calls_blocked_by_default": true,
+    "public_fanout_blocked_by_default": true,
+    "review_promote_operator_gated": true
+  },
+  "created_at": "2026-05-21T00:00:00Z",
+  "display_name": "Hardware/Firmware Support",
+  "domain_id": "hardware_firmware_support",
+  "domain_version": "v0",
+  "identity_rules": [
+    {
+      "creates_truth": false,
+      "review_required": true,
+      "rule_id": "hardware_firmware_support_identity_core",
+      "rule_type": "hint",
+      "signals": [
+        "hardware revision",
+        "firmware version",
+        "OEM support context",
+        "risk warning"
+      ]
+    }
+  ],
+  "non_claims": {
+    "canonical_truth": false,
+    "evidence_created": false,
+    "production_readiness_claimed": false,
+    "public_launch_readiness_claimed": false,
+    "reviewed_record_created": false,
+    "runtime_source_behavior_enabled": false
+  },
+  "object_families": [
+    "firmware_image",
+    "bios_update",
+    "hardware_support_pack",
+    "device_manual"
+  ],
+  "promote_rules": [
+    {
+      "creates_reviewed_record": false,
+      "reason": "Surface reviewable context before any operator-gated action.",
+      "review_required": true,
+      "rule_id": "hardware_firmware_support_promote_reviewable_context",
+      "signals": [
+        "hardware revision",
+        "firmware version",
+        "OEM support context",
+        "risk warning"
+      ]
+    }
+  ],
+  "query_classes": [
+    "firmware_lookup",
+    "hardware_support_lookup",
+    "safety_sensitive_update"
+  ],
+  "query_hints": [
+    {
+      "creates_runtime_behavior": false,
+      "hint_id": "hardware_firmware_support_query_hint_core",
+      "promote_terms": [
+        "hardware revision",
+        "firmware version",
+        "OEM support context",
+        "risk warning"
+      ],
+      "query_classes": [
+        "firmware_lookup",
+        "hardware_support_lookup",
+        "safety_sensitive_update"
+      ],
+      "review_required": true,
+      "source_family_preferences": [
+        "internet_archive_metadata",
+        "archived_oem_pages_later",
+        "manual_scan_collections"
+      ],
+      "suppress_terms": [
+        "generic firmware updater sites",
+        "unsafe flashing instructions without provenance"
+      ]
+    }
+  ],
+  "result_lane_expectations": [
+    {
+      "domain_role": "expected_surface",
+      "lane_kind": "reviewed_local_results",
+      "review_required": false,
+      "truth_level": "reviewed_truth"
+    },
+    {
+      "domain_role": "expected_surface",
+      "lane_kind": "local_candidate_results",
+      "review_required": true,
+      "truth_level": "hint_only_requires_review"
+    },
+    {
+      "domain_role": "expected_surface",
+      "lane_kind": "source_cache_hits",
+      "review_required": true,
+      "truth_level": "hint_only_requires_review"
+    },
+    {
+      "domain_role": "expected_surface",
+      "lane_kind": "ia_metadata_candidates",
+      "review_required": true,
+      "truth_level": "hint_only_requires_review"
+    },
+    {
+      "domain_role": "expected_surface",
+      "lane_kind": "review_queue_items",
+      "review_required": true,
+      "truth_level": "hint_only_requires_review"
+    },
+    {
+      "domain_role": "expected_surface",
+      "lane_kind": "known_absence",
+      "review_required": true,
+      "truth_level": "hint_only_requires_review"
+    },
+    {
+      "domain_role": "expected_surface",
+      "lane_kind": "near_misses",
+      "review_required": true,
+      "truth_level": "hint_only_requires_review"
+    },
+    {
+      "domain_role": "expected_surface",
+      "lane_kind": "blocked_actions",
+      "review_required": true,
+      "truth_level": "hint_only_requires_review"
+    },
+    {
+      "domain_role": "expected_surface",
+      "lane_kind": "running_workunits",
+      "review_required": true,
+      "truth_level": "hint_only_requires_review"
+    },
+    {
+      "domain_role": "expected_surface",
+      "lane_kind": "deferred_deepening",
+      "review_required": true,
+      "truth_level": "hint_only_requires_review"
+    },
+    {
+      "domain_role": "expected_surface",
+      "lane_kind": "future_extraction_work",
+      "review_required": true,
+      "truth_level": "hint_only_requires_review"
+    }
+  ],
+  "rights_posture_defaults": {
+    "distribution_claim_created": false,
+    "rights_default": "unknown_until_reviewed"
+  },
+  "risk_posture_defaults": {
+    "operator_review_required": true,
+    "risk_level": "domain_dependent_review_required",
+    "unsafe_action_default": "blocked"
+  },
+  "safety_posture_defaults": {
+    "download_default": "blocked",
+    "execute_install_default": "blocked",
+    "external_call_default": "blocked"
+  },
+  "schema_version": "domain_pack.v0",
+  "search_need_seed_policy": {
+    "creates_runtime_search_need": false,
+    "may_seed_search_needs": true,
+    "review_required": true,
+    "seed_status": "draft_only"
+  },
+  "seed_pack_status": "example_only",
+  "source_preferences": [
+    {
+      "current_status": "metadata_or_future_hint_only",
+      "limitations": [
+        "Preference does not probe sources, download content, or accept evidence."
+      ],
+      "live_source_calls_enabled": false,
+      "preference_rank": 1,
+      "source_family": "internet_archive_metadata"
+    },
+    {
+      "current_status": "metadata_or_future_hint_only",
+      "limitations": [
+        "Preference does not probe sources, download content, or accept evidence."
+      ],
+      "live_source_calls_enabled": false,
+      "preference_rank": 2,
+      "source_family": "archived_oem_pages_later"
+    },
+    {
+      "current_status": "metadata_or_future_hint_only",
+      "limitations": [
+        "Preference does not probe sources, download content, or accept evidence."
+      ],
+      "live_source_calls_enabled": false,
+      "preference_rank": 3,
+      "source_family": "manual_scan_collections"
+    }
+  ],
+  "suppression_rules": [
+    {
+      "creates_truth": false,
+      "reason": "Avoid misleading or unsafe domain interpretations without reviewed provenance.",
+      "rule_id": "hardware_firmware_support_suppress_low_signal",
+      "signals": [
+        "generic firmware updater sites",
+        "unsafe flashing instructions without provenance"
+      ]
+    }
+  ],
+  "syn_case_refs": [
+    {
+      "case_ref": "syn_domain_hardware_firmware_support_1",
+      "expected_behavior": "route_with_domain_hints_without_creating_truth",
+      "query_class": "firmware_lookup",
+      "query_text": "PowerBook firmware updater archived support page"
+    },
+    {
+      "case_ref": "syn_domain_hardware_firmware_support_2",
+      "expected_behavior": "route_with_domain_hints_without_creating_truth",
+      "query_class": "hardware_support_lookup",
+      "query_text": "router firmware release note with OEM provenance"
+    }
+  ],
+  "workunit_seed_policy": {
+    "creates_runtime_workunit": false,
+    "may_seed_workunits": true,
+    "review_required": true,
+    "seed_status": "draft_only"
+  }
+}

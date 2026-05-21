@@ -1,0 +1,18 @@
+id: AIDE-BATCH-DOMAIN-FOUNDATION-01
+title: DOMAIN pack console, contracts, seed domains, and validation foundation
+status: completed
+purpose: Added the first DOMAIN foundation so Eureka can interpret and evaluate searches differently by artefact domain while preserving one generic artefact-resolution kernel.
+allowed_scope_summary: DOMAIN contracts, policies, seed packs, query/source/result/action/SYN/workbench matrices, read-only local-eval helpers, CLIs, validator, tests, docs, audit evidence, and queue/context metadata.
+gate:
+  - no fake evidence
+  - no fake verified records
+  - no live source calls
+  - no source probes
+  - no downloads/uploads
+  - no extraction
+  - no model/provider calls
+  - no operator/master index mutation
+  - no deployment
+  - no production/public launch claim
+recommended_after: SYN-00
+recommended_next: SCOUT-SCHEMA-00

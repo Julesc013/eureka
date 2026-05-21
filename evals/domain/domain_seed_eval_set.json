@@ -1,0 +1,102 @@
+{
+  "domain_ids": [
+    "legacy_software",
+    "driver_support_media",
+    "frontier_resolution_media",
+    "manuals_docs_scans",
+    "package_source_release",
+    "web_archive_trace",
+    "games_emulation",
+    "hardware_firmware_support"
+  ],
+  "eval_status": "fixture_only",
+  "query_cases": [
+    {
+      "domain_id": "legacy_software",
+      "expected_behavior": "domain_hints_only_no_truth",
+      "query_text": "Windows 7-compatible portable utilities, not Windows 7 ISO"
+    },
+    {
+      "domain_id": "legacy_software",
+      "expected_behavior": "domain_hints_only_no_truth",
+      "query_text": "last Firefox for Windows XP"
+    },
+    {
+      "domain_id": "driver_support_media",
+      "expected_behavior": "domain_hints_only_no_truth",
+      "query_text": "StyleWriter 2500 Mac OS 8 driver"
+    },
+    {
+      "domain_id": "driver_support_media",
+      "expected_behavior": "domain_hints_only_no_truth",
+      "query_text": "ThinkPad T42 restore drivers support disc"
+    },
+    {
+      "domain_id": "frontier_resolution_media",
+      "expected_behavior": "domain_hints_only_no_truth",
+      "query_text": "New York 1993 D-Theater HD demo tape original source"
+    },
+    {
+      "domain_id": "frontier_resolution_media",
+      "expected_behavior": "domain_hints_only_no_truth",
+      "query_text": "early HDTV footage of ordinary city life"
+    },
+    {
+      "domain_id": "manuals_docs_scans",
+      "expected_behavior": "domain_hints_only_no_truth",
+      "query_text": "Sony PVM service manual scan"
+    },
+    {
+      "domain_id": "manuals_docs_scans",
+      "expected_behavior": "domain_hints_only_no_truth",
+      "query_text": "Apple StyleWriter user guide OCR scan"
+    },
+    {
+      "domain_id": "package_source_release",
+      "expected_behavior": "domain_hints_only_no_truth",
+      "query_text": "DirectX SDK June 2010 offline installer"
+    },
+    {
+      "domain_id": "package_source_release",
+      "expected_behavior": "domain_hints_only_no_truth",
+      "query_text": "source release archive for old graphics toolkit"
+    },
+    {
+      "domain_id": "web_archive_trace",
+      "expected_behavior": "domain_hints_only_no_truth",
+      "query_text": "archived vendor page for discontinued media player"
+    },
+    {
+      "domain_id": "web_archive_trace",
+      "expected_behavior": "domain_hints_only_no_truth",
+      "query_text": "Wayback trace for old driver release notes"
+    },
+    {
+      "domain_id": "games_emulation",
+      "expected_behavior": "domain_hints_only_no_truth",
+      "query_text": "DOS game patch notes and emulator compatibility"
+    },
+    {
+      "domain_id": "games_emulation",
+      "expected_behavior": "domain_hints_only_no_truth",
+      "query_text": "homebrew game release source archive"
+    },
+    {
+      "domain_id": "hardware_firmware_support",
+      "expected_behavior": "domain_hints_only_no_truth",
+      "query_text": "PowerBook firmware updater archived support page"
+    },
+    {
+      "domain_id": "hardware_firmware_support",
+      "expected_behavior": "domain_hints_only_no_truth",
+      "query_text": "router firmware release note with OEM provenance"
+    }
+  ],
+  "runtime_capability_boundary": {
+    "evidence_created": false,
+    "model_provider_used": false,
+    "reviewed_record_created": false,
+    "source_probe_executed": false
+  },
+  "schema_version": "domain_seed_eval_set.v0"
+}

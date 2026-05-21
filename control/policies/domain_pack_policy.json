@@ -1,0 +1,20 @@
+{
+  "domain_packs_are_not_truth": true,
+  "domain_packs_do_not_create_evidence": true,
+  "domain_packs_do_not_create_reviewed_records": true,
+  "domain_packs_do_not_mutate_indexes": true,
+  "domain_packs_may_influence_expected_result_lanes": true,
+  "domain_packs_may_influence_query_compilation": true,
+  "domain_packs_may_influence_source_preferences": true,
+  "domain_packs_may_seed_search_needs": true,
+  "domain_packs_may_seed_workunits": true,
+  "downloads_enabled": false,
+  "extraction_enabled": false,
+  "live_source_calls_enabled": false,
+  "master_index_mutation_enabled": false,
+  "model_provider_enabled": false,
+  "production_readiness_claimed": false,
+  "public_fanout_enabled": false,
+  "public_launch_readiness_claimed": false,
+  "schema_version": "domain_pack_policy.v0"
+}

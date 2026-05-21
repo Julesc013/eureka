@@ -1,0 +1,256 @@
+{
+  "allowed_read_only_actions": [
+    "inspect",
+    "cite",
+    "export_metadata",
+    "request_review"
+  ],
+  "blocked_defaults": [
+    "download",
+    "upload",
+    "extract",
+    "execute",
+    "install",
+    "call_model_provider",
+    "run_source_probe",
+    "public_fanout",
+    "mutate_master_index",
+    "mutate_operator_instance",
+    "deploy"
+  ],
+  "domains": [
+    {
+      "action_posture_defaults": {
+        "allowed_read_only_actions": [
+          "inspect",
+          "cite",
+          "export_metadata",
+          "request_review"
+        ],
+        "blocked_actions": [
+          "download",
+          "upload",
+          "extract",
+          "execute",
+          "install",
+          "call_model_provider",
+          "run_source_probe",
+          "public_fanout",
+          "mutate_master_index",
+          "mutate_operator_instance",
+          "deploy"
+        ],
+        "downloads_blocked_by_default": true,
+        "extraction_blocked_by_default": true,
+        "model_provider_calls_blocked_by_default": true,
+        "public_fanout_blocked_by_default": true,
+        "review_promote_operator_gated": true
+      },
+      "domain_id": "legacy_software"
+    },
+    {
+      "action_posture_defaults": {
+        "allowed_read_only_actions": [
+          "inspect",
+          "cite",
+          "export_metadata",
+          "request_review"
+        ],
+        "blocked_actions": [
+          "download",
+          "upload",
+          "extract",
+          "execute",
+          "install",
+          "call_model_provider",
+          "run_source_probe",
+          "public_fanout",
+          "mutate_master_index",
+          "mutate_operator_instance",
+          "deploy"
+        ],
+        "downloads_blocked_by_default": true,
+        "extraction_blocked_by_default": true,
+        "model_provider_calls_blocked_by_default": true,
+        "public_fanout_blocked_by_default": true,
+        "review_promote_operator_gated": true
+      },
+      "domain_id": "driver_support_media"
+    },
+    {
+      "action_posture_defaults": {
+        "allowed_read_only_actions": [
+          "inspect",
+          "cite",
+          "export_metadata",
+          "request_review"
+        ],
+        "blocked_actions": [
+          "download",
+          "upload",
+          "extract",
+          "execute",
+          "install",
+          "call_model_provider",
+          "run_source_probe",
+          "public_fanout",
+          "mutate_master_index",
+          "mutate_operator_instance",
+          "deploy"
+        ],
+        "downloads_blocked_by_default": true,
+        "extraction_blocked_by_default": true,
+        "model_provider_calls_blocked_by_default": true,
+        "public_fanout_blocked_by_default": true,
+        "review_promote_operator_gated": true
+      },
+      "domain_id": "frontier_resolution_media"
+    },
+    {
+      "action_posture_defaults": {
+        "allowed_read_only_actions": [
+          "inspect",
+          "cite",
+          "export_metadata",
+          "request_review"
+        ],
+        "blocked_actions": [
+          "download",
+          "upload",
+          "extract",
+          "execute",
+          "install",
+          "call_model_provider",
+          "run_source_probe",
+          "public_fanout",
+          "mutate_master_index",
+          "mutate_operator_instance",
+          "deploy"
+        ],
+        "downloads_blocked_by_default": true,
+        "extraction_blocked_by_default": true,
+        "model_provider_calls_blocked_by_default": true,
+        "public_fanout_blocked_by_default": true,
+        "review_promote_operator_gated": true
+      },
+      "domain_id": "manuals_docs_scans"
+    },
+    {
+      "action_posture_defaults": {
+        "allowed_read_only_actions": [
+          "inspect",
+          "cite",
+          "export_metadata",
+          "request_review"
+        ],
+        "blocked_actions": [
+          "download",
+          "upload",
+          "extract",
+          "execute",
+          "install",
+          "call_model_provider",
+          "run_source_probe",
+          "public_fanout",
+          "mutate_master_index",
+          "mutate_operator_instance",
+          "deploy"
+        ],
+        "downloads_blocked_by_default": true,
+        "extraction_blocked_by_default": true,
+        "model_provider_calls_blocked_by_default": true,
+        "public_fanout_blocked_by_default": true,
+        "review_promote_operator_gated": true
+      },
+      "domain_id": "package_source_release"
+    },
+    {
+      "action_posture_defaults": {
+        "allowed_read_only_actions": [
+          "inspect",
+          "cite",
+          "export_metadata",
+          "request_review"
+        ],
+        "blocked_actions": [
+          "download",
+          "upload",
+          "extract",
+          "execute",
+          "install",
+          "call_model_provider",
+          "run_source_probe",
+          "public_fanout",
+          "mutate_master_index",
+          "mutate_operator_instance",
+          "deploy"
+        ],
+        "downloads_blocked_by_default": true,
+        "extraction_blocked_by_default": true,
+        "model_provider_calls_blocked_by_default": true,
+        "public_fanout_blocked_by_default": true,
+        "review_promote_operator_gated": true
+      },
+      "domain_id": "web_archive_trace"
+    },
+    {
+      "action_posture_defaults": {
+        "allowed_read_only_actions": [
+          "inspect",
+          "cite",
+          "export_metadata",
+          "request_review"
+        ],
+        "blocked_actions": [
+          "download",
+          "upload",
+          "extract",
+          "execute",
+          "install",
+          "call_model_provider",
+          "run_source_probe",
+          "public_fanout",
+          "mutate_master_index",
+          "mutate_operator_instance",
+          "deploy"
+        ],
+        "downloads_blocked_by_default": true,
+        "extraction_blocked_by_default": true,
+        "model_provider_calls_blocked_by_default": true,
+        "public_fanout_blocked_by_default": true,
+        "review_promote_operator_gated": true
+      },
+      "domain_id": "games_emulation"
+    },
+    {
+      "action_posture_defaults": {
+        "allowed_read_only_actions": [
+          "inspect",
+          "cite",
+          "export_metadata",
+          "request_review"
+        ],
+        "blocked_actions": [
+          "download",
+          "upload",
+          "extract",
+          "execute",
+          "install",
+          "call_model_provider",
+          "run_source_probe",
+          "public_fanout",
+          "mutate_master_index",
+          "mutate_operator_instance",
+          "deploy"
+        ],
+        "downloads_blocked_by_default": true,
+        "extraction_blocked_by_default": true,
+        "model_provider_calls_blocked_by_default": true,
+        "public_fanout_blocked_by_default": true,
+        "review_promote_operator_gated": true
+      },
+      "domain_id": "hardware_firmware_support"
+    }
+  ],
+  "schema_version": "domain_action_posture_matrix.v0"
+}

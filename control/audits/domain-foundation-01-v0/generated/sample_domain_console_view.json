@@ -1,0 +1,282 @@
+{
+  "blocked_actions": [
+    "download",
+    "upload",
+    "extract",
+    "execute",
+    "install",
+    "call_model_provider",
+    "run_source_probe",
+    "public_fanout",
+    "mutate_master_index",
+    "mutate_operator_instance",
+    "deploy"
+  ],
+  "created_at": "2026-05-21T00:00:00Z",
+  "display_name": "Legacy Software",
+  "domain_id": "legacy_software",
+  "non_claims": {
+    "canonical_truth": false,
+    "evidence_created": false,
+    "production_readiness_claimed": false,
+    "public_launch_readiness_claimed": false,
+    "reviewed_record_created": false,
+    "runtime_source_behavior_enabled": false
+  },
+  "operator_detail_visible": true,
+  "projection_profile": "operator_workbench",
+  "read_only": true,
+  "route": "/domain/legacy_software",
+  "schema_version": "domain_console_view.v0",
+  "view_id": "domain:legacy_software:operator_workbench",
+  "views": {
+    "DomainActionPostureView": {
+      "action_posture_defaults": {
+        "allowed_read_only_actions": [
+          "inspect",
+          "cite",
+          "export_metadata",
+          "request_review"
+        ],
+        "blocked_actions": [
+          "download",
+          "upload",
+          "extract",
+          "execute",
+          "install",
+          "call_model_provider",
+          "run_source_probe",
+          "public_fanout",
+          "mutate_master_index",
+          "mutate_operator_instance",
+          "deploy"
+        ],
+        "downloads_blocked_by_default": true,
+        "extraction_blocked_by_default": true,
+        "model_provider_calls_blocked_by_default": true,
+        "public_fanout_blocked_by_default": true,
+        "review_promote_operator_gated": true
+      },
+      "operator_gated": true
+    },
+    "DomainListView": {
+      "available_domain_ids": [
+        "legacy_software",
+        "driver_support_media",
+        "frontier_resolution_media",
+        "manuals_docs_scans",
+        "package_source_release",
+        "web_archive_trace",
+        "games_emulation",
+        "hardware_firmware_support"
+      ],
+      "selected_domain_id": "legacy_software"
+    },
+    "DomainPackView": {
+      "display_name": "Legacy Software",
+      "domain_id": "legacy_software",
+      "domain_version": "v0",
+      "identity_rules": [
+        {
+          "creates_truth": false,
+          "review_required": true,
+          "rule_id": "legacy_software_identity_core",
+          "rule_type": "hint",
+          "signals": [
+            "portable app",
+            "installer",
+            "versioned release",
+            "compatibility evidence"
+          ]
+        }
+      ],
+      "object_families": [
+        "portable_app",
+        "installer",
+        "versioned_release",
+        "compatibility_artifact"
+      ],
+      "promote_rules": [
+        {
+          "creates_reviewed_record": false,
+          "reason": "Surface reviewable context before any operator-gated action.",
+          "review_required": true,
+          "rule_id": "legacy_software_promote_reviewable_context",
+          "signals": [
+            "portable app",
+            "installer",
+            "versioned release",
+            "compatibility evidence"
+          ]
+        }
+      ],
+      "query_classes": [
+        "software_lookup",
+        "version_compatibility",
+        "portable_utility"
+      ],
+      "seed_pack_status": "example_only",
+      "suppression_rules": [
+        {
+          "creates_truth": false,
+          "reason": "Avoid misleading or unsafe domain interpretations without reviewed provenance.",
+          "rule_id": "legacy_software_suppress_low_signal",
+          "signals": [
+            "OS ISO when user wants apps",
+            "modern scam/updater tools"
+          ]
+        }
+      ]
+    },
+    "DomainQueryHintView": {
+      "creates_runtime_behavior": false,
+      "domain_id": "legacy_software",
+      "promote_terms": [
+        "compatibility evidence",
+        "installer",
+        "portable app",
+        "versioned release"
+      ],
+      "query_classes": [
+        "software_lookup",
+        "version_compatibility",
+        "portable_utility"
+      ],
+      "review_required": true,
+      "schema_version": "domain_compiled_query_hints.v0",
+      "source_family_preferences": [
+        "archived_vendor_pages_later",
+        "github_releases_later",
+        "internet_archive_software_metadata"
+      ],
+      "suppress_terms": [
+        "OS ISO when user wants apps",
+        "modern scam/updater tools"
+      ]
+    },
+    "DomainResultExpectationView": {
+      "result_lane_expectations": [
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "reviewed_local_results",
+          "review_required": false,
+          "truth_level": "reviewed_truth"
+        },
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "local_candidate_results",
+          "review_required": true,
+          "truth_level": "hint_only_requires_review"
+        },
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "source_cache_hits",
+          "review_required": true,
+          "truth_level": "hint_only_requires_review"
+        },
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "ia_metadata_candidates",
+          "review_required": true,
+          "truth_level": "hint_only_requires_review"
+        },
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "review_queue_items",
+          "review_required": true,
+          "truth_level": "hint_only_requires_review"
+        },
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "known_absence",
+          "review_required": true,
+          "truth_level": "hint_only_requires_review"
+        },
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "near_misses",
+          "review_required": true,
+          "truth_level": "hint_only_requires_review"
+        },
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "blocked_actions",
+          "review_required": true,
+          "truth_level": "hint_only_requires_review"
+        },
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "running_workunits",
+          "review_required": true,
+          "truth_level": "hint_only_requires_review"
+        },
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "deferred_deepening",
+          "review_required": true,
+          "truth_level": "hint_only_requires_review"
+        },
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "future_extraction_work",
+          "review_required": true,
+          "truth_level": "hint_only_requires_review"
+        }
+      ],
+      "truth_level": "hint_only_requires_review"
+    },
+    "DomainSourcePreferenceView": {
+      "live_source_calls_enabled": false,
+      "source_preferences": [
+        {
+          "current_status": "metadata_or_future_hint_only",
+          "limitations": [
+            "Preference does not probe sources, download content, or accept evidence."
+          ],
+          "live_source_calls_enabled": false,
+          "preference_rank": 1,
+          "source_family": "internet_archive_software_metadata"
+        },
+        {
+          "current_status": "metadata_or_future_hint_only",
+          "limitations": [
+            "Preference does not probe sources, download content, or accept evidence."
+          ],
+          "live_source_calls_enabled": false,
+          "preference_rank": 2,
+          "source_family": "github_releases_later"
+        },
+        {
+          "current_status": "metadata_or_future_hint_only",
+          "limitations": [
+            "Preference does not probe sources, download content, or accept evidence."
+          ],
+          "live_source_calls_enabled": false,
+          "preference_rank": 3,
+          "source_family": "archived_vendor_pages_later"
+        }
+      ]
+    },
+    "DomainSynCoverageView": {
+      "creates_evidence": false,
+      "creates_runtime_query_logs": false,
+      "domain_id": "legacy_software",
+      "schema_version": "domain_syn_case_mapping.v0",
+      "syn_case_count": 2,
+      "syn_case_refs": [
+        {
+          "case_ref": "syn_domain_legacy_software_1",
+          "expected_behavior": "route_with_domain_hints_without_creating_truth",
+          "query_class": "software_lookup",
+          "query_text": "Windows 7-compatible portable utilities, not Windows 7 ISO"
+        },
+        {
+          "case_ref": "syn_domain_legacy_software_2",
+          "expected_behavior": "route_with_domain_hints_without_creating_truth",
+          "query_class": "version_compatibility",
+          "query_text": "last Firefox for Windows XP"
+        }
+      ]
+    }
+  }
+}

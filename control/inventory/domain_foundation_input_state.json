@@ -1,0 +1,18 @@
+{
+  "branch": "dev",
+  "head": "79563d01c8cc01163eae53a973ad225d7b8edffb",
+  "ia_hunt_bridge_found": true,
+  "ia_pilot_closeout_found": true,
+  "origin_dev": "79563d01c8cc01163eae53a973ad225d7b8edffb",
+  "origin_main": "79563d01c8cc01163eae53a973ad225d7b8edffb",
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "schema_version": "domain_foundation_input_state.v0",
+  "search_interaction_found": true,
+  "syn_foundation_found": true,
+  "task": "AIDE-BATCH-DOMAIN-FOUNDATION-01",
+  "test_lane_router_found": true,
+  "workbench_foundation_found": true,
+  "workbench_result_lanes_found": true,
+  "working_tree_clean_before": true
+}

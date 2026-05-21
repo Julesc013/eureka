@@ -1,0 +1,18 @@
+{
+  "repairs": [
+    {
+      "failure": "Initial focused DOMAIN validation failed when direct scripts could not import runtime and docs lacked the exact no live source phrase expected by validate_domain_packs.py.",
+      "repair": "Added repo root to DOMAIN script sys.path setup and updated DOMAIN docs to state the no live source boundary explicitly.",
+      "rerun_command": "python scripts/validate_domain_packs.py && python -m unittest tests.runtime.test_domain_packs tests.runtime.test_domain_query_hints tests.runtime.test_domain_syn_integration tests.operations.test_domain_pack_scripts tests.operations.test_domain_console tests.scripts.test_validate_domain_packs",
+      "result": "pass"
+    },
+    {
+      "failure": "Full discovery failed in tests.operations.test_contract_taxonomy_plan because R0-03A contract taxonomy inventory did not classify new contracts/domain/domain_*.v0.json files.",
+      "repair": "Regenerated the existing R0-03A contract taxonomy standard outputs so the DOMAIN contract files are classified as product_domain_contract entries.",
+      "rerun_command": "python scripts/validate_contract_taxonomy_plan.py --json && python -m unittest tests.operations.test_contract_taxonomy_plan",
+      "result": "pass"
+    }
+  ],
+  "schema_version": "domain_failure_repair_log.v0",
+  "task": "AIDE-BATCH-DOMAIN-FOUNDATION-01"
+}

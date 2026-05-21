@@ -1,7 +1,7 @@
 # Eureka Repo Health
 
-- current_recommended_task: DOMAIN-00 - DOMAIN pack console and contracts
-- last_completed_task: SYN-00
+- current_recommended_task: SCOUT-SCHEMA-00 - Discovery trail, source trust, and relation contracts
+- last_completed_task: AIDE-BATCH-DOMAIN-FOUNDATION-01
 - last_completed_status: pass
 - test_lane_router_completed: true
 - test_selector_available: true
@@ -14,11 +14,11 @@
 - f0_current_status: deferred
 - f0_deferred_until: LOCAL-14
 - last_full_unittest_discovery_status: pass
-- last_full_unittest_discovery_tests: 4814
+- last_full_unittest_discovery_tests: 4827
 - last_full_unittest_discovery_failures: 0
 - last_full_unittest_discovery_errors: 0
-- last_full_unittest_discovery_duration_seconds: 2506.187
-- last_full_unittest_discovery_disposition: SYN-00 added example-only synthetic query pressure contracts, query sets, seed bridges, validator/tests/docs/audit evidence, and full discovery passed. DOMAIN-00 can start.
+- last_full_unittest_discovery_duration_seconds: 2677.802
+- last_full_unittest_discovery_disposition: DOMAIN foundation added example-only domain packs, query hints, SYN mappings, read-only console model, validator/tests/docs/audit evidence, repaired taxonomy inventory echo, and full discovery passed. SCOUT-SCHEMA-00 can start.
 - workbench_result_lanes_completed: true
 - result_lane_closeout_required: false
 - ia_hunt_bridge_can_start: true

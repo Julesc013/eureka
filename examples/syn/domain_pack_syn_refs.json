@@ -1,0 +1,143 @@
+{
+  "creates_runtime_query_logs": false,
+  "domain_refs": [
+    {
+      "domain_id": "legacy_software",
+      "syn_case_refs": [
+        {
+          "case_ref": "syn_domain_legacy_software_1",
+          "expected_behavior": "route_with_domain_hints_without_creating_truth",
+          "query_class": "software_lookup",
+          "query_text": "Windows 7-compatible portable utilities, not Windows 7 ISO"
+        },
+        {
+          "case_ref": "syn_domain_legacy_software_2",
+          "expected_behavior": "route_with_domain_hints_without_creating_truth",
+          "query_class": "version_compatibility",
+          "query_text": "last Firefox for Windows XP"
+        }
+      ]
+    },
+    {
+      "domain_id": "driver_support_media",
+      "syn_case_refs": [
+        {
+          "case_ref": "syn_domain_driver_support_media_1",
+          "expected_behavior": "route_with_domain_hints_without_creating_truth",
+          "query_class": "driver_lookup",
+          "query_text": "StyleWriter 2500 Mac OS 8 driver"
+        },
+        {
+          "case_ref": "syn_domain_driver_support_media_2",
+          "expected_behavior": "route_with_domain_hints_without_creating_truth",
+          "query_class": "support_media_lookup",
+          "query_text": "ThinkPad T42 restore drivers support disc"
+        }
+      ]
+    },
+    {
+      "domain_id": "frontier_resolution_media",
+      "syn_case_refs": [
+        {
+          "case_ref": "syn_domain_frontier_resolution_media_1",
+          "expected_behavior": "route_with_domain_hints_without_creating_truth",
+          "query_class": "media_provenance",
+          "query_text": "New York 1993 D-Theater HD demo tape original source"
+        },
+        {
+          "case_ref": "syn_domain_frontier_resolution_media_2",
+          "expected_behavior": "route_with_domain_hints_without_creating_truth",
+          "query_class": "best_representation",
+          "query_text": "early HDTV footage of ordinary city life"
+        }
+      ]
+    },
+    {
+      "domain_id": "manuals_docs_scans",
+      "syn_case_refs": [
+        {
+          "case_ref": "syn_domain_manuals_docs_scans_1",
+          "expected_behavior": "route_with_domain_hints_without_creating_truth",
+          "query_class": "manual_lookup",
+          "query_text": "Sony PVM service manual scan"
+        },
+        {
+          "case_ref": "syn_domain_manuals_docs_scans_2",
+          "expected_behavior": "route_with_domain_hints_without_creating_truth",
+          "query_class": "document_scan_lookup",
+          "query_text": "Apple StyleWriter user guide OCR scan"
+        }
+      ]
+    },
+    {
+      "domain_id": "package_source_release",
+      "syn_case_refs": [
+        {
+          "case_ref": "syn_domain_package_source_release_1",
+          "expected_behavior": "route_with_domain_hints_without_creating_truth",
+          "query_class": "source_release_lookup",
+          "query_text": "DirectX SDK June 2010 offline installer"
+        },
+        {
+          "case_ref": "syn_domain_package_source_release_2",
+          "expected_behavior": "route_with_domain_hints_without_creating_truth",
+          "query_class": "package_metadata_lookup",
+          "query_text": "source release archive for old graphics toolkit"
+        }
+      ]
+    },
+    {
+      "domain_id": "web_archive_trace",
+      "syn_case_refs": [
+        {
+          "case_ref": "syn_domain_web_archive_trace_1",
+          "expected_behavior": "route_with_domain_hints_without_creating_truth",
+          "query_class": "web_trace_lookup",
+          "query_text": "archived vendor page for discontinued media player"
+        },
+        {
+          "case_ref": "syn_domain_web_archive_trace_2",
+          "expected_behavior": "route_with_domain_hints_without_creating_truth",
+          "query_class": "historical_page_context",
+          "query_text": "Wayback trace for old driver release notes"
+        }
+      ]
+    },
+    {
+      "domain_id": "games_emulation",
+      "syn_case_refs": [
+        {
+          "case_ref": "syn_domain_games_emulation_1",
+          "expected_behavior": "route_with_domain_hints_without_creating_truth",
+          "query_class": "game_artifact_lookup",
+          "query_text": "DOS game patch notes and emulator compatibility"
+        },
+        {
+          "case_ref": "syn_domain_games_emulation_2",
+          "expected_behavior": "route_with_domain_hints_without_creating_truth",
+          "query_class": "emulation_context",
+          "query_text": "homebrew game release source archive"
+        }
+      ]
+    },
+    {
+      "domain_id": "hardware_firmware_support",
+      "syn_case_refs": [
+        {
+          "case_ref": "syn_domain_hardware_firmware_support_1",
+          "expected_behavior": "route_with_domain_hints_without_creating_truth",
+          "query_class": "firmware_lookup",
+          "query_text": "PowerBook firmware updater archived support page"
+        },
+        {
+          "case_ref": "syn_domain_hardware_firmware_support_2",
+          "expected_behavior": "route_with_domain_hints_without_creating_truth",
+          "query_class": "hardware_support_lookup",
+          "query_text": "router firmware release note with OEM provenance"
+        }
+      ]
+    }
+  ],
+  "schema_version": "domain_pack_syn_refs.v0",
+  "seed_status": "example_only"
+}

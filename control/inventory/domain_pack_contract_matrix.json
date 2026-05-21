@@ -1,0 +1,39 @@
+{
+  "contracts": [
+    {
+      "contract": "contracts/domain/domain_pack.v0.json",
+      "schema_version": "domain_pack.v0"
+    },
+    {
+      "contract": "contracts/domain/domain_identity_rule.v0.json",
+      "schema_version": "domain_identity_rule.v0"
+    },
+    {
+      "contract": "contracts/domain/domain_query_hint.v0.json",
+      "schema_version": "domain_query_hint.v0"
+    },
+    {
+      "contract": "contracts/domain/domain_source_preference.v0.json",
+      "schema_version": "domain_source_preference.v0"
+    },
+    {
+      "contract": "contracts/domain/domain_result_expectation.v0.json",
+      "schema_version": "domain_result_expectation.v0"
+    },
+    {
+      "contract": "contracts/domain/domain_action_posture.v0.json",
+      "schema_version": "domain_action_posture.v0"
+    },
+    {
+      "contract": "contracts/domain/domain_seed_manifest.v0.json",
+      "schema_version": "domain_seed_manifest.v0"
+    },
+    {
+      "contract": "contracts/domain/domain_console_view.v0.json",
+      "schema_version": "domain_console_view.v0"
+    }
+  ],
+  "domain_packs_are_truth": false,
+  "schema_version": "domain_pack_contract_matrix.v0",
+  "validator_required": true
+}

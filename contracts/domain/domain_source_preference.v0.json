@@ -1,0 +1,18 @@
+{
+  "contract_status": "foundation_contract",
+  "non_claims": {
+    "domain_contract_creates_evidence": false,
+    "domain_contract_creates_reviewed_records": false,
+    "domain_contract_enables_runtime_mutation": false,
+    "domain_contract_is_source_connector": false
+  },
+  "purpose": "Define DOMAIN pack interpretation and read-only console boundaries without creating truth, source behavior, evidence, or index mutations.",
+  "required_fields": [
+    "source_family",
+    "preference_rank",
+    "current_status",
+    "live_source_calls_enabled",
+    "limitations"
+  ],
+  "schema_version": "domain_source_preference.v0"
+}

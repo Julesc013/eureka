@@ -1,6 +1,6 @@
 # Product Contract Summary
 
-count: 311
+count: 322
 
 - contracts/actions/acquisition_manifest.v0.json -> contracts/connectors/acquisition_manifest.v0.json (move)
 - contracts/actions/action_manifest.v0.json -> contracts/connectors/action_manifest.v0.json (move)
@@ -64,6 +64,14 @@ count: 311
 - contracts/connectors/source_connector_output_envelope.v0.json -> contracts/connectors/source_connector_output_envelope.v0.json (keep)
 - contracts/connectors/wayback_cdx_memento_connector_approval.v0.json -> contracts/connectors/wayback_cdx_memento_connector_approval.v0.json (keep)
 - contracts/connectors/wayback_cdx_memento_connector_manifest.v0.json -> contracts/connectors/wayback_cdx_memento_connector_manifest.v0.json (keep)
+- contracts/domain/domain_action_posture.v0.json -> contracts/domain/domain_action_posture.v0.json (keep)
+- contracts/domain/domain_console_view.v0.json -> contracts/domain/domain_console_view.v0.json (keep)
+- contracts/domain/domain_identity_rule.v0.json -> contracts/domain/domain_identity_rule.v0.json (keep)
+- contracts/domain/domain_pack.v0.json -> contracts/domain/domain_pack.v0.json (keep)
+- contracts/domain/domain_query_hint.v0.json -> contracts/domain/domain_query_hint.v0.json (keep)
+- contracts/domain/domain_result_expectation.v0.json -> contracts/domain/domain_result_expectation.v0.json (keep)
+- contracts/domain/domain_seed_manifest.v0.json -> contracts/domain/domain_seed_manifest.v0.json (keep)
+- contracts/domain/domain_source_preference.v0.json -> contracts/domain/domain_source_preference.v0.json (keep)
 - contracts/domain/source_policy.v0.json -> contracts/domain/source_policy.v0.json (keep)
 - contracts/domain/source_record.v0.json -> contracts/domain/source_record.v0.json (keep)
 - contracts/evidence/evidence_contract_index.v0.json -> contracts/domain/evidence_contract_index.v0.json (move)
@@ -151,6 +159,8 @@ count: 311
 - contracts/query/search_quality_query_set.v0.json -> contracts/runtime/search_quality_query_set.v0.json (move)
 - contracts/query/search_result_cache_entry.v0.json -> contracts/runtime/search_result_cache_entry.v0.json (move)
 - contracts/query/search_result_explanation.v0.json -> contracts/runtime/search_result_explanation.v0.json (move)
+- contracts/query/synthetic_query_case.v0.json -> contracts/runtime/synthetic_query_case.v0.json (move)
+- contracts/query/synthetic_query_set.v0.json -> contracts/runtime/synthetic_query_set.v0.json (move)
 - contracts/query/workunit_seed.v0.json -> contracts/runtime/workunit_seed.v0.json (move)
 - contracts/query/workunit_seed_conversion.v0.json -> contracts/runtime/workunit_seed_conversion.v0.json (move)
 - contracts/relay/old_browser_profile.v0.json -> contracts/snapshot/old_browser_profile.v0.json (move)
@@ -192,14 +202,4 @@ count: 311
 - contracts/search/search_result_explanation_policy.v0.json -> contracts/api/search_result_explanation_policy.v0.json (move)
 - contracts/search_interaction/absence_packet.v0.json -> contracts/domain/absence_packet.v0.json (move)
 - contracts/search_interaction/action_posture_packet.v0.json -> contracts/domain/action_posture_packet.v0.json (move)
-- contracts/search_interaction/compiled_query_packet.v0.json -> contracts/domain/compiled_query_packet.v0.json (move)
-- contracts/search_interaction/discovery_trail_packet.v0.json -> contracts/domain/discovery_trail_packet.v0.json (move)
-- contracts/search_interaction/partial_result_packet.v0.json -> contracts/domain/partial_result_packet.v0.json (move)
-- contracts/search_interaction/resolution_run_packet.v0.json -> contracts/domain/resolution_run_packet.v0.json (move)
-- contracts/search_interaction/result_lane_packet.v0.json -> contracts/domain/result_lane_packet.v0.json (move)
-- contracts/search_interaction/search_control_command.v0.json -> contracts/domain/search_control_command.v0.json (move)
-- contracts/search_interaction/search_plan_patch.v0.json -> contracts/domain/search_plan_patch.v0.json (move)
-- contracts/search_interaction/search_request_packet.v0.json -> contracts/domain/search_request_packet.v0.json (move)
-- contracts/search_interaction/user_feedback_event.v0.json -> contracts/domain/user_feedback_event.v0.json (move)
-- contracts/snapshots/snapshot_envelope.v0.json -> contracts/snapshot/snapshot_envelope.v0.json (move)
-- ... 111 additional entries in JSON inventory.
+- ... 122 additional entries in JSON inventory.

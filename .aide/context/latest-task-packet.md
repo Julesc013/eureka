@@ -2,11 +2,11 @@
 
 ## PHASE
 
-UNSPECIFIED - DOMAIN-00
+UNSPECIFIED - SCOUT-SCHEMA-00 - Discovery trail, source trust, and relation contracts
 
 ## GOAL
 
-DOMAIN-00
+SCOUT-SCHEMA-00 - Discovery trail, source trust, and relation contracts
 
 ## WHY
 
@@ -139,8 +139,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4738
-- approx_tokens: 1185
+- chars: 4862
+- approx_tokens: 1216
 - budget_status: PASS
 - warnings:
   - none

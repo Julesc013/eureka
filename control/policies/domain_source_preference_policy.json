@@ -1,0 +1,9 @@
+{
+  "future_source_families_require_policy_gate": true,
+  "schema_version": "domain_source_preference_policy.v0",
+  "source_preferences_are_hints": true,
+  "source_preferences_do_not_accept_evidence": true,
+  "source_preferences_do_not_download": true,
+  "source_preferences_do_not_enable_connectors": true,
+  "source_preferences_do_not_probe_sources": true
+}

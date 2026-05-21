@@ -1,0 +1,262 @@
+{
+  "domains": [
+    {
+      "domain_id": "legacy_software",
+      "source_preferences": [
+        {
+          "current_status": "metadata_or_future_hint_only",
+          "limitations": [
+            "Preference does not probe sources, download content, or accept evidence."
+          ],
+          "live_source_calls_enabled": false,
+          "preference_rank": 1,
+          "source_family": "internet_archive_software_metadata"
+        },
+        {
+          "current_status": "metadata_or_future_hint_only",
+          "limitations": [
+            "Preference does not probe sources, download content, or accept evidence."
+          ],
+          "live_source_calls_enabled": false,
+          "preference_rank": 2,
+          "source_family": "github_releases_later"
+        },
+        {
+          "current_status": "metadata_or_future_hint_only",
+          "limitations": [
+            "Preference does not probe sources, download content, or accept evidence."
+          ],
+          "live_source_calls_enabled": false,
+          "preference_rank": 3,
+          "source_family": "archived_vendor_pages_later"
+        }
+      ]
+    },
+    {
+      "domain_id": "driver_support_media",
+      "source_preferences": [
+        {
+          "current_status": "metadata_or_future_hint_only",
+          "limitations": [
+            "Preference does not probe sources, download content, or accept evidence."
+          ],
+          "live_source_calls_enabled": false,
+          "preference_rank": 1,
+          "source_family": "internet_archive_metadata"
+        },
+        {
+          "current_status": "metadata_or_future_hint_only",
+          "limitations": [
+            "Preference does not probe sources, download content, or accept evidence."
+          ],
+          "live_source_calls_enabled": false,
+          "preference_rank": 2,
+          "source_family": "support_cd_metadata"
+        },
+        {
+          "current_status": "metadata_or_future_hint_only",
+          "limitations": [
+            "Preference does not probe sources, download content, or accept evidence."
+          ],
+          "live_source_calls_enabled": false,
+          "preference_rank": 3,
+          "source_family": "wayback_later"
+        }
+      ]
+    },
+    {
+      "domain_id": "frontier_resolution_media",
+      "source_preferences": [
+        {
+          "current_status": "metadata_or_future_hint_only",
+          "limitations": [
+            "Preference does not probe sources, download content, or accept evidence."
+          ],
+          "live_source_calls_enabled": false,
+          "preference_rank": 1,
+          "source_family": "internet_archive_metadata"
+        },
+        {
+          "current_status": "metadata_or_future_hint_only",
+          "limitations": [
+            "Preference does not probe sources, download content, or accept evidence."
+          ],
+          "live_source_calls_enabled": false,
+          "preference_rank": 2,
+          "source_family": "media_collections"
+        },
+        {
+          "current_status": "metadata_or_future_hint_only",
+          "limitations": [
+            "Preference does not probe sources, download content, or accept evidence."
+          ],
+          "live_source_calls_enabled": false,
+          "preference_rank": 3,
+          "source_family": "future_scout_trails"
+        }
+      ]
+    },
+    {
+      "domain_id": "manuals_docs_scans",
+      "source_preferences": [
+        {
+          "current_status": "metadata_or_future_hint_only",
+          "limitations": [
+            "Preference does not probe sources, download content, or accept evidence."
+          ],
+          "live_source_calls_enabled": false,
+          "preference_rank": 1,
+          "source_family": "internet_archive_metadata"
+        },
+        {
+          "current_status": "metadata_or_future_hint_only",
+          "limitations": [
+            "Preference does not probe sources, download content, or accept evidence."
+          ],
+          "live_source_calls_enabled": false,
+          "preference_rank": 2,
+          "source_family": "manual_scan_collections"
+        },
+        {
+          "current_status": "metadata_or_future_hint_only",
+          "limitations": [
+            "Preference does not probe sources, download content, or accept evidence."
+          ],
+          "live_source_calls_enabled": false,
+          "preference_rank": 3,
+          "source_family": "vendor_pdf_archives_later"
+        }
+      ]
+    },
+    {
+      "domain_id": "package_source_release",
+      "source_preferences": [
+        {
+          "current_status": "metadata_or_future_hint_only",
+          "limitations": [
+            "Preference does not probe sources, download content, or accept evidence."
+          ],
+          "live_source_calls_enabled": false,
+          "preference_rank": 1,
+          "source_family": "internet_archive_metadata"
+        },
+        {
+          "current_status": "metadata_or_future_hint_only",
+          "limitations": [
+            "Preference does not probe sources, download content, or accept evidence."
+          ],
+          "live_source_calls_enabled": false,
+          "preference_rank": 2,
+          "source_family": "github_releases_later"
+        },
+        {
+          "current_status": "metadata_or_future_hint_only",
+          "limitations": [
+            "Preference does not probe sources, download content, or accept evidence."
+          ],
+          "live_source_calls_enabled": false,
+          "preference_rank": 3,
+          "source_family": "package_registry_metadata_later"
+        }
+      ]
+    },
+    {
+      "domain_id": "web_archive_trace",
+      "source_preferences": [
+        {
+          "current_status": "metadata_or_future_hint_only",
+          "limitations": [
+            "Preference does not probe sources, download content, or accept evidence."
+          ],
+          "live_source_calls_enabled": false,
+          "preference_rank": 1,
+          "source_family": "wayback_later"
+        },
+        {
+          "current_status": "metadata_or_future_hint_only",
+          "limitations": [
+            "Preference does not probe sources, download content, or accept evidence."
+          ],
+          "live_source_calls_enabled": false,
+          "preference_rank": 2,
+          "source_family": "internet_archive_metadata"
+        },
+        {
+          "current_status": "metadata_or_future_hint_only",
+          "limitations": [
+            "Preference does not probe sources, download content, or accept evidence."
+          ],
+          "live_source_calls_enabled": false,
+          "preference_rank": 3,
+          "source_family": "operator_review_notes"
+        }
+      ]
+    },
+    {
+      "domain_id": "games_emulation",
+      "source_preferences": [
+        {
+          "current_status": "metadata_or_future_hint_only",
+          "limitations": [
+            "Preference does not probe sources, download content, or accept evidence."
+          ],
+          "live_source_calls_enabled": false,
+          "preference_rank": 1,
+          "source_family": "internet_archive_metadata"
+        },
+        {
+          "current_status": "metadata_or_future_hint_only",
+          "limitations": [
+            "Preference does not probe sources, download content, or accept evidence."
+          ],
+          "live_source_calls_enabled": false,
+          "preference_rank": 2,
+          "source_family": "emulation_docs_later"
+        },
+        {
+          "current_status": "metadata_or_future_hint_only",
+          "limitations": [
+            "Preference does not probe sources, download content, or accept evidence."
+          ],
+          "live_source_calls_enabled": false,
+          "preference_rank": 3,
+          "source_family": "review_queue_only"
+        }
+      ]
+    },
+    {
+      "domain_id": "hardware_firmware_support",
+      "source_preferences": [
+        {
+          "current_status": "metadata_or_future_hint_only",
+          "limitations": [
+            "Preference does not probe sources, download content, or accept evidence."
+          ],
+          "live_source_calls_enabled": false,
+          "preference_rank": 1,
+          "source_family": "internet_archive_metadata"
+        },
+        {
+          "current_status": "metadata_or_future_hint_only",
+          "limitations": [
+            "Preference does not probe sources, download content, or accept evidence."
+          ],
+          "live_source_calls_enabled": false,
+          "preference_rank": 2,
+          "source_family": "archived_oem_pages_later"
+        },
+        {
+          "current_status": "metadata_or_future_hint_only",
+          "limitations": [
+            "Preference does not probe sources, download content, or accept evidence."
+          ],
+          "live_source_calls_enabled": false,
+          "preference_rank": 3,
+          "source_family": "manual_scan_collections"
+        }
+      ]
+    }
+  ],
+  "schema_version": "domain_source_preference_matrix.v0",
+  "source_preferences_do_not_probe_sources": true
+}

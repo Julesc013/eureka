@@ -1,0 +1,586 @@
+{
+  "domains": [
+    {
+      "domain_id": "legacy_software",
+      "result_lane_expectations": [
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "reviewed_local_results",
+          "review_required": false,
+          "truth_level": "reviewed_truth"
+        },
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "local_candidate_results",
+          "review_required": true,
+          "truth_level": "hint_only_requires_review"
+        },
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "source_cache_hits",
+          "review_required": true,
+          "truth_level": "hint_only_requires_review"
+        },
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "ia_metadata_candidates",
+          "review_required": true,
+          "truth_level": "hint_only_requires_review"
+        },
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "review_queue_items",
+          "review_required": true,
+          "truth_level": "hint_only_requires_review"
+        },
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "known_absence",
+          "review_required": true,
+          "truth_level": "hint_only_requires_review"
+        },
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "near_misses",
+          "review_required": true,
+          "truth_level": "hint_only_requires_review"
+        },
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "blocked_actions",
+          "review_required": true,
+          "truth_level": "hint_only_requires_review"
+        },
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "running_workunits",
+          "review_required": true,
+          "truth_level": "hint_only_requires_review"
+        },
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "deferred_deepening",
+          "review_required": true,
+          "truth_level": "hint_only_requires_review"
+        },
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "future_extraction_work",
+          "review_required": true,
+          "truth_level": "hint_only_requires_review"
+        }
+      ]
+    },
+    {
+      "domain_id": "driver_support_media",
+      "result_lane_expectations": [
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "reviewed_local_results",
+          "review_required": false,
+          "truth_level": "reviewed_truth"
+        },
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "local_candidate_results",
+          "review_required": true,
+          "truth_level": "hint_only_requires_review"
+        },
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "source_cache_hits",
+          "review_required": true,
+          "truth_level": "hint_only_requires_review"
+        },
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "ia_metadata_candidates",
+          "review_required": true,
+          "truth_level": "hint_only_requires_review"
+        },
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "review_queue_items",
+          "review_required": true,
+          "truth_level": "hint_only_requires_review"
+        },
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "known_absence",
+          "review_required": true,
+          "truth_level": "hint_only_requires_review"
+        },
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "near_misses",
+          "review_required": true,
+          "truth_level": "hint_only_requires_review"
+        },
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "blocked_actions",
+          "review_required": true,
+          "truth_level": "hint_only_requires_review"
+        },
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "running_workunits",
+          "review_required": true,
+          "truth_level": "hint_only_requires_review"
+        },
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "deferred_deepening",
+          "review_required": true,
+          "truth_level": "hint_only_requires_review"
+        },
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "future_extraction_work",
+          "review_required": true,
+          "truth_level": "hint_only_requires_review"
+        }
+      ]
+    },
+    {
+      "domain_id": "frontier_resolution_media",
+      "result_lane_expectations": [
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "reviewed_local_results",
+          "review_required": false,
+          "truth_level": "reviewed_truth"
+        },
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "local_candidate_results",
+          "review_required": true,
+          "truth_level": "hint_only_requires_review"
+        },
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "source_cache_hits",
+          "review_required": true,
+          "truth_level": "hint_only_requires_review"
+        },
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "ia_metadata_candidates",
+          "review_required": true,
+          "truth_level": "hint_only_requires_review"
+        },
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "review_queue_items",
+          "review_required": true,
+          "truth_level": "hint_only_requires_review"
+        },
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "known_absence",
+          "review_required": true,
+          "truth_level": "hint_only_requires_review"
+        },
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "near_misses",
+          "review_required": true,
+          "truth_level": "hint_only_requires_review"
+        },
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "blocked_actions",
+          "review_required": true,
+          "truth_level": "hint_only_requires_review"
+        },
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "running_workunits",
+          "review_required": true,
+          "truth_level": "hint_only_requires_review"
+        },
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "deferred_deepening",
+          "review_required": true,
+          "truth_level": "hint_only_requires_review"
+        },
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "future_extraction_work",
+          "review_required": true,
+          "truth_level": "hint_only_requires_review"
+        }
+      ]
+    },
+    {
+      "domain_id": "manuals_docs_scans",
+      "result_lane_expectations": [
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "reviewed_local_results",
+          "review_required": false,
+          "truth_level": "reviewed_truth"
+        },
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "local_candidate_results",
+          "review_required": true,
+          "truth_level": "hint_only_requires_review"
+        },
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "source_cache_hits",
+          "review_required": true,
+          "truth_level": "hint_only_requires_review"
+        },
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "ia_metadata_candidates",
+          "review_required": true,
+          "truth_level": "hint_only_requires_review"
+        },
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "review_queue_items",
+          "review_required": true,
+          "truth_level": "hint_only_requires_review"
+        },
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "known_absence",
+          "review_required": true,
+          "truth_level": "hint_only_requires_review"
+        },
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "near_misses",
+          "review_required": true,
+          "truth_level": "hint_only_requires_review"
+        },
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "blocked_actions",
+          "review_required": true,
+          "truth_level": "hint_only_requires_review"
+        },
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "running_workunits",
+          "review_required": true,
+          "truth_level": "hint_only_requires_review"
+        },
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "deferred_deepening",
+          "review_required": true,
+          "truth_level": "hint_only_requires_review"
+        },
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "future_extraction_work",
+          "review_required": true,
+          "truth_level": "hint_only_requires_review"
+        }
+      ]
+    },
+    {
+      "domain_id": "package_source_release",
+      "result_lane_expectations": [
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "reviewed_local_results",
+          "review_required": false,
+          "truth_level": "reviewed_truth"
+        },
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "local_candidate_results",
+          "review_required": true,
+          "truth_level": "hint_only_requires_review"
+        },
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "source_cache_hits",
+          "review_required": true,
+          "truth_level": "hint_only_requires_review"
+        },
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "ia_metadata_candidates",
+          "review_required": true,
+          "truth_level": "hint_only_requires_review"
+        },
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "review_queue_items",
+          "review_required": true,
+          "truth_level": "hint_only_requires_review"
+        },
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "known_absence",
+          "review_required": true,
+          "truth_level": "hint_only_requires_review"
+        },
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "near_misses",
+          "review_required": true,
+          "truth_level": "hint_only_requires_review"
+        },
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "blocked_actions",
+          "review_required": true,
+          "truth_level": "hint_only_requires_review"
+        },
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "running_workunits",
+          "review_required": true,
+          "truth_level": "hint_only_requires_review"
+        },
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "deferred_deepening",
+          "review_required": true,
+          "truth_level": "hint_only_requires_review"
+        },
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "future_extraction_work",
+          "review_required": true,
+          "truth_level": "hint_only_requires_review"
+        }
+      ]
+    },
+    {
+      "domain_id": "web_archive_trace",
+      "result_lane_expectations": [
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "reviewed_local_results",
+          "review_required": false,
+          "truth_level": "reviewed_truth"
+        },
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "local_candidate_results",
+          "review_required": true,
+          "truth_level": "hint_only_requires_review"
+        },
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "source_cache_hits",
+          "review_required": true,
+          "truth_level": "hint_only_requires_review"
+        },
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "ia_metadata_candidates",
+          "review_required": true,
+          "truth_level": "hint_only_requires_review"
+        },
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "review_queue_items",
+          "review_required": true,
+          "truth_level": "hint_only_requires_review"
+        },
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "known_absence",
+          "review_required": true,
+          "truth_level": "hint_only_requires_review"
+        },
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "near_misses",
+          "review_required": true,
+          "truth_level": "hint_only_requires_review"
+        },
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "blocked_actions",
+          "review_required": true,
+          "truth_level": "hint_only_requires_review"
+        },
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "running_workunits",
+          "review_required": true,
+          "truth_level": "hint_only_requires_review"
+        },
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "deferred_deepening",
+          "review_required": true,
+          "truth_level": "hint_only_requires_review"
+        },
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "future_extraction_work",
+          "review_required": true,
+          "truth_level": "hint_only_requires_review"
+        }
+      ]
+    },
+    {
+      "domain_id": "games_emulation",
+      "result_lane_expectations": [
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "reviewed_local_results",
+          "review_required": false,
+          "truth_level": "reviewed_truth"
+        },
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "local_candidate_results",
+          "review_required": true,
+          "truth_level": "hint_only_requires_review"
+        },
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "source_cache_hits",
+          "review_required": true,
+          "truth_level": "hint_only_requires_review"
+        },
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "ia_metadata_candidates",
+          "review_required": true,
+          "truth_level": "hint_only_requires_review"
+        },
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "review_queue_items",
+          "review_required": true,
+          "truth_level": "hint_only_requires_review"
+        },
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "known_absence",
+          "review_required": true,
+          "truth_level": "hint_only_requires_review"
+        },
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "near_misses",
+          "review_required": true,
+          "truth_level": "hint_only_requires_review"
+        },
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "blocked_actions",
+          "review_required": true,
+          "truth_level": "hint_only_requires_review"
+        },
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "running_workunits",
+          "review_required": true,
+          "truth_level": "hint_only_requires_review"
+        },
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "deferred_deepening",
+          "review_required": true,
+          "truth_level": "hint_only_requires_review"
+        },
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "future_extraction_work",
+          "review_required": true,
+          "truth_level": "hint_only_requires_review"
+        }
+      ]
+    },
+    {
+      "domain_id": "hardware_firmware_support",
+      "result_lane_expectations": [
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "reviewed_local_results",
+          "review_required": false,
+          "truth_level": "reviewed_truth"
+        },
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "local_candidate_results",
+          "review_required": true,
+          "truth_level": "hint_only_requires_review"
+        },
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "source_cache_hits",
+          "review_required": true,
+          "truth_level": "hint_only_requires_review"
+        },
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "ia_metadata_candidates",
+          "review_required": true,
+          "truth_level": "hint_only_requires_review"
+        },
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "review_queue_items",
+          "review_required": true,
+          "truth_level": "hint_only_requires_review"
+        },
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "known_absence",
+          "review_required": true,
+          "truth_level": "hint_only_requires_review"
+        },
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "near_misses",
+          "review_required": true,
+          "truth_level": "hint_only_requires_review"
+        },
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "blocked_actions",
+          "review_required": true,
+          "truth_level": "hint_only_requires_review"
+        },
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "running_workunits",
+          "review_required": true,
+          "truth_level": "hint_only_requires_review"
+        },
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "deferred_deepening",
+          "review_required": true,
+          "truth_level": "hint_only_requires_review"
+        },
+        {
+          "domain_role": "expected_surface",
+          "lane_kind": "future_extraction_work",
+          "review_required": true,
+          "truth_level": "hint_only_requires_review"
+        }
+      ]
+    }
+  ],
+  "expected_lane_kinds": [
+    "reviewed_local_results",
+    "local_candidate_results",
+    "source_cache_hits",
+    "ia_metadata_candidates",
+    "review_queue_items",
+    "known_absence",
+    "near_misses",
+    "blocked_actions",
+    "running_workunits",
+    "deferred_deepening",
+    "future_extraction_work"
+  ],
+  "schema_version": "domain_result_lane_matrix.v0"
+}

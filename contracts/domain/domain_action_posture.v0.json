@@ -1,0 +1,16 @@
+{
+  "contract_status": "foundation_contract",
+  "non_claims": {
+    "domain_contract_creates_evidence": false,
+    "domain_contract_creates_reviewed_records": false,
+    "domain_contract_enables_runtime_mutation": false,
+    "domain_contract_is_source_connector": false
+  },
+  "purpose": "Define DOMAIN pack interpretation and read-only console boundaries without creating truth, source behavior, evidence, or index mutations.",
+  "required_fields": [
+    "blocked_actions",
+    "allowed_read_only_actions",
+    "review_promote_operator_gated"
+  ],
+  "schema_version": "domain_action_posture.v0"
+}

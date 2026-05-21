@@ -1,0 +1,149 @@
+{
+  "creates_runtime_behavior": false,
+  "domains": [
+    {
+      "domain_id": "legacy_software",
+      "promote": [
+        "portable app",
+        "installer",
+        "versioned release",
+        "compatibility evidence"
+      ],
+      "source_family_preferences": [
+        "internet_archive_software_metadata",
+        "github_releases_later",
+        "archived_vendor_pages_later"
+      ],
+      "suppress": [
+        "OS ISO when user wants apps",
+        "modern scam/updater tools"
+      ]
+    },
+    {
+      "domain_id": "driver_support_media",
+      "promote": [
+        "model",
+        "chipset",
+        "OEM support disc",
+        "member path"
+      ],
+      "source_family_preferences": [
+        "internet_archive_metadata",
+        "support_cd_metadata",
+        "wayback_later"
+      ],
+      "suppress": [
+        "generic driver updater sites",
+        "unreviewed mirror bundles"
+      ]
+    },
+    {
+      "domain_id": "frontier_resolution_media",
+      "promote": [
+        "format lineage",
+        "source provenance",
+        "best representation",
+        "collection/uploader trail"
+      ],
+      "source_family_preferences": [
+        "internet_archive_metadata",
+        "media_collections",
+        "future_scout_trails"
+      ],
+      "suppress": [
+        "generic low-quality reposts",
+        "unsourced remaster claims"
+      ]
+    },
+    {
+      "domain_id": "manuals_docs_scans",
+      "promote": [
+        "manual title",
+        "issue/page",
+        "OCR/text",
+        "scan source"
+      ],
+      "source_family_preferences": [
+        "internet_archive_metadata",
+        "manual_scan_collections",
+        "vendor_pdf_archives_later"
+      ],
+      "suppress": [
+        "unrelated product listings",
+        "manual aggregator pages without source trail"
+      ]
+    },
+    {
+      "domain_id": "package_source_release",
+      "promote": [
+        "release tag",
+        "source archive",
+        "package metadata",
+        "checksum if available"
+      ],
+      "source_family_preferences": [
+        "internet_archive_metadata",
+        "github_releases_later",
+        "package_registry_metadata_later"
+      ],
+      "suppress": [
+        "install commands without source evidence",
+        "unversioned paste snippets"
+      ]
+    },
+    {
+      "domain_id": "web_archive_trace",
+      "promote": [
+        "archived vendor page",
+        "timestamped URL",
+        "capture lineage",
+        "page context"
+      ],
+      "source_family_preferences": [
+        "wayback_later",
+        "internet_archive_metadata",
+        "operator_review_notes"
+      ],
+      "suppress": [
+        "current SEO pages",
+        "captures unrelated to requested object"
+      ]
+    },
+    {
+      "domain_id": "games_emulation",
+      "promote": [
+        "title/version/platform",
+        "emulator compatibility context",
+        "rights posture"
+      ],
+      "source_family_preferences": [
+        "internet_archive_metadata",
+        "emulation_docs_later",
+        "review_queue_only"
+      ],
+      "suppress": [
+        "piracy-focused download pages",
+        "unverified ROM packs"
+      ]
+    },
+    {
+      "domain_id": "hardware_firmware_support",
+      "promote": [
+        "hardware revision",
+        "firmware version",
+        "OEM support context",
+        "risk warning"
+      ],
+      "source_family_preferences": [
+        "internet_archive_metadata",
+        "archived_oem_pages_later",
+        "manual_scan_collections"
+      ],
+      "suppress": [
+        "generic firmware updater sites",
+        "unsafe flashing instructions without provenance"
+      ]
+    }
+  ],
+  "schema_version": "domain_query_hint_matrix.v0"
+}
