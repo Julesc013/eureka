@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (6514 chars, 1629 approximate tokens)
+- `.aide/context/latest-task-packet.md` (4738 chars, 1185 approximate tokens)
 
 ## Context Packet Reference
 
@@ -33,31 +33,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Changed Files Summary
 
-- allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
-- allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/IA-HUNT-BRIDGE-00/task.yaml` (M; matches active task allowed path)
-- allowed: `.aide/queue/SYN-00/task.yaml` (M; matches active task allowed path)
-- allowed: `.aide/queue/index.yaml` (M; matches active task allowed path)
-- allowed: `control/audits/ia-hunt-bridge-00-v0` (??; matches active task allowed path)
-- allowed: `control/inventory/ia_hunt_bridge_input_state.json` (??; matches active task allowed path)
-- allowed: `control/inventory/ia_hunt_bridge_next_task_decision.json` (??; matches active task allowed path)
-- allowed: `control/inventory/ia_hunt_bridge_policy_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/ia_hunt_bridge_result.json` (??; matches active task allowed path)
-- allowed: `control/inventory/ia_hunt_failure_repair_log.json` (??; matches active task allowed path)
-- allowed: `control/inventory/ia_hunt_pipeline_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/ia_hunt_result_lane_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/ia_hunt_smoke_result.json` (??; matches active task allowed path)
-- allowed: `control/inventory/ia_hunt_validation_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/ia_hunt_workunit_schema.json` (??; matches active task allowed path)
-- allowed: `control/policies/ia_hunt_bridge_policy.json` (??; matches active task allowed path)
-- allowed: `control/policies/ia_hunt_non_claim_policy.json` (??; matches active task allowed path)
-- allowed: `control/policies/ia_workunit_policy.json` (??; matches active task allowed path)
-- allowed: `docs/architecture/IA_HUNT_BRIDGE.md` (??; matches active task allowed path)
-- allowed: `docs/operations/IA_HUNT_BRIDGE_RUNBOOK.md` (??; matches active task allowed path)
-- allowed: `docs/operations/POST_IA_HUNT_BRIDGE_PLAN.md` (??; matches active task allowed path)
-- allowed: `examples/ia_hunt_bridge` (??; matches active task allowed path)
-- allowed: `runtime/search_hunt/__init__.py` (M; matches active task allowed path)
-- additional changed paths omitted from compact packet: 9; see task evidence changed-files report
+- none
 
 ## Validation Summary
 
@@ -67,8 +43,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 6587
-- approx_tokens: 1647
+- chars: 4251
+- approx_tokens: 1063
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:
