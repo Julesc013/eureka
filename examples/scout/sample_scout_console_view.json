@@ -1,0 +1,76 @@
+{
+  "blocked_actions": [
+    "live_source_call",
+    "source_probe",
+    "crawl",
+    "download",
+    "upload",
+    "extract",
+    "call_model_provider",
+    "public_fanout",
+    "mutate_operator_instance",
+    "mutate_master_index",
+    "write_source_cache",
+    "write_evidence",
+    "write_candidate_index",
+    "write_review_queue",
+    "create_reviewed_record",
+    "deploy"
+  ],
+  "created_at": "2026-05-21T00:00:00Z",
+  "non_claims": {
+    "accepted_truth_created": false,
+    "crawling_enabled": false,
+    "evidence_created": false,
+    "indexes_mutated": false,
+    "live_source_calls_enabled": false,
+    "reviewed_record_created": false
+  },
+  "operator_detail_visible": true,
+  "projection_profile": "operator_workbench",
+  "read_only": true,
+  "routes": [
+    "/scout",
+    "/scout/trails",
+    "/scout/sources",
+    "/scout/candidates",
+    "/scout/trust",
+    "/scout/feedback"
+  ],
+  "schema_version": "scout_console_view.v0",
+  "view_id": "scout:operator_workbench:sample",
+  "views": {
+    "DiscoveryCandidateView": {
+      "record_count": 1,
+      "review_required": true
+    },
+    "DiscoveryTrailView": {
+      "record_count": 1,
+      "review_required": true
+    },
+    "HuntFeedbackEventView": {
+      "record_count": 1,
+      "review_required": true
+    },
+    "RelatedPathView": {
+      "record_count": 1,
+      "review_required": true
+    },
+    "ScoutOverviewView": {
+      "record_count": 1,
+      "review_required": true
+    },
+    "SourceTrustObservationView": {
+      "record_count": 1,
+      "review_required": true
+    },
+    "SourceTrustView": {
+      "record_count": 1,
+      "review_required": true
+    },
+    "WorkUnitSeedSuggestionView": {
+      "record_count": 1,
+      "review_required": true
+    }
+  }
+}

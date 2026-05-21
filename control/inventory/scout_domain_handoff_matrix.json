@@ -1,0 +1,270 @@
+{
+  "domains": [
+    {
+      "creates_evidence": false,
+      "domain_id": "legacy_software",
+      "likely_relation_types": [
+        "same_collection",
+        "same_uploader",
+        "same_creator",
+        "same_format_family",
+        "same_platform",
+        "same_filename_pattern"
+      ],
+      "likely_seed_types": [
+        "query_pressure_seed"
+      ],
+      "likely_workunit_seed_suggestions": [
+        "inspect_related_collection",
+        "search_same_filename_pattern",
+        "trace_archived_vendor_url",
+        "compare_same_format_examples"
+      ],
+      "result_lane_expectations": [
+        "local_candidate_results",
+        "review_queue_items",
+        "blocked_actions",
+        "deferred_deepening"
+      ],
+      "source_trust_dimensions": [
+        "metadata_quality",
+        "provenance_quality",
+        "rights_risk",
+        "safety_risk"
+      ]
+    },
+    {
+      "creates_evidence": false,
+      "domain_id": "driver_support_media",
+      "likely_relation_types": [
+        "same_collection",
+        "same_uploader",
+        "same_creator",
+        "same_format_family",
+        "same_platform",
+        "same_filename_pattern"
+      ],
+      "likely_seed_types": [
+        "query_pressure_seed"
+      ],
+      "likely_workunit_seed_suggestions": [
+        "inspect_related_collection",
+        "search_same_filename_pattern",
+        "trace_archived_vendor_url",
+        "compare_same_format_examples"
+      ],
+      "result_lane_expectations": [
+        "local_candidate_results",
+        "review_queue_items",
+        "blocked_actions",
+        "deferred_deepening"
+      ],
+      "source_trust_dimensions": [
+        "metadata_quality",
+        "provenance_quality",
+        "rights_risk",
+        "safety_risk"
+      ]
+    },
+    {
+      "creates_evidence": false,
+      "domain_id": "frontier_resolution_media",
+      "likely_relation_types": [
+        "same_collection",
+        "same_uploader",
+        "same_creator",
+        "same_format_family",
+        "same_platform",
+        "same_filename_pattern"
+      ],
+      "likely_seed_types": [
+        "query_pressure_seed"
+      ],
+      "likely_workunit_seed_suggestions": [
+        "inspect_related_collection",
+        "search_same_filename_pattern",
+        "trace_archived_vendor_url",
+        "compare_same_format_examples"
+      ],
+      "result_lane_expectations": [
+        "local_candidate_results",
+        "review_queue_items",
+        "blocked_actions",
+        "deferred_deepening"
+      ],
+      "source_trust_dimensions": [
+        "metadata_quality",
+        "provenance_quality",
+        "rights_risk",
+        "safety_risk"
+      ]
+    },
+    {
+      "creates_evidence": false,
+      "domain_id": "manuals_docs_scans",
+      "likely_relation_types": [
+        "same_collection",
+        "same_uploader",
+        "same_creator",
+        "same_format_family",
+        "same_platform",
+        "same_filename_pattern"
+      ],
+      "likely_seed_types": [
+        "query_pressure_seed"
+      ],
+      "likely_workunit_seed_suggestions": [
+        "inspect_related_collection",
+        "search_same_filename_pattern",
+        "trace_archived_vendor_url",
+        "compare_same_format_examples"
+      ],
+      "result_lane_expectations": [
+        "local_candidate_results",
+        "review_queue_items",
+        "blocked_actions",
+        "deferred_deepening"
+      ],
+      "source_trust_dimensions": [
+        "metadata_quality",
+        "provenance_quality",
+        "rights_risk",
+        "safety_risk"
+      ]
+    },
+    {
+      "creates_evidence": false,
+      "domain_id": "package_source_release",
+      "likely_relation_types": [
+        "same_collection",
+        "same_uploader",
+        "same_creator",
+        "same_format_family",
+        "same_platform",
+        "same_filename_pattern"
+      ],
+      "likely_seed_types": [
+        "query_pressure_seed"
+      ],
+      "likely_workunit_seed_suggestions": [
+        "inspect_related_collection",
+        "search_same_filename_pattern",
+        "trace_archived_vendor_url",
+        "compare_same_format_examples"
+      ],
+      "result_lane_expectations": [
+        "local_candidate_results",
+        "review_queue_items",
+        "blocked_actions",
+        "deferred_deepening"
+      ],
+      "source_trust_dimensions": [
+        "metadata_quality",
+        "provenance_quality",
+        "rights_risk",
+        "safety_risk"
+      ]
+    },
+    {
+      "creates_evidence": false,
+      "domain_id": "web_archive_trace",
+      "likely_relation_types": [
+        "same_collection",
+        "same_uploader",
+        "same_creator",
+        "same_format_family",
+        "same_platform",
+        "same_filename_pattern"
+      ],
+      "likely_seed_types": [
+        "query_pressure_seed"
+      ],
+      "likely_workunit_seed_suggestions": [
+        "inspect_related_collection",
+        "search_same_filename_pattern",
+        "trace_archived_vendor_url",
+        "compare_same_format_examples"
+      ],
+      "result_lane_expectations": [
+        "local_candidate_results",
+        "review_queue_items",
+        "blocked_actions",
+        "deferred_deepening"
+      ],
+      "source_trust_dimensions": [
+        "metadata_quality",
+        "provenance_quality",
+        "rights_risk",
+        "safety_risk"
+      ]
+    },
+    {
+      "creates_evidence": false,
+      "domain_id": "games_emulation",
+      "likely_relation_types": [
+        "same_collection",
+        "same_uploader",
+        "same_creator",
+        "same_format_family",
+        "same_platform",
+        "same_filename_pattern"
+      ],
+      "likely_seed_types": [
+        "query_pressure_seed"
+      ],
+      "likely_workunit_seed_suggestions": [
+        "inspect_related_collection",
+        "search_same_filename_pattern",
+        "trace_archived_vendor_url",
+        "compare_same_format_examples"
+      ],
+      "result_lane_expectations": [
+        "local_candidate_results",
+        "review_queue_items",
+        "blocked_actions",
+        "deferred_deepening"
+      ],
+      "source_trust_dimensions": [
+        "metadata_quality",
+        "provenance_quality",
+        "rights_risk",
+        "safety_risk"
+      ]
+    },
+    {
+      "creates_evidence": false,
+      "domain_id": "hardware_firmware_support",
+      "likely_relation_types": [
+        "same_collection",
+        "same_uploader",
+        "same_creator",
+        "same_format_family",
+        "same_platform",
+        "same_filename_pattern"
+      ],
+      "likely_seed_types": [
+        "query_pressure_seed"
+      ],
+      "likely_workunit_seed_suggestions": [
+        "inspect_related_collection",
+        "search_same_filename_pattern",
+        "trace_archived_vendor_url",
+        "compare_same_format_examples"
+      ],
+      "result_lane_expectations": [
+        "local_candidate_results",
+        "review_queue_items",
+        "blocked_actions",
+        "deferred_deepening"
+      ],
+      "source_trust_dimensions": [
+        "metadata_quality",
+        "provenance_quality",
+        "rights_risk",
+        "safety_risk"
+      ]
+    }
+  ],
+  "schema_version": "scout_domain_handoff_matrix.v0",
+  "task": "AIDE-BATCH-SCOUT-SCHEMA-01"
+}

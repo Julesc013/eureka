@@ -1,0 +1,5 @@
+python -m unittest discover -s tests -t .
+
+Ran 4843 tests in 2700.729s
+
+OK

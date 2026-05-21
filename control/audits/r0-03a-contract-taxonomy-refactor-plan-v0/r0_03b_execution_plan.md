@@ -2,13 +2,13 @@
 
 ready: true
 task size: two_shot_required
-max expected changed files: 1258
+max expected changed files: 1270
 
 ## R0-03B-1
 
 Create control/schemas target roots and move audit, fixture, preview, task, validator, deprecated, and generated scaffold schemas.
 
-- moves: 9
+- moves: 21
 - reference updates: 0
 
 ## R0-03B-2

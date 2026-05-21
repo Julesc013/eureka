@@ -1,0 +1,21 @@
+{
+  "feedback_event_types": [
+    "useful_lead",
+    "accepted_as_evidence",
+    "false_positive",
+    "duplicate",
+    "unsafe",
+    "rights_risk",
+    "needs_more_work",
+    "wrong_domain",
+    "source_relevant",
+    "source_not_relevant",
+    "relation_helpful",
+    "relation_misleading"
+  ],
+  "feedback_events_are_review_inputs": true,
+  "feedback_events_do_not_mutate_indexes": true,
+  "review_required": true,
+  "schema_version": "scout_feedback_policy.v0",
+  "task": "AIDE-BATCH-SCOUT-SCHEMA-01"
+}

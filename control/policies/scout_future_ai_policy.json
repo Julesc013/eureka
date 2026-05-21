@@ -1,0 +1,10 @@
+{
+  "ai_relation_expansion_enabled": false,
+  "future_ai_outputs_candidate_only": true,
+  "model_provider_enabled": false,
+  "raw_prompt_storage_enabled": false,
+  "raw_response_storage_enabled": false,
+  "review_required": true,
+  "schema_version": "scout_future_ai_policy.v0",
+  "task": "AIDE-BATCH-SCOUT-SCHEMA-01"
+}

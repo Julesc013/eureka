@@ -1,0 +1,113 @@
+id: AIDE-BATCH-SCOUT-SCHEMA-01
+title: SCOUT discovery trail, relation, source trust, and WorkUnit seed contracts
+status: completed
+purpose: Define SCOUT relation/path discovery contracts, deterministic examples, read-only helpers, validator, tests, docs, and audit evidence.
+allowed_paths:
+  - contracts/scout/**
+  - contracts/domain/**
+  - contracts/syn/**
+  - contracts/search_interaction/**
+  - contracts/workbench/**
+  - contracts/view_models/**
+  - runtime/local_eval/**
+  - runtime/local_workbench/**
+  - runtime/local_service/**
+  - examples/scout/**
+  - examples/domain/**
+  - examples/syn/**
+  - examples/ia_hunt_bridge/**
+  - examples/workbench/result_lanes/**
+  - evals/scout/**
+  - evals/domain/**
+  - evals/syn/**
+  - scripts/eureka_scout_schema.py
+  - scripts/eureka_scout_console.py
+  - scripts/validate_scout_schema.py
+  - scripts/validate_domain_packs.py
+  - scripts/validate_syn_foundry.py
+  - scripts/eureka_test_select.py
+  - scripts/validate_hunt_remediation.py
+  - scripts/validate_hunt_remediation_continue.py
+  - scripts/validate_search_hunt_closeout.py
+  - tests/runtime/test_scout_schema.py
+  - tests/runtime/test_scout_relations.py
+  - tests/runtime/test_scout_domain_syn_handoff.py
+  - tests/operations/test_scout_schema_scripts.py
+  - tests/operations/test_scout_console.py
+  - tests/operations/test_search_hunt_track.py
+  - tests/scripts/test_validate_scout_schema.py
+  - control/policies/scout_schema_policy.json
+  - control/policies/scout_non_claim_policy.json
+  - control/policies/scout_relation_policy.json
+  - control/policies/scout_source_trust_policy.json
+  - control/policies/scout_feedback_policy.json
+  - control/policies/scout_future_ai_policy.json
+  - control/inventory/scout_schema_input_state.json
+  - control/inventory/scout_contract_matrix.json
+  - control/inventory/scout_relation_type_matrix.json
+  - control/inventory/scout_seed_inventory.json
+  - control/inventory/scout_discovery_candidate_matrix.json
+  - control/inventory/scout_discovery_trail_matrix.json
+  - control/inventory/scout_source_trust_matrix.json
+  - control/inventory/scout_feedback_event_matrix.json
+  - control/inventory/scout_workunit_seed_matrix.json
+  - control/inventory/scout_domain_handoff_matrix.json
+  - control/inventory/scout_syn_handoff_matrix.json
+  - control/inventory/scout_workbench_console_matrix.json
+  - control/inventory/scout_failure_repair_log.json
+  - control/inventory/scout_validation_matrix.json
+  - control/inventory/scout_schema_result.json
+  - control/inventory/scout_schema_next_task_decision.json
+  - control/inventory/contract_migration_plan.json
+  - control/inventory/contract_reference_graph.json
+  - control/inventory/contract_risk_register.json
+  - control/inventory/contract_taxonomy_inventory.json
+  - control/inventory/r0_03b_execution_plan.json
+  - docs/architecture/SCOUT_CURATOR_GRAPH.md
+  - docs/architecture/SCOUT_DISCOVERY_TRAILS.md
+  - docs/architecture/SCOUT_SOURCE_TRUST.md
+  - docs/operations/SCOUT_SCHEMA_RUNBOOK.md
+  - docs/operations/POST_SCOUT_SCHEMA_PLAN.md
+  - docs/reference/SCOUT_DISCOVERY_CANDIDATE.md
+  - docs/reference/SCOUT_DISCOVERY_TRAIL.md
+  - docs/reference/SCOUT_SOURCE_TRUST_RECORD.md
+  - docs/reference/SCOUT_RELATION_TYPES.md
+  - .aide/queue/AIDE-BATCH-SCOUT-SCHEMA-01/**
+  - .aide/queue/SCOUT-SCHEMA-00/task.yaml
+  - .aide/queue/F0-00/task.yaml
+  - .aide/queue/G0/task.yaml
+  - .aide/queue/SOURCE-WAVE-00/**
+  - .aide/queue/index.yaml
+  - .aide/context/latest-task-packet.md
+  - .aide/context/latest-review-packet.md
+  - .aide/reports/eureka-repo-health.json
+  - .aide/reports/eureka-repo-health.md
+  - control/audits/scout-schema-01-v0/**
+  - control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/**
+forbidden_paths:
+  - eureka-instance/**
+  - instances/**
+  - .aide.local/**
+  - secrets/**
+  - .env
+  - site/dist/**
+  - data/public_index/**
+  - runtime/connectors/**
+  - runtime/extraction/**
+  - runtime/search_quality/**
+  - native/**
+  - crates/**
+gate:
+  - no fake evidence
+  - no fake verified records
+  - no live source calls
+  - no crawling
+  - no source probes
+  - no downloads/uploads
+  - no extraction
+  - no model/provider calls
+  - no operator/master index mutation
+  - no deployment
+  - no production/public launch claim
+recommended_after: DOMAIN-00
+recommended_next: F0-00

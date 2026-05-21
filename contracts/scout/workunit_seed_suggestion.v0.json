@@ -1,0 +1,34 @@
+{
+  "contract_status": "foundation_contract",
+  "non_claims": {
+    "scout_contract_creates_evidence": false,
+    "scout_contract_creates_reviewed_records": false,
+    "scout_contract_enables_crawling": false,
+    "scout_contract_enables_live_sources": false,
+    "scout_contract_enables_runtime_mutation": false
+  },
+  "purpose": "Define SCOUT candidate-only relation discovery boundaries without creating truth, evidence, source behavior, crawling, or index mutations.",
+  "required_fields": [
+    "workunit_seed_id",
+    "suggestion_type",
+    "seed_id",
+    "candidate_id",
+    "creates_runtime_workunit",
+    "review_required",
+    "accepted_truth"
+  ],
+  "schema_version": "workunit_seed_suggestion.v0",
+  "shared_fields": [
+    "schema_version",
+    "record_type",
+    "created_at",
+    "source_context",
+    "domain_id",
+    "review_required",
+    "accepted_truth",
+    "limitations",
+    "risk_flags",
+    "rights_flags",
+    "non_claims"
+  ]
+}

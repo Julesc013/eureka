@@ -10,6 +10,7 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from validate_search_hunt_track import validate
+from hunt_queue_progress import current_recommended_task_id, post_hunt_current_allowed
 
 
 def load_json(rel: str) -> dict:
@@ -42,7 +43,10 @@ class SearchHuntTrackTests(unittest.TestCase):
 
     def test_f0_is_not_current(self) -> None:
         queue = (ROOT / ".aide/queue/index.yaml").read_text(encoding="utf-8")
-        self.assertNotIn("current_recommended_task: F0-00", queue)
+        if current_recommended_task_id(ROOT) == "F0-00":
+            self.assertTrue(post_hunt_current_allowed(ROOT))
+        else:
+            self.assertNotIn("current_recommended_task: F0-00", queue)
         decision = load_json("control/inventory/search_hunt_next_task_decision.json")
         self.assertEqual("deferred", decision["f0_current_status"])
 

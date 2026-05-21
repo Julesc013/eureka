@@ -1,7 +1,8 @@
 # Preview Schema Summary
 
-count: 172
+count: 173
 
+- contracts/scout/discovery_candidate.v0.json -> control/schemas/previews/scout/discovery_candidate.v0.json (move)
 - contracts/search_interaction/candidate_cluster_packet.v0.json -> control/schemas/previews/search_interaction/candidate_cluster_packet.v0.json (move)
 - control/schemas/previews/actions/action_result_preview.v0.json -> control/schemas/previews/actions/action_result_preview.v0.json (keep)
 - control/schemas/previews/extraction/extraction_candidate_effect.v0.json -> control/schemas/previews/extraction/extraction_candidate_effect.v0.json (keep)

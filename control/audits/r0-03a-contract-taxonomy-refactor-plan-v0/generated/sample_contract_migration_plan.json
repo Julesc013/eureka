@@ -17,6 +17,50 @@
       "reason": "Unknown classification must be reviewed before execution."
     },
     {
+      "path": "contracts/scout/curator_relation.v0.json",
+      "reason": "Unknown classification must be reviewed before execution."
+    },
+    {
+      "path": "contracts/scout/discovery_trail.v0.json",
+      "reason": "Unknown classification must be reviewed before execution."
+    },
+    {
+      "path": "contracts/scout/hunt_feedback_event.v0.json",
+      "reason": "Unknown classification must be reviewed before execution."
+    },
+    {
+      "path": "contracts/scout/related_path.v0.json",
+      "reason": "Unknown classification must be reviewed before execution."
+    },
+    {
+      "path": "contracts/scout/scout_console_view.v0.json",
+      "reason": "Unknown classification must be reviewed before execution."
+    },
+    {
+      "path": "contracts/scout/scout_score_decomposition.v0.json",
+      "reason": "Unknown classification must be reviewed before execution."
+    },
+    {
+      "path": "contracts/scout/scout_seed.v0.json",
+      "reason": "Unknown classification must be reviewed before execution."
+    },
+    {
+      "path": "contracts/scout/source_trust_observation.v0.json",
+      "reason": "Unknown classification must be reviewed before execution."
+    },
+    {
+      "path": "contracts/scout/source_trust_record.v0.json",
+      "reason": "Unknown classification must be reviewed before execution."
+    },
+    {
+      "path": "contracts/scout/unresolved_path_observation.v0.json",
+      "reason": "Unknown classification must be reviewed before execution."
+    },
+    {
+      "path": "contracts/scout/workunit_seed_suggestion.v0.json",
+      "reason": "Unknown classification must be reviewed before execution."
+    },
+    {
       "path": "control/schemas/deprecated/archive/archive-lifecycle.protocol.md",
       "reason": "Unknown classification must be reviewed before execution."
     },
@@ -1780,7 +1824,6 @@
         "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
         "control/audits/r0-02-runtime-architecture-leakage-gate-v0/production_path_scan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -1813,7 +1856,6 @@
         "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
         "control/audits/r0-02-runtime-architecture-leakage-gate-v0/production_path_scan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -1853,7 +1895,6 @@
         "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
         "control/audits/r0-02-runtime-architecture-leakage-gate-v0/production_path_scan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -1888,7 +1929,6 @@
         "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
         "control/audits/r0-02-runtime-architecture-leakage-gate-v0/production_path_scan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -1920,7 +1960,6 @@
         "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
         "control/audits/r0-02-runtime-architecture-leakage-gate-v0/production_path_scan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -1952,7 +1991,6 @@
         "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
         "control/audits/r0-02-runtime-architecture-leakage-gate-v0/production_path_scan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -1988,7 +2026,6 @@
         "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
         "control/audits/r0-02-runtime-architecture-leakage-gate-v0/production_path_scan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -2023,7 +2060,6 @@
         "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
         "control/audits/r0-02-runtime-architecture-leakage-gate-v0/production_path_scan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -2055,7 +2091,6 @@
         "control/audits/ai-provider-contract-v0/CONTRACT_SUMMARY.md",
         "control/audits/ai-provider-contract-v0/ai_provider_contract_report.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -2084,7 +2119,6 @@
       "references_to_update": [
         "contracts/archive/schemas/absence_memory.schema.yaml",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -2110,7 +2144,6 @@
       "references_to_update": [
         "contracts/archive/schemas/access_path.schema.yaml",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -2136,7 +2169,6 @@
       "references_to_update": [
         "contracts/archive/schemas/action_recipe.schema.yaml",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -2163,7 +2195,6 @@
         "contracts/archive/schemas/agent.schema.yaml",
         "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -2190,7 +2221,6 @@
       "references_to_update": [
         "contracts/archive/schemas/claim.schema.yaml",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -2218,7 +2248,6 @@
         "contracts/archive/schemas/index_record.schema.yaml",
         "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -2247,7 +2276,6 @@
         "contracts/archive/schemas/index_record.schema.yaml",
         "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -2274,7 +2302,6 @@
         "contracts/archive/schemas/index_record.schema.yaml",
         "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -2300,7 +2327,6 @@
       "references_to_update": [
         "contracts/archive/schemas/local_task.schema.yaml",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -2325,7 +2351,6 @@
       "rationale": "Artifact is a control/audit/fixture/preview schema or belongs under a different product target root.",
       "references_to_update": [
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -2351,7 +2376,6 @@
       "references_to_update": [
         "contracts/archive/schemas/object.schema.yaml",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -2377,7 +2401,6 @@
       "references_to_update": [
         "contracts/archive/schemas/representation.schema.yaml",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -2403,7 +2426,6 @@
       "references_to_update": [
         "contracts/archive/schemas/resolution_memory.schema.yaml",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -2429,7 +2451,6 @@
       "references_to_update": [
         "contracts/archive/schemas/resolution_task.schema.yaml",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -2456,7 +2477,6 @@
         "contracts/archive/schemas/result_lane.schema.yaml",
         "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -2483,7 +2503,6 @@
         "contracts/archive/schemas/snapshot_manifest.schema.yaml",
         "control/audits/r0-01-dev-production-reality-inventory-v0/generated/sample_runtime_maturity_matrix.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -2509,7 +2528,6 @@
       "references_to_update": [
         "contracts/archive/schemas/state.schema.yaml",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -2534,7 +2552,6 @@
       "rationale": "Artifact is a control/audit/fixture/preview schema or belongs under a different product target root.",
       "references_to_update": [
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -2560,7 +2577,6 @@
       "references_to_update": [
         "contracts/archive/schemas/user_cost.schema.yaml",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -2589,7 +2605,6 @@
         "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
         "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -2621,7 +2636,6 @@
         "contracts/evidence_ledger/evidence_ledger_manifest.v0.json",
         "control/audits/r0-01-dev-production-reality-inventory-v0/generated/sample_runtime_maturity_matrix.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -2661,7 +2675,6 @@
         "control/audits/pypi-metadata-connector-approval-v0/pypi_metadata_connector_approval_report.json",
         "control/audits/r0-01-dev-production-reality-inventory-v0/generated/sample_runtime_maturity_matrix.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -2718,7 +2731,6 @@
         "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
         "control/audits/r0-01-dev-production-reality-inventory-v0/generated/sample_runtime_maturity_matrix.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -2752,7 +2764,6 @@
         "control/audits/r0-01-dev-production-reality-inventory-v0/generated/sample_runtime_maturity_matrix.json",
         "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -2788,7 +2799,6 @@
         "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
         "control/audits/r0-01-dev-production-reality-inventory-v0/generated/sample_runtime_maturity_matrix.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -2821,7 +2831,6 @@
         "control/audits/r0-01-dev-production-reality-inventory-v0/generated/sample_runtime_maturity_matrix.json",
         "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -2854,7 +2863,6 @@
         "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
         "control/audits/r0-01-dev-production-reality-inventory-v0/generated/sample_runtime_maturity_matrix.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -2887,7 +2895,6 @@
         "control/audits/r0-01-dev-production-reality-inventory-v0/generated/sample_runtime_maturity_matrix.json",
         "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -2918,7 +2925,6 @@
         "control/audits/r0-01-dev-production-reality-inventory-v0/generated/sample_runtime_maturity_matrix.json",
         "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -2949,7 +2955,6 @@
         "control/audits/r0-01-dev-production-reality-inventory-v0/generated/sample_runtime_maturity_matrix.json",
         "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -2981,7 +2986,6 @@
         "control/audits/r0-01-dev-production-reality-inventory-v0/generated/sample_runtime_maturity_matrix.json",
         "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -3013,7 +3017,6 @@
         "control/audits/r0-01-dev-production-reality-inventory-v0/generated/sample_runtime_maturity_matrix.json",
         "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -3044,7 +3047,6 @@
         "control/audits/r0-01-dev-production-reality-inventory-v0/generated/sample_runtime_maturity_matrix.json",
         "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -3071,7 +3073,6 @@
       "rationale": "Artifact is a control/audit/fixture/preview schema or belongs under a different product target root.",
       "references_to_update": [
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -3101,7 +3102,6 @@
         "control/audits/r0-01-dev-production-reality-inventory-v0/generated/sample_runtime_maturity_matrix.json",
         "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -3134,7 +3134,6 @@
         "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
         "control/audits/r0-01-dev-production-reality-inventory-v0/generated/sample_runtime_maturity_matrix.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -3164,7 +3163,6 @@
         "control/audits/r0-01-dev-production-reality-inventory-v0/generated/sample_runtime_maturity_matrix.json",
         "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -3195,7 +3193,6 @@
         "control/audits/r0-01-dev-production-reality-inventory-v0/generated/sample_runtime_maturity_matrix.json",
         "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -3225,7 +3222,6 @@
         "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
         "control/audits/r0-01-dev-production-reality-inventory-v0/generated/sample_runtime_maturity_matrix.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -3254,7 +3250,6 @@
         "control/audits/r0-01-dev-production-reality-inventory-v0/generated/sample_runtime_maturity_matrix.json",
         "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -3284,7 +3279,6 @@
         "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
         "control/audits/r0-01-dev-production-reality-inventory-v0/generated/sample_runtime_maturity_matrix.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -3314,7 +3308,6 @@
         "control/audits/cross-source-identity-resolution-contract-v0/cross_source_identity_resolution_report.json",
         "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -3342,7 +3335,6 @@
         "contracts/identity/identity_relation.v0.json",
         "control/audits/cross-source-identity-resolution-contract-v0/cross_source_identity_resolution_report.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -3372,7 +3364,6 @@
         "control/audits/cross-source-identity-resolution-contract-v0/cross_source_identity_resolution_report.json",
         "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -3404,7 +3395,6 @@
         "control/audits/master-index-review-queue-contract-v0/master_index_review_queue_contract_report.json",
         "control/audits/obs-replan-01-agent-assisted-observation-workflow-v0/obs_replan_01_report.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -3441,7 +3431,6 @@
         "control/audits/r0-01-dev-production-reality-inventory-v0/generated/sample_runtime_maturity_matrix.json",
         "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -3471,7 +3460,6 @@
         "contracts/master_index/reviewed_public_record_proposal.v0.json",
         "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -3503,7 +3491,6 @@
         "control/audits/obs-agent-06-obs-track-b-synchronization-v0/track_b_dependency_map.md",
         "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -3544,7 +3531,6 @@
         "control/audits/obs-agent-06-obs-track-b-synchronization-v0/track_b_dependency_map.md",
         "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -3585,7 +3571,6 @@
         "control/audits/local-staging-manifest-format-v0/local_staging_manifest_format_report.json",
         "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -3615,7 +3600,6 @@
         "contracts/packs/pack_signature_envelope.v0.json",
         "control/audits/i-bundle-01-pack-quarantine-contribution-review-v0/i_bundle_01_report.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -3645,7 +3629,6 @@
         "control/audits/h0-bundle-03-coverage-scorecards-source-packs-v0/h0_bundle_03_report.json",
         "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -3678,7 +3661,6 @@
         "control/audits/comparison-page-contract-v0/comparison_page_contract_report.json",
         "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -3708,7 +3690,6 @@
         "contracts/pages/comparison_page_section.v0.json",
         "control/audits/comparison-page-contract-v0/comparison_page_contract_report.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -3740,7 +3721,6 @@
         "control/audits/object-page-contract-v0/object_page_contract_report.json",
         "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -3779,7 +3759,6 @@
         "contracts/pages/README.md",
         "contracts/pages/object_page_section.v0.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -3809,7 +3788,6 @@
         "contracts/views/source_page.v0.json",
         "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -3850,7 +3828,6 @@
         "contracts/pages/README.md",
         "contracts/pages/source_page_section.v0.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -3878,7 +3855,6 @@
       "references_to_update": [
         "contracts/projections/projection_profile.v0.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -3906,7 +3882,6 @@
         "contracts/query/cache_key.v0.json",
         "contracts/query/search_result_cache_entry.v0.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -3936,7 +3911,6 @@
         "control/audits/g-bundle-02-ranking-shadow-quality-harness-v0/g_bundle_02_report.json",
         "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -3974,7 +3948,6 @@
         "control/audits/pypi-metadata-connector-approval-v0/pypi_metadata_connector_approval_report.json",
         "control/audits/r0-01-dev-production-reality-inventory-v0/generated/sample_runtime_maturity_matrix.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -4008,7 +3981,6 @@
         "contracts/query/demand_signal.v0.json",
         "control/audits/demand-dashboard-v0/demand_dashboard_report.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -4041,7 +4013,6 @@
         "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
         "control/audits/r0-01-dev-production-reality-inventory-v0/generated/sample_runtime_maturity_matrix.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -4071,7 +4042,6 @@
         "control/audits/g-bundle-02-ranking-shadow-quality-harness-v0/g_bundle_02_report.json",
         "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -4100,7 +4070,6 @@
         "contracts/query/known_absence_gap.v0.json",
         "control/audits/r0-01-dev-production-reality-inventory-v0/generated/sample_runtime_maturity_matrix.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -4137,7 +4106,6 @@
         "control/audits/pypi-metadata-connector-approval-v0/pypi_metadata_connector_approval_report.json",
         "control/audits/r0-01-dev-production-reality-inventory-v0/generated/sample_runtime_maturity_matrix.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -4174,7 +4142,6 @@
         "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
         "control/audits/r0-01-dev-production-reality-inventory-v0/generated/sample_runtime_maturity_matrix.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -4205,7 +4172,6 @@
         "control/audits/g-bundle-01-result-explanations-absence-v0/g_bundle_01_report.json",
         "control/audits/r0-01-dev-production-reality-inventory-v0/generated/sample_runtime_maturity_matrix.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -4234,7 +4200,6 @@
         "contracts/query/observation_review_decision.v0.json",
         "control/audits/obs-replan-01-agent-assisted-observation-workflow-v0/obs_replan_01_report.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -4264,7 +4229,6 @@
         "contracts/query/README.md",
         "contracts/query/probe_kind.v0.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -4293,7 +4257,6 @@
         "control/audits/g-bundle-02-ranking-shadow-quality-harness-v0/g_bundle_02_report.json",
         "control/audits/r0-01-dev-production-reality-inventory-v0/generated/sample_runtime_maturity_matrix.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -4332,10 +4295,10 @@
         "control/audits/pypi-metadata-connector-approval-v0/pypi_metadata_connector_approval_report.json",
         "control/audits/query-privacy-poisoning-guard-v0/query_privacy_poisoning_guard_report.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
+        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/reference_graph_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
         "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
@@ -4382,7 +4345,6 @@
         "control/audits/query-observation-contract-v0/QUERY_OBSERVATION_SCHEMA.md",
         "control/audits/query-observation-contract-v0/query_observation_contract_report.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -4425,7 +4387,6 @@
         "contracts/query/README.md",
         "contracts/query/query_poisoning_risk.v0.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -4455,7 +4416,6 @@
         "contracts/query/README.md",
         "contracts/query/query_privacy_risk.v0.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -4489,7 +4449,6 @@
         "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
         "control/audits/r0-01-dev-production-reality-inventory-v0/generated/sample_runtime_maturity_matrix.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -4522,7 +4481,6 @@
         "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
         "control/audits/r0-01-dev-production-reality-inventory-v0/generated/sample_runtime_maturity_matrix.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -4553,7 +4511,6 @@
         "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
         "control/audits/r0-01-dev-production-reality-inventory-v0/generated/sample_runtime_maturity_matrix.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -4584,7 +4541,6 @@
         "control/audits/g-bundle-01-result-explanations-absence-v0/g_bundle_01_report.json",
         "control/audits/r0-01-dev-production-reality-inventory-v0/generated/sample_runtime_maturity_matrix.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -4614,7 +4570,6 @@
         "contracts/query/search_miss_classification.v0.json",
         "contracts/query/search_miss_ledger_entry.v0.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -4653,7 +4608,6 @@
         "control/audits/pypi-metadata-connector-approval-v0/pypi_metadata_connector_approval_report.json",
         "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -4691,7 +4645,6 @@
         "contracts/query/README.md",
         "contracts/query/search_need_lifecycle.v0.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -4729,7 +4682,6 @@
         "control/audits/pypi-metadata-connector-approval-v0/COMMAND_RESULTS.md",
         "control/audits/pypi-metadata-connector-approval-v0/pypi_metadata_connector_approval_report.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -4769,7 +4721,6 @@
         "control/audits/obs-agent-04-candidate-to-search-need-seeds-v0/search_need_seed_manifest.json",
         "control/audits/obs-agent-06-obs-track-b-synchronization-v0/obs_track_b_sync_matrix.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -4804,7 +4755,6 @@
         "control/audits/obs-agent-04-candidate-to-search-need-seeds-v0/obs_agent_04_report.json",
         "control/audits/obs-agent-04-candidate-to-search-need-seeds-v0/search_need_seed_manifest.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -4836,7 +4786,6 @@
         "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
         "control/audits/r0-01-dev-production-reality-inventory-v0/generated/sample_runtime_maturity_matrix.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -4874,7 +4823,6 @@
         "control/audits/pypi-metadata-connector-approval-v0/COMMAND_RESULTS.md",
         "control/audits/pypi-metadata-connector-approval-v0/pypi_metadata_connector_approval_report.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -4913,7 +4861,6 @@
         "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
         "control/audits/r0-01-dev-production-reality-inventory-v0/generated/sample_runtime_maturity_matrix.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -4944,7 +4891,11 @@
       "rationale": "Artifact is a control/audit/fixture/preview schema or belongs under a different product target root.",
       "references_to_update": [
         "contracts/query/README.md",
+        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
+        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
+        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
+        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
         "control/audits/syn-foundation-01-v0/eval_contract_matrix.md",
         "scripts/validate_syn_foundation.py"
       ],
@@ -4966,7 +4917,11 @@
       "rationale": "Artifact is a control/audit/fixture/preview schema or belongs under a different product target root.",
       "references_to_update": [
         "contracts/query/README.md",
+        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
+        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
+        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
+        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
         "control/audits/syn-foundation-01-v0/eval_contract_matrix.md",
         "scripts/validate_syn_foundation.py"
       ],
@@ -4996,7 +4951,6 @@
         "control/audits/r0-01-dev-production-reality-inventory-v0/generated/sample_runtime_maturity_matrix.json",
         "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -5032,7 +4986,6 @@
         "control/audits/obs-agent-05-candidate-to-workunit-seeds-v0/obs_agent_05_report.json",
         "control/audits/obs-agent-05-candidate-to-workunit-seeds-v0/workunit_seed_manifest.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -5063,7 +5016,6 @@
         "control/audits/d-bundle-02-localhost-readonly-relay-v0/d_bundle_02_report.json",
         "control/audits/r0-01-dev-production-reality-inventory-v0/generated/sample_runtime_maturity_matrix.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -5092,7 +5044,6 @@
         "control/audits/d-bundle-02-localhost-readonly-relay-v0/d_bundle_02_report.json",
         "control/audits/r0-01-dev-production-reality-inventory-v0/generated/sample_runtime_maturity_matrix.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -5123,7 +5074,6 @@
         "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
         "control/audits/r0-01-dev-production-reality-inventory-v0/generated/sample_runtime_maturity_matrix.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -5153,7 +5103,6 @@
         "control/audits/d-bundle-02-localhost-readonly-relay-v0/d_bundle_02_report.json",
         "control/audits/r0-01-dev-production-reality-inventory-v0/generated/sample_runtime_maturity_matrix.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -5183,7 +5132,6 @@
         "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
         "control/audits/r0-01-dev-production-reality-inventory-v0/generated/sample_runtime_maturity_matrix.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -5214,7 +5162,6 @@
         "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
         "control/audits/r0-01-dev-production-reality-inventory-v0/generated/sample_runtime_maturity_matrix.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -5245,7 +5192,6 @@
         "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
         "control/audits/r0-01-dev-production-reality-inventory-v0/generated/sample_runtime_maturity_matrix.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -5274,7 +5220,6 @@
         "control/audits/d-bundle-02-localhost-readonly-relay-v0/d_bundle_02_report.json",
         "control/audits/r0-01-dev-production-reality-inventory-v0/generated/sample_runtime_maturity_matrix.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -5303,7 +5248,6 @@
         "control/audits/d-bundle-02-localhost-readonly-relay-v0/d_bundle_02_report.json",
         "control/audits/r0-01-dev-production-reality-inventory-v0/generated/sample_runtime_maturity_matrix.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -5329,7 +5273,6 @@
       "rationale": "Contract-like artifact could not be safely classified by static rules.",
       "references_to_update": [
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
@@ -5354,7 +5297,6 @@
       "rationale": "Contract-like artifact could not be safely classified by static rules.",
       "references_to_update": [
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
@@ -5379,7 +5321,6 @@
       "rationale": "Contract-like artifact could not be safely classified by static rules.",
       "references_to_update": [
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
@@ -5404,7 +5345,6 @@
       "rationale": "Contract-like artifact could not be safely classified by static rules.",
       "references_to_update": [
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
@@ -5430,7 +5370,6 @@
       "references_to_update": [
         "contracts/representations/capability_negotiation.v0.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -5462,7 +5401,6 @@
         "control/audits/r0-01-dev-production-reality-inventory-v0/generated/sample_runtime_maturity_matrix.json",
         "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -5493,7 +5431,6 @@
       "references_to_update": [
         "contracts/representations/renderer_parity_harness.v0.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -5521,7 +5458,6 @@
       "references_to_update": [
         "contracts/representations/representation_profile.v0.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -5550,7 +5486,6 @@
       "references_to_update": [
         "contracts/representations/route_view_representation_matrix.v0.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -5579,7 +5514,6 @@
         "contracts/representations/semantic_renderer_parity.v0.json",
         "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -5599,6 +5533,238 @@
       ]
     },
     {
+      "action": "investigate",
+      "compatibility_shim_required": false,
+      "contract_class_after": "unknown",
+      "contract_class_before": "unknown",
+      "rationale": "Contract-like artifact could not be safely classified by static rules.",
+      "references_to_update": [
+        "scripts/validate_scout_schema.py"
+      ],
+      "risk": "high",
+      "source_path": "contracts/scout/curator_relation.v0.json",
+      "target_path": "control/schemas/deprecated/scout/curator_relation.v0.json",
+      "validation": [
+        "python scripts/validate_contract_taxonomy_plan.py",
+        "python scripts/validate_runtime_architecture_leakage.py",
+        "python -m unittest tests.operations.test_contract_taxonomy_plan"
+      ]
+    },
+    {
+      "action": "move",
+      "compatibility_shim_required": true,
+      "contract_class_after": "preview_schema",
+      "contract_class_before": "preview_schema",
+      "rationale": "Artifact is a control/audit/fixture/preview schema or belongs under a different product target root.",
+      "references_to_update": [
+        "control/audits/h14-bundle-02-source-discovery-fixture-runtime-v0/h14_bundle_02_report.json",
+        "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
+        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
+        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
+        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/preview_schema_summary.md",
+        "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+        "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_reference_update_report.json",
+        "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_summary.md",
+        "control/audits/r0-03b-1-contract-taxonomy-migration-v0/migration_result.md",
+        "control/audits/r0-03b-2-contract-reference-product-cleanup-v0/generated/sample_product_contract_cleanup_result.json",
+        "control/audits/r0-03b-2-contract-reference-product-cleanup-v0/remaining_contract_debt.md",
+        "control/audits/r0-03b-2-contract-reference-product-cleanup-v0/unresolved_contracts.md",
+        "control/audits/r0-remediation-contract-taxonomy-01-v0/resolved_items.md",
+        "scripts/resolve_contract_taxonomy_blockers.py",
+        "scripts/validate_h14_source_discovery_fixture_runtime.py",
+        "scripts/validate_scout_schema.py"
+      ],
+      "risk": "medium",
+      "source_path": "contracts/scout/discovery_candidate.v0.json",
+      "target_path": "control/schemas/previews/scout/discovery_candidate.v0.json",
+      "validation": [
+        "python scripts/validate_contract_taxonomy_plan.py",
+        "python scripts/validate_runtime_architecture_leakage.py",
+        "python -m unittest tests.operations.test_contract_taxonomy_plan",
+        "python -m unittest discover -s tests -t ."
+      ]
+    },
+    {
+      "action": "investigate",
+      "compatibility_shim_required": false,
+      "contract_class_after": "unknown",
+      "contract_class_before": "unknown",
+      "rationale": "Contract-like artifact could not be safely classified by static rules.",
+      "references_to_update": [
+        "scripts/validate_scout_schema.py"
+      ],
+      "risk": "high",
+      "source_path": "contracts/scout/discovery_trail.v0.json",
+      "target_path": "control/schemas/deprecated/scout/discovery_trail.v0.json",
+      "validation": [
+        "python scripts/validate_contract_taxonomy_plan.py",
+        "python scripts/validate_runtime_architecture_leakage.py",
+        "python -m unittest tests.operations.test_contract_taxonomy_plan"
+      ]
+    },
+    {
+      "action": "investigate",
+      "compatibility_shim_required": false,
+      "contract_class_after": "unknown",
+      "contract_class_before": "unknown",
+      "rationale": "Contract-like artifact could not be safely classified by static rules.",
+      "references_to_update": [
+        "scripts/validate_scout_schema.py"
+      ],
+      "risk": "high",
+      "source_path": "contracts/scout/hunt_feedback_event.v0.json",
+      "target_path": "control/schemas/deprecated/scout/hunt_feedback_event.v0.json",
+      "validation": [
+        "python scripts/validate_contract_taxonomy_plan.py",
+        "python scripts/validate_runtime_architecture_leakage.py",
+        "python -m unittest tests.operations.test_contract_taxonomy_plan"
+      ]
+    },
+    {
+      "action": "investigate",
+      "compatibility_shim_required": false,
+      "contract_class_after": "unknown",
+      "contract_class_before": "unknown",
+      "rationale": "Contract-like artifact could not be safely classified by static rules.",
+      "references_to_update": [
+        "scripts/validate_scout_schema.py"
+      ],
+      "risk": "high",
+      "source_path": "contracts/scout/related_path.v0.json",
+      "target_path": "control/schemas/deprecated/scout/related_path.v0.json",
+      "validation": [
+        "python scripts/validate_contract_taxonomy_plan.py",
+        "python scripts/validate_runtime_architecture_leakage.py",
+        "python -m unittest tests.operations.test_contract_taxonomy_plan"
+      ]
+    },
+    {
+      "action": "investigate",
+      "compatibility_shim_required": false,
+      "contract_class_after": "unknown",
+      "contract_class_before": "unknown",
+      "rationale": "Contract-like artifact could not be safely classified by static rules.",
+      "references_to_update": [
+        "scripts/validate_scout_schema.py"
+      ],
+      "risk": "high",
+      "source_path": "contracts/scout/scout_console_view.v0.json",
+      "target_path": "control/schemas/deprecated/scout/scout_console_view.v0.json",
+      "validation": [
+        "python scripts/validate_contract_taxonomy_plan.py",
+        "python scripts/validate_runtime_architecture_leakage.py",
+        "python -m unittest tests.operations.test_contract_taxonomy_plan"
+      ]
+    },
+    {
+      "action": "investigate",
+      "compatibility_shim_required": false,
+      "contract_class_after": "unknown",
+      "contract_class_before": "unknown",
+      "rationale": "Contract-like artifact could not be safely classified by static rules.",
+      "references_to_update": [
+        "scripts/validate_scout_schema.py"
+      ],
+      "risk": "high",
+      "source_path": "contracts/scout/scout_score_decomposition.v0.json",
+      "target_path": "control/schemas/deprecated/scout/scout_score_decomposition.v0.json",
+      "validation": [
+        "python scripts/validate_contract_taxonomy_plan.py",
+        "python scripts/validate_runtime_architecture_leakage.py",
+        "python -m unittest tests.operations.test_contract_taxonomy_plan"
+      ]
+    },
+    {
+      "action": "investigate",
+      "compatibility_shim_required": false,
+      "contract_class_after": "unknown",
+      "contract_class_before": "unknown",
+      "rationale": "Contract-like artifact could not be safely classified by static rules.",
+      "references_to_update": [
+        "scripts/validate_scout_schema.py"
+      ],
+      "risk": "high",
+      "source_path": "contracts/scout/scout_seed.v0.json",
+      "target_path": "control/schemas/deprecated/scout/scout_seed.v0.json",
+      "validation": [
+        "python scripts/validate_contract_taxonomy_plan.py",
+        "python scripts/validate_runtime_architecture_leakage.py",
+        "python -m unittest tests.operations.test_contract_taxonomy_plan"
+      ]
+    },
+    {
+      "action": "investigate",
+      "compatibility_shim_required": false,
+      "contract_class_after": "unknown",
+      "contract_class_before": "unknown",
+      "rationale": "Contract-like artifact could not be safely classified by static rules.",
+      "references_to_update": [
+        "scripts/validate_scout_schema.py"
+      ],
+      "risk": "high",
+      "source_path": "contracts/scout/source_trust_observation.v0.json",
+      "target_path": "control/schemas/deprecated/scout/source_trust_observation.v0.json",
+      "validation": [
+        "python scripts/validate_contract_taxonomy_plan.py",
+        "python scripts/validate_runtime_architecture_leakage.py",
+        "python -m unittest tests.operations.test_contract_taxonomy_plan"
+      ]
+    },
+    {
+      "action": "investigate",
+      "compatibility_shim_required": false,
+      "contract_class_after": "unknown",
+      "contract_class_before": "unknown",
+      "rationale": "Contract-like artifact could not be safely classified by static rules.",
+      "references_to_update": [
+        "scripts/validate_scout_schema.py"
+      ],
+      "risk": "high",
+      "source_path": "contracts/scout/source_trust_record.v0.json",
+      "target_path": "control/schemas/deprecated/scout/source_trust_record.v0.json",
+      "validation": [
+        "python scripts/validate_contract_taxonomy_plan.py",
+        "python scripts/validate_runtime_architecture_leakage.py",
+        "python -m unittest tests.operations.test_contract_taxonomy_plan"
+      ]
+    },
+    {
+      "action": "investigate",
+      "compatibility_shim_required": false,
+      "contract_class_after": "unknown",
+      "contract_class_before": "unknown",
+      "rationale": "Contract-like artifact could not be safely classified by static rules.",
+      "references_to_update": [
+        "scripts/validate_scout_schema.py"
+      ],
+      "risk": "high",
+      "source_path": "contracts/scout/unresolved_path_observation.v0.json",
+      "target_path": "control/schemas/deprecated/scout/unresolved_path_observation.v0.json",
+      "validation": [
+        "python scripts/validate_contract_taxonomy_plan.py",
+        "python scripts/validate_runtime_architecture_leakage.py",
+        "python -m unittest tests.operations.test_contract_taxonomy_plan"
+      ]
+    },
+    {
+      "action": "investigate",
+      "compatibility_shim_required": false,
+      "contract_class_after": "unknown",
+      "contract_class_before": "unknown",
+      "rationale": "Contract-like artifact could not be safely classified by static rules.",
+      "references_to_update": [
+        "scripts/validate_scout_schema.py"
+      ],
+      "risk": "high",
+      "source_path": "contracts/scout/workunit_seed_suggestion.v0.json",
+      "target_path": "control/schemas/deprecated/scout/workunit_seed_suggestion.v0.json",
+      "validation": [
+        "python scripts/validate_contract_taxonomy_plan.py",
+        "python scripts/validate_runtime_architecture_leakage.py",
+        "python -m unittest tests.operations.test_contract_taxonomy_plan"
+      ]
+    },
+    {
       "action": "move",
       "compatibility_shim_required": true,
       "contract_class_after": "public_api_contract",
@@ -5610,7 +5776,6 @@
         "control/audits/compatibility-aware-ranking-contract-v0/compatibility_aware_ranking_report.json",
         "control/audits/r0-01-dev-production-reality-inventory-v0/generated/sample_runtime_maturity_matrix.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -5641,7 +5806,6 @@
         "control/audits/compatibility-aware-ranking-contract-v0/compatibility_aware_ranking_report.json",
         "control/audits/r0-01-dev-production-reality-inventory-v0/generated/sample_runtime_maturity_matrix.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -5671,7 +5835,6 @@
         "contracts/search/compatibility_factor.v0.json",
         "control/audits/compatibility-aware-ranking-contract-v0/compatibility_aware_ranking_report.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -5700,7 +5863,6 @@
         "contracts/search/compatibility_target_profile.v0.json",
         "control/audits/compatibility-aware-ranking-contract-v0/compatibility_aware_ranking_report.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -5728,7 +5890,6 @@
       "references_to_update": [
         "contracts/search/deduplication_assessment.v0.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -5760,7 +5921,6 @@
         "control/audits/evidence-weighted-ranking-contract-v0/evidence_weighted_ranking_report.json",
         "control/audits/r0-01-dev-production-reality-inventory-v0/generated/sample_runtime_maturity_matrix.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -5791,7 +5951,6 @@
         "control/audits/evidence-weighted-ranking-contract-v0/evidence_weighted_ranking_report.json",
         "control/audits/r0-01-dev-production-reality-inventory-v0/generated/sample_runtime_maturity_matrix.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -5825,7 +5984,6 @@
         "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
         "control/audits/r0-01-dev-production-reality-inventory-v0/generated/sample_runtime_maturity_matrix.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -5855,7 +6013,6 @@
       "references_to_update": [
         "contracts/search/result_merge_group.v0.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -5884,7 +6041,6 @@
       "references_to_update": [
         "contracts/search/result_merge_relation.v0.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -5916,7 +6072,6 @@
         "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
         "control/audits/r0-01-dev-production-reality-inventory-v0/generated/sample_runtime_maturity_matrix.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -5950,7 +6105,6 @@
         "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
         "control/audits/r0-01-dev-production-reality-inventory-v0/generated/sample_runtime_maturity_matrix.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -5981,7 +6135,6 @@
         "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
         "control/audits/r0-01-dev-production-reality-inventory-v0/generated/sample_runtime_maturity_matrix.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -6011,7 +6164,6 @@
       "references_to_update": [
         "contracts/search_interaction/absence_packet.v0.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -6037,7 +6189,6 @@
       "references_to_update": [
         "contracts/search_interaction/action_posture_packet.v0.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -6063,7 +6214,6 @@
       "references_to_update": [
         "contracts/search_interaction/candidate_cluster_packet.v0.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/preview_schema_summary.md",
@@ -6089,10 +6239,8 @@
       "references_to_update": [
         "contracts/search_interaction/compiled_query_packet.v0.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
         "scripts/validate_search_interaction_contract.py"
       ],
@@ -6116,7 +6264,6 @@
         "contracts/search_interaction/coverage_report_packet.v0.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/audit_schema_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
@@ -6141,10 +6288,8 @@
       "references_to_update": [
         "contracts/search_interaction/discovery_trail_packet.v0.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
         "scripts/validate_search_interaction_contract.py"
       ],
@@ -6167,10 +6312,8 @@
       "references_to_update": [
         "contracts/search_interaction/partial_result_packet.v0.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
         "scripts/validate_search_interaction_contract.py"
       ],
@@ -6193,10 +6336,8 @@
       "references_to_update": [
         "contracts/search_interaction/resolution_run_packet.v0.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
         "scripts/validate_search_interaction_contract.py"
       ],
@@ -6219,10 +6360,8 @@
       "references_to_update": [
         "contracts/search_interaction/result_lane_packet.v0.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
         "scripts/validate_search_interaction_contract.py"
       ],
@@ -6245,10 +6384,8 @@
       "references_to_update": [
         "contracts/search_interaction/search_control_command.v0.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
         "scripts/validate_search_interaction_contract.py"
       ],
@@ -6271,10 +6408,8 @@
       "references_to_update": [
         "contracts/search_interaction/search_plan_patch.v0.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
         "scripts/validate_search_interaction_contract.py"
       ],
@@ -6297,10 +6432,8 @@
       "references_to_update": [
         "contracts/search_interaction/search_request_packet.v0.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
         "scripts/validate_search_interaction_contract.py"
       ],
@@ -6323,10 +6456,8 @@
       "references_to_update": [
         "contracts/search_interaction/user_feedback_event.v0.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
         "scripts/validate_search_interaction_contract.py"
       ],
@@ -6351,10 +6482,8 @@
         "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
         "control/audits/r0-01-dev-production-reality-inventory-v0/generated/sample_runtime_maturity_matrix.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
         "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
@@ -6380,7 +6509,6 @@
         "control/audits/d-bundle-01-snapshot-envelope-consumer-renderers-v0/d_bundle_01_report.json",
         "control/audits/r0-01-dev-production-reality-inventory-v0/generated/sample_runtime_maturity_matrix.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
@@ -6408,7 +6536,6 @@
         "control/audits/d-bundle-01-snapshot-envelope-consumer-renderers-v0/d_bundle_01_report.json",
         "control/audits/r0-01-dev-production-reality-inventory-v0/generated/sample_runtime_maturity_matrix.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
@@ -6437,7 +6564,6 @@
         "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
         "control/audits/r0-01-dev-production-reality-inventory-v0/generated/sample_runtime_maturity_matrix.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
@@ -6465,7 +6591,6 @@
         "control/audits/d-bundle-01-snapshot-envelope-consumer-renderers-v0/d_bundle_01_report.json",
         "control/audits/r0-01-dev-production-reality-inventory-v0/generated/sample_runtime_maturity_matrix.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
@@ -6493,7 +6618,6 @@
         "control/audits/d-bundle-01-snapshot-envelope-consumer-renderers-v0/d_bundle_01_report.json",
         "control/audits/r0-01-dev-production-reality-inventory-v0/generated/sample_runtime_maturity_matrix.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
@@ -6521,7 +6645,6 @@
         "control/audits/d-bundle-01-snapshot-envelope-consumer-renderers-v0/d_bundle_01_report.json",
         "control/audits/r0-01-dev-production-reality-inventory-v0/generated/sample_runtime_maturity_matrix.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
@@ -6549,7 +6672,6 @@
         "contracts/source_cache/source_cache_manifest.v0.json",
         "control/audits/r0-01-dev-production-reality-inventory-v0/generated/sample_runtime_maturity_matrix.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
@@ -6586,7 +6708,6 @@
         "control/audits/pypi-metadata-connector-approval-v0/pypi_metadata_connector_approval_report.json",
         "control/audits/r0-01-dev-production-reality-inventory-v0/generated/sample_runtime_maturity_matrix.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/reference_graph_summary.md",
@@ -6639,7 +6760,6 @@
         "contracts/source_registry/source_record.schema.yaml",
         "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
@@ -6666,7 +6786,6 @@
         "contracts/source_registry/source_record.schema.yaml",
         "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
@@ -6693,7 +6812,6 @@
         "contracts/source_registry/source_registry.schema.yaml",
         "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
@@ -6720,7 +6838,6 @@
       "references_to_update": [
         "contracts/source_registry/source_registry.schema.yaml",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
@@ -6745,7 +6862,6 @@
       "references_to_update": [
         "contracts/source_sync/source_sync_job_kind.v0.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
@@ -6782,7 +6898,6 @@
         "control/audits/pypi-metadata-connector-approval-v0/pypi_metadata_connector_approval_report.json",
         "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/reference_graph_summary.md",
@@ -6824,7 +6939,6 @@
         "contracts/source_sync/source_sync_worker_manifest.v0.json",
         "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
@@ -6853,7 +6967,6 @@
       "references_to_update": [
         "control/audits/h0-bundle-01-source-os-foundation-v0/h0_bundle_01_report.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
@@ -6879,7 +6992,6 @@
       "references_to_update": [
         "control/audits/h0-bundle-01-source-os-foundation-v0/h0_bundle_01_report.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
@@ -6907,7 +7019,6 @@
         "control/audits/h0-bundle-03-coverage-scorecards-source-packs-v0/h0_bundle_03_report.json",
         "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
@@ -6937,7 +7048,6 @@
         "control/audits/h0-bundle-03-coverage-scorecards-source-packs-v0/h0_bundle_03_report.json",
         "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
@@ -6964,7 +7074,6 @@
       "references_to_update": [
         "control/audits/h0-bundle-01-source-os-foundation-v0/h0_bundle_01_report.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
@@ -6990,7 +7099,6 @@
       "references_to_update": [
         "control/audits/h0-bundle-01-source-os-foundation-v0/h0_bundle_01_report.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
@@ -7017,7 +7125,6 @@
         "control/audits/h0-bundle-01-source-os-foundation-v0/h0_bundle_01_report.json",
         "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
@@ -7046,7 +7153,6 @@
         "control/audits/h0-bundle-01-source-os-foundation-v0/h0_bundle_01_report.json",
         "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -7076,7 +7182,6 @@
       "references_to_update": [
         "control/audits/h0-bundle-01-source-os-foundation-v0/h0_bundle_01_report.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
@@ -7104,7 +7209,6 @@
         "control/audits/h0-bundle-01-source-os-foundation-v0/h0_bundle_01_report.json",
         "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
@@ -7132,7 +7236,6 @@
       "references_to_update": [
         "control/audits/h0-bundle-01-source-os-foundation-v0/h0_bundle_01_report.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
@@ -7156,7 +7259,10 @@
       "contract_class_before": "product_domain_contract",
       "rationale": "Artifact is a control/audit/fixture/preview schema or belongs under a different product target root.",
       "references_to_update": [
+        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
+        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
+        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
         "control/audits/r0-03a-contract-taxonomy-testing-repair-v0/README.md",
         "control/audits/r0-03a-contract-taxonomy-testing-repair-v0/generated/failing_tests_before.txt",
         "control/audits/r0-03a-contract-taxonomy-testing-repair-v0/generated/sample_summary.md",
@@ -7190,7 +7296,6 @@
       "references_to_update": [
         "contracts/ui/design_tokens.v0.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
@@ -7218,7 +7323,6 @@
       "references_to_update": [
         "contracts/ui/temporal_minimal_search.v0.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
@@ -7244,7 +7348,6 @@
       "rationale": "Artifact is a control/audit/fixture/preview schema or belongs under a different product target root.",
       "references_to_update": [
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
@@ -7270,7 +7373,6 @@
       "references_to_update": [
         "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
@@ -7294,7 +7396,6 @@
       "rationale": "Artifact is a control/audit/fixture/preview schema or belongs under a different product target root.",
       "references_to_update": [
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
@@ -7319,7 +7420,6 @@
       "references_to_update": [
         "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
@@ -7345,7 +7445,6 @@
       "rationale": "Artifact is a control/audit/fixture/preview schema or belongs under a different product target root.",
       "references_to_update": [
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
@@ -7369,7 +7468,6 @@
       "rationale": "Artifact is a control/audit/fixture/preview schema or belongs under a different product target root.",
       "references_to_update": [
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
@@ -7394,7 +7492,6 @@
       "references_to_update": [
         "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
@@ -7419,7 +7516,6 @@
       "references_to_update": [
         "contracts/ui/ui_contracts/local_index.ui_contract.yaml",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
@@ -7443,7 +7539,6 @@
       "rationale": "Artifact is a control/audit/fixture/preview schema or belongs under a different product target root.",
       "references_to_update": [
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
@@ -7467,7 +7562,6 @@
       "rationale": "Artifact is a control/audit/fixture/preview schema or belongs under a different product target root.",
       "references_to_update": [
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
@@ -7491,7 +7585,6 @@
       "rationale": "Artifact is a control/audit/fixture/preview schema or belongs under a different product target root.",
       "references_to_update": [
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
@@ -7515,7 +7608,6 @@
       "rationale": "Artifact is a control/audit/fixture/preview schema or belongs under a different product target root.",
       "references_to_update": [
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
@@ -7539,7 +7631,6 @@
       "rationale": "Artifact is a control/audit/fixture/preview schema or belongs under a different product target root.",
       "references_to_update": [
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
@@ -7564,7 +7655,6 @@
       "references_to_update": [
         "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
@@ -7589,7 +7679,6 @@
       "rationale": "Artifact is a control/audit/fixture/preview schema or belongs under a different product target root.",
       "references_to_update": [
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
@@ -7613,7 +7702,6 @@
       "rationale": "Artifact is a control/audit/fixture/preview schema or belongs under a different product target root.",
       "references_to_update": [
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
@@ -7638,7 +7726,6 @@
       "references_to_update": [
         "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
@@ -7663,7 +7750,6 @@
       "rationale": "Artifact is a control/audit/fixture/preview schema or belongs under a different product target root.",
       "references_to_update": [
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
@@ -7688,7 +7774,6 @@
       "references_to_update": [
         "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
@@ -7713,7 +7798,6 @@
       "references_to_update": [
         "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
@@ -7738,7 +7822,6 @@
       "rationale": "Artifact is a control/audit/fixture/preview schema or belongs under a different product target root.",
       "references_to_update": [
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
@@ -7764,7 +7847,6 @@
         "contracts/ui/ui_contracts/absence_report.ui_contract.yaml",
         "contracts/ui/view_models/absence_report.view_model.yaml",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
@@ -7791,7 +7873,6 @@
         "contracts/ui/ui_contracts/acquisition.ui_contract.yaml",
         "contracts/ui/view_models/acquisition.view_model.yaml",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
@@ -7817,10 +7898,7 @@
         "contracts/ui/ui_contracts/action_plan.ui_contract.yaml",
         "contracts/ui/view_models/action_plan.view_model.yaml",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json"
       ],
       "risk": "medium",
@@ -7844,10 +7922,7 @@
         "contracts/ui/view_models/bundle_inspection.view_model.yaml",
         "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
         "control/audits/r0-03b-2-contract-reference-product-cleanup-v0/generated/sample_product_contract_cleanup_result.json",
         "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json"
@@ -7872,10 +7947,7 @@
         "contracts/ui/ui_contracts/comparison.ui_contract.yaml",
         "contracts/ui/view_models/comparison.view_model.yaml",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json"
       ],
       "risk": "medium",
@@ -7898,7 +7970,6 @@
         "contracts/ui/ui_contracts/compatibility.ui_contract.yaml",
         "contracts/ui/view_models/compatibility.view_model.yaml",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json"
       ],
@@ -7922,7 +7993,6 @@
         "contracts/ui/ui_contracts/decomposition.ui_contract.yaml",
         "contracts/ui/view_models/decomposition.view_model.yaml",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json"
       ],
@@ -7946,7 +8016,6 @@
         "contracts/ui/ui_contracts/local_index.ui_contract.yaml",
         "contracts/ui/view_models/local_index.view_model.yaml",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json"
       ],
@@ -7970,7 +8039,6 @@
         "contracts/ui/ui_contracts/local_task.ui_contract.yaml",
         "contracts/ui/view_models/local_task.view_model.yaml",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json"
       ],
@@ -7994,7 +8062,6 @@
         "contracts/ui/ui_contracts/member_access.ui_contract.yaml",
         "contracts/ui/view_models/member_access.view_model.yaml",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json"
       ],
@@ -8018,7 +8085,6 @@
         "contracts/ui/ui_contracts/query_plan.ui_contract.yaml",
         "contracts/ui/view_models/query_plan.view_model.yaml",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json"
       ],
@@ -8042,7 +8108,6 @@
         "contracts/ui/ui_contracts/representation_selection.ui_contract.yaml",
         "contracts/ui/view_models/representation_selection.view_model.yaml",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json"
       ],
@@ -8066,7 +8131,6 @@
         "contracts/ui/ui_contracts/representations.ui_contract.yaml",
         "contracts/ui/view_models/representations.view_model.yaml",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json"
       ],
@@ -8091,7 +8155,6 @@
         "contracts/ui/ui_contracts/resolution_workspace.ui_contract.yaml",
         "contracts/ui/view_models/resolution_actions.view_model.yaml",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json"
       ],
@@ -8115,7 +8178,6 @@
         "contracts/ui/ui_contracts/resolution_memory.ui_contract.yaml",
         "contracts/ui/view_models/resolution_memory.view_model.yaml",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json"
       ],
@@ -8139,7 +8201,6 @@
         "contracts/ui/ui_contracts/resolution_run.ui_contract.yaml",
         "contracts/ui/view_models/resolution_run.view_model.yaml",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json"
       ],
@@ -8163,7 +8224,6 @@
         "contracts/ui/ui_contracts/search_results.ui_contract.yaml",
         "contracts/ui/view_models/search_results.view_model.yaml",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json"
       ],
@@ -8188,7 +8248,6 @@
         "contracts/ui/view_models/source_registry.view_model.yaml",
         "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json"
       ],
@@ -8214,7 +8273,6 @@
         "contracts/ui/view_models/stored_exports.view_model.yaml",
         "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
         "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json"
@@ -8239,7 +8297,6 @@
         "contracts/ui/ui_contracts/subject_states.ui_contract.yaml",
         "contracts/ui/view_models/subject_states.view_model.yaml",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json"
       ],
@@ -8263,7 +8320,6 @@
         "contracts/ui/ui_contracts/resolution_workspace.ui_contract.yaml",
         "contracts/ui/view_models/workbench_session.view_model.yaml",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json"
       ],
@@ -8286,7 +8342,6 @@
       "references_to_update": [
         "contracts/view_models/result_lane_view_model.v0.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json"
       ],
       "risk": "medium",
@@ -8308,7 +8363,6 @@
       "references_to_update": [
         "contracts/view_models/view_model_packet.v0.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "scripts/validate_workbench_foundation.py"
       ],
@@ -8342,7 +8396,6 @@
         "control/audits/pypi-metadata-connector-approval-v0/pypi_metadata_connector_approval_report.json",
         "control/audits/r0-01-dev-production-reality-inventory-v0/generated/sample_runtime_maturity_matrix.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -8379,7 +8432,6 @@
         "contracts/views/candidate_page.v0.json",
         "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
         "control/audits/track-a-07-need-candidate-page-view-models-v0/track_a_07_report.json",
@@ -8407,7 +8459,6 @@
       "references_to_update": [
         "contracts/views/compare_page.v0.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
         "control/audits/track-a-09-download-evidence-absence-compare-view-models-v0/track_a_09_report.json",
@@ -8432,7 +8483,6 @@
       "references_to_update": [
         "contracts/views/download_manifest_page.v0.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
         "control/audits/track-a-09-download-evidence-absence-compare-view-models-v0/track_a_09_report.json",
@@ -8457,7 +8507,6 @@
       "references_to_update": [
         "contracts/views/evidence_page.v0.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
         "control/audits/track-a-09-download-evidence-absence-compare-view-models-v0/track_a_09_report.json",
@@ -8482,7 +8531,6 @@
       "references_to_update": [
         "contracts/views/need_page.v0.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
         "control/audits/track-a-07-need-candidate-page-view-models-v0/track_a_07_report.json",
@@ -8514,7 +8562,6 @@
         "control/audits/object-page-contract-v0/object_page_contract_report.json",
         "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -8552,7 +8599,6 @@
       "references_to_update": [
         "contracts/views/pack_page.v0.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
         "control/audits/track-a-08-pack-task-review-page-view-models-v0/track_a_08_report.json",
@@ -8577,7 +8623,6 @@
       "references_to_update": [
         "contracts/views/review_page.v0.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
         "control/audits/track-a-08-pack-task-review-page-view-models-v0/track_a_08_report.json",
@@ -8603,7 +8648,6 @@
         "contracts/views/search_page.v0.json",
         "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
         "control/audits/track-a-04-search-page-view-model-v0/track_a_04_report.json",
@@ -8639,7 +8683,6 @@
         "contracts/views/source_page.v0.json",
         "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -8679,7 +8722,6 @@
       "references_to_update": [
         "contracts/views/task_page.v0.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
         "control/audits/track-a-08-pack-task-review-page-view-models-v0/track_a_08_report.json",
@@ -8705,7 +8747,6 @@
         "contracts/views/view_model_policy_index.v0.json",
         "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
         "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
@@ -8732,7 +8773,6 @@
       "references_to_update": [
         "contracts/workbench/workbench_module.v0.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "scripts/validate_workbench_foundation.py"
       ],
@@ -8755,7 +8795,6 @@
       "references_to_update": [
         "contracts/workbench/workbench_permission.v0.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "scripts/validate_workbench_foundation.py"
       ],
@@ -8778,7 +8817,6 @@
       "references_to_update": [
         "contracts/workbench/workbench_result_lane_projection.v0.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json"
       ],
       "risk": "medium",
@@ -8800,7 +8838,6 @@
       "references_to_update": [
         "contracts/workbench/workbench_route.v0.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "scripts/validate_workbench_foundation.py"
       ],
@@ -8822,7 +8859,6 @@
       "rationale": "Contract-like artifact could not be safely classified by static rules.",
       "references_to_update": [
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
         "control/audits/r0-03b-2-contract-reference-product-cleanup-v0/generated/sample_product_contract_cleanup_result.json",
@@ -8851,7 +8887,6 @@
         "control/audits/r0-01-dev-production-reality-inventory-v0/generated/sample_gap_register.json",
         "control/audits/r0-01-dev-production-reality-inventory-v0/zero_byte_and_placeholder_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
         "control/audits/r0-03b-2-contract-reference-product-cleanup-v0/generated/sample_product_contract_cleanup_result.json",
@@ -8884,7 +8919,6 @@
         "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
         "control/audits/r0-01-dev-production-reality-inventory-v0/generated/sample_gap_register.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
-        "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
         "control/audits/r0-03b-2-contract-reference-product-cleanup-v0/generated/sample_product_contract_cleanup_result.json",

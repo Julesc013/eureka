@@ -1,0 +1,19 @@
+{
+  "branch": "dev",
+  "domain_foundation_found": true,
+  "head": "67b1934b222090e15d42c7bec12828ddeb326c73",
+  "ia_hunt_bridge_found": true,
+  "ia_pilot_closeout_found": true,
+  "origin_dev": "67b1934b222090e15d42c7bec12828ddeb326c73",
+  "origin_main": "79563d01c8cc01163eae53a973ad225d7b8edffb",
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "schema_version": "scout_schema_input_state.v0",
+  "search_interaction_found": true,
+  "syn_foundation_found": true,
+  "task": "AIDE-BATCH-SCOUT-SCHEMA-01",
+  "test_lane_router_found": true,
+  "workbench_foundation_found": true,
+  "workbench_result_lanes_found": true,
+  "working_tree_clean_before": true
+}

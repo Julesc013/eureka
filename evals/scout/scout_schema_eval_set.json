@@ -1,0 +1,44 @@
+{
+  "cases": [
+    {
+      "domain_id": "legacy_software",
+      "path": "sample_seed_legacy_software.json",
+      "query_text": "Windows 7-compatible portable utilities, not Windows 7 ISO",
+      "seed_id": "scout_seed_legacy_software_portable_utils",
+      "seed_status": "example_only"
+    },
+    {
+      "domain_id": "frontier_resolution_media",
+      "path": "sample_seed_frontier_media.json",
+      "query_text": "New York 1993 D-Theater HD demo tape original source",
+      "seed_id": "scout_seed_frontier_media_dtheater_ny_1993",
+      "seed_status": "example_only"
+    },
+    {
+      "domain_id": "driver_support_media",
+      "path": "sample_seed_driver_support_media.json",
+      "query_text": "StyleWriter 2500 Mac OS 8 driver",
+      "seed_id": "scout_seed_driver_support_stylewriter_2500",
+      "seed_status": "example_only"
+    },
+    {
+      "domain_id": "package_source_release",
+      "path": "sample_seed_package_source_release.json",
+      "query_text": "DirectX SDK June 2010 offline installer",
+      "seed_id": "scout_seed_package_directx_june_2010",
+      "seed_status": "example_only"
+    },
+    {
+      "domain_id": "frontier_resolution_media",
+      "path": "sample_seed_frontier_media_city_life.json",
+      "query_text": "early HDTV footage of ordinary city life",
+      "seed_id": "scout_seed_frontier_media_city_life_hdtv",
+      "seed_status": "example_only"
+    }
+  ],
+  "non_claims": {
+    "fake_evidence_created": false
+  },
+  "schema_version": "scout_schema_eval_set.v0",
+  "task": "AIDE-BATCH-SCOUT-SCHEMA-01"
+}

@@ -1,0 +1,30 @@
+{
+  "boundaries": {
+    "crawling_performed": false,
+    "deployment_performed": false,
+    "download_performed": false,
+    "extraction_executed": false,
+    "fake_evidence_created": false,
+    "fake_verified_records_created": false,
+    "live_source_call_performed": false,
+    "master_index_mutated": false,
+    "model_provider_used": false,
+    "operator_instance_mutated": false,
+    "production_readiness_claimed": false,
+    "public_launch_readiness_claimed": false,
+    "source_probe_executed": false,
+    "upload_performed": false
+  },
+  "relation_type_count": 25,
+  "schema_version": "scout_schema_report.v0",
+  "seed_count": 5,
+  "status": "pass",
+  "validation": {
+    "focused_tests": "pass",
+    "full_unittest_discovery": "pass",
+    "full_unittest_discovery_count": 4843,
+    "full_unittest_discovery_duration_seconds": 2700.729,
+    "scout_schema_validator": "pass"
+  },
+  "task": "AIDE-BATCH-SCOUT-SCHEMA-01"
+}

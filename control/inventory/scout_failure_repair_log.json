@@ -1,0 +1,27 @@
+{
+  "repairs": [
+    {
+      "failure": "AIDE validate/verify reported missing required latest-task-packet sections and directory-level queue scope warnings.",
+      "repair": "Expanded latest-task-packet with required AIDE sections and changed new queue entries to directory-level allowed paths.",
+      "rerun_command": "python .aide/scripts/aide_lite.py validate && python .aide/scripts/aide_lite.py verify",
+      "result": "pass",
+      "root_cause": "Initial compact SCOUT packet was hand-written too narrowly for AIDE verifier expectations."
+    },
+    {
+      "failure": "Full discovery reported contract taxonomy inventory missing new contracts/scout schema files.",
+      "repair": "Regenerated standard contract taxonomy inventory outputs so the SCOUT contract family is classified by the existing taxonomy audit flow.",
+      "rerun_command": "python scripts/validate_contract_taxonomy_plan.py --json",
+      "result": "pass",
+      "root_cause": "SCOUT-SCHEMA-00 introduced new governed contracts before the R0-03A standard inventory was refreshed."
+    },
+    {
+      "failure": "Full discovery reported older HUNT remediation/closeout validators and tests rejecting the post-SCOUT F0-00 queue handoff.",
+      "repair": "Updated HUNT queue validation helpers/tests to allow F0-00 only through the existing post-HUNT completion gate, and restored repo health boundary fields.",
+      "rerun_command": "python -m unittest tests.operations.test_hunt_remediation tests.operations.test_hunt_remediation_continue tests.operations.test_search_hunt_closeout tests.operations.test_search_hunt_track tests.operations.test_local_appliance_track",
+      "result": "pass",
+      "root_cause": "Legacy queue assertions still encoded the pre-DOMAIN/SCOUT rule that F0 could not be current."
+    }
+  ],
+  "schema_version": "scout_failure_repair_log.v0",
+  "task": "AIDE-BATCH-SCOUT-SCHEMA-01"
+}

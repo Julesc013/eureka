@@ -1,0 +1,57 @@
+{
+  "blocked_actions": [
+    "live_source_call",
+    "source_probe",
+    "crawl",
+    "download",
+    "upload",
+    "extract",
+    "call_model_provider",
+    "public_fanout",
+    "mutate_operator_instance",
+    "mutate_master_index",
+    "write_source_cache",
+    "write_evidence",
+    "write_candidate_index",
+    "write_review_queue",
+    "create_reviewed_record",
+    "deploy"
+  ],
+  "projections": [
+    {
+      "operator_detail_visible": true,
+      "projection_profile": "operator_workbench",
+      "read_only": true
+    },
+    {
+      "operator_detail_visible": false,
+      "projection_profile": "public_web",
+      "read_only": true
+    },
+    {
+      "operator_detail_visible": false,
+      "projection_profile": "native_desktop_read_only",
+      "read_only": true
+    }
+  ],
+  "routes": [
+    "/scout",
+    "/scout/trails",
+    "/scout/sources",
+    "/scout/candidates",
+    "/scout/trust",
+    "/scout/feedback"
+  ],
+  "schema_version": "scout_workbench_console_matrix.v0",
+  "task": "AIDE-BATCH-SCOUT-SCHEMA-01",
+  "views": [
+    "ScoutOverviewView",
+    "DiscoveryTrailView",
+    "RelatedPathView",
+    "DiscoveryCandidateView",
+    "SourceTrustView",
+    "SourceTrustObservationView",
+    "HuntFeedbackEventView",
+    "WorkUnitSeedSuggestionView"
+  ]
+}

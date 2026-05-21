@@ -1,33 +1,12 @@
 # Eureka Repo Health
 
-- current_recommended_task: SCOUT-SCHEMA-00 - Discovery trail, source trust, and relation contracts
-- last_completed_task: AIDE-BATCH-DOMAIN-FOUNDATION-01
-- last_completed_status: pass
-- test_lane_router_completed: true
-- test_selector_available: true
-- failure_ledger_available: true
-- full_discovery_per_commit_required: false
-- full_discovery_for_promotion_required: true
-- skip_reasons_required: true
-- known_failure_ledger_active_count: 0
-- known_failure_ledger_active_status: none
-- f0_current_status: deferred
-- f0_deferred_until: LOCAL-14
-- last_full_unittest_discovery_status: pass
-- last_full_unittest_discovery_tests: 4827
-- last_full_unittest_discovery_failures: 0
-- last_full_unittest_discovery_errors: 0
-- last_full_unittest_discovery_duration_seconds: 2677.802
-- last_full_unittest_discovery_disposition: DOMAIN foundation added example-only domain packs, query hints, SYN mappings, read-only console model, validator/tests/docs/audit evidence, repaired taxonomy inventory echo, and full discovery passed. SCOUT-SCHEMA-00 can start.
-- workbench_result_lanes_completed: true
-- result_lane_closeout_required: false
-- ia_hunt_bridge_can_start: true
-- source_probe_execution_enabled: false
-- live_ia_call_enabled: false
-- extraction_execution_enabled: false
-- provider_calls_enabled: false
-- deployment_performed: false
-- production_readiness_claimed: false
-- public_launch_readiness_claimed: false
-- marketplace_or_app_store_readiness_claimed: false
-- hard_blockers_remaining: 0
+- Current task: F0-00
+- Current recommended task after closeout: F0-00 — Extraction/member discovery policy and safe fixture foundation
+- F0 status: resumable through the Local Appliance track
+- Latest completed task: AIDE-BATCH-SCOUT-SCHEMA-01
+- Full unittest discovery: PASS, 4843 tests
+- Branch: dev
+- Deployment performed: false
+- Main pushed in this batch: false
+- Production readiness claimed: false
+- Public launch readiness claimed: false

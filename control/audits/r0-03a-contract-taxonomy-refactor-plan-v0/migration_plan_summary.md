@@ -2,7 +2,7 @@
 
 migration allowed now: false
 R0-03B ready: true
-move records: 241
+move records: 253
 
 - move: contracts/actions/acquisition_manifest.v0.json -> contracts/connectors/acquisition_manifest.v0.json (medium)
 - move: contracts/actions/action_manifest.v0.json -> contracts/connectors/action_manifest.v0.json (medium)
@@ -125,6 +125,18 @@ move records: 241
 - move: contracts/representations/representation_profile.v0.json -> contracts/domain/representation_profile.v0.json (medium)
 - move: contracts/representations/route_view_representation_matrix.v0.json -> contracts/domain/route_view_representation_matrix.v0.json (medium)
 - move: contracts/representations/semantic_renderer_parity.v0.json -> contracts/domain/semantic_renderer_parity.v0.json (medium)
+- investigate: contracts/scout/curator_relation.v0.json -> control/schemas/deprecated/scout/curator_relation.v0.json (high)
+- move: contracts/scout/discovery_candidate.v0.json -> control/schemas/previews/scout/discovery_candidate.v0.json (medium)
+- investigate: contracts/scout/discovery_trail.v0.json -> control/schemas/deprecated/scout/discovery_trail.v0.json (high)
+- investigate: contracts/scout/hunt_feedback_event.v0.json -> control/schemas/deprecated/scout/hunt_feedback_event.v0.json (high)
+- investigate: contracts/scout/related_path.v0.json -> control/schemas/deprecated/scout/related_path.v0.json (high)
+- investigate: contracts/scout/scout_console_view.v0.json -> control/schemas/deprecated/scout/scout_console_view.v0.json (high)
+- investigate: contracts/scout/scout_score_decomposition.v0.json -> control/schemas/deprecated/scout/scout_score_decomposition.v0.json (high)
+- investigate: contracts/scout/scout_seed.v0.json -> control/schemas/deprecated/scout/scout_seed.v0.json (high)
+- investigate: contracts/scout/source_trust_observation.v0.json -> control/schemas/deprecated/scout/source_trust_observation.v0.json (high)
+- investigate: contracts/scout/source_trust_record.v0.json -> control/schemas/deprecated/scout/source_trust_record.v0.json (high)
+- investigate: contracts/scout/unresolved_path_observation.v0.json -> control/schemas/deprecated/scout/unresolved_path_observation.v0.json (high)
+- investigate: contracts/scout/workunit_seed_suggestion.v0.json -> control/schemas/deprecated/scout/workunit_seed_suggestion.v0.json (high)
 - move: contracts/search/compatibility_aware_ranking_assessment.v0.json -> contracts/api/compatibility_aware_ranking_assessment.v0.json (medium)
 - move: contracts/search/compatibility_explanation.v0.json -> contracts/api/compatibility_explanation.v0.json (medium)
 - move: contracts/search/compatibility_factor.v0.json -> contracts/api/compatibility_factor.v0.json (medium)
@@ -192,16 +204,4 @@ move records: 241
 - move: contracts/ui/ui_contracts/local_task.ui_contract.yaml -> contracts/api/ui_contracts/local_task.ui_contract.yaml (medium)
 - move: contracts/ui/ui_contracts/member_access.ui_contract.yaml -> contracts/api/ui_contracts/member_access.ui_contract.yaml (medium)
 - move: contracts/ui/ui_contracts/query_plan.ui_contract.yaml -> contracts/api/ui_contracts/query_plan.ui_contract.yaml (medium)
-- move: contracts/ui/ui_contracts/representation_selection.ui_contract.yaml -> contracts/api/ui_contracts/representation_selection.ui_contract.yaml (medium)
-- move: contracts/ui/ui_contracts/representations.ui_contract.yaml -> contracts/api/ui_contracts/representations.ui_contract.yaml (medium)
-- move: contracts/ui/ui_contracts/resolution_actions.ui_contract.yaml -> contracts/api/ui_contracts/resolution_actions.ui_contract.yaml (medium)
-- move: contracts/ui/ui_contracts/resolution_memory.ui_contract.yaml -> contracts/api/ui_contracts/resolution_memory.ui_contract.yaml (medium)
-- move: contracts/ui/ui_contracts/resolution_run.ui_contract.yaml -> contracts/api/ui_contracts/resolution_run.ui_contract.yaml (medium)
-- move: contracts/ui/ui_contracts/resolution_workspace.ui_contract.yaml -> contracts/api/ui_contracts/resolution_workspace.ui_contract.yaml (medium)
-- move: contracts/ui/ui_contracts/search_results.ui_contract.yaml -> contracts/api/ui_contracts/search_results.ui_contract.yaml (medium)
-- move: contracts/ui/ui_contracts/source_registry.ui_contract.yaml -> contracts/api/ui_contracts/source_registry.ui_contract.yaml (medium)
-- move: contracts/ui/ui_contracts/stored_exports.ui_contract.yaml -> contracts/api/ui_contracts/stored_exports.ui_contract.yaml (medium)
-- move: contracts/ui/ui_contracts/subject_states.ui_contract.yaml -> contracts/api/ui_contracts/subject_states.ui_contract.yaml (medium)
-- move: contracts/ui/view_models/absence_report.view_model.yaml -> contracts/api/view_models/absence_report.view_model.yaml (medium)
-- move: contracts/ui/view_models/acquisition.view_model.yaml -> contracts/api/view_models/acquisition.view_model.yaml (medium)
-- ... 41 additional move records in JSON plan.
+- ... 53 additional move records in JSON plan.

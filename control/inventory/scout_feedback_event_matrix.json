@@ -1,0 +1,66 @@
+{
+  "feedback_event_types": [
+    {
+      "event_type": "useful_lead",
+      "mutates_indexes": false,
+      "review_required": true
+    },
+    {
+      "event_type": "accepted_as_evidence",
+      "mutates_indexes": false,
+      "review_required": true
+    },
+    {
+      "event_type": "false_positive",
+      "mutates_indexes": false,
+      "review_required": true
+    },
+    {
+      "event_type": "duplicate",
+      "mutates_indexes": false,
+      "review_required": true
+    },
+    {
+      "event_type": "unsafe",
+      "mutates_indexes": false,
+      "review_required": true
+    },
+    {
+      "event_type": "rights_risk",
+      "mutates_indexes": false,
+      "review_required": true
+    },
+    {
+      "event_type": "needs_more_work",
+      "mutates_indexes": false,
+      "review_required": true
+    },
+    {
+      "event_type": "wrong_domain",
+      "mutates_indexes": false,
+      "review_required": true
+    },
+    {
+      "event_type": "source_relevant",
+      "mutates_indexes": false,
+      "review_required": true
+    },
+    {
+      "event_type": "source_not_relevant",
+      "mutates_indexes": false,
+      "review_required": true
+    },
+    {
+      "event_type": "relation_helpful",
+      "mutates_indexes": false,
+      "review_required": true
+    },
+    {
+      "event_type": "relation_misleading",
+      "mutates_indexes": false,
+      "review_required": true
+    }
+  ],
+  "schema_version": "scout_feedback_event_matrix.v0",
+  "task": "AIDE-BATCH-SCOUT-SCHEMA-01"
+}

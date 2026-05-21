@@ -1,0 +1,12 @@
+{
+  "accepted_truth": false,
+  "review_required": true,
+  "schema_version": "scout_discovery_trail_matrix.v0",
+  "task": "AIDE-BATCH-SCOUT-SCHEMA-01",
+  "trail_step_kinds": [
+    "relation_hint",
+    "related_path",
+    "source_trust_observation",
+    "workunit_seed_suggestion"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "do_not_start_in_this_batch": true,
+  "planned_after": [
+    "G0 ranking/explanation/search quality",
+    "SOURCE-WAVE-00"
+  ],
+  "recommended_next_task": "F0-00 — Extraction/member discovery policy and safe fixture foundation",
+  "schema_version": "scout_schema_next_task_decision.v0",
+  "status": "recommended",
+  "task": "AIDE-BATCH-SCOUT-SCHEMA-01"
+}

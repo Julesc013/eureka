@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (4862 chars, 1216 approximate tokens)
+- `.aide/context/latest-task-packet.md` (6467 chars, 1617 approximate tokens)
 
 ## Context Packet Reference
 
@@ -33,7 +33,31 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Changed Files Summary
 
-- none
+- allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
+- allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
+- allowed: `.aide/queue/AIDE-BATCH-SCOUT-SCHEMA-01` (??; matches active task allowed path)
+- allowed: `.aide/queue/SCOUT-SCHEMA-00/task.yaml` (M; matches active task allowed path)
+- allowed: `.aide/queue/SOURCE-WAVE-00` (??; matches active task allowed path)
+- allowed: `.aide/queue/index.yaml` (M; matches active task allowed path)
+- allowed: `.aide/reports/eureka-repo-health.json` (M; matches active task allowed path)
+- allowed: `.aide/reports/eureka-repo-health.md` (M; matches active task allowed path)
+- allowed: `contracts/scout/README.md` (M; matches active task allowed path)
+- allowed: `contracts/scout/curator_relation.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/scout/discovery_candidate.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/scout/discovery_trail.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/scout/hunt_feedback_event.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/scout/related_path.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/scout/scout_console_view.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/scout/scout_score_decomposition.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/scout/scout_seed.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/scout/source_trust_observation.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/scout/source_trust_record.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/scout/unresolved_path_observation.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/scout/workunit_seed_suggestion.v0.json` (??; matches active task allowed path)
+- allowed: `control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/contract_taxonomy_summary.md` (M; matches active task allowed path)
+- allowed: `control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json` (M; matches active task allowed path)
+- allowed: `control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json` (M; matches active task allowed path)
+- additional changed paths omitted from compact packet: 61; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -43,8 +67,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 4251
-- approx_tokens: 1063
+- chars: 6703
+- approx_tokens: 1676
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

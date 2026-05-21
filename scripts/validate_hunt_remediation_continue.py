@@ -15,6 +15,7 @@ if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
 from scripts.audit_search_hunt_closeout import audit_closeout
+from scripts.hunt_queue_progress import current_recommended_task_id, post_hunt_current_allowed
 from scripts.validate_hunt_remediation import validate as validate_previous_remediation
 
 
@@ -266,6 +267,8 @@ def validate_queue(root: Path, errors: list[str]) -> None:
 
 
 def queue_preserves_hunt_handoff(root: Path, queue_text: str) -> bool:
+    if current_recommended_task_id(root) == "F0-00" and post_hunt_current_allowed(root):
+        return True
     if "current_recommended_task: SYN-00" in queue_text:
         return True
     if "current_recommended_task: DOMAIN-00" in queue_text:

@@ -1,0 +1,18 @@
+{
+  "crawling_performed": false,
+  "deployment_performed": false,
+  "download_performed": false,
+  "extraction_executed": false,
+  "fake_evidence_created": false,
+  "fake_verified_records_created": false,
+  "live_source_call_performed": false,
+  "master_index_mutated": false,
+  "model_provider_used": false,
+  "operator_instance_mutated": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "schema_version": "scout_non_claim_policy.v0",
+  "source_probe_executed": false,
+  "task": "AIDE-BATCH-SCOUT-SCHEMA-01",
+  "upload_performed": false
+}

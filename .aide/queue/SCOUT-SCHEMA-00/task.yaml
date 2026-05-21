@@ -1,10 +1,8 @@
 id: SCOUT-SCHEMA-00
 title: SCOUT discovery trail contract schema
-status: queued
-purpose: Follow-up after DOMAIN-00 to define SCOUT discovery trail contract schema placeholders.
-allowed_scope_summary: Future task must provide its own reviewed scope before implementation.
-gate:
-  - no production/public launch claim by default
-  - no unsafe actions unless future policy enables them
+status: completed
+purpose: Define SCOUT discovery trail, relation, source trust, feedback, and WorkUnit seed schema foundation after DOMAIN-00.
+allowed_scope_summary: SCOUT contracts, policies, examples, read-only local-eval helpers, validator, tests, docs, audit evidence, and queue/context metadata.
+gate: DOMAIN-00 completed; no live source calls, crawling, source probes, extraction, model/provider calls, index mutation, production readiness claim, or public launch claim.
 recommended_after: DOMAIN-00
 recommended_next: F0-00

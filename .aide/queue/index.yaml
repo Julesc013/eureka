@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-21
 repo: julesc013/eureka
-current_recommended_task: SCOUT-SCHEMA-00 - Discovery trail, source trust, and relation contracts
+current_recommended_task: F0-00 — Extraction/member discovery policy and safe fixture foundation
 entries:
   - id: DEV-AND-IA-TO-MAIN-PROMOTION-REVIEW
     title: Promote repaired dev IA pilot plus repo layout canon baseline to main
@@ -547,11 +547,20 @@ entries:
     recommended_next: SCOUT-SCHEMA-00
   - id: SCOUT-SCHEMA-00
     title: SCOUT discovery trail contract schema
-    status: queued
-    purpose: Define SCOUT discovery trail contract schema placeholders after DOMAIN-00.
-    allowed_scope_summary: Future task must provide its own reviewed scope before implementation.
-    gate: DOMAIN-00 should complete first; no production/public launch claim by default and no unsafe actions unless future policy enables them.
+    status: completed
+    purpose: Defined SCOUT discovery trail, relation, source trust, feedback, and WorkUnit seed schema foundation after DOMAIN-00.
+    allowed_scope_summary: SCOUT contracts, policies, deterministic examples, read-only local-eval helpers, validator, tests, docs, audit evidence, and queue/context metadata.
+    gate: Full discovery passed; no fake evidence, live source calls, crawling, source probes, extraction, model/provider calls, index mutation, production readiness claim, or public launch claim.
     task: .aide/queue/SCOUT-SCHEMA-00/task.yaml
+    recommended_after: DOMAIN-00
+    recommended_next: F0-00
+  - id: AIDE-BATCH-SCOUT-SCHEMA-01
+    title: SCOUT discovery trail, relation, source trust, and WorkUnit seed contracts
+    status: completed
+    purpose: Define SCOUT relation/path discovery contracts, source trust observations, feedback events, WorkUnit seed suggestions, read-only console helpers, validator, tests, docs, and audit evidence.
+    allowed_scope_summary: SCOUT contracts, policies, examples, matrices, read-only local-eval helpers, CLIs, validator, tests, docs, audit evidence, and queue/context metadata.
+    gate: Full discovery passed; no fake evidence, fake verified records, live source calls, crawling, source probes, downloads/uploads, extraction, model/provider calls, operator/master index mutation, deployment, or production/public launch claim.
+    task: .aide/queue/AIDE-BATCH-SCOUT-SCHEMA-01/task.yaml
     recommended_after: DOMAIN-00
     recommended_next: F0-00
   - id: F0-00

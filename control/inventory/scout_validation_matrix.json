@@ -1,0 +1,24 @@
+{
+  "schema_version": "scout_validation_matrix.v0",
+  "task": "AIDE-BATCH-SCOUT-SCHEMA-01",
+  "full_unittest_discovery_count": 4843,
+  "full_unittest_discovery_duration_seconds": 2700.729,
+  "validation": {
+    "aide_checks": "pass",
+    "architecture_boundaries": "pass",
+    "contract_taxonomy": "pass",
+    "domain_packs": "pass",
+    "focused_tests": "pass",
+    "full_unittest_discovery": "pass",
+    "generated_artifact_cleanliness": "pass_after_commit",
+    "ia_hunt_bridge": "pass",
+    "repo_structure_canon": "pass_with_existing_warnings",
+    "scout_schema_validator": "pass",
+    "search_interaction": "pass",
+    "syn_foundry": "pass",
+    "test_lane_policy": "pass",
+    "test_selector": "pass",
+    "workbench_foundation": "pass",
+    "workbench_result_lanes": "pass"
+  }
+}

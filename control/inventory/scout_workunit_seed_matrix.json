@@ -1,0 +1,46 @@
+{
+  "schema_version": "scout_workunit_seed_matrix.v0",
+  "task": "AIDE-BATCH-SCOUT-SCHEMA-01",
+  "workunit_seed_suggestion_types": [
+    {
+      "creates_runtime_workunit": false,
+      "review_required": true,
+      "suggestion_type": "inspect_related_collection"
+    },
+    {
+      "creates_runtime_workunit": false,
+      "review_required": true,
+      "suggestion_type": "search_same_filename_pattern"
+    },
+    {
+      "creates_runtime_workunit": false,
+      "review_required": true,
+      "suggestion_type": "trace_archived_vendor_url"
+    },
+    {
+      "creates_runtime_workunit": false,
+      "review_required": true,
+      "suggestion_type": "compare_same_format_examples"
+    },
+    {
+      "creates_runtime_workunit": false,
+      "review_required": true,
+      "suggestion_type": "verify_candidate_identity"
+    },
+    {
+      "creates_runtime_workunit": false,
+      "review_required": true,
+      "suggestion_type": "inspect_file_manifest"
+    },
+    {
+      "creates_runtime_workunit": false,
+      "review_required": true,
+      "suggestion_type": "queue_future_extraction"
+    },
+    {
+      "creates_runtime_workunit": false,
+      "review_required": true,
+      "suggestion_type": "review_provenance_claim"
+    }
+  ]
+}

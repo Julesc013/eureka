@@ -1,0 +1,31 @@
+{
+  "candidate_kinds": [
+    {
+      "accepted_truth": false,
+      "candidate_kind": "related_collection_lead",
+      "review_required": true
+    },
+    {
+      "accepted_truth": false,
+      "candidate_kind": "related_file_lead",
+      "review_required": true
+    },
+    {
+      "accepted_truth": false,
+      "candidate_kind": "archived_url_lead",
+      "review_required": true
+    },
+    {
+      "accepted_truth": false,
+      "candidate_kind": "source_catalogue_neighbor_lead",
+      "review_required": true
+    },
+    {
+      "accepted_truth": false,
+      "candidate_kind": "package_family_lead",
+      "review_required": true
+    }
+  ],
+  "schema_version": "scout_discovery_candidate_matrix.v0",
+  "task": "AIDE-BATCH-SCOUT-SCHEMA-01"
+}

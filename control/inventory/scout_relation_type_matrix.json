@@ -1,0 +1,482 @@
+{
+  "engagement_optimization_forbidden": true,
+  "relation_types": [
+    {
+      "allowed_domains": [
+        "legacy_software",
+        "driver_support_media",
+        "frontier_resolution_media",
+        "manuals_docs_scans",
+        "package_source_release",
+        "web_archive_trace",
+        "games_emulation",
+        "hardware_firmware_support"
+      ],
+      "description": "Candidate-only relation hint for same collection.",
+      "evidence_required": true,
+      "may_affect_source_trust_later": true,
+      "may_seed_workunit": true,
+      "public_safe_by_default": true,
+      "relation_type": "same_collection",
+      "risk": "misleading_without_review"
+    },
+    {
+      "allowed_domains": [
+        "legacy_software",
+        "driver_support_media",
+        "frontier_resolution_media",
+        "manuals_docs_scans",
+        "package_source_release",
+        "web_archive_trace",
+        "games_emulation",
+        "hardware_firmware_support"
+      ],
+      "description": "Candidate-only relation hint for same uploader.",
+      "evidence_required": true,
+      "may_affect_source_trust_later": true,
+      "may_seed_workunit": false,
+      "public_safe_by_default": false,
+      "relation_type": "same_uploader",
+      "risk": "misleading_without_review"
+    },
+    {
+      "allowed_domains": [
+        "legacy_software",
+        "driver_support_media",
+        "frontier_resolution_media",
+        "manuals_docs_scans",
+        "package_source_release",
+        "web_archive_trace",
+        "games_emulation",
+        "hardware_firmware_support"
+      ],
+      "description": "Candidate-only relation hint for same creator.",
+      "evidence_required": true,
+      "may_affect_source_trust_later": true,
+      "may_seed_workunit": false,
+      "public_safe_by_default": true,
+      "relation_type": "same_creator",
+      "risk": "misleading_without_review"
+    },
+    {
+      "allowed_domains": [
+        "legacy_software",
+        "driver_support_media",
+        "frontier_resolution_media",
+        "manuals_docs_scans",
+        "package_source_release",
+        "web_archive_trace",
+        "games_emulation",
+        "hardware_firmware_support"
+      ],
+      "description": "Candidate-only relation hint for same format family.",
+      "evidence_required": true,
+      "may_affect_source_trust_later": true,
+      "may_seed_workunit": false,
+      "public_safe_by_default": true,
+      "relation_type": "same_format_family",
+      "risk": "misleading_without_review"
+    },
+    {
+      "allowed_domains": [
+        "legacy_software",
+        "driver_support_media",
+        "frontier_resolution_media",
+        "manuals_docs_scans",
+        "package_source_release",
+        "web_archive_trace",
+        "games_emulation",
+        "hardware_firmware_support"
+      ],
+      "description": "Candidate-only relation hint for same platform.",
+      "evidence_required": true,
+      "may_affect_source_trust_later": true,
+      "may_seed_workunit": false,
+      "public_safe_by_default": true,
+      "relation_type": "same_platform",
+      "risk": "misleading_without_review"
+    },
+    {
+      "allowed_domains": [
+        "legacy_software",
+        "driver_support_media",
+        "frontier_resolution_media",
+        "manuals_docs_scans",
+        "package_source_release",
+        "web_archive_trace",
+        "games_emulation",
+        "hardware_firmware_support"
+      ],
+      "description": "Candidate-only relation hint for same filename pattern.",
+      "evidence_required": true,
+      "may_affect_source_trust_later": true,
+      "may_seed_workunit": true,
+      "public_safe_by_default": true,
+      "relation_type": "same_filename_pattern",
+      "risk": "misleading_without_review"
+    },
+    {
+      "allowed_domains": [
+        "legacy_software",
+        "driver_support_media",
+        "frontier_resolution_media",
+        "manuals_docs_scans",
+        "package_source_release",
+        "web_archive_trace",
+        "games_emulation",
+        "hardware_firmware_support"
+      ],
+      "description": "Candidate-only relation hint for same checksum cluster.",
+      "evidence_required": true,
+      "may_affect_source_trust_later": true,
+      "may_seed_workunit": false,
+      "public_safe_by_default": true,
+      "relation_type": "same_checksum_cluster",
+      "risk": "misleading_without_review"
+    },
+    {
+      "allowed_domains": [
+        "legacy_software",
+        "driver_support_media",
+        "frontier_resolution_media",
+        "manuals_docs_scans",
+        "package_source_release",
+        "web_archive_trace",
+        "games_emulation",
+        "hardware_firmware_support"
+      ],
+      "description": "Candidate-only relation hint for same vendor.",
+      "evidence_required": true,
+      "may_affect_source_trust_later": true,
+      "may_seed_workunit": false,
+      "public_safe_by_default": true,
+      "relation_type": "same_vendor",
+      "risk": "misleading_without_review"
+    },
+    {
+      "allowed_domains": [
+        "legacy_software",
+        "driver_support_media",
+        "frontier_resolution_media",
+        "manuals_docs_scans",
+        "package_source_release",
+        "web_archive_trace",
+        "games_emulation",
+        "hardware_firmware_support"
+      ],
+      "description": "Candidate-only relation hint for same driver family.",
+      "evidence_required": true,
+      "may_affect_source_trust_later": true,
+      "may_seed_workunit": true,
+      "public_safe_by_default": true,
+      "relation_type": "same_driver_family",
+      "risk": "misleading_without_review"
+    },
+    {
+      "allowed_domains": [
+        "legacy_software",
+        "driver_support_media",
+        "frontier_resolution_media",
+        "manuals_docs_scans",
+        "package_source_release",
+        "web_archive_trace",
+        "games_emulation",
+        "hardware_firmware_support"
+      ],
+      "description": "Candidate-only relation hint for same media format.",
+      "evidence_required": true,
+      "may_affect_source_trust_later": true,
+      "may_seed_workunit": true,
+      "public_safe_by_default": true,
+      "relation_type": "same_media_format",
+      "risk": "misleading_without_review"
+    },
+    {
+      "allowed_domains": [
+        "legacy_software",
+        "driver_support_media",
+        "frontier_resolution_media",
+        "manuals_docs_scans",
+        "package_source_release",
+        "web_archive_trace",
+        "games_emulation",
+        "hardware_firmware_support"
+      ],
+      "description": "Candidate-only relation hint for same archive collection.",
+      "evidence_required": true,
+      "may_affect_source_trust_later": true,
+      "may_seed_workunit": false,
+      "public_safe_by_default": true,
+      "relation_type": "same_archive_collection",
+      "risk": "misleading_without_review"
+    },
+    {
+      "allowed_domains": [
+        "legacy_software",
+        "driver_support_media",
+        "frontier_resolution_media",
+        "manuals_docs_scans",
+        "package_source_release",
+        "web_archive_trace",
+        "games_emulation",
+        "hardware_firmware_support"
+      ],
+      "description": "Candidate-only relation hint for same member path pattern.",
+      "evidence_required": true,
+      "may_affect_source_trust_later": true,
+      "may_seed_workunit": false,
+      "public_safe_by_default": true,
+      "relation_type": "same_member_path_pattern",
+      "risk": "misleading_without_review"
+    },
+    {
+      "allowed_domains": [
+        "legacy_software",
+        "driver_support_media",
+        "frontier_resolution_media",
+        "manuals_docs_scans",
+        "package_source_release",
+        "web_archive_trace",
+        "games_emulation",
+        "hardware_firmware_support"
+      ],
+      "description": "Candidate-only relation hint for mentions.",
+      "evidence_required": true,
+      "may_affect_source_trust_later": true,
+      "may_seed_workunit": false,
+      "public_safe_by_default": true,
+      "relation_type": "mentions",
+      "risk": "misleading_without_review"
+    },
+    {
+      "allowed_domains": [
+        "legacy_software",
+        "driver_support_media",
+        "frontier_resolution_media",
+        "manuals_docs_scans",
+        "package_source_release",
+        "web_archive_trace",
+        "games_emulation",
+        "hardware_firmware_support"
+      ],
+      "description": "Candidate-only relation hint for contains.",
+      "evidence_required": true,
+      "may_affect_source_trust_later": true,
+      "may_seed_workunit": false,
+      "public_safe_by_default": true,
+      "relation_type": "contains",
+      "risk": "misleading_without_review"
+    },
+    {
+      "allowed_domains": [
+        "legacy_software",
+        "driver_support_media",
+        "frontier_resolution_media",
+        "manuals_docs_scans",
+        "package_source_release",
+        "web_archive_trace",
+        "games_emulation",
+        "hardware_firmware_support"
+      ],
+      "description": "Candidate-only relation hint for mirrors.",
+      "evidence_required": true,
+      "may_affect_source_trust_later": true,
+      "may_seed_workunit": false,
+      "public_safe_by_default": true,
+      "relation_type": "mirrors",
+      "risk": "misleading_without_review"
+    },
+    {
+      "allowed_domains": [
+        "legacy_software",
+        "driver_support_media",
+        "frontier_resolution_media",
+        "manuals_docs_scans",
+        "package_source_release",
+        "web_archive_trace",
+        "games_emulation",
+        "hardware_firmware_support"
+      ],
+      "description": "Candidate-only relation hint for cites.",
+      "evidence_required": true,
+      "may_affect_source_trust_later": true,
+      "may_seed_workunit": false,
+      "public_safe_by_default": true,
+      "relation_type": "cites",
+      "risk": "misleading_without_review"
+    },
+    {
+      "allowed_domains": [
+        "legacy_software",
+        "driver_support_media",
+        "frontier_resolution_media",
+        "manuals_docs_scans",
+        "package_source_release",
+        "web_archive_trace",
+        "games_emulation",
+        "hardware_firmware_support"
+      ],
+      "description": "Candidate-only relation hint for successor of.",
+      "evidence_required": true,
+      "may_affect_source_trust_later": true,
+      "may_seed_workunit": false,
+      "public_safe_by_default": true,
+      "relation_type": "successor_of",
+      "risk": "misleading_without_review"
+    },
+    {
+      "allowed_domains": [
+        "legacy_software",
+        "driver_support_media",
+        "frontier_resolution_media",
+        "manuals_docs_scans",
+        "package_source_release",
+        "web_archive_trace",
+        "games_emulation",
+        "hardware_firmware_support"
+      ],
+      "description": "Candidate-only relation hint for predecessor of.",
+      "evidence_required": true,
+      "may_affect_source_trust_later": true,
+      "may_seed_workunit": false,
+      "public_safe_by_default": true,
+      "relation_type": "predecessor_of",
+      "risk": "misleading_without_review"
+    },
+    {
+      "allowed_domains": [
+        "legacy_software",
+        "driver_support_media",
+        "frontier_resolution_media",
+        "manuals_docs_scans",
+        "package_source_release",
+        "web_archive_trace",
+        "games_emulation",
+        "hardware_firmware_support"
+      ],
+      "description": "Candidate-only relation hint for nearby version.",
+      "evidence_required": true,
+      "may_affect_source_trust_later": true,
+      "may_seed_workunit": true,
+      "public_safe_by_default": true,
+      "relation_type": "nearby_version",
+      "risk": "misleading_without_review"
+    },
+    {
+      "allowed_domains": [
+        "legacy_software",
+        "driver_support_media",
+        "frontier_resolution_media",
+        "manuals_docs_scans",
+        "package_source_release",
+        "web_archive_trace",
+        "games_emulation",
+        "hardware_firmware_support"
+      ],
+      "description": "Candidate-only relation hint for related tag.",
+      "evidence_required": true,
+      "may_affect_source_trust_later": true,
+      "may_seed_workunit": false,
+      "public_safe_by_default": true,
+      "relation_type": "related_tag",
+      "risk": "misleading_without_review"
+    },
+    {
+      "allowed_domains": [
+        "legacy_software",
+        "driver_support_media",
+        "frontier_resolution_media",
+        "manuals_docs_scans",
+        "package_source_release",
+        "web_archive_trace",
+        "games_emulation",
+        "hardware_firmware_support"
+      ],
+      "description": "Candidate-only relation hint for related forum thread.",
+      "evidence_required": true,
+      "may_affect_source_trust_later": true,
+      "may_seed_workunit": false,
+      "public_safe_by_default": false,
+      "relation_type": "related_forum_thread",
+      "risk": "misleading_without_review"
+    },
+    {
+      "allowed_domains": [
+        "legacy_software",
+        "driver_support_media",
+        "frontier_resolution_media",
+        "manuals_docs_scans",
+        "package_source_release",
+        "web_archive_trace",
+        "games_emulation",
+        "hardware_firmware_support"
+      ],
+      "description": "Candidate-only relation hint for archived url trace.",
+      "evidence_required": true,
+      "may_affect_source_trust_later": true,
+      "may_seed_workunit": true,
+      "public_safe_by_default": true,
+      "relation_type": "archived_url_trace",
+      "risk": "misleading_without_review"
+    },
+    {
+      "allowed_domains": [
+        "legacy_software",
+        "driver_support_media",
+        "frontier_resolution_media",
+        "manuals_docs_scans",
+        "package_source_release",
+        "web_archive_trace",
+        "games_emulation",
+        "hardware_firmware_support"
+      ],
+      "description": "Candidate-only relation hint for source catalogue neighbor.",
+      "evidence_required": true,
+      "may_affect_source_trust_later": true,
+      "may_seed_workunit": false,
+      "public_safe_by_default": true,
+      "relation_type": "source_catalogue_neighbor",
+      "risk": "misleading_without_review"
+    },
+    {
+      "allowed_domains": [
+        "legacy_software",
+        "driver_support_media",
+        "frontier_resolution_media",
+        "manuals_docs_scans",
+        "package_source_release",
+        "web_archive_trace",
+        "games_emulation",
+        "hardware_firmware_support"
+      ],
+      "description": "Candidate-only relation hint for collection neighbor.",
+      "evidence_required": true,
+      "may_affect_source_trust_later": true,
+      "may_seed_workunit": false,
+      "public_safe_by_default": true,
+      "relation_type": "collection_neighbor",
+      "risk": "misleading_without_review"
+    },
+    {
+      "allowed_domains": [
+        "legacy_software",
+        "driver_support_media",
+        "frontier_resolution_media",
+        "manuals_docs_scans",
+        "package_source_release",
+        "web_archive_trace",
+        "games_emulation",
+        "hardware_firmware_support"
+      ],
+      "description": "Candidate-only relation hint for package family neighbor.",
+      "evidence_required": true,
+      "may_affect_source_trust_later": true,
+      "may_seed_workunit": false,
+      "public_safe_by_default": true,
+      "relation_type": "package_family_neighbor",
+      "risk": "misleading_without_review"
+    }
+  ],
+  "schema_version": "scout_relation_type_matrix.v0",
+  "task": "AIDE-BATCH-SCOUT-SCHEMA-01"
+}

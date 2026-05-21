@@ -1,0 +1,66 @@
+{
+  "contracts": [
+    {
+      "candidate_only": true,
+      "path": "contracts/scout/scout_seed.v0.json",
+      "validator_required": true
+    },
+    {
+      "candidate_only": true,
+      "path": "contracts/scout/curator_relation.v0.json",
+      "validator_required": true
+    },
+    {
+      "candidate_only": true,
+      "path": "contracts/scout/discovery_candidate.v0.json",
+      "validator_required": true
+    },
+    {
+      "candidate_only": true,
+      "path": "contracts/scout/discovery_trail.v0.json",
+      "validator_required": true
+    },
+    {
+      "candidate_only": true,
+      "path": "contracts/scout/related_path.v0.json",
+      "validator_required": true
+    },
+    {
+      "candidate_only": true,
+      "path": "contracts/scout/source_trust_record.v0.json",
+      "validator_required": true
+    },
+    {
+      "candidate_only": true,
+      "path": "contracts/scout/source_trust_observation.v0.json",
+      "validator_required": true
+    },
+    {
+      "candidate_only": true,
+      "path": "contracts/scout/hunt_feedback_event.v0.json",
+      "validator_required": true
+    },
+    {
+      "candidate_only": true,
+      "path": "contracts/scout/workunit_seed_suggestion.v0.json",
+      "validator_required": true
+    },
+    {
+      "candidate_only": true,
+      "path": "contracts/scout/unresolved_path_observation.v0.json",
+      "validator_required": true
+    },
+    {
+      "candidate_only": true,
+      "path": "contracts/scout/scout_console_view.v0.json",
+      "validator_required": true
+    },
+    {
+      "candidate_only": true,
+      "path": "contracts/scout/scout_score_decomposition.v0.json",
+      "validator_required": true
+    }
+  ],
+  "schema_version": "scout_contract_matrix.v0",
+  "task": "AIDE-BATCH-SCOUT-SCHEMA-01"
+}

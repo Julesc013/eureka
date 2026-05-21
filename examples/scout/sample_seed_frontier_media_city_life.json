@@ -1,0 +1,52 @@
+{
+  "accepted_truth": false,
+  "created_at": "2026-05-21T00:00:00Z",
+  "domain_id": "frontier_resolution_media",
+  "initial_relation_hints": [
+    "same_format_family",
+    "collection_neighbor",
+    "related_tag"
+  ],
+  "limitations": [
+    "SCOUT examples are candidate-only schema records.",
+    "They do not create evidence, reviewed records, or index mutations."
+  ],
+  "non_claims": {
+    "crawling_performed": false,
+    "evidence_created": false,
+    "index_mutated": false,
+    "live_source_call_performed": false,
+    "production_readiness_claimed": false,
+    "public_launch_readiness_claimed": false,
+    "reviewed_record_created": false
+  },
+  "query_text": "early HDTV footage of ordinary city life",
+  "record_type": "scout_seed",
+  "review_required": true,
+  "rights_flags": [
+    "unknown_until_reviewed"
+  ],
+  "risk_flags": [
+    "review_required"
+  ],
+  "schema_version": "scout_seed.v0",
+  "search_need_seed_policy": {
+    "creates_runtime_search_need": false,
+    "may_seed_search_needs": true,
+    "review_required": true
+  },
+  "seed_id": "scout_seed_frontier_media_city_life_hdtv",
+  "seed_kind": "query_pressure_seed",
+  "source_context": {
+    "context_kind": "deterministic_fixture",
+    "crawling_performed": false,
+    "live_source_call_performed": false,
+    "source_probe_executed": false
+  },
+  "syn_query_class": "frontier_media_resolution",
+  "workunit_seed_policy": {
+    "creates_runtime_workunit": false,
+    "may_seed_workunits": true,
+    "review_required": true
+  }
+}

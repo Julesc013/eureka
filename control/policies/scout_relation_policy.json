@@ -1,0 +1,27 @@
+{
+  "blocked_actions": [
+    "live_source_call",
+    "source_probe",
+    "crawl",
+    "download",
+    "upload",
+    "extract",
+    "call_model_provider",
+    "public_fanout",
+    "mutate_operator_instance",
+    "mutate_master_index",
+    "write_source_cache",
+    "write_evidence",
+    "write_candidate_index",
+    "write_review_queue",
+    "create_reviewed_record",
+    "deploy"
+  ],
+  "engagement_optimization_forbidden": true,
+  "evidence_required_before_acceptance": true,
+  "relation_found_does_not_mean_truth": true,
+  "relation_records_are_candidates": true,
+  "review_required": true,
+  "schema_version": "scout_relation_policy.v0",
+  "task": "AIDE-BATCH-SCOUT-SCHEMA-01"
+}

@@ -1,0 +1,15 @@
+{
+  "dimensions": [
+    "metadata_quality",
+    "provenance_quality",
+    "rights_risk",
+    "safety_risk",
+    "source_reliability"
+  ],
+  "review_required": true,
+  "schema_version": "scout_source_trust_policy.v0",
+  "source_trust_does_not_accept_evidence": true,
+  "source_trust_does_not_mutate_indexes": true,
+  "source_trust_is_observation_only": true,
+  "task": "AIDE-BATCH-SCOUT-SCHEMA-01"
+}
