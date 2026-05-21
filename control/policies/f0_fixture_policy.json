@@ -1,0 +1,17 @@
+{
+  "schema_version": "f0_fixture_policy.v0",
+  "task": "AIDE-BATCH-F0-FOUNDATION-01",
+  "fixtures_are_example_only": true,
+  "committed_fixture_roots": [
+    "examples/f0/",
+    "examples/extraction/fixtures/"
+  ],
+  "unsafe_fixtures_prefer_descriptors": true,
+  "unsafe_real_archives_allowed": false,
+  "safe_zip_fixtures_must_be_tiny": true,
+  "fixture_payloads_must_not_be_executable": true,
+  "fixture_payloads_must_not_be_private_or_copyrighted": true,
+  "fixture_outputs_are_not_evidence": true,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}

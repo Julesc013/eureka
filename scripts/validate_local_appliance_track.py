@@ -410,9 +410,13 @@ def validate_health(root: Path, errors: list[str]) -> None:
     f0_status = health.get("f0_current_status")
     if f0_status is None and health.get("f0_can_resume") is True:
         f0_status = "resumable_through_local_appliance"
-    if f0_status not in {"deferred", "resumable_through_local_appliance"}:
+    if f0_status not in {"deferred", "resumable_through_local_appliance", "implemented_pending_full_closeout", "completed"}:
         errors.append("repo health must record F0 deferred")
-    if health.get("f0_deferred_until") not in {LOCAL_CLOSEOUT, None} and f0_status != "resumable_through_local_appliance":
+    if health.get("f0_deferred_until") not in {LOCAL_CLOSEOUT, None} and f0_status not in {
+        "resumable_through_local_appliance",
+        "implemented_pending_full_closeout",
+        "completed",
+    }:
         errors.append("repo health must record F0 deferred until LOCAL-14")
     false_keys = {
         "production_readiness": health.get("production_readiness", health.get("production_readiness_claimed")),
@@ -435,12 +439,15 @@ def local_track_handoff_queue(queue_current: str | None) -> bool:
         "DOMAIN-00",
         "SCOUT-SCHEMA-00",
         "F0-00",
+        "G0",
         "HUNT-REMEDIATION",
         "HUNT-REMEDIATION-CONTINUE",
         "HUNT-TO-MAIN-PROMOTION-REVIEW",
         "DEV-AND-IA-PROMOTION-BLOCKER-01",
         "DEV-AND-IA-TO-MAIN-PROMOTION-REVIEW",
         "IA-HUNT-BRIDGE-00",
+        "SOURCE-WAVE-00",
+        "SNAPSHOT-RELAY-00",
     }
     return any(queue_current == task or queue_current.startswith(f"{task} ") for task in handoff_tasks)
 
@@ -455,6 +462,9 @@ def latest_packet_is_later_control_or_handoff(packet_text: str) -> bool:
         "DOMAIN-",
         "SCOUT-",
         "F0-",
+        "G0",
+        "SOURCE-WAVE-",
+        "SNAPSHOT-RELAY-",
     )
     return any(marker in packet_text for marker in markers)
 
@@ -479,11 +489,14 @@ def validate_git_alignment(root: Path, report: Mapping[str, Any], errors: list[s
             "DOMAIN-00",
             "SCOUT-SCHEMA-00",
             "F0-00",
+            "G0",
             "HUNT-REMEDIATION",
             "HUNT-TO-MAIN-PROMOTION-REVIEW",
             "DEV-AND-IA-PROMOTION-BLOCKER-01",
             "DEV-AND-IA-TO-MAIN-PROMOTION-REVIEW",
             "IA-HUNT-BRIDGE-00",
+            "SOURCE-WAVE-00",
+            "SNAPSHOT-RELAY-00",
         }:
             warnings.append("origin/dev is ahead of origin/main after Local Appliance queue work")
     else:

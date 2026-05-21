@@ -1,0 +1,13 @@
+{
+  "schema_version": "f0_future_fetch_policy.v0",
+  "task": "AIDE-BATCH-F0-FOUNDATION-01",
+  "live_source_file_fetch_enabled_now": false,
+  "downloads_enabled_now": false,
+  "future_fetch_requires_explicit_policy": true,
+  "future_fetch_requires_operator_approval": true,
+  "future_fetch_outputs_candidate_only": true,
+  "source_probe_executed": false,
+  "download_performed": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}

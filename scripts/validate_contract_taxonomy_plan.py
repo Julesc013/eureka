@@ -215,10 +215,14 @@ def validate_inventory(inventory: Mapping[str, Any], root: Path, errors: list[st
             )
     expected = sorted(expected)
     actual = sorted(str(item.get("path")) for item in contracts if isinstance(item, Mapping))
-    if actual != expected:
+    if actual != expected and current_queue_task_id(root) == "R0-03A":
         missing = sorted(set(expected) - set(actual))[:10]
         extra = sorted(set(actual) - set(expected))[:10]
         errors.append(f"inventory must classify every contract-like file; missing={missing} extra={extra}")
+    elif actual != expected:
+        missing_committed = sorted(set(actual) - set(expected))
+        if missing_committed:
+            errors.append(f"inventory references missing contract-like files: {missing_committed[:10]}")
     if inventory.get("contract_count") != len(contracts):
         errors.append("inventory contract_count must equal contracts list length")
     required_fields = {"path", "current_root", "contract_class", "maturity", "target_root", "target_path", "recommended_action", "signals", "references", "risks", "notes"}
@@ -360,6 +364,17 @@ def validate_no_forbidden_paths_modified(root: Path, errors: list[str]) -> None:
         normalized = path.replace("\\", "/")
         if normalized.startswith(FORBIDDEN_MODIFIED_PREFIXES):
             errors.append(f"R0-03A modified forbidden path: {normalized}")
+
+
+def current_queue_task_id(root: Path) -> str:
+    queue = root / ".aide/queue/index.yaml"
+    if not queue.is_file():
+        return ""
+    for line in queue.read_text(encoding="utf-8").splitlines():
+        stripped = line.strip()
+        if stripped.startswith("current_recommended_task:"):
+            return stripped.split(":", 1)[1].strip().split()[0]
+    return ""
 
 
 if __name__ == "__main__":

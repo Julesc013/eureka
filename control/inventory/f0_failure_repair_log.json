@@ -1,0 +1,20 @@
+{
+  "schema_version": "f0_failure_repair_log.v0",
+  "task": "AIDE-BATCH-F0-FOUNDATION-01",
+  "repairs": [
+    {
+      "failure": "full discovery exposed stale HUNT/LOCAL/R0 validators treating later F0 product paths and G0 handoff as original narrow-scope drift",
+      "root_cause": "historical validators did not recognize post-SCOUT F0/G0 queue progression or contracts added after R0-03A taxonomy planning",
+      "repair": "extended narrow post-HUNT/post-LOCAL handoff allowlists to G0/F0 batch progression, preserved legacy extraction leakage allowlist line anchors, and made the R0-03A plan validator historical after the queue advances",
+      "rerun_command": "python -m unittest tests.operations.test_contract_taxonomy_plan tests.operations.test_hunt_main_post_promotion_state tests.operations.test_hunt_main_promotion tests.operations.test_hunt_main_promotion_gates tests.operations.test_hunt_remediation tests.operations.test_hunt_remediation_continue tests.operations.test_legacy_runtime_leakage_remediation tests.operations.test_local_appliance_track tests.operations.test_local_instance_bootstrap tests.operations.test_local_instance_migration_guard tests.operations.test_runtime_architecture_leakage tests.operations.test_search_hunt_closeout tests.operations.test_search_hunt_track -v",
+      "result": "pass_119_tests"
+    },
+    {
+      "failure": "full discovery required final closeout after focused repair",
+      "root_cause": "F0 added contracts, runtime helpers, scripts, and tests across several validation lanes",
+      "repair": "reran full unittest discovery after focused repairs",
+      "rerun_command": "python -m unittest discover -s tests -t .",
+      "result": "pass_4860_tests"
+    }
+  ]
+}

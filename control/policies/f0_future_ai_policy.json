@@ -1,0 +1,12 @@
+{
+  "schema_version": "f0_future_ai_policy.v0",
+  "task": "AIDE-BATCH-F0-FOUNDATION-01",
+  "model_provider_enabled_now": false,
+  "future_ai_outputs_candidate_only": true,
+  "future_ai_must_not_create_evidence": true,
+  "future_ai_must_not_create_reviewed_records": true,
+  "future_ai_requires_explicit_policy": true,
+  "model_provider_used": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}

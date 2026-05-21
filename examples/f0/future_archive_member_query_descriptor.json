@@ -1,0 +1,34 @@
+{
+  "schema_version": "container_descriptor.v0",
+  "record_type": "container_descriptor",
+  "container_id": "f0_container_future_archive_member_query",
+  "fixture_id": "future_archive_member_query_fixture",
+  "container_kind": "descriptor_manifest_fixture",
+  "locator": "descriptor-only:nested-archive-query",
+  "source_context": {"source_kind": "safe_descriptor_only_fixture"},
+  "domain_id": "frontier_resolution_media",
+  "review_required": true,
+  "accepted_truth": false,
+  "members": [
+    {
+      "member_id": "f0_member_nested_archive",
+      "path": "collection/originals/source_bundle.zip",
+      "declared_size": 1024,
+      "is_directory": false
+    }
+  ],
+  "limitations": ["descriptor-only future archive-member query case; nested archive recursion is disabled"],
+  "risk_flags": ["nested_archive_deferred"],
+  "rights_flags": [],
+  "non_claims": {
+    "fake_evidence_created": false,
+    "fake_verified_records_created": false,
+    "live_source_call_performed": false,
+    "download_performed": false,
+    "filesystem_extraction_performed": false,
+    "arbitrary_file_extraction_performed": false,
+    "execution_performed": false,
+    "master_index_mutated": false
+  },
+  "created_at": "2026-05-22T00:00:00Z"
+}

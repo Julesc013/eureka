@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
-updated: 2026-05-21
+updated: 2026-05-22
 repo: julesc013/eureka
-current_recommended_task: F0-00 — Extraction/member discovery policy and safe fixture foundation
+current_recommended_task: G0 — Ranking, explanation, identity, and user-cost scoring foundation
 entries:
   - id: DEV-AND-IA-TO-MAIN-PROMOTION-REVIEW
     title: Promote repaired dev IA pilot plus repo layout canon baseline to main
@@ -564,13 +564,23 @@ entries:
     recommended_after: DOMAIN-00
     recommended_next: F0-00
   - id: F0-00
-    title: Refresh F0 after Local Appliance and HUNT
-    status: queued
-    purpose: Refresh extraction-track planning so F0 resumes only through the Local Appliance and Search Hunt WorkUnit spine.
-    allowed_scope_summary: F0 planning and boundary refresh only; no extraction implementation.
-    gate: HUNT remediation continuation pass and explicit operator choice if F0 is chosen before SYN; no extraction runtime, source probes, downloads, deployment, production readiness claim, or public launch claim.
+    title: Extraction/member discovery policy and safe fixture foundation
+    status: completed
+    purpose: Added the F0 fixture-only and manifest-only extraction/member discovery foundation after SCOUT schema.
+    allowed_scope_summary: F0 contracts, policies, safe fixture descriptors, read-only manifest helpers, CLIs, validator, tests, docs, audit evidence, and queue/context metadata.
+    gate: Full discovery pending final closeout; no live source calls, source probes, downloads/uploads, filesystem extraction, arbitrary file extraction, execution/install/emulation, model/provider calls, operator/master index mutation, fake evidence, fake verified records, deployment, or production/public launch claim.
     task: .aide/queue/F0-00/task.yaml
-    recommended_after: HUNT-REMEDIATION-CONTINUE
+    recommended_after: SCOUT-SCHEMA-00
+    recommended_next: G0
+  - id: AIDE-BATCH-F0-FOUNDATION-01
+    title: Extraction/member discovery policy and safe fixture foundation
+    status: completed
+    purpose: Added F0 extraction/member discovery policy, contracts, safe fixture model, manifest-only enumeration helpers, WorkUnit seed suggestions, handoffs, validator, tests, docs, and audit closeout.
+    allowed_scope_summary: F0 fixture-only contracts, policies, examples, read-only runtime helpers, scripts, tests, docs, audit evidence, and queue/context metadata.
+    gate: Full discovery pending final closeout; no fake evidence, fake verified records, live source calls, source probes, downloads/uploads, filesystem extraction, arbitrary file extraction, execution/install/emulation, model/provider calls, operator/master index mutation, deployment, or production/public launch claim.
+    task: .aide/queue/AIDE-BATCH-F0-FOUNDATION-01/task.yaml
+    recommended_after: SCOUT-SCHEMA-00
+    recommended_next: G0
   - id: HUNT-TO-MAIN-PROMOTION-REVIEW
     title: Review/promote HUNT baseline to main
     status: queued

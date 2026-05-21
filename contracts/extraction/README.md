@@ -25,3 +25,13 @@ Primary files:
 - `extraction_review_seed.v0.json`
 - `extraction_workunit_seed.v0.json`
 - `extraction_usefulness_report.v0.json`
+- `container_descriptor.v0.json`
+- `member_manifest.v0.json`
+- `member_record.v0.json`
+- `member_observation_candidate.v0.json`
+- `extraction_risk_report.v0.json`
+- `extraction_boundary_report.v0.json`
+- `extraction_fixture_manifest.v0.json`
+- `extraction_console_view.v0.json`
+
+F0 adds a narrower, fixture-only and manifest-only foundation for member discovery. It defines policy, container descriptors, member manifests, member records, WorkUnit seed suggestions, risk reports, boundary reports, fixture manifests, and read-only console view models. F0 is not a production extraction runtime and does not enable arbitrary local files, live fetches, downloads, filesystem extraction, execution, evidence creation, reviewed records, or index mutation.

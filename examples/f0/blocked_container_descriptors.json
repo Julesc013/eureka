@@ -1,0 +1,30 @@
+{
+  "schema_version": "f0_blocked_container_descriptor_set.v0",
+  "descriptor_status": "example_only",
+  "blocked_descriptors": [
+    {
+      "container_id": "f0_container_future_iso_blocked",
+      "fixture_id": "future_iso_blocked_fixture_descriptor",
+      "container_kind": "iso",
+      "reason": "ISO inspection requires a future policy, sandbox, and fixture-specific implementation.",
+      "future_policy_needed": "F0-FUTURE-SAFE-EXTRACTION",
+      "future_task": "F0-FUTURE-SAFE-EXTRACTION"
+    },
+    {
+      "container_id": "f0_container_unknown_binary_blocked",
+      "fixture_id": "future_unknown_binary_blocked_fixture_descriptor",
+      "container_kind": "unknown_binary_container",
+      "reason": "Unknown binary containers are blocked until classified and policy-approved.",
+      "future_policy_needed": "F0-FUTURE-SAFE-EXTRACTION",
+      "future_task": "F0-FUTURE-SAFE-EXTRACTION"
+    }
+  ],
+  "non_claims": {
+    "download_performed": false,
+    "filesystem_extraction_performed": false,
+    "arbitrary_file_extraction_performed": false,
+    "execution_performed": false,
+    "fake_evidence_created": false,
+    "fake_verified_records_created": false
+  }
+}

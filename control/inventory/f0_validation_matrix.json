@@ -1,0 +1,48 @@
+{
+  "schema_version": "f0_validation_matrix.v0",
+  "task": "AIDE-BATCH-F0-FOUNDATION-01",
+  "validation": {
+    "test_selector": "pass",
+    "f0_foundation": "pass",
+    "scout_schema": "pass",
+    "domain_packs": "pass",
+    "syn_foundry": "pass",
+    "ia_hunt_bridge": "pass",
+    "workbench_result_lanes": "pass",
+    "search_interaction": "pass",
+    "workbench_foundation": "pass",
+    "test_lane_policy": "pass",
+    "contract_taxonomy": "pass",
+    "repo_structure_canon": "pass_with_existing_warnings",
+    "focused_tests": "pass",
+    "architecture_boundaries": "pass",
+    "generated_artifact_cleanliness": "pass",
+    "aide_checks": "pass",
+    "full_unittest_discovery": "pass_4860_tests"
+  },
+  "smoke": {
+    "safe_zip_manifest_passed": true,
+    "unsafe_descriptor_blocks_passed": true,
+    "workunit_seed_dry_run_passed": true,
+    "f0_smoke_operator_passed": true,
+    "f0_smoke_public_passed": true,
+    "f0_smoke_native_read_only_passed": true
+  },
+  "boundaries": {
+    "fake_evidence_created": false,
+    "fake_verified_records_created": false,
+    "live_source_call_performed": false,
+    "source_probe_executed": false,
+    "download_performed": false,
+    "upload_performed": false,
+    "filesystem_extraction_performed": false,
+    "arbitrary_file_extraction_performed": false,
+    "execution_performed": false,
+    "operator_instance_mutated": false,
+    "master_index_mutated": false,
+    "model_provider_used": false,
+    "deployment_performed": false,
+    "production_readiness_claimed": false,
+    "public_launch_readiness_claimed": false
+  }
+}

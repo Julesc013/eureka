@@ -1,0 +1,39 @@
+{
+  "$id": "eureka.contracts.extraction.extraction_risk_report.v0",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": true,
+  "properties": {
+    "accepted_truth": {"const": false, "type": "boolean"},
+    "absolute_path_detected": {"type": "boolean"},
+    "archive_bomb_guard_applied": {"const": true, "type": "boolean"},
+    "blocked_member_count": {"type": "integer"},
+    "blocked_reasons": {"items": {"type": "string"}, "type": "array"},
+    "created_at": {"type": "string"},
+    "execution_performed": {"const": false, "type": "boolean"},
+    "extraction_performed": {"const": false, "type": "boolean"},
+    "manifest_id": {"type": "string"},
+    "non_claims": {"type": "object"},
+    "path_traversal_detected": {"type": "boolean"},
+    "record_type": {"const": "extraction_risk_report", "type": "string"},
+    "resource_limit_exceeded": {"type": "boolean"},
+    "review_required": {"const": true, "type": "boolean"},
+    "risk_report_id": {"type": "string"},
+    "schema_version": {"const": "extraction_risk_report.v0", "type": "string"}
+  },
+  "required": [
+    "schema_version",
+    "record_type",
+    "risk_report_id",
+    "manifest_id",
+    "blocked_member_count",
+    "blocked_reasons",
+    "archive_bomb_guard_applied",
+    "extraction_performed",
+    "execution_performed",
+    "review_required",
+    "accepted_truth",
+    "non_claims"
+  ],
+  "title": "Eureka F0 ExtractionRiskReport v0",
+  "type": "object"
+}

@@ -1,0 +1,34 @@
+{
+  "$id": "eureka.contracts.extraction.extraction_console_view.v0",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": true,
+  "properties": {
+    "blocked_actions": {"items": {"type": "string"}, "type": "array"},
+    "created_at": {"type": "string"},
+    "non_claims": {"type": "object"},
+    "operator_detail_visible": {"type": "boolean"},
+    "projection_profile": {
+      "enum": ["operator_workbench", "public_web", "native_desktop_read_only"],
+      "type": "string"
+    },
+    "read_only": {"const": true, "type": "boolean"},
+    "record_type": {"const": "extraction_console_view", "type": "string"},
+    "routes": {"items": {"type": "string"}, "type": "array"},
+    "schema_version": {"const": "extraction_console_view.v0", "type": "string"},
+    "view_id": {"type": "string"},
+    "views": {"type": "object"}
+  },
+  "required": [
+    "schema_version",
+    "record_type",
+    "view_id",
+    "routes",
+    "projection_profile",
+    "read_only",
+    "views",
+    "blocked_actions",
+    "non_claims"
+  ],
+  "title": "Eureka F0 ExtractionConsoleView v0",
+  "type": "object"
+}

@@ -1,0 +1,25 @@
+{
+  "schema_version": "f0_supported_container_matrix.v0",
+  "task": "AIDE-BATCH-F0-FOUNDATION-01",
+  "supported_container_types": [
+    {
+      "container_type": "zip_fixture_manifest",
+      "allowed_now": true,
+      "support_scope": "committed tiny fixtures only; manifest-only directory entry enumeration"
+    },
+    {
+      "container_type": "directory_manifest_fixture",
+      "allowed_now": true,
+      "support_scope": "committed example descriptors only; no recursive private filesystem scan"
+    },
+    {
+      "container_type": "tar_fixture_manifest",
+      "allowed_now": false,
+      "support_scope": "blocked until a dedicated safe TAR fixture policy is added"
+    }
+  ],
+  "non_claims": {
+    "broad_extraction_engine_added": false,
+    "arbitrary_file_extraction_enabled": false
+  }
+}

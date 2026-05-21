@@ -1,0 +1,27 @@
+{
+  "schema_version": "f0_scout_handoff_matrix.v0",
+  "task": "AIDE-BATCH-F0-FOUNDATION-01",
+  "handoffs": [
+    {
+      "from_scout_signal": "same_member_path_pattern",
+      "suggested_f0_seed": "inspect_file_manifest",
+      "allowed_now": true,
+      "creates_evidence": false,
+      "review_required": true
+    },
+    {
+      "from_scout_signal": "contains",
+      "suggested_f0_seed": "queue_future_extraction",
+      "allowed_now": false,
+      "creates_evidence": false,
+      "review_required": true
+    },
+    {
+      "from_scout_signal": "archived_url_trace",
+      "suggested_f0_seed": "defer_download_required",
+      "allowed_now": false,
+      "creates_evidence": false,
+      "review_required": true
+    }
+  ]
+}

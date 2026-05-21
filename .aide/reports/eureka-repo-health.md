@@ -1,10 +1,10 @@
 # Eureka Repo Health
 
-- Current task: F0-00
-- Current recommended task after closeout: F0-00 — Extraction/member discovery policy and safe fixture foundation
-- F0 status: resumable through the Local Appliance track
-- Latest completed task: AIDE-BATCH-SCOUT-SCHEMA-01
-- Full unittest discovery: PASS, 4843 tests
+- Current task: AIDE-BATCH-F0-FOUNDATION-01
+- Current recommended task after closeout: G0 — Ranking, explanation, identity, and user-cost scoring foundation
+- F0 status: completed
+- Latest completed task: AIDE-BATCH-F0-FOUNDATION-01
+- Full unittest discovery: PASS, 4860 tests
 - Branch: dev
 - Deployment performed: false
 - Main pushed in this batch: false

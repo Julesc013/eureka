@@ -1,0 +1,88 @@
+{
+  "schema_version": "f0_fixture_manifest.v0",
+  "fixture_status": "example_only",
+  "created_at": "2026-05-22T00:00:00Z",
+  "fixtures": [
+    {
+      "fixture_id": "safe_zip_basic",
+      "fixture_type": "safe_zip_basic",
+      "description": "Tiny safe ZIP used for manifest-only enumeration.",
+      "container_descriptor": {
+        "schema_version": "container_descriptor.v0",
+        "record_type": "container_descriptor",
+        "container_id": "f0_container_safe_zip_basic",
+        "fixture_id": "safe_zip_basic",
+        "container_kind": "zip_fixture_manifest",
+        "locator": "examples/f0/safe_zip_basic.zip",
+        "source_context": {"source_kind": "repo_committed_fixture"},
+        "domain_id": "legacy_software",
+        "review_required": true,
+        "accepted_truth": false,
+        "limitations": ["fixture-only sample; no member contents are extracted"],
+        "risk_flags": [],
+        "rights_flags": [],
+        "non_claims": {
+          "fake_evidence_created": false,
+          "fake_verified_records_created": false,
+          "live_source_call_performed": false,
+          "download_performed": false,
+          "filesystem_extraction_performed": false,
+          "arbitrary_file_extraction_performed": false,
+          "execution_performed": false,
+          "master_index_mutated": false
+        },
+        "created_at": "2026-05-22T00:00:00Z"
+      }
+    },
+    {
+      "fixture_id": "safe_zip_nested_directory",
+      "fixture_type": "safe_zip_nested_directory",
+      "description": "The safe ZIP contains a nested directory path for path-depth checks.",
+      "container_descriptor": {
+        "container_id": "f0_container_safe_zip_nested_directory",
+        "fixture_id": "safe_zip_nested_directory",
+        "container_kind": "zip_fixture_manifest",
+        "locator": "examples/f0/safe_zip_basic.zip",
+        "domain_id": "legacy_software"
+      }
+    },
+    {
+      "fixture_id": "unsafe_zip_path_traversal_manifest_fixture",
+      "fixture_type": "unsafe_zip_path_traversal_manifest_fixture",
+      "descriptor_path": "examples/f0/unsafe_path_traversal_descriptor.json"
+    },
+    {
+      "fixture_id": "unsafe_zip_absolute_path_manifest_fixture",
+      "fixture_type": "unsafe_zip_absolute_path_manifest_fixture",
+      "descriptor_path": "examples/f0/unsafe_absolute_path_descriptor.json"
+    },
+    {
+      "fixture_id": "large_member_declared_size_manifest_fixture",
+      "fixture_type": "large_member_declared_size_manifest_fixture",
+      "descriptor_path": "examples/f0/large_member_declared_size_descriptor.json"
+    },
+    {
+      "fixture_id": "future_iso_blocked_fixture_descriptor",
+      "fixture_type": "future_iso_blocked_fixture_descriptor",
+      "descriptor_path": "examples/f0/blocked_container_descriptors.json"
+    },
+    {
+      "fixture_id": "future_archive_member_query_fixture",
+      "fixture_type": "future_archive_member_query_fixture",
+      "descriptor_path": "examples/f0/future_archive_member_query_descriptor.json"
+    }
+  ],
+  "non_claims": {
+    "fake_evidence_created": false,
+    "fake_verified_records_created": false,
+    "live_source_call_performed": false,
+    "source_probe_executed": false,
+    "download_performed": false,
+    "upload_performed": false,
+    "filesystem_extraction_performed": false,
+    "arbitrary_file_extraction_performed": false,
+    "execution_performed": false,
+    "operator_instance_mutated": false,
+    "master_index_mutated": false
+  }
+}

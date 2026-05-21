@@ -1,0 +1,32 @@
+{
+  "schema_version": "f0_member_manifest_matrix.v0",
+  "task": "AIDE-BATCH-F0-FOUNDATION-01",
+  "manifest_model": {
+    "manifest_only_enumeration": true,
+    "normalized_path_safety_required": true,
+    "blocked_members_record_reasons": true,
+    "filesystem_extraction_performed": false,
+    "evidence_created": false,
+    "accepted_truth_created": false,
+    "execution_performed": false
+  },
+  "member_record_fields": [
+    "member_id",
+    "manifest_id",
+    "path",
+    "normalized_path",
+    "path_safe",
+    "member_kind",
+    "declared_size",
+    "checksum_if_available",
+    "compression_method_if_available",
+    "depth",
+    "is_directory",
+    "is_symlink",
+    "is_device",
+    "is_absolute_path",
+    "contains_parent_traversal",
+    "blocked",
+    "block_reasons"
+  ]
+}

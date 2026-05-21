@@ -1,0 +1,19 @@
+{
+  "schema_version": "f0_resource_limit_policy.v0",
+  "task": "AIDE-BATCH-F0-FOUNDATION-01",
+  "resource_limits": {
+    "max_fixture_file_size_bytes": 1048576,
+    "max_member_count": 100,
+    "max_declared_total_size_bytes": 10485760,
+    "max_uncompressed_total_size_bytes": 10485760,
+    "max_nested_depth": 1,
+    "max_filename_length": 240,
+    "timeout_seconds": 10,
+    "memory_budget_mb": 64,
+    "path_safety_required": true
+  },
+  "archive_bomb_guard_required": true,
+  "nested_archive_recursion_disabled_by_default": true,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}

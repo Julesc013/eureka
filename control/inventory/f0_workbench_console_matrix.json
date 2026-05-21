@@ -1,0 +1,28 @@
+{
+  "schema_version": "f0_workbench_console_matrix.v0",
+  "task": "AIDE-BATCH-F0-FOUNDATION-01",
+  "routes": [
+    "/extraction",
+    "/extraction/manifests",
+    "/extraction/workunits",
+    "/extraction/policies",
+    "/extraction/blocked"
+  ],
+  "views": [
+    "ExtractionOverviewView",
+    "ContainerDescriptorView",
+    "MemberManifestView",
+    "MemberRecordView",
+    "ExtractionRiskReportView",
+    "ExtractionWorkUnitSeedView",
+    "BlockedContainerView",
+    "ExtractionBoundaryReportView"
+  ],
+  "projections": {
+    "operator_workbench": "full fixture/member/risk detail",
+    "public_web": "blocked/summary only later",
+    "native_read_only": "read-only summary later"
+  },
+  "html_implementation_added": false,
+  "read_only": true
+}

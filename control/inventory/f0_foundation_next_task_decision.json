@@ -1,0 +1,14 @@
+{
+  "schema_version": "f0_foundation_next_task_decision.v0",
+  "task": "AIDE-BATCH-F0-FOUNDATION-01",
+  "decision": "G0",
+  "recommended_next_task": "G0 — Ranking, explanation, identity, and user-cost scoring foundation",
+  "planned_after": [
+    "SOURCE-WAVE-00",
+    "SNAPSHOT-RELAY-00"
+  ],
+  "requires_full_discovery_closeout": true,
+  "full_discovery_closeout_passed": true,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}

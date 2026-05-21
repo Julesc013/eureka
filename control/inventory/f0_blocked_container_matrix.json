@@ -1,0 +1,19 @@
+{
+  "schema_version": "f0_blocked_container_matrix.v0",
+  "task": "AIDE-BATCH-F0-FOUNDATION-01",
+  "blocked_container_types": [
+    {"container_type": "iso", "reason": "requires future sandbox and policy", "future_policy_needed": "F0-FUTURE-SAFE-EXTRACTION", "future_task": "F0-FUTURE-SAFE-EXTRACTION"},
+    {"container_type": "dmg", "reason": "platform-specific container risk", "future_policy_needed": "F0-FUTURE-SAFE-EXTRACTION", "future_task": "F0-FUTURE-SAFE-EXTRACTION"},
+    {"container_type": "cab", "reason": "driver/support package handling requires future policy", "future_policy_needed": "F0-FUTURE-SAFE-EXTRACTION", "future_task": "F0-FUTURE-SAFE-EXTRACTION"},
+    {"container_type": "msi", "reason": "installer containers must never execute and need future manifest policy", "future_policy_needed": "F0-FUTURE-SAFE-EXTRACTION", "future_task": "F0-FUTURE-SAFE-EXTRACTION"},
+    {"container_type": "7z", "reason": "unsupported dependency and archive-bomb risk", "future_policy_needed": "F0-FUTURE-SAFE-EXTRACTION", "future_task": "F0-FUTURE-SAFE-EXTRACTION"},
+    {"container_type": "rar", "reason": "unsupported dependency and rights/safety risk", "future_policy_needed": "F0-FUTURE-SAFE-EXTRACTION", "future_task": "F0-FUTURE-SAFE-EXTRACTION"},
+    {"container_type": "sit", "reason": "legacy archive handling deferred", "future_policy_needed": "F0-FUTURE-SAFE-EXTRACTION", "future_task": "F0-FUTURE-SAFE-EXTRACTION"},
+    {"container_type": "hqx", "reason": "legacy archive handling deferred", "future_policy_needed": "F0-FUTURE-SAFE-EXTRACTION", "future_task": "F0-FUTURE-SAFE-EXTRACTION"},
+    {"container_type": "bin/cue", "reason": "disc image handling deferred", "future_policy_needed": "F0-FUTURE-SAFE-EXTRACTION", "future_task": "F0-FUTURE-SAFE-EXTRACTION"},
+    {"container_type": "nested archives", "reason": "nested recursion disabled by default", "future_policy_needed": "F0-FUTURE-SAFE-EXTRACTION", "future_task": "F0-FUTURE-SAFE-EXTRACTION"},
+    {"container_type": "encrypted archives", "reason": "requires operator policy and no credential handling in F0", "future_policy_needed": "F0-FUTURE-SAFE-EXTRACTION", "future_task": "F0-FUTURE-SAFE-EXTRACTION"},
+    {"container_type": "executable installers", "reason": "execution/install is blocked", "future_policy_needed": "F0-FUTURE-SAFE-EXTRACTION", "future_task": "F0-FUTURE-SAFE-EXTRACTION"},
+    {"container_type": "unknown binary containers", "reason": "must be classified before inspection", "future_policy_needed": "F0-FUTURE-SAFE-EXTRACTION", "future_task": "F0-FUTURE-SAFE-EXTRACTION"}
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "schema_version": "f0_workunit_seed_matrix.v0",
+  "task": "AIDE-BATCH-F0-FOUNDATION-01",
+  "seed_types": [
+    {"seed_type": "inspect_file_manifest", "allowed_now": true, "blocked_by_default": true, "required_policy": "f0_extraction_policy", "future_task": "F0-FUTURE-SAFE-EXTRACTION", "may_seed_search_need": true, "may_seed_workunit": true},
+    {"seed_type": "enumerate_safe_fixture_members", "allowed_now": true, "blocked_by_default": false, "required_policy": "f0_fixture_policy", "future_task": "none", "may_seed_search_need": false, "may_seed_workunit": false},
+    {"seed_type": "queue_future_extraction", "allowed_now": false, "blocked_by_default": true, "required_policy": "future extraction policy", "future_task": "F0-FUTURE-SAFE-EXTRACTION", "may_seed_search_need": true, "may_seed_workunit": true},
+    {"seed_type": "review_member_manifest", "allowed_now": true, "blocked_by_default": true, "required_policy": "operator review gate", "future_task": "F0-FUTURE-SAFE-EXTRACTION", "may_seed_search_need": true, "may_seed_workunit": true},
+    {"seed_type": "classify_container_type", "allowed_now": true, "blocked_by_default": true, "required_policy": "container classification policy", "future_task": "F0-FUTURE-SAFE-EXTRACTION", "may_seed_search_need": true, "may_seed_workunit": true},
+    {"seed_type": "block_unsafe_container", "allowed_now": true, "blocked_by_default": true, "required_policy": "f0_extraction_policy", "future_task": "none", "may_seed_search_need": false, "may_seed_workunit": false},
+    {"seed_type": "request_operator_policy", "allowed_now": true, "blocked_by_default": true, "required_policy": "operator approval", "future_task": "F0-FUTURE-SAFE-EXTRACTION", "may_seed_search_need": true, "may_seed_workunit": true},
+    {"seed_type": "defer_download_required", "allowed_now": true, "blocked_by_default": true, "required_policy": "future fetch policy", "future_task": "F0-FUTURE-SAFE-EXTRACTION", "may_seed_search_need": true, "may_seed_workunit": true}
+  ],
+  "non_claims": {
+    "runtime_workunit_created": false,
+    "evidence_created": false,
+    "index_mutated": false
+  }
+}

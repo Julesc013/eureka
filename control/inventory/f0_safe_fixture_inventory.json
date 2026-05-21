@@ -1,0 +1,21 @@
+{
+  "schema_version": "f0_safe_fixture_inventory.v0",
+  "task": "AIDE-BATCH-F0-FOUNDATION-01",
+  "fixture_manifest": "examples/f0/f0_fixture_manifest.json",
+  "fixtures": [
+    {"fixture_id": "safe_zip_basic", "path": "examples/f0/safe_zip_basic.zip", "fixture_kind": "tiny_safe_zip", "unsafe_real_archive": false},
+    {"fixture_id": "safe_zip_nested_directory", "path": "examples/f0/safe_zip_basic.zip", "fixture_kind": "tiny_safe_zip_with_nested_directory", "unsafe_real_archive": false},
+    {"fixture_id": "unsafe_zip_path_traversal_manifest_fixture", "path": "examples/f0/unsafe_path_traversal_descriptor.json", "fixture_kind": "descriptor_only", "unsafe_real_archive": false},
+    {"fixture_id": "unsafe_zip_absolute_path_manifest_fixture", "path": "examples/f0/unsafe_absolute_path_descriptor.json", "fixture_kind": "descriptor_only", "unsafe_real_archive": false},
+    {"fixture_id": "large_member_declared_size_manifest_fixture", "path": "examples/f0/large_member_declared_size_descriptor.json", "fixture_kind": "descriptor_only", "unsafe_real_archive": false},
+    {"fixture_id": "future_iso_blocked_fixture_descriptor", "path": "examples/f0/blocked_container_descriptors.json", "fixture_kind": "descriptor_only", "unsafe_real_archive": false},
+    {"fixture_id": "future_archive_member_query_fixture", "path": "examples/f0/future_archive_member_query_descriptor.json", "fixture_kind": "descriptor_only", "unsafe_real_archive": false}
+  ],
+  "non_claims": {
+    "fake_evidence_created": false,
+    "fake_verified_records_created": false,
+    "download_performed": false,
+    "filesystem_extraction_performed": false,
+    "execution_performed": false
+  }
+}

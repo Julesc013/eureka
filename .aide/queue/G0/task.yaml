@@ -1,7 +1,7 @@
 id: G0
-title: Ranking, explanation, and search-quality foundation
+title: Ranking, explanation, identity, and user-cost scoring foundation
 status: queued
-purpose: Future ranking/explanation/search-quality foundation after DOMAIN, SCOUT, and F0 boundaries are governed.
+purpose: Future ranking, explanation, identity, and user-cost scoring foundation after DOMAIN, SCOUT, and F0 boundaries are governed.
 allowed_scope_summary: Future task must provide its own reviewed scope before implementation.
 gate:
   - no production/public launch claim by default

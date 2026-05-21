@@ -1,0 +1,19 @@
+{
+  "schema_version": "f0_non_claim_policy.v0",
+  "task": "AIDE-BATCH-F0-FOUNDATION-01",
+  "fake_evidence_created": false,
+  "fake_verified_records_created": false,
+  "live_source_call_performed": false,
+  "source_probe_executed": false,
+  "download_performed": false,
+  "upload_performed": false,
+  "filesystem_extraction_performed": false,
+  "arbitrary_file_extraction_performed": false,
+  "execution_performed": false,
+  "operator_instance_mutated": false,
+  "master_index_mutated": false,
+  "model_provider_used": false,
+  "deployment_performed": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}

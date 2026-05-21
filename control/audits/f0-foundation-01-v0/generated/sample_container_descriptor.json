@@ -1,0 +1,30 @@
+{
+  "accepted_truth": false,
+  "container_id": "f0_container_safe_zip_basic",
+  "container_kind": "zip_fixture_manifest",
+  "created_at": "2026-05-22T00:00:00Z",
+  "domain_id": "legacy_software",
+  "fixture_id": "safe_zip_basic",
+  "limitations": [
+    "fixture-only sample; no member contents are extracted"
+  ],
+  "locator": "examples/f0/safe_zip_basic.zip",
+  "non_claims": {
+    "arbitrary_file_extraction_performed": false,
+    "download_performed": false,
+    "execution_performed": false,
+    "fake_evidence_created": false,
+    "fake_verified_records_created": false,
+    "filesystem_extraction_performed": false,
+    "live_source_call_performed": false,
+    "master_index_mutated": false
+  },
+  "record_type": "container_descriptor",
+  "review_required": true,
+  "rights_flags": [],
+  "risk_flags": [],
+  "schema_version": "container_descriptor.v0",
+  "source_context": {
+    "source_kind": "repo_committed_fixture"
+  }
+}

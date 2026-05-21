@@ -1,0 +1,18 @@
+{
+  "schema_version": "f0_resource_limit_matrix.v0",
+  "task": "AIDE-BATCH-F0-FOUNDATION-01",
+  "resource_limits": {
+    "max_fixture_file_size_bytes": 1048576,
+    "max_member_count": 100,
+    "max_declared_total_size_bytes": 10485760,
+    "max_uncompressed_total_size_bytes": 10485760,
+    "max_nested_depth": 1,
+    "max_filename_length": 240,
+    "allowed_container_types_for_fixture_manifest": ["zip_fixture_manifest", "directory_manifest_fixture"],
+    "forbidden_container_types": ["iso", "dmg", "cab", "msi", "7z", "rar", "sit", "hqx", "bin/cue", "nested archives", "encrypted archives", "executable installers", "unknown binary containers"],
+    "timeout_seconds": 10,
+    "memory_budget_mb": 64,
+    "path_safety_required": true
+  },
+  "resource_policy": "conservative fixture-only limits; future real extraction requires a new policy gate"
+}

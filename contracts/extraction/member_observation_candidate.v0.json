@@ -1,0 +1,35 @@
+{
+  "$id": "eureka.contracts.extraction.member_observation_candidate.v0",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": true,
+  "properties": {
+    "accepted_truth": {"const": false, "type": "boolean"},
+    "candidate_id": {"type": "string"},
+    "created_at": {"type": "string"},
+    "domain_id": {"type": "string"},
+    "evidence_refs": {"maxItems": 0, "type": "array"},
+    "limitations": {"items": {"type": "string"}, "type": "array"},
+    "manifest_id": {"type": "string"},
+    "member_ids": {"items": {"type": "string"}, "type": "array"},
+    "non_claims": {"type": "object"},
+    "record_type": {"const": "member_observation_candidate", "type": "string"},
+    "review_required": {"const": true, "type": "boolean"},
+    "rights_flags": {"items": {"type": "string"}, "type": "array"},
+    "risk_flags": {"items": {"type": "string"}, "type": "array"},
+    "schema_version": {"const": "member_observation_candidate.v0", "type": "string"},
+    "source_context": {"type": "object"}
+  },
+  "required": [
+    "schema_version",
+    "record_type",
+    "candidate_id",
+    "manifest_id",
+    "member_ids",
+    "evidence_refs",
+    "review_required",
+    "accepted_truth",
+    "non_claims"
+  ],
+  "title": "Eureka F0 MemberObservationCandidate v0",
+  "type": "object"
+}

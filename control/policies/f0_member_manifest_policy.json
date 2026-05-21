@@ -1,0 +1,15 @@
+{
+  "schema_version": "f0_member_manifest_policy.v0",
+  "task": "AIDE-BATCH-F0-FOUNDATION-01",
+  "manifest_only": true,
+  "member_paths_are_observations": true,
+  "member_paths_are_not_truth": true,
+  "member_contents_read": false,
+  "filesystem_extraction_enabled": false,
+  "member_records_require_path_safety": true,
+  "blocked_members_remain_review_gated": true,
+  "evidence_creation_enabled": false,
+  "reviewed_record_creation_enabled": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}

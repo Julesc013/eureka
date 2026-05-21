@@ -1,0 +1,14 @@
+{
+  "schema_version": "f0_domain_handoff_matrix.v0",
+  "task": "AIDE-BATCH-F0-FOUNDATION-01",
+  "domains": [
+    {"domain_id": "legacy_software", "member_focus": ["package/archive members", "installers", "readmes"], "default_policy": "manifest-only"},
+    {"domain_id": "driver_support_media", "member_focus": ["support CD/ISO/file manifests", "driver package members"], "default_policy": "blocked for ISO; ZIP manifest-only fixtures allowed"},
+    {"domain_id": "frontier_resolution_media", "member_focus": ["media containers", "file manifests", "provenance only"], "default_policy": "manifest-only candidate generation"},
+    {"domain_id": "manuals_docs_scans", "member_focus": ["OCR/text derivatives", "page/image members"], "default_policy": "future extraction blocked"},
+    {"domain_id": "package_source_release", "member_focus": ["source archive members", "manifests"], "default_policy": "manifest-only"},
+    {"domain_id": "web_archive_trace", "member_focus": ["WARC/WACZ listings"], "default_policy": "future policy required"},
+    {"domain_id": "games_emulation", "member_focus": ["ROM/disc/package members"], "default_policy": "blocked by policy"},
+    {"domain_id": "hardware_firmware_support", "member_focus": ["firmware/support package members"], "default_policy": "high risk; blocked by default"}
+  ]
+}

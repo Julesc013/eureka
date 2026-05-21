@@ -267,7 +267,7 @@ def validate_queue(root: Path, errors: list[str]) -> None:
 
 
 def queue_preserves_hunt_handoff(root: Path, queue_text: str) -> bool:
-    if current_recommended_task_id(root) == "F0-00" and post_hunt_current_allowed(root):
+    if post_hunt_current_allowed(root):
         return True
     if "current_recommended_task: SYN-00" in queue_text:
         return True

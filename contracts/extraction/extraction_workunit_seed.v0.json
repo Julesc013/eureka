@@ -47,5 +47,19 @@
     "product_boundary"
   ],
   "title": "Eureka Extraction WorkUnit Seed v0",
-  "type": "object"
+  "type": "object",
+  "allOf": [
+    {
+      "properties": {
+        "allowed": {"const": false, "type": "boolean"},
+        "blocked_reasons": {"items": {"type": "string"}, "type": "array"},
+        "candidate_id": {"type": "string"},
+        "container_locator": {"type": "string"},
+        "future_task": {"type": "string"},
+        "policy_ref": {"type": "string"},
+        "requested_action": {"type": "string"},
+        "source_record_id": {"type": "string"}
+      }
+    }
+  ]
 }

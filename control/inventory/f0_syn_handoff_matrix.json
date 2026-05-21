@@ -1,0 +1,14 @@
+{
+  "schema_version": "f0_syn_handoff_matrix.v0",
+  "task": "AIDE-BATCH-F0-FOUNDATION-01",
+  "syn_cases": [
+    {"syn_query_class": "member_discovery_query", "example": "find the README inside a legacy software ZIP", "creates_fake_evidence": false},
+    {"syn_query_class": "compound_object_query", "example": "identify support disc members without opening an ISO", "creates_fake_evidence": false},
+    {"syn_query_class": "policy_blocked_extraction", "example": "operator asks for arbitrary installer extraction", "creates_fake_evidence": false},
+    {"syn_query_class": "adversarial_fake_evidence", "example": "member path claims proof but review has not accepted evidence", "creates_fake_evidence": false}
+  ],
+  "non_claims": {
+    "fake_evidence_created": false,
+    "fake_verified_records_created": false
+  }
+}

@@ -1,0 +1,8 @@
+id: AIDE-BATCH-F0-FOUNDATION-01
+title: Extraction/member discovery policy and safe fixture foundation
+status: completed
+purpose: Added F0 extraction/member discovery policy, contracts, safe fixture model, manifest-only enumeration helpers, WorkUnit seed suggestions, handoffs, validator, tests, docs, and audit closeout.
+allowed_scope_summary: F0 fixture-only contracts, policies, examples, read-only runtime helpers, scripts, tests, docs, audit evidence, and queue/context metadata.
+gate: No fake evidence, fake verified records, live source calls, source probes, downloads/uploads, filesystem extraction, arbitrary file extraction, execution/install/emulation, model/provider calls, operator/master index mutation, deployment, or production/public launch claim.
+recommended_after: SCOUT-SCHEMA-00
+recommended_next: G0

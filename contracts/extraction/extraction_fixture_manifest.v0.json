@@ -1,0 +1,21 @@
+{
+  "$id": "eureka.contracts.extraction.extraction_fixture_manifest.v0",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": true,
+  "properties": {
+    "created_at": {"type": "string"},
+    "fixture_status": {"const": "example_only", "type": "string"},
+    "fixtures": {"items": {"type": "object"}, "type": "array"},
+    "non_claims": {"type": "object"},
+    "schema_version": {"const": "f0_fixture_manifest.v0", "type": "string"}
+  },
+  "required": [
+    "schema_version",
+    "fixture_status",
+    "fixtures",
+    "non_claims",
+    "created_at"
+  ],
+  "title": "Eureka F0 FixtureManifest v0",
+  "type": "object"
+}

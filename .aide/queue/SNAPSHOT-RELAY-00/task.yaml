@@ -1,0 +1,7 @@
+id: SNAPSHOT-RELAY-00
+title: Snapshot relay planning placeholder
+status: queued
+purpose: Placeholder for future snapshot relay work after G0 and source-wave planning.
+allowed_scope_summary: Future task must provide reviewed scope before implementation.
+gate: No production/public launch claim, deployment, source sync, or index mutation by default.
+recommended_after: SOURCE-WAVE-00

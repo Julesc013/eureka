@@ -1,0 +1,44 @@
+{
+  "creates_evidence": false,
+  "creates_runtime_workunit": false,
+  "dry_run": true,
+  "manifest_id": "f0_member_manifest_safe_zip_basic",
+  "record_type": "extraction_workunit_seed_set",
+  "schema_version": "extraction_workunit_seed_set.v0",
+  "seeds": [
+    {
+      "accepted_truth": false,
+      "allowed": false,
+      "blocked_reasons": [
+        "operator_policy_required"
+      ],
+      "candidate_id": "f0_member_observation_candidate_safe_zip_basic",
+      "container_locator": "f0_container_safe_zip_basic",
+      "future_task": "F0-FUTURE-SAFE-EXTRACTION",
+      "non_claims": {
+        "arbitrary_file_extraction_performed": false,
+        "deployment_performed": false,
+        "download_performed": false,
+        "execution_performed": false,
+        "fake_evidence_created": false,
+        "fake_verified_records_created": false,
+        "filesystem_extraction_performed": false,
+        "live_source_call_performed": false,
+        "master_index_mutated": false,
+        "model_provider_used": false,
+        "operator_instance_mutated": false,
+        "production_readiness_claimed": false,
+        "public_launch_readiness_claimed": false,
+        "source_probe_executed": false,
+        "upload_performed": false
+      },
+      "policy_ref": "control/policies/f0_extraction_policy.json",
+      "record_type": "extraction_workunit_seed",
+      "requested_action": "review_member_manifest",
+      "review_required": true,
+      "schema_version": "extraction_workunit_seed.v0",
+      "source_record_id": "f0_member_manifest_safe_zip_basic",
+      "workunit_seed_id": "f0_workunit_seed_review_safe_zip_basic"
+    }
+  ]
+}

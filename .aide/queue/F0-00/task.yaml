@@ -1,11 +1,8 @@
 id: F0-00
-title: Refresh F0 after Local Appliance and HUNT
-status: deferred
-scope: control-plane planning metadata only
-forbidden:
-  - source probes
-  - extraction
-  - model/provider calls
-  - deployment
-  - production readiness claim
-  - public launch readiness claim
+title: Extraction/member discovery policy and safe fixture foundation
+status: completed
+purpose: Added the F0 fixture-only and manifest-only extraction/member discovery foundation after SCOUT schema.
+allowed_scope_summary: F0 contracts, policies, safe fixture descriptors, read-only manifest helpers, CLIs, validator, tests, docs, audit evidence, and queue/context metadata.
+gate: No live source calls, source probes, downloads/uploads, filesystem extraction, arbitrary file extraction, execution/install/emulation, model/provider calls, operator/master index mutation, fake evidence, fake verified records, deployment, production readiness claim, or public launch claim.
+recommended_after: SCOUT-SCHEMA-00
+recommended_next: G0

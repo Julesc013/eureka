@@ -210,6 +210,9 @@ def current_queue_has_advanced_past_hunt_promotion(root: Path) -> bool:
                 "SEARCH-",
                 "SYN-",
                 "F0-",
+                "G0",
+                "SOURCE-WAVE-",
+                "SNAPSHOT-RELAY-",
             )
         )
     return False

@@ -1,0 +1,26 @@
+{
+  "schema_version": "f0_contract_matrix.v0",
+  "task": "AIDE-BATCH-F0-FOUNDATION-01",
+  "contract_family": "extraction_member_discovery",
+  "contracts": [
+    {"path": "contracts/extraction/extraction_policy.v0.json", "purpose": "fixture-only extraction/member discovery policy"},
+    {"path": "contracts/extraction/container_descriptor.v0.json", "purpose": "describes an example container or descriptor-only unsafe case"},
+    {"path": "contracts/extraction/member_manifest.v0.json", "purpose": "manifest-only member enumeration packet"},
+    {"path": "contracts/extraction/member_record.v0.json", "purpose": "one manifest-only member observation"},
+    {"path": "contracts/extraction/member_observation_candidate.v0.json", "purpose": "candidate-only member observation"},
+    {"path": "contracts/extraction/extraction_workunit_seed.v0.json", "purpose": "dry-run WorkUnit seed suggestion"},
+    {"path": "contracts/extraction/extraction_risk_report.v0.json", "purpose": "path/resource/boundary risk summary"},
+    {"path": "contracts/extraction/extraction_boundary_report.v0.json", "purpose": "explicit non-claim boundary packet"},
+    {"path": "contracts/extraction/extraction_fixture_manifest.v0.json", "purpose": "safe committed fixture manifest"},
+    {"path": "contracts/extraction/extraction_console_view.v0.json", "purpose": "read-only Workbench F0 console projection"}
+  ],
+  "invariants": {
+    "candidate_generation_only": true,
+    "accepted_truth_created": false,
+    "filesystem_extraction_enabled": false,
+    "arbitrary_file_extraction_enabled": false,
+    "downloads_enabled": false,
+    "execution_enabled": false,
+    "model_provider_enabled": false
+  }
+}
