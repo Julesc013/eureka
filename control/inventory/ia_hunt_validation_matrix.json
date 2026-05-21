@@ -1,0 +1,107 @@
+{
+  "schema_version": "ia_hunt_validation_matrix.v0",
+  "task": "IA-HUNT-BRIDGE-00",
+  "status": "pass",
+  "selected_lane_router_used": true,
+  "commands": [
+    {
+      "name": "test_selector_changed_failed_first",
+      "command": "python scripts/eureka_test_select.py --changed --failed-first --json",
+      "status": "pass"
+    },
+    {
+      "name": "ia_hunt_bridge_validator",
+      "command": "python scripts/validate_ia_hunt_bridge.py",
+      "status": "pass"
+    },
+    {
+      "name": "workbench_result_lanes",
+      "command": "python scripts/validate_workbench_result_lanes.py",
+      "status": "pass"
+    },
+    {
+      "name": "search_interaction",
+      "command": "python scripts/validate_search_interaction_contract.py",
+      "status": "pass"
+    },
+    {
+      "name": "workbench_foundation",
+      "command": "python scripts/validate_workbench_foundation.py",
+      "status": "pass"
+    },
+    {
+      "name": "test_lane_policy",
+      "command": "python scripts/validate_test_lane_policy.py",
+      "status": "pass"
+    },
+    {
+      "name": "contract_taxonomy",
+      "command": "python scripts/validate_contract_taxonomy.py",
+      "status": "pass"
+    },
+    {
+      "name": "repo_structure_canon",
+      "command": "python scripts/validate_repo_structure_canon.py",
+      "status": "pass_with_existing_warnings"
+    },
+    {
+      "name": "bridge_cli_dry_run_operator",
+      "command": "python scripts/eureka_ia_hunt_bridge.py --query sampleproject --from-fixtures --dry-run --projection operator_workbench --json",
+      "status": "pass"
+    },
+    {
+      "name": "bridge_cli_temp_operator",
+      "command": "python scripts/eureka_ia_hunt_bridge.py --query sampleproject --from-fixtures --use-temp-instance --apply-to-temp --projection operator_workbench --json",
+      "status": "pass"
+    },
+    {
+      "name": "bridge_cli_temp_public",
+      "command": "python scripts/eureka_ia_hunt_bridge.py --query sampleproject --from-fixtures --use-temp-instance --apply-to-temp --projection public_web --json",
+      "status": "pass"
+    },
+    {
+      "name": "bridge_cli_temp_native",
+      "command": "python scripts/eureka_ia_hunt_bridge.py --query sampleproject --from-fixtures --use-temp-instance --apply-to-temp --projection native_desktop_read_only --json",
+      "status": "pass"
+    },
+    {
+      "name": "focused_runtime_bridge",
+      "command": "python -m unittest tests.runtime.test_ia_hunt_bridge tests.runtime.test_ia_hunt_workunits tests.runtime.test_ia_hunt_result_lanes",
+      "status": "pass"
+    },
+    {
+      "name": "focused_operations_bridge",
+      "command": "python -m unittest tests.operations.test_ia_hunt_bridge_scripts tests.operations.test_ia_hunt_bridge_smoke tests.scripts.test_validate_ia_hunt_bridge",
+      "status": "pass"
+    },
+    {
+      "name": "architecture_boundaries",
+      "command": "python scripts/check_architecture_boundaries.py",
+      "status": "pass"
+    },
+    {
+      "name": "generated_artifact_cleanliness",
+      "command": "python scripts/check_generated_artifact_cleanliness.py --check --json",
+      "status": "pass"
+    },
+    {
+      "name": "aide_checks",
+      "command": "python .aide/scripts/aide_lite.py doctor && python .aide/scripts/aide_lite.py validate && python .aide/scripts/aide_lite.py test && python .aide/scripts/aide_lite.py selftest && python .aide/scripts/aide_lite.py verify && python .aide/scripts/aide_lite.py review-pack",
+      "status": "pass"
+    },
+    {
+      "name": "full_unittest_discovery",
+      "command": "python -m unittest discover -s tests -t .",
+      "status": "pass",
+      "test_count": 4809,
+      "duration_seconds": 2915.768
+    }
+  ],
+  "repairs_performed": [
+    "Added missing docs and deterministic examples required by the new validator.",
+    "Moved Workbench result-lane imports behind a lazy bridge helper to remove the full-discovery import cycle."
+  ],
+  "full_unittest_discovery_passed": true,
+  "full_unittest_discovery_count": 4809,
+  "full_unittest_discovery_duration_seconds": 2915.768
+}

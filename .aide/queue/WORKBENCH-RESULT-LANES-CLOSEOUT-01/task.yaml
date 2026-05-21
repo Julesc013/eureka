@@ -1,0 +1,40 @@
+schema_version: aide.task.v0
+id: WORKBENCH-RESULT-LANES-CLOSEOUT-01
+title: Close Workbench result-lane fixed-pending-full validation state
+status: completed
+task_kind: validation_closeout
+purpose: Use the lane selector to rerun failed-first and impact-selected result-lane closeout checks before IA-HUNT.
+scope:
+  allowed:
+    - control/inventory/test_failure_ledger.json
+    - control/inventory/workbench_result_lanes_result.json
+    - control/inventory/workbench_result_lanes_next_task_decision.json
+    - control/audits/workbench-result-lanes-01-v0/**
+    - .aide/**
+  forbidden:
+    - runtime/connectors/**
+    - runtime/extraction/**
+    - native/**
+    - crates/**
+    - site/dist/**
+    - data/public_index/**
+    - eureka-instance/**
+    - instances/**
+    - .aide.local/**
+    - secrets/**
+    - .env
+gate:
+  requires:
+    - TEST-LANE-ROUTER-01 completed
+    - failed-first Search Hunt queue-handoff tests rerun
+    - impact-selected result-lane closeout checks run
+  forbids:
+    - IA-HUNT bridge implementation
+    - live IA call
+    - source probe
+    - extraction
+    - model/provider call
+    - deployment
+    - production/public launch claim
+recommended_after: TEST-LANE-ROUTER-01
+recommended_next: IA-HUNT-BRIDGE-00

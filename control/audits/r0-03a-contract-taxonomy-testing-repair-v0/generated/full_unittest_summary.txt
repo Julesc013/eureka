@@ -1,0 +1,3695 @@
+R0-03A-CONTRACT-TAXONOMY-TESTING-REPAIR final full unittest discovery
+COMMAND: python -m unittest discover -s tests -t .
+EXIT_CODE: 0
+DURATION_SECONDS: 2711.943
+TEST_COUNT: 4797
+OUTPUT:
+{
+  "created_directories": [
+    "config",
+    "db",
+    "logs",
+    "run",
+    "tmp",
+    "exports",
+    "imports"
+  ],
+  "deployment_performed": false,
+  "dry_run": false,
+  "instance_id": "eureka-local-6520c4072c775a62",
+  "instance_layout": {
+    "current_instance_root": "C:\\Users\\Jules\\AppData\\Local\\Temp\\tmpwguiborv",
+    "is_legacy_sibling": false,
+    "is_preferred_default": false,
+    "is_repo_nested": false,
+    "layout_class": "outside_workspace_explicit",
+    "legacy_sibling_instance_root": "D:\\Projects\\Eureka\\eureka-instance",
+    "preferred_default_instance_root": "D:\\Projects\\Eureka\\instances\\default",
+    "preferred_instances_root": "D:\\Projects\\Eureka\\instances",
+    "repo_root": "D:\\Projects\\Eureka\\eureka",
+    "warnings": [],
+    "workspace_root": "D:\\Projects\\Eureka"
+  },
+  "instance_root": "C:\\Users\\Jules\\AppData\\Local\\Temp\\tmpwguiborv",
+  "instance_schema_version": 1,
+  "lan_enabled": false,
+  "limitations": [
+    "LOCAL-02 initializes explicit versioned local state only",
+    "HTTP service is not implemented",
+    "HTML workbench is not implemented",
+    "LAN mode is disabled",
+    "deployment is disabled",
+    "destructive migration is disabled",
+    "Work queue records do not execute background work"
+  ],
+  "migration_state": {
+    "backup_plan": {
+      "metadata_only_in_LOCAL_02": true,
+      "required_before_apply": true
+    },
+    "backup_required": false,
+    "blockers": [],
+    "current_instance_schema_version": 1,
+    "destructive_migration_required": false,
+    "instance_id": "eureka-local-6520c4072c775a62",
+    "migration_allowed": false,
+    "migration_history": [
+      {
+        "at": "2026-05-20T16:53:00Z",
+        "destructive": false,
+        "event": "schema_guard_initialized",
+        "from_instance_schema_version": 1,
+        "to_instance_schema_version": 1
+      }
+    ],
+    "migration_needed": false,
+    "rollback_available": false,
+    "rollback_plan": {
+      "automatic_rollback_implemented": false,
+      "metadata_required_before_apply": true
+    },
+    "schema_version": "eureka_local_migration_state.v0",
+    "target_instance_schema_version": 1,
+    "warnings": []
+  },
+  "planned_actions": [
+    "write config/instance.json",
+    "ensure directory config",
+    "ensure directory db",
+    "ensure directory logs",
+    "ensure directory run",
+    "ensure directory tmp",
+    "ensure directory exports",
+    "ensure directory imports",
+    "ensure local state file logs/eureka.log",
+    "ensure local state file run/instance.lock",
+    "ensure local state file tmp/.keep",
+    "ensure local state file exports/.keep",
+    "ensure local state file imports/.keep",
+    "initialize store source_cache",
+    "initialize store evidence_ledger",
+    "initialize store review_queue",
+    "initialize store public_index",
+    "initialize store workunit_queue",
+    "initialize store search_hunt",
+    "initialize store search_need",
+    "initialize store agent_research",
+    "initialize store ai_escalation",
+    "write config/store_manifest.json",
+    "write config/migration_state.json",
+    "write run/status.json"
+  ],
+  "planned_database_files": [
+    "db/source_cache.sqlite",
+    "db/evidence_ledger.sqlite",
+    "db/review_queue.sqlite",
+    "db/public_index.sqlite",
+    "db/workunit_queue.sqlite",
+    "db/search_hunt.sqlite",
+    "db/search_need.sqlite",
+    "db/agent_research.sqlite",
+    "db/ai_escalation.sqlite"
+  ],
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "required_files": [
+    "config/instance.json",
+    "config/store_manifest.json",
+    "config/migration_state.json",
+    "run/status.json"
+  ],
+  "schema_version": "local_instance_init_result.v0",
+  "server_enabled": false,
+  "status": "pass",
+  "store_manifest": {
+    "instance_id": "eureka-local-6520c4072c775a62",
+    "instance_schema_version": 1,
+    "last_checked_at": "2026-05-20T16:53:00Z",
+    "schema_version": "eureka_local_store_manifest.v0",
+    "stores": {
+      "agent_research": {
+        "initialized": true,
+        "integrity_check_supported": true,
+        "last_checked_at": "2026-05-20T16:53:00Z",
+        "migration_supported": true,
+        "relative_path": "db/agent_research.sqlite",
+        "required": true,
+        "schema_version": "agent_research_store.v0",
+        "store_id": "agent_research",
+        "store_kind": "sqlite_agent_research"
+      },
+      "ai_escalation": {
+        "initialized": true,
+        "integrity_check_supported": true,
+        "last_checked_at": "2026-05-20T16:53:00Z",
+        "migration_supported": true,
+        "relative_path": "db/ai_escalation.sqlite",
+        "required": true,
+        "schema_version": "ai_escalation_store.v0",
+        "store_id": "ai_escalation",
+        "store_kind": "sqlite_ai_escalation"
+      },
+      "evidence_ledger": {
+        "initialized": true,
+        "integrity_check_supported": true,
+        "last_checked_at": "2026-05-20T16:53:00Z",
+        "migration_supported": true,
+        "relative_path": "db/evidence_ledger.sqlite",
+        "required": true,
+        "schema_version": "evidence_ledger_store.v0",
+        "store_id": "evidence_ledger",
+        "store_kind": "sqlite_evidence_ledger"
+      },
+      "public_index": {
+        "initialized": true,
+        "integrity_check_supported": true,
+        "last_checked_at": "2026-05-20T16:53:00Z",
+        "migration_supported": true,
+        "relative_path": "db/public_index.sqlite",
+        "required": true,
+        "schema_version": "public_index_store.v0",
+        "store_id": "public_index",
+        "store_kind": "sqlite_public_index"
+      },
+      "review_queue": {
+        "initialized": true,
+        "integrity_check_supported": true,
+        "last_checked_at": "2026-05-20T16:53:00Z",
+        "migration_supported": true,
+        "relative_path": "db/review_queue.sqlite",
+        "required": true,
+        "schema_version": "review_queue_store.v0",
+        "store_id": "review_queue",
+        "store_kind": "sqlite_review_queue"
+      },
+      "search_hunt": {
+        "initialized": true,
+        "integrity_check_supported": true,
+        "last_checked_at": "2026-05-20T16:53:00Z",
+        "migration_supported": true,
+        "relative_path": "db/search_hunt.sqlite",
+        "required": true,
+        "schema_version": "search_hunt_store.v1",
+        "store_id": "search_hunt",
+        "store_kind": "sqlite_search_hunt"
+      },
+      "search_need": {
+        "initialized": true,
+        "integrity_check_supported": true,
+        "last_checked_at": "2026-05-20T16:53:00Z",
+        "migration_supported": true,
+        "relative_path": "db/search_need.sqlite",
+        "required": true,
+        "schema_version": "search_need_store.v0",
+        "store_id": "search_need",
+        "store_kind": "sqlite_search_need"
+      },
+      "source_cache": {
+        "initialized": true,
+        "integrity_check_supported": true,
+        "last_checked_at": "2026-05-20T16:53:00Z",
+        "migration_supported": true,
+        "relative_path": "db/source_cache.sqlite",
+        "required": true,
+        "schema_version": "source_cache_store.v0",
+        "store_id": "source_cache",
+        "store_kind": "sqlite_source_cache"
+      },
+      "workunit_queue": {
+        "initialized": true,
+        "integrity_check_supported": true,
+        "last_checked_at": "2026-05-20T16:53:00Z",
+        "migration_supported": true,
+        "relative_path": "db/workunit_queue.sqlite",
+        "required": true,
+        "schema_version": "workunit_queue_store.v0",
+        "store_id": "workunit_queue",
+        "store_kind": "sqlite_workunit_queue"
+      }
+    }
+  },
+  "stores": {
+    "agent_research": {
+      "initialization_method": "runtime_store_api",
+      "integrity": {
+        "applied_migrations": [
+          {
+            "key": "created_by",
+            "value": "runtime.agent_research"
+          },
+          {
+            "key": "schema_version",
+            "value": "agent_research_store.v0"
+          }
+        ],
+        "enabled_task_count": 0,
+        "missing_tables": [],
+        "orphan_row_count": 0,
+        "schema_version": "agent_research_store.v0",
+        "sqlite_integrity": "ok",
+        "status": "pass"
+      },
+      "migrations": [
+        {
+          "key": "created_by",
+          "value": "runtime.agent_research"
+        },
+        {
+          "key": "schema_version",
+          "value": "agent_research_store.v0"
+        }
+      ],
+      "path": "C:\\Users\\Jules\\AppData\\Local\\Temp\\tmpwguiborv\\db\\agent_research.sqlite",
+      "runtime_api": "runtime.agent_research.store.AgentResearchStore",
+      "status": "pass"
+    },
+    "ai_escalation": {
+      "initialization_method": "runtime_store_api",
+      "integrity": {
+        "applied_migrations": [
+          {
+            "key": "schema_event:2026-05-20T16:53:00Z",
+            "updated_at": "2026-05-20T16:53:00Z",
+            "value": "apply_schema"
+          }
+        ],
+        "enabled_gate_count": 0,
+        "enabled_preflight_count": 0,
+        "missing_tables": [],
+        "schema_version": "ai_escalation_store.v0",
+        "sqlite_integrity": "ok",
+        "status": "pass"
+      },
+      "migrations": [
+        {
+          "applied_at": "2026-05-20T16:53:00Z",
+          "schema_version": "ai_escalation_store.v0",
+          "status": "pass"
+        }
+      ],
+      "path": "C:\\Users\\Jules\\AppData\\Local\\Temp\\tmpwguiborv\\db\\ai_escalation.sqlite",
+      "runtime_api": "runtime.ai_escalation.store.AIEscalationStore",
+      "status": "pass"
+    },
+    "evidence_ledger": {
+      "initialization_method": "runtime_store_api",
+      "integrity": {
+        "applied_migrations": [
+          {
+            "applied_at": "2026-05-20T16:53:00Z",
+            "checksum": "3f4a3ce186d36e50cad59afb14184cc981f1e7bd0445269df14ac7ea9d88cd7a",
+            "id": "001_initial_evidence_ledger_store",
+            "version": "evidence_ledger_store.v0"
+          }
+        ],
+        "missing_tables": [],
+        "schema_version": "evidence_ledger_store.v0",
+        "sqlite_integrity": "ok",
+        "status": "pass"
+      },
+      "migrations": [
+        {
+          "checksum": "3f4a3ce186d36e50cad59afb14184cc981f1e7bd0445269df14ac7ea9d88cd7a",
+          "migration_id": "001_initial_evidence_ledger_store",
+          "statement_count": 14,
+          "version": "evidence_ledger_store.v0"
+        }
+      ],
+      "path": "C:\\Users\\Jules\\AppData\\Local\\Temp\\tmpwguiborv\\db\\evidence_ledger.sqlite",
+      "runtime_api": "runtime.evidence_ledger.store.EvidenceLedgerStore",
+      "status": "pass"
+    },
+    "public_index": {
+      "initialization_method": "runtime_store_api",
+      "integrity": {
+        "applied_migrations": [
+          {
+            "applied_at": "2026-05-20T16:53:00Z",
+            "checksum": "cb2591e37945b116d245c51124240cc7fb37f43cacc4f1148cecefb768c31cc9",
+            "id": "public_index_initial_schema",
+            "version": "public_index_store.v0"
+          }
+        ],
+        "missing_tables": [],
+        "schema_version": "public_index_store.v0",
+        "sqlite_integrity": "ok",
+        "status": "pass"
+      },
+      "migrations": [
+        {
+          "checksum": "cb2591e37945b116d245c51124240cc7fb37f43cacc4f1148cecefb768c31cc9",
+          "id": "public_index_initial_schema",
+          "version": "public_index_store.v0"
+        }
+      ],
+      "path": "C:\\Users\\Jules\\AppData\\Local\\Temp\\tmpwguiborv\\db\\public_index.sqlite",
+      "runtime_api": "runtime.public_index.store.PublicIndexStore",
+      "status": "pass"
+    },
+    "review_queue": {
+      "initialization_method": "runtime_store_api",
+      "integrity": {
+        "applied_migrations": [
+          {
+            "applied_at": "2026-05-20T16:53:00Z",
+            "checksum": "ff83c4f1f40ba380b480653c17c6cc3d014e0ccd3ddb0aa220cc4770832c85a9",
+            "id": "001_initial_review_queue_store",
+            "version": "review_queue_store.v0"
+          }
+        ],
+        "missing_tables": [],
+        "schema_version": "review_queue_store.v0",
+        "sqlite_integrity": "ok",
+        "status": "pass"
+      },
+      "migrations": [
+        {
+          "checksum": "ff83c4f1f40ba380b480653c17c6cc3d014e0ccd3ddb0aa220cc4770832c85a9",
+          "migration_id": "001_initial_review_queue_store",
+          "statement_count": 13,
+          "version": "review_queue_store.v0"
+        }
+      ],
+      "path": "C:\\Users\\Jules\\AppData\\Local\\Temp\\tmpwguiborv\\db\\review_queue.sqlite",
+      "runtime_api": "runtime.review_queue.store.ReviewQueueStore",
+      "status": "pass"
+    },
+    "search_hunt": {
+      "initialization_method": "runtime_store_api",
+      "integrity": {
+        "applied_migrations": [
+          {
+            "id": "001_initial_search_hunt_store",
+            "version": "search_hunt_store.v1"
+          }
+        ],
+        "missing_tables": [],
+        "orphan_row_count": 0,
+        "schema_version": "search_hunt_store.v1",
+        "sqlite_integrity": "ok",
+        "status": "pass"
+      },
+      "migrations": [
+        {
+          "migration_id": "001_initial_search_hunt_store",
+          "statement_count": 25,
+          "version": "search_hunt_store.v1"
+        }
+      ],
+      "path": "C:\\Users\\Jules\\AppData\\Local\\Temp\\tmpwguiborv\\db\\search_hunt.sqlite",
+      "runtime_api": "runtime.search_hunt.store.SearchHuntStore",
+      "status": "pass"
+    },
+    "search_need": {
+      "initialization_method": "runtime_store_api",
+      "integrity": {
+        "applied_migrations": [
+          {
+            "key": "created_by",
+            "value": "runtime.search_need"
+          },
+          {
+            "key": "schema_version",
+            "value": "search_need_store.v0"
+          }
+        ],
+        "missing_tables": [],
+        "orphan_row_count": 0,
+        "schema_version": "search_need_store.v0",
+        "sqlite_integrity": "ok",
+        "status": "pass"
+      },
+      "migrations": [
+        {
+          "key": "created_by",
+          "value": "runtime.search_need"
+        },
+        {
+          "key": "schema_version",
+          "value": "search_need_store.v0"
+        }
+      ],
+      "path": "C:\\Users\\Jules\\AppData\\Local\\Temp\\tmpwguiborv\\db\\search_need.sqlite",
+      "runtime_api": "runtime.search_need.store.SearchNeedStore",
+      "status": "pass"
+    },
+    "source_cache": {
+      "initialization_method": "runtime_store_api",
+      "integrity": {
+        "applied_migrations": [
+          {
+            "applied_at": "2026-05-20T16:53:00Z",
+            "checksum": "2969c437dc5ad09c56c628025182c80eab59e72156b440b531611f719301292a",
+            "id": "001_initial_source_cache_store",
+            "version": "source_cache_store.v0"
+          }
+        ],
+        "missing_tables": [],
+        "schema_version": "source_cache_store.v0",
+        "sqlite_integrity": "ok",
+        "status": "pass"
+      },
+      "migrations": [
+        {
+          "checksum": "2969c437dc5ad09c56c628025182c80eab59e72156b440b531611f719301292a",
+          "migration_id": "001_initial_source_cache_store",
+          "statement_count": 12,
+          "version": "source_cache_store.v0"
+        }
+      ],
+      "path": "C:\\Users\\Jules\\AppData\\Local\\Temp\\tmpwguiborv\\db\\source_cache.sqlite",
+      "runtime_api": "runtime.source_cache.store.SourceCacheStore",
+      "status": "pass"
+    },
+    "workunit_queue": {
+      "initialization_method": "runtime_store_api",
+      "integrity": {
+        "applied_migrations": [
+          {
+            "id": "001_initial_workunit_queue_store",
+            "version": "workunit_queue_store.v0"
+          }
+        ],
+        "missing_tables": [],
+        "orphan_transition_count": 0,
+        "schema_version": "workunit_queue_store.v0",
+        "sqlite_integrity": "ok",
+        "status": "pass"
+      },
+      "migrations": [
+        {
+          "migration_id": "001_initial_workunit_queue_store",
+          "statement_count": 8,
+          "version": "workunit_queue_store.v0"
+        }
+      ],
+      "path": "C:\\Users\\Jules\\AppData\\Local\\Temp\\tmpwguiborv\\db\\workunit_queue.sqlite",
+      "runtime_api": "runtime.workunit_queue.store.WorkUnitQueueStore",
+      "status": "pass"
+    }
+  },
+  "task": "LOCAL-02",
+  "warnings": []
+}
+{
+  "deployment_performed": false,
+  "instance_root": "C:\\Users\\Jules\\AppData\\Local\\Temp\\tmpwguiborv",
+  "lan_enabled": false,
+  "limitations": [
+    "operator token hash is local instance state only"
+  ],
+  "raw_token_stored": false,
+  "schema_version": "local_operator_token_set_result.v0",
+  "status": "pass",
+  "token_hash_configured": true,
+  "token_printed": false,
+  "warnings": []
+}
+{
+  "created_directories": [
+    "config",
+    "db",
+    "logs",
+    "run",
+    "tmp",
+    "exports",
+    "imports"
+  ],
+  "deployment_performed": false,
+  "dry_run": false,
+  "instance_id": "eureka-local-30b259eca9855b78",
+  "instance_layout": {
+    "current_instance_root": "C:\\Users\\Jules\\AppData\\Local\\Temp\\tmpoxen3ajb",
+    "is_legacy_sibling": false,
+    "is_preferred_default": false,
+    "is_repo_nested": false,
+    "layout_class": "outside_workspace_explicit",
+    "legacy_sibling_instance_root": "D:\\Projects\\Eureka\\eureka-instance",
+    "preferred_default_instance_root": "D:\\Projects\\Eureka\\instances\\default",
+    "preferred_instances_root": "D:\\Projects\\Eureka\\instances",
+    "repo_root": "D:\\Projects\\Eureka\\eureka",
+    "warnings": [],
+    "workspace_root": "D:\\Projects\\Eureka"
+  },
+  "instance_root": "C:\\Users\\Jules\\AppData\\Local\\Temp\\tmpoxen3ajb",
+  "instance_schema_version": 1,
+  "lan_enabled": false,
+  "limitations": [
+    "LOCAL-02 initializes explicit versioned local state only",
+    "HTTP service is not implemented",
+    "HTML workbench is not implemented",
+    "LAN mode is disabled",
+    "deployment is disabled",
+    "destructive migration is disabled",
+    "Work queue records do not execute background work"
+  ],
+  "migration_state": {
+    "backup_plan": {
+      "metadata_only_in_LOCAL_02": true,
+      "required_before_apply": true
+    },
+    "backup_required": false,
+    "blockers": [],
+    "current_instance_schema_version": 1,
+    "destructive_migration_required": false,
+    "instance_id": "eureka-local-30b259eca9855b78",
+    "migration_allowed": false,
+    "migration_history": [
+      {
+        "at": "2026-05-20T16:53:03Z",
+        "destructive": false,
+        "event": "schema_guard_initialized",
+        "from_instance_schema_version": 1,
+        "to_instance_schema_version": 1
+      }
+    ],
+    "migration_needed": false,
+    "rollback_available": false,
+    "rollback_plan": {
+      "automatic_rollback_implemented": false,
+      "metadata_required_before_apply": true
+    },
+    "schema_version": "eureka_local_migration_state.v0",
+    "target_instance_schema_version": 1,
+    "warnings": []
+  },
+  "planned_actions": [
+    "write config/instance.json",
+    "ensure directory config",
+    "ensure directory db",
+    "ensure directory logs",
+    "ensure directory run",
+    "ensure directory tmp",
+    "ensure directory exports",
+    "ensure directory imports",
+    "ensure local state file logs/eureka.log",
+    "ensure local state file run/instance.lock",
+    "ensure local state file tmp/.keep",
+    "ensure local state file exports/.keep",
+    "ensure local state file imports/.keep",
+    "initialize store source_cache",
+    "initialize store evidence_ledger",
+    "initialize store review_queue",
+    "initialize store public_index",
+    "initialize store workunit_queue",
+    "initialize store search_hunt",
+    "initialize store search_need",
+    "initialize store agent_research",
+    "initialize store ai_escalation",
+    "write config/store_manifest.json",
+    "write config/migration_state.json",
+    "write run/status.json"
+  ],
+  "planned_database_files": [
+    "db/source_cache.sqlite",
+    "db/evidence_ledger.sqlite",
+    "db/review_queue.sqlite",
+    "db/public_index.sqlite",
+    "db/workunit_queue.sqlite",
+    "db/search_hunt.sqlite",
+    "db/search_need.sqlite",
+    "db/agent_research.sqlite",
+    "db/ai_escalation.sqlite"
+  ],
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "required_files": [
+    "config/instance.json",
+    "config/store_manifest.json",
+    "config/migration_state.json",
+    "run/status.json"
+  ],
+  "schema_version": "local_instance_init_result.v0",
+  "server_enabled": false,
+  "status": "pass",
+  "store_manifest": {
+    "instance_id": "eureka-local-30b259eca9855b78",
+    "instance_schema_version": 1,
+    "last_checked_at": "2026-05-20T16:53:03Z",
+    "schema_version": "eureka_local_store_manifest.v0",
+    "stores": {
+      "agent_research": {
+        "initialized": true,
+        "integrity_check_supported": true,
+        "last_checked_at": "2026-05-20T16:53:03Z",
+        "migration_supported": true,
+        "relative_path": "db/agent_research.sqlite",
+        "required": true,
+        "schema_version": "agent_research_store.v0",
+        "store_id": "agent_research",
+        "store_kind": "sqlite_agent_research"
+      },
+      "ai_escalation": {
+        "initialized": true,
+        "integrity_check_supported": true,
+        "last_checked_at": "2026-05-20T16:53:03Z",
+        "migration_supported": true,
+        "relative_path": "db/ai_escalation.sqlite",
+        "required": true,
+        "schema_version": "ai_escalation_store.v0",
+        "store_id": "ai_escalation",
+        "store_kind": "sqlite_ai_escalation"
+      },
+      "evidence_ledger": {
+        "initialized": true,
+        "integrity_check_supported": true,
+        "last_checked_at": "2026-05-20T16:53:03Z",
+        "migration_supported": true,
+        "relative_path": "db/evidence_ledger.sqlite",
+        "required": true,
+        "schema_version": "evidence_ledger_store.v0",
+        "store_id": "evidence_ledger",
+        "store_kind": "sqlite_evidence_ledger"
+      },
+      "public_index": {
+        "initialized": true,
+        "integrity_check_supported": true,
+        "last_checked_at": "2026-05-20T16:53:03Z",
+        "migration_supported": true,
+        "relative_path": "db/public_index.sqlite",
+        "required": true,
+        "schema_version": "public_index_store.v0",
+        "store_id": "public_index",
+        "store_kind": "sqlite_public_index"
+      },
+      "review_queue": {
+        "initialized": true,
+        "integrity_check_supported": true,
+        "last_checked_at": "2026-05-20T16:53:03Z",
+        "migration_supported": true,
+        "relative_path": "db/review_queue.sqlite",
+        "required": true,
+        "schema_version": "review_queue_store.v0",
+        "store_id": "review_queue",
+        "store_kind": "sqlite_review_queue"
+      },
+      "search_hunt": {
+        "initialized": true,
+        "integrity_check_supported": true,
+        "last_checked_at": "2026-05-20T16:53:03Z",
+        "migration_supported": true,
+        "relative_path": "db/search_hunt.sqlite",
+        "required": true,
+        "schema_version": "search_hunt_store.v1",
+        "store_id": "search_hunt",
+        "store_kind": "sqlite_search_hunt"
+      },
+      "search_need": {
+        "initialized": true,
+        "integrity_check_supported": true,
+        "last_checked_at": "2026-05-20T16:53:03Z",
+        "migration_supported": true,
+        "relative_path": "db/search_need.sqlite",
+        "required": true,
+        "schema_version": "search_need_store.v0",
+        "store_id": "search_need",
+        "store_kind": "sqlite_search_need"
+      },
+      "source_cache": {
+        "initialized": true,
+        "integrity_check_supported": true,
+        "last_checked_at": "2026-05-20T16:53:03Z",
+        "migration_supported": true,
+        "relative_path": "db/source_cache.sqlite",
+        "required": true,
+        "schema_version": "source_cache_store.v0",
+        "store_id": "source_cache",
+        "store_kind": "sqlite_source_cache"
+      },
+      "workunit_queue": {
+        "initialized": true,
+        "integrity_check_supported": true,
+        "last_checked_at": "2026-05-20T16:53:03Z",
+        "migration_supported": true,
+        "relative_path": "db/workunit_queue.sqlite",
+        "required": true,
+        "schema_version": "workunit_queue_store.v0",
+        "store_id": "workunit_queue",
+        "store_kind": "sqlite_workunit_queue"
+      }
+    }
+  },
+  "stores": {
+    "agent_research": {
+      "initialization_method": "runtime_store_api",
+      "integrity": {
+        "applied_migrations": [
+          {
+            "key": "created_by",
+            "value": "runtime.agent_research"
+          },
+          {
+            "key": "schema_version",
+            "value": "agent_research_store.v0"
+          }
+        ],
+        "enabled_task_count": 0,
+        "missing_tables": [],
+        "orphan_row_count": 0,
+        "schema_version": "agent_research_store.v0",
+        "sqlite_integrity": "ok",
+        "status": "pass"
+      },
+      "migrations": [
+        {
+          "key": "created_by",
+          "value": "runtime.agent_research"
+        },
+        {
+          "key": "schema_version",
+          "value": "agent_research_store.v0"
+        }
+      ],
+      "path": "C:\\Users\\Jules\\AppData\\Local\\Temp\\tmpoxen3ajb\\db\\agent_research.sqlite",
+      "runtime_api": "runtime.agent_research.store.AgentResearchStore",
+      "status": "pass"
+    },
+    "ai_escalation": {
+      "initialization_method": "runtime_store_api",
+      "integrity": {
+        "applied_migrations": [
+          {
+            "key": "schema_event:2026-05-20T16:53:03Z",
+            "updated_at": "2026-05-20T16:53:03Z",
+            "value": "apply_schema"
+          }
+        ],
+        "enabled_gate_count": 0,
+        "enabled_preflight_count": 0,
+        "missing_tables": [],
+        "schema_version": "ai_escalation_store.v0",
+        "sqlite_integrity": "ok",
+        "status": "pass"
+      },
+      "migrations": [
+        {
+          "applied_at": "2026-05-20T16:53:03Z",
+          "schema_version": "ai_escalation_store.v0",
+          "status": "pass"
+        }
+      ],
+      "path": "C:\\Users\\Jules\\AppData\\Local\\Temp\\tmpoxen3ajb\\db\\ai_escalation.sqlite",
+      "runtime_api": "runtime.ai_escalation.store.AIEscalationStore",
+      "status": "pass"
+    },
+    "evidence_ledger": {
+      "initialization_method": "runtime_store_api",
+      "integrity": {
+        "applied_migrations": [
+          {
+            "applied_at": "2026-05-20T16:53:03Z",
+            "checksum": "3f4a3ce186d36e50cad59afb14184cc981f1e7bd0445269df14ac7ea9d88cd7a",
+            "id": "001_initial_evidence_ledger_store",
+            "version": "evidence_ledger_store.v0"
+          }
+        ],
+        "missing_tables": [],
+        "schema_version": "evidence_ledger_store.v0",
+        "sqlite_integrity": "ok",
+        "status": "pass"
+      },
+      "migrations": [
+        {
+          "checksum": "3f4a3ce186d36e50cad59afb14184cc981f1e7bd0445269df14ac7ea9d88cd7a",
+          "migration_id": "001_initial_evidence_ledger_store",
+          "statement_count": 14,
+          "version": "evidence_ledger_store.v0"
+        }
+      ],
+      "path": "C:\\Users\\Jules\\AppData\\Local\\Temp\\tmpoxen3ajb\\db\\evidence_ledger.sqlite",
+      "runtime_api": "runtime.evidence_ledger.store.EvidenceLedgerStore",
+      "status": "pass"
+    },
+    "public_index": {
+      "initialization_method": "runtime_store_api",
+      "integrity": {
+        "applied_migrations": [
+          {
+            "applied_at": "2026-05-20T16:53:03Z",
+            "checksum": "cb2591e37945b116d245c51124240cc7fb37f43cacc4f1148cecefb768c31cc9",
+            "id": "public_index_initial_schema",
+            "version": "public_index_store.v0"
+          }
+        ],
+        "missing_tables": [],
+        "schema_version": "public_index_store.v0",
+        "sqlite_integrity": "ok",
+        "status": "pass"
+      },
+      "migrations": [
+        {
+          "checksum": "cb2591e37945b116d245c51124240cc7fb37f43cacc4f1148cecefb768c31cc9",
+          "id": "public_index_initial_schema",
+          "version": "public_index_store.v0"
+        }
+      ],
+      "path": "C:\\Users\\Jules\\AppData\\Local\\Temp\\tmpoxen3ajb\\db\\public_index.sqlite",
+      "runtime_api": "runtime.public_index.store.PublicIndexStore",
+      "status": "pass"
+    },
+    "review_queue": {
+      "initialization_method": "runtime_store_api",
+      "integrity": {
+        "applied_migrations": [
+          {
+            "applied_at": "2026-05-20T16:53:03Z",
+            "checksum": "ff83c4f1f40ba380b480653c17c6cc3d014e0ccd3ddb0aa220cc4770832c85a9",
+            "id": "001_initial_review_queue_store",
+            "version": "review_queue_store.v0"
+          }
+        ],
+        "missing_tables": [],
+        "schema_version": "review_queue_store.v0",
+        "sqlite_integrity": "ok",
+        "status": "pass"
+      },
+      "migrations": [
+        {
+          "checksum": "ff83c4f1f40ba380b480653c17c6cc3d014e0ccd3ddb0aa220cc4770832c85a9",
+          "migration_id": "001_initial_review_queue_store",
+          "statement_count": 13,
+          "version": "review_queue_store.v0"
+        }
+      ],
+      "path": "C:\\Users\\Jules\\AppData\\Local\\Temp\\tmpoxen3ajb\\db\\review_queue.sqlite",
+      "runtime_api": "runtime.review_queue.store.ReviewQueueStore",
+      "status": "pass"
+    },
+    "search_hunt": {
+      "initialization_method": "runtime_store_api",
+      "integrity": {
+        "applied_migrations": [
+          {
+            "id": "001_initial_search_hunt_store",
+            "version": "search_hunt_store.v1"
+          }
+        ],
+        "missing_tables": [],
+        "orphan_row_count": 0,
+        "schema_version": "search_hunt_store.v1",
+        "sqlite_integrity": "ok",
+        "status": "pass"
+      },
+      "migrations": [
+        {
+          "migration_id": "001_initial_search_hunt_store",
+          "statement_count": 25,
+          "version": "search_hunt_store.v1"
+        }
+      ],
+      "path": "C:\\Users\\Jules\\AppData\\Local\\Temp\\tmpoxen3ajb\\db\\search_hunt.sqlite",
+      "runtime_api": "runtime.search_hunt.store.SearchHuntStore",
+      "status": "pass"
+    },
+    "search_need": {
+      "initialization_method": "runtime_store_api",
+      "integrity": {
+        "applied_migrations": [
+          {
+            "key": "created_by",
+            "value": "runtime.search_need"
+          },
+          {
+            "key": "schema_version",
+            "value": "search_need_store.v0"
+          }
+        ],
+        "missing_tables": [],
+        "orphan_row_count": 0,
+        "schema_version": "search_need_store.v0",
+        "sqlite_integrity": "ok",
+        "status": "pass"
+      },
+      "migrations": [
+        {
+          "key": "created_by",
+          "value": "runtime.search_need"
+        },
+        {
+          "key": "schema_version",
+          "value": "search_need_store.v0"
+        }
+      ],
+      "path": "C:\\Users\\Jules\\AppData\\Local\\Temp\\tmpoxen3ajb\\db\\search_need.sqlite",
+      "runtime_api": "runtime.search_need.store.SearchNeedStore",
+      "status": "pass"
+    },
+    "source_cache": {
+      "initialization_method": "runtime_store_api",
+      "integrity": {
+        "applied_migrations": [
+          {
+            "applied_at": "2026-05-20T16:53:03Z",
+            "checksum": "2969c437dc5ad09c56c628025182c80eab59e72156b440b531611f719301292a",
+            "id": "001_initial_source_cache_store",
+            "version": "source_cache_store.v0"
+          }
+        ],
+        "missing_tables": [],
+        "schema_version": "source_cache_store.v0",
+        "sqlite_integrity": "ok",
+        "status": "pass"
+      },
+      "migrations": [
+        {
+          "checksum": "2969c437dc5ad09c56c628025182c80eab59e72156b440b531611f719301292a",
+          "migration_id": "001_initial_source_cache_store",
+          "statement_count": 12,
+          "version": "source_cache_store.v0"
+        }
+      ],
+      "path": "C:\\Users\\Jules\\AppData\\Local\\Temp\\tmpoxen3ajb\\db\\source_cache.sqlite",
+      "runtime_api": "runtime.source_cache.store.SourceCacheStore",
+      "status": "pass"
+    },
+    "workunit_queue": {
+      "initialization_method": "runtime_store_api",
+      "integrity": {
+        "applied_migrations": [
+          {
+            "id": "001_initial_workunit_queue_store",
+            "version": "workunit_queue_store.v0"
+          }
+        ],
+        "missing_tables": [],
+        "orphan_transition_count": 0,
+        "schema_version": "workunit_queue_store.v0",
+        "sqlite_integrity": "ok",
+        "status": "pass"
+      },
+      "migrations": [
+        {
+          "migration_id": "001_initial_workunit_queue_store",
+          "statement_count": 8,
+          "version": "workunit_queue_store.v0"
+        }
+      ],
+      "path": "C:\\Users\\Jules\\AppData\\Local\\Temp\\tmpoxen3ajb\\db\\workunit_queue.sqlite",
+      "runtime_api": "runtime.workunit_queue.store.WorkUnitQueueStore",
+      "status": "pass"
+    }
+  },
+  "task": "LOCAL-02",
+  "warnings": []
+}
+{
+  "deployment_performed": false,
+  "instance_root": "C:\\Users\\Jules\\AppData\\Local\\Temp\\tmpoxen3ajb",
+  "lan_enabled": false,
+  "limitations": [
+    "operator token hash is local instance state only"
+  ],
+  "raw_token_stored": false,
+  "schema_version": "local_operator_token_set_result.v0",
+  "status": "pass",
+  "token_hash_configured": true,
+  "token_printed": false,
+  "warnings": []
+}
+..................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................ERROR: refusing forbidden output root: runtime/out.json
+.ERROR: missing required migration inventory: C:\Users\Jules\AppData\Local\Temp\tmp352_zs8d\missing.json
+{
+  "input_ref": "D:/Projects/Eureka/eureka/examples/candidate_promotion_dry_runs/ready_for_promotion_dry_run_v0.json",
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "claimed_exhaustive_global_search": false,
+    "claimed_malware_safety": false,
+    "claimed_production_readiness": false,
+    "claimed_rights_clearance": false,
+    "claimed_verified_installability": false,
+    "created_local_private_state": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_execution": false,
+    "enabled_installers": false,
+    "enabled_live_probes": false,
+    "enabled_model_provider_calls": false,
+    "enabled_network_access": false,
+    "enabled_pack_import_runtime": false,
+    "enabled_source_connectors": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "implemented_actual_promotion": false,
+    "implemented_candidate_promotion_dry_run": true,
+    "implemented_hosted_review_runtime": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false
+  },
+  "record": {
+    "allowed_next_actions": [
+      "prepare_reviewed_public_record_proposal_future",
+      "request_human_review"
+    ],
+    "blockers": [],
+    "candidate_ref": "candidate.search_need.software_version.v0",
+    "candidate_summary": "Candidate has explicit fixture evidence and local dry-run approval.",
+    "conflict_requirement_results": [],
+    "duplicate_requirement_results": [],
+    "evidence_refs": [
+      "evidence.metadata_claim.fixture.v0"
+    ],
+    "evidence_requirement_results": [
+      {
+        "blocker_refs": [],
+        "evidence_or_review_refs": [
+          "evidence.metadata_claim.fixture.v0"
+        ],
+        "limitations": [
+          "Satisfied for dry-run does not mean accepted truth."
+        ],
+        "notes": "Evidence candidate is present for dry-run review only.",
+        "pass_fail_unknown": "pass",
+        "requirement_id": "evidence.present",
+        "requirement_status": "satisfied_for_dry_run",
+        "requirement_type": "evidence"
+      }
+    ],
+    "forbidden_next_actions": [
+      "accept_candidate",
+      "accept_evidence_truth",
+      "create_public_record",
+      "mutate_public_index",
+      "mutate_master_index",
+      "automatic_merge",
+      "automatic_delete",
+      "claim_rights_clearance",
+      "claim_malware_safety",
+      "claim_verified_installability",
+      "hosted_moderation"
+    ],
+    "identity_requirement_results": [],
+    "input_id": "candidate_promotion_dry_run.ready.fixture.v0",
+    "input_type": "candidate_promotion_dry_run",
+    "limitations": [
+      "Readiness is limited to dry-run planning."
+    ],
+    "notes": [
+      "Ready is not promotion."
+    ],
+    "policy_requirement_results": [],
+    "product_boundary": {
+      "changed_public_search_behavior": false,
+      "claimed_exhaustive_global_search": false,
+      "claimed_malware_safety": false,
+      "claimed_production_readiness": false,
+      "claimed_rights_clearance": false,
+      "claimed_verified_installability": false,
+      "created_local_private_state": false,
+      "enabled_accounts": false,
+      "enabled_downloads": false,
+      "enabled_execution": false,
+      "enabled_installers": false,
+      "enabled_live_probes": false,
+      "enabled_model_provider_calls": false,
+      "enabled_network_access": false,
+      "enabled_pack_import_runtime": false,
+      "enabled_source_connectors": false,
+      "enabled_source_sync": false,
+      "enabled_telemetry": false,
+      "enabled_uploads": false,
+      "implemented_actual_promotion": false,
+      "implemented_candidate_promotion_dry_run": true,
+      "implemented_hosted_review_runtime": false,
+      "mutated_master_index": false,
+      "mutated_public_index": false
+    },
+    "promotion_dry_run_id": "candidate_promotion_dry_run.ready.fixture.v0",
+    "promotion_dry_run_status": "ready_for_promotion_dry_run",
+    "promotion_readiness": "ready_for_future_reviewed_record_proposal",
+    "proposed_reviewed_record_summary_future": "A future reviewed-record proposal may be drafted after separate review.",
+    "related_pack_refs_future": [],
+    "related_search_need_refs": [
+      "search_need.software_version.vintage_app.v0"
+    ],
+    "related_workunit_refs": [
+      "search_need_review_v0"
+    ],
+    "review_entry_refs": [
+      "review_queue.workunit_result.1840e313e896.v0"
+    ],
+    "review_requirement_results": [
+      {
+        "blocker_refs": [],
+        "evidence_or_review_refs": [
+          "review_queue.workunit_result.1840e313e896.v0"
+        ],
+        "limitations": [
+          "Satisfied for dry-run does not mean accepted truth."
+        ],
+        "notes": "Local review includes promotion dry-run approval.",
+        "pass_fail_unknown": "pass",
+        "requirement_id": "review.dry_run_approval",
+        "requirement_status": "satisfied_for_dry_run",
+        "requirement_type": "review"
+      }
+    ],
+    "rights_risk_requirement_results": [],
+    "schema_version": "candidate_promotion_dry_run.v0",
+    "source_cache_bridge_refs": [],
+    "source_cache_refs": [],
+    "truth_boundary": {
+      "human_review_required_for_actual_promotion": true,
+      "promotion_dry_run_accepts_candidate": false,
+      "promotion_dry_run_accepts_evidence": false,
+      "promotion_dry_run_can_claim_exhaustive_global_search": false,
+      "promotion_dry_run_can_claim_malware_safety": false,
+      "promotion_dry_run_can_claim_production_readiness": false,
+      "promotion_dry_run_can_claim_rights_clearance": false,
+      "promotion_dry_run_can_claim_verified_installability": false,
+      "promotion_dry_run_creates_public_record": false,
+      "promotion_dry_run_is_public_truth": false,
+      "promotion_dry_run_mutates_master_index": false,
+      "promotion_dry_run_mutates_public_index": false
+    },
+    "warnings": []
+  },
+  "runtime_scope": {
+    "candidate_acceptance_enabled": false,
+    "evidence_acceptance_enabled": false,
+    "explicit_input_only": true,
+    "fixture_only": true,
+    "local_only": true,
+    "master_index_mutation_enabled": false,
+    "promotion_dry_run_only": true,
+    "public_index_mutation_enabled": false,
+    "writes_no_files_by_default": true
+  },
+  "schema_version": "candidate_promotion_dry_run_report.v0",
+  "status": "pass",
+  "summary": {
+    "blocker_categories": [],
+    "blocker_count": 0,
+    "candidate_ref": "candidate.search_need.software_version.v0",
+    "evidence_ref_count": 1,
+    "promotion_dry_run_accepts_candidate": false,
+    "promotion_dry_run_accepts_evidence": false,
+    "promotion_dry_run_id": "candidate_promotion_dry_run.ready.fixture.v0",
+    "promotion_dry_run_mutates_master_index": false,
+    "promotion_dry_run_mutates_public_index": false,
+    "promotion_dry_run_status": "ready_for_promotion_dry_run",
+    "promotion_readiness": "ready_for_future_reviewed_record_proposal",
+    "review_entry_ref_count": 1
+  },
+  "truth_boundary": {
+    "human_review_required_for_actual_promotion": true,
+    "promotion_dry_run_accepts_candidate": false,
+    "promotion_dry_run_accepts_evidence": false,
+    "promotion_dry_run_can_mutate_master_index": false,
+    "promotion_dry_run_can_mutate_public_index": false,
+    "promotion_dry_run_is_public_truth": false
+  },
+  "validation_errors": []
+}
+Candidate promotion dry-run
+status: pass
+promotion_dry_run_id: candidate_promotion_dry_run.8c77a313f795.v0
+promotion_readiness: not_ready_missing_evidence
+candidate_ref: candidate.search_need.software_version.v0
+blocker_count: 3
+{
+  "dev_to_main_should_remain_blocked": true,
+  "f0_should_remain_blocked": true,
+  "historical_references_left_intact": [],
+  "product_behavior_changed": false,
+  "runtime_files_modified": 0,
+  "schema_version": "r0_03b_2_reference_update_result.v0",
+  "status": "blocked",
+  "task": "R0-03B-2",
+  "unresolved_references": [
+    {
+      "reason": "refusing forbidden output root: runtime/out.json"
+    }
+  ],
+  "updates_attempted": 0,
+  "updates_blocked": 1,
+  "updates_completed": 0
+}
+{
+  "dev_to_main_should_remain_blocked": true,
+  "f0_should_remain_blocked": true,
+  "historical_references_left_intact": [],
+  "product_behavior_changed": false,
+  "runtime_files_modified": 0,
+  "schema_version": "r0_03b_2_reference_update_result.v0",
+  "status": "blocked",
+  "task": "R0-03B-2",
+  "unresolved_references": [
+    {
+      "reason": "missing required migration inventory: C:\\Users\\Jules\\AppData\\Local\\Temp\\tmp352_zs8d\\missing.json"
+    }
+  ],
+  "updates_attempted": 0,
+  "updates_blocked": 1,
+  "updates_completed": 0
+}
+H10 games emulation source summary
+status: pass
+source_count: 14
+live_access_enabled_count: 0
+software_list_hashset_fetch_enabled_count: 0
+downloads_enabled_count: 0
+uploads_enabled_count: 0
+execution_enabled_count: 0
+acquisition_action_enabled_count: 0
+H10 games emulation source summary
+status: invalid
+ERROR: refusing forbidden output root: site/dist
+H10 games emulation source summary
+status: invalid
+ERROR: refusing forbidden output root: data/public_index
+H10 games emulation source summary
+status: invalid
+ERROR: refusing forbidden output root: runtime
+H10 games emulation source summary
+status: invalid
+ERROR: refusing forbidden output root: contracts
+H10 games emulation source summary
+status: pass
+source_count: 14
+live_access_enabled_count: 0
+software_list_hashset_fetch_enabled_count: 0
+downloads_enabled_count: 0
+uploads_enabled_count: 0
+execution_enabled_count: 0
+acquisition_action_enabled_count: 0
+H11 storefront fixture normalization
+status: invalid
+ERROR: refusing forbidden output root: site/dist
+H11 storefront fixture normalization
+status: invalid
+ERROR: refusing forbidden output root: data/public_index
+H11 storefront fixture normalization
+status: invalid
+ERROR: refusing forbidden output root: storefront_accounts
+H11 storefront fixture normalization
+status: invalid
+ERROR: refusing forbidden output root: app_downloads
+H11 storefront fixture output summary
+status: invalid
+ERROR: refusing forbidden output root: site/dist
+H11 storefront fixture normalization
+status: pass
+source_id: fdroid_metadata
+fixture_only: true
+network_used: false
+download_account_purchase_install_launch: false
+H11 storefront fixture replay
+status: pass
+source_count: 1
+fixture_count: 10
+network_used: false
+H11 storefront fixture output summary
+status: pass
+source_count: 16
+normalized_record_count: 16
+listing_identity_candidate_count: 3
+acquisition_path_candidate_count: 2
+H11 storefront fixture normalization
+status: pass
+source_id: fdroid_metadata
+fixture_only: true
+network_used: false
+download_account_purchase_install_launch: false
+H11 storefront fixture replay
+status: pass
+source_count: 16
+fixture_count: 160
+network_used: false
+H11 storefront fixture output summary
+status: pass
+source_count: 16
+normalized_record_count: 16
+listing_identity_candidate_count: 3
+acquisition_path_candidate_count: 2
+H11 storefront live probe
+status: invalid
+ERROR: refusing forbidden output root: site/dist
+H11 storefront live probe
+status: invalid
+ERROR: refusing forbidden output root: data/public_index
+H11 storefront live probe
+status: invalid
+ERROR: refusing forbidden output root: accounts
+H11 storefront live probe
+status: invalid
+ERROR: refusing forbidden output root: receipts
+H11 storefront live probe
+status: invalid
+ERROR: refusing forbidden output root: entitlements
+H11 storefront live probe
+status: invalid
+ERROR: refusing forbidden output root: app_downloads
+H11 storefront live probe
+status: invalid
+ERROR: refusing forbidden output root: install_actions
+H11 storefront live probe
+status: valid
+mode: check
+source_id: fdroid_metadata
+result: blocked_by_missing_approval
+request_count: 0
+network_used: false
+blocked_reasons:
+- source approval_status is not approved_for_bounded_metadata_probe
+- live_access_approved is missing or false
+- metadata_probe_approved is missing or false
+- request key is not approved for this source
+- endpoint/metadata class is not allowlisted for current live access
+- rate limit policy is not approved
+- request budget is zero or missing
+- User-Agent/contact posture is not approved
+- auth/no-auth posture is not approved
+- cache TTL/no-cache decision is not approved
+- kill switch defaults fail-closed or is engaged
+H11 storefront live probe
+status: valid
+mode: check
+source_id: fdroid_metadata
+result: blocked_by_missing_approval
+request_count: 0
+network_used: false
+blocked_reasons:
+- source approval_status is not approved_for_bounded_metadata_probe
+- live_access_approved is missing or false
+- metadata_probe_approved is missing or false
+- request key is not approved for this source
+- endpoint/metadata class is not allowlisted for current live access
+- rate limit policy is not approved
+- request budget is zero or missing
+- User-Agent/contact posture is not approved
+- auth/no-auth posture is not approved
+- cache TTL/no-cache decision is not approved
+- kill switch defaults fail-closed or is engaged
+H11 storefront live probe output summary
+status: invalid
+ERROR: refusing forbidden output root: site/dist
+H11 storefront live probe output summary
+status: valid
+sources_attempted: 16
+blocked_sources: 16
+completed_sources: 0
+network_used: false
+H11 storefront live probe output summary
+status: valid
+sources_attempted: 16
+blocked_sources: 16
+completed_sources: 0
+network_used: false
+H11 storefront source summary
+status: pass
+source_count: 16
+live_access_enabled_count: 0
+storefront_product_fetch_enabled_count: 0
+downloads_enabled_count: 0
+account_access_enabled_count: 0
+purchase_automation_enabled_count: 0
+entitlement_checks_enabled_count: 0
+install_launch_enabled_count: 0
+H11 storefront source summary
+status: invalid
+ERROR: refusing forbidden output root: site/dist
+H11 storefront source summary
+status: invalid
+ERROR: refusing forbidden output root: data/public_index
+H11 storefront source summary
+status: invalid
+ERROR: refusing forbidden output root: runtime
+H11 storefront source summary
+status: invalid
+ERROR: refusing forbidden output root: contracts
+H11 storefront source summary
+status: pass
+source_count: 16
+live_access_enabled_count: 0
+storefront_product_fetch_enabled_count: 0
+downloads_enabled_count: 0
+account_access_enabled_count: 0
+purchase_automation_enabled_count: 0
+entitlement_checks_enabled_count: 0
+install_launch_enabled_count: 0
+H12 retro/community live probe
+status: invalid
+ERROR: refusing forbidden output root: site/dist
+H12 retro/community live probe
+status: invalid
+ERROR: refusing forbidden output root: data/public_index
+H12 retro/community live probe
+status: invalid
+ERROR: refusing forbidden output root: roms
+H12 retro/community live probe
+status: invalid
+ERROR: refusing forbidden output root: isos
+H12 retro/community live probe
+status: invalid
+ERROR: refusing forbidden output root: bios
+H12 retro/community live probe
+status: invalid
+ERROR: refusing forbidden output root: vintage_software_downloads
+H12 retro/community live probe
+status: invalid
+ERROR: refusing forbidden output root: archive_extractions
+H12 retro/community live probe
+status: invalid
+ERROR: refusing forbidden output root: execution_actions
+H12 retro/community live probe
+status: invalid
+ERROR: refusing forbidden output root: gated_source_accounts
+H12 retro/community live probe
+status: valid
+mode: check
+source_id: winworld_metadata
+result: blocked_by_missing_approval
+request_count: 0
+network_used: false
+blocked_reasons:
+- source approval_status is not approved_for_bounded_metadata_probe
+- live_access_approved is missing or false
+- metadata_probe_approved is missing or false
+- request key is not approved for this source
+- endpoint/metadata class is not allowlisted for current live access
+- rate limit policy is not approved
+- request budget is not approved
+- cache TTL/no-cache decision is not approved
+- kill switch defaults fail-closed or is engaged
+H12 retro/community live probe
+status: valid
+mode: check
+source_id: winworld_metadata
+result: blocked_by_missing_approval
+request_count: 0
+network_used: false
+blocked_reasons:
+- source approval_status is not approved_for_bounded_metadata_probe
+- live_access_approved is missing or false
+- metadata_probe_approved is missing or false
+- request key is not approved for this source
+- endpoint/metadata class is not allowlisted for current live access
+- rate limit policy is not approved
+- request budget is not approved
+- cache TTL/no-cache decision is not approved
+- kill switch defaults fail-closed or is engaged
+H12 retro/community live probe output summary
+status: invalid
+ERROR: refusing forbidden output root: site/dist
+H12 retro/community live probe output summary
+status: valid
+sources_attempted: 8
+blocked_sources: 8
+completed_sources: 0
+network_used: false
+H12 retro/community live probe output summary
+status: valid
+sources_attempted: 8
+blocked_sources: 8
+completed_sources: 0
+network_used: false
+{
+  "error": "refusing forbidden output root: site/dist",
+  "status": "invalid"
+}
+{
+  "error": "refusing forbidden output root: data/public_index",
+  "status": "invalid"
+}
+{
+  "error": "refusing forbidden output root: vendor_downloads",
+  "status": "invalid"
+}
+{
+  "error": "refusing forbidden output root: firmware_staging",
+  "status": "invalid"
+}
+{
+  "live_probe": {
+    "blocked_reasons": [
+      "allowed_requests.nvidia_driver_downloads.live_access_approved must be true",
+      "allowed_requests.nvidia_driver_downloads.metadata_probe_approved must be true",
+      "request key is not approved for live use: example_driver_metadata",
+      "endpoint/metadata class is not currently allowlisted: driver_metadata_lookup_future",
+      "rate limit policy is not approved for bounded metadata probe",
+      "request budget must allow at least one request",
+      "cache/no-cache decision is not approved",
+      "kill switch policy is not approved",
+      "kill switch blocks live probe"
+    ],
+    "driver_device_compatibility_candidate_present": false,
+    "firmware_update_candidate_present": false,
+    "master_index_mutated": false,
+    "network_used": false,
+    "payload_metadata_candidate_present": false,
+    "public_index_mutated": false,
+    "request_count": 0,
+    "result_status": "blocked_by_missing_approval",
+    "runtime_redistributable_candidate_present": false,
+    "source_id": "nvidia_driver_downloads",
+    "vendor_identity_candidate_present": false
+  },
+  "mode": "check",
+  "status": "valid",
+  "wrote_files": true
+}
+{
+  "live_probe": {
+    "blocked_reasons": [
+      "allowed_requests.nvidia_driver_downloads.live_access_approved must be true",
+      "allowed_requests.nvidia_driver_downloads.metadata_probe_approved must be true",
+      "request key is not approved for live use: example_driver_metadata",
+      "endpoint/metadata class is not currently allowlisted: driver_metadata_lookup_future",
+      "rate limit policy is not approved for bounded metadata probe",
+      "request budget must allow at least one request",
+      "cache/no-cache decision is not approved",
+      "kill switch policy is not approved",
+      "kill switch blocks live probe"
+    ],
+    "driver_device_compatibility_candidate_present": false,
+    "firmware_update_candidate_present": false,
+    "master_index_mutated": false,
+    "network_used": false,
+    "payload_metadata_candidate_present": false,
+    "public_index_mutated": false,
+    "request_count": 0,
+    "result_status": "blocked_by_missing_approval",
+    "runtime_redistributable_candidate_present": false,
+    "source_id": "nvidia_driver_downloads",
+    "vendor_identity_candidate_present": false
+  },
+  "mode": "check",
+  "status": "valid",
+  "wrote_files": false
+}
+{
+  "error": "refusing forbidden output root: site/dist",
+  "status": "invalid"
+}
+{
+  "error": "refusing forbidden output root: data/public_index",
+  "status": "invalid"
+}
+{
+  "attempted_sources": [],
+  "blocked_count": 15,
+  "blocked_reason_counts": {
+    "missing committed source-specific live approval": 16
+  },
+  "blocked_sources": [
+    "acer_support_downloads",
+    "amd_driver_downloads",
+    "apple_software_downloads",
+    "apple_software_update_catalog",
+    "asus_support_downloads",
+    "nvidia_driver_downloads",
+    "dell_support_downloads",
+    "generic_runtime_redistributable",
+    "generic_vendor_driver_firmware",
+    "hp_support_downloads",
+    "intel_driver_support",
+    "lenovo_support_downloads",
+    "microsoft_download_center",
+    "microsoft_runtime_redistributables",
+    "microsoft_update_catalog"
+  ],
+  "catalog_sync": false,
+  "completed_count": 0,
+  "completed_sources": [],
+  "downloads": false,
+  "driver_device_compatibility_candidate_count": 0,
+  "firmware_flash": false,
+  "firmware_update_candidate_count": 0,
+  "install_execute": false,
+  "network_used": false,
+  "payload_metadata_candidate_count": 0,
+  "product_boundary": {
+    "enabled_catalog_sync": false,
+    "enabled_downloads": false,
+    "enabled_source_sync": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false
+  },
+  "request_count_total": 0,
+  "result_count": 16,
+  "runtime_redistributable_candidate_count": 0,
+  "schema_version": "h5_vendor_update_live_probe_output_summary.v0",
+  "status": "pass",
+  "status_counts": {
+    "blocked_by_missing_approval": 16
+  },
+  "truth_boundary": {
+    "accepted_public_truth": false,
+    "master_index_mutated": false,
+    "public_index_mutated": false
+  },
+  "vendor_identity_candidate_count": 0,
+  "vendor_tool_invocation": false
+}
+{
+  "attempted_sources": [],
+  "blocked_count": 15,
+  "blocked_reason_counts": {
+    "missing committed source-specific live approval": 16
+  },
+  "blocked_sources": [
+    "acer_support_downloads",
+    "amd_driver_downloads",
+    "apple_software_downloads",
+    "apple_software_update_catalog",
+    "asus_support_downloads",
+    "nvidia_driver_downloads",
+    "dell_support_downloads",
+    "generic_runtime_redistributable",
+    "generic_vendor_driver_firmware",
+    "hp_support_downloads",
+    "intel_driver_support",
+    "lenovo_support_downloads",
+    "microsoft_download_center",
+    "microsoft_runtime_redistributables",
+    "microsoft_update_catalog"
+  ],
+  "catalog_sync": false,
+  "completed_count": 0,
+  "completed_sources": [],
+  "downloads": false,
+  "driver_device_compatibility_candidate_count": 0,
+  "firmware_flash": false,
+  "firmware_update_candidate_count": 0,
+  "install_execute": false,
+  "network_used": false,
+  "payload_metadata_candidate_count": 0,
+  "product_boundary": {
+    "enabled_catalog_sync": false,
+    "enabled_downloads": false,
+    "enabled_source_sync": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false
+  },
+  "request_count_total": 0,
+  "result_count": 16,
+  "runtime_redistributable_candidate_count": 0,
+  "schema_version": "h5_vendor_update_live_probe_output_summary.v0",
+  "status": "pass",
+  "status_counts": {
+    "blocked_by_missing_approval": 16
+  },
+  "truth_boundary": {
+    "accepted_public_truth": false,
+    "master_index_mutated": false,
+    "public_index_mutated": false
+  },
+  "vendor_identity_candidate_count": 0,
+  "vendor_tool_invocation": false
+}
+{
+  "error": "refusing forbidden output root: site/dist",
+  "status": "invalid"
+}
+{
+  "error": "refusing forbidden output root: data/public_index",
+  "status": "invalid"
+}
+{
+  "error": "refusing forbidden output root: warc_cache",
+  "status": "invalid"
+}
+{
+  "error": "refusing forbidden output root: media_downloads",
+  "status": "invalid"
+}
+{
+  "live_probe": {
+    "blocked_reasons": [
+      "allowed_requests.wayback_cdx_memento.live_access_approved must be true",
+      "allowed_requests.wayback_cdx_memento.metadata_probe_approved must be true",
+      "request key is not approved for live use: example_capture_metadata",
+      "endpoint/metadata class is not currently allowlisted: cdx_metadata_lookup_future",
+      "rate limit policy is not approved for bounded metadata probe",
+      "request budget must allow at least one request",
+      "cache/no-cache decision is not approved",
+      "kill switch policy is not approved",
+      "kill switch blocks live probe"
+    ],
+    "dead_link_candidate_present": false,
+    "master_index_mutated": false,
+    "media_candidate_present": false,
+    "network_used": false,
+    "news_event_candidate_present": false,
+    "public_document_candidate_present": false,
+    "public_index_mutated": false,
+    "request_count": 0,
+    "result_status": "blocked_by_missing_approval",
+    "source_id": "wayback_cdx_memento",
+    "time_state_candidate_present": false,
+    "web_capture_candidate_present": false
+  },
+  "mode": "check",
+  "status": "valid",
+  "wrote_files": true
+}
+{
+  "live_probe": {
+    "blocked_reasons": [
+      "allowed_requests.wayback_cdx_memento.live_access_approved must be true",
+      "allowed_requests.wayback_cdx_memento.metadata_probe_approved must be true",
+      "request key is not approved for live use: example_capture_metadata",
+      "endpoint/metadata class is not currently allowlisted: cdx_metadata_lookup_future",
+      "rate limit policy is not approved for bounded metadata probe",
+      "request budget must allow at least one request",
+      "cache/no-cache decision is not approved",
+      "kill switch policy is not approved",
+      "kill switch blocks live probe"
+    ],
+    "dead_link_candidate_present": false,
+    "master_index_mutated": false,
+    "media_candidate_present": false,
+    "network_used": false,
+    "news_event_candidate_present": false,
+    "public_document_candidate_present": false,
+    "public_index_mutated": false,
+    "request_count": 0,
+    "result_status": "blocked_by_missing_approval",
+    "source_id": "wayback_cdx_memento",
+    "time_state_candidate_present": false,
+    "web_capture_candidate_present": false
+  },
+  "mode": "check",
+  "status": "valid",
+  "wrote_files": false
+}
+{
+  "error": "refusing forbidden output root: site/dist",
+  "status": "invalid"
+}
+{
+  "error": "refusing forbidden output root: data/public_index",
+  "status": "invalid"
+}
+{
+  "archived_page_fetch": false,
+  "attempted_sources": [],
+  "blocked_count": 13,
+  "blocked_reason_counts": {
+    "missing committed source-specific live approval": 13,
+    "restricted/sensitive source live probe is policy-blocked by default": 1
+  },
+  "blocked_sources": [
+    "aapb_broadcast_archive",
+    "archive_today_snapshot",
+    "wayback_cdx_memento",
+    "chronicling_america",
+    "common_crawl_cdxj",
+    "cspan_video_library",
+    "gdelt_news_event",
+    "generic_newspaper_archive",
+    "generic_public_event_trace",
+    "generic_web_archive",
+    "public_warc_wacz_collection",
+    "restricted_public_document_manifest",
+    "trove_newspapers"
+  ],
+  "completed_count": 0,
+  "completed_sources": [],
+  "dead_link_candidate_count": 0,
+  "media_candidate_count": 0,
+  "network_used": false,
+  "news_event_candidate_count": 0,
+  "product_boundary": {
+    "enabled_crawling": false,
+    "enabled_fetching": false,
+    "enabled_source_sync": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false
+  },
+  "public_document_candidate_count": 0,
+  "request_count_total": 0,
+  "restricted_source_access": false,
+  "result_count": 14,
+  "schema_version": "h6_web_archive_live_probe_output_summary.v0",
+  "scraping_crawling": false,
+  "status": "pass",
+  "status_counts": {
+    "blocked_by_missing_approval": 13,
+    "blocked_by_sensitive_source_policy": 1
+  },
+  "time_state_candidate_count": 0,
+  "truth_boundary": {
+    "accepted_public_truth": false,
+    "master_index_mutated": false,
+    "public_index_mutated": false
+  },
+  "warc_wacz_fetch": false,
+  "web_capture_candidate_count": 0
+}
+{
+  "archived_page_fetch": false,
+  "attempted_sources": [],
+  "blocked_count": 13,
+  "blocked_reason_counts": {
+    "missing committed source-specific live approval": 13,
+    "restricted/sensitive source live probe is policy-blocked by default": 1
+  },
+  "blocked_sources": [
+    "aapb_broadcast_archive",
+    "archive_today_snapshot",
+    "wayback_cdx_memento",
+    "chronicling_america",
+    "common_crawl_cdxj",
+    "cspan_video_library",
+    "gdelt_news_event",
+    "generic_newspaper_archive",
+    "generic_public_event_trace",
+    "generic_web_archive",
+    "public_warc_wacz_collection",
+    "restricted_public_document_manifest",
+    "trove_newspapers"
+  ],
+  "completed_count": 0,
+  "completed_sources": [],
+  "dead_link_candidate_count": 0,
+  "media_candidate_count": 0,
+  "network_used": false,
+  "news_event_candidate_count": 0,
+  "product_boundary": {
+    "enabled_crawling": false,
+    "enabled_fetching": false,
+    "enabled_source_sync": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false
+  },
+  "public_document_candidate_count": 0,
+  "request_count_total": 0,
+  "restricted_source_access": false,
+  "result_count": 14,
+  "schema_version": "h6_web_archive_live_probe_output_summary.v0",
+  "scraping_crawling": false,
+  "status": "pass",
+  "status_counts": {
+    "blocked_by_missing_approval": 13,
+    "blocked_by_sensitive_source_policy": 1
+  },
+  "time_state_candidate_count": 0,
+  "truth_boundary": {
+    "accepted_public_truth": false,
+    "master_index_mutated": false,
+    "public_index_mutated": false
+  },
+  "warc_wacz_fetch": false,
+  "web_capture_candidate_count": 0
+}
+{
+  "error": "refusing forbidden output root: site/dist",
+  "status": "invalid"
+}
+{
+  "error": "refusing forbidden output root: data/public_index",
+  "status": "invalid"
+}
+{
+  "error": "refusing forbidden output root: harvest",
+  "status": "invalid"
+}
+{
+  "error": "refusing forbidden output root: media_downloads",
+  "status": "invalid"
+}
+{
+  "live_probe": {
+    "access_rights_candidate_present": false,
+    "bibliographic_candidate_present": false,
+    "blocked_reasons": [
+      "allowed_requests.openalex.live_access_approved must be true",
+      "allowed_requests.openalex.metadata_probe_approved must be true",
+      "request key is not approved for live use: example_work_metadata",
+      "endpoint/metadata class is not currently allowlisted: work_metadata_lookup_future",
+      "rate limit decision is not approved",
+      "request budget must be set before live probe",
+      "auth/no-auth posture is not approved",
+      "cache TTL or no-cache decision is not approved",
+      "kill switch blocks live probe"
+    ],
+    "citation_candidate_present": false,
+    "cultural_object_candidate_present": false,
+    "dataset_candidate_present": false,
+    "evidence_preview_present": false,
+    "network_used": false,
+    "patent_candidate_present": false,
+    "request_count": 0,
+    "research_work_candidate_present": false,
+    "result_status": "blocked_by_missing_approval",
+    "review_seed_present": true,
+    "schema_version": "h7_library_research_live_probe_summary.v0",
+    "source_cache_preview_present": false,
+    "source_id": "openalex"
+  },
+  "mode": "check",
+  "status": "valid",
+  "wrote_files": true
+}
+{
+  "created_directories": [
+    "config",
+    "db",
+    "logs",
+    "run",
+    "tmp",
+    "exports",
+    "imports"
+  ],
+  "deployment_performed": false,
+  "dry_run": false,
+  "instance_id": "eureka-local-cdac8989bf775c4d",
+  "instance_layout": {
+    "current_instance_root": "C:\\Users\\Jules\\AppData\\Local\\Temp\\tmp4q3i2mrd",
+    "is_legacy_sibling": false,
+    "is_preferred_default": false,
+    "is_repo_nested": false,
+    "layout_class": "outside_workspace_explicit",
+    "legacy_sibling_instance_root": "D:\\Projects\\Eureka\\eureka-instance",
+    "preferred_default_instance_root": "D:\\Projects\\Eureka\\instances\\default",
+    "preferred_instances_root": "D:\\Projects\\Eureka\\instances",
+    "repo_root": "D:\\Projects\\Eureka\\eureka",
+    "warnings": [],
+    "workspace_root": "D:\\Projects\\Eureka"
+  },
+  "instance_root": "C:\\Users\\Jules\\AppData\\Local\\Temp\\tmp4q3i2mrd",
+  "instance_schema_version": 1,
+  "lan_enabled": false,
+  "limitations": [
+    "LOCAL-02 initializes explicit versioned local state only",
+    "HTTP service is not implemented",
+    "HTML workbench is not implemented",
+    "LAN mode is disabled",
+    "deployment is disabled",
+    "destructive migration is disabled",
+    "Work queue records do not execute background work"
+  ],
+  "migration_state": {
+    "backup_plan": {
+      "metadata_only_in_LOCAL_02": true,
+      "required_before_apply": true
+    },
+    "backup_required": false,
+    "blockers": [],
+    "current_instance_schema_version": 1,
+    "destructive_migration_required": false,
+    "instance_id": "eureka-local-cdac8989bf775c4d",
+    "migration_allowed": false,
+    "migration_history": [
+      {
+        "at": "2026-05-20T16:58:53Z",
+        "destructive": false,
+        "event": "schema_guard_initialized",
+        "from_instance_schema_version": 1,
+        "to_instance_schema_version": 1
+      }
+    ],
+    "migration_needed": false,
+    "rollback_available": false,
+    "rollback_plan": {
+      "automatic_rollback_implemented": false,
+      "metadata_required_before_apply": true
+    },
+    "schema_version": "eureka_local_migration_state.v0",
+    "target_instance_schema_version": 1,
+    "warnings": []
+  },
+  "planned_actions": [
+    "write config/instance.json",
+    "ensure directory config",
+    "ensure directory db",
+    "ensure directory logs",
+    "ensure directory run",
+    "ensure directory tmp",
+    "ensure directory exports",
+    "ensure directory imports",
+    "ensure local state file logs/eureka.log",
+    "ensure local state file run/instance.lock",
+    "ensure local state file tmp/.keep",
+    "ensure local state file exports/.keep",
+    "ensure local state file imports/.keep",
+    "initialize store source_cache",
+    "initialize store evidence_ledger",
+    "initialize store review_queue",
+    "initialize store public_index",
+    "initialize store workunit_queue",
+    "initialize store search_hunt",
+    "initialize store search_need",
+    "initialize store agent_research",
+    "initialize store ai_escalation",
+    "write config/store_manifest.json",
+    "write config/migration_state.json",
+    "write run/status.json"
+  ],
+  "planned_database_files": [
+    "db/source_cache.sqlite",
+    "db/evidence_ledger.sqlite",
+    "db/review_queue.sqlite",
+    "db/public_index.sqlite",
+    "db/workunit_queue.sqlite",
+    "db/search_hunt.sqlite",
+    "db/search_need.sqlite",
+    "db/agent_research.sqlite",
+    "db/ai_escalation.sqlite"
+  ],
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "required_files": [
+    "config/instance.json",
+    "config/store_manifest.json",
+    "config/migration_state.json",
+    "run/status.json"
+  ],
+  "schema_version": "local_instance_init_result.v0",
+  "server_enabled": false,
+  "status": "pass",
+  "store_manifest": {
+    "instance_id": "eureka-local-cdac8989bf775c4d",
+    "instance_schema_version": 1,
+    "last_checked_at": "2026-05-20T16:58:53Z",
+    "schema_version": "eureka_local_store_manifest.v0",
+    "stores": {
+      "agent_research": {
+        "initialized": true,
+        "integrity_check_supported": true,
+        "last_checked_at": "2026-05-20T16:58:53Z",
+        "migration_supported": true,
+        "relative_path": "db/agent_research.sqlite",
+        "required": true,
+        "schema_version": "agent_research_store.v0",
+        "store_id": "agent_research",
+        "store_kind": "sqlite_agent_research"
+      },
+      "ai_escalation": {
+        "initialized": true,
+        "integrity_check_supported": true,
+        "last_checked_at": "2026-05-20T16:58:53Z",
+        "migration_supported": true,
+        "relative_path": "db/ai_escalation.sqlite",
+        "required": true,
+        "schema_version": "ai_escalation_store.v0",
+        "store_id": "ai_escalation",
+        "store_kind": "sqlite_ai_escalation"
+      },
+      "evidence_ledger": {
+        "initialized": true,
+        "integrity_check_supported": true,
+        "last_checked_at": "2026-05-20T16:58:53Z",
+        "migration_supported": true,
+        "relative_path": "db/evidence_ledger.sqlite",
+        "required": true,
+        "schema_version": "evidence_ledger_store.v0",
+        "store_id": "evidence_ledger",
+        "store_kind": "sqlite_evidence_ledger"
+      },
+      "public_index": {
+        "initialized": true,
+        "integrity_check_supported": true,
+        "last_checked_at": "2026-05-20T16:58:53Z",
+        "migration_supported": true,
+        "relative_path": "db/public_index.sqlite",
+        "required": true,
+        "schema_version": "public_index_store.v0",
+        "store_id": "public_index",
+        "store_kind": "sqlite_public_index"
+      },
+      "review_queue": {
+        "initialized": true,
+        "integrity_check_supported": true,
+        "last_checked_at": "2026-05-20T16:58:53Z",
+        "migration_supported": true,
+        "relative_path": "db/review_queue.sqlite",
+        "required": true,
+        "schema_version": "review_queue_store.v0",
+        "store_id": "review_queue",
+        "store_kind": "sqlite_review_queue"
+      },
+      "search_hunt": {
+        "initialized": true,
+        "integrity_check_supported": true,
+        "last_checked_at": "2026-05-20T16:58:53Z",
+        "migration_supported": true,
+        "relative_path": "db/search_hunt.sqlite",
+        "required": true,
+        "schema_version": "search_hunt_store.v1",
+        "store_id": "search_hunt",
+        "store_kind": "sqlite_search_hunt"
+      },
+      "search_need": {
+        "initialized": true,
+        "integrity_check_supported": true,
+        "last_checked_at": "2026-05-20T16:58:53Z",
+        "migration_supported": true,
+        "relative_path": "db/search_need.sqlite",
+        "required": true,
+        "schema_version": "search_need_store.v0",
+        "store_id": "search_need",
+        "store_kind": "sqlite_search_need"
+      },
+      "source_cache": {
+        "initialized": true,
+        "integrity_check_supported": true,
+        "last_checked_at": "2026-05-20T16:58:53Z",
+        "migration_supported": true,
+        "relative_path": "db/source_cache.sqlite",
+        "required": true,
+        "schema_version": "source_cache_store.v0",
+        "store_id": "source_cache",
+        "store_kind": "sqlite_source_cache"
+      },
+      "workunit_queue": {
+        "initialized": true,
+        "integrity_check_supported": true,
+        "last_checked_at": "2026-05-20T16:58:53Z",
+        "migration_supported": true,
+        "relative_path": "db/workunit_queue.sqlite",
+        "required": true,
+        "schema_version": "workunit_queue_store.v0",
+        "store_id": "workunit_queue",
+        "store_kind": "sqlite_workunit_queue"
+      }
+    }
+  },
+  "stores": {
+    "agent_research": {
+      "initialization_method": "runtime_store_api",
+      "integrity": {
+        "applied_migrations": [
+          {
+            "key": "created_by",
+            "value": "runtime.agent_research"
+          },
+          {
+            "key": "schema_version",
+            "value": "agent_research_store.v0"
+          }
+        ],
+        "enabled_task_count": 0,
+        "missing_tables": [],
+        "orphan_row_count": 0,
+        "schema_version": "agent_research_store.v0",
+        "sqlite_integrity": "ok",
+        "status": "pass"
+      },
+      "migrations": [
+        {
+          "key": "created_by",
+          "value": "runtime.agent_research"
+        },
+        {
+          "key": "schema_version",
+          "value": "agent_research_store.v0"
+        }
+      ],
+      "path": "C:\\Users\\Jules\\AppData\\Local\\Temp\\tmp4q3i2mrd\\db\\agent_research.sqlite",
+      "runtime_api": "runtime.agent_research.store.AgentResearchStore",
+      "status": "pass"
+    },
+    "ai_escalation": {
+      "initialization_method": "runtime_store_api",
+      "integrity": {
+        "applied_migrations": [
+          {
+            "key": "schema_event:2026-05-20T16:58:54Z",
+            "updated_at": "2026-05-20T16:58:54Z",
+            "value": "apply_schema"
+          }
+        ],
+        "enabled_gate_count": 0,
+        "enabled_preflight_count": 0,
+        "missing_tables": [],
+        "schema_version": "ai_escalation_store.v0",
+        "sqlite_integrity": "ok",
+        "status": "pass"
+      },
+      "migrations": [
+        {
+          "applied_at": "2026-05-20T16:58:54Z",
+          "schema_version": "ai_escalation_store.v0",
+          "status": "pass"
+        }
+      ],
+      "path": "C:\\Users\\Jules\\AppData\\Local\\Temp\\tmp4q3i2mrd\\db\\ai_escalation.sqlite",
+      "runtime_api": "runtime.ai_escalation.store.AIEscalationStore",
+      "status": "pass"
+    },
+    "evidence_ledger": {
+      "initialization_method": "runtime_store_api",
+      "integrity": {
+        "applied_migrations": [
+          {
+            "applied_at": "2026-05-20T16:58:53Z",
+            "checksum": "3f4a3ce186d36e50cad59afb14184cc981f1e7bd0445269df14ac7ea9d88cd7a",
+            "id": "001_initial_evidence_ledger_store",
+            "version": "evidence_ledger_store.v0"
+          }
+        ],
+        "missing_tables": [],
+        "schema_version": "evidence_ledger_store.v0",
+        "sqlite_integrity": "ok",
+        "status": "pass"
+      },
+      "migrations": [
+        {
+          "checksum": "3f4a3ce186d36e50cad59afb14184cc981f1e7bd0445269df14ac7ea9d88cd7a",
+          "migration_id": "001_initial_evidence_ledger_store",
+          "statement_count": 14,
+          "version": "evidence_ledger_store.v0"
+        }
+      ],
+      "path": "C:\\Users\\Jules\\AppData\\Local\\Temp\\tmp4q3i2mrd\\db\\evidence_ledger.sqlite",
+      "runtime_api": "runtime.evidence_ledger.store.EvidenceLedgerStore",
+      "status": "pass"
+    },
+    "public_index": {
+      "initialization_method": "runtime_store_api",
+      "integrity": {
+        "applied_migrations": [
+          {
+            "applied_at": "2026-05-20T16:58:53Z",
+            "checksum": "cb2591e37945b116d245c51124240cc7fb37f43cacc4f1148cecefb768c31cc9",
+            "id": "public_index_initial_schema",
+            "version": "public_index_store.v0"
+          }
+        ],
+        "missing_tables": [],
+        "schema_version": "public_index_store.v0",
+        "sqlite_integrity": "ok",
+        "status": "pass"
+      },
+      "migrations": [
+        {
+          "checksum": "cb2591e37945b116d245c51124240cc7fb37f43cacc4f1148cecefb768c31cc9",
+          "id": "public_index_initial_schema",
+          "version": "public_index_store.v0"
+        }
+      ],
+      "path": "C:\\Users\\Jules\\AppData\\Local\\Temp\\tmp4q3i2mrd\\db\\public_index.sqlite",
+      "runtime_api": "runtime.public_index.store.PublicIndexStore",
+      "status": "pass"
+    },
+    "review_queue": {
+      "initialization_method": "runtime_store_api",
+      "integrity": {
+        "applied_migrations": [
+          {
+            "applied_at": "2026-05-20T16:58:53Z",
+            "checksum": "ff83c4f1f40ba380b480653c17c6cc3d014e0ccd3ddb0aa220cc4770832c85a9",
+            "id": "001_initial_review_queue_store",
+            "version": "review_queue_store.v0"
+          }
+        ],
+        "missing_tables": [],
+        "schema_version": "review_queue_store.v0",
+        "sqlite_integrity": "ok",
+        "status": "pass"
+      },
+      "migrations": [
+        {
+          "checksum": "ff83c4f1f40ba380b480653c17c6cc3d014e0ccd3ddb0aa220cc4770832c85a9",
+          "migration_id": "001_initial_review_queue_store",
+          "statement_count": 13,
+          "version": "review_queue_store.v0"
+        }
+      ],
+      "path": "C:\\Users\\Jules\\AppData\\Local\\Temp\\tmp4q3i2mrd\\db\\review_queue.sqlite",
+      "runtime_api": "runtime.review_queue.store.ReviewQueueStore",
+      "status": "pass"
+    },
+    "search_hunt": {
+      "initialization_method": "runtime_store_api",
+      "integrity": {
+        "applied_migrations": [
+          {
+            "id": "001_initial_search_hunt_store",
+            "version": "search_hunt_store.v1"
+          }
+        ],
+        "missing_tables": [],
+        "orphan_row_count": 0,
+        "schema_version": "search_hunt_store.v1",
+        "sqlite_integrity": "ok",
+        "status": "pass"
+      },
+      "migrations": [
+        {
+          "migration_id": "001_initial_search_hunt_store",
+          "statement_count": 25,
+          "version": "search_hunt_store.v1"
+        }
+      ],
+      "path": "C:\\Users\\Jules\\AppData\\Local\\Temp\\tmp4q3i2mrd\\db\\search_hunt.sqlite",
+      "runtime_api": "runtime.search_hunt.store.SearchHuntStore",
+      "status": "pass"
+    },
+    "search_need": {
+      "initialization_method": "runtime_store_api",
+      "integrity": {
+        "applied_migrations": [
+          {
+            "key": "created_by",
+            "value": "runtime.search_need"
+          },
+          {
+            "key": "schema_version",
+            "value": "search_need_store.v0"
+          }
+        ],
+        "missing_tables": [],
+        "orphan_row_count": 0,
+        "schema_version": "search_need_store.v0",
+        "sqlite_integrity": "ok",
+        "status": "pass"
+      },
+      "migrations": [
+        {
+          "key": "created_by",
+          "value": "runtime.search_need"
+        },
+        {
+          "key": "schema_version",
+          "value": "search_need_store.v0"
+        }
+      ],
+      "path": "C:\\Users\\Jules\\AppData\\Local\\Temp\\tmp4q3i2mrd\\db\\search_need.sqlite",
+      "runtime_api": "runtime.search_need.store.SearchNeedStore",
+      "status": "pass"
+    },
+    "source_cache": {
+      "initialization_method": "runtime_store_api",
+      "integrity": {
+        "applied_migrations": [
+          {
+            "applied_at": "2026-05-20T16:58:53Z",
+            "checksum": "2969c437dc5ad09c56c628025182c80eab59e72156b440b531611f719301292a",
+            "id": "001_initial_source_cache_store",
+            "version": "source_cache_store.v0"
+          }
+        ],
+        "missing_tables": [],
+        "schema_version": "source_cache_store.v0",
+        "sqlite_integrity": "ok",
+        "status": "pass"
+      },
+      "migrations": [
+        {
+          "checksum": "2969c437dc5ad09c56c628025182c80eab59e72156b440b531611f719301292a",
+          "migration_id": "001_initial_source_cache_store",
+          "statement_count": 12,
+          "version": "source_cache_store.v0"
+        }
+      ],
+      "path": "C:\\Users\\Jules\\AppData\\Local\\Temp\\tmp4q3i2mrd\\db\\source_cache.sqlite",
+      "runtime_api": "runtime.source_cache.store.SourceCacheStore",
+      "status": "pass"
+    },
+    "workunit_queue": {
+      "initialization_method": "runtime_store_api",
+      "integrity": {
+        "applied_migrations": [
+          {
+            "id": "001_initial_workunit_queue_store",
+            "version": "workunit_queue_store.v0"
+          }
+        ],
+        "missing_tables": [],
+        "orphan_transition_count": 0,
+        "schema_version": "workunit_queue_store.v0",
+        "sqlite_integrity": "ok",
+        "status": "pass"
+      },
+      "migrations": [
+        {
+          "migration_id": "001_initial_workunit_queue_store",
+          "statement_count": 8,
+          "version": "workunit_queue_store.v0"
+        }
+      ],
+      "path": "C:\\Users\\Jules\\AppData\\Local\\Temp\\tmp4q3i2mrd\\db\\workunit_queue.sqlite",
+      "runtime_api": "runtime.workunit_queue.store.WorkUnitQueueStore",
+      "status": "pass"
+    }
+  },
+  "task": "LOCAL-02",
+  "warnings": []
+}
+{
+  "deployment_performed": false,
+  "instance_root": "C:\\Users\\Jules\\AppData\\Local\\Temp\\tmp4q3i2mrd",
+  "lan_enabled": false,
+  "limitations": [
+    "operator token hash is local instance state only"
+  ],
+  "raw_token_stored": false,
+  "schema_version": "local_operator_token_set_result.v0",
+  "status": "pass",
+  "token_hash_configured": true,
+  "token_printed": false,
+  "warnings": []
+}
+{
+  "live_probe": {
+    "access_rights_candidate_present": false,
+    "bibliographic_candidate_present": false,
+    "blocked_reasons": [
+      "allowed_requests.openalex.live_access_approved must be true",
+      "allowed_requests.openalex.metadata_probe_approved must be true",
+      "request key is not approved for live use: example_work_metadata",
+      "endpoint/metadata class is not currently allowlisted: work_metadata_lookup_future",
+      "rate limit decision is not approved",
+      "request budget must be set before live probe",
+      "auth/no-auth posture is not approved",
+      "cache TTL or no-cache decision is not approved",
+      "kill switch blocks live probe"
+    ],
+    "citation_candidate_present": false,
+    "cultural_object_candidate_present": false,
+    "dataset_candidate_present": false,
+    "evidence_preview_present": false,
+    "network_used": false,
+    "patent_candidate_present": false,
+    "request_count": 0,
+    "research_work_candidate_present": false,
+    "result_status": "blocked_by_missing_approval",
+    "review_seed_present": true,
+    "schema_version": "h7_library_research_live_probe_summary.v0",
+    "source_cache_preview_present": false,
+    "source_id": "openalex"
+  },
+  "mode": "check",
+  "status": "valid",
+  "wrote_files": false
+}
+{
+  "error": "refusing forbidden output root: site/dist",
+  "status": "invalid"
+}
+{
+  "error": "refusing forbidden output root: data/public_index",
+  "status": "invalid"
+}
+{
+  "access_rights_candidate_count": 0,
+  "attempted_sources": [
+    "arxiv",
+    "crossref",
+    "datacite",
+    "google_patents",
+    "open_library",
+    "openalex",
+    "pubmed"
+  ],
+  "bibliographic_candidate_count": 0,
+  "blocked_reasons": [
+    "allowed_requests.arxiv.live_access_approved must be true",
+    "allowed_requests.arxiv.metadata_probe_approved must be true",
+    "allowed_requests.crossref.live_access_approved must be true",
+    "allowed_requests.crossref.metadata_probe_approved must be true",
+    "allowed_requests.datacite.live_access_approved must be true",
+    "allowed_requests.datacite.metadata_probe_approved must be true",
+    "allowed_requests.google_patents.live_access_approved must be true",
+    "allowed_requests.google_patents.metadata_probe_approved must be true",
+    "allowed_requests.open_library.live_access_approved must be true",
+    "allowed_requests.open_library.metadata_probe_approved must be true",
+    "allowed_requests.openalex.live_access_approved must be true",
+    "allowed_requests.openalex.metadata_probe_approved must be true",
+    "allowed_requests.pubmed.live_access_approved must be true",
+    "allowed_requests.pubmed.metadata_probe_approved must be true",
+    "auth/no-auth posture is not approved",
+    "cache TTL or no-cache decision is not approved",
+    "endpoint/metadata class is not currently allowlisted: article_metadata_lookup_future",
+    "endpoint/metadata class is not currently allowlisted: dataset_metadata_lookup_future",
+    "endpoint/metadata class is not currently allowlisted: doi_metadata_lookup_future",
+    "endpoint/metadata class is not currently allowlisted: patent_metadata_lookup_future",
+    "endpoint/metadata class is not currently allowlisted: work_metadata_lookup_future",
+    "kill switch blocks live probe",
+    "rate limit decision is not approved",
+    "request budget must be set before live probe",
+    "request key is not approved for live use: example_article_metadata",
+    "request key is not approved for live use: example_dataset_metadata",
+    "request key is not approved for live use: example_doi_metadata",
+    "request key is not approved for live use: example_patent_metadata",
+    "request key is not approved for live use: example_work_metadata"
+  ],
+  "blocked_sources": [
+    "arxiv",
+    "crossref",
+    "datacite",
+    "google_patents",
+    "open_library",
+    "openalex",
+    "pubmed"
+  ],
+  "citation_relation_candidate_count": 0,
+  "completed_sources": [],
+  "cultural_object_candidate_count": 0,
+  "dataset_candidate_count": 0,
+  "health_summary_count": 8,
+  "master_index_mutated": false,
+  "network_used": false,
+  "patent_candidate_count": 0,
+  "public_index_mutated": false,
+  "request_count_total": 0,
+  "research_work_candidate_count": 0,
+  "schema_version": "h7_library_research_live_probe_output_summary.v0",
+  "status": "valid"
+}
+{
+  "access_rights_candidate_count": 0,
+  "attempted_sources": [
+    "arxiv",
+    "crossref",
+    "datacite",
+    "google_patents",
+    "open_library",
+    "openalex",
+    "pubmed"
+  ],
+  "bibliographic_candidate_count": 0,
+  "blocked_reasons": [
+    "allowed_requests.arxiv.live_access_approved must be true",
+    "allowed_requests.arxiv.metadata_probe_approved must be true",
+    "allowed_requests.crossref.live_access_approved must be true",
+    "allowed_requests.crossref.metadata_probe_approved must be true",
+    "allowed_requests.datacite.live_access_approved must be true",
+    "allowed_requests.datacite.metadata_probe_approved must be true",
+    "allowed_requests.google_patents.live_access_approved must be true",
+    "allowed_requests.google_patents.metadata_probe_approved must be true",
+    "allowed_requests.open_library.live_access_approved must be true",
+    "allowed_requests.open_library.metadata_probe_approved must be true",
+    "allowed_requests.openalex.live_access_approved must be true",
+    "allowed_requests.openalex.metadata_probe_approved must be true",
+    "allowed_requests.pubmed.live_access_approved must be true",
+    "allowed_requests.pubmed.metadata_probe_approved must be true",
+    "auth/no-auth posture is not approved",
+    "cache TTL or no-cache decision is not approved",
+    "endpoint/metadata class is not currently allowlisted: article_metadata_lookup_future",
+    "endpoint/metadata class is not currently allowlisted: dataset_metadata_lookup_future",
+    "endpoint/metadata class is not currently allowlisted: doi_metadata_lookup_future",
+    "endpoint/metadata class is not currently allowlisted: patent_metadata_lookup_future",
+    "endpoint/metadata class is not currently allowlisted: work_metadata_lookup_future",
+    "kill switch blocks live probe",
+    "rate limit decision is not approved",
+    "request budget must be set before live probe",
+    "request key is not approved for live use: example_article_metadata",
+    "request key is not approved for live use: example_dataset_metadata",
+    "request key is not approved for live use: example_doi_metadata",
+    "request key is not approved for live use: example_patent_metadata",
+    "request key is not approved for live use: example_work_metadata"
+  ],
+  "blocked_sources": [
+    "arxiv",
+    "crossref",
+    "datacite",
+    "google_patents",
+    "open_library",
+    "openalex",
+    "pubmed"
+  ],
+  "citation_relation_candidate_count": 0,
+  "completed_sources": [],
+  "cultural_object_candidate_count": 0,
+  "dataset_candidate_count": 0,
+  "health_summary_count": 8,
+  "master_index_mutated": false,
+  "network_used": false,
+  "patent_candidate_count": 0,
+  "public_index_mutated": false,
+  "request_count_total": 0,
+  "research_work_candidate_count": 0,
+  "schema_version": "h7_library_research_live_probe_output_summary.v0",
+  "status": "valid"
+}
+H8 manuals/docs/standards source summary
+status: pass
+source_count: 18
+live_access_enabled_count: 0
+api_catalog_query_enabled_count: 0
+download_enabled_count: 0
+full_text_ocr_enabled_count: 0
+scraping_crawling_enabled_count: 0
+H8 manuals/docs/standards source summary
+status: invalid
+ERROR: refusing forbidden output root: site/dist
+H8 manuals/docs/standards source summary
+status: invalid
+ERROR: refusing forbidden output root: data/public_index
+H8 manuals/docs/standards source summary
+status: pass
+source_count: 18
+live_access_enabled_count: 0
+api_catalog_query_enabled_count: 0
+download_enabled_count: 0
+full_text_ocr_enabled_count: 0
+scraping_crawling_enabled_count: 0
+H9 media metadata source summary
+status: pass
+source_count: 20
+live_access_enabled_count: 0
+api_catalog_query_enabled_count: 0
+media_download_enabled_count: 0
+media_upload_enabled_count: 0
+fingerprinting_enabled_count: 0
+scraping_crawling_enabled_count: 0
+H9 media metadata source summary
+status: invalid
+ERROR: refusing forbidden output root: site/dist
+H9 media metadata source summary
+status: invalid
+ERROR: refusing forbidden output root: data/public_index
+H9 media metadata source summary
+status: invalid
+ERROR: refusing forbidden output root: runtime
+H9 media metadata source summary
+status: invalid
+ERROR: refusing forbidden output root: contracts
+H9 media metadata source summary
+status: pass
+source_count: 20
+live_access_enabled_count: 0
+api_catalog_query_enabled_count: 0
+media_download_enabled_count: 0
+media_upload_enabled_count: 0
+fingerprinting_enabled_count: 0
+scraping_crawling_enabled_count: 0
+{
+  "input_ref": "examples/evidence_ledger_records/metadata_claim_record_v0.json",
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "claimed_exhaustive_global_search": false,
+    "claimed_malware_safety": false,
+    "claimed_production_readiness": false,
+    "claimed_rights_clearance": false,
+    "claimed_verified_installability": false,
+    "created_local_private_state": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_execution": false,
+    "enabled_installers": false,
+    "enabled_live_probes": false,
+    "enabled_model_provider_calls": false,
+    "enabled_network_access": false,
+    "enabled_pack_import_runtime": false,
+    "enabled_review_runtime": false,
+    "enabled_source_connectors": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "implemented_source_cache_bridge": false,
+    "mutated_master_index": false
+  },
+  "record": {
+    "claim_subject": "synthetic-metadata-item",
+    "claim_summary": "A committed fixture reports a metadata field value.",
+    "claim_type": "metadata",
+    "claim_value": {
+      "field": "display_name",
+      "value": "Synthetic Metadata Item"
+    },
+    "claim_value_optional": {
+      "field": "display_name",
+      "value": "Synthetic Metadata Item"
+    },
+    "confidence_or_uncertainty": "low_confidence_review_required",
+    "conflict_summary": "",
+    "evidence_label": "Metadata Claim Fixture",
+    "evidence_record_id": "evidence.metadata_claim.9a9d882856da.v0",
+    "evidence_record_status": "metadata_claim_candidate",
+    "evidence_record_type": "metadata_claim",
+    "input_id": "metadata_claim_fixture_v0",
+    "input_public_safe": true,
+    "input_ref": "examples/evidence_ledger_records/metadata_claim_record_v0.json",
+    "input_status": "recorded_local",
+    "input_summary": "Metadata claim fixture.",
+    "input_type": "committed_evidence_fixture",
+    "limitations": [
+      "Metadata is scoped to the fixture."
+    ],
+    "lineage_refs": [
+      "fixture:metadata_claim_record_v0"
+    ],
+    "notes": [
+      "Sample input for the B-16 generated report."
+    ],
+    "observation_summary": "The metadata field is present in the fixture.",
+    "privacy_posture": {
+      "account_session_retained": false,
+      "credentials_retained": false,
+      "private_user_data_retained": false,
+      "public_safe_fixture_only": true,
+      "raw_user_history_retained": false,
+      "telemetry_retained": false
+    },
+    "product_boundary": {
+      "changed_public_search_behavior": false,
+      "claimed_exhaustive_global_search": false,
+      "claimed_malware_safety": false,
+      "claimed_production_readiness": false,
+      "claimed_rights_clearance": false,
+      "claimed_verified_installability": false,
+      "created_local_private_state": false,
+      "enabled_accounts": false,
+      "enabled_downloads": false,
+      "enabled_execution": false,
+      "enabled_installers": false,
+      "enabled_live_probes": false,
+      "enabled_model_provider_calls": false,
+      "enabled_network_access": false,
+      "enabled_pack_import_runtime": false,
+      "enabled_review_runtime": false,
+      "enabled_source_connectors": false,
+      "enabled_source_sync": false,
+      "enabled_telemetry": false,
+      "enabled_uploads": false,
+      "implemented_source_cache_bridge": false,
+      "mutated_master_index": false
+    },
+    "provenance_summary": "Committed metadata claim example.",
+    "related_candidate_refs": [],
+    "related_pack_refs": [],
+    "related_review_refs_future": [],
+    "related_search_need_refs": [],
+    "related_source_cache_refs_future": [],
+    "related_workunit_refs": [],
+    "review_gates": {
+      "candidate_store_review_required": true,
+      "conflict_review_required": true,
+      "human_review_required": true,
+      "installability_review_required": true,
+      "malware_safety_review_required": true,
+      "master_index_review_required": true,
+      "pack_export_review_required": true,
+      "privacy_review_required": true,
+      "public_index_review_required": true,
+      "rights_review_required": true
+    },
+    "rights_risk_posture": {
+      "download_or_installer_present": false,
+      "executable_payload_present": false,
+      "malware_safety_claimed": false,
+      "review_required": true,
+      "rights_clearance_claimed": false,
+      "verified_installability_claimed": false
+    },
+    "schema_version": "local_evidence_ledger_record.v0",
+    "source_id": "source:fixture:evidence:metadata",
+    "source_label": "Metadata Evidence Source",
+    "source_locator": "fixture:evidence-ledger:metadata",
+    "truth_boundary": {
+      "evidence_ledger_snapshot_is_master_index": false,
+      "evidence_record_can_claim_exhaustive_global_search": false,
+      "evidence_record_can_claim_malware_safety": false,
+      "evidence_record_can_claim_production_readiness": false,
+      "evidence_record_can_claim_rights_clearance": false,
+      "evidence_record_can_claim_verified_installability": false,
+      "evidence_record_can_mutate_master_index": false,
+      "evidence_record_is_accepted_evidence": false,
+      "evidence_record_is_public_truth": false,
+      "human_review_required_for_downstream_use": true
+    }
+  },
+  "runtime_scope": {
+    "evidence_acceptance_enabled": false,
+    "explicit_input_only": true,
+    "fixture_only": true,
+    "live_source_access_enabled": false,
+    "local_only": true,
+    "source_cache_bridge_enabled": false,
+    "writes_no_files_by_default": true
+  },
+  "schema_version": "local_evidence_ledger_runtime_report.v0",
+  "status": "pass",
+  "summary": {
+    "claim_subject": "synthetic-metadata-item",
+    "claim_type": "metadata",
+    "evidence_label": "Metadata Claim Fixture",
+    "evidence_record_can_mutate_master_index": false,
+    "evidence_record_id": "evidence.metadata_claim.9a9d882856da.v0",
+    "evidence_record_is_accepted_evidence": false,
+    "evidence_record_is_public_truth": false,
+    "evidence_record_status": "metadata_claim_candidate",
+    "evidence_record_type": "metadata_claim",
+    "implemented_source_cache_bridge": false,
+    "review_required": true,
+    "source_id": "source:fixture:evidence:metadata"
+  },
+  "truth_boundary": {
+    "evidence_record_can_mutate_master_index": false,
+    "evidence_record_is_accepted_evidence": false,
+    "evidence_record_is_public_truth": false,
+    "human_review_required_for_downstream_use": true
+  },
+  "validation_errors": [],
+  "warnings": []
+}
+Evidence ledger report
+status: pass
+evidence_record_id: evidence.metadata_claim.9a9d882856da.v0
+evidence_record_type: metadata_claim
+claim_type: metadata
+review_required: true
+Evidence ledger summary
+status: pass
+evidence_record_count: 10
+review_required_count: 10
+conflicting_record_count: 1
+warning_count: 0
+Evidence ledger summary
+status: pass
+evidence_record_count: 10
+review_required_count: 10
+conflicting_record_count: 1
+warning_count: 0
+{
+  "entry": {
+    "allowed_next_actions": [
+      "review_locally",
+      "request_more_evidence",
+      "defer",
+      "reject"
+    ],
+    "conflict_summary": {
+      "automatic_conflict_resolution_allowed": false,
+      "automatic_merge_allowed": false,
+      "conflict_detected": false
+    },
+    "decision_rationale": "Candidate is provisional and needs evidence review before any dry-run promotion.",
+    "decision_scope": "local_review_only",
+    "duplicate_summary": {
+      "automatic_delete_allowed": false,
+      "automatic_merge_allowed": false,
+      "duplicate_possible": false
+    },
+    "forbidden_next_actions": [
+      "accept_candidate_truth",
+      "accept_evidence_truth",
+      "accept_public_truth",
+      "automatic_delete",
+      "automatic_merge",
+      "claim_malware_safety",
+      "claim_rights_clearance",
+      "claim_verified_installability",
+      "hosted_moderation",
+      "mutate_master_index",
+      "mutate_public_index"
+    ],
+    "input_id": "candidate_needs_review_v0",
+    "input_public_safe": true,
+    "input_ref": "examples/candidates/search_need_candidate_v0.json",
+    "input_type": "candidate_record",
+    "limitations": [],
+    "missing_evidence": [],
+    "notes": [
+      "Candidate remains provisional."
+    ],
+    "policy_summary": "Local review policy applies.",
+    "product_boundary": {
+      "changed_public_search_behavior": false,
+      "claimed_exhaustive_global_search": false,
+      "claimed_malware_safety": false,
+      "claimed_production_readiness": false,
+      "claimed_rights_clearance": false,
+      "claimed_verified_installability": false,
+      "created_local_private_state": false,
+      "enabled_accounts": false,
+      "enabled_downloads": false,
+      "enabled_execution": false,
+      "enabled_installers": false,
+      "enabled_live_probes": false,
+      "enabled_model_provider_calls": false,
+      "enabled_network_access": false,
+      "enabled_pack_import_runtime": false,
+      "enabled_source_connectors": false,
+      "enabled_source_sync": false,
+      "enabled_telemetry": false,
+      "enabled_uploads": false,
+      "implemented_candidate_promotion": false,
+      "implemented_evidence_acceptance": false,
+      "implemented_hosted_review_runtime": false,
+      "implemented_public_truth_acceptance": false,
+      "mutated_master_index": false
+    },
+    "promotion_readiness": {
+      "candidate_acceptance_allowed": false,
+      "evidence_acceptance_allowed": false,
+      "master_index_mutation_allowed": false,
+      "promotion_is_public_acceptance": false,
+      "public_index_mutation_allowed": false,
+      "ready_for_promotion_dry_run": false
+    },
+    "related_bridge_refs": [],
+    "related_candidate_refs": [
+      "candidate.search_need.software_version.v0"
+    ],
+    "related_evidence_refs": [],
+    "related_pack_refs_future": [],
+    "related_source_cache_refs": [],
+    "related_workunit_refs": [],
+    "required_evidence": [
+      "source locator",
+      "metadata claim candidate"
+    ],
+    "review_decision": "no_decision_yet",
+    "review_entry_id": "review_queue.candidate_record.596f1cf17cf7.v0",
+    "review_entry_status": "needs_review",
+    "review_gates": {
+      "candidate_review_required": true,
+      "conflict_review_required": true,
+      "downstream_review_required": true,
+      "evidence_review_required": true,
+      "human_review_required": true,
+      "installability_review_required": true,
+      "malware_safety_review_required": true,
+      "master_index_review_required": true,
+      "privacy_review_required": true,
+      "promotion_dry_run_review_required": true,
+      "public_index_review_required": true,
+      "rights_review_required": true,
+      "source_cache_review_required": true
+    },
+    "review_subject_ref": "candidate.search_need.software_version.v0",
+    "review_subject_summary": "SearchNeed-derived version candidate requires local review.",
+    "review_subject_type": "candidate_record",
+    "reviewed_at_note": "No reviewed timestamp; fixture only.",
+    "reviewer_posture": "not_reviewed",
+    "rights_risk_summary": {
+      "malware_safety_claimed": false,
+      "rights_clearance_claimed": false,
+      "rights_review_required": true,
+      "verified_installability_claimed": false
+    },
+    "schema_version": "local_review_queue_entry.v0",
+    "truth_boundary": {
+      "human_review_required_for_downstream_use": true,
+      "review_entry_accepts_candidate": false,
+      "review_entry_accepts_evidence": false,
+      "review_entry_allows_public_index_mutation": false,
+      "review_entry_can_claim_exhaustive_global_search": false,
+      "review_entry_can_claim_malware_safety": false,
+      "review_entry_can_claim_production_readiness": false,
+      "review_entry_can_claim_rights_clearance": false,
+      "review_entry_can_claim_verified_installability": false,
+      "review_entry_is_public_truth": false,
+      "review_entry_mutates_master_index": false,
+      "review_queue_snapshot_is_master_index": false
+    }
+  },
+  "input_ref": "examples/review_queue_entries/candidate_needs_review_v0.json",
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "claimed_exhaustive_global_search": false,
+    "claimed_malware_safety": false,
+    "claimed_production_readiness": false,
+    "claimed_rights_clearance": false,
+    "claimed_verified_installability": false,
+    "created_local_private_state": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_execution": false,
+    "enabled_installers": false,
+    "enabled_live_probes": false,
+    "enabled_model_provider_calls": false,
+    "enabled_network_access": false,
+    "enabled_pack_import_runtime": false,
+    "enabled_source_connectors": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "implemented_candidate_promotion": false,
+    "implemented_evidence_acceptance": false,
+    "implemented_hosted_review_runtime": false,
+    "implemented_public_truth_acceptance": false,
+    "mutated_master_index": false
+  },
+  "runtime_scope": {
+    "candidate_acceptance_enabled": false,
+    "evidence_acceptance_enabled": false,
+    "explicit_input_only": true,
+    "fixture_only": true,
+    "hosted_review_enabled": false,
+    "local_only": true,
+    "master_index_mutation_enabled": false,
+    "writes_no_files_by_default": true
+  },
+  "schema_version": "local_review_queue_runtime_report.v0",
+  "status": "pass",
+  "summary": {
+    "promotion_dry_run_ready": false,
+    "review_decision": "no_decision_yet",
+    "review_entry_accepts_candidate": false,
+    "review_entry_accepts_evidence": false,
+    "review_entry_id": "review_queue.candidate_record.596f1cf17cf7.v0",
+    "review_entry_is_public_truth": false,
+    "review_entry_mutates_master_index": false,
+    "review_entry_status": "needs_review",
+    "review_subject_ref": "candidate.search_need.software_version.v0",
+    "review_subject_type": "candidate_record"
+  },
+  "truth_boundary": {
+    "human_review_required_for_downstream_use": true,
+    "review_entry_accepts_candidate": false,
+    "review_entry_accepts_evidence": false,
+    "review_entry_can_mutate_master_index": false,
+    "review_entry_is_public_truth": false
+  },
+  "validation_errors": [],
+  "warnings": []
+}
+Review queue report
+status: pass
+review_entry_id: review_queue.candidate_record.596f1cf17cf7.v0
+review_subject_type: candidate_record
+review_decision: no_decision_yet
+promotion_dry_run_ready: false
+Review queue summary
+status: pass
+review_entry_count: 10
+promotion_dry_run_ready_count: 1
+blocked_count: 1
+warning_count: 0
+Review queue summary
+status: pass
+review_entry_count: 10
+promotion_dry_run_ready_count: 1
+blocked_count: 1
+warning_count: 0
+{
+  "input_ref": "examples/source_cache_records/source_lead_record_v0.json",
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "claimed_exhaustive_global_search": false,
+    "claimed_malware_safety": false,
+    "claimed_production_readiness": false,
+    "claimed_rights_clearance": false,
+    "claimed_verified_installability": false,
+    "created_local_private_state": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_execution": false,
+    "enabled_installers": false,
+    "enabled_live_probes": false,
+    "enabled_model_provider_calls": false,
+    "enabled_network_access": false,
+    "enabled_pack_import_runtime": false,
+    "enabled_review_runtime": false,
+    "enabled_source_connectors": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "implemented_source_cache_to_evidence_bridge": false,
+    "mutated_master_index": false
+  },
+  "record": {
+    "_source_identity": "source:fixture:source-lead",
+    "input_id": "source_lead_fixture_v0",
+    "input_public_safe": true,
+    "input_ref": "examples/source_cache_records/source_lead_record_v0.json",
+    "input_status": "candidate_source_record",
+    "input_summary": "Source lead candidate for a metadata fixture.",
+    "input_type": "source_lead_candidate",
+    "normalized_fields": {
+      "downstream_bridge": "review_required_future",
+      "lead_status": "candidate"
+    },
+    "notes": [
+      "This is the sample input for the B-15 generated report."
+    ],
+    "privacy_posture": {
+      "account_session_retained": false,
+      "credentials_retained": false,
+      "private_user_data_retained": false,
+      "public_safe_fixture_only": true,
+      "raw_user_history_retained": false,
+      "telemetry_retained": false
+    },
+    "product_boundary": {
+      "changed_public_search_behavior": false,
+      "claimed_exhaustive_global_search": false,
+      "claimed_malware_safety": false,
+      "claimed_production_readiness": false,
+      "claimed_rights_clearance": false,
+      "claimed_verified_installability": false,
+      "created_local_private_state": false,
+      "enabled_accounts": false,
+      "enabled_downloads": false,
+      "enabled_execution": false,
+      "enabled_installers": false,
+      "enabled_live_probes": false,
+      "enabled_model_provider_calls": false,
+      "enabled_network_access": false,
+      "enabled_pack_import_runtime": false,
+      "enabled_review_runtime": false,
+      "enabled_source_connectors": false,
+      "enabled_source_sync": false,
+      "enabled_telemetry": false,
+      "enabled_uploads": false,
+      "implemented_source_cache_to_evidence_bridge": false,
+      "mutated_master_index": false
+    },
+    "related_candidate_refs": [
+      "candidate.source_lead.fixture.v0"
+    ],
+    "related_evidence_refs_future": [],
+    "related_pack_refs_future": [],
+    "related_search_need_refs": [],
+    "related_source_lead_refs": [
+      "source_lead.fixture.v0"
+    ],
+    "related_workunit_refs": [],
+    "review_gates": {
+      "candidate_store_review_required": true,
+      "evidence_ledger_bridge_review_required": true,
+      "human_review_required": true,
+      "pack_export_review_required": true,
+      "privacy_review_required": true,
+      "public_index_review_required": true,
+      "rights_review_required": true,
+      "risk_review_required": true,
+      "source_cache_review_required": true
+    },
+    "rights_risk_posture": {
+      "download_or_installer_present": false,
+      "executable_payload_present": false,
+      "malware_safety_claimed": false,
+      "review_required": true,
+      "rights_clearance_claimed": false,
+      "verified_installability_claimed": false
+    },
+    "schema_version": "local_source_cache_record.v0",
+    "source_access_mode": "repo_local_only",
+    "source_authority_posture": "lead_not_validated_source",
+    "source_cache_record_id": "source_cache.source_lead_record.c04e392c535d.v0",
+    "source_cache_record_status": "candidate_source_record",
+    "source_cache_record_type": "source_lead_record",
+    "source_coverage_summary": "Lead may help plan future source cache review.",
+    "source_family": "source_lead_fixture",
+    "source_health_summary": "No live source health check.",
+    "source_id": "source:fixture:source-lead",
+    "source_kind": "source_lead",
+    "source_label": "Source Lead Fixture",
+    "source_limitations": [
+      "Lead is provisional.",
+      "No source availability is established."
+    ],
+    "source_locator": "fixture:source-cache:source-lead",
+    "source_metadata_summary": "Lead names a possible metadata source family without validating it.",
+    "source_observation_summary": "The source lead is normalized into a reviewable fixture record.",
+    "source_policy_status": "review_required",
+    "truth_boundary": {
+      "human_review_required_for_downstream_use": true,
+      "source_cache_record_can_claim_exhaustive_global_search": false,
+      "source_cache_record_can_claim_malware_safety": false,
+      "source_cache_record_can_claim_production_readiness": false,
+      "source_cache_record_can_claim_rights_clearance": false,
+      "source_cache_record_can_claim_verified_installability": false,
+      "source_cache_record_can_mutate_master_index": false,
+      "source_cache_record_is_accepted_evidence": false,
+      "source_cache_record_is_public_truth": false,
+      "source_cache_snapshot_is_master_index": false
+    }
+  },
+  "runtime_scope": {
+    "explicit_input_only": true,
+    "fixture_only": true,
+    "live_probe_enabled": false,
+    "local_only": true,
+    "source_access_enabled": false,
+    "source_sync_enabled": false,
+    "writes_no_files_by_default": true
+  },
+  "schema_version": "local_source_cache_runtime_report.v0",
+  "status": "pass",
+  "summary": {
+    "enabled_network_access": false,
+    "review_required": true,
+    "source_access_mode": "repo_local_only",
+    "source_cache_record_can_mutate_master_index": false,
+    "source_cache_record_id": "source_cache.source_lead_record.c04e392c535d.v0",
+    "source_cache_record_is_accepted_evidence": false,
+    "source_cache_record_is_public_truth": false,
+    "source_cache_record_status": "candidate_source_record",
+    "source_cache_record_type": "source_lead_record",
+    "source_family": "source_lead_fixture",
+    "source_id": "source:fixture:source-lead",
+    "source_label": "Source Lead Fixture"
+  },
+  "truth_boundary": {
+    "human_review_required_for_downstream_use": true,
+    "source_cache_record_can_mutate_master_index": false,
+    "source_cache_record_is_accepted_evidence": false,
+    "source_cache_record_is_public_truth": false
+  },
+  "validation_errors": [],
+  "warnings": []
+}
+Source cache report
+status: pass
+source_cache_record_id: source_cache.source_lead_record.c04e392c535d.v0
+source_cache_record_type: source_lead_record
+source_access_mode: repo_local_only
+review_required: true
+Source cache summary
+status: pass
+source_cache_record_count: 8
+review_required_count: 8
+warning_count: 0
+Source cache summary
+status: pass
+source_cache_record_count: 8
+review_required_count: 8
+warning_count: 0
+{
+  "bridge_result": {
+    "bridge_result_id": "source_cache_bridge.source_cache.source_metadata.84d44d80695b.v0.b9dc679f6db2.v0",
+    "bridge_status": "evidence_candidate_created",
+    "generated_evidence_candidates": [
+      {
+        "claim_subject": "source:fixture:metadata",
+        "claim_summary": "Metadata claim candidate from Metadata Fixture Source.",
+        "claim_type": "metadata",
+        "claim_value": {
+          "normalized_fields": {
+            "metadata_fields_present": [
+              "source_family",
+              "source_kind",
+              "source_locator"
+            ],
+            "source_family": "metadata_fixture"
+          },
+          "source_coverage_summary": "Covers only fields present in the committed fixture.",
+          "source_family": "metadata_fixture",
+          "source_kind": "committed_fixture",
+          "source_metadata_summary": "Names a source family, source kind, and fixture locator."
+        },
+        "claim_value_optional": {
+          "normalized_fields": {
+            "metadata_fields_present": [
+              "source_family",
+              "source_kind",
+              "source_locator"
+            ],
+            "source_family": "metadata_fixture"
+          },
+          "source_coverage_summary": "Covers only fields present in the committed fixture.",
+          "source_family": "metadata_fixture",
+          "source_kind": "committed_fixture",
+          "source_metadata_summary": "Names a source family, source kind, and fixture locator."
+        },
+        "confidence_or_uncertainty": "low_confidence_review_required",
+        "conflict_summary": "",
+        "evidence_label": "Evidence candidate from Metadata Fixture Source",
+        "evidence_record_id": "evidence.metadata_claim.4a69d3e9212f.v0",
+        "evidence_record_status": "metadata_claim_candidate",
+        "evidence_record_type": "metadata_claim",
+        "input_id": "source_cache.source_metadata.84d44d80695b.v0",
+        "input_public_safe": true,
+        "input_ref": "examples/source_cache_records/source_metadata_record_v0.json",
+        "input_status": "fixture_only",
+        "input_summary": "Synthetic source metadata summary.",
+        "input_type": "source_cache_record",
+        "limitations": [
+          "Bridge output requires human review before downstream use.",
+          "Fixture does not prove source completeness.",
+          "Metadata is not promoted to evidence."
+        ],
+        "lineage_refs": [
+          "source_cache.source_metadata.84d44d80695b.v0"
+        ],
+        "notes": [
+          "Generated by the fixture-only source-cache bridge.",
+          "No source fetch, source sync, or public index mutation occurred."
+        ],
+        "observation_summary": "The fixture demonstrates source metadata normalization.",
+        "privacy_posture": {
+          "account_session_retained": false,
+          "credentials_retained": false,
+          "private_user_data_retained": false,
+          "public_safe_fixture_only": true,
+          "raw_user_history_retained": false,
+          "telemetry_retained": false
+        },
+        "product_boundary": {
+          "changed_public_search_behavior": false,
+          "claimed_exhaustive_global_search": false,
+          "claimed_malware_safety": false,
+          "claimed_production_readiness": false,
+          "claimed_rights_clearance": false,
+          "claimed_verified_installability": false,
+          "created_local_private_state": false,
+          "enabled_accounts": false,
+          "enabled_downloads": false,
+          "enabled_execution": false,
+          "enabled_installers": false,
+          "enabled_live_probes": false,
+          "enabled_model_provider_calls": false,
+          "enabled_network_access": false,
+          "enabled_pack_import_runtime": false,
+          "enabled_review_runtime": false,
+          "enabled_source_connectors": false,
+          "enabled_source_sync": false,
+          "enabled_telemetry": false,
+          "enabled_uploads": false,
+          "implemented_source_cache_bridge": false,
+          "mutated_master_index": false
+        },
+        "provenance_summary": "Mapped from explicit source cache record source_cache.source_metadata.84d44d80695b.v0.",
+        "related_candidate_refs": [],
+        "related_pack_refs": [],
+        "related_review_refs_future": [],
+        "related_search_need_refs": [],
+        "related_source_cache_refs_future": [
+          "source_cache.source_metadata.84d44d80695b.v0"
+        ],
+        "related_workunit_refs": [],
+        "review_gates": {
+          "candidate_store_review_required": true,
+          "conflict_review_required": true,
+          "human_review_required": true,
+          "installability_review_required": true,
+          "malware_safety_review_required": true,
+          "master_index_review_required": true,
+          "pack_export_review_required": true,
+          "privacy_review_required": true,
+          "public_index_review_required": true,
+          "rights_review_required": true
+        },
+        "rights_risk_posture": {
+          "download_or_installer_present": false,
+          "executable_payload_present": false,
+          "malware_safety_claimed": false,
+          "review_required": true,
+          "rights_clearance_claimed": false,
+          "verified_installability_claimed": false
+        },
+        "schema_version": "local_evidence_ledger_record.v0",
+        "source_id": "source:fixture:metadata",
+        "source_label": "Metadata Fixture Source",
+        "source_locator": "fixture:source-cache:metadata",
+        "truth_boundary": {
+          "evidence_ledger_snapshot_is_master_index": false,
+          "evidence_record_can_claim_exhaustive_global_search": false,
+          "evidence_record_can_claim_malware_safety": false,
+          "evidence_record_can_claim_production_readiness": false,
+          "evidence_record_can_claim_rights_clearance": false,
+          "evidence_record_can_claim_verified_installability": false,
+          "evidence_record_can_mutate_master_index": false,
+          "evidence_record_is_accepted_evidence": false,
+          "evidence_record_is_public_truth": false,
+          "human_review_required_for_downstream_use": true
+        }
+      }
+    ],
+    "limitations": [
+      "Bridge output cannot mutate a public index.",
+      "Bridge output is not evidence acceptance.",
+      "Fixture does not prove source completeness.",
+      "Metadata is not promoted to evidence."
+    ],
+    "mapping_results": [
+      {
+        "accepted_as_evidence": false,
+        "accepted_as_public_truth": false,
+        "input_field": "source_cache_record",
+        "input_value_summary": "The fixture demonstrates source metadata normalization.",
+        "limitations": [
+          "Bridge output requires human review before downstream use.",
+          "Fixture does not prove source completeness.",
+          "Metadata is not promoted to evidence."
+        ],
+        "mapping_id": "mapping.source_cache.source_metadata.84d44d80695b.v0.1",
+        "master_index_mutation_allowed": false,
+        "notes": [
+          "Mapping is deterministic and fixture-only."
+        ],
+        "output_claim_type": "metadata",
+        "output_evidence_type": "metadata_claim",
+        "output_status": "evidence_candidate_created",
+        "provenance_status": "complete",
+        "review_required": true
+      }
+    ],
+    "notes": [
+      "Bridge output is a review candidate only.",
+      "No live source access, evidence acceptance, or master-index mutation is performed."
+    ],
+    "product_boundary": {
+      "changed_public_search_behavior": false,
+      "claimed_exhaustive_global_search": false,
+      "claimed_malware_safety": false,
+      "claimed_production_readiness": false,
+      "claimed_rights_clearance": false,
+      "claimed_verified_installability": false,
+      "created_local_private_state": false,
+      "enabled_accounts": false,
+      "enabled_downloads": false,
+      "enabled_execution": false,
+      "enabled_installers": false,
+      "enabled_live_probes": false,
+      "enabled_model_provider_calls": false,
+      "enabled_network_access": false,
+      "enabled_pack_import_runtime": false,
+      "enabled_review_runtime": false,
+      "enabled_source_connectors": false,
+      "enabled_source_sync": false,
+      "enabled_telemetry": false,
+      "enabled_uploads": false,
+      "mutated_master_index": false
+    },
+    "provenance_summary": "Mapped from explicit source cache record source_cache.source_metadata.84d44d80695b.v0 with locator fixture:source-cache:metadata.",
+    "review_gates": {
+      "candidate_store_review_required": true,
+      "human_review_required": true,
+      "installability_review_required": true,
+      "malware_safety_review_required": true,
+      "master_index_review_required": true,
+      "pack_export_review_required": true,
+      "privacy_review_required": true,
+      "provenance_review_required": true,
+      "public_index_review_required": true,
+      "rights_review_required": true
+    },
+    "schema_version": "source_cache_to_evidence_bridge_result.v0",
+    "source_cache_record_ref": "source_cache.source_metadata.84d44d80695b.v0",
+    "source_cache_record_status": "fixture_only",
+    "source_cache_record_type": "source_metadata",
+    "source_locator_summary": "fixture:source-cache:metadata",
+    "truth_boundary": {
+      "bridge_output_can_claim_exhaustive_global_search": false,
+      "bridge_output_can_claim_malware_safety": false,
+      "bridge_output_can_claim_production_readiness": false,
+      "bridge_output_can_claim_rights_clearance": false,
+      "bridge_output_can_claim_verified_installability": false,
+      "bridge_output_can_mutate_master_index": false,
+      "bridge_output_is_accepted_evidence": false,
+      "bridge_output_is_accepted_public_truth": false,
+      "human_review_required_for_downstream_use": true,
+      "source_cache_record_is_public_truth": false
+    },
+    "warnings": []
+  },
+  "generated_evidence_candidates": [
+    {
+      "claim_subject": "source:fixture:metadata",
+      "claim_summary": "Metadata claim candidate from Metadata Fixture Source.",
+      "claim_type": "metadata",
+      "claim_value": {
+        "normalized_fields": {
+          "metadata_fields_present": [
+            "source_family",
+            "source_kind",
+            "source_locator"
+          ],
+          "source_family": "metadata_fixture"
+        },
+        "source_coverage_summary": "Covers only fields present in the committed fixture.",
+        "source_family": "metadata_fixture",
+        "source_kind": "committed_fixture",
+        "source_metadata_summary": "Names a source family, source kind, and fixture locator."
+      },
+      "claim_value_optional": {
+        "normalized_fields": {
+          "metadata_fields_present": [
+            "source_family",
+            "source_kind",
+            "source_locator"
+          ],
+          "source_family": "metadata_fixture"
+        },
+        "source_coverage_summary": "Covers only fields present in the committed fixture.",
+        "source_family": "metadata_fixture",
+        "source_kind": "committed_fixture",
+        "source_metadata_summary": "Names a source family, source kind, and fixture locator."
+      },
+      "confidence_or_uncertainty": "low_confidence_review_required",
+      "conflict_summary": "",
+      "evidence_label": "Evidence candidate from Metadata Fixture Source",
+      "evidence_record_id": "evidence.metadata_claim.4a69d3e9212f.v0",
+      "evidence_record_status": "metadata_claim_candidate",
+      "evidence_record_type": "metadata_claim",
+      "input_id": "source_cache.source_metadata.84d44d80695b.v0",
+      "input_public_safe": true,
+      "input_ref": "examples/source_cache_records/source_metadata_record_v0.json",
+      "input_status": "fixture_only",
+      "input_summary": "Synthetic source metadata summary.",
+      "input_type": "source_cache_record",
+      "limitations": [
+        "Bridge output requires human review before downstream use.",
+        "Fixture does not prove source completeness.",
+        "Metadata is not promoted to evidence."
+      ],
+      "lineage_refs": [
+        "source_cache.source_metadata.84d44d80695b.v0"
+      ],
+      "notes": [
+        "Generated by the fixture-only source-cache bridge.",
+        "No source fetch, source sync, or public index mutation occurred."
+      ],
+      "observation_summary": "The fixture demonstrates source metadata normalization.",
+      "privacy_posture": {
+        "account_session_retained": false,
+        "credentials_retained": false,
+        "private_user_data_retained": false,
+        "public_safe_fixture_only": true,
+        "raw_user_history_retained": false,
+        "telemetry_retained": false
+      },
+      "product_boundary": {
+        "changed_public_search_behavior": false,
+        "claimed_exhaustive_global_search": false,
+        "claimed_malware_safety": false,
+        "claimed_production_readiness": false,
+        "claimed_rights_clearance": false,
+        "claimed_verified_installability": false,
+        "created_local_private_state": false,
+        "enabled_accounts": false,
+        "enabled_downloads": false,
+        "enabled_execution": false,
+        "enabled_installers": false,
+        "enabled_live_probes": false,
+        "enabled_model_provider_calls": false,
+        "enabled_network_access": false,
+        "enabled_pack_import_runtime": false,
+        "enabled_review_runtime": false,
+        "enabled_source_connectors": false,
+        "enabled_source_sync": false,
+        "enabled_telemetry": false,
+        "enabled_uploads": false,
+        "implemented_source_cache_bridge": false,
+        "mutated_master_index": false
+      },
+      "provenance_summary": "Mapped from explicit source cache record source_cache.source_metadata.84d44d80695b.v0.",
+      "related_candidate_refs": [],
+      "related_pack_refs": [],
+      "related_review_refs_future": [],
+      "related_search_need_refs": [],
+      "related_source_cache_refs_future": [
+        "source_cache.source_metadata.84d44d80695b.v0"
+      ],
+      "related_workunit_refs": [],
+      "review_gates": {
+        "candidate_store_review_required": true,
+        "conflict_review_required": true,
+        "human_review_required": true,
+        "installability_review_required": true,
+        "malware_safety_review_required": true,
+        "master_index_review_required": true,
+        "pack_export_review_required": true,
+        "privacy_review_required": true,
+        "public_index_review_required": true,
+        "rights_review_required": true
+      },
+      "rights_risk_posture": {
+        "download_or_installer_present": false,
+        "executable_payload_present": false,
+        "malware_safety_claimed": false,
+        "review_required": true,
+        "rights_clearance_claimed": false,
+        "verified_installability_claimed": false
+      },
+      "schema_version": "local_evidence_ledger_record.v0",
+      "source_id": "source:fixture:metadata",
+      "source_label": "Metadata Fixture Source",
+      "source_locator": "fixture:source-cache:metadata",
+      "truth_boundary": {
+        "evidence_ledger_snapshot_is_master_index": false,
+        "evidence_record_can_claim_exhaustive_global_search": false,
+        "evidence_record_can_claim_malware_safety": false,
+        "evidence_record_can_claim_production_readiness": false,
+        "evidence_record_can_claim_rights_clearance": false,
+        "evidence_record_can_claim_verified_installability": false,
+        "evidence_record_can_mutate_master_index": false,
+        "evidence_record_is_accepted_evidence": false,
+        "evidence_record_is_public_truth": false,
+        "human_review_required_for_downstream_use": true
+      }
+    }
+  ],
+  "input_ref": "examples/source_cache_records/source_metadata_record_v0.json",
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "claimed_exhaustive_global_search": false,
+    "claimed_malware_safety": false,
+    "claimed_production_readiness": false,
+    "claimed_rights_clearance": false,
+    "claimed_verified_installability": false,
+    "created_local_private_state": false,
+    "enabled_accounts": false,
+    "enabled_downloads": false,
+    "enabled_execution": false,
+    "enabled_installers": false,
+    "enabled_live_probes": false,
+    "enabled_model_provider_calls": false,
+    "enabled_network_access": false,
+    "enabled_pack_import_runtime": false,
+    "enabled_review_runtime": false,
+    "enabled_source_connectors": false,
+    "enabled_source_sync": false,
+    "enabled_telemetry": false,
+    "enabled_uploads": false,
+    "mutated_master_index": false
+  },
+  "runtime_scope": {
+    "evidence_acceptance_enabled": false,
+    "explicit_input_only": true,
+    "fixture_only": true,
+    "live_source_access_enabled": false,
+    "local_only": true,
+    "source_cache_bridge_enabled": true,
+    "writes_no_files_by_default": true
+  },
+  "schema_version": "source_cache_to_evidence_bridge_report.v0",
+  "status": "pass",
+  "summary": {
+    "bridge_output_can_mutate_master_index": false,
+    "bridge_output_is_accepted_evidence": false,
+    "bridge_output_is_accepted_public_truth": false,
+    "bridge_result_id": "source_cache_bridge.source_cache.source_metadata.84d44d80695b.v0.b9dc679f6db2.v0",
+    "bridge_status": "evidence_candidate_created",
+    "generated_evidence_candidate_count": 1,
+    "generated_evidence_candidate_ids": [
+      "evidence.metadata_claim.4a69d3e9212f.v0"
+    ],
+    "review_required": true,
+    "source_cache_record_ref": "source_cache.source_metadata.84d44d80695b.v0",
+    "source_cache_record_status": "fixture_only",
+    "source_cache_record_type": "source_metadata",
+    "warning_count": 0
+  },
+  "truth_boundary": {
+    "bridge_output_can_mutate_master_index": false,
+    "bridge_output_is_accepted_evidence": false,
+    "human_review_required_for_downstream_use": true,
+    "source_cache_record_is_public_truth": false
+  },
+  "validation_errors": [],
+  "warnings": []
+}
+..........................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+----------------------------------------------------------------------
+Ran 4797 tests in 2710.766s
+
+OK
+Source cache to evidence bridge
+status: pass
+bridge_result_id: source_cache_bridge.source_cache.source_metadata.84d44d80695b.v0.b9dc679f6db2.v0
+bridge_status: evidence_candidate_created
+source_cache_record_type: source_metadata
+generated_evidence_candidate_count: 1
+review_required: true

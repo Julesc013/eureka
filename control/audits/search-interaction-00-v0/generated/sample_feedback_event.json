@@ -1,0 +1,12 @@
+{
+  "schema_version": "user_feedback_event.v0",
+  "packet_type": "UserFeedbackEvent",
+  "created_at": "2026-05-20T00:00:00Z",
+  "feedback_id": "fb_example",
+  "run_id": "run_example",
+  "target_type": "compiled_query",
+  "target_id": "cq_example",
+  "feedback_type": "ignore_isos",
+  "rationale": "User explicitly excluded OS install media.",
+  "creates_plan_patch": true
+}

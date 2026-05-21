@@ -1,0 +1,16 @@
+{
+  "schema_version": "r0_03a_contract_taxonomy_testing_input_state.v0",
+  "task": "R0-03A-CONTRACT-TAXONOMY-TESTING-REPAIR",
+  "branch": "dev",
+  "head": "6665eecdab6ea9c427d76b0dc13ef01a5847d478",
+  "origin_main": "8119871469cc61b47fa565b9d1e78642e3935d2a",
+  "origin_dev": "6665eecdab6ea9c427d76b0dc13ef01a5847d478",
+  "working_tree_clean_before": true,
+  "blocked_closeout_commit_found": true,
+  "test_lane_router_found": true,
+  "contract_taxonomy_found": true,
+  "testing_contract_found": true,
+  "blocking_path": "contracts/testing/test_selection_result.v0.json",
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}

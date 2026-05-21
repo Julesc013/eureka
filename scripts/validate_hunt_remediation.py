@@ -207,7 +207,7 @@ def validate_queue(root: Path, errors: list[str]) -> None:
     text = index.read_text(encoding="utf-8") if index.is_file() else ""
     if not queue_preserves_hunt_handoff(root, text):
         errors.append(
-            "queue must recommend SYN-00, gated HUNT-TO-MAIN-PROMOTION-REVIEW, "
+            "queue must recommend SYN-00, DOMAIN-00, gated HUNT-TO-MAIN-PROMOTION-REVIEW, "
             "or the dev/IA promotion repair lane"
         )
     if "id: HUNT-REMEDIATION" not in text or "status: completed" not in text:
@@ -217,11 +217,17 @@ def validate_queue(root: Path, errors: list[str]) -> None:
 def queue_preserves_hunt_handoff(root: Path, queue_text: str) -> bool:
     if "current_recommended_task: SYN-00" in queue_text:
         return True
+    if "current_recommended_task: DOMAIN-00" in queue_text:
+        return True
+    if "current_recommended_task: SCOUT-SCHEMA-00" in queue_text:
+        return True
     if "current_recommended_task: DEV-AND-IA-PROMOTION-BLOCKER-01" in queue_text:
         return True
     if "current_recommended_task: DEV-AND-IA-TO-MAIN-PROMOTION-REVIEW" in queue_text:
         return True
     if "current_recommended_task: REPO-LAYOUT-CANON-01" in queue_text:
+        return True
+    if "current_recommended_task: IA-HUNT-BRIDGE-00" in queue_text:
         return True
     if "current_recommended_task: HUNT-TO-MAIN-PROMOTION-REVIEW" not in queue_text:
         return False

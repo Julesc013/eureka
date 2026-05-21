@@ -1,0 +1,47 @@
+{
+  "schema_version": "syn_eval_contract_matrix.v0",
+  "task": "SYN-00",
+  "status": "active",
+  "contracts": [
+    {
+      "contract_path": "contracts/query/synthetic_query_case.v0.json",
+      "role": "One deterministic pressure case.",
+      "authority": "contracts/query",
+      "runtime_behavior_changed": false
+    },
+    {
+      "contract_path": "contracts/query/synthetic_query_set.v0.json",
+      "role": "Fixture-only grouped pressure set.",
+      "authority": "contracts/query",
+      "runtime_behavior_changed": false
+    },
+    {
+      "contract_path": "contracts/query/search_quality_query_set.v0.json",
+      "role": "Existing search-quality query set reference.",
+      "authority": "contracts/query",
+      "runtime_behavior_changed": false
+    },
+    {
+      "contract_path": "contracts/query/search_need_seed.v0.json",
+      "role": "Existing review-gated SearchNeed seed reference.",
+      "authority": "contracts/query",
+      "runtime_behavior_changed": false
+    },
+    {
+      "contract_path": "contracts/query/workunit_seed.v0.json",
+      "role": "Existing review-gated WorkUnit seed reference.",
+      "authority": "contracts/query",
+      "runtime_behavior_changed": false
+    }
+  ],
+  "eval_splits": [
+    "demo",
+    "hard",
+    "adversarial"
+  ],
+  "no_claims": [
+    "No production search-quality claim.",
+    "No public launch readiness claim.",
+    "No accepted evidence or master-index truth claim."
+  ]
+}

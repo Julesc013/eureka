@@ -1,0 +1,55 @@
+{
+  "schema_version": "workbench_result_lane_page_view.v0",
+  "packet_type": "ResultLanePageView",
+  "task": "IA-HUNT-BRIDGE-00",
+  "query": "sampleproject",
+  "projection_profile": "operator_workbench",
+  "lane_count": 4,
+  "lanes": [
+    {
+      "schema_version": "result_lane_packet.v0",
+      "lane_kind": "ia_metadata_candidates",
+      "truth_level": "ia_metadata_candidate_not_truth",
+      "review_required": true,
+      "result_count": 1,
+      "items": [
+        {
+          "item_id": "ia-lane-iacand-sample",
+          "title": "IA metadata candidate for sampleproject",
+          "summary": "Fixture-backed IA metadata candidate requiring review.",
+          "candidate_refs": [
+            "iacand_sample"
+          ],
+          "evidence_refs": [
+            "iaev_sample"
+          ]
+        }
+      ]
+    },
+    {
+      "schema_version": "result_lane_packet.v0",
+      "lane_kind": "source_cache_hits",
+      "truth_level": "source_cache_observation_not_truth",
+      "review_required": true,
+      "result_count": 1
+    },
+    {
+      "schema_version": "result_lane_packet.v0",
+      "lane_kind": "running_workunits",
+      "truth_level": "operational_state_not_truth",
+      "review_required": false,
+      "result_count": 2
+    },
+    {
+      "schema_version": "result_lane_packet.v0",
+      "lane_kind": "blocked_actions",
+      "truth_level": "policy_block_not_capability_absence",
+      "review_required": false,
+      "result_count": 6
+    }
+  ],
+  "non_claims": [
+    "Result lanes are projections, not truth creation.",
+    "No source probes, live IA calls, extraction, model calls, downloads, or deployment are enabled."
+  ]
+}

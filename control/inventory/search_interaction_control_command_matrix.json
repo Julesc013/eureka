@@ -1,0 +1,497 @@
+{
+  "schema_version": "search_interaction_control_command_matrix.v0",
+  "task": "SEARCH-INTERACTION-00",
+  "commands": [
+    {
+      "command_type": "pause",
+      "allowed_states": [
+        "accepted",
+        "compiled",
+        "local_results_available",
+        "candidate_results_available",
+        "source_cache_results_available",
+        "hunt_running",
+        "paused",
+        "waiting_for_user"
+      ],
+      "resulting_state_or_patch": "pause",
+      "requires_operator": false,
+      "allowed_public": false,
+      "allowed_native_read_only": false,
+      "policy_required": false,
+      "audit_required": true,
+      "blocked_by_default": false,
+      "future_task": "WORKBENCH-RESULT-LANES-01"
+    },
+    {
+      "command_type": "resume",
+      "allowed_states": [
+        "accepted",
+        "compiled",
+        "local_results_available",
+        "candidate_results_available",
+        "source_cache_results_available",
+        "hunt_running",
+        "paused",
+        "waiting_for_user"
+      ],
+      "resulting_state_or_patch": "resume",
+      "requires_operator": false,
+      "allowed_public": false,
+      "allowed_native_read_only": false,
+      "policy_required": false,
+      "audit_required": true,
+      "blocked_by_default": false,
+      "future_task": "WORKBENCH-RESULT-LANES-01"
+    },
+    {
+      "command_type": "cancel",
+      "allowed_states": [
+        "accepted",
+        "compiled",
+        "local_results_available",
+        "candidate_results_available",
+        "source_cache_results_available",
+        "hunt_running",
+        "paused",
+        "waiting_for_user"
+      ],
+      "resulting_state_or_patch": "cancel",
+      "requires_operator": false,
+      "allowed_public": false,
+      "allowed_native_read_only": false,
+      "policy_required": false,
+      "audit_required": true,
+      "blocked_by_default": false,
+      "future_task": "WORKBENCH-RESULT-LANES-01"
+    },
+    {
+      "command_type": "deepen",
+      "allowed_states": [
+        "accepted",
+        "compiled",
+        "local_results_available",
+        "candidate_results_available",
+        "source_cache_results_available",
+        "hunt_running",
+        "paused",
+        "waiting_for_user"
+      ],
+      "resulting_state_or_patch": "SearchPlanPatch",
+      "requires_operator": false,
+      "allowed_public": false,
+      "allowed_native_read_only": false,
+      "policy_required": true,
+      "audit_required": true,
+      "blocked_by_default": true,
+      "future_task": "WORKBENCH-RESULT-LANES-01"
+    },
+    {
+      "command_type": "narrow",
+      "allowed_states": [
+        "accepted",
+        "compiled",
+        "local_results_available",
+        "candidate_results_available",
+        "source_cache_results_available",
+        "hunt_running",
+        "paused",
+        "waiting_for_user"
+      ],
+      "resulting_state_or_patch": "SearchPlanPatch",
+      "requires_operator": false,
+      "allowed_public": false,
+      "allowed_native_read_only": false,
+      "policy_required": false,
+      "audit_required": true,
+      "blocked_by_default": false,
+      "future_task": "WORKBENCH-RESULT-LANES-01"
+    },
+    {
+      "command_type": "broaden",
+      "allowed_states": [
+        "accepted",
+        "compiled",
+        "local_results_available",
+        "candidate_results_available",
+        "source_cache_results_available",
+        "hunt_running",
+        "paused",
+        "waiting_for_user"
+      ],
+      "resulting_state_or_patch": "SearchPlanPatch",
+      "requires_operator": false,
+      "allowed_public": false,
+      "allowed_native_read_only": false,
+      "policy_required": false,
+      "audit_required": true,
+      "blocked_by_default": false,
+      "future_task": "WORKBENCH-RESULT-LANES-01"
+    },
+    {
+      "command_type": "refine_query",
+      "allowed_states": [
+        "accepted",
+        "compiled",
+        "local_results_available",
+        "candidate_results_available",
+        "source_cache_results_available",
+        "hunt_running",
+        "paused",
+        "waiting_for_user"
+      ],
+      "resulting_state_or_patch": "SearchPlanPatch",
+      "requires_operator": false,
+      "allowed_public": true,
+      "allowed_native_read_only": false,
+      "policy_required": false,
+      "audit_required": true,
+      "blocked_by_default": false,
+      "future_task": "WORKBENCH-RESULT-LANES-01"
+    },
+    {
+      "command_type": "add_constraint",
+      "allowed_states": [
+        "accepted",
+        "compiled",
+        "local_results_available",
+        "candidate_results_available",
+        "source_cache_results_available",
+        "hunt_running",
+        "paused",
+        "waiting_for_user"
+      ],
+      "resulting_state_or_patch": "SearchPlanPatch",
+      "requires_operator": false,
+      "allowed_public": true,
+      "allowed_native_read_only": false,
+      "policy_required": false,
+      "audit_required": true,
+      "blocked_by_default": false,
+      "future_task": "WORKBENCH-RESULT-LANES-01"
+    },
+    {
+      "command_type": "remove_constraint",
+      "allowed_states": [
+        "accepted",
+        "compiled",
+        "local_results_available",
+        "candidate_results_available",
+        "source_cache_results_available",
+        "hunt_running",
+        "paused",
+        "waiting_for_user"
+      ],
+      "resulting_state_or_patch": "SearchPlanPatch",
+      "requires_operator": false,
+      "allowed_public": true,
+      "allowed_native_read_only": false,
+      "policy_required": false,
+      "audit_required": true,
+      "blocked_by_default": false,
+      "future_task": "WORKBENCH-RESULT-LANES-01"
+    },
+    {
+      "command_type": "include_source",
+      "allowed_states": [
+        "accepted",
+        "compiled",
+        "local_results_available",
+        "candidate_results_available",
+        "source_cache_results_available",
+        "hunt_running",
+        "paused",
+        "waiting_for_user"
+      ],
+      "resulting_state_or_patch": "SearchPlanPatch",
+      "requires_operator": false,
+      "allowed_public": false,
+      "allowed_native_read_only": false,
+      "policy_required": false,
+      "audit_required": true,
+      "blocked_by_default": false,
+      "future_task": "WORKBENCH-RESULT-LANES-01"
+    },
+    {
+      "command_type": "exclude_source",
+      "allowed_states": [
+        "accepted",
+        "compiled",
+        "local_results_available",
+        "candidate_results_available",
+        "source_cache_results_available",
+        "hunt_running",
+        "paused",
+        "waiting_for_user"
+      ],
+      "resulting_state_or_patch": "SearchPlanPatch",
+      "requires_operator": false,
+      "allowed_public": false,
+      "allowed_native_read_only": false,
+      "policy_required": false,
+      "audit_required": true,
+      "blocked_by_default": false,
+      "future_task": "WORKBENCH-RESULT-LANES-01"
+    },
+    {
+      "command_type": "prefer_source",
+      "allowed_states": [
+        "accepted",
+        "compiled",
+        "local_results_available",
+        "candidate_results_available",
+        "source_cache_results_available",
+        "hunt_running",
+        "paused",
+        "waiting_for_user"
+      ],
+      "resulting_state_or_patch": "SearchPlanPatch",
+      "requires_operator": false,
+      "allowed_public": false,
+      "allowed_native_read_only": false,
+      "policy_required": false,
+      "audit_required": true,
+      "blocked_by_default": false,
+      "future_task": "WORKBENCH-RESULT-LANES-01"
+    },
+    {
+      "command_type": "suppress_source",
+      "allowed_states": [
+        "accepted",
+        "compiled",
+        "local_results_available",
+        "candidate_results_available",
+        "source_cache_results_available",
+        "hunt_running",
+        "paused",
+        "waiting_for_user"
+      ],
+      "resulting_state_or_patch": "SearchPlanPatch",
+      "requires_operator": false,
+      "allowed_public": false,
+      "allowed_native_read_only": false,
+      "policy_required": false,
+      "audit_required": true,
+      "blocked_by_default": false,
+      "future_task": "WORKBENCH-RESULT-LANES-01"
+    },
+    {
+      "command_type": "inspect_candidate",
+      "allowed_states": [
+        "accepted",
+        "compiled",
+        "local_results_available",
+        "candidate_results_available",
+        "source_cache_results_available",
+        "hunt_running",
+        "paused",
+        "waiting_for_user"
+      ],
+      "resulting_state_or_patch": "SearchPlanPatch",
+      "requires_operator": false,
+      "allowed_public": false,
+      "allowed_native_read_only": false,
+      "policy_required": false,
+      "audit_required": true,
+      "blocked_by_default": false,
+      "future_task": "WORKBENCH-RESULT-LANES-01"
+    },
+    {
+      "command_type": "accept_candidate_for_review",
+      "allowed_states": [
+        "accepted",
+        "compiled",
+        "local_results_available",
+        "candidate_results_available",
+        "source_cache_results_available",
+        "hunt_running",
+        "paused",
+        "waiting_for_user"
+      ],
+      "resulting_state_or_patch": "SearchPlanPatch",
+      "requires_operator": true,
+      "allowed_public": false,
+      "allowed_native_read_only": false,
+      "policy_required": true,
+      "audit_required": true,
+      "blocked_by_default": true,
+      "future_task": "WORKBENCH-RESULT-LANES-01"
+    },
+    {
+      "command_type": "reject_candidate",
+      "allowed_states": [
+        "accepted",
+        "compiled",
+        "local_results_available",
+        "candidate_results_available",
+        "source_cache_results_available",
+        "hunt_running",
+        "paused",
+        "waiting_for_user"
+      ],
+      "resulting_state_or_patch": "SearchPlanPatch",
+      "requires_operator": true,
+      "allowed_public": false,
+      "allowed_native_read_only": false,
+      "policy_required": false,
+      "audit_required": true,
+      "blocked_by_default": false,
+      "future_task": "WORKBENCH-RESULT-LANES-01"
+    },
+    {
+      "command_type": "mark_near_miss",
+      "allowed_states": [
+        "accepted",
+        "compiled",
+        "local_results_available",
+        "candidate_results_available",
+        "source_cache_results_available",
+        "hunt_running",
+        "paused",
+        "waiting_for_user"
+      ],
+      "resulting_state_or_patch": "SearchPlanPatch",
+      "requires_operator": false,
+      "allowed_public": true,
+      "allowed_native_read_only": false,
+      "policy_required": false,
+      "audit_required": true,
+      "blocked_by_default": false,
+      "future_task": "WORKBENCH-RESULT-LANES-01"
+    },
+    {
+      "command_type": "mark_duplicate",
+      "allowed_states": [
+        "accepted",
+        "compiled",
+        "local_results_available",
+        "candidate_results_available",
+        "source_cache_results_available",
+        "hunt_running",
+        "paused",
+        "waiting_for_user"
+      ],
+      "resulting_state_or_patch": "SearchPlanPatch",
+      "requires_operator": false,
+      "allowed_public": false,
+      "allowed_native_read_only": false,
+      "policy_required": false,
+      "audit_required": true,
+      "blocked_by_default": false,
+      "future_task": "WORKBENCH-RESULT-LANES-01"
+    },
+    {
+      "command_type": "mark_policy_blocked",
+      "allowed_states": [
+        "accepted",
+        "compiled",
+        "local_results_available",
+        "candidate_results_available",
+        "source_cache_results_available",
+        "hunt_running",
+        "paused",
+        "waiting_for_user"
+      ],
+      "resulting_state_or_patch": "SearchPlanPatch",
+      "requires_operator": false,
+      "allowed_public": false,
+      "allowed_native_read_only": false,
+      "policy_required": false,
+      "audit_required": true,
+      "blocked_by_default": false,
+      "future_task": "WORKBENCH-RESULT-LANES-01"
+    },
+    {
+      "command_type": "request_more_evidence",
+      "allowed_states": [
+        "accepted",
+        "compiled",
+        "local_results_available",
+        "candidate_results_available",
+        "source_cache_results_available",
+        "hunt_running",
+        "paused",
+        "waiting_for_user"
+      ],
+      "resulting_state_or_patch": "SearchPlanPatch",
+      "requires_operator": true,
+      "allowed_public": false,
+      "allowed_native_read_only": false,
+      "policy_required": true,
+      "audit_required": true,
+      "blocked_by_default": true,
+      "future_task": "WORKBENCH-RESULT-LANES-01"
+    },
+    {
+      "command_type": "export_resolution_packet",
+      "allowed_states": [
+        "accepted",
+        "compiled",
+        "local_results_available",
+        "candidate_results_available",
+        "source_cache_results_available",
+        "hunt_running",
+        "paused",
+        "waiting_for_user"
+      ],
+      "resulting_state_or_patch": "SearchPlanPatch",
+      "requires_operator": false,
+      "allowed_public": true,
+      "allowed_native_read_only": false,
+      "policy_required": false,
+      "audit_required": true,
+      "blocked_by_default": false,
+      "future_task": "WORKBENCH-RESULT-LANES-01"
+    },
+    {
+      "command_type": "save_search",
+      "allowed_states": [
+        "accepted",
+        "compiled",
+        "local_results_available",
+        "candidate_results_available",
+        "source_cache_results_available",
+        "hunt_running",
+        "paused",
+        "waiting_for_user"
+      ],
+      "resulting_state_or_patch": "SearchPlanPatch",
+      "requires_operator": false,
+      "allowed_public": true,
+      "allowed_native_read_only": false,
+      "policy_required": false,
+      "audit_required": true,
+      "blocked_by_default": false,
+      "future_task": "WORKBENCH-RESULT-LANES-01"
+    },
+    {
+      "command_type": "watch_need",
+      "allowed_states": [
+        "accepted",
+        "compiled",
+        "local_results_available",
+        "candidate_results_available",
+        "source_cache_results_available",
+        "hunt_running",
+        "paused",
+        "waiting_for_user"
+      ],
+      "resulting_state_or_patch": "SearchPlanPatch",
+      "requires_operator": false,
+      "allowed_public": true,
+      "allowed_native_read_only": false,
+      "policy_required": false,
+      "audit_required": true,
+      "blocked_by_default": false,
+      "future_task": "WORKBENCH-RESULT-LANES-01"
+    }
+  ],
+  "unavailable_commands": [
+    "download",
+    "extract",
+    "call_model_provider",
+    "deploy_public_projection",
+    "mutate_master_index",
+    "run_source_probe"
+  ]
+}

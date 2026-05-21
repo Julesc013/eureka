@@ -1,0 +1,86 @@
+{
+  "schema_version": "contract_taxonomy_migration_backlog.v0",
+  "task": "R0-03",
+  "backlog": [
+    {
+      "backlog_id": "migrate_or_reclassify_control_schemas_packs",
+      "current_paths": ["control/schemas/policies/packs/**"],
+      "target_authority": "contracts/packs/ remains product pack authority; control/schemas remains policy-schema only",
+      "risk": "pack policy schemas may masquerade as pack manifest law",
+      "prerequisite": "R0-03 authority matrix accepted",
+      "recommended_task": "REPO-LAYOUT-CONTRACT-AUTHORITY-MIGRATION-01",
+      "blocks_workbench_foundation": false,
+      "blocks_search_interaction": false
+    },
+    {
+      "backlog_id": "clarify_contracts_source_registry_vs_sources",
+      "current_paths": ["contracts/source_registry/**", "contracts/sources/**"],
+      "target_authority": "contracts/sources/",
+      "risk": "two source registry representations can diverge",
+      "prerequisite": "source-family migration plan",
+      "recommended_task": "REPO-LAYOUT-SOURCE-CONTRACT-MIGRATION-01",
+      "blocks_workbench_foundation": false,
+      "blocks_search_interaction": false
+    },
+    {
+      "backlog_id": "clarify_source_cache_vs_stores_contracts",
+      "current_paths": ["contracts/source_cache/**", "contracts/stores/source_cache_*.json"],
+      "target_authority": "contracts/stores/ for durable store shape",
+      "risk": "source-cache packets and store rows can drift",
+      "prerequisite": "store contract migration map",
+      "recommended_task": "REPO-LAYOUT-STORE-CONTRACT-MIGRATION-01",
+      "blocks_workbench_foundation": false,
+      "blocks_search_interaction": false
+    },
+    {
+      "backlog_id": "clarify_contracts_runtime_scope",
+      "current_paths": ["contracts/runtime/**", "runtime/**"],
+      "target_authority": "contracts/runtime/ for boundary packets only",
+      "risk": "runtime implementation could become hidden schema law",
+      "prerequisite": "source observation seam cleanup",
+      "recommended_task": "R0-04-SOURCE-OBSERVATION-SEAM-01",
+      "blocks_workbench_foundation": false,
+      "blocks_search_interaction": false
+    },
+    {
+      "backlog_id": "clarify_contracts_archive_vs_archive_root",
+      "current_paths": ["contracts/archive/**", "archive/**"],
+      "target_authority": "contracts/archive/ for product archive contracts; archive/ for historical material",
+      "risk": "shared naming hides active/inactive authority split",
+      "prerequisite": "archive classification plan",
+      "recommended_task": "REPO-LAYOUT-ARCHIVE-05",
+      "blocks_workbench_foundation": false,
+      "blocks_search_interaction": false
+    },
+    {
+      "backlog_id": "add_workbench_view_model_contract_location",
+      "current_paths": ["contracts/views/**", "surfaces/web/workbench/**", "runtime/local_workbench/**"],
+      "target_authority": "contracts/views/workbench/",
+      "risk": "Workbench Foundation may otherwise put view law in surfaces or runtime",
+      "prerequisite": "R0-03 reservation",
+      "recommended_task": "WORKBENCH-FOUNDATION-00",
+      "blocks_workbench_foundation": false,
+      "blocks_search_interaction": false
+    },
+    {
+      "backlog_id": "add_search_interaction_packet_contract_location",
+      "current_paths": ["contracts/search/**", "contracts/api/search_*.json"],
+      "target_authority": "contracts/search/interaction/",
+      "risk": "interactive search commands/results may be split across API and UI without a packet canon",
+      "prerequisite": "Workbench route/view matrix",
+      "recommended_task": "SEARCH-INTERACTION-00",
+      "blocks_workbench_foundation": false,
+      "blocks_search_interaction": false
+    },
+    {
+      "backlog_id": "add_generated_artifact_contract_exception_registry",
+      "current_paths": ["contracts/repo/generated_artifact_exceptions.contract.toml", "control/policies/generated_artifact_policy.json"],
+      "target_authority": "contracts/repo/generated_artifact_exceptions.contract.toml",
+      "risk": "generated artifacts may be reintroduced as source authority",
+      "prerequisite": "repo layout canon",
+      "recommended_task": "REPO-LAYOUT-GENERATED-03",
+      "blocks_workbench_foundation": false,
+      "blocks_search_interaction": false
+    }
+  ]
+}

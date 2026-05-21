@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (4900 chars, 1225 approximate tokens)
+- `.aide/context/latest-task-packet.md` (4738 chars, 1185 approximate tokens)
 
 ## Context Packet Reference
 

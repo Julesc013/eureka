@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/search_interaction/action_posture_packet.v0.json",
+  "title": "ActionPosturePacket",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "packet_type",
+    "emitted_at",
+    "can_view",
+    "can_inspect",
+    "can_cite",
+    "can_export",
+    "can_download",
+    "can_extract",
+    "can_execute",
+    "blocked_actions",
+    "policy_reasons"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "action_posture_packet.v0"
+    },
+    "packet_type": {
+      "const": "ActionPosturePacket"
+    },
+    "emitted_at": {
+      "type": "string"
+    },
+    "can_view": {
+      "type": "boolean"
+    },
+    "can_inspect": {
+      "type": "boolean"
+    },
+    "can_cite": {
+      "type": "boolean"
+    },
+    "can_export": {
+      "type": "boolean"
+    },
+    "can_download": {
+      "type": "boolean"
+    },
+    "can_extract": {
+      "type": "boolean"
+    },
+    "can_execute": {
+      "type": "boolean"
+    },
+    "blocked_actions": {
+      "type": "array"
+    },
+    "policy_reasons": {
+      "type": "array"
+    }
+  },
+  "additionalProperties": true
+}

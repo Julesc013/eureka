@@ -1,0 +1,89 @@
+{
+  "schema_version": "syn_workunit_seed_bridge.v0",
+  "task": "SYN-00",
+  "seed_status": "needs_human_review",
+  "execution_allowed_now": false,
+  "accepted_as_runtime_workunit": false,
+  "accepted_as_evidence_truth": false,
+  "master_index_mutation_allowed": false,
+  "mappings": [
+    {
+      "query_case_id": "syn.case.demo.sampleproject.v0",
+      "workunit_seed_id": "syn.workunit_seed.demo.sampleproject.review.v0",
+      "proposed_workunit_type": "evidence_review",
+      "state": "review_only"
+    },
+    {
+      "query_case_id": "syn.case.demo.ia_metadata.sampleproject.v0",
+      "workunit_seed_id": "syn.workunit_seed.demo.ia_metadata.plan.v0",
+      "proposed_workunit_type": "ia_metadata_search",
+      "state": "dry_run_only"
+    },
+    {
+      "query_case_id": "syn.case.demo.absence.v0",
+      "workunit_seed_id": "syn.workunit_seed.demo.absence.review.v0",
+      "proposed_workunit_type": "search_need_review",
+      "state": "review_only"
+    },
+    {
+      "query_case_id": "syn.case.hard.stylewriter2500.v0",
+      "workunit_seed_id": "syn.workunit_seed.hard.stylewriter2500.source_policy.v0",
+      "proposed_workunit_type": "source_policy_review",
+      "state": "blocked"
+    },
+    {
+      "query_case_id": "syn.case.hard.directx2010.v0",
+      "workunit_seed_id": "syn.workunit_seed.hard.directx2010.policy_review.v0",
+      "proposed_workunit_type": "source_policy_review",
+      "state": "blocked"
+    },
+    {
+      "query_case_id": "syn.case.hard.firefoxxp.v0",
+      "workunit_seed_id": "syn.workunit_seed.hard.firefoxxp.evidence_review.v0",
+      "proposed_workunit_type": "evidence_review",
+      "state": "review_only"
+    },
+    {
+      "query_case_id": "syn.case.hard.dtheater.v0",
+      "workunit_seed_id": "syn.workunit_seed.hard.dtheater.research_policy.v0",
+      "proposed_workunit_type": "research_policy_review",
+      "state": "blocked"
+    },
+    {
+      "query_case_id": "syn.case.adversarial.download_crack.v0",
+      "workunit_seed_id": "syn.workunit_seed.adversarial.download_crack.blocked.v0",
+      "proposed_workunit_type": "policy_block",
+      "state": "blocked"
+    },
+    {
+      "query_case_id": "syn.case.adversarial.private_path.v0",
+      "workunit_seed_id": "syn.workunit_seed.adversarial.private_path.blocked.v0",
+      "proposed_workunit_type": "privacy_review",
+      "state": "blocked"
+    },
+    {
+      "query_case_id": "syn.case.adversarial.live_probe.v0",
+      "workunit_seed_id": "syn.workunit_seed.adversarial.live_probe.blocked.v0",
+      "proposed_workunit_type": "ia_metadata_search",
+      "state": "blocked"
+    },
+    {
+      "query_case_id": "syn.case.adversarial.extract_container.v0",
+      "workunit_seed_id": "syn.workunit_seed.adversarial.extract_container.blocked.v0",
+      "proposed_workunit_type": "extraction_task",
+      "state": "blocked"
+    }
+  ],
+  "runtime_capability_boundary": {
+    "runtime_workunit_created": false,
+    "accepted_runtime_workunit": false,
+    "workunit_executed": false,
+    "source_probe_executed": false,
+    "live_ia_call_performed": false,
+    "download_performed": false,
+    "upload_performed": false,
+    "extraction_executed": false,
+    "model_provider_used": false,
+    "master_index_mutated": false
+  }
+}

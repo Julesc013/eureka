@@ -1,0 +1,17 @@
+{
+  "schema_version": "syn_next_task_decision.v0",
+  "task": "SYN-00",
+  "batch": "AIDE-BATCH-SYN-FOUNDATION-01",
+  "status": "pass",
+  "current_task_completed": true,
+  "next_task_if_pass": "DOMAIN-00",
+  "next_task_title": "DOMAIN pack console and contracts",
+  "next_sequence": [
+    "DOMAIN-00",
+    "SCOUT-SCHEMA-00",
+    "F0-00",
+    "G0 ranking/explanation/search quality"
+  ],
+  "reason": "DOMAIN-00 should consume the SYN demo, hard, and adversarial pressure sets after SYN validation passes.",
+  "blocked_tasks": []
+}

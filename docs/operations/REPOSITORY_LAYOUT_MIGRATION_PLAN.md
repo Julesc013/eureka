@@ -68,14 +68,21 @@ Acceptance:
 
 ## Phase 5 - Contract Authority Cleanup
 
-Task: `REPO-LAYOUT-CONTRACT-AUTHORITY-06`
+Task: `R0-03 / REPO-LAYOUT-CONTRACT-TAXONOMY-CLEANUP`
 
 Acceptance:
 
 - Product schemas and packets are authoritative under `contracts/`.
-- `control/schemas` is eliminated, archived, or scoped to governance-only
-  evidence.
+- `control/schemas` is scoped to governance-only evidence with migration backlog.
 - Examples and fixtures do not masquerade as canonical registry truth.
+- Workbench view-model contract location is reserved under
+  `contracts/views/workbench/`.
+- Search Interaction packet contract location is reserved under
+  `contracts/search/interaction/`.
+- No broad file moves or runtime behavior changes are performed in R0-03.
+
+Follow-up task: `REPO-LAYOUT-CONTRACT-AUTHORITY-MIGRATION-01`, if migration is
+needed after Workbench/Search contract locations are accepted.
 
 ## Phase 6 - Workbench Surface Ownership
 

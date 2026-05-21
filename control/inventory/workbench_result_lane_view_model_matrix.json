@@ -1,0 +1,986 @@
+{
+  "schema_version": "workbench_result_lane_view_model_matrix.v0",
+  "task": "WORKBENCH-RESULT-LANES-01",
+  "view_models": [
+    {
+      "view_model_id": "ResultLaneView",
+      "lane_kind": "all",
+      "packet_source": "contracts/search_interaction/result_lane_packet.v0.json",
+      "operator_projection_fields": [
+        "item_id",
+        "title",
+        "summary",
+        "truth_level",
+        "review_required",
+        "provenance",
+        "operator_notes",
+        "source_record_ids",
+        "source_cache_entry_ids",
+        "evidence_refs",
+        "candidate_refs",
+        "review_refs",
+        "workunit_refs",
+        "limitations",
+        "uncertainty",
+        "action_posture"
+      ],
+      "public_projection_fields": [
+        "item_id",
+        "title",
+        "summary",
+        "truth_level",
+        "review_required",
+        "limitations",
+        "uncertainty",
+        "action_posture"
+      ],
+      "native_read_only_fields": [
+        "item_id",
+        "title",
+        "summary",
+        "truth_level",
+        "review_required",
+        "limitations",
+        "uncertainty",
+        "action_posture"
+      ],
+      "action_posture_fields": [
+        "can_view",
+        "can_inspect",
+        "can_cite",
+        "can_export",
+        "can_review",
+        "can_promote_preview",
+        "can_rebuild_index",
+        "can_download",
+        "can_extract",
+        "can_execute",
+        "can_call_model",
+        "can_deploy",
+        "blocked_actions",
+        "policy_reasons"
+      ],
+      "limitations_fields": [
+        "limitations"
+      ],
+      "uncertainty_fields": [
+        "uncertainty",
+        "confidence"
+      ],
+      "provenance_fields": [
+        "provenance",
+        "provenance_summary"
+      ]
+    },
+    {
+      "view_model_id": "ResultItemView",
+      "lane_kind": "all",
+      "packet_source": "contracts/search_interaction/result_lane_packet.v0.json",
+      "operator_projection_fields": [
+        "item_id",
+        "title",
+        "summary",
+        "truth_level",
+        "review_required",
+        "provenance",
+        "operator_notes",
+        "source_record_ids",
+        "source_cache_entry_ids",
+        "evidence_refs",
+        "candidate_refs",
+        "review_refs",
+        "workunit_refs",
+        "limitations",
+        "uncertainty",
+        "action_posture"
+      ],
+      "public_projection_fields": [
+        "item_id",
+        "title",
+        "summary",
+        "truth_level",
+        "review_required",
+        "limitations",
+        "uncertainty",
+        "action_posture"
+      ],
+      "native_read_only_fields": [
+        "item_id",
+        "title",
+        "summary",
+        "truth_level",
+        "review_required",
+        "limitations",
+        "uncertainty",
+        "action_posture"
+      ],
+      "action_posture_fields": [
+        "can_view",
+        "can_inspect",
+        "can_cite",
+        "can_export",
+        "can_review",
+        "can_promote_preview",
+        "can_rebuild_index",
+        "can_download",
+        "can_extract",
+        "can_execute",
+        "can_call_model",
+        "can_deploy",
+        "blocked_actions",
+        "policy_reasons"
+      ],
+      "limitations_fields": [
+        "limitations"
+      ],
+      "uncertainty_fields": [
+        "uncertainty",
+        "confidence"
+      ],
+      "provenance_fields": [
+        "provenance",
+        "provenance_summary"
+      ]
+    },
+    {
+      "view_model_id": "ReviewedResultItemView",
+      "lane_kind": "reviewed_local_results",
+      "packet_source": "contracts/search_interaction/result_lane_packet.v0.json",
+      "operator_projection_fields": [
+        "item_id",
+        "title",
+        "summary",
+        "truth_level",
+        "review_required",
+        "provenance",
+        "operator_notes",
+        "source_record_ids",
+        "source_cache_entry_ids",
+        "evidence_refs",
+        "candidate_refs",
+        "review_refs",
+        "workunit_refs",
+        "limitations",
+        "uncertainty",
+        "action_posture"
+      ],
+      "public_projection_fields": [
+        "item_id",
+        "title",
+        "summary",
+        "truth_level",
+        "review_required",
+        "limitations",
+        "uncertainty",
+        "action_posture"
+      ],
+      "native_read_only_fields": [
+        "item_id",
+        "title",
+        "summary",
+        "truth_level",
+        "review_required",
+        "limitations",
+        "uncertainty",
+        "action_posture"
+      ],
+      "action_posture_fields": [
+        "can_view",
+        "can_inspect",
+        "can_cite",
+        "can_export",
+        "can_review",
+        "can_promote_preview",
+        "can_rebuild_index",
+        "can_download",
+        "can_extract",
+        "can_execute",
+        "can_call_model",
+        "can_deploy",
+        "blocked_actions",
+        "policy_reasons"
+      ],
+      "limitations_fields": [
+        "limitations"
+      ],
+      "uncertainty_fields": [
+        "uncertainty",
+        "confidence"
+      ],
+      "provenance_fields": [
+        "provenance",
+        "provenance_summary"
+      ]
+    },
+    {
+      "view_model_id": "CandidateResultItemView",
+      "lane_kind": "local_candidate_results",
+      "packet_source": "contracts/search_interaction/result_lane_packet.v0.json",
+      "operator_projection_fields": [
+        "item_id",
+        "title",
+        "summary",
+        "truth_level",
+        "review_required",
+        "provenance",
+        "operator_notes",
+        "source_record_ids",
+        "source_cache_entry_ids",
+        "evidence_refs",
+        "candidate_refs",
+        "review_refs",
+        "workunit_refs",
+        "limitations",
+        "uncertainty",
+        "action_posture"
+      ],
+      "public_projection_fields": [
+        "item_id",
+        "title",
+        "summary",
+        "truth_level",
+        "review_required",
+        "limitations",
+        "uncertainty",
+        "action_posture"
+      ],
+      "native_read_only_fields": [
+        "item_id",
+        "title",
+        "summary",
+        "truth_level",
+        "review_required",
+        "limitations",
+        "uncertainty",
+        "action_posture"
+      ],
+      "action_posture_fields": [
+        "can_view",
+        "can_inspect",
+        "can_cite",
+        "can_export",
+        "can_review",
+        "can_promote_preview",
+        "can_rebuild_index",
+        "can_download",
+        "can_extract",
+        "can_execute",
+        "can_call_model",
+        "can_deploy",
+        "blocked_actions",
+        "policy_reasons"
+      ],
+      "limitations_fields": [
+        "limitations"
+      ],
+      "uncertainty_fields": [
+        "uncertainty",
+        "confidence"
+      ],
+      "provenance_fields": [
+        "provenance",
+        "provenance_summary"
+      ]
+    },
+    {
+      "view_model_id": "SourceCacheHitView",
+      "lane_kind": "source_cache_hits",
+      "packet_source": "contracts/search_interaction/result_lane_packet.v0.json",
+      "operator_projection_fields": [
+        "item_id",
+        "title",
+        "summary",
+        "truth_level",
+        "review_required",
+        "provenance",
+        "operator_notes",
+        "source_record_ids",
+        "source_cache_entry_ids",
+        "evidence_refs",
+        "candidate_refs",
+        "review_refs",
+        "workunit_refs",
+        "limitations",
+        "uncertainty",
+        "action_posture"
+      ],
+      "public_projection_fields": [
+        "item_id",
+        "title",
+        "summary",
+        "truth_level",
+        "review_required",
+        "limitations",
+        "uncertainty",
+        "action_posture"
+      ],
+      "native_read_only_fields": [
+        "item_id",
+        "title",
+        "summary",
+        "truth_level",
+        "review_required",
+        "limitations",
+        "uncertainty",
+        "action_posture"
+      ],
+      "action_posture_fields": [
+        "can_view",
+        "can_inspect",
+        "can_cite",
+        "can_export",
+        "can_review",
+        "can_promote_preview",
+        "can_rebuild_index",
+        "can_download",
+        "can_extract",
+        "can_execute",
+        "can_call_model",
+        "can_deploy",
+        "blocked_actions",
+        "policy_reasons"
+      ],
+      "limitations_fields": [
+        "limitations"
+      ],
+      "uncertainty_fields": [
+        "uncertainty",
+        "confidence"
+      ],
+      "provenance_fields": [
+        "provenance",
+        "provenance_summary"
+      ]
+    },
+    {
+      "view_model_id": "IAMetadataCandidateView",
+      "lane_kind": "ia_metadata_candidates",
+      "packet_source": "contracts/search_interaction/result_lane_packet.v0.json",
+      "operator_projection_fields": [
+        "item_id",
+        "title",
+        "summary",
+        "truth_level",
+        "review_required",
+        "provenance",
+        "operator_notes",
+        "source_record_ids",
+        "source_cache_entry_ids",
+        "evidence_refs",
+        "candidate_refs",
+        "review_refs",
+        "workunit_refs",
+        "limitations",
+        "uncertainty",
+        "action_posture"
+      ],
+      "public_projection_fields": [
+        "item_id",
+        "title",
+        "summary",
+        "truth_level",
+        "review_required",
+        "limitations",
+        "uncertainty",
+        "action_posture"
+      ],
+      "native_read_only_fields": [
+        "item_id",
+        "title",
+        "summary",
+        "truth_level",
+        "review_required",
+        "limitations",
+        "uncertainty",
+        "action_posture"
+      ],
+      "action_posture_fields": [
+        "can_view",
+        "can_inspect",
+        "can_cite",
+        "can_export",
+        "can_review",
+        "can_promote_preview",
+        "can_rebuild_index",
+        "can_download",
+        "can_extract",
+        "can_execute",
+        "can_call_model",
+        "can_deploy",
+        "blocked_actions",
+        "policy_reasons"
+      ],
+      "limitations_fields": [
+        "limitations"
+      ],
+      "uncertainty_fields": [
+        "uncertainty",
+        "confidence"
+      ],
+      "provenance_fields": [
+        "provenance",
+        "provenance_summary"
+      ]
+    },
+    {
+      "view_model_id": "ReviewQueueItemView",
+      "lane_kind": "review_queue_items",
+      "packet_source": "contracts/search_interaction/result_lane_packet.v0.json",
+      "operator_projection_fields": [
+        "item_id",
+        "title",
+        "summary",
+        "truth_level",
+        "review_required",
+        "provenance",
+        "operator_notes",
+        "source_record_ids",
+        "source_cache_entry_ids",
+        "evidence_refs",
+        "candidate_refs",
+        "review_refs",
+        "workunit_refs",
+        "limitations",
+        "uncertainty",
+        "action_posture"
+      ],
+      "public_projection_fields": [
+        "item_id",
+        "title",
+        "summary",
+        "truth_level",
+        "review_required",
+        "limitations",
+        "uncertainty",
+        "action_posture"
+      ],
+      "native_read_only_fields": [
+        "item_id",
+        "title",
+        "summary",
+        "truth_level",
+        "review_required",
+        "limitations",
+        "uncertainty",
+        "action_posture"
+      ],
+      "action_posture_fields": [
+        "can_view",
+        "can_inspect",
+        "can_cite",
+        "can_export",
+        "can_review",
+        "can_promote_preview",
+        "can_rebuild_index",
+        "can_download",
+        "can_extract",
+        "can_execute",
+        "can_call_model",
+        "can_deploy",
+        "blocked_actions",
+        "policy_reasons"
+      ],
+      "limitations_fields": [
+        "limitations"
+      ],
+      "uncertainty_fields": [
+        "uncertainty",
+        "confidence"
+      ],
+      "provenance_fields": [
+        "provenance",
+        "provenance_summary"
+      ]
+    },
+    {
+      "view_model_id": "AbsenceLaneView",
+      "lane_kind": "known_absence",
+      "packet_source": "contracts/search_interaction/result_lane_packet.v0.json",
+      "operator_projection_fields": [
+        "item_id",
+        "title",
+        "summary",
+        "truth_level",
+        "review_required",
+        "provenance",
+        "operator_notes",
+        "source_record_ids",
+        "source_cache_entry_ids",
+        "evidence_refs",
+        "candidate_refs",
+        "review_refs",
+        "workunit_refs",
+        "limitations",
+        "uncertainty",
+        "action_posture"
+      ],
+      "public_projection_fields": [
+        "item_id",
+        "title",
+        "summary",
+        "truth_level",
+        "review_required",
+        "limitations",
+        "uncertainty",
+        "action_posture"
+      ],
+      "native_read_only_fields": [
+        "item_id",
+        "title",
+        "summary",
+        "truth_level",
+        "review_required",
+        "limitations",
+        "uncertainty",
+        "action_posture"
+      ],
+      "action_posture_fields": [
+        "can_view",
+        "can_inspect",
+        "can_cite",
+        "can_export",
+        "can_review",
+        "can_promote_preview",
+        "can_rebuild_index",
+        "can_download",
+        "can_extract",
+        "can_execute",
+        "can_call_model",
+        "can_deploy",
+        "blocked_actions",
+        "policy_reasons"
+      ],
+      "limitations_fields": [
+        "limitations"
+      ],
+      "uncertainty_fields": [
+        "uncertainty",
+        "confidence"
+      ],
+      "provenance_fields": [
+        "provenance",
+        "provenance_summary"
+      ]
+    },
+    {
+      "view_model_id": "NearMissLaneView",
+      "lane_kind": "near_misses",
+      "packet_source": "contracts/search_interaction/result_lane_packet.v0.json",
+      "operator_projection_fields": [
+        "item_id",
+        "title",
+        "summary",
+        "truth_level",
+        "review_required",
+        "provenance",
+        "operator_notes",
+        "source_record_ids",
+        "source_cache_entry_ids",
+        "evidence_refs",
+        "candidate_refs",
+        "review_refs",
+        "workunit_refs",
+        "limitations",
+        "uncertainty",
+        "action_posture"
+      ],
+      "public_projection_fields": [
+        "item_id",
+        "title",
+        "summary",
+        "truth_level",
+        "review_required",
+        "limitations",
+        "uncertainty",
+        "action_posture"
+      ],
+      "native_read_only_fields": [
+        "item_id",
+        "title",
+        "summary",
+        "truth_level",
+        "review_required",
+        "limitations",
+        "uncertainty",
+        "action_posture"
+      ],
+      "action_posture_fields": [
+        "can_view",
+        "can_inspect",
+        "can_cite",
+        "can_export",
+        "can_review",
+        "can_promote_preview",
+        "can_rebuild_index",
+        "can_download",
+        "can_extract",
+        "can_execute",
+        "can_call_model",
+        "can_deploy",
+        "blocked_actions",
+        "policy_reasons"
+      ],
+      "limitations_fields": [
+        "limitations"
+      ],
+      "uncertainty_fields": [
+        "uncertainty",
+        "confidence"
+      ],
+      "provenance_fields": [
+        "provenance",
+        "provenance_summary"
+      ]
+    },
+    {
+      "view_model_id": "BlockedActionLaneView",
+      "lane_kind": "blocked_actions",
+      "packet_source": "contracts/search_interaction/result_lane_packet.v0.json",
+      "operator_projection_fields": [
+        "item_id",
+        "title",
+        "summary",
+        "truth_level",
+        "review_required",
+        "provenance",
+        "operator_notes",
+        "source_record_ids",
+        "source_cache_entry_ids",
+        "evidence_refs",
+        "candidate_refs",
+        "review_refs",
+        "workunit_refs",
+        "limitations",
+        "uncertainty",
+        "action_posture"
+      ],
+      "public_projection_fields": [
+        "item_id",
+        "title",
+        "summary",
+        "truth_level",
+        "review_required",
+        "limitations",
+        "uncertainty",
+        "action_posture"
+      ],
+      "native_read_only_fields": [
+        "item_id",
+        "title",
+        "summary",
+        "truth_level",
+        "review_required",
+        "limitations",
+        "uncertainty",
+        "action_posture"
+      ],
+      "action_posture_fields": [
+        "can_view",
+        "can_inspect",
+        "can_cite",
+        "can_export",
+        "can_review",
+        "can_promote_preview",
+        "can_rebuild_index",
+        "can_download",
+        "can_extract",
+        "can_execute",
+        "can_call_model",
+        "can_deploy",
+        "blocked_actions",
+        "policy_reasons"
+      ],
+      "limitations_fields": [
+        "limitations"
+      ],
+      "uncertainty_fields": [
+        "uncertainty",
+        "confidence"
+      ],
+      "provenance_fields": [
+        "provenance",
+        "provenance_summary"
+      ]
+    },
+    {
+      "view_model_id": "WorkUnitLaneView",
+      "lane_kind": "running_workunits",
+      "packet_source": "contracts/search_interaction/result_lane_packet.v0.json",
+      "operator_projection_fields": [
+        "item_id",
+        "title",
+        "summary",
+        "truth_level",
+        "review_required",
+        "provenance",
+        "operator_notes",
+        "source_record_ids",
+        "source_cache_entry_ids",
+        "evidence_refs",
+        "candidate_refs",
+        "review_refs",
+        "workunit_refs",
+        "limitations",
+        "uncertainty",
+        "action_posture"
+      ],
+      "public_projection_fields": [
+        "item_id",
+        "title",
+        "summary",
+        "truth_level",
+        "review_required",
+        "limitations",
+        "uncertainty",
+        "action_posture"
+      ],
+      "native_read_only_fields": [
+        "item_id",
+        "title",
+        "summary",
+        "truth_level",
+        "review_required",
+        "limitations",
+        "uncertainty",
+        "action_posture"
+      ],
+      "action_posture_fields": [
+        "can_view",
+        "can_inspect",
+        "can_cite",
+        "can_export",
+        "can_review",
+        "can_promote_preview",
+        "can_rebuild_index",
+        "can_download",
+        "can_extract",
+        "can_execute",
+        "can_call_model",
+        "can_deploy",
+        "blocked_actions",
+        "policy_reasons"
+      ],
+      "limitations_fields": [
+        "limitations"
+      ],
+      "uncertainty_fields": [
+        "uncertainty",
+        "confidence"
+      ],
+      "provenance_fields": [
+        "provenance",
+        "provenance_summary"
+      ]
+    },
+    {
+      "view_model_id": "DeferredDeepeningLaneView",
+      "lane_kind": "deferred_deepening",
+      "packet_source": "contracts/search_interaction/result_lane_packet.v0.json",
+      "operator_projection_fields": [
+        "item_id",
+        "title",
+        "summary",
+        "truth_level",
+        "review_required",
+        "provenance",
+        "operator_notes",
+        "source_record_ids",
+        "source_cache_entry_ids",
+        "evidence_refs",
+        "candidate_refs",
+        "review_refs",
+        "workunit_refs",
+        "limitations",
+        "uncertainty",
+        "action_posture"
+      ],
+      "public_projection_fields": [
+        "item_id",
+        "title",
+        "summary",
+        "truth_level",
+        "review_required",
+        "limitations",
+        "uncertainty",
+        "action_posture"
+      ],
+      "native_read_only_fields": [
+        "item_id",
+        "title",
+        "summary",
+        "truth_level",
+        "review_required",
+        "limitations",
+        "uncertainty",
+        "action_posture"
+      ],
+      "action_posture_fields": [
+        "can_view",
+        "can_inspect",
+        "can_cite",
+        "can_export",
+        "can_review",
+        "can_promote_preview",
+        "can_rebuild_index",
+        "can_download",
+        "can_extract",
+        "can_execute",
+        "can_call_model",
+        "can_deploy",
+        "blocked_actions",
+        "policy_reasons"
+      ],
+      "limitations_fields": [
+        "limitations"
+      ],
+      "uncertainty_fields": [
+        "uncertainty",
+        "confidence"
+      ],
+      "provenance_fields": [
+        "provenance",
+        "provenance_summary"
+      ]
+    },
+    {
+      "view_model_id": "FutureExtractionLaneView",
+      "lane_kind": "future_extraction_work",
+      "packet_source": "contracts/search_interaction/result_lane_packet.v0.json",
+      "operator_projection_fields": [
+        "item_id",
+        "title",
+        "summary",
+        "truth_level",
+        "review_required",
+        "provenance",
+        "operator_notes",
+        "source_record_ids",
+        "source_cache_entry_ids",
+        "evidence_refs",
+        "candidate_refs",
+        "review_refs",
+        "workunit_refs",
+        "limitations",
+        "uncertainty",
+        "action_posture"
+      ],
+      "public_projection_fields": [
+        "item_id",
+        "title",
+        "summary",
+        "truth_level",
+        "review_required",
+        "limitations",
+        "uncertainty",
+        "action_posture"
+      ],
+      "native_read_only_fields": [
+        "item_id",
+        "title",
+        "summary",
+        "truth_level",
+        "review_required",
+        "limitations",
+        "uncertainty",
+        "action_posture"
+      ],
+      "action_posture_fields": [
+        "can_view",
+        "can_inspect",
+        "can_cite",
+        "can_export",
+        "can_review",
+        "can_promote_preview",
+        "can_rebuild_index",
+        "can_download",
+        "can_extract",
+        "can_execute",
+        "can_call_model",
+        "can_deploy",
+        "blocked_actions",
+        "policy_reasons"
+      ],
+      "limitations_fields": [
+        "limitations"
+      ],
+      "uncertainty_fields": [
+        "uncertainty",
+        "confidence"
+      ],
+      "provenance_fields": [
+        "provenance",
+        "provenance_summary"
+      ]
+    },
+    {
+      "view_model_id": "ResultLanePageView",
+      "lane_kind": "page",
+      "packet_source": "contracts/search_interaction/result_lane_packet.v0.json",
+      "operator_projection_fields": [
+        "item_id",
+        "title",
+        "summary",
+        "truth_level",
+        "review_required",
+        "provenance",
+        "operator_notes",
+        "source_record_ids",
+        "source_cache_entry_ids",
+        "evidence_refs",
+        "candidate_refs",
+        "review_refs",
+        "workunit_refs",
+        "limitations",
+        "uncertainty",
+        "action_posture"
+      ],
+      "public_projection_fields": [
+        "item_id",
+        "title",
+        "summary",
+        "truth_level",
+        "review_required",
+        "limitations",
+        "uncertainty",
+        "action_posture"
+      ],
+      "native_read_only_fields": [
+        "item_id",
+        "title",
+        "summary",
+        "truth_level",
+        "review_required",
+        "limitations",
+        "uncertainty",
+        "action_posture"
+      ],
+      "action_posture_fields": [
+        "can_view",
+        "can_inspect",
+        "can_cite",
+        "can_export",
+        "can_review",
+        "can_promote_preview",
+        "can_rebuild_index",
+        "can_download",
+        "can_extract",
+        "can_execute",
+        "can_call_model",
+        "can_deploy",
+        "blocked_actions",
+        "policy_reasons"
+      ],
+      "limitations_fields": [
+        "limitations"
+      ],
+      "uncertainty_fields": [
+        "uncertainty",
+        "confidence"
+      ],
+      "provenance_fields": [
+        "provenance",
+        "provenance_summary"
+      ]
+    }
+  ]
+}

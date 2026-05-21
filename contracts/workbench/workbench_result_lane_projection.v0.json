@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/workbench/workbench_result_lane_projection.v0.json",
+  "title": "WorkbenchResultLaneProjection",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "projection_profile",
+    "operator_fields_hidden",
+    "unsafe_actions_blocked"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "workbench_result_lane_projection.v0"
+    },
+    "projection_profile": {
+      "enum": [
+        "operator_workbench",
+        "public_web",
+        "native_desktop_read_only"
+      ]
+    },
+    "operator_fields_hidden": {
+      "type": "boolean"
+    },
+    "unsafe_actions_blocked": {
+      "type": "boolean"
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,20 @@
+{
+  "schema_version": "contract_taxonomy_authority_matrix_sample.v0",
+  "families": [
+    {
+      "family_id": "repo_layout_contracts",
+      "authority_class": "PRODUCT_INTERNAL_CONTRACT",
+      "canonical_authority_path": "contracts/repo/"
+    },
+    {
+      "family_id": "Workbench_future_view_models",
+      "authority_class": "PRODUCT_PUBLIC_CONTRACT",
+      "canonical_authority_path": "contracts/views/workbench/"
+    },
+    {
+      "family_id": "Search_Interaction_future_packets",
+      "authority_class": "PRODUCT_PUBLIC_CONTRACT",
+      "canonical_authority_path": "contracts/search/interaction/"
+    }
+  ]
+}

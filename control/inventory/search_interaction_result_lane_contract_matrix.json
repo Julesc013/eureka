@@ -1,0 +1,182 @@
+{
+  "schema_version": "search_interaction_result_lane_contract_matrix.v0",
+  "task": "SEARCH-INTERACTION-00",
+  "lanes": [
+    {
+      "lane_kind": "reviewed_local_results",
+      "packet_contract": "contracts/search_interaction/result_lane_packet.v0.json",
+      "public_visibility": true,
+      "operator_visibility": true,
+      "native_read_only_visibility": true,
+      "review_required": false,
+      "truth_level": "reviewed",
+      "blocked_actions": [
+        "download",
+        "extract",
+        "call_model_provider",
+        "deploy"
+      ],
+      "next_implementation_task": "WORKBENCH-RESULT-LANES-01"
+    },
+    {
+      "lane_kind": "local_candidate_results",
+      "packet_contract": "contracts/search_interaction/result_lane_packet.v0.json",
+      "public_visibility": false,
+      "operator_visibility": true,
+      "native_read_only_visibility": false,
+      "review_required": true,
+      "truth_level": "candidate_or_absence_not_truth",
+      "blocked_actions": [
+        "download",
+        "extract",
+        "call_model_provider",
+        "deploy"
+      ],
+      "next_implementation_task": "WORKBENCH-RESULT-LANES-01"
+    },
+    {
+      "lane_kind": "source_cache_hits",
+      "packet_contract": "contracts/search_interaction/result_lane_packet.v0.json",
+      "public_visibility": false,
+      "operator_visibility": true,
+      "native_read_only_visibility": false,
+      "review_required": false,
+      "truth_level": "candidate_or_absence_not_truth",
+      "blocked_actions": [
+        "download",
+        "extract",
+        "call_model_provider",
+        "deploy"
+      ],
+      "next_implementation_task": "WORKBENCH-RESULT-LANES-01"
+    },
+    {
+      "lane_kind": "IA_metadata_candidates",
+      "packet_contract": "contracts/search_interaction/result_lane_packet.v0.json",
+      "public_visibility": false,
+      "operator_visibility": true,
+      "native_read_only_visibility": false,
+      "review_required": true,
+      "truth_level": "candidate_or_absence_not_truth",
+      "blocked_actions": [
+        "download",
+        "extract",
+        "call_model_provider",
+        "deploy"
+      ],
+      "next_implementation_task": "WORKBENCH-RESULT-LANES-01"
+    },
+    {
+      "lane_kind": "review_queue_items",
+      "packet_contract": "contracts/search_interaction/result_lane_packet.v0.json",
+      "public_visibility": false,
+      "operator_visibility": true,
+      "native_read_only_visibility": false,
+      "review_required": true,
+      "truth_level": "candidate_or_absence_not_truth",
+      "blocked_actions": [
+        "download",
+        "extract",
+        "call_model_provider",
+        "deploy"
+      ],
+      "next_implementation_task": "WORKBENCH-RESULT-LANES-01"
+    },
+    {
+      "lane_kind": "known_absence",
+      "packet_contract": "contracts/search_interaction/result_lane_packet.v0.json",
+      "public_visibility": true,
+      "operator_visibility": true,
+      "native_read_only_visibility": true,
+      "review_required": false,
+      "truth_level": "candidate_or_absence_not_truth",
+      "blocked_actions": [
+        "download",
+        "extract",
+        "call_model_provider",
+        "deploy"
+      ],
+      "next_implementation_task": "WORKBENCH-RESULT-LANES-01"
+    },
+    {
+      "lane_kind": "near_misses",
+      "packet_contract": "contracts/search_interaction/result_lane_packet.v0.json",
+      "public_visibility": true,
+      "operator_visibility": true,
+      "native_read_only_visibility": false,
+      "review_required": false,
+      "truth_level": "candidate_or_absence_not_truth",
+      "blocked_actions": [
+        "download",
+        "extract",
+        "call_model_provider",
+        "deploy"
+      ],
+      "next_implementation_task": "WORKBENCH-RESULT-LANES-01"
+    },
+    {
+      "lane_kind": "blocked_actions",
+      "packet_contract": "contracts/search_interaction/result_lane_packet.v0.json",
+      "public_visibility": true,
+      "operator_visibility": true,
+      "native_read_only_visibility": false,
+      "review_required": false,
+      "truth_level": "candidate_or_absence_not_truth",
+      "blocked_actions": [
+        "download",
+        "extract",
+        "call_model_provider",
+        "deploy"
+      ],
+      "next_implementation_task": "WORKBENCH-RESULT-LANES-01"
+    },
+    {
+      "lane_kind": "running_workunits",
+      "packet_contract": "contracts/search_interaction/result_lane_packet.v0.json",
+      "public_visibility": false,
+      "operator_visibility": true,
+      "native_read_only_visibility": false,
+      "review_required": false,
+      "truth_level": "candidate_or_absence_not_truth",
+      "blocked_actions": [
+        "download",
+        "extract",
+        "call_model_provider",
+        "deploy"
+      ],
+      "next_implementation_task": "WORKBENCH-RESULT-LANES-01"
+    },
+    {
+      "lane_kind": "deferred_deepening",
+      "packet_contract": "contracts/search_interaction/result_lane_packet.v0.json",
+      "public_visibility": false,
+      "operator_visibility": true,
+      "native_read_only_visibility": false,
+      "review_required": false,
+      "truth_level": "candidate_or_absence_not_truth",
+      "blocked_actions": [
+        "download",
+        "extract",
+        "call_model_provider",
+        "deploy"
+      ],
+      "next_implementation_task": "WORKBENCH-RESULT-LANES-01"
+    },
+    {
+      "lane_kind": "future_extraction_work",
+      "packet_contract": "contracts/search_interaction/result_lane_packet.v0.json",
+      "public_visibility": false,
+      "operator_visibility": true,
+      "native_read_only_visibility": false,
+      "review_required": true,
+      "truth_level": "candidate_or_absence_not_truth",
+      "blocked_actions": [
+        "download",
+        "extract",
+        "call_model_provider",
+        "deploy"
+      ],
+      "next_implementation_task": "WORKBENCH-RESULT-LANES-01"
+    }
+  ]
+}

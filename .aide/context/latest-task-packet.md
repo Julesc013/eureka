@@ -2,11 +2,11 @@
 
 ## PHASE
 
-UNSPECIFIED - REPO-LAYOUT-CANON-01 - Verify repository root and naming canon before Workbench Foundation
+UNSPECIFIED - DOMAIN-00
 
 ## GOAL
 
-REPO-LAYOUT-CANON-01 - Verify repository root and naming canon before Workbench Foundation
+DOMAIN-00
 
 ## WHY
 
@@ -139,8 +139,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4900
-- approx_tokens: 1225
+- chars: 4738
+- approx_tokens: 1185
 - budget_status: PASS
 - warnings:
   - none

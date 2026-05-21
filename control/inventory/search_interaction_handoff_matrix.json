@@ -1,0 +1,30 @@
+{
+  "schema_version": "search_interaction_handoff_matrix.v0",
+  "task": "SEARCH-INTERACTION-00",
+  "handoffs": [
+    {
+      "task_id": "WORKBENCH-RESULT-LANES-01",
+      "purpose": "implement lane display model"
+    },
+    {
+      "task_id": "IA-HUNT-BRIDGE-00",
+      "purpose": "connect IA source work to Hunt/WorkUnit/result lanes"
+    },
+    {
+      "task_id": "SYN-00",
+      "purpose": "generate query pressure over Search Interaction contracts"
+    },
+    {
+      "task_id": "DOMAIN-00",
+      "purpose": "type query interpretation by domain pack"
+    },
+    {
+      "task_id": "SCOUT-SCHEMA-00",
+      "purpose": "attach discovery trails and related paths"
+    },
+    {
+      "task_id": "F0",
+      "purpose": "attach extraction/member deepening via WorkUnits later"
+    }
+  ]
+}

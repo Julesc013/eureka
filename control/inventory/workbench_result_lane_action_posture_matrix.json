@@ -1,0 +1,336 @@
+{
+  "schema_version": "workbench_result_lane_action_posture_matrix.v0",
+  "task": "WORKBENCH-RESULT-LANES-01",
+  "postures": [
+    {
+      "lane_kind": "reviewed_local_results",
+      "can_view": true,
+      "can_inspect": true,
+      "can_cite": true,
+      "can_export": true,
+      "can_review": false,
+      "can_promote_preview": false,
+      "can_rebuild_index": false,
+      "can_download": false,
+      "can_extract": false,
+      "can_execute": false,
+      "can_call_model": false,
+      "can_deploy": false,
+      "blocked_actions": [
+        "download",
+        "extract",
+        "execute",
+        "call_model_provider",
+        "deploy_public_projection",
+        "run_source_probe",
+        "mutate_master_index",
+        "promote_preview",
+        "rebuild_reviewed_index"
+      ],
+      "policy_reasons": [
+        "Result lanes are read-only projections.",
+        "Unsafe actions remain behind future explicit gates."
+      ]
+    },
+    {
+      "lane_kind": "local_candidate_results",
+      "can_view": true,
+      "can_inspect": true,
+      "can_cite": false,
+      "can_export": true,
+      "can_review": true,
+      "can_promote_preview": false,
+      "can_rebuild_index": false,
+      "can_download": false,
+      "can_extract": false,
+      "can_execute": false,
+      "can_call_model": false,
+      "can_deploy": false,
+      "blocked_actions": [
+        "download",
+        "extract",
+        "execute",
+        "call_model_provider",
+        "deploy_public_projection",
+        "run_source_probe",
+        "mutate_master_index",
+        "promote_preview",
+        "rebuild_reviewed_index"
+      ],
+      "policy_reasons": [
+        "Result lanes are read-only projections.",
+        "Unsafe actions remain behind future explicit gates."
+      ]
+    },
+    {
+      "lane_kind": "source_cache_hits",
+      "can_view": true,
+      "can_inspect": true,
+      "can_cite": false,
+      "can_export": true,
+      "can_review": false,
+      "can_promote_preview": false,
+      "can_rebuild_index": false,
+      "can_download": false,
+      "can_extract": false,
+      "can_execute": false,
+      "can_call_model": false,
+      "can_deploy": false,
+      "blocked_actions": [
+        "download",
+        "extract",
+        "execute",
+        "call_model_provider",
+        "deploy_public_projection",
+        "run_source_probe",
+        "mutate_master_index",
+        "promote_preview",
+        "rebuild_reviewed_index"
+      ],
+      "policy_reasons": [
+        "Result lanes are read-only projections.",
+        "Unsafe actions remain behind future explicit gates."
+      ]
+    },
+    {
+      "lane_kind": "ia_metadata_candidates",
+      "can_view": true,
+      "can_inspect": true,
+      "can_cite": false,
+      "can_export": true,
+      "can_review": true,
+      "can_promote_preview": false,
+      "can_rebuild_index": false,
+      "can_download": false,
+      "can_extract": false,
+      "can_execute": false,
+      "can_call_model": false,
+      "can_deploy": false,
+      "blocked_actions": [
+        "download",
+        "extract",
+        "execute",
+        "call_model_provider",
+        "deploy_public_projection",
+        "run_source_probe",
+        "mutate_master_index",
+        "promote_preview",
+        "rebuild_reviewed_index"
+      ],
+      "policy_reasons": [
+        "Result lanes are read-only projections.",
+        "Unsafe actions remain behind future explicit gates."
+      ]
+    },
+    {
+      "lane_kind": "review_queue_items",
+      "can_view": true,
+      "can_inspect": true,
+      "can_cite": false,
+      "can_export": true,
+      "can_review": true,
+      "can_promote_preview": false,
+      "can_rebuild_index": false,
+      "can_download": false,
+      "can_extract": false,
+      "can_execute": false,
+      "can_call_model": false,
+      "can_deploy": false,
+      "blocked_actions": [
+        "download",
+        "extract",
+        "execute",
+        "call_model_provider",
+        "deploy_public_projection",
+        "run_source_probe",
+        "mutate_master_index",
+        "promote_preview",
+        "rebuild_reviewed_index"
+      ],
+      "policy_reasons": [
+        "Result lanes are read-only projections.",
+        "Unsafe actions remain behind future explicit gates."
+      ]
+    },
+    {
+      "lane_kind": "known_absence",
+      "can_view": true,
+      "can_inspect": true,
+      "can_cite": true,
+      "can_export": true,
+      "can_review": false,
+      "can_promote_preview": false,
+      "can_rebuild_index": false,
+      "can_download": false,
+      "can_extract": false,
+      "can_execute": false,
+      "can_call_model": false,
+      "can_deploy": false,
+      "blocked_actions": [
+        "download",
+        "extract",
+        "execute",
+        "call_model_provider",
+        "deploy_public_projection",
+        "run_source_probe",
+        "mutate_master_index",
+        "promote_preview",
+        "rebuild_reviewed_index"
+      ],
+      "policy_reasons": [
+        "Result lanes are read-only projections.",
+        "Unsafe actions remain behind future explicit gates."
+      ]
+    },
+    {
+      "lane_kind": "near_misses",
+      "can_view": true,
+      "can_inspect": true,
+      "can_cite": true,
+      "can_export": true,
+      "can_review": true,
+      "can_promote_preview": false,
+      "can_rebuild_index": false,
+      "can_download": false,
+      "can_extract": false,
+      "can_execute": false,
+      "can_call_model": false,
+      "can_deploy": false,
+      "blocked_actions": [
+        "download",
+        "extract",
+        "execute",
+        "call_model_provider",
+        "deploy_public_projection",
+        "run_source_probe",
+        "mutate_master_index",
+        "promote_preview",
+        "rebuild_reviewed_index"
+      ],
+      "policy_reasons": [
+        "Result lanes are read-only projections.",
+        "Unsafe actions remain behind future explicit gates."
+      ]
+    },
+    {
+      "lane_kind": "blocked_actions",
+      "can_view": true,
+      "can_inspect": true,
+      "can_cite": false,
+      "can_export": true,
+      "can_review": false,
+      "can_promote_preview": false,
+      "can_rebuild_index": false,
+      "can_download": false,
+      "can_extract": false,
+      "can_execute": false,
+      "can_call_model": false,
+      "can_deploy": false,
+      "blocked_actions": [
+        "download",
+        "extract",
+        "execute",
+        "call_model_provider",
+        "deploy_public_projection",
+        "run_source_probe",
+        "mutate_master_index",
+        "promote_preview",
+        "rebuild_reviewed_index"
+      ],
+      "policy_reasons": [
+        "Result lanes are read-only projections.",
+        "Unsafe actions remain behind future explicit gates."
+      ]
+    },
+    {
+      "lane_kind": "running_workunits",
+      "can_view": true,
+      "can_inspect": true,
+      "can_cite": false,
+      "can_export": true,
+      "can_review": false,
+      "can_promote_preview": false,
+      "can_rebuild_index": false,
+      "can_download": false,
+      "can_extract": false,
+      "can_execute": false,
+      "can_call_model": false,
+      "can_deploy": false,
+      "blocked_actions": [
+        "download",
+        "extract",
+        "execute",
+        "call_model_provider",
+        "deploy_public_projection",
+        "run_source_probe",
+        "mutate_master_index",
+        "promote_preview",
+        "rebuild_reviewed_index"
+      ],
+      "policy_reasons": [
+        "Result lanes are read-only projections.",
+        "Unsafe actions remain behind future explicit gates."
+      ]
+    },
+    {
+      "lane_kind": "deferred_deepening",
+      "can_view": true,
+      "can_inspect": true,
+      "can_cite": false,
+      "can_export": true,
+      "can_review": false,
+      "can_promote_preview": false,
+      "can_rebuild_index": false,
+      "can_download": false,
+      "can_extract": false,
+      "can_execute": false,
+      "can_call_model": false,
+      "can_deploy": false,
+      "blocked_actions": [
+        "download",
+        "extract",
+        "execute",
+        "call_model_provider",
+        "deploy_public_projection",
+        "run_source_probe",
+        "mutate_master_index",
+        "promote_preview",
+        "rebuild_reviewed_index"
+      ],
+      "policy_reasons": [
+        "Result lanes are read-only projections.",
+        "Unsafe actions remain behind future explicit gates."
+      ]
+    },
+    {
+      "lane_kind": "future_extraction_work",
+      "can_view": true,
+      "can_inspect": true,
+      "can_cite": false,
+      "can_export": true,
+      "can_review": true,
+      "can_promote_preview": false,
+      "can_rebuild_index": false,
+      "can_download": false,
+      "can_extract": false,
+      "can_execute": false,
+      "can_call_model": false,
+      "can_deploy": false,
+      "blocked_actions": [
+        "download",
+        "extract",
+        "execute",
+        "call_model_provider",
+        "deploy_public_projection",
+        "run_source_probe",
+        "mutate_master_index",
+        "promote_preview",
+        "rebuild_reviewed_index"
+      ],
+      "policy_reasons": [
+        "Result lanes are read-only projections.",
+        "Unsafe actions remain behind future explicit gates."
+      ]
+    }
+  ]
+}

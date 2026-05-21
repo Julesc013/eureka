@@ -1,0 +1,16 @@
+{
+  "schema_version": "ia_hunt_non_claim_policy.v0",
+  "task": "IA-HUNT-BRIDGE-00",
+  "ia_hunt_bridge_is_full_archive_org_integration": false,
+  "live_ia_calls_enabled_by_default": false,
+  "source_probe_executed": false,
+  "downloads_enabled": false,
+  "extraction_enabled": false,
+  "model_provider_enabled": false,
+  "deployment_enabled": false,
+  "master_index_mutation_enabled": false,
+  "operator_instance_mutation_default": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "full_archive_org_integration_claimed": false
+}

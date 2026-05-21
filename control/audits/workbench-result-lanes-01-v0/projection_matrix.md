@@ -1,0 +1,68 @@
+# Projection Matrix
+
+- reviewed_local_results
+  - projection_profile: operator_workbench
+- reviewed_local_results
+  - projection_profile: public_web
+- reviewed_local_results
+  - projection_profile: native_desktop_read_only
+- local_candidate_results
+  - projection_profile: operator_workbench
+- local_candidate_results
+  - projection_profile: public_web
+- local_candidate_results
+  - projection_profile: native_desktop_read_only
+- source_cache_hits
+  - projection_profile: operator_workbench
+- source_cache_hits
+  - projection_profile: public_web
+- source_cache_hits
+  - projection_profile: native_desktop_read_only
+- ia_metadata_candidates
+  - projection_profile: operator_workbench
+- ia_metadata_candidates
+  - projection_profile: public_web
+- ia_metadata_candidates
+  - projection_profile: native_desktop_read_only
+- review_queue_items
+  - projection_profile: operator_workbench
+- review_queue_items
+  - projection_profile: public_web
+- review_queue_items
+  - projection_profile: native_desktop_read_only
+- known_absence
+  - projection_profile: operator_workbench
+- known_absence
+  - projection_profile: public_web
+- known_absence
+  - projection_profile: native_desktop_read_only
+- near_misses
+  - projection_profile: operator_workbench
+- near_misses
+  - projection_profile: public_web
+- near_misses
+  - projection_profile: native_desktop_read_only
+- blocked_actions
+  - projection_profile: operator_workbench
+- blocked_actions
+  - projection_profile: public_web
+- blocked_actions
+  - projection_profile: native_desktop_read_only
+- running_workunits
+  - projection_profile: operator_workbench
+- running_workunits
+  - projection_profile: public_web
+- running_workunits
+  - projection_profile: native_desktop_read_only
+- deferred_deepening
+  - projection_profile: operator_workbench
+- deferred_deepening
+  - projection_profile: public_web
+- deferred_deepening
+  - projection_profile: native_desktop_read_only
+- future_extraction_work
+  - projection_profile: operator_workbench
+- future_extraction_work
+  - projection_profile: public_web
+- future_extraction_work
+  - projection_profile: native_desktop_read_only

@@ -1,0 +1,128 @@
+{
+  "schema_version": "result_lane_packet.v0",
+  "packet_type": "ResultLanePacket",
+  "emitted_at": "2026-05-20T00:00:00Z",
+  "lane_id": "lane-reviewed_local_results",
+  "lane_kind": "reviewed_local_results",
+  "projection_profile": "operator_workbench",
+  "state": "available",
+  "visible": true,
+  "truth_level": "reviewed_local_not_master_public_truth",
+  "review_required": false,
+  "source_mapping": "reviewed local index",
+  "result_count": 1,
+  "result_ids": [
+    "reviewed-sampleproject-001"
+  ],
+  "items": [
+    {
+      "item_id": "reviewed-sampleproject-001",
+      "title": "SampleProject reviewed local result",
+      "summary": "Reviewed local fixture result for deterministic Workbench lane projection.",
+      "source_record_ids": [
+        "reviewed-public-record-sampleproject"
+      ],
+      "evidence_refs": [
+        "evidence-reviewed-sampleproject"
+      ],
+      "operator_notes": "Committed fixture-backed reviewed lane; not master/public truth.",
+      "truth_level": "reviewed_local_not_master_public_truth",
+      "review_required": false,
+      "limitations": [
+        "Reviewed local result is not master/public truth."
+      ],
+      "uncertainty": [
+        "Projection is local and bounded."
+      ],
+      "provenance": {
+        "source_mapping": "reviewed local index"
+      },
+      "action_posture": {
+        "can_view": true,
+        "can_inspect": true,
+        "can_cite": true,
+        "can_export": true,
+        "can_review": false,
+        "can_promote_preview": false,
+        "can_rebuild_index": false,
+        "can_download": false,
+        "can_extract": false,
+        "can_execute": false,
+        "can_call_model": false,
+        "can_deploy": false,
+        "blocked_actions": [
+          "download",
+          "extract",
+          "execute",
+          "call_model_provider",
+          "deploy_public_site",
+          "run_source_probe",
+          "mutate_master_index",
+          "promote_preview",
+          "rebuild_reviewed_index"
+        ],
+        "policy_reasons": [
+          "Result lanes are read-only projections.",
+          "Unsafe actions remain disabled until future governed tasks enable them."
+        ]
+      },
+      "private_local_path_refs": [],
+      "debug": {
+        "fixture_only": true
+      }
+    }
+  ],
+  "confidence": 0.8,
+  "limitations": [
+    "Reviewed local result is not master/public truth."
+  ],
+  "uncertainty": [
+    "Local projection only; lane content does not create truth."
+  ],
+  "provenance": {
+    "source_mapping": "reviewed local index",
+    "source_probe_executed": false,
+    "live_ia_call_performed": false,
+    "store_mutation_performed": false
+  },
+  "action_posture": {
+    "can_view": true,
+    "can_inspect": true,
+    "can_cite": true,
+    "can_export": true,
+    "can_review": false,
+    "can_promote_preview": false,
+    "can_rebuild_index": false,
+    "can_download": false,
+    "can_extract": false,
+    "can_execute": false,
+    "can_call_model": false,
+    "can_deploy": false,
+    "blocked_actions": [
+      "download",
+      "extract",
+      "execute",
+      "call_model_provider",
+      "deploy_public_site",
+      "run_source_probe",
+      "mutate_master_index",
+      "promote_preview",
+      "rebuild_reviewed_index"
+    ],
+    "policy_reasons": [
+      "Result lanes are read-only projections.",
+      "Unsafe actions remain disabled until future governed tasks enable them."
+    ]
+  },
+  "blocked_actions": [
+    "download",
+    "extract",
+    "execute",
+    "call_model_provider",
+    "deploy_public_site",
+    "run_source_probe",
+    "mutate_master_index",
+    "promote_preview",
+    "rebuild_reviewed_index"
+  ]
+}

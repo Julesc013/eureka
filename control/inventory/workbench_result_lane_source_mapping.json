@@ -1,0 +1,138 @@
+{
+  "schema_version": "workbench_result_lane_source_mapping.v0",
+  "task": "WORKBENCH-RESULT-LANES-01",
+  "mappings": [
+    {
+      "lane_kind": "reviewed_local_results",
+      "source_mapping": "reviewed local index",
+      "read_only": true,
+      "writes_source_cache": false,
+      "writes_evidence": false,
+      "writes_candidate_index": false,
+      "writes_review_queue": false,
+      "writes_reviewed_index": false,
+      "runs_source_probe": false,
+      "live_ia_call_performed": false
+    },
+    {
+      "lane_kind": "local_candidate_results",
+      "source_mapping": "candidate index",
+      "read_only": true,
+      "writes_source_cache": false,
+      "writes_evidence": false,
+      "writes_candidate_index": false,
+      "writes_review_queue": false,
+      "writes_reviewed_index": false,
+      "runs_source_probe": false,
+      "live_ia_call_performed": false
+    },
+    {
+      "lane_kind": "source_cache_hits",
+      "source_mapping": "source cache",
+      "read_only": true,
+      "writes_source_cache": false,
+      "writes_evidence": false,
+      "writes_candidate_index": false,
+      "writes_review_queue": false,
+      "writes_reviewed_index": false,
+      "runs_source_probe": false,
+      "live_ia_call_performed": false
+    },
+    {
+      "lane_kind": "ia_metadata_candidates",
+      "source_mapping": "IA candidate/index/source-cache/evidence preview records",
+      "read_only": true,
+      "writes_source_cache": false,
+      "writes_evidence": false,
+      "writes_candidate_index": false,
+      "writes_review_queue": false,
+      "writes_reviewed_index": false,
+      "runs_source_probe": false,
+      "live_ia_call_performed": false
+    },
+    {
+      "lane_kind": "review_queue_items",
+      "source_mapping": "review queue",
+      "read_only": true,
+      "writes_source_cache": false,
+      "writes_evidence": false,
+      "writes_candidate_index": false,
+      "writes_review_queue": false,
+      "writes_reviewed_index": false,
+      "runs_source_probe": false,
+      "live_ia_call_performed": false
+    },
+    {
+      "lane_kind": "known_absence",
+      "source_mapping": "absence records/absence packets",
+      "read_only": true,
+      "writes_source_cache": false,
+      "writes_evidence": false,
+      "writes_candidate_index": false,
+      "writes_review_queue": false,
+      "writes_reviewed_index": false,
+      "runs_source_probe": false,
+      "live_ia_call_performed": false
+    },
+    {
+      "lane_kind": "near_misses",
+      "source_mapping": "candidate/absence/coverage records where available",
+      "read_only": true,
+      "writes_source_cache": false,
+      "writes_evidence": false,
+      "writes_candidate_index": false,
+      "writes_review_queue": false,
+      "writes_reviewed_index": false,
+      "runs_source_probe": false,
+      "live_ia_call_performed": false
+    },
+    {
+      "lane_kind": "blocked_actions",
+      "source_mapping": "policy/action posture",
+      "read_only": true,
+      "writes_source_cache": false,
+      "writes_evidence": false,
+      "writes_candidate_index": false,
+      "writes_review_queue": false,
+      "writes_reviewed_index": false,
+      "runs_source_probe": false,
+      "live_ia_call_performed": false
+    },
+    {
+      "lane_kind": "running_workunits",
+      "source_mapping": "WorkUnit queue",
+      "read_only": true,
+      "writes_source_cache": false,
+      "writes_evidence": false,
+      "writes_candidate_index": false,
+      "writes_review_queue": false,
+      "writes_reviewed_index": false,
+      "runs_source_probe": false,
+      "live_ia_call_performed": false
+    },
+    {
+      "lane_kind": "deferred_deepening",
+      "source_mapping": "SearchNeed/WorkUnit future work",
+      "read_only": true,
+      "writes_source_cache": false,
+      "writes_evidence": false,
+      "writes_candidate_index": false,
+      "writes_review_queue": false,
+      "writes_reviewed_index": false,
+      "runs_source_probe": false,
+      "live_ia_call_performed": false
+    },
+    {
+      "lane_kind": "future_extraction_work",
+      "source_mapping": "extraction-deferred WorkUnits only",
+      "read_only": true,
+      "writes_source_cache": false,
+      "writes_evidence": false,
+      "writes_candidate_index": false,
+      "writes_review_queue": false,
+      "writes_reviewed_index": false,
+      "runs_source_probe": false,
+      "live_ia_call_performed": false
+    }
+  ]
+}

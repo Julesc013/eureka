@@ -1,0 +1,24 @@
+id: R0-03
+title: Repo layout contract taxonomy cleanup
+status: completed
+purpose: Resolve contract/control schema authority before Workbench Foundation by classification, validator, tests, docs, and audit evidence.
+scope:
+  - contracts/repo and contract taxonomy docs
+  - control/schemas decision
+  - control inventory authority and duplicate-risk records
+  - contract taxonomy validator and focused tests
+gate:
+  - no file moves
+  - no file deletion
+  - no runtime behavior changes
+  - no source probes
+  - no extraction
+  - no model/provider calls
+  - no deployment
+  - no production readiness claim
+  - no public launch readiness claim
+result:
+  status: pass
+  recommended_next: WORKBENCH-FOUNDATION-00
+recommended_after: REPO-LAYOUT-CANON-01
+recommended_next: WORKBENCH-FOUNDATION-00

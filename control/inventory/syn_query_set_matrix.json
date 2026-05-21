@@ -1,0 +1,47 @@
+{
+  "schema_version": "syn_query_set_matrix.v0",
+  "task": "SYN-00",
+  "status": "active",
+  "query_sets": [
+    {
+      "path": "examples/syn_foundation/query_sets/demo_query_set_v0.json",
+      "split_label": "demo",
+      "case_count": 3,
+      "stack_targets": [
+        "LOCAL",
+        "HUNT",
+        "IA_METADATA_PILOT",
+        "WORKBENCH_RESULT_LANES",
+        "IA_HUNT_BRIDGE"
+      ]
+    },
+    {
+      "path": "examples/syn_foundation/query_sets/hard_query_set_v0.json",
+      "split_label": "hard",
+      "case_count": 4,
+      "stack_targets": [
+        "HUNT",
+        "PLAY",
+        "WORKBENCH_RESULT_LANES"
+      ]
+    },
+    {
+      "path": "examples/syn_foundation/query_sets/adversarial_query_set_v0.json",
+      "split_label": "adversarial",
+      "case_count": 4,
+      "stack_targets": [
+        "LOCAL",
+        "HUNT",
+        "WORKBENCH_RESULT_LANES",
+        "IA_HUNT_BRIDGE"
+      ]
+    }
+  ],
+  "required_split_labels": [
+    "demo",
+    "hard",
+    "adversarial"
+  ],
+  "all_sets_fixture_only": true,
+  "runtime_generation_enabled": false
+}

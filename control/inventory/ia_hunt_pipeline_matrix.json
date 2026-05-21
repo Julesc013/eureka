@@ -1,0 +1,66 @@
+{
+  "schema_version": "ia_hunt_pipeline_matrix.v0",
+  "task": "IA-HUNT-BRIDGE-00",
+  "pipeline_steps": [
+    {
+      "step": "query_to_hunt",
+      "runtime": "runtime.search_hunt.records.SearchHuntSession",
+      "mutation_scope": "none"
+    },
+    {
+      "step": "hunt_to_ia_workunits",
+      "runtime": "runtime.search_hunt.ia_bridge.create_ia_workunits_for_hunt",
+      "mutation_scope": "none"
+    },
+    {
+      "step": "fixture_metadata_replay",
+      "runtime": "runtime.source_observation.internet_archive_fixture_replay",
+      "mutation_scope": "none"
+    },
+    {
+      "step": "source_cache_write",
+      "runtime": "runtime.source_observation.internet_archive_source_cache",
+      "mutation_scope": "dry_run_or_temp_instance"
+    },
+    {
+      "step": "evidence_candidate_write",
+      "runtime": "runtime.source_observation.internet_archive_evidence",
+      "mutation_scope": "dry_run_or_temp_instance"
+    },
+    {
+      "step": "candidate_index_write",
+      "runtime": "runtime.source_observation.internet_archive_candidate_index",
+      "mutation_scope": "dry_run_or_temp_instance"
+    },
+    {
+      "step": "review_queue_write",
+      "runtime": "runtime.source_observation.internet_archive_review",
+      "mutation_scope": "dry_run_or_temp_instance"
+    },
+    {
+      "step": "promotion_dry_run",
+      "runtime": "runtime.source_observation.internet_archive_promotion",
+      "mutation_scope": "none"
+    },
+    {
+      "step": "reviewed_index_rebuild",
+      "runtime": "runtime.source_observation.internet_archive_reviewed_index",
+      "mutation_scope": "dry_run_or_temp_instance"
+    },
+    {
+      "step": "result_lane_projection",
+      "runtime": "runtime.local_service.workbench_result_lanes",
+      "mutation_scope": "none"
+    }
+  ],
+  "blocked_by_default": [
+    "live_ia_call",
+    "run_source_probe",
+    "download",
+    "extract",
+    "call_model_provider",
+    "deploy",
+    "mutate_master_index",
+    "mutate_operator_instance"
+  ]
+}

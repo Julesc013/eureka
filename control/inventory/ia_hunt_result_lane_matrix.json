@@ -1,0 +1,82 @@
+{
+  "schema_version": "ia_hunt_result_lane_matrix.v0",
+  "task": "IA-HUNT-BRIDGE-00",
+  "lanes": [
+    {
+      "lane_kind": "reviewed_local_results",
+      "filled_from": "ia_reviewed_local_record.v0",
+      "projection_profiles": [
+        "operator_workbench",
+        "public_web",
+        "native_desktop_read_only"
+      ]
+    },
+    {
+      "lane_kind": "ia_metadata_candidates",
+      "filled_from": "ia_candidate_record.v0",
+      "projection_profiles": [
+        "operator_workbench",
+        "public_web",
+        "native_desktop_read_only"
+      ]
+    },
+    {
+      "lane_kind": "source_cache_hits",
+      "filled_from": "ia_source_cache_record.v0",
+      "projection_profiles": [
+        "operator_workbench",
+        "public_web",
+        "native_desktop_read_only"
+      ]
+    },
+    {
+      "lane_kind": "review_queue_items",
+      "filled_from": "ia_review_item.v0",
+      "projection_profiles": [
+        "operator_workbench"
+      ]
+    },
+    {
+      "lane_kind": "known_absence",
+      "filled_from": "bounded local IA bridge absence packet",
+      "projection_profiles": [
+        "operator_workbench",
+        "public_web",
+        "native_desktop_read_only"
+      ]
+    },
+    {
+      "lane_kind": "blocked_actions",
+      "filled_from": "ia_hunt_bridge_policy.v0",
+      "projection_profiles": [
+        "operator_workbench",
+        "public_web",
+        "native_desktop_read_only"
+      ]
+    },
+    {
+      "lane_kind": "running_workunits",
+      "filled_from": "ia_hunt_workunit.v0",
+      "projection_profiles": [
+        "operator_workbench"
+      ]
+    },
+    {
+      "lane_kind": "deferred_deepening",
+      "filled_from": "future IA metadata WorkUnit gates",
+      "projection_profiles": [
+        "operator_workbench"
+      ]
+    },
+    {
+      "lane_kind": "future_extraction_work",
+      "filled_from": "disabled extraction posture",
+      "projection_profiles": [
+        "operator_workbench"
+      ]
+    }
+  ],
+  "unsafe_actions_blocked": true,
+  "public_projection_hides_operator_fields": true,
+  "native_projection_read_only": true
+}

@@ -1,0 +1,35 @@
+# Lane Schema Matrix
+
+- reviewed_local_results
+  - truth_level: reviewed_local_not_master_public_truth
+  - source_mapping: reviewed local index
+- local_candidate_results
+  - truth_level: provisional_candidate_not_truth
+  - source_mapping: candidate index
+- source_cache_hits
+  - truth_level: source_cache_record_not_evidence
+  - source_mapping: source cache
+- ia_metadata_candidates
+  - truth_level: ia_metadata_candidate_not_truth
+  - source_mapping: IA candidate/index/source-cache/evidence preview records
+- review_queue_items
+  - truth_level: review_queue_item_not_accepted_truth
+  - source_mapping: review queue
+- known_absence
+  - truth_level: bounded_absence_not_global_proof
+  - source_mapping: absence records/absence packets
+- near_misses
+  - truth_level: near_miss_not_truth
+  - source_mapping: candidate/absence/coverage records
+- blocked_actions
+  - truth_level: policy_block_not_capability_absence
+  - source_mapping: policy/action posture
+- running_workunits
+  - truth_level: operational_state_not_truth
+  - source_mapping: WorkUnit queue
+- deferred_deepening
+  - truth_level: planned_work_not_truth
+  - source_mapping: SearchNeed/WorkUnit future work
+- future_extraction_work
+  - truth_level: deferred_extraction_work_not_enabled
+  - source_mapping: extraction-deferred WorkUnits only

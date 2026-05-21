@@ -1,13 +1,13 @@
 id: WORKBENCH-FOUNDATION-00
 title: Mission Control doctrine, route/view matrix, and projection model
-status: queued
-purpose: Define the Workbench as the internal/operator superset of the final Eureka product before implementing new result lanes.
-allowed_scope_summary: Workbench doctrine, route/view matrix, permission/projection matrix, packet inventory, docs, contracts if explicitly scoped, and audit evidence only.
+status: completed
+purpose: Define the Workbench as the internal/operator superset of the final Eureka product before implementing Search Interaction and result lanes.
+allowed_scope_summary: Workbench doctrine, route/view matrix, projection matrix, permission matrix, packet inventory, docs, contracts, validator, tests, and audit evidence only.
 gate:
-  - dev/main promotion complete
   - no public launch claim
   - no production deployment
   - no new source probes
-  - no downloads, extraction, model/provider calls, or marketplace readiness
-recommended_after: DEV-AND-IA-TO-MAIN-PROMOTION-REVIEW
+  - no runtime behavior change
+  - no HTML UI implementation
+recommended_after: R0-03
 recommended_next: SEARCH-INTERACTION-00

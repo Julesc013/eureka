@@ -1,0 +1,33 @@
+{
+  "schema_version": "syn_foundry_plan.v0",
+  "task": "SYN-00",
+  "status": "fixture_planning_only",
+  "stack": [
+    "LOCAL",
+    "HUNT",
+    "PLAY",
+    "IA_METADATA_PILOT",
+    "WORKBENCH_RESULT_LANES",
+    "IA_HUNT_BRIDGE"
+  ],
+  "query_set_refs": [
+    "examples/syn_foundation/query_sets/demo_query_set_v0.json",
+    "examples/syn_foundation/query_sets/hard_query_set_v0.json",
+    "examples/syn_foundation/query_sets/adversarial_query_set_v0.json"
+  ],
+  "seed_bridge_refs": [
+    "examples/syn_foundation/synthetic_to_search_need_seeds_v0.json",
+    "examples/syn_foundation/synthetic_to_workunit_seeds_v0.json"
+  ],
+  "validation_ref": "scripts/validate_syn_foundation.py",
+  "runtime_generation_enabled": false,
+  "source_probe_executed": false,
+  "live_ia_call_performed": false,
+  "download_performed": false,
+  "upload_performed": false,
+  "extraction_executed": false,
+  "model_provider_used": false,
+  "deployment_performed": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}

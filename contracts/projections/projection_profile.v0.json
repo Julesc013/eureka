@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": true,
+  "$id": "https://eureka.local/contracts/projections/projection_profile.v0.json",
+  "title": "projection_profile.v0",
+  "required": [
+    "schema_version",
+    "projection_profile",
+    "visible_lanes",
+    "allowed_actions",
+    "blocked_actions",
+    "write_permissions"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "projection_profile.v0"
+    }
+  }
+}

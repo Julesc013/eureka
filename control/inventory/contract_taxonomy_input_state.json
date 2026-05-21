@@ -1,0 +1,18 @@
+{
+  "schema_version": "contract_taxonomy_input_state.v0",
+  "task": "R0-03",
+  "task_name": "REPO-LAYOUT-CONTRACT-TAXONOMY-CLEANUP",
+  "branch": "dev",
+  "head": "8119871469cc61b47fa565b9d1e78642e3935d2a",
+  "origin_main": "8119871469cc61b47fa565b9d1e78642e3935d2a",
+  "origin_dev": "8119871469cc61b47fa565b9d1e78642e3935d2a",
+  "origin_main_equals_origin_dev": true,
+  "working_tree_clean_before": true,
+  "repo_layout_canon_found": true,
+  "ia_pilot_closeout_found": true,
+  "known_debt_includes_control_schemas": true,
+  "known_debt_includes_scripts": true,
+  "known_debt_includes_runtime_local_workbench": true,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}

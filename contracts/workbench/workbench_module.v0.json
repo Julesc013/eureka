@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": true,
+  "$id": "https://eureka.local/contracts/workbench/workbench_module.v0.json",
+  "title": "workbench_module.v0",
+  "required": [
+    "schema_version",
+    "module_id",
+    "purpose",
+    "dependencies",
+    "first_runnable_task",
+    "blocked_actions"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "workbench_module.v0"
+    }
+  }
+}

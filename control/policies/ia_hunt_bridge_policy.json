@@ -1,0 +1,23 @@
+{
+  "schema_version": "ia_hunt_bridge_policy.v0",
+  "task": "IA-HUNT-BRIDGE-00",
+  "dry_run_default": true,
+  "temp_instance_allowed": true,
+  "operator_instance_mutation_default": false,
+  "live_ia_calls_enabled_by_default": false,
+  "live_ia_calls_require_explicit_policy": true,
+  "source_cache_writes_allowed_only_in_temp_or_explicit_instance": true,
+  "evidence_writes_allowed_only_in_temp_or_explicit_instance": true,
+  "candidate_writes_allowed_only_in_temp_or_explicit_instance": true,
+  "review_writes_allowed_only_in_temp_or_explicit_instance": true,
+  "reviewed_index_rebuild_allowed_only_in_temp_or_explicit_instance": true,
+  "master_index_mutation_enabled": false,
+  "public_fanout_enabled": false,
+  "downloads_enabled": false,
+  "extraction_enabled": false,
+  "model_provider_enabled": false,
+  "deployment_enabled": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "full_archive_org_integration_claimed": false
+}

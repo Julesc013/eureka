@@ -1,0 +1,57 @@
+{
+  "schema_version": "workbench_packet_location_matrix.v0",
+  "task": "WORKBENCH-FOUNDATION-00",
+  "locations": [
+    {
+      "path": "contracts/search_interaction/",
+      "purpose": "SEARCH-INTERACTION-00 packet contracts",
+      "runtime_owns_contracts": false,
+      "surfaces_own_contracts": false
+    },
+    {
+      "path": "contracts/workbench/",
+      "purpose": "Workbench route, module, and permission contracts",
+      "runtime_owns_contracts": false,
+      "surfaces_own_contracts": false
+    },
+    {
+      "path": "contracts/view_models/",
+      "purpose": "Surface-independent view model packets",
+      "runtime_owns_contracts": false,
+      "surfaces_own_contracts": false
+    },
+    {
+      "path": "contracts/projections/",
+      "purpose": "Projection profile contracts",
+      "runtime_owns_contracts": false,
+      "surfaces_own_contracts": false
+    },
+    {
+      "path": "contracts/domain/",
+      "purpose": "DOMAIN packs",
+      "runtime_owns_contracts": false,
+      "surfaces_own_contracts": false
+    },
+    {
+      "path": "contracts/scout/",
+      "purpose": "SCOUT discovery/trail/source-trust contracts",
+      "runtime_owns_contracts": false,
+      "surfaces_own_contracts": false
+    },
+    {
+      "path": "contracts/snapshots/",
+      "purpose": "Snapshot packet contracts",
+      "runtime_owns_contracts": false,
+      "surfaces_own_contracts": false
+    },
+    {
+      "path": "contracts/relay/",
+      "purpose": "Relay profile and packet contracts",
+      "runtime_owns_contracts": false,
+      "surfaces_own_contracts": false
+    }
+  ],
+  "notes": [
+    "R0-03 also records future taxonomy reservations under contracts/views/workbench/ and contracts/search/interaction/ for later reconciliation."
+  ]
+}

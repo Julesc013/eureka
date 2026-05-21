@@ -1,0 +1,35 @@
+{
+  "schema_version": "ia_workunit_policy.v0",
+  "task": "IA-HUNT-BRIDGE-00",
+  "source_family": "internet_archive_metadata",
+  "workunit_types": [
+    "ia_metadata_search",
+    "ia_item_metadata_read",
+    "ia_file_manifest_metadata",
+    "ia_source_cache_write",
+    "ia_evidence_candidate_write",
+    "ia_candidate_index_write",
+    "ia_review_queue_write",
+    "ia_promotion_dry_run",
+    "ia_reviewed_index_rebuild",
+    "ia_result_lane_project"
+  ],
+  "workunit_states": [
+    "created",
+    "queued",
+    "running",
+    "waiting_for_policy",
+    "waiting_for_source_quota",
+    "completed",
+    "failed",
+    "blocked",
+    "cancelled"
+  ],
+  "writes_allowed_only_in_temp_or_explicit_instance": true,
+  "operator_instance_mutation_default": false,
+  "live_ia_calls_enabled_by_default": false,
+  "downloads_enabled": false,
+  "extraction_enabled": false,
+  "model_provider_enabled": false,
+  "deployment_enabled": false
+}

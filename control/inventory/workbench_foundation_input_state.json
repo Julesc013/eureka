@@ -1,0 +1,17 @@
+{
+  "schema_version": "workbench_foundation_input_state.v0",
+  "task": "WORKBENCH-FOUNDATION-00",
+  "branch": "dev",
+  "head": "e88dc9577f5155ba39d7ec621fc60ae2715a9beb",
+  "origin_main": "8119871469cc61b47fa565b9d1e78642e3935d2a",
+  "origin_dev": "e88dc9577f5155ba39d7ec621fc60ae2715a9beb",
+  "working_tree_clean_before": true,
+  "repo_layout_canon_found": true,
+  "contract_taxonomy_found": true,
+  "ia_pilot_closeout_found": true,
+  "local_instance_state_tracked": false,
+  "runtime_behavior_change_allowed": false,
+  "deployment_performed": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}

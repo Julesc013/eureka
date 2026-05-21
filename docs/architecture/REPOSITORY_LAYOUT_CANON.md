@@ -97,8 +97,14 @@ policy. Current explicit exceptions include:
 Recorded layout debt is listed in `control/inventory/repo_layout_known_debt.json`.
 This task does not move or delete those paths.
 
-The next task is `REPO-LAYOUT-INVENTORY-02`, which should produce a tracked
-inventory and move map before any source layout changes.
+`R0-03 / REPO-LAYOUT-CONTRACT-TAXONOMY-CLEANUP` classifies the `control/schemas`
+debt before Workbench Foundation. Product/public contract authority remains under
+`contracts/`; `control/schemas/` is retained only for control/governance schemas
+with migration backlog; `examples/` and `runtime/` are not contract authority.
+
+The next implementation-facing task after R0-03 is `WORKBENCH-FOUNDATION-00`.
+Broad layout moves still require the tracked inventory and move-map phases in
+`docs/operations/REPOSITORY_LAYOUT_MIGRATION_PLAN.md`.
 
 ## No Claims
 

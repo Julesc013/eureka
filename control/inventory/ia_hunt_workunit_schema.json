@@ -1,0 +1,52 @@
+{
+  "schema_version": "ia_hunt_workunit_schema.v0",
+  "task": "IA-HUNT-BRIDGE-00",
+  "source_family": "internet_archive_metadata",
+  "workunit_types": [
+    "ia_metadata_search",
+    "ia_item_metadata_read",
+    "ia_file_manifest_metadata",
+    "ia_source_cache_write",
+    "ia_evidence_candidate_write",
+    "ia_candidate_index_write",
+    "ia_review_queue_write",
+    "ia_promotion_dry_run",
+    "ia_reviewed_index_rebuild",
+    "ia_result_lane_project"
+  ],
+  "workunit_states": [
+    "created",
+    "queued",
+    "running",
+    "waiting_for_policy",
+    "waiting_for_source_quota",
+    "completed",
+    "failed",
+    "blocked",
+    "cancelled"
+  ],
+  "required_fields": [
+    "workunit_id",
+    "hunt_id",
+    "source_family",
+    "workunit_type",
+    "state",
+    "input_ref",
+    "output_ref",
+    "policy_ref",
+    "dry_run",
+    "writes_instance_state",
+    "write_scope",
+    "blocked_actions",
+    "created_at",
+    "completed_at",
+    "limitations"
+  ],
+  "write_scope_values": [
+    "none",
+    "dry_run_no_instance_mutation",
+    "temp_or_explicit_instance_only",
+    "temp_instance"
+  ],
+  "runtime_queue_note": "IA Hunt bridge WorkUnits are bridge packets over the existing IA pipeline; they do not broaden the generic WorkUnit enum in this task."
+}

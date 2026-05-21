@@ -1,0 +1,8 @@
+{
+  "schema_version": "search_interaction_future_ai_policy.v0",
+  "task": "SEARCH-INTERACTION-00",
+  "ai_enabled_now": false,
+  "ai_output_truth_authority": false,
+  "future_ai_output_role": "candidate_only",
+  "model_provider_calls_enabled": false
+}

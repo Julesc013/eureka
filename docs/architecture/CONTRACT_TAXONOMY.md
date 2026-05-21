@@ -1,129 +1,122 @@
 # Contract Taxonomy
 
-`contracts/` is for stable product boundaries. A schema belongs there only when
-runtime, APIs, snapshots, native clients, public surfaces, or durable stores
-consume or emit it as part of product behavior.
+R0-03 defines where contract and schema authority lives before Workbench
+Foundation. It does not move files, delete schemas, or change runtime behavior.
 
-`control/schemas/` is for repo-control schemas: audit reports, fixture replay
-records, previews, validator inputs, task packets, queue records, generated
-scaffold, and deprecated planning artifacts. Those schemas can be useful and
-well-tested without being product contracts.
+## Authority Classes
 
-## Product Contracts
+`PRODUCT_PUBLIC_CONTRACT`
 
-Product contracts describe stable domain or runtime concepts:
+Public API packets, source-family contracts, view models, snapshot formats, pack
+formats, and interchange records that future surfaces may consume.
 
-- domain objects and identity records
-- runtime request/response envelopes
-- public API payloads
-- snapshot formats
-- native client payloads
-- durable store events and records
-- connector interface envelopes and source policy documents
+`PRODUCT_INTERNAL_CONTRACT`
 
-Product contracts must have a stable owner, compatibility expectations, a
-versioning rule, and a validation path. They must not be named after task IDs,
-prompt IDs, bundle IDs, audit phases, or generated work packets.
+Stable runtime, store, or boundary packets shared between product components.
+These are internal to Eureka but still governed contract law.
 
-Good product contract placement:
+`CONTROL_SCHEMA`
 
-- `contracts/domain/source_record.v0.json`
-- `contracts/runtime/source_observation.v0.json`
-- `contracts/stores/evidence_event.v0.json`
-- `contracts/api/search_result.v0.json`
+Governance, audit, inventory, task, report, validator, preview, fixture, or
+deprecated schema records used by the control plane.
 
-## Control Schemas
+`POLICY_DOCUMENT`
 
-Control schemas describe how the repo is operated, audited, or tested. They may
-include task IDs, audit bundle IDs, preview-only wording, fixture-only wording,
-or boundary assertions because they are not product semantics.
+Policy records, source access policies, safety gates, task gates, and non-claim
+documents. Policies govern work but do not become product payload schemas.
 
-Control target roots:
+`INVENTORY_RECORD`
 
-- `control/schemas/audits/`
-- `control/schemas/fixtures/`
-- `control/schemas/previews/`
-- `control/schemas/policies/`
-- `control/schemas/validators/`
-- `control/schemas/tasks/`
-- `control/schemas/deprecated/`
+Observed repository or project state, current task state, debt records, and
+validation results. Inventory records describe state; they do not override
+machine-readable contracts.
 
-## Audit, Fixture, Preview
+`AUDIT_SCHEMA_OR_REPORT`
 
-An audit schema records evidence about work that happened. It is not a product
-API, even when it is machine-readable.
+Audit reports, audit schemas, and generated audit summaries. They preserve
+evidence and provenance, not product runtime truth.
 
-A fixture schema describes committed test data or replay results. It can be an
-oracle for tests, but it is not proof that runtime behavior exists.
+`FIXTURE_SCHEMA`
 
-A preview schema describes a candidate, dry run, projected output, or future
-review item. It can prepare a product loop, but it is not the loop itself.
+Schemas used only for examples, tests, fixture replay, and synthetic proof
+payloads.
 
-## Naming Rules
+`EXAMPLE_PAYLOAD`
 
-Use domain vocabulary in product contracts:
+Example records, fixture outputs, demo corpora, and synthetic packs. Examples
+are never canonical registry truth.
 
-- `source_record`
-- `source_observation`
-- `metadata_request`
-- `metadata_response`
-- `source_policy`
-- `evidence_event`
-- `review_item`
-- `search_result`
+`GENERATED_ARTIFACT`
 
-Do not use task or audit vocabulary in product contracts:
+Generated or generated-like output that needs generator, check, and no-manual-edit
+policy.
 
-- `h14`
-- `bundle`
-- `quality_delta`
-- `next_phase`
-- `integration_audit`
-- `fixture_replay`
-- `truth_boundary`
-- `product_boundary`
+`DEPRECATED_OR_QUARANTINE`
 
-## Versioning And Compatibility
+Legacy, prototype, superseded, or migration-candidate material retained for
+traceability.
 
-Product contracts use explicit versions and preserve compatibility until a
-reviewed migration updates consumers. Moving a product contract requires a
-reference update plan and, when needed, a compatibility shim or alias.
+## Root Ownership
 
-Control schemas may also be versioned, but their compatibility promise is
-scoped to validators and audit evidence. They should not be used to imply
-runtime readiness.
+`contracts/` owns `PRODUCT_PUBLIC_CONTRACT` and `PRODUCT_INTERNAL_CONTRACT`.
+Future Workbench view-model contracts are reserved under
+`contracts/views/workbench/`. Future Search Interaction packets are reserved
+under `contracts/search/interaction/`.
 
-## Deprecation And Quarantine
+`contracts/testing/` owns `PRODUCT_INTERNAL_CONTRACT` records for
+machine-readable test-lane, test-selection, and test-result packet schemas such
+as `contracts/testing/test_selection_result.v0.json`. These contracts may be
+consumed by scripts, validators, tests, AIDE, and future CI tooling. They must
+not become runtime implementation, product data, example payload authority,
+generated artifact output, or test result storage.
 
-Generated scaffold, empty schemas, deprecated planning files, and unknown
-contract-like artifacts should be quarantined before deletion. Deletion requires
-a later reference audit that proves the file is unreferenced and no validator
-depends on it.
+`control/schemas/` may own `CONTROL_SCHEMA` only. Product contracts are not
+allowed under `control/schemas/`. Current control schemas are retained for audit,
+fixture, preview, policy, validator, task, and deprecated records, with migration
+backlog recorded in `control/inventory/contract_taxonomy_migration_backlog.json`.
 
-## Placement Examples
+`control/policies/` owns `POLICY_DOCUMENT` records.
 
-Bad:
+`control/inventory/` owns `INVENTORY_RECORD` records.
 
-- `control/schemas/audits/h14/connectors/source_discovery_quality_delta_report.v0.json`
-- `control/schemas/fixtures/h1/connectors/metadata_fixture_replay_result.v0.json`
-- `control/schemas/tasks/audits/local_mvp_next_task_decision.v0.json`
+`control/audits/` owns `AUDIT_SCHEMA_OR_REPORT` evidence and generated audit
+outputs.
 
-Better:
+`examples/` owns `FIXTURE_SCHEMA` and `EXAMPLE_PAYLOAD` only. It must not be
+used as registry truth.
 
-- `control/schemas/audits/h14/source_discovery_quality_delta_report.v0.json`
-- `control/schemas/fixtures/source_metadata/fixture_replay_result.v0.json`
-- `control/schemas/tasks/local_mvp_next_task_decision.v0.json`
+`runtime/` owns implementation and implementation-local validation helpers only.
+It must not become contract authority.
 
-Good product contract:
+`scripts/` and future `tools/` own validators, auditors, generators, and wrappers.
+They do not own schema semantics.
 
-- `contracts/domain/source_record.v0.json`
-- `contracts/runtime/source_observation.v0.json`
-- `contracts/stores/evidence_event.v0.json`
-- `contracts/api/search_result.v0.json`
+## Duplicate Authority Risks
 
-R0-03A plans this taxonomy only. R0-03B performs the moves and reference
-updates in reviewed batches.
+R0-03 records current risks rather than hiding them:
 
-## R0 Remediation Closeout
+- `control/schemas/policies/packs/**` vs `contracts/packs/**`
+- `contracts/source_registry/**` vs `contracts/sources/**`
+- `contracts/source_cache/**` vs `contracts/stores/source_cache_*.json`
+- `contracts/runtime/**` vs runtime implementation-local helpers
+- `contracts/archive/**` vs the top-level `archive/` historical root
+- `control/inventory/repo_layout_*.json` vs `contracts/repo/*.contract.toml`
 
-The R0 remediation task retired the remaining unresolved contract taxonomy items by moving non-product fixtures, H14 preview schemas, work-unit control schemas, and query preview/task schemas into `control/schemas/`. Historical audit references remain historical evidence.
+Contracts win over docs and inventory when they disagree. Inventory and audit
+files may explain or report state, but they do not become the source of truth.
+
+## Workbench And Search Interaction
+
+Workbench Foundation should put route/view-model contract law under
+`contracts/views/workbench/`; `surfaces/web/workbench/` should own presentation
+and `runtime/local_workbench/` remains transitional layout debt.
+
+Search Interaction should put query, compiled intent, resolution run, result
+lane, control command, feedback, absence, coverage, and discovery trail packets
+under `contracts/search/interaction/`.
+
+## No Claims
+
+This taxonomy does not claim production readiness, public launch readiness, full
+Archive.org integration, extraction readiness, model/provider use, or marketplace
+readiness.

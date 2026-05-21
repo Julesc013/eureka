@@ -1,0 +1,62 @@
+{
+  "schema_version": "contract_taxonomy_validator_matrix.v0",
+  "task": "R0-03",
+  "rows": [
+    {
+      "name": "repo structure canon",
+      "command": "python scripts/validate_repo_structure_canon.py",
+      "status": "pass",
+      "blocks_completion": true,
+      "reason": "Required after taxonomy files are added.",
+      "evidence_path": "control/inventory/repo_layout_canon_result.json"
+    },
+    {
+      "name": "contract taxonomy validator",
+      "command": "python scripts/validate_contract_taxonomy.py",
+      "status": "pass",
+      "blocks_completion": true,
+      "reason": "Validates R0-03 authority model and duplicate-risk records.",
+      "evidence_path": "control/inventory/contract_taxonomy_result.json"
+    },
+    {
+      "name": "focused contract taxonomy tests",
+      "command": "python -m unittest tests.operations.test_contract_taxonomy tests.scripts.test_validate_contract_taxonomy",
+      "status": "pass",
+      "blocks_completion": true,
+      "reason": "Focused tests must pass before commit.",
+      "evidence_path": "tests/operations/test_contract_taxonomy.py"
+    },
+    {
+      "name": "architecture boundaries",
+      "command": "python scripts/check_architecture_boundaries.py",
+      "status": "pass",
+      "blocks_completion": true,
+      "reason": "Confirms no Python layering violations.",
+      "evidence_path": "scripts/check_architecture_boundaries.py"
+    },
+    {
+      "name": "generated artifact cleanliness",
+      "command": "python scripts/check_generated_artifact_cleanliness.py --check --json",
+      "status": "pass",
+      "blocks_completion": true,
+      "reason": "Confirms no generated source drift.",
+      "evidence_path": "contracts/repo/generated_artifact_exceptions.contract.toml"
+    },
+    {
+      "name": "AIDE checks",
+      "command": "python .aide/scripts/aide_lite.py doctor && validate && test && selftest && verify && review-pack && commit check --latest",
+      "status": "pass",
+      "blocks_completion": true,
+      "reason": "AIDE operating metadata and commit discipline must remain valid.",
+      "evidence_path": ".aide/context/latest-review-packet.md"
+    },
+    {
+      "name": "full unittest discovery",
+      "command": "python -m unittest discover -s tests -t .",
+      "status": "not_run",
+      "blocks_completion": false,
+      "reason": "Skipped for R0-03 after focused tests, architecture, generated-artifact, and AIDE gates passed; prior pass after 81198714 was 4740 tests.",
+      "evidence_path": "control/inventory/contract_taxonomy_result.json"
+    }
+  ]
+}

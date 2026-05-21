@@ -1,0 +1,209 @@
+{
+  "changed_paths": [
+    ".aide/context/latest-review-packet.md",
+    ".aide/context/latest-task-packet.md",
+    ".aide/queue/TEST-LANE-ROUTER-01/task.yaml",
+    ".aide/queue/WORKBENCH-RESULT-LANES-CLOSEOUT-01/task.yaml",
+    ".aide/queue/index.yaml",
+    ".aide/reports/eureka-repo-health.json",
+    ".aide/reports/eureka-repo-health.md",
+    "contracts/testing/README.md",
+    "contracts/testing/test_selection_result.v0.json",
+    "control/audits/test-lane-router-01-v0/README.md",
+    "control/audits/test-lane-router-01-v0/failure_ledger.md",
+    "control/audits/test-lane-router-01-v0/generated/sample_failure_ledger.json",
+    "control/audits/test-lane-router-01-v0/generated/sample_summary.md",
+    "control/audits/test-lane-router-01-v0/generated/sample_test_selection_result.json",
+    "control/audits/test-lane-router-01-v0/impact_map.md",
+    "control/audits/test-lane-router-01-v0/lane_policy.md",
+    "control/audits/test-lane-router-01-v0/selected_test_demo.md",
+    "control/audits/test-lane-router-01-v0/test_lane_router_report.json",
+    "control/audits/test-lane-router-01-v0/validation.md",
+    "control/inventory/test_failure_ledger.json",
+    "control/inventory/test_impact_map.json",
+    "control/inventory/test_lane_matrix.json",
+    "control/inventory/test_lane_router_next_task_decision.json",
+    "control/inventory/test_lane_router_result.json",
+    "control/inventory/test_selection_result_schema.json",
+    "control/policies/test_lane_policy.json",
+    "docs/architecture/TEST_AND_VALIDATION_ARCHITECTURE.md",
+    "docs/operations/PROMOTION_TEST_POLICY.md",
+    "docs/operations/TEST_LANE_POLICY.md",
+    "docs/operations/TEST_SELECTION_RUNBOOK.md",
+    "scripts/eureka_test_select.py",
+    "scripts/validate_test_lane_policy.py",
+    "tests/operations/test_test_failure_ledger.py",
+    "tests/operations/test_test_impact_map.py",
+    "tests/operations/test_test_lane_policy.py",
+    "tests/scripts/test_eureka_test_select.py",
+    "tests/scripts/test_validate_test_lane_policy.py"
+  ],
+  "failed_first_commands": [
+    "python -m unittest tests.operations.test_search_hunt_closeout",
+    "python -m unittest tests.operations.test_search_hunt_track"
+  ],
+  "full_discovery_deferred_until": [
+    "main_promotion",
+    "release_candidate",
+    "high_risk_runtime_bridge"
+  ],
+  "full_discovery_required": false,
+  "known_failures": [
+    {
+      "blocking_level": "promotion_blocker",
+      "failure_id": "full-discovery-2026-05-20-search-hunt-closeout-ia-hunt-handoff",
+      "failure_type": "failure",
+      "first_seen_commit": "2d6cca70-precommit-full-discovery",
+      "last_seen_commit": "2d6cca70-precommit-full-discovery",
+      "linked_repair_task": "WORKBENCH-RESULT-LANES-CLOSEOUT-01",
+      "notes": "Patched in 2d6cca70; full discovery intentionally not rerun until validation-speed follow-up.",
+      "owning_subsystem": "search_hunt_queue_handoff",
+      "rerun_command": "python -m unittest tests.operations.test_search_hunt_closeout",
+      "status": "fixed_pending_full",
+      "suspected_root_cause": "Stale Search Hunt closeout validator did not accept IA-HUNT-BRIDGE-00 as a post-Workbench/result-lanes handoff.",
+      "test_module": "tests.operations.test_search_hunt_closeout",
+      "test_name": "SearchHuntCloseoutTests.test_validator_script_passes_with_disposed_warnings"
+    },
+    {
+      "blocking_level": "promotion_blocker",
+      "failure_id": "full-discovery-2026-05-20-search-hunt-track-ia-hunt-handoff",
+      "failure_type": "failure",
+      "first_seen_commit": "2d6cca70-precommit-full-discovery",
+      "last_seen_commit": "2d6cca70-precommit-full-discovery",
+      "linked_repair_task": "WORKBENCH-RESULT-LANES-CLOSEOUT-01",
+      "notes": "Patched in 2d6cca70; full discovery intentionally not rerun until validation-speed follow-up.",
+      "owning_subsystem": "search_hunt_queue_handoff",
+      "rerun_command": "python -m unittest tests.operations.test_search_hunt_track",
+      "status": "fixed_pending_full",
+      "suspected_root_cause": "Stale Search Hunt track regex did not accept IA-HUNT-BRIDGE-00 as a post-HUNT accepted handoff.",
+      "test_module": "tests.operations.test_search_hunt_track",
+      "test_name": "SearchHuntTrackTests.test_next_task_is_hunt_01_or_completed_post_hunt_task"
+    }
+  ],
+  "matched_impact_patterns": [
+    "contracts/**",
+    "scripts/validate_*.py",
+    "scripts/eureka_*.py",
+    "control/policies/**",
+    "control/inventory/**",
+    "tests/**"
+  ],
+  "mode": "changed+failed_first",
+  "promotion_allowed": true,
+  "schema_version": "test_selection_result.v0",
+  "selected_commands": [
+    {
+      "command": "git diff --check",
+      "lane_id": "L0_static_preflight",
+      "reason": "base preflight",
+      "source": "test_lane_policy"
+    },
+    {
+      "command": "python scripts/check_architecture_boundaries.py",
+      "lane_id": "L0_static_preflight",
+      "reason": "base preflight",
+      "source": "test_lane_policy"
+    },
+    {
+      "command": "python scripts/check_generated_artifact_cleanliness.py --check --json",
+      "lane_id": "L0_static_preflight",
+      "reason": "base preflight",
+      "source": "test_lane_policy"
+    },
+    {
+      "command": "python scripts/validate_contract_taxonomy.py",
+      "lane_id": "L1_focused_unit",
+      "reason": "contracts validator",
+      "source": "contracts/**"
+    },
+    {
+      "command": "python scripts/validate_repo_structure_canon.py",
+      "lane_id": "L1_focused_unit",
+      "reason": "contracts validator",
+      "source": "contracts/**"
+    },
+    {
+      "command": "python -m unittest tests.operations.test_contract_taxonomy",
+      "lane_id": "L1_focused_unit",
+      "reason": "contracts focused test",
+      "source": "contracts/**"
+    },
+    {
+      "command": "python -m unittest tests.operations.test_repo_structure_canon",
+      "lane_id": "L1_focused_unit",
+      "reason": "contracts focused test",
+      "source": "contracts/**"
+    },
+    {
+      "command": "python -m unittest tests.scripts.test_validate_test_lane_policy",
+      "lane_id": "L1_focused_unit",
+      "reason": "validator_scripts focused test",
+      "source": "scripts/validate_*.py"
+    },
+    {
+      "command": "python scripts/validate_test_lane_policy.py",
+      "lane_id": "L2_impact_integration",
+      "reason": "validator_scripts smoke",
+      "source": "scripts/validate_*.py"
+    },
+    {
+      "command": "python -m unittest tests.scripts.test_eureka_test_select",
+      "lane_id": "L1_focused_unit",
+      "reason": "repo_tooling_scripts focused test",
+      "source": "scripts/eureka_*.py"
+    },
+    {
+      "command": "python scripts/eureka_test_select.py --changed --failed-first --json",
+      "lane_id": "L2_impact_integration",
+      "reason": "repo_tooling_scripts smoke",
+      "source": "scripts/eureka_*.py"
+    },
+    {
+      "command": "python -m unittest tests.operations.test_test_lane_policy",
+      "lane_id": "L1_focused_unit",
+      "reason": "control_policy focused test",
+      "source": "control/policies/**"
+    },
+    {
+      "command": "python -m unittest tests.operations.test_test_impact_map",
+      "lane_id": "L1_focused_unit",
+      "reason": "control_inventory focused test",
+      "source": "control/inventory/**"
+    },
+    {
+      "command": "python -m unittest tests.operations.test_test_failure_ledger",
+      "lane_id": "L1_focused_unit",
+      "reason": "control_inventory focused test",
+      "source": "control/inventory/**"
+    },
+    {
+      "command": "python -m unittest tests.operations.test_search_hunt_closeout",
+      "lane_id": "L1_focused_unit",
+      "reason": "failed-first full-discovery-2026-05-20-search-hunt-closeout-ia-hunt-handoff",
+      "source": "test_failure_ledger"
+    },
+    {
+      "command": "python -m unittest tests.operations.test_search_hunt_track",
+      "lane_id": "L1_focused_unit",
+      "reason": "failed-first full-discovery-2026-05-20-search-hunt-track-ia-hunt-handoff",
+      "source": "test_failure_ledger"
+    }
+  ],
+  "selected_lanes": [
+    "L0_static_preflight",
+    "L1_focused_unit",
+    "L2_impact_integration"
+  ],
+  "skip_reasons": [
+    "not selected for per-commit default; required before promotion/high-risk gates"
+  ],
+  "skipped_commands": [
+    {
+      "command": "python -m unittest discover -s tests -t .",
+      "lane_id": "L3_full_discovery",
+      "reason": "not selected for per-commit default; required before promotion/high-risk gates"
+    }
+  ],
+  "task": "",
+  "warnings": []
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": "workbench_result_lanes_closeout_test_selection.v0",
+  "task": "WORKBENCH-RESULT-LANES-CLOSEOUT-01",
+  "selector_changed_mode_passed": true,
+  "selector_failed_first_mode_passed": true,
+  "selector_promotion_mode_passed": true,
+  "selector_promotion_allowed": false,
+  "selector_promotion_refusal_reason": "known blocking failures require rerun or confirmation",
+  "failed_first_commands": [
+    "python -m unittest tests.operations.test_contract_taxonomy_plan",
+    "python -m unittest tests.operations.test_local_appliance_track"
+  ],
+  "initial_fixed_pending_full_commands": [
+    "python -m unittest tests.operations.test_search_hunt_closeout",
+    "python -m unittest tests.operations.test_search_hunt_track"
+  ],
+  "selected_result_lane_commands": [
+    "python scripts/validate_workbench_result_lanes.py",
+    "python scripts/validate_runtime_architecture_leakage.py",
+    "python -m unittest tests.runtime.test_workbench_result_lanes",
+    "python -m unittest tests.runtime.test_workbench_lane_view_models",
+    "python -m unittest tests.runtime.test_workbench_lane_boundaries",
+    "python scripts/eureka_workbench_result_lanes.py --query sampleproject --projection public_web --from-play-demo --from-ia-examples --json"
+  ],
+  "skipped_commands": [
+    {
+      "command": "python -m unittest discover -s tests -t .",
+      "lane_id": "L3_full_discovery",
+      "reason": "not selected for per-commit default; required before promotion/high-risk gates"
+    }
+  ],
+  "skip_reasons": [
+    "not selected for per-commit default; required before promotion/high-risk gates"
+  ],
+  "full_discovery_required_for_closeout": true,
+  "selected_tests_artifact": "control/audits/workbench-result-lanes-closeout-01-v0/generated/selected_tests.json",
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}

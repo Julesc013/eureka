@@ -56,6 +56,11 @@
       "to_path": "contracts/actions/acquisition_manifest.v0.json"
     },
     {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
+      "to_path": "contracts/actions/acquisition_manifest.v0.json"
+    },
+    {
       "edge_kind": "imports",
       "from_path": "scripts/validate_safe_actions_runtime.py",
       "to_path": "contracts/actions/acquisition_manifest.v0.json"
@@ -118,6 +123,11 @@
     {
       "edge_kind": "references",
       "from_path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+      "to_path": "contracts/actions/action_manifest.v0.json"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
       "to_path": "contracts/actions/action_manifest.v0.json"
     },
     {
@@ -221,6 +231,11 @@
       "to_path": "contracts/actions/action_policy.v0.json"
     },
     {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
+      "to_path": "contracts/actions/action_policy.v0.json"
+    },
+    {
       "edge_kind": "imports",
       "from_path": "scripts/validate_deep_extraction_contract.py",
       "to_path": "contracts/actions/action_policy.v0.json"
@@ -252,7 +267,17 @@
     },
     {
       "edge_kind": "documents",
+      "from_path": "control/audits/r0-02-runtime-architecture-leakage-gate-v0/generated/sample_leakage_summary.md",
+      "to_path": "contracts/actions/compare_action_manifest.v0.json"
+    },
+    {
+      "edge_kind": "documents",
       "from_path": "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
+      "to_path": "contracts/actions/compare_action_manifest.v0.json"
+    },
+    {
+      "edge_kind": "documents",
+      "from_path": "control/audits/r0-02-runtime-architecture-leakage-gate-v0/production_path_scan_summary.md",
       "to_path": "contracts/actions/compare_action_manifest.v0.json"
     },
     {
@@ -283,6 +308,11 @@
     {
       "edge_kind": "references",
       "from_path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+      "to_path": "contracts/actions/compare_action_manifest.v0.json"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
       "to_path": "contracts/actions/compare_action_manifest.v0.json"
     },
     {
@@ -302,7 +332,17 @@
     },
     {
       "edge_kind": "documents",
+      "from_path": "control/audits/r0-02-runtime-architecture-leakage-gate-v0/generated/sample_leakage_summary.md",
+      "to_path": "contracts/actions/export_manifest.v0.json"
+    },
+    {
+      "edge_kind": "documents",
       "from_path": "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
+      "to_path": "contracts/actions/export_manifest.v0.json"
+    },
+    {
+      "edge_kind": "documents",
+      "from_path": "control/audits/r0-02-runtime-architecture-leakage-gate-v0/production_path_scan_summary.md",
       "to_path": "contracts/actions/export_manifest.v0.json"
     },
     {
@@ -333,6 +373,11 @@
     {
       "edge_kind": "references",
       "from_path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+      "to_path": "contracts/actions/export_manifest.v0.json"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
       "to_path": "contracts/actions/export_manifest.v0.json"
     },
     {
@@ -352,7 +397,17 @@
     },
     {
       "edge_kind": "documents",
+      "from_path": "control/audits/r0-02-runtime-architecture-leakage-gate-v0/generated/sample_leakage_summary.md",
+      "to_path": "contracts/actions/preservation_manifest.v0.json"
+    },
+    {
+      "edge_kind": "documents",
       "from_path": "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
+      "to_path": "contracts/actions/preservation_manifest.v0.json"
+    },
+    {
+      "edge_kind": "documents",
+      "from_path": "control/audits/r0-02-runtime-architecture-leakage-gate-v0/production_path_scan_summary.md",
       "to_path": "contracts/actions/preservation_manifest.v0.json"
     },
     {
@@ -383,6 +438,11 @@
     {
       "edge_kind": "references",
       "from_path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+      "to_path": "contracts/actions/preservation_manifest.v0.json"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
       "to_path": "contracts/actions/preservation_manifest.v0.json"
     },
     {
@@ -422,7 +482,17 @@
     },
     {
       "edge_kind": "documents",
+      "from_path": "control/audits/r0-02-runtime-architecture-leakage-gate-v0/generated/sample_leakage_summary.md",
+      "to_path": "contracts/ai/ai_provider_manifest.v0.json"
+    },
+    {
+      "edge_kind": "documents",
       "from_path": "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
+      "to_path": "contracts/ai/ai_provider_manifest.v0.json"
+    },
+    {
+      "edge_kind": "documents",
+      "from_path": "control/audits/r0-02-runtime-architecture-leakage-gate-v0/production_path_scan_summary.md",
       "to_path": "contracts/ai/ai_provider_manifest.v0.json"
     },
     {
@@ -453,6 +523,11 @@
     {
       "edge_kind": "references",
       "from_path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+      "to_path": "contracts/ai/ai_provider_manifest.v0.json"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
       "to_path": "contracts/ai/ai_provider_manifest.v0.json"
     },
     {
@@ -487,7 +562,17 @@
     },
     {
       "edge_kind": "documents",
+      "from_path": "control/audits/r0-02-runtime-architecture-leakage-gate-v0/generated/sample_leakage_summary.md",
+      "to_path": "contracts/ai/ai_task_request.v0.json"
+    },
+    {
+      "edge_kind": "documents",
       "from_path": "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
+      "to_path": "contracts/ai/ai_task_request.v0.json"
+    },
+    {
+      "edge_kind": "documents",
+      "from_path": "control/audits/r0-02-runtime-architecture-leakage-gate-v0/production_path_scan_summary.md",
       "to_path": "contracts/ai/ai_task_request.v0.json"
     },
     {
@@ -518,6 +603,11 @@
     {
       "edge_kind": "references",
       "from_path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+      "to_path": "contracts/ai/ai_task_request.v0.json"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
       "to_path": "contracts/ai/ai_task_request.v0.json"
     },
     {
@@ -821,11 +911,6 @@
       "to_path": "contracts/api/examples/search_result_card_article_segment.v0.json"
     },
     {
-      "edge_kind": "documents",
-      "from_path": "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
-      "to_path": "contracts/api/examples/search_result_card_article_segment.v0.json"
-    },
-    {
       "edge_kind": "imports",
       "from_path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
       "to_path": "contracts/api/examples/search_result_card_article_segment.v0.json"
@@ -838,6 +923,11 @@
     {
       "edge_kind": "documents",
       "from_path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
+      "to_path": "contracts/api/examples/search_result_card_article_segment.v0.json"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
       "to_path": "contracts/api/examples/search_result_card_article_segment.v0.json"
     },
     {
@@ -851,11 +941,6 @@
       "to_path": "contracts/api/examples/search_result_card_documentation_only.v0.json"
     },
     {
-      "edge_kind": "documents",
-      "from_path": "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
-      "to_path": "contracts/api/examples/search_result_card_documentation_only.v0.json"
-    },
-    {
       "edge_kind": "imports",
       "from_path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
       "to_path": "contracts/api/examples/search_result_card_documentation_only.v0.json"
@@ -868,6 +953,11 @@
     {
       "edge_kind": "documents",
       "from_path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
+      "to_path": "contracts/api/examples/search_result_card_documentation_only.v0.json"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
       "to_path": "contracts/api/examples/search_result_card_documentation_only.v0.json"
     },
     {
@@ -888,11 +978,6 @@
     {
       "edge_kind": "imports",
       "from_path": "control/audits/r0-01-dev-production-reality-inventory-v0/generated/sample_gap_register.json",
-      "to_path": "contracts/api/examples/search_result_card_firefox_xp_candidate.v0.json"
-    },
-    {
-      "edge_kind": "documents",
-      "from_path": "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
       "to_path": "contracts/api/examples/search_result_card_firefox_xp_candidate.v0.json"
     },
     {
@@ -921,6 +1006,11 @@
       "to_path": "contracts/api/examples/search_result_card_firefox_xp_candidate.v0.json"
     },
     {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
+      "to_path": "contracts/api/examples/search_result_card_firefox_xp_candidate.v0.json"
+    },
+    {
       "edge_kind": "imports",
       "from_path": "scripts/execute_contract_taxonomy_migration.py",
       "to_path": "contracts/api/examples/search_result_card_firefox_xp_candidate.v0.json"
@@ -936,11 +1026,6 @@
       "to_path": "contracts/api/examples/search_result_card_member_driver.v0.json"
     },
     {
-      "edge_kind": "documents",
-      "from_path": "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
-      "to_path": "contracts/api/examples/search_result_card_member_driver.v0.json"
-    },
-    {
       "edge_kind": "imports",
       "from_path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
       "to_path": "contracts/api/examples/search_result_card_member_driver.v0.json"
@@ -953,6 +1038,11 @@
     {
       "edge_kind": "documents",
       "from_path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
+      "to_path": "contracts/api/examples/search_result_card_member_driver.v0.json"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
       "to_path": "contracts/api/examples/search_result_card_member_driver.v0.json"
     },
     {
@@ -1727,6 +1817,11 @@
     },
     {
       "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
+      "to_path": "contracts/archive/schemas/agent.schema.yaml"
+    },
+    {
+      "edge_kind": "references",
       "from_path": "contracts/archive/schemas/claim.schema.yaml",
       "to_path": "contracts/archive/schemas/claim.schema.yaml"
     },
@@ -2331,6 +2426,11 @@
       "to_path": "contracts/connectors/connector_policy_evaluation.v0.json"
     },
     {
+      "edge_kind": "documents",
+      "from_path": "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
+      "to_path": "contracts/connectors/connector_policy_evaluation.v0.json"
+    },
+    {
       "edge_kind": "imports",
       "from_path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
       "to_path": "contracts/connectors/connector_policy_evaluation.v0.json"
@@ -2343,6 +2443,11 @@
     {
       "edge_kind": "documents",
       "from_path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
+      "to_path": "contracts/connectors/connector_policy_evaluation.v0.json"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
       "to_path": "contracts/connectors/connector_policy_evaluation.v0.json"
     },
     {
@@ -2366,6 +2471,11 @@
       "to_path": "contracts/connectors/connector_scorecard.v0.json"
     },
     {
+      "edge_kind": "documents",
+      "from_path": "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
+      "to_path": "contracts/connectors/connector_scorecard.v0.json"
+    },
+    {
       "edge_kind": "imports",
       "from_path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
       "to_path": "contracts/connectors/connector_scorecard.v0.json"
@@ -2378,6 +2488,11 @@
     {
       "edge_kind": "documents",
       "from_path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
+      "to_path": "contracts/connectors/connector_scorecard.v0.json"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
       "to_path": "contracts/connectors/connector_scorecard.v0.json"
     },
     {
@@ -2443,6 +2558,11 @@
     {
       "edge_kind": "documents",
       "from_path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
+      "to_path": "contracts/connectors/github_releases_connector_approval.v0.json"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
       "to_path": "contracts/connectors/github_releases_connector_approval.v0.json"
     },
     {
@@ -2531,6 +2651,11 @@
       "to_path": "contracts/connectors/internet_archive_metadata_connector.v0.json"
     },
     {
+      "edge_kind": "documents",
+      "from_path": "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
+      "to_path": "contracts/connectors/internet_archive_metadata_connector.v0.json"
+    },
+    {
       "edge_kind": "imports",
       "from_path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
       "to_path": "contracts/connectors/internet_archive_metadata_connector.v0.json"
@@ -2543,6 +2668,11 @@
     {
       "edge_kind": "documents",
       "from_path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
+      "to_path": "contracts/connectors/internet_archive_metadata_connector.v0.json"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
       "to_path": "contracts/connectors/internet_archive_metadata_connector.v0.json"
     },
     {
@@ -2608,6 +2738,11 @@
     {
       "edge_kind": "documents",
       "from_path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
+      "to_path": "contracts/connectors/internet_archive_metadata_connector_approval.v0.json"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
       "to_path": "contracts/connectors/internet_archive_metadata_connector_approval.v0.json"
     },
     {
@@ -2761,6 +2896,11 @@
       "to_path": "contracts/connectors/live_probe_request.v0.json"
     },
     {
+      "edge_kind": "documents",
+      "from_path": "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
+      "to_path": "contracts/connectors/live_probe_request.v0.json"
+    },
+    {
       "edge_kind": "imports",
       "from_path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
       "to_path": "contracts/connectors/live_probe_request.v0.json"
@@ -2813,6 +2953,11 @@
     {
       "edge_kind": "references",
       "from_path": "control/audits/r0-03b-2-contract-reference-product-cleanup-v0/generated/sample_reference_update_result.json",
+      "to_path": "contracts/connectors/live_probe_request.v0.json"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
       "to_path": "contracts/connectors/live_probe_request.v0.json"
     },
     {
@@ -2996,6 +3141,11 @@
       "to_path": "contracts/connectors/live_probe_result.v0.json"
     },
     {
+      "edge_kind": "documents",
+      "from_path": "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
+      "to_path": "contracts/connectors/live_probe_result.v0.json"
+    },
+    {
       "edge_kind": "imports",
       "from_path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
       "to_path": "contracts/connectors/live_probe_result.v0.json"
@@ -3048,6 +3198,11 @@
     {
       "edge_kind": "references",
       "from_path": "control/audits/r0-03b-2-contract-reference-product-cleanup-v0/generated/sample_reference_update_result.json",
+      "to_path": "contracts/connectors/live_probe_result.v0.json"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
       "to_path": "contracts/connectors/live_probe_result.v0.json"
     },
     {
@@ -3191,6 +3346,11 @@
       "to_path": "contracts/connectors/npm_metadata_connector_approval.v0.json"
     },
     {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
+      "to_path": "contracts/connectors/npm_metadata_connector_approval.v0.json"
+    },
+    {
       "edge_kind": "imports",
       "from_path": "control/audits/software-heritage-connector-approval-v0/COMMAND_RESULTS.md",
       "to_path": "contracts/connectors/npm_metadata_connector_approval.v0.json"
@@ -3301,6 +3461,11 @@
       "to_path": "contracts/connectors/pypi_metadata_connector_approval.v0.json"
     },
     {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
+      "to_path": "contracts/connectors/pypi_metadata_connector_approval.v0.json"
+    },
+    {
       "edge_kind": "imports",
       "from_path": "control/audits/software-heritage-connector-approval-v0/COMMAND_RESULTS.md",
       "to_path": "contracts/connectors/pypi_metadata_connector_approval.v0.json"
@@ -3378,6 +3543,11 @@
     {
       "edge_kind": "documents",
       "from_path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
+      "to_path": "contracts/connectors/software_heritage_connector_approval.v0.json"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
       "to_path": "contracts/connectors/software_heritage_connector_approval.v0.json"
     },
     {
@@ -3491,6 +3661,11 @@
       "to_path": "contracts/connectors/source_connector_interface.v0.json"
     },
     {
+      "edge_kind": "documents",
+      "from_path": "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
+      "to_path": "contracts/connectors/source_connector_interface.v0.json"
+    },
+    {
       "edge_kind": "imports",
       "from_path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
       "to_path": "contracts/connectors/source_connector_interface.v0.json"
@@ -3503,6 +3678,11 @@
     {
       "edge_kind": "documents",
       "from_path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
+      "to_path": "contracts/connectors/source_connector_interface.v0.json"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
       "to_path": "contracts/connectors/source_connector_interface.v0.json"
     },
     {
@@ -3526,6 +3706,11 @@
       "to_path": "contracts/connectors/source_connector_output_envelope.v0.json"
     },
     {
+      "edge_kind": "documents",
+      "from_path": "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
+      "to_path": "contracts/connectors/source_connector_output_envelope.v0.json"
+    },
+    {
       "edge_kind": "imports",
       "from_path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
       "to_path": "contracts/connectors/source_connector_output_envelope.v0.json"
@@ -3538,6 +3723,11 @@
     {
       "edge_kind": "documents",
       "from_path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
+      "to_path": "contracts/connectors/source_connector_output_envelope.v0.json"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
       "to_path": "contracts/connectors/source_connector_output_envelope.v0.json"
     },
     {
@@ -3593,6 +3783,11 @@
     {
       "edge_kind": "documents",
       "from_path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
+      "to_path": "contracts/connectors/wayback_cdx_memento_connector_approval.v0.json"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
       "to_path": "contracts/connectors/wayback_cdx_memento_connector_approval.v0.json"
     },
     {
@@ -3711,6 +3906,11 @@
       "to_path": "contracts/domain/source_policy.v0.json"
     },
     {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
+      "to_path": "contracts/domain/source_policy.v0.json"
+    },
+    {
       "edge_kind": "imports",
       "from_path": "scripts/validate_source_observation_seam.py",
       "to_path": "contracts/domain/source_policy.v0.json"
@@ -3766,6 +3966,11 @@
       "to_path": "contracts/evidence/evidence_contract_index.v0.json"
     },
     {
+      "edge_kind": "documents",
+      "from_path": "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
+      "to_path": "contracts/evidence/evidence_contract_index.v0.json"
+    },
+    {
       "edge_kind": "imports",
       "from_path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
       "to_path": "contracts/evidence/evidence_contract_index.v0.json"
@@ -3783,6 +3988,11 @@
     {
       "edge_kind": "references",
       "from_path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+      "to_path": "contracts/evidence/evidence_contract_index.v0.json"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
       "to_path": "contracts/evidence/evidence_contract_index.v0.json"
     },
     {
@@ -4106,6 +4316,11 @@
       "to_path": "contracts/extraction/deep_extraction_request.v0.json"
     },
     {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
+      "to_path": "contracts/extraction/deep_extraction_request.v0.json"
+    },
+    {
       "edge_kind": "imports",
       "from_path": "scripts/validate_deep_extraction_contract.py",
       "to_path": "contracts/extraction/deep_extraction_request.v0.json"
@@ -4141,6 +4356,11 @@
       "to_path": "contracts/extraction/extraction_member.v0.json"
     },
     {
+      "edge_kind": "documents",
+      "from_path": "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
+      "to_path": "contracts/extraction/extraction_member.v0.json"
+    },
+    {
       "edge_kind": "imports",
       "from_path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
       "to_path": "contracts/extraction/extraction_member.v0.json"
@@ -4158,6 +4378,11 @@
     {
       "edge_kind": "references",
       "from_path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+      "to_path": "contracts/extraction/extraction_member.v0.json"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
       "to_path": "contracts/extraction/extraction_member.v0.json"
     },
     {
@@ -4266,6 +4491,11 @@
       "to_path": "contracts/extraction/extraction_result.v0.json"
     },
     {
+      "edge_kind": "documents",
+      "from_path": "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
+      "to_path": "contracts/extraction/extraction_result.v0.json"
+    },
+    {
       "edge_kind": "imports",
       "from_path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
       "to_path": "contracts/extraction/extraction_result.v0.json"
@@ -4283,6 +4513,11 @@
     {
       "edge_kind": "references",
       "from_path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+      "to_path": "contracts/extraction/extraction_result.v0.json"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
       "to_path": "contracts/extraction/extraction_result.v0.json"
     },
     {
@@ -4341,6 +4576,11 @@
       "to_path": "contracts/extraction/extraction_result_summary.v0.json"
     },
     {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
+      "to_path": "contracts/extraction/extraction_result_summary.v0.json"
+    },
+    {
       "edge_kind": "imports",
       "from_path": "scripts/validate_deep_extraction_contract.py",
       "to_path": "contracts/extraction/extraction_result_summary.v0.json"
@@ -4371,6 +4611,11 @@
       "to_path": "contracts/extraction/extraction_review_seed.v0.json"
     },
     {
+      "edge_kind": "documents",
+      "from_path": "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
+      "to_path": "contracts/extraction/extraction_review_seed.v0.json"
+    },
+    {
       "edge_kind": "imports",
       "from_path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
       "to_path": "contracts/extraction/extraction_review_seed.v0.json"
@@ -4388,6 +4633,11 @@
     {
       "edge_kind": "references",
       "from_path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+      "to_path": "contracts/extraction/extraction_review_seed.v0.json"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
       "to_path": "contracts/extraction/extraction_review_seed.v0.json"
     },
     {
@@ -4411,6 +4661,11 @@
       "to_path": "contracts/extraction/extraction_sandbox.v0.json"
     },
     {
+      "edge_kind": "documents",
+      "from_path": "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
+      "to_path": "contracts/extraction/extraction_sandbox.v0.json"
+    },
+    {
       "edge_kind": "imports",
       "from_path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
       "to_path": "contracts/extraction/extraction_sandbox.v0.json"
@@ -4428,6 +4683,11 @@
     {
       "edge_kind": "references",
       "from_path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+      "to_path": "contracts/extraction/extraction_sandbox.v0.json"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
       "to_path": "contracts/extraction/extraction_sandbox.v0.json"
     },
     {
@@ -4451,6 +4711,11 @@
       "to_path": "contracts/extraction/extraction_search_gap.v0.json"
     },
     {
+      "edge_kind": "documents",
+      "from_path": "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
+      "to_path": "contracts/extraction/extraction_search_gap.v0.json"
+    },
+    {
       "edge_kind": "imports",
       "from_path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
       "to_path": "contracts/extraction/extraction_search_gap.v0.json"
@@ -4468,6 +4733,11 @@
     {
       "edge_kind": "references",
       "from_path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+      "to_path": "contracts/extraction/extraction_search_gap.v0.json"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
       "to_path": "contracts/extraction/extraction_search_gap.v0.json"
     },
     {
@@ -4496,6 +4766,11 @@
       "to_path": "contracts/extraction/extraction_search_integration.v0.json"
     },
     {
+      "edge_kind": "documents",
+      "from_path": "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
+      "to_path": "contracts/extraction/extraction_search_integration.v0.json"
+    },
+    {
       "edge_kind": "imports",
       "from_path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
       "to_path": "contracts/extraction/extraction_search_integration.v0.json"
@@ -4513,6 +4788,11 @@
     {
       "edge_kind": "references",
       "from_path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+      "to_path": "contracts/extraction/extraction_search_integration.v0.json"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
       "to_path": "contracts/extraction/extraction_search_integration.v0.json"
     },
     {
@@ -4541,6 +4821,11 @@
       "to_path": "contracts/extraction/extraction_target.v0.json"
     },
     {
+      "edge_kind": "documents",
+      "from_path": "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
+      "to_path": "contracts/extraction/extraction_target.v0.json"
+    },
+    {
       "edge_kind": "imports",
       "from_path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
       "to_path": "contracts/extraction/extraction_target.v0.json"
@@ -4558,6 +4843,11 @@
     {
       "edge_kind": "references",
       "from_path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+      "to_path": "contracts/extraction/extraction_target.v0.json"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
       "to_path": "contracts/extraction/extraction_target.v0.json"
     },
     {
@@ -4581,6 +4871,11 @@
       "to_path": "contracts/extraction/extraction_workunit_seed.v0.json"
     },
     {
+      "edge_kind": "documents",
+      "from_path": "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
+      "to_path": "contracts/extraction/extraction_workunit_seed.v0.json"
+    },
+    {
       "edge_kind": "imports",
       "from_path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
       "to_path": "contracts/extraction/extraction_workunit_seed.v0.json"
@@ -4598,6 +4893,11 @@
     {
       "edge_kind": "references",
       "from_path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+      "to_path": "contracts/extraction/extraction_workunit_seed.v0.json"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
       "to_path": "contracts/extraction/extraction_workunit_seed.v0.json"
     },
     {
@@ -4623,6 +4923,11 @@
     {
       "edge_kind": "references",
       "from_path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+      "to_path": "contracts/gateway/public_api/openapi.placeholder.yaml"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
       "to_path": "contracts/gateway/public_api/openapi.placeholder.yaml"
     },
     {
@@ -4641,6 +4946,11 @@
       "to_path": "contracts/hosting/host_profile.v0.json"
     },
     {
+      "edge_kind": "documents",
+      "from_path": "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
+      "to_path": "contracts/hosting/host_profile.v0.json"
+    },
+    {
       "edge_kind": "imports",
       "from_path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
       "to_path": "contracts/hosting/host_profile.v0.json"
@@ -4658,6 +4968,11 @@
     {
       "edge_kind": "references",
       "from_path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+      "to_path": "contracts/hosting/host_profile.v0.json"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
       "to_path": "contracts/hosting/host_profile.v0.json"
     },
     {
@@ -4736,6 +5051,11 @@
       "to_path": "contracts/hosting/public_alpha_config_manifest.v0.json"
     },
     {
+      "edge_kind": "documents",
+      "from_path": "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
+      "to_path": "contracts/hosting/public_alpha_config_manifest.v0.json"
+    },
+    {
       "edge_kind": "imports",
       "from_path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
       "to_path": "contracts/hosting/public_alpha_config_manifest.v0.json"
@@ -4753,6 +5073,11 @@
     {
       "edge_kind": "references",
       "from_path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+      "to_path": "contracts/hosting/public_alpha_config_manifest.v0.json"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
       "to_path": "contracts/hosting/public_alpha_config_manifest.v0.json"
     },
     {
@@ -4776,6 +5101,11 @@
       "to_path": "contracts/hosting/public_alpha_provider_profile.v0.json"
     },
     {
+      "edge_kind": "documents",
+      "from_path": "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
+      "to_path": "contracts/hosting/public_alpha_provider_profile.v0.json"
+    },
+    {
       "edge_kind": "imports",
       "from_path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
       "to_path": "contracts/hosting/public_alpha_provider_profile.v0.json"
@@ -4793,6 +5123,11 @@
     {
       "edge_kind": "references",
       "from_path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+      "to_path": "contracts/hosting/public_alpha_provider_profile.v0.json"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
       "to_path": "contracts/hosting/public_alpha_provider_profile.v0.json"
     },
     {
@@ -4851,6 +5186,11 @@
       "to_path": "contracts/hosting/runtime_config_boundary.v0.json"
     },
     {
+      "edge_kind": "documents",
+      "from_path": "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
+      "to_path": "contracts/hosting/runtime_config_boundary.v0.json"
+    },
+    {
       "edge_kind": "imports",
       "from_path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
       "to_path": "contracts/hosting/runtime_config_boundary.v0.json"
@@ -4868,6 +5208,11 @@
     {
       "edge_kind": "references",
       "from_path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+      "to_path": "contracts/hosting/runtime_config_boundary.v0.json"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
       "to_path": "contracts/hosting/runtime_config_boundary.v0.json"
     },
     {
@@ -5146,6 +5491,11 @@
       "to_path": "contracts/master_index/reviewed_public_index_rebuild.v0.json"
     },
     {
+      "edge_kind": "documents",
+      "from_path": "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
+      "to_path": "contracts/master_index/reviewed_public_index_rebuild.v0.json"
+    },
+    {
       "edge_kind": "imports",
       "from_path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
       "to_path": "contracts/master_index/reviewed_public_index_rebuild.v0.json"
@@ -5163,6 +5513,11 @@
     {
       "edge_kind": "references",
       "from_path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+      "to_path": "contracts/master_index/reviewed_public_index_rebuild.v0.json"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
       "to_path": "contracts/master_index/reviewed_public_index_rebuild.v0.json"
     },
     {
@@ -5181,6 +5536,11 @@
       "to_path": "contracts/master_index/reviewed_public_record_proposal.v0.json"
     },
     {
+      "edge_kind": "documents",
+      "from_path": "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
+      "to_path": "contracts/master_index/reviewed_public_record_proposal.v0.json"
+    },
+    {
       "edge_kind": "imports",
       "from_path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
       "to_path": "contracts/master_index/reviewed_public_record_proposal.v0.json"
@@ -5198,6 +5558,11 @@
     {
       "edge_kind": "references",
       "from_path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+      "to_path": "contracts/master_index/reviewed_public_record_proposal.v0.json"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
       "to_path": "contracts/master_index/reviewed_public_record_proposal.v0.json"
     },
     {
@@ -5226,6 +5591,11 @@
       "to_path": "contracts/native/native_artifact.v0.json"
     },
     {
+      "edge_kind": "documents",
+      "from_path": "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
+      "to_path": "contracts/native/native_artifact.v0.json"
+    },
+    {
       "edge_kind": "imports",
       "from_path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
       "to_path": "contracts/native/native_artifact.v0.json"
@@ -5238,6 +5608,11 @@
     {
       "edge_kind": "documents",
       "from_path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
+      "to_path": "contracts/native/native_artifact.v0.json"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
       "to_path": "contracts/native/native_artifact.v0.json"
     },
     {
@@ -5256,6 +5631,11 @@
       "to_path": "contracts/native/native_artifact_manifest.v1.json"
     },
     {
+      "edge_kind": "documents",
+      "from_path": "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
+      "to_path": "contracts/native/native_artifact_manifest.v1.json"
+    },
+    {
       "edge_kind": "imports",
       "from_path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
       "to_path": "contracts/native/native_artifact_manifest.v1.json"
@@ -5268,6 +5648,11 @@
     {
       "edge_kind": "documents",
       "from_path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
+      "to_path": "contracts/native/native_artifact_manifest.v1.json"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
       "to_path": "contracts/native/native_artifact_manifest.v1.json"
     },
     {
@@ -5291,6 +5676,11 @@
       "to_path": "contracts/native/native_build_evidence.v0.json"
     },
     {
+      "edge_kind": "documents",
+      "from_path": "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
+      "to_path": "contracts/native/native_build_evidence.v0.json"
+    },
+    {
       "edge_kind": "imports",
       "from_path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
       "to_path": "contracts/native/native_build_evidence.v0.json"
@@ -5303,6 +5693,11 @@
     {
       "edge_kind": "documents",
       "from_path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
+      "to_path": "contracts/native/native_build_evidence.v0.json"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
       "to_path": "contracts/native/native_build_evidence.v0.json"
     },
     {
@@ -5321,6 +5716,11 @@
       "to_path": "contracts/native/native_build_log_record.v0.json"
     },
     {
+      "edge_kind": "documents",
+      "from_path": "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
+      "to_path": "contracts/native/native_build_log_record.v0.json"
+    },
+    {
       "edge_kind": "imports",
       "from_path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
       "to_path": "contracts/native/native_build_log_record.v0.json"
@@ -5333,6 +5733,11 @@
     {
       "edge_kind": "documents",
       "from_path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
+      "to_path": "contracts/native/native_build_log_record.v0.json"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
       "to_path": "contracts/native/native_build_log_record.v0.json"
     },
     {
@@ -5361,6 +5766,11 @@
       "to_path": "contracts/native/native_client_capability.v0.json"
     },
     {
+      "edge_kind": "documents",
+      "from_path": "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
+      "to_path": "contracts/native/native_client_capability.v0.json"
+    },
+    {
       "edge_kind": "imports",
       "from_path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
       "to_path": "contracts/native/native_client_capability.v0.json"
@@ -5373,6 +5783,11 @@
     {
       "edge_kind": "documents",
       "from_path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
+      "to_path": "contracts/native/native_client_capability.v0.json"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
       "to_path": "contracts/native/native_client_capability.v0.json"
     },
     {
@@ -5391,6 +5806,11 @@
       "to_path": "contracts/native/native_contract_library.v0.json"
     },
     {
+      "edge_kind": "documents",
+      "from_path": "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
+      "to_path": "contracts/native/native_contract_library.v0.json"
+    },
+    {
       "edge_kind": "imports",
       "from_path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
       "to_path": "contracts/native/native_contract_library.v0.json"
@@ -5403,6 +5823,11 @@
     {
       "edge_kind": "documents",
       "from_path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
+      "to_path": "contracts/native/native_contract_library.v0.json"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
       "to_path": "contracts/native/native_contract_library.v0.json"
     },
     {
@@ -5576,6 +6001,11 @@
       "to_path": "contracts/native/native_matrix.v0.json"
     },
     {
+      "edge_kind": "documents",
+      "from_path": "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
+      "to_path": "contracts/native/native_matrix.v0.json"
+    },
+    {
       "edge_kind": "imports",
       "from_path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
       "to_path": "contracts/native/native_matrix.v0.json"
@@ -5588,6 +6018,11 @@
     {
       "edge_kind": "documents",
       "from_path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
+      "to_path": "contracts/native/native_matrix.v0.json"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
       "to_path": "contracts/native/native_matrix.v0.json"
     },
     {
@@ -5621,6 +6056,11 @@
       "to_path": "contracts/native/native_packaging_manifest.v0.json"
     },
     {
+      "edge_kind": "documents",
+      "from_path": "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
+      "to_path": "contracts/native/native_packaging_manifest.v0.json"
+    },
+    {
       "edge_kind": "imports",
       "from_path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
       "to_path": "contracts/native/native_packaging_manifest.v0.json"
@@ -5633,6 +6073,11 @@
     {
       "edge_kind": "documents",
       "from_path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
+      "to_path": "contracts/native/native_packaging_manifest.v0.json"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
       "to_path": "contracts/native/native_packaging_manifest.v0.json"
     },
     {
@@ -5656,6 +6101,11 @@
       "to_path": "contracts/native/native_project_skeleton.v0.json"
     },
     {
+      "edge_kind": "documents",
+      "from_path": "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
+      "to_path": "contracts/native/native_project_skeleton.v0.json"
+    },
+    {
       "edge_kind": "imports",
       "from_path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
       "to_path": "contracts/native/native_project_skeleton.v0.json"
@@ -5668,6 +6118,11 @@
     {
       "edge_kind": "documents",
       "from_path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
+      "to_path": "contracts/native/native_project_skeleton.v0.json"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
       "to_path": "contracts/native/native_project_skeleton.v0.json"
     },
     {
@@ -5707,6 +6162,11 @@
     },
     {
       "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
+      "to_path": "contracts/native/native_readonly_client.v0.json"
+    },
+    {
+      "edge_kind": "references",
       "from_path": "contracts/native/native_readonly_surface.v0.json",
       "to_path": "contracts/native/native_readonly_surface.v0.json"
     },
@@ -5733,6 +6193,11 @@
     {
       "edge_kind": "documents",
       "from_path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
+      "to_path": "contracts/native/native_readonly_surface.v0.json"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
       "to_path": "contracts/native/native_readonly_surface.v0.json"
     },
     {
@@ -5773,6 +6238,11 @@
     {
       "edge_kind": "documents",
       "from_path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
+      "to_path": "contracts/native/native_smoke_evidence_packet.v0.json"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
       "to_path": "contracts/native/native_smoke_evidence_packet.v0.json"
     },
     {
@@ -5818,6 +6288,11 @@
     {
       "edge_kind": "references",
       "from_path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+      "to_path": "contracts/node/eureka_node_manifest.v0.json"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
       "to_path": "contracts/node/eureka_node_manifest.v0.json"
     },
     {
@@ -5916,6 +6391,11 @@
       "to_path": "contracts/node/node_policy.v0.json"
     },
     {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
+      "to_path": "contracts/node/node_policy.v0.json"
+    },
+    {
       "edge_kind": "documents",
       "from_path": "control/audits/track-b-02-node-policy-contract-v0/README.md",
       "to_path": "contracts/node/node_policy.v0.json"
@@ -6011,6 +6491,11 @@
       "to_path": "contracts/packs/local_staging_manifest.v0.json"
     },
     {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
+      "to_path": "contracts/packs/local_staging_manifest.v0.json"
+    },
+    {
       "edge_kind": "imports",
       "from_path": "scripts/validate_local_staging_manifest.py",
       "to_path": "contracts/packs/local_staging_manifest.v0.json"
@@ -6051,6 +6536,11 @@
       "to_path": "contracts/packs/pack_signature_envelope.v0.json"
     },
     {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
+      "to_path": "contracts/packs/pack_signature_envelope.v0.json"
+    },
+    {
       "edge_kind": "imports",
       "from_path": "scripts/validate_pack_quarantine_runtime.py",
       "to_path": "contracts/packs/pack_signature_envelope.v0.json"
@@ -6088,6 +6578,11 @@
     {
       "edge_kind": "references",
       "from_path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+      "to_path": "contracts/packs/source_pack_manifest.v0.json"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
       "to_path": "contracts/packs/source_pack_manifest.v0.json"
     },
     {
@@ -6381,6 +6876,11 @@
       "to_path": "contracts/pages/source_page.v0.json"
     },
     {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
+      "to_path": "contracts/pages/source_page.v0.json"
+    },
+    {
       "edge_kind": "documents",
       "from_path": "control/audits/source-page-contract-v0/SOURCE_PAGE_SCHEMA.md",
       "to_path": "contracts/pages/source_page.v0.json"
@@ -6486,6 +6986,16 @@
       "to_path": "contracts/pages/source_page_section.v0.json"
     },
     {
+      "edge_kind": "references",
+      "from_path": "contracts/projections/projection_profile.v0.json",
+      "to_path": "contracts/projections/projection_profile.v0.json"
+    },
+    {
+      "edge_kind": "imports",
+      "from_path": "scripts/validate_workbench_foundation.py",
+      "to_path": "contracts/projections/projection_profile.v0.json"
+    },
+    {
       "edge_kind": "imports",
       "from_path": "contracts/query/README.md",
       "to_path": "contracts/query/cache_key.v0.json"
@@ -6563,6 +7073,11 @@
     {
       "edge_kind": "references",
       "from_path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+      "to_path": "contracts/query/dedup_shadow_result.v0.json"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
       "to_path": "contracts/query/dedup_shadow_result.v0.json"
     },
     {
@@ -6771,6 +7286,11 @@
       "to_path": "contracts/query/explanation_input_bundle.v0.json"
     },
     {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
+      "to_path": "contracts/query/explanation_input_bundle.v0.json"
+    },
+    {
       "edge_kind": "imports",
       "from_path": "scripts/validate_search_explanation_runtime.py",
       "to_path": "contracts/query/explanation_input_bundle.v0.json"
@@ -6808,6 +7328,11 @@
     {
       "edge_kind": "references",
       "from_path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+      "to_path": "contracts/query/identity_merge_shadow.v0.json"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
       "to_path": "contracts/query/identity_merge_shadow.v0.json"
     },
     {
@@ -7006,6 +7531,11 @@
       "to_path": "contracts/query/known_absence_record.v0.json"
     },
     {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
+      "to_path": "contracts/query/known_absence_record.v0.json"
+    },
+    {
       "edge_kind": "imports",
       "from_path": "scripts/validate_search_explanation_runtime.py",
       "to_path": "contracts/query/known_absence_record.v0.json"
@@ -7048,6 +7578,11 @@
     {
       "edge_kind": "references",
       "from_path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+      "to_path": "contracts/query/near_miss_explanation.v0.json"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
       "to_path": "contracts/query/near_miss_explanation.v0.json"
     },
     {
@@ -7171,6 +7706,11 @@
       "to_path": "contracts/query/public_ranking_gate.v0.json"
     },
     {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
+      "to_path": "contracts/query/public_ranking_gate.v0.json"
+    },
+    {
       "edge_kind": "imports",
       "from_path": "scripts/validate_ranking_shadow_runtime.py",
       "to_path": "contracts/query/public_ranking_gate.v0.json"
@@ -7253,6 +7793,11 @@
     {
       "edge_kind": "references",
       "from_path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+      "to_path": "contracts/query/query_guard_decision.v0.json"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
       "to_path": "contracts/query/query_guard_decision.v0.json"
     },
     {
@@ -7501,6 +8046,11 @@
       "to_path": "contracts/query/query_poisoning_risk.v0.json"
     },
     {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
+      "to_path": "contracts/query/query_poisoning_risk.v0.json"
+    },
+    {
       "edge_kind": "imports",
       "from_path": "scripts/validate_query_privacy_poisoning_guard_contract.py",
       "to_path": "contracts/query/query_poisoning_risk.v0.json"
@@ -7606,6 +8156,11 @@
       "to_path": "contracts/query/ranking_factor.v0.json"
     },
     {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
+      "to_path": "contracts/query/ranking_factor.v0.json"
+    },
+    {
       "edge_kind": "imports",
       "from_path": "scripts/validate_evidence_weighted_ranking_contract.py",
       "to_path": "contracts/query/ranking_factor.v0.json"
@@ -7661,6 +8216,11 @@
       "to_path": "contracts/query/ranking_input_bundle.v0.json"
     },
     {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
+      "to_path": "contracts/query/ranking_input_bundle.v0.json"
+    },
+    {
       "edge_kind": "imports",
       "from_path": "scripts/validate_ranking_shadow_runtime.py",
       "to_path": "contracts/query/ranking_input_bundle.v0.json"
@@ -7706,6 +8266,11 @@
       "to_path": "contracts/query/ranking_shadow_result.v0.json"
     },
     {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
+      "to_path": "contracts/query/ranking_shadow_result.v0.json"
+    },
+    {
       "edge_kind": "imports",
       "from_path": "scripts/validate_ranking_shadow_runtime.py",
       "to_path": "contracts/query/ranking_shadow_result.v0.json"
@@ -7748,6 +8313,11 @@
     {
       "edge_kind": "references",
       "from_path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+      "to_path": "contracts/query/search_gap_explanation.v0.json"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
       "to_path": "contracts/query/search_gap_explanation.v0.json"
     },
     {
@@ -7878,6 +8448,11 @@
     {
       "edge_kind": "references",
       "from_path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+      "to_path": "contracts/query/search_miss_ledger_entry.v0.json"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
       "to_path": "contracts/query/search_miss_ledger_entry.v0.json"
     },
     {
@@ -8141,6 +8716,11 @@
       "to_path": "contracts/query/search_need_seed.v0.json"
     },
     {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
+      "to_path": "contracts/query/search_need_seed.v0.json"
+    },
+    {
       "edge_kind": "imports",
       "from_path": "scripts/audit_obs_track_b_synchronization.py",
       "to_path": "contracts/query/search_need_seed.v0.json"
@@ -8253,6 +8833,11 @@
     {
       "edge_kind": "references",
       "from_path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+      "to_path": "contracts/query/search_quality_query_set.v0.json"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
       "to_path": "contracts/query/search_quality_query_set.v0.json"
     },
     {
@@ -8422,6 +9007,11 @@
     },
     {
       "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
+      "to_path": "contracts/query/search_result_explanation.v0.json"
+    },
+    {
+      "edge_kind": "references",
       "from_path": "control/audits/search-result-explanation-contract-v0/search_result_explanation_contract_report.json",
       "to_path": "contracts/query/search_result_explanation.v0.json"
     },
@@ -8481,6 +9071,11 @@
       "to_path": "contracts/query/workunit_seed.v0.json"
     },
     {
+      "edge_kind": "documents",
+      "from_path": "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
+      "to_path": "contracts/query/workunit_seed.v0.json"
+    },
+    {
       "edge_kind": "imports",
       "from_path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
       "to_path": "contracts/query/workunit_seed.v0.json"
@@ -8498,6 +9093,11 @@
     {
       "edge_kind": "references",
       "from_path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+      "to_path": "contracts/query/workunit_seed.v0.json"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
       "to_path": "contracts/query/workunit_seed.v0.json"
     },
     {
@@ -8656,6 +9256,11 @@
       "to_path": "contracts/relay/relay_manifest.v0.json"
     },
     {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
+      "to_path": "contracts/relay/relay_manifest.v0.json"
+    },
+    {
       "edge_kind": "imports",
       "from_path": "scripts/validate_relay_runtime.py",
       "to_path": "contracts/relay/relay_manifest.v0.json"
@@ -8698,6 +9303,11 @@
     {
       "edge_kind": "references",
       "from_path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+      "to_path": "contracts/relay/relay_profile.v0.json"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
       "to_path": "contracts/relay/relay_profile.v0.json"
     },
     {
@@ -8786,6 +9396,11 @@
       "to_path": "contracts/relay/relay_response.v0.json"
     },
     {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
+      "to_path": "contracts/relay/relay_response.v0.json"
+    },
+    {
       "edge_kind": "imports",
       "from_path": "scripts/validate_relay_runtime.py",
       "to_path": "contracts/relay/relay_response.v0.json"
@@ -8828,6 +9443,11 @@
     {
       "edge_kind": "references",
       "from_path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+      "to_path": "contracts/relay/relay_route.v0.json"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
       "to_path": "contracts/relay/relay_route.v0.json"
     },
     {
@@ -8962,6 +9582,66 @@
     },
     {
       "edge_kind": "references",
+      "from_path": "control/audits/repo-layout-canon-01-v0/repo_layout_canon_report.json",
+      "to_path": "contracts/repo/generated_artifact_exceptions.contract.toml"
+    },
+    {
+      "edge_kind": "imports",
+      "from_path": "scripts/validate_repo_structure_canon.py",
+      "to_path": "contracts/repo/generated_artifact_exceptions.contract.toml"
+    },
+    {
+      "edge_kind": "validates",
+      "from_path": "tests/operations/test_repo_structure_canon.py",
+      "to_path": "contracts/repo/generated_artifact_exceptions.contract.toml"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "control/audits/repo-layout-canon-01-v0/repo_layout_canon_report.json",
+      "to_path": "contracts/repo/naming.contract.toml"
+    },
+    {
+      "edge_kind": "imports",
+      "from_path": "scripts/validate_repo_structure_canon.py",
+      "to_path": "contracts/repo/naming.contract.toml"
+    },
+    {
+      "edge_kind": "validates",
+      "from_path": "tests/operations/test_repo_structure_canon.py",
+      "to_path": "contracts/repo/naming.contract.toml"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "control/audits/repo-layout-canon-01-v0/repo_layout_canon_report.json",
+      "to_path": "contracts/repo/root_allowlist.contract.toml"
+    },
+    {
+      "edge_kind": "imports",
+      "from_path": "scripts/validate_repo_structure_canon.py",
+      "to_path": "contracts/repo/root_allowlist.contract.toml"
+    },
+    {
+      "edge_kind": "validates",
+      "from_path": "tests/operations/test_repo_structure_canon.py",
+      "to_path": "contracts/repo/root_allowlist.contract.toml"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "control/audits/repo-layout-canon-01-v0/repo_layout_canon_report.json",
+      "to_path": "contracts/repo/root_ownership.contract.toml"
+    },
+    {
+      "edge_kind": "imports",
+      "from_path": "scripts/validate_repo_structure_canon.py",
+      "to_path": "contracts/repo/root_ownership.contract.toml"
+    },
+    {
+      "edge_kind": "validates",
+      "from_path": "tests/operations/test_repo_structure_canon.py",
+      "to_path": "contracts/repo/root_ownership.contract.toml"
+    },
+    {
+      "edge_kind": "references",
       "from_path": "contracts/representations/capability_negotiation.v0.json",
       "to_path": "contracts/representations/capability_negotiation.v0.json"
     },
@@ -8983,6 +9663,11 @@
     {
       "edge_kind": "references",
       "from_path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+      "to_path": "contracts/representations/capability_negotiation.v0.json"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
       "to_path": "contracts/representations/capability_negotiation.v0.json"
     },
     {
@@ -9011,6 +9696,11 @@
       "to_path": "contracts/representations/host_profile.v0.json"
     },
     {
+      "edge_kind": "documents",
+      "from_path": "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
+      "to_path": "contracts/representations/host_profile.v0.json"
+    },
+    {
       "edge_kind": "imports",
       "from_path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
       "to_path": "contracts/representations/host_profile.v0.json"
@@ -9028,6 +9718,11 @@
     {
       "edge_kind": "references",
       "from_path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+      "to_path": "contracts/representations/host_profile.v0.json"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
       "to_path": "contracts/representations/host_profile.v0.json"
     },
     {
@@ -9073,6 +9768,11 @@
     {
       "edge_kind": "references",
       "from_path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+      "to_path": "contracts/representations/renderer_parity_harness.v0.json"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
       "to_path": "contracts/representations/renderer_parity_harness.v0.json"
     },
     {
@@ -9706,6 +10406,11 @@
       "to_path": "contracts/search/ranking_factor.v0.json"
     },
     {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
+      "to_path": "contracts/search/ranking_factor.v0.json"
+    },
+    {
       "edge_kind": "imports",
       "from_path": "scripts/validate_evidence_weighted_ranking_contract.py",
       "to_path": "contracts/search/ranking_factor.v0.json"
@@ -9842,6 +10547,11 @@
     },
     {
       "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
+      "to_path": "contracts/search/search_result_explanation.v0.json"
+    },
+    {
+      "edge_kind": "references",
       "from_path": "control/audits/search-result-explanation-contract-v0/search_result_explanation_contract_report.json",
       "to_path": "contracts/search/search_result_explanation.v0.json"
     },
@@ -9972,6 +10682,136 @@
     },
     {
       "edge_kind": "references",
+      "from_path": "contracts/search_interaction/absence_packet.v0.json",
+      "to_path": "contracts/search_interaction/absence_packet.v0.json"
+    },
+    {
+      "edge_kind": "imports",
+      "from_path": "scripts/validate_search_interaction_contract.py",
+      "to_path": "contracts/search_interaction/absence_packet.v0.json"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "contracts/search_interaction/action_posture_packet.v0.json",
+      "to_path": "contracts/search_interaction/action_posture_packet.v0.json"
+    },
+    {
+      "edge_kind": "imports",
+      "from_path": "scripts/validate_search_interaction_contract.py",
+      "to_path": "contracts/search_interaction/action_posture_packet.v0.json"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "contracts/search_interaction/candidate_cluster_packet.v0.json",
+      "to_path": "contracts/search_interaction/candidate_cluster_packet.v0.json"
+    },
+    {
+      "edge_kind": "imports",
+      "from_path": "scripts/validate_search_interaction_contract.py",
+      "to_path": "contracts/search_interaction/candidate_cluster_packet.v0.json"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "contracts/search_interaction/compiled_query_packet.v0.json",
+      "to_path": "contracts/search_interaction/compiled_query_packet.v0.json"
+    },
+    {
+      "edge_kind": "imports",
+      "from_path": "scripts/validate_search_interaction_contract.py",
+      "to_path": "contracts/search_interaction/compiled_query_packet.v0.json"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "contracts/search_interaction/coverage_report_packet.v0.json",
+      "to_path": "contracts/search_interaction/coverage_report_packet.v0.json"
+    },
+    {
+      "edge_kind": "imports",
+      "from_path": "scripts/validate_search_interaction_contract.py",
+      "to_path": "contracts/search_interaction/coverage_report_packet.v0.json"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "contracts/search_interaction/discovery_trail_packet.v0.json",
+      "to_path": "contracts/search_interaction/discovery_trail_packet.v0.json"
+    },
+    {
+      "edge_kind": "imports",
+      "from_path": "scripts/validate_search_interaction_contract.py",
+      "to_path": "contracts/search_interaction/discovery_trail_packet.v0.json"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "contracts/search_interaction/partial_result_packet.v0.json",
+      "to_path": "contracts/search_interaction/partial_result_packet.v0.json"
+    },
+    {
+      "edge_kind": "imports",
+      "from_path": "scripts/validate_search_interaction_contract.py",
+      "to_path": "contracts/search_interaction/partial_result_packet.v0.json"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "contracts/search_interaction/resolution_run_packet.v0.json",
+      "to_path": "contracts/search_interaction/resolution_run_packet.v0.json"
+    },
+    {
+      "edge_kind": "imports",
+      "from_path": "scripts/validate_search_interaction_contract.py",
+      "to_path": "contracts/search_interaction/resolution_run_packet.v0.json"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "contracts/search_interaction/result_lane_packet.v0.json",
+      "to_path": "contracts/search_interaction/result_lane_packet.v0.json"
+    },
+    {
+      "edge_kind": "imports",
+      "from_path": "scripts/validate_search_interaction_contract.py",
+      "to_path": "contracts/search_interaction/result_lane_packet.v0.json"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "contracts/search_interaction/search_control_command.v0.json",
+      "to_path": "contracts/search_interaction/search_control_command.v0.json"
+    },
+    {
+      "edge_kind": "imports",
+      "from_path": "scripts/validate_search_interaction_contract.py",
+      "to_path": "contracts/search_interaction/search_control_command.v0.json"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "contracts/search_interaction/search_plan_patch.v0.json",
+      "to_path": "contracts/search_interaction/search_plan_patch.v0.json"
+    },
+    {
+      "edge_kind": "imports",
+      "from_path": "scripts/validate_search_interaction_contract.py",
+      "to_path": "contracts/search_interaction/search_plan_patch.v0.json"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "contracts/search_interaction/search_request_packet.v0.json",
+      "to_path": "contracts/search_interaction/search_request_packet.v0.json"
+    },
+    {
+      "edge_kind": "imports",
+      "from_path": "scripts/validate_search_interaction_contract.py",
+      "to_path": "contracts/search_interaction/search_request_packet.v0.json"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "contracts/search_interaction/user_feedback_event.v0.json",
+      "to_path": "contracts/search_interaction/user_feedback_event.v0.json"
+    },
+    {
+      "edge_kind": "imports",
+      "from_path": "scripts/validate_search_interaction_contract.py",
+      "to_path": "contracts/search_interaction/user_feedback_event.v0.json"
+    },
+    {
+      "edge_kind": "references",
       "from_path": "control/audits/d-bundle-01-snapshot-envelope-consumer-renderers-v0/d_bundle_01_report.json",
       "to_path": "contracts/snapshots/snapshot_envelope.v0.json"
     },
@@ -10006,6 +10846,11 @@
       "to_path": "contracts/snapshots/snapshot_envelope.v0.json"
     },
     {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
+      "to_path": "contracts/snapshots/snapshot_envelope.v0.json"
+    },
+    {
       "edge_kind": "imports",
       "from_path": "scripts/validate_snapshot_runtime.py",
       "to_path": "contracts/snapshots/snapshot_envelope.v0.json"
@@ -10041,6 +10886,11 @@
       "to_path": "contracts/snapshots/snapshot_file_tree_index.v0.json"
     },
     {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
+      "to_path": "contracts/snapshots/snapshot_file_tree_index.v0.json"
+    },
+    {
       "edge_kind": "imports",
       "from_path": "scripts/validate_snapshot_runtime.py",
       "to_path": "contracts/snapshots/snapshot_file_tree_index.v0.json"
@@ -10073,6 +10923,11 @@
     {
       "edge_kind": "references",
       "from_path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+      "to_path": "contracts/snapshots/snapshot_manifest.v0.json"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
       "to_path": "contracts/snapshots/snapshot_manifest.v0.json"
     },
     {
@@ -10116,6 +10971,11 @@
       "to_path": "contracts/snapshots/snapshot_record.v0.json"
     },
     {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
+      "to_path": "contracts/snapshots/snapshot_record.v0.json"
+    },
+    {
       "edge_kind": "imports",
       "from_path": "scripts/validate_snapshot_runtime.py",
       "to_path": "contracts/snapshots/snapshot_record.v0.json"
@@ -10151,6 +11011,11 @@
       "to_path": "contracts/snapshots/snapshot_render_request.v0.json"
     },
     {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
+      "to_path": "contracts/snapshots/snapshot_render_request.v0.json"
+    },
+    {
       "edge_kind": "imports",
       "from_path": "scripts/validate_snapshot_runtime.py",
       "to_path": "contracts/snapshots/snapshot_render_request.v0.json"
@@ -10186,6 +11051,11 @@
       "to_path": "contracts/snapshots/snapshot_render_result.v0.json"
     },
     {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
+      "to_path": "contracts/snapshots/snapshot_render_result.v0.json"
+    },
+    {
       "edge_kind": "imports",
       "from_path": "scripts/validate_snapshot_runtime.py",
       "to_path": "contracts/snapshots/snapshot_render_result.v0.json"
@@ -10218,6 +11088,11 @@
     {
       "edge_kind": "references",
       "from_path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+      "to_path": "contracts/snapshots/snapshot_signature_envelope.v0.json"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
       "to_path": "contracts/snapshots/snapshot_signature_envelope.v0.json"
     },
     {
@@ -10571,6 +11446,11 @@
       "to_path": "contracts/source_registry/source_record.schema.yaml"
     },
     {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
+      "to_path": "contracts/source_registry/source_record.schema.yaml"
+    },
+    {
       "edge_kind": "example_of",
       "from_path": "examples/view_models/source_page/minimal_source_page_v0.json",
       "to_path": "contracts/source_registry/source_record.schema.yaml"
@@ -10711,6 +11591,11 @@
       "to_path": "contracts/source_sync/source_sync_worker_job.v0.json"
     },
     {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
+      "to_path": "contracts/source_sync/source_sync_worker_job.v0.json"
+    },
+    {
       "edge_kind": "imports",
       "from_path": "control/audits/software-heritage-connector-approval-v0/COMMAND_RESULTS.md",
       "to_path": "contracts/source_sync/source_sync_worker_job.v0.json"
@@ -10808,6 +11693,11 @@
     {
       "edge_kind": "references",
       "from_path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+      "to_path": "contracts/source_sync/source_sync_worker_manifest.v0.json"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
       "to_path": "contracts/source_sync/source_sync_worker_manifest.v0.json"
     },
     {
@@ -10921,6 +11811,11 @@
       "to_path": "contracts/sources/source_coverage_ledger.v0.json"
     },
     {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
+      "to_path": "contracts/sources/source_coverage_ledger.v0.json"
+    },
+    {
       "edge_kind": "imports",
       "from_path": "scripts/audit_h0_integration.py",
       "to_path": "contracts/sources/source_coverage_ledger.v0.json"
@@ -10966,6 +11861,11 @@
       "to_path": "contracts/sources/source_coverage_manifest.v0.json"
     },
     {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
+      "to_path": "contracts/sources/source_coverage_manifest.v0.json"
+    },
+    {
       "edge_kind": "imports",
       "from_path": "scripts/validate_source_os_coverage_scorecards.py",
       "to_path": "contracts/sources/source_coverage_manifest.v0.json"
@@ -11058,6 +11958,11 @@
     {
       "edge_kind": "references",
       "from_path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+      "to_path": "contracts/sources/source_operation_policy.v0.json"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
       "to_path": "contracts/sources/source_operation_policy.v0.json"
     },
     {
@@ -11106,6 +12011,11 @@
       "to_path": "contracts/sources/source_policy.v0.json"
     },
     {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
+      "to_path": "contracts/sources/source_policy.v0.json"
+    },
+    {
       "edge_kind": "imports",
       "from_path": "scripts/validate_source_observation_seam.py",
       "to_path": "contracts/sources/source_policy.v0.json"
@@ -11141,6 +12051,11 @@
       "to_path": "contracts/sources/source_record.v2.json"
     },
     {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
+      "to_path": "contracts/sources/source_record.v2.json"
+    },
+    {
       "edge_kind": "imports",
       "from_path": "scripts/validate_source_os_foundation.py",
       "to_path": "contracts/sources/source_record.v2.json"
@@ -11173,6 +12088,11 @@
     {
       "edge_kind": "references",
       "from_path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+      "to_path": "contracts/sources/source_registry.v2.json"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
       "to_path": "contracts/sources/source_registry.v2.json"
     },
     {
@@ -11376,6 +12296,11 @@
       "to_path": "contracts/stores/public_index_rebuild.v0.json"
     },
     {
+      "edge_kind": "documents",
+      "from_path": "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
+      "to_path": "contracts/stores/public_index_rebuild.v0.json"
+    },
+    {
       "edge_kind": "imports",
       "from_path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
       "to_path": "contracts/stores/public_index_rebuild.v0.json"
@@ -11393,6 +12318,11 @@
     {
       "edge_kind": "references",
       "from_path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+      "to_path": "contracts/stores/public_index_rebuild.v0.json"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
       "to_path": "contracts/stores/public_index_rebuild.v0.json"
     },
     {
@@ -11697,6 +12627,11 @@
     },
     {
       "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
+      "to_path": "contracts/ui/design_tokens.v0.json"
+    },
+    {
+      "edge_kind": "references",
       "from_path": "control/audits/track-a-15-temporal-minimal-search-design-tokens-v0/track_a_15_report.json",
       "to_path": "contracts/ui/design_tokens.v0.json"
     },
@@ -11818,6 +12753,11 @@
     {
       "edge_kind": "imports",
       "from_path": "control/audits/r0-03b-2-contract-reference-product-cleanup-v0/generated/sample_product_contract_cleanup_result.json",
+      "to_path": "contracts/ui/ui_contracts/bundle_inspection.ui_contract.yaml"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
       "to_path": "contracts/ui/ui_contracts/bundle_inspection.ui_contract.yaml"
     },
     {
@@ -11986,6 +12926,11 @@
       "to_path": "contracts/ui/ui_contracts/resolution_actions.ui_contract.yaml"
     },
     {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
+      "to_path": "contracts/ui/ui_contracts/resolution_actions.ui_contract.yaml"
+    },
+    {
       "edge_kind": "imports",
       "from_path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
       "to_path": "contracts/ui/ui_contracts/resolution_memory.ui_contract.yaml"
@@ -12033,6 +12978,11 @@
     {
       "edge_kind": "references",
       "from_path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+      "to_path": "contracts/ui/ui_contracts/resolution_workspace.ui_contract.yaml"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
       "to_path": "contracts/ui/ui_contracts/resolution_workspace.ui_contract.yaml"
     },
     {
@@ -12088,6 +13038,11 @@
     {
       "edge_kind": "references",
       "from_path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+      "to_path": "contracts/ui/ui_contracts/stored_exports.ui_contract.yaml"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
       "to_path": "contracts/ui/ui_contracts/stored_exports.ui_contract.yaml"
     },
     {
@@ -12223,6 +13178,11 @@
     {
       "edge_kind": "imports",
       "from_path": "control/audits/r0-03b-2-contract-reference-product-cleanup-v0/generated/sample_product_contract_cleanup_result.json",
+      "to_path": "contracts/ui/view_models/bundle_inspection.view_model.yaml"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
       "to_path": "contracts/ui/view_models/bundle_inspection.view_model.yaml"
     },
     {
@@ -12622,6 +13582,11 @@
     },
     {
       "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
+      "to_path": "contracts/ui/view_models/stored_exports.view_model.yaml"
+    },
+    {
+      "edge_kind": "references",
       "from_path": "contracts/ui/ui_contracts/subject_states.ui_contract.yaml",
       "to_path": "contracts/ui/view_models/subject_states.view_model.yaml"
     },
@@ -12669,6 +13634,21 @@
       "edge_kind": "references",
       "from_path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
       "to_path": "contracts/ui/view_models/workbench_session.view_model.yaml"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "contracts/view_models/result_lane_view_model.v0.json",
+      "to_path": "contracts/view_models/result_lane_view_model.v0.json"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "contracts/view_models/view_model_packet.v0.json",
+      "to_path": "contracts/view_models/view_model_packet.v0.json"
+    },
+    {
+      "edge_kind": "imports",
+      "from_path": "scripts/validate_workbench_foundation.py",
+      "to_path": "contracts/view_models/view_model_packet.v0.json"
     },
     {
       "edge_kind": "references",
@@ -13271,6 +14251,11 @@
       "to_path": "contracts/views/source_page.v0.json"
     },
     {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
+      "to_path": "contracts/views/source_page.v0.json"
+    },
+    {
       "edge_kind": "documents",
       "from_path": "control/audits/source-page-contract-v0/SOURCE_PAGE_SCHEMA.md",
       "to_path": "contracts/views/source_page.v0.json"
@@ -13392,6 +14377,11 @@
     },
     {
       "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
+      "to_path": "contracts/views/view_model_policy_index.v0.json"
+    },
+    {
+      "edge_kind": "references",
       "from_path": "control/audits/track-a-10-view-model-policy-index-v0/track_a_10_report.json",
       "to_path": "contracts/views/view_model_policy_index.v0.json"
     },
@@ -13407,22 +14397,42 @@
     },
     {
       "edge_kind": "references",
+      "from_path": "contracts/workbench/workbench_module.v0.json",
+      "to_path": "contracts/workbench/workbench_module.v0.json"
+    },
+    {
+      "edge_kind": "imports",
+      "from_path": "scripts/validate_workbench_foundation.py",
+      "to_path": "contracts/workbench/workbench_module.v0.json"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "contracts/workbench/workbench_permission.v0.json",
+      "to_path": "contracts/workbench/workbench_permission.v0.json"
+    },
+    {
+      "edge_kind": "imports",
+      "from_path": "scripts/validate_workbench_foundation.py",
+      "to_path": "contracts/workbench/workbench_permission.v0.json"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "contracts/workbench/workbench_result_lane_projection.v0.json",
+      "to_path": "contracts/workbench/workbench_result_lane_projection.v0.json"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "contracts/workbench/workbench_route.v0.json",
+      "to_path": "contracts/workbench/workbench_route.v0.json"
+    },
+    {
+      "edge_kind": "imports",
+      "from_path": "scripts/validate_workbench_foundation.py",
+      "to_path": "contracts/workbench/workbench_route.v0.json"
+    },
+    {
+      "edge_kind": "references",
       "from_path": "control/audits/j0-bundle-01-safe-actions-manifests-v0/j0_bundle_01_report.json",
-      "to_path": "control/schemas/audits/actions/blocked_action_report.v0.json"
-    },
-    {
-      "edge_kind": "documents",
-      "from_path": "control/audits/r0-02-runtime-architecture-leakage-gate-v0/generated/sample_leakage_summary.md",
-      "to_path": "control/schemas/audits/actions/blocked_action_report.v0.json"
-    },
-    {
-      "edge_kind": "documents",
-      "from_path": "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
-      "to_path": "control/schemas/audits/actions/blocked_action_report.v0.json"
-    },
-    {
-      "edge_kind": "documents",
-      "from_path": "control/audits/r0-02-runtime-architecture-leakage-gate-v0/production_path_scan_summary.md",
       "to_path": "control/schemas/audits/actions/blocked_action_report.v0.json"
     },
     {
@@ -13502,11 +14512,6 @@
     },
     {
       "edge_kind": "documents",
-      "from_path": "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
-      "to_path": "control/schemas/audits/audits/local_mvp_deployment_deferral.v0.json"
-    },
-    {
-      "edge_kind": "documents",
       "from_path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/audit_schema_summary.md",
       "to_path": "control/schemas/audits/audits/local_mvp_deployment_deferral.v0.json"
     },
@@ -13573,11 +14578,6 @@
     {
       "edge_kind": "documents",
       "from_path": "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
-      "to_path": "control/schemas/audits/audits/local_mvp_expansion_gate.v0.json"
-    },
-    {
-      "edge_kind": "documents",
-      "from_path": "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
       "to_path": "control/schemas/audits/audits/local_mvp_expansion_gate.v0.json"
     },
     {
@@ -13652,11 +14652,6 @@
     },
     {
       "edge_kind": "documents",
-      "from_path": "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
-      "to_path": "control/schemas/audits/audits/local_mvp_iteration_plan.v0.json"
-    },
-    {
-      "edge_kind": "documents",
       "from_path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/audit_schema_summary.md",
       "to_path": "control/schemas/audits/audits/local_mvp_iteration_plan.v0.json"
     },
@@ -13722,11 +14717,6 @@
     },
     {
       "edge_kind": "documents",
-      "from_path": "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
-      "to_path": "control/schemas/audits/audits/mvp_alpha_gate_decision.v0.json"
-    },
-    {
-      "edge_kind": "documents",
       "from_path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/audit_schema_summary.md",
       "to_path": "control/schemas/audits/audits/mvp_alpha_gate_decision.v0.json"
     },
@@ -13788,11 +14778,6 @@
     {
       "edge_kind": "documents",
       "from_path": "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
-      "to_path": "control/schemas/audits/audits/mvp_alpha_integration_matrix.v0.json"
-    },
-    {
-      "edge_kind": "documents",
-      "from_path": "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
       "to_path": "control/schemas/audits/audits/mvp_alpha_integration_matrix.v0.json"
     },
     {
@@ -13867,11 +14852,6 @@
     },
     {
       "edge_kind": "documents",
-      "from_path": "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
-      "to_path": "control/schemas/audits/audits/mvp_alpha_launch_blocker_register.v0.json"
-    },
-    {
-      "edge_kind": "documents",
       "from_path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/audit_schema_summary.md",
       "to_path": "control/schemas/audits/audits/mvp_alpha_launch_blocker_register.v0.json"
     },
@@ -13942,11 +14922,6 @@
     },
     {
       "edge_kind": "documents",
-      "from_path": "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
-      "to_path": "control/schemas/audits/audits/mvp_alpha_operator_decision.v0.json"
-    },
-    {
-      "edge_kind": "documents",
       "from_path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/audit_schema_summary.md",
       "to_path": "control/schemas/audits/audits/mvp_alpha_operator_decision.v0.json"
     },
@@ -14008,11 +14983,6 @@
     {
       "edge_kind": "documents",
       "from_path": "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
-      "to_path": "control/schemas/audits/audits/mvp_alpha_operator_review_packet.v0.json"
-    },
-    {
-      "edge_kind": "documents",
-      "from_path": "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
       "to_path": "control/schemas/audits/audits/mvp_alpha_operator_review_packet.v0.json"
     },
     {
@@ -14087,11 +15057,6 @@
     },
     {
       "edge_kind": "documents",
-      "from_path": "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
-      "to_path": "control/schemas/audits/audits/mvp_alpha_operator_signoff_packet.v0.json"
-    },
-    {
-      "edge_kind": "documents",
       "from_path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/audit_schema_summary.md",
       "to_path": "control/schemas/audits/audits/mvp_alpha_operator_signoff_packet.v0.json"
     },
@@ -14162,11 +15127,6 @@
     },
     {
       "edge_kind": "documents",
-      "from_path": "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
-      "to_path": "control/schemas/audits/audits/mvp_alpha_public_claim_review.v0.json"
-    },
-    {
-      "edge_kind": "documents",
       "from_path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/audit_schema_summary.md",
       "to_path": "control/schemas/audits/audits/mvp_alpha_public_claim_review.v0.json"
     },
@@ -14233,11 +15193,6 @@
     {
       "edge_kind": "documents",
       "from_path": "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
-      "to_path": "control/schemas/audits/audits/mvp_alpha_readiness_audit.v0.json"
-    },
-    {
-      "edge_kind": "documents",
-      "from_path": "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
       "to_path": "control/schemas/audits/audits/mvp_alpha_readiness_audit.v0.json"
     },
     {
@@ -19487,11 +20442,6 @@
     },
     {
       "edge_kind": "documents",
-      "from_path": "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
-      "to_path": "control/schemas/fixtures/archive/software/synthetic_resolution_fixture.json"
-    },
-    {
-      "edge_kind": "documents",
       "from_path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/fixture_schema_summary.md",
       "to_path": "control/schemas/fixtures/archive/software/synthetic_resolution_fixture.json"
     },
@@ -21482,21 +22432,6 @@
     },
     {
       "edge_kind": "documents",
-      "from_path": "control/audits/r0-02-runtime-architecture-leakage-gate-v0/generated/sample_leakage_summary.md",
-      "to_path": "control/schemas/policies/actions/action_taxonomy.v0.json"
-    },
-    {
-      "edge_kind": "documents",
-      "from_path": "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
-      "to_path": "control/schemas/policies/actions/action_taxonomy.v0.json"
-    },
-    {
-      "edge_kind": "documents",
-      "from_path": "control/audits/r0-02-runtime-architecture-leakage-gate-v0/production_path_scan_summary.md",
-      "to_path": "control/schemas/policies/actions/action_taxonomy.v0.json"
-    },
-    {
-      "edge_kind": "documents",
       "from_path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/control_schema_summary.md",
       "to_path": "control/schemas/policies/actions/action_taxonomy.v0.json"
     },
@@ -21553,21 +22488,6 @@
     {
       "edge_kind": "imports",
       "from_path": "control/audits/r0-01-dev-production-reality-inventory-v0/generated/sample_gap_register.json",
-      "to_path": "control/schemas/policies/actions/citation_bundle.v0.json"
-    },
-    {
-      "edge_kind": "documents",
-      "from_path": "control/audits/r0-02-runtime-architecture-leakage-gate-v0/generated/sample_leakage_summary.md",
-      "to_path": "control/schemas/policies/actions/citation_bundle.v0.json"
-    },
-    {
-      "edge_kind": "documents",
-      "from_path": "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
-      "to_path": "control/schemas/policies/actions/citation_bundle.v0.json"
-    },
-    {
-      "edge_kind": "documents",
-      "from_path": "control/audits/r0-02-runtime-architecture-leakage-gate-v0/production_path_scan_summary.md",
       "to_path": "control/schemas/policies/actions/citation_bundle.v0.json"
     },
     {
@@ -23371,21 +24291,6 @@
       "to_path": "control/schemas/previews/actions/action_result_preview.v0.json"
     },
     {
-      "edge_kind": "documents",
-      "from_path": "control/audits/r0-02-runtime-architecture-leakage-gate-v0/generated/sample_leakage_summary.md",
-      "to_path": "control/schemas/previews/actions/action_result_preview.v0.json"
-    },
-    {
-      "edge_kind": "documents",
-      "from_path": "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
-      "to_path": "control/schemas/previews/actions/action_result_preview.v0.json"
-    },
-    {
-      "edge_kind": "documents",
-      "from_path": "control/audits/r0-02-runtime-architecture-leakage-gate-v0/production_path_scan_summary.md",
-      "to_path": "control/schemas/previews/actions/action_result_preview.v0.json"
-    },
-    {
       "edge_kind": "imports",
       "from_path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
       "to_path": "control/schemas/previews/actions/action_result_preview.v0.json"
@@ -23851,6 +24756,11 @@
       "to_path": "control/schemas/previews/h1/connectors/live_probe_request.v0.json"
     },
     {
+      "edge_kind": "documents",
+      "from_path": "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
+      "to_path": "control/schemas/previews/h1/connectors/live_probe_request.v0.json"
+    },
+    {
       "edge_kind": "imports",
       "from_path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
       "to_path": "control/schemas/previews/h1/connectors/live_probe_request.v0.json"
@@ -23903,6 +24813,11 @@
     {
       "edge_kind": "references",
       "from_path": "control/audits/r0-03b-2-contract-reference-product-cleanup-v0/generated/sample_reference_update_result.json",
+      "to_path": "control/schemas/previews/h1/connectors/live_probe_request.v0.json"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
       "to_path": "control/schemas/previews/h1/connectors/live_probe_request.v0.json"
     },
     {
@@ -24086,6 +25001,11 @@
       "to_path": "control/schemas/previews/h1/connectors/live_probe_result.v0.json"
     },
     {
+      "edge_kind": "documents",
+      "from_path": "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
+      "to_path": "control/schemas/previews/h1/connectors/live_probe_result.v0.json"
+    },
+    {
       "edge_kind": "imports",
       "from_path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
       "to_path": "control/schemas/previews/h1/connectors/live_probe_result.v0.json"
@@ -24138,6 +25058,11 @@
     {
       "edge_kind": "references",
       "from_path": "control/audits/r0-03b-2-contract-reference-product-cleanup-v0/generated/sample_reference_update_result.json",
+      "to_path": "control/schemas/previews/h1/connectors/live_probe_result.v0.json"
+    },
+    {
+      "edge_kind": "references",
+      "from_path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
       "to_path": "control/schemas/previews/h1/connectors/live_probe_result.v0.json"
     },
     {
@@ -27977,11 +28902,6 @@
     },
     {
       "edge_kind": "imports",
-      "from_path": "runtime/connectors/h14_source_discovery/normalizer_common.py",
-      "to_path": "control/schemas/previews/h14/connectors/connector_pack_manifest_candidate.v0.json"
-    },
-    {
-      "edge_kind": "imports",
       "from_path": "scripts/resolve_contract_taxonomy_blockers.py",
       "to_path": "control/schemas/previews/h14/connectors/connector_pack_manifest_candidate.v0.json"
     },
@@ -28067,11 +28987,6 @@
     },
     {
       "edge_kind": "imports",
-      "from_path": "runtime/connectors/h14_source_discovery/normalizer_common.py",
-      "to_path": "control/schemas/previews/h14/connectors/connector_scorecard_candidate.v0.json"
-    },
-    {
-      "edge_kind": "imports",
       "from_path": "scripts/resolve_contract_taxonomy_blockers.py",
       "to_path": "control/schemas/previews/h14/connectors/connector_scorecard_candidate.v0.json"
     },
@@ -28157,11 +29072,6 @@
     },
     {
       "edge_kind": "imports",
-      "from_path": "runtime/connectors/h14_source_discovery/normalizer_common.py",
-      "to_path": "control/schemas/previews/h14/connectors/coverage_manifest_candidate.v0.json"
-    },
-    {
-      "edge_kind": "imports",
       "from_path": "scripts/resolve_contract_taxonomy_blockers.py",
       "to_path": "control/schemas/previews/h14/connectors/coverage_manifest_candidate.v0.json"
     },
@@ -28243,11 +29153,6 @@
     {
       "edge_kind": "documents",
       "from_path": "control/audits/r0-remediation-contract-taxonomy-01-v0/resolved_items.md",
-      "to_path": "control/schemas/previews/h14/connectors/pack_import_export_boundary_candidate.v0.json"
-    },
-    {
-      "edge_kind": "imports",
-      "from_path": "runtime/connectors/h14_source_discovery/normalizer_common.py",
       "to_path": "control/schemas/previews/h14/connectors/pack_import_export_boundary_candidate.v0.json"
     },
     {
@@ -28337,11 +29242,6 @@
     },
     {
       "edge_kind": "imports",
-      "from_path": "runtime/connectors/h14_source_discovery/normalizer_common.py",
-      "to_path": "control/schemas/previews/h14/connectors/source_candidate_candidate.v0.json"
-    },
-    {
-      "edge_kind": "imports",
       "from_path": "scripts/resolve_contract_taxonomy_blockers.py",
       "to_path": "control/schemas/previews/h14/connectors/source_candidate_candidate.v0.json"
     },
@@ -28423,11 +29323,6 @@
     {
       "edge_kind": "documents",
       "from_path": "control/audits/r0-remediation-contract-taxonomy-01-v0/resolved_items.md",
-      "to_path": "control/schemas/previews/h14/connectors/source_discovery_candidate.v0.json"
-    },
-    {
-      "edge_kind": "imports",
-      "from_path": "runtime/connectors/h14_source_discovery/normalizer_common.py",
       "to_path": "control/schemas/previews/h14/connectors/source_discovery_candidate.v0.json"
     },
     {
@@ -28792,11 +29687,6 @@
     },
     {
       "edge_kind": "imports",
-      "from_path": "runtime/connectors/h14_source_discovery/normalizer_common.py",
-      "to_path": "control/schemas/previews/h14/connectors/source_dispute_revocation_candidate.v0.json"
-    },
-    {
-      "edge_kind": "imports",
       "from_path": "scripts/resolve_contract_taxonomy_blockers.py",
       "to_path": "control/schemas/previews/h14/connectors/source_dispute_revocation_candidate.v0.json"
     },
@@ -28882,11 +29772,6 @@
     },
     {
       "edge_kind": "imports",
-      "from_path": "runtime/connectors/h14_source_discovery/normalizer_common.py",
-      "to_path": "control/schemas/previews/h14/connectors/source_lineage_provenance_candidate.v0.json"
-    },
-    {
-      "edge_kind": "imports",
       "from_path": "scripts/resolve_contract_taxonomy_blockers.py",
       "to_path": "control/schemas/previews/h14/connectors/source_lineage_provenance_candidate.v0.json"
     },
@@ -28968,11 +29853,6 @@
     {
       "edge_kind": "documents",
       "from_path": "control/audits/r0-remediation-contract-taxonomy-01-v0/resolved_items.md",
-      "to_path": "control/schemas/previews/h14/connectors/source_need_candidate.v0.json"
-    },
-    {
-      "edge_kind": "imports",
-      "from_path": "runtime/connectors/h14_source_discovery/normalizer_common.py",
       "to_path": "control/schemas/previews/h14/connectors/source_need_candidate.v0.json"
     },
     {
@@ -29137,11 +30017,6 @@
     },
     {
       "edge_kind": "imports",
-      "from_path": "runtime/connectors/h14_source_discovery/normalizer_common.py",
-      "to_path": "control/schemas/previews/h14/connectors/source_pack_manifest_candidate.v0.json"
-    },
-    {
-      "edge_kind": "imports",
       "from_path": "scripts/resolve_contract_taxonomy_blockers.py",
       "to_path": "control/schemas/previews/h14/connectors/source_pack_manifest_candidate.v0.json"
     },
@@ -29223,11 +30098,6 @@
     {
       "edge_kind": "documents",
       "from_path": "control/audits/r0-remediation-contract-taxonomy-01-v0/resolved_items.md",
-      "to_path": "control/schemas/previews/h14/connectors/source_reliability_freshness_candidate.v0.json"
-    },
-    {
-      "edge_kind": "imports",
-      "from_path": "runtime/connectors/h14_source_discovery/normalizer_common.py",
       "to_path": "control/schemas/previews/h14/connectors/source_reliability_freshness_candidate.v0.json"
     },
     {
@@ -34437,11 +35307,6 @@
     },
     {
       "edge_kind": "documents",
-      "from_path": "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
-      "to_path": "control/schemas/tasks/audits/local_mvp_next_task_decision.v0.json"
-    },
-    {
-      "edge_kind": "documents",
       "from_path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/control_schema_summary.md",
       "to_path": "control/schemas/tasks/audits/local_mvp_next_task_decision.v0.json"
     },
@@ -34493,11 +35358,6 @@
     {
       "edge_kind": "documents",
       "from_path": "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
-      "to_path": "control/schemas/tasks/audits/local_mvp_next_wave_option.v0.json"
-    },
-    {
-      "edge_kind": "documents",
-      "from_path": "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
       "to_path": "control/schemas/tasks/audits/local_mvp_next_wave_option.v0.json"
     },
     {
@@ -34557,11 +35417,6 @@
     },
     {
       "edge_kind": "documents",
-      "from_path": "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
-      "to_path": "control/schemas/tasks/audits/mvp_alpha_launch_decision_options.v0.json"
-    },
-    {
-      "edge_kind": "documents",
       "from_path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/control_schema_summary.md",
       "to_path": "control/schemas/tasks/audits/mvp_alpha_launch_decision_options.v0.json"
     },
@@ -34613,11 +35468,6 @@
     {
       "edge_kind": "documents",
       "from_path": "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
-      "to_path": "control/schemas/tasks/audits/mvp_alpha_operator_next_task.v0.json"
-    },
-    {
-      "edge_kind": "documents",
-      "from_path": "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
       "to_path": "control/schemas/tasks/audits/mvp_alpha_operator_next_task.v0.json"
     },
     {
@@ -36117,6 +36967,10 @@
     },
     {
       "node_kind": "contract",
+      "path": "contracts/projections/projection_profile.v0.json"
+    },
+    {
+      "node_kind": "contract",
       "path": "contracts/query/cache_key.v0.json"
     },
     {
@@ -36281,6 +37135,22 @@
     },
     {
       "node_kind": "contract",
+      "path": "contracts/repo/generated_artifact_exceptions.contract.toml"
+    },
+    {
+      "node_kind": "contract",
+      "path": "contracts/repo/naming.contract.toml"
+    },
+    {
+      "node_kind": "contract",
+      "path": "contracts/repo/root_allowlist.contract.toml"
+    },
+    {
+      "node_kind": "contract",
+      "path": "contracts/repo/root_ownership.contract.toml"
+    },
+    {
+      "node_kind": "contract",
       "path": "contracts/representations/capability_negotiation.v0.json"
     },
     {
@@ -36390,6 +37260,58 @@
     {
       "node_kind": "contract",
       "path": "contracts/search/search_result_explanation_policy.v0.json"
+    },
+    {
+      "node_kind": "contract",
+      "path": "contracts/search_interaction/absence_packet.v0.json"
+    },
+    {
+      "node_kind": "contract",
+      "path": "contracts/search_interaction/action_posture_packet.v0.json"
+    },
+    {
+      "node_kind": "contract",
+      "path": "contracts/search_interaction/candidate_cluster_packet.v0.json"
+    },
+    {
+      "node_kind": "contract",
+      "path": "contracts/search_interaction/compiled_query_packet.v0.json"
+    },
+    {
+      "node_kind": "contract",
+      "path": "contracts/search_interaction/coverage_report_packet.v0.json"
+    },
+    {
+      "node_kind": "contract",
+      "path": "contracts/search_interaction/discovery_trail_packet.v0.json"
+    },
+    {
+      "node_kind": "contract",
+      "path": "contracts/search_interaction/partial_result_packet.v0.json"
+    },
+    {
+      "node_kind": "contract",
+      "path": "contracts/search_interaction/resolution_run_packet.v0.json"
+    },
+    {
+      "node_kind": "contract",
+      "path": "contracts/search_interaction/result_lane_packet.v0.json"
+    },
+    {
+      "node_kind": "contract",
+      "path": "contracts/search_interaction/search_control_command.v0.json"
+    },
+    {
+      "node_kind": "contract",
+      "path": "contracts/search_interaction/search_plan_patch.v0.json"
+    },
+    {
+      "node_kind": "contract",
+      "path": "contracts/search_interaction/search_request_packet.v0.json"
+    },
+    {
+      "node_kind": "contract",
+      "path": "contracts/search_interaction/user_feedback_event.v0.json"
     },
     {
       "node_kind": "contract",
@@ -36765,6 +37687,14 @@
     },
     {
       "node_kind": "contract",
+      "path": "contracts/view_models/result_lane_view_model.v0.json"
+    },
+    {
+      "node_kind": "contract",
+      "path": "contracts/view_models/view_model_packet.v0.json"
+    },
+    {
+      "node_kind": "contract",
       "path": "contracts/views/absence_page.v0.json"
     },
     {
@@ -36814,6 +37744,22 @@
     {
       "node_kind": "contract",
       "path": "contracts/views/view_model_policy_index.v0.json"
+    },
+    {
+      "node_kind": "contract",
+      "path": "contracts/workbench/workbench_module.v0.json"
+    },
+    {
+      "node_kind": "contract",
+      "path": "contracts/workbench/workbench_permission.v0.json"
+    },
+    {
+      "node_kind": "contract",
+      "path": "contracts/workbench/workbench_result_lane_projection.v0.json"
+    },
+    {
+      "node_kind": "contract",
+      "path": "contracts/workbench/workbench_route.v0.json"
     },
     {
       "node_kind": "contract",
@@ -38913,6 +39859,14 @@
     },
     {
       "node_kind": "reference_source",
+      "path": "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json"
+    },
+    {
+      "node_kind": "reference_source",
+      "path": "control/audits/repo-layout-canon-01-v0/repo_layout_canon_report.json"
+    },
+    {
+      "node_kind": "reference_source",
       "path": "control/audits/result-merge-deduplication-contract-v0/DEDUPLICATION_ASSESSMENT_SCHEMA.md"
     },
     {
@@ -39465,10 +40419,6 @@
     },
     {
       "node_kind": "reference_source",
-      "path": "runtime/connectors/h14_source_discovery/normalizer_common.py"
-    },
-    {
-      "node_kind": "reference_source",
       "path": "runtime/connectors/synthetic_software/fixture_source.py"
     },
     {
@@ -40013,6 +40963,10 @@
     },
     {
       "node_kind": "reference_source",
+      "path": "scripts/validate_repo_structure_canon.py"
+    },
+    {
+      "node_kind": "reference_source",
       "path": "scripts/validate_representation_contracts.py"
     },
     {
@@ -40042,6 +40996,10 @@
     {
       "node_kind": "reference_source",
       "path": "scripts/validate_search_explanation_runtime.py"
+    },
+    {
+      "node_kind": "reference_source",
+      "path": "scripts/validate_search_interaction_contract.py"
     },
     {
       "node_kind": "reference_source",
@@ -40126,6 +41084,10 @@
     {
       "node_kind": "reference_source",
       "path": "scripts/validate_wayback_cdx_memento_connector_contract.py"
+    },
+    {
+      "node_kind": "reference_source",
+      "path": "scripts/validate_workbench_foundation.py"
     },
     {
       "node_kind": "reference_source",
@@ -40290,6 +41252,10 @@
     {
       "node_kind": "reference_source",
       "path": "tests/operations/test_query_privacy_poisoning_guard_contract.py"
+    },
+    {
+      "node_kind": "reference_source",
+      "path": "tests/operations/test_repo_structure_canon.py"
     },
     {
       "node_kind": "reference_source",

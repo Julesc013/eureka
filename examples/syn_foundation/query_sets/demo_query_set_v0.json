@@ -1,0 +1,140 @@
+{
+  "schema_version": "synthetic_query_set.v0",
+  "query_set_id": "syn.query_set.demo.v0",
+  "query_set_status": "example_only",
+  "split_label": "demo",
+  "stack_scope": [
+    "LOCAL",
+    "HUNT",
+    "IA_METADATA_PILOT",
+    "WORKBENCH_RESULT_LANES",
+    "IA_HUNT_BRIDGE"
+  ],
+  "query_cases": [
+    {
+      "schema_version": "synthetic_query_case.v0",
+      "query_case_id": "syn.case.demo.sampleproject.v0",
+      "query_text": "sampleproject",
+      "query_family": "local_reviewed_lookup",
+      "difficulty_band": "demo",
+      "source_expectation": "local_reviewed_hit",
+      "stack_targets": [
+        "LOCAL",
+        "WORKBENCH_RESULT_LANES"
+      ],
+      "expected_lanes": [
+        "reviewed_local_results"
+      ],
+      "expected_search_need_seed_refs": [
+        "syn.search_need_seed.demo.sampleproject.v0"
+      ],
+      "expected_workunit_seed_refs": [
+        "syn.workunit_seed.demo.sampleproject.review.v0"
+      ],
+      "review_required": true,
+      "limitations": [
+        "Fixture pressure only; not user demand."
+      ]
+    },
+    {
+      "schema_version": "synthetic_query_case.v0",
+      "query_case_id": "syn.case.demo.ia_metadata.sampleproject.v0",
+      "query_text": "sampleproject internet archive metadata",
+      "query_family": "ia_metadata_candidate",
+      "difficulty_band": "demo",
+      "source_expectation": "ia_metadata_candidate",
+      "stack_targets": [
+        "IA_METADATA_PILOT",
+        "IA_HUNT_BRIDGE",
+        "WORKBENCH_RESULT_LANES"
+      ],
+      "expected_lanes": [
+        "ia_metadata_candidates",
+        "source_cache_hits",
+        "review_queue_items",
+        "running_workunits"
+      ],
+      "expected_search_need_seed_refs": [
+        "syn.search_need_seed.demo.ia_metadata.sampleproject.v0"
+      ],
+      "expected_workunit_seed_refs": [
+        "syn.workunit_seed.demo.ia_metadata.plan.v0"
+      ],
+      "review_required": true,
+      "limitations": [
+        "IA metadata remains candidate-only and fixture-backed."
+      ]
+    },
+    {
+      "schema_version": "synthetic_query_case.v0",
+      "query_case_id": "syn.case.demo.absence.v0",
+      "query_text": "definitely-not-present-local-10",
+      "query_family": "hunt_absence_pressure",
+      "difficulty_band": "demo",
+      "source_expectation": "local_absence",
+      "stack_targets": [
+        "LOCAL",
+        "HUNT",
+        "WORKBENCH_RESULT_LANES"
+      ],
+      "expected_lanes": [
+        "known_absence",
+        "blocked_actions",
+        "deferred_deepening"
+      ],
+      "expected_search_need_seed_refs": [
+        "syn.search_need_seed.demo.absence.v0"
+      ],
+      "expected_workunit_seed_refs": [
+        "syn.workunit_seed.demo.absence.review.v0"
+      ],
+      "review_required": true,
+      "limitations": [
+        "Absence is scoped to local checked layers only."
+      ]
+    }
+  ],
+  "quality_objectives": [
+    "Confirm happy-path local and IA bridge projection still emits governed lanes.",
+    "Confirm scoped local absence remains visible without becoming global absence."
+  ],
+  "expected_result_lane_kinds": [
+    "reviewed_local_results",
+    "ia_metadata_candidates",
+    "source_cache_hits",
+    "review_queue_items",
+    "known_absence",
+    "blocked_actions",
+    "running_workunits",
+    "deferred_deepening"
+  ],
+  "seed_bridge_refs": [
+    "examples/syn_foundation/synthetic_to_search_need_seeds_v0.json",
+    "examples/syn_foundation/synthetic_to_workunit_seeds_v0.json"
+  ],
+  "limitations": [
+    "Fixture-only query set; no runtime synthetic generation."
+  ],
+  "no_claims": {
+    "production_search_quality": false,
+    "user_demand_observed": false,
+    "result_truth_created": false
+  },
+  "runtime_capability_boundary": {
+    "runtime_query_logged": false,
+    "runtime_search_need_created": false,
+    "runtime_workunit_created": false,
+    "source_probe_executed": false,
+    "live_ia_call_performed": false,
+    "download_performed": false,
+    "upload_performed": false,
+    "extraction_executed": false,
+    "model_provider_used": false,
+    "master_index_mutated": false,
+    "operator_instance_mutated": false,
+    "public_search_behavior_changed": false,
+    "deployment_performed": false,
+    "production_readiness_claimed": false,
+    "public_launch_readiness_claimed": false
+  }
+}

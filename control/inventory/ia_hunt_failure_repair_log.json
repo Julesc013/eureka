@@ -1,0 +1,20 @@
+{
+  "schema_version": "ia_hunt_failure_repair_log.v0",
+  "task": "IA-HUNT-BRIDGE-00",
+  "repairs": [
+    {
+      "failure": "scripts/validate_ia_hunt_bridge.py initially reported missing IA Hunt bridge docs and examples.",
+      "root_cause": "Validator was added before the documentation and deterministic sample artifacts were created.",
+      "repair": "Added IA_HUNT_BRIDGE architecture docs, runbook, post-plan, and committed example plan/workunit/result-lane/boundary packets.",
+      "rerun_command": "python scripts/validate_ia_hunt_bridge.py",
+      "result": "pass"
+    },
+    {
+      "failure": "Full unittest discovery reported 177 failures and 29 errors, dominated by JSON parse failures and local instance script failures.",
+      "root_cause": "runtime.search_hunt.__init__ exported ia_bridge, and ia_bridge imported runtime.local_service.workbench_result_lanes at module import time. That triggered runtime.local_service.__init__, which imports LocalApplianceRuntime while runtime.local_appliance was still partially initialized.",
+      "repair": "Moved Workbench result-lane imports behind a lazy helper inside build_ia_hunt_result_lanes so Search Hunt package import no longer loads runtime.local_service during local_appliance initialization.",
+      "rerun_command": "python -m unittest tests.operations.test_local_http_service_scripts tests.operations.test_local_instance_bootstrap tests.operations.test_local_instance_migration_guard tests.operations.test_local_runtime_composition_scripts tests.operations.test_local_worker_scripts tests.operations.test_play_session tests.operations.test_play_smoke tests.operations.test_search_hunt_scripts tests.runtime.test_search_hunt_ui_read_only tests.runtime.test_search_hunt_ui_routes tests.runtime.test_search_need_auth tests.runtime.test_search_need_routes tests.runtime.test_search_need_store tests.runtime.test_search_need_ui tests.runtime.test_workunit_queue_integration tests.runtime.test_ia_hunt_bridge tests.runtime.test_ia_hunt_result_lanes tests.scripts.test_validate_ia_hunt_bridge -v",
+      "result": "pass"
+    }
+  ]
+}

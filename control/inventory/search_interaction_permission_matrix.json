@@ -1,0 +1,41 @@
+{
+  "schema_version": "search_interaction_permission_matrix.v0",
+  "task": "SEARCH-INTERACTION-00",
+  "permissions": [
+    {
+      "permission_id": "submit_query",
+      "operator_workbench": true,
+      "public_web": true,
+      "native_read_only": false,
+      "relay_snapshot_client": false
+    },
+    {
+      "permission_id": "control_run",
+      "operator_workbench": true,
+      "public_web": false,
+      "native_read_only": false,
+      "relay_snapshot_client": false
+    },
+    {
+      "permission_id": "review_promote",
+      "operator_workbench": true,
+      "public_web": false,
+      "native_read_only": false,
+      "relay_snapshot_client": false
+    },
+    {
+      "permission_id": "run_source_probe",
+      "operator_workbench": false,
+      "public_web": false,
+      "native_read_only": false,
+      "relay_snapshot_client": false
+    },
+    {
+      "permission_id": "mutate_index",
+      "operator_workbench": false,
+      "public_web": false,
+      "native_read_only": false,
+      "relay_snapshot_client": false
+    }
+  ]
+}

@@ -1,6 +1,22 @@
 {
   "blocked_items": [
     {
+      "path": "contracts/repo/generated_artifact_exceptions.contract.toml",
+      "reason": "Unknown classification must be reviewed before execution."
+    },
+    {
+      "path": "contracts/repo/naming.contract.toml",
+      "reason": "Unknown classification must be reviewed before execution."
+    },
+    {
+      "path": "contracts/repo/root_allowlist.contract.toml",
+      "reason": "Unknown classification must be reviewed before execution."
+    },
+    {
+      "path": "contracts/repo/root_ownership.contract.toml",
+      "reason": "Unknown classification must be reviewed before execution."
+    },
+    {
       "path": "control/schemas/deprecated/archive/archive-lifecycle.protocol.md",
       "reason": "Unknown classification must be reviewed before execution."
     },
@@ -1737,6 +1753,7 @@
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+        "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
         "scripts/validate_safe_actions_runtime.py"
       ],
       "risk": "medium",
@@ -1768,6 +1785,7 @@
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+        "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
         "scripts/validate_safe_actions_runtime.py"
       ],
       "risk": "medium",
@@ -1806,6 +1824,7 @@
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+        "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
         "scripts/validate_deep_extraction_contract.py",
         "scripts/validate_extraction_sandbox.py",
         "scripts/validate_safe_actions_runtime.py",
@@ -1830,13 +1849,16 @@
       "references_to_update": [
         "contracts/actions/compare_action_manifest.v0.json",
         "control/audits/j0-bundle-01-safe-actions-manifests-v0/j0_bundle_01_report.json",
+        "control/audits/r0-02-runtime-architecture-leakage-gate-v0/generated/sample_leakage_summary.md",
         "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
+        "control/audits/r0-02-runtime-architecture-leakage-gate-v0/production_path_scan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+        "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
         "scripts/validate_safe_actions_runtime.py"
       ],
       "risk": "medium",
@@ -1858,13 +1880,16 @@
       "references_to_update": [
         "contracts/actions/export_manifest.v0.json",
         "control/audits/j0-bundle-01-safe-actions-manifests-v0/j0_bundle_01_report.json",
+        "control/audits/r0-02-runtime-architecture-leakage-gate-v0/generated/sample_leakage_summary.md",
         "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
+        "control/audits/r0-02-runtime-architecture-leakage-gate-v0/production_path_scan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+        "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
         "scripts/validate_safe_actions_runtime.py"
       ],
       "risk": "medium",
@@ -1886,13 +1911,16 @@
       "references_to_update": [
         "contracts/actions/preservation_manifest.v0.json",
         "control/audits/j0-bundle-01-safe-actions-manifests-v0/j0_bundle_01_report.json",
+        "control/audits/r0-02-runtime-architecture-leakage-gate-v0/generated/sample_leakage_summary.md",
         "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
+        "control/audits/r0-02-runtime-architecture-leakage-gate-v0/production_path_scan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+        "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
         "scripts/validate_safe_actions_runtime.py"
       ],
       "risk": "medium",
@@ -1918,13 +1946,16 @@
         "contracts/ai/typed_ai_output.v0.json",
         "control/audits/ai-provider-contract-v0/CONTRACT_SUMMARY.md",
         "control/audits/ai-provider-contract-v0/ai_provider_contract_report.json",
+        "control/audits/r0-02-runtime-architecture-leakage-gate-v0/generated/sample_leakage_summary.md",
         "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
+        "control/audits/r0-02-runtime-architecture-leakage-gate-v0/production_path_scan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+        "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
         "scripts/validate_ai_provider_contract.py",
         "tests/operations/test_ai_provider_contract.py"
       ],
@@ -1949,13 +1980,16 @@
         "contracts/ai/ai_task_request.v0.json",
         "control/audits/ai-provider-contract-v0/CONTRACT_SUMMARY.md",
         "control/audits/ai-provider-contract-v0/ai_provider_contract_report.json",
+        "control/audits/r0-02-runtime-architecture-leakage-gate-v0/generated/sample_leakage_summary.md",
         "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
+        "control/audits/r0-02-runtime-architecture-leakage-gate-v0/production_path_scan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+        "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
         "scripts/validate_ai_provider_contract.py",
         "tests/operations/test_ai_provider_contract.py"
       ],
@@ -2089,7 +2123,8 @@
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
-        "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json"
+        "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+        "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json"
       ],
       "risk": "medium",
       "source_path": "contracts/archive/schemas/agent.schema.yaml",
@@ -2492,10 +2527,12 @@
         "contracts/evidence/evidence_contract_index.v0.json",
         "control/audits/ia-bundle-00-readiness-polish-v0/ia_bundle_00_report.json",
         "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
+        "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+        "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
         "scripts/validate_ia_readiness_polish.py",
         "tests/operations/test_ia_readiness_polish.py"
       ],
@@ -2614,6 +2651,7 @@
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+        "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
         "scripts/validate_deep_extraction_contract.py",
         "tests/scripts/test_validate_deep_extraction_contract.py"
       ],
@@ -2639,10 +2677,12 @@
         "control/audits/deep-extraction-runtime-planning-v0/EXTRACTION_CONTRACT_GATE_REVIEW.md",
         "control/audits/f-bundle-01-extraction-sandbox-tier0-2-v0/f_bundle_01_report.json",
         "control/audits/r0-01-dev-production-reality-inventory-v0/generated/sample_runtime_maturity_matrix.json",
+        "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+        "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
         "scripts/validate_deep_extraction_contract.py",
         "scripts/validate_extraction_sandbox.py",
         "tests/scripts/test_validate_deep_extraction_contract.py"
@@ -2700,10 +2740,12 @@
         "control/audits/f-bundle-01-extraction-sandbox-tier0-2-v0/f_bundle_01_report.json",
         "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
         "control/audits/r0-01-dev-production-reality-inventory-v0/generated/sample_runtime_maturity_matrix.json",
+        "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+        "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
         "scripts/validate_extraction_sandbox.py"
       ],
       "risk": "medium",
@@ -2733,6 +2775,7 @@
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+        "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
         "scripts/validate_deep_extraction_contract.py",
         "tests/scripts/test_validate_deep_extraction_contract.py"
       ],
@@ -2757,10 +2800,12 @@
         "control/audits/f-bundle-02-extraction-candidate-search-integration-v0/f_bundle_02_report.json",
         "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
         "control/audits/r0-01-dev-production-reality-inventory-v0/generated/sample_runtime_maturity_matrix.json",
+        "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+        "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
         "scripts/validate_extraction_search_integration.py"
       ],
       "risk": "medium",
@@ -2783,10 +2828,12 @@
         "contracts/extraction/README.md",
         "control/audits/f-bundle-01-extraction-sandbox-tier0-2-v0/f_bundle_01_report.json",
         "control/audits/r0-01-dev-production-reality-inventory-v0/generated/sample_runtime_maturity_matrix.json",
+        "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+        "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
         "scripts/validate_extraction_sandbox.py"
       ],
       "risk": "medium",
@@ -2809,10 +2856,12 @@
         "contracts/extraction/README.md",
         "control/audits/f-bundle-02-extraction-candidate-search-integration-v0/f_bundle_02_report.json",
         "control/audits/r0-01-dev-production-reality-inventory-v0/generated/sample_runtime_maturity_matrix.json",
+        "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+        "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
         "scripts/validate_extraction_search_integration.py"
       ],
       "risk": "medium",
@@ -2836,10 +2885,12 @@
         "control/audits/f-bundle-02-extraction-candidate-search-integration-v0/f_bundle_02_report.json",
         "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
         "control/audits/r0-01-dev-production-reality-inventory-v0/generated/sample_runtime_maturity_matrix.json",
+        "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+        "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
         "scripts/validate_extraction_search_integration.py"
       ],
       "risk": "medium",
@@ -2863,10 +2914,12 @@
         "control/audits/f-bundle-01-extraction-sandbox-tier0-2-v0/f_bundle_01_report.json",
         "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
         "control/audits/r0-01-dev-production-reality-inventory-v0/generated/sample_runtime_maturity_matrix.json",
+        "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+        "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
         "scripts/validate_extraction_sandbox.py"
       ],
       "risk": "medium",
@@ -2889,10 +2942,12 @@
         "contracts/extraction/README.md",
         "control/audits/f-bundle-02-extraction-candidate-search-integration-v0/f_bundle_02_report.json",
         "control/audits/r0-01-dev-production-reality-inventory-v0/generated/sample_runtime_maturity_matrix.json",
+        "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+        "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
         "scripts/validate_extraction_search_integration.py"
       ],
       "risk": "medium",
@@ -2915,7 +2970,8 @@
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
-        "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json"
+        "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+        "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json"
       ],
       "risk": "medium",
       "source_path": "contracts/gateway/public_api/openapi.placeholder.yaml",
@@ -2937,10 +2993,12 @@
         "contracts/representations/host_profile.v0.json",
         "control/audits/e-bundle-01-hosting-ops-readiness-v0/e_bundle_01_report.json",
         "control/audits/r0-01-dev-production-reality-inventory-v0/generated/sample_runtime_maturity_matrix.json",
+        "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+        "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
         "control/audits/track-a-01-representation-contracts-v0/track_a_01_report.json",
         "examples/representations/host_profiles/minimal_host_profiles_v0.json",
         "scripts/validate_hosting_readiness.py",
@@ -2992,10 +3050,12 @@
         "contracts/hosting/public_alpha_config_manifest.v0.json",
         "control/audits/public-alpha-deployment-plan-01-v0/public_alpha_deployment_plan_01_report.json",
         "control/audits/r0-01-dev-production-reality-inventory-v0/generated/sample_runtime_maturity_matrix.json",
+        "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+        "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
         "scripts/validate_public_alpha_deployment_plan.py"
       ],
       "risk": "medium",
@@ -3018,10 +3078,12 @@
         "contracts/hosting/public_alpha_provider_profile.v0.json",
         "control/audits/public-alpha-deployment-plan-01-v0/public_alpha_deployment_plan_01_report.json",
         "control/audits/r0-01-dev-production-reality-inventory-v0/generated/sample_runtime_maturity_matrix.json",
+        "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+        "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
         "scripts/validate_public_alpha_deployment_plan.py"
       ],
       "risk": "medium",
@@ -3069,10 +3131,12 @@
       "references_to_update": [
         "control/audits/e-bundle-01-hosting-ops-readiness-v0/e_bundle_01_report.json",
         "control/audits/r0-01-dev-production-reality-inventory-v0/generated/sample_runtime_maturity_matrix.json",
+        "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+        "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
         "scripts/validate_hosting_readiness.py"
       ],
       "risk": "medium",
@@ -3236,10 +3300,12 @@
       "references_to_update": [
         "contracts/master_index/reviewed_public_index_rebuild.v0.json",
         "control/audits/r0-01-dev-production-reality-inventory-v0/generated/sample_runtime_maturity_matrix.json",
+        "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+        "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
         "control/audits/track-b-20-reviewed-public-index-rebuild-contract-v0/track_b_20_report.json",
         "scripts/validate_reviewed_public_index_rebuild_contract.py"
       ],
@@ -3261,10 +3327,12 @@
       "rationale": "Artifact is a control/audit/fixture/preview schema or belongs under a different product target root.",
       "references_to_update": [
         "contracts/master_index/reviewed_public_record_proposal.v0.json",
+        "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+        "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
         "control/audits/track-b-20-reviewed-public-index-rebuild-contract-v0/track_b_20_report.json",
         "scripts/validate_reviewed_public_index_rebuild_contract.py"
       ],
@@ -3293,6 +3361,7 @@
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+        "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
         "control/audits/track-b-01-eureka-node-manifest-v0/README.md",
         "control/audits/track-b-01-eureka-node-manifest-v0/track_b_01_report.json",
         "scripts/audit_obs_track_b_synchronization.py",
@@ -3330,6 +3399,7 @@
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+        "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
         "control/audits/track-b-02-node-policy-contract-v0/README.md",
         "control/audits/track-b-02-node-policy-contract-v0/track_b_02_report.json",
         "scripts/audit_obs_track_b_synchronization.py",
@@ -3367,6 +3437,7 @@
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+        "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
         "scripts/validate_local_staging_manifest.py",
         "tests/operations/test_local_staging_manifest_format.py"
       ],
@@ -3393,6 +3464,7 @@
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+        "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
         "scripts/validate_pack_quarantine_runtime.py"
       ],
       "risk": "medium",
@@ -3419,6 +3491,7 @@
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+        "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
         "scripts/audit_h0_integration.py",
         "scripts/validate_source_os_coverage_scorecards.py"
       ],
@@ -3567,6 +3640,7 @@
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+        "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
         "control/audits/source-page-contract-v0/SOURCE_PAGE_SCHEMA.md",
         "control/audits/source-page-contract-v0/source_page_contract_report.json",
         "control/audits/track-a-06-source-page-view-model-v0/track_a_06_report.json",
@@ -3620,6 +3694,26 @@
     {
       "action": "move",
       "compatibility_shim_required": true,
+      "contract_class_after": "product_domain_contract",
+      "contract_class_before": "product_domain_contract",
+      "rationale": "Artifact is a control/audit/fixture/preview schema or belongs under a different product target root.",
+      "references_to_update": [
+        "contracts/projections/projection_profile.v0.json",
+        "scripts/validate_workbench_foundation.py"
+      ],
+      "risk": "medium",
+      "source_path": "contracts/projections/projection_profile.v0.json",
+      "target_path": "contracts/domain/projection_profile.v0.json",
+      "validation": [
+        "python scripts/validate_contract_taxonomy_plan.py",
+        "python scripts/validate_runtime_architecture_leakage.py",
+        "python -m unittest tests.operations.test_contract_taxonomy_plan",
+        "python -m unittest discover -s tests -t ."
+      ]
+    },
+    {
+      "action": "move",
+      "compatibility_shim_required": true,
       "contract_class_after": "product_runtime_contract",
       "contract_class_before": "product_runtime_contract",
       "rationale": "Artifact is a control/audit/fixture/preview schema or belongs under a different product target root.",
@@ -3658,6 +3752,7 @@
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+        "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
         "scripts/validate_ranking_shadow_runtime.py"
       ],
       "risk": "medium",
@@ -3753,6 +3848,7 @@
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+        "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
         "scripts/validate_search_explanation_runtime.py"
       ],
       "risk": "medium",
@@ -3779,6 +3875,7 @@
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+        "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
         "scripts/validate_ranking_shadow_runtime.py"
       ],
       "risk": "medium",
@@ -3872,6 +3969,7 @@
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+        "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
         "scripts/validate_search_explanation_runtime.py"
       ],
       "risk": "medium",
@@ -3899,6 +3997,7 @@
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+        "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
         "scripts/validate_search_explanation_runtime.py"
       ],
       "risk": "medium",
@@ -3977,6 +4076,7 @@
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+        "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
         "scripts/validate_ranking_shadow_runtime.py"
       ],
       "risk": "medium",
@@ -4012,6 +4112,7 @@
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+        "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
         "control/audits/software-heritage-connector-approval-v0/COMMAND_RESULTS.md",
         "control/audits/software-heritage-connector-approval-v0/software_heritage_connector_approval_report.json",
         "control/audits/wayback-cdx-memento-connector-approval-v0/COMMAND_RESULTS.md",
@@ -4097,6 +4198,7 @@
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+        "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
         "scripts/validate_query_privacy_poisoning_guard_contract.py",
         "tests/operations/test_query_privacy_poisoning_guard_contract.py"
       ],
@@ -4154,6 +4256,7 @@
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+        "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
         "scripts/validate_evidence_weighted_ranking_contract.py",
         "scripts/validate_ranking_shadow_runtime.py",
         "tests/operations/test_evidence_weighted_ranking_contract.py"
@@ -4183,6 +4286,7 @@
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+        "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
         "scripts/validate_ranking_shadow_runtime.py"
       ],
       "risk": "medium",
@@ -4210,6 +4314,7 @@
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+        "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
         "scripts/validate_ranking_shadow_runtime.py"
       ],
       "risk": "medium",
@@ -4237,6 +4342,7 @@
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+        "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
         "scripts/validate_search_explanation_runtime.py"
       ],
       "risk": "medium",
@@ -4299,6 +4405,7 @@
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+        "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
         "control/audits/search-miss-ledger-v0/CONTRACT_SUMMARY.md",
         "control/audits/search-miss-ledger-v0/search_miss_ledger_report.json",
         "control/audits/software-heritage-connector-approval-v0/COMMAND_RESULTS.md",
@@ -4405,6 +4512,7 @@
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+        "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
         "scripts/audit_obs_track_b_synchronization.py",
         "scripts/build_search_need_seed_candidates.py",
         "scripts/validate_search_need_seed_candidates.py",
@@ -4464,6 +4572,7 @@
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+        "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
         "scripts/validate_ranking_shadow_runtime.py"
       ],
       "risk": "medium",
@@ -4533,6 +4642,7 @@
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+        "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
         "control/audits/search-result-explanation-contract-v0/search_result_explanation_contract_report.json",
         "control/audits/search-result-explanation-runtime-planning-v0/EXPLANATION_CONTRACT_GATE_REVIEW.md",
         "scripts/validate_search_explanation_runtime.py",
@@ -4563,10 +4673,12 @@
         "control/audits/obs-agent-05-candidate-to-workunit-seeds-v0/workunit_seed_manifest.json",
         "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
         "control/audits/r0-01-dev-production-reality-inventory-v0/generated/sample_runtime_maturity_matrix.json",
+        "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+        "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
         "examples/workunit_seeds/metadata_probe_planning_workunit_seed_v0.json",
         "scripts/build_workunit_seed_candidates.py",
         "scripts/validate_extraction_search_integration.py",
@@ -4652,6 +4764,7 @@
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+        "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
         "scripts/validate_relay_runtime.py"
       ],
       "risk": "medium",
@@ -4679,6 +4792,7 @@
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+        "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
         "scripts/validate_relay_runtime.py"
       ],
       "risk": "medium",
@@ -4732,6 +4846,7 @@
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+        "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
         "scripts/validate_relay_runtime.py"
       ],
       "risk": "medium",
@@ -4759,6 +4874,7 @@
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+        "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
         "scripts/validate_relay_runtime.py"
       ],
       "risk": "medium",
@@ -4851,6 +4967,86 @@
       ]
     },
     {
+      "action": "investigate",
+      "compatibility_shim_required": false,
+      "contract_class_after": "unknown",
+      "contract_class_before": "unknown",
+      "rationale": "Contract-like artifact could not be safely classified by static rules.",
+      "references_to_update": [
+        "control/audits/repo-layout-canon-01-v0/repo_layout_canon_report.json",
+        "scripts/validate_repo_structure_canon.py",
+        "tests/operations/test_repo_structure_canon.py"
+      ],
+      "risk": "high",
+      "source_path": "contracts/repo/generated_artifact_exceptions.contract.toml",
+      "target_path": "control/schemas/deprecated/repo/generated_artifact_exceptions.contract.toml",
+      "validation": [
+        "python scripts/validate_contract_taxonomy_plan.py",
+        "python scripts/validate_runtime_architecture_leakage.py",
+        "python -m unittest tests.operations.test_contract_taxonomy_plan"
+      ]
+    },
+    {
+      "action": "investigate",
+      "compatibility_shim_required": false,
+      "contract_class_after": "unknown",
+      "contract_class_before": "unknown",
+      "rationale": "Contract-like artifact could not be safely classified by static rules.",
+      "references_to_update": [
+        "control/audits/repo-layout-canon-01-v0/repo_layout_canon_report.json",
+        "scripts/validate_repo_structure_canon.py",
+        "tests/operations/test_repo_structure_canon.py"
+      ],
+      "risk": "high",
+      "source_path": "contracts/repo/naming.contract.toml",
+      "target_path": "control/schemas/deprecated/repo/naming.contract.toml",
+      "validation": [
+        "python scripts/validate_contract_taxonomy_plan.py",
+        "python scripts/validate_runtime_architecture_leakage.py",
+        "python -m unittest tests.operations.test_contract_taxonomy_plan"
+      ]
+    },
+    {
+      "action": "investigate",
+      "compatibility_shim_required": false,
+      "contract_class_after": "unknown",
+      "contract_class_before": "unknown",
+      "rationale": "Contract-like artifact could not be safely classified by static rules.",
+      "references_to_update": [
+        "control/audits/repo-layout-canon-01-v0/repo_layout_canon_report.json",
+        "scripts/validate_repo_structure_canon.py",
+        "tests/operations/test_repo_structure_canon.py"
+      ],
+      "risk": "high",
+      "source_path": "contracts/repo/root_allowlist.contract.toml",
+      "target_path": "control/schemas/deprecated/repo/root_allowlist.contract.toml",
+      "validation": [
+        "python scripts/validate_contract_taxonomy_plan.py",
+        "python scripts/validate_runtime_architecture_leakage.py",
+        "python -m unittest tests.operations.test_contract_taxonomy_plan"
+      ]
+    },
+    {
+      "action": "investigate",
+      "compatibility_shim_required": false,
+      "contract_class_after": "unknown",
+      "contract_class_before": "unknown",
+      "rationale": "Contract-like artifact could not be safely classified by static rules.",
+      "references_to_update": [
+        "control/audits/repo-layout-canon-01-v0/repo_layout_canon_report.json",
+        "scripts/validate_repo_structure_canon.py",
+        "tests/operations/test_repo_structure_canon.py"
+      ],
+      "risk": "high",
+      "source_path": "contracts/repo/root_ownership.contract.toml",
+      "target_path": "control/schemas/deprecated/repo/root_ownership.contract.toml",
+      "validation": [
+        "python scripts/validate_contract_taxonomy_plan.py",
+        "python scripts/validate_runtime_architecture_leakage.py",
+        "python -m unittest tests.operations.test_contract_taxonomy_plan"
+      ]
+    },
+    {
       "action": "move",
       "compatibility_shim_required": true,
       "contract_class_after": "product_domain_contract",
@@ -4862,6 +5058,7 @@
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+        "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
         "control/audits/track-a-01-representation-contracts-v0/track_a_01_report.json",
         "scripts/validate_representation_contracts.py"
       ],
@@ -4885,10 +5082,12 @@
         "contracts/representations/host_profile.v0.json",
         "control/audits/e-bundle-01-hosting-ops-readiness-v0/e_bundle_01_report.json",
         "control/audits/r0-01-dev-production-reality-inventory-v0/generated/sample_runtime_maturity_matrix.json",
+        "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+        "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
         "control/audits/track-a-01-representation-contracts-v0/track_a_01_report.json",
         "examples/representations/host_profiles/minimal_host_profiles_v0.json",
         "scripts/validate_hosting_readiness.py",
@@ -4916,6 +5115,7 @@
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+        "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
         "scripts/validate_renderer_parity_harness.py"
       ],
       "risk": "medium",
@@ -5214,6 +5414,7 @@
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+        "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
         "scripts/validate_evidence_weighted_ranking_contract.py",
         "scripts/validate_ranking_shadow_runtime.py",
         "tests/operations/test_evidence_weighted_ranking_contract.py"
@@ -5295,6 +5496,7 @@
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+        "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
         "control/audits/search-result-explanation-contract-v0/search_result_explanation_contract_report.json",
         "control/audits/search-result-explanation-runtime-planning-v0/EXPLANATION_CONTRACT_GATE_REVIEW.md",
         "scripts/validate_search_explanation_runtime.py",
@@ -5371,6 +5573,266 @@
     {
       "action": "move",
       "compatibility_shim_required": true,
+      "contract_class_after": "product_domain_contract",
+      "contract_class_before": "product_domain_contract",
+      "rationale": "Artifact is a control/audit/fixture/preview schema or belongs under a different product target root.",
+      "references_to_update": [
+        "contracts/search_interaction/absence_packet.v0.json",
+        "scripts/validate_search_interaction_contract.py"
+      ],
+      "risk": "medium",
+      "source_path": "contracts/search_interaction/absence_packet.v0.json",
+      "target_path": "contracts/domain/absence_packet.v0.json",
+      "validation": [
+        "python scripts/validate_contract_taxonomy_plan.py",
+        "python scripts/validate_runtime_architecture_leakage.py",
+        "python -m unittest tests.operations.test_contract_taxonomy_plan",
+        "python -m unittest discover -s tests -t ."
+      ]
+    },
+    {
+      "action": "move",
+      "compatibility_shim_required": true,
+      "contract_class_after": "product_domain_contract",
+      "contract_class_before": "product_domain_contract",
+      "rationale": "Artifact is a control/audit/fixture/preview schema or belongs under a different product target root.",
+      "references_to_update": [
+        "contracts/search_interaction/action_posture_packet.v0.json",
+        "scripts/validate_search_interaction_contract.py"
+      ],
+      "risk": "medium",
+      "source_path": "contracts/search_interaction/action_posture_packet.v0.json",
+      "target_path": "contracts/domain/action_posture_packet.v0.json",
+      "validation": [
+        "python scripts/validate_contract_taxonomy_plan.py",
+        "python scripts/validate_runtime_architecture_leakage.py",
+        "python -m unittest tests.operations.test_contract_taxonomy_plan",
+        "python -m unittest discover -s tests -t ."
+      ]
+    },
+    {
+      "action": "move",
+      "compatibility_shim_required": true,
+      "contract_class_after": "preview_schema",
+      "contract_class_before": "preview_schema",
+      "rationale": "Artifact is a control/audit/fixture/preview schema or belongs under a different product target root.",
+      "references_to_update": [
+        "contracts/search_interaction/candidate_cluster_packet.v0.json",
+        "scripts/validate_search_interaction_contract.py"
+      ],
+      "risk": "medium",
+      "source_path": "contracts/search_interaction/candidate_cluster_packet.v0.json",
+      "target_path": "control/schemas/previews/search_interaction/candidate_cluster_packet.v0.json",
+      "validation": [
+        "python scripts/validate_contract_taxonomy_plan.py",
+        "python scripts/validate_runtime_architecture_leakage.py",
+        "python -m unittest tests.operations.test_contract_taxonomy_plan",
+        "python -m unittest discover -s tests -t ."
+      ]
+    },
+    {
+      "action": "move",
+      "compatibility_shim_required": true,
+      "contract_class_after": "product_domain_contract",
+      "contract_class_before": "product_domain_contract",
+      "rationale": "Artifact is a control/audit/fixture/preview schema or belongs under a different product target root.",
+      "references_to_update": [
+        "contracts/search_interaction/compiled_query_packet.v0.json",
+        "scripts/validate_search_interaction_contract.py"
+      ],
+      "risk": "medium",
+      "source_path": "contracts/search_interaction/compiled_query_packet.v0.json",
+      "target_path": "contracts/domain/compiled_query_packet.v0.json",
+      "validation": [
+        "python scripts/validate_contract_taxonomy_plan.py",
+        "python scripts/validate_runtime_architecture_leakage.py",
+        "python -m unittest tests.operations.test_contract_taxonomy_plan",
+        "python -m unittest discover -s tests -t ."
+      ]
+    },
+    {
+      "action": "move",
+      "compatibility_shim_required": true,
+      "contract_class_after": "audit_schema",
+      "contract_class_before": "audit_schema",
+      "rationale": "Artifact is a control/audit/fixture/preview schema or belongs under a different product target root.",
+      "references_to_update": [
+        "contracts/search_interaction/coverage_report_packet.v0.json",
+        "scripts/validate_search_interaction_contract.py"
+      ],
+      "risk": "medium",
+      "source_path": "contracts/search_interaction/coverage_report_packet.v0.json",
+      "target_path": "control/schemas/audits/search_interaction/coverage_report_packet.v0.json",
+      "validation": [
+        "python scripts/validate_contract_taxonomy_plan.py",
+        "python scripts/validate_runtime_architecture_leakage.py",
+        "python -m unittest tests.operations.test_contract_taxonomy_plan",
+        "python -m unittest discover -s tests -t ."
+      ]
+    },
+    {
+      "action": "move",
+      "compatibility_shim_required": true,
+      "contract_class_after": "product_domain_contract",
+      "contract_class_before": "product_domain_contract",
+      "rationale": "Artifact is a control/audit/fixture/preview schema or belongs under a different product target root.",
+      "references_to_update": [
+        "contracts/search_interaction/discovery_trail_packet.v0.json",
+        "scripts/validate_search_interaction_contract.py"
+      ],
+      "risk": "medium",
+      "source_path": "contracts/search_interaction/discovery_trail_packet.v0.json",
+      "target_path": "contracts/domain/discovery_trail_packet.v0.json",
+      "validation": [
+        "python scripts/validate_contract_taxonomy_plan.py",
+        "python scripts/validate_runtime_architecture_leakage.py",
+        "python -m unittest tests.operations.test_contract_taxonomy_plan",
+        "python -m unittest discover -s tests -t ."
+      ]
+    },
+    {
+      "action": "move",
+      "compatibility_shim_required": true,
+      "contract_class_after": "product_domain_contract",
+      "contract_class_before": "product_domain_contract",
+      "rationale": "Artifact is a control/audit/fixture/preview schema or belongs under a different product target root.",
+      "references_to_update": [
+        "contracts/search_interaction/partial_result_packet.v0.json",
+        "scripts/validate_search_interaction_contract.py"
+      ],
+      "risk": "medium",
+      "source_path": "contracts/search_interaction/partial_result_packet.v0.json",
+      "target_path": "contracts/domain/partial_result_packet.v0.json",
+      "validation": [
+        "python scripts/validate_contract_taxonomy_plan.py",
+        "python scripts/validate_runtime_architecture_leakage.py",
+        "python -m unittest tests.operations.test_contract_taxonomy_plan",
+        "python -m unittest discover -s tests -t ."
+      ]
+    },
+    {
+      "action": "move",
+      "compatibility_shim_required": true,
+      "contract_class_after": "product_domain_contract",
+      "contract_class_before": "product_domain_contract",
+      "rationale": "Artifact is a control/audit/fixture/preview schema or belongs under a different product target root.",
+      "references_to_update": [
+        "contracts/search_interaction/resolution_run_packet.v0.json",
+        "scripts/validate_search_interaction_contract.py"
+      ],
+      "risk": "medium",
+      "source_path": "contracts/search_interaction/resolution_run_packet.v0.json",
+      "target_path": "contracts/domain/resolution_run_packet.v0.json",
+      "validation": [
+        "python scripts/validate_contract_taxonomy_plan.py",
+        "python scripts/validate_runtime_architecture_leakage.py",
+        "python -m unittest tests.operations.test_contract_taxonomy_plan",
+        "python -m unittest discover -s tests -t ."
+      ]
+    },
+    {
+      "action": "move",
+      "compatibility_shim_required": true,
+      "contract_class_after": "product_domain_contract",
+      "contract_class_before": "product_domain_contract",
+      "rationale": "Artifact is a control/audit/fixture/preview schema or belongs under a different product target root.",
+      "references_to_update": [
+        "contracts/search_interaction/result_lane_packet.v0.json",
+        "scripts/validate_search_interaction_contract.py"
+      ],
+      "risk": "medium",
+      "source_path": "contracts/search_interaction/result_lane_packet.v0.json",
+      "target_path": "contracts/domain/result_lane_packet.v0.json",
+      "validation": [
+        "python scripts/validate_contract_taxonomy_plan.py",
+        "python scripts/validate_runtime_architecture_leakage.py",
+        "python -m unittest tests.operations.test_contract_taxonomy_plan",
+        "python -m unittest discover -s tests -t ."
+      ]
+    },
+    {
+      "action": "move",
+      "compatibility_shim_required": true,
+      "contract_class_after": "product_domain_contract",
+      "contract_class_before": "product_domain_contract",
+      "rationale": "Artifact is a control/audit/fixture/preview schema or belongs under a different product target root.",
+      "references_to_update": [
+        "contracts/search_interaction/search_control_command.v0.json",
+        "scripts/validate_search_interaction_contract.py"
+      ],
+      "risk": "medium",
+      "source_path": "contracts/search_interaction/search_control_command.v0.json",
+      "target_path": "contracts/domain/search_control_command.v0.json",
+      "validation": [
+        "python scripts/validate_contract_taxonomy_plan.py",
+        "python scripts/validate_runtime_architecture_leakage.py",
+        "python -m unittest tests.operations.test_contract_taxonomy_plan",
+        "python -m unittest discover -s tests -t ."
+      ]
+    },
+    {
+      "action": "move",
+      "compatibility_shim_required": true,
+      "contract_class_after": "product_domain_contract",
+      "contract_class_before": "product_domain_contract",
+      "rationale": "Artifact is a control/audit/fixture/preview schema or belongs under a different product target root.",
+      "references_to_update": [
+        "contracts/search_interaction/search_plan_patch.v0.json",
+        "scripts/validate_search_interaction_contract.py"
+      ],
+      "risk": "medium",
+      "source_path": "contracts/search_interaction/search_plan_patch.v0.json",
+      "target_path": "contracts/domain/search_plan_patch.v0.json",
+      "validation": [
+        "python scripts/validate_contract_taxonomy_plan.py",
+        "python scripts/validate_runtime_architecture_leakage.py",
+        "python -m unittest tests.operations.test_contract_taxonomy_plan",
+        "python -m unittest discover -s tests -t ."
+      ]
+    },
+    {
+      "action": "move",
+      "compatibility_shim_required": true,
+      "contract_class_after": "product_domain_contract",
+      "contract_class_before": "product_domain_contract",
+      "rationale": "Artifact is a control/audit/fixture/preview schema or belongs under a different product target root.",
+      "references_to_update": [
+        "contracts/search_interaction/search_request_packet.v0.json",
+        "scripts/validate_search_interaction_contract.py"
+      ],
+      "risk": "medium",
+      "source_path": "contracts/search_interaction/search_request_packet.v0.json",
+      "target_path": "contracts/domain/search_request_packet.v0.json",
+      "validation": [
+        "python scripts/validate_contract_taxonomy_plan.py",
+        "python scripts/validate_runtime_architecture_leakage.py",
+        "python -m unittest tests.operations.test_contract_taxonomy_plan",
+        "python -m unittest discover -s tests -t ."
+      ]
+    },
+    {
+      "action": "move",
+      "compatibility_shim_required": true,
+      "contract_class_after": "product_domain_contract",
+      "contract_class_before": "product_domain_contract",
+      "rationale": "Artifact is a control/audit/fixture/preview schema or belongs under a different product target root.",
+      "references_to_update": [
+        "contracts/search_interaction/user_feedback_event.v0.json",
+        "scripts/validate_search_interaction_contract.py"
+      ],
+      "risk": "medium",
+      "source_path": "contracts/search_interaction/user_feedback_event.v0.json",
+      "target_path": "contracts/domain/user_feedback_event.v0.json",
+      "validation": [
+        "python scripts/validate_contract_taxonomy_plan.py",
+        "python scripts/validate_runtime_architecture_leakage.py",
+        "python -m unittest tests.operations.test_contract_taxonomy_plan",
+        "python -m unittest discover -s tests -t ."
+      ]
+    },
+    {
+      "action": "move",
+      "compatibility_shim_required": true,
       "contract_class_after": "snapshot_contract",
       "contract_class_before": "snapshot_contract",
       "rationale": "Artifact is a control/audit/fixture/preview schema or belongs under a different product target root.",
@@ -5382,6 +5844,7 @@
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+        "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
         "scripts/validate_snapshot_runtime.py"
       ],
       "risk": "medium",
@@ -5407,6 +5870,7 @@
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+        "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
         "scripts/validate_snapshot_runtime.py"
       ],
       "risk": "medium",
@@ -5432,6 +5896,7 @@
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+        "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
         "scripts/validate_snapshot_runtime.py"
       ],
       "risk": "medium",
@@ -5458,6 +5923,7 @@
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+        "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
         "scripts/validate_snapshot_runtime.py"
       ],
       "risk": "medium",
@@ -5483,6 +5949,7 @@
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+        "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
         "scripts/validate_snapshot_runtime.py"
       ],
       "risk": "medium",
@@ -5508,6 +5975,7 @@
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+        "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
         "scripts/validate_snapshot_runtime.py"
       ],
       "risk": "medium",
@@ -5533,6 +6001,7 @@
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+        "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
         "scripts/validate_snapshot_runtime.py"
       ],
       "risk": "medium",
@@ -5693,6 +6162,7 @@
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+        "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
         "examples/view_models/source_page/minimal_source_page_v0.json"
       ],
       "risk": "medium",
@@ -5775,6 +6245,7 @@
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+        "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
         "control/audits/software-heritage-connector-approval-v0/COMMAND_RESULTS.md",
         "control/audits/software-heritage-connector-approval-v0/software_heritage_connector_approval_report.json",
         "control/audits/source-sync-worker-contract-v0/source_sync_worker_contract_report.json",
@@ -5813,6 +6284,7 @@
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+        "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
         "control/audits/source-sync-worker-contract-v0/source_sync_worker_contract_report.json",
         "scripts/validate_source_sync_worker_contract.py",
         "tests/operations/test_source_sync_worker_contract.py"
@@ -5889,6 +6361,7 @@
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+        "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
         "scripts/audit_h0_integration.py",
         "scripts/validate_source_os_coverage_scorecards.py"
       ],
@@ -5916,6 +6389,7 @@
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+        "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
         "scripts/validate_source_os_coverage_scorecards.py"
       ],
       "risk": "medium",
@@ -5989,6 +6463,7 @@
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+        "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
         "scripts/validate_source_os_foundation.py"
       ],
       "risk": "medium",
@@ -6016,6 +6491,7 @@
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
         "control/audits/r0-04-source-observation-production-seam-v0/contract_summary.md",
+        "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
         "scripts/validate_source_observation_seam.py",
         "scripts/validate_source_os_foundation.py"
       ],
@@ -6041,6 +6517,7 @@
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+        "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
         "scripts/validate_source_os_foundation.py"
       ],
       "risk": "medium",
@@ -6066,6 +6543,7 @@
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+        "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
         "scripts/audit_h0_integration.py",
         "scripts/validate_source_os_foundation.py"
       ],
@@ -6113,6 +6591,7 @@
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+        "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
         "control/audits/track-a-15-temporal-minimal-search-design-tokens-v0/track_a_15_report.json",
         "scripts/validate_design_tokens.py"
       ],
@@ -6227,7 +6706,8 @@
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
-        "control/audits/r0-03b-2-contract-reference-product-cleanup-v0/generated/sample_product_contract_cleanup_result.json"
+        "control/audits/r0-03b-2-contract-reference-product-cleanup-v0/generated/sample_product_contract_cleanup_result.json",
+        "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json"
       ],
       "risk": "medium",
       "source_path": "contracts/ui/ui_contracts/bundle_inspection.ui_contract.yaml",
@@ -6440,7 +6920,8 @@
         "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
-        "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json"
+        "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+        "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json"
       ],
       "risk": "medium",
       "source_path": "contracts/ui/ui_contracts/resolution_actions.ui_contract.yaml",
@@ -6504,7 +6985,8 @@
         "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
-        "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json"
+        "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+        "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json"
       ],
       "risk": "medium",
       "source_path": "contracts/ui/ui_contracts/resolution_workspace.ui_contract.yaml",
@@ -6569,7 +7051,8 @@
         "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
-        "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json"
+        "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+        "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json"
       ],
       "risk": "medium",
       "source_path": "contracts/ui/ui_contracts/stored_exports.ui_contract.yaml",
@@ -6686,7 +7169,8 @@
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
-        "control/audits/r0-03b-2-contract-reference-product-cleanup-v0/generated/sample_product_contract_cleanup_result.json"
+        "control/audits/r0-03b-2-contract-reference-product-cleanup-v0/generated/sample_product_contract_cleanup_result.json",
+        "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json"
       ],
       "risk": "medium",
       "source_path": "contracts/ui/view_models/bundle_inspection.view_model.yaml",
@@ -7035,7 +7519,8 @@
         "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
-        "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json"
+        "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+        "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json"
       ],
       "risk": "medium",
       "source_path": "contracts/ui/view_models/stored_exports.view_model.yaml",
@@ -7086,6 +7571,45 @@
       "risk": "medium",
       "source_path": "contracts/ui/view_models/workbench_session.view_model.yaml",
       "target_path": "contracts/api/view_models/workbench_session.view_model.yaml",
+      "validation": [
+        "python scripts/validate_contract_taxonomy_plan.py",
+        "python scripts/validate_runtime_architecture_leakage.py",
+        "python -m unittest tests.operations.test_contract_taxonomy_plan",
+        "python -m unittest discover -s tests -t ."
+      ]
+    },
+    {
+      "action": "move",
+      "compatibility_shim_required": true,
+      "contract_class_after": "product_domain_contract",
+      "contract_class_before": "product_domain_contract",
+      "rationale": "Artifact is a control/audit/fixture/preview schema or belongs under a different product target root.",
+      "references_to_update": [
+        "contracts/view_models/result_lane_view_model.v0.json"
+      ],
+      "risk": "medium",
+      "source_path": "contracts/view_models/result_lane_view_model.v0.json",
+      "target_path": "contracts/domain/result_lane_view_model.v0.json",
+      "validation": [
+        "python scripts/validate_contract_taxonomy_plan.py",
+        "python scripts/validate_runtime_architecture_leakage.py",
+        "python -m unittest tests.operations.test_contract_taxonomy_plan",
+        "python -m unittest discover -s tests -t ."
+      ]
+    },
+    {
+      "action": "move",
+      "compatibility_shim_required": true,
+      "contract_class_after": "product_domain_contract",
+      "contract_class_before": "product_domain_contract",
+      "rationale": "Artifact is a control/audit/fixture/preview schema or belongs under a different product target root.",
+      "references_to_update": [
+        "contracts/view_models/view_model_packet.v0.json",
+        "scripts/validate_workbench_foundation.py"
+      ],
+      "risk": "medium",
+      "source_path": "contracts/view_models/view_model_packet.v0.json",
+      "target_path": "contracts/domain/view_model_packet.v0.json",
       "validation": [
         "python scripts/validate_contract_taxonomy_plan.py",
         "python scripts/validate_runtime_architecture_leakage.py",
@@ -7400,6 +7924,7 @@
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+        "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
         "control/audits/source-page-contract-v0/SOURCE_PAGE_SCHEMA.md",
         "control/audits/source-page-contract-v0/source_page_contract_report.json",
         "control/audits/track-a-06-source-page-view-model-v0/track_a_06_report.json",
@@ -7460,6 +7985,7 @@
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
         "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
+        "control/audits/r0-remediation-legacy-leakage-01-v0/generated/sample_legacy_runtime_leakage_inventory.json",
         "control/audits/track-a-10-view-model-policy-index-v0/track_a_10_report.json",
         "examples/view_models/policy_index/minimal_view_model_policy_index_v0.json",
         "scripts/validate_view_model_policy_index.py"
@@ -7467,6 +7993,85 @@
       "risk": "medium",
       "source_path": "contracts/views/view_model_policy_index.v0.json",
       "target_path": "contracts/api/view_model_policy_index.v0.json",
+      "validation": [
+        "python scripts/validate_contract_taxonomy_plan.py",
+        "python scripts/validate_runtime_architecture_leakage.py",
+        "python -m unittest tests.operations.test_contract_taxonomy_plan",
+        "python -m unittest discover -s tests -t ."
+      ]
+    },
+    {
+      "action": "move",
+      "compatibility_shim_required": true,
+      "contract_class_after": "product_domain_contract",
+      "contract_class_before": "product_domain_contract",
+      "rationale": "Artifact is a control/audit/fixture/preview schema or belongs under a different product target root.",
+      "references_to_update": [
+        "contracts/workbench/workbench_module.v0.json",
+        "scripts/validate_workbench_foundation.py"
+      ],
+      "risk": "medium",
+      "source_path": "contracts/workbench/workbench_module.v0.json",
+      "target_path": "contracts/domain/workbench_module.v0.json",
+      "validation": [
+        "python scripts/validate_contract_taxonomy_plan.py",
+        "python scripts/validate_runtime_architecture_leakage.py",
+        "python -m unittest tests.operations.test_contract_taxonomy_plan",
+        "python -m unittest discover -s tests -t ."
+      ]
+    },
+    {
+      "action": "move",
+      "compatibility_shim_required": true,
+      "contract_class_after": "product_domain_contract",
+      "contract_class_before": "product_domain_contract",
+      "rationale": "Artifact is a control/audit/fixture/preview schema or belongs under a different product target root.",
+      "references_to_update": [
+        "contracts/workbench/workbench_permission.v0.json",
+        "scripts/validate_workbench_foundation.py"
+      ],
+      "risk": "medium",
+      "source_path": "contracts/workbench/workbench_permission.v0.json",
+      "target_path": "contracts/domain/workbench_permission.v0.json",
+      "validation": [
+        "python scripts/validate_contract_taxonomy_plan.py",
+        "python scripts/validate_runtime_architecture_leakage.py",
+        "python -m unittest tests.operations.test_contract_taxonomy_plan",
+        "python -m unittest discover -s tests -t ."
+      ]
+    },
+    {
+      "action": "move",
+      "compatibility_shim_required": true,
+      "contract_class_after": "product_domain_contract",
+      "contract_class_before": "product_domain_contract",
+      "rationale": "Artifact is a control/audit/fixture/preview schema or belongs under a different product target root.",
+      "references_to_update": [
+        "contracts/workbench/workbench_result_lane_projection.v0.json"
+      ],
+      "risk": "medium",
+      "source_path": "contracts/workbench/workbench_result_lane_projection.v0.json",
+      "target_path": "contracts/domain/workbench_result_lane_projection.v0.json",
+      "validation": [
+        "python scripts/validate_contract_taxonomy_plan.py",
+        "python scripts/validate_runtime_architecture_leakage.py",
+        "python -m unittest tests.operations.test_contract_taxonomy_plan",
+        "python -m unittest discover -s tests -t ."
+      ]
+    },
+    {
+      "action": "move",
+      "compatibility_shim_required": true,
+      "contract_class_after": "product_domain_contract",
+      "contract_class_before": "product_domain_contract",
+      "rationale": "Artifact is a control/audit/fixture/preview schema or belongs under a different product target root.",
+      "references_to_update": [
+        "contracts/workbench/workbench_route.v0.json",
+        "scripts/validate_workbench_foundation.py"
+      ],
+      "risk": "medium",
+      "source_path": "contracts/workbench/workbench_route.v0.json",
+      "target_path": "contracts/domain/workbench_route.v0.json",
       "validation": [
         "python scripts/validate_contract_taxonomy_plan.py",
         "python scripts/validate_runtime_architecture_leakage.py",

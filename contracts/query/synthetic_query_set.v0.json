@@ -1,0 +1,54 @@
+{
+  "schema_version": "synthetic_query_set.v0",
+  "contract_status": "fixture_shadow_contract",
+  "purpose": "Define deterministic Synthetic Query Foundry query sets for local pressure testing across LOCAL, HUNT, PLAY, IA metadata, Workbench result lanes, and the IA-HUNT bridge.",
+  "required_fields": [
+    "query_set_id",
+    "query_set_status",
+    "split_label",
+    "stack_scope",
+    "query_cases",
+    "quality_objectives",
+    "expected_result_lane_kinds",
+    "seed_bridge_refs",
+    "limitations",
+    "no_claims",
+    "runtime_capability_boundary"
+  ],
+  "query_set_status_values": [
+    "example_only",
+    "planning_only",
+    "blocked",
+    "not_evaluable"
+  ],
+  "split_labels": [
+    "demo",
+    "hard",
+    "adversarial"
+  ],
+  "stack_scope_values": [
+    "LOCAL",
+    "HUNT",
+    "PLAY",
+    "IA_METADATA_PILOT",
+    "WORKBENCH_RESULT_LANES",
+    "IA_HUNT_BRIDGE"
+  ],
+  "required_boundary_false_flags": [
+    "runtime_query_logged",
+    "runtime_search_need_created",
+    "runtime_workunit_created",
+    "source_probe_executed",
+    "live_ia_call_performed",
+    "download_performed",
+    "upload_performed",
+    "extraction_executed",
+    "model_provider_used",
+    "master_index_mutated",
+    "operator_instance_mutated",
+    "public_search_behavior_changed",
+    "deployment_performed",
+    "production_readiness_claimed",
+    "public_launch_readiness_claimed"
+  ]
+}

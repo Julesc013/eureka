@@ -1,0 +1,69 @@
+{
+  "schema_version": "workbench_projection_matrix_sample.v0",
+  "rows": [
+    {
+      "route_id": "*",
+      "projection_profile": "operator_workbench",
+      "visible": true,
+      "read_only": false,
+      "can_mutate_instance": true,
+      "can_run_source_probe": false,
+      "can_review": true,
+      "can_rebuild_index": true,
+      "can_export_packet": true,
+      "can_download": false,
+      "can_extract": false,
+      "can_call_model": false,
+      "can_deploy": false,
+      "notes": "Operator actions require explicit policy/token."
+    },
+    {
+      "route_id": "*",
+      "projection_profile": "local_user_read_only",
+      "visible": true,
+      "read_only": true,
+      "can_mutate_instance": false,
+      "can_run_source_probe": false,
+      "can_review": false,
+      "can_rebuild_index": false,
+      "can_export_packet": true,
+      "can_download": false,
+      "can_extract": false,
+      "can_call_model": false,
+      "can_deploy": false,
+      "notes": "Restricted projection."
+    },
+    {
+      "route_id": "*",
+      "projection_profile": "public_web",
+      "visible": true,
+      "read_only": true,
+      "can_mutate_instance": false,
+      "can_run_source_probe": false,
+      "can_review": false,
+      "can_rebuild_index": false,
+      "can_export_packet": true,
+      "can_download": false,
+      "can_extract": false,
+      "can_call_model": false,
+      "can_deploy": false,
+      "notes": "Restricted projection."
+    },
+    {
+      "route_id": "*",
+      "projection_profile": "public_api",
+      "visible": true,
+      "read_only": true,
+      "can_mutate_instance": false,
+      "can_run_source_probe": false,
+      "can_review": false,
+      "can_rebuild_index": false,
+      "can_export_packet": true,
+      "can_download": false,
+      "can_extract": false,
+      "can_call_model": false,
+      "can_deploy": false,
+      "notes": "Restricted projection."
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": true,
+  "$id": "https://eureka.local/contracts/workbench/workbench_permission.v0.json",
+  "title": "workbench_permission.v0",
+  "required": [
+    "schema_version",
+    "permission_id",
+    "default_state",
+    "projection_states",
+    "enabling_future_task"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "workbench_permission.v0"
+    }
+  }
+}

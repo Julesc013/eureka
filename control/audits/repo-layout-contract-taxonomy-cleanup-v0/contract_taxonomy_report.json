@@ -1,0 +1,39 @@
+{
+  "schema_version": "contract_taxonomy_report.v0",
+  "task": "R0-03",
+  "task_name": "REPO-LAYOUT-CONTRACT-TAXONOMY-CLEANUP",
+  "status": "pass",
+  "summary": {
+    "root_inventory_added": true,
+    "authority_matrix_added": true,
+    "duplicate_authority_report_added": true,
+    "control_schemas_decision_added": true,
+    "migration_backlog_added": true,
+    "validator_added": true,
+    "tests_added": true,
+    "docs_added": true
+  },
+  "authority": {
+    "contracts_root_authority": [
+      "PRODUCT_PUBLIC_CONTRACT",
+      "PRODUCT_INTERNAL_CONTRACT"
+    ],
+    "control_schemas_scope": "control/governance schemas only",
+    "examples_are_authority": false,
+    "runtime_is_contract_authority": false,
+    "workbench_contract_location": "contracts/views/workbench/",
+    "search_interaction_contract_location": "contracts/search/interaction/"
+  },
+  "duplicate_risk_count": 6,
+  "migration_backlog_count": 8,
+  "large_file_moves_performed": false,
+  "files_deleted": false,
+  "runtime_behavior_changed": false,
+  "source_probe_executed": false,
+  "extraction_executed": false,
+  "model_provider_used": false,
+  "deployment_performed": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "recommended_next_task": "WORKBENCH-FOUNDATION-00 - Mission Control doctrine, route/view matrix, and projection model"
+}

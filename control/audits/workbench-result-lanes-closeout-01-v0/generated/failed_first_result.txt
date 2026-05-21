@@ -1,0 +1,21 @@
+WORKBENCH-RESULT-LANES-CLOSEOUT-01 failed-first rerun summary
+Initial rerun note: tests.operations.test_search_hunt_track failed before queue handoff because current_recommended_task still pointed at WORKBENCH-RESULT-LANES-CLOSEOUT-01; .aide/queue/index.yaml was updated to recommend IA-HUNT-BRIDGE-00, the required next task.
+
+COMMAND: python -m unittest tests.operations.test_search_hunt_closeout
+EXIT_CODE: 0
+DURATION_SECONDS: 26.497
+SUMMARY:
+...
+----------------------------------------------------------------------
+Ran 3 tests in 26.416s
+System.Management.Automation.RemoteException
+OK
+COMMAND: python -m unittest tests.operations.test_search_hunt_track
+EXIT_CODE: 0
+DURATION_SECONDS: 0.083
+SUMMARY:
+.......
+----------------------------------------------------------------------
+Ran 7 tests in 0.009s
+System.Management.Automation.RemoteException
+OK

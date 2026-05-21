@@ -1,0 +1,75 @@
+{
+  "schema_version": "workbench_permission_matrix_sample.v0",
+  "permissions": [
+    {
+      "permission_id": "view_reviewed_results",
+      "operator_workbench": true,
+      "local_user_read_only": true,
+      "public_web": true,
+      "public_api": true,
+      "cli": true,
+      "tui": true,
+      "native_read_only": true,
+      "relay_snapshot_client": true,
+      "future_marketplace_admin": false,
+      "default_state": "policy_gated",
+      "enabling_future_task": "WORKBENCH-FOUNDATION-00"
+    },
+    {
+      "permission_id": "view_candidates",
+      "operator_workbench": true,
+      "local_user_read_only": false,
+      "public_web": false,
+      "public_api": false,
+      "cli": true,
+      "tui": true,
+      "native_read_only": false,
+      "relay_snapshot_client": false,
+      "future_marketplace_admin": false,
+      "default_state": "policy_gated",
+      "enabling_future_task": "WORKBENCH-FOUNDATION-00"
+    },
+    {
+      "permission_id": "view_evidence_summary",
+      "operator_workbench": true,
+      "local_user_read_only": true,
+      "public_web": true,
+      "public_api": true,
+      "cli": true,
+      "tui": true,
+      "native_read_only": true,
+      "relay_snapshot_client": true,
+      "future_marketplace_admin": false,
+      "default_state": "policy_gated",
+      "enabling_future_task": "WORKBENCH-FOUNDATION-00"
+    },
+    {
+      "permission_id": "view_full_evidence",
+      "operator_workbench": true,
+      "local_user_read_only": false,
+      "public_web": false,
+      "public_api": false,
+      "cli": true,
+      "tui": true,
+      "native_read_only": false,
+      "relay_snapshot_client": false,
+      "future_marketplace_admin": false,
+      "default_state": "policy_gated",
+      "enabling_future_task": "WORKBENCH-FOUNDATION-00"
+    },
+    {
+      "permission_id": "view_source_cache",
+      "operator_workbench": true,
+      "local_user_read_only": false,
+      "public_web": false,
+      "public_api": false,
+      "cli": true,
+      "tui": true,
+      "native_read_only": false,
+      "relay_snapshot_client": false,
+      "future_marketplace_admin": false,
+      "default_state": "policy_gated",
+      "enabling_future_task": "WORKBENCH-FOUNDATION-00"
+    }
+  ]
+}

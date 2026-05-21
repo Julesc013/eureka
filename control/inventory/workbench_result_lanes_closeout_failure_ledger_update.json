@@ -1,0 +1,27 @@
+{
+  "schema_version": "workbench_result_lanes_closeout_failure_ledger_update.v0",
+  "task": "WORKBENCH-RESULT-LANES-CLOSEOUT-01",
+  "fixed_pending_full_before": [
+    "full-discovery-2026-05-21-local-appliance-repo-health"
+  ],
+  "fixed_confirmed_after": [
+    "full-discovery-2026-05-20-search-hunt-closeout-ia-hunt-handoff",
+    "full-discovery-2026-05-20-search-hunt-track-ia-hunt-handoff",
+    "full-discovery-2026-05-21-contract-taxonomy-testing-selection-result",
+    "full-discovery-2026-05-21-local-appliance-repo-health"
+  ],
+  "new_failures_added": [],
+  "active_blocking_failures_after": 0,
+  "fixed_pending_full_after": [],
+  "reproduced_after": [],
+  "last_full_discovery_pass_commit": "R0-03A-CONTRACT-TAXONOMY-TESTING-REPAIR working tree after 6665eecdab6ea9c427d76b0dc13ef01a5847d478",
+  "last_full_discovery_pass_count": 4797,
+  "last_full_discovery_pass_duration_seconds": 2711.943,
+  "last_full_discovery_run_status": "pass",
+  "last_full_discovery_run_count": 4797,
+  "last_full_discovery_run_duration_seconds": 2711.943,
+  "repair_task": "R0-03A-CONTRACT-TAXONOMY-TESTING-REPAIR",
+  "ia_hunt_bridge_can_start": true,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}

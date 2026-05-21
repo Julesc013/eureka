@@ -1,0 +1,43 @@
+{
+  "schema_version": "workbench_result_lanes_closeout_report.v0",
+  "task": "WORKBENCH-RESULT-LANES-CLOSEOUT-01",
+  "status": "blocked",
+  "head": "792a226f1797d9038277f19d7c5fd54ba126fbc7",
+  "test_selector_used": true,
+  "failed_first_rerun_passed": true,
+  "result_lane_validator_passed": true,
+  "focused_result_lane_tests_passed": true,
+  "full_unittest_discovery_passed": false,
+  "full_unittest_discovery_count": 4793,
+  "full_unittest_discovery_duration_seconds": 2536.23,
+  "failure_ledger_updated": true,
+  "fixed_pending_full_remaining": 1,
+  "active_blocking_failures_remaining": 2,
+  "runtime_behavior_closed_out": false,
+  "ia_hunt_bridge_can_start": false,
+  "blockers": [
+    {
+      "failure_id": "full-discovery-2026-05-21-contract-taxonomy-testing-selection-result",
+      "status": "reproduced",
+      "repair_scope": "outside_allowed_paths"
+    },
+    {
+      "failure_id": "full-discovery-2026-05-21-local-appliance-repo-health",
+      "status": "fixed_pending_full",
+      "repair_scope": "allowed_aide_repo_health_metadata"
+    }
+  ],
+  "source_probe_executed": false,
+  "live_ia_call_performed": false,
+  "source_cache_write_performed": false,
+  "evidence_write_performed": false,
+  "candidate_index_mutated": false,
+  "reviewed_index_mutated": false,
+  "master_index_mutated": false,
+  "operator_instance_mutated": false,
+  "extraction_executed": false,
+  "model_provider_used": false,
+  "deployment_performed": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}

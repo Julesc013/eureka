@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
-updated: 2026-05-18
+updated: 2026-05-21
 repo: julesc013/eureka
-current_recommended_task: REPO-LAYOUT-CANON-01 — Verify repository root and naming canon before Workbench Foundation
+current_recommended_task: DOMAIN-00 - DOMAIN pack console and contracts
 entries:
   - id: DEV-AND-IA-TO-MAIN-PROMOTION-REVIEW
     title: Promote repaired dev IA pilot plus repo layout canon baseline to main
@@ -23,25 +23,34 @@ entries:
     recommended_next: DEV-AND-IA-TO-MAIN-PROMOTION-REVIEW
   - id: REPO-LAYOUT-CANON-01
     title: Verify repository root and naming canon before Workbench Foundation
-    status: ready
+    status: completed
     purpose: Re-run and verify the repository root/naming canon after dev/main promotion, before layout-sensitive Workbench Foundation work.
     allowed_scope_summary: Repo layout contracts, validators, docs, inventories, audit evidence, and AIDE queue/context metadata only unless a future task explicitly allows moves.
     gate: Dev/main promotion complete; no repo layout moves, Workbench implementation, SYN, IA-HUNT, extraction, deployment, public launch, or production-readiness implementation.
     task: .aide/queue/REPO-LAYOUT-CANON-01/task.yaml
     recommended_after: DEV-AND-IA-TO-MAIN-PROMOTION-REVIEW
+    recommended_next: R0-03
+  - id: R0-03
+    title: Repo layout contract taxonomy cleanup
+    status: completed
+    purpose: Classify contract/schema authority before Workbench Foundation without moving files or changing runtime behavior.
+    allowed_scope_summary: Contract taxonomy inventories, authority matrix, duplicate authority report, control/schemas decision, migration backlog, validator, tests, docs, and audit evidence.
+    gate: No file moves, runtime behavior changes, source probes, extraction, model/provider calls, deployment, production readiness claim, or public launch claim.
+    task: .aide/queue/R0-03/task.yaml
+    recommended_after: REPO-LAYOUT-CANON-01
     recommended_next: WORKBENCH-FOUNDATION-00
   - id: WORKBENCH-FOUNDATION-00
     title: Mission Control doctrine, route/view matrix, and projection model
-    status: queued
+    status: completed
     purpose: Define the Workbench as the internal/operator superset of the final Eureka product before implementing new result lanes.
     allowed_scope_summary: Workbench doctrine, route/view matrix, permission/projection matrix, packet inventory, docs, contracts if explicitly scoped, and audit evidence only.
     gate: dev/main promotion complete; no public launch, production deployment, source probes, downloads, extraction, model/provider calls, or marketplace readiness.
     task: .aide/queue/WORKBENCH-FOUNDATION-00/task.yaml
-    recommended_after: REPO-LAYOUT-CANON-01
+    recommended_after: R0-03
     recommended_next: SEARCH-INTERACTION-00
   - id: SEARCH-INTERACTION-00
     title: Search interaction contract
-    status: queued
+    status: completed
     purpose: Define the query, compiled intent, resolution run, result lane, control command, feedback, absence, and coverage packet contract.
     allowed_scope_summary: Search interaction contracts, route/view implications, docs, validators, tests, and audit evidence only until explicitly scoped.
     gate: WORKBENCH-FOUNDATION-00 completed; no public fanout, source execution, or model/provider calls.
@@ -49,20 +58,47 @@ entries:
     recommended_after: WORKBENCH-FOUNDATION-00
     recommended_next: WORKBENCH-RESULT-LANES-01
   - id: WORKBENCH-RESULT-LANES-01
-    title: Workbench result lanes
-    status: queued
+    title: Implement result lane view models and Workbench lane projection
+    status: completed
     purpose: Define and then implement governed Workbench result lanes for reviewed, candidate, source-cache, IA metadata, review, absence, blocked, and WorkUnit states.
     allowed_scope_summary: Workbench lane contracts and bounded UI/runtime integration only when explicitly scoped by a future task.
     gate: SEARCH-INTERACTION-00 completed; no broad source crawling, downloads, extraction, production readiness, or public launch claim.
     task: .aide/queue/WORKBENCH-RESULT-LANES-01/task.yaml
     recommended_after: SEARCH-INTERACTION-00
+    recommended_next: TEST-LANE-ROUTER-01
+  - id: TEST-LANE-ROUTER-01
+    title: Add test selection, failure ledger, and promotion-grade test policy
+    status: completed
+    purpose: Replace ad hoc full unittest discovery before every commit with explicit lane-based test selection and failure tracking.
+    allowed_scope_summary: Testing contracts, policies, inventories, selector, validator, focused tests, docs, audit evidence, and AIDE queue/context metadata only.
+    gate: No tests deleted or weakened; full discovery remains required for promotion; no runtime product behavior change, live source calls, extraction, model/provider calls, deployment, or production/public launch claim.
+    task: .aide/queue/TEST-LANE-ROUTER-01/task.yaml
+    recommended_after: WORKBENCH-RESULT-LANES-01
+    recommended_next: WORKBENCH-RESULT-LANES-CLOSEOUT-01
+  - id: WORKBENCH-RESULT-LANES-CLOSEOUT-01
+    title: Close Workbench result-lane fixed-pending-full validation state
+    status: completed
+    purpose: Use the lane selector to rerun failed-first and impact-selected result-lane closeout checks before IA-HUNT.
+    allowed_scope_summary: Selected validation, failure-ledger update, and closeout evidence only.
+    gate: TEST-LANE-ROUTER-01 completed; no IA-HUNT bridge, live IA call, source probe, extraction, model/provider call, deployment, or production/public launch claim.
+    task: .aide/queue/WORKBENCH-RESULT-LANES-CLOSEOUT-01/task.yaml
+    recommended_after: TEST-LANE-ROUTER-01
+    recommended_next: IA-HUNT-BRIDGE-00
+  - id: R0-03A-CONTRACT-TAXONOMY-TESTING-REPAIR
+    title: Classify contracts/testing and unblock result-lane closeout
+    status: completed
+    purpose: Classify contracts/testing test-selection contracts in taxonomy authority inventory and confirm full discovery.
+    allowed_scope_summary: Contract taxonomy/testing inventories, validators, tests, closeout ledger, audit evidence, and AIDE queue metadata only.
+    gate: WORKBENCH-RESULT-LANES-CLOSEOUT-01 was blocked by R0-03A taxonomy inventory; full discovery now passed with no active blockers.
+    task: .aide/queue/R0-03A-CONTRACT-TAXONOMY-TESTING-REPAIR/task.yaml
+    recommended_after: WORKBENCH-RESULT-LANES-CLOSEOUT-01
     recommended_next: IA-HUNT-BRIDGE-00
   - id: IA-HUNT-BRIDGE-00
     title: Bridge IA metadata candidates into Hunt and WorkUnit lanes
-    status: queued
-    purpose: Connect the reviewed IA metadata vertical slice into Hunt/WorkUnit result lanes after Workbench lanes are governed.
-    allowed_scope_summary: IA-Hunt bridge planning and bounded implementation only when future gates explicitly allow it.
-    gate: WORKBENCH-RESULT-LANES-01 completed; no new live IA call unless a future reviewed policy enables it; no downloads, extraction, model/provider calls, deployment, or public fanout.
+    status: completed
+    purpose: Connected the reviewed IA metadata vertical slice into Hunt/WorkUnit result lanes after Workbench lanes are governed.
+    allowed_scope_summary: IA-Hunt bridge policy, WorkUnits, dry-run/temp-instance runtime proof, CLI, validator, docs, tests, and audit evidence.
+    gate: Full discovery passed; no live IA call, source probe, operator instance mutation, master-index mutation, downloads, extraction, model/provider calls, deployment, public fanout, production readiness, or public launch claim.
     task: .aide/queue/IA-HUNT-BRIDGE-00/task.yaml
     recommended_after: WORKBENCH-RESULT-LANES-01
     recommended_next: SYN-00
@@ -483,13 +519,32 @@ entries:
     recommended_after: IA-PILOT-CLOSEOUT-01
     recommended_next: SYN-00
   - id: SYN-00
-    title: Synthetic Query Foundry planning over Local/HUNT/PLAY/IA
-    status: ready
-    purpose: Plan Synthetic Query Foundry over the completed Local Appliance, HUNT spine, PLAY demo pack, and IA approval boundary.
+    title: Synthetic Query Foundry planning over Local/HUNT/PLAY/IA/Workbench
+    status: completed
+    purpose: Plan Synthetic Query Foundry over the completed Local Appliance, HUNT spine, PLAY demo pack, IA approval boundary, and Workbench result-lane bridge.
     allowed_scope_summary: SYN planning, taxonomy preparation, policies, docs, and audit evidence only until explicitly scoped; no SYN runtime implementation yet.
-    gate: PLAY-00 and IA approval closure context reviewed; use HUNT/SearchNeed/WorkUnit/local eval boundaries; no synthetic generation runtime, model calls, deployment, production readiness claim, or public launch claim.
+    gate: Passed with example-only query pressure sets, SearchNeed/WorkUnit seed bridge examples, validator/tests/docs/audit evidence, and full discovery; no synthetic generation runtime, model calls, deployment, production readiness claim, or public launch claim.
     task: .aide/queue/SYN-00/task.yaml
     recommended_after: IA-00
+    recommended_next: DOMAIN-00
+  - id: DOMAIN-00
+    title: DOMAIN pack console and contracts
+    status: queued
+    purpose: Define DOMAIN pack console and contracts after SYN-00 pressure-query foundation.
+    allowed_scope_summary: Future task must provide its own reviewed scope before implementation.
+    gate: SYN-00 completed with full discovery pass; no production/public launch claim by default and no unsafe actions unless future policy enables them.
+    task: .aide/queue/DOMAIN-00/task.yaml
+    recommended_after: SYN-00
+    recommended_next: SCOUT-SCHEMA-00
+  - id: SCOUT-SCHEMA-00
+    title: SCOUT discovery trail contract schema
+    status: queued
+    purpose: Define SCOUT discovery trail contract schema placeholders after DOMAIN-00.
+    allowed_scope_summary: Future task must provide its own reviewed scope before implementation.
+    gate: DOMAIN-00 should complete first; no production/public launch claim by default and no unsafe actions unless future policy enables them.
+    task: .aide/queue/SCOUT-SCHEMA-00/task.yaml
+    recommended_after: DOMAIN-00
+    recommended_next: F0-00
   - id: F0-00
     title: Refresh F0 after Local Appliance and HUNT
     status: queued

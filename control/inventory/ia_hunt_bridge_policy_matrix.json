@@ -1,0 +1,36 @@
+{
+  "schema_version": "ia_hunt_bridge_policy_matrix.v0",
+  "task": "IA-HUNT-BRIDGE-00",
+  "policy_rows": [
+    {
+      "policy_id": "dry_run_default",
+      "value": true,
+      "reason": "The bridge plans IA Hunt work without mutation by default."
+    },
+    {
+      "policy_id": "temp_instance_allowed",
+      "value": true,
+      "reason": "Temp-instance proof may exercise existing local IA write helpers without touching operator state."
+    },
+    {
+      "policy_id": "operator_instance_mutation_default",
+      "value": false,
+      "reason": "Operator instance mutation is out of scope for IA-HUNT-BRIDGE-00."
+    },
+    {
+      "policy_id": "live_ia_calls_enabled_by_default",
+      "value": false,
+      "reason": "Bridge uses committed fixtures unless a later reviewed task enables live IA calls."
+    },
+    {
+      "policy_id": "master_index_mutation_enabled",
+      "value": false,
+      "reason": "Reviewed local output remains temp/local and never becomes master/public truth."
+    },
+    {
+      "policy_id": "downloads_extraction_model_deployment",
+      "value": false,
+      "reason": "Downloads, extraction, model/provider calls, and deployment remain blocked."
+    }
+  ]
+}

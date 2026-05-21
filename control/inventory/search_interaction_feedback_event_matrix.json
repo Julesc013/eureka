@@ -1,0 +1,186 @@
+{
+  "schema_version": "search_interaction_feedback_event_matrix.v0",
+  "task": "SEARCH-INTERACTION-00",
+  "feedback_events": [
+    {
+      "feedback_type": "right_app_wrong_version",
+      "target_types": [
+        "run",
+        "lane",
+        "partial_result",
+        "candidate",
+        "source"
+      ],
+      "creates_plan_patch": true,
+      "may_seed_search_need": false,
+      "may_seed_workunit": false,
+      "may_affect_ranking_later": true,
+      "requires_review": false,
+      "public_allowed": true,
+      "operator_allowed": true,
+      "privacy_class": "public_safe"
+    },
+    {
+      "feedback_type": "right_era_wrong_platform",
+      "target_types": [
+        "run",
+        "lane",
+        "partial_result",
+        "candidate",
+        "source"
+      ],
+      "creates_plan_patch": true,
+      "may_seed_search_need": false,
+      "may_seed_workunit": false,
+      "may_affect_ranking_later": true,
+      "requires_review": false,
+      "public_allowed": true,
+      "operator_allowed": true,
+      "privacy_class": "public_safe"
+    },
+    {
+      "feedback_type": "wrong_object_family",
+      "target_types": [
+        "run",
+        "lane",
+        "partial_result",
+        "candidate",
+        "source"
+      ],
+      "creates_plan_patch": true,
+      "may_seed_search_need": true,
+      "may_seed_workunit": false,
+      "may_affect_ranking_later": true,
+      "requires_review": false,
+      "public_allowed": true,
+      "operator_allowed": true,
+      "privacy_class": "public_safe"
+    },
+    {
+      "feedback_type": "ignore_isos",
+      "target_types": [
+        "run",
+        "lane",
+        "partial_result",
+        "candidate",
+        "source"
+      ],
+      "creates_plan_patch": true,
+      "may_seed_search_need": false,
+      "may_seed_workunit": false,
+      "may_affect_ranking_later": true,
+      "requires_review": false,
+      "public_allowed": true,
+      "operator_allowed": true,
+      "privacy_class": "public_safe"
+    },
+    {
+      "feedback_type": "only_portable_apps",
+      "target_types": [
+        "run",
+        "lane",
+        "partial_result",
+        "candidate",
+        "source"
+      ],
+      "creates_plan_patch": true,
+      "may_seed_search_need": false,
+      "may_seed_workunit": false,
+      "may_affect_ranking_later": true,
+      "requires_review": false,
+      "public_allowed": true,
+      "operator_allowed": true,
+      "privacy_class": "public_safe"
+    },
+    {
+      "feedback_type": "search_deeper_inside_bundles",
+      "target_types": [
+        "run",
+        "lane",
+        "partial_result",
+        "candidate",
+        "source"
+      ],
+      "creates_plan_patch": true,
+      "may_seed_search_need": true,
+      "may_seed_workunit": true,
+      "may_affect_ranking_later": true,
+      "requires_review": false,
+      "public_allowed": true,
+      "operator_allowed": true,
+      "privacy_class": "public_safe"
+    },
+    {
+      "feedback_type": "source_relevant",
+      "target_types": [
+        "run",
+        "lane",
+        "partial_result",
+        "candidate",
+        "source"
+      ],
+      "creates_plan_patch": true,
+      "may_seed_search_need": false,
+      "may_seed_workunit": false,
+      "may_affect_ranking_later": true,
+      "requires_review": false,
+      "public_allowed": true,
+      "operator_allowed": true,
+      "privacy_class": "public_safe"
+    },
+    {
+      "feedback_type": "source_not_relevant",
+      "target_types": [
+        "run",
+        "lane",
+        "partial_result",
+        "candidate",
+        "source"
+      ],
+      "creates_plan_patch": true,
+      "may_seed_search_need": false,
+      "may_seed_workunit": false,
+      "may_affect_ranking_later": true,
+      "requires_review": false,
+      "public_allowed": true,
+      "operator_allowed": true,
+      "privacy_class": "public_safe"
+    },
+    {
+      "feedback_type": "file_path_promising",
+      "target_types": [
+        "run",
+        "lane",
+        "partial_result",
+        "candidate",
+        "source"
+      ],
+      "creates_plan_patch": true,
+      "may_seed_search_need": false,
+      "may_seed_workunit": true,
+      "may_affect_ranking_later": true,
+      "requires_review": true,
+      "public_allowed": true,
+      "operator_allowed": true,
+      "privacy_class": "operator_internal"
+    },
+    {
+      "feedback_type": "needs_manual_review",
+      "target_types": [
+        "run",
+        "lane",
+        "partial_result",
+        "candidate",
+        "source"
+      ],
+      "creates_plan_patch": true,
+      "may_seed_search_need": true,
+      "may_seed_workunit": true,
+      "may_affect_ranking_later": true,
+      "requires_review": true,
+      "public_allowed": false,
+      "operator_allowed": true,
+      "privacy_class": "operator_internal"
+    }
+  ]
+}

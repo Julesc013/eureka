@@ -1,0 +1,13 @@
+{
+  "schema_version": "test_failure_ledger.v0",
+  "sample": true,
+  "failure_count": 2,
+  "active_statuses": [
+    "fixed_pending_full"
+  ],
+  "failed_first_commands": [
+    "python -m unittest tests.operations.test_search_hunt_closeout",
+    "python -m unittest tests.operations.test_search_hunt_track"
+  ]
+}
+

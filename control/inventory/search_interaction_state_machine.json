@@ -1,0 +1,177 @@
+{
+  "schema_version": "search_interaction_state_machine.v0",
+  "task": "SEARCH-INTERACTION-00",
+  "states": [
+    "accepted",
+    "compiled",
+    "local_index_running",
+    "local_results_available",
+    "candidate_index_running",
+    "candidate_results_available",
+    "source_cache_running",
+    "source_cache_results_available",
+    "hunt_planning",
+    "hunt_running",
+    "source_workunit_queued",
+    "source_workunit_running",
+    "source_candidates_available",
+    "review_items_available",
+    "index_rebuild_available",
+    "paused",
+    "resumed",
+    "cancelled",
+    "completed",
+    "failed",
+    "waiting_for_user",
+    "waiting_for_policy",
+    "waiting_for_source_quota",
+    "waiting_for_review",
+    "waiting_for_index_rebuild"
+  ],
+  "allowed_transitions": [
+    [
+      "accepted",
+      "compiled"
+    ],
+    [
+      "compiled",
+      "local_index_running"
+    ],
+    [
+      "local_index_running",
+      "local_results_available"
+    ],
+    [
+      "local_results_available",
+      "candidate_index_running"
+    ],
+    [
+      "candidate_index_running",
+      "candidate_results_available"
+    ],
+    [
+      "candidate_results_available",
+      "source_cache_running"
+    ],
+    [
+      "source_cache_running",
+      "source_cache_results_available"
+    ],
+    [
+      "source_cache_results_available",
+      "hunt_planning"
+    ],
+    [
+      "hunt_planning",
+      "hunt_running"
+    ],
+    [
+      "hunt_running",
+      "source_workunit_queued"
+    ],
+    [
+      "source_workunit_queued",
+      "source_workunit_running"
+    ],
+    [
+      "source_workunit_running",
+      "source_candidates_available"
+    ],
+    [
+      "source_candidates_available",
+      "review_items_available"
+    ],
+    [
+      "review_items_available",
+      "index_rebuild_available"
+    ],
+    [
+      "index_rebuild_available",
+      "completed"
+    ],
+    [
+      "paused",
+      "resumed"
+    ],
+    [
+      "resumed",
+      "local_index_running"
+    ],
+    [
+      "waiting_for_user",
+      "resumed"
+    ],
+    [
+      "waiting_for_policy",
+      "source_workunit_queued"
+    ],
+    [
+      "waiting_for_source_quota",
+      "source_workunit_queued"
+    ],
+    [
+      "waiting_for_review",
+      "review_items_available"
+    ],
+    [
+      "waiting_for_index_rebuild",
+      "index_rebuild_available"
+    ]
+  ],
+  "terminal_states": [
+    "completed",
+    "cancelled",
+    "failed"
+  ],
+  "interrupted_states": [
+    "paused",
+    "waiting_for_user",
+    "waiting_for_policy",
+    "waiting_for_source_quota",
+    "waiting_for_review",
+    "waiting_for_index_rebuild"
+  ],
+  "blocked_states": [
+    "waiting_for_policy",
+    "waiting_for_source_quota"
+  ],
+  "illegal_transitions": [
+    [
+      "completed",
+      "hunt_running"
+    ],
+    [
+      "cancelled",
+      "hunt_running"
+    ],
+    [
+      "failed",
+      "completed"
+    ],
+    [
+      "review_items_available",
+      "candidate_index_running"
+    ]
+  ],
+  "state_invariants": [
+    "every_transition_has_timestamp",
+    "every_transition_has_reason",
+    "source_backed_transition_identifies_source_family",
+    "blocked_transition_has_blocked_reason",
+    "every_output_tied_to_run_id",
+    "every_run_has_coverage_report",
+    "every_run_preserves_query_interpretation"
+  ],
+  "projection_visibility": {
+    "operator_workbench": "full_internal",
+    "local_user_read_only": "restricted",
+    "public_web": "restricted",
+    "public_api": "restricted",
+    "cli": "restricted",
+    "tui": "restricted",
+    "relay_client": "restricted",
+    "snapshot_client": "restricted",
+    "native_desktop_read_only": "restricted",
+    "mobile_read_only": "restricted"
+  }
+}

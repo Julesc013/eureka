@@ -1,0 +1,119 @@
+{
+  "schema_version": "test_lane_matrix.v0",
+  "task": "TEST-LANE-ROUTER-01",
+  "lanes": [
+    {
+      "lane_id": "L0_static_preflight",
+      "purpose": "Fast local preflight for whitespace, parse posture, architecture boundaries, generated-artifact cleanliness, and task guard posture.",
+      "expected_duration": "10-60 seconds",
+      "required_for_commit": true,
+      "required_for_runtime_change": true,
+      "required_for_contract_change": true,
+      "required_for_promotion": true,
+      "may_skip_if": [
+        "no files changed and a higher lane already ran in the same evidence packet"
+      ],
+      "cannot_skip_if": [
+        "working tree has changes",
+        "architecture boundary could be affected",
+        "generated artifacts could drift"
+      ],
+      "required_outputs": [
+        "command status",
+        "skip reason if omitted"
+      ]
+    },
+    {
+      "lane_id": "L1_focused_unit",
+      "purpose": "Run validators and test modules directly mapped to changed files or known failures.",
+      "expected_duration": "1-5 minutes",
+      "required_for_commit": true,
+      "required_for_runtime_change": true,
+      "required_for_contract_change": true,
+      "required_for_promotion": true,
+      "may_skip_if": [
+        "no changed path maps to focused tests",
+        "no known failure is active"
+      ],
+      "cannot_skip_if": [
+        "owning subsystem changed",
+        "validator changed",
+        "test failed recently"
+      ],
+      "required_outputs": [
+        "selected modules",
+        "known failure reruns",
+        "skip reasons"
+      ]
+    },
+    {
+      "lane_id": "L2_impact_integration",
+      "purpose": "Run impacted cross-boundary and smoke checks selected by path ownership and risk.",
+      "expected_duration": "5-15 minutes",
+      "required_for_commit": true,
+      "required_for_runtime_change": true,
+      "required_for_contract_change": false,
+      "required_for_promotion": true,
+      "may_skip_if": [
+        "changed paths are docs-only or control-only",
+        "impact map records no cross-boundary risk"
+      ],
+      "cannot_skip_if": [
+        "persistence boundary changed",
+        "runtime service changed",
+        "source/evidence/candidate/review/index flow changed"
+      ],
+      "required_outputs": [
+        "selected integration commands",
+        "skip reasons"
+      ]
+    },
+    {
+      "lane_id": "L3_full_discovery",
+      "purpose": "Run the complete unittest discovery suite.",
+      "expected_duration": "30-60+ minutes",
+      "required_for_commit": false,
+      "required_for_runtime_change": false,
+      "required_for_contract_change": false,
+      "required_for_promotion": true,
+      "may_skip_if": [
+        "not a promotion/release/high-risk gate and selected L0/L1/L2 evidence is recorded"
+      ],
+      "cannot_skip_if": [
+        "promotion to main",
+        "release candidate",
+        "large runtime refactor",
+        "schema/store migration",
+        "pre-public deployment gate"
+      ],
+      "required_outputs": [
+        "full discovery command result",
+        "failure ledger updates"
+      ]
+    },
+    {
+      "lane_id": "L4_promotion_release",
+      "purpose": "Promotion/release gate combining full discovery, all relevant validators, branch checks, and clean tree requirements.",
+      "expected_duration": "promotion/release only",
+      "required_for_commit": false,
+      "required_for_runtime_change": false,
+      "required_for_contract_change": false,
+      "required_for_promotion": true,
+      "may_skip_if": [
+        "task is not promotion, release, or deployment related"
+      ],
+      "cannot_skip_if": [
+        "main promotion",
+        "release candidate",
+        "public deployment gate"
+      ],
+      "required_outputs": [
+        "full discovery pass",
+        "all relevant validators",
+        "clean branch state",
+        "no blocking failure ledger entries"
+      ]
+    }
+  ]
+}
+

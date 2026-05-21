@@ -16,6 +16,8 @@ LATER_CONTROL_OR_HANDOFF_PREFIXES = (
     "AIDE-",
     "HUNT-",
     "SYN-",
+    "DOMAIN-",
+    "SCOUT-",
     "F0-",
     "IA-",
     "DEV-AND-IA-",

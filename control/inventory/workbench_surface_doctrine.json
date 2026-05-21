@@ -1,0 +1,11 @@
+{
+  "schema_version": "workbench_surface_doctrine.v0",
+  "task": "WORKBENCH-FOUNDATION-00",
+  "workbench_is_internal_superset": true,
+  "public_web_is_restricted_projection": true,
+  "same_kernel_and_packet_semantics": true,
+  "surfaces_do_not_own_product_truth": true,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "marketplace_or_app_store_readiness_claimed": false
+}
