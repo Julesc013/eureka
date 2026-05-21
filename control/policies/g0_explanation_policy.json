@@ -1,0 +1,12 @@
+{
+  "schema_version": "g0_explanation_policy.v0",
+  "explanation_is_not_evidence": true,
+  "explanations_must_show_uncertainty": true,
+  "explanations_must_show_limitations": true,
+  "blocked_actions_must_be_explained": true,
+  "hidden_ranking_forbidden": true,
+  "accepted_truth_created": false,
+  "model_provider_enabled": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}

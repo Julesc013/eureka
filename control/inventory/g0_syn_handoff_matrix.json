@@ -1,0 +1,8 @@
+{
+  "schema_version": "g0_syn_handoff_matrix.v0",
+  "syn_handoffs": [
+    {"handoff": "expected_behavior_to_eval_case", "syn_case": "member_discovery_query", "g0_checks": ["explanation_packet", "user_cost_score"]},
+    {"handoff": "adversarial_cases_to_penalties", "syn_case": "adversarial_fake_evidence", "g0_checks": ["non_claims", "blocked_action_explanation"]},
+    {"handoff": "near_miss_cases_to_identity", "syn_case": "wrong_platform_query", "g0_checks": ["near_miss_candidate"]}
+  ]
+}

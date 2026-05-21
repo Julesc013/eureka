@@ -1,0 +1,8 @@
+{
+  "schema_version": "near_miss_candidate.v0",
+  "record_type": "near_miss_candidate",
+  "near_miss_id": "g0_near_miss_wrong_platform",
+  "mismatch_reasons": ["wrong_platform_candidate"],
+  "accepted_truth": false,
+  "review_required": true
+}

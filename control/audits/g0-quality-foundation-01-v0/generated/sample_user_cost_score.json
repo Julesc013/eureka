@@ -1,0 +1,8 @@
+{
+  "schema_version": "user_cost_score.v0",
+  "record_type": "user_cost_score",
+  "result_ref": "g0_result_f0_member_manifest",
+  "user_cost_class": "member_path_known",
+  "accepted_truth": false,
+  "review_required": true
+}

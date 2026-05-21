@@ -1,0 +1,11 @@
+{
+  "schema_version": "g0_identity_policy.v0",
+  "identity_cluster_is_provisional_by_default": true,
+  "accepted_identity_merge_enabled": false,
+  "records_merged": false,
+  "destructive_deduplication_enabled": false,
+  "review_required_for_identity_merge": true,
+  "source_specific_locators_preserved": true,
+  "master_index_mutation_enabled": false,
+  "public_index_mutation_enabled": false
+}

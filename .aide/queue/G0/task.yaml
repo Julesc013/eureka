@@ -1,9 +1,10 @@
 id: G0
 title: Ranking, explanation, identity, and user-cost scoring foundation
-status: queued
-purpose: Future ranking, explanation, identity, and user-cost scoring foundation after DOMAIN, SCOUT, and F0 boundaries are governed.
-allowed_scope_summary: Future task must provide its own reviewed scope before implementation.
+status: completed
+purpose: Added deterministic fixture-only ranking, explanation, identity, and user-cost scoring foundation after DOMAIN, SCOUT, and F0 boundaries were governed.
+allowed_scope_summary: G0 policies, contracts, local-eval helpers, examples, scripts, tests, docs, audit evidence, and AIDE queue/context metadata.
 gate:
   - no production/public launch claim by default
   - no unsafe actions unless future policy enables them
 recommended_after: F0-00
+recommended_next: SOURCE-WAVE-00

@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-22
 repo: julesc013/eureka
-current_recommended_task: G0 — Ranking, explanation, identity, and user-cost scoring foundation
+current_recommended_task: SOURCE-WAVE-00 — Next source-family metadata wave planning
 entries:
   - id: DEV-AND-IA-TO-MAIN-PROMOTION-REVIEW
     title: Promote repaired dev IA pilot plus repo layout canon baseline to main

@@ -1,0 +1,7 @@
+{
+  "schema_version": "g0_near_miss_matrix.v0",
+  "near_misses_explain_mismatch": true,
+  "near_miss_types": ["wrong_platform_candidate", "wrong_version_candidate", "parent_bundle_candidate", "member_candidate", "related_but_distinct_candidate"],
+  "near_misses_are_not_hidden_suppression": true,
+  "accepted_truth": false
+}

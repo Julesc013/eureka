@@ -1,0 +1,17 @@
+{
+  "schema_version": "g0_user_cost_matrix.v0",
+  "user_cost_classes": [
+    {"user_cost_class": "direct_reviewed_result", "effort_estimate": 0.05, "actionability_level": "high", "allowed_actions": ["inspect", "explain"], "blocked_actions": ["download", "extract"], "future_workunit_seed": "review_result"},
+    {"user_cost_class": "provisional_candidate_needs_review", "effort_estimate": 0.35, "actionability_level": "medium", "allowed_actions": ["inspect", "request_review"], "blocked_actions": ["accept_evidence"], "future_workunit_seed": "review_candidate"},
+    {"user_cost_class": "source_cache_hit_needs_evidence", "effort_estimate": 0.5, "actionability_level": "medium_low", "allowed_actions": ["inspect"], "blocked_actions": ["write_evidence"], "future_workunit_seed": "review_source_cache_hit"},
+    {"user_cost_class": "parent_bundle_known_member_unknown", "effort_estimate": 0.65, "actionability_level": "low", "allowed_actions": ["inspect_manifest"], "blocked_actions": ["extract"], "future_workunit_seed": "inspect_file_manifest"},
+    {"user_cost_class": "member_path_known", "effort_estimate": 0.45, "actionability_level": "medium", "allowed_actions": ["inspect_manifest"], "blocked_actions": ["download"], "future_workunit_seed": "review_member_manifest"},
+    {"user_cost_class": "file_manifest_only", "effort_estimate": 0.6, "actionability_level": "low", "allowed_actions": ["inspect_manifest"], "blocked_actions": ["extract"], "future_workunit_seed": "review_member_manifest"},
+    {"user_cost_class": "mention_only", "effort_estimate": 0.7, "actionability_level": "low", "allowed_actions": ["inspect"], "blocked_actions": ["accept_evidence"], "future_workunit_seed": "manual_research_needed"},
+    {"user_cost_class": "known_absence", "effort_estimate": 0.8, "actionability_level": "low", "allowed_actions": ["explain_absence"], "blocked_actions": ["claim_global_absence"], "future_workunit_seed": "review_absence_scope"},
+    {"user_cost_class": "blocked_by_policy", "effort_estimate": 0.9, "actionability_level": "blocked", "allowed_actions": ["explain_policy"], "blocked_actions": ["download", "extract"], "future_workunit_seed": "request_operator_policy"},
+    {"user_cost_class": "deferred_extraction_needed", "effort_estimate": 0.85, "actionability_level": "blocked", "allowed_actions": ["queue_future"], "blocked_actions": ["extract"], "future_workunit_seed": "queue_future_extraction"},
+    {"user_cost_class": "source_probe_needed", "effort_estimate": 0.8, "actionability_level": "blocked", "allowed_actions": ["defer"], "blocked_actions": ["source_probe"], "future_workunit_seed": "defer_live_source_probe"},
+    {"user_cost_class": "manual_research_needed", "effort_estimate": 0.75, "actionability_level": "low", "allowed_actions": ["request_review"], "blocked_actions": ["model_provider"], "future_workunit_seed": "manual_research_needed"}
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "schema_version": "score_breakdown.v0",
+  "record_type": "score_breakdown",
+  "score_breakdown_id": "g0_score_breakdown_sample",
+  "result_ref": "g0_result_reviewed_stylewriter_driver",
+  "domain_id": "driver_support_media",
+  "score": 0.86,
+  "signals": ["see runtime-generated sample in audit pack"],
+  "uncertainty": "fixture reviewed label only; no new truth accepted",
+  "limitations": ["score is not evidence", "fixture-only deterministic estimate"],
+  "accepted_truth": false,
+  "review_required": true
+}

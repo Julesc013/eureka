@@ -1,0 +1,15 @@
+{
+  "schema_version": "quality_console_view.v0",
+  "record_type": "quality_console_view",
+  "view_id": "g0_quality:operator_workbench",
+  "projection_profile": "operator_workbench",
+  "read_only": true,
+  "routes": ["/quality", "/quality/scores", "/quality/explanations", "/quality/identity", "/quality/near-misses", "/quality/user-cost", "/quality/blocked-actions"],
+  "views": {
+    "QualityOverviewView": {"result_count": 8},
+    "ScoreSignalView": {"required_signal_ids": ["exact_title_match", "domain_fit"]},
+    "ExplanationPacketView": {"explanation_packets": []}
+  },
+  "accepted_truth": false,
+  "review_required": true
+}

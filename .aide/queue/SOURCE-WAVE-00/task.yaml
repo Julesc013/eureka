@@ -1,7 +1,7 @@
 id: SOURCE-WAVE-00
-title: Future source wave planning after SCOUT and G0
+title: Next source-family metadata wave planning
 status: queued
-purpose: Placeholder for future source expansion after SCOUT, F0, and G0 policy foundations.
+purpose: Plan the next source-family metadata wave after SCOUT, F0, and G0 policy foundations.
 allowed_scope_summary: Future task must provide reviewed scope before implementation.
 gate: No live source expansion without future explicit policy.
 recommended_after: G0

@@ -1,0 +1,13 @@
+{
+  "schema_version": "identity_cluster_candidate.v0",
+  "record_type": "identity_cluster_candidate",
+  "identity_cluster_id": "g0_identity_cluster_sample",
+  "cluster_type": "same_object_candidate",
+  "member_refs": ["g0_result_reviewed_stylewriter_driver", "g0_result_ia_stylewriter_driver_candidate"],
+  "provisional": true,
+  "accepted_identity_merge": false,
+  "uncertainty": "requires human identity review",
+  "limitations": ["no automatic merge"],
+  "accepted_truth": false,
+  "review_required": true
+}

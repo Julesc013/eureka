@@ -1,0 +1,9 @@
+{
+  "schema_version": "identity_cluster_candidate.v0",
+  "record_type": "identity_cluster_candidate",
+  "identity_cluster_id": "g0_identity_cluster_stylewriter_2500_driver",
+  "provisional": true,
+  "accepted_identity_merge": false,
+  "accepted_truth": false,
+  "review_required": true
+}

@@ -1,0 +1,10 @@
+{
+  "schema_version": "g0_identity_cluster_matrix.v0",
+  "candidate_group_types": [
+    {"group_type": "same_object_candidate"}, {"group_type": "same_version_candidate"}, {"group_type": "same_release_candidate"}, {"group_type": "same_representation_candidate"}, {"group_type": "mirror_candidate"}, {"group_type": "duplicate_candidate"}, {"group_type": "near_miss_candidate"}, {"group_type": "wrong_platform_candidate"}, {"group_type": "wrong_version_candidate"}, {"group_type": "parent_bundle_candidate"}, {"group_type": "member_candidate"}, {"group_type": "related_but_distinct_candidate"}
+  ],
+  "identity_clusters_are_provisional": true,
+  "accepted_identity_merge_enabled": false,
+  "representation_groups_preserve_source_specific_locators": true,
+  "parent_bundle_vs_member_stays_distinct": true
+}

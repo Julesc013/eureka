@@ -1,0 +1,12 @@
+{
+  "schema_version": "g0_contract_matrix.v0",
+  "task": "AIDE-BATCH-G0-QUALITY-FOUNDATION-01",
+  "families": [
+    {"family_id": "search_quality", "paths": ["contracts/search_quality/"], "purpose": "score signals and score breakdowns"},
+    {"family_id": "explanation", "paths": ["contracts/explanation/"], "purpose": "why/limitation/uncertainty packets"},
+    {"family_id": "identity", "paths": ["contracts/identity/"], "purpose": "provisional clusters, duplicates, near misses"},
+    {"family_id": "user_cost", "paths": ["contracts/user_cost/"], "purpose": "actionability and effort estimates"}
+  ],
+  "runtime_truth_created": false,
+  "validator_required": true
+}

@@ -1,0 +1,7 @@
+{
+  "schema_version": "g0_actionability_matrix.v0",
+  "actionability_levels": ["high", "medium", "medium_low", "low", "blocked"],
+  "allowed_read_only_actions": ["inspect", "explain", "request_review", "inspect_manifest", "explain_policy"],
+  "blocked_by_default": ["accept_evidence", "accept_identity_merge", "download", "extract", "execute", "call_model_provider", "mutate_master_index"],
+  "review_promote_operator_gated": true
+}

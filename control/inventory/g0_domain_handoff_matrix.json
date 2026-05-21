@@ -1,0 +1,8 @@
+{
+  "schema_version": "g0_domain_handoff_matrix.v0",
+  "domain_handoffs": [
+    {"handoff": "domain_promote_rules_to_score_signals", "source": "DOMAIN promote rules", "g0_signals": ["domain_promote_rule_match", "domain_fit"]},
+    {"handoff": "domain_suppress_rules_to_penalties", "source": "DOMAIN suppression rules", "g0_signals": ["domain_suppression_rule_match"]},
+    {"handoff": "domain_expected_lanes_to_explanation", "source": "DOMAIN result lanes", "g0_signals": ["user_cost_penalty", "blocked_action_penalty"]}
+  ]
+}

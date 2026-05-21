@@ -1,0 +1,10 @@
+{
+  "schema_version": "g0_future_ai_policy.v0",
+  "model_provider_enabled": false,
+  "future_ai_outputs_candidate_only": true,
+  "future_ai_scores_require_policy": true,
+  "future_ai_explanations_require_review": true,
+  "provider_credentials_allowed": false,
+  "raw_prompt_storage_allowed": false,
+  "raw_response_storage_allowed": false
+}

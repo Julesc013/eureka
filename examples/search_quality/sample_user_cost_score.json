@@ -1,0 +1,16 @@
+{
+  "schema_version": "user_cost_score.v0",
+  "record_type": "user_cost_score",
+  "user_cost_score_id": "g0_user_cost_sample",
+  "result_ref": "g0_result_f0_member_manifest",
+  "user_cost_class": "file_manifest_only",
+  "effort_estimate": 0.6,
+  "actionability_level": "low",
+  "allowed_actions": ["inspect_manifest"],
+  "blocked_actions": ["download", "extract"],
+  "future_workunit_seed": "review_member_manifest",
+  "uncertainty": "user cost is a deterministic estimate",
+  "limitations": ["does not perform action"],
+  "accepted_truth": false,
+  "review_required": true
+}

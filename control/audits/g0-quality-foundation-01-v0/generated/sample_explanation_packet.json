@@ -1,0 +1,13 @@
+{
+  "schema_version": "explanation_packet.v0",
+  "record_type": "explanation_packet",
+  "result_ref": "g0_result_reviewed_stylewriter_driver",
+  "why_result_appeared": ["fixture record matched query/domain context"],
+  "why_result_ranked_here": ["visible score decomposition"],
+  "why_result_is_limited": ["fixture-only explanation"],
+  "why_actions_are_blocked": ["unsafe actions remain blocked"],
+  "what_would_improve_confidence": ["future accepted evidence review"],
+  "what_remaining_work_exists": ["future production ranking policy"],
+  "accepted_truth": false,
+  "review_required": true
+}

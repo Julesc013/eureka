@@ -1,0 +1,8 @@
+{
+  "schema_version": "score_signal.v0",
+  "record_type": "score_signal",
+  "signal_id": "domain_fit",
+  "score": 0.12,
+  "accepted_truth": false,
+  "review_required": true
+}

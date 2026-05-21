@@ -1,0 +1,38 @@
+{
+  "schema_version": "g0_validation_matrix.v0",
+  "task": "AIDE-BATCH-G0-QUALITY-FOUNDATION-01",
+  "status": "pass",
+  "checks": [
+    {
+      "name": "test_selector",
+      "command": "python scripts/eureka_test_select.py --changed --failed-first --json",
+      "status": "pass"
+    },
+    {
+      "name": "g0_foundation",
+      "command": "python scripts/validate_g0_foundation.py",
+      "status": "pass"
+    },
+    {
+      "name": "focused_g0_tests",
+      "command": "python -m unittest tests.runtime.test_g0_foundation tests.runtime.test_g0_score_signals tests.runtime.test_g0_explanations tests.runtime.test_g0_identity_clusters tests.runtime.test_g0_user_cost tests.runtime.test_g0_workbench_console tests.operations.test_g0_scripts tests.operations.test_g0_smoke tests.scripts.test_validate_g0_foundation",
+      "status": "pass",
+      "count": 11
+    },
+    {
+      "name": "failed_first_repair_reruns",
+      "command": "python -m unittest tests.operations.test_local_auto_test_scripts tests.runtime.test_local_eval_suites && python -m unittest tests.operations.test_search_hunt_track",
+      "status": "pass"
+    },
+    {
+      "name": "full_unittest_discovery",
+      "command": "python -m unittest discover -s tests -t .",
+      "status": "pass",
+      "count": 4871,
+      "duration_seconds": 2611.646
+    }
+  ],
+  "full_unittest_discovery_passed": true,
+  "full_unittest_discovery_count": 4871,
+  "full_unittest_discovery_duration_seconds": 2611.646
+}

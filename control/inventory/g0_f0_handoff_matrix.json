@@ -1,0 +1,8 @@
+{
+  "schema_version": "g0_f0_handoff_matrix.v0",
+  "f0_handoffs": [
+    {"handoff": "member_manifest_to_score", "source": "F0 member manifest", "g0_signals": ["file_manifest_relevance", "member_path_relevance"]},
+    {"handoff": "blocked_extraction_to_explanation", "source": "F0 blocked action policy", "g0_outputs": ["blocked_action_explanation", "user_cost_score"]},
+    {"handoff": "fixture_manifest_only_to_user_cost", "source": "F0 safe fixture model", "g0_user_cost_class": "file_manifest_only"}
+  ]
+}

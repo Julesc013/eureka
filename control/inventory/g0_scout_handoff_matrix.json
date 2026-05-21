@@ -1,0 +1,8 @@
+{
+  "schema_version": "g0_scout_handoff_matrix.v0",
+  "scout_handoffs": [
+    {"handoff": "scout_relation_strength_to_score", "source": "SCOUT discovery trails", "g0_signals": ["scout_relation_strength"]},
+    {"handoff": "source_trust_observations_to_prior", "source": "SCOUT source trust", "g0_signals": ["source_trust_prior"]},
+    {"handoff": "scout_candidates_to_near_misses", "source": "SCOUT candidate trails", "g0_outputs": ["near_miss_candidate", "identity_cluster_candidate"]}
+  ]
+}

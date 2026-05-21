@@ -1,0 +1,9 @@
+{
+  "schema_version": "score_breakdown.v0",
+  "record_type": "score_breakdown",
+  "result_ref": "g0_result_reviewed_stylewriter_driver",
+  "score": 1.0,
+  "signals": ["runtime-generated during validation"],
+  "accepted_truth": false,
+  "review_required": true
+}

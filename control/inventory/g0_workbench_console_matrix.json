@@ -1,0 +1,18 @@
+{
+  "schema_version": "g0_workbench_console_matrix.v0",
+  "routes": ["/quality", "/quality/scores", "/quality/explanations", "/quality/identity", "/quality/near-misses", "/quality/user-cost", "/quality/blocked-actions"],
+  "views": [
+    {"view": "QualityOverviewView"},
+    {"view": "ScoreSignalView"},
+    {"view": "ScoreBreakdownView"},
+    {"view": "ExplanationPacketView"},
+    {"view": "IdentityClusterCandidateView"},
+    {"view": "NearMissView"},
+    {"view": "UserCostView"},
+    {"view": "ActionabilityView"},
+    {"view": "BlockedActionExplanationView"}
+  ],
+  "projections": ["operator_workbench", "public_web", "native_desktop_read_only"],
+  "read_only": true,
+  "public_projection_later": true
+}

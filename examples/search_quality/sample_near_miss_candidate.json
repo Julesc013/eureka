@@ -1,0 +1,12 @@
+{
+  "schema_version": "near_miss_candidate.v0",
+  "record_type": "near_miss_candidate",
+  "near_miss_id": "g0_near_miss_sample",
+  "result_ref": "g0_result_wrong_platform_near_miss",
+  "mismatch_reasons": ["wrong_platform_candidate"],
+  "explanation": "Candidate is related but targets a different platform.",
+  "uncertainty": "near miss label is provisional",
+  "limitations": ["not an exact result"],
+  "accepted_truth": false,
+  "review_required": true
+}

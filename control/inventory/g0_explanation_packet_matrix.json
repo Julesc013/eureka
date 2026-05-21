@@ -1,0 +1,10 @@
+{
+  "schema_version": "g0_explanation_packet_matrix.v0",
+  "explanation_factor_types": [
+    {"factor_type": "matched_query_term"}, {"factor_type": "matched_alias"}, {"factor_type": "matched_identifier"}, {"factor_type": "matched_domain_hint"}, {"factor_type": "matched_source_family"}, {"factor_type": "matched_metadata_field"}, {"factor_type": "matched_member_path"}, {"factor_type": "matched_scout_relation"}, {"factor_type": "reviewed_local_result"}, {"factor_type": "provisional_candidate"}, {"factor_type": "source_cache_only"}, {"factor_type": "needs_review"}, {"factor_type": "blocked_action"}, {"factor_type": "known_absence"}, {"factor_type": "near_miss"}, {"factor_type": "duplicate_candidate"}, {"factor_type": "uncertain_provenance"}, {"factor_type": "rights_unknown"}, {"factor_type": "safety_unknown"}
+  ],
+  "required_packet_sections": ["why_result_appeared", "why_result_ranked_here", "why_result_is_limited", "why_actions_are_blocked", "what_would_improve_confidence", "what_remaining_work_exists"],
+  "explanation_is_evidence": false,
+  "uncertainty_required": true,
+  "limitations_required": true
+}

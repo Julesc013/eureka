@@ -2,110 +2,111 @@
 
 ## PHASE
 
-AIDE-BATCH-F0-FOUNDATION-01
+AIDE-BATCH-G0-QUALITY-FOUNDATION-01
 
 ## GOAL
 
-Add the F0 extraction/member discovery policy and safe fixture foundation so Eureka can enumerate tiny committed fixture manifests and seed future review-gated WorkUnits without enabling broad extraction.
+Add deterministic fixture-only G0 foundations for ranking, explanation,
+identity grouping, near misses, user-cost/actionability scoring, and a read-only
+Workbench quality console model.
 
 ## WHY
 
-F0 creates the boundary layer needed before later member discovery, extraction policy, ranking, source-wave, and snapshot relay work. The foundation must prove that archive/member inspection remains fixture-only, manifest-only, candidate-only, and blocked by default.
+G0 gives Eureka transparent quality packets over Local/HUNT/PLAY/IA/Workbench,
+SYN, DOMAIN, SCOUT, and F0 records without creating truth, changing public
+ranking, accepting identity merges, or mutating indexes.
 
 ## CONTEXT_REFS
 
 - `AGENTS.md`
-- `.aide/queue/AIDE-BATCH-F0-FOUNDATION-01/task.yaml`
-- `.aide/queue/F0-00/task.yaml`
+- `.aide/queue/AIDE-BATCH-G0-QUALITY-FOUNDATION-01/task.yaml`
+- `.aide/queue/G0/task.yaml`
 - `.aide/queue/index.yaml`
+- `control/inventory/g0_foundation_result.json`
+- `control/audits/g0-quality-foundation-01-v0/`
 - `.aide/context/repo-map.json`
 - `.aide/context/test-map.json`
 - `.aide/context/context-index.json`
 - `.aide/context/latest-context-packet.md`
-- `control/inventory/f0_foundation_result.json`
-- `control/audits/f0-foundation-01-v0/`
-- `docs/architecture/F0_EXTRACTION_MEMBER_DISCOVERY.md`
-- `scripts/validate_f0_foundation.py`
+- `docs/architecture/G0_RANKING_EXPLANATION_QUALITY.md`
+- `runtime/local_eval/g0_quality.py`
+- `scripts/validate_g0_foundation.py`
 
 ## ALLOWED_PATHS
 
-- `.aide/queue/AIDE-BATCH-F0-FOUNDATION-01/**`
-- `.aide/queue/F0-00/task.yaml`
+- `.aide/queue/AIDE-BATCH-G0-QUALITY-FOUNDATION-01/**`
 - `.aide/queue/G0/task.yaml`
 - `.aide/queue/SOURCE-WAVE-00/task.yaml`
-- `.aide/queue/SNAPSHOT-RELAY-00/**`
+- `.aide/queue/SNAPSHOT-RELAY-00/task.yaml`
+- `.aide/queue/WORKBENCH-QUALITY-CONSOLE-01/task.yaml`
+- `.aide/queue/WORKBENCH-QUALITY-CONSOLE-01/**`
 - `.aide/queue/index.yaml`
 - `.aide/context/latest-task-packet.md`
 - `.aide/context/latest-review-packet.md`
 - `.aide/reports/eureka-repo-health.json`
 - `.aide/reports/eureka-repo-health.md`
-- `contracts/extraction/**`
-- `contracts/workunits/**`
-- `contracts/domain/**`
-- `contracts/scout/**`
-- `contracts/syn/**`
+- `contracts/search_quality/**`
+- `contracts/ranking/**`
+- `contracts/explanation/**`
+- `contracts/identity/**`
+- `contracts/user_cost/**`
 - `contracts/search_interaction/**`
 - `contracts/workbench/**`
 - `contracts/view_models/**`
+- `contracts/domain/**`
+- `contracts/scout/**`
+- `contracts/syn/**`
+- `contracts/extraction/**`
 - `runtime/local_eval/**`
 - `runtime/local_workbench/**`
 - `runtime/local_service/**`
-- `runtime/workunit_queue/**`
-- `runtime/search_need/**`
 - `runtime/search_hunt/**`
+- `runtime/search_need/**`
+- `runtime/workunit_queue/**`
+- `runtime/public_index/**`
+- `runtime/candidate_index/**`
+- `runtime/source_cache/**`
+- `runtime/evidence_ledger/**`
+- `runtime/review_queue/**`
 - `runtime/extraction_safe_fixtures/**`
-- `examples/extraction/**`
+- `examples/search_quality/**`
+- `examples/ranking/**`
+- `examples/explanation/**`
+- `examples/identity/**`
+- `examples/user_cost/**`
 - `examples/f0/**`
-- `examples/domain/**`
 - `examples/scout/**`
+- `examples/domain/**`
 - `examples/syn/**`
 - `examples/ia_hunt_bridge/**`
 - `examples/workbench/result_lanes/**`
-- `evals/extraction/**`
+- `evals/search_quality/**`
+- `evals/ranking/**`
+- `evals/explanation/**`
+- `evals/identity/**`
+- `evals/user_cost/**`
 - `evals/f0/**`
-- `evals/domain/**`
 - `evals/scout/**`
+- `evals/domain/**`
 - `evals/syn/**`
-- `scripts/eureka_f0_manifest.py`
-- `scripts/eureka_f0_fixture_builder.py`
-- `scripts/eureka_f0_workunit_seed.py`
-- `scripts/eureka_f0_smoke.py`
+- `scripts/eureka_g0_*.py`
+- `scripts/validate_g0_foundation.py`
 - `scripts/validate_f0_foundation.py`
-- `scripts/audit_hunt_main_promotion.py`
-- `scripts/hunt_queue_progress.py`
-- `scripts/local_queue_progress.py`
-- `scripts/validate_contract_taxonomy_plan.py`
-- `scripts/validate_hunt_main_promotion.py`
-- `scripts/validate_hunt_remediation.py`
-- `scripts/validate_hunt_remediation_continue.py`
-- `scripts/validate_local_appliance_track.py`
-- `scripts/validate_search_hunt_closeout.py`
 - `scripts/validate_scout_schema.py`
 - `scripts/validate_domain_packs.py`
 - `scripts/validate_syn_foundry.py`
 - `scripts/eureka_test_select.py`
-- `tests/runtime/test_f0_foundation.py`
-- `tests/runtime/test_f0_safe_fixture_manifest.py`
-- `tests/runtime/test_f0_member_manifest.py`
-- `tests/runtime/test_f0_resource_policy.py`
-- `tests/runtime/test_f0_workunit_seed.py`
-- `tests/operations/test_f0_scripts.py`
-- `tests/operations/test_f0_smoke.py`
+- `tests/runtime/test_g0_*.py`
+- `tests/operations/test_g0_*.py`
 - `tests/operations/test_search_hunt_track.py`
-- `tests/scripts/test_validate_f0_foundation.py`
-- `control/policies/f0_extraction_policy.json`
-- `control/policies/f0_fixture_policy.json`
-- `control/policies/f0_resource_limit_policy.json`
-- `control/policies/f0_member_manifest_policy.json`
-- `control/policies/f0_non_claim_policy.json`
-- `control/policies/f0_future_fetch_policy.json`
-- `control/policies/f0_future_ai_policy.json`
-- `control/inventory/f0_*.json`
-- `docs/architecture/F0_*.md`
-- `docs/operations/F0_FOUNDATION_RUNBOOK.md`
-- `docs/operations/POST_F0_FOUNDATION_PLAN.md`
-- `docs/reference/F0_*.md`
-- `control/audits/f0-foundation-01-v0/**`
+- `tests/scripts/test_validate_g0_foundation.py`
+- `control/policies/g0_*.json`
+- `control/inventory/g0_*.json`
+- `docs/architecture/G0_*.md`
+- `docs/operations/G0_FOUNDATION_RUNBOOK.md`
+- `docs/operations/POST_G0_FOUNDATION_PLAN.md`
+- `docs/reference/G0_*.md`
+- `control/audits/g0-quality-foundation-01-v0/**`
 
 ## FORBIDDEN_PATHS
 
@@ -118,7 +119,6 @@ F0 creates the boundary layer needed before later member discovery, extraction p
 - `data/public_index/**`
 - `runtime/connectors/**`
 - `runtime/extraction/**`
-- `runtime/search_quality/**`
 - `native/**`
 - `crates/**`
 - private local files
@@ -128,96 +128,57 @@ F0 creates the boundary layer needed before later member discovery, extraction p
 - raw responses
 - raw live IA response bodies
 
-## IMPLEMENTATION
-
-- Added F0 policies, contracts, matrices, examples, docs, and audit evidence.
-- Added `runtime/extraction_safe_fixtures/` with read-only fixture helpers.
-- Added F0 CLIs and validator.
-- Added focused runtime, operation, smoke, and validator tests.
-- Kept unsafe/pathological fixtures as descriptors rather than dangerous archives.
-
-## VALIDATION
-
-- `python scripts/eureka_test_select.py --changed --failed-first --json`
-- `python scripts/validate_f0_foundation.py`
-- `python scripts/validate_scout_schema.py`
-- `python scripts/validate_domain_packs.py`
-- `python scripts/validate_syn_foundry.py`
-- `python scripts/validate_ia_hunt_bridge.py`
-- `python scripts/validate_workbench_result_lanes.py`
-- `python scripts/validate_search_interaction_contract.py`
-- `python scripts/validate_workbench_foundation.py`
-- `python scripts/validate_test_lane_policy.py`
-- `python scripts/validate_contract_taxonomy.py`
-- `python scripts/validate_repo_structure_canon.py`
-- `python -m unittest tests.runtime.test_f0_foundation`
-- `python -m unittest tests.runtime.test_f0_safe_fixture_manifest`
-- `python -m unittest tests.runtime.test_f0_member_manifest`
-- `python -m unittest tests.runtime.test_f0_resource_policy`
-- `python -m unittest tests.runtime.test_f0_workunit_seed`
-- `python -m unittest tests.operations.test_f0_scripts`
-- `python -m unittest tests.operations.test_f0_smoke`
-- `python -m unittest tests.scripts.test_validate_f0_foundation`
-- `python scripts/check_architecture_boundaries.py`
-- `python .aide/scripts/aide_lite.py doctor`
-- `python .aide/scripts/aide_lite.py validate`
-- `python .aide/scripts/aide_lite.py test`
-- `python .aide/scripts/aide_lite.py selftest`
-- `python .aide/scripts/aide_lite.py verify`
-- `python .aide/scripts/aide_lite.py review-pack`
-- `python -m unittest discover -s tests -t .`
-- `git diff --check`
-
-## COMMITS
-
-- Planned: `feat(f0): add extraction member discovery foundation`
-
-## EVIDENCE
-
-- `control/inventory/f0_validation_matrix.json`
-- `control/inventory/f0_foundation_result.json`
-- `control/audits/f0-foundation-01-v0/f0_foundation_report.json`
-- `control/audits/f0-foundation-01-v0/generated/`
-
 ## NON_GOALS
 
-- no live source calls
-- no source probes
-- no downloads/uploads
-- no filesystem extraction
-- no arbitrary file extraction
-- no execution/install/emulation
-- no model/provider calls
-- no public fanout
-- no operator instance mutation
-- no master/public index mutation
-- no fake evidence
-- no fake verified records
-- no production readiness claim
-- no public launch readiness claim
-- no broad extraction runtime
-- no G0 ranking implementation
-- no source expansion implementation
+- No production ranking engine.
+- No accepted identity merge.
+- No evidence or reviewed-record creation.
+- No live source calls, source probes, downloads, extraction, execution, model/provider calls, or deployment.
+- No operator instance, public index, or master index mutation.
+- No production readiness or public launch claim.
+
+## IMPLEMENTATION
+
+- Added G0 policies, contracts, matrices, examples, docs, and audit evidence.
+- Added `runtime/local_eval/g0_quality.py` with read-only deterministic helpers.
+- Added G0 CLIs and validator.
+- Added focused runtime, operation, smoke, and validator tests.
 
 ## ACCEPTANCE
 
-- F0 contracts, policies, matrices, fixtures, runtime helpers, scripts, tests, docs, audit pack, and queue metadata are present.
-- Safe ZIP manifest enumeration passes.
-- Unsafe descriptor blocks pass.
-- WorkUnit seed output is dry-run only.
-- Operator, public, and native read-only smoke projections pass.
-- Cross-stack validators pass.
-- Full unittest discovery passes if practical.
-- Working tree is clean after commit.
+- G0 contracts, policies, matrices, examples, docs, scripts, and tests are present.
+- Score breakdowns, explanation packets, provisional identity clusters, near misses, and user-cost scores validate.
+- Operator, public, and native read-only console projections pass smoke checks.
+- Full unittest discovery passes for closeout.
+- Boundary flags remain false for fake evidence, fake verified records, accepted identity merge, source probes, live calls, downloads, extraction, model/provider calls, index mutation, deployment, and production/public launch claims.
+
+## VALIDATION
+
+- `python scripts/validate_g0_foundation.py`
+- G0 focused tests
+- selected test lane router
+- global validators
+- full discovery at closeout when practical
 
 ## OUTPUT_SCHEMA
 
-Return final report with `STATUS`, `SUMMARY`, `COMMITS`, `F0_FOUNDATION`, `VALIDATION`, `PUSH`, `BOUNDARIES`, and `NEXT_TASK`.
+- Result: `control/inventory/g0_foundation_result.json`
+- Validation matrix: `control/inventory/g0_validation_matrix.json`
+- Next task decision: `control/inventory/g0_foundation_next_task_decision.json`
+- Audit report: `control/audits/g0-quality-foundation-01-v0/g0_foundation_report.json`
 
 ## TOKEN_ESTIMATE
 
-- method: chars / 4, rounded up
-- approx_tokens: 1800
-- budget_status: PASS
-- warnings:
-  - none
+- Latest task packet: compact handoff-sized packet, under AIDE Lite validation budget.
+- Latest review packet: generated by `python .aide/scripts/aide_lite.py review-pack`.
+
+## COMMITS
+
+- Planned: `feat(g0): add quality explanation foundation`
+
+## EVIDENCE
+
+- `control/inventory/g0_validation_matrix.json`
+- `control/inventory/g0_foundation_result.json`
+- `control/audits/g0-quality-foundation-01-v0/g0_foundation_report.json`
+- `control/audits/g0-quality-foundation-01-v0/generated/`

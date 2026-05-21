@@ -1,0 +1,8 @@
+id: AIDE-BATCH-G0-QUALITY-FOUNDATION-01
+title: Ranking, explanation, identity, and user-cost scoring foundation
+status: completed
+purpose: Add deterministic fixture-only G0 score, explanation, identity, near-miss, user-cost, and Workbench quality-console foundations.
+allowed_scope_summary: G0 policies, contracts, local-eval helpers, examples, scripts, tests, docs, audit evidence, and AIDE queue/context metadata.
+gate: No production ranking, accepted identity merge, fake evidence, live source calls, source probes, downloads, extraction, model/provider calls, operator instance mutation, master-index mutation, deployment, production readiness claim, or public launch claim.
+recommended_after: F0-00
+recommended_next: SOURCE-WAVE-00

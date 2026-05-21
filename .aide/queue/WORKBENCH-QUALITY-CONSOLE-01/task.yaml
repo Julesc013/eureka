@@ -1,0 +1,7 @@
+id: WORKBENCH-QUALITY-CONSOLE-01
+title: Workbench quality console implementation
+status: queued
+purpose: Future implementation of a Workbench quality console over G0 score, explanation, identity, near-miss, and user-cost packets.
+allowed_scope_summary: Future task must provide reviewed UI/runtime scope before implementation.
+gate: G0 foundation must be complete; no production ranking, public search ranking claim, source probe, extraction, model/provider call, deployment, production readiness claim, or public launch claim by default.
+recommended_after: SOURCE-WAVE-00

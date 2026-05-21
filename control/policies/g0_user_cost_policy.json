@@ -1,0 +1,10 @@
+{
+  "schema_version": "g0_user_cost_policy.v0",
+  "user_cost_is_estimate": true,
+  "actionability_is_not_availability_claim": true,
+  "installability_claim_enabled": false,
+  "download_enabled": false,
+  "execution_enabled": false,
+  "blocked_actions_visible": true,
+  "review_required": true
+}

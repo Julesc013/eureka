@@ -1,0 +1,22 @@
+{
+  "schema_version": "g0_quality_eval_manifest.v0",
+  "task": "AIDE-BATCH-G0-QUALITY-FOUNDATION-01",
+  "fixture": "examples/search_quality/sample_quality_fixture.json",
+  "cases": [
+    "reviewed local hit",
+    "provisional IA metadata candidate",
+    "source-cache-only result",
+    "near miss wrong platform",
+    "parent bundle versus member candidate",
+    "F0 member manifest-only result",
+    "SCOUT relation candidate",
+    "blocked download action",
+    "known absence"
+  ],
+  "non_claims": {
+    "fake_evidence_created": false,
+    "fake_verified_records_created": false,
+    "accepted_identity_merge_created": false,
+    "model_provider_used": false
+  }
+}

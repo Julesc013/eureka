@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (7544 chars, 1886 approximate tokens)
+- `.aide/context/latest-task-packet.md` (5874 chars, 1469 approximate tokens)
 
 ## Context Packet Reference
 
@@ -35,29 +35,29 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/AIDE-BATCH-F0-FOUNDATION-01` (??; matches active task allowed path)
-- allowed: `.aide/queue/F0-00/task.yaml` (M; matches active task allowed path)
+- allowed: `.aide/queue/AIDE-BATCH-G0-QUALITY-FOUNDATION-01` (??; matches active task allowed path)
 - allowed: `.aide/queue/G0/task.yaml` (M; matches active task allowed path)
-- allowed: `.aide/queue/SNAPSHOT-RELAY-00` (??; matches active task allowed path)
+- allowed: `.aide/queue/SOURCE-WAVE-00/task.yaml` (M; matches active task allowed path)
+- allowed: `.aide/queue/WORKBENCH-QUALITY-CONSOLE-01` (??; matches active task allowed path)
 - allowed: `.aide/queue/index.yaml` (M; matches active task allowed path)
 - allowed: `.aide/reports/eureka-repo-health.json` (M; matches active task allowed path)
 - allowed: `.aide/reports/eureka-repo-health.md` (M; matches active task allowed path)
-- allowed: `contracts/extraction/README.md` (M; matches active task allowed path)
-- allowed: `contracts/extraction/container_descriptor.v0.json` (??; matches active task allowed path)
-- allowed: `contracts/extraction/extraction_boundary_report.v0.json` (??; matches active task allowed path)
-- allowed: `contracts/extraction/extraction_console_view.v0.json` (??; matches active task allowed path)
-- allowed: `contracts/extraction/extraction_fixture_manifest.v0.json` (??; matches active task allowed path)
-- allowed: `contracts/extraction/extraction_risk_report.v0.json` (??; matches active task allowed path)
-- allowed: `contracts/extraction/extraction_workunit_seed.v0.json` (M; matches active task allowed path)
-- allowed: `contracts/extraction/member_manifest.v0.json` (??; matches active task allowed path)
-- allowed: `contracts/extraction/member_observation_candidate.v0.json` (??; matches active task allowed path)
-- allowed: `contracts/extraction/member_record.v0.json` (??; matches active task allowed path)
-- allowed: `control/audits/f0-foundation-01-v0` (??; matches active task allowed path)
-- allowed: `control/inventory/f0_blocked_container_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/f0_contract_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/f0_domain_handoff_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/f0_failure_repair_log.json` (??; matches active task allowed path)
-- additional changed paths omitted from compact packet: 52; see task evidence changed-files report
+- allowed: `contracts/explanation` (??; matches active task allowed path)
+- allowed: `contracts/identity/README.md` (M; matches active task allowed path)
+- allowed: `contracts/identity/duplicate_candidate.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/identity/identity_cluster_candidate.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/identity/near_miss_candidate.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/identity/representation_group.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/search_quality` (??; matches active task allowed path)
+- allowed: `contracts/user_cost` (??; matches active task allowed path)
+- allowed: `control/audits/g0-quality-foundation-01-v0` (??; matches active task allowed path)
+- allowed: `control/inventory/g0_actionability_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/g0_contract_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/g0_domain_handoff_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/g0_explanation_packet_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/g0_f0_handoff_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/g0_failure_repair_log.json` (??; matches active task allowed path)
+- additional changed paths omitted from compact packet: 54; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -67,8 +67,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 6596
-- approx_tokens: 1649
+- chars: 6518
+- approx_tokens: 1630
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:
