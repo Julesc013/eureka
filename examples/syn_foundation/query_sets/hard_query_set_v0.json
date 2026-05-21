@@ -1,0 +1,161 @@
+{
+  "schema_version": "synthetic_query_set.v0",
+  "query_set_id": "syn.query_set.hard.v0",
+  "query_set_status": "example_only",
+  "split_label": "hard",
+  "stack_scope": [
+    "HUNT",
+    "PLAY",
+    "WORKBENCH_RESULT_LANES"
+  ],
+  "query_cases": [
+    {
+      "schema_version": "synthetic_query_case.v0",
+      "query_case_id": "syn.case.hard.stylewriter2500.v0",
+      "query_text": "StyleWriter 2500 Mac OS 8 driver",
+      "query_family": "play_demo_need",
+      "difficulty_band": "hard",
+      "source_expectation": "review_queue_seed",
+      "stack_targets": [
+        "HUNT",
+        "PLAY",
+        "WORKBENCH_RESULT_LANES"
+      ],
+      "expected_lanes": [
+        "blocked_actions",
+        "future_extraction_work",
+        "deferred_deepening"
+      ],
+      "expected_search_need_seed_refs": [
+        "syn.search_need_seed.hard.stylewriter2500.v0"
+      ],
+      "expected_workunit_seed_refs": [
+        "syn.workunit_seed.hard.stylewriter2500.source_policy.v0"
+      ],
+      "review_required": true,
+      "limitations": [
+        "No driver source, download, extraction, or compatibility claim."
+      ]
+    },
+    {
+      "schema_version": "synthetic_query_case.v0",
+      "query_case_id": "syn.case.hard.directx2010.v0",
+      "query_text": "DirectX SDK June 2010 offline installer",
+      "query_family": "play_demo_need",
+      "difficulty_band": "hard",
+      "source_expectation": "review_queue_seed",
+      "stack_targets": [
+        "HUNT",
+        "PLAY",
+        "WORKBENCH_RESULT_LANES"
+      ],
+      "expected_lanes": [
+        "blocked_actions",
+        "deferred_deepening"
+      ],
+      "expected_search_need_seed_refs": [
+        "syn.search_need_seed.hard.directx2010.v0"
+      ],
+      "expected_workunit_seed_refs": [
+        "syn.workunit_seed.hard.directx2010.policy_review.v0"
+      ],
+      "review_required": true,
+      "limitations": [
+        "No rights, safety, source, or acquisition claim."
+      ]
+    },
+    {
+      "schema_version": "synthetic_query_case.v0",
+      "query_case_id": "syn.case.hard.firefoxxp.v0",
+      "query_text": "last Firefox for Windows XP",
+      "query_family": "hunt_absence_pressure",
+      "difficulty_band": "hard",
+      "source_expectation": "deferred_for_future_task",
+      "stack_targets": [
+        "HUNT",
+        "PLAY",
+        "WORKBENCH_RESULT_LANES"
+      ],
+      "expected_lanes": [
+        "known_absence",
+        "deferred_deepening"
+      ],
+      "expected_search_need_seed_refs": [
+        "syn.search_need_seed.hard.firefoxxp.v0"
+      ],
+      "expected_workunit_seed_refs": [
+        "syn.workunit_seed.hard.firefoxxp.evidence_review.v0"
+      ],
+      "review_required": true,
+      "limitations": [
+        "No compatibility truth is accepted."
+      ]
+    },
+    {
+      "schema_version": "synthetic_query_case.v0",
+      "query_case_id": "syn.case.hard.dtheater.v0",
+      "query_text": "New York 1993 D-Theater HD demo tape original source",
+      "query_family": "play_demo_need",
+      "difficulty_band": "hard",
+      "source_expectation": "deferred_for_future_task",
+      "stack_targets": [
+        "HUNT",
+        "PLAY",
+        "WORKBENCH_RESULT_LANES"
+      ],
+      "expected_lanes": [
+        "blocked_actions",
+        "deferred_deepening"
+      ],
+      "expected_search_need_seed_refs": [
+        "syn.search_need_seed.hard.dtheater.v0"
+      ],
+      "expected_workunit_seed_refs": [
+        "syn.workunit_seed.hard.dtheater.research_policy.v0"
+      ],
+      "review_required": true,
+      "limitations": [
+        "No media provenance claim and no model/provider escalation."
+      ]
+    }
+  ],
+  "quality_objectives": [
+    "Keep legacy software/media hard questions pressure-testing HUNT without opening source work.",
+    "Preserve blocked and deferred lanes for policy-gated future work."
+  ],
+  "expected_result_lane_kinds": [
+    "known_absence",
+    "blocked_actions",
+    "deferred_deepening",
+    "future_extraction_work"
+  ],
+  "seed_bridge_refs": [
+    "examples/syn_foundation/synthetic_to_search_need_seeds_v0.json",
+    "examples/syn_foundation/synthetic_to_workunit_seeds_v0.json"
+  ],
+  "limitations": [
+    "Fixture-only query set; no runtime synthetic generation."
+  ],
+  "no_claims": {
+    "production_search_quality": false,
+    "user_demand_observed": false,
+    "result_truth_created": false
+  },
+  "runtime_capability_boundary": {
+    "runtime_query_logged": false,
+    "runtime_search_need_created": false,
+    "runtime_workunit_created": false,
+    "source_probe_executed": false,
+    "live_ia_call_performed": false,
+    "download_performed": false,
+    "upload_performed": false,
+    "extraction_executed": false,
+    "model_provider_used": false,
+    "master_index_mutated": false,
+    "operator_instance_mutated": false,
+    "public_search_behavior_changed": false,
+    "deployment_performed": false,
+    "production_readiness_claimed": false,
+    "public_launch_readiness_claimed": false
+  }
+}

@@ -1,5 +1,5 @@
 {
-  "contract_count": 664,
+  "contract_count": 666,
   "contracts": [
     {
       "contract_class": "source_policy_contract",
@@ -4776,6 +4776,70 @@
         "suffix:.json"
       ],
       "target_path": "contracts/runtime/search_quality_query_set.v0.json",
+      "target_root": "contracts/runtime/"
+    },
+    {
+      "contract_class": "product_runtime_contract",
+      "current_root": "contracts/query/",
+      "maturity": "stable_boundary_candidate",
+      "notes": [
+        "SYN-00 synthetic query pressure contract; examples only, no runtime query logs or source execution."
+      ],
+      "path": "contracts/query/synthetic_query_case.v0.json",
+      "recommended_action": "move",
+      "references": [
+        "contracts/query/README.md",
+        "docs/architecture/SYNTHETIC_QUERY_FOUNDRY.md",
+        "docs/operations/SYN_FOUNDATION_RUNBOOK.md",
+        "examples/syn_foundation/query_sets/demo_query_set_v0.json",
+        "scripts/validate_syn_foundation.py",
+        "tests/operations/test_syn_foundation.py",
+        "tests/scripts/test_validate_syn_foundation.py"
+      ],
+      "risks": [
+        "references_require_update",
+        "compatibility_shim_required"
+      ],
+      "signals": [
+        "runtime_contract_path",
+        "synthetic_query_contract",
+        "size:1947",
+        "suffix:.json"
+      ],
+      "target_path": "contracts/runtime/synthetic_query_case.v0.json",
+      "target_root": "contracts/runtime/"
+    },
+    {
+      "contract_class": "product_runtime_contract",
+      "current_root": "contracts/query/",
+      "maturity": "stable_boundary_candidate",
+      "notes": [
+        "SYN-00 synthetic query set contract; deterministic examples only, no runtime query logs or public search behavior."
+      ],
+      "path": "contracts/query/synthetic_query_set.v0.json",
+      "recommended_action": "move",
+      "references": [
+        "contracts/query/README.md",
+        "docs/architecture/SYNTHETIC_QUERY_FOUNDRY.md",
+        "docs/operations/SYN_FOUNDATION_RUNBOOK.md",
+        "examples/syn_foundation/query_sets/adversarial_query_set_v0.json",
+        "examples/syn_foundation/query_sets/demo_query_set_v0.json",
+        "examples/syn_foundation/query_sets/hard_query_set_v0.json",
+        "scripts/validate_syn_foundation.py",
+        "tests/operations/test_syn_foundation.py",
+        "tests/scripts/test_validate_syn_foundation.py"
+      ],
+      "risks": [
+        "references_require_update",
+        "compatibility_shim_required"
+      ],
+      "signals": [
+        "runtime_contract_path",
+        "synthetic_query_contract",
+        "size:1390",
+        "suffix:.json"
+      ],
+      "target_path": "contracts/runtime/synthetic_query_set.v0.json",
       "target_root": "contracts/runtime/"
     },
     {

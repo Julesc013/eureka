@@ -68,6 +68,13 @@ Current contracts:
   regression contracts. They score local proposals without changing public
   ranking/search behavior, merging identities, deleting duplicates, accepting
   truth, or opening the public ranking gate.
+- `synthetic_query_case.v0.json` and `synthetic_query_set.v0.json`: example-only
+  Synthetic Query Foundry foundation contracts. They define deterministic demo,
+  hard, and adversarial pressure cases over LOCAL, HUNT, PLAY, IA metadata,
+  Workbench result lanes, and the IA-HUNT bridge without creating runtime query
+  logs, accepted evidence, SearchNeeds, WorkUnits, source probes, extraction,
+  model calls, public search behavior changes, or production/public launch
+  claims.
 
 Query intelligence follows "fast learning, slow truth": public queries may
 eventually inform aggregate learning, but they must not mutate authoritative

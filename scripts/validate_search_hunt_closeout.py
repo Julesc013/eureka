@@ -302,7 +302,7 @@ def validate_queue(root: Path, errors: list[str]) -> None:
     text = index.read_text(encoding="utf-8") if index.is_file() else ""
     if not queue_preserves_hunt_handoff(root, text):
         errors.append(
-            "queue current_recommended_task must be SYN-00, gated HUNT-TO-MAIN-PROMOTION-REVIEW, "
+            "queue current_recommended_task must be SYN-00, DOMAIN-00, gated HUNT-TO-MAIN-PROMOTION-REVIEW, "
             "or an accepted post-HUNT Workbench/IA bridge handoff"
         )
     for rel in (
@@ -317,6 +317,10 @@ def validate_queue(root: Path, errors: list[str]) -> None:
 
 def queue_preserves_hunt_handoff(root: Path, queue_text: str) -> bool:
     if "current_recommended_task: SYN-00" in queue_text:
+        return True
+    if "current_recommended_task: DOMAIN-00" in queue_text:
+        return True
+    if "current_recommended_task: SCOUT-SCHEMA-00" in queue_text:
         return True
     if (
         "current_recommended_task: DEV-AND-IA-" in queue_text

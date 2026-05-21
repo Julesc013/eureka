@@ -1,0 +1,26 @@
+{
+  "schema_version": "syn_seed_bridge_matrix.v0",
+  "task": "SYN-00",
+  "status": "active",
+  "seed_bridge_files": [
+    "examples/syn_foundation/synthetic_to_search_need_seeds_v0.json",
+    "examples/syn_foundation/synthetic_to_workunit_seeds_v0.json"
+  ],
+  "source_contracts": [
+    "contracts/query/synthetic_query_case.v0.json",
+    "contracts/query/synthetic_query_set.v0.json"
+  ],
+  "target_contracts": [
+    "contracts/query/search_need_seed.v0.json",
+    "contracts/query/workunit_seed.v0.json"
+  ],
+  "bridge_rules": [
+    "Every query case may propose a review-gated SearchNeed seed.",
+    "Every SearchNeed seed may propose blocked, deferred, or review-only WorkUnit seeds.",
+    "No seed is accepted as runtime SearchNeed or runtime WorkUnit by this batch.",
+    "No seed can execute source probes, extraction, downloads, model calls, or deployment."
+  ],
+  "runtime_search_need_created": false,
+  "runtime_workunit_created": false,
+  "master_index_mutated": false
+}

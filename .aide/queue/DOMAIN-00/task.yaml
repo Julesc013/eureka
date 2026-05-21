@@ -1,10 +1,10 @@
 id: DOMAIN-00
 title: DOMAIN pack console and contracts
 status: queued
-purpose: Reserved follow-up after WORKBENCH-FOUNDATION-00.
+purpose: Follow-up after SYN-00 to define DOMAIN pack console and contracts over the pressure-query foundation.
 allowed_scope_summary: Future task must provide its own reviewed scope before implementation.
 gate:
   - no production/public launch claim by default
   - no unsafe actions unless future policy enables them
-recommended_after: WORKBENCH-FOUNDATION-00
+recommended_after: SYN-00
 recommended_next: SCOUT-SCHEMA-00

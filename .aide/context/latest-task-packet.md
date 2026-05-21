@@ -2,15 +2,15 @@
 
 ## PHASE
 
-AIDE-BATCH-IA-HUNT-WORKBENCH-01 - IA-HUNT-BRIDGE-00
+UNSPECIFIED - DOMAIN-00
 
 ## GOAL
 
-Implement the local IA metadata to Hunt, WorkUnit, and Workbench result-lane bridge.
+DOMAIN-00
 
 ## WHY
 
-Connect the existing IA metadata pilot pieces to Search Hunt, IA WorkUnits, temp-instance proof writes, and Workbench result-lane projections without live IA calls, source probes, downloads, extraction, model/provider calls, deployment, operator-instance mutation, or production/public launch claims.
+Continue AIDE token survival by using repo-local context refs, compact objectives, deterministic validation, and evidence packets instead of long chat history.
 
 ## CONTEXT_REFS
 
@@ -44,48 +44,7 @@ Connect the existing IA metadata pilot pieces to Search Hunt, IA WorkUnits, temp
 
 - `.aide/**`
 - `AGENTS.md`
-- `runtime/search_hunt/**`
-- `runtime/search_need/**`
-- `runtime/workunit_queue/**`
-- `runtime/source_observation/**`
-- `runtime/source_cache/**`
-- `runtime/evidence_ledger/**`
-- `runtime/candidate_index/**`
-- `runtime/candidate_store/**`
-- `runtime/review_queue/**`
-- `runtime/public_index/**`
-- `runtime/local_workbench/**`
-- `runtime/local_service/**`
-- `runtime/local_eval/**`
-- `surfaces/web/workbench/**`
-- `surfaces/api/**`
-- `contracts/search_interaction/**`
-- `contracts/workbench/**`
-- `contracts/view_models/**`
-- `contracts/projections/**`
-- `contracts/workunits/**`
-- `contracts/sources/**`
-- `contracts/source_cache/**`
-- `contracts/evidence/**`
-- `contracts/candidates/**`
-- `contracts/review/**`
-- `scripts/eureka_ia_hunt_bridge.py`
-- `scripts/eureka_workbench_result_lanes.py`
-- `scripts/validate_ia_hunt_bridge.py`
-- `scripts/validate_workbench_result_lanes.py`
-- `scripts/validate_search_interaction_contract.py`
-- `scripts/eureka_test_select.py`
-- `tests/runtime/test_ia_hunt_bridge.py`
-- `tests/runtime/test_ia_hunt_workunits.py`
-- `tests/runtime/test_ia_hunt_result_lanes.py`
-- `tests/runtime/test_workbench_result_lanes.py`
-- `tests/operations/test_ia_hunt_bridge_scripts.py`
-- `tests/operations/test_ia_hunt_bridge_smoke.py`
-- `tests/scripts/test_validate_ia_hunt_bridge.py`
-- `examples/ia_hunt_bridge/**`
-- `examples/workbench/result_lanes/**`
 - `docs/operations/**`
-- `docs/architecture/IA_HUNT_BRIDGE.md`
 - `docs/reference/**`
 - `control/inventory/**`
 - `control/audits/**`
@@ -105,23 +64,24 @@ Connect the existing IA metadata pilot pieces to Search Hunt, IA WorkUnits, temp
 - `.local/**`
 - `.cache/**`
 - `eureka-instance/**`
+- `runtime/**`
+- `contracts/**`
+- `surfaces/**`
 - `site/**`
 - `native/**`
 - `crates/**`
+- `examples/**`
 - `evals/**`
-- `runtime/connectors/**`
-- `runtime/extraction/**`
-- `runtime/search_quality/**`
-- `data/public_index/**`
-- `instances/**`
+- `tests/**` unless this is an AIDE/control-plane test repair
+- `scripts/**` unless this is an AIDE validator/check repair
 - raw provider credentials, API keys, local caches, raw prompt logs, raw responses, and source AIDE repository state
 
 ## IMPLEMENTATION
 
 - Read the queue packet and relevant repo refs first.
 - Keep changes inside the allowed paths.
-- Implement the bridge as an orchestrator over existing IA metadata pieces.
-- Preserve generated/manual boundaries and temp-instance-only write posture.
+- Make the smallest coherent diff that satisfies acceptance.
+- Preserve generated/manual boundaries.
 - Do not inline whole source files unless exact contents are required.
 - Use exact refs such as `path#Lstart-Lend` when file details are load-bearing.
 
@@ -132,7 +92,7 @@ Connect the existing IA metadata pilot pieces to Search Hunt, IA WorkUnits, temp
 - `py -3 .aide/scripts/aide_lite.py snapshot`
 - `py -3 .aide/scripts/aide_lite.py index`
 - `py -3 .aide/scripts/aide_lite.py context`
-- `py -3 .aide/scripts/aide_lite.py pack --task "IA-HUNT-BRIDGE-00"`
+- `py -3 .aide/scripts/aide_lite.py pack --task "AIDE-EVAL-GREEN-01"`
 - `py -3 .aide/scripts/aide_lite.py test`
 - `py -3 .aide/scripts/aide_lite.py selftest`
 - `py -3 .aide/scripts/aide_lite.py verify`
@@ -160,14 +120,14 @@ Connect the existing IA metadata pilot pieces to Search Hunt, IA WorkUnits, temp
 
 ## NON_GOALS
 
-- No live IA calls by default.
-- No source probes, downloads, extraction, model/provider calls, deployment, production-readiness claim, public-launch claim, main promotion, force-push, history rewrite, SYN implementation, DOMAIN/SCOUT implementation, or F0 implementation.
-- No operator instance mutation, master-index mutation, committed public-index mutation, public fanout, or full Archive.org integration claim.
+- No Eureka product behavior change.
+- No source probes, extraction, model/provider calls, deployment, production-readiness claim, public-launch claim, main promotion, force-push, history rewrite, SYN implementation, or F0 implementation.
+- No Gateway, provider calls, live model routing, local model setup, exact tokenizer, provider billing ledger, Runtime, Service, Commander, Mobile, MCP/A2A, UI, host/app implementation, or autonomous loop unless a future reviewed queue item explicitly authorizes it.
 
 ## ACCEPTANCE
 
-- IA Hunt bridge policy, WorkUnit schema, runtime bridge, CLI, result-lane integration, examples, docs, validator, tests, and audit evidence are added.
-- Dry-run plan, temp-instance bridge, operator/public/native projections, focused tests, selected tests, AIDE checks, and full unittest discovery pass.
+- Task-specific acceptance criteria are met.
+- Validation is run and recorded.
 - Evidence is written.
 - No secrets, raw prompt logs, local caches, or `.aide.local` contents are committed.
 
@@ -179,8 +139,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4754
-- approx_tokens: 1189
+- chars: 4738
+- approx_tokens: 1185
 - budget_status: PASS
 - warnings:
   - none

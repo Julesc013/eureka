@@ -1,0 +1,70 @@
+{
+  "schema_version": "synthetic_query_case.v0",
+  "contract_status": "fixture_shadow_contract",
+  "purpose": "Define one deterministic Synthetic Query Foundry pressure case without creating runtime query logs, evidence, SearchNeeds, WorkUnits, source probes, or public search behavior.",
+  "required_fields": [
+    "query_case_id",
+    "query_text",
+    "query_family",
+    "difficulty_band",
+    "source_expectation",
+    "stack_targets",
+    "expected_lanes",
+    "expected_search_need_seed_refs",
+    "expected_workunit_seed_refs",
+    "review_required",
+    "limitations",
+    "no_claims",
+    "runtime_capability_boundary"
+  ],
+  "query_families": [
+    "local_reviewed_lookup",
+    "hunt_absence_pressure",
+    "play_demo_need",
+    "ia_metadata_candidate",
+    "workbench_lane_projection",
+    "policy_blocked_adversarial",
+    "privacy_rejection_adversarial",
+    "deferred_extraction_gap"
+  ],
+  "difficulty_bands": [
+    "demo",
+    "hard",
+    "adversarial"
+  ],
+  "source_expectations": [
+    "local_reviewed_hit",
+    "local_absence",
+    "ia_metadata_candidate",
+    "review_queue_seed",
+    "blocked_by_policy",
+    "deferred_for_future_task"
+  ],
+  "stack_targets": [
+    "LOCAL",
+    "HUNT",
+    "PLAY",
+    "IA_METADATA_PILOT",
+    "WORKBENCH_RESULT_LANES",
+    "IA_HUNT_BRIDGE"
+  ],
+  "no_claims": {
+    "synthetic_case_is_user_demand": false,
+    "synthetic_case_is_evidence": false,
+    "synthetic_case_is_result_truth": false,
+    "production_search_quality_claimed": false
+  },
+  "runtime_capability_boundary": {
+    "runtime_query_logged": false,
+    "runtime_search_need_created": false,
+    "runtime_workunit_created": false,
+    "source_probe_executed": false,
+    "live_ia_call_performed": false,
+    "download_performed": false,
+    "extraction_executed": false,
+    "model_provider_used": false,
+    "master_index_mutated": false,
+    "public_search_behavior_changed": false,
+    "deployment_performed": false
+  }
+}

@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-21
 repo: julesc013/eureka
-current_recommended_task: SYN-00 - Synthetic Query Foundry planning over Local/HUNT/PLAY/IA/Workbench
+current_recommended_task: DOMAIN-00 - DOMAIN pack console and contracts
 entries:
   - id: DEV-AND-IA-TO-MAIN-PROMOTION-REVIEW
     title: Promote repaired dev IA pilot plus repo layout canon baseline to main
@@ -520,12 +520,31 @@ entries:
     recommended_next: SYN-00
   - id: SYN-00
     title: Synthetic Query Foundry planning over Local/HUNT/PLAY/IA/Workbench
-    status: ready
+    status: completed
     purpose: Plan Synthetic Query Foundry over the completed Local Appliance, HUNT spine, PLAY demo pack, IA approval boundary, and Workbench result-lane bridge.
     allowed_scope_summary: SYN planning, taxonomy preparation, policies, docs, and audit evidence only until explicitly scoped; no SYN runtime implementation yet.
-    gate: PLAY-00 and IA approval closure context reviewed; use HUNT/SearchNeed/WorkUnit/local eval boundaries; no synthetic generation runtime, model calls, deployment, production readiness claim, or public launch claim.
+    gate: Passed with example-only query pressure sets, SearchNeed/WorkUnit seed bridge examples, validator/tests/docs/audit evidence, and full discovery; no synthetic generation runtime, model calls, deployment, production readiness claim, or public launch claim.
     task: .aide/queue/SYN-00/task.yaml
     recommended_after: IA-00
+    recommended_next: DOMAIN-00
+  - id: DOMAIN-00
+    title: DOMAIN pack console and contracts
+    status: queued
+    purpose: Define DOMAIN pack console and contracts after SYN-00 pressure-query foundation.
+    allowed_scope_summary: Future task must provide its own reviewed scope before implementation.
+    gate: SYN-00 completed with full discovery pass; no production/public launch claim by default and no unsafe actions unless future policy enables them.
+    task: .aide/queue/DOMAIN-00/task.yaml
+    recommended_after: SYN-00
+    recommended_next: SCOUT-SCHEMA-00
+  - id: SCOUT-SCHEMA-00
+    title: SCOUT discovery trail contract schema
+    status: queued
+    purpose: Define SCOUT discovery trail contract schema placeholders after DOMAIN-00.
+    allowed_scope_summary: Future task must provide its own reviewed scope before implementation.
+    gate: DOMAIN-00 should complete first; no production/public launch claim by default and no unsafe actions unless future policy enables them.
+    task: .aide/queue/SCOUT-SCHEMA-00/task.yaml
+    recommended_after: DOMAIN-00
+    recommended_next: F0-00
   - id: F0-00
     title: Refresh F0 after Local Appliance and HUNT
     status: queued

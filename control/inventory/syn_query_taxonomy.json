@@ -1,0 +1,56 @@
+{
+  "schema_version": "syn_query_taxonomy.v0",
+  "task": "SYN-00",
+  "status": "active",
+  "query_families": [
+    {
+      "family_id": "local_reviewed_lookup",
+      "purpose": "Confirm reviewed local records still answer simple known fixture queries.",
+      "expected_pressure": "LOCAL search and Workbench reviewed-local lanes."
+    },
+    {
+      "family_id": "hunt_absence_pressure",
+      "purpose": "Exercise scoped absence, exhaustion, and deferred work posture.",
+      "expected_pressure": "HUNT absence and Workbench blocked/deferred lanes."
+    },
+    {
+      "family_id": "play_demo_need",
+      "purpose": "Reuse PLAY demo needs as deterministic operator-facing hard questions.",
+      "expected_pressure": "PLAY SearchNeed and WorkUnit seed review posture."
+    },
+    {
+      "family_id": "ia_metadata_candidate",
+      "purpose": "Exercise IA-HUNT bridge candidate-only metadata flow.",
+      "expected_pressure": "IA metadata candidates, source-cache hits, review queue items, and running WorkUnits."
+    },
+    {
+      "family_id": "policy_blocked_adversarial",
+      "purpose": "Ensure unsafe acquisition, source probing, extraction, and model paths stay blocked.",
+      "expected_pressure": "Policy blocked result lanes and review-gated WorkUnit seeds."
+    },
+    {
+      "family_id": "privacy_rejection_adversarial",
+      "purpose": "Ensure private/local/secrets-like query pressure is rejected or kept review-only.",
+      "expected_pressure": "Query guard and no raw private-data retention posture."
+    }
+  ],
+  "difficulty_bands": [
+    "demo",
+    "hard",
+    "adversarial"
+  ],
+  "stack_targets": [
+    "LOCAL",
+    "HUNT",
+    "PLAY",
+    "IA_METADATA_PILOT",
+    "WORKBENCH_RESULT_LANES",
+    "IA_HUNT_BRIDGE"
+  ],
+  "invariants": [
+    "Synthetic query cases are fixtures, not user demand.",
+    "Synthetic query cases do not create accepted evidence or verified records.",
+    "SearchNeed and WorkUnit outputs are review-gated seeds, not runtime state.",
+    "Blocked/adversarial cases must preserve policy refusal lanes instead of weakening safety gates."
+  ]
+}

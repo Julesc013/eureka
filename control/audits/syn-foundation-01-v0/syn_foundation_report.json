@@ -1,0 +1,40 @@
+{
+  "schema_version": "syn_foundation_report.v0",
+  "task": "SYN-00",
+  "batch": "AIDE-BATCH-SYN-FOUNDATION-01",
+  "status": "pass",
+  "summary": [
+    "Added example-only Synthetic Query Foundry contracts.",
+    "Added demo, hard, and adversarial query sets over LOCAL/HUNT/PLAY/IA/Workbench.",
+    "Added SearchNeed and WorkUnit seed bridge examples.",
+    "Added validator, tests, docs, and audit evidence.",
+    "Confirmed full unittest discovery passed after taxonomy and leakage vocabulary repairs."
+  ],
+  "query_case_count": 11,
+  "query_splits": [
+    "demo",
+    "hard",
+    "adversarial"
+  ],
+  "full_unittest_discovery_passed": true,
+  "full_unittest_discovery_count": 4814,
+  "full_unittest_discovery_duration_seconds": 2506.187,
+  "boundaries": {
+    "runtime_generation_enabled": false,
+    "runtime_search_need_created": false,
+    "runtime_workunit_created": false,
+    "source_probe_executed": false,
+    "live_ia_call_performed": false,
+    "download_performed": false,
+    "upload_performed": false,
+    "extraction_executed": false,
+    "model_provider_used": false,
+    "operator_instance_mutated": false,
+    "master_index_mutated": false,
+    "public_search_behavior_changed": false,
+    "deployment_performed": false,
+    "production_readiness_claimed": false,
+    "public_launch_readiness_claimed": false
+  },
+  "recommended_next_task": "DOMAIN-00 - DOMAIN pack console and contracts"
+}

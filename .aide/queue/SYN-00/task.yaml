@@ -1,6 +1,6 @@
 id: SYN-00
 title: Synthetic Query Foundry planning over Local/HUNT/PLAY/IA/Workbench
-status: ready
+status: completed
 scope: control-plane planning metadata only over Local, HUNT, PLAY, IA approval inputs, and Workbench result-lane bridge outputs
 forbidden:
   - source probes
@@ -9,3 +9,9 @@ forbidden:
   - deployment
   - production readiness claim
   - public launch readiness claim
+result: pass
+validation:
+  full_unittest_discovery: "PASS, 4814 tests"
+  focused_syn_tests: pass
+  syn_foundation_validator: pass
+recommended_next: DOMAIN-00

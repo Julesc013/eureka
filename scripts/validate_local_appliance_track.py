@@ -432,6 +432,8 @@ def local_track_handoff_queue(queue_current: str | None) -> bool:
         return True
     handoff_tasks = {
         "SYN-00",
+        "DOMAIN-00",
+        "SCOUT-SCHEMA-00",
         "F0-00",
         "HUNT-REMEDIATION",
         "HUNT-REMEDIATION-CONTINUE",
@@ -450,6 +452,8 @@ def latest_packet_is_later_control_or_handoff(packet_text: str) -> bool:
         "DEV-AND-IA-",
         "IA-HUNT-",
         "SYN-",
+        "DOMAIN-",
+        "SCOUT-",
         "F0-",
     )
     return any(marker in packet_text for marker in markers)
@@ -472,6 +476,8 @@ def validate_git_alignment(root: Path, report: Mapping[str, Any], errors: list[s
             errors.append("origin/dev must contain origin/main")
         elif main != dev and current_recommended_task(root) not in {
             "SYN-00",
+            "DOMAIN-00",
+            "SCOUT-SCHEMA-00",
             "F0-00",
             "HUNT-REMEDIATION",
             "HUNT-TO-MAIN-PROMOTION-REVIEW",

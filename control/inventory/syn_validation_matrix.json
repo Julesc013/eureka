@@ -1,0 +1,41 @@
+{
+  "schema_version": "syn_validation_matrix.v0",
+  "task": "SYN-00",
+  "batch": "AIDE-BATCH-SYN-FOUNDATION-01",
+  "status": "pass",
+  "commands": [
+    {
+      "name": "test_selector",
+      "command": "python scripts/eureka_test_select.py --changed --failed-first --json",
+      "status": "pass"
+    },
+    {
+      "name": "syn_foundation_validator",
+      "command": "python scripts/validate_syn_foundation.py",
+      "status": "pass"
+    },
+    {
+      "name": "focused_syn_tests",
+      "command": "python -m unittest tests.scripts.test_validate_syn_foundation tests.operations.test_syn_foundation",
+      "status": "pass"
+    },
+    {
+      "name": "seed_contract_tests",
+      "command": "python -m unittest tests.contracts.test_search_need_seed_contracts tests.contracts.test_workunit_seed_contracts",
+      "status": "pass"
+    },
+    {
+      "name": "bridge_and_lane_validators",
+      "command": "python scripts/validate_ia_hunt_bridge.py && python scripts/validate_workbench_result_lanes.py",
+      "status": "pass"
+    },
+    {
+      "name": "full_unittest_discovery",
+      "command": "python -m unittest discover -s tests -t .",
+      "status": "pass"
+    }
+  ],
+  "full_unittest_discovery_passed": true,
+  "full_unittest_discovery_count": 4814,
+  "full_unittest_discovery_duration_seconds": 2506.187
+}

@@ -1,0 +1,85 @@
+{
+  "schema_version": "syn_search_need_seed_bridge.v0",
+  "task": "SYN-00",
+  "seed_status": "needs_human_review",
+  "accepted_as_runtime_search_need": false,
+  "accepted_as_evidence_truth": false,
+  "master_index_mutation_allowed": false,
+  "mappings": [
+    {
+      "query_case_id": "syn.case.demo.sampleproject.v0",
+      "search_need_seed_id": "syn.search_need_seed.demo.sampleproject.v0",
+      "seed_type": "manual_observation_need_seed",
+      "review_action": "verify_local_fixture_lane_still_projects"
+    },
+    {
+      "query_case_id": "syn.case.demo.ia_metadata.sampleproject.v0",
+      "search_need_seed_id": "syn.search_need_seed.demo.ia_metadata.sampleproject.v0",
+      "seed_type": "source_gap_need_seed",
+      "review_action": "review_ia_metadata_candidate_lane"
+    },
+    {
+      "query_case_id": "syn.case.demo.absence.v0",
+      "search_need_seed_id": "syn.search_need_seed.demo.absence.v0",
+      "seed_type": "manual_observation_need_seed",
+      "review_action": "confirm_scoped_absence_seed"
+    },
+    {
+      "query_case_id": "syn.case.hard.stylewriter2500.v0",
+      "search_need_seed_id": "syn.search_need_seed.hard.stylewriter2500.v0",
+      "seed_type": "compatibility_gap_need_seed",
+      "review_action": "queue_source_policy_review_only"
+    },
+    {
+      "query_case_id": "syn.case.hard.directx2010.v0",
+      "search_need_seed_id": "syn.search_need_seed.hard.directx2010.v0",
+      "seed_type": "source_gap_need_seed",
+      "review_action": "queue_rights_and_source_policy_review_only"
+    },
+    {
+      "query_case_id": "syn.case.hard.firefoxxp.v0",
+      "search_need_seed_id": "syn.search_need_seed.hard.firefoxxp.v0",
+      "seed_type": "compatibility_gap_need_seed",
+      "review_action": "request_reviewed_compatibility_evidence_later"
+    },
+    {
+      "query_case_id": "syn.case.hard.dtheater.v0",
+      "search_need_seed_id": "syn.search_need_seed.hard.dtheater.v0",
+      "seed_type": "evidence_gap_need_seed",
+      "review_action": "defer_media_provenance_research_policy"
+    },
+    {
+      "query_case_id": "syn.case.adversarial.download_crack.v0",
+      "search_need_seed_id": "syn.search_need_seed.adversarial.download_crack.v0",
+      "seed_type": "policy_blocked_need_seed",
+      "review_action": "block_unsafe_acquisition_intent"
+    },
+    {
+      "query_case_id": "syn.case.adversarial.private_path.v0",
+      "search_need_seed_id": "syn.search_need_seed.adversarial.private_path.v0",
+      "seed_type": "policy_blocked_need_seed",
+      "review_action": "reject_private_data_pressure"
+    },
+    {
+      "query_case_id": "syn.case.adversarial.live_probe.v0",
+      "search_need_seed_id": "syn.search_need_seed.adversarial.live_probe.v0",
+      "seed_type": "policy_blocked_need_seed",
+      "review_action": "block_live_ia_call_pressure"
+    },
+    {
+      "query_case_id": "syn.case.adversarial.extract_container.v0",
+      "search_need_seed_id": "syn.search_need_seed.adversarial.extract_container.v0",
+      "seed_type": "extraction_gap_need_seed",
+      "review_action": "defer_extraction_until_F0_policy"
+    }
+  ],
+  "runtime_capability_boundary": {
+    "runtime_search_need_created": false,
+    "accepted_runtime_search_need": false,
+    "source_probe_executed": false,
+    "live_ia_call_performed": false,
+    "extraction_executed": false,
+    "model_provider_used": false,
+    "master_index_mutated": false
+  }
+}

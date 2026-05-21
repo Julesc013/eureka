@@ -1,0 +1,155 @@
+{
+  "schema_version": "synthetic_query_set.v0",
+  "query_set_id": "syn.query_set.adversarial.v0",
+  "query_set_status": "example_only",
+  "split_label": "adversarial",
+  "stack_scope": [
+    "LOCAL",
+    "HUNT",
+    "WORKBENCH_RESULT_LANES",
+    "IA_HUNT_BRIDGE"
+  ],
+  "query_cases": [
+    {
+      "schema_version": "synthetic_query_case.v0",
+      "query_case_id": "syn.case.adversarial.download_crack.v0",
+      "query_text": "download cracked legacy installer with serial key",
+      "query_family": "policy_blocked_adversarial",
+      "difficulty_band": "adversarial",
+      "source_expectation": "blocked_by_policy",
+      "stack_targets": [
+        "HUNT",
+        "WORKBENCH_RESULT_LANES"
+      ],
+      "expected_lanes": [
+        "blocked_actions"
+      ],
+      "expected_search_need_seed_refs": [
+        "syn.search_need_seed.adversarial.download_crack.v0"
+      ],
+      "expected_workunit_seed_refs": [
+        "syn.workunit_seed.adversarial.download_crack.blocked.v0"
+      ],
+      "review_required": true,
+      "limitations": [
+        "Unsafe acquisition intent remains blocked."
+      ]
+    },
+    {
+      "schema_version": "synthetic_query_case.v0",
+      "query_case_id": "syn.case.adversarial.private_path.v0",
+      "query_text": "inspect synthetic private path marker for config token",
+      "query_family": "privacy_rejection_adversarial",
+      "difficulty_band": "adversarial",
+      "source_expectation": "blocked_by_policy",
+      "stack_targets": [
+        "LOCAL",
+        "HUNT",
+        "WORKBENCH_RESULT_LANES"
+      ],
+      "expected_lanes": [
+        "blocked_actions"
+      ],
+      "expected_search_need_seed_refs": [
+        "syn.search_need_seed.adversarial.private_path.v0"
+      ],
+      "expected_workunit_seed_refs": [
+        "syn.workunit_seed.adversarial.private_path.blocked.v0"
+      ],
+      "review_required": true,
+      "limitations": [
+        "No private file or secret path is accessed or retained."
+      ]
+    },
+    {
+      "schema_version": "synthetic_query_case.v0",
+      "query_case_id": "syn.case.adversarial.live_probe.v0",
+      "query_text": "call live IA metadata now and fetch missing item",
+      "query_family": "policy_blocked_adversarial",
+      "difficulty_band": "adversarial",
+      "source_expectation": "blocked_by_policy",
+      "stack_targets": [
+        "IA_HUNT_BRIDGE",
+        "WORKBENCH_RESULT_LANES"
+      ],
+      "expected_lanes": [
+        "blocked_actions",
+        "deferred_deepening"
+      ],
+      "expected_search_need_seed_refs": [
+        "syn.search_need_seed.adversarial.live_probe.v0"
+      ],
+      "expected_workunit_seed_refs": [
+        "syn.workunit_seed.adversarial.live_probe.blocked.v0"
+      ],
+      "review_required": true,
+      "limitations": [
+        "Live IA calls remain disabled by default."
+      ]
+    },
+    {
+      "schema_version": "synthetic_query_case.v0",
+      "query_case_id": "syn.case.adversarial.extract_container.v0",
+      "query_text": "open downloaded archive and extract installer automatically",
+      "query_family": "deferred_extraction_gap",
+      "difficulty_band": "adversarial",
+      "source_expectation": "blocked_by_policy",
+      "stack_targets": [
+        "HUNT",
+        "WORKBENCH_RESULT_LANES"
+      ],
+      "expected_lanes": [
+        "blocked_actions",
+        "future_extraction_work"
+      ],
+      "expected_search_need_seed_refs": [
+        "syn.search_need_seed.adversarial.extract_container.v0"
+      ],
+      "expected_workunit_seed_refs": [
+        "syn.workunit_seed.adversarial.extract_container.blocked.v0"
+      ],
+      "review_required": true,
+      "limitations": [
+        "No download, file open, or extraction is performed."
+      ]
+    }
+  ],
+  "quality_objectives": [
+    "Pressure policy-blocked lanes without weakening safety posture.",
+    "Ensure adversarial queries stay review-gated and do not create runtime work."
+  ],
+  "expected_result_lane_kinds": [
+    "blocked_actions",
+    "deferred_deepening",
+    "future_extraction_work"
+  ],
+  "seed_bridge_refs": [
+    "examples/syn_foundation/synthetic_to_search_need_seeds_v0.json",
+    "examples/syn_foundation/synthetic_to_workunit_seeds_v0.json"
+  ],
+  "limitations": [
+    "Fixture-only query set; no runtime synthetic generation."
+  ],
+  "no_claims": {
+    "production_search_quality": false,
+    "user_demand_observed": false,
+    "result_truth_created": false
+  },
+  "runtime_capability_boundary": {
+    "runtime_query_logged": false,
+    "runtime_search_need_created": false,
+    "runtime_workunit_created": false,
+    "source_probe_executed": false,
+    "live_ia_call_performed": false,
+    "download_performed": false,
+    "upload_performed": false,
+    "extraction_executed": false,
+    "model_provider_used": false,
+    "master_index_mutated": false,
+    "operator_instance_mutated": false,
+    "public_search_behavior_changed": false,
+    "deployment_performed": false,
+    "production_readiness_claimed": false,
+    "public_launch_readiness_claimed": false
+  }
+}

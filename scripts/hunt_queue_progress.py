@@ -14,6 +14,8 @@ QUEUE_INDEX = Path(".aide/queue/index.yaml")
 TASK_PACKET = Path(".aide/context/latest-task-packet.md")
 POST_HUNT_TASKS = {
     "SYN-00",
+    "DOMAIN-00",
+    "SCOUT-SCHEMA-00",
     "F0-00",
     "HUNT-REMEDIATION",
     "HUNT-REMEDIATION-CONTINUE",
