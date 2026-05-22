@@ -80,3 +80,43 @@ generator_command = "py -3 .aide/scripts/aide_lite.py"
 check_command = "py -3 .aide/scripts/aide_lite.py doctor"
 manual_edits_allowed = false
 future_disposition = "keep_reports_that_are_operating_metadata_only"
+
+[[exceptions]]
+path = ".aide/context"
+artifact_id = "aide_context_packets"
+class = "control_plane_generated_context_exception"
+status = "accepted_exception"
+generator_command = "py -3 .aide/scripts/aide_lite.py context"
+check_command = "py -3 .aide/scripts/aide_lite.py validate"
+manual_edits_allowed = false
+future_disposition = "track compact repo-operating context only; do not treat as product truth"
+
+[[exceptions]]
+path = ".aide/repo"
+artifact_id = "aide_repo_inventory"
+class = "control_plane_generated_inventory_exception"
+status = "accepted_exception"
+generator_command = "py -3 .aide/scripts/aide_lite.py index"
+check_command = "py -3 .aide/scripts/aide_lite.py validate"
+manual_edits_allowed = false
+future_disposition = "bound generated inventory volume or move retained exports to archive/generated"
+
+[[exceptions]]
+path = ".aide/roots"
+artifact_id = "aide_root_classification"
+class = "control_plane_generated_inventory_exception"
+status = "accepted_exception"
+generator_command = "py -3 .aide/scripts/aide_lite.py index"
+check_command = "py -3 .aide/scripts/aide_lite.py validate"
+manual_edits_allowed = false
+future_disposition = "bound generated classification volume or move retained exports to archive/generated"
+
+[[exceptions]]
+path = ".aide/tools"
+artifact_id = "aide_tool_inventory"
+class = "control_plane_generated_inventory_exception"
+status = "accepted_exception"
+generator_command = "py -3 .aide/scripts/aide_lite.py index"
+check_command = "py -3 .aide/scripts/aide_lite.py validate"
+manual_edits_allowed = false
+future_disposition = "track only compact operating metadata needed by the portable aide workflow"

@@ -355,7 +355,7 @@
     {
       "test_id": "compatibility_evidence_pack_validation",
       "label": "Compatibility evidence pack tests",
-      "command": "python -m unittest runtime.engine.compatibility.tests.test_compatibility_evidence runtime.engine.compatibility.tests.test_service runtime.engine.index.tests.test_member_level_synthetic_records surfaces.web.tests.test_compatibility_rendering surfaces.native.cli.tests.test_local_index_cli",
+      "command": "python -m unittest runtime.engine.compatibility.tests.test_compatibility_evidence runtime.engine.compatibility.tests.test_service runtime.engine.index.tests.test_member_level_synthetic_records surfaces.web.tests.test_compatibility_rendering surfaces.cli.tests.test_local_index_cli",
       "category": "integration",
       "owner_area": "runtime/engine/compatibility",
       "required_for": [
@@ -9889,3 +9889,4 @@
     "P107 Public Search Ranking Local Dry-Run Runtime commands are stdlib-only local dry-run checks over approved repo examples; they perform no public search route/response/order change, hidden score, result suppression, model call, AI reranking, telemetry, popularity/user-profile/ad signal, source/evidence authoritative read or write, live source call, download, install, execution, or source/evidence/candidate/public/local/master mutation. Command strings: python scripts/run_public_search_ranking_dry_run.py --all-examples --json; python scripts/validate_public_search_ranking_dry_run_report.py; python scripts/validate_public_search_ranking_dry_run_report.py --json."
   ]
 }
+

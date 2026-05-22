@@ -444,7 +444,7 @@
       ],
       "implemented_paths": [
         "scripts/",
-        "surfaces/native/cli/"
+        "surfaces/cli/"
       ],
       "reserved_paths": [],
       "requires_backend": false,
@@ -937,3 +937,4 @@
     "P77 Public Hosted Deployment Evidence records static URL verified_failed and hosted backend not_configured; no production or hosted-live claim is made."
   ]
 }
+

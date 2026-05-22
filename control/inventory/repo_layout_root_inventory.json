@@ -61,7 +61,7 @@
     },
     {
       "old_path": "deploy",
-      "new_path": "release/render",
+      "new_path": "release/hosting/render",
       "class": "release_definition_debt"
     }
   ],
@@ -72,3 +72,4 @@
   "path_migration_map": "control/audits/eureka-structure-big-bang-v1/path_migration_map.json",
   "source_layout_change": "reconciled_without_intentional_runtime_behavior_change"
 }
+

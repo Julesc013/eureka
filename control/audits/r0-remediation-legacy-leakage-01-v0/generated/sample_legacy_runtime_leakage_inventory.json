@@ -5794,7 +5794,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "surfaces/native/cli/formatters/__init__.py",
+      "path": "surfaces/cli/formatters/__init__.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -5802,7 +5802,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "surfaces/native/cli/formatters/actions.py",
+      "path": "surfaces/cli/formatters/actions.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -5810,7 +5810,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "surfaces/native/cli/formatters/inspection.py",
+      "path": "surfaces/cli/formatters/inspection.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -5818,7 +5818,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "surfaces/native/cli/formatters/stored_exports.py",
+      "path": "surfaces/cli/formatters/stored_exports.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -5826,7 +5826,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "surfaces/native/cli/main.py",
+      "path": "surfaces/cli/main.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -5834,7 +5834,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "surfaces/native/cli/README.md",
+      "path": "surfaces/cli/README.md",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -5842,7 +5842,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "surfaces/native/cli/tests/test_local_index_cli.py",
+      "path": "surfaces/cli/tests/test_local_index_cli.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -5850,7 +5850,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "surfaces/native/cli/tests/test_main.py",
+      "path": "surfaces/cli/tests/test_main.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -5858,7 +5858,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "surfaces/native/cli/tests/test_resolution_runs_cli.py",
+      "path": "surfaces/cli/tests/test_resolution_runs_cli.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -6421,3 +6421,4 @@
   "schema_version": "legacy_runtime_leakage_inventory.v0",
   "task": "R0-REMEDIATION-LEGACY-LEAKAGE-01"
 }
+

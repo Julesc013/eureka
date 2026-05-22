@@ -271,7 +271,7 @@ def load_json_if_exists(path: Path, errors: list[str]) -> dict[str, Any]:
 
 
 def iter_contract_files(root: Path) -> Iterable[Path]:
-    files = []
+    files: dict[str, Path] = {}
     for schema_root in SCHEMA_ROOTS:
         base = root / schema_root
         if not base.exists():
@@ -280,8 +280,8 @@ def iter_contract_files(root: Path) -> Iterable[Path]:
             if path.is_file() and not any(part in IGNORED_DIRS for part in path.relative_to(root).parts):
                 if path.name in {".gitkeep", "README.md"}:
                     continue
-                files.append(path)
-    return files
+                files[path.relative_to(root).as_posix()] = path
+    return [files[key] for key in sorted(files)]
 
 
 def classify_contract(path: Path, root: Path) -> dict[str, Any]:

@@ -259,7 +259,7 @@
       "implemented_now": true,
       "implemented_paths": [
         "scripts/",
-        "surfaces/native/cli/"
+        "surfaces/cli/"
       ],
       "live_backend_required": false,
       "static_host_safe": false,
@@ -278,3 +278,4 @@
     "Production signed snapshots and real key management remain future/deferred."
   ]
 }
+

@@ -18,7 +18,7 @@ This contract does not create a Visual Studio project. This contract does not cr
 
 ## Current CLI Versus Future GUI Clients
 
-The current CLI under `surfaces/native/cli/` is a local, stdlib, native-like
+The current CLI under `surfaces/cli/` is a local, stdlib, native-like
 surface over governed public/gateway boundaries. It is not a packaged desktop
 application, not a native SDK, not a relay sidecar, and not a GUI client.
 
@@ -192,3 +192,4 @@ Native Client Contract v0 does not implement:
 - production signing or real signing keys
 - live probes or external API calls
 - production readiness
+

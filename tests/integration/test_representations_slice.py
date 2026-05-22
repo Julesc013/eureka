@@ -7,7 +7,7 @@ from runtime.gateway.public_api import (
     build_demo_representations_public_api,
     representations_envelope_to_view_model,
 )
-from surfaces.native.cli.formatters import format_representations
+from surfaces.cli.formatters import format_representations
 
 
 class RepresentationsSliceIntegrationTestCase(unittest.TestCase):
@@ -29,3 +29,4 @@ class RepresentationsSliceIntegrationTestCase(unittest.TestCase):
         self.assertIn("GitHub CLI 2.65.0 release page", rendered)
         self.assertIn("gh_2.65.0_windows_amd64.msi", rendered)
         self.assertIn("access_kind: download", rendered)
+

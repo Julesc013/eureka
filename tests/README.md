@@ -10,6 +10,9 @@
 - `integration/`: cross-component checks across contracts, runtime, and surfaces
 - `operations/`: repo-operating checks for public-alpha posture, hosting-pack
   evidence, test/eval operating-layer metadata, and audit packs
+- `scripts/`: compatibility and command-entrypoint checks for stable `scripts/`
+  wrappers
+- `tools/`: implementation-level checks for substantive tooling under `tools/`
 - `parity/`: planning docs for future Python-oracle to Rust-candidate parity checks
 - `end_to_end/`: higher-level product workflow checks once real behavior exists
 

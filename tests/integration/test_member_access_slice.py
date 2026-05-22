@@ -7,7 +7,7 @@ from runtime.gateway.public_api import (
     build_demo_member_access_public_api,
     member_access_envelope_to_view_model,
 )
-from surfaces.native.cli.formatters import format_member_access
+from surfaces.cli.formatters import format_member_access
 
 
 class MemberAccessSliceIntegrationTestCase(unittest.TestCase):
@@ -32,3 +32,4 @@ class MemberAccessSliceIntegrationTestCase(unittest.TestCase):
         self.assertIn("Member access", rendered)
         self.assertIn("status: previewed", rendered)
         self.assertIn("docs/evidence.txt", rendered)
+

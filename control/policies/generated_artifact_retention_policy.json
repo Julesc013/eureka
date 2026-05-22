@@ -1,0 +1,49 @@
+{
+  "schema_version": "generated_artifact_retention_policy.v0",
+  "policy_id": "eureka-generated-artifact-retention",
+  "status": "bootstrap_policy",
+  "summary": "Classifies large tracked generated or generated-like control-plane artifacts without treating them as product source truth.",
+  "rules": [
+    {
+      "path": ".aide/context",
+      "class": "generated_context",
+      "manual_edits_allowed": false,
+      "truth_boundary": "repo_operating_context_only"
+    },
+    {
+      "path": ".aide/repo",
+      "class": "generated_inventory",
+      "manual_edits_allowed": false,
+      "truth_boundary": "repo_operating_context_only"
+    },
+    {
+      "path": ".aide/roots",
+      "class": "generated_inventory",
+      "manual_edits_allowed": false,
+      "truth_boundary": "repo_operating_context_only"
+    },
+    {
+      "path": ".aide/tools",
+      "class": "generated_inventory",
+      "manual_edits_allowed": false,
+      "truth_boundary": "repo_operating_context_only"
+    },
+    {
+      "path": "control/audits/*/generated",
+      "class": "retained_audit_generated_material",
+      "manual_edits_allowed": false,
+      "truth_boundary": "audit_evidence_only"
+    },
+    {
+      "path": "site/dist",
+      "class": "committed_static_public_artifact",
+      "manual_edits_allowed": false,
+      "truth_boundary": "generated_site_output"
+    }
+  ],
+  "non_claims": [
+    "Generated control-plane files are not product runtime behavior.",
+    "Audit generated files are not contract authority.",
+    "Committed static artifacts are not source connector truth."
+  ]
+}

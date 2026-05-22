@@ -414,7 +414,7 @@
       "suggested_milestone": "Compatibility Surface Strategy v0",
       "acceptance_criteria": ["known/unknown/inferred compatibility presentation rules exist", "user strategy does not mutate truth", "public-alpha boundaries are respected"],
       "tests_to_add_first": ["view-model compatibility wording tests", "unknown compatibility rendering tests"],
-      "likely_files": ["docs/architecture/", "surfaces/web/README.md", "surfaces/native/cli/README.md"],
+      "likely_files": ["docs/architecture/", "surfaces/web/README.md", "surfaces/cli/README.md"],
       "do_not_do": ["do not build a modern app workbench", "do not add native app shells", "do not claim compatibility certainty"],
       "notes": "Deferred until compatibility evidence pack defines what must be shown."
     },
@@ -540,3 +540,4 @@
     }
   ]
 }
+

@@ -229,8 +229,8 @@ def _validate_check_config(errors: list[str]) -> None:
 def _validate_templates(errors: list[str], warnings: list[str]) -> None:
     dockerfile = ROOT / "Dockerfile"
     dockerignore = ROOT / ".dockerignore"
-    render = ROOT / "deploy" / "render" / "render.yaml"
-    deploy_readme = ROOT / "deploy" / "README.md"
+    render = ROOT / "release" / "hosting" / "render" / "render.yaml"
+    deploy_readme = ROOT / "docs" / "operations" / "hosting" / "render_deployment.md"
     for path in (dockerfile, dockerignore, render, deploy_readme):
         if not path.is_file():
             warnings.append(f"{_rel(path)} is not present; deployment template coverage is reduced.")
@@ -258,7 +258,7 @@ def _validate_templates(errors: list[str], warnings: list[str]) -> None:
             "healthCheckPath: /healthz",
         ):
             if phrase not in text:
-                errors.append(f"release/render/render.yaml missing {phrase}.")
+                errors.append(f"release/hosting/render/render.yaml missing {phrase}.")
         _scan_template_for_secrets(render, text, errors)
 
 
@@ -408,3 +408,4 @@ def main(argv: Sequence[str] | None = None, *, stdout: TextIO | None = None) -> 
 
 if __name__ == "__main__":
     raise SystemExit(main())
+

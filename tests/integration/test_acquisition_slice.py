@@ -7,7 +7,7 @@ from runtime.gateway.public_api import (
     acquisition_envelope_to_view_model,
     build_demo_acquisition_public_api,
 )
-from surfaces.native.cli.formatters import format_acquisition
+from surfaces.cli.formatters import format_acquisition
 
 
 class AcquisitionSliceIntegrationTestCase(unittest.TestCase):
@@ -36,3 +36,4 @@ class AcquisitionSliceIntegrationTestCase(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+

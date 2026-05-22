@@ -12,16 +12,22 @@ eureka/
   contracts/              schemas, contracts, packets, and public authority
     repo/                 repository structure canon
     control_schemas/      migrated schema authority formerly under control
+                         (known taxonomy debt; see path taxonomy policy)
   runtime/                Python reference runtime
     engine/               current engine/kernel boundary
     gateway/              gateway runtime behavior
     connectors/           bounded source acquisition adapters
   surfaces/               user-facing projections and adapters
+    api/                  API projection notes; runtime service stays in gateway
+    cli/                  current local stdlib CLI surface
+    files/                static files projection notes
+    lite/                 lightweight static projection notes
+    native/               native projection adapters, not native project authority
+    text/                 plain-text static projection notes
     web/
       server/
       workbench/
         local_html/       server-rendered local workbench presentation
-    native/               native projection adapters, not native project authority
   site/                   static site source and generated public artifact
     assets/
     data/
@@ -46,7 +52,8 @@ eureka/
     release/
   scripts/                thin compatibility wrappers and command entry points
   release/                release and deployment definitions
-    render/
+    hosting/
+      render/
   external/               pinned outside references
   archive/                retired, quarantined, or historical material
     prototypes/
@@ -63,6 +70,13 @@ eureka/
 - `scripts/`: stable command paths that wrap `tools/` implementations.
 - `release/`: deployment and packaging definitions; no generated release output.
 - `archive/`: retained historical material that is not active source authority.
+
+## Second-Level Taxonomy
+
+`control/policies/path_taxonomy_policy.json` and
+`scripts/validate_path_taxonomy.py` record the current allowed surface families,
+the remaining contracts/runtime/examples taxonomy debt, and forbidden active
+paths such as `release/render` and `surfaces/native/cli`.
 
 ## Test Boundary
 

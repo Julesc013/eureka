@@ -91,7 +91,7 @@ authority_suffixes = [
 [singular_plural]
 rule = "singular for one subsystem or authority plane; plural for many peer artifacts or collections"
 known_allowed_pairs = [
-  "runtime/source_registry vs contracts/sources",
+  "runtime/source_registry vs contracts/sources remains known taxonomy debt pending source family consolidation",
   "runtime/search_need vs examples/search_needs",
   "runtime/engine/store vs contracts/stores",
 ]

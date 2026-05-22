@@ -34,14 +34,14 @@ class ArchitectureBoundaryCheckerTestCase(unittest.TestCase):
     def test_surface_native_cli_engine_violation_fails(self) -> None:
         with temporary_repo(
             {
-                "surfaces/native/cli/bad_cli.py": "import runtime.engine.resolve\n",
+                "surfaces/cli/bad_cli.py": "import runtime.engine.resolve\n",
             }
         ) as root:
             result = run_boundary_check(root)
 
         self.assertEqual(len(result.violations), 1)
         self.assertEqual(result.violations[0].rule_id, "surface_engine_import")
-        self.assertEqual(result.violations[0].source_file, "surfaces/native/cli/bad_cli.py")
+        self.assertEqual(result.violations[0].source_file, "surfaces/cli/bad_cli.py")
 
     def test_gateway_public_api_surface_violation_fails(self) -> None:
         with temporary_repo(
@@ -89,3 +89,4 @@ class temporary_repo:
 
     def __exit__(self, exc_type, exc, tb) -> None:
         self._temp_dir.cleanup()
+

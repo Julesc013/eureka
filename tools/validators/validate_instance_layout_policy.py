@@ -95,7 +95,7 @@ def validate() -> dict[str, Any]:
                 errors.append(f"runbook recommends repo-nested eureka-instance: {rel(runbook)}")
                 break
     for script in SCRIPT_HELP_SURFACES:
-        text = read_text(script, errors)
+        text = script_help_text(script, errors)
         if "../instances/default" not in text and script.name in {"eureka_init_instance.py", "eureka_new_instance.py"}:
             errors.append(f"{script.name} help text does not mention ../instances/default")
 
@@ -151,6 +151,14 @@ def read_text(path: Path, errors: list[str]) -> str:
     except FileNotFoundError:
         errors.append(f"missing file: {rel(path)}")
         return ""
+
+
+def script_help_text(script: Path, errors: list[str]) -> str:
+    text = read_text(script, errors)
+    implementation = REPO_ROOT / "tools/generators" / script.name
+    if implementation.is_file():
+        text += "\n" + read_text(implementation, errors)
+    return text
 
 
 def parse_json(text: str, errors: list[str], label: str) -> dict[str, Any]:

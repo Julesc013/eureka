@@ -3,7 +3,7 @@ from __future__ import annotations
 import json
 from typing import Any, Mapping
 
-from surfaces.native.cli.formatters.representations import format_representation_lines
+from surfaces.cli.formatters.representations import format_representation_lines
 
 
 def format_bundle_inspection(bundle_inspection: Mapping[str, Any]) -> str:
@@ -100,3 +100,4 @@ def _format_evidence_entry(entry: Mapping[str, Any]) -> str:
     if asserted_at:
         text += f" @ {asserted_at}"
     return text
+

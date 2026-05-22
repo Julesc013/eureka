@@ -2,7 +2,7 @@
 
 Eureka remains a bootstrap and pre-product repository. Python is the active
 reference/oracle lane. Rust remains isolated parity and planning work. The CLI
-under `surfaces/native/cli/` is the only current native-like local surface.
+under `surfaces/cli/` is the only current native-like local surface.
 
 Current facts:
 
@@ -41,4 +41,5 @@ The current native posture is therefore: contract coverage is good enough to
 start a human-reviewed minimal skeleton planning lane, but not enough to start
 a native prototype with behavior beyond read-only public metadata and static
 snapshot inspection.
+
 

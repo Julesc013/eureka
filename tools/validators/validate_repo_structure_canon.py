@@ -195,6 +195,10 @@ def _validate_generated_artifact_exceptions(
         ".aide/cache",
         ".aide/export",
         ".aide/reports",
+        ".aide/context",
+        ".aide/repo",
+        ".aide/roots",
+        ".aide/tools",
     )
 
     accepted: list[str] = []

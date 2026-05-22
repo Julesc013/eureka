@@ -525,7 +525,7 @@ Why: once compatibility evidence exists, surfaces need a consistent way to prese
 
 Prerequisite: Compatibility Evidence Pack v0.
 
-Likely files: `docs/architecture/`, `surfaces/web/README.md`, `surfaces/native/cli/README.md`.
+Likely files: `docs/architecture/`, `surfaces/web/README.md`, `surfaces/cli/README.md`.
 
 Acceptance criteria: compatibility presentation rules exist and preserve truth regardless of user strategy.
 
@@ -534,3 +534,4 @@ Tests to add first: view-model rendering tests for unknown/known compatibility.
 Do not do: do not build a modern app shell or native app.
 
 Expected audit effect: prepares actionability and UX improvement.
+
