@@ -111,7 +111,7 @@
 ## ADR-019: Prove the First Non-Web Surface Through a Public-Boundary-First CLI Slice
 
 - Status: accepted
-- Decision: the first `surfaces/native` implementation is a local stdlib-only CLI under `surfaces/native/cli/` that consumes the gateway public boundary and shared surface-neutral mappings instead of importing engine internals directly.
+- Decision: the first `surfaces/native` implementation is a local stdlib-only CLI under `surfaces/cli/` that consumes the gateway public boundary and shared surface-neutral mappings instead of importing engine internals directly.
 - Why: this proves real reuse across surface families without prematurely committing to a final native shell stack, TUI architecture, GUI runtime, packaging story, or offline-mode embedding strategy.
 
 ## ADR-020: Add a Narrow Repo-Local Architectural Boundary Checker
@@ -2000,3 +2000,4 @@ Search Result Explanation Contract v0 is contract-only. It defines future eviden
 
 No runtime explanation generation, public search response change, public search order change, hidden score, result suppression, AI answer, model call, telemetry, live source call, source/evidence/candidate/public/local/master mutation, download, install, or execution is added.
 <!-- P96-SEARCH-RESULT-EXPLANATION-CONTRACT-END -->
+

@@ -4,7 +4,7 @@ import json
 from io import StringIO
 import unittest
 
-from surfaces.native.cli.main import main
+from surfaces.cli.main import main
 
 
 def run_cli(*args: str) -> tuple[int, str]:
@@ -40,3 +40,4 @@ class ArchiveResolutionEvalsCliTestCase(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+

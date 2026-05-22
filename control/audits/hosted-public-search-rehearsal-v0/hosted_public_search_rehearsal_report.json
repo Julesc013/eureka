@@ -927,7 +927,7 @@
         "ok"
       ],
       "passed": true,
-      "path": "release/render/render.yaml",
+      "path": "release/hosting/render/render.yaml",
       "template_id": "render_template"
     }
   ],
@@ -1356,3 +1356,4 @@
     "No deployment, external source call, live probe, AI runtime, telemetry, account, upload, download, arbitrary URL fetch, index mutation, pack import, or master-index mutation was performed."
   ]
 }
+

@@ -18,7 +18,7 @@ from runtime.gateway.public_api import (
     MemberAccessReadRequest,
     SourceReadRequest,
 )
-from surfaces.native.cli.main import main as cli_main
+from surfaces.cli.main import main as cli_main
 
 
 class RealSourceCoveragePackIntegrationTestCase(unittest.TestCase):
@@ -96,3 +96,4 @@ class RealSourceCoveragePackIntegrationTestCase(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+

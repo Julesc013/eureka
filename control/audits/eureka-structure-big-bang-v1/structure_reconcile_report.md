@@ -37,7 +37,7 @@ Move counts:
 Primary directory moves:
 
 - `data/public_index` -> `site/dist/data/public_index`
-- `deploy/render/render.yaml` -> `release/render/render.yaml`
+- `deploy/render/render.yaml` -> `release/hosting/render/render.yaml`
 - `deploy/README.md` -> `docs/operations/hosting/render_deployment.md`
 - `control/schemas` -> `contracts/control_schemas`
 - `control/prototypes/legacy_runtime` -> `archive/prototypes/legacy_runtime`
@@ -139,3 +139,4 @@ The repository remains bootstrap and pre-product. Historical audit documents may
 - This does not intentionally change public search behavior.
 - No generated output is treated as source truth.
 - No path is treated as object identity.
+

@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from typing import Any, Mapping
 
-from surfaces.native.cli.formatters.representations import format_representation_lines
+from surfaces.cli.formatters.representations import format_representation_lines
 
 
 def format_resolution_workspace(
@@ -171,3 +171,4 @@ def _compact_compatibility_evidence(value: Any) -> str:
         f"{platform_name} {value.get('claim_type', '(unknown claim)')} "
         f"via {value.get('evidence_kind', '(unknown evidence)')}"
     )
+

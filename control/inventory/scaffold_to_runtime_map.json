@@ -94542,7 +94542,7 @@
       "notes": [
         "empty, near-empty, or placeholder artifact"
       ],
-      "scaffold_path": "surfaces/native/cli/.gitkeep",
+      "scaffold_path": "surfaces/cli/.gitkeep",
       "target_role": "classification follow-up",
       "target_runtime_seam": "native"
     },
@@ -94550,7 +94550,7 @@
       "action": "refactor",
       "current_role": "prototype_runtime/behavior_implemented",
       "notes": [],
-      "scaffold_path": "surfaces/native/cli/README.md",
+      "scaffold_path": "surfaces/cli/README.md",
       "target_role": "classification follow-up",
       "target_runtime_seam": "connector_runtime"
     },
@@ -94558,7 +94558,7 @@
       "action": "refactor",
       "current_role": "prototype_runtime/behavior_implemented",
       "notes": [],
-      "scaffold_path": "surfaces/native/cli/__init__.py",
+      "scaffold_path": "surfaces/cli/__init__.py",
       "target_role": "classification follow-up",
       "target_runtime_seam": "native"
     },
@@ -94566,7 +94566,7 @@
       "action": "refactor",
       "current_role": "prototype_runtime/behavior_implemented",
       "notes": [],
-      "scaffold_path": "surfaces/native/cli/formatters/__init__.py",
+      "scaffold_path": "surfaces/cli/formatters/__init__.py",
       "target_role": "classification follow-up",
       "target_runtime_seam": "native"
     },
@@ -94574,7 +94574,7 @@
       "action": "refactor",
       "current_role": "prototype_runtime/behavior_implemented",
       "notes": [],
-      "scaffold_path": "surfaces/native/cli/formatters/absence.py",
+      "scaffold_path": "surfaces/cli/formatters/absence.py",
       "target_role": "classification follow-up",
       "target_runtime_seam": "native"
     },
@@ -94582,7 +94582,7 @@
       "action": "refactor",
       "current_role": "prototype_runtime/behavior_implemented",
       "notes": [],
-      "scaffold_path": "surfaces/native/cli/formatters/acquisition.py",
+      "scaffold_path": "surfaces/cli/formatters/acquisition.py",
       "target_role": "classification follow-up",
       "target_runtime_seam": "native"
     },
@@ -94590,7 +94590,7 @@
       "action": "refactor",
       "current_role": "prototype_runtime/behavior_implemented",
       "notes": [],
-      "scaffold_path": "surfaces/native/cli/formatters/action_plan.py",
+      "scaffold_path": "surfaces/cli/formatters/action_plan.py",
       "target_role": "classification follow-up",
       "target_runtime_seam": "native"
     },
@@ -94598,7 +94598,7 @@
       "action": "refactor",
       "current_role": "prototype_runtime/behavior_implemented",
       "notes": [],
-      "scaffold_path": "surfaces/native/cli/formatters/actions.py",
+      "scaffold_path": "surfaces/cli/formatters/actions.py",
       "target_role": "classification follow-up",
       "target_runtime_seam": "native"
     },
@@ -94606,7 +94606,7 @@
       "action": "refactor",
       "current_role": "prototype_runtime/behavior_implemented",
       "notes": [],
-      "scaffold_path": "surfaces/native/cli/formatters/archive_resolution_evals.py",
+      "scaffold_path": "surfaces/cli/formatters/archive_resolution_evals.py",
       "target_role": "classification follow-up",
       "target_runtime_seam": "native"
     },
@@ -94614,7 +94614,7 @@
       "action": "refactor",
       "current_role": "prototype_runtime/behavior_implemented",
       "notes": [],
-      "scaffold_path": "surfaces/native/cli/formatters/comparison.py",
+      "scaffold_path": "surfaces/cli/formatters/comparison.py",
       "target_role": "classification follow-up",
       "target_runtime_seam": "native"
     },
@@ -94622,7 +94622,7 @@
       "action": "refactor",
       "current_role": "prototype_runtime/behavior_implemented",
       "notes": [],
-      "scaffold_path": "surfaces/native/cli/formatters/compatibility.py",
+      "scaffold_path": "surfaces/cli/formatters/compatibility.py",
       "target_role": "classification follow-up",
       "target_runtime_seam": "native"
     },
@@ -94630,7 +94630,7 @@
       "action": "refactor",
       "current_role": "prototype_runtime/behavior_implemented",
       "notes": [],
-      "scaffold_path": "surfaces/native/cli/formatters/decomposition.py",
+      "scaffold_path": "surfaces/cli/formatters/decomposition.py",
       "target_role": "classification follow-up",
       "target_runtime_seam": "native"
     },
@@ -94638,7 +94638,7 @@
       "action": "refactor",
       "current_role": "prototype_runtime/behavior_implemented",
       "notes": [],
-      "scaffold_path": "surfaces/native/cli/formatters/handoff.py",
+      "scaffold_path": "surfaces/cli/formatters/handoff.py",
       "target_role": "classification follow-up",
       "target_runtime_seam": "native"
     },
@@ -94646,7 +94646,7 @@
       "action": "refactor",
       "current_role": "prototype_runtime/behavior_implemented",
       "notes": [],
-      "scaffold_path": "surfaces/native/cli/formatters/inspection.py",
+      "scaffold_path": "surfaces/cli/formatters/inspection.py",
       "target_role": "classification follow-up",
       "target_runtime_seam": "native"
     },
@@ -94654,7 +94654,7 @@
       "action": "refactor",
       "current_role": "prototype_runtime/behavior_implemented",
       "notes": [],
-      "scaffold_path": "surfaces/native/cli/formatters/local_index.py",
+      "scaffold_path": "surfaces/cli/formatters/local_index.py",
       "target_role": "classification follow-up",
       "target_runtime_seam": "native"
     },
@@ -94662,7 +94662,7 @@
       "action": "refactor",
       "current_role": "prototype_runtime/behavior_implemented",
       "notes": [],
-      "scaffold_path": "surfaces/native/cli/formatters/local_tasks.py",
+      "scaffold_path": "surfaces/cli/formatters/local_tasks.py",
       "target_role": "classification follow-up",
       "target_runtime_seam": "native"
     },
@@ -94670,7 +94670,7 @@
       "action": "refactor",
       "current_role": "prototype_runtime/behavior_implemented",
       "notes": [],
-      "scaffold_path": "surfaces/native/cli/formatters/member_access.py",
+      "scaffold_path": "surfaces/cli/formatters/member_access.py",
       "target_role": "classification follow-up",
       "target_runtime_seam": "native"
     },
@@ -94678,7 +94678,7 @@
       "action": "refactor",
       "current_role": "prototype_runtime/behavior_implemented",
       "notes": [],
-      "scaffold_path": "surfaces/native/cli/formatters/query_plan.py",
+      "scaffold_path": "surfaces/cli/formatters/query_plan.py",
       "target_role": "classification follow-up",
       "target_runtime_seam": "native"
     },
@@ -94686,7 +94686,7 @@
       "action": "refactor",
       "current_role": "prototype_runtime/behavior_implemented",
       "notes": [],
-      "scaffold_path": "surfaces/native/cli/formatters/representations.py",
+      "scaffold_path": "surfaces/cli/formatters/representations.py",
       "target_role": "classification follow-up",
       "target_runtime_seam": "native"
     },
@@ -94694,7 +94694,7 @@
       "action": "refactor",
       "current_role": "prototype_runtime/behavior_implemented",
       "notes": [],
-      "scaffold_path": "surfaces/native/cli/formatters/resolution.py",
+      "scaffold_path": "surfaces/cli/formatters/resolution.py",
       "target_role": "classification follow-up",
       "target_runtime_seam": "native"
     },
@@ -94702,7 +94702,7 @@
       "action": "refactor",
       "current_role": "prototype_runtime/behavior_implemented",
       "notes": [],
-      "scaffold_path": "surfaces/native/cli/formatters/resolution_memory.py",
+      "scaffold_path": "surfaces/cli/formatters/resolution_memory.py",
       "target_role": "classification follow-up",
       "target_runtime_seam": "native"
     },
@@ -94710,7 +94710,7 @@
       "action": "refactor",
       "current_role": "prototype_runtime/behavior_implemented",
       "notes": [],
-      "scaffold_path": "surfaces/native/cli/formatters/resolution_runs.py",
+      "scaffold_path": "surfaces/cli/formatters/resolution_runs.py",
       "target_role": "classification follow-up",
       "target_runtime_seam": "native"
     },
@@ -94718,7 +94718,7 @@
       "action": "refactor",
       "current_role": "prototype_runtime/behavior_implemented",
       "notes": [],
-      "scaffold_path": "surfaces/native/cli/formatters/search.py",
+      "scaffold_path": "surfaces/cli/formatters/search.py",
       "target_role": "classification follow-up",
       "target_runtime_seam": "native"
     },
@@ -94726,7 +94726,7 @@
       "action": "refactor",
       "current_role": "prototype_runtime/behavior_implemented",
       "notes": [],
-      "scaffold_path": "surfaces/native/cli/formatters/source_registry.py",
+      "scaffold_path": "surfaces/cli/formatters/source_registry.py",
       "target_role": "classification follow-up",
       "target_runtime_seam": "connector_runtime"
     },
@@ -94734,7 +94734,7 @@
       "action": "refactor",
       "current_role": "prototype_runtime/behavior_implemented",
       "notes": [],
-      "scaffold_path": "surfaces/native/cli/formatters/stored_exports.py",
+      "scaffold_path": "surfaces/cli/formatters/stored_exports.py",
       "target_role": "classification follow-up",
       "target_runtime_seam": "native"
     },
@@ -94742,7 +94742,7 @@
       "action": "refactor",
       "current_role": "prototype_runtime/behavior_implemented",
       "notes": [],
-      "scaffold_path": "surfaces/native/cli/formatters/subject_states.py",
+      "scaffold_path": "surfaces/cli/formatters/subject_states.py",
       "target_role": "classification follow-up",
       "target_runtime_seam": "native"
     },
@@ -94750,7 +94750,7 @@
       "action": "refactor",
       "current_role": "prototype_runtime/behavior_implemented",
       "notes": [],
-      "scaffold_path": "surfaces/native/cli/main.py",
+      "scaffold_path": "surfaces/cli/main.py",
       "target_role": "classification follow-up",
       "target_runtime_seam": "native"
     },
@@ -94760,7 +94760,7 @@
       "notes": [
         "empty, near-empty, or placeholder artifact"
       ],
-      "scaffold_path": "surfaces/native/cli/tests/__init__.py",
+      "scaffold_path": "surfaces/cli/tests/__init__.py",
       "target_role": "classification follow-up",
       "target_runtime_seam": "native"
     },
@@ -94768,7 +94768,7 @@
       "action": "refactor",
       "current_role": "prototype_runtime/behavior_implemented",
       "notes": [],
-      "scaffold_path": "surfaces/native/cli/tests/test_archive_resolution_evals_cli.py",
+      "scaffold_path": "surfaces/cli/tests/test_archive_resolution_evals_cli.py",
       "target_role": "classification follow-up",
       "target_runtime_seam": "native"
     },
@@ -94776,7 +94776,7 @@
       "action": "refactor",
       "current_role": "prototype_runtime/behavior_implemented",
       "notes": [],
-      "scaffold_path": "surfaces/native/cli/tests/test_local_index_cli.py",
+      "scaffold_path": "surfaces/cli/tests/test_local_index_cli.py",
       "target_role": "classification follow-up",
       "target_runtime_seam": "native"
     },
@@ -94784,7 +94784,7 @@
       "action": "refactor",
       "current_role": "prototype_runtime/behavior_implemented",
       "notes": [],
-      "scaffold_path": "surfaces/native/cli/tests/test_local_tasks_cli.py",
+      "scaffold_path": "surfaces/cli/tests/test_local_tasks_cli.py",
       "target_role": "classification follow-up",
       "target_runtime_seam": "native"
     },
@@ -94792,7 +94792,7 @@
       "action": "refactor",
       "current_role": "prototype_runtime/behavior_implemented",
       "notes": [],
-      "scaffold_path": "surfaces/native/cli/tests/test_main.py",
+      "scaffold_path": "surfaces/cli/tests/test_main.py",
       "target_role": "classification follow-up",
       "target_runtime_seam": "native"
     },
@@ -94800,7 +94800,7 @@
       "action": "refactor",
       "current_role": "prototype_runtime/behavior_implemented",
       "notes": [],
-      "scaffold_path": "surfaces/native/cli/tests/test_query_planner_cli.py",
+      "scaffold_path": "surfaces/cli/tests/test_query_planner_cli.py",
       "target_role": "classification follow-up",
       "target_runtime_seam": "native"
     },
@@ -94808,7 +94808,7 @@
       "action": "refactor",
       "current_role": "prototype_runtime/behavior_implemented",
       "notes": [],
-      "scaffold_path": "surfaces/native/cli/tests/test_resolution_memory_cli.py",
+      "scaffold_path": "surfaces/cli/tests/test_resolution_memory_cli.py",
       "target_role": "classification follow-up",
       "target_runtime_seam": "native"
     },
@@ -94816,7 +94816,7 @@
       "action": "refactor",
       "current_role": "prototype_runtime/behavior_implemented",
       "notes": [],
-      "scaffold_path": "surfaces/native/cli/tests/test_resolution_runs_cli.py",
+      "scaffold_path": "surfaces/cli/tests/test_resolution_runs_cli.py",
       "target_role": "classification follow-up",
       "target_runtime_seam": "native"
     },
@@ -99457,3 +99457,4 @@
   ],
   "schema_version": "r0.scaffold_to_runtime_map.v0"
 }
+

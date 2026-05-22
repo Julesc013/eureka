@@ -967,7 +967,7 @@ behavior, or source connectors.
 Compatibility Evidence Pack v0 is validated with:
 
 ```bash
-python -m unittest runtime.engine.compatibility.tests.test_compatibility_evidence runtime.engine.compatibility.tests.test_service runtime.engine.index.tests.test_member_level_synthetic_records surfaces.web.tests.test_compatibility_rendering surfaces.native.cli.tests.test_local_index_cli
+python -m unittest runtime.engine.compatibility.tests.test_compatibility_evidence runtime.engine.compatibility.tests.test_service runtime.engine.index.tests.test_member_level_synthetic_records surfaces.web.tests.test_compatibility_rendering surfaces.cli.tests.test_local_index_cli
 ```
 
 This check verifies source-backed compatibility evidence extraction,
@@ -1003,3 +1003,4 @@ risks, blockers, human-operated work, deferrals, and next milestone
 recommendations. It does not add product behavior, live network behavior,
 native project files, relay runtime, downloads, installers, telemetry, or
 deployment changes.
+

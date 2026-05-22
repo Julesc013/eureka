@@ -31406,7 +31406,7 @@
     {
       "allowed_here": false,
       "line": 11,
-      "path": "surfaces/native/cli/README.md",
+      "path": "surfaces/cli/README.md",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "high",
       "term": "BUNDLE"
@@ -31414,7 +31414,7 @@
     {
       "allowed_here": false,
       "line": 19,
-      "path": "surfaces/native/cli/README.md",
+      "path": "surfaces/cli/README.md",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "high",
       "term": "BUNDLE"
@@ -31422,7 +31422,7 @@
     {
       "allowed_here": false,
       "line": 22,
-      "path": "surfaces/native/cli/README.md",
+      "path": "surfaces/cli/README.md",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "high",
       "term": "BUNDLE"
@@ -31430,7 +31430,7 @@
     {
       "allowed_here": false,
       "line": 73,
-      "path": "surfaces/native/cli/README.md",
+      "path": "surfaces/cli/README.md",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "high",
       "term": "BUNDLE"
@@ -31438,7 +31438,7 @@
     {
       "allowed_here": false,
       "line": 74,
-      "path": "surfaces/native/cli/README.md",
+      "path": "surfaces/cli/README.md",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "high",
       "term": "BUNDLE"
@@ -31446,7 +31446,7 @@
     {
       "allowed_here": false,
       "line": 76,
-      "path": "surfaces/native/cli/README.md",
+      "path": "surfaces/cli/README.md",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "high",
       "term": "BUNDLE"
@@ -31454,7 +31454,7 @@
     {
       "allowed_here": false,
       "line": 99,
-      "path": "surfaces/native/cli/README.md",
+      "path": "surfaces/cli/README.md",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "high",
       "term": "BUNDLE"
@@ -31462,7 +31462,7 @@
     {
       "allowed_here": false,
       "line": 103,
-      "path": "surfaces/native/cli/README.md",
+      "path": "surfaces/cli/README.md",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "high",
       "term": "BUNDLE"
@@ -31470,7 +31470,7 @@
     {
       "allowed_here": false,
       "line": 56,
-      "path": "surfaces/native/cli/formatters/actions.py",
+      "path": "surfaces/cli/formatters/actions.py",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "high",
       "term": "BUNDLE"
@@ -31478,7 +31478,7 @@
     {
       "allowed_here": false,
       "line": 58,
-      "path": "surfaces/native/cli/formatters/actions.py",
+      "path": "surfaces/cli/formatters/actions.py",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "high",
       "term": "BUNDLE"
@@ -31486,7 +31486,7 @@
     {
       "allowed_here": false,
       "line": 60,
-      "path": "surfaces/native/cli/formatters/actions.py",
+      "path": "surfaces/cli/formatters/actions.py",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "high",
       "term": "BUNDLE"
@@ -31494,7 +31494,7 @@
     {
       "allowed_here": false,
       "line": 69,
-      "path": "surfaces/native/cli/formatters/actions.py",
+      "path": "surfaces/cli/formatters/actions.py",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "high",
       "term": "BUNDLE"
@@ -31502,7 +31502,7 @@
     {
       "allowed_here": false,
       "line": 70,
-      "path": "surfaces/native/cli/formatters/actions.py",
+      "path": "surfaces/cli/formatters/actions.py",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "high",
       "term": "BUNDLE"
@@ -31510,7 +31510,7 @@
     {
       "allowed_here": false,
       "line": 71,
-      "path": "surfaces/native/cli/formatters/actions.py",
+      "path": "surfaces/cli/formatters/actions.py",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "high",
       "term": "BUNDLE"
@@ -31518,7 +31518,7 @@
     {
       "allowed_here": false,
       "line": 72,
-      "path": "surfaces/native/cli/formatters/actions.py",
+      "path": "surfaces/cli/formatters/actions.py",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "high",
       "term": "BUNDLE"
@@ -31526,7 +31526,7 @@
     {
       "allowed_here": false,
       "line": 73,
-      "path": "surfaces/native/cli/formatters/actions.py",
+      "path": "surfaces/cli/formatters/actions.py",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "high",
       "term": "BUNDLE"
@@ -31534,7 +31534,7 @@
     {
       "allowed_here": false,
       "line": 74,
-      "path": "surfaces/native/cli/formatters/actions.py",
+      "path": "surfaces/cli/formatters/actions.py",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "high",
       "term": "BUNDLE"
@@ -31542,7 +31542,7 @@
     {
       "allowed_here": false,
       "line": 12,
-      "path": "surfaces/native/cli/formatters/inspection.py",
+      "path": "surfaces/cli/formatters/inspection.py",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "high",
       "term": "BUNDLE"
@@ -31550,7 +31550,7 @@
     {
       "allowed_here": false,
       "line": 22,
-      "path": "surfaces/native/cli/formatters/inspection.py",
+      "path": "surfaces/cli/formatters/inspection.py",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "high",
       "term": "BUNDLE"
@@ -31558,7 +31558,7 @@
     {
       "allowed_here": false,
       "line": 23,
-      "path": "surfaces/native/cli/formatters/inspection.py",
+      "path": "surfaces/cli/formatters/inspection.py",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "high",
       "term": "BUNDLE"
@@ -31566,7 +31566,7 @@
     {
       "allowed_here": false,
       "line": 24,
-      "path": "surfaces/native/cli/formatters/inspection.py",
+      "path": "surfaces/cli/formatters/inspection.py",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "high",
       "term": "BUNDLE"
@@ -31574,7 +31574,7 @@
     {
       "allowed_here": false,
       "line": 25,
-      "path": "surfaces/native/cli/formatters/inspection.py",
+      "path": "surfaces/cli/formatters/inspection.py",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "high",
       "term": "BUNDLE"
@@ -31582,7 +31582,7 @@
     {
       "allowed_here": false,
       "line": 26,
-      "path": "surfaces/native/cli/formatters/inspection.py",
+      "path": "surfaces/cli/formatters/inspection.py",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "high",
       "term": "BUNDLE"
@@ -31590,7 +31590,7 @@
     {
       "allowed_here": false,
       "line": 27,
-      "path": "surfaces/native/cli/formatters/inspection.py",
+      "path": "surfaces/cli/formatters/inspection.py",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "high",
       "term": "BUNDLE"
@@ -31598,7 +31598,7 @@
     {
       "allowed_here": false,
       "line": 28,
-      "path": "surfaces/native/cli/formatters/inspection.py",
+      "path": "surfaces/cli/formatters/inspection.py",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "high",
       "term": "BUNDLE"
@@ -31606,7 +31606,7 @@
     {
       "allowed_here": false,
       "line": 29,
-      "path": "surfaces/native/cli/formatters/inspection.py",
+      "path": "surfaces/cli/formatters/inspection.py",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "high",
       "term": "BUNDLE"
@@ -31614,7 +31614,7 @@
     {
       "allowed_here": false,
       "line": 30,
-      "path": "surfaces/native/cli/formatters/inspection.py",
+      "path": "surfaces/cli/formatters/inspection.py",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "high",
       "term": "BUNDLE"
@@ -31622,7 +31622,7 @@
     {
       "allowed_here": false,
       "line": 31,
-      "path": "surfaces/native/cli/formatters/inspection.py",
+      "path": "surfaces/cli/formatters/inspection.py",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "high",
       "term": "BUNDLE"
@@ -31630,7 +31630,7 @@
     {
       "allowed_here": false,
       "line": 91,
-      "path": "surfaces/native/cli/formatters/stored_exports.py",
+      "path": "surfaces/cli/formatters/stored_exports.py",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "high",
       "term": "BUNDLE"
@@ -31638,7 +31638,7 @@
     {
       "allowed_here": false,
       "line": 96,
-      "path": "surfaces/native/cli/formatters/stored_exports.py",
+      "path": "surfaces/cli/formatters/stored_exports.py",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "high",
       "term": "BUNDLE"
@@ -31646,7 +31646,7 @@
     {
       "allowed_here": false,
       "line": 97,
-      "path": "surfaces/native/cli/formatters/stored_exports.py",
+      "path": "surfaces/cli/formatters/stored_exports.py",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "high",
       "term": "BUNDLE"
@@ -31654,7 +31654,7 @@
     {
       "allowed_here": false,
       "line": 98,
-      "path": "surfaces/native/cli/formatters/stored_exports.py",
+      "path": "surfaces/cli/formatters/stored_exports.py",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "high",
       "term": "BUNDLE"
@@ -31662,7 +31662,7 @@
     {
       "allowed_here": false,
       "line": 99,
-      "path": "surfaces/native/cli/formatters/stored_exports.py",
+      "path": "surfaces/cli/formatters/stored_exports.py",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "high",
       "term": "BUNDLE"
@@ -31670,7 +31670,7 @@
     {
       "allowed_here": false,
       "line": 100,
-      "path": "surfaces/native/cli/formatters/stored_exports.py",
+      "path": "surfaces/cli/formatters/stored_exports.py",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "high",
       "term": "BUNDLE"
@@ -31678,7 +31678,7 @@
     {
       "allowed_here": false,
       "line": 101,
-      "path": "surfaces/native/cli/formatters/stored_exports.py",
+      "path": "surfaces/cli/formatters/stored_exports.py",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "high",
       "term": "BUNDLE"
@@ -31686,7 +31686,7 @@
     {
       "allowed_here": false,
       "line": 102,
-      "path": "surfaces/native/cli/formatters/stored_exports.py",
+      "path": "surfaces/cli/formatters/stored_exports.py",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "high",
       "term": "BUNDLE"
@@ -31694,7 +31694,7 @@
     {
       "allowed_here": false,
       "line": 103,
-      "path": "surfaces/native/cli/formatters/stored_exports.py",
+      "path": "surfaces/cli/formatters/stored_exports.py",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "high",
       "term": "BUNDLE"
@@ -31702,7 +31702,7 @@
     {
       "allowed_here": false,
       "line": 104,
-      "path": "surfaces/native/cli/formatters/stored_exports.py",
+      "path": "surfaces/cli/formatters/stored_exports.py",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "high",
       "term": "BUNDLE"
@@ -31710,7 +31710,7 @@
     {
       "allowed_here": false,
       "line": 610,
-      "path": "surfaces/native/cli/main.py",
+      "path": "surfaces/cli/main.py",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "high",
       "term": "BUNDLE"
@@ -31718,7 +31718,7 @@
     {
       "allowed_here": false,
       "line": 613,
-      "path": "surfaces/native/cli/main.py",
+      "path": "surfaces/cli/main.py",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "high",
       "term": "BUNDLE"
@@ -31726,7 +31726,7 @@
     {
       "allowed_here": false,
       "line": 634,
-      "path": "surfaces/native/cli/main.py",
+      "path": "surfaces/cli/main.py",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "high",
       "term": "BUNDLE"
@@ -31734,7 +31734,7 @@
     {
       "allowed_here": false,
       "line": 1072,
-      "path": "surfaces/native/cli/main.py",
+      "path": "surfaces/cli/main.py",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "high",
       "term": "BUNDLE"
@@ -31742,7 +31742,7 @@
     {
       "allowed_here": false,
       "line": 1074,
-      "path": "surfaces/native/cli/main.py",
+      "path": "surfaces/cli/main.py",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "high",
       "term": "BUNDLE"
@@ -31750,7 +31750,7 @@
     {
       "allowed_here": false,
       "line": 1079,
-      "path": "surfaces/native/cli/main.py",
+      "path": "surfaces/cli/main.py",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "high",
       "term": "BUNDLE"
@@ -31758,7 +31758,7 @@
     {
       "allowed_here": false,
       "line": 1081,
-      "path": "surfaces/native/cli/main.py",
+      "path": "surfaces/cli/main.py",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "high",
       "term": "BUNDLE"
@@ -31766,7 +31766,7 @@
     {
       "allowed_here": false,
       "line": 1087,
-      "path": "surfaces/native/cli/main.py",
+      "path": "surfaces/cli/main.py",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "high",
       "term": "BUNDLE"
@@ -31774,7 +31774,7 @@
     {
       "allowed_here": false,
       "line": 1188,
-      "path": "surfaces/native/cli/main.py",
+      "path": "surfaces/cli/main.py",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "high",
       "term": "BUNDLE"
@@ -31782,7 +31782,7 @@
     {
       "allowed_here": false,
       "line": 64,
-      "path": "surfaces/native/cli/tests/test_local_index_cli.py",
+      "path": "surfaces/cli/tests/test_local_index_cli.py",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "high",
       "term": "BUNDLE"
@@ -31790,7 +31790,7 @@
     {
       "allowed_here": false,
       "line": 70,
-      "path": "surfaces/native/cli/tests/test_main.py",
+      "path": "surfaces/cli/tests/test_main.py",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "high",
       "term": "BUNDLE"
@@ -31798,7 +31798,7 @@
     {
       "allowed_here": false,
       "line": 96,
-      "path": "surfaces/native/cli/tests/test_main.py",
+      "path": "surfaces/cli/tests/test_main.py",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "high",
       "term": "BUNDLE"
@@ -31806,7 +31806,7 @@
     {
       "allowed_here": false,
       "line": 97,
-      "path": "surfaces/native/cli/tests/test_main.py",
+      "path": "surfaces/cli/tests/test_main.py",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "high",
       "term": "BUNDLE"
@@ -31814,7 +31814,7 @@
     {
       "allowed_here": false,
       "line": 234,
-      "path": "surfaces/native/cli/tests/test_main.py",
+      "path": "surfaces/cli/tests/test_main.py",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "high",
       "term": "BUNDLE"
@@ -31822,7 +31822,7 @@
     {
       "allowed_here": false,
       "line": 250,
-      "path": "surfaces/native/cli/tests/test_main.py",
+      "path": "surfaces/cli/tests/test_main.py",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "high",
       "term": "BUNDLE"
@@ -31830,7 +31830,7 @@
     {
       "allowed_here": false,
       "line": 527,
-      "path": "surfaces/native/cli/tests/test_main.py",
+      "path": "surfaces/cli/tests/test_main.py",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "high",
       "term": "BUNDLE"
@@ -31838,7 +31838,7 @@
     {
       "allowed_here": false,
       "line": 535,
-      "path": "surfaces/native/cli/tests/test_main.py",
+      "path": "surfaces/cli/tests/test_main.py",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "high",
       "term": "BUNDLE"
@@ -31846,7 +31846,7 @@
     {
       "allowed_here": false,
       "line": 540,
-      "path": "surfaces/native/cli/tests/test_main.py",
+      "path": "surfaces/cli/tests/test_main.py",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "high",
       "term": "BUNDLE"
@@ -31854,7 +31854,7 @@
     {
       "allowed_here": false,
       "line": 549,
-      "path": "surfaces/native/cli/tests/test_main.py",
+      "path": "surfaces/cli/tests/test_main.py",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "high",
       "term": "BUNDLE"
@@ -31862,7 +31862,7 @@
     {
       "allowed_here": false,
       "line": 552,
-      "path": "surfaces/native/cli/tests/test_main.py",
+      "path": "surfaces/cli/tests/test_main.py",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "high",
       "term": "BUNDLE"
@@ -31870,7 +31870,7 @@
     {
       "allowed_here": false,
       "line": 555,
-      "path": "surfaces/native/cli/tests/test_main.py",
+      "path": "surfaces/cli/tests/test_main.py",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "high",
       "term": "BUNDLE"
@@ -31878,7 +31878,7 @@
     {
       "allowed_here": false,
       "line": 556,
-      "path": "surfaces/native/cli/tests/test_main.py",
+      "path": "surfaces/cli/tests/test_main.py",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "high",
       "term": "BUNDLE"
@@ -31886,7 +31886,7 @@
     {
       "allowed_here": false,
       "line": 565,
-      "path": "surfaces/native/cli/tests/test_main.py",
+      "path": "surfaces/cli/tests/test_main.py",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "high",
       "term": "BUNDLE"
@@ -31894,7 +31894,7 @@
     {
       "allowed_here": false,
       "line": 587,
-      "path": "surfaces/native/cli/tests/test_main.py",
+      "path": "surfaces/cli/tests/test_main.py",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "high",
       "term": "BUNDLE"
@@ -31902,7 +31902,7 @@
     {
       "allowed_here": false,
       "line": 650,
-      "path": "surfaces/native/cli/tests/test_main.py",
+      "path": "surfaces/cli/tests/test_main.py",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "high",
       "term": "BUNDLE"
@@ -31910,7 +31910,7 @@
     {
       "allowed_here": false,
       "line": 691,
-      "path": "surfaces/native/cli/tests/test_main.py",
+      "path": "surfaces/cli/tests/test_main.py",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "high",
       "term": "BUNDLE"
@@ -31918,7 +31918,7 @@
     {
       "allowed_here": false,
       "line": 708,
-      "path": "surfaces/native/cli/tests/test_main.py",
+      "path": "surfaces/cli/tests/test_main.py",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "high",
       "term": "BUNDLE"
@@ -31926,7 +31926,7 @@
     {
       "allowed_here": false,
       "line": 47,
-      "path": "surfaces/native/cli/tests/test_resolution_runs_cli.py",
+      "path": "surfaces/cli/tests/test_resolution_runs_cli.py",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "high",
       "term": "BUNDLE"
@@ -31934,7 +31934,7 @@
     {
       "allowed_here": false,
       "line": 52,
-      "path": "surfaces/native/cli/tests/test_resolution_runs_cli.py",
+      "path": "surfaces/cli/tests/test_resolution_runs_cli.py",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "high",
       "term": "BUNDLE"
@@ -34828,3 +34828,4 @@
     "production_looking_file_count": 1522
   }
 }
+

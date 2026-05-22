@@ -11,8 +11,6 @@ from typing import Iterable, Sequence, TextIO
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 CHECKED_TOP_LEVEL_PATHS = ("runtime", "surfaces")
-SURFACE_WEB_PREFIX = "surfaces.web"
-SURFACE_NATIVE_PREFIX = "surfaces.native"
 GATEWAY_PUBLIC_API_PREFIX = "runtime.gateway.public_api"
 CONNECTORS_PREFIX = "runtime.connectors"
 ENGINE_PREFIX = "runtime.engine"
@@ -221,20 +219,13 @@ def classify_violation(
     line: int,
 ) -> BoundaryViolation | None:
     source_module = location.module_name
-    if source_module.startswith(SURFACE_WEB_PREFIX):
+    surface_prefix = surface_family_prefix(source_module)
+    if surface_prefix is not None:
         return classify_surface_violation(
             location,
             imported_module,
             line,
-            allowed_surface_prefix=SURFACE_WEB_PREFIX,
-        )
-
-    if source_module.startswith(SURFACE_NATIVE_PREFIX):
-        return classify_surface_violation(
-            location,
-            imported_module,
-            line,
-            allowed_surface_prefix=SURFACE_NATIVE_PREFIX,
+            allowed_surface_prefix=surface_prefix,
         )
 
     if source_module.startswith(GATEWAY_PUBLIC_API_PREFIX) and imported_module.startswith(SURFACES_PREFIX):
@@ -268,6 +259,15 @@ def classify_violation(
         )
 
     return None
+
+
+def surface_family_prefix(module_name: str) -> str | None:
+    if not module_name.startswith(f"{SURFACES_PREFIX}."):
+        return None
+    parts = module_name.split(".")
+    if len(parts) < 2:
+        return None
+    return ".".join(parts[:2])
 
 
 def classify_surface_violation(

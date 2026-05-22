@@ -1,0 +1,18 @@
+[
+  {
+    "old_path": "release/render/render.yaml",
+    "new_path": "release/hosting/render/render.yaml",
+    "reason": "Classify the Render template as a hosting release definition instead of a generic render root.",
+    "class": "root_cleanup",
+    "compatibility_wrapper": false,
+    "references_updated": true
+  },
+  {
+    "old_path": "surfaces/native/cli",
+    "new_path": "surfaces/cli",
+    "reason": "Represent CLI as its own surface family instead of a native projection subdirectory.",
+    "class": "surface_cleanup",
+    "compatibility_wrapper": false,
+    "references_updated": true
+  }
+]

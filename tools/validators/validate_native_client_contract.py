@@ -17,7 +17,7 @@ CLIENT_PROFILES = PUBLICATION_DIR / "client_profiles.json"
 SNAPSHOT_CONSUMER_CONTRACT = PUBLICATION_DIR / "snapshot_consumer_contract.json"
 SNAPSHOT_CONSUMER_PROFILES = PUBLICATION_DIR / "snapshot_consumer_profiles.json"
 RELAY_SURFACE = PUBLICATION_DIR / "relay_surface.json"
-CLI_ROOT = REPO_ROOT / "surfaces" / "native" / "cli"
+CLI_ROOT = REPO_ROOT / "surfaces" / "cli"
 PUBLIC_DATA_ROOT = REPO_ROOT / "site/dist" / "data"
 SNAPSHOT_ROOT = REPO_ROOT / "snapshots" / "examples" / "static_snapshot_v0"
 
@@ -181,9 +181,9 @@ def _validate_contract(payload: Any, repo_root: Path, errors: list[str]) -> set[
         if payload.get(key) != expected:
             errors.append(f"native_client_contract.json: {key} must be {expected!r}.")
 
-    cli_exists = (repo_root / "surfaces" / "native" / "cli").is_dir()
+    cli_exists = (repo_root / "surfaces" / "cli").is_dir()
     if payload.get("cli_surface_implemented") is not cli_exists:
-        errors.append("native_client_contract.json: cli_surface_implemented must match surfaces/native/cli existence.")
+        errors.append("native_client_contract.json: cli_surface_implemented must match surfaces/cli existence.")
 
     input_ids = {str(item.get("id")) for item in _mapping_list(payload.get("required_inputs"))}
     for required_id in ("public_data_summaries", "snapshot_consumer_contract", "client_profile_contract"):
@@ -461,3 +461,4 @@ def _rel(path: Path, repo_root: Path) -> str:
 
 if __name__ == "__main__":
     raise SystemExit(main())
+

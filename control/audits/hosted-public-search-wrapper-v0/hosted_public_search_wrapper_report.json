@@ -48,7 +48,7 @@
   "deployment_templates": {
     "dockerfile": "Dockerfile",
     "dockerignore": ".dockerignore",
-    "render_template": "release/render/render.yaml",
+    "render_template": "release/hosting/render/render.yaml",
     "template_docs": "docs/operations/hosting/render_deployment.md",
     "status": "template_only_operator_gated"
   },
@@ -369,3 +369,4 @@
     "Live probes, source connectors, downloads, uploads, accounts, telemetry, arbitrary URL fetch, AI runtime, index mutation, pack import, and staging runtime remain disabled or absent."
   ]
 }
+

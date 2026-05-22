@@ -83,8 +83,8 @@
 - `site/dist/.nojekyll`: `placeholder` / `investigate`
 - `surfaces/__init__.py`: `placeholder` / `delete_if_unreferenced`
 - `surfaces/native/__init__.py`: `placeholder` / `delete_if_unreferenced`
-- `surfaces/native/cli/.gitkeep`: `placeholder` / `investigate`
-- `surfaces/native/cli/tests/__init__.py`: `placeholder` / `delete_if_unreferenced`
+- `surfaces/cli/.gitkeep`: `placeholder` / `investigate`
+- `surfaces/cli/tests/__init__.py`: `placeholder` / `delete_if_unreferenced`
 - `surfaces/native/integrations/.gitkeep`: `placeholder` / `investigate`
 - `surfaces/native/local_actions/.gitkeep`: `placeholder` / `investigate`
 - `surfaces/native/local_cache/.gitkeep`: `placeholder` / `investigate`
@@ -112,3 +112,4 @@
 - `tests/parity/__init__.py`: `empty_or_zero_byte` / `delete_if_unreferenced`
 - `tests/runtime/__init__.py`: `placeholder` / `delete_if_unreferenced`
 - `tests/scripts/__init__.py`: `empty_or_zero_byte` / `delete_if_unreferenced`
+

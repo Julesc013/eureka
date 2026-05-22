@@ -7,7 +7,7 @@ from runtime.gateway.public_api import (
     build_demo_compatibility_public_api,
     compatibility_envelope_to_view_model,
 )
-from surfaces.native.cli.formatters import format_compatibility
+from surfaces.cli.formatters import format_compatibility
 
 
 class CompatibilitySliceIntegrationTestCase(unittest.TestCase):
@@ -31,3 +31,4 @@ class CompatibilitySliceIntegrationTestCase(unittest.TestCase):
         self.assertIn("compatibility_status: compatible", rendered)
         self.assertIn("host_profile_id: windows-x86_64", rendered)
         self.assertIn("os_family_supported", rendered)
+

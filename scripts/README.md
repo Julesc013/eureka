@@ -535,7 +535,7 @@ Current scripts:
 Current enforced checker rules:
 
 - `surfaces/web/**` must not import `runtime/engine/**` or `runtime/connectors/**`
-- `surfaces/native/**` currently follows the same surface-side rule, with the active concrete slice under `surfaces/native/cli/**`
+- `surfaces/native/**` currently follows the same surface-side rule, with the active concrete slice under `surfaces/cli/**`
 - `surfaces/web/**` and `surfaces/native/**` may import runtime only through `runtime/gateway/public_api/**`
 - `surfaces/web/**` and `surfaces/native/**` may import only same-surface helpers under `surfaces/**`
 - `runtime/gateway/public_api/**` must not import `surfaces/**`
@@ -1092,3 +1092,4 @@ popularity, user-profile, or ad signal; source-cache or evidence-ledger
 authoritative read/write; live source call; download; install; execution; or
 source/evidence/candidate/public/local/master mutation.
 <!-- P107-PUBLIC-SEARCH-RANKING-LOCAL-DRY-RUN-RUNTIME-END -->
+

@@ -1,6 +1,6 @@
-# Native CLI Surface
+# CLI Surface
 
-`surfaces/native/cli/` is the first non-web Eureka surface family proof.
+`surfaces/cli/` is the first non-web Eureka surface family proof.
 
 This bootstrap CLI:
 
@@ -123,3 +123,4 @@ queues, or a final task-storage contract.
 `--memory-store-root` is a bootstrap local persistence input only. It does not
 imply shared/cloud memory, private user-history tracking, personalization,
 ranking, automatic invalidation, or a final multi-user memory-storage contract.
+

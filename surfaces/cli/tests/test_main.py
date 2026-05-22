@@ -7,7 +7,7 @@ from pathlib import Path
 import tempfile
 import unittest
 
-from surfaces.native.cli.main import main
+from surfaces.cli.main import main
 
 
 KNOWN_TARGET_REF = "fixture:software/synthetic-demo-app@1.0.0"
@@ -750,3 +750,4 @@ class NativeCliMainTestCase(unittest.TestCase):
                         node.module.startswith("runtime.connectors"),
                         f"{path} imports connector internals: {node.module}",
                     )
+

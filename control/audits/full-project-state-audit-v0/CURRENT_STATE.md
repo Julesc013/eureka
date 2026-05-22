@@ -10,7 +10,7 @@ Current implemented or seed surfaces:
 - `site/` generator and `site/dist/` generated output, with `public_site/` still the deployment artifact.
 - `public_site/data/`, `public_site/lite/`, `public_site/text/`, `public_site/files/`, and `public_site/demo/`.
 - Static snapshot seed under `snapshots/examples/static_snapshot_v0/`.
-- CLI under `surfaces/native/cli/` as the only implemented native-like surface.
+- CLI under `surfaces/cli/` as the only implemented native-like surface.
 
 Current contract/planning surfaces:
 
@@ -19,3 +19,4 @@ Current contract/planning surfaces:
 Not currently implemented:
 
 - Relay runtime, network sockets, protocol servers, live backend, live probes, native GUI apps, Visual Studio/Xcode projects, local cache runtime, private ingestion, telemetry, accounts, cloud sync, downloads, installers, malware scanning, rights clearance, production signing, real signing keys, and production deployment approval.
+

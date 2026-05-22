@@ -49,7 +49,7 @@ P56 also does not perform them; it keeps static backend status unconfigured.
 ## Deployment Templates
 
 P54 adds a root `Dockerfile`, `.dockerignore`, `docs/operations/hosting/render_deployment.md`, and
-`release/render/render.yaml` as inert templates. They contain no credentials and
+`release/hosting/render/render.yaml` as inert templates. They contain no credentials and
 do not call any hosting provider API.
 
 ## Still Required Later
@@ -77,3 +77,4 @@ rate-limit, timeout, circuit-breaker, and operator evidence before deployment.
 ## P77 Evidence Status
 
 The repo-configured static URL was checked and returned 404 for required static routes. No hosted public search backend URL is configured. Hosting remains operator-gated; deploy and verify the backend separately before updating static handoff.
+

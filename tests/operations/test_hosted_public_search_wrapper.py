@@ -102,7 +102,7 @@ class HostedPublicSearchWrapperAuditTest(unittest.TestCase):
         ):
             self.assertIn(phrase, dockerfile)
 
-        render = (REPO_ROOT / "deploy" / "render" / "render.yaml").read_text(encoding="utf-8")
+        render = (REPO_ROOT / "release" / "hosting" / "render" / "render.yaml").read_text(encoding="utf-8")
         self.assertIn("healthCheckPath: /healthz", render)
         self.assertIn("local_index_only", render)
         self.assertNotIn("api_key", render.casefold())

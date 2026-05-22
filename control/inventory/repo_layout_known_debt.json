@@ -14,7 +14,7 @@
     {
       "debt_id": "top_level_deploy",
       "old_path": "deploy",
-      "new_path": "release/render",
+      "new_path": "release/hosting/render",
       "class": "release_definition_debt",
       "disposition": "moved_release_definition_and_hosting_docs"
     },
@@ -52,3 +52,4 @@
   "production_readiness_claim": false,
   "public_launch_readiness_claim": false
 }
+

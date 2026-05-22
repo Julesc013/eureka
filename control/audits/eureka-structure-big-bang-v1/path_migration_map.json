@@ -10,7 +10,7 @@
   {
     "class": "root_cleanup",
     "compatibility_wrapper": false,
-    "new_path": "release/render/render.yaml",
+    "new_path": "release/hosting/render/render.yaml",
     "old_path": "deploy/render/render.yaml",
     "reason": "Move Render deployment definition into release definitions.",
     "references_updated": true
@@ -6408,3 +6408,4 @@
     "references_updated": true
   }
 ]
+

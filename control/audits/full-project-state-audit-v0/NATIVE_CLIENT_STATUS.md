@@ -2,7 +2,7 @@
 
 Current native-like implementation:
 
-- CLI under `surfaces/native/cli/` is the only current native-like surface.
+- CLI under `surfaces/cli/` is the only current native-like surface.
 - No GUI native app exists.
 - No Visual Studio or Xcode project exists.
 - No FFI exists.
@@ -24,3 +24,4 @@ Readiness decision:
 - No implementation approval is present in this audit.
 
 Native work remains blocked until explicit human approval and build-host/toolchain verification.
+

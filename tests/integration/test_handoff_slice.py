@@ -7,7 +7,7 @@ from runtime.gateway.public_api import (
     build_demo_representation_selection_public_api,
     representation_selection_envelope_to_view_model,
 )
-from surfaces.native.cli.formatters import format_handoff
+from surfaces.cli.formatters import format_handoff
 
 
 class HandoffSliceIntegrationTestCase(unittest.TestCase):
@@ -57,3 +57,4 @@ class HandoffSliceIntegrationTestCase(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+

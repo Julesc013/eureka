@@ -7,7 +7,7 @@ from runtime.gateway.public_api import (
     build_demo_decomposition_public_api,
     decomposition_envelope_to_view_model,
 )
-from surfaces.native.cli.formatters import format_decomposition
+from surfaces.cli.formatters import format_decomposition
 
 
 class DecompositionSliceIntegrationTestCase(unittest.TestCase):
@@ -35,3 +35,4 @@ class DecompositionSliceIntegrationTestCase(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+

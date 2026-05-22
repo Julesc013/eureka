@@ -107,7 +107,7 @@ from runtime.gateway.public_api import (
     stored_exports_envelope_to_view_model,
     subject_states_envelope_to_view_model,
 )
-from surfaces.native.cli.formatters import (
+from surfaces.cli.formatters import (
     format_acquisition,
     format_action_plan,
     format_absence_report,
@@ -1344,3 +1344,4 @@ def _is_json_content_type(content_type: str) -> bool:
 
 if __name__ == "__main__":
     raise SystemExit(main())
+

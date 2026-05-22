@@ -5,7 +5,7 @@ import tempfile
 import unittest
 from io import StringIO
 
-from surfaces.native.cli.main import main
+from surfaces.cli.main import main
 
 
 KNOWN_TARGET_REF = "fixture:software/synthetic-demo-app@1.0.0"
@@ -75,3 +75,4 @@ class ResolutionRunsCliTestCase(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
