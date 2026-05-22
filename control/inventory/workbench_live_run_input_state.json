@@ -1,0 +1,23 @@
+{
+  "schema_version": "workbench_live_run_input_state.v0",
+  "task": "AIDE-BATCH-WORKBENCH-LIVE-RUN-01",
+  "branch": "dev",
+  "head": "d90e5436874cfb3d9e42d8a612eb322dbddaf7a5",
+  "origin_main": "79563d01c8cc01163eae53a973ad225d7b8edffb",
+  "origin_dev": "d90e5436874cfb3d9e42d8a612eb322dbddaf7a5",
+  "working_tree_clean_before": true,
+  "resolution_run_kernel_found": true,
+  "g0_foundation_found": true,
+  "f0_foundation_found": true,
+  "scout_schema_found": true,
+  "domain_foundation_found": true,
+  "syn_foundation_found": true,
+  "ia_hunt_bridge_found": true,
+  "workbench_result_lanes_found": true,
+  "search_interaction_found": true,
+  "workbench_foundation_found": true,
+  "test_lane_router_found": true,
+  "ia_pilot_closeout_found": true,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}

@@ -1,0 +1,19 @@
+{
+  "schema_version": "workbench_live_run_event_matrix.v0",
+  "task": "AIDE-BATCH-WORKBENCH-LIVE-RUN-01",
+  "event_types": [
+    "run.created",
+    "query.compiled",
+    "local_index.checked",
+    "lanes.snapshot_created",
+    "workunits.planned",
+    "ia_hunt.dry_run_planned",
+    "action.blocked",
+    "run.completed",
+    "run.failed",
+    "run.cancelled",
+    "warning.emitted"
+  ],
+  "event_log_mutates_operator_instance": false,
+  "events_create_truth": false
+}

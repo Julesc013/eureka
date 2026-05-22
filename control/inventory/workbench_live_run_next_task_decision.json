@@ -1,0 +1,14 @@
+{
+  "schema_version": "workbench_live_run_next_task_decision.v0",
+  "task": "AIDE-BATCH-WORKBENCH-LIVE-RUN-01",
+  "status": "ready_for_next_task",
+  "recommended_next_task": "IA-LIVE-METADATA-LANE-01 \u2014 Add explicit operator-approved live IA metadata lane",
+  "planned_after": [
+    "WORKBENCH-REVIEW-PROMOTE-01",
+    "LOCAL-APPLY-GATE-01",
+    "SOURCE-WAVE-00"
+  ],
+  "requires_main_promotion": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}

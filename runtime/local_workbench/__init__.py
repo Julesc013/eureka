@@ -24,6 +24,8 @@ from .pages import (
     render_search_need_list_page,
     render_source_page,
     render_status_page,
+    render_workbench_live_run_list_page,
+    render_workbench_live_run_page,
 )
 from .validation import (
     validate_html_safe,
@@ -73,6 +75,8 @@ from .view_models import (
     SourcePageView,
     StoreStatusView,
     StatusPageView,
+    WorkbenchLiveRunListPageView,
+    WorkbenchLiveRunPageView,
     build_absence_page_view,
     build_agent_research_disabled_boundary_view,
     build_home_page_view,
@@ -89,6 +93,8 @@ from .view_models import (
     build_search_need_list_page_view,
     build_source_page_view,
     build_status_page_view,
+    build_workbench_live_run_list_page_view,
+    build_workbench_live_run_page_view,
 )
 
 __all__ = [
@@ -131,6 +137,8 @@ __all__ = [
     "SourcePageView",
     "StoreStatusView",
     "StatusPageView",
+    "WorkbenchLiveRunListPageView",
+    "WorkbenchLiveRunPageView",
     "build_absence_page_view",
     "build_agent_research_disabled_boundary_view",
     "build_home_page_view",
@@ -147,6 +155,8 @@ __all__ = [
     "build_search_need_list_page_view",
     "build_source_page_view",
     "build_status_page_view",
+    "build_workbench_live_run_list_page_view",
+    "build_workbench_live_run_page_view",
     "escape_html",
     "render_absence_page",
     "render_document",
@@ -166,6 +176,8 @@ __all__ = [
     "render_search_need_list_page",
     "render_source_page",
     "render_status_page",
+    "render_workbench_live_run_list_page",
+    "render_workbench_live_run_page",
     "render_table",
     "render_warnings",
     "validate_html_safe",

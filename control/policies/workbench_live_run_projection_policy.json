@@ -1,0 +1,29 @@
+{
+  "schema_version": "workbench_live_run_projection_policy.v0",
+  "task": "AIDE-BATCH-WORKBENCH-LIVE-RUN-01",
+  "projection_profiles": [
+    {
+      "projection_profile": "operator_workbench",
+      "read_only": true,
+      "operator_detail_allowed": true,
+      "store_mutation_allowed": false
+    },
+    {
+      "projection_profile": "public_web",
+      "read_only": true,
+      "operator_detail_allowed": false,
+      "store_mutation_allowed": false
+    },
+    {
+      "projection_profile": "native_desktop_read_only",
+      "read_only": true,
+      "operator_detail_allowed": false,
+      "store_mutation_allowed": false
+    }
+  ],
+  "workbench_is_projection_only": true,
+  "surface_owns_rendering_only": true,
+  "runtime_resolution_run_owns_behavior": true,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}

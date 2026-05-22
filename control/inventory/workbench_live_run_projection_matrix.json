@@ -1,0 +1,23 @@
+{
+  "schema_version": "workbench_live_run_projection_matrix.v0",
+  "task": "AIDE-BATCH-WORKBENCH-LIVE-RUN-01",
+  "projections": [
+    {
+      "projection_profile": "operator_workbench",
+      "detail_level": "full local operator run packet",
+      "read_only": true
+    },
+    {
+      "projection_profile": "public_web",
+      "detail_level": "summary with operator-only fields hidden",
+      "read_only": true
+    },
+    {
+      "projection_profile": "native_desktop_read_only",
+      "detail_level": "summary with operator-only fields hidden",
+      "read_only": true
+    }
+  ],
+  "workbench_does_not_own_search_semantics": true,
+  "runtime_resolution_run_owns_behavior": true
+}

@@ -1,0 +1,126 @@
+[
+  {
+    "accepted_truth": false,
+    "created_at": "2026-05-22T00:00:00Z",
+    "event_id": "runevt_event_type_run_created_index_0_r_53a04d4b4a",
+    "event_type": "run.created",
+    "kernel_event_type": "run_created",
+    "payload": {
+      "query": "sampleproject"
+    },
+    "review_required": false,
+    "run_id": "run_profile_operator_workbench_query_c35f9f7f3a",
+    "schema_version": "workbench_live_run_event.v0",
+    "summary": "Resolution run created for query 'sampleproject'."
+  },
+  {
+    "accepted_truth": false,
+    "created_at": "2026-05-22T00:00:00Z",
+    "event_id": "runevt_event_type_query_compiled_index__f9a4081333",
+    "event_type": "query.compiled",
+    "kernel_event_type": "query_compiled",
+    "payload": {
+      "compiled_query_id": "compiled_profile_operator_workbench_query_c35f9f7f3a"
+    },
+    "review_required": false,
+    "run_id": "run_profile_operator_workbench_query_c35f9f7f3a",
+    "schema_version": "workbench_live_run_event.v0",
+    "summary": "Query compilation packet recorded by the run kernel."
+  },
+  {
+    "accepted_truth": false,
+    "created_at": "2026-05-22T00:00:00Z",
+    "event_id": "wblr_evt_event_type_local_index_checked_i_66951da582",
+    "event_type": "local_index.checked",
+    "review_required": false,
+    "run_id": "run_profile_operator_workbench_query_c35f9f7f3a",
+    "schema_version": "workbench_live_run_event.v0",
+    "summary": "Local reviewed index lane checked without source probes."
+  },
+  {
+    "accepted_truth": false,
+    "created_at": "2026-05-22T00:00:00Z",
+    "event_id": "runevt_event_type_command_applied_index_f2761e3738",
+    "event_type": "run.command_applied",
+    "kernel_event_type": "command_applied",
+    "payload": {
+      "command": {
+        "allowed": true,
+        "blocked_reasons": [],
+        "command_id": "runcmd_run_run_profile_operator_workben_184157e754",
+        "command_type": "start",
+        "created_at": "2026-05-22T00:00:00Z",
+        "dry_run": true,
+        "payload": {},
+        "run_id": "run_profile_operator_workbench_query_c35f9f7f3a",
+        "schema_version": "run_command.v0"
+      }
+    },
+    "review_required": false,
+    "run_id": "run_profile_operator_workbench_query_c35f9f7f3a",
+    "schema_version": "workbench_live_run_event.v0",
+    "summary": "Safe command applied: start."
+  },
+  {
+    "accepted_truth": false,
+    "created_at": "2026-05-22T00:00:00Z",
+    "event_id": "wblr_evt_event_type_ia_hunt_dry_run_plann_d1bed9aff6",
+    "event_type": "ia_hunt.dry_run_planned",
+    "review_required": false,
+    "run_id": "run_profile_operator_workbench_query_c35f9f7f3a",
+    "schema_version": "workbench_live_run_event.v0",
+    "summary": "IA-HUNT WorkUnits planned in dry-run mode only."
+  },
+  {
+    "accepted_truth": false,
+    "created_at": "2026-05-22T00:00:00Z",
+    "event_id": "runevt_event_type_workunits_scheduled_i_9895fcffc3",
+    "event_type": "workunits.planned",
+    "kernel_event_type": "workunits_scheduled",
+    "payload": {
+      "workunit_count": 10
+    },
+    "review_required": false,
+    "run_id": "run_profile_operator_workbench_query_c35f9f7f3a",
+    "schema_version": "workbench_live_run_event.v0",
+    "summary": "10 IA-HUNT dry-run WorkUnits planned."
+  },
+  {
+    "accepted_truth": false,
+    "created_at": "2026-05-22T00:00:00Z",
+    "event_id": "runevt_event_type_lane_snapshot_built_i_59561f644c",
+    "event_type": "lanes.snapshot_created",
+    "kernel_event_type": "lane_snapshot_built",
+    "payload": {
+      "snapshot_id": "run_lane_snapshot_projection_operator_workbench_ru_517f92aded"
+    },
+    "review_required": false,
+    "run_id": "run_profile_operator_workbench_query_c35f9f7f3a",
+    "schema_version": "workbench_live_run_event.v0",
+    "summary": "Result lane snapshot built from the run kernel projector."
+  },
+  {
+    "accepted_truth": false,
+    "created_at": "2026-05-22T00:00:00Z",
+    "event_id": "runevt_event_type_coverage_report_built_cf913c7f5a",
+    "event_type": "run.completed",
+    "kernel_event_type": "coverage_report_built",
+    "payload": {
+      "coverage_report_id": "coverage_run_profile_operator_workbench_q_8a60eea5dd"
+    },
+    "review_required": false,
+    "run_id": "run_profile_operator_workbench_query_c35f9f7f3a",
+    "schema_version": "workbench_live_run_event.v0",
+    "summary": "Dry-run coverage report built; live/apply work remains deferred."
+  },
+  {
+    "accepted_truth": false,
+    "created_at": "2026-05-22T00:00:00Z",
+    "event_id": "wblr_evt_event_type_action_blocked_index__dc316a6cdb",
+    "event_type": "action.blocked",
+    "review_required": false,
+    "run_id": "run_profile_operator_workbench_query_c35f9f7f3a",
+    "schema_version": "workbench_live_run_event.v0",
+    "summary": "Unsafe live/source/apply commands remain policy-blocked."
+  }
+]

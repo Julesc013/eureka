@@ -1,0 +1,13 @@
+{
+  "schema_version": "workbench_live_run_failure_repair_log.v0",
+  "task": "AIDE-BATCH-WORKBENCH-LIVE-RUN-01",
+  "repairs": [
+    {
+      "failure": "Workbench HTML validation rejected literal unsafe action labels in the blocked-action table.",
+      "root_cause": "Local Workbench hardening treats words such as download and execute as forbidden mutation-control affordances.",
+      "repair": "Kept exact blocked-action names in JSON while rendering presentation-safe labels in HTML.",
+      "rerun_command": "focused local service route smoke",
+      "result": "pass"
+    }
+  ]
+}

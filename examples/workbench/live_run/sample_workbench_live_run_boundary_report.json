@@ -1,0 +1,23 @@
+{
+  "candidate_index_mutated": false,
+  "debt_note": "Existing runtime/local_workbench presentation remains transitional; runtime/resolution_run owns behavior and runtime/local_workbench only renders local HTML.",
+  "deployment_performed": false,
+  "download_performed": false,
+  "evidence_write_performed": false,
+  "extraction_executed": false,
+  "live_ia_call_performed": false,
+  "local_service_projection_added": true,
+  "master_index_mutated": false,
+  "model_provider_used": false,
+  "operator_instance_mutated": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "resolution_run_kernel_used": true,
+  "reviewed_index_mutated": false,
+  "schema_version": "workbench_live_run_boundary_report.v0",
+  "source_cache_write_performed": false,
+  "source_probe_executed": false,
+  "transitional_runtime_local_workbench_presentation_debt": true,
+  "upload_performed": false,
+  "workbench_is_projection_only": true
+}

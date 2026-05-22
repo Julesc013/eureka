@@ -39,6 +39,26 @@ def route_request(
         return _search_html_response(runtime, request_context)
     if path == "/api/v1/search":
         return _search_response(runtime, request_context)
+    if path == "/runs":
+        if _wants_json(request_context):
+            return _workbench_live_run_list_or_create_response(request_context)
+        return _workbench_live_run_list_or_create_html_response(request_context)
+    if path == "/api/v1/resolution-runs":
+        return _workbench_live_run_list_or_create_response(request_context)
+    parsed_run_route = _parse_workbench_live_run_route(path)
+    if parsed_run_route:
+        run_id, endpoint = parsed_run_route
+        if endpoint == "events":
+            return _workbench_live_run_events_response(run_id, request_context)
+        if endpoint == "lanes":
+            return _workbench_live_run_lanes_response(run_id, request_context)
+        if endpoint == "workunits":
+            return _workbench_live_run_workunits_response(run_id, request_context)
+        if endpoint == "commands":
+            return _workbench_live_run_commands_response(run_id, request_context)
+        if path.startswith("/api/v1/") or _wants_json(request_context):
+            return _workbench_live_run_detail_response(run_id, request_context)
+        return _workbench_live_run_detail_html_response(run_id, request_context)
     if path.startswith("/object/"):
         record_id = path.removeprefix("/object/")
         if _wants_json(request_context):
@@ -290,9 +310,100 @@ def _search_html_response(runtime: Any, request_context: LocalRequestContext) ->
     workbench = _workbench()
     response = _search_response(runtime, request_context)
     query = first_param(request_context.params, "q", first_param(request_context.params, "query", ""))
-    html = workbench.render_search_page(workbench.build_search_page_view(query, response.payload))
+    live_run = None
+    if query.strip():
+        live_run = _workbench_live_run().create_workbench_resolution_run(
+            query,
+            _projection_profile(request_context),
+            include_ia_hunt_dry_run=True,
+        )
+    html = workbench.render_search_page(workbench.build_search_page_view(query, response.payload, live_run=live_run))
     workbench.validate_local_workbench_page(html)
     return html_response(200, html, response.payload)
+
+
+def _workbench_live_run_list_or_create_response(request_context: LocalRequestContext) -> LocalServiceResponse:
+    query = first_param(request_context.params, "q", first_param(request_context.params, "query", ""))
+    live_run = _workbench_live_run()
+    if query.strip():
+        packet = live_run.create_workbench_resolution_run(
+            query,
+            _projection_profile(request_context),
+            include_ia_hunt_dry_run=_include_ia_hunt_dry_run(request_context),
+        )
+        return json_response(200, live_run.build_api_response(packet, "create_run"))
+    return json_response(200, live_run.list_workbench_resolution_runs(_projection_profile(request_context)))
+
+
+def _workbench_live_run_list_or_create_html_response(request_context: LocalRequestContext) -> LocalServiceResponse:
+    query = first_param(request_context.params, "q", first_param(request_context.params, "query", ""))
+    live_run = _workbench_live_run()
+    workbench = _workbench()
+    if query.strip():
+        packet = live_run.create_workbench_resolution_run(
+            query,
+            _projection_profile(request_context),
+            include_ia_hunt_dry_run=_include_ia_hunt_dry_run(request_context),
+        )
+        html = workbench.render_workbench_live_run_page(workbench.build_workbench_live_run_page_view(packet))
+        workbench.validate_local_workbench_page(html)
+        return html_response(200, html, live_run.build_api_response(packet, "create_run"))
+    payload = live_run.list_workbench_resolution_runs(_projection_profile(request_context))
+    html = workbench.render_workbench_live_run_list_page(workbench.build_workbench_live_run_list_page_view(payload))
+    workbench.validate_local_workbench_page(html)
+    return html_response(200, html, payload)
+
+
+def _workbench_live_run_detail_response(run_id: str, request_context: LocalRequestContext) -> LocalServiceResponse:
+    try:
+        packet = _workbench_live_run().get_workbench_resolution_run(run_id, _projection_profile(request_context))
+    except KeyError:
+        return error_response(404, "resolution_run_not_found", "resolution run was not found", {"run_id": run_id})
+    return json_response(200, _workbench_live_run().build_api_response(packet, "run"))
+
+
+def _workbench_live_run_detail_html_response(run_id: str, request_context: LocalRequestContext) -> LocalServiceResponse:
+    workbench = _workbench()
+    response = _workbench_live_run_detail_response(run_id, request_context)
+    if response.status_code != 200:
+        return response
+    packet = response.payload["data"]
+    html = workbench.render_workbench_live_run_page(workbench.build_workbench_live_run_page_view(packet))
+    workbench.validate_local_workbench_page(html)
+    return html_response(200, html, response.payload)
+
+
+def _workbench_live_run_events_response(run_id: str, request_context: LocalRequestContext) -> LocalServiceResponse:
+    try:
+        payload = _workbench_live_run().get_workbench_run_events(run_id, _projection_profile(request_context))
+    except KeyError:
+        return error_response(404, "resolution_run_not_found", "resolution run was not found", {"run_id": run_id})
+    return json_response(200, payload)
+
+
+def _workbench_live_run_lanes_response(run_id: str, request_context: LocalRequestContext) -> LocalServiceResponse:
+    try:
+        payload = _workbench_live_run().get_workbench_run_lanes(run_id, _projection_profile(request_context))
+    except KeyError:
+        return error_response(404, "resolution_run_not_found", "resolution run was not found", {"run_id": run_id})
+    return json_response(200, payload)
+
+
+def _workbench_live_run_workunits_response(run_id: str, request_context: LocalRequestContext) -> LocalServiceResponse:
+    try:
+        payload = _workbench_live_run().get_workbench_run_workunits(run_id, _projection_profile(request_context))
+    except KeyError:
+        return error_response(404, "resolution_run_not_found", "resolution run was not found", {"run_id": run_id})
+    return json_response(200, payload)
+
+
+def _workbench_live_run_commands_response(run_id: str, request_context: LocalRequestContext) -> LocalServiceResponse:
+    command_type = first_param(request_context.params, "command", "run_live_source")
+    try:
+        payload = _workbench_live_run().build_command_response(run_id, command_type, _projection_profile(request_context))
+    except KeyError:
+        return error_response(404, "resolution_run_not_found", "resolution run was not found", {"run_id": run_id})
+    return json_response(200 if payload.get("allowed") else 403, payload)
 
 
 def _object_response(runtime: Any, record_id: str) -> LocalServiceResponse:
@@ -1426,6 +1537,19 @@ def _parse_need_route(path: str) -> tuple[str, str] | None:
     return None
 
 
+def _parse_workbench_live_run_route(path: str) -> tuple[str, str] | None:
+    parts = [part for part in str(path or "").split("/") if part]
+    if len(parts) == 2 and parts[0] == "runs":
+        return parts[1], "detail"
+    if len(parts) == 3 and parts[0] == "runs" and parts[2] in {"events", "lanes", "workunits", "commands"}:
+        return parts[1], parts[2]
+    if len(parts) == 4 and parts[:3] == ["api", "v1", "resolution-runs"]:
+        return parts[3], "detail"
+    if len(parts) == 5 and parts[:3] == ["api", "v1", "resolution-runs"] and parts[4] in {"events", "lanes", "workunits", "commands"}:
+        return parts[3], parts[4]
+    return None
+
+
 def _command_type_for_route(action: str) -> str:
     return {
         "pause": "pause",
@@ -1664,6 +1788,19 @@ def _search_hunt_unavailable_actions_payload() -> list[dict[str, str]]:
 
 def _workbench() -> Any:
     return __import__("runtime.local_workbench", fromlist=["build_home_page_view"])
+
+
+def _workbench_live_run() -> Any:
+    return __import__("runtime.local_service.workbench_live_run", fromlist=["create_workbench_resolution_run"])
+
+
+def _projection_profile(request_context: LocalRequestContext) -> str:
+    return first_param(request_context.params, "projection", first_param(request_context.params, "projection_profile", "operator_workbench"))
+
+
+def _include_ia_hunt_dry_run(request_context: LocalRequestContext) -> bool:
+    value = first_param(request_context.params, "include_ia_hunt_dry_run", first_param(request_context.params, "include-ia-hunt-dry-run", "true")).lower()
+    return value not in {"0", "false", "no", "off"}
 
 
 def _review_service() -> Any:

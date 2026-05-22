@@ -1,0 +1,53 @@
+{
+  "schema_version": "workbench_live_run_route_matrix.v0",
+  "task": "AIDE-BATCH-WORKBENCH-LIVE-RUN-01",
+  "route_mapping": [
+    {
+      "route": "/search",
+      "method": "GET",
+      "behavior": "existing local search page shows a run-linked section when a query is present"
+    },
+    {
+      "route": "/runs",
+      "method": "GET",
+      "behavior": "list local process runs or create a dry-run when q/query is supplied"
+    },
+    {
+      "route": "/runs/{run_id}",
+      "method": "GET",
+      "behavior": "render run detail, state, lanes, events, planned WorkUnits, and blocked actions"
+    },
+    {
+      "route": "/api/v1/resolution-runs",
+      "method": "GET",
+      "behavior": "list runs or create a local dry-run packet when q/query is supplied"
+    },
+    {
+      "route": "/api/v1/resolution-runs/{run_id}",
+      "method": "GET",
+      "behavior": "return run packet envelope"
+    },
+    {
+      "route": "/api/v1/resolution-runs/{run_id}/events",
+      "method": "GET",
+      "behavior": "return event log envelope"
+    },
+    {
+      "route": "/api/v1/resolution-runs/{run_id}/lanes",
+      "method": "GET",
+      "behavior": "return lane snapshot envelope"
+    },
+    {
+      "route": "/api/v1/resolution-runs/{run_id}/workunits",
+      "method": "GET",
+      "behavior": "return planned dry-run WorkUnits"
+    },
+    {
+      "route": "/api/v1/resolution-runs/{run_id}/commands",
+      "method": "GET",
+      "behavior": "return read-only command status or policy-blocked outcome"
+    }
+  ],
+  "existing_convention_preserved": true,
+  "transitional_runtime_local_workbench_debt_recorded": true
+}

@@ -1,0 +1,372 @@
+[
+  {
+    "blocked_actions": [
+      "run_source_probe",
+      "live_ia_call",
+      "download",
+      "upload",
+      "extract",
+      "call_model_provider",
+      "deploy",
+      "mutate_master_index",
+      "mutate_operator_instance"
+    ],
+    "dry_run": true,
+    "hunt_id": "shs_939a9951c7bf445da6e6ffb3c8112ca8",
+    "input_ref": {
+      "hunt_id": "shs_939a9951c7bf445da6e6ffb3c8112ca8",
+      "input_kind": "fixture_metadata",
+      "query": "sampleproject"
+    },
+    "limitations": [
+      "WorkUnit is local IA metadata orchestration only.",
+      "No live source probe, download, extraction, model call, deployment, or master-index mutation is enabled."
+    ],
+    "output_ref": {
+      "artifact_ref": "ia_hunt_bridge/shs_939a9951c7bf445da6e6ffb3c8112ca8/ia_metadata_search",
+      "hunt_id": "shs_939a9951c7bf445da6e6ffb3c8112ca8",
+      "output_kind": "metadata_search"
+    },
+    "policy_ref": "control/policies/ia_hunt_bridge_policy.json",
+    "schema_version": "workbench_live_run_workunit.v0",
+    "source_family": "internet_archive_metadata",
+    "state": "queued",
+    "workunit_id": "iawu_e4cf2edcad2699a6",
+    "workunit_type": "ia_metadata_search",
+    "write_scope": "none",
+    "writes_instance_state": false
+  },
+  {
+    "blocked_actions": [
+      "run_source_probe",
+      "live_ia_call",
+      "download",
+      "upload",
+      "extract",
+      "call_model_provider",
+      "deploy",
+      "mutate_master_index",
+      "mutate_operator_instance"
+    ],
+    "dry_run": true,
+    "hunt_id": "shs_939a9951c7bf445da6e6ffb3c8112ca8",
+    "input_ref": {
+      "hunt_id": "shs_939a9951c7bf445da6e6ffb3c8112ca8",
+      "input_kind": "fixture_metadata",
+      "query": "sampleproject"
+    },
+    "limitations": [
+      "WorkUnit is local IA metadata orchestration only.",
+      "No live source probe, download, extraction, model call, deployment, or master-index mutation is enabled."
+    ],
+    "output_ref": {
+      "artifact_ref": "ia_hunt_bridge/shs_939a9951c7bf445da6e6ffb3c8112ca8/ia_item_metadata_read",
+      "hunt_id": "shs_939a9951c7bf445da6e6ffb3c8112ca8",
+      "output_kind": "item_metadata_read"
+    },
+    "policy_ref": "control/policies/ia_hunt_bridge_policy.json",
+    "schema_version": "workbench_live_run_workunit.v0",
+    "source_family": "internet_archive_metadata",
+    "state": "queued",
+    "workunit_id": "iawu_4fa907f5b84ee08f",
+    "workunit_type": "ia_item_metadata_read",
+    "write_scope": "none",
+    "writes_instance_state": false
+  },
+  {
+    "blocked_actions": [
+      "run_source_probe",
+      "live_ia_call",
+      "download",
+      "upload",
+      "extract",
+      "call_model_provider",
+      "deploy",
+      "mutate_master_index",
+      "mutate_operator_instance"
+    ],
+    "dry_run": true,
+    "hunt_id": "shs_939a9951c7bf445da6e6ffb3c8112ca8",
+    "input_ref": {
+      "hunt_id": "shs_939a9951c7bf445da6e6ffb3c8112ca8",
+      "input_kind": "fixture_metadata",
+      "query": "sampleproject"
+    },
+    "limitations": [
+      "WorkUnit is local IA metadata orchestration only.",
+      "No live source probe, download, extraction, model call, deployment, or master-index mutation is enabled."
+    ],
+    "output_ref": {
+      "artifact_ref": "ia_hunt_bridge/shs_939a9951c7bf445da6e6ffb3c8112ca8/ia_file_manifest_metadata",
+      "hunt_id": "shs_939a9951c7bf445da6e6ffb3c8112ca8",
+      "output_kind": "file_manifest_metadata"
+    },
+    "policy_ref": "control/policies/ia_hunt_bridge_policy.json",
+    "schema_version": "workbench_live_run_workunit.v0",
+    "source_family": "internet_archive_metadata",
+    "state": "queued",
+    "workunit_id": "iawu_08301fcb27e64a88",
+    "workunit_type": "ia_file_manifest_metadata",
+    "write_scope": "none",
+    "writes_instance_state": false
+  },
+  {
+    "blocked_actions": [
+      "run_source_probe",
+      "live_ia_call",
+      "download",
+      "upload",
+      "extract",
+      "call_model_provider",
+      "deploy",
+      "mutate_master_index",
+      "mutate_operator_instance"
+    ],
+    "dry_run": true,
+    "hunt_id": "shs_939a9951c7bf445da6e6ffb3c8112ca8",
+    "input_ref": {
+      "hunt_id": "shs_939a9951c7bf445da6e6ffb3c8112ca8",
+      "input_kind": "local_bridge_output",
+      "query": "sampleproject"
+    },
+    "limitations": [
+      "WorkUnit is local IA metadata orchestration only.",
+      "No live source probe, download, extraction, model call, deployment, or master-index mutation is enabled."
+    ],
+    "output_ref": {
+      "artifact_ref": "ia_hunt_bridge/shs_939a9951c7bf445da6e6ffb3c8112ca8/ia_source_cache_write",
+      "hunt_id": "shs_939a9951c7bf445da6e6ffb3c8112ca8",
+      "output_kind": "source_cache_write"
+    },
+    "policy_ref": "control/policies/ia_hunt_bridge_policy.json",
+    "schema_version": "workbench_live_run_workunit.v0",
+    "source_family": "internet_archive_metadata",
+    "state": "queued",
+    "workunit_id": "iawu_2d628661434a844c",
+    "workunit_type": "ia_source_cache_write",
+    "write_scope": "temp_or_explicit_instance_only",
+    "writes_instance_state": true
+  },
+  {
+    "blocked_actions": [
+      "run_source_probe",
+      "live_ia_call",
+      "download",
+      "upload",
+      "extract",
+      "call_model_provider",
+      "deploy",
+      "mutate_master_index",
+      "mutate_operator_instance"
+    ],
+    "dry_run": true,
+    "hunt_id": "shs_939a9951c7bf445da6e6ffb3c8112ca8",
+    "input_ref": {
+      "hunt_id": "shs_939a9951c7bf445da6e6ffb3c8112ca8",
+      "input_kind": "local_bridge_output",
+      "query": "sampleproject"
+    },
+    "limitations": [
+      "WorkUnit is local IA metadata orchestration only.",
+      "No live source probe, download, extraction, model call, deployment, or master-index mutation is enabled."
+    ],
+    "output_ref": {
+      "artifact_ref": "ia_hunt_bridge/shs_939a9951c7bf445da6e6ffb3c8112ca8/ia_evidence_candidate_write",
+      "hunt_id": "shs_939a9951c7bf445da6e6ffb3c8112ca8",
+      "output_kind": "evidence_candidate_write"
+    },
+    "policy_ref": "control/policies/ia_hunt_bridge_policy.json",
+    "schema_version": "workbench_live_run_workunit.v0",
+    "source_family": "internet_archive_metadata",
+    "state": "queued",
+    "workunit_id": "iawu_a4bca88022d2a702",
+    "workunit_type": "ia_evidence_candidate_write",
+    "write_scope": "temp_or_explicit_instance_only",
+    "writes_instance_state": true
+  },
+  {
+    "blocked_actions": [
+      "run_source_probe",
+      "live_ia_call",
+      "download",
+      "upload",
+      "extract",
+      "call_model_provider",
+      "deploy",
+      "mutate_master_index",
+      "mutate_operator_instance"
+    ],
+    "dry_run": true,
+    "hunt_id": "shs_939a9951c7bf445da6e6ffb3c8112ca8",
+    "input_ref": {
+      "hunt_id": "shs_939a9951c7bf445da6e6ffb3c8112ca8",
+      "input_kind": "local_bridge_output",
+      "query": "sampleproject"
+    },
+    "limitations": [
+      "WorkUnit is local IA metadata orchestration only.",
+      "No live source probe, download, extraction, model call, deployment, or master-index mutation is enabled."
+    ],
+    "output_ref": {
+      "artifact_ref": "ia_hunt_bridge/shs_939a9951c7bf445da6e6ffb3c8112ca8/ia_candidate_index_write",
+      "hunt_id": "shs_939a9951c7bf445da6e6ffb3c8112ca8",
+      "output_kind": "candidate_index_write"
+    },
+    "policy_ref": "control/policies/ia_hunt_bridge_policy.json",
+    "schema_version": "workbench_live_run_workunit.v0",
+    "source_family": "internet_archive_metadata",
+    "state": "queued",
+    "workunit_id": "iawu_6e18d0b9d4a36ce6",
+    "workunit_type": "ia_candidate_index_write",
+    "write_scope": "temp_or_explicit_instance_only",
+    "writes_instance_state": true
+  },
+  {
+    "blocked_actions": [
+      "run_source_probe",
+      "live_ia_call",
+      "download",
+      "upload",
+      "extract",
+      "call_model_provider",
+      "deploy",
+      "mutate_master_index",
+      "mutate_operator_instance"
+    ],
+    "dry_run": true,
+    "hunt_id": "shs_939a9951c7bf445da6e6ffb3c8112ca8",
+    "input_ref": {
+      "hunt_id": "shs_939a9951c7bf445da6e6ffb3c8112ca8",
+      "input_kind": "local_bridge_output",
+      "query": "sampleproject"
+    },
+    "limitations": [
+      "WorkUnit is local IA metadata orchestration only.",
+      "No live source probe, download, extraction, model call, deployment, or master-index mutation is enabled."
+    ],
+    "output_ref": {
+      "artifact_ref": "ia_hunt_bridge/shs_939a9951c7bf445da6e6ffb3c8112ca8/ia_review_queue_write",
+      "hunt_id": "shs_939a9951c7bf445da6e6ffb3c8112ca8",
+      "output_kind": "review_queue_write"
+    },
+    "policy_ref": "control/policies/ia_hunt_bridge_policy.json",
+    "schema_version": "workbench_live_run_workunit.v0",
+    "source_family": "internet_archive_metadata",
+    "state": "queued",
+    "workunit_id": "iawu_38feae24ff9e9e82",
+    "workunit_type": "ia_review_queue_write",
+    "write_scope": "temp_or_explicit_instance_only",
+    "writes_instance_state": true
+  },
+  {
+    "blocked_actions": [
+      "run_source_probe",
+      "live_ia_call",
+      "download",
+      "upload",
+      "extract",
+      "call_model_provider",
+      "deploy",
+      "mutate_master_index",
+      "mutate_operator_instance"
+    ],
+    "dry_run": true,
+    "hunt_id": "shs_939a9951c7bf445da6e6ffb3c8112ca8",
+    "input_ref": {
+      "hunt_id": "shs_939a9951c7bf445da6e6ffb3c8112ca8",
+      "input_kind": "local_bridge_output",
+      "query": "sampleproject"
+    },
+    "limitations": [
+      "WorkUnit is local IA metadata orchestration only.",
+      "No live source probe, download, extraction, model call, deployment, or master-index mutation is enabled."
+    ],
+    "output_ref": {
+      "artifact_ref": "ia_hunt_bridge/shs_939a9951c7bf445da6e6ffb3c8112ca8/ia_promotion_dry_run",
+      "hunt_id": "shs_939a9951c7bf445da6e6ffb3c8112ca8",
+      "output_kind": "promotion_dry_run"
+    },
+    "policy_ref": "control/policies/ia_hunt_bridge_policy.json",
+    "schema_version": "workbench_live_run_workunit.v0",
+    "source_family": "internet_archive_metadata",
+    "state": "queued",
+    "workunit_id": "iawu_524024ffe7f86ddc",
+    "workunit_type": "ia_promotion_dry_run",
+    "write_scope": "none",
+    "writes_instance_state": false
+  },
+  {
+    "blocked_actions": [
+      "run_source_probe",
+      "live_ia_call",
+      "download",
+      "upload",
+      "extract",
+      "call_model_provider",
+      "deploy",
+      "mutate_master_index",
+      "mutate_operator_instance"
+    ],
+    "dry_run": true,
+    "hunt_id": "shs_939a9951c7bf445da6e6ffb3c8112ca8",
+    "input_ref": {
+      "hunt_id": "shs_939a9951c7bf445da6e6ffb3c8112ca8",
+      "input_kind": "local_bridge_output",
+      "query": "sampleproject"
+    },
+    "limitations": [
+      "WorkUnit is local IA metadata orchestration only.",
+      "No live source probe, download, extraction, model call, deployment, or master-index mutation is enabled."
+    ],
+    "output_ref": {
+      "artifact_ref": "ia_hunt_bridge/shs_939a9951c7bf445da6e6ffb3c8112ca8/ia_reviewed_index_rebuild",
+      "hunt_id": "shs_939a9951c7bf445da6e6ffb3c8112ca8",
+      "output_kind": "reviewed_index_rebuild"
+    },
+    "policy_ref": "control/policies/ia_hunt_bridge_policy.json",
+    "schema_version": "workbench_live_run_workunit.v0",
+    "source_family": "internet_archive_metadata",
+    "state": "queued",
+    "workunit_id": "iawu_41b35b6969f0249d",
+    "workunit_type": "ia_reviewed_index_rebuild",
+    "write_scope": "temp_or_explicit_instance_only",
+    "writes_instance_state": true
+  },
+  {
+    "blocked_actions": [
+      "run_source_probe",
+      "live_ia_call",
+      "download",
+      "upload",
+      "extract",
+      "call_model_provider",
+      "deploy",
+      "mutate_master_index",
+      "mutate_operator_instance"
+    ],
+    "dry_run": true,
+    "hunt_id": "shs_939a9951c7bf445da6e6ffb3c8112ca8",
+    "input_ref": {
+      "hunt_id": "shs_939a9951c7bf445da6e6ffb3c8112ca8",
+      "input_kind": "local_bridge_output",
+      "query": "sampleproject"
+    },
+    "limitations": [
+      "WorkUnit is local IA metadata orchestration only.",
+      "No live source probe, download, extraction, model call, deployment, or master-index mutation is enabled."
+    ],
+    "output_ref": {
+      "artifact_ref": "ia_hunt_bridge/shs_939a9951c7bf445da6e6ffb3c8112ca8/ia_result_lane_project",
+      "hunt_id": "shs_939a9951c7bf445da6e6ffb3c8112ca8",
+      "output_kind": "result_lane_project"
+    },
+    "policy_ref": "control/policies/ia_hunt_bridge_policy.json",
+    "schema_version": "workbench_live_run_workunit.v0",
+    "source_family": "internet_archive_metadata",
+    "state": "queued",
+    "workunit_id": "iawu_4bb93547a229a876",
+    "workunit_type": "ia_result_lane_project",
+    "write_scope": "none",
+    "writes_instance_state": false
+  }
+]

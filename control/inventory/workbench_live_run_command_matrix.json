@@ -1,0 +1,25 @@
+{
+  "schema_version": "workbench_live_run_command_matrix.v0",
+  "task": "AIDE-BATCH-WORKBENCH-LIVE-RUN-01",
+  "implemented_read_commands": [
+    "create_run",
+    "inspect_run",
+    "list_events",
+    "list_lanes",
+    "list_workunits",
+    "export_run_packet"
+  ],
+  "reserved_policy_blocked_commands": [
+    "pause",
+    "resume",
+    "cancel",
+    "deepen",
+    "run_live_source",
+    "apply_to_operator_instance",
+    "review_candidate",
+    "promote_candidate",
+    "rebuild_index"
+  ],
+  "blocked_commands_mutate_state": false,
+  "blocked_commands_emit_policy_response": true
+}

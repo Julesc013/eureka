@@ -1,0 +1,8 @@
+id: AIDE-BATCH-WORKBENCH-LIVE-RUN-01
+title: Project headless resolution runs into the local Workbench
+status: completed_pending_commit
+purpose: Projected headless ResolutionRunKernel dry-runs into the local Workbench/API seam.
+allowed_scope_summary: Workbench live-run policies, route/API/projection matrices, local service projection, local Workbench rendering, CLI, validator, tests, docs, examples, audit evidence, and queue/context metadata.
+gate: No live IA calls, source probes, downloads/uploads, extraction, model/provider calls, operator/master/store mutation, deployment, production readiness claim, or public launch claim.
+recommended_after: AIDE-BATCH-RUN-KERNEL-01
+recommended_next: IA-LIVE-METADATA-LANE-01

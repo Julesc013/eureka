@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-22
 repo: julesc013/eureka
-current_recommended_task: WORKBENCH-LIVE-RUN-01 — Project headless resolution runs into the local Workbench
+current_recommended_task: IA-LIVE-METADATA-LANE-01 — Add explicit operator-approved live IA metadata lane
 entries:
   - id: DEV-AND-IA-TO-MAIN-PROMOTION-REVIEW
     title: Promote repaired dev IA pilot plus repo layout canon baseline to main
@@ -601,22 +601,58 @@ entries:
     recommended_next: AIDE-BATCH-RUN-KERNEL-01
   - id: AIDE-BATCH-RUN-KERNEL-01
     title: Headless resolution-run orchestrator, event log, command bus, lane projector, and projection seam
-    status: completed_pending_commit
+    status: completed
     purpose: Added a portable headless resolution-run kernel before Workbench live run wiring or source-family expansion.
     allowed_scope_summary: Resolution-run contracts, policies, runtime kernel, CLI, validator, tests, docs, audit evidence, and queue/context metadata.
     gate: No live source calls, source probes, downloads/uploads, extraction, model/provider calls, operator/master/public index mutation, accepted truth, deployment, production readiness claim, or public launch claim.
     task: .aide/queue/AIDE-BATCH-RUN-KERNEL-01/task.yaml
     recommended_after: G0
     recommended_next: WORKBENCH-LIVE-RUN-01
+  - id: AIDE-BATCH-WORKBENCH-LIVE-RUN-01
+    title: Project headless resolution runs into the local Workbench
+    status: completed_pending_commit
+    purpose: Projected headless ResolutionRunKernel dry-runs into the local Workbench/API seam.
+    allowed_scope_summary: Workbench live-run policies, route/API/projection matrices, local service projection, local Workbench rendering, CLI, validator, tests, docs, examples, audit evidence, and queue/context metadata.
+    gate: No live IA calls, source probes, downloads/uploads, extraction, model/provider calls, operator/master/store mutation, deployment, production readiness claim, or public launch claim.
+    task: .aide/queue/AIDE-BATCH-WORKBENCH-LIVE-RUN-01/task.yaml
+    recommended_after: AIDE-BATCH-RUN-KERNEL-01
+    recommended_next: IA-LIVE-METADATA-LANE-01
   - id: WORKBENCH-LIVE-RUN-01
     title: Project headless resolution runs into the local Workbench
-    status: queued
+    status: completed_pending_commit
     purpose: Let the local Workbench create/read headless resolution-run projections without owning source or ranking behavior.
     allowed_scope_summary: Workbench/API projection adapters over resolution-run packets, read-only run creation, lane snapshot display, and focused validation only when explicitly scoped.
     gate: AIDE-BATCH-RUN-KERNEL-01 completed; no live IA calls, source probes, downloads, extraction, model/provider calls, operator/master/public index mutation, deployment, production readiness claim, or public launch claim.
     task: .aide/queue/WORKBENCH-LIVE-RUN-01/task.yaml
     recommended_after: AIDE-BATCH-RUN-KERNEL-01
     recommended_next: IA-LIVE-METADATA-LANE-01
+  - id: IA-LIVE-METADATA-LANE-01
+    title: Add explicit operator-approved live IA metadata lane
+    status: queued
+    purpose: Add a governed live IA metadata lane after the Workbench can project headless resolution runs.
+    allowed_scope_summary: Future task must add explicit operator approval, bounded IA metadata policy, live-lane events, validation, and audit evidence before any live call.
+    gate: WORKBENCH-LIVE-RUN-01 completed; no live IA metadata execution until this task explicitly defines approval, quotas, no-download posture, and operator safety checks.
+    task: .aide/queue/IA-LIVE-METADATA-LANE-01/task.yaml
+    recommended_after: WORKBENCH-LIVE-RUN-01
+    recommended_next: WORKBENCH-REVIEW-PROMOTE-01
+  - id: WORKBENCH-REVIEW-PROMOTE-01
+    title: Browser review and promote flow over run candidates
+    status: queued
+    purpose: Add operator-gated browser review/promote after live lane policy exists.
+    allowed_scope_summary: Future task must define review command policy, promotion preview, local review queue integration, validators, tests, and audit evidence.
+    gate: IA-LIVE-METADATA-LANE-01 should complete first; no ungated reviewed-index mutation or production/public launch claim.
+    task: .aide/queue/WORKBENCH-REVIEW-PROMOTE-01/task.yaml
+    recommended_after: IA-LIVE-METADATA-LANE-01
+    recommended_next: LOCAL-APPLY-GATE-01
+  - id: LOCAL-APPLY-GATE-01
+    title: Local operator apply gate
+    status: queued
+    purpose: Add explicit operator apply gates for local instance writes after review/promote flow is governed.
+    allowed_scope_summary: Future task must define dry-run preview, operator token, backup/snapshot, audit log, rollback, validators, tests, and audit evidence.
+    gate: WORKBENCH-REVIEW-PROMOTE-01 should complete first; no default operator instance mutation, force push, deployment, or production/public launch claim.
+    task: .aide/queue/LOCAL-APPLY-GATE-01/task.yaml
+    recommended_after: WORKBENCH-REVIEW-PROMOTE-01
+    recommended_next: SOURCE-WAVE-00
   - id: SOURCE-WAVE-00
     title: Next source-family metadata wave planning
     status: deferred

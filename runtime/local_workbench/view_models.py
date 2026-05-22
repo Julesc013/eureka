@@ -111,6 +111,32 @@ class SearchPageView:
     non_claim_banner: NonClaimBannerView
     warnings: tuple[str, ...]
     limitations: tuple[str, ...]
+    live_run: Mapping[str, Any] | None = None
+
+
+@dataclass(frozen=True)
+class WorkbenchLiveRunListPageView:
+    projection_profile: str
+    run_count: int
+    runs: tuple[Mapping[str, Any], ...]
+    non_claim_banner: NonClaimBannerView
+    warnings: tuple[str, ...]
+    limitations: tuple[str, ...]
+
+
+@dataclass(frozen=True)
+class WorkbenchLiveRunPageView:
+    run_id: str
+    query: str
+    state: str
+    projection_profile: str
+    event_count: int
+    lane_count: int
+    workunit_count: int
+    packet: Mapping[str, Any]
+    non_claim_banner: NonClaimBannerView
+    warnings: tuple[str, ...]
+    limitations: tuple[str, ...]
 
 
 @dataclass(frozen=True)
@@ -575,7 +601,11 @@ def build_home_page_view(status: Mapping[str, Any]) -> HomePageView:
     )
 
 
-def build_search_page_view(query: str, search_result: Mapping[str, Any]) -> SearchPageView:
+def build_search_page_view(
+    query: str,
+    search_result: Mapping[str, Any],
+    live_run: Mapping[str, Any] | None = None,
+) -> SearchPageView:
     return SearchPageView(
         query=query,
         result_count=int(search_result.get("result_count", 0) or 0),
@@ -584,6 +614,34 @@ def build_search_page_view(query: str, search_result: Mapping[str, Any]) -> Sear
         non_claim_banner=build_non_claim_banner_view(),
         warnings=_tuple(search_result.get("warnings")),
         limitations=_unique(_tuple(search_result.get("limitations")) + (LOCAL_INDEX_LIMITATION,)),
+        live_run=live_run,
+    )
+
+
+def build_workbench_live_run_list_page_view(payload: Mapping[str, Any]) -> WorkbenchLiveRunListPageView:
+    return WorkbenchLiveRunListPageView(
+        projection_profile=str(payload.get("projection_profile", "operator_workbench")),
+        run_count=int(payload.get("run_count", 0) or 0),
+        runs=tuple(_mapping(item) for item in _sequence(payload.get("runs"))),
+        non_claim_banner=build_non_claim_banner_view(),
+        warnings=_tuple(payload.get("warnings")),
+        limitations=_unique(_tuple(payload.get("limitations"))),
+    )
+
+
+def build_workbench_live_run_page_view(packet: Mapping[str, Any]) -> WorkbenchLiveRunPageView:
+    return WorkbenchLiveRunPageView(
+        run_id=str(packet.get("run_id", "")),
+        query=str(packet.get("query", "")),
+        state=str(packet.get("state", "")),
+        projection_profile=str(packet.get("projection_profile", "operator_workbench")),
+        event_count=int(packet.get("event_count", 0) or 0),
+        lane_count=int(packet.get("lane_count", 0) or 0),
+        workunit_count=int(packet.get("workunit_count", 0) or 0),
+        packet=_mapping(packet),
+        non_claim_banner=build_non_claim_banner_view(),
+        warnings=_tuple(packet.get("warnings")),
+        limitations=_unique(_tuple(packet.get("limitations"))),
     )
 
 

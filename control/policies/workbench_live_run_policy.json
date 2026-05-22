@@ -1,0 +1,21 @@
+{
+  "schema_version": "workbench_live_run_policy.v0",
+  "task": "AIDE-BATCH-WORKBENCH-LIVE-RUN-01",
+  "workbench_uses_resolution_run_kernel": true,
+  "workbench_does_not_own_search_semantics": true,
+  "browser_run_creation_enabled_for_local": true,
+  "live_ia_calls_enabled_by_default": false,
+  "source_probes_enabled_by_default": false,
+  "operator_instance_mutation_default": false,
+  "temp_instance_allowed_for_tests": true,
+  "public_projection_read_only_by_default": true,
+  "native_projection_read_only_by_default": true,
+  "downloads_enabled": false,
+  "extraction_enabled": false,
+  "model_provider_enabled": false,
+  "deployment_enabled": false,
+  "master_index_mutation_enabled": false,
+  "reviewed_index_mutation_enabled_by_live_run": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}

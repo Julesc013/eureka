@@ -1,0 +1,28 @@
+{
+  "schema_version": "workbench_live_run_command_policy.v0",
+  "task": "AIDE-BATCH-WORKBENCH-LIVE-RUN-01",
+  "allowed_read_commands": [
+    "create_run",
+    "inspect_run",
+    "list_events",
+    "list_lanes",
+    "list_workunits",
+    "export_run_packet"
+  ],
+  "reserved_blocked_commands": [
+    "pause",
+    "resume",
+    "cancel",
+    "deepen",
+    "run_live_source",
+    "apply_to_operator_instance",
+    "review_candidate",
+    "promote_candidate",
+    "rebuild_index"
+  ],
+  "blocked_commands_return_policy_response": true,
+  "blocked_commands_mutate_state": false,
+  "operator_token_required_for_future_mutations": true,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}

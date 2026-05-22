@@ -1,0 +1,26 @@
+{
+  "schema_version": "workbench_live_run_api_matrix.v0",
+  "task": "AIDE-BATCH-WORKBENCH-LIVE-RUN-01",
+  "response_schema": "workbench_live_run_api_response.v0",
+  "required_response_fields": [
+    "schema_version",
+    "request_id",
+    "run_id",
+    "projection_profile",
+    "state",
+    "data",
+    "warnings",
+    "limitations",
+    "blocked_actions"
+  ],
+  "endpoints": [
+    "create_run",
+    "inspect_run",
+    "list_events",
+    "list_lanes",
+    "list_workunits",
+    "export_run_packet"
+  ],
+  "mutating_methods_enabled": false,
+  "operator_instance_mutation_enabled": false
+}

@@ -33,6 +33,8 @@ from .view_models import (
     SearchResultCardView,
     SourcePageView,
     StatusPageView,
+    WorkbenchLiveRunListPageView,
+    WorkbenchLiveRunPageView,
 )
 
 
@@ -95,9 +97,11 @@ def render_search_page(view: SearchPageView) -> str:
             f"<p>Submitted query: {escape_html(view.query)}</p>",
             f"<p>Reviewed result count: {escape_html(view.result_count)}</p>",
             _key_values((("query", view.query), ("reviewed_local_result_count", view.result_count))),
+            _workbench_live_run_summary(view.live_run),
             "<p>"
             + " | ".join(
                 (
+                    render_link("/runs?q=" + quote(view.query), "Resolution run") if view.query else render_link("/runs", "Resolution runs"),
                     render_link("/hunts", "Search Hunts"),
                     render_link("/needs", "SearchNeeds"),
                     render_link("/needs", "WorkUnits via SearchNeeds"),
@@ -113,6 +117,72 @@ def render_search_page(view: SearchPageView) -> str:
         ]
     )
     return render_document("Search - Eureka Local Appliance", body)
+
+
+def render_workbench_live_run_list_page(view: WorkbenchLiveRunListPageView) -> str:
+    rows = tuple(
+        {
+            "run_id": item.get("run_id", ""),
+            "query": item.get("query", ""),
+            "state": item.get("state", ""),
+            "lanes": item.get("lane_count", 0),
+            "workunits": item.get("workunit_count", 0),
+            "events": item.get("event_count", 0),
+        }
+        for item in view.runs
+    )
+    body = "\n".join(
+        [
+            "<h1>Resolution Runs</h1>",
+            render_notice("scope", "Local Workbench runs are dry-run projections of the headless ResolutionRunKernel."),
+            search_form(),
+            "<p>" + render_link("/runs?q=sampleproject", "Create sampleproject run") + "</p>",
+            _key_values((("projection_profile", view.projection_profile), ("run_count", view.run_count))),
+            render_table(rows, headers=("run_id", "query", "state", "lanes", "workunits", "events")),
+            render_warnings(view.warnings),
+            render_limitations(view.limitations),
+        ]
+    )
+    return render_document("Resolution Runs - Eureka Local Appliance", body)
+
+
+def render_workbench_live_run_page(view: WorkbenchLiveRunPageView) -> str:
+    packet = view.packet
+    body = "\n".join(
+        [
+            "<h1>Resolution Run</h1>",
+            render_notice("scope", "This page renders a headless run packet; it does not own search semantics."),
+            _key_values(
+                (
+                    ("run_id", view.run_id),
+                    ("query", view.query),
+                    ("state", view.state),
+                    ("projection_profile", view.projection_profile),
+                    ("events", view.event_count),
+                    ("lanes", view.lane_count),
+                    ("planned_workunits", view.workunit_count),
+                )
+            ),
+            "<p>"
+            + " | ".join(
+                (
+                    render_link("/search?q=" + quote(view.query), "Search page"),
+                    render_link("/api/v1/resolution-runs/" + quote(view.run_id), "Run JSON"),
+                    render_link("/api/v1/resolution-runs/" + quote(view.run_id) + "/events", "Events JSON"),
+                    render_link("/api/v1/resolution-runs/" + quote(view.run_id) + "/lanes", "Lanes JSON"),
+                    render_link("/api/v1/resolution-runs/" + quote(view.run_id) + "/workunits", "WorkUnits JSON"),
+                )
+            )
+            + "</p>",
+            _workbench_live_run_lanes(packet),
+            _workbench_live_run_events(packet),
+            _workbench_live_run_workunits(packet),
+            _workbench_live_run_blocked_actions(packet),
+            render_warnings(view.warnings),
+            render_limitations(tuple(_safe_live_run_text(item) for item in view.limitations)),
+        ]
+    )
+    return render_document("Resolution Run - Eureka Local Appliance", body)
 
 
 def render_object_page(view: ObjectPageView) -> str:
@@ -1325,6 +1395,136 @@ def _search_hunt_unavailable_actions(actions: Sequence[SearchHuntUnavailableActi
             "</section>",
         ]
     )
+
+
+def _mapping(value: Any) -> Mapping[str, Any]:
+    return value if isinstance(value, Mapping) else {}
+
+
+def _workbench_live_run_summary(live_run: Mapping[str, Any] | None) -> str:
+    if not live_run:
+        return ""
+    run_id = str(live_run.get("run_id", ""))
+    query = str(live_run.get("query", ""))
+    return "\n".join(
+        [
+            '<section aria-labelledby="live-run-heading"><h2 id="live-run-heading">Resolution run</h2>',
+            render_notice("scope", "Workbench run data is projected from the headless ResolutionRunKernel."),
+            _key_values(
+                (
+                    ("run_id", run_id),
+                    ("state", live_run.get("state", "")),
+                    ("lanes", live_run.get("lane_count", 0)),
+                    ("planned_workunits", live_run.get("workunit_count", 0)),
+                    ("events", live_run.get("event_count", 0)),
+                )
+            ),
+            "<p>"
+            + " | ".join(
+                (
+                    render_link("/runs/" + quote(run_id), "Open run"),
+                    render_link("/api/v1/resolution-runs/" + quote(run_id), "Run JSON"),
+                    render_link("/api/v1/resolution-runs/" + quote(run_id) + "/lanes", "Lanes JSON"),
+                    render_link("/api/v1/resolution-runs/" + quote(run_id) + "/workunits", "WorkUnits JSON"),
+                    render_link("/runs?q=" + quote(query), "Refresh dry-run"),
+                )
+            )
+            + "</p>",
+            "</section>",
+        ]
+    )
+
+
+def _workbench_live_run_lanes(packet: Mapping[str, Any]) -> str:
+    lane_page = _mapping(packet.get("lane_snapshot")).get("lane_page", {})
+    lanes = _mapping(lane_page).get("lanes", [])
+    rows = tuple(
+        {
+            "lane": lane.get("lane_kind", ""),
+            "state": lane.get("state", ""),
+            "results": lane.get("result_count", 0),
+            "truth_level": lane.get("truth_level", ""),
+            "review_required": lane.get("review_required", ""),
+        }
+        for lane in lanes
+        if isinstance(lane, Mapping)
+    )
+    return "\n".join(
+        [
+            '<section aria-labelledby="live-run-lanes-heading"><h2 id="live-run-lanes-heading">Lane snapshot</h2>',
+            render_table(rows, headers=("lane", "state", "results", "truth_level", "review_required")),
+            "</section>",
+        ]
+    )
+
+
+def _workbench_live_run_events(packet: Mapping[str, Any]) -> str:
+    rows = tuple(
+        {
+            "event_type": event.get("event_type", ""),
+            "summary": event.get("summary", ""),
+        }
+        for event in tuple(packet.get("events", []) or ())[:12]
+        if isinstance(event, Mapping)
+    )
+    return "\n".join(
+        [
+            '<section aria-labelledby="live-run-events-heading"><h2 id="live-run-events-heading">Event log</h2>',
+            render_table(rows, headers=("event_type", "summary")),
+            "</section>",
+        ]
+    )
+
+
+def _workbench_live_run_workunits(packet: Mapping[str, Any]) -> str:
+    rows = tuple(
+        {
+            "workunit_id": workunit.get("workunit_id", ""),
+            "type": workunit.get("workunit_type", ""),
+            "state": workunit.get("state", ""),
+            "dry_run": workunit.get("dry_run", True),
+            "write_scope": workunit.get("write_scope", ""),
+        }
+        for workunit in tuple(packet.get("workunits", []) or ())[:12]
+        if isinstance(workunit, Mapping)
+    )
+    return "\n".join(
+        [
+            '<section aria-labelledby="live-run-workunits-heading"><h2 id="live-run-workunits-heading">Planned WorkUnits</h2>',
+            render_table(rows, headers=("workunit_id", "type", "state", "dry_run", "write_scope")),
+            "</section>",
+        ]
+    )
+
+
+def _workbench_live_run_blocked_actions(packet: Mapping[str, Any]) -> str:
+    rows = tuple({"action": _safe_live_run_text(action), "status": "blocked"} for action in packet.get("blocked_actions", []) or ())
+    return "\n".join(
+        [
+            '<section aria-labelledby="live-run-blocked-heading"><h2 id="live-run-blocked-heading">Blocked actions</h2>',
+            render_table(rows, headers=("action", "status")),
+            "</section>",
+        ]
+    )
+
+
+def _safe_live_run_text(value: Any) -> str:
+    text = str(value)
+    replacements = {
+        "download": "file fetch",
+        "downloads": "file fetches",
+        "upload": "file send",
+        "uploads": "file sends",
+        "execute": "binary run",
+        "execution": "binary run",
+        "install": "setup run",
+    }
+    lowered = text.lower()
+    for source, replacement in replacements.items():
+        if source in lowered:
+            text = text.replace(source, replacement).replace(source.title(), replacement.title())
+            lowered = text.lower()
+    return text
 
 
 def _steering_types() -> tuple[str, ...]:

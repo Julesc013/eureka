@@ -1,0 +1,15 @@
+{
+  "schema_version": "workbench_live_run_non_claim_policy.v0",
+  "task": "AIDE-BATCH-WORKBENCH-LIVE-RUN-01",
+  "non_claims": [
+    "Workbench live runs are not production search.",
+    "Run lane packets do not create evidence or reviewed truth.",
+    "IA-HUNT planning is dry-run only in this task.",
+    "Browser review/promote and Local Apply Gate remain future work.",
+    "No public launch, marketplace, deployment, or production readiness is claimed."
+  ],
+  "fake_evidence_created": false,
+  "fake_verified_records_created": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}

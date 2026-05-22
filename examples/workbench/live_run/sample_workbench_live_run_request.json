@@ -1,0 +1,16 @@
+{
+  "schema_version": "workbench_live_run_request_examples.v0",
+  "projection_profile": "operator_workbench",
+  "dry_run": true,
+  "from_fixtures": true,
+  "include_ia_hunt_dry_run": true,
+  "sample_queries": [
+    "sampleproject",
+    "New York 1993 D-Theater HD demo tape original source",
+    "Windows 7-compatible portable utilities, not Windows 7 ISO",
+    "StyleWriter 2500 Mac OS 8 driver"
+  ],
+  "live_ia_call_performed": false,
+  "source_probe_executed": false,
+  "operator_instance_mutated": false
+}

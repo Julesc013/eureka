@@ -1,0 +1,20 @@
+{
+  "schema_version": "workbench_live_run_smoke_result.v0",
+  "task": "AIDE-BATCH-WORKBENCH-LIVE-RUN-01",
+  "operator_projection_passed": true,
+  "public_projection_passed": true,
+  "native_read_only_projection_passed": true,
+  "api_routes_passed": true,
+  "html_route_passed": true,
+  "run_created_from_query": true,
+  "run_id_emitted": true,
+  "run_events_emitted": true,
+  "lane_snapshot_emitted": true,
+  "workunits_planned": true,
+  "ia_hunt_dry_run_planned": true,
+  "blocked_actions_emitted": true,
+  "live_ia_call_performed": false,
+  "source_probe_executed": false,
+  "operator_instance_mutated": false,
+  "master_index_mutated": false
+}

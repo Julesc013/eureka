@@ -1,8 +1,8 @@
 id: WORKBENCH-LIVE-RUN-01
 title: Project headless resolution runs into the local Workbench
-status: queued
+status: completed_pending_commit
 purpose: Let the local Workbench create/read headless resolution-run projections without owning source or ranking behavior.
-allowed_scope_summary: Workbench/API projection adapters over resolution-run packets, read-only run creation, lane snapshot display, and focused validation only when explicitly scoped.
+allowed_scope_summary: Workbench/API projection adapters over resolution-run packets, read-only run creation, lane snapshot display, focused validation, and audit closeout.
 gate: AIDE-BATCH-RUN-KERNEL-01 completed; no live IA calls, source probes, downloads, extraction, model/provider calls, operator/master/public index mutation, deployment, production readiness claim, or public launch claim.
 recommended_after: AIDE-BATCH-RUN-KERNEL-01
 recommended_next: IA-LIVE-METADATA-LANE-01

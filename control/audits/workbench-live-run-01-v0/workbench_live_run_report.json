@@ -1,0 +1,23 @@
+{
+  "schema_version": "workbench_live_run_report.v0",
+  "task": "AIDE-BATCH-WORKBENCH-LIVE-RUN-01",
+  "summary": "Projected headless resolution runs into the local Workbench/API seam.",
+  "runtime_projection_added": true,
+  "local_service_projection_added": true,
+  "cli_added": true,
+  "validator_added": true,
+  "tests_added": true,
+  "run_created_from_query": true,
+  "run_id_emitted": true,
+  "run_events_emitted": true,
+  "lane_snapshot_emitted": true,
+  "workunits_planned": true,
+  "ia_hunt_dry_run_planned": true,
+  "blocked_actions_emitted": true,
+  "live_ia_call_performed": false,
+  "source_probe_executed": false,
+  "operator_instance_mutated": false,
+  "master_index_mutated": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}

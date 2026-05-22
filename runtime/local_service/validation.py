@@ -58,7 +58,7 @@ def validate_query_params(params: Mapping[str, list[str]]) -> Mapping[str, list[
 def validate_no_mutation_route(method: str, path: str) -> None:
     validate_supported_method_for_path(method, path)
     lowered = str(path or "").lower()
-    if _is_search_need_workunit_route(path):
+    if _is_search_need_workunit_route(path) or _is_resolution_run_workunit_route(path):
         return
     for token in ("write", "delete", "update", "review-decision", "probe", "workunit"):
         if token in lowered:
@@ -140,6 +140,13 @@ def _is_search_need_workunit_route(path: str) -> bool:
     if len(parts) == 5 and parts[:3] == ["api", "v1", "hunt"] and parts[4] == "workunits":
         return True
     return False
+
+
+def _is_resolution_run_workunit_route(path: str) -> bool:
+    parts = [part for part in str(path or "").split("/") if part]
+    if len(parts) == 3 and parts[0] == "runs" and parts[2] == "workunits":
+        return True
+    return len(parts) == 5 and parts[:3] == ["api", "v1", "resolution-runs"] and parts[4] == "workunits"
 
 
 def validate_no_lan_binding(host: str) -> str:
