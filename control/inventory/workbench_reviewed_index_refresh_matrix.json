@@ -1,0 +1,15 @@
+{
+  "schema_version": "workbench_reviewed_index_refresh_matrix.v0",
+  "task": "AIDE-BATCH-WORKBENCH-REVIEW-PROMOTE-01",
+  "reviewed_index_refresh_outputs": [
+    "temp_reviewed_index_delta",
+    "search_result_after_refresh",
+    "object_packet_after_refresh",
+    "absence_packet_after_refresh",
+    "rollback_hint"
+  ],
+  "temp_instance_refresh_allowed": true,
+  "operator_instance_mutation_default": false,
+  "master_index_mutation_enabled": false,
+  "committed_data_public_index_mutation_enabled": false
+}

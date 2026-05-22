@@ -1,8 +1,8 @@
 id: WORKBENCH-REVIEW-PROMOTE-01
 title: Browser review and promote flow over run candidates
-status: queued
+status: completed_pending_validation
 purpose: Add operator-gated browser review/promote after live lane policy exists.
-allowed_scope_summary: Future task must define review command policy, promotion preview, local review queue integration, validators, tests, and audit evidence.
-gate: IA-LIVE-METADATA-LANE-01 should complete first; no ungated reviewed-index mutation or production/public launch claim.
+allowed_scope_summary: Review command policy, promotion preview, local review queue integration, temp reviewed-index refresh proof, validators, tests, and audit evidence.
+gate: IA-LIVE-METADATA-LANE-01 completed; no ungated reviewed-index mutation, operator instance mutation, master/public index mutation, or production/public launch claim.
 recommended_after: IA-LIVE-METADATA-LANE-01
 recommended_next: LOCAL-APPLY-GATE-01

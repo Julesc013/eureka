@@ -1,0 +1,10 @@
+{
+  "schema_version": "workbench_review_promote_next_task_decision.v0",
+  "task": "AIDE-BATCH-WORKBENCH-REVIEW-PROMOTE-01",
+  "recommended_next_task": "LOCAL-APPLY-GATE-01 — Explicit operator-instance apply, backup, audit, and rollback gate",
+  "planned_after": [
+    "SOURCE-WAVE-00",
+    "SNAPSHOT-RELAY-00"
+  ],
+  "rationale": "The review/promote flow proves temp reviewed-index refresh. Applying to a real operator instance needs an explicit backup, audit, and rollback gate before source expansion."
+}

@@ -1,0 +1,14 @@
+{
+  "schema_version": "workbench_review_promote_candidate_matrix.v0",
+  "task": "AIDE-BATCH-WORKBENCH-REVIEW-PROMOTE-01",
+  "candidate_sources": [
+    "local_candidate_results",
+    "IA metadata candidates",
+    "source-cache hits with evidence candidate",
+    "review queue items",
+    "F0 member observation candidates",
+    "SCOUT discovery candidates",
+    "G0 near-miss candidates"
+  ],
+  "automatic_candidate_acceptance_enabled": false
+}

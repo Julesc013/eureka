@@ -1,0 +1,8 @@
+{
+  "schema_version": "workbench_reviewed_index_refresh_preview.v0",
+  "status": "preview_available",
+  "refresh_allowed_only_temp_or_explicit_instance": true,
+  "operator_instance_mutated": false,
+  "master_index_mutated": false,
+  "committed_data_public_index_mutated": false
+}

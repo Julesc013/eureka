@@ -1,0 +1,13 @@
+{
+  "schema_version": "workbench_review_promote_boundary_report.v0",
+  "automatic_candidate_acceptance_enabled": false,
+  "fake_evidence_created": false,
+  "fake_verified_records_created": false,
+  "operator_instance_mutated": false,
+  "master_index_mutated": false,
+  "committed_data_public_index_mutated": false,
+  "download_performed": false,
+  "extraction_executed": false,
+  "model_provider_used": false,
+  "deployment_performed": false
+}

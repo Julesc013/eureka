@@ -1,0 +1,25 @@
+{
+  "schema_version": "workbench_review_promote_flow.v0",
+  "status": "pass",
+  "projection_profile": "native_desktop_read_only",
+  "review_item_created": true,
+  "operator_token_required": true,
+  "public_projection_blocked": false,
+  "native_read_only_projection_blocked": true,
+  "review_decision": {
+    "schema_version": "workbench_review_decision.v0",
+    "decision": "accept_local_reviewed",
+    "allowed": false,
+    "decision_status": "blocked_by_policy",
+    "blocked_reasons": [
+      "native_desktop_read_only projections are read-only"
+    ],
+    "operator_token_required": true,
+    "operator_token_present": false,
+    "review_decision_recorded": false
+  },
+  "promotion_preview_created": false,
+  "operator_instance_mutated": false,
+  "master_index_mutated": false,
+  "committed_data_public_index_mutated": false
+}

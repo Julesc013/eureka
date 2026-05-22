@@ -1,0 +1,21 @@
+{
+  "schema_version": "workbench_review_promote_failure_repair_log.v0",
+  "task": "AIDE-BATCH-WORKBENCH-REVIEW-PROMOTE-01",
+  "repairs": [
+    {
+      "issue": "preview absence packet inherited wall-clock timestamp",
+      "classification": "determinism polish",
+      "repair": "Set generated preview absence packets to the fixed run timestamp."
+    },
+    {
+      "issue": "documented rebuild-preview route was not wired in local service",
+      "classification": "route projection gap",
+      "repair": "Added /index/rebuild-preview projection route."
+    },
+    {
+      "issue": "full discovery run on dirty tree failed older HUNT/LOCAL validators that inspect git status",
+      "classification": "dirty-tree-sensitive legacy validation, no product behavior defect",
+      "repair": "Classified the failures and scheduled clean-tree rerun after committing the in-scope work; no out-of-scope HUNT/LOCAL validator edits were made."
+    }
+  ]
+}

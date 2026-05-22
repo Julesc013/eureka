@@ -1,0 +1,13 @@
+{
+  "schema_version": "review_queue_operator_policy.v0",
+  "task": "AIDE-BATCH-WORKBENCH-REVIEW-PROMOTE-01",
+  "review_requires_operator_token": true,
+  "operator_review_controls_operator_only": true,
+  "public_review_enabled": false,
+  "native_review_enabled": false,
+  "operator_instance_mutation_default": false,
+  "raw_operator_token_commit_allowed": false,
+  "automatic_candidate_acceptance_enabled": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}

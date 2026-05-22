@@ -199,6 +199,24 @@ def route_request(
         return _review_list_html_response(runtime, request_context)
     if path == "/api/v1/review":
         return _review_list_response(runtime, request_context)
+    if path == "/promotion":
+        if _wants_json(request_context):
+            return _workbench_review_promote_response(request_context, endpoint="promotion")
+        return _workbench_review_promote_html_response(request_context, endpoint="promotion")
+    if path == "/api/v1/promotion-preview":
+        return _workbench_review_promote_response(request_context, endpoint="promotion_preview")
+    if path == "/api/v1/reviewed-index/refresh-preview":
+        return _workbench_review_promote_response(request_context, endpoint="reviewed_index_refresh_preview")
+    if path == "/index/rebuild-preview":
+        if _wants_json(request_context):
+            return _workbench_review_promote_response(request_context, endpoint="reviewed_index_refresh_preview")
+        return _workbench_review_promote_html_response(request_context, endpoint="reviewed_index_refresh_preview")
+    if path.startswith("/promotion/"):
+        if _wants_json(request_context):
+            return _workbench_review_promote_response(request_context, endpoint="promotion_detail")
+        return _workbench_review_promote_html_response(request_context, endpoint="promotion_detail")
+    if path.startswith("/api/v1/promotion-preview/"):
+        return _workbench_review_promote_response(request_context, endpoint="promotion_detail")
     if path.startswith("/review/"):
         review_item_id = path.removeprefix("/review/")
         if _wants_json(request_context):
@@ -1045,6 +1063,33 @@ def _review_item_html_response(runtime: Any, review_item_id: str) -> LocalServic
     return html_response(response.status_code, html, response.payload)
 
 
+def _workbench_review_promote_response(request_context: LocalRequestContext, endpoint: str = "promotion") -> LocalServiceResponse:
+    payload = _workbench_review_promote().run_review_promote_flow(
+        decision=first_param(request_context.params, "decision", "accept_local_reviewed"),
+        projection_profile=_projection_profile(request_context),
+        dry_run=True,
+    )
+    payload["endpoint"] = endpoint
+    return json_response(200, payload)
+
+
+def _workbench_review_promote_html_response(request_context: LocalRequestContext, endpoint: str = "promotion") -> LocalServiceResponse:
+    response = _workbench_review_promote_response(request_context, endpoint=endpoint)
+    payload = response.payload
+    html = "\n".join(
+        [
+            "<!doctype html><html><head><meta charset=\"utf-8\"><title>Promotion preview</title></head><body>",
+            "<h1>Promotion preview</h1>",
+            "<p>Promotion preview is operator-gated local review state only.</p>",
+            f"<p>Review item: {payload.get('review_item', {}).get('review_item_id', '')}</p>",
+            f"<p>Promotion preview: {payload.get('promotion_preview', {}).get('preview_id', '')}</p>",
+            "<p><a href=\"/review\">Review queue</a> | <a href=\"/api/v1/promotion-preview\">JSON promotion preview</a></p>",
+            "</body></html>",
+        ]
+    )
+    return html_response(200, html, payload)
+
+
 def _rebuild_status_response(runtime: Any) -> LocalServiceResponse:
     summary = runtime.public_index.summarize().to_dict()
     payload = {
@@ -1121,6 +1166,13 @@ def _mutation_response(runtime: Any, request_context: LocalRequestContext, opera
             return _apply_need_agent_task_draft_response(runtime, request_context, need_mutation[0])
         if need_mutation[1] == "ai-escalation-preflight":
             return _apply_need_ai_escalation_preflight_response(runtime, request_context, need_mutation[0])
+    if path.startswith("/api/v1/review/") and path.endswith("/decision"):
+        review_item_id = path.removeprefix("/api/v1/review/").removesuffix("/decision").strip("/")
+        return _workbench_review_promote_decision_response(request_context, review_item_id)
+    if path == "/api/v1/promotion-preview":
+        return _workbench_review_promote_decision_response(request_context, first_param(request_context.body_params, "review_item_id", ""))
+    if path == "/api/v1/reviewed-index/refresh-preview":
+        return _workbench_review_promote_response(request_context, endpoint="reviewed_index_refresh_preview")
     if path.startswith("/review/") and path.endswith("/decision"):
         review_item_id = path.removeprefix("/review/").removesuffix("/decision").strip("/")
         return _record_decision_response(runtime, request_context, review_item_id)
@@ -1461,6 +1513,19 @@ def _record_decision_response(runtime: Any, request_context: LocalRequestContext
     return json_response(200, payload)
 
 
+def _workbench_review_promote_decision_response(request_context: LocalRequestContext, review_item_id: str) -> LocalServiceResponse:
+    params = request_context.body_params
+    payload = _workbench_review_promote().run_review_promote_flow(
+        candidate=first_param(params, "candidate_id", "") or None,
+        decision=first_param(params, "decision", "accept_local_reviewed"),
+        projection_profile=_projection_profile(request_context),
+        operator_token=first_param(params, "operator_token", ""),
+        dry_run=False,
+    )
+    payload["requested_review_item_id"] = review_item_id
+    return json_response(200 if payload.get("review_decision", {}).get("allowed") else 403, payload)
+
+
 def _apply_rebuild_response(runtime: Any, request_context: LocalRequestContext) -> LocalServiceResponse:
     params = request_context.body_params
     operator_label = first_param(params, "operator_label", "local_operator")
@@ -1485,6 +1550,8 @@ def _route_allowed_for_scope(method: str, path: str, client_scope: object) -> bo
 def _is_operator_mutation_path(method: str, path: str) -> bool:
     return str(method or "").upper() == "POST" and (
         _parse_hunt_mutation_path(path) is not None or _parse_need_mutation_path(path) is not None
+        or (path.startswith("/api/v1/review/") and path.endswith("/decision"))
+        or path in {"/api/v1/promotion-preview", "/api/v1/reviewed-index/refresh-preview"}
     )
 
 
@@ -1805,6 +1872,10 @@ def _workbench() -> Any:
 
 def _workbench_live_run() -> Any:
     return __import__("runtime.local_service.workbench_live_run", fromlist=["create_workbench_resolution_run"])
+
+
+def _workbench_review_promote() -> Any:
+    return __import__("runtime.local_service.workbench_review_promote", fromlist=["run_review_promote_flow"])
 
 
 def _projection_profile(request_context: LocalRequestContext) -> str:

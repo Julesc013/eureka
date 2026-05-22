@@ -1,0 +1,19 @@
+{
+  "schema_version": "workbench_review_promote_route_matrix.v0",
+  "task": "AIDE-BATCH-WORKBENCH-REVIEW-PROMOTE-01",
+  "routes": [
+    {"route": "/review", "method": "GET", "projection": "operator_workbench", "mutation": false},
+    {"route": "/review/{review_item_id}", "method": "GET", "projection": "operator_workbench", "mutation": false},
+    {"route": "/promotion", "method": "GET", "projection": "operator_workbench", "mutation": false},
+    {"route": "/promotion/{preview_id}", "method": "GET", "projection": "operator_workbench", "mutation": false},
+    {"route": "/index/rebuild-preview", "method": "GET", "projection": "operator_workbench", "mutation": false},
+    {"route": "/api/v1/review", "method": "GET", "projection": "operator_workbench", "mutation": false},
+    {"route": "/api/v1/review/{review_item_id}", "method": "GET", "projection": "operator_workbench", "mutation": false},
+    {"route": "/api/v1/review/{review_item_id}/decision", "method": "POST", "projection": "operator_workbench", "operator_token_required": true},
+    {"route": "/api/v1/promotion-preview", "method": "GET|POST", "projection": "operator_workbench", "operator_token_required_for_post": true},
+    {"route": "/api/v1/promotion-preview/{preview_id}", "method": "GET", "projection": "operator_workbench", "mutation": false},
+    {"route": "/api/v1/reviewed-index/refresh-preview", "method": "GET|POST", "projection": "operator_workbench", "operator_token_required_for_post": true}
+  ],
+  "public_review_enabled": false,
+  "native_review_enabled": false
+}

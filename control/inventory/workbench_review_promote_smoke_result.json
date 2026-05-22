@@ -1,0 +1,19 @@
+{
+  "schema_version": "workbench_review_promote_smoke_result.v0",
+  "task": "AIDE-BATCH-WORKBENCH-REVIEW-PROMOTE-01",
+  "status": "pass",
+  "operator_dry_run_passed": true,
+  "public_projection_blocked": true,
+  "native_read_only_projection_blocked": true,
+  "temp_reviewed_index_refresh_passed": true,
+  "temp_search_after_refresh_passed": true,
+  "commands": [
+    "python scripts/eureka_workbench_review_promote.py --from-fixtures --decision accept_local_reviewed --dry-run --projection operator_workbench --json",
+    "python scripts/eureka_workbench_review_promote.py --from-fixtures --decision accept_local_reviewed --dry-run --projection public_web --json",
+    "python scripts/eureka_workbench_review_promote.py --from-fixtures --decision accept_local_reviewed --dry-run --projection native_desktop_read_only --json",
+    "python scripts/eureka_workbench_review_promote.py --from-fixtures --decision accept_local_reviewed --operator-token local-dev-token --use-temp-instance --apply-to-temp --projection operator_workbench --json"
+  ],
+  "operator_instance_mutated": false,
+  "master_index_mutated": false,
+  "committed_data_public_index_mutated": false
+}

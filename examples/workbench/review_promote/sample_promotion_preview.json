@@ -1,0 +1,58 @@
+{
+  "schema_version": "workbench_promotion_preview.v0",
+  "preview_id": "promotion_preview_decision_accept_local_reviewed_r_9ee4624060",
+  "review_item_id": "review_item_candidate_id_candidate_workbench_fff287ee85",
+  "decision_id": "review_decision_decision_accept_local_reviewed_r_576b3ecef0",
+  "candidate_id": "candidate.workbench_review.sampleproject.v0",
+  "created_at": "2026-05-22T00:00:00Z",
+  "status": "preview_available",
+  "promotion_preview_created": true,
+  "promotion_preview_is_not_promotion": true,
+  "reviewed_local_record_preview": {
+    "record_id": "reviewed_local_review_item_candidate_id_candida_d0ce2b0ded",
+    "title": "SampleProject candidate",
+    "summary": "Fixture candidate for Workbench review/promotion preview.",
+    "source_id": "source.fixture.workbench_review",
+    "source_cache_entry_id": "source_cache.workbench_review.sampleproject.v0",
+    "evidence_id": "evidence.workbench_review.sampleproject.v0",
+    "review_item_id": "review_item_candidate_id_candidate_workbench_fff287ee85",
+    "truth_level": "reviewed_local_not_master_public_truth",
+    "accepted_truth": false,
+    "review_required": false,
+    "created_at": "2026-05-22T00:00:00Z"
+  },
+  "evidence_summary": {
+    "evidence_id": "evidence.workbench_review.sampleproject.v0",
+    "claim_subject": "sampleproject",
+    "review_required": true
+  },
+  "source_summary": {
+    "source_id": "source.fixture.workbench_review",
+    "source_cache_entry_id": "source_cache.workbench_review.sampleproject.v0",
+    "source_family": "fixture"
+  },
+  "limitations": [
+    "Preview is not promotion.",
+    "Reviewed local index refresh is temp/explicit-instance only."
+  ],
+  "action_posture": "operator_gated_temp_refresh_only",
+  "blocked_actions": [
+    "automatic_candidate_acceptance",
+    "operator_instance_apply",
+    "master_index_mutation",
+    "public_index_mutation",
+    "download",
+    "extraction",
+    "model_provider_call",
+    "deployment"
+  ],
+  "index_delta_preview": {
+    "add_record_count": 1,
+    "update_record_count": 0,
+    "delete_record_count": 0,
+    "master_index_mutated": false,
+    "committed_data_public_index_mutated": false
+  },
+  "automatic_candidate_acceptance_enabled": false,
+  "accepted_truth": false
+}

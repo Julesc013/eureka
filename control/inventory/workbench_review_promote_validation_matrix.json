@@ -1,0 +1,11 @@
+{
+  "schema_version": "workbench_review_promote_validation_matrix.v0",
+  "task": "AIDE-BATCH-WORKBENCH-REVIEW-PROMOTE-01",
+  "validation": [
+    {"lane": "test_selector", "command": "python scripts/eureka_test_select.py --changed --failed-first --json", "status": "pass"},
+    {"lane": "workbench_review_promote", "command": "python scripts/validate_workbench_review_promote.py", "status": "pass"},
+    {"lane": "focused_tests", "command": "python -m unittest tests.runtime.test_workbench_review_promote tests.runtime.test_review_queue_flow tests.runtime.test_promotion_preview_flow tests.runtime.test_reviewed_index_refresh_flow tests.runtime.test_workbench_review_boundaries tests.operations.test_workbench_review_promote_scripts tests.operations.test_workbench_review_promote_smoke tests.scripts.test_validate_workbench_review_promote", "status": "pass"},
+    {"lane": "full_unittest_discovery", "command": "python -m unittest discover -s tests -t .", "status": "pass", "notes": "Initial dirty-tree run failed older HUNT/LOCAL validators that inspect git status; clean-tree rerun after commit is required before push."}
+  ],
+  "status": "pass"
+}

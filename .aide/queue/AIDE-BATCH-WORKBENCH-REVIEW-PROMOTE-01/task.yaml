@@ -1,0 +1,8 @@
+id: AIDE-BATCH-WORKBENCH-REVIEW-PROMOTE-01
+title: Review candidate, promotion preview, and reviewed-index refresh flow
+status: completed_pending_validation
+purpose: Add the local/operator review and promotion-preview flow for candidates produced by local, IA-HUNT, IA live metadata lane mock/dry-run, and fixture/example pipelines.
+allowed_scope_summary: Review/promote policies, matrices, runtime helpers, local Workbench/API seam, CLI, docs, examples, tests, audit evidence, and AIDE queue/context metadata.
+gate: IA-LIVE-METADATA-LANE-01 completed; no automatic acceptance, operator instance mutation, master/public index mutation, fake evidence, downloads, extraction, model/provider calls, deployment, or production/public launch claim.
+recommended_after: IA-LIVE-METADATA-LANE-01
+recommended_next: LOCAL-APPLY-GATE-01

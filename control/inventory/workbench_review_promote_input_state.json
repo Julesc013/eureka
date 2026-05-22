@@ -1,0 +1,20 @@
+{
+  "schema_version": "workbench_review_promote_input_state.v0",
+  "task": "AIDE-BATCH-WORKBENCH-REVIEW-PROMOTE-01",
+  "branch": "dev",
+  "head": "bfbd37caba2dffdd167a90ef74231d436b766d07",
+  "origin_main": "79563d01c8cc01163eae53a973ad225d7b8edffb",
+  "origin_dev": "bfbd37caba2dffdd167a90ef74231d436b766d07",
+  "working_tree_clean_before": true,
+  "ia_live_metadata_lane_found": true,
+  "workbench_live_run_found": true,
+  "resolution_run_kernel_found": true,
+  "ia_hunt_bridge_found": true,
+  "workbench_result_lanes_found": true,
+  "search_interaction_found": true,
+  "review_queue_found": true,
+  "candidate_index_found": true,
+  "reviewed_index_found": true,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}

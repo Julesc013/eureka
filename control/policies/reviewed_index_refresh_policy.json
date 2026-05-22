@@ -1,0 +1,17 @@
+{
+  "schema_version": "reviewed_index_refresh_policy.v0",
+  "task": "AIDE-BATCH-WORKBENCH-REVIEW-PROMOTE-01",
+  "reviewed_index_refresh_allowed_only_temp_or_explicit_instance": true,
+  "temp_instance_refresh_allowed_for_tests": true,
+  "operator_instance_mutation_default": false,
+  "master_index_mutation_enabled": false,
+  "committed_data_public_index_mutation_enabled": false,
+  "input_stores_mutated_by_refresh": false,
+  "rollback_hint_required": true,
+  "downloads_enabled": false,
+  "extraction_enabled": false,
+  "model_provider_enabled": false,
+  "deployment_enabled": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}

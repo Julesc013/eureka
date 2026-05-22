@@ -1,0 +1,40 @@
+{
+  "schema_version": "workbench_review_item.v0",
+  "review_item_id": "review_item_candidate_id_candidate_workbench_fff287ee85",
+  "candidate_id": "candidate.workbench_review.sampleproject.v0",
+  "candidate_source": "local_candidate_results",
+  "queue_status": "review_pending",
+  "subject_kind": "candidate_record",
+  "subject_id": "candidate.workbench_review.sampleproject.v0",
+  "evidence_id": "evidence.workbench_review.sampleproject.v0",
+  "source_cache_entry_id": "source_cache.workbench_review.sampleproject.v0",
+  "summary": "Review required before local reviewed projection.",
+  "created_at": "2026-05-22T00:00:00Z",
+  "review_required": true,
+  "accepted_truth": false,
+  "allowed_decisions": [
+    "accept_local_reviewed",
+    "reject_wrong_object",
+    "reject_wrong_version",
+    "reject_wrong_platform",
+    "needs_more_evidence",
+    "duplicate",
+    "unsafe",
+    "rights_risk",
+    "defer"
+  ],
+  "blocked_actions": [
+    "automatic_candidate_acceptance",
+    "operator_instance_apply",
+    "master_index_mutation",
+    "public_index_mutation",
+    "download",
+    "extraction",
+    "model_provider_call",
+    "deployment"
+  ],
+  "limitations": [
+    "Review item is local/operator scoped.",
+    "Review item does not create evidence or reviewed truth."
+  ]
+}

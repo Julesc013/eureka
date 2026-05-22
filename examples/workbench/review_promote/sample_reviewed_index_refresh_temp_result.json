@@ -1,0 +1,34 @@
+{
+  "schema_version": "workbench_reviewed_index_refresh_temp_result.v0",
+  "status": "pass",
+  "review_item_id": "review_item_temp_candidate_workbench_review_sampl_eec2c78f70",
+  "temp_reviewed_index_refresh_passed": true,
+  "temp_search_after_refresh_passed": true,
+  "search_results": [
+    {
+      "record_id": "pir_a28c160122949638",
+      "title": "SampleProject candidate",
+      "description": "Fixture candidate for Workbench review/promotion preview.",
+      "matched_terms": [
+        "sampleproject"
+      ],
+      "score": 1.0,
+      "source_id": "source.fixture.workbench_review"
+    }
+  ],
+  "temp_instance_scope": "explicit_test_temp_instance",
+  "operator_instance_mutated": false,
+  "master_index_mutated": false,
+  "committed_data_public_index_mutated": false,
+  "rollback_hint": "discard temp instance",
+  "automatic_candidate_acceptance_enabled": false,
+  "fake_evidence_created": false,
+  "fake_verified_records_created": false,
+  "download_performed": false,
+  "upload_performed": false,
+  "extraction_executed": false,
+  "model_provider_used": false,
+  "deployment_performed": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}

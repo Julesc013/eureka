@@ -1,0 +1,9 @@
+{
+  "schema_version": "workbench_review_promote_permission_matrix.v0",
+  "task": "AIDE-BATCH-WORKBENCH-REVIEW-PROMOTE-01",
+  "profiles": [
+    {"projection_profile": "operator_workbench", "can_create_review_item": true, "can_record_decision": true, "can_apply_to_temp": true, "operator_token_required": true},
+    {"projection_profile": "public_web", "can_create_review_item": false, "can_record_decision": false, "can_apply_to_temp": false, "read_only": true},
+    {"projection_profile": "native_desktop_read_only", "can_create_review_item": false, "can_record_decision": false, "can_apply_to_temp": false, "read_only": true}
+  ]
+}

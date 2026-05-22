@@ -1,0 +1,20 @@
+{
+  "schema_version": "workbench_review_candidate.v0",
+  "candidate_id": "candidate.workbench_review.sampleproject.v0",
+  "candidate_source": "local_candidate_results",
+  "title": "SampleProject candidate",
+  "summary": "Fixture candidate for Workbench review/promotion preview.",
+  "source_id": "source.fixture.workbench_review",
+  "source_family": "fixture",
+  "source_locator": "fixture:workbench-review-promote:sampleproject",
+  "source_cache_entry_id": "source_cache.workbench_review.sampleproject.v0",
+  "evidence_id": "evidence.workbench_review.sampleproject.v0",
+  "claim_subject": "sampleproject",
+  "domain_id": "legacy_software",
+  "review_required": true,
+  "accepted_truth": false,
+  "limitations": [
+    "Fixture candidate only.",
+    "Promotion preview is not promotion."
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "schema_version": "workbench_review_promote_decision_matrix.v0",
+  "task": "AIDE-BATCH-WORKBENCH-REVIEW-PROMOTE-01",
+  "review_decisions": [
+    {"decision": "accept_local_reviewed", "promotion_preview_allowed": true, "requires_operator_token": true},
+    {"decision": "reject_wrong_object", "promotion_preview_allowed": false, "requires_reason": true},
+    {"decision": "reject_wrong_version", "promotion_preview_allowed": false, "requires_reason": true},
+    {"decision": "reject_wrong_platform", "promotion_preview_allowed": false, "requires_reason": true},
+    {"decision": "needs_more_evidence", "promotion_preview_allowed": false, "requires_reason": false},
+    {"decision": "duplicate", "promotion_preview_allowed": false, "requires_reason": false},
+    {"decision": "unsafe", "promotion_preview_allowed": false, "requires_reason": true},
+    {"decision": "rights_risk", "promotion_preview_allowed": false, "requires_reason": true},
+    {"decision": "defer", "promotion_preview_allowed": false, "requires_reason": false}
+  ]
+}

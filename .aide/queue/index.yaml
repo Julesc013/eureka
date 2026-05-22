@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-22
 repo: julesc013/eureka
-current_recommended_task: WORKBENCH-REVIEW-PROMOTE-01 — Review candidate, promotion preview, and reviewed-index refresh flow
+current_recommended_task: LOCAL-APPLY-GATE-01 — Explicit operator-instance apply, backup, audit, and rollback gate
 entries:
   - id: DEV-AND-IA-TO-MAIN-PROMOTION-REVIEW
     title: Promote repaired dev IA pilot plus repo layout canon baseline to main

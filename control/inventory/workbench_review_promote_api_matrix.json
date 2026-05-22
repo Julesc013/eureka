@@ -1,0 +1,26 @@
+{
+  "schema_version": "workbench_review_promote_api_matrix.v0",
+  "task": "AIDE-BATCH-WORKBENCH-REVIEW-PROMOTE-01",
+  "responses": [
+    "review_item",
+    "review_decision",
+    "promotion_preview",
+    "reviewed_index_refresh_preview",
+    "reviewed_index_refresh_temp_result",
+    "boundary_report"
+  ],
+  "required_fields": [
+    "schema_version",
+    "status",
+    "projection_profile",
+    "review_item",
+    "review_decision",
+    "promotion_preview",
+    "reviewed_index_refresh_preview",
+    "boundary_report",
+    "limitations",
+    "warnings"
+  ],
+  "operator_token_required": true,
+  "public_native_read_only": true
+}

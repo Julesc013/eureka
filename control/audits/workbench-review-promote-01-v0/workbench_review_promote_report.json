@@ -1,0 +1,14 @@
+{
+  "schema_version": "workbench_review_promote_report.v0",
+  "task": "AIDE-BATCH-WORKBENCH-REVIEW-PROMOTE-01",
+  "status": "pass",
+  "review_item_created": true,
+  "operator_token_required": true,
+  "promotion_preview_created": true,
+  "temp_reviewed_index_refresh_passed": true,
+  "temp_search_after_refresh_passed": true,
+  "automatic_candidate_acceptance_enabled": false,
+  "operator_instance_mutated": false,
+  "master_index_mutated": false,
+  "committed_data_public_index_mutated": false
+}

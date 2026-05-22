@@ -1,0 +1,23 @@
+{
+  "schema_version": "workbench_review_decision.v0",
+  "decision_id": "review_decision_decision_accept_local_reviewed_r_576b3ecef0",
+  "review_item_id": "review_item_candidate_id_candidate_workbench_fff287ee85",
+  "candidate_id": "candidate.workbench_review.sampleproject.v0",
+  "decision": "accept_local_reviewed",
+  "mapped_local_review_decision": "accept",
+  "decision_status": "recorded_temp_scope",
+  "allowed": true,
+  "dry_run": false,
+  "operator_token_required": true,
+  "operator_token_present": true,
+  "review_decision_recorded": true,
+  "automatic_candidate_acceptance_enabled": false,
+  "blocked_reasons": [],
+  "created_at": "2026-05-22T00:00:00Z",
+  "accepted_truth": false,
+  "review_required": true,
+  "limitations": [
+    "Decision is local review state only.",
+    "Promotion preview is separate and does not mutate a master or public index."
+  ]
+}

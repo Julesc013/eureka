@@ -1,0 +1,15 @@
+{
+  "schema_version": "workbench_review_promote_preview_matrix.v0",
+  "task": "AIDE-BATCH-WORKBENCH-REVIEW-PROMOTE-01",
+  "promotion_preview_outputs": [
+    "reviewed_local_record_preview",
+    "evidence_summary",
+    "source_summary",
+    "limitations",
+    "action_posture",
+    "blocked_actions",
+    "index_delta_preview"
+  ],
+  "promotion_preview_is_not_promotion": true,
+  "master_index_mutated": false
+}

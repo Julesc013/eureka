@@ -1,0 +1,11 @@
+{
+  "schema_version": "workbench_promotion_preview.v0",
+  "promotion_preview_created": true,
+  "promotion_preview_is_not_promotion": true,
+  "accepted_truth": false,
+  "index_delta_preview": {
+    "add_record_count": 1,
+    "master_index_mutated": false,
+    "committed_data_public_index_mutated": false
+  }
+}

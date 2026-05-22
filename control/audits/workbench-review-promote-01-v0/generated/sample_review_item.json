@@ -1,0 +1,8 @@
+{
+  "schema_version": "workbench_review_item.v0",
+  "review_item_id": "review_item_candidate_id_candidate_workbench_fff287ee85",
+  "candidate_id": "candidate.workbench_review.sampleproject.v0",
+  "queue_status": "review_pending",
+  "accepted_truth": false,
+  "review_required": true
+}

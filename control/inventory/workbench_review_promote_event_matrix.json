@@ -1,0 +1,15 @@
+{
+  "schema_version": "workbench_review_promote_event_matrix.v0",
+  "task": "AIDE-BATCH-WORKBENCH-REVIEW-PROMOTE-01",
+  "event_types": [
+    "review.item_created",
+    "review.decision_proposed",
+    "review.decision_recorded",
+    "promotion.preview_created",
+    "promotion.preview_blocked",
+    "reviewed_index.refresh_preview_created",
+    "reviewed_index.refresh_completed_temp",
+    "action.blocked",
+    "warning.emitted"
+  ]
+}

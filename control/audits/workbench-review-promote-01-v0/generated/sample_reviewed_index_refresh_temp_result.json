@@ -1,0 +1,10 @@
+{
+  "schema_version": "workbench_reviewed_index_refresh_temp_result.v0",
+  "status": "pass",
+  "temp_reviewed_index_refresh_passed": true,
+  "temp_search_after_refresh_passed": true,
+  "temp_instance_scope": "explicit_test_temp_instance",
+  "operator_instance_mutated": false,
+  "master_index_mutated": false,
+  "committed_data_public_index_mutated": false
+}

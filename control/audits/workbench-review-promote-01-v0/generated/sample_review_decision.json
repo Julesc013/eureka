@@ -1,0 +1,8 @@
+{
+  "schema_version": "workbench_review_decision.v0",
+  "decision": "accept_local_reviewed",
+  "allowed": true,
+  "operator_token_required": true,
+  "review_decision_recorded": true,
+  "accepted_truth": false
+}
