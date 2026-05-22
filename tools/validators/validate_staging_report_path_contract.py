@@ -14,6 +14,7 @@ AUDIT_ROOT = REPO_ROOT / "control" / "audits" / "staging-report-path-contract-v0
 REPORT_PATH = AUDIT_ROOT / "staging_report_path_contract_report.json"
 GITIGNORE_PATH = REPO_ROOT / ".gitignore"
 VALIDATE_ONLY_TOOL = REPO_ROOT / "scripts" / "validate_only_pack_import.py"
+VALIDATE_ONLY_IMPLEMENTATION = REPO_ROOT / "tools" / "validators" / "validate_only_pack_import.py"
 
 REQUIRED_AUDIT_FILES = {
     "README.md",
@@ -250,6 +251,7 @@ def _validate_docs(errors: list[str]) -> None:
 
 def _validate_validate_only_tool(errors: list[str]) -> None:
     text = _read_text(VALIDATE_ONLY_TOOL, errors)
+    text += "\n" + _read_text(VALIDATE_ONLY_IMPLEMENTATION, errors)
     for phrase in ["--output", "parent must already exist", "FORBIDDEN_OUTPUT_REPO_ROOTS"]:
         if phrase not in text:
             errors.append(f"{_rel(VALIDATE_ONLY_TOOL)}: missing output path policy phrase: {phrase}.")

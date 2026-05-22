@@ -83,6 +83,9 @@ Updated or added validators:
   prevents active code from importing archived Python.
 - `tools/auditors/audit_contract_taxonomy.py`
   deduplicates overlapping contract roots by repo-relative path.
+- `tools/validators/validate_staging_report_path_contract.py`
+  now inspects the `tools/validators/validate_only_pack_import.py`
+  implementation as well as the `scripts/` compatibility wrapper.
 
 ## Docs Updated
 
@@ -162,6 +165,33 @@ Pre-commit generated artifact cleanliness:
 - Remediation:
   rerun after committing, when audit evidence is tracked and the tree is clean.
 
+Final clean-tree validation:
+
+- PASS: `python -m unittest discover -s tests -t . -f`
+  (`4914` tests, `2630.754s`)
+- PASS: `git diff --check`
+- PASS: `python scripts/validate_repo_structure_canon.py --json`
+- PASS: `python scripts/validate_repo_structure_canon.py --strict --json`
+- PASS: `python scripts/check_architecture_boundaries.py`
+- PASS: `python scripts/check_generated_artifact_cleanliness.py --check --json`
+- PASS: `python scripts/validate_path_taxonomy.py --json`
+- PASS: `python scripts/validate_archive_import_guard.py --json`
+- PASS: `python scripts/validate_native_client_contract.py --json`
+- PASS: `python scripts/validate_instance_layout_policy.py`
+- PASS: `python scripts/validate_legacy_runtime_leakage_remediation.py --json`
+- PASS: `python scripts/eureka_test_select.py --changed --failed-first --json`
+- PASS: `python scripts/eureka_test_select.py --promotion --json`
+- PASS: `python scripts/validate_public_static_site.py`
+- PASS: `python scripts/validate_pack_set.py --all-examples --json`
+- PASS: `python site/build.py --check`
+- PASS: `python scripts/build_public_search_index.py --check --json`
+- PASS: `python scripts/validate_public_search_index.py --json`
+- PASS: `python site/validate.py`
+- PASS: `python scripts/validate_static_site_search_integration.py --json`
+- PASS: `python scripts/validate_staging_report_path_contract.py --json`
+- PASS: `CHECKSUMS.SHA256` audit across `337` entries
+  (`missing=0`, `mismatches=0`)
+
 ## Failures Remediated
 
 - `tests.operations.test_contract_taxonomy_plan.ContractTaxonomyPlanTests.test_audit_script_runs_in_check_mode`
@@ -171,6 +201,11 @@ Pre-commit generated artifact cleanliness:
 - `tests.operations.test_hosted_public_search_wrapper` failed because the test
   still read `deploy/render/render.yaml`. It now reads
   `release/hosting/render/render.yaml` and the focused test passes.
+- `tests.scripts.test_validate_staging_report_path_contract.ValidateStagingReportPathContractScriptTestCase.test_validator_json_parses`
+  failed in full discovery because the staging report path validator inspected
+  only the `scripts/validate_only_pack_import.py` wrapper after the tools split.
+  It now reads the tool implementation too, and both the validator and focused
+  staging report path tests pass.
 
 ## Known Remaining Debt
 

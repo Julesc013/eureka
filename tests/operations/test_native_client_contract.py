@@ -58,7 +58,7 @@ class NativeClientContractTestCase(unittest.TestCase):
     def test_cli_flag_aligns_with_current_cli_surface(self) -> None:
         contract = _load_json(CONTRACT)
 
-        self.assertTrue((REPO_ROOT / "surfaces" / "native" / "cli").is_dir())
+        self.assertTrue((REPO_ROOT / "surfaces" / "cli").is_dir())
         self.assertTrue(contract["cli_surface_implemented"])
         self.assertFalse(contract["native_gui_implemented"])
 
