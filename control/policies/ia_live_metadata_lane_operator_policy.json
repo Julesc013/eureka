@@ -1,0 +1,12 @@
+{
+  "schema_version": "ia_live_metadata_lane_operator_policy.v0",
+  "policy_id": "ia_live_metadata_lane_operator_policy",
+  "operator_command_required": true,
+  "operator_token_required_for_live": true,
+  "operator_token_required_for_approval": true,
+  "dry_run_allowed_without_token": true,
+  "mock_live_allowed_without_token_for_tests": true,
+  "public_commands_blocked": true,
+  "native_commands_blocked": true,
+  "operator_instance_mutation_default": false
+}

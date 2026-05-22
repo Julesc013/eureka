@@ -1,0 +1,15 @@
+{
+  "schema_version": "ia_live_metadata_lane_report.v0",
+  "task": "AIDE-BATCH-IA-LIVE-METADATA-LANE-01",
+  "status": "pass",
+  "runtime_lane_added": true,
+  "workbench_projection_added": true,
+  "dry_run_passed": true,
+  "mock_live_passed": true,
+  "public_projection_blocked": true,
+  "native_read_only_projection_blocked": true,
+  "live_smoke_performed": false,
+  "raw_response_committed": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}

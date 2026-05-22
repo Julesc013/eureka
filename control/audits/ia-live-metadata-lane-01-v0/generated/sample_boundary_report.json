@@ -1,0 +1,10 @@
+{
+  "schema_version": "ia_live_metadata_lane_boundary_report.v0",
+  "live_ia_call_performed": false,
+  "source_probe_executed": false,
+  "raw_response_committed": false,
+  "download_performed": false,
+  "extraction_executed": false,
+  "operator_instance_mutated": false,
+  "master_index_mutated": false
+}

@@ -1,0 +1,18 @@
+{
+  "schema_version": "ia_live_metadata_lane_input_state.v0",
+  "task": "AIDE-BATCH-IA-LIVE-METADATA-LANE-01",
+  "branch": "dev",
+  "head": "aca6b8eda9ef4149d02ad42ac10be8fd88465401",
+  "origin_main": "79563d01c8cc01163eae53a973ad225d7b8edffb",
+  "origin_dev": "aca6b8eda9ef4149d02ad42ac10be8fd88465401",
+  "working_tree_clean_before": true,
+  "workbench_live_run_found": true,
+  "resolution_run_kernel_found": true,
+  "ia_hunt_bridge_found": true,
+  "ia_pilot_closeout_found": true,
+  "workbench_result_lanes_found": true,
+  "search_interaction_found": true,
+  "test_lane_router_found": true,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}

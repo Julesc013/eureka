@@ -1,0 +1,25 @@
+{
+  "schema_version": "ia_live_metadata_lane_snapshot_sample.v0",
+  "lane": {
+    "schema_version": "result_lane_packet.v0",
+    "lane_id": "lane-ia_live_metadata",
+    "lane_kind": "ia_live_metadata_candidates",
+    "state": "blocked_pending_operator_approval",
+    "result_count": 0,
+    "truth_level": "candidate_not_truth",
+    "review_required": true,
+    "accepted_truth": false,
+    "blocked_actions": [
+      "public_live_ia_metadata",
+      "native_live_ia_metadata",
+      "download",
+      "upload",
+      "extract",
+      "execute",
+      "call_model_provider",
+      "mutate_operator_instance",
+      "mutate_master_index",
+      "commit_raw_response"
+    ]
+  }
+}

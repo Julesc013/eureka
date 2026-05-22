@@ -1,0 +1,23 @@
+{
+  "schema_version": "ia_live_metadata_lane_cli_result.v0",
+  "query": "sampleproject",
+  "projection_profile": "operator_workbench",
+  "command_type": "run_live_ia_metadata_mock",
+  "command_response": {
+    "allowed": true,
+    "state": "candidates_available",
+    "mock_live": true,
+    "raw_response_committed": false,
+    "live_ia_call_performed": false,
+    "source_probe_executed": false,
+    "lane": {
+      "lane_kind": "ia_live_metadata_candidates",
+      "result_count": 1,
+      "truth_level": "candidate_not_truth",
+      "review_required": true,
+      "accepted_truth": false
+    }
+  },
+  "mock_live_passed": true,
+  "raw_response_committed": false
+}

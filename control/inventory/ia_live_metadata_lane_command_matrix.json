@@ -1,0 +1,14 @@
+{
+  "schema_version": "ia_live_metadata_lane_command_matrix.v0",
+  "commands": [
+    {"command": "request_live_ia_metadata", "default_status": "operator_only", "public_status": "blocked", "native_status": "blocked"},
+    {"command": "approve_live_ia_metadata", "default_status": "operator_only_token_required", "public_status": "blocked", "native_status": "blocked"},
+    {"command": "run_live_ia_metadata_dry_run", "default_status": "allowed_operator", "public_status": "blocked", "native_status": "blocked"},
+    {"command": "run_live_ia_metadata_mock", "default_status": "allowed_operator_tests", "public_status": "blocked", "native_status": "blocked"},
+    {"command": "run_live_ia_metadata_now", "default_status": "blocked_without_operator_token_and_allow_live", "public_status": "blocked", "native_status": "blocked"},
+    {"command": "cancel_live_ia_metadata", "default_status": "operator_only", "public_status": "blocked", "native_status": "blocked"},
+    {"command": "inspect_live_ia_metadata_result", "default_status": "operator_only", "public_status": "blocked", "native_status": "blocked"}
+  ],
+  "mutates_operator_instance": false,
+  "commits_raw_response": false
+}

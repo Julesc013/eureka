@@ -1,0 +1,10 @@
+{
+  "schema_version": "ia_live_metadata_lane_live_smoke_result.v0",
+  "live_smoke_performed": false,
+  "live_smoke_not_run_reason": "No explicit operator live-smoke approval, token, and allow-live request were supplied for this batch run.",
+  "live_smoke_total_http_requests": 0,
+  "tls_status": "not_run",
+  "rate_limit_status": "not_run",
+  "redacted_summary_written": false,
+  "raw_response_committed": false
+}

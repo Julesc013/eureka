@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (6648 chars, 1662 approximate tokens)
+- `.aide/context/latest-task-packet.md` (8024 chars, 2006 approximate tokens)
 
 ## Context Packet Reference
 
@@ -33,31 +33,31 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Changed Files Summary
 
+- allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/AIDE-BATCH-WORKBENCH-LIVE-RUN-01` (??; matches active task allowed path)
-- allowed: `.aide/queue/IA-LIVE-METADATA-LANE-01` (??; matches active task allowed path)
-- allowed: `.aide/queue/LOCAL-APPLY-GATE-01` (??; matches active task allowed path)
-- allowed: `.aide/queue/WORKBENCH-LIVE-RUN-01/task.yaml` (M; matches active task allowed path)
-- allowed: `.aide/queue/WORKBENCH-REVIEW-PROMOTE-01` (??; matches active task allowed path)
+- allowed: `.aide/queue/AIDE-BATCH-IA-LIVE-METADATA-LANE-01` (??; matches active task allowed path)
+- allowed: `.aide/queue/IA-LIVE-METADATA-LANE-01/task.yaml` (M; matches active task allowed path)
 - allowed: `.aide/queue/index.yaml` (M; matches active task allowed path)
 - allowed: `.aide/reports/eureka-repo-health.json` (M; matches active task allowed path)
 - allowed: `.aide/reports/eureka-repo-health.md` (M; matches active task allowed path)
-- allowed: `control/audits/workbench-live-run-01-v0` (??; matches active task allowed path)
-- allowed: `control/inventory/workbench_live_run_api_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/workbench_live_run_boundary_report.json` (??; matches active task allowed path)
-- allowed: `control/inventory/workbench_live_run_command_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/workbench_live_run_event_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/workbench_live_run_failure_repair_log.json` (??; matches active task allowed path)
-- allowed: `control/inventory/workbench_live_run_input_state.json` (??; matches active task allowed path)
-- allowed: `control/inventory/workbench_live_run_next_task_decision.json` (??; matches active task allowed path)
-- allowed: `control/inventory/workbench_live_run_projection_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/workbench_live_run_result.json` (??; matches active task allowed path)
-- allowed: `control/inventory/workbench_live_run_route_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/workbench_live_run_smoke_result.json` (??; matches active task allowed path)
-- allowed: `control/inventory/workbench_live_run_validation_matrix.json` (??; matches active task allowed path)
-- allowed: `control/policies/workbench_live_run_command_policy.json` (??; matches active task allowed path)
-- allowed: `control/policies/workbench_live_run_non_claim_policy.json` (??; matches active task allowed path)
-- additional changed paths omitted from compact packet: 24; see task evidence changed-files report
+- allowed: `control/audits/ia-live-metadata-lane-01-v0` (??; matches active task allowed path)
+- allowed: `control/inventory/ia_live_metadata_lane_boundary_report.json` (??; matches active task allowed path)
+- allowed: `control/inventory/ia_live_metadata_lane_command_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/ia_live_metadata_lane_event_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/ia_live_metadata_lane_failure_repair_log.json` (??; matches active task allowed path)
+- allowed: `control/inventory/ia_live_metadata_lane_input_state.json` (??; matches active task allowed path)
+- allowed: `control/inventory/ia_live_metadata_lane_live_smoke_result.json` (??; matches active task allowed path)
+- allowed: `control/inventory/ia_live_metadata_lane_next_task_decision.json` (??; matches active task allowed path)
+- allowed: `control/inventory/ia_live_metadata_lane_policy_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/ia_live_metadata_lane_result.json` (??; matches active task allowed path)
+- allowed: `control/inventory/ia_live_metadata_lane_result_lane_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/ia_live_metadata_lane_route_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/ia_live_metadata_lane_validation_matrix.json` (??; matches active task allowed path)
+- allowed: `control/policies/ia_live_metadata_lane_non_claim_policy.json` (??; matches active task allowed path)
+- allowed: `control/policies/ia_live_metadata_lane_operator_policy.json` (??; matches active task allowed path)
+- allowed: `control/policies/ia_live_metadata_lane_policy.json` (??; matches active task allowed path)
+- allowed: `control/policies/ia_live_metadata_lane_rate_limit_policy.json` (??; matches active task allowed path)
+- additional changed paths omitted from compact packet: 21; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -67,8 +67,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 6749
-- approx_tokens: 1688
+- chars: 6851
+- approx_tokens: 1713
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

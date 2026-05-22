@@ -7,6 +7,7 @@ from typing import Any, Mapping, Sequence
 
 from runtime.resolution_run import BLOCKED_ACTIONS, run_resolution_dry_run
 from runtime.resolution_run.run_store import FIXED_CREATED_AT, stable_id
+from runtime.source_observation import ia_live_metadata_lane
 
 
 PROJECTION_PROFILES = ("operator_workbench", "public_web", "native_desktop_read_only")
@@ -24,6 +25,8 @@ BLOCKED_COMMANDS = (
     "cancel",
     "deepen",
     "run_live_source",
+    "run_live_ia_metadata_now",
+    "cancel_live_ia_metadata",
     "apply_to_operator_instance",
     "review_candidate",
     "promote_candidate",
@@ -55,6 +58,11 @@ def create_workbench_resolution_run(
         projection_profile=profile,
         include_ia_hunt=include_ia_hunt_dry_run,
         policy=policy,
+    )
+    result["ia_live_metadata_lane"] = ia_live_metadata_lane.plan_ia_live_metadata_lane(
+        result.get("run") or {},
+        query,
+        policy,
     )
     packet = project_run_for_workbench(result, profile)
     _RUNS[packet["run_id"]] = deepcopy(result)
@@ -145,9 +153,61 @@ def build_command_response(
     run_id: str,
     command_type: str,
     projection_profile: str = "operator_workbench",
+    *,
+    operator_token: str = "",
+    allow_live: bool = False,
+    mock_live: bool = False,
+    max_requests: int = 2,
+    rows: int = 5,
+    timeout_seconds: int = 15,
 ) -> dict[str, Any]:
     """Return a command outcome; unsafe or future commands are policy-blocked."""
-    packet = get_workbench_resolution_run(run_id, projection_profile)
+    profile = _projection_profile(projection_profile)
+    result = _stored_result(run_id)
+    packet = project_run_for_workbench(result, profile)
+    if command_type in ia_live_metadata_lane.IA_LIVE_COMMANDS:
+        run = dict(result.get("run") or {})
+        query = str(run.get("query") or packet.get("query") or "sampleproject")
+        command_payload = {
+            "command_type": command_type,
+            "projection_profile": profile,
+            "query": query,
+            "operator_token": operator_token,
+            "allow_live": allow_live,
+            "mock_live": mock_live,
+            "max_requests": max_requests,
+            "rows": rows,
+            "timeout_seconds": timeout_seconds,
+            "operator_approved": bool(operator_token and allow_live),
+        }
+        if profile != "operator_workbench":
+            lane_result = ia_live_metadata_lane.request_ia_live_metadata_lane(run_id, command_payload)
+        elif command_type == "run_live_ia_metadata_dry_run":
+            lane_result = ia_live_metadata_lane.run_ia_live_metadata_lane_dry_run(run_id, query)
+        elif command_type == "run_live_ia_metadata_mock":
+            lane_result = ia_live_metadata_lane.run_ia_live_metadata_lane_mock(run_id, query)
+        elif command_type == "run_live_ia_metadata_now":
+            lane_result = ia_live_metadata_lane.run_ia_live_metadata_lane_live(
+                run_id,
+                query,
+                operator_token=operator_token,
+                allow_live=allow_live,
+                max_requests=max_requests,
+                rows=rows,
+                timeout_seconds=timeout_seconds,
+            )
+        elif command_type == "approve_live_ia_metadata":
+            lane_result = ia_live_metadata_lane.approve_ia_live_metadata_lane(run_id, command_payload)
+        elif command_type == "cancel_live_ia_metadata":
+            lane_result = ia_live_metadata_lane.request_ia_live_metadata_lane(run_id, command_payload)
+            lane_result["state"] = "cancelled" if lane_result.get("allowed") else lane_result.get("state", "blocked_pending_operator_approval")
+            lane_result["events"] = list(lane_result.get("events", [])) + ia_live_metadata_lane.build_ia_live_metadata_lane_events(run_id, "cancelled")
+        else:
+            lane_result = ia_live_metadata_lane.request_ia_live_metadata_lane(run_id, command_payload)
+        result["ia_live_metadata_lane"] = lane_result
+        _RUNS[run_id] = deepcopy(result)
+        return ia_live_metadata_lane.command_response_from_lane_result(lane_result, profile)
+
     allowed = command_type in READ_COMMANDS
     blocked_reasons: list[str] = []
     if not allowed:
@@ -186,10 +246,32 @@ def project_run_for_workbench(
     """Shape a kernel result into a projection-safe Workbench live-run packet."""
     profile = _projection_profile(projection_profile)
     run = dict(kernel_result.get("run") or {})
-    lane_snapshot = _project_lane_snapshot(kernel_result.get("lane_snapshot") or {}, profile)
+    ia_lane_result = dict(kernel_result.get("ia_live_metadata_lane") or {})
+    raw_lane_snapshot = kernel_result.get("lane_snapshot") or {}
+    if ia_lane_result:
+        raw_lane_snapshot = ia_live_metadata_lane.ensure_ia_live_metadata_lane_in_snapshot(
+            raw_lane_snapshot,
+            ia_lane_result,
+            profile,
+        )
+    lane_snapshot = _project_lane_snapshot(raw_lane_snapshot, profile)
     workunits = _project_workunits(kernel_result.get("workunit_schedule") or {}, profile)
-    events = _project_events(kernel_result.get("events") or (), profile)
-    boundary_report = build_workbench_live_run_boundary_report(kernel_result.get("boundaries") or {})
+    raw_events = list(kernel_result.get("events") or ())
+    raw_events.extend(ia_lane_result.get("events", []) or [])
+    events = _project_events(raw_events, profile)
+    raw_boundaries = dict(kernel_result.get("boundaries") or {})
+    if ia_lane_result:
+        raw_boundaries.update(
+            {
+                key: value
+                for key, value in ia_live_metadata_lane.build_ia_live_metadata_lane_boundary_report(
+                    str(run.get("run_id", "")),
+                    ia_lane_result,
+                ).items()
+                if key != "schema_version"
+            }
+        )
+    boundary_report = build_workbench_live_run_boundary_report(raw_boundaries)
     blocked_actions = list(kernel_result.get("blocked_actions") or BLOCKED_ACTIONS)
     warnings = _warnings_for_profile(profile)
     limitations = _limitations_for_profile(profile)
@@ -214,14 +296,19 @@ def project_run_for_workbench(
         "blocked_actions": blocked_actions,
         "blocked_commands": list(BLOCKED_COMMANDS),
         "read_commands": list(READ_COMMANDS),
+        "ia_live_metadata_commands": list(ia_live_metadata_lane.IA_LIVE_COMMANDS),
+        "ia_live_metadata_lane": ia_live_metadata_lane.build_ia_live_metadata_lane_packet(
+            ia_lane_result or ia_live_metadata_lane.plan_ia_live_metadata_lane(run, run.get("query", ""), {}),
+            profile,
+        ),
         "boundary_report": boundary_report,
         "coverage_report": _project_coverage_report(kernel_result.get("coverage_report") or {}, profile),
         "warnings": warnings,
         "limitations": limitations,
         "accepted_truth": False,
         "review_required": True,
-        "source_probe_executed": False,
-        "live_ia_call_performed": False,
+        "source_probe_executed": bool(ia_lane_result.get("source_probe_executed", False)),
+        "live_ia_call_performed": bool(ia_lane_result.get("live_ia_call_performed", False)),
         "store_mutation_performed": False,
         "operator_instance_mutated": False,
         "master_index_mutated": False,

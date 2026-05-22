@@ -2,82 +2,140 @@
 
 ## PHASE
 
-`AIDE-BATCH-WORKBENCH-LIVE-RUN-01 — Project headless resolution runs into the local Workbench`
+IA-LIVE-METADATA-LANE-01
 
 ## GOAL
 
-Project the headless `ResolutionRunKernel` into the local Workbench/API seam so a local query creates or displays a dry-run resolution run with `run_id`, state, events, lane snapshot, planned IA-HUNT dry-run WorkUnits, and blocked/deferred action posture.
+Add an explicit operator-approved live Internet Archive metadata lane for local resolution runs.
 
 ## WHY
 
-This makes Workbench the first browser/API projection over the shared run kernel instead of a separate search implementation. It keeps behavior in runtime, rendering in the local Workbench surface, and future source/live/review work behind policy gates.
+Continue AIDE token survival by using repo-local context refs, compact objectives, deterministic validation, and evidence packets instead of long chat history.
 
 ## CONTEXT_REFS
 
-- `.aide/context/latest-context-packet.md`
-- `.aide/context/repo-map.json`
-- `.aide/context/test-map.json`
-- `.aide/context/context-index.json`
-- `.aide/reports/eureka-aide-lite-operating-handoff.md`
-- `.aide/queue/WORKBENCH-LIVE-RUN-01/task.yaml`
-- `runtime/resolution_run/`
-- `runtime/local_service/`
-- `runtime/local_workbench/`
-- `scripts/eureka_resolution_run.py`
-- `scripts/validate_resolution_run_kernel.py`
+- `AGENTS.md`
+- `.aide/queue/index.yaml`
+- `.aide/memory/project-state.md`
+- `.aide/memory/decisions.md`
+- `.aide/memory/open-risks.md`
+- `.aide/context/repo-snapshot.json` (present)
+- `.aide/context/repo-map.json` (present)
+- `.aide/context/repo-map.md` (present)
+- `.aide/context/test-map.json` (present)
+- `.aide/context/context-index.json` (present)
+- `.aide/context/latest-context-packet.md` (present)
+- `.aide/repo/latest-repo-intelligence.md` (present)
+- `.aide/repo/file-inventory.json` (present)
+- `.aide/reports/file-quality-summary.md` (present)
+- `.aide/reports/file-quality-ledger.json` (present)
+- `.aide/refactors/latest-refactor-readiness.md` (present)
+- `.aide/refactors/latest-refactor-plan.example.json` (present)
+- `.aide/routing/latest-route-decision.json` (present)
+- `.aide/routing/latest-route-decision.md` (present)
+- `.aide/cache/latest-cache-keys.json` (present)
+- `.aide/cache/latest-cache-keys.md` (present)
+- `.aide/prompts/compact-task.md`
+- `.aide/policies/token-budget.yaml`
+- `.aide/policies/cache.yaml`
+- `.aide/policies/local-state.yaml`
 
 ## ALLOWED_PATHS
 
+- `.aide/queue/AIDE-BATCH-IA-LIVE-METADATA-LANE-01/**`
+- `.aide/queue/IA-LIVE-METADATA-LANE-01/**`
+- `.aide/queue/WORKBENCH-REVIEW-PROMOTE-01/**`
+- `.aide/queue/LOCAL-APPLY-GATE-01/**`
+- `.aide/queue/SOURCE-WAVE-00/**`
+- `.aide/queue/index.yaml`
+- `.aide/context/latest-task-packet.md`
+- `.aide/context/latest-review-packet.md`
+- `.aide/reports/eureka-repo-health.json`
+- `.aide/reports/eureka-repo-health.md`
 - `contracts/resolution_run/**`
 - `contracts/search_interaction/**`
+- `contracts/sources/**`
+- `contracts/source_cache/**`
 - `contracts/workbench/**`
 - `contracts/view_models/**`
 - `contracts/projections/**`
 - `runtime/resolution_run/**`
+- `runtime/source_observation/**`
+- `runtime/source_cache/**`
+- `runtime/evidence_ledger/**`
+- `runtime/candidate_index/**`
+- `runtime/candidate_store/**`
+- `runtime/review_queue/**`
 - `runtime/local_service/**`
 - `runtime/local_workbench/**`
 - `runtime/local_eval/**`
 - `runtime/search_hunt/**`
 - `runtime/search_need/**`
 - `runtime/workunit_queue/**`
-- `runtime/public_index/**`
-- `runtime/candidate_index/**`
-- `runtime/source_cache/**`
-- `runtime/evidence_ledger/**`
-- `runtime/review_queue/**`
 - `surfaces/web/workbench/**`
 - `surfaces/api/**`
 - `surfaces/web/**`
+- `scripts/eureka_resolution_run.py`
 - `scripts/eureka_workbench_live_run.py`
+- `scripts/eureka_ia_live_metadata_lane.py`
+- `scripts/eureka_ia_hunt_bridge.py`
+- `scripts/validate_ia_live_metadata_lane.py`
 - `scripts/validate_workbench_live_run.py`
+- `scripts/validate_resolution_run_kernel.py`
+- `scripts/validate_ia_hunt_bridge.py`
 - `scripts/eureka_test_select.py`
-- `tests/runtime/test_workbench_live_run*.py`
-- `tests/operations/test_workbench_live_run*.py`
-- `tests/scripts/test_validate_workbench_live_run.py`
+- `tests/runtime/test_ia_live_metadata_lane.py`
+- `tests/runtime/test_ia_live_metadata_lane_policy.py`
+- `tests/runtime/test_ia_live_metadata_lane_events.py`
+- `tests/runtime/test_ia_live_metadata_lane_projection.py`
+- `tests/runtime/test_ia_live_metadata_lane_boundaries.py`
+- `tests/operations/test_ia_live_metadata_lane_scripts.py`
+- `tests/operations/test_ia_live_metadata_lane_smoke.py`
+- `tests/scripts/test_validate_ia_live_metadata_lane.py`
+- `examples/ia_live_metadata_lane/**`
 - `examples/workbench/live_run/**`
-- `control/policies/workbench_live_run*.json`
-- `control/inventory/workbench_live_run*.json`
-- `docs/architecture/WORKBENCH_LIVE_RUN.md`
-- `docs/architecture/WORKBENCH_RUN_PROJECTION.md`
-- `docs/operations/WORKBENCH_LIVE_RUN_RUNBOOK.md`
-- `docs/operations/POST_WORKBENCH_LIVE_RUN_PLAN.md`
-- `docs/reference/WORKBENCH_LIVE_RUN_ROUTES.md`
-- `docs/reference/WORKBENCH_LIVE_RUN_API.md`
-- `.aide/queue/**`
-- `.aide/context/latest-task-packet.md`
-- `.aide/context/latest-review-packet.md`
-- `.aide/reports/eureka-repo-health.json`
-- `.aide/reports/eureka-repo-health.md`
-- `control/audits/workbench-live-run-01-v0/**`
+- `examples/resolution_run/**`
+- `examples/ia_hunt_bridge/**`
+- `examples/workbench/result_lanes/**`
+- `control/policies/ia_live_metadata_lane_policy.json`
+- `control/policies/ia_live_metadata_lane_operator_policy.json`
+- `control/policies/ia_live_metadata_lane_rate_limit_policy.json`
+- `control/policies/ia_live_metadata_lane_redaction_policy.json`
+- `control/policies/ia_live_metadata_lane_non_claim_policy.json`
+- `control/inventory/ia_live_metadata_lane_input_state.json`
+- `control/inventory/ia_live_metadata_lane_route_matrix.json`
+- `control/inventory/ia_live_metadata_lane_command_matrix.json`
+- `control/inventory/ia_live_metadata_lane_event_matrix.json`
+- `control/inventory/ia_live_metadata_lane_policy_matrix.json`
+- `control/inventory/ia_live_metadata_lane_result_lane_matrix.json`
+- `control/inventory/ia_live_metadata_lane_boundary_report.json`
+- `control/inventory/ia_live_metadata_lane_live_smoke_result.json`
+- `control/inventory/ia_live_metadata_lane_validation_matrix.json`
+- `control/inventory/ia_live_metadata_lane_result.json`
+- `control/inventory/ia_live_metadata_lane_next_task_decision.json`
+- `control/inventory/ia_live_metadata_lane_failure_repair_log.json`
+- `docs/architecture/IA_LIVE_METADATA_LANE.md`
+- `docs/architecture/LIVE_SOURCE_ACTION_POLICY.md`
+- `docs/operations/IA_LIVE_METADATA_LANE_RUNBOOK.md`
+- `docs/operations/POST_IA_LIVE_METADATA_LANE_PLAN.md`
+- `docs/reference/IA_LIVE_METADATA_LANE_EVENTS.md`
+- `docs/reference/IA_LIVE_METADATA_LANE_COMMANDS.md`
+- `control/audits/ia-live-metadata-lane-01-v0/**`
 
 ## FORBIDDEN_PATHS
 
 - `.git/**`
-- `.env`
-- `secrets/**`
-- `.aide.local/**`
 - `eureka-instance/**`
 - `instances/**`
+- `.aide.local/**`
+- `secrets/**`
+- `.env`
+- private local files
+- committed operator tokens
+- committed provider credentials
+- raw prompts
+- raw responses
+- raw live IA response bodies
 - `site/dist/**`
 - `data/public_index/**`
 - `runtime/connectors/**`
@@ -88,67 +146,75 @@ This makes Workbench the first browser/API projection over the shared run kernel
 
 ## IMPLEMENTATION
 
-- Add Workbench live-run policies, route/API/projection/event/command matrices, examples, docs, audit pack, and result inventory.
-- Add `runtime/local_service/workbench_live_run.py` as a projection wrapper over `runtime/resolution_run`.
-- Add local service routes for the run list, run detail, and JSON resolution-run endpoints.
-- Add local Workbench view models/renderers for run list/detail/search projection.
-- Add CLI and validator scripts.
-- Add focused runtime, operations, smoke, and validator tests.
+- Read the queue packet and relevant repo refs first.
+- Keep changes inside the allowed paths.
+- Make the smallest coherent diff that satisfies acceptance.
+- Preserve generated/manual boundaries.
+- Do not inline whole source files unless exact contents are required.
+- Use exact refs such as `path#Lstart-Lend` when file details are load-bearing.
 
 ## VALIDATION
 
-- `python scripts/validate_workbench_live_run.py`
-- `python scripts/eureka_workbench_live_run.py --query sampleproject --projection operator_workbench --dry-run --from-fixtures --include-ia-hunt-dry-run --json`
-- `python scripts/eureka_workbench_live_run.py --query sampleproject --projection public_web --dry-run --from-fixtures --include-ia-hunt-dry-run --json`
-- `python scripts/eureka_workbench_live_run.py --query sampleproject --projection native_desktop_read_only --dry-run --from-fixtures --include-ia-hunt-dry-run --json`
-- `python -m unittest tests.runtime.test_workbench_live_run tests.runtime.test_workbench_live_run_projection tests.runtime.test_workbench_live_run_events tests.runtime.test_workbench_live_run_boundaries -v`
-- `python -m unittest tests.operations.test_workbench_live_run_scripts tests.operations.test_workbench_live_run_smoke tests.scripts.test_validate_workbench_live_run -v`
-- `python scripts/eureka_test_select.py --changed --failed-first --json`
+- `py -3 .aide/scripts/aide_lite.py doctor`
+- `py -3 .aide/scripts/aide_lite.py validate`
+- `py -3 .aide/scripts/aide_lite.py snapshot`
+- `py -3 .aide/scripts/aide_lite.py index`
+- `py -3 .aide/scripts/aide_lite.py context`
+- `py -3 .aide/scripts/aide_lite.py pack --task "AIDE-EVAL-GREEN-01"`
+- `py -3 .aide/scripts/aide_lite.py test`
+- `py -3 .aide/scripts/aide_lite.py selftest`
+- `py -3 .aide/scripts/aide_lite.py verify`
+- `py -3 .aide/scripts/aide_lite.py review-pack`
+- `py -3 .aide/scripts/aide_lite.py eval run`
 - `python scripts/check_architecture_boundaries.py`
 - `python scripts/check_generated_artifact_cleanliness.py --check --json`
-- `python .aide/scripts/aide_lite.py doctor`
-- `python .aide/scripts/aide_lite.py validate`
-- `python .aide/scripts/aide_lite.py test`
-- `python .aide/scripts/aide_lite.py selftest`
-- `python .aide/scripts/aide_lite.py verify`
-- `python .aide/scripts/aide_lite.py review-pack`
 - `python -m unittest discover -s tests -t .`
+- `git diff --check`
 
 ## COMMITS
 
-- `feat(workbench): project resolution runs locally`
+- Commit coherent subdeliverables with verbose bodies.
+- Stop at review gates.
 
 ## EVIDENCE
 
-- Workbench live-run validator: PASS.
-- Operator, public, and native read-only CLI projections: PASS.
-- Focused Workbench live-run tests: PASS.
-- Test selector and selected focused lanes: PASS.
-- Cross-stack validators through resolution run, G0, F0, SCOUT, DOMAIN, SYN, IA-HUNT, Workbench result lanes, search interaction, foundation, test lane policy, contract taxonomy, and repo structure canon: PASS with existing repo-structure warnings.
-- Final AIDE checks, generated artifact cleanliness after commit, commit check, and full discovery remain closeout items until run.
+- changed files
+- validation commands and results
+- verifier result
+- review packet path and result when review-pack is available
+- advisory route decision path and result when Q17 routing is available
+- compact packet size and budget status
+- unresolved risks and deferrals
 
 ## NON_GOALS
 
-- No live IA metadata calls.
-- No source probes or public source fanout.
-- No downloads/uploads, extraction, execution, install, emulation, model/provider calls, or deployment.
-- No operator instance mutation, master index mutation, source-cache/evidence/candidate/reviewed-index mutation.
-- No browser review/promote flow, Local Apply Gate, WebSocket/SSE, SOURCE-WAVE, or IA live metadata lane implementation.
-- No production readiness or public launch claim.
+- No live IA calls by default.
+- No public live IA fanout.
+- No downloads/uploads, IA file fetch, extraction, execution/install/emulation, model/provider calls, or deployment.
+- No operator instance mutation by default and no committed instance state.
+- No reviewed-index, master-index, or public-index mutation.
+- No raw live IA response body commits.
+- No production readiness, public launch readiness, marketplace/app-store readiness, or full Archive.org integration claim.
+- No additional source-family implementation or broad crawler.
 
 ## ACCEPTANCE
 
-- Workbench uses the Resolution Run Kernel and emits run packet, events, lanes, WorkUnits, and blocked actions.
-- Operator, public, and native read-only projections pass.
-- Blocked commands return policy-blocked responses without mutation.
-- Focused validators/tests and full discovery pass, or exact deferral is recorded.
-- Commit is pushed to `dev`; `main` is not pushed.
+- Task-specific acceptance criteria are met.
+- Validation is run and recorded.
+- Evidence is written.
+- No secrets, raw prompt logs, local caches, or `.aide.local` contents are committed.
 
 ## OUTPUT_SCHEMA
 
-Return the requested closeout report with `STATUS`, `SUMMARY`, `COMMITS`, `WORKBENCH_LIVE_RUN`, `VALIDATION`, `PUSH`, `BOUNDARIES`, and `NEXT_TASK`.
+Return a compact final report with `STATUS`, `SUMMARY`, `COMMITS`, `CHANGED_FILES`, `VALIDATION`, route/verifier/token results, `RISKS`, and `NEXT`.
+Include the verifier result when Q12 verifier behavior is available.
 
 ## TOKEN_ESTIMATE
 
-- Packet target: compact, under AIDE validation limits.
-- Full prompt/history intentionally excluded.
+- method: chars / 4, rounded up
+- chars: 4790
+- approx_tokens: 1198
+- budget_status: PASS
+- warnings:
+  - none
+- formal ledger: `.aide/reports/token-ledger.jsonl`

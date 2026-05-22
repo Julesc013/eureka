@@ -1,8 +1,8 @@
 id: IA-LIVE-METADATA-LANE-01
 title: Add explicit operator-approved live IA metadata lane
-status: queued
-purpose: Add a governed live IA metadata lane after the Workbench can project headless resolution runs.
-allowed_scope_summary: Future task must add explicit operator approval, bounded IA metadata policy, live-lane events, validation, and audit evidence before any live call.
-gate: WORKBENCH-LIVE-RUN-01 completed; no live IA metadata execution until this task explicitly defines approval, quotas, no-download posture, and operator safety checks.
+status: completed_pending_commit
+purpose: Added a governed live IA metadata lane after the Workbench can project headless resolution runs.
+allowed_scope_summary: Operator-approved IA metadata lane policy, bounded dry-run/mock/live command posture, event/lane projection, validation, and audit evidence.
+gate: WORKBENCH-LIVE-RUN-01 completed; no live IA call by default, no raw response commits, no downloads/uploads, no extraction, no model/provider calls, no operator/master/index mutation, no deployment, and no production/public launch claim.
 recommended_after: WORKBENCH-LIVE-RUN-01
 recommended_next: WORKBENCH-REVIEW-PROMOTE-01

@@ -1,0 +1,20 @@
+{
+  "schema_version": "ia_live_metadata_lane_boundary_report.v0",
+  "live_ia_call_performed": false,
+  "source_probe_executed": false,
+  "source_cache_write_performed": false,
+  "evidence_write_performed": false,
+  "candidate_index_mutated": false,
+  "reviewed_index_mutated": false,
+  "master_index_mutated": false,
+  "operator_instance_mutated": false,
+  "raw_response_committed": false,
+  "download_performed": false,
+  "upload_performed": false,
+  "extraction_executed": false,
+  "model_provider_used": false,
+  "deployment_performed": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "full_archive_org_integration_claimed": false
+}

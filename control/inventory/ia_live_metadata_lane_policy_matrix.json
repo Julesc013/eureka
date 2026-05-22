@@ -1,0 +1,19 @@
+{
+  "schema_version": "ia_live_metadata_lane_policy_matrix.v0",
+  "policy_checks": [
+    "operator_command_required",
+    "operator_token_required_for_live",
+    "policy_gate_required",
+    "public_projection_blocked",
+    "native_projection_blocked",
+    "raw_response_commit_blocked",
+    "downloads_blocked",
+    "extraction_blocked",
+    "model_provider_blocked",
+    "operator_instance_mutation_blocked",
+    "master_index_mutation_blocked"
+  ],
+  "live_enabled_by_default": false,
+  "dry_run_allowed": true,
+  "mock_live_allowed": true
+}

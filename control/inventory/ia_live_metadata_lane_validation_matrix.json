@@ -1,0 +1,24 @@
+{
+  "schema_version": "ia_live_metadata_lane_validation_matrix.v0",
+  "task": "AIDE-BATCH-IA-LIVE-METADATA-LANE-01",
+  "checks": [
+    "policies",
+    "matrices",
+    "cli_help",
+    "dry_run",
+    "mock_live",
+    "public_blocked",
+    "native_blocked",
+    "operator_token_required",
+    "events",
+    "lane_snapshot",
+    "boundaries"
+  ],
+  "status": "pass",
+  "dry_run_passed": true,
+  "mock_live_passed": true,
+  "public_projection_blocked": true,
+  "native_read_only_projection_blocked": true,
+  "live_smoke_performed": false,
+  "raw_response_committed": false
+}

@@ -1,0 +1,15 @@
+{
+  "schema_version": "ia_live_metadata_lane_cli_result.v0",
+  "projection_profile": "public_web",
+  "command_type": "run_live_ia_metadata_mock",
+  "command_response": {
+    "allowed": false,
+    "state": "unavailable",
+    "blocked_reasons": [
+      "public/native projections cannot run IA live metadata commands"
+    ]
+  },
+  "public_projection_blocked": true,
+  "live_ia_call_performed": false,
+  "raw_response_committed": false
+}

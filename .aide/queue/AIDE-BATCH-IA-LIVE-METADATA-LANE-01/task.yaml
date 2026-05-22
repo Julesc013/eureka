@@ -1,0 +1,8 @@
+id: AIDE-BATCH-IA-LIVE-METADATA-LANE-01
+title: Explicit operator-approved live Internet Archive metadata lane for resolution runs
+status: completed_pending_commit
+purpose: Added a governed IA live metadata lane over ResolutionRunKernel and Workbench/API projections.
+allowed_scope_summary: IA live metadata lane policies, command/event/route/lane matrices, source-observation runtime lane, Workbench/API command projection, CLI, validator, tests, docs, examples, audit evidence, and queue/context metadata.
+gate: No live IA calls by default, no public/native fanout, no raw response commits, no downloads/uploads, no extraction, no model/provider calls, no operator/master/index mutation, no deployment, no production/public launch claim.
+recommended_after: WORKBENCH-LIVE-RUN-01
+recommended_next: WORKBENCH-REVIEW-PROMOTE-01

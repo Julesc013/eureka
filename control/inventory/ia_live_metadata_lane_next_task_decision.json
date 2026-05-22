@@ -1,0 +1,9 @@
+{
+  "schema_version": "ia_live_metadata_lane_next_task_decision.v0",
+  "recommended_next_task": "WORKBENCH-REVIEW-PROMOTE-01 \u2014 Review candidate, promotion preview, and reviewed-index refresh flow",
+  "planned_after": [
+    "LOCAL-APPLY-GATE-01",
+    "SOURCE-WAVE-00"
+  ],
+  "reason": "Live metadata candidates now need a review/promote preview flow before local apply or source expansion."
+}

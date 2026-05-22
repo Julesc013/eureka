@@ -1,0 +1,12 @@
+{
+  "schema_version": "ia_live_metadata_lane_route_matrix.v0",
+  "routes": [
+    {"route": "/runs/{run_id}", "purpose": "show IA live lane state in run detail", "projection": "operator_workbench"},
+    {"route": "/api/v1/resolution-runs/{run_id}", "purpose": "run packet with IA live lane", "projection": "all"},
+    {"route": "/api/v1/resolution-runs/{run_id}/events", "purpose": "event log including IA lane events", "projection": "all"},
+    {"route": "/api/v1/resolution-runs/{run_id}/lanes", "purpose": "lane snapshot including IA live metadata lane", "projection": "all"},
+    {"route": "/api/v1/resolution-runs/{run_id}/commands", "purpose": "policy-gated IA lane commands", "projection": "operator_workbench"}
+  ],
+  "public_live_ia_route_enabled": false,
+  "native_live_ia_route_enabled": false
+}

@@ -1,0 +1,14 @@
+{
+  "schema_version": "ia_live_metadata_lane_non_claim_policy.v0",
+  "policy_id": "ia_live_metadata_lane_non_claim_policy",
+  "accepted_truth_created": false,
+  "evidence_created": false,
+  "reviewed_record_created": false,
+  "full_archive_org_integration_claimed": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "downloads_enabled": false,
+  "extraction_enabled": false,
+  "model_provider_enabled": false,
+  "deployment_enabled": false
+}

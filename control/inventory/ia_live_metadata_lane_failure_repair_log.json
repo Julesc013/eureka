@@ -1,0 +1,18 @@
+{
+  "schema_version": "ia_live_metadata_lane_failure_repair_log.v0",
+  "task": "AIDE-BATCH-IA-LIVE-METADATA-LANE-01",
+  "repairs": [
+    {
+      "id": "ia-live-metadata-lane-repair-001",
+      "phase": "final_full_discovery",
+      "failure": "tests.operations.test_local_appliance_track.LocalApplianceTrackTests.test_validator_passes failed because .aide/reports/eureka-repo-health.json still pointed to IA-LIVE-METADATA-LANE-01 after the queue advanced to WORKBENCH-REVIEW-PROMOTE-01.",
+      "classification": "stale_aide_repo_health_closeout_state",
+      "scope": "in_scope_aide_report_metadata",
+      "repair": "Updated repo health current/recommended task metadata to the IA live lane closeout state and next recommended Workbench review/promote task.",
+      "live_source_call_performed": false,
+      "download_performed": false,
+      "extraction_executed": false,
+      "model_provider_used": false
+    }
+  ]
+}

@@ -400,7 +400,20 @@ def _workbench_live_run_workunits_response(run_id: str, request_context: LocalRe
 def _workbench_live_run_commands_response(run_id: str, request_context: LocalRequestContext) -> LocalServiceResponse:
     command_type = first_param(request_context.params, "command", "run_live_source")
     try:
-        payload = _workbench_live_run().build_command_response(run_id, command_type, _projection_profile(request_context))
+        payload = _workbench_live_run().build_command_response(
+            run_id,
+            command_type,
+            _projection_profile(request_context),
+            operator_token=first_param(request_context.params, "operator_token", first_param(request_context.params, "operator-token", "")),
+            allow_live=_truthy(first_param(request_context.params, "allow_live", first_param(request_context.params, "allow-live", ""))),
+            mock_live=_truthy(first_param(request_context.params, "mock_live", first_param(request_context.params, "mock-live", ""))),
+            max_requests=parse_limit(first_param(request_context.params, "max_requests", first_param(request_context.params, "max-requests", "")), default=2),
+            rows=parse_limit(first_param(request_context.params, "rows", ""), default=5),
+            timeout_seconds=parse_limit(
+                first_param(request_context.params, "timeout_seconds", first_param(request_context.params, "timeout-seconds", "")),
+                default=15,
+            ),
+        )
     except KeyError:
         return error_response(404, "resolution_run_not_found", "resolution run was not found", {"run_id": run_id})
     return json_response(200 if payload.get("allowed") else 403, payload)
@@ -1801,6 +1814,10 @@ def _projection_profile(request_context: LocalRequestContext) -> str:
 def _include_ia_hunt_dry_run(request_context: LocalRequestContext) -> bool:
     value = first_param(request_context.params, "include_ia_hunt_dry_run", first_param(request_context.params, "include-ia-hunt-dry-run", "true")).lower()
     return value not in {"0", "false", "no", "off"}
+
+
+def _truthy(value: str) -> bool:
+    return str(value or "").strip().lower() in {"1", "true", "yes", "on"}
 
 
 def _review_service() -> Any:

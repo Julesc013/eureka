@@ -1,0 +1,13 @@
+{
+  "schema_version": "ia_live_metadata_lane_rate_limit_policy.v0",
+  "policy_id": "ia_live_metadata_lane_rate_limit_policy",
+  "max_requests_default": 2,
+  "max_requests_hard_cap": 2,
+  "rows_default": 5,
+  "rows_hard_cap": 5,
+  "timeout_seconds_default": 15,
+  "timeout_seconds_hard_cap": 15,
+  "retry_enabled": false,
+  "backoff_required_for_future_retry": true,
+  "rate_limit_event_required": true
+}

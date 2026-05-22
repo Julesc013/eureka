@@ -1,0 +1,11 @@
+{
+  "schema_version": "ia_live_metadata_lane_redaction_policy.v0",
+  "policy_id": "ia_live_metadata_lane_redaction_policy",
+  "raw_response_commit_allowed": false,
+  "raw_response_log_allowed": false,
+  "redacted_summary_allowed": true,
+  "normalized_preview_allowed": true,
+  "operator_token_echo_allowed": false,
+  "http_headers_commit_allowed": false,
+  "response_body_commit_allowed": false
+}

@@ -1,0 +1,13 @@
+{
+  "schema_version": "ia_live_metadata_lane_request.v0",
+  "sample_queries": [
+    "sampleproject",
+    "New York 1993 D-Theater HD demo tape original source",
+    "Windows 7-compatible portable utilities, not Windows 7 ISO",
+    "StyleWriter 2500 Mac OS 8 driver"
+  ],
+  "projection_profile": "operator_workbench",
+  "command_type": "run_live_ia_metadata_dry_run",
+  "allow_live": false,
+  "operator_token_required_for_live": true
+}

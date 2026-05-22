@@ -1,0 +1,17 @@
+{
+  "schema_version": "ia_live_metadata_lane_cli_result.v0",
+  "query": "sampleproject",
+  "projection_profile": "operator_workbench",
+  "command_type": "run_live_ia_metadata_dry_run",
+  "command_response": {
+    "allowed": true,
+    "state": "approved_pending_run",
+    "dry_run": true,
+    "raw_response_committed": false,
+    "live_ia_call_performed": false,
+    "source_probe_executed": false
+  },
+  "dry_run_passed": true,
+  "live_smoke_performed": false,
+  "raw_response_committed": false
+}
