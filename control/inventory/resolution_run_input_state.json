@@ -1,0 +1,20 @@
+{
+  "schema_version": "resolution_run_input_state.v0",
+  "task": "AIDE-BATCH-RUN-KERNEL-01",
+  "branch": "dev",
+  "head": "76ec58a1fd0f1bff81f80a5fa6242aa288336dbd",
+  "origin_main": "79563d01c8cc01163eae53a973ad225d7b8edffb",
+  "origin_dev": "76ec58a1fd0f1bff81f80a5fa6242aa288336dbd",
+  "working_tree_clean_before": true,
+  "g0_foundation_found": true,
+  "f0_foundation_found": true,
+  "scout_schema_found": true,
+  "domain_foundation_found": true,
+  "syn_foundation_found": true,
+  "ia_hunt_bridge_found": true,
+  "workbench_result_lanes_found": true,
+  "search_interaction_found": true,
+  "test_lane_router_found": true,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}

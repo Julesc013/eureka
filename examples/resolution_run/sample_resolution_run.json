@@ -1,0 +1,4683 @@
+{
+  "blocked_actions": [
+    "run_live_source_probe",
+    "run_live_ia_metadata",
+    "download",
+    "upload",
+    "extract",
+    "execute",
+    "call_model_provider",
+    "mutate_operator_instance",
+    "mutate_master_index",
+    "deploy",
+    "promote_reviewed_record"
+  ],
+  "boundaries": {
+    "candidate_index_mutated": false,
+    "deployment_performed": false,
+    "download_performed": false,
+    "evidence_write_performed": false,
+    "extraction_executed": false,
+    "live_ia_call_performed": false,
+    "master_index_mutated": false,
+    "model_provider_used": false,
+    "operator_instance_mutated": false,
+    "production_readiness_claimed": false,
+    "public_launch_readiness_claimed": false,
+    "review_queue_mutated": false,
+    "reviewed_index_mutated": false,
+    "schema_version": "resolution_run_boundary_report.v0",
+    "source_cache_write_performed": false,
+    "source_probe_executed": false,
+    "upload_performed": false
+  },
+  "coverage_report": {
+    "accepted_truth": false,
+    "checked_layers": [
+      "headless_run_created",
+      "query_compiled",
+      "local_lane_projection",
+      "ia_hunt_workunit_dry_run",
+      "blocked_action_posture"
+    ],
+    "coverage_report_id": "coverage_run_profile_operator_workbench_q_8a60eea5dd",
+    "created_at": "2026-05-22T00:00:00Z",
+    "lane_count": 15,
+    "limitations": [
+      "Coverage is scoped to committed fixtures and dry-run WorkUnit planning.",
+      "Live IA metadata and browser apply flows remain future governed work."
+    ],
+    "review_required": true,
+    "run_id": "run_profile_operator_workbench_query_c35f9f7f3a",
+    "schema_version": "run_coverage_report.v0",
+    "unchecked_layers": [
+      "live_source_metadata",
+      "downloads",
+      "extraction",
+      "review_promote_apply",
+      "operator_instance_apply",
+      "public_fanout"
+    ],
+    "workunit_count": 10
+  },
+  "events": [
+    {
+      "accepted_truth": false,
+      "created_at": "2026-05-22T00:00:00Z",
+      "event_id": "runevt_event_type_run_created_index_0_r_53a04d4b4a",
+      "event_type": "run_created",
+      "payload": {
+        "query": "sampleproject"
+      },
+      "review_required": false,
+      "run_id": "run_profile_operator_workbench_query_c35f9f7f3a",
+      "schema_version": "run_event.v0"
+    },
+    {
+      "accepted_truth": false,
+      "created_at": "2026-05-22T00:00:00Z",
+      "event_id": "runevt_event_type_query_compiled_index__f9a4081333",
+      "event_type": "query_compiled",
+      "payload": {
+        "compiled_query_id": "compiled_profile_operator_workbench_query_c35f9f7f3a"
+      },
+      "review_required": false,
+      "run_id": "run_profile_operator_workbench_query_c35f9f7f3a",
+      "schema_version": "run_event.v0"
+    },
+    {
+      "accepted_truth": false,
+      "created_at": "2026-05-22T00:00:00Z",
+      "event_id": "runevt_event_type_command_applied_index_f2761e3738",
+      "event_type": "command_applied",
+      "payload": {
+        "command": {
+          "allowed": true,
+          "blocked_reasons": [],
+          "command_id": "runcmd_run_run_profile_operator_workben_184157e754",
+          "command_type": "start",
+          "created_at": "2026-05-22T00:00:00Z",
+          "dry_run": true,
+          "payload": {},
+          "run_id": "run_profile_operator_workbench_query_c35f9f7f3a",
+          "schema_version": "run_command.v0"
+        }
+      },
+      "review_required": false,
+      "run_id": "run_profile_operator_workbench_query_c35f9f7f3a",
+      "schema_version": "run_event.v0"
+    },
+    {
+      "accepted_truth": false,
+      "created_at": "2026-05-22T00:00:00Z",
+      "event_id": "runevt_event_type_workunits_scheduled_i_9895fcffc3",
+      "event_type": "workunits_scheduled",
+      "payload": {
+        "workunit_count": 10
+      },
+      "review_required": false,
+      "run_id": "run_profile_operator_workbench_query_c35f9f7f3a",
+      "schema_version": "run_event.v0"
+    },
+    {
+      "accepted_truth": false,
+      "created_at": "2026-05-22T00:00:00Z",
+      "event_id": "runevt_event_type_lane_snapshot_built_i_59561f644c",
+      "event_type": "lane_snapshot_built",
+      "payload": {
+        "snapshot_id": "run_lane_snapshot_projection_operator_workbench_ru_517f92aded"
+      },
+      "review_required": false,
+      "run_id": "run_profile_operator_workbench_query_c35f9f7f3a",
+      "schema_version": "run_event.v0"
+    },
+    {
+      "accepted_truth": false,
+      "created_at": "2026-05-22T00:00:00Z",
+      "event_id": "runevt_event_type_coverage_report_built_cf913c7f5a",
+      "event_type": "coverage_report_built",
+      "payload": {
+        "coverage_report_id": "coverage_run_profile_operator_workbench_q_8a60eea5dd"
+      },
+      "review_required": false,
+      "run_id": "run_profile_operator_workbench_query_c35f9f7f3a",
+      "schema_version": "run_event.v0"
+    }
+  ],
+  "lane_snapshot": {
+    "accepted_truth": false,
+    "created_at": "2026-05-22T00:00:00Z",
+    "lane_count": 15,
+    "lane_page": {
+      "boundary_report": {
+        "candidate_index_mutated": false,
+        "deployment_performed": false,
+        "evidence_write_performed": false,
+        "extraction_executed": false,
+        "lane_count": 15,
+        "live_ia_call_performed": false,
+        "marketplace_or_app_store_readiness_claimed": false,
+        "master_index_mutated": false,
+        "model_provider_used": false,
+        "operator_fields_hidden": false,
+        "operator_instance_mutated": false,
+        "production_readiness_claimed": false,
+        "projection_profile": "operator_workbench",
+        "public_launch_readiness_claimed": false,
+        "reviewed_index_mutated": false,
+        "schema_version": "workbench_result_lane_boundary_report.v0",
+        "source_cache_write_performed": false,
+        "source_probe_executed": false,
+        "unsafe_actions_blocked": true
+      },
+      "emitted_at": "2026-05-20T00:00:00Z",
+      "lane_count": 15,
+      "lanes": [
+        {
+          "action_posture": {
+            "blocked_actions": [
+              "download",
+              "extract",
+              "execute",
+              "call_model_provider",
+              "deploy_public_projection",
+              "run_source_probe",
+              "mutate_master_index",
+              "promote_preview",
+              "rebuild_reviewed_index"
+            ],
+            "can_call_model": false,
+            "can_cite": true,
+            "can_deploy": false,
+            "can_download": false,
+            "can_execute": false,
+            "can_export": true,
+            "can_extract": false,
+            "can_inspect": true,
+            "can_promote_preview": false,
+            "can_rebuild_index": false,
+            "can_review": false,
+            "can_view": true,
+            "policy_reasons": [
+              "Result lanes are read-only projections.",
+              "Unsafe actions remain disabled until future governed tasks enable them."
+            ]
+          },
+          "blocked_actions": [
+            "download",
+            "extract",
+            "execute",
+            "call_model_provider",
+            "deploy_public_projection",
+            "run_source_probe",
+            "mutate_master_index",
+            "promote_preview",
+            "rebuild_reviewed_index"
+          ],
+          "confidence": 0.8,
+          "emitted_at": "2026-05-20T00:00:00Z",
+          "items": [
+            {
+              "action_posture": {
+                "blocked_actions": [
+                  "download",
+                  "extract",
+                  "execute",
+                  "call_model_provider",
+                  "deploy_public_projection",
+                  "run_source_probe",
+                  "mutate_master_index",
+                  "promote_preview",
+                  "rebuild_reviewed_index"
+                ],
+                "can_call_model": false,
+                "can_cite": true,
+                "can_deploy": false,
+                "can_download": false,
+                "can_execute": false,
+                "can_export": true,
+                "can_extract": false,
+                "can_inspect": true,
+                "can_promote_preview": false,
+                "can_rebuild_index": false,
+                "can_review": false,
+                "can_view": true,
+                "policy_reasons": [
+                  "Result lanes are read-only projections.",
+                  "Unsafe actions remain disabled until future governed tasks enable them."
+                ]
+              },
+              "debug": {
+                "committed_example_record": true
+              },
+              "evidence_refs": [
+                "evidence-reviewed-sampleproject"
+              ],
+              "item_id": "reviewed-sampleproject-001",
+              "limitations": [
+                "Reviewed local result is not master/public truth."
+              ],
+              "operator_notes": "Committed fixture-backed reviewed lane; not master/public truth.",
+              "private_local_path_refs": [],
+              "provenance": {
+                "source_mapping": "reviewed local index"
+              },
+              "review_required": false,
+              "source_record_ids": [
+                "reviewed-public-record-sampleproject"
+              ],
+              "summary": "Reviewed local fixture result for deterministic Workbench lane projection.",
+              "title": "SampleProject reviewed local result",
+              "truth_level": "reviewed_local_not_master_public_truth",
+              "uncertainty": [
+                "Projection is local and bounded."
+              ]
+            }
+          ],
+          "lane_id": "lane-reviewed_local_results",
+          "lane_kind": "reviewed_local_results",
+          "limitations": [
+            "Reviewed local result is not master/public truth."
+          ],
+          "packet_type": "ResultLanePacket",
+          "projection_profile": "operator_workbench",
+          "provenance": {
+            "live_ia_call_performed": false,
+            "source_mapping": "reviewed local index",
+            "source_probe_executed": false,
+            "store_mutation_performed": false
+          },
+          "result_count": 1,
+          "result_ids": [
+            "reviewed-sampleproject-001"
+          ],
+          "review_required": false,
+          "schema_version": "result_lane_packet.v0",
+          "source_mapping": "reviewed local index",
+          "state": "available",
+          "truth_level": "reviewed_local_not_master_public_truth",
+          "uncertainty": [
+            "Local projection only; lane content does not create truth."
+          ],
+          "visible": true
+        },
+        {
+          "action_posture": {
+            "blocked_actions": [
+              "download",
+              "extract",
+              "execute",
+              "call_model_provider",
+              "deploy_public_projection",
+              "run_source_probe",
+              "mutate_master_index",
+              "promote_preview",
+              "rebuild_reviewed_index"
+            ],
+            "can_call_model": false,
+            "can_cite": false,
+            "can_deploy": false,
+            "can_download": false,
+            "can_execute": false,
+            "can_export": true,
+            "can_extract": false,
+            "can_inspect": true,
+            "can_promote_preview": false,
+            "can_rebuild_index": false,
+            "can_review": true,
+            "can_view": true,
+            "policy_reasons": [
+              "Result lanes are read-only projections.",
+              "Unsafe actions remain disabled until future governed tasks enable them."
+            ]
+          },
+          "blocked_actions": [
+            "download",
+            "extract",
+            "execute",
+            "call_model_provider",
+            "deploy_public_projection",
+            "run_source_probe",
+            "mutate_master_index",
+            "promote_preview",
+            "rebuild_reviewed_index"
+          ],
+          "confidence": 0.8,
+          "emitted_at": "2026-05-20T00:00:00Z",
+          "items": [
+            {
+              "action_posture": {
+                "blocked_actions": [
+                  "download",
+                  "extract",
+                  "execute",
+                  "call_model_provider",
+                  "deploy_public_projection",
+                  "run_source_probe",
+                  "mutate_master_index",
+                  "promote_preview",
+                  "rebuild_reviewed_index"
+                ],
+                "can_call_model": false,
+                "can_cite": false,
+                "can_deploy": false,
+                "can_download": false,
+                "can_execute": false,
+                "can_export": true,
+                "can_extract": false,
+                "can_inspect": true,
+                "can_promote_preview": false,
+                "can_rebuild_index": false,
+                "can_review": true,
+                "can_view": true,
+                "policy_reasons": [
+                  "Result lanes are read-only projections.",
+                  "Unsafe actions remain disabled until future governed tasks enable them."
+                ]
+              },
+              "candidate_refs": [
+                "candidate-index-stylewriter-2500"
+              ],
+              "debug": {
+                "committed_example_record": true
+              },
+              "item_id": "candidate-stylewriter-2500-001",
+              "limitations": [
+                "Lane is a local projection and does not create truth."
+              ],
+              "operator_notes": "Candidate does not mean truth.",
+              "private_local_path_refs": [],
+              "provenance": {
+                "source_mapping": "candidate index"
+              },
+              "review_refs": [
+                "review-required"
+              ],
+              "review_required": true,
+              "summary": "Candidate fixture requires review before it can become accepted evidence.",
+              "title": "StyleWriter 2500 Mac OS 8 driver candidate",
+              "truth_level": "provisional_candidate_not_truth",
+              "uncertainty": [
+                "Projection is local and bounded."
+              ]
+            }
+          ],
+          "lane_id": "lane-local_candidate_results",
+          "lane_kind": "local_candidate_results",
+          "limitations": [
+            "Lane is a local projection and does not create truth."
+          ],
+          "packet_type": "ResultLanePacket",
+          "projection_profile": "operator_workbench",
+          "provenance": {
+            "live_ia_call_performed": false,
+            "source_mapping": "candidate index",
+            "source_probe_executed": false,
+            "store_mutation_performed": false
+          },
+          "result_count": 1,
+          "result_ids": [
+            "candidate-stylewriter-2500-001"
+          ],
+          "review_required": true,
+          "schema_version": "result_lane_packet.v0",
+          "source_mapping": "candidate index",
+          "state": "available",
+          "truth_level": "provisional_candidate_not_truth",
+          "uncertainty": [
+            "Local projection only; lane content does not create truth."
+          ],
+          "visible": true
+        },
+        {
+          "action_posture": {
+            "blocked_actions": [
+              "download",
+              "extract",
+              "execute",
+              "call_model_provider",
+              "deploy_public_projection",
+              "run_source_probe",
+              "mutate_master_index",
+              "promote_preview",
+              "rebuild_reviewed_index"
+            ],
+            "can_call_model": false,
+            "can_cite": false,
+            "can_deploy": false,
+            "can_download": false,
+            "can_execute": false,
+            "can_export": true,
+            "can_extract": false,
+            "can_inspect": true,
+            "can_promote_preview": false,
+            "can_rebuild_index": false,
+            "can_review": false,
+            "can_view": true,
+            "policy_reasons": [
+              "Result lanes are read-only projections.",
+              "Unsafe actions remain disabled until future governed tasks enable them."
+            ]
+          },
+          "blocked_actions": [
+            "download",
+            "extract",
+            "execute",
+            "call_model_provider",
+            "deploy_public_projection",
+            "run_source_probe",
+            "mutate_master_index",
+            "promote_preview",
+            "rebuild_reviewed_index"
+          ],
+          "confidence": 0.8,
+          "emitted_at": "2026-05-20T00:00:00Z",
+          "items": [],
+          "lane_id": "lane-source_cache_hits",
+          "lane_kind": "source_cache_hits",
+          "limitations": [
+            "Lane is a local projection and does not create truth."
+          ],
+          "packet_type": "ResultLanePacket",
+          "projection_profile": "operator_workbench",
+          "provenance": {
+            "live_ia_call_performed": false,
+            "source_mapping": "source cache",
+            "source_probe_executed": false,
+            "store_mutation_performed": false
+          },
+          "result_count": 0,
+          "result_ids": [],
+          "review_required": false,
+          "schema_version": "result_lane_packet.v0",
+          "source_mapping": "source cache",
+          "state": "available",
+          "truth_level": "source_cache_record_not_evidence",
+          "uncertainty": [
+            "Local projection only; lane content does not create truth."
+          ],
+          "visible": true
+        },
+        {
+          "action_posture": {
+            "blocked_actions": [
+              "download",
+              "extract",
+              "execute",
+              "call_model_provider",
+              "deploy_public_projection",
+              "run_source_probe",
+              "mutate_master_index",
+              "promote_preview",
+              "rebuild_reviewed_index"
+            ],
+            "can_call_model": false,
+            "can_cite": false,
+            "can_deploy": false,
+            "can_download": false,
+            "can_execute": false,
+            "can_export": true,
+            "can_extract": false,
+            "can_inspect": true,
+            "can_promote_preview": false,
+            "can_rebuild_index": false,
+            "can_review": true,
+            "can_view": true,
+            "policy_reasons": [
+              "Result lanes are read-only projections.",
+              "Unsafe actions remain disabled until future governed tasks enable them."
+            ]
+          },
+          "blocked_actions": [
+            "download",
+            "extract",
+            "execute",
+            "call_model_provider",
+            "deploy_public_projection",
+            "run_source_probe",
+            "mutate_master_index",
+            "promote_preview",
+            "rebuild_reviewed_index"
+          ],
+          "confidence": 0.8,
+          "emitted_at": "2026-05-20T00:00:00Z",
+          "items": [],
+          "lane_id": "lane-ia_metadata_candidates",
+          "lane_kind": "ia_metadata_candidates",
+          "limitations": [
+            "Lane is a local projection and does not create truth."
+          ],
+          "packet_type": "ResultLanePacket",
+          "projection_profile": "operator_workbench",
+          "provenance": {
+            "live_ia_call_performed": false,
+            "source_mapping": "IA candidate/index/source-cache/evidence preview records",
+            "source_probe_executed": false,
+            "store_mutation_performed": false
+          },
+          "result_count": 0,
+          "result_ids": [],
+          "review_required": true,
+          "schema_version": "result_lane_packet.v0",
+          "source_mapping": "IA candidate/index/source-cache/evidence preview records",
+          "state": "available",
+          "truth_level": "ia_metadata_candidate_not_truth",
+          "uncertainty": [
+            "Local projection only; lane content does not create truth."
+          ],
+          "visible": true
+        },
+        {
+          "action_posture": {
+            "blocked_actions": [
+              "download",
+              "extract",
+              "execute",
+              "call_model_provider",
+              "deploy_public_projection",
+              "run_source_probe",
+              "mutate_master_index",
+              "promote_preview",
+              "rebuild_reviewed_index"
+            ],
+            "can_call_model": false,
+            "can_cite": false,
+            "can_deploy": false,
+            "can_download": false,
+            "can_execute": false,
+            "can_export": true,
+            "can_extract": false,
+            "can_inspect": true,
+            "can_promote_preview": false,
+            "can_rebuild_index": false,
+            "can_review": true,
+            "can_view": true,
+            "policy_reasons": [
+              "Result lanes are read-only projections.",
+              "Unsafe actions remain disabled until future governed tasks enable them."
+            ]
+          },
+          "blocked_actions": [
+            "download",
+            "extract",
+            "execute",
+            "call_model_provider",
+            "deploy_public_projection",
+            "run_source_probe",
+            "mutate_master_index",
+            "promote_preview",
+            "rebuild_reviewed_index"
+          ],
+          "confidence": 0.8,
+          "emitted_at": "2026-05-20T00:00:00Z",
+          "items": [],
+          "lane_id": "lane-review_queue_items",
+          "lane_kind": "review_queue_items",
+          "limitations": [
+            "Lane is a local projection and does not create truth."
+          ],
+          "packet_type": "ResultLanePacket",
+          "projection_profile": "operator_workbench",
+          "provenance": {
+            "live_ia_call_performed": false,
+            "source_mapping": "review queue",
+            "source_probe_executed": false,
+            "store_mutation_performed": false
+          },
+          "result_count": 0,
+          "result_ids": [],
+          "review_required": true,
+          "schema_version": "result_lane_packet.v0",
+          "source_mapping": "review queue",
+          "state": "available",
+          "truth_level": "review_queue_item_not_accepted_truth",
+          "uncertainty": [
+            "Local projection only; lane content does not create truth."
+          ],
+          "visible": true
+        },
+        {
+          "action_posture": {
+            "blocked_actions": [
+              "download",
+              "extract",
+              "execute",
+              "call_model_provider",
+              "deploy_public_projection",
+              "run_source_probe",
+              "mutate_master_index",
+              "promote_preview",
+              "rebuild_reviewed_index"
+            ],
+            "can_call_model": false,
+            "can_cite": true,
+            "can_deploy": false,
+            "can_download": false,
+            "can_execute": false,
+            "can_export": true,
+            "can_extract": false,
+            "can_inspect": true,
+            "can_promote_preview": false,
+            "can_rebuild_index": false,
+            "can_review": false,
+            "can_view": true,
+            "policy_reasons": [
+              "Result lanes are read-only projections.",
+              "Unsafe actions remain disabled until future governed tasks enable them."
+            ]
+          },
+          "blocked_actions": [
+            "download",
+            "extract",
+            "execute",
+            "call_model_provider",
+            "deploy_public_projection",
+            "run_source_probe",
+            "mutate_master_index",
+            "promote_preview",
+            "rebuild_reviewed_index"
+          ],
+          "confidence": 0.8,
+          "emitted_at": "2026-05-20T00:00:00Z",
+          "items": [
+            {
+              "action_posture": {
+                "blocked_actions": [
+                  "download",
+                  "extract",
+                  "execute",
+                  "call_model_provider",
+                  "deploy_public_projection",
+                  "run_source_probe",
+                  "mutate_master_index",
+                  "promote_preview",
+                  "rebuild_reviewed_index"
+                ],
+                "can_call_model": false,
+                "can_cite": true,
+                "can_deploy": false,
+                "can_download": false,
+                "can_execute": false,
+                "can_export": true,
+                "can_extract": false,
+                "can_inspect": true,
+                "can_promote_preview": false,
+                "can_rebuild_index": false,
+                "can_review": false,
+                "can_view": true,
+                "policy_reasons": [
+                  "Result lanes are read-only projections.",
+                  "Unsafe actions remain disabled until future governed tasks enable them."
+                ]
+              },
+              "checked_layers": [
+                "reviewed_local_results"
+              ],
+              "debug": {
+                "committed_example_record": true
+              },
+              "item_id": "absence-definitely-not-present-play-00",
+              "limitations": [
+                "Absence is bounded to checked local layers and is not global proof."
+              ],
+              "operator_notes": "Absence is bounded and does not prove global non-existence.",
+              "private_local_path_refs": [],
+              "provenance": {
+                "source_mapping": "absence records/absence packets"
+              },
+              "review_required": false,
+              "summary": "Known absence is bounded to checked local layers.",
+              "title": "No reviewed local result for definitely-not-present-play-00",
+              "truth_level": "bounded_absence_not_global_proof",
+              "uncertainty": [
+                "Projection is local and bounded."
+              ]
+            }
+          ],
+          "lane_id": "lane-known_absence",
+          "lane_kind": "known_absence",
+          "limitations": [
+            "Absence is bounded to checked local layers and is not global proof."
+          ],
+          "packet_type": "ResultLanePacket",
+          "projection_profile": "operator_workbench",
+          "provenance": {
+            "live_ia_call_performed": false,
+            "source_mapping": "absence records/absence packets",
+            "source_probe_executed": false,
+            "store_mutation_performed": false
+          },
+          "result_count": 1,
+          "result_ids": [
+            "absence-definitely-not-present-play-00"
+          ],
+          "review_required": false,
+          "schema_version": "result_lane_packet.v0",
+          "source_mapping": "absence records/absence packets",
+          "state": "available",
+          "truth_level": "bounded_absence_not_global_proof",
+          "uncertainty": [
+            "Local projection only; lane content does not create truth."
+          ],
+          "visible": true
+        },
+        {
+          "action_posture": {
+            "blocked_actions": [
+              "download",
+              "extract",
+              "execute",
+              "call_model_provider",
+              "deploy_public_projection",
+              "run_source_probe",
+              "mutate_master_index",
+              "promote_preview",
+              "rebuild_reviewed_index"
+            ],
+            "can_call_model": false,
+            "can_cite": true,
+            "can_deploy": false,
+            "can_download": false,
+            "can_execute": false,
+            "can_export": true,
+            "can_extract": false,
+            "can_inspect": true,
+            "can_promote_preview": false,
+            "can_rebuild_index": false,
+            "can_review": true,
+            "can_view": true,
+            "policy_reasons": [
+              "Result lanes are read-only projections.",
+              "Unsafe actions remain disabled until future governed tasks enable them."
+            ]
+          },
+          "blocked_actions": [
+            "download",
+            "extract",
+            "execute",
+            "call_model_provider",
+            "deploy_public_projection",
+            "run_source_probe",
+            "mutate_master_index",
+            "promote_preview",
+            "rebuild_reviewed_index"
+          ],
+          "confidence": 0.8,
+          "emitted_at": "2026-05-20T00:00:00Z",
+          "items": [
+            {
+              "action_posture": {
+                "blocked_actions": [
+                  "download",
+                  "extract",
+                  "execute",
+                  "call_model_provider",
+                  "deploy_public_projection",
+                  "run_source_probe",
+                  "mutate_master_index",
+                  "promote_preview",
+                  "rebuild_reviewed_index"
+                ],
+                "can_call_model": false,
+                "can_cite": true,
+                "can_deploy": false,
+                "can_download": false,
+                "can_execute": false,
+                "can_export": true,
+                "can_extract": false,
+                "can_inspect": true,
+                "can_promote_preview": false,
+                "can_rebuild_index": false,
+                "can_review": true,
+                "can_view": true,
+                "policy_reasons": [
+                  "Result lanes are read-only projections.",
+                  "Unsafe actions remain disabled until future governed tasks enable them."
+                ]
+              },
+              "candidate_refs": [
+                "near-miss-candidate-demo-tape"
+              ],
+              "debug": {
+                "committed_example_record": true
+              },
+              "item_id": "near-miss-demo-tape-001",
+              "limitations": [
+                "Lane is a local projection and does not create truth."
+              ],
+              "operator_notes": "Near miss needs manual review.",
+              "private_local_path_refs": [],
+              "provenance": {
+                "source_mapping": "candidate/absence/coverage records where available"
+              },
+              "review_required": true,
+              "summary": "Near miss illustrates uncertainty and does not claim a correct match.",
+              "title": "New York 1993 D-Theater HD demo tape near miss",
+              "truth_level": "near_miss_not_truth",
+              "uncertainty": [
+                "Projection is local and bounded."
+              ]
+            }
+          ],
+          "lane_id": "lane-near_misses",
+          "lane_kind": "near_misses",
+          "limitations": [
+            "Lane is a local projection and does not create truth."
+          ],
+          "packet_type": "ResultLanePacket",
+          "projection_profile": "operator_workbench",
+          "provenance": {
+            "live_ia_call_performed": false,
+            "source_mapping": "candidate/absence/coverage records where available",
+            "source_probe_executed": false,
+            "store_mutation_performed": false
+          },
+          "result_count": 1,
+          "result_ids": [
+            "near-miss-demo-tape-001"
+          ],
+          "review_required": true,
+          "schema_version": "result_lane_packet.v0",
+          "source_mapping": "candidate/absence/coverage records where available",
+          "state": "available",
+          "truth_level": "near_miss_not_truth",
+          "uncertainty": [
+            "Local projection only; lane content does not create truth."
+          ],
+          "visible": true
+        },
+        {
+          "action_posture": {
+            "blocked_actions": [
+              "download",
+              "extract",
+              "execute",
+              "call_model_provider",
+              "deploy_public_projection",
+              "run_source_probe",
+              "mutate_master_index",
+              "promote_preview",
+              "rebuild_reviewed_index"
+            ],
+            "can_call_model": false,
+            "can_cite": false,
+            "can_deploy": false,
+            "can_download": false,
+            "can_execute": false,
+            "can_export": true,
+            "can_extract": false,
+            "can_inspect": true,
+            "can_promote_preview": false,
+            "can_rebuild_index": false,
+            "can_review": false,
+            "can_view": true,
+            "policy_reasons": [
+              "Result lanes are read-only projections.",
+              "Unsafe actions remain disabled until future governed tasks enable them."
+            ]
+          },
+          "blocked_actions": [
+            "download",
+            "extract",
+            "execute",
+            "call_model_provider",
+            "deploy_public_projection",
+            "run_source_probe",
+            "mutate_master_index",
+            "promote_preview",
+            "rebuild_reviewed_index"
+          ],
+          "confidence": 0.8,
+          "emitted_at": "2026-05-20T00:00:00Z",
+          "items": [
+            {
+              "action_posture": {
+                "blocked_actions": [
+                  "download",
+                  "extract",
+                  "execute",
+                  "call_model_provider",
+                  "deploy_public_projection",
+                  "run_source_probe",
+                  "mutate_master_index",
+                  "promote_preview",
+                  "rebuild_reviewed_index"
+                ],
+                "can_call_model": false,
+                "can_cite": false,
+                "can_deploy": false,
+                "can_download": false,
+                "can_execute": false,
+                "can_export": true,
+                "can_extract": false,
+                "can_inspect": true,
+                "can_promote_preview": false,
+                "can_rebuild_index": false,
+                "can_review": false,
+                "can_view": true,
+                "policy_reasons": [
+                  "Result lanes are read-only projections.",
+                  "Unsafe actions remain disabled until future governed tasks enable them."
+                ]
+              },
+              "blocked_action": "download",
+              "debug": {
+                "committed_example_record": true
+              },
+              "item_id": "blocked-download",
+              "limitations": [
+                "Blocked action is current policy posture, not a permanent product limitation."
+              ],
+              "operator_notes": "Blocked action lane is policy posture, not evidence of permanent unsupported status.",
+              "private_local_path_refs": [],
+              "provenance": {
+                "source_mapping": "policy/action posture"
+              },
+              "review_required": false,
+              "summary": "Blocked under current Workbench result-lane policy.",
+              "title": "download",
+              "truth_level": "policy_block_not_capability_absence",
+              "uncertainty": [
+                "Projection is local and bounded."
+              ]
+            },
+            {
+              "action_posture": {
+                "blocked_actions": [
+                  "download",
+                  "extract",
+                  "execute",
+                  "call_model_provider",
+                  "deploy_public_projection",
+                  "run_source_probe",
+                  "mutate_master_index",
+                  "promote_preview",
+                  "rebuild_reviewed_index"
+                ],
+                "can_call_model": false,
+                "can_cite": false,
+                "can_deploy": false,
+                "can_download": false,
+                "can_execute": false,
+                "can_export": true,
+                "can_extract": false,
+                "can_inspect": true,
+                "can_promote_preview": false,
+                "can_rebuild_index": false,
+                "can_review": false,
+                "can_view": true,
+                "policy_reasons": [
+                  "Result lanes are read-only projections.",
+                  "Unsafe actions remain disabled until future governed tasks enable them."
+                ]
+              },
+              "blocked_action": "extract",
+              "debug": {
+                "committed_example_record": true
+              },
+              "item_id": "blocked-extract",
+              "limitations": [
+                "Blocked action is current policy posture, not a permanent product limitation."
+              ],
+              "operator_notes": "Blocked action lane is policy posture, not evidence of permanent unsupported status.",
+              "private_local_path_refs": [],
+              "provenance": {
+                "source_mapping": "policy/action posture"
+              },
+              "review_required": false,
+              "summary": "Blocked under current Workbench result-lane policy.",
+              "title": "extract",
+              "truth_level": "policy_block_not_capability_absence",
+              "uncertainty": [
+                "Projection is local and bounded."
+              ]
+            },
+            {
+              "action_posture": {
+                "blocked_actions": [
+                  "download",
+                  "extract",
+                  "execute",
+                  "call_model_provider",
+                  "deploy_public_projection",
+                  "run_source_probe",
+                  "mutate_master_index",
+                  "promote_preview",
+                  "rebuild_reviewed_index"
+                ],
+                "can_call_model": false,
+                "can_cite": false,
+                "can_deploy": false,
+                "can_download": false,
+                "can_execute": false,
+                "can_export": true,
+                "can_extract": false,
+                "can_inspect": true,
+                "can_promote_preview": false,
+                "can_rebuild_index": false,
+                "can_review": false,
+                "can_view": true,
+                "policy_reasons": [
+                  "Result lanes are read-only projections.",
+                  "Unsafe actions remain disabled until future governed tasks enable them."
+                ]
+              },
+              "blocked_action": "execute",
+              "debug": {
+                "committed_example_record": true
+              },
+              "item_id": "blocked-execute",
+              "limitations": [
+                "Blocked action is current policy posture, not a permanent product limitation."
+              ],
+              "operator_notes": "Blocked action lane is policy posture, not evidence of permanent unsupported status.",
+              "private_local_path_refs": [],
+              "provenance": {
+                "source_mapping": "policy/action posture"
+              },
+              "review_required": false,
+              "summary": "Blocked under current Workbench result-lane policy.",
+              "title": "execute",
+              "truth_level": "policy_block_not_capability_absence",
+              "uncertainty": [
+                "Projection is local and bounded."
+              ]
+            },
+            {
+              "action_posture": {
+                "blocked_actions": [
+                  "download",
+                  "extract",
+                  "execute",
+                  "call_model_provider",
+                  "deploy_public_projection",
+                  "run_source_probe",
+                  "mutate_master_index",
+                  "promote_preview",
+                  "rebuild_reviewed_index"
+                ],
+                "can_call_model": false,
+                "can_cite": false,
+                "can_deploy": false,
+                "can_download": false,
+                "can_execute": false,
+                "can_export": true,
+                "can_extract": false,
+                "can_inspect": true,
+                "can_promote_preview": false,
+                "can_rebuild_index": false,
+                "can_review": false,
+                "can_view": true,
+                "policy_reasons": [
+                  "Result lanes are read-only projections.",
+                  "Unsafe actions remain disabled until future governed tasks enable them."
+                ]
+              },
+              "blocked_action": "call_model_provider",
+              "debug": {
+                "committed_example_record": true
+              },
+              "item_id": "blocked-call_model_provider",
+              "limitations": [
+                "Blocked action is current policy posture, not a permanent product limitation."
+              ],
+              "operator_notes": "Blocked action lane is policy posture, not evidence of permanent unsupported status.",
+              "private_local_path_refs": [],
+              "provenance": {
+                "source_mapping": "policy/action posture"
+              },
+              "review_required": false,
+              "summary": "Blocked under current Workbench result-lane policy.",
+              "title": "call model provider",
+              "truth_level": "policy_block_not_capability_absence",
+              "uncertainty": [
+                "Projection is local and bounded."
+              ]
+            },
+            {
+              "action_posture": {
+                "blocked_actions": [
+                  "download",
+                  "extract",
+                  "execute",
+                  "call_model_provider",
+                  "deploy_public_projection",
+                  "run_source_probe",
+                  "mutate_master_index",
+                  "promote_preview",
+                  "rebuild_reviewed_index"
+                ],
+                "can_call_model": false,
+                "can_cite": false,
+                "can_deploy": false,
+                "can_download": false,
+                "can_execute": false,
+                "can_export": true,
+                "can_extract": false,
+                "can_inspect": true,
+                "can_promote_preview": false,
+                "can_rebuild_index": false,
+                "can_review": false,
+                "can_view": true,
+                "policy_reasons": [
+                  "Result lanes are read-only projections.",
+                  "Unsafe actions remain disabled until future governed tasks enable them."
+                ]
+              },
+              "blocked_action": "deploy_public_projection",
+              "debug": {
+                "committed_example_record": true
+              },
+              "item_id": "blocked-deploy_public_projection",
+              "limitations": [
+                "Blocked action is current policy posture, not a permanent product limitation."
+              ],
+              "operator_notes": "Blocked action lane is policy posture, not evidence of permanent unsupported status.",
+              "private_local_path_refs": [],
+              "provenance": {
+                "source_mapping": "policy/action posture"
+              },
+              "review_required": false,
+              "summary": "Blocked under current Workbench result-lane policy.",
+              "title": "deploy public projection",
+              "truth_level": "policy_block_not_capability_absence",
+              "uncertainty": [
+                "Projection is local and bounded."
+              ]
+            },
+            {
+              "action_posture": {
+                "blocked_actions": [
+                  "download",
+                  "extract",
+                  "execute",
+                  "call_model_provider",
+                  "deploy_public_projection",
+                  "run_source_probe",
+                  "mutate_master_index",
+                  "promote_preview",
+                  "rebuild_reviewed_index"
+                ],
+                "can_call_model": false,
+                "can_cite": false,
+                "can_deploy": false,
+                "can_download": false,
+                "can_execute": false,
+                "can_export": true,
+                "can_extract": false,
+                "can_inspect": true,
+                "can_promote_preview": false,
+                "can_rebuild_index": false,
+                "can_review": false,
+                "can_view": true,
+                "policy_reasons": [
+                  "Result lanes are read-only projections.",
+                  "Unsafe actions remain disabled until future governed tasks enable them."
+                ]
+              },
+              "blocked_action": "run_source_probe",
+              "debug": {
+                "committed_example_record": true
+              },
+              "item_id": "blocked-run_source_probe",
+              "limitations": [
+                "Blocked action is current policy posture, not a permanent product limitation."
+              ],
+              "operator_notes": "Blocked action lane is policy posture, not evidence of permanent unsupported status.",
+              "private_local_path_refs": [],
+              "provenance": {
+                "source_mapping": "policy/action posture"
+              },
+              "review_required": false,
+              "summary": "Blocked under current Workbench result-lane policy.",
+              "title": "run source probe",
+              "truth_level": "policy_block_not_capability_absence",
+              "uncertainty": [
+                "Projection is local and bounded."
+              ]
+            },
+            {
+              "action_posture": {
+                "blocked_actions": [
+                  "download",
+                  "extract",
+                  "execute",
+                  "call_model_provider",
+                  "deploy_public_projection",
+                  "run_source_probe",
+                  "mutate_master_index",
+                  "promote_preview",
+                  "rebuild_reviewed_index"
+                ],
+                "can_call_model": false,
+                "can_cite": false,
+                "can_deploy": false,
+                "can_download": false,
+                "can_execute": false,
+                "can_export": true,
+                "can_extract": false,
+                "can_inspect": true,
+                "can_promote_preview": false,
+                "can_rebuild_index": false,
+                "can_review": false,
+                "can_view": true,
+                "policy_reasons": [
+                  "Result lanes are read-only projections.",
+                  "Unsafe actions remain disabled until future governed tasks enable them."
+                ]
+              },
+              "blocked_action": "mutate_master_index",
+              "debug": {
+                "committed_example_record": true
+              },
+              "item_id": "blocked-mutate_master_index",
+              "limitations": [
+                "Blocked action is current policy posture, not a permanent product limitation."
+              ],
+              "operator_notes": "Blocked action lane is policy posture, not evidence of permanent unsupported status.",
+              "private_local_path_refs": [],
+              "provenance": {
+                "source_mapping": "policy/action posture"
+              },
+              "review_required": false,
+              "summary": "Blocked under current Workbench result-lane policy.",
+              "title": "mutate master index",
+              "truth_level": "policy_block_not_capability_absence",
+              "uncertainty": [
+                "Projection is local and bounded."
+              ]
+            }
+          ],
+          "lane_id": "lane-blocked_actions",
+          "lane_kind": "blocked_actions",
+          "limitations": [
+            "Blocked action is current policy posture, not a permanent product limitation."
+          ],
+          "packet_type": "ResultLanePacket",
+          "projection_profile": "operator_workbench",
+          "provenance": {
+            "live_ia_call_performed": false,
+            "source_mapping": "policy/action posture",
+            "source_probe_executed": false,
+            "store_mutation_performed": false
+          },
+          "result_count": 7,
+          "result_ids": [
+            "blocked-download",
+            "blocked-extract",
+            "blocked-execute",
+            "blocked-call_model_provider",
+            "blocked-deploy_public_projection",
+            "blocked-run_source_probe",
+            "blocked-mutate_master_index"
+          ],
+          "review_required": false,
+          "schema_version": "result_lane_packet.v0",
+          "source_mapping": "policy/action posture",
+          "state": "available",
+          "truth_level": "policy_block_not_capability_absence",
+          "uncertainty": [
+            "Local projection only; lane content does not create truth."
+          ],
+          "visible": true
+        },
+        {
+          "action_posture": {
+            "blocked_actions": [
+              "download",
+              "extract",
+              "execute",
+              "call_model_provider",
+              "deploy_public_projection",
+              "run_source_probe",
+              "mutate_master_index",
+              "promote_preview",
+              "rebuild_reviewed_index"
+            ],
+            "can_call_model": false,
+            "can_cite": false,
+            "can_deploy": false,
+            "can_download": false,
+            "can_execute": false,
+            "can_export": true,
+            "can_extract": false,
+            "can_inspect": true,
+            "can_promote_preview": false,
+            "can_rebuild_index": false,
+            "can_review": false,
+            "can_view": true,
+            "policy_reasons": [
+              "Result lanes are read-only projections.",
+              "Unsafe actions remain disabled until future governed tasks enable them."
+            ]
+          },
+          "blocked_actions": [
+            "download",
+            "extract",
+            "execute",
+            "call_model_provider",
+            "deploy_public_projection",
+            "run_source_probe",
+            "mutate_master_index",
+            "promote_preview",
+            "rebuild_reviewed_index"
+          ],
+          "confidence": 0.8,
+          "emitted_at": "2026-05-20T00:00:00Z",
+          "items": [
+            {
+              "action_posture": {
+                "blocked_actions": [
+                  "download",
+                  "extract",
+                  "execute",
+                  "call_model_provider",
+                  "deploy_public_projection",
+                  "run_source_probe",
+                  "mutate_master_index",
+                  "promote_preview",
+                  "rebuild_reviewed_index"
+                ],
+                "can_call_model": false,
+                "can_cite": false,
+                "can_deploy": false,
+                "can_download": false,
+                "can_execute": false,
+                "can_export": true,
+                "can_extract": false,
+                "can_inspect": true,
+                "can_promote_preview": false,
+                "can_rebuild_index": false,
+                "can_review": false,
+                "can_view": true,
+                "policy_reasons": [
+                  "Result lanes are read-only projections.",
+                  "Unsafe actions remain disabled until future governed tasks enable them."
+                ]
+              },
+              "debug": {
+                "committed_example_record": true
+              },
+              "item_id": "workunit-fixture-001",
+              "limitations": [
+                "Lane is a local projection and does not create truth."
+              ],
+              "operator_notes": "Running lane is operational state only.",
+              "private_local_path_refs": [],
+              "provenance": {
+                "source_mapping": "WorkUnit queue"
+              },
+              "review_required": false,
+              "summary": "Read-only projection of a WorkUnit-shaped fixture; no worker executed.",
+              "title": "Fixture WorkUnit queued",
+              "truth_level": "operational_state_not_truth",
+              "uncertainty": [
+                "Projection is local and bounded."
+              ],
+              "workunit_refs": [
+                "workunit-fixture-001"
+              ]
+            }
+          ],
+          "lane_id": "lane-running_workunits",
+          "lane_kind": "running_workunits",
+          "limitations": [
+            "Lane is a local projection and does not create truth."
+          ],
+          "packet_type": "ResultLanePacket",
+          "projection_profile": "operator_workbench",
+          "provenance": {
+            "live_ia_call_performed": false,
+            "source_mapping": "WorkUnit queue",
+            "source_probe_executed": false,
+            "store_mutation_performed": false
+          },
+          "result_count": 1,
+          "result_ids": [
+            "workunit-fixture-001"
+          ],
+          "review_required": false,
+          "schema_version": "result_lane_packet.v0",
+          "source_mapping": "WorkUnit queue",
+          "state": "available",
+          "truth_level": "operational_state_not_truth",
+          "uncertainty": [
+            "Local projection only; lane content does not create truth."
+          ],
+          "visible": true
+        },
+        {
+          "action_posture": {
+            "blocked_actions": [
+              "download",
+              "extract",
+              "execute",
+              "call_model_provider",
+              "deploy_public_projection",
+              "run_source_probe",
+              "mutate_master_index",
+              "promote_preview",
+              "rebuild_reviewed_index"
+            ],
+            "can_call_model": false,
+            "can_cite": false,
+            "can_deploy": false,
+            "can_download": false,
+            "can_execute": false,
+            "can_export": true,
+            "can_extract": false,
+            "can_inspect": true,
+            "can_promote_preview": false,
+            "can_rebuild_index": false,
+            "can_review": false,
+            "can_view": true,
+            "policy_reasons": [
+              "Result lanes are read-only projections.",
+              "Unsafe actions remain disabled until future governed tasks enable them."
+            ]
+          },
+          "blocked_actions": [
+            "download",
+            "extract",
+            "execute",
+            "call_model_provider",
+            "deploy_public_projection",
+            "run_source_probe",
+            "mutate_master_index",
+            "promote_preview",
+            "rebuild_reviewed_index"
+          ],
+          "confidence": 0.8,
+          "emitted_at": "2026-05-20T00:00:00Z",
+          "items": [
+            {
+              "action_posture": {
+                "blocked_actions": [
+                  "download",
+                  "extract",
+                  "execute",
+                  "call_model_provider",
+                  "deploy_public_projection",
+                  "run_source_probe",
+                  "mutate_master_index",
+                  "promote_preview",
+                  "rebuild_reviewed_index"
+                ],
+                "can_call_model": false,
+                "can_cite": false,
+                "can_deploy": false,
+                "can_download": false,
+                "can_execute": false,
+                "can_export": true,
+                "can_extract": false,
+                "can_inspect": true,
+                "can_promote_preview": false,
+                "can_rebuild_index": false,
+                "can_review": false,
+                "can_view": true,
+                "policy_reasons": [
+                  "Result lanes are read-only projections.",
+                  "Unsafe actions remain disabled until future governed tasks enable them."
+                ]
+              },
+              "debug": {
+                "committed_example_record": true
+              },
+              "item_id": "need-deepen-sampleproject",
+              "limitations": [
+                "Lane is a local projection and does not create truth."
+              ],
+              "operator_notes": "Deferred lane records future work only; it does not run probes.",
+              "private_local_path_refs": [],
+              "provenance": {
+                "source_mapping": "SearchNeed/WorkUnit future work"
+              },
+              "review_required": false,
+              "summary": "IA-HUNT-BRIDGE-00 can attach future WorkUnits.",
+              "title": "Deepen source coverage later",
+              "truth_level": "planned_work_not_truth",
+              "uncertainty": [
+                "Projection is local and bounded."
+              ],
+              "workunit_refs": []
+            }
+          ],
+          "lane_id": "lane-deferred_deepening",
+          "lane_kind": "deferred_deepening",
+          "limitations": [
+            "Lane is a local projection and does not create truth."
+          ],
+          "packet_type": "ResultLanePacket",
+          "projection_profile": "operator_workbench",
+          "provenance": {
+            "live_ia_call_performed": false,
+            "source_mapping": "SearchNeed/WorkUnit future work",
+            "source_probe_executed": false,
+            "store_mutation_performed": false
+          },
+          "result_count": 1,
+          "result_ids": [
+            "need-deepen-sampleproject"
+          ],
+          "review_required": false,
+          "schema_version": "result_lane_packet.v0",
+          "source_mapping": "SearchNeed/WorkUnit future work",
+          "state": "available",
+          "truth_level": "planned_work_not_truth",
+          "uncertainty": [
+            "Local projection only; lane content does not create truth."
+          ],
+          "visible": true
+        },
+        {
+          "action_posture": {
+            "blocked_actions": [
+              "download",
+              "extract",
+              "execute",
+              "call_model_provider",
+              "deploy_public_projection",
+              "run_source_probe",
+              "mutate_master_index",
+              "promote_preview",
+              "rebuild_reviewed_index"
+            ],
+            "can_call_model": false,
+            "can_cite": false,
+            "can_deploy": false,
+            "can_download": false,
+            "can_execute": false,
+            "can_export": true,
+            "can_extract": false,
+            "can_inspect": true,
+            "can_promote_preview": false,
+            "can_rebuild_index": false,
+            "can_review": true,
+            "can_view": true,
+            "policy_reasons": [
+              "Result lanes are read-only projections.",
+              "Unsafe actions remain disabled until future governed tasks enable them."
+            ]
+          },
+          "blocked_actions": [
+            "download",
+            "extract",
+            "execute",
+            "call_model_provider",
+            "deploy_public_projection",
+            "run_source_probe",
+            "mutate_master_index",
+            "promote_preview",
+            "rebuild_reviewed_index"
+          ],
+          "confidence": 0.8,
+          "emitted_at": "2026-05-20T00:00:00Z",
+          "items": [
+            {
+              "action_posture": {
+                "blocked_actions": [
+                  "download",
+                  "extract",
+                  "execute",
+                  "call_model_provider",
+                  "deploy_public_projection",
+                  "run_source_probe",
+                  "mutate_master_index",
+                  "promote_preview",
+                  "rebuild_reviewed_index"
+                ],
+                "can_call_model": false,
+                "can_cite": false,
+                "can_deploy": false,
+                "can_download": false,
+                "can_execute": false,
+                "can_export": true,
+                "can_extract": false,
+                "can_inspect": true,
+                "can_promote_preview": false,
+                "can_rebuild_index": false,
+                "can_review": true,
+                "can_view": true,
+                "policy_reasons": [
+                  "Result lanes are read-only projections.",
+                  "Unsafe actions remain disabled until future governed tasks enable them."
+                ]
+              },
+              "debug": {
+                "committed_example_record": true
+              },
+              "item_id": "future-extraction-sampleproject",
+              "limitations": [
+                "Lane is a local projection and does not create truth."
+              ],
+              "operator_notes": "Future extraction lane does not extract.",
+              "private_local_path_refs": [],
+              "provenance": {
+                "source_mapping": "extraction-deferred WorkUnits only"
+              },
+              "review_required": true,
+              "summary": "Extraction remains disabled and deferred to later governed work.",
+              "title": "Extraction deferred",
+              "truth_level": "deferred_extraction_work_not_enabled",
+              "uncertainty": [
+                "Projection is local and bounded."
+              ],
+              "workunit_refs": []
+            }
+          ],
+          "lane_id": "lane-future_extraction_work",
+          "lane_kind": "future_extraction_work",
+          "limitations": [
+            "Lane is a local projection and does not create truth."
+          ],
+          "packet_type": "ResultLanePacket",
+          "projection_profile": "operator_workbench",
+          "provenance": {
+            "live_ia_call_performed": false,
+            "source_mapping": "extraction-deferred WorkUnits only",
+            "source_probe_executed": false,
+            "store_mutation_performed": false
+          },
+          "result_count": 1,
+          "result_ids": [
+            "future-extraction-sampleproject"
+          ],
+          "review_required": true,
+          "schema_version": "result_lane_packet.v0",
+          "source_mapping": "extraction-deferred WorkUnits only",
+          "state": "available",
+          "truth_level": "deferred_extraction_work_not_enabled",
+          "uncertainty": [
+            "Local projection only; lane content does not create truth."
+          ],
+          "visible": true
+        },
+        {
+          "action_posture": {
+            "blocked_actions": [
+              "download",
+              "extract",
+              "execute",
+              "call_model_provider",
+              "deploy_public_projection",
+              "run_source_probe",
+              "mutate_master_index",
+              "promote_preview",
+              "rebuild_reviewed_index"
+            ],
+            "can_call_model": false,
+            "can_cite": false,
+            "can_deploy": false,
+            "can_download": false,
+            "can_execute": false,
+            "can_export": true,
+            "can_extract": false,
+            "can_inspect": true,
+            "can_promote_preview": false,
+            "can_rebuild_index": false,
+            "can_review": false,
+            "can_view": true,
+            "policy_reasons": [
+              "Result lanes are read-only projections.",
+              "Unsafe actions remain disabled until future governed tasks enable them."
+            ]
+          },
+          "blocked_actions": [
+            "download",
+            "extract",
+            "execute",
+            "call_model_provider",
+            "deploy_public_projection",
+            "run_source_probe",
+            "mutate_master_index",
+            "promote_preview",
+            "rebuild_reviewed_index"
+          ],
+          "confidence": 0.8,
+          "emitted_at": "2026-05-20T00:00:00Z",
+          "items": [
+            {
+              "action_posture": {
+                "blocked_actions": [
+                  "download",
+                  "extract",
+                  "execute",
+                  "call_model_provider",
+                  "deploy_public_projection",
+                  "run_source_probe",
+                  "mutate_master_index",
+                  "promote_preview",
+                  "rebuild_reviewed_index"
+                ],
+                "can_call_model": false,
+                "can_cite": false,
+                "can_deploy": false,
+                "can_download": false,
+                "can_execute": false,
+                "can_export": true,
+                "can_extract": false,
+                "can_inspect": true,
+                "can_promote_preview": false,
+                "can_rebuild_index": false,
+                "can_review": false,
+                "can_view": true,
+                "policy_reasons": [
+                  "Result lanes are read-only projections.",
+                  "Unsafe actions remain disabled until future governed tasks enable them."
+                ]
+              },
+              "debug": {
+                "committed_example_record": true
+              },
+              "item_id": "iawu_dec4553e41ce9e9d",
+              "limitations": [
+                "Lane is a local projection and does not create truth."
+              ],
+              "operator_notes": "Scheduled as dry-run orchestration only.",
+              "private_local_path_refs": [],
+              "provenance": {
+                "source_mapping": "WorkUnit queue"
+              },
+              "review_required": false,
+              "summary": "IA-Hunt WorkUnit planned by the headless run kernel; no live source call executed.",
+              "title": "ia metadata search",
+              "truth_level": "operational_state_not_truth",
+              "uncertainty": [
+                "Projection is local and bounded."
+              ],
+              "workunit_refs": [
+                "iawu_dec4553e41ce9e9d"
+              ]
+            },
+            {
+              "action_posture": {
+                "blocked_actions": [
+                  "download",
+                  "extract",
+                  "execute",
+                  "call_model_provider",
+                  "deploy_public_projection",
+                  "run_source_probe",
+                  "mutate_master_index",
+                  "promote_preview",
+                  "rebuild_reviewed_index"
+                ],
+                "can_call_model": false,
+                "can_cite": false,
+                "can_deploy": false,
+                "can_download": false,
+                "can_execute": false,
+                "can_export": true,
+                "can_extract": false,
+                "can_inspect": true,
+                "can_promote_preview": false,
+                "can_rebuild_index": false,
+                "can_review": false,
+                "can_view": true,
+                "policy_reasons": [
+                  "Result lanes are read-only projections.",
+                  "Unsafe actions remain disabled until future governed tasks enable them."
+                ]
+              },
+              "debug": {
+                "committed_example_record": true
+              },
+              "item_id": "iawu_5feebb03635a0a9e",
+              "limitations": [
+                "Lane is a local projection and does not create truth."
+              ],
+              "operator_notes": "Scheduled as dry-run orchestration only.",
+              "private_local_path_refs": [],
+              "provenance": {
+                "source_mapping": "WorkUnit queue"
+              },
+              "review_required": false,
+              "summary": "IA-Hunt WorkUnit planned by the headless run kernel; no live source call executed.",
+              "title": "ia item metadata read",
+              "truth_level": "operational_state_not_truth",
+              "uncertainty": [
+                "Projection is local and bounded."
+              ],
+              "workunit_refs": [
+                "iawu_5feebb03635a0a9e"
+              ]
+            },
+            {
+              "action_posture": {
+                "blocked_actions": [
+                  "download",
+                  "extract",
+                  "execute",
+                  "call_model_provider",
+                  "deploy_public_projection",
+                  "run_source_probe",
+                  "mutate_master_index",
+                  "promote_preview",
+                  "rebuild_reviewed_index"
+                ],
+                "can_call_model": false,
+                "can_cite": false,
+                "can_deploy": false,
+                "can_download": false,
+                "can_execute": false,
+                "can_export": true,
+                "can_extract": false,
+                "can_inspect": true,
+                "can_promote_preview": false,
+                "can_rebuild_index": false,
+                "can_review": false,
+                "can_view": true,
+                "policy_reasons": [
+                  "Result lanes are read-only projections.",
+                  "Unsafe actions remain disabled until future governed tasks enable them."
+                ]
+              },
+              "debug": {
+                "committed_example_record": true
+              },
+              "item_id": "iawu_c7c130ed3915847c",
+              "limitations": [
+                "Lane is a local projection and does not create truth."
+              ],
+              "operator_notes": "Scheduled as dry-run orchestration only.",
+              "private_local_path_refs": [],
+              "provenance": {
+                "source_mapping": "WorkUnit queue"
+              },
+              "review_required": false,
+              "summary": "IA-Hunt WorkUnit planned by the headless run kernel; no live source call executed.",
+              "title": "ia file manifest metadata",
+              "truth_level": "operational_state_not_truth",
+              "uncertainty": [
+                "Projection is local and bounded."
+              ],
+              "workunit_refs": [
+                "iawu_c7c130ed3915847c"
+              ]
+            },
+            {
+              "action_posture": {
+                "blocked_actions": [
+                  "download",
+                  "extract",
+                  "execute",
+                  "call_model_provider",
+                  "deploy_public_projection",
+                  "run_source_probe",
+                  "mutate_master_index",
+                  "promote_preview",
+                  "rebuild_reviewed_index"
+                ],
+                "can_call_model": false,
+                "can_cite": false,
+                "can_deploy": false,
+                "can_download": false,
+                "can_execute": false,
+                "can_export": true,
+                "can_extract": false,
+                "can_inspect": true,
+                "can_promote_preview": false,
+                "can_rebuild_index": false,
+                "can_review": false,
+                "can_view": true,
+                "policy_reasons": [
+                  "Result lanes are read-only projections.",
+                  "Unsafe actions remain disabled until future governed tasks enable them."
+                ]
+              },
+              "debug": {
+                "committed_example_record": true
+              },
+              "item_id": "iawu_54ac869d359cafab",
+              "limitations": [
+                "Lane is a local projection and does not create truth."
+              ],
+              "operator_notes": "Scheduled as dry-run orchestration only.",
+              "private_local_path_refs": [],
+              "provenance": {
+                "source_mapping": "WorkUnit queue"
+              },
+              "review_required": false,
+              "summary": "IA-Hunt WorkUnit planned by the headless run kernel; no live source call executed.",
+              "title": "ia source cache write",
+              "truth_level": "operational_state_not_truth",
+              "uncertainty": [
+                "Projection is local and bounded."
+              ],
+              "workunit_refs": [
+                "iawu_54ac869d359cafab"
+              ]
+            },
+            {
+              "action_posture": {
+                "blocked_actions": [
+                  "download",
+                  "extract",
+                  "execute",
+                  "call_model_provider",
+                  "deploy_public_projection",
+                  "run_source_probe",
+                  "mutate_master_index",
+                  "promote_preview",
+                  "rebuild_reviewed_index"
+                ],
+                "can_call_model": false,
+                "can_cite": false,
+                "can_deploy": false,
+                "can_download": false,
+                "can_execute": false,
+                "can_export": true,
+                "can_extract": false,
+                "can_inspect": true,
+                "can_promote_preview": false,
+                "can_rebuild_index": false,
+                "can_review": false,
+                "can_view": true,
+                "policy_reasons": [
+                  "Result lanes are read-only projections.",
+                  "Unsafe actions remain disabled until future governed tasks enable them."
+                ]
+              },
+              "debug": {
+                "committed_example_record": true
+              },
+              "item_id": "iawu_9311fe0302b2f43e",
+              "limitations": [
+                "Lane is a local projection and does not create truth."
+              ],
+              "operator_notes": "Scheduled as dry-run orchestration only.",
+              "private_local_path_refs": [],
+              "provenance": {
+                "source_mapping": "WorkUnit queue"
+              },
+              "review_required": false,
+              "summary": "IA-Hunt WorkUnit planned by the headless run kernel; no live source call executed.",
+              "title": "ia evidence candidate write",
+              "truth_level": "operational_state_not_truth",
+              "uncertainty": [
+                "Projection is local and bounded."
+              ],
+              "workunit_refs": [
+                "iawu_9311fe0302b2f43e"
+              ]
+            },
+            {
+              "action_posture": {
+                "blocked_actions": [
+                  "download",
+                  "extract",
+                  "execute",
+                  "call_model_provider",
+                  "deploy_public_projection",
+                  "run_source_probe",
+                  "mutate_master_index",
+                  "promote_preview",
+                  "rebuild_reviewed_index"
+                ],
+                "can_call_model": false,
+                "can_cite": false,
+                "can_deploy": false,
+                "can_download": false,
+                "can_execute": false,
+                "can_export": true,
+                "can_extract": false,
+                "can_inspect": true,
+                "can_promote_preview": false,
+                "can_rebuild_index": false,
+                "can_review": false,
+                "can_view": true,
+                "policy_reasons": [
+                  "Result lanes are read-only projections.",
+                  "Unsafe actions remain disabled until future governed tasks enable them."
+                ]
+              },
+              "debug": {
+                "committed_example_record": true
+              },
+              "item_id": "iawu_2639da25aee54efd",
+              "limitations": [
+                "Lane is a local projection and does not create truth."
+              ],
+              "operator_notes": "Scheduled as dry-run orchestration only.",
+              "private_local_path_refs": [],
+              "provenance": {
+                "source_mapping": "WorkUnit queue"
+              },
+              "review_required": false,
+              "summary": "IA-Hunt WorkUnit planned by the headless run kernel; no live source call executed.",
+              "title": "ia candidate index write",
+              "truth_level": "operational_state_not_truth",
+              "uncertainty": [
+                "Projection is local and bounded."
+              ],
+              "workunit_refs": [
+                "iawu_2639da25aee54efd"
+              ]
+            },
+            {
+              "action_posture": {
+                "blocked_actions": [
+                  "download",
+                  "extract",
+                  "execute",
+                  "call_model_provider",
+                  "deploy_public_projection",
+                  "run_source_probe",
+                  "mutate_master_index",
+                  "promote_preview",
+                  "rebuild_reviewed_index"
+                ],
+                "can_call_model": false,
+                "can_cite": false,
+                "can_deploy": false,
+                "can_download": false,
+                "can_execute": false,
+                "can_export": true,
+                "can_extract": false,
+                "can_inspect": true,
+                "can_promote_preview": false,
+                "can_rebuild_index": false,
+                "can_review": false,
+                "can_view": true,
+                "policy_reasons": [
+                  "Result lanes are read-only projections.",
+                  "Unsafe actions remain disabled until future governed tasks enable them."
+                ]
+              },
+              "debug": {
+                "committed_example_record": true
+              },
+              "item_id": "iawu_039c27d72a44e10a",
+              "limitations": [
+                "Lane is a local projection and does not create truth."
+              ],
+              "operator_notes": "Scheduled as dry-run orchestration only.",
+              "private_local_path_refs": [],
+              "provenance": {
+                "source_mapping": "WorkUnit queue"
+              },
+              "review_required": false,
+              "summary": "IA-Hunt WorkUnit planned by the headless run kernel; no live source call executed.",
+              "title": "ia review queue write",
+              "truth_level": "operational_state_not_truth",
+              "uncertainty": [
+                "Projection is local and bounded."
+              ],
+              "workunit_refs": [
+                "iawu_039c27d72a44e10a"
+              ]
+            },
+            {
+              "action_posture": {
+                "blocked_actions": [
+                  "download",
+                  "extract",
+                  "execute",
+                  "call_model_provider",
+                  "deploy_public_projection",
+                  "run_source_probe",
+                  "mutate_master_index",
+                  "promote_preview",
+                  "rebuild_reviewed_index"
+                ],
+                "can_call_model": false,
+                "can_cite": false,
+                "can_deploy": false,
+                "can_download": false,
+                "can_execute": false,
+                "can_export": true,
+                "can_extract": false,
+                "can_inspect": true,
+                "can_promote_preview": false,
+                "can_rebuild_index": false,
+                "can_review": false,
+                "can_view": true,
+                "policy_reasons": [
+                  "Result lanes are read-only projections.",
+                  "Unsafe actions remain disabled until future governed tasks enable them."
+                ]
+              },
+              "debug": {
+                "committed_example_record": true
+              },
+              "item_id": "iawu_f679de3afd0fb21f",
+              "limitations": [
+                "Lane is a local projection and does not create truth."
+              ],
+              "operator_notes": "Scheduled as dry-run orchestration only.",
+              "private_local_path_refs": [],
+              "provenance": {
+                "source_mapping": "WorkUnit queue"
+              },
+              "review_required": false,
+              "summary": "IA-Hunt WorkUnit planned by the headless run kernel; no live source call executed.",
+              "title": "ia promotion dry run",
+              "truth_level": "operational_state_not_truth",
+              "uncertainty": [
+                "Projection is local and bounded."
+              ],
+              "workunit_refs": [
+                "iawu_f679de3afd0fb21f"
+              ]
+            },
+            {
+              "action_posture": {
+                "blocked_actions": [
+                  "download",
+                  "extract",
+                  "execute",
+                  "call_model_provider",
+                  "deploy_public_projection",
+                  "run_source_probe",
+                  "mutate_master_index",
+                  "promote_preview",
+                  "rebuild_reviewed_index"
+                ],
+                "can_call_model": false,
+                "can_cite": false,
+                "can_deploy": false,
+                "can_download": false,
+                "can_execute": false,
+                "can_export": true,
+                "can_extract": false,
+                "can_inspect": true,
+                "can_promote_preview": false,
+                "can_rebuild_index": false,
+                "can_review": false,
+                "can_view": true,
+                "policy_reasons": [
+                  "Result lanes are read-only projections.",
+                  "Unsafe actions remain disabled until future governed tasks enable them."
+                ]
+              },
+              "debug": {
+                "committed_example_record": true
+              },
+              "item_id": "iawu_dd770c35ce1c7c35",
+              "limitations": [
+                "Lane is a local projection and does not create truth."
+              ],
+              "operator_notes": "Scheduled as dry-run orchestration only.",
+              "private_local_path_refs": [],
+              "provenance": {
+                "source_mapping": "WorkUnit queue"
+              },
+              "review_required": false,
+              "summary": "IA-Hunt WorkUnit planned by the headless run kernel; no live source call executed.",
+              "title": "ia reviewed index rebuild",
+              "truth_level": "operational_state_not_truth",
+              "uncertainty": [
+                "Projection is local and bounded."
+              ],
+              "workunit_refs": [
+                "iawu_dd770c35ce1c7c35"
+              ]
+            },
+            {
+              "action_posture": {
+                "blocked_actions": [
+                  "download",
+                  "extract",
+                  "execute",
+                  "call_model_provider",
+                  "deploy_public_projection",
+                  "run_source_probe",
+                  "mutate_master_index",
+                  "promote_preview",
+                  "rebuild_reviewed_index"
+                ],
+                "can_call_model": false,
+                "can_cite": false,
+                "can_deploy": false,
+                "can_download": false,
+                "can_execute": false,
+                "can_export": true,
+                "can_extract": false,
+                "can_inspect": true,
+                "can_promote_preview": false,
+                "can_rebuild_index": false,
+                "can_review": false,
+                "can_view": true,
+                "policy_reasons": [
+                  "Result lanes are read-only projections.",
+                  "Unsafe actions remain disabled until future governed tasks enable them."
+                ]
+              },
+              "debug": {
+                "committed_example_record": true
+              },
+              "item_id": "iawu_682ffc55df8b3aa4",
+              "limitations": [
+                "Lane is a local projection and does not create truth."
+              ],
+              "operator_notes": "Scheduled as dry-run orchestration only.",
+              "private_local_path_refs": [],
+              "provenance": {
+                "source_mapping": "WorkUnit queue"
+              },
+              "review_required": false,
+              "summary": "IA-Hunt WorkUnit planned by the headless run kernel; no live source call executed.",
+              "title": "ia result lane project",
+              "truth_level": "operational_state_not_truth",
+              "uncertainty": [
+                "Projection is local and bounded."
+              ],
+              "workunit_refs": [
+                "iawu_682ffc55df8b3aa4"
+              ]
+            }
+          ],
+          "lane_id": "lane-running_workunits",
+          "lane_kind": "running_workunits",
+          "limitations": [
+            "Lane is a local projection and does not create truth."
+          ],
+          "packet_type": "ResultLanePacket",
+          "projection_profile": "operator_workbench",
+          "provenance": {
+            "live_ia_call_performed": false,
+            "source_mapping": "WorkUnit queue",
+            "source_probe_executed": false,
+            "store_mutation_performed": false
+          },
+          "result_count": 10,
+          "result_ids": [
+            "iawu_dec4553e41ce9e9d",
+            "iawu_5feebb03635a0a9e",
+            "iawu_c7c130ed3915847c",
+            "iawu_54ac869d359cafab",
+            "iawu_9311fe0302b2f43e",
+            "iawu_2639da25aee54efd",
+            "iawu_039c27d72a44e10a",
+            "iawu_f679de3afd0fb21f",
+            "iawu_dd770c35ce1c7c35",
+            "iawu_682ffc55df8b3aa4"
+          ],
+          "review_required": false,
+          "schema_version": "result_lane_packet.v0",
+          "source_mapping": "WorkUnit queue",
+          "state": "available",
+          "truth_level": "operational_state_not_truth",
+          "uncertainty": [
+            "Local projection only; lane content does not create truth."
+          ],
+          "visible": true
+        },
+        {
+          "action_posture": {
+            "blocked_actions": [
+              "download",
+              "extract",
+              "execute",
+              "call_model_provider",
+              "deploy_public_projection",
+              "run_source_probe",
+              "mutate_master_index",
+              "promote_preview",
+              "rebuild_reviewed_index"
+            ],
+            "can_call_model": false,
+            "can_cite": false,
+            "can_deploy": false,
+            "can_download": false,
+            "can_execute": false,
+            "can_export": true,
+            "can_extract": false,
+            "can_inspect": true,
+            "can_promote_preview": false,
+            "can_rebuild_index": false,
+            "can_review": true,
+            "can_view": true,
+            "policy_reasons": [
+              "Result lanes are read-only projections.",
+              "Unsafe actions remain disabled until future governed tasks enable them."
+            ]
+          },
+          "blocked_actions": [
+            "download",
+            "extract",
+            "execute",
+            "call_model_provider",
+            "deploy_public_projection",
+            "run_source_probe",
+            "mutate_master_index",
+            "promote_preview",
+            "rebuild_reviewed_index"
+          ],
+          "confidence": 0.8,
+          "emitted_at": "2026-05-20T00:00:00Z",
+          "items": [
+            {
+              "action_posture": {
+                "blocked_actions": [
+                  "download",
+                  "extract",
+                  "execute",
+                  "call_model_provider",
+                  "deploy_public_projection",
+                  "run_source_probe",
+                  "mutate_master_index",
+                  "promote_preview",
+                  "rebuild_reviewed_index"
+                ],
+                "can_call_model": false,
+                "can_cite": false,
+                "can_deploy": false,
+                "can_download": false,
+                "can_execute": false,
+                "can_export": true,
+                "can_extract": false,
+                "can_inspect": true,
+                "can_promote_preview": false,
+                "can_rebuild_index": false,
+                "can_review": true,
+                "can_view": true,
+                "policy_reasons": [
+                  "Result lanes are read-only projections.",
+                  "Unsafe actions remain disabled until future governed tasks enable them."
+                ]
+              },
+              "candidate_refs": [
+                "iacand_586f24d90e3814d9"
+              ],
+              "debug": {
+                "committed_example_record": true
+              },
+              "evidence_refs": [
+                "iaev_2f6d5fa64bee4bb3",
+                "iaev_64dcbd31bd4a39de",
+                "iaev_8fe077f498f3c523",
+                "iaev_90f029588c97120c",
+                "iaev_a297f63f2d595b0c"
+              ],
+              "item_id": "ia-lane-iacand_586f24d90e3814d9",
+              "limitations": [
+                "committed metadata fixture input",
+                "required item identifier missing",
+                "partial metadata requires review before use",
+                "evidence candidate requires review",
+                "metadata does not establish rights clearance, compatibility, safety, installability, or final identity",
+                "candidate index record is not reviewed truth",
+                "no reviewed or master index mutation occurred"
+              ],
+              "operator_notes": "IA metadata candidate is source-provided metadata requiring review.",
+              "private_local_path_refs": [],
+              "provenance": {
+                "endpoint_class": "item_metadata_read",
+                "evidence_ids": [
+                  "iaev_2f6d5fa64bee4bb3",
+                  "iaev_64dcbd31bd4a39de",
+                  "iaev_8fe077f498f3c523",
+                  "iaev_90f029588c97120c",
+                  "iaev_a297f63f2d595b0c"
+                ],
+                "fixture_id": "malformed_partial",
+                "live_probe_id": "",
+                "metadata_only": true,
+                "observation_kind": "malformed_partial",
+                "source_cache_record_id": "iasc_014c05bb568f514f",
+                "source_kind": "ia_fixture_replay"
+              },
+              "review_required": true,
+              "summary": "Provisional ia_near_miss_candidate from 5 IA evidence candidate(s); review is required before any promotion.",
+              "title": "Eureka Fixture Partial Metadata",
+              "truth_level": "ia_metadata_candidate_not_truth",
+              "uncertainty": [
+                "source metadata requires human review",
+                "source-provided metadata may be incomplete or stale",
+                "rights, safety, compatibility, and final identity are not inferred",
+                "candidate index record is provisional",
+                "review required before promotion"
+              ]
+            },
+            {
+              "action_posture": {
+                "blocked_actions": [
+                  "download",
+                  "extract",
+                  "execute",
+                  "call_model_provider",
+                  "deploy_public_projection",
+                  "run_source_probe",
+                  "mutate_master_index",
+                  "promote_preview",
+                  "rebuild_reviewed_index"
+                ],
+                "can_call_model": false,
+                "can_cite": false,
+                "can_deploy": false,
+                "can_download": false,
+                "can_execute": false,
+                "can_export": true,
+                "can_extract": false,
+                "can_inspect": true,
+                "can_promote_preview": false,
+                "can_rebuild_index": false,
+                "can_review": true,
+                "can_view": true,
+                "policy_reasons": [
+                  "Result lanes are read-only projections.",
+                  "Unsafe actions remain disabled until future governed tasks enable them."
+                ]
+              },
+              "candidate_refs": [
+                "iacand_9296cc2c16465d56"
+              ],
+              "debug": {
+                "committed_example_record": true
+              },
+              "evidence_refs": [
+                "iaev_2f6d5fa64bee4bb3",
+                "iaev_64dcbd31bd4a39de",
+                "iaev_8fe077f498f3c523",
+                "iaev_90f029588c97120c",
+                "iaev_a297f63f2d595b0c"
+              ],
+              "item_id": "ia-lane-iacand_9296cc2c16465d56",
+              "limitations": [
+                "committed metadata fixture input",
+                "required item identifier missing",
+                "partial metadata requires review before use",
+                "evidence candidate requires review",
+                "metadata does not establish rights clearance, compatibility, safety, installability, or final identity",
+                "candidate index record is not reviewed truth",
+                "no reviewed or master index mutation occurred"
+              ],
+              "operator_notes": "IA metadata candidate is source-provided metadata requiring review.",
+              "private_local_path_refs": [],
+              "provenance": {
+                "endpoint_class": "item_metadata_read",
+                "evidence_ids": [
+                  "iaev_2f6d5fa64bee4bb3",
+                  "iaev_64dcbd31bd4a39de",
+                  "iaev_8fe077f498f3c523",
+                  "iaev_90f029588c97120c",
+                  "iaev_a297f63f2d595b0c"
+                ],
+                "fixture_id": "malformed_partial",
+                "live_probe_id": "",
+                "metadata_only": true,
+                "observation_kind": "malformed_partial",
+                "source_cache_record_id": "iasc_014c05bb568f514f",
+                "source_kind": "ia_fixture_replay"
+              },
+              "review_required": true,
+              "summary": "Provisional ia_source_locator_candidate from 5 IA evidence candidate(s); review is required before any promotion.",
+              "title": "Eureka Fixture Partial Metadata",
+              "truth_level": "ia_metadata_candidate_not_truth",
+              "uncertainty": [
+                "source metadata requires human review",
+                "source-provided metadata may be incomplete or stale",
+                "rights, safety, compatibility, and final identity are not inferred",
+                "candidate index record is provisional",
+                "review required before promotion"
+              ]
+            },
+            {
+              "action_posture": {
+                "blocked_actions": [
+                  "download",
+                  "extract",
+                  "execute",
+                  "call_model_provider",
+                  "deploy_public_projection",
+                  "run_source_probe",
+                  "mutate_master_index",
+                  "promote_preview",
+                  "rebuild_reviewed_index"
+                ],
+                "can_call_model": false,
+                "can_cite": false,
+                "can_deploy": false,
+                "can_download": false,
+                "can_execute": false,
+                "can_export": true,
+                "can_extract": false,
+                "can_inspect": true,
+                "can_promote_preview": false,
+                "can_rebuild_index": false,
+                "can_review": true,
+                "can_view": true,
+                "policy_reasons": [
+                  "Result lanes are read-only projections.",
+                  "Unsafe actions remain disabled until future governed tasks enable them."
+                ]
+              },
+              "candidate_refs": [
+                "iacand_ccad5f6414aaf3c9"
+              ],
+              "debug": {
+                "committed_example_record": true
+              },
+              "evidence_refs": [
+                "iaev_0178360374d0d58d",
+                "iaev_220304b424601f3c",
+                "iaev_3629751c04340905",
+                "iaev_46ceee78e9429a6f",
+                "iaev_6d91c63287f7d9c7",
+                "iaev_7a06c7cef7535a7b",
+                "iaev_94dd95c5bc84b603",
+                "iaev_a342a599a0211a08",
+                "iaev_bc862a54606481de",
+                "iaev_bcfefdfba989d734",
+                "iaev_e0174a14adea8df3"
+              ],
+              "item_id": "ia-lane-iacand_ccad5f6414aaf3c9",
+              "limitations": [
+                "committed metadata fixture input",
+                "item metadata is not accepted truth",
+                "file entries are metadata only",
+                "file metadata candidates capped at 5 of 8",
+                "evidence candidate requires review",
+                "metadata does not establish rights clearance, compatibility, safety, installability, or final identity",
+                "candidate index record is not reviewed truth",
+                "no reviewed or master index mutation occurred"
+              ],
+              "operator_notes": "IA metadata candidate is source-provided metadata requiring review.",
+              "private_local_path_refs": [],
+              "provenance": {
+                "endpoint_class": "item_file_list_metadata_read",
+                "evidence_ids": [
+                  "iaev_0178360374d0d58d",
+                  "iaev_220304b424601f3c",
+                  "iaev_3629751c04340905",
+                  "iaev_46ceee78e9429a6f",
+                  "iaev_6d91c63287f7d9c7",
+                  "iaev_7a06c7cef7535a7b",
+                  "iaev_94dd95c5bc84b603",
+                  "iaev_a342a599a0211a08",
+                  "iaev_bc862a54606481de",
+                  "iaev_bcfefdfba989d734",
+                  "iaev_e0174a14adea8df3"
+                ],
+                "fixture_id": "large_file_list",
+                "live_probe_id": "",
+                "metadata_only": true,
+                "observation_kind": "large_file_list",
+                "source_cache_record_id": "iasc_0942d6dacc0c596b",
+                "source_kind": "ia_fixture_replay"
+              },
+              "review_required": true,
+              "summary": "Provisional ia_item_candidate from 11 IA evidence candidate(s); review is required before any promotion.",
+              "title": "Eureka Fixture Large File List Metadata",
+              "truth_level": "ia_metadata_candidate_not_truth",
+              "uncertainty": [
+                "source metadata requires human review",
+                "source-provided metadata may be incomplete or stale",
+                "rights, safety, compatibility, and final identity are not inferred",
+                "candidate index record is provisional",
+                "review required before promotion"
+              ]
+            },
+            {
+              "action_posture": {
+                "blocked_actions": [
+                  "download",
+                  "extract",
+                  "execute",
+                  "call_model_provider",
+                  "deploy_public_projection",
+                  "run_source_probe",
+                  "mutate_master_index",
+                  "promote_preview",
+                  "rebuild_reviewed_index"
+                ],
+                "can_call_model": false,
+                "can_cite": false,
+                "can_deploy": false,
+                "can_download": false,
+                "can_execute": false,
+                "can_export": true,
+                "can_extract": false,
+                "can_inspect": true,
+                "can_promote_preview": false,
+                "can_rebuild_index": false,
+                "can_review": true,
+                "can_view": true,
+                "policy_reasons": [
+                  "Result lanes are read-only projections.",
+                  "Unsafe actions remain disabled until future governed tasks enable them."
+                ]
+              },
+              "candidate_refs": [
+                "iacand_a8b46e42efc6ae82"
+              ],
+              "debug": {
+                "committed_example_record": true
+              },
+              "evidence_refs": [
+                "iaev_0178360374d0d58d",
+                "iaev_220304b424601f3c",
+                "iaev_3629751c04340905",
+                "iaev_46ceee78e9429a6f",
+                "iaev_6d91c63287f7d9c7",
+                "iaev_7a06c7cef7535a7b",
+                "iaev_94dd95c5bc84b603",
+                "iaev_a342a599a0211a08",
+                "iaev_bc862a54606481de",
+                "iaev_bcfefdfba989d734",
+                "iaev_e0174a14adea8df3"
+              ],
+              "item_id": "ia-lane-iacand_a8b46e42efc6ae82",
+              "limitations": [
+                "committed metadata fixture input",
+                "item metadata is not accepted truth",
+                "file entries are metadata only",
+                "file metadata candidates capped at 5 of 8",
+                "evidence candidate requires review",
+                "metadata does not establish rights clearance, compatibility, safety, installability, or final identity",
+                "candidate index record is not reviewed truth",
+                "no reviewed or master index mutation occurred"
+              ],
+              "operator_notes": "IA metadata candidate is source-provided metadata requiring review.",
+              "private_local_path_refs": [],
+              "provenance": {
+                "endpoint_class": "item_file_list_metadata_read",
+                "evidence_ids": [
+                  "iaev_0178360374d0d58d",
+                  "iaev_220304b424601f3c",
+                  "iaev_3629751c04340905",
+                  "iaev_46ceee78e9429a6f",
+                  "iaev_6d91c63287f7d9c7",
+                  "iaev_7a06c7cef7535a7b",
+                  "iaev_94dd95c5bc84b603",
+                  "iaev_a342a599a0211a08",
+                  "iaev_bc862a54606481de",
+                  "iaev_bcfefdfba989d734",
+                  "iaev_e0174a14adea8df3"
+                ],
+                "fixture_id": "large_file_list",
+                "live_probe_id": "",
+                "metadata_only": true,
+                "observation_kind": "large_file_list",
+                "source_cache_record_id": "iasc_0942d6dacc0c596b",
+                "source_kind": "ia_fixture_replay"
+              },
+              "review_required": true,
+              "summary": "Provisional ia_media_metadata_candidate from 11 IA evidence candidate(s); review is required before any promotion.",
+              "title": "Eureka Fixture Large File List Metadata",
+              "truth_level": "ia_metadata_candidate_not_truth",
+              "uncertainty": [
+                "source metadata requires human review",
+                "source-provided metadata may be incomplete or stale",
+                "rights, safety, compatibility, and final identity are not inferred",
+                "candidate index record is provisional",
+                "review required before promotion"
+              ]
+            },
+            {
+              "action_posture": {
+                "blocked_actions": [
+                  "download",
+                  "extract",
+                  "execute",
+                  "call_model_provider",
+                  "deploy_public_projection",
+                  "run_source_probe",
+                  "mutate_master_index",
+                  "promote_preview",
+                  "rebuild_reviewed_index"
+                ],
+                "can_call_model": false,
+                "can_cite": false,
+                "can_deploy": false,
+                "can_download": false,
+                "can_execute": false,
+                "can_export": true,
+                "can_extract": false,
+                "can_inspect": true,
+                "can_promote_preview": false,
+                "can_rebuild_index": false,
+                "can_review": true,
+                "can_view": true,
+                "policy_reasons": [
+                  "Result lanes are read-only projections.",
+                  "Unsafe actions remain disabled until future governed tasks enable them."
+                ]
+              },
+              "candidate_refs": [
+                "iacand_c01c2c64a64fba23"
+              ],
+              "debug": {
+                "committed_example_record": true
+              },
+              "evidence_refs": [
+                "iaev_0178360374d0d58d",
+                "iaev_220304b424601f3c",
+                "iaev_3629751c04340905",
+                "iaev_46ceee78e9429a6f",
+                "iaev_6d91c63287f7d9c7",
+                "iaev_7a06c7cef7535a7b",
+                "iaev_94dd95c5bc84b603",
+                "iaev_a342a599a0211a08",
+                "iaev_bc862a54606481de",
+                "iaev_bcfefdfba989d734",
+                "iaev_e0174a14adea8df3"
+              ],
+              "item_id": "ia-lane-iacand_c01c2c64a64fba23",
+              "limitations": [
+                "committed metadata fixture input",
+                "item metadata is not accepted truth",
+                "file entries are metadata only",
+                "file metadata candidates capped at 5 of 8",
+                "evidence candidate requires review",
+                "metadata does not establish rights clearance, compatibility, safety, installability, or final identity",
+                "candidate index record is not reviewed truth",
+                "no reviewed or master index mutation occurred"
+              ],
+              "operator_notes": "IA metadata candidate is source-provided metadata requiring review.",
+              "private_local_path_refs": [],
+              "provenance": {
+                "endpoint_class": "item_file_list_metadata_read",
+                "evidence_ids": [
+                  "iaev_0178360374d0d58d",
+                  "iaev_220304b424601f3c",
+                  "iaev_3629751c04340905",
+                  "iaev_46ceee78e9429a6f",
+                  "iaev_6d91c63287f7d9c7",
+                  "iaev_7a06c7cef7535a7b",
+                  "iaev_94dd95c5bc84b603",
+                  "iaev_a342a599a0211a08",
+                  "iaev_bc862a54606481de",
+                  "iaev_bcfefdfba989d734",
+                  "iaev_e0174a14adea8df3"
+                ],
+                "fixture_id": "large_file_list",
+                "live_probe_id": "",
+                "metadata_only": true,
+                "observation_kind": "large_file_list",
+                "source_cache_record_id": "iasc_0942d6dacc0c596b",
+                "source_kind": "ia_fixture_replay"
+              },
+              "review_required": true,
+              "summary": "Provisional ia_file_list_candidate from 11 IA evidence candidate(s); review is required before any promotion.",
+              "title": "Eureka Fixture Large File List Metadata",
+              "truth_level": "ia_metadata_candidate_not_truth",
+              "uncertainty": [
+                "source metadata requires human review",
+                "source-provided metadata may be incomplete or stale",
+                "rights, safety, compatibility, and final identity are not inferred",
+                "candidate index record is provisional",
+                "review required before promotion"
+              ]
+            },
+            {
+              "action_posture": {
+                "blocked_actions": [
+                  "download",
+                  "extract",
+                  "execute",
+                  "call_model_provider",
+                  "deploy_public_projection",
+                  "run_source_probe",
+                  "mutate_master_index",
+                  "promote_preview",
+                  "rebuild_reviewed_index"
+                ],
+                "can_call_model": false,
+                "can_cite": false,
+                "can_deploy": false,
+                "can_download": false,
+                "can_execute": false,
+                "can_export": true,
+                "can_extract": false,
+                "can_inspect": true,
+                "can_promote_preview": false,
+                "can_rebuild_index": false,
+                "can_review": true,
+                "can_view": true,
+                "policy_reasons": [
+                  "Result lanes are read-only projections.",
+                  "Unsafe actions remain disabled until future governed tasks enable them."
+                ]
+              },
+              "candidate_refs": [
+                "iacand_9ede0c7d2d671c5d"
+              ],
+              "debug": {
+                "committed_example_record": true
+              },
+              "evidence_refs": [
+                "iaev_0178360374d0d58d",
+                "iaev_220304b424601f3c",
+                "iaev_3629751c04340905",
+                "iaev_46ceee78e9429a6f",
+                "iaev_6d91c63287f7d9c7",
+                "iaev_7a06c7cef7535a7b",
+                "iaev_94dd95c5bc84b603",
+                "iaev_a342a599a0211a08",
+                "iaev_bc862a54606481de",
+                "iaev_bcfefdfba989d734",
+                "iaev_e0174a14adea8df3"
+              ],
+              "item_id": "ia-lane-iacand_9ede0c7d2d671c5d",
+              "limitations": [
+                "committed metadata fixture input",
+                "item metadata is not accepted truth",
+                "file entries are metadata only",
+                "file metadata candidates capped at 5 of 8",
+                "evidence candidate requires review",
+                "metadata does not establish rights clearance, compatibility, safety, installability, or final identity",
+                "candidate index record is not reviewed truth",
+                "no reviewed or master index mutation occurred"
+              ],
+              "operator_notes": "IA metadata candidate is source-provided metadata requiring review.",
+              "private_local_path_refs": [],
+              "provenance": {
+                "endpoint_class": "item_file_list_metadata_read",
+                "evidence_ids": [
+                  "iaev_0178360374d0d58d",
+                  "iaev_220304b424601f3c",
+                  "iaev_3629751c04340905",
+                  "iaev_46ceee78e9429a6f",
+                  "iaev_6d91c63287f7d9c7",
+                  "iaev_7a06c7cef7535a7b",
+                  "iaev_94dd95c5bc84b603",
+                  "iaev_a342a599a0211a08",
+                  "iaev_bc862a54606481de",
+                  "iaev_bcfefdfba989d734",
+                  "iaev_e0174a14adea8df3"
+                ],
+                "fixture_id": "large_file_list",
+                "live_probe_id": "",
+                "metadata_only": true,
+                "observation_kind": "large_file_list",
+                "source_cache_record_id": "iasc_0942d6dacc0c596b",
+                "source_kind": "ia_fixture_replay"
+              },
+              "review_required": true,
+              "summary": "Provisional ia_collection_member_candidate from 11 IA evidence candidate(s); review is required before any promotion.",
+              "title": "Eureka Fixture Large File List Metadata",
+              "truth_level": "ia_metadata_candidate_not_truth",
+              "uncertainty": [
+                "source metadata requires human review",
+                "source-provided metadata may be incomplete or stale",
+                "rights, safety, compatibility, and final identity are not inferred",
+                "candidate index record is provisional",
+                "review required before promotion"
+              ]
+            },
+            {
+              "action_posture": {
+                "blocked_actions": [
+                  "download",
+                  "extract",
+                  "execute",
+                  "call_model_provider",
+                  "deploy_public_projection",
+                  "run_source_probe",
+                  "mutate_master_index",
+                  "promote_preview",
+                  "rebuild_reviewed_index"
+                ],
+                "can_call_model": false,
+                "can_cite": false,
+                "can_deploy": false,
+                "can_download": false,
+                "can_execute": false,
+                "can_export": true,
+                "can_extract": false,
+                "can_inspect": true,
+                "can_promote_preview": false,
+                "can_rebuild_index": false,
+                "can_review": true,
+                "can_view": true,
+                "policy_reasons": [
+                  "Result lanes are read-only projections.",
+                  "Unsafe actions remain disabled until future governed tasks enable them."
+                ]
+              },
+              "candidate_refs": [
+                "iacand_21108e06acfef8f8"
+              ],
+              "debug": {
+                "committed_example_record": true
+              },
+              "evidence_refs": [
+                "iaev_0178360374d0d58d",
+                "iaev_220304b424601f3c",
+                "iaev_3629751c04340905",
+                "iaev_46ceee78e9429a6f",
+                "iaev_6d91c63287f7d9c7",
+                "iaev_7a06c7cef7535a7b",
+                "iaev_94dd95c5bc84b603",
+                "iaev_a342a599a0211a08",
+                "iaev_bc862a54606481de",
+                "iaev_bcfefdfba989d734",
+                "iaev_e0174a14adea8df3"
+              ],
+              "item_id": "ia-lane-iacand_21108e06acfef8f8",
+              "limitations": [
+                "committed metadata fixture input",
+                "item metadata is not accepted truth",
+                "file entries are metadata only",
+                "file metadata candidates capped at 5 of 8",
+                "evidence candidate requires review",
+                "metadata does not establish rights clearance, compatibility, safety, installability, or final identity",
+                "candidate index record is not reviewed truth",
+                "no reviewed or master index mutation occurred"
+              ],
+              "operator_notes": "IA metadata candidate is source-provided metadata requiring review.",
+              "private_local_path_refs": [],
+              "provenance": {
+                "endpoint_class": "item_file_list_metadata_read",
+                "evidence_ids": [
+                  "iaev_0178360374d0d58d",
+                  "iaev_220304b424601f3c",
+                  "iaev_3629751c04340905",
+                  "iaev_46ceee78e9429a6f",
+                  "iaev_6d91c63287f7d9c7",
+                  "iaev_7a06c7cef7535a7b",
+                  "iaev_94dd95c5bc84b603",
+                  "iaev_a342a599a0211a08",
+                  "iaev_bc862a54606481de",
+                  "iaev_bcfefdfba989d734",
+                  "iaev_e0174a14adea8df3"
+                ],
+                "fixture_id": "large_file_list",
+                "live_probe_id": "",
+                "metadata_only": true,
+                "observation_kind": "large_file_list",
+                "source_cache_record_id": "iasc_0942d6dacc0c596b",
+                "source_kind": "ia_fixture_replay"
+              },
+              "review_required": true,
+              "summary": "Provisional ia_source_locator_candidate from 11 IA evidence candidate(s); review is required before any promotion.",
+              "title": "Eureka Fixture Large File List Metadata",
+              "truth_level": "ia_metadata_candidate_not_truth",
+              "uncertainty": [
+                "source metadata requires human review",
+                "source-provided metadata may be incomplete or stale",
+                "rights, safety, compatibility, and final identity are not inferred",
+                "candidate index record is provisional",
+                "review required before promotion"
+              ]
+            },
+            {
+              "action_posture": {
+                "blocked_actions": [
+                  "download",
+                  "extract",
+                  "execute",
+                  "call_model_provider",
+                  "deploy_public_projection",
+                  "run_source_probe",
+                  "mutate_master_index",
+                  "promote_preview",
+                  "rebuild_reviewed_index"
+                ],
+                "can_call_model": false,
+                "can_cite": false,
+                "can_deploy": false,
+                "can_download": false,
+                "can_execute": false,
+                "can_export": true,
+                "can_extract": false,
+                "can_inspect": true,
+                "can_promote_preview": false,
+                "can_rebuild_index": false,
+                "can_review": true,
+                "can_view": true,
+                "policy_reasons": [
+                  "Result lanes are read-only projections.",
+                  "Unsafe actions remain disabled until future governed tasks enable them."
+                ]
+              },
+              "candidate_refs": [
+                "iacand_abf8c2b8653229ec"
+              ],
+              "debug": {
+                "committed_example_record": true
+              },
+              "evidence_refs": [
+                "iaev_2e4597bf2d0205f2",
+                "iaev_3a935120fad455e5",
+                "iaev_79665430d7ad709c",
+                "iaev_8c364b463c33ed9b",
+                "iaev_90c55021014df176",
+                "iaev_976e5cae841c84db",
+                "iaev_a706a99df5123bd5",
+                "iaev_ae6357bcacd9e25a",
+                "iaev_c54b48f4aa183ee6",
+                "iaev_f68fca1af5f2aa81",
+                "iaev_ff9f3f66bdb6125c"
+              ],
+              "item_id": "ia-lane-iacand_abf8c2b8653229ec",
+              "limitations": [
+                "committed metadata fixture input",
+                "item metadata is not accepted truth",
+                "file entries are metadata only",
+                "evidence candidate requires review",
+                "metadata does not establish rights clearance, compatibility, safety, installability, or final identity",
+                "candidate index record is not reviewed truth",
+                "no reviewed or master index mutation occurred"
+              ],
+              "operator_notes": "IA metadata candidate is source-provided metadata requiring review.",
+              "private_local_path_refs": [],
+              "provenance": {
+                "endpoint_class": "item_metadata_read",
+                "evidence_ids": [
+                  "iaev_2e4597bf2d0205f2",
+                  "iaev_3a935120fad455e5",
+                  "iaev_79665430d7ad709c",
+                  "iaev_8c364b463c33ed9b",
+                  "iaev_90c55021014df176",
+                  "iaev_976e5cae841c84db",
+                  "iaev_a706a99df5123bd5",
+                  "iaev_ae6357bcacd9e25a",
+                  "iaev_c54b48f4aa183ee6",
+                  "iaev_f68fca1af5f2aa81",
+                  "iaev_ff9f3f66bdb6125c"
+                ],
+                "fixture_id": "item_metadata",
+                "live_probe_id": "",
+                "metadata_only": true,
+                "observation_kind": "item_metadata",
+                "source_cache_record_id": "iasc_486af3662118be4b",
+                "source_kind": "ia_fixture_replay"
+              },
+              "review_required": true,
+              "summary": "Provisional ia_item_candidate from 11 IA evidence candidate(s); review is required before any promotion.",
+              "title": "Eureka Fixture StyleWriter 2500 Driver Metadata",
+              "truth_level": "ia_metadata_candidate_not_truth",
+              "uncertainty": [
+                "source metadata requires human review",
+                "source-provided metadata may be incomplete or stale",
+                "rights, safety, compatibility, and final identity are not inferred",
+                "candidate index record is provisional",
+                "review required before promotion"
+              ]
+            }
+          ],
+          "lane_id": "lane-ia_metadata_candidates",
+          "lane_kind": "ia_metadata_candidates",
+          "limitations": [
+            "Lane is a local projection and does not create truth."
+          ],
+          "packet_type": "ResultLanePacket",
+          "projection_profile": "operator_workbench",
+          "provenance": {
+            "live_ia_call_performed": false,
+            "source_mapping": "IA candidate/index/source-cache/evidence preview records",
+            "source_probe_executed": false,
+            "store_mutation_performed": false
+          },
+          "result_count": 8,
+          "result_ids": [
+            "ia-lane-iacand_586f24d90e3814d9",
+            "ia-lane-iacand_9296cc2c16465d56",
+            "ia-lane-iacand_ccad5f6414aaf3c9",
+            "ia-lane-iacand_a8b46e42efc6ae82",
+            "ia-lane-iacand_c01c2c64a64fba23",
+            "ia-lane-iacand_9ede0c7d2d671c5d",
+            "ia-lane-iacand_21108e06acfef8f8",
+            "ia-lane-iacand_abf8c2b8653229ec"
+          ],
+          "review_required": true,
+          "schema_version": "result_lane_packet.v0",
+          "source_mapping": "IA candidate/index/source-cache/evidence preview records",
+          "state": "available",
+          "truth_level": "ia_metadata_candidate_not_truth",
+          "uncertainty": [
+            "Local projection only; lane content does not create truth."
+          ],
+          "visible": true
+        },
+        {
+          "action_posture": {
+            "blocked_actions": [
+              "download",
+              "extract",
+              "execute",
+              "call_model_provider",
+              "deploy_public_projection",
+              "run_source_probe",
+              "mutate_master_index",
+              "promote_preview",
+              "rebuild_reviewed_index"
+            ],
+            "can_call_model": false,
+            "can_cite": true,
+            "can_deploy": false,
+            "can_download": false,
+            "can_execute": false,
+            "can_export": true,
+            "can_extract": false,
+            "can_inspect": true,
+            "can_promote_preview": false,
+            "can_rebuild_index": false,
+            "can_review": false,
+            "can_view": true,
+            "policy_reasons": [
+              "Result lanes are read-only projections.",
+              "Unsafe actions remain disabled until future governed tasks enable them."
+            ]
+          },
+          "blocked_actions": [
+            "download",
+            "extract",
+            "execute",
+            "call_model_provider",
+            "deploy_public_projection",
+            "run_source_probe",
+            "mutate_master_index",
+            "promote_preview",
+            "rebuild_reviewed_index"
+          ],
+          "confidence": 0.8,
+          "emitted_at": "2026-05-20T00:00:00Z",
+          "items": [
+            {
+              "action_posture": {
+                "blocked_actions": [
+                  "download",
+                  "extract",
+                  "execute",
+                  "call_model_provider",
+                  "deploy_public_projection",
+                  "run_source_probe",
+                  "mutate_master_index",
+                  "promote_preview",
+                  "rebuild_reviewed_index"
+                ],
+                "can_call_model": false,
+                "can_cite": true,
+                "can_deploy": false,
+                "can_download": false,
+                "can_execute": false,
+                "can_export": true,
+                "can_extract": false,
+                "can_inspect": true,
+                "can_promote_preview": false,
+                "can_rebuild_index": false,
+                "can_review": false,
+                "can_view": true,
+                "policy_reasons": [
+                  "Result lanes are read-only projections.",
+                  "Unsafe actions remain disabled until future governed tasks enable them."
+                ]
+              },
+              "checked_layers": [
+                "reviewed_local_results"
+              ],
+              "debug": {
+                "committed_example_record": true
+              },
+              "item_id": "absence-sampleproject",
+              "limitations": [
+                "Absence is bounded to checked local layers and is not global proof."
+              ],
+              "operator_notes": "Absence is bounded and does not prove global non-existence.",
+              "private_local_path_refs": [],
+              "provenance": {
+                "source_mapping": "absence records/absence packets"
+              },
+              "review_required": false,
+              "summary": "Known absence is bounded to checked local layers.",
+              "title": "No reviewed local result for sampleproject",
+              "truth_level": "bounded_absence_not_global_proof",
+              "uncertainty": [
+                "Projection is local and bounded."
+              ]
+            }
+          ],
+          "lane_id": "lane-known_absence",
+          "lane_kind": "known_absence",
+          "limitations": [
+            "Absence is bounded to checked local layers and is not global proof."
+          ],
+          "packet_type": "ResultLanePacket",
+          "projection_profile": "operator_workbench",
+          "provenance": {
+            "live_ia_call_performed": false,
+            "source_mapping": "absence records/absence packets",
+            "source_probe_executed": false,
+            "store_mutation_performed": false
+          },
+          "result_count": 1,
+          "result_ids": [
+            "absence-sampleproject"
+          ],
+          "review_required": false,
+          "schema_version": "result_lane_packet.v0",
+          "source_mapping": "absence records/absence packets",
+          "state": "available",
+          "truth_level": "bounded_absence_not_global_proof",
+          "uncertainty": [
+            "Local projection only; lane content does not create truth."
+          ],
+          "visible": true
+        },
+        {
+          "action_posture": {
+            "blocked_actions": [
+              "download",
+              "extract",
+              "execute",
+              "call_model_provider",
+              "deploy_public_projection",
+              "run_source_probe",
+              "mutate_master_index",
+              "promote_preview",
+              "rebuild_reviewed_index"
+            ],
+            "can_call_model": false,
+            "can_cite": false,
+            "can_deploy": false,
+            "can_download": false,
+            "can_execute": false,
+            "can_export": true,
+            "can_extract": false,
+            "can_inspect": true,
+            "can_promote_preview": false,
+            "can_rebuild_index": false,
+            "can_review": false,
+            "can_view": true,
+            "policy_reasons": [
+              "Result lanes are read-only projections.",
+              "Unsafe actions remain disabled until future governed tasks enable them."
+            ]
+          },
+          "blocked_actions": [
+            "download",
+            "extract",
+            "execute",
+            "call_model_provider",
+            "deploy_public_projection",
+            "run_source_probe",
+            "mutate_master_index",
+            "promote_preview",
+            "rebuild_reviewed_index"
+          ],
+          "confidence": 0.8,
+          "emitted_at": "2026-05-20T00:00:00Z",
+          "items": [
+            {
+              "action_posture": {
+                "blocked_actions": [
+                  "download",
+                  "extract",
+                  "execute",
+                  "call_model_provider",
+                  "deploy_public_projection",
+                  "run_source_probe",
+                  "mutate_master_index",
+                  "promote_preview",
+                  "rebuild_reviewed_index"
+                ],
+                "can_call_model": false,
+                "can_cite": false,
+                "can_deploy": false,
+                "can_download": false,
+                "can_execute": false,
+                "can_export": true,
+                "can_extract": false,
+                "can_inspect": true,
+                "can_promote_preview": false,
+                "can_rebuild_index": false,
+                "can_review": false,
+                "can_view": true,
+                "policy_reasons": [
+                  "Result lanes are read-only projections.",
+                  "Unsafe actions remain disabled until future governed tasks enable them."
+                ]
+              },
+              "blocked_action": "download",
+              "debug": {
+                "committed_example_record": true
+              },
+              "item_id": "blocked-download",
+              "limitations": [
+                "Blocked action is current policy posture, not a permanent product limitation."
+              ],
+              "operator_notes": "Blocked action lane is policy posture, not evidence of permanent unsupported status.",
+              "private_local_path_refs": [],
+              "provenance": {
+                "source_mapping": "policy/action posture"
+              },
+              "review_required": false,
+              "summary": "Blocked under current Workbench result-lane policy.",
+              "title": "download",
+              "truth_level": "policy_block_not_capability_absence",
+              "uncertainty": [
+                "Projection is local and bounded."
+              ]
+            },
+            {
+              "action_posture": {
+                "blocked_actions": [
+                  "download",
+                  "extract",
+                  "execute",
+                  "call_model_provider",
+                  "deploy_public_projection",
+                  "run_source_probe",
+                  "mutate_master_index",
+                  "promote_preview",
+                  "rebuild_reviewed_index"
+                ],
+                "can_call_model": false,
+                "can_cite": false,
+                "can_deploy": false,
+                "can_download": false,
+                "can_execute": false,
+                "can_export": true,
+                "can_extract": false,
+                "can_inspect": true,
+                "can_promote_preview": false,
+                "can_rebuild_index": false,
+                "can_review": false,
+                "can_view": true,
+                "policy_reasons": [
+                  "Result lanes are read-only projections.",
+                  "Unsafe actions remain disabled until future governed tasks enable them."
+                ]
+              },
+              "blocked_action": "extract",
+              "debug": {
+                "committed_example_record": true
+              },
+              "item_id": "blocked-extract",
+              "limitations": [
+                "Blocked action is current policy posture, not a permanent product limitation."
+              ],
+              "operator_notes": "Blocked action lane is policy posture, not evidence of permanent unsupported status.",
+              "private_local_path_refs": [],
+              "provenance": {
+                "source_mapping": "policy/action posture"
+              },
+              "review_required": false,
+              "summary": "Blocked under current Workbench result-lane policy.",
+              "title": "extract",
+              "truth_level": "policy_block_not_capability_absence",
+              "uncertainty": [
+                "Projection is local and bounded."
+              ]
+            },
+            {
+              "action_posture": {
+                "blocked_actions": [
+                  "download",
+                  "extract",
+                  "execute",
+                  "call_model_provider",
+                  "deploy_public_projection",
+                  "run_source_probe",
+                  "mutate_master_index",
+                  "promote_preview",
+                  "rebuild_reviewed_index"
+                ],
+                "can_call_model": false,
+                "can_cite": false,
+                "can_deploy": false,
+                "can_download": false,
+                "can_execute": false,
+                "can_export": true,
+                "can_extract": false,
+                "can_inspect": true,
+                "can_promote_preview": false,
+                "can_rebuild_index": false,
+                "can_review": false,
+                "can_view": true,
+                "policy_reasons": [
+                  "Result lanes are read-only projections.",
+                  "Unsafe actions remain disabled until future governed tasks enable them."
+                ]
+              },
+              "blocked_action": "execute",
+              "debug": {
+                "committed_example_record": true
+              },
+              "item_id": "blocked-execute",
+              "limitations": [
+                "Blocked action is current policy posture, not a permanent product limitation."
+              ],
+              "operator_notes": "Blocked action lane is policy posture, not evidence of permanent unsupported status.",
+              "private_local_path_refs": [],
+              "provenance": {
+                "source_mapping": "policy/action posture"
+              },
+              "review_required": false,
+              "summary": "Blocked under current Workbench result-lane policy.",
+              "title": "execute",
+              "truth_level": "policy_block_not_capability_absence",
+              "uncertainty": [
+                "Projection is local and bounded."
+              ]
+            },
+            {
+              "action_posture": {
+                "blocked_actions": [
+                  "download",
+                  "extract",
+                  "execute",
+                  "call_model_provider",
+                  "deploy_public_projection",
+                  "run_source_probe",
+                  "mutate_master_index",
+                  "promote_preview",
+                  "rebuild_reviewed_index"
+                ],
+                "can_call_model": false,
+                "can_cite": false,
+                "can_deploy": false,
+                "can_download": false,
+                "can_execute": false,
+                "can_export": true,
+                "can_extract": false,
+                "can_inspect": true,
+                "can_promote_preview": false,
+                "can_rebuild_index": false,
+                "can_review": false,
+                "can_view": true,
+                "policy_reasons": [
+                  "Result lanes are read-only projections.",
+                  "Unsafe actions remain disabled until future governed tasks enable them."
+                ]
+              },
+              "blocked_action": "call_model_provider",
+              "debug": {
+                "committed_example_record": true
+              },
+              "item_id": "blocked-call_model_provider",
+              "limitations": [
+                "Blocked action is current policy posture, not a permanent product limitation."
+              ],
+              "operator_notes": "Blocked action lane is policy posture, not evidence of permanent unsupported status.",
+              "private_local_path_refs": [],
+              "provenance": {
+                "source_mapping": "policy/action posture"
+              },
+              "review_required": false,
+              "summary": "Blocked under current Workbench result-lane policy.",
+              "title": "call model provider",
+              "truth_level": "policy_block_not_capability_absence",
+              "uncertainty": [
+                "Projection is local and bounded."
+              ]
+            },
+            {
+              "action_posture": {
+                "blocked_actions": [
+                  "download",
+                  "extract",
+                  "execute",
+                  "call_model_provider",
+                  "deploy_public_projection",
+                  "run_source_probe",
+                  "mutate_master_index",
+                  "promote_preview",
+                  "rebuild_reviewed_index"
+                ],
+                "can_call_model": false,
+                "can_cite": false,
+                "can_deploy": false,
+                "can_download": false,
+                "can_execute": false,
+                "can_export": true,
+                "can_extract": false,
+                "can_inspect": true,
+                "can_promote_preview": false,
+                "can_rebuild_index": false,
+                "can_review": false,
+                "can_view": true,
+                "policy_reasons": [
+                  "Result lanes are read-only projections.",
+                  "Unsafe actions remain disabled until future governed tasks enable them."
+                ]
+              },
+              "blocked_action": "deploy_public_projection",
+              "debug": {
+                "committed_example_record": true
+              },
+              "item_id": "blocked-deploy_public_projection",
+              "limitations": [
+                "Blocked action is current policy posture, not a permanent product limitation."
+              ],
+              "operator_notes": "Blocked action lane is policy posture, not evidence of permanent unsupported status.",
+              "private_local_path_refs": [],
+              "provenance": {
+                "source_mapping": "policy/action posture"
+              },
+              "review_required": false,
+              "summary": "Blocked under current Workbench result-lane policy.",
+              "title": "deploy public projection",
+              "truth_level": "policy_block_not_capability_absence",
+              "uncertainty": [
+                "Projection is local and bounded."
+              ]
+            },
+            {
+              "action_posture": {
+                "blocked_actions": [
+                  "download",
+                  "extract",
+                  "execute",
+                  "call_model_provider",
+                  "deploy_public_projection",
+                  "run_source_probe",
+                  "mutate_master_index",
+                  "promote_preview",
+                  "rebuild_reviewed_index"
+                ],
+                "can_call_model": false,
+                "can_cite": false,
+                "can_deploy": false,
+                "can_download": false,
+                "can_execute": false,
+                "can_export": true,
+                "can_extract": false,
+                "can_inspect": true,
+                "can_promote_preview": false,
+                "can_rebuild_index": false,
+                "can_review": false,
+                "can_view": true,
+                "policy_reasons": [
+                  "Result lanes are read-only projections.",
+                  "Unsafe actions remain disabled until future governed tasks enable them."
+                ]
+              },
+              "blocked_action": "run_source_probe",
+              "debug": {
+                "committed_example_record": true
+              },
+              "item_id": "blocked-run_source_probe",
+              "limitations": [
+                "Blocked action is current policy posture, not a permanent product limitation."
+              ],
+              "operator_notes": "Blocked action lane is policy posture, not evidence of permanent unsupported status.",
+              "private_local_path_refs": [],
+              "provenance": {
+                "source_mapping": "policy/action posture"
+              },
+              "review_required": false,
+              "summary": "Blocked under current Workbench result-lane policy.",
+              "title": "run source probe",
+              "truth_level": "policy_block_not_capability_absence",
+              "uncertainty": [
+                "Projection is local and bounded."
+              ]
+            },
+            {
+              "action_posture": {
+                "blocked_actions": [
+                  "download",
+                  "extract",
+                  "execute",
+                  "call_model_provider",
+                  "deploy_public_projection",
+                  "run_source_probe",
+                  "mutate_master_index",
+                  "promote_preview",
+                  "rebuild_reviewed_index"
+                ],
+                "can_call_model": false,
+                "can_cite": false,
+                "can_deploy": false,
+                "can_download": false,
+                "can_execute": false,
+                "can_export": true,
+                "can_extract": false,
+                "can_inspect": true,
+                "can_promote_preview": false,
+                "can_rebuild_index": false,
+                "can_review": false,
+                "can_view": true,
+                "policy_reasons": [
+                  "Result lanes are read-only projections.",
+                  "Unsafe actions remain disabled until future governed tasks enable them."
+                ]
+              },
+              "blocked_action": "mutate_master_index",
+              "debug": {
+                "committed_example_record": true
+              },
+              "item_id": "blocked-mutate_master_index",
+              "limitations": [
+                "Blocked action is current policy posture, not a permanent product limitation."
+              ],
+              "operator_notes": "Blocked action lane is policy posture, not evidence of permanent unsupported status.",
+              "private_local_path_refs": [],
+              "provenance": {
+                "source_mapping": "policy/action posture"
+              },
+              "review_required": false,
+              "summary": "Blocked under current Workbench result-lane policy.",
+              "title": "mutate master index",
+              "truth_level": "policy_block_not_capability_absence",
+              "uncertainty": [
+                "Projection is local and bounded."
+              ]
+            }
+          ],
+          "lane_id": "lane-blocked_actions",
+          "lane_kind": "blocked_actions",
+          "limitations": [
+            "Blocked action is current policy posture, not a permanent product limitation."
+          ],
+          "packet_type": "ResultLanePacket",
+          "projection_profile": "operator_workbench",
+          "provenance": {
+            "live_ia_call_performed": false,
+            "source_mapping": "policy/action posture",
+            "source_probe_executed": false,
+            "store_mutation_performed": false
+          },
+          "result_count": 7,
+          "result_ids": [
+            "blocked-download",
+            "blocked-extract",
+            "blocked-execute",
+            "blocked-call_model_provider",
+            "blocked-deploy_public_projection",
+            "blocked-run_source_probe",
+            "blocked-mutate_master_index"
+          ],
+          "review_required": false,
+          "schema_version": "result_lane_packet.v0",
+          "source_mapping": "policy/action posture",
+          "state": "available",
+          "truth_level": "policy_block_not_capability_absence",
+          "uncertainty": [
+            "Local projection only; lane content does not create truth."
+          ],
+          "visible": true
+        }
+      ],
+      "non_claims": [
+        "Result lanes are projections, not truth creation.",
+        "No source probes, live IA calls, extraction, model calls, downloads, or deployment are enabled."
+      ],
+      "packet_type": "ResultLanePageView",
+      "projection_profile": "operator_workbench",
+      "query": "sampleproject",
+      "schema_version": "workbench_result_lane_page_view.v0",
+      "visible_lane_count": 15
+    },
+    "projection_profile": "operator_workbench",
+    "review_required": true,
+    "run_id": "run_profile_operator_workbench_query_c35f9f7f3a",
+    "schema_version": "run_lane_snapshot.v0",
+    "snapshot_id": "run_lane_snapshot_projection_operator_workbench_ru_517f92aded",
+    "visible_lane_count": 15
+  },
+  "run": {
+    "accepted_truth": false,
+    "active_lanes": [
+      "reviewed_local_results",
+      "local_candidate_results",
+      "source_cache_hits",
+      "ia_metadata_candidates",
+      "review_queue_items",
+      "known_absence",
+      "near_misses",
+      "blocked_actions",
+      "running_workunits",
+      "deferred_deepening",
+      "future_extraction_work",
+      "running_workunits",
+      "ia_metadata_candidates",
+      "known_absence",
+      "blocked_actions"
+    ],
+    "compiled_query_id": "compiled_profile_operator_workbench_query_c35f9f7f3a",
+    "controls_available": [
+      "project_lanes",
+      "request_ia_metadata_dry_run",
+      "pause",
+      "resume",
+      "cancel"
+    ],
+    "coverage_report_id": "coverage_run_profile_operator_workbench_q_8a60eea5dd",
+    "created_at": "2026-05-22T00:00:00Z",
+    "dry_run": true,
+    "limitations": [
+      "Foundation run store is in-memory and deterministic.",
+      "No source, evidence, review, public, operator, or master store is mutated."
+    ],
+    "packet_type": "ResolutionRunPacket",
+    "policy_decision": {
+      "allowed": true,
+      "blocked_reasons": [],
+      "command_type": "project_lanes",
+      "dry_run": true,
+      "policy": {
+        "api_is_projection_only": true,
+        "candidate_index_write_enabled": false,
+        "deployment_enabled": false,
+        "downloads_enabled": false,
+        "dry_run_default": true,
+        "evidence_write_enabled": false,
+        "execution_enabled": false,
+        "extraction_enabled": false,
+        "headless_kernel_only": true,
+        "live_ia_calls_enabled": false,
+        "live_source_calls_enabled": false,
+        "master_index_mutation_enabled": false,
+        "model_provider_enabled": false,
+        "operator_instance_mutation_enabled": false,
+        "production_readiness_claimed": false,
+        "public_fanout_enabled": false,
+        "public_launch_readiness_claimed": false,
+        "review_queue_write_enabled": false,
+        "reviewed_index_write_enabled": false,
+        "reviewed_record_creation_enabled": false,
+        "schema_version": "resolution_run_policy.v0",
+        "source_cache_write_enabled": false,
+        "source_probe_enabled": false,
+        "uploads_enabled": false,
+        "workbench_is_projection_only": true
+      },
+      "schema_version": "resolution_run_policy_decision.v0"
+    },
+    "projection_profile": "operator_workbench",
+    "query": "sampleproject",
+    "request_id": "req_sampleproject_db0de47818",
+    "review_required": false,
+    "run_id": "run_profile_operator_workbench_query_c35f9f7f3a",
+    "schema_version": "resolution_run.v0",
+    "state": "completed",
+    "state_history": [
+      {
+        "at": "2026-05-22T00:00:00Z",
+        "reason": "headless resolution run created",
+        "state": "created"
+      },
+      {
+        "at": "2026-05-22T00:00:00Z",
+        "reason": "command:start",
+        "state": "running"
+      },
+      {
+        "at": "2026-05-22T00:00:00Z",
+        "reason": "dry-run orchestration completed",
+        "state": "completed"
+      }
+    ],
+    "updated_at": "2026-05-22T00:00:00Z"
+  },
+  "schema_version": "resolution_run_kernel_result.v0",
+  "workunit_schedule": {
+    "blocked_actions": [
+      "run_source_probe",
+      "live_ia_call",
+      "download",
+      "upload",
+      "extract",
+      "call_model_provider",
+      "deploy",
+      "mutate_master_index",
+      "mutate_operator_instance"
+    ],
+    "dry_run": true,
+    "plan": {
+      "blocked_actions": [
+        "run_source_probe",
+        "live_ia_call",
+        "download",
+        "upload",
+        "extract",
+        "call_model_provider",
+        "deploy",
+        "mutate_master_index",
+        "mutate_operator_instance"
+      ],
+      "created_at": "2026-05-21T00:00:00Z",
+      "deferred_actions": [
+        "source probing",
+        "downloads",
+        "extraction",
+        "model/provider calls",
+        "deployment",
+        "public fanout"
+      ],
+      "dry_run": true,
+      "from_fixtures": true,
+      "from_ia_live_preview": false,
+      "hunt": {
+        "accepted_truth_created": false,
+        "hunt_id": "shs_be6ea3dab4874e158d1fa76dad2ede1a",
+        "live_ia_call_performed": false,
+        "query": "sampleproject",
+        "schema_version": "ia_hunt_bridge_hunt_ref.v0",
+        "search_need_id": "",
+        "source": "search_hunt",
+        "source_probe_executed": false,
+        "state": "created"
+      },
+      "limitations": [
+        "Plan is local and deterministic.",
+        "Internet Archive live metadata calls remain disabled by default."
+      ],
+      "policy": {
+        "api_is_projection_only": true,
+        "candidate_index_write_enabled": false,
+        "candidate_writes_allowed_only_in_temp_or_explicit_instance": true,
+        "deployment_enabled": false,
+        "downloads_enabled": false,
+        "dry_run_default": true,
+        "evidence_write_enabled": false,
+        "evidence_writes_allowed_only_in_temp_or_explicit_instance": true,
+        "execution_enabled": false,
+        "extraction_enabled": false,
+        "headless_kernel_only": true,
+        "live_ia_calls_enabled": false,
+        "live_ia_calls_enabled_by_default": false,
+        "live_ia_calls_require_explicit_policy": true,
+        "live_source_calls_enabled": false,
+        "master_index_mutation_enabled": false,
+        "model_provider_enabled": false,
+        "operator_instance_mutation_default": false,
+        "operator_instance_mutation_enabled": false,
+        "policy_ref": "control/policies/ia_hunt_bridge_policy.json",
+        "production_readiness_claimed": false,
+        "public_fanout_enabled": false,
+        "public_launch_readiness_claimed": false,
+        "review_queue_write_enabled": false,
+        "review_writes_allowed_only_in_temp_or_explicit_instance": true,
+        "reviewed_index_rebuild_allowed_only_in_temp_or_explicit_instance": true,
+        "reviewed_index_write_enabled": false,
+        "reviewed_record_creation_enabled": false,
+        "schema_version": "resolution_run_policy.v0",
+        "source_cache_write_enabled": false,
+        "source_cache_writes_allowed_only_in_temp_or_explicit_instance": true,
+        "source_probe_enabled": false,
+        "temp_instance_allowed": true,
+        "uploads_enabled": false,
+        "workbench_is_projection_only": true
+      },
+      "query": "sampleproject",
+      "schema_version": "ia_hunt_pipeline_plan.v0",
+      "source_family": "internet_archive_metadata",
+      "task": "IA-HUNT-BRIDGE-00",
+      "workunit_count": 10,
+      "workunits": [
+        {
+          "blocked_actions": [
+            "run_source_probe",
+            "live_ia_call",
+            "download",
+            "upload",
+            "extract",
+            "call_model_provider",
+            "deploy",
+            "mutate_master_index",
+            "mutate_operator_instance"
+          ],
+          "completed_at": "",
+          "created_at": "2026-05-21T00:00:00Z",
+          "dry_run": true,
+          "hunt_id": "shs_be6ea3dab4874e158d1fa76dad2ede1a",
+          "input_ref": {
+            "hunt_id": "shs_be6ea3dab4874e158d1fa76dad2ede1a",
+            "input_kind": "fixture_metadata",
+            "query": "sampleproject"
+          },
+          "limitations": [
+            "WorkUnit is local IA metadata orchestration only.",
+            "No live source probe, download, extraction, model call, deployment, or master-index mutation is enabled."
+          ],
+          "output_ref": {
+            "artifact_ref": "ia_hunt_bridge/shs_be6ea3dab4874e158d1fa76dad2ede1a/ia_metadata_search",
+            "hunt_id": "shs_be6ea3dab4874e158d1fa76dad2ede1a",
+            "output_kind": "metadata_search"
+          },
+          "policy_ref": "control/policies/ia_hunt_bridge_policy.json",
+          "schema_version": "ia_hunt_workunit.v0",
+          "source_family": "internet_archive_metadata",
+          "state": "queued",
+          "workunit_id": "iawu_dec4553e41ce9e9d",
+          "workunit_type": "ia_metadata_search",
+          "write_scope": "none",
+          "writes_instance_state": false
+        },
+        {
+          "blocked_actions": [
+            "run_source_probe",
+            "live_ia_call",
+            "download",
+            "upload",
+            "extract",
+            "call_model_provider",
+            "deploy",
+            "mutate_master_index",
+            "mutate_operator_instance"
+          ],
+          "completed_at": "",
+          "created_at": "2026-05-21T00:00:00Z",
+          "dry_run": true,
+          "hunt_id": "shs_be6ea3dab4874e158d1fa76dad2ede1a",
+          "input_ref": {
+            "hunt_id": "shs_be6ea3dab4874e158d1fa76dad2ede1a",
+            "input_kind": "fixture_metadata",
+            "query": "sampleproject"
+          },
+          "limitations": [
+            "WorkUnit is local IA metadata orchestration only.",
+            "No live source probe, download, extraction, model call, deployment, or master-index mutation is enabled."
+          ],
+          "output_ref": {
+            "artifact_ref": "ia_hunt_bridge/shs_be6ea3dab4874e158d1fa76dad2ede1a/ia_item_metadata_read",
+            "hunt_id": "shs_be6ea3dab4874e158d1fa76dad2ede1a",
+            "output_kind": "item_metadata_read"
+          },
+          "policy_ref": "control/policies/ia_hunt_bridge_policy.json",
+          "schema_version": "ia_hunt_workunit.v0",
+          "source_family": "internet_archive_metadata",
+          "state": "queued",
+          "workunit_id": "iawu_5feebb03635a0a9e",
+          "workunit_type": "ia_item_metadata_read",
+          "write_scope": "none",
+          "writes_instance_state": false
+        },
+        {
+          "blocked_actions": [
+            "run_source_probe",
+            "live_ia_call",
+            "download",
+            "upload",
+            "extract",
+            "call_model_provider",
+            "deploy",
+            "mutate_master_index",
+            "mutate_operator_instance"
+          ],
+          "completed_at": "",
+          "created_at": "2026-05-21T00:00:00Z",
+          "dry_run": true,
+          "hunt_id": "shs_be6ea3dab4874e158d1fa76dad2ede1a",
+          "input_ref": {
+            "hunt_id": "shs_be6ea3dab4874e158d1fa76dad2ede1a",
+            "input_kind": "fixture_metadata",
+            "query": "sampleproject"
+          },
+          "limitations": [
+            "WorkUnit is local IA metadata orchestration only.",
+            "No live source probe, download, extraction, model call, deployment, or master-index mutation is enabled."
+          ],
+          "output_ref": {
+            "artifact_ref": "ia_hunt_bridge/shs_be6ea3dab4874e158d1fa76dad2ede1a/ia_file_manifest_metadata",
+            "hunt_id": "shs_be6ea3dab4874e158d1fa76dad2ede1a",
+            "output_kind": "file_manifest_metadata"
+          },
+          "policy_ref": "control/policies/ia_hunt_bridge_policy.json",
+          "schema_version": "ia_hunt_workunit.v0",
+          "source_family": "internet_archive_metadata",
+          "state": "queued",
+          "workunit_id": "iawu_c7c130ed3915847c",
+          "workunit_type": "ia_file_manifest_metadata",
+          "write_scope": "none",
+          "writes_instance_state": false
+        },
+        {
+          "blocked_actions": [
+            "run_source_probe",
+            "live_ia_call",
+            "download",
+            "upload",
+            "extract",
+            "call_model_provider",
+            "deploy",
+            "mutate_master_index",
+            "mutate_operator_instance"
+          ],
+          "completed_at": "",
+          "created_at": "2026-05-21T00:00:00Z",
+          "dry_run": true,
+          "hunt_id": "shs_be6ea3dab4874e158d1fa76dad2ede1a",
+          "input_ref": {
+            "hunt_id": "shs_be6ea3dab4874e158d1fa76dad2ede1a",
+            "input_kind": "local_bridge_output",
+            "query": "sampleproject"
+          },
+          "limitations": [
+            "WorkUnit is local IA metadata orchestration only.",
+            "No live source probe, download, extraction, model call, deployment, or master-index mutation is enabled."
+          ],
+          "output_ref": {
+            "artifact_ref": "ia_hunt_bridge/shs_be6ea3dab4874e158d1fa76dad2ede1a/ia_source_cache_write",
+            "hunt_id": "shs_be6ea3dab4874e158d1fa76dad2ede1a",
+            "output_kind": "source_cache_write"
+          },
+          "policy_ref": "control/policies/ia_hunt_bridge_policy.json",
+          "schema_version": "ia_hunt_workunit.v0",
+          "source_family": "internet_archive_metadata",
+          "state": "queued",
+          "workunit_id": "iawu_54ac869d359cafab",
+          "workunit_type": "ia_source_cache_write",
+          "write_scope": "temp_or_explicit_instance_only",
+          "writes_instance_state": true
+        },
+        {
+          "blocked_actions": [
+            "run_source_probe",
+            "live_ia_call",
+            "download",
+            "upload",
+            "extract",
+            "call_model_provider",
+            "deploy",
+            "mutate_master_index",
+            "mutate_operator_instance"
+          ],
+          "completed_at": "",
+          "created_at": "2026-05-21T00:00:00Z",
+          "dry_run": true,
+          "hunt_id": "shs_be6ea3dab4874e158d1fa76dad2ede1a",
+          "input_ref": {
+            "hunt_id": "shs_be6ea3dab4874e158d1fa76dad2ede1a",
+            "input_kind": "local_bridge_output",
+            "query": "sampleproject"
+          },
+          "limitations": [
+            "WorkUnit is local IA metadata orchestration only.",
+            "No live source probe, download, extraction, model call, deployment, or master-index mutation is enabled."
+          ],
+          "output_ref": {
+            "artifact_ref": "ia_hunt_bridge/shs_be6ea3dab4874e158d1fa76dad2ede1a/ia_evidence_candidate_write",
+            "hunt_id": "shs_be6ea3dab4874e158d1fa76dad2ede1a",
+            "output_kind": "evidence_candidate_write"
+          },
+          "policy_ref": "control/policies/ia_hunt_bridge_policy.json",
+          "schema_version": "ia_hunt_workunit.v0",
+          "source_family": "internet_archive_metadata",
+          "state": "queued",
+          "workunit_id": "iawu_9311fe0302b2f43e",
+          "workunit_type": "ia_evidence_candidate_write",
+          "write_scope": "temp_or_explicit_instance_only",
+          "writes_instance_state": true
+        },
+        {
+          "blocked_actions": [
+            "run_source_probe",
+            "live_ia_call",
+            "download",
+            "upload",
+            "extract",
+            "call_model_provider",
+            "deploy",
+            "mutate_master_index",
+            "mutate_operator_instance"
+          ],
+          "completed_at": "",
+          "created_at": "2026-05-21T00:00:00Z",
+          "dry_run": true,
+          "hunt_id": "shs_be6ea3dab4874e158d1fa76dad2ede1a",
+          "input_ref": {
+            "hunt_id": "shs_be6ea3dab4874e158d1fa76dad2ede1a",
+            "input_kind": "local_bridge_output",
+            "query": "sampleproject"
+          },
+          "limitations": [
+            "WorkUnit is local IA metadata orchestration only.",
+            "No live source probe, download, extraction, model call, deployment, or master-index mutation is enabled."
+          ],
+          "output_ref": {
+            "artifact_ref": "ia_hunt_bridge/shs_be6ea3dab4874e158d1fa76dad2ede1a/ia_candidate_index_write",
+            "hunt_id": "shs_be6ea3dab4874e158d1fa76dad2ede1a",
+            "output_kind": "candidate_index_write"
+          },
+          "policy_ref": "control/policies/ia_hunt_bridge_policy.json",
+          "schema_version": "ia_hunt_workunit.v0",
+          "source_family": "internet_archive_metadata",
+          "state": "queued",
+          "workunit_id": "iawu_2639da25aee54efd",
+          "workunit_type": "ia_candidate_index_write",
+          "write_scope": "temp_or_explicit_instance_only",
+          "writes_instance_state": true
+        },
+        {
+          "blocked_actions": [
+            "run_source_probe",
+            "live_ia_call",
+            "download",
+            "upload",
+            "extract",
+            "call_model_provider",
+            "deploy",
+            "mutate_master_index",
+            "mutate_operator_instance"
+          ],
+          "completed_at": "",
+          "created_at": "2026-05-21T00:00:00Z",
+          "dry_run": true,
+          "hunt_id": "shs_be6ea3dab4874e158d1fa76dad2ede1a",
+          "input_ref": {
+            "hunt_id": "shs_be6ea3dab4874e158d1fa76dad2ede1a",
+            "input_kind": "local_bridge_output",
+            "query": "sampleproject"
+          },
+          "limitations": [
+            "WorkUnit is local IA metadata orchestration only.",
+            "No live source probe, download, extraction, model call, deployment, or master-index mutation is enabled."
+          ],
+          "output_ref": {
+            "artifact_ref": "ia_hunt_bridge/shs_be6ea3dab4874e158d1fa76dad2ede1a/ia_review_queue_write",
+            "hunt_id": "shs_be6ea3dab4874e158d1fa76dad2ede1a",
+            "output_kind": "review_queue_write"
+          },
+          "policy_ref": "control/policies/ia_hunt_bridge_policy.json",
+          "schema_version": "ia_hunt_workunit.v0",
+          "source_family": "internet_archive_metadata",
+          "state": "queued",
+          "workunit_id": "iawu_039c27d72a44e10a",
+          "workunit_type": "ia_review_queue_write",
+          "write_scope": "temp_or_explicit_instance_only",
+          "writes_instance_state": true
+        },
+        {
+          "blocked_actions": [
+            "run_source_probe",
+            "live_ia_call",
+            "download",
+            "upload",
+            "extract",
+            "call_model_provider",
+            "deploy",
+            "mutate_master_index",
+            "mutate_operator_instance"
+          ],
+          "completed_at": "",
+          "created_at": "2026-05-21T00:00:00Z",
+          "dry_run": true,
+          "hunt_id": "shs_be6ea3dab4874e158d1fa76dad2ede1a",
+          "input_ref": {
+            "hunt_id": "shs_be6ea3dab4874e158d1fa76dad2ede1a",
+            "input_kind": "local_bridge_output",
+            "query": "sampleproject"
+          },
+          "limitations": [
+            "WorkUnit is local IA metadata orchestration only.",
+            "No live source probe, download, extraction, model call, deployment, or master-index mutation is enabled."
+          ],
+          "output_ref": {
+            "artifact_ref": "ia_hunt_bridge/shs_be6ea3dab4874e158d1fa76dad2ede1a/ia_promotion_dry_run",
+            "hunt_id": "shs_be6ea3dab4874e158d1fa76dad2ede1a",
+            "output_kind": "promotion_dry_run"
+          },
+          "policy_ref": "control/policies/ia_hunt_bridge_policy.json",
+          "schema_version": "ia_hunt_workunit.v0",
+          "source_family": "internet_archive_metadata",
+          "state": "queued",
+          "workunit_id": "iawu_f679de3afd0fb21f",
+          "workunit_type": "ia_promotion_dry_run",
+          "write_scope": "none",
+          "writes_instance_state": false
+        },
+        {
+          "blocked_actions": [
+            "run_source_probe",
+            "live_ia_call",
+            "download",
+            "upload",
+            "extract",
+            "call_model_provider",
+            "deploy",
+            "mutate_master_index",
+            "mutate_operator_instance"
+          ],
+          "completed_at": "",
+          "created_at": "2026-05-21T00:00:00Z",
+          "dry_run": true,
+          "hunt_id": "shs_be6ea3dab4874e158d1fa76dad2ede1a",
+          "input_ref": {
+            "hunt_id": "shs_be6ea3dab4874e158d1fa76dad2ede1a",
+            "input_kind": "local_bridge_output",
+            "query": "sampleproject"
+          },
+          "limitations": [
+            "WorkUnit is local IA metadata orchestration only.",
+            "No live source probe, download, extraction, model call, deployment, or master-index mutation is enabled."
+          ],
+          "output_ref": {
+            "artifact_ref": "ia_hunt_bridge/shs_be6ea3dab4874e158d1fa76dad2ede1a/ia_reviewed_index_rebuild",
+            "hunt_id": "shs_be6ea3dab4874e158d1fa76dad2ede1a",
+            "output_kind": "reviewed_index_rebuild"
+          },
+          "policy_ref": "control/policies/ia_hunt_bridge_policy.json",
+          "schema_version": "ia_hunt_workunit.v0",
+          "source_family": "internet_archive_metadata",
+          "state": "queued",
+          "workunit_id": "iawu_dd770c35ce1c7c35",
+          "workunit_type": "ia_reviewed_index_rebuild",
+          "write_scope": "temp_or_explicit_instance_only",
+          "writes_instance_state": true
+        },
+        {
+          "blocked_actions": [
+            "run_source_probe",
+            "live_ia_call",
+            "download",
+            "upload",
+            "extract",
+            "call_model_provider",
+            "deploy",
+            "mutate_master_index",
+            "mutate_operator_instance"
+          ],
+          "completed_at": "",
+          "created_at": "2026-05-21T00:00:00Z",
+          "dry_run": true,
+          "hunt_id": "shs_be6ea3dab4874e158d1fa76dad2ede1a",
+          "input_ref": {
+            "hunt_id": "shs_be6ea3dab4874e158d1fa76dad2ede1a",
+            "input_kind": "local_bridge_output",
+            "query": "sampleproject"
+          },
+          "limitations": [
+            "WorkUnit is local IA metadata orchestration only.",
+            "No live source probe, download, extraction, model call, deployment, or master-index mutation is enabled."
+          ],
+          "output_ref": {
+            "artifact_ref": "ia_hunt_bridge/shs_be6ea3dab4874e158d1fa76dad2ede1a/ia_result_lane_project",
+            "hunt_id": "shs_be6ea3dab4874e158d1fa76dad2ede1a",
+            "output_kind": "result_lane_project"
+          },
+          "policy_ref": "control/policies/ia_hunt_bridge_policy.json",
+          "schema_version": "ia_hunt_workunit.v0",
+          "source_family": "internet_archive_metadata",
+          "state": "queued",
+          "workunit_id": "iawu_682ffc55df8b3aa4",
+          "workunit_type": "ia_result_lane_project",
+          "write_scope": "none",
+          "writes_instance_state": false
+        }
+      ]
+    },
+    "schema_version": "resolution_run_workunit_schedule.v0",
+    "source_family": "internet_archive_metadata",
+    "workunit_count": 10,
+    "workunits": [
+      {
+        "blocked_actions": [
+          "run_source_probe",
+          "live_ia_call",
+          "download",
+          "upload",
+          "extract",
+          "call_model_provider",
+          "deploy",
+          "mutate_master_index",
+          "mutate_operator_instance"
+        ],
+        "completed_at": "",
+        "created_at": "2026-05-21T00:00:00Z",
+        "dry_run": true,
+        "hunt_id": "shs_be6ea3dab4874e158d1fa76dad2ede1a",
+        "input_ref": {
+          "hunt_id": "shs_be6ea3dab4874e158d1fa76dad2ede1a",
+          "input_kind": "fixture_metadata",
+          "query": "sampleproject"
+        },
+        "limitations": [
+          "WorkUnit is local IA metadata orchestration only.",
+          "No live source probe, download, extraction, model call, deployment, or master-index mutation is enabled."
+        ],
+        "output_ref": {
+          "artifact_ref": "ia_hunt_bridge/shs_be6ea3dab4874e158d1fa76dad2ede1a/ia_metadata_search",
+          "hunt_id": "shs_be6ea3dab4874e158d1fa76dad2ede1a",
+          "output_kind": "metadata_search"
+        },
+        "policy_ref": "control/policies/ia_hunt_bridge_policy.json",
+        "schema_version": "ia_hunt_workunit.v0",
+        "source_family": "internet_archive_metadata",
+        "state": "queued",
+        "workunit_id": "iawu_dec4553e41ce9e9d",
+        "workunit_type": "ia_metadata_search",
+        "write_scope": "none",
+        "writes_instance_state": false
+      },
+      {
+        "blocked_actions": [
+          "run_source_probe",
+          "live_ia_call",
+          "download",
+          "upload",
+          "extract",
+          "call_model_provider",
+          "deploy",
+          "mutate_master_index",
+          "mutate_operator_instance"
+        ],
+        "completed_at": "",
+        "created_at": "2026-05-21T00:00:00Z",
+        "dry_run": true,
+        "hunt_id": "shs_be6ea3dab4874e158d1fa76dad2ede1a",
+        "input_ref": {
+          "hunt_id": "shs_be6ea3dab4874e158d1fa76dad2ede1a",
+          "input_kind": "fixture_metadata",
+          "query": "sampleproject"
+        },
+        "limitations": [
+          "WorkUnit is local IA metadata orchestration only.",
+          "No live source probe, download, extraction, model call, deployment, or master-index mutation is enabled."
+        ],
+        "output_ref": {
+          "artifact_ref": "ia_hunt_bridge/shs_be6ea3dab4874e158d1fa76dad2ede1a/ia_item_metadata_read",
+          "hunt_id": "shs_be6ea3dab4874e158d1fa76dad2ede1a",
+          "output_kind": "item_metadata_read"
+        },
+        "policy_ref": "control/policies/ia_hunt_bridge_policy.json",
+        "schema_version": "ia_hunt_workunit.v0",
+        "source_family": "internet_archive_metadata",
+        "state": "queued",
+        "workunit_id": "iawu_5feebb03635a0a9e",
+        "workunit_type": "ia_item_metadata_read",
+        "write_scope": "none",
+        "writes_instance_state": false
+      },
+      {
+        "blocked_actions": [
+          "run_source_probe",
+          "live_ia_call",
+          "download",
+          "upload",
+          "extract",
+          "call_model_provider",
+          "deploy",
+          "mutate_master_index",
+          "mutate_operator_instance"
+        ],
+        "completed_at": "",
+        "created_at": "2026-05-21T00:00:00Z",
+        "dry_run": true,
+        "hunt_id": "shs_be6ea3dab4874e158d1fa76dad2ede1a",
+        "input_ref": {
+          "hunt_id": "shs_be6ea3dab4874e158d1fa76dad2ede1a",
+          "input_kind": "fixture_metadata",
+          "query": "sampleproject"
+        },
+        "limitations": [
+          "WorkUnit is local IA metadata orchestration only.",
+          "No live source probe, download, extraction, model call, deployment, or master-index mutation is enabled."
+        ],
+        "output_ref": {
+          "artifact_ref": "ia_hunt_bridge/shs_be6ea3dab4874e158d1fa76dad2ede1a/ia_file_manifest_metadata",
+          "hunt_id": "shs_be6ea3dab4874e158d1fa76dad2ede1a",
+          "output_kind": "file_manifest_metadata"
+        },
+        "policy_ref": "control/policies/ia_hunt_bridge_policy.json",
+        "schema_version": "ia_hunt_workunit.v0",
+        "source_family": "internet_archive_metadata",
+        "state": "queued",
+        "workunit_id": "iawu_c7c130ed3915847c",
+        "workunit_type": "ia_file_manifest_metadata",
+        "write_scope": "none",
+        "writes_instance_state": false
+      },
+      {
+        "blocked_actions": [
+          "run_source_probe",
+          "live_ia_call",
+          "download",
+          "upload",
+          "extract",
+          "call_model_provider",
+          "deploy",
+          "mutate_master_index",
+          "mutate_operator_instance"
+        ],
+        "completed_at": "",
+        "created_at": "2026-05-21T00:00:00Z",
+        "dry_run": true,
+        "hunt_id": "shs_be6ea3dab4874e158d1fa76dad2ede1a",
+        "input_ref": {
+          "hunt_id": "shs_be6ea3dab4874e158d1fa76dad2ede1a",
+          "input_kind": "local_bridge_output",
+          "query": "sampleproject"
+        },
+        "limitations": [
+          "WorkUnit is local IA metadata orchestration only.",
+          "No live source probe, download, extraction, model call, deployment, or master-index mutation is enabled."
+        ],
+        "output_ref": {
+          "artifact_ref": "ia_hunt_bridge/shs_be6ea3dab4874e158d1fa76dad2ede1a/ia_source_cache_write",
+          "hunt_id": "shs_be6ea3dab4874e158d1fa76dad2ede1a",
+          "output_kind": "source_cache_write"
+        },
+        "policy_ref": "control/policies/ia_hunt_bridge_policy.json",
+        "schema_version": "ia_hunt_workunit.v0",
+        "source_family": "internet_archive_metadata",
+        "state": "queued",
+        "workunit_id": "iawu_54ac869d359cafab",
+        "workunit_type": "ia_source_cache_write",
+        "write_scope": "temp_or_explicit_instance_only",
+        "writes_instance_state": true
+      },
+      {
+        "blocked_actions": [
+          "run_source_probe",
+          "live_ia_call",
+          "download",
+          "upload",
+          "extract",
+          "call_model_provider",
+          "deploy",
+          "mutate_master_index",
+          "mutate_operator_instance"
+        ],
+        "completed_at": "",
+        "created_at": "2026-05-21T00:00:00Z",
+        "dry_run": true,
+        "hunt_id": "shs_be6ea3dab4874e158d1fa76dad2ede1a",
+        "input_ref": {
+          "hunt_id": "shs_be6ea3dab4874e158d1fa76dad2ede1a",
+          "input_kind": "local_bridge_output",
+          "query": "sampleproject"
+        },
+        "limitations": [
+          "WorkUnit is local IA metadata orchestration only.",
+          "No live source probe, download, extraction, model call, deployment, or master-index mutation is enabled."
+        ],
+        "output_ref": {
+          "artifact_ref": "ia_hunt_bridge/shs_be6ea3dab4874e158d1fa76dad2ede1a/ia_evidence_candidate_write",
+          "hunt_id": "shs_be6ea3dab4874e158d1fa76dad2ede1a",
+          "output_kind": "evidence_candidate_write"
+        },
+        "policy_ref": "control/policies/ia_hunt_bridge_policy.json",
+        "schema_version": "ia_hunt_workunit.v0",
+        "source_family": "internet_archive_metadata",
+        "state": "queued",
+        "workunit_id": "iawu_9311fe0302b2f43e",
+        "workunit_type": "ia_evidence_candidate_write",
+        "write_scope": "temp_or_explicit_instance_only",
+        "writes_instance_state": true
+      },
+      {
+        "blocked_actions": [
+          "run_source_probe",
+          "live_ia_call",
+          "download",
+          "upload",
+          "extract",
+          "call_model_provider",
+          "deploy",
+          "mutate_master_index",
+          "mutate_operator_instance"
+        ],
+        "completed_at": "",
+        "created_at": "2026-05-21T00:00:00Z",
+        "dry_run": true,
+        "hunt_id": "shs_be6ea3dab4874e158d1fa76dad2ede1a",
+        "input_ref": {
+          "hunt_id": "shs_be6ea3dab4874e158d1fa76dad2ede1a",
+          "input_kind": "local_bridge_output",
+          "query": "sampleproject"
+        },
+        "limitations": [
+          "WorkUnit is local IA metadata orchestration only.",
+          "No live source probe, download, extraction, model call, deployment, or master-index mutation is enabled."
+        ],
+        "output_ref": {
+          "artifact_ref": "ia_hunt_bridge/shs_be6ea3dab4874e158d1fa76dad2ede1a/ia_candidate_index_write",
+          "hunt_id": "shs_be6ea3dab4874e158d1fa76dad2ede1a",
+          "output_kind": "candidate_index_write"
+        },
+        "policy_ref": "control/policies/ia_hunt_bridge_policy.json",
+        "schema_version": "ia_hunt_workunit.v0",
+        "source_family": "internet_archive_metadata",
+        "state": "queued",
+        "workunit_id": "iawu_2639da25aee54efd",
+        "workunit_type": "ia_candidate_index_write",
+        "write_scope": "temp_or_explicit_instance_only",
+        "writes_instance_state": true
+      },
+      {
+        "blocked_actions": [
+          "run_source_probe",
+          "live_ia_call",
+          "download",
+          "upload",
+          "extract",
+          "call_model_provider",
+          "deploy",
+          "mutate_master_index",
+          "mutate_operator_instance"
+        ],
+        "completed_at": "",
+        "created_at": "2026-05-21T00:00:00Z",
+        "dry_run": true,
+        "hunt_id": "shs_be6ea3dab4874e158d1fa76dad2ede1a",
+        "input_ref": {
+          "hunt_id": "shs_be6ea3dab4874e158d1fa76dad2ede1a",
+          "input_kind": "local_bridge_output",
+          "query": "sampleproject"
+        },
+        "limitations": [
+          "WorkUnit is local IA metadata orchestration only.",
+          "No live source probe, download, extraction, model call, deployment, or master-index mutation is enabled."
+        ],
+        "output_ref": {
+          "artifact_ref": "ia_hunt_bridge/shs_be6ea3dab4874e158d1fa76dad2ede1a/ia_review_queue_write",
+          "hunt_id": "shs_be6ea3dab4874e158d1fa76dad2ede1a",
+          "output_kind": "review_queue_write"
+        },
+        "policy_ref": "control/policies/ia_hunt_bridge_policy.json",
+        "schema_version": "ia_hunt_workunit.v0",
+        "source_family": "internet_archive_metadata",
+        "state": "queued",
+        "workunit_id": "iawu_039c27d72a44e10a",
+        "workunit_type": "ia_review_queue_write",
+        "write_scope": "temp_or_explicit_instance_only",
+        "writes_instance_state": true
+      },
+      {
+        "blocked_actions": [
+          "run_source_probe",
+          "live_ia_call",
+          "download",
+          "upload",
+          "extract",
+          "call_model_provider",
+          "deploy",
+          "mutate_master_index",
+          "mutate_operator_instance"
+        ],
+        "completed_at": "",
+        "created_at": "2026-05-21T00:00:00Z",
+        "dry_run": true,
+        "hunt_id": "shs_be6ea3dab4874e158d1fa76dad2ede1a",
+        "input_ref": {
+          "hunt_id": "shs_be6ea3dab4874e158d1fa76dad2ede1a",
+          "input_kind": "local_bridge_output",
+          "query": "sampleproject"
+        },
+        "limitations": [
+          "WorkUnit is local IA metadata orchestration only.",
+          "No live source probe, download, extraction, model call, deployment, or master-index mutation is enabled."
+        ],
+        "output_ref": {
+          "artifact_ref": "ia_hunt_bridge/shs_be6ea3dab4874e158d1fa76dad2ede1a/ia_promotion_dry_run",
+          "hunt_id": "shs_be6ea3dab4874e158d1fa76dad2ede1a",
+          "output_kind": "promotion_dry_run"
+        },
+        "policy_ref": "control/policies/ia_hunt_bridge_policy.json",
+        "schema_version": "ia_hunt_workunit.v0",
+        "source_family": "internet_archive_metadata",
+        "state": "queued",
+        "workunit_id": "iawu_f679de3afd0fb21f",
+        "workunit_type": "ia_promotion_dry_run",
+        "write_scope": "none",
+        "writes_instance_state": false
+      },
+      {
+        "blocked_actions": [
+          "run_source_probe",
+          "live_ia_call",
+          "download",
+          "upload",
+          "extract",
+          "call_model_provider",
+          "deploy",
+          "mutate_master_index",
+          "mutate_operator_instance"
+        ],
+        "completed_at": "",
+        "created_at": "2026-05-21T00:00:00Z",
+        "dry_run": true,
+        "hunt_id": "shs_be6ea3dab4874e158d1fa76dad2ede1a",
+        "input_ref": {
+          "hunt_id": "shs_be6ea3dab4874e158d1fa76dad2ede1a",
+          "input_kind": "local_bridge_output",
+          "query": "sampleproject"
+        },
+        "limitations": [
+          "WorkUnit is local IA metadata orchestration only.",
+          "No live source probe, download, extraction, model call, deployment, or master-index mutation is enabled."
+        ],
+        "output_ref": {
+          "artifact_ref": "ia_hunt_bridge/shs_be6ea3dab4874e158d1fa76dad2ede1a/ia_reviewed_index_rebuild",
+          "hunt_id": "shs_be6ea3dab4874e158d1fa76dad2ede1a",
+          "output_kind": "reviewed_index_rebuild"
+        },
+        "policy_ref": "control/policies/ia_hunt_bridge_policy.json",
+        "schema_version": "ia_hunt_workunit.v0",
+        "source_family": "internet_archive_metadata",
+        "state": "queued",
+        "workunit_id": "iawu_dd770c35ce1c7c35",
+        "workunit_type": "ia_reviewed_index_rebuild",
+        "write_scope": "temp_or_explicit_instance_only",
+        "writes_instance_state": true
+      },
+      {
+        "blocked_actions": [
+          "run_source_probe",
+          "live_ia_call",
+          "download",
+          "upload",
+          "extract",
+          "call_model_provider",
+          "deploy",
+          "mutate_master_index",
+          "mutate_operator_instance"
+        ],
+        "completed_at": "",
+        "created_at": "2026-05-21T00:00:00Z",
+        "dry_run": true,
+        "hunt_id": "shs_be6ea3dab4874e158d1fa76dad2ede1a",
+        "input_ref": {
+          "hunt_id": "shs_be6ea3dab4874e158d1fa76dad2ede1a",
+          "input_kind": "local_bridge_output",
+          "query": "sampleproject"
+        },
+        "limitations": [
+          "WorkUnit is local IA metadata orchestration only.",
+          "No live source probe, download, extraction, model call, deployment, or master-index mutation is enabled."
+        ],
+        "output_ref": {
+          "artifact_ref": "ia_hunt_bridge/shs_be6ea3dab4874e158d1fa76dad2ede1a/ia_result_lane_project",
+          "hunt_id": "shs_be6ea3dab4874e158d1fa76dad2ede1a",
+          "output_kind": "result_lane_project"
+        },
+        "policy_ref": "control/policies/ia_hunt_bridge_policy.json",
+        "schema_version": "ia_hunt_workunit.v0",
+        "source_family": "internet_archive_metadata",
+        "state": "queued",
+        "workunit_id": "iawu_682ffc55df8b3aa4",
+        "workunit_type": "ia_result_lane_project",
+        "write_scope": "none",
+        "writes_instance_state": false
+      }
+    ]
+  }
+}

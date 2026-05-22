@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/resolution_run/run_coverage_report.v0.json",
+  "title": "RunCoverageReport",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "coverage_report_id",
+    "run_id",
+    "created_at",
+    "checked_layers",
+    "unchecked_layers",
+    "accepted_truth"
+  ],
+  "properties": {
+    "schema_version": { "const": "run_coverage_report.v0" },
+    "coverage_report_id": { "type": "string" },
+    "run_id": { "type": "string" },
+    "created_at": { "type": "string" },
+    "checked_layers": { "type": "array" },
+    "unchecked_layers": { "type": "array" },
+    "accepted_truth": { "const": false }
+  },
+  "additionalProperties": true
+}

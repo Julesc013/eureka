@@ -1,0 +1,26 @@
+{
+  "schema_version": "resolution_run_failure_repair_log.v0",
+  "task": "AIDE-BATCH-RUN-KERNEL-01",
+  "repairs": [
+    {
+      "failure": "Full discovery failed because older HUNT/LOCAL validators did not recognize the run-kernel and Workbench live-run handoff as valid post-HUNT/post-LOCAL queue progress.",
+      "root_cause": "Queue-progress allowlists had advanced through G0/IA-HUNT/SOURCE-WAVE, but not the newly inserted Resolution Run Kernel and WORKBENCH-LIVE-RUN tasks.",
+      "repair": "Extended post-HUNT and local handoff allowlists and the Search Hunt track regex to include AIDE-BATCH-RUN-KERNEL-01, RESOLUTION-RUN-KERNEL-00, WORKBENCH-LIVE-RUN-01, IA-LIVE-METADATA-LANE-01, WORKBENCH-REVIEW-PROMOTE-01, and LOCAL-APPLY-GATE-01.",
+      "changed_paths": [
+        "scripts/hunt_queue_progress.py",
+        "scripts/validate_local_appliance_track.py",
+        "tests/operations/test_search_hunt_track.py"
+      ],
+      "rerun_commands": [
+        "python -m unittest tests.operations.test_hunt_remediation tests.operations.test_hunt_remediation_continue tests.operations.test_local_appliance_track tests.operations.test_search_hunt_closeout tests.operations.test_search_hunt_track",
+        "python scripts/validate_hunt_remediation.py",
+        "python scripts/validate_hunt_remediation_continue.py",
+        "python scripts/validate_local_appliance_track.py",
+        "python scripts/validate_search_hunt_track.py",
+        "python scripts/validate_search_hunt_closeout.py",
+        "python -m unittest discover -s tests -t ."
+      ],
+      "result": "pass"
+    }
+  ]
+}

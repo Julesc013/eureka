@@ -1,0 +1,90 @@
+{
+  "schema_version": "resolution_run_validation_matrix.v0",
+  "task": "AIDE-BATCH-RUN-KERNEL-01",
+  "status": "pass",
+  "checks": [
+    {
+      "name": "test_selector",
+      "command": "python scripts/eureka_test_select.py --changed --failed-first --json",
+      "status": "pass"
+    },
+    {
+      "name": "resolution_run_validator",
+      "command": "python scripts/validate_resolution_run_kernel.py --json",
+      "status": "pass"
+    },
+    {
+      "name": "focused_run_kernel_tests",
+      "command": "python -m unittest tests.runtime.test_resolution_run_kernel tests.runtime.test_resolution_run_projection tests.operations.test_resolution_run_scripts tests.scripts.test_validate_resolution_run_kernel",
+      "status": "pass",
+      "test_count": 9
+    },
+    {
+      "name": "selected_router_tests",
+      "command": "python -m unittest tests.operations.test_contract_taxonomy tests.operations.test_repo_structure_canon tests.scripts.test_validate_test_lane_policy tests.scripts.test_eureka_test_select tests.operations.test_test_lane_policy tests.operations.test_test_impact_map tests.operations.test_test_failure_ledger",
+      "status": "pass",
+      "test_count": 22
+    },
+    {
+      "name": "full_discovery_failure_repair",
+      "commands": [
+        "python -m unittest tests.operations.test_hunt_remediation tests.operations.test_hunt_remediation_continue tests.operations.test_local_appliance_track tests.operations.test_search_hunt_closeout tests.operations.test_search_hunt_track",
+        "python scripts/validate_hunt_remediation.py",
+        "python scripts/validate_hunt_remediation_continue.py",
+        "python scripts/validate_local_appliance_track.py",
+        "python scripts/validate_search_hunt_track.py",
+        "python scripts/validate_search_hunt_closeout.py"
+      ],
+      "status": "pass",
+      "test_count": 34
+    },
+    {
+      "name": "architecture_boundaries",
+      "command": "python scripts/check_architecture_boundaries.py",
+      "status": "pass"
+    },
+    {
+      "name": "generated_artifact_cleanliness",
+      "command": "python scripts/check_generated_artifact_cleanliness.py --check --json",
+      "status": "pass"
+    },
+    {
+      "name": "adjacent_foundation_validators",
+      "commands": [
+        "python scripts/validate_g0_foundation.py",
+        "python scripts/validate_f0_foundation.py",
+        "python scripts/validate_scout_schema.py",
+        "python scripts/validate_domain_packs.py",
+        "python scripts/validate_syn_foundry.py",
+        "python scripts/validate_ia_hunt_bridge.py",
+        "python scripts/validate_workbench_result_lanes.py",
+        "python scripts/validate_search_interaction_contract.py",
+        "python scripts/validate_workbench_foundation.py",
+        "python scripts/validate_test_lane_policy.py",
+        "python scripts/validate_contract_taxonomy.py",
+        "python scripts/validate_repo_structure_canon.py"
+      ],
+      "status": "pass"
+    }
+  ],
+  "full_unittest_discovery": {
+    "status": "pass",
+    "command": "python -m unittest discover -s tests -t .",
+    "test_count": 4880,
+    "duration_seconds": 2628.635,
+    "summary_path": "control/audits/resolution-run-kernel-01-v0/generated/full_unittest_summary.txt"
+  },
+  "boundaries": {
+    "source_probe_executed": false,
+    "live_ia_call_performed": false,
+    "download_performed": false,
+    "upload_performed": false,
+    "extraction_executed": false,
+    "model_provider_used": false,
+    "operator_instance_mutated": false,
+    "master_index_mutated": false,
+    "deployment_performed": false,
+    "production_readiness_claimed": false,
+    "public_launch_readiness_claimed": false
+  }
+}

@@ -1,0 +1,8 @@
+id: AIDE-BATCH-RUN-KERNEL-01
+title: Headless resolution-run orchestrator, event log, command bus, lane projector, and projection seam
+status: completed_pending_commit
+purpose: Add a portable headless resolution-run kernel before Workbench live run wiring or source-family expansion.
+allowed_scope_summary: Resolution-run contracts, policies, runtime kernel, CLI, validator, tests, docs, audit evidence, and AIDE queue/context metadata.
+gate: No live source calls, source probes, downloads/uploads, extraction, model/provider calls, operator/master/public index mutation, accepted truth, deployment, production readiness claim, or public launch claim.
+recommended_after: G0
+recommended_next: WORKBENCH-LIVE-RUN-01

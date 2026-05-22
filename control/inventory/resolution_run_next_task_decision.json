@@ -1,0 +1,7 @@
+{
+  "schema_version": "resolution_run_next_task_decision.v0",
+  "task": "AIDE-BATCH-RUN-KERNEL-01",
+  "recommended_next_task": "WORKBENCH-LIVE-RUN-01 — Project headless resolution runs into the local Workbench",
+  "deferred_task": "SOURCE-WAVE-00 — Next source-family metadata wave planning",
+  "reason": "The headless kernel should project into Workbench before adding more source families."
+}

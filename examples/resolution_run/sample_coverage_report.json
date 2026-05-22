@@ -1,0 +1,29 @@
+{
+  "accepted_truth": false,
+  "checked_layers": [
+    "headless_run_created",
+    "query_compiled",
+    "local_lane_projection",
+    "ia_hunt_workunit_dry_run",
+    "blocked_action_posture"
+  ],
+  "coverage_report_id": "coverage_run_profile_operator_workbench_q_8a60eea5dd",
+  "created_at": "2026-05-22T00:00:00Z",
+  "lane_count": 15,
+  "limitations": [
+    "Coverage is scoped to committed fixtures and dry-run WorkUnit planning.",
+    "Live IA metadata and browser apply flows remain future governed work."
+  ],
+  "review_required": true,
+  "run_id": "run_profile_operator_workbench_query_c35f9f7f3a",
+  "schema_version": "run_coverage_report.v0",
+  "unchecked_layers": [
+    "live_source_metadata",
+    "downloads",
+    "extraction",
+    "review_promote_apply",
+    "operator_instance_apply",
+    "public_fanout"
+  ],
+  "workunit_count": 10
+}

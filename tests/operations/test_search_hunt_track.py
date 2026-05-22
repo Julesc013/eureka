@@ -30,7 +30,7 @@ class SearchHuntTrackTests(unittest.TestCase):
         if not post_hunt_current_allowed(ROOT):
             self.assertRegex(
                 queue,
-                r"current_recommended_task: (HUNT-(0[1-9]|1[0-2])|SYN-00|DOMAIN-00|SCOUT-SCHEMA-00|F0-00|G0|HUNT-REMEDIATION|HUNT-TO-MAIN-PROMOTION-REVIEW|DEV-AND-IA-[A-Z0-9-]+|REPO-LAYOUT-[A-Z0-9-]+|IA-HUNT-BRIDGE-00)\b",
+                r"current_recommended_task: (HUNT-(0[1-9]|1[0-2])|SYN-00|DOMAIN-00|SCOUT-SCHEMA-00|F0-00|G0|HUNT-REMEDIATION|HUNT-TO-MAIN-PROMOTION-REVIEW|DEV-AND-IA-[A-Z0-9-]+|REPO-LAYOUT-[A-Z0-9-]+|IA-HUNT-BRIDGE-00|RESOLUTION-RUN-KERNEL-00|WORKBENCH-LIVE-RUN-01)\b",
             )
 
     def test_local_appliance_and_workunit_dependencies_are_required(self) -> None:

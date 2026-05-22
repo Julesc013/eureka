@@ -1,0 +1,14 @@
+{
+  "schema_version": "resolution_run_contract_matrix.v0",
+  "task": "AIDE-BATCH-RUN-KERNEL-01",
+  "contracts": [
+    { "contract": "resolution_run.v0", "path": "contracts/resolution_run/resolution_run.v0.json" },
+    { "contract": "run_event.v0", "path": "contracts/resolution_run/run_event.v0.json" },
+    { "contract": "run_command.v0", "path": "contracts/resolution_run/run_command.v0.json" },
+    { "contract": "run_lane_snapshot.v0", "path": "contracts/resolution_run/run_lane_snapshot.v0.json" },
+    { "contract": "run_coverage_report.v0", "path": "contracts/resolution_run/run_coverage_report.v0.json" }
+  ],
+  "authority_class": "PRODUCT_INTERNAL_CONTRACT",
+  "runtime_owns_behavior": true,
+  "surfaces_are_projection_only": true
+}

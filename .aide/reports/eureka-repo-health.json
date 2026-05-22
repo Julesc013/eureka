@@ -1,17 +1,18 @@
 {
   "branch": "dev",
-  "current_recommended_task": "SOURCE-WAVE-00 — Next source-family metadata wave planning",
-  "current_task": "AIDE-BATCH-G0-QUALITY-FOUNDATION-01",
+  "current_recommended_task": "WORKBENCH-LIVE-RUN-01 — Project headless resolution runs into the local Workbench",
+  "current_task": "AIDE-BATCH-RUN-KERNEL-01",
   "deployment_performed": false,
   "f0_current_status": "completed",
-  "full_unittest_discovery_count": 4871,
+  "full_unittest_discovery_count": 4880,
   "full_unittest_discovery_status": "pass",
   "g0_current_status": "completed",
-  "latest_completed_task": "AIDE-BATCH-G0-QUALITY-FOUNDATION-01",
+  "latest_completed_task": "AIDE-BATCH-RUN-KERNEL-01",
   "lan_enabled": false,
   "main_pushed": false,
   "production_readiness_claimed": false,
   "public_launch_readiness_claimed": false,
+  "resolution_run_kernel_status": "completed_pending_commit",
   "schema_version": "eureka_repo_health.v0",
   "updated": "2026-05-22"
 }

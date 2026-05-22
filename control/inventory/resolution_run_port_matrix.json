@@ -1,0 +1,13 @@
+{
+  "schema_version": "resolution_run_port_matrix.v0",
+  "task": "AIDE-BATCH-RUN-KERNEL-01",
+  "ports": [
+    { "port": "RunStore", "foundation_adapter": "InMemoryRunStore", "writes_operator_instance": false },
+    { "port": "RunEventLog", "foundation_adapter": "InMemoryRunEventLog", "writes_operator_instance": false },
+    { "port": "LaneProjector", "foundation_adapter": "build_run_lane_snapshot", "writes_operator_instance": false },
+    { "port": "WorkUnitScheduler", "foundation_adapter": "schedule_ia_hunt_workunits", "writes_operator_instance": false },
+    { "port": "PolicyGate", "foundation_adapter": "evaluate_run_policy", "writes_operator_instance": false },
+    { "port": "ProjectionAdapter", "foundation_adapter": "projection_profile on lane snapshot", "writes_operator_instance": false }
+  ],
+  "future_adapters": ["FilesystemRunStore", "SQLiteRunStore", "WorkbenchAdapter", "APIAdapter", "CLIAdapter", "SnapshotAdapter"]
+}

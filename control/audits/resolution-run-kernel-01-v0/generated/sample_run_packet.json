@@ -1,0 +1,95 @@
+{
+  "accepted_truth": false,
+  "active_lanes": [
+    "reviewed_local_results",
+    "local_candidate_results",
+    "source_cache_hits",
+    "ia_metadata_candidates",
+    "review_queue_items",
+    "known_absence",
+    "near_misses",
+    "blocked_actions",
+    "running_workunits",
+    "deferred_deepening",
+    "future_extraction_work",
+    "running_workunits",
+    "ia_metadata_candidates",
+    "known_absence",
+    "blocked_actions"
+  ],
+  "compiled_query_id": "compiled_profile_operator_workbench_query_c35f9f7f3a",
+  "controls_available": [
+    "project_lanes",
+    "request_ia_metadata_dry_run",
+    "pause",
+    "resume",
+    "cancel"
+  ],
+  "coverage_report_id": "coverage_run_profile_operator_workbench_q_8a60eea5dd",
+  "created_at": "2026-05-22T00:00:00Z",
+  "dry_run": true,
+  "limitations": [
+    "Foundation run store is in-memory and deterministic.",
+    "No source, evidence, review, public, operator, or master store is mutated."
+  ],
+  "packet_type": "ResolutionRunPacket",
+  "policy_decision": {
+    "allowed": true,
+    "blocked_reasons": [],
+    "command_type": "project_lanes",
+    "dry_run": true,
+    "policy": {
+      "api_is_projection_only": true,
+      "candidate_index_write_enabled": false,
+      "deployment_enabled": false,
+      "downloads_enabled": false,
+      "dry_run_default": true,
+      "evidence_write_enabled": false,
+      "execution_enabled": false,
+      "extraction_enabled": false,
+      "headless_kernel_only": true,
+      "live_ia_calls_enabled": false,
+      "live_source_calls_enabled": false,
+      "master_index_mutation_enabled": false,
+      "model_provider_enabled": false,
+      "operator_instance_mutation_enabled": false,
+      "production_readiness_claimed": false,
+      "public_fanout_enabled": false,
+      "public_launch_readiness_claimed": false,
+      "review_queue_write_enabled": false,
+      "reviewed_index_write_enabled": false,
+      "reviewed_record_creation_enabled": false,
+      "schema_version": "resolution_run_policy.v0",
+      "source_cache_write_enabled": false,
+      "source_probe_enabled": false,
+      "uploads_enabled": false,
+      "workbench_is_projection_only": true
+    },
+    "schema_version": "resolution_run_policy_decision.v0"
+  },
+  "projection_profile": "operator_workbench",
+  "query": "sampleproject",
+  "request_id": "req_sampleproject_db0de47818",
+  "review_required": false,
+  "run_id": "run_profile_operator_workbench_query_c35f9f7f3a",
+  "schema_version": "resolution_run.v0",
+  "state": "completed",
+  "state_history": [
+    {
+      "at": "2026-05-22T00:00:00Z",
+      "reason": "headless resolution run created",
+      "state": "created"
+    },
+    {
+      "at": "2026-05-22T00:00:00Z",
+      "reason": "command:start",
+      "state": "running"
+    },
+    {
+      "at": "2026-05-22T00:00:00Z",
+      "reason": "dry-run orchestration completed",
+      "state": "completed"
+    }
+  ],
+  "updated_at": "2026-05-22T00:00:00Z"
+}

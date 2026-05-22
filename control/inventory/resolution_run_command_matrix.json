@@ -1,0 +1,8 @@
+{
+  "schema_version": "resolution_run_command_matrix.v0",
+  "task": "AIDE-BATCH-RUN-KERNEL-01",
+  "allowed_commands": ["start", "pause", "resume", "cancel", "project_lanes", "request_ia_metadata_dry_run"],
+  "blocked_commands": ["run_live_source_probe", "run_live_ia_metadata", "download", "extract", "execute", "call_model_provider", "mutate_operator_instance", "mutate_master_index", "deploy", "promote_reviewed_record"],
+  "blocked_by_default": true,
+  "operator_apply_gate_future_task": "LOCAL-APPLY-GATE-01"
+}

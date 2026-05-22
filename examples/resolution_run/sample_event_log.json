@@ -1,0 +1,87 @@
+{
+  "events": [
+    {
+      "accepted_truth": false,
+      "created_at": "2026-05-22T00:00:00Z",
+      "event_id": "runevt_event_type_run_created_index_0_r_53a04d4b4a",
+      "event_type": "run_created",
+      "payload": {
+        "query": "sampleproject"
+      },
+      "review_required": false,
+      "run_id": "run_profile_operator_workbench_query_c35f9f7f3a",
+      "schema_version": "run_event.v0"
+    },
+    {
+      "accepted_truth": false,
+      "created_at": "2026-05-22T00:00:00Z",
+      "event_id": "runevt_event_type_query_compiled_index__f9a4081333",
+      "event_type": "query_compiled",
+      "payload": {
+        "compiled_query_id": "compiled_profile_operator_workbench_query_c35f9f7f3a"
+      },
+      "review_required": false,
+      "run_id": "run_profile_operator_workbench_query_c35f9f7f3a",
+      "schema_version": "run_event.v0"
+    },
+    {
+      "accepted_truth": false,
+      "created_at": "2026-05-22T00:00:00Z",
+      "event_id": "runevt_event_type_command_applied_index_f2761e3738",
+      "event_type": "command_applied",
+      "payload": {
+        "command": {
+          "allowed": true,
+          "blocked_reasons": [],
+          "command_id": "runcmd_run_run_profile_operator_workben_184157e754",
+          "command_type": "start",
+          "created_at": "2026-05-22T00:00:00Z",
+          "dry_run": true,
+          "payload": {},
+          "run_id": "run_profile_operator_workbench_query_c35f9f7f3a",
+          "schema_version": "run_command.v0"
+        }
+      },
+      "review_required": false,
+      "run_id": "run_profile_operator_workbench_query_c35f9f7f3a",
+      "schema_version": "run_event.v0"
+    },
+    {
+      "accepted_truth": false,
+      "created_at": "2026-05-22T00:00:00Z",
+      "event_id": "runevt_event_type_workunits_scheduled_i_9895fcffc3",
+      "event_type": "workunits_scheduled",
+      "payload": {
+        "workunit_count": 10
+      },
+      "review_required": false,
+      "run_id": "run_profile_operator_workbench_query_c35f9f7f3a",
+      "schema_version": "run_event.v0"
+    },
+    {
+      "accepted_truth": false,
+      "created_at": "2026-05-22T00:00:00Z",
+      "event_id": "runevt_event_type_lane_snapshot_built_i_59561f644c",
+      "event_type": "lane_snapshot_built",
+      "payload": {
+        "snapshot_id": "run_lane_snapshot_projection_operator_workbench_ru_517f92aded"
+      },
+      "review_required": false,
+      "run_id": "run_profile_operator_workbench_query_c35f9f7f3a",
+      "schema_version": "run_event.v0"
+    },
+    {
+      "accepted_truth": false,
+      "created_at": "2026-05-22T00:00:00Z",
+      "event_id": "runevt_event_type_coverage_report_built_cf913c7f5a",
+      "event_type": "coverage_report_built",
+      "payload": {
+        "coverage_report_id": "coverage_run_profile_operator_workbench_q_8a60eea5dd"
+      },
+      "review_required": false,
+      "run_id": "run_profile_operator_workbench_query_c35f9f7f3a",
+      "schema_version": "run_event.v0"
+    }
+  ],
+  "schema_version": "run_event_log.v0"
+}

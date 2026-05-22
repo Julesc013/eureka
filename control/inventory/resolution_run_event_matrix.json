@@ -1,0 +1,15 @@
+{
+  "schema_version": "resolution_run_event_matrix.v0",
+  "task": "AIDE-BATCH-RUN-KERNEL-01",
+  "event_types": [
+    "run_created",
+    "query_compiled",
+    "command_applied",
+    "command_blocked",
+    "workunits_scheduled",
+    "lane_snapshot_built",
+    "coverage_report_built"
+  ],
+  "event_log_mutates_truth": false,
+  "event_log_requires_review_for_downstream_truth": true
+}

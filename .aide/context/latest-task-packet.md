@@ -2,111 +2,67 @@
 
 ## PHASE
 
-AIDE-BATCH-G0-QUALITY-FOUNDATION-01
+AIDE-BATCH-RUN-KERNEL-01
 
 ## GOAL
 
-Add deterministic fixture-only G0 foundations for ranking, explanation,
-identity grouping, near misses, user-cost/actionability scoring, and a read-only
-Workbench quality console model.
+Add a portable headless Resolution Run Kernel before Workbench live-run wiring
+or source-family expansion.
 
 ## WHY
 
-G0 gives Eureka transparent quality packets over Local/HUNT/PLAY/IA/Workbench,
-SYN, DOMAIN, SCOUT, and F0 records without creating truth, changing public
-ranking, accepting identity merges, or mutating indexes.
+The Workbench, CLI, API, TUI, native, relay, and snapshot clients should project
+one reusable run kernel rather than directly calling IA-specific scripts.
 
 ## CONTEXT_REFS
 
 - `AGENTS.md`
-- `.aide/queue/AIDE-BATCH-G0-QUALITY-FOUNDATION-01/task.yaml`
-- `.aide/queue/G0/task.yaml`
-- `.aide/queue/index.yaml`
-- `control/inventory/g0_foundation_result.json`
-- `control/audits/g0-quality-foundation-01-v0/`
+- `.aide/queue/AIDE-BATCH-RUN-KERNEL-01/task.yaml`
+- `.aide/queue/WORKBENCH-LIVE-RUN-01/task.yaml`
 - `.aide/context/repo-map.json`
 - `.aide/context/test-map.json`
 - `.aide/context/context-index.json`
 - `.aide/context/latest-context-packet.md`
-- `docs/architecture/G0_RANKING_EXPLANATION_QUALITY.md`
-- `runtime/local_eval/g0_quality.py`
-- `scripts/validate_g0_foundation.py`
+- `contracts/resolution_run/`
+- `runtime/resolution_run/`
+- `scripts/eureka_resolution_run.py`
+- `scripts/validate_resolution_run_kernel.py`
+- `control/inventory/resolution_run_result.json`
+- `docs/architecture/RESOLUTION_RUN_KERNEL.md`
+- `control/audits/resolution-run-kernel-01-v0/`
 
 ## ALLOWED_PATHS
 
-- `.aide/queue/AIDE-BATCH-G0-QUALITY-FOUNDATION-01/**`
-- `.aide/queue/G0/task.yaml`
+- `.aide/queue/AIDE-BATCH-RUN-KERNEL-01/**`
+- `.aide/queue/WORKBENCH-LIVE-RUN-01/**`
 - `.aide/queue/SOURCE-WAVE-00/task.yaml`
-- `.aide/queue/SNAPSHOT-RELAY-00/task.yaml`
-- `.aide/queue/WORKBENCH-QUALITY-CONSOLE-01/task.yaml`
-- `.aide/queue/WORKBENCH-QUALITY-CONSOLE-01/**`
 - `.aide/queue/index.yaml`
 - `.aide/context/latest-task-packet.md`
 - `.aide/context/latest-review-packet.md`
 - `.aide/reports/eureka-repo-health.json`
 - `.aide/reports/eureka-repo-health.md`
-- `contracts/search_quality/**`
-- `contracts/ranking/**`
-- `contracts/explanation/**`
-- `contracts/identity/**`
-- `contracts/user_cost/**`
-- `contracts/search_interaction/**`
-- `contracts/workbench/**`
-- `contracts/view_models/**`
-- `contracts/domain/**`
-- `contracts/scout/**`
-- `contracts/syn/**`
-- `contracts/extraction/**`
-- `runtime/local_eval/**`
-- `runtime/local_workbench/**`
-- `runtime/local_service/**`
-- `runtime/search_hunt/**`
-- `runtime/search_need/**`
-- `runtime/workunit_queue/**`
-- `runtime/public_index/**`
-- `runtime/candidate_index/**`
-- `runtime/source_cache/**`
-- `runtime/evidence_ledger/**`
-- `runtime/review_queue/**`
-- `runtime/extraction_safe_fixtures/**`
-- `examples/search_quality/**`
-- `examples/ranking/**`
-- `examples/explanation/**`
-- `examples/identity/**`
-- `examples/user_cost/**`
-- `examples/f0/**`
-- `examples/scout/**`
-- `examples/domain/**`
-- `examples/syn/**`
-- `examples/ia_hunt_bridge/**`
-- `examples/workbench/result_lanes/**`
-- `evals/search_quality/**`
-- `evals/ranking/**`
-- `evals/explanation/**`
-- `evals/identity/**`
-- `evals/user_cost/**`
-- `evals/f0/**`
-- `evals/scout/**`
-- `evals/domain/**`
-- `evals/syn/**`
-- `scripts/eureka_g0_*.py`
-- `scripts/validate_g0_foundation.py`
-- `scripts/validate_f0_foundation.py`
-- `scripts/validate_scout_schema.py`
-- `scripts/validate_domain_packs.py`
-- `scripts/validate_syn_foundry.py`
-- `scripts/eureka_test_select.py`
-- `tests/runtime/test_g0_*.py`
-- `tests/operations/test_g0_*.py`
+- `contracts/resolution_run/**`
+- `runtime/resolution_run/**`
+- `scripts/eureka_resolution_run.py`
+- `scripts/validate_resolution_run_kernel.py`
+- `scripts/hunt_queue_progress.py`
+- `scripts/validate_local_appliance_track.py`
+- `tests/runtime/test_resolution_run_*.py`
+- `tests/operations/test_resolution_run_scripts.py`
 - `tests/operations/test_search_hunt_track.py`
-- `tests/scripts/test_validate_g0_foundation.py`
-- `control/policies/g0_*.json`
-- `control/inventory/g0_*.json`
-- `docs/architecture/G0_*.md`
-- `docs/operations/G0_FOUNDATION_RUNBOOK.md`
-- `docs/operations/POST_G0_FOUNDATION_PLAN.md`
-- `docs/reference/G0_*.md`
-- `control/audits/g0-quality-foundation-01-v0/**`
+- `tests/scripts/test_validate_resolution_run_kernel.py`
+- `control/policies/resolution_run_*.json`
+- `control/inventory/resolution_run_*.json`
+- `examples/resolution_run/**`
+- `docs/architecture/RESOLUTION_RUN_KERNEL.md`
+- `docs/operations/RESOLUTION_RUN_KERNEL_RUNBOOK.md`
+- `docs/operations/POST_RESOLUTION_RUN_KERNEL_PLAN.md`
+- `docs/reference/RESOLUTION_RUN_PACKET.md`
+- `docs/reference/RUN_EVENT_LOG.md`
+- `docs/reference/RUN_COMMAND_BUS.md`
+- `docs/reference/RUN_LANE_SNAPSHOT.md`
+- `docs/reference/RUN_COVERAGE_REPORT.md`
+- `control/audits/resolution-run-kernel-01-v0/**`
 
 ## FORBIDDEN_PATHS
 
@@ -130,55 +86,53 @@ ranking, accepting identity merges, or mutating indexes.
 
 ## NON_GOALS
 
-- No production ranking engine.
-- No accepted identity merge.
-- No evidence or reviewed-record creation.
-- No live source calls, source probes, downloads, extraction, execution, model/provider calls, or deployment.
-- No operator instance, public index, or master index mutation.
+- No Workbench live-run UI implementation.
+- No live IA calls by default.
+- No source probes, downloads, extraction, execution, model/provider calls, or deployment.
+- No evidence, reviewed-record, source-cache, candidate, review, public, operator, or master-index mutation.
 - No production readiness or public launch claim.
 
 ## IMPLEMENTATION
 
-- Added G0 policies, contracts, matrices, examples, docs, and audit evidence.
-- Added `runtime/local_eval/g0_quality.py` with read-only deterministic helpers.
-- Added G0 CLIs and validator.
-- Added focused runtime, operation, smoke, and validator tests.
+- Added resolution-run contracts, policies, matrices, docs, examples, and audit evidence.
+- Added `runtime/resolution_run/` with in-memory run store, event log, policy gate, command handler, WorkUnit scheduler, lane projector, and dry-run kernel.
+- Added CLI and validator over the same kernel.
+- Added focused runtime, operation, and validator tests.
 
 ## ACCEPTANCE
 
-- G0 contracts, policies, matrices, examples, docs, scripts, and tests are present.
-- Score breakdowns, explanation packets, provisional identity clusters, near misses, and user-cost scores validate.
-- Operator, public, and native read-only console projections pass smoke checks.
-- Full unittest discovery passes for closeout.
-- Boundary flags remain false for fake evidence, fake verified records, accepted identity merge, source probes, live calls, downloads, extraction, model/provider calls, index mutation, deployment, and production/public launch claims.
+- Dry-run run creation passes.
+- Event log appends and reads events.
+- Command bus applies safe commands and blocks unsafe commands.
+- IA-Hunt WorkUnits are planned in dry-run only.
+- Lane snapshots are emitted for operator, public, and native read-only projections.
+- Boundary flags remain false.
 
 ## VALIDATION
 
-- `python scripts/validate_g0_foundation.py`
-- G0 focused tests
+- `python scripts/validate_resolution_run_kernel.py`
+- `python -m unittest tests.runtime.test_resolution_run_kernel tests.runtime.test_resolution_run_projection tests.operations.test_resolution_run_scripts tests.scripts.test_validate_resolution_run_kernel`
 - selected test lane router
-- global validators
-- full discovery at closeout when practical
+- global validators as needed
 
 ## OUTPUT_SCHEMA
 
-- Result: `control/inventory/g0_foundation_result.json`
-- Validation matrix: `control/inventory/g0_validation_matrix.json`
-- Next task decision: `control/inventory/g0_foundation_next_task_decision.json`
-- Audit report: `control/audits/g0-quality-foundation-01-v0/g0_foundation_report.json`
+- Result: `control/inventory/resolution_run_result.json`
+- Validation matrix: `control/inventory/resolution_run_validation_matrix.json`
+- Next task decision: `control/inventory/resolution_run_next_task_decision.json`
+- Audit report: `control/audits/resolution-run-kernel-01-v0/resolution_run_kernel_report.json`
 
 ## TOKEN_ESTIMATE
 
-- Latest task packet: compact handoff-sized packet, under AIDE Lite validation budget.
-- Latest review packet: generated by `python .aide/scripts/aide_lite.py review-pack`.
+- Compact handoff-sized packet under AIDE Lite validation budget.
 
 ## COMMITS
 
-- Planned: `feat(g0): add quality explanation foundation`
+- Planned: `feat(run): add resolution run kernel`
 
 ## EVIDENCE
 
-- `control/inventory/g0_validation_matrix.json`
-- `control/inventory/g0_foundation_result.json`
-- `control/audits/g0-quality-foundation-01-v0/g0_foundation_report.json`
-- `control/audits/g0-quality-foundation-01-v0/generated/`
+- `control/inventory/resolution_run_validation_matrix.json`
+- `control/inventory/resolution_run_result.json`
+- `control/audits/resolution-run-kernel-01-v0/resolution_run_kernel_report.json`
+- `control/audits/resolution-run-kernel-01-v0/generated/`

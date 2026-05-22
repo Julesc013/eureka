@@ -1,0 +1,9 @@
+{
+  "schema_version": "resolution_run_lane_projection_matrix.v0",
+  "task": "AIDE-BATCH-RUN-KERNEL-01",
+  "projection_profiles": ["operator_workbench", "public_web", "native_desktop_read_only"],
+  "uses_existing_workbench_result_lane_projection": true,
+  "workbench_runtime_owns_behavior": false,
+  "api_runtime_owns_behavior": false,
+  "kernel_owns_behavior": true
+}

@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-22
 repo: julesc013/eureka
-current_recommended_task: SOURCE-WAVE-00 — Next source-family metadata wave planning
+current_recommended_task: WORKBENCH-LIVE-RUN-01 — Project headless resolution runs into the local Workbench
 entries:
   - id: DEV-AND-IA-TO-MAIN-PROMOTION-REVIEW
     title: Promote repaired dev IA pilot plus repo layout canon baseline to main
@@ -581,6 +581,50 @@ entries:
     task: .aide/queue/AIDE-BATCH-F0-FOUNDATION-01/task.yaml
     recommended_after: SCOUT-SCHEMA-00
     recommended_next: G0
+  - id: G0
+    title: Ranking, explanation, identity, and user-cost scoring foundation
+    status: completed
+    purpose: Added deterministic fixture-only ranking, explanation, identity, near-miss, and user-cost foundation after DOMAIN, SCOUT, and F0.
+    allowed_scope_summary: G0 contracts, policies, examples, local-eval helpers, scripts, tests, docs, audit evidence, and queue/context metadata.
+    gate: Full discovery passed; no fake evidence, accepted identity merge, live source calls, source probes, downloads, extraction, model/provider calls, operator/master index mutation, deployment, or production/public launch claim.
+    task: .aide/queue/G0/task.yaml
+    recommended_after: F0-00
+    recommended_next: AIDE-BATCH-RUN-KERNEL-01
+  - id: AIDE-BATCH-G0-QUALITY-FOUNDATION-01
+    title: Ranking, explanation, identity, and user-cost scoring foundation
+    status: completed
+    purpose: Added G0 ranking/explanation/identity/user-cost foundation and closeout evidence.
+    allowed_scope_summary: G0 contracts, policies, examples, local-eval helpers, scripts, tests, docs, audit evidence, and queue/context metadata.
+    gate: Full discovery passed; no fake evidence, accepted identity merge, live source calls, source probes, downloads, extraction, model/provider calls, operator/master index mutation, deployment, or production/public launch claim.
+    task: .aide/queue/AIDE-BATCH-G0-QUALITY-FOUNDATION-01/task.yaml
+    recommended_after: F0-00
+    recommended_next: AIDE-BATCH-RUN-KERNEL-01
+  - id: AIDE-BATCH-RUN-KERNEL-01
+    title: Headless resolution-run orchestrator, event log, command bus, lane projector, and projection seam
+    status: completed_pending_commit
+    purpose: Added a portable headless resolution-run kernel before Workbench live run wiring or source-family expansion.
+    allowed_scope_summary: Resolution-run contracts, policies, runtime kernel, CLI, validator, tests, docs, audit evidence, and queue/context metadata.
+    gate: No live source calls, source probes, downloads/uploads, extraction, model/provider calls, operator/master/public index mutation, accepted truth, deployment, production readiness claim, or public launch claim.
+    task: .aide/queue/AIDE-BATCH-RUN-KERNEL-01/task.yaml
+    recommended_after: G0
+    recommended_next: WORKBENCH-LIVE-RUN-01
+  - id: WORKBENCH-LIVE-RUN-01
+    title: Project headless resolution runs into the local Workbench
+    status: queued
+    purpose: Let the local Workbench create/read headless resolution-run projections without owning source or ranking behavior.
+    allowed_scope_summary: Workbench/API projection adapters over resolution-run packets, read-only run creation, lane snapshot display, and focused validation only when explicitly scoped.
+    gate: AIDE-BATCH-RUN-KERNEL-01 completed; no live IA calls, source probes, downloads, extraction, model/provider calls, operator/master/public index mutation, deployment, production readiness claim, or public launch claim.
+    task: .aide/queue/WORKBENCH-LIVE-RUN-01/task.yaml
+    recommended_after: AIDE-BATCH-RUN-KERNEL-01
+    recommended_next: IA-LIVE-METADATA-LANE-01
+  - id: SOURCE-WAVE-00
+    title: Next source-family metadata wave planning
+    status: deferred
+    purpose: Plan the next source-family metadata wave after the headless run kernel, Workbench live-run projection, IA live metadata lane, review/promote flow, and local apply gate exist.
+    allowed_scope_summary: Future task must provide reviewed scope before implementation.
+    gate: Deferred so source expansion plugs into one reusable run kernel rather than script-level vertical slices; no live source expansion without future explicit policy.
+    task: .aide/queue/SOURCE-WAVE-00/task.yaml
+    recommended_after: LOCAL-APPLY-GATE-01
   - id: HUNT-TO-MAIN-PROMOTION-REVIEW
     title: Review/promote HUNT baseline to main
     status: queued
