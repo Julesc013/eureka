@@ -5,14 +5,14 @@ from __future__ import annotations
 from pathlib import Path
 import unittest
 
-from control.prototypes.legacy_runtime.connectors.h13_local_private.quality_delta import build_h13_quality_delta, detect_h13_quality_overclaim
-from control.prototypes.legacy_runtime.connectors.h13_local_private.review_integration import (
+from archive.prototypes.legacy_runtime.connectors.h13_local_private.quality_delta import build_h13_quality_delta, detect_h13_quality_overclaim
+from archive.prototypes.legacy_runtime.connectors.h13_local_private.review_integration import (
     build_h13_review_integration_result,
     detect_h13_review_product_boundary_violations,
     detect_h13_review_truth_boundary_violations,
     load_h13_local_private_outputs,
 )
-from control.prototypes.legacy_runtime.connectors.h13_local_private.wave_postmortem import build_h13_connector_wave_postmortem, build_h13_next_phase_recommendation
+from archive.prototypes.legacy_runtime.connectors.h13_local_private.wave_postmortem import build_h13_connector_wave_postmortem, build_h13_next_phase_recommendation
 
 ROOT = Path(__file__).resolve().parents[2]
 

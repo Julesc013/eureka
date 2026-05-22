@@ -712,7 +712,7 @@
       "works_under_project_base_path": true,
       "safe_for_static_hosting": true,
       "public_claim_scope": "machine-readable summary of the controlled generated public index",
-      "notes": "Summarizes P55 data/public_index artifacts; it is not dynamic search execution and contains no live/private/executable data."
+      "notes": "Summarizes P55 site/dist/data/public_index artifacts; it is not dynamic search execution and contains no live/private/executable data."
     },
     {
       "path": "/data/",

@@ -14,7 +14,7 @@ ledgers, search needs, probes, candidate indexes, or master-index records.
 
 ## Artifact Root
 
-`data/public_index/`
+`site/dist/data/public_index/`
 
 Required files:
 
@@ -60,7 +60,7 @@ not dynamic search execution and not a hosted backend claim.
 ## Runtime Contract
 
 Public search may load this bundle from the repository-owned
-`data/public_index` path. Public requests must not choose an index path,
+`site/dist/data/public_index` path. Public requests must not choose an index path,
 database path, source root, local path, store root, or filesystem root.
 
 Result cards remain governed by `PUBLIC_SEARCH_RESULT_CARD_CONTRACT.md`.

@@ -10,7 +10,7 @@
     "site/dist/",
     "runtime/",
     "contracts/",
-    "data/public_index/",
+    "site/dist/data/public_index/",
     "control/inventory/publication/",
     "control/inventory/sources/",
     "master-index-related roots",

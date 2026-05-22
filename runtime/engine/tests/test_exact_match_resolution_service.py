@@ -22,7 +22,7 @@ class ExactMatchResolutionServiceTestCase(unittest.TestCase):
         self.record = NormalizedResolutionRecord(
             target_ref=KNOWN_TARGET_REF,
             source_name="synthetic_software_fixture",
-            source_locator="control/schemas/fixtures/archive/software/synthetic_resolution_fixture.json",
+            source_locator="contracts/control_schemas/fixtures/archive/software/synthetic_resolution_fixture.json",
             object_id="obj.synthetic-demo-app",
             object_kind="software",
             object_label="Synthetic Demo App",
@@ -32,7 +32,7 @@ class ExactMatchResolutionServiceTestCase(unittest.TestCase):
             representation_kind="source_archive",
             access_path_id="access.synthetic-demo-app.fixture",
             access_path_kind="fixture_path",
-            access_path_locator="control/schemas/fixtures/archive/software/synthetic_resolution_fixture.json",
+            access_path_locator="contracts/control_schemas/fixtures/archive/software/synthetic_resolution_fixture.json",
             representations=(
                 RepresentationSummary(
                     representation_id="rep.synthetic-demo-app.source",
@@ -42,10 +42,10 @@ class ExactMatchResolutionServiceTestCase(unittest.TestCase):
                     byte_length=4096,
                     source_family="synthetic_fixture",
                     source_label="Synthetic Fixture",
-                    source_locator="control/schemas/fixtures/archive/software/synthetic_resolution_fixture.json",
+                    source_locator="contracts/control_schemas/fixtures/archive/software/synthetic_resolution_fixture.json",
                     access_path_id="access.synthetic-demo-app.fixture",
                     access_kind="inspect",
-                    access_locator="control/schemas/fixtures/archive/software/synthetic_resolution_fixture.json",
+                    access_locator="contracts/control_schemas/fixtures/archive/software/synthetic_resolution_fixture.json",
                     is_direct=False,
                 ),
                 RepresentationSummary(
@@ -56,10 +56,10 @@ class ExactMatchResolutionServiceTestCase(unittest.TestCase):
                     byte_length=1024,
                     source_family="synthetic_fixture",
                     source_label="Synthetic Fixture",
-                    source_locator="control/schemas/fixtures/archive/software/synthetic_resolution_fixture.json",
+                    source_locator="contracts/control_schemas/fixtures/archive/software/synthetic_resolution_fixture.json",
                     access_path_id="access.synthetic-demo-app.fixture-record",
                     access_kind="view",
-                    access_locator="control/schemas/fixtures/archive/software/synthetic_resolution_fixture.json#fixture:software/synthetic-demo-app@1.0.0",
+                    access_locator="contracts/control_schemas/fixtures/archive/software/synthetic_resolution_fixture.json#fixture:software/synthetic-demo-app@1.0.0",
                     is_direct=False,
                 ),
             ),
@@ -70,7 +70,7 @@ class ExactMatchResolutionServiceTestCase(unittest.TestCase):
                     asserted_by_family="synthetic_fixture",
                     asserted_by_label="Synthetic Fixture",
                     evidence_kind="recorded_fixture",
-                    evidence_locator="control/schemas/fixtures/archive/software/synthetic_resolution_fixture.json",
+                    evidence_locator="contracts/control_schemas/fixtures/archive/software/synthetic_resolution_fixture.json",
                 ),
             ),
         )

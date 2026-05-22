@@ -45,7 +45,7 @@ class H2PackageReviewQualityScriptsTest(unittest.TestCase):
         self.assertIn("refusing forbidden output root", result.stdout)
 
     def test_scripts_refuse_data_public_index_output(self):
-        result = self.run_quality("--input-dir", "examples/connectors/h2_package_registries/review_integration", "--output", "data/public_index/h2-quality.json")
+        result = self.run_quality("--input-dir", "examples/connectors/h2_package_registries/review_integration", "--output", "site/dist/data/public_index/h2-quality.json")
         self.assertNotEqual(result.returncode, 0)
         self.assertIn("refusing forbidden output root", result.stdout)
 

@@ -54,7 +54,7 @@ class H7LibraryResearchFixtureScriptTests(unittest.TestCase):
     def test_scripts_refuse_forbidden_roots(self) -> None:
         commands = [
             [sys.executable, "scripts/normalize_h7_library_research_fixture.py", "--source-id", "openalex", "--input", "examples/connectors/h7_library_research/fixtures/openalex/identity_record.json", "--output", "site/dist/h7.json"],
-            [sys.executable, "scripts/normalize_h7_library_research_fixture.py", "--source-id", "openalex", "--input", "examples/connectors/h7_library_research/fixtures/openalex/identity_record.json", "--output", "data/public_index/h7.json"],
+            [sys.executable, "scripts/normalize_h7_library_research_fixture.py", "--source-id", "openalex", "--input", "examples/connectors/h7_library_research/fixtures/openalex/identity_record.json", "--output", "site/dist/data/public_index/h7.json"],
             [sys.executable, "scripts/normalize_h7_library_research_fixture.py", "--source-id", "openalex", "--input", "examples/connectors/h7_library_research/fixtures/openalex/identity_record.json", "--output", "harvest/h7.json"],
             [sys.executable, "scripts/normalize_h7_library_research_fixture.py", "--source-id", "openalex", "--input", "examples/connectors/h7_library_research/fixtures/openalex/identity_record.json", "--output", "pdf_downloads/h7.json"],
             [sys.executable, "scripts/normalize_h7_library_research_fixture.py", "--source-id", "openalex", "--input", "examples/connectors/h7_library_research/fixtures/openalex/identity_record.json", "--output", "dataset_downloads/h7.json"],

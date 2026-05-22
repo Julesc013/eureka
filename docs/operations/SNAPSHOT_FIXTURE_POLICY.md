@@ -6,4 +6,4 @@ Allowed inputs are explicit files under `examples/snapshots/`, selected example/
 
 Allowed outputs are `examples/snapshots/`, `control/audits/**/generated/`, and temp test directories.
 
-Forbidden outputs include `site/dist/`, `data/public_index/`, `runtime/`, `contracts/`, publication inventories, master-index roots, relay roots, hosted roots, and local private-state roots.
+Forbidden outputs include `site/dist/`, `site/dist/data/public_index/`, `runtime/`, `contracts/`, publication inventories, master-index roots, relay roots, hosted roots, and local private-state roots.

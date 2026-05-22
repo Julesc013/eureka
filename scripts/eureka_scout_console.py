@@ -1,57 +1,31 @@
-#!/usr/bin/env python3
-"""Render a read-only Workbench SCOUT console view model."""
-
 from __future__ import annotations
 
-import argparse
-import json
+EUREKA_SCRIPT_COMPAT_WRAPPER = True
+
+from importlib.util import module_from_spec, spec_from_file_location
 from pathlib import Path
+import runpy
 import sys
-from typing import Sequence, TextIO
 
-REPO_ROOT = Path(__file__).resolve().parents[1]
-if str(REPO_ROOT) not in sys.path:
-    sys.path.insert(0, str(REPO_ROOT))
+sys.dont_write_bytecode = True
+_TARGET = Path(__file__).resolve().parents[1] / 'tools/generators/eureka_scout_console.py'
+_TARGET_PARENT = str(_TARGET.parent)
+if _TARGET_PARENT not in sys.path:
+    sys.path.insert(0, _TARGET_PARENT)
+_SPEC = spec_from_file_location(f"_eureka_tool_{Path(__file__).stem}", _TARGET)
+if _SPEC is None or _SPEC.loader is None:
+    raise ImportError(f"Unable to load tool implementation: {_TARGET}")
+_MODULE = module_from_spec(_SPEC)
+sys.modules[_SPEC.name] = _MODULE
+_SPEC.loader.exec_module(_MODULE)
 
-from runtime.local_eval.scout_schema import (  # noqa: E402
-    PROJECTION_PROFILES,
-    build_scout_console_view,
-    load_scout_example_records,
-)
-
-
-def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout) -> int:
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--manifest", default="examples/scout/scout_seed_manifest.json")
-    parser.add_argument(
-        "--projection",
-        choices=PROJECTION_PROFILES,
-        default="operator_workbench",
-        help="Projection profile.",
-    )
-    parser.add_argument("--json", action="store_true", help="Emit JSON.")
-    parser.add_argument("--output", help="Optional output path.")
-    parser.add_argument("--repo-root", default=str(REPO_ROOT), help=argparse.SUPPRESS)
-    args = parser.parse_args(argv)
-
-    root = Path(args.repo_root).resolve()
-    records = load_scout_example_records(root)
-    view = build_scout_console_view(records, args.projection)
-    text = json.dumps(view, indent=2, sort_keys=True)
-
-    if args.output:
-        output_path = Path(args.output)
-        if not output_path.is_absolute():
-            output_path = root / output_path
-        output_path.parent.mkdir(parents=True, exist_ok=True)
-        output_path.write_text(text + "\n", encoding="utf-8")
-    if args.json:
-        print(text, file=stdout)
-    else:
-        print(f"SCOUT console view: {view['projection_profile']}", file=stdout)
-        print(f"read_only: {view['read_only']}", file=stdout)
-    return 0
-
-
-if __name__ == "__main__":
-    raise SystemExit(main())
+for _name, _value in vars(_MODULE).items():
+    if _name not in {"__name__", "__loader__", "__package__", "__spec__"}:
+        globals()[_name] = _value
+if __name__ != "__main__":
+    sys.modules[__name__] = _MODULE
+else:
+    sys.argv[0] = str(_TARGET)
+    if hasattr(_MODULE, "main"):
+        raise SystemExit(_MODULE.main())
+    runpy.run_path(str(_TARGET), run_name="__main__")

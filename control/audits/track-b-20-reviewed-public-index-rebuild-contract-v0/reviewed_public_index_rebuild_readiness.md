@@ -16,7 +16,7 @@ Current runtime status: contract only.
 - Master-index mutation.
 - Candidate or evidence acceptance.
 - Current public truth creation.
-- `site/dist/` or `data/public_index/` mutation.
+- `site/dist/` or `site/dist/data/public_index/` mutation.
 - Live source access, provider calls, uploads, downloads, accounts, telemetry, and local private state creation.
 
 ## Before Actual Rebuild Runtime

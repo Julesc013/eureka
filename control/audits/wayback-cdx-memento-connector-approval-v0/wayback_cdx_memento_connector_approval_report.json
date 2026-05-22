@@ -457,7 +457,7 @@
       "status": "passed",
       "returncode": 0,
       "duration_seconds": 0.28,
-      "stdout_tail": "Public Search Index validation\nstatus: valid\nindex_root: data/public_index\ndocument_count: 584\nprivate_paths_detected: False\n",
+      "stdout_tail": "Public Search Index validation\nstatus: valid\nindex_root: site/dist/data/public_index\ndocument_count: 584\nprivate_paths_detected: False\n",
       "stderr_tail": ""
     },
     {
@@ -569,7 +569,7 @@
       "status": "passed",
       "returncode": 0,
       "duration_seconds": 0.56,
-      "stdout_tail": "Public Search Index Builder v0\nstatus: valid\noutput_root: data/public_index\ndocument_count: 584\nfts5_available: True\nfts5_enabled: False\nfallback_enabled: True\n",
+      "stdout_tail": "Public Search Index Builder v0\nstatus: valid\noutput_root: site/dist/data/public_index\ndocument_count: 584\nfts5_available: True\nfts5_enabled: False\nfallback_enabled: True\n",
       "stderr_tail": ""
     },
     {

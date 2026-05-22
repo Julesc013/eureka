@@ -909,7 +909,7 @@
     "fake_hosted_url_detected": false
   },
   "public_index_safety_review": {
-    "artifact_root": "data/public_index",
+    "artifact_root": "site/dist/data/public_index",
     "document_count": 584,
     "stats_document_count": 584,
     "summary_document_count": 584,

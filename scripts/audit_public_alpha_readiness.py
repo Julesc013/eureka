@@ -1,57 +1,31 @@
-#!/usr/bin/env python3
-"""Audit public alpha readiness evidence without deploying."""
-
 from __future__ import annotations
 
-import argparse
-import json
-import sys
+EUREKA_SCRIPT_COMPAT_WRAPPER = True
+
+from importlib.util import module_from_spec, spec_from_file_location
 from pathlib import Path
+import runpy
+import sys
 
-REPO_ROOT = Path(__file__).resolve().parents[1]
-if str(REPO_ROOT) not in sys.path:
-    sys.path.insert(0, str(REPO_ROOT))
+sys.dont_write_bytecode = True
+_TARGET = Path(__file__).resolve().parents[1] / 'tools/release/audit_public_alpha_readiness.py'
+_TARGET_PARENT = str(_TARGET.parent)
+if _TARGET_PARENT not in sys.path:
+    sys.path.insert(0, _TARGET_PARENT)
+_SPEC = spec_from_file_location(f"_eureka_tool_{Path(__file__).stem}", _TARGET)
+if _SPEC is None or _SPEC.loader is None:
+    raise ImportError(f"Unable to load tool implementation: {_TARGET}")
+_MODULE = module_from_spec(_SPEC)
+sys.modules[_SPEC.name] = _MODULE
+_SPEC.loader.exec_module(_MODULE)
 
-from runtime.hosting.readiness import validate_public_launch_readiness_audit
-from scripts.validate_hosted_wrapper_rehearsal import validate_output_path, write_json_output
-
-
-def build_audit() -> dict:
-    audit = json.loads((REPO_ROOT / "examples/hosting/launch/public_launch_readiness_audit_v0.json").read_text(encoding="utf-8"))
-    validation = validate_public_launch_readiness_audit(audit, {})
-    return {
-        "schema_version": "public_alpha_readiness_audit_result.v0",
-        "status": validation["status"],
-        "readiness_status": audit.get("readiness_status"),
-        "next_phase": "READY_FOR_MVP_ALPHA_AUDIT" if validation["status"] == "pass" else "NEEDS_REMEDIATION",
-        "operator_signoff_required": audit.get("operator_signoff_required"),
-        "deployment_performed": False,
-        "provider_api_called": False,
-        "dns_changed": False,
-        "site_dist_mutated": False,
-        "errors": validation["errors"],
-    }
-
-
-def main() -> int:
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--json-output")
-    parser.add_argument("--summary-output")
-    parser.add_argument("--check", action="store_true")
-    parser.add_argument("--json", action="store_true")
-    args = parser.parse_args()
-    report = build_audit()
-    if args.json_output:
-        write_json_output(validate_output_path(args.json_output), report)
-    if args.summary_output:
-        validate_output_path(args.summary_output).write_text(f"Public alpha readiness: {report['status']}\nNext phase: {report['next_phase']}\n", encoding="utf-8")
-    if args.json:
-        print(json.dumps(report, indent=2, sort_keys=True))
-    else:
-        print(f"Public alpha readiness audit status: {report['status']}")
-        print(f"Next phase: {report['next_phase']}")
-    return 0 if report["status"] == "pass" else 1
-
-
-if __name__ == "__main__":
-    raise SystemExit(main())
+for _name, _value in vars(_MODULE).items():
+    if _name not in {"__name__", "__loader__", "__package__", "__spec__"}:
+        globals()[_name] = _value
+if __name__ != "__main__":
+    sys.modules[__name__] = _MODULE
+else:
+    sys.argv[0] = str(_TARGET)
+    if hasattr(_MODULE, "main"):
+        raise SystemExit(_MODULE.main())
+    runpy.run_path(str(_TARGET), run_name="__main__")

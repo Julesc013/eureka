@@ -43,7 +43,7 @@ class MvpAlphaAuditScriptTests(unittest.TestCase):
     def test_scripts_refuse_forbidden_roots(self) -> None:
         for forbidden in (
             "site/dist/mvp-alpha.json",
-            "data/public_index/mvp-alpha.json",
+            "site/dist/data/public_index/mvp-alpha.json",
             ".local/eureka/mvp-alpha.json",
             "provider/config.json",
             "secrets/launch.json",

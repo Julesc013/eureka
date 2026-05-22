@@ -95,7 +95,7 @@ class IAReviewIntegrationScriptsTest(unittest.TestCase):
             "--evidence-preview",
             str(IA02_GENERATED / "sample_evidence_candidate_preview_from_live_probe.json"),
             "--output-dir",
-            "data/public_index/ia-review",
+            "site/dist/data/public_index/ia-review",
         )
         self.assertNotEqual(result.returncode, 0)
         self.assertIn("refusing forbidden output root", result.stdout)

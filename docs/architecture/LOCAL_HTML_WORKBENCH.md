@@ -1,6 +1,6 @@
 # Local HTML Workbench
 
-LOCAL-05 adds the first browser surface for the Local Appliance. It is server-rendered by `runtime/local_workbench` and served through `runtime/local_service`; it does not add a frontend build stack, JavaScript requirement, external assets, or write routes.
+LOCAL-05 adds the first browser surface for the Local Appliance. It is server-rendered by `surfaces/web/workbench/local_html` and served through `runtime/local_service`; it does not add a frontend build stack, JavaScript requirement, external assets, or write routes.
 
 ## Boundary
 

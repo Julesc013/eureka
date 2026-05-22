@@ -3,9 +3,9 @@ from __future__ import annotations
 from pathlib import Path
 import unittest
 
-from control.prototypes.legacy_runtime.connectors.h10_games_emulation.fixture_loader import load_h10_games_emulation_fixture
-from control.prototypes.legacy_runtime.connectors.h10_games_emulation.scummvm_compatibility import normalize as normalize_scummvm
-from control.prototypes.legacy_runtime.connectors.h10_games_emulation.redump_hash_sets import normalize as normalize_redump
+from archive.prototypes.legacy_runtime.connectors.h10_games_emulation.fixture_loader import load_h10_games_emulation_fixture
+from archive.prototypes.legacy_runtime.connectors.h10_games_emulation.scummvm_compatibility import normalize as normalize_scummvm
+from archive.prototypes.legacy_runtime.connectors.h10_games_emulation.redump_hash_sets import normalize as normalize_redump
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 

@@ -13,7 +13,7 @@ accounts, and no telemetry by default.
 
 - `site/dist` is the static publication artifact.
 - `scripts/run_hosted_public_search.py` is the backend wrapper entrypoint.
-- `data/public_index` is the generated public-safe search index bundle used by
+- `site/dist/data/public_index` is the generated public-safe search index bundle used by
   the wrapper and local public-search runtime.
 - `site/dist/data/search_config.json` records static search handoff status.
 - `site/dist/data/public_index_summary.json` records the static summary of the
@@ -48,8 +48,8 @@ P56 also does not perform them; it keeps static backend status unconfigured.
 
 ## Deployment Templates
 
-P54 adds a root `Dockerfile`, `.dockerignore`, `deploy/README.md`, and
-`deploy/render/render.yaml` as inert templates. They contain no credentials and
+P54 adds a root `Dockerfile`, `.dockerignore`, `docs/operations/hosting/render_deployment.md`, and
+`release/render/render.yaml` as inert templates. They contain no credentials and
 do not call any hosting provider API.
 
 ## Still Required Later

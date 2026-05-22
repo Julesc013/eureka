@@ -1,44 +1,31 @@
-#!/usr/bin/env python3
-"""Check public-alpha non-claims and forbidden positive hosting claims."""
-
 from __future__ import annotations
 
-import argparse
-import json
+EUREKA_SCRIPT_COMPAT_WRAPPER = True
+
+from importlib.util import module_from_spec, spec_from_file_location
 from pathlib import Path
+import runpy
+import sys
 
-try:
-    from validate_hosting_readiness import REPO_ROOT, REQUIRED_NON_CLAIMS, detect_forbidden_hosting_claims
-except ModuleNotFoundError:  # pragma: no cover
-    from scripts.validate_hosting_readiness import REPO_ROOT, REQUIRED_NON_CLAIMS, detect_forbidden_hosting_claims
+sys.dont_write_bytecode = True
+_TARGET = Path(__file__).resolve().parents[1] / 'tools/release/check_public_alpha_non_claims.py'
+_TARGET_PARENT = str(_TARGET.parent)
+if _TARGET_PARENT not in sys.path:
+    sys.path.insert(0, _TARGET_PARENT)
+_SPEC = spec_from_file_location(f"_eureka_tool_{Path(__file__).stem}", _TARGET)
+if _SPEC is None or _SPEC.loader is None:
+    raise ImportError(f"Unable to load tool implementation: {_TARGET}")
+_MODULE = module_from_spec(_SPEC)
+sys.modules[_SPEC.name] = _MODULE
+_SPEC.loader.exec_module(_MODULE)
 
-
-def main() -> int:
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--input", default="examples/hosting/public_alpha_non_claims_v0.json")
-    parser.add_argument("--json", action="store_true")
-    args = parser.parse_args()
-    path = Path(args.input)
-    if not path.is_absolute():
-        path = REPO_ROOT / path
-    errors: list[str] = []
-    payload = json.loads(path.read_text(encoding="utf-8"))
-    for key in REQUIRED_NON_CLAIMS:
-        if payload.get(key) is not True:
-            errors.append(f"{key} must be true.")
-    errors.extend(detect_forbidden_hosting_claims(payload, args.input))
-    for doc in ("docs/operations/PUBLIC_ALPHA_NON_CLAIMS.md", "docs/reference/PUBLIC_ALPHA_NON_CLAIMS_CONTRACT.md"):
-        if not (REPO_ROOT / doc).is_file():
-            errors.append(f"{doc}: missing non-claims doc.")
-    report = {"schema_version": "public_alpha_non_claims_check.v0", "status": "fail" if errors else "pass", "errors": errors}
-    if args.json:
-        print(json.dumps(report, indent=2, sort_keys=True))
-    else:
-        print(f"Public alpha non-claims check\nstatus: {report['status']}")
-        for error in errors:
-            print(f"ERROR: {error}")
-    return 0 if report["status"] == "pass" else 1
-
-
-if __name__ == "__main__":
-    raise SystemExit(main())
+for _name, _value in vars(_MODULE).items():
+    if _name not in {"__name__", "__loader__", "__package__", "__spec__"}:
+        globals()[_name] = _value
+if __name__ != "__main__":
+    sys.modules[__name__] = _MODULE
+else:
+    sys.argv[0] = str(_TARGET)
+    if hasattr(_MODULE, "main"):
+        raise SystemExit(_MODULE.main())
+    runpy.run_path(str(_TARGET), run_name="__main__")

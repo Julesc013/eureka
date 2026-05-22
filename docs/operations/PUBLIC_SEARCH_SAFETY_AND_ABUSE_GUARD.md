@@ -286,7 +286,7 @@ Implemented static publication only:
   review, and contract alignment without deploying hosted search or enabling
   live probes, downloads, installs, uploads, local path search, accounts,
   telemetry, or external calls.
-- Public Search Index Builder v0 adds the generated `data/public_index` bundle
+- Public Search Index Builder v0 adds the generated `site/dist/data/public_index` bundle
   and validates it without live source calls, private path ingestion,
   executable payloads, downloads, uploads, or master-index mutation.
 ## P58 Hosted Rehearsal Evidence

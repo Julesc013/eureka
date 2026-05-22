@@ -5,7 +5,7 @@ The complete report is in
 
 Recorded risks:
 
-- `control/schemas/policies/packs/**` vs `contracts/packs/**`
+- `contracts/control_schemas/policies/packs/**` vs `contracts/packs/**`
 - `contracts/source_registry/**` vs `contracts/sources/**`
 - `contracts/source_cache/**` vs `contracts/stores/source_cache_*.json`
 - `contracts/runtime/**` vs `runtime/**`

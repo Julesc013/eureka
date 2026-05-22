@@ -3,7 +3,7 @@ from __future__ import annotations
 import copy
 import unittest
 
-from control.prototypes.legacy_runtime.connectors.h14_source_discovery.rollup_dry_run_common import (
+from archive.prototypes.legacy_runtime.connectors.h14_source_discovery.rollup_dry_run_common import (
     REQUEST_FORBIDDEN_TRUE_KEYS,
     build_h14_rollup_blocked_result,
     build_h14_rollup_dry_run_result,

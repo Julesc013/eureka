@@ -3,8 +3,8 @@ from __future__ import annotations
 import copy
 import unittest
 
-from control.prototypes.legacy_runtime.connectors.h6_web_archive_news_event.normalizer_common import detect_h6_truth_boundary_violations
-from control.prototypes.legacy_runtime.connectors.h6_web_archive_news_event.web_capture_identity import build_h6_web_capture_identity_candidate
+from archive.prototypes.legacy_runtime.connectors.h6_web_archive_news_event.normalizer_common import detect_h6_truth_boundary_violations
+from archive.prototypes.legacy_runtime.connectors.h6_web_archive_news_event.web_capture_identity import build_h6_web_capture_identity_candidate
 
 
 class H6WebCaptureIdentityMappingTests(unittest.TestCase):

@@ -65,7 +65,7 @@ class H1ReviewQualityScriptsTest(unittest.TestCase):
             "--input-dir",
             "examples/connectors/h1_metadata_wave/review_integration",
             "--output",
-            "data/public_index/h1-quality.json",
+            "site/dist/data/public_index/h1-quality.json",
         )
         self.assertNotEqual(result.returncode, 0)
         self.assertIn("refusing forbidden output root", result.stdout)

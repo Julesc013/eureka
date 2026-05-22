@@ -8,7 +8,7 @@ import unittest
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
-INDEX_ROOT = REPO_ROOT / "data" / "public_index"
+INDEX_ROOT = REPO_ROOT / "site" / "dist" / "data" / "public_index"
 REPORT = REPO_ROOT / "control" / "audits" / "public-search-index-builder-v0" / "public_search_index_builder_report.json"
 VALIDATOR = REPO_ROOT / "scripts" / "validate_public_search_index_builder.py"
 

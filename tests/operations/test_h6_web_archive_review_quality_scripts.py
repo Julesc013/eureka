@@ -36,7 +36,7 @@ class H6ReviewQualityScriptTests(unittest.TestCase):
     def test_scripts_refuse_forbidden_roots(self):
         commands = [
             ("scripts/integrate_h6_web_archive_review.py", "--input-dir", "examples/connectors/h6_web_archive_news_event/replay_results", "--output-dir", "site/dist/h6"),
-            ("scripts/summarize_h6_web_archive_quality_delta.py", "--input-dir", "examples/connectors/h6_web_archive_news_event/review_integration", "--output", "data/public_index/h6.json"),
+            ("scripts/summarize_h6_web_archive_quality_delta.py", "--input-dir", "examples/connectors/h6_web_archive_news_event/review_integration", "--output", "site/dist/data/public_index/h6.json"),
             ("scripts/audit_h6_web_archive_news_event_wave.py", "--json-output", "warc_cache/h6.json"),
         ]
         for command in commands:

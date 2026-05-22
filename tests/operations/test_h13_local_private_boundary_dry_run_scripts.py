@@ -41,7 +41,7 @@ class H13LocalPrivateBoundaryDryRunScriptTests(unittest.TestCase):
             self.assertTrue(md.is_file())
 
     def test_cli_refuses_forbidden_roots(self) -> None:
-        for output in ("site/dist/h13.json", "data/public_index/h13.json", "cas_roots/h13.json", "credentials/h13.json"):
+        for output in ("site/dist/h13.json", "site/dist/data/public_index/h13.json", "cas_roots/h13.json", "credentials/h13.json"):
             proc = run_cmd(["scripts/run_h13_local_private_boundary_dry_run.py", "--source-id", "local_folder_metadata", "--request-key", "example_local_source_boundary", "--output", output])
             self.assertNotEqual(0, proc.returncode)
             self.assertIn("refusing", proc.stdout + proc.stderr)

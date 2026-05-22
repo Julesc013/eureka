@@ -287,7 +287,7 @@
         "docs/operations/PUBLIC_SEARCH_ROLLBACK.md",
         "control/audits/hosted-public-search-wrapper-v0/hosted_public_search_wrapper_report.json",
         "runtime/gateway/public_api/public_search_index.py",
-        "data/public_index/search_documents.ndjson",
+        "site/dist/data/public_index/search_documents.ndjson",
         "scripts/run_public_search_safety_evidence.py",
         "scripts/validate_public_search_safety_evidence.py",
         "control/audits/public-search-safety-evidence-v0/public_search_safety_evidence_report.json",

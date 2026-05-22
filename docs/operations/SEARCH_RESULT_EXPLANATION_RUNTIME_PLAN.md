@@ -14,7 +14,7 @@ Hosted staging remains blocked by unverified hosted deployment evidence.
   validators.
 - Public search/result-card gate: local `local_index_only` runtime and governed
   result cards exist.
-- Public index/result envelope gate: `data/public_index/` has committed
+- Public index/result envelope gate: `site/dist/data/public_index/` has committed
   public-safe artifacts and result envelopes.
 - Dependency gates: ranking, merge, identity, pages, source cache, evidence
   ledger, and extraction remain contract-only, planning-only, or dry-run-only as

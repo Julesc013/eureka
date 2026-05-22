@@ -2,13 +2,13 @@ import copy
 from pathlib import Path
 import unittest
 
-from control.prototypes.legacy_runtime.connectors.h4_code_source_release.normalizer_common import (
+from archive.prototypes.legacy_runtime.connectors.h4_code_source_release.normalizer_common import (
     build_h4_release_asset_candidates,
     build_h4_source_to_binary_relation_candidates,
     detect_h4_truth_boundary_violations,
 )
-from control.prototypes.legacy_runtime.connectors.h4_code_source_release.github_releases import normalize
-from control.prototypes.legacy_runtime.connectors.h4_code_source_release.fixture_loader import load_h4_code_source_fixture
+from archive.prototypes.legacy_runtime.connectors.h4_code_source_release.github_releases import normalize
+from archive.prototypes.legacy_runtime.connectors.h4_code_source_release.fixture_loader import load_h4_code_source_fixture
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 

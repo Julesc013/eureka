@@ -43,7 +43,7 @@ class H11ReviewQualityScriptTests(unittest.TestCase):
     def test_scripts_refuse_forbidden_output_roots(self):
         forbidden = [
             ["scripts/integrate_h11_storefront_review.py", "--input-dir", "examples/connectors/h11_storefront/replay_results", "--output-dir", "site/dist/h11"],
-            ["scripts/summarize_h11_storefront_quality_delta.py", "--input-dir", "examples/connectors/h11_storefront/review_integration", "--output", "data/public_index/h11.json"],
+            ["scripts/summarize_h11_storefront_quality_delta.py", "--input-dir", "examples/connectors/h11_storefront/review_integration", "--output", "site/dist/data/public_index/h11.json"],
             ["scripts/audit_h11_storefront_wave.py", "--json-output", "accounts/h11.json"],
         ]
         for command in forbidden:

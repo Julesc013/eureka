@@ -105,7 +105,7 @@ class StaticSiteSearchIntegrationOperationTest(unittest.TestCase):
 
     def test_public_index_summary_matches_index_stats(self) -> None:
         summary = json.loads((SITE_DIST / "data" / "public_index_summary.json").read_text(encoding="utf-8"))
-        stats = json.loads((REPO_ROOT / "data" / "public_index" / "index_stats.json").read_text(encoding="utf-8"))
+        stats = json.loads((REPO_ROOT / "site" / "dist" / "data" / "public_index" / "index_stats.json").read_text(encoding="utf-8"))
         self.assertEqual(summary["document_count"], stats["document_count"])
         self.assertEqual(summary["source_family_counts"], stats["source_family_counts"])
         self.assertFalse(summary["contains_live_data"])

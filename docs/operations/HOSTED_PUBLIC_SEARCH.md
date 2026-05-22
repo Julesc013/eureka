@@ -32,7 +32,7 @@ It serves only:
 The full local workbench server remains separate and is not the P54 hosted
 public-search wrapper.
 
-P55 adds a generated public search index under `data/public_index`. The wrapper
+P55 adds a generated public search index under `site/dist/data/public_index`. The wrapper
 configuration check now requires that bundle to exist, and status/search
 responses report `public_index_present: true` and
 `index_status: generated_public_search_index` in this checkout. Operators

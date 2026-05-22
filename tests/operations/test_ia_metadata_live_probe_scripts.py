@@ -66,7 +66,7 @@ class IAMetadataLiveProbeScriptsTest(unittest.TestCase):
         self.assertIn("refusing forbidden output root", result.stdout)
 
     def test_cli_refuses_data_public_index_output(self):
-        result = self.run_cli("--identifier", IDENTIFIER, "--check", "--output", "data/public_index/ia.json")
+        result = self.run_cli("--identifier", IDENTIFIER, "--check", "--output", "site/dist/data/public_index/ia.json")
         self.assertNotEqual(result.returncode, 0)
         self.assertIn("refusing forbidden output root", result.stdout)
 

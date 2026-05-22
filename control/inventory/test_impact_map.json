@@ -148,7 +148,7 @@
       ]
     },
     {
-      "path_pattern": "runtime/local_workbench/**",
+      "path_pattern": "surfaces/web/workbench/local_html/**",
       "owning_subsystem": "local_workbench_runtime",
       "validators": [
         "python scripts/validate_workbench_result_lanes.py"

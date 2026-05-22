@@ -5,10 +5,10 @@ from __future__ import annotations
 from pathlib import Path
 import unittest
 
-from control.prototypes.legacy_runtime.connectors.h6_web_archive_news_event.normalizer_common import H6_SOURCE_IDS
-from control.prototypes.legacy_runtime.connectors.h6_web_archive_news_event.quality_delta import build_h6_quality_delta
-from control.prototypes.legacy_runtime.connectors.h6_web_archive_news_event.review_integration import build_h6_review_integration_result, load_h6_web_archive_outputs
-from control.prototypes.legacy_runtime.connectors.h6_web_archive_news_event.wave_postmortem import (
+from archive.prototypes.legacy_runtime.connectors.h6_web_archive_news_event.normalizer_common import H6_SOURCE_IDS
+from archive.prototypes.legacy_runtime.connectors.h6_web_archive_news_event.quality_delta import build_h6_quality_delta
+from archive.prototypes.legacy_runtime.connectors.h6_web_archive_news_event.review_integration import build_h6_review_integration_result, load_h6_web_archive_outputs
+from archive.prototypes.legacy_runtime.connectors.h6_web_archive_news_event.wave_postmortem import (
     apply_missing_source_gate,
     build_h6_connector_wave_postmortem,
     build_h6_integration_audit,

@@ -124,15 +124,15 @@
                   "claim_kind": "label",
                   "claim_value": "Archive Viewer",
                   "evidence_kind": "recorded_fixture",
-                  "evidence_locator": "control/schemas/fixtures/archive/software/synthetic_resolution_fixture.json"
+                  "evidence_locator": "contracts/control_schemas/fixtures/archive/software/synthetic_resolution_fixture.json"
                 },
                 {
                   "asserted_by_family": "synthetic_fixture",
                   "asserted_by_label": "Synthetic Fixture",
                   "claim_kind": "source_locator",
-                  "claim_value": "control/schemas/fixtures/archive/software/synthetic_resolution_fixture.json",
+                  "claim_value": "contracts/control_schemas/fixtures/archive/software/synthetic_resolution_fixture.json",
                   "evidence_kind": "recorded_fixture",
-                  "evidence_locator": "control/schemas/fixtures/archive/software/synthetic_resolution_fixture.json"
+                  "evidence_locator": "contracts/control_schemas/fixtures/archive/software/synthetic_resolution_fixture.json"
                 }
               ],
               "object": {
@@ -153,7 +153,7 @@
               "source": {
                 "family": "synthetic_fixture",
                 "label": "Synthetic Fixture",
-                "locator": "control/schemas/fixtures/archive/software/synthetic_resolution_fixture.json",
+                "locator": "contracts/control_schemas/fixtures/archive/software/synthetic_resolution_fixture.json",
                 "source_id": "synthetic-fixtures"
               },
               "target_ref": "fixture:software/archive-viewer@0.9.0"
@@ -166,15 +166,15 @@
                   "claim_kind": "label",
                   "claim_value": "ArchiveBox 0.8.5",
                   "evidence_kind": "recorded_fixture",
-                  "evidence_locator": "control/schemas/fixtures/archive/software/synthetic_resolution_fixture.json"
+                  "evidence_locator": "contracts/control_schemas/fixtures/archive/software/synthetic_resolution_fixture.json"
                 },
                 {
                   "asserted_by_family": "synthetic_fixture",
                   "asserted_by_label": "Synthetic Fixture",
                   "claim_kind": "source_locator",
-                  "claim_value": "control/schemas/fixtures/archive/software/synthetic_resolution_fixture.json",
+                  "claim_value": "contracts/control_schemas/fixtures/archive/software/synthetic_resolution_fixture.json",
                   "evidence_kind": "recorded_fixture",
-                  "evidence_locator": "control/schemas/fixtures/archive/software/synthetic_resolution_fixture.json"
+                  "evidence_locator": "contracts/control_schemas/fixtures/archive/software/synthetic_resolution_fixture.json"
                 }
               ],
               "object": {
@@ -195,7 +195,7 @@
               "source": {
                 "family": "synthetic_fixture",
                 "label": "Synthetic Fixture",
-                "locator": "control/schemas/fixtures/archive/software/synthetic_resolution_fixture.json",
+                "locator": "contracts/control_schemas/fixtures/archive/software/synthetic_resolution_fixture.json",
                 "source_id": "synthetic-fixtures"
               },
               "target_ref": "fixture:software/archivebox@0.8.5"

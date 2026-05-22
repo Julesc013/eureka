@@ -50,7 +50,7 @@
       "local_index_only_lookup"
     ],
     "checked_index_snapshot_refs": [
-      "data/public_index/public_search_index.json"
+      "site/dist/data/public_index/public_search_index.json"
     ],
     "checked_at_policy": "example_static",
     "live_probes_attempted": false,

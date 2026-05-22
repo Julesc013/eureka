@@ -17,7 +17,7 @@ query or SearchNeed
 
 The default mode is dry-run. It creates a Search Hunt reference, bridge WorkUnit packets, result lane packets, and boundary reports without mutating a store.
 
-Temp-instance mode may write source-cache, evidence, candidate, review queue, and reviewed local index records only under an explicit temporary instance path. Those writes prove the existing local IA pipeline can be orchestrated, but they do not mutate the operator instance, master index, committed `data/public_index`, or hosted/public search surfaces.
+Temp-instance mode may write source-cache, evidence, candidate, review queue, and reviewed local index records only under an explicit temporary instance path. Those writes prove the existing local IA pipeline can be orchestrated, but they do not mutate the operator instance, master index, committed `site/dist/data/public_index`, or hosted/public search surfaces.
 
 The bridge keeps these actions disabled:
 

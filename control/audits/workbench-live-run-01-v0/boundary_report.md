@@ -10,4 +10,4 @@ The Workbench live-run foundation preserves the expected boundary posture:
 - deployment: false
 - production/public launch claim: false
 
-Existing `runtime/local_workbench` rendering remains transitional presentation debt.
+`surfaces/web/workbench/local_html` owns local HTML presentation while runtime remains behavior-only.

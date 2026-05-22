@@ -192,9 +192,9 @@
       "schema_version": "0.1.0",
       "producer": "Generated Public Data Summaries v0",
       "source_inputs": [
-        "data/public_index/build_manifest.json",
-        "data/public_index/index_stats.json",
-        "data/public_index/source_coverage.json"
+        "site/dist/data/public_index/build_manifest.json",
+        "site/dist/data/public_index/index_stats.json",
+        "site/dist/data/public_index/source_coverage.json"
       ],
       "consumer_profiles": [
         "standard_web",
@@ -209,7 +209,7 @@
       "contains_external_observations": false,
       "safe_for_static_hosting": true,
       "generated_by": "scripts/generate_public_data_summaries.py",
-      "notes": "Machine-readable summary of the controlled public-safe search index under data/public_index. It exposes counts and safety posture only; the static site does not execute search or expose raw index internals as a production API."
+      "notes": "Machine-readable summary of the controlled public-safe search index under site/dist/data/public_index. It exposes counts and safety posture only; the static site does not execute search or expose raw index internals as a production API."
     },
     {
       "path": "/data/page_registry.json",

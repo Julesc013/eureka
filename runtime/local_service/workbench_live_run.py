@@ -125,10 +125,11 @@ def build_workbench_live_run_boundary_report(run_or_packet: Mapping[str, Any]) -
         "workbench_is_projection_only": True,
         "resolution_run_kernel_used": True,
         "local_service_projection_added": True,
-        "transitional_runtime_local_workbench_presentation_debt": True,
+        "surface_local_html_workbench_projection": True,
+        "transitional_runtime_local_workbench_presentation_debt": False,
         "debt_note": (
-            "Existing runtime/local_workbench presentation remains transitional; "
-            "runtime/resolution_run owns behavior and runtime/local_workbench only renders local HTML."
+            "surfaces/web/workbench/local_html owns local HTML presentation; "
+            "runtime/resolution_run owns behavior and runtime/local_service only serves the projection."
         ),
         "live_ia_call_performed": False,
         "source_probe_executed": False,

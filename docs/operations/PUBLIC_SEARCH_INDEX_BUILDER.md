@@ -16,7 +16,7 @@ python scripts/validate_public_search_index_builder.py --json
 python scripts/check_generated_artifact_drift.py --artifact public_search_index
 ```
 
-`--rebuild` updates `data/public_index`. `--check` regenerates in a temporary
+`--rebuild` updates `site/dist/data/public_index`. `--check` regenerates in a temporary
 directory and fails if committed artifacts drift.
 
 ## Inputs
@@ -36,7 +36,7 @@ archives, user uploads, credentials, or live API responses.
 
 ## Output
 
-The committed bundle is text-only JSON/NDJSON under `data/public_index`.
+The committed bundle is text-only JSON/NDJSON under `site/dist/data/public_index`.
 SQLite/FTS5 capability is detected and recorded, but no SQLite binary is
 committed in v0.
 

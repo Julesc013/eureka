@@ -1,0 +1,54 @@
+{
+  "$id": "https://eureka.local/contracts/control_schemas/policies/packs/contribution_review_seed.v0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "description": "Review-gated pack quarantine contract. This schema defines local preview records only and does not permit pack import, submission, publication, acceptance, public index mutation, master index mutation, rights clearance, malware safety, verified installability, private keys, or real signing.",
+  "properties": {
+    "contribution_review_seed_id": {},
+    "input_pack_ref": {},
+    "limitations": {},
+    "missing_evidence": {},
+    "policy_blockers": {},
+    "product_boundary": {},
+    "proposed_review_entry": {},
+    "review_reason": {},
+    "review_subject_type": {},
+    "rights_risk_blockers": {},
+    "schema_version": {
+      "const": "contribution_review_seed.v0"
+    },
+    "trust_notes": {},
+    "truth_boundary": {}
+  },
+  "required": [
+    "schema_version",
+    "contribution_review_seed_id",
+    "input_pack_ref",
+    "review_subject_type",
+    "review_reason",
+    "proposed_review_entry",
+    "missing_evidence",
+    "policy_blockers",
+    "rights_risk_blockers",
+    "trust_notes",
+    "limitations",
+    "truth_boundary",
+    "product_boundary"
+  ],
+  "title": "ContributionReviewSeedV0",
+  "type": "object",
+  "x-non_goals": [
+    "pack import",
+    "pack submission",
+    "pack publication",
+    "hosted upload",
+    "pack acceptance",
+    "evidence acceptance",
+    "candidate acceptance",
+    "public index mutation",
+    "master index mutation",
+    "private signing keys",
+    "real signing"
+  ],
+  "x-status": "stable_draft"
+}

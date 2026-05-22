@@ -48,7 +48,7 @@ The config check fails if any of these are enabled:
 `EUREKA_SEARCH_MODE` must remain `local_index_only`.
 
 The P55 generated public index must also be present at
-`data/public_index/search_documents.ndjson`. This is not controlled by an
+`site/dist/data/public_index/search_documents.ndjson`. This is not controlled by an
 environment variable because public requests must never choose index paths or
 source roots. If the bundle is missing, rebuild or validate it locally:
 

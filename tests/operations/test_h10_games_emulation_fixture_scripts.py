@@ -46,7 +46,7 @@ class H10GamesEmulationFixtureScriptTests(unittest.TestCase):
     def test_scripts_refuse_forbidden_roots(self) -> None:
         commands = [
             [sys.executable, "scripts/normalize_h10_games_emulation_fixture.py", "--source-id", "mobygames", "--input", "examples/connectors/h10_games_emulation/fixtures/mobygames/game_identity_record.json", "--output", "site/dist/h10.json"],
-            [sys.executable, "scripts/normalize_h10_games_emulation_fixture.py", "--source-id", "mobygames", "--input", "examples/connectors/h10_games_emulation/fixtures/mobygames/game_identity_record.json", "--output", "data/public_index/h10.json"],
+            [sys.executable, "scripts/normalize_h10_games_emulation_fixture.py", "--source-id", "mobygames", "--input", "examples/connectors/h10_games_emulation/fixtures/mobygames/game_identity_record.json", "--output", "site/dist/data/public_index/h10.json"],
             [sys.executable, "scripts/normalize_h10_games_emulation_fixture.py", "--source-id", "mobygames", "--input", "examples/connectors/h10_games_emulation/fixtures/mobygames/game_identity_record.json", "--output", "roms/h10.json"],
             [sys.executable, "scripts/normalize_h10_games_emulation_fixture.py", "--source-id", "mobygames", "--input", "examples/connectors/h10_games_emulation/fixtures/mobygames/game_identity_record.json", "--output", "bios/h10.json"],
             [sys.executable, "scripts/normalize_h10_games_emulation_fixture.py", "--source-id", "mobygames", "--input", "examples/connectors/h10_games_emulation/fixtures/mobygames/game_identity_record.json", "--output", "emulators/h10.json"],

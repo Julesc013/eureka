@@ -1,0 +1,137 @@
+{
+  "$id": "contracts/control_schemas/previews/h7/connectors/library_research_live_probe_result.v0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "access_rights_availability_candidate": {
+      "type": "object"
+    },
+    "bibliographic_identity_candidate": {
+      "type": "object"
+    },
+    "blocked_reason": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "blocked_reasons": {
+      "type": "array"
+    },
+    "citation_relation_candidate": {
+      "type": [
+        "array",
+        "object"
+      ]
+    },
+    "connector_family": {
+      "type": "string"
+    },
+    "connector_health_summary": {
+      "type": "object"
+    },
+    "cultural_object_identity_candidate": {
+      "type": "object"
+    },
+    "dataset_identity_candidate": {
+      "type": "object"
+    },
+    "endpoint_or_metadata_used": {
+      "type": "string"
+    },
+    "evidence_candidate_preview": {
+      "type": "object"
+    },
+    "limitations": {
+      "type": "array"
+    },
+    "live_probe_request_ref": {
+      "type": "string"
+    },
+    "live_probe_result_id": {
+      "type": "string"
+    },
+    "network_used": {
+      "type": "boolean"
+    },
+    "normalized_record": {
+      "type": "object"
+    },
+    "notes": {
+      "type": "array"
+    },
+    "patent_identity_candidate": {
+      "type": "object"
+    },
+    "product_boundary": {
+      "type": "object"
+    },
+    "request_count": {
+      "type": "integer"
+    },
+    "research_work_identity_candidate": {
+      "type": "object"
+    },
+    "response_fingerprint": {
+      "type": "string"
+    },
+    "response_status_code": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "response_summary": {
+      "type": "string"
+    },
+    "result_status": {
+      "enum": [
+        "blocked_by_policy",
+        "blocked_by_missing_approval",
+        "blocked_by_kill_switch",
+        "blocked_by_endpoint_policy",
+        "blocked_by_harvest_policy",
+        "blocked_by_download_policy",
+        "blocked_by_restricted_source_policy",
+        "blocked_by_bypass_policy",
+        "dry_run_preflight_pass",
+        "live_probe_completed",
+        "live_probe_failed",
+        "not_evaluable"
+      ]
+    },
+    "review_queue_seed_preview": {
+      "type": "object"
+    },
+    "schema_version": {
+      "const": "h7_library_research_live_probe_result.v0"
+    },
+    "source_cache_candidate_preview": {
+      "type": "object"
+    },
+    "source_id": {
+      "type": "string"
+    },
+    "source_record_kind": {
+      "type": "string"
+    },
+    "truth_boundary": {
+      "type": "object"
+    },
+    "warnings": {
+      "type": "array"
+    }
+  },
+  "required": [
+    "schema_version",
+    "live_probe_result_id",
+    "source_id",
+    "result_status",
+    "request_count",
+    "network_used",
+    "truth_boundary",
+    "product_boundary"
+  ],
+  "title": "h7_library_research_live_probe_result.v0",
+  "type": "object"
+}

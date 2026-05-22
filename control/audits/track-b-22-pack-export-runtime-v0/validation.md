@@ -37,7 +37,7 @@ drafts only and remain review-gated.
 ## Notes
 
 - Pack Export does not write files by default and rejects forbidden roots such
-  as `site/dist/`, `runtime/`, and `data/public_index/`.
+  as `site/dist/`, `runtime/`, and `site/dist/data/public_index/`.
 - SHA-256 fixity is local deterministic hashing only; real signing remains
   disabled.
 - No pack import, pack submission, hosted upload, pack acceptance, public-index

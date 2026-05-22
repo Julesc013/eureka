@@ -236,7 +236,7 @@ mutation, pack import, or staging runtime.
 
 Public Search Index Builder v0 records its committed audit pack under
 `control/audits/public-search-index-builder-v0/`, plus builder, validator,
-generated `data/public_index` artifacts, runtime integration, drift metadata,
+generated `site/dist/data/public_index` artifacts, runtime integration, drift metadata,
 docs, and tests. No separate AIDE runtime report is needed; this is controlled
 local_index_only index generation only and does not add live source calls,
 private local ingestion, executable payloads, downloads, uploads, arbitrary URL

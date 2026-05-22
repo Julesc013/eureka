@@ -1,8 +1,8 @@
 import unittest
 
-from runtime.local_workbench.pages import render_rebuild_page, render_review_item_page, render_review_queue_page
-from runtime.local_workbench.validation import validate_local_workbench_page, validate_no_external_assets
-from runtime.local_workbench.view_models import (
+from surfaces.web.workbench.local_html.pages import render_rebuild_page, render_review_item_page, render_review_queue_page
+from surfaces.web.workbench.local_html.validation import validate_local_workbench_page, validate_no_external_assets
+from surfaces.web.workbench.local_html.view_models import (
     build_rebuild_page_view,
     build_review_item_page_view,
     build_review_queue_page_view,

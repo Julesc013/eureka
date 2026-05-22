@@ -51,7 +51,7 @@ class NativeFirstWaveScriptTests(unittest.TestCase):
     def test_scripts_refuse_forbidden_output_roots(self) -> None:
         for forbidden in (
             "site/dist/native-first-wave-summary.json",
-            "data/public_index/native-first-wave-summary.json",
+            "site/dist/data/public_index/native-first-wave-summary.json",
             ".local/eureka/native-first-wave-summary.json",
         ):
             result = self.run_script("scripts/summarize_native_first_wave.py", "--output", forbidden)

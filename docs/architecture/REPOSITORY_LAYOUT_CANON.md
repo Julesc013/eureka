@@ -1,6 +1,7 @@
 # Repository Layout Canon
 
-This canon defines Eureka's active source ownership roots before any layout moves.
+This canon defines Eureka's active source ownership roots after the structure
+reconciliation pass.
 It is machine-readable first:
 
 - `contracts/repo/root_allowlist.contract.toml`
@@ -12,13 +13,12 @@ The validator is `scripts/validate_repo_structure_canon.py`.
 
 ## Verdict
 
-The repository is bootstrap and pre-product. Its current structure is close enough
-to govern, but not clean enough to move casually. The main risks are generated
-artifacts looking like source, runtime prototypes under `control/`, presentation
-under `runtime/`, duplicate schema authority under `control/schemas`, and a large
-`scripts/` tree that should become thin wrappers over `tools/`.
-
-`REPO-LAYOUT-CANON-01` records those risks without moving files.
+The repository is bootstrap and pre-product. EUREKA-STRUCTURE-BIG-BANG-01 reconciled the recorded layout debt without claiming production readiness:
+generated public-index artifacts now live under `site/dist/data/public_index`,
+deployment definitions under `release/`, retired prototypes under `archive/`,
+schema authority under `contracts/control_schemas`, workbench presentation under
+`surfaces/web/workbench/local_html`, and substantive tool implementations under
+`tools/` behind `scripts/` wrappers.
 
 ## Canonical Roots
 
@@ -65,13 +65,13 @@ authority.
 payloads.
 
 `runtime/` owns backend/kernel/runtime services. It must not own presentation
-templates except recorded transitional debt.
+templates.
 
 `surfaces/` owns product projections over runtime services and contracts. The
 Workbench presentation target is `surfaces/web/workbench`.
 
-`scripts/` remains allowed, but it is a transitional thin-wrapper root. Long
-tool implementations belong under `tools/`.
+`scripts/` remains allowed as the stable command-entry root. Long tool
+implementations belong under `tools/`.
 
 `examples/` contains examples and fixtures, not registry truth.
 
@@ -83,28 +83,29 @@ policy. Current explicit exceptions include:
 
 - `site/dist`
 - `snapshots/examples/static_snapshot_v0`
-- `data/public_index`
+- `site/dist/data/public_index`
 - `control/audits/*/generated`
 - `.aide/generated`
 - `.aide/cache`
 - `.aide/export`
 - `.aide/reports`
 
-`data/public_index` remains known layout debt, not a clean source root.
+`site/dist/data/public_index` is accepted only as committed generated public
+artifact material under the static-site generated-artifact policy.
 
-## Known Debt
+## Resolved Debt
 
-Recorded layout debt is listed in `control/inventory/repo_layout_known_debt.json`.
-This task does not move or delete those paths.
+Resolved layout debt is listed in `control/inventory/repo_layout_known_debt.json`
+and the move map in
+`control/audits/eureka-structure-big-bang-v1/path_migration_map.json`.
 
-`R0-03 / REPO-LAYOUT-CONTRACT-TAXONOMY-CLEANUP` classifies the `control/schemas`
-debt before Workbench Foundation. Product/public contract authority remains under
-`contracts/`; `control/schemas/` is retained only for control/governance schemas
-with migration backlog; `examples/` and `runtime/` are not contract authority.
+Product/public contract authority remains under `contracts/`;
+`contracts/control_schemas/` is retained as migrated schema authority and must
+not be reintroduced under `control/`. `examples/` and `runtime/` are not
+contract authority.
 
-The next implementation-facing task after R0-03 is `WORKBENCH-FOUNDATION-00`.
-Broad layout moves still require the tracked inventory and move-map phases in
-`docs/operations/REPOSITORY_LAYOUT_MIGRATION_PLAN.md`.
+Future broad layout moves still require tracked inventory, a move map,
+reference updates, and validation evidence.
 
 ## No Claims
 

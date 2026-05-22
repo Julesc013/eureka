@@ -76,7 +76,7 @@
   },
   "public_index_status": {
     "classification": "implemented_static_artifact",
-    "artifact_root": "data/public_index",
+    "artifact_root": "site/dist/data/public_index",
     "document_count": 584,
     "live_sources_used": false,
     "external_calls_performed": false,

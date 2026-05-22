@@ -44,7 +44,7 @@ class H8ManualsDocsFixtureScriptTests(unittest.TestCase):
     def test_scripts_refuse_forbidden_roots(self) -> None:
         commands = [
             [sys.executable, "scripts/normalize_h8_manuals_docs_fixture.py", "--source-id", "bitsavers_docs", "--input", "examples/connectors/h8_manuals_docs_standards/fixtures/bitsavers_docs/document_identity_record.json", "--output", "site/dist/h8.json"],
-            [sys.executable, "scripts/normalize_h8_manuals_docs_fixture.py", "--source-id", "bitsavers_docs", "--input", "examples/connectors/h8_manuals_docs_standards/fixtures/bitsavers_docs/document_identity_record.json", "--output", "data/public_index/h8.json"],
+            [sys.executable, "scripts/normalize_h8_manuals_docs_fixture.py", "--source-id", "bitsavers_docs", "--input", "examples/connectors/h8_manuals_docs_standards/fixtures/bitsavers_docs/document_identity_record.json", "--output", "site/dist/data/public_index/h8.json"],
             [sys.executable, "scripts/normalize_h8_manuals_docs_fixture.py", "--source-id", "bitsavers_docs", "--input", "examples/connectors/h8_manuals_docs_standards/fixtures/bitsavers_docs/document_identity_record.json", "--output", "document_downloads/h8.json"],
             [sys.executable, "scripts/normalize_h8_manuals_docs_fixture.py", "--source-id", "bitsavers_docs", "--input", "examples/connectors/h8_manuals_docs_standards/fixtures/bitsavers_docs/document_identity_record.json", "--output", "ocr_cache/h8.json"],
             [sys.executable, "scripts/normalize_h8_manuals_docs_fixture.py", "--source-id", "bitsavers_docs", "--input", "examples/connectors/h8_manuals_docs_standards/fixtures/bitsavers_docs/document_identity_record.json", "--output", "media_downloads/h8.json"],

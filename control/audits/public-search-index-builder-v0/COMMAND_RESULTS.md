@@ -6,7 +6,7 @@
 | `git rev-parse HEAD` | pass | Initial head `e11d95b02c60906920d66703b7fd5248d68c1243`. |
 | `git rev-parse origin/main` | pass | Initial origin/main matched head. |
 | `git log --oneline -n 50` | pass | P50 through P54 commits were present. |
-| `python scripts/build_public_search_index.py --rebuild` | pass | Generated 584 documents under `data/public_index`. |
+| `python scripts/build_public_search_index.py --rebuild` | pass | Generated 584 documents under `site/dist/data/public_index`. |
 | `python scripts/build_public_search_index.py --check` | pass | Committed artifacts matched regenerated temp artifacts. |
 | `python scripts/build_public_search_index.py --json` | pass | Preview JSON parsed; no repo mutation. |
 | `python scripts/validate_public_search_index.py` | pass | Public index artifacts valid. |

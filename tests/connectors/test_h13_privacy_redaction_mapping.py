@@ -2,9 +2,9 @@ from __future__ import annotations
 
 import unittest
 
-from control.prototypes.legacy_runtime.connectors.h13_local_private.fixture_loader import load_h13_local_private_fixture
-from control.prototypes.legacy_runtime.connectors.h13_local_private import local_folder_metadata
-from control.prototypes.legacy_runtime.connectors.h13_local_private.path_safety import is_public_safe_locator
+from archive.prototypes.legacy_runtime.connectors.h13_local_private.fixture_loader import load_h13_local_private_fixture
+from archive.prototypes.legacy_runtime.connectors.h13_local_private import local_folder_metadata
+from archive.prototypes.legacy_runtime.connectors.h13_local_private.path_safety import is_public_safe_locator
 from scripts import validate_h13_local_private_fixture_runtime as validator
 
 

@@ -26,7 +26,7 @@ and authenticity claims are forbidden in this milestone.
 
 Current outputs may be written only to `control/audits/**/generated/`,
 `examples/pack_exports/`, or explicit temporary test directories. The runtime
-must refuse `site/dist/`, `runtime/`, `contracts/`, `data/public_index/`,
+must refuse `site/dist/`, `runtime/`, `contracts/`, `site/dist/data/public_index/`,
 publication inventory roots, source inventory roots, hosted-submission roots,
 and local private roots.
 

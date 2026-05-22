@@ -25,7 +25,7 @@ class RepoStructureCanonValidatorScriptTest(unittest.TestCase):
         self.assertIn("native_root: canonical", completed.stdout)
         self.assertIn("known_debt_count:", completed.stdout)
 
-    def test_validator_json_records_canon_and_debt(self) -> None:
+    def test_validator_json_records_canon_and_resolved_debt(self) -> None:
         completed = subprocess.run(
             [sys.executable, str(SCRIPT), "--json"],
             cwd=REPO_ROOT,
@@ -48,23 +48,33 @@ class RepoStructureCanonValidatorScriptTest(unittest.TestCase):
             set(payload["top_level"]["optional_roots"]),
         )
 
-        classified_debt = payload["top_level"]["classified_debt"]
-        self.assertEqual(classified_debt["data"], "generated_artifact_debt")
-        self.assertEqual(classified_debt["deploy"], "release_definition_debt")
+        self.assertEqual(payload["top_level"]["classified_debt"], {})
 
         debt_paths = {item["path"] for item in payload["known_debt"]}
-        self.assertIn("control/prototypes/legacy_runtime", debt_paths)
-        self.assertIn("runtime/local_workbench", debt_paths)
-        self.assertIn("control/schemas", debt_paths)
-        self.assertIn("scripts", debt_paths)
-        self.assertIn("data", debt_paths)
-        self.assertIn("deploy", debt_paths)
+        self.assertEqual(debt_paths, set())
+
+        script_wrappers = payload["naming"]["script_wrappers"]
+        self.assertGreater(script_wrappers["wrapper_count"], 100)
+        self.assertEqual(script_wrappers["non_wrapper_count"], 0)
 
         accepted = set(payload["generated_artifacts"]["accepted_exact_exceptions"])
         self.assertIn("site/dist", accepted)
         self.assertIn("snapshots/examples/static_snapshot_v0", accepted)
-        self.assertIn("data/public_index", accepted)
+        self.assertIn("site/dist/data/public_index", accepted)
         self.assertIn(".aide/generated", accepted)
+
+    def test_validator_strict_passes_after_reconcile(self) -> None:
+        completed = subprocess.run(
+            [sys.executable, str(SCRIPT), "--strict", "--json"],
+            cwd=REPO_ROOT,
+            check=True,
+            capture_output=True,
+            text=True,
+        )
+        payload = json.loads(completed.stdout)
+
+        self.assertEqual(payload["status"], "valid")
+        self.assertEqual(payload["warnings"], [])
 
     def test_validator_rejects_unclassified_src(self) -> None:
         completed = subprocess.run(

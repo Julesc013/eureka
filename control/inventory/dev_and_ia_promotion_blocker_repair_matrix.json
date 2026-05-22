@@ -35,7 +35,7 @@
       "invariants_preserved": [
         "no contract roots moved",
         "contracts/repo remains governance authority",
-        "control/schemas overlap remains explicit debt"
+        "contracts/control_schemas overlap remains explicit debt"
       ],
       "validation_commands": [
         "python -m unittest tests.operations.test_contract_taxonomy_plan"

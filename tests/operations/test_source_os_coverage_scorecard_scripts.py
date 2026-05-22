@@ -41,7 +41,7 @@ class SourceOsCoverageScorecardScriptsTests(unittest.TestCase):
         self.assertNotEqual(result.returncode, 0)
 
     def test_scripts_refuse_data_public_index_output(self):
-        result = run_cmd(["scripts/score_connector.py", "--input", "examples/connectors/core/scorecards/internet_archive_scorecard_v0.json", "--output", "data/public_index/scorecard.json"])
+        result = run_cmd(["scripts/score_connector.py", "--input", "examples/connectors/core/scorecards/internet_archive_scorecard_v0.json", "--output", "site/dist/data/public_index/scorecard.json"])
         self.assertNotEqual(result.returncode, 0)
 
     def test_source_pack_refuses_contract_output(self):

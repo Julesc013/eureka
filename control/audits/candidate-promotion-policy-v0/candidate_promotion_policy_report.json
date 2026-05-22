@@ -4,7 +4,7 @@
   "repo_head": "adeb1174532be5682ce9a780d81872d392fa374c",
   "branch": "main",
   "worktree_status": "dirty_with_p65_changes_validated_pending_commit",
-  "contract_file": "control/schemas/previews/query/candidate_promotion_assessment.v0.json",
+  "contract_file": "contracts/control_schemas/previews/query/candidate_promotion_assessment.v0.json",
   "validator_scripts": [
     "scripts/validate_candidate_promotion_assessment.py",
     "scripts/validate_candidate_promotion_policy.py",

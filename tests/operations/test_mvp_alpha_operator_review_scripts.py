@@ -46,7 +46,7 @@ class MvpAlphaOperatorReviewScriptTests(unittest.TestCase):
     def test_scripts_refuse_forbidden_roots(self) -> None:
         for forbidden in (
             "site/dist/operator.json",
-            "data/public_index/operator.json",
+            "site/dist/data/public_index/operator.json",
             ".local/eureka/operator.json",
             "provider/config.json",
             "secrets/signoff.json",

@@ -33,6 +33,6 @@ class H11StorefrontFixtureScriptTests(unittest.TestCase):
 
     def test_scripts_refuse_forbidden_roots(self) -> None:
         base = ["--source-id", "fdroid_metadata", "--input", "examples/connectors/h11_storefront/fixtures/fdroid_metadata/minimal_record.json"]
-        for root in ("site/dist/h11.json", "data/public_index/h11.json", "storefront_accounts/h11.json", "app_downloads/h11.json"):
+        for root in ("site/dist/h11.json", "site/dist/data/public_index/h11.json", "storefront_accounts/h11.json", "app_downloads/h11.json"):
             self.assertNotEqual(normalize.main([*base, "--output", root]), 0)
         self.assertNotEqual(summary.main(["--input", "examples/connectors/h11_storefront", "--output", "site/dist/h11.json"]), 0)

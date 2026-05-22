@@ -32,7 +32,7 @@ class H14ReviewQualityScriptTests(unittest.TestCase):
         proc = self.run_script("scripts/integrate_h14_source_discovery_review.py", "--input-dir", "examples/connectors/h14_source_discovery/replay_results", "--output-dir", "site/dist/h14")
         self.assertNotEqual(0, proc.returncode)
         self.assertIn("refusing", proc.stdout + proc.stderr)
-        proc = self.run_script("scripts/summarize_h14_source_discovery_quality_delta.py", "--input-dir", "examples/connectors/h14_source_discovery/review_integration", "--output", "data/public_index/h14.json")
+        proc = self.run_script("scripts/summarize_h14_source_discovery_quality_delta.py", "--input-dir", "examples/connectors/h14_source_discovery/review_integration", "--output", "site/dist/data/public_index/h14.json")
         self.assertNotEqual(0, proc.returncode)
         self.assertIn("refusing", proc.stdout + proc.stderr)
 

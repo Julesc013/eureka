@@ -1,6 +1,6 @@
 {
   "candidate_index_mutated": false,
-  "debt_note": "Existing runtime/local_workbench presentation remains transitional; runtime/resolution_run owns behavior and runtime/local_workbench only renders local HTML.",
+  "debt_note": "surfaces/web/workbench/local_html owns local HTML presentation; runtime/resolution_run owns behavior and runtime/local_service only serves the projection.",
   "deployment_performed": false,
   "download_performed": false,
   "evidence_write_performed": false,
@@ -17,7 +17,8 @@
   "schema_version": "workbench_live_run_boundary_report.v0",
   "source_cache_write_performed": false,
   "source_probe_executed": false,
-  "transitional_runtime_local_workbench_presentation_debt": true,
+  "surface_local_html_workbench_projection": true,
+  "transitional_runtime_local_workbench_presentation_debt": false,
   "upload_performed": false,
   "workbench_is_projection_only": true
 }

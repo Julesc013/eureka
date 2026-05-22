@@ -39,7 +39,7 @@ class H3ReviewQualityScriptTests(unittest.TestCase):
         bad = self.run_cmd(["scripts/integrate_h3_os_package_review.py", "--input-dir", "examples/connectors/h3_os_package_archives/replay_results", "--output-dir", "site/dist/h3-review"])
         self.assertNotEqual(0, bad.returncode)
         self.assertIn("refusing forbidden output root", bad.stdout)
-        bad = self.run_cmd(["scripts/summarize_h3_os_package_quality_delta.py", "--input-dir", "examples/connectors/h3_os_package_archives/review_integration", "--output", "data/public_index/h3-quality.json"])
+        bad = self.run_cmd(["scripts/summarize_h3_os_package_quality_delta.py", "--input-dir", "examples/connectors/h3_os_package_archives/review_integration", "--output", "site/dist/data/public_index/h3-quality.json"])
         self.assertNotEqual(0, bad.returncode)
         self.assertIn("refusing forbidden output root", bad.stdout)
         bad = self.run_cmd(["scripts/integrate_h3_os_package_review.py", "--input-dir", "examples/connectors/h3_os_package_archives/replay_results", "--output-dir", "repository_mirror/h3-review"])

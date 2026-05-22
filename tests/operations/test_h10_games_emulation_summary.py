@@ -32,7 +32,7 @@ class H10GamesEmulationSummaryTests(unittest.TestCase):
 
     def test_summary_refuses_forbidden_roots(self) -> None:
         self.assertEqual(summary.main(["--output", "site/dist/h10.json"]), 1)
-        self.assertEqual(summary.main(["--output", "data/public_index/h10.json"]), 1)
+        self.assertEqual(summary.main(["--output", "site/dist/data/public_index/h10.json"]), 1)
         self.assertEqual(summary.main(["--output", "runtime/h10.json"]), 1)
         self.assertEqual(summary.main(["--output", "contracts/h10.json"]), 1)
 

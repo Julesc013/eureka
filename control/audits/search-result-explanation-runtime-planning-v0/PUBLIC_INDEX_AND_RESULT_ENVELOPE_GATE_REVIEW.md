@@ -5,11 +5,11 @@ Status: present for local/static public search.
 Public index format:
 
 - `docs/reference/PUBLIC_SEARCH_INDEX_FORMAT.md`
-- `data/public_index/build_manifest.json`
-- `data/public_index/source_coverage.json`
-- `data/public_index/index_stats.json`
-- `data/public_index/search_documents.ndjson`
-- `data/public_index/checksums.sha256`
+- `site/dist/data/public_index/build_manifest.json`
+- `site/dist/data/public_index/source_coverage.json`
+- `site/dist/data/public_index/index_stats.json`
+- `site/dist/data/public_index/search_documents.ndjson`
+- `site/dist/data/public_index/checksums.sha256`
 
 Current index facts from `index_stats.json`:
 

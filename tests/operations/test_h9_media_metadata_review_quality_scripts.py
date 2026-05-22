@@ -36,7 +36,7 @@ class H9ReviewQualityScriptTests(unittest.TestCase):
     def test_scripts_refuse_forbidden_roots(self):
         commands = [
             ("scripts/integrate_h9_media_metadata_review.py", "--input-dir", "examples/connectors/h9_media_metadata/replay_results", "--output-dir", "site/dist/h9"),
-            ("scripts/summarize_h9_media_metadata_quality_delta.py", "--input-dir", "examples/connectors/h9_media_metadata/review_integration", "--output", "data/public_index/h9.json"),
+            ("scripts/summarize_h9_media_metadata_quality_delta.py", "--input-dir", "examples/connectors/h9_media_metadata/review_integration", "--output", "site/dist/data/public_index/h9.json"),
             ("scripts/audit_h9_media_metadata_wave.py", "--json-output", "media_downloads/h9.json"),
         ]
         for command in commands:

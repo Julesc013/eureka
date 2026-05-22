@@ -42,7 +42,7 @@ class LocalMvpIterationScriptsTest(unittest.TestCase):
         self.assertIn("Refusing", result.stderr + result.stdout)
 
     def test_output_refuses_public_index(self):
-        result = self.run_cmd("scripts/summarize_local_mvp_iteration.py", "--input", "examples/audits/local_mvp", "--output", "data/public_index/local_mvp.json", check=False)
+        result = self.run_cmd("scripts/summarize_local_mvp_iteration.py", "--input", "examples/audits/local_mvp", "--output", "site/dist/data/public_index/local_mvp.json", check=False)
         self.assertNotEqual(result.returncode, 0)
         self.assertIn("Refusing", result.stderr + result.stdout)
 

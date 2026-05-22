@@ -1,0 +1,73 @@
+{
+  "$id": "contracts/control_schemas/audits/audits/mvp_alpha_operator_review_packet.v0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "blockers": {
+      "type": "array"
+    },
+    "disabled_features": {
+      "type": "array"
+    },
+    "evidence_refs": {
+      "type": "array"
+    },
+    "launch_non_claims": {
+      "type": "array"
+    },
+    "local_mvp_capabilities": {
+      "type": "array"
+    },
+    "notes": {
+      "type": "array"
+    },
+    "operator_gated_decisions": {
+      "type": "array"
+    },
+    "operator_review_packet_id": {
+      "type": "string"
+    },
+    "product_boundary": {
+      "type": "object"
+    },
+    "recommended_decision": {
+      "type": "string"
+    },
+    "required_signoffs": {
+      "type": "array"
+    },
+    "review_status": {
+      "enum": [
+        "operator_review_required",
+        "ready_for_operator_review",
+        "needs_remediation",
+        "blocked",
+        "not_evaluable"
+      ]
+    },
+    "schema_version": {
+      "const": "mvp_alpha_operator_review_packet.v0"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "truth_boundary": {
+      "type": "object"
+    },
+    "warnings": {
+      "type": "array"
+    }
+  },
+  "required": [
+    "schema_version",
+    "operator_review_packet_id",
+    "review_status",
+    "summary",
+    "required_signoffs",
+    "recommended_decision",
+    "truth_boundary",
+    "product_boundary"
+  ],
+  "title": "Eureka MVP Alpha Operator Review Packet v0",
+  "type": "object"
+}

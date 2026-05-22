@@ -99,7 +99,7 @@
         "control/audits/track-b-03-node-capability-contract-v0/track_b_03_report.json"
       ],
       "contract_paths": [
-        "control/schemas/policies/node/node_capability.v0.json"
+        "contracts/control_schemas/policies/node/node_capability.v0.json"
       ],
       "policy_paths": [
         "control/inventory/nodes/node_capability_registry.json",
@@ -139,7 +139,7 @@
         "control/audits/track-b-04-workunit-contract-v0/track_b_04_report.json"
       ],
       "contract_paths": [
-        "control/schemas/policies/node/work_unit.v0.json"
+        "contracts/control_schemas/policies/node/work_unit.v0.json"
       ],
       "policy_paths": [
         "control/inventory/nodes/workunit_policy.json",
@@ -181,7 +181,7 @@
         "control/audits/track-b-05-workunit-result-contract-v0/track_b_05_report.json"
       ],
       "contract_paths": [
-        "control/schemas/policies/node/work_unit_result.v0.json"
+        "contracts/control_schemas/policies/node/work_unit_result.v0.json"
       ],
       "policy_paths": [
         "control/inventory/nodes/workunit_result_policy.json",
@@ -223,7 +223,7 @@
         "control/audits/track-b-06-local-foundry-state-contract-v0/track_b_06_report.json"
       ],
       "contract_paths": [
-        "control/schemas/policies/node/local_foundry_state.v0.json"
+        "contracts/control_schemas/policies/node/local_foundry_state.v0.json"
       ],
       "policy_paths": [
         "control/inventory/local_state/local_foundry_state_policy.json",
@@ -398,8 +398,8 @@
         "control/audits/track-b-10-workunit-dry-run-runner-v0/track_b_10_report.json"
       ],
       "contract_paths": [
-        "control/schemas/policies/node/work_unit.v0.json",
-        "control/schemas/policies/node/work_unit_result.v0.json"
+        "contracts/control_schemas/policies/node/work_unit.v0.json",
+        "contracts/control_schemas/policies/node/work_unit_result.v0.json"
       ],
       "policy_paths": [
         "control/inventory/nodes/workunit_dry_run_policy.json",
@@ -490,7 +490,7 @@
         "control/audits/track-b-12-candidate-store-runtime-v0/track_b_12_report.json"
       ],
       "contract_paths": [
-        "control/schemas/previews/query/candidate_index_record.v0.json"
+        "contracts/control_schemas/previews/query/candidate_index_record.v0.json"
       ],
       "policy_paths": [
         "control/inventory/candidates/candidate_store_runtime_policy.json",
@@ -767,7 +767,7 @@
         "control/audits/track-b-18-local-review-queue-runtime-v0/track_b_18_report.json"
       ],
       "contract_paths": [
-        "control/schemas/tasks/master_index/review_queue_entry.v0.json",
+        "contracts/control_schemas/tasks/master_index/review_queue_entry.v0.json",
         "docs/reference/MASTER_INDEX_REVIEW_QUEUE_CONTRACT.md"
       ],
       "policy_paths": [
@@ -817,7 +817,7 @@
         "control/audits/track-b-19-candidate-promotion-dry-run-v0/track_b_19_report.json"
       ],
       "contract_paths": [
-        "control/schemas/previews/query/candidate_index_record.v0.json"
+        "contracts/control_schemas/previews/query/candidate_index_record.v0.json"
       ],
       "policy_paths": [
         "control/inventory/review/candidate_promotion_dry_run_policy.json",
@@ -910,10 +910,10 @@
         "control/audits/track-b-21-pack-builder-runtime-v0/track_b_21_report.json"
       ],
       "contract_paths": [
-        "control/schemas/policies/packs/source_pack.v0.json",
-        "control/schemas/policies/packs/evidence_pack.v0.json",
-        "control/schemas/policies/packs/index_pack.v0.json",
-        "control/schemas/policies/packs/contribution_pack.v0.json"
+        "contracts/control_schemas/policies/packs/source_pack.v0.json",
+        "contracts/control_schemas/policies/packs/evidence_pack.v0.json",
+        "contracts/control_schemas/policies/packs/index_pack.v0.json",
+        "contracts/control_schemas/policies/packs/contribution_pack.v0.json"
       ],
       "policy_paths": [
         "control/inventory/packs/pack_builder_runtime_policy.json",
@@ -963,10 +963,10 @@
         "control/audits/track-b-22-pack-export-runtime-v0/track_b_22_report.json"
       ],
       "contract_paths": [
-        "control/schemas/policies/packs/source_pack.v0.json",
-        "control/schemas/policies/packs/evidence_pack.v0.json",
-        "control/schemas/policies/packs/index_pack.v0.json",
-        "control/schemas/policies/packs/contribution_pack.v0.json"
+        "contracts/control_schemas/policies/packs/source_pack.v0.json",
+        "contracts/control_schemas/policies/packs/evidence_pack.v0.json",
+        "contracts/control_schemas/policies/packs/index_pack.v0.json",
+        "contracts/control_schemas/policies/packs/contribution_pack.v0.json"
       ],
       "policy_paths": [
         "control/inventory/packs/pack_export_runtime_policy.json",

@@ -64,7 +64,7 @@ class NativePackagingScriptTests(unittest.TestCase):
     def test_scripts_refuse_forbidden_output_roots(self) -> None:
         forbidden_paths = (
             "site/dist/native-packaging.json",
-            "data/public_index/native-packaging.json",
+            "site/dist/data/public_index/native-packaging.json",
             "native/win/win32/dist/release-payload.json",
             ".local/eureka/native-packaging.json",
         )

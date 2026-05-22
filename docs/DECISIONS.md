@@ -1696,7 +1696,7 @@ Status: accepted
 Public Search Index Builder v0 adds `scripts/build_public_search_index.py`,
 `scripts/validate_public_search_index.py`,
 `scripts/validate_public_search_index_builder.py`, generated
-`data/public_index` artifacts, runtime integration, docs, tests, drift
+`site/dist/data/public_index` artifacts, runtime integration, docs, tests, drift
 metadata, and `control/audits/public-search-index-builder-v0/`.
 
 The decision is to add a deterministic committed public search index bundle and

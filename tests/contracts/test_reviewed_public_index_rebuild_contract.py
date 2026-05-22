@@ -135,9 +135,9 @@ class ReviewedPublicIndexRebuildContractTest(unittest.TestCase):
 
     def test_path_policy_allowing_data_public_index_fails(self) -> None:
         payload = _read_json("control/inventory/review/reviewed_public_index_path_policy.json")
-        payload["allowed_output_roots_current"].append("data/public_index/")
+        payload["allowed_output_roots_current"].append("site/dist/data/public_index/")
         errors = validator.validate_path_policy_payload(payload)
-        self.assertTrue(any("data/public_index" in error for error in errors))
+        self.assertTrue(any("site/dist/data/public_index" in error for error in errors))
 
     def test_credential_fixture_fails(self) -> None:
         payload = _rebuild()
@@ -156,11 +156,11 @@ class ReviewedPublicIndexRebuildContractTest(unittest.TestCase):
 
     def test_validator_does_not_create_public_index_artifacts(self) -> None:
         before_site = (REPO_ROOT / "site/dist").exists()
-        before_public_index = (REPO_ROOT / "data/public_index").exists()
+        before_public_index = (REPO_ROOT / "site/dist/data/public_index").exists()
         report = validator.validate_reviewed_public_index_rebuild_contract(REPO_ROOT)
         self.assertEqual(report["status"], "pass")
         self.assertEqual((REPO_ROOT / "site/dist").exists(), before_site)
-        self.assertEqual((REPO_ROOT / "data/public_index").exists(), before_public_index)
+        self.assertEqual((REPO_ROOT / "site/dist/data/public_index").exists(), before_public_index)
 
     def test_validator_does_not_call_network_model_provider(self) -> None:
         source = (REPO_ROOT / "scripts/validate_reviewed_public_index_rebuild_contract.py").read_text(encoding="utf-8")

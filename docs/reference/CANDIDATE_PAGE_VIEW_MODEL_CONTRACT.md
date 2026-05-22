@@ -31,9 +31,9 @@ blocked actions, limitations, or gaps.
 
 CandidatePageView references these governance inputs:
 
-- `control/schemas/previews/query/candidate_index_record.v0.json`
-- `control/schemas/previews/query/candidate_lifecycle.v0.json`
-- `control/schemas/previews/query/candidate_promotion_policy.v0.json`
+- `contracts/control_schemas/previews/query/candidate_index_record.v0.json`
+- `contracts/control_schemas/previews/query/candidate_lifecycle.v0.json`
+- `contracts/control_schemas/previews/query/candidate_promotion_policy.v0.json`
 - `docs/reference/CANDIDATE_INDEX_CONTRACT.md`
 - `docs/reference/MASTER_INDEX_REVIEW_QUEUE_CONTRACT.md`
 - `docs/reference/CONTRIBUTION_PACK_CONTRACT.md`

@@ -4,8 +4,8 @@ import importlib
 from pathlib import Path
 import unittest
 
-from control.prototypes.legacy_runtime.connectors.h10_games_emulation.fixture_loader import load_h10_games_emulation_fixture
-from control.prototypes.legacy_runtime.connectors.h10_games_emulation.normalizer_common import H10_FIXTURE_KINDS, H10_SOURCE_IDS, detect_h10_product_boundary_violations, detect_h10_truth_boundary_violations
+from archive.prototypes.legacy_runtime.connectors.h10_games_emulation.fixture_loader import load_h10_games_emulation_fixture
+from archive.prototypes.legacy_runtime.connectors.h10_games_emulation.normalizer_common import H10_FIXTURE_KINDS, H10_SOURCE_IDS, detect_h10_product_boundary_violations, detect_h10_truth_boundary_violations
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 FIXTURE_FILES = {
@@ -26,7 +26,7 @@ class H10GamesEmulationFixtureRuntimeTests(unittest.TestCase):
     def test_all_normalizers_handle_all_fixture_kinds(self) -> None:
         self.assertEqual(set(H10_FIXTURE_KINDS), set(FIXTURE_FILES))
         for source_id in H10_SOURCE_IDS:
-            module = importlib.import_module(f"control.prototypes.legacy_runtime.connectors.h10_games_emulation.{source_id}")
+            module = importlib.import_module(f"archive.prototypes.legacy_runtime.connectors.h10_games_emulation.{source_id}")
             for kind, filename in FIXTURE_FILES.items():
                 fixture = load_h10_games_emulation_fixture(REPO_ROOT / "examples/connectors/h10_games_emulation/fixtures" / source_id / filename)
                 normalized = module.normalize(fixture)
@@ -37,13 +37,13 @@ class H10GamesEmulationFixtureRuntimeTests(unittest.TestCase):
 
     def test_missing_optional_fields_produce_limitations(self) -> None:
         fixture = load_h10_games_emulation_fixture(REPO_ROOT / "examples/connectors/h10_games_emulation/fixtures/mobygames/minimal_record.json")
-        normalized = importlib.import_module("control.prototypes.legacy_runtime.connectors.h10_games_emulation.mobygames").normalize(fixture)
+        normalized = importlib.import_module("archive.prototypes.legacy_runtime.connectors.h10_games_emulation.mobygames").normalize(fixture)
         self.assertIn("optional field platform is absent or unknown in committed fixture", normalized["source_limitations"])
         self.assertEqual(normalized["platform"], "unknown")
 
     def test_public_and_master_index_mutation_claims_are_rejected(self) -> None:
         fixture = load_h10_games_emulation_fixture(REPO_ROOT / "examples/connectors/h10_games_emulation/fixtures/mobygames/game_identity_record.json")
-        normalized = importlib.import_module("control.prototypes.legacy_runtime.connectors.h10_games_emulation.mobygames").normalize(fixture)
+        normalized = importlib.import_module("archive.prototypes.legacy_runtime.connectors.h10_games_emulation.mobygames").normalize(fixture)
         bad = dict(normalized)
         bad["truth_boundary"] = dict(normalized["truth_boundary"], public_index_mutated=True)
         self.assertTrue(detect_h10_truth_boundary_violations(bad))

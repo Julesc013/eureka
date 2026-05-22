@@ -11,5 +11,5 @@ Key decisions:
 - `contracts/packs/` is pack contract authority.
 - `contracts/views/workbench/` is reserved for Workbench view models.
 - `contracts/search/interaction/` is reserved for Search Interaction packets.
-- `control/schemas/` is control-schema authority only.
+- `contracts/control_schemas/` is control-schema authority only.
 - `examples/` and `runtime/` are not product contract authority.

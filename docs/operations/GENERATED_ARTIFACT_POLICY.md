@@ -4,7 +4,7 @@ Generated artifacts are allowed in the repository only when their ownership and 
 
 ## Classes
 
-- `canonical_generated`: committed generated data that is part of repo-local operation, such as `data/public_index`.
+- `canonical_generated`: committed generated data that is part of repo-local operation, such as `site/dist/data/public_index`.
 - `deployment_generated`: generated deployable output. `site/dist` is in this class and is not a normal test output path.
 - `audit_generated`: generated evidence under explicit `control/audits/**/generated` paths.
 - `fixture_generated`: generated example or fixture checksums, such as demand dashboard example checksum manifests.
@@ -15,7 +15,7 @@ Generated artifacts are allowed in the repository only when their ownership and 
 
 ## Rules
 
-Ordinary tests must write generated output to `tempfile.TemporaryDirectory` or another explicit temporary path. They must not mutate `site/dist`, `data/public_index`, public rehearsal evidence, or committed fixture checksum manifests unless the test is specifically validating canonical regeneration.
+Ordinary tests must write generated output to `tempfile.TemporaryDirectory` or another explicit temporary path. They must not mutate `site/dist`, `site/dist/data/public_index`, public rehearsal evidence, or committed fixture checksum manifests unless the test is specifically validating canonical regeneration.
 
 Canonical regeneration is allowed only through a documented repo-local generator and must be followed by the owning validator. Regeneration must be scoped to the stale artifact and recorded in remediation evidence.
 

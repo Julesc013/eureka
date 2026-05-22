@@ -1476,9 +1476,9 @@
     "control/inventory/publication/static_hosting_targets.json",
     "control/inventory/publication/surface_capabilities.json",
     "control/inventory/publication/surface_route_matrix.json",
-    "data/public_index/build_manifest.json",
-    "data/public_index/index_stats.json",
-    "data/public_index/source_coverage.json"
+    "site/dist/data/public_index/build_manifest.json",
+    "site/dist/data/public_index/index_stats.json",
+    "site/dist/data/public_index/source_coverage.json"
   ],
   "static_hosting_targets": [
     {

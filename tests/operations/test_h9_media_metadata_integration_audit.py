@@ -5,10 +5,10 @@ from __future__ import annotations
 from pathlib import Path
 import unittest
 
-from control.prototypes.legacy_runtime.connectors.h9_media_metadata.normalizer_common import H9_SOURCE_IDS
-from control.prototypes.legacy_runtime.connectors.h9_media_metadata.quality_delta import build_h9_quality_delta
-from control.prototypes.legacy_runtime.connectors.h9_media_metadata.review_integration import build_h9_review_integration_result, load_h9_media_metadata_outputs
-from control.prototypes.legacy_runtime.connectors.h9_media_metadata.wave_postmortem import (
+from archive.prototypes.legacy_runtime.connectors.h9_media_metadata.normalizer_common import H9_SOURCE_IDS
+from archive.prototypes.legacy_runtime.connectors.h9_media_metadata.quality_delta import build_h9_quality_delta
+from archive.prototypes.legacy_runtime.connectors.h9_media_metadata.review_integration import build_h9_review_integration_result, load_h9_media_metadata_outputs
+from archive.prototypes.legacy_runtime.connectors.h9_media_metadata.wave_postmortem import (
     apply_missing_source_gate,
     build_h9_connector_wave_postmortem,
     build_h9_integration_audit,

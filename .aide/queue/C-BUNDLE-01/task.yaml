@@ -17,7 +17,7 @@ allowed_paths:
   - control/audits/**
 forbidden_paths:
   - site/**
-  - data/public_index/**
+  - site/dist/data/public_index/**
   - data/master_index/**
   - master_index/**
   - control/inventory/publication/**

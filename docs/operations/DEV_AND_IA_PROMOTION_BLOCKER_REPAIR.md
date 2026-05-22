@@ -14,7 +14,7 @@ Boundaries preserved:
 - no main promotion or main push
 - no new live IA probe
 - no downloads, uploads, extraction, model/provider calls, or deployment
-- no operator instance, committed `data/public_index`, master index, or public fanout mutation
+- no operator instance, committed `site/dist/data/public_index`, master index, or public fanout mutation
 - no production readiness, public launch readiness, full Archive.org integration, or marketplace/app-store readiness claim
 
 Next task:

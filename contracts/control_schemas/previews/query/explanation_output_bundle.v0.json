@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/control_schemas/previews/query/explanation_output_bundle.v0.json",
+  "title": "Eureka Explanation Output Bundle v0",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "output_bundle_id",
+    "output_status",
+    "result_explanations",
+    "near_miss_explanations",
+    "known_absence_records",
+    "search_gap_explanations",
+    "review_seed_previews",
+    "workunit_seed_previews_future",
+    "limitations",
+    "no_claims",
+    "truth_boundary",
+    "product_boundary"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "explanation_output_bundle.v0"
+    }
+  },
+  "x-public_search_mutation_allowed": false,
+  "x-ranking_mutation_allowed": false
+}

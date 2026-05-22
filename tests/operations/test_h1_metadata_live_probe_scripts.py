@@ -64,7 +64,7 @@ class H1MetadataLiveProbeScriptTests(unittest.TestCase):
         self.assertNotEqual(result.returncode, 0)
 
     def test_cli_refuses_data_public_index_output(self):
-        result = run_cmd(["scripts/run_h1_metadata_live_probe.py", "--source-id", "pypi", "--request-key", "example_project_metadata", "--output", "data/public_index/h1.json"])
+        result = run_cmd(["scripts/run_h1_metadata_live_probe.py", "--source-id", "pypi", "--request-key", "example_project_metadata", "--output", "site/dist/data/public_index/h1.json"])
         self.assertNotEqual(result.returncode, 0)
 
     def test_summary_script_passes_on_examples(self):

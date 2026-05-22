@@ -1867,7 +1867,7 @@ def _search_hunt_unavailable_actions_payload() -> list[dict[str, str]]:
 
 
 def _workbench() -> Any:
-    return __import__("runtime.local_workbench", fromlist=["build_home_page_view"])
+    return __import__("surfaces.web.workbench.local_html", fromlist=["build_home_page_view"])
 
 
 def _workbench_live_run() -> Any:

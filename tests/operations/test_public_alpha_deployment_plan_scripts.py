@@ -46,7 +46,7 @@ class PublicAlphaDeploymentPlanScriptTests(unittest.TestCase):
     def test_scripts_refuse_forbidden_roots(self) -> None:
         for forbidden in (
             "site/dist/public-alpha.json",
-            "data/public_index/public-alpha.json",
+            "site/dist/data/public_index/public-alpha.json",
             ".local/eureka/public-alpha.json",
             "provider/config.json",
             "secrets/launch.json",

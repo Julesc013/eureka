@@ -45,7 +45,7 @@ class H14SourceDiscoveryFixtureScriptTests(unittest.TestCase):
     def test_scripts_refuse_forbidden_output_roots(self) -> None:
         forbidden_args = (
             ["scripts/normalize_h14_source_discovery_fixture.py", "--source-id", "source_need_registry", "--input", "examples/connectors/h14_source_discovery/fixtures/source_need_registry/minimal_record.json", "--output", "site/dist/h14.json"],
-            ["scripts/normalize_h14_source_discovery_fixture.py", "--source-id", "source_need_registry", "--input", "examples/connectors/h14_source_discovery/fixtures/source_need_registry/minimal_record.json", "--output", "data/public_index/h14.json"],
+            ["scripts/normalize_h14_source_discovery_fixture.py", "--source-id", "source_need_registry", "--input", "examples/connectors/h14_source_discovery/fixtures/source_need_registry/minimal_record.json", "--output", "site/dist/data/public_index/h14.json"],
             ["scripts/normalize_h14_source_discovery_fixture.py", "--source-id", "source_need_registry", "--input", "examples/connectors/h14_source_discovery/fixtures/source_need_registry/minimal_record.json", "--output", "source_registry_mutation/h14.json"],
             ["scripts/normalize_h14_source_discovery_fixture.py", "--source-id", "source_need_registry", "--input", "examples/connectors/h14_source_discovery/fixtures/source_need_registry/minimal_record.json", "--output", "pack_import_staging/h14.json"],
         )

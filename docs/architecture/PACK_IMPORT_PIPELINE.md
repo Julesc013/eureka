@@ -32,7 +32,7 @@ pack root and still does not implement import, staging, indexing, upload, or
 master-index mutation.
 
 Pack Import Report Format v0 now defines the durable report envelope for step
-6. `control/schemas/audits/packs/pack_import_report.v0.json`,
+6. `contracts/control_schemas/audits/packs/pack_import_report.v0.json`,
 `examples/import_reports/`, and `scripts/validate_pack_import_report.py`
 record validation outcomes, privacy/rights/risk issues, provenance, next
 actions, and hard false mutation fields. This does not implement import. It

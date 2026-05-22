@@ -11,7 +11,7 @@
   ],
   "forbidden_evidence_roots": [
     "site/dist/",
-    "data/public_index/",
+    "site/dist/data/public_index/",
     ".aide.local/",
     ".local/eureka/",
     ".cache/eureka/"

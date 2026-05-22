@@ -5,7 +5,7 @@ The promotion preserves these non-claims:
 - no raw response commit
 - no operator instance mutation
 - no committed instance state
-- no committed `data/public_index` mutation
+- no committed `site/dist/data/public_index` mutation
 - no master-index mutation
 - no hosted public search mutation
 - no public source fanout

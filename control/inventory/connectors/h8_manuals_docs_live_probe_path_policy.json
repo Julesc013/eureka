@@ -7,7 +7,7 @@
   ],
   "forbidden_output_roots": [
     "site/dist/",
-    "data/public_index/",
+    "site/dist/data/public_index/",
     "runtime/ for generated outputs",
     "contracts/ for generated outputs",
     "control/inventory/publication/",

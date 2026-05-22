@@ -35,9 +35,9 @@ def make_fixture_repo(root: Path) -> None:
     write(root / "control/policies/contract_taxonomy_policy.json", TAXONOMY_POLICY.read_text(encoding="utf-8"))
     write(root / "control/policies/contract_migration_policy.json", MIGRATION_POLICY.read_text(encoding="utf-8"))
     write(root / "contracts/domain/source_record.v0.json", '{"$schema":"https://json-schema.org/draft/2020-12/schema","type":"object"}\n')
-    write(root / "control/schemas/audits/h14/connectors/source_discovery_quality_delta_report.v0.json", '{"type":"object"}\n')
-    write(root / "control/schemas/fixtures/h1/connectors/metadata_fixture_replay_result.v0.json", '{"type":"object"}\n')
-    write(root / "control/schemas/previews/native/native_release_candidate_preview.v0.json", '{"type":"object"}\n')
+    write(root / "contracts/control_schemas/audits/h14/connectors/source_discovery_quality_delta_report.v0.json", '{"type":"object"}\n')
+    write(root / "contracts/control_schemas/fixtures/h1/connectors/metadata_fixture_replay_result.v0.json", '{"type":"object"}\n')
+    write(root / "contracts/control_schemas/previews/native/native_release_candidate_preview.v0.json", '{"type":"object"}\n')
     write(root / "contracts/domain/h14_bundle_quality_delta.v0.json", '{"type":"object"}\n')
     write(root / "contracts/domain/empty_contract.v0.json", "")
     write(root / "scripts/validate_source_record.py", "PATH = 'contracts/domain/source_record.v0.json'\n")
@@ -58,7 +58,7 @@ class ContractTaxonomyPlanTests(unittest.TestCase):
         payload = json.loads(TAXONOMY_POLICY.read_text(encoding="utf-8"))
         self.assertEqual("contract_taxonomy_policy.v0", payload["schema_version"])
         self.assertIn("product_domain_contract", payload["contract_classes"])
-        self.assertIn("control/schemas/audits/", payload["target_roots"].values())
+        self.assertIn("contracts/control_schemas/audits/", payload["target_roots"].values())
         self.assertIn("h14", payload["forbidden_product_contract_signals"])
 
     def test_migration_policy_validates(self):
@@ -94,10 +94,10 @@ class ContractTaxonomyPlanTests(unittest.TestCase):
             make_fixture_repo(repo)
             audit = load_audit_module().build_contract_taxonomy_audit(repo)
             item = {entry["path"]: entry for entry in audit["contract_taxonomy_inventory"]["contracts"]}[
-                "control/schemas/audits/h14/connectors/source_discovery_quality_delta_report.v0.json"
+                "contracts/control_schemas/audits/h14/connectors/source_discovery_quality_delta_report.v0.json"
             ]
             self.assertEqual("audit_schema", item["contract_class"])
-            self.assertTrue(item["target_path"].startswith("control/schemas/audits/h14/"))
+            self.assertTrue(item["target_path"].startswith("contracts/control_schemas/audits/h14/"))
 
     def test_classifies_fixture_schema_fixture(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -105,7 +105,7 @@ class ContractTaxonomyPlanTests(unittest.TestCase):
             make_fixture_repo(repo)
             audit = load_audit_module().build_contract_taxonomy_audit(repo)
             item = {entry["path"]: entry for entry in audit["contract_taxonomy_inventory"]["contracts"]}[
-                "control/schemas/fixtures/h1/connectors/metadata_fixture_replay_result.v0.json"
+                "contracts/control_schemas/fixtures/h1/connectors/metadata_fixture_replay_result.v0.json"
             ]
             self.assertEqual("fixture_schema", item["contract_class"])
             self.assertIn("control_schema_fixture_path", item["signals"])
@@ -116,10 +116,10 @@ class ContractTaxonomyPlanTests(unittest.TestCase):
             make_fixture_repo(repo)
             audit = load_audit_module().build_contract_taxonomy_audit(repo)
             item = {entry["path"]: entry for entry in audit["contract_taxonomy_inventory"]["contracts"]}[
-                "control/schemas/previews/native/native_release_candidate_preview.v0.json"
+                "contracts/control_schemas/previews/native/native_release_candidate_preview.v0.json"
             ]
             self.assertEqual("preview_schema", item["contract_class"])
-            self.assertTrue(item["target_path"].startswith("control/schemas/previews/"))
+            self.assertTrue(item["target_path"].startswith("contracts/control_schemas/previews/"))
 
     def test_detects_phase_bundle_quality_delta_in_product_contract_like_path(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -158,9 +158,9 @@ class ContractTaxonomyPlanTests(unittest.TestCase):
             make_fixture_repo(repo)
             audit = load_audit_module().build_contract_taxonomy_audit(repo)
             item = {entry["path"]: entry for entry in audit["contract_taxonomy_inventory"]["contracts"]}[
-                "control/schemas/audits/h14/connectors/source_discovery_quality_delta_report.v0.json"
+                "contracts/control_schemas/audits/h14/connectors/source_discovery_quality_delta_report.v0.json"
             ]
-            self.assertEqual("control/schemas/audits/h14/connectors/source_discovery_quality_delta_report.v0.json", item["target_path"])
+            self.assertEqual("contracts/control_schemas/audits/h14/connectors/source_discovery_quality_delta_report.v0.json", item["target_path"])
 
     def test_writes_no_files_by_default(self):
         with tempfile.TemporaryDirectory() as tmp:

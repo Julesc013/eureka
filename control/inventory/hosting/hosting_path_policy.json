@@ -7,7 +7,7 @@
   ],
   "forbidden_output_roots": [
     "generated site distribution output",
-    "data/public_index/",
+    "site/dist/data/public_index/",
     "data/master_index/",
     "master_index/",
     "local private roots",

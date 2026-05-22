@@ -109,7 +109,7 @@
       "output_id": "noop_validation_report",
       "output_type": "validation_report",
       "output_status": "validated",
-      "output_contract_ref": "control/schemas/policies/node/work_unit_result.v0.json",
+      "output_contract_ref": "contracts/control_schemas/policies/node/work_unit_result.v0.json",
       "output_ref": null,
       "output_summary": "Noop validation report.",
       "output_public_safe": true,
@@ -127,7 +127,7 @@
   ],
   "outputs_rejected": [],
   "output_contract_refs": [
-    "control/schemas/policies/node/work_unit_result.v0.json"
+    "contracts/control_schemas/policies/node/work_unit_result.v0.json"
   ],
   "review_gates": {
     "human_review_required": true,

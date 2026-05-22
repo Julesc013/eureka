@@ -31,7 +31,7 @@ outputs are draft-only and remain review-gated.
   worktree still contains prior TRACK-B/OBS staged files outside the current
   B21 allowed path set.
 - Pack Builder does not write files by default and rejects forbidden roots such
-  as `site/dist/`, `runtime/`, and `data/public_index/`.
+  as `site/dist/`, `runtime/`, and `site/dist/data/public_index/`.
 
 ## Results
 

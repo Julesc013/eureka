@@ -27,7 +27,7 @@ production readiness, or public launch readiness.
 ## Temp-Instance Only
 
 IA-03 through IA-07 writes remain temp explicit instance only. They do not
-mutate the operator instance, committed `data/public_index`, the master index,
+mutate the operator instance, committed `site/dist/data/public_index`, the master index,
 or hosted public search.
 
 ## Still Disabled

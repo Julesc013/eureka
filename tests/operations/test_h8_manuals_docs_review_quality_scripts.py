@@ -36,7 +36,7 @@ class H8ReviewQualityScriptTests(unittest.TestCase):
     def test_scripts_refuse_forbidden_roots(self):
         commands = [
             ("scripts/integrate_h8_manuals_docs_review.py", "--input-dir", "examples/connectors/h8_manuals_docs_standards/replay_results", "--output-dir", "site/dist/h8"),
-            ("scripts/summarize_h8_manuals_docs_quality_delta.py", "--input-dir", "examples/connectors/h8_manuals_docs_standards/review_integration", "--output", "data/public_index/h8.json"),
+            ("scripts/summarize_h8_manuals_docs_quality_delta.py", "--input-dir", "examples/connectors/h8_manuals_docs_standards/review_integration", "--output", "site/dist/data/public_index/h8.json"),
             ("scripts/audit_h8_manuals_docs_standards_wave.py", "--json-output", "media_downloads/h8.json"),
         ]
         for command in commands:

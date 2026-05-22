@@ -105,7 +105,7 @@
     "absence_status": "not_absent",
     "gap_types": [],
     "checked": [
-      "data/public_index"
+      "site/dist/data/public_index"
     ],
     "not_checked": [
       "live sources",
@@ -125,15 +125,15 @@
       "public_index"
     ],
     "checked_sources": [
-      "data/public_index"
+      "site/dist/data/public_index"
     ],
     "live_probes_attempted": false,
     "external_calls_performed": false
   },
   "index_refs": {
     "public_index_build_id": "eureka_public_search_index_v0",
-    "public_index_manifest_ref": "data/public_index/build_manifest.json",
-    "source_coverage_ref": "data/public_index/source_coverage.json",
+    "public_index_manifest_ref": "site/dist/data/public_index/build_manifest.json",
+    "source_coverage_ref": "site/dist/data/public_index/source_coverage.json",
     "index_snapshot_id": "eureka_public_search_index_v0"
   },
   "source_status_summary": {
@@ -159,7 +159,7 @@
   "freshness": {
     "cache_scope": "local_public_index",
     "index_snapshot_ref": "eureka_public_search_index_v0",
-    "build_manifest_ref": "data/public_index/build_manifest.json",
+    "build_manifest_ref": "site/dist/data/public_index/build_manifest.json",
     "ttl_policy": "none_for_example",
     "stale_if_index_changes": true,
     "stale_if_contract_changes": true,

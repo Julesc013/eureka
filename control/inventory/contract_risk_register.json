@@ -1473,7 +1473,7 @@
       "finding": "preview_schema recommends move",
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/scout/discovery_candidate.v0.json",
-      "recommended_fix": "Apply R0-03B plan: move to control/schemas/previews/scout/discovery_candidate.v0.json and update references.",
+      "recommended_fix": "Apply R0-03B plan: move to contracts/control_schemas/previews/scout/discovery_candidate.v0.json and update references.",
       "risk_id": "R0-CONTRACT-RISK-123",
       "severity": "medium"
     },
@@ -1785,7 +1785,7 @@
       "finding": "preview_schema recommends move",
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/search_interaction/candidate_cluster_packet.v0.json",
-      "recommended_fix": "Apply R0-03B plan: move to control/schemas/previews/search_interaction/candidate_cluster_packet.v0.json and update references.",
+      "recommended_fix": "Apply R0-03B plan: move to contracts/control_schemas/previews/search_interaction/candidate_cluster_packet.v0.json and update references.",
       "risk_id": "R0-CONTRACT-RISK-149",
       "severity": "medium"
     },
@@ -1809,7 +1809,7 @@
       "finding": "audit_schema recommends move",
       "impact": "References and validators can break if R0-03B moves the file without updates.",
       "path": "contracts/search_interaction/coverage_report_packet.v0.json",
-      "recommended_fix": "Apply R0-03B plan: move to control/schemas/audits/search_interaction/coverage_report_packet.v0.json and update references.",
+      "recommended_fix": "Apply R0-03B plan: move to contracts/control_schemas/audits/search_interaction/coverage_report_packet.v0.json and update references.",
       "risk_id": "R0-CONTRACT-RISK-151",
       "severity": "medium"
     },
@@ -3008,7 +3008,7 @@
       ],
       "finding": "unknown recommends investigate",
       "impact": "Execution cannot safely move or keep this artifact without human review.",
-      "path": "control/schemas/deprecated/archive/archive-lifecycle.protocol.md",
+      "path": "contracts/control_schemas/deprecated/archive/archive-lifecycle.protocol.md",
       "recommended_fix": "Review manually and assign a concrete target class before moving.",
       "risk_id": "R0-CONTRACT-RISK-251",
       "severity": "high"
@@ -3020,7 +3020,7 @@
       ],
       "finding": "unknown recommends investigate",
       "impact": "Execution cannot safely move or keep this artifact without human review.",
-      "path": "control/schemas/fixtures/archive/software/payloads/synthetic-demo-app-package.zip",
+      "path": "contracts/control_schemas/fixtures/archive/software/payloads/synthetic-demo-app-package.zip",
       "recommended_fix": "Review manually and assign a concrete target class before moving.",
       "risk_id": "R0-CONTRACT-RISK-252",
       "severity": "high"
@@ -3032,7 +3032,7 @@
       ],
       "finding": "unknown recommends investigate",
       "impact": "Execution cannot safely move or keep this artifact without human review.",
-      "path": "control/schemas/fixtures/archive/software/payloads/synthetic-demo-app.bundle",
+      "path": "contracts/control_schemas/fixtures/archive/software/payloads/synthetic-demo-app.bundle",
       "recommended_fix": "Review manually and assign a concrete target class before moving.",
       "risk_id": "R0-CONTRACT-RISK-253",
       "severity": "high"

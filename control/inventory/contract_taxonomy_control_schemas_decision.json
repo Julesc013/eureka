@@ -7,5 +7,5 @@
   "product_contracts_allowed_under_control_schemas": false,
   "migration_required": true,
   "migration_task": "REPO-LAYOUT-CONTRACT-AUTHORITY-MIGRATION-01",
-  "notes": "control/schemas is retained for audit, fixture, preview, policy, validator, task, and deprecated schemas. Product/public contract authority remains under contracts/. Migration is planned, not performed, in R0-03."
+  "notes": "contracts/control_schemas is retained for audit, fixture, preview, policy, validator, task, and deprecated schemas. Product/public contract authority remains under contracts/. Migration is planned, not performed, in R0-03."
 }

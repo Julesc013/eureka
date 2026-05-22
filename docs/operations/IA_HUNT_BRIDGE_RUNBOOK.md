@@ -16,7 +16,7 @@ Dry-run mode creates the Hunt reference, IA WorkUnits, local fixture-backed pipe
 python scripts/eureka_ia_hunt_bridge.py --query sampleproject --from-fixtures --use-temp-instance --apply-to-temp --projection operator_workbench --json
 ```
 
-Temp-instance mode writes only under a temporary instance path managed by the command. It may apply source-cache, evidence, candidate index, review queue, and reviewed local index writes to prove the bridge can orchestrate the existing IA pipeline. Operator instance state, master index state, committed `data/public_index`, and public surfaces remain untouched.
+Temp-instance mode writes only under a temporary instance path managed by the command. It may apply source-cache, evidence, candidate index, review queue, and reviewed local index writes to prove the bridge can orchestrate the existing IA pipeline. Operator instance state, master index state, committed `site/dist/data/public_index`, and public surfaces remain untouched.
 
 ## Projection Checks
 

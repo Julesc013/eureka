@@ -41,7 +41,7 @@ All write-capable IA stages remain scoped to temp explicit instance proof:
 - review queue write proof
 - reviewed-index rebuild proof
 
-No operator instance state, committed `data/public_index`, master index, hosted
+No operator instance state, committed `site/dist/data/public_index`, master index, hosted
 public state, repo layout move, or `site/dist` regeneration is performed by this
 promotion review.
 

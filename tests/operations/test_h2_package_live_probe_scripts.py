@@ -70,7 +70,7 @@ class H2PackageLiveProbeScriptTests(unittest.TestCase):
         self.assertNotEqual(result.returncode, 0)
 
     def test_cli_refuses_data_public_index_output(self):
-        result = run_cmd(["scripts/run_h2_package_live_probe.py", "--source-id", "crates_io", "--request-key", "example_package_metadata", "--output", "data/public_index/h2.json"])
+        result = run_cmd(["scripts/run_h2_package_live_probe.py", "--source-id", "crates_io", "--request-key", "example_package_metadata", "--output", "site/dist/data/public_index/h2.json"])
         self.assertNotEqual(result.returncode, 0)
 
     def test_summary_script_passes_on_examples(self):

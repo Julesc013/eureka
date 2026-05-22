@@ -5,9 +5,9 @@ import subprocess
 import sys
 import unittest
 
-from control.prototypes.legacy_runtime.connectors.h14_source_discovery.quality_delta import build_h14_quality_delta
-from control.prototypes.legacy_runtime.connectors.h14_source_discovery.review_integration import build_h14_review_integration_result, load_h14_source_discovery_outputs
-from control.prototypes.legacy_runtime.connectors.h14_source_discovery.wave_postmortem import (
+from archive.prototypes.legacy_runtime.connectors.h14_source_discovery.quality_delta import build_h14_quality_delta
+from archive.prototypes.legacy_runtime.connectors.h14_source_discovery.review_integration import build_h14_review_integration_result, load_h14_source_discovery_outputs
+from archive.prototypes.legacy_runtime.connectors.h14_source_discovery.wave_postmortem import (
     apply_missing_source_gate,
     build_h14_connector_wave_postmortem,
     build_h14_integration_audit,

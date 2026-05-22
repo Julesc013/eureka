@@ -1,53 +1,31 @@
-#!/usr/bin/env python3
-"""Demonstrate the integrated local Search Hunt workflow."""
-
 from __future__ import annotations
 
-import argparse
-import sys
+EUREKA_SCRIPT_COMPAT_WRAPPER = True
+
+from importlib.util import module_from_spec, spec_from_file_location
 from pathlib import Path
-from typing import Sequence, TextIO
+import runpy
+import sys
 
+sys.dont_write_bytecode = True
+_TARGET = Path(__file__).resolve().parents[1] / 'tools/generators/demo_search_hunt_workflow.py'
+_TARGET_PARENT = str(_TARGET.parent)
+if _TARGET_PARENT not in sys.path:
+    sys.path.insert(0, _TARGET_PARENT)
+_SPEC = spec_from_file_location(f"_eureka_tool_{Path(__file__).stem}", _TARGET)
+if _SPEC is None or _SPEC.loader is None:
+    raise ImportError(f"Unable to load tool implementation: {_TARGET}")
+_MODULE = module_from_spec(_SPEC)
+sys.modules[_SPEC.name] = _MODULE
+_SPEC.loader.exec_module(_MODULE)
 
-SCRIPT_DIR = Path(__file__).resolve().parent
-if str(SCRIPT_DIR) not in sys.path:
-    sys.path.insert(0, str(SCRIPT_DIR))
-
-from eureka_hunt_workflow_smoke import (  # noqa: E402
-    DEFAULT_QUERY,
-    emit_result,
-    fail_result,
-    main as smoke_main,
-)
-
-
-def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr: TextIO = sys.stderr) -> int:
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--instance", help="Explicit local appliance instance root.")
-    parser.add_argument("--operator-token", help="Operator token for local mutations.")
-    parser.add_argument("--query", default=DEFAULT_QUERY)
-    parser.add_argument("--json", action="store_true")
-    parser.add_argument("--output")
-    args = parser.parse_args(argv)
-    if not args.instance:
-        result = fail_result("missing_instance", "--instance is required")
-        emit_result(result, args.json, args.output, stdout)
-        print("ERROR: --instance is required", file=stderr)
-        return 2
-    smoke_args = [
-        "--instance",
-        args.instance,
-        "--operator-token",
-        str(args.operator_token or ""),
-        "--query",
-        args.query,
-    ]
-    if args.json:
-        smoke_args.append("--json")
-    if args.output:
-        smoke_args.extend(["--output", args.output])
-    return smoke_main(smoke_args, stdout=stdout, stderr=stderr)
-
-
-if __name__ == "__main__":
-    raise SystemExit(main())
+for _name, _value in vars(_MODULE).items():
+    if _name not in {"__name__", "__loader__", "__package__", "__spec__"}:
+        globals()[_name] = _value
+if __name__ != "__main__":
+    sys.modules[__name__] = _MODULE
+else:
+    sys.argv[0] = str(_TARGET)
+    if hasattr(_MODULE, "main"):
+        raise SystemExit(_MODULE.main())
+    runpy.run_path(str(_TARGET), run_name="__main__")

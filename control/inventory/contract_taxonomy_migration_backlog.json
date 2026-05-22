@@ -4,8 +4,8 @@
   "backlog": [
     {
       "backlog_id": "migrate_or_reclassify_control_schemas_packs",
-      "current_paths": ["control/schemas/policies/packs/**"],
-      "target_authority": "contracts/packs/ remains product pack authority; control/schemas remains policy-schema only",
+      "current_paths": ["contracts/control_schemas/policies/packs/**"],
+      "target_authority": "contracts/packs/ remains product pack authority; contracts/control_schemas remains policy-schema only",
       "risk": "pack policy schemas may masquerade as pack manifest law",
       "prerequisite": "R0-03 authority matrix accepted",
       "recommended_task": "REPO-LAYOUT-CONTRACT-AUTHORITY-MIGRATION-01",
@@ -54,7 +54,7 @@
     },
     {
       "backlog_id": "add_workbench_view_model_contract_location",
-      "current_paths": ["contracts/views/**", "surfaces/web/workbench/**", "runtime/local_workbench/**"],
+      "current_paths": ["contracts/views/**", "surfaces/web/workbench/**", "surfaces/web/workbench/local_html/**"],
       "target_authority": "contracts/views/workbench/",
       "risk": "Workbench Foundation may otherwise put view law in surfaces or runtime",
       "prerequisite": "R0-03 reservation",

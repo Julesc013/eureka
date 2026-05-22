@@ -22,7 +22,7 @@ source APIs, scrape, browse, call models, use credentials, or mutate indexes.
 - Status endpoint honesty for `/healthz`, `/status`, and `/api/v1/status`.
 - Static handoff safety for `search.html`, lite/text/files projections, and
   `search_config.json`.
-- Public index safety for `data/public_index` and the static
+- Public index safety for `site/dist/data/public_index` and the static
   `public_index_summary.json`.
 - Hosted wrapper safety through local rehearsal only.
 

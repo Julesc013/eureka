@@ -1,0 +1,61 @@
+{
+  "$id": "https://eureka.local/contracts/control_schemas/previews/h8/connectors/manuals_docs_live_probe_output_bundle.v0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "access_rights_candidate": {
+      "description": "H8 live-probe field: access_rights_candidate"
+    },
+    "connector_health_summary": {
+      "description": "H8 live-probe field: connector_health_summary"
+    },
+    "datasheet_device_identity_candidate": {
+      "description": "H8 live-probe field: datasheet_device_identity_candidate"
+    },
+    "evidence_candidate_preview": {
+      "description": "H8 live-probe field: evidence_candidate_preview"
+    },
+    "install_requirement_claim_candidate": {
+      "description": "H8 live-probe field: install_requirement_claim_candidate"
+    },
+    "live_probe_result": {
+      "description": "H8 live-probe field: live_probe_result"
+    },
+    "manual_artifact_relation_candidate": {
+      "description": "H8 live-probe field: manual_artifact_relation_candidate"
+    },
+    "normalized_record": {
+      "description": "H8 live-probe field: normalized_record"
+    },
+    "repair_service_safety_candidate": {
+      "description": "H8 live-probe field: repair_service_safety_candidate"
+    },
+    "review_queue_seed_preview": {
+      "description": "H8 live-probe field: review_queue_seed_preview"
+    },
+    "source_cache_candidate_preview": {
+      "description": "H8 live-probe field: source_cache_candidate_preview"
+    },
+    "standards_specification_identity_candidate": {
+      "description": "H8 live-probe field: standards_specification_identity_candidate"
+    },
+    "technical_document_identity_candidate": {
+      "description": "H8 live-probe field: technical_document_identity_candidate"
+    },
+    "validation_summary": {
+      "description": "H8 live-probe field: validation_summary"
+    }
+  },
+  "schema_version": "h8_manuals_docs_live_probe_output_bundle.v0",
+  "type": "object",
+  "x_eureka_boundary": {
+    "accepted_truth": false,
+    "downloads_enabled": false,
+    "full_text_ocr_enabled": false,
+    "live_probe_framework_only": true,
+    "master_index_mutation_allowed": false,
+    "public_index_mutation_allowed": false,
+    "restricted_source_access_enabled": false,
+    "scraping_crawling_enabled": false
+  }
+}

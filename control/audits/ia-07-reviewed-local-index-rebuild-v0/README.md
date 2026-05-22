@@ -7,6 +7,6 @@ It also proved local search, object packet, and absence packet consumption of th
 rebuilt index.
 
 Forbidden outcomes remained disabled: operator instance mutation, committed
-`data/public_index` mutation, master index mutation, raw response commits,
+`site/dist/data/public_index` mutation, master index mutation, raw response commits,
 downloads, uploads, extraction, model/provider calls, deployment, production
 readiness claims, and public launch claims.

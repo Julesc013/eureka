@@ -4,11 +4,11 @@
   "duplicate_risks": [
     {
       "risk_id": "control_schemas_policies_packs_vs_contracts_packs",
-      "paths": ["control/schemas/policies/packs/**", "contracts/packs/**"],
+      "paths": ["contracts/control_schemas/policies/packs/**", "contracts/packs/**"],
       "problem": "Control policy schemas can look like pack contract authority if not scoped.",
       "canonical_authority": "contracts/packs/",
       "secondary_role": "control schema for policy/governance records only",
-      "immediate_decision": "retain control/schemas as control-only with migration backlog",
+      "immediate_decision": "retain contracts/control_schemas as control-only with migration backlog",
       "later_task": "REPO-LAYOUT-CONTRACT-AUTHORITY-MIGRATION-01",
       "blocks_workbench_foundation": false
     },

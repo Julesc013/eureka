@@ -6,7 +6,7 @@ This is intentionally narrower than an operator apply flow:
 
 - no default operator instance mutation
 - no master index mutation
-- no committed `data/public_index` mutation
+- no committed `site/dist/data/public_index` mutation
 - no production/public launch claim
 - no rollback contract beyond discarding the temp instance
 

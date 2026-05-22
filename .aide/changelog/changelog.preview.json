@@ -2464,7 +2464,7 @@
         "category": "Fixed",
         "commit": "ede77d3cb101",
         "commit_sha": "ede77d3cb10174cf9ede6d5a8385c9fbe31950e4",
-        "entry": "moved unresolved contract taxonomy artifacts to control/schemas",
+        "entry": "moved unresolved contract taxonomy artifacts to contracts/control_schemas",
         "follow_up": "- Run clean-tree R0 validators after commit.\n\n- Continue with F0-BUNDLE-01 if clean-tree validation remains pass/pass-with-warnings.",
         "risks": "- WARN runtime files changed only for reference-only path updates proven by full discovery.\n\n- WARN product contract tree has existing UI bundle inspection naming warnings.",
         "scope": "r0",
@@ -2478,7 +2478,7 @@
           "## Follow-up"
         ],
         "subject": "fix(r0): resolve contract taxonomy blockers",
-        "summary": "moved unresolved contract taxonomy artifacts to control/schemas",
+        "summary": "moved unresolved contract taxonomy artifacts to contracts/control_schemas",
         "type": "fix",
         "validation": "- PASS git diff --check\n\n- PASS git diff --cached --check\n\n- PASS json.tool remediation outputs\n\n- PASS resolver dry-run/apply\n\n- PASS focused remediation/workunit/candidate/golden/search tests\n\n- WARN remediation validator needed clean-tree rerun for historical validators after commit"
       },
@@ -4533,7 +4533,7 @@
       "category": "Fixed",
       "commit": "ede77d3cb101",
       "commit_sha": "ede77d3cb10174cf9ede6d5a8385c9fbe31950e4",
-      "entry": "moved unresolved contract taxonomy artifacts to control/schemas",
+      "entry": "moved unresolved contract taxonomy artifacts to contracts/control_schemas",
       "follow_up": "- Run clean-tree R0 validators after commit.\n\n- Continue with F0-BUNDLE-01 if clean-tree validation remains pass/pass-with-warnings.",
       "risks": "- WARN runtime files changed only for reference-only path updates proven by full discovery.\n\n- WARN product contract tree has existing UI bundle inspection naming warnings.",
       "scope": "r0",
@@ -4547,7 +4547,7 @@
         "## Follow-up"
       ],
       "subject": "fix(r0): resolve contract taxonomy blockers",
-      "summary": "moved unresolved contract taxonomy artifacts to control/schemas",
+      "summary": "moved unresolved contract taxonomy artifacts to contracts/control_schemas",
       "type": "fix",
       "validation": "- PASS git diff --check\n\n- PASS git diff --cached --check\n\n- PASS json.tool remediation outputs\n\n- PASS resolver dry-run/apply\n\n- PASS focused remediation/workunit/candidate/golden/search tests\n\n- WARN remediation validator needed clean-tree rerun for historical validators after commit"
     },

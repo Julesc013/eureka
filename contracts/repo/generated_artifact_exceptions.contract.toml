@@ -25,14 +25,14 @@ manual_edits_allowed = false
 future_disposition = "keep_as_deterministic_seed_example"
 
 [[exceptions]]
-path = "data/public_index"
+path = "site/dist/data/public_index"
 artifact_id = "public_search_index"
 class = "committed_public_index_artifact"
-status = "known_debt_exception"
+status = "accepted_exception"
 generator_command = "python scripts/build_public_search_index.py --rebuild"
 check_command = "python scripts/build_public_search_index.py --check"
 manual_edits_allowed = false
-future_disposition = "move_rename_or_tightly_reapprove"
+future_disposition = "keep_under_site_dist_generated_artifact_policy_until_publication_policy_changes"
 
 [[pattern_exceptions]]
 path_pattern = "control/audits/*/generated"

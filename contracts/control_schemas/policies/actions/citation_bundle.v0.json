@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/control_schemas/policies/actions/citation_bundle.v0.json",
+  "title": "Eureka Citation Bundle v0",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "citation_bundle_id",
+    "citation_status",
+    "subject_refs",
+    "source_refs",
+    "evidence_refs",
+    "pack_refs",
+    "citation_entries",
+    "citation_formats",
+    "generated_at_note",
+    "limitations",
+    "no_claims",
+    "truth_boundary",
+    "product_boundary"
+  ],
+  "properties": {
+    "schema_version": { "const": "citation_bundle.v0" },
+    "citation_status": { "enum": ["descriptive_only", "example_only", "policy_blocked", "not_evaluable"] },
+    "truth_boundary": {
+      "type": "object",
+      "properties": {
+        "citation_bundle_accepts_truth": { "const": false },
+        "rights_clearance_claimed": { "const": false },
+        "malware_safety_claimed": { "const": false },
+        "verified_installability_claimed": { "const": false }
+      }
+    }
+  },
+  "additionalProperties": true
+}

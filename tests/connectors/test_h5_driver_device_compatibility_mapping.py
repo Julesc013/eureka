@@ -3,8 +3,8 @@ from __future__ import annotations
 import copy
 import unittest
 
-from control.prototypes.legacy_runtime.connectors.h5_vendor_update_driver.driver_device_compatibility import build_h5_driver_device_compatibility_candidates
-from control.prototypes.legacy_runtime.connectors.h5_vendor_update_driver.normalizer_common import detect_h5_truth_boundary_violations
+from archive.prototypes.legacy_runtime.connectors.h5_vendor_update_driver.driver_device_compatibility import build_h5_driver_device_compatibility_candidates
+from archive.prototypes.legacy_runtime.connectors.h5_vendor_update_driver.normalizer_common import detect_h5_truth_boundary_violations
 
 
 class H5DriverCompatibilityMappingTests(unittest.TestCase):

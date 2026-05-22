@@ -1,73 +1,31 @@
 from __future__ import annotations
 
-import argparse
-import json
+EUREKA_SCRIPT_COMPAT_WRAPPER = True
+
+from importlib.util import module_from_spec, spec_from_file_location
 from pathlib import Path
+import runpy
 import sys
 
-REPO_ROOT = Path(__file__).resolve().parents[1]
-if str(REPO_ROOT) not in sys.path:
-    sys.path.insert(0, str(REPO_ROOT))
+sys.dont_write_bytecode = True
+_TARGET = Path(__file__).resolve().parents[1] / 'tools/generators/demo_resolution_slice.py'
+_TARGET_PARENT = str(_TARGET.parent)
+if _TARGET_PARENT not in sys.path:
+    sys.path.insert(0, _TARGET_PARENT)
+_SPEC = spec_from_file_location(f"_eureka_tool_{Path(__file__).stem}", _TARGET)
+if _SPEC is None or _SPEC.loader is None:
+    raise ImportError(f"Unable to load tool implementation: {_TARGET}")
+_MODULE = module_from_spec(_SPEC)
+sys.modules[_SPEC.name] = _MODULE
+_SPEC.loader.exec_module(_MODULE)
 
-from runtime.connectors.synthetic_software import SyntheticSoftwareConnector
-from runtime.gateway import build_demo_resolution_jobs_public_api
-from runtime.gateway.public_api import SubmitResolutionJobRequest, resolution_job_envelope_to_workbench_session
-
-
-def main() -> int:
-    parser = argparse.ArgumentParser(
-        description="Run the local deterministic Eureka thin-slice resolution demo.",
-    )
-    parser.add_argument(
-        "target_ref",
-        nargs="?",
-        help="Bounded target reference to resolve. Defaults to the known synthetic fixture target.",
-    )
-    parser.add_argument(
-        "--requested-output",
-        action="append",
-        dest="requested_outputs",
-        default=[],
-        help="Optional bounded output label to include in the request envelope.",
-    )
-    parser.add_argument(
-        "--include-workbench-session",
-        action="store_true",
-        help="Also map the read job envelope into the shared workbench session view model.",
-    )
-    parser.add_argument(
-        "--session-id",
-        default="session.synthetic-demo",
-        help="Session identifier to use when emitting a workbench session view model.",
-    )
-    args = parser.parse_args()
-
-    connector = SyntheticSoftwareConnector()
-    target_ref = args.target_ref or connector.default_target_ref()
-
-    public_api = build_demo_resolution_jobs_public_api()
-    submit_response = public_api.submit_resolution_job(
-        SubmitResolutionJobRequest.from_parts(
-            target_ref=target_ref,
-            requested_outputs=args.requested_outputs,
-        )
-    )
-    read_response = public_api.read_resolution_job(submit_response.body["job_id"])
-
-    payload = {
-        "submit_response": submit_response.to_dict(),
-        "read_response": read_response.to_dict(),
-    }
-    if args.include_workbench_session:
-        payload["workbench_session"] = resolution_job_envelope_to_workbench_session(
-            read_response.body,
-            session_id=args.session_id,
-        )
-
-    json.dump(payload, sys.stdout, indent=2, sort_keys=True)
-    sys.stdout.write("\n")
-    return 0
-
-
-if __name__ == "__main__":
-    raise SystemExit(main())
+for _name, _value in vars(_MODULE).items():
+    if _name not in {"__name__", "__loader__", "__package__", "__spec__"}:
+        globals()[_name] = _value
+if __name__ != "__main__":
+    sys.modules[__name__] = _MODULE
+else:
+    sys.argv[0] = str(_TARGET)
+    if hasattr(_MODULE, "main"):
+        raise SystemExit(_MODULE.main())
+    runpy.run_path(str(_TARGET), run_name="__main__")

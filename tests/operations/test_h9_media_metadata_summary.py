@@ -30,7 +30,7 @@ class H9MediaMetadataSummaryTests(unittest.TestCase):
 
     def test_summary_refuses_forbidden_roots(self) -> None:
         self.assertEqual(summary.main(["--output", "site/dist/h9.json"]), 1)
-        self.assertEqual(summary.main(["--output", "data/public_index/h9.json"]), 1)
+        self.assertEqual(summary.main(["--output", "site/dist/data/public_index/h9.json"]), 1)
         self.assertEqual(summary.main(["--output", "runtime/h9.json"]), 1)
         self.assertEqual(summary.main(["--output", "contracts/h9.json"]), 1)
 

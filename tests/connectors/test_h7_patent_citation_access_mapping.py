@@ -4,9 +4,9 @@ import copy
 from pathlib import Path
 import unittest
 
-from control.prototypes.legacy_runtime.connectors.h7_library_research.fixture_loader import load_h7_library_research_fixture
-from control.prototypes.legacy_runtime.connectors.h7_library_research import google_patents, openalex
-from control.prototypes.legacy_runtime.connectors.h7_library_research.normalizer_common import detect_h7_product_boundary_violations, detect_h7_truth_boundary_violations
+from archive.prototypes.legacy_runtime.connectors.h7_library_research.fixture_loader import load_h7_library_research_fixture
+from archive.prototypes.legacy_runtime.connectors.h7_library_research import google_patents, openalex
+from archive.prototypes.legacy_runtime.connectors.h7_library_research.normalizer_common import detect_h7_product_boundary_violations, detect_h7_truth_boundary_violations
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 

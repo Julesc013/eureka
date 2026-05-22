@@ -1,11 +1,11 @@
 # Public Index Summary Review
 
 P56 generates `site/dist/data/public_index_summary.json` from the P55 public
-index artifacts under `data/public_index`.
+index artifacts under `site/dist/data/public_index`.
 
 Current summary:
 
-- artifact root: `data/public_index`
+- artifact root: `site/dist/data/public_index`
 - document count: 584
 - source count: 15
 - committed artifact refs: build manifest, source coverage, index stats,

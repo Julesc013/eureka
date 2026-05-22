@@ -41,7 +41,7 @@ allowed_paths:
   - tests/operations/test_h1_integration_audit.py
 forbidden_paths:
   - site/**
-  - data/public_index/**
+  - site/dist/data/public_index/**
   - data/master_index/**
   - master_index/**
   - control/inventory/publication/**

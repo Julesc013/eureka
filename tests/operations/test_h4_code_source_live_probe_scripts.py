@@ -71,7 +71,7 @@ class H4CodeSourceLiveProbeScriptTests(unittest.TestCase):
         self.assertNotEqual(result.returncode, 0)
 
     def test_cli_refuses_data_public_index_output(self):
-        result = run_cmd(["scripts/run_h4_code_source_live_probe.py", "--source-id", "github_releases", "--request-key", "example_release_metadata", "--output", "data/public_index/h4.json"])
+        result = run_cmd(["scripts/run_h4_code_source_live_probe.py", "--source-id", "github_releases", "--request-key", "example_release_metadata", "--output", "site/dist/data/public_index/h4.json"])
         self.assertNotEqual(result.returncode, 0)
 
     def test_cli_refuses_repository_clone_output(self):

@@ -1,6 +1,6 @@
 # HTML Workbench Summary
 
-LOCAL-05 adds `runtime/local_workbench` as a deterministic server-rendered HTML layer for the local appliance.
+LOCAL-05 adds `surfaces/web/workbench/local_html` as a deterministic server-rendered HTML layer for the local appliance.
 
 Pages:
 

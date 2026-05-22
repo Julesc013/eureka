@@ -11,7 +11,7 @@ from runtime.source_registry import SourceRecordNotFoundError, SourceRegistry
 
 
 REPO_ROOT = Path(__file__).resolve().parents[3]
-PUBLIC_INDEX_ROOT = REPO_ROOT / "data" / "public_index"
+PUBLIC_INDEX_ROOT = REPO_ROOT / "site" / "dist" / "data" / "public_index"
 SEARCH_DOCUMENTS_PATH = PUBLIC_INDEX_ROOT / "search_documents.ndjson"
 PUBLIC_INDEX_SCHEMA_VERSION = "0.1.0"
 PUBLIC_INDEX_ID = "eureka_public_search_index_v0"

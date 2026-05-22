@@ -13171,7 +13171,7 @@
         "control/inventory/generated_artifacts",
         "control/inventory/publication",
         "crates/eureka-core",
-        "data/public_index",
+        "site/dist/data/public_index",
         "data/public_index_summary.json",
         "data/search_config.json",
         "docs",
@@ -15935,8 +15935,8 @@
         "contracts/ui/view_models/stored_exports.view_model.yaml",
         "control/inventory/git/sync_workflow_commands.json",
         "control/inventory/observations/obs_track_b_sync_matrix.json",
-        "control/prototypes/legacy_runtime/connectors/h13_local_private/local_cas_import_boundary.py",
-        "control/schemas/previews/h13/connectors/local_cas_import_boundary_candidate.v0.json",
+        "archive/prototypes/legacy_runtime/connectors/h13_local_private/local_cas_import_boundary.py",
+        "contracts/control_schemas/previews/h13/connectors/local_cas_import_boundary_candidate.v0.json",
         "crates/eureka-contracts/src/lib.rs",
         "crates/eureka-core/src/lib.rs",
         "crates/eureka-resolver/src/lib.rs",
@@ -17220,102 +17220,102 @@
         "control/policies/local_worker_audit_policy.json",
         "control/policies/r0_one_source_live_test_policy.json",
         "control/policies/site_dist_test_isolation_policy.json",
-        "control/prototypes/legacy_runtime/connectors/h10_games_emulation/platform_release_edition.py",
-        "control/prototypes/legacy_runtime/connectors/h11_storefront/version_release_channel.py",
-        "control/prototypes/legacy_runtime/connectors/h12_retro_community/compatibility_install_note.py",
-        "control/prototypes/legacy_runtime/connectors/h12_retro_community/hash_checksum.py",
-        "control/prototypes/legacy_runtime/connectors/h13_local_private/boundary_dry_run_local_package_cache_metadata.py",
-        "control/prototypes/legacy_runtime/connectors/h13_local_private/local_cas_import_boundary.py",
-        "control/prototypes/legacy_runtime/connectors/h13_local_private/local_package_cache_metadata.py",
-        "control/prototypes/legacy_runtime/connectors/h13_local_private/pack_export_import_boundary.py",
-        "control/prototypes/legacy_runtime/connectors/h14_source_discovery/pack_import_export_boundary.py",
-        "control/prototypes/legacy_runtime/connectors/h14_source_discovery/rollup_pack_import_export_boundary.py",
-        "control/prototypes/legacy_runtime/connectors/h1_metadata_wave/github_releases.py",
-        "control/prototypes/legacy_runtime/connectors/h1_metadata_wave/live_probe_github_releases.py",
-        "control/prototypes/legacy_runtime/connectors/h2_package_registries/package_identity.py",
-        "control/prototypes/legacy_runtime/connectors/h3_os_package_archives/freebsd_packages_ports.py",
-        "control/prototypes/legacy_runtime/connectors/h3_os_package_archives/live_probe_freebsd_packages_ports.py",
-        "control/prototypes/legacy_runtime/connectors/h3_os_package_archives/live_probe_ubuntu_old_releases.py",
-        "control/prototypes/legacy_runtime/connectors/h3_os_package_archives/os_package_identity.py",
-        "control/prototypes/legacy_runtime/connectors/h3_os_package_archives/ubuntu_old_releases.py",
-        "control/prototypes/legacy_runtime/connectors/h4_code_source_release/generic_release_host.py",
-        "control/prototypes/legacy_runtime/connectors/h4_code_source_release/github_releases.py",
-        "control/prototypes/legacy_runtime/connectors/h4_code_source_release/gitlab_releases.py",
-        "control/prototypes/legacy_runtime/connectors/h4_code_source_release/live_probe_generic_release_host.py",
-        "control/prototypes/legacy_runtime/connectors/h4_code_source_release/live_probe_github_releases.py",
-        "control/prototypes/legacy_runtime/connectors/h4_code_source_release/live_probe_gitlab_releases.py",
-        "control/prototypes/legacy_runtime/connectors/h4_code_source_release/release_identity.py",
-        "control/prototypes/legacy_runtime/connectors/h8_manuals_docs_standards/install_requirement_claim.py",
-        "control/prototypes/legacy_runtime/connectors/h9_media_metadata/music_work_recording_release.py",
-        "control/schemas/audits/audits/mvp_alpha_readiness_audit.v0.json",
-        "control/schemas/audits/h1/connectors/integration_audit.v0.json",
-        "control/schemas/audits/h10/connectors/games_emulation_integration_audit.v0.json",
-        "control/schemas/audits/h11/connectors/storefront_integration_audit.v0.json",
-        "control/schemas/audits/h12/connectors/retro_community_integration_audit.v0.json",
-        "control/schemas/audits/h13/connectors/local_private_integration_audit.v0.json",
-        "control/schemas/audits/h14/connectors/source_discovery_integration_audit.v0.json",
-        "control/schemas/audits/h2/connectors/package_connector_wave_postmortem.v0.json",
-        "control/schemas/audits/h2/connectors/package_integration_audit.v0.json",
-        "control/schemas/audits/h2/connectors/package_quality_delta_report.v0.json",
-        "control/schemas/audits/h2/connectors/package_review_integration_result.v0.json",
-        "control/schemas/audits/h3/connectors/os_package_connector_wave_postmortem.v0.json",
-        "control/schemas/audits/h3/connectors/os_package_integration_audit.v0.json",
-        "control/schemas/audits/h3/connectors/os_package_quality_delta_report.v0.json",
-        "control/schemas/audits/h3/connectors/os_package_review_integration_result.v0.json",
-        "control/schemas/audits/h4/connectors/code_source_integration_audit.v0.json",
-        "control/schemas/audits/h5/connectors/vendor_update_integration_audit.v0.json",
-        "control/schemas/audits/h6/connectors/web_archive_integration_audit.v0.json",
-        "control/schemas/audits/h7/connectors/library_research_integration_audit.v0.json",
-        "control/schemas/audits/h8/connectors/manuals_docs_integration_audit.v0.json",
-        "control/schemas/audits/h9/connectors/media_metadata_integration_audit.v0.json",
-        "control/schemas/audits/hosting/public_launch_readiness_audit.v0.json",
-        "control/schemas/audits/native/native_first_wave_integration_audit.v0.json",
-        "control/schemas/audits/packs/pack_import_report.v0.json",
-        "control/schemas/fixtures/archive/software/payloads/synthetic-demo-app-package.zip",
-        "control/schemas/fixtures/h2/connectors/package_fixture.v0.json",
-        "control/schemas/fixtures/h2/connectors/package_fixture_replay_result.v0.json",
-        "control/schemas/fixtures/h3/connectors/os_package_fixture.v0.json",
-        "control/schemas/fixtures/h3/connectors/os_package_fixture_replay_result.v0.json",
-        "control/schemas/policies/hosting/public_alpha_operator_checklist.v0.json",
-        "control/schemas/policies/hosting/rollback_plan.v0.json",
-        "control/schemas/policies/packs/source_pack_export.v0.json",
-        "control/schemas/previews/h10/connectors/platform_release_edition_candidate.v0.json",
-        "control/schemas/previews/h11/connectors/version_release_channel_candidate.v0.json",
-        "control/schemas/previews/h12/connectors/compatibility_install_note_candidate.v0.json",
-        "control/schemas/previews/h12/connectors/hash_checksum_candidate.v0.json",
-        "control/schemas/previews/h13/connectors/local_cas_import_boundary_candidate.v0.json",
-        "control/schemas/previews/h13/connectors/pack_export_import_boundary_candidate.v0.json",
-        "control/schemas/previews/h14/connectors/pack_import_export_boundary_candidate.v0.json",
-        "control/schemas/previews/h2/connectors/package_connector_health_summary.v0.json",
-        "control/schemas/previews/h2/connectors/package_dependency_candidate.v0.json",
-        "control/schemas/previews/h2/connectors/package_file_candidate.v0.json",
-        "control/schemas/previews/h2/connectors/package_identity_candidate.v0.json",
-        "control/schemas/previews/h2/connectors/package_live_probe_output_bundle.v0.json",
-        "control/schemas/previews/h2/connectors/package_live_probe_request.v0.json",
-        "control/schemas/previews/h2/connectors/package_live_probe_result.v0.json",
-        "control/schemas/previews/h2/connectors/package_normalized_record.v0.json",
-        "control/schemas/previews/h3/connectors/os_package_connector_health_summary.v0.json",
-        "control/schemas/previews/h3/connectors/os_package_dependency_candidate.v0.json",
-        "control/schemas/previews/h3/connectors/os_package_file_candidate.v0.json",
-        "control/schemas/previews/h3/connectors/os_package_identity_candidate.v0.json",
-        "control/schemas/previews/h3/connectors/os_package_live_probe_output_bundle.v0.json",
-        "control/schemas/previews/h3/connectors/os_package_live_probe_request.v0.json",
-        "control/schemas/previews/h3/connectors/os_package_live_probe_result.v0.json",
-        "control/schemas/previews/h3/connectors/os_package_normalized_record.v0.json",
-        "control/schemas/previews/h4/connectors/release_asset_candidate.v0.json",
-        "control/schemas/previews/h4/connectors/release_identity_candidate.v0.json",
-        "control/schemas/previews/h8/connectors/install_requirement_claim_candidate.v0.json",
-        "control/schemas/previews/h9/connectors/music_work_recording_release_candidate.v0.json",
-        "control/schemas/previews/native/native_release_candidate_preview.v0.json",
-        "control/schemas/previews/packs/pack_import_preview.v0.json",
-        "control/schemas/tasks/h2/connectors/package_next_phase_recommendation.v0.json",
-        "control/schemas/tasks/h3/connectors/os_package_next_phase_recommendation.v0.json",
+        "archive/prototypes/legacy_runtime/connectors/h10_games_emulation/platform_release_edition.py",
+        "archive/prototypes/legacy_runtime/connectors/h11_storefront/version_release_channel.py",
+        "archive/prototypes/legacy_runtime/connectors/h12_retro_community/compatibility_install_note.py",
+        "archive/prototypes/legacy_runtime/connectors/h12_retro_community/hash_checksum.py",
+        "archive/prototypes/legacy_runtime/connectors/h13_local_private/boundary_dry_run_local_package_cache_metadata.py",
+        "archive/prototypes/legacy_runtime/connectors/h13_local_private/local_cas_import_boundary.py",
+        "archive/prototypes/legacy_runtime/connectors/h13_local_private/local_package_cache_metadata.py",
+        "archive/prototypes/legacy_runtime/connectors/h13_local_private/pack_export_import_boundary.py",
+        "archive/prototypes/legacy_runtime/connectors/h14_source_discovery/pack_import_export_boundary.py",
+        "archive/prototypes/legacy_runtime/connectors/h14_source_discovery/rollup_pack_import_export_boundary.py",
+        "archive/prototypes/legacy_runtime/connectors/h1_metadata_wave/github_releases.py",
+        "archive/prototypes/legacy_runtime/connectors/h1_metadata_wave/live_probe_github_releases.py",
+        "archive/prototypes/legacy_runtime/connectors/h2_package_registries/package_identity.py",
+        "archive/prototypes/legacy_runtime/connectors/h3_os_package_archives/freebsd_packages_ports.py",
+        "archive/prototypes/legacy_runtime/connectors/h3_os_package_archives/live_probe_freebsd_packages_ports.py",
+        "archive/prototypes/legacy_runtime/connectors/h3_os_package_archives/live_probe_ubuntu_old_releases.py",
+        "archive/prototypes/legacy_runtime/connectors/h3_os_package_archives/os_package_identity.py",
+        "archive/prototypes/legacy_runtime/connectors/h3_os_package_archives/ubuntu_old_releases.py",
+        "archive/prototypes/legacy_runtime/connectors/h4_code_source_release/generic_release_host.py",
+        "archive/prototypes/legacy_runtime/connectors/h4_code_source_release/github_releases.py",
+        "archive/prototypes/legacy_runtime/connectors/h4_code_source_release/gitlab_releases.py",
+        "archive/prototypes/legacy_runtime/connectors/h4_code_source_release/live_probe_generic_release_host.py",
+        "archive/prototypes/legacy_runtime/connectors/h4_code_source_release/live_probe_github_releases.py",
+        "archive/prototypes/legacy_runtime/connectors/h4_code_source_release/live_probe_gitlab_releases.py",
+        "archive/prototypes/legacy_runtime/connectors/h4_code_source_release/release_identity.py",
+        "archive/prototypes/legacy_runtime/connectors/h8_manuals_docs_standards/install_requirement_claim.py",
+        "archive/prototypes/legacy_runtime/connectors/h9_media_metadata/music_work_recording_release.py",
+        "contracts/control_schemas/audits/audits/mvp_alpha_readiness_audit.v0.json",
+        "contracts/control_schemas/audits/h1/connectors/integration_audit.v0.json",
+        "contracts/control_schemas/audits/h10/connectors/games_emulation_integration_audit.v0.json",
+        "contracts/control_schemas/audits/h11/connectors/storefront_integration_audit.v0.json",
+        "contracts/control_schemas/audits/h12/connectors/retro_community_integration_audit.v0.json",
+        "contracts/control_schemas/audits/h13/connectors/local_private_integration_audit.v0.json",
+        "contracts/control_schemas/audits/h14/connectors/source_discovery_integration_audit.v0.json",
+        "contracts/control_schemas/audits/h2/connectors/package_connector_wave_postmortem.v0.json",
+        "contracts/control_schemas/audits/h2/connectors/package_integration_audit.v0.json",
+        "contracts/control_schemas/audits/h2/connectors/package_quality_delta_report.v0.json",
+        "contracts/control_schemas/audits/h2/connectors/package_review_integration_result.v0.json",
+        "contracts/control_schemas/audits/h3/connectors/os_package_connector_wave_postmortem.v0.json",
+        "contracts/control_schemas/audits/h3/connectors/os_package_integration_audit.v0.json",
+        "contracts/control_schemas/audits/h3/connectors/os_package_quality_delta_report.v0.json",
+        "contracts/control_schemas/audits/h3/connectors/os_package_review_integration_result.v0.json",
+        "contracts/control_schemas/audits/h4/connectors/code_source_integration_audit.v0.json",
+        "contracts/control_schemas/audits/h5/connectors/vendor_update_integration_audit.v0.json",
+        "contracts/control_schemas/audits/h6/connectors/web_archive_integration_audit.v0.json",
+        "contracts/control_schemas/audits/h7/connectors/library_research_integration_audit.v0.json",
+        "contracts/control_schemas/audits/h8/connectors/manuals_docs_integration_audit.v0.json",
+        "contracts/control_schemas/audits/h9/connectors/media_metadata_integration_audit.v0.json",
+        "contracts/control_schemas/audits/hosting/public_launch_readiness_audit.v0.json",
+        "contracts/control_schemas/audits/native/native_first_wave_integration_audit.v0.json",
+        "contracts/control_schemas/audits/packs/pack_import_report.v0.json",
+        "contracts/control_schemas/fixtures/archive/software/payloads/synthetic-demo-app-package.zip",
+        "contracts/control_schemas/fixtures/h2/connectors/package_fixture.v0.json",
+        "contracts/control_schemas/fixtures/h2/connectors/package_fixture_replay_result.v0.json",
+        "contracts/control_schemas/fixtures/h3/connectors/os_package_fixture.v0.json",
+        "contracts/control_schemas/fixtures/h3/connectors/os_package_fixture_replay_result.v0.json",
+        "contracts/control_schemas/policies/hosting/public_alpha_operator_checklist.v0.json",
+        "contracts/control_schemas/policies/hosting/rollback_plan.v0.json",
+        "contracts/control_schemas/policies/packs/source_pack_export.v0.json",
+        "contracts/control_schemas/previews/h10/connectors/platform_release_edition_candidate.v0.json",
+        "contracts/control_schemas/previews/h11/connectors/version_release_channel_candidate.v0.json",
+        "contracts/control_schemas/previews/h12/connectors/compatibility_install_note_candidate.v0.json",
+        "contracts/control_schemas/previews/h12/connectors/hash_checksum_candidate.v0.json",
+        "contracts/control_schemas/previews/h13/connectors/local_cas_import_boundary_candidate.v0.json",
+        "contracts/control_schemas/previews/h13/connectors/pack_export_import_boundary_candidate.v0.json",
+        "contracts/control_schemas/previews/h14/connectors/pack_import_export_boundary_candidate.v0.json",
+        "contracts/control_schemas/previews/h2/connectors/package_connector_health_summary.v0.json",
+        "contracts/control_schemas/previews/h2/connectors/package_dependency_candidate.v0.json",
+        "contracts/control_schemas/previews/h2/connectors/package_file_candidate.v0.json",
+        "contracts/control_schemas/previews/h2/connectors/package_identity_candidate.v0.json",
+        "contracts/control_schemas/previews/h2/connectors/package_live_probe_output_bundle.v0.json",
+        "contracts/control_schemas/previews/h2/connectors/package_live_probe_request.v0.json",
+        "contracts/control_schemas/previews/h2/connectors/package_live_probe_result.v0.json",
+        "contracts/control_schemas/previews/h2/connectors/package_normalized_record.v0.json",
+        "contracts/control_schemas/previews/h3/connectors/os_package_connector_health_summary.v0.json",
+        "contracts/control_schemas/previews/h3/connectors/os_package_dependency_candidate.v0.json",
+        "contracts/control_schemas/previews/h3/connectors/os_package_file_candidate.v0.json",
+        "contracts/control_schemas/previews/h3/connectors/os_package_identity_candidate.v0.json",
+        "contracts/control_schemas/previews/h3/connectors/os_package_live_probe_output_bundle.v0.json",
+        "contracts/control_schemas/previews/h3/connectors/os_package_live_probe_request.v0.json",
+        "contracts/control_schemas/previews/h3/connectors/os_package_live_probe_result.v0.json",
+        "contracts/control_schemas/previews/h3/connectors/os_package_normalized_record.v0.json",
+        "contracts/control_schemas/previews/h4/connectors/release_asset_candidate.v0.json",
+        "contracts/control_schemas/previews/h4/connectors/release_identity_candidate.v0.json",
+        "contracts/control_schemas/previews/h8/connectors/install_requirement_claim_candidate.v0.json",
+        "contracts/control_schemas/previews/h9/connectors/music_work_recording_release_candidate.v0.json",
+        "contracts/control_schemas/previews/native/native_release_candidate_preview.v0.json",
+        "contracts/control_schemas/previews/packs/pack_import_preview.v0.json",
+        "contracts/control_schemas/tasks/h2/connectors/package_next_phase_recommendation.v0.json",
+        "contracts/control_schemas/tasks/h3/connectors/os_package_next_phase_recommendation.v0.json",
         "crates/eureka-contracts/src/lib.rs",
         "crates/eureka-core/src/lib.rs",
         "crates/eureka-resolver/src/lib.rs",
         "crates/eureka-store/src/lib.rs",
-        "data/public_index/build_manifest.json",
-        "data/public_index/checksums.sha256",
+        "site/dist/data/public_index/build_manifest.json",
+        "site/dist/data/public_index/checksums.sha256",
         "docs",
         "docs/architecture/CODE_SOURCE_RELEASE_SOURCE_FAMILY_MODEL.md",
         "docs/architecture/H10_PLATFORM_RELEASE_EDITION_MODEL.md",
@@ -19643,8 +19643,8 @@
         "contracts/evidence",
         "contracts/evidence_ledger",
         "contracts/master_index",
-        "control/schemas/fixtures/connectors/source_connector_fixture.v0.json",
-        "control/schemas/policies/packs/source_pack.v0.json",
+        "contracts/control_schemas/fixtures/connectors/source_connector_fixture.v0.json",
+        "contracts/control_schemas/policies/packs/source_pack.v0.json",
         "shared",
         "tests"
       ],
@@ -20289,7 +20289,7 @@
         "control/audits/wayback-cdx-memento-connector-runtime-planning-v0/wayback_cdx_memento_connector_runtime_planning_report.json",
         "control/inventory/publication/public_search_routes.json",
         "control/inventory/publication/public_search_safety.json",
-        "data/public_index",
+        "site/dist/data/public_index",
         "data/public_index_summary.json",
         "data/search_config.json",
         "data/search_handoff.json",
@@ -28507,9 +28507,9 @@
         "python -m json.tool control/inventory/connectors/h1_metadata_fixture_truth_policy.json",
         "python -m json.tool control/inventory/connectors/h1_metadata_normalization_policy.json",
         "python -m json.tool control/inventory/connectors/h1_metadata_source_cache_mapping_policy.json",
-        "python -m json.tool control/schemas/fixtures/h1/connectors/metadata_fixture.v0.json",
-        "python -m json.tool control/schemas/fixtures/h1/connectors/metadata_fixture_replay_result.v0.json",
-        "python -m json.tool control/schemas/previews/h1/connectors/metadata_normalized_record.v0.json",
+        "python -m json.tool contracts/control_schemas/fixtures/h1/connectors/metadata_fixture.v0.json",
+        "python -m json.tool contracts/control_schemas/fixtures/h1/connectors/metadata_fixture_replay_result.v0.json",
+        "python -m json.tool contracts/control_schemas/previews/h1/connectors/metadata_normalized_record.v0.json",
         "python scripts/audit_h0_integration.py --check",
         "python scripts/check_architecture_boundaries.py",
         "python scripts/normalize_h1_metadata_fixture.py --source-id pypi --input examples/connectors/h1_metadata_wave/fixtures/pypi/typical_record.json --check",
@@ -28580,9 +28580,9 @@
         "python -m json.tool control/inventory/connectors/h1_metadata_fixture_truth_policy.json",
         "python -m json.tool control/inventory/connectors/h1_metadata_normalization_policy.json",
         "python -m json.tool control/inventory/connectors/h1_metadata_source_cache_mapping_policy.json",
-        "python -m json.tool control/schemas/fixtures/h1/connectors/metadata_fixture.v0.json",
-        "python -m json.tool control/schemas/fixtures/h1/connectors/metadata_fixture_replay_result.v0.json",
-        "python -m json.tool control/schemas/previews/h1/connectors/metadata_normalized_record.v0.json",
+        "python -m json.tool contracts/control_schemas/fixtures/h1/connectors/metadata_fixture.v0.json",
+        "python -m json.tool contracts/control_schemas/fixtures/h1/connectors/metadata_fixture_replay_result.v0.json",
+        "python -m json.tool contracts/control_schemas/previews/h1/connectors/metadata_normalized_record.v0.json",
         "python scripts/audit_h0_integration.py --check",
         "python scripts/check_architecture_boundaries.py",
         "python scripts/normalize_h1_metadata_fixture.py --source-id pypi --input examples/connectors/h1_metadata_wave/fixtures/pypi/typical_record.json --check",
@@ -37917,7 +37917,7 @@
       "doc_path": "control/audits/hosted-public-search-rehearsal-v0/DEPLOYMENT_TEMPLATE_REVIEW.md",
       "links": [],
       "path_references": [
-        "deploy/render/render.yaml"
+        "release/render/render.yaml"
       ],
       "reasons": [
         "inline_path_reference_scan"
@@ -38148,8 +38148,8 @@
       "doc_path": "control/audits/hosted-public-search-wrapper-v0/DEPLOYMENT_TEMPLATE_REVIEW.md",
       "links": [],
       "path_references": [
-        "deploy/README.md",
-        "deploy/render/render.yaml"
+        "docs/operations/hosting/render_deployment.md",
+        "release/render/render.yaml"
       ],
       "reasons": [
         "inline_path_reference_scan"
@@ -40380,8 +40380,8 @@
       "links": [],
       "path_references": [
         "contracts",
-        "data/public_index/checksums.sha256",
-        "data/public_index/search_documents.ndjson",
+        "site/dist/data/public_index/checksums.sha256",
+        "site/dist/data/public_index/search_documents.ndjson",
         "eureka-instance/**",
         "origin/dev",
         "origin/main",
@@ -40738,7 +40738,7 @@
       "links": [],
       "path_references": [
         "runtime/local_service",
-        "runtime/local_workbench"
+        "surfaces/web/workbench/local_html"
       ],
       "reasons": [
         "inline_path_reference_scan"
@@ -41946,7 +41946,7 @@
       "doc_path": "control/audits/local-final-green-promote-01-v0/validation_matrix.md",
       "links": [],
       "path_references": [
-        "data/public_index",
+        "site/dist/data/public_index",
         "test",
         "tests"
       ],
@@ -47085,7 +47085,7 @@
       "doc_path": "control/audits/pack-import-report-format-v0/README.md",
       "links": [],
       "path_references": [
-        "control/schemas/audits/packs/pack_import_report.v0.json",
+        "contracts/control_schemas/audits/packs/pack_import_report.v0.json",
         "docs",
         "scripts/validate_pack_import_report.py",
         "tests"
@@ -50000,7 +50000,7 @@
       "path_references": [
         "cargo check --workspace --manifest-path crates/Cargo.toml",
         "cargo test --workspace --manifest-path crates/Cargo.toml",
-        "data/public_index",
+        "site/dist/data/public_index",
         "docs",
         "git rev-parse origin/main",
         "main...origin/main",
@@ -50133,7 +50133,7 @@
       "doc_path": "control/audits/public-search-index-builder-v0/GENERATED_ARTIFACTS.md",
       "links": [],
       "path_references": [
-        "data/public_index",
+        "site/dist/data/public_index",
         "scripts/build_public_search_index.py",
         "scripts/check_generated_artifact_drift.py",
         "scripts/validate_public_search_index.py"
@@ -50147,8 +50147,8 @@
       "doc_path": "control/audits/public-search-index-builder-v0/INDEX_BUILDER_SUMMARY.md",
       "links": [],
       "path_references": [
-        "data/public_index",
-        "data/public_index/search_documents.ndjson",
+        "site/dist/data/public_index",
+        "site/dist/data/public_index/search_documents.ndjson",
         "scripts/build_public_search_index.py"
       ],
       "reasons": [
@@ -50160,7 +50160,7 @@
       "doc_path": "control/audits/public-search-index-builder-v0/INDEX_FORMAT.md",
       "links": [],
       "path_references": [
-        "data/public_index"
+        "site/dist/data/public_index"
       ],
       "reasons": [
         "inline_path_reference_scan"
@@ -50187,7 +50187,7 @@
       "doc_path": "control/audits/public-search-index-builder-v0/LOCAL_PUBLIC_SEARCH_INTEGRATION.md",
       "links": [],
       "path_references": [
-        "data/public_index/search_documents.ndjson"
+        "site/dist/data/public_index/search_documents.ndjson"
       ],
       "reasons": [
         "inline_path_reference_scan"
@@ -51262,7 +51262,7 @@
         "control/inventory/publication",
         "control/inventory/publication/public_search_routes.json",
         "control/inventory/publication/public_search_safety.json",
-        "data/public_index/index_stats.json",
+        "site/dist/data/public_index/index_stats.json",
         "git rev-parse origin/main",
         "main...origin/main",
         "python -m unittest discover -s tests/hardening -t ",
@@ -51463,11 +51463,11 @@
       "doc_path": "control/audits/public-search-runtime-integration-audit-v0/PUBLIC_INDEX_STATUS.md",
       "links": [],
       "path_references": [
-        "data/public_index/build_manifest.json",
-        "data/public_index/checksums.sha256",
-        "data/public_index/index_stats.json",
-        "data/public_index/search_documents.ndjson",
-        "data/public_index/source_coverage.json",
+        "site/dist/data/public_index/build_manifest.json",
+        "site/dist/data/public_index/checksums.sha256",
+        "site/dist/data/public_index/index_stats.json",
+        "site/dist/data/public_index/search_documents.ndjson",
+        "site/dist/data/public_index/source_coverage.json",
         "site/dist/data/public_index_summary.json"
       ],
       "reasons": [
@@ -56387,7 +56387,7 @@
       "links": [],
       "path_references": [
         "contracts",
-        "control/schemas"
+        "contracts/control_schemas"
       ],
       "reasons": [
         "inline_path_reference_scan"
@@ -59242,25 +59242,25 @@
         "contracts/node/work_unit_result.v0.json",
         "contracts/query/candidate_promotion_assessment.v0.json",
         "contracts/query/observation_candidate_review_queue.v0.json",
-        "control/schemas/deprecated/archive/archive-lifecycle.protocol.md",
-        "control/schemas/fixtures/archive/software/payloads/synthetic-demo-app-package.zip",
-        "control/schemas/fixtures/archive/software/payloads/synthetic-demo-app.bundle",
-        "control/schemas/fixtures/archive/software/synthetic_resolution_fixture.json",
-        "control/schemas/policies/node/work_unit.v0.json",
-        "control/schemas/policies/node/work_unit_result.v0.json",
-        "control/schemas/previews/h14/connectors/connector_pack_manifest_candidate.v0.json",
-        "control/schemas/previews/h14/connectors/connector_scorecard_candidate.v0.json",
-        "control/schemas/previews/h14/connectors/coverage_manifest_candidate.v0.json",
-        "control/schemas/previews/h14/connectors/pack_import_export_boundary_candidate.v0.json",
-        "control/schemas/previews/h14/connectors/source_candidate_candidate.v0.json",
-        "control/schemas/previews/h14/connectors/source_discovery_candidate.v0.json",
-        "control/schemas/previews/h14/connectors/source_dispute_revocation_candidate.v0.json",
-        "control/schemas/previews/h14/connectors/source_lineage_provenance_candidate.v0.json",
-        "control/schemas/previews/h14/connectors/source_need_candidate.v0.json",
-        "control/schemas/previews/h14/connectors/source_pack_manifest_candidate.v0.json",
-        "control/schemas/previews/h14/connectors/source_reliability_freshness_candidate.v0.json",
-        "control/schemas/previews/query/candidate_promotion_assessment.v0.json",
-        "control/schemas/tasks/query/observation_candidate_review_queue.v0.json"
+        "contracts/control_schemas/deprecated/archive/archive-lifecycle.protocol.md",
+        "contracts/control_schemas/fixtures/archive/software/payloads/synthetic-demo-app-package.zip",
+        "contracts/control_schemas/fixtures/archive/software/payloads/synthetic-demo-app.bundle",
+        "contracts/control_schemas/fixtures/archive/software/synthetic_resolution_fixture.json",
+        "contracts/control_schemas/policies/node/work_unit.v0.json",
+        "contracts/control_schemas/policies/node/work_unit_result.v0.json",
+        "contracts/control_schemas/previews/h14/connectors/connector_pack_manifest_candidate.v0.json",
+        "contracts/control_schemas/previews/h14/connectors/connector_scorecard_candidate.v0.json",
+        "contracts/control_schemas/previews/h14/connectors/coverage_manifest_candidate.v0.json",
+        "contracts/control_schemas/previews/h14/connectors/pack_import_export_boundary_candidate.v0.json",
+        "contracts/control_schemas/previews/h14/connectors/source_candidate_candidate.v0.json",
+        "contracts/control_schemas/previews/h14/connectors/source_discovery_candidate.v0.json",
+        "contracts/control_schemas/previews/h14/connectors/source_dispute_revocation_candidate.v0.json",
+        "contracts/control_schemas/previews/h14/connectors/source_lineage_provenance_candidate.v0.json",
+        "contracts/control_schemas/previews/h14/connectors/source_need_candidate.v0.json",
+        "contracts/control_schemas/previews/h14/connectors/source_pack_manifest_candidate.v0.json",
+        "contracts/control_schemas/previews/h14/connectors/source_reliability_freshness_candidate.v0.json",
+        "contracts/control_schemas/previews/query/candidate_promotion_assessment.v0.json",
+        "contracts/control_schemas/tasks/query/observation_candidate_review_queue.v0.json"
       ],
       "reasons": [
         "inline_path_reference_scan",
@@ -59348,8 +59348,8 @@
       "doc_path": "control/audits/r0-remediation-generated-artifact-drift-01-v0/drift_diagnosis.md",
       "links": [],
       "path_references": [
-        "data/public_index/checksums.sha256",
-        "data/public_index/search_documents.ndjson",
+        "site/dist/data/public_index/checksums.sha256",
+        "site/dist/data/public_index/search_documents.ndjson",
         "site/dist",
         "test",
         "tests/scripts/test_static_site_generator.py"
@@ -59482,7 +59482,7 @@
       "doc_path": "control/audits/r0-remediation-legacy-leakage-01-v0/remediation_plan.md",
       "links": [],
       "path_references": [
-        "control/prototypes/legacy_runtime/connectors"
+        "archive/prototypes/legacy_runtime/connectors"
       ],
       "reasons": [
         "inline_path_reference_scan"
@@ -61505,7 +61505,7 @@
       "path_references": [
         "contracts",
         "contracts/search",
-        "data/public_index",
+        "site/dist/data/public_index",
         "examples/search_result_explanations"
       ],
       "reasons": [
@@ -61526,11 +61526,11 @@
       "doc_path": "control/audits/search-result-explanation-runtime-planning-v0/PUBLIC_INDEX_AND_RESULT_ENVELOPE_GATE_REVIEW.md",
       "links": [],
       "path_references": [
-        "data/public_index/build_manifest.json",
-        "data/public_index/checksums.sha256",
-        "data/public_index/index_stats.json",
-        "data/public_index/search_documents.ndjson",
-        "data/public_index/source_coverage.json",
+        "site/dist/data/public_index/build_manifest.json",
+        "site/dist/data/public_index/checksums.sha256",
+        "site/dist/data/public_index/index_stats.json",
+        "site/dist/data/public_index/search_documents.ndjson",
+        "site/dist/data/public_index/source_coverage.json",
         "docs/reference/PUBLIC_SEARCH_INDEX_FORMAT.md"
       ],
       "reasons": [
@@ -65597,7 +65597,7 @@
       "doc_path": "control/audits/static-site-search-integration-v0/PUBLIC_INDEX_SUMMARY_REVIEW.md",
       "links": [],
       "path_references": [
-        "data/public_index",
+        "site/dist/data/public_index",
         "site/dist/data/public_index_summary.json"
       ],
       "reasons": [
@@ -67733,7 +67733,7 @@
       "path_references": [
         "contracts",
         "control/inventory/nodes",
-        "control/schemas/policies/node/node_capability.v0.json",
+        "contracts/control_schemas/policies/node/node_capability.v0.json",
         "scripts/check_architecture_boundaries.py",
         "scripts/validate_eureka_node_capability.py",
         "scripts/validate_eureka_node_manifest.py",
@@ -67929,7 +67929,7 @@
       "links": [],
       "path_references": [
         "contracts",
-        "control/schemas/policies/node/local_foundry_state.v0.json",
+        "contracts/control_schemas/policies/node/local_foundry_state.v0.json",
         "docs",
         "scripts/validate_local_foundry_state.py",
         "tests",
@@ -69336,7 +69336,7 @@
       "doc_path": "control/audits/track-b-20-reviewed-public-index-rebuild-contract-v0/README.md",
       "links": [],
       "path_references": [
-        "data/public_index",
+        "site/dist/data/public_index",
         "scripts/check_architecture_boundaries.py",
         "scripts/validate_reviewed_public_index_rebuild_contract.py",
         "site/dist",
@@ -69351,7 +69351,7 @@
       "doc_path": "control/audits/track-b-20-reviewed-public-index-rebuild-contract-v0/reviewed_public_index_rebuild_readiness.md",
       "links": [],
       "path_references": [
-        "data/public_index",
+        "site/dist/data/public_index",
         "site/dist"
       ],
       "reasons": [
@@ -69453,7 +69453,7 @@
       "doc_path": "control/audits/track-b-21-pack-builder-runtime-v0/validation.md",
       "links": [],
       "path_references": [
-        "data/public_index",
+        "site/dist/data/public_index",
         "python -m json.tool control/audits/track-b-21-pack-builder-runtime-v0/track_b_21_report.json",
         "python -m json.tool control/inventory/packs/pack_builder_input_policy.json",
         "python -m json.tool control/inventory/packs/pack_builder_output_policy.json",
@@ -69526,7 +69526,7 @@
       "doc_path": "control/audits/track-b-22-pack-export-runtime-v0/validation.md",
       "links": [],
       "path_references": [
-        "data/public_index",
+        "site/dist/data/public_index",
         "python -m json.tool control/audits/track-b-22-pack-export-runtime-v0/track_b_22_report.json",
         "python -m json.tool control/inventory/packs/pack_export_fixity_policy.json",
         "python -m json.tool control/inventory/packs/pack_export_format_policy.json",
@@ -69681,7 +69681,7 @@
       "links": [],
       "path_references": [
         "aide/scripts/aide_lite.py",
-        "data/public_index",
+        "site/dist/data/public_index",
         "py -3 .aide/scripts/aide_lite.py adapter validate",
         "py -3 .aide/scripts/aide_lite.py doctor",
         "py -3 .aide/scripts/aide_lite.py eval list",
@@ -71082,7 +71082,7 @@
       ]
     },
     {
-      "doc_path": "control/schemas/README.md",
+      "doc_path": "contracts/control_schemas/README.md",
       "links": [],
       "path_references": [
         "contracts"
@@ -71093,7 +71093,7 @@
       "stale_candidates": []
     },
     {
-      "doc_path": "control/schemas/deprecated/archive/archive-lifecycle.protocol.md",
+      "doc_path": "contracts/control_schemas/deprecated/archive/archive-lifecycle.protocol.md",
       "links": [],
       "path_references": [],
       "reasons": [
@@ -71121,7 +71121,7 @@
       ]
     },
     {
-      "doc_path": "deploy/README.md",
+      "doc_path": "docs/operations/hosting/render_deployment.md",
       "links": [],
       "path_references": [
         "scripts/run_hosted_public_search.py"
@@ -71314,7 +71314,7 @@
         "control/research",
         "crates/eureka-core",
         "crates/eureka-core/src/source_registry.rs",
-        "data/public_index",
+        "site/dist/data/public_index",
         "data/search_handoff.json",
         "docs",
         "docs/BOOTSTRAP_STATUS.md",
@@ -71604,7 +71604,7 @@
         "crates/eureka-core",
         "crates/eureka-core/src/query_planner.rs",
         "crates/eureka-core/src/source_registry.rs",
-        "data/public_index",
+        "site/dist/data/public_index",
         "docs",
         "docs/DECISIONS.md",
         "docs/architecture/AI_ASSISTANCE_BOUNDARY.md",
@@ -71915,7 +71915,7 @@
         "control/inventory/publication/relay_surface.json",
         "control/inventory/publication/snapshot_contract.json",
         "control/inventory/tests/test_registry.json",
-        "data/public_index",
+        "site/dist/data/public_index",
         "data/public_index_summary.json",
         "data/search_config.json",
         "docs",
@@ -72212,7 +72212,7 @@
         "control/inventory/sources",
         "control/inventory/tests",
         "crates/eureka-core",
-        "data/public_index",
+        "site/dist/data/public_index",
         "data/public_index_summary.json",
         "data/search_config.json",
         "data/search_handoff.json",
@@ -72553,20 +72553,20 @@
         "contracts/domain/source_record.v0.json",
         "contracts/runtime/source_observation.v0.json",
         "contracts/stores/evidence_event.v0.json",
-        "control/schemas",
-        "control/schemas/audits",
-        "control/schemas/audits/h14/connectors/source_discovery_quality_delta_report.v0.json",
-        "control/schemas/audits/h14/source_discovery_quality_delta_report.v0.json",
-        "control/schemas/deprecated",
-        "control/schemas/fixtures",
-        "control/schemas/fixtures/h1/connectors/metadata_fixture_replay_result.v0.json",
-        "control/schemas/fixtures/source_metadata/fixture_replay_result.v0.json",
-        "control/schemas/policies",
-        "control/schemas/previews",
-        "control/schemas/tasks",
-        "control/schemas/tasks/audits/local_mvp_next_task_decision.v0.json",
-        "control/schemas/tasks/local_mvp_next_task_decision.v0.json",
-        "control/schemas/validators",
+        "contracts/control_schemas",
+        "contracts/control_schemas/audits",
+        "contracts/control_schemas/audits/h14/connectors/source_discovery_quality_delta_report.v0.json",
+        "contracts/control_schemas/audits/h14/source_discovery_quality_delta_report.v0.json",
+        "contracts/control_schemas/deprecated",
+        "contracts/control_schemas/fixtures",
+        "contracts/control_schemas/fixtures/h1/connectors/metadata_fixture_replay_result.v0.json",
+        "contracts/control_schemas/fixtures/source_metadata/fixture_replay_result.v0.json",
+        "contracts/control_schemas/policies",
+        "contracts/control_schemas/previews",
+        "contracts/control_schemas/tasks",
+        "contracts/control_schemas/tasks/audits/local_mvp_next_task_decision.v0.json",
+        "contracts/control_schemas/tasks/local_mvp_next_task_decision.v0.json",
+        "contracts/control_schemas/validators",
         "test",
         "tests"
       ],
@@ -72576,9 +72576,9 @@
       ],
       "stale_candidates": [
         "contracts/api/search_result.v0.json",
-        "control/schemas/audits/h14/source_discovery_quality_delta_report.v0.json",
-        "control/schemas/fixtures/source_metadata/fixture_replay_result.v0.json",
-        "control/schemas/tasks/local_mvp_next_task_decision.v0.json",
+        "contracts/control_schemas/audits/h14/source_discovery_quality_delta_report.v0.json",
+        "contracts/control_schemas/fixtures/source_metadata/fixture_replay_result.v0.json",
+        "contracts/control_schemas/tasks/local_mvp_next_task_decision.v0.json",
         "test"
       ]
     },
@@ -75350,7 +75350,7 @@
         "runtime/local_appliance",
         "runtime/local_eval",
         "runtime/local_service",
-        "runtime/local_workbench",
+        "surfaces/web/workbench/local_html",
         "runtime/local_worker",
         "site/dist",
         "tests"
@@ -75434,7 +75434,7 @@
         "GET /source/<source_id>",
         "GET /status",
         "runtime/local_service",
-        "runtime/local_workbench",
+        "surfaces/web/workbench/local_html",
         "site/dist"
       ],
       "reasons": [
@@ -75919,7 +75919,7 @@
       "doc_path": "docs/architecture/PACK_IMPORT_PIPELINE.md",
       "links": [],
       "path_references": [
-        "control/schemas/audits/packs/pack_import_report.v0.json",
+        "contracts/control_schemas/audits/packs/pack_import_report.v0.json",
         "eureka-local/import_reports",
         "eureka-local/quarantine",
         "eureka-local/staged_packs",
@@ -76160,9 +76160,9 @@
         "contracts/query/search_need_lifecycle.v0.json",
         "contracts/query/search_need_record.v0.json",
         "contracts/query/search_result_cache_entry.v0.json",
-        "control/schemas/previews/query/candidate_index_record.v0.json",
-        "control/schemas/previews/query/candidate_lifecycle.v0.json",
-        "control/schemas/tasks/query/probe_queue_item.v0.json",
+        "contracts/control_schemas/previews/query/candidate_index_record.v0.json",
+        "contracts/control_schemas/previews/query/candidate_lifecycle.v0.json",
+        "contracts/control_schemas/tasks/query/probe_queue_item.v0.json",
         "core",
         "docs",
         "governance",
@@ -76296,7 +76296,7 @@
       "links": [],
       "path_references": [
         "contracts/master_index",
-        "data/public_index",
+        "site/dist/data/public_index",
         "governance",
         "site/dist"
       ],
@@ -76342,7 +76342,7 @@
         "control/audits/**",
         "control/inventory/**",
         "control/policies/**",
-        "control/prototypes/legacy_runtime",
+        "archive/prototypes/legacy_runtime",
         "crates/**",
         "docs",
         "docs/operations",
@@ -77210,7 +77210,7 @@
       "links": [],
       "path_references": [
         "contracts",
-        "data/public_index",
+        "site/dist/data/public_index",
         "site/dist"
       ],
       "reasons": [
@@ -77401,7 +77401,7 @@
       "links": [],
       "path_references": [
         "control/audits/**/generated",
-        "data/public_index",
+        "site/dist/data/public_index",
         "python scripts/check_generated_artifact_cleanliness.py --check --json",
         "python scripts/check_github_pages_static_artifact.py --path site/dist",
         "python scripts/generate_compatibility_surfaces.py --check",
@@ -81448,7 +81448,7 @@
         "GET /healthz",
         "GET /search",
         "GET /status",
-        "data/public_index",
+        "site/dist/data/public_index",
         "data/public_index_summary.json",
         "data/search_config.json",
         "scripts/build_public_search_index.py",
@@ -83158,7 +83158,7 @@
       "path_references": [
         "contracts",
         "control/audits/**/generated",
-        "data/public_index",
+        "site/dist/data/public_index",
         "examples/pack_drafts",
         "scripts/build_local_pack.py",
         "scripts/summarize_local_pack.py",
@@ -83181,7 +83181,7 @@
       "path_references": [
         "contracts",
         "control/audits/**/generated",
-        "data/public_index",
+        "site/dist/data/public_index",
         "examples/pack_exports",
         "scripts/export_local_pack.py",
         "scripts/validate_pack_export_runtime.py",
@@ -83628,7 +83628,7 @@
       "doc_path": "docs/operations/PUBLIC_SEARCH_ENVIRONMENT.md",
       "links": [],
       "path_references": [
-        "data/public_index/search_documents.ndjson",
+        "site/dist/data/public_index/search_documents.ndjson",
         "scripts/build_public_search_index.py",
         "scripts/run_hosted_public_search.py",
         "scripts/run_hosted_public_search.py --check-config",
@@ -83646,9 +83646,9 @@
       "doc_path": "docs/operations/PUBLIC_SEARCH_HOSTING.md",
       "links": [],
       "path_references": [
-        "data/public_index",
-        "deploy/README.md",
-        "deploy/render/render.yaml",
+        "site/dist/data/public_index",
+        "docs/operations/hosting/render_deployment.md",
+        "release/render/render.yaml",
         "docs/operations/PUBLIC_SEARCH_ENVIRONMENT.md",
         "python scripts/build_public_search_index.py --check",
         "python scripts/validate_public_search_index.py",
@@ -83675,7 +83675,7 @@
       "path_references": [
         "archives",
         "control/inventory/sources/*.source.json",
-        "data/public_index",
+        "site/dist/data/public_index",
         "scripts/build_public_search_index.py",
         "scripts/check_generated_artifact_drift.py",
         "scripts/validate_public_search_index.py",
@@ -83697,7 +83697,7 @@
         "contracts",
         "control/audits/public-search-rehearsal-v0",
         "control/inventory/publication/public_search_safety.json",
-        "data/public_index",
+        "site/dist/data/public_index",
         "data/search_handoff.json",
         "docs/operations/PUBLIC_SEARCH_RUNTIME_READINESS_CHECKLIST.md",
         "docs/operations/PUBLIC_SEARCH_SAFETY_AND_ABUSE_GUARD.md",
@@ -83775,7 +83775,7 @@
         "contracts/api/search_request.v0.json",
         "contracts/api/search_response.v0.json",
         "contracts/api/source_status.v0.json",
-        "data/public_index",
+        "site/dist/data/public_index",
         "python scripts/validate_hosted_public_search_wrapper.py",
         "python scripts/validate_public_search_contract.py",
         "python scripts/validate_public_search_production_contract.py",
@@ -83805,7 +83805,7 @@
       "doc_path": "docs/operations/PUBLIC_SEARCH_SAFETY_AND_ABUSE_GUARD.md",
       "links": [],
       "path_references": [
-        "data/public_index",
+        "site/dist/data/public_index",
         "data/search_handoff.json",
         "docs/operations/PUBLIC_SEARCH_RUNTIME_READINESS_CHECKLIST.md",
         "files/search.README.txt",
@@ -83836,7 +83836,7 @@
       "path_references": [
         "archive",
         "contracts",
-        "data/public_index",
+        "site/dist/data/public_index",
         "docs",
         "docs/operations/PUBLIC_SEARCH_SAFETY_EVIDENCE.md",
         "docs/reference/INTERNET_ARCHIVE_METADATA_CONNECTOR_APPROVAL.md",
@@ -83923,7 +83923,7 @@
       "links": [],
       "path_references": [
         "contracts",
-        "control/schemas",
+        "contracts/control_schemas",
         "docs",
         "tests"
       ],
@@ -83995,11 +83995,11 @@
       "path_references": [
         "archive",
         "contracts",
-        "control/schemas/fixtures/archive",
-        "control/schemas/policies/node",
-        "control/schemas/previews/h14/connectors",
-        "control/schemas/previews/query",
-        "control/schemas/tasks/query",
+        "contracts/control_schemas/fixtures/archive",
+        "contracts/control_schemas/policies/node",
+        "contracts/control_schemas/previews/h14/connectors",
+        "contracts/control_schemas/previews/query",
+        "contracts/control_schemas/tasks/query",
         "docs",
         "scripts",
         "tests"
@@ -84077,7 +84077,7 @@
       "doc_path": "docs/operations/R0_LEGACY_RUNTIME_LEAKAGE_REMEDIATION.md",
       "links": [],
       "path_references": [
-        "control/prototypes/legacy_runtime/connectors",
+        "archive/prototypes/legacy_runtime/connectors",
         "runtime/connectors",
         "runtime/connectors/h*",
         "test"
@@ -84360,7 +84360,7 @@
       "doc_path": "docs/operations/REVIEWED_PUBLIC_INDEX_REBUILD_REVIEW.md",
       "links": [],
       "path_references": [
-        "data/public_index",
+        "site/dist/data/public_index",
         "scripts/check_architecture_boundaries.py",
         "scripts/validate_reviewed_public_index_rebuild_contract.py",
         "site/dist"
@@ -84458,7 +84458,7 @@
       "links": [],
       "path_references": [
         "contracts/search",
-        "data/public_index",
+        "site/dist/data/public_index",
         "scripts/validate_search_result_explanation_runtime_plan.py"
       ],
       "reasons": [
@@ -84504,7 +84504,7 @@
       "path_references": [
         "contracts",
         "control/audits/**/generated",
-        "data/public_index",
+        "site/dist/data/public_index",
         "examples/snapshots",
         "site/dist",
         "test"
@@ -84951,7 +84951,7 @@
       "path_references": [
         "control/inventory/ai_providers/typed_output_examples.json",
         "control/inventory/packs/example_packs.json",
-        "control/schemas/audits/packs/pack_import_report.v0.json",
+        "contracts/control_schemas/audits/packs/pack_import_report.v0.json",
         "scripts/validate_only_pack_import.py",
         "scripts/validate_pack_import_report.py"
       ],
@@ -85434,7 +85434,7 @@
       "doc_path": "docs/reference/ACTION_TAXONOMY_CONTRACT.md",
       "links": [],
       "path_references": [
-        "control/schemas/policies/actions/action_taxonomy.v0.json"
+        "contracts/control_schemas/policies/actions/action_taxonomy.v0.json"
       ],
       "reasons": [
         "inline_path_reference_scan"
@@ -85487,7 +85487,7 @@
       "doc_path": "docs/reference/BLOCKED_ACTION_REPORT_CONTRACT.md",
       "links": [],
       "path_references": [
-        "control/schemas/audits/actions/blocked_action_report.v0.json"
+        "contracts/control_schemas/audits/actions/blocked_action_report.v0.json"
       ],
       "reasons": [
         "inline_path_reference_scan"
@@ -85501,7 +85501,7 @@
         "archive",
         "archives",
         "contracts",
-        "control/schemas/previews/query/candidate_index_record.v0.json",
+        "contracts/control_schemas/previews/query/candidate_index_record.v0.json",
         "docs",
         "docs/reference/CANDIDATE_INDEX_CONTRACT.md",
         "docs/reference/INTERNET_ARCHIVE_METADATA_CONNECTOR_APPROVAL.md",
@@ -85527,9 +85527,9 @@
         "control/inventory/publication/candidate_page_view_model_policy.json",
         "control/inventory/publication/route_view_representation_matrix.json",
         "control/inventory/publication/semantic_renderer_parity_policy.json",
-        "control/schemas/previews/query/candidate_index_record.v0.json",
-        "control/schemas/previews/query/candidate_lifecycle.v0.json",
-        "control/schemas/previews/query/candidate_promotion_policy.v0.json",
+        "contracts/control_schemas/previews/query/candidate_index_record.v0.json",
+        "contracts/control_schemas/previews/query/candidate_lifecycle.v0.json",
+        "contracts/control_schemas/previews/query/candidate_promotion_policy.v0.json",
         "docs/reference/CANDIDATE_INDEX_CONTRACT.md",
         "docs/reference/CONTRIBUTION_PACK_CONTRACT.md",
         "docs/reference/MASTER_INDEX_REVIEW_QUEUE_CONTRACT.md",
@@ -85616,7 +85616,7 @@
       "doc_path": "docs/reference/CITATION_BUNDLE_CONTRACT.md",
       "links": [],
       "path_references": [
-        "control/schemas/policies/actions/citation_bundle.v0.json"
+        "contracts/control_schemas/policies/actions/citation_bundle.v0.json"
       ],
       "reasons": [
         "inline_path_reference_scan"
@@ -85720,7 +85720,7 @@
       "links": [],
       "path_references": [
         "README.md",
-        "control/schemas/policies/packs/contribution_pack.v0.json",
+        "contracts/control_schemas/policies/packs/contribution_pack.v0.json",
         "docs",
         "governance",
         "python scripts/validate_pack_set.py --all-examples",
@@ -85908,7 +85908,7 @@
         "README.md",
         "archive",
         "contracts",
-        "control/schemas/policies/packs/evidence_pack.v0.json",
+        "contracts/control_schemas/policies/packs/evidence_pack.v0.json",
         "docs",
         "docs/reference/AI_ASSISTED_DRAFTING_CONTRACT.md",
         "docs/reference/EVIDENCE_PACK_CONTRACT.md",
@@ -85992,7 +85992,7 @@
       "doc_path": "docs/reference/EXTRACTION_MANIFEST_CANDIDATE_CONTRACT.md",
       "links": [],
       "path_references": [
-        "control/schemas/previews/extraction/extraction_manifest_candidate.v0.json"
+        "contracts/control_schemas/previews/extraction/extraction_manifest_candidate.v0.json"
       ],
       "reasons": [
         "inline_path_reference_scan"
@@ -91402,7 +91402,7 @@
       "links": [],
       "path_references": [
         "README.md",
-        "control/schemas/policies/packs/index_pack.v0.json",
+        "contracts/control_schemas/policies/packs/index_pack.v0.json",
         "docs",
         "governance",
         "python scripts/validate_pack_set.py --all-examples",
@@ -91644,7 +91644,7 @@
       "path_references": [
         "aide.local/eureka",
         "cache/eureka",
-        "control/schemas/policies/node/local_foundry_state.v0.json",
+        "contracts/control_schemas/policies/node/local_foundry_state.v0.json",
         "local/eureka",
         "scripts/validate_local_foundry_state.py",
         "tmp/eureka"
@@ -91955,7 +91955,7 @@
       "doc_path": "docs/reference/LOCAL_WORKBENCH_VIEW_MODELS.md",
       "links": [],
       "path_references": [
-        "runtime/local_workbench/view_models.py"
+        "surfaces/web/workbench/local_html/view_models.py"
       ],
       "reasons": [
         "inline_path_reference_scan"
@@ -92010,8 +92010,8 @@
         "contracts",
         "contracts/master_index/review_decision.v0.json",
         "control/inventory/master_index",
-        "control/schemas/tasks/master_index/review_queue_entry.v0.json",
-        "control/schemas/tasks/master_index/review_queue_manifest.v0.json",
+        "contracts/control_schemas/tasks/master_index/review_queue_entry.v0.json",
+        "contracts/control_schemas/tasks/master_index/review_queue_manifest.v0.json",
         "examples/master_index_review_queue/minimal_review_queue_v0",
         "governance",
         "python scripts/validate_pack_set.py --all-examples",
@@ -92411,7 +92411,7 @@
       "links": [],
       "path_references": [
         "contracts",
-        "control/schemas/policies/node/node_capability.v0.json",
+        "contracts/control_schemas/policies/node/node_capability.v0.json",
         "scripts/validate_eureka_node_capability.py"
       ],
       "reasons": [
@@ -92685,10 +92685,10 @@
       "path_references": [
         "contracts/views/pack_page.v0.json",
         "control/inventory/publication/pack_page_view_model_policy.json",
-        "control/schemas/policies/packs/contribution_pack.v0.json",
-        "control/schemas/policies/packs/evidence_pack.v0.json",
-        "control/schemas/policies/packs/index_pack.v0.json",
-        "control/schemas/policies/packs/source_pack.v0.json",
+        "contracts/control_schemas/policies/packs/contribution_pack.v0.json",
+        "contracts/control_schemas/policies/packs/evidence_pack.v0.json",
+        "contracts/control_schemas/policies/packs/index_pack.v0.json",
+        "contracts/control_schemas/policies/packs/source_pack.v0.json",
         "docs/reference/CONTRIBUTION_PACK_CONTRACT.md",
         "docs/reference/EVIDENCE_PACK_CONTRACT.md",
         "docs/reference/INDEX_PACK_CONTRACT.md",
@@ -92761,7 +92761,7 @@
       "path_references": [
         "archive",
         "contracts",
-        "control/schemas/tasks/query/probe_queue_item.v0.json",
+        "contracts/control_schemas/tasks/query/probe_queue_item.v0.json",
         "docs",
         "docs/reference/INTERNET_ARCHIVE_METADATA_CONNECTOR_APPROVAL.md",
         "docs/reference/PROBE_QUEUE_CONTRACT.md",
@@ -93128,8 +93128,8 @@
         "contracts/query/search_result_cache_entry.v0.json",
         "control/audits/public-search-rehearsal-v0",
         "control/inventory/publication/public_search_routes.json",
-        "control/schemas/tasks/query/probe_queue_item.v0.json",
-        "data/public_index",
+        "contracts/control_schemas/tasks/query/probe_queue_item.v0.json",
+        "site/dist/data/public_index",
         "docs",
         "docs/operations/PUBLIC_SEARCH_LOCAL_INDEX_ONLY_MODE.md",
         "docs/operations/PUBLIC_SEARCH_RUNTIME_READINESS_CHECKLIST.md",
@@ -93171,7 +93171,7 @@
         "archive",
         "archives",
         "contracts",
-        "data/public_index",
+        "site/dist/data/public_index",
         "docs",
         "docs/reference/INTERNET_ARCHIVE_METADATA_CONNECTOR_APPROVAL.md",
         "docs/reference/PUBLIC_SEARCH_INDEX_FORMAT.md",
@@ -93210,7 +93210,7 @@
         "contracts/api/search_response.v0.json",
         "contracts/api/search_result_card.v0.json",
         "contracts/api/source_status.v0.json",
-        "data/public_index",
+        "site/dist/data/public_index",
         "docs",
         "governance",
         "scripts/check_hosted_public_search_wrapper.py",
@@ -93317,8 +93317,8 @@
         "contracts/query/search_miss_ledger_entry.v0.json",
         "contracts/query/search_need_record.v0.json",
         "contracts/query/search_result_cache_entry.v0.json",
-        "control/schemas/previews/query/candidate_index_record.v0.json",
-        "control/schemas/tasks/query/probe_queue_item.v0.json",
+        "contracts/control_schemas/previews/query/candidate_index_record.v0.json",
+        "contracts/control_schemas/tasks/query/probe_queue_item.v0.json",
         "examples/query_observations/minimal_query_observation_v0",
         "governance",
         "scripts/validate_query_observation.py",
@@ -93537,7 +93537,7 @@
       "links": [],
       "path_references": [
         "contracts/master_index/reviewed_public_index_rebuild.v0.json",
-        "data/public_index",
+        "site/dist/data/public_index",
         "scripts/validate_reviewed_public_index_rebuild_contract.py",
         "site/dist"
       ],
@@ -93564,8 +93564,8 @@
         "contracts/master_index/review_decision.v0.json",
         "contracts/views/review_page.v0.json",
         "control/inventory/publication/review_page_view_model_policy.json",
-        "control/schemas/tasks/master_index/review_queue_entry.v0.json",
-        "control/schemas/tasks/master_index/review_queue_manifest.v0.json",
+        "contracts/control_schemas/tasks/master_index/review_queue_entry.v0.json",
+        "contracts/control_schemas/tasks/master_index/review_queue_manifest.v0.json",
         "docs/reference/CANDIDATE_PAGE_VIEW_MODEL_CONTRACT.md",
         "docs/reference/MASTER_INDEX_REVIEW_QUEUE_CONTRACT.md",
         "docs/reference/PACK_PAGE_VIEW_MODEL_CONTRACT.md",
@@ -93925,7 +93925,7 @@
       "doc_path": "docs/reference/SNAPSHOT_VERIFICATION_REPORT_CONTRACT.md",
       "links": [],
       "path_references": [
-        "control/schemas/audits/snapshots/snapshot_verification_report.v0.json"
+        "contracts/control_schemas/audits/snapshots/snapshot_verification_report.v0.json"
       ],
       "reasons": [
         "inline_path_reference_scan"
@@ -94059,7 +94059,7 @@
         "archive",
         "contracts",
         "control/inventory/sources",
-        "control/schemas/policies/packs/source_pack.v0.json",
+        "contracts/control_schemas/policies/packs/source_pack.v0.json",
         "docs/reference/INTERNET_ARCHIVE_METADATA_CONNECTOR_APPROVAL.md",
         "docs/reference/SOURCE_PACK_CONTRACT.md",
         "governance",
@@ -94383,7 +94383,7 @@
       "links": [],
       "path_references": [
         "control/inventory/nodes/workunit_type_registry.json",
-        "control/schemas/policies/node/work_unit.v0.json",
+        "contracts/control_schemas/policies/node/work_unit.v0.json",
         "scripts/validate_eureka_workunit.py"
       ],
       "reasons": [
@@ -94419,7 +94419,7 @@
       "doc_path": "docs/reference/WORKUNIT_RESULT_CONTRACT.md",
       "links": [],
       "path_references": [
-        "control/schemas/policies/node/work_unit_result.v0.json",
+        "contracts/control_schemas/policies/node/work_unit_result.v0.json",
         "scripts/validate_eureka_workunit_result.py"
       ],
       "reasons": [
@@ -95089,7 +95089,7 @@
         "control/audits/static-site-search-integration-v0",
         "control/inventory/packs/example_packs.json",
         "crates/eureka-core",
-        "data/public_index",
+        "site/dist/data/public_index",
         "data/public_index_summary.json",
         "data/search_config.json",
         "docs",
@@ -98085,7 +98085,7 @@
         "control/inventory/public_alpha_routes.json",
         "control/inventory/publication",
         "control/inventory/tests",
-        "data/public_index",
+        "site/dist/data/public_index",
         "data/public_index_summary.json",
         "data/search_config.json",
         "data/search_handoff.json",

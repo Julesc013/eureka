@@ -98,15 +98,15 @@
       "public_index"
     ],
     "checked_sources": [
-      "data/public_index"
+      "site/dist/data/public_index"
     ],
     "live_probes_attempted": false,
     "external_calls_performed": false
   },
   "index_refs": {
     "public_index_build_id": "eureka_public_search_index_v0",
-    "public_index_manifest_ref": "data/public_index/build_manifest.json",
-    "source_coverage_ref": "data/public_index/source_coverage.json"
+    "public_index_manifest_ref": "site/dist/data/public_index/build_manifest.json",
+    "source_coverage_ref": "site/dist/data/public_index/source_coverage.json"
   },
   "privacy": {
     "privacy_classification": "public_safe_aggregate",

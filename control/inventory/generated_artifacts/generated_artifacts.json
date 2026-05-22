@@ -289,11 +289,11 @@
       "artifact_id": "public_search_index",
       "status": "generated_committed",
       "artifact_paths": [
-        "data/public_index/build_manifest.json",
-        "data/public_index/source_coverage.json",
-        "data/public_index/index_stats.json",
-        "data/public_index/search_documents.ndjson",
-        "data/public_index/checksums.sha256"
+        "site/dist/data/public_index/build_manifest.json",
+        "site/dist/data/public_index/source_coverage.json",
+        "site/dist/data/public_index/index_stats.json",
+        "site/dist/data/public_index/search_documents.ndjson",
+        "site/dist/data/public_index/checksums.sha256"
       ],
       "generator_command": "python scripts/build_public_search_index.py --rebuild",
       "check_command": "python scripts/build_public_search_index.py --check",
@@ -343,9 +343,9 @@
         "scripts/generate_compatibility_surfaces.py",
         "control/inventory/publication/static_search_config.json",
         "control/inventory/publication/public_search_handoff.json",
-        "data/public_index/build_manifest.json",
-        "data/public_index/source_coverage.json",
-        "data/public_index/index_stats.json"
+        "site/dist/data/public_index/build_manifest.json",
+        "site/dist/data/public_index/source_coverage.json",
+        "site/dist/data/public_index/index_stats.json"
       ],
       "generated": true,
       "manual_edits_allowed": false,

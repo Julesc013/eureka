@@ -69,11 +69,11 @@ class LegacyRuntimeLeakageRemediationTests(unittest.TestCase):
         module = load_script_module()
         replacements = dict(module.build_reference_replacements(["h1_metadata_wave"]))
         self.assertEqual(
-            "control.prototypes.legacy_runtime.connectors.h1_metadata_wave",
+            "archive.prototypes.legacy_runtime.connectors.h1_metadata_wave",
             replacements["runtime.connectors.h1_metadata_wave"],
         )
         self.assertEqual(
-            "control/prototypes/legacy_runtime/connectors/h1_metadata_wave",
+            "archive/prototypes/legacy_runtime/connectors/h1_metadata_wave",
             replacements["runtime/connectors/h1_metadata_wave"],
         )
 

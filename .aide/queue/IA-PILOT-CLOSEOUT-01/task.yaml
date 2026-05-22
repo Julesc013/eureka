@@ -8,7 +8,7 @@ gate:
   - reviewed local index writes occurred only in a temp explicit instance
   - search/object/absence proofs passed
   - no operator instance mutation
-  - no committed data/public_index mutation
+  - no committed site/dist/data/public_index mutation
   - no master index mutation
   - no downloads or uploads
   - no extraction, model/provider calls, deployment, production readiness, or public launch claim

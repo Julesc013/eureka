@@ -39,7 +39,7 @@ Optional files:
 - `references/`
 - `manifests/`
 
-The manifest schema is `control/schemas/policies/packs/source_pack.v0.json`.
+The manifest schema is `contracts/control_schemas/policies/packs/source_pack.v0.json`.
 
 ## Manifest
 

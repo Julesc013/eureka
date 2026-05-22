@@ -40,7 +40,7 @@ Search Static Handoff v0 as a no-JS, disabled-hosted-backend entry point.
   timeout middleware remains future.
 - [x] Stable error mapping is implemented for forbidden parameters and disabled
   capabilities.
-- [x] Generated public search index exists under server-owned `data/public_index`
+- [x] Generated public search index exists under server-owned `site/dist/data/public_index`
   and validates without live source calls or caller-provided paths.
 
 ## Surface Gates

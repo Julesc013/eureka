@@ -153,15 +153,3 @@ name = ".aide.local.example"
 class = "control_plane_local_state_template"
 reason = "Committed example for ignored local automation state. It is not a product root."
 future_disposition = "keep_as_template_exception"
-
-[[classified_top_level_debt]]
-name = "data"
-class = "generated_artifact_debt"
-reason = "Currently contains committed public index artifacts under data/public_index."
-future_disposition = "move_rename_or_tightly_reapprove"
-
-[[classified_top_level_debt]]
-name = "deploy"
-class = "release_definition_debt"
-reason = "Contains deployment templates that should be governed by release/."
-future_disposition = "move_to_release"

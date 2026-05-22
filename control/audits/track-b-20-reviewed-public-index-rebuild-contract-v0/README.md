@@ -17,7 +17,7 @@ Candidate promotion dry-run rehearses whether a candidate may be ready for a fut
 
 ## Runtime Boundary
 
-No public-index rebuild runtime was implemented. No public index, master index, `site/dist/`, or `data/public_index/` files were mutated.
+No public-index rebuild runtime was implemented. No public index, master index, `site/dist/`, or `site/dist/data/public_index/` files were mutated.
 
 ## Review Gates
 

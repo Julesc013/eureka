@@ -708,7 +708,7 @@
       "title": "P55 Public Search Index Builder v0",
       "status": "completed",
       "priority": 96,
-      "notes": "Implemented the controlled generated public search index under data/public_index with builder, validator, runtime integration, audit pack, tests, docs, and drift metadata. It remains local_index_only and fixture/recorded-metadata only with no live probes, arbitrary URL fetching, downloads, uploads, accounts, telemetry, pack import, staging runtime, AI runtime, or master-index mutation."
+      "notes": "Implemented the controlled generated public search index under site/dist/data/public_index with builder, validator, runtime integration, audit pack, tests, docs, and drift metadata. It remains local_index_only and fixture/recorded-metadata only with no live probes, arbitrary URL fetching, downloads, uploads, accounts, telemetry, pack import, staging runtime, AI runtime, or master-index mutation."
     },
     {
       "id": "static_site_search_integration_v0",

@@ -47,7 +47,7 @@ class HostingReadinessScriptTests(unittest.TestCase):
     def test_scripts_refuse_forbidden_output_roots(self) -> None:
         for forbidden in (
             "site/dist/hosting-summary.json",
-            "data/public_index/hosting-summary.json",
+            "site/dist/data/public_index/hosting-summary.json",
             ".local/eureka/hosting-summary.json",
         ):
             result = self.run_script("scripts/summarize_hosting_readiness.py", "--output", forbidden)

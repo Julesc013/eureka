@@ -52,7 +52,7 @@ class H12RetroCommunitySummaryTests(unittest.TestCase):
             self.assertTrue(md.exists())
 
     def test_forbidden_output_roots_are_rejected(self) -> None:
-        for raw in ("site/dist/h12.json", "data/public_index/h12.json", "runtime/h12.json", "contracts/h12.json"):
+        for raw in ("site/dist/h12.json", "site/dist/data/public_index/h12.json", "runtime/h12.json", "contracts/h12.json"):
             proc = subprocess.run(
                 [sys.executable, "scripts/summarize_h12_retro_community_sources.py", "--output", raw],
                 cwd=summary.REPO_ROOT,

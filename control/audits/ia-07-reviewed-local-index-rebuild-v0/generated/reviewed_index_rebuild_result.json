@@ -56,7 +56,7 @@
           "preview does not establish accepted truth",
           "reviewed local record is limited to explicit temp/local instance",
           "does not establish rights clearance, safety, compatibility, installability, or final provenance",
-          "no committed data/public_index mutation occurred"
+          "no committed site/dist/data/public_index mutation occurred"
         ],
         "normalized_fields": {
           "candidate_id": "iacand_6ac6a146d2ba35fd",
@@ -92,7 +92,7 @@
             "preview does not establish accepted truth",
             "reviewed local record is limited to explicit temp/local instance",
             "does not establish rights clearance, safety, compatibility, installability, or final provenance",
-            "no committed data/public_index mutation occurred"
+            "no committed site/dist/data/public_index mutation occurred"
           ],
           "mediatype": "software",
           "promotion_preview_id": "iaprv_825a66933cb28ee6",
@@ -247,7 +247,7 @@
         "preview does not establish accepted truth",
         "reviewed local record is limited to explicit temp/local instance",
         "does not establish rights clearance, safety, compatibility, installability, or final provenance",
-        "no committed data/public_index mutation occurred"
+        "no committed site/dist/data/public_index mutation occurred"
       ],
       "master_index_record": false,
       "mediatype": "software",
@@ -330,7 +330,7 @@
         "preview does not establish accepted truth",
         "reviewed local record is limited to explicit temp/local instance",
         "does not establish rights clearance, safety, compatibility, installability, or final provenance",
-        "no committed data/public_index mutation occurred"
+        "no committed site/dist/data/public_index mutation occurred"
       ],
       "master_index_record": false,
       "mediatype": "",
@@ -422,7 +422,7 @@
         "preview does not establish accepted truth",
         "reviewed local record is limited to explicit temp/local instance",
         "does not establish rights clearance, safety, compatibility, installability, or final provenance",
-        "no committed data/public_index mutation occurred"
+        "no committed site/dist/data/public_index mutation occurred"
       ],
       "master_index_record": false,
       "mediatype": "movies",
@@ -531,7 +531,7 @@
         "preview does not establish accepted truth",
         "reviewed local record is limited to explicit temp/local instance",
         "does not establish rights clearance, safety, compatibility, installability, or final provenance",
-        "no committed data/public_index mutation occurred"
+        "no committed site/dist/data/public_index mutation occurred"
       ],
       "master_index_record": false,
       "mediatype": "software",
@@ -623,7 +623,7 @@
         "preview does not establish accepted truth",
         "reviewed local record is limited to explicit temp/local instance",
         "does not establish rights clearance, safety, compatibility, installability, or final provenance",
-        "no committed data/public_index mutation occurred"
+        "no committed site/dist/data/public_index mutation occurred"
       ],
       "master_index_record": false,
       "mediatype": "movies",
@@ -707,7 +707,7 @@
         "preview does not establish accepted truth",
         "reviewed local record is limited to explicit temp/local instance",
         "does not establish rights clearance, safety, compatibility, installability, or final provenance",
-        "no committed data/public_index mutation occurred"
+        "no committed site/dist/data/public_index mutation occurred"
       ],
       "master_index_record": false,
       "mediatype": "",
@@ -815,7 +815,7 @@
         "preview does not establish accepted truth",
         "reviewed local record is limited to explicit temp/local instance",
         "does not establish rights clearance, safety, compatibility, installability, or final provenance",
-        "no committed data/public_index mutation occurred"
+        "no committed site/dist/data/public_index mutation occurred"
       ],
       "master_index_record": false,
       "mediatype": "software",
@@ -923,7 +923,7 @@
         "preview does not establish accepted truth",
         "reviewed local record is limited to explicit temp/local instance",
         "does not establish rights clearance, safety, compatibility, installability, or final provenance",
-        "no committed data/public_index mutation occurred"
+        "no committed site/dist/data/public_index mutation occurred"
       ],
       "master_index_record": false,
       "mediatype": "software",
@@ -1032,7 +1032,7 @@
         "preview does not establish accepted truth",
         "reviewed local record is limited to explicit temp/local instance",
         "does not establish rights clearance, safety, compatibility, installability, or final provenance",
-        "no committed data/public_index mutation occurred"
+        "no committed site/dist/data/public_index mutation occurred"
       ],
       "master_index_record": false,
       "mediatype": "software",
@@ -1123,7 +1123,7 @@
         "preview does not establish accepted truth",
         "reviewed local record is limited to explicit temp/local instance",
         "does not establish rights clearance, safety, compatibility, installability, or final provenance",
-        "no committed data/public_index mutation occurred"
+        "no committed site/dist/data/public_index mutation occurred"
       ],
       "master_index_record": false,
       "mediatype": "data",
@@ -1234,7 +1234,7 @@
         "preview does not establish accepted truth",
         "reviewed local record is limited to explicit temp/local instance",
         "does not establish rights clearance, safety, compatibility, installability, or final provenance",
-        "no committed data/public_index mutation occurred"
+        "no committed site/dist/data/public_index mutation occurred"
       ],
       "master_index_record": false,
       "mediatype": "software",
@@ -1342,7 +1342,7 @@
         "preview does not establish accepted truth",
         "reviewed local record is limited to explicit temp/local instance",
         "does not establish rights clearance, safety, compatibility, installability, or final provenance",
-        "no committed data/public_index mutation occurred"
+        "no committed site/dist/data/public_index mutation occurred"
       ],
       "master_index_record": false,
       "mediatype": "software",
@@ -1444,7 +1444,7 @@
         "preview does not establish accepted truth",
         "reviewed local record is limited to explicit temp/local instance",
         "does not establish rights clearance, safety, compatibility, installability, or final provenance",
-        "no committed data/public_index mutation occurred"
+        "no committed site/dist/data/public_index mutation occurred"
       ],
       "master_index_record": false,
       "mediatype": "data",
@@ -1553,7 +1553,7 @@
         "preview does not establish accepted truth",
         "reviewed local record is limited to explicit temp/local instance",
         "does not establish rights clearance, safety, compatibility, installability, or final provenance",
-        "no committed data/public_index mutation occurred"
+        "no committed site/dist/data/public_index mutation occurred"
       ],
       "master_index_record": false,
       "mediatype": "software",
@@ -1655,7 +1655,7 @@
         "preview does not establish accepted truth",
         "reviewed local record is limited to explicit temp/local instance",
         "does not establish rights clearance, safety, compatibility, installability, or final provenance",
-        "no committed data/public_index mutation occurred"
+        "no committed site/dist/data/public_index mutation occurred"
       ],
       "master_index_record": false,
       "mediatype": "data",
@@ -1749,7 +1749,7 @@
         "preview does not establish accepted truth",
         "reviewed local record is limited to explicit temp/local instance",
         "does not establish rights clearance, safety, compatibility, installability, or final provenance",
-        "no committed data/public_index mutation occurred"
+        "no committed site/dist/data/public_index mutation occurred"
       ],
       "master_index_record": false,
       "mediatype": "software",
@@ -1858,7 +1858,7 @@
         "preview does not establish accepted truth",
         "reviewed local record is limited to explicit temp/local instance",
         "does not establish rights clearance, safety, compatibility, installability, or final provenance",
-        "no committed data/public_index mutation occurred"
+        "no committed site/dist/data/public_index mutation occurred"
       ],
       "master_index_record": false,
       "mediatype": "software",
@@ -1949,7 +1949,7 @@
         "preview does not establish accepted truth",
         "reviewed local record is limited to explicit temp/local instance",
         "does not establish rights clearance, safety, compatibility, installability, or final provenance",
-        "no committed data/public_index mutation occurred"
+        "no committed site/dist/data/public_index mutation occurred"
       ],
       "master_index_record": false,
       "mediatype": "data",
@@ -2059,7 +2059,7 @@
         "preview does not establish accepted truth",
         "reviewed local record is limited to explicit temp/local instance",
         "does not establish rights clearance, safety, compatibility, installability, or final provenance",
-        "no committed data/public_index mutation occurred"
+        "no committed site/dist/data/public_index mutation occurred"
       ],
       "master_index_record": false,
       "mediatype": "software",
@@ -2167,7 +2167,7 @@
         "preview does not establish accepted truth",
         "reviewed local record is limited to explicit temp/local instance",
         "does not establish rights clearance, safety, compatibility, installability, or final provenance",
-        "no committed data/public_index mutation occurred"
+        "no committed site/dist/data/public_index mutation occurred"
       ],
       "master_index_record": false,
       "mediatype": "software",
@@ -2260,7 +2260,7 @@
         "preview does not establish accepted truth",
         "reviewed local record is limited to explicit temp/local instance",
         "does not establish rights clearance, safety, compatibility, installability, or final provenance",
-        "no committed data/public_index mutation occurred"
+        "no committed site/dist/data/public_index mutation occurred"
       ],
       "master_index_record": false,
       "mediatype": "software",
@@ -2368,7 +2368,7 @@
         "preview does not establish accepted truth",
         "reviewed local record is limited to explicit temp/local instance",
         "does not establish rights clearance, safety, compatibility, installability, or final provenance",
-        "no committed data/public_index mutation occurred"
+        "no committed site/dist/data/public_index mutation occurred"
       ],
       "master_index_record": false,
       "mediatype": "software",
@@ -2452,7 +2452,7 @@
         "preview does not establish accepted truth",
         "reviewed local record is limited to explicit temp/local instance",
         "does not establish rights clearance, safety, compatibility, installability, or final provenance",
-        "no committed data/public_index mutation occurred"
+        "no committed site/dist/data/public_index mutation occurred"
       ],
       "master_index_record": false,
       "mediatype": "",
@@ -2535,7 +2535,7 @@
         "preview does not establish accepted truth",
         "reviewed local record is limited to explicit temp/local instance",
         "does not establish rights clearance, safety, compatibility, installability, or final provenance",
-        "no committed data/public_index mutation occurred"
+        "no committed site/dist/data/public_index mutation occurred"
       ],
       "master_index_record": false,
       "mediatype": "",
@@ -2627,7 +2627,7 @@
         "preview does not establish accepted truth",
         "reviewed local record is limited to explicit temp/local instance",
         "does not establish rights clearance, safety, compatibility, installability, or final provenance",
-        "no committed data/public_index mutation occurred"
+        "no committed site/dist/data/public_index mutation occurred"
       ],
       "master_index_record": false,
       "mediatype": "movies",
@@ -2729,7 +2729,7 @@
         "preview does not establish accepted truth",
         "reviewed local record is limited to explicit temp/local instance",
         "does not establish rights clearance, safety, compatibility, installability, or final provenance",
-        "no committed data/public_index mutation occurred"
+        "no committed site/dist/data/public_index mutation occurred"
       ],
       "master_index_record": false,
       "mediatype": "data",
@@ -2821,7 +2821,7 @@
         "preview does not establish accepted truth",
         "reviewed local record is limited to explicit temp/local instance",
         "does not establish rights clearance, safety, compatibility, installability, or final provenance",
-        "no committed data/public_index mutation occurred"
+        "no committed site/dist/data/public_index mutation occurred"
       ],
       "master_index_record": false,
       "mediatype": "data",
@@ -2930,7 +2930,7 @@
         "preview does not establish accepted truth",
         "reviewed local record is limited to explicit temp/local instance",
         "does not establish rights clearance, safety, compatibility, installability, or final provenance",
-        "no committed data/public_index mutation occurred"
+        "no committed site/dist/data/public_index mutation occurred"
       ],
       "master_index_record": false,
       "mediatype": "software",
@@ -3040,7 +3040,7 @@
         "preview does not establish accepted truth",
         "reviewed local record is limited to explicit temp/local instance",
         "does not establish rights clearance, safety, compatibility, installability, or final provenance",
-        "no committed data/public_index mutation occurred"
+        "no committed site/dist/data/public_index mutation occurred"
       ],
       "master_index_record": false,
       "mediatype": "software",
@@ -3142,7 +3142,7 @@
         "preview does not establish accepted truth",
         "reviewed local record is limited to explicit temp/local instance",
         "does not establish rights clearance, safety, compatibility, installability, or final provenance",
-        "no committed data/public_index mutation occurred"
+        "no committed site/dist/data/public_index mutation occurred"
       ],
       "master_index_record": false,
       "mediatype": "data",
@@ -3253,7 +3253,7 @@
         "preview does not establish accepted truth",
         "reviewed local record is limited to explicit temp/local instance",
         "does not establish rights clearance, safety, compatibility, installability, or final provenance",
-        "no committed data/public_index mutation occurred"
+        "no committed site/dist/data/public_index mutation occurred"
       ],
       "master_index_record": false,
       "mediatype": "software",
@@ -3361,7 +3361,7 @@
         "preview does not establish accepted truth",
         "reviewed local record is limited to explicit temp/local instance",
         "does not establish rights clearance, safety, compatibility, installability, or final provenance",
-        "no committed data/public_index mutation occurred"
+        "no committed site/dist/data/public_index mutation occurred"
       ],
       "master_index_record": false,
       "mediatype": "software",
@@ -3463,7 +3463,7 @@
         "preview does not establish accepted truth",
         "reviewed local record is limited to explicit temp/local instance",
         "does not establish rights clearance, safety, compatibility, installability, or final provenance",
-        "no committed data/public_index mutation occurred"
+        "no committed site/dist/data/public_index mutation occurred"
       ],
       "master_index_record": false,
       "mediatype": "data",
@@ -3556,7 +3556,7 @@
         "preview does not establish accepted truth",
         "reviewed local record is limited to explicit temp/local instance",
         "does not establish rights clearance, safety, compatibility, installability, or final provenance",
-        "no committed data/public_index mutation occurred"
+        "no committed site/dist/data/public_index mutation occurred"
       ],
       "master_index_record": false,
       "mediatype": "movies",
@@ -3647,7 +3647,7 @@
         "preview does not establish accepted truth",
         "reviewed local record is limited to explicit temp/local instance",
         "does not establish rights clearance, safety, compatibility, installability, or final provenance",
-        "no committed data/public_index mutation occurred"
+        "no committed site/dist/data/public_index mutation occurred"
       ],
       "master_index_record": false,
       "mediatype": "data",
@@ -3756,7 +3756,7 @@
         "preview does not establish accepted truth",
         "reviewed local record is limited to explicit temp/local instance",
         "does not establish rights clearance, safety, compatibility, installability, or final provenance",
-        "no committed data/public_index mutation occurred"
+        "no committed site/dist/data/public_index mutation occurred"
       ],
       "master_index_record": false,
       "mediatype": "software",
@@ -3864,7 +3864,7 @@
         "preview does not establish accepted truth",
         "reviewed local record is limited to explicit temp/local instance",
         "does not establish rights clearance, safety, compatibility, installability, or final provenance",
-        "no committed data/public_index mutation occurred"
+        "no committed site/dist/data/public_index mutation occurred"
       ],
       "master_index_record": false,
       "mediatype": "software",
@@ -3974,7 +3974,7 @@
         "preview does not establish accepted truth",
         "reviewed local record is limited to explicit temp/local instance",
         "does not establish rights clearance, safety, compatibility, installability, or final provenance",
-        "no committed data/public_index mutation occurred"
+        "no committed site/dist/data/public_index mutation occurred"
       ],
       "master_index_record": false,
       "mediatype": "software",
@@ -4084,7 +4084,7 @@
         "preview does not establish accepted truth",
         "reviewed local record is limited to explicit temp/local instance",
         "does not establish rights clearance, safety, compatibility, installability, or final provenance",
-        "no committed data/public_index mutation occurred"
+        "no committed site/dist/data/public_index mutation occurred"
       ],
       "master_index_record": false,
       "mediatype": "software",

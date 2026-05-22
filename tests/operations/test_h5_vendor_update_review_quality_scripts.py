@@ -36,7 +36,7 @@ class H5ReviewQualityScriptTests(unittest.TestCase):
     def test_scripts_refuse_forbidden_roots(self):
         commands = [
             ("scripts/integrate_h5_vendor_update_review.py", "--input-dir", "examples/connectors/h5_vendor_update_driver/replay_results", "--output-dir", "site/dist/h5"),
-            ("scripts/summarize_h5_vendor_update_quality_delta.py", "--input-dir", "examples/connectors/h5_vendor_update_driver/review_integration", "--output", "data/public_index/h5.json"),
+            ("scripts/summarize_h5_vendor_update_quality_delta.py", "--input-dir", "examples/connectors/h5_vendor_update_driver/review_integration", "--output", "site/dist/data/public_index/h5.json"),
             ("scripts/audit_h5_vendor_update_driver_wave.py", "--json-output", "vendor_downloads/h5.json"),
         ]
         for command in commands:

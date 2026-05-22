@@ -1,0 +1,136 @@
+{
+  "$id": "https://eureka.local/contracts/control_schemas/previews/h8/connectors/manuals_docs_live_probe_request.v0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "api_query_requested": {
+      "description": "H8 live-probe field: api_query_requested"
+    },
+    "approval_refs": {
+      "description": "H8 live-probe field: approval_refs"
+    },
+    "approved_request_key": {
+      "description": "H8 live-probe field: approved_request_key"
+    },
+    "bypass_or_automation_requested": {
+      "description": "H8 live-probe field: bypass_or_automation_requested"
+    },
+    "catalog_fetch_requested": {
+      "description": "H8 live-probe field: catalog_fetch_requested"
+    },
+    "connector_family": {
+      "description": "H8 live-probe field: connector_family"
+    },
+    "datasheet_download_requested": {
+      "description": "H8 live-probe field: datasheet_download_requested"
+    },
+    "document_download_requested": {
+      "description": "H8 live-probe field: document_download_requested"
+    },
+    "document_or_catalog_identifier": {
+      "description": "H8 live-probe field: document_or_catalog_identifier"
+    },
+    "dry_run_only": {
+      "description": "H8 live-probe field: dry_run_only"
+    },
+    "endpoint_or_metadata_class": {
+      "description": "H8 live-probe field: endpoint_or_metadata_class"
+    },
+    "full_text_fetch_requested": {
+      "description": "H8 live-probe field: full_text_fetch_requested"
+    },
+    "iiif_manifest_fetch_requested": {
+      "description": "H8 live-probe field: iiif_manifest_fetch_requested"
+    },
+    "limitations": {
+      "description": "H8 live-probe field: limitations"
+    },
+    "live_probe_request_id": {
+      "description": "H8 live-probe field: live_probe_request_id"
+    },
+    "live_requested": {
+      "description": "H8 live-probe field: live_requested"
+    },
+    "manufacturer_or_vendor_context": {
+      "description": "H8 live-probe field: manufacturer_or_vendor_context"
+    },
+    "media_download_requested": {
+      "description": "H8 live-probe field: media_download_requested"
+    },
+    "notes": {
+      "description": "H8 live-probe field: notes"
+    },
+    "ocr_extraction_requested": {
+      "description": "H8 live-probe field: ocr_extraction_requested"
+    },
+    "operation_scope": {
+      "description": "H8 live-probe field: operation_scope"
+    },
+    "output_policy_ref": {
+      "description": "H8 live-probe field: output_policy_ref"
+    },
+    "pdf_download_requested": {
+      "description": "H8 live-probe field: pdf_download_requested"
+    },
+    "policy_refs": {
+      "description": "H8 live-probe field: policy_refs"
+    },
+    "product_boundary": {
+      "description": "H8 live-probe field: product_boundary"
+    },
+    "product_or_device_context": {
+      "description": "H8 live-probe field: product_or_device_context"
+    },
+    "request_shape": {
+      "description": "H8 live-probe field: request_shape"
+    },
+    "restricted_source_requested": {
+      "description": "H8 live-probe field: restricted_source_requested"
+    },
+    "review_policy_ref": {
+      "description": "H8 live-probe field: review_policy_ref"
+    },
+    "scan_download_requested": {
+      "description": "H8 live-probe field: scan_download_requested"
+    },
+    "schematic_download_requested": {
+      "description": "H8 live-probe field: schematic_download_requested"
+    },
+    "scraping_or_crawling_requested": {
+      "description": "H8 live-probe field: scraping_or_crawling_requested"
+    },
+    "service_manual_download_requested": {
+      "description": "H8 live-probe field: service_manual_download_requested"
+    },
+    "source_id": {
+      "description": "H8 live-probe field: source_id"
+    },
+    "source_record_kind": {
+      "description": "H8 live-probe field: source_record_kind"
+    },
+    "standards_document_fetch_requested": {
+      "description": "H8 live-probe field: standards_document_fetch_requested"
+    },
+    "standards_or_spec_context": {
+      "description": "H8 live-probe field: standards_or_spec_context"
+    },
+    "truth_boundary": {
+      "description": "H8 live-probe field: truth_boundary"
+    },
+    "truth_policy_ref": {
+      "description": "H8 live-probe field: truth_policy_ref"
+    }
+  },
+  "schema_version": "h8_manuals_docs_live_probe_request.v0",
+  "type": "object",
+  "x_eureka_boundary": {
+    "accepted_truth": false,
+    "downloads_enabled": false,
+    "full_text_ocr_enabled": false,
+    "live_probe_framework_only": true,
+    "master_index_mutation_allowed": false,
+    "public_index_mutation_allowed": false,
+    "restricted_source_access_enabled": false,
+    "scraping_crawling_enabled": false
+  }
+}

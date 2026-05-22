@@ -79,7 +79,7 @@ class H3OSPackageFixtureScriptTests(unittest.TestCase):
             "site/dist/h3.json",
         ])
         self.assertNotEqual(bad_site.returncode, 0)
-        bad_public = self.run_cmd(["scripts/replay_h3_os_package_fixtures.py", "--output-dir", "data/public_index/h3"])
+        bad_public = self.run_cmd(["scripts/replay_h3_os_package_fixtures.py", "--output-dir", "site/dist/data/public_index/h3"])
         self.assertNotEqual(bad_public.returncode, 0)
         bad_private = self.run_cmd([
             "scripts/normalize_h3_os_package_fixture.py",

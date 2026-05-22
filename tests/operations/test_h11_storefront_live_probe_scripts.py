@@ -32,7 +32,7 @@ class H11StorefrontLiveProbeScriptTests(unittest.TestCase):
             self.assertFalse(payload["network_used"])
 
     def test_cli_refuses_forbidden_roots(self) -> None:
-        for path in ("site/dist/h11.json", "data/public_index/h11.json", "accounts/h11.json", "receipts/h11.json", "entitlements/h11.json", "app_downloads/h11.json", "install_actions/h11.json"):
+        for path in ("site/dist/h11.json", "site/dist/data/public_index/h11.json", "accounts/h11.json", "receipts/h11.json", "entitlements/h11.json", "app_downloads/h11.json", "install_actions/h11.json"):
             with self.subTest(path=path):
                 code = runner.main(["--source-id", "fdroid_metadata", "--request-key", "example_app_metadata", "--output", path])
                 self.assertNotEqual(code, 0)

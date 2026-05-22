@@ -59,7 +59,7 @@ class H6WebArchiveNewsEventSummaryTests(unittest.TestCase):
             self.assertIn("H6 Web Archive News Event", markdown.read_text(encoding="utf-8"))
 
     def test_cli_refuses_forbidden_output_roots(self) -> None:
-        for rel in ("site/dist/h6-summary.json", "data/public_index/h6-summary.json"):
+        for rel in ("site/dist/h6-summary.json", "site/dist/data/public_index/h6-summary.json"):
             result = subprocess.run(
                 [sys.executable, "scripts/summarize_h6_web_archive_news_event_sources.py", "--output", rel],
                 cwd=ROOT,

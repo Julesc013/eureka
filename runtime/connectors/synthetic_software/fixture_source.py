@@ -10,8 +10,8 @@ from runtime.engine.interfaces.ingest import SyntheticSourceRecord
 REPO_ROOT = Path(__file__).resolve().parents[3]
 DEFAULT_SYNTHETIC_FIXTURE_PATH = (
     REPO_ROOT
-    / "control"
-    / "schemas"
+    / "contracts"
+    / "control_schemas"
     / "fixtures"
     / "archive"
     / "software"

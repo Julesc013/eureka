@@ -33,7 +33,7 @@ class H11StorefrontSummaryTests(unittest.TestCase):
 
     def test_summary_refuses_forbidden_roots(self) -> None:
         self.assertEqual(summary.main(["--output", "site/dist/h11.json"]), 1)
-        self.assertEqual(summary.main(["--output", "data/public_index/h11.json"]), 1)
+        self.assertEqual(summary.main(["--output", "site/dist/data/public_index/h11.json"]), 1)
         self.assertEqual(summary.main(["--output", "runtime/h11.json"]), 1)
         self.assertEqual(summary.main(["--output", "contracts/h11.json"]), 1)
 

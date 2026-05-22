@@ -55,7 +55,7 @@ class SourceOSFoundationScriptsTest(unittest.TestCase):
         self.assertIn("refusing forbidden output root", result.stdout)
 
     def test_summary_script_refuses_data_public_index_output(self):
-        result = self.run_summary("--input", REGISTRY, "--output", "data/public_index/source-summary.json")
+        result = self.run_summary("--input", REGISTRY, "--output", "site/dist/data/public_index/source-summary.json")
         self.assertNotEqual(result.returncode, 0)
         self.assertIn("refusing forbidden output root", result.stdout)
 

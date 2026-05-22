@@ -1,0 +1,105 @@
+{
+  "$id": "https://eureka.local/contracts/control_schemas/audits/h12/connectors/retro_community_connector_wave_postmortem.v0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "archive_item_member_gaps": {
+      "description": "H12 retro/community review-quality field: archive_item_member_gaps"
+    },
+    "blocked_sources": {
+      "description": "H12 retro/community review-quality field: blocked_sources"
+    },
+    "community_review_comment_gaps": {
+      "description": "H12 retro/community review-quality field: community_review_comment_gaps"
+    },
+    "compatibility_install_note_gaps": {
+      "description": "H12 retro/community review-quality field: compatibility_install_note_gaps"
+    },
+    "do_not_repeat_risks": {
+      "description": "H12 retro/community review-quality field: do_not_repeat_risks"
+    },
+    "evidence_mapping_gaps": {
+      "description": "H12 retro/community review-quality field: evidence_mapping_gaps"
+    },
+    "fixture_gaps": {
+      "description": "H12 retro/community review-quality field: fixture_gaps"
+    },
+    "gated_source_boundary_gaps": {
+      "description": "H12 retro/community review-quality field: gated_source_boundary_gaps"
+    },
+    "h13_or_j1_k_l_recommendation": {
+      "description": "H12 retro/community review-quality field: h13_or_j1_k_l_recommendation"
+    },
+    "hash_checksum_gaps": {
+      "description": "H12 retro/community review-quality field: hash_checksum_gaps"
+    },
+    "ia_wayback_corroboration_gaps": {
+      "description": "H12 retro/community review-quality field: ia_wayback_corroboration_gaps"
+    },
+    "live_probe_gaps": {
+      "description": "H12 retro/community review-quality field: live_probe_gaps"
+    },
+    "next_phase_recommendation": {
+      "description": "H12 retro/community review-quality field: next_phase_recommendation"
+    },
+    "normalizer_gaps": {
+      "description": "H12 retro/community review-quality field: normalizer_gaps"
+    },
+    "notes": {
+      "description": "H12 retro/community review-quality field: notes"
+    },
+    "platform_version_edition_gaps": {
+      "description": "H12 retro/community review-quality field: platform_version_edition_gaps"
+    },
+    "policy_gaps": {
+      "description": "H12 retro/community review-quality field: policy_gaps"
+    },
+    "postmortem_id": {
+      "description": "H12 retro/community review-quality field: postmortem_id"
+    },
+    "product_boundary": {
+      "description": "H12 retro/community review-quality field: product_boundary"
+    },
+    "quality_delta_summary": {
+      "description": "H12 retro/community review-quality field: quality_delta_summary"
+    },
+    "restricted_source_policy_gaps": {
+      "description": "H12 retro/community review-quality field: restricted_source_policy_gaps"
+    },
+    "retro_software_identity_gaps": {
+      "description": "H12 retro/community review-quality field: retro_software_identity_gaps"
+    },
+    "review_mapping_gaps": {
+      "description": "H12 retro/community review-quality field: review_mapping_gaps"
+    },
+    "rights_safety_gaps": {
+      "description": "H12 retro/community review-quality field: rights_safety_gaps"
+    },
+    "safety_boundary_assessment": {
+      "description": "H12 retro/community review-quality field: safety_boundary_assessment"
+    },
+    "schema_version": {
+      "description": "H12 retro/community review-quality field: schema_version"
+    },
+    "scorecard_summary": {
+      "description": "H12 retro/community review-quality field: scorecard_summary"
+    },
+    "truth_boundary": {
+      "description": "H12 retro/community review-quality field: truth_boundary"
+    },
+    "wave_id": {
+      "description": "H12 retro/community review-quality field: wave_id"
+    },
+    "what_failed": {
+      "description": "H12 retro/community review-quality field: what_failed"
+    },
+    "what_worked": {
+      "description": "H12 retro/community review-quality field: what_worked"
+    }
+  },
+  "required": [
+    "schema_version"
+  ],
+  "title": "h12_retro_community_connector_wave_postmortem",
+  "type": "object"
+}

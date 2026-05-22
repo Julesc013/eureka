@@ -54,7 +54,7 @@ class ProbeQueueContractAuditTests(unittest.TestCase):
         self.assertIn(
             self.report["contract_file"],
             {
-                "control/schemas/tasks/query/probe_queue_item.v0.json",
+                "contracts/control_schemas/tasks/query/probe_queue_item.v0.json",
                 "contracts/query/probe_queue_item.v0.json",
             },
         )

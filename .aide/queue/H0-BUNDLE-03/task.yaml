@@ -69,7 +69,7 @@ scope:
     - crates/**
     - packaging/**
     - third_party/**
-    - data/public_index/**
+    - site/dist/data/public_index/**
     - data/master_index/**
     - master_index/**
     - control/inventory/publication/**

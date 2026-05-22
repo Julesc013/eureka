@@ -59,7 +59,7 @@ Hosted wrapper defaults must keep these flags false:
 - `telemetry_enabled`
 
 P54 implements a hosted wrapper for `local_index_only` only. P55 implements the
-first controlled generated public search index under `data/public_index`; live
+first controlled generated public search index under `site/dist/data/public_index`; live
 connectors, query intelligence, and public contribution intake remain later
 milestones.
 

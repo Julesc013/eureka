@@ -1,6 +1,6 @@
 # WorkUnit Result Contract
 
-`control/schemas/policies/node/work_unit_result.v0.json` defines the first Eureka WorkUnit
+`contracts/control_schemas/policies/node/work_unit_result.v0.json` defines the first Eureka WorkUnit
 result envelope.
 
 ## What It Is

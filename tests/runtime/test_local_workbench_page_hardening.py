@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import unittest
 
-from runtime.local_workbench import (
+from surfaces.web.workbench.local_html import (
     build_absence_page_view,
     build_home_page_view,
     build_object_page_view,

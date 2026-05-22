@@ -54,7 +54,7 @@ class H5VendorUpdateFixtureScriptTests(unittest.TestCase):
     def test_scripts_refuse_forbidden_roots(self) -> None:
         commands = [
             [sys.executable, "scripts/normalize_h5_vendor_update_fixture.py", "--source-id", "nvidia_driver_downloads", "--input", "examples/connectors/h5_vendor_update_driver/fixtures/nvidia_driver_downloads/typical_record.json", "--output", "site/dist/h5.json"],
-            [sys.executable, "scripts/normalize_h5_vendor_update_fixture.py", "--source-id", "nvidia_driver_downloads", "--input", "examples/connectors/h5_vendor_update_driver/fixtures/nvidia_driver_downloads/typical_record.json", "--output", "data/public_index/h5.json"],
+            [sys.executable, "scripts/normalize_h5_vendor_update_fixture.py", "--source-id", "nvidia_driver_downloads", "--input", "examples/connectors/h5_vendor_update_driver/fixtures/nvidia_driver_downloads/typical_record.json", "--output", "site/dist/data/public_index/h5.json"],
             [sys.executable, "scripts/normalize_h5_vendor_update_fixture.py", "--source-id", "nvidia_driver_downloads", "--input", "examples/connectors/h5_vendor_update_driver/fixtures/nvidia_driver_downloads/typical_record.json", "--output", "vendor_downloads/h5.json"],
             [sys.executable, "scripts/normalize_h5_vendor_update_fixture.py", "--source-id", "nvidia_driver_downloads", "--input", "examples/connectors/h5_vendor_update_driver/fixtures/nvidia_driver_downloads/typical_record.json", "--output", "firmware_staging/h5.json"],
         ]

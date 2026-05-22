@@ -299,7 +299,7 @@ def ensure_allowed_relay_output_path(path: str | Path, policy: Mapping[str, Any]
     rel_lower = rel.casefold().rstrip("/")
     forbidden = (policy or {}).get("forbidden_output_roots") or [
         "site/dist/",
-        "data/public_index/",
+        "site/dist/data/public_index/",
         "runtime/",
         "contracts/",
         "control/inventory/publication/",

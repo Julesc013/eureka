@@ -34,7 +34,7 @@ class H13ReviewQualityScriptTests(unittest.TestCase):
         proc = self.run_script("scripts/integrate_h13_local_private_review.py", "--input-dir", "examples/connectors/h13_local_private/replay_results", "--output-dir", "site/dist/h13")
         self.assertNotEqual(0, proc.returncode)
         self.assertIn("refusing", proc.stdout + proc.stderr)
-        proc = self.run_script("scripts/summarize_h13_local_private_quality_delta.py", "--input-dir", "examples/connectors/h13_local_private/review_integration", "--output", "data/public_index/h13.json")
+        proc = self.run_script("scripts/summarize_h13_local_private_quality_delta.py", "--input-dir", "examples/connectors/h13_local_private/review_integration", "--output", "site/dist/data/public_index/h13.json")
         self.assertNotEqual(0, proc.returncode)
         self.assertIn("refusing", proc.stdout + proc.stderr)
 

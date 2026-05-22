@@ -48,7 +48,7 @@ class PackBuilderRuntimeScriptsTest(unittest.TestCase):
             self.assertTrue(output.is_file())
 
     def test_build_script_refuses_forbidden_roots(self):
-        for output in ("site/dist/pack.json", "runtime/pack.json", "data/public_index/pack.json"):
+        for output in ("site/dist/pack.json", "runtime/pack.json", "site/dist/data/public_index/pack.json"):
             result = self.run_command(
                 [
                     "scripts/build_local_pack.py",

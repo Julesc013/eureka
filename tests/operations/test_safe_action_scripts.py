@@ -42,7 +42,7 @@ class SafeActionScriptTests(unittest.TestCase):
         self.assertIn("refusing forbidden output root", result.stdout + result.stderr)
 
     def test_export_script_refuses_public_index_output(self) -> None:
-        result = self.run_cmd("scripts/build_export_manifest.py", "--subject", "examples/actions/export/export_manifest_object_v0.json", "--output", "data/public_index/export.json")
+        result = self.run_cmd("scripts/build_export_manifest.py", "--subject", "examples/actions/export/export_manifest_object_v0.json", "--output", "site/dist/data/public_index/export.json")
         self.assertNotEqual(result.returncode, 0)
         self.assertIn("refusing forbidden output root", result.stdout + result.stderr)
 

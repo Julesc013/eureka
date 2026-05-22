@@ -27,7 +27,7 @@ scope:
     - surfaces/**
     - site/**
     - native/**
-    - data/public_index/**
+    - site/dist/data/public_index/**
     - data/master_index/**
     - master_index/**
     - .git/**

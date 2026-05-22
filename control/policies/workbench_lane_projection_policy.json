@@ -12,5 +12,5 @@
   "runtime_owns_packet_building": true,
   "surfaces_render_packets": true,
   "surfaces_own_truth": false,
-  "transitional_runtime_local_workbench_debt": "Existing runtime/local_workbench presentation remains transitional; new result lane surface helper lives under surfaces/web/workbench and does not import runtime internals."
+  "local_html_workbench_surface": "surfaces/web/workbench/local_html owns local HTML presentation; result lane surface helpers live under surfaces/web/workbench and do not import runtime internals."
 }

@@ -3,8 +3,8 @@ from pathlib import Path
 import unittest
 
 
-from control.prototypes.legacy_runtime.connectors.h1_metadata_wave.fixture_loader import load_h1_fixture
-from control.prototypes.legacy_runtime.connectors.h1_metadata_wave.normalizer_common import (
+from archive.prototypes.legacy_runtime.connectors.h1_metadata_wave.fixture_loader import load_h1_fixture
+from archive.prototypes.legacy_runtime.connectors.h1_metadata_wave.normalizer_common import (
     H1_SOURCE_IDS,
     build_h1_evidence_candidate_preview,
     build_h1_fixture_replay_result,
@@ -19,7 +19,7 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 
 
 def normalizer(source_id):
-    module = __import__(f"control.prototypes.legacy_runtime.connectors.h1_metadata_wave.{source_id}", fromlist=["normalize"])
+    module = __import__(f"archive.prototypes.legacy_runtime.connectors.h1_metadata_wave.{source_id}", fromlist=["normalize"])
     return module.normalize
 
 

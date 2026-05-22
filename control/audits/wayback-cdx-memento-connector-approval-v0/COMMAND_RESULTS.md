@@ -597,7 +597,7 @@ stdout_tail:
 ```
 Public Search Index validation
 status: valid
-index_root: data/public_index
+index_root: site/dist/data/public_index
 document_count: 584
 private_paths_detected: False
 ```
@@ -884,7 +884,7 @@ stdout_tail:
 ```
 Public Search Index Builder v0
 status: valid
-output_root: data/public_index
+output_root: site/dist/data/public_index
 document_count: 584
 fts5_available: True
 fts5_enabled: False

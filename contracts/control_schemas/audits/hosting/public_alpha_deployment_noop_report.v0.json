@@ -1,0 +1,68 @@
+{
+  "$id": "contracts/control_schemas/audits/hosting/public_alpha_deployment_noop_report.v0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "deployment_performed": {
+      "const": false,
+      "type": "boolean"
+    },
+    "dns_changed": {
+      "const": false,
+      "type": "boolean"
+    },
+    "noop_report_id": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "array"
+    },
+    "product_boundary": {
+      "type": "object"
+    },
+    "production_claimed": {
+      "const": false,
+      "type": "boolean"
+    },
+    "provider_api_called": {
+      "const": false,
+      "type": "boolean"
+    },
+    "public_alpha_live_claimed": {
+      "const": false,
+      "type": "boolean"
+    },
+    "public_backend_started": {
+      "const": false,
+      "type": "boolean"
+    },
+    "schema_version": {
+      "const": "public_alpha_deployment_noop_report.v0"
+    },
+    "secrets_created": {
+      "const": false,
+      "type": "boolean"
+    },
+    "site_dist_mutated": {
+      "const": false,
+      "type": "boolean"
+    },
+    "truth_boundary": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "schema_version",
+    "noop_report_id",
+    "deployment_performed",
+    "provider_api_called",
+    "dns_changed",
+    "site_dist_mutated",
+    "secrets_created",
+    "public_backend_started",
+    "public_alpha_live_claimed",
+    "production_claimed"
+  ],
+  "title": "Eureka Public Alpha Deployment No-op Report v0",
+  "type": "object"
+}

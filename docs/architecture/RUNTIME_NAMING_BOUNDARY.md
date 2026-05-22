@@ -79,7 +79,7 @@ Bad:
 - `review_seed`
 
 Quarantined legacy paths may still contain these names under
-`control/prototypes/legacy_runtime/`; that location marks them as non-production
+`archive/prototypes/legacy_runtime/`; that location marks them as non-production
 prototype material, not a production runtime pattern to copy.
 
 Good:

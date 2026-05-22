@@ -72,7 +72,7 @@ class H3OSPackageLiveProbeScriptTests(unittest.TestCase):
         self.assertNotEqual(result.returncode, 0)
 
     def test_cli_refuses_data_public_index_output(self):
-        result = run_cmd(["scripts/run_h3_os_package_live_probe.py", "--source-id", "debian_snapshot", "--request-key", "example_package_metadata", "--output", "data/public_index/h3.json"])
+        result = run_cmd(["scripts/run_h3_os_package_live_probe.py", "--source-id", "debian_snapshot", "--request-key", "example_package_metadata", "--output", "site/dist/data/public_index/h3.json"])
         self.assertNotEqual(result.returncode, 0)
 
     def test_cli_refuses_repository_mirror_output(self):

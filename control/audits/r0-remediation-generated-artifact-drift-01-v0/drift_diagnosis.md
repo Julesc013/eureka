@@ -4,8 +4,8 @@ Full unittest discovery previously failed and left generated outputs dirty.
 
 The reproduced drift covered:
 
-- `data/public_index/checksums.sha256`
-- `data/public_index/search_documents.ndjson`
+- `site/dist/data/public_index/checksums.sha256`
+- `site/dist/data/public_index/search_documents.ndjson`
 - demand dashboard example `CHECKSUMS.SHA256` files
 - committed `site/dist` static-site outputs and data manifests
 

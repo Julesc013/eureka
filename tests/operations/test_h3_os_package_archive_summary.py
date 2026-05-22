@@ -60,7 +60,7 @@ class H3OSPackageArchiveSummaryTests(unittest.TestCase):
         self.assertIn("refusing forbidden output root", result.stdout)
 
     def test_summary_script_refuses_data_public_index_output(self):
-        result = run_cmd(["scripts/summarize_h3_os_package_archive_sources.py", "--output", "data/public_index/h3-summary.json"])
+        result = run_cmd(["scripts/summarize_h3_os_package_archive_sources.py", "--output", "site/dist/data/public_index/h3-summary.json"])
         self.assertNotEqual(result.returncode, 0)
         self.assertIn("refusing forbidden output root", result.stdout)
 

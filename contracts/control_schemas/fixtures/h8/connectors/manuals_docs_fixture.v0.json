@@ -1,0 +1,120 @@
+{
+  "$id": "contracts/control_schemas/fixtures/h8/connectors/manuals_docs_fixture.v0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "bypass_or_automation_used": {
+      "const": false
+    },
+    "catalog_payload_included": {
+      "type": "boolean"
+    },
+    "connector_family": {
+      "type": "string"
+    },
+    "crawling_output_included": {
+      "const": false
+    },
+    "datasheet_payload_included": {
+      "const": false
+    },
+    "document_payload_included": {
+      "const": false
+    },
+    "expected_normalized_ref": {
+      "type": "string"
+    },
+    "external_api_used": {
+      "const": false
+    },
+    "fixture_id": {
+      "type": "string"
+    },
+    "fixture_kind": {
+      "type": "string"
+    },
+    "fixture_payload": {
+      "type": "object"
+    },
+    "fixture_public_safe": {
+      "type": "boolean"
+    },
+    "fixture_status": {
+      "type": "string"
+    },
+    "full_text_payload_included": {
+      "const": false
+    },
+    "iiif_payload_included": {
+      "const": false
+    },
+    "limitations": {
+      "type": "array"
+    },
+    "live_call_used": {
+      "const": false
+    },
+    "media_payload_included": {
+      "const": false
+    },
+    "network_used": {
+      "const": false
+    },
+    "notes": {
+      "type": "array"
+    },
+    "ocr_payload_included": {
+      "const": false
+    },
+    "pdf_payload_included": {
+      "const": false
+    },
+    "product_boundary": {
+      "type": "object"
+    },
+    "restricted_source_accessed": {
+      "const": false
+    },
+    "scan_payload_included": {
+      "const": false
+    },
+    "schema_version": {
+      "const": "h8_manuals_docs_fixture.v0"
+    },
+    "schematic_payload_included": {
+      "const": false
+    },
+    "scraping_output_included": {
+      "const": false
+    },
+    "service_manual_payload_included": {
+      "const": false
+    },
+    "source_id": {
+      "type": "string"
+    },
+    "standards_document_payload_included": {
+      "const": false
+    },
+    "truth_boundary": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "schema_version",
+    "fixture_id",
+    "source_id",
+    "connector_family",
+    "fixture_kind",
+    "fixture_status",
+    "fixture_public_safe",
+    "live_call_used",
+    "network_used",
+    "external_api_used",
+    "fixture_payload",
+    "truth_boundary",
+    "product_boundary"
+  ],
+  "title": "H8 Manuals Docs Fixture",
+  "type": "object"
+}

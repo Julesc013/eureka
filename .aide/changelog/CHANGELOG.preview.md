@@ -113,7 +113,7 @@ release_publishing: false
 ## Fixed
 
 - preserve candidate-index historical contract path compatibility during merge. (ce1ab9685222 chore(dev): integrate origin dev)
-- moved unresolved contract taxonomy artifacts to control/schemas (ede77d3cb101 fix(r0): resolve contract taxonomy blockers)
+- moved unresolved contract taxonomy artifacts to contracts/control_schemas (ede77d3cb101 fix(r0): resolve contract taxonomy blockers)
 - updated active schema references and audit evidence needed by validators (ede77d3cb101 fix(r0): resolve contract taxonomy blockers)
 - retired remaining contract taxonomy blockers and shims. (d15eb701b478 fix(r0): resolve contract taxonomy blockers)
 - isolated static site JSON build test from site/dist. (dbc4e72ccf63 fix(r0): reconcile generated artifact drift)

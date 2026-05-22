@@ -27,7 +27,7 @@ WARN:
 - `python scripts/validate_local_appliance_track.py` passed with the expected warning that `origin/dev` is ahead of `origin/main` after Local Appliance queue work.
 - AIDE Lite `verify` and `review-pack` returned warnings from stale AIDE diff-scope metadata for the LOCAL-02 allowed paths.
 - `python scripts/check_generated_artifact_cleanliness.py --check --json` failed before commit because the new LOCAL-02 audit generated directory was uncommitted. It passed after commit once those audit generated samples were tracked.
-- `python scripts/check_generated_artifact_drift.py --json`, `python scripts/build_public_search_index.py --check`, `python scripts/validate_public_search_index.py`, and `python scripts/validate_public_search_index_builder.py` fail on pre-existing public search index generated artifact drift: `data/public_index/search_documents.ndjson` and `data/public_index/checksums.sha256`.
+- `python scripts/check_generated_artifact_drift.py --json`, `python scripts/build_public_search_index.py --check`, `python scripts/validate_public_search_index.py`, and `python scripts/validate_public_search_index_builder.py` fail on pre-existing public search index generated artifact drift: `site/dist/data/public_index/search_documents.ndjson` and `site/dist/data/public_index/checksums.sha256`.
 
 KNOWN PRE-EXISTING FAILURE:
 

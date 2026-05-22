@@ -21,7 +21,7 @@
     "site/dist/data/public_index_summary.json"
   ],
   "public_index_summary": {
-    "artifact_root": "data/public_index",
+    "artifact_root": "site/dist/data/public_index",
     "document_count": 584,
     "source_count": 15,
     "contains_live_data": false,

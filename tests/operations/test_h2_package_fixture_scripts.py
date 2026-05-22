@@ -75,7 +75,7 @@ class H2PackageFixtureScriptTests(unittest.TestCase):
             "site/dist/h2.json",
         ])
         self.assertNotEqual(bad_site.returncode, 0)
-        bad_public = self.run_cmd(["scripts/replay_h2_package_fixtures.py", "--output-dir", "data/public_index/h2"])
+        bad_public = self.run_cmd(["scripts/replay_h2_package_fixtures.py", "--output-dir", "site/dist/data/public_index/h2"])
         self.assertNotEqual(bad_public.returncode, 0)
         bad_private = self.run_cmd([
             "scripts/normalize_h2_package_fixture.py",

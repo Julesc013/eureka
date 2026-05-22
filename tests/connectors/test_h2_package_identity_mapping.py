@@ -2,8 +2,8 @@ import copy
 from pathlib import Path
 import unittest
 
-from control.prototypes.legacy_runtime.connectors.h2_package_registries.fixture_loader import load_h2_package_fixture
-from control.prototypes.legacy_runtime.connectors.h2_package_registries.normalizer_common import (
+from archive.prototypes.legacy_runtime.connectors.h2_package_registries.fixture_loader import load_h2_package_fixture
+from archive.prototypes.legacy_runtime.connectors.h2_package_registries.normalizer_common import (
     build_h2_dependency_candidates,
     build_h2_package_file_candidates,
     build_h2_package_identity_candidate,
@@ -16,7 +16,7 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 
 def record():
     fixture = load_h2_package_fixture(REPO_ROOT / "examples/connectors/h2_package_registries/fixtures/crates_io/typical_record.json")
-    module = __import__("control.prototypes.legacy_runtime.connectors.h2_package_registries.crates_io", fromlist=["normalize"])
+    module = __import__("archive.prototypes.legacy_runtime.connectors.h2_package_registries.crates_io", fromlist=["normalize"])
     return module.normalize(fixture)
 
 

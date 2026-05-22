@@ -2,8 +2,8 @@ from __future__ import annotations
 
 import unittest
 
-from control.prototypes.legacy_runtime.connectors.h13_local_private.fixture_loader import load_h13_local_private_fixture
-from control.prototypes.legacy_runtime.connectors.h13_local_private import private_nas_metadata_boundary, user_supplied_url_metadata_boundary, user_owned_authenticated_source_boundary
+from archive.prototypes.legacy_runtime.connectors.h13_local_private.fixture_loader import load_h13_local_private_fixture
+from archive.prototypes.legacy_runtime.connectors.h13_local_private import private_nas_metadata_boundary, user_supplied_url_metadata_boundary, user_owned_authenticated_source_boundary
 from scripts import validate_h13_local_private_fixture_runtime as validator
 
 

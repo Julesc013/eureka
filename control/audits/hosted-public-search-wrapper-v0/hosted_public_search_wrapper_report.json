@@ -48,8 +48,8 @@
   "deployment_templates": {
     "dockerfile": "Dockerfile",
     "dockerignore": ".dockerignore",
-    "render_template": "deploy/render/render.yaml",
-    "template_docs": "deploy/README.md",
+    "render_template": "release/render/render.yaml",
+    "template_docs": "docs/operations/hosting/render_deployment.md",
     "status": "template_only_operator_gated"
   },
   "hosted_wrapper_implemented": true,

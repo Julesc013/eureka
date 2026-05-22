@@ -17,7 +17,7 @@ scope:
     - native/**
     - crates/**
     - site/dist/**
-    - data/public_index/**
+    - site/dist/data/public_index/**
     - eureka-instance/**
     - instances/**
     - .aide.local/**

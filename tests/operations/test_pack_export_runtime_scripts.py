@@ -51,7 +51,7 @@ class PackExportRuntimeScriptsTest(unittest.TestCase):
             self.assertTrue(summary.is_file())
 
     def test_export_script_refuses_forbidden_roots(self):
-        for output in ("site/dist/export.json", "runtime/export.json", "data/public_index/export.json"):
+        for output in ("site/dist/export.json", "runtime/export.json", "site/dist/data/public_index/export.json"):
             result = self.run_command(
                 [
                     "scripts/export_local_pack.py",

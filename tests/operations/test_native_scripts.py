@@ -51,7 +51,7 @@ class NativeScriptTests(unittest.TestCase):
     def test_scripts_refuse_forbidden_output_roots(self) -> None:
         for forbidden in (
             "site/dist/native-summary.json",
-            "data/public_index/native-summary.json",
+            "site/dist/data/public_index/native-summary.json",
             ".local/eureka/native-summary.json",
         ):
             result = self.run_script("scripts/summarize_native_matrix.py", "--output", forbidden)

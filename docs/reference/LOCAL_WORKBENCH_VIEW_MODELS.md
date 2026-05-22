@@ -1,6 +1,6 @@
 # Local Workbench View Models
 
-LOCAL-06 hardens the server-rendered workbench by making each page render from presentation-safe view models in `runtime/local_workbench/view_models.py`.
+LOCAL-06 hardens the server-rendered workbench by making each page render from presentation-safe view models in `surfaces/web/workbench/local_html/view_models.py`.
 
 ## Shared Views
 

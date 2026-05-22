@@ -6,7 +6,7 @@ IA-07 boundary result: PASS.
 - Instance state committed: false
 - Raw response committed: false
 - Reviewed index mutated: true, temp explicit instance only
-- Committed `data/public_index` mutated: false
+- Committed `site/dist/data/public_index` mutated: false
 - Master index mutated: false
 - Downloads/uploads: false
 - Extraction/model/provider/deployment: false

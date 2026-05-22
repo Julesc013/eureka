@@ -113,8 +113,8 @@
 - `contracts/ui/view_models/stored_exports.view_model.yaml`
 - `control/inventory/git/sync_workflow_commands.json`
 - `control/inventory/observations/obs_track_b_sync_matrix.json`
-- `control/prototypes/legacy_runtime/connectors/h13_local_private/local_cas_import_boundary.py`
-- `control/schemas/previews/h13/connectors/local_cas_import_boundary_candidate.v0.json`
+- `archive/prototypes/legacy_runtime/connectors/h13_local_private/local_cas_import_boundary.py`
+- `contracts/control_schemas/previews/h13/connectors/local_cas_import_boundary_candidate.v0.json`
 - `crates/eureka-contracts/src/lib.rs`
 - `crates/eureka-core/src/lib.rs`
 - `crates/eureka-resolver/src/lib.rs`

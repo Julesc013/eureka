@@ -1,89 +1,31 @@
-#!/usr/bin/env python3
-"""Summarize Search Hunt closeout capabilities."""
-
 from __future__ import annotations
 
-import argparse
-import json
+EUREKA_SCRIPT_COMPAT_WRAPPER = True
+
+from importlib.util import module_from_spec, spec_from_file_location
 from pathlib import Path
-from typing import Any, Sequence, TextIO
+import runpy
 import sys
 
+sys.dont_write_bytecode = True
+_TARGET = Path(__file__).resolve().parents[1] / 'tools/reporters/summarize_search_hunt_capabilities.py'
+_TARGET_PARENT = str(_TARGET.parent)
+if _TARGET_PARENT not in sys.path:
+    sys.path.insert(0, _TARGET_PARENT)
+_SPEC = spec_from_file_location(f"_eureka_tool_{Path(__file__).stem}", _TARGET)
+if _SPEC is None or _SPEC.loader is None:
+    raise ImportError(f"Unable to load tool implementation: {_TARGET}")
+_MODULE = module_from_spec(_SPEC)
+sys.modules[_SPEC.name] = _MODULE
+_SPEC.loader.exec_module(_MODULE)
 
-REPO_ROOT = Path(__file__).resolve().parents[1]
-
-
-def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout) -> int:
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--repo-root", default=str(REPO_ROOT))
-    parser.add_argument("--closeout-result", default="control/inventory/search_hunt_closeout_result.json")
-    parser.add_argument("--capability-matrix", default="control/inventory/search_hunt_capability_matrix.json")
-    parser.add_argument("--output")
-    parser.add_argument("--json", action="store_true")
-    args = parser.parse_args(argv)
-
-    root = Path(args.repo_root).resolve()
-    result = summarize(root, args.closeout_result, args.capability_matrix)
-    if args.output:
-        Path(args.output).parent.mkdir(parents=True, exist_ok=True)
-        Path(args.output).write_text(result["markdown"], encoding="utf-8")
-    if args.json:
-        print(json.dumps(result, indent=2, sort_keys=True), file=stdout)
-    elif not args.output:
-        print(result["markdown"], file=stdout)
-    return 0 if result["status"] in {"pass", "pass_with_warnings"} else 1
-
-
-def summarize(root: Path = REPO_ROOT, closeout_rel: str = "control/inventory/search_hunt_closeout_result.json", capability_rel: str = "control/inventory/search_hunt_capability_matrix.json") -> dict[str, Any]:
-    closeout = load_json(root / closeout_rel)
-    capability_matrix = load_json(root / capability_rel)
-    rows = capability_matrix.get("capabilities", [])
-    recommended_next = str(closeout.get("recommended_next_task", "unknown")).replace("\u2014", "-")
-    lines = [
-        "# Search Hunt Capability Summary",
-        "",
-        f"- status: {closeout.get('status', 'unknown')}",
-        f"- hunt_track_complete: {str(closeout.get('hunt_track_complete') is True).lower()}",
-        f"- hard_blockers_remaining: {closeout.get('hard_blockers_remaining', 'unknown')}",
-        f"- warnings_remaining: {closeout.get('warnings_remaining', 'unknown')}",
-        f"- recommended_next_task: {recommended_next}",
-        "",
-        "## Capabilities",
-        "",
-    ]
-    for row in rows:
-        lines.append(f"- {row.get('capability_id')}: implemented={str(row.get('implemented') is True).lower()}, tested={str(row.get('tested') is True).lower()}, proof={row.get('proof_level')}")
-    lines.extend(
-        [
-            "",
-            "## Boundaries",
-            "",
-            "- source probes: not executed",
-            "- extraction: not executed",
-            "- model/provider calls: not used",
-            "- deployment: not performed",
-            "- production/public launch readiness: not claimed",
-            "",
-        ]
-    )
-    return {
-        "schema_version": "search_hunt_capability_summary.v0",
-        "task": "HUNT-12",
-        "status": closeout.get("status", "fail"),
-        "capability_count": len(rows),
-        "markdown": "\n".join(lines),
-    }
-
-
-def load_json(path: Path) -> dict[str, Any]:
-    if not path.is_file():
-        return {}
-    try:
-        payload = json.loads(path.read_text(encoding="utf-8"))
-    except json.JSONDecodeError:
-        return {}
-    return payload if isinstance(payload, dict) else {}
-
-
-if __name__ == "__main__":
-    raise SystemExit(main())
+for _name, _value in vars(_MODULE).items():
+    if _name not in {"__name__", "__loader__", "__package__", "__spec__"}:
+        globals()[_name] = _value
+if __name__ != "__main__":
+    sys.modules[__name__] = _MODULE
+else:
+    sys.argv[0] = str(_TARGET)
+    if hasattr(_MODULE, "main"):
+        raise SystemExit(_MODULE.main())
+    runpy.run_path(str(_TARGET), run_name="__main__")

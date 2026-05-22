@@ -42,7 +42,7 @@ class H14SourceDiscoveryRollupScriptTests(unittest.TestCase):
     def test_scripts_refuse_forbidden_output_roots(self) -> None:
         forbidden_args = (
             ["scripts/run_h14_source_discovery_rollup_dry_run.py", "--source-id", "source_need_registry", "--request-key", "example_source_need_rollup", "--output", "site/dist/h14.json"],
-            ["scripts/run_h14_source_discovery_rollup_dry_run.py", "--source-id", "source_need_registry", "--request-key", "example_source_need_rollup", "--output", "data/public_index/h14.json"],
+            ["scripts/run_h14_source_discovery_rollup_dry_run.py", "--source-id", "source_need_registry", "--request-key", "example_source_need_rollup", "--output", "site/dist/data/public_index/h14.json"],
             ["scripts/run_h14_source_discovery_rollup_dry_run.py", "--source-id", "source_need_registry", "--request-key", "example_source_need_rollup", "--output", "source_registry_mutation/h14.json"],
             ["scripts/run_h14_source_discovery_rollup_dry_run.py", "--source-id", "source_need_registry", "--request-key", "example_source_need_rollup", "--output", "pack_import_staging/h14.json"],
         )

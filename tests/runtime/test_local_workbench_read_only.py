@@ -9,8 +9,8 @@ import unittest
 
 from runtime.local_appliance import close_local_appliance, open_local_appliance
 from runtime.local_service import LocalServiceApp
-from runtime.local_workbench.errors import LocalWorkbenchValidationError
-from runtime.local_workbench.validation import (
+from surfaces.web.workbench.local_html.errors import LocalWorkbenchValidationError
+from surfaces.web.workbench.local_html.validation import (
     validate_local_workbench_page,
     validate_no_external_assets,
     validate_no_forbidden_claims,

@@ -1,68 +1,31 @@
-#!/usr/bin/env python3
-"""Build a citation bundle without accepting truth."""
-
 from __future__ import annotations
 
-import argparse
-import json
+EUREKA_SCRIPT_COMPAT_WRAPPER = True
+
+from importlib.util import module_from_spec, spec_from_file_location
 from pathlib import Path
+import runpy
 import sys
-from typing import Any
 
-REPO_ROOT = Path(__file__).resolve().parents[1]
-if str(REPO_ROOT) not in sys.path:
-    sys.path.insert(0, str(REPO_ROOT))
+sys.dont_write_bytecode = True
+_TARGET = Path(__file__).resolve().parents[1] / 'tools/generators/build_citation_bundle.py'
+_TARGET_PARENT = str(_TARGET.parent)
+if _TARGET_PARENT not in sys.path:
+    sys.path.insert(0, _TARGET_PARENT)
+_SPEC = spec_from_file_location(f"_eureka_tool_{Path(__file__).stem}", _TARGET)
+if _SPEC is None or _SPEC.loader is None:
+    raise ImportError(f"Unable to load tool implementation: {_TARGET}")
+_MODULE = module_from_spec(_SPEC)
+sys.modules[_SPEC.name] = _MODULE
+_SPEC.loader.exec_module(_MODULE)
 
-from runtime.actions import action_policy  # noqa: E402
-from runtime.actions.citation_bundle import build_citation_bundle, validate_citation_bundle  # noqa: E402
-
-
-def main(argv: list[str] | None = None) -> int:
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--subject", required=True)
-    parser.add_argument("--output")
-    parser.add_argument("--check", action="store_true")
-    parser.add_argument("--json", action="store_true")
-    args = parser.parse_args(argv)
-    try:
-        policy = action_policy.load_action_policy(REPO_ROOT)
-        bundle = build_citation_bundle(_load_subject(args.subject), policy)
-        errors = validate_citation_bundle(bundle, policy)
-        if errors:
-            for error in errors:
-                print(f"ERROR: {error}", file=sys.stderr)
-            return 1
-        wrote_files = False
-        if args.output and not args.check:
-            _write_json(action_policy.ensure_allowed_output_path(args.output, policy, REPO_ROOT), bundle)
-            wrote_files = True
-        response = {"schema_version": "citation_bundle_cli_result.v0", "status": "pass", "wrote_files": wrote_files, "citation_bundle": bundle}
-        if args.json:
-            print(json.dumps(response, indent=2, sort_keys=True))
-        else:
-            print(f"Citation bundle: {bundle['citation_bundle_id']}\nAccepts truth: false\nRights cleared: false\n")
-        return 0
-    except Exception as exc:  # pragma: no cover
-        print(f"ERROR: {exc}", file=sys.stderr)
-        return 1
-
-
-def _load_subject(path_text: str) -> dict[str, Any]:
-    path = Path(path_text)
-    resolved = (REPO_ROOT / path).resolve() if not path.is_absolute() else path.resolve()
-    rel = resolved.relative_to(REPO_ROOT.resolve()).as_posix()
-    if not (rel.startswith("examples/actions/") or rel.startswith("control/audits/")):
-        raise ValueError(f"refusing subject outside approved action roots: {rel}")
-    payload = json.loads(resolved.read_text(encoding="utf-8"))
-    if not isinstance(payload, dict):
-        raise ValueError("subject JSON must be an object")
-    return payload
-
-
-def _write_json(path: Path, payload: dict[str, Any]) -> None:
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n", encoding="utf-8")
-
-
-if __name__ == "__main__":
-    raise SystemExit(main())
+for _name, _value in vars(_MODULE).items():
+    if _name not in {"__name__", "__loader__", "__package__", "__spec__"}:
+        globals()[_name] = _value
+if __name__ != "__main__":
+    sys.modules[__name__] = _MODULE
+else:
+    sys.argv[0] = str(_TARGET)
+    if hasattr(_MODULE, "main"):
+        raise SystemExit(_MODULE.main())
+    runpy.run_path(str(_TARGET), run_name="__main__")

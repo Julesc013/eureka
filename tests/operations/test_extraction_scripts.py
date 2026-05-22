@@ -52,7 +52,7 @@ class ExtractionScriptsTest(unittest.TestCase):
         result = self.run_cmd(str(RUNNER), "--target", "examples/extraction/targets/zip_manifest_target_v0.json", "--output", "site/dist/extraction.json")
         self.assertNotEqual(result.returncode, 0)
         self.assertIn("refusing forbidden output root", result.stdout)
-        result = self.run_cmd(str(RUNNER), "--target", "examples/extraction/targets/zip_manifest_target_v0.json", "--output", "data/public_index/extraction.json")
+        result = self.run_cmd(str(RUNNER), "--target", "examples/extraction/targets/zip_manifest_target_v0.json", "--output", "site/dist/data/public_index/extraction.json")
         self.assertNotEqual(result.returncode, 0)
         self.assertIn("refusing forbidden output root", result.stdout)
         result = self.run_cmd(str(RUNNER), "--target", "examples/extraction/targets/zip_manifest_target_v0.json", "--output", "runtime/extraction/generated.json")

@@ -23,7 +23,7 @@ FORBIDDEN_REPO_PATHS = (
     "native",
     "crates",
     "examples",
-    "control/prototypes",
+    "archive/prototypes",
 )
 
 

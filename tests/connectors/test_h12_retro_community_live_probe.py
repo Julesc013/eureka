@@ -4,7 +4,7 @@ import copy
 import importlib
 import unittest
 
-from control.prototypes.legacy_runtime.connectors.h12_retro_community.live_probe_common import (
+from archive.prototypes.legacy_runtime.connectors.h12_retro_community.live_probe_common import (
     SOURCE_CONFIGS,
     build_h12_retro_community_live_probe_blocked_result,
     build_h12_retro_community_live_probe_request,
@@ -101,7 +101,7 @@ class H12RetroCommunityLiveProbeTests(unittest.TestCase):
         payload = {"source_native_id": "mock-item", "software_title": "Mock Retro Item", "platform": "DOS", "version_candidate": "1.0"}
         for source_id in ("winworld_metadata", "aminet_metadata", "betaarchive_public_metadata_policy_limited"):
             with self.subTest(source_id=source_id):
-                module = importlib.import_module(f"control.prototypes.legacy_runtime.connectors.h12_retro_community.live_probe_{source_id}")
+                module = importlib.import_module(f"archive.prototypes.legacy_runtime.connectors.h12_retro_community.live_probe_{source_id}")
                 normalized = module.normalize_response_payload(payload, self.bundle)
                 self.assertEqual(normalized["source_id"], source_id)
                 result = build_h12_retro_community_live_probe_result(source_id, payload, {"network_used": False, "result_status": "dry_run_preflight_pass"}, self.bundle)

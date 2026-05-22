@@ -1111,7 +1111,7 @@
       "command": "python scripts/validate_public_search_index.py",
       "status": "passed",
       "returncode": 0,
-      "stdout_summary": "Public Search Index validation\nstatus: valid\nindex_root: data/public_index\ndocument_count: 584\nprivate_paths_detected: False",
+      "stdout_summary": "Public Search Index validation\nstatus: valid\nindex_root: site/dist/data/public_index\ndocument_count: 584\nprivate_paths_detected: False",
       "stderr_summary": ""
     },
     {
@@ -1209,7 +1209,7 @@
       "command": "python scripts/build_public_search_index.py --check",
       "status": "passed",
       "returncode": 0,
-      "stdout_summary": "Public Search Index Builder v0\nstatus: valid\noutput_root: data/public_index\ndocument_count: 584\nfts5_available: True\nfts5_enabled: False\nfallback_enabled: True",
+      "stdout_summary": "Public Search Index Builder v0\nstatus: valid\noutput_root: site/dist/data/public_index\ndocument_count: 584\nfts5_available: True\nfts5_enabled: False\nfallback_enabled: True",
       "stderr_summary": ""
     },
     {

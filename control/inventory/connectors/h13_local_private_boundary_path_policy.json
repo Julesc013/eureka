@@ -8,7 +8,7 @@
   "current_status": "fail_closed",
   "forbidden_output_roots": [
     "site/dist/",
-    "data/public_index/",
+    "site/dist/data/public_index/",
     "runtime/",
     "contracts/",
     "control/inventory/publication/",

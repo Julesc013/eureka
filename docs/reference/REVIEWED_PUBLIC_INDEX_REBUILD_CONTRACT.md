@@ -2,7 +2,7 @@
 
 `contracts/master_index/reviewed_public_index_rebuild.v0.json` defines the future input and output shape for reviewed public-index rebuilds.
 
-This contract is not a rebuild runtime. It does not write `site/dist/`, `data/public_index/`, public search output, or master-index records. It defines what a later reviewed rebuild task must prove before any public-index mutation can be considered.
+This contract is not a rebuild runtime. It does not write `site/dist/`, `site/dist/data/public_index/`, public search output, or master-index records. It defines what a later reviewed rebuild task must prove before any public-index mutation can be considered.
 
 ## Inputs
 

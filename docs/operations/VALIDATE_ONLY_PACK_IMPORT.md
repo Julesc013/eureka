@@ -85,7 +85,7 @@ It does not recursively scan arbitrary directories. Unknown roots become
 
 ## Report Generation
 
-The generated report uses `control/schemas/audits/packs/pack_import_report.v0.json` and is
+The generated report uses `contracts/control_schemas/audits/packs/pack_import_report.v0.json` and is
 validated against `scripts/validate_pack_import_report.py`.
 
 The report records:

@@ -98,7 +98,7 @@
       "implemented": true,
       "tested": true,
       "runtime_paths": [
-        "runtime/local_workbench/",
+        "surfaces/web/workbench/local_html/",
         "runtime/local_service/"
       ],
       "script_paths": [
@@ -413,7 +413,7 @@
       "tested": true,
       "runtime_paths": [
         "runtime/local_service/",
-        "runtime/local_workbench/"
+        "surfaces/web/workbench/local_html/"
       ],
       "script_paths": [
         "scripts/eureka_hunt_workflow_smoke.py",
@@ -760,7 +760,7 @@
       "runtime_paths": [
         "runtime/local_appliance/",
         "runtime/local_service/",
-        "runtime/local_workbench/",
+        "surfaces/web/workbench/local_html/",
         "runtime/local_worker/",
         "runtime/local_eval/"
       ],

@@ -17728,7 +17728,7 @@
         "release",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "control/prototypes/legacy_runtime/connectors/h10_games_emulation/platform_release_edition.py",
+      "source_tool": "archive/prototypes/legacy_runtime/connectors/h10_games_emulation/platform_release_edition.py",
       "target_aide_command_hint": "aide release",
       "validation_plan": [
         "tools validate",
@@ -17752,7 +17752,7 @@
         "release",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "control/prototypes/legacy_runtime/connectors/h11_storefront/version_release_channel.py",
+      "source_tool": "archive/prototypes/legacy_runtime/connectors/h11_storefront/version_release_channel.py",
       "target_aide_command_hint": "aide release",
       "validation_plan": [
         "tools validate",
@@ -17776,7 +17776,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "control/prototypes/legacy_runtime/connectors/h12_retro_community/compatibility_install_note.py",
+      "source_tool": "archive/prototypes/legacy_runtime/connectors/h12_retro_community/compatibility_install_note.py",
       "target_aide_command_hint": "aide install",
       "validation_plan": [
         "tools validate",
@@ -17800,7 +17800,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "control/prototypes/legacy_runtime/connectors/h12_retro_community/hash_checksum.py",
+      "source_tool": "archive/prototypes/legacy_runtime/connectors/h12_retro_community/hash_checksum.py",
       "target_aide_command_hint": "aide validate",
       "validation_plan": [
         "tools validate",
@@ -17824,7 +17824,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "control/prototypes/legacy_runtime/connectors/h13_local_private/boundary_dry_run_local_package_cache_metadata.py",
+      "source_tool": "archive/prototypes/legacy_runtime/connectors/h13_local_private/boundary_dry_run_local_package_cache_metadata.py",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -17848,7 +17848,7 @@
         "unknown",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "control/prototypes/legacy_runtime/connectors/h13_local_private/local_cas_import_boundary.py",
+      "source_tool": "archive/prototypes/legacy_runtime/connectors/h13_local_private/local_cas_import_boundary.py",
       "target_aide_command_hint": "review before wrapper mapping",
       "validation_plan": [
         "tools validate",
@@ -17872,7 +17872,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "control/prototypes/legacy_runtime/connectors/h13_local_private/local_package_cache_metadata.py",
+      "source_tool": "archive/prototypes/legacy_runtime/connectors/h13_local_private/local_package_cache_metadata.py",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -17896,7 +17896,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "control/prototypes/legacy_runtime/connectors/h13_local_private/pack_export_import_boundary.py",
+      "source_tool": "archive/prototypes/legacy_runtime/connectors/h13_local_private/pack_export_import_boundary.py",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -17920,7 +17920,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "control/prototypes/legacy_runtime/connectors/h14_source_discovery/pack_import_export_boundary.py",
+      "source_tool": "archive/prototypes/legacy_runtime/connectors/h14_source_discovery/pack_import_export_boundary.py",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -17944,7 +17944,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "control/prototypes/legacy_runtime/connectors/h14_source_discovery/rollup_pack_import_export_boundary.py",
+      "source_tool": "archive/prototypes/legacy_runtime/connectors/h14_source_discovery/rollup_pack_import_export_boundary.py",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -17968,7 +17968,7 @@
         "release",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "control/prototypes/legacy_runtime/connectors/h1_metadata_wave/github_releases.py",
+      "source_tool": "archive/prototypes/legacy_runtime/connectors/h1_metadata_wave/github_releases.py",
       "target_aide_command_hint": "aide release",
       "validation_plan": [
         "tools validate",
@@ -17992,7 +17992,7 @@
         "release",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "control/prototypes/legacy_runtime/connectors/h1_metadata_wave/live_probe_github_releases.py",
+      "source_tool": "archive/prototypes/legacy_runtime/connectors/h1_metadata_wave/live_probe_github_releases.py",
       "target_aide_command_hint": "aide release",
       "validation_plan": [
         "tools validate",
@@ -18016,7 +18016,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "control/prototypes/legacy_runtime/connectors/h2_package_registries/package_identity.py",
+      "source_tool": "archive/prototypes/legacy_runtime/connectors/h2_package_registries/package_identity.py",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -18040,7 +18040,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "control/prototypes/legacy_runtime/connectors/h3_os_package_archives/freebsd_packages_ports.py",
+      "source_tool": "archive/prototypes/legacy_runtime/connectors/h3_os_package_archives/freebsd_packages_ports.py",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -18064,7 +18064,7 @@
         "release",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "control/prototypes/legacy_runtime/connectors/h3_os_package_archives/live_probe_freebsd_packages_ports.py",
+      "source_tool": "archive/prototypes/legacy_runtime/connectors/h3_os_package_archives/live_probe_freebsd_packages_ports.py",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -18088,7 +18088,7 @@
         "release",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "control/prototypes/legacy_runtime/connectors/h3_os_package_archives/live_probe_ubuntu_old_releases.py",
+      "source_tool": "archive/prototypes/legacy_runtime/connectors/h3_os_package_archives/live_probe_ubuntu_old_releases.py",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -18112,7 +18112,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "control/prototypes/legacy_runtime/connectors/h3_os_package_archives/os_package_identity.py",
+      "source_tool": "archive/prototypes/legacy_runtime/connectors/h3_os_package_archives/os_package_identity.py",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -18136,7 +18136,7 @@
         "release",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "control/prototypes/legacy_runtime/connectors/h3_os_package_archives/ubuntu_old_releases.py",
+      "source_tool": "archive/prototypes/legacy_runtime/connectors/h3_os_package_archives/ubuntu_old_releases.py",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -18160,7 +18160,7 @@
         "release",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "control/prototypes/legacy_runtime/connectors/h4_code_source_release/generic_release_host.py",
+      "source_tool": "archive/prototypes/legacy_runtime/connectors/h4_code_source_release/generic_release_host.py",
       "target_aide_command_hint": "aide release",
       "validation_plan": [
         "tools validate",
@@ -18184,7 +18184,7 @@
         "release",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "control/prototypes/legacy_runtime/connectors/h4_code_source_release/github_releases.py",
+      "source_tool": "archive/prototypes/legacy_runtime/connectors/h4_code_source_release/github_releases.py",
       "target_aide_command_hint": "aide release",
       "validation_plan": [
         "tools validate",
@@ -18208,7 +18208,7 @@
         "release",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "control/prototypes/legacy_runtime/connectors/h4_code_source_release/gitlab_releases.py",
+      "source_tool": "archive/prototypes/legacy_runtime/connectors/h4_code_source_release/gitlab_releases.py",
       "target_aide_command_hint": "aide release",
       "validation_plan": [
         "tools validate",
@@ -18232,7 +18232,7 @@
         "release",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "control/prototypes/legacy_runtime/connectors/h4_code_source_release/live_probe_generic_release_host.py",
+      "source_tool": "archive/prototypes/legacy_runtime/connectors/h4_code_source_release/live_probe_generic_release_host.py",
       "target_aide_command_hint": "aide release",
       "validation_plan": [
         "tools validate",
@@ -18256,7 +18256,7 @@
         "release",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "control/prototypes/legacy_runtime/connectors/h4_code_source_release/live_probe_github_releases.py",
+      "source_tool": "archive/prototypes/legacy_runtime/connectors/h4_code_source_release/live_probe_github_releases.py",
       "target_aide_command_hint": "aide release",
       "validation_plan": [
         "tools validate",
@@ -18280,7 +18280,7 @@
         "release",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "control/prototypes/legacy_runtime/connectors/h4_code_source_release/live_probe_gitlab_releases.py",
+      "source_tool": "archive/prototypes/legacy_runtime/connectors/h4_code_source_release/live_probe_gitlab_releases.py",
       "target_aide_command_hint": "aide release",
       "validation_plan": [
         "tools validate",
@@ -18304,7 +18304,7 @@
         "release",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "control/prototypes/legacy_runtime/connectors/h4_code_source_release/release_identity.py",
+      "source_tool": "archive/prototypes/legacy_runtime/connectors/h4_code_source_release/release_identity.py",
       "target_aide_command_hint": "aide release",
       "validation_plan": [
         "tools validate",
@@ -18328,7 +18328,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "control/prototypes/legacy_runtime/connectors/h8_manuals_docs_standards/install_requirement_claim.py",
+      "source_tool": "archive/prototypes/legacy_runtime/connectors/h8_manuals_docs_standards/install_requirement_claim.py",
       "target_aide_command_hint": "aide docs",
       "validation_plan": [
         "tools validate",
@@ -18352,7 +18352,7 @@
         "release",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "control/prototypes/legacy_runtime/connectors/h9_media_metadata/music_work_recording_release.py",
+      "source_tool": "archive/prototypes/legacy_runtime/connectors/h9_media_metadata/music_work_recording_release.py",
       "target_aide_command_hint": "aide release",
       "validation_plan": [
         "tools validate",
@@ -18376,7 +18376,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "control/schemas/audits/audits/mvp_alpha_readiness_audit.v0.json",
+      "source_tool": "contracts/control_schemas/audits/audits/mvp_alpha_readiness_audit.v0.json",
       "target_aide_command_hint": "aide audit",
       "validation_plan": [
         "tools validate",
@@ -18400,7 +18400,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "control/schemas/audits/h1/connectors/integration_audit.v0.json",
+      "source_tool": "contracts/control_schemas/audits/h1/connectors/integration_audit.v0.json",
       "target_aide_command_hint": "aide audit",
       "validation_plan": [
         "tools validate",
@@ -18424,7 +18424,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "control/schemas/audits/h10/connectors/games_emulation_integration_audit.v0.json",
+      "source_tool": "contracts/control_schemas/audits/h10/connectors/games_emulation_integration_audit.v0.json",
       "target_aide_command_hint": "aide audit",
       "validation_plan": [
         "tools validate",
@@ -18448,7 +18448,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "control/schemas/audits/h11/connectors/storefront_integration_audit.v0.json",
+      "source_tool": "contracts/control_schemas/audits/h11/connectors/storefront_integration_audit.v0.json",
       "target_aide_command_hint": "aide audit",
       "validation_plan": [
         "tools validate",
@@ -18472,7 +18472,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "control/schemas/audits/h12/connectors/retro_community_integration_audit.v0.json",
+      "source_tool": "contracts/control_schemas/audits/h12/connectors/retro_community_integration_audit.v0.json",
       "target_aide_command_hint": "aide audit",
       "validation_plan": [
         "tools validate",
@@ -18496,7 +18496,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "control/schemas/audits/h13/connectors/local_private_integration_audit.v0.json",
+      "source_tool": "contracts/control_schemas/audits/h13/connectors/local_private_integration_audit.v0.json",
       "target_aide_command_hint": "aide audit",
       "validation_plan": [
         "tools validate",
@@ -18520,7 +18520,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "control/schemas/audits/h14/connectors/source_discovery_integration_audit.v0.json",
+      "source_tool": "contracts/control_schemas/audits/h14/connectors/source_discovery_integration_audit.v0.json",
       "target_aide_command_hint": "aide audit",
       "validation_plan": [
         "tools validate",
@@ -18544,7 +18544,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "control/schemas/audits/h2/connectors/package_connector_wave_postmortem.v0.json",
+      "source_tool": "contracts/control_schemas/audits/h2/connectors/package_connector_wave_postmortem.v0.json",
       "target_aide_command_hint": "aide audit",
       "validation_plan": [
         "tools validate",
@@ -18568,7 +18568,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "control/schemas/audits/h2/connectors/package_integration_audit.v0.json",
+      "source_tool": "contracts/control_schemas/audits/h2/connectors/package_integration_audit.v0.json",
       "target_aide_command_hint": "aide audit",
       "validation_plan": [
         "tools validate",
@@ -18592,7 +18592,7 @@
         "low",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "control/schemas/audits/h2/connectors/package_quality_delta_report.v0.json",
+      "source_tool": "contracts/control_schemas/audits/h2/connectors/package_quality_delta_report.v0.json",
       "target_aide_command_hint": "aide audit",
       "validation_plan": [
         "tools validate",
@@ -18616,7 +18616,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "control/schemas/audits/h2/connectors/package_review_integration_result.v0.json",
+      "source_tool": "contracts/control_schemas/audits/h2/connectors/package_review_integration_result.v0.json",
       "target_aide_command_hint": "aide audit",
       "validation_plan": [
         "tools validate",
@@ -18640,7 +18640,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "control/schemas/audits/h3/connectors/os_package_connector_wave_postmortem.v0.json",
+      "source_tool": "contracts/control_schemas/audits/h3/connectors/os_package_connector_wave_postmortem.v0.json",
       "target_aide_command_hint": "aide audit",
       "validation_plan": [
         "tools validate",
@@ -18664,7 +18664,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "control/schemas/audits/h3/connectors/os_package_integration_audit.v0.json",
+      "source_tool": "contracts/control_schemas/audits/h3/connectors/os_package_integration_audit.v0.json",
       "target_aide_command_hint": "aide audit",
       "validation_plan": [
         "tools validate",
@@ -18688,7 +18688,7 @@
         "low",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "control/schemas/audits/h3/connectors/os_package_quality_delta_report.v0.json",
+      "source_tool": "contracts/control_schemas/audits/h3/connectors/os_package_quality_delta_report.v0.json",
       "target_aide_command_hint": "aide audit",
       "validation_plan": [
         "tools validate",
@@ -18712,7 +18712,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "control/schemas/audits/h3/connectors/os_package_review_integration_result.v0.json",
+      "source_tool": "contracts/control_schemas/audits/h3/connectors/os_package_review_integration_result.v0.json",
       "target_aide_command_hint": "aide audit",
       "validation_plan": [
         "tools validate",
@@ -18736,7 +18736,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "control/schemas/audits/h4/connectors/code_source_integration_audit.v0.json",
+      "source_tool": "contracts/control_schemas/audits/h4/connectors/code_source_integration_audit.v0.json",
       "target_aide_command_hint": "aide audit",
       "validation_plan": [
         "tools validate",
@@ -18760,7 +18760,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "control/schemas/audits/h5/connectors/vendor_update_integration_audit.v0.json",
+      "source_tool": "contracts/control_schemas/audits/h5/connectors/vendor_update_integration_audit.v0.json",
       "target_aide_command_hint": "aide audit",
       "validation_plan": [
         "tools validate",
@@ -18784,7 +18784,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "control/schemas/audits/h6/connectors/web_archive_integration_audit.v0.json",
+      "source_tool": "contracts/control_schemas/audits/h6/connectors/web_archive_integration_audit.v0.json",
       "target_aide_command_hint": "aide audit",
       "validation_plan": [
         "tools validate",
@@ -18808,7 +18808,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "control/schemas/audits/h7/connectors/library_research_integration_audit.v0.json",
+      "source_tool": "contracts/control_schemas/audits/h7/connectors/library_research_integration_audit.v0.json",
       "target_aide_command_hint": "aide audit",
       "validation_plan": [
         "tools validate",
@@ -18832,7 +18832,7 @@
         "low",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "control/schemas/audits/h8/connectors/manuals_docs_integration_audit.v0.json",
+      "source_tool": "contracts/control_schemas/audits/h8/connectors/manuals_docs_integration_audit.v0.json",
       "target_aide_command_hint": "aide audit",
       "validation_plan": [
         "tools validate",
@@ -18856,7 +18856,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "control/schemas/audits/h9/connectors/media_metadata_integration_audit.v0.json",
+      "source_tool": "contracts/control_schemas/audits/h9/connectors/media_metadata_integration_audit.v0.json",
       "target_aide_command_hint": "aide audit",
       "validation_plan": [
         "tools validate",
@@ -18880,7 +18880,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "control/schemas/audits/hosting/public_launch_readiness_audit.v0.json",
+      "source_tool": "contracts/control_schemas/audits/hosting/public_launch_readiness_audit.v0.json",
       "target_aide_command_hint": "aide audit",
       "validation_plan": [
         "tools validate",
@@ -18904,7 +18904,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "control/schemas/audits/native/native_first_wave_integration_audit.v0.json",
+      "source_tool": "contracts/control_schemas/audits/native/native_first_wave_integration_audit.v0.json",
       "target_aide_command_hint": "aide audit",
       "validation_plan": [
         "tools validate",
@@ -18928,7 +18928,7 @@
         "low",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "control/schemas/audits/packs/pack_import_report.v0.json",
+      "source_tool": "contracts/control_schemas/audits/packs/pack_import_report.v0.json",
       "target_aide_command_hint": "aide audit",
       "validation_plan": [
         "tools validate",
@@ -18952,7 +18952,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "control/schemas/fixtures/archive/software/payloads/synthetic-demo-app-package.zip",
+      "source_tool": "contracts/control_schemas/fixtures/archive/software/payloads/synthetic-demo-app-package.zip",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -18976,7 +18976,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "control/schemas/fixtures/h2/connectors/package_fixture.v0.json",
+      "source_tool": "contracts/control_schemas/fixtures/h2/connectors/package_fixture.v0.json",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -19000,7 +19000,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "control/schemas/fixtures/h2/connectors/package_fixture_replay_result.v0.json",
+      "source_tool": "contracts/control_schemas/fixtures/h2/connectors/package_fixture_replay_result.v0.json",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -19024,7 +19024,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "control/schemas/fixtures/h3/connectors/os_package_fixture.v0.json",
+      "source_tool": "contracts/control_schemas/fixtures/h3/connectors/os_package_fixture.v0.json",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -19048,7 +19048,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "control/schemas/fixtures/h3/connectors/os_package_fixture_replay_result.v0.json",
+      "source_tool": "contracts/control_schemas/fixtures/h3/connectors/os_package_fixture_replay_result.v0.json",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -19072,7 +19072,7 @@
         "low",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "control/schemas/policies/hosting/public_alpha_operator_checklist.v0.json",
+      "source_tool": "contracts/control_schemas/policies/hosting/public_alpha_operator_checklist.v0.json",
       "target_aide_command_hint": "aide validate",
       "validation_plan": [
         "tools validate",
@@ -19096,7 +19096,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "control/schemas/policies/hosting/rollback_plan.v0.json",
+      "source_tool": "contracts/control_schemas/policies/hosting/rollback_plan.v0.json",
       "target_aide_command_hint": "aide install",
       "validation_plan": [
         "tools validate",
@@ -19120,7 +19120,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "control/schemas/policies/packs/source_pack_export.v0.json",
+      "source_tool": "contracts/control_schemas/policies/packs/source_pack_export.v0.json",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -19144,7 +19144,7 @@
         "release",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "control/schemas/previews/h10/connectors/platform_release_edition_candidate.v0.json",
+      "source_tool": "contracts/control_schemas/previews/h10/connectors/platform_release_edition_candidate.v0.json",
       "target_aide_command_hint": "aide release",
       "validation_plan": [
         "tools validate",
@@ -19168,7 +19168,7 @@
         "release",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "control/schemas/previews/h11/connectors/version_release_channel_candidate.v0.json",
+      "source_tool": "contracts/control_schemas/previews/h11/connectors/version_release_channel_candidate.v0.json",
       "target_aide_command_hint": "aide release",
       "validation_plan": [
         "tools validate",
@@ -19192,7 +19192,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "control/schemas/previews/h12/connectors/compatibility_install_note_candidate.v0.json",
+      "source_tool": "contracts/control_schemas/previews/h12/connectors/compatibility_install_note_candidate.v0.json",
       "target_aide_command_hint": "aide install",
       "validation_plan": [
         "tools validate",
@@ -19216,7 +19216,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "control/schemas/previews/h12/connectors/hash_checksum_candidate.v0.json",
+      "source_tool": "contracts/control_schemas/previews/h12/connectors/hash_checksum_candidate.v0.json",
       "target_aide_command_hint": "aide validate",
       "validation_plan": [
         "tools validate",
@@ -19240,7 +19240,7 @@
         "unknown",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "control/schemas/previews/h13/connectors/local_cas_import_boundary_candidate.v0.json",
+      "source_tool": "contracts/control_schemas/previews/h13/connectors/local_cas_import_boundary_candidate.v0.json",
       "target_aide_command_hint": "review before wrapper mapping",
       "validation_plan": [
         "tools validate",
@@ -19264,7 +19264,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "control/schemas/previews/h13/connectors/pack_export_import_boundary_candidate.v0.json",
+      "source_tool": "contracts/control_schemas/previews/h13/connectors/pack_export_import_boundary_candidate.v0.json",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -19288,7 +19288,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "control/schemas/previews/h14/connectors/pack_import_export_boundary_candidate.v0.json",
+      "source_tool": "contracts/control_schemas/previews/h14/connectors/pack_import_export_boundary_candidate.v0.json",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -19312,7 +19312,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "control/schemas/previews/h2/connectors/package_connector_health_summary.v0.json",
+      "source_tool": "contracts/control_schemas/previews/h2/connectors/package_connector_health_summary.v0.json",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -19336,7 +19336,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "control/schemas/previews/h2/connectors/package_dependency_candidate.v0.json",
+      "source_tool": "contracts/control_schemas/previews/h2/connectors/package_dependency_candidate.v0.json",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -19360,7 +19360,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "control/schemas/previews/h2/connectors/package_file_candidate.v0.json",
+      "source_tool": "contracts/control_schemas/previews/h2/connectors/package_file_candidate.v0.json",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -19384,7 +19384,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "control/schemas/previews/h2/connectors/package_identity_candidate.v0.json",
+      "source_tool": "contracts/control_schemas/previews/h2/connectors/package_identity_candidate.v0.json",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -19408,7 +19408,7 @@
         "release",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "control/schemas/previews/h2/connectors/package_live_probe_output_bundle.v0.json",
+      "source_tool": "contracts/control_schemas/previews/h2/connectors/package_live_probe_output_bundle.v0.json",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -19432,7 +19432,7 @@
         "release",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "control/schemas/previews/h2/connectors/package_live_probe_request.v0.json",
+      "source_tool": "contracts/control_schemas/previews/h2/connectors/package_live_probe_request.v0.json",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -19456,7 +19456,7 @@
         "release",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "control/schemas/previews/h2/connectors/package_live_probe_result.v0.json",
+      "source_tool": "contracts/control_schemas/previews/h2/connectors/package_live_probe_result.v0.json",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -19480,7 +19480,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "control/schemas/previews/h2/connectors/package_normalized_record.v0.json",
+      "source_tool": "contracts/control_schemas/previews/h2/connectors/package_normalized_record.v0.json",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -19504,7 +19504,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "control/schemas/previews/h3/connectors/os_package_connector_health_summary.v0.json",
+      "source_tool": "contracts/control_schemas/previews/h3/connectors/os_package_connector_health_summary.v0.json",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -19528,7 +19528,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "control/schemas/previews/h3/connectors/os_package_dependency_candidate.v0.json",
+      "source_tool": "contracts/control_schemas/previews/h3/connectors/os_package_dependency_candidate.v0.json",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -19552,7 +19552,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "control/schemas/previews/h3/connectors/os_package_file_candidate.v0.json",
+      "source_tool": "contracts/control_schemas/previews/h3/connectors/os_package_file_candidate.v0.json",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -19576,7 +19576,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "control/schemas/previews/h3/connectors/os_package_identity_candidate.v0.json",
+      "source_tool": "contracts/control_schemas/previews/h3/connectors/os_package_identity_candidate.v0.json",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -19600,7 +19600,7 @@
         "release",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "control/schemas/previews/h3/connectors/os_package_live_probe_output_bundle.v0.json",
+      "source_tool": "contracts/control_schemas/previews/h3/connectors/os_package_live_probe_output_bundle.v0.json",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -19624,7 +19624,7 @@
         "release",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "control/schemas/previews/h3/connectors/os_package_live_probe_request.v0.json",
+      "source_tool": "contracts/control_schemas/previews/h3/connectors/os_package_live_probe_request.v0.json",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -19648,7 +19648,7 @@
         "release",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "control/schemas/previews/h3/connectors/os_package_live_probe_result.v0.json",
+      "source_tool": "contracts/control_schemas/previews/h3/connectors/os_package_live_probe_result.v0.json",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -19672,7 +19672,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "control/schemas/previews/h3/connectors/os_package_normalized_record.v0.json",
+      "source_tool": "contracts/control_schemas/previews/h3/connectors/os_package_normalized_record.v0.json",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -19696,7 +19696,7 @@
         "release",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "control/schemas/previews/h4/connectors/release_asset_candidate.v0.json",
+      "source_tool": "contracts/control_schemas/previews/h4/connectors/release_asset_candidate.v0.json",
       "target_aide_command_hint": "aide release",
       "validation_plan": [
         "tools validate",
@@ -19720,7 +19720,7 @@
         "release",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "control/schemas/previews/h4/connectors/release_identity_candidate.v0.json",
+      "source_tool": "contracts/control_schemas/previews/h4/connectors/release_identity_candidate.v0.json",
       "target_aide_command_hint": "aide release",
       "validation_plan": [
         "tools validate",
@@ -19744,7 +19744,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "control/schemas/previews/h8/connectors/install_requirement_claim_candidate.v0.json",
+      "source_tool": "contracts/control_schemas/previews/h8/connectors/install_requirement_claim_candidate.v0.json",
       "target_aide_command_hint": "aide install",
       "validation_plan": [
         "tools validate",
@@ -19768,7 +19768,7 @@
         "release",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "control/schemas/previews/h9/connectors/music_work_recording_release_candidate.v0.json",
+      "source_tool": "contracts/control_schemas/previews/h9/connectors/music_work_recording_release_candidate.v0.json",
       "target_aide_command_hint": "aide release",
       "validation_plan": [
         "tools validate",
@@ -19792,7 +19792,7 @@
         "release",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "control/schemas/previews/native/native_release_candidate_preview.v0.json",
+      "source_tool": "contracts/control_schemas/previews/native/native_release_candidate_preview.v0.json",
       "target_aide_command_hint": "aide release",
       "validation_plan": [
         "tools validate",
@@ -19816,7 +19816,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "control/schemas/previews/packs/pack_import_preview.v0.json",
+      "source_tool": "contracts/control_schemas/previews/packs/pack_import_preview.v0.json",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -19840,7 +19840,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "control/schemas/tasks/h2/connectors/package_next_phase_recommendation.v0.json",
+      "source_tool": "contracts/control_schemas/tasks/h2/connectors/package_next_phase_recommendation.v0.json",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -19864,7 +19864,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "control/schemas/tasks/h3/connectors/os_package_next_phase_recommendation.v0.json",
+      "source_tool": "contracts/control_schemas/tasks/h3/connectors/os_package_next_phase_recommendation.v0.json",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -19984,7 +19984,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "data/public_index/build_manifest.json",
+      "source_tool": "site/dist/data/public_index/build_manifest.json",
       "target_aide_command_hint": "aide build",
       "validation_plan": [
         "tools validate",
@@ -20008,7 +20008,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "data/public_index/checksums.sha256",
+      "source_tool": "site/dist/data/public_index/checksums.sha256",
       "target_aide_command_hint": "aide validate",
       "validation_plan": [
         "tools validate",

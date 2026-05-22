@@ -24,7 +24,7 @@
     "Preserve legacy behavior for tests by updating active imports to the quarantine namespace.",
     "Do not modify recovered R0 runtime seams."
   ],
-  "quarantine_root": "control/prototypes/legacy_runtime/connectors",
+  "quarantine_root": "archive/prototypes/legacy_runtime/connectors",
   "quarantines_planned": 14,
   "references_to_update": 517,
   "renames_planned": 0,

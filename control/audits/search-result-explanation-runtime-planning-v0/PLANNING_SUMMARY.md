@@ -12,7 +12,7 @@ Current evidence:
 - P96 validators exist and have passed in prior contract evidence.
 - Public search is implemented locally in `local_index_only` mode.
 - Public result cards and public search response envelopes exist.
-- Public index artifacts exist under `data/public_index/`.
+- Public index artifacts exist under `site/dist/data/public_index/`.
 - Hosted deployment evidence remains unverified/operator-gated.
 
 P106 adds no runtime behavior. It records a gated future path only.

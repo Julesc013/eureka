@@ -137,7 +137,7 @@ does none of that runtime work.
 
 ## P63 Boundary
 
-P63 defines `control/schemas/tasks/query/probe_queue_item.v0.json` and
+P63 defines `contracts/control_schemas/tasks/query/probe_queue_item.v0.json` and
 `contracts/query/probe_kind.v0.json`, synthetic manual-observation,
 source-metadata, and deep-extraction examples, validators, docs, and an optional
 dry-run helper that writes nothing. It does not wire the public search runtime
@@ -169,8 +169,8 @@ bounded contract and approval posture.
 
 ## P64 Boundary
 
-P64 defines `control/schemas/previews/query/candidate_index_record.v0.json` and
-`control/schemas/previews/query/candidate_lifecycle.v0.json`, synthetic object, evidence,
+P64 defines `contracts/control_schemas/previews/query/candidate_index_record.v0.json` and
+`contracts/control_schemas/previews/query/candidate_lifecycle.v0.json`, synthetic object, evidence,
 absence, and conflict examples, validators, docs, and an optional dry-run
 helper that writes nothing. It does not wire the public search runtime to
 create candidates, rank from candidates, promote candidates, or mutate any

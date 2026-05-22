@@ -32,7 +32,7 @@ class H12RetroCommunityLiveProbeScriptTests(unittest.TestCase):
             self.assertFalse(payload["network_used"])
 
     def test_cli_refuses_forbidden_roots(self) -> None:
-        for path in ("site/dist/h12.json", "data/public_index/h12.json", "roms/h12.json", "isos/h12.json", "bios/h12.json", "vintage_software_downloads/h12.json", "archive_extractions/h12.json", "execution_actions/h12.json", "gated_source_accounts/h12.json"):
+        for path in ("site/dist/h12.json", "site/dist/data/public_index/h12.json", "roms/h12.json", "isos/h12.json", "bios/h12.json", "vintage_software_downloads/h12.json", "archive_extractions/h12.json", "execution_actions/h12.json", "gated_source_accounts/h12.json"):
             with self.subTest(path=path):
                 code = runner.main(["--source-id", "winworld_metadata", "--request-key", "example_catalog_item_metadata", "--output", path])
                 self.assertNotEqual(code, 0)

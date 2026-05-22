@@ -119,7 +119,7 @@
     ],
     "forbidden_output_roots": [
       "site/dist",
-      "data/public_index",
+      "site/dist/data/public_index",
       "local_sources",
       "cas_roots",
       "private_sources",

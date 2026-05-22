@@ -595,7 +595,7 @@ mutation remain disabled or absent. The next backend-facing branch is
 
 Public Search Index Builder v0 records the P55 checkpoint under
 `control/audits/public-search-index-builder-v0/`. It builds and validates the
-first committed public-safe search index bundle under `data/public_index` from
+first committed public-safe search index bundle under `site/dist/data/public_index` from
 controlled source inventory plus fixture/recorded metadata, integrates that
 bundle into the local public-search API, and keeps hosted-wrapper compatibility
 without deploying a backend. The public index is JSON/NDJSON plus manifests and

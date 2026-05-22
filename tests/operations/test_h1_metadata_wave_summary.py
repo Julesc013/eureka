@@ -57,7 +57,7 @@ class H1MetadataWaveSummaryTests(unittest.TestCase):
         self.assertIn("refusing forbidden output root", result.stdout)
 
     def test_summary_script_refuses_data_public_index_output(self):
-        result = run_cmd(["scripts/summarize_h1_metadata_wave_sources.py", "--output", "data/public_index/h1-summary.json"])
+        result = run_cmd(["scripts/summarize_h1_metadata_wave_sources.py", "--output", "site/dist/data/public_index/h1-summary.json"])
         self.assertNotEqual(result.returncode, 0)
         self.assertIn("refusing forbidden output root", result.stdout)
 

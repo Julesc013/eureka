@@ -15,7 +15,7 @@
     "/source/<source_id>",
     "/absence"
   ],
-  "runtime_package": "runtime/local_workbench",
+  "runtime_package": "surfaces/web/workbench/local_html",
   "schema_version": "local_html_workbench_inventory.v0",
   "server_rendered": true,
   "source_probe_ui_enabled": false,

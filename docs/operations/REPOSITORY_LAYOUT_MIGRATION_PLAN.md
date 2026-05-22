@@ -1,7 +1,8 @@
 # Repository Layout Migration Plan
 
-This plan is the safe follow-on to `REPO-LAYOUT-CANON-01`. The canon locks the
-policy; these phases apply it without a single uncontrolled reshape.
+This plan was the safe follow-on to `REPO-LAYOUT-CANON-01`. Its active move
+phases are superseded by `EUREKA-STRUCTURE-BIG-BANG-01`, which performed the
+bounded reconciliation with a path migration map and validation evidence.
 
 ## Phase 0 - Canon Lock
 
@@ -22,31 +23,39 @@ Acceptance:
 
 Task: `REPO-LAYOUT-INVENTORY-02`
 
+Status: superseded by `EUREKA-STRUCTURE-BIG-BANG-01`.
+
 Acceptance:
 
 - Tracked inventory is captured from `git ls-files`.
 - Source, generated artifacts, retained evidence, archive material, fixtures,
   runtime projections, and local state are classified separately.
 - Move candidates are mapped without moving files.
-- `data/`, `deploy/`, `control/prototypes/legacy_runtime`,
-  `runtime/local_workbench`, `control/schemas`, and `scripts/` are all accounted
+- `data/`, `deploy/`, `archive/prototypes/legacy_runtime`,
+  `surfaces/web/workbench/local_html`, `contracts/control_schemas`, and `scripts/` are all accounted
   for.
 
 ## Phase 2 - Generated Artifact Cleanup
 
 Task: `REPO-LAYOUT-GENERATED-03`
 
+Status: completed for top-level `data/`; generated public-index artifacts now
+live under `site/dist/data/public_index`.
+
 Acceptance:
 
-- `site/dist`, `snapshots/examples/static_snapshot_v0`, and `data/public_index`
+- `site/dist`, `snapshots/examples/static_snapshot_v0`, and `site/dist/data/public_index`
   each have current generator and check policy.
-- `data/public_index` is moved, renamed, or reapproved with explicit artifact
+- `site/dist/data/public_index` is moved, renamed, or reapproved with explicit artifact
   authority.
 - Generated audit material remains excluded from active source authority.
 
 ## Phase 3 - Tools And Scripts Split
 
 Task: `REPO-LAYOUT-TOOLS-04`
+
+Status: completed for Python command files; `scripts/` now provides wrappers
+over `tools/` implementations.
 
 Acceptance:
 
@@ -59,6 +68,9 @@ Acceptance:
 
 Task: `REPO-LAYOUT-ARCHIVE-05`
 
+Status: completed for `control/prototypes/legacy_runtime`, now archived under
+`archive/prototypes/legacy_runtime`.
+
 Acceptance:
 
 - Retired prototypes and historical material are moved or mapped to archive
@@ -70,10 +82,12 @@ Acceptance:
 
 Task: `R0-03 / REPO-LAYOUT-CONTRACT-TAXONOMY-CLEANUP`
 
+Status: completed for `control/schemas`, now under `contracts/control_schemas`.
+
 Acceptance:
 
 - Product schemas and packets are authoritative under `contracts/`.
-- `control/schemas` is scoped to governance-only evidence with migration backlog.
+- `contracts/control_schemas` is scoped to governance-only evidence with migration backlog.
 - Examples and fixtures do not masquerade as canonical registry truth.
 - Workbench view-model contract location is reserved under
   `contracts/views/workbench/`.
@@ -88,10 +102,13 @@ needed after Workbench/Search contract locations are accepted.
 
 Task: `REPO-LAYOUT-WORKBENCH-SURFACE-07`
 
+Status: completed for `runtime/local_workbench`, now under
+`surfaces/web/workbench/local_html`.
+
 Acceptance:
 
 - Workbench presentation authority is under `surfaces/web/workbench`.
-- `runtime/local_workbench` is retired, moved, or narrowed to runtime-only
+- `surfaces/web/workbench/local_html` is retired, moved, or narrowed to runtime-only
   service proof material.
 - Runtime exposes packets/services consumed by surfaces; it does not own HTML
   presentation.

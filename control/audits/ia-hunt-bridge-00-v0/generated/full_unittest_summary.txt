@@ -1251,7 +1251,7 @@ status: invalid
 ERROR: refusing forbidden output root: site/dist
 H10 games emulation source summary
 status: invalid
-ERROR: refusing forbidden output root: data/public_index
+ERROR: refusing forbidden output root: site/dist/data/public_index
 H10 games emulation source summary
 status: invalid
 ERROR: refusing forbidden output root: runtime
@@ -1272,7 +1272,7 @@ status: invalid
 ERROR: refusing forbidden output root: site/dist
 H11 storefront fixture normalization
 status: invalid
-ERROR: refusing forbidden output root: data/public_index
+ERROR: refusing forbidden output root: site/dist/data/public_index
 H11 storefront fixture normalization
 status: invalid
 ERROR: refusing forbidden output root: storefront_accounts
@@ -1321,7 +1321,7 @@ status: invalid
 ERROR: refusing forbidden output root: site/dist
 H11 storefront live probe
 status: invalid
-ERROR: refusing forbidden output root: data/public_index
+ERROR: refusing forbidden output root: site/dist/data/public_index
 H11 storefront live probe
 status: invalid
 ERROR: refusing forbidden output root: accounts
@@ -1405,7 +1405,7 @@ status: invalid
 ERROR: refusing forbidden output root: site/dist
 H11 storefront source summary
 status: invalid
-ERROR: refusing forbidden output root: data/public_index
+ERROR: refusing forbidden output root: site/dist/data/public_index
 H11 storefront source summary
 status: invalid
 ERROR: refusing forbidden output root: runtime
@@ -1427,7 +1427,7 @@ status: invalid
 ERROR: refusing forbidden output root: site/dist
 H12 retro/community live probe
 status: invalid
-ERROR: refusing forbidden output root: data/public_index
+ERROR: refusing forbidden output root: site/dist/data/public_index
 H12 retro/community live probe
 status: invalid
 ERROR: refusing forbidden output root: roms
@@ -1503,7 +1503,7 @@ network_used: false
   "status": "invalid"
 }
 {
-  "error": "refusing forbidden output root: data/public_index",
+  "error": "refusing forbidden output root: site/dist/data/public_index",
   "status": "invalid"
 }
 {
@@ -1577,7 +1577,7 @@ network_used: false
   "status": "invalid"
 }
 {
-  "error": "refusing forbidden output root: data/public_index",
+  "error": "refusing forbidden output root: site/dist/data/public_index",
   "status": "invalid"
 }
 {
@@ -1697,7 +1697,7 @@ network_used: false
   "status": "invalid"
 }
 {
-  "error": "refusing forbidden output root: data/public_index",
+  "error": "refusing forbidden output root: site/dist/data/public_index",
   "status": "invalid"
 }
 {
@@ -1773,7 +1773,7 @@ network_used: false
   "status": "invalid"
 }
 {
-  "error": "refusing forbidden output root: data/public_index",
+  "error": "refusing forbidden output root: site/dist/data/public_index",
   "status": "invalid"
 }
 {
@@ -1893,7 +1893,7 @@ network_used: false
   "status": "invalid"
 }
 {
-  "error": "refusing forbidden output root: data/public_index",
+  "error": "refusing forbidden output root: site/dist/data/public_index",
   "status": "invalid"
 }
 {
@@ -2476,7 +2476,7 @@ network_used: false
   "status": "invalid"
 }
 {
-  "error": "refusing forbidden output root: data/public_index",
+  "error": "refusing forbidden output root: site/dist/data/public_index",
   "status": "invalid"
 }
 {
@@ -2624,7 +2624,7 @@ status: invalid
 ERROR: refusing forbidden output root: site/dist
 H8 manuals/docs/standards source summary
 status: invalid
-ERROR: refusing forbidden output root: data/public_index
+ERROR: refusing forbidden output root: site/dist/data/public_index
 H8 manuals/docs/standards source summary
 status: pass
 source_count: 18
@@ -2647,7 +2647,7 @@ status: invalid
 ERROR: refusing forbidden output root: site/dist
 H9 media metadata source summary
 status: invalid
-ERROR: refusing forbidden output root: data/public_index
+ERROR: refusing forbidden output root: site/dist/data/public_index
 H9 media metadata source summary
 status: invalid
 ERROR: refusing forbidden output root: runtime

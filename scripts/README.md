@@ -1,6 +1,8 @@
 # Scripts
 
-This directory holds lightweight repo support scripts.
+This directory holds thin compatibility wrappers and stable command entry
+points. Substantive implementations live under `tools/`; the wrappers preserve
+documented commands such as `python scripts/validate_repo_structure_canon.py`.
 
 Current scripts:
 
@@ -508,7 +510,7 @@ Current scripts:
   inventory posture, disabled hard booleans, and no hosted deployment claim. It
   supports `--json` and performs no network calls.
 - `build_public_search_index.py`: builds or drift-checks the P55 generated
-  public search index under `data/public_index` from governed source inventory
+  public search index under `site/dist/data/public_index` from governed source inventory
   plus committed fixture/recorded metadata only. It writes JSON/NDJSON
   manifests, source coverage, stats, and checksums; `--check` regenerates in a
   temporary directory and compares without mutating the repo; `--json` emits a
@@ -516,7 +518,7 @@ Current scripts:
   caller-selected source roots, and does not create live/source/import
   behavior.
 - `validate_public_search_index.py`: validates the committed P55
-  `data/public_index` bundle, including required files, document fields,
+  `site/dist/data/public_index` bundle, including required files, document fields,
   source ids, checksums, count consistency, blocked actions, no private path or
   secret markers, no live-source flags, and no executable payload flags. It
   supports `--json` and performs no network calls.

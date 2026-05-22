@@ -50,7 +50,7 @@ This batch proves the review gate between candidate material and reviewed local 
 - `runtime/public_index/**`
 - `runtime/resolution_run/**`
 - `runtime/local_service/**`
-- `runtime/local_workbench/**`
+- `surfaces/web/workbench/local_html/**`
 - `runtime/local_eval/**`
 - `runtime/search_hunt/**`
 - `runtime/search_need/**`
@@ -112,7 +112,7 @@ This batch proves the review gate between candidate material and reviewed local 
 - `secrets/**`
 - `.env`
 - `site/dist/**`
-- `data/public_index/**`
+- `site/dist/data/public_index/**`
 - `runtime/connectors/**`
 - `runtime/extraction/**`
 - `runtime/search_quality/**`

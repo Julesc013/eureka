@@ -75,7 +75,7 @@ class ConnectorInterfaceFoundationScriptsTest(unittest.TestCase):
         self.assertIn("refusing forbidden output root", result.stdout)
 
     def test_scripts_refuse_data_public_index_output(self):
-        result = self.run_script(REPLAY, "--request", REPLAY_REQUEST, "--output", "data/public_index/replay.json")
+        result = self.run_script(REPLAY, "--request", REPLAY_REQUEST, "--output", "site/dist/data/public_index/replay.json")
         self.assertNotEqual(result.returncode, 0)
         self.assertIn("refusing forbidden output root", result.stdout)
 

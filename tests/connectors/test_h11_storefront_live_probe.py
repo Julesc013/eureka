@@ -4,7 +4,7 @@ import copy
 import importlib
 import unittest
 
-from control.prototypes.legacy_runtime.connectors.h11_storefront.live_probe_common import (
+from archive.prototypes.legacy_runtime.connectors.h11_storefront.live_probe_common import (
     SOURCE_CONFIGS,
     build_h11_storefront_live_probe_blocked_result,
     build_h11_storefront_live_probe_request,
@@ -95,7 +95,7 @@ class H11StorefrontLiveProbeTests(unittest.TestCase):
         payload = {"source_native_id": "org.example.app", "app_or_product_name": "Example App", "listing_title": "Example App", "package_name_candidate": "org.example.app", "version_candidate": "1.0"}
         for source_id in ("fdroid_metadata", "steam_store_metadata", "chrome_web_store_metadata"):
             with self.subTest(source_id=source_id):
-                module = importlib.import_module(f"control.prototypes.legacy_runtime.connectors.h11_storefront.live_probe_{source_id}")
+                module = importlib.import_module(f"archive.prototypes.legacy_runtime.connectors.h11_storefront.live_probe_{source_id}")
                 normalized = module.normalize_response_payload(payload, self.bundle)
                 self.assertEqual(normalized["source_id"], source_id)
                 result = build_h11_storefront_live_probe_result(source_id, payload, {"network_used": False, "result_status": "dry_run_preflight_pass"}, self.bundle)

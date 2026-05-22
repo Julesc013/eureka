@@ -14,7 +14,7 @@
   ],
   "classifiers": [
     {
-      "path": "data/public_index",
+      "path": "site/dist/data/public_index",
       "artifact_class": "canonical_generated",
       "policy": "Regenerate only through scripts/build_public_search_index.py with explicit rebuild intent."
     },
@@ -66,7 +66,7 @@
   ],
   "ordinary_tests_must_not_mutate": [
     "site/dist",
-    "data/public_index",
+    "site/dist/data/public_index",
     "docs/operations/public_alpha_rehearsal_evidence_v0"
   ],
   "network_used": false,

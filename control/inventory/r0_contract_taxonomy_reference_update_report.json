@@ -2,1699 +2,1699 @@
   "active_reference_updates": [],
   "historical_references_left_intact": [
     {
-      "new_reference": "control/schemas/previews/query/candidate_promotion_assessment.v0.json",
+      "new_reference": "contracts/control_schemas/previews/query/candidate_promotion_assessment.v0.json",
       "old_reference": "contracts/query/candidate_promotion_assessment.v0.json",
       "path": "control/audits/github-releases-connector-approval-v0/COMMAND_RESULTS.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/query/candidate_promotion_assessment.v0.json",
+      "new_reference": "contracts/control_schemas/previews/query/candidate_promotion_assessment.v0.json",
       "old_reference": "contracts/query/candidate_promotion_assessment.v0.json",
       "path": "control/audits/github-releases-connector-approval-v0/github_releases_connector_approval_report.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/connector_pack_manifest_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/connector_pack_manifest_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_connector_pack_manifest_candidate.v0.json",
       "path": "control/audits/h14-bundle-02-source-discovery-fixture-runtime-v0/h14_bundle_02_report.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/connector_scorecard_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/connector_scorecard_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_connector_scorecard_candidate.v0.json",
       "path": "control/audits/h14-bundle-02-source-discovery-fixture-runtime-v0/h14_bundle_02_report.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/coverage_manifest_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/coverage_manifest_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_coverage_manifest_candidate.v0.json",
       "path": "control/audits/h14-bundle-02-source-discovery-fixture-runtime-v0/h14_bundle_02_report.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/pack_import_export_boundary_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/pack_import_export_boundary_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_pack_import_export_boundary_candidate.v0.json",
       "path": "control/audits/h14-bundle-02-source-discovery-fixture-runtime-v0/h14_bundle_02_report.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_candidate_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_candidate_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_candidate_candidate.v0.json",
       "path": "control/audits/h14-bundle-02-source-discovery-fixture-runtime-v0/h14_bundle_02_report.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_discovery_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_discovery_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_discovery_candidate.v0.json",
       "path": "control/audits/h14-bundle-02-source-discovery-fixture-runtime-v0/h14_bundle_02_report.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_dispute_revocation_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_dispute_revocation_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_dispute_revocation_candidate.v0.json",
       "path": "control/audits/h14-bundle-02-source-discovery-fixture-runtime-v0/h14_bundle_02_report.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_lineage_provenance_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_lineage_provenance_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_lineage_provenance_candidate.v0.json",
       "path": "control/audits/h14-bundle-02-source-discovery-fixture-runtime-v0/h14_bundle_02_report.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_need_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_need_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_need_candidate.v0.json",
       "path": "control/audits/h14-bundle-02-source-discovery-fixture-runtime-v0/h14_bundle_02_report.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_pack_manifest_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_pack_manifest_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_pack_manifest_candidate.v0.json",
       "path": "control/audits/h14-bundle-02-source-discovery-fixture-runtime-v0/h14_bundle_02_report.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_reliability_freshness_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_reliability_freshness_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_reliability_freshness_candidate.v0.json",
       "path": "control/audits/h14-bundle-02-source-discovery-fixture-runtime-v0/h14_bundle_02_report.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/query/candidate_promotion_assessment.v0.json",
+      "new_reference": "contracts/control_schemas/previews/query/candidate_promotion_assessment.v0.json",
       "old_reference": "contracts/query/candidate_promotion_assessment.v0.json",
       "path": "control/audits/internet-archive-metadata-connector-approval-v0/COMMAND_RESULTS.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/query/candidate_promotion_assessment.v0.json",
+      "new_reference": "contracts/control_schemas/previews/query/candidate_promotion_assessment.v0.json",
       "old_reference": "contracts/query/candidate_promotion_assessment.v0.json",
       "path": "control/audits/internet-archive-metadata-connector-approval-v0/internet_archive_metadata_connector_approval_report.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/query/candidate_promotion_assessment.v0.json",
+      "new_reference": "contracts/control_schemas/previews/query/candidate_promotion_assessment.v0.json",
       "old_reference": "contracts/query/candidate_promotion_assessment.v0.json",
       "path": "control/audits/npm-metadata-connector-approval-v0/COMMAND_RESULTS.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/query/candidate_promotion_assessment.v0.json",
+      "new_reference": "contracts/control_schemas/previews/query/candidate_promotion_assessment.v0.json",
       "old_reference": "contracts/query/candidate_promotion_assessment.v0.json",
       "path": "control/audits/npm-metadata-connector-approval-v0/npm_metadata_connector_approval_report.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/tasks/query/observation_candidate_review_queue.v0.json",
+      "new_reference": "contracts/control_schemas/tasks/query/observation_candidate_review_queue.v0.json",
       "old_reference": "contracts/query/observation_candidate_review_queue.v0.json",
       "path": "control/audits/obs-agent-03-observation-candidate-review-queue-v0/observation_candidate_review_queue.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/tasks/query/observation_candidate_review_queue.v0.json",
+      "new_reference": "contracts/control_schemas/tasks/query/observation_candidate_review_queue.v0.json",
       "old_reference": "contracts/query/observation_candidate_review_queue.v0.json",
       "path": "control/audits/obs-agent-03-observation-candidate-review-queue-v0/obs_agent_03_report.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/policies/node/work_unit.v0.json",
+      "new_reference": "contracts/control_schemas/policies/node/work_unit.v0.json",
       "old_reference": "contracts/node/work_unit.v0.json",
       "path": "control/audits/obs-agent-05-candidate-to-workunit-seeds-v0/workunit_seed_manifest.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/policies/node/work_unit_result.v0.json",
+      "new_reference": "contracts/control_schemas/policies/node/work_unit_result.v0.json",
       "old_reference": "contracts/node/work_unit_result.v0.json",
       "path": "control/audits/obs-agent-05-candidate-to-workunit-seeds-v0/workunit_seed_manifest.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/policies/node/work_unit.v0.json",
+      "new_reference": "contracts/control_schemas/policies/node/work_unit.v0.json",
       "old_reference": "contracts/node/work_unit.v0.json",
       "path": "control/audits/obs-agent-06-obs-track-b-synchronization-v0/obs_track_b_sync_matrix.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/policies/node/work_unit_result.v0.json",
+      "new_reference": "contracts/control_schemas/policies/node/work_unit_result.v0.json",
       "old_reference": "contracts/node/work_unit_result.v0.json",
       "path": "control/audits/obs-agent-06-obs-track-b-synchronization-v0/obs_track_b_sync_matrix.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/policies/node/work_unit.v0.json",
+      "new_reference": "contracts/control_schemas/policies/node/work_unit.v0.json",
       "old_reference": "contracts/node/work_unit.v0.json",
       "path": "control/audits/obs-agent-06-obs-track-b-synchronization-v0/track_b_dependency_map.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/policies/node/work_unit_result.v0.json",
+      "new_reference": "contracts/control_schemas/policies/node/work_unit_result.v0.json",
       "old_reference": "contracts/node/work_unit_result.v0.json",
       "path": "control/audits/obs-agent-06-obs-track-b-synchronization-v0/track_b_dependency_map.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/query/candidate_promotion_assessment.v0.json",
+      "new_reference": "contracts/control_schemas/previews/query/candidate_promotion_assessment.v0.json",
       "old_reference": "contracts/query/candidate_promotion_assessment.v0.json",
       "path": "control/audits/pypi-metadata-connector-approval-v0/COMMAND_RESULTS.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/query/candidate_promotion_assessment.v0.json",
+      "new_reference": "contracts/control_schemas/previews/query/candidate_promotion_assessment.v0.json",
       "old_reference": "contracts/query/candidate_promotion_assessment.v0.json",
       "path": "control/audits/pypi-metadata-connector-approval-v0/pypi_metadata_connector_approval_report.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/fixtures/archive/software/payloads/synthetic-demo-app-package.zip",
+      "new_reference": "contracts/control_schemas/fixtures/archive/software/payloads/synthetic-demo-app-package.zip",
       "old_reference": "contracts/archive/fixtures/software/payloads/synthetic-demo-app-package.zip",
       "path": "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/fixtures/archive/software/payloads/synthetic-demo-app.bundle",
+      "new_reference": "contracts/control_schemas/fixtures/archive/software/payloads/synthetic-demo-app.bundle",
       "old_reference": "contracts/archive/fixtures/software/payloads/synthetic-demo-app.bundle",
       "path": "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/fixtures/archive/software/synthetic_resolution_fixture.json",
+      "new_reference": "contracts/control_schemas/fixtures/archive/software/synthetic_resolution_fixture.json",
       "old_reference": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json",
       "path": "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/connector_pack_manifest_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/connector_pack_manifest_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_connector_pack_manifest_candidate.v0.json",
       "path": "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/connector_scorecard_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/connector_scorecard_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_connector_scorecard_candidate.v0.json",
       "path": "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/coverage_manifest_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/coverage_manifest_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_coverage_manifest_candidate.v0.json",
       "path": "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/pack_import_export_boundary_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/pack_import_export_boundary_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_pack_import_export_boundary_candidate.v0.json",
       "path": "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_candidate_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_candidate_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_candidate_candidate.v0.json",
       "path": "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_discovery_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_discovery_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_discovery_candidate.v0.json",
       "path": "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_dispute_revocation_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_dispute_revocation_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_dispute_revocation_candidate.v0.json",
       "path": "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_lineage_provenance_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_lineage_provenance_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_lineage_provenance_candidate.v0.json",
       "path": "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_need_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_need_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_need_candidate.v0.json",
       "path": "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_pack_manifest_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_pack_manifest_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_pack_manifest_candidate.v0.json",
       "path": "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_reliability_freshness_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_reliability_freshness_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_reliability_freshness_candidate.v0.json",
       "path": "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/policies/node/work_unit.v0.json",
+      "new_reference": "contracts/control_schemas/policies/node/work_unit.v0.json",
       "old_reference": "contracts/node/work_unit.v0.json",
       "path": "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/policies/node/work_unit_result.v0.json",
+      "new_reference": "contracts/control_schemas/policies/node/work_unit_result.v0.json",
       "old_reference": "contracts/node/work_unit_result.v0.json",
       "path": "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/query/candidate_promotion_assessment.v0.json",
+      "new_reference": "contracts/control_schemas/previews/query/candidate_promotion_assessment.v0.json",
       "old_reference": "contracts/query/candidate_promotion_assessment.v0.json",
       "path": "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/tasks/query/observation_candidate_review_queue.v0.json",
+      "new_reference": "contracts/control_schemas/tasks/query/observation_candidate_review_queue.v0.json",
       "old_reference": "contracts/query/observation_candidate_review_queue.v0.json",
       "path": "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/fixtures/archive/software/payloads/synthetic-demo-app-package.zip",
+      "new_reference": "contracts/control_schemas/fixtures/archive/software/payloads/synthetic-demo-app-package.zip",
       "old_reference": "contracts/archive/fixtures/software/payloads/synthetic-demo-app-package.zip",
       "path": "control/audits/r0-01-dev-production-reality-inventory-v0/zero_byte_and_placeholder_summary.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/fixtures/archive/software/payloads/synthetic-demo-app-package.zip",
+      "new_reference": "contracts/control_schemas/fixtures/archive/software/payloads/synthetic-demo-app-package.zip",
       "old_reference": "contracts/archive/fixtures/software/payloads/synthetic-demo-app-package.zip",
       "path": "control/audits/r0-01-dev-production-reality-inventory-v0/generated/sample_gap_register.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/fixtures/archive/software/payloads/synthetic-demo-app.bundle",
+      "new_reference": "contracts/control_schemas/fixtures/archive/software/payloads/synthetic-demo-app.bundle",
       "old_reference": "contracts/archive/fixtures/software/payloads/synthetic-demo-app.bundle",
       "path": "control/audits/r0-01-dev-production-reality-inventory-v0/generated/sample_gap_register.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/fixtures/archive/software/synthetic_resolution_fixture.json",
+      "new_reference": "contracts/control_schemas/fixtures/archive/software/synthetic_resolution_fixture.json",
       "old_reference": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json",
       "path": "control/audits/r0-01-dev-production-reality-inventory-v0/generated/sample_gap_register.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/query/candidate_promotion_assessment.v0.json",
+      "new_reference": "contracts/control_schemas/previews/query/candidate_promotion_assessment.v0.json",
       "old_reference": "contracts/query/candidate_promotion_assessment.v0.json",
       "path": "control/audits/r0-01-dev-production-reality-inventory-v0/generated/sample_runtime_maturity_matrix.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/tasks/query/observation_candidate_review_queue.v0.json",
+      "new_reference": "contracts/control_schemas/tasks/query/observation_candidate_review_queue.v0.json",
       "old_reference": "contracts/query/observation_candidate_review_queue.v0.json",
       "path": "control/audits/r0-01-dev-production-reality-inventory-v0/generated/sample_runtime_maturity_matrix.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/fixtures/archive/software/synthetic_resolution_fixture.json",
+      "new_reference": "contracts/control_schemas/fixtures/archive/software/synthetic_resolution_fixture.json",
       "old_reference": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json",
       "path": "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/policies/node/work_unit.v0.json",
+      "new_reference": "contracts/control_schemas/policies/node/work_unit.v0.json",
       "old_reference": "contracts/node/work_unit.v0.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/control_schema_summary.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/policies/node/work_unit_result.v0.json",
+      "new_reference": "contracts/control_schemas/policies/node/work_unit_result.v0.json",
       "old_reference": "contracts/node/work_unit_result.v0.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/control_schema_summary.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/tasks/query/observation_candidate_review_queue.v0.json",
+      "new_reference": "contracts/control_schemas/tasks/query/observation_candidate_review_queue.v0.json",
       "old_reference": "contracts/query/observation_candidate_review_queue.v0.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/control_schema_summary.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/fixtures/archive/software/synthetic_resolution_fixture.json",
+      "new_reference": "contracts/control_schemas/fixtures/archive/software/synthetic_resolution_fixture.json",
       "old_reference": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/fixture_schema_summary.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/fixtures/archive/software/payloads/synthetic-demo-app-package.zip",
+      "new_reference": "contracts/control_schemas/fixtures/archive/software/payloads/synthetic-demo-app-package.zip",
       "old_reference": "contracts/archive/fixtures/software/payloads/synthetic-demo-app-package.zip",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/fixtures/archive/software/payloads/synthetic-demo-app.bundle",
+      "new_reference": "contracts/control_schemas/fixtures/archive/software/payloads/synthetic-demo-app.bundle",
       "old_reference": "contracts/archive/fixtures/software/payloads/synthetic-demo-app.bundle",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/fixtures/archive/software/synthetic_resolution_fixture.json",
+      "new_reference": "contracts/control_schemas/fixtures/archive/software/synthetic_resolution_fixture.json",
       "old_reference": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/deprecated/archive/archive-lifecycle.protocol.md",
+      "new_reference": "contracts/control_schemas/deprecated/archive/archive-lifecycle.protocol.md",
       "old_reference": "contracts/archive/protocols/archive-lifecycle.protocol.md",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/connector_pack_manifest_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/connector_pack_manifest_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_connector_pack_manifest_candidate.v0.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/connector_scorecard_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/connector_scorecard_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_connector_scorecard_candidate.v0.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/coverage_manifest_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/coverage_manifest_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_coverage_manifest_candidate.v0.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/pack_import_export_boundary_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/pack_import_export_boundary_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_pack_import_export_boundary_candidate.v0.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_candidate_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_candidate_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_candidate_candidate.v0.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_discovery_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_discovery_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_discovery_candidate.v0.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_dispute_revocation_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_dispute_revocation_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_dispute_revocation_candidate.v0.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_lineage_provenance_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_lineage_provenance_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_lineage_provenance_candidate.v0.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_need_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_need_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_need_candidate.v0.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_pack_manifest_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_pack_manifest_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_pack_manifest_candidate.v0.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_reliability_freshness_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_reliability_freshness_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_reliability_freshness_candidate.v0.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/migration_plan_summary.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/connector_pack_manifest_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/connector_pack_manifest_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_connector_pack_manifest_candidate.v0.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/preview_schema_summary.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/connector_scorecard_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/connector_scorecard_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_connector_scorecard_candidate.v0.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/preview_schema_summary.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/coverage_manifest_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/coverage_manifest_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_coverage_manifest_candidate.v0.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/preview_schema_summary.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/pack_import_export_boundary_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/pack_import_export_boundary_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_pack_import_export_boundary_candidate.v0.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/preview_schema_summary.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_candidate_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_candidate_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_candidate_candidate.v0.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/preview_schema_summary.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_discovery_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_discovery_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_discovery_candidate.v0.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/preview_schema_summary.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_dispute_revocation_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_dispute_revocation_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_dispute_revocation_candidate.v0.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/preview_schema_summary.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_lineage_provenance_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_lineage_provenance_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_lineage_provenance_candidate.v0.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/preview_schema_summary.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_need_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_need_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_need_candidate.v0.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/preview_schema_summary.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_pack_manifest_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_pack_manifest_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_pack_manifest_candidate.v0.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/preview_schema_summary.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_reliability_freshness_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_reliability_freshness_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_reliability_freshness_candidate.v0.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/preview_schema_summary.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/query/candidate_promotion_assessment.v0.json",
+      "new_reference": "contracts/control_schemas/previews/query/candidate_promotion_assessment.v0.json",
       "old_reference": "contracts/query/candidate_promotion_assessment.v0.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/preview_schema_summary.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/fixtures/archive/software/payloads/synthetic-demo-app-package.zip",
+      "new_reference": "contracts/control_schemas/fixtures/archive/software/payloads/synthetic-demo-app-package.zip",
       "old_reference": "contracts/archive/fixtures/software/payloads/synthetic-demo-app-package.zip",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/fixtures/archive/software/payloads/synthetic-demo-app.bundle",
+      "new_reference": "contracts/control_schemas/fixtures/archive/software/payloads/synthetic-demo-app.bundle",
       "old_reference": "contracts/archive/fixtures/software/payloads/synthetic-demo-app.bundle",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/fixtures/archive/software/synthetic_resolution_fixture.json",
+      "new_reference": "contracts/control_schemas/fixtures/archive/software/synthetic_resolution_fixture.json",
       "old_reference": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/deprecated/archive/archive-lifecycle.protocol.md",
+      "new_reference": "contracts/control_schemas/deprecated/archive/archive-lifecycle.protocol.md",
       "old_reference": "contracts/archive/protocols/archive-lifecycle.protocol.md",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/connector_pack_manifest_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/connector_pack_manifest_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_connector_pack_manifest_candidate.v0.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/connector_scorecard_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/connector_scorecard_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_connector_scorecard_candidate.v0.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/coverage_manifest_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/coverage_manifest_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_coverage_manifest_candidate.v0.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/pack_import_export_boundary_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/pack_import_export_boundary_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_pack_import_export_boundary_candidate.v0.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_candidate_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_candidate_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_candidate_candidate.v0.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_discovery_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_discovery_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_discovery_candidate.v0.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_dispute_revocation_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_dispute_revocation_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_dispute_revocation_candidate.v0.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_lineage_provenance_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_lineage_provenance_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_lineage_provenance_candidate.v0.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_need_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_need_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_need_candidate.v0.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_pack_manifest_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_pack_manifest_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_pack_manifest_candidate.v0.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_reliability_freshness_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_reliability_freshness_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_reliability_freshness_candidate.v0.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/risk_register.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/fixtures/archive/software/payloads/synthetic-demo-app-package.zip",
+      "new_reference": "contracts/control_schemas/fixtures/archive/software/payloads/synthetic-demo-app-package.zip",
       "old_reference": "contracts/archive/fixtures/software/payloads/synthetic-demo-app-package.zip",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/fixtures/archive/software/payloads/synthetic-demo-app.bundle",
+      "new_reference": "contracts/control_schemas/fixtures/archive/software/payloads/synthetic-demo-app.bundle",
       "old_reference": "contracts/archive/fixtures/software/payloads/synthetic-demo-app.bundle",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/fixtures/archive/software/synthetic_resolution_fixture.json",
+      "new_reference": "contracts/control_schemas/fixtures/archive/software/synthetic_resolution_fixture.json",
       "old_reference": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/deprecated/archive/archive-lifecycle.protocol.md",
+      "new_reference": "contracts/control_schemas/deprecated/archive/archive-lifecycle.protocol.md",
       "old_reference": "contracts/archive/protocols/archive-lifecycle.protocol.md",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/connector_pack_manifest_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/connector_pack_manifest_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_connector_pack_manifest_candidate.v0.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/connector_scorecard_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/connector_scorecard_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_connector_scorecard_candidate.v0.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/coverage_manifest_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/coverage_manifest_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_coverage_manifest_candidate.v0.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/pack_import_export_boundary_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/pack_import_export_boundary_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_pack_import_export_boundary_candidate.v0.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_candidate_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_candidate_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_candidate_candidate.v0.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_discovery_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_discovery_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_discovery_candidate.v0.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_dispute_revocation_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_dispute_revocation_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_dispute_revocation_candidate.v0.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_lineage_provenance_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_lineage_provenance_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_lineage_provenance_candidate.v0.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_need_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_need_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_need_candidate.v0.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_pack_manifest_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_pack_manifest_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_pack_manifest_candidate.v0.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_reliability_freshness_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_reliability_freshness_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_reliability_freshness_candidate.v0.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/policies/node/work_unit.v0.json",
+      "new_reference": "contracts/control_schemas/policies/node/work_unit.v0.json",
       "old_reference": "contracts/node/work_unit.v0.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/policies/node/work_unit_result.v0.json",
+      "new_reference": "contracts/control_schemas/policies/node/work_unit_result.v0.json",
       "old_reference": "contracts/node/work_unit_result.v0.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/query/candidate_promotion_assessment.v0.json",
+      "new_reference": "contracts/control_schemas/previews/query/candidate_promotion_assessment.v0.json",
       "old_reference": "contracts/query/candidate_promotion_assessment.v0.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/tasks/query/observation_candidate_review_queue.v0.json",
+      "new_reference": "contracts/control_schemas/tasks/query/observation_candidate_review_queue.v0.json",
       "old_reference": "contracts/query/observation_candidate_review_queue.v0.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/fixtures/archive/software/payloads/synthetic-demo-app-package.zip",
+      "new_reference": "contracts/control_schemas/fixtures/archive/software/payloads/synthetic-demo-app-package.zip",
       "old_reference": "contracts/archive/fixtures/software/payloads/synthetic-demo-app-package.zip",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/fixtures/archive/software/payloads/synthetic-demo-app.bundle",
+      "new_reference": "contracts/control_schemas/fixtures/archive/software/payloads/synthetic-demo-app.bundle",
       "old_reference": "contracts/archive/fixtures/software/payloads/synthetic-demo-app.bundle",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/fixtures/archive/software/synthetic_resolution_fixture.json",
+      "new_reference": "contracts/control_schemas/fixtures/archive/software/synthetic_resolution_fixture.json",
       "old_reference": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/deprecated/archive/archive-lifecycle.protocol.md",
+      "new_reference": "contracts/control_schemas/deprecated/archive/archive-lifecycle.protocol.md",
       "old_reference": "contracts/archive/protocols/archive-lifecycle.protocol.md",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/connector_pack_manifest_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/connector_pack_manifest_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_connector_pack_manifest_candidate.v0.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/connector_scorecard_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/connector_scorecard_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_connector_scorecard_candidate.v0.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/coverage_manifest_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/coverage_manifest_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_coverage_manifest_candidate.v0.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/pack_import_export_boundary_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/pack_import_export_boundary_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_pack_import_export_boundary_candidate.v0.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_candidate_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_candidate_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_candidate_candidate.v0.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_discovery_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_discovery_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_discovery_candidate.v0.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_dispute_revocation_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_dispute_revocation_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_dispute_revocation_candidate.v0.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_lineage_provenance_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_lineage_provenance_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_lineage_provenance_candidate.v0.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_need_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_need_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_need_candidate.v0.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_pack_manifest_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_pack_manifest_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_pack_manifest_candidate.v0.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_reliability_freshness_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_reliability_freshness_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_reliability_freshness_candidate.v0.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/policies/node/work_unit.v0.json",
+      "new_reference": "contracts/control_schemas/policies/node/work_unit.v0.json",
       "old_reference": "contracts/node/work_unit.v0.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/policies/node/work_unit_result.v0.json",
+      "new_reference": "contracts/control_schemas/policies/node/work_unit_result.v0.json",
       "old_reference": "contracts/node/work_unit_result.v0.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/query/candidate_promotion_assessment.v0.json",
+      "new_reference": "contracts/control_schemas/previews/query/candidate_promotion_assessment.v0.json",
       "old_reference": "contracts/query/candidate_promotion_assessment.v0.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/tasks/query/observation_candidate_review_queue.v0.json",
+      "new_reference": "contracts/control_schemas/tasks/query/observation_candidate_review_queue.v0.json",
       "old_reference": "contracts/query/observation_candidate_review_queue.v0.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/fixtures/archive/software/payloads/synthetic-demo-app-package.zip",
+      "new_reference": "contracts/control_schemas/fixtures/archive/software/payloads/synthetic-demo-app-package.zip",
       "old_reference": "contracts/archive/fixtures/software/payloads/synthetic-demo-app-package.zip",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/fixtures/archive/software/payloads/synthetic-demo-app.bundle",
+      "new_reference": "contracts/control_schemas/fixtures/archive/software/payloads/synthetic-demo-app.bundle",
       "old_reference": "contracts/archive/fixtures/software/payloads/synthetic-demo-app.bundle",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/fixtures/archive/software/synthetic_resolution_fixture.json",
+      "new_reference": "contracts/control_schemas/fixtures/archive/software/synthetic_resolution_fixture.json",
       "old_reference": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/deprecated/archive/archive-lifecycle.protocol.md",
+      "new_reference": "contracts/control_schemas/deprecated/archive/archive-lifecycle.protocol.md",
       "old_reference": "contracts/archive/protocols/archive-lifecycle.protocol.md",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/connector_pack_manifest_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/connector_pack_manifest_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_connector_pack_manifest_candidate.v0.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/connector_scorecard_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/connector_scorecard_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_connector_scorecard_candidate.v0.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/coverage_manifest_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/coverage_manifest_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_coverage_manifest_candidate.v0.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/pack_import_export_boundary_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/pack_import_export_boundary_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_pack_import_export_boundary_candidate.v0.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_candidate_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_candidate_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_candidate_candidate.v0.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_discovery_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_discovery_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_discovery_candidate.v0.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_dispute_revocation_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_dispute_revocation_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_dispute_revocation_candidate.v0.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_lineage_provenance_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_lineage_provenance_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_lineage_provenance_candidate.v0.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_need_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_need_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_need_candidate.v0.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_pack_manifest_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_pack_manifest_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_pack_manifest_candidate.v0.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_reliability_freshness_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_reliability_freshness_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_reliability_freshness_candidate.v0.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/policies/node/work_unit.v0.json",
+      "new_reference": "contracts/control_schemas/policies/node/work_unit.v0.json",
       "old_reference": "contracts/node/work_unit.v0.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/policies/node/work_unit_result.v0.json",
+      "new_reference": "contracts/control_schemas/policies/node/work_unit_result.v0.json",
       "old_reference": "contracts/node/work_unit_result.v0.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/query/candidate_promotion_assessment.v0.json",
+      "new_reference": "contracts/control_schemas/previews/query/candidate_promotion_assessment.v0.json",
       "old_reference": "contracts/query/candidate_promotion_assessment.v0.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/tasks/query/observation_candidate_review_queue.v0.json",
+      "new_reference": "contracts/control_schemas/tasks/query/observation_candidate_review_queue.v0.json",
       "old_reference": "contracts/query/observation_candidate_review_queue.v0.json",
       "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/fixtures/archive/software/synthetic_resolution_fixture.json",
+      "new_reference": "contracts/control_schemas/fixtures/archive/software/synthetic_resolution_fixture.json",
       "old_reference": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json",
       "path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/migration_result.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/connector_pack_manifest_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/connector_pack_manifest_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_connector_pack_manifest_candidate.v0.json",
       "path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/migration_result.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/connector_scorecard_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/connector_scorecard_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_connector_scorecard_candidate.v0.json",
       "path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/migration_result.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/coverage_manifest_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/coverage_manifest_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_coverage_manifest_candidate.v0.json",
       "path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/migration_result.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/pack_import_export_boundary_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/pack_import_export_boundary_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_pack_import_export_boundary_candidate.v0.json",
       "path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/migration_result.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_candidate_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_candidate_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_candidate_candidate.v0.json",
       "path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/migration_result.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_discovery_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_discovery_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_discovery_candidate.v0.json",
       "path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/migration_result.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_dispute_revocation_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_dispute_revocation_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_dispute_revocation_candidate.v0.json",
       "path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/migration_result.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_lineage_provenance_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_lineage_provenance_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_lineage_provenance_candidate.v0.json",
       "path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/migration_result.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_need_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_need_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_need_candidate.v0.json",
       "path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/migration_result.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_pack_manifest_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_pack_manifest_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_pack_manifest_candidate.v0.json",
       "path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/migration_result.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_reliability_freshness_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_reliability_freshness_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_reliability_freshness_candidate.v0.json",
       "path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/migration_result.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/query/candidate_promotion_assessment.v0.json",
+      "new_reference": "contracts/control_schemas/previews/query/candidate_promotion_assessment.v0.json",
       "old_reference": "contracts/query/candidate_promotion_assessment.v0.json",
       "path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/migration_result.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/fixtures/archive/software/payloads/synthetic-demo-app-package.zip",
+      "new_reference": "contracts/control_schemas/fixtures/archive/software/payloads/synthetic-demo-app-package.zip",
       "old_reference": "contracts/archive/fixtures/software/payloads/synthetic-demo-app-package.zip",
       "path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/fixtures/archive/software/payloads/synthetic-demo-app.bundle",
+      "new_reference": "contracts/control_schemas/fixtures/archive/software/payloads/synthetic-demo-app.bundle",
       "old_reference": "contracts/archive/fixtures/software/payloads/synthetic-demo-app.bundle",
       "path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/fixtures/archive/software/synthetic_resolution_fixture.json",
+      "new_reference": "contracts/control_schemas/fixtures/archive/software/synthetic_resolution_fixture.json",
       "old_reference": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json",
       "path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/deprecated/archive/archive-lifecycle.protocol.md",
+      "new_reference": "contracts/control_schemas/deprecated/archive/archive-lifecycle.protocol.md",
       "old_reference": "contracts/archive/protocols/archive-lifecycle.protocol.md",
       "path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/connector_pack_manifest_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/connector_pack_manifest_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_connector_pack_manifest_candidate.v0.json",
       "path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/connector_scorecard_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/connector_scorecard_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_connector_scorecard_candidate.v0.json",
       "path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/coverage_manifest_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/coverage_manifest_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_coverage_manifest_candidate.v0.json",
       "path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/pack_import_export_boundary_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/pack_import_export_boundary_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_pack_import_export_boundary_candidate.v0.json",
       "path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_candidate_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_candidate_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_candidate_candidate.v0.json",
       "path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_discovery_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_discovery_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_discovery_candidate.v0.json",
       "path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_dispute_revocation_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_dispute_revocation_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_dispute_revocation_candidate.v0.json",
       "path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_lineage_provenance_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_lineage_provenance_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_lineage_provenance_candidate.v0.json",
       "path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_need_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_need_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_need_candidate.v0.json",
       "path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_pack_manifest_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_pack_manifest_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_pack_manifest_candidate.v0.json",
       "path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_reliability_freshness_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_reliability_freshness_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_reliability_freshness_candidate.v0.json",
       "path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/policies/node/work_unit.v0.json",
+      "new_reference": "contracts/control_schemas/policies/node/work_unit.v0.json",
       "old_reference": "contracts/node/work_unit.v0.json",
       "path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/policies/node/work_unit_result.v0.json",
+      "new_reference": "contracts/control_schemas/policies/node/work_unit_result.v0.json",
       "old_reference": "contracts/node/work_unit_result.v0.json",
       "path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/query/candidate_promotion_assessment.v0.json",
+      "new_reference": "contracts/control_schemas/previews/query/candidate_promotion_assessment.v0.json",
       "old_reference": "contracts/query/candidate_promotion_assessment.v0.json",
       "path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/tasks/query/observation_candidate_review_queue.v0.json",
+      "new_reference": "contracts/control_schemas/tasks/query/observation_candidate_review_queue.v0.json",
       "old_reference": "contracts/query/observation_candidate_review_queue.v0.json",
       "path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_migration_result.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/fixtures/archive/software/synthetic_resolution_fixture.json",
+      "new_reference": "contracts/control_schemas/fixtures/archive/software/synthetic_resolution_fixture.json",
       "old_reference": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json",
       "path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_reference_update_report.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/connector_pack_manifest_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/connector_pack_manifest_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_connector_pack_manifest_candidate.v0.json",
       "path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_reference_update_report.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/connector_scorecard_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/connector_scorecard_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_connector_scorecard_candidate.v0.json",
       "path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_reference_update_report.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/coverage_manifest_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/coverage_manifest_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_coverage_manifest_candidate.v0.json",
       "path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_reference_update_report.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/pack_import_export_boundary_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/pack_import_export_boundary_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_pack_import_export_boundary_candidate.v0.json",
       "path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_reference_update_report.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_candidate_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_candidate_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_candidate_candidate.v0.json",
       "path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_reference_update_report.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_discovery_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_discovery_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_discovery_candidate.v0.json",
       "path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_reference_update_report.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_dispute_revocation_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_dispute_revocation_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_dispute_revocation_candidate.v0.json",
       "path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_reference_update_report.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_lineage_provenance_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_lineage_provenance_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_lineage_provenance_candidate.v0.json",
       "path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_reference_update_report.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_need_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_need_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_need_candidate.v0.json",
       "path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_reference_update_report.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_pack_manifest_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_pack_manifest_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_pack_manifest_candidate.v0.json",
       "path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_reference_update_report.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_reliability_freshness_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_reliability_freshness_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_reliability_freshness_candidate.v0.json",
       "path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_reference_update_report.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/query/candidate_promotion_assessment.v0.json",
+      "new_reference": "contracts/control_schemas/previews/query/candidate_promotion_assessment.v0.json",
       "old_reference": "contracts/query/candidate_promotion_assessment.v0.json",
       "path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_reference_update_report.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/fixtures/archive/software/synthetic_resolution_fixture.json",
+      "new_reference": "contracts/control_schemas/fixtures/archive/software/synthetic_resolution_fixture.json",
       "old_reference": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json",
       "path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_summary.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/connector_pack_manifest_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/connector_pack_manifest_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_connector_pack_manifest_candidate.v0.json",
       "path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_summary.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/connector_scorecard_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/connector_scorecard_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_connector_scorecard_candidate.v0.json",
       "path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_summary.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/coverage_manifest_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/coverage_manifest_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_coverage_manifest_candidate.v0.json",
       "path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_summary.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/pack_import_export_boundary_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/pack_import_export_boundary_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_pack_import_export_boundary_candidate.v0.json",
       "path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_summary.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_candidate_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_candidate_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_candidate_candidate.v0.json",
       "path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_summary.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_discovery_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_discovery_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_discovery_candidate.v0.json",
       "path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_summary.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_dispute_revocation_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_dispute_revocation_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_dispute_revocation_candidate.v0.json",
       "path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_summary.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_lineage_provenance_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_lineage_provenance_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_lineage_provenance_candidate.v0.json",
       "path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_summary.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_need_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_need_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_need_candidate.v0.json",
       "path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_summary.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_pack_manifest_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_pack_manifest_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_pack_manifest_candidate.v0.json",
       "path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_summary.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_reliability_freshness_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_reliability_freshness_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_reliability_freshness_candidate.v0.json",
       "path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_summary.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/query/candidate_promotion_assessment.v0.json",
+      "new_reference": "contracts/control_schemas/previews/query/candidate_promotion_assessment.v0.json",
       "old_reference": "contracts/query/candidate_promotion_assessment.v0.json",
       "path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_summary.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/fixtures/archive/software/payloads/synthetic-demo-app-package.zip",
+      "new_reference": "contracts/control_schemas/fixtures/archive/software/payloads/synthetic-demo-app-package.zip",
       "old_reference": "contracts/archive/fixtures/software/payloads/synthetic-demo-app-package.zip",
       "path": "control/audits/r0-03b-2-contract-reference-product-cleanup-v0/remaining_contract_debt.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/fixtures/archive/software/payloads/synthetic-demo-app.bundle",
+      "new_reference": "contracts/control_schemas/fixtures/archive/software/payloads/synthetic-demo-app.bundle",
       "old_reference": "contracts/archive/fixtures/software/payloads/synthetic-demo-app.bundle",
       "path": "control/audits/r0-03b-2-contract-reference-product-cleanup-v0/remaining_contract_debt.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/fixtures/archive/software/synthetic_resolution_fixture.json",
+      "new_reference": "contracts/control_schemas/fixtures/archive/software/synthetic_resolution_fixture.json",
       "old_reference": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json",
       "path": "control/audits/r0-03b-2-contract-reference-product-cleanup-v0/remaining_contract_debt.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/deprecated/archive/archive-lifecycle.protocol.md",
+      "new_reference": "contracts/control_schemas/deprecated/archive/archive-lifecycle.protocol.md",
       "old_reference": "contracts/archive/protocols/archive-lifecycle.protocol.md",
       "path": "control/audits/r0-03b-2-contract-reference-product-cleanup-v0/remaining_contract_debt.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/connector_pack_manifest_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/connector_pack_manifest_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_connector_pack_manifest_candidate.v0.json",
       "path": "control/audits/r0-03b-2-contract-reference-product-cleanup-v0/remaining_contract_debt.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/connector_scorecard_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/connector_scorecard_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_connector_scorecard_candidate.v0.json",
       "path": "control/audits/r0-03b-2-contract-reference-product-cleanup-v0/remaining_contract_debt.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/coverage_manifest_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/coverage_manifest_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_coverage_manifest_candidate.v0.json",
       "path": "control/audits/r0-03b-2-contract-reference-product-cleanup-v0/remaining_contract_debt.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/pack_import_export_boundary_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/pack_import_export_boundary_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_pack_import_export_boundary_candidate.v0.json",
       "path": "control/audits/r0-03b-2-contract-reference-product-cleanup-v0/remaining_contract_debt.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_candidate_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_candidate_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_candidate_candidate.v0.json",
       "path": "control/audits/r0-03b-2-contract-reference-product-cleanup-v0/remaining_contract_debt.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_discovery_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_discovery_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_discovery_candidate.v0.json",
       "path": "control/audits/r0-03b-2-contract-reference-product-cleanup-v0/remaining_contract_debt.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_dispute_revocation_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_dispute_revocation_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_dispute_revocation_candidate.v0.json",
       "path": "control/audits/r0-03b-2-contract-reference-product-cleanup-v0/remaining_contract_debt.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_lineage_provenance_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_lineage_provenance_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_lineage_provenance_candidate.v0.json",
       "path": "control/audits/r0-03b-2-contract-reference-product-cleanup-v0/remaining_contract_debt.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_need_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_need_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_need_candidate.v0.json",
       "path": "control/audits/r0-03b-2-contract-reference-product-cleanup-v0/remaining_contract_debt.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_pack_manifest_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_pack_manifest_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_pack_manifest_candidate.v0.json",
       "path": "control/audits/r0-03b-2-contract-reference-product-cleanup-v0/remaining_contract_debt.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_reliability_freshness_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_reliability_freshness_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_reliability_freshness_candidate.v0.json",
       "path": "control/audits/r0-03b-2-contract-reference-product-cleanup-v0/remaining_contract_debt.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/policies/node/work_unit.v0.json",
+      "new_reference": "contracts/control_schemas/policies/node/work_unit.v0.json",
       "old_reference": "contracts/node/work_unit.v0.json",
       "path": "control/audits/r0-03b-2-contract-reference-product-cleanup-v0/remaining_contract_debt.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/policies/node/work_unit_result.v0.json",
+      "new_reference": "contracts/control_schemas/policies/node/work_unit_result.v0.json",
       "old_reference": "contracts/node/work_unit_result.v0.json",
       "path": "control/audits/r0-03b-2-contract-reference-product-cleanup-v0/remaining_contract_debt.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/query/candidate_promotion_assessment.v0.json",
+      "new_reference": "contracts/control_schemas/previews/query/candidate_promotion_assessment.v0.json",
       "old_reference": "contracts/query/candidate_promotion_assessment.v0.json",
       "path": "control/audits/r0-03b-2-contract-reference-product-cleanup-v0/remaining_contract_debt.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/tasks/query/observation_candidate_review_queue.v0.json",
+      "new_reference": "contracts/control_schemas/tasks/query/observation_candidate_review_queue.v0.json",
       "old_reference": "contracts/query/observation_candidate_review_queue.v0.json",
       "path": "control/audits/r0-03b-2-contract-reference-product-cleanup-v0/remaining_contract_debt.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/fixtures/archive/software/payloads/synthetic-demo-app-package.zip",
+      "new_reference": "contracts/control_schemas/fixtures/archive/software/payloads/synthetic-demo-app-package.zip",
       "old_reference": "contracts/archive/fixtures/software/payloads/synthetic-demo-app-package.zip",
       "path": "control/audits/r0-03b-2-contract-reference-product-cleanup-v0/unresolved_contracts.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/fixtures/archive/software/payloads/synthetic-demo-app.bundle",
+      "new_reference": "contracts/control_schemas/fixtures/archive/software/payloads/synthetic-demo-app.bundle",
       "old_reference": "contracts/archive/fixtures/software/payloads/synthetic-demo-app.bundle",
       "path": "control/audits/r0-03b-2-contract-reference-product-cleanup-v0/unresolved_contracts.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/fixtures/archive/software/synthetic_resolution_fixture.json",
+      "new_reference": "contracts/control_schemas/fixtures/archive/software/synthetic_resolution_fixture.json",
       "old_reference": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json",
       "path": "control/audits/r0-03b-2-contract-reference-product-cleanup-v0/unresolved_contracts.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/deprecated/archive/archive-lifecycle.protocol.md",
+      "new_reference": "contracts/control_schemas/deprecated/archive/archive-lifecycle.protocol.md",
       "old_reference": "contracts/archive/protocols/archive-lifecycle.protocol.md",
       "path": "control/audits/r0-03b-2-contract-reference-product-cleanup-v0/unresolved_contracts.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/connector_pack_manifest_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/connector_pack_manifest_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_connector_pack_manifest_candidate.v0.json",
       "path": "control/audits/r0-03b-2-contract-reference-product-cleanup-v0/unresolved_contracts.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/connector_scorecard_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/connector_scorecard_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_connector_scorecard_candidate.v0.json",
       "path": "control/audits/r0-03b-2-contract-reference-product-cleanup-v0/unresolved_contracts.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/coverage_manifest_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/coverage_manifest_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_coverage_manifest_candidate.v0.json",
       "path": "control/audits/r0-03b-2-contract-reference-product-cleanup-v0/unresolved_contracts.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/pack_import_export_boundary_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/pack_import_export_boundary_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_pack_import_export_boundary_candidate.v0.json",
       "path": "control/audits/r0-03b-2-contract-reference-product-cleanup-v0/unresolved_contracts.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_candidate_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_candidate_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_candidate_candidate.v0.json",
       "path": "control/audits/r0-03b-2-contract-reference-product-cleanup-v0/unresolved_contracts.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_discovery_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_discovery_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_discovery_candidate.v0.json",
       "path": "control/audits/r0-03b-2-contract-reference-product-cleanup-v0/unresolved_contracts.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_dispute_revocation_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_dispute_revocation_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_dispute_revocation_candidate.v0.json",
       "path": "control/audits/r0-03b-2-contract-reference-product-cleanup-v0/unresolved_contracts.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_lineage_provenance_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_lineage_provenance_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_lineage_provenance_candidate.v0.json",
       "path": "control/audits/r0-03b-2-contract-reference-product-cleanup-v0/unresolved_contracts.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_need_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_need_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_need_candidate.v0.json",
       "path": "control/audits/r0-03b-2-contract-reference-product-cleanup-v0/unresolved_contracts.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_pack_manifest_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_pack_manifest_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_pack_manifest_candidate.v0.json",
       "path": "control/audits/r0-03b-2-contract-reference-product-cleanup-v0/unresolved_contracts.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_reliability_freshness_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_reliability_freshness_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_reliability_freshness_candidate.v0.json",
       "path": "control/audits/r0-03b-2-contract-reference-product-cleanup-v0/unresolved_contracts.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/policies/node/work_unit.v0.json",
+      "new_reference": "contracts/control_schemas/policies/node/work_unit.v0.json",
       "old_reference": "contracts/node/work_unit.v0.json",
       "path": "control/audits/r0-03b-2-contract-reference-product-cleanup-v0/unresolved_contracts.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/policies/node/work_unit_result.v0.json",
+      "new_reference": "contracts/control_schemas/policies/node/work_unit_result.v0.json",
       "old_reference": "contracts/node/work_unit_result.v0.json",
       "path": "control/audits/r0-03b-2-contract-reference-product-cleanup-v0/unresolved_contracts.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/query/candidate_promotion_assessment.v0.json",
+      "new_reference": "contracts/control_schemas/previews/query/candidate_promotion_assessment.v0.json",
       "old_reference": "contracts/query/candidate_promotion_assessment.v0.json",
       "path": "control/audits/r0-03b-2-contract-reference-product-cleanup-v0/unresolved_contracts.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/tasks/query/observation_candidate_review_queue.v0.json",
+      "new_reference": "contracts/control_schemas/tasks/query/observation_candidate_review_queue.v0.json",
       "old_reference": "contracts/query/observation_candidate_review_queue.v0.json",
       "path": "control/audits/r0-03b-2-contract-reference-product-cleanup-v0/unresolved_contracts.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/fixtures/archive/software/payloads/synthetic-demo-app-package.zip",
+      "new_reference": "contracts/control_schemas/fixtures/archive/software/payloads/synthetic-demo-app-package.zip",
       "old_reference": "contracts/archive/fixtures/software/payloads/synthetic-demo-app-package.zip",
       "path": "control/audits/r0-03b-2-contract-reference-product-cleanup-v0/generated/sample_product_contract_cleanup_result.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/fixtures/archive/software/payloads/synthetic-demo-app.bundle",
+      "new_reference": "contracts/control_schemas/fixtures/archive/software/payloads/synthetic-demo-app.bundle",
       "old_reference": "contracts/archive/fixtures/software/payloads/synthetic-demo-app.bundle",
       "path": "control/audits/r0-03b-2-contract-reference-product-cleanup-v0/generated/sample_product_contract_cleanup_result.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/fixtures/archive/software/synthetic_resolution_fixture.json",
+      "new_reference": "contracts/control_schemas/fixtures/archive/software/synthetic_resolution_fixture.json",
       "old_reference": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json",
       "path": "control/audits/r0-03b-2-contract-reference-product-cleanup-v0/generated/sample_product_contract_cleanup_result.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/deprecated/archive/archive-lifecycle.protocol.md",
+      "new_reference": "contracts/control_schemas/deprecated/archive/archive-lifecycle.protocol.md",
       "old_reference": "contracts/archive/protocols/archive-lifecycle.protocol.md",
       "path": "control/audits/r0-03b-2-contract-reference-product-cleanup-v0/generated/sample_product_contract_cleanup_result.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/connector_pack_manifest_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/connector_pack_manifest_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_connector_pack_manifest_candidate.v0.json",
       "path": "control/audits/r0-03b-2-contract-reference-product-cleanup-v0/generated/sample_product_contract_cleanup_result.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/connector_scorecard_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/connector_scorecard_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_connector_scorecard_candidate.v0.json",
       "path": "control/audits/r0-03b-2-contract-reference-product-cleanup-v0/generated/sample_product_contract_cleanup_result.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/coverage_manifest_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/coverage_manifest_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_coverage_manifest_candidate.v0.json",
       "path": "control/audits/r0-03b-2-contract-reference-product-cleanup-v0/generated/sample_product_contract_cleanup_result.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/pack_import_export_boundary_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/pack_import_export_boundary_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_pack_import_export_boundary_candidate.v0.json",
       "path": "control/audits/r0-03b-2-contract-reference-product-cleanup-v0/generated/sample_product_contract_cleanup_result.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_candidate_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_candidate_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_candidate_candidate.v0.json",
       "path": "control/audits/r0-03b-2-contract-reference-product-cleanup-v0/generated/sample_product_contract_cleanup_result.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_discovery_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_discovery_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_discovery_candidate.v0.json",
       "path": "control/audits/r0-03b-2-contract-reference-product-cleanup-v0/generated/sample_product_contract_cleanup_result.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_dispute_revocation_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_dispute_revocation_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_dispute_revocation_candidate.v0.json",
       "path": "control/audits/r0-03b-2-contract-reference-product-cleanup-v0/generated/sample_product_contract_cleanup_result.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_lineage_provenance_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_lineage_provenance_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_lineage_provenance_candidate.v0.json",
       "path": "control/audits/r0-03b-2-contract-reference-product-cleanup-v0/generated/sample_product_contract_cleanup_result.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_need_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_need_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_need_candidate.v0.json",
       "path": "control/audits/r0-03b-2-contract-reference-product-cleanup-v0/generated/sample_product_contract_cleanup_result.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_pack_manifest_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_pack_manifest_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_pack_manifest_candidate.v0.json",
       "path": "control/audits/r0-03b-2-contract-reference-product-cleanup-v0/generated/sample_product_contract_cleanup_result.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/h14/connectors/source_reliability_freshness_candidate.v0.json",
+      "new_reference": "contracts/control_schemas/previews/h14/connectors/source_reliability_freshness_candidate.v0.json",
       "old_reference": "contracts/connectors/h14_source_reliability_freshness_candidate.v0.json",
       "path": "control/audits/r0-03b-2-contract-reference-product-cleanup-v0/generated/sample_product_contract_cleanup_result.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/policies/node/work_unit.v0.json",
+      "new_reference": "contracts/control_schemas/policies/node/work_unit.v0.json",
       "old_reference": "contracts/node/work_unit.v0.json",
       "path": "control/audits/r0-03b-2-contract-reference-product-cleanup-v0/generated/sample_product_contract_cleanup_result.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/policies/node/work_unit_result.v0.json",
+      "new_reference": "contracts/control_schemas/policies/node/work_unit_result.v0.json",
       "old_reference": "contracts/node/work_unit_result.v0.json",
       "path": "control/audits/r0-03b-2-contract-reference-product-cleanup-v0/generated/sample_product_contract_cleanup_result.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/query/candidate_promotion_assessment.v0.json",
+      "new_reference": "contracts/control_schemas/previews/query/candidate_promotion_assessment.v0.json",
       "old_reference": "contracts/query/candidate_promotion_assessment.v0.json",
       "path": "control/audits/r0-03b-2-contract-reference-product-cleanup-v0/generated/sample_product_contract_cleanup_result.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/tasks/query/observation_candidate_review_queue.v0.json",
+      "new_reference": "contracts/control_schemas/tasks/query/observation_candidate_review_queue.v0.json",
       "old_reference": "contracts/query/observation_candidate_review_queue.v0.json",
       "path": "control/audits/r0-03b-2-contract-reference-product-cleanup-v0/generated/sample_product_contract_cleanup_result.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/policies/node/work_unit.v0.json",
+      "new_reference": "contracts/control_schemas/policies/node/work_unit.v0.json",
       "old_reference": "contracts/node/work_unit.v0.json",
       "path": "control/audits/r0-03b-2-contract-reference-product-cleanup-v0/generated/sample_reference_update_result.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/policies/node/work_unit_result.v0.json",
+      "new_reference": "contracts/control_schemas/policies/node/work_unit_result.v0.json",
       "old_reference": "contracts/node/work_unit_result.v0.json",
       "path": "control/audits/r0-03b-2-contract-reference-product-cleanup-v0/generated/sample_reference_update_result.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/tasks/query/observation_candidate_review_queue.v0.json",
+      "new_reference": "contracts/control_schemas/tasks/query/observation_candidate_review_queue.v0.json",
       "old_reference": "contracts/query/observation_candidate_review_queue.v0.json",
       "path": "control/audits/r0-03b-2-contract-reference-product-cleanup-v0/generated/sample_reference_update_result.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/query/candidate_promotion_assessment.v0.json",
+      "new_reference": "contracts/control_schemas/previews/query/candidate_promotion_assessment.v0.json",
       "old_reference": "contracts/query/candidate_promotion_assessment.v0.json",
       "path": "control/audits/software-heritage-connector-approval-v0/COMMAND_RESULTS.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/query/candidate_promotion_assessment.v0.json",
+      "new_reference": "contracts/control_schemas/previews/query/candidate_promotion_assessment.v0.json",
       "old_reference": "contracts/query/candidate_promotion_assessment.v0.json",
       "path": "control/audits/software-heritage-connector-approval-v0/software_heritage_connector_approval_report.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/policies/node/work_unit.v0.json",
+      "new_reference": "contracts/control_schemas/policies/node/work_unit.v0.json",
       "old_reference": "contracts/node/work_unit.v0.json",
       "path": "control/audits/track-b-04-workunit-contract-v0/README.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/policies/node/work_unit.v0.json",
+      "new_reference": "contracts/control_schemas/policies/node/work_unit.v0.json",
       "old_reference": "contracts/node/work_unit.v0.json",
       "path": "control/audits/track-b-04-workunit-contract-v0/track_b_04_report.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/policies/node/work_unit_result.v0.json",
+      "new_reference": "contracts/control_schemas/policies/node/work_unit_result.v0.json",
       "old_reference": "contracts/node/work_unit_result.v0.json",
       "path": "control/audits/track-b-05-workunit-result-contract-v0/README.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/policies/node/work_unit_result.v0.json",
+      "new_reference": "contracts/control_schemas/policies/node/work_unit_result.v0.json",
       "old_reference": "contracts/node/work_unit_result.v0.json",
       "path": "control/audits/track-b-05-workunit-result-contract-v0/track_b_05_report.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/query/candidate_promotion_assessment.v0.json",
+      "new_reference": "contracts/control_schemas/previews/query/candidate_promotion_assessment.v0.json",
       "old_reference": "contracts/query/candidate_promotion_assessment.v0.json",
       "path": "control/audits/wayback-cdx-memento-connector-approval-v0/COMMAND_RESULTS.md",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/previews/query/candidate_promotion_assessment.v0.json",
+      "new_reference": "contracts/control_schemas/previews/query/candidate_promotion_assessment.v0.json",
       "old_reference": "contracts/query/candidate_promotion_assessment.v0.json",
       "path": "control/audits/wayback-cdx-memento-connector-approval-v0/wayback_cdx_memento_connector_approval_report.json",
       "reason": "Historical audit evidence left intact."
     },
     {
-      "new_reference": "control/schemas/policies/node/work_unit_result.v0.json",
+      "new_reference": "contracts/control_schemas/policies/node/work_unit_result.v0.json",
       "old_reference": "contracts/node/work_unit_result.v0.json",
       "path": "scripts/validate_obs_track_b_synchronization.py",
       "reason": "Historical compatibility alias preserved for migrated audit evidence."
     },
     {
-      "new_reference": "control/schemas/policies/node/work_unit.v0.json",
+      "new_reference": "contracts/control_schemas/policies/node/work_unit.v0.json",
       "old_reference": "contracts/node/work_unit.v0.json",
       "path": "scripts/validate_obs_track_b_synchronization.py",
       "reason": "Historical compatibility alias preserved for migrated audit evidence."

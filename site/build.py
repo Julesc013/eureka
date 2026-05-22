@@ -122,9 +122,13 @@ def build_site(output_dir: Path = DEFAULT_OUTPUT, *, clean: bool = False) -> dic
             "refusing to write the retired legacy static artifact; site/dist is the "
             "single generated deployment artifact."
         )
-    if clean or output_dir == DEFAULT_OUTPUT.resolve():
+    should_clean_output = clean or output_dir == DEFAULT_OUTPUT.resolve()
+    preserved_public_index = _preserve_default_public_index(output_dir, should_clean_output)
+    if should_clean_output:
         _clean_output_dir(output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
+    if preserved_public_index is not None:
+        _restore_default_public_index(preserved_public_index, output_dir)
 
     page_configs = load_page_configs()
     templates = _load_templates()
@@ -703,6 +707,27 @@ def _clean_output_dir(output_dir: Path) -> None:
         shutil.rmtree(output_dir)
     else:
         output_dir.unlink()
+
+
+def _preserve_default_public_index(output_dir: Path, should_clean_output: bool) -> Path | None:
+    if not should_clean_output or output_dir.resolve() != DEFAULT_OUTPUT.resolve():
+        return None
+    source = output_dir / "data" / "public_index"
+    if not source.is_dir():
+        return None
+    temp_root = Path(tempfile.mkdtemp(prefix="eureka-public-index-preserve-"))
+    preserved = temp_root / "public_index"
+    shutil.copytree(source, preserved)
+    return preserved
+
+
+def _restore_default_public_index(preserved_public_index: Path, output_dir: Path) -> None:
+    target = output_dir / "data" / "public_index"
+    target.parent.mkdir(parents=True, exist_ok=True)
+    if target.exists():
+        shutil.rmtree(target)
+    shutil.copytree(preserved_public_index, target)
+    shutil.rmtree(preserved_public_index.parent, ignore_errors=True)
 
 
 def _format_plain(report: Mapping[str, Any]) -> str:

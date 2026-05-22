@@ -46,7 +46,7 @@ class H13LocalPrivateFixtureScriptTests(unittest.TestCase):
             self.assertTrue(md.is_file())
 
     def test_scripts_refuse_forbidden_roots(self) -> None:
-        for output in ("site/dist/h13.json", "data/public_index/h13.json", "cas_roots/h13.json", "credentials/h13.json"):
+        for output in ("site/dist/h13.json", "site/dist/data/public_index/h13.json", "cas_roots/h13.json", "credentials/h13.json"):
             proc = run_cmd(["scripts/normalize_h13_local_private_fixture.py", "--source-id", "local_folder_metadata", "--input", "examples/connectors/h13_local_private/fixtures/local_folder_metadata/minimal_record.json", "--output", output])
             self.assertNotEqual(0, proc.returncode)
             self.assertIn("refusing", proc.stdout + proc.stderr)

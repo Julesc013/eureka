@@ -368,7 +368,7 @@
   ],
   "generated_from": {
     "source_contracts": [
-      "control/schemas/policies/packs/index_pack.v0.json",
+      "contracts/control_schemas/policies/packs/index_pack.v0.json",
       "docs/reference/INDEX_PACK_CONTRACT.md"
     ],
     "policy_inventory": "control/inventory/publication/pack_page_view_model_policy.json",

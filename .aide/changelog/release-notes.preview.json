@@ -1197,7 +1197,7 @@
       "category": "Fixed",
       "commit": "ede77d3cb101",
       "subject": "fix(r0): resolve contract taxonomy blockers",
-      "summary": "moved unresolved contract taxonomy artifacts to control/schemas"
+      "summary": "moved unresolved contract taxonomy artifacts to contracts/control_schemas"
     },
     {
       "breaking": false,

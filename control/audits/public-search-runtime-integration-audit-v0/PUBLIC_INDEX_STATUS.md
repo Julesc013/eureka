@@ -4,11 +4,11 @@ Classification: `implemented_static_artifact`.
 
 Artifact paths:
 
-- `data/public_index/search_documents.ndjson`
-- `data/public_index/index_stats.json`
-- `data/public_index/source_coverage.json`
-- `data/public_index/build_manifest.json`
-- `data/public_index/checksums.sha256`
+- `site/dist/data/public_index/search_documents.ndjson`
+- `site/dist/data/public_index/index_stats.json`
+- `site/dist/data/public_index/source_coverage.json`
+- `site/dist/data/public_index/build_manifest.json`
+- `site/dist/data/public_index/checksums.sha256`
 - `site/dist/data/public_index_summary.json`
 
 Observed document count: 584.

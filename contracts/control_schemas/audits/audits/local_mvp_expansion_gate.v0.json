@@ -1,0 +1,54 @@
+{
+  "$id": "contracts/control_schemas/audits/audits/local_mvp_expansion_gate.v0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "deployment_gate": {
+      "type": "object"
+    },
+    "gate_id": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "array"
+    },
+    "product_boundary": {
+      "type": "object"
+    },
+    "remediation_gate": {
+      "type": "object"
+    },
+    "risky_action_gate": {
+      "type": "object"
+    },
+    "schema_version": {
+      "const": "local_mvp_expansion_gate.v0"
+    },
+    "semantic_ai_gate": {
+      "type": "object"
+    },
+    "source_expansion_gate": {
+      "type": "object"
+    },
+    "truth_boundary": {
+      "type": "object"
+    },
+    "wider_client_gate": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "schema_version",
+    "gate_id",
+    "source_expansion_gate",
+    "risky_action_gate",
+    "semantic_ai_gate",
+    "wider_client_gate",
+    "deployment_gate",
+    "remediation_gate",
+    "truth_boundary",
+    "product_boundary"
+  ],
+  "title": "Eureka Local MVP Expansion Gate v0",
+  "type": "object"
+}

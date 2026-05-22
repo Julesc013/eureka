@@ -38,5 +38,5 @@ class BoundaryTransformTestCase(unittest.TestCase):
         self.assertEqual(normalized.representations[2].representation_kind, "fixture_archive")
         self.assertEqual(
             normalized.access_path_locator,
-            "control/schemas/fixtures/archive/software/synthetic_resolution_fixture.json",
+            "contracts/control_schemas/fixtures/archive/software/synthetic_resolution_fixture.json",
         )

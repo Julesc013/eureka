@@ -442,7 +442,7 @@ def _ensure_policy(policy: Mapping[str, Any]) -> None:
     if policy.get("master_index_mutation_enabled") is not False:
         raise ValueError("master index mutation must remain disabled")
     if policy.get("committed_data_public_index_mutation_enabled") is not False:
-        raise ValueError("committed data/public_index mutation must remain disabled")
+        raise ValueError("committed site/dist/data/public_index mutation must remain disabled")
 
 
 def _minimal_policy() -> dict[str, Any]:
@@ -576,7 +576,7 @@ def _limitations(preview: Mapping[str, Any]) -> list[str]:
     for value in (
         "reviewed local record is limited to explicit temp/local instance",
         "does not establish rights clearance, safety, compatibility, installability, or final provenance",
-        "no committed data/public_index mutation occurred",
+        "no committed site/dist/data/public_index mutation occurred",
     ):
         if value not in values:
             values.append(value)

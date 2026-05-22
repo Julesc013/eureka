@@ -6,7 +6,7 @@ import unittest
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
-TASK_SCHEMA_ROOT = REPO_ROOT / "control" / "schemas" / "tasks" / "master_index"
+TASK_SCHEMA_ROOT = REPO_ROOT / "contracts" / "control_schemas" / "tasks" / "master_index"
 SCHEMA_ROOT = REPO_ROOT / "contracts" / "master_index"
 INVENTORY_ROOT = REPO_ROOT / "control" / "inventory" / "master_index"
 EXAMPLE_QUEUE = REPO_ROOT / "examples" / "master_index_review_queue" / "minimal_review_queue_v0"

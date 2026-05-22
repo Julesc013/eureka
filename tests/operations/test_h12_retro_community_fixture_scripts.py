@@ -33,7 +33,7 @@ class H12RetroCommunityFixtureScriptTests(unittest.TestCase):
             self.assertTrue((tmp_path / "replay" / "winworld_metadata" / "normalized_record.json").exists())
 
     def test_forbidden_output_roots_rejected(self) -> None:
-        for root in ("site/dist/h12.json", "data/public_index/h12.json", "roms/h12.json", "archive_extractions/h12.json"):
+        for root in ("site/dist/h12.json", "site/dist/data/public_index/h12.json", "roms/h12.json", "archive_extractions/h12.json"):
             proc = self.run_cmd("scripts/normalize_h12_retro_community_fixture.py", "--source-id", "winworld_metadata", "--input", "examples/connectors/h12_retro_community/fixtures/winworld_metadata/minimal_record.json", "--output", root)
             self.assertNotEqual(proc.returncode, 0, root)
 

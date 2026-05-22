@@ -13,4 +13,6 @@ Required preservation rules:
 
 Public and native projections may show safe summaries, bounded absence, near misses, and blocked policy posture. They must not expose source cache internals, review queue internals, private local paths, raw debug fields, or operator-only provenance.
 
-The current helper under runtime/local_service is packet/view-model code, not presentation ownership. Existing runtime/local_workbench presentation remains transitional debt; surface-local projection helpers live under surfaces/web/workbench and do not import runtime internals.
+The current helper under runtime/local_service is packet/view-model code, not
+presentation ownership. Surface-local projection helpers live under
+surfaces/web/workbench and do not import runtime internals.

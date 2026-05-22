@@ -6,14 +6,14 @@
     {
       "artifact_class": "canonical_generated",
       "change_kind": "modified",
-      "path": "data/public_index/checksums.sha256",
+      "path": "site/dist/data/public_index/checksums.sha256",
       "recommended_fix": "regenerate canonical artifact through owning repo generator and record validation",
       "suspected_source": "public search index generator"
     },
     {
       "artifact_class": "canonical_generated",
       "change_kind": "modified",
-      "path": "data/public_index/search_documents.ndjson",
+      "path": "site/dist/data/public_index/search_documents.ndjson",
       "recommended_fix": "regenerate canonical artifact through owning repo generator and record validation",
       "suspected_source": "public search index generator"
     },

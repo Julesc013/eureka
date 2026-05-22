@@ -9,7 +9,7 @@ import unittest
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 SCRIPT = REPO_ROOT / "scripts" / "validate_public_search_index.py"
-INDEX_ROOT = REPO_ROOT / "data" / "public_index"
+INDEX_ROOT = REPO_ROOT / "site" / "dist" / "data" / "public_index"
 
 
 class ValidatePublicSearchIndexScriptTest(unittest.TestCase):

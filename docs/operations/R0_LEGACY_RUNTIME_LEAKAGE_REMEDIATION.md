@@ -6,7 +6,7 @@ Before remediation, the fresh runtime architecture leakage audit reported 22,727
 
 ## What Moved
 
-The following legacy connector prototype packages moved from `runtime/connectors/` to `control/prototypes/legacy_runtime/connectors/`:
+The following legacy connector prototype packages moved from `runtime/connectors/` to `archive/prototypes/legacy_runtime/connectors/`:
 
 - `h1_metadata_wave`
 - `h2_package_registries`

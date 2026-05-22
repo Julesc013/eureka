@@ -6,6 +6,6 @@
 - allowlist before: 4133
 - allowlist after: 2267
 - quarantines completed: 14
-- planned quarantine root: control/prototypes/legacy_runtime/connectors
+- planned quarantine root: archive/prototypes/legacy_runtime/connectors
 - F0 decision: resume_f0
 - dev-to-main decision: promotion_plan_only

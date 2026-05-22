@@ -53,7 +53,7 @@ class CandidateIndexContractAuditTests(unittest.TestCase):
         self.assertIn(
             self.report["contract_file"],
             {
-                "control/schemas/previews/query/candidate_index_record.v0.json",
+                "contracts/control_schemas/previews/query/candidate_index_record.v0.json",
                 "contracts/query/candidate_index_record.v0.json",
             },
         )

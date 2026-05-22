@@ -19,7 +19,7 @@ Current B20 artifacts cannot:
 - mutate public-index or master-index files
 - accept candidates or evidence
 - create current public truth
-- write `site/dist/` or `data/public_index/`
+- write `site/dist/` or `site/dist/data/public_index/`
 - claim rights clearance, malware safety, verified installability, exhaustive search, or production readiness
 - enable hosted review, source access, source sync, downloads, uploads, accounts, telemetry, or provider calls
 

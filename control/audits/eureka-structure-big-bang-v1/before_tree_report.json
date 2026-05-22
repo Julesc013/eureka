@@ -1,0 +1,215 @@
+{
+  "current_branch": "dev",
+  "current_commit": "f7a58b1ab770ae18b110bf76018d6949e2fd9b91",
+  "dirty_classification": [],
+  "dirty_status": [],
+  "filesystem_top_level_roots": [
+    ".aide",
+    ".aide.local.example",
+    ".git",
+    ".github",
+    "contracts",
+    "control",
+    "crates",
+    "data",
+    "deploy",
+    "docs",
+    "evals",
+    "examples",
+    "external",
+    "native",
+    "runtime",
+    "scripts",
+    "site",
+    "snapshots",
+    "surfaces",
+    "tests",
+    "tmp"
+  ],
+  "ignored_or_untracked_probe": {
+    "tmp": [
+      "!! tmp/"
+    ]
+  },
+  "known_structural_debt_paths": [
+    "data",
+    "deploy",
+    "control/prototypes/legacy_runtime",
+    "runtime/local_workbench",
+    "control/schemas",
+    "scripts"
+  ],
+  "notes": [
+    "Working tree was clean before task-local audit evidence was created.",
+    "tmp/ exists on disk but is not an active tracked root in the repo-structure validator output."
+  ],
+  "repo_structure_validation_result": {
+    "command": "python scripts/validate_repo_structure_canon.py --json",
+    "errors": [],
+    "known_debt": [
+      {
+        "class": "generated_artifact_debt",
+        "debt_id": "top_level_data",
+        "path": "data",
+        "required_disposition": "move_rename_or_tightly_reapprove"
+      },
+      {
+        "class": "release_definition_debt",
+        "debt_id": "top_level_deploy",
+        "path": "deploy",
+        "required_disposition": "move_to_release"
+      },
+      {
+        "class": "prototype_runtime_under_control",
+        "debt_id": "control_prototypes_legacy_runtime",
+        "path": "control/prototypes/legacy_runtime",
+        "required_disposition": "move_to_archive_legacy_or_promote_selected_runtime_slices"
+      },
+      {
+        "class": "presentation_under_runtime",
+        "debt_id": "runtime_local_workbench_presentation",
+        "path": "runtime/local_workbench",
+        "required_disposition": "move_presentation_to_surfaces_web_workbench_after_workbench_foundation"
+      },
+      {
+        "class": "duplicate_contract_authority_risk",
+        "debt_id": "control_schemas_contract_authority_overlap",
+        "path": "control/schemas",
+        "required_disposition": "eliminate_or_scope_against_contracts_repo_authority"
+      },
+      {
+        "class": "thin_wrapper_root_with_substantive_tools",
+        "debt_id": "scripts_large_tool_tree",
+        "path": "scripts",
+        "required_disposition": "move_substantive_implementations_to_tools_in_phases"
+      }
+    ],
+    "returncode": 0,
+    "status": "valid",
+    "strict": false,
+    "top_level": {
+      "active_roots": [
+        ".aide",
+        ".aide.local.example",
+        ".github",
+        "contracts",
+        "control",
+        "crates",
+        "data",
+        "deploy",
+        "docs",
+        "evals",
+        "examples",
+        "external",
+        "native",
+        "runtime",
+        "scripts",
+        "site",
+        "snapshots",
+        "surfaces",
+        "tests"
+      ],
+      "allowed_roots": [
+        ".aide",
+        ".github",
+        "archive",
+        "contracts",
+        "control",
+        "crates",
+        "docs",
+        "evals",
+        "examples",
+        "external",
+        "native",
+        "release",
+        "runtime",
+        "scripts",
+        "site",
+        "snapshots",
+        "surfaces",
+        "tests",
+        "tools"
+      ],
+      "classified_debt": {
+        "data": "generated_artifact_debt",
+        "deploy": "release_definition_debt"
+      },
+      "classified_exceptions": {
+        ".aide.local.example": "control_plane_local_state_template"
+      },
+      "conventional_root_files": [
+        ".dockerignore",
+        ".gitignore",
+        "AGENTS.md",
+        "CODE_OF_CONDUCT.md",
+        "CONTRIBUTING.md",
+        "Dockerfile",
+        "README.md",
+        "SECURITY.md"
+      ],
+      "optional_roots": [
+        "archive",
+        "release",
+        "tools"
+      ],
+      "optional_roots_absent": [
+        "archive",
+        "release",
+        "tools"
+      ],
+      "unexpected": []
+    },
+    "warnings": [
+      "scripts: allowed as a transitional thin-wrapper root; substantial tools should move to tools/."
+    ]
+  },
+  "root_files": [
+    ".dockerignore",
+    ".gitignore",
+    "AGENTS.md",
+    "CODE_OF_CONDUCT.md",
+    "CONTRIBUTING.md",
+    "Dockerfile",
+    "README.md",
+    "SECURITY.md"
+  ],
+  "schema_version": "eureka_structure_big_bang_before_tree_report.v1",
+  "suspicious_root_file_probe": {
+    "DOMINIUM.md": false,
+    "MODDING.md": false,
+    "VERSION_CLIENT": false,
+    "VERSION_ENGINE": false,
+    "VERSION_GAME": false,
+    "VERSION_LAUNCHER": false,
+    "VERSION_SERVER": false,
+    "VERSION_SETUP": false,
+    "VERSION_SUITE": false,
+    "VERSION_TOOLS": false,
+    "sitecustomize.py": false
+  },
+  "suspicious_root_files": [],
+  "task_id": "EUREKA-STRUCTURE-BIG-BANG-01",
+  "tracked_directory_count": 2263,
+  "tracked_file_count": 20104,
+  "tracked_top_level_roots": [
+    ".aide",
+    ".aide.local.example",
+    ".github",
+    "contracts",
+    "control",
+    "crates",
+    "data",
+    "deploy",
+    "docs",
+    "evals",
+    "examples",
+    "external",
+    "native",
+    "runtime",
+    "scripts",
+    "site",
+    "snapshots",
+    "surfaces",
+    "tests"
+  ]
+}

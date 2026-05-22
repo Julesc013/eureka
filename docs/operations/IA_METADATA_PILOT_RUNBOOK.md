@@ -146,7 +146,7 @@ python scripts/eureka_ia_reviewed_index_rebuild.py --from-promotion-previews --d
 
 IA-07 reviewed local records are not master records, not hosted public records,
 and not production or public launch claims. The gate must not mutate
-`data/public_index`.
+`site/dist/data/public_index`.
 
 ## Later Gates
 
@@ -167,6 +167,6 @@ The closeout records capability, validation, boundary, and reuse matrices. It
 confirms SYN-00 can start as planning over Local/HUNT/PLAY/IA evidence.
 
 Closeout still does not start SYN, run a new IA live probe, download files,
-mutate the operator instance, mutate committed `data/public_index`, mutate the
+mutate the operator instance, mutate committed `site/dist/data/public_index`, mutate the
 master index, run extraction, call model/provider APIs, deploy, or claim
 production/public launch readiness.

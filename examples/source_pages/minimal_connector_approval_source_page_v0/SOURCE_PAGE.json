@@ -139,7 +139,7 @@
   "public_index_projection": {
     "included_in_public_index": true,
     "public_index_refs": [
-      "data/public_index/source_coverage.json"
+      "site/dist/data/public_index/source_coverage.json"
     ],
     "public_index_document_count_policy": "generated_current",
     "indexed_fields_summary": [

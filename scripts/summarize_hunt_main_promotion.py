@@ -1,55 +1,31 @@
-#!/usr/bin/env python3
-"""Print a compact summary of HUNT-to-main promotion evidence."""
-
 from __future__ import annotations
 
-import argparse
-import json
-import sys
+EUREKA_SCRIPT_COMPAT_WRAPPER = True
+
+from importlib.util import module_from_spec, spec_from_file_location
 from pathlib import Path
-from typing import Sequence, TextIO
+import runpy
+import sys
 
+sys.dont_write_bytecode = True
+_TARGET = Path(__file__).resolve().parents[1] / 'tools/release/summarize_hunt_main_promotion.py'
+_TARGET_PARENT = str(_TARGET.parent)
+if _TARGET_PARENT not in sys.path:
+    sys.path.insert(0, _TARGET_PARENT)
+_SPEC = spec_from_file_location(f"_eureka_tool_{Path(__file__).stem}", _TARGET)
+if _SPEC is None or _SPEC.loader is None:
+    raise ImportError(f"Unable to load tool implementation: {_TARGET}")
+_MODULE = module_from_spec(_SPEC)
+sys.modules[_SPEC.name] = _MODULE
+_SPEC.loader.exec_module(_MODULE)
 
-REPO_ROOT = Path(__file__).resolve().parents[1]
-RESULT = Path("control/inventory/hunt_main_promotion_result.json")
-GATES = Path("control/inventory/hunt_main_promotion_gate_matrix.json")
-
-
-def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout) -> int:
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--repo-root", default=str(REPO_ROOT))
-    parser.add_argument("--json", action="store_true")
-    args = parser.parse_args(argv)
-
-    root = Path(args.repo_root).resolve()
-    result = load_json(root / RESULT)
-    gates = load_json(root / GATES).get("gates", [])
-    failed = [gate for gate in gates if gate.get("status") == "fail" and gate.get("blocks_promotion")]
-    summary = {
-        "schema_version": "hunt_main_promotion_summary.v0",
-        "status": result.get("status", "missing"),
-        "promotion_gates_passed": result.get("promotion_gates_passed", False),
-        "main_promoted": result.get("main_promoted", False),
-        "origin_main_equals_origin_dev": result.get("origin_main_equals_origin_dev", False),
-        "failed_blocking_gates": [gate.get("gate_id") for gate in failed],
-        "recommended_next_task": result.get("recommended_next_task", ""),
-    }
-    if args.json:
-        print(json.dumps(summary, indent=2, sort_keys=True), file=stdout)
-    else:
-        print(f"status: {summary['status']}", file=stdout)
-        print(f"promotion_gates_passed: {summary['promotion_gates_passed']}", file=stdout)
-        print(f"main_promoted: {summary['main_promoted']}", file=stdout)
-        print(f"origin_main_equals_origin_dev: {summary['origin_main_equals_origin_dev']}", file=stdout)
-        print(f"recommended_next_task: {summary['recommended_next_task']}", file=stdout)
-    return 0 if summary["status"] == "pass" and not failed else 1
-
-
-def load_json(path: Path) -> dict:
-    if not path.is_file():
-        return {}
-    return json.loads(path.read_text(encoding="utf-8"))
-
-
-if __name__ == "__main__":
-    raise SystemExit(main())
+for _name, _value in vars(_MODULE).items():
+    if _name not in {"__name__", "__loader__", "__package__", "__spec__"}:
+        globals()[_name] = _value
+if __name__ != "__main__":
+    sys.modules[__name__] = _MODULE
+else:
+    sys.argv[0] = str(_TARGET)
+    if hasattr(_MODULE, "main"):
+        raise SystemExit(_MODULE.main())
+    runpy.run_path(str(_TARGET), run_name="__main__")

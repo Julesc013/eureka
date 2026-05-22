@@ -105,9 +105,9 @@
     "control/inventory/publication/surface_route_matrix.json",
     "control/inventory/sources/*.source.json",
     "control/inventory/public_alpha_routes.json",
-    "data/public_index/build_manifest.json",
-    "data/public_index/index_stats.json",
-    "data/public_index/source_coverage.json",
+    "site/dist/data/public_index/build_manifest.json",
+    "site/dist/data/public_index/index_stats.json",
+    "site/dist/data/public_index/source_coverage.json",
     "scripts/run_archive_resolution_evals.py --json",
     "scripts/run_search_usefulness_audit.py --json",
     "scripts/report_external_baseline_status.py --json"

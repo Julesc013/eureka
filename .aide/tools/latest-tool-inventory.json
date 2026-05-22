@@ -25114,7 +25114,7 @@
       "capability_families": [
         "release"
       ],
-      "command_hint": "python control/prototypes/legacy_runtime/connectors/h10_games_emulation/platform_release_edition.py",
+      "command_hint": "python archive/prototypes/legacy_runtime/connectors/h10_games_emulation/platform_release_edition.py",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -25127,7 +25127,7 @@
       "language_or_format": "python",
       "name": "platform_release_edition.py",
       "owner": "unknown",
-      "path": "control/prototypes/legacy_runtime/connectors/h10_games_emulation/platform_release_edition.py",
+      "path": "archive/prototypes/legacy_runtime/connectors/h10_games_emulation/platform_release_edition.py",
       "reasons": [
         "candidate_tool_name_hint",
         "high_risk_hint:release",
@@ -25145,7 +25145,7 @@
       "capability_families": [
         "release"
       ],
-      "command_hint": "python control/prototypes/legacy_runtime/connectors/h11_storefront/version_release_channel.py",
+      "command_hint": "python archive/prototypes/legacy_runtime/connectors/h11_storefront/version_release_channel.py",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -25158,7 +25158,7 @@
       "language_or_format": "python",
       "name": "version_release_channel.py",
       "owner": "unknown",
-      "path": "control/prototypes/legacy_runtime/connectors/h11_storefront/version_release_channel.py",
+      "path": "archive/prototypes/legacy_runtime/connectors/h11_storefront/version_release_channel.py",
       "reasons": [
         "candidate_tool_name_hint",
         "high_risk_hint:release",
@@ -25176,7 +25176,7 @@
       "capability_families": [
         "install"
       ],
-      "command_hint": "python control/prototypes/legacy_runtime/connectors/h12_retro_community/compatibility_install_note.py",
+      "command_hint": "python archive/prototypes/legacy_runtime/connectors/h12_retro_community/compatibility_install_note.py",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -25189,7 +25189,7 @@
       "language_or_format": "python",
       "name": "compatibility_install_note.py",
       "owner": "unknown",
-      "path": "control/prototypes/legacy_runtime/connectors/h12_retro_community/compatibility_install_note.py",
+      "path": "archive/prototypes/legacy_runtime/connectors/h12_retro_community/compatibility_install_note.py",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -25207,7 +25207,7 @@
       "capability_families": [
         "validate"
       ],
-      "command_hint": "python control/prototypes/legacy_runtime/connectors/h12_retro_community/hash_checksum.py",
+      "command_hint": "python archive/prototypes/legacy_runtime/connectors/h12_retro_community/hash_checksum.py",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -25220,7 +25220,7 @@
       "language_or_format": "python",
       "name": "hash_checksum.py",
       "owner": "unknown",
-      "path": "control/prototypes/legacy_runtime/connectors/h12_retro_community/hash_checksum.py",
+      "path": "archive/prototypes/legacy_runtime/connectors/h12_retro_community/hash_checksum.py",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -25239,7 +25239,7 @@
         "context",
         "package"
       ],
-      "command_hint": "python control/prototypes/legacy_runtime/connectors/h13_local_private/boundary_dry_run_local_package_cache_metadata.py",
+      "command_hint": "python archive/prototypes/legacy_runtime/connectors/h13_local_private/boundary_dry_run_local_package_cache_metadata.py",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -25252,7 +25252,7 @@
       "language_or_format": "python",
       "name": "boundary_dry_run_local_package_cache_metadata.py",
       "owner": "unknown",
-      "path": "control/prototypes/legacy_runtime/connectors/h13_local_private/boundary_dry_run_local_package_cache_metadata.py",
+      "path": "archive/prototypes/legacy_runtime/connectors/h13_local_private/boundary_dry_run_local_package_cache_metadata.py",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -25271,7 +25271,7 @@
       "capability_families": [
         "unknown"
       ],
-      "command_hint": "python control/prototypes/legacy_runtime/connectors/h13_local_private/local_cas_import_boundary.py",
+      "command_hint": "python archive/prototypes/legacy_runtime/connectors/h13_local_private/local_cas_import_boundary.py",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -25284,7 +25284,7 @@
       "language_or_format": "python",
       "name": "local_cas_import_boundary.py",
       "owner": "unknown",
-      "path": "control/prototypes/legacy_runtime/connectors/h13_local_private/local_cas_import_boundary.py",
+      "path": "archive/prototypes/legacy_runtime/connectors/h13_local_private/local_cas_import_boundary.py",
       "reasons": [
         "candidate_tool_name_hint",
         "insufficient_evidence_for_wrap_plan",
@@ -25303,7 +25303,7 @@
         "context",
         "package"
       ],
-      "command_hint": "python control/prototypes/legacy_runtime/connectors/h13_local_private/local_package_cache_metadata.py",
+      "command_hint": "python archive/prototypes/legacy_runtime/connectors/h13_local_private/local_package_cache_metadata.py",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -25316,7 +25316,7 @@
       "language_or_format": "python",
       "name": "local_package_cache_metadata.py",
       "owner": "unknown",
-      "path": "control/prototypes/legacy_runtime/connectors/h13_local_private/local_package_cache_metadata.py",
+      "path": "archive/prototypes/legacy_runtime/connectors/h13_local_private/local_package_cache_metadata.py",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -25335,7 +25335,7 @@
       "capability_families": [
         "context"
       ],
-      "command_hint": "python control/prototypes/legacy_runtime/connectors/h13_local_private/pack_export_import_boundary.py",
+      "command_hint": "python archive/prototypes/legacy_runtime/connectors/h13_local_private/pack_export_import_boundary.py",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -25348,7 +25348,7 @@
       "language_or_format": "python",
       "name": "pack_export_import_boundary.py",
       "owner": "unknown",
-      "path": "control/prototypes/legacy_runtime/connectors/h13_local_private/pack_export_import_boundary.py",
+      "path": "archive/prototypes/legacy_runtime/connectors/h13_local_private/pack_export_import_boundary.py",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -25366,7 +25366,7 @@
       "capability_families": [
         "context"
       ],
-      "command_hint": "python control/prototypes/legacy_runtime/connectors/h14_source_discovery/pack_import_export_boundary.py",
+      "command_hint": "python archive/prototypes/legacy_runtime/connectors/h14_source_discovery/pack_import_export_boundary.py",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -25379,7 +25379,7 @@
       "language_or_format": "python",
       "name": "pack_import_export_boundary.py",
       "owner": "unknown",
-      "path": "control/prototypes/legacy_runtime/connectors/h14_source_discovery/pack_import_export_boundary.py",
+      "path": "archive/prototypes/legacy_runtime/connectors/h14_source_discovery/pack_import_export_boundary.py",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -25397,7 +25397,7 @@
       "capability_families": [
         "context"
       ],
-      "command_hint": "python control/prototypes/legacy_runtime/connectors/h14_source_discovery/rollup_pack_import_export_boundary.py",
+      "command_hint": "python archive/prototypes/legacy_runtime/connectors/h14_source_discovery/rollup_pack_import_export_boundary.py",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -25410,7 +25410,7 @@
       "language_or_format": "python",
       "name": "rollup_pack_import_export_boundary.py",
       "owner": "unknown",
-      "path": "control/prototypes/legacy_runtime/connectors/h14_source_discovery/rollup_pack_import_export_boundary.py",
+      "path": "archive/prototypes/legacy_runtime/connectors/h14_source_discovery/rollup_pack_import_export_boundary.py",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -25428,7 +25428,7 @@
       "capability_families": [
         "release"
       ],
-      "command_hint": "python control/prototypes/legacy_runtime/connectors/h1_metadata_wave/github_releases.py",
+      "command_hint": "python archive/prototypes/legacy_runtime/connectors/h1_metadata_wave/github_releases.py",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -25441,7 +25441,7 @@
       "language_or_format": "python",
       "name": "github_releases.py",
       "owner": "unknown",
-      "path": "control/prototypes/legacy_runtime/connectors/h1_metadata_wave/github_releases.py",
+      "path": "archive/prototypes/legacy_runtime/connectors/h1_metadata_wave/github_releases.py",
       "reasons": [
         "candidate_tool_name_hint",
         "high_risk_hint:release",
@@ -25459,7 +25459,7 @@
       "capability_families": [
         "release"
       ],
-      "command_hint": "python control/prototypes/legacy_runtime/connectors/h1_metadata_wave/live_probe_github_releases.py",
+      "command_hint": "python archive/prototypes/legacy_runtime/connectors/h1_metadata_wave/live_probe_github_releases.py",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -25472,7 +25472,7 @@
       "language_or_format": "python",
       "name": "live_probe_github_releases.py",
       "owner": "unknown",
-      "path": "control/prototypes/legacy_runtime/connectors/h1_metadata_wave/live_probe_github_releases.py",
+      "path": "archive/prototypes/legacy_runtime/connectors/h1_metadata_wave/live_probe_github_releases.py",
       "reasons": [
         "candidate_tool_name_hint",
         "high_risk_hint:live",
@@ -25492,7 +25492,7 @@
         "context",
         "package"
       ],
-      "command_hint": "python control/prototypes/legacy_runtime/connectors/h2_package_registries/package_identity.py",
+      "command_hint": "python archive/prototypes/legacy_runtime/connectors/h2_package_registries/package_identity.py",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -25505,7 +25505,7 @@
       "language_or_format": "python",
       "name": "package_identity.py",
       "owner": "unknown",
-      "path": "control/prototypes/legacy_runtime/connectors/h2_package_registries/package_identity.py",
+      "path": "archive/prototypes/legacy_runtime/connectors/h2_package_registries/package_identity.py",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -25525,7 +25525,7 @@
         "context",
         "package"
       ],
-      "command_hint": "python control/prototypes/legacy_runtime/connectors/h3_os_package_archives/freebsd_packages_ports.py",
+      "command_hint": "python archive/prototypes/legacy_runtime/connectors/h3_os_package_archives/freebsd_packages_ports.py",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -25538,7 +25538,7 @@
       "language_or_format": "python",
       "name": "freebsd_packages_ports.py",
       "owner": "unknown",
-      "path": "control/prototypes/legacy_runtime/connectors/h3_os_package_archives/freebsd_packages_ports.py",
+      "path": "archive/prototypes/legacy_runtime/connectors/h3_os_package_archives/freebsd_packages_ports.py",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -25558,7 +25558,7 @@
         "context",
         "package"
       ],
-      "command_hint": "python control/prototypes/legacy_runtime/connectors/h3_os_package_archives/live_probe_freebsd_packages_ports.py",
+      "command_hint": "python archive/prototypes/legacy_runtime/connectors/h3_os_package_archives/live_probe_freebsd_packages_ports.py",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -25571,7 +25571,7 @@
       "language_or_format": "python",
       "name": "live_probe_freebsd_packages_ports.py",
       "owner": "unknown",
-      "path": "control/prototypes/legacy_runtime/connectors/h3_os_package_archives/live_probe_freebsd_packages_ports.py",
+      "path": "archive/prototypes/legacy_runtime/connectors/h3_os_package_archives/live_probe_freebsd_packages_ports.py",
       "reasons": [
         "candidate_tool_name_hint",
         "context_hint:pack",
@@ -25592,7 +25592,7 @@
         "package",
         "release"
       ],
-      "command_hint": "python control/prototypes/legacy_runtime/connectors/h3_os_package_archives/live_probe_ubuntu_old_releases.py",
+      "command_hint": "python archive/prototypes/legacy_runtime/connectors/h3_os_package_archives/live_probe_ubuntu_old_releases.py",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -25605,7 +25605,7 @@
       "language_or_format": "python",
       "name": "live_probe_ubuntu_old_releases.py",
       "owner": "unknown",
-      "path": "control/prototypes/legacy_runtime/connectors/h3_os_package_archives/live_probe_ubuntu_old_releases.py",
+      "path": "archive/prototypes/legacy_runtime/connectors/h3_os_package_archives/live_probe_ubuntu_old_releases.py",
       "reasons": [
         "candidate_tool_name_hint",
         "context_hint:pack",
@@ -25627,7 +25627,7 @@
         "context",
         "package"
       ],
-      "command_hint": "python control/prototypes/legacy_runtime/connectors/h3_os_package_archives/os_package_identity.py",
+      "command_hint": "python archive/prototypes/legacy_runtime/connectors/h3_os_package_archives/os_package_identity.py",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -25640,7 +25640,7 @@
       "language_or_format": "python",
       "name": "os_package_identity.py",
       "owner": "unknown",
-      "path": "control/prototypes/legacy_runtime/connectors/h3_os_package_archives/os_package_identity.py",
+      "path": "archive/prototypes/legacy_runtime/connectors/h3_os_package_archives/os_package_identity.py",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -25661,7 +25661,7 @@
         "package",
         "release"
       ],
-      "command_hint": "python control/prototypes/legacy_runtime/connectors/h3_os_package_archives/ubuntu_old_releases.py",
+      "command_hint": "python archive/prototypes/legacy_runtime/connectors/h3_os_package_archives/ubuntu_old_releases.py",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -25674,7 +25674,7 @@
       "language_or_format": "python",
       "name": "ubuntu_old_releases.py",
       "owner": "unknown",
-      "path": "control/prototypes/legacy_runtime/connectors/h3_os_package_archives/ubuntu_old_releases.py",
+      "path": "archive/prototypes/legacy_runtime/connectors/h3_os_package_archives/ubuntu_old_releases.py",
       "reasons": [
         "candidate_tool_name_hint",
         "context_hint:pack",
@@ -25694,7 +25694,7 @@
       "capability_families": [
         "release"
       ],
-      "command_hint": "python control/prototypes/legacy_runtime/connectors/h4_code_source_release/generic_release_host.py",
+      "command_hint": "python archive/prototypes/legacy_runtime/connectors/h4_code_source_release/generic_release_host.py",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -25707,7 +25707,7 @@
       "language_or_format": "python",
       "name": "generic_release_host.py",
       "owner": "unknown",
-      "path": "control/prototypes/legacy_runtime/connectors/h4_code_source_release/generic_release_host.py",
+      "path": "archive/prototypes/legacy_runtime/connectors/h4_code_source_release/generic_release_host.py",
       "reasons": [
         "candidate_tool_name_hint",
         "high_risk_hint:release",
@@ -25725,7 +25725,7 @@
       "capability_families": [
         "release"
       ],
-      "command_hint": "python control/prototypes/legacy_runtime/connectors/h4_code_source_release/github_releases.py",
+      "command_hint": "python archive/prototypes/legacy_runtime/connectors/h4_code_source_release/github_releases.py",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -25738,7 +25738,7 @@
       "language_or_format": "python",
       "name": "github_releases.py",
       "owner": "unknown",
-      "path": "control/prototypes/legacy_runtime/connectors/h4_code_source_release/github_releases.py",
+      "path": "archive/prototypes/legacy_runtime/connectors/h4_code_source_release/github_releases.py",
       "reasons": [
         "candidate_tool_name_hint",
         "high_risk_hint:release",
@@ -25756,7 +25756,7 @@
       "capability_families": [
         "release"
       ],
-      "command_hint": "python control/prototypes/legacy_runtime/connectors/h4_code_source_release/gitlab_releases.py",
+      "command_hint": "python archive/prototypes/legacy_runtime/connectors/h4_code_source_release/gitlab_releases.py",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -25769,7 +25769,7 @@
       "language_or_format": "python",
       "name": "gitlab_releases.py",
       "owner": "unknown",
-      "path": "control/prototypes/legacy_runtime/connectors/h4_code_source_release/gitlab_releases.py",
+      "path": "archive/prototypes/legacy_runtime/connectors/h4_code_source_release/gitlab_releases.py",
       "reasons": [
         "candidate_tool_name_hint",
         "high_risk_hint:release",
@@ -25787,7 +25787,7 @@
       "capability_families": [
         "release"
       ],
-      "command_hint": "python control/prototypes/legacy_runtime/connectors/h4_code_source_release/live_probe_generic_release_host.py",
+      "command_hint": "python archive/prototypes/legacy_runtime/connectors/h4_code_source_release/live_probe_generic_release_host.py",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -25800,7 +25800,7 @@
       "language_or_format": "python",
       "name": "live_probe_generic_release_host.py",
       "owner": "unknown",
-      "path": "control/prototypes/legacy_runtime/connectors/h4_code_source_release/live_probe_generic_release_host.py",
+      "path": "archive/prototypes/legacy_runtime/connectors/h4_code_source_release/live_probe_generic_release_host.py",
       "reasons": [
         "candidate_tool_name_hint",
         "high_risk_hint:live",
@@ -25819,7 +25819,7 @@
       "capability_families": [
         "release"
       ],
-      "command_hint": "python control/prototypes/legacy_runtime/connectors/h4_code_source_release/live_probe_github_releases.py",
+      "command_hint": "python archive/prototypes/legacy_runtime/connectors/h4_code_source_release/live_probe_github_releases.py",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -25832,7 +25832,7 @@
       "language_or_format": "python",
       "name": "live_probe_github_releases.py",
       "owner": "unknown",
-      "path": "control/prototypes/legacy_runtime/connectors/h4_code_source_release/live_probe_github_releases.py",
+      "path": "archive/prototypes/legacy_runtime/connectors/h4_code_source_release/live_probe_github_releases.py",
       "reasons": [
         "candidate_tool_name_hint",
         "high_risk_hint:live",
@@ -25851,7 +25851,7 @@
       "capability_families": [
         "release"
       ],
-      "command_hint": "python control/prototypes/legacy_runtime/connectors/h4_code_source_release/live_probe_gitlab_releases.py",
+      "command_hint": "python archive/prototypes/legacy_runtime/connectors/h4_code_source_release/live_probe_gitlab_releases.py",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -25864,7 +25864,7 @@
       "language_or_format": "python",
       "name": "live_probe_gitlab_releases.py",
       "owner": "unknown",
-      "path": "control/prototypes/legacy_runtime/connectors/h4_code_source_release/live_probe_gitlab_releases.py",
+      "path": "archive/prototypes/legacy_runtime/connectors/h4_code_source_release/live_probe_gitlab_releases.py",
       "reasons": [
         "candidate_tool_name_hint",
         "high_risk_hint:live",
@@ -25883,7 +25883,7 @@
       "capability_families": [
         "release"
       ],
-      "command_hint": "python control/prototypes/legacy_runtime/connectors/h4_code_source_release/release_identity.py",
+      "command_hint": "python archive/prototypes/legacy_runtime/connectors/h4_code_source_release/release_identity.py",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -25896,7 +25896,7 @@
       "language_or_format": "python",
       "name": "release_identity.py",
       "owner": "unknown",
-      "path": "control/prototypes/legacy_runtime/connectors/h4_code_source_release/release_identity.py",
+      "path": "archive/prototypes/legacy_runtime/connectors/h4_code_source_release/release_identity.py",
       "reasons": [
         "candidate_tool_name_hint",
         "high_risk_hint:release",
@@ -25915,7 +25915,7 @@
         "docs",
         "install"
       ],
-      "command_hint": "python control/prototypes/legacy_runtime/connectors/h8_manuals_docs_standards/install_requirement_claim.py",
+      "command_hint": "python archive/prototypes/legacy_runtime/connectors/h8_manuals_docs_standards/install_requirement_claim.py",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -25928,7 +25928,7 @@
       "language_or_format": "python",
       "name": "install_requirement_claim.py",
       "owner": "unknown",
-      "path": "control/prototypes/legacy_runtime/connectors/h8_manuals_docs_standards/install_requirement_claim.py",
+      "path": "archive/prototypes/legacy_runtime/connectors/h8_manuals_docs_standards/install_requirement_claim.py",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -25947,7 +25947,7 @@
       "capability_families": [
         "release"
       ],
-      "command_hint": "python control/prototypes/legacy_runtime/connectors/h9_media_metadata/music_work_recording_release.py",
+      "command_hint": "python archive/prototypes/legacy_runtime/connectors/h9_media_metadata/music_work_recording_release.py",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -25960,7 +25960,7 @@
       "language_or_format": "python",
       "name": "music_work_recording_release.py",
       "owner": "unknown",
-      "path": "control/prototypes/legacy_runtime/connectors/h9_media_metadata/music_work_recording_release.py",
+      "path": "archive/prototypes/legacy_runtime/connectors/h9_media_metadata/music_work_recording_release.py",
       "reasons": [
         "candidate_tool_name_hint",
         "high_risk_hint:release",
@@ -25978,7 +25978,7 @@
       "capability_families": [
         "audit"
       ],
-      "command_hint": "review-only command preview for control/schemas/audits/audits/mvp_alpha_readiness_audit.v0.json",
+      "command_hint": "review-only command preview for contracts/control_schemas/audits/audits/mvp_alpha_readiness_audit.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -25991,7 +25991,7 @@
       "language_or_format": "json",
       "name": "mvp_alpha_readiness_audit.v0.json",
       "owner": "unknown",
-      "path": "control/schemas/audits/audits/mvp_alpha_readiness_audit.v0.json",
+      "path": "contracts/control_schemas/audits/audits/mvp_alpha_readiness_audit.v0.json",
       "reasons": [
         "audit_hint:audit",
         "candidate_capability_can_be_future_wrapped",
@@ -26009,7 +26009,7 @@
       "capability_families": [
         "audit"
       ],
-      "command_hint": "review-only command preview for control/schemas/audits/h1/connectors/integration_audit.v0.json",
+      "command_hint": "review-only command preview for contracts/control_schemas/audits/h1/connectors/integration_audit.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -26022,7 +26022,7 @@
       "language_or_format": "json",
       "name": "integration_audit.v0.json",
       "owner": "unknown",
-      "path": "control/schemas/audits/h1/connectors/integration_audit.v0.json",
+      "path": "contracts/control_schemas/audits/h1/connectors/integration_audit.v0.json",
       "reasons": [
         "audit_hint:audit",
         "candidate_capability_can_be_future_wrapped",
@@ -26040,7 +26040,7 @@
       "capability_families": [
         "audit"
       ],
-      "command_hint": "review-only command preview for control/schemas/audits/h10/connectors/games_emulation_integration_audit.v0.json",
+      "command_hint": "review-only command preview for contracts/control_schemas/audits/h10/connectors/games_emulation_integration_audit.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -26053,7 +26053,7 @@
       "language_or_format": "json",
       "name": "games_emulation_integration_audit.v0.json",
       "owner": "unknown",
-      "path": "control/schemas/audits/h10/connectors/games_emulation_integration_audit.v0.json",
+      "path": "contracts/control_schemas/audits/h10/connectors/games_emulation_integration_audit.v0.json",
       "reasons": [
         "audit_hint:audit",
         "candidate_capability_can_be_future_wrapped",
@@ -26071,7 +26071,7 @@
       "capability_families": [
         "audit"
       ],
-      "command_hint": "review-only command preview for control/schemas/audits/h11/connectors/storefront_integration_audit.v0.json",
+      "command_hint": "review-only command preview for contracts/control_schemas/audits/h11/connectors/storefront_integration_audit.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -26084,7 +26084,7 @@
       "language_or_format": "json",
       "name": "storefront_integration_audit.v0.json",
       "owner": "unknown",
-      "path": "control/schemas/audits/h11/connectors/storefront_integration_audit.v0.json",
+      "path": "contracts/control_schemas/audits/h11/connectors/storefront_integration_audit.v0.json",
       "reasons": [
         "audit_hint:audit",
         "candidate_capability_can_be_future_wrapped",
@@ -26102,7 +26102,7 @@
       "capability_families": [
         "audit"
       ],
-      "command_hint": "review-only command preview for control/schemas/audits/h12/connectors/retro_community_integration_audit.v0.json",
+      "command_hint": "review-only command preview for contracts/control_schemas/audits/h12/connectors/retro_community_integration_audit.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -26115,7 +26115,7 @@
       "language_or_format": "json",
       "name": "retro_community_integration_audit.v0.json",
       "owner": "unknown",
-      "path": "control/schemas/audits/h12/connectors/retro_community_integration_audit.v0.json",
+      "path": "contracts/control_schemas/audits/h12/connectors/retro_community_integration_audit.v0.json",
       "reasons": [
         "audit_hint:audit",
         "candidate_capability_can_be_future_wrapped",
@@ -26133,7 +26133,7 @@
       "capability_families": [
         "audit"
       ],
-      "command_hint": "review-only command preview for control/schemas/audits/h13/connectors/local_private_integration_audit.v0.json",
+      "command_hint": "review-only command preview for contracts/control_schemas/audits/h13/connectors/local_private_integration_audit.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -26146,7 +26146,7 @@
       "language_or_format": "json",
       "name": "local_private_integration_audit.v0.json",
       "owner": "unknown",
-      "path": "control/schemas/audits/h13/connectors/local_private_integration_audit.v0.json",
+      "path": "contracts/control_schemas/audits/h13/connectors/local_private_integration_audit.v0.json",
       "reasons": [
         "audit_hint:audit",
         "candidate_capability_can_be_future_wrapped",
@@ -26164,7 +26164,7 @@
       "capability_families": [
         "audit"
       ],
-      "command_hint": "review-only command preview for control/schemas/audits/h14/connectors/source_discovery_integration_audit.v0.json",
+      "command_hint": "review-only command preview for contracts/control_schemas/audits/h14/connectors/source_discovery_integration_audit.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -26177,7 +26177,7 @@
       "language_or_format": "json",
       "name": "source_discovery_integration_audit.v0.json",
       "owner": "unknown",
-      "path": "control/schemas/audits/h14/connectors/source_discovery_integration_audit.v0.json",
+      "path": "contracts/control_schemas/audits/h14/connectors/source_discovery_integration_audit.v0.json",
       "reasons": [
         "audit_hint:audit",
         "candidate_capability_can_be_future_wrapped",
@@ -26197,7 +26197,7 @@
         "context",
         "package"
       ],
-      "command_hint": "review-only command preview for control/schemas/audits/h2/connectors/package_connector_wave_postmortem.v0.json",
+      "command_hint": "review-only command preview for contracts/control_schemas/audits/h2/connectors/package_connector_wave_postmortem.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -26210,7 +26210,7 @@
       "language_or_format": "json",
       "name": "package_connector_wave_postmortem.v0.json",
       "owner": "unknown",
-      "path": "control/schemas/audits/h2/connectors/package_connector_wave_postmortem.v0.json",
+      "path": "contracts/control_schemas/audits/h2/connectors/package_connector_wave_postmortem.v0.json",
       "reasons": [
         "audit_hint:audit",
         "candidate_capability_can_be_future_wrapped",
@@ -26232,7 +26232,7 @@
         "context",
         "package"
       ],
-      "command_hint": "review-only command preview for control/schemas/audits/h2/connectors/package_integration_audit.v0.json",
+      "command_hint": "review-only command preview for contracts/control_schemas/audits/h2/connectors/package_integration_audit.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -26245,7 +26245,7 @@
       "language_or_format": "json",
       "name": "package_integration_audit.v0.json",
       "owner": "unknown",
-      "path": "control/schemas/audits/h2/connectors/package_integration_audit.v0.json",
+      "path": "contracts/control_schemas/audits/h2/connectors/package_integration_audit.v0.json",
       "reasons": [
         "audit_hint:audit",
         "candidate_capability_can_be_future_wrapped",
@@ -26268,7 +26268,7 @@
         "package",
         "repo_policy"
       ],
-      "command_hint": "review-only command preview for control/schemas/audits/h2/connectors/package_quality_delta_report.v0.json",
+      "command_hint": "review-only command preview for contracts/control_schemas/audits/h2/connectors/package_quality_delta_report.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -26281,7 +26281,7 @@
       "language_or_format": "json",
       "name": "package_quality_delta_report.v0.json",
       "owner": "unknown",
-      "path": "control/schemas/audits/h2/connectors/package_quality_delta_report.v0.json",
+      "path": "contracts/control_schemas/audits/h2/connectors/package_quality_delta_report.v0.json",
       "reasons": [
         "audit_hint:audit,report",
         "candidate_capability_can_be_future_wrapped",
@@ -26304,7 +26304,7 @@
         "context",
         "package"
       ],
-      "command_hint": "review-only command preview for control/schemas/audits/h2/connectors/package_review_integration_result.v0.json",
+      "command_hint": "review-only command preview for contracts/control_schemas/audits/h2/connectors/package_review_integration_result.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -26317,7 +26317,7 @@
       "language_or_format": "json",
       "name": "package_review_integration_result.v0.json",
       "owner": "unknown",
-      "path": "control/schemas/audits/h2/connectors/package_review_integration_result.v0.json",
+      "path": "contracts/control_schemas/audits/h2/connectors/package_review_integration_result.v0.json",
       "reasons": [
         "audit_hint:audit",
         "candidate_capability_can_be_future_wrapped",
@@ -26339,7 +26339,7 @@
         "context",
         "package"
       ],
-      "command_hint": "review-only command preview for control/schemas/audits/h3/connectors/os_package_connector_wave_postmortem.v0.json",
+      "command_hint": "review-only command preview for contracts/control_schemas/audits/h3/connectors/os_package_connector_wave_postmortem.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -26352,7 +26352,7 @@
       "language_or_format": "json",
       "name": "os_package_connector_wave_postmortem.v0.json",
       "owner": "unknown",
-      "path": "control/schemas/audits/h3/connectors/os_package_connector_wave_postmortem.v0.json",
+      "path": "contracts/control_schemas/audits/h3/connectors/os_package_connector_wave_postmortem.v0.json",
       "reasons": [
         "audit_hint:audit",
         "candidate_capability_can_be_future_wrapped",
@@ -26374,7 +26374,7 @@
         "context",
         "package"
       ],
-      "command_hint": "review-only command preview for control/schemas/audits/h3/connectors/os_package_integration_audit.v0.json",
+      "command_hint": "review-only command preview for contracts/control_schemas/audits/h3/connectors/os_package_integration_audit.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -26387,7 +26387,7 @@
       "language_or_format": "json",
       "name": "os_package_integration_audit.v0.json",
       "owner": "unknown",
-      "path": "control/schemas/audits/h3/connectors/os_package_integration_audit.v0.json",
+      "path": "contracts/control_schemas/audits/h3/connectors/os_package_integration_audit.v0.json",
       "reasons": [
         "audit_hint:audit",
         "candidate_capability_can_be_future_wrapped",
@@ -26410,7 +26410,7 @@
         "package",
         "repo_policy"
       ],
-      "command_hint": "review-only command preview for control/schemas/audits/h3/connectors/os_package_quality_delta_report.v0.json",
+      "command_hint": "review-only command preview for contracts/control_schemas/audits/h3/connectors/os_package_quality_delta_report.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -26423,7 +26423,7 @@
       "language_or_format": "json",
       "name": "os_package_quality_delta_report.v0.json",
       "owner": "unknown",
-      "path": "control/schemas/audits/h3/connectors/os_package_quality_delta_report.v0.json",
+      "path": "contracts/control_schemas/audits/h3/connectors/os_package_quality_delta_report.v0.json",
       "reasons": [
         "audit_hint:audit,report",
         "candidate_capability_can_be_future_wrapped",
@@ -26446,7 +26446,7 @@
         "context",
         "package"
       ],
-      "command_hint": "review-only command preview for control/schemas/audits/h3/connectors/os_package_review_integration_result.v0.json",
+      "command_hint": "review-only command preview for contracts/control_schemas/audits/h3/connectors/os_package_review_integration_result.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -26459,7 +26459,7 @@
       "language_or_format": "json",
       "name": "os_package_review_integration_result.v0.json",
       "owner": "unknown",
-      "path": "control/schemas/audits/h3/connectors/os_package_review_integration_result.v0.json",
+      "path": "contracts/control_schemas/audits/h3/connectors/os_package_review_integration_result.v0.json",
       "reasons": [
         "audit_hint:audit",
         "candidate_capability_can_be_future_wrapped",
@@ -26479,7 +26479,7 @@
       "capability_families": [
         "audit"
       ],
-      "command_hint": "review-only command preview for control/schemas/audits/h4/connectors/code_source_integration_audit.v0.json",
+      "command_hint": "review-only command preview for contracts/control_schemas/audits/h4/connectors/code_source_integration_audit.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -26492,7 +26492,7 @@
       "language_or_format": "json",
       "name": "code_source_integration_audit.v0.json",
       "owner": "unknown",
-      "path": "control/schemas/audits/h4/connectors/code_source_integration_audit.v0.json",
+      "path": "contracts/control_schemas/audits/h4/connectors/code_source_integration_audit.v0.json",
       "reasons": [
         "audit_hint:audit",
         "candidate_capability_can_be_future_wrapped",
@@ -26510,7 +26510,7 @@
       "capability_families": [
         "audit"
       ],
-      "command_hint": "review-only command preview for control/schemas/audits/h5/connectors/vendor_update_integration_audit.v0.json",
+      "command_hint": "review-only command preview for contracts/control_schemas/audits/h5/connectors/vendor_update_integration_audit.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -26523,7 +26523,7 @@
       "language_or_format": "json",
       "name": "vendor_update_integration_audit.v0.json",
       "owner": "unknown",
-      "path": "control/schemas/audits/h5/connectors/vendor_update_integration_audit.v0.json",
+      "path": "contracts/control_schemas/audits/h5/connectors/vendor_update_integration_audit.v0.json",
       "reasons": [
         "audit_hint:audit",
         "candidate_capability_can_be_future_wrapped",
@@ -26541,7 +26541,7 @@
       "capability_families": [
         "audit"
       ],
-      "command_hint": "review-only command preview for control/schemas/audits/h6/connectors/web_archive_integration_audit.v0.json",
+      "command_hint": "review-only command preview for contracts/control_schemas/audits/h6/connectors/web_archive_integration_audit.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -26554,7 +26554,7 @@
       "language_or_format": "json",
       "name": "web_archive_integration_audit.v0.json",
       "owner": "unknown",
-      "path": "control/schemas/audits/h6/connectors/web_archive_integration_audit.v0.json",
+      "path": "contracts/control_schemas/audits/h6/connectors/web_archive_integration_audit.v0.json",
       "reasons": [
         "audit_hint:audit",
         "candidate_capability_can_be_future_wrapped",
@@ -26572,7 +26572,7 @@
       "capability_families": [
         "audit"
       ],
-      "command_hint": "review-only command preview for control/schemas/audits/h7/connectors/library_research_integration_audit.v0.json",
+      "command_hint": "review-only command preview for contracts/control_schemas/audits/h7/connectors/library_research_integration_audit.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -26585,7 +26585,7 @@
       "language_or_format": "json",
       "name": "library_research_integration_audit.v0.json",
       "owner": "unknown",
-      "path": "control/schemas/audits/h7/connectors/library_research_integration_audit.v0.json",
+      "path": "contracts/control_schemas/audits/h7/connectors/library_research_integration_audit.v0.json",
       "reasons": [
         "audit_hint:audit",
         "candidate_capability_can_be_future_wrapped",
@@ -26604,7 +26604,7 @@
         "audit",
         "docs"
       ],
-      "command_hint": "review-only command preview for control/schemas/audits/h8/connectors/manuals_docs_integration_audit.v0.json",
+      "command_hint": "review-only command preview for contracts/control_schemas/audits/h8/connectors/manuals_docs_integration_audit.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -26617,7 +26617,7 @@
       "language_or_format": "json",
       "name": "manuals_docs_integration_audit.v0.json",
       "owner": "unknown",
-      "path": "control/schemas/audits/h8/connectors/manuals_docs_integration_audit.v0.json",
+      "path": "contracts/control_schemas/audits/h8/connectors/manuals_docs_integration_audit.v0.json",
       "reasons": [
         "audit_hint:audit",
         "candidate_capability_can_be_future_wrapped",
@@ -26636,7 +26636,7 @@
       "capability_families": [
         "audit"
       ],
-      "command_hint": "review-only command preview for control/schemas/audits/h9/connectors/media_metadata_integration_audit.v0.json",
+      "command_hint": "review-only command preview for contracts/control_schemas/audits/h9/connectors/media_metadata_integration_audit.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -26649,7 +26649,7 @@
       "language_or_format": "json",
       "name": "media_metadata_integration_audit.v0.json",
       "owner": "unknown",
-      "path": "control/schemas/audits/h9/connectors/media_metadata_integration_audit.v0.json",
+      "path": "contracts/control_schemas/audits/h9/connectors/media_metadata_integration_audit.v0.json",
       "reasons": [
         "audit_hint:audit",
         "candidate_capability_can_be_future_wrapped",
@@ -26667,7 +26667,7 @@
       "capability_families": [
         "audit"
       ],
-      "command_hint": "review-only command preview for control/schemas/audits/hosting/public_launch_readiness_audit.v0.json",
+      "command_hint": "review-only command preview for contracts/control_schemas/audits/hosting/public_launch_readiness_audit.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -26680,7 +26680,7 @@
       "language_or_format": "json",
       "name": "public_launch_readiness_audit.v0.json",
       "owner": "unknown",
-      "path": "control/schemas/audits/hosting/public_launch_readiness_audit.v0.json",
+      "path": "contracts/control_schemas/audits/hosting/public_launch_readiness_audit.v0.json",
       "reasons": [
         "audit_hint:audit",
         "candidate_capability_can_be_future_wrapped",
@@ -26698,7 +26698,7 @@
       "capability_families": [
         "audit"
       ],
-      "command_hint": "review-only command preview for control/schemas/audits/native/native_first_wave_integration_audit.v0.json",
+      "command_hint": "review-only command preview for contracts/control_schemas/audits/native/native_first_wave_integration_audit.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -26711,7 +26711,7 @@
       "language_or_format": "json",
       "name": "native_first_wave_integration_audit.v0.json",
       "owner": "unknown",
-      "path": "control/schemas/audits/native/native_first_wave_integration_audit.v0.json",
+      "path": "contracts/control_schemas/audits/native/native_first_wave_integration_audit.v0.json",
       "reasons": [
         "audit_hint:audit",
         "candidate_capability_can_be_future_wrapped",
@@ -26731,7 +26731,7 @@
         "context",
         "repo_policy"
       ],
-      "command_hint": "review-only command preview for control/schemas/audits/packs/pack_import_report.v0.json",
+      "command_hint": "review-only command preview for contracts/control_schemas/audits/packs/pack_import_report.v0.json",
       "docs_refs": [
         "control/audits/pack-import-report-format-v0/README.md",
         "docs/architecture/PACK_IMPORT_PIPELINE.md",
@@ -26748,7 +26748,7 @@
       "language_or_format": "json",
       "name": "pack_import_report.v0.json",
       "owner": "unknown",
-      "path": "control/schemas/audits/packs/pack_import_report.v0.json",
+      "path": "contracts/control_schemas/audits/packs/pack_import_report.v0.json",
       "reasons": [
         "audit_hint:audit,report",
         "candidate_capability_can_be_future_wrapped",
@@ -26769,7 +26769,7 @@
         "context",
         "package"
       ],
-      "command_hint": "review-only command preview for control/schemas/fixtures/archive/software/payloads/synthetic-demo-app-package.zip",
+      "command_hint": "review-only command preview for contracts/control_schemas/fixtures/archive/software/payloads/synthetic-demo-app-package.zip",
       "docs_refs": [
         "control/audits/r0-remediation-contract-taxonomy-01-v0/resolved_items.md"
       ],
@@ -26784,7 +26784,7 @@
       "language_or_format": "zip",
       "name": "synthetic-demo-app-package.zip",
       "owner": "unknown",
-      "path": "control/schemas/fixtures/archive/software/payloads/synthetic-demo-app-package.zip",
+      "path": "contracts/control_schemas/fixtures/archive/software/payloads/synthetic-demo-app-package.zip",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -26804,7 +26804,7 @@
         "context",
         "package"
       ],
-      "command_hint": "review-only command preview for control/schemas/fixtures/h2/connectors/package_fixture.v0.json",
+      "command_hint": "review-only command preview for contracts/control_schemas/fixtures/h2/connectors/package_fixture.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -26817,7 +26817,7 @@
       "language_or_format": "json",
       "name": "package_fixture.v0.json",
       "owner": "unknown",
-      "path": "control/schemas/fixtures/h2/connectors/package_fixture.v0.json",
+      "path": "contracts/control_schemas/fixtures/h2/connectors/package_fixture.v0.json",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -26837,7 +26837,7 @@
         "context",
         "package"
       ],
-      "command_hint": "review-only command preview for control/schemas/fixtures/h2/connectors/package_fixture_replay_result.v0.json",
+      "command_hint": "review-only command preview for contracts/control_schemas/fixtures/h2/connectors/package_fixture_replay_result.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -26850,7 +26850,7 @@
       "language_or_format": "json",
       "name": "package_fixture_replay_result.v0.json",
       "owner": "unknown",
-      "path": "control/schemas/fixtures/h2/connectors/package_fixture_replay_result.v0.json",
+      "path": "contracts/control_schemas/fixtures/h2/connectors/package_fixture_replay_result.v0.json",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -26870,7 +26870,7 @@
         "context",
         "package"
       ],
-      "command_hint": "review-only command preview for control/schemas/fixtures/h3/connectors/os_package_fixture.v0.json",
+      "command_hint": "review-only command preview for contracts/control_schemas/fixtures/h3/connectors/os_package_fixture.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -26883,7 +26883,7 @@
       "language_or_format": "json",
       "name": "os_package_fixture.v0.json",
       "owner": "unknown",
-      "path": "control/schemas/fixtures/h3/connectors/os_package_fixture.v0.json",
+      "path": "contracts/control_schemas/fixtures/h3/connectors/os_package_fixture.v0.json",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -26903,7 +26903,7 @@
         "context",
         "package"
       ],
-      "command_hint": "review-only command preview for control/schemas/fixtures/h3/connectors/os_package_fixture_replay_result.v0.json",
+      "command_hint": "review-only command preview for contracts/control_schemas/fixtures/h3/connectors/os_package_fixture_replay_result.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -26916,7 +26916,7 @@
       "language_or_format": "json",
       "name": "os_package_fixture_replay_result.v0.json",
       "owner": "unknown",
-      "path": "control/schemas/fixtures/h3/connectors/os_package_fixture_replay_result.v0.json",
+      "path": "contracts/control_schemas/fixtures/h3/connectors/os_package_fixture_replay_result.v0.json",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -26935,7 +26935,7 @@
       "capability_families": [
         "validate"
       ],
-      "command_hint": "review-only command preview for control/schemas/policies/hosting/public_alpha_operator_checklist.v0.json",
+      "command_hint": "review-only command preview for contracts/control_schemas/policies/hosting/public_alpha_operator_checklist.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -26948,7 +26948,7 @@
       "language_or_format": "json",
       "name": "public_alpha_operator_checklist.v0.json",
       "owner": "unknown",
-      "path": "control/schemas/policies/hosting/public_alpha_operator_checklist.v0.json",
+      "path": "contracts/control_schemas/policies/hosting/public_alpha_operator_checklist.v0.json",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -26966,7 +26966,7 @@
       "capability_families": [
         "install"
       ],
-      "command_hint": "review-only command preview for control/schemas/policies/hosting/rollback_plan.v0.json",
+      "command_hint": "review-only command preview for contracts/control_schemas/policies/hosting/rollback_plan.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -26979,7 +26979,7 @@
       "language_or_format": "json",
       "name": "rollback_plan.v0.json",
       "owner": "unknown",
-      "path": "control/schemas/policies/hosting/rollback_plan.v0.json",
+      "path": "contracts/control_schemas/policies/hosting/rollback_plan.v0.json",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -26998,7 +26998,7 @@
       "capability_families": [
         "context"
       ],
-      "command_hint": "review-only command preview for control/schemas/policies/packs/source_pack_export.v0.json",
+      "command_hint": "review-only command preview for contracts/control_schemas/policies/packs/source_pack_export.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -27011,7 +27011,7 @@
       "language_or_format": "json",
       "name": "source_pack_export.v0.json",
       "owner": "unknown",
-      "path": "control/schemas/policies/packs/source_pack_export.v0.json",
+      "path": "contracts/control_schemas/policies/packs/source_pack_export.v0.json",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -27029,7 +27029,7 @@
       "capability_families": [
         "release"
       ],
-      "command_hint": "review-only command preview for control/schemas/previews/h10/connectors/platform_release_edition_candidate.v0.json",
+      "command_hint": "review-only command preview for contracts/control_schemas/previews/h10/connectors/platform_release_edition_candidate.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -27042,7 +27042,7 @@
       "language_or_format": "json",
       "name": "platform_release_edition_candidate.v0.json",
       "owner": "unknown",
-      "path": "control/schemas/previews/h10/connectors/platform_release_edition_candidate.v0.json",
+      "path": "contracts/control_schemas/previews/h10/connectors/platform_release_edition_candidate.v0.json",
       "reasons": [
         "candidate_tool_name_hint",
         "high_risk_hint:release",
@@ -27060,7 +27060,7 @@
       "capability_families": [
         "release"
       ],
-      "command_hint": "review-only command preview for control/schemas/previews/h11/connectors/version_release_channel_candidate.v0.json",
+      "command_hint": "review-only command preview for contracts/control_schemas/previews/h11/connectors/version_release_channel_candidate.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -27073,7 +27073,7 @@
       "language_or_format": "json",
       "name": "version_release_channel_candidate.v0.json",
       "owner": "unknown",
-      "path": "control/schemas/previews/h11/connectors/version_release_channel_candidate.v0.json",
+      "path": "contracts/control_schemas/previews/h11/connectors/version_release_channel_candidate.v0.json",
       "reasons": [
         "candidate_tool_name_hint",
         "high_risk_hint:release",
@@ -27091,7 +27091,7 @@
       "capability_families": [
         "install"
       ],
-      "command_hint": "review-only command preview for control/schemas/previews/h12/connectors/compatibility_install_note_candidate.v0.json",
+      "command_hint": "review-only command preview for contracts/control_schemas/previews/h12/connectors/compatibility_install_note_candidate.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -27104,7 +27104,7 @@
       "language_or_format": "json",
       "name": "compatibility_install_note_candidate.v0.json",
       "owner": "unknown",
-      "path": "control/schemas/previews/h12/connectors/compatibility_install_note_candidate.v0.json",
+      "path": "contracts/control_schemas/previews/h12/connectors/compatibility_install_note_candidate.v0.json",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -27122,7 +27122,7 @@
       "capability_families": [
         "validate"
       ],
-      "command_hint": "review-only command preview for control/schemas/previews/h12/connectors/hash_checksum_candidate.v0.json",
+      "command_hint": "review-only command preview for contracts/control_schemas/previews/h12/connectors/hash_checksum_candidate.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -27135,7 +27135,7 @@
       "language_or_format": "json",
       "name": "hash_checksum_candidate.v0.json",
       "owner": "unknown",
-      "path": "control/schemas/previews/h12/connectors/hash_checksum_candidate.v0.json",
+      "path": "contracts/control_schemas/previews/h12/connectors/hash_checksum_candidate.v0.json",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -27153,7 +27153,7 @@
       "capability_families": [
         "unknown"
       ],
-      "command_hint": "review-only command preview for control/schemas/previews/h13/connectors/local_cas_import_boundary_candidate.v0.json",
+      "command_hint": "review-only command preview for contracts/control_schemas/previews/h13/connectors/local_cas_import_boundary_candidate.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -27166,7 +27166,7 @@
       "language_or_format": "json",
       "name": "local_cas_import_boundary_candidate.v0.json",
       "owner": "unknown",
-      "path": "control/schemas/previews/h13/connectors/local_cas_import_boundary_candidate.v0.json",
+      "path": "contracts/control_schemas/previews/h13/connectors/local_cas_import_boundary_candidate.v0.json",
       "reasons": [
         "candidate_tool_name_hint",
         "insufficient_evidence_for_wrap_plan",
@@ -27184,7 +27184,7 @@
       "capability_families": [
         "context"
       ],
-      "command_hint": "review-only command preview for control/schemas/previews/h13/connectors/pack_export_import_boundary_candidate.v0.json",
+      "command_hint": "review-only command preview for contracts/control_schemas/previews/h13/connectors/pack_export_import_boundary_candidate.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -27197,7 +27197,7 @@
       "language_or_format": "json",
       "name": "pack_export_import_boundary_candidate.v0.json",
       "owner": "unknown",
-      "path": "control/schemas/previews/h13/connectors/pack_export_import_boundary_candidate.v0.json",
+      "path": "contracts/control_schemas/previews/h13/connectors/pack_export_import_boundary_candidate.v0.json",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -27215,7 +27215,7 @@
       "capability_families": [
         "context"
       ],
-      "command_hint": "review-only command preview for control/schemas/previews/h14/connectors/pack_import_export_boundary_candidate.v0.json",
+      "command_hint": "review-only command preview for contracts/control_schemas/previews/h14/connectors/pack_import_export_boundary_candidate.v0.json",
       "docs_refs": [
         "control/audits/r0-remediation-contract-taxonomy-01-v0/resolved_items.md"
       ],
@@ -27230,7 +27230,7 @@
       "language_or_format": "json",
       "name": "pack_import_export_boundary_candidate.v0.json",
       "owner": "unknown",
-      "path": "control/schemas/previews/h14/connectors/pack_import_export_boundary_candidate.v0.json",
+      "path": "contracts/control_schemas/previews/h14/connectors/pack_import_export_boundary_candidate.v0.json",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -27249,7 +27249,7 @@
         "context",
         "package"
       ],
-      "command_hint": "review-only command preview for control/schemas/previews/h2/connectors/package_connector_health_summary.v0.json",
+      "command_hint": "review-only command preview for contracts/control_schemas/previews/h2/connectors/package_connector_health_summary.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -27262,7 +27262,7 @@
       "language_or_format": "json",
       "name": "package_connector_health_summary.v0.json",
       "owner": "unknown",
-      "path": "control/schemas/previews/h2/connectors/package_connector_health_summary.v0.json",
+      "path": "contracts/control_schemas/previews/h2/connectors/package_connector_health_summary.v0.json",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -27282,7 +27282,7 @@
         "context",
         "package"
       ],
-      "command_hint": "review-only command preview for control/schemas/previews/h2/connectors/package_dependency_candidate.v0.json",
+      "command_hint": "review-only command preview for contracts/control_schemas/previews/h2/connectors/package_dependency_candidate.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -27295,7 +27295,7 @@
       "language_or_format": "json",
       "name": "package_dependency_candidate.v0.json",
       "owner": "unknown",
-      "path": "control/schemas/previews/h2/connectors/package_dependency_candidate.v0.json",
+      "path": "contracts/control_schemas/previews/h2/connectors/package_dependency_candidate.v0.json",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -27315,7 +27315,7 @@
         "context",
         "package"
       ],
-      "command_hint": "review-only command preview for control/schemas/previews/h2/connectors/package_file_candidate.v0.json",
+      "command_hint": "review-only command preview for contracts/control_schemas/previews/h2/connectors/package_file_candidate.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -27328,7 +27328,7 @@
       "language_or_format": "json",
       "name": "package_file_candidate.v0.json",
       "owner": "unknown",
-      "path": "control/schemas/previews/h2/connectors/package_file_candidate.v0.json",
+      "path": "contracts/control_schemas/previews/h2/connectors/package_file_candidate.v0.json",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -27348,7 +27348,7 @@
         "context",
         "package"
       ],
-      "command_hint": "review-only command preview for control/schemas/previews/h2/connectors/package_identity_candidate.v0.json",
+      "command_hint": "review-only command preview for contracts/control_schemas/previews/h2/connectors/package_identity_candidate.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -27361,7 +27361,7 @@
       "language_or_format": "json",
       "name": "package_identity_candidate.v0.json",
       "owner": "unknown",
-      "path": "control/schemas/previews/h2/connectors/package_identity_candidate.v0.json",
+      "path": "contracts/control_schemas/previews/h2/connectors/package_identity_candidate.v0.json",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -27381,7 +27381,7 @@
         "context",
         "package"
       ],
-      "command_hint": "review-only command preview for control/schemas/previews/h2/connectors/package_live_probe_output_bundle.v0.json",
+      "command_hint": "review-only command preview for contracts/control_schemas/previews/h2/connectors/package_live_probe_output_bundle.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -27394,7 +27394,7 @@
       "language_or_format": "json",
       "name": "package_live_probe_output_bundle.v0.json",
       "owner": "unknown",
-      "path": "control/schemas/previews/h2/connectors/package_live_probe_output_bundle.v0.json",
+      "path": "contracts/control_schemas/previews/h2/connectors/package_live_probe_output_bundle.v0.json",
       "reasons": [
         "candidate_tool_name_hint",
         "context_hint:pack",
@@ -27414,7 +27414,7 @@
         "context",
         "package"
       ],
-      "command_hint": "review-only command preview for control/schemas/previews/h2/connectors/package_live_probe_request.v0.json",
+      "command_hint": "review-only command preview for contracts/control_schemas/previews/h2/connectors/package_live_probe_request.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -27427,7 +27427,7 @@
       "language_or_format": "json",
       "name": "package_live_probe_request.v0.json",
       "owner": "unknown",
-      "path": "control/schemas/previews/h2/connectors/package_live_probe_request.v0.json",
+      "path": "contracts/control_schemas/previews/h2/connectors/package_live_probe_request.v0.json",
       "reasons": [
         "candidate_tool_name_hint",
         "context_hint:pack",
@@ -27447,7 +27447,7 @@
         "context",
         "package"
       ],
-      "command_hint": "review-only command preview for control/schemas/previews/h2/connectors/package_live_probe_result.v0.json",
+      "command_hint": "review-only command preview for contracts/control_schemas/previews/h2/connectors/package_live_probe_result.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -27460,7 +27460,7 @@
       "language_or_format": "json",
       "name": "package_live_probe_result.v0.json",
       "owner": "unknown",
-      "path": "control/schemas/previews/h2/connectors/package_live_probe_result.v0.json",
+      "path": "contracts/control_schemas/previews/h2/connectors/package_live_probe_result.v0.json",
       "reasons": [
         "candidate_tool_name_hint",
         "context_hint:pack",
@@ -27480,7 +27480,7 @@
         "context",
         "package"
       ],
-      "command_hint": "review-only command preview for control/schemas/previews/h2/connectors/package_normalized_record.v0.json",
+      "command_hint": "review-only command preview for contracts/control_schemas/previews/h2/connectors/package_normalized_record.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -27493,7 +27493,7 @@
       "language_or_format": "json",
       "name": "package_normalized_record.v0.json",
       "owner": "unknown",
-      "path": "control/schemas/previews/h2/connectors/package_normalized_record.v0.json",
+      "path": "contracts/control_schemas/previews/h2/connectors/package_normalized_record.v0.json",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -27513,7 +27513,7 @@
         "context",
         "package"
       ],
-      "command_hint": "review-only command preview for control/schemas/previews/h3/connectors/os_package_connector_health_summary.v0.json",
+      "command_hint": "review-only command preview for contracts/control_schemas/previews/h3/connectors/os_package_connector_health_summary.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -27526,7 +27526,7 @@
       "language_or_format": "json",
       "name": "os_package_connector_health_summary.v0.json",
       "owner": "unknown",
-      "path": "control/schemas/previews/h3/connectors/os_package_connector_health_summary.v0.json",
+      "path": "contracts/control_schemas/previews/h3/connectors/os_package_connector_health_summary.v0.json",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -27546,7 +27546,7 @@
         "context",
         "package"
       ],
-      "command_hint": "review-only command preview for control/schemas/previews/h3/connectors/os_package_dependency_candidate.v0.json",
+      "command_hint": "review-only command preview for contracts/control_schemas/previews/h3/connectors/os_package_dependency_candidate.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -27559,7 +27559,7 @@
       "language_or_format": "json",
       "name": "os_package_dependency_candidate.v0.json",
       "owner": "unknown",
-      "path": "control/schemas/previews/h3/connectors/os_package_dependency_candidate.v0.json",
+      "path": "contracts/control_schemas/previews/h3/connectors/os_package_dependency_candidate.v0.json",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -27579,7 +27579,7 @@
         "context",
         "package"
       ],
-      "command_hint": "review-only command preview for control/schemas/previews/h3/connectors/os_package_file_candidate.v0.json",
+      "command_hint": "review-only command preview for contracts/control_schemas/previews/h3/connectors/os_package_file_candidate.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -27592,7 +27592,7 @@
       "language_or_format": "json",
       "name": "os_package_file_candidate.v0.json",
       "owner": "unknown",
-      "path": "control/schemas/previews/h3/connectors/os_package_file_candidate.v0.json",
+      "path": "contracts/control_schemas/previews/h3/connectors/os_package_file_candidate.v0.json",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -27612,7 +27612,7 @@
         "context",
         "package"
       ],
-      "command_hint": "review-only command preview for control/schemas/previews/h3/connectors/os_package_identity_candidate.v0.json",
+      "command_hint": "review-only command preview for contracts/control_schemas/previews/h3/connectors/os_package_identity_candidate.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -27625,7 +27625,7 @@
       "language_or_format": "json",
       "name": "os_package_identity_candidate.v0.json",
       "owner": "unknown",
-      "path": "control/schemas/previews/h3/connectors/os_package_identity_candidate.v0.json",
+      "path": "contracts/control_schemas/previews/h3/connectors/os_package_identity_candidate.v0.json",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -27645,7 +27645,7 @@
         "context",
         "package"
       ],
-      "command_hint": "review-only command preview for control/schemas/previews/h3/connectors/os_package_live_probe_output_bundle.v0.json",
+      "command_hint": "review-only command preview for contracts/control_schemas/previews/h3/connectors/os_package_live_probe_output_bundle.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -27658,7 +27658,7 @@
       "language_or_format": "json",
       "name": "os_package_live_probe_output_bundle.v0.json",
       "owner": "unknown",
-      "path": "control/schemas/previews/h3/connectors/os_package_live_probe_output_bundle.v0.json",
+      "path": "contracts/control_schemas/previews/h3/connectors/os_package_live_probe_output_bundle.v0.json",
       "reasons": [
         "candidate_tool_name_hint",
         "context_hint:pack",
@@ -27678,7 +27678,7 @@
         "context",
         "package"
       ],
-      "command_hint": "review-only command preview for control/schemas/previews/h3/connectors/os_package_live_probe_request.v0.json",
+      "command_hint": "review-only command preview for contracts/control_schemas/previews/h3/connectors/os_package_live_probe_request.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -27691,7 +27691,7 @@
       "language_or_format": "json",
       "name": "os_package_live_probe_request.v0.json",
       "owner": "unknown",
-      "path": "control/schemas/previews/h3/connectors/os_package_live_probe_request.v0.json",
+      "path": "contracts/control_schemas/previews/h3/connectors/os_package_live_probe_request.v0.json",
       "reasons": [
         "candidate_tool_name_hint",
         "context_hint:pack",
@@ -27711,7 +27711,7 @@
         "context",
         "package"
       ],
-      "command_hint": "review-only command preview for control/schemas/previews/h3/connectors/os_package_live_probe_result.v0.json",
+      "command_hint": "review-only command preview for contracts/control_schemas/previews/h3/connectors/os_package_live_probe_result.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -27724,7 +27724,7 @@
       "language_or_format": "json",
       "name": "os_package_live_probe_result.v0.json",
       "owner": "unknown",
-      "path": "control/schemas/previews/h3/connectors/os_package_live_probe_result.v0.json",
+      "path": "contracts/control_schemas/previews/h3/connectors/os_package_live_probe_result.v0.json",
       "reasons": [
         "candidate_tool_name_hint",
         "context_hint:pack",
@@ -27744,7 +27744,7 @@
         "context",
         "package"
       ],
-      "command_hint": "review-only command preview for control/schemas/previews/h3/connectors/os_package_normalized_record.v0.json",
+      "command_hint": "review-only command preview for contracts/control_schemas/previews/h3/connectors/os_package_normalized_record.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -27757,7 +27757,7 @@
       "language_or_format": "json",
       "name": "os_package_normalized_record.v0.json",
       "owner": "unknown",
-      "path": "control/schemas/previews/h3/connectors/os_package_normalized_record.v0.json",
+      "path": "contracts/control_schemas/previews/h3/connectors/os_package_normalized_record.v0.json",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -27776,7 +27776,7 @@
       "capability_families": [
         "release"
       ],
-      "command_hint": "review-only command preview for control/schemas/previews/h4/connectors/release_asset_candidate.v0.json",
+      "command_hint": "review-only command preview for contracts/control_schemas/previews/h4/connectors/release_asset_candidate.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -27789,7 +27789,7 @@
       "language_or_format": "json",
       "name": "release_asset_candidate.v0.json",
       "owner": "unknown",
-      "path": "control/schemas/previews/h4/connectors/release_asset_candidate.v0.json",
+      "path": "contracts/control_schemas/previews/h4/connectors/release_asset_candidate.v0.json",
       "reasons": [
         "candidate_tool_name_hint",
         "high_risk_hint:release",
@@ -27807,7 +27807,7 @@
       "capability_families": [
         "release"
       ],
-      "command_hint": "review-only command preview for control/schemas/previews/h4/connectors/release_identity_candidate.v0.json",
+      "command_hint": "review-only command preview for contracts/control_schemas/previews/h4/connectors/release_identity_candidate.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -27820,7 +27820,7 @@
       "language_or_format": "json",
       "name": "release_identity_candidate.v0.json",
       "owner": "unknown",
-      "path": "control/schemas/previews/h4/connectors/release_identity_candidate.v0.json",
+      "path": "contracts/control_schemas/previews/h4/connectors/release_identity_candidate.v0.json",
       "reasons": [
         "candidate_tool_name_hint",
         "high_risk_hint:release",
@@ -27838,7 +27838,7 @@
       "capability_families": [
         "install"
       ],
-      "command_hint": "review-only command preview for control/schemas/previews/h8/connectors/install_requirement_claim_candidate.v0.json",
+      "command_hint": "review-only command preview for contracts/control_schemas/previews/h8/connectors/install_requirement_claim_candidate.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -27851,7 +27851,7 @@
       "language_or_format": "json",
       "name": "install_requirement_claim_candidate.v0.json",
       "owner": "unknown",
-      "path": "control/schemas/previews/h8/connectors/install_requirement_claim_candidate.v0.json",
+      "path": "contracts/control_schemas/previews/h8/connectors/install_requirement_claim_candidate.v0.json",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -27869,7 +27869,7 @@
       "capability_families": [
         "release"
       ],
-      "command_hint": "review-only command preview for control/schemas/previews/h9/connectors/music_work_recording_release_candidate.v0.json",
+      "command_hint": "review-only command preview for contracts/control_schemas/previews/h9/connectors/music_work_recording_release_candidate.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -27882,7 +27882,7 @@
       "language_or_format": "json",
       "name": "music_work_recording_release_candidate.v0.json",
       "owner": "unknown",
-      "path": "control/schemas/previews/h9/connectors/music_work_recording_release_candidate.v0.json",
+      "path": "contracts/control_schemas/previews/h9/connectors/music_work_recording_release_candidate.v0.json",
       "reasons": [
         "candidate_tool_name_hint",
         "high_risk_hint:release",
@@ -27900,7 +27900,7 @@
       "capability_families": [
         "release"
       ],
-      "command_hint": "review-only command preview for control/schemas/previews/native/native_release_candidate_preview.v0.json",
+      "command_hint": "review-only command preview for contracts/control_schemas/previews/native/native_release_candidate_preview.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -27913,7 +27913,7 @@
       "language_or_format": "json",
       "name": "native_release_candidate_preview.v0.json",
       "owner": "unknown",
-      "path": "control/schemas/previews/native/native_release_candidate_preview.v0.json",
+      "path": "contracts/control_schemas/previews/native/native_release_candidate_preview.v0.json",
       "reasons": [
         "candidate_tool_name_hint",
         "high_risk_hint:release",
@@ -27931,7 +27931,7 @@
       "capability_families": [
         "context"
       ],
-      "command_hint": "review-only command preview for control/schemas/previews/packs/pack_import_preview.v0.json",
+      "command_hint": "review-only command preview for contracts/control_schemas/previews/packs/pack_import_preview.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -27944,7 +27944,7 @@
       "language_or_format": "json",
       "name": "pack_import_preview.v0.json",
       "owner": "unknown",
-      "path": "control/schemas/previews/packs/pack_import_preview.v0.json",
+      "path": "contracts/control_schemas/previews/packs/pack_import_preview.v0.json",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -27963,7 +27963,7 @@
         "context",
         "package"
       ],
-      "command_hint": "review-only command preview for control/schemas/tasks/h2/connectors/package_next_phase_recommendation.v0.json",
+      "command_hint": "review-only command preview for contracts/control_schemas/tasks/h2/connectors/package_next_phase_recommendation.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -27976,7 +27976,7 @@
       "language_or_format": "json",
       "name": "package_next_phase_recommendation.v0.json",
       "owner": "unknown",
-      "path": "control/schemas/tasks/h2/connectors/package_next_phase_recommendation.v0.json",
+      "path": "contracts/control_schemas/tasks/h2/connectors/package_next_phase_recommendation.v0.json",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -27996,7 +27996,7 @@
         "context",
         "package"
       ],
-      "command_hint": "review-only command preview for control/schemas/tasks/h3/connectors/os_package_next_phase_recommendation.v0.json",
+      "command_hint": "review-only command preview for contracts/control_schemas/tasks/h3/connectors/os_package_next_phase_recommendation.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -28009,7 +28009,7 @@
       "language_or_format": "json",
       "name": "os_package_next_phase_recommendation.v0.json",
       "owner": "unknown",
-      "path": "control/schemas/tasks/h3/connectors/os_package_next_phase_recommendation.v0.json",
+      "path": "contracts/control_schemas/tasks/h3/connectors/os_package_next_phase_recommendation.v0.json",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -28152,7 +28152,7 @@
       "capability_families": [
         "build"
       ],
-      "command_hint": "review-only command preview for data/public_index/build_manifest.json",
+      "command_hint": "review-only command preview for site/dist/data/public_index/build_manifest.json",
       "docs_refs": [
         "control/audits/public-search-runtime-integration-audit-v0/PUBLIC_INDEX_STATUS.md",
         "control/audits/search-result-explanation-runtime-planning-v0/PUBLIC_INDEX_AND_RESULT_ENVELOPE_GATE_REVIEW.md"
@@ -28168,7 +28168,7 @@
       "language_or_format": "json",
       "name": "build_manifest.json",
       "owner": "unknown",
-      "path": "data/public_index/build_manifest.json",
+      "path": "site/dist/data/public_index/build_manifest.json",
       "reasons": [
         "build_hint:build",
         "candidate_capability_can_be_future_wrapped",
@@ -28186,7 +28186,7 @@
       "capability_families": [
         "validate"
       ],
-      "command_hint": "review-only command preview for data/public_index/checksums.sha256",
+      "command_hint": "review-only command preview for site/dist/data/public_index/checksums.sha256",
       "docs_refs": [
         "control/audits/local-02-instance-configuration-migration-guard-v0/validation.md",
         "control/audits/public-search-runtime-integration-audit-v0/PUBLIC_INDEX_STATUS.md",
@@ -28204,7 +28204,7 @@
       "language_or_format": "sha256",
       "name": "checksums.sha256",
       "owner": "unknown",
-      "path": "data/public_index/checksums.sha256",
+      "path": "site/dist/data/public_index/checksums.sha256",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -60222,7 +60222,7 @@
         "control/audits/source-sync-worker-contract-v0/COMMAND_RESULTS.md",
         "control/audits/static-site-search-integration-v0/COMMAND_RESULTS.md",
         "control/audits/wayback-cdx-memento-connector-approval-v0/COMMAND_RESULTS.md",
-        "deploy/README.md",
+        "docs/operations/hosting/render_deployment.md",
         "docs/BOOTSTRAP_STATUS.md",
         "docs/DECISIONS.md",
         "docs/OPEN_QUESTIONS.md",

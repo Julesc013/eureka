@@ -18,7 +18,6 @@ must_not_own = ["content_payloads", "runtime_implementations", "generated_runtim
 root = "runtime"
 owns = ["python_reference_backend", "kernel_behavior", "runtime_services", "gateway", "connectors", "stores"]
 must_not_own = ["surface_presentation_templates", "native_project_authority", "canonical_contract_authority"]
-transitional_debt = ["runtime/local_workbench"]
 
 [[ownership]]
 root = "surfaces"
@@ -61,7 +60,6 @@ must_not_own = ["product_runtime_library_code", "user_facing_app_authority"]
 root = "scripts"
 owns = ["thin_wrappers", "command_entrypoints"]
 must_not_own = ["substantive_tool_implementation_long_term", "product_runtime_library_code"]
-transitional_debt = ["scripts"]
 
 [[ownership]]
 root = "release"

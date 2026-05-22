@@ -28,7 +28,7 @@ class SiteDistNoMutationTests(unittest.TestCase):
     def test_public_index_is_canonical_generated(self) -> None:
         module = load_module(CLEANLINESS_SCRIPT, "check_generated_artifact_cleanliness")
         policy = json.loads(POLICY.read_text(encoding="utf-8"))
-        self.assertEqual("canonical_generated", module.classify_path("data/public_index/search_documents.ndjson", policy))
+        self.assertEqual("canonical_generated", module.classify_path("site/dist/data/public_index/search_documents.ndjson", policy))
 
     def test_audit_generated_output_is_not_site_dist(self) -> None:
         module = load_module(CLEANLINESS_SCRIPT, "check_generated_artifact_cleanliness")

@@ -30,15 +30,15 @@
     "durable_store_contract": "contracts/stores/",
     "connector_interface_contract": "contracts/connectors/",
     "source_policy_contract": "contracts/connectors/",
-    "control_schema": "control/schemas/policies/",
-    "audit_schema": "control/schemas/audits/",
-    "fixture_schema": "control/schemas/fixtures/",
-    "preview_schema": "control/schemas/previews/",
-    "validator_schema": "control/schemas/validators/",
-    "task_queue_schema": "control/schemas/tasks/",
-    "generated_scaffold_schema": "control/schemas/deprecated/",
-    "deprecated_schema": "control/schemas/deprecated/",
-    "unknown": "control/schemas/deprecated/"
+    "control_schema": "contracts/control_schemas/policies/",
+    "audit_schema": "contracts/control_schemas/audits/",
+    "fixture_schema": "contracts/control_schemas/fixtures/",
+    "preview_schema": "contracts/control_schemas/previews/",
+    "validator_schema": "contracts/control_schemas/validators/",
+    "task_queue_schema": "contracts/control_schemas/tasks/",
+    "generated_scaffold_schema": "contracts/control_schemas/deprecated/",
+    "deprecated_schema": "contracts/control_schemas/deprecated/",
+    "unknown": "contracts/control_schemas/deprecated/"
   },
   "classification_rules": [
     {
@@ -83,7 +83,7 @@
     "may describe audits, fixtures, previews, validators, task queues, and operating policies",
     "must not be treated as product runtime truth",
     "must preserve enough provenance for validators and audit packs to keep working",
-    "must have an explicit target root under control/schemas when moved out of contracts"
+    "must have an explicit target root under contracts/control_schemas when moved out of contracts"
   ],
   "forbidden_product_contract_signals": [
     "h0",
@@ -125,7 +125,7 @@
     },
     {
       "rule": "move_control_schemas_to_control",
-      "description": "Audit, fixture, preview, validator, task queue, generated scaffold, and deprecated schemas move to control/schemas target roots."
+      "description": "Audit, fixture, preview, validator, task queue, generated scaffold, and deprecated schemas move to contracts/control_schemas target roots."
     },
     {
       "rule": "preserve_compatibility",

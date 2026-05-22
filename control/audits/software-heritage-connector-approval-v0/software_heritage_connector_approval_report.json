@@ -1523,7 +1523,7 @@
       "status": "passed",
       "exit_code": 0,
       "duration_seconds": 0.265,
-      "summary": "Public Search Index validation\nstatus: valid\nindex_root: data/public_index\ndocument_count: 584\nprivate_paths_detected: False"
+      "summary": "Public Search Index validation\nstatus: valid\nindex_root: site/dist/data/public_index\ndocument_count: 584\nprivate_paths_detected: False"
     },
     {
       "label": "Hosted public search wrapper validator",
@@ -1635,7 +1635,7 @@
       "status": "passed",
       "exit_code": 0,
       "duration_seconds": 0.483,
-      "summary": "Public Search Index Builder v0\nstatus: valid\noutput_root: data/public_index\ndocument_count: 584\nfts5_available: True\nfts5_enabled: False\nfallback_enabled: True"
+      "summary": "Public Search Index Builder v0\nstatus: valid\noutput_root: site/dist/data/public_index\ndocument_count: 584\nfts5_available: True\nfts5_enabled: False\nfallback_enabled: True"
     },
     {
       "label": "Static site build check",

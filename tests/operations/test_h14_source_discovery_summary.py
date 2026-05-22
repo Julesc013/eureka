@@ -30,7 +30,7 @@ class H14SourceDiscoverySummaryTests(unittest.TestCase):
     def test_summary_refuses_forbidden_output_roots(self) -> None:
         for args in (
             ["scripts/summarize_h14_source_discovery_sources.py", "--output", "site/dist/h14.json"],
-            ["scripts/summarize_h14_source_discovery_sources.py", "--output", "data/public_index/h14.json"],
+            ["scripts/summarize_h14_source_discovery_sources.py", "--output", "site/dist/data/public_index/h14.json"],
             ["scripts/summarize_h14_source_discovery_sources.py", "--output", "source_registry_mutation/h14.json"],
             ["scripts/summarize_h14_source_discovery_sources.py", "--output", "pack_import_staging/h14.json"],
         ):

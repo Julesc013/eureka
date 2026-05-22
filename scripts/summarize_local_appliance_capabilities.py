@@ -1,86 +1,31 @@
-#!/usr/bin/env python3
-"""Summarize the LOCAL-14 capability matrix."""
-
 from __future__ import annotations
 
-import argparse
-import json
-import sys
+EUREKA_SCRIPT_COMPAT_WRAPPER = True
+
+from importlib.util import module_from_spec, spec_from_file_location
 from pathlib import Path
-from typing import Any, Mapping, Sequence, TextIO
+import runpy
+import sys
 
+sys.dont_write_bytecode = True
+_TARGET = Path(__file__).resolve().parents[1] / 'tools/reporters/summarize_local_appliance_capabilities.py'
+_TARGET_PARENT = str(_TARGET.parent)
+if _TARGET_PARENT not in sys.path:
+    sys.path.insert(0, _TARGET_PARENT)
+_SPEC = spec_from_file_location(f"_eureka_tool_{Path(__file__).stem}", _TARGET)
+if _SPEC is None or _SPEC.loader is None:
+    raise ImportError(f"Unable to load tool implementation: {_TARGET}")
+_MODULE = module_from_spec(_SPEC)
+sys.modules[_SPEC.name] = _MODULE
+_SPEC.loader.exec_module(_MODULE)
 
-REPO_ROOT = Path(__file__).resolve().parents[1]
-
-
-def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout) -> int:
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--repo-root", default=str(REPO_ROOT))
-    parser.add_argument("--closeout", default="control/inventory/local_appliance_closeout_result.json")
-    parser.add_argument("--capabilities", default="control/inventory/local_appliance_capability_matrix.json")
-    parser.add_argument("--output")
-    parser.add_argument("--json", action="store_true")
-    args = parser.parse_args(argv)
-
-    root = Path(args.repo_root).resolve()
-    payload = build_summary(load_json(root / args.closeout), load_json(root / args.capabilities))
-    if args.output:
-        output = Path(args.output)
-        output.parent.mkdir(parents=True, exist_ok=True)
-        output.write_text(build_markdown_summary(payload), encoding="utf-8")
-    if args.json:
-        print(json.dumps(payload, indent=2, sort_keys=True), file=stdout)
-    else:
-        print(build_markdown_summary(payload), file=stdout)
-    return 0
-
-
-def build_summary(closeout: Mapping[str, Any], capabilities: Mapping[str, Any]) -> dict[str, Any]:
-    rows = list(capabilities.get("capabilities", []))
-    implemented = [row["capability_id"] for row in rows if row.get("implemented")]
-    missing = [row["capability_id"] for row in rows if not row.get("implemented")]
-    return {
-        "schema_version": "local_appliance_capability_summary.v0",
-        "task": "LOCAL-14",
-        "status": closeout.get("status", "unknown"),
-        "implemented_count": len(implemented),
-        "missing_count": len(missing),
-        "implemented_capabilities": implemented,
-        "missing_capabilities": missing,
-        "recommended_next_task": closeout.get("recommended_next_task", ""),
-        "production_readiness_claimed": False,
-        "public_launch_readiness_claimed": False,
-    }
-
-
-def build_markdown_summary(payload: Mapping[str, Any]) -> str:
-    lines = [
-        "# Local Appliance Capability Summary",
-        "",
-        f"Status: {payload.get('status')}",
-        f"Implemented capabilities: {payload.get('implemented_count')}",
-        f"Missing capabilities: {payload.get('missing_count')}",
-        f"Recommended next task: {payload.get('recommended_next_task')}",
-        "",
-        "This summary is a LOCAL closeout record, not a production or public launch claim.",
-        "",
-        "## Implemented",
-    ]
-    for item in payload.get("implemented_capabilities", []):
-        lines.append(f"- {item}")
-    if payload.get("missing_capabilities"):
-        lines.append("")
-        lines.append("## Missing")
-        for item in payload.get("missing_capabilities", []):
-            lines.append(f"- {item}")
-    return "\n".join(lines) + "\n"
-
-
-def load_json(path: Path) -> dict[str, Any]:
-    if not path.is_file():
-        return {}
-    return json.loads(path.read_text(encoding="utf-8"))
-
-
-if __name__ == "__main__":
-    raise SystemExit(main())
+for _name, _value in vars(_MODULE).items():
+    if _name not in {"__name__", "__loader__", "__package__", "__spec__"}:
+        globals()[_name] = _value
+if __name__ != "__main__":
+    sys.modules[__name__] = _MODULE
+else:
+    sys.argv[0] = str(_TARGET)
+    if hasattr(_MODULE, "main"):
+        raise SystemExit(_MODULE.main())
+    runpy.run_path(str(_TARGET), run_name="__main__")

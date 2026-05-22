@@ -29,7 +29,7 @@ class CandidateIndexContractValidatorTests(unittest.TestCase):
         )
         report = json.loads(completed.stdout)
         self.assertEqual(report["status"], "valid")
-        self.assertEqual(report["contract_file"], "control/schemas/previews/query/candidate_index_record.v0.json")
+        self.assertEqual(report["contract_file"], "contracts/control_schemas/previews/query/candidate_index_record.v0.json")
         self.assertEqual(report["example_count"], 4)
 
 

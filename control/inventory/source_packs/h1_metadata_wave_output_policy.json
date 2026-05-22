@@ -30,5 +30,5 @@
     "production_readiness_claim"
   ],
   "allowed_output_roots": ["control/audits/**/generated/", "examples/", "explicit temp test directory"],
-  "forbidden_output_roots": ["site/dist/", "data/public_index/", "runtime/", "contracts/", "master-index roots", "local private roots"]
+  "forbidden_output_roots": ["site/dist/", "site/dist/data/public_index/", "runtime/", "contracts/", "master-index roots", "local private roots"]
 }

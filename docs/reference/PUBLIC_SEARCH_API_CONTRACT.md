@@ -256,7 +256,7 @@ search or the master index.
 
 Public Search Index Builder v0 now supplies the preferred local_index_only
 input bundle for the current local/prototype public-search runtime. The bundle
-lives under `data/public_index` and contains public-safe JSON/NDJSON documents,
+lives under `site/dist/data/public_index` and contains public-safe JSON/NDJSON documents,
 source coverage, stats, and checksums generated from controlled repo fixtures
 and recorded metadata only. Public requests still cannot choose an index path,
 store root, local path, URL, live source, or credential. Missing or stale index
@@ -316,7 +316,7 @@ records.
 
 ## P63 Probe Queue Boundary
 
-P63 adds `control/schemas/tasks/query/probe_queue_item.v0.json` for future policy-gated
+P63 adds `contracts/control_schemas/tasks/query/probe_queue_item.v0.json` for future policy-gated
 probe planning. Public search routes remain unchanged: they do not create queue
 items, persist queue state, execute probes, call live sources, mutate source
 caches, mutate evidence ledgers, mutate candidate indexes, or mutate

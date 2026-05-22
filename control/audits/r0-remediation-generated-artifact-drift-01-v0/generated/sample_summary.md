@@ -2,8 +2,8 @@ Generated artifact drift audit
 status: partial
 drift_detected: True
 drift_paths: 24
-- data/public_index/checksums.sha256 [canonical_generated, modified]
-- data/public_index/search_documents.ndjson [canonical_generated, modified]
+- site/dist/data/public_index/checksums.sha256 [canonical_generated, modified]
+- site/dist/data/public_index/search_documents.ndjson [canonical_generated, modified]
 - examples/demand_dashboard/minimal_dashboard_snapshot_v0/CHECKSUMS.SHA256 [fixture_generated, modified]
 - examples/demand_dashboard/minimal_source_gap_dashboard_v0/CHECKSUMS.SHA256 [fixture_generated, modified]
 - site/dist/.eureka-static-site-generated [deployment_generated, modified]

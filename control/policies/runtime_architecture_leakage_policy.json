@@ -21,8 +21,10 @@
     "control/audits/**",
     "control/inventory/**",
     "control/policies/**",
+    "contracts/control_schemas/**",
     "docs/operations/**",
     "examples/**",
+    "site/dist/data/public_index/**",
     "tests/**",
     "scripts/audit_*.py",
     "scripts/validate_*.py"
@@ -123,6 +125,11 @@
       "reason": "Policy files define and document forbidden vocabulary."
     },
     {
+      "path": "contracts/control_schemas/**",
+      "terms": ["*"],
+      "reason": "Migrated control-schema authority may retain governance, audit, fixture, preview, task, and validator vocabulary."
+    },
+    {
       "path": "docs/operations/**",
       "terms": ["*"],
       "reason": "Operations docs may discuss task gates and audit vocabulary."
@@ -131,6 +138,11 @@
       "path": "examples/**",
       "terms": ["*"],
       "reason": "Examples may retain fixture/test vocabulary outside production paths."
+    },
+    {
+      "path": "site/dist/data/public_index/**",
+      "terms": ["*"],
+      "reason": "Canonical generated public-index artifacts are validated by public-search validators, not runtime vocabulary leakage policy."
     },
     {
       "path": "tests/**",

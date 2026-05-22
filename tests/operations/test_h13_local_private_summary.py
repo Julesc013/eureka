@@ -30,7 +30,7 @@ class H13LocalPrivateSummaryTests(unittest.TestCase):
     def test_summary_refuses_forbidden_output_roots(self) -> None:
         for args in (
             ["scripts/summarize_h13_local_private_sources.py", "--output", "site/dist/h13.json"],
-            ["scripts/summarize_h13_local_private_sources.py", "--output", "data/public_index/h13.json"],
+            ["scripts/summarize_h13_local_private_sources.py", "--output", "site/dist/data/public_index/h13.json"],
         ):
             proc = run_cmd(args)
             self.assertNotEqual(0, proc.returncode)

@@ -1,57 +1,31 @@
-#!/usr/bin/env python3
-"""Check a public alpha deployment plan remains planning-only."""
-
 from __future__ import annotations
 
-import argparse
-import json
-import sys
+EUREKA_SCRIPT_COMPAT_WRAPPER = True
+
+from importlib.util import module_from_spec, spec_from_file_location
 from pathlib import Path
-from typing import Any
+import runpy
+import sys
 
-REPO_ROOT = Path(__file__).resolve().parents[1]
-if str(REPO_ROOT) not in sys.path:
-    sys.path.insert(0, str(REPO_ROOT))
+sys.dont_write_bytecode = True
+_TARGET = Path(__file__).resolve().parents[1] / 'tools/release/check_public_alpha_deployment_plan.py'
+_TARGET_PARENT = str(_TARGET.parent)
+if _TARGET_PARENT not in sys.path:
+    sys.path.insert(0, _TARGET_PARENT)
+_SPEC = spec_from_file_location(f"_eureka_tool_{Path(__file__).stem}", _TARGET)
+if _SPEC is None or _SPEC.loader is None:
+    raise ImportError(f"Unable to load tool implementation: {_TARGET}")
+_MODULE = module_from_spec(_SPEC)
+sys.modules[_SPEC.name] = _MODULE
+_SPEC.loader.exec_module(_MODULE)
 
-from scripts.validate_public_alpha_deployment_plan import detect_forbidden_deployment_claims
-
-
-def main() -> int:
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--input", default="examples/hosting/deployment/public_alpha_deployment_plan_v0.json")
-    parser.add_argument("--check", action="store_true")
-    parser.add_argument("--json", action="store_true")
-    args = parser.parse_args()
-    payload = _load(args.input)
-    errors = check_plan(payload)
-    result = {"schema_version": "public_alpha_deployment_plan_check.v0", "status": "fail" if errors else "pass", "errors": errors}
-    if args.json:
-        print(json.dumps(result, indent=2, sort_keys=True))
-    elif args.check:
-        print(f"Public alpha deployment plan check status: {result['status']}")
-    else:
-        print(json.dumps(result, indent=2, sort_keys=True))
-    return 0 if result["status"] == "pass" else 1
-
-
-def check_plan(payload: dict[str, Any]) -> list[str]:
-    errors = detect_forbidden_deployment_claims(payload, "plan")
-    if payload.get("plan_status") not in {"planning_only", "operator_review_required", "blocked"}:
-        errors.append("plan status must remain current planning-only/operator-gated.")
-    for step in payload.get("deployment_steps", []):
-        if step.get("external_provider_action") is not False:
-            errors.append(f"{step.get('step_id')}: external provider action must be false current.")
-        if step.get("secret_required") is not False:
-            errors.append(f"{step.get('step_id')}: secret_required must be false current.")
-    return errors
-
-
-def _load(value: str) -> dict[str, Any]:
-    path = Path(value)
-    if not path.is_absolute():
-        path = REPO_ROOT / path
-    return json.loads(path.read_text(encoding="utf-8"))
-
-
-if __name__ == "__main__":
-    raise SystemExit(main())
+for _name, _value in vars(_MODULE).items():
+    if _name not in {"__name__", "__loader__", "__package__", "__spec__"}:
+        globals()[_name] = _value
+if __name__ != "__main__":
+    sys.modules[__name__] = _MODULE
+else:
+    sys.argv[0] = str(_TARGET)
+    if hasattr(_MODULE, "main"):
+        raise SystemExit(_MODULE.main())
+    runpy.run_path(str(_TARGET), run_name="__main__")

@@ -1,42 +1,31 @@
-#!/usr/bin/env python3
-"""Validate public alpha blocked request reports."""
-
 from __future__ import annotations
 
-import argparse
-import json
-import sys
+EUREKA_SCRIPT_COMPAT_WRAPPER = True
+
+from importlib.util import module_from_spec, spec_from_file_location
 from pathlib import Path
+import runpy
+import sys
 
-REPO_ROOT = Path(__file__).resolve().parents[1]
-if str(REPO_ROOT) not in sys.path:
-    sys.path.insert(0, str(REPO_ROOT))
+sys.dont_write_bytecode = True
+_TARGET = Path(__file__).resolve().parents[1] / 'tools/release/check_public_alpha_blocked_requests.py'
+_TARGET_PARENT = str(_TARGET.parent)
+if _TARGET_PARENT not in sys.path:
+    sys.path.insert(0, _TARGET_PARENT)
+_SPEC = spec_from_file_location(f"_eureka_tool_{Path(__file__).stem}", _TARGET)
+if _SPEC is None or _SPEC.loader is None:
+    raise ImportError(f"Unable to load tool implementation: {_TARGET}")
+_MODULE = module_from_spec(_SPEC)
+sys.modules[_SPEC.name] = _MODULE
+_SPEC.loader.exec_module(_MODULE)
 
-from runtime.hosting.blocked_requests import validate_blocked_request_report
-
-
-def main() -> int:
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--input", default="examples/hosting/blocked_requests")
-    parser.add_argument("--check", action="store_true")
-    parser.add_argument("--json", action="store_true")
-    args = parser.parse_args()
-    root = REPO_ROOT / args.input
-    files = sorted(root.rglob("*.json")) if root.is_dir() else [root]
-    errors: list[str] = []
-    for path in files:
-        payload = json.loads(path.read_text(encoding="utf-8"))
-        report = validate_blocked_request_report(payload, {})
-        errors.extend(f"{path.relative_to(REPO_ROOT).as_posix()}: {error}" for error in report["errors"])
-    result = {"schema_version": "public_alpha_blocked_request_check.v0", "status": "fail" if errors else "pass", "checked": len(files), "errors": errors}
-    if args.json:
-        print(json.dumps(result, indent=2, sort_keys=True))
-    else:
-        print(f"Public alpha blocked requests status: {result['status']}")
-        for error in errors:
-            print(f"ERROR: {error}")
-    return 0 if result["status"] == "pass" else 1
-
-
-if __name__ == "__main__":
-    raise SystemExit(main())
+for _name, _value in vars(_MODULE).items():
+    if _name not in {"__name__", "__loader__", "__package__", "__spec__"}:
+        globals()[_name] = _value
+if __name__ != "__main__":
+    sys.modules[__name__] = _MODULE
+else:
+    sys.argv[0] = str(_TARGET)
+    if hasattr(_MODULE, "main"):
+        raise SystemExit(_MODULE.main())
+    runpy.run_path(str(_TARGET), run_name="__main__")

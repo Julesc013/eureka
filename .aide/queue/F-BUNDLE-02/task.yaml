@@ -37,7 +37,7 @@ allowed_paths:
   - control/audits/f-bundle-02-extraction-candidate-search-integration-v0/**
 forbidden_paths:
   - site/**
-  - data/public_index/**
+  - site/dist/data/public_index/**
   - data/master_index/**
   - master_index/**
   - control/inventory/publication/**

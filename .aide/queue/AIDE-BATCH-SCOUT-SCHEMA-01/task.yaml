@@ -10,7 +10,7 @@ allowed_paths:
   - contracts/workbench/**
   - contracts/view_models/**
   - runtime/local_eval/**
-  - runtime/local_workbench/**
+  - surfaces/web/workbench/local_html/**
   - runtime/local_service/**
   - examples/scout/**
   - examples/domain/**
@@ -91,7 +91,7 @@ forbidden_paths:
   - secrets/**
   - .env
   - site/dist/**
-  - data/public_index/**
+  - site/dist/data/public_index/**
   - runtime/connectors/**
   - runtime/extraction/**
   - runtime/search_quality/**

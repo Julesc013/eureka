@@ -44,7 +44,7 @@ class H9MediaMetadataFixtureScriptTests(unittest.TestCase):
     def test_scripts_refuse_forbidden_roots(self) -> None:
         commands = [
             [sys.executable, "scripts/normalize_h9_media_metadata_fixture.py", "--source-id", "musicbrainz", "--input", "examples/connectors/h9_media_metadata/fixtures/musicbrainz/music_identity_record.json", "--output", "site/dist/h9.json"],
-            [sys.executable, "scripts/normalize_h9_media_metadata_fixture.py", "--source-id", "musicbrainz", "--input", "examples/connectors/h9_media_metadata/fixtures/musicbrainz/music_identity_record.json", "--output", "data/public_index/h9.json"],
+            [sys.executable, "scripts/normalize_h9_media_metadata_fixture.py", "--source-id", "musicbrainz", "--input", "examples/connectors/h9_media_metadata/fixtures/musicbrainz/music_identity_record.json", "--output", "site/dist/data/public_index/h9.json"],
             [sys.executable, "scripts/normalize_h9_media_metadata_fixture.py", "--source-id", "musicbrainz", "--input", "examples/connectors/h9_media_metadata/fixtures/musicbrainz/music_identity_record.json", "--output", "media_downloads/h9.json"],
             [sys.executable, "scripts/normalize_h9_media_metadata_fixture.py", "--source-id", "musicbrainz", "--input", "examples/connectors/h9_media_metadata/fixtures/musicbrainz/music_identity_record.json", "--output", "media_uploads/h9.json"],
             [sys.executable, "scripts/normalize_h9_media_metadata_fixture.py", "--source-id", "musicbrainz", "--input", "examples/connectors/h9_media_metadata/fixtures/musicbrainz/music_identity_record.json", "--output", "fingerprint_cache/h9.json"],

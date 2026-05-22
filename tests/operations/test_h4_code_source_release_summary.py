@@ -62,7 +62,7 @@ class H4CodeSourceReleaseSummaryTests(unittest.TestCase):
         self.assertIn("refusing forbidden output root", result.stdout)
 
     def test_summary_script_refuses_data_public_index_output(self):
-        result = run_cmd(["scripts/summarize_h4_code_source_release_sources.py", "--output", "data/public_index/h4-summary.json"])
+        result = run_cmd(["scripts/summarize_h4_code_source_release_sources.py", "--output", "site/dist/data/public_index/h4-summary.json"])
         self.assertNotEqual(result.returncode, 0)
         self.assertIn("refusing forbidden output root", result.stdout)
 

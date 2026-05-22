@@ -82,7 +82,7 @@ class ProductContractTreeTests(unittest.TestCase):
             root = Path(temp)
             write_reference_result(root)
             (root / "control/inventory/r0_03b_1_migration_result.json").write_text(
-                json.dumps({"moved": [{"source_path": "contracts/a.v0.json", "target_path": "control/schemas/a.v0.json"}]}),
+                json.dumps({"moved": [{"source_path": "contracts/a.v0.json", "target_path": "contracts/control_schemas/a.v0.json"}]}),
                 encoding="utf-8",
             )
             with mock.patch.object(

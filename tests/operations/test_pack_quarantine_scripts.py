@@ -44,7 +44,7 @@ class PackQuarantineScriptTests(unittest.TestCase):
         self.assertIn("refusing forbidden output root", result.stdout + result.stderr)
 
     def test_scripts_refuse_data_public_index_output(self) -> None:
-        result = self.run_cmd("scripts/verify_local_pack_fixity.py", "--input", "examples/pack_exports/evidence_pack_export_v0.json", "--output", "data/public_index/fixity.json")
+        result = self.run_cmd("scripts/verify_local_pack_fixity.py", "--input", "examples/pack_exports/evidence_pack_export_v0.json", "--output", "site/dist/data/public_index/fixity.json")
         self.assertNotEqual(result.returncode, 0)
         self.assertIn("refusing forbidden output root", result.stdout + result.stderr)
 

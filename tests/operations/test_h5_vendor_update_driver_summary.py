@@ -59,7 +59,7 @@ class H5VendorUpdateDriverSummaryTests(unittest.TestCase):
             self.assertIn("H5 Vendor Update Driver", markdown.read_text(encoding="utf-8"))
 
     def test_cli_refuses_forbidden_output_roots(self) -> None:
-        for rel in ("site/dist/h5-summary.json", "data/public_index/h5-summary.json"):
+        for rel in ("site/dist/h5-summary.json", "site/dist/data/public_index/h5-summary.json"):
             result = subprocess.run(
                 [sys.executable, "scripts/summarize_h5_vendor_update_driver_sources.py", "--output", rel],
                 cwd=ROOT,

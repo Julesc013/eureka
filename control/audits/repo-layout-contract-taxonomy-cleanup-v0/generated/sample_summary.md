@@ -3,7 +3,7 @@
 R0-03 classifies contract and schema authority before Workbench Foundation.
 
 - Product contracts: `contracts/`
-- Control schemas: `control/schemas/`
+- Control schemas: `contracts/control_schemas/`
 - Policies: `control/policies/`
 - Inventories: `control/inventory/`
 - Examples: fixtures only

@@ -834,7 +834,7 @@ Codex-safe branch is `p55-public-search-index-builder-v0`.
 
 Public Search Index Builder v0 is recorded under
 `control/audits/public-search-index-builder-v0/`. It adds a deterministic
-stdlib builder, validator, committed `data/public_index` JSON/NDJSON artifacts,
+stdlib builder, validator, committed `site/dist/data/public_index` JSON/NDJSON artifacts,
 generated-artifact drift metadata, docs, tests, and local public-search
 integration over controlled fixture/recorded metadata only. The local and
 hosted-wrapper paths now require the generated public index for hosted-safe

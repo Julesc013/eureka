@@ -34,7 +34,7 @@ class H8ManualsDocsStandardsSummaryTests(unittest.TestCase):
 
     def test_summary_refuses_forbidden_roots(self) -> None:
         self.assertEqual(summary.main(["--output", "site/dist/h8.json"]), 1)
-        self.assertEqual(summary.main(["--output", "data/public_index/h8.json"]), 1)
+        self.assertEqual(summary.main(["--output", "site/dist/data/public_index/h8.json"]), 1)
 
     def test_validator_default_has_no_network_or_private_roots(self) -> None:
         result = validator.validate_repo()

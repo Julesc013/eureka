@@ -33,7 +33,7 @@ allowed_paths:
   - tests/operations/test_ia_readiness_polish.py
 forbidden_paths:
   - site/**
-  - data/public_index/**
+  - site/dist/data/public_index/**
   - data/master_index/**
   - master_index/**
   - control/inventory/publication/**

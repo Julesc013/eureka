@@ -63,8 +63,8 @@ ReviewPageView explicitly forbids converting:
 
 - `contracts/views/review_page.v0.json`
 - `control/inventory/publication/review_page_view_model_policy.json`
-- `control/schemas/tasks/master_index/review_queue_entry.v0.json`
-- `control/schemas/tasks/master_index/review_queue_manifest.v0.json`
+- `contracts/control_schemas/tasks/master_index/review_queue_entry.v0.json`
+- `contracts/control_schemas/tasks/master_index/review_queue_manifest.v0.json`
 - `contracts/master_index/review_decision.v0.json`
 - `docs/reference/MASTER_INDEX_REVIEW_QUEUE_CONTRACT.md`
 - `docs/reference/CANDIDATE_PAGE_VIEW_MODEL_CONTRACT.md`

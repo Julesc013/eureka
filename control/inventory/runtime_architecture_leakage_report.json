@@ -206,7 +206,7 @@
     {
       "allowed_here": false,
       "line": 15,
-      "path": "control/schemas/audits/audits/mvp_alpha_public_claim_review.v0.json",
+      "path": "contracts/control_schemas/audits/audits/mvp_alpha_public_claim_review.v0.json",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "medium",
       "term": "product_boundary"
@@ -214,7 +214,7 @@
     {
       "allowed_here": false,
       "line": 33,
-      "path": "control/schemas/audits/audits/mvp_alpha_public_claim_review.v0.json",
+      "path": "contracts/control_schemas/audits/audits/mvp_alpha_public_claim_review.v0.json",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "medium",
       "term": "truth_boundary"
@@ -222,7 +222,7 @@
     {
       "allowed_here": false,
       "line": 47,
-      "path": "control/schemas/audits/audits/mvp_alpha_public_claim_review.v0.json",
+      "path": "contracts/control_schemas/audits/audits/mvp_alpha_public_claim_review.v0.json",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "medium",
       "term": "truth_boundary"
@@ -230,7 +230,7 @@
     {
       "allowed_here": false,
       "line": 48,
-      "path": "control/schemas/audits/audits/mvp_alpha_public_claim_review.v0.json",
+      "path": "contracts/control_schemas/audits/audits/mvp_alpha_public_claim_review.v0.json",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "medium",
       "term": "product_boundary"
@@ -238,7 +238,7 @@
     {
       "allowed_here": false,
       "line": 50,
-      "path": "control/schemas/audits/audits/mvp_alpha_public_claim_review.v0.json",
+      "path": "contracts/control_schemas/audits/audits/mvp_alpha_public_claim_review.v0.json",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "medium",
       "term": "MVP"
@@ -246,7 +246,7 @@
     {
       "allowed_here": false,
       "line": 65,
-      "path": "control/schemas/previews/h6/connectors/public_document_trace_candidate.v0.json",
+      "path": "contracts/control_schemas/previews/h6/connectors/public_document_trace_candidate.v0.json",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "medium",
       "term": "truth_boundary"
@@ -254,7 +254,7 @@
     {
       "allowed_here": false,
       "line": 69,
-      "path": "control/schemas/previews/h6/connectors/public_document_trace_candidate.v0.json",
+      "path": "contracts/control_schemas/previews/h6/connectors/public_document_trace_candidate.v0.json",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "medium",
       "term": "product_boundary"
@@ -262,7 +262,7 @@
     {
       "allowed_here": false,
       "line": 74,
-      "path": "control/schemas/previews/h6/connectors/public_document_trace_candidate.v0.json",
+      "path": "contracts/control_schemas/previews/h6/connectors/public_document_trace_candidate.v0.json",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "medium",
       "term": "H6"
@@ -270,7 +270,7 @@
     {
       "allowed_here": false,
       "line": 77,
-      "path": "control/schemas/previews/h6/connectors/public_document_trace_candidate.v0.json",
+      "path": "contracts/control_schemas/previews/h6/connectors/public_document_trace_candidate.v0.json",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "medium",
       "term": "product_boundary"
@@ -278,7 +278,7 @@
     {
       "allowed_here": false,
       "line": 109,
-      "path": "control/schemas/previews/h6/connectors/public_document_trace_candidate.v0.json",
+      "path": "contracts/control_schemas/previews/h6/connectors/public_document_trace_candidate.v0.json",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "medium",
       "term": "truth_boundary"
@@ -422,7 +422,7 @@
     {
       "allowed_here": false,
       "line": 12,
-      "path": "control/schemas/audits/hosting/public_alpha_blocked_request_report.v0.json",
+      "path": "contracts/control_schemas/audits/hosting/public_alpha_blocked_request_report.v0.json",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "medium",
       "term": "truth_boundary"
@@ -430,7 +430,7 @@
     {
       "allowed_here": false,
       "line": 13,
-      "path": "control/schemas/audits/hosting/public_alpha_blocked_request_report.v0.json",
+      "path": "contracts/control_schemas/audits/hosting/public_alpha_blocked_request_report.v0.json",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "medium",
       "term": "product_boundary"
@@ -438,7 +438,7 @@
     {
       "allowed_here": false,
       "line": 57,
-      "path": "control/schemas/audits/hosting/public_alpha_blocked_request_report.v0.json",
+      "path": "contracts/control_schemas/audits/hosting/public_alpha_blocked_request_report.v0.json",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "medium",
       "term": "truth_boundary"
@@ -446,7 +446,7 @@
     {
       "allowed_here": false,
       "line": 60,
-      "path": "control/schemas/audits/hosting/public_alpha_blocked_request_report.v0.json",
+      "path": "contracts/control_schemas/audits/hosting/public_alpha_blocked_request_report.v0.json",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "medium",
       "term": "product_boundary"
@@ -470,7 +470,7 @@
     {
       "allowed_here": false,
       "line": 20,
-      "path": "control/schemas/audits/hosting/public_alpha_deployment_noop_report.v0.json",
+      "path": "contracts/control_schemas/audits/hosting/public_alpha_deployment_noop_report.v0.json",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "medium",
       "term": "product_boundary"
@@ -478,7 +478,7 @@
     {
       "allowed_here": false,
       "line": 50,
-      "path": "control/schemas/audits/hosting/public_alpha_deployment_noop_report.v0.json",
+      "path": "contracts/control_schemas/audits/hosting/public_alpha_deployment_noop_report.v0.json",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "medium",
       "term": "truth_boundary"
@@ -486,7 +486,7 @@
     {
       "allowed_here": false,
       "line": 58,
-      "path": "control/schemas/policies/hosting/public_alpha_deployment_plan.v0.json",
+      "path": "contracts/control_schemas/policies/hosting/public_alpha_deployment_plan.v0.json",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "medium",
       "term": "product_boundary"
@@ -494,7 +494,7 @@
     {
       "allowed_here": false,
       "line": 79,
-      "path": "control/schemas/policies/hosting/public_alpha_deployment_plan.v0.json",
+      "path": "contracts/control_schemas/policies/hosting/public_alpha_deployment_plan.v0.json",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "medium",
       "term": "truth_boundary"
@@ -502,7 +502,7 @@
     {
       "allowed_here": false,
       "line": 90,
-      "path": "control/schemas/policies/hosting/public_alpha_deployment_plan.v0.json",
+      "path": "contracts/control_schemas/policies/hosting/public_alpha_deployment_plan.v0.json",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "medium",
       "term": "truth_boundary"
@@ -510,7 +510,7 @@
     {
       "allowed_here": false,
       "line": 91,
-      "path": "control/schemas/policies/hosting/public_alpha_deployment_plan.v0.json",
+      "path": "contracts/control_schemas/policies/hosting/public_alpha_deployment_plan.v0.json",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "medium",
       "term": "product_boundary"
@@ -518,7 +518,7 @@
     {
       "allowed_here": false,
       "line": 34,
-      "path": "control/schemas/policies/hosting/public_alpha_dns_readiness.v0.json",
+      "path": "contracts/control_schemas/policies/hosting/public_alpha_dns_readiness.v0.json",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "medium",
       "term": "product_boundary"
@@ -526,7 +526,7 @@
     {
       "allowed_here": false,
       "line": 43,
-      "path": "control/schemas/policies/hosting/public_alpha_dns_readiness.v0.json",
+      "path": "contracts/control_schemas/policies/hosting/public_alpha_dns_readiness.v0.json",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "medium",
       "term": "truth_boundary"
@@ -534,7 +534,7 @@
     {
       "allowed_here": false,
       "line": 12,
-      "path": "control/schemas/policies/hosting/public_alpha_environment_matrix.v0.json",
+      "path": "contracts/control_schemas/policies/hosting/public_alpha_environment_matrix.v0.json",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "medium",
       "term": "product_boundary"
@@ -542,7 +542,7 @@
     {
       "allowed_here": false,
       "line": 18,
-      "path": "control/schemas/policies/hosting/public_alpha_environment_matrix.v0.json",
+      "path": "contracts/control_schemas/policies/hosting/public_alpha_environment_matrix.v0.json",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "medium",
       "term": "truth_boundary"
@@ -550,7 +550,7 @@
     {
       "allowed_here": false,
       "line": 24,
-      "path": "control/schemas/policies/hosting/public_alpha_non_claims.v0.json",
+      "path": "contracts/control_schemas/policies/hosting/public_alpha_non_claims.v0.json",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "medium",
       "term": "truth_boundary"
@@ -558,7 +558,7 @@
     {
       "allowed_here": false,
       "line": 25,
-      "path": "control/schemas/policies/hosting/public_alpha_non_claims.v0.json",
+      "path": "contracts/control_schemas/policies/hosting/public_alpha_non_claims.v0.json",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "medium",
       "term": "product_boundary"
@@ -566,7 +566,7 @@
     {
       "allowed_here": false,
       "line": 87,
-      "path": "control/schemas/policies/hosting/public_alpha_non_claims.v0.json",
+      "path": "contracts/control_schemas/policies/hosting/public_alpha_non_claims.v0.json",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "medium",
       "term": "truth_boundary"
@@ -574,7 +574,7 @@
     {
       "allowed_here": false,
       "line": 90,
-      "path": "control/schemas/policies/hosting/public_alpha_non_claims.v0.json",
+      "path": "contracts/control_schemas/policies/hosting/public_alpha_non_claims.v0.json",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "medium",
       "term": "product_boundary"
@@ -582,7 +582,7 @@
     {
       "allowed_here": false,
       "line": 18,
-      "path": "control/schemas/policies/hosting/public_alpha_operator_checklist.v0.json",
+      "path": "contracts/control_schemas/policies/hosting/public_alpha_operator_checklist.v0.json",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "medium",
       "term": "product_boundary"
@@ -590,7 +590,7 @@
     {
       "allowed_here": false,
       "line": 24,
-      "path": "control/schemas/policies/hosting/public_alpha_operator_checklist.v0.json",
+      "path": "contracts/control_schemas/policies/hosting/public_alpha_operator_checklist.v0.json",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "medium",
       "term": "truth_boundary"
@@ -614,7 +614,7 @@
     {
       "allowed_here": false,
       "line": 36,
-      "path": "control/schemas/policies/hosting/public_alpha_rollout_gate.v0.json",
+      "path": "contracts/control_schemas/policies/hosting/public_alpha_rollout_gate.v0.json",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "medium",
       "term": "product_boundary"
@@ -622,7 +622,7 @@
     {
       "allowed_here": false,
       "line": 54,
-      "path": "control/schemas/policies/hosting/public_alpha_rollout_gate.v0.json",
+      "path": "contracts/control_schemas/policies/hosting/public_alpha_rollout_gate.v0.json",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "medium",
       "term": "truth_boundary"
@@ -630,7 +630,7 @@
     {
       "allowed_here": false,
       "line": 10,
-      "path": "control/schemas/policies/hosting/public_alpha_smoke_matrix.v0.json",
+      "path": "contracts/control_schemas/policies/hosting/public_alpha_smoke_matrix.v0.json",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "medium",
       "term": "truth_boundary"
@@ -638,7 +638,7 @@
     {
       "allowed_here": false,
       "line": 11,
-      "path": "control/schemas/policies/hosting/public_alpha_smoke_matrix.v0.json",
+      "path": "contracts/control_schemas/policies/hosting/public_alpha_smoke_matrix.v0.json",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "medium",
       "term": "product_boundary"
@@ -646,7 +646,7 @@
     {
       "allowed_here": false,
       "line": 37,
-      "path": "control/schemas/policies/hosting/public_alpha_smoke_matrix.v0.json",
+      "path": "contracts/control_schemas/policies/hosting/public_alpha_smoke_matrix.v0.json",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "medium",
       "term": "truth_boundary"
@@ -654,7 +654,7 @@
     {
       "allowed_here": false,
       "line": 40,
-      "path": "control/schemas/policies/hosting/public_alpha_smoke_matrix.v0.json",
+      "path": "contracts/control_schemas/policies/hosting/public_alpha_smoke_matrix.v0.json",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "medium",
       "term": "product_boundary"
@@ -662,7 +662,7 @@
     {
       "allowed_here": false,
       "line": 21,
-      "path": "control/schemas/policies/hosting/public_alpha_static_backend_split.v0.json",
+      "path": "contracts/control_schemas/policies/hosting/public_alpha_static_backend_split.v0.json",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "medium",
       "term": "product_boundary"
@@ -670,7 +670,7 @@
     {
       "allowed_here": false,
       "line": 39,
-      "path": "control/schemas/policies/hosting/public_alpha_static_backend_split.v0.json",
+      "path": "contracts/control_schemas/policies/hosting/public_alpha_static_backend_split.v0.json",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "medium",
       "term": "truth_boundary"
@@ -678,7 +678,7 @@
     {
       "allowed_here": false,
       "line": 12,
-      "path": "control/schemas/audits/hosting/public_alpha_status_report.v0.json",
+      "path": "contracts/control_schemas/audits/hosting/public_alpha_status_report.v0.json",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "medium",
       "term": "truth_boundary"
@@ -686,7 +686,7 @@
     {
       "allowed_here": false,
       "line": 13,
-      "path": "control/schemas/audits/hosting/public_alpha_status_report.v0.json",
+      "path": "contracts/control_schemas/audits/hosting/public_alpha_status_report.v0.json",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "medium",
       "term": "product_boundary"
@@ -694,7 +694,7 @@
     {
       "allowed_here": false,
       "line": 69,
-      "path": "control/schemas/audits/hosting/public_alpha_status_report.v0.json",
+      "path": "contracts/control_schemas/audits/hosting/public_alpha_status_report.v0.json",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "medium",
       "term": "truth_boundary"
@@ -702,7 +702,7 @@
     {
       "allowed_here": false,
       "line": 72,
-      "path": "control/schemas/audits/hosting/public_alpha_status_report.v0.json",
+      "path": "contracts/control_schemas/audits/hosting/public_alpha_status_report.v0.json",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "medium",
       "term": "product_boundary"
@@ -710,7 +710,7 @@
     {
       "allowed_here": false,
       "line": 11,
-      "path": "control/schemas/policies/hosting/public_launch_evidence.v0.json",
+      "path": "contracts/control_schemas/policies/hosting/public_launch_evidence.v0.json",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "medium",
       "term": "truth_boundary"
@@ -718,7 +718,7 @@
     {
       "allowed_here": false,
       "line": 12,
-      "path": "control/schemas/policies/hosting/public_launch_evidence.v0.json",
+      "path": "contracts/control_schemas/policies/hosting/public_launch_evidence.v0.json",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "medium",
       "term": "product_boundary"
@@ -726,7 +726,7 @@
     {
       "allowed_here": false,
       "line": 71,
-      "path": "control/schemas/policies/hosting/public_launch_evidence.v0.json",
+      "path": "contracts/control_schemas/policies/hosting/public_launch_evidence.v0.json",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "medium",
       "term": "truth_boundary"
@@ -734,7 +734,7 @@
     {
       "allowed_here": false,
       "line": 74,
-      "path": "control/schemas/policies/hosting/public_launch_evidence.v0.json",
+      "path": "contracts/control_schemas/policies/hosting/public_launch_evidence.v0.json",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "medium",
       "term": "product_boundary"
@@ -742,7 +742,7 @@
     {
       "allowed_here": false,
       "line": 12,
-      "path": "control/schemas/audits/hosting/public_launch_operator_signoff.v0.json",
+      "path": "contracts/control_schemas/audits/hosting/public_launch_operator_signoff.v0.json",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "medium",
       "term": "truth_boundary"
@@ -750,7 +750,7 @@
     {
       "allowed_here": false,
       "line": 13,
-      "path": "control/schemas/audits/hosting/public_launch_operator_signoff.v0.json",
+      "path": "contracts/control_schemas/audits/hosting/public_launch_operator_signoff.v0.json",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "medium",
       "term": "product_boundary"
@@ -758,7 +758,7 @@
     {
       "allowed_here": false,
       "line": 48,
-      "path": "control/schemas/audits/hosting/public_launch_operator_signoff.v0.json",
+      "path": "contracts/control_schemas/audits/hosting/public_launch_operator_signoff.v0.json",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "medium",
       "term": "truth_boundary"
@@ -766,7 +766,7 @@
     {
       "allowed_here": false,
       "line": 51,
-      "path": "control/schemas/audits/hosting/public_launch_operator_signoff.v0.json",
+      "path": "contracts/control_schemas/audits/hosting/public_launch_operator_signoff.v0.json",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "medium",
       "term": "product_boundary"
@@ -774,7 +774,7 @@
     {
       "allowed_here": false,
       "line": 11,
-      "path": "control/schemas/audits/hosting/public_launch_readiness_audit.v0.json",
+      "path": "contracts/control_schemas/audits/hosting/public_launch_readiness_audit.v0.json",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "medium",
       "term": "truth_boundary"
@@ -782,7 +782,7 @@
     {
       "allowed_here": false,
       "line": 12,
-      "path": "control/schemas/audits/hosting/public_launch_readiness_audit.v0.json",
+      "path": "contracts/control_schemas/audits/hosting/public_launch_readiness_audit.v0.json",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "medium",
       "term": "product_boundary"
@@ -790,7 +790,7 @@
     {
       "allowed_here": false,
       "line": 79,
-      "path": "control/schemas/audits/hosting/public_launch_readiness_audit.v0.json",
+      "path": "contracts/control_schemas/audits/hosting/public_launch_readiness_audit.v0.json",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "medium",
       "term": "truth_boundary"
@@ -798,7 +798,7 @@
     {
       "allowed_here": false,
       "line": 82,
-      "path": "control/schemas/audits/hosting/public_launch_readiness_audit.v0.json",
+      "path": "contracts/control_schemas/audits/hosting/public_launch_readiness_audit.v0.json",
       "recommended_action": "move task/audit vocabulary out of production-looking paths or quarantine the artifact",
       "severity": "medium",
       "term": "product_boundary"

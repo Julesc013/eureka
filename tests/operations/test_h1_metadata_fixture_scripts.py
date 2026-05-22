@@ -65,7 +65,7 @@ class H1MetadataFixtureScriptsTests(unittest.TestCase):
         self.assertNotEqual(result.returncode, 0)
 
     def test_scripts_refuse_data_public_index_output(self):
-        result = run_cmd(["scripts/replay_h1_metadata_fixtures.py", "--output-dir", "data/public_index/h1"])
+        result = run_cmd(["scripts/replay_h1_metadata_fixtures.py", "--output-dir", "site/dist/data/public_index/h1"])
         self.assertNotEqual(result.returncode, 0)
 
     def test_validator_passes_current_repo(self):

@@ -76,7 +76,7 @@ class RepoStructureCanonContractTest(unittest.TestCase):
         for path in [
             "site/dist",
             "snapshots/examples/static_snapshot_v0",
-            "data/public_index",
+            "site/dist/data/public_index",
             ".aide/generated",
             ".aide/cache",
             ".aide/export",
@@ -87,9 +87,9 @@ class RepoStructureCanonContractTest(unittest.TestCase):
                 self.assertFalse(exact[path]["manual_edits_allowed"])
                 self.assertTrue(exact[path]["check_command"])
 
-        self.assertEqual(exact["data/public_index"]["status"], "known_debt_exception")
+        self.assertEqual(exact["site/dist/data/public_index"]["status"], "accepted_exception")
 
-    def test_inventory_and_audit_record_next_task_without_moves(self) -> None:
+    def test_inventory_records_reconciled_debt(self) -> None:
         result = json.loads(
             (REPO_ROOT / "control" / "inventory" / "repo_layout_canon_result.json").read_text(
                 encoding="utf-8"
@@ -110,7 +110,9 @@ class RepoStructureCanonContractTest(unittest.TestCase):
         self.assertFalse(result["files_moved"])
         self.assertFalse(result["runtime_behavior_changed"])
         self.assertEqual(next_task["decision"], "REPO-LAYOUT-INVENTORY-02")
-        self.assertTrue(known_debt["no_file_moves"])
+        self.assertEqual(known_debt["status"], "resolved_by_structure_reconcile")
+        self.assertEqual(known_debt["known_debt"], [])
+        self.assertTrue(known_debt["resolved_debt"])
         self.assertTrue(known_debt["no_runtime_behavior_change"])
 
         audit_root = REPO_ROOT / "control" / "audits" / "repo-layout-canon-01-v0"
@@ -133,9 +135,9 @@ class RepoStructureCanonContractTest(unittest.TestCase):
         ).read_text(encoding="utf-8")
 
         self.assertIn("Do not absorb top-level `native/`", canon_doc)
-        self.assertIn("This task does not move or delete those paths.", canon_doc)
+        self.assertIn("EUREKA-STRUCTURE-BIG-BANG-01 reconciled the recorded layout debt", canon_doc)
         self.assertIn("does not claim production readiness", canon_doc)
-        self.assertIn("No files are moved.", migration_doc)
+        self.assertIn("superseded by `EUREKA-STRUCTURE-BIG-BANG-01`", migration_doc)
 
 
 if __name__ == "__main__":

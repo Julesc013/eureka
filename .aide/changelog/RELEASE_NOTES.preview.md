@@ -94,7 +94,7 @@ preview_only: true
 - Changed: LOCAL-14 promotion review evidence restored to plan-only semantics. (7de5c8b708c2)
 - Changed: local AIDE control plane upgraded and Q56 Existing Tool Absorption packet generated. (df6a6967afdb)
 - Fixed: preserve candidate-index historical contract path compatibility during merge. (ce1ab9685222)
-- Fixed: moved unresolved contract taxonomy artifacts to control/schemas (ede77d3cb101)
+- Fixed: moved unresolved contract taxonomy artifacts to contracts/control_schemas (ede77d3cb101)
 - Fixed: updated active schema references and audit evidence needed by validators (ede77d3cb101)
 - Fixed: retired remaining contract taxonomy blockers and shims. (d15eb701b478)
 - Fixed: isolated static site JSON build test from site/dist. (dbc4e72ccf63)

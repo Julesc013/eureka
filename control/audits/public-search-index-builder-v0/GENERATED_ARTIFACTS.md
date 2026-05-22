@@ -1,6 +1,6 @@
 # Generated Artifacts
 
-`data/public_index` is generated, committed, and drift-checked.
+`site/dist/data/public_index` is generated, committed, and drift-checked.
 
 Generator:
 

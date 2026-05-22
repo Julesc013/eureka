@@ -43,7 +43,7 @@ class H12ReviewQualityScriptTests(unittest.TestCase):
     def test_scripts_refuse_forbidden_output_roots(self):
         forbidden = [
             ["scripts/integrate_h12_retro_community_review.py", "--input-dir", "examples/connectors/h12_retro_community/replay_results", "--output-dir", "site/dist/h12"],
-            ["scripts/summarize_h12_retro_community_quality_delta.py", "--input-dir", "examples/connectors/h12_retro_community/review_integration", "--output", "data/public_index/h12.json"],
+            ["scripts/summarize_h12_retro_community_quality_delta.py", "--input-dir", "examples/connectors/h12_retro_community/review_integration", "--output", "site/dist/data/public_index/h12.json"],
             ["scripts/audit_h12_retro_community_wave.py", "--json-output", "roms/h12.json"],
         ]
         for command in forbidden:

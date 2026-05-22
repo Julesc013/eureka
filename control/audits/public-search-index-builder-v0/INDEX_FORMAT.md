@@ -1,6 +1,6 @@
 # Index Format
 
-The committed artifact root is `data/public_index/`.
+The committed artifact root is `site/dist/data/public_index/`.
 
 Required generated files:
 

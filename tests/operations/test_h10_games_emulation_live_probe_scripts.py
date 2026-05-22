@@ -33,7 +33,7 @@ class H10GamesEmulationLiveProbeScriptTests(unittest.TestCase):
             self.assertFalse(payload["network_used"])
 
     def test_cli_refuses_forbidden_output_roots(self) -> None:
-        for path in ("site/dist/probe.json", "data/public_index/probe.json", "roms/probe.json", "bios/probe.json", "emulators/probe.json", "actions/probe.json"):
+        for path in ("site/dist/probe.json", "site/dist/data/public_index/probe.json", "roms/probe.json", "bios/probe.json", "emulators/probe.json", "actions/probe.json"):
             with self.subTest(path=path):
                 run = self.run_cmd(["scripts/run_h10_games_emulation_live_probe.py", "--source-id", "mobygames", "--request-key", "example_game_metadata", "--output", path, "--json"])
                 self.assertNotEqual(run.returncode, 0)
@@ -48,7 +48,7 @@ class H10GamesEmulationLiveProbeScriptTests(unittest.TestCase):
             self.assertTrue(md.is_file())
 
     def test_summary_script_refuses_public_index(self) -> None:
-        run = self.run_cmd(["scripts/summarize_h10_games_emulation_live_probe_outputs.py", "--input", "examples/connectors/h10_games_emulation/live_probe_results", "--output", "data/public_index/summary.json", "--json"])
+        run = self.run_cmd(["scripts/summarize_h10_games_emulation_live_probe_outputs.py", "--input", "examples/connectors/h10_games_emulation/live_probe_results", "--output", "site/dist/data/public_index/summary.json", "--json"])
         self.assertNotEqual(run.returncode, 0)
 
     def test_validator_passes_and_uses_no_private_roots(self) -> None:

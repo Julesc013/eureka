@@ -2,8 +2,8 @@ import copy
 from pathlib import Path
 import unittest
 
-from control.prototypes.legacy_runtime.connectors.h3_os_package_archives.fixture_loader import load_h3_os_package_fixture
-from control.prototypes.legacy_runtime.connectors.h3_os_package_archives.normalizer_common import (
+from archive.prototypes.legacy_runtime.connectors.h3_os_package_archives.fixture_loader import load_h3_os_package_fixture
+from archive.prototypes.legacy_runtime.connectors.h3_os_package_archives.normalizer_common import (
     build_h3_os_platform_compatibility_candidate,
     detect_h3_truth_boundary_violations,
 )
@@ -14,7 +14,7 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 
 def record():
     fixture = load_h3_os_package_fixture(REPO_ROOT / "examples/connectors/h3_os_package_archives/fixtures/debian_snapshot/compatibility_record.json")
-    module = __import__("control.prototypes.legacy_runtime.connectors.h3_os_package_archives.debian_snapshot", fromlist=["normalize"])
+    module = __import__("archive.prototypes.legacy_runtime.connectors.h3_os_package_archives.debian_snapshot", fromlist=["normalize"])
     return module.normalize(fixture)
 
 

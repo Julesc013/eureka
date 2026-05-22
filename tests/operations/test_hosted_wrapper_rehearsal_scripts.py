@@ -43,7 +43,7 @@ class HostedWrapperRehearsalScriptTests(unittest.TestCase):
     def test_scripts_refuse_forbidden_roots(self) -> None:
         for forbidden in (
             "site/dist/rehearsal.json",
-            "data/public_index/rehearsal.json",
+            "site/dist/data/public_index/rehearsal.json",
             ".local/eureka/rehearsal.json",
             "contracts/hosting/generated.json",
         ):

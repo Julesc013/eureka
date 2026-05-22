@@ -43,7 +43,7 @@ class H10ReviewQualityScriptTests(unittest.TestCase):
     def test_scripts_refuse_forbidden_output_roots(self):
         forbidden = [
             ["scripts/integrate_h10_games_emulation_review.py", "--input-dir", "examples/connectors/h10_games_emulation/replay_results", "--output-dir", "site/dist/h10"],
-            ["scripts/summarize_h10_games_emulation_quality_delta.py", "--input-dir", "examples/connectors/h10_games_emulation/review_integration", "--output", "data/public_index/h10.json"],
+            ["scripts/summarize_h10_games_emulation_quality_delta.py", "--input-dir", "examples/connectors/h10_games_emulation/review_integration", "--output", "site/dist/data/public_index/h10.json"],
             ["scripts/audit_h10_games_emulation_wave.py", "--json-output", "roms/h10.json"],
         ]
         for command in forbidden:

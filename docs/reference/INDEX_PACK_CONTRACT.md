@@ -45,7 +45,7 @@ Optional files:
 - `licenses/`
 - `references/`
 
-The manifest schema is `control/schemas/policies/packs/index_pack.v0.json`.
+The manifest schema is `contracts/control_schemas/policies/packs/index_pack.v0.json`.
 
 ## Manifest
 

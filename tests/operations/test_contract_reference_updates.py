@@ -24,7 +24,7 @@ class ContractReferenceUpdateTests(unittest.TestCase):
                 "moves": [
                     {
                         "source_path": "contracts/audits/demo_next_task.v0.json",
-                        "target_path": "control/schemas/tasks/audits/demo_next_task.v0.json",
+                        "target_path": "contracts/control_schemas/tasks/audits/demo_next_task.v0.json",
                         "contract_class_before": "task_queue_schema",
                         "rationale": "fixture move",
                         "references_to_update": [
@@ -82,8 +82,8 @@ class ContractReferenceUpdateTests(unittest.TestCase):
             )["reference_update_result"]
             self.assertGreaterEqual(result["updates_completed"], 1)
             self.assertFalse((root / "contracts/audits/demo_next_task.v0.json").exists())
-            self.assertTrue((root / "control/schemas/tasks/audits/demo_next_task.v0.json").exists())
-            self.assertIn("control/schemas/tasks/audits/demo_next_task.v0.json", (root / "scripts/validate_demo.py").read_text())
+            self.assertTrue((root / "contracts/control_schemas/tasks/audits/demo_next_task.v0.json").exists())
+            self.assertIn("contracts/control_schemas/tasks/audits/demo_next_task.v0.json", (root / "scripts/validate_demo.py").read_text())
 
     def test_reference_updater_leaves_historical_audit_narrative_fixture_intact(self) -> None:
         with self.make_repo() as temp:

@@ -45,7 +45,7 @@ class H7LibraryResearchLiveProbeScriptTests(unittest.TestCase):
 
     def test_cli_refuses_forbidden_roots(self):
         self.assertEqual(runner.main(["--source-id", "openalex", "--request-key", "example_work_metadata", "--output", "site/dist/probe.json", "--json"]), 1)
-        self.assertEqual(runner.main(["--source-id", "openalex", "--request-key", "example_work_metadata", "--output", "data/public_index/probe.json", "--json"]), 1)
+        self.assertEqual(runner.main(["--source-id", "openalex", "--request-key", "example_work_metadata", "--output", "site/dist/data/public_index/probe.json", "--json"]), 1)
         self.assertEqual(runner.main(["--source-id", "openalex", "--request-key", "example_work_metadata", "--output", "harvest/probe.json", "--json"]), 1)
         self.assertEqual(runner.main(["--source-id", "openalex", "--request-key", "example_work_metadata", "--output", "media_downloads/probe.json", "--json"]), 1)
 
@@ -66,7 +66,7 @@ class H7LibraryResearchLiveProbeScriptTests(unittest.TestCase):
 
     def test_summary_refuses_forbidden_roots(self):
         self.assertEqual(summarizer.main(["--input", "examples/connectors/h7_library_research/live_probe_results", "--output", "site/dist/summary.json", "--json"]), 1)
-        self.assertEqual(summarizer.main(["--input", "examples/connectors/h7_library_research/live_probe_results", "--output", "data/public_index/summary.json", "--json"]), 1)
+        self.assertEqual(summarizer.main(["--input", "examples/connectors/h7_library_research/live_probe_results", "--output", "site/dist/data/public_index/summary.json", "--json"]), 1)
 
     def test_validator_passes_current_repo(self):
         result = validator.validate_repo()

@@ -14,7 +14,7 @@ Evidence inspected:
 - Public route inventory in `control/inventory/publication/public_search_routes.json`.
 - Public search safety inventory in `control/inventory/publication/public_search_safety.json`.
 - Static handoff and config inventories under `control/inventory/publication/`.
-- Public index stats in `data/public_index/index_stats.json`.
+- Public index stats in `site/dist/data/public_index/index_stats.json`.
 - P98 and P99 dry-run runtime inventories.
 - Query observation, page runtime, ranking runtime, pack import, deep extraction,
   and explanation inventories.

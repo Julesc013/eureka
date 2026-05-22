@@ -5,8 +5,8 @@ import json
 from pathlib import Path
 import unittest
 
-from control.prototypes.legacy_runtime.connectors.h8_manuals_docs_standards.fixture_loader import load_h8_manuals_docs_fixture
-from control.prototypes.legacy_runtime.connectors.h8_manuals_docs_standards.normalizer_common import H8_FIXTURE_KINDS, H8_SOURCE_IDS
+from archive.prototypes.legacy_runtime.connectors.h8_manuals_docs_standards.fixture_loader import load_h8_manuals_docs_fixture
+from archive.prototypes.legacy_runtime.connectors.h8_manuals_docs_standards.normalizer_common import H8_FIXTURE_KINDS, H8_SOURCE_IDS
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 
@@ -14,7 +14,7 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 class H8ManualsDocsFixtureRuntimeTests(unittest.TestCase):
     def test_all_normalizers_handle_all_fixture_kinds(self) -> None:
         for source_id in H8_SOURCE_IDS:
-            module = importlib.import_module(f"control.prototypes.legacy_runtime.connectors.h8_manuals_docs_standards.{source_id}")
+            module = importlib.import_module(f"archive.prototypes.legacy_runtime.connectors.h8_manuals_docs_standards.{source_id}")
             for kind in H8_FIXTURE_KINDS:
                 filename = "policy_blocked_record.json" if kind == "policy_blocked" else f"{kind}_record.json"
                 fixture = load_h8_manuals_docs_fixture(REPO_ROOT / "examples/connectors/h8_manuals_docs_standards/fixtures" / source_id / filename)
@@ -28,7 +28,7 @@ class H8ManualsDocsFixtureRuntimeTests(unittest.TestCase):
 
     def test_missing_optional_fields_produce_limitations(self) -> None:
         fixture = load_h8_manuals_docs_fixture(REPO_ROOT / "examples/connectors/h8_manuals_docs_standards/fixtures/bitsavers_docs/minimal_record.json")
-        normalized = importlib.import_module("control.prototypes.legacy_runtime.connectors.h8_manuals_docs_standards.bitsavers_docs").normalize(fixture)
+        normalized = importlib.import_module("archive.prototypes.legacy_runtime.connectors.h8_manuals_docs_standards.bitsavers_docs").normalize(fixture)
         self.assertTrue(any("optional field absent or unknown" in item for item in normalized["source_limitations"]))
         self.assertEqual(normalized["document_title"], "unknown")
 

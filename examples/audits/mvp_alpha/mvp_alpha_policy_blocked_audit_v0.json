@@ -18,7 +18,7 @@
   ],
   "audited_contracts": [
     "contracts/",
-    "control/schemas/audits/audits/mvp_alpha_readiness_audit.v0.json",
+    "contracts/control_schemas/audits/audits/mvp_alpha_readiness_audit.v0.json",
     "contracts/hosting/",
     "contracts/native/",
     "contracts/relay/",

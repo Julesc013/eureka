@@ -59,7 +59,7 @@ class SearchExplanationScriptTests(unittest.TestCase):
             "--input",
             "examples/search_quality",
             "--output",
-            "data/public_index/explanation.json",
+            "site/dist/data/public_index/explanation.json",
         )
         self.assertNotEqual(result.returncode, 0)
         self.assertIn("refusing forbidden output root", result.stdout)

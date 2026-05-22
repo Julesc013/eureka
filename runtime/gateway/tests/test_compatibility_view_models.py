@@ -27,7 +27,7 @@ class CompatibilityViewModelsTestCase(unittest.TestCase):
                 "source": {
                     "family": "synthetic_fixture",
                     "label": "Synthetic Fixture",
-                    "locator": "control/schemas/fixtures/archive/software/synthetic_resolution_fixture.json",
+                    "locator": "contracts/control_schemas/fixtures/archive/software/synthetic_resolution_fixture.json",
                 },
                 "reasons": [
                     {

@@ -4,8 +4,8 @@ import copy
 from pathlib import Path
 import unittest
 
-from control.prototypes.legacy_runtime.connectors.h5_vendor_update_driver.normalizer_common import detect_h5_truth_boundary_violations
-from control.prototypes.legacy_runtime.connectors.h5_vendor_update_driver.vendor_identity import build_h5_vendor_identity_candidate
+from archive.prototypes.legacy_runtime.connectors.h5_vendor_update_driver.normalizer_common import detect_h5_truth_boundary_violations
+from archive.prototypes.legacy_runtime.connectors.h5_vendor_update_driver.vendor_identity import build_h5_vendor_identity_candidate
 
 
 class H5VendorIdentityMappingTests(unittest.TestCase):

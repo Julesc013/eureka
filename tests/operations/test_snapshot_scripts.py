@@ -72,7 +72,7 @@ class SnapshotScriptTests(unittest.TestCase):
             "--input",
             "examples/snapshots/fixtures/search_snapshot_input_v0.json",
             "--manifest-output",
-            "data/public_index/snapshot.json",
+            "site/dist/data/public_index/snapshot.json",
             expect_success=False,
         )
         self.assertNotEqual(result.returncode, 0)

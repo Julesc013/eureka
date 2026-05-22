@@ -6443,7 +6443,7 @@
       "capability_family": "release",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "control/prototypes/legacy_runtime/connectors/h10_games_emulation/platform_release_edition.py",
+      "source_tool": "archive/prototypes/legacy_runtime/connectors/h10_games_emulation/platform_release_edition.py",
       "target_aide_command_hint": "future tools wrapper for release",
       "tool_id": "tool-control-prototypes-legacy-runtime-connectors-h10-games-emulation-platform-release-edition-py"
     },
@@ -6452,7 +6452,7 @@
       "capability_family": "release",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "control/prototypes/legacy_runtime/connectors/h11_storefront/version_release_channel.py",
+      "source_tool": "archive/prototypes/legacy_runtime/connectors/h11_storefront/version_release_channel.py",
       "target_aide_command_hint": "future tools wrapper for release",
       "tool_id": "tool-control-prototypes-legacy-runtime-connectors-h11-storefront-version-release-channel-py"
     },
@@ -6461,7 +6461,7 @@
       "capability_family": "install",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "control/prototypes/legacy_runtime/connectors/h12_retro_community/compatibility_install_note.py",
+      "source_tool": "archive/prototypes/legacy_runtime/connectors/h12_retro_community/compatibility_install_note.py",
       "target_aide_command_hint": "future tools wrapper for install",
       "tool_id": "tool-control-prototypes-legacy-runtime-connectors-h12-retro-community-compatibility-install-note-py"
     },
@@ -6470,7 +6470,7 @@
       "capability_family": "validate",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "control/prototypes/legacy_runtime/connectors/h12_retro_community/hash_checksum.py",
+      "source_tool": "archive/prototypes/legacy_runtime/connectors/h12_retro_community/hash_checksum.py",
       "target_aide_command_hint": "future tools wrapper for validate",
       "tool_id": "tool-control-prototypes-legacy-runtime-connectors-h12-retro-community-hash-checksum-py"
     },
@@ -6479,7 +6479,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "control/prototypes/legacy_runtime/connectors/h13_local_private/boundary_dry_run_local_package_cache_metadata.py",
+      "source_tool": "archive/prototypes/legacy_runtime/connectors/h13_local_private/boundary_dry_run_local_package_cache_metadata.py",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-control-prototypes-legacy-runtime-connectors-h13-local-private-boundary-dry-run-local-package-cache-metadata-py"
     },
@@ -6488,7 +6488,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "control/prototypes/legacy_runtime/connectors/h13_local_private/local_package_cache_metadata.py",
+      "source_tool": "archive/prototypes/legacy_runtime/connectors/h13_local_private/local_package_cache_metadata.py",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-control-prototypes-legacy-runtime-connectors-h13-local-private-local-package-cache-metadata-py"
     },
@@ -6497,7 +6497,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "control/prototypes/legacy_runtime/connectors/h13_local_private/pack_export_import_boundary.py",
+      "source_tool": "archive/prototypes/legacy_runtime/connectors/h13_local_private/pack_export_import_boundary.py",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-control-prototypes-legacy-runtime-connectors-h13-local-private-pack-export-import-boundary-py"
     },
@@ -6506,7 +6506,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "control/prototypes/legacy_runtime/connectors/h14_source_discovery/pack_import_export_boundary.py",
+      "source_tool": "archive/prototypes/legacy_runtime/connectors/h14_source_discovery/pack_import_export_boundary.py",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-control-prototypes-legacy-runtime-connectors-h14-source-discovery-pack-import-export-boundary-py"
     },
@@ -6515,7 +6515,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "control/prototypes/legacy_runtime/connectors/h14_source_discovery/rollup_pack_import_export_boundary.py",
+      "source_tool": "archive/prototypes/legacy_runtime/connectors/h14_source_discovery/rollup_pack_import_export_boundary.py",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-control-prototypes-legacy-runtime-connectors-h14-source-discovery-rollup-pack-import-export-boundary-py"
     },
@@ -6524,7 +6524,7 @@
       "capability_family": "release",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "control/prototypes/legacy_runtime/connectors/h1_metadata_wave/github_releases.py",
+      "source_tool": "archive/prototypes/legacy_runtime/connectors/h1_metadata_wave/github_releases.py",
       "target_aide_command_hint": "future tools wrapper for release",
       "tool_id": "tool-control-prototypes-legacy-runtime-connectors-h1-metadata-wave-github-releases-py"
     },
@@ -6533,7 +6533,7 @@
       "capability_family": "release",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "control/prototypes/legacy_runtime/connectors/h1_metadata_wave/live_probe_github_releases.py",
+      "source_tool": "archive/prototypes/legacy_runtime/connectors/h1_metadata_wave/live_probe_github_releases.py",
       "target_aide_command_hint": "future tools wrapper for release",
       "tool_id": "tool-control-prototypes-legacy-runtime-connectors-h1-metadata-wave-live-probe-github-releases-py"
     },
@@ -6542,7 +6542,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "control/prototypes/legacy_runtime/connectors/h2_package_registries/package_identity.py",
+      "source_tool": "archive/prototypes/legacy_runtime/connectors/h2_package_registries/package_identity.py",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-control-prototypes-legacy-runtime-connectors-h2-package-registries-package-identity-py"
     },
@@ -6551,7 +6551,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "control/prototypes/legacy_runtime/connectors/h3_os_package_archives/freebsd_packages_ports.py",
+      "source_tool": "archive/prototypes/legacy_runtime/connectors/h3_os_package_archives/freebsd_packages_ports.py",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-control-prototypes-legacy-runtime-connectors-h3-os-package-archives-freebsd-packages-ports-py"
     },
@@ -6560,7 +6560,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "control/prototypes/legacy_runtime/connectors/h3_os_package_archives/live_probe_freebsd_packages_ports.py",
+      "source_tool": "archive/prototypes/legacy_runtime/connectors/h3_os_package_archives/live_probe_freebsd_packages_ports.py",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-control-prototypes-legacy-runtime-connectors-h3-os-package-archives-live-probe-freebsd-packages-ports-py"
     },
@@ -6569,7 +6569,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "control/prototypes/legacy_runtime/connectors/h3_os_package_archives/live_probe_ubuntu_old_releases.py",
+      "source_tool": "archive/prototypes/legacy_runtime/connectors/h3_os_package_archives/live_probe_ubuntu_old_releases.py",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-control-prototypes-legacy-runtime-connectors-h3-os-package-archives-live-probe-ubuntu-old-releases-py"
     },
@@ -6578,7 +6578,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "control/prototypes/legacy_runtime/connectors/h3_os_package_archives/os_package_identity.py",
+      "source_tool": "archive/prototypes/legacy_runtime/connectors/h3_os_package_archives/os_package_identity.py",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-control-prototypes-legacy-runtime-connectors-h3-os-package-archives-os-package-identity-py"
     },
@@ -6587,7 +6587,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "control/prototypes/legacy_runtime/connectors/h3_os_package_archives/ubuntu_old_releases.py",
+      "source_tool": "archive/prototypes/legacy_runtime/connectors/h3_os_package_archives/ubuntu_old_releases.py",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-control-prototypes-legacy-runtime-connectors-h3-os-package-archives-ubuntu-old-releases-py"
     },
@@ -6596,7 +6596,7 @@
       "capability_family": "release",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "control/prototypes/legacy_runtime/connectors/h4_code_source_release/generic_release_host.py",
+      "source_tool": "archive/prototypes/legacy_runtime/connectors/h4_code_source_release/generic_release_host.py",
       "target_aide_command_hint": "future tools wrapper for release",
       "tool_id": "tool-control-prototypes-legacy-runtime-connectors-h4-code-source-release-generic-release-host-py"
     },
@@ -6605,7 +6605,7 @@
       "capability_family": "release",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "control/prototypes/legacy_runtime/connectors/h4_code_source_release/github_releases.py",
+      "source_tool": "archive/prototypes/legacy_runtime/connectors/h4_code_source_release/github_releases.py",
       "target_aide_command_hint": "future tools wrapper for release",
       "tool_id": "tool-control-prototypes-legacy-runtime-connectors-h4-code-source-release-github-releases-py"
     },
@@ -6614,7 +6614,7 @@
       "capability_family": "release",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "control/prototypes/legacy_runtime/connectors/h4_code_source_release/gitlab_releases.py",
+      "source_tool": "archive/prototypes/legacy_runtime/connectors/h4_code_source_release/gitlab_releases.py",
       "target_aide_command_hint": "future tools wrapper for release",
       "tool_id": "tool-control-prototypes-legacy-runtime-connectors-h4-code-source-release-gitlab-releases-py"
     },
@@ -6623,7 +6623,7 @@
       "capability_family": "release",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "control/prototypes/legacy_runtime/connectors/h4_code_source_release/live_probe_generic_release_host.py",
+      "source_tool": "archive/prototypes/legacy_runtime/connectors/h4_code_source_release/live_probe_generic_release_host.py",
       "target_aide_command_hint": "future tools wrapper for release",
       "tool_id": "tool-control-prototypes-legacy-runtime-connectors-h4-code-source-release-live-probe-generic-release-host-py"
     },
@@ -6632,7 +6632,7 @@
       "capability_family": "release",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "control/prototypes/legacy_runtime/connectors/h4_code_source_release/live_probe_github_releases.py",
+      "source_tool": "archive/prototypes/legacy_runtime/connectors/h4_code_source_release/live_probe_github_releases.py",
       "target_aide_command_hint": "future tools wrapper for release",
       "tool_id": "tool-control-prototypes-legacy-runtime-connectors-h4-code-source-release-live-probe-github-releases-py"
     },
@@ -6641,7 +6641,7 @@
       "capability_family": "release",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "control/prototypes/legacy_runtime/connectors/h4_code_source_release/live_probe_gitlab_releases.py",
+      "source_tool": "archive/prototypes/legacy_runtime/connectors/h4_code_source_release/live_probe_gitlab_releases.py",
       "target_aide_command_hint": "future tools wrapper for release",
       "tool_id": "tool-control-prototypes-legacy-runtime-connectors-h4-code-source-release-live-probe-gitlab-releases-py"
     },
@@ -6650,7 +6650,7 @@
       "capability_family": "release",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "control/prototypes/legacy_runtime/connectors/h4_code_source_release/release_identity.py",
+      "source_tool": "archive/prototypes/legacy_runtime/connectors/h4_code_source_release/release_identity.py",
       "target_aide_command_hint": "future tools wrapper for release",
       "tool_id": "tool-control-prototypes-legacy-runtime-connectors-h4-code-source-release-release-identity-py"
     },
@@ -6659,7 +6659,7 @@
       "capability_family": "docs",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "control/prototypes/legacy_runtime/connectors/h8_manuals_docs_standards/install_requirement_claim.py",
+      "source_tool": "archive/prototypes/legacy_runtime/connectors/h8_manuals_docs_standards/install_requirement_claim.py",
       "target_aide_command_hint": "future tools wrapper for docs",
       "tool_id": "tool-control-prototypes-legacy-runtime-connectors-h8-manuals-docs-standards-install-requirement-claim-py"
     },
@@ -6668,7 +6668,7 @@
       "capability_family": "release",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "control/prototypes/legacy_runtime/connectors/h9_media_metadata/music_work_recording_release.py",
+      "source_tool": "archive/prototypes/legacy_runtime/connectors/h9_media_metadata/music_work_recording_release.py",
       "target_aide_command_hint": "future tools wrapper for release",
       "tool_id": "tool-control-prototypes-legacy-runtime-connectors-h9-media-metadata-music-work-recording-release-py"
     },
@@ -6677,7 +6677,7 @@
       "capability_family": "audit",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "control/schemas/audits/audits/mvp_alpha_readiness_audit.v0.json",
+      "source_tool": "contracts/control_schemas/audits/audits/mvp_alpha_readiness_audit.v0.json",
       "target_aide_command_hint": "future tools wrapper for audit",
       "tool_id": "tool-control-schemas-audits-audits-mvp-alpha-readiness-audit-v0-json"
     },
@@ -6686,7 +6686,7 @@
       "capability_family": "audit",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "control/schemas/audits/h1/connectors/integration_audit.v0.json",
+      "source_tool": "contracts/control_schemas/audits/h1/connectors/integration_audit.v0.json",
       "target_aide_command_hint": "future tools wrapper for audit",
       "tool_id": "tool-control-schemas-audits-h1-connectors-integration-audit-v0-json"
     },
@@ -6695,7 +6695,7 @@
       "capability_family": "audit",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "control/schemas/audits/h10/connectors/games_emulation_integration_audit.v0.json",
+      "source_tool": "contracts/control_schemas/audits/h10/connectors/games_emulation_integration_audit.v0.json",
       "target_aide_command_hint": "future tools wrapper for audit",
       "tool_id": "tool-control-schemas-audits-h10-connectors-games-emulation-integration-audit-v0-json"
     },
@@ -6704,7 +6704,7 @@
       "capability_family": "audit",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "control/schemas/audits/h11/connectors/storefront_integration_audit.v0.json",
+      "source_tool": "contracts/control_schemas/audits/h11/connectors/storefront_integration_audit.v0.json",
       "target_aide_command_hint": "future tools wrapper for audit",
       "tool_id": "tool-control-schemas-audits-h11-connectors-storefront-integration-audit-v0-json"
     },
@@ -6713,7 +6713,7 @@
       "capability_family": "audit",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "control/schemas/audits/h12/connectors/retro_community_integration_audit.v0.json",
+      "source_tool": "contracts/control_schemas/audits/h12/connectors/retro_community_integration_audit.v0.json",
       "target_aide_command_hint": "future tools wrapper for audit",
       "tool_id": "tool-control-schemas-audits-h12-connectors-retro-community-integration-audit-v0-json"
     },
@@ -6722,7 +6722,7 @@
       "capability_family": "audit",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "control/schemas/audits/h13/connectors/local_private_integration_audit.v0.json",
+      "source_tool": "contracts/control_schemas/audits/h13/connectors/local_private_integration_audit.v0.json",
       "target_aide_command_hint": "future tools wrapper for audit",
       "tool_id": "tool-control-schemas-audits-h13-connectors-local-private-integration-audit-v0-json"
     },
@@ -6731,7 +6731,7 @@
       "capability_family": "audit",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "control/schemas/audits/h14/connectors/source_discovery_integration_audit.v0.json",
+      "source_tool": "contracts/control_schemas/audits/h14/connectors/source_discovery_integration_audit.v0.json",
       "target_aide_command_hint": "future tools wrapper for audit",
       "tool_id": "tool-control-schemas-audits-h14-connectors-source-discovery-integration-audit-v0-json"
     },
@@ -6740,7 +6740,7 @@
       "capability_family": "audit",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "control/schemas/audits/h2/connectors/package_connector_wave_postmortem.v0.json",
+      "source_tool": "contracts/control_schemas/audits/h2/connectors/package_connector_wave_postmortem.v0.json",
       "target_aide_command_hint": "future tools wrapper for audit",
       "tool_id": "tool-control-schemas-audits-h2-connectors-package-connector-wave-postmortem-v0-json"
     },
@@ -6749,7 +6749,7 @@
       "capability_family": "audit",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "control/schemas/audits/h2/connectors/package_integration_audit.v0.json",
+      "source_tool": "contracts/control_schemas/audits/h2/connectors/package_integration_audit.v0.json",
       "target_aide_command_hint": "future tools wrapper for audit",
       "tool_id": "tool-control-schemas-audits-h2-connectors-package-integration-audit-v0-json"
     },
@@ -6758,7 +6758,7 @@
       "capability_family": "audit",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "control/schemas/audits/h2/connectors/package_quality_delta_report.v0.json",
+      "source_tool": "contracts/control_schemas/audits/h2/connectors/package_quality_delta_report.v0.json",
       "target_aide_command_hint": "future tools wrapper for audit",
       "tool_id": "tool-control-schemas-audits-h2-connectors-package-quality-delta-report-v0-json"
     },
@@ -6767,7 +6767,7 @@
       "capability_family": "audit",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "control/schemas/audits/h2/connectors/package_review_integration_result.v0.json",
+      "source_tool": "contracts/control_schemas/audits/h2/connectors/package_review_integration_result.v0.json",
       "target_aide_command_hint": "future tools wrapper for audit",
       "tool_id": "tool-control-schemas-audits-h2-connectors-package-review-integration-result-v0-json"
     },
@@ -6776,7 +6776,7 @@
       "capability_family": "audit",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "control/schemas/audits/h3/connectors/os_package_connector_wave_postmortem.v0.json",
+      "source_tool": "contracts/control_schemas/audits/h3/connectors/os_package_connector_wave_postmortem.v0.json",
       "target_aide_command_hint": "future tools wrapper for audit",
       "tool_id": "tool-control-schemas-audits-h3-connectors-os-package-connector-wave-postmortem-v0-json"
     },
@@ -6785,7 +6785,7 @@
       "capability_family": "audit",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "control/schemas/audits/h3/connectors/os_package_integration_audit.v0.json",
+      "source_tool": "contracts/control_schemas/audits/h3/connectors/os_package_integration_audit.v0.json",
       "target_aide_command_hint": "future tools wrapper for audit",
       "tool_id": "tool-control-schemas-audits-h3-connectors-os-package-integration-audit-v0-json"
     },
@@ -6794,7 +6794,7 @@
       "capability_family": "audit",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "control/schemas/audits/h3/connectors/os_package_quality_delta_report.v0.json",
+      "source_tool": "contracts/control_schemas/audits/h3/connectors/os_package_quality_delta_report.v0.json",
       "target_aide_command_hint": "future tools wrapper for audit",
       "tool_id": "tool-control-schemas-audits-h3-connectors-os-package-quality-delta-report-v0-json"
     },
@@ -6803,7 +6803,7 @@
       "capability_family": "audit",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "control/schemas/audits/h3/connectors/os_package_review_integration_result.v0.json",
+      "source_tool": "contracts/control_schemas/audits/h3/connectors/os_package_review_integration_result.v0.json",
       "target_aide_command_hint": "future tools wrapper for audit",
       "tool_id": "tool-control-schemas-audits-h3-connectors-os-package-review-integration-result-v0-json"
     },
@@ -6812,7 +6812,7 @@
       "capability_family": "audit",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "control/schemas/audits/h4/connectors/code_source_integration_audit.v0.json",
+      "source_tool": "contracts/control_schemas/audits/h4/connectors/code_source_integration_audit.v0.json",
       "target_aide_command_hint": "future tools wrapper for audit",
       "tool_id": "tool-control-schemas-audits-h4-connectors-code-source-integration-audit-v0-json"
     },
@@ -6821,7 +6821,7 @@
       "capability_family": "audit",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "control/schemas/audits/h5/connectors/vendor_update_integration_audit.v0.json",
+      "source_tool": "contracts/control_schemas/audits/h5/connectors/vendor_update_integration_audit.v0.json",
       "target_aide_command_hint": "future tools wrapper for audit",
       "tool_id": "tool-control-schemas-audits-h5-connectors-vendor-update-integration-audit-v0-json"
     },
@@ -6830,7 +6830,7 @@
       "capability_family": "audit",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "control/schemas/audits/h6/connectors/web_archive_integration_audit.v0.json",
+      "source_tool": "contracts/control_schemas/audits/h6/connectors/web_archive_integration_audit.v0.json",
       "target_aide_command_hint": "future tools wrapper for audit",
       "tool_id": "tool-control-schemas-audits-h6-connectors-web-archive-integration-audit-v0-json"
     },
@@ -6839,7 +6839,7 @@
       "capability_family": "audit",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "control/schemas/audits/h7/connectors/library_research_integration_audit.v0.json",
+      "source_tool": "contracts/control_schemas/audits/h7/connectors/library_research_integration_audit.v0.json",
       "target_aide_command_hint": "future tools wrapper for audit",
       "tool_id": "tool-control-schemas-audits-h7-connectors-library-research-integration-audit-v0-json"
     },
@@ -6848,7 +6848,7 @@
       "capability_family": "audit",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "control/schemas/audits/h8/connectors/manuals_docs_integration_audit.v0.json",
+      "source_tool": "contracts/control_schemas/audits/h8/connectors/manuals_docs_integration_audit.v0.json",
       "target_aide_command_hint": "future tools wrapper for audit",
       "tool_id": "tool-control-schemas-audits-h8-connectors-manuals-docs-integration-audit-v0-json"
     },
@@ -6857,7 +6857,7 @@
       "capability_family": "audit",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "control/schemas/audits/h9/connectors/media_metadata_integration_audit.v0.json",
+      "source_tool": "contracts/control_schemas/audits/h9/connectors/media_metadata_integration_audit.v0.json",
       "target_aide_command_hint": "future tools wrapper for audit",
       "tool_id": "tool-control-schemas-audits-h9-connectors-media-metadata-integration-audit-v0-json"
     },
@@ -6866,7 +6866,7 @@
       "capability_family": "audit",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "control/schemas/audits/hosting/public_launch_readiness_audit.v0.json",
+      "source_tool": "contracts/control_schemas/audits/hosting/public_launch_readiness_audit.v0.json",
       "target_aide_command_hint": "future tools wrapper for audit",
       "tool_id": "tool-control-schemas-audits-hosting-public-launch-readiness-audit-v0-json"
     },
@@ -6875,7 +6875,7 @@
       "capability_family": "audit",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "control/schemas/audits/native/native_first_wave_integration_audit.v0.json",
+      "source_tool": "contracts/control_schemas/audits/native/native_first_wave_integration_audit.v0.json",
       "target_aide_command_hint": "future tools wrapper for audit",
       "tool_id": "tool-control-schemas-audits-native-native-first-wave-integration-audit-v0-json"
     },
@@ -6884,7 +6884,7 @@
       "capability_family": "audit",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "control/schemas/audits/packs/pack_import_report.v0.json",
+      "source_tool": "contracts/control_schemas/audits/packs/pack_import_report.v0.json",
       "target_aide_command_hint": "future tools wrapper for audit",
       "tool_id": "tool-control-schemas-audits-packs-pack-import-report-v0-json"
     },
@@ -6893,7 +6893,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "control/schemas/fixtures/archive/software/payloads/synthetic-demo-app-package.zip",
+      "source_tool": "contracts/control_schemas/fixtures/archive/software/payloads/synthetic-demo-app-package.zip",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-control-schemas-fixtures-archive-software-payloads-synthetic-demo-app-package-zip"
     },
@@ -6902,7 +6902,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "control/schemas/fixtures/h2/connectors/package_fixture.v0.json",
+      "source_tool": "contracts/control_schemas/fixtures/h2/connectors/package_fixture.v0.json",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-control-schemas-fixtures-h2-connectors-package-fixture-v0-json"
     },
@@ -6911,7 +6911,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "control/schemas/fixtures/h2/connectors/package_fixture_replay_result.v0.json",
+      "source_tool": "contracts/control_schemas/fixtures/h2/connectors/package_fixture_replay_result.v0.json",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-control-schemas-fixtures-h2-connectors-package-fixture-replay-result-v0-json"
     },
@@ -6920,7 +6920,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "control/schemas/fixtures/h3/connectors/os_package_fixture.v0.json",
+      "source_tool": "contracts/control_schemas/fixtures/h3/connectors/os_package_fixture.v0.json",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-control-schemas-fixtures-h3-connectors-os-package-fixture-v0-json"
     },
@@ -6929,7 +6929,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "control/schemas/fixtures/h3/connectors/os_package_fixture_replay_result.v0.json",
+      "source_tool": "contracts/control_schemas/fixtures/h3/connectors/os_package_fixture_replay_result.v0.json",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-control-schemas-fixtures-h3-connectors-os-package-fixture-replay-result-v0-json"
     },
@@ -6938,7 +6938,7 @@
       "capability_family": "validate",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "control/schemas/policies/hosting/public_alpha_operator_checklist.v0.json",
+      "source_tool": "contracts/control_schemas/policies/hosting/public_alpha_operator_checklist.v0.json",
       "target_aide_command_hint": "future tools wrapper for validate",
       "tool_id": "tool-control-schemas-policies-hosting-public-alpha-operator-checklist-v0-json"
     },
@@ -6947,7 +6947,7 @@
       "capability_family": "install",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "control/schemas/policies/hosting/rollback_plan.v0.json",
+      "source_tool": "contracts/control_schemas/policies/hosting/rollback_plan.v0.json",
       "target_aide_command_hint": "future tools wrapper for install",
       "tool_id": "tool-control-schemas-policies-hosting-rollback-plan-v0-json"
     },
@@ -6956,7 +6956,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "control/schemas/policies/packs/source_pack_export.v0.json",
+      "source_tool": "contracts/control_schemas/policies/packs/source_pack_export.v0.json",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-control-schemas-policies-packs-source-pack-export-v0-json"
     },
@@ -6965,7 +6965,7 @@
       "capability_family": "release",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "control/schemas/previews/h10/connectors/platform_release_edition_candidate.v0.json",
+      "source_tool": "contracts/control_schemas/previews/h10/connectors/platform_release_edition_candidate.v0.json",
       "target_aide_command_hint": "future tools wrapper for release",
       "tool_id": "tool-control-schemas-previews-h10-connectors-platform-release-edition-candidate-v0-json"
     },
@@ -6974,7 +6974,7 @@
       "capability_family": "release",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "control/schemas/previews/h11/connectors/version_release_channel_candidate.v0.json",
+      "source_tool": "contracts/control_schemas/previews/h11/connectors/version_release_channel_candidate.v0.json",
       "target_aide_command_hint": "future tools wrapper for release",
       "tool_id": "tool-control-schemas-previews-h11-connectors-version-release-channel-candidate-v0-json"
     },
@@ -6983,7 +6983,7 @@
       "capability_family": "install",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "control/schemas/previews/h12/connectors/compatibility_install_note_candidate.v0.json",
+      "source_tool": "contracts/control_schemas/previews/h12/connectors/compatibility_install_note_candidate.v0.json",
       "target_aide_command_hint": "future tools wrapper for install",
       "tool_id": "tool-control-schemas-previews-h12-connectors-compatibility-install-note-candidate-v0-json"
     },
@@ -6992,7 +6992,7 @@
       "capability_family": "validate",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "control/schemas/previews/h12/connectors/hash_checksum_candidate.v0.json",
+      "source_tool": "contracts/control_schemas/previews/h12/connectors/hash_checksum_candidate.v0.json",
       "target_aide_command_hint": "future tools wrapper for validate",
       "tool_id": "tool-control-schemas-previews-h12-connectors-hash-checksum-candidate-v0-json"
     },
@@ -7001,7 +7001,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "control/schemas/previews/h13/connectors/pack_export_import_boundary_candidate.v0.json",
+      "source_tool": "contracts/control_schemas/previews/h13/connectors/pack_export_import_boundary_candidate.v0.json",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-control-schemas-previews-h13-connectors-pack-export-import-boundary-candidate-v0-json"
     },
@@ -7010,7 +7010,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "control/schemas/previews/h14/connectors/pack_import_export_boundary_candidate.v0.json",
+      "source_tool": "contracts/control_schemas/previews/h14/connectors/pack_import_export_boundary_candidate.v0.json",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-control-schemas-previews-h14-connectors-pack-import-export-boundary-candidate-v0-json"
     },
@@ -7019,7 +7019,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "control/schemas/previews/h2/connectors/package_connector_health_summary.v0.json",
+      "source_tool": "contracts/control_schemas/previews/h2/connectors/package_connector_health_summary.v0.json",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-control-schemas-previews-h2-connectors-package-connector-health-summary-v0-json"
     },
@@ -7028,7 +7028,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "control/schemas/previews/h2/connectors/package_dependency_candidate.v0.json",
+      "source_tool": "contracts/control_schemas/previews/h2/connectors/package_dependency_candidate.v0.json",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-control-schemas-previews-h2-connectors-package-dependency-candidate-v0-json"
     },
@@ -7037,7 +7037,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "control/schemas/previews/h2/connectors/package_file_candidate.v0.json",
+      "source_tool": "contracts/control_schemas/previews/h2/connectors/package_file_candidate.v0.json",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-control-schemas-previews-h2-connectors-package-file-candidate-v0-json"
     },
@@ -7046,7 +7046,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "control/schemas/previews/h2/connectors/package_identity_candidate.v0.json",
+      "source_tool": "contracts/control_schemas/previews/h2/connectors/package_identity_candidate.v0.json",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-control-schemas-previews-h2-connectors-package-identity-candidate-v0-json"
     },
@@ -7055,7 +7055,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "control/schemas/previews/h2/connectors/package_live_probe_output_bundle.v0.json",
+      "source_tool": "contracts/control_schemas/previews/h2/connectors/package_live_probe_output_bundle.v0.json",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-control-schemas-previews-h2-connectors-package-live-probe-output-bundle-v0-json"
     },
@@ -7064,7 +7064,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "control/schemas/previews/h2/connectors/package_live_probe_request.v0.json",
+      "source_tool": "contracts/control_schemas/previews/h2/connectors/package_live_probe_request.v0.json",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-control-schemas-previews-h2-connectors-package-live-probe-request-v0-json"
     },
@@ -7073,7 +7073,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "control/schemas/previews/h2/connectors/package_live_probe_result.v0.json",
+      "source_tool": "contracts/control_schemas/previews/h2/connectors/package_live_probe_result.v0.json",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-control-schemas-previews-h2-connectors-package-live-probe-result-v0-json"
     },
@@ -7082,7 +7082,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "control/schemas/previews/h2/connectors/package_normalized_record.v0.json",
+      "source_tool": "contracts/control_schemas/previews/h2/connectors/package_normalized_record.v0.json",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-control-schemas-previews-h2-connectors-package-normalized-record-v0-json"
     },
@@ -7091,7 +7091,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "control/schemas/previews/h3/connectors/os_package_connector_health_summary.v0.json",
+      "source_tool": "contracts/control_schemas/previews/h3/connectors/os_package_connector_health_summary.v0.json",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-control-schemas-previews-h3-connectors-os-package-connector-health-summary-v0-json"
     },
@@ -7100,7 +7100,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "control/schemas/previews/h3/connectors/os_package_dependency_candidate.v0.json",
+      "source_tool": "contracts/control_schemas/previews/h3/connectors/os_package_dependency_candidate.v0.json",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-control-schemas-previews-h3-connectors-os-package-dependency-candidate-v0-json"
     },
@@ -7109,7 +7109,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "control/schemas/previews/h3/connectors/os_package_file_candidate.v0.json",
+      "source_tool": "contracts/control_schemas/previews/h3/connectors/os_package_file_candidate.v0.json",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-control-schemas-previews-h3-connectors-os-package-file-candidate-v0-json"
     },
@@ -7118,7 +7118,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "control/schemas/previews/h3/connectors/os_package_identity_candidate.v0.json",
+      "source_tool": "contracts/control_schemas/previews/h3/connectors/os_package_identity_candidate.v0.json",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-control-schemas-previews-h3-connectors-os-package-identity-candidate-v0-json"
     },
@@ -7127,7 +7127,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "control/schemas/previews/h3/connectors/os_package_live_probe_output_bundle.v0.json",
+      "source_tool": "contracts/control_schemas/previews/h3/connectors/os_package_live_probe_output_bundle.v0.json",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-control-schemas-previews-h3-connectors-os-package-live-probe-output-bundle-v0-json"
     },
@@ -7136,7 +7136,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "control/schemas/previews/h3/connectors/os_package_live_probe_request.v0.json",
+      "source_tool": "contracts/control_schemas/previews/h3/connectors/os_package_live_probe_request.v0.json",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-control-schemas-previews-h3-connectors-os-package-live-probe-request-v0-json"
     },
@@ -7145,7 +7145,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "control/schemas/previews/h3/connectors/os_package_live_probe_result.v0.json",
+      "source_tool": "contracts/control_schemas/previews/h3/connectors/os_package_live_probe_result.v0.json",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-control-schemas-previews-h3-connectors-os-package-live-probe-result-v0-json"
     },
@@ -7154,7 +7154,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "control/schemas/previews/h3/connectors/os_package_normalized_record.v0.json",
+      "source_tool": "contracts/control_schemas/previews/h3/connectors/os_package_normalized_record.v0.json",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-control-schemas-previews-h3-connectors-os-package-normalized-record-v0-json"
     },
@@ -7163,7 +7163,7 @@
       "capability_family": "release",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "control/schemas/previews/h4/connectors/release_asset_candidate.v0.json",
+      "source_tool": "contracts/control_schemas/previews/h4/connectors/release_asset_candidate.v0.json",
       "target_aide_command_hint": "future tools wrapper for release",
       "tool_id": "tool-control-schemas-previews-h4-connectors-release-asset-candidate-v0-json"
     },
@@ -7172,7 +7172,7 @@
       "capability_family": "release",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "control/schemas/previews/h4/connectors/release_identity_candidate.v0.json",
+      "source_tool": "contracts/control_schemas/previews/h4/connectors/release_identity_candidate.v0.json",
       "target_aide_command_hint": "future tools wrapper for release",
       "tool_id": "tool-control-schemas-previews-h4-connectors-release-identity-candidate-v0-json"
     },
@@ -7181,7 +7181,7 @@
       "capability_family": "install",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "control/schemas/previews/h8/connectors/install_requirement_claim_candidate.v0.json",
+      "source_tool": "contracts/control_schemas/previews/h8/connectors/install_requirement_claim_candidate.v0.json",
       "target_aide_command_hint": "future tools wrapper for install",
       "tool_id": "tool-control-schemas-previews-h8-connectors-install-requirement-claim-candidate-v0-json"
     },
@@ -7190,7 +7190,7 @@
       "capability_family": "release",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "control/schemas/previews/h9/connectors/music_work_recording_release_candidate.v0.json",
+      "source_tool": "contracts/control_schemas/previews/h9/connectors/music_work_recording_release_candidate.v0.json",
       "target_aide_command_hint": "future tools wrapper for release",
       "tool_id": "tool-control-schemas-previews-h9-connectors-music-work-recording-release-candidate-v0-json"
     },
@@ -7199,7 +7199,7 @@
       "capability_family": "release",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "control/schemas/previews/native/native_release_candidate_preview.v0.json",
+      "source_tool": "contracts/control_schemas/previews/native/native_release_candidate_preview.v0.json",
       "target_aide_command_hint": "future tools wrapper for release",
       "tool_id": "tool-control-schemas-previews-native-native-release-candidate-preview-v0-json"
     },
@@ -7208,7 +7208,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "control/schemas/previews/packs/pack_import_preview.v0.json",
+      "source_tool": "contracts/control_schemas/previews/packs/pack_import_preview.v0.json",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-control-schemas-previews-packs-pack-import-preview-v0-json"
     },
@@ -7217,7 +7217,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "control/schemas/tasks/h2/connectors/package_next_phase_recommendation.v0.json",
+      "source_tool": "contracts/control_schemas/tasks/h2/connectors/package_next_phase_recommendation.v0.json",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-control-schemas-tasks-h2-connectors-package-next-phase-recommendation-v0-json"
     },
@@ -7226,7 +7226,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "control/schemas/tasks/h3/connectors/os_package_next_phase_recommendation.v0.json",
+      "source_tool": "contracts/control_schemas/tasks/h3/connectors/os_package_next_phase_recommendation.v0.json",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-control-schemas-tasks-h3-connectors-os-package-next-phase-recommendation-v0-json"
     },
@@ -7235,7 +7235,7 @@
       "capability_family": "build",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "data/public_index/build_manifest.json",
+      "source_tool": "site/dist/data/public_index/build_manifest.json",
       "target_aide_command_hint": "future tools wrapper for build",
       "tool_id": "tool-data-public-index-build-manifest-json"
     },
@@ -7244,7 +7244,7 @@
       "capability_family": "validate",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "data/public_index/checksums.sha256",
+      "source_tool": "site/dist/data/public_index/checksums.sha256",
       "target_aide_command_hint": "future tools wrapper for validate",
       "tool_id": "tool-data-public-index-checksums-sha256"
     },
@@ -16940,8 +16940,8 @@
     "contracts/ui/view_models/stored_exports.view_model.yaml",
     "control/inventory/git/sync_workflow_commands.json",
     "control/inventory/observations/obs_track_b_sync_matrix.json",
-    "control/prototypes/legacy_runtime/connectors/h13_local_private/local_cas_import_boundary.py",
-    "control/schemas/previews/h13/connectors/local_cas_import_boundary_candidate.v0.json",
+    "archive/prototypes/legacy_runtime/connectors/h13_local_private/local_cas_import_boundary.py",
+    "contracts/control_schemas/previews/h13/connectors/local_cas_import_boundary_candidate.v0.json",
     "crates/eureka-contracts/src/lib.rs",
     "crates/eureka-core/src/lib.rs",
     "crates/eureka-resolver/src/lib.rs",
@@ -17227,8 +17227,8 @@
     "contracts/ui/view_models/stored_exports.view_model.yaml",
     "control/inventory/git/sync_workflow_commands.json",
     "control/inventory/observations/obs_track_b_sync_matrix.json",
-    "control/prototypes/legacy_runtime/connectors/h13_local_private/local_cas_import_boundary.py",
-    "control/schemas/previews/h13/connectors/local_cas_import_boundary_candidate.v0.json",
+    "archive/prototypes/legacy_runtime/connectors/h13_local_private/local_cas_import_boundary.py",
+    "contracts/control_schemas/previews/h13/connectors/local_cas_import_boundary_candidate.v0.json",
     "crates/eureka-contracts/src/lib.rs",
     "crates/eureka-core/src/lib.rs",
     "crates/eureka-resolver/src/lib.rs",

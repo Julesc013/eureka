@@ -104,7 +104,7 @@
       "output_id": "search_need_seed_review_item",
       "output_type": "search_need_seed_future",
       "output_status": "needs_review",
-      "output_contract_ref": "control/schemas/policies/node/work_unit_result.v0.json",
+      "output_contract_ref": "contracts/control_schemas/policies/node/work_unit_result.v0.json",
       "output_ref": null,
       "output_summary": "Review-gated future SearchNeed seed proposal.",
       "output_public_safe": true,
@@ -122,7 +122,7 @@
   ],
   "outputs_rejected": [],
   "output_contract_refs": [
-    "control/schemas/policies/node/work_unit_result.v0.json"
+    "contracts/control_schemas/policies/node/work_unit_result.v0.json"
   ],
   "review_gates": {
     "human_review_required": true,

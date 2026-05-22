@@ -37,7 +37,7 @@ An instance root must not be:
 - the user home directory as an implicit instance;
 - a hidden/private local root such as `.cache`, `.local`, or `.aide.local`;
 - generated site output such as `site/dist`;
-- product source areas such as `runtime`, `contracts`, `surfaces`, `native`, `crates`, `examples`, or `control/prototypes`;
+- product source areas such as `runtime`, `contracts`, `surfaces`, `native`, `crates`, `examples`, or `archive/prototypes`;
 - any tracked Git path containing local database, log, run, tmp, import, or export state.
 
 The current validators also reject committed local instance state and fail closed on unsupported instance schema versions.

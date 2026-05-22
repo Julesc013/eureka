@@ -104,7 +104,7 @@ class H4CodeSourceFixtureScriptTests(unittest.TestCase):
     def test_scripts_refuse_forbidden_roots(self):
         bad_commands = [
             ["scripts/normalize_h4_code_source_fixture.py", "--source-id", "github_releases", "--input", "examples/connectors/h4_code_source_release/fixtures/github_releases/typical_record.json", "--output", "site/dist/h4.json"],
-            ["scripts/replay_h4_code_source_fixtures.py", "--output-dir", "data/public_index/h4"],
+            ["scripts/replay_h4_code_source_fixtures.py", "--output-dir", "site/dist/data/public_index/h4"],
             ["scripts/summarize_h4_code_source_fixture_outputs.py", "--output", "repository_clones/h4.json"],
         ]
         for command in bad_commands:

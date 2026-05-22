@@ -1,62 +1,31 @@
-#!/usr/bin/env python3
-"""Create a local Workbench live-run projection from the headless run kernel."""
-
 from __future__ import annotations
 
-import argparse
-import json
+EUREKA_SCRIPT_COMPAT_WRAPPER = True
+
+from importlib.util import module_from_spec, spec_from_file_location
 from pathlib import Path
+import runpy
 import sys
-from typing import Any, Sequence, TextIO
 
-REPO_ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(REPO_ROOT))
+sys.dont_write_bytecode = True
+_TARGET = Path(__file__).resolve().parents[1] / 'tools/generators/eureka_workbench_live_run.py'
+_TARGET_PARENT = str(_TARGET.parent)
+if _TARGET_PARENT not in sys.path:
+    sys.path.insert(0, _TARGET_PARENT)
+_SPEC = spec_from_file_location(f"_eureka_tool_{Path(__file__).stem}", _TARGET)
+if _SPEC is None or _SPEC.loader is None:
+    raise ImportError(f"Unable to load tool implementation: {_TARGET}")
+_MODULE = module_from_spec(_SPEC)
+sys.modules[_SPEC.name] = _MODULE
+_SPEC.loader.exec_module(_MODULE)
 
-from runtime.local_service.workbench_live_run import create_workbench_resolution_run
-
-
-def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout) -> int:
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--query", required=True)
-    parser.add_argument("--projection", default="operator_workbench", choices=("operator_workbench", "public_web", "native_desktop_read_only"))
-    parser.add_argument("--dry-run", action="store_true", default=True)
-    parser.add_argument("--from-fixtures", action="store_true")
-    parser.add_argument("--include-ia-hunt-dry-run", action="store_true")
-    parser.add_argument("--json", action="store_true")
-    parser.add_argument("--output")
-    parser.add_argument("--events-output")
-    parser.add_argument("--lanes-output")
-    parser.add_argument("--workunits-output")
-    parser.add_argument("--boundary-output")
-    args = parser.parse_args(argv)
-
-    packet = create_workbench_resolution_run(
-        args.query,
-        args.projection,
-        include_ia_hunt_dry_run=bool(args.include_ia_hunt_dry_run),
-    )
-    _write_json(args.output, packet)
-    _write_json(args.events_output, packet["events"])
-    _write_json(args.lanes_output, packet["lane_snapshot"])
-    _write_json(args.workunits_output, packet["workunits"])
-    _write_json(args.boundary_output, packet["boundary_report"])
-    if args.json:
-        print(json.dumps(packet, indent=2, sort_keys=True), file=stdout)
-    else:
-        print(f"run_id: {packet['run_id']}", file=stdout)
-        print(f"state: {packet['state']}", file=stdout)
-        print(f"lanes: {packet['lane_count']}", file=stdout)
-        print(f"workunits: {packet['workunit_count']}", file=stdout)
-    return 0
-
-
-def _write_json(path_value: str | None, payload: Any) -> None:
-    if not path_value:
-        return
-    path = Path(path_value)
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n", encoding="utf-8")
-
-
-if __name__ == "__main__":
-    raise SystemExit(main())
+for _name, _value in vars(_MODULE).items():
+    if _name not in {"__name__", "__loader__", "__package__", "__spec__"}:
+        globals()[_name] = _value
+if __name__ != "__main__":
+    sys.modules[__name__] = _MODULE
+else:
+    sys.argv[0] = str(_TARGET)
+    if hasattr(_MODULE, "main"):
+        raise SystemExit(_MODULE.main())
+    runpy.run_path(str(_TARGET), run_name="__main__")

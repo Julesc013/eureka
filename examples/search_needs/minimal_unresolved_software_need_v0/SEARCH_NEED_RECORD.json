@@ -127,7 +127,7 @@
       "local_index_only"
     ],
     "checked_sources": [
-      "data/public_index"
+      "site/dist/data/public_index"
     ],
     "checked_source_families": [
       "public_index_fixture_and_recorded_sources"
@@ -179,10 +179,10 @@
     ],
     "absence_refs": [],
     "relevant_source_refs": [
-      "data/public_index/source_coverage.json"
+      "site/dist/data/public_index/source_coverage.json"
     ],
     "relevant_evidence_refs": [
-      "data/public_index/index_stats.json"
+      "site/dist/data/public_index/index_stats.json"
     ],
     "confidence": "medium",
     "limitations": [

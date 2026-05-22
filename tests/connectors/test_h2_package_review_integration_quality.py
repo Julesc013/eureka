@@ -3,8 +3,8 @@ import re
 import unittest
 from pathlib import Path
 
-from control.prototypes.legacy_runtime.connectors.h2_package_registries.quality_delta import build_h2_quality_delta, detect_h2_quality_overclaim
-from control.prototypes.legacy_runtime.connectors.h2_package_registries.review_integration import (
+from archive.prototypes.legacy_runtime.connectors.h2_package_registries.quality_delta import build_h2_quality_delta, detect_h2_quality_overclaim
+from archive.prototypes.legacy_runtime.connectors.h2_package_registries.review_integration import (
     build_h2_candidate_promotion_preview,
     build_h2_dependency_candidate_review_seed,
     build_h2_evidence_candidate_review_seed,
@@ -17,16 +17,16 @@ from control.prototypes.legacy_runtime.connectors.h2_package_registries.review_i
     detect_h2_review_truth_boundary_violations,
     load_h2_package_outputs,
 )
-from control.prototypes.legacy_runtime.connectors.h2_package_registries.wave_postmortem import build_h2_connector_wave_postmortem, build_h2_integration_audit
+from archive.prototypes.legacy_runtime.connectors.h2_package_registries.wave_postmortem import build_h2_connector_wave_postmortem, build_h2_integration_audit
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 REPLAY_DIR = REPO_ROOT / "examples/connectors/h2_package_registries/replay_results"
 LIVE_DIR = REPO_ROOT / "examples/connectors/h2_package_registries/live_probe_results"
 RUNTIME_FILES = (
-    REPO_ROOT / "control/prototypes/legacy_runtime/connectors/h2_package_registries/review_integration.py",
-    REPO_ROOT / "control/prototypes/legacy_runtime/connectors/h2_package_registries/quality_delta.py",
-    REPO_ROOT / "control/prototypes/legacy_runtime/connectors/h2_package_registries/wave_postmortem.py",
+    REPO_ROOT / "archive/prototypes/legacy_runtime/connectors/h2_package_registries/review_integration.py",
+    REPO_ROOT / "archive/prototypes/legacy_runtime/connectors/h2_package_registries/quality_delta.py",
+    REPO_ROOT / "archive/prototypes/legacy_runtime/connectors/h2_package_registries/wave_postmortem.py",
 )
 
 

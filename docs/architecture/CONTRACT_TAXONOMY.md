@@ -70,8 +70,8 @@ consumed by scripts, validators, tests, AIDE, and future CI tooling. They must
 not become runtime implementation, product data, example payload authority,
 generated artifact output, or test result storage.
 
-`control/schemas/` may own `CONTROL_SCHEMA` only. Product contracts are not
-allowed under `control/schemas/`. Current control schemas are retained for audit,
+`contracts/control_schemas/` may own `CONTROL_SCHEMA` only. Product contracts are not
+allowed under `contracts/control_schemas/`. Current control schemas are retained for audit,
 fixture, preview, policy, validator, task, and deprecated records, with migration
 backlog recorded in `control/inventory/contract_taxonomy_migration_backlog.json`.
 
@@ -95,7 +95,7 @@ They do not own schema semantics.
 
 R0-03 records current risks rather than hiding them:
 
-- `control/schemas/policies/packs/**` vs `contracts/packs/**`
+- `contracts/control_schemas/policies/packs/**` vs `contracts/packs/**`
 - `contracts/source_registry/**` vs `contracts/sources/**`
 - `contracts/source_cache/**` vs `contracts/stores/source_cache_*.json`
 - `contracts/runtime/**` vs runtime implementation-local helpers
@@ -108,8 +108,8 @@ files may explain or report state, but they do not become the source of truth.
 ## Workbench And Search Interaction
 
 Workbench Foundation should put route/view-model contract law under
-`contracts/views/workbench/`; `surfaces/web/workbench/` should own presentation
-and `runtime/local_workbench/` remains transitional layout debt.
+`contracts/views/workbench/`; `surfaces/web/workbench/` owns presentation and
+`surfaces/web/workbench/local_html/` is the migrated local HTML renderer.
 
 Search Interaction should put query, compiled intent, resolution run, result
 lane, control command, feedback, absence, coverage, and discovery trail packets

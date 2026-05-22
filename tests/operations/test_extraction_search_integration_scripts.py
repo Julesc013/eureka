@@ -58,7 +58,7 @@ class ExtractionSearchIntegrationScriptsTest(unittest.TestCase):
         result = self.run_cmd(str(INTEGRATE), "--input", "examples/extraction/results", "--output", "site/dist/extraction.json")
         self.assertNotEqual(result.returncode, 0)
         self.assertIn("refusing forbidden output root", result.stdout)
-        result = self.run_cmd(str(SUMMARY), "--input", "examples/extraction/search_integration", "--output", "data/public_index/extraction.json")
+        result = self.run_cmd(str(SUMMARY), "--input", "examples/extraction/search_integration", "--output", "site/dist/data/public_index/extraction.json")
         self.assertNotEqual(result.returncode, 0)
         self.assertIn("refusing forbidden output root", result.stdout)
         result = self.run_cmd(str(INTEGRATE), "--input", "examples/extraction/results", "--output", "runtime/extraction/generated.json")

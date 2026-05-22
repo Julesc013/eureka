@@ -895,7 +895,7 @@
   ],
   "public_index_compatibility": [
     {
-      "artifact_root": "data/public_index",
+      "artifact_root": "site/dist/data/public_index",
       "contains_executables": false,
       "contains_live_data": false,
       "contains_private_data": false,
@@ -927,7 +927,7 @@
         "ok"
       ],
       "passed": true,
-      "path": "deploy/render/render.yaml",
+      "path": "release/render/render.yaml",
       "template_id": "render_template"
     }
   ],

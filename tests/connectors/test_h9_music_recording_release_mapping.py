@@ -3,9 +3,9 @@ from __future__ import annotations
 from pathlib import Path
 import unittest
 
-from control.prototypes.legacy_runtime.connectors.h9_media_metadata.fixture_loader import load_h9_media_metadata_fixture
-from control.prototypes.legacy_runtime.connectors.h9_media_metadata.music_work_recording_release import build_h9_music_work_recording_release_candidate
-from control.prototypes.legacy_runtime.connectors.h9_media_metadata.normalizer_common import detect_h9_truth_boundary_violations, normalize_h9_media_metadata_fixture
+from archive.prototypes.legacy_runtime.connectors.h9_media_metadata.fixture_loader import load_h9_media_metadata_fixture
+from archive.prototypes.legacy_runtime.connectors.h9_media_metadata.music_work_recording_release import build_h9_music_work_recording_release_candidate
+from archive.prototypes.legacy_runtime.connectors.h9_media_metadata.normalizer_common import detect_h9_truth_boundary_violations, normalize_h9_media_metadata_fixture
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 

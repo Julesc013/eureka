@@ -36,7 +36,7 @@ class H4ReviewQualityScriptTests(unittest.TestCase):
     def test_scripts_refuse_forbidden_roots(self):
         commands = [
             ("scripts/integrate_h4_code_source_review.py", "--input-dir", "examples/connectors/h4_code_source_release/replay_results", "--output-dir", "site/dist/h4"),
-            ("scripts/summarize_h4_code_source_quality_delta.py", "--input-dir", "examples/connectors/h4_code_source_release/review_integration", "--output", "data/public_index/h4.json"),
+            ("scripts/summarize_h4_code_source_quality_delta.py", "--input-dir", "examples/connectors/h4_code_source_release/review_integration", "--output", "site/dist/data/public_index/h4.json"),
             ("scripts/audit_h4_code_source_release_wave.py", "--json-output", "repository_clones/h4.json"),
         ]
         for command in commands:

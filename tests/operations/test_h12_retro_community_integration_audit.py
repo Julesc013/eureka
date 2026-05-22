@@ -6,7 +6,7 @@ from pathlib import Path
 import unittest
 
 from scripts.audit_h12_retro_community_wave import build_wave_audit
-from control.prototypes.legacy_runtime.connectors.h12_retro_community.wave_postmortem import apply_missing_source_gate, build_h12_next_phase_recommendation
+from archive.prototypes.legacy_runtime.connectors.h12_retro_community.wave_postmortem import apply_missing_source_gate, build_h12_next_phase_recommendation
 
 ROOT = Path(__file__).resolve().parents[2]
 

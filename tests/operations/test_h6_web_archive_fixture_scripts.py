@@ -54,7 +54,7 @@ class H6WebArchiveFixtureScriptTests(unittest.TestCase):
     def test_scripts_refuse_forbidden_roots(self) -> None:
         commands = [
             [sys.executable, "scripts/normalize_h6_web_archive_fixture.py", "--source-id", "wayback_cdx_memento", "--input", "examples/connectors/h6_web_archive_news_event/fixtures/wayback_cdx_memento/capture_record.json", "--output", "site/dist/h6.json"],
-            [sys.executable, "scripts/normalize_h6_web_archive_fixture.py", "--source-id", "wayback_cdx_memento", "--input", "examples/connectors/h6_web_archive_news_event/fixtures/wayback_cdx_memento/capture_record.json", "--output", "data/public_index/h6.json"],
+            [sys.executable, "scripts/normalize_h6_web_archive_fixture.py", "--source-id", "wayback_cdx_memento", "--input", "examples/connectors/h6_web_archive_news_event/fixtures/wayback_cdx_memento/capture_record.json", "--output", "site/dist/data/public_index/h6.json"],
             [sys.executable, "scripts/normalize_h6_web_archive_fixture.py", "--source-id", "wayback_cdx_memento", "--input", "examples/connectors/h6_web_archive_news_event/fixtures/wayback_cdx_memento/capture_record.json", "--output", "crawl/h6.json"],
             [sys.executable, "scripts/normalize_h6_web_archive_fixture.py", "--source-id", "wayback_cdx_memento", "--input", "examples/connectors/h6_web_archive_news_event/fixtures/wayback_cdx_memento/capture_record.json", "--output", "warc_wacz_cache/h6.json"],
             [sys.executable, "scripts/normalize_h6_web_archive_fixture.py", "--source-id", "wayback_cdx_memento", "--input", "examples/connectors/h6_web_archive_news_event/fixtures/wayback_cdx_memento/capture_record.json", "--output", "media_downloads/h6.json"],

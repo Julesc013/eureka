@@ -84,7 +84,7 @@ generated public index. That evidence remains local/public-alpha only and does
 not make a hosted backend live.
 
 Public Search Index Builder v0 now provides the preferred controlled input for
-this mode under `data/public_index`. The runtime loads
+this mode under `site/dist/data/public_index`. The runtime loads
 `search_documents.ndjson` when present and reports
 `index_status=generated_public_search_index`; hosted-wrapper config validation
 requires the generated public index to exist. Local development may still fall

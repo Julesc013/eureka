@@ -40,7 +40,7 @@ forbidden_paths:
   - native/**
   - crates/**
   - examples/**
-  - control/prototypes/**
+  - archive/prototypes/**
 gate:
   - no server implementation
   - no HTML workbench implementation

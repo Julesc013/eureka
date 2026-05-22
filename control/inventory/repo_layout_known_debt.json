@@ -1,58 +1,54 @@
 {
-  "schema_version": "repo_layout_known_debt.v0",
-  "task_id": "REPO-LAYOUT-CANON-01",
-  "status": "recorded_not_moved",
-  "known_debt": [
+  "schema_version": "repo_layout_reconcile_status.v1",
+  "task_id": "EUREKA-STRUCTURE-BIG-BANG-01",
+  "status": "resolved_by_structure_reconcile",
+  "known_debt": [],
+  "resolved_debt": [
     {
       "debt_id": "top_level_data",
-      "path": "data",
+      "old_path": "data",
+      "new_path": "site/dist/data/public_index",
       "class": "generated_artifact_debt",
-      "future_task": "REPO-LAYOUT-GENERATED-03",
-      "required_disposition": "move, rename, or tightly reapprove with generator and check policy"
-    },
-    {
-      "debt_id": "data_public_index",
-      "path": "data/public_index",
-      "class": "committed_public_index_artifact",
-      "future_task": "REPO-LAYOUT-GENERATED-03",
-      "required_disposition": "classify as generated artifact projection and remove ambiguity with source content"
+      "disposition": "moved_generated_public_index_under_site_dist"
     },
     {
       "debt_id": "top_level_deploy",
-      "path": "deploy",
+      "old_path": "deploy",
+      "new_path": "release/render",
       "class": "release_definition_debt",
-      "future_task": "REPO-LAYOUT-INVENTORY-02",
-      "required_disposition": "move or map deployment definitions under release/"
+      "disposition": "moved_release_definition_and_hosting_docs"
     },
     {
       "debt_id": "control_prototypes_legacy_runtime",
-      "path": "control/prototypes/legacy_runtime",
+      "old_path": "control/prototypes/legacy_runtime",
+      "new_path": "archive/prototypes/legacy_runtime",
       "class": "prototype_runtime_under_control",
-      "future_task": "REPO-LAYOUT-ARCHIVE-05",
-      "required_disposition": "archive historical prototype material or promote selected slices through runtime ownership"
+      "disposition": "archived_retired_prototype_material"
     },
     {
       "debt_id": "runtime_local_workbench_presentation",
-      "path": "runtime/local_workbench",
+      "old_path": "runtime/local_workbench",
+      "new_path": "surfaces/web/workbench/local_html",
       "class": "presentation_under_runtime",
-      "future_task": "REPO-LAYOUT-WORKBENCH-SURFACE-07",
-      "required_disposition": "move Workbench presentation to surfaces/web/workbench after route and packet contracts are locked"
+      "disposition": "moved_presentation_to_web_surface"
     },
     {
       "debt_id": "control_schemas_contract_authority_overlap",
-      "path": "control/schemas",
+      "old_path": "control/schemas",
+      "new_path": "contracts/control_schemas",
       "class": "duplicate_contract_authority_risk",
-      "future_task": "REPO-LAYOUT-CONTRACT-AUTHORITY-06",
-      "required_disposition": "eliminate, archive, or scope as governance-only material so contracts/ remains product authority"
+      "disposition": "moved_schema_authority_under_contracts"
     },
     {
       "debt_id": "scripts_large_tool_tree",
-      "path": "scripts",
+      "old_path": "scripts",
+      "new_path": "tools",
       "class": "thin_wrapper_root_with_substantive_tools",
-      "future_task": "REPO-LAYOUT-TOOLS-04",
-      "required_disposition": "move substantive validators, auditors, builders, and reporters into tools/ in phases"
+      "disposition": "moved_substantive_tooling_under_tools_with_script_wrappers"
     }
   ],
-  "no_file_moves": true,
-  "no_runtime_behavior_change": true
+  "path_migration_map": "control/audits/eureka-structure-big-bang-v1/path_migration_map.json",
+  "no_runtime_behavior_change": true,
+  "production_readiness_claim": false,
+  "public_launch_readiness_claim": false
 }

@@ -127,7 +127,7 @@
       "proposed_role": "PRODUCT_PUBLIC_CONTRACT pack authority",
       "authority_class": "PRODUCT_PUBLIC_CONTRACT",
       "migration_needed": false,
-      "notes": "control/schemas/policies/packs may describe control policies only, not pack truth."
+      "notes": "contracts/control_schemas/policies/packs may describe control policies only, not pack truth."
     },
     {
       "path": "contracts/archive",
@@ -144,7 +144,7 @@
       "notes": "Name must not be confused with archive/ historical material root."
     },
     {
-      "path": "control/schemas",
+      "path": "contracts/control_schemas",
       "file_count": 354,
       "json_count": 343,
       "toml_count": 0,

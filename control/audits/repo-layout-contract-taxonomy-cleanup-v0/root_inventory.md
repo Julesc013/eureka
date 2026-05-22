@@ -13,7 +13,7 @@ Tracked inventory source: `git ls-files`.
 | `contracts/runtime` | 9 | 9 | 0 | 0 | 0 | runtime packet contract authority |
 | `contracts/packs` | 4 | 3 | 0 | 0 | 0 | pack contract authority |
 | `contracts/archive` | 26 | 0 | 0 | 19 | 0 | archive-domain product contracts |
-| `control/schemas` | 354 | 343 | 0 | 0 | 0 | control schemas only |
+| `contracts/control_schemas` | 354 | 343 | 0 | 0 | 0 | control schemas only |
 | `control/policies` | 140 | 140 | 0 | 0 | 0 | policy documents |
 | `control/inventory` | 1728 | 1719 | 0 | 0 | 0 | inventory records |
 | `examples` | 4570 | 4245 | 0 | 2 | 5 | fixtures and examples |

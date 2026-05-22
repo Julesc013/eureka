@@ -50,7 +50,7 @@
       "source_family": "synthetic",
       "explanation": "The example result family has useful fixture metadata but not enough source-backed compatibility evidence to satisfy a production-quality answer.",
       "evidence_refs": [
-        "data/public_index/search_documents.ndjson"
+        "site/dist/data/public_index/search_documents.ndjson"
       ],
       "limitations": [
         "P61 records the weak-hit shape only; it does not fetch new compatibility evidence."
@@ -62,7 +62,7 @@
       "source_family": "local_bundle_fixtures",
       "explanation": "Some candidate results may point at parent bundles or text stand-ins instead of the smallest verified actionable unit.",
       "evidence_refs": [
-        "data/public_index/source_coverage.json"
+        "site/dist/data/public_index/source_coverage.json"
       ],
       "limitations": [
         "Near-miss and weak-hit summaries are not full result payloads."
@@ -75,7 +75,7 @@
       "local_index_only"
     ],
     "checked_sources": [
-      "data/public_index"
+      "site/dist/data/public_index"
     ],
     "checked_source_families": [
       "synthetic",
@@ -157,7 +157,7 @@
   "absence_summary": {
     "absence_status": "no_verified_result",
     "scoped_to": [
-      "data/public_index",
+      "site/dist/data/public_index",
       "eureka_public_search_index_v0"
     ],
     "checked": [

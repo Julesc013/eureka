@@ -4,7 +4,7 @@
 
 This tree is for governed semantics and public boundaries. It is not the place for hidden runtime coupling.
 
-`control/schemas/policies/packs/source_pack.v0.json` defines Source Pack Contract v0 for
+`contracts/control_schemas/policies/packs/source_pack.v0.json` defines Source Pack Contract v0 for
 portable source metadata and fixture-evidence bundles. It is contract and
 validation only; it does not implement import, indexing, uploads, live
 connectors, executable plugins, or master-index acceptance.
@@ -34,6 +34,6 @@ references, allowed fixture modes, forbidden current modes, and boundary
 booleans only; it does not approve live source access, downloads, scraping,
 public-index mutation, master-index mutation, or evidence acceptance.
 
-`control/schemas/fixtures/connectors/source_connector_fixture.v0.json` defines the shared
+`contracts/control_schemas/fixtures/connectors/source_connector_fixture.v0.json` defines the shared
 fixture manifest shape for connector tests. It requires committed public-safe
 fixtures and false live-call, network, and external API flags.

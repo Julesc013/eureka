@@ -74,7 +74,7 @@ class RelayScriptTests(unittest.TestCase):
             "--profile",
             "examples/relay/profiles/localhost_readonly_profile_v0.json",
             "--output",
-            "data/public_index/relay.json",
+            "site/dist/data/public_index/relay.json",
             expect_success=False,
         )
         self.assertNotEqual(result.returncode, 0)

@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import unittest
 
-from runtime.local_workbench import (
+from surfaces.web.workbench.local_html import (
     build_search_hunt_detail_page_view,
     render_search_hunt_detail_page,
     validate_local_workbench_page,

@@ -35,7 +35,7 @@
         "runtime/gateway/tests/test_workbench_sessions.py"
       ],
       "source_path": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json",
-      "target_path": "control/schemas/fixtures/archive/synthetic_resolution_fixture.json"
+      "target_path": "contracts/control_schemas/fixtures/archive/synthetic_resolution_fixture.json"
     },
     {
       "blocks": [
@@ -60,7 +60,7 @@
         "runtime/connectors/h14_source_discovery/normalizer_common.py"
       ],
       "source_path": "contracts/connectors/h14_connector_pack_manifest_candidate.v0.json",
-      "target_path": "control/schemas/previews/h14/connectors/connector_pack_manifest_candidate.v0.json"
+      "target_path": "contracts/control_schemas/previews/h14/connectors/connector_pack_manifest_candidate.v0.json"
     },
     {
       "blocks": [
@@ -85,7 +85,7 @@
         "runtime/connectors/h14_source_discovery/normalizer_common.py"
       ],
       "source_path": "contracts/connectors/h14_connector_scorecard_candidate.v0.json",
-      "target_path": "control/schemas/previews/h14/connectors/connector_scorecard_candidate.v0.json"
+      "target_path": "contracts/control_schemas/previews/h14/connectors/connector_scorecard_candidate.v0.json"
     },
     {
       "blocks": [
@@ -110,7 +110,7 @@
         "runtime/connectors/h14_source_discovery/normalizer_common.py"
       ],
       "source_path": "contracts/connectors/h14_coverage_manifest_candidate.v0.json",
-      "target_path": "control/schemas/previews/h14/connectors/coverage_manifest_candidate.v0.json"
+      "target_path": "contracts/control_schemas/previews/h14/connectors/coverage_manifest_candidate.v0.json"
     },
     {
       "blocks": [
@@ -135,7 +135,7 @@
         "runtime/connectors/h14_source_discovery/normalizer_common.py"
       ],
       "source_path": "contracts/connectors/h14_pack_import_export_boundary_candidate.v0.json",
-      "target_path": "control/schemas/previews/h14/connectors/pack_import_export_boundary_candidate.v0.json"
+      "target_path": "contracts/control_schemas/previews/h14/connectors/pack_import_export_boundary_candidate.v0.json"
     },
     {
       "blocks": [
@@ -160,7 +160,7 @@
         "runtime/connectors/h14_source_discovery/normalizer_common.py"
       ],
       "source_path": "contracts/connectors/h14_source_candidate_candidate.v0.json",
-      "target_path": "control/schemas/previews/h14/connectors/source_candidate_candidate.v0.json"
+      "target_path": "contracts/control_schemas/previews/h14/connectors/source_candidate_candidate.v0.json"
     },
     {
       "blocks": [
@@ -185,7 +185,7 @@
         "runtime/connectors/h14_source_discovery/normalizer_common.py"
       ],
       "source_path": "contracts/connectors/h14_source_discovery_candidate.v0.json",
-      "target_path": "control/schemas/previews/h14/connectors/source_discovery_candidate.v0.json"
+      "target_path": "contracts/control_schemas/previews/h14/connectors/source_discovery_candidate.v0.json"
     },
     {
       "blocks": [
@@ -210,7 +210,7 @@
         "runtime/connectors/h14_source_discovery/normalizer_common.py"
       ],
       "source_path": "contracts/connectors/h14_source_dispute_revocation_candidate.v0.json",
-      "target_path": "control/schemas/previews/h14/connectors/source_dispute_revocation_candidate.v0.json"
+      "target_path": "contracts/control_schemas/previews/h14/connectors/source_dispute_revocation_candidate.v0.json"
     },
     {
       "blocks": [
@@ -235,7 +235,7 @@
         "runtime/connectors/h14_source_discovery/normalizer_common.py"
       ],
       "source_path": "contracts/connectors/h14_source_lineage_provenance_candidate.v0.json",
-      "target_path": "control/schemas/previews/h14/connectors/source_lineage_provenance_candidate.v0.json"
+      "target_path": "contracts/control_schemas/previews/h14/connectors/source_lineage_provenance_candidate.v0.json"
     },
     {
       "blocks": [
@@ -260,7 +260,7 @@
         "runtime/connectors/h14_source_discovery/normalizer_common.py"
       ],
       "source_path": "contracts/connectors/h14_source_need_candidate.v0.json",
-      "target_path": "control/schemas/previews/h14/connectors/source_need_candidate.v0.json"
+      "target_path": "contracts/control_schemas/previews/h14/connectors/source_need_candidate.v0.json"
     },
     {
       "blocks": [
@@ -285,7 +285,7 @@
         "runtime/connectors/h14_source_discovery/normalizer_common.py"
       ],
       "source_path": "contracts/connectors/h14_source_pack_manifest_candidate.v0.json",
-      "target_path": "control/schemas/previews/h14/connectors/source_pack_manifest_candidate.v0.json"
+      "target_path": "contracts/control_schemas/previews/h14/connectors/source_pack_manifest_candidate.v0.json"
     },
     {
       "blocks": [
@@ -310,7 +310,7 @@
         "runtime/connectors/h14_source_discovery/normalizer_common.py"
       ],
       "source_path": "contracts/connectors/h14_source_reliability_freshness_candidate.v0.json",
-      "target_path": "control/schemas/previews/h14/connectors/source_reliability_freshness_candidate.v0.json"
+      "target_path": "contracts/control_schemas/previews/h14/connectors/source_reliability_freshness_candidate.v0.json"
     },
     {
       "blocks": [
@@ -346,7 +346,7 @@
         "scripts/dry_run_demand_dashboard_snapshot.py"
       ],
       "source_path": "contracts/query/candidate_promotion_assessment.v0.json",
-      "target_path": "control/schemas/previews/query/candidate_promotion_assessment.v0.json"
+      "target_path": "contracts/control_schemas/previews/query/candidate_promotion_assessment.v0.json"
     }
   ],
   "deferred": [
@@ -372,13 +372,13 @@
       "contract_class": "control_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/actions/action_taxonomy.v0.json",
-      "target_path": "control/schemas/policies/actions/action_taxonomy.v0.json"
+      "target_path": "contracts/control_schemas/policies/actions/action_taxonomy.v0.json"
     },
     {
       "contract_class": "control_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/actions/citation_bundle.v0.json",
-      "target_path": "control/schemas/policies/actions/citation_bundle.v0.json"
+      "target_path": "contracts/control_schemas/policies/actions/citation_bundle.v0.json"
     },
     {
       "contract_class": "source_policy_contract",
@@ -420,19 +420,19 @@
       "contract_class": "unknown",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
       "source_path": "contracts/archive/fixtures/software/payloads/synthetic-demo-app-package.zip",
-      "target_path": "control/schemas/deprecated/archive/synthetic-demo-app-package.zip"
+      "target_path": "contracts/control_schemas/deprecated/archive/synthetic-demo-app-package.zip"
     },
     {
       "contract_class": "unknown",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
       "source_path": "contracts/archive/fixtures/software/payloads/synthetic-demo-app.bundle",
-      "target_path": "control/schemas/deprecated/archive/synthetic-demo-app.bundle"
+      "target_path": "contracts/control_schemas/deprecated/archive/synthetic-demo-app.bundle"
     },
     {
       "contract_class": "unknown",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
       "source_path": "contracts/archive/protocols/archive-lifecycle.protocol.md",
-      "target_path": "control/schemas/deprecated/archive/archive-lifecycle.protocol.md"
+      "target_path": "contracts/control_schemas/deprecated/archive/archive-lifecycle.protocol.md"
     },
     {
       "contract_class": "source_policy_contract",
@@ -552,103 +552,103 @@
       "contract_class": "task_queue_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/audits/local_mvp_next_task_decision.v0.json",
-      "target_path": "control/schemas/tasks/audits/local_mvp_next_task_decision.v0.json"
+      "target_path": "contracts/control_schemas/tasks/audits/local_mvp_next_task_decision.v0.json"
     },
     {
       "contract_class": "task_queue_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/audits/local_mvp_next_wave_option.v0.json",
-      "target_path": "control/schemas/tasks/audits/local_mvp_next_wave_option.v0.json"
+      "target_path": "contracts/control_schemas/tasks/audits/local_mvp_next_wave_option.v0.json"
     },
     {
       "contract_class": "task_queue_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/audits/mvp_alpha_launch_decision_options.v0.json",
-      "target_path": "control/schemas/tasks/audits/mvp_alpha_launch_decision_options.v0.json"
+      "target_path": "contracts/control_schemas/tasks/audits/mvp_alpha_launch_decision_options.v0.json"
     },
     {
       "contract_class": "task_queue_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/audits/mvp_alpha_operator_next_task.v0.json",
-      "target_path": "control/schemas/tasks/audits/mvp_alpha_operator_next_task.v0.json"
+      "target_path": "contracts/control_schemas/tasks/audits/mvp_alpha_operator_next_task.v0.json"
     },
     {
       "contract_class": "task_queue_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/connectors/h10_games_emulation_next_phase_recommendation.v0.json",
-      "target_path": "control/schemas/tasks/h10/connectors/games_emulation_next_phase_recommendation.v0.json"
+      "target_path": "contracts/control_schemas/tasks/h10/connectors/games_emulation_next_phase_recommendation.v0.json"
     },
     {
       "contract_class": "task_queue_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/connectors/h11_storefront_next_phase_recommendation.v0.json",
-      "target_path": "control/schemas/tasks/h11/connectors/storefront_next_phase_recommendation.v0.json"
+      "target_path": "contracts/control_schemas/tasks/h11/connectors/storefront_next_phase_recommendation.v0.json"
     },
     {
       "contract_class": "task_queue_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/connectors/h12_retro_community_next_phase_recommendation.v0.json",
-      "target_path": "control/schemas/tasks/h12/connectors/retro_community_next_phase_recommendation.v0.json"
+      "target_path": "contracts/control_schemas/tasks/h12/connectors/retro_community_next_phase_recommendation.v0.json"
     },
     {
       "contract_class": "task_queue_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/connectors/h13_local_private_next_phase_recommendation.v0.json",
-      "target_path": "control/schemas/tasks/h13/connectors/local_private_next_phase_recommendation.v0.json"
+      "target_path": "contracts/control_schemas/tasks/h13/connectors/local_private_next_phase_recommendation.v0.json"
     },
     {
       "contract_class": "task_queue_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/connectors/h14_source_discovery_next_phase_recommendation.v0.json",
-      "target_path": "control/schemas/tasks/h14/connectors/source_discovery_next_phase_recommendation.v0.json"
+      "target_path": "contracts/control_schemas/tasks/h14/connectors/source_discovery_next_phase_recommendation.v0.json"
     },
     {
       "contract_class": "task_queue_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/connectors/h2_package_next_phase_recommendation.v0.json",
-      "target_path": "control/schemas/tasks/h2/connectors/package_next_phase_recommendation.v0.json"
+      "target_path": "contracts/control_schemas/tasks/h2/connectors/package_next_phase_recommendation.v0.json"
     },
     {
       "contract_class": "task_queue_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/connectors/h3_os_package_next_phase_recommendation.v0.json",
-      "target_path": "control/schemas/tasks/h3/connectors/os_package_next_phase_recommendation.v0.json"
+      "target_path": "contracts/control_schemas/tasks/h3/connectors/os_package_next_phase_recommendation.v0.json"
     },
     {
       "contract_class": "task_queue_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/connectors/h4_code_source_next_phase_recommendation.v0.json",
-      "target_path": "control/schemas/tasks/h4/connectors/code_source_next_phase_recommendation.v0.json"
+      "target_path": "contracts/control_schemas/tasks/h4/connectors/code_source_next_phase_recommendation.v0.json"
     },
     {
       "contract_class": "task_queue_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/connectors/h5_vendor_update_next_phase_recommendation.v0.json",
-      "target_path": "control/schemas/tasks/h5/connectors/vendor_update_next_phase_recommendation.v0.json"
+      "target_path": "contracts/control_schemas/tasks/h5/connectors/vendor_update_next_phase_recommendation.v0.json"
     },
     {
       "contract_class": "task_queue_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/connectors/h6_web_archive_next_phase_recommendation.v0.json",
-      "target_path": "control/schemas/tasks/h6/connectors/web_archive_next_phase_recommendation.v0.json"
+      "target_path": "contracts/control_schemas/tasks/h6/connectors/web_archive_next_phase_recommendation.v0.json"
     },
     {
       "contract_class": "task_queue_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/connectors/h7_library_research_next_phase_recommendation.v0.json",
-      "target_path": "control/schemas/tasks/h7/connectors/library_research_next_phase_recommendation.v0.json"
+      "target_path": "contracts/control_schemas/tasks/h7/connectors/library_research_next_phase_recommendation.v0.json"
     },
     {
       "contract_class": "task_queue_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/connectors/h8_manuals_docs_next_phase_recommendation.v0.json",
-      "target_path": "control/schemas/tasks/h8/connectors/manuals_docs_next_phase_recommendation.v0.json"
+      "target_path": "contracts/control_schemas/tasks/h8/connectors/manuals_docs_next_phase_recommendation.v0.json"
     },
     {
       "contract_class": "task_queue_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/connectors/h9_media_metadata_next_phase_recommendation.v0.json",
-      "target_path": "control/schemas/tasks/h9/connectors/media_metadata_next_phase_recommendation.v0.json"
+      "target_path": "contracts/control_schemas/tasks/h9/connectors/media_metadata_next_phase_recommendation.v0.json"
     },
     {
       "contract_class": "product_domain_contract",
@@ -744,13 +744,13 @@
       "contract_class": "control_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/hosting/connector_kill_switch_plan.v0.json",
-      "target_path": "control/schemas/policies/hosting/connector_kill_switch_plan.v0.json"
+      "target_path": "contracts/control_schemas/policies/hosting/connector_kill_switch_plan.v0.json"
     },
     {
       "contract_class": "control_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/hosting/deployment_environment.v0.json",
-      "target_path": "control/schemas/policies/hosting/deployment_environment.v0.json"
+      "target_path": "contracts/control_schemas/policies/hosting/deployment_environment.v0.json"
     },
     {
       "contract_class": "source_policy_contract",
@@ -762,13 +762,13 @@
       "contract_class": "control_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/hosting/hosted_wrapper_rehearsal.v0.json",
-      "target_path": "control/schemas/policies/hosting/hosted_wrapper_rehearsal.v0.json"
+      "target_path": "contracts/control_schemas/policies/hosting/hosted_wrapper_rehearsal.v0.json"
     },
     {
       "contract_class": "control_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/hosting/incident_response_plan.v0.json",
-      "target_path": "control/schemas/policies/hosting/incident_response_plan.v0.json"
+      "target_path": "contracts/control_schemas/policies/hosting/incident_response_plan.v0.json"
     },
     {
       "contract_class": "source_policy_contract",
@@ -780,7 +780,7 @@
       "contract_class": "control_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/hosting/post_launch_remediation_plan.v0.json",
-      "target_path": "control/schemas/policies/hosting/post_launch_remediation_plan.v0.json"
+      "target_path": "contracts/control_schemas/policies/hosting/post_launch_remediation_plan.v0.json"
     },
     {
       "contract_class": "source_policy_contract",
@@ -792,37 +792,37 @@
       "contract_class": "control_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/hosting/public_alpha_deployment_plan.v0.json",
-      "target_path": "control/schemas/policies/hosting/public_alpha_deployment_plan.v0.json"
+      "target_path": "contracts/control_schemas/policies/hosting/public_alpha_deployment_plan.v0.json"
     },
     {
       "contract_class": "control_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/hosting/public_alpha_deployment_step.v0.json",
-      "target_path": "control/schemas/policies/hosting/public_alpha_deployment_step.v0.json"
+      "target_path": "contracts/control_schemas/policies/hosting/public_alpha_deployment_step.v0.json"
     },
     {
       "contract_class": "control_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/hosting/public_alpha_dns_readiness.v0.json",
-      "target_path": "control/schemas/policies/hosting/public_alpha_dns_readiness.v0.json"
+      "target_path": "contracts/control_schemas/policies/hosting/public_alpha_dns_readiness.v0.json"
     },
     {
       "contract_class": "control_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/hosting/public_alpha_environment_matrix.v0.json",
-      "target_path": "control/schemas/policies/hosting/public_alpha_environment_matrix.v0.json"
+      "target_path": "contracts/control_schemas/policies/hosting/public_alpha_environment_matrix.v0.json"
     },
     {
       "contract_class": "control_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/hosting/public_alpha_non_claims.v0.json",
-      "target_path": "control/schemas/policies/hosting/public_alpha_non_claims.v0.json"
+      "target_path": "contracts/control_schemas/policies/hosting/public_alpha_non_claims.v0.json"
     },
     {
       "contract_class": "control_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/hosting/public_alpha_operator_checklist.v0.json",
-      "target_path": "control/schemas/policies/hosting/public_alpha_operator_checklist.v0.json"
+      "target_path": "contracts/control_schemas/policies/hosting/public_alpha_operator_checklist.v0.json"
     },
     {
       "contract_class": "source_policy_contract",
@@ -834,25 +834,25 @@
       "contract_class": "control_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/hosting/public_alpha_rollout_gate.v0.json",
-      "target_path": "control/schemas/policies/hosting/public_alpha_rollout_gate.v0.json"
+      "target_path": "contracts/control_schemas/policies/hosting/public_alpha_rollout_gate.v0.json"
     },
     {
       "contract_class": "control_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/hosting/public_alpha_smoke_matrix.v0.json",
-      "target_path": "control/schemas/policies/hosting/public_alpha_smoke_matrix.v0.json"
+      "target_path": "contracts/control_schemas/policies/hosting/public_alpha_smoke_matrix.v0.json"
     },
     {
       "contract_class": "control_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/hosting/public_alpha_static_backend_split.v0.json",
-      "target_path": "control/schemas/policies/hosting/public_alpha_static_backend_split.v0.json"
+      "target_path": "contracts/control_schemas/policies/hosting/public_alpha_static_backend_split.v0.json"
     },
     {
       "contract_class": "control_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/hosting/public_launch_evidence.v0.json",
-      "target_path": "control/schemas/policies/hosting/public_launch_evidence.v0.json"
+      "target_path": "contracts/control_schemas/policies/hosting/public_launch_evidence.v0.json"
     },
     {
       "contract_class": "source_policy_contract",
@@ -864,7 +864,7 @@
       "contract_class": "control_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/hosting/rollback_plan.v0.json",
-      "target_path": "control/schemas/policies/hosting/rollback_plan.v0.json"
+      "target_path": "contracts/control_schemas/policies/hosting/rollback_plan.v0.json"
     },
     {
       "contract_class": "source_policy_contract",
@@ -882,7 +882,7 @@
       "contract_class": "control_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/hosting/takedown_rights_safety_plan.v0.json",
-      "target_path": "control/schemas/policies/hosting/takedown_rights_safety_plan.v0.json"
+      "target_path": "contracts/control_schemas/policies/hosting/takedown_rights_safety_plan.v0.json"
     },
     {
       "contract_class": "product_domain_contract",
@@ -912,13 +912,13 @@
       "contract_class": "task_queue_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/master_index/review_queue_entry.v0.json",
-      "target_path": "control/schemas/tasks/master_index/review_queue_entry.v0.json"
+      "target_path": "contracts/control_schemas/tasks/master_index/review_queue_entry.v0.json"
     },
     {
       "contract_class": "task_queue_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/master_index/review_queue_manifest.v0.json",
-      "target_path": "control/schemas/tasks/master_index/review_queue_manifest.v0.json"
+      "target_path": "contracts/control_schemas/tasks/master_index/review_queue_manifest.v0.json"
     },
     {
       "contract_class": "durable_store_contract",
@@ -942,13 +942,13 @@
       "contract_class": "control_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/node/local_foundry_state.v0.json",
-      "target_path": "control/schemas/policies/node/local_foundry_state.v0.json"
+      "target_path": "contracts/control_schemas/policies/node/local_foundry_state.v0.json"
     },
     {
       "contract_class": "control_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/node/node_capability.v0.json",
-      "target_path": "control/schemas/policies/node/node_capability.v0.json"
+      "target_path": "contracts/control_schemas/policies/node/node_capability.v0.json"
     },
     {
       "contract_class": "source_policy_contract",
@@ -960,37 +960,37 @@
       "contract_class": "control_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/node/work_unit.v0.json",
-      "target_path": "control/schemas/policies/node/work_unit.v0.json"
+      "target_path": "contracts/control_schemas/policies/node/work_unit.v0.json"
     },
     {
       "contract_class": "control_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/node/work_unit_result.v0.json",
-      "target_path": "control/schemas/policies/node/work_unit_result.v0.json"
+      "target_path": "contracts/control_schemas/policies/node/work_unit_result.v0.json"
     },
     {
       "contract_class": "control_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/packs/contribution_pack.v0.json",
-      "target_path": "control/schemas/policies/packs/contribution_pack.v0.json"
+      "target_path": "contracts/control_schemas/policies/packs/contribution_pack.v0.json"
     },
     {
       "contract_class": "control_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/packs/contribution_review_seed.v0.json",
-      "target_path": "control/schemas/policies/packs/contribution_review_seed.v0.json"
+      "target_path": "contracts/control_schemas/policies/packs/contribution_review_seed.v0.json"
     },
     {
       "contract_class": "control_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/packs/evidence_pack.v0.json",
-      "target_path": "control/schemas/policies/packs/evidence_pack.v0.json"
+      "target_path": "contracts/control_schemas/policies/packs/evidence_pack.v0.json"
     },
     {
       "contract_class": "control_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/packs/index_pack.v0.json",
-      "target_path": "control/schemas/policies/packs/index_pack.v0.json"
+      "target_path": "contracts/control_schemas/policies/packs/index_pack.v0.json"
     },
     {
       "contract_class": "source_policy_contract",
@@ -1002,13 +1002,13 @@
       "contract_class": "control_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/packs/pack_quarantine_request.v0.json",
-      "target_path": "control/schemas/policies/packs/pack_quarantine_request.v0.json"
+      "target_path": "contracts/control_schemas/policies/packs/pack_quarantine_request.v0.json"
     },
     {
       "contract_class": "control_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/packs/pack_quarantine_result.v0.json",
-      "target_path": "control/schemas/policies/packs/pack_quarantine_result.v0.json"
+      "target_path": "contracts/control_schemas/policies/packs/pack_quarantine_result.v0.json"
     },
     {
       "contract_class": "source_policy_contract",
@@ -1020,13 +1020,13 @@
       "contract_class": "control_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/packs/source_pack.v0.json",
-      "target_path": "control/schemas/policies/packs/source_pack.v0.json"
+      "target_path": "contracts/control_schemas/policies/packs/source_pack.v0.json"
     },
     {
       "contract_class": "control_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/packs/source_pack_export.v0.json",
-      "target_path": "control/schemas/policies/packs/source_pack_export.v0.json"
+      "target_path": "contracts/control_schemas/policies/packs/source_pack_export.v0.json"
     },
     {
       "contract_class": "source_policy_contract",
@@ -1134,7 +1134,7 @@
       "contract_class": "task_queue_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/query/observation_candidate_review_queue.v0.json",
-      "target_path": "control/schemas/tasks/query/observation_candidate_review_queue.v0.json"
+      "target_path": "contracts/control_schemas/tasks/query/observation_candidate_review_queue.v0.json"
     },
     {
       "contract_class": "product_runtime_contract",
@@ -1152,7 +1152,7 @@
       "contract_class": "task_queue_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/query/probe_queue_item.v0.json",
-      "target_path": "control/schemas/tasks/query/probe_queue_item.v0.json"
+      "target_path": "contracts/control_schemas/tasks/query/probe_queue_item.v0.json"
     },
     {
       "contract_class": "product_runtime_contract",

@@ -5,13 +5,13 @@ Workbench Foundation without broad moves or runtime changes.
 
 ## Scope
 
-- Inventory `contracts/`, `control/schemas/`, `control/policies/`,
+- Inventory `contracts/`, `contracts/control_schemas/`, `control/policies/`,
   `control/inventory/`, `examples/`, `runtime/`, and validator scripts.
 - Classify product contracts, internal contracts, control schemas, policies,
   inventories, audit reports, fixtures, generated artifacts, and quarantine
   candidates.
 - Record duplicate authority risks.
-- Retain `control/schemas/` as control-schema authority only.
+- Retain `contracts/control_schemas/` as control-schema authority only.
 - Reserve Workbench contracts under `contracts/views/workbench/`.
 - Reserve Search Interaction contracts under `contracts/search/interaction/`.
 
@@ -19,7 +19,7 @@ Workbench Foundation without broad moves or runtime changes.
 
 Product/public contracts live under `contracts/`.
 
-Control schemas may remain under `control/schemas/` only for control-plane
+Control schemas may remain under `contracts/control_schemas/` only for control-plane
 schemas. Any product-like material there is migration debt, not product truth.
 
 Examples are examples. They do not define registry authority or accepted truth.
@@ -33,7 +33,7 @@ The backlog is recorded in
 `control/inventory/contract_taxonomy_migration_backlog.json`. The immediate
 items are:
 
-- Reclassify or migrate `control/schemas/policies/packs/**`.
+- Reclassify or migrate `contracts/control_schemas/policies/packs/**`.
 - Collapse `contracts/source_registry/**` vs `contracts/sources/**`.
 - Clarify `contracts/source_cache/**` vs `contracts/stores/**`.
 - Narrow `contracts/runtime/**` to stable boundary packets.

@@ -7,9 +7,9 @@ import subprocess
 import sys
 import unittest
 
-from control.prototypes.legacy_runtime.connectors.h13_local_private.quality_delta import build_h13_quality_delta
-from control.prototypes.legacy_runtime.connectors.h13_local_private.review_integration import build_h13_review_integration_result, load_h13_local_private_outputs
-from control.prototypes.legacy_runtime.connectors.h13_local_private.wave_postmortem import (
+from archive.prototypes.legacy_runtime.connectors.h13_local_private.quality_delta import build_h13_quality_delta
+from archive.prototypes.legacy_runtime.connectors.h13_local_private.review_integration import build_h13_review_integration_result, load_h13_local_private_outputs
+from archive.prototypes.legacy_runtime.connectors.h13_local_private.wave_postmortem import (
     apply_missing_source_gate,
     build_h13_connector_wave_postmortem,
     build_h13_integration_audit,

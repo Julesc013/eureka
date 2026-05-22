@@ -27,7 +27,7 @@ Validation for this audit is recorded here and in `track_b_23_report.json`.
 ## Boundary Notes
 
 - The audit script is read-only unless `--json-output` is provided.
-- Existing `site/dist` and `data/public_index` roots are checked for git
+- Existing `site/dist` and `site/dist/data/public_index` roots are checked for git
   changes; historical presence is not treated as Track B mutation.
 - No network, API, model, provider, browser, connector, or live source call is
   performed by the audit.

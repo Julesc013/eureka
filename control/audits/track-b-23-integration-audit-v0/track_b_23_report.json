@@ -80,7 +80,7 @@
   "next_task": "IA-01 - Internet Archive metadata connector approval decision",
   "notes": [
     "Audit script is read-only unless --json-output is provided.",
-    "Existing site/dist and data/public_index roots are checked for git changes, not mere historical presence."
+    "Existing site/dist and site/dist/data/public_index roots are checked for git changes, not mere historical presence."
   ],
   "product_boundary": {
     "changed_generated_site_artifacts": false,

@@ -60,7 +60,7 @@ class H7LibraryResearchSummaryTests(unittest.TestCase):
             self.assertIn("H7 Library Cultural Research", markdown.read_text(encoding="utf-8"))
 
     def test_cli_refuses_forbidden_output_roots(self) -> None:
-        for rel in ("site/dist/h7-summary.json", "data/public_index/h7-summary.json", "runtime/h7-summary.json", "contracts/h7-summary.json"):
+        for rel in ("site/dist/h7-summary.json", "site/dist/data/public_index/h7-summary.json", "runtime/h7-summary.json", "contracts/h7-summary.json"):
             result = subprocess.run(
                 [sys.executable, "scripts/summarize_h7_library_research_sources.py", "--output", rel],
                 cwd=ROOT,

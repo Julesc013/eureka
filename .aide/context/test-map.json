@@ -71615,7 +71615,7 @@
       "confidence": "low",
       "has_existing_candidate": false,
       "reason": "structural Harness validation is the likely check",
-      "source": "control/schemas/README.md",
+      "source": "contracts/control_schemas/README.md",
       "source_role": "docs"
     },
     {
@@ -71629,7 +71629,7 @@
       "confidence": "low",
       "has_existing_candidate": false,
       "reason": "structural Harness validation is the likely check",
-      "source": "control/schemas/deprecated/archive/archive-lifecycle.protocol.md",
+      "source": "contracts/control_schemas/deprecated/archive/archive-lifecycle.protocol.md",
       "source_role": "docs"
     },
     {
@@ -71657,7 +71657,7 @@
       "confidence": "low",
       "has_existing_candidate": false,
       "reason": "structural Harness validation is the likely check",
-      "source": "deploy/README.md",
+      "source": "docs/operations/hosting/render_deployment.md",
       "source_role": "docs"
     },
     {
@@ -71671,7 +71671,7 @@
       "confidence": "low",
       "has_existing_candidate": false,
       "reason": "structural Harness validation is the likely check",
-      "source": "deploy/render/render.yaml",
+      "source": "release/render/render.yaml",
       "source_role": "config"
     },
     {

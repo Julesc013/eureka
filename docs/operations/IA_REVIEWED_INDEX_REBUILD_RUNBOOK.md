@@ -28,7 +28,7 @@ python scripts/eureka_ia_reviewed_index_rebuild.py --instance <temp-instance> --
 ## Boundaries
 
 - Reviewed local index records are not master records.
-- The command must not mutate `data/public_index`.
+- The command must not mutate `site/dist/data/public_index`.
 - The command must not mutate the operator instance by default.
 - No raw IA response bodies, downloads, uploads, extraction, model/provider
   calls, deployment, production-readiness claim, or public-launch claim are

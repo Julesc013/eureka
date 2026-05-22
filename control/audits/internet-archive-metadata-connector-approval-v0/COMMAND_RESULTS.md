@@ -194,7 +194,7 @@
 - `python scripts/validate_public_search_index.py`: passed (returncode=0, 0.27s)
   - Public Search Index validation
   - status: valid
-  - index_root: data/public_index
+  - index_root: site/dist/data/public_index
   - document_count: 584
   - private_paths_detected: False
 - `python scripts/validate_hosted_public_search_wrapper.py`: passed (returncode=0, 0.28s)
@@ -270,7 +270,7 @@
 - `python scripts/build_public_search_index.py --check`: passed (returncode=0, 0.55s)
   - Public Search Index Builder v0
   - status: valid
-  - output_root: data/public_index
+  - output_root: site/dist/data/public_index
   - document_count: 584
   - fts5_available: True
 - `python site/build.py --check`: passed (returncode=0, 1.0s)

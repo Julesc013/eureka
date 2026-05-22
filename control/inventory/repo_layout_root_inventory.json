@@ -1,32 +1,49 @@
 {
-  "schema_version": "repo_layout_root_inventory.v0",
-  "task_id": "REPO-LAYOUT-CANON-01",
-  "status": "canon_locked_no_moves",
+  "schema_version": "repo_layout_root_inventory.v1",
+  "task_id": "EUREKA-STRUCTURE-BIG-BANG-01",
+  "status": "reconciled",
   "allowed_top_level_roots": [
     ".aide",
     ".github",
-    "control",
+    "archive",
     "contracts",
-    "runtime",
-    "surfaces",
-    "native",
+    "control",
     "crates",
+    "docs",
+    "evals",
+    "examples",
+    "external",
+    "native",
+    "release",
+    "runtime",
+    "scripts",
     "site",
     "snapshots",
-    "examples",
-    "docs",
+    "surfaces",
     "tests",
-    "evals",
-    "tools",
-    "scripts",
-    "release",
-    "external",
-    "archive"
+    "tools"
   ],
-  "optional_allowed_roots_not_required": [
-    "tools",
+  "active_top_level_roots_after_reconcile": [
+    ".aide",
+    ".aide.local.example",
+    ".github",
+    "archive",
+    "contracts",
+    "control",
+    "crates",
+    "docs",
+    "evals",
+    "examples",
+    "external",
+    "native",
     "release",
-    "archive"
+    "runtime",
+    "scripts",
+    "site",
+    "snapshots",
+    "surfaces",
+    "tests",
+    "tools"
   ],
   "classified_top_level_exceptions": [
     {
@@ -35,21 +52,23 @@
       "reason": "Committed example for ignored local AIDE state. It is not a product root."
     }
   ],
-  "classified_top_level_debt": [
+  "classified_top_level_debt": [],
+  "resolved_top_level_debt": [
     {
-      "path": "data",
-      "class": "generated_artifact_debt",
-      "reason": "Currently contains committed public index artifacts under data/public_index."
+      "old_path": "data",
+      "new_path": "site/dist/data/public_index",
+      "class": "generated_artifact_debt"
     },
     {
-      "path": "deploy",
-      "class": "release_definition_debt",
-      "reason": "Contains deployment templates that should be governed by release/."
+      "old_path": "deploy",
+      "new_path": "release/render",
+      "class": "release_definition_debt"
     }
   ],
   "native_surface_rule": {
     "native": "canonical top-level native client and project root",
     "surfaces_native": "projection adapters, docs, or examples only; must not supersede native/"
   },
-  "source_layout_change": "none"
+  "path_migration_map": "control/audits/eureka-structure-big-bang-v1/path_migration_map.json",
+  "source_layout_change": "reconciled_without_intentional_runtime_behavior_change"
 }
