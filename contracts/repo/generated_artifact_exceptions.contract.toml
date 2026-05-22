@@ -119,4 +119,4 @@ status = "accepted_exception"
 generator_command = "py -3 .aide/scripts/aide_lite.py index"
 check_command = "py -3 .aide/scripts/aide_lite.py validate"
 manual_edits_allowed = false
-future_disposition = "track only compact operating metadata needed by the portable aide workflow"
+future_disposition = "track only compact operating metadata needed by the portable AIDE workflow"
