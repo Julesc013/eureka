@@ -140,7 +140,12 @@
         "workunit_queue"
       ],
       "compatibility_only_files": [
-        "__init__.py"
+        "__init__.py",
+        "README.md"
+      ],
+      "compatibility_required_files": [
+        "__init__.py",
+        "README.md"
       ],
       "known_debt_first_level": [
         "actions",

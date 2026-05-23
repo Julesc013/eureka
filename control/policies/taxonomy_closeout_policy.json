@@ -140,6 +140,11 @@
       "runtime/pages"
     ],
     "closeout_mode": "canonical_with_compatibility_wrappers",
+    "compatibility_wrapper_allowed_files": [
+      "__init__.py",
+      "README.md"
+    ],
+    "compatibility_wrapper_marker_file": "README.md",
     "compatibility_wrapper_paths": [
       "runtime/local_appliance",
       "runtime/local_eval",

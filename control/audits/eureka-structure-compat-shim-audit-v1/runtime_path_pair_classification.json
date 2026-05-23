@@ -1,0 +1,223 @@
+{
+  "active_duplicate_paths_remaining": [],
+  "classification_count": 19,
+  "classifications": [
+    {
+      "canonical_path": "runtime/index/candidate",
+      "classification": "compatibility_shim",
+      "old_path": "runtime/candidate_index",
+      "retained": true,
+      "stale_duplicate": false,
+      "tracked_old_path_files": [
+        "__init__.py",
+        "README.md"
+      ]
+    },
+    {
+      "canonical_path": "runtime/evidence/ledger",
+      "classification": "compatibility_shim",
+      "old_path": "runtime/evidence_ledger",
+      "retained": true,
+      "stale_duplicate": false,
+      "tracked_old_path_files": [
+        "__init__.py",
+        "README.md"
+      ]
+    },
+    {
+      "canonical_path": "runtime/local/appliance",
+      "classification": "compatibility_shim",
+      "old_path": "runtime/local_appliance",
+      "retained": true,
+      "stale_duplicate": false,
+      "tracked_old_path_files": [
+        "__init__.py",
+        "README.md"
+      ]
+    },
+    {
+      "canonical_path": "runtime/local/eval",
+      "classification": "compatibility_shim",
+      "old_path": "runtime/local_eval",
+      "retained": true,
+      "stale_duplicate": false,
+      "tracked_old_path_files": [
+        "__init__.py",
+        "README.md"
+      ]
+    },
+    {
+      "canonical_path": "runtime/local/foundry",
+      "classification": "compatibility_shim",
+      "old_path": "runtime/local_foundry",
+      "retained": true,
+      "stale_duplicate": false,
+      "tracked_old_path_files": [
+        "__init__.py",
+        "README.md"
+      ]
+    },
+    {
+      "canonical_path": "runtime/local/network",
+      "classification": "compatibility_shim",
+      "old_path": "runtime/local_network",
+      "retained": true,
+      "stale_duplicate": false,
+      "tracked_old_path_files": [
+        "__init__.py",
+        "README.md"
+      ]
+    },
+    {
+      "canonical_path": "runtime/local/operator",
+      "classification": "compatibility_shim",
+      "old_path": "runtime/local_operator",
+      "retained": true,
+      "stale_duplicate": false,
+      "tracked_old_path_files": [
+        "__init__.py",
+        "README.md"
+      ]
+    },
+    {
+      "canonical_path": "runtime/local/review",
+      "classification": "compatibility_shim",
+      "old_path": "runtime/local_review",
+      "retained": true,
+      "stale_duplicate": false,
+      "tracked_old_path_files": [
+        "__init__.py",
+        "README.md"
+      ]
+    },
+    {
+      "canonical_path": "runtime/local/service",
+      "classification": "compatibility_shim",
+      "old_path": "runtime/local_service",
+      "retained": true,
+      "stale_duplicate": false,
+      "tracked_old_path_files": [
+        "__init__.py",
+        "README.md"
+      ]
+    },
+    {
+      "canonical_path": "runtime/local/worker",
+      "classification": "compatibility_shim",
+      "old_path": "runtime/local_worker",
+      "retained": true,
+      "stale_duplicate": false,
+      "tracked_old_path_files": [
+        "__init__.py",
+        "README.md"
+      ]
+    },
+    {
+      "canonical_path": "runtime/index/public",
+      "classification": "compatibility_shim",
+      "old_path": "runtime/public_index",
+      "retained": true,
+      "stale_duplicate": false,
+      "tracked_old_path_files": [
+        "__init__.py",
+        "README.md"
+      ]
+    },
+    {
+      "canonical_path": "runtime/review/queue",
+      "classification": "compatibility_shim",
+      "old_path": "runtime/review_queue",
+      "retained": true,
+      "stale_duplicate": false,
+      "tracked_old_path_files": [
+        "__init__.py",
+        "README.md"
+      ]
+    },
+    {
+      "canonical_path": "runtime/search/hunt",
+      "classification": "compatibility_shim",
+      "old_path": "runtime/search_hunt",
+      "retained": true,
+      "stale_duplicate": false,
+      "tracked_old_path_files": [
+        "__init__.py",
+        "README.md"
+      ]
+    },
+    {
+      "canonical_path": "runtime/search/need",
+      "classification": "compatibility_shim",
+      "old_path": "runtime/search_need",
+      "retained": true,
+      "stale_duplicate": false,
+      "tracked_old_path_files": [
+        "__init__.py",
+        "README.md"
+      ]
+    },
+    {
+      "canonical_path": "runtime/search/quality",
+      "classification": "compatibility_shim",
+      "old_path": "runtime/search_quality",
+      "retained": true,
+      "stale_duplicate": false,
+      "tracked_old_path_files": [
+        "__init__.py",
+        "README.md"
+      ]
+    },
+    {
+      "canonical_path": "runtime/source/cache",
+      "classification": "compatibility_shim",
+      "old_path": "runtime/source_cache",
+      "retained": true,
+      "stale_duplicate": false,
+      "tracked_old_path_files": [
+        "__init__.py",
+        "README.md"
+      ]
+    },
+    {
+      "canonical_path": "runtime/source/observation",
+      "classification": "compatibility_shim",
+      "old_path": "runtime/source_observation",
+      "retained": true,
+      "stale_duplicate": false,
+      "tracked_old_path_files": [
+        "__init__.py",
+        "README.md"
+      ]
+    },
+    {
+      "canonical_path": "runtime/source/registry",
+      "classification": "compatibility_shim",
+      "old_path": "runtime/source_registry",
+      "retained": true,
+      "stale_duplicate": false,
+      "tracked_old_path_files": [
+        "__init__.py",
+        "README.md"
+      ]
+    },
+    {
+      "canonical_path": "runtime/worker/workunit_queue",
+      "classification": "compatibility_shim",
+      "old_path": "runtime/workunit_queue",
+      "retained": true,
+      "stale_duplicate": false,
+      "tracked_old_path_files": [
+        "__init__.py",
+        "README.md"
+      ]
+    }
+  ],
+  "ignored_runtime_byproducts_note": "Ignored __pycache__ files may exist locally after validation runs; they are not tracked and are excluded by .gitignore.",
+  "product_behavior_changed": false,
+  "public_search_behavior_changed": false,
+  "schema_version": "runtime_path_pair_classification.v1",
+  "source_commit": "2ee5e38978b6da6a37438ed33a9b2aaf488fa964",
+  "source_connector_behavior_changed": false,
+  "status": "valid",
+  "task_id": "EUREKA-STRUCTURE-COMPAT-SHIM-AUDIT-01"
+}

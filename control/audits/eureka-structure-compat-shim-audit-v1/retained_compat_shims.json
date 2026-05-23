@@ -1,0 +1,31 @@
+{
+  "count": 19,
+  "retained": [
+    "runtime/candidate_index",
+    "runtime/evidence_ledger",
+    "runtime/local_appliance",
+    "runtime/local_eval",
+    "runtime/local_foundry",
+    "runtime/local_network",
+    "runtime/local_operator",
+    "runtime/local_review",
+    "runtime/local_service",
+    "runtime/local_worker",
+    "runtime/public_index",
+    "runtime/review_queue",
+    "runtime/search_hunt",
+    "runtime/search_need",
+    "runtime/search_quality",
+    "runtime/source_cache",
+    "runtime/source_observation",
+    "runtime/source_registry",
+    "runtime/workunit_queue"
+  ],
+  "required_files": [
+    "__init__.py",
+    "README.md"
+  ],
+  "schema_version": "retained_runtime_compat_shims.v1",
+  "status": "valid",
+  "validator_policy": "control/policies/path_taxonomy_policy.json"
+}

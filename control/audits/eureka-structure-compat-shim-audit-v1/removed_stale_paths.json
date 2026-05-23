@@ -1,0 +1,7 @@
+{
+  "count": 0,
+  "removed": [],
+  "schema_version": "removed_stale_runtime_paths.v1",
+  "status": "none_removed",
+  "why": "All inspected old runtime taxonomy paths are wrapper-only compatibility shims, not stale duplicate implementation directories."
+}

@@ -16,6 +16,11 @@ The active taxonomy now uses canonical families such as `runtime/local/`,
 names remain as wrapper-only compatibility packages for import stability; they
 are not canonical implementation homes.
 
+Each retained compatibility package has a local `README.md` status marker and
+is constrained by `control/policies/path_taxonomy_policy.json` to contain only
+`__init__.py` plus that marker. If an old first-level runtime path needs new
+implementation, move the implementation to the canonical family instead.
+
 Future target families are recorded in
 `control/policies/taxonomy_closeout_policy.json` and
 `docs/architecture/PATH_TAXONOMY_CLOSEOUT.md`.

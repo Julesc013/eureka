@@ -47,6 +47,39 @@ class PathTaxonomyValidatorTestCase(unittest.TestCase):
         self.assertEqual(report["status"], "valid")
         self.assertIn("contracts/ai", report["debt_paths"])
 
+    def test_runtime_compatibility_paths_require_marker_and_reject_code(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            payload = {
+                "root_rules": {
+                    "runtime": {
+                        "allowed_first_level": ["source"],
+                        "compatibility_first_level": ["source_cache"],
+                        "compatibility_only_files": ["__init__.py", "README.md"],
+                        "compatibility_required_files": ["__init__.py", "README.md"],
+                    }
+                },
+                "forbidden_active_paths": [],
+            }
+            write(root / "control/policies/path_taxonomy_policy.json", json.dumps(payload))
+            write(root / "runtime/source/cache/__init__.py", "ok\n")
+            write(root / "runtime/source_cache/__init__.py", "shim\n")
+            git_add(root)
+
+            missing_marker = validate_path_taxonomy(root, root / "control/policies/path_taxonomy_policy.json")
+
+            write(root / "runtime/source_cache/README.md", "compatibility shim marker\n")
+            valid = validate_path_taxonomy(root, root / "control/policies/path_taxonomy_policy.json")
+
+            write(root / "runtime/source_cache/store.py", "active implementation should not live here\n")
+            offender = validate_path_taxonomy(root, root / "control/policies/path_taxonomy_policy.json")
+
+        self.assertEqual(missing_marker["status"], "invalid")
+        self.assertTrue(any("missing required marker" in item for item in missing_marker["errors"]))
+        self.assertEqual(valid["status"], "valid")
+        self.assertEqual(offender["status"], "invalid")
+        self.assertTrue(any("non-wrapper file" in item for item in offender["errors"]))
+
 
 def write_policy(path: Path) -> None:
     payload = {

@@ -50,6 +50,7 @@ def validate_path_taxonomy(
         known_debt = set(_string_list(rule.get("known_debt_first_level")))
         compatibility = set(_string_list(rule.get("compatibility_first_level")))
         compatibility_only_files = set(_string_list(rule.get("compatibility_only_files")))
+        compatibility_required_files = set(_string_list(rule.get("compatibility_required_files")))
         known_debt_prefixes = tuple(_string_list(rule.get("known_debt_prefixes")))
         required = set(_string_list(rule.get("required_first_level")))
         classify_unlisted_as_debt = rule.get("classify_unlisted_as_debt") is True
@@ -71,6 +72,12 @@ def validate_path_taxonomy(
                     errors.append(
                         f"{root_name}/{name}: compatibility path contains non-wrapper file {offender}."
                     )
+                for required_file in sorted(compatibility_required_files):
+                    required_path = f"{root_name}/{name}/{required_file}"
+                    if required_path not in tracked_set:
+                        errors.append(
+                            f"{root_name}/{name}: compatibility path is missing required marker {required_path}."
+                        )
                 continue
             if name in known_debt or any(name.startswith(prefix) for prefix in known_debt_prefixes):
                 debt.append(name)

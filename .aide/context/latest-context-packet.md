@@ -24,28 +24,28 @@
 
 - json: `.aide/context/repo-map.json`
 - markdown: `.aide/context/repo-map.md`
-- file_count: 18372
-- source_snapshot_hash: `671b064d8ea04960d2afd11d48fad3892317209b685a37b0f3549f837e805509`
+- file_count: 20855
+- source_snapshot_hash: `d856cbdee954143d3c97da983196c87295f26bf619e11e549d6435ad694c4eca`
 
 ## ROLE_COUNTS
 
 - aide_contract: 300
-- aide_policy: 119
+- aide_policy: 121
 - aide_prompt: 6
 - aide_context: 4
-- aide_queue: 229
-- aide_evidence: 248
-- test: 1158
-- docs: 5610
-- script: 718
-- config: 8391
+- aide_queue: 284
+- aide_evidence: 254
+- test: 1322
+- docs: 6174
+- script: 797
+- config: 9215
 - generated: 9
-- unknown: 1580
+- unknown: 2369
 
 ## TEST_MAP
 
 - path: `.aide/context/test-map.json`
-- mapping_count: 7539
+- mapping_count: 8245
 - mappings_with_existing_candidate: 1
 - complete_coverage_claimed: false
 
