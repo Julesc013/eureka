@@ -460,6 +460,15 @@ Current scripts:
   rehearsal evidence, publication inventories, test registry metadata, and AIDE
   metadata; it supports `--json`, `--list`, `--artifact`, and `--strict`, does
   not run update commands, and adds no product behavior
+- `audit_generated_artifact_visibility.py`: audits tracked paths under
+  generated-looking directory names such as `dist`, `tmp`, `build`, `out`,
+  `target`, and `coverage`; `--write` records
+  `control/audits/generated-artifact-visibility-v1/` evidence, and `--json`
+  emits the machine-readable report without changing product behavior
+- `validate_taxonomy_closeout_policy.py`: validates the targeted runtime,
+  contracts, examples, generated-artifact visibility, and AIDE ledger-size
+  closeout policy. It enforces required evidence files and forbidden active
+  paths without moving runtime packages or changing product behavior.
 - `validate_static_artifact_promotion_review.py`: validates Static Artifact
   Promotion Review v0, enforcing the audit pack, `site/dist` as active static
   artifact, the `static_site_dist` generated-artifact group, the `site/dist`

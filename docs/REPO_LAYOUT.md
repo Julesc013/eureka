@@ -78,6 +78,20 @@ eureka/
 the remaining contracts/runtime/examples taxonomy debt, and forbidden active
 paths such as `release/render` and `surfaces/native/cli`.
 
+`control/policies/taxonomy_closeout_policy.json`,
+`control/policies/aide_ledger_size_policy.json`, and
+`scripts/validate_taxonomy_closeout_policy.py` record the targeted closeout
+decision after the root cleanup:
+
+- Runtime flat names are frozen compatibility paths until family-by-family
+  migration.
+- Contract family moves are migration-map-first, with `contracts/control_schemas`
+  classified as a compatibility authority path.
+- Examples stay public-safe fixtures and move only through durable families with
+  checksum/reference remediation.
+- `.aide/` generated/export/report material is control-plane evidence, not
+  product truth.
+
 ## Test Boundary
 
 Component-local tests live inside the component they validate, such as

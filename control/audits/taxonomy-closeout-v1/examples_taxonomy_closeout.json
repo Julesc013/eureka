@@ -1,0 +1,42 @@
+{
+  "schema_version": "examples_taxonomy_closeout.v1",
+  "task": "EUREKA-EXAMPLES-TAXONOMY-CLOSEOUT-01",
+  "status": "classified_migration_map_first",
+  "current_first_level_count": 92,
+  "closeout_decision": "keep_public_safe_fixtures_in_place_until_family_migrations_update_checksums_and_refs",
+  "target_families": [
+    "examples/packs",
+    "examples/sources",
+    "examples/connectors",
+    "examples/search",
+    "examples/review",
+    "examples/evidence",
+    "examples/index",
+    "examples/snapshots",
+    "examples/import_reports",
+    "examples/api",
+    "examples/site",
+    "examples/native",
+    "examples/relay",
+    "examples/work_units"
+  ],
+  "duplicate_phase_families_classified": [
+    "work_unit_results",
+    "work_units",
+    "workunit_dry_runs",
+    "workunit_seeds",
+    "workunits",
+    "evidence_ledger",
+    "evidence_ledger_plans",
+    "evidence_ledger_records",
+    "source_cache",
+    "source_cache_plans",
+    "source_cache_records",
+    "source_packs",
+    "source_pages",
+    "sources",
+    "search_need_seeds",
+    "search_needs"
+  ],
+  "product_behavior_changed": false
+}

@@ -1,0 +1,92 @@
+{
+  "schema_version": "contracts_taxonomy_migration_map.v1",
+  "task": "EUREKA-CONTRACTS-TAXONOMY-CLOSEOUT-01",
+  "status": "migration_map_first",
+  "product_behavior_changed": false,
+  "entries": [
+    {
+      "old_path": "contracts/control_schemas",
+      "target_path": "contracts/schema/control",
+      "disposition": "compatibility_authority_until_rehomed",
+      "reason": "Schema refs are broad and must move with alias/reference remediation."
+    },
+    {
+      "old_path": "contracts/evidence_ledger",
+      "target_path": "contracts/evidence/ledger",
+      "disposition": "future_family_move",
+      "reason": "Ledger contracts should live under evidence, but references need safe migration."
+    },
+    {
+      "old_path": "contracts/source_registry",
+      "target_path": "contracts/source/registry",
+      "disposition": "future_family_move",
+      "reason": "Source contract families should be grouped before further source work."
+    },
+    {
+      "old_path": "contracts/source_cache",
+      "target_path": "contracts/source/cache",
+      "disposition": "future_family_move",
+      "reason": "Source cache contracts should share the source family."
+    },
+    {
+      "old_path": "contracts/source_sync",
+      "target_path": "contracts/source/sync",
+      "disposition": "future_family_move",
+      "reason": "Source sync contracts should share the source family."
+    },
+    {
+      "old_path": "contracts/sources",
+      "target_path": "contracts/source/records",
+      "disposition": "future_family_move",
+      "reason": "Plural source records need a canonical source family home."
+    },
+    {
+      "old_path": "contracts/search_interaction",
+      "target_path": "contracts/search/interaction",
+      "disposition": "future_family_move",
+      "reason": "Search subfamilies should not remain parallel roots."
+    },
+    {
+      "old_path": "contracts/search_quality",
+      "target_path": "contracts/search/quality",
+      "disposition": "future_family_move",
+      "reason": "Search quality should be grouped under search."
+    },
+    {
+      "old_path": "contracts/master_index",
+      "target_path": "contracts/index/master",
+      "disposition": "future_family_move",
+      "reason": "Master index authority should be under index."
+    },
+    {
+      "old_path": "contracts/view_models",
+      "target_path": "contracts/view/models",
+      "disposition": "future_family_move",
+      "reason": "View model authority should be grouped with views."
+    },
+    {
+      "old_path": "contracts/views",
+      "target_path": "contracts/view/views",
+      "disposition": "future_family_move",
+      "reason": "Views should be grouped with view models."
+    },
+    {
+      "old_path": "contracts/ui",
+      "target_path": "contracts/surface/ui",
+      "disposition": "future_family_move",
+      "reason": "UI contracts should sit under surface projection authority."
+    },
+    {
+      "old_path": "contracts/projections",
+      "target_path": "contracts/surface/projections",
+      "disposition": "future_family_move",
+      "reason": "Projection contracts should sit under surface authority."
+    },
+    {
+      "old_path": "contracts/pages",
+      "target_path": "contracts/surface/pages",
+      "disposition": "future_family_move",
+      "reason": "Page contracts should sit under surface authority."
+    }
+  ]
+}

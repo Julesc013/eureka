@@ -1,0 +1,19 @@
+{
+  "schema_version": "aide_ledger_size_report.v1",
+  "task": "AIDE-LEDGER-SIZE-01",
+  "status": "classified_retention_capped",
+  "tracked_aide_file_count": 1990,
+  "tracked_counts": {
+    ".aide/cache": 4,
+    ".aide/context": 12,
+    ".aide/export": 620,
+    ".aide/reports": 47,
+    ".aide/repo": 15,
+    ".aide/roots": 9,
+    ".aide/tools": 22
+  },
+  "policy": "control/policies/aide_ledger_size_policy.json",
+  "risk": ".aide export and generated inventories are large enough to require explicit source-authority boundaries.",
+  "product_behavior_changed": false,
+  "provider_or_network_calls_enabled": false
+}

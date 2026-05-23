@@ -1,0 +1,44 @@
+{
+  "classification": {
+    "examples/connectors/*/coverage/*_coverage_preview_v0.json": "public-safe fixture coverage preview",
+    "native/*/build/README.md": "tracked placeholder only",
+    "native/*/dist/README.md": "tracked placeholder only",
+    "out": "must remain untracked unless separately classified",
+    "site/dist": "committed generated/public static artifact",
+    "target": "must remain untracked unless separately classified",
+    "tmp": "must remain untracked"
+  },
+  "current_counts": {
+    "tracked_build_segment_count": 4,
+    "tracked_coverage_segment_count": 71,
+    "tracked_dist_segment_count": 62,
+    "tracked_out_segment_count": 0,
+    "tracked_site_dist_count": 58,
+    "tracked_target_segment_count": 0,
+    "tracked_tmp_count": 0
+  },
+  "excluded_dir_names": [
+    "dist",
+    "tmp",
+    "build",
+    "out",
+    "target",
+    "coverage",
+    "node_modules"
+  ],
+  "non_claims": [
+    "This audit inventories tracked generated-looking paths; it does not claim production readiness.",
+    "site/dist remains a committed generated public artifact, not source truth.",
+    "examples/connectors/**/coverage files are fixture coverage previews, not test coverage output."
+  ],
+  "policy_id": "EUREKA-GENERATED-VISIBILITY-01",
+  "required_focused_checks": [
+    "git ls-files site/dist",
+    "git ls-files tmp",
+    "git ls-files | grep '/dist/'",
+    "git ls-files | grep '/tmp/'",
+    "git ls-files | grep '/build/'"
+  ],
+  "schema_version": "excluded_dir_visibility_policy.v1",
+  "status": "active_bootstrap_policy"
+}

@@ -1,0 +1,82 @@
+{
+  "schema_version": "aide_ledger_size_policy.v1",
+  "policy_id": "aide-ledger-size-v1",
+  "status": "active_control_plane_policy",
+  "summary": "Classifies tracked .aide material so generated/export/report state cannot become product authority.",
+  "tracked_file_count_observed": 1990,
+  "areas": [
+    {
+      "path": ".aide",
+      "class": "active_authority",
+      "meaning": "repo operating metadata and AIDE Lite law/config only",
+      "product_truth": false
+    },
+    {
+      "path": ".aide/generated",
+      "class": "generated",
+      "meaning": "generated adapter/context material",
+      "manual_edits_allowed": false,
+      "product_truth": false
+    },
+    {
+      "path": ".aide/context",
+      "class": "generated",
+      "meaning": "compact generated task/context packets",
+      "manual_edits_allowed": false,
+      "product_truth": false
+    },
+    {
+      "path": ".aide/export",
+      "class": "export_only",
+      "meaning": "portable export bundle; not active source",
+      "manual_edits_allowed": false,
+      "product_truth": false
+    },
+    {
+      "path": ".aide/cache",
+      "class": "cache",
+      "meaning": "small tracked cache metadata only; bulk local cache must stay ignored",
+      "manual_edits_allowed": false,
+      "product_truth": false
+    },
+    {
+      "path": ".aide/reports",
+      "class": "retention_capped",
+      "meaning": "repo-operating evidence reports only",
+      "manual_edits_allowed": false,
+      "product_truth": false
+    },
+    {
+      "path": ".aide/repo",
+      "class": "retention_capped",
+      "meaning": "generated repo maps and inventories; cap or archive if volume grows",
+      "manual_edits_allowed": false,
+      "product_truth": false
+    },
+    {
+      "path": ".aide/roots",
+      "class": "retention_capped",
+      "meaning": "generated root classifications; cap or archive if volume grows",
+      "manual_edits_allowed": false,
+      "product_truth": false
+    },
+    {
+      "path": ".aide/tools",
+      "class": "retention_capped",
+      "meaning": "generated tool inventories; cap or archive if volume grows",
+      "manual_edits_allowed": false,
+      "product_truth": false
+    }
+  ],
+  "hard_rules": [
+    ".aide/export is export-only and must not be imported as active source.",
+    ".aide/generated, .aide/context, .aide/repo, .aide/roots, and .aide/tools are generated/control-plane state.",
+    ".aide/reports is evidence only and retention-capped.",
+    "Product truth remains in contracts, runtime, surfaces, site source, docs, and accepted architecture docs as applicable."
+  ],
+  "non_claims": [
+    "AIDE Lite does not own product semantics.",
+    "AIDE generated/export/report files are not runtime behavior.",
+    "This policy does not enable provider/model/network calls."
+  ]
+}

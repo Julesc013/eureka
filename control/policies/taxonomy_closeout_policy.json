@@ -1,0 +1,125 @@
+{
+  "schema_version": "taxonomy_closeout_policy.v1",
+  "policy_id": "eureka-taxonomy-closeout-v1",
+  "status": "active_closeout_policy",
+  "summary": "Targeted closeout policy for remaining runtime, contract, and example taxonomy debt after root reconciliation.",
+  "product_behavior_change_allowed": false,
+  "source_connector_behavior_change_allowed": false,
+  "public_search_behavior_change_allowed": false,
+  "runtime": {
+    "closeout_mode": "freeze_current_names",
+    "reason": "Runtime imports and validators are broad enough that moving active runtime packages now would risk behavior churn. Current names are frozen as compatibility paths until a dedicated runtime migration moves one family at a time.",
+    "frozen_current_paths": [
+      "runtime/local_appliance",
+      "runtime/local_eval",
+      "runtime/local_foundry",
+      "runtime/local_network",
+      "runtime/local_operator",
+      "runtime/local_review",
+      "runtime/local_service",
+      "runtime/local_worker",
+      "runtime/source_registry",
+      "runtime/source_cache",
+      "runtime/source_observation",
+      "runtime/candidate_index",
+      "runtime/public_index",
+      "runtime/evidence_ledger",
+      "runtime/review_queue",
+      "runtime/workunit_queue",
+      "runtime/resolution_run",
+      "runtime/search_hunt",
+      "runtime/search_need",
+      "runtime/search_quality",
+      "runtime/pages"
+    ],
+    "target_families": [
+      "runtime/local/{appliance,eval,foundry,network,operator,review,service,worker}",
+      "runtime/source/{registry,cache,observation}",
+      "runtime/index/{candidate,public}",
+      "runtime/evidence/ledger",
+      "runtime/review/queue",
+      "runtime/worker/workunit_queue",
+      "runtime/resolution/run",
+      "runtime/query/{hunt,need,quality}"
+    ],
+    "runtime_pages_owner": "runtime page metadata and local dry-run packet rendering only; presentation belongs in surfaces/web or site"
+  },
+  "contracts": {
+    "closeout_mode": "migration_map_first",
+    "reason": "Contract paths are referenced as schema identifiers and fixture refs; broad renames require alias or compatibility records first.",
+    "compatibility_paths": [
+      "contracts/control_schemas",
+      "contracts/evidence_ledger",
+      "contracts/source_registry",
+      "contracts/source_cache",
+      "contracts/source_sync",
+      "contracts/sources",
+      "contracts/search_interaction",
+      "contracts/search_quality",
+      "contracts/master_index",
+      "contracts/view_models",
+      "contracts/views",
+      "contracts/ui",
+      "contracts/projections",
+      "contracts/pages"
+    ],
+    "target_families": [
+      "contracts/schema/control",
+      "contracts/evidence/ledger",
+      "contracts/source/{registry,cache,sync,records}",
+      "contracts/search/{interaction,quality}",
+      "contracts/index/master",
+      "contracts/view/{models,views}",
+      "contracts/surface/{ui,projections,pages}"
+    ]
+  },
+  "examples": {
+    "closeout_mode": "migration_map_first",
+    "reason": "Examples contain public-safe fixtures and historical task proofs. First-level sprawl is classified now; actual moves require per-family checksum and fixture-reference remediation.",
+    "current_first_level_count": 92,
+    "target_families": [
+      "examples/packs",
+      "examples/sources",
+      "examples/connectors",
+      "examples/search",
+      "examples/review",
+      "examples/evidence",
+      "examples/index",
+      "examples/snapshots",
+      "examples/import_reports",
+      "examples/api",
+      "examples/site",
+      "examples/native",
+      "examples/relay",
+      "examples/work_units"
+    ]
+  },
+  "forbidden_active_paths": [
+    "data",
+    "deploy",
+    "release/render",
+    "surfaces/native/cli"
+  ],
+  "forbidden_new_active_path_segments": [
+    "legacy",
+    "old",
+    "new",
+    "future",
+    "misc",
+    "tmp"
+  ],
+  "allowed_exception_patterns": [
+    "archive/prototypes/legacy_runtime",
+    "surfaces/native/shared",
+    "site/data",
+    "snapshots/examples/*/data",
+    "control/audits/*",
+    ".aide/*",
+    "docs/*"
+  ],
+  "non_claims": [
+    "This policy closes out taxonomy governance, not all physical path moves.",
+    "This policy does not change runtime behavior, source connector behavior, or public search behavior.",
+    "Frozen compatibility paths are not permanent product identity."
+  ]
+}

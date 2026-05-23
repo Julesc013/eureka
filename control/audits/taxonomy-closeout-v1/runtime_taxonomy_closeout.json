@@ -1,0 +1,27 @@
+{
+  "schema_version": "runtime_taxonomy_closeout.v1",
+  "task": "EUREKA-RUNTIME-TAXONOMY-CLOSEOUT-01",
+  "status": "classified_frozen",
+  "current_first_level_count": 35,
+  "closeout_decision": "freeze_current_names_until_family_by_family_migration",
+  "reason": "Moving active runtime packages now would require broad import, validator, fixture, and contract remediation. Current paths are explicit compatibility paths; future moves must use migration maps and focused tests.",
+  "runtime_engine_boundary_preserved": true,
+  "runtime_pages_review": {
+    "classification": "runtime metadata and local dry-run packet rendering",
+    "presentation_owner": "surfaces/web and site",
+    "tracked_presentation_files_under_runtime_pages": 0
+  },
+  "target_families": [
+    "runtime/local/{appliance,eval,foundry,network,operator,review,service,worker}",
+    "runtime/source/{registry,cache,observation}",
+    "runtime/index/{candidate,public}",
+    "runtime/evidence/ledger",
+    "runtime/review/queue",
+    "runtime/worker/workunit_queue",
+    "runtime/resolution/run",
+    "runtime/query/{hunt,need,quality}"
+  ],
+  "product_behavior_changed": false,
+  "source_connector_behavior_changed": false,
+  "public_search_behavior_changed": false
+}
