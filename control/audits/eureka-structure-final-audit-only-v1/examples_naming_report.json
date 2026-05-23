@@ -1,0 +1,53 @@
+{
+  "finding_count": 3,
+  "findings": [
+    {
+      "finding": "duplicate_phase_segment",
+      "path": "examples/evidence/ledger/dry_run/dry_run",
+      "recommendation": "rename in a focused examples taxonomy pass only after checksum/reference remediation",
+      "sample_files": [
+        "examples/evidence/ledger/dry_run/dry_run/minimal_availability_observation/CHECKSUMS.SHA256",
+        "examples/evidence/ledger/dry_run/dry_run/minimal_availability_observation/EVIDENCE_LEDGER_CANDIDATE.json",
+        "examples/evidence/ledger/dry_run/dry_run/minimal_availability_observation/README.md",
+        "examples/evidence/ledger/dry_run/dry_run/minimal_capture_presence_observation/CHECKSUMS.SHA256",
+        "examples/evidence/ledger/dry_run/dry_run/minimal_capture_presence_observation/EVIDENCE_LEDGER_CANDIDATE.json",
+        "examples/evidence/ledger/dry_run/dry_run/minimal_capture_presence_observation/README.md",
+        "examples/evidence/ledger/dry_run/dry_run/minimal_conflicting_claim_observation/CHECKSUMS.SHA256",
+        "examples/evidence/ledger/dry_run/dry_run/minimal_conflicting_claim_observation/EVIDENCE_LEDGER_CANDIDATE.json",
+        "examples/evidence/ledger/dry_run/dry_run/minimal_conflicting_claim_observation/README.md",
+        "examples/evidence/ledger/dry_run/dry_run/minimal_package_metadata_observation/CHECKSUMS.SHA256",
+        "examples/evidence/ledger/dry_run/dry_run/minimal_package_metadata_observation/EVIDENCE_LEDGER_CANDIDATE.json",
+        "examples/evidence/ledger/dry_run/dry_run/minimal_package_metadata_observation/README.md",
+        "examples/evidence/ledger/dry_run/dry_run/minimal_release_metadata_observation/CHECKSUMS.SHA256",
+        "examples/evidence/ledger/dry_run/dry_run/minimal_release_metadata_observation/EVIDENCE_LEDGER_CANDIDATE.json",
+        "examples/evidence/ledger/dry_run/dry_run/minimal_release_metadata_observation/README.md",
+        "examples/evidence/ledger/dry_run/dry_run/minimal_scoped_absence_observation/CHECKSUMS.SHA256",
+        "examples/evidence/ledger/dry_run/dry_run/minimal_scoped_absence_observation/EVIDENCE_LEDGER_CANDIDATE.json",
+        "examples/evidence/ledger/dry_run/dry_run/minimal_scoped_absence_observation/README.md",
+        "examples/evidence/ledger/dry_run/dry_run/minimal_source_metadata_observation/CHECKSUMS.SHA256",
+        "examples/evidence/ledger/dry_run/dry_run/minimal_source_metadata_observation/EVIDENCE_LEDGER_CANDIDATE.json"
+      ],
+      "severity": "naming_debt",
+      "tracked_file_count": 21
+    },
+    {
+      "finding": "adjacent_duplicate_segment",
+      "path": "examples/evidence/ledger/dry_run/dry_run",
+      "recommendation": "inspect before moving; may require checksum/reference updates",
+      "sample_file": "examples/evidence/ledger/dry_run/dry_run/minimal_availability_observation/CHECKSUMS.SHA256",
+      "severity": "naming_debt"
+    },
+    {
+      "finding": "adjacent_duplicate_segment",
+      "path": "examples/sources/cache/dry_run/dry_run",
+      "recommendation": "inspect before moving; may require checksum/reference updates",
+      "sample_file": "examples/sources/cache/dry_run/dry_run/minimal_github_release_metadata_summary/CHECKSUMS.SHA256",
+      "severity": "naming_debt"
+    }
+  ],
+  "product_behavior_changed": false,
+  "schema_version": "examples_naming_audit.v1",
+  "source_commit": "1e0ee5407f73fd620848d777669b8bbf7d386ffe",
+  "status": "naming_debt_present",
+  "task_id": "EUREKA-STRUCTURE-FINAL-AUDIT-ONLY-01"
+}

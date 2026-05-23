@@ -1,0 +1,589 @@
+{
+  "classifications": [
+    {
+      "classification": "governed_coverage_fixture",
+      "path": "examples/connectors/h11_storefront/coverage/h11_storefront_coverage_preview_v0.json"
+    },
+    {
+      "classification": "governed_coverage_fixture",
+      "path": "examples/connectors/h14_source_discovery/coverage/h14_source_discovery_coverage_preview_v0.json"
+    },
+    {
+      "classification": "governed_coverage_fixture",
+      "path": "examples/connectors/h1_metadata_wave/coverage/github_releases_coverage_preview_v0.json"
+    },
+    {
+      "classification": "governed_coverage_fixture",
+      "path": "examples/connectors/h1_metadata_wave/coverage/npm_registry_coverage_preview_v0.json"
+    },
+    {
+      "classification": "governed_coverage_fixture",
+      "path": "examples/connectors/h1_metadata_wave/coverage/osv_coverage_preview_v0.json"
+    },
+    {
+      "classification": "governed_coverage_fixture",
+      "path": "examples/connectors/h1_metadata_wave/coverage/pypi_coverage_preview_v0.json"
+    },
+    {
+      "classification": "governed_coverage_fixture",
+      "path": "examples/connectors/h1_metadata_wave/coverage/repology_coverage_preview_v0.json"
+    },
+    {
+      "classification": "governed_coverage_fixture",
+      "path": "examples/connectors/h1_metadata_wave/coverage/software_heritage_coverage_preview_v0.json"
+    },
+    {
+      "classification": "governed_coverage_fixture",
+      "path": "examples/connectors/h1_metadata_wave/coverage/wayback_cdx_memento_coverage_preview_v0.json"
+    },
+    {
+      "classification": "governed_coverage_fixture",
+      "path": "examples/connectors/h2_package_registries/coverage/conda_forge_coverage_preview_v0.json"
+    },
+    {
+      "classification": "governed_coverage_fixture",
+      "path": "examples/connectors/h2_package_registries/coverage/cpan_coverage_preview_v0.json"
+    },
+    {
+      "classification": "governed_coverage_fixture",
+      "path": "examples/connectors/h2_package_registries/coverage/cran_coverage_preview_v0.json"
+    },
+    {
+      "classification": "governed_coverage_fixture",
+      "path": "examples/connectors/h2_package_registries/coverage/crates_io_coverage_preview_v0.json"
+    },
+    {
+      "classification": "governed_coverage_fixture",
+      "path": "examples/connectors/h2_package_registries/coverage/maven_central_coverage_preview_v0.json"
+    },
+    {
+      "classification": "governed_coverage_fixture",
+      "path": "examples/connectors/h2_package_registries/coverage/nuget_coverage_preview_v0.json"
+    },
+    {
+      "classification": "governed_coverage_fixture",
+      "path": "examples/connectors/h2_package_registries/coverage/oci_registry_metadata_coverage_preview_v0.json"
+    },
+    {
+      "classification": "governed_coverage_fixture",
+      "path": "examples/connectors/h2_package_registries/coverage/rubygems_coverage_preview_v0.json"
+    },
+    {
+      "classification": "governed_coverage_fixture",
+      "path": "examples/connectors/h3_os_package_archives/coverage/arch_linux_archive_coverage_preview_v0.json"
+    },
+    {
+      "classification": "governed_coverage_fixture",
+      "path": "examples/connectors/h3_os_package_archives/coverage/chocolatey_coverage_preview_v0.json"
+    },
+    {
+      "classification": "governed_coverage_fixture",
+      "path": "examples/connectors/h3_os_package_archives/coverage/debian_snapshot_coverage_preview_v0.json"
+    },
+    {
+      "classification": "governed_coverage_fixture",
+      "path": "examples/connectors/h3_os_package_archives/coverage/fedora_rpm_metadata_coverage_preview_v0.json"
+    },
+    {
+      "classification": "governed_coverage_fixture",
+      "path": "examples/connectors/h3_os_package_archives/coverage/flathub_coverage_preview_v0.json"
+    },
+    {
+      "classification": "governed_coverage_fixture",
+      "path": "examples/connectors/h3_os_package_archives/coverage/freebsd_packages_ports_coverage_preview_v0.json"
+    },
+    {
+      "classification": "governed_coverage_fixture",
+      "path": "examples/connectors/h3_os_package_archives/coverage/homebrew_coverage_preview_v0.json"
+    },
+    {
+      "classification": "governed_coverage_fixture",
+      "path": "examples/connectors/h3_os_package_archives/coverage/macports_coverage_preview_v0.json"
+    },
+    {
+      "classification": "governed_coverage_fixture",
+      "path": "examples/connectors/h3_os_package_archives/coverage/nixpkgs_coverage_preview_v0.json"
+    },
+    {
+      "classification": "governed_coverage_fixture",
+      "path": "examples/connectors/h3_os_package_archives/coverage/pkgsrc_coverage_preview_v0.json"
+    },
+    {
+      "classification": "governed_coverage_fixture",
+      "path": "examples/connectors/h3_os_package_archives/coverage/snapcraft_coverage_preview_v0.json"
+    },
+    {
+      "classification": "governed_coverage_fixture",
+      "path": "examples/connectors/h3_os_package_archives/coverage/ubuntu_old_releases_coverage_preview_v0.json"
+    },
+    {
+      "classification": "governed_coverage_fixture",
+      "path": "examples/connectors/h3_os_package_archives/coverage/winget_coverage_preview_v0.json"
+    },
+    {
+      "classification": "governed_coverage_fixture",
+      "path": "examples/connectors/h4_code_source_release/coverage/fosshub_coverage_preview_v0.json"
+    },
+    {
+      "classification": "governed_coverage_fixture",
+      "path": "examples/connectors/h4_code_source_release/coverage/generic_git_repository_coverage_preview_v0.json"
+    },
+    {
+      "classification": "governed_coverage_fixture",
+      "path": "examples/connectors/h4_code_source_release/coverage/generic_release_host_coverage_preview_v0.json"
+    },
+    {
+      "classification": "governed_coverage_fixture",
+      "path": "examples/connectors/h4_code_source_release/coverage/github_archive_program_coverage_preview_v0.json"
+    },
+    {
+      "classification": "governed_coverage_fixture",
+      "path": "examples/connectors/h4_code_source_release/coverage/github_releases_coverage_preview_v0.json"
+    },
+    {
+      "classification": "governed_coverage_fixture",
+      "path": "examples/connectors/h4_code_source_release/coverage/github_repository_coverage_preview_v0.json"
+    },
+    {
+      "classification": "governed_coverage_fixture",
+      "path": "examples/connectors/h4_code_source_release/coverage/gitlab_releases_coverage_preview_v0.json"
+    },
+    {
+      "classification": "governed_coverage_fixture",
+      "path": "examples/connectors/h4_code_source_release/coverage/gitlab_repository_coverage_preview_v0.json"
+    },
+    {
+      "classification": "governed_coverage_fixture",
+      "path": "examples/connectors/h4_code_source_release/coverage/software_heritage_identity_coverage_preview_v0.json"
+    },
+    {
+      "classification": "governed_coverage_fixture",
+      "path": "examples/connectors/h4_code_source_release/coverage/sourceforge_coverage_preview_v0.json"
+    },
+    {
+      "classification": "governed_coverage_fixture",
+      "path": "examples/connectors/h5_vendor_update_driver/coverage/acer_support_downloads_coverage_preview_v0.json"
+    },
+    {
+      "classification": "governed_coverage_fixture",
+      "path": "examples/connectors/h5_vendor_update_driver/coverage/amd_driver_downloads_coverage_preview_v0.json"
+    },
+    {
+      "classification": "governed_coverage_fixture",
+      "path": "examples/connectors/h5_vendor_update_driver/coverage/apple_software_downloads_coverage_preview_v0.json"
+    },
+    {
+      "classification": "governed_coverage_fixture",
+      "path": "examples/connectors/h5_vendor_update_driver/coverage/apple_software_update_catalog_coverage_preview_v0.json"
+    },
+    {
+      "classification": "governed_coverage_fixture",
+      "path": "examples/connectors/h5_vendor_update_driver/coverage/asus_support_downloads_coverage_preview_v0.json"
+    },
+    {
+      "classification": "governed_coverage_fixture",
+      "path": "examples/connectors/h5_vendor_update_driver/coverage/dell_support_downloads_coverage_preview_v0.json"
+    },
+    {
+      "classification": "governed_coverage_fixture",
+      "path": "examples/connectors/h5_vendor_update_driver/coverage/generic_runtime_redistributable_coverage_preview_v0.json"
+    },
+    {
+      "classification": "governed_coverage_fixture",
+      "path": "examples/connectors/h5_vendor_update_driver/coverage/generic_vendor_driver_firmware_coverage_preview_v0.json"
+    },
+    {
+      "classification": "governed_coverage_fixture",
+      "path": "examples/connectors/h5_vendor_update_driver/coverage/hp_support_downloads_coverage_preview_v0.json"
+    },
+    {
+      "classification": "governed_coverage_fixture",
+      "path": "examples/connectors/h5_vendor_update_driver/coverage/intel_driver_support_coverage_preview_v0.json"
+    },
+    {
+      "classification": "governed_coverage_fixture",
+      "path": "examples/connectors/h5_vendor_update_driver/coverage/lenovo_support_downloads_coverage_preview_v0.json"
+    },
+    {
+      "classification": "governed_coverage_fixture",
+      "path": "examples/connectors/h5_vendor_update_driver/coverage/microsoft_download_center_coverage_preview_v0.json"
+    },
+    {
+      "classification": "governed_coverage_fixture",
+      "path": "examples/connectors/h5_vendor_update_driver/coverage/microsoft_runtime_redistributables_coverage_preview_v0.json"
+    },
+    {
+      "classification": "governed_coverage_fixture",
+      "path": "examples/connectors/h5_vendor_update_driver/coverage/microsoft_update_catalog_coverage_preview_v0.json"
+    },
+    {
+      "classification": "governed_coverage_fixture",
+      "path": "examples/connectors/h5_vendor_update_driver/coverage/nvidia_driver_downloads_coverage_preview_v0.json"
+    },
+    {
+      "classification": "governed_coverage_fixture",
+      "path": "examples/connectors/h6_web_archive_news_event/coverage/aapb_broadcast_archive_coverage_preview_v0.json"
+    },
+    {
+      "classification": "governed_coverage_fixture",
+      "path": "examples/connectors/h6_web_archive_news_event/coverage/archive_today_snapshot_coverage_preview_v0.json"
+    },
+    {
+      "classification": "governed_coverage_fixture",
+      "path": "examples/connectors/h6_web_archive_news_event/coverage/chronicling_america_coverage_preview_v0.json"
+    },
+    {
+      "classification": "governed_coverage_fixture",
+      "path": "examples/connectors/h6_web_archive_news_event/coverage/common_crawl_cdxj_coverage_preview_v0.json"
+    },
+    {
+      "classification": "governed_coverage_fixture",
+      "path": "examples/connectors/h6_web_archive_news_event/coverage/cspan_video_library_coverage_preview_v0.json"
+    },
+    {
+      "classification": "governed_coverage_fixture",
+      "path": "examples/connectors/h6_web_archive_news_event/coverage/gdelt_news_event_coverage_preview_v0.json"
+    },
+    {
+      "classification": "governed_coverage_fixture",
+      "path": "examples/connectors/h6_web_archive_news_event/coverage/generic_newspaper_archive_coverage_preview_v0.json"
+    },
+    {
+      "classification": "governed_coverage_fixture",
+      "path": "examples/connectors/h6_web_archive_news_event/coverage/generic_public_event_trace_coverage_preview_v0.json"
+    },
+    {
+      "classification": "governed_coverage_fixture",
+      "path": "examples/connectors/h6_web_archive_news_event/coverage/generic_web_archive_coverage_preview_v0.json"
+    },
+    {
+      "classification": "governed_coverage_fixture",
+      "path": "examples/connectors/h6_web_archive_news_event/coverage/public_warc_wacz_collection_coverage_preview_v0.json"
+    },
+    {
+      "classification": "governed_coverage_fixture",
+      "path": "examples/connectors/h6_web_archive_news_event/coverage/restricted_public_document_manifest_coverage_preview_v0.json"
+    },
+    {
+      "classification": "governed_coverage_fixture",
+      "path": "examples/connectors/h6_web_archive_news_event/coverage/trove_newspapers_coverage_preview_v0.json"
+    },
+    {
+      "classification": "governed_coverage_fixture",
+      "path": "examples/connectors/h6_web_archive_news_event/coverage/wayback_cdx_memento_coverage_preview_v0.json"
+    },
+    {
+      "classification": "governed_coverage_fixture",
+      "path": "examples/connectors/h7_library_research/coverage/h7_library_research_coverage_preview_v0.json"
+    },
+    {
+      "classification": "governed_coverage_fixture",
+      "path": "examples/connectors/h8_manuals_docs_standards/coverage/h8_manuals_docs_standards_coverage_preview_v0.json"
+    },
+    {
+      "classification": "governed_coverage_fixture",
+      "path": "examples/connectors/h9_media_metadata/coverage/h9_media_metadata_coverage_preview_v0.json"
+    },
+    {
+      "classification": "governed_coverage_fixture",
+      "path": "examples/sources/coverage/h1_metadata_wave_coverage_preview_v0.json"
+    },
+    {
+      "classification": "governed_coverage_fixture",
+      "path": "examples/sources/coverage/internet_archive_coverage_record_v0.json"
+    },
+    {
+      "classification": "governed_coverage_fixture",
+      "path": "examples/sources/coverage/minimal_source_coverage_manifest_v0.json"
+    },
+    {
+      "classification": "governed_coverage_fixture",
+      "path": "examples/sources/coverage/minimal_source_coverage_record_v0.json"
+    },
+    {
+      "classification": "governed_coverage_fixture",
+      "path": "examples/sources/coverage/policy_blocked_coverage_record_v0.json"
+    },
+    {
+      "classification": "native_placeholder_marker",
+      "path": "native/mac/appkit/build/README.md"
+    },
+    {
+      "classification": "native_placeholder_marker",
+      "path": "native/mac/appkit/dist/README.md"
+    },
+    {
+      "classification": "native_placeholder_marker",
+      "path": "native/mac/carbon/build/README.md"
+    },
+    {
+      "classification": "native_placeholder_marker",
+      "path": "native/mac/carbon/dist/README.md"
+    },
+    {
+      "classification": "native_placeholder_marker",
+      "path": "native/win/win32/build/README.md"
+    },
+    {
+      "classification": "native_placeholder_marker",
+      "path": "native/win/win32/dist/README.md"
+    },
+    {
+      "classification": "native_placeholder_marker",
+      "path": "native/win/winforms/build/README.md"
+    },
+    {
+      "classification": "native_placeholder_marker",
+      "path": "native/win/winforms/dist/README.md"
+    },
+    {
+      "classification": "governed_static_site_artifact",
+      "path": "site/dist/.eureka-static-site-generated"
+    },
+    {
+      "classification": "governed_static_site_artifact",
+      "path": "site/dist/assets/site.css"
+    },
+    {
+      "classification": "governed_static_site_artifact",
+      "path": "site/dist/data/build_manifest.json"
+    },
+    {
+      "classification": "governed_static_site_artifact",
+      "path": "site/dist/data/eval_summary.json"
+    },
+    {
+      "classification": "governed_static_site_artifact",
+      "path": "site/dist/data/page_registry.json"
+    },
+    {
+      "classification": "governed_static_site_artifact",
+      "path": "site/dist/data/public_index/build_manifest.json"
+    },
+    {
+      "classification": "governed_static_site_artifact",
+      "path": "site/dist/data/public_index/checksums.sha256"
+    },
+    {
+      "classification": "governed_static_site_artifact",
+      "path": "site/dist/data/public_index/index_stats.json"
+    },
+    {
+      "classification": "governed_static_site_artifact",
+      "path": "site/dist/data/public_index/search_documents.ndjson"
+    },
+    {
+      "classification": "governed_static_site_artifact",
+      "path": "site/dist/data/public_index/source_coverage.json"
+    },
+    {
+      "classification": "governed_static_site_artifact",
+      "path": "site/dist/data/public_index_summary.json"
+    },
+    {
+      "classification": "governed_static_site_artifact",
+      "path": "site/dist/data/route_summary.json"
+    },
+    {
+      "classification": "governed_static_site_artifact",
+      "path": "site/dist/data/search_config.json"
+    },
+    {
+      "classification": "governed_static_site_artifact",
+      "path": "site/dist/data/search_handoff.json"
+    },
+    {
+      "classification": "governed_static_site_artifact",
+      "path": "site/dist/data/site_manifest.json"
+    },
+    {
+      "classification": "governed_static_site_artifact",
+      "path": "site/dist/data/source_summary.json"
+    },
+    {
+      "classification": "governed_static_site_artifact",
+      "path": "site/dist/demo-queries.html"
+    },
+    {
+      "classification": "governed_static_site_artifact",
+      "path": "site/dist/demo/README.txt"
+    },
+    {
+      "classification": "governed_static_site_artifact",
+      "path": "site/dist/demo/absence-example.html"
+    },
+    {
+      "classification": "governed_static_site_artifact",
+      "path": "site/dist/demo/comparison-example.html"
+    },
+    {
+      "classification": "governed_static_site_artifact",
+      "path": "site/dist/demo/data/demo_snapshots.json"
+    },
+    {
+      "classification": "governed_static_site_artifact",
+      "path": "site/dist/demo/eval-summary.html"
+    },
+    {
+      "classification": "governed_static_site_artifact",
+      "path": "site/dist/demo/index.html"
+    },
+    {
+      "classification": "governed_static_site_artifact",
+      "path": "site/dist/demo/query-plan-windows-7-apps.html"
+    },
+    {
+      "classification": "governed_static_site_artifact",
+      "path": "site/dist/demo/result-article-scan.html"
+    },
+    {
+      "classification": "governed_static_site_artifact",
+      "path": "site/dist/demo/result-firefox-xp.html"
+    },
+    {
+      "classification": "governed_static_site_artifact",
+      "path": "site/dist/demo/result-member-driver-inside-support-cd.html"
+    },
+    {
+      "classification": "governed_static_site_artifact",
+      "path": "site/dist/demo/source-example.html"
+    },
+    {
+      "classification": "governed_static_site_artifact",
+      "path": "site/dist/evals.html"
+    },
+    {
+      "classification": "governed_static_site_artifact",
+      "path": "site/dist/files/README.txt"
+    },
+    {
+      "classification": "governed_static_site_artifact",
+      "path": "site/dist/files/SHA256SUMS"
+    },
+    {
+      "classification": "governed_static_site_artifact",
+      "path": "site/dist/files/data/README.txt"
+    },
+    {
+      "classification": "governed_static_site_artifact",
+      "path": "site/dist/files/index.html"
+    },
+    {
+      "classification": "governed_static_site_artifact",
+      "path": "site/dist/files/index.txt"
+    },
+    {
+      "classification": "governed_static_site_artifact",
+      "path": "site/dist/files/manifest.json"
+    },
+    {
+      "classification": "governed_static_site_artifact",
+      "path": "site/dist/files/search.README.txt"
+    },
+    {
+      "classification": "governed_static_site_artifact",
+      "path": "site/dist/index.html"
+    },
+    {
+      "classification": "governed_static_site_artifact",
+      "path": "site/dist/limitations.html"
+    },
+    {
+      "classification": "governed_static_site_artifact",
+      "path": "site/dist/lite/README.txt"
+    },
+    {
+      "classification": "governed_static_site_artifact",
+      "path": "site/dist/lite/demo-queries.html"
+    },
+    {
+      "classification": "governed_static_site_artifact",
+      "path": "site/dist/lite/evals.html"
+    },
+    {
+      "classification": "governed_static_site_artifact",
+      "path": "site/dist/lite/index.html"
+    },
+    {
+      "classification": "governed_static_site_artifact",
+      "path": "site/dist/lite/limitations.html"
+    },
+    {
+      "classification": "governed_static_site_artifact",
+      "path": "site/dist/lite/search.html"
+    },
+    {
+      "classification": "governed_static_site_artifact",
+      "path": "site/dist/lite/sources.html"
+    },
+    {
+      "classification": "governed_static_site_artifact",
+      "path": "site/dist/local-quickstart.html"
+    },
+    {
+      "classification": "governed_static_site_artifact",
+      "path": "site/dist/roadmap.html"
+    },
+    {
+      "classification": "governed_static_site_artifact",
+      "path": "site/dist/search.html"
+    },
+    {
+      "classification": "governed_static_site_artifact",
+      "path": "site/dist/site_manifest.json"
+    },
+    {
+      "classification": "governed_static_site_artifact",
+      "path": "site/dist/sources.html"
+    },
+    {
+      "classification": "governed_static_site_artifact",
+      "path": "site/dist/status.html"
+    },
+    {
+      "classification": "governed_static_site_artifact",
+      "path": "site/dist/text/README.txt"
+    },
+    {
+      "classification": "governed_static_site_artifact",
+      "path": "site/dist/text/demo-queries.txt"
+    },
+    {
+      "classification": "governed_static_site_artifact",
+      "path": "site/dist/text/evals.txt"
+    },
+    {
+      "classification": "governed_static_site_artifact",
+      "path": "site/dist/text/index.txt"
+    },
+    {
+      "classification": "governed_static_site_artifact",
+      "path": "site/dist/text/limitations.txt"
+    },
+    {
+      "classification": "governed_static_site_artifact",
+      "path": "site/dist/text/search.txt"
+    },
+    {
+      "classification": "governed_static_site_artifact",
+      "path": "site/dist/text/sources.txt"
+    }
+  ],
+  "counts": {
+    "build": 4,
+    "coverage": 76,
+    "dist": 62,
+    "out": 0,
+    "site_dist": 58,
+    "target": 0,
+    "tmp": 0
+  },
+  "model_provider_used": false,
+  "network_used": false,
+  "risky_or_unclassified_count": 0,
+  "risky_or_unclassified_paths": [],
+  "schema_version": "generated_visibility.v1",
+  "source_commit": "1e0ee5407f73fd620848d777669b8bbf7d386ffe",
+  "status": "valid",
+  "task_id": "EUREKA-STRUCTURE-FINAL-AUDIT-ONLY-01"
+}

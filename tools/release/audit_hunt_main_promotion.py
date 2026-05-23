@@ -305,6 +305,7 @@ def current_queue_has_advanced_past_hunt_promotion(root: Path) -> bool:
                 "WORKBENCH-",
                 "SEARCH-",
                 "SYN-",
+                "LOCAL-",
                 "DOMAIN-",
                 "SCOUT-",
                 "F0-",

@@ -1,0 +1,281 @@
+{
+  "active_duplicate_count": 0,
+  "assessment": "old runtime paths are compatibility shims; references remain, so they are not dead wrappers yet",
+  "branch": "dev",
+  "old_import_reference_counts": {
+    "runtime.candidate_index": 3,
+    "runtime.evidence_ledger": 10,
+    "runtime.local_appliance": 6,
+    "runtime.local_eval": 3,
+    "runtime.local_foundry": 45,
+    "runtime.local_network": 7,
+    "runtime.local_operator": 5,
+    "runtime.local_review": 4,
+    "runtime.local_service": 10,
+    "runtime.local_worker": 3,
+    "runtime.public_index": 70,
+    "runtime.review_queue": 21,
+    "runtime.search_hunt": 215,
+    "runtime.search_need": 88,
+    "runtime.search_quality": 32,
+    "runtime.source_cache": 12,
+    "runtime.source_observation": 11,
+    "runtime.source_registry": 6,
+    "runtime.workunit_queue": 111
+  },
+  "product_behavior_changed": false,
+  "remaining_shims": [
+    {
+      "canonical_path": "runtime/evidence/ledger",
+      "classification": "compatibility_shim",
+      "has_init_shim": true,
+      "has_readme_marker": true,
+      "init_mentions_canonical_module": true,
+      "old_path": "runtime/evidence_ledger",
+      "retained": true,
+      "tracked_files": [
+        "README.md",
+        "__init__.py"
+      ]
+    },
+    {
+      "canonical_path": "runtime/source/cache",
+      "classification": "compatibility_shim",
+      "has_init_shim": true,
+      "has_readme_marker": true,
+      "init_mentions_canonical_module": true,
+      "old_path": "runtime/source_cache",
+      "retained": true,
+      "tracked_files": [
+        "README.md",
+        "__init__.py"
+      ]
+    },
+    {
+      "canonical_path": "runtime/source/observation",
+      "classification": "compatibility_shim",
+      "has_init_shim": true,
+      "has_readme_marker": true,
+      "init_mentions_canonical_module": true,
+      "old_path": "runtime/source_observation",
+      "retained": true,
+      "tracked_files": [
+        "README.md",
+        "__init__.py"
+      ]
+    },
+    {
+      "canonical_path": "runtime/source/registry",
+      "classification": "compatibility_shim",
+      "has_init_shim": true,
+      "has_readme_marker": true,
+      "init_mentions_canonical_module": true,
+      "old_path": "runtime/source_registry",
+      "retained": true,
+      "tracked_files": [
+        "README.md",
+        "__init__.py"
+      ]
+    },
+    {
+      "canonical_path": "runtime/review/queue",
+      "classification": "compatibility_shim",
+      "has_init_shim": true,
+      "has_readme_marker": true,
+      "init_mentions_canonical_module": true,
+      "old_path": "runtime/review_queue",
+      "retained": true,
+      "tracked_files": [
+        "README.md",
+        "__init__.py"
+      ]
+    },
+    {
+      "canonical_path": "runtime/search/hunt",
+      "classification": "compatibility_shim",
+      "has_init_shim": true,
+      "has_readme_marker": true,
+      "init_mentions_canonical_module": true,
+      "old_path": "runtime/search_hunt",
+      "retained": true,
+      "tracked_files": [
+        "README.md",
+        "__init__.py"
+      ]
+    },
+    {
+      "canonical_path": "runtime/search/need",
+      "classification": "compatibility_shim",
+      "has_init_shim": true,
+      "has_readme_marker": true,
+      "init_mentions_canonical_module": true,
+      "old_path": "runtime/search_need",
+      "retained": true,
+      "tracked_files": [
+        "README.md",
+        "__init__.py"
+      ]
+    },
+    {
+      "canonical_path": "runtime/search/quality",
+      "classification": "compatibility_shim",
+      "has_init_shim": true,
+      "has_readme_marker": true,
+      "init_mentions_canonical_module": true,
+      "old_path": "runtime/search_quality",
+      "retained": true,
+      "tracked_files": [
+        "README.md",
+        "__init__.py"
+      ]
+    },
+    {
+      "canonical_path": "runtime/worker/workunit_queue",
+      "classification": "compatibility_shim",
+      "has_init_shim": true,
+      "has_readme_marker": true,
+      "init_mentions_canonical_module": true,
+      "old_path": "runtime/workunit_queue",
+      "retained": true,
+      "tracked_files": [
+        "README.md",
+        "__init__.py"
+      ]
+    },
+    {
+      "canonical_path": "runtime/local/appliance",
+      "classification": "compatibility_shim",
+      "has_init_shim": true,
+      "has_readme_marker": true,
+      "init_mentions_canonical_module": true,
+      "old_path": "runtime/local_appliance",
+      "retained": true,
+      "tracked_files": [
+        "README.md",
+        "__init__.py"
+      ]
+    },
+    {
+      "canonical_path": "runtime/local/eval",
+      "classification": "compatibility_shim",
+      "has_init_shim": true,
+      "has_readme_marker": true,
+      "init_mentions_canonical_module": true,
+      "old_path": "runtime/local_eval",
+      "retained": true,
+      "tracked_files": [
+        "README.md",
+        "__init__.py"
+      ]
+    },
+    {
+      "canonical_path": "runtime/local/foundry",
+      "classification": "compatibility_shim",
+      "has_init_shim": true,
+      "has_readme_marker": true,
+      "init_mentions_canonical_module": true,
+      "old_path": "runtime/local_foundry",
+      "retained": true,
+      "tracked_files": [
+        "README.md",
+        "__init__.py"
+      ]
+    },
+    {
+      "canonical_path": "runtime/local/network",
+      "classification": "compatibility_shim",
+      "has_init_shim": true,
+      "has_readme_marker": true,
+      "init_mentions_canonical_module": true,
+      "old_path": "runtime/local_network",
+      "retained": true,
+      "tracked_files": [
+        "README.md",
+        "__init__.py"
+      ]
+    },
+    {
+      "canonical_path": "runtime/local/operator",
+      "classification": "compatibility_shim",
+      "has_init_shim": true,
+      "has_readme_marker": true,
+      "init_mentions_canonical_module": true,
+      "old_path": "runtime/local_operator",
+      "retained": true,
+      "tracked_files": [
+        "README.md",
+        "__init__.py"
+      ]
+    },
+    {
+      "canonical_path": "runtime/local/review",
+      "classification": "compatibility_shim",
+      "has_init_shim": true,
+      "has_readme_marker": true,
+      "init_mentions_canonical_module": true,
+      "old_path": "runtime/local_review",
+      "retained": true,
+      "tracked_files": [
+        "README.md",
+        "__init__.py"
+      ]
+    },
+    {
+      "canonical_path": "runtime/local/service",
+      "classification": "compatibility_shim",
+      "has_init_shim": true,
+      "has_readme_marker": true,
+      "init_mentions_canonical_module": true,
+      "old_path": "runtime/local_service",
+      "retained": true,
+      "tracked_files": [
+        "README.md",
+        "__init__.py"
+      ]
+    },
+    {
+      "canonical_path": "runtime/local/worker",
+      "classification": "compatibility_shim",
+      "has_init_shim": true,
+      "has_readme_marker": true,
+      "init_mentions_canonical_module": true,
+      "old_path": "runtime/local_worker",
+      "retained": true,
+      "tracked_files": [
+        "README.md",
+        "__init__.py"
+      ]
+    },
+    {
+      "canonical_path": "runtime/index/candidate",
+      "classification": "compatibility_shim",
+      "has_init_shim": true,
+      "has_readme_marker": true,
+      "init_mentions_canonical_module": true,
+      "old_path": "runtime/candidate_index",
+      "retained": true,
+      "tracked_files": [
+        "README.md",
+        "__init__.py"
+      ]
+    },
+    {
+      "canonical_path": "runtime/index/public",
+      "classification": "compatibility_shim",
+      "has_init_shim": true,
+      "has_readme_marker": true,
+      "init_mentions_canonical_module": true,
+      "old_path": "runtime/public_index",
+      "retained": true,
+      "tracked_files": [
+        "README.md",
+        "__init__.py"
+      ]
+    }
+  ],
+  "schema_version": "remaining_runtime_shims.v1",
+  "shim_count": 19,
+  "source_commit": "1e0ee5407f73fd620848d777669b8bbf7d386ffe",
+  "status": "valid",
+  "task_id": "EUREKA-STRUCTURE-FINAL-AUDIT-ONLY-01"
+}

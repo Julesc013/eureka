@@ -1,0 +1,68 @@
+{
+  "non_claims": [
+    "This is a syntax-level naming audit, not a semantic API quality review.",
+    "Known framework method names such as unittest setUp and BaseHTTPRequestHandler do_GET are counted separately as exceptions.",
+    "Issues are reported for targeted follow-up; this audit does not rename symbols."
+  ],
+  "python": {
+    "counts": {
+      "arguments": 33032,
+      "classes": 1910,
+      "files_checked": 3511,
+      "functions": 21223
+    },
+    "framework_exception_counts": {
+      "do_DELETE": 2,
+      "do_GET": 2,
+      "do_PATCH": 2,
+      "do_POST": 2,
+      "do_PUT": 2,
+      "setUp": 122,
+      "setUpClass": 15
+    },
+    "framework_function_exceptions": [
+      "asyncSetUp",
+      "asyncTearDown",
+      "setUp",
+      "setUpClass",
+      "tearDown",
+      "tearDownClass",
+      "do_[A-Z]+ HTTP handler methods"
+    ],
+    "issue_count": 2,
+    "issues_sample": [
+      {
+        "expected": "PascalCase",
+        "kind": "class",
+        "line": 77,
+        "name": "temporary_repo",
+        "path": "tests/architecture/test_check_architecture_boundaries.py"
+      },
+      {
+        "expected": "snake_case",
+        "kind": "function",
+        "line": 435,
+        "name": "REQUIRED_FORBIDDEN_TASK_NAMES_PRESENT",
+        "path": "tools/validators/validate_ai_provider_contract.py"
+      }
+    ],
+    "issues_sample_limit": 250,
+    "parse_error_count": 0,
+    "parse_errors": []
+  },
+  "rust": {
+    "counts": {
+      "files_checked": 6,
+      "functions": 73,
+      "modules": 4,
+      "types": 11
+    },
+    "issue_count": 0,
+    "issues_sample": [],
+    "issues_sample_limit": 250
+  },
+  "schema_version": "symbol_naming_report.v1",
+  "source_commit": "1e0ee5407f73fd620848d777669b8bbf7d386ffe",
+  "status": "naming_debt_present",
+  "task_id": "EUREKA-STRUCTURE-FINAL-AUDIT-ONLY-01"
+}

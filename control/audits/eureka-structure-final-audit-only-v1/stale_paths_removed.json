@@ -1,0 +1,8 @@
+{
+  "removed_count": 0,
+  "removed_paths": [],
+  "schema_version": "stale_paths_removed.v1",
+  "source_commit": "1e0ee5407f73fd620848d777669b8bbf7d386ffe",
+  "task_id": "EUREKA-STRUCTURE-FINAL-AUDIT-ONLY-01",
+  "why": "audit-only pass found no stale tracked old runtime implementation path safe to delete without broader import/reference work"
+}
