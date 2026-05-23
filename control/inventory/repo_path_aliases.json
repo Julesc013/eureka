@@ -703,6 +703,30 @@
       "new_path": "contracts/runtime/source/observation.v0.json",
       "old_path": "contracts/runtime/source_observation.v0.json",
       "references_updated": true
+    },
+    {
+      "active": false,
+      "alias_class": "contract_path_migration",
+      "compatibility_wrapper": false,
+      "new_path": "contracts/surface/ui/contracts/representation.ui_contract.yaml",
+      "old_path": "contracts/surface/ui/contracts/representations.ui_contract.yaml",
+      "references_updated": true
+    },
+    {
+      "active": false,
+      "alias_class": "contract_path_migration",
+      "compatibility_wrapper": false,
+      "new_path": "contracts/surface/ui/contracts/resolution/run.ui_contract.yaml",
+      "old_path": "contracts/surface/ui/contracts/resolution_run.ui_contract.yaml",
+      "references_updated": true
+    },
+    {
+      "active": false,
+      "alias_class": "contract_path_migration",
+      "compatibility_wrapper": false,
+      "new_path": "contracts/surface/ui/contracts/source/registry.ui_contract.yaml",
+      "old_path": "contracts/surface/ui/contracts/source_registry.ui_contract.yaml",
+      "references_updated": true
     }
   ],
   "created_by": "EUREKA-STRUCTURE-FINAL-CLOSEOUT-01",

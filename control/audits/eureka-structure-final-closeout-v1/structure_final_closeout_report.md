@@ -21,9 +21,9 @@ This closeout grouped low-risk runtime, contract, and example taxonomy families,
 
 ## Moved Paths
 
-- Total moved path entries: `88`
+- Total moved path entries: `91`
 - Runtime taxonomy moves: `19`
-- Contract taxonomy moves: `21`
+- Contract taxonomy moves: `24`
 - Examples taxonomy moves: `48`
 
 See `path_migration_map.json` and `control/inventory/repo_path_aliases.json`.
@@ -90,9 +90,11 @@ See `path_migration_map.json` and `control/inventory/repo_path_aliases.json`.
 | `python scripts/eureka_test_select.py --promotion --json` | pass selector; full discovery required |
 | `python scripts/validate_source_observation_seam.py --json` | pass |
 | `python scripts/validate_local_runtime_composition.py --json` | pass |
+| `python scripts/validate_contract_taxonomy_plan.py --json` | pass after UI contract path remediation |
+| `python scripts/validate_local_http_service.py --json` | pass after canonical local appliance import allowlist update |
 | Focused moved-path unittest lanes | pass |
-| `python -m unittest discover -s tests -t .` | pending clean-tree post-commit rerun before push |
-| `python scripts/check_generated_artifact_cleanliness.py --check --json` | pending clean-tree post-commit rerun before push |
+| `python -m unittest discover -s tests -t .` | pass; `4914` tests in `2660.506s` |
+| `python scripts/check_generated_artifact_cleanliness.py --check --json` | pass; no generated drift, no network, no model provider use, no site/dist mutation |
 
 ## Failures Remediated
 
@@ -100,8 +102,12 @@ See `path_migration_map.json` and `control/inventory/repo_path_aliases.json`.
 - Recomputed affected example pack checksums.
 - Rebuilt the committed public static search index after path updates.
 - Moved `contracts/runtime/source_observation.v0.json` to `contracts/runtime/source/observation.v0.json` to match its governed contract id and inventory references.
+- Moved three surface UI contract files to the nested canonical paths already recorded in the contract taxonomy inventory.
+- Updated two ranking validator tests that still referenced the old `examples/evidence_weighted_ranking` path.
+- Updated the LOCAL-04 validator allowlist for canonical `runtime.local.appliance` imports.
 - Updated audit manifests that validators read so they no longer point at removed example paths.
 - Classified `examples/sources/coverage/` generated-looking fixtures in the generated visibility auditor.
+- Reran full unittest discovery after remediation; the clean-tree run passed.
 
 ## Known Remaining Debt
 

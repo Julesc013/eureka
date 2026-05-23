@@ -1229,5 +1229,44 @@
       "validate_contract_taxonomy",
       "focused_import_tests"
     ]
+  },
+  {
+    "class": "contract_taxonomy",
+    "compatibility_wrapper": false,
+    "new_path": "contracts/surface/ui/contracts/representation.ui_contract.yaml",
+    "old_path": "contracts/surface/ui/contracts/representations.ui_contract.yaml",
+    "reason": "Align UI contract file naming with the existing contract taxonomy inventory after surface/ui consolidation.",
+    "references_updated": true,
+    "validation_covered_by": [
+      "validate_contract_taxonomy_plan",
+      "validate_contract_taxonomy",
+      "full_unittest_discovery"
+    ]
+  },
+  {
+    "class": "contract_taxonomy",
+    "compatibility_wrapper": false,
+    "new_path": "contracts/surface/ui/contracts/resolution/run.ui_contract.yaml",
+    "old_path": "contracts/surface/ui/contracts/resolution_run.ui_contract.yaml",
+    "reason": "Align UI contract file naming with the existing contract taxonomy inventory after surface/ui consolidation.",
+    "references_updated": true,
+    "validation_covered_by": [
+      "validate_contract_taxonomy_plan",
+      "validate_contract_taxonomy",
+      "full_unittest_discovery"
+    ]
+  },
+  {
+    "class": "contract_taxonomy",
+    "compatibility_wrapper": false,
+    "new_path": "contracts/surface/ui/contracts/source/registry.ui_contract.yaml",
+    "old_path": "contracts/surface/ui/contracts/source_registry.ui_contract.yaml",
+    "reason": "Align UI contract file naming with the existing contract taxonomy inventory after surface/ui consolidation.",
+    "references_updated": true,
+    "validation_covered_by": [
+      "validate_contract_taxonomy_plan",
+      "validate_contract_taxonomy",
+      "full_unittest_discovery"
+    ]
   }
 ]

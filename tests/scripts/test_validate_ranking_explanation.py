@@ -10,7 +10,8 @@ ROOT = Path(__file__).resolve().parents[2]
 EXAMPLE = (
     ROOT
     / "examples"
-    / "evidence_weighted_ranking"
+    / "evidence"
+    / "weighted_ranking"
     / "minimal_strong_evidence_ranking_v0"
     / "RANKING_EXPLANATION.json"
 )

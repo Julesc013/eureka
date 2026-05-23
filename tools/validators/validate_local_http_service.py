@@ -107,6 +107,7 @@ ALLOWED_IMPORTS = {
     "http.server",
     "socketserver",
     "runtime.local_appliance",
+    "runtime.local.appliance",
     "runtime.public_index",
 }
 FORBIDDEN_IMPORT_PREFIXES = (
