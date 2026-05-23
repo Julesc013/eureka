@@ -11,7 +11,7 @@ from typing import Any, Mapping, Sequence, TextIO
 REPO_ROOT = Path(__file__).resolve().parents[2]
 SCHEMA_VERSION = "0.1.0"
 
-CONTRACT_PATH = "contracts/representations/semantic_renderer_parity.v0.json"
+CONTRACT_PATH = "contracts/representation/semantic_renderer_parity.v0.json"
 POLICY_INVENTORY = "control/inventory/publication/semantic_renderer_parity_policy.json"
 REPRESENTATION_INVENTORY = "control/inventory/publication/representation_profiles.json"
 EXAMPLE_PATHS = [

@@ -15,12 +15,12 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.public_index import PublicIndexRecord, PublicIndexStore
-from runtime.public_index.rebuild import rebuild_reviewed_public_index
-from runtime.public_index.validation import validate_no_public_truth_fields, validate_no_task_vocabulary
+from runtime.index.public import PublicIndexRecord, PublicIndexStore
+from runtime.index.public.rebuild import rebuild_reviewed_public_index
+from runtime.index.public.validation import validate_no_public_truth_fields, validate_no_task_vocabulary
 from scripts.demo_review_queue_store import run_demo as run_review_queue_demo
 from scripts.demo_reviewed_public_index import run_demo as run_public_index_demo
-from runtime.review_queue import ReviewDecisionKind
+from runtime.review.queue import ReviewDecisionKind
 
 
 CONTRACT_PATHS = (
@@ -89,7 +89,7 @@ def _check_contracts() -> dict[str, Any]:
 
 def _check_runtime_vocabulary() -> dict[str, Any]:
     errors: list[str] = []
-    for path in (REPO_ROOT / "runtime" / "public_index").glob("*.py"):
+    for path in (REPO_ROOT / "runtime" / "index" / "public").glob("*.py"):
         text = path.read_text(encoding="utf-8")
         errors.extend(f"{path.name}: {error}" for error in validate_no_task_vocabulary(text))
         if "truth_boundary" in text or "product_boundary" in text:
@@ -99,7 +99,7 @@ def _check_runtime_vocabulary() -> dict[str, Any]:
 
 def _check_runtime_imports() -> dict[str, Any]:
     errors: list[str] = []
-    for path in (REPO_ROOT / "runtime" / "public_index").glob("*.py"):
+    for path in (REPO_ROOT / "runtime" / "index" / "public").glob("*.py"):
         tree = ast.parse(path.read_text(encoding="utf-8"))
         for node in ast.walk(tree):
             if isinstance(node, ast.Import):

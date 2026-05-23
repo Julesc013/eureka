@@ -8,11 +8,11 @@ public telemetry, or accepted truth.
 
 ## Added
 
-- `runtime/local_foundry/query_observation.py`
+- `runtime/local/foundry/query_observation.py`
 - `scripts/record_query_observation.py`
 - `scripts/validate_query_observation_runtime.py`
 - Query observation runtime, privacy, poisoning guard, and output policies
-- five compact flat runtime examples under `examples/query_observations/`
+- five compact flat runtime examples under `examples/search/query_observations/`
 - query observation runtime reference, architecture, and privacy/poisoning docs
 - runtime and script tests
 - generated sample report and summary from a committed synthetic example
@@ -43,7 +43,7 @@ review queue behavior remain future tasks.
 
 ```powershell
 python scripts/validate_query_observation_runtime.py
-python scripts/record_query_observation.py --input examples/query_observations/minimal_query_observation_v0.json --check
+python scripts/record_query_observation.py --input examples/search/query_observations/minimal_query_observation_v0.json --check
 python -m unittest discover -s tests -t .
 ```
 

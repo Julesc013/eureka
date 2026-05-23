@@ -1,6 +1,6 @@
 # Review Queue Store Summary
 
-R0-07 adds `runtime/review_queue`, a standard-library SQLite store for local
+R0-07 adds `runtime/review/queue`, a standard-library SQLite store for local
 review items and explicit decisions.
 
 The store persists review items, links to evidence ledger records, links to

@@ -24,11 +24,11 @@ from archive.prototypes.legacy_runtime.connectors.h8_manuals_docs_standards.revi
 AUDIT_DIR = Path("control/audits/h8-bundle-04-manuals-docs-review-quality-audit-v0")
 REVIEW_DIR = Path("examples/connectors/h8_manuals_docs_standards/review_integration")
 REQUIRED_JSON = (
-    "contracts/control_schemas/audits/h8/connectors/manuals_docs_review_integration_result.v0.json",
-    "contracts/control_schemas/audits/h8/connectors/manuals_docs_quality_delta_report.v0.json",
-    "contracts/control_schemas/audits/h8/connectors/manuals_docs_connector_wave_postmortem.v0.json",
-    "contracts/control_schemas/audits/h8/connectors/manuals_docs_integration_audit.v0.json",
-    "contracts/control_schemas/tasks/h8/connectors/manuals_docs_next_phase_recommendation.v0.json",
+    "contracts/schema/control/audits/h8/connectors/manuals_docs_review_integration_result.v0.json",
+    "contracts/schema/control/audits/h8/connectors/manuals_docs_quality_delta_report.v0.json",
+    "contracts/schema/control/audits/h8/connectors/manuals_docs_connector_wave_postmortem.v0.json",
+    "contracts/schema/control/audits/h8/connectors/manuals_docs_integration_audit.v0.json",
+    "contracts/schema/control/tasks/h8/connectors/manuals_docs_next_phase_recommendation.v0.json",
     "control/inventory/connectors/h8_manuals_docs_review_integration_policy.json",
     "control/inventory/connectors/h8_manuals_docs_review_output_policy.json",
     "control/inventory/connectors/h8_manuals_docs_review_path_policy.json",

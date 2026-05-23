@@ -21,10 +21,10 @@
     "control/inventory/evidence_ledger/local_evidence_ledger_rollout_plan.json"
   ],
   "added_examples": [
-    "examples/evidence_ledger_plans/minimal_local_evidence_ledger_plan_v0.json",
-    "examples/evidence_ledger_plans/source_cache_bridge_evidence_ledger_plan_v0.json",
-    "examples/evidence_ledger_plans/fixture_only_evidence_ledger_plan_v0.json",
-    "examples/evidence_ledger_plans/policy_blocked_evidence_ledger_plan_v0.json"
+    "examples/evidence/ledger/plans/minimal_local_evidence_ledger_plan_v0.json",
+    "examples/evidence/ledger/plans/source_cache_bridge_evidence_ledger_plan_v0.json",
+    "examples/evidence/ledger/plans/fixture_only_evidence_ledger_plan_v0.json",
+    "examples/evidence/ledger/plans/policy_blocked_evidence_ledger_plan_v0.json"
   ],
   "added_validators": [
     "scripts/validate_local_evidence_ledger_runtime_plan.py",

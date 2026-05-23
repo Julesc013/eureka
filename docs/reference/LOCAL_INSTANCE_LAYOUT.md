@@ -76,7 +76,7 @@ The default `eureka-instance/` root is ignored by git. Operators may choose anot
 
 ## Runtime Composition
 
-LOCAL-03 adds `runtime/local_appliance` as the supported way to open an initialized instance:
+LOCAL-03 adds `runtime/local/appliance` as the supported way to open an initialized instance:
 
 ```bash
 python scripts/eureka_local_runtime_status.py --instance ./eureka-instance --json

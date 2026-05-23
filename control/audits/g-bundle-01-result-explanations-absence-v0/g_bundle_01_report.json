@@ -13,12 +13,12 @@
     "contracts/query/explanation_output_bundle.v0.json"
   ],
   "added_runtime_modules": [
-    "runtime/search_quality/__init__.py",
-    "runtime/search_quality/explanation.py",
-    "runtime/search_quality/near_miss.py",
-    "runtime/search_quality/known_absence.py",
-    "runtime/search_quality/gap_explanation.py",
-    "runtime/search_quality/explanation_summary.py"
+    "runtime/search/quality/__init__.py",
+    "runtime/search/quality/explanation.py",
+    "runtime/search/quality/near_miss.py",
+    "runtime/search/quality/known_absence.py",
+    "runtime/search/quality/gap_explanation.py",
+    "runtime/search/quality/explanation_summary.py"
   ],
   "added_scripts": [
     "scripts/explain_search_fixture.py",
@@ -47,11 +47,11 @@
     "control/inventory/search_quality/explanation_review_policy.json"
   ],
   "added_examples": [
-    "examples/search_quality/explanations/",
-    "examples/search_quality/near_misses/",
-    "examples/search_quality/known_absence/",
-    "examples/search_quality/input_bundles/",
-    "examples/search_quality/output_bundles/"
+    "examples/search/quality/explanations/",
+    "examples/search/quality/near_misses/",
+    "examples/search/quality/known_absence/",
+    "examples/search/quality/input_bundles/",
+    "examples/search/quality/output_bundles/"
   ],
   "added_tests": [
     "tests/search_quality/test_search_explanation_runtime.py",

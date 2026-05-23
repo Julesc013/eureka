@@ -1,6 +1,6 @@
 # Runtime API Summary
 
-Public API added under `runtime/local_appliance`:
+Public API added under `runtime/local/appliance`:
 
 - `LocalInstanceRef`
 - `LocalInstancePaths`

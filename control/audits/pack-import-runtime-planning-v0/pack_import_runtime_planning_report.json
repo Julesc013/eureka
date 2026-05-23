@@ -261,7 +261,7 @@
         "git rev-parse HEAD",
         "git rev-parse origin/main",
         "git log --oneline -n 80",
-        "rg --files contracts/packs control/audits examples scripts docs control/inventory .aide"
+        "rg --files contracts/pack control/audits examples scripts docs control/inventory .aide"
       ],
       "summary": "Initial inspection started clean on main tracking origin/main. Pack contracts, examples, validators, validate-only import tooling, quarantine/staging model, staged-pack inspection, and review queue contracts were present."
     },

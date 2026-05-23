@@ -36,7 +36,7 @@ runtime, no public query logging, and no mutation of search or master indexes.
 
 ## Current Example
 
-`examples/query_observations/minimal_query_observation_v0/` contains a
+`examples/search/query_observations/minimal_query_observation_v0/` contains a
 synthetic `windows 7 apps` observation. It is not from a real user, retains no
 raw query, and records only summary posture against the controlled public index.
 
@@ -85,7 +85,7 @@ probe enqueueing, candidate mutation, or master-index mutation.
 
 ## Relation To Probe Queue
 
-P63 adds `contracts/control_schemas/tasks/query/probe_queue_item.v0.json` as the contract-only future
+P63 adds `contracts/schema/control/tasks/query/probe_queue_item.v0.json` as the contract-only future
 work-request layer. Query observations may be referenced by later probe queue
 items only after privacy filtering and review. P63 adds no runtime probe queue,
 probe execution, source cache mutation, evidence ledger mutation,
@@ -94,7 +94,7 @@ mutation.
 
 ## Relation To Candidate Index
 
-P64 adds `contracts/control_schemas/previews/query/candidate_index_record.v0.json` as the contract-only
+P64 adds `contracts/schema/control/previews/query/candidate_index_record.v0.json` as the contract-only
 provisional candidate layer. Query observations may later be referenced as
 privacy-filtered inputs to candidate records, but P64 adds no runtime candidate
 index, no candidate promotion runtime, no public search candidate injection, no

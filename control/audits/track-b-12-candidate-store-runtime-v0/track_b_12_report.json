@@ -4,7 +4,7 @@
   "track": "B",
   "task": "TRACK-B-12",
   "added_runtime_modules": [
-    "runtime/local_foundry/candidate_store.py"
+    "runtime/local/foundry/candidate_store.py"
   ],
   "added_scripts": [
     "scripts/record_candidate.py",
@@ -26,13 +26,13 @@
     "control/inventory/candidates/candidate_dedup_policy.json"
   ],
   "added_examples": [
-    "examples/candidates/minimal_candidate_v0.json",
-    "examples/candidates/search_need_candidate_v0.json",
-    "examples/candidates/source_lead_candidate_v0.json",
-    "examples/candidates/workunit_result_candidate_v0.json",
-    "examples/candidates/evidence_needed_candidate_v0.json",
-    "examples/candidates/duplicate_possible_candidate_v0.json",
-    "examples/candidates/policy_blocked_candidate_v0.json"
+    "examples/index/candidates/minimal_candidate_v0.json",
+    "examples/index/candidates/search_need_candidate_v0.json",
+    "examples/index/candidates/source_lead_candidate_v0.json",
+    "examples/index/candidates/workunit_result_candidate_v0.json",
+    "examples/index/candidates/evidence_needed_candidate_v0.json",
+    "examples/index/candidates/duplicate_possible_candidate_v0.json",
+    "examples/index/candidates/policy_blocked_candidate_v0.json"
   ],
   "added_tests": [
     "tests/runtime/test_candidate_store_runtime.py",

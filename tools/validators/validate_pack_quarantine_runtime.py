@@ -16,7 +16,7 @@ if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
 from runtime.extraction.guards import FORBIDDEN_IMPORT_RE  # noqa: E402
-from runtime.local_foundry import (  # noqa: E402
+from runtime.local.foundry import (  # noqa: E402
     contribution_review,
     pack_fixity,
     pack_import_preview,
@@ -26,14 +26,14 @@ from runtime.local_foundry import (  # noqa: E402
 
 
 CONTRACTS = (
-    "contracts/control_schemas/policies/packs/pack_quarantine_request.v0.json",
-    "contracts/control_schemas/policies/packs/pack_quarantine_result.v0.json",
-    "contracts/control_schemas/audits/packs/pack_fixity_report.v0.json",
-    "contracts/packs/pack_signature_envelope.v0.json",
-    "contracts/control_schemas/audits/packs/pack_signature_verification_report.v0.json",
-    "contracts/control_schemas/previews/packs/pack_import_preview.v0.json",
-    "contracts/control_schemas/policies/packs/contribution_review_seed.v0.json",
-    "contracts/control_schemas/previews/packs/pack_trust_revocation_preview.v0.json",
+    "contracts/schema/control/policies/packs/pack_quarantine_request.v0.json",
+    "contracts/schema/control/policies/packs/pack_quarantine_result.v0.json",
+    "contracts/schema/control/audits/packs/pack_fixity_report.v0.json",
+    "contracts/pack/pack_signature_envelope.v0.json",
+    "contracts/schema/control/audits/packs/pack_signature_verification_report.v0.json",
+    "contracts/schema/control/previews/packs/pack_import_preview.v0.json",
+    "contracts/schema/control/policies/packs/contribution_review_seed.v0.json",
+    "contracts/schema/control/previews/packs/pack_trust_revocation_preview.v0.json",
 )
 POLICIES = (
     "control/inventory/packs/pack_quarantine_policy.json",
@@ -48,37 +48,37 @@ POLICIES = (
     "control/inventory/packs/pack_trust_revocation_policy.json",
 )
 EXAMPLES = (
-    "examples/pack_quarantine/minimal_quarantine_request_v0.json",
-    "examples/pack_quarantine/evidence_pack_quarantine_request_v0.json",
-    "examples/pack_quarantine/source_pack_quarantine_request_v0.json",
-    "examples/pack_quarantine/contribution_pack_quarantine_request_v0.json",
-    "examples/pack_quarantine/policy_blocked_quarantine_request_v0.json",
-    "examples/pack_quarantine/results/minimal_quarantine_result_v0.json",
-    "examples/pack_quarantine/results/evidence_pack_quarantine_result_v0.json",
-    "examples/pack_quarantine/results/source_pack_quarantine_result_v0.json",
-    "examples/pack_quarantine/results/contribution_pack_quarantine_result_v0.json",
-    "examples/pack_quarantine/results/policy_blocked_quarantine_result_v0.json",
-    "examples/pack_quarantine/fixity/pack_fixity_report_v0.json",
-    "examples/pack_quarantine/signatures/unsigned_pack_signature_envelope_v0.json",
-    "examples/pack_quarantine/signatures/placeholder_signature_envelope_v0.json",
-    "examples/pack_quarantine/signatures/malformed_signature_envelope_v0.json",
-    "examples/pack_quarantine/signatures/signature_verification_report_v0.json",
-    "examples/pack_quarantine/import_preview/evidence_pack_import_preview_v0.json",
-    "examples/pack_quarantine/import_preview/source_pack_import_preview_v0.json",
-    "examples/pack_quarantine/import_preview/contribution_pack_import_preview_v0.json",
-    "examples/pack_quarantine/import_preview/policy_blocked_pack_import_preview_v0.json",
-    "examples/pack_quarantine/review_seeds/contribution_review_seed_v0.json",
-    "examples/pack_quarantine/review_seeds/pack_requires_more_evidence_review_seed_v0.json",
-    "examples/pack_quarantine/review_seeds/pack_policy_blocked_review_seed_v0.json",
-    "examples/pack_quarantine/trust/pack_trust_preview_v0.json",
-    "examples/pack_quarantine/trust/pack_revocation_preview_v0.json",
+    "examples/packs/quarantine/minimal_quarantine_request_v0.json",
+    "examples/packs/quarantine/evidence_pack_quarantine_request_v0.json",
+    "examples/packs/quarantine/source_pack_quarantine_request_v0.json",
+    "examples/packs/quarantine/contribution_pack_quarantine_request_v0.json",
+    "examples/packs/quarantine/policy_blocked_quarantine_request_v0.json",
+    "examples/packs/quarantine/results/minimal_quarantine_result_v0.json",
+    "examples/packs/quarantine/results/evidence_pack_quarantine_result_v0.json",
+    "examples/packs/quarantine/results/source_pack_quarantine_result_v0.json",
+    "examples/packs/quarantine/results/contribution_pack_quarantine_result_v0.json",
+    "examples/packs/quarantine/results/policy_blocked_quarantine_result_v0.json",
+    "examples/packs/quarantine/fixity/pack_fixity_report_v0.json",
+    "examples/packs/quarantine/signatures/unsigned_pack_signature_envelope_v0.json",
+    "examples/packs/quarantine/signatures/placeholder_signature_envelope_v0.json",
+    "examples/packs/quarantine/signatures/malformed_signature_envelope_v0.json",
+    "examples/packs/quarantine/signatures/signature_verification_report_v0.json",
+    "examples/packs/quarantine/import_preview/evidence_pack_import_preview_v0.json",
+    "examples/packs/quarantine/import_preview/source_pack_import_preview_v0.json",
+    "examples/packs/quarantine/import_preview/contribution_pack_import_preview_v0.json",
+    "examples/packs/quarantine/import_preview/policy_blocked_pack_import_preview_v0.json",
+    "examples/packs/quarantine/review_seeds/contribution_review_seed_v0.json",
+    "examples/packs/quarantine/review_seeds/pack_requires_more_evidence_review_seed_v0.json",
+    "examples/packs/quarantine/review_seeds/pack_policy_blocked_review_seed_v0.json",
+    "examples/packs/quarantine/trust/pack_trust_preview_v0.json",
+    "examples/packs/quarantine/trust/pack_revocation_preview_v0.json",
 )
 PYTHON_FILES = (
-    "runtime/local_foundry/pack_quarantine.py",
-    "runtime/local_foundry/pack_fixity.py",
-    "runtime/local_foundry/pack_signature.py",
-    "runtime/local_foundry/pack_import_preview.py",
-    "runtime/local_foundry/contribution_review.py",
+    "runtime/local/foundry/pack_quarantine.py",
+    "runtime/local/foundry/pack_fixity.py",
+    "runtime/local/foundry/pack_signature.py",
+    "runtime/local/foundry/pack_import_preview.py",
+    "runtime/local/foundry/contribution_review.py",
     "scripts/quarantine_local_pack.py",
     "scripts/verify_local_pack_fixity.py",
     "scripts/preview_pack_import.py",
@@ -220,10 +220,10 @@ def validate_imports(root: Path, errors: list[str]) -> None:
 
 def validate_scripts(root: Path, errors: list[str]) -> None:
     commands = (
-        [sys.executable, "scripts/quarantine_local_pack.py", "--input", "examples/pack_exports/evidence_pack_export_v0.json", "--check", "--json"],
-        [sys.executable, "scripts/verify_local_pack_fixity.py", "--input", "examples/pack_exports/evidence_pack_export_v0.json", "--check", "--json"],
-        [sys.executable, "scripts/preview_pack_import.py", "--input", "examples/pack_quarantine/results/evidence_pack_quarantine_result_v0.json", "--check", "--json"],
-        [sys.executable, "scripts/summarize_pack_quarantine.py", "--input", "examples/pack_quarantine/results", "--check", "--json"],
+        [sys.executable, "scripts/quarantine_local_pack.py", "--input", "examples/packs/exports/evidence_pack_export_v0.json", "--check", "--json"],
+        [sys.executable, "scripts/verify_local_pack_fixity.py", "--input", "examples/packs/exports/evidence_pack_export_v0.json", "--check", "--json"],
+        [sys.executable, "scripts/preview_pack_import.py", "--input", "examples/packs/quarantine/results/evidence_pack_quarantine_result_v0.json", "--check", "--json"],
+        [sys.executable, "scripts/summarize_pack_quarantine.py", "--input", "examples/packs/quarantine/results", "--check", "--json"],
     )
     for command in commands:
         result = subprocess.run(command, cwd=root, capture_output=True, text=True, timeout=120, check=False)
@@ -231,7 +231,7 @@ def validate_scripts(root: Path, errors: list[str]) -> None:
             errors.append(f"script failed: {' '.join(command)} :: {result.stdout} {result.stderr}")
     for output in ("site/dist/quarantine.json", "site/dist/data/public_index/quarantine.json", "runtime/quarantine.json"):
         result = subprocess.run(
-            [sys.executable, "scripts/quarantine_local_pack.py", "--input", "examples/pack_exports/evidence_pack_export_v0.json", "--output", output],
+            [sys.executable, "scripts/quarantine_local_pack.py", "--input", "examples/packs/exports/evidence_pack_export_v0.json", "--output", output],
             cwd=root,
             capture_output=True,
             text=True,

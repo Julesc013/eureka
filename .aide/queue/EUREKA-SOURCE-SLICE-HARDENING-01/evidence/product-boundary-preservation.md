@@ -4,7 +4,7 @@
 
 Q59 changed only Q58/Q57-approved product/test files:
 
-- `runtime/local_foundry/fixture_source_observation_slice.py`
+- `runtime/local/foundry/fixture_source_observation_slice.py`
   - repair: restored `tempfile` import for default temp output;
   - hardening: stricter report validation for object/evidence refs and rebuild no-mutation flags.
 - `tests/runtime/test_fixture_source_observation_vertical_slice.py`

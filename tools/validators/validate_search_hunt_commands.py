@@ -23,10 +23,10 @@ from scripts.hunt_queue_progress import (
     hunt_queue_current_or_advanced,
     post_hunt_current_allowed,
 )
-from runtime.local_appliance import close_local_appliance, open_local_appliance
-from runtime.local_operator.auth import build_cli_operator_auth_state
-from runtime.local_service import LocalServiceApp
-from runtime.search_hunt import SearchHuntError
+from runtime.local.appliance import close_local_appliance, open_local_appliance
+from runtime.local.operator.auth import build_cli_operator_auth_state
+from runtime.local.service import LocalServiceApp
+from runtime.search.hunt import SearchHuntError
 
 
 TASK_ID = "HUNT-03"
@@ -71,17 +71,17 @@ INVENTORIES = {
     "control/inventory/hunt_03_next_task_decision.json": "hunt_03_next_task_decision.v0",
 }
 RUNTIME_FILES = (
-    "runtime/search_hunt/commands.py",
-    "runtime/search_hunt/steering.py",
-    "runtime/search_hunt/store.py",
-    "runtime/search_hunt/schema.py",
-    "runtime/search_hunt/queries.py",
-    "runtime/search_hunt/validation.py",
-    "runtime/local_service/routes.py",
-    "runtime/local_service/validation.py",
+    "runtime/search/hunt/commands.py",
+    "runtime/search/hunt/steering.py",
+    "runtime/search/hunt/store.py",
+    "runtime/search/hunt/schema.py",
+    "runtime/search/hunt/queries.py",
+    "runtime/search/hunt/validation.py",
+    "runtime/local/service/routes.py",
+    "runtime/local/service/validation.py",
     "surfaces/web/workbench/local_html/pages.py",
     "surfaces/web/workbench/local_html/view_models.py",
-    "runtime/local_operator/auth.py",
+    "runtime/local/operator/auth.py",
 )
 SCRIPTS = (
     "scripts/eureka_search_hunt_command.py",

@@ -3,7 +3,7 @@
   "external_network_enabled": false,
   "lan_enabled": false,
   "model_provider_enabled": false,
-  "runtime_package": "runtime/local_eval",
+  "runtime_package": "runtime/local/eval",
   "schema_version": "local_auto_test_inventory.v0",
   "source_probe_execution_enabled": false,
   "synthetic_generation_enabled": false,

@@ -7,7 +7,7 @@ policy decisions from explicit WorkUnit inputs.
 
 ## Added
 
-- `runtime/local_foundry/workunit_dry_run.py`
+- `runtime/local/foundry/workunit_dry_run.py`
 - `scripts/run_workunit_dry_run.py`
 - `scripts/validate_workunit_dry_run_runner.py`
 - Dry-run policy, action matrix, output policy, and review policy inventories

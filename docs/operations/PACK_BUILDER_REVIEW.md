@@ -19,7 +19,7 @@ master-index mutation are disabled.
 ## Path Policy
 
 Current outputs may be written only to `control/audits/**/generated/`,
-`examples/pack_drafts/`, or explicit temporary test directories. The runtime
+`examples/packs/drafts/`, or explicit temporary test directories. The runtime
 must refuse `site/dist/`, `runtime/`, `contracts/`, `site/dist/data/public_index/`,
 publication inventory roots, source inventory roots, hosted-submission roots,
 and local private roots.
@@ -35,6 +35,6 @@ uploads, accounts, telemetry, or model/provider calls.
 
 ```bash
 python scripts/validate_pack_builder_runtime.py
-python scripts/build_local_pack.py --pack-type evidence_pack_draft --input examples/evidence_ledger_records/metadata_claim_record_v0.json --check
-python scripts/summarize_local_pack.py --input examples/pack_drafts --check
+python scripts/build_local_pack.py --pack-type evidence_pack_draft --input examples/evidence/ledger/records/metadata_claim_record_v0.json --check
+python scripts/summarize_local_pack.py --input examples/packs/drafts --check
 ```

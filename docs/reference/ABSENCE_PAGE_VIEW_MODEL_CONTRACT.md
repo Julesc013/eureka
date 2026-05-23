@@ -50,7 +50,7 @@ master-index mutation, or exhaustive global search.
 
 ## Related Contracts
 
-- `contracts/views/absence_page.v0.json`
+- `contracts/view/pages/absence_page.v0.json`
 - `control/inventory/publication/absence_page_view_model_policy.json`
 - `docs/reference/NEED_PAGE_VIEW_MODEL_CONTRACT.md`
 - `docs/reference/CANDIDATE_PAGE_VIEW_MODEL_CONTRACT.md`

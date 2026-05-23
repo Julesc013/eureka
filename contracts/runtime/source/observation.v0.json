@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/runtime/source/observation.v0.json",
+  "title": "SourceObservation",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "observation_id",
+    "source_id",
+    "request_id",
+    "response_id",
+    "observation_kind",
+    "observed_fields",
+    "response_fingerprint",
+    "confidence",
+    "limitations",
+    "warnings"
+  ],
+  "properties": {
+    "observation_id": {"type": "string", "pattern": "^obs_[a-f0-9]{16}$"},
+    "source_id": {"type": "string", "pattern": "^[a-z][a-z0-9]*(?:[._-][a-z0-9]+)*$"},
+    "request_id": {"type": "string"},
+    "response_id": {"type": "string"},
+    "observation_kind": {"type": "string"},
+    "observed_fields": {"type": "object"},
+    "response_fingerprint": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["algorithm", "value"],
+      "properties": {
+        "algorithm": {"type": "string"},
+        "value": {"type": "string"}
+      }
+    },
+    "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+    "limitations": {"type": "array", "items": {"type": "string"}},
+    "warnings": {"type": "array", "items": {"type": "string"}}
+  }
+}

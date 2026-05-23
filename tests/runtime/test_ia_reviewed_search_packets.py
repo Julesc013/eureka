@@ -1,7 +1,7 @@
 import unittest
 
-from runtime.public_index import PublicIndexStore
-from runtime.source_observation.internet_archive_reviewed_index import (
+from runtime.index.public import PublicIndexStore
+from runtime.source.observation.internet_archive_reviewed_index import (
     build_ia_reviewed_absence_packet,
     build_ia_reviewed_object_packet,
     build_ia_reviewed_records_from_promotion_previews,

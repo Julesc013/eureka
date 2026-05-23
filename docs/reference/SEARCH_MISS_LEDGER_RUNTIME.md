@@ -1,6 +1,6 @@
 # Search Miss Ledger Runtime
 
-`runtime/local_foundry/search_miss_ledger.py` implements the first bounded
+`runtime/local/foundry/search_miss_ledger.py` implements the first bounded
 Track B Search Miss Ledger runtime.
 
 ## What It Is
@@ -53,5 +53,5 @@ Run:
 
 ```powershell
 python scripts/validate_search_miss_ledger_runtime.py
-python scripts/record_search_miss.py --input examples/query_observations/empty_result_query_observation_v0.json --check
+python scripts/record_search_miss.py --input examples/search/query_observations/empty_result_query_observation_v0.json --check
 ```

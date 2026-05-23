@@ -12,11 +12,11 @@ The pipeline is:
 4. Capture the PyPI JSON response as a `MetadataResponse`.
 5. Create a `SourceObservation`.
 6. Create a `NormalizedObservation` with package name, version, summary, project URLs, and release count.
-7. Persist the observation flow to `runtime/source_cache`.
-8. Persist an evidence candidate to `runtime/evidence_ledger`.
-9. Enqueue a review item in `runtime/review_queue`.
+7. Persist the observation flow to `runtime/source/cache`.
+8. Persist an evidence candidate to `runtime/evidence/ledger`.
+9. Enqueue a review item in `runtime/review/queue`.
 10. Record an explicit local review decision.
-11. Rebuild `runtime/public_index` from accepted local review records.
+11. Rebuild `runtime/index/public` from accepted local review records.
 12. Search the local reviewed index and produce an absence report for a missing query.
 
 The reviewed index record is local workflow state. It is not source truth, evidence truth, legal approval, rights clearance, malware safety, exhaustive coverage, or production readiness.

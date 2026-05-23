@@ -9,9 +9,9 @@ from runtime.engine.ranking.errors import RankingDryRunError
 
 ROOT = Path(__file__).resolve().parents[3]
 APPROVED_EXAMPLE_ROOTS = (
-    ROOT / "examples" / "public_search_ranking_dry_run",
-    ROOT / "examples" / "evidence_weighted_ranking",
-    ROOT / "examples" / "compatibility_aware_ranking",
+    ROOT / "examples" / "index" / "public_search_ranking_dry_run",
+    ROOT / "examples" / "evidence" / "weighted_ranking",
+    ROOT / "examples" / "search" / "compatibility_aware_ranking",
 )
 AUDIT_ROOT = ROOT / "control" / "audits" / "public-search-ranking-local-dry-run-runtime-v0"
 

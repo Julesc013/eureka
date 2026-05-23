@@ -13,10 +13,10 @@
 | P31 Public Search Rehearsal v0 | local rehearsal | `public_search_rehearsal_report.json`, 30 smoke checks | `implemented_local_prototype` | Safe queries and blocked requests pass locally. |
 | P32 Search Usefulness Source Expansion v2 | fixture source expansion | six recorded source families, 15 fixture records | `fixture_only` | No live source behavior. |
 | P33 Search Usefulness Delta v2 | audit delta | `delta_report.json` | `planning_only` | Measures movement only. |
-| P34 Source Pack Contract v0 | pack contract | `contracts/packs/source_pack.v0.json`, example, validator | `contract_only` | Individual `--all-examples` CLI flag is unsupported; default validator passes. |
-| P35 Evidence Pack Contract v0 | pack contract | `contracts/packs/evidence_pack.v0.json`, example, validator | `contract_only` | No import or acceptance runtime. |
-| P36 Index Pack Contract v0 | pack contract | `contracts/packs/index_pack.v0.json`, example, validator | `contract_only` | Summary-only example, no merge/runtime mutation. |
-| P37 Contribution Pack Contract v0 | pack contract | `contracts/packs/contribution_pack.v0.json`, example, validator | `contract_only` | No upload or hosted intake. |
+| P34 Source Pack Contract v0 | pack contract | `contracts/pack/source_pack.v0.json`, example, validator | `contract_only` | Individual `--all-examples` CLI flag is unsupported; default validator passes. |
+| P35 Evidence Pack Contract v0 | pack contract | `contracts/pack/evidence_pack.v0.json`, example, validator | `contract_only` | No import or acceptance runtime. |
+| P36 Index Pack Contract v0 | pack contract | `contracts/pack/index_pack.v0.json`, example, validator | `contract_only` | Summary-only example, no merge/runtime mutation. |
+| P37 Contribution Pack Contract v0 | pack contract | `contracts/pack/contribution_pack.v0.json`, example, validator | `contract_only` | No upload or hosted intake. |
 | P38 Master Index Review Queue Contract v0 | review queue contract | example queue and validator | `contract_only` | No master-index runtime mutation. |
 | P39 Pack Import Planning v0 | future import plan | `pack_import_planning_report.json` | `planning_only` | Validate-only first, local quarantine later. |
 | P40 Pack Import Validator Aggregator v0 | aggregate validator | `validate_pack_set.py --all-examples` | `implemented_local_prototype` | 5/5 examples passed with hard no-mutation flags. |

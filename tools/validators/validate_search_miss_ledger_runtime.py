@@ -15,7 +15,7 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.local_foundry import search_miss_ledger as runtime  # noqa: E402
+from runtime.local.foundry import search_miss_ledger as runtime  # noqa: E402
 
 
 RUNTIME_POLICY_PATH = "control/inventory/observations/search_miss_ledger_runtime_policy.json"
@@ -25,7 +25,7 @@ REVIEW_POLICY_PATH = "control/inventory/observations/search_miss_review_policy.j
 AUDIT_REPORT_PATH = "control/audits/track-b-08-search-miss-ledger-runtime-v0/track_b_08_report.json"
 SAMPLE_REPORT_PATH = "control/audits/track-b-08-search-miss-ledger-runtime-v0/generated/sample_search_miss_report.json"
 SAMPLE_SUMMARY_PATH = "control/audits/track-b-08-search-miss-ledger-runtime-v0/generated/sample_search_miss_summary.md"
-EXAMPLE_ROOT = "examples/search_misses"
+EXAMPLE_ROOT = "examples/search/misses"
 DOC_PATHS = (
     "docs/reference/SEARCH_MISS_LEDGER_RUNTIME.md",
     "docs/architecture/SEARCH_MISS_LEDGER_MODEL.md",
@@ -95,7 +95,7 @@ def validate_search_miss_ledger_runtime(repo_root: Path = REPO_ROOT) -> dict[str
         AUDIT_REPORT_PATH,
         SAMPLE_REPORT_PATH,
         SAMPLE_SUMMARY_PATH,
-        "runtime/local_foundry/search_miss_ledger.py",
+        "runtime/local/foundry/search_miss_ledger.py",
         "scripts/record_search_miss.py",
         *DOC_PATHS,
     ]
@@ -294,7 +294,7 @@ def validate_script_check(repo_root: Path) -> list[str]:
             sys.executable,
             "scripts/record_search_miss.py",
             "--input",
-            "examples/query_observations/empty_result_query_observation_v0.json",
+            "examples/search/query_observations/empty_result_query_observation_v0.json",
             "--check",
             "--json",
         ],
@@ -322,7 +322,7 @@ def validate_forbidden_output_root_rejected(repo_root: Path) -> list[str]:
             sys.executable,
             "scripts/record_search_miss.py",
             "--input",
-            "examples/query_observations/empty_result_query_observation_v0.json",
+            "examples/search/query_observations/empty_result_query_observation_v0.json",
             "--output",
             str(forbidden),
         ],

@@ -3,7 +3,7 @@
   "policy_id": "eureka-representation-capability-negotiation",
   "label": "Representation capability negotiation policy",
   "description": "Contract-only policy for selecting a representation profile without changing route identity or resolver semantics.",
-  "contract_ref": "contracts/representations/capability_negotiation.v0.json",
+  "contract_ref": "contracts/representation/capability_negotiation.v0.json",
   "status": "contract_only",
   "stability": "experimental",
   "created_by_slice": "track_a_01_representation_contracts_v0",

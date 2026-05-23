@@ -459,8 +459,8 @@
   "generated_from": {
     "source_contracts": [
       "contracts/api/search_result_card.v0.json",
-      "contracts/views/search_page.v0.json",
-      "contracts/pages/object_page.v0.json"
+      "contracts/view/pages/search_page.v0.json",
+      "contracts/surface/pages/object_page.v0.json"
     ],
     "policy_inventory": "control/inventory/publication/object_page_view_model_policy.json",
     "route_matrix": "control/inventory/publication/route_view_representation_matrix.json",

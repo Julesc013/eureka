@@ -36,8 +36,8 @@
     "control/inventory/source_packs/h2_package_registry_no_download_policy.json"
   ],
   "added_examples": [
-    "examples/source_packs/h2_package_registry_source_pack_manifest_v0.json",
-    "examples/source_packs/h2_package_registry_policy_pack_v0.json",
+    "examples/packs/source/h2_package_registry_source_pack_manifest_v0.json",
+    "examples/packs/source/h2_package_registry_policy_pack_v0.json",
     "examples/sources/source_records",
     "examples/connectors/h2_package_registries/policies",
     "examples/connectors/h2_package_registries/coverage",
@@ -62,8 +62,8 @@
     "python -m json.tool control/inventory/source_packs/h2_package_registry_truth_policy.json": "pass",
     "python -m json.tool control/inventory/source_packs/h2_package_registry_no_live_call_policy.json": "pass",
     "python -m json.tool control/inventory/source_packs/h2_package_registry_no_download_policy.json": "pass",
-    "python -m json.tool examples/source_packs/h2_package_registry_source_pack_manifest_v0.json": "pass",
-    "python -m json.tool examples/source_packs/h2_package_registry_policy_pack_v0.json": "pass",
+    "python -m json.tool examples/packs/source/h2_package_registry_source_pack_manifest_v0.json": "pass",
+    "python -m json.tool examples/packs/source/h2_package_registry_policy_pack_v0.json": "pass",
     "python -m json.tool control/audits/h2-bundle-01-package-registry-policy-packs-v0/h2_bundle_01_report.json": "pass",
     "python scripts/validate_h2_package_registry_policy_packs.py": "pass",
     "python scripts/summarize_h2_package_registry_sources.py --check": "pass",

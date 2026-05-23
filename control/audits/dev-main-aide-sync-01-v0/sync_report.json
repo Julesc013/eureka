@@ -57,9 +57,9 @@
         "AGENTS.md"
       ],
       "dev_hunt_preserved": [
-        "runtime/search_hunt/**",
-        "runtime/search_need/**",
-        "runtime/workunit_queue/**",
+        "runtime/search/hunt/**",
+        "runtime/search/need/**",
+        "runtime/worker/workunit_queue/**",
         "runtime/agent_research/**",
         "runtime/ai_escalation/**",
         "control/audits/hunt-*/**",

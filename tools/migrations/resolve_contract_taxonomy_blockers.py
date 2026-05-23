@@ -74,7 +74,7 @@ TEXT_SUFFIXES = {
 ACTIVE_REFERENCE_ROOTS = (
     "contracts",
     "control/inventory",
-    "contracts/control_schemas",
+    "contracts/schema/control",
     "docs/architecture",
     "docs/operations",
     "docs/reference",
@@ -91,97 +91,97 @@ PRESERVED_HISTORICAL_REFERENCES = {
 
 REMEDIATION_MOVES: dict[str, dict[str, str]] = {
     "contracts/archive/fixtures/software/payloads/synthetic-demo-app-package.zip": {
-        "target_path": "contracts/control_schemas/fixtures/archive/software/payloads/synthetic-demo-app-package.zip",
+        "target_path": "contracts/schema/control/fixtures/archive/software/payloads/synthetic-demo-app-package.zip",
         "classification": "fixture_schema",
         "rationale": "Synthetic archive payload fixture does not belong in product contracts.",
     },
     "contracts/archive/fixtures/software/payloads/synthetic-demo-app.bundle": {
-        "target_path": "contracts/control_schemas/fixtures/archive/software/payloads/synthetic-demo-app.bundle",
+        "target_path": "contracts/schema/control/fixtures/archive/software/payloads/synthetic-demo-app.bundle",
         "classification": "fixture_schema",
         "rationale": "Synthetic archive payload fixture does not belong in product contracts.",
     },
     "contracts/archive/fixtures/software/synthetic_resolution_fixture.json": {
-        "target_path": "contracts/control_schemas/fixtures/archive/software/synthetic_resolution_fixture.json",
+        "target_path": "contracts/schema/control/fixtures/archive/software/synthetic_resolution_fixture.json",
         "classification": "fixture_schema",
         "rationale": "Synthetic resolution fixture is control fixture evidence.",
     },
     "contracts/archive/protocols/archive-lifecycle.protocol.md": {
-        "target_path": "contracts/control_schemas/deprecated/archive/archive-lifecycle.protocol.md",
+        "target_path": "contracts/schema/control/deprecated/archive/archive-lifecycle.protocol.md",
         "classification": "deprecated_schema",
         "rationale": "Archive lifecycle protocol is contract-adjacent historical protocol documentation.",
     },
     "contracts/connectors/h14_connector_pack_manifest_candidate.v0.json": {
-        "target_path": "contracts/control_schemas/previews/h14/connectors/connector_pack_manifest_candidate.v0.json",
+        "target_path": "contracts/schema/control/previews/h14/connectors/connector_pack_manifest_candidate.v0.json",
         "classification": "preview_schema",
         "rationale": "H14 candidate schema is preview/task-shaped, not a stable connector interface.",
     },
     "contracts/connectors/h14_connector_scorecard_candidate.v0.json": {
-        "target_path": "contracts/control_schemas/previews/h14/connectors/connector_scorecard_candidate.v0.json",
+        "target_path": "contracts/schema/control/previews/h14/connectors/connector_scorecard_candidate.v0.json",
         "classification": "preview_schema",
         "rationale": "H14 candidate schema is preview/task-shaped, not a stable connector interface.",
     },
     "contracts/connectors/h14_coverage_manifest_candidate.v0.json": {
-        "target_path": "contracts/control_schemas/previews/h14/connectors/coverage_manifest_candidate.v0.json",
+        "target_path": "contracts/schema/control/previews/h14/connectors/coverage_manifest_candidate.v0.json",
         "classification": "preview_schema",
         "rationale": "H14 candidate schema is preview/task-shaped, not a stable connector interface.",
     },
     "contracts/connectors/h14_pack_import_export_boundary_candidate.v0.json": {
-        "target_path": "contracts/control_schemas/previews/h14/connectors/pack_import_export_boundary_candidate.v0.json",
+        "target_path": "contracts/schema/control/previews/h14/connectors/pack_import_export_boundary_candidate.v0.json",
         "classification": "preview_schema",
         "rationale": "H14 candidate schema is preview/task-shaped, not a stable connector interface.",
     },
     "contracts/connectors/h14_source_candidate_candidate.v0.json": {
-        "target_path": "contracts/control_schemas/previews/h14/connectors/source_candidate_candidate.v0.json",
+        "target_path": "contracts/schema/control/previews/h14/connectors/source_candidate_candidate.v0.json",
         "classification": "preview_schema",
         "rationale": "H14 candidate schema is preview/task-shaped, not a stable connector interface.",
     },
     "contracts/connectors/h14_source_discovery_candidate.v0.json": {
-        "target_path": "contracts/control_schemas/previews/h14/connectors/source_discovery_candidate.v0.json",
+        "target_path": "contracts/schema/control/previews/h14/connectors/source_discovery_candidate.v0.json",
         "classification": "preview_schema",
         "rationale": "H14 candidate schema is preview/task-shaped, not a stable connector interface.",
     },
     "contracts/connectors/h14_source_dispute_revocation_candidate.v0.json": {
-        "target_path": "contracts/control_schemas/previews/h14/connectors/source_dispute_revocation_candidate.v0.json",
+        "target_path": "contracts/schema/control/previews/h14/connectors/source_dispute_revocation_candidate.v0.json",
         "classification": "preview_schema",
         "rationale": "H14 candidate schema is preview/task-shaped, not a stable connector interface.",
     },
     "contracts/connectors/h14_source_lineage_provenance_candidate.v0.json": {
-        "target_path": "contracts/control_schemas/previews/h14/connectors/source_lineage_provenance_candidate.v0.json",
+        "target_path": "contracts/schema/control/previews/h14/connectors/source_lineage_provenance_candidate.v0.json",
         "classification": "preview_schema",
         "rationale": "H14 candidate schema is preview/task-shaped, not a stable connector interface.",
     },
     "contracts/connectors/h14_source_need_candidate.v0.json": {
-        "target_path": "contracts/control_schemas/previews/h14/connectors/source_need_candidate.v0.json",
+        "target_path": "contracts/schema/control/previews/h14/connectors/source_need_candidate.v0.json",
         "classification": "preview_schema",
         "rationale": "H14 candidate schema is preview/task-shaped, not a stable connector interface.",
     },
     "contracts/connectors/h14_source_pack_manifest_candidate.v0.json": {
-        "target_path": "contracts/control_schemas/previews/h14/connectors/source_pack_manifest_candidate.v0.json",
+        "target_path": "contracts/schema/control/previews/h14/connectors/source_pack_manifest_candidate.v0.json",
         "classification": "preview_schema",
         "rationale": "H14 candidate schema is preview/task-shaped, not a stable connector interface.",
     },
     "contracts/connectors/h14_source_reliability_freshness_candidate.v0.json": {
-        "target_path": "contracts/control_schemas/previews/h14/connectors/source_reliability_freshness_candidate.v0.json",
+        "target_path": "contracts/schema/control/previews/h14/connectors/source_reliability_freshness_candidate.v0.json",
         "classification": "preview_schema",
         "rationale": "H14 candidate schema is preview/task-shaped, not a stable connector interface.",
     },
     "contracts/node/work_unit.v0.json": {
-        "target_path": "contracts/control_schemas/policies/node/work_unit.v0.json",
+        "target_path": "contracts/schema/control/policies/node/work_unit.v0.json",
         "classification": "control_schema",
         "rationale": "Work-unit scaffolding is a control policy schema, not current product runtime.",
     },
     "contracts/node/work_unit_result.v0.json": {
-        "target_path": "contracts/control_schemas/policies/node/work_unit_result.v0.json",
+        "target_path": "contracts/schema/control/policies/node/work_unit_result.v0.json",
         "classification": "control_schema",
         "rationale": "Work-unit result scaffolding is a control policy schema, not current product runtime.",
     },
     "contracts/query/candidate_promotion_assessment.v0.json": {
-        "target_path": "contracts/control_schemas/previews/query/candidate_promotion_assessment.v0.json",
+        "target_path": "contracts/schema/control/previews/query/candidate_promotion_assessment.v0.json",
         "classification": "preview_schema",
         "rationale": "Candidate promotion assessment is preview/review control evidence.",
     },
     "contracts/query/observation_candidate_review_queue.v0.json": {
-        "target_path": "contracts/control_schemas/tasks/query/observation_candidate_review_queue.v0.json",
+        "target_path": "contracts/schema/control/tasks/query/observation_candidate_review_queue.v0.json",
         "classification": "task_queue_schema",
         "rationale": "Observation candidate review queue is task queue control schema.",
     },
@@ -587,7 +587,7 @@ def build_final_state(root: Path, *, status: str, remaining: Sequence[Mapping[st
         "source_policy_contract",
     }
     product_count = sum(1 for item in contracts if str(item.get("path", "")).startswith("contracts/") and item.get("contract_class") in product_classes)
-    control_count = sum(1 for path in (root / "contracts/control_schemas").rglob("*") if path.is_file() and path.name != "README.md")
+    control_count = sum(1 for path in (root / "contracts/schema/control").rglob("*") if path.is_file() and path.name != "README.md")
     clean = not remaining
     root_status = "clean_with_warnings" if clean else "partial"
     return {
@@ -825,7 +825,7 @@ def update_existing_docs(root: Path) -> None:
     )
     append_once(
         root / "docs/architecture/CONTRACT_TAXONOMY.md",
-        "\n## R0 Remediation Closeout\n\nThe R0 remediation task retired the remaining unresolved contract taxonomy items by moving non-product fixtures, H14 preview schemas, work-unit control schemas, and query preview/task schemas into `contracts/control_schemas/`. Historical audit references remain historical evidence.\n",
+        "\n## R0 Remediation Closeout\n\nThe R0 remediation task retired the remaining unresolved contract taxonomy items by moving non-product fixtures, H14 preview schemas, work-unit control schemas, and query preview/task schemas into `contracts/schema/control/`. Historical audit references remain historical evidence.\n",
         "## R0 Remediation Closeout",
     )
 
@@ -1025,10 +1025,10 @@ def render_operation_doc(result: Mapping[str, Any]) -> str:
             "",
             "## Actions",
             "",
-            "- Moved synthetic archive fixtures into `contracts/control_schemas/fixtures/archive/`.",
-            "- Moved H14 candidate preview schemas into `contracts/control_schemas/previews/h14/connectors/`.",
-            "- Moved work-unit control schemas into `contracts/control_schemas/policies/node/`.",
-            "- Moved query candidate/review schemas into `contracts/control_schemas/previews/query/` and `contracts/control_schemas/tasks/query/`.",
+            "- Moved synthetic archive fixtures into `contracts/schema/control/fixtures/archive/`.",
+            "- Moved H14 candidate preview schemas into `contracts/schema/control/previews/h14/connectors/`.",
+            "- Moved work-unit control schemas into `contracts/schema/control/policies/node/`.",
+            "- Moved query candidate/review schemas into `contracts/schema/control/previews/query/` and `contracts/schema/control/tasks/query/`.",
             "- Updated active references in current scripts, tests, docs, examples, and control inventories.",
             "- Left historical audit narrative intact.",
             "",

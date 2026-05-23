@@ -1,6 +1,6 @@
 # Representation Profile Contract
 
-`contracts/representations/representation_profile.v0.json` defines the
+`contracts/representation/representation_profile.v0.json` defines the
 projection families Eureka may use when rendering the same public-safe resolver
 meaning into different client shapes.
 

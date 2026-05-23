@@ -15,7 +15,7 @@ Validation was run locally on 2026-05-08.
 - `python scripts/validate_local_source_cache_runtime.py`: PASS
 - `python scripts/validate_local_evidence_ledger_runtime.py`: PASS
 - `python scripts/validate_source_cache_to_evidence_bridge.py`: PASS
-- `python scripts/bridge_source_cache_to_evidence.py --input examples/source_cache_records/source_metadata_record_v0.json --check`: PASS
+- `python scripts/bridge_source_cache_to_evidence.py --input examples/sources/cache/records/source_metadata_record_v0.json --check`: PASS
 - `python -m unittest tests.runtime.test_source_cache_to_evidence_bridge tests.operations.test_source_cache_to_evidence_bridge_scripts`: PASS
 - `python scripts/check_architecture_boundaries.py`: PASS
 - `python -m unittest discover -s tests -t .`: FAIL, unrelated OBS-agent hardening test reports staged scripts containing a forbidden Google-scraping string literal.

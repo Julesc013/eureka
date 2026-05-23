@@ -6,12 +6,12 @@ allowed_paths:
   - contracts/scout/**
   - contracts/domain/**
   - contracts/syn/**
-  - contracts/search_interaction/**
+  - contracts/search/interaction/**
   - contracts/workbench/**
-  - contracts/view_models/**
-  - runtime/local_eval/**
+  - contracts/view/models/core/**
+  - runtime/local/eval/**
   - surfaces/web/workbench/local_html/**
-  - runtime/local_service/**
+  - runtime/local/service/**
   - examples/scout/**
   - examples/domain/**
   - examples/syn/**
@@ -94,7 +94,7 @@ forbidden_paths:
   - site/dist/data/public_index/**
   - runtime/connectors/**
   - runtime/extraction/**
-  - runtime/search_quality/**
+  - runtime/search/quality/**
   - native/**
   - crates/**
 gate:

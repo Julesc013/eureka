@@ -1,0 +1,24 @@
+{
+  "schema_version": "local_review_queue_entry.v0",
+  "input_id": "reject_review_entry_v0",
+  "input_type": "candidate_record",
+  "input_ref": "examples/index/candidates/policy_blocked_candidate_v0.json",
+  "input_public_safe": true,
+  "review_entry_status": "rejected",
+  "review_subject_type": "candidate_record",
+  "review_subject_ref": "candidate.reject.fixture.v0",
+  "review_subject_summary": "Local review rejects this provisional candidate for downstream dry-run use.",
+  "review_decision": "reject",
+  "decision_scope": "local_review_only",
+  "decision_rationale": "Candidate is not suitable for local dry-run planning.",
+  "required_evidence": [
+    "review rationale"
+  ],
+  "missing_evidence": [],
+  "related_candidate_refs": [
+    "candidate.reject.fixture.v0"
+  ],
+  "notes": [
+    "Rejection is local governance state only."
+  ]
+}

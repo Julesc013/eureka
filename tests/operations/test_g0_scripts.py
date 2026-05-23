@@ -10,7 +10,7 @@ class G0ScriptTests(unittest.TestCase):
         return json.loads(completed.stdout)
 
     def test_score_explain_identity_and_user_cost_scripts(self) -> None:
-        fixture = "examples/search_quality/sample_quality_fixture.json"
+        fixture = "examples/search/quality/sample_quality_fixture.json"
         self.assertEqual(self.run_json("scripts/eureka_g0_score.py", "--fixture", fixture, "--json")["score_count"], 8)
         self.assertEqual(self.run_json("scripts/eureka_g0_explain.py", "--fixture", fixture, "--json")["explanation_count"], 8)
         self.assertFalse(self.run_json("scripts/eureka_g0_identity.py", "--fixture", fixture, "--json")["accepted_identity_merge_created"])

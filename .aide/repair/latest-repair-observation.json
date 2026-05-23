@@ -158,10 +158,10 @@
       "action": "blocked",
       "blocker": true,
       "evidence_refs": [
-        "examples/query_guard/minimal_secret_rejected_v0/CHECKSUMS.SHA256"
+        "examples/search/query_guard/minimal_secret_rejected_v0/CHECKSUMS.SHA256"
       ],
       "issue_id": "repair-4f9e3c13d424",
-      "path": "examples/query_guard/minimal_secret_rejected_v0/CHECKSUMS.SHA256",
+      "path": "examples/search/query_guard/minimal_secret_rejected_v0/CHECKSUMS.SHA256",
       "reason": "Secret-like path is present; repair may only block or require manual review, never overwrite or delete automatically.",
       "repair_class": "secret_like_file",
       "risk_class": "critical",
@@ -172,10 +172,10 @@
       "action": "blocked",
       "blocker": true,
       "evidence_refs": [
-        "examples/query_guard/minimal_secret_rejected_v0/QUERY_GUARD_DECISION.json"
+        "examples/search/query_guard/minimal_secret_rejected_v0/QUERY_GUARD_DECISION.json"
       ],
       "issue_id": "repair-679e14e6da9a",
-      "path": "examples/query_guard/minimal_secret_rejected_v0/QUERY_GUARD_DECISION.json",
+      "path": "examples/search/query_guard/minimal_secret_rejected_v0/QUERY_GUARD_DECISION.json",
       "reason": "Secret-like path is present; repair may only block or require manual review, never overwrite or delete automatically.",
       "repair_class": "secret_like_file",
       "risk_class": "critical",
@@ -186,10 +186,10 @@
       "action": "blocked",
       "blocker": true,
       "evidence_refs": [
-        "examples/query_guard/minimal_secret_rejected_v0/README.md"
+        "examples/search/query_guard/minimal_secret_rejected_v0/README.md"
       ],
       "issue_id": "repair-154537708718",
-      "path": "examples/query_guard/minimal_secret_rejected_v0/README.md",
+      "path": "examples/search/query_guard/minimal_secret_rejected_v0/README.md",
       "reason": "Secret-like path is present; repair may only block or require manual review, never overwrite or delete automatically.",
       "repair_class": "secret_like_file",
       "risk_class": "critical",

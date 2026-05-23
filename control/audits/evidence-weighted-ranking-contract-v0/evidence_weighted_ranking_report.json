@@ -48,7 +48,7 @@
     "?? control/audits/evidence-weighted-ranking-contract-v0/",
     "?? control/inventory/search/evidence_weighted_ranking_policy.json",
     "?? docs/reference/EVIDENCE_WEIGHTED_RANKING_CONTRACT.md",
-    "?? examples/evidence_weighted_ranking/",
+    "?? examples/evidence/weighted_ranking/",
     "?? scripts/dry_run_evidence_weighted_ranking.py",
     "?? scripts/validate_evidence_weighted_ranking_assessment.py",
     "?? scripts/validate_evidence_weighted_ranking_contract.py",
@@ -71,18 +71,18 @@
     "scripts/dry_run_evidence_weighted_ranking.py"
   ],
   "example_ranking_assessments": [
-    "examples/evidence_weighted_ranking/minimal_strong_evidence_ranking_v0/EVIDENCE_WEIGHTED_RANKING_ASSESSMENT.json",
-    "examples/evidence_weighted_ranking/minimal_weak_evidence_ranking_v0/EVIDENCE_WEIGHTED_RANKING_ASSESSMENT.json",
-    "examples/evidence_weighted_ranking/minimal_conflicting_evidence_ranking_v0/EVIDENCE_WEIGHTED_RANKING_ASSESSMENT.json",
-    "examples/evidence_weighted_ranking/minimal_candidate_only_ranking_v0/EVIDENCE_WEIGHTED_RANKING_ASSESSMENT.json",
-    "examples/evidence_weighted_ranking/minimal_absence_gap_ranking_v0/EVIDENCE_WEIGHTED_RANKING_ASSESSMENT.json"
+    "examples/evidence/weighted_ranking/minimal_strong_evidence_ranking_v0/EVIDENCE_WEIGHTED_RANKING_ASSESSMENT.json",
+    "examples/evidence/weighted_ranking/minimal_weak_evidence_ranking_v0/EVIDENCE_WEIGHTED_RANKING_ASSESSMENT.json",
+    "examples/evidence/weighted_ranking/minimal_conflicting_evidence_ranking_v0/EVIDENCE_WEIGHTED_RANKING_ASSESSMENT.json",
+    "examples/evidence/weighted_ranking/minimal_candidate_only_ranking_v0/EVIDENCE_WEIGHTED_RANKING_ASSESSMENT.json",
+    "examples/evidence/weighted_ranking/minimal_absence_gap_ranking_v0/EVIDENCE_WEIGHTED_RANKING_ASSESSMENT.json"
   ],
   "example_ranking_explanations": [
-    "examples/evidence_weighted_ranking/minimal_strong_evidence_ranking_v0/RANKING_EXPLANATION.json",
-    "examples/evidence_weighted_ranking/minimal_weak_evidence_ranking_v0/RANKING_EXPLANATION.json",
-    "examples/evidence_weighted_ranking/minimal_conflicting_evidence_ranking_v0/RANKING_EXPLANATION.json",
-    "examples/evidence_weighted_ranking/minimal_candidate_only_ranking_v0/RANKING_EXPLANATION.json",
-    "examples/evidence_weighted_ranking/minimal_absence_gap_ranking_v0/RANKING_EXPLANATION.json"
+    "examples/evidence/weighted_ranking/minimal_strong_evidence_ranking_v0/RANKING_EXPLANATION.json",
+    "examples/evidence/weighted_ranking/minimal_weak_evidence_ranking_v0/RANKING_EXPLANATION.json",
+    "examples/evidence/weighted_ranking/minimal_conflicting_evidence_ranking_v0/RANKING_EXPLANATION.json",
+    "examples/evidence/weighted_ranking/minimal_candidate_only_ranking_v0/RANKING_EXPLANATION.json",
+    "examples/evidence/weighted_ranking/minimal_absence_gap_ranking_v0/RANKING_EXPLANATION.json"
   ],
   "evidence_weighted_ranking_policy": "control/inventory/search/evidence_weighted_ranking_policy.json",
   "ranking_factor_taxonomy": "evidence/provenance/source/freshness/conflict/candidate/action/risk/gap/tie_break factors",

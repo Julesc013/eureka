@@ -7,8 +7,8 @@
   "rebuild_ui_enabled": true,
   "review_ui_enabled": true,
   "runtime_packages": [
-    "runtime/local_operator",
-    "runtime/local_review"
+    "runtime/local/operator",
+    "runtime/local/review"
   ],
   "schema_version": "local_review_rebuild_inventory.v0",
   "site_dist_writes_enabled": false,

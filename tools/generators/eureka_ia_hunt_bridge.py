@@ -14,7 +14,7 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.search_hunt.ia_bridge import (  # noqa: E402
+from runtime.search.hunt.ia_bridge import (  # noqa: E402
     build_ia_hunt_boundary_report,
     build_ia_hunt_result_lanes,
     plan_ia_hunt_pipeline,

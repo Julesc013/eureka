@@ -13,7 +13,7 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.source_observation.internet_archive_fixture_replay import (
+from runtime.source.observation.internet_archive_fixture_replay import (
     assert_no_forbidden_side_effects,
     assert_no_network_imports,
     replay_fixture_directory_report,
@@ -61,10 +61,10 @@ REQUIRED_FIXTURES = {
 REQUIRED_FILES = [
     "examples/internet_archive_metadata/expected_normalized_records.json",
     "examples/internet_archive_metadata/expected_boundary_reports.json",
-    "runtime/source_observation/internet_archive_metadata.py",
-    "runtime/source_observation/internet_archive_normalization.py",
-    "runtime/source_observation/internet_archive_validation.py",
-    "runtime/source_observation/internet_archive_fixture_replay.py",
+    "runtime/source/observation/internet_archive_metadata.py",
+    "runtime/source/observation/internet_archive_normalization.py",
+    "runtime/source/observation/internet_archive_validation.py",
+    "runtime/source/observation/internet_archive_fixture_replay.py",
     "scripts/eureka_ia_fixture_replay.py",
     "tests/runtime/test_ia_metadata_fixture_replay.py",
     "tests/runtime/test_ia_metadata_normalization.py",
@@ -268,7 +268,7 @@ def _validate_no_forbidden_git_state(repo_root: Path, errors: list[str]) -> None
             "--",
             "runtime/connectors",
             "runtime/extraction",
-            "runtime/search_quality",
+            "runtime/search/quality",
             "site/dist/data/public_index",
             "site/dist",
             "eureka-instance",

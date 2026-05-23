@@ -1,7 +1,7 @@
 {
   "schema_version": "0.1.0",
   "policy_id": "renderer_parity_harness_policy_v0",
-  "contract_ref": "contracts/representations/renderer_parity_harness.v0.json",
+  "contract_ref": "contracts/representation/renderer_parity_harness.v0.json",
   "label": "Renderer parity harness policy v0",
   "description": "Policy inventory for deterministic semantic parity checks across current dry-run and future renderer projection outputs.",
   "status": "contract_only",

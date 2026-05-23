@@ -77,7 +77,7 @@ ALLOWED_ARTIFACT_PREFIXES = (
     "control/inventory/source_packs/",
     "control/inventory/connectors/",
     "examples/connectors/h14_source_discovery/",
-    "examples/source_packs/",
+    "examples/packs/source/",
     "examples/sources/",
 )
 

@@ -1,6 +1,6 @@
 # Design Tokens Contract
 
-`contracts/ui/design_tokens.v0.json` defines Eureka's generic design-token
+`contracts/surface/ui/design_tokens.v0.json` defines Eureka's generic design-token
 shape for future renderers.
 
 Design tokens are contracts, not output. They may guide future HTML, lite HTML,

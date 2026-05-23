@@ -8,7 +8,7 @@ AUDIT_ROOT = ROOT / "control/audits/source-cache-local-dry-run-runtime-v0"
 REPORT = AUDIT_ROOT / "source_cache_local_dry_run_runtime_report.json"
 INVENTORY = ROOT / "control/inventory/source_cache/source_cache_local_dry_run_runtime.json"
 OPS_DOC = ROOT / "docs/operations/SOURCE_CACHE_LOCAL_DRY_RUN_RUNTIME.md"
-RUNTIME_DOC = ROOT / "runtime/source_cache/README.md"
+RUNTIME_DOC = ROOT / "runtime/source/cache/README.md"
 COMMAND_MATRIX = ROOT / "control/inventory/tests/command_matrix.json"
 
 

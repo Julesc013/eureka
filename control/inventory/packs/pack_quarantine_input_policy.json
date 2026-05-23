@@ -1,8 +1,8 @@
 {
   "allowed_input_roots": [
-    "examples/pack_exports/",
-    "examples/pack_quarantine/",
-    "examples/pack_drafts/",
+    "examples/packs/exports/",
+    "examples/packs/quarantine/",
+    "examples/packs/drafts/",
     "explicit temp test directory"
   ],
   "allowed_inputs": [

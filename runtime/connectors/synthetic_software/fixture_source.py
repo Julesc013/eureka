@@ -11,7 +11,8 @@ REPO_ROOT = Path(__file__).resolve().parents[3]
 DEFAULT_SYNTHETIC_FIXTURE_PATH = (
     REPO_ROOT
     / "contracts"
-    / "control_schemas"
+    / "schema"
+    / "control"
     / "fixtures"
     / "archive"
     / "software"

@@ -12,7 +12,7 @@ from runtime.engine.interfaces.normalize import normalize_local_bundle_record
 from runtime.engine.interfaces.public import ResolutionRequest
 from runtime.engine.resolve import ExactMatchResolutionService
 from runtime.engine.synthetic_records import synthesize_member_normalized_records
-from runtime.source_registry import load_source_registry
+from runtime.source.registry import load_source_registry
 
 
 def _catalog_with_synthetic_members() -> NormalizedCatalog:

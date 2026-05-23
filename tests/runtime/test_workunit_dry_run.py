@@ -6,7 +6,7 @@ from pathlib import Path
 from unittest import mock
 import unittest
 
-from runtime.local_foundry.workunit_dry_run import (
+from runtime.local.foundry.workunit_dry_run import (
     build_workunit_dry_run_result,
     classify_actions_for_dry_run,
     detect_forbidden_runtime_claims,

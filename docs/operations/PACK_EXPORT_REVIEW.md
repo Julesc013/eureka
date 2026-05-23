@@ -25,7 +25,7 @@ and authenticity claims are forbidden in this milestone.
 ## Path Policy
 
 Current outputs may be written only to `control/audits/**/generated/`,
-`examples/pack_exports/`, or explicit temporary test directories. The runtime
+`examples/packs/exports/`, or explicit temporary test directories. The runtime
 must refuse `site/dist/`, `runtime/`, `contracts/`, `site/dist/data/public_index/`,
 publication inventory roots, source inventory roots, hosted-submission roots,
 and local private roots.
@@ -34,5 +34,5 @@ and local private roots.
 
 ```bash
 python scripts/validate_pack_export_runtime.py
-python scripts/export_local_pack.py --input examples/pack_drafts/evidence_pack_draft_v0.json --check
+python scripts/export_local_pack.py --input examples/packs/drafts/evidence_pack_draft_v0.json --check
 ```

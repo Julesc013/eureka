@@ -1,6 +1,6 @@
 import unittest
 
-from runtime.source_observation.internet_archive_reviewed_index import (
+from runtime.source.observation.internet_archive_reviewed_index import (
     build_ia_reviewed_records_from_promotion_previews,
     load_default_ia_promotion_previews,
     load_ia_reviewed_index_policy,

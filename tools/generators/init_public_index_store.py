@@ -13,8 +13,8 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.public_index import PublicIndexStore
-from runtime.public_index.validation import validate_public_index_path
+from runtime.index.public import PublicIndexStore
+from runtime.index.public.validation import validate_public_index_path
 
 
 def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr: TextIO = sys.stderr) -> int:

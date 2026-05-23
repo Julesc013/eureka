@@ -2,7 +2,7 @@
 
 ## Contract Bundle
 
-- `contracts/representations/route_view_representation_matrix.v0.json`
+- `contracts/representation/route_view_representation_matrix.v0.json`
 - `docs/reference/ROUTE_VIEW_REPRESENTATION_MATRIX.md`
 - `control/inventory/publication/route_view_representation_matrix.json`
 - `examples/representations/route_view_matrix/minimal_route_view_matrix_v0.json`

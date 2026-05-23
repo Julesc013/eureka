@@ -96,7 +96,7 @@ execution remained disabled; wrappers are plans only.
 
 Q57 selected a fixture/local-only source observation/evidence/review/index/search
 vertical slice. Allowed product paths were limited to
-`runtime/local_foundry/fixture_source_observation_slice.py`,
+`runtime/local/foundry/fixture_source_observation_slice.py`,
 `scripts/validate_fixture_source_observation_vertical_slice.py`, and matching
 tests. Live source, provider/model, canonical store, registry, public-index,
 site, deploy, and branch mutations remained forbidden.

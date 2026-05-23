@@ -44,7 +44,7 @@ and audit pack. It does not implement step 4 as runtime behavior.
 
 ## Required Fields
 
-`contracts/packs/local_staging_manifest.v0.json` requires:
+`contracts/pack/local_staging_manifest.v0.json` requires:
 
 - `schema_version: local_staging_manifest.v0`
 - `manifest_id`

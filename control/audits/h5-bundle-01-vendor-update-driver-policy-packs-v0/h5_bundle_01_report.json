@@ -13,8 +13,8 @@
     "docs/operations/H5_VENDOR_UPDATE_DRIVER_FIXTURE_PLAN.md"
   ],
   "added_examples": [
-    "examples/source_packs/h5_vendor_update_driver_source_pack_manifest_v0.json",
-    "examples/source_packs/h5_vendor_update_driver_policy_pack_v0.json",
+    "examples/packs/source/h5_vendor_update_driver_source_pack_manifest_v0.json",
+    "examples/packs/source/h5_vendor_update_driver_policy_pack_v0.json",
     "examples/sources/source_records/*h5 vendor/update/driver source records*",
     "examples/connectors/h5_vendor_update_driver/policies/*",
     "examples/connectors/h5_vendor_update_driver/coverage/*",

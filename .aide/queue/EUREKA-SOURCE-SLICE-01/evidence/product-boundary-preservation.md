@@ -4,7 +4,7 @@
 
 Allowed by Q57:
 
-- `runtime/local_foundry/fixture_source_observation_slice.py`
+- `runtime/local/foundry/fixture_source_observation_slice.py`
   - Adds a fixture/local-only harness that composes existing runtime APIs.
 - `scripts/validate_fixture_source_observation_vertical_slice.py`
   - Adds a validator command for the Q58 fixture slice.

@@ -4,8 +4,8 @@
   "track": "A",
   "task": "TRACK-A-15",
   "added_contracts": [
-    "contracts/ui/design_tokens.v0.json",
-    "contracts/ui/temporal_minimal_search.v0.json"
+    "contracts/surface/ui/design_tokens.v0.json",
+    "contracts/surface/ui/temporal_minimal_search.v0.json"
   ],
   "added_inventories": [
     "control/inventory/publication/design_token_policy.json",

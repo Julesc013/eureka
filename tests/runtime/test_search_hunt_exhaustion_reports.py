@@ -2,14 +2,14 @@ from __future__ import annotations
 
 import unittest
 
-from runtime.search_hunt.records import (
+from runtime.search.hunt.records import (
     SearchHuntBlockedPolicyReport,
     SearchHuntCheckedLayerReport,
     SearchHuntDeferredLayerReport,
     SearchHuntExhaustionReport,
     SearchHuntRecommendedAction,
 )
-from runtime.search_hunt.validation import validate_search_hunt_exhaustion_report
+from runtime.search.hunt.validation import validate_search_hunt_exhaustion_report
 
 
 class SearchHuntExhaustionReportRecordTests(unittest.TestCase):

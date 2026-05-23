@@ -5,21 +5,21 @@ Workbench Foundation without broad moves or runtime changes.
 
 ## Scope
 
-- Inventory `contracts/`, `contracts/control_schemas/`, `control/policies/`,
+- Inventory `contracts/`, `contracts/schema/control/`, `control/policies/`,
   `control/inventory/`, `examples/`, `runtime/`, and validator scripts.
 - Classify product contracts, internal contracts, control schemas, policies,
   inventories, audit reports, fixtures, generated artifacts, and quarantine
   candidates.
 - Record duplicate authority risks.
-- Retain `contracts/control_schemas/` as control-schema authority only.
-- Reserve Workbench contracts under `contracts/views/workbench/`.
+- Retain `contracts/schema/control/` as control-schema authority only.
+- Reserve Workbench contracts under `contracts/view/pages/workbench/`.
 - Reserve Search Interaction contracts under `contracts/search/interaction/`.
 
 ## Decisions
 
 Product/public contracts live under `contracts/`.
 
-Control schemas may remain under `contracts/control_schemas/` only for control-plane
+Control schemas may remain under `contracts/schema/control/` only for control-plane
 schemas. Any product-like material there is migration debt, not product truth.
 
 Examples are examples. They do not define registry authority or accepted truth.
@@ -33,9 +33,9 @@ The backlog is recorded in
 `control/inventory/contract_taxonomy_migration_backlog.json`. The immediate
 items are:
 
-- Reclassify or migrate `contracts/control_schemas/policies/packs/**`.
-- Collapse `contracts/source_registry/**` vs `contracts/sources/**`.
-- Clarify `contracts/source_cache/**` vs `contracts/stores/**`.
+- Reclassify or migrate `contracts/schema/control/policies/packs/**`.
+- Collapse `contracts/source/registry/**` vs `contracts/source/records/**`.
+- Clarify `contracts/source/cache/**` vs `contracts/stores/**`.
 - Narrow `contracts/runtime/**` to stable boundary packets.
 - Keep `contracts/archive/**` distinct from the top-level `archive/` root.
 - Add concrete Workbench view-model contracts during Workbench Foundation.

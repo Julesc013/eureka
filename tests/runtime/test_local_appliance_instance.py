@@ -6,7 +6,7 @@ import tempfile
 from pathlib import Path
 import unittest
 
-from runtime.local_appliance import (
+from runtime.local.appliance import (
     LocalInstancePathError,
     load_instance_config,
     load_instance_ref,

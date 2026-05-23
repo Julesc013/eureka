@@ -15,8 +15,8 @@ from scripts.validate_local_source_cache_runtime_plan import (
 
 
 ROOT = Path(__file__).resolve().parents[2]
-PLAN_EXAMPLE = ROOT / "examples/source_cache_plans/minimal_local_source_cache_plan_v0.json"
-FUTURE_PROBE_EXAMPLE = ROOT / "examples/source_cache_plans/approved_metadata_probe_future_plan_v0.json"
+PLAN_EXAMPLE = ROOT / "examples/sources/cache/plans/minimal_local_source_cache_plan_v0.json"
+FUTURE_PROBE_EXAMPLE = ROOT / "examples/sources/cache/plans/approved_metadata_probe_future_plan_v0.json"
 
 
 class LocalSourceCacheRuntimePlanTests(unittest.TestCase):
@@ -106,8 +106,8 @@ class LocalSourceCacheRuntimePlanTests(unittest.TestCase):
 
     def test_forbidden_output_root_fails(self) -> None:
         self.assertFalse(output_path_allowed(ROOT / "site/dist/source_cache.json", ROOT))
-        self.assertFalse(output_path_allowed(ROOT / "runtime/source_cache.json", ROOT))
-        self.assertFalse(output_path_allowed(ROOT / "contracts/source_cache.json", ROOT))
+        self.assertFalse(output_path_allowed(ROOT / "runtime/source/cache.json", ROOT))
+        self.assertFalse(output_path_allowed(ROOT / "contracts/source/cache.json", ROOT))
 
     def test_private_path_outside_documented_future_roots_fails(self) -> None:
         plan = _plan()

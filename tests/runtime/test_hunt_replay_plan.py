@@ -5,8 +5,8 @@ import tempfile
 from pathlib import Path
 import unittest
 
-from runtime.local_appliance import close_local_appliance, open_local_appliance
-from runtime.search_hunt import (
+from runtime.local.appliance import close_local_appliance, open_local_appliance
+from runtime.search.hunt import (
     BLOCKED_REPLAY_STEP_KINDS,
     ENABLED_REPLAY_STEP_KINDS,
     build_replay_fixture_from_hunt,

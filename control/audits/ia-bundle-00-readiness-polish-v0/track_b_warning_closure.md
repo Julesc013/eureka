@@ -7,7 +7,7 @@ warnings that could otherwise blur the IA start gate.
 
 Classification: closed by minimal contract pointer namespace.
 
-`contracts/evidence_ledger/` already contains governed schema-only evidence
+`contracts/evidence/ledger/` already contains governed schema-only evidence
 ledger contracts. IA-BUNDLE-00 adds `contracts/evidence/` as a pointer/index
 namespace so future tasks can find evidence contract material without
 duplicating the existing schemas.

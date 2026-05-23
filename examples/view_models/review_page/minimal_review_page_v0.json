@@ -312,7 +312,7 @@
   ],
   "generated_from": {
     "source_contracts": [
-      "contracts/control_schemas/tasks/master_index/review_queue_entry.v0.json",
+      "contracts/schema/control/tasks/master_index/review_queue_entry.v0.json",
       "docs/reference/MASTER_INDEX_REVIEW_QUEUE_CONTRACT.md"
     ],
     "policy_inventory": "control/inventory/publication/review_page_view_model_policy.json",

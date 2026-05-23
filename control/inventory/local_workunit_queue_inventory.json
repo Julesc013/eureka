@@ -5,7 +5,7 @@
   "index_rebuild_enabled": false,
   "lan_enabled": false,
   "review_decision_mutation_enabled": false,
-  "runtime_package": "runtime/workunit_queue",
+  "runtime_package": "runtime/worker/workunit_queue",
   "schema_version": "local_workunit_queue_inventory.v0",
   "source_probe_execution_enabled": false,
   "store_id": "workunit_queue",

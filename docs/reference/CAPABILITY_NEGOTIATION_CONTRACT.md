@@ -1,6 +1,6 @@
 # Capability Negotiation Contract
 
-`contracts/representations/capability_negotiation.v0.json` defines how Eureka
+`contracts/representation/capability_negotiation.v0.json` defines how Eureka
 chooses a representation profile for a request or future client capability
 manifest. It is selection policy only.
 

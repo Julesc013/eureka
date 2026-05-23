@@ -14,7 +14,7 @@ from scripts.validate_search_need_runtime import validate_search_need_runtime
 
 
 ROOT = Path(__file__).resolve().parents[2]
-EMPTY_MISS = ROOT / "examples" / "search_misses" / "empty_result_search_miss_v0.json"
+EMPTY_MISS = ROOT / "examples" / "search" / "misses" / "empty_result_search_miss_v0.json"
 
 
 class SearchNeedRuntimeScriptTests(unittest.TestCase):
@@ -52,7 +52,7 @@ class SearchNeedRuntimeScriptTests(unittest.TestCase):
                 sys.executable,
                 "scripts/record_search_need.py",
                 "--input",
-                "examples/search_misses/empty_result_search_miss_v0.json",
+                "examples/search/misses/empty_result_search_miss_v0.json",
                 "--output",
                 str(forbidden),
             ],
@@ -74,7 +74,7 @@ class SearchNeedRuntimeScriptTests(unittest.TestCase):
                 sys.executable,
                 "scripts/record_search_need.py",
                 "--input",
-                "examples/search_misses/empty_result_search_miss_v0.json",
+                "examples/search/misses/empty_result_search_miss_v0.json",
                 "--output",
                 str(forbidden),
             ],
@@ -112,7 +112,7 @@ class SearchNeedRuntimeScriptTests(unittest.TestCase):
 def _tracked_relevant_files() -> list[str]:
     roots = [
         ROOT / "control" / "audits" / "track-b-09-search-need-runtime-v0" / "generated",
-        ROOT / "examples" / "search_needs",
+        ROOT / "examples" / "search" / "needs",
     ]
     results: list[str] = []
     for root in roots:

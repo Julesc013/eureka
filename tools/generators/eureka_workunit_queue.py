@@ -14,8 +14,8 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.local_appliance import LocalApplianceError, close_local_appliance, open_local_appliance
-from runtime.workunit_queue import (
+from runtime.local.appliance import LocalApplianceError, close_local_appliance, open_local_appliance
+from runtime.worker.workunit_queue import (
     ALLOWED_WORKUNIT_PRIORITIES,
     ALLOWED_WORKUNIT_STATES,
     ALLOWED_WORKUNIT_TYPES,

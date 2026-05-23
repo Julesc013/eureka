@@ -19,7 +19,7 @@ The conversion layer may read committed repo-local material only:
 - `control/inventory/observations/search_need_seed_manifest.json`
 - OBS-AGENT-01 through OBS-AGENT-04 audit artifacts
 - `examples/observation_candidates/**`
-- `examples/search_need_seeds/**`
+- `examples/search/need_seeds/**`
 - `contracts/query/**`
 - read-only Track B WorkUnit contracts under `contracts/node/`
 - `docs/operations/**`

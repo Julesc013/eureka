@@ -4,8 +4,8 @@
   "track": "A",
   "task": "TRACK-A-07",
   "added_contracts": [
-    "contracts/views/candidate_page.v0.json",
-    "contracts/views/need_page.v0.json",
+    "contracts/view/pages/candidate_page.v0.json",
+    "contracts/view/pages/need_page.v0.json",
     "docs/reference/CANDIDATE_PAGE_VIEW_MODEL_CONTRACT.md",
     "docs/reference/NEED_PAGE_VIEW_MODEL_CONTRACT.md"
   ],

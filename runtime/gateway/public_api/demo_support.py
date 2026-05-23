@@ -48,7 +48,7 @@ from runtime.engine.states import DeterministicSubjectStatesService
 from runtime.engine.snapshots import ResolutionBundleExportService, ResolutionBundleInspectionEngineService
 from runtime.engine.store import LocalExportStore, ResolutionExportStoreEngineService
 from runtime.engine.synthetic_records import synthesize_member_normalized_records
-from runtime.source_registry import load_source_registry
+from runtime.source.registry import load_source_registry
 from runtime.gateway.public_api.action_plan_boundary import ActionPlanPublicApi
 from runtime.gateway.public_api.archive_resolution_evals_boundary import (
     ArchiveResolutionEvalsPublicApi,

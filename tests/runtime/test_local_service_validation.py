@@ -4,12 +4,12 @@ import ast
 from pathlib import Path
 import unittest
 
-from runtime.local_service import build_request_context, validate_host_allowed
-from runtime.local_service.errors import LocalServiceHostError, LocalServiceValidationError
+from runtime.local.service import build_request_context, validate_host_allowed
+from runtime.local.service.errors import LocalServiceHostError, LocalServiceValidationError
 
 
 ROOT = Path(__file__).resolve().parents[2]
-RUNTIME_DIR = ROOT / "runtime" / "local_service"
+RUNTIME_DIR = ROOT / "runtime" / "local" / "service"
 FORBIDDEN_IMPORT_PREFIXES = (
     "runtime.connectors",
     "runtime.local_foundry",

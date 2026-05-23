@@ -30,10 +30,10 @@ from archive.prototypes.legacy_runtime.connectors.h14_source_discovery.rollup_dr
 )
 
 CONTRACTS = [
-    "contracts/control_schemas/previews/h14/connectors/source_discovery_rollup_dry_run_request.v0.json",
-    "contracts/control_schemas/previews/h14/connectors/source_discovery_rollup_dry_run_result.v0.json",
-    "contracts/control_schemas/previews/h14/connectors/source_discovery_rollup_output_bundle.v0.json",
-    "contracts/control_schemas/previews/h14/connectors/source_os_rollup_health_summary.v0.json",
+    "contracts/schema/control/previews/h14/connectors/source_discovery_rollup_dry_run_request.v0.json",
+    "contracts/schema/control/previews/h14/connectors/source_discovery_rollup_dry_run_result.v0.json",
+    "contracts/schema/control/previews/h14/connectors/source_discovery_rollup_output_bundle.v0.json",
+    "contracts/schema/control/previews/h14/connectors/source_os_rollup_health_summary.v0.json",
 ]
 POLICIES = [
     "control/inventory/connectors/h14_source_discovery_rollup_dry_run_policy.json",

@@ -14,7 +14,7 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.local_eval.g0_quality import (  # noqa: E402
+from runtime.local.eval.g0_quality import (  # noqa: E402
     BLOCKED_ACTIONS,
     PROJECTION_PROFILES,
     REQUIRED_EXPLANATION_FACTORS,
@@ -33,7 +33,7 @@ from runtime.local_eval.g0_quality import (  # noqa: E402
 
 
 TASK = "AIDE-BATCH-G0-QUALITY-FOUNDATION-01"
-FIXTURE_PATH = "examples/search_quality/sample_quality_fixture.json"
+FIXTURE_PATH = "examples/search/quality/sample_quality_fixture.json"
 
 REQUIRED_POLICIES = (
     "control/policies/g0_ranking_policy.json",
@@ -45,14 +45,14 @@ REQUIRED_POLICIES = (
 )
 
 REQUIRED_CONTRACTS = (
-    "contracts/search_quality/README.md",
-    "contracts/search_quality/score_signal.v0.json",
-    "contracts/search_quality/score_breakdown.v0.json",
-    "contracts/search_quality/result_quality_report.v0.json",
-    "contracts/search_quality/query_fit_signal.v0.json",
-    "contracts/search_quality/domain_fit_signal.v0.json",
-    "contracts/search_quality/source_quality_signal.v0.json",
-    "contracts/search_quality/provenance_signal.v0.json",
+    "contracts/search/quality/README.md",
+    "contracts/search/quality/score_signal.v0.json",
+    "contracts/search/quality/score_breakdown.v0.json",
+    "contracts/search/quality/result_quality_report.v0.json",
+    "contracts/search/quality/query_fit_signal.v0.json",
+    "contracts/search/quality/domain_fit_signal.v0.json",
+    "contracts/search/quality/source_quality_signal.v0.json",
+    "contracts/search/quality/provenance_signal.v0.json",
     "contracts/explanation/README.md",
     "contracts/explanation/explanation_packet.v0.json",
     "contracts/explanation/explanation_factor.v0.json",
@@ -110,14 +110,14 @@ REQUIRED_SCRIPTS = (
 )
 
 REQUIRED_EXAMPLES = (
-    "examples/search_quality/sample_score_signal.json",
-    "examples/search_quality/sample_score_breakdown.json",
-    "examples/search_quality/sample_explanation_packet.json",
-    "examples/search_quality/sample_identity_cluster_candidate.json",
-    "examples/search_quality/sample_near_miss_candidate.json",
-    "examples/search_quality/sample_user_cost_score.json",
-    "examples/search_quality/sample_quality_console_view.json",
-    "examples/search_quality/sample_quality_fixture.json",
+    "examples/search/quality/sample_score_signal.json",
+    "examples/search/quality/sample_score_breakdown.json",
+    "examples/search/quality/sample_explanation_packet.json",
+    "examples/search/quality/sample_identity_cluster_candidate.json",
+    "examples/search/quality/sample_near_miss_candidate.json",
+    "examples/search/quality/sample_user_cost_score.json",
+    "examples/search/quality/sample_quality_console_view.json",
+    "examples/search/quality/sample_quality_fixture.json",
 )
 
 FORBIDDEN_TEXT = (

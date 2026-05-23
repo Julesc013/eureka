@@ -4,14 +4,14 @@ from __future__ import annotations
 
 from typing import Any, Mapping
 
-from runtime.local_service.workbench_result_lanes import (
+from runtime.local.service.workbench_result_lanes import (
     build_absence_lane,
     build_blocked_action_lane,
     build_demo_lane_page,
     build_result_lane_page_view,
     build_result_lane_packet,
 )
-from runtime.search_hunt.ia_bridge import build_ia_hunt_result_lanes, run_ia_hunt_pipeline_dry_run
+from runtime.search.hunt.ia_bridge import build_ia_hunt_result_lanes, run_ia_hunt_pipeline_dry_run
 
 from .run_store import FIXED_CREATED_AT, stable_id
 

@@ -24,11 +24,11 @@ AUDIT_DIR = Path("control/audits/r0-remediation-legacy-leakage-01-v0")
 
 LEGACY_CONNECTOR_RE = re.compile(r"^h(?:[1-9]|1[0-4])_")
 R0_SEAMS = (
-    "runtime/source_observation/",
-    "runtime/source_cache/",
-    "runtime/evidence_ledger/",
-    "runtime/review_queue/",
-    "runtime/public_index/",
+    "runtime/source/observation/",
+    "runtime/source/cache/",
+    "runtime/evidence/ledger/",
+    "runtime/review/queue/",
+    "runtime/index/public/",
 )
 REFERENCE_ROOTS = (
     "scripts",

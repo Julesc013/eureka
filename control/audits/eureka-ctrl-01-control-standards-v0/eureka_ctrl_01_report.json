@@ -33,8 +33,8 @@
     "examples/commit_messages/valid_structured_commit.txt",
     "examples/commit_messages/invalid_missing_why.txt",
     "examples/commit_messages/valid_warn_only_commit.txt",
-    "examples/workunits/idempotent_workunit_example.yaml",
-    "examples/workunits/recovery_workunit_example.yaml"
+    "examples/work_units/yaml/idempotent_workunit_example.yaml",
+    "examples/work_units/yaml/recovery_workunit_example.yaml"
   ],
   "validation": {
     "git status --short": "pass_expected_changes_before_commit",

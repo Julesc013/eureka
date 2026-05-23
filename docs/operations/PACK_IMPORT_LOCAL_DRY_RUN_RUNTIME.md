@@ -20,9 +20,9 @@ python scripts/run_pack_import_dry_run.py --all-examples --no-validator-commands
 ```
 
 Explicit `--example-root` values must be under approved repo example roots:
-`examples/source_packs`, `examples/evidence_packs`, `examples/index_packs`,
-`examples/contribution_packs`, `examples/packs` if present, or
-`examples/pack_import_dry_run`.
+`examples/packs/source`, `examples/packs/evidence`, `examples/packs/index`,
+`examples/packs/contribution`, `examples/packs` if present, or
+`examples/packs/import_dry_run`.
 
 ## Output Report Model
 

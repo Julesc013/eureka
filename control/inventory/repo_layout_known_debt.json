@@ -35,7 +35,7 @@
     {
       "debt_id": "control_schemas_contract_authority_overlap",
       "old_path": "control/schemas",
-      "new_path": "contracts/control_schemas",
+      "new_path": "contracts/schema/control",
       "class": "duplicate_contract_authority_risk",
       "disposition": "moved_schema_authority_under_contracts"
     },

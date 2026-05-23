@@ -1,6 +1,6 @@
 # Snapshot Verification Report Contract
 
-`contracts/control_schemas/audits/snapshots/snapshot_verification_report.v0.json` defines local verification results for a fixture snapshot.
+`contracts/schema/control/audits/snapshots/snapshot_verification_report.v0.json` defines local verification results for a fixture snapshot.
 
 Verification checks manifest structure, record structure, local fixity posture, signature-envelope posture, renderer boundary safety, and semantic parity. It is local and offline only.
 

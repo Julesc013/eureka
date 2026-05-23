@@ -1,6 +1,6 @@
 # Local Foundry State Contract
 
-`contracts/control_schemas/policies/node/local_foundry_state.v0.json` defines the first Eureka Local
+`contracts/schema/control/policies/node/local_foundry_state.v0.json` defines the first Eureka Local
 Foundry State envelope.
 
 ## What It Is

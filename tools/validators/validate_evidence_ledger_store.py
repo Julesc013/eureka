@@ -15,7 +15,7 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.evidence_ledger import EvidenceLedgerStore
+from runtime.evidence.ledger import EvidenceLedgerStore
 from scripts.demo_evidence_ledger_store import run_demo
 
 
@@ -28,14 +28,14 @@ CONTRACT_PATHS = (
     "contracts/stores/evidence_ledger_migration.v0.json",
 )
 STORE_RUNTIME_FILES = (
-    "runtime/evidence_ledger/__init__.py",
-    "runtime/evidence_ledger/errors.py",
-    "runtime/evidence_ledger/schema.py",
-    "runtime/evidence_ledger/store.py",
-    "runtime/evidence_ledger/migrations.py",
-    "runtime/evidence_ledger/records.py",
-    "runtime/evidence_ledger/queries.py",
-    "runtime/evidence_ledger/validation.py",
+    "runtime/evidence/ledger/__init__.py",
+    "runtime/evidence/ledger/errors.py",
+    "runtime/evidence/ledger/schema.py",
+    "runtime/evidence/ledger/store.py",
+    "runtime/evidence/ledger/migrations.py",
+    "runtime/evidence/ledger/records.py",
+    "runtime/evidence/ledger/queries.py",
+    "runtime/evidence/ledger/validation.py",
 )
 BANNED_IMPORT_ROOTS = {
     "requests",
@@ -180,7 +180,7 @@ def scan_forbidden_vocabulary(root: Path, errors: list[str]) -> int:
 
 def scan_banned_imports(root: Path, errors: list[str]) -> int:
     count = 0
-    for path in sorted((root / "runtime/evidence_ledger").glob("*.py")):
+    for path in sorted((root / "runtime/evidence/ledger").glob("*.py")):
         tree = ast.parse(path.read_text(encoding="utf-8"), filename=str(path))
         for node in ast.walk(tree):
             imported: list[str] = []
@@ -197,7 +197,7 @@ def scan_banned_imports(root: Path, errors: list[str]) -> int:
 
 def scan_phase_dependencies(root: Path, errors: list[str]) -> int:
     count = 0
-    for path in sorted((root / "runtime/evidence_ledger").glob("*.py")):
+    for path in sorted((root / "runtime/evidence/ledger").glob("*.py")):
         text = path.read_text(encoding="utf-8").lower()
         if "runtime.connectors" in text or "runtime.local_foundry" in text:
             errors.append(f"forbidden runtime dependency in {path.relative_to(root).as_posix()}")

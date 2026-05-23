@@ -8,7 +8,7 @@ source_packet: .aide/context/latest-task-packet.md
 objective: Define the canonical public-safe ObjectPageView model before renderer or runtime refactors.
 scope:
   allowed_paths:
-    - contracts/views/object_page.v0.json
+    - contracts/view/pages/object_page.v0.json
     - docs/reference/OBJECT_PAGE_VIEW_MODEL_CONTRACT.md
     - docs/roadmap/TRACK_EXECUTION_PLAN.md
     - control/inventory/publication/object_page_view_model_policy.json

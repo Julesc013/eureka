@@ -12,7 +12,7 @@
         "lite_static",
         "search"
       ],
-      "schema_path": "contracts/views/search_page.v0.json",
+      "schema_path": "contracts/view/pages/search_page.v0.json",
       "policy_inventory_path": "control/inventory/publication/search_page_view_model_policy.json",
       "documentation_path": "docs/reference/SEARCH_PAGE_VIEW_MODEL_CONTRACT.md",
       "example_paths": [
@@ -48,7 +48,7 @@
       "route_families": [
         "object_page_future"
       ],
-      "schema_path": "contracts/views/object_page.v0.json",
+      "schema_path": "contracts/view/pages/object_page.v0.json",
       "policy_inventory_path": "control/inventory/publication/object_page_view_model_policy.json",
       "documentation_path": "docs/reference/OBJECT_PAGE_VIEW_MODEL_CONTRACT.md",
       "example_paths": [
@@ -83,7 +83,7 @@
       "route_families": [
         "absence_page_future"
       ],
-      "schema_path": "contracts/views/absence_page.v0.json",
+      "schema_path": "contracts/view/pages/absence_page.v0.json",
       "policy_inventory_path": "control/inventory/publication/absence_page_view_model_policy.json",
       "documentation_path": "docs/reference/ABSENCE_PAGE_VIEW_MODEL_CONTRACT.md",
       "example_paths": [
@@ -123,10 +123,10 @@
     "control/inventory/publication/absence_page_view_model_policy.json"
   ],
   "schema_files": [
-    "contracts/views/view_model_policy_index.v0.json",
-    "contracts/views/search_page.v0.json",
-    "contracts/views/object_page.v0.json",
-    "contracts/views/absence_page.v0.json"
+    "contracts/view/pages/view_model_policy_index.v0.json",
+    "contracts/view/pages/search_page.v0.json",
+    "contracts/view/pages/object_page.v0.json",
+    "contracts/view/pages/absence_page.v0.json"
   ],
   "documentation_files": [
     "docs/reference/VIEW_MODEL_POLICY_INDEX_CONTRACT.md",

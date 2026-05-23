@@ -50,7 +50,7 @@ def _record():
 
 class PublicSearchRankingDryRunTests(unittest.TestCase):
     def test_run_public_search_ranking_dry_run_over_examples(self):
-        report = run_public_search_ranking_dry_run([Path("examples/public_search_ranking_dry_run")])
+        report = run_public_search_ranking_dry_run([Path("examples/index/public_search_ranking_dry_run")])
         data = report.to_dict()
         self.assertEqual(data["mode"], "local_dry_run")
         self.assertGreaterEqual(data["result_sets_seen"], 5)

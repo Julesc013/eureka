@@ -26,10 +26,10 @@ class WorkbenchFoundationTest(unittest.TestCase):
             for item in load_json("control/inventory/workbench_packet_location_matrix.json")["locations"]
         }
         for path in [
-            "contracts/search_interaction/",
+            "contracts/search/interaction/",
             "contracts/workbench/",
-            "contracts/view_models/",
-            "contracts/projections/",
+            "contracts/view/models/core/",
+            "contracts/surface/projection/",
             "contracts/domain/",
             "contracts/scout/",
             "contracts/snapshots/",

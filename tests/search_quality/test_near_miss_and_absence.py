@@ -4,12 +4,12 @@ import json
 from pathlib import Path
 import unittest
 
-from runtime.search_quality.known_absence import (
+from runtime.search.quality.known_absence import (
     build_known_absence_record,
     detect_absence_overclaim,
     validate_known_absence_record,
 )
-from runtime.search_quality.near_miss import build_near_miss_explanation, classify_near_miss_mismatch
+from runtime.search.quality.near_miss import build_near_miss_explanation, classify_near_miss_mismatch
 
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -39,27 +39,27 @@ class NearMissAndAbsenceTests(unittest.TestCase):
         self.assertFalse(built["suggested_workunit_seed_future"]["created"])
 
     def test_known_absence_includes_checked_and_not_checked(self) -> None:
-        bundle = load("examples/search_quality/input_bundles/software_search_explanation_bundle_v0.json")
+        bundle = load("examples/search/quality/input_bundles/software_search_explanation_bundle_v0.json")
         record = build_known_absence_record(bundle)
         self.assertTrue(record["sources_checked"])
         self.assertTrue(record["sources_not_checked"])
         self.assertFalse(record["no_claims"]["global_absence_claimed"])
 
     def test_known_absence_cannot_claim_global_absence(self) -> None:
-        record = load("examples/search_quality/known_absence/no_reviewed_result_absence_v0.json")
+        record = load("examples/search/quality/known_absence/no_reviewed_result_absence_v0.json")
         record["no_claims"]["global_absence_claimed"] = True
         self.assertTrue(detect_absence_overclaim(record))
         with self.assertRaises(ValueError):
             validate_known_absence_record(record)
 
     def test_known_absence_cannot_claim_exhaustive_web_search(self) -> None:
-        record = load("examples/search_quality/known_absence/no_reviewed_result_absence_v0.json")
+        record = load("examples/search/quality/known_absence/no_reviewed_result_absence_v0.json")
         record["no_claims"]["exhaustive_web_search_claimed"] = True
         with self.assertRaises(ValueError):
             validate_known_absence_record(record)
 
     def test_public_index_mutation_claim_is_rejected(self) -> None:
-        record = load("examples/search_quality/known_absence/no_reviewed_result_absence_v0.json")
+        record = load("examples/search/quality/known_absence/no_reviewed_result_absence_v0.json")
         record["truth_boundary"]["public_index_mutated"] = True
         with self.assertRaises(ValueError):
             validate_known_absence_record(record)

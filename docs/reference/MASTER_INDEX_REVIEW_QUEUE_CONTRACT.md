@@ -21,9 +21,9 @@ any future public index state may be considered.
 
 ## Contract Files
 
-- `contracts/control_schemas/tasks/master_index/review_queue_manifest.v0.json`
-- `contracts/control_schemas/tasks/master_index/review_queue_entry.v0.json`
-- `contracts/master_index/review_decision.v0.json`
+- `contracts/schema/control/tasks/master_index/review_queue_manifest.v0.json`
+- `contracts/schema/control/tasks/master_index/review_queue_entry.v0.json`
+- `contracts/index/master/review_decision.v0.json`
 
 The inventory files under `control/inventory/master_index/` define policy,
 state taxonomy, and acceptance requirements. The synthetic example queue lives

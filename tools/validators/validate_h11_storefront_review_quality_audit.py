@@ -24,11 +24,11 @@ from archive.prototypes.legacy_runtime.connectors.h11_storefront.review_integrat
 AUDIT_DIR = Path("control/audits/h11-bundle-04-storefront-review-quality-audit-v0")
 REVIEW_DIR = Path("examples/connectors/h11_storefront/review_integration")
 REQUIRED_JSON = (
-    "contracts/control_schemas/audits/h11/connectors/storefront_review_integration_result.v0.json",
-    "contracts/control_schemas/audits/h11/connectors/storefront_quality_delta_report.v0.json",
-    "contracts/control_schemas/audits/h11/connectors/storefront_connector_wave_postmortem.v0.json",
-    "contracts/control_schemas/audits/h11/connectors/storefront_integration_audit.v0.json",
-    "contracts/control_schemas/tasks/h11/connectors/storefront_next_phase_recommendation.v0.json",
+    "contracts/schema/control/audits/h11/connectors/storefront_review_integration_result.v0.json",
+    "contracts/schema/control/audits/h11/connectors/storefront_quality_delta_report.v0.json",
+    "contracts/schema/control/audits/h11/connectors/storefront_connector_wave_postmortem.v0.json",
+    "contracts/schema/control/audits/h11/connectors/storefront_integration_audit.v0.json",
+    "contracts/schema/control/tasks/h11/connectors/storefront_next_phase_recommendation.v0.json",
     "control/inventory/connectors/h11_storefront_review_integration_policy.json",
     "control/inventory/connectors/h11_storefront_review_output_policy.json",
     "control/inventory/connectors/h11_storefront_review_path_policy.json",

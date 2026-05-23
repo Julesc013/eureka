@@ -11,8 +11,8 @@
     "scripts/dry_run_search_miss_ledger_entry.py"
   ],
   "example_miss_entries": [
-    "examples/search_miss_ledger/minimal_no_hits_miss_v0/SEARCH_MISS_LEDGER_ENTRY.json",
-    "examples/search_miss_ledger/minimal_weak_hits_miss_v0/SEARCH_MISS_LEDGER_ENTRY.json"
+    "examples/search/miss_ledger/minimal_no_hits_miss_v0/SEARCH_MISS_LEDGER_ENTRY.json",
+    "examples/search/miss_ledger/minimal_weak_hits_miss_v0/SEARCH_MISS_LEDGER_ENTRY.json"
   ],
   "miss_ledger_policy": "control/inventory/query_intelligence/search_miss_ledger_policy.json",
   "miss_classification_taxonomy": {

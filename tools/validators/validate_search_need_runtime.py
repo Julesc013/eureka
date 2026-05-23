@@ -15,7 +15,7 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.local_foundry import search_need as runtime  # noqa: E402
+from runtime.local.foundry import search_need as runtime  # noqa: E402
 
 
 RUNTIME_POLICY_PATH = "control/inventory/observations/search_need_runtime_policy.json"
@@ -26,7 +26,7 @@ REVIEW_POLICY_PATH = "control/inventory/observations/search_need_review_policy.j
 AUDIT_REPORT_PATH = "control/audits/track-b-09-search-need-runtime-v0/track_b_09_report.json"
 SAMPLE_REPORT_PATH = "control/audits/track-b-09-search-need-runtime-v0/generated/sample_search_need_report.json"
 SAMPLE_SUMMARY_PATH = "control/audits/track-b-09-search-need-runtime-v0/generated/sample_search_need_summary.md"
-EXAMPLE_ROOT = "examples/search_needs"
+EXAMPLE_ROOT = "examples/search/needs"
 DOC_PATHS = (
     "docs/reference/SEARCH_NEED_RUNTIME.md",
     "docs/architecture/SEARCH_NEED_MODEL.md",
@@ -98,7 +98,7 @@ def validate_search_need_runtime(repo_root: Path = REPO_ROOT) -> dict[str, Any]:
         AUDIT_REPORT_PATH,
         SAMPLE_REPORT_PATH,
         SAMPLE_SUMMARY_PATH,
-        "runtime/local_foundry/search_need.py",
+        "runtime/local/foundry/search_need.py",
         "scripts/record_search_need.py",
         *DOC_PATHS,
     ]
@@ -309,7 +309,7 @@ def validate_script_check(repo_root: Path) -> list[str]:
             sys.executable,
             "scripts/record_search_need.py",
             "--input",
-            "examples/search_misses/empty_result_search_miss_v0.json",
+            "examples/search/misses/empty_result_search_miss_v0.json",
             "--check",
             "--json",
         ],
@@ -337,7 +337,7 @@ def validate_forbidden_output_root_rejected(repo_root: Path) -> list[str]:
             sys.executable,
             "scripts/record_search_need.py",
             "--input",
-            "examples/search_misses/empty_result_search_miss_v0.json",
+            "examples/search/misses/empty_result_search_miss_v0.json",
             "--output",
             str(forbidden),
         ],

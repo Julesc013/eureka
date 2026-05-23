@@ -7,7 +7,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[2]
-EXAMPLE = ROOT / "examples" / "search_miss_ledger" / "minimal_no_hits_miss_v0" / "SEARCH_MISS_LEDGER_ENTRY.json"
+EXAMPLE = ROOT / "examples" / "search" / "miss_ledger" / "minimal_no_hits_miss_v0" / "SEARCH_MISS_LEDGER_ENTRY.json"
 
 
 class SearchMissLedgerEntryValidatorTests(unittest.TestCase):

@@ -6,7 +6,7 @@ from pathlib import Path
 from unittest import mock
 import unittest
 
-from runtime.local_foundry.search_need import (
+from runtime.local.foundry.search_need import (
     build_search_need_from_query_observation,
     build_search_need_from_search_miss,
     classify_need_intent,
@@ -18,9 +18,9 @@ from runtime.local_foundry.search_need import (
 
 
 ROOT = Path(__file__).resolve().parents[2]
-QUERY_EXAMPLES = ROOT / "examples" / "query_observations"
-MISS_EXAMPLES = ROOT / "examples" / "search_misses"
-NEED_EXAMPLES = ROOT / "examples" / "search_needs"
+QUERY_EXAMPLES = ROOT / "examples" / "search" / "query_observations"
+MISS_EXAMPLES = ROOT / "examples" / "search" / "misses"
+NEED_EXAMPLES = ROOT / "examples" / "search" / "needs"
 
 
 class SearchNeedRuntimeTests(unittest.TestCase):

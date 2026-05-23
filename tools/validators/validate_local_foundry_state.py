@@ -15,7 +15,7 @@ from typing import Any, Iterable, Mapping, Sequence, TextIO
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
-SCHEMA_PATH = "contracts/control_schemas/policies/node/local_foundry_state.v0.json"
+SCHEMA_PATH = "contracts/schema/control/policies/node/local_foundry_state.v0.json"
 STATE_POLICY_PATH = "control/inventory/local_state/local_foundry_state_policy.json"
 KIND_REGISTRY_PATH = "control/inventory/local_state/local_foundry_state_kind_registry.json"
 PATH_POLICY_PATH = "control/inventory/local_state/local_foundry_path_policy.json"

@@ -209,7 +209,7 @@
       "label": "Source registry runtime tests",
       "command": "python -m unittest runtime.source_registry.tests.test_registry",
       "category": "contract",
-      "owner_area": "runtime/source_registry",
+      "owner_area": "runtime/source/registry",
       "required_for": [
         "standard",
         "full"
@@ -229,7 +229,7 @@
       "label": "Source coverage and capability model tests",
       "command": "python -m unittest runtime.source_registry.tests.test_source_capability_coverage",
       "category": "contract",
-      "owner_area": "runtime/source_registry",
+      "owner_area": "runtime/source/registry",
       "required_for": [
         "standard",
         "full",
@@ -2983,7 +2983,7 @@
       "label": "Source pack contract validator",
       "command": "python scripts/validate_source_pack.py",
       "category": "contract",
-      "owner_area": "contracts/packs",
+      "owner_area": "contracts/pack",
       "required_for": [
         "standard",
         "full",
@@ -3004,7 +3004,7 @@
       "label": "Source pack contract tests",
       "command": "python -m unittest tests.operations.test_source_pack_contract tests.scripts.test_validate_source_pack",
       "category": "contract",
-      "owner_area": "contracts/packs",
+      "owner_area": "contracts/pack",
       "required_for": [
         "standard",
         "full",
@@ -3025,7 +3025,7 @@
       "label": "Evidence pack contract validator",
       "command": "python scripts/validate_evidence_pack.py",
       "category": "contract",
-      "owner_area": "contracts/packs",
+      "owner_area": "contracts/pack",
       "required_for": [
         "standard",
         "full",
@@ -3046,7 +3046,7 @@
       "label": "Evidence pack contract tests",
       "command": "python -m unittest tests.operations.test_evidence_pack_contract tests.scripts.test_validate_evidence_pack",
       "category": "contract",
-      "owner_area": "contracts/packs",
+      "owner_area": "contracts/pack",
       "required_for": [
         "standard",
         "full",
@@ -3067,7 +3067,7 @@
       "label": "Index pack contract validator",
       "command": "python scripts/validate_index_pack.py",
       "category": "contract",
-      "owner_area": "contracts/packs",
+      "owner_area": "contracts/pack",
       "required_for": [
         "standard",
         "full",
@@ -3088,7 +3088,7 @@
       "label": "Index pack contract tests",
       "command": "python -m unittest tests.operations.test_index_pack_contract tests.scripts.test_validate_index_pack",
       "category": "contract",
-      "owner_area": "contracts/packs",
+      "owner_area": "contracts/pack",
       "required_for": [
         "standard",
         "full",
@@ -3109,7 +3109,7 @@
       "label": "Contribution pack contract validator",
       "command": "python scripts/validate_contribution_pack.py",
       "category": "contract",
-      "owner_area": "contracts/packs",
+      "owner_area": "contracts/pack",
       "required_for": [
         "standard",
         "full",
@@ -3130,7 +3130,7 @@
       "label": "Contribution pack contract tests",
       "command": "python -m unittest tests.operations.test_contribution_pack_contract tests.scripts.test_validate_contribution_pack",
       "category": "contract",
-      "owner_area": "contracts/packs",
+      "owner_area": "contracts/pack",
       "required_for": [
         "standard",
         "full",
@@ -3151,7 +3151,7 @@
       "label": "Master index review queue contract validator",
       "command": "python scripts/validate_master_index_review_queue.py",
       "category": "contract",
-      "owner_area": "contracts/master_index",
+      "owner_area": "contracts/index/master",
       "required_for": [
         "standard",
         "full",
@@ -3172,7 +3172,7 @@
       "label": "Master index review queue contract tests",
       "command": "python -m unittest tests.operations.test_master_index_review_queue_contract tests.scripts.test_validate_master_index_review_queue",
       "category": "contract",
-      "owner_area": "contracts/master_index",
+      "owner_area": "contracts/index/master",
       "required_for": [
         "standard",
         "full",
@@ -3235,7 +3235,7 @@
       "label": "Aggregate pack set validator",
       "command": "python scripts/validate_pack_set.py --all-examples",
       "category": "contract",
-      "owner_area": "contracts/packs",
+      "owner_area": "contracts/pack",
       "required_for": [
         "standard",
         "full",
@@ -3256,7 +3256,7 @@
       "label": "Aggregate pack set validator tests",
       "command": "python -m unittest tests.operations.test_pack_import_validator_aggregator tests.scripts.test_validate_pack_set",
       "category": "contract",
-      "owner_area": "contracts/packs",
+      "owner_area": "contracts/pack",
       "required_for": [
         "standard",
         "full",
@@ -3427,7 +3427,7 @@
       "label": "Pack import report validator",
       "command": "python scripts/validate_pack_import_report.py --all-examples",
       "category": "contract",
-      "owner_area": "contracts/packs",
+      "owner_area": "contracts/pack",
       "required_for": [
         "standard",
         "full",
@@ -3448,7 +3448,7 @@
       "label": "Pack import report format tests",
       "command": "python -m unittest tests.operations.test_pack_import_report_format tests.scripts.test_validate_pack_import_report",
       "category": "contract",
-      "owner_area": "contracts/packs",
+      "owner_area": "contracts/pack",
       "required_for": [
         "standard",
         "full",
@@ -3469,7 +3469,7 @@
       "label": "Validate-only pack import tool",
       "command": "python scripts/validate_only_pack_import.py --all-examples --json",
       "category": "contract",
-      "owner_area": "contracts/packs",
+      "owner_area": "contracts/pack",
       "required_for": [
         "standard",
         "full",
@@ -3490,7 +3490,7 @@
       "label": "Validate-only pack import example listing",
       "command": "python scripts/validate_only_pack_import.py --list-examples",
       "category": "contract",
-      "owner_area": "contracts/packs",
+      "owner_area": "contracts/pack",
       "required_for": [
         "standard",
         "full",
@@ -3511,7 +3511,7 @@
       "label": "Validate-only pack import tool tests",
       "command": "python -m unittest tests.operations.test_validate_only_pack_import_tool tests.scripts.test_validate_only_pack_import",
       "category": "contract",
-      "owner_area": "contracts/packs",
+      "owner_area": "contracts/pack",
       "required_for": [
         "standard",
         "full",
@@ -3616,7 +3616,7 @@
       "label": "Local staging manifest validator",
       "command": "python scripts/validate_local_staging_manifest.py --all-examples",
       "category": "contract",
-      "owner_area": "contracts/packs",
+      "owner_area": "contracts/pack",
       "required_for": [
         "standard",
         "full",
@@ -3637,7 +3637,7 @@
       "label": "Local staging manifest format tests",
       "command": "python -m unittest tests.operations.test_local_staging_manifest_format tests.scripts.test_validate_local_staging_manifest",
       "category": "contract",
-      "owner_area": "contracts/packs",
+      "owner_area": "contracts/pack",
       "required_for": [
         "standard",
         "full",
@@ -3658,7 +3658,7 @@
       "label": "Staged pack inspector example listing",
       "command": "python scripts/inspect_staged_pack.py --list-examples",
       "category": "contract",
-      "owner_area": "contracts/packs",
+      "owner_area": "contracts/pack",
       "required_for": [
         "standard",
         "full",
@@ -3679,7 +3679,7 @@
       "label": "Staged pack inspector",
       "command": "python scripts/inspect_staged_pack.py --all-examples",
       "category": "contract",
-      "owner_area": "contracts/packs",
+      "owner_area": "contracts/pack",
       "required_for": [
         "standard",
         "full",
@@ -3721,7 +3721,7 @@
       "label": "Staged pack inspector tests",
       "command": "python -m unittest tests.operations.test_staged_pack_inspector tests.scripts.test_inspect_staged_pack tests.scripts.test_validate_staged_pack_inspector",
       "category": "contract",
-      "owner_area": "contracts/packs",
+      "owner_area": "contracts/pack",
       "required_for": [
         "standard",
         "full",
@@ -5750,7 +5750,7 @@
       "label": "Source sync worker job examples validator",
       "command": "python scripts/validate_source_sync_worker_job.py --all-examples",
       "category": "source_sync_contract",
-      "owner_area": "contracts/source_sync",
+      "owner_area": "contracts/source/sync",
       "required_for": [
         "standard",
         "full",
@@ -5772,7 +5772,7 @@
       "label": "Source sync worker job examples validator JSON",
       "command": "python scripts/validate_source_sync_worker_job.py --all-examples --json",
       "category": "source_sync_contract",
-      "owner_area": "contracts/source_sync",
+      "owner_area": "contracts/source/sync",
       "required_for": [
         "standard",
         "full",
@@ -5794,7 +5794,7 @@
       "label": "Source sync worker contract validator",
       "command": "python scripts/validate_source_sync_worker_contract.py",
       "category": "source_sync_contract",
-      "owner_area": "contracts/source_sync",
+      "owner_area": "contracts/source/sync",
       "required_for": [
         "standard",
         "full",
@@ -5816,7 +5816,7 @@
       "label": "Source sync worker contract validator JSON",
       "command": "python scripts/validate_source_sync_worker_contract.py --json",
       "category": "source_sync_contract",
-      "owner_area": "contracts/source_sync",
+      "owner_area": "contracts/source/sync",
       "required_for": [
         "standard",
         "full",
@@ -5838,7 +5838,7 @@
       "label": "Source sync worker dry-run JSON helper",
       "command": "python scripts/dry_run_source_sync_worker_job.py --label \"IA metadata sync example\" --kind internet_archive_metadata_sync --source-family internet_archive --json",
       "category": "source_sync_contract",
-      "owner_area": "contracts/source_sync",
+      "owner_area": "contracts/source/sync",
       "required_for": [
         "standard",
         "full",
@@ -5860,7 +5860,7 @@
       "label": "Source sync worker contract tests",
       "command": "python -m unittest tests.operations.test_source_sync_worker_contract tests.scripts.test_validate_source_sync_worker_job tests.scripts.test_validate_source_sync_worker_contract tests.scripts.test_dry_run_source_sync_worker_job",
       "category": "source_sync_contract",
-      "owner_area": "contracts/source_sync",
+      "owner_area": "contracts/source/sync",
       "required_for": [
         "standard",
         "full",
@@ -9031,7 +9031,7 @@
       "label": "P98 source cache local dry-run JSON",
       "command": "python scripts/run_source_cache_dry_run.py --all-examples --json",
       "category": "runtime",
-      "owner_area": "runtime/source_cache",
+      "owner_area": "runtime/source/cache",
       "required_for": [
         "standard",
         "full"
@@ -9051,7 +9051,7 @@
       "label": "P98 source cache dry-run report validator",
       "command": "python scripts/validate_source_cache_dry_run_report.py",
       "category": "runtime",
-      "owner_area": "runtime/source_cache",
+      "owner_area": "runtime/source/cache",
       "required_for": [
         "standard",
         "full"
@@ -9071,7 +9071,7 @@
       "label": "P98 source cache dry-run report validator JSON",
       "command": "python scripts/validate_source_cache_dry_run_report.py --json",
       "category": "runtime",
-      "owner_area": "runtime/source_cache",
+      "owner_area": "runtime/source/cache",
       "required_for": [
         "standard",
         "full"
@@ -9091,7 +9091,7 @@
       "label": "P98 source cache local dry-run runtime tests",
       "command": "python -m unittest tests.runtime.test_source_cache_dry_run tests.scripts.test_run_source_cache_dry_run tests.scripts.test_validate_source_cache_dry_run_report tests.operations.test_source_cache_local_dry_run_runtime",
       "category": "unit",
-      "owner_area": "runtime/source_cache",
+      "owner_area": "runtime/source/cache",
       "required_for": [
         "standard",
         "full"
@@ -9111,7 +9111,7 @@
       "label": "P99 evidence ledger local dry-run JSON",
       "command": "python scripts/run_evidence_ledger_dry_run.py --all-examples --json",
       "category": "runtime",
-      "owner_area": "runtime/evidence_ledger",
+      "owner_area": "runtime/evidence/ledger",
       "required_for": [
         "standard",
         "full"
@@ -9131,7 +9131,7 @@
       "label": "P99 evidence ledger dry-run report validator",
       "command": "python scripts/validate_evidence_ledger_dry_run_report.py",
       "category": "runtime",
-      "owner_area": "runtime/evidence_ledger",
+      "owner_area": "runtime/evidence/ledger",
       "required_for": [
         "standard",
         "full"
@@ -9151,7 +9151,7 @@
       "label": "P99 evidence ledger dry-run report validator JSON",
       "command": "python scripts/validate_evidence_ledger_dry_run_report.py --json",
       "category": "runtime",
-      "owner_area": "runtime/evidence_ledger",
+      "owner_area": "runtime/evidence/ledger",
       "required_for": [
         "standard",
         "full"
@@ -9171,7 +9171,7 @@
       "label": "P99 evidence ledger local dry-run runtime tests",
       "command": "python -m unittest tests.runtime.test_evidence_ledger_dry_run tests.scripts.test_run_evidence_ledger_dry_run tests.scripts.test_validate_evidence_ledger_dry_run_report tests.operations.test_evidence_ledger_local_dry_run_runtime",
       "category": "unit",
-      "owner_area": "runtime/evidence_ledger",
+      "owner_area": "runtime/evidence/ledger",
       "required_for": [
         "standard",
         "full"

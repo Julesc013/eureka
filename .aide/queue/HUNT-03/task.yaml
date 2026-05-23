@@ -6,7 +6,7 @@ allowed_scope_summary: Search Hunt command/state transitions, policy-gated local
 gate:
   - HUNT-02 completed
   - use explicit local instance
-  - use runtime/search_hunt state machine
+  - use runtime/search/hunt state machine
   - no WorkUnit creation
   - no source probes
   - no AI/model/provider calls

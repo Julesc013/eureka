@@ -19,7 +19,7 @@ class PackExportRuntimeScriptsTest(unittest.TestCase):
                 [
                     "scripts/export_local_pack.py",
                     "--input",
-                    "examples/pack_drafts/evidence_pack_draft_v0.json",
+                    "examples/packs/drafts/evidence_pack_draft_v0.json",
                     "--check",
                 ]
             )
@@ -36,7 +36,7 @@ class PackExportRuntimeScriptsTest(unittest.TestCase):
                 [
                     "scripts/export_local_pack.py",
                     "--input",
-                    "examples/pack_drafts/evidence_pack_draft_v0.json",
+                    "examples/packs/drafts/evidence_pack_draft_v0.json",
                     "--output",
                     str(output),
                     "--report-output",
@@ -56,7 +56,7 @@ class PackExportRuntimeScriptsTest(unittest.TestCase):
                 [
                     "scripts/export_local_pack.py",
                     "--input",
-                    "examples/pack_drafts/evidence_pack_draft_v0.json",
+                    "examples/packs/drafts/evidence_pack_draft_v0.json",
                     "--output",
                     output,
                 ]

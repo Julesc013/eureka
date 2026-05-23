@@ -1,6 +1,6 @@
 # Source Observation Seam Summary
 
-R0-04 adds a standard-library-only runtime package at `runtime/source_observation/`.
+R0-04 adds a standard-library-only runtime package at `runtime/source/observation/`.
 
 The seam models:
 

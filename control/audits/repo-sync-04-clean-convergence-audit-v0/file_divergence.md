@@ -6,7 +6,7 @@ Diff summary from `HEAD..origin/main` shows the inverse: remote OBS seed/review 
 
 ## Local-Heavy Areas
 
-- Track B runtime modules under `runtime/local_foundry/`.
+- Track B runtime modules under `runtime/local/foundry/`.
 - Track B scripts under `scripts/`.
 - Track B tests under `tests/runtime/`, `tests/operations/`, and `tests/contracts/`.
 - Track B policies under `control/inventory/`.
@@ -37,7 +37,7 @@ Overlap groups:
 - `control/inventory`: 8
 - `docs/operations`: 4
 - `examples/observation_candidates`: 11
-- `examples/observation_reviews`: 4
+- `examples/review/observation_reviews`: 4
 - `scripts/*`: 8
 - `tests/contracts`: 1
 - `tests/operations`: 4

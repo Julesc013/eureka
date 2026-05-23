@@ -18,9 +18,9 @@ if str(REPO_ROOT) not in sys.path:
 from scripts.validate_source_sync_worker_job import validate_all_examples  # noqa: E402
 
 
-CONTRACT_PATH = REPO_ROOT / "contracts" / "source_sync" / "source_sync_worker_job.v0.json"
-MANIFEST_PATH = REPO_ROOT / "contracts" / "source_sync" / "source_sync_worker_manifest.v0.json"
-KIND_PATH = REPO_ROOT / "contracts" / "source_sync" / "source_sync_job_kind.v0.json"
+CONTRACT_PATH = REPO_ROOT / "contracts" / "source" / "sync" / "source_sync_worker_job.v0.json"
+MANIFEST_PATH = REPO_ROOT / "contracts" / "source" / "sync" / "source_sync_worker_manifest.v0.json"
+KIND_PATH = REPO_ROOT / "contracts" / "source" / "sync" / "source_sync_job_kind.v0.json"
 POLICY_PATH = REPO_ROOT / "control" / "inventory" / "source_sync" / "source_sync_worker_policy.json"
 AUDIT_DIR = REPO_ROOT / "control" / "audits" / "source-sync-worker-contract-v0"
 REPORT_PATH = AUDIT_DIR / "source_sync_worker_contract_report.json"
@@ -205,15 +205,15 @@ def validate_source_sync_worker_contract() -> dict[str, Any]:
     errors: list[str] = []
     warnings: list[str] = []
 
-    contract = _read_json_object(CONTRACT_PATH, errors, "contracts/source_sync/source_sync_worker_job.v0.json")
+    contract = _read_json_object(CONTRACT_PATH, errors, "contracts/source/sync/source_sync_worker_job.v0.json")
     if contract:
         _validate_job_contract(contract, errors)
-    manifest = _read_json_object(MANIFEST_PATH, errors, "contracts/source_sync/source_sync_worker_manifest.v0.json")
+    manifest = _read_json_object(MANIFEST_PATH, errors, "contracts/source/sync/source_sync_worker_manifest.v0.json")
     if manifest:
         _validate_manifest_contract(manifest, errors)
-    kind = _read_json_object(KIND_PATH, errors, "contracts/source_sync/source_sync_job_kind.v0.json")
+    kind = _read_json_object(KIND_PATH, errors, "contracts/source/sync/source_sync_job_kind.v0.json")
     if kind and kind.get("x-status") != "contract_only":
-        errors.append("contracts/source_sync/source_sync_job_kind.v0.json must be contract_only.")
+        errors.append("contracts/source/sync/source_sync_job_kind.v0.json must be contract_only.")
     policy = _read_json_object(POLICY_PATH, errors, "control/inventory/source_sync/source_sync_worker_policy.json")
     if policy:
         _validate_policy(policy, errors)
@@ -238,7 +238,7 @@ def validate_source_sync_worker_contract() -> dict[str, Any]:
     return {
         "status": "valid" if not errors else "invalid",
         "created_by": "source_sync_worker_contract_validator_v0",
-        "contract_file": "contracts/source_sync/source_sync_worker_job.v0.json",
+        "contract_file": "contracts/source/sync/source_sync_worker_job.v0.json",
         "example_count": examples_report.get("example_count", 0),
         "report_id": _report_id(),
         "errors": errors,
@@ -359,8 +359,8 @@ def _scan_governed_text() -> str:
     ])
     paths.extend(sorted(AUDIT_DIR.glob("*.md")))
     paths.extend(sorted(AUDIT_DIR.glob("*.json")))
-    paths.extend(sorted((REPO_ROOT / "examples" / "source_sync").glob("*/*.json")))
-    paths.extend(sorted((REPO_ROOT / "examples" / "source_sync").glob("*/*.md")))
+    paths.extend(sorted((REPO_ROOT / "examples" / "sources" / "sync").glob("*/*.json")))
+    paths.extend(sorted((REPO_ROOT / "examples" / "sources" / "sync").glob("*/*.md")))
     chunks = []
     for path in paths:
         if path.is_file():

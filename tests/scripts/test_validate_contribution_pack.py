@@ -12,7 +12,7 @@ import unittest
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 VALIDATOR = REPO_ROOT / "scripts" / "validate_contribution_pack.py"
-EXAMPLE_PACK = REPO_ROOT / "examples" / "contribution_packs" / "minimal_contribution_pack_v0"
+EXAMPLE_PACK = REPO_ROOT / "examples" / "packs" / "contribution" / "minimal_contribution_pack_v0"
 
 
 class ValidateContributionPackScriptTestCase(unittest.TestCase):

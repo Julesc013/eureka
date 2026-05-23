@@ -1,6 +1,6 @@
 # Source Cache Store
 
-R0-05 adds a durable local SQLite store for source observations produced by `runtime/source_observation/`.
+R0-05 adds a durable local SQLite store for source observations produced by `runtime/source/observation/`.
 
 The source cache records supplied metadata observations. It is not an evidence ledger, review queue, public index, source registry, connector registry, or live acquisition runtime.
 
@@ -32,7 +32,7 @@ Every runtime payload is stored as explicit JSON in `payload_json`, with limitat
 
 ## Migration Model
 
-`runtime/source_cache/migrations.py` defines deterministic migrations with checksums. Initialization is idempotent: repeated init applies no duplicate migration rows and does not delete data.
+`runtime/source/cache/migrations.py` defines deterministic migrations with checksums. Initialization is idempotent: repeated init applies no duplicate migration rows and does not delete data.
 
 ## Runtime Relationship
 

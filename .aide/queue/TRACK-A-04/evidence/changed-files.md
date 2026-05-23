@@ -2,7 +2,7 @@
 
 ## Contract Bundle
 
-- `contracts/views/search_page.v0.json`
+- `contracts/view/pages/search_page.v0.json`
 - `docs/reference/SEARCH_PAGE_VIEW_MODEL_CONTRACT.md`
 - `control/inventory/publication/search_page_view_model_policy.json`
 - `examples/view_models/search_page/minimal_search_page_v0.json`

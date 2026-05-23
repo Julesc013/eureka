@@ -1,0 +1,106 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/schema/control/policies/node/work_unit_result.v0.json",
+  "title": "EurekaWorkUnitResultV0",
+  "description": "Contract-only WorkUnit result envelope for replay-safe, reviewable future WorkUnit outcomes. A result records what happened or what would happen; it is not accepted truth.",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "workunit_result_id",
+    "workunit_result_label",
+    "workunit_id",
+    "workunit_type",
+    "workunit_result_status",
+    "result_scope",
+    "produced_by",
+    "produced_at_note",
+    "source_workunit_ref",
+    "node_manifest_ref",
+    "node_policy_ref",
+    "node_capability_refs",
+    "execution_mode",
+    "execution_summary",
+    "validation_summary",
+    "planned_actions",
+    "executed_actions",
+    "skipped_actions",
+    "blocked_actions",
+    "forbidden_actions_checked",
+    "inputs_observed",
+    "outputs_proposed",
+    "outputs_rejected",
+    "output_contract_refs",
+    "review_gates",
+    "idempotency_result",
+    "recovery_result",
+    "duplicate_result",
+    "out_of_order_result",
+    "noop_result",
+    "quarantine_result",
+    "warnings",
+    "errors",
+    "limitations",
+    "audit_refs",
+    "truth_boundary",
+    "product_boundary",
+    "no_goals",
+    "notes"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "work_unit_result.v0"
+    },
+    "workunit_result_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "workunit_result_status": {
+      "type": "string"
+    },
+    "execution_mode": {
+      "type": "string"
+    },
+    "truth_boundary": {
+      "type": "object",
+      "required": [
+        "result_is_observed_baseline",
+        "result_is_accepted_evidence",
+        "result_is_public_truth",
+        "result_mutates_master_index",
+        "result_claims_rights_clearance",
+        "result_claims_malware_safety",
+        "result_claims_verified_installability",
+        "result_claims_exhaustive_global_search",
+        "result_claims_production_readiness"
+      ],
+      "properties": {
+        "result_is_observed_baseline": {
+          "type": "boolean",
+          "const": false
+        },
+        "result_is_accepted_evidence": {
+          "type": "boolean",
+          "const": false
+        },
+        "result_is_public_truth": {
+          "type": "boolean",
+          "const": false
+        },
+        "result_mutates_master_index": {
+          "type": "boolean",
+          "const": false
+        }
+      }
+    }
+  },
+  "x-contract-status": "contract_only",
+  "x-workunit-result-is-public-truth": false,
+  "x-workunit-runtime-implemented": false,
+  "x-node-runtime-implemented": false,
+  "x-network-access-enabled": false,
+  "x-model-provider-calls-enabled": false,
+  "x-local-state-created": false,
+  "x-master-index-mutation-allowed": false
+}

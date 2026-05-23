@@ -5,7 +5,7 @@
     {
       "failure": "full_discovery: tests.operations.test_local_auto_test_scripts.LocalAutoTestScriptTests.test_validator_passes and tests.runtime.test_local_eval_suites.LocalEvalSuitesTests.test_no_production_leakage_terms_in_runtime_package",
       "root_cause": "The new read-only G0 local-eval helper used generic task vocabulary in explanatory fixture text, which violates the LOCAL runtime vocabulary guard.",
-      "repair": "Renamed the explanatory phrase in runtime/local_eval/g0_quality.py from future reviewed task to future reviewed review phase.",
+      "repair": "Renamed the explanatory phrase in runtime/local/eval/g0_quality.py from future reviewed task to future reviewed review phase.",
       "rerun_command": "python -m unittest tests.operations.test_local_auto_test_scripts tests.runtime.test_local_eval_suites",
       "result": "pass"
     },

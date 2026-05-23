@@ -325,8 +325,8 @@
   ],
   "generated_from": {
     "source_contracts": [
-      "contracts/control_schemas/tasks/master_index/review_queue_entry.v0.json",
-      "contracts/master_index/review_decision.v0.json"
+      "contracts/schema/control/tasks/master_index/review_queue_entry.v0.json",
+      "contracts/index/master/review_decision.v0.json"
     ],
     "policy_inventory": "control/inventory/publication/review_page_view_model_policy.json",
     "route_matrix": "control/inventory/publication/route_view_representation_matrix.json",

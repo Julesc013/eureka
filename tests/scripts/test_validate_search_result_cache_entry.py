@@ -7,7 +7,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[2]
-EXAMPLE = ROOT / "examples" / "query_result_cache" / "minimal_cache_entry_v0" / "SEARCH_RESULT_CACHE_ENTRY.json"
+EXAMPLE = ROOT / "examples" / "search" / "query_result_cache" / "minimal_cache_entry_v0" / "SEARCH_RESULT_CACHE_ENTRY.json"
 
 
 class SearchResultCacheEntryValidatorTests(unittest.TestCase):

@@ -10621,7 +10621,7 @@
       "preserve_target_state": true,
       "reason": "Target-specific or local state is preserved by default.",
       "recovery_hint": "Future uninstall apply requires ownership evidence, review, validation, and recovery instructions.",
-      "target_path": "examples/query_guard/minimal_secret_rejected_v0/CHECKSUMS.SHA256",
+      "target_path": "examples/search/query_guard/minimal_secret_rejected_v0/CHECKSUMS.SHA256",
       "uninstall_class": "preserve_local_state_ignored",
       "validation_required": [
         "py -3 .aide/scripts/aide_lite.py doctor",
@@ -10644,7 +10644,7 @@
       "preserve_target_state": true,
       "reason": "Target-specific or local state is preserved by default.",
       "recovery_hint": "Future uninstall apply requires ownership evidence, review, validation, and recovery instructions.",
-      "target_path": "examples/query_guard/minimal_secret_rejected_v0/QUERY_GUARD_DECISION.json",
+      "target_path": "examples/search/query_guard/minimal_secret_rejected_v0/QUERY_GUARD_DECISION.json",
       "uninstall_class": "preserve_local_state_ignored",
       "validation_required": [
         "py -3 .aide/scripts/aide_lite.py doctor",
@@ -10667,7 +10667,7 @@
       "preserve_target_state": true,
       "reason": "Target-specific or local state is preserved by default.",
       "recovery_hint": "Future uninstall apply requires ownership evidence, review, validation, and recovery instructions.",
-      "target_path": "examples/query_guard/minimal_secret_rejected_v0/README.md",
+      "target_path": "examples/search/query_guard/minimal_secret_rejected_v0/README.md",
       "uninstall_class": "preserve_local_state_ignored",
       "validation_required": [
         "py -3 .aide/scripts/aide_lite.py doctor",
@@ -13439,9 +13439,9 @@
     "control/inventory/hosting/secrets_credential_policy.json",
     "docs/operations/SECRETS_AND_CREDENTIAL_POLICY.md",
     "examples/hosting/security/secrets_policy_example_v0.json",
-    "examples/query_guard/minimal_secret_rejected_v0/CHECKSUMS.SHA256",
-    "examples/query_guard/minimal_secret_rejected_v0/QUERY_GUARD_DECISION.json",
-    "examples/query_guard/minimal_secret_rejected_v0/README.md"
+    "examples/search/query_guard/minimal_secret_rejected_v0/CHECKSUMS.SHA256",
+    "examples/search/query_guard/minimal_secret_rejected_v0/QUERY_GUARD_DECISION.json",
+    "examples/search/query_guard/minimal_secret_rejected_v0/README.md"
   ],
   "schema_version": "aide.uninstall-plan.v0",
   "source_commit": "6f2698c6e109a3b35d20402bb9871c1e4a674688",

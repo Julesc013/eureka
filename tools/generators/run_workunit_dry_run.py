@@ -20,7 +20,7 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.local_foundry.workunit_dry_run import (  # noqa: E402
+from runtime.local.foundry.workunit_dry_run import (  # noqa: E402
     build_workunit_dry_run_result,
     default_policies,
     format_summary_markdown,
@@ -80,7 +80,7 @@ def output_path_allowed(path: Path, *, repo_root: Path = REPO_ROOT) -> bool:
         return False
     if relative.startswith("control/audits/") and "/generated/" in f"/{relative}":
         return True
-    if relative.startswith("examples/workunit_dry_runs/") and relative.endswith("/work_unit_result.json"):
+    if relative.startswith("examples/work_units/dry_runs/") and relative.endswith("/work_unit_result.json"):
         return True
     return False
 

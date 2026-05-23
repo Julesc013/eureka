@@ -15,7 +15,7 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.local_foundry import query_observation as runtime  # noqa: E402
+from runtime.local.foundry import query_observation as runtime  # noqa: E402
 
 
 RUNTIME_POLICY_PATH = "control/inventory/observations/query_observation_runtime_policy.json"
@@ -25,7 +25,7 @@ OUTPUT_POLICY_PATH = "control/inventory/observations/query_observation_output_po
 AUDIT_REPORT_PATH = "control/audits/track-b-07-query-observation-runtime-v0/track_b_07_report.json"
 SAMPLE_REPORT_PATH = "control/audits/track-b-07-query-observation-runtime-v0/generated/sample_query_observation_report.json"
 SAMPLE_SUMMARY_PATH = "control/audits/track-b-07-query-observation-runtime-v0/generated/sample_query_observation_summary.md"
-EXAMPLE_ROOT = "examples/query_observations"
+EXAMPLE_ROOT = "examples/search/query_observations"
 DOC_PATHS = (
     "docs/reference/QUERY_OBSERVATION_RUNTIME.md",
     "docs/architecture/QUERY_OBSERVATION_RUNTIME_MODEL.md",
@@ -91,7 +91,7 @@ def validate_query_observation_runtime(repo_root: Path = REPO_ROOT) -> dict[str,
         AUDIT_REPORT_PATH,
         SAMPLE_REPORT_PATH,
         SAMPLE_SUMMARY_PATH,
-        "runtime/local_foundry/query_observation.py",
+        "runtime/local/foundry/query_observation.py",
         "scripts/record_query_observation.py",
         *DOC_PATHS,
     ]
@@ -265,7 +265,7 @@ def validate_script_check(repo_root: Path) -> list[str]:
             sys.executable,
             "scripts/record_query_observation.py",
             "--input",
-            "examples/query_observations/minimal_query_observation_v0.json",
+            "examples/search/query_observations/minimal_query_observation_v0.json",
             "--check",
             "--json",
         ],
@@ -293,7 +293,7 @@ def validate_forbidden_output_root_rejected(repo_root: Path) -> list[str]:
             sys.executable,
             "scripts/record_query_observation.py",
             "--input",
-            "examples/query_observations/minimal_query_observation_v0.json",
+            "examples/search/query_observations/minimal_query_observation_v0.json",
             "--output",
             str(forbidden),
         ],

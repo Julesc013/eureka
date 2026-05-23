@@ -36,8 +36,8 @@ Not implemented:
 
 ## Approved Input Model
 
-Allowed inputs are `examples/evidence_ledger/dry_run/`, explicit
-`--example-root` paths under `examples/evidence_ledger/`, and temporary
+Allowed inputs are `examples/evidence/ledger/dry_run/dry_run/`, explicit
+`--example-root` paths under `examples/evidence/ledger/dry_run/`, and temporary
 synthetic records in tests.
 
 Forbidden inputs include arbitrary local paths, URLs, live source selectors,
@@ -135,7 +135,7 @@ python scripts/run_evidence_ledger_dry_run.py --all-examples --json
 Optional:
 
 ```bash
-python scripts/run_evidence_ledger_dry_run.py --example-root examples/evidence_ledger/dry_run --strict --json
+python scripts/run_evidence_ledger_dry_run.py --example-root examples/evidence/ledger/dry_run/dry_run --strict --json
 ```
 
 ## Validator Usage

@@ -172,7 +172,7 @@ def validate_taxonomy_policy(policy: Mapping[str, Any], errors: list[str]) -> No
     if missing:
         errors.append(f"taxonomy policy missing classes: {sorted(missing)}")
     target_roots = policy.get("target_roots", {})
-    for required in ("contracts/domain/", "contracts/runtime/", "contracts/api/", "contracts/snapshot/", "contracts/native/", "contracts/stores/", "contracts/connectors/", "contracts/control_schemas/audits/", "contracts/control_schemas/fixtures/", "contracts/control_schemas/previews/", "contracts/control_schemas/policies/", "contracts/control_schemas/validators/", "contracts/control_schemas/tasks/", "contracts/control_schemas/deprecated/"):
+    for required in ("contracts/domain/", "contracts/runtime/", "contracts/api/", "contracts/snapshot/", "contracts/native/", "contracts/stores/", "contracts/connectors/", "contracts/schema/control/audits/", "contracts/schema/control/fixtures/", "contracts/schema/control/previews/", "contracts/schema/control/policies/", "contracts/schema/control/validators/", "contracts/schema/control/tasks/", "contracts/schema/control/deprecated/"):
         if required not in set(target_roots.values()):
             errors.append(f"taxonomy policy target roots missing {required}")
     for required in ("h14", "bundle", "quality_delta", "next_phase", "truth_boundary", "product_boundary"):
@@ -205,7 +205,7 @@ def validate_inventory(inventory: Mapping[str, Any], root: Path, errors: list[st
         errors.append("inventory must contain contracts")
         return
     expected = []
-    for schema_root in ("contracts", "contracts/control_schemas"):
+    for schema_root in ("contracts", "contracts/schema/control"):
         base = root / schema_root
         if base.exists():
             expected.extend(

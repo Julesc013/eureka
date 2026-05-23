@@ -17,9 +17,9 @@ if str(REPO_ROOT) not in sys.path:
 from scripts.validate_candidate_promotion_assessment import validate_all_examples  # noqa: E402
 
 
-CONTRACT_PATH = REPO_ROOT / "contracts" / "control_schemas" / "previews" / "query" / "candidate_promotion_assessment.v0.json"
-DECISION_PATH = REPO_ROOT / "contracts" / "control_schemas" / "previews" / "query" / "candidate_promotion_decision.v0.json"
-POLICY_CONTRACT_PATH = REPO_ROOT / "contracts" / "control_schemas" / "previews" / "query" / "candidate_promotion_policy.v0.json"
+CONTRACT_PATH = REPO_ROOT / "contracts" / "schema" / "control" / "previews" / "query" / "candidate_promotion_assessment.v0.json"
+DECISION_PATH = REPO_ROOT / "contracts" / "schema" / "control" / "previews" / "query" / "candidate_promotion_decision.v0.json"
+POLICY_CONTRACT_PATH = REPO_ROOT / "contracts" / "schema" / "control" / "previews" / "query" / "candidate_promotion_policy.v0.json"
 POLICY_PATH = REPO_ROOT / "control" / "inventory" / "query_intelligence" / "candidate_promotion_policy.json"
 CANDIDATE_INDEX_POLICY_PATH = REPO_ROOT / "control" / "inventory" / "query_intelligence" / "candidate_index_policy.json"
 AUDIT_DIR = REPO_ROOT / "control" / "audits" / "candidate-promotion-policy-v0"
@@ -190,15 +190,15 @@ def validate_candidate_promotion_policy() -> dict[str, Any]:
     errors: list[str] = []
     warnings: list[str] = []
 
-    contract = _read_json_object(CONTRACT_PATH, errors, "contracts/control_schemas/previews/query/candidate_promotion_assessment.v0.json")
+    contract = _read_json_object(CONTRACT_PATH, errors, "contracts/schema/control/previews/query/candidate_promotion_assessment.v0.json")
     if contract:
         _validate_assessment_contract(contract, errors)
 
-    decision = _read_json_object(DECISION_PATH, errors, "contracts/control_schemas/previews/query/candidate_promotion_decision.v0.json")
+    decision = _read_json_object(DECISION_PATH, errors, "contracts/schema/control/previews/query/candidate_promotion_decision.v0.json")
     if decision:
         _validate_auxiliary_contract(decision, "candidate_promotion_decision.v0.json", errors)
 
-    policy_contract = _read_json_object(POLICY_CONTRACT_PATH, errors, "contracts/control_schemas/previews/query/candidate_promotion_policy.v0.json")
+    policy_contract = _read_json_object(POLICY_CONTRACT_PATH, errors, "contracts/schema/control/previews/query/candidate_promotion_policy.v0.json")
     if policy_contract:
         _validate_auxiliary_contract(policy_contract, "candidate_promotion_policy.v0.json", errors)
 
@@ -228,7 +228,7 @@ def validate_candidate_promotion_policy() -> dict[str, Any]:
     return {
         "status": "valid" if not errors else "invalid",
         "created_by": "candidate_promotion_policy_validator_v0",
-        "contract_file": "contracts/control_schemas/previews/query/candidate_promotion_assessment.v0.json",
+        "contract_file": "contracts/schema/control/previews/query/candidate_promotion_assessment.v0.json",
         "example_count": examples_report.get("example_count", 0),
         "report_id": _report_id(),
         "errors": errors,
@@ -344,8 +344,8 @@ def _validate_audit_pack(errors: list[str], warnings: list[str]) -> None:
         return
     if report.get("report_id") != "candidate_promotion_policy_v0":
         errors.append("report_id must be candidate_promotion_policy_v0.")
-    if report.get("contract_file") != "contracts/control_schemas/previews/query/candidate_promotion_assessment.v0.json":
-        errors.append("report contract_file must point to contracts/control_schemas/previews/query/candidate_promotion_assessment.v0.json.")
+    if report.get("contract_file") != "contracts/schema/control/previews/query/candidate_promotion_assessment.v0.json":
+        errors.append("report contract_file must point to contracts/schema/control/previews/query/candidate_promotion_assessment.v0.json.")
 
     hard = report.get("no_auto_promotion_no_mutation_guarantees")
     if not isinstance(hard, Mapping):

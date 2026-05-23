@@ -2,13 +2,13 @@
   "schema_version": "ranking_path_policy.v0",
   "policy_id": "ranking_path_policy.g_bundle_02.v0",
   "allowed_input_roots": [
-    "examples/search_quality",
+    "examples/search/quality",
     "control/audits/g-bundle-02-ranking-shadow-quality-harness-v0/generated",
     "explicit temp test directory"
   ],
   "allowed_output_roots": [
     "control/audits/**/generated",
-    "examples/search_quality",
+    "examples/search/quality",
     "explicit temp test directory"
   ],
   "forbidden_output_roots": [

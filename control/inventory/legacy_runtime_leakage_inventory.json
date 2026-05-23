@@ -2,7 +2,7 @@
   "findings": [
     {
       "classification": "defer_with_expiry",
-      "path": "contracts/actions/acquisition_manifest.v0.json",
+      "path": "contracts/command/actions/acquisition_manifest.v0.json",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -10,7 +10,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "contracts/actions/acquisition_manifest.v0.json",
+      "path": "contracts/command/actions/acquisition_manifest.v0.json",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -18,7 +18,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "contracts/actions/action_manifest.v0.json",
+      "path": "contracts/command/actions/action_manifest.v0.json",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -26,7 +26,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "contracts/actions/action_manifest.v0.json",
+      "path": "contracts/command/actions/action_manifest.v0.json",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -34,7 +34,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "contracts/actions/action_policy.v0.json",
+      "path": "contracts/command/actions/action_policy.v0.json",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -42,7 +42,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "contracts/actions/action_policy.v0.json",
+      "path": "contracts/command/actions/action_policy.v0.json",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -50,7 +50,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "contracts/actions/compare_action_manifest.v0.json",
+      "path": "contracts/command/actions/compare_action_manifest.v0.json",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -58,7 +58,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "contracts/actions/compare_action_manifest.v0.json",
+      "path": "contracts/command/actions/compare_action_manifest.v0.json",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -66,7 +66,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "contracts/actions/export_manifest.v0.json",
+      "path": "contracts/command/actions/export_manifest.v0.json",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -74,7 +74,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "contracts/actions/export_manifest.v0.json",
+      "path": "contracts/command/actions/export_manifest.v0.json",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -82,7 +82,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "contracts/actions/preservation_manifest.v0.json",
+      "path": "contracts/command/actions/preservation_manifest.v0.json",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -90,7 +90,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "contracts/actions/preservation_manifest.v0.json",
+      "path": "contracts/command/actions/preservation_manifest.v0.json",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -722,7 +722,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "contracts/master_index/reviewed_public_index_rebuild.v0.json",
+      "path": "contracts/index/master/reviewed_public_index_rebuild.v0.json",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -730,7 +730,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "contracts/master_index/reviewed_public_index_rebuild.v0.json",
+      "path": "contracts/index/master/reviewed_public_index_rebuild.v0.json",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -738,7 +738,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "contracts/master_index/reviewed_public_record_proposal.v0.json",
+      "path": "contracts/index/master/reviewed_public_record_proposal.v0.json",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -746,7 +746,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "contracts/master_index/reviewed_public_record_proposal.v0.json",
+      "path": "contracts/index/master/reviewed_public_record_proposal.v0.json",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -962,7 +962,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "contracts/packs/local_staging_manifest.v0.json",
+      "path": "contracts/pack/local_staging_manifest.v0.json",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -970,7 +970,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "contracts/packs/pack_signature_envelope.v0.json",
+      "path": "contracts/pack/pack_signature_envelope.v0.json",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -978,7 +978,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "contracts/packs/pack_signature_envelope.v0.json",
+      "path": "contracts/pack/pack_signature_envelope.v0.json",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -986,7 +986,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "contracts/packs/README.md",
+      "path": "contracts/pack/README.md",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -994,7 +994,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "contracts/packs/source_pack_manifest.v0.json",
+      "path": "contracts/pack/source_pack_manifest.v0.json",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -1002,7 +1002,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "contracts/packs/source_pack_manifest.v0.json",
+      "path": "contracts/pack/source_pack_manifest.v0.json",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -1010,7 +1010,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "contracts/packs/source_pack_manifest.v0.json",
+      "path": "contracts/pack/source_pack_manifest.v0.json",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -1018,7 +1018,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "contracts/packs/source_pack_manifest.v0.json",
+      "path": "contracts/pack/source_pack_manifest.v0.json",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -1026,7 +1026,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "contracts/pages/source_page.v0.json",
+      "path": "contracts/surface/pages/source_page.v0.json",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -1034,7 +1034,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "contracts/pages/source_page.v0.json",
+      "path": "contracts/surface/pages/source_page.v0.json",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -1418,7 +1418,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "contracts/representations/capability_negotiation.v0.json",
+      "path": "contracts/representation/capability_negotiation.v0.json",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -1426,7 +1426,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "contracts/representations/renderer_parity_harness.v0.json",
+      "path": "contracts/representation/renderer_parity_harness.v0.json",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -1562,7 +1562,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "contracts/source_registry/source_record.schema.yaml",
+      "path": "contracts/source/registry/source_record.schema.yaml",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -1570,7 +1570,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "contracts/source_sync/source_sync_worker_job.v0.json",
+      "path": "contracts/source/sync/source_sync_worker_job.v0.json",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -1578,7 +1578,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "contracts/source_sync/source_sync_worker_job.v0.json",
+      "path": "contracts/source/sync/source_sync_worker_job.v0.json",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -1586,7 +1586,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "contracts/source_sync/source_sync_worker_manifest.v0.json",
+      "path": "contracts/source/sync/source_sync_worker_manifest.v0.json",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -1594,7 +1594,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "contracts/source_sync/source_sync_worker_manifest.v0.json",
+      "path": "contracts/source/sync/source_sync_worker_manifest.v0.json",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -1602,7 +1602,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "contracts/sources/source_coverage_ledger.v0.json",
+      "path": "contracts/source/records/source_coverage_ledger.v0.json",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -1610,7 +1610,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "contracts/sources/source_coverage_ledger.v0.json",
+      "path": "contracts/source/records/source_coverage_ledger.v0.json",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -1618,7 +1618,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "contracts/sources/source_coverage_ledger.v0.json",
+      "path": "contracts/source/records/source_coverage_ledger.v0.json",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -1626,7 +1626,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "contracts/sources/source_coverage_manifest.v0.json",
+      "path": "contracts/source/records/source_coverage_manifest.v0.json",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -1634,7 +1634,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "contracts/sources/source_coverage_manifest.v0.json",
+      "path": "contracts/source/records/source_coverage_manifest.v0.json",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -1642,7 +1642,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "contracts/sources/source_coverage_manifest.v0.json",
+      "path": "contracts/source/records/source_coverage_manifest.v0.json",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -1650,7 +1650,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "contracts/sources/source_operation_policy.v0.json",
+      "path": "contracts/source/records/source_operation_policy.v0.json",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -1658,7 +1658,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "contracts/sources/source_operation_policy.v0.json",
+      "path": "contracts/source/records/source_operation_policy.v0.json",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -1666,7 +1666,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "contracts/sources/source_policy.v0.json",
+      "path": "contracts/source/records/source_policy.v0.json",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -1674,7 +1674,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "contracts/sources/source_policy.v0.json",
+      "path": "contracts/source/records/source_policy.v0.json",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -1682,7 +1682,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "contracts/sources/source_record.v2.json",
+      "path": "contracts/source/records/source_record.v2.json",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -1690,7 +1690,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "contracts/sources/source_record.v2.json",
+      "path": "contracts/source/records/source_record.v2.json",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -1698,7 +1698,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "contracts/sources/source_registry.v2.json",
+      "path": "contracts/source/records/source_registry.v2.json",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -1706,7 +1706,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "contracts/sources/source_registry.v2.json",
+      "path": "contracts/source/records/source_registry.v2.json",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -1714,7 +1714,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "contracts/sources/source_registry.v2.json",
+      "path": "contracts/source/records/source_registry.v2.json",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -1722,7 +1722,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "contracts/ui/design_tokens.v0.json",
+      "path": "contracts/surface/ui/design_tokens.v0.json",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -1730,7 +1730,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "contracts/ui/ui_contracts/bundle_inspection.ui_contract.yaml",
+      "path": "contracts/surface/ui/contracts/bundle_inspection.ui_contract.yaml",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -1738,7 +1738,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "contracts/ui/ui_contracts/resolution_actions.ui_contract.yaml",
+      "path": "contracts/surface/ui/contracts/resolution_actions.ui_contract.yaml",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -1746,7 +1746,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "contracts/ui/ui_contracts/resolution_workspace.ui_contract.yaml",
+      "path": "contracts/surface/ui/contracts/resolution_workspace.ui_contract.yaml",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -1754,7 +1754,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "contracts/ui/ui_contracts/stored_exports.ui_contract.yaml",
+      "path": "contracts/surface/ui/contracts/stored_exports.ui_contract.yaml",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -1762,7 +1762,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "contracts/ui/view_models/bundle_inspection.view_model.yaml",
+      "path": "contracts/view/models/ui/bundle_inspection.view_model.yaml",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -1770,7 +1770,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "contracts/ui/view_models/stored_exports.view_model.yaml",
+      "path": "contracts/view/models/ui/stored_exports.view_model.yaml",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -1778,7 +1778,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "contracts/views/view_model_policy_index.v0.json",
+      "path": "contracts/view/pages/view_model_policy_index.v0.json",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -3954,7 +3954,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/local_foundry/candidate_promotion_dry_run.py",
+      "path": "runtime/local/foundry/candidate_promotion_dry_run.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -3962,7 +3962,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/local_foundry/candidate_promotion_dry_run.py",
+      "path": "runtime/local/foundry/candidate_promotion_dry_run.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -3970,7 +3970,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/local_foundry/candidate_promotion_dry_run.py",
+      "path": "runtime/local/foundry/candidate_promotion_dry_run.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -3978,7 +3978,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/local_foundry/candidate_store.py",
+      "path": "runtime/local/foundry/candidate_store.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -3986,7 +3986,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/local_foundry/candidate_store.py",
+      "path": "runtime/local/foundry/candidate_store.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -3994,7 +3994,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/local_foundry/candidate_store.py",
+      "path": "runtime/local/foundry/candidate_store.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -4002,7 +4002,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/local_foundry/contribution_review.py",
+      "path": "runtime/local/foundry/contribution_review.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -4010,7 +4010,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/local_foundry/contribution_review.py",
+      "path": "runtime/local/foundry/contribution_review.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -4018,7 +4018,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/local_foundry/contribution_review.py",
+      "path": "runtime/local/foundry/contribution_review.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -4026,7 +4026,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/local_foundry/contribution_review.py",
+      "path": "runtime/local/foundry/contribution_review.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -4034,7 +4034,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/local_foundry/contribution_review.py",
+      "path": "runtime/local/foundry/contribution_review.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -4042,7 +4042,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/local_foundry/evidence_ledger.py",
+      "path": "runtime/local/foundry/evidence_ledger.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -4050,7 +4050,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/local_foundry/evidence_ledger.py",
+      "path": "runtime/local/foundry/evidence_ledger.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -4058,7 +4058,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/local_foundry/evidence_ledger.py",
+      "path": "runtime/local/foundry/evidence_ledger.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -4066,7 +4066,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/local_foundry/evidence_ledger.py",
+      "path": "runtime/local/foundry/evidence_ledger.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -4074,7 +4074,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/local_foundry/node_policy_evaluator.py",
+      "path": "runtime/local/foundry/node_policy_evaluator.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -4082,7 +4082,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/local_foundry/node_policy_evaluator.py",
+      "path": "runtime/local/foundry/node_policy_evaluator.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -4090,7 +4090,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/local_foundry/pack_builder.py",
+      "path": "runtime/local/foundry/pack_builder.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -4098,7 +4098,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/local_foundry/pack_builder.py",
+      "path": "runtime/local/foundry/pack_builder.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -4106,7 +4106,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/local_foundry/pack_builder.py",
+      "path": "runtime/local/foundry/pack_builder.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -4114,7 +4114,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/local_foundry/pack_builder.py",
+      "path": "runtime/local/foundry/pack_builder.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -4122,7 +4122,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/local_foundry/pack_export.py",
+      "path": "runtime/local/foundry/pack_export.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -4130,7 +4130,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/local_foundry/pack_export.py",
+      "path": "runtime/local/foundry/pack_export.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -4138,7 +4138,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/local_foundry/pack_export.py",
+      "path": "runtime/local/foundry/pack_export.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -4146,7 +4146,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/local_foundry/pack_export.py",
+      "path": "runtime/local/foundry/pack_export.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -4154,7 +4154,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/local_foundry/pack_fixity.py",
+      "path": "runtime/local/foundry/pack_fixity.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -4162,7 +4162,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/local_foundry/pack_fixity.py",
+      "path": "runtime/local/foundry/pack_fixity.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -4170,7 +4170,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/local_foundry/pack_fixity.py",
+      "path": "runtime/local/foundry/pack_fixity.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -4178,7 +4178,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/local_foundry/pack_import_preview.py",
+      "path": "runtime/local/foundry/pack_import_preview.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -4186,7 +4186,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/local_foundry/pack_import_preview.py",
+      "path": "runtime/local/foundry/pack_import_preview.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -4194,7 +4194,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/local_foundry/pack_import_preview.py",
+      "path": "runtime/local/foundry/pack_import_preview.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -4202,7 +4202,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/local_foundry/pack_quarantine.py",
+      "path": "runtime/local/foundry/pack_quarantine.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -4210,7 +4210,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/local_foundry/pack_quarantine.py",
+      "path": "runtime/local/foundry/pack_quarantine.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -4218,7 +4218,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/local_foundry/pack_quarantine.py",
+      "path": "runtime/local/foundry/pack_quarantine.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -4226,7 +4226,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/local_foundry/pack_quarantine.py",
+      "path": "runtime/local/foundry/pack_quarantine.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -4234,7 +4234,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/local_foundry/pack_quarantine.py",
+      "path": "runtime/local/foundry/pack_quarantine.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -4242,7 +4242,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/local_foundry/pack_signature.py",
+      "path": "runtime/local/foundry/pack_signature.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -4250,7 +4250,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/local_foundry/pack_signature.py",
+      "path": "runtime/local/foundry/pack_signature.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -4258,7 +4258,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/local_foundry/pack_signature.py",
+      "path": "runtime/local/foundry/pack_signature.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -4266,7 +4266,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/local_foundry/query_observation.py",
+      "path": "runtime/local/foundry/query_observation.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -4274,7 +4274,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/local_foundry/query_observation.py",
+      "path": "runtime/local/foundry/query_observation.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -4282,7 +4282,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/local_foundry/query_observation.py",
+      "path": "runtime/local/foundry/query_observation.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -4290,7 +4290,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/local_foundry/review_queue.py",
+      "path": "runtime/local/foundry/review_queue.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -4298,7 +4298,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/local_foundry/review_queue.py",
+      "path": "runtime/local/foundry/review_queue.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -4306,7 +4306,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/local_foundry/review_queue.py",
+      "path": "runtime/local/foundry/review_queue.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -4314,7 +4314,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/local_foundry/search_miss_ledger.py",
+      "path": "runtime/local/foundry/search_miss_ledger.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -4322,7 +4322,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/local_foundry/search_miss_ledger.py",
+      "path": "runtime/local/foundry/search_miss_ledger.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -4330,7 +4330,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/local_foundry/search_miss_ledger.py",
+      "path": "runtime/local/foundry/search_miss_ledger.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -4338,7 +4338,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/local_foundry/search_need.py",
+      "path": "runtime/local/foundry/search_need.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -4346,7 +4346,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/local_foundry/search_need.py",
+      "path": "runtime/local/foundry/search_need.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -4354,7 +4354,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/local_foundry/search_need.py",
+      "path": "runtime/local/foundry/search_need.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -4362,7 +4362,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/local_foundry/search_need.py",
+      "path": "runtime/local/foundry/search_need.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -4370,7 +4370,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/local_foundry/search_need.py",
+      "path": "runtime/local/foundry/search_need.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -4378,7 +4378,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/local_foundry/source_cache.py",
+      "path": "runtime/local/foundry/source_cache.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -4386,7 +4386,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/local_foundry/source_cache.py",
+      "path": "runtime/local/foundry/source_cache.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -4394,7 +4394,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/local_foundry/source_cache.py",
+      "path": "runtime/local/foundry/source_cache.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -4402,7 +4402,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/local_foundry/source_cache.py",
+      "path": "runtime/local/foundry/source_cache.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -4410,7 +4410,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/local_foundry/source_cache_to_evidence.py",
+      "path": "runtime/local/foundry/source_cache_to_evidence.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -4418,7 +4418,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/local_foundry/source_cache_to_evidence.py",
+      "path": "runtime/local/foundry/source_cache_to_evidence.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -4426,7 +4426,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/local_foundry/source_cache_to_evidence.py",
+      "path": "runtime/local/foundry/source_cache_to_evidence.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -4434,7 +4434,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/local_foundry/source_cache_to_evidence.py",
+      "path": "runtime/local/foundry/source_cache_to_evidence.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -4442,7 +4442,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/local_foundry/workunit_dry_run.py",
+      "path": "runtime/local/foundry/workunit_dry_run.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -4450,7 +4450,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/local_foundry/workunit_dry_run.py",
+      "path": "runtime/local/foundry/workunit_dry_run.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -4458,7 +4458,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/local_foundry/workunit_dry_run.py",
+      "path": "runtime/local/foundry/workunit_dry_run.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -4466,7 +4466,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/local_foundry/workunit_dry_run.py",
+      "path": "runtime/local/foundry/workunit_dry_run.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -4618,7 +4618,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/search_quality/__init__.py",
+      "path": "runtime/search/quality/__init__.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -4626,7 +4626,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/search_quality/__init__.py",
+      "path": "runtime/search/quality/__init__.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -4634,7 +4634,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/search_quality/dedup_shadow.py",
+      "path": "runtime/search/quality/dedup_shadow.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -4642,7 +4642,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/search_quality/dedup_shadow.py",
+      "path": "runtime/search/quality/dedup_shadow.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -4650,7 +4650,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/search_quality/explanation.py",
+      "path": "runtime/search/quality/explanation.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -4658,7 +4658,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/search_quality/explanation.py",
+      "path": "runtime/search/quality/explanation.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -4666,7 +4666,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/search_quality/explanation.py",
+      "path": "runtime/search/quality/explanation.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -4674,7 +4674,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/search_quality/explanation_summary.py",
+      "path": "runtime/search/quality/explanation_summary.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -4682,7 +4682,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/search_quality/explanation_summary.py",
+      "path": "runtime/search/quality/explanation_summary.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -4690,7 +4690,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/search_quality/explanation_summary.py",
+      "path": "runtime/search/quality/explanation_summary.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -4698,7 +4698,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/search_quality/explanation_summary.py",
+      "path": "runtime/search/quality/explanation_summary.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -4706,7 +4706,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/search_quality/explanation_summary.py",
+      "path": "runtime/search/quality/explanation_summary.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -4714,7 +4714,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/search_quality/gap_explanation.py",
+      "path": "runtime/search/quality/gap_explanation.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -4722,7 +4722,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/search_quality/gap_explanation.py",
+      "path": "runtime/search/quality/gap_explanation.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -4730,7 +4730,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/search_quality/identity_shadow.py",
+      "path": "runtime/search/quality/identity_shadow.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -4738,7 +4738,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/search_quality/identity_shadow.py",
+      "path": "runtime/search/quality/identity_shadow.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -4746,7 +4746,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/search_quality/known_absence.py",
+      "path": "runtime/search/quality/known_absence.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -4754,7 +4754,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/search_quality/known_absence.py",
+      "path": "runtime/search/quality/known_absence.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -4762,7 +4762,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/search_quality/known_absence.py",
+      "path": "runtime/search/quality/known_absence.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -4770,7 +4770,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/search_quality/near_miss.py",
+      "path": "runtime/search/quality/near_miss.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -4778,7 +4778,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/search_quality/near_miss.py",
+      "path": "runtime/search/quality/near_miss.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -4786,7 +4786,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/search_quality/near_miss.py",
+      "path": "runtime/search/quality/near_miss.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -4794,7 +4794,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/search_quality/public_ranking_gate.py",
+      "path": "runtime/search/quality/public_ranking_gate.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -4802,7 +4802,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/search_quality/public_ranking_gate.py",
+      "path": "runtime/search/quality/public_ranking_gate.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -4810,7 +4810,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/search_quality/public_ranking_gate.py",
+      "path": "runtime/search/quality/public_ranking_gate.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -4818,7 +4818,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/search_quality/public_ranking_gate.py",
+      "path": "runtime/search/quality/public_ranking_gate.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -4826,7 +4826,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/search_quality/quality_harness.py",
+      "path": "runtime/search/quality/quality_harness.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -4834,7 +4834,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/search_quality/quality_harness.py",
+      "path": "runtime/search/quality/quality_harness.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -4842,7 +4842,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/search_quality/ranking_shadow.py",
+      "path": "runtime/search/quality/ranking_shadow.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -4850,7 +4850,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/search_quality/ranking_shadow.py",
+      "path": "runtime/search/quality/ranking_shadow.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -4858,7 +4858,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/search_quality/ranking_shadow.py",
+      "path": "runtime/search/quality/ranking_shadow.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -5130,7 +5130,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/source_registry/README.md",
+      "path": "runtime/source/registry/README.md",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -5138,7 +5138,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/source_registry/tests/test_registry.py",
+      "path": "runtime/source/registry/tests/test_registry.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -5146,7 +5146,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/source_registry/tests/test_registry.py",
+      "path": "runtime/source/registry/tests/test_registry.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -5154,7 +5154,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/source_registry/tests/test_source_capability_coverage.py",
+      "path": "runtime/source/registry/tests/test_source_capability_coverage.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,
@@ -5162,7 +5162,7 @@
     },
     {
       "classification": "defer_with_expiry",
-      "path": "runtime/source_registry/tests/test_source_capability_coverage.py",
+      "path": "runtime/source/registry/tests/test_source_capability_coverage.py",
       "reason": "Remaining debt is outside the low-risk runtime quarantine and must stay explicit with expiry.",
       "recommended_action": "defer",
       "safe_to_fix_now": false,

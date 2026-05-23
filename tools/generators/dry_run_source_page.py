@@ -133,7 +133,7 @@ def build_page(source_id: str, source_family: str) -> dict:
             "limitations": ["No policy documents were fetched."],
         },
         "source_cache_projection": {
-            "source_cache_contract_ref": "contracts/source_cache/source_cache_record.v0.json",
+            "source_cache_contract_ref": "contracts/source/cache/source_cache_record.v0.json",
             "source_cache_status": "contract_only",
             "source_cache_record_refs": [],
             "source_cache_record_count_policy": "none",
@@ -142,7 +142,7 @@ def build_page(source_id: str, source_family: str) -> dict:
             "limitations": ["No source cache read or write."],
         },
         "evidence_ledger_projection": {
-            "evidence_ledger_contract_ref": "contracts/evidence_ledger/evidence_ledger_record.v0.json",
+            "evidence_ledger_contract_ref": "contracts/evidence/ledger/evidence_ledger_record.v0.json",
             "evidence_ledger_status": "contract_only",
             "evidence_ledger_record_refs": [],
             "evidence_count_policy": "none",

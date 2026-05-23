@@ -21,7 +21,7 @@
     "control/audits/**",
     "control/inventory/**",
     "control/policies/**",
-    "contracts/control_schemas/**",
+    "contracts/schema/control/**",
     "docs/operations/**",
     "examples/**",
     "site/dist/data/public_index/**",
@@ -125,7 +125,7 @@
       "reason": "Policy files define and document forbidden vocabulary."
     },
     {
-      "path": "contracts/control_schemas/**",
+      "path": "contracts/schema/control/**",
       "terms": ["*"],
       "reason": "Migrated control-schema authority may retain governance, audit, fixture, preview, task, and validator vocabulary."
     },

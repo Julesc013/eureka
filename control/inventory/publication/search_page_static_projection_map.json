@@ -4,7 +4,7 @@
   "label": "SearchPage static projection map",
   "description": "Read-only Track A audit map from existing static SearchPage-related publication artifacts to the canonical SearchPageView contract. This map records current alignment and gaps only; it does not regenerate or refactor site/dist.",
   "source_view_family": "SearchPageView",
-  "source_view_schema": "contracts/views/search_page.v0.json",
+  "source_view_schema": "contracts/view/pages/search_page.v0.json",
   "route_family": "search",
   "current_artifacts": [
     "site/dist/search.html",

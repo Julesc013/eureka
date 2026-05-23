@@ -55,7 +55,7 @@ def minimal_policy() -> dict:
             "control/audits/**",
             "control/inventory/**",
             "control/policies/**",
-            "contracts/control_schemas/**",
+            "contracts/schema/control/**",
             "docs/operations/**",
             "examples/**",
             "site/dist/data/public_index/**",

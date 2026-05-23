@@ -23,10 +23,10 @@ from runtime.agent_research import (
     validate_agent_research_task,
     validate_candidate_only_report,
 )
-from runtime.local_appliance import close_local_appliance, open_local_appliance
-from runtime.local_operator import write_operator_token_record
-from runtime.local_service import LocalServiceApp
-from runtime.search_hunt import build_hunt_exhaustion_report
+from runtime.local.appliance import close_local_appliance, open_local_appliance
+from runtime.local.operator import write_operator_token_record
+from runtime.local.service import LocalServiceApp
+from runtime.search.hunt import build_hunt_exhaustion_report
 
 
 TASK_ID = "HUNT-09"
@@ -58,10 +58,10 @@ RUNTIME_FILES = (
     "runtime/agent_research/report_schema.py",
     "runtime/agent_research/validation.py",
     "runtime/agent_research/errors.py",
-    "runtime/local_appliance/manifest.py",
-    "runtime/local_appliance/composition.py",
-    "runtime/local_appliance/status.py",
-    "runtime/local_service/routes.py",
+    "runtime/local/appliance/manifest.py",
+    "runtime/local/appliance/composition.py",
+    "runtime/local/appliance/status.py",
+    "runtime/local/service/routes.py",
     "surfaces/web/workbench/local_html/pages.py",
     "surfaces/web/workbench/local_html/view_models.py",
 )

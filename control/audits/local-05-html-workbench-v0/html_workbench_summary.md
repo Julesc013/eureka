@@ -10,4 +10,4 @@ Pages:
 - local absence
 - status
 
-The workbench uses presentation-safe view models and renders through `runtime/local_service`; it does not open store paths directly.
+The workbench uses presentation-safe view models and renders through `runtime/local/service`; it does not open store paths directly.

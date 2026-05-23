@@ -9,7 +9,7 @@ Readiness status: `READY_FOR_Q57_WITH_WARNINGS`
 - Are tool inventories available? Yes: `.aide/tools/latest-*` and `.aide/tools/eureka-tool-*`.
 - Are architecture checks preserved? Yes.
 - Are source/evidence/index validators preserved? Yes.
-- Which source/evidence/index systems should Q57 inspect first? `runtime/source_observation/**`, `runtime/source_cache/**`, `runtime/evidence_ledger/**`, `runtime/public_index/**`, `contracts/source_cache/**`, `contracts/evidence_ledger/**`, `contracts/stores/*source_cache*`, `contracts/stores/*evidence_ledger*`, `contracts/stores/*public_index*`, and the matching `scripts/validate_*` validators.
+- Which source/evidence/index systems should Q57 inspect first? `runtime/source/observation/**`, `runtime/source/cache/**`, `runtime/evidence/ledger/**`, `runtime/index/public/**`, `contracts/source/cache/**`, `contracts/evidence/ledger/**`, `contracts/stores/*source_cache*`, `contracts/stores/*evidence_ledger*`, `contracts/stores/*public_index*`, and the matching `scripts/validate_*` validators.
 - What must Q57 not do? No live probes, provider/model calls, source-cache writes, evidence-ledger writes, public-index writes, registry mutation, source sync, product refactor, branch mutation, or unknown tool execution.
 
 ## Warnings

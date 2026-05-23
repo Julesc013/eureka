@@ -221,7 +221,7 @@ def _safe_output_path(path: Path) -> Path:
                 raise ValueError(f"refusing forbidden output root: {forbidden}")
         if rel_lower.startswith("control/audits/") and "/generated/" in rel_lower:
             return resolved
-        if rel_lower.startswith("examples/source_packs/") or rel_lower.startswith("examples/connectors/h4_code_source_release/"):
+        if rel_lower.startswith("examples/packs/source/") or rel_lower.startswith("examples/connectors/h4_code_source_release/"):
             return resolved
         raise ValueError(f"refusing output outside approved H4 roots: {rel}")
     except ValueError as exc:

@@ -1,6 +1,6 @@
 # Query Observation Runtime
 
-`runtime/local_foundry/query_observation.py` implements the first bounded
+`runtime/local/foundry/query_observation.py` implements the first bounded
 Track B Query Observation runtime.
 
 ## What It Is
@@ -46,5 +46,5 @@ Run:
 
 ```powershell
 python scripts/validate_query_observation_runtime.py
-python scripts/record_query_observation.py --input examples/query_observations/minimal_query_observation_v0.json --check
+python scripts/record_query_observation.py --input examples/search/query_observations/minimal_query_observation_v0.json --check
 ```

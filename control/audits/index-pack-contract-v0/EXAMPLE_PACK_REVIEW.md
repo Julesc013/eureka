@@ -2,7 +2,7 @@
 
 Example path:
 
-`examples/index_packs/minimal_index_pack_v0/`
+`examples/packs/index/minimal_index_pack_v0/`
 
 The example pack is synthetic and self-authored. It includes:
 

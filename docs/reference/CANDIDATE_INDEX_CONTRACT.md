@@ -17,7 +17,7 @@ mutation.
 
 ## Record Shape
 
-`contracts/control_schemas/previews/query/candidate_index_record.v0.json` requires:
+`contracts/schema/control/previews/query/candidate_index_record.v0.json` requires:
 
 - `candidate_identity`: non-reversible `sha256` fingerprint, canonical public
   label, normalized terms, aliases, and optional future duplicate links.

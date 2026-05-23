@@ -10,7 +10,7 @@ from typing import Any, Mapping, Sequence, TextIO
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
-CONTRACT_PATH = REPO_ROOT / "contracts" / "packs" / "local_staging_manifest.v0.json"
+CONTRACT_PATH = REPO_ROOT / "contracts" / "pack" / "local_staging_manifest.v0.json"
 EXAMPLES_ROOT = REPO_ROOT / "examples" / "local_staging_manifests"
 DEFAULT_EXAMPLE_ROOTS = [
     EXAMPLES_ROOT / "minimal_local_staging_manifest_v0",

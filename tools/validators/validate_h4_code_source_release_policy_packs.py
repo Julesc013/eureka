@@ -90,8 +90,8 @@ INVENTORY_FILES = (
     "control/inventory/source_packs/h4_code_source_release_no_clone_download_policy.json",
 )
 SOURCE_PACK_EXAMPLES = (
-    "examples/source_packs/h4_code_source_release_source_pack_manifest_v0.json",
-    "examples/source_packs/h4_code_source_release_policy_pack_v0.json",
+    "examples/packs/source/h4_code_source_release_source_pack_manifest_v0.json",
+    "examples/packs/source/h4_code_source_release_policy_pack_v0.json",
 )
 EXTRA_EXAMPLES = (
     "examples/sources/source_records/code_source_release_policy_blocked_source_v2.json",

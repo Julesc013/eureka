@@ -42,7 +42,7 @@ def make_plan(root: Path) -> Path:
         "moves": [
             {
                 "source_path": "contracts/audits/example_audit_report.v0.json",
-                "target_path": "contracts/control_schemas/audits/audits/example_audit_report.v0.json",
+                "target_path": "contracts/schema/control/audits/audits/example_audit_report.v0.json",
                 "action": "move",
                 "contract_class_before": "audit_schema",
                 "contract_class_after": "audit_schema",
@@ -54,7 +54,7 @@ def make_plan(root: Path) -> Path:
             },
             {
                 "source_path": "contracts/connectors/h1_metadata_fixture_replay_result.v0.json",
-                "target_path": "contracts/control_schemas/fixtures/h1/connectors/metadata_fixture_replay_result.v0.json",
+                "target_path": "contracts/schema/control/fixtures/h1/connectors/metadata_fixture_replay_result.v0.json",
                 "action": "move_and_rename",
                 "contract_class_before": "fixture_schema",
                 "contract_class_after": "fixture_schema",
@@ -66,7 +66,7 @@ def make_plan(root: Path) -> Path:
             },
             {
                 "source_path": "contracts/native/native_release_candidate_preview.v0.json",
-                "target_path": "contracts/control_schemas/previews/native/native_release_candidate_preview.v0.json",
+                "target_path": "contracts/schema/control/previews/native/native_release_candidate_preview.v0.json",
                 "action": "move",
                 "contract_class_before": "preview_schema",
                 "contract_class_after": "preview_schema",
@@ -90,7 +90,7 @@ def make_plan(root: Path) -> Path:
             },
             {
                 "source_path": "contracts/domain/mystery.v0.json",
-                "target_path": "contracts/control_schemas/deprecated/domain/mystery.v0.json",
+                "target_path": "contracts/schema/control/deprecated/domain/mystery.v0.json",
                 "action": "investigate",
                 "contract_class_before": "unknown",
                 "contract_class_after": "unknown",
@@ -146,9 +146,9 @@ class ContractTaxonomyMigrationTests(unittest.TestCase):
             self.assertEqual(0, proc.returncode, proc.stdout + proc.stderr)
             payload = json.loads(proc.stdout)
             self.assertEqual(3, payload["moves_completed"])
-            self.assertTrue((repo / "contracts/control_schemas/audits/audits/example_audit_report.v0.json").exists())
-            self.assertTrue((repo / "contracts/control_schemas/fixtures/h1/connectors/metadata_fixture_replay_result.v0.json").exists())
-            self.assertTrue((repo / "contracts/control_schemas/previews/native/native_release_candidate_preview.v0.json").exists())
+            self.assertTrue((repo / "contracts/schema/control/audits/audits/example_audit_report.v0.json").exists())
+            self.assertTrue((repo / "contracts/schema/control/fixtures/h1/connectors/metadata_fixture_replay_result.v0.json").exists())
+            self.assertTrue((repo / "contracts/schema/control/previews/native/native_release_candidate_preview.v0.json").exists())
             self.assertTrue((repo / "contracts/domain/source_record.v0.json").exists())
             self.assertTrue((repo / "contracts/domain/mystery.v0.json").exists())
 
@@ -219,7 +219,7 @@ class ContractTaxonomyMigrationTests(unittest.TestCase):
                 "moved": [
                     {
                         "source_path": "contracts/audits/example_audit_report.v0.json",
-                        "target_path": "contracts/control_schemas/audits/audits/example_audit_report.v0.json",
+                        "target_path": "contracts/schema/control/audits/audits/example_audit_report.v0.json",
                         "contract_class": "audit_schema",
                     }
                 ],
@@ -233,7 +233,7 @@ class ContractTaxonomyMigrationTests(unittest.TestCase):
         module = load_module(VALIDATOR, "validate_contract_taxonomy_migration")
         with tempfile.TemporaryDirectory() as tmp:
             repo = Path(tmp)
-            write(repo / "contracts/control_schemas/audits/domain/source_record.v0.json", "{}\n")
+            write(repo / "contracts/schema/control/audits/domain/source_record.v0.json", "{}\n")
             payload = {
                 "task": "R0-03B-1",
                 "status": "pass",
@@ -246,7 +246,7 @@ class ContractTaxonomyMigrationTests(unittest.TestCase):
                 "moved": [
                     {
                         "source_path": "contracts/domain/source_record.v0.json",
-                        "target_path": "contracts/control_schemas/audits/domain/source_record.v0.json",
+                        "target_path": "contracts/schema/control/audits/domain/source_record.v0.json",
                         "contract_class": "product_domain_contract",
                     }
                 ],
@@ -278,9 +278,9 @@ class ContractTaxonomyMigrationTests(unittest.TestCase):
         module = load_module(VALIDATOR, "validate_contract_taxonomy_migration")
         with tempfile.TemporaryDirectory() as tmp:
             repo = Path(tmp)
-            write(repo / "tests/operations/test_example.py", "SCHEMA = 'contracts/control_schemas/audits/audits/example_audit_report.v0.json'\n")
+            write(repo / "tests/operations/test_example.py", "SCHEMA = 'contracts/schema/control/audits/audits/example_audit_report.v0.json'\n")
             migration = {
-                "moved": [{"source_path": "contracts/audits/example_audit_report.v0.json", "target_path": "contracts/control_schemas/audits/audits/example_audit_report.v0.json"}],
+                "moved": [{"source_path": "contracts/audits/example_audit_report.v0.json", "target_path": "contracts/schema/control/audits/audits/example_audit_report.v0.json"}],
                 "blocked": [],
             }
             refs = {
@@ -288,7 +288,7 @@ class ContractTaxonomyMigrationTests(unittest.TestCase):
                     {
                         "path": "tests/operations/test_example.py",
                         "old_reference": "contracts/audits/example_audit_report.v0.json",
-                        "new_reference": "contracts/control_schemas/audits/audits/example_audit_report.v0.json",
+                        "new_reference": "contracts/schema/control/audits/audits/example_audit_report.v0.json",
                         "reason": "test",
                     }
                 ],
@@ -299,7 +299,7 @@ class ContractTaxonomyMigrationTests(unittest.TestCase):
                 "shims": [
                     {
                         "old_path": "contracts/audits/example_audit_report.v0.json",
-                        "new_path": "contracts/control_schemas/audits/audits/example_audit_report.v0.json",
+                        "new_path": "contracts/schema/control/audits/audits/example_audit_report.v0.json",
                         "shim_kind": "none",
                         "expires_after_task": "never",
                         "reason": "test",

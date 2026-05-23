@@ -150,7 +150,7 @@ def validate() -> list[str]:
             raise AssertionError(f"report {key} must be false")
 
     for root_name in EXAMPLES:
-        root = ROOT / "examples/search_result_explanations" / root_name
+        root = ROOT / "examples/search/result_explanations" / root_name
         for name in ("SEARCH_RESULT_EXPLANATION.json", "SEARCH_RESULT_EXPLANATION_POLICY.json", "README.md", "CHECKSUMS.SHA256"):
             path = root / name
             if not path.exists():

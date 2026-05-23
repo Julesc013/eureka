@@ -44,7 +44,7 @@ or deferred decisions.
 ## Dry-Run Relationship
 
 `allowed_for_dry_run` means a WorkUnit may be simulated by
-`runtime/local_foundry/workunit_dry_run.py`. It does not mean the WorkUnit can be
+`runtime/local/foundry/workunit_dry_run.py`. It does not mean the WorkUnit can be
 executed. The evaluator never executes actions and every action result records
 `executed: false`.
 

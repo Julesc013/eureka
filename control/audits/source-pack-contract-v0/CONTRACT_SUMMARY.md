@@ -5,7 +5,7 @@ source metadata, public-safe evidence inputs, tiny deterministic fixtures,
 rights/privacy notes, and checksums.
 
 The governed manifest is `SOURCE_PACK.json`, described by
-`contracts/packs/source_pack.v0.json`.
+`contracts/pack/source_pack.v0.json`.
 
 Source Pack Contract v0 answers how a pack declares:
 

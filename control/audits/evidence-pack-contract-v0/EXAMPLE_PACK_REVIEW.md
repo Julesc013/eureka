@@ -2,7 +2,7 @@
 
 Example pack:
 
-`examples/evidence_packs/minimal_evidence_pack_v0/`
+`examples/packs/evidence/minimal_evidence_pack_v0/`
 
 The example is synthetic and self-authored. It includes:
 

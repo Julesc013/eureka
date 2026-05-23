@@ -30,7 +30,7 @@ from eureka_init_instance import (
     sqlite_integrity,
     validate_instance_path,
 )
-from runtime.local_appliance.paths import describe_instance_layout
+from runtime.local.appliance.paths import describe_instance_layout
 
 
 def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr: TextIO = sys.stderr) -> int:

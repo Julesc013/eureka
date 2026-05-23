@@ -15,8 +15,8 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.local_appliance import close_local_appliance, open_local_appliance
-from runtime.local_service.workbench_review_promote import (
+from runtime.local.appliance import close_local_appliance, open_local_appliance
+from runtime.local.service.workbench_review_promote import (
     PROJECTION_PROFILES,
     REVIEW_DECISIONS,
     SAMPLE_CANDIDATE,

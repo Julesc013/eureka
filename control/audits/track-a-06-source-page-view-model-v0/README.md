@@ -52,7 +52,7 @@ SourcePageView references existing source registry, source pack, evidence pack,
 source cache, and evidence ledger governance as inputs, not as permission to
 mutate or execute them:
 
-- `contracts/source_registry/`
+- `contracts/source/registry/`
 - `docs/reference/SOURCE_PACK_CONTRACT.md`
 - `docs/reference/EVIDENCE_PACK_CONTRACT.md`
 - `docs/reference/SOURCE_CACHE_CONTRACT.md`

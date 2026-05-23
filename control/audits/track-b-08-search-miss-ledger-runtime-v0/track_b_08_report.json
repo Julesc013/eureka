@@ -4,7 +4,7 @@
   "track": "B",
   "task": "TRACK-B-08",
   "added_runtime_modules": [
-    "runtime/local_foundry/search_miss_ledger.py"
+    "runtime/local/foundry/search_miss_ledger.py"
   ],
   "added_scripts": [
     "scripts/record_search_miss.py",
@@ -22,12 +22,12 @@
     "control/inventory/observations/search_miss_review_policy.json"
   ],
   "added_examples": [
-    "examples/search_misses/minimal_search_miss_v0.json",
-    "examples/search_misses/empty_result_search_miss_v0.json",
-    "examples/search_misses/weak_result_search_miss_v0.json",
-    "examples/search_misses/near_match_search_miss_v0.json",
-    "examples/search_misses/policy_blocked_search_miss_v0.json",
-    "examples/search_misses/noisy_result_search_miss_v0.json"
+    "examples/search/misses/minimal_search_miss_v0.json",
+    "examples/search/misses/empty_result_search_miss_v0.json",
+    "examples/search/misses/weak_result_search_miss_v0.json",
+    "examples/search/misses/near_match_search_miss_v0.json",
+    "examples/search/misses/policy_blocked_search_miss_v0.json",
+    "examples/search/misses/noisy_result_search_miss_v0.json"
   ],
   "added_tests": [
     "tests/runtime/test_search_miss_ledger_runtime.py",

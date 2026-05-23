@@ -166,7 +166,7 @@ stdout_tail:
 ```
 status: valid
 example_count: 3
-contract_file: contracts/source_cache/source_cache_record.v0.json
+contract_file: contracts/source/cache/source_cache_record.v0.json
 ```
 
 ## python scripts/validate_evidence_ledger_record.py --all-examples
@@ -187,7 +187,7 @@ stdout_tail:
 ```
 status: valid
 example_count: 3
-contract_file: contracts/evidence_ledger/evidence_ledger_record.v0.json
+contract_file: contracts/evidence/ledger/evidence_ledger_record.v0.json
 ```
 
 ## python scripts/validate_source_cache_evidence_ledger_contract.py
@@ -217,7 +217,7 @@ duration_seconds: 0.1
 stdout_tail:
 ```
 status: valid
-contract_file: contracts/source_sync/source_sync_worker_job.v0.json
+contract_file: contracts/source/sync/source_sync_worker_job.v0.json
 example_count: 4
 ```
 
@@ -252,11 +252,11 @@ Query Guard Decision validation
 status: valid
 example_count: 5
 warnings:
-- examples/query_guard/minimal_fake_demand_throttled_v0: P67 validates contract/example artifacts only; runtime query guard remains deferred.
-- examples/query_guard/minimal_private_path_rejected_v0: P67 validates contract/example artifacts only; runtime query guard remains deferred.
-- examples/query_guard/minimal_public_safe_query_v0: P67 validates contract/example artifacts only; runtime query guard remains deferred.
-- examples/query_guard/minimal_secret_rejected_v0: P67 validates contract/example artifacts only; runtime query guard remains deferred.
-- examples/query_guard/minimal_source_stuffing_quarantined_v0: P67 validates contract/example artifacts only; runtime query guard remains deferred.
+- examples/search/query_guard/minimal_fake_demand_throttled_v0: P67 validates contract/example artifacts only; runtime query guard remains deferred.
+- examples/search/query_guard/minimal_private_path_rejected_v0: P67 validates contract/example artifacts only; runtime query guard remains deferred.
+- examples/search/query_guard/minimal_public_safe_query_v0: P67 validates contract/example artifacts only; runtime query guard remains deferred.
+- examples/search/query_guard/minimal_secret_rejected_v0: P67 validates contract/example artifacts only; runtime query guard remains deferred.
+- examples/search/query_guard/minimal_source_stuffing_quarantined_v0: P67 validates contract/example artifacts only; runtime query guard remains deferred.
 ```
 
 ## python scripts/validate_query_privacy_poisoning_guard_contract.py

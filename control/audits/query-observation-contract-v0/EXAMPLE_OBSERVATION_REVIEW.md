@@ -2,7 +2,7 @@
 
 Example root:
 
-`examples/query_observations/minimal_query_observation_v0/`
+`examples/search/query_observations/minimal_query_observation_v0/`
 
 Files:
 

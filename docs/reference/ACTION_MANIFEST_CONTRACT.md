@@ -1,6 +1,6 @@
 # Action Manifest Contract
 
-`contracts/actions/action_manifest.v0.json` describes a non-executing action envelope.
+`contracts/command/actions/action_manifest.v0.json` describes a non-executing action envelope.
 
 An action manifest may describe a metadata view, local inspection, comparison, citation, export manifest, preservation manifest, acquisition manifest, or a blocked action report.
 

@@ -4,12 +4,12 @@ import json
 from pathlib import Path
 import unittest
 
-from runtime.search_quality.ranking_factors import (
+from runtime.search.quality.ranking_factors import (
     score_exact_identifier_match,
     score_platform_or_compatibility_match,
     score_version_match,
 )
-from runtime.search_quality.ranking_shadow import build_ranking_shadow, score_ranking_item
+from runtime.search.quality.ranking_shadow import build_ranking_shadow, score_ranking_item
 
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -21,7 +21,7 @@ def load(rel: str):
 
 class RankingShadowRuntimeTests(unittest.TestCase):
     def setUp(self) -> None:
-        self.bundle = load("examples/search_quality/ranking/input_bundle_software_v0.json")
+        self.bundle = load("examples/search/quality/ranking/input_bundle_software_v0.json")
 
     def test_ranking_shadow_builds_from_fixture_input_bundle(self) -> None:
         result = build_ranking_shadow(self.bundle)
@@ -52,7 +52,7 @@ class RankingShadowRuntimeTests(unittest.TestCase):
         self.assertLess(near["shadow_score"], exact["shadow_score"])
 
     def test_known_absence_signal_is_shadow_only(self) -> None:
-        bundle = load("examples/search_quality/ranking/input_bundle_extraction_gap_v0.json")
+        bundle = load("examples/search/quality/ranking/input_bundle_extraction_gap_v0.json")
         result = build_ranking_shadow(bundle)
         self.assertEqual(result["ranking_shadow_status"], "blocked_by_policy")
         self.assertFalse(result["truth_boundary"]["ranking_shadow_mutates_public_search"])

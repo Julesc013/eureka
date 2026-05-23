@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import unittest
 
-from runtime.local_network import is_mutation_allowed_for_scope, is_route_allowed_for_scope, load_lan_policy
+from runtime.local.network import is_mutation_allowed_for_scope, is_route_allowed_for_scope, load_lan_policy
 
 
 class LocalNetworkPolicyTests(unittest.TestCase):

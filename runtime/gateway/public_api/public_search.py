@@ -9,7 +9,7 @@ from runtime.engine.index import IndexRecord
 from runtime.engine.interfaces.public import QueryPlanRequest
 from runtime.engine.interfaces.service import QueryPlannerService
 from runtime.gateway.public_api.resolution_boundary import PublicApiResponse
-from runtime.source_registry import SourceRecordNotFoundError, SourceRegistry
+from runtime.source.registry import SourceRecordNotFoundError, SourceRegistry
 
 
 SCHEMA_VERSION = "0.1.0"

@@ -4,8 +4,8 @@
   "track": "B",
   "task": "TRACK-B-20",
   "added_contracts": [
-    "contracts/master_index/reviewed_public_index_rebuild.v0.json",
-    "contracts/master_index/reviewed_public_record_proposal.v0.json"
+    "contracts/index/master/reviewed_public_index_rebuild.v0.json",
+    "contracts/index/master/reviewed_public_record_proposal.v0.json"
   ],
   "added_docs": [
     "docs/reference/REVIEWED_PUBLIC_INDEX_REBUILD_CONTRACT.md",
@@ -22,15 +22,15 @@
     "control/inventory/review/reviewed_public_index_truth_policy.json"
   ],
   "added_examples": [
-    "examples/reviewed_public_index_rebuilds/minimal_rebuild_contract_v0.json",
-    "examples/reviewed_public_index_rebuilds/ready_candidate_rebuild_input_v0.json",
-    "examples/reviewed_public_index_rebuilds/missing_evidence_rebuild_blocked_v0.json",
-    "examples/reviewed_public_index_rebuilds/policy_blocked_rebuild_v0.json",
-    "examples/reviewed_public_records/minimal_reviewed_public_record_proposal_v0.json",
-    "examples/reviewed_public_records/software_candidate_record_proposal_v0.json",
-    "examples/reviewed_public_records/source_record_proposal_v0.json",
-    "examples/reviewed_public_records/need_record_proposal_v0.json",
-    "examples/reviewed_public_records/policy_blocked_record_proposal_v0.json"
+    "examples/index/reviewed_public_rebuilds/minimal_rebuild_contract_v0.json",
+    "examples/index/reviewed_public_rebuilds/ready_candidate_rebuild_input_v0.json",
+    "examples/index/reviewed_public_rebuilds/missing_evidence_rebuild_blocked_v0.json",
+    "examples/index/reviewed_public_rebuilds/policy_blocked_rebuild_v0.json",
+    "examples/index/reviewed_public_records/minimal_reviewed_public_record_proposal_v0.json",
+    "examples/index/reviewed_public_records/software_candidate_record_proposal_v0.json",
+    "examples/index/reviewed_public_records/source_record_proposal_v0.json",
+    "examples/index/reviewed_public_records/need_record_proposal_v0.json",
+    "examples/index/reviewed_public_records/policy_blocked_record_proposal_v0.json"
   ],
   "added_validators": [
     "scripts/validate_reviewed_public_index_rebuild_contract.py"

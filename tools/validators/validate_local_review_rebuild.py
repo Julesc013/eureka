@@ -26,13 +26,13 @@ SCRIPTS_ROOT = REPO_ROOT / "scripts"
 if str(SCRIPTS_ROOT) not in sys.path:
     sys.path.insert(0, str(SCRIPTS_ROOT))
 
-from runtime.evidence_ledger import EvidenceCandidateRecord, EvidenceReviewStatus
-from runtime.local_appliance import close_local_appliance, open_local_appliance
-from runtime.local_operator import write_operator_token_record
-from runtime.local_review import get_review_item, rebuild_reviewed_index, record_review_decision
-from runtime.local_service import LocalServiceApp, create_local_http_server
-from runtime.review_queue import ReviewItemRecord, ReviewQueueStatus
-from runtime.source_cache import SourceCacheEntry, SourceCacheStatus
+from runtime.evidence.ledger import EvidenceCandidateRecord, EvidenceReviewStatus
+from runtime.local.appliance import close_local_appliance, open_local_appliance
+from runtime.local.operator import write_operator_token_record
+from runtime.local.review import get_review_item, rebuild_reviewed_index, record_review_decision
+from runtime.local.service import LocalServiceApp, create_local_http_server
+from runtime.review.queue import ReviewItemRecord, ReviewQueueStatus
+from runtime.source.cache import SourceCacheEntry, SourceCacheStatus
 
 
 TASK_ID = "LOCAL-08"
@@ -56,18 +56,18 @@ INVENTORIES = {
     "control/inventory/local_08_next_task_decision.json": "local_08_next_task_decision.v0",
 }
 RUNTIME_FILES = (
-    "runtime/local_operator/__init__.py",
-    "runtime/local_operator/auth.py",
-    "runtime/local_operator/tokens.py",
-    "runtime/local_operator/validation.py",
-    "runtime/local_operator/errors.py",
-    "runtime/local_review/__init__.py",
-    "runtime/local_review/service.py",
-    "runtime/local_review/decisions.py",
-    "runtime/local_review/rebuild.py",
-    "runtime/local_review/audit.py",
-    "runtime/local_review/validation.py",
-    "runtime/local_review/errors.py",
+    "runtime/local/operator/__init__.py",
+    "runtime/local/operator/auth.py",
+    "runtime/local/operator/tokens.py",
+    "runtime/local/operator/validation.py",
+    "runtime/local/operator/errors.py",
+    "runtime/local/review/__init__.py",
+    "runtime/local/review/service.py",
+    "runtime/local/review/decisions.py",
+    "runtime/local/review/rebuild.py",
+    "runtime/local/review/audit.py",
+    "runtime/local/review/validation.py",
+    "runtime/local/review/errors.py",
 )
 SCRIPTS = (
     "scripts/eureka_set_operator_token.py",
@@ -268,7 +268,7 @@ def validate_policies(payloads: Mapping[str, Mapping[str, Any]], errors: list[st
 
 def validate_inventories(payloads: Mapping[str, Mapping[str, Any]], errors: list[str], warnings: list[str]) -> None:
     inventory = payloads.get("control/inventory/local_review_rebuild_inventory.json", {})
-    if inventory.get("runtime_packages") != ["runtime/local_operator", "runtime/local_review"]:
+    if inventory.get("runtime_packages") != ["runtime/local/operator", "runtime/local/review"]:
         errors.append("review inventory runtime packages mismatch")
     for key in ("review_ui_enabled", "rebuild_ui_enabled", "operator_token_required"):
         if inventory.get(key) is not True:

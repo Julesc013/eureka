@@ -17,7 +17,7 @@ if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
 from runtime.extraction.guards import load_json, path_under, resolve_path  # noqa: E402
-from runtime.search_quality.explanation import load_search_quality_policy  # noqa: E402
+from runtime.search.quality.explanation import load_search_quality_policy  # noqa: E402
 
 
 def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout) -> int:
@@ -30,7 +30,7 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout) -> int:
     args = parser.parse_args(argv)
     try:
         policy = load_search_quality_policy()
-        paths = collect_inputs(args.input or ["examples/search_quality"], policy)
+        paths = collect_inputs(args.input or ["examples/search/quality"], policy)
         records = [load_json(path) for path in paths]
         summary = summarize_records(records)
         wrote = False

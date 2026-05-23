@@ -26,10 +26,10 @@ from archive.prototypes.legacy_runtime.connectors.h1_metadata_wave.review_integr
 AUDIT_DIR = Path("control/audits/h1-bundle-04-review-quality-audit-v0")
 REVIEW_DIR = Path("examples/connectors/h1_metadata_wave/review_integration")
 REQUIRED_JSON = (
-    "contracts/control_schemas/audits/h1/connectors/review_integration_result.v0.json",
-    "contracts/control_schemas/audits/h1/connectors/quality_delta_report.v0.json",
-    "contracts/control_schemas/audits/h1/connectors/connector_wave_postmortem.v0.json",
-    "contracts/control_schemas/audits/h1/connectors/integration_audit.v0.json",
+    "contracts/schema/control/audits/h1/connectors/review_integration_result.v0.json",
+    "contracts/schema/control/audits/h1/connectors/quality_delta_report.v0.json",
+    "contracts/schema/control/audits/h1/connectors/connector_wave_postmortem.v0.json",
+    "contracts/schema/control/audits/h1/connectors/integration_audit.v0.json",
     "control/inventory/connectors/h1_review_integration_policy.json",
     "control/inventory/connectors/h1_review_output_policy.json",
     "control/inventory/connectors/h1_review_path_policy.json",

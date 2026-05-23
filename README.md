@@ -148,24 +148,24 @@ marks exact failure-mode deltas as unavailable, and recommends Source Pack
 Contract v0 next. It adds no new source/runtime behavior and keeps external
 baselines pending/manual.
 Source Pack Contract v0 now defines the first portable source-pack format under
-`contracts/packs/source_pack.v0.json`, `docs/reference/SOURCE_PACK_CONTRACT.md`,
-`examples/source_packs/minimal_recorded_source_pack_v0/`, and
+`contracts/pack/source_pack.v0.json`, `docs/reference/SOURCE_PACK_CONTRACT.md`,
+`examples/packs/source/minimal_recorded_source_pack_v0/`, and
 `control/audits/source-pack-contract-v0/`. It adds a checksum-validating
 stdlib validator and tests for a tiny synthetic example pack, but it does not
 implement import, indexing, uploads, live connectors, executable plugins,
 downloads/installers, or master-index acceptance.
 Evidence Pack Contract v0 now defines the first portable evidence-pack format
-under `contracts/packs/evidence_pack.v0.json`,
+under `contracts/pack/evidence_pack.v0.json`,
 `docs/reference/EVIDENCE_PACK_CONTRACT.md`,
-`examples/evidence_packs/minimal_evidence_pack_v0/`, and
+`examples/packs/evidence/minimal_evidence_pack_v0/`, and
 `control/audits/evidence-pack-contract-v0/`. It adds a checksum-validating
 stdlib validator and tests for public-safe claims, observations, snippets, and
 source references, but it does not implement import, indexing, uploads, live
 connectors, executable plugins, canonical truth selection, or master-index
 acceptance.
 Index Pack Contract v0 now defines the first portable index-pack format under
-`contracts/packs/index_pack.v0.json`, `docs/reference/INDEX_PACK_CONTRACT.md`,
-`examples/index_packs/minimal_index_pack_v0/`, and
+`contracts/pack/index_pack.v0.json`, `docs/reference/INDEX_PACK_CONTRACT.md`,
+`examples/packs/index/minimal_index_pack_v0/`, and
 `control/audits/index-pack-contract-v0/`. It adds a checksum-validating stdlib
 validator and tests for summary-only index-build metadata, source coverage,
 field coverage, query examples, and public-safe record summaries, but it does
@@ -173,9 +173,9 @@ not implement import, merge, uploads, raw SQLite/local-cache export, live
 connectors, executable plugins, canonical truth selection, or master-index
 acceptance.
 Contribution Pack Contract v0 now defines the first portable contribution-pack
-format under `contracts/packs/contribution_pack.v0.json`,
+format under `contracts/pack/contribution_pack.v0.json`,
 `docs/reference/CONTRIBUTION_PACK_CONTRACT.md`,
-`examples/contribution_packs/minimal_contribution_pack_v0/`, and
+`examples/packs/contribution/minimal_contribution_pack_v0/`, and
 `control/audits/contribution-pack-contract-v0/`. It adds a checksum-validating
 stdlib validator and tests for review-candidate contribution items, referenced
 source/evidence packs, manual-observation placeholders, alias suggestions,
@@ -184,7 +184,7 @@ payloads, but it does not implement upload, import, moderation, accounts,
 master-index review queue runtime, automatic acceptance, live connectors,
 canonical truth selection, or master-index acceptance.
 Master Index Review Queue Contract v0 now defines the future governance layer
-under `contracts/master_index/`,
+under `contracts/index/master/`,
 `docs/reference/MASTER_INDEX_REVIEW_QUEUE_CONTRACT.md`,
 `docs/architecture/MASTER_INDEX_REVIEW_QUEUE.md`,
 `examples/master_index_review_queue/minimal_review_queue_v0/`, and
@@ -232,7 +232,7 @@ Typed AI Output Validator v0 now validates standalone typed AI output
 candidates through `scripts/validate_ai_output.py` without model calls,
 provider runtime, telemetry, evidence import, contribution import, public-search
 AI, local index mutation, or master-index mutation. Pack Import Report Format
-v0 now adds `contracts/packs/pack_import_report.v0.json`,
+v0 now adds `contracts/pack/pack_import_report.v0.json`,
 `examples/import_reports/`, `scripts/validate_pack_import_report.py`, and
 `control/audits/pack-import-report-format-v0/` as a durable validate-only
 report envelope for pack validation outcomes. It does not implement import,

@@ -7,7 +7,7 @@ Decision: create `contracts/evidence/` as a minimal pointer namespace.
 Track B warned that evidence contract material was described through reference
 docs and inventories rather than a `contracts/evidence/` location. The repo
 already has canonical schema-only evidence ledger contracts under
-`contracts/evidence_ledger/`, plus governance policies under
+`contracts/evidence/ledger/`, plus governance policies under
 `control/inventory/evidence_ledger/`.
 
 Creating a second full evidence schema family would duplicate existing
@@ -19,7 +19,7 @@ ledger contracts and policy inventories.
 
 The new namespace:
 
-- identifies `contracts/evidence_ledger/` as the current canonical schema
+- identifies `contracts/evidence/ledger/` as the current canonical schema
   family for evidence ledger records and manifests
 - identifies `control/inventory/evidence_ledger/` as the current policy and
   runtime-planning inventory

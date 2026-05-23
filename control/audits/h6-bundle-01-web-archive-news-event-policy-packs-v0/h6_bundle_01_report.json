@@ -14,8 +14,8 @@
     "docs/operations/H6_WEB_ARCHIVE_NEWS_EVENT_FIXTURE_PLAN.md"
   ],
   "added_examples": [
-    "examples/source_packs/h6_web_archive_news_event_source_pack_manifest_v0.json",
-    "examples/source_packs/h6_web_archive_news_event_policy_pack_v0.json",
+    "examples/packs/source/h6_web_archive_news_event_source_pack_manifest_v0.json",
+    "examples/packs/source/h6_web_archive_news_event_policy_pack_v0.json",
     "examples/connectors/h6_web_archive_news_event",
     "examples/sources/source_records/*h6_web_archive_news_event*"
   ],

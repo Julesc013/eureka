@@ -1,7 +1,7 @@
 {
   "schema_version": "review_queue_store_inventory.v0",
   "task": "R0-07",
-  "runtime_package": "runtime/review_queue",
+  "runtime_package": "runtime/review/queue",
   "public_api": [
     "ReviewQueueStore",
     "ReviewItemRecord",

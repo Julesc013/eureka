@@ -4,7 +4,7 @@
   "label": "Renderer parity check matrix v0",
   "description": "Deterministic matrix of current and future semantic parity cases for renderer and projection outputs.",
   "policy_ref": "control/inventory/publication/renderer_parity_harness_policy.json",
-  "contract_ref": "contracts/representations/renderer_parity_harness.v0.json",
+  "contract_ref": "contracts/representation/renderer_parity_harness.v0.json",
   "active_case_ids": [
     "search_page_static_projection_v0"
   ],

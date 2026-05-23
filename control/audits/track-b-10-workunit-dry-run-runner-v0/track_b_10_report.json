@@ -4,7 +4,7 @@
   "track": "B",
   "task": "TRACK-B-10",
   "added_runtime_modules": [
-    "runtime/local_foundry/workunit_dry_run.py"
+    "runtime/local/foundry/workunit_dry_run.py"
   ],
   "added_scripts": [
     "scripts/run_workunit_dry_run.py",
@@ -22,10 +22,10 @@
     "control/inventory/nodes/workunit_dry_run_review_policy.json"
   ],
   "added_examples": [
-    "examples/workunit_dry_runs/search_need_review_dry_run_v0/work_unit_result.json",
-    "examples/workunit_dry_runs/source_lead_inspection_dry_run_v0/work_unit_result.json",
-    "examples/workunit_dry_runs/policy_blocked_dry_run_v0/work_unit_result.json",
-    "examples/workunit_dry_runs/noop_dry_run_v0/work_unit_result.json"
+    "examples/work_units/dry_runs/search_need_review_dry_run_v0/work_unit_result.json",
+    "examples/work_units/dry_runs/source_lead_inspection_dry_run_v0/work_unit_result.json",
+    "examples/work_units/dry_runs/policy_blocked_dry_run_v0/work_unit_result.json",
+    "examples/work_units/dry_runs/noop_dry_run_v0/work_unit_result.json"
   ],
   "added_tests": [
     "tests/runtime/test_workunit_dry_run.py",

@@ -3,8 +3,8 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from runtime.public_index import PublicIndexStore, rebuild_reviewed_public_index
-from runtime.review_queue import ReviewDecisionKind
+from runtime.index.public import PublicIndexStore, rebuild_reviewed_public_index
+from runtime.review.queue import ReviewDecisionKind
 from scripts.demo_review_queue_store import run_demo as run_review_queue_demo
 
 

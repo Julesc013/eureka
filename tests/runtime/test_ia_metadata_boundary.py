@@ -1,8 +1,8 @@
 import unittest
 from pathlib import Path
 
-from runtime.source_observation.internet_archive_fixture_replay import replay_fixture_directory_report
-from runtime.source_observation.internet_archive_validation import validate_boundary_report, validate_normalized_ia_record
+from runtime.source.observation.internet_archive_fixture_replay import replay_fixture_directory_report
+from runtime.source.observation.internet_archive_validation import validate_boundary_report, validate_normalized_ia_record
 
 
 ROOT = Path(__file__).resolve().parents[2]

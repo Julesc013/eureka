@@ -1,6 +1,6 @@
 # SearchNeed Runtime
 
-`runtime/local_foundry/search_need.py` implements the first bounded Track B
+`runtime/local/foundry/search_need.py` implements the first bounded Track B
 SearchNeed runtime.
 
 ## What It Is
@@ -58,5 +58,5 @@ Run:
 
 ```powershell
 python scripts/validate_search_need_runtime.py
-python scripts/record_search_need.py --input examples/search_misses/empty_result_search_miss_v0.json --check
+python scripts/record_search_need.py --input examples/search/misses/empty_result_search_miss_v0.json --check
 ```

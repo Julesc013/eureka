@@ -6,7 +6,7 @@ import tempfile
 from pathlib import Path
 import unittest
 
-from runtime.local_appliance import (
+from runtime.local.appliance import (
     LocalApplianceError,
     LocalReadOnlyStoreMutationError,
     close_local_appliance,

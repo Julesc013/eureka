@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import unittest
 
-from runtime.local_service.workbench_live_run import build_command_response, create_workbench_resolution_run, get_workbench_resolution_run
+from runtime.local.service.workbench_live_run import build_command_response, create_workbench_resolution_run, get_workbench_resolution_run
 
 
 class IALiveMetadataLaneProjectionTests(unittest.TestCase):

@@ -1,11 +1,11 @@
 import json
 import unittest
 
-from runtime.source_observation.internet_archive_live_probe import (
+from runtime.source.observation.internet_archive_live_probe import (
     load_live_probe_policy,
     run_live_metadata_probe,
 )
-from runtime.source_observation.internet_archive_live_transport import IALiveTransportResponse
+from runtime.source.observation.internet_archive_live_transport import IALiveTransportResponse
 
 
 class FakeTransport:

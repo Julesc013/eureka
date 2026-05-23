@@ -17,10 +17,10 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.local_appliance import close_local_appliance, open_local_appliance
-from runtime.local_operator.auth import build_cli_operator_auth_state
-from runtime.local_service import LocalServiceApp
-from runtime.search_need import SearchNeedTransitionError
+from runtime.local.appliance import close_local_appliance, open_local_appliance
+from runtime.local.operator.auth import build_cli_operator_auth_state
+from runtime.local.service import LocalServiceApp
+from runtime.search.need import SearchNeedTransitionError
 
 
 TASK_ID = "HUNT-05"
@@ -44,22 +44,22 @@ INVENTORIES = {
     "control/inventory/hunt_05_next_task_decision.json": "hunt_05_next_task_decision.v0",
 }
 RUNTIME_FILES = (
-    "runtime/search_need/__init__.py",
-    "runtime/search_need/schema.py",
-    "runtime/search_need/records.py",
-    "runtime/search_need/store.py",
-    "runtime/search_need/transitions.py",
-    "runtime/search_need/from_hunt.py",
-    "runtime/search_need/summaries.py",
-    "runtime/search_need/queries.py",
-    "runtime/search_need/validation.py",
-    "runtime/search_need/errors.py",
-    "runtime/local_appliance/manifest.py",
-    "runtime/local_appliance/composition.py",
-    "runtime/local_appliance/status.py",
-    "runtime/local_appliance/validation.py",
-    "runtime/local_service/routes.py",
-    "runtime/local_service/validation.py",
+    "runtime/search/need/__init__.py",
+    "runtime/search/need/schema.py",
+    "runtime/search/need/records.py",
+    "runtime/search/need/store.py",
+    "runtime/search/need/transitions.py",
+    "runtime/search/need/from_hunt.py",
+    "runtime/search/need/summaries.py",
+    "runtime/search/need/queries.py",
+    "runtime/search/need/validation.py",
+    "runtime/search/need/errors.py",
+    "runtime/local/appliance/manifest.py",
+    "runtime/local/appliance/composition.py",
+    "runtime/local/appliance/status.py",
+    "runtime/local/appliance/validation.py",
+    "runtime/local/service/routes.py",
+    "runtime/local/service/validation.py",
     "surfaces/web/workbench/local_html/pages.py",
     "surfaces/web/workbench/local_html/view_models.py",
 )
@@ -400,7 +400,7 @@ def validate_cli_and_demo(root: Path, errors: list[str]) -> None:
 
 
 def validate_runtime_imports(root: Path, errors: list[str]) -> None:
-    for path in (root / "runtime" / "search_need").glob("*.py"):
+    for path in (root / "runtime" / "search" / "need").glob("*.py"):
         tree = ast.parse(path.read_text(encoding="utf-8"), filename=str(path))
         for node in ast.walk(tree):
             module = ""
@@ -417,7 +417,7 @@ def validate_runtime_imports(root: Path, errors: list[str]) -> None:
 
 
 def validate_runtime_vocabulary(root: Path, errors: list[str]) -> None:
-    for path in (root / "runtime" / "search_need").glob("*.py"):
+    for path in (root / "runtime" / "search" / "need").glob("*.py"):
         text = path.read_text(encoding="utf-8")
         for marker in FORBIDDEN_RUNTIME_VOCABULARY:
             if marker in text:

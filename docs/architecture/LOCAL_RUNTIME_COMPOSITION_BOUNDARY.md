@@ -1,6 +1,6 @@
 # Local Runtime Composition Boundary
 
-LOCAL-03 adds `runtime/local_appliance` as the stable product-facing boundary for opening a local appliance instance.
+LOCAL-03 adds `runtime/local/appliance` as the stable product-facing boundary for opening a local appliance instance.
 
 ## Purpose
 
@@ -67,4 +67,4 @@ LOCAL-03 does not implement:
 
 LOCAL-04 can build the read-only localhost HTTP service over `LocalApplianceRuntime`. That service should receive an explicit instance path and call this boundary for status and reviewed-index reads.
 
-LOCAL-04 implements that read-only service as `runtime/local_service`. Future workbench and worker routes should continue to use the composition boundary instead of opening store paths ad hoc.
+LOCAL-04 implements that read-only service as `runtime/local/service`. Future workbench and worker routes should continue to use the composition boundary instead of opening store paths ad hoc.

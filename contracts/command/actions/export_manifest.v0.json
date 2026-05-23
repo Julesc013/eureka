@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/command/actions/export_manifest.v0.json",
+  "title": "Eureka Export Manifest v0",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "export_manifest_id",
+    "export_status",
+    "export_subject_type",
+    "export_subject_refs",
+    "exported_record_summaries",
+    "included_refs",
+    "excluded_refs",
+    "export_format",
+    "fixity_summary",
+    "limitations",
+    "review_required",
+    "truth_boundary",
+    "product_boundary"
+  ],
+  "properties": {
+    "schema_version": { "const": "export_manifest.v0" },
+    "export_status": { "enum": ["manifest_only", "example_only", "policy_blocked", "not_evaluable"] },
+    "review_required": { "const": true },
+    "truth_boundary": {
+      "type": "object",
+      "properties": {
+        "export_manifest_imports_or_submits": { "const": false },
+        "public_index_mutated": { "const": false },
+        "master_index_mutated": { "const": false }
+      }
+    }
+  },
+  "additionalProperties": true
+}

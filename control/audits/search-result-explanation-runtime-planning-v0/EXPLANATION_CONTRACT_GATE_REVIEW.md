@@ -13,13 +13,13 @@ Files:
 
 Examples:
 
-- `examples/search_result_explanations/minimal_match_explanation_v0`
-- `examples/search_result_explanations/minimal_source_evidence_explanation_v0`
-- `examples/search_result_explanations/minimal_grouped_result_explanation_v0`
-- `examples/search_result_explanations/minimal_compatibility_explanation_v0`
-- `examples/search_result_explanations/minimal_absence_gap_explanation_v0`
-- `examples/search_result_explanations/minimal_conflict_explanation_v0`
-- `examples/search_result_explanations/minimal_action_safety_explanation_v0`
+- `examples/search/result_explanations/minimal_match_explanation_v0`
+- `examples/search/result_explanations/minimal_source_evidence_explanation_v0`
+- `examples/search/result_explanations/minimal_grouped_result_explanation_v0`
+- `examples/search/result_explanations/minimal_compatibility_explanation_v0`
+- `examples/search/result_explanations/minimal_absence_gap_explanation_v0`
+- `examples/search/result_explanations/minimal_conflict_explanation_v0`
+- `examples/search/result_explanations/minimal_action_safety_explanation_v0`
 
 Validators:
 

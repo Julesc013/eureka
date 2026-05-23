@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import unittest
 
-from runtime.search_hunt import (
+from runtime.search.hunt import (
     ALLOWED_SEARCH_HUNT_CHECKED_LAYERS,
     ALLOWED_SEARCH_HUNT_STATES,
     ALLOWED_SEARCH_HUNT_UNCHECKED_LAYERS,

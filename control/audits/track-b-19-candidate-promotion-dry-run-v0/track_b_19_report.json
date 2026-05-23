@@ -4,7 +4,7 @@
   "track": "B",
   "task": "TRACK-B-19",
   "added_runtime_modules": [
-    "runtime/local_foundry/candidate_promotion_dry_run.py"
+    "runtime/local/foundry/candidate_promotion_dry_run.py"
   ],
   "added_scripts": [
     "scripts/run_candidate_promotion_dry_run.py",
@@ -24,13 +24,13 @@
     "control/inventory/review/candidate_promotion_truth_policy.json"
   ],
   "added_examples": [
-    "examples/candidate_promotion_dry_runs/minimal_promotion_dry_run_v0.json",
-    "examples/candidate_promotion_dry_runs/ready_for_promotion_dry_run_v0.json",
-    "examples/candidate_promotion_dry_runs/missing_evidence_promotion_dry_run_v0.json",
-    "examples/candidate_promotion_dry_runs/conflict_blocked_promotion_dry_run_v0.json",
-    "examples/candidate_promotion_dry_runs/duplicate_blocked_promotion_dry_run_v0.json",
-    "examples/candidate_promotion_dry_runs/policy_blocked_promotion_dry_run_v0.json",
-    "examples/candidate_promotion_dry_runs/rights_risk_blocked_promotion_dry_run_v0.json"
+    "examples/review/candidate_promotion_dry_runs/minimal_promotion_dry_run_v0.json",
+    "examples/review/candidate_promotion_dry_runs/ready_for_promotion_dry_run_v0.json",
+    "examples/review/candidate_promotion_dry_runs/missing_evidence_promotion_dry_run_v0.json",
+    "examples/review/candidate_promotion_dry_runs/conflict_blocked_promotion_dry_run_v0.json",
+    "examples/review/candidate_promotion_dry_runs/duplicate_blocked_promotion_dry_run_v0.json",
+    "examples/review/candidate_promotion_dry_runs/policy_blocked_promotion_dry_run_v0.json",
+    "examples/review/candidate_promotion_dry_runs/rights_risk_blocked_promotion_dry_run_v0.json"
   ],
   "added_tests": [
     "tests/runtime/test_candidate_promotion_dry_run.py",

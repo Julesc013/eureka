@@ -1,7 +1,7 @@
 {
   "schema_version": "0.1.0",
   "registry_id": "eureka-publication-host-profiles",
-  "contract_ref": "contracts/representations/host_profile.v0.json",
+  "contract_ref": "contracts/representation/host_profile.v0.json",
   "status": "contract_only",
   "stability": "experimental",
   "created_by_slice": "track_a_01_representation_contracts_v0",

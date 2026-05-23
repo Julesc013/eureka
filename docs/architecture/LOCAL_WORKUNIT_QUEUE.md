@@ -2,7 +2,7 @@
 
 LOCAL-07 adds the durable local WorkUnit queue for the Local Appliance. It is an operator-gated record store, not a worker runner.
 
-The queue lives in `runtime/workunit_queue` and is opened through `runtime/local_appliance`. The instance manifest owns the path `db/workunit_queue.sqlite`; product code must not invent a hidden queue path or open a separate database.
+The queue lives in `runtime/worker/workunit_queue` and is opened through `runtime/local/appliance`. The instance manifest owns the path `db/workunit_queue.sqlite`; product code must not invent a hidden queue path or open a separate database.
 
 ## Role
 

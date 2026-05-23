@@ -4,7 +4,7 @@
   "track": "B",
   "task": "TRACK-B-09",
   "added_runtime_modules": [
-    "runtime/local_foundry/search_need.py"
+    "runtime/local/foundry/search_need.py"
   ],
   "added_scripts": [
     "scripts/record_search_need.py",
@@ -23,12 +23,12 @@
     "control/inventory/observations/search_need_review_policy.json"
   ],
   "added_examples": [
-    "examples/search_needs/minimal_search_need_v0.json",
-    "examples/search_needs/software_version_search_need_v0.json",
-    "examples/search_needs/driver_search_need_v0.json",
-    "examples/search_needs/article_member_search_need_v0.json",
-    "examples/search_needs/policy_blocked_search_need_v0.json",
-    "examples/search_needs/not_evaluable_search_need_v0.json"
+    "examples/search/needs/minimal_search_need_v0.json",
+    "examples/search/needs/software_version_search_need_v0.json",
+    "examples/search/needs/driver_search_need_v0.json",
+    "examples/search/needs/article_member_search_need_v0.json",
+    "examples/search/needs/policy_blocked_search_need_v0.json",
+    "examples/search/needs/not_evaluable_search_need_v0.json"
   ],
   "added_tests": [
     "tests/runtime/test_search_need_runtime.py",

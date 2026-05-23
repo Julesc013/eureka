@@ -2,7 +2,7 @@ import json
 import unittest
 from pathlib import Path
 
-from runtime.source_observation.internet_archive_normalization import normalize_ia_metadata_fixture
+from runtime.source.observation.internet_archive_normalization import normalize_ia_metadata_fixture
 
 
 ROOT = Path(__file__).resolve().parents[2]

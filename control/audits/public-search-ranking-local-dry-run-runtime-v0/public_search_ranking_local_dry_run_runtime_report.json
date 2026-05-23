@@ -62,11 +62,11 @@
     "search_usefulness_audit_command_status": "passed in prior P97/P106 verification; rerun in P107 verification"
   },
   "examples": [
-    "examples/public_search_ranking_dry_run/minimal_evidence_weighted_ranking",
-    "examples/public_search_ranking_dry_run/minimal_compatibility_aware_ranking",
-    "examples/public_search_ranking_dry_run/minimal_conflict_visible_ranking",
-    "examples/public_search_ranking_dry_run/minimal_gap_transparency_ranking",
-    "examples/public_search_ranking_dry_run/minimal_current_order_fallback"
+    "examples/index/public_search_ranking_dry_run/minimal_evidence_weighted_ranking",
+    "examples/index/public_search_ranking_dry_run/minimal_compatibility_aware_ranking",
+    "examples/index/public_search_ranking_dry_run/minimal_conflict_visible_ranking",
+    "examples/index/public_search_ranking_dry_run/minimal_gap_transparency_ranking",
+    "examples/index/public_search_ranking_dry_run/minimal_current_order_fallback"
   ],
   "execution_enabled": false,
   "external_calls_performed": false,
@@ -104,9 +104,9 @@
   "explanation_user_reason_model": "Every proposed dry-run ranking change receives a public reason and audit reason with visible match, evidence, source, compatibility, gap, action, and risk caveats where available.",
   "input_model": {
     "approved_roots": [
-      "examples/public_search_ranking_dry_run",
-      "examples/evidence_weighted_ranking",
-      "examples/compatibility_aware_ranking"
+      "examples/index/public_search_ranking_dry_run",
+      "examples/evidence/weighted_ranking",
+      "examples/search/compatibility_aware_ranking"
     ],
     "forbidden_inputs": [
       "arbitrary local paths",

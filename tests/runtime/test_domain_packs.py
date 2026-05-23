@@ -3,7 +3,7 @@ from __future__ import annotations
 from pathlib import Path
 import unittest
 
-from runtime.local_eval.domain_packs import (
+from runtime.local.eval.domain_packs import (
     BLOCKED_ACTIONS,
     REQUIRED_DOMAIN_IDS,
     load_domain_packs_from_manifest,

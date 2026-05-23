@@ -4,7 +4,7 @@
   "track": "B",
   "task": "TRACK-B-07",
   "added_runtime_modules": [
-    "runtime/local_foundry/query_observation.py"
+    "runtime/local/foundry/query_observation.py"
   ],
   "added_scripts": [
     "scripts/record_query_observation.py",
@@ -22,11 +22,11 @@
     "control/inventory/observations/query_observation_output_policy.json"
   ],
   "added_examples": [
-    "examples/query_observations/minimal_query_observation_v0.json",
-    "examples/query_observations/empty_result_query_observation_v0.json",
-    "examples/query_observations/weak_result_query_observation_v0.json",
-    "examples/query_observations/useful_result_query_observation_v0.json",
-    "examples/query_observations/policy_blocked_query_observation_v0.json"
+    "examples/search/query_observations/minimal_query_observation_v0.json",
+    "examples/search/query_observations/empty_result_query_observation_v0.json",
+    "examples/search/query_observations/weak_result_query_observation_v0.json",
+    "examples/search/query_observations/useful_result_query_observation_v0.json",
+    "examples/search/query_observations/policy_blocked_query_observation_v0.json"
   ],
   "added_tests": [
     "tests/runtime/test_query_observation_runtime.py",

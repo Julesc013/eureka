@@ -1,0 +1,40 @@
+{
+  "schema_version": "local_source_cache_record.v0",
+  "input_id": "minimal_source_cache_fixture_v0",
+  "input_type": "committed_source_fixture",
+  "input_ref": "examples/sources/cache/records/minimal_source_cache_record_v0.json",
+  "input_status": "fixture_only",
+  "input_public_safe": true,
+  "input_summary": "Minimal public-safe source cache fixture.",
+  "source_cache_record_status": "example_only",
+  "source_cache_record_type": "source_metadata",
+  "source_id": "source:fixture:minimal",
+  "source_label": "Minimal Source Fixture",
+  "source_family": "synthetic_fixture",
+  "source_kind": "committed_fixture",
+  "source_locator": "fixture:source-cache:minimal",
+  "source_access_mode": "committed_fixture_only",
+  "source_policy_status": "fixture_only",
+  "source_authority_posture": "not_authoritative",
+  "source_coverage_summary": "Tiny fixture used to prove record shape.",
+  "source_metadata_summary": "Contains only synthetic public-safe metadata fields.",
+  "source_health_summary": "No live health check performed.",
+  "source_limitations": [
+    "Synthetic fixture only.",
+    "Requires review before downstream use."
+  ],
+  "source_observation_summary": "The committed fixture has source metadata shape.",
+  "normalized_fields": {
+    "fixture_kind": "minimal",
+    "runtime_scope": "fixture_only"
+  },
+  "related_candidate_refs": [],
+  "related_search_need_refs": [],
+  "related_workunit_refs": [],
+  "related_source_lead_refs": [],
+  "related_pack_refs_future": [],
+  "related_evidence_refs_future": [],
+  "notes": [
+    "No live source access was used."
+  ]
+}

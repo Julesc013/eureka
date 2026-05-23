@@ -387,7 +387,7 @@ def validate_git_forbidden_paths(repo_root: Path) -> list[str]:
             "site/dist/data/public_index",
             "runtime/connectors",
             "runtime/extraction",
-            "runtime/search_quality",
+            "runtime/search/quality",
             "native",
             "crates",
         ],

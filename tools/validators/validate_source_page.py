@@ -18,7 +18,7 @@ from typing import Any, Mapping, Sequence, TextIO
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
-EXAMPLES_ROOT = REPO_ROOT / "examples" / "source_pages"
+EXAMPLES_ROOT = REPO_ROOT / "examples" / "sources" / "pages"
 
 TOP_LEVEL_REQUIRED = {
     "schema_version",
@@ -185,7 +185,7 @@ def validate_all_examples(*, strict: bool = False) -> dict[str, Any]:
     warnings: list[str] = []
     roots = [path for path in sorted(EXAMPLES_ROOT.iterdir()) if path.is_dir()] if EXAMPLES_ROOT.is_dir() else []
     if not roots:
-        errors.append("examples/source_pages: no example roots found.")
+        errors.append("examples/sources/pages: no example roots found.")
     reports = []
     for root in roots:
         report = validate_page_root(root, strict=strict)

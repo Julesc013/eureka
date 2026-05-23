@@ -129,7 +129,7 @@ class ValidatePackSetScriptTestCase(unittest.TestCase):
                 sys.executable,
                 str(VALIDATOR),
                 "--pack-root",
-                "examples/source_packs/minimal_recorded_source_pack_v0",
+                "examples/packs/source/minimal_recorded_source_pack_v0",
                 "--pack-type",
                 "evidence_pack",
                 "--json",

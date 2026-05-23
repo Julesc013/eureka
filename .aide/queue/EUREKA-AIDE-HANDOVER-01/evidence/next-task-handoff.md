@@ -9,7 +9,7 @@ Packet path: `.aide/context/latest-task-packet.md`
 ## Objective
 
 Add a read-only localhost HTTP service over the reviewed public index through
-the LOCAL-03 `runtime/local_appliance` composition boundary.
+the LOCAL-03 `runtime/local/appliance` composition boundary.
 
 ## Why This Task
 
@@ -33,7 +33,7 @@ drift is reconciled or explicitly reviewed and accepted.
 - `.aide/queue/LOCAL-04/task.yaml`
 - `.aide/queue/EUREKA-AIDE-HANDOVER-01/evidence/validation.md`
 - `.aide/queue/EUREKA-AIDE-HANDOVER-01/evidence/quality-readiness.md`
-- `runtime/local_appliance/`
+- `runtime/local/appliance/`
 - `docs/architecture/LOCAL_RUNTIME_COMPOSITION_BOUNDARY.md`
 - `docs/reference/LOCAL_APPLIANCE_RUNTIME_API.md`
 - `docs/operations/LOCAL_RUNTIME_COMPOSITION.md`
@@ -42,7 +42,7 @@ drift is reconciled or explicitly reviewed and accepted.
 ## Allowed Paths
 
 See `.aide/context/latest-task-packet.md`. The packet allows the LOCAL-04 queue
-packet, generated AIDE context, `runtime/local_appliance/**`, explicitly scoped
+packet, generated AIDE context, `runtime/local/appliance/**`, explicitly scoped
 localhost-only service module paths, focused validators/tests, LOCAL-04 docs,
 and LOCAL-04 control/audit evidence.
 

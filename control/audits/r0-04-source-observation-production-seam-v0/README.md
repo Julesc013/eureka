@@ -2,7 +2,7 @@
 
 This audit pack records the first clean domain-named runtime seam for source observation.
 
-R0-04 added `runtime/source_observation/`, product-facing contracts, a synthetic in-memory demo, a seam validator, behavior tests, inventory records, and operation/reference documentation.
+R0-04 added `runtime/source/observation/`, product-facing contracts, a synthetic in-memory demo, a seam validator, behavior tests, inventory records, and operation/reference documentation.
 
 The task remains control-bounded:
 

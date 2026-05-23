@@ -19,7 +19,7 @@ from runtime.engine.interfaces.normalize import (
 from runtime.engine.interfaces.public import LocalTaskReadRequest, LocalTaskRunRequest
 from runtime.engine.workers import LocalTaskStore
 from runtime.engine.workers.task_runner import LocalTaskRunnerService
-from runtime.source_registry import load_source_registry
+from runtime.source.registry import load_source_registry
 
 
 def _build_catalog() -> NormalizedCatalog:

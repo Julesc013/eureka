@@ -1,51 +1,8 @@
-"""Runtime loader for governed Source Registry v0 records."""
+"""Compatibility package for runtime.source_registry; canonical package is runtime.source.registry."""
 
-from runtime.source_registry.registry import (
-    DEFAULT_SOURCE_INVENTORY_DIR,
-    SourceRegistry,
-    load_source_registry,
-)
-from runtime.source_registry.source_capability import (
-    SOURCE_CAPABILITY_FIELDS,
-    SourceCapabilityRecord,
-)
-from runtime.source_registry.source_coverage import (
-    COVERAGE_DEPTHS,
-    COVERAGE_DEPTH_RANKS,
-    SOURCE_COVERAGE_FIELDS,
-    SourceCoverageRecord,
-)
-from runtime.source_registry.source_record import (
-    ConnectorRecord,
-    DuplicateSourceIdError,
-    ExtractionPolicyRecord,
-    LiveAccessRecord,
-    MalformedSourceRecordError,
-    MissingRequiredFieldError,
-    SourceInventoryNotFoundError,
-    SourceRecord,
-    SourceRecordNotFoundError,
-    SourceRegistryError,
-)
+from pathlib import Path
 
-__all__ = [
-    "ConnectorRecord",
-    "COVERAGE_DEPTHS",
-    "COVERAGE_DEPTH_RANKS",
-    "DEFAULT_SOURCE_INVENTORY_DIR",
-    "DuplicateSourceIdError",
-    "ExtractionPolicyRecord",
-    "LiveAccessRecord",
-    "MalformedSourceRecordError",
-    "MissingRequiredFieldError",
-    "SOURCE_CAPABILITY_FIELDS",
-    "SOURCE_COVERAGE_FIELDS",
-    "SourceCapabilityRecord",
-    "SourceCoverageRecord",
-    "SourceInventoryNotFoundError",
-    "SourceRecord",
-    "SourceRecordNotFoundError",
-    "SourceRegistry",
-    "SourceRegistryError",
-    "load_source_registry",
-]
+_CANONICAL_PATH = Path(__file__).resolve().parents[1] / 'source' / 'registry'
+__path__ = [str(_CANONICAL_PATH)]
+
+from runtime.source.registry import *  # noqa: E402,F401,F403

@@ -144,7 +144,7 @@
       "blocker": true,
       "diagnosis_id": "diagnosis-4f9e3c13d424",
       "evidence_refs": [
-        "examples/query_guard/minimal_secret_rejected_v0/CHECKSUMS.SHA256"
+        "examples/search/query_guard/minimal_secret_rejected_v0/CHECKSUMS.SHA256"
       ],
       "issue_id": "repair-4f9e3c13d424",
       "mandatory_migration_candidate": false,
@@ -158,7 +158,7 @@
       "blocker": true,
       "diagnosis_id": "diagnosis-679e14e6da9a",
       "evidence_refs": [
-        "examples/query_guard/minimal_secret_rejected_v0/QUERY_GUARD_DECISION.json"
+        "examples/search/query_guard/minimal_secret_rejected_v0/QUERY_GUARD_DECISION.json"
       ],
       "issue_id": "repair-679e14e6da9a",
       "mandatory_migration_candidate": false,
@@ -172,7 +172,7 @@
       "blocker": true,
       "diagnosis_id": "diagnosis-154537708718",
       "evidence_refs": [
-        "examples/query_guard/minimal_secret_rejected_v0/README.md"
+        "examples/search/query_guard/minimal_secret_rejected_v0/README.md"
       ],
       "issue_id": "repair-154537708718",
       "mandatory_migration_candidate": false,

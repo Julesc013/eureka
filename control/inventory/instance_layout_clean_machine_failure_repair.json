@@ -1,13 +1,13 @@
 {
   "changed_files": [
-    "runtime/local_appliance/paths.py",
+    "runtime/local/appliance/paths.py",
     "tests/runtime/test_local_appliance_paths.py"
   ],
   "instance_layout_caused_failures_remaining": 0,
   "repaired_failures": [
     {
       "changed_files": [
-        "runtime/local_appliance/paths.py",
+        "runtime/local/appliance/paths.py",
         "tests/runtime/test_local_appliance_paths.py"
       ],
       "failure_id": "ILF-001",
@@ -20,7 +20,7 @@
     },
     {
       "changed_files": [
-        "runtime/local_appliance/paths.py",
+        "runtime/local/appliance/paths.py",
         "tests/runtime/test_local_appliance_paths.py"
       ],
       "failure_id": "ILF-002",

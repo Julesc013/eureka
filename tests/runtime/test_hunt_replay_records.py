@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import unittest
 
-from runtime.search_hunt import (
+from runtime.search.hunt import (
     BLOCKED_REPLAY_STEP_KINDS,
     ENABLED_REPLAY_STEP_KINDS,
     HuntReplayDiff,

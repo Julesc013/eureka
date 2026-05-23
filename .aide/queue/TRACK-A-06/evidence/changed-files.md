@@ -2,7 +2,7 @@
 
 Planned final changed files for the SourcePage view model contract bundle:
 
-- `contracts/views/source_page.v0.json`
+- `contracts/view/pages/source_page.v0.json`
 - `docs/reference/SOURCE_PAGE_VIEW_MODEL_CONTRACT.md`
 - `control/inventory/publication/source_page_view_model_policy.json`
 - `examples/view_models/source_page/minimal_source_page_v0.json`

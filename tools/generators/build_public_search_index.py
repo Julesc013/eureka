@@ -28,7 +28,7 @@ from runtime.gateway.public_api.public_search_index import (  # noqa: E402
     PUBLIC_INDEX_SCHEMA_VERSION,
     public_document_from_index_record,
 )
-from runtime.source_registry import load_source_registry  # noqa: E402
+from runtime.source.registry import load_source_registry  # noqa: E402
 
 
 DEFAULT_OUTPUT_ROOT = REPO_ROOT / "site" / "dist" / "data" / "public_index"

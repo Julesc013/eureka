@@ -16,8 +16,8 @@ outputs are draft-only and remain review-gated.
 - `python -m json.tool control/inventory/packs/pack_builder_truth_policy.json`
 - `python -m json.tool control/audits/track-b-21-pack-builder-runtime-v0/track_b_21_report.json`
 - `python scripts/validate_pack_builder_runtime.py`
-- `python scripts/build_local_pack.py --pack-type evidence_pack_draft --input examples/evidence_ledger_records/metadata_claim_record_v0.json --check`
-- `python scripts/summarize_local_pack.py --input examples/pack_drafts --check`
+- `python scripts/build_local_pack.py --pack-type evidence_pack_draft --input examples/evidence/ledger/records/metadata_claim_record_v0.json --check`
+- `python scripts/summarize_local_pack.py --input examples/packs/drafts --check`
 - `python -m unittest discover -s tests -t .`
 - `python scripts/check_architecture_boundaries.py`
 
@@ -39,8 +39,8 @@ outputs are draft-only and remain review-gated.
 - `git diff --check`: PASS.
 - Pack builder policy JSON syntax checks: PASS.
 - `python scripts/validate_pack_builder_runtime.py`: PASS.
-- `python scripts/build_local_pack.py --pack-type evidence_pack_draft --input examples/evidence_ledger_records/metadata_claim_record_v0.json --check`: PASS.
-- `python scripts/summarize_local_pack.py --input examples/pack_drafts --check`: PASS.
+- `python scripts/build_local_pack.py --pack-type evidence_pack_draft --input examples/evidence/ledger/records/metadata_claim_record_v0.json --check`: PASS.
+- `python scripts/summarize_local_pack.py --input examples/packs/drafts --check`: PASS.
 - `python -m unittest tests.runtime.test_pack_builder_runtime tests.operations.test_pack_builder_runtime_scripts`: PASS.
 - `python -m unittest discover -s tests -t .`: FAIL, unrelated OBS hardening phrase guard.
 - `python scripts/check_architecture_boundaries.py`: PASS.

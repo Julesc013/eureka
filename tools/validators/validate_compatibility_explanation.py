@@ -91,7 +91,7 @@ def check_checksums(root: Path, errors: list[str]) -> None:
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
-EXAMPLES_ROOT = REPO_ROOT / "examples" / "compatibility_aware_ranking"
+EXAMPLES_ROOT = REPO_ROOT / "examples" / "search" / "compatibility_aware_ranking"
 TOP_LEVEL_REQUIRED = {'compatibility_explanation_kind', 'result_suppressed', 'action_safety_explanations', 'no_installability_without_evidence_guarantees', 'explanation_applied_to_live_search', 'target_profile_summary', 'conflict_explanations', 'public_user_text', 'factor_explanations', 'explanation_generated_by_runtime', 'created_by_tool', 'schema_version', 'compatibility_ranking_applied_to_live_search', 'installability_claimed', 'no_runtime_guarantees', 'compatibility_status_explanations', 'limitations', 'explanation_scope', 'notes', 'hidden_suppression_performed', 'compatibility_explanation_id', 'status', 'item_explanations', 'unknown_gap_explanations'}
 HARD_FALSE_FIELDS = {"explanation_generated_by_runtime", "explanation_applied_to_live_search", "compatibility_ranking_applied_to_live_search", "installability_claimed", "result_suppressed", "hidden_suppression_performed"}
 

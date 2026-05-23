@@ -13,8 +13,8 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.source_cache import SourceCacheStore
-from runtime.source_cache.validation import validate_cache_path
+from runtime.source.cache import SourceCacheStore
+from runtime.source.cache.validation import validate_cache_path
 
 
 def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr: TextIO = sys.stderr) -> int:

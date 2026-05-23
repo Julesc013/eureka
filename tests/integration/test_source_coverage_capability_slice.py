@@ -5,7 +5,7 @@ import unittest
 
 from runtime.gateway import build_demo_source_registry_public_api
 from runtime.gateway.public_api import SourceCatalogRequest, SourceReadRequest
-from runtime.source_registry import load_source_registry
+from runtime.source.registry import load_source_registry
 from surfaces.web.workbench import render_source_registry_html
 
 

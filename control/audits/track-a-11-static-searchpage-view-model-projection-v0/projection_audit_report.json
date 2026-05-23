@@ -454,7 +454,7 @@
       "status": "aligned"
     }
   },
-  "source_view_schema": "contracts/views/search_page.v0.json",
+  "source_view_schema": "contracts/view/pages/search_page.v0.json",
   "status": "warn",
   "task": "TRACK-A-11",
   "track": "A",

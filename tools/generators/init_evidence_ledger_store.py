@@ -13,8 +13,8 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.evidence_ledger import EvidenceLedgerStore
-from runtime.evidence_ledger.validation import validate_evidence_ledger_path
+from runtime.evidence.ledger import EvidenceLedgerStore
+from runtime.evidence.ledger.validation import validate_evidence_ledger_path
 
 
 def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr: TextIO = sys.stderr) -> int:

@@ -27,14 +27,14 @@ from archive.prototypes.legacy_runtime.connectors.h5_vendor_update_driver.normal
 )
 
 CONTRACT_FILES = (
-    "contracts/control_schemas/fixtures/h5/connectors/vendor_update_fixture.v0.json",
-    "contracts/control_schemas/previews/h5/connectors/vendor_update_normalized_record.v0.json",
-    "contracts/control_schemas/previews/h5/connectors/vendor_identity_candidate.v0.json",
-    "contracts/control_schemas/previews/h5/connectors/driver_device_compatibility_candidate.v0.json",
-    "contracts/control_schemas/previews/h5/connectors/firmware_update_candidate.v0.json",
-    "contracts/control_schemas/previews/h5/connectors/runtime_redistributable_candidate.v0.json",
-    "contracts/control_schemas/previews/h5/connectors/vendor_payload_metadata_candidate.v0.json",
-    "contracts/control_schemas/fixtures/h5/connectors/vendor_update_fixture_replay_result.v0.json",
+    "contracts/schema/control/fixtures/h5/connectors/vendor_update_fixture.v0.json",
+    "contracts/schema/control/previews/h5/connectors/vendor_update_normalized_record.v0.json",
+    "contracts/schema/control/previews/h5/connectors/vendor_identity_candidate.v0.json",
+    "contracts/schema/control/previews/h5/connectors/driver_device_compatibility_candidate.v0.json",
+    "contracts/schema/control/previews/h5/connectors/firmware_update_candidate.v0.json",
+    "contracts/schema/control/previews/h5/connectors/runtime_redistributable_candidate.v0.json",
+    "contracts/schema/control/previews/h5/connectors/vendor_payload_metadata_candidate.v0.json",
+    "contracts/schema/control/fixtures/h5/connectors/vendor_update_fixture_replay_result.v0.json",
 )
 POLICY_FILES = (
     "control/inventory/connectors/h5_vendor_update_fixture_runtime_policy.json",

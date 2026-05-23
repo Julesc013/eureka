@@ -17,7 +17,7 @@ scope:
   - tests/operations/test_eureka_control_policy.py
   - tests/operations/test_eureka_changelog_preview.py
   - examples/commit_messages/**
-  - examples/workunits/**
+  - examples/work_units/yaml/**
   - control/audits/eureka-ctrl-01-control-standards-v0/**
   - docs/roadmap/TRACK_EXECUTION_PLAN.md
 non_goals:

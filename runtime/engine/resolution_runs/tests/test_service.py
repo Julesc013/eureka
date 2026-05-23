@@ -23,7 +23,7 @@ from runtime.engine.interfaces.public import (
 from runtime.engine.query_planner import DeterministicQueryPlannerService
 from runtime.engine.resolve import DeterministicSearchService, ExactMatchResolutionService
 from runtime.engine.resolution_runs import LocalResolutionRunService, LocalResolutionRunStore
-from runtime.source_registry import load_source_registry
+from runtime.source.registry import load_source_registry
 
 
 KNOWN_TARGET_REF = "fixture:software/synthetic-demo-app@1.0.0"

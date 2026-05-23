@@ -48,4 +48,4 @@
 - `runtime/connectors/h3_os_package_archives/wave_postmortem.py`: `31`
 - `runtime/connectors/h4_code_source_release/normalizer_common.py`: `31`
 - `runtime/connectors/h2_package_registries/normalizer_common.py`: `30`
-- `runtime/local_foundry/pack_builder.py`: `30`
+- `runtime/local/foundry/pack_builder.py`: `30`

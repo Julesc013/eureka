@@ -11,7 +11,7 @@ from surfaces.web.workbench.local_html import (
     render_search_hunt_not_found_page,
     validate_local_workbench_page,
 )
-from runtime.search_hunt import SearchHuntSession, SearchHuntTransition
+from runtime.search.hunt import SearchHuntSession, SearchHuntTransition
 
 
 def sample_hunt() -> SearchHuntSession:

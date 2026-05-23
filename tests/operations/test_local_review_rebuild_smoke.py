@@ -5,10 +5,10 @@ import threading
 import unittest
 from pathlib import Path
 
-from runtime.local_appliance import close_local_appliance, open_local_appliance
-from runtime.local_operator import write_operator_token_record
-from runtime.local_review import record_review_decision
-from runtime.local_service import create_local_http_server
+from runtime.local.appliance import close_local_appliance, open_local_appliance
+from runtime.local.operator import write_operator_token_record
+from runtime.local.review import record_review_decision
+from runtime.local.service import create_local_http_server
 from scripts import eureka_local_review_smoke, validate_local_review_rebuild
 from scripts.eureka_init_instance import initialize_instance
 from scripts.validate_local_review_rebuild import TOKEN, seed_review_records

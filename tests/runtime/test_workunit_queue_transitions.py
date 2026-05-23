@@ -4,7 +4,7 @@ import tempfile
 from pathlib import Path
 import unittest
 
-from runtime.workunit_queue import WorkUnit, WorkUnitQueueStore, WorkUnitTransitionError, WorkUnitValidationError
+from runtime.worker.workunit_queue import WorkUnit, WorkUnitQueueStore, WorkUnitTransitionError, WorkUnitValidationError
 
 
 class WorkUnitQueueTransitionTests(unittest.TestCase):

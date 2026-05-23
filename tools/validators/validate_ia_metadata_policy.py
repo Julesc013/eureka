@@ -136,7 +136,7 @@ REQUIRED_EVIDENCE_REQUIREMENTS = {
 FORBIDDEN_DIRTY_PATHS = [
     "runtime/connectors",
     "runtime/extraction",
-    "runtime/search_quality",
+    "runtime/search/quality",
     "site/dist/data/public_index",
     "site/dist",
     "native",

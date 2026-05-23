@@ -61,7 +61,7 @@ class TrackBIntegrationAuditTest(unittest.TestCase):
         files = [
             "contracts/node/example.v0.json",
             "control/inventory/example_policy.json",
-            "runtime/local_foundry/example_runtime.py",
+            "runtime/local/foundry/example_runtime.py",
             "scripts/example_validator.py",
             "tests/operations/example_test.py",
             "examples/example_record.json",
@@ -83,7 +83,7 @@ class TrackBIntegrationAuditTest(unittest.TestCase):
                     "artifact_paths": ["docs/reference/EXAMPLE.md"],
                     "contract_paths": ["contracts/node/example.v0.json"],
                     "policy_paths": ["control/inventory/example_policy.json"],
-                    "runtime_paths": ["runtime/local_foundry/example_runtime.py"],
+                    "runtime_paths": ["runtime/local/foundry/example_runtime.py"],
                     "script_paths": ["scripts/example_validator.py"],
                     "validator_paths": ["scripts/example_validator.py"],
                     "test_paths": ["tests/operations/example_test.py"],
@@ -95,7 +95,7 @@ class TrackBIntegrationAuditTest(unittest.TestCase):
                 }
             ],
             "contract_families": ["contracts/node"],
-            "runtime_families": ["runtime/local_foundry/example_runtime.py"],
+            "runtime_families": ["runtime/local/foundry/example_runtime.py"],
             "validator_families": ["scripts/example_validator.py"],
             "policy_families": ["control/inventory/example_policy.json"],
             "example_families": ["examples/example_record.json"],

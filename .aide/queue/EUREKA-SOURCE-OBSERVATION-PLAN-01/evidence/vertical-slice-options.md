@@ -6,11 +6,11 @@ Status: selected.
 
 Required files:
 
-- `runtime/source_observation/**`
-- `runtime/source_cache/**`
-- `runtime/evidence_ledger/**`
-- `runtime/review_queue/**`
-- `runtime/public_index/**`
+- `runtime/source/observation/**`
+- `runtime/source/cache/**`
+- `runtime/evidence/ledger/**`
+- `runtime/review/queue/**`
+- `runtime/index/public/**`
 - `scripts/demo_source_cache_store.py`
 - `scripts/demo_review_queue_store.py`
 - `scripts/demo_reviewed_public_index.py`
@@ -45,9 +45,9 @@ Status: rejected for Q58 as too narrow.
 
 Required files:
 
-- `examples/source_cache_records/source_metadata_record_v0.json`
+- `examples/sources/cache/records/source_metadata_record_v0.json`
 - `scripts/bridge_source_cache_to_evidence.py`
-- `runtime/local_foundry/source_cache_to_evidence.py`
+- `runtime/local/foundry/source_cache_to_evidence.py`
 - `tests/operations/test_source_cache_to_evidence_bridge_scripts.py`
 
 Risk: low.
@@ -70,8 +70,8 @@ Status: rejected for first slice.
 
 Required files:
 
-- `examples/source_cache/dry_run/minimal_internet_archive_metadata_summary/SOURCE_CACHE_CANDIDATE.json`
-- `examples/evidence_ledger/dry_run/minimal_source_metadata_observation/EVIDENCE_LEDGER_CANDIDATE.json`
+- `examples/sources/cache/dry_run/dry_run/minimal_internet_archive_metadata_summary/SOURCE_CACHE_CANDIDATE.json`
+- `examples/evidence/ledger/dry_run/dry_run/minimal_source_metadata_observation/EVIDENCE_LEDGER_CANDIDATE.json`
 - Internet Archive connector validators.
 
 Risk: medium/high due live-source branding despite fixture hard booleans.
@@ -94,8 +94,8 @@ Status: rejected for first slice.
 
 Required files:
 
-- `examples/source_cache/dry_run/minimal_package_metadata_summary/SOURCE_CACHE_CANDIDATE.json`
-- `examples/evidence_ledger/dry_run/minimal_package_metadata_observation/EVIDENCE_LEDGER_CANDIDATE.json`
+- `examples/sources/cache/dry_run/dry_run/minimal_package_metadata_summary/SOURCE_CACHE_CANDIDATE.json`
+- `examples/evidence/ledger/dry_run/dry_run/minimal_package_metadata_observation/EVIDENCE_LEDGER_CANDIDATE.json`
 - PyPI connector approval/runtime validators.
 
 Risk: medium/high due package-registry/live-source ambiguity.

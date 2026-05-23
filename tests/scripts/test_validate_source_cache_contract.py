@@ -18,7 +18,7 @@ class SourceCacheContractValidatorTests(unittest.TestCase):
         report = json.loads(completed.stdout)
         self.assertEqual(report["status"], "valid")
         self.assertEqual(report["example_count"], 3)
-        self.assertEqual(report["contract_file"], "contracts/source_cache/source_cache_record.v0.json")
+        self.assertEqual(report["contract_file"], "contracts/source/cache/source_cache_record.v0.json")
 
 
 if __name__ == "__main__":

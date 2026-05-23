@@ -60,7 +60,7 @@ class ManualObservationProtocolTest(unittest.TestCase):
 
     def test_valid_observed_result_example_passes(self) -> None:
         taxonomy_classes = _taxonomy_classes()
-        example = _read_json(REPO_ROOT / "examples/manual_observations/valid_observed_result_v0.json")
+        example = _read_json(REPO_ROOT / "examples/review/manual_observations/valid_observed_result_v0.json")
 
         errors = validate_observation_example(example, "valid_observed_result", taxonomy_classes=taxonomy_classes)
 
@@ -68,7 +68,7 @@ class ManualObservationProtocolTest(unittest.TestCase):
 
     def test_valid_no_result_example_passes(self) -> None:
         taxonomy_classes = _taxonomy_classes()
-        example = _read_json(REPO_ROOT / "examples/manual_observations/valid_no_result_observation_v0.json")
+        example = _read_json(REPO_ROOT / "examples/review/manual_observations/valid_no_result_observation_v0.json")
 
         errors = validate_observation_example(example, "valid_no_result", taxonomy_classes=taxonomy_classes)
 

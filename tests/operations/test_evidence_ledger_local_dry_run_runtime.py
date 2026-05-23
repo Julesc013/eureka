@@ -8,7 +8,7 @@ AUDIT_ROOT = ROOT / "control/audits/evidence-ledger-local-dry-run-runtime-v0"
 REPORT = AUDIT_ROOT / "evidence_ledger_local_dry_run_runtime_report.json"
 INVENTORY = ROOT / "control/inventory/evidence_ledger/evidence_ledger_local_dry_run_runtime.json"
 OPS_DOC = ROOT / "docs/operations/EVIDENCE_LEDGER_LOCAL_DRY_RUN_RUNTIME.md"
-RUNTIME_DOC = ROOT / "runtime/evidence_ledger/README.md"
+RUNTIME_DOC = ROOT / "runtime/evidence/ledger/README.md"
 COMMAND_MATRIX = ROOT / "control/inventory/tests/command_matrix.json"
 
 

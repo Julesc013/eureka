@@ -26,7 +26,7 @@
   {
     "class": "authority_cleanup",
     "compatibility_wrapper": false,
-    "new_path": "contracts/control_schemas",
+    "new_path": "contracts/schema/control",
     "old_path": "control/schemas",
     "reason": "Move machine-readable schema authority out of control and under contracts.",
     "references_updated": true

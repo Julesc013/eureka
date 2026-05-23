@@ -12,7 +12,7 @@ Workers cannot accept truth, mutate the public index directly, mutate the master
 
 ## LOCAL-03 Composition Rule
 
-The local service, future workbench, future worker runtime, and tests must acquire local stores through `runtime/local_appliance.open_local_appliance(instance_path)`.
+The local service, future workbench, future worker runtime, and tests must acquire local stores through `runtime/local/appliance.open_local_appliance(instance_path)`.
 
 Direct store paths are not a service boundary. They skip instance root validation, schema support checks, store manifest validation, migration state checks, and disabled server/LAN/deployment flags.
 
@@ -27,7 +27,7 @@ It does not rebuild indexes or create review decisions. LOCAL-04 may add a read-
 
 ## LOCAL-04 Service Rule
 
-`runtime/local_service` is now the service adapter for read-only localhost HTTP access. It must receive an explicit instance path, open `LocalApplianceRuntime` in read-only mode, and route reads through that object.
+`runtime/local/service` is now the service adapter for read-only localhost HTTP access. It must receive an explicit instance path, open `LocalApplianceRuntime` in read-only mode, and route reads through that object.
 
 The service boundary rejects write methods and LAN hosts. It does not run WorkUnits, source probes, review mutations, index rebuilds, deployment, or workbench UI behavior.
 
@@ -39,6 +39,6 @@ Workers added later must consume WorkUnits through the runtime boundary and emit
 
 ## LOCAL-09 Worker Rule
 
-`runtime/local_worker` now executes only enabled deterministic worker kinds from queued WorkUnits. The runner records policy decisions, transition history, worker result references, and audit references.
+`runtime/local/worker` now executes only enabled deterministic worker kinds from queued WorkUnits. The runner records policy decisions, transition history, worker result references, and audit references.
 
 The only LOCAL-09 worker allowed to mutate a product store is `reviewed_index_rebuild_worker`, and it is operator-token gated with mutation limited to the local reviewed `public_index`. Source probe, extraction, model/provider, download, install/execute, source sync, LAN, deployment, and master-index workers remain blocked.

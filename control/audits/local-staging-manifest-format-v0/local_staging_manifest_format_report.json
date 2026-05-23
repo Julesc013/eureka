@@ -3,7 +3,7 @@
   "created_by_slice": "local_staging_manifest_format_v0",
   "status": "contract_only",
   "staging_runtime_implemented": false,
-  "manifest_schema": "contracts/packs/local_staging_manifest.v0.json",
+  "manifest_schema": "contracts/pack/local_staging_manifest.v0.json",
   "example_manifest_path": "examples/local_staging_manifests/minimal_local_staging_manifest_v0/LOCAL_STAGING_MANIFEST.json",
   "validator": "scripts/validate_local_staging_manifest.py",
   "no_mutation_guarantees": {

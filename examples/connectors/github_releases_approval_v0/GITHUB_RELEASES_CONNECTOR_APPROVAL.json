@@ -364,7 +364,7 @@
   "expected_source_cache_outputs": [
     {
       "output_kind": "github_repository_release_summary",
-      "source_cache_record_contract_ref": "contracts/source_cache/source_cache_record.v0.json",
+      "source_cache_record_contract_ref": "contracts/source/cache/source_cache_record.v0.json",
       "output_runtime_implemented": false,
       "raw_payload_allowed": false,
       "repository_payload_allowed": false,
@@ -378,7 +378,7 @@
     },
     {
       "output_kind": "github_release_metadata_summary",
-      "source_cache_record_contract_ref": "contracts/source_cache/source_cache_record.v0.json",
+      "source_cache_record_contract_ref": "contracts/source/cache/source_cache_record.v0.json",
       "output_runtime_implemented": false,
       "raw_payload_allowed": false,
       "repository_payload_allowed": false,
@@ -392,7 +392,7 @@
     },
     {
       "output_kind": "github_release_asset_metadata_summary",
-      "source_cache_record_contract_ref": "contracts/source_cache/source_cache_record.v0.json",
+      "source_cache_record_contract_ref": "contracts/source/cache/source_cache_record.v0.json",
       "output_runtime_implemented": false,
       "raw_payload_allowed": false,
       "repository_payload_allowed": false,
@@ -406,7 +406,7 @@
     },
     {
       "output_kind": "github_release_tag_date_summary",
-      "source_cache_record_contract_ref": "contracts/source_cache/source_cache_record.v0.json",
+      "source_cache_record_contract_ref": "contracts/source/cache/source_cache_record.v0.json",
       "output_runtime_implemented": false,
       "raw_payload_allowed": false,
       "repository_payload_allowed": false,
@@ -420,7 +420,7 @@
     },
     {
       "output_kind": "github_latest_release_summary",
-      "source_cache_record_contract_ref": "contracts/source_cache/source_cache_record.v0.json",
+      "source_cache_record_contract_ref": "contracts/source/cache/source_cache_record.v0.json",
       "output_runtime_implemented": false,
       "raw_payload_allowed": false,
       "repository_payload_allowed": false,
@@ -436,7 +436,7 @@
   "expected_evidence_ledger_outputs": [
     {
       "output_kind": "release_metadata_observation",
-      "evidence_ledger_record_contract_ref": "contracts/evidence_ledger/evidence_ledger_record.v0.json",
+      "evidence_ledger_record_contract_ref": "contracts/evidence/ledger/evidence_ledger_record.v0.json",
       "output_runtime_implemented": false,
       "accepted_as_truth": false,
       "requires_review": true,
@@ -448,7 +448,7 @@
     },
     {
       "output_kind": "package_or_release_availability_observation",
-      "evidence_ledger_record_contract_ref": "contracts/evidence_ledger/evidence_ledger_record.v0.json",
+      "evidence_ledger_record_contract_ref": "contracts/evidence/ledger/evidence_ledger_record.v0.json",
       "output_runtime_implemented": false,
       "accepted_as_truth": false,
       "requires_review": true,
@@ -460,7 +460,7 @@
     },
     {
       "output_kind": "version_observation",
-      "evidence_ledger_record_contract_ref": "contracts/evidence_ledger/evidence_ledger_record.v0.json",
+      "evidence_ledger_record_contract_ref": "contracts/evidence/ledger/evidence_ledger_record.v0.json",
       "output_runtime_implemented": false,
       "accepted_as_truth": false,
       "requires_review": true,
@@ -472,7 +472,7 @@
     },
     {
       "output_kind": "asset_metadata_observation",
-      "evidence_ledger_record_contract_ref": "contracts/evidence_ledger/evidence_ledger_record.v0.json",
+      "evidence_ledger_record_contract_ref": "contracts/evidence/ledger/evidence_ledger_record.v0.json",
       "output_runtime_implemented": false,
       "accepted_as_truth": false,
       "requires_review": true,
@@ -484,7 +484,7 @@
     },
     {
       "output_kind": "repository_source_observation",
-      "evidence_ledger_record_contract_ref": "contracts/evidence_ledger/evidence_ledger_record.v0.json",
+      "evidence_ledger_record_contract_ref": "contracts/evidence/ledger/evidence_ledger_record.v0.json",
       "output_runtime_implemented": false,
       "accepted_as_truth": false,
       "requires_review": true,
@@ -496,7 +496,7 @@
     },
     {
       "output_kind": "scoped_absence_observation",
-      "evidence_ledger_record_contract_ref": "contracts/evidence_ledger/evidence_ledger_record.v0.json",
+      "evidence_ledger_record_contract_ref": "contracts/evidence/ledger/evidence_ledger_record.v0.json",
       "output_runtime_implemented": false,
       "accepted_as_truth": false,
       "requires_review": true,

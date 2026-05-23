@@ -20,8 +20,8 @@ CONTINUE_OPERATOR_ACTION_PATH = REPO_ROOT / "control/inventory/ia_02_tls_continu
 IA03_TASK_PATH = REPO_ROOT / ".aide/queue/IA-03/task.yaml"
 
 SCAN_PATHS = (
-    "runtime/source_observation/internet_archive_live_transport.py",
-    "runtime/source_observation/internet_archive_live_probe.py",
+    "runtime/source/observation/internet_archive_live_transport.py",
+    "runtime/source/observation/internet_archive_live_probe.py",
     "scripts/eureka_ia_live_metadata_probe.py",
     "scripts/diagnose_python_tls_trust.py",
 )

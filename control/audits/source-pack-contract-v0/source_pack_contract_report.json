@@ -3,12 +3,12 @@
   "created_by_slice": "source_pack_contract_v0",
   "status": "implemented_contract_validation_example_only",
   "contract": {
-    "schema": "contracts/packs/source_pack.v0.json",
+    "schema": "contracts/pack/source_pack.v0.json",
     "reference_doc": "docs/reference/SOURCE_PACK_CONTRACT.md",
     "lifecycle_doc": "docs/reference/PACK_LIFECYCLE.md"
   },
   "example_pack": {
-    "path": "examples/source_packs/minimal_recorded_source_pack_v0",
+    "path": "examples/packs/source/minimal_recorded_source_pack_v0",
     "pack_id": "example.minimal_recorded_source_pack_v0",
     "status": "shareable_candidate",
     "privacy_classification": "public_safe",
@@ -21,7 +21,7 @@
   },
   "validator": {
     "path": "scripts/validate_source_pack.py",
-    "default_pack_root": "examples/source_packs/minimal_recorded_source_pack_v0",
+    "default_pack_root": "examples/packs/source/minimal_recorded_source_pack_v0",
     "supports_json": true,
     "supports_strict": true,
     "performs_import": false,

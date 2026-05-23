@@ -51,7 +51,7 @@ ALLOWED_RUNTIME_REFERENCE_ONLY_PATHS = {
     "runtime/engine/tests/test_resolved_resource_identity.py",
     "runtime/gateway/tests/test_compatibility_view_models.py",
     "runtime/gateway/tests/test_workbench_sessions.py",
-    "runtime/local_foundry/workunit_dry_run.py",
+    "runtime/local/foundry/workunit_dry_run.py",
 }
 
 

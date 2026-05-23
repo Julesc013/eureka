@@ -27,9 +27,9 @@ Not implemented:
 
 Use `--all-examples` or an approved `--example-root` under:
 
-- `examples/public_search_ranking_dry_run`
-- `examples/evidence_weighted_ranking`
-- `examples/compatibility_aware_ranking`
+- `examples/index/public_search_ranking_dry_run`
+- `examples/evidence/weighted_ranking`
+- `examples/search/compatibility_aware_ranking`
 
 The CLI rejects arbitrary paths, absolute private paths, URLs, connector params, store/index/database paths, telemetry, user profiles, ad signals, model providers, mutation, promotion, suppression, and hosted/public write flags.
 

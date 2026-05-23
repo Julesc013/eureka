@@ -24,9 +24,9 @@
     "examples/observation_candidates/source_lead_observation_candidate_v0.json",
     "examples/observation_candidates/local_eval_failure_observation_candidate_v0.json",
     "examples/observation_candidates/policy_blocked_observation_candidate_v0.json",
-    "examples/observation_reviews/approve_observation_candidate_review_v0.json",
-    "examples/observation_reviews/reject_observation_candidate_review_v0.json",
-    "examples/observation_reviews/request_more_evidence_review_v0.json"
+    "examples/review/observation_reviews/approve_observation_candidate_review_v0.json",
+    "examples/review/observation_reviews/reject_observation_candidate_review_v0.json",
+    "examples/review/observation_reviews/request_more_evidence_review_v0.json"
   ],
   "added_scripts": [
     "scripts/validate_agent_assisted_observation_policy.py",

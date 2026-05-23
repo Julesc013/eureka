@@ -8,13 +8,13 @@ allowed:
     to:
       - contracts/archive/**
       - contracts/gateway/public_api/**
-      - contracts/ui/**
+      - contracts/surface/ui/**
     condition: normal online path
   - from: surfaces/native/**
     to:
       - contracts/archive/**
       - contracts/gateway/public_api/**
-      - contracts/ui/**
+      - contracts/surface/ui/**
     condition: normal online path
   - from: surfaces/native/**
     to:

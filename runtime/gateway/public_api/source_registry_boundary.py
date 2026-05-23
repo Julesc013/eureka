@@ -4,7 +4,7 @@ from dataclasses import dataclass
 from typing import Any
 
 from runtime.gateway.public_api.resolution_boundary import PublicApiResponse
-from runtime.source_registry import SourceRecordNotFoundError, SourceRegistry
+from runtime.source.registry import SourceRecordNotFoundError, SourceRegistry
 
 
 @dataclass(frozen=True)

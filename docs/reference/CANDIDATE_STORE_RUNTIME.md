@@ -57,8 +57,8 @@ Human review is required before downstream use.
 ## Validation
 
 ```bash
-python scripts/record_candidate.py --input examples/search_needs/software_version_search_need_v0.json --check
-python scripts/summarize_candidate_store.py --input examples/candidates --check
+python scripts/record_candidate.py --input examples/search/needs/software_version_search_need_v0.json --check
+python scripts/summarize_candidate_store.py --input examples/index/candidates --check
 python scripts/validate_candidate_store_runtime.py
 ```
 

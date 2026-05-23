@@ -11,8 +11,8 @@ from typing import Any, Mapping, Sequence, TextIO
 REPO_ROOT = Path(__file__).resolve().parents[2]
 SCHEMA_VERSION = "0.1.0"
 
-NEED_CONTRACT_PATH = "contracts/views/need_page.v0.json"
-CANDIDATE_CONTRACT_PATH = "contracts/views/candidate_page.v0.json"
+NEED_CONTRACT_PATH = "contracts/view/pages/need_page.v0.json"
+CANDIDATE_CONTRACT_PATH = "contracts/view/pages/candidate_page.v0.json"
 NEED_POLICY_INVENTORY = "control/inventory/publication/need_page_view_model_policy.json"
 CANDIDATE_POLICY_INVENTORY = "control/inventory/publication/candidate_page_view_model_policy.json"
 REPRESENTATION_INVENTORY = "control/inventory/publication/representation_profiles.json"

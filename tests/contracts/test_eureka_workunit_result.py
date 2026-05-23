@@ -202,11 +202,11 @@ def _read_json(path: Path) -> dict:
 
 
 def _example_paths() -> list[Path]:
-    return sorted((REPO_ROOT / "examples/work_unit_results").glob("*/work_unit_result.json"))
+    return sorted((REPO_ROOT / "examples/work_units/results").glob("*/work_unit_result.json"))
 
 
 def _result(name: str = "search_need_review_pass_v0") -> dict:
-    return deepcopy(_read_json(REPO_ROOT / "examples/work_unit_results" / name / "work_unit_result.json"))
+    return deepcopy(_read_json(REPO_ROOT / "examples/work_units/results" / name / "work_unit_result.json"))
 
 
 def _validate(result: dict) -> list[str]:
@@ -214,7 +214,7 @@ def _validate(result: dict) -> list[str]:
 
 
 def _example_tree() -> list[str]:
-    root = REPO_ROOT / "examples/work_unit_results"
+    root = REPO_ROOT / "examples/work_units/results"
     return sorted(path.relative_to(root).as_posix() for path in root.rglob("*"))
 
 

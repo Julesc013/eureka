@@ -4,7 +4,7 @@
   "allowed_input_roots": [
     "examples/nodes/",
     "examples/work_units/",
-    "examples/work_unit_results/",
+    "examples/work_units/results/",
     "control/inventory/nodes/",
     "control/audits/**/generated/",
     "explicit temp test directory"

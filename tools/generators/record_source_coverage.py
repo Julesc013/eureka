@@ -111,7 +111,7 @@ def _safe_output_path(path: Path) -> Path:
                 raise ValueError(f"refusing forbidden output root: {forbidden}")
         if rel_lower.startswith("control/audits/") and "/generated/" in rel_lower:
             return resolved
-        if rel_lower.startswith("examples/source_coverage/"):
+        if rel_lower.startswith("examples/sources/coverage/"):
             return resolved
         raise ValueError(f"refusing output outside approved coverage roots: {rel}")
     except ValueError as exc:

@@ -5,11 +5,12 @@ reconciliation. It is a no behavior change architecture-maintenance pass.
 
 ## Runtime
 
-`runtime/engine` remains the engine/kernel boundary. Current flat runtime names
-are frozen as compatibility paths until a future family-by-family migration can
-update imports, validators, docs, examples, and tests.
+`runtime/engine` remains the engine/kernel boundary. Substantive runtime files
+now live under canonical families. Old first-level runtime package names remain
+only as wrapper-only compatibility packages so existing imports do not break
+during the transition.
 
-Future runtime targets:
+Runtime canonical families:
 
 - `runtime/local/{appliance,eval,foundry,network,operator,review,service,worker}`
 - `runtime/source/{registry,cache,observation}`
@@ -17,22 +18,25 @@ Future runtime targets:
 - `runtime/evidence/ledger`
 - `runtime/review/queue`
 - `runtime/worker/workunit_queue`
-- `runtime/resolution/run`
-- `runtime/query/{hunt,need,quality}`
+- `runtime/resolution_run`
+- `runtime/search/{hunt,need,quality}`
 
 ## Contracts
 
-Contract moves are migration map first. `contracts/control_schemas/` is a
-compatibility authority path with canonical target `contracts/schema/control/`.
-Parallel source, evidence, search, index, view, and surface families have target
-homes in `control/audits/taxonomy-closeout-v1/contracts_taxonomy_migration_map.json`.
+Contract moves were migration map first. `contracts/schema/control/` is the
+compatibility authority path and canonical target for migrated control-plane
+schemas. Parallel source, evidence, search, index, view, pack, command,
+representation, and surface families now live under canonical homes recorded in
+`control/audits/eureka-structure-final-closeout-v1/path_migration_map.json`.
 
 ## Examples
 
-Examples remain public-safe fixture material. Future moves should use durable
-families such as `examples/packs`, `examples/sources`, `examples/search`,
+Examples remain public-safe fixture material. High-volume source, evidence,
+pack, review, index, search, and work-unit examples now use durable families
+such as `examples/packs`, `examples/sources`, `examples/search`,
 `examples/review`, `examples/evidence`, `examples/index`, and
-`examples/work_units`.
+`examples/work_units`. Remaining first-level example debt is explicitly
+classified for later family-specific review.
 
 ## AIDE
 
@@ -41,7 +45,7 @@ active source and not product truth.
 
 ## Rules
 
-- Use migration map first for contract, runtime, and example family moves.
+- Use migration map first for any future contract, runtime, and example family moves.
 - Preserve `runtime/engine` as the current boundary.
 - Do not treat generated output as source truth.
 - Do not treat paths as object identity.

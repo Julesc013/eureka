@@ -6,7 +6,7 @@ search-like public surfaces.
 ## What Was Added
 
 - Generic design-token contract and Temporal Minimal Search design-language
-  contract under `contracts/ui/`.
+  contract under `contracts/surface/ui/`.
 - Design-token policy, concrete Temporal Minimal Search token inventory, and
   design profile matrix under `control/inventory/publication/`.
 - Compact public-safe examples for minimal, default, high-contrast, and

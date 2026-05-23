@@ -1,17 +1,17 @@
 # Evidence Ledger Store
 
-`runtime/evidence_ledger` is the durable local claim and event store created for R0-06.
+`runtime/evidence/ledger` is the durable local claim and event store created for R0-06.
 
 The ledger records evidence candidates, event history, source-cache links, conflict candidates, review status, limitations, and warnings. It does not decide whether a claim is true, accepted, safe, rights-cleared, or eligible for a public index.
 
 ## Role
 
-The evidence ledger sits after `runtime/source_observation` and `runtime/source_cache`:
+The evidence ledger sits after `runtime/source/observation` and `runtime/source/cache`:
 
 1. a source observation is normalized,
 2. an evidence candidate is built,
-3. the source observation can be cached in `runtime/source_cache`,
-4. the evidence candidate is persisted in `runtime/evidence_ledger`,
+3. the source observation can be cached in `runtime/source/cache`,
+4. the evidence candidate is persisted in `runtime/evidence/ledger`,
 5. future review-queue work can turn ledger records into reviewable queue items.
 
 The ledger is not the source cache. Source cache stores observations and normalized source material. Evidence ledger stores claim candidates and event history derived from those observations.

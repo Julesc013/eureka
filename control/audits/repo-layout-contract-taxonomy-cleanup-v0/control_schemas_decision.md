@@ -1,11 +1,11 @@
 # Control Schemas Decision
 
-Decision: retain `contracts/control_schemas/` as control schema authority with migration
+Decision: retain `contracts/schema/control/` as control schema authority with migration
 backlog.
 
 Allowed scope: control/governance schemas only.
 
-Product contracts under `contracts/control_schemas/`: not allowed.
+Product contracts under `contracts/schema/control/`: not allowed.
 
 Migration task: `REPO-LAYOUT-CONTRACT-AUTHORITY-MIGRATION-01`.
 

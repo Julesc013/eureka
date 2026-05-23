@@ -1,6 +1,6 @@
 # Local Worker Runtime
 
-The worker runtime API lives in `runtime/local_worker`.
+The worker runtime API lives in `runtime/local/worker`.
 
 ## Registry
 

@@ -4,7 +4,7 @@
   "lanes": [
     {
       "lane_kind": "reviewed_local_results",
-      "contract_path": "contracts/search_interaction/result_lane_packet.v0.json",
+      "contract_path": "contracts/search/interaction/result_lane_packet.v0.json",
       "truth_level": "reviewed_local_not_master_public_truth",
       "review_required_default": false,
       "source_backed": false,
@@ -70,7 +70,7 @@
     },
     {
       "lane_kind": "local_candidate_results",
-      "contract_path": "contracts/search_interaction/result_lane_packet.v0.json",
+      "contract_path": "contracts/search/interaction/result_lane_packet.v0.json",
       "truth_level": "provisional_candidate_not_truth",
       "review_required_default": true,
       "source_backed": false,
@@ -136,7 +136,7 @@
     },
     {
       "lane_kind": "source_cache_hits",
-      "contract_path": "contracts/search_interaction/result_lane_packet.v0.json",
+      "contract_path": "contracts/search/interaction/result_lane_packet.v0.json",
       "truth_level": "source_cache_record_not_evidence",
       "review_required_default": false,
       "source_backed": true,
@@ -202,7 +202,7 @@
     },
     {
       "lane_kind": "ia_metadata_candidates",
-      "contract_path": "contracts/search_interaction/result_lane_packet.v0.json",
+      "contract_path": "contracts/search/interaction/result_lane_packet.v0.json",
       "truth_level": "ia_metadata_candidate_not_truth",
       "review_required_default": true,
       "source_backed": true,
@@ -268,7 +268,7 @@
     },
     {
       "lane_kind": "review_queue_items",
-      "contract_path": "contracts/search_interaction/result_lane_packet.v0.json",
+      "contract_path": "contracts/search/interaction/result_lane_packet.v0.json",
       "truth_level": "review_queue_item_not_accepted_truth",
       "review_required_default": true,
       "source_backed": false,
@@ -334,7 +334,7 @@
     },
     {
       "lane_kind": "known_absence",
-      "contract_path": "contracts/search_interaction/result_lane_packet.v0.json",
+      "contract_path": "contracts/search/interaction/result_lane_packet.v0.json",
       "truth_level": "bounded_absence_not_global_proof",
       "review_required_default": false,
       "source_backed": false,
@@ -400,7 +400,7 @@
     },
     {
       "lane_kind": "near_misses",
-      "contract_path": "contracts/search_interaction/result_lane_packet.v0.json",
+      "contract_path": "contracts/search/interaction/result_lane_packet.v0.json",
       "truth_level": "near_miss_not_truth",
       "review_required_default": true,
       "source_backed": false,
@@ -466,7 +466,7 @@
     },
     {
       "lane_kind": "blocked_actions",
-      "contract_path": "contracts/search_interaction/result_lane_packet.v0.json",
+      "contract_path": "contracts/search/interaction/result_lane_packet.v0.json",
       "truth_level": "policy_block_not_capability_absence",
       "review_required_default": false,
       "source_backed": false,
@@ -532,7 +532,7 @@
     },
     {
       "lane_kind": "running_workunits",
-      "contract_path": "contracts/search_interaction/result_lane_packet.v0.json",
+      "contract_path": "contracts/search/interaction/result_lane_packet.v0.json",
       "truth_level": "operational_state_not_truth",
       "review_required_default": false,
       "source_backed": false,
@@ -598,7 +598,7 @@
     },
     {
       "lane_kind": "deferred_deepening",
-      "contract_path": "contracts/search_interaction/result_lane_packet.v0.json",
+      "contract_path": "contracts/search/interaction/result_lane_packet.v0.json",
       "truth_level": "planned_work_not_truth",
       "review_required_default": false,
       "source_backed": false,
@@ -664,7 +664,7 @@
     },
     {
       "lane_kind": "future_extraction_work",
-      "contract_path": "contracts/search_interaction/result_lane_packet.v0.json",
+      "contract_path": "contracts/search/interaction/result_lane_packet.v0.json",
       "truth_level": "deferred_extraction_work_not_enabled",
       "review_required_default": true,
       "source_backed": false,

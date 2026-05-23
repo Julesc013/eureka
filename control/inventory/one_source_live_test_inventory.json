@@ -3,7 +3,7 @@
   "task": "R0-09",
   "source_id": "pypi_json_metadata",
   "package_name": "sampleproject",
-  "runtime_module": "runtime/source_observation/sources/pypi_json_metadata.py",
+  "runtime_module": "runtime/source/observation/sources/pypi_json_metadata.py",
   "scripts": [
     "scripts/run_one_source_live_test.py",
     "scripts/validate_one_source_live_test.py"

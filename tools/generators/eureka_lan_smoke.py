@@ -19,9 +19,9 @@ for item in (REPO_ROOT, SCRIPTS_ROOT):
 
 from eureka_lan_read_only_probe import run_probe, validate_base_url
 from eureka_lan_shutdown_check import run_shutdown_check
-from runtime.local_appliance import close_local_appliance, open_local_appliance
-from runtime.local_network import validate_service_host
-from runtime.local_service import LocalServiceApp
+from runtime.local.appliance import close_local_appliance, open_local_appliance
+from runtime.local.network import validate_service_host
+from runtime.local.service import LocalServiceApp
 
 
 LAN_HOSTS = {"0.0.0.0", "::"}

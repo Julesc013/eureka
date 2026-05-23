@@ -40,7 +40,7 @@ from runtime.engine.query_planner import (
 )
 from runtime.engine.resolve import DeterministicSearchService, ExactMatchResolutionService
 from runtime.engine.interfaces.public.query_plan import ResolutionTask
-from runtime.source_registry import SourceRegistry, load_source_registry
+from runtime.source.registry import SourceRegistry, load_source_registry
 
 
 DEFAULT_ARCHIVE_RESOLUTION_EVAL_ROOT = (

@@ -6,7 +6,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 AUDIT_DIR = ROOT / "control" / "audits" / "source-page-contract-v0"
 REPORT_PATH = AUDIT_DIR / "source_page_contract_report.json"
-CONTRACT_PATH = ROOT / "contracts" / "pages" / "source_page.v0.json"
+CONTRACT_PATH = ROOT / "contracts" / "surface" / "pages" / "source_page.v0.json"
 DOC_PATH = ROOT / "docs" / "reference" / "SOURCE_PAGE_CONTRACT.md"
 
 
@@ -52,7 +52,7 @@ class SourcePageContractAuditTests(unittest.TestCase):
             "minimal_connector_approval_source_page_v0",
             "minimal_placeholder_source_page_v0",
         ):
-            self.assertTrue((ROOT / "examples" / "source_pages" / rel / "SOURCE_PAGE.json").is_file())
+            self.assertTrue((ROOT / "examples" / "sources" / "pages" / rel / "SOURCE_PAGE.json").is_file())
 
     def test_report_no_runtime_no_mutation(self) -> None:
         report = json.loads(REPORT_PATH.read_text(encoding="utf-8"))

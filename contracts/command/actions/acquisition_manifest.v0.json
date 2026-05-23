@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/command/actions/acquisition_manifest.v0.json",
+  "title": "Eureka Acquisition Manifest v0",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "acquisition_manifest_id",
+    "acquisition_status",
+    "subject_ref",
+    "source_refs",
+    "access_path_candidates",
+    "source_locator_summaries",
+    "hash_or_fixity_refs",
+    "rights_posture",
+    "risk_posture",
+    "compatibility_posture",
+    "required_reviews",
+    "blocked_actions",
+    "allowed_current_actions",
+    "forbidden_current_actions",
+    "limitations",
+    "truth_boundary",
+    "product_boundary",
+    "notes"
+  ],
+  "properties": {
+    "schema_version": { "const": "acquisition_manifest.v0" },
+    "acquisition_status": { "enum": ["descriptive_only", "metadata_only", "link_only", "blocked_by_policy", "not_evaluable"] },
+    "truth_boundary": {
+      "type": "object",
+      "properties": {
+        "acquisition_manifest_downloads_file": { "const": false },
+        "acquisition_manifest_mirrors_file": { "const": false },
+        "rights_clearance_claimed": { "const": false },
+        "malware_safety_claimed": { "const": false },
+        "verified_installability_claimed": { "const": false },
+        "compatibility_certification_claimed": { "const": false }
+      }
+    }
+  },
+  "additionalProperties": true
+}

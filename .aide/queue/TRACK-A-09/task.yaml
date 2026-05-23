@@ -4,10 +4,10 @@ title: DownloadManifest, EvidencePage, AbsencePage, and ComparePage view model c
 status: active
 source: user_prompt
 scope:
-  - contracts/views/download_manifest_page.v0.json
-  - contracts/views/evidence_page.v0.json
-  - contracts/views/absence_page.v0.json
-  - contracts/views/compare_page.v0.json
+  - contracts/view/pages/download_manifest_page.v0.json
+  - contracts/view/pages/evidence_page.v0.json
+  - contracts/view/pages/absence_page.v0.json
+  - contracts/view/pages/compare_page.v0.json
   - control/inventory/publication/download_manifest_view_model_policy.json
   - control/inventory/publication/evidence_page_view_model_policy.json
   - control/inventory/publication/absence_page_view_model_policy.json

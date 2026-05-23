@@ -1,6 +1,6 @@
 import unittest
 
-from runtime.search_hunt.ia_bridge import (
+from runtime.search.hunt.ia_bridge import (
     build_ia_hunt_boundary_report,
     build_ia_hunt_result_lanes,
     plan_ia_hunt_pipeline,

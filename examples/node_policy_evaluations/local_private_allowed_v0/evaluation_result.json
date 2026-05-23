@@ -98,7 +98,7 @@
     },
     {
       "reason_category": "input_allowed",
-      "ref": "examples/manual_observations/valid_pending_slot_observation_v0.json",
+      "ref": "examples/review/manual_observations/valid_pending_slot_observation_v0.json",
       "result": "allowed",
       "summary": "input type manual_pending_slot is allowed"
     },
@@ -168,7 +168,7 @@
     {
       "decision": "allowed_for_validation",
       "input_type": "manual_pending_slot",
-      "ref": "examples/manual_observations/valid_pending_slot_observation_v0.json"
+      "ref": "examples/review/manual_observations/valid_pending_slot_observation_v0.json"
     }
   ],
   "limitations": [

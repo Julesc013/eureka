@@ -17,7 +17,7 @@ if str(REPO_ROOT) not in sys.path:
 from scripts.validate_probe_queue_item import validate_all_examples  # noqa: E402
 
 
-CONTRACT_PATH = REPO_ROOT / "contracts" / "control_schemas" / "tasks" / "query" / "probe_queue_item.v0.json"
+CONTRACT_PATH = REPO_ROOT / "contracts" / "schema" / "control" / "tasks" / "query" / "probe_queue_item.v0.json"
 PROBE_KIND_PATH = REPO_ROOT / "contracts" / "query" / "probe_kind.v0.json"
 CONTRACT_README = REPO_ROOT / "contracts" / "query" / "README.md"
 POLICY_PATH = REPO_ROOT / "control" / "inventory" / "query_intelligence" / "probe_queue_policy.json"
@@ -147,7 +147,7 @@ def validate_probe_queue_contract() -> dict[str, Any]:
     errors: list[str] = []
     warnings: list[str] = []
 
-    contract = _read_json_object(CONTRACT_PATH, errors, "contracts/control_schemas/tasks/query/probe_queue_item.v0.json")
+    contract = _read_json_object(CONTRACT_PATH, errors, "contracts/schema/control/tasks/query/probe_queue_item.v0.json")
     if contract:
         _validate_contract_schema(contract, errors)
 
@@ -178,7 +178,7 @@ def validate_probe_queue_contract() -> dict[str, Any]:
     return {
         "status": "valid" if not errors else "invalid",
         "created_by": "probe_queue_contract_validator_v0",
-        "contract_file": "contracts/control_schemas/tasks/query/probe_queue_item.v0.json",
+        "contract_file": "contracts/schema/control/tasks/query/probe_queue_item.v0.json",
         "example_count": examples_report.get("example_count", 0),
         "report_id": _report_id(),
         "errors": errors,
@@ -297,10 +297,10 @@ def _validate_audit_pack(errors: list[str], warnings: list[str]) -> None:
     if report.get("report_id") != "probe_queue_v0":
         errors.append("report_id must be probe_queue_v0.")
     if report.get("contract_file") not in {
-        "contracts/control_schemas/tasks/query/probe_queue_item.v0.json",
+        "contracts/schema/control/tasks/query/probe_queue_item.v0.json",
         "contracts/query/probe_queue_item.v0.json",
     }:
-        errors.append("report contract_file must point to contracts/control_schemas/tasks/query/probe_queue_item.v0.json.")
+        errors.append("report contract_file must point to contracts/schema/control/tasks/query/probe_queue_item.v0.json.")
     elif report.get("contract_file") == "contracts/query/probe_queue_item.v0.json":
         warnings.append("P63 historical audit report still records the pre-R0-03B-2 contract path.")
     hard = report.get("no_execution_no_mutation_guarantees")

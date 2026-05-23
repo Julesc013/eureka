@@ -1,6 +1,6 @@
 # Local HTTP Service
 
-LOCAL-04 adds the first HTTP adapter for the Local Appliance. It is a read-only localhost service over `runtime/local_appliance`.
+LOCAL-04 adds the first HTTP adapter for the Local Appliance. It is a read-only localhost service over `runtime/local/appliance`.
 
 ## Boundary
 

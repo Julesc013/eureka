@@ -17,7 +17,7 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.local_appliance import (
+from runtime.local.appliance import (
     LocalApplianceError,
     LocalReadOnlyStoreMutationError,
     close_local_appliance,
@@ -43,15 +43,15 @@ INVENTORIES = {
     "control/inventory/local_03_next_task_decision.json": "local_03_next_task_decision.v0",
 }
 RUNTIME_FILES = (
-    "runtime/local_appliance/__init__.py",
-    "runtime/local_appliance/instance.py",
-    "runtime/local_appliance/config.py",
-    "runtime/local_appliance/manifest.py",
-    "runtime/local_appliance/migration.py",
-    "runtime/local_appliance/composition.py",
-    "runtime/local_appliance/status.py",
-    "runtime/local_appliance/validation.py",
-    "runtime/local_appliance/errors.py",
+    "runtime/local/appliance/__init__.py",
+    "runtime/local/appliance/instance.py",
+    "runtime/local/appliance/config.py",
+    "runtime/local/appliance/manifest.py",
+    "runtime/local/appliance/migration.py",
+    "runtime/local/appliance/composition.py",
+    "runtime/local/appliance/status.py",
+    "runtime/local/appliance/validation.py",
+    "runtime/local/appliance/errors.py",
 )
 SCRIPTS = (
     "scripts/eureka_local_runtime_status.py",
@@ -97,27 +97,41 @@ ALLOWED_IMPORTS = {
     "hashlib",
     "runtime.source_cache",
     "runtime.source_cache.store",
+    "runtime.source.cache",
+    "runtime.source.cache.store",
     "runtime.evidence_ledger",
     "runtime.evidence_ledger.store",
+    "runtime.evidence.ledger",
+    "runtime.evidence.ledger.store",
     "runtime.review_queue",
     "runtime.review_queue.store",
+    "runtime.review.queue",
+    "runtime.review.queue.store",
     "runtime.public_index",
     "runtime.public_index.store",
+    "runtime.index.public",
+    "runtime.index.public.store",
     "runtime.search_hunt",
     "runtime.search_hunt.store",
+    "runtime.search.hunt",
+    "runtime.search.hunt.store",
     "runtime.search_need",
     "runtime.search_need.store",
+    "runtime.search.need",
+    "runtime.search.need.store",
     "runtime.agent_research",
     "runtime.agent_research.store",
     "runtime.ai_escalation",
     "runtime.ai_escalation.store",
     "runtime.source_observation",
+    "runtime.source.observation",
 }
 FORBIDDEN_IMPORT_PREFIXES = (
     "runtime.connectors",
     "runtime.local_foundry",
     "runtime.extraction",
     "runtime.search_quality",
+    "runtime.search.quality",
     "requests",
     "httpx",
     "aiohttp",
@@ -226,7 +240,7 @@ def validate_policies(payloads: Mapping[str, Mapping[str, Any]], errors: list[st
 
 def validate_inventories(payloads: Mapping[str, Mapping[str, Any]], errors: list[str], warnings: list[str]) -> None:
     inventory = payloads.get("control/inventory/local_runtime_composition_inventory.json", {})
-    if inventory.get("runtime_package") != "runtime/local_appliance":
+    if inventory.get("runtime_package") != "runtime/local/appliance":
         errors.append("composition inventory runtime_package mismatch")
     if inventory.get("stores_composed") != ["source_cache", "evidence_ledger", "review_queue", "public_index"]:
         errors.append("composition inventory stores_composed mismatch")

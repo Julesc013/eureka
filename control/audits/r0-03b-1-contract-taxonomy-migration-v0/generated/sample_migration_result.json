@@ -35,7 +35,7 @@
         "runtime/gateway/tests/test_workbench_sessions.py"
       ],
       "source_path": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json",
-      "target_path": "contracts/control_schemas/fixtures/archive/synthetic_resolution_fixture.json"
+      "target_path": "contracts/schema/control/fixtures/archive/synthetic_resolution_fixture.json"
     },
     {
       "blocks": [
@@ -60,7 +60,7 @@
         "runtime/connectors/h14_source_discovery/normalizer_common.py"
       ],
       "source_path": "contracts/connectors/h14_connector_pack_manifest_candidate.v0.json",
-      "target_path": "contracts/control_schemas/previews/h14/connectors/connector_pack_manifest_candidate.v0.json"
+      "target_path": "contracts/schema/control/previews/h14/connectors/connector_pack_manifest_candidate.v0.json"
     },
     {
       "blocks": [
@@ -85,7 +85,7 @@
         "runtime/connectors/h14_source_discovery/normalizer_common.py"
       ],
       "source_path": "contracts/connectors/h14_connector_scorecard_candidate.v0.json",
-      "target_path": "contracts/control_schemas/previews/h14/connectors/connector_scorecard_candidate.v0.json"
+      "target_path": "contracts/schema/control/previews/h14/connectors/connector_scorecard_candidate.v0.json"
     },
     {
       "blocks": [
@@ -110,7 +110,7 @@
         "runtime/connectors/h14_source_discovery/normalizer_common.py"
       ],
       "source_path": "contracts/connectors/h14_coverage_manifest_candidate.v0.json",
-      "target_path": "contracts/control_schemas/previews/h14/connectors/coverage_manifest_candidate.v0.json"
+      "target_path": "contracts/schema/control/previews/h14/connectors/coverage_manifest_candidate.v0.json"
     },
     {
       "blocks": [
@@ -135,7 +135,7 @@
         "runtime/connectors/h14_source_discovery/normalizer_common.py"
       ],
       "source_path": "contracts/connectors/h14_pack_import_export_boundary_candidate.v0.json",
-      "target_path": "contracts/control_schemas/previews/h14/connectors/pack_import_export_boundary_candidate.v0.json"
+      "target_path": "contracts/schema/control/previews/h14/connectors/pack_import_export_boundary_candidate.v0.json"
     },
     {
       "blocks": [
@@ -160,7 +160,7 @@
         "runtime/connectors/h14_source_discovery/normalizer_common.py"
       ],
       "source_path": "contracts/connectors/h14_source_candidate_candidate.v0.json",
-      "target_path": "contracts/control_schemas/previews/h14/connectors/source_candidate_candidate.v0.json"
+      "target_path": "contracts/schema/control/previews/h14/connectors/source_candidate_candidate.v0.json"
     },
     {
       "blocks": [
@@ -185,7 +185,7 @@
         "runtime/connectors/h14_source_discovery/normalizer_common.py"
       ],
       "source_path": "contracts/connectors/h14_source_discovery_candidate.v0.json",
-      "target_path": "contracts/control_schemas/previews/h14/connectors/source_discovery_candidate.v0.json"
+      "target_path": "contracts/schema/control/previews/h14/connectors/source_discovery_candidate.v0.json"
     },
     {
       "blocks": [
@@ -210,7 +210,7 @@
         "runtime/connectors/h14_source_discovery/normalizer_common.py"
       ],
       "source_path": "contracts/connectors/h14_source_dispute_revocation_candidate.v0.json",
-      "target_path": "contracts/control_schemas/previews/h14/connectors/source_dispute_revocation_candidate.v0.json"
+      "target_path": "contracts/schema/control/previews/h14/connectors/source_dispute_revocation_candidate.v0.json"
     },
     {
       "blocks": [
@@ -235,7 +235,7 @@
         "runtime/connectors/h14_source_discovery/normalizer_common.py"
       ],
       "source_path": "contracts/connectors/h14_source_lineage_provenance_candidate.v0.json",
-      "target_path": "contracts/control_schemas/previews/h14/connectors/source_lineage_provenance_candidate.v0.json"
+      "target_path": "contracts/schema/control/previews/h14/connectors/source_lineage_provenance_candidate.v0.json"
     },
     {
       "blocks": [
@@ -260,7 +260,7 @@
         "runtime/connectors/h14_source_discovery/normalizer_common.py"
       ],
       "source_path": "contracts/connectors/h14_source_need_candidate.v0.json",
-      "target_path": "contracts/control_schemas/previews/h14/connectors/source_need_candidate.v0.json"
+      "target_path": "contracts/schema/control/previews/h14/connectors/source_need_candidate.v0.json"
     },
     {
       "blocks": [
@@ -285,7 +285,7 @@
         "runtime/connectors/h14_source_discovery/normalizer_common.py"
       ],
       "source_path": "contracts/connectors/h14_source_pack_manifest_candidate.v0.json",
-      "target_path": "contracts/control_schemas/previews/h14/connectors/source_pack_manifest_candidate.v0.json"
+      "target_path": "contracts/schema/control/previews/h14/connectors/source_pack_manifest_candidate.v0.json"
     },
     {
       "blocks": [
@@ -310,7 +310,7 @@
         "runtime/connectors/h14_source_discovery/normalizer_common.py"
       ],
       "source_path": "contracts/connectors/h14_source_reliability_freshness_candidate.v0.json",
-      "target_path": "contracts/control_schemas/previews/h14/connectors/source_reliability_freshness_candidate.v0.json"
+      "target_path": "contracts/schema/control/previews/h14/connectors/source_reliability_freshness_candidate.v0.json"
     },
     {
       "blocks": [
@@ -346,56 +346,56 @@
         "scripts/dry_run_demand_dashboard_snapshot.py"
       ],
       "source_path": "contracts/query/candidate_promotion_assessment.v0.json",
-      "target_path": "contracts/control_schemas/previews/query/candidate_promotion_assessment.v0.json"
+      "target_path": "contracts/schema/control/previews/query/candidate_promotion_assessment.v0.json"
     }
   ],
   "deferred": [
     {
       "contract_class": "source_policy_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/actions/acquisition_manifest.v0.json",
+      "source_path": "contracts/command/actions/acquisition_manifest.v0.json",
       "target_path": "contracts/connectors/acquisition_manifest.v0.json"
     },
     {
       "contract_class": "source_policy_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/actions/action_manifest.v0.json",
+      "source_path": "contracts/command/actions/action_manifest.v0.json",
       "target_path": "contracts/connectors/action_manifest.v0.json"
     },
     {
       "contract_class": "source_policy_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/actions/action_policy.v0.json",
+      "source_path": "contracts/command/actions/action_policy.v0.json",
       "target_path": "contracts/connectors/action_policy.v0.json"
     },
     {
       "contract_class": "control_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
-      "source_path": "contracts/actions/action_taxonomy.v0.json",
-      "target_path": "contracts/control_schemas/policies/actions/action_taxonomy.v0.json"
+      "source_path": "contracts/command/actions/action_taxonomy.v0.json",
+      "target_path": "contracts/schema/control/policies/actions/action_taxonomy.v0.json"
     },
     {
       "contract_class": "control_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
-      "source_path": "contracts/actions/citation_bundle.v0.json",
-      "target_path": "contracts/control_schemas/policies/actions/citation_bundle.v0.json"
+      "source_path": "contracts/command/actions/citation_bundle.v0.json",
+      "target_path": "contracts/schema/control/policies/actions/citation_bundle.v0.json"
     },
     {
       "contract_class": "source_policy_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/actions/compare_action_manifest.v0.json",
+      "source_path": "contracts/command/actions/compare_action_manifest.v0.json",
       "target_path": "contracts/connectors/compare_action_manifest.v0.json"
     },
     {
       "contract_class": "source_policy_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/actions/export_manifest.v0.json",
+      "source_path": "contracts/command/actions/export_manifest.v0.json",
       "target_path": "contracts/connectors/export_manifest.v0.json"
     },
     {
       "contract_class": "source_policy_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/actions/preservation_manifest.v0.json",
+      "source_path": "contracts/command/actions/preservation_manifest.v0.json",
       "target_path": "contracts/connectors/preservation_manifest.v0.json"
     },
     {
@@ -420,19 +420,19 @@
       "contract_class": "unknown",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
       "source_path": "contracts/archive/fixtures/software/payloads/synthetic-demo-app-package.zip",
-      "target_path": "contracts/control_schemas/deprecated/archive/synthetic-demo-app-package.zip"
+      "target_path": "contracts/schema/control/deprecated/archive/synthetic-demo-app-package.zip"
     },
     {
       "contract_class": "unknown",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
       "source_path": "contracts/archive/fixtures/software/payloads/synthetic-demo-app.bundle",
-      "target_path": "contracts/control_schemas/deprecated/archive/synthetic-demo-app.bundle"
+      "target_path": "contracts/schema/control/deprecated/archive/synthetic-demo-app.bundle"
     },
     {
       "contract_class": "unknown",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
       "source_path": "contracts/archive/protocols/archive-lifecycle.protocol.md",
-      "target_path": "contracts/control_schemas/deprecated/archive/archive-lifecycle.protocol.md"
+      "target_path": "contracts/schema/control/deprecated/archive/archive-lifecycle.protocol.md"
     },
     {
       "contract_class": "source_policy_contract",
@@ -552,103 +552,103 @@
       "contract_class": "task_queue_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/audits/local_mvp_next_task_decision.v0.json",
-      "target_path": "contracts/control_schemas/tasks/audits/local_mvp_next_task_decision.v0.json"
+      "target_path": "contracts/schema/control/tasks/audits/local_mvp_next_task_decision.v0.json"
     },
     {
       "contract_class": "task_queue_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/audits/local_mvp_next_wave_option.v0.json",
-      "target_path": "contracts/control_schemas/tasks/audits/local_mvp_next_wave_option.v0.json"
+      "target_path": "contracts/schema/control/tasks/audits/local_mvp_next_wave_option.v0.json"
     },
     {
       "contract_class": "task_queue_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/audits/mvp_alpha_launch_decision_options.v0.json",
-      "target_path": "contracts/control_schemas/tasks/audits/mvp_alpha_launch_decision_options.v0.json"
+      "target_path": "contracts/schema/control/tasks/audits/mvp_alpha_launch_decision_options.v0.json"
     },
     {
       "contract_class": "task_queue_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/audits/mvp_alpha_operator_next_task.v0.json",
-      "target_path": "contracts/control_schemas/tasks/audits/mvp_alpha_operator_next_task.v0.json"
+      "target_path": "contracts/schema/control/tasks/audits/mvp_alpha_operator_next_task.v0.json"
     },
     {
       "contract_class": "task_queue_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/connectors/h10_games_emulation_next_phase_recommendation.v0.json",
-      "target_path": "contracts/control_schemas/tasks/h10/connectors/games_emulation_next_phase_recommendation.v0.json"
+      "target_path": "contracts/schema/control/tasks/h10/connectors/games_emulation_next_phase_recommendation.v0.json"
     },
     {
       "contract_class": "task_queue_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/connectors/h11_storefront_next_phase_recommendation.v0.json",
-      "target_path": "contracts/control_schemas/tasks/h11/connectors/storefront_next_phase_recommendation.v0.json"
+      "target_path": "contracts/schema/control/tasks/h11/connectors/storefront_next_phase_recommendation.v0.json"
     },
     {
       "contract_class": "task_queue_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/connectors/h12_retro_community_next_phase_recommendation.v0.json",
-      "target_path": "contracts/control_schemas/tasks/h12/connectors/retro_community_next_phase_recommendation.v0.json"
+      "target_path": "contracts/schema/control/tasks/h12/connectors/retro_community_next_phase_recommendation.v0.json"
     },
     {
       "contract_class": "task_queue_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/connectors/h13_local_private_next_phase_recommendation.v0.json",
-      "target_path": "contracts/control_schemas/tasks/h13/connectors/local_private_next_phase_recommendation.v0.json"
+      "target_path": "contracts/schema/control/tasks/h13/connectors/local_private_next_phase_recommendation.v0.json"
     },
     {
       "contract_class": "task_queue_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/connectors/h14_source_discovery_next_phase_recommendation.v0.json",
-      "target_path": "contracts/control_schemas/tasks/h14/connectors/source_discovery_next_phase_recommendation.v0.json"
+      "target_path": "contracts/schema/control/tasks/h14/connectors/source_discovery_next_phase_recommendation.v0.json"
     },
     {
       "contract_class": "task_queue_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/connectors/h2_package_next_phase_recommendation.v0.json",
-      "target_path": "contracts/control_schemas/tasks/h2/connectors/package_next_phase_recommendation.v0.json"
+      "target_path": "contracts/schema/control/tasks/h2/connectors/package_next_phase_recommendation.v0.json"
     },
     {
       "contract_class": "task_queue_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/connectors/h3_os_package_next_phase_recommendation.v0.json",
-      "target_path": "contracts/control_schemas/tasks/h3/connectors/os_package_next_phase_recommendation.v0.json"
+      "target_path": "contracts/schema/control/tasks/h3/connectors/os_package_next_phase_recommendation.v0.json"
     },
     {
       "contract_class": "task_queue_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/connectors/h4_code_source_next_phase_recommendation.v0.json",
-      "target_path": "contracts/control_schemas/tasks/h4/connectors/code_source_next_phase_recommendation.v0.json"
+      "target_path": "contracts/schema/control/tasks/h4/connectors/code_source_next_phase_recommendation.v0.json"
     },
     {
       "contract_class": "task_queue_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/connectors/h5_vendor_update_next_phase_recommendation.v0.json",
-      "target_path": "contracts/control_schemas/tasks/h5/connectors/vendor_update_next_phase_recommendation.v0.json"
+      "target_path": "contracts/schema/control/tasks/h5/connectors/vendor_update_next_phase_recommendation.v0.json"
     },
     {
       "contract_class": "task_queue_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/connectors/h6_web_archive_next_phase_recommendation.v0.json",
-      "target_path": "contracts/control_schemas/tasks/h6/connectors/web_archive_next_phase_recommendation.v0.json"
+      "target_path": "contracts/schema/control/tasks/h6/connectors/web_archive_next_phase_recommendation.v0.json"
     },
     {
       "contract_class": "task_queue_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/connectors/h7_library_research_next_phase_recommendation.v0.json",
-      "target_path": "contracts/control_schemas/tasks/h7/connectors/library_research_next_phase_recommendation.v0.json"
+      "target_path": "contracts/schema/control/tasks/h7/connectors/library_research_next_phase_recommendation.v0.json"
     },
     {
       "contract_class": "task_queue_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/connectors/h8_manuals_docs_next_phase_recommendation.v0.json",
-      "target_path": "contracts/control_schemas/tasks/h8/connectors/manuals_docs_next_phase_recommendation.v0.json"
+      "target_path": "contracts/schema/control/tasks/h8/connectors/manuals_docs_next_phase_recommendation.v0.json"
     },
     {
       "contract_class": "task_queue_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/connectors/h9_media_metadata_next_phase_recommendation.v0.json",
-      "target_path": "contracts/control_schemas/tasks/h9/connectors/media_metadata_next_phase_recommendation.v0.json"
+      "target_path": "contracts/schema/control/tasks/h9/connectors/media_metadata_next_phase_recommendation.v0.json"
     },
     {
       "contract_class": "product_domain_contract",
@@ -659,13 +659,13 @@
     {
       "contract_class": "durable_store_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/evidence_ledger/evidence_ledger_manifest.v0.json",
+      "source_path": "contracts/evidence/ledger/evidence_ledger_manifest.v0.json",
       "target_path": "contracts/stores/evidence_ledger_manifest.v0.json"
     },
     {
       "contract_class": "durable_store_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/evidence_ledger/evidence_ledger_record.v0.json",
+      "source_path": "contracts/evidence/ledger/evidence_ledger_record.v0.json",
       "target_path": "contracts/stores/evidence_ledger_record.v0.json"
     },
     {
@@ -744,13 +744,13 @@
       "contract_class": "control_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/hosting/connector_kill_switch_plan.v0.json",
-      "target_path": "contracts/control_schemas/policies/hosting/connector_kill_switch_plan.v0.json"
+      "target_path": "contracts/schema/control/policies/hosting/connector_kill_switch_plan.v0.json"
     },
     {
       "contract_class": "control_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/hosting/deployment_environment.v0.json",
-      "target_path": "contracts/control_schemas/policies/hosting/deployment_environment.v0.json"
+      "target_path": "contracts/schema/control/policies/hosting/deployment_environment.v0.json"
     },
     {
       "contract_class": "source_policy_contract",
@@ -762,13 +762,13 @@
       "contract_class": "control_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/hosting/hosted_wrapper_rehearsal.v0.json",
-      "target_path": "contracts/control_schemas/policies/hosting/hosted_wrapper_rehearsal.v0.json"
+      "target_path": "contracts/schema/control/policies/hosting/hosted_wrapper_rehearsal.v0.json"
     },
     {
       "contract_class": "control_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/hosting/incident_response_plan.v0.json",
-      "target_path": "contracts/control_schemas/policies/hosting/incident_response_plan.v0.json"
+      "target_path": "contracts/schema/control/policies/hosting/incident_response_plan.v0.json"
     },
     {
       "contract_class": "source_policy_contract",
@@ -780,7 +780,7 @@
       "contract_class": "control_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/hosting/post_launch_remediation_plan.v0.json",
-      "target_path": "contracts/control_schemas/policies/hosting/post_launch_remediation_plan.v0.json"
+      "target_path": "contracts/schema/control/policies/hosting/post_launch_remediation_plan.v0.json"
     },
     {
       "contract_class": "source_policy_contract",
@@ -792,37 +792,37 @@
       "contract_class": "control_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/hosting/public_alpha_deployment_plan.v0.json",
-      "target_path": "contracts/control_schemas/policies/hosting/public_alpha_deployment_plan.v0.json"
+      "target_path": "contracts/schema/control/policies/hosting/public_alpha_deployment_plan.v0.json"
     },
     {
       "contract_class": "control_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/hosting/public_alpha_deployment_step.v0.json",
-      "target_path": "contracts/control_schemas/policies/hosting/public_alpha_deployment_step.v0.json"
+      "target_path": "contracts/schema/control/policies/hosting/public_alpha_deployment_step.v0.json"
     },
     {
       "contract_class": "control_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/hosting/public_alpha_dns_readiness.v0.json",
-      "target_path": "contracts/control_schemas/policies/hosting/public_alpha_dns_readiness.v0.json"
+      "target_path": "contracts/schema/control/policies/hosting/public_alpha_dns_readiness.v0.json"
     },
     {
       "contract_class": "control_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/hosting/public_alpha_environment_matrix.v0.json",
-      "target_path": "contracts/control_schemas/policies/hosting/public_alpha_environment_matrix.v0.json"
+      "target_path": "contracts/schema/control/policies/hosting/public_alpha_environment_matrix.v0.json"
     },
     {
       "contract_class": "control_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/hosting/public_alpha_non_claims.v0.json",
-      "target_path": "contracts/control_schemas/policies/hosting/public_alpha_non_claims.v0.json"
+      "target_path": "contracts/schema/control/policies/hosting/public_alpha_non_claims.v0.json"
     },
     {
       "contract_class": "control_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/hosting/public_alpha_operator_checklist.v0.json",
-      "target_path": "contracts/control_schemas/policies/hosting/public_alpha_operator_checklist.v0.json"
+      "target_path": "contracts/schema/control/policies/hosting/public_alpha_operator_checklist.v0.json"
     },
     {
       "contract_class": "source_policy_contract",
@@ -834,25 +834,25 @@
       "contract_class": "control_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/hosting/public_alpha_rollout_gate.v0.json",
-      "target_path": "contracts/control_schemas/policies/hosting/public_alpha_rollout_gate.v0.json"
+      "target_path": "contracts/schema/control/policies/hosting/public_alpha_rollout_gate.v0.json"
     },
     {
       "contract_class": "control_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/hosting/public_alpha_smoke_matrix.v0.json",
-      "target_path": "contracts/control_schemas/policies/hosting/public_alpha_smoke_matrix.v0.json"
+      "target_path": "contracts/schema/control/policies/hosting/public_alpha_smoke_matrix.v0.json"
     },
     {
       "contract_class": "control_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/hosting/public_alpha_static_backend_split.v0.json",
-      "target_path": "contracts/control_schemas/policies/hosting/public_alpha_static_backend_split.v0.json"
+      "target_path": "contracts/schema/control/policies/hosting/public_alpha_static_backend_split.v0.json"
     },
     {
       "contract_class": "control_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/hosting/public_launch_evidence.v0.json",
-      "target_path": "contracts/control_schemas/policies/hosting/public_launch_evidence.v0.json"
+      "target_path": "contracts/schema/control/policies/hosting/public_launch_evidence.v0.json"
     },
     {
       "contract_class": "source_policy_contract",
@@ -864,7 +864,7 @@
       "contract_class": "control_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/hosting/rollback_plan.v0.json",
-      "target_path": "contracts/control_schemas/policies/hosting/rollback_plan.v0.json"
+      "target_path": "contracts/schema/control/policies/hosting/rollback_plan.v0.json"
     },
     {
       "contract_class": "source_policy_contract",
@@ -882,7 +882,7 @@
       "contract_class": "control_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/hosting/takedown_rights_safety_plan.v0.json",
-      "target_path": "contracts/control_schemas/policies/hosting/takedown_rights_safety_plan.v0.json"
+      "target_path": "contracts/schema/control/policies/hosting/takedown_rights_safety_plan.v0.json"
     },
     {
       "contract_class": "product_domain_contract",
@@ -905,31 +905,31 @@
     {
       "contract_class": "durable_store_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/master_index/review_decision.v0.json",
+      "source_path": "contracts/index/master/review_decision.v0.json",
       "target_path": "contracts/stores/review_decision.v0.json"
     },
     {
       "contract_class": "task_queue_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
-      "source_path": "contracts/master_index/review_queue_entry.v0.json",
-      "target_path": "contracts/control_schemas/tasks/master_index/review_queue_entry.v0.json"
+      "source_path": "contracts/index/master/review_queue_entry.v0.json",
+      "target_path": "contracts/schema/control/tasks/master_index/review_queue_entry.v0.json"
     },
     {
       "contract_class": "task_queue_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
-      "source_path": "contracts/master_index/review_queue_manifest.v0.json",
-      "target_path": "contracts/control_schemas/tasks/master_index/review_queue_manifest.v0.json"
+      "source_path": "contracts/index/master/review_queue_manifest.v0.json",
+      "target_path": "contracts/schema/control/tasks/master_index/review_queue_manifest.v0.json"
     },
     {
       "contract_class": "durable_store_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/master_index/reviewed_public_index_rebuild.v0.json",
+      "source_path": "contracts/index/master/reviewed_public_index_rebuild.v0.json",
       "target_path": "contracts/stores/reviewed_public_index_rebuild.v0.json"
     },
     {
       "contract_class": "durable_store_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/master_index/reviewed_public_record_proposal.v0.json",
+      "source_path": "contracts/index/master/reviewed_public_record_proposal.v0.json",
       "target_path": "contracts/stores/reviewed_public_record_proposal.v0.json"
     },
     {
@@ -942,13 +942,13 @@
       "contract_class": "control_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/node/local_foundry_state.v0.json",
-      "target_path": "contracts/control_schemas/policies/node/local_foundry_state.v0.json"
+      "target_path": "contracts/schema/control/policies/node/local_foundry_state.v0.json"
     },
     {
       "contract_class": "control_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/node/node_capability.v0.json",
-      "target_path": "contracts/control_schemas/policies/node/node_capability.v0.json"
+      "target_path": "contracts/schema/control/policies/node/node_capability.v0.json"
     },
     {
       "contract_class": "source_policy_contract",
@@ -960,114 +960,114 @@
       "contract_class": "control_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/node/work_unit.v0.json",
-      "target_path": "contracts/control_schemas/policies/node/work_unit.v0.json"
+      "target_path": "contracts/schema/control/policies/node/work_unit.v0.json"
     },
     {
       "contract_class": "control_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/node/work_unit_result.v0.json",
-      "target_path": "contracts/control_schemas/policies/node/work_unit_result.v0.json"
+      "target_path": "contracts/schema/control/policies/node/work_unit_result.v0.json"
     },
     {
       "contract_class": "control_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
-      "source_path": "contracts/packs/contribution_pack.v0.json",
-      "target_path": "contracts/control_schemas/policies/packs/contribution_pack.v0.json"
+      "source_path": "contracts/pack/contribution_pack.v0.json",
+      "target_path": "contracts/schema/control/policies/packs/contribution_pack.v0.json"
     },
     {
       "contract_class": "control_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
-      "source_path": "contracts/packs/contribution_review_seed.v0.json",
-      "target_path": "contracts/control_schemas/policies/packs/contribution_review_seed.v0.json"
+      "source_path": "contracts/pack/contribution_review_seed.v0.json",
+      "target_path": "contracts/schema/control/policies/packs/contribution_review_seed.v0.json"
     },
     {
       "contract_class": "control_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
-      "source_path": "contracts/packs/evidence_pack.v0.json",
-      "target_path": "contracts/control_schemas/policies/packs/evidence_pack.v0.json"
+      "source_path": "contracts/pack/evidence_pack.v0.json",
+      "target_path": "contracts/schema/control/policies/packs/evidence_pack.v0.json"
     },
     {
       "contract_class": "control_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
-      "source_path": "contracts/packs/index_pack.v0.json",
-      "target_path": "contracts/control_schemas/policies/packs/index_pack.v0.json"
+      "source_path": "contracts/pack/index_pack.v0.json",
+      "target_path": "contracts/schema/control/policies/packs/index_pack.v0.json"
     },
     {
       "contract_class": "source_policy_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/packs/local_staging_manifest.v0.json",
+      "source_path": "contracts/pack/local_staging_manifest.v0.json",
       "target_path": "contracts/connectors/local_staging_manifest.v0.json"
     },
     {
       "contract_class": "control_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
-      "source_path": "contracts/packs/pack_quarantine_request.v0.json",
-      "target_path": "contracts/control_schemas/policies/packs/pack_quarantine_request.v0.json"
+      "source_path": "contracts/pack/pack_quarantine_request.v0.json",
+      "target_path": "contracts/schema/control/policies/packs/pack_quarantine_request.v0.json"
     },
     {
       "contract_class": "control_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
-      "source_path": "contracts/packs/pack_quarantine_result.v0.json",
-      "target_path": "contracts/control_schemas/policies/packs/pack_quarantine_result.v0.json"
+      "source_path": "contracts/pack/pack_quarantine_result.v0.json",
+      "target_path": "contracts/schema/control/policies/packs/pack_quarantine_result.v0.json"
     },
     {
       "contract_class": "source_policy_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/packs/pack_signature_envelope.v0.json",
+      "source_path": "contracts/pack/pack_signature_envelope.v0.json",
       "target_path": "contracts/connectors/pack_signature_envelope.v0.json"
     },
     {
       "contract_class": "control_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
-      "source_path": "contracts/packs/source_pack.v0.json",
-      "target_path": "contracts/control_schemas/policies/packs/source_pack.v0.json"
+      "source_path": "contracts/pack/source_pack.v0.json",
+      "target_path": "contracts/schema/control/policies/packs/source_pack.v0.json"
     },
     {
       "contract_class": "control_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
-      "source_path": "contracts/packs/source_pack_export.v0.json",
-      "target_path": "contracts/control_schemas/policies/packs/source_pack_export.v0.json"
+      "source_path": "contracts/pack/source_pack_export.v0.json",
+      "target_path": "contracts/schema/control/policies/packs/source_pack_export.v0.json"
     },
     {
       "contract_class": "source_policy_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/packs/source_pack_manifest.v0.json",
+      "source_path": "contracts/pack/source_pack_manifest.v0.json",
       "target_path": "contracts/connectors/source_pack_manifest.v0.json"
     },
     {
       "contract_class": "public_api_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/pages/comparison_page.v0.json",
+      "source_path": "contracts/surface/pages/comparison_page.v0.json",
       "target_path": "contracts/api/comparison_page.v0.json"
     },
     {
       "contract_class": "public_api_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/pages/comparison_page_section.v0.json",
+      "source_path": "contracts/surface/pages/comparison_page_section.v0.json",
       "target_path": "contracts/api/comparison_page_section.v0.json"
     },
     {
       "contract_class": "public_api_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/pages/object_page.v0.json",
+      "source_path": "contracts/surface/pages/object_page.v0.json",
       "target_path": "contracts/api/object_page.v0.json"
     },
     {
       "contract_class": "public_api_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/pages/object_page_section.v0.json",
+      "source_path": "contracts/surface/pages/object_page_section.v0.json",
       "target_path": "contracts/api/object_page_section.v0.json"
     },
     {
       "contract_class": "public_api_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/pages/source_page.v0.json",
+      "source_path": "contracts/surface/pages/source_page.v0.json",
       "target_path": "contracts/api/source_page.v0.json"
     },
     {
       "contract_class": "public_api_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/pages/source_page_section.v0.json",
+      "source_path": "contracts/surface/pages/source_page_section.v0.json",
       "target_path": "contracts/api/source_page_section.v0.json"
     },
     {
@@ -1134,7 +1134,7 @@
       "contract_class": "task_queue_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/query/observation_candidate_review_queue.v0.json",
-      "target_path": "contracts/control_schemas/tasks/query/observation_candidate_review_queue.v0.json"
+      "target_path": "contracts/schema/control/tasks/query/observation_candidate_review_queue.v0.json"
     },
     {
       "contract_class": "product_runtime_contract",
@@ -1152,7 +1152,7 @@
       "contract_class": "task_queue_schema",
       "reason": "Control/task/validator/deprecated/generated schemas are deferred to R0-03B-2.",
       "source_path": "contracts/query/probe_queue_item.v0.json",
-      "target_path": "contracts/control_schemas/tasks/query/probe_queue_item.v0.json"
+      "target_path": "contracts/schema/control/tasks/query/probe_queue_item.v0.json"
     },
     {
       "contract_class": "product_runtime_contract",
@@ -1224,31 +1224,31 @@
       "contract_class": "product_runtime_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
       "source_path": "contracts/query/search_need_lifecycle.v0.json",
-      "target_path": "contracts/runtime/search_need_lifecycle.v0.json"
+      "target_path": "contracts/runtime/search/need_lifecycle.v0.json"
     },
     {
       "contract_class": "product_runtime_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
       "source_path": "contracts/query/search_need_record.v0.json",
-      "target_path": "contracts/runtime/search_need_record.v0.json"
+      "target_path": "contracts/runtime/search/need_record.v0.json"
     },
     {
       "contract_class": "product_runtime_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
       "source_path": "contracts/query/search_need_seed.v0.json",
-      "target_path": "contracts/runtime/search_need_seed.v0.json"
+      "target_path": "contracts/runtime/search/need_seed.v0.json"
     },
     {
       "contract_class": "product_runtime_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
       "source_path": "contracts/query/search_need_seed_conversion.v0.json",
-      "target_path": "contracts/runtime/search_need_seed_conversion.v0.json"
+      "target_path": "contracts/runtime/search/need_seed_conversion.v0.json"
     },
     {
       "contract_class": "product_runtime_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
       "source_path": "contracts/query/search_quality_query_set.v0.json",
-      "target_path": "contracts/runtime/search_quality_query_set.v0.json"
+      "target_path": "contracts/runtime/search/quality_query_set.v0.json"
     },
     {
       "contract_class": "product_runtime_contract",
@@ -1331,37 +1331,37 @@
     {
       "contract_class": "product_domain_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/representations/capability_negotiation.v0.json",
+      "source_path": "contracts/representation/capability_negotiation.v0.json",
       "target_path": "contracts/domain/capability_negotiation.v0.json"
     },
     {
       "contract_class": "product_domain_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/representations/host_profile.v0.json",
+      "source_path": "contracts/representation/host_profile.v0.json",
       "target_path": "contracts/domain/host_profile.v0.json"
     },
     {
       "contract_class": "product_domain_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/representations/renderer_parity_harness.v0.json",
+      "source_path": "contracts/representation/renderer_parity_harness.v0.json",
       "target_path": "contracts/domain/renderer_parity_harness.v0.json"
     },
     {
       "contract_class": "product_domain_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/representations/representation_profile.v0.json",
+      "source_path": "contracts/representation/representation_profile.v0.json",
       "target_path": "contracts/domain/representation_profile.v0.json"
     },
     {
       "contract_class": "product_domain_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/representations/route_view_representation_matrix.v0.json",
+      "source_path": "contracts/representation/route_view_representation_matrix.v0.json",
       "target_path": "contracts/domain/route_view_representation_matrix.v0.json"
     },
     {
       "contract_class": "product_domain_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/representations/semantic_renderer_parity.v0.json",
+      "source_path": "contracts/representation/semantic_renderer_parity.v0.json",
       "target_path": "contracts/domain/semantic_renderer_parity.v0.json"
     },
     {
@@ -1487,463 +1487,463 @@
     {
       "contract_class": "durable_store_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/source_cache/source_cache_manifest.v0.json",
+      "source_path": "contracts/source/cache/source_cache_manifest.v0.json",
       "target_path": "contracts/stores/source_cache_manifest.v0.json"
     },
     {
       "contract_class": "durable_store_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/source_cache/source_cache_record.v0.json",
+      "source_path": "contracts/source/cache/source_cache_record.v0.json",
       "target_path": "contracts/stores/source_cache_record.v0.json"
     },
     {
       "contract_class": "source_policy_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/source_registry/source_capability.schema.yaml",
+      "source_path": "contracts/source/registry/source_capability.schema.yaml",
       "target_path": "contracts/connectors/source_capability.schema.yaml"
     },
     {
       "contract_class": "source_policy_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/source_registry/source_coverage.schema.yaml",
+      "source_path": "contracts/source/registry/source_coverage.schema.yaml",
       "target_path": "contracts/connectors/source_coverage.schema.yaml"
     },
     {
       "contract_class": "source_policy_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/source_registry/source_record.schema.yaml",
+      "source_path": "contracts/source/registry/source_record.schema.yaml",
       "target_path": "contracts/connectors/source_record.schema.yaml"
     },
     {
       "contract_class": "source_policy_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/source_registry/source_registry.schema.yaml",
+      "source_path": "contracts/source/registry/source_registry.schema.yaml",
       "target_path": "contracts/connectors/source_registry.schema.yaml"
     },
     {
       "contract_class": "source_policy_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/source_sync/source_sync_job_kind.v0.json",
+      "source_path": "contracts/source/sync/source_sync_job_kind.v0.json",
       "target_path": "contracts/connectors/source_sync_job_kind.v0.json"
     },
     {
       "contract_class": "source_policy_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/source_sync/source_sync_worker_job.v0.json",
+      "source_path": "contracts/source/sync/source_sync_worker_job.v0.json",
       "target_path": "contracts/connectors/source_sync_worker_job.v0.json"
     },
     {
       "contract_class": "source_policy_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/source_sync/source_sync_worker_manifest.v0.json",
+      "source_path": "contracts/source/sync/source_sync_worker_manifest.v0.json",
       "target_path": "contracts/connectors/source_sync_worker_manifest.v0.json"
     },
     {
       "contract_class": "source_policy_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/sources/source_approval_gate.v0.json",
+      "source_path": "contracts/source/records/source_approval_gate.v0.json",
       "target_path": "contracts/connectors/source_approval_gate.v0.json"
     },
     {
       "contract_class": "source_policy_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/sources/source_capability.v0.json",
+      "source_path": "contracts/source/records/source_capability.v0.json",
       "target_path": "contracts/connectors/source_capability.v0.json"
     },
     {
       "contract_class": "source_policy_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/sources/source_coverage_ledger.v0.json",
+      "source_path": "contracts/source/records/source_coverage_ledger.v0.json",
       "target_path": "contracts/connectors/source_coverage_ledger.v0.json"
     },
     {
       "contract_class": "source_policy_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/sources/source_coverage_manifest.v0.json",
+      "source_path": "contracts/source/records/source_coverage_manifest.v0.json",
       "target_path": "contracts/connectors/source_coverage_manifest.v0.json"
     },
     {
       "contract_class": "source_policy_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/sources/source_family.v0.json",
+      "source_path": "contracts/source/records/source_family.v0.json",
       "target_path": "contracts/connectors/source_family.v0.json"
     },
     {
       "contract_class": "source_policy_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/sources/source_index_depth.v0.json",
+      "source_path": "contracts/source/records/source_index_depth.v0.json",
       "target_path": "contracts/connectors/source_index_depth.v0.json"
     },
     {
       "contract_class": "source_policy_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/sources/source_operation_policy.v0.json",
+      "source_path": "contracts/source/records/source_operation_policy.v0.json",
       "target_path": "contracts/connectors/source_operation_policy.v0.json"
     },
     {
       "contract_class": "source_policy_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/sources/source_policy.v0.json",
+      "source_path": "contracts/source/records/source_policy.v0.json",
       "target_path": "contracts/connectors/source_policy.v0.json"
     },
     {
       "contract_class": "source_policy_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/sources/source_record.v2.json",
+      "source_path": "contracts/source/records/source_record.v2.json",
       "target_path": "contracts/connectors/source_record.v2.json"
     },
     {
       "contract_class": "source_policy_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/sources/source_registry.v2.json",
+      "source_path": "contracts/source/records/source_registry.v2.json",
       "target_path": "contracts/connectors/source_registry.v2.json"
     },
     {
       "contract_class": "source_policy_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/sources/source_trust_lane.v0.json",
+      "source_path": "contracts/source/records/source_trust_lane.v0.json",
       "target_path": "contracts/connectors/source_trust_lane.v0.json"
     },
     {
       "contract_class": "public_api_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/ui/design_tokens.v0.json",
+      "source_path": "contracts/surface/ui/design_tokens.v0.json",
       "target_path": "contracts/api/design_tokens.v0.json"
     },
     {
       "contract_class": "public_api_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/ui/temporal_minimal_search.v0.json",
+      "source_path": "contracts/surface/ui/temporal_minimal_search.v0.json",
       "target_path": "contracts/api/temporal_minimal_search.v0.json"
     },
     {
       "contract_class": "public_api_contract",
       "reason": "Active public API/UI contract was kept in contracts/ for product-contract cleanup review.",
-      "source_path": "contracts/ui/ui_contracts/absence_report.ui_contract.yaml",
+      "source_path": "contracts/surface/ui/contracts/absence_report.ui_contract.yaml",
       "target_path": "contracts/api/ui_contracts/absence_report.ui_contract.yaml"
     },
     {
       "contract_class": "public_api_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/ui/ui_contracts/acquisition.ui_contract.yaml",
+      "source_path": "contracts/surface/ui/contracts/acquisition.ui_contract.yaml",
       "target_path": "contracts/api/ui_contracts/acquisition.ui_contract.yaml"
     },
     {
       "contract_class": "public_api_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/ui/ui_contracts/action_plan.ui_contract.yaml",
+      "source_path": "contracts/surface/ui/contracts/action_plan.ui_contract.yaml",
       "target_path": "contracts/api/ui_contracts/action_plan.ui_contract.yaml"
     },
     {
       "contract_class": "public_api_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/ui/ui_contracts/bundle_inspection.ui_contract.yaml",
+      "source_path": "contracts/surface/ui/contracts/bundle_inspection.ui_contract.yaml",
       "target_path": "contracts/api/ui_contracts/bundle_inspection.ui_contract.yaml"
     },
     {
       "contract_class": "public_api_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/ui/ui_contracts/comparison.ui_contract.yaml",
+      "source_path": "contracts/surface/ui/contracts/comparison.ui_contract.yaml",
       "target_path": "contracts/api/ui_contracts/comparison.ui_contract.yaml"
     },
     {
       "contract_class": "public_api_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/ui/ui_contracts/compatibility.ui_contract.yaml",
+      "source_path": "contracts/surface/ui/contracts/compatibility.ui_contract.yaml",
       "target_path": "contracts/api/ui_contracts/compatibility.ui_contract.yaml"
     },
     {
       "contract_class": "public_api_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/ui/ui_contracts/decomposition.ui_contract.yaml",
+      "source_path": "contracts/surface/ui/contracts/decomposition.ui_contract.yaml",
       "target_path": "contracts/api/ui_contracts/decomposition.ui_contract.yaml"
     },
     {
       "contract_class": "public_api_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/ui/ui_contracts/local_index.ui_contract.yaml",
+      "source_path": "contracts/surface/ui/contracts/local_index.ui_contract.yaml",
       "target_path": "contracts/api/ui_contracts/local_index.ui_contract.yaml"
     },
     {
       "contract_class": "public_api_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/ui/ui_contracts/local_task.ui_contract.yaml",
+      "source_path": "contracts/surface/ui/contracts/local_task.ui_contract.yaml",
       "target_path": "contracts/api/ui_contracts/local_task.ui_contract.yaml"
     },
     {
       "contract_class": "public_api_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/ui/ui_contracts/member_access.ui_contract.yaml",
+      "source_path": "contracts/surface/ui/contracts/member_access.ui_contract.yaml",
       "target_path": "contracts/api/ui_contracts/member_access.ui_contract.yaml"
     },
     {
       "contract_class": "public_api_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/ui/ui_contracts/query_plan.ui_contract.yaml",
+      "source_path": "contracts/surface/ui/contracts/query_plan.ui_contract.yaml",
       "target_path": "contracts/api/ui_contracts/query_plan.ui_contract.yaml"
     },
     {
       "contract_class": "public_api_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/ui/ui_contracts/representation_selection.ui_contract.yaml",
+      "source_path": "contracts/surface/ui/contracts/representation_selection.ui_contract.yaml",
       "target_path": "contracts/api/ui_contracts/representation_selection.ui_contract.yaml"
     },
     {
       "contract_class": "public_api_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/ui/ui_contracts/representations.ui_contract.yaml",
-      "target_path": "contracts/api/ui_contracts/representations.ui_contract.yaml"
+      "source_path": "contracts/surface/ui/contracts/representation.ui_contract.yaml",
+      "target_path": "contracts/api/ui_contracts/representation.ui_contract.yaml"
     },
     {
       "contract_class": "public_api_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/ui/ui_contracts/resolution_actions.ui_contract.yaml",
+      "source_path": "contracts/surface/ui/contracts/resolution_actions.ui_contract.yaml",
       "target_path": "contracts/api/ui_contracts/resolution_actions.ui_contract.yaml"
     },
     {
       "contract_class": "public_api_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/ui/ui_contracts/resolution_memory.ui_contract.yaml",
+      "source_path": "contracts/surface/ui/contracts/resolution_memory.ui_contract.yaml",
       "target_path": "contracts/api/ui_contracts/resolution_memory.ui_contract.yaml"
     },
     {
       "contract_class": "public_api_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/ui/ui_contracts/resolution_run.ui_contract.yaml",
-      "target_path": "contracts/api/ui_contracts/resolution_run.ui_contract.yaml"
+      "source_path": "contracts/surface/ui/contracts/resolution/run.ui_contract.yaml",
+      "target_path": "contracts/api/ui_contracts/resolution/run.ui_contract.yaml"
     },
     {
       "contract_class": "public_api_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/ui/ui_contracts/resolution_workspace.ui_contract.yaml",
+      "source_path": "contracts/surface/ui/contracts/resolution_workspace.ui_contract.yaml",
       "target_path": "contracts/api/ui_contracts/resolution_workspace.ui_contract.yaml"
     },
     {
       "contract_class": "public_api_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/ui/ui_contracts/search_results.ui_contract.yaml",
+      "source_path": "contracts/surface/ui/contracts/search_results.ui_contract.yaml",
       "target_path": "contracts/api/ui_contracts/search_results.ui_contract.yaml"
     },
     {
       "contract_class": "public_api_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/ui/ui_contracts/source_registry.ui_contract.yaml",
-      "target_path": "contracts/api/ui_contracts/source_registry.ui_contract.yaml"
+      "source_path": "contracts/surface/ui/contracts/source/registry.ui_contract.yaml",
+      "target_path": "contracts/api/ui_contracts/source/registry.ui_contract.yaml"
     },
     {
       "contract_class": "public_api_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/ui/ui_contracts/stored_exports.ui_contract.yaml",
+      "source_path": "contracts/surface/ui/contracts/stored_exports.ui_contract.yaml",
       "target_path": "contracts/api/ui_contracts/stored_exports.ui_contract.yaml"
     },
     {
       "contract_class": "public_api_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/ui/ui_contracts/subject_states.ui_contract.yaml",
+      "source_path": "contracts/surface/ui/contracts/subject_states.ui_contract.yaml",
       "target_path": "contracts/api/ui_contracts/subject_states.ui_contract.yaml"
     },
     {
       "contract_class": "public_api_contract",
       "reason": "Active public API/UI contract was kept in contracts/ for product-contract cleanup review.",
-      "source_path": "contracts/ui/view_models/absence_report.view_model.yaml",
+      "source_path": "contracts/view/models/ui/absence_report.view_model.yaml",
       "target_path": "contracts/api/view_models/absence_report.view_model.yaml"
     },
     {
       "contract_class": "public_api_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/ui/view_models/acquisition.view_model.yaml",
+      "source_path": "contracts/view/models/ui/acquisition.view_model.yaml",
       "target_path": "contracts/api/view_models/acquisition.view_model.yaml"
     },
     {
       "contract_class": "public_api_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/ui/view_models/action_plan.view_model.yaml",
+      "source_path": "contracts/view/models/ui/action_plan.view_model.yaml",
       "target_path": "contracts/api/view_models/action_plan.view_model.yaml"
     },
     {
       "contract_class": "public_api_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/ui/view_models/bundle_inspection.view_model.yaml",
+      "source_path": "contracts/view/models/ui/bundle_inspection.view_model.yaml",
       "target_path": "contracts/api/view_models/bundle_inspection.view_model.yaml"
     },
     {
       "contract_class": "public_api_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/ui/view_models/comparison.view_model.yaml",
+      "source_path": "contracts/view/models/ui/comparison.view_model.yaml",
       "target_path": "contracts/api/view_models/comparison.view_model.yaml"
     },
     {
       "contract_class": "public_api_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/ui/view_models/compatibility.view_model.yaml",
+      "source_path": "contracts/view/models/ui/compatibility.view_model.yaml",
       "target_path": "contracts/api/view_models/compatibility.view_model.yaml"
     },
     {
       "contract_class": "public_api_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/ui/view_models/decomposition.view_model.yaml",
+      "source_path": "contracts/view/models/ui/decomposition.view_model.yaml",
       "target_path": "contracts/api/view_models/decomposition.view_model.yaml"
     },
     {
       "contract_class": "public_api_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/ui/view_models/local_index.view_model.yaml",
+      "source_path": "contracts/view/models/ui/local_index.view_model.yaml",
       "target_path": "contracts/api/view_models/local_index.view_model.yaml"
     },
     {
       "contract_class": "public_api_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/ui/view_models/local_task.view_model.yaml",
+      "source_path": "contracts/view/models/ui/local_task.view_model.yaml",
       "target_path": "contracts/api/view_models/local_task.view_model.yaml"
     },
     {
       "contract_class": "public_api_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/ui/view_models/member_access.view_model.yaml",
+      "source_path": "contracts/view/models/ui/member_access.view_model.yaml",
       "target_path": "contracts/api/view_models/member_access.view_model.yaml"
     },
     {
       "contract_class": "public_api_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/ui/view_models/query_plan.view_model.yaml",
+      "source_path": "contracts/view/models/ui/query_plan.view_model.yaml",
       "target_path": "contracts/api/view_models/query_plan.view_model.yaml"
     },
     {
       "contract_class": "public_api_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/ui/view_models/representation_selection.view_model.yaml",
+      "source_path": "contracts/view/models/ui/representation_selection.view_model.yaml",
       "target_path": "contracts/api/view_models/representation_selection.view_model.yaml"
     },
     {
       "contract_class": "public_api_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/ui/view_models/representations.view_model.yaml",
+      "source_path": "contracts/view/models/ui/representations.view_model.yaml",
       "target_path": "contracts/api/view_models/representations.view_model.yaml"
     },
     {
       "contract_class": "public_api_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/ui/view_models/resolution_actions.view_model.yaml",
+      "source_path": "contracts/view/models/ui/resolution_actions.view_model.yaml",
       "target_path": "contracts/api/view_models/resolution_actions.view_model.yaml"
     },
     {
       "contract_class": "public_api_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/ui/view_models/resolution_memory.view_model.yaml",
+      "source_path": "contracts/view/models/ui/resolution_memory.view_model.yaml",
       "target_path": "contracts/api/view_models/resolution_memory.view_model.yaml"
     },
     {
       "contract_class": "public_api_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/ui/view_models/resolution_run.view_model.yaml",
+      "source_path": "contracts/view/models/ui/resolution_run.view_model.yaml",
       "target_path": "contracts/api/view_models/resolution_run.view_model.yaml"
     },
     {
       "contract_class": "public_api_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/ui/view_models/search_results.view_model.yaml",
+      "source_path": "contracts/view/models/ui/search_results.view_model.yaml",
       "target_path": "contracts/api/view_models/search_results.view_model.yaml"
     },
     {
       "contract_class": "public_api_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/ui/view_models/source_registry.view_model.yaml",
+      "source_path": "contracts/view/models/ui/source_registry.view_model.yaml",
       "target_path": "contracts/api/view_models/source_registry.view_model.yaml"
     },
     {
       "contract_class": "public_api_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/ui/view_models/stored_exports.view_model.yaml",
+      "source_path": "contracts/view/models/ui/stored_exports.view_model.yaml",
       "target_path": "contracts/api/view_models/stored_exports.view_model.yaml"
     },
     {
       "contract_class": "public_api_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/ui/view_models/subject_states.view_model.yaml",
+      "source_path": "contracts/view/models/ui/subject_states.view_model.yaml",
       "target_path": "contracts/api/view_models/subject_states.view_model.yaml"
     },
     {
       "contract_class": "public_api_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/ui/view_models/workbench_session.view_model.yaml",
+      "source_path": "contracts/view/models/ui/workbench_session.view_model.yaml",
       "target_path": "contracts/api/view_models/workbench_session.view_model.yaml"
     },
     {
       "contract_class": "public_api_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/views/absence_page.v0.json",
+      "source_path": "contracts/view/pages/absence_page.v0.json",
       "target_path": "contracts/api/absence_page.v0.json"
     },
     {
       "contract_class": "public_api_contract",
       "reason": "Active public API/UI contract was kept in contracts/ for product-contract cleanup review.",
-      "source_path": "contracts/views/candidate_page.v0.json",
+      "source_path": "contracts/view/pages/candidate_page.v0.json",
       "target_path": "contracts/api/candidate_page.v0.json"
     },
     {
       "contract_class": "public_api_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/views/compare_page.v0.json",
+      "source_path": "contracts/view/pages/compare_page.v0.json",
       "target_path": "contracts/api/compare_page.v0.json"
     },
     {
       "contract_class": "public_api_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/views/download_manifest_page.v0.json",
+      "source_path": "contracts/view/pages/download_manifest_page.v0.json",
       "target_path": "contracts/api/download_manifest_page.v0.json"
     },
     {
       "contract_class": "public_api_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/views/evidence_page.v0.json",
+      "source_path": "contracts/view/pages/evidence_page.v0.json",
       "target_path": "contracts/api/evidence_page.v0.json"
     },
     {
       "contract_class": "public_api_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/views/need_page.v0.json",
+      "source_path": "contracts/view/pages/need_page.v0.json",
       "target_path": "contracts/api/need_page.v0.json"
     },
     {
       "contract_class": "public_api_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/views/object_page.v0.json",
+      "source_path": "contracts/view/pages/object_page.v0.json",
       "target_path": "contracts/api/object_page.v0.json"
     },
     {
       "contract_class": "public_api_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/views/pack_page.v0.json",
+      "source_path": "contracts/view/pages/pack_page.v0.json",
       "target_path": "contracts/api/pack_page.v0.json"
     },
     {
       "contract_class": "public_api_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/views/review_page.v0.json",
+      "source_path": "contracts/view/pages/review_page.v0.json",
       "target_path": "contracts/api/review_page.v0.json"
     },
     {
       "contract_class": "public_api_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/views/search_page.v0.json",
+      "source_path": "contracts/view/pages/search_page.v0.json",
       "target_path": "contracts/api/search_page.v0.json"
     },
     {
       "contract_class": "public_api_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/views/source_page.v0.json",
+      "source_path": "contracts/view/pages/source_page.v0.json",
       "target_path": "contracts/api/source_page.v0.json"
     },
     {
       "contract_class": "public_api_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/views/task_page.v0.json",
+      "source_path": "contracts/view/pages/task_page.v0.json",
       "target_path": "contracts/api/task_page.v0.json"
     },
     {
       "contract_class": "public_api_contract",
       "reason": "Product and unknown contracts are out of scope for R0-03B-1.",
-      "source_path": "contracts/views/view_model_policy_index.v0.json",
+      "source_path": "contracts/view/pages/view_model_policy_index.v0.json",
       "target_path": "contracts/api/view_model_policy_index.v0.json"
     }
   ],

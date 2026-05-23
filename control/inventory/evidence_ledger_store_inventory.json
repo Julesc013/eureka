@@ -1,7 +1,7 @@
 {
   "schema_version": "evidence_ledger_store_inventory.v0",
   "task": "R0-06",
-  "runtime_package": "runtime/evidence_ledger",
+  "runtime_package": "runtime/evidence/ledger",
   "public_api": [
     "EvidenceLedgerStore",
     "EvidenceCandidateRecord",

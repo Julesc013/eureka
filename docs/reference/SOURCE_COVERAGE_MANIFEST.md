@@ -11,5 +11,5 @@ mutation.
 Validate with:
 
 ```powershell
-python scripts/record_source_coverage.py --input examples/source_coverage/internet_archive_coverage_record_v0.json --check
+python scripts/record_source_coverage.py --input examples/sources/coverage/internet_archive_coverage_record_v0.json --check
 ```

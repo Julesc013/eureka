@@ -11,7 +11,7 @@ from typing import Any, Mapping, Sequence, TextIO
 REPO_ROOT = Path(__file__).resolve().parents[2]
 SCHEMA_VERSION = "0.1.0"
 
-CONTRACT_PATH = "contracts/representations/route_view_representation_matrix.v0.json"
+CONTRACT_PATH = "contracts/representation/route_view_representation_matrix.v0.json"
 MATRIX_INVENTORY = "control/inventory/publication/route_view_representation_matrix.json"
 HOST_INVENTORY = "control/inventory/publication/host_profiles.json"
 REPRESENTATION_INVENTORY = "control/inventory/publication/representation_profiles.json"

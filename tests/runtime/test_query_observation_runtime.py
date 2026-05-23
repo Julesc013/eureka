@@ -6,7 +6,7 @@ from pathlib import Path
 from unittest import mock
 import unittest
 
-from runtime.local_foundry.query_observation import (
+from runtime.local.foundry.query_observation import (
     build_query_observation,
     classify_query_outcome,
     detect_poisoning_risks,
@@ -16,7 +16,7 @@ from runtime.local_foundry.query_observation import (
 
 
 ROOT = Path(__file__).resolve().parents[2]
-EXAMPLES = ROOT / "examples" / "query_observations"
+EXAMPLES = ROOT / "examples" / "search" / "query_observations"
 
 
 class QueryObservationRuntimeTests(unittest.TestCase):

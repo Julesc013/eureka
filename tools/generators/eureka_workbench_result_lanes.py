@@ -14,7 +14,7 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.local_service.workbench_result_lanes import build_demo_lane_page
+from runtime.local.service.workbench_result_lanes import build_demo_lane_page
 
 
 PROJECTIONS = ("operator_workbench", "public_web", "native_desktop_read_only")

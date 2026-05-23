@@ -12,7 +12,7 @@ P96 does not implement runtime explanation generation. It does not change public
 - `contracts/search/search_result_explanation_component.v0.json`
 - `contracts/search/search_result_explanation_policy.v0.json`
 - `control/inventory/search/search_result_explanation_policy.json`
-- Examples under `examples/search_result_explanations/`
+- Examples under `examples/search/result_explanations/`
 
 ## Required Model
 

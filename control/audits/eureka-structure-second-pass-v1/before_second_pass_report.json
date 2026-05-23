@@ -214,7 +214,7 @@
     ]
   },
   "noted_debt": [
-    "contracts/control_schemas first-level migrated authority name",
+    "contracts/schema/control first-level migrated authority name",
     "contracts evidence/source/view parallel families",
     "runtime local/source/index/review/workunit flat families",
     "surfaces/cli owns real CLI surface",

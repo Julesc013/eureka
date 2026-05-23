@@ -27,9 +27,9 @@ from archive.prototypes.legacy_runtime.connectors.h1_metadata_wave.normalizer_co
 
 
 CONTRACTS = (
-    "contracts/control_schemas/fixtures/h1/connectors/metadata_fixture.v0.json",
-    "contracts/control_schemas/previews/h1/connectors/metadata_normalized_record.v0.json",
-    "contracts/control_schemas/fixtures/h1/connectors/metadata_fixture_replay_result.v0.json",
+    "contracts/schema/control/fixtures/h1/connectors/metadata_fixture.v0.json",
+    "contracts/schema/control/previews/h1/connectors/metadata_normalized_record.v0.json",
+    "contracts/schema/control/fixtures/h1/connectors/metadata_fixture_replay_result.v0.json",
 )
 POLICIES = (
     "control/inventory/connectors/h1_metadata_fixture_runtime_policy.json",

@@ -4,7 +4,7 @@
   "track": "B",
   "task": "TRACK-B-17",
   "added_runtime_modules": [
-    "runtime/local_foundry/source_cache_to_evidence.py"
+    "runtime/local/foundry/source_cache_to_evidence.py"
   ],
   "added_scripts": [
     "scripts/bridge_source_cache_to_evidence.py",
@@ -23,12 +23,12 @@
     "control/inventory/evidence_ledger/source_cache_to_evidence_path_policy.json"
   ],
   "added_examples": [
-    "examples/source_cache_to_evidence/minimal_bridge_case_v0.json",
-    "examples/source_cache_to_evidence/source_metadata_to_metadata_claim_v0.json",
-    "examples/source_cache_to_evidence/source_locator_to_source_observation_v0.json",
-    "examples/source_cache_to_evidence/source_policy_to_policy_claim_v0.json",
-    "examples/source_cache_to_evidence/source_coverage_to_coverage_claim_v0.json",
-    "examples/source_cache_to_evidence/policy_blocked_bridge_case_v0.json"
+    "examples/sources/cache/to_evidence/minimal_bridge_case_v0.json",
+    "examples/sources/cache/to_evidence/source_metadata_to_metadata_claim_v0.json",
+    "examples/sources/cache/to_evidence/source_locator_to_source_observation_v0.json",
+    "examples/sources/cache/to_evidence/source_policy_to_policy_claim_v0.json",
+    "examples/sources/cache/to_evidence/source_coverage_to_coverage_claim_v0.json",
+    "examples/sources/cache/to_evidence/policy_blocked_bridge_case_v0.json"
   ],
   "added_tests": [
     "tests/runtime/test_source_cache_to_evidence_bridge.py",

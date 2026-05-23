@@ -3,8 +3,8 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from runtime.evidence_ledger import EvidenceCandidateRecord, EvidenceLedgerStore
-from runtime.review_queue import (
+from runtime.evidence.ledger import EvidenceCandidateRecord, EvidenceLedgerStore
+from runtime.review.queue import (
     ReviewDecision,
     ReviewDecisionKind,
     ReviewEvent,
@@ -13,13 +13,13 @@ from runtime.review_queue import (
     ReviewQueueStatus,
     ReviewQueueStore,
 )
-from runtime.review_queue.validation import (
+from runtime.review.queue.validation import (
     validate_no_public_truth_fields,
     validate_review_decision,
     validate_review_queue_path,
 )
-from runtime.source_cache import SourceCacheStatus, SourceCacheStore, build_cache_entry
-from runtime.source_observation import build_evidence_candidate
+from runtime.source.cache import SourceCacheStatus, SourceCacheStore, build_cache_entry
+from runtime.source.observation import build_evidence_candidate
 from scripts.demo_review_queue_store import run_demo
 from scripts.demo_source_cache_store import build_demo_objects
 

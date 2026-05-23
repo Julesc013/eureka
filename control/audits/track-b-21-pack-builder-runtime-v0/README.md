@@ -7,13 +7,13 @@ master-index mutation.
 
 ## Added
 
-- `runtime/local_foundry/pack_builder.py`
+- `runtime/local/foundry/pack_builder.py`
 - `scripts/build_local_pack.py`
 - `scripts/summarize_local_pack.py`
 - `scripts/validate_pack_builder_runtime.py`
 - Pack builder policies under `control/inventory/packs/`
-- Pack builder request examples under `examples/pack_builder/`
-- Pack draft examples under `examples/pack_drafts/`
+- Pack builder request examples under `examples/packs/builder/`
+- Pack draft examples under `examples/packs/drafts/`
 - Reference, architecture, and operations docs for the runtime
 - Runtime and operation tests for pack builder behavior
 
@@ -40,8 +40,8 @@ Primary commands:
 
 ```bash
 python scripts/validate_pack_builder_runtime.py
-python scripts/build_local_pack.py --pack-type evidence_pack_draft --input examples/evidence_ledger_records/metadata_claim_record_v0.json --check
-python scripts/summarize_local_pack.py --input examples/pack_drafts --check
+python scripts/build_local_pack.py --pack-type evidence_pack_draft --input examples/evidence/ledger/records/metadata_claim_record_v0.json --check
+python scripts/summarize_local_pack.py --input examples/packs/drafts --check
 python -m unittest discover -s tests -t .
 python scripts/check_architecture_boundaries.py
 ```

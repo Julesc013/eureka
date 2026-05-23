@@ -23,7 +23,7 @@
   "extraction_execution_enabled": false,
   "ai_model_execution_enabled": false,
   "lan_enabled": false,
-  "runtime_package": "runtime/local_worker",
+  "runtime_package": "runtime/local/worker",
   "schema_version": "local_worker_runner_inventory.v0",
   "source_probe_execution_enabled": false,
   "task": "LOCAL-09",

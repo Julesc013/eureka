@@ -116,7 +116,7 @@ class ContractTaxonomyOperationsTest(unittest.TestCase):
         families = {item["family_id"]: item for item in matrix["families"]}
 
         self.assertEqual(
-            "contracts/views/workbench/",
+            "contracts/view/pages/workbench/",
             families["Workbench_future_view_models"]["canonical_authority_path"],
         )
         self.assertEqual(

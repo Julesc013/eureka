@@ -62,8 +62,8 @@ INVENTORY_FILES = (
     "control/inventory/source_packs/h14_source_discovery_no_pack_import_export_policy.json",
 )
 SOURCE_PACK_EXAMPLES = (
-    "examples/source_packs/h14_source_discovery_source_pack_manifest_v0.json",
-    "examples/source_packs/h14_source_discovery_policy_pack_v0.json",
+    "examples/packs/source/h14_source_discovery_source_pack_manifest_v0.json",
+    "examples/packs/source/h14_source_discovery_policy_pack_v0.json",
 )
 EXTRA_EXAMPLES = (
     "examples/connectors/h14_source_discovery/coverage/h14_source_discovery_coverage_preview_v0.json",

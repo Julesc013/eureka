@@ -31,10 +31,10 @@ SLOT_MANIFEST = REPO_ROOT / "control/inventory/observations/manual_observation_b
 TRACK_B_FILES = [
     REPO_ROOT / "contracts/node/eureka_node_manifest.v0.json",
     REPO_ROOT / "contracts/node/node_policy.v0.json",
-    REPO_ROOT / "contracts/control_schemas/policies/node/node_capability.v0.json",
-    REPO_ROOT / "contracts/control_schemas/policies/node/work_unit.v0.json",
-    REPO_ROOT / "contracts/control_schemas/policies/node/work_unit_result.v0.json",
-    REPO_ROOT / "contracts/control_schemas/policies/node/local_foundry_state.v0.json",
+    REPO_ROOT / "contracts/schema/control/policies/node/node_capability.v0.json",
+    REPO_ROOT / "contracts/schema/control/policies/node/work_unit.v0.json",
+    REPO_ROOT / "contracts/schema/control/policies/node/work_unit_result.v0.json",
+    REPO_ROOT / "contracts/schema/control/policies/node/local_foundry_state.v0.json",
 ]
 OBSERVATION_DIRS = [
     REPO_ROOT / "evals/search_usefulness/external_baselines/batches/batch_0/observations",
@@ -54,7 +54,7 @@ class ObservationCandidateReviewQueueTest(unittest.TestCase):
         self.assertEqual(validate_triage_rules_payload(rules, "triage"), [])
 
     def test_review_queue_examples_validate(self) -> None:
-        for path in sorted((REPO_ROOT / "examples/observation_reviews").glob("review_queue_*_v0.json")):
+        for path in sorted((REPO_ROOT / "examples/review/observation_reviews").glob("review_queue_*_v0.json")):
             with self.subTest(path=path.name):
                 self.assertEqual(validate_queue_payload(_read_json(path), str(path), REPO_ROOT), [])
 
@@ -74,7 +74,7 @@ class ObservationCandidateReviewQueueTest(unittest.TestCase):
         self.assertEqual(result, 0)
         lines = [line for line in output.getvalue().splitlines() if line.strip()]
         self.assertGreater(len(lines), 10)
-        self.assertIn("contracts/control_schemas/tasks/query/observation_candidate_review_queue.v0.json", lines)
+        self.assertIn("contracts/schema/control/tasks/query/observation_candidate_review_queue.v0.json", lines)
 
     def test_builder_check_passes(self) -> None:
         output = io.StringIO()

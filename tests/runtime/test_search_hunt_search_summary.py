@@ -5,8 +5,8 @@ from pathlib import Path
 from types import SimpleNamespace
 import unittest
 
-from runtime.public_index import PublicIndexRecord, PublicIndexStore
-from runtime.search_hunt import build_local_absence_summary, build_reviewed_index_search_summary
+from runtime.index.public import PublicIndexRecord, PublicIndexStore
+from runtime.search.hunt import build_local_absence_summary, build_reviewed_index_search_summary
 
 
 class SearchHuntSummaryTests(unittest.TestCase):

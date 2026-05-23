@@ -15,7 +15,7 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.review_queue import ReviewQueueStore
+from runtime.review.queue import ReviewQueueStore
 from scripts.demo_review_queue_store import run_demo
 
 
@@ -28,15 +28,15 @@ CONTRACT_PATHS = (
     "contracts/stores/review_queue_migration.v0.json",
 )
 STORE_RUNTIME_FILES = (
-    "runtime/review_queue/__init__.py",
-    "runtime/review_queue/errors.py",
-    "runtime/review_queue/schema.py",
-    "runtime/review_queue/store.py",
-    "runtime/review_queue/migrations.py",
-    "runtime/review_queue/records.py",
-    "runtime/review_queue/decisions.py",
-    "runtime/review_queue/queries.py",
-    "runtime/review_queue/validation.py",
+    "runtime/review/queue/__init__.py",
+    "runtime/review/queue/errors.py",
+    "runtime/review/queue/schema.py",
+    "runtime/review/queue/store.py",
+    "runtime/review/queue/migrations.py",
+    "runtime/review/queue/records.py",
+    "runtime/review/queue/decisions.py",
+    "runtime/review/queue/queries.py",
+    "runtime/review/queue/validation.py",
 )
 BANNED_IMPORT_ROOTS = {
     "requests",
@@ -185,7 +185,7 @@ def scan_forbidden_vocabulary(root: Path, errors: list[str]) -> int:
 
 def scan_banned_imports(root: Path, errors: list[str]) -> int:
     count = 0
-    for path in sorted((root / "runtime/review_queue").glob("*.py")):
+    for path in sorted((root / "runtime/review/queue").glob("*.py")):
         tree = ast.parse(path.read_text(encoding="utf-8"), filename=str(path))
         for node in ast.walk(tree):
             imported: list[str] = []
@@ -202,7 +202,7 @@ def scan_banned_imports(root: Path, errors: list[str]) -> int:
 
 def scan_phase_dependencies(root: Path, errors: list[str]) -> int:
     count = 0
-    for path in sorted((root / "runtime/review_queue").glob("*.py")):
+    for path in sorted((root / "runtime/review/queue").glob("*.py")):
         text = path.read_text(encoding="utf-8").lower()
         if "runtime.connectors" in text or "runtime.local_foundry" in text:
             errors.append(f"forbidden runtime dependency in {path.relative_to(root).as_posix()}")

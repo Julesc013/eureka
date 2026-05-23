@@ -425,8 +425,8 @@ def ensure_allowed_input_path(path: str | Path, root: Path = REPO_ROOT) -> Path:
         or rel.startswith("examples/snapshots/")
         or rel == "examples/actions"
         or rel.startswith("examples/actions/")
-        or rel == "examples/search_quality"
-        or rel.startswith("examples/search_quality/")
+        or rel == "examples/search/quality"
+        or rel.startswith("examples/search/quality/")
         or rel == "control/audits"
         or rel.startswith("control/audits/")
     ):

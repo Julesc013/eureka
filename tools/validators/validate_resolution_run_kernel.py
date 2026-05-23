@@ -17,12 +17,12 @@ from runtime.resolution_run import BLOCKED_ACTIONS, run_resolution_dry_run
 
 
 REQUIRED_FILES = (
-    "contracts/resolution_run/README.md",
-    "contracts/resolution_run/resolution_run.v0.json",
-    "contracts/resolution_run/run_event.v0.json",
-    "contracts/resolution_run/run_command.v0.json",
-    "contracts/resolution_run/run_lane_snapshot.v0.json",
-    "contracts/resolution_run/run_coverage_report.v0.json",
+    "contracts/resolution/run/README.md",
+    "contracts/resolution/run/resolution_run.v0.json",
+    "contracts/resolution/run/run_event.v0.json",
+    "contracts/resolution/run/run_command.v0.json",
+    "contracts/resolution/run/run_lane_snapshot.v0.json",
+    "contracts/resolution/run/run_coverage_report.v0.json",
     "control/policies/resolution_run_policy.json",
     "control/policies/resolution_run_non_claim_policy.json",
     "control/inventory/resolution_run_contract_matrix.json",

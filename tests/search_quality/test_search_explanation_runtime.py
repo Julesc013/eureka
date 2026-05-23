@@ -4,15 +4,15 @@ import json
 from pathlib import Path
 import unittest
 
-from runtime.search_quality.explanation import (
+from runtime.search.quality.explanation import (
     build_search_result_explanation,
     explain_candidate_result,
     explain_evidence_supported_result,
     explain_extraction_member_result,
     explain_source_cache_supported_result,
 )
-from runtime.search_quality.explanation_summary import build_explanation_output_bundle
-from runtime.search_quality.gap_explanation import build_search_gap_explanation
+from runtime.search.quality.explanation_summary import build_explanation_output_bundle
+from runtime.search.quality.gap_explanation import build_search_gap_explanation
 
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -24,7 +24,7 @@ def load(rel: str):
 
 class SearchExplanationRuntimeTests(unittest.TestCase):
     def setUp(self) -> None:
-        self.bundle = load("examples/search_quality/input_bundles/software_search_explanation_bundle_v0.json")
+        self.bundle = load("examples/search/quality/input_bundles/software_search_explanation_bundle_v0.json")
 
     def test_candidate_result_explanation_builds(self) -> None:
         record = explain_candidate_result(self.bundle["candidate_records"][0], self.bundle)
@@ -48,7 +48,7 @@ class SearchExplanationRuntimeTests(unittest.TestCase):
         self.assertFalse(record["truth_boundary"]["explanation_mutates_public_search"])
 
     def test_policy_blocked_explanation_builds(self) -> None:
-        blocked = load("examples/search_quality/input_bundles/extraction_gap_explanation_bundle_v0.json")
+        blocked = load("examples/search/quality/input_bundles/extraction_gap_explanation_bundle_v0.json")
         record = build_search_result_explanation(blocked)
         self.assertEqual(record["explanation_status"], "policy_blocked")
 

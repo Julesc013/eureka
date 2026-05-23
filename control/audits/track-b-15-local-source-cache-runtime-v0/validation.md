@@ -7,8 +7,8 @@ Validation evidence from the B-15 run:
 - `python scripts/validate_local_source_cache_runtime_plan.py`: PASS
 - `python scripts/validate_local_evidence_ledger_runtime_plan.py`: PASS
 - `python scripts/validate_local_source_cache_runtime.py`: PASS
-- `python scripts/record_source_cache.py --input examples/source_cache_records/source_lead_record_v0.json --check`: PASS
-- `python scripts/summarize_source_cache.py --input examples/source_cache_records --check`: PASS
+- `python scripts/record_source_cache.py --input examples/sources/cache/records/source_lead_record_v0.json --check`: PASS
+- `python scripts/summarize_source_cache.py --input examples/sources/cache/records --check`: PASS
 - Focused B-15 unit tests: PASS
 - Earlier Track B validators: PASS
 - Track A validator: PASS

@@ -2,8 +2,8 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from runtime.evidence_ledger import EvidenceLedgerStore
-from runtime.source_observation.internet_archive_evidence import (
+from runtime.evidence.ledger import EvidenceLedgerStore
+from runtime.source.observation.internet_archive_evidence import (
     build_ia_evidence_candidate_records,
     load_default_ia_source_cache_records,
     load_ia_evidence_policy,

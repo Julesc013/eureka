@@ -1,6 +1,6 @@
 # NeedPage View Model Contract
 
-`contracts/views/need_page.v0.json` defines the first canonical public
+`contracts/view/pages/need_page.v0.json` defines the first canonical public
 NeedPage view model for Track A. A need is a reusable unresolved-search object,
 not a failed page and not telemetry. It can carry scoped absence, near misses,
 source gaps, candidate leads, aggregate demand posture, and future safe work

@@ -23,10 +23,10 @@
 
 Preserve and do not absorb destructively:
 
-- source registry/cache/observation/sync: `contracts/sources/**`, `contracts/source_cache/**`, `contracts/source_registry/**`, `contracts/source_sync/**`, `runtime/source_registry/**`, `runtime/source_cache/**`, `runtime/source_observation/**`;
-- evidence ledger and evidence packs: `contracts/evidence/**`, `contracts/evidence_ledger/**`, `contracts/stores/evidence_*`, `runtime/evidence_ledger/**`, `examples/evidence_*`;
-- public/master index and review queue: `contracts/master_index/**`, `contracts/stores/public_index_*`, `runtime/public_index/**`, `runtime/review_queue/**`;
-- pack import/export/quarantine: `contracts/packs/**`, `examples/source_packs/**`, `examples/evidence_packs/**`, `runtime/local_foundry/pack_*`;
+- source registry/cache/observation/sync: `contracts/source/records/**`, `contracts/source/cache/**`, `contracts/source/registry/**`, `contracts/source/sync/**`, `runtime/source/registry/**`, `runtime/source/cache/**`, `runtime/source/observation/**`;
+- evidence ledger and evidence packs: `contracts/evidence/**`, `contracts/evidence/ledger/**`, `contracts/stores/evidence_*`, `runtime/evidence/ledger/**`, `examples/evidence_*`;
+- public/master index and review queue: `contracts/index/master/**`, `contracts/stores/public_index_*`, `runtime/index/public/**`, `runtime/review/queue/**`;
+- pack import/export/quarantine: `contracts/pack/**`, `examples/packs/source/**`, `examples/packs/evidence/**`, `runtime/local/foundry/pack_*`;
 - site/static public data: `site/pages/**`, `site/data/**`, `site/dist/**`, `snapshots/examples/**`.
 
 ## Q55 Never-Overwrite Rules

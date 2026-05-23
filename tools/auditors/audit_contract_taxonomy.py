@@ -18,7 +18,7 @@ TASK_ID = "R0-03A"
 AUDIT_DIR = Path("control/audits/r0-03a-contract-taxonomy-refactor-plan-v0")
 TAXONOMY_POLICY = Path("control/policies/contract_taxonomy_policy.json")
 MIGRATION_POLICY = Path("control/policies/contract_migration_policy.json")
-SCHEMA_ROOTS = (Path("contracts"), Path("contracts/control_schemas"))
+SCHEMA_ROOTS = (Path("contracts"), Path("contracts/schema/control"))
 
 TEXT_SUFFIXES = {
     "",
@@ -112,15 +112,15 @@ TARGET_ROOTS = {
     "durable_store_contract": "contracts/stores/",
     "connector_interface_contract": "contracts/connectors/",
     "source_policy_contract": "contracts/connectors/",
-    "control_schema": "contracts/control_schemas/policies/",
-    "audit_schema": "contracts/control_schemas/audits/",
-    "fixture_schema": "contracts/control_schemas/fixtures/",
-    "preview_schema": "contracts/control_schemas/previews/",
-    "validator_schema": "contracts/control_schemas/validators/",
-    "task_queue_schema": "contracts/control_schemas/tasks/",
-    "generated_scaffold_schema": "contracts/control_schemas/deprecated/",
-    "deprecated_schema": "contracts/control_schemas/deprecated/",
-    "unknown": "contracts/control_schemas/deprecated/",
+    "control_schema": "contracts/schema/control/policies/",
+    "audit_schema": "contracts/schema/control/audits/",
+    "fixture_schema": "contracts/schema/control/fixtures/",
+    "preview_schema": "contracts/schema/control/previews/",
+    "validator_schema": "contracts/schema/control/validators/",
+    "task_queue_schema": "contracts/schema/control/tasks/",
+    "generated_scaffold_schema": "contracts/schema/control/deprecated/",
+    "deprecated_schema": "contracts/schema/control/deprecated/",
+    "unknown": "contracts/schema/control/deprecated/",
 }
 
 FORBIDDEN_PRODUCT_SIGNALS = (
@@ -330,34 +330,34 @@ def classify_contract(path: Path, root: Path) -> dict[str, Any]:
 
 def classify_by_path_and_name(rel: str, name: str, content_lower: str, signals: list[str]) -> str:
     lowered = rel.casefold()
-    if lowered.startswith("contracts/control_schemas/audits/"):
+    if lowered.startswith("contracts/schema/control/audits/"):
         signals.append("control_schema_audit_path")
         return "audit_schema"
-    if lowered.startswith("contracts/control_schemas/fixtures/"):
+    if lowered.startswith("contracts/schema/control/fixtures/"):
         signals.append("control_schema_fixture_path")
         return "fixture_schema"
-    if lowered.startswith("contracts/control_schemas/previews/"):
+    if lowered.startswith("contracts/schema/control/previews/"):
         signals.append("control_schema_preview_path")
         return "preview_schema"
-    if lowered.startswith("contracts/control_schemas/policies/"):
+    if lowered.startswith("contracts/schema/control/policies/"):
         signals.append("control_schema_policy_path")
         return "control_schema"
-    if lowered.startswith("contracts/control_schemas/validators/"):
+    if lowered.startswith("contracts/schema/control/validators/"):
         signals.append("control_schema_validator_path")
         return "validator_schema"
-    if lowered.startswith("contracts/control_schemas/tasks/"):
+    if lowered.startswith("contracts/schema/control/tasks/"):
         signals.append("control_schema_task_path")
         return "task_queue_schema"
-    if lowered.startswith("contracts/control_schemas/deprecated/"):
+    if lowered.startswith("contracts/schema/control/deprecated/"):
         signals.append("control_schema_deprecated_path")
         return "deprecated_schema"
     if lowered.startswith("contracts/api/") or lowered.startswith("contracts/gateway/public_api/"):
         signals.append("public_api_path")
         return "public_api_contract"
-    if lowered.startswith("contracts/pages/") or lowered.startswith("contracts/search/") or lowered.startswith("contracts/views/") or lowered.startswith("contracts/ui/"):
+    if lowered.startswith("contracts/surface/pages/") or lowered.startswith("contracts/search/") or lowered.startswith("contracts/view/pages/") or lowered.startswith("contracts/surface/ui/"):
         signals.append("public_surface_contract_path")
         return "public_api_contract"
-    if any(lowered.startswith(prefix) for prefix in ("contracts/evidence_ledger/", "contracts/source_cache/", "contracts/master_index/", "contracts/stores/")):
+    if any(lowered.startswith(prefix) for prefix in ("contracts/evidence/ledger/", "contracts/source/cache/", "contracts/index/master/", "contracts/stores/")):
         signals.append("durable_store_path")
         return "durable_store_contract"
     if any(token in name for token in ("next_phase", "next_task", "queue", "task_decision", "decision_option")):
@@ -393,7 +393,7 @@ def classify_by_path_and_name(rel: str, name: str, content_lower: str, signals: 
     if any(token in name for token in ("deprecated", "legacy", "obsolete")):
         signals.append("deprecated_signal")
         return "deprecated_schema"
-    if lowered.startswith("contracts/domain/") or lowered.startswith("contracts/identity/") or lowered.startswith("contracts/representations/"):
+    if lowered.startswith("contracts/domain/") or lowered.startswith("contracts/identity/") or lowered.startswith("contracts/representation/"):
         signals.append("domain_contract_path")
         return "product_domain_contract"
     if lowered.startswith("contracts/runtime/") or lowered.startswith("contracts/extraction/") or lowered.startswith("contracts/query/"):
@@ -405,7 +405,7 @@ def classify_by_path_and_name(rel: str, name: str, content_lower: str, signals: 
     if lowered.startswith("contracts/native/"):
         signals.append("native_contract_path")
         return "native_contract"
-    if any(lowered.startswith(prefix) for prefix in ("contracts/source_registry/", "contracts/source_sync/", "contracts/sources/", "contracts/archive/")):
+    if any(lowered.startswith(prefix) for prefix in ("contracts/source/registry/", "contracts/source/sync/", "contracts/source/records/", "contracts/archive/")):
         signals.append("source_policy_path")
         return "source_policy_contract"
     if lowered.startswith("contracts/connectors/"):
@@ -416,7 +416,7 @@ def classify_by_path_and_name(rel: str, name: str, content_lower: str, signals: 
             return "preview_schema"
         signals.append("connector_interface_path")
         return "connector_interface_contract"
-    if lowered.startswith("contracts/hosting/") or lowered.startswith("contracts/node/") or lowered.startswith("contracts/packs/") or lowered.startswith("contracts/actions/"):
+    if lowered.startswith("contracts/hosting/") or lowered.startswith("contracts/node/") or lowered.startswith("contracts/pack/") or lowered.startswith("contracts/command/actions/"):
         if any(token in name for token in ("policy", "manifest", "profile", "config", "envelope")):
             signals.append("policy_or_manifest_contract_path")
             return "source_policy_contract"
@@ -621,7 +621,7 @@ def rationale_for(item: Mapping[str, Any], action: str) -> str:
     if action == "rename":
         return "Artifact stays in a product root but must remove task/bundle vocabulary."
     if action == "move_and_rename":
-        return "Artifact belongs under contracts/control_schemas and should drop task-phase prefix from the filename."
+        return "Artifact belongs under contracts/schema/control and should drop task-phase prefix from the filename."
     if action == "move":
         return "Artifact is a control/audit/fixture/preview schema or belongs under a different product target root."
     return "No migration action required."
@@ -644,7 +644,7 @@ def build_reference_graph(root: Path, contract_paths: Sequence[Path]) -> dict[st
     basename_map: dict[str, list[str]] = defaultdict(list)
     for rel in contract_rels:
         basename_map[Path(rel).name].append(rel)
-    scan_roots = ("contracts", "contracts/control_schemas", "control/audits", "examples", "scripts", "tests", "runtime")
+    scan_roots = ("contracts", "contracts/schema/control", "control/audits", "examples", "scripts", "tests", "runtime")
     edges: list[dict[str, Any]] = []
     seen_edges: set[tuple[str, str, str]] = set()
     for path in iter_reference_files(root, scan_roots):
@@ -771,8 +771,8 @@ def build_execution_plan(migration_plan: Mapping[str, Any], reference_graph: Map
     batches = [
         {
             "batch_id": "R0-03B-1",
-            "purpose": "Create contracts/control_schemas target roots and move audit, fixture, preview, task, validator, deprecated, and generated scaffold schemas.",
-            "moves": [move for move in moves if str(move["target_path"]).startswith("contracts/control_schemas/")],
+            "purpose": "Create contracts/schema/control target roots and move audit, fixture, preview, task, validator, deprecated, and generated scaffold schemas.",
+            "moves": [move for move in moves if str(move["target_path"]).startswith("contracts/schema/control/")],
             "reference_updates": [],
             "validation_commands": [
                 "python scripts/audit_contract_taxonomy.py --check --json",

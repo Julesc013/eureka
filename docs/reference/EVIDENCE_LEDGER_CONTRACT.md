@@ -134,7 +134,7 @@ No runtime explanation generation, public search response change, public search 
 <!-- P99-EVIDENCE-LEDGER-LOCAL-DRY-RUN-RUNTIME-START -->
 ## P99 Evidence Ledger Local Dry-Run Runtime v0
 
-P99 adds a bounded local dry-run helper under `runtime/evidence_ledger/` for
+P99 adds a bounded local dry-run helper under `runtime/evidence/ledger/` for
 synthetic evidence-ledger candidate examples. It loads, validates, classifies,
 and reports candidate effects only.
 

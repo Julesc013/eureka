@@ -14,7 +14,7 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.local_foundry import evidence_ledger as runtime  # noqa: E402
+from runtime.local.foundry import evidence_ledger as runtime  # noqa: E402
 from scripts import record_evidence_ledger, summarize_evidence_ledger  # noqa: E402
 
 
@@ -34,16 +34,16 @@ DOC_FILES = [
     "docs/operations/LOCAL_EVIDENCE_LEDGER_REVIEW.md",
 ]
 EXAMPLE_FILES = [
-    "examples/evidence_ledger_records/minimal_evidence_record_v0.json",
-    "examples/evidence_ledger_records/metadata_claim_record_v0.json",
-    "examples/evidence_ledger_records/identity_claim_record_v0.json",
-    "examples/evidence_ledger_records/compatibility_claim_record_v0.json",
-    "examples/evidence_ledger_records/checksum_claim_record_v0.json",
-    "examples/evidence_ledger_records/filename_member_claim_record_v0.json",
-    "examples/evidence_ledger_records/source_locator_record_v0.json",
-    "examples/evidence_ledger_records/conflicting_evidence_record_v0.json",
-    "examples/evidence_ledger_records/pack_claim_record_v0.json",
-    "examples/evidence_ledger_records/policy_blocked_evidence_record_v0.json",
+    "examples/evidence/ledger/records/minimal_evidence_record_v0.json",
+    "examples/evidence/ledger/records/metadata_claim_record_v0.json",
+    "examples/evidence/ledger/records/identity_claim_record_v0.json",
+    "examples/evidence/ledger/records/compatibility_claim_record_v0.json",
+    "examples/evidence/ledger/records/checksum_claim_record_v0.json",
+    "examples/evidence/ledger/records/filename_member_claim_record_v0.json",
+    "examples/evidence/ledger/records/source_locator_record_v0.json",
+    "examples/evidence/ledger/records/conflicting_evidence_record_v0.json",
+    "examples/evidence/ledger/records/pack_claim_record_v0.json",
+    "examples/evidence/ledger/records/policy_blocked_evidence_record_v0.json",
 ]
 AUDIT_FILES = [
     "control/audits/track-b-16-local-evidence-ledger-runtime-v0/README.md",
@@ -181,8 +181,8 @@ def _validate_sample_report(report: Mapping[str, Any], ref: str) -> list[str]:
 def _validate_script_checks(repo_root: Path) -> list[str]:
     errors: list[str] = []
     commands = [
-        [sys.executable, "scripts/record_evidence_ledger.py", "--input", "examples/evidence_ledger_records/metadata_claim_record_v0.json", "--check", "--json"],
-        [sys.executable, "scripts/summarize_evidence_ledger.py", "--input", "examples/evidence_ledger_records", "--check", "--json"],
+        [sys.executable, "scripts/record_evidence_ledger.py", "--input", "examples/evidence/ledger/records/metadata_claim_record_v0.json", "--check", "--json"],
+        [sys.executable, "scripts/summarize_evidence_ledger.py", "--input", "examples/evidence/ledger/records", "--check", "--json"],
     ]
     for command in commands:
         completed = subprocess.run(command, cwd=repo_root, capture_output=True, text=True, check=False)

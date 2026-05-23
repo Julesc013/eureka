@@ -15,7 +15,7 @@ if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
 from eureka_init_instance import emit_result, error_result, initialize_instance
-from runtime.local_appliance.paths import resolve_instances_root, resolve_repo_root, resolve_workspace_root
+from runtime.local.appliance.paths import resolve_instances_root, resolve_repo_root, resolve_workspace_root
 
 
 def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr: TextIO = sys.stderr) -> int:

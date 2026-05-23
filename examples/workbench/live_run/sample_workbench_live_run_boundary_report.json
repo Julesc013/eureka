@@ -1,6 +1,6 @@
 {
   "candidate_index_mutated": false,
-  "debt_note": "surfaces/web/workbench/local_html owns local HTML presentation; runtime/resolution_run owns behavior and runtime/local_service only serves the projection.",
+  "debt_note": "surfaces/web/workbench/local_html owns local HTML presentation; runtime/resolution_run owns behavior and runtime/local/service only serves the projection.",
   "deployment_performed": false,
   "download_performed": false,
   "evidence_write_performed": false,

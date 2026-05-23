@@ -16,10 +16,10 @@
     "control/inventory/observations/manual_observation_failure_taxonomy.json"
   ],
   "added_examples": [
-    "examples/manual_observations/valid_pending_slot_observation_v0.json",
-    "examples/manual_observations/valid_observed_result_v0.json",
-    "examples/manual_observations/invalid_fabricated_observation_v0.json",
-    "examples/manual_observations/valid_no_result_observation_v0.json"
+    "examples/review/manual_observations/valid_pending_slot_observation_v0.json",
+    "examples/review/manual_observations/valid_observed_result_v0.json",
+    "examples/review/manual_observations/invalid_fabricated_observation_v0.json",
+    "examples/review/manual_observations/valid_no_result_observation_v0.json"
   ],
   "added_validators": [
     "scripts/validate_manual_observation_protocol.py"

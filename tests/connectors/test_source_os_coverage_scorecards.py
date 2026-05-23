@@ -19,29 +19,29 @@ def load(rel):
 
 class SourceOsCoverageScorecardsTests(unittest.TestCase):
     def test_coverage_record_validates(self):
-        validate_source_coverage_record(load("examples/source_coverage/minimal_source_coverage_record_v0.json"), {})
+        validate_source_coverage_record(load("examples/sources/coverage/minimal_source_coverage_record_v0.json"), {})
 
     def test_coverage_manifest_validates(self):
         records = [
-            load("examples/source_coverage/minimal_source_coverage_record_v0.json"),
-            load("examples/source_coverage/internet_archive_coverage_record_v0.json"),
+            load("examples/sources/coverage/minimal_source_coverage_record_v0.json"),
+            load("examples/sources/coverage/internet_archive_coverage_record_v0.json"),
         ]
         manifest = build_source_coverage_manifest(records, {})
         self.assertEqual(manifest["schema_version"], "source_coverage_manifest.v0")
         self.assertFalse(manifest["truth_boundary"]["coverage_manifest_is_exhaustive_global_coverage"])
 
     def test_ia_coverage_example_validates(self):
-        record = load("examples/source_coverage/internet_archive_coverage_record_v0.json")
+        record = load("examples/sources/coverage/internet_archive_coverage_record_v0.json")
         validate_source_coverage_record(record, {})
         self.assertEqual(record["coverage_basis"], "local_dry_run")
 
     def test_h1_metadata_wave_preview_validates(self):
-        record = load("examples/source_coverage/h1_metadata_wave_coverage_preview_v0.json")
+        record = load("examples/sources/coverage/h1_metadata_wave_coverage_preview_v0.json")
         validate_source_coverage_record(record, {})
         self.assertEqual(record["coverage_status"], "example_only")
 
     def test_policy_blocked_coverage_validates(self):
-        record = load("examples/source_coverage/policy_blocked_coverage_record_v0.json")
+        record = load("examples/sources/coverage/policy_blocked_coverage_record_v0.json")
         validate_source_coverage_record(record, {})
         self.assertEqual(record["coverage_status"], "blocked_by_policy")
 
@@ -57,16 +57,16 @@ class SourceOsCoverageScorecardsTests(unittest.TestCase):
         validate_connector_scorecard(load("examples/connectors/core/scorecards/package_registry_family_scorecard_v0.json"), {})
 
     def test_source_pack_manifest_validates(self):
-        validate_source_pack_manifest(load("examples/source_packs/internet_archive_source_pack_manifest_v0.json"), {})
+        validate_source_pack_manifest(load("examples/packs/source/internet_archive_source_pack_manifest_v0.json"), {})
 
     def test_source_pack_export_remains_preview(self):
-        pack = load("examples/source_packs/internet_archive_source_pack_manifest_v0.json")
+        pack = load("examples/packs/source/internet_archive_source_pack_manifest_v0.json")
         export = build_source_pack_export(pack, {})
         self.assertEqual(export["export_status"], "export_preview_only")
         self.assertFalse(export["truth_boundary"]["source_pack_is_accepted_truth"])
 
     def test_coverage_cannot_claim_exhaustive_global_coverage(self):
-        record = load("examples/source_coverage/internet_archive_coverage_record_v0.json")
+        record = load("examples/sources/coverage/internet_archive_coverage_record_v0.json")
         record["truth_boundary"]["coverage_claims_exhaustive_global_coverage"] = True
         with self.assertRaises(ValueError):
             validate_source_coverage_record(record, {})
@@ -84,13 +84,13 @@ class SourceOsCoverageScorecardsTests(unittest.TestCase):
             validate_connector_scorecard(scorecard, {})
 
     def test_source_pack_cannot_claim_accepted_imported_or_submitted(self):
-        pack = load("examples/source_packs/internet_archive_source_pack_manifest_v0.json")
+        pack = load("examples/packs/source/internet_archive_source_pack_manifest_v0.json")
         pack["truth_boundary"]["source_pack_is_submitted"] = True
         with self.assertRaises(ValueError):
             validate_source_pack_manifest(pack, {})
 
     def test_public_index_mutation_claim_fails(self):
-        record = load("examples/source_coverage/internet_archive_coverage_record_v0.json")
+        record = load("examples/sources/coverage/internet_archive_coverage_record_v0.json")
         record["product_boundary"]["mutated_public_index"] = True
         with self.assertRaises(ValueError):
             validate_source_coverage_record(record, {})
@@ -102,7 +102,7 @@ class SourceOsCoverageScorecardsTests(unittest.TestCase):
             validate_connector_scorecard(scorecard, {})
 
     def test_rights_malware_installability_claim_fails(self):
-        pack = load("examples/source_packs/internet_archive_source_pack_manifest_v0.json")
+        pack = load("examples/packs/source/internet_archive_source_pack_manifest_v0.json")
         pack["truth_boundary"]["verified_installability_claimed"] = True
         with self.assertRaises(ValueError):
             validate_source_pack_manifest(pack, {})

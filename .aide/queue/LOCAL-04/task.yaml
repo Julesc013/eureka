@@ -6,7 +6,7 @@ purpose: Add a read-only localhost HTTP service over the reviewed public index t
 allowed_scope_summary: Localhost-only read-only service routes, runtime status, reviewed-index read access, validators, tests, docs, and audit evidence only until explicitly scoped.
 gate:
   - LOCAL-03 completed with local runtime composition boundary
-  - service must use runtime/local_appliance
+  - service must use runtime/local/appliance
   - read-only localhost only
   - no HTML workbench implementation
   - no LAN binding

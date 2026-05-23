@@ -22,11 +22,11 @@ DECISION = Path("control/inventory/r0_legacy_leakage_next_task_decision.json")
 REPORT = Path("control/audits/r0-remediation-legacy-leakage-01-v0/remediation_report.json")
 AUDIT_DIR = Path("control/audits/r0-remediation-legacy-leakage-01-v0")
 R0_SEAMS = (
-    "runtime/source_observation/",
-    "runtime/source_cache/",
-    "runtime/evidence_ledger/",
-    "runtime/review_queue/",
-    "runtime/public_index/",
+    "runtime/source/observation/",
+    "runtime/source/cache/",
+    "runtime/evidence/ledger/",
+    "runtime/review/queue/",
+    "runtime/index/public/",
 )
 REQUIRED_JSON = {
     INVENTORY: "legacy_runtime_leakage_inventory.v0",

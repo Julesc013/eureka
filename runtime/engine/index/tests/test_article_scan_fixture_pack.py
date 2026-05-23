@@ -10,7 +10,7 @@ from runtime.engine.index import LocalIndexEngineService, LocalIndexSqliteStore,
 from runtime.engine.interfaces.extract import extract_article_scan_recorded_source_record
 from runtime.engine.interfaces.normalize import normalize_article_scan_recorded_record
 from runtime.engine.interfaces.public import LocalIndexBuildRequest, LocalIndexQueryRequest
-from runtime.source_registry import load_source_registry
+from runtime.source.registry import load_source_registry
 
 
 def _article_scan_catalog() -> NormalizedCatalog:

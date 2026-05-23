@@ -1,0 +1,716 @@
+{
+  "aliases": [
+    {
+      "active": false,
+      "alias_class": "example_fixture_path_migration",
+      "compatibility_wrapper": false,
+      "new_path": "examples/index/reviewed_public_rebuilds",
+      "old_path": "examples/reviewed_public_index_rebuilds",
+      "references_updated": true
+    },
+    {
+      "active": false,
+      "alias_class": "example_fixture_path_migration",
+      "compatibility_wrapper": false,
+      "new_path": "examples/index/public_search_ranking_dry_run",
+      "old_path": "examples/public_search_ranking_dry_run",
+      "references_updated": true
+    },
+    {
+      "active": false,
+      "alias_class": "example_fixture_path_migration",
+      "compatibility_wrapper": false,
+      "new_path": "examples/review/candidate_promotion_dry_runs",
+      "old_path": "examples/candidate_promotion_dry_runs",
+      "references_updated": true
+    },
+    {
+      "active": false,
+      "alias_class": "example_fixture_path_migration",
+      "compatibility_wrapper": false,
+      "new_path": "examples/search/need_seed_conversions",
+      "old_path": "examples/search_need_seed_conversions",
+      "references_updated": true
+    },
+    {
+      "active": false,
+      "alias_class": "example_fixture_path_migration",
+      "compatibility_wrapper": false,
+      "new_path": "examples/search/compatibility_aware_ranking",
+      "old_path": "examples/compatibility_aware_ranking",
+      "references_updated": true
+    },
+    {
+      "active": false,
+      "alias_class": "example_fixture_path_migration",
+      "compatibility_wrapper": false,
+      "new_path": "examples/search/result_explanations",
+      "old_path": "examples/search_result_explanations",
+      "references_updated": true
+    },
+    {
+      "active": false,
+      "alias_class": "example_fixture_path_migration",
+      "compatibility_wrapper": false,
+      "new_path": "examples/evidence/weighted_ranking",
+      "old_path": "examples/evidence_weighted_ranking",
+      "references_updated": true
+    },
+    {
+      "active": false,
+      "alias_class": "example_fixture_path_migration",
+      "compatibility_wrapper": false,
+      "new_path": "examples/work_units/seed_conversions",
+      "old_path": "examples/workunit_seed_conversions",
+      "references_updated": true
+    },
+    {
+      "active": false,
+      "alias_class": "example_fixture_path_migration",
+      "compatibility_wrapper": false,
+      "new_path": "examples/sources/cache/to_evidence",
+      "old_path": "examples/source_cache_to_evidence",
+      "references_updated": true
+    },
+    {
+      "active": false,
+      "alias_class": "example_fixture_path_migration",
+      "compatibility_wrapper": false,
+      "new_path": "examples/evidence/ledger/records",
+      "old_path": "examples/evidence_ledger_records",
+      "references_updated": true
+    },
+    {
+      "active": false,
+      "alias_class": "example_fixture_path_migration",
+      "compatibility_wrapper": false,
+      "new_path": "examples/index/reviewed_public_records",
+      "old_path": "examples/reviewed_public_records",
+      "references_updated": true
+    },
+    {
+      "active": false,
+      "alias_class": "example_fixture_path_migration",
+      "compatibility_wrapper": false,
+      "new_path": "examples/evidence/ledger/plans",
+      "old_path": "examples/evidence_ledger_plans",
+      "references_updated": true
+    },
+    {
+      "active": false,
+      "alias_class": "example_fixture_path_migration",
+      "compatibility_wrapper": false,
+      "new_path": "examples/sources/cache/records",
+      "old_path": "examples/source_cache_records",
+      "references_updated": true
+    },
+    {
+      "active": false,
+      "alias_class": "example_fixture_path_migration",
+      "compatibility_wrapper": false,
+      "new_path": "examples/review/queue_entries",
+      "old_path": "examples/review_queue_entries",
+      "references_updated": true
+    },
+    {
+      "active": false,
+      "alias_class": "contract_path_migration",
+      "compatibility_wrapper": false,
+      "new_path": "contracts/search/interaction",
+      "old_path": "contracts/search_interaction",
+      "references_updated": true
+    },
+    {
+      "active": false,
+      "alias_class": "example_fixture_path_migration",
+      "compatibility_wrapper": false,
+      "new_path": "examples/packs/import_dry_run",
+      "old_path": "examples/pack_import_dry_run",
+      "references_updated": true
+    },
+    {
+      "active": false,
+      "alias_class": "example_fixture_path_migration",
+      "compatibility_wrapper": false,
+      "new_path": "examples/review/candidate_promotion",
+      "old_path": "examples/candidate_promotion",
+      "references_updated": true
+    },
+    {
+      "active": false,
+      "alias_class": "example_fixture_path_migration",
+      "compatibility_wrapper": false,
+      "new_path": "examples/review/observation_reviews",
+      "old_path": "examples/observation_reviews",
+      "references_updated": true
+    },
+    {
+      "active": false,
+      "alias_class": "example_fixture_path_migration",
+      "compatibility_wrapper": false,
+      "new_path": "examples/review/manual_observations",
+      "old_path": "examples/manual_observations",
+      "references_updated": true
+    },
+    {
+      "active": false,
+      "alias_class": "example_fixture_path_migration",
+      "compatibility_wrapper": false,
+      "new_path": "examples/packs/contribution",
+      "old_path": "examples/contribution_packs",
+      "references_updated": true
+    },
+    {
+      "active": false,
+      "alias_class": "example_fixture_path_migration",
+      "compatibility_wrapper": false,
+      "new_path": "examples/sources/cache/plans",
+      "old_path": "examples/source_cache_plans",
+      "references_updated": true
+    },
+    {
+      "active": false,
+      "alias_class": "example_fixture_path_migration",
+      "compatibility_wrapper": false,
+      "new_path": "examples/search/miss_ledger",
+      "old_path": "examples/search_miss_ledger",
+      "references_updated": true
+    },
+    {
+      "active": false,
+      "alias_class": "example_fixture_path_migration",
+      "compatibility_wrapper": false,
+      "new_path": "examples/search/query_observations",
+      "old_path": "examples/query_observations",
+      "references_updated": true
+    },
+    {
+      "active": false,
+      "alias_class": "example_fixture_path_migration",
+      "compatibility_wrapper": false,
+      "new_path": "examples/search/query_result_cache",
+      "old_path": "examples/query_result_cache",
+      "references_updated": true
+    },
+    {
+      "active": true,
+      "alias_class": "runtime_import_compatibility",
+      "compatibility_wrapper": true,
+      "new_path": "runtime/source/observation",
+      "old_path": "runtime/source_observation",
+      "references_updated": true
+    },
+    {
+      "active": false,
+      "alias_class": "example_fixture_path_migration",
+      "compatibility_wrapper": false,
+      "new_path": "examples/search/need_seeds",
+      "old_path": "examples/search_need_seeds",
+      "references_updated": true
+    },
+    {
+      "active": false,
+      "alias_class": "example_fixture_path_migration",
+      "compatibility_wrapper": false,
+      "new_path": "examples/work_units/results",
+      "old_path": "examples/work_unit_results",
+      "references_updated": true
+    },
+    {
+      "active": false,
+      "alias_class": "example_fixture_path_migration",
+      "compatibility_wrapper": false,
+      "new_path": "examples/work_units/dry_runs",
+      "old_path": "examples/workunit_dry_runs",
+      "references_updated": true
+    },
+    {
+      "active": false,
+      "alias_class": "contract_path_migration",
+      "compatibility_wrapper": false,
+      "new_path": "contracts/schema/control",
+      "old_path": "contracts/control_schemas",
+      "references_updated": true
+    },
+    {
+      "active": false,
+      "alias_class": "contract_path_migration",
+      "compatibility_wrapper": false,
+      "new_path": "contracts/evidence/ledger",
+      "old_path": "contracts/evidence_ledger",
+      "references_updated": true
+    },
+    {
+      "active": false,
+      "alias_class": "contract_path_migration",
+      "compatibility_wrapper": false,
+      "new_path": "contracts/source/registry",
+      "old_path": "contracts/source_registry",
+      "references_updated": true
+    },
+    {
+      "active": false,
+      "alias_class": "contract_path_migration",
+      "compatibility_wrapper": false,
+      "new_path": "contracts/surface/ui/contracts",
+      "old_path": "contracts/ui/ui_contracts",
+      "references_updated": true
+    },
+    {
+      "active": false,
+      "alias_class": "contract_path_migration",
+      "compatibility_wrapper": false,
+      "new_path": "contracts/representation",
+      "old_path": "contracts/representations",
+      "references_updated": true
+    },
+    {
+      "active": false,
+      "alias_class": "contract_path_migration",
+      "compatibility_wrapper": false,
+      "new_path": "contracts/view/models/ui",
+      "old_path": "contracts/ui/view_models",
+      "references_updated": true
+    },
+    {
+      "active": false,
+      "alias_class": "contract_path_migration",
+      "compatibility_wrapper": false,
+      "new_path": "contracts/search/quality",
+      "old_path": "contracts/search_quality",
+      "references_updated": true
+    },
+    {
+      "active": false,
+      "alias_class": "contract_path_migration",
+      "compatibility_wrapper": false,
+      "new_path": "contracts/resolution/run",
+      "old_path": "contracts/resolution_run",
+      "references_updated": true
+    },
+    {
+      "active": false,
+      "alias_class": "example_fixture_path_migration",
+      "compatibility_wrapper": false,
+      "new_path": "examples/packs/quarantine",
+      "old_path": "examples/pack_quarantine",
+      "references_updated": true
+    },
+    {
+      "active": false,
+      "alias_class": "example_fixture_path_migration",
+      "compatibility_wrapper": false,
+      "new_path": "examples/sources/coverage",
+      "old_path": "examples/source_coverage",
+      "references_updated": true
+    },
+    {
+      "active": false,
+      "alias_class": "example_fixture_path_migration",
+      "compatibility_wrapper": false,
+      "new_path": "examples/evidence/ledger/dry_run",
+      "old_path": "examples/evidence_ledger",
+      "references_updated": true
+    },
+    {
+      "active": false,
+      "alias_class": "example_fixture_path_migration",
+      "compatibility_wrapper": false,
+      "new_path": "examples/index/candidate",
+      "old_path": "examples/candidate_index",
+      "references_updated": true
+    },
+    {
+      "active": true,
+      "alias_class": "runtime_import_compatibility",
+      "compatibility_wrapper": true,
+      "new_path": "runtime/local/appliance",
+      "old_path": "runtime/local_appliance",
+      "references_updated": true
+    },
+    {
+      "active": true,
+      "alias_class": "runtime_import_compatibility",
+      "compatibility_wrapper": true,
+      "new_path": "runtime/source/registry",
+      "old_path": "runtime/source_registry",
+      "references_updated": true
+    },
+    {
+      "active": true,
+      "alias_class": "runtime_import_compatibility",
+      "compatibility_wrapper": true,
+      "new_path": "runtime/index/candidate",
+      "old_path": "runtime/candidate_index",
+      "references_updated": true
+    },
+    {
+      "active": true,
+      "alias_class": "runtime_import_compatibility",
+      "compatibility_wrapper": true,
+      "new_path": "runtime/evidence/ledger",
+      "old_path": "runtime/evidence_ledger",
+      "references_updated": true
+    },
+    {
+      "active": false,
+      "alias_class": "example_fixture_path_migration",
+      "compatibility_wrapper": false,
+      "new_path": "examples/packs/evidence",
+      "old_path": "examples/evidence_packs",
+      "references_updated": true
+    },
+    {
+      "active": false,
+      "alias_class": "example_fixture_path_migration",
+      "compatibility_wrapper": false,
+      "new_path": "examples/index/reviewed",
+      "old_path": "examples/reviewed_index",
+      "references_updated": true
+    },
+    {
+      "active": false,
+      "alias_class": "example_fixture_path_migration",
+      "compatibility_wrapper": false,
+      "new_path": "examples/search/quality",
+      "old_path": "examples/search_quality",
+      "references_updated": true
+    },
+    {
+      "active": false,
+      "alias_class": "example_fixture_path_migration",
+      "compatibility_wrapper": false,
+      "new_path": "examples/work_units/seeds",
+      "old_path": "examples/workunit_seeds",
+      "references_updated": true
+    },
+    {
+      "active": true,
+      "alias_class": "runtime_import_compatibility",
+      "compatibility_wrapper": true,
+      "new_path": "runtime/local/operator",
+      "old_path": "runtime/local_operator",
+      "references_updated": true
+    },
+    {
+      "active": true,
+      "alias_class": "runtime_import_compatibility",
+      "compatibility_wrapper": true,
+      "new_path": "runtime/worker/workunit_queue",
+      "old_path": "runtime/workunit_queue",
+      "references_updated": true
+    },
+    {
+      "active": true,
+      "alias_class": "runtime_import_compatibility",
+      "compatibility_wrapper": true,
+      "new_path": "runtime/search/quality",
+      "old_path": "runtime/search_quality",
+      "references_updated": true
+    },
+    {
+      "active": false,
+      "alias_class": "contract_path_migration",
+      "compatibility_wrapper": false,
+      "new_path": "contracts/source/cache",
+      "old_path": "contracts/source_cache",
+      "references_updated": true
+    },
+    {
+      "active": false,
+      "alias_class": "contract_path_migration",
+      "compatibility_wrapper": false,
+      "new_path": "contracts/index/master",
+      "old_path": "contracts/master_index",
+      "references_updated": true
+    },
+    {
+      "active": false,
+      "alias_class": "example_fixture_path_migration",
+      "compatibility_wrapper": false,
+      "new_path": "examples/search/misses",
+      "old_path": "examples/search_misses",
+      "references_updated": true
+    },
+    {
+      "active": true,
+      "alias_class": "runtime_import_compatibility",
+      "compatibility_wrapper": true,
+      "new_path": "runtime/local/foundry",
+      "old_path": "runtime/local_foundry",
+      "references_updated": true
+    },
+    {
+      "active": true,
+      "alias_class": "runtime_import_compatibility",
+      "compatibility_wrapper": true,
+      "new_path": "runtime/local/network",
+      "old_path": "runtime/local_network",
+      "references_updated": true
+    },
+    {
+      "active": true,
+      "alias_class": "runtime_import_compatibility",
+      "compatibility_wrapper": true,
+      "new_path": "runtime/local/service",
+      "old_path": "runtime/local_service",
+      "references_updated": true
+    },
+    {
+      "active": false,
+      "alias_class": "contract_path_migration",
+      "compatibility_wrapper": false,
+      "new_path": "contracts/source/sync",
+      "old_path": "contracts/source_sync",
+      "references_updated": true
+    },
+    {
+      "active": false,
+      "alias_class": "contract_path_migration",
+      "compatibility_wrapper": false,
+      "new_path": "contracts/view/models/core",
+      "old_path": "contracts/view_models",
+      "references_updated": true
+    },
+    {
+      "active": false,
+      "alias_class": "contract_path_migration",
+      "compatibility_wrapper": false,
+      "new_path": "contracts/surface/projection",
+      "old_path": "contracts/projections",
+      "references_updated": true
+    },
+    {
+      "active": false,
+      "alias_class": "example_fixture_path_migration",
+      "compatibility_wrapper": false,
+      "new_path": "examples/packs/source",
+      "old_path": "examples/source_packs",
+      "references_updated": true
+    },
+    {
+      "active": false,
+      "alias_class": "example_fixture_path_migration",
+      "compatibility_wrapper": false,
+      "new_path": "examples/packs/builder",
+      "old_path": "examples/pack_builder",
+      "references_updated": true
+    },
+    {
+      "active": false,
+      "alias_class": "example_fixture_path_migration",
+      "compatibility_wrapper": false,
+      "new_path": "examples/packs/exports",
+      "old_path": "examples/pack_exports",
+      "references_updated": true
+    },
+    {
+      "active": false,
+      "alias_class": "example_fixture_path_migration",
+      "compatibility_wrapper": false,
+      "new_path": "examples/sources/cache/dry_run",
+      "old_path": "examples/source_cache",
+      "references_updated": true
+    },
+    {
+      "active": false,
+      "alias_class": "example_fixture_path_migration",
+      "compatibility_wrapper": false,
+      "new_path": "examples/sources/pages",
+      "old_path": "examples/source_pages",
+      "references_updated": true
+    },
+    {
+      "active": false,
+      "alias_class": "example_fixture_path_migration",
+      "compatibility_wrapper": false,
+      "new_path": "examples/review/queue",
+      "old_path": "examples/review_queue",
+      "references_updated": true
+    },
+    {
+      "active": false,
+      "alias_class": "example_fixture_path_migration",
+      "compatibility_wrapper": false,
+      "new_path": "examples/search/needs",
+      "old_path": "examples/search_needs",
+      "references_updated": true
+    },
+    {
+      "active": true,
+      "alias_class": "runtime_import_compatibility",
+      "compatibility_wrapper": true,
+      "new_path": "runtime/local/review",
+      "old_path": "runtime/local_review",
+      "references_updated": true
+    },
+    {
+      "active": true,
+      "alias_class": "runtime_import_compatibility",
+      "compatibility_wrapper": true,
+      "new_path": "runtime/local/worker",
+      "old_path": "runtime/local_worker",
+      "references_updated": true
+    },
+    {
+      "active": true,
+      "alias_class": "runtime_import_compatibility",
+      "compatibility_wrapper": true,
+      "new_path": "runtime/source/cache",
+      "old_path": "runtime/source_cache",
+      "references_updated": true
+    },
+    {
+      "active": true,
+      "alias_class": "runtime_import_compatibility",
+      "compatibility_wrapper": true,
+      "new_path": "runtime/index/public",
+      "old_path": "runtime/public_index",
+      "references_updated": true
+    },
+    {
+      "active": true,
+      "alias_class": "runtime_import_compatibility",
+      "compatibility_wrapper": true,
+      "new_path": "runtime/review/queue",
+      "old_path": "runtime/review_queue",
+      "references_updated": true
+    },
+    {
+      "active": false,
+      "alias_class": "example_fixture_path_migration",
+      "compatibility_wrapper": false,
+      "new_path": "examples/packs/index",
+      "old_path": "examples/index_packs",
+      "references_updated": true
+    },
+    {
+      "active": false,
+      "alias_class": "example_fixture_path_migration",
+      "compatibility_wrapper": false,
+      "new_path": "examples/packs/drafts",
+      "old_path": "examples/pack_drafts",
+      "references_updated": true
+    },
+    {
+      "active": false,
+      "alias_class": "example_fixture_path_migration",
+      "compatibility_wrapper": false,
+      "new_path": "examples/sources/sync",
+      "old_path": "examples/source_sync",
+      "references_updated": true
+    },
+    {
+      "active": false,
+      "alias_class": "example_fixture_path_migration",
+      "compatibility_wrapper": false,
+      "new_path": "examples/search/query_guard",
+      "old_path": "examples/query_guard",
+      "references_updated": true
+    },
+    {
+      "active": true,
+      "alias_class": "runtime_import_compatibility",
+      "compatibility_wrapper": true,
+      "new_path": "runtime/search/hunt",
+      "old_path": "runtime/search_hunt",
+      "references_updated": true
+    },
+    {
+      "active": true,
+      "alias_class": "runtime_import_compatibility",
+      "compatibility_wrapper": true,
+      "new_path": "runtime/search/need",
+      "old_path": "runtime/search_need",
+      "references_updated": true
+    },
+    {
+      "active": false,
+      "alias_class": "example_fixture_path_migration",
+      "compatibility_wrapper": false,
+      "new_path": "examples/index/candidates",
+      "old_path": "examples/candidates",
+      "references_updated": true
+    },
+    {
+      "active": true,
+      "alias_class": "runtime_import_compatibility",
+      "compatibility_wrapper": true,
+      "new_path": "runtime/local/eval",
+      "old_path": "runtime/local_eval",
+      "references_updated": true
+    },
+    {
+      "active": false,
+      "alias_class": "example_fixture_path_migration",
+      "compatibility_wrapper": false,
+      "new_path": "examples/work_units/yaml",
+      "old_path": "examples/workunits",
+      "references_updated": true
+    },
+    {
+      "active": false,
+      "alias_class": "contract_path_migration",
+      "compatibility_wrapper": false,
+      "new_path": "contracts/source/records",
+      "old_path": "contracts/sources",
+      "references_updated": true
+    },
+    {
+      "active": false,
+      "alias_class": "contract_path_migration",
+      "compatibility_wrapper": false,
+      "new_path": "contracts/command/actions",
+      "old_path": "contracts/actions",
+      "references_updated": true
+    },
+    {
+      "active": false,
+      "alias_class": "contract_path_migration",
+      "compatibility_wrapper": false,
+      "new_path": "contracts/view/pages",
+      "old_path": "contracts/views",
+      "references_updated": true
+    },
+    {
+      "active": false,
+      "alias_class": "contract_path_migration",
+      "compatibility_wrapper": false,
+      "new_path": "contracts/surface/pages",
+      "old_path": "contracts/pages",
+      "references_updated": true
+    },
+    {
+      "active": false,
+      "alias_class": "contract_path_migration",
+      "compatibility_wrapper": false,
+      "new_path": "contracts/pack",
+      "old_path": "contracts/packs",
+      "references_updated": true
+    },
+    {
+      "active": false,
+      "alias_class": "contract_path_migration",
+      "compatibility_wrapper": false,
+      "new_path": "contracts/surface/ui",
+      "old_path": "contracts/ui",
+      "references_updated": true
+    },
+    {
+      "active": false,
+      "alias_class": "contract_path_migration",
+      "compatibility_wrapper": false,
+      "new_path": "contracts/runtime/source/observation.v0.json",
+      "old_path": "contracts/runtime/source_observation.v0.json",
+      "references_updated": true
+    }
+  ],
+  "created_by": "EUREKA-STRUCTURE-FINAL-CLOSEOUT-01",
+  "non_claims": [
+    "Aliases preserve path continuity during taxonomy migration; they do not create a second authority.",
+    "Runtime first-level compatibility packages are wrappers over canonical runtime family packages.",
+    "Contract and example aliases are migration records, not compatibility source roots."
+  ],
+  "schema_version": "repo_path_aliases.v1",
+  "status": "active_migration_inventory"
+}

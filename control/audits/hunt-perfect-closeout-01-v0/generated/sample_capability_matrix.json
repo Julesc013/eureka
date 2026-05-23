@@ -50,7 +50,7 @@
       "implemented": true,
       "tested": true,
       "runtime_paths": [
-        "runtime/search_hunt/"
+        "runtime/search/hunt/"
       ],
       "script_paths": [
         "scripts/eureka_search_hunt.py",
@@ -99,7 +99,7 @@
       "tested": true,
       "runtime_paths": [
         "surfaces/web/workbench/local_html/",
-        "runtime/local_service/"
+        "runtime/local/service/"
       ],
       "script_paths": [
         "scripts/eureka_search_hunt_ui_smoke.py"
@@ -149,8 +149,8 @@
       "implemented": true,
       "tested": true,
       "runtime_paths": [
-        "runtime/search_hunt/",
-        "runtime/local_service/"
+        "runtime/search/hunt/",
+        "runtime/local/service/"
       ],
       "script_paths": [
         "scripts/eureka_search_hunt_command.py",
@@ -203,7 +203,7 @@
       "implemented": true,
       "tested": true,
       "runtime_paths": [
-        "runtime/search_hunt/"
+        "runtime/search/hunt/"
       ],
       "script_paths": [
         "scripts/eureka_search_hunt_exhaustion.py",
@@ -252,8 +252,8 @@
       "implemented": true,
       "tested": true,
       "runtime_paths": [
-        "runtime/search_need/",
-        "runtime/search_hunt/"
+        "runtime/search/need/",
+        "runtime/search/hunt/"
       ],
       "script_paths": [
         "scripts/eureka_hunt_to_search_need.py",
@@ -307,8 +307,8 @@
       "implemented": true,
       "tested": true,
       "runtime_paths": [
-        "runtime/search_need/",
-        "runtime/workunit_queue/"
+        "runtime/search/need/",
+        "runtime/worker/workunit_queue/"
       ],
       "script_paths": [
         "scripts/demo_hunt_to_workunits.py"
@@ -359,8 +359,8 @@
       "implemented": true,
       "tested": true,
       "runtime_paths": [
-        "runtime/search_hunt/",
-        "runtime/local_worker/"
+        "runtime/search/hunt/",
+        "runtime/local/worker/"
       ],
       "script_paths": [
         "scripts/eureka_hunt_runner.py",
@@ -412,7 +412,7 @@
       "implemented": true,
       "tested": true,
       "runtime_paths": [
-        "runtime/local_service/",
+        "runtime/local/service/",
         "surfaces/web/workbench/local_html/"
       ],
       "script_paths": [
@@ -515,7 +515,7 @@
       "implemented": true,
       "tested": true,
       "runtime_paths": [
-        "runtime/search_hunt/"
+        "runtime/search/hunt/"
       ],
       "script_paths": [
         "scripts/eureka_hunt_replay.py",
@@ -758,11 +758,11 @@
       "implemented": true,
       "tested": true,
       "runtime_paths": [
-        "runtime/local_appliance/",
-        "runtime/local_service/",
+        "runtime/local/appliance/",
+        "runtime/local/service/",
         "surfaces/web/workbench/local_html/",
-        "runtime/local_worker/",
-        "runtime/local_eval/"
+        "runtime/local/worker/",
+        "runtime/local/eval/"
       ],
       "script_paths": [
         "scripts/validate_local_appliance_closeout.py"

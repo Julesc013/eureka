@@ -62,7 +62,7 @@ enable live probes, enable downloads/installs/uploads/local paths, add
 accounts or telemetry, or claim production API stability.
 Source Pack Contract v0, Evidence Pack Contract v0, Index Pack Contract v0, and
 Contribution Pack Contract v0 now define the first portable pack formats under
-`contracts/packs/` with
+`contracts/pack/` with
 synthetic checksum-validated examples, docs, audit packs, validators, and
 tests. Source packs cover source metadata and fixture/evidence inputs; evidence
 packs narrow that into public-safe claims, observations, source locators,
@@ -75,7 +75,7 @@ moderation, accounts, raw SQLite/local-cache export, live connector, executable
 plugin, master-index acceptance, automatic acceptance, canonical truth
 selection, or production extension behavior.
 Master Index Review Queue Contract v0 now defines the governance contract under
-`contracts/master_index/`, `control/inventory/master_index/`,
+`contracts/index/master/`, `control/inventory/master_index/`,
 `docs/reference/MASTER_INDEX_REVIEW_QUEUE_CONTRACT.md`,
 `docs/architecture/MASTER_INDEX_REVIEW_QUEUE.md`, and
 `examples/master_index_review_queue/minimal_review_queue_v0/`. It models queue
@@ -114,7 +114,7 @@ disabled-stub examples, required review, prohibited uses, provider alignment,
 generated-text bounds, private-path and secret leakage, and reports no model,
 network, import, or mutation side effects.
 Pack Import Report Format v0 now defines the durable validate-only report
-format under `contracts/packs/pack_import_report.v0.json`,
+format under `contracts/pack/pack_import_report.v0.json`,
 `examples/import_reports/`, `scripts/validate_pack_import_report.py`, and
 `control/audits/pack-import-report-format-v0/`. It records pack validation
 results, issues, privacy/rights/risk posture, provenance, next actions, and
@@ -147,7 +147,7 @@ stdout by default, requires explicit output paths for file writes, blocks
 forbidden repo roots, requires redaction, and creates no report path runtime,
 staging runtime, staged state, search impact, or master-index impact.
 Local Staging Manifest Format v0 is now implemented as contract/example/
-validation-only work under `contracts/packs/local_staging_manifest.v0.json`,
+validation-only work under `contracts/pack/local_staging_manifest.v0.json`,
 `examples/local_staging_manifests/minimal_local_staging_manifest_v0/`,
 `docs/reference/LOCAL_STAGING_MANIFEST_FORMAT.md`,
 `scripts/validate_local_staging_manifest.py`, and
@@ -197,7 +197,7 @@ Current status within this stage: `surfaces/web/` now contains the first compati
 - add real evidence handling, compatibility reasoning, and snapshot workflows
 - expand only where contract governance and architectural boundaries already exist
 
-Current status within this stage: the first repo-level archive-resolution eval corpus now lives under `evals/archive_resolution/`. It records hard software-resolution queries, explicit bad-result patterns, minimum granularity expectations, expected future result lanes, and allowed absence outcomes as a guardrail for future investigation, ranking, decomposition, source-expansion, and optional AI work without changing current runtime semantics. Source Registry v0 now also lives under `contracts/source_registry/`, `control/inventory/sources/`, and `runtime/source_registry/`, making source inventory explicit and inspectable without introducing live sync, crawling, or source scoring.
+Current status within this stage: the first repo-level archive-resolution eval corpus now lives under `evals/archive_resolution/`. It records hard software-resolution queries, explicit bad-result patterns, minimum granularity expectations, expected future result lanes, and allowed absence outcomes as a guardrail for future investigation, ranking, decomposition, source-expansion, and optional AI work without changing current runtime semantics. Source Registry v0 now also lives under `contracts/source/registry/`, `control/inventory/sources/`, and `runtime/source/registry/`, making source inventory explicit and inspectable without introducing live sync, crawling, or source scoring.
 Resolution Run Model v0 now also lives under `runtime/engine/resolution_runs/`, giving the repo a first synchronous durable investigation envelope without introducing worker queues, streaming updates, or full investigation-planner semantics.
 Query Planner v0 now also lives under `runtime/engine/query_planner/`, giving the repo a first deterministic rule-based compiler from raw query text into structured `ResolutionTask` records without introducing LLM planning, vector retrieval, fuzzy matching, ranking, or full planner-driven retrieval.
 Local Index v0 now also lives under `runtime/engine/index/`, giving the repo a first durable local SQLite index over the current bounded corpus with FTS5 preferred and deterministic fallback behavior without introducing ranking, fuzzy retrieval, vector search, live source sync, incremental indexing, or worker-driven rebuilds.
@@ -446,8 +446,8 @@ source, current counts, status deltas, selected query movement, current
 failure-mode counts, source-family impact, public-search smoke status,
 hard-eval status, external-baseline pending status, remaining gaps, and the
 Source Pack Contract v0 recommendation without changing retrieval behavior.
-Source Pack Contract v0 is now implemented under `contracts/packs/`,
-`examples/source_packs/minimal_recorded_source_pack_v0/`,
+Source Pack Contract v0 is now implemented under `contracts/pack/`,
+`examples/packs/source/minimal_recorded_source_pack_v0/`,
 `docs/reference/SOURCE_PACK_CONTRACT.md`, and
 `control/audits/source-pack-contract-v0/`. It defines a portable
 source-metadata/evidence-input pack format with required rights/privacy notes,
@@ -456,9 +456,9 @@ contract/validation/example-only and does not implement import, indexing,
 uploads, live connectors, executable plugins, hosted submission, downloads, or
 master-index acceptance.
 Evidence Pack Contract v0, Index Pack Contract v0, and Contribution Pack
-Contract v0 are now implemented under `contracts/packs/`,
-`examples/evidence_packs/`, `examples/index_packs/`,
-`examples/contribution_packs/`, their reference docs, and their audit packs.
+Contract v0 are now implemented under `contracts/pack/`,
+`examples/packs/evidence/`, `examples/packs/index/`,
+`examples/packs/contribution/`, their reference docs, and their audit packs.
 Evidence packs are claim/observation bundles; index packs are coverage and
 record-summary bundles; contribution packs are review-candidate submission
 wrappers. All remain contract/validation/example-only and do not implement
@@ -466,7 +466,7 @@ import, merge, indexing, upload, moderation, accounts, raw SQLite/local-cache
 export, live connectors, canonical truth selection, hosted submission,
 automatic acceptance, downloads, or master-index acceptance.
 Master Index Review Queue Contract v0 is now implemented under
-`contracts/master_index/`, `control/inventory/master_index/`,
+`contracts/index/master/`, `control/inventory/master_index/`,
 `examples/master_index_review_queue/`, the master-index review docs, and its
 audit pack. It is the review-governance contract for future contribution
 candidates and adds no queue runtime, upload/import path, moderation UI,

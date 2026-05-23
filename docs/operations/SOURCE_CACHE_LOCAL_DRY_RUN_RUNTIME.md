@@ -9,10 +9,10 @@ reports.
 
 Implemented:
 
-- `runtime/source_cache/` dry-run modules
+- `runtime/source/cache/` dry-run modules
 - `scripts/run_source_cache_dry_run.py`
 - `scripts/validate_source_cache_dry_run_report.py`
-- synthetic examples under `examples/source_cache/dry_run`
+- synthetic examples under `examples/sources/cache/dry_run/dry_run`
 
 Not implemented:
 
@@ -31,8 +31,8 @@ source-cache runtime behavior are added by this local dry-run lane.
 
 ## Approved Input Model
 
-The normal input is `examples/source_cache/dry_run`. The CLI supports
-`--all-examples` or an explicit `--example-root` under `examples/source_cache`.
+The normal input is `examples/sources/cache/dry_run/dry_run`. The CLI supports
+`--all-examples` or an explicit `--example-root` under `examples/sources/cache/dry_run`.
 Unit tests may use isolated temporary roots for synthetic negative checks.
 
 The CLI rejects live-source and mutation-shaped parameters such as `--url`,

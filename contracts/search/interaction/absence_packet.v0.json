@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/search/interaction/absence_packet.v0.json",
+  "title": "AbsencePacket",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "packet_type",
+    "emitted_at",
+    "absence_id",
+    "run_id",
+    "scope",
+    "reason",
+    "confidence",
+    "recheck_triggers"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "absence_packet.v0"
+    },
+    "packet_type": {
+      "const": "AbsencePacket"
+    },
+    "emitted_at": {
+      "type": "string"
+    },
+    "absence_id": {
+      "type": "string"
+    },
+    "run_id": {
+      "type": "string"
+    },
+    "scope": {
+      "type": "string"
+    },
+    "reason": {
+      "type": "string"
+    },
+    "confidence": {
+      "type": "number"
+    },
+    "recheck_triggers": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

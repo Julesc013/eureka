@@ -8,7 +8,7 @@ governed_components:
   - app-native
   - connectors
 shared_paths:
-  - path: contracts/ui/**
+  - path: contracts/surface/ui/**
     owners:
       - workbench-web
       - app-native

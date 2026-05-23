@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import unittest
 
-from runtime.local_eval import record_elapsed_ms, summarize_latency
+from runtime.local.eval import record_elapsed_ms, summarize_latency
 
 
 class LocalEvalLatencyTests(unittest.TestCase):

@@ -4,7 +4,7 @@
   "track": "B",
   "task": "TRACK-B-15",
   "added_runtime_modules": [
-    "runtime/local_foundry/source_cache.py"
+    "runtime/local/foundry/source_cache.py"
   ],
   "added_scripts": [
     "scripts/record_source_cache.py",
@@ -25,14 +25,14 @@
     "control/inventory/source_cache/local_source_cache_runtime_path_policy.json"
   ],
   "added_examples": [
-    "examples/source_cache_records/minimal_source_cache_record_v0.json",
-    "examples/source_cache_records/source_metadata_record_v0.json",
-    "examples/source_cache_records/source_locator_record_v0.json",
-    "examples/source_cache_records/source_policy_record_v0.json",
-    "examples/source_cache_records/source_coverage_record_v0.json",
-    "examples/source_cache_records/source_lead_record_v0.json",
-    "examples/source_cache_records/connector_fixture_record_v0.json",
-    "examples/source_cache_records/policy_blocked_source_cache_record_v0.json"
+    "examples/sources/cache/records/minimal_source_cache_record_v0.json",
+    "examples/sources/cache/records/source_metadata_record_v0.json",
+    "examples/sources/cache/records/source_locator_record_v0.json",
+    "examples/sources/cache/records/source_policy_record_v0.json",
+    "examples/sources/cache/records/source_coverage_record_v0.json",
+    "examples/sources/cache/records/source_lead_record_v0.json",
+    "examples/sources/cache/records/connector_fixture_record_v0.json",
+    "examples/sources/cache/records/policy_blocked_source_cache_record_v0.json"
   ],
   "added_tests": [
     "tests/runtime/test_local_source_cache_runtime.py",
@@ -50,8 +50,8 @@
     "python scripts/validate_local_source_cache_runtime_plan.py": "pass",
     "python scripts/validate_local_evidence_ledger_runtime_plan.py": "pass",
     "python scripts/validate_local_source_cache_runtime.py": "pass",
-    "python scripts/record_source_cache.py --input examples/source_cache_records/source_lead_record_v0.json --check": "pass",
-    "python scripts/summarize_source_cache.py --input examples/source_cache_records --check": "pass",
+    "python scripts/record_source_cache.py --input examples/sources/cache/records/source_lead_record_v0.json --check": "pass",
+    "python scripts/summarize_source_cache.py --input examples/sources/cache/records --check": "pass",
     "python -m unittest tests.runtime.test_local_source_cache_runtime tests.operations.test_local_source_cache_runtime_scripts": "pass",
     "python -m unittest discover -s tests -t .": "fail: unrelated OBS-agent hardening phrase blocker outside B-15 scope",
     "python scripts/check_architecture_boundaries.py": "pass",

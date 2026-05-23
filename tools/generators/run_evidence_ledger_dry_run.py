@@ -12,14 +12,14 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.evidence_ledger.dry_run import run_evidence_ledger_dry_run  # noqa: E402
-from runtime.evidence_ledger.errors import EvidenceLedgerPolicyError  # noqa: E402
-from runtime.evidence_ledger.policy import (  # noqa: E402
+from runtime.evidence.ledger.dry_run import run_evidence_ledger_dry_run  # noqa: E402
+from runtime.evidence.ledger.errors import EvidenceLedgerPolicyError  # noqa: E402
+from runtime.evidence.ledger.policy import (  # noqa: E402
     DRY_RUN_EXAMPLES_ROOT,
     assert_no_forbidden_cli_args,
     ensure_approved_output_path,
 )
-from runtime.evidence_ledger.report import report_to_json  # noqa: E402
+from runtime.evidence.ledger.report import report_to_json  # noqa: E402
 
 
 def main(argv: Sequence[str] | None = None) -> int:

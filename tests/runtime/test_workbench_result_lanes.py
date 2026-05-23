@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import unittest
 
-from runtime.local_service.workbench_result_lanes import LANE_KINDS, build_demo_lane_page, build_result_lane_packet
+from runtime.local.service.workbench_result_lanes import LANE_KINDS, build_demo_lane_page, build_result_lane_packet
 
 
 class WorkbenchResultLanesRuntimeTest(unittest.TestCase):

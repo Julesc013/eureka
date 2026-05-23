@@ -16,7 +16,7 @@ class CompatibilityAwareRankingContractOperationTests(unittest.TestCase):
             self.assertIsInstance(json.loads(path.read_text(encoding="utf-8")), dict)
 
     def test_examples_exist(self):
-        roots = sorted((ROOT / "examples" / "compatibility_aware_ranking").glob("*_v0"))
+        roots = sorted((ROOT / "examples" / "search" / "compatibility_aware_ranking").glob("*_v0"))
         self.assertEqual(len(roots), 6)
         for root in roots:
             self.assertTrue((root / "COMPATIBILITY_TARGET_PROFILE.json").exists())

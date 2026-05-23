@@ -63,7 +63,7 @@ class LegacyRuntimeLeakageRemediationTests(unittest.TestCase):
 
     def test_preserves_clean_r0_seam_fixture(self):
         module = load_script_module()
-        self.assertEqual("must_fix_now", module.classify_finding("runtime/source_cache/store.py", "truth_boundary"))
+        self.assertEqual("must_fix_now", module.classify_finding("runtime/source/cache/store.py", "truth_boundary"))
 
     def test_reference_replacements_cover_imports_and_paths(self):
         module = load_script_module()

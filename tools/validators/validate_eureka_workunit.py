@@ -15,7 +15,7 @@ from typing import Any, Mapping, Sequence, TextIO
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
-SCHEMA_PATH = "contracts/control_schemas/policies/node/work_unit.v0.json"
+SCHEMA_PATH = "contracts/schema/control/policies/node/work_unit.v0.json"
 TYPE_REGISTRY_PATH = "control/inventory/nodes/workunit_type_registry.json"
 WORKUNIT_POLICY_PATH = "control/inventory/nodes/workunit_policy.json"
 IDEMPOTENCY_POLICY_PATH = "control/inventory/nodes/workunit_idempotency_policy.json"

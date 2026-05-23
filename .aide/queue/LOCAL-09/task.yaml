@@ -13,7 +13,7 @@ proof_level_required: L2
 recommended_after: LOCAL-08
 recommended_next: LOCAL-10
 completion_evidence:
-  - runtime/local_worker package added
+  - runtime/local/worker package added
   - deterministic worker runner CLI and demo added
   - safe local workers execute through WorkUnits
   - blocked worker kinds fail closed before execution

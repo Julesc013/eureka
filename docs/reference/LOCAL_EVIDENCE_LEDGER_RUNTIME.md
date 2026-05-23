@@ -35,7 +35,7 @@ The source-cache-to-evidence bridge is still deferred. No persistent append stor
 ## Commands
 
 ```bash
-python scripts/record_evidence_ledger.py --input examples/evidence_ledger_records/metadata_claim_record_v0.json --check
-python scripts/summarize_evidence_ledger.py --input examples/evidence_ledger_records --check
+python scripts/record_evidence_ledger.py --input examples/evidence/ledger/records/metadata_claim_record_v0.json --check
+python scripts/summarize_evidence_ledger.py --input examples/evidence/ledger/records --check
 python scripts/validate_local_evidence_ledger_runtime.py
 ```

@@ -18,7 +18,7 @@ drafts only and remain review-gated.
 - `python -m json.tool control/inventory/packs/pack_export_fixity_policy.json`: PASS.
 - `python -m json.tool control/audits/track-b-22-pack-export-runtime-v0/track_b_22_report.json`: PASS.
 - `python scripts/validate_pack_export_runtime.py`: PASS.
-- `python scripts/export_local_pack.py --input examples/pack_drafts/evidence_pack_draft_v0.json --check`: PASS.
+- `python scripts/export_local_pack.py --input examples/packs/drafts/evidence_pack_draft_v0.json --check`: PASS.
 - `python -m unittest tests.runtime.test_pack_export_runtime tests.operations.test_pack_export_runtime_scripts`: PASS.
 - `python -m unittest discover -s tests -t .`: FAIL. The only failure was
   the pre-existing OBS hardening guard that finds literal `"google scrape"` in

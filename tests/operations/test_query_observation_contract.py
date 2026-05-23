@@ -9,7 +9,7 @@ ROOT = Path(__file__).resolve().parents[2]
 AUDIT_DIR = ROOT / "control" / "audits" / "query-observation-contract-v0"
 REPORT_PATH = AUDIT_DIR / "query_observation_contract_report.json"
 POLICY_PATH = ROOT / "control" / "inventory" / "query_intelligence" / "query_observation_policy.json"
-EXAMPLE_PATH = ROOT / "examples" / "query_observations" / "minimal_query_observation_v0" / "QUERY_OBSERVATION.json"
+EXAMPLE_PATH = ROOT / "examples" / "search" / "query_observations" / "minimal_query_observation_v0" / "QUERY_OBSERVATION.json"
 REQUIRED_FILES = {
     "README.md",
     "CONTRACT_SUMMARY.md",

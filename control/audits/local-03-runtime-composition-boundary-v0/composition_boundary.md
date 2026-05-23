@@ -1,6 +1,6 @@
 # Composition Boundary
 
-LOCAL-03 introduces `runtime/local_appliance` as the stable runtime kernel for the Local Appliance track.
+LOCAL-03 introduces `runtime/local/appliance` as the stable runtime kernel for the Local Appliance track.
 
 The boundary opens an explicit initialized instance root, loads versioned instance configuration, loads the store manifest, loads migration state, and opens the source cache, evidence ledger, review queue, and reviewed public index stores through manifest relative paths.
 

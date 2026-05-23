@@ -31,7 +31,7 @@ from runtime.engine.query_planner import (
     derive_search_query_from_task,
 )
 from runtime.engine.resolve import DeterministicSearchService, ExactMatchResolutionService
-from runtime.source_registry import SourceRegistry, load_source_registry
+from runtime.source.registry import SourceRegistry, load_source_registry
 
 
 DEFAULT_SEARCH_USEFULNESS_EVAL_ROOT = (

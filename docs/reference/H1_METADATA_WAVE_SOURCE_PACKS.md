@@ -26,8 +26,8 @@ These records are policy-pack-only. They describe source posture, connector-fami
 
 - `control/inventory/source_packs/h1_metadata_wave_source_pack_policy.json` records the wave-level policy.
 - `control/inventory/source_packs/h1_metadata_wave_sources.json` lists the seven source records and their current no-access posture.
-- `examples/source_packs/h1_metadata_wave_source_pack_manifest_v0.json` is the portable draft manifest.
-- `examples/source_packs/h1_metadata_wave_policy_pack_v0.json` aggregates the per-source policy-pack refs.
+- `examples/packs/source/h1_metadata_wave_source_pack_manifest_v0.json` is the portable draft manifest.
+- `examples/packs/source/h1_metadata_wave_policy_pack_v0.json` aggregates the per-source policy-pack refs.
 
 ## Validation
 

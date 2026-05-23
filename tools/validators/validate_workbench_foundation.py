@@ -39,8 +39,8 @@ REQUIRED_VIEWS = {
     "ExtractionLabView", "SnapshotView", "RelayView", "OpsStatusView", "AuditView",
 }
 REQUIRED_LOCATIONS = {
-    "contracts/search_interaction/", "contracts/workbench/", "contracts/view_models/",
-    "contracts/projections/", "contracts/domain/", "contracts/scout/", "contracts/snapshots/",
+    "contracts/search/interaction/", "contracts/workbench/", "contracts/view/models/core/",
+    "contracts/surface/projection/", "contracts/domain/", "contracts/scout/", "contracts/snapshots/",
     "contracts/relay/",
 }
 REQUIRED_JSON = {
@@ -74,11 +74,11 @@ REQUIRED_FILES = [
     "contracts/workbench/workbench_route.v0.json",
     "contracts/workbench/workbench_module.v0.json",
     "contracts/workbench/workbench_permission.v0.json",
-    "contracts/projections/README.md",
-    "contracts/projections/projection_profile.v0.json",
-    "contracts/view_models/README.md",
-    "contracts/view_models/view_model_packet.v0.json",
-    "contracts/search_interaction/README.md",
+    "contracts/surface/projection/README.md",
+    "contracts/surface/projection/projection_profile.v0.json",
+    "contracts/view/models/core/README.md",
+    "contracts/view/models/core/view_model_packet.v0.json",
+    "contracts/search/interaction/README.md",
     "contracts/domain/README.md",
     "contracts/scout/README.md",
     "contracts/snapshots/README.md",

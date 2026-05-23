@@ -130,7 +130,7 @@
     {
       "output_id": "approved_probe_review_item",
       "output_type": "review_item_future",
-      "output_contract_ref": "contracts/control_schemas/policies/node/work_unit.v0.json",
+      "output_contract_ref": "contracts/schema/control/policies/node/work_unit.v0.json",
       "output_status": "future_approval_packet_only",
       "output_public_safe": true,
       "output_requires_review": true,
@@ -157,7 +157,7 @@
     "production_readiness_claim"
   ],
   "output_contract_refs": [
-    "contracts/control_schemas/policies/node/work_unit.v0.json"
+    "contracts/schema/control/policies/node/work_unit.v0.json"
   ],
   "review_gates": {
     "human_review_required": true,

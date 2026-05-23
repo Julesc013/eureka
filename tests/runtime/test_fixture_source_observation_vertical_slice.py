@@ -6,7 +6,7 @@ import unittest
 from pathlib import Path
 from unittest import mock
 
-from runtime.local_foundry.fixture_source_observation_slice import (
+from runtime.local.foundry.fixture_source_observation_slice import (
     ABSENCE_QUERY,
     POSITIVE_QUERY,
     REVIEWED_INDEX_ARTIFACT_SCHEMA_VERSION,
@@ -19,8 +19,8 @@ from runtime.local_foundry.fixture_source_observation_slice import (
     validate_reviewed_index_artifact,
     validate_fixture_slice_report,
 )
-from runtime.public_index import PublicIndexStore, rebuild_reviewed_public_index
-from runtime.review_queue import ReviewDecisionKind
+from runtime.index.public import PublicIndexStore, rebuild_reviewed_public_index
+from runtime.review.queue import ReviewDecisionKind
 from scripts.demo_review_queue_store import run_demo as run_review_queue_demo
 
 

@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import unittest
 
-from runtime.search_need import SearchNeed, SearchNeedTransitionError, apply_transition, validate_transition
+from runtime.search.need import SearchNeed, SearchNeedTransitionError, apply_transition, validate_transition
 
 
 def sample_need() -> SearchNeed:

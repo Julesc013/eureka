@@ -17,8 +17,8 @@ Added:
 - `examples/commit_messages/valid_structured_commit.txt`
 - `examples/commit_messages/invalid_missing_why.txt`
 - `examples/commit_messages/valid_warn_only_commit.txt`
-- `examples/workunits/idempotent_workunit_example.yaml`
-- `examples/workunits/recovery_workunit_example.yaml`
+- `examples/work_units/yaml/idempotent_workunit_example.yaml`
+- `examples/work_units/yaml/recovery_workunit_example.yaml`
 - `control/audits/eureka-ctrl-01-control-standards-v0/README.md`
 - `control/audits/eureka-ctrl-01-control-standards-v0/eureka_ctrl_01_report.json`
 - `control/audits/eureka-ctrl-01-control-standards-v0/validation.md`

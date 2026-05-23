@@ -13,9 +13,9 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.evidence_ledger import EvidenceCandidateRecord, EvidenceLedgerStore
-from runtime.evidence_ledger.validation import validate_evidence_ledger_path
-from runtime.review_queue import (
+from runtime.evidence.ledger import EvidenceCandidateRecord, EvidenceLedgerStore
+from runtime.evidence.ledger.validation import validate_evidence_ledger_path
+from runtime.review.queue import (
     ReviewDecision,
     ReviewDecisionKind,
     ReviewEvent,
@@ -24,10 +24,10 @@ from runtime.review_queue import (
     ReviewQueueStatus,
     ReviewQueueStore,
 )
-from runtime.review_queue.validation import validate_review_queue_path
-from runtime.source_cache import SourceCacheStatus, SourceCacheStore, build_cache_entry
-from runtime.source_cache.validation import validate_cache_path
-from runtime.source_observation import build_evidence_candidate
+from runtime.review.queue.validation import validate_review_queue_path
+from runtime.source.cache import SourceCacheStatus, SourceCacheStore, build_cache_entry
+from runtime.source.cache.validation import validate_cache_path
+from runtime.source.observation import build_evidence_candidate
 from scripts.demo_source_cache_store import build_demo_objects
 
 

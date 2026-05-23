@@ -25,7 +25,7 @@
       "summary": "Notes that IA connector approval must decide source policy, User-Agent/contact posture, rate limits, cache TTL, and kill switch before external calls."
     },
     {
-      "path": "runtime/source_registry/README.md",
+      "path": "runtime/source/registry/README.md",
       "classification": "runtime_boundary_note",
       "summary": "Keeps source registry posture fixture-only and does not approve live IA API calls, scraping, or crawling."
     },

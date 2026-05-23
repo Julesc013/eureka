@@ -1,0 +1,44 @@
+{
+  "schema_version": "local_source_cache_record.v0",
+  "input_id": "source_metadata_fixture_v0",
+  "input_type": "committed_source_fixture",
+  "input_ref": "examples/sources/cache/records/source_metadata_record_v0.json",
+  "input_status": "fixture_only",
+  "input_public_safe": true,
+  "input_summary": "Synthetic source metadata summary.",
+  "source_cache_record_status": "fixture_only",
+  "source_cache_record_type": "source_metadata",
+  "source_id": "source:fixture:metadata",
+  "source_label": "Metadata Fixture Source",
+  "source_family": "metadata_fixture",
+  "source_kind": "committed_fixture",
+  "source_locator": "fixture:source-cache:metadata",
+  "source_access_mode": "committed_fixture_only",
+  "source_policy_status": "fixture_only",
+  "source_authority_posture": "descriptive_not_authoritative",
+  "source_coverage_summary": "Covers only fields present in the committed fixture.",
+  "source_metadata_summary": "Names a source family, source kind, and fixture locator.",
+  "source_health_summary": "No live health or uptime check.",
+  "source_limitations": [
+    "Fixture does not prove source completeness.",
+    "Metadata is not promoted to evidence."
+  ],
+  "source_observation_summary": "The fixture demonstrates source metadata normalization.",
+  "normalized_fields": {
+    "source_family": "metadata_fixture",
+    "metadata_fields_present": [
+      "source_family",
+      "source_kind",
+      "source_locator"
+    ]
+  },
+  "related_candidate_refs": [],
+  "related_search_need_refs": [],
+  "related_workunit_refs": [],
+  "related_source_lead_refs": [],
+  "related_pack_refs_future": [],
+  "related_evidence_refs_future": [],
+  "notes": [
+    "Review is required before any evidence-ledger bridge task."
+  ]
+}

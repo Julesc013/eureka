@@ -4,7 +4,7 @@
   "track": "B",
   "task": "TRACK-B-11",
   "added_runtime_modules": [
-    "runtime/local_foundry/node_policy_evaluator.py"
+    "runtime/local/foundry/node_policy_evaluator.py"
   ],
   "added_scripts": [
     "scripts/evaluate_node_policy.py",

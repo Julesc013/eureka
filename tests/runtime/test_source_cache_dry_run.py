@@ -3,7 +3,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from runtime.source_cache.dry_run import classify_candidate, run_source_cache_dry_run
+from runtime.source.cache.dry_run import classify_candidate, run_source_cache_dry_run
 
 
 def candidate(**overrides):

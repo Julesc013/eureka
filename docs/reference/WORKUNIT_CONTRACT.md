@@ -1,6 +1,6 @@
 # WorkUnit Contract
 
-`contracts/control_schemas/policies/node/work_unit.v0.json` defines the first Eureka WorkUnit record.
+`contracts/schema/control/policies/node/work_unit.v0.json` defines the first Eureka WorkUnit record.
 A WorkUnit is a portable, replay-safe, policy-scoped task specification for a
 future Eureka Node.
 

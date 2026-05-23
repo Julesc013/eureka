@@ -21,8 +21,8 @@ from runtime.ai_escalation import (
     create_ai_escalation_gate,
     evaluate_ai_escalation_eligibility,
 )
-from runtime.local_appliance import LocalApplianceError, close_local_appliance, open_local_appliance
-from runtime.local_operator import LocalOperatorAuthError, build_operator_auth_state, verify_operator_token
+from runtime.local.appliance import LocalApplianceError, close_local_appliance, open_local_appliance
+from runtime.local.operator import LocalOperatorAuthError, build_operator_auth_state, verify_operator_token
 
 
 def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr: TextIO = sys.stderr) -> int:

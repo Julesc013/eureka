@@ -18,9 +18,9 @@ scope:
     - .aide/reports/eureka-repo-health.json
     - control/inventory/source_packs/**
     - control/audits/h1-bundle-01-metadata-wave-policy-packs-v0/**
-    - examples/source_packs/h1_metadata_wave_source_pack_manifest_v0.json
-    - examples/source_packs/h1_metadata_wave_policy_pack_v0.json
-    - examples/source_packs/h1_metadata_wave_source_pack_preview_v0.json
+    - examples/packs/source/h1_metadata_wave_source_pack_manifest_v0.json
+    - examples/packs/source/h1_metadata_wave_policy_pack_v0.json
+    - examples/packs/source/h1_metadata_wave_source_pack_preview_v0.json
     - examples/sources/source_records/wayback_cdx_memento_source_v2.json
     - examples/sources/source_records/github_releases_source_v2.json
     - examples/sources/source_records/pypi_source_v2.json

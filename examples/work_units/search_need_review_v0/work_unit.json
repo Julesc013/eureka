@@ -70,7 +70,7 @@
     {
       "input_id": "manual_pending_slot_example",
       "input_type": "manual_pending_slot",
-      "input_ref": "examples/manual_observations/valid_pending_slot_observation_v0.json",
+      "input_ref": "examples/review/manual_observations/valid_pending_slot_observation_v0.json",
       "input_status": "pending",
       "input_required": true,
       "input_public_safe": true,
@@ -135,7 +135,7 @@
     {
       "output_id": "search_need_seed_review_item",
       "output_type": "search_need_seed_future",
-      "output_contract_ref": "contracts/control_schemas/policies/node/work_unit.v0.json",
+      "output_contract_ref": "contracts/schema/control/policies/node/work_unit.v0.json",
       "output_status": "future_seed_requires_review",
       "output_public_safe": true,
       "output_requires_review": true,
@@ -162,7 +162,7 @@
     "production_readiness_claim"
   ],
   "output_contract_refs": [
-    "contracts/control_schemas/policies/node/work_unit.v0.json"
+    "contracts/schema/control/policies/node/work_unit.v0.json"
   ],
   "review_gates": {
     "human_review_required": true,

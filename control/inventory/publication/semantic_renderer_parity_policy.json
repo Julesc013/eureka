@@ -1,7 +1,7 @@
 {
   "schema_version": "0.1.0",
   "registry_id": "eureka-publication-semantic-renderer-parity-policy",
-  "contract_ref": "contracts/representations/semantic_renderer_parity.v0.json",
+  "contract_ref": "contracts/representation/semantic_renderer_parity.v0.json",
   "status": "contract_only",
   "stability": "experimental",
   "created_by_slice": "track_a_02_semantic_renderer_parity_v0",
@@ -96,7 +96,7 @@
       "source_contracts": [
         "contracts/api/search_result_card.v0.json",
         "docs/reference/PUBLIC_SEARCH_RESULT_CARD_CONTRACT.md",
-        "contracts/representations/representation_profile.v0.json"
+        "contracts/representation/representation_profile.v0.json"
       ],
       "allowed_representation_profiles": [
         "api_json",
@@ -242,7 +242,7 @@
       "source_contracts": [
         "docs/reference/PUBLIC_SEARCH_API_CONTRACT.md",
         "docs/reference/PUBLIC_SEARCH_RESULT_CARD_CONTRACT.md",
-        "contracts/representations/representation_profile.v0.json"
+        "contracts/representation/representation_profile.v0.json"
       ],
       "allowed_representation_profiles": [
         "api_json",
@@ -377,7 +377,7 @@
       "source_contracts": [
         "docs/architecture/PUBLICATION_PLANE.md",
         "docs/reference/PUBLIC_SEARCH_RESULT_CARD_CONTRACT.md",
-        "contracts/representations/representation_profile.v0.json"
+        "contracts/representation/representation_profile.v0.json"
       ],
       "allowed_representation_profiles": [
         "api_json",
@@ -525,7 +525,7 @@
       "source_contracts": [
         "docs/architecture/PUBLICATION_PLANE.md",
         "docs/reference/PUBLIC_SEARCH_API_CONTRACT.md",
-        "contracts/representations/representation_profile.v0.json"
+        "contracts/representation/representation_profile.v0.json"
       ],
       "allowed_representation_profiles": [
         "api_json",
@@ -665,7 +665,7 @@
       "source_contracts": [
         "docs/reference/PUBLIC_SEARCH_API_CONTRACT.md",
         "docs/reference/PUBLIC_SEARCH_RESULT_CARD_CONTRACT.md",
-        "contracts/representations/representation_profile.v0.json"
+        "contracts/representation/representation_profile.v0.json"
       ],
       "allowed_representation_profiles": [
         "api_json",
@@ -804,7 +804,7 @@
       "source_contracts": [
         "docs/reference/ACTION_DOWNLOAD_INSTALL_POLICY.md",
         "docs/reference/SNAPSHOT_CONSUMER_CONTRACT.md",
-        "contracts/representations/representation_profile.v0.json"
+        "contracts/representation/representation_profile.v0.json"
       ],
       "allowed_representation_profiles": [
         "api_json",
@@ -943,7 +943,7 @@
       "source_contracts": [
         "docs/architecture/PUBLICATION_PLANE.md",
         "docs/reference/PUBLIC_SEARCH_API_CONTRACT.md",
-        "contracts/representations/representation_profile.v0.json"
+        "contracts/representation/representation_profile.v0.json"
       ],
       "allowed_representation_profiles": [
         "api_json",
@@ -1083,7 +1083,7 @@
       "source_contracts": [
         "docs/architecture/PUBLICATION_PLANE.md",
         "docs/reference/PUBLIC_SEARCH_RESULT_CARD_CONTRACT.md",
-        "contracts/representations/representation_profile.v0.json"
+        "contracts/representation/representation_profile.v0.json"
       ],
       "allowed_representation_profiles": [
         "api_json",
@@ -1229,7 +1229,7 @@
       "source_contracts": [
         "docs/architecture/PUBLICATION_PLANE.md",
         "docs/reference/PUBLIC_SEARCH_API_CONTRACT.md",
-        "contracts/representations/representation_profile.v0.json"
+        "contracts/representation/representation_profile.v0.json"
       ],
       "allowed_representation_profiles": [
         "api_json",
@@ -1368,7 +1368,7 @@
       "source_contracts": [
         "docs/architecture/PUBLICATION_PLANE.md",
         "docs/reference/PUBLIC_SEARCH_API_CONTRACT.md",
-        "contracts/representations/representation_profile.v0.json"
+        "contracts/representation/representation_profile.v0.json"
       ],
       "allowed_representation_profiles": [
         "api_json",
@@ -1506,7 +1506,7 @@
       "source_contracts": [
         "docs/architecture/PUBLICATION_PLANE.md",
         "docs/reference/PUBLIC_SEARCH_RESULT_CARD_CONTRACT.md",
-        "contracts/representations/representation_profile.v0.json"
+        "contracts/representation/representation_profile.v0.json"
       ],
       "allowed_representation_profiles": [
         "api_json",

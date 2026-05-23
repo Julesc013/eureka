@@ -11,8 +11,8 @@
     "docs/operations/H3_OS_PACKAGE_ARCHIVE_FIXTURE_PLAN.md"
   ],
   "added_examples": [
-    "examples/source_packs/h3_os_package_archive_source_pack_manifest_v0.json",
-    "examples/source_packs/h3_os_package_archive_policy_pack_v0.json",
+    "examples/packs/source/h3_os_package_archive_source_pack_manifest_v0.json",
+    "examples/packs/source/h3_os_package_archive_policy_pack_v0.json",
     "examples/sources/source_records/",
     "examples/connectors/h3_os_package_archives/"
   ],

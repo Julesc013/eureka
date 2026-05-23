@@ -1,0 +1,130 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/surface/ui/temporal_minimal_search.v0.json",
+  "title": "Eureka Temporal Minimal Search Contract v0",
+  "description": "Eureka-specific contract-only design language for sparse, fast, text-first search-like surfaces. It governs presentation doctrine without changing route, source, evidence, status, rights, risk, limitation, gap, or action meaning.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "design_language_id",
+    "label",
+    "description",
+    "design_doctrine",
+    "visual_principles",
+    "layout_principles",
+    "search_surface_principles",
+    "result_card_principles",
+    "object_page_principles",
+    "source_page_principles",
+    "need_candidate_principles",
+    "evidence_absence_compare_principles",
+    "old_client_principles",
+    "text_file_tree_principles",
+    "terminal_future_principles",
+    "native_card_future_principles",
+    "print_principles",
+    "accessibility_principles",
+    "forbidden_branding_or_trade_dress",
+    "forbidden_product_claims",
+    "allowed_degradations",
+    "required_semantic_visibility",
+    "token_refs",
+    "no_goals",
+    "notes"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "design_language_id": {
+      "type": "string",
+      "const": "temporal_minimal_search"
+    },
+    "label": {
+      "type": "string",
+      "minLength": 1
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1
+    },
+    "design_doctrine": {
+      "$ref": "#/$defs/string_list"
+    },
+    "visual_principles": {
+      "$ref": "#/$defs/string_list"
+    },
+    "layout_principles": {
+      "$ref": "#/$defs/string_list"
+    },
+    "search_surface_principles": {
+      "$ref": "#/$defs/string_list"
+    },
+    "result_card_principles": {
+      "$ref": "#/$defs/string_list"
+    },
+    "object_page_principles": {
+      "$ref": "#/$defs/string_list"
+    },
+    "source_page_principles": {
+      "$ref": "#/$defs/string_list"
+    },
+    "need_candidate_principles": {
+      "$ref": "#/$defs/string_list"
+    },
+    "evidence_absence_compare_principles": {
+      "$ref": "#/$defs/string_list"
+    },
+    "old_client_principles": {
+      "$ref": "#/$defs/string_list"
+    },
+    "text_file_tree_principles": {
+      "$ref": "#/$defs/string_list"
+    },
+    "terminal_future_principles": {
+      "$ref": "#/$defs/string_list"
+    },
+    "native_card_future_principles": {
+      "$ref": "#/$defs/string_list"
+    },
+    "print_principles": {
+      "$ref": "#/$defs/string_list"
+    },
+    "accessibility_principles": {
+      "$ref": "#/$defs/string_list"
+    },
+    "forbidden_branding_or_trade_dress": {
+      "$ref": "#/$defs/string_list"
+    },
+    "forbidden_product_claims": {
+      "$ref": "#/$defs/string_list"
+    },
+    "allowed_degradations": {
+      "$ref": "#/$defs/string_list"
+    },
+    "required_semantic_visibility": {
+      "$ref": "#/$defs/string_list"
+    },
+    "token_refs": {
+      "$ref": "#/$defs/string_list"
+    },
+    "no_goals": {
+      "$ref": "#/$defs/string_list"
+    },
+    "notes": {
+      "$ref": "#/$defs/string_list"
+    }
+  },
+  "$defs": {
+    "string_list": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    }
+  }
+}

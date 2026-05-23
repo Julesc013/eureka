@@ -2,10 +2,10 @@
 
 Implemented:
 
-- `runtime/source_cache/` stdlib-only dry-run modules.
+- `runtime/source/cache/` stdlib-only dry-run modules.
 - `scripts/run_source_cache_dry_run.py` for approved repo-local examples.
 - `scripts/validate_source_cache_dry_run_report.py` for dry-run and audit report validation.
-- Five synthetic public-safe dry-run examples under `examples/source_cache/dry_run/`.
+- Five synthetic public-safe dry-run examples under `examples/sources/cache/dry_run/dry_run/`.
 - Tests, inventory, operations docs, command metadata, and this audit pack.
 
 The implementation reports candidate effects only. It does not write

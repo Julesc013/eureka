@@ -34,7 +34,7 @@ entries:
     title: Repo layout contract taxonomy cleanup
     status: completed
     purpose: Classify contract/schema authority before Workbench Foundation without moving files or changing runtime behavior.
-    allowed_scope_summary: Contract taxonomy inventories, authority matrix, duplicate authority report, contracts/control_schemas decision, migration backlog, validator, tests, docs, and audit evidence.
+    allowed_scope_summary: Contract taxonomy inventories, authority matrix, duplicate authority report, contracts/schema/control decision, migration backlog, validator, tests, docs, and audit evidence.
     gate: No file moves, runtime behavior changes, source probes, extraction, model/provider calls, deployment, production readiness claim, or public launch claim.
     task: .aide/queue/R0-03/task.yaml
     recommended_after: REPO-LAYOUT-CANON-01

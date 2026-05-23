@@ -658,7 +658,7 @@
         "category": "Added",
         "commit": "5f9ac9870626",
         "commit_sha": "5f9ac98706265902ae48968502eeabbfcac246d3",
-        "entry": "runtime/local_appliance runtime composition API.",
+        "entry": "runtime/local/appliance runtime composition API.",
         "follow_up": "- LOCAL-04 \u2014 Read-only localhost HTTP service over reviewed index.",
         "risks": "- Runtime leakage gate still fails due pre-existing findings outside LOCAL-03 scope.\n- Full unittest discovery also fails in existing public search/generated drift, IA readiness polish, and leakage/remediation lanes.\n- Read-only mode is enforced at the composition wrapper level; underlying R0 stores do not yet expose true SQLite read-only connections.",
         "scope": "local",
@@ -672,7 +672,7 @@
           "## Follow-up"
         ],
         "subject": "runtime(local): add appliance composition boundary",
-        "summary": "runtime/local_appliance runtime composition API.",
+        "summary": "runtime/local/appliance runtime composition API.",
         "type": "runtime",
         "validation": "- git diff --check: PASS.\n- python -m json.tool <LOCAL-03 JSON files>: PASS.\n- python scripts/validate_local_runtime_composition.py: WARN, passes with pre-existing runtime leakage warning.\n- python -m unittest tests.runtime.test_local_appliance_composition: PASS.\n- python -m unittest tests.runtime.test_local_appliance_instance: PASS.\n- python -m unittest tests.runtime.test_local_appliance_validation: PASS.\n- python -m unittest tests.operations.test_local_runtime_composition_scripts: PASS.\n- manual ignored ./eureka-instance smoke: PASS.\n- python scripts/check_generated_artifact_cleanliness.py --check --json: PASS after commit.\n- python scripts/check_architecture_boundaries.py: PASS.\n- python scripts/validate_local_instance_migration_guard.py: WARN, passes with pre-existing runtime leakage warning.\n- python scripts/validate_local_instance_bootstrap.py: WARN, passes with pre-existing runtime leakage warning.\n- python scripts/validate_local_appliance_track.py: WARN, passes with dev-ahead-main warning.\n- python scripts/audit_runtime_architecture_leakage.py --check --json: FAIL, pre-existing 1030 findings; LOCAL-03 did not increase leakage.\n- python scripts/validate_runtime_architecture_leakage.py: FAIL, pre-existing runtime leakage gate.\n- python -m unittest discover -s tests -t .: FAIL, 4128 tests with 3 failures and 5 errors outside LOCAL-03 focused lanes."
       },
@@ -733,7 +733,7 @@
         "category": "Added",
         "commit": "15a46c118f90",
         "commit_sha": "15a46c118f90989bf754ba6da6dee6dd5bcbb20a",
-        "entry": "runtime/local_service read-only localhost service API.",
+        "entry": "runtime/local/service read-only localhost service API.",
         "follow_up": "- LOCAL-05 \u2014 HTML workbench v0.",
         "risks": "- Runtime leakage gate still fails due pre-existing findings outside LOCAL-04 scope.\n- Full unittest discovery also fails in existing public search/generated drift, IA readiness polish, and leakage/remediation lanes.\n- LOCAL-03 dev history is still locally amended relative to origin/dev; this LOCAL-04 work is on an explicit task branch.",
         "scope": "local",
@@ -747,7 +747,7 @@
           "## Follow-up"
         ],
         "subject": "runtime(local): add read only localhost service",
-        "summary": "runtime/local_service read-only localhost service API.",
+        "summary": "runtime/local/service read-only localhost service API.",
         "type": "runtime",
         "validation": "- git diff --check: PASS.\n- python -m json.tool <LOCAL-04 JSON files>: PASS.\n- python scripts/validate_local_http_service.py: WARN, passes with pre-existing runtime leakage warning.\n- python -m unittest tests.runtime.test_local_service_routes: PASS.\n- python -m unittest tests.runtime.test_local_service_read_only: PASS.\n- python -m unittest tests.runtime.test_local_service_validation: PASS.\n- python -m unittest tests.operations.test_local_http_service_scripts: PASS.\n- manual ignored ./eureka-instance smoke on 127.0.0.1:8765: PASS.\n- python scripts/validate_local_runtime_composition.py: WARN, passes with pre-existing runtime leakage warning.\n- python scripts/validate_local_instance_migration_guard.py: WARN, passes with pre-existing runtime leakage warning after commit.\n- python scripts/validate_local_instance_bootstrap.py: WARN, passes with pre-existing runtime leakage warning after commit.\n- python scripts/validate_local_appliance_track.py: WARN, passes with dev-ahead-main warning after commit.\n- python scripts/check_generated_artifact_cleanliness.py --check --json: PASS after commit.\n- python scripts/check_architecture_boundaries.py: PASS.\n- python scripts/audit_runtime_architecture_leakage.py --check --json: FAIL, pre-existing 1030 findings; LOCAL-04 did not increase leakage.\n- python scripts/validate_runtime_architecture_leakage.py: FAIL, pre-existing runtime leakage gate.\n- python -m unittest discover -s tests -t .: FAIL, 4146 tests with 3 failures and 5 errors outside LOCAL-04 focused lanes."
       },
@@ -933,7 +933,7 @@
         "category": "Added",
         "commit": "5488d5b29987",
         "commit_sha": "5488d5b29987d955c349d312de33294ea4e171d8",
-        "entry": "runtime/local_worker, worker runner scripts, LOCAL-09 policies, inventories, docs, tests, validator, queue handoff, and audit pack.",
+        "entry": "runtime/local/worker, worker runner scripts, LOCAL-09 policies, inventories, docs, tests, validator, queue handoff, and audit pack.",
         "follow_up": "- Continue with LOCAL-10 auto-test and auto-search harness.\n- Keep LOCAL-LEAKAGE-01 available for the pre-existing leakage gate.",
         "risks": "- Pre-existing runtime leakage gate remains unresolved outside LOCAL-09.\n- Full unittest discovery timed out and remains a broad-suite warning.",
         "scope": "local",
@@ -947,7 +947,7 @@
           "## Follow-up"
         ],
         "subject": "runtime(local): add deterministic worker runner",
-        "summary": "runtime/local_worker, worker runner scripts, LOCAL-09 policies, inventories, docs, tests, validator, queue handoff, and audit pack.",
+        "summary": "runtime/local/worker, worker runner scripts, LOCAL-09 policies, inventories, docs, tests, validator, queue handoff, and audit pack.",
         "type": "runtime",
         "validation": "- PASS: git diff --check.\n- PASS: required LOCAL-09 JSON files via python -m json.tool.\n- PASS_WITH_WARNINGS: python scripts/validate_local_worker_runner.py --json, with pre-existing runtime leakage gate warning.\n- PASS: focused LOCAL-09 unittest modules.\n- PASS: manual ignored-instance worker smoke.\n- PASS: python scripts/check_architecture_boundaries.py.\n- WARN: python scripts/check_generated_artifact_cleanliness.py --check --json before commit reported expected audit/generated addition drift.\n- WARN: python scripts/audit_runtime_architecture_leakage.py --check --json and python scripts/validate_runtime_architecture_leakage.py still fail on pre-existing leakage, with no LOCAL-09 increase.\n- WARN: python -m unittest discover -s tests -t . timed out after 10 minutes.\n- WARN: older LOCAL-00/01/02/07/08 validators are phase-specific after queue advancement to LOCAL-10."
       },
@@ -2464,7 +2464,7 @@
         "category": "Fixed",
         "commit": "ede77d3cb101",
         "commit_sha": "ede77d3cb10174cf9ede6d5a8385c9fbe31950e4",
-        "entry": "moved unresolved contract taxonomy artifacts to contracts/control_schemas",
+        "entry": "moved unresolved contract taxonomy artifacts to contracts/schema/control",
         "follow_up": "- Run clean-tree R0 validators after commit.\n\n- Continue with F0-BUNDLE-01 if clean-tree validation remains pass/pass-with-warnings.",
         "risks": "- WARN runtime files changed only for reference-only path updates proven by full discovery.\n\n- WARN product contract tree has existing UI bundle inspection naming warnings.",
         "scope": "r0",
@@ -2478,7 +2478,7 @@
           "## Follow-up"
         ],
         "subject": "fix(r0): resolve contract taxonomy blockers",
-        "summary": "moved unresolved contract taxonomy artifacts to contracts/control_schemas",
+        "summary": "moved unresolved contract taxonomy artifacts to contracts/schema/control",
         "type": "fix",
         "validation": "- PASS git diff --check\n\n- PASS git diff --cached --check\n\n- PASS json.tool remediation outputs\n\n- PASS resolver dry-run/apply\n\n- PASS focused remediation/workunit/candidate/golden/search tests\n\n- WARN remediation validator needed clean-tree rerun for historical validators after commit"
       },
@@ -4533,7 +4533,7 @@
       "category": "Fixed",
       "commit": "ede77d3cb101",
       "commit_sha": "ede77d3cb10174cf9ede6d5a8385c9fbe31950e4",
-      "entry": "moved unresolved contract taxonomy artifacts to contracts/control_schemas",
+      "entry": "moved unresolved contract taxonomy artifacts to contracts/schema/control",
       "follow_up": "- Run clean-tree R0 validators after commit.\n\n- Continue with F0-BUNDLE-01 if clean-tree validation remains pass/pass-with-warnings.",
       "risks": "- WARN runtime files changed only for reference-only path updates proven by full discovery.\n\n- WARN product contract tree has existing UI bundle inspection naming warnings.",
       "scope": "r0",
@@ -4547,7 +4547,7 @@
         "## Follow-up"
       ],
       "subject": "fix(r0): resolve contract taxonomy blockers",
-      "summary": "moved unresolved contract taxonomy artifacts to contracts/control_schemas",
+      "summary": "moved unresolved contract taxonomy artifacts to contracts/schema/control",
       "type": "fix",
       "validation": "- PASS git diff --check\n\n- PASS git diff --cached --check\n\n- PASS json.tool remediation outputs\n\n- PASS resolver dry-run/apply\n\n- PASS focused remediation/workunit/candidate/golden/search tests\n\n- WARN remediation validator needed clean-tree rerun for historical validators after commit"
     },
@@ -5283,7 +5283,7 @@
       "category": "Added",
       "commit": "5f9ac9870626",
       "commit_sha": "5f9ac98706265902ae48968502eeabbfcac246d3",
-      "entry": "runtime/local_appliance runtime composition API.",
+      "entry": "runtime/local/appliance runtime composition API.",
       "follow_up": "- LOCAL-04 \u2014 Read-only localhost HTTP service over reviewed index.",
       "risks": "- Runtime leakage gate still fails due pre-existing findings outside LOCAL-03 scope.\n- Full unittest discovery also fails in existing public search/generated drift, IA readiness polish, and leakage/remediation lanes.\n- Read-only mode is enforced at the composition wrapper level; underlying R0 stores do not yet expose true SQLite read-only connections.",
       "scope": "local",
@@ -5297,7 +5297,7 @@
         "## Follow-up"
       ],
       "subject": "runtime(local): add appliance composition boundary",
-      "summary": "runtime/local_appliance runtime composition API.",
+      "summary": "runtime/local/appliance runtime composition API.",
       "type": "runtime",
       "validation": "- git diff --check: PASS.\n- python -m json.tool <LOCAL-03 JSON files>: PASS.\n- python scripts/validate_local_runtime_composition.py: WARN, passes with pre-existing runtime leakage warning.\n- python -m unittest tests.runtime.test_local_appliance_composition: PASS.\n- python -m unittest tests.runtime.test_local_appliance_instance: PASS.\n- python -m unittest tests.runtime.test_local_appliance_validation: PASS.\n- python -m unittest tests.operations.test_local_runtime_composition_scripts: PASS.\n- manual ignored ./eureka-instance smoke: PASS.\n- python scripts/check_generated_artifact_cleanliness.py --check --json: PASS after commit.\n- python scripts/check_architecture_boundaries.py: PASS.\n- python scripts/validate_local_instance_migration_guard.py: WARN, passes with pre-existing runtime leakage warning.\n- python scripts/validate_local_instance_bootstrap.py: WARN, passes with pre-existing runtime leakage warning.\n- python scripts/validate_local_appliance_track.py: WARN, passes with dev-ahead-main warning.\n- python scripts/audit_runtime_architecture_leakage.py --check --json: FAIL, pre-existing 1030 findings; LOCAL-03 did not increase leakage.\n- python scripts/validate_runtime_architecture_leakage.py: FAIL, pre-existing runtime leakage gate.\n- python -m unittest discover -s tests -t .: FAIL, 4128 tests with 3 failures and 5 errors outside LOCAL-03 focused lanes."
     },
@@ -5383,7 +5383,7 @@
       "category": "Added",
       "commit": "15a46c118f90",
       "commit_sha": "15a46c118f90989bf754ba6da6dee6dd5bcbb20a",
-      "entry": "runtime/local_service read-only localhost service API.",
+      "entry": "runtime/local/service read-only localhost service API.",
       "follow_up": "- LOCAL-05 \u2014 HTML workbench v0.",
       "risks": "- Runtime leakage gate still fails due pre-existing findings outside LOCAL-04 scope.\n- Full unittest discovery also fails in existing public search/generated drift, IA readiness polish, and leakage/remediation lanes.\n- LOCAL-03 dev history is still locally amended relative to origin/dev; this LOCAL-04 work is on an explicit task branch.",
       "scope": "local",
@@ -5397,7 +5397,7 @@
         "## Follow-up"
       ],
       "subject": "runtime(local): add read only localhost service",
-      "summary": "runtime/local_service read-only localhost service API.",
+      "summary": "runtime/local/service read-only localhost service API.",
       "type": "runtime",
       "validation": "- git diff --check: PASS.\n- python -m json.tool <LOCAL-04 JSON files>: PASS.\n- python scripts/validate_local_http_service.py: WARN, passes with pre-existing runtime leakage warning.\n- python -m unittest tests.runtime.test_local_service_routes: PASS.\n- python -m unittest tests.runtime.test_local_service_read_only: PASS.\n- python -m unittest tests.runtime.test_local_service_validation: PASS.\n- python -m unittest tests.operations.test_local_http_service_scripts: PASS.\n- manual ignored ./eureka-instance smoke on 127.0.0.1:8765: PASS.\n- python scripts/validate_local_runtime_composition.py: WARN, passes with pre-existing runtime leakage warning.\n- python scripts/validate_local_instance_migration_guard.py: WARN, passes with pre-existing runtime leakage warning after commit.\n- python scripts/validate_local_instance_bootstrap.py: WARN, passes with pre-existing runtime leakage warning after commit.\n- python scripts/validate_local_appliance_track.py: WARN, passes with dev-ahead-main warning after commit.\n- python scripts/check_generated_artifact_cleanliness.py --check --json: PASS after commit.\n- python scripts/check_architecture_boundaries.py: PASS.\n- python scripts/audit_runtime_architecture_leakage.py --check --json: FAIL, pre-existing 1030 findings; LOCAL-04 did not increase leakage.\n- python scripts/validate_runtime_architecture_leakage.py: FAIL, pre-existing runtime leakage gate.\n- python -m unittest discover -s tests -t .: FAIL, 4146 tests with 3 failures and 5 errors outside LOCAL-04 focused lanes."
     },
@@ -5908,7 +5908,7 @@
       "category": "Added",
       "commit": "5488d5b29987",
       "commit_sha": "5488d5b29987d955c349d312de33294ea4e171d8",
-      "entry": "runtime/local_worker, worker runner scripts, LOCAL-09 policies, inventories, docs, tests, validator, queue handoff, and audit pack.",
+      "entry": "runtime/local/worker, worker runner scripts, LOCAL-09 policies, inventories, docs, tests, validator, queue handoff, and audit pack.",
       "follow_up": "- Continue with LOCAL-10 auto-test and auto-search harness.\n- Keep LOCAL-LEAKAGE-01 available for the pre-existing leakage gate.",
       "risks": "- Pre-existing runtime leakage gate remains unresolved outside LOCAL-09.\n- Full unittest discovery timed out and remains a broad-suite warning.",
       "scope": "local",
@@ -5922,7 +5922,7 @@
         "## Follow-up"
       ],
       "subject": "runtime(local): add deterministic worker runner",
-      "summary": "runtime/local_worker, worker runner scripts, LOCAL-09 policies, inventories, docs, tests, validator, queue handoff, and audit pack.",
+      "summary": "runtime/local/worker, worker runner scripts, LOCAL-09 policies, inventories, docs, tests, validator, queue handoff, and audit pack.",
       "type": "runtime",
       "validation": "- PASS: git diff --check.\n- PASS: required LOCAL-09 JSON files via python -m json.tool.\n- PASS_WITH_WARNINGS: python scripts/validate_local_worker_runner.py --json, with pre-existing runtime leakage gate warning.\n- PASS: focused LOCAL-09 unittest modules.\n- PASS: manual ignored-instance worker smoke.\n- PASS: python scripts/check_architecture_boundaries.py.\n- WARN: python scripts/check_generated_artifact_cleanliness.py --check --json before commit reported expected audit/generated addition drift.\n- WARN: python scripts/audit_runtime_architecture_leakage.py --check --json and python scripts/validate_runtime_architecture_leakage.py still fail on pre-existing leakage, with no LOCAL-09 increase.\n- WARN: python -m unittest discover -s tests -t . timed out after 10 minutes.\n- WARN: older LOCAL-00/01/02/07/08 validators are phase-specific after queue advancement to LOCAL-10."
     },

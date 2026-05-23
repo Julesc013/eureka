@@ -14,7 +14,7 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.local_foundry import candidate_store as runtime  # noqa: E402
+from runtime.local.foundry import candidate_store as runtime  # noqa: E402
 from scripts import record_candidate, summarize_candidate_store  # noqa: E402
 
 
@@ -33,13 +33,13 @@ DOC_FILES = [
     "docs/operations/CANDIDATE_STORE_REVIEW.md",
 ]
 EXAMPLE_FILES = [
-    "examples/candidates/minimal_candidate_v0.json",
-    "examples/candidates/search_need_candidate_v0.json",
-    "examples/candidates/source_lead_candidate_v0.json",
-    "examples/candidates/workunit_result_candidate_v0.json",
-    "examples/candidates/evidence_needed_candidate_v0.json",
-    "examples/candidates/duplicate_possible_candidate_v0.json",
-    "examples/candidates/policy_blocked_candidate_v0.json",
+    "examples/index/candidates/minimal_candidate_v0.json",
+    "examples/index/candidates/search_need_candidate_v0.json",
+    "examples/index/candidates/source_lead_candidate_v0.json",
+    "examples/index/candidates/workunit_result_candidate_v0.json",
+    "examples/index/candidates/evidence_needed_candidate_v0.json",
+    "examples/index/candidates/duplicate_possible_candidate_v0.json",
+    "examples/index/candidates/policy_blocked_candidate_v0.json",
 ]
 AUDIT_FILES = [
     "control/audits/track-b-12-candidate-store-runtime-v0/README.md",
@@ -146,8 +146,8 @@ def _validate_sample_report(report: Mapping[str, Any], ref: str) -> list[str]:
 def _validate_script_checks(repo_root: Path) -> list[str]:
     errors: list[str] = []
     commands = [
-        [sys.executable, "scripts/record_candidate.py", "--input", "examples/search_needs/software_version_search_need_v0.json", "--check", "--json"],
-        [sys.executable, "scripts/summarize_candidate_store.py", "--input", "examples/candidates", "--check", "--json"],
+        [sys.executable, "scripts/record_candidate.py", "--input", "examples/search/needs/software_version_search_need_v0.json", "--check", "--json"],
+        [sys.executable, "scripts/summarize_candidate_store.py", "--input", "examples/index/candidates", "--check", "--json"],
     ]
     for command in commands:
         completed = subprocess.run(command, cwd=repo_root, capture_output=True, text=True, check=False)

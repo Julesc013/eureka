@@ -4,7 +4,7 @@ This audit pack records the first bounded Node Policy Evaluator for Track B.
 
 ## Added
 
-- `runtime/local_foundry/node_policy_evaluator.py`
+- `runtime/local/foundry/node_policy_evaluator.py`
 - `scripts/evaluate_node_policy.py`
 - `scripts/validate_node_policy_evaluator.py`
 - evaluator decision, reason, output, review, and runtime policy inventories

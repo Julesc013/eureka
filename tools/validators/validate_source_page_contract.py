@@ -17,8 +17,8 @@ if str(REPO_ROOT) not in sys.path:
 from scripts.validate_source_page import validate_all_examples  # noqa: E402
 
 
-CONTRACT_PATH = REPO_ROOT / "contracts" / "pages" / "source_page.v0.json"
-SECTION_CONTRACT_PATH = REPO_ROOT / "contracts" / "pages" / "source_page_section.v0.json"
+CONTRACT_PATH = REPO_ROOT / "contracts" / "surface" / "pages" / "source_page.v0.json"
+SECTION_CONTRACT_PATH = REPO_ROOT / "contracts" / "surface" / "pages" / "source_page_section.v0.json"
 POLICY_PATH = REPO_ROOT / "control" / "inventory" / "pages" / "source_page_policy.json"
 AUDIT_DIR = REPO_ROOT / "control" / "audits" / "source-page-contract-v0"
 REPORT_PATH = AUDIT_DIR / "source_page_contract_report.json"
@@ -152,10 +152,10 @@ REQUIRED_DOC_PHRASES = (
 def validate_source_page_contract() -> dict[str, Any]:
     errors: list[str] = []
     warnings: list[str] = []
-    contract = _read_json_object(CONTRACT_PATH, errors, "contracts/pages/source_page.v0.json")
+    contract = _read_json_object(CONTRACT_PATH, errors, "contracts/surface/pages/source_page.v0.json")
     if contract:
         _validate_contract(contract, errors)
-    section = _read_json_object(SECTION_CONTRACT_PATH, errors, "contracts/pages/source_page_section.v0.json")
+    section = _read_json_object(SECTION_CONTRACT_PATH, errors, "contracts/surface/pages/source_page_section.v0.json")
     if section and section.get("x-runtime_source_page_implemented") is not False:
         errors.append("source_page_section.v0.json x-runtime_source_page_implemented must be false.")
     policy = _read_json_object(POLICY_PATH, errors, "control/inventory/pages/source_page_policy.json")
@@ -170,8 +170,8 @@ def validate_source_page_contract() -> dict[str, Any]:
     return {
         "status": "valid" if not errors else "invalid",
         "created_by": "source_page_contract_validator_v0",
-        "contract_file": "contracts/pages/source_page.v0.json",
-        "section_contract_file": "contracts/pages/source_page_section.v0.json",
+        "contract_file": "contracts/surface/pages/source_page.v0.json",
+        "section_contract_file": "contracts/surface/pages/source_page_section.v0.json",
         "policy_file": "control/inventory/pages/source_page_policy.json",
         "report_id": _report_id(),
         "example_count": examples.get("example_count", 0),
@@ -274,8 +274,8 @@ def _validate_audit_pack(errors: list[str], warnings: list[str]) -> None:
         return
     if report.get("report_id") != "source_page_contract_v0":
         errors.append("source_page_contract_report.json report_id must be source_page_contract_v0.")
-    if report.get("contract_file") != "contracts/pages/source_page.v0.json":
-        errors.append("source_page_contract_report.json contract_file must point to contracts/pages/source_page.v0.json.")
+    if report.get("contract_file") != "contracts/surface/pages/source_page.v0.json":
+        errors.append("source_page_contract_report.json contract_file must point to contracts/surface/pages/source_page.v0.json.")
     for key in (
         "runtime_source_pages_implemented",
         "persistent_source_page_store_implemented",

@@ -1,6 +1,6 @@
 # Temporal Minimal Search Contract
 
-`contracts/ui/temporal_minimal_search.v0.json` defines Eureka's search-like
+`contracts/surface/ui/temporal_minimal_search.v0.json` defines Eureka's search-like
 presentation language for public surfaces.
 
 Temporal Minimal Search is not a separate site and not a clone of any search

@@ -18,9 +18,9 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.local_appliance import close_local_appliance, open_local_appliance
-from runtime.local_service import LocalServiceApp, validate_host_allowed
-from runtime.local_service.errors import LocalServiceHostError
+from runtime.local.appliance import close_local_appliance, open_local_appliance
+from runtime.local.service import LocalServiceApp, validate_host_allowed
+from runtime.local.service.errors import LocalServiceHostError
 
 
 TASK_ID = "LOCAL-04"
@@ -41,14 +41,14 @@ INVENTORIES = {
     "control/inventory/local_04_next_task_decision.json": "local_04_next_task_decision.v0",
 }
 RUNTIME_FILES = (
-    "runtime/local_service/__init__.py",
-    "runtime/local_service/app.py",
-    "runtime/local_service/routes.py",
-    "runtime/local_service/responses.py",
-    "runtime/local_service/server.py",
-    "runtime/local_service/request_context.py",
-    "runtime/local_service/validation.py",
-    "runtime/local_service/errors.py",
+    "runtime/local/service/__init__.py",
+    "runtime/local/service/app.py",
+    "runtime/local/service/routes.py",
+    "runtime/local/service/responses.py",
+    "runtime/local/service/server.py",
+    "runtime/local/service/request_context.py",
+    "runtime/local/service/validation.py",
+    "runtime/local/service/errors.py",
 )
 SCRIPTS = (
     "scripts/eureka_local_server.py",
@@ -270,7 +270,7 @@ def validate_policies(payloads: Mapping[str, Mapping[str, Any]], errors: list[st
 
 def validate_inventories(payloads: Mapping[str, Mapping[str, Any]], errors: list[str], warnings: list[str]) -> None:
     inventory = payloads.get("control/inventory/local_http_service_inventory.json", {})
-    if inventory.get("runtime_package") != "runtime/local_service":
+    if inventory.get("runtime_package") != "runtime/local/service":
         errors.append("service inventory runtime_package mismatch")
     for key, value in {
         "default_host": "127.0.0.1",

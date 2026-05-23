@@ -4,7 +4,7 @@ import tempfile
 from pathlib import Path
 import unittest
 
-from runtime.search_hunt import SearchHuntError, SearchHuntSession, SearchHuntStore
+from runtime.search.hunt import SearchHuntError, SearchHuntSession, SearchHuntStore
 
 
 class SearchHuntStoreTests(unittest.TestCase):

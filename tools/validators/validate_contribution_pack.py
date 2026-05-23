@@ -12,8 +12,8 @@ from pack_validator_examples import argument_error, format_all_examples, validat
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
-DEFAULT_PACK_ROOT = REPO_ROOT / "examples" / "contribution_packs" / "minimal_contribution_pack_v0"
-CONTRIBUTION_PACK_SCHEMA = REPO_ROOT / "contracts" / "control_schemas" / "policies" / "packs" / "contribution_pack.v0.json"
+DEFAULT_PACK_ROOT = REPO_ROOT / "examples" / "packs" / "contribution" / "minimal_contribution_pack_v0"
+CONTRIBUTION_PACK_SCHEMA = REPO_ROOT / "contracts" / "schema" / "control" / "policies" / "packs" / "contribution_pack.v0.json"
 
 REQUIRED_FILES = {
     "CONTRIBUTION_PACK.json",

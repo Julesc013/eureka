@@ -30,19 +30,19 @@
       "control/audits/obs-agent-*",
       "control/inventory/observations/obs_agent_*",
       "examples/observation_candidates/*",
-      "examples/observation_reviews/*",
+      "examples/review/observation_reviews/*",
       "scripts/*observation*",
       "tests/*observation*"
     ],
     "track_b_source_cache": [
-      "runtime/local_foundry/source_cache.py",
+      "runtime/local/foundry/source_cache.py",
       "control/inventory/source_cache/*",
-      "examples/source_cache_records/*"
+      "examples/sources/cache/records/*"
     ],
     "track_b_evidence_ledger": [
-      "runtime/local_foundry/evidence_ledger.py",
+      "runtime/local/foundry/evidence_ledger.py",
       "control/inventory/evidence_ledger/*",
-      "examples/evidence_ledger_records/*"
+      "examples/evidence/ledger/records/*"
     ],
     "b23_or_later": [
       "control/audits/track-b-23-integration-audit-v0/*",
@@ -51,7 +51,7 @@
       "tests/operations/test_track_b_integration_audit.py"
     ],
     "runtime_or_tests": [
-      "runtime/local_foundry/*",
+      "runtime/local/foundry/*",
       "scripts/*",
       "tests/*"
     ],

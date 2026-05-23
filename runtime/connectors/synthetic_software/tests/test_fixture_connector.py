@@ -23,7 +23,7 @@ class SyntheticSoftwareConnectorTestCase(unittest.TestCase):
         self.assertEqual(records[0].source_name, "synthetic_software_fixture")
         self.assertEqual(
             records[0].source_locator,
-            "contracts/control_schemas/fixtures/archive/software/synthetic_resolution_fixture.json",
+            "contracts/schema/control/fixtures/archive/software/synthetic_resolution_fixture.json",
         )
         self.assertEqual(len(records[0].payload["representations"]), 3)
         self.assertEqual(records[0].payload["representations"][0]["access_path"]["kind"], "inspect")

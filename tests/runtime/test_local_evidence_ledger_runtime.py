@@ -2,14 +2,14 @@ import json
 import unittest
 from pathlib import Path
 
-from runtime.local_foundry import evidence_ledger
+from runtime.local.foundry import evidence_ledger
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 
 
 def load_example(name: str) -> dict:
-    return json.loads((REPO_ROOT / "examples/evidence_ledger_records" / name).read_text(encoding="utf-8"))
+    return json.loads((REPO_ROOT / "examples/evidence/ledger/records" / name).read_text(encoding="utf-8"))
 
 
 class LocalEvidenceLedgerRuntimeTests(unittest.TestCase):
@@ -117,7 +117,7 @@ class LocalEvidenceLedgerRuntimeTests(unittest.TestCase):
         self.assertFalse(snapshot["conflict_summary"]["automatic_merge_allowed"])
 
     def test_runtime_does_not_import_network_model_or_provider_modules(self) -> None:
-        source = (REPO_ROOT / "runtime/local_foundry/evidence_ledger.py").read_text(encoding="utf-8")
+        source = (REPO_ROOT / "runtime/local/foundry/evidence_ledger.py").read_text(encoding="utf-8")
         forbidden = ["requests", "urllib", "http.client", "socket", "openai", "anthropic", "selenium", "playwright"]
         for token in forbidden:
             self.assertNotIn(token, source)

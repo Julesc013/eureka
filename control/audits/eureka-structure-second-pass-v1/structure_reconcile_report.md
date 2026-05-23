@@ -196,7 +196,7 @@ Final clean-tree validation:
 
 - `tests.operations.test_contract_taxonomy_plan.ContractTaxonomyPlanTests.test_audit_script_runs_in_check_mode`
   failed because the contract taxonomy auditor counted overlapping contract
-  roots twice after `contracts/control_schemas/` was present. The auditor now
+  roots twice after `contracts/schema/control/` was present. The auditor now
   deduplicates by repo-relative path and the focused test passes.
 - `tests.operations.test_hosted_public_search_wrapper` failed because the test
   still read `deploy/render/render.yaml`. It now reads

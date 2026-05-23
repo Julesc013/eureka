@@ -24,22 +24,22 @@ SHIM_REPORT_PATH = Path("control/inventory/r0_03b_1_compatibility_shim_report.js
 AUDIT_REPORT_PATH = AUDIT_DIR / "r0_03b_1_report.json"
 
 TARGET_SCHEMA_ROOTS = (
-    "contracts/control_schemas/audits/",
-    "contracts/control_schemas/fixtures/",
-    "contracts/control_schemas/previews/",
-    "contracts/control_schemas/policies/",
-    "contracts/control_schemas/validators/",
-    "contracts/control_schemas/tasks/",
-    "contracts/control_schemas/deprecated/",
+    "contracts/schema/control/audits/",
+    "contracts/schema/control/fixtures/",
+    "contracts/schema/control/previews/",
+    "contracts/schema/control/policies/",
+    "contracts/schema/control/validators/",
+    "contracts/schema/control/tasks/",
+    "contracts/schema/control/deprecated/",
 )
 
 BATCH_CLASSES = {"audit_schema", "fixture_schema", "preview_schema"}
 KEEP_IN_CONTRACTS_FOR_BATCH_1 = {
     "contracts/api/absence_report.v0.json",
     "contracts/api/examples/search_result_card_firefox_xp_candidate.v0.json",
-    "contracts/views/candidate_page.v0.json",
-    "contracts/ui/ui_contracts/absence_report.ui_contract.yaml",
-    "contracts/ui/view_models/absence_report.view_model.yaml",
+    "contracts/view/pages/candidate_page.v0.json",
+    "contracts/surface/ui/contracts/absence_report.ui_contract.yaml",
+    "contracts/view/models/ui/absence_report.view_model.yaml",
 }
 DEFERRED_CLASSES = {"control_schema", "validator_schema", "task_queue_schema", "generated_scaffold_schema", "deprecated_schema"}
 PRODUCT_CLASSES = {
@@ -255,7 +255,7 @@ def select_batch_moves(root: Path, plan: Mapping[str, Any]) -> tuple[list[dict[s
         if contract_class not in BATCH_CLASSES:
             deferred.append(deferred_item(move, "Schema class is not part of the R0-03B-1 audit/fixture/preview batch."))
             continue
-        if not target_path.startswith(("contracts/control_schemas/audits/", "contracts/control_schemas/fixtures/", "contracts/control_schemas/previews/")):
+        if not target_path.startswith(("contracts/schema/control/audits/", "contracts/schema/control/fixtures/", "contracts/schema/control/previews/")):
             blocked.append(blocked_item(move, "Batch target is not an approved R0-03B-1 control schema root."))
             continue
         source = root / source_path
@@ -296,7 +296,7 @@ def unsafe_references(move: Mapping[str, Any]) -> tuple[list[str], list[str]]:
 def is_allowed_reference_update_path(path: str) -> bool:
     return (
         path.startswith("contracts/")
-        or path.startswith("contracts/control_schemas/")
+        or path.startswith("contracts/schema/control/")
         or path.startswith("control/inventory/")
         or path.startswith("control/policies/")
         or path.startswith("docs/operations/")
@@ -474,7 +474,7 @@ def build_audit_report(
 def create_target_roots(root: Path, *, apply_changes: bool) -> None:
     if not apply_changes:
         return
-    schemas_root = root / "contracts/control_schemas"
+    schemas_root = root / "contracts/schema/control"
     schemas_root.mkdir(parents=True, exist_ok=True)
     readme = schemas_root / "README.md"
     if not readme.exists():
@@ -510,7 +510,7 @@ def write_audit_markdown(root: Path, result: Mapping[str, Any]) -> None:
     moved = result_payload["moved"]
     blocked = result_payload["blocked"]
     markdown = {
-        AUDIT_DIR / "README.md": "# R0-03B-1 Contract Taxonomy Migration\n\nBatch 1 moves clear audit, fixture, and preview schemas from `contracts/` into `contracts/control_schemas/` while leaving product, unknown, runtime-referenced, and later-batch schemas untouched.\n",
+        AUDIT_DIR / "README.md": "# R0-03B-1 Contract Taxonomy Migration\n\nBatch 1 moves clear audit, fixture, and preview schemas from `contracts/` into `contracts/schema/control/` while leaving product, unknown, runtime-referenced, and later-batch schemas untouched.\n",
         AUDIT_DIR / "migration_result.md": render_summary(result),
         AUDIT_DIR / "moved_schema_summary.md": render_moved_summary(moved),
         AUDIT_DIR / "remaining_product_contract_summary.md": render_remaining_summary(result_payload),
@@ -693,7 +693,7 @@ def render_operation_doc(result: Mapping[str, Any]) -> str:
             "",
             f"- moved schemas: {payload['moves_completed']}",
             "- moved classes: audit_schema, fixture_schema, preview_schema",
-            "- target roots: contracts/control_schemas/audits/, contracts/control_schemas/fixtures/, contracts/control_schemas/previews/",
+            "- target roots: contracts/schema/control/audits/, contracts/schema/control/fixtures/, contracts/schema/control/previews/",
             "",
             "## What Did Not Move",
             "",

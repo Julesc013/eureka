@@ -118,7 +118,7 @@
       "examples/comparison_pages",
       "examples/object_pages",
       "examples/page_runtime_dry_run",
-      "examples/source_pages"
+      "examples/sources/pages"
     ],
     "lane_counts": {
       "candidate": 1,
@@ -385,7 +385,7 @@
         "page_id": "source_page_connector_approval_v0",
         "page_kind": "source_page",
         "page_status": "review_required",
-        "path": "examples/source_pages/minimal_connector_approval_source_page_v0/SOURCE_PAGE.json",
+        "path": "examples/sources/pages/minimal_connector_approval_source_page_v0/SOURCE_PAGE.json",
         "privacy_status": "public_safe",
         "public_safety_status": "public_safe",
         "summary_text": "Synthetic Source Page v0 example describing source posture, coverage, approval gates, and limitations without live calls.",
@@ -401,7 +401,7 @@
         "page_id": "source_page_fixture_synthetic_v0",
         "page_kind": "source_page",
         "page_status": "fixture_backed",
-        "path": "examples/source_pages/minimal_fixture_source_page_v0/SOURCE_PAGE.json",
+        "path": "examples/sources/pages/minimal_fixture_source_page_v0/SOURCE_PAGE.json",
         "privacy_status": "public_safe",
         "public_safety_status": "public_safe",
         "summary_text": "Synthetic Source Page v0 example describing source posture, coverage, approval gates, and limitations without live calls.",
@@ -417,7 +417,7 @@
         "page_id": "source_page_placeholder_v0",
         "page_kind": "source_page",
         "page_status": "placeholder",
-        "path": "examples/source_pages/minimal_placeholder_source_page_v0/SOURCE_PAGE.json",
+        "path": "examples/sources/pages/minimal_placeholder_source_page_v0/SOURCE_PAGE.json",
         "privacy_status": "public_safe",
         "public_safety_status": "public_safe",
         "summary_text": "Synthetic Source Page v0 example describing source posture, coverage, approval gates, and limitations without live calls.",
@@ -433,7 +433,7 @@
         "page_id": "source_page_recorded_fixture_v0",
         "page_kind": "source_page",
         "page_status": "fixture_backed",
-        "path": "examples/source_pages/minimal_recorded_fixture_source_page_v0/SOURCE_PAGE.json",
+        "path": "examples/sources/pages/minimal_recorded_fixture_source_page_v0/SOURCE_PAGE.json",
         "privacy_status": "public_safe",
         "public_safety_status": "public_safe",
         "summary_text": "Synthetic Source Page v0 example describing source posture, coverage, approval gates, and limitations without live calls.",
@@ -482,7 +482,7 @@
   "input_model": {
     "approved_roots": [
       "examples/object_pages",
-      "examples/source_pages",
+      "examples/sources/pages",
       "examples/comparison_pages",
       "examples/page_runtime_dry_run"
     ],

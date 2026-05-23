@@ -2,7 +2,7 @@ import io
 import unittest
 from unittest.mock import patch
 
-from runtime.source_observation.internet_archive_live_transport import (
+from runtime.source.observation.internet_archive_live_transport import (
     IALiveTransport,
     IALiveTransportPolicy,
 )

@@ -1,6 +1,6 @@
 import unittest
 
-from runtime.search_hunt.ia_bridge import (
+from runtime.search.hunt.ia_bridge import (
     IA_WORKUNIT_STATES,
     IA_WORKUNIT_TYPES,
     create_ia_workunits_for_hunt,

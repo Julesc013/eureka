@@ -8,7 +8,7 @@ future moves can update references, validators, docs, and fixtures deliberately.
 
 ## Control Schemas
 
-`contracts/control_schemas/` is explicitly classified as a compatibility
+`contracts/schema/control/` is explicitly classified as a compatibility
 authority for migrated control schemas. The canonical target is
 `contracts/schema/control/`, but the move is deferred until references can be
 updated safely.

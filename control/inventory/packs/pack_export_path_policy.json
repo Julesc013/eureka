@@ -3,7 +3,7 @@
   "policy_id": "pack_export_path_policy.v0",
   "allowed_output_roots": [
     "control/audits/**/generated/",
-    "examples/pack_exports/",
+    "examples/packs/exports/",
     "explicit temp test directory"
   ],
   "forbidden_output_roots": [

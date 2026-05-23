@@ -44,11 +44,11 @@ R0_REPORTS: tuple[str, ...] = (
 )
 
 REQUIRED_RUNTIME_PACKAGES: tuple[tuple[str, str], ...] = (
-    ("source_observation", "runtime/source_observation"),
-    ("source_cache", "runtime/source_cache"),
-    ("evidence_ledger", "runtime/evidence_ledger"),
-    ("review_queue", "runtime/review_queue"),
-    ("reviewed_public_index", "runtime/public_index"),
+    ("source_observation", "runtime/source/observation"),
+    ("source_cache", "runtime/source/cache"),
+    ("evidence_ledger", "runtime/evidence/ledger"),
+    ("review_queue", "runtime/review/queue"),
+    ("reviewed_public_index", "runtime/index/public"),
 )
 
 REQUIRED_VALIDATORS: tuple[str, ...] = (

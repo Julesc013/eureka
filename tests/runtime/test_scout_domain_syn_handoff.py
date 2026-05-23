@@ -3,8 +3,8 @@ from __future__ import annotations
 from pathlib import Path
 import unittest
 
-from runtime.local_eval.domain_packs import load_domain_packs_from_manifest
-from runtime.local_eval.scout_schema import (
+from runtime.local.eval.domain_packs import load_domain_packs_from_manifest
+from runtime.local.eval.scout_schema import (
     REQUIRED_DOMAIN_IDS,
     load_scout_seed_records,
     map_scout_seed_to_domain,

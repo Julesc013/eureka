@@ -13,7 +13,7 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.evidence_ledger.policy import HARD_FALSE_FIELDS, HARD_TRUE_FIELDS  # noqa: E402
+from runtime.evidence.ledger.policy import HARD_FALSE_FIELDS, HARD_TRUE_FIELDS  # noqa: E402
 
 
 AUDIT_REPORT = REPO_ROOT / "control" / "audits" / "evidence-ledger-local-dry-run-runtime-v0" / "evidence_ledger_local_dry_run_runtime_report.json"

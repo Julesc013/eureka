@@ -64,10 +64,20 @@ def build_visibility_report(repo_root: Path = REPO_ROOT) -> dict[str, Any]:
         for path in by_segment["coverage"]
         if path.startswith("examples/connectors/") and path.endswith("_coverage_preview_v0.json")
     ]
+    source_coverage_fixtures = [
+        path
+        for path in by_segment["coverage"]
+        if path.startswith("examples/sources/coverage/")
+        and (
+            path.endswith("_coverage_preview_v0.json")
+            or path.endswith("_coverage_record_v0.json")
+            or path.endswith("_coverage_manifest_v0.json")
+        )
+    ]
 
     unexpected_dist = sorted(set(by_segment["dist"]) - set(site_dist) - set(native_dist_placeholders))
     unexpected_build = sorted(set(by_segment["build"]) - set(native_build_placeholders))
-    unexpected_coverage = sorted(set(by_segment["coverage"]) - set(connector_coverage_fixtures))
+    unexpected_coverage = sorted(set(by_segment["coverage"]) - set(connector_coverage_fixtures) - set(source_coverage_fixtures))
     unexpected_tmp = by_segment["tmp"]
     unexpected_out = by_segment["out"]
     unexpected_target = by_segment["target"]
@@ -110,6 +120,7 @@ def build_visibility_report(repo_root: Path = REPO_ROOT) -> dict[str, Any]:
             "native_dist_readme_placeholders": native_dist_placeholders,
             "native_build_readme_placeholders": native_build_placeholders,
             "connector_coverage_preview_fixtures": connector_coverage_fixtures,
+            "source_coverage_fixtures": source_coverage_fixtures,
         },
         "unexpected": {
             "dist": unexpected_dist,
@@ -148,6 +159,7 @@ def build_excluded_dir_policy(report: dict[str, Any]) -> dict[str, Any]:
             "native/*/dist/README.md": "tracked placeholder only",
             "native/*/build/README.md": "tracked placeholder only",
             "examples/connectors/*/coverage/*_coverage_preview_v0.json": "public-safe fixture coverage preview",
+            "examples/sources/coverage/*": "public-safe source coverage fixture, not coverage output",
             "tmp": "must remain untracked",
             "out": "must remain untracked unless separately classified",
             "target": "must remain untracked unless separately classified",
@@ -230,6 +242,7 @@ def format_markdown(report: dict[str, Any]) -> str:
             "- `site/dist/` is a committed generated/public static artifact governed by repo generated-artifact policy.",
             "- Native `build/README.md` and `dist/README.md` files are placeholders, not build outputs.",
             "- `examples/connectors/**/coverage/*_coverage_preview_v0.json` files are fixture coverage previews, not coverage output.",
+            "- `examples/sources/coverage/` files are source-coverage fixtures, not coverage output.",
             "- `tmp/`, `out/`, and `target/` have no tracked files in this audit.",
             "",
             "## Non-Claims",

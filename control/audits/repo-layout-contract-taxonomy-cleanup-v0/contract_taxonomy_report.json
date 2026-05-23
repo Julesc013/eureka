@@ -21,7 +21,7 @@
     "control_schemas_scope": "control/governance schemas only",
     "examples_are_authority": false,
     "runtime_is_contract_authority": false,
-    "workbench_contract_location": "contracts/views/workbench/",
+    "workbench_contract_location": "contracts/view/pages/workbench/",
     "search_interaction_contract_location": "contracts/search/interaction/"
   },
   "duplicate_risk_count": 6,

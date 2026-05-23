@@ -84,7 +84,7 @@ prototype material, not a production runtime pattern to copy.
 
 Good:
 
-- `runtime/source_observation/`
+- `runtime/source/observation/`
 - `normalize_source_observation`
 - `build_metadata_request`
 - `build_evidence_candidate`

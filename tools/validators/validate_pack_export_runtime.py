@@ -14,7 +14,7 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.local_foundry import pack_export
+from runtime.local.foundry import pack_export
 
 
 POLICY_FILES = [
@@ -29,12 +29,12 @@ POLICY_FILES = [
 ]
 
 PACK_EXPORT_EXAMPLES = [
-    "examples/pack_exports/source_pack_export_v0.json",
-    "examples/pack_exports/evidence_pack_export_v0.json",
-    "examples/pack_exports/contribution_pack_export_v0.json",
-    "examples/pack_exports/review_pack_export_v0.json",
-    "examples/pack_exports/index_pack_preview_export_v0.json",
-    "examples/pack_exports/policy_blocked_pack_export_v0.json",
+    "examples/packs/exports/source_pack_export_v0.json",
+    "examples/packs/exports/evidence_pack_export_v0.json",
+    "examples/packs/exports/contribution_pack_export_v0.json",
+    "examples/packs/exports/review_pack_export_v0.json",
+    "examples/packs/exports/index_pack_preview_export_v0.json",
+    "examples/packs/exports/policy_blocked_pack_export_v0.json",
 ]
 
 DOC_FILES = [
@@ -206,7 +206,7 @@ def _validate_script_commands() -> list[str]:
         sys.executable,
         "scripts/export_local_pack.py",
         "--input",
-        "examples/pack_drafts/evidence_pack_draft_v0.json",
+        "examples/packs/drafts/evidence_pack_draft_v0.json",
         "--check",
     ]
     completed = subprocess.run(command, cwd=REPO_ROOT, text=True, capture_output=True)
@@ -222,7 +222,7 @@ def _validate_forbidden_output_roots() -> list[str]:
             sys.executable,
             "scripts/export_local_pack.py",
             "--input",
-            "examples/pack_drafts/evidence_pack_draft_v0.json",
+            "examples/packs/drafts/evidence_pack_draft_v0.json",
             "--output",
             output,
         ]
@@ -235,7 +235,7 @@ def _validate_forbidden_output_roots() -> list[str]:
 def _validate_no_banned_imports() -> list[str]:
     errors: list[str] = []
     for path in (
-        "runtime/local_foundry/pack_export.py",
+        "runtime/local/foundry/pack_export.py",
         "scripts/export_local_pack.py",
         "scripts/validate_pack_export_runtime.py",
     ):

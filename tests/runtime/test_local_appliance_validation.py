@@ -6,7 +6,7 @@ import tempfile
 from pathlib import Path
 import unittest
 
-from runtime.local_appliance import (
+from runtime.local.appliance import (
     LocalApplianceError,
     open_local_appliance,
     validate_instance_root,
@@ -17,7 +17,7 @@ from runtime.local_appliance import (
 
 ROOT = Path(__file__).resolve().parents[2]
 INIT = ROOT / "scripts" / "eureka_init_instance.py"
-RUNTIME_DIR = ROOT / "runtime" / "local_appliance"
+RUNTIME_DIR = ROOT / "runtime" / "local" / "appliance"
 FORBIDDEN_IMPORTS = (
     "runtime.connectors",
     "runtime.local_foundry",

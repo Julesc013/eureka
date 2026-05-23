@@ -24,8 +24,10 @@ REQUIRED_FILES = [
     "control/audits/taxonomy-closeout-v1/examples_taxonomy_closeout.md",
     "control/audits/taxonomy-closeout-v1/aide_ledger_size_report.json",
     "control/audits/taxonomy-closeout-v1/aide_ledger_size_report.md",
+    "control/audits/eureka-structure-final-closeout-v1/before_state.json",
+    "control/audits/eureka-structure-final-closeout-v1/path_migration_map.json",
     "docs/architecture/PATH_TAXONOMY_CLOSEOUT.md",
-    "contracts/control_schemas/README.md",
+    "contracts/schema/control/README.md",
     "runtime/README.md",
     "examples/README.md",
     ".aide/README.md",
@@ -103,7 +105,13 @@ def validate_policy_shape(policy: Mapping[str, Any], errors: list[str]) -> None:
         if not isinstance(section, Mapping):
             errors.append(f"control/policies/taxonomy_closeout_policy.json: missing {key} section.")
             continue
-        if section.get("closeout_mode") not in {"freeze_current_names", "migration_map_first"}:
+        if section.get("closeout_mode") not in {
+            "freeze_current_names",
+            "migration_map_first",
+            "canonical_with_compatibility_wrappers",
+            "canonical_paths_with_alias_inventory",
+            "canonical_families_with_remaining_classified_debt",
+        }:
             errors.append(f"control/policies/taxonomy_closeout_policy.json: {key}.closeout_mode is invalid.")
         targets = section.get("target_families")
         if not isinstance(targets, list) or not targets:
@@ -122,8 +130,8 @@ def validate_aide_policy_shape(policy: Mapping[str, Any], errors: list[str]) -> 
 
 def validate_readme_phrases(root: Path, errors: list[str]) -> None:
     required = {
-        "contracts/control_schemas/README.md": ["compatibility", "canonical target", "not active runtime"],
-        "runtime/README.md": ["runtime/engine", "taxonomy closeout", "current names are frozen"],
+        "contracts/schema/control/README.md": ["compatibility", "canonical target", "not active runtime"],
+        "runtime/README.md": ["runtime/engine", "taxonomy closeout", "compatibility"],
         "examples/README.md": ["durable families", "taxonomy closeout", "public-safe"],
         ".aide/README.md": ["not product truth", "export-only", "retention-capped"],
         "docs/architecture/PATH_TAXONOMY_CLOSEOUT.md": ["no behavior change", "migration map first", "runtime/engine"],

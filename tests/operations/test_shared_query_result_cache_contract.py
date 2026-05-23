@@ -9,7 +9,7 @@ ROOT = Path(__file__).resolve().parents[2]
 AUDIT_DIR = ROOT / "control" / "audits" / "shared-query-result-cache-v0"
 REPORT_PATH = AUDIT_DIR / "shared_query_result_cache_report.json"
 POLICY_PATH = ROOT / "control" / "inventory" / "query_intelligence" / "search_result_cache_policy.json"
-EXAMPLE_ROOT = ROOT / "examples" / "query_result_cache"
+EXAMPLE_ROOT = ROOT / "examples" / "search" / "query_result_cache"
 REQUIRED_FILES = {
     "README.md",
     "CONTRACT_SUMMARY.md",

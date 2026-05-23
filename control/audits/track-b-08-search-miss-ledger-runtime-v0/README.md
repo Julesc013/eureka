@@ -8,11 +8,11 @@ telemetry, absence proof, accepted truth, or master-index mutations.
 
 ## Added
 
-- `runtime/local_foundry/search_miss_ledger.py`
+- `runtime/local/foundry/search_miss_ledger.py`
 - `scripts/record_search_miss.py`
 - `scripts/validate_search_miss_ledger_runtime.py`
 - Search miss runtime, failure-mode, output, and review policies
-- six compact public-safe examples under `examples/search_misses/`
+- six compact public-safe examples under `examples/search/misses/`
 - search miss reference, architecture, and review docs
 - runtime and script tests
 - generated sample report and summary from committed synthetic examples
@@ -42,7 +42,7 @@ review queue behavior remain future tasks.
 
 ```powershell
 python scripts/validate_search_miss_ledger_runtime.py
-python scripts/record_search_miss.py --input examples/query_observations/empty_result_query_observation_v0.json --check
+python scripts/record_search_miss.py --input examples/search/query_observations/empty_result_query_observation_v0.json --check
 python -m unittest discover -s tests -t .
 ```
 

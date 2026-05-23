@@ -5,7 +5,7 @@
     "docs/operations/H7_LIBRARY_RESEARCH_FIXTURE_PLAN.md"
   ],
   "added_examples": [
-    "examples/source_packs/h7_library_research_source_pack_manifest_v0.json",
+    "examples/packs/source/h7_library_research_source_pack_manifest_v0.json",
     "examples/connectors/h7_library_research/coverage/h7_library_research_coverage_preview_v0.json",
     "examples/connectors/h7_library_research/scorecards/h7_library_research_scorecard_preview_v0.json"
   ],

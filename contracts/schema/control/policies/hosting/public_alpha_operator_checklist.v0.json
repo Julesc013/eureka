@@ -1,0 +1,35 @@
+{
+  "$id": "contracts/schema/control/policies/hosting/public_alpha_operator_checklist.v0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "checklist_items": {
+      "type": "array"
+    },
+    "limitations": {
+      "type": "array"
+    },
+    "operator_checklist_id": {
+      "type": "string"
+    },
+    "operator_signoff_required": {
+      "type": "boolean"
+    },
+    "product_boundary": {
+      "type": "object"
+    },
+    "schema_version": {
+      "const": "public_alpha_operator_checklist.v0"
+    },
+    "truth_boundary": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "schema_version",
+    "operator_checklist_id",
+    "checklist_items"
+  ],
+  "title": "Eureka Public Alpha Operator Checklist v0",
+  "type": "object"
+}

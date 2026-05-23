@@ -52,8 +52,8 @@ INVENTORY_FILES = (
     "control/inventory/source_packs/h12_retro_community_no_download_execute_policy.json",
 )
 SOURCE_PACK_EXAMPLES = (
-    "examples/source_packs/h12_retro_community_source_pack_manifest_v0.json",
-    "examples/source_packs/h12_retro_community_policy_pack_v0.json",
+    "examples/packs/source/h12_retro_community_source_pack_manifest_v0.json",
+    "examples/packs/source/h12_retro_community_policy_pack_v0.json",
 )
 EXTRA_EXAMPLES = (
     "examples/connectors/h12_retro_community/coverage/h12_retro_community_coverage_preview_v0.json",

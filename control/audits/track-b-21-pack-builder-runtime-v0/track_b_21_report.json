@@ -4,7 +4,7 @@
   "track": "B",
   "task": "TRACK-B-21",
   "added_runtime_modules": [
-    "runtime/local_foundry/pack_builder.py"
+    "runtime/local/foundry/pack_builder.py"
   ],
   "added_scripts": [
     "scripts/build_local_pack.py",
@@ -26,18 +26,18 @@
     "control/inventory/packs/pack_builder_truth_policy.json"
   ],
   "added_examples": [
-    "examples/pack_builder/source_pack_draft_case_v0.json",
-    "examples/pack_builder/evidence_pack_draft_case_v0.json",
-    "examples/pack_builder/contribution_pack_draft_case_v0.json",
-    "examples/pack_builder/review_pack_draft_case_v0.json",
-    "examples/pack_builder/index_pack_preview_case_v0.json",
-    "examples/pack_builder/policy_blocked_pack_build_case_v0.json",
-    "examples/pack_drafts/source_pack_draft_v0.json",
-    "examples/pack_drafts/evidence_pack_draft_v0.json",
-    "examples/pack_drafts/contribution_pack_draft_v0.json",
-    "examples/pack_drafts/review_pack_draft_v0.json",
-    "examples/pack_drafts/index_pack_preview_v0.json",
-    "examples/pack_drafts/policy_blocked_pack_draft_v0.json"
+    "examples/packs/builder/source_pack_draft_case_v0.json",
+    "examples/packs/builder/evidence_pack_draft_case_v0.json",
+    "examples/packs/builder/contribution_pack_draft_case_v0.json",
+    "examples/packs/builder/review_pack_draft_case_v0.json",
+    "examples/packs/builder/index_pack_preview_case_v0.json",
+    "examples/packs/builder/policy_blocked_pack_build_case_v0.json",
+    "examples/packs/drafts/source_pack_draft_v0.json",
+    "examples/packs/drafts/evidence_pack_draft_v0.json",
+    "examples/packs/drafts/contribution_pack_draft_v0.json",
+    "examples/packs/drafts/review_pack_draft_v0.json",
+    "examples/packs/drafts/index_pack_preview_v0.json",
+    "examples/packs/drafts/policy_blocked_pack_draft_v0.json"
   ],
   "added_tests": [
     "tests/runtime/test_pack_builder_runtime.py",
@@ -55,8 +55,8 @@
     "python -m json.tool control/inventory/packs/pack_builder_truth_policy.json": "pass",
     "python -m json.tool control/audits/track-b-21-pack-builder-runtime-v0/track_b_21_report.json": "pass",
     "python scripts/validate_pack_builder_runtime.py": "pass",
-    "python scripts/build_local_pack.py --pack-type evidence_pack_draft --input examples/evidence_ledger_records/metadata_claim_record_v0.json --check": "pass",
-    "python scripts/summarize_local_pack.py --input examples/pack_drafts --check": "pass",
+    "python scripts/build_local_pack.py --pack-type evidence_pack_draft --input examples/evidence/ledger/records/metadata_claim_record_v0.json --check": "pass",
+    "python scripts/summarize_local_pack.py --input examples/packs/drafts --check": "pass",
     "python -m unittest tests.runtime.test_pack_builder_runtime tests.operations.test_pack_builder_runtime_scripts": "pass",
     "python -m unittest discover -s tests -t .": "fail: unrelated OBS hardening google scrape phrase guard",
     "python scripts/check_architecture_boundaries.py": "pass",

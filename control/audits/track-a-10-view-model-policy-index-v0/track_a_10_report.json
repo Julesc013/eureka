@@ -4,7 +4,7 @@
   "track": "A",
   "task": "TRACK-A-10",
   "added_contracts": [
-    "contracts/views/view_model_policy_index.v0.json",
+    "contracts/view/pages/view_model_policy_index.v0.json",
     "docs/reference/VIEW_MODEL_POLICY_INDEX_CONTRACT.md",
     "docs/operations/TRACK_A_VALIDATION.md"
   ],

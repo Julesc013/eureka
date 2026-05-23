@@ -4,19 +4,19 @@
 
 Representative source/evidence/index systems discovered:
 
-- `runtime/source_observation/**`
-- `runtime/source_cache/**`
-- `runtime/evidence_ledger/**`
-- `runtime/public_index/**`
-- `runtime/local_foundry/source_cache.py`
-- `runtime/local_foundry/source_cache_to_evidence.py`
-- `runtime/local_foundry/evidence_ledger.py`
-- `contracts/source_cache/**`
-- `contracts/evidence_ledger/**`
+- `runtime/source/observation/**`
+- `runtime/source/cache/**`
+- `runtime/evidence/ledger/**`
+- `runtime/index/public/**`
+- `runtime/local/foundry/source_cache.py`
+- `runtime/local/foundry/source_cache_to_evidence.py`
+- `runtime/local/foundry/evidence_ledger.py`
+- `contracts/source/cache/**`
+- `contracts/evidence/ledger/**`
 - `contracts/stores/*source_cache*`
 - `contracts/stores/*evidence_ledger*`
 - `contracts/stores/*public_index*`
-- `contracts/master_index/**`
+- `contracts/index/master/**`
 - `control/inventory/source_cache/**`
 - `control/inventory/evidence_ledger/**`
 - `control/inventory/review/**`
@@ -51,7 +51,7 @@ Representative validators:
 - `scripts/validate_reviewed_public_index.py`
 - `scripts/validate_candidate_index_contract.py`
 - `scripts/validate_candidate_index_record.py`
-- runtime validation modules under `runtime/source_observation`, `runtime/source_cache`, `runtime/evidence_ledger`, and `runtime/public_index`.
+- runtime validation modules under `runtime/source/observation`, `runtime/source/cache`, `runtime/evidence/ledger`, and `runtime/index/public`.
 
 ## Risk Classification
 

@@ -1,6 +1,6 @@
 import unittest
 
-from runtime.source_observation import (
+from runtime.source.observation import (
     PolicyDecisionStatus,
     SourceId,
     SourceObservationValidationError,

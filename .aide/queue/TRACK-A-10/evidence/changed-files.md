@@ -3,7 +3,7 @@
 Added Track A policy index contract, inventory, example, validators, tests, docs,
 and audit evidence:
 
-- `contracts/views/view_model_policy_index.v0.json`
+- `contracts/view/pages/view_model_policy_index.v0.json`
 - `control/inventory/publication/view_model_policy_index.json`
 - `examples/view_models/policy_index/minimal_view_model_policy_index_v0.json`
 - `scripts/validate_view_model_policy_index.py`

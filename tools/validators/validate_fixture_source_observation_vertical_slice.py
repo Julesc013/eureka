@@ -13,7 +13,7 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.local_foundry.fixture_source_observation_slice import (
+from runtime.local.foundry.fixture_source_observation_slice import (
     run_fixture_source_observation_slice,
     validate_fixture_slice_report,
     write_json,

@@ -14,8 +14,8 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.local_appliance import LocalApplianceError, close_local_appliance, open_local_appliance
-from runtime.search_hunt import SearchHuntError, build_local_absence_summary, build_reviewed_index_search_summary
+from runtime.local.appliance import LocalApplianceError, close_local_appliance, open_local_appliance
+from runtime.search.hunt import SearchHuntError, build_local_absence_summary, build_reviewed_index_search_summary
 
 
 def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr: TextIO = sys.stderr) -> int:

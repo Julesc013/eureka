@@ -7,7 +7,7 @@ from scripts import record_review_queue, summarize_review_queue, validate_local_
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
-CANDIDATE_REVIEW = REPO_ROOT / "examples/review_queue_entries/candidate_needs_review_v0.json"
+CANDIDATE_REVIEW = REPO_ROOT / "examples/review/queue_entries/candidate_needs_review_v0.json"
 
 
 class LocalReviewQueueRuntimeScriptTests(unittest.TestCase):
@@ -49,7 +49,7 @@ class LocalReviewQueueRuntimeScriptTests(unittest.TestCase):
         self.assertFalse(record_review_queue.output_path_allowed(REPO_ROOT / "runtime/review.json"))
 
     def test_summarizer_works_on_examples(self) -> None:
-        code = summarize_review_queue.main(["--input", str(REPO_ROOT / "examples/review_queue_entries"), "--check"])
+        code = summarize_review_queue.main(["--input", str(REPO_ROOT / "examples/review/queue_entries"), "--check"])
         self.assertEqual(code, 0)
 
     def test_summarizer_writes_explicit_report_to_temp_path(self) -> None:
@@ -59,7 +59,7 @@ class LocalReviewQueueRuntimeScriptTests(unittest.TestCase):
             code = summarize_review_queue.main(
                 [
                     "--input",
-                    str(REPO_ROOT / "examples/review_queue_entries"),
+                    str(REPO_ROOT / "examples/review/queue_entries"),
                     "--output",
                     str(output),
                     "--summary-output",
@@ -81,12 +81,12 @@ class LocalReviewQueueRuntimeScriptTests(unittest.TestCase):
         report = record_review_queue.build_report(CANDIDATE_REVIEW)
         entry = report["entry"]
         entry["product_boundary"]["enabled_telemetry"] = True
-        from runtime.local_foundry import review_queue
+        from runtime.local.foundry import review_queue
 
         self.assertTrue(review_queue.detect_review_product_boundary_violations(entry))
 
     def test_runtime_does_not_call_network_model_or_provider(self) -> None:
-        runtime_source = (REPO_ROOT / "runtime/local_foundry/review_queue.py").read_text(encoding="utf-8")
+        runtime_source = (REPO_ROOT / "runtime/local/foundry/review_queue.py").read_text(encoding="utf-8")
         scripts = (
             (REPO_ROOT / "scripts/record_review_queue.py").read_text(encoding="utf-8")
             + (REPO_ROOT / "scripts/summarize_review_queue.py").read_text(encoding="utf-8")

@@ -2,10 +2,10 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from runtime.local_appliance import close_local_appliance, open_local_appliance
-from runtime.local_review import record_review_decision
-from runtime.local_review.decisions import LocalReviewDecisionRequest, validate_decision_request
-from runtime.local_review.errors import LocalReviewDecisionError
+from runtime.local.appliance import close_local_appliance, open_local_appliance
+from runtime.local.review import record_review_decision
+from runtime.local.review.decisions import LocalReviewDecisionRequest, validate_decision_request
+from runtime.local.review.errors import LocalReviewDecisionError
 from scripts.eureka_init_instance import initialize_instance
 from scripts.validate_local_review_rebuild import seed_review_records
 

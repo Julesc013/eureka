@@ -3,9 +3,9 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from runtime.evidence_ledger import EvidenceLedgerStore
-from runtime.evidence_ledger.migrations import MIGRATIONS, apply_migrations, get_applied_migrations
-from runtime.evidence_ledger.schema import REQUIRED_TABLES, SCHEMA_VERSION
+from runtime.evidence.ledger import EvidenceLedgerStore
+from runtime.evidence.ledger.migrations import MIGRATIONS, apply_migrations, get_applied_migrations
+from runtime.evidence.ledger.schema import REQUIRED_TABLES, SCHEMA_VERSION
 
 
 class EvidenceLedgerMigrationTests(unittest.TestCase):

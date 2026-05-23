@@ -1,0 +1,40 @@
+{
+  "schema_version": "local_source_cache_record.v0",
+  "input_id": "source_policy_bridge_case_v0",
+  "input_type": "committed_source_fixture",
+  "input_ref": "examples/sources/cache/to_evidence/source_policy_to_policy_claim_v0.json",
+  "input_status": "normalized",
+  "input_public_safe": true,
+  "input_summary": "Bridge case for source policy posture.",
+  "source_cache_record_status": "normalized",
+  "source_cache_record_type": "source_policy_record",
+  "source_id": "source:bridge:policy",
+  "source_label": "Policy Bridge Source",
+  "source_family": "policy_bridge_fixture",
+  "source_kind": "committed_fixture",
+  "source_locator": "fixture:bridge:policy",
+  "source_access_mode": "no_autonomous_access",
+  "source_policy_status": "review_required",
+  "source_authority_posture": "policy_summary_only",
+  "source_coverage_summary": "Covers source access posture only.",
+  "source_metadata_summary": "No source content is accessed.",
+  "source_health_summary": "No live health check.",
+  "source_limitations": [
+    "Policy summary cannot approve probes.",
+    "Operator review is still required."
+  ],
+  "source_observation_summary": "Policy posture is recorded as a local fixture summary.",
+  "normalized_fields": {
+    "autonomous_access_allowed": false,
+    "review_required": true
+  },
+  "related_candidate_refs": [],
+  "related_search_need_refs": [],
+  "related_workunit_refs": [],
+  "related_source_lead_refs": [],
+  "related_pack_refs_future": [],
+  "related_evidence_refs_future": [],
+  "notes": [
+    "No connector approval is implied."
+  ]
+}

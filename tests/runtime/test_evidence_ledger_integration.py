@@ -4,7 +4,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from runtime.evidence_ledger import EvidenceLedgerStore
+from runtime.evidence.ledger import EvidenceLedgerStore
 from scripts.demo_evidence_ledger_store import run_demo
 from scripts.validate_evidence_ledger_store import validate_store
 
@@ -26,7 +26,7 @@ class EvidenceLedgerIntegrationTests(unittest.TestCase):
         self.assertEqual(0, result["h_series_dependencies"])
 
     def test_no_runtime_connectors_dependency(self):
-        for path in (REPO_ROOT / "runtime/evidence_ledger").glob("*.py"):
+        for path in (REPO_ROOT / "runtime/evidence/ledger").glob("*.py"):
             tree = ast.parse(path.read_text(encoding="utf-8"), filename=str(path))
             for node in ast.walk(tree):
                 module = None

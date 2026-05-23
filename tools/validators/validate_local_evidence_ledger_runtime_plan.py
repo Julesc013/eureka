@@ -31,10 +31,10 @@ DOC_FILES = [
     "docs/operations/SOURCE_CACHE_TO_EVIDENCE_LEDGER_BRIDGE_PLAN.md",
 ]
 EXAMPLE_FILES = [
-    "examples/evidence_ledger_plans/minimal_local_evidence_ledger_plan_v0.json",
-    "examples/evidence_ledger_plans/source_cache_bridge_evidence_ledger_plan_v0.json",
-    "examples/evidence_ledger_plans/fixture_only_evidence_ledger_plan_v0.json",
-    "examples/evidence_ledger_plans/policy_blocked_evidence_ledger_plan_v0.json",
+    "examples/evidence/ledger/plans/minimal_local_evidence_ledger_plan_v0.json",
+    "examples/evidence/ledger/plans/source_cache_bridge_evidence_ledger_plan_v0.json",
+    "examples/evidence/ledger/plans/fixture_only_evidence_ledger_plan_v0.json",
+    "examples/evidence/ledger/plans/policy_blocked_evidence_ledger_plan_v0.json",
 ]
 AUDIT_FILES = [
     "control/audits/track-b-14-local-evidence-ledger-runtime-planning-v0/README.md",

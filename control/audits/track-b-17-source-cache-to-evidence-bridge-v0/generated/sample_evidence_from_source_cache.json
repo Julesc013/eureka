@@ -38,7 +38,7 @@
   "evidence_record_type": "metadata_claim",
   "input_id": "source_cache.source_metadata.84d44d80695b.v0",
   "input_public_safe": true,
-  "input_ref": "examples/source_cache_records/source_metadata_record_v0.json",
+  "input_ref": "examples/sources/cache/records/source_metadata_record_v0.json",
   "input_status": "fixture_only",
   "input_summary": "Synthetic source metadata summary.",
   "input_type": "source_cache_record",

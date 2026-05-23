@@ -13,8 +13,8 @@ from typing import Any, Iterable, Mapping
 REPO_ROOT = Path(__file__).resolve().parents[2]
 
 CONTRACT_PATHS = [
-    "contracts/master_index/reviewed_public_index_rebuild.v0.json",
-    "contracts/master_index/reviewed_public_record_proposal.v0.json",
+    "contracts/index/master/reviewed_public_index_rebuild.v0.json",
+    "contracts/index/master/reviewed_public_record_proposal.v0.json",
 ]
 
 POLICY_PATHS = [
@@ -34,18 +34,18 @@ DOC_PATHS = [
 ]
 
 EXAMPLE_REBUILD_PATHS = [
-    "examples/reviewed_public_index_rebuilds/minimal_rebuild_contract_v0.json",
-    "examples/reviewed_public_index_rebuilds/ready_candidate_rebuild_input_v0.json",
-    "examples/reviewed_public_index_rebuilds/missing_evidence_rebuild_blocked_v0.json",
-    "examples/reviewed_public_index_rebuilds/policy_blocked_rebuild_v0.json",
+    "examples/index/reviewed_public_rebuilds/minimal_rebuild_contract_v0.json",
+    "examples/index/reviewed_public_rebuilds/ready_candidate_rebuild_input_v0.json",
+    "examples/index/reviewed_public_rebuilds/missing_evidence_rebuild_blocked_v0.json",
+    "examples/index/reviewed_public_rebuilds/policy_blocked_rebuild_v0.json",
 ]
 
 EXAMPLE_PROPOSAL_PATHS = [
-    "examples/reviewed_public_records/minimal_reviewed_public_record_proposal_v0.json",
-    "examples/reviewed_public_records/software_candidate_record_proposal_v0.json",
-    "examples/reviewed_public_records/source_record_proposal_v0.json",
-    "examples/reviewed_public_records/need_record_proposal_v0.json",
-    "examples/reviewed_public_records/policy_blocked_record_proposal_v0.json",
+    "examples/index/reviewed_public_records/minimal_reviewed_public_record_proposal_v0.json",
+    "examples/index/reviewed_public_records/software_candidate_record_proposal_v0.json",
+    "examples/index/reviewed_public_records/source_record_proposal_v0.json",
+    "examples/index/reviewed_public_records/need_record_proposal_v0.json",
+    "examples/index/reviewed_public_records/policy_blocked_record_proposal_v0.json",
 ]
 
 AUDIT_PATHS = [
@@ -510,8 +510,8 @@ def validate_path_policy_payload(payload: Mapping[str, Any], label: str = "path_
     allowed = list_values(payload.get("allowed_output_roots_current"))
     forbidden = list_values(payload.get("forbidden_output_roots"))
     for required in [
-        "examples/reviewed_public_index_rebuilds/",
-        "examples/reviewed_public_records/",
+        "examples/index/reviewed_public_rebuilds/",
+        "examples/index/reviewed_public_records/",
         "control/audits/**/",
         "explicit temp test directory",
     ]:
@@ -669,10 +669,10 @@ def validate_boundary_guards(errors: list[str]) -> None:
 
 def validate_no_public_artifact_writes(errors: list[str]) -> None:
     b20_roots = [
-        "contracts/master_index/reviewed_public_index_rebuild.v0.json",
-        "contracts/master_index/reviewed_public_record_proposal.v0.json",
-        "examples/reviewed_public_index_rebuilds",
-        "examples/reviewed_public_records",
+        "contracts/index/master/reviewed_public_index_rebuild.v0.json",
+        "contracts/index/master/reviewed_public_record_proposal.v0.json",
+        "examples/index/reviewed_public_rebuilds",
+        "examples/index/reviewed_public_records",
         "control/audits/track-b-20-reviewed-public-index-rebuild-contract-v0",
     ]
     for raw_path in b20_roots:

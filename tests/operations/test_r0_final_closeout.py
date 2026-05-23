@@ -48,11 +48,11 @@ def make_fixture_repo(root: Path) -> None:
     for rel in report_paths:
         write_json(root / rel, {"status": "pass"})
     for rel in [
-        "runtime/source_observation/__init__.py",
-        "runtime/source_cache/__init__.py",
-        "runtime/evidence_ledger/__init__.py",
-        "runtime/review_queue/__init__.py",
-        "runtime/public_index/__init__.py",
+        "runtime/source/observation/__init__.py",
+        "runtime/source/cache/__init__.py",
+        "runtime/evidence/ledger/__init__.py",
+        "runtime/review/queue/__init__.py",
+        "runtime/index/public/__init__.py",
     ]:
         write(root / rel)
     for rel in [

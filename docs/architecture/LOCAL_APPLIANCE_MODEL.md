@@ -14,7 +14,7 @@ LOCAL-00 does not implement any of those runtime layers. It makes them mandatory
 
 ## LOCAL-03 Runtime Kernel
 
-LOCAL-03 adds the local runtime composition boundary in `runtime/local_appliance`. This is the first runtime kernel for the appliance route. It opens an explicit initialized instance, validates config/schema/migration state, opens the four existing R0 stores from the store manifest, exposes one `LocalApplianceRuntime`, and reports unified status.
+LOCAL-03 adds the local runtime composition boundary in `runtime/local/appliance`. This is the first runtime kernel for the appliance route. It opens an explicit initialized instance, validates config/schema/migration state, opens the four existing R0 stores from the store manifest, exposes one `LocalApplianceRuntime`, and reports unified status.
 
 Future service, worker, workbench, and tests must use this boundary instead of opening SQLite paths ad hoc.
 
@@ -22,7 +22,7 @@ LOCAL-03 still does not implement an HTTP server, HTML workbench, WorkUnit runti
 
 ## LOCAL-04 Read-Only Service
 
-LOCAL-04 adds the first service layer in `runtime/local_service`. It is a localhost-only, read-only HTTP adapter over `LocalApplianceRuntime`.
+LOCAL-04 adds the first service layer in `runtime/local/service`. It is a localhost-only, read-only HTTP adapter over `LocalApplianceRuntime`.
 
 The service exposes status, health, reviewed-index search, object, source, and absence routes. It does not create product truth and does not bypass the instance manifest. The full HTML workbench remains LOCAL-05, and LAN mode remains disabled until a later explicit gate.
 
@@ -59,13 +59,13 @@ or claim production/public launch readiness.
 
 ## LOCAL-09 Deterministic Worker Runner
 
-LOCAL-09 adds `runtime/local_worker`, a deterministic runner over queued WorkUnits. Enabled workers are local and bounded: noop, review queue summary, token-gated reviewed-index rebuild, absence report, and local status snapshot.
+LOCAL-09 adds `runtime/local/worker`, a deterministic runner over queued WorkUnits. Enabled workers are local and bounded: noop, review queue summary, token-gated reviewed-index rebuild, absence report, and local status snapshot.
 
 Risky workers remain blocked, including source probes, extraction, research delegation, model calls, downloads, installs, source sync, LAN operations, and deployment. Worker runs record transition history and audit references; they do not accept truth, mutate a master index, expose LAN, deploy, or claim production/public launch readiness.
 
 ## LOCAL-10 Auto-Test Harness
 
-LOCAL-10 adds `runtime/local_eval`, a deterministic auto-test and auto-search
+LOCAL-10 adds `runtime/local/eval`, a deterministic auto-test and auto-search
 harness over the localhost service and workbench. It records service health,
 fixed local search results, absence semantics, read-only safety, worker-kind
 safety, and latency smoke evidence.

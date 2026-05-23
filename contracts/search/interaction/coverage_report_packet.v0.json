@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/search/interaction/coverage_report_packet.v0.json",
+  "title": "CoverageReportPacket",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "packet_type",
+    "emitted_at",
+    "coverage_report_id",
+    "run_id",
+    "checked_layers",
+    "running_layers",
+    "blocked_layers",
+    "deferred_layers",
+    "unsearched_layers",
+    "known_absence_scope"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "coverage_report_packet.v0"
+    },
+    "packet_type": {
+      "const": "CoverageReportPacket"
+    },
+    "emitted_at": {
+      "type": "string"
+    },
+    "coverage_report_id": {
+      "type": "string"
+    },
+    "run_id": {
+      "type": "string"
+    },
+    "checked_layers": {
+      "type": "array"
+    },
+    "running_layers": {
+      "type": "array"
+    },
+    "blocked_layers": {
+      "type": "array"
+    },
+    "deferred_layers": {
+      "type": "array"
+    },
+    "unsearched_layers": {
+      "type": "array"
+    },
+    "known_absence_scope": {
+      "type": "array"
+    }
+  },
+  "additionalProperties": true
+}

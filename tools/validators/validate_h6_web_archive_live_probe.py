@@ -39,10 +39,10 @@ EXPECTED_SOURCES = ('wayback_cdx_memento',
  'generic_web_archive',
  'generic_public_event_trace',
  'restricted_public_document_manifest')
-CONTRACTS = ('contracts/control_schemas/previews/h6/connectors/web_archive_live_probe_request.v0.json',
- 'contracts/control_schemas/previews/h6/connectors/web_archive_live_probe_result.v0.json',
- 'contracts/control_schemas/previews/h6/connectors/web_archive_live_probe_output_bundle.v0.json',
- 'contracts/control_schemas/previews/h6/connectors/web_archive_connector_health_summary.v0.json')
+CONTRACTS = ('contracts/schema/control/previews/h6/connectors/web_archive_live_probe_request.v0.json',
+ 'contracts/schema/control/previews/h6/connectors/web_archive_live_probe_result.v0.json',
+ 'contracts/schema/control/previews/h6/connectors/web_archive_live_probe_output_bundle.v0.json',
+ 'contracts/schema/control/previews/h6/connectors/web_archive_connector_health_summary.v0.json')
 POLICIES = ('control/inventory/connectors/h6_web_archive_live_probe_policy.json',
  'control/inventory/connectors/h6_web_archive_live_probe_allowed_requests.json',
  'control/inventory/connectors/h6_web_archive_live_probe_endpoint_policy.json',

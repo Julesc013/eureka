@@ -4,7 +4,7 @@ This audit pack records the first fixture-only local source cache runtime for Tr
 
 ## Added
 
-- `runtime/local_foundry/source_cache.py`
+- `runtime/local/foundry/source_cache.py`
 - `scripts/record_source_cache.py`
 - `scripts/summarize_source_cache.py`
 - `scripts/validate_local_source_cache_runtime.py`
@@ -25,8 +25,8 @@ Primary commands:
 python scripts/validate_local_source_cache_runtime_plan.py
 python scripts/validate_local_evidence_ledger_runtime_plan.py
 python scripts/validate_local_source_cache_runtime.py
-python scripts/record_source_cache.py --input examples/source_cache_records/source_lead_record_v0.json --check
-python scripts/summarize_source_cache.py --input examples/source_cache_records --check
+python scripts/record_source_cache.py --input examples/sources/cache/records/source_lead_record_v0.json --check
+python scripts/summarize_source_cache.py --input examples/sources/cache/records --check
 python -m unittest discover -s tests -t .
 python scripts/check_architecture_boundaries.py
 ```

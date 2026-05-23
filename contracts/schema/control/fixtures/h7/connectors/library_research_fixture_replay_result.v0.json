@@ -1,0 +1,58 @@
+{
+  "$id": "contracts/schema/control/fixtures/h7/connectors/library_research_fixture_replay_result.v0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "connector_family": {
+      "type": "string"
+    },
+    "fixture_ref": {
+      "type": "string"
+    },
+    "fixture_replay_result_id": {
+      "type": "string"
+    },
+    "no_harvest_query_fetch_download_used": {
+      "const": true
+    },
+    "no_live_source_used": {
+      "const": true
+    },
+    "no_network_used": {
+      "const": true
+    },
+    "normalized_record": {
+      "type": "object"
+    },
+    "product_boundary": {
+      "type": "object"
+    },
+    "replay_status": {
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "h7_library_research_fixture_replay_result.v0"
+    },
+    "source_id": {
+      "type": "string"
+    },
+    "truth_boundary": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "schema_version",
+    "fixture_replay_result_id",
+    "fixture_ref",
+    "source_id",
+    "replay_status",
+    "normalized_record",
+    "no_network_used",
+    "no_live_source_used",
+    "no_harvest_query_fetch_download_used",
+    "truth_boundary",
+    "product_boundary"
+  ],
+  "title": "H7 Library Research Fixture Replay Result",
+  "type": "object"
+}

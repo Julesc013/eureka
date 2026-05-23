@@ -1,0 +1,122 @@
+{
+  "schema_version": "workunit_seed.v0",
+  "workunit_seed_id": "workunit_seed_compatibility_review_firefox_xp_v0",
+  "seed_status": "needs_more_evidence",
+  "seed_type": "compatibility_evidence_review",
+  "seed_origin": "search_need_seed_manifest",
+  "seed_origin_ref": "control/inventory/observations/search_need_seed_manifest.json#search_need_seed_compatibility_gap_firefox_xp_v0",
+  "related_observation_candidate_ids": [
+    "obs_candidate_local_eval_failure_v0"
+  ],
+  "related_review_queue_entry_ids": [
+    "review_queue_entry::obs_candidate_local_eval_failure_v0"
+  ],
+  "related_search_need_seed_ids": [
+    "search_need_seed_compatibility_gap_firefox_xp_v0"
+  ],
+  "related_batch_id": "batch_0",
+  "related_query_ids": [
+    "latest_firefox_before_xp_support_ended"
+  ],
+  "related_slot_ids": [],
+  "proposed_workunit_label": "Review compatibility evidence needed for Firefox XP timeline",
+  "proposed_workunit_type": "compatibility_evidence_review",
+  "proposed_inputs": {
+    "candidate_refs": [
+      "examples/observation_candidates/local_eval_failure_observation_candidate_v0.json"
+    ],
+    "search_need_seed_refs": [
+      "examples/search/need_seeds/compatibility_gap_search_need_seed_v0.json"
+    ],
+    "current_status": "needs_more_evidence"
+  },
+  "allowed_actions": [
+    "draft_evidence_questions",
+    "list_missing_source_categories",
+    "preserve_uncertainty"
+  ],
+  "forbidden_actions": [
+    "execute_workunit",
+    "call_api",
+    "open_browser",
+    "assert_compatibility_answer",
+    "accept_evidence_truth",
+    "mutate_master_index"
+  ],
+  "proposed_output_contract": "future_compatibility_review_packet",
+  "proposed_review_requirement": "more_evidence_and_human_review_required",
+  "source_policy_requirements": [
+    "No source interaction is allowed by this seed.",
+    "Future external compatibility evidence review requires source policy approval."
+  ],
+  "node_capability_requirements_future": [
+    "future_evidence_review_capability"
+  ],
+  "local_state_requirements_future": [
+    "future review-state record if Track B accepts this as executable work"
+  ],
+  "idempotency_policy": "Repeated review should preserve needs_more_evidence until reviewed evidence changes.",
+  "recovery_policy": "If evidence remains insufficient, keep the seed in needs_more_evidence.",
+  "budget_or_scope_limit": "Draft evidence questions only; no external source access.",
+  "required_review_state": "needs_more_evidence_and_human_review_before_track_b_use",
+  "downstream_track_b_dependency": [
+    "Track B WorkUnit runtime contract required before activation.",
+    "Human review decision required before conversion.",
+    "Additional evidence review required before any answer claim."
+  ],
+  "review_required": true,
+  "execution_allowed_now": false,
+  "accepted_as_runtime_workunit": false,
+  "accepted_as_observed_baseline": false,
+  "accepted_as_evidence_truth": false,
+  "master_index_mutation_allowed": false,
+  "source_family": "local_eval",
+  "source_access_mode": "repo_local_only",
+  "source_policy_status": "not_external",
+  "failure_mode_summary": [
+    "temporal_version_gap",
+    "compatibility_gap"
+  ],
+  "proposed_priority": {
+    "score": 45,
+    "band": "medium",
+    "model_ref": "control/inventory/observations/workunit_seed_priority_model.json"
+  },
+  "proposed_review_action": "request_more_evidence_future",
+  "product_boundary": {
+    "performed_observations": false,
+    "automated_external_search": false,
+    "scraped_external_systems": false,
+    "crawled_external_systems": false,
+    "called_external_apis": false,
+    "opened_browsers": false,
+    "fabricated_results": false,
+    "marked_pending_as_observed": false,
+    "changed_product_behavior": false,
+    "changed_public_routes": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "mutated_master_index": false,
+    "approved_source_access": false,
+    "executed_workunits": false,
+    "modified_track_b_files": false,
+    "accepted_runtime_workunit": false
+  },
+  "no_goals": [
+    "No WorkUnit execution.",
+    "No compatibility answer claim.",
+    "No observed baseline or accepted evidence.",
+    "No external source access.",
+    "No master-index mutation."
+  ],
+  "notes": [
+    "This seed preserves uncertainty as needs_more_evidence.",
+    "It does not assert a compatibility result."
+  ]
+}

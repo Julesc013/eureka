@@ -1,11 +1,11 @@
 import unittest
 
-from runtime.local_eval.g0_quality import build_user_cost_score, load_quality_fixture
+from runtime.local.eval.g0_quality import build_user_cost_score, load_quality_fixture
 
 
 class G0UserCostTests(unittest.TestCase):
     def test_user_cost_scores_block_unsafe_actions(self) -> None:
-        fixture = load_quality_fixture("examples/search_quality/sample_quality_fixture.json")
+        fixture = load_quality_fixture("examples/search/quality/sample_quality_fixture.json")
         scores = [build_user_cost_score(record, fixture["action_posture"]) for record in fixture["records"]]
         classes = {score["user_cost_class"] for score in scores}
         self.assertIn("direct_reviewed_result", classes)

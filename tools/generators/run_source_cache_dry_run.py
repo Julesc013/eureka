@@ -12,14 +12,14 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.source_cache.dry_run import run_source_cache_dry_run  # noqa: E402
-from runtime.source_cache.errors import SourceCachePolicyError  # noqa: E402
-from runtime.source_cache.policy import (  # noqa: E402
+from runtime.source.cache.dry_run import run_source_cache_dry_run  # noqa: E402
+from runtime.source.cache.errors import SourceCachePolicyError  # noqa: E402
+from runtime.source.cache.policy import (  # noqa: E402
     DRY_RUN_EXAMPLES_ROOT,
     assert_no_forbidden_cli_args,
     ensure_approved_output_path,
 )
-from runtime.source_cache.report import report_to_json  # noqa: E402
+from runtime.source.cache.report import report_to_json  # noqa: E402
 
 
 def main(argv: Sequence[str] | None = None) -> int:

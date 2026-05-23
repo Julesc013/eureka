@@ -2,25 +2,25 @@
 
 Known allowlisted violations: 1954
 
-- contracts/actions/acquisition_manifest.v0.json:23:6 `truth_boundary` -> Replace truth_boundary with evidence_acceptance_policy or move the artifact to control/test scope.
-- contracts/actions/acquisition_manifest.v0.json:24:6 `product_boundary` -> Replace product_boundary with runtime_capability_boundary or move the artifact to control/test scope.
-- contracts/actions/acquisition_manifest.v0.json:30:6 `truth_boundary` -> Replace truth_boundary with evidence_acceptance_policy or move the artifact to control/test scope.
-- contracts/actions/action_manifest.v0.json:21:6 `truth_boundary` -> Replace truth_boundary with evidence_acceptance_policy or move the artifact to control/test scope.
-- contracts/actions/action_manifest.v0.json:22:6 `product_boundary` -> Replace product_boundary with runtime_capability_boundary or move the artifact to control/test scope.
-- contracts/actions/action_manifest.v0.json:57:6 `truth_boundary` -> Replace truth_boundary with evidence_acceptance_policy or move the artifact to control/test scope.
-- contracts/actions/action_manifest.v0.json:68:6 `product_boundary` -> Replace product_boundary with runtime_capability_boundary or move the artifact to control/test scope.
-- contracts/actions/action_policy.v0.json:19:6 `truth_boundary` -> Replace truth_boundary with evidence_acceptance_policy or move the artifact to control/test scope.
-- contracts/actions/action_policy.v0.json:20:6 `product_boundary` -> Replace product_boundary with runtime_capability_boundary or move the artifact to control/test scope.
-- contracts/actions/action_policy.v0.json:37:6 `truth_boundary` -> Replace truth_boundary with evidence_acceptance_policy or move the artifact to control/test scope.
-- contracts/actions/action_policy.v0.json:38:6 `product_boundary` -> Replace product_boundary with runtime_capability_boundary or move the artifact to control/test scope.
-- contracts/actions/compare_action_manifest.v0.json:15:6 `truth_boundary` -> Replace truth_boundary with evidence_acceptance_policy or move the artifact to control/test scope.
-- contracts/actions/compare_action_manifest.v0.json:16:6 `product_boundary` -> Replace product_boundary with runtime_capability_boundary or move the artifact to control/test scope.
-- contracts/actions/export_manifest.v0.json:19:6 `truth_boundary` -> Replace truth_boundary with evidence_acceptance_policy or move the artifact to control/test scope.
-- contracts/actions/export_manifest.v0.json:20:6 `product_boundary` -> Replace product_boundary with runtime_capability_boundary or move the artifact to control/test scope.
-- contracts/actions/export_manifest.v0.json:26:6 `truth_boundary` -> Replace truth_boundary with evidence_acceptance_policy or move the artifact to control/test scope.
-- contracts/actions/preservation_manifest.v0.json:19:6 `truth_boundary` -> Replace truth_boundary with evidence_acceptance_policy or move the artifact to control/test scope.
-- contracts/actions/preservation_manifest.v0.json:20:6 `product_boundary` -> Replace product_boundary with runtime_capability_boundary or move the artifact to control/test scope.
-- contracts/actions/preservation_manifest.v0.json:25:6 `truth_boundary` -> Replace truth_boundary with evidence_acceptance_policy or move the artifact to control/test scope.
+- contracts/command/actions/acquisition_manifest.v0.json:23:6 `truth_boundary` -> Replace truth_boundary with evidence_acceptance_policy or move the artifact to control/test scope.
+- contracts/command/actions/acquisition_manifest.v0.json:24:6 `product_boundary` -> Replace product_boundary with runtime_capability_boundary or move the artifact to control/test scope.
+- contracts/command/actions/acquisition_manifest.v0.json:30:6 `truth_boundary` -> Replace truth_boundary with evidence_acceptance_policy or move the artifact to control/test scope.
+- contracts/command/actions/action_manifest.v0.json:21:6 `truth_boundary` -> Replace truth_boundary with evidence_acceptance_policy or move the artifact to control/test scope.
+- contracts/command/actions/action_manifest.v0.json:22:6 `product_boundary` -> Replace product_boundary with runtime_capability_boundary or move the artifact to control/test scope.
+- contracts/command/actions/action_manifest.v0.json:57:6 `truth_boundary` -> Replace truth_boundary with evidence_acceptance_policy or move the artifact to control/test scope.
+- contracts/command/actions/action_manifest.v0.json:68:6 `product_boundary` -> Replace product_boundary with runtime_capability_boundary or move the artifact to control/test scope.
+- contracts/command/actions/action_policy.v0.json:19:6 `truth_boundary` -> Replace truth_boundary with evidence_acceptance_policy or move the artifact to control/test scope.
+- contracts/command/actions/action_policy.v0.json:20:6 `product_boundary` -> Replace product_boundary with runtime_capability_boundary or move the artifact to control/test scope.
+- contracts/command/actions/action_policy.v0.json:37:6 `truth_boundary` -> Replace truth_boundary with evidence_acceptance_policy or move the artifact to control/test scope.
+- contracts/command/actions/action_policy.v0.json:38:6 `product_boundary` -> Replace product_boundary with runtime_capability_boundary or move the artifact to control/test scope.
+- contracts/command/actions/compare_action_manifest.v0.json:15:6 `truth_boundary` -> Replace truth_boundary with evidence_acceptance_policy or move the artifact to control/test scope.
+- contracts/command/actions/compare_action_manifest.v0.json:16:6 `product_boundary` -> Replace product_boundary with runtime_capability_boundary or move the artifact to control/test scope.
+- contracts/command/actions/export_manifest.v0.json:19:6 `truth_boundary` -> Replace truth_boundary with evidence_acceptance_policy or move the artifact to control/test scope.
+- contracts/command/actions/export_manifest.v0.json:20:6 `product_boundary` -> Replace product_boundary with runtime_capability_boundary or move the artifact to control/test scope.
+- contracts/command/actions/export_manifest.v0.json:26:6 `truth_boundary` -> Replace truth_boundary with evidence_acceptance_policy or move the artifact to control/test scope.
+- contracts/command/actions/preservation_manifest.v0.json:19:6 `truth_boundary` -> Replace truth_boundary with evidence_acceptance_policy or move the artifact to control/test scope.
+- contracts/command/actions/preservation_manifest.v0.json:20:6 `product_boundary` -> Replace product_boundary with runtime_capability_boundary or move the artifact to control/test scope.
+- contracts/command/actions/preservation_manifest.v0.json:25:6 `truth_boundary` -> Replace truth_boundary with evidence_acceptance_policy or move the artifact to control/test scope.
 - contracts/ai/ai_provider_manifest.v0.json:156:10 `prompt` -> Replace prompt with operator instruction outside product paths or move the artifact to control/test scope.
 - contracts/ai/ai_provider_manifest.v0.json:163:10 `prompt` -> Replace prompt with operator instruction outside product paths or move the artifact to control/test scope.
 - contracts/ai/ai_provider_manifest.v0.json:313:10 `prompt` -> Replace prompt with operator instruction outside product paths or move the artifact to control/test scope.
@@ -133,22 +133,22 @@ Known allowlisted violations: 1954
 - contracts/hosting/runtime_config_boundary.v0.json:10:6 `product_boundary` -> Replace product_boundary with runtime_capability_boundary or move the artifact to control/test scope.
 - contracts/hosting/runtime_config_boundary.v0.json:54:6 `truth_boundary` -> Replace truth_boundary with evidence_acceptance_policy or move the artifact to control/test scope.
 - contracts/hosting/runtime_config_boundary.v0.json:57:6 `product_boundary` -> Replace product_boundary with runtime_capability_boundary or move the artifact to control/test scope.
-- contracts/master_index/reviewed_public_index_rebuild.v0.json:34:6 `truth_boundary` -> Replace truth_boundary with evidence_acceptance_policy or move the artifact to control/test scope.
-- contracts/master_index/reviewed_public_index_rebuild.v0.json:35:6 `product_boundary` -> Replace product_boundary with runtime_capability_boundary or move the artifact to control/test scope.
-- contracts/master_index/reviewed_public_index_rebuild.v0.json:129:6 `truth_boundary` -> Replace truth_boundary with evidence_acceptance_policy or move the artifact to control/test scope.
-- contracts/master_index/reviewed_public_index_rebuild.v0.json:130:32 `truth_boundary` -> Replace truth_boundary with evidence_acceptance_policy or move the artifact to control/test scope.
-- contracts/master_index/reviewed_public_index_rebuild.v0.json:132:6 `product_boundary` -> Replace product_boundary with runtime_capability_boundary or move the artifact to control/test scope.
-- contracts/master_index/reviewed_public_index_rebuild.v0.json:133:24 `product_boundary` -> Replace product_boundary with runtime_capability_boundary or move the artifact to control/test scope.
-- contracts/master_index/reviewed_public_index_rebuild.v0.json:191:14 `truth_boundary` -> Replace truth_boundary with evidence_acceptance_policy or move the artifact to control/test scope.
-- contracts/master_index/reviewed_public_index_rebuild.v0.json:223:6 `product_boundary` -> Replace product_boundary with runtime_capability_boundary or move the artifact to control/test scope.
-- contracts/master_index/reviewed_public_record_proposal.v0.json:33:6 `truth_boundary` -> Replace truth_boundary with evidence_acceptance_policy or move the artifact to control/test scope.
-- contracts/master_index/reviewed_public_record_proposal.v0.json:34:6 `product_boundary` -> Replace product_boundary with runtime_capability_boundary or move the artifact to control/test scope.
-- contracts/master_index/reviewed_public_record_proposal.v0.json:112:6 `truth_boundary` -> Replace truth_boundary with evidence_acceptance_policy or move the artifact to control/test scope.
-- contracts/master_index/reviewed_public_record_proposal.v0.json:113:33 `truth_boundary` -> Replace truth_boundary with evidence_acceptance_policy or move the artifact to control/test scope.
-- contracts/master_index/reviewed_public_record_proposal.v0.json:115:6 `product_boundary` -> Replace product_boundary with runtime_capability_boundary or move the artifact to control/test scope.
-- contracts/master_index/reviewed_public_record_proposal.v0.json:116:24 `product_boundary` -> Replace product_boundary with runtime_capability_boundary or move the artifact to control/test scope.
-- contracts/master_index/reviewed_public_record_proposal.v0.json:156:15 `truth_boundary` -> Replace truth_boundary with evidence_acceptance_policy or move the artifact to control/test scope.
-- contracts/master_index/reviewed_public_record_proposal.v0.json:200:6 `product_boundary` -> Replace product_boundary with runtime_capability_boundary or move the artifact to control/test scope.
+- contracts/index/master/reviewed_public_index_rebuild.v0.json:34:6 `truth_boundary` -> Replace truth_boundary with evidence_acceptance_policy or move the artifact to control/test scope.
+- contracts/index/master/reviewed_public_index_rebuild.v0.json:35:6 `product_boundary` -> Replace product_boundary with runtime_capability_boundary or move the artifact to control/test scope.
+- contracts/index/master/reviewed_public_index_rebuild.v0.json:129:6 `truth_boundary` -> Replace truth_boundary with evidence_acceptance_policy or move the artifact to control/test scope.
+- contracts/index/master/reviewed_public_index_rebuild.v0.json:130:32 `truth_boundary` -> Replace truth_boundary with evidence_acceptance_policy or move the artifact to control/test scope.
+- contracts/index/master/reviewed_public_index_rebuild.v0.json:132:6 `product_boundary` -> Replace product_boundary with runtime_capability_boundary or move the artifact to control/test scope.
+- contracts/index/master/reviewed_public_index_rebuild.v0.json:133:24 `product_boundary` -> Replace product_boundary with runtime_capability_boundary or move the artifact to control/test scope.
+- contracts/index/master/reviewed_public_index_rebuild.v0.json:191:14 `truth_boundary` -> Replace truth_boundary with evidence_acceptance_policy or move the artifact to control/test scope.
+- contracts/index/master/reviewed_public_index_rebuild.v0.json:223:6 `product_boundary` -> Replace product_boundary with runtime_capability_boundary or move the artifact to control/test scope.
+- contracts/index/master/reviewed_public_record_proposal.v0.json:33:6 `truth_boundary` -> Replace truth_boundary with evidence_acceptance_policy or move the artifact to control/test scope.
+- contracts/index/master/reviewed_public_record_proposal.v0.json:34:6 `product_boundary` -> Replace product_boundary with runtime_capability_boundary or move the artifact to control/test scope.
+- contracts/index/master/reviewed_public_record_proposal.v0.json:112:6 `truth_boundary` -> Replace truth_boundary with evidence_acceptance_policy or move the artifact to control/test scope.
+- contracts/index/master/reviewed_public_record_proposal.v0.json:113:33 `truth_boundary` -> Replace truth_boundary with evidence_acceptance_policy or move the artifact to control/test scope.
+- contracts/index/master/reviewed_public_record_proposal.v0.json:115:6 `product_boundary` -> Replace product_boundary with runtime_capability_boundary or move the artifact to control/test scope.
+- contracts/index/master/reviewed_public_record_proposal.v0.json:116:24 `product_boundary` -> Replace product_boundary with runtime_capability_boundary or move the artifact to control/test scope.
+- contracts/index/master/reviewed_public_record_proposal.v0.json:156:15 `truth_boundary` -> Replace truth_boundary with evidence_acceptance_policy or move the artifact to control/test scope.
+- contracts/index/master/reviewed_public_record_proposal.v0.json:200:6 `product_boundary` -> Replace product_boundary with runtime_capability_boundary or move the artifact to control/test scope.
 - contracts/native/native_artifact.v0.json:19:6 `truth_boundary` -> Replace truth_boundary with evidence_acceptance_policy or move the artifact to control/test scope.
 - contracts/native/native_artifact.v0.json:20:6 `product_boundary` -> Replace product_boundary with runtime_capability_boundary or move the artifact to control/test scope.
 - contracts/native/native_artifact.v0.json:62:6 `truth_boundary` -> Replace truth_boundary with evidence_acceptance_policy or move the artifact to control/test scope.

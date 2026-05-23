@@ -1,0 +1,29 @@
+{
+  "$id": "contracts/schema/control/policies/hosting/public_alpha_environment_matrix.v0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "environment_matrix_id": {
+      "type": "string"
+    },
+    "environments": {
+      "type": "array"
+    },
+    "product_boundary": {
+      "type": "object"
+    },
+    "schema_version": {
+      "const": "public_alpha_environment_matrix.v0"
+    },
+    "truth_boundary": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "schema_version",
+    "environment_matrix_id",
+    "environments"
+  ],
+  "title": "Eureka Public Alpha Environment Matrix v0",
+  "type": "object"
+}

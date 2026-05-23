@@ -11,11 +11,11 @@
     "scripts/dry_run_query_guard.py"
   ],
   "example_guard_decisions": [
-    "examples/query_guard/minimal_fake_demand_throttled_v0",
-    "examples/query_guard/minimal_private_path_rejected_v0",
-    "examples/query_guard/minimal_public_safe_query_v0",
-    "examples/query_guard/minimal_secret_rejected_v0",
-    "examples/query_guard/minimal_source_stuffing_quarantined_v0"
+    "examples/search/query_guard/minimal_fake_demand_throttled_v0",
+    "examples/search/query_guard/minimal_private_path_rejected_v0",
+    "examples/search/query_guard/minimal_public_safe_query_v0",
+    "examples/search/query_guard/minimal_secret_rejected_v0",
+    "examples/search/query_guard/minimal_source_stuffing_quarantined_v0"
   ],
   "query_guard_policy": "control/inventory/query_intelligence/query_privacy_poisoning_guard_policy.json",
   "privacy_risk_taxonomy": [

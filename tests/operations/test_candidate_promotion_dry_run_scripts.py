@@ -7,9 +7,9 @@ from scripts import run_candidate_promotion_dry_run, validate_candidate_promotio
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
-CANDIDATE = REPO_ROOT / "examples/candidates/search_need_candidate_v0.json"
-REVIEW = REPO_ROOT / "examples/review_queue_entries/candidate_needs_review_v0.json"
-READY_INPUT = REPO_ROOT / "examples/candidate_promotion_dry_runs/ready_for_promotion_dry_run_v0.json"
+CANDIDATE = REPO_ROOT / "examples/index/candidates/search_need_candidate_v0.json"
+REVIEW = REPO_ROOT / "examples/review/queue_entries/candidate_needs_review_v0.json"
+READY_INPUT = REPO_ROOT / "examples/review/candidate_promotion_dry_runs/ready_for_promotion_dry_run_v0.json"
 
 
 class CandidatePromotionDryRunScriptTests(unittest.TestCase):
@@ -62,12 +62,12 @@ class CandidatePromotionDryRunScriptTests(unittest.TestCase):
         report = run_candidate_promotion_dry_run.build_report(input_path=READY_INPUT)
         record = report["record"]
         record["product_boundary"]["enabled_network_access"] = True
-        from runtime.local_foundry import candidate_promotion_dry_run as promotion
+        from runtime.local.foundry import candidate_promotion_dry_run as promotion
 
         self.assertTrue(promotion.detect_promotion_product_boundary_violations(record))
 
     def test_runtime_does_not_call_network_model_or_provider(self) -> None:
-        runtime_source = (REPO_ROOT / "runtime/local_foundry/candidate_promotion_dry_run.py").read_text(encoding="utf-8")
+        runtime_source = (REPO_ROOT / "runtime/local/foundry/candidate_promotion_dry_run.py").read_text(encoding="utf-8")
         script_source = (REPO_ROOT / "scripts/run_candidate_promotion_dry_run.py").read_text(encoding="utf-8")
         for token in ("requests", "urllib", "socket", "openai", "anthropic", "selenium", "playwright"):
             self.assertNotIn(token, runtime_source)

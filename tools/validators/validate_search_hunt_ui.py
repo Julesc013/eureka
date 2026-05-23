@@ -23,8 +23,8 @@ from scripts.hunt_queue_progress import (
     hunt_queue_current_or_advanced,
     post_hunt_current_allowed,
 )
-from runtime.local_appliance import close_local_appliance, open_local_appliance
-from runtime.local_service import LocalServiceApp
+from runtime.local.appliance import close_local_appliance, open_local_appliance
+from runtime.local.service import LocalServiceApp
 
 
 TASK_ID = "HUNT-02"
@@ -56,10 +56,10 @@ RUNTIME_FILES = (
     "surfaces/web/workbench/local_html/templates.py",
     "surfaces/web/workbench/local_html/view_models.py",
     "surfaces/web/workbench/local_html/validation.py",
-    "runtime/local_service/routes.py",
-    "runtime/local_service/responses.py",
-    "runtime/local_service/app.py",
-    "runtime/local_service/validation.py",
+    "runtime/local/service/routes.py",
+    "runtime/local/service/responses.py",
+    "runtime/local/service/app.py",
+    "runtime/local/service/validation.py",
 )
 TESTS = (
     "tests/runtime/test_search_hunt_ui_view_models.py",

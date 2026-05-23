@@ -65,7 +65,7 @@ REQUIRED_ALLOWED_ROOTS = {
     "control/audits/**",
     "control/inventory/observations/**",
     "control/inventory/sources/**",
-    "contracts/source_registry/**",
+    "contracts/source/registry/**",
     "contracts/query/**",
     "docs/reference/**",
     "docs/operations/**",
@@ -121,7 +121,7 @@ PRODUCT_BOUNDARY_FIELDS = {
 }
 EXTRA_FALSE_BOUNDARY_FIELDS = {"approved_source_access", "modified_track_b_files"}
 TRACK_B_PREFIXES = (
-    "contracts/source_registry/",
+    "contracts/source/registry/",
     "contracts/workunit/",
     "contracts/node/",
     "contracts/local/",

@@ -7289,7 +7289,7 @@
       "capability_families": [
         "unknown"
       ],
-      "command_hint": "review-only command preview for contracts/actions/export_manifest.v0.json",
+      "command_hint": "review-only command preview for contracts/command/actions/export_manifest.v0.json",
       "docs_refs": [
         "control/audits/r0-02-runtime-architecture-leakage-gate-v0/generated/sample_leakage_summary.md",
         "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
@@ -7310,7 +7310,7 @@
       "language_or_format": "json",
       "name": "export_manifest.v0.json",
       "owner": "unknown",
-      "path": "contracts/actions/export_manifest.v0.json",
+      "path": "contracts/command/actions/export_manifest.v0.json",
       "reasons": [
         "candidate_tool_name_hint",
         "insufficient_evidence_for_wrap_plan",
@@ -7400,7 +7400,7 @@
       "capability_families": [
         "build"
       ],
-      "command_hint": "review-only command preview for contracts/master_index/reviewed_public_index_rebuild.v0.json",
+      "command_hint": "review-only command preview for contracts/index/master/reviewed_public_index_rebuild.v0.json",
       "docs_refs": [
         "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -7417,7 +7417,7 @@
       "language_or_format": "json",
       "name": "reviewed_public_index_rebuild.v0.json",
       "owner": "unknown",
-      "path": "contracts/master_index/reviewed_public_index_rebuild.v0.json",
+      "path": "contracts/index/master/reviewed_public_index_rebuild.v0.json",
       "reasons": [
         "build_hint:build",
         "candidate_capability_can_be_future_wrapped",
@@ -7635,7 +7635,7 @@
       "capability_families": [
         "unknown"
       ],
-      "command_hint": "review-only command preview for contracts/source_sync/source_sync_job_kind.v0.json",
+      "command_hint": "review-only command preview for contracts/source/sync/source_sync_job_kind.v0.json",
       "docs_refs": [
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md"
       ],
@@ -7650,7 +7650,7 @@
       "language_or_format": "json",
       "name": "source_sync_job_kind.v0.json",
       "owner": "unknown",
-      "path": "contracts/source_sync/source_sync_job_kind.v0.json",
+      "path": "contracts/source/sync/source_sync_job_kind.v0.json",
       "reasons": [
         "candidate_tool_name_hint",
         "insufficient_evidence_for_wrap_plan",
@@ -7668,7 +7668,7 @@
       "capability_families": [
         "unknown"
       ],
-      "command_hint": "review-only command preview for contracts/source_sync/source_sync_worker_job.v0.json",
+      "command_hint": "review-only command preview for contracts/source/sync/source_sync_worker_job.v0.json",
       "docs_refs": [
         "control/audits/github-releases-connector-approval-v0/COMMAND_RESULTS.md",
         "control/audits/internet-archive-metadata-connector-approval-v0/COMMAND_RESULTS.md",
@@ -7691,7 +7691,7 @@
       "language_or_format": "json",
       "name": "source_sync_worker_job.v0.json",
       "owner": "unknown",
-      "path": "contracts/source_sync/source_sync_worker_job.v0.json",
+      "path": "contracts/source/sync/source_sync_worker_job.v0.json",
       "reasons": [
         "candidate_tool_name_hint",
         "insufficient_evidence_for_wrap_plan",
@@ -7709,7 +7709,7 @@
       "capability_families": [
         "unknown"
       ],
-      "command_hint": "review-only command preview for contracts/source_sync/source_sync_worker_manifest.v0.json",
+      "command_hint": "review-only command preview for contracts/source/sync/source_sync_worker_manifest.v0.json",
       "docs_refs": [
         "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md",
         "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/product_contract_summary.md",
@@ -7726,7 +7726,7 @@
       "language_or_format": "json",
       "name": "source_sync_worker_manifest.v0.json",
       "owner": "unknown",
-      "path": "contracts/source_sync/source_sync_worker_manifest.v0.json",
+      "path": "contracts/source/sync/source_sync_worker_manifest.v0.json",
       "reasons": [
         "candidate_tool_name_hint",
         "insufficient_evidence_for_wrap_plan",
@@ -7775,7 +7775,7 @@
       "capability_families": [
         "unknown"
       ],
-      "command_hint": "review-only command preview for contracts/ui/ui_contracts/stored_exports.ui_contract.yaml",
+      "command_hint": "review-only command preview for contracts/surface/ui/contracts/stored_exports.ui_contract.yaml",
       "docs_refs": [
         "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md"
       ],
@@ -7790,7 +7790,7 @@
       "language_or_format": "yaml",
       "name": "stored_exports.ui_contract.yaml",
       "owner": "unknown",
-      "path": "contracts/ui/ui_contracts/stored_exports.ui_contract.yaml",
+      "path": "contracts/surface/ui/contracts/stored_exports.ui_contract.yaml",
       "reasons": [
         "candidate_tool_name_hint",
         "insufficient_evidence_for_wrap_plan",
@@ -7808,7 +7808,7 @@
       "capability_families": [
         "unknown"
       ],
-      "command_hint": "review-only command preview for contracts/ui/view_models/stored_exports.view_model.yaml",
+      "command_hint": "review-only command preview for contracts/view/models/ui/stored_exports.view_model.yaml",
       "docs_refs": [
         "control/audits/r0-01-dev-production-reality-inventory-v0/contract_taxonomy_summary.md"
       ],
@@ -7823,7 +7823,7 @@
       "language_or_format": "yaml",
       "name": "stored_exports.view_model.yaml",
       "owner": "unknown",
-      "path": "contracts/ui/view_models/stored_exports.view_model.yaml",
+      "path": "contracts/view/models/ui/stored_exports.view_model.yaml",
       "reasons": [
         "candidate_tool_name_hint",
         "insufficient_evidence_for_wrap_plan",
@@ -25978,7 +25978,7 @@
       "capability_families": [
         "audit"
       ],
-      "command_hint": "review-only command preview for contracts/control_schemas/audits/audits/mvp_alpha_readiness_audit.v0.json",
+      "command_hint": "review-only command preview for contracts/schema/control/audits/audits/mvp_alpha_readiness_audit.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -25991,7 +25991,7 @@
       "language_or_format": "json",
       "name": "mvp_alpha_readiness_audit.v0.json",
       "owner": "unknown",
-      "path": "contracts/control_schemas/audits/audits/mvp_alpha_readiness_audit.v0.json",
+      "path": "contracts/schema/control/audits/audits/mvp_alpha_readiness_audit.v0.json",
       "reasons": [
         "audit_hint:audit",
         "candidate_capability_can_be_future_wrapped",
@@ -26009,7 +26009,7 @@
       "capability_families": [
         "audit"
       ],
-      "command_hint": "review-only command preview for contracts/control_schemas/audits/h1/connectors/integration_audit.v0.json",
+      "command_hint": "review-only command preview for contracts/schema/control/audits/h1/connectors/integration_audit.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -26022,7 +26022,7 @@
       "language_or_format": "json",
       "name": "integration_audit.v0.json",
       "owner": "unknown",
-      "path": "contracts/control_schemas/audits/h1/connectors/integration_audit.v0.json",
+      "path": "contracts/schema/control/audits/h1/connectors/integration_audit.v0.json",
       "reasons": [
         "audit_hint:audit",
         "candidate_capability_can_be_future_wrapped",
@@ -26040,7 +26040,7 @@
       "capability_families": [
         "audit"
       ],
-      "command_hint": "review-only command preview for contracts/control_schemas/audits/h10/connectors/games_emulation_integration_audit.v0.json",
+      "command_hint": "review-only command preview for contracts/schema/control/audits/h10/connectors/games_emulation_integration_audit.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -26053,7 +26053,7 @@
       "language_or_format": "json",
       "name": "games_emulation_integration_audit.v0.json",
       "owner": "unknown",
-      "path": "contracts/control_schemas/audits/h10/connectors/games_emulation_integration_audit.v0.json",
+      "path": "contracts/schema/control/audits/h10/connectors/games_emulation_integration_audit.v0.json",
       "reasons": [
         "audit_hint:audit",
         "candidate_capability_can_be_future_wrapped",
@@ -26071,7 +26071,7 @@
       "capability_families": [
         "audit"
       ],
-      "command_hint": "review-only command preview for contracts/control_schemas/audits/h11/connectors/storefront_integration_audit.v0.json",
+      "command_hint": "review-only command preview for contracts/schema/control/audits/h11/connectors/storefront_integration_audit.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -26084,7 +26084,7 @@
       "language_or_format": "json",
       "name": "storefront_integration_audit.v0.json",
       "owner": "unknown",
-      "path": "contracts/control_schemas/audits/h11/connectors/storefront_integration_audit.v0.json",
+      "path": "contracts/schema/control/audits/h11/connectors/storefront_integration_audit.v0.json",
       "reasons": [
         "audit_hint:audit",
         "candidate_capability_can_be_future_wrapped",
@@ -26102,7 +26102,7 @@
       "capability_families": [
         "audit"
       ],
-      "command_hint": "review-only command preview for contracts/control_schemas/audits/h12/connectors/retro_community_integration_audit.v0.json",
+      "command_hint": "review-only command preview for contracts/schema/control/audits/h12/connectors/retro_community_integration_audit.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -26115,7 +26115,7 @@
       "language_or_format": "json",
       "name": "retro_community_integration_audit.v0.json",
       "owner": "unknown",
-      "path": "contracts/control_schemas/audits/h12/connectors/retro_community_integration_audit.v0.json",
+      "path": "contracts/schema/control/audits/h12/connectors/retro_community_integration_audit.v0.json",
       "reasons": [
         "audit_hint:audit",
         "candidate_capability_can_be_future_wrapped",
@@ -26133,7 +26133,7 @@
       "capability_families": [
         "audit"
       ],
-      "command_hint": "review-only command preview for contracts/control_schemas/audits/h13/connectors/local_private_integration_audit.v0.json",
+      "command_hint": "review-only command preview for contracts/schema/control/audits/h13/connectors/local_private_integration_audit.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -26146,7 +26146,7 @@
       "language_or_format": "json",
       "name": "local_private_integration_audit.v0.json",
       "owner": "unknown",
-      "path": "contracts/control_schemas/audits/h13/connectors/local_private_integration_audit.v0.json",
+      "path": "contracts/schema/control/audits/h13/connectors/local_private_integration_audit.v0.json",
       "reasons": [
         "audit_hint:audit",
         "candidate_capability_can_be_future_wrapped",
@@ -26164,7 +26164,7 @@
       "capability_families": [
         "audit"
       ],
-      "command_hint": "review-only command preview for contracts/control_schemas/audits/h14/connectors/source_discovery_integration_audit.v0.json",
+      "command_hint": "review-only command preview for contracts/schema/control/audits/h14/connectors/source_discovery_integration_audit.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -26177,7 +26177,7 @@
       "language_or_format": "json",
       "name": "source_discovery_integration_audit.v0.json",
       "owner": "unknown",
-      "path": "contracts/control_schemas/audits/h14/connectors/source_discovery_integration_audit.v0.json",
+      "path": "contracts/schema/control/audits/h14/connectors/source_discovery_integration_audit.v0.json",
       "reasons": [
         "audit_hint:audit",
         "candidate_capability_can_be_future_wrapped",
@@ -26197,7 +26197,7 @@
         "context",
         "package"
       ],
-      "command_hint": "review-only command preview for contracts/control_schemas/audits/h2/connectors/package_connector_wave_postmortem.v0.json",
+      "command_hint": "review-only command preview for contracts/schema/control/audits/h2/connectors/package_connector_wave_postmortem.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -26210,7 +26210,7 @@
       "language_or_format": "json",
       "name": "package_connector_wave_postmortem.v0.json",
       "owner": "unknown",
-      "path": "contracts/control_schemas/audits/h2/connectors/package_connector_wave_postmortem.v0.json",
+      "path": "contracts/schema/control/audits/h2/connectors/package_connector_wave_postmortem.v0.json",
       "reasons": [
         "audit_hint:audit",
         "candidate_capability_can_be_future_wrapped",
@@ -26232,7 +26232,7 @@
         "context",
         "package"
       ],
-      "command_hint": "review-only command preview for contracts/control_schemas/audits/h2/connectors/package_integration_audit.v0.json",
+      "command_hint": "review-only command preview for contracts/schema/control/audits/h2/connectors/package_integration_audit.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -26245,7 +26245,7 @@
       "language_or_format": "json",
       "name": "package_integration_audit.v0.json",
       "owner": "unknown",
-      "path": "contracts/control_schemas/audits/h2/connectors/package_integration_audit.v0.json",
+      "path": "contracts/schema/control/audits/h2/connectors/package_integration_audit.v0.json",
       "reasons": [
         "audit_hint:audit",
         "candidate_capability_can_be_future_wrapped",
@@ -26268,7 +26268,7 @@
         "package",
         "repo_policy"
       ],
-      "command_hint": "review-only command preview for contracts/control_schemas/audits/h2/connectors/package_quality_delta_report.v0.json",
+      "command_hint": "review-only command preview for contracts/schema/control/audits/h2/connectors/package_quality_delta_report.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -26281,7 +26281,7 @@
       "language_or_format": "json",
       "name": "package_quality_delta_report.v0.json",
       "owner": "unknown",
-      "path": "contracts/control_schemas/audits/h2/connectors/package_quality_delta_report.v0.json",
+      "path": "contracts/schema/control/audits/h2/connectors/package_quality_delta_report.v0.json",
       "reasons": [
         "audit_hint:audit,report",
         "candidate_capability_can_be_future_wrapped",
@@ -26304,7 +26304,7 @@
         "context",
         "package"
       ],
-      "command_hint": "review-only command preview for contracts/control_schemas/audits/h2/connectors/package_review_integration_result.v0.json",
+      "command_hint": "review-only command preview for contracts/schema/control/audits/h2/connectors/package_review_integration_result.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -26317,7 +26317,7 @@
       "language_or_format": "json",
       "name": "package_review_integration_result.v0.json",
       "owner": "unknown",
-      "path": "contracts/control_schemas/audits/h2/connectors/package_review_integration_result.v0.json",
+      "path": "contracts/schema/control/audits/h2/connectors/package_review_integration_result.v0.json",
       "reasons": [
         "audit_hint:audit",
         "candidate_capability_can_be_future_wrapped",
@@ -26339,7 +26339,7 @@
         "context",
         "package"
       ],
-      "command_hint": "review-only command preview for contracts/control_schemas/audits/h3/connectors/os_package_connector_wave_postmortem.v0.json",
+      "command_hint": "review-only command preview for contracts/schema/control/audits/h3/connectors/os_package_connector_wave_postmortem.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -26352,7 +26352,7 @@
       "language_or_format": "json",
       "name": "os_package_connector_wave_postmortem.v0.json",
       "owner": "unknown",
-      "path": "contracts/control_schemas/audits/h3/connectors/os_package_connector_wave_postmortem.v0.json",
+      "path": "contracts/schema/control/audits/h3/connectors/os_package_connector_wave_postmortem.v0.json",
       "reasons": [
         "audit_hint:audit",
         "candidate_capability_can_be_future_wrapped",
@@ -26374,7 +26374,7 @@
         "context",
         "package"
       ],
-      "command_hint": "review-only command preview for contracts/control_schemas/audits/h3/connectors/os_package_integration_audit.v0.json",
+      "command_hint": "review-only command preview for contracts/schema/control/audits/h3/connectors/os_package_integration_audit.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -26387,7 +26387,7 @@
       "language_or_format": "json",
       "name": "os_package_integration_audit.v0.json",
       "owner": "unknown",
-      "path": "contracts/control_schemas/audits/h3/connectors/os_package_integration_audit.v0.json",
+      "path": "contracts/schema/control/audits/h3/connectors/os_package_integration_audit.v0.json",
       "reasons": [
         "audit_hint:audit",
         "candidate_capability_can_be_future_wrapped",
@@ -26410,7 +26410,7 @@
         "package",
         "repo_policy"
       ],
-      "command_hint": "review-only command preview for contracts/control_schemas/audits/h3/connectors/os_package_quality_delta_report.v0.json",
+      "command_hint": "review-only command preview for contracts/schema/control/audits/h3/connectors/os_package_quality_delta_report.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -26423,7 +26423,7 @@
       "language_or_format": "json",
       "name": "os_package_quality_delta_report.v0.json",
       "owner": "unknown",
-      "path": "contracts/control_schemas/audits/h3/connectors/os_package_quality_delta_report.v0.json",
+      "path": "contracts/schema/control/audits/h3/connectors/os_package_quality_delta_report.v0.json",
       "reasons": [
         "audit_hint:audit,report",
         "candidate_capability_can_be_future_wrapped",
@@ -26446,7 +26446,7 @@
         "context",
         "package"
       ],
-      "command_hint": "review-only command preview for contracts/control_schemas/audits/h3/connectors/os_package_review_integration_result.v0.json",
+      "command_hint": "review-only command preview for contracts/schema/control/audits/h3/connectors/os_package_review_integration_result.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -26459,7 +26459,7 @@
       "language_or_format": "json",
       "name": "os_package_review_integration_result.v0.json",
       "owner": "unknown",
-      "path": "contracts/control_schemas/audits/h3/connectors/os_package_review_integration_result.v0.json",
+      "path": "contracts/schema/control/audits/h3/connectors/os_package_review_integration_result.v0.json",
       "reasons": [
         "audit_hint:audit",
         "candidate_capability_can_be_future_wrapped",
@@ -26479,7 +26479,7 @@
       "capability_families": [
         "audit"
       ],
-      "command_hint": "review-only command preview for contracts/control_schemas/audits/h4/connectors/code_source_integration_audit.v0.json",
+      "command_hint": "review-only command preview for contracts/schema/control/audits/h4/connectors/code_source_integration_audit.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -26492,7 +26492,7 @@
       "language_or_format": "json",
       "name": "code_source_integration_audit.v0.json",
       "owner": "unknown",
-      "path": "contracts/control_schemas/audits/h4/connectors/code_source_integration_audit.v0.json",
+      "path": "contracts/schema/control/audits/h4/connectors/code_source_integration_audit.v0.json",
       "reasons": [
         "audit_hint:audit",
         "candidate_capability_can_be_future_wrapped",
@@ -26510,7 +26510,7 @@
       "capability_families": [
         "audit"
       ],
-      "command_hint": "review-only command preview for contracts/control_schemas/audits/h5/connectors/vendor_update_integration_audit.v0.json",
+      "command_hint": "review-only command preview for contracts/schema/control/audits/h5/connectors/vendor_update_integration_audit.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -26523,7 +26523,7 @@
       "language_or_format": "json",
       "name": "vendor_update_integration_audit.v0.json",
       "owner": "unknown",
-      "path": "contracts/control_schemas/audits/h5/connectors/vendor_update_integration_audit.v0.json",
+      "path": "contracts/schema/control/audits/h5/connectors/vendor_update_integration_audit.v0.json",
       "reasons": [
         "audit_hint:audit",
         "candidate_capability_can_be_future_wrapped",
@@ -26541,7 +26541,7 @@
       "capability_families": [
         "audit"
       ],
-      "command_hint": "review-only command preview for contracts/control_schemas/audits/h6/connectors/web_archive_integration_audit.v0.json",
+      "command_hint": "review-only command preview for contracts/schema/control/audits/h6/connectors/web_archive_integration_audit.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -26554,7 +26554,7 @@
       "language_or_format": "json",
       "name": "web_archive_integration_audit.v0.json",
       "owner": "unknown",
-      "path": "contracts/control_schemas/audits/h6/connectors/web_archive_integration_audit.v0.json",
+      "path": "contracts/schema/control/audits/h6/connectors/web_archive_integration_audit.v0.json",
       "reasons": [
         "audit_hint:audit",
         "candidate_capability_can_be_future_wrapped",
@@ -26572,7 +26572,7 @@
       "capability_families": [
         "audit"
       ],
-      "command_hint": "review-only command preview for contracts/control_schemas/audits/h7/connectors/library_research_integration_audit.v0.json",
+      "command_hint": "review-only command preview for contracts/schema/control/audits/h7/connectors/library_research_integration_audit.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -26585,7 +26585,7 @@
       "language_or_format": "json",
       "name": "library_research_integration_audit.v0.json",
       "owner": "unknown",
-      "path": "contracts/control_schemas/audits/h7/connectors/library_research_integration_audit.v0.json",
+      "path": "contracts/schema/control/audits/h7/connectors/library_research_integration_audit.v0.json",
       "reasons": [
         "audit_hint:audit",
         "candidate_capability_can_be_future_wrapped",
@@ -26604,7 +26604,7 @@
         "audit",
         "docs"
       ],
-      "command_hint": "review-only command preview for contracts/control_schemas/audits/h8/connectors/manuals_docs_integration_audit.v0.json",
+      "command_hint": "review-only command preview for contracts/schema/control/audits/h8/connectors/manuals_docs_integration_audit.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -26617,7 +26617,7 @@
       "language_or_format": "json",
       "name": "manuals_docs_integration_audit.v0.json",
       "owner": "unknown",
-      "path": "contracts/control_schemas/audits/h8/connectors/manuals_docs_integration_audit.v0.json",
+      "path": "contracts/schema/control/audits/h8/connectors/manuals_docs_integration_audit.v0.json",
       "reasons": [
         "audit_hint:audit",
         "candidate_capability_can_be_future_wrapped",
@@ -26636,7 +26636,7 @@
       "capability_families": [
         "audit"
       ],
-      "command_hint": "review-only command preview for contracts/control_schemas/audits/h9/connectors/media_metadata_integration_audit.v0.json",
+      "command_hint": "review-only command preview for contracts/schema/control/audits/h9/connectors/media_metadata_integration_audit.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -26649,7 +26649,7 @@
       "language_or_format": "json",
       "name": "media_metadata_integration_audit.v0.json",
       "owner": "unknown",
-      "path": "contracts/control_schemas/audits/h9/connectors/media_metadata_integration_audit.v0.json",
+      "path": "contracts/schema/control/audits/h9/connectors/media_metadata_integration_audit.v0.json",
       "reasons": [
         "audit_hint:audit",
         "candidate_capability_can_be_future_wrapped",
@@ -26667,7 +26667,7 @@
       "capability_families": [
         "audit"
       ],
-      "command_hint": "review-only command preview for contracts/control_schemas/audits/hosting/public_launch_readiness_audit.v0.json",
+      "command_hint": "review-only command preview for contracts/schema/control/audits/hosting/public_launch_readiness_audit.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -26680,7 +26680,7 @@
       "language_or_format": "json",
       "name": "public_launch_readiness_audit.v0.json",
       "owner": "unknown",
-      "path": "contracts/control_schemas/audits/hosting/public_launch_readiness_audit.v0.json",
+      "path": "contracts/schema/control/audits/hosting/public_launch_readiness_audit.v0.json",
       "reasons": [
         "audit_hint:audit",
         "candidate_capability_can_be_future_wrapped",
@@ -26698,7 +26698,7 @@
       "capability_families": [
         "audit"
       ],
-      "command_hint": "review-only command preview for contracts/control_schemas/audits/native/native_first_wave_integration_audit.v0.json",
+      "command_hint": "review-only command preview for contracts/schema/control/audits/native/native_first_wave_integration_audit.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -26711,7 +26711,7 @@
       "language_or_format": "json",
       "name": "native_first_wave_integration_audit.v0.json",
       "owner": "unknown",
-      "path": "contracts/control_schemas/audits/native/native_first_wave_integration_audit.v0.json",
+      "path": "contracts/schema/control/audits/native/native_first_wave_integration_audit.v0.json",
       "reasons": [
         "audit_hint:audit",
         "candidate_capability_can_be_future_wrapped",
@@ -26731,7 +26731,7 @@
         "context",
         "repo_policy"
       ],
-      "command_hint": "review-only command preview for contracts/control_schemas/audits/packs/pack_import_report.v0.json",
+      "command_hint": "review-only command preview for contracts/schema/control/audits/packs/pack_import_report.v0.json",
       "docs_refs": [
         "control/audits/pack-import-report-format-v0/README.md",
         "docs/architecture/PACK_IMPORT_PIPELINE.md",
@@ -26748,7 +26748,7 @@
       "language_or_format": "json",
       "name": "pack_import_report.v0.json",
       "owner": "unknown",
-      "path": "contracts/control_schemas/audits/packs/pack_import_report.v0.json",
+      "path": "contracts/schema/control/audits/packs/pack_import_report.v0.json",
       "reasons": [
         "audit_hint:audit,report",
         "candidate_capability_can_be_future_wrapped",
@@ -26769,7 +26769,7 @@
         "context",
         "package"
       ],
-      "command_hint": "review-only command preview for contracts/control_schemas/fixtures/archive/software/payloads/synthetic-demo-app-package.zip",
+      "command_hint": "review-only command preview for contracts/schema/control/fixtures/archive/software/payloads/synthetic-demo-app-package.zip",
       "docs_refs": [
         "control/audits/r0-remediation-contract-taxonomy-01-v0/resolved_items.md"
       ],
@@ -26784,7 +26784,7 @@
       "language_or_format": "zip",
       "name": "synthetic-demo-app-package.zip",
       "owner": "unknown",
-      "path": "contracts/control_schemas/fixtures/archive/software/payloads/synthetic-demo-app-package.zip",
+      "path": "contracts/schema/control/fixtures/archive/software/payloads/synthetic-demo-app-package.zip",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -26804,7 +26804,7 @@
         "context",
         "package"
       ],
-      "command_hint": "review-only command preview for contracts/control_schemas/fixtures/h2/connectors/package_fixture.v0.json",
+      "command_hint": "review-only command preview for contracts/schema/control/fixtures/h2/connectors/package_fixture.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -26817,7 +26817,7 @@
       "language_or_format": "json",
       "name": "package_fixture.v0.json",
       "owner": "unknown",
-      "path": "contracts/control_schemas/fixtures/h2/connectors/package_fixture.v0.json",
+      "path": "contracts/schema/control/fixtures/h2/connectors/package_fixture.v0.json",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -26837,7 +26837,7 @@
         "context",
         "package"
       ],
-      "command_hint": "review-only command preview for contracts/control_schemas/fixtures/h2/connectors/package_fixture_replay_result.v0.json",
+      "command_hint": "review-only command preview for contracts/schema/control/fixtures/h2/connectors/package_fixture_replay_result.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -26850,7 +26850,7 @@
       "language_or_format": "json",
       "name": "package_fixture_replay_result.v0.json",
       "owner": "unknown",
-      "path": "contracts/control_schemas/fixtures/h2/connectors/package_fixture_replay_result.v0.json",
+      "path": "contracts/schema/control/fixtures/h2/connectors/package_fixture_replay_result.v0.json",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -26870,7 +26870,7 @@
         "context",
         "package"
       ],
-      "command_hint": "review-only command preview for contracts/control_schemas/fixtures/h3/connectors/os_package_fixture.v0.json",
+      "command_hint": "review-only command preview for contracts/schema/control/fixtures/h3/connectors/os_package_fixture.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -26883,7 +26883,7 @@
       "language_or_format": "json",
       "name": "os_package_fixture.v0.json",
       "owner": "unknown",
-      "path": "contracts/control_schemas/fixtures/h3/connectors/os_package_fixture.v0.json",
+      "path": "contracts/schema/control/fixtures/h3/connectors/os_package_fixture.v0.json",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -26903,7 +26903,7 @@
         "context",
         "package"
       ],
-      "command_hint": "review-only command preview for contracts/control_schemas/fixtures/h3/connectors/os_package_fixture_replay_result.v0.json",
+      "command_hint": "review-only command preview for contracts/schema/control/fixtures/h3/connectors/os_package_fixture_replay_result.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -26916,7 +26916,7 @@
       "language_or_format": "json",
       "name": "os_package_fixture_replay_result.v0.json",
       "owner": "unknown",
-      "path": "contracts/control_schemas/fixtures/h3/connectors/os_package_fixture_replay_result.v0.json",
+      "path": "contracts/schema/control/fixtures/h3/connectors/os_package_fixture_replay_result.v0.json",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -26935,7 +26935,7 @@
       "capability_families": [
         "validate"
       ],
-      "command_hint": "review-only command preview for contracts/control_schemas/policies/hosting/public_alpha_operator_checklist.v0.json",
+      "command_hint": "review-only command preview for contracts/schema/control/policies/hosting/public_alpha_operator_checklist.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -26948,7 +26948,7 @@
       "language_or_format": "json",
       "name": "public_alpha_operator_checklist.v0.json",
       "owner": "unknown",
-      "path": "contracts/control_schemas/policies/hosting/public_alpha_operator_checklist.v0.json",
+      "path": "contracts/schema/control/policies/hosting/public_alpha_operator_checklist.v0.json",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -26966,7 +26966,7 @@
       "capability_families": [
         "install"
       ],
-      "command_hint": "review-only command preview for contracts/control_schemas/policies/hosting/rollback_plan.v0.json",
+      "command_hint": "review-only command preview for contracts/schema/control/policies/hosting/rollback_plan.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -26979,7 +26979,7 @@
       "language_or_format": "json",
       "name": "rollback_plan.v0.json",
       "owner": "unknown",
-      "path": "contracts/control_schemas/policies/hosting/rollback_plan.v0.json",
+      "path": "contracts/schema/control/policies/hosting/rollback_plan.v0.json",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -26998,7 +26998,7 @@
       "capability_families": [
         "context"
       ],
-      "command_hint": "review-only command preview for contracts/control_schemas/policies/packs/source_pack_export.v0.json",
+      "command_hint": "review-only command preview for contracts/schema/control/policies/packs/source_pack_export.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -27011,7 +27011,7 @@
       "language_or_format": "json",
       "name": "source_pack_export.v0.json",
       "owner": "unknown",
-      "path": "contracts/control_schemas/policies/packs/source_pack_export.v0.json",
+      "path": "contracts/schema/control/policies/packs/source_pack_export.v0.json",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -27029,7 +27029,7 @@
       "capability_families": [
         "release"
       ],
-      "command_hint": "review-only command preview for contracts/control_schemas/previews/h10/connectors/platform_release_edition_candidate.v0.json",
+      "command_hint": "review-only command preview for contracts/schema/control/previews/h10/connectors/platform_release_edition_candidate.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -27042,7 +27042,7 @@
       "language_or_format": "json",
       "name": "platform_release_edition_candidate.v0.json",
       "owner": "unknown",
-      "path": "contracts/control_schemas/previews/h10/connectors/platform_release_edition_candidate.v0.json",
+      "path": "contracts/schema/control/previews/h10/connectors/platform_release_edition_candidate.v0.json",
       "reasons": [
         "candidate_tool_name_hint",
         "high_risk_hint:release",
@@ -27060,7 +27060,7 @@
       "capability_families": [
         "release"
       ],
-      "command_hint": "review-only command preview for contracts/control_schemas/previews/h11/connectors/version_release_channel_candidate.v0.json",
+      "command_hint": "review-only command preview for contracts/schema/control/previews/h11/connectors/version_release_channel_candidate.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -27073,7 +27073,7 @@
       "language_or_format": "json",
       "name": "version_release_channel_candidate.v0.json",
       "owner": "unknown",
-      "path": "contracts/control_schemas/previews/h11/connectors/version_release_channel_candidate.v0.json",
+      "path": "contracts/schema/control/previews/h11/connectors/version_release_channel_candidate.v0.json",
       "reasons": [
         "candidate_tool_name_hint",
         "high_risk_hint:release",
@@ -27091,7 +27091,7 @@
       "capability_families": [
         "install"
       ],
-      "command_hint": "review-only command preview for contracts/control_schemas/previews/h12/connectors/compatibility_install_note_candidate.v0.json",
+      "command_hint": "review-only command preview for contracts/schema/control/previews/h12/connectors/compatibility_install_note_candidate.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -27104,7 +27104,7 @@
       "language_or_format": "json",
       "name": "compatibility_install_note_candidate.v0.json",
       "owner": "unknown",
-      "path": "contracts/control_schemas/previews/h12/connectors/compatibility_install_note_candidate.v0.json",
+      "path": "contracts/schema/control/previews/h12/connectors/compatibility_install_note_candidate.v0.json",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -27122,7 +27122,7 @@
       "capability_families": [
         "validate"
       ],
-      "command_hint": "review-only command preview for contracts/control_schemas/previews/h12/connectors/hash_checksum_candidate.v0.json",
+      "command_hint": "review-only command preview for contracts/schema/control/previews/h12/connectors/hash_checksum_candidate.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -27135,7 +27135,7 @@
       "language_or_format": "json",
       "name": "hash_checksum_candidate.v0.json",
       "owner": "unknown",
-      "path": "contracts/control_schemas/previews/h12/connectors/hash_checksum_candidate.v0.json",
+      "path": "contracts/schema/control/previews/h12/connectors/hash_checksum_candidate.v0.json",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -27153,7 +27153,7 @@
       "capability_families": [
         "unknown"
       ],
-      "command_hint": "review-only command preview for contracts/control_schemas/previews/h13/connectors/local_cas_import_boundary_candidate.v0.json",
+      "command_hint": "review-only command preview for contracts/schema/control/previews/h13/connectors/local_cas_import_boundary_candidate.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -27166,7 +27166,7 @@
       "language_or_format": "json",
       "name": "local_cas_import_boundary_candidate.v0.json",
       "owner": "unknown",
-      "path": "contracts/control_schemas/previews/h13/connectors/local_cas_import_boundary_candidate.v0.json",
+      "path": "contracts/schema/control/previews/h13/connectors/local_cas_import_boundary_candidate.v0.json",
       "reasons": [
         "candidate_tool_name_hint",
         "insufficient_evidence_for_wrap_plan",
@@ -27184,7 +27184,7 @@
       "capability_families": [
         "context"
       ],
-      "command_hint": "review-only command preview for contracts/control_schemas/previews/h13/connectors/pack_export_import_boundary_candidate.v0.json",
+      "command_hint": "review-only command preview for contracts/schema/control/previews/h13/connectors/pack_export_import_boundary_candidate.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -27197,7 +27197,7 @@
       "language_or_format": "json",
       "name": "pack_export_import_boundary_candidate.v0.json",
       "owner": "unknown",
-      "path": "contracts/control_schemas/previews/h13/connectors/pack_export_import_boundary_candidate.v0.json",
+      "path": "contracts/schema/control/previews/h13/connectors/pack_export_import_boundary_candidate.v0.json",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -27215,7 +27215,7 @@
       "capability_families": [
         "context"
       ],
-      "command_hint": "review-only command preview for contracts/control_schemas/previews/h14/connectors/pack_import_export_boundary_candidate.v0.json",
+      "command_hint": "review-only command preview for contracts/schema/control/previews/h14/connectors/pack_import_export_boundary_candidate.v0.json",
       "docs_refs": [
         "control/audits/r0-remediation-contract-taxonomy-01-v0/resolved_items.md"
       ],
@@ -27230,7 +27230,7 @@
       "language_or_format": "json",
       "name": "pack_import_export_boundary_candidate.v0.json",
       "owner": "unknown",
-      "path": "contracts/control_schemas/previews/h14/connectors/pack_import_export_boundary_candidate.v0.json",
+      "path": "contracts/schema/control/previews/h14/connectors/pack_import_export_boundary_candidate.v0.json",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -27249,7 +27249,7 @@
         "context",
         "package"
       ],
-      "command_hint": "review-only command preview for contracts/control_schemas/previews/h2/connectors/package_connector_health_summary.v0.json",
+      "command_hint": "review-only command preview for contracts/schema/control/previews/h2/connectors/package_connector_health_summary.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -27262,7 +27262,7 @@
       "language_or_format": "json",
       "name": "package_connector_health_summary.v0.json",
       "owner": "unknown",
-      "path": "contracts/control_schemas/previews/h2/connectors/package_connector_health_summary.v0.json",
+      "path": "contracts/schema/control/previews/h2/connectors/package_connector_health_summary.v0.json",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -27282,7 +27282,7 @@
         "context",
         "package"
       ],
-      "command_hint": "review-only command preview for contracts/control_schemas/previews/h2/connectors/package_dependency_candidate.v0.json",
+      "command_hint": "review-only command preview for contracts/schema/control/previews/h2/connectors/package_dependency_candidate.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -27295,7 +27295,7 @@
       "language_or_format": "json",
       "name": "package_dependency_candidate.v0.json",
       "owner": "unknown",
-      "path": "contracts/control_schemas/previews/h2/connectors/package_dependency_candidate.v0.json",
+      "path": "contracts/schema/control/previews/h2/connectors/package_dependency_candidate.v0.json",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -27315,7 +27315,7 @@
         "context",
         "package"
       ],
-      "command_hint": "review-only command preview for contracts/control_schemas/previews/h2/connectors/package_file_candidate.v0.json",
+      "command_hint": "review-only command preview for contracts/schema/control/previews/h2/connectors/package_file_candidate.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -27328,7 +27328,7 @@
       "language_or_format": "json",
       "name": "package_file_candidate.v0.json",
       "owner": "unknown",
-      "path": "contracts/control_schemas/previews/h2/connectors/package_file_candidate.v0.json",
+      "path": "contracts/schema/control/previews/h2/connectors/package_file_candidate.v0.json",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -27348,7 +27348,7 @@
         "context",
         "package"
       ],
-      "command_hint": "review-only command preview for contracts/control_schemas/previews/h2/connectors/package_identity_candidate.v0.json",
+      "command_hint": "review-only command preview for contracts/schema/control/previews/h2/connectors/package_identity_candidate.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -27361,7 +27361,7 @@
       "language_or_format": "json",
       "name": "package_identity_candidate.v0.json",
       "owner": "unknown",
-      "path": "contracts/control_schemas/previews/h2/connectors/package_identity_candidate.v0.json",
+      "path": "contracts/schema/control/previews/h2/connectors/package_identity_candidate.v0.json",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -27381,7 +27381,7 @@
         "context",
         "package"
       ],
-      "command_hint": "review-only command preview for contracts/control_schemas/previews/h2/connectors/package_live_probe_output_bundle.v0.json",
+      "command_hint": "review-only command preview for contracts/schema/control/previews/h2/connectors/package_live_probe_output_bundle.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -27394,7 +27394,7 @@
       "language_or_format": "json",
       "name": "package_live_probe_output_bundle.v0.json",
       "owner": "unknown",
-      "path": "contracts/control_schemas/previews/h2/connectors/package_live_probe_output_bundle.v0.json",
+      "path": "contracts/schema/control/previews/h2/connectors/package_live_probe_output_bundle.v0.json",
       "reasons": [
         "candidate_tool_name_hint",
         "context_hint:pack",
@@ -27414,7 +27414,7 @@
         "context",
         "package"
       ],
-      "command_hint": "review-only command preview for contracts/control_schemas/previews/h2/connectors/package_live_probe_request.v0.json",
+      "command_hint": "review-only command preview for contracts/schema/control/previews/h2/connectors/package_live_probe_request.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -27427,7 +27427,7 @@
       "language_or_format": "json",
       "name": "package_live_probe_request.v0.json",
       "owner": "unknown",
-      "path": "contracts/control_schemas/previews/h2/connectors/package_live_probe_request.v0.json",
+      "path": "contracts/schema/control/previews/h2/connectors/package_live_probe_request.v0.json",
       "reasons": [
         "candidate_tool_name_hint",
         "context_hint:pack",
@@ -27447,7 +27447,7 @@
         "context",
         "package"
       ],
-      "command_hint": "review-only command preview for contracts/control_schemas/previews/h2/connectors/package_live_probe_result.v0.json",
+      "command_hint": "review-only command preview for contracts/schema/control/previews/h2/connectors/package_live_probe_result.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -27460,7 +27460,7 @@
       "language_or_format": "json",
       "name": "package_live_probe_result.v0.json",
       "owner": "unknown",
-      "path": "contracts/control_schemas/previews/h2/connectors/package_live_probe_result.v0.json",
+      "path": "contracts/schema/control/previews/h2/connectors/package_live_probe_result.v0.json",
       "reasons": [
         "candidate_tool_name_hint",
         "context_hint:pack",
@@ -27480,7 +27480,7 @@
         "context",
         "package"
       ],
-      "command_hint": "review-only command preview for contracts/control_schemas/previews/h2/connectors/package_normalized_record.v0.json",
+      "command_hint": "review-only command preview for contracts/schema/control/previews/h2/connectors/package_normalized_record.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -27493,7 +27493,7 @@
       "language_or_format": "json",
       "name": "package_normalized_record.v0.json",
       "owner": "unknown",
-      "path": "contracts/control_schemas/previews/h2/connectors/package_normalized_record.v0.json",
+      "path": "contracts/schema/control/previews/h2/connectors/package_normalized_record.v0.json",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -27513,7 +27513,7 @@
         "context",
         "package"
       ],
-      "command_hint": "review-only command preview for contracts/control_schemas/previews/h3/connectors/os_package_connector_health_summary.v0.json",
+      "command_hint": "review-only command preview for contracts/schema/control/previews/h3/connectors/os_package_connector_health_summary.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -27526,7 +27526,7 @@
       "language_or_format": "json",
       "name": "os_package_connector_health_summary.v0.json",
       "owner": "unknown",
-      "path": "contracts/control_schemas/previews/h3/connectors/os_package_connector_health_summary.v0.json",
+      "path": "contracts/schema/control/previews/h3/connectors/os_package_connector_health_summary.v0.json",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -27546,7 +27546,7 @@
         "context",
         "package"
       ],
-      "command_hint": "review-only command preview for contracts/control_schemas/previews/h3/connectors/os_package_dependency_candidate.v0.json",
+      "command_hint": "review-only command preview for contracts/schema/control/previews/h3/connectors/os_package_dependency_candidate.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -27559,7 +27559,7 @@
       "language_or_format": "json",
       "name": "os_package_dependency_candidate.v0.json",
       "owner": "unknown",
-      "path": "contracts/control_schemas/previews/h3/connectors/os_package_dependency_candidate.v0.json",
+      "path": "contracts/schema/control/previews/h3/connectors/os_package_dependency_candidate.v0.json",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -27579,7 +27579,7 @@
         "context",
         "package"
       ],
-      "command_hint": "review-only command preview for contracts/control_schemas/previews/h3/connectors/os_package_file_candidate.v0.json",
+      "command_hint": "review-only command preview for contracts/schema/control/previews/h3/connectors/os_package_file_candidate.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -27592,7 +27592,7 @@
       "language_or_format": "json",
       "name": "os_package_file_candidate.v0.json",
       "owner": "unknown",
-      "path": "contracts/control_schemas/previews/h3/connectors/os_package_file_candidate.v0.json",
+      "path": "contracts/schema/control/previews/h3/connectors/os_package_file_candidate.v0.json",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -27612,7 +27612,7 @@
         "context",
         "package"
       ],
-      "command_hint": "review-only command preview for contracts/control_schemas/previews/h3/connectors/os_package_identity_candidate.v0.json",
+      "command_hint": "review-only command preview for contracts/schema/control/previews/h3/connectors/os_package_identity_candidate.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -27625,7 +27625,7 @@
       "language_or_format": "json",
       "name": "os_package_identity_candidate.v0.json",
       "owner": "unknown",
-      "path": "contracts/control_schemas/previews/h3/connectors/os_package_identity_candidate.v0.json",
+      "path": "contracts/schema/control/previews/h3/connectors/os_package_identity_candidate.v0.json",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -27645,7 +27645,7 @@
         "context",
         "package"
       ],
-      "command_hint": "review-only command preview for contracts/control_schemas/previews/h3/connectors/os_package_live_probe_output_bundle.v0.json",
+      "command_hint": "review-only command preview for contracts/schema/control/previews/h3/connectors/os_package_live_probe_output_bundle.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -27658,7 +27658,7 @@
       "language_or_format": "json",
       "name": "os_package_live_probe_output_bundle.v0.json",
       "owner": "unknown",
-      "path": "contracts/control_schemas/previews/h3/connectors/os_package_live_probe_output_bundle.v0.json",
+      "path": "contracts/schema/control/previews/h3/connectors/os_package_live_probe_output_bundle.v0.json",
       "reasons": [
         "candidate_tool_name_hint",
         "context_hint:pack",
@@ -27678,7 +27678,7 @@
         "context",
         "package"
       ],
-      "command_hint": "review-only command preview for contracts/control_schemas/previews/h3/connectors/os_package_live_probe_request.v0.json",
+      "command_hint": "review-only command preview for contracts/schema/control/previews/h3/connectors/os_package_live_probe_request.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -27691,7 +27691,7 @@
       "language_or_format": "json",
       "name": "os_package_live_probe_request.v0.json",
       "owner": "unknown",
-      "path": "contracts/control_schemas/previews/h3/connectors/os_package_live_probe_request.v0.json",
+      "path": "contracts/schema/control/previews/h3/connectors/os_package_live_probe_request.v0.json",
       "reasons": [
         "candidate_tool_name_hint",
         "context_hint:pack",
@@ -27711,7 +27711,7 @@
         "context",
         "package"
       ],
-      "command_hint": "review-only command preview for contracts/control_schemas/previews/h3/connectors/os_package_live_probe_result.v0.json",
+      "command_hint": "review-only command preview for contracts/schema/control/previews/h3/connectors/os_package_live_probe_result.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -27724,7 +27724,7 @@
       "language_or_format": "json",
       "name": "os_package_live_probe_result.v0.json",
       "owner": "unknown",
-      "path": "contracts/control_schemas/previews/h3/connectors/os_package_live_probe_result.v0.json",
+      "path": "contracts/schema/control/previews/h3/connectors/os_package_live_probe_result.v0.json",
       "reasons": [
         "candidate_tool_name_hint",
         "context_hint:pack",
@@ -27744,7 +27744,7 @@
         "context",
         "package"
       ],
-      "command_hint": "review-only command preview for contracts/control_schemas/previews/h3/connectors/os_package_normalized_record.v0.json",
+      "command_hint": "review-only command preview for contracts/schema/control/previews/h3/connectors/os_package_normalized_record.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -27757,7 +27757,7 @@
       "language_or_format": "json",
       "name": "os_package_normalized_record.v0.json",
       "owner": "unknown",
-      "path": "contracts/control_schemas/previews/h3/connectors/os_package_normalized_record.v0.json",
+      "path": "contracts/schema/control/previews/h3/connectors/os_package_normalized_record.v0.json",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -27776,7 +27776,7 @@
       "capability_families": [
         "release"
       ],
-      "command_hint": "review-only command preview for contracts/control_schemas/previews/h4/connectors/release_asset_candidate.v0.json",
+      "command_hint": "review-only command preview for contracts/schema/control/previews/h4/connectors/release_asset_candidate.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -27789,7 +27789,7 @@
       "language_or_format": "json",
       "name": "release_asset_candidate.v0.json",
       "owner": "unknown",
-      "path": "contracts/control_schemas/previews/h4/connectors/release_asset_candidate.v0.json",
+      "path": "contracts/schema/control/previews/h4/connectors/release_asset_candidate.v0.json",
       "reasons": [
         "candidate_tool_name_hint",
         "high_risk_hint:release",
@@ -27807,7 +27807,7 @@
       "capability_families": [
         "release"
       ],
-      "command_hint": "review-only command preview for contracts/control_schemas/previews/h4/connectors/release_identity_candidate.v0.json",
+      "command_hint": "review-only command preview for contracts/schema/control/previews/h4/connectors/release_identity_candidate.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -27820,7 +27820,7 @@
       "language_or_format": "json",
       "name": "release_identity_candidate.v0.json",
       "owner": "unknown",
-      "path": "contracts/control_schemas/previews/h4/connectors/release_identity_candidate.v0.json",
+      "path": "contracts/schema/control/previews/h4/connectors/release_identity_candidate.v0.json",
       "reasons": [
         "candidate_tool_name_hint",
         "high_risk_hint:release",
@@ -27838,7 +27838,7 @@
       "capability_families": [
         "install"
       ],
-      "command_hint": "review-only command preview for contracts/control_schemas/previews/h8/connectors/install_requirement_claim_candidate.v0.json",
+      "command_hint": "review-only command preview for contracts/schema/control/previews/h8/connectors/install_requirement_claim_candidate.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -27851,7 +27851,7 @@
       "language_or_format": "json",
       "name": "install_requirement_claim_candidate.v0.json",
       "owner": "unknown",
-      "path": "contracts/control_schemas/previews/h8/connectors/install_requirement_claim_candidate.v0.json",
+      "path": "contracts/schema/control/previews/h8/connectors/install_requirement_claim_candidate.v0.json",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -27869,7 +27869,7 @@
       "capability_families": [
         "release"
       ],
-      "command_hint": "review-only command preview for contracts/control_schemas/previews/h9/connectors/music_work_recording_release_candidate.v0.json",
+      "command_hint": "review-only command preview for contracts/schema/control/previews/h9/connectors/music_work_recording_release_candidate.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -27882,7 +27882,7 @@
       "language_or_format": "json",
       "name": "music_work_recording_release_candidate.v0.json",
       "owner": "unknown",
-      "path": "contracts/control_schemas/previews/h9/connectors/music_work_recording_release_candidate.v0.json",
+      "path": "contracts/schema/control/previews/h9/connectors/music_work_recording_release_candidate.v0.json",
       "reasons": [
         "candidate_tool_name_hint",
         "high_risk_hint:release",
@@ -27900,7 +27900,7 @@
       "capability_families": [
         "release"
       ],
-      "command_hint": "review-only command preview for contracts/control_schemas/previews/native/native_release_candidate_preview.v0.json",
+      "command_hint": "review-only command preview for contracts/schema/control/previews/native/native_release_candidate_preview.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -27913,7 +27913,7 @@
       "language_or_format": "json",
       "name": "native_release_candidate_preview.v0.json",
       "owner": "unknown",
-      "path": "contracts/control_schemas/previews/native/native_release_candidate_preview.v0.json",
+      "path": "contracts/schema/control/previews/native/native_release_candidate_preview.v0.json",
       "reasons": [
         "candidate_tool_name_hint",
         "high_risk_hint:release",
@@ -27931,7 +27931,7 @@
       "capability_families": [
         "context"
       ],
-      "command_hint": "review-only command preview for contracts/control_schemas/previews/packs/pack_import_preview.v0.json",
+      "command_hint": "review-only command preview for contracts/schema/control/previews/packs/pack_import_preview.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -27944,7 +27944,7 @@
       "language_or_format": "json",
       "name": "pack_import_preview.v0.json",
       "owner": "unknown",
-      "path": "contracts/control_schemas/previews/packs/pack_import_preview.v0.json",
+      "path": "contracts/schema/control/previews/packs/pack_import_preview.v0.json",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -27963,7 +27963,7 @@
         "context",
         "package"
       ],
-      "command_hint": "review-only command preview for contracts/control_schemas/tasks/h2/connectors/package_next_phase_recommendation.v0.json",
+      "command_hint": "review-only command preview for contracts/schema/control/tasks/h2/connectors/package_next_phase_recommendation.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -27976,7 +27976,7 @@
       "language_or_format": "json",
       "name": "package_next_phase_recommendation.v0.json",
       "owner": "unknown",
-      "path": "contracts/control_schemas/tasks/h2/connectors/package_next_phase_recommendation.v0.json",
+      "path": "contracts/schema/control/tasks/h2/connectors/package_next_phase_recommendation.v0.json",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -27996,7 +27996,7 @@
         "context",
         "package"
       ],
-      "command_hint": "review-only command preview for contracts/control_schemas/tasks/h3/connectors/os_package_next_phase_recommendation.v0.json",
+      "command_hint": "review-only command preview for contracts/schema/control/tasks/h3/connectors/os_package_next_phase_recommendation.v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -28009,7 +28009,7 @@
       "language_or_format": "json",
       "name": "os_package_next_phase_recommendation.v0.json",
       "owner": "unknown",
-      "path": "contracts/control_schemas/tasks/h3/connectors/os_package_next_phase_recommendation.v0.json",
+      "path": "contracts/schema/control/tasks/h3/connectors/os_package_next_phase_recommendation.v0.json",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -35420,7 +35420,7 @@
       "capability_families": [
         "validate"
       ],
-      "command_hint": "review-only command preview for examples/candidate_index/minimal_absence_candidate_v0/CHECKSUMS.SHA256",
+      "command_hint": "review-only command preview for examples/index/candidate/minimal_absence_candidate_v0/CHECKSUMS.SHA256",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -35433,7 +35433,7 @@
       "language_or_format": "sha256",
       "name": "CHECKSUMS.SHA256",
       "owner": "unknown",
-      "path": "examples/candidate_index/minimal_absence_candidate_v0/CHECKSUMS.SHA256",
+      "path": "examples/index/candidate/minimal_absence_candidate_v0/CHECKSUMS.SHA256",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -35451,7 +35451,7 @@
       "capability_families": [
         "validate"
       ],
-      "command_hint": "review-only command preview for examples/candidate_index/minimal_conflict_candidate_v0/CHECKSUMS.SHA256",
+      "command_hint": "review-only command preview for examples/index/candidate/minimal_conflict_candidate_v0/CHECKSUMS.SHA256",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -35464,7 +35464,7 @@
       "language_or_format": "sha256",
       "name": "CHECKSUMS.SHA256",
       "owner": "unknown",
-      "path": "examples/candidate_index/minimal_conflict_candidate_v0/CHECKSUMS.SHA256",
+      "path": "examples/index/candidate/minimal_conflict_candidate_v0/CHECKSUMS.SHA256",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -35482,7 +35482,7 @@
       "capability_families": [
         "validate"
       ],
-      "command_hint": "review-only command preview for examples/candidate_index/minimal_evidence_candidate_v0/CHECKSUMS.SHA256",
+      "command_hint": "review-only command preview for examples/index/candidate/minimal_evidence_candidate_v0/CHECKSUMS.SHA256",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -35495,7 +35495,7 @@
       "language_or_format": "sha256",
       "name": "CHECKSUMS.SHA256",
       "owner": "unknown",
-      "path": "examples/candidate_index/minimal_evidence_candidate_v0/CHECKSUMS.SHA256",
+      "path": "examples/index/candidate/minimal_evidence_candidate_v0/CHECKSUMS.SHA256",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -35513,7 +35513,7 @@
       "capability_families": [
         "validate"
       ],
-      "command_hint": "review-only command preview for examples/candidate_index/minimal_object_candidate_v0/CHECKSUMS.SHA256",
+      "command_hint": "review-only command preview for examples/index/candidate/minimal_object_candidate_v0/CHECKSUMS.SHA256",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -35526,7 +35526,7 @@
       "language_or_format": "sha256",
       "name": "CHECKSUMS.SHA256",
       "owner": "unknown",
-      "path": "examples/candidate_index/minimal_object_candidate_v0/CHECKSUMS.SHA256",
+      "path": "examples/index/candidate/minimal_object_candidate_v0/CHECKSUMS.SHA256",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -35544,7 +35544,7 @@
       "capability_families": [
         "validate"
       ],
-      "command_hint": "review-only command preview for examples/candidate_promotion/minimal_promotion_review_required_v0/CHECKSUMS.SHA256",
+      "command_hint": "review-only command preview for examples/review/candidate_promotion/minimal_promotion_review_required_v0/CHECKSUMS.SHA256",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -35557,7 +35557,7 @@
       "language_or_format": "sha256",
       "name": "CHECKSUMS.SHA256",
       "owner": "unknown",
-      "path": "examples/candidate_promotion/minimal_promotion_review_required_v0/CHECKSUMS.SHA256",
+      "path": "examples/review/candidate_promotion/minimal_promotion_review_required_v0/CHECKSUMS.SHA256",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -35575,7 +35575,7 @@
       "capability_families": [
         "validate"
       ],
-      "command_hint": "review-only command preview for examples/candidate_promotion/minimal_quarantine_assessment_v0/CHECKSUMS.SHA256",
+      "command_hint": "review-only command preview for examples/review/candidate_promotion/minimal_quarantine_assessment_v0/CHECKSUMS.SHA256",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -35588,7 +35588,7 @@
       "language_or_format": "sha256",
       "name": "CHECKSUMS.SHA256",
       "owner": "unknown",
-      "path": "examples/candidate_promotion/minimal_quarantine_assessment_v0/CHECKSUMS.SHA256",
+      "path": "examples/review/candidate_promotion/minimal_quarantine_assessment_v0/CHECKSUMS.SHA256",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -35606,7 +35606,7 @@
       "capability_families": [
         "validate"
       ],
-      "command_hint": "review-only command preview for examples/candidate_promotion/minimal_rejection_assessment_v0/CHECKSUMS.SHA256",
+      "command_hint": "review-only command preview for examples/review/candidate_promotion/minimal_rejection_assessment_v0/CHECKSUMS.SHA256",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -35619,7 +35619,7 @@
       "language_or_format": "sha256",
       "name": "CHECKSUMS.SHA256",
       "owner": "unknown",
-      "path": "examples/candidate_promotion/minimal_rejection_assessment_v0/CHECKSUMS.SHA256",
+      "path": "examples/review/candidate_promotion/minimal_rejection_assessment_v0/CHECKSUMS.SHA256",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -35637,7 +35637,7 @@
       "capability_families": [
         "validate"
       ],
-      "command_hint": "review-only command preview for examples/candidate_promotion/minimal_supersession_assessment_v0/CHECKSUMS.SHA256",
+      "command_hint": "review-only command preview for examples/review/candidate_promotion/minimal_supersession_assessment_v0/CHECKSUMS.SHA256",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -35650,7 +35650,7 @@
       "language_or_format": "sha256",
       "name": "CHECKSUMS.SHA256",
       "owner": "unknown",
-      "path": "examples/candidate_promotion/minimal_supersession_assessment_v0/CHECKSUMS.SHA256",
+      "path": "examples/review/candidate_promotion/minimal_supersession_assessment_v0/CHECKSUMS.SHA256",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -35823,7 +35823,7 @@
       "capability_families": [
         "validate"
       ],
-      "command_hint": "review-only command preview for examples/compatibility_aware_ranking/minimal_architecture_compatibility_ranking_v0/CHECKSUMS.SHA256",
+      "command_hint": "review-only command preview for examples/search/compatibility_aware_ranking/minimal_architecture_compatibility_ranking_v0/CHECKSUMS.SHA256",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -35836,7 +35836,7 @@
       "language_or_format": "sha256",
       "name": "CHECKSUMS.SHA256",
       "owner": "unknown",
-      "path": "examples/compatibility_aware_ranking/minimal_architecture_compatibility_ranking_v0/CHECKSUMS.SHA256",
+      "path": "examples/search/compatibility_aware_ranking/minimal_architecture_compatibility_ranking_v0/CHECKSUMS.SHA256",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -35854,7 +35854,7 @@
       "capability_families": [
         "validate"
       ],
-      "command_hint": "review-only command preview for examples/compatibility_aware_ranking/minimal_conflicting_compatibility_ranking_v0/CHECKSUMS.SHA256",
+      "command_hint": "review-only command preview for examples/search/compatibility_aware_ranking/minimal_conflicting_compatibility_ranking_v0/CHECKSUMS.SHA256",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -35867,7 +35867,7 @@
       "language_or_format": "sha256",
       "name": "CHECKSUMS.SHA256",
       "owner": "unknown",
-      "path": "examples/compatibility_aware_ranking/minimal_conflicting_compatibility_ranking_v0/CHECKSUMS.SHA256",
+      "path": "examples/search/compatibility_aware_ranking/minimal_conflicting_compatibility_ranking_v0/CHECKSUMS.SHA256",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -35885,7 +35885,7 @@
       "capability_families": [
         "validate"
       ],
-      "command_hint": "review-only command preview for examples/compatibility_aware_ranking/minimal_dependency_gap_ranking_v0/CHECKSUMS.SHA256",
+      "command_hint": "review-only command preview for examples/search/compatibility_aware_ranking/minimal_dependency_gap_ranking_v0/CHECKSUMS.SHA256",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -35898,7 +35898,7 @@
       "language_or_format": "sha256",
       "name": "CHECKSUMS.SHA256",
       "owner": "unknown",
-      "path": "examples/compatibility_aware_ranking/minimal_dependency_gap_ranking_v0/CHECKSUMS.SHA256",
+      "path": "examples/search/compatibility_aware_ranking/minimal_dependency_gap_ranking_v0/CHECKSUMS.SHA256",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -35916,7 +35916,7 @@
       "capability_families": [
         "validate"
       ],
-      "command_hint": "review-only command preview for examples/compatibility_aware_ranking/minimal_emulator_vm_feasibility_ranking_v0/CHECKSUMS.SHA256",
+      "command_hint": "review-only command preview for examples/search/compatibility_aware_ranking/minimal_emulator_vm_feasibility_ranking_v0/CHECKSUMS.SHA256",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -35929,7 +35929,7 @@
       "language_or_format": "sha256",
       "name": "CHECKSUMS.SHA256",
       "owner": "unknown",
-      "path": "examples/compatibility_aware_ranking/minimal_emulator_vm_feasibility_ranking_v0/CHECKSUMS.SHA256",
+      "path": "examples/search/compatibility_aware_ranking/minimal_emulator_vm_feasibility_ranking_v0/CHECKSUMS.SHA256",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -35947,7 +35947,7 @@
       "capability_families": [
         "validate"
       ],
-      "command_hint": "review-only command preview for examples/compatibility_aware_ranking/minimal_os_compatibility_ranking_v0/CHECKSUMS.SHA256",
+      "command_hint": "review-only command preview for examples/search/compatibility_aware_ranking/minimal_os_compatibility_ranking_v0/CHECKSUMS.SHA256",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -35960,7 +35960,7 @@
       "language_or_format": "sha256",
       "name": "CHECKSUMS.SHA256",
       "owner": "unknown",
-      "path": "examples/compatibility_aware_ranking/minimal_os_compatibility_ranking_v0/CHECKSUMS.SHA256",
+      "path": "examples/search/compatibility_aware_ranking/minimal_os_compatibility_ranking_v0/CHECKSUMS.SHA256",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -35978,7 +35978,7 @@
       "capability_families": [
         "validate"
       ],
-      "command_hint": "review-only command preview for examples/compatibility_aware_ranking/minimal_unknown_compatibility_gap_v0/CHECKSUMS.SHA256",
+      "command_hint": "review-only command preview for examples/search/compatibility_aware_ranking/minimal_unknown_compatibility_gap_v0/CHECKSUMS.SHA256",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -35991,7 +35991,7 @@
       "language_or_format": "sha256",
       "name": "CHECKSUMS.SHA256",
       "owner": "unknown",
-      "path": "examples/compatibility_aware_ranking/minimal_unknown_compatibility_gap_v0/CHECKSUMS.SHA256",
+      "path": "examples/search/compatibility_aware_ranking/minimal_unknown_compatibility_gap_v0/CHECKSUMS.SHA256",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -43572,7 +43572,7 @@
         "context",
         "validate"
       ],
-      "command_hint": "review-only command preview for examples/contribution_packs/minimal_contribution_pack_v0/CHECKSUMS.SHA256",
+      "command_hint": "review-only command preview for examples/packs/contribution/minimal_contribution_pack_v0/CHECKSUMS.SHA256",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -43585,7 +43585,7 @@
       "language_or_format": "sha256",
       "name": "CHECKSUMS.SHA256",
       "owner": "unknown",
-      "path": "examples/contribution_packs/minimal_contribution_pack_v0/CHECKSUMS.SHA256",
+      "path": "examples/packs/contribution/minimal_contribution_pack_v0/CHECKSUMS.SHA256",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -43668,7 +43668,7 @@
       "capability_families": [
         "validate"
       ],
-      "command_hint": "review-only command preview for examples/evidence_ledger/dry_run/minimal_availability_observation/CHECKSUMS.SHA256",
+      "command_hint": "review-only command preview for examples/evidence/ledger/dry_run/dry_run/minimal_availability_observation/CHECKSUMS.SHA256",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -43681,7 +43681,7 @@
       "language_or_format": "sha256",
       "name": "CHECKSUMS.SHA256",
       "owner": "unknown",
-      "path": "examples/evidence_ledger/dry_run/minimal_availability_observation/CHECKSUMS.SHA256",
+      "path": "examples/evidence/ledger/dry_run/dry_run/minimal_availability_observation/CHECKSUMS.SHA256",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -43699,7 +43699,7 @@
       "capability_families": [
         "validate"
       ],
-      "command_hint": "review-only command preview for examples/evidence_ledger/dry_run/minimal_capture_presence_observation/CHECKSUMS.SHA256",
+      "command_hint": "review-only command preview for examples/evidence/ledger/dry_run/dry_run/minimal_capture_presence_observation/CHECKSUMS.SHA256",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -43712,7 +43712,7 @@
       "language_or_format": "sha256",
       "name": "CHECKSUMS.SHA256",
       "owner": "unknown",
-      "path": "examples/evidence_ledger/dry_run/minimal_capture_presence_observation/CHECKSUMS.SHA256",
+      "path": "examples/evidence/ledger/dry_run/dry_run/minimal_capture_presence_observation/CHECKSUMS.SHA256",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -43730,7 +43730,7 @@
       "capability_families": [
         "validate"
       ],
-      "command_hint": "review-only command preview for examples/evidence_ledger/dry_run/minimal_conflicting_claim_observation/CHECKSUMS.SHA256",
+      "command_hint": "review-only command preview for examples/evidence/ledger/dry_run/dry_run/minimal_conflicting_claim_observation/CHECKSUMS.SHA256",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -43743,7 +43743,7 @@
       "language_or_format": "sha256",
       "name": "CHECKSUMS.SHA256",
       "owner": "unknown",
-      "path": "examples/evidence_ledger/dry_run/minimal_conflicting_claim_observation/CHECKSUMS.SHA256",
+      "path": "examples/evidence/ledger/dry_run/dry_run/minimal_conflicting_claim_observation/CHECKSUMS.SHA256",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -43763,7 +43763,7 @@
         "package",
         "validate"
       ],
-      "command_hint": "review-only command preview for examples/evidence_ledger/dry_run/minimal_package_metadata_observation/CHECKSUMS.SHA256",
+      "command_hint": "review-only command preview for examples/evidence/ledger/dry_run/dry_run/minimal_package_metadata_observation/CHECKSUMS.SHA256",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -43776,7 +43776,7 @@
       "language_or_format": "sha256",
       "name": "CHECKSUMS.SHA256",
       "owner": "unknown",
-      "path": "examples/evidence_ledger/dry_run/minimal_package_metadata_observation/CHECKSUMS.SHA256",
+      "path": "examples/evidence/ledger/dry_run/dry_run/minimal_package_metadata_observation/CHECKSUMS.SHA256",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -43797,7 +43797,7 @@
         "release",
         "validate"
       ],
-      "command_hint": "review-only command preview for examples/evidence_ledger/dry_run/minimal_release_metadata_observation/CHECKSUMS.SHA256",
+      "command_hint": "review-only command preview for examples/evidence/ledger/dry_run/dry_run/minimal_release_metadata_observation/CHECKSUMS.SHA256",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -43810,7 +43810,7 @@
       "language_or_format": "sha256",
       "name": "CHECKSUMS.SHA256",
       "owner": "unknown",
-      "path": "examples/evidence_ledger/dry_run/minimal_release_metadata_observation/CHECKSUMS.SHA256",
+      "path": "examples/evidence/ledger/dry_run/dry_run/minimal_release_metadata_observation/CHECKSUMS.SHA256",
       "reasons": [
         "candidate_tool_name_hint",
         "high_risk_hint:release",
@@ -43829,7 +43829,7 @@
       "capability_families": [
         "validate"
       ],
-      "command_hint": "review-only command preview for examples/evidence_ledger/dry_run/minimal_scoped_absence_observation/CHECKSUMS.SHA256",
+      "command_hint": "review-only command preview for examples/evidence/ledger/dry_run/dry_run/minimal_scoped_absence_observation/CHECKSUMS.SHA256",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -43842,7 +43842,7 @@
       "language_or_format": "sha256",
       "name": "CHECKSUMS.SHA256",
       "owner": "unknown",
-      "path": "examples/evidence_ledger/dry_run/minimal_scoped_absence_observation/CHECKSUMS.SHA256",
+      "path": "examples/evidence/ledger/dry_run/dry_run/minimal_scoped_absence_observation/CHECKSUMS.SHA256",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -43860,7 +43860,7 @@
       "capability_families": [
         "validate"
       ],
-      "command_hint": "review-only command preview for examples/evidence_ledger/dry_run/minimal_source_metadata_observation/CHECKSUMS.SHA256",
+      "command_hint": "review-only command preview for examples/evidence/ledger/dry_run/dry_run/minimal_source_metadata_observation/CHECKSUMS.SHA256",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -43873,7 +43873,7 @@
       "language_or_format": "sha256",
       "name": "CHECKSUMS.SHA256",
       "owner": "unknown",
-      "path": "examples/evidence_ledger/dry_run/minimal_source_metadata_observation/CHECKSUMS.SHA256",
+      "path": "examples/evidence/ledger/dry_run/dry_run/minimal_source_metadata_observation/CHECKSUMS.SHA256",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -43891,7 +43891,7 @@
       "capability_families": [
         "validate"
       ],
-      "command_hint": "review-only command preview for examples/evidence_ledger/minimal_absence_evidence_observation_v0/CHECKSUMS.SHA256",
+      "command_hint": "review-only command preview for examples/evidence/ledger/dry_run/minimal_absence_evidence_observation_v0/CHECKSUMS.SHA256",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -43904,7 +43904,7 @@
       "language_or_format": "sha256",
       "name": "CHECKSUMS.SHA256",
       "owner": "unknown",
-      "path": "examples/evidence_ledger/minimal_absence_evidence_observation_v0/CHECKSUMS.SHA256",
+      "path": "examples/evidence/ledger/dry_run/minimal_absence_evidence_observation_v0/CHECKSUMS.SHA256",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -43922,7 +43922,7 @@
       "capability_families": [
         "validate"
       ],
-      "command_hint": "review-only command preview for examples/evidence_ledger/minimal_compatibility_evidence_observation_v0/CHECKSUMS.SHA256",
+      "command_hint": "review-only command preview for examples/evidence/ledger/dry_run/minimal_compatibility_evidence_observation_v0/CHECKSUMS.SHA256",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -43935,7 +43935,7 @@
       "language_or_format": "sha256",
       "name": "CHECKSUMS.SHA256",
       "owner": "unknown",
-      "path": "examples/evidence_ledger/minimal_compatibility_evidence_observation_v0/CHECKSUMS.SHA256",
+      "path": "examples/evidence/ledger/dry_run/minimal_compatibility_evidence_observation_v0/CHECKSUMS.SHA256",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -43953,7 +43953,7 @@
       "capability_families": [
         "validate"
       ],
-      "command_hint": "review-only command preview for examples/evidence_ledger/minimal_source_metadata_evidence_v0/CHECKSUMS.SHA256",
+      "command_hint": "review-only command preview for examples/evidence/ledger/dry_run/minimal_source_metadata_evidence_v0/CHECKSUMS.SHA256",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -43966,7 +43966,7 @@
       "language_or_format": "sha256",
       "name": "CHECKSUMS.SHA256",
       "owner": "unknown",
-      "path": "examples/evidence_ledger/minimal_source_metadata_evidence_v0/CHECKSUMS.SHA256",
+      "path": "examples/evidence/ledger/dry_run/minimal_source_metadata_evidence_v0/CHECKSUMS.SHA256",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -43984,7 +43984,7 @@
       "capability_families": [
         "validate"
       ],
-      "command_hint": "review-only command preview for examples/evidence_ledger_records/checksum_claim_record_v0.json",
+      "command_hint": "review-only command preview for examples/evidence/ledger/records/checksum_claim_record_v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -43997,7 +43997,7 @@
       "language_or_format": "json",
       "name": "checksum_claim_record_v0.json",
       "owner": "unknown",
-      "path": "examples/evidence_ledger_records/checksum_claim_record_v0.json",
+      "path": "examples/evidence/ledger/records/checksum_claim_record_v0.json",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -44016,7 +44016,7 @@
         "context",
         "validate"
       ],
-      "command_hint": "review-only command preview for examples/evidence_packs/minimal_evidence_pack_v0/CHECKSUMS.SHA256",
+      "command_hint": "review-only command preview for examples/packs/evidence/minimal_evidence_pack_v0/CHECKSUMS.SHA256",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -44029,7 +44029,7 @@
       "language_or_format": "sha256",
       "name": "CHECKSUMS.SHA256",
       "owner": "unknown",
-      "path": "examples/evidence_packs/minimal_evidence_pack_v0/CHECKSUMS.SHA256",
+      "path": "examples/packs/evidence/minimal_evidence_pack_v0/CHECKSUMS.SHA256",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -44048,7 +44048,7 @@
       "capability_families": [
         "validate"
       ],
-      "command_hint": "review-only command preview for examples/evidence_weighted_ranking/minimal_absence_gap_ranking_v0/CHECKSUMS.SHA256",
+      "command_hint": "review-only command preview for examples/evidence/weighted_ranking/minimal_absence_gap_ranking_v0/CHECKSUMS.SHA256",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -44061,7 +44061,7 @@
       "language_or_format": "sha256",
       "name": "CHECKSUMS.SHA256",
       "owner": "unknown",
-      "path": "examples/evidence_weighted_ranking/minimal_absence_gap_ranking_v0/CHECKSUMS.SHA256",
+      "path": "examples/evidence/weighted_ranking/minimal_absence_gap_ranking_v0/CHECKSUMS.SHA256",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -44079,7 +44079,7 @@
       "capability_families": [
         "validate"
       ],
-      "command_hint": "review-only command preview for examples/evidence_weighted_ranking/minimal_candidate_only_ranking_v0/CHECKSUMS.SHA256",
+      "command_hint": "review-only command preview for examples/evidence/weighted_ranking/minimal_candidate_only_ranking_v0/CHECKSUMS.SHA256",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -44092,7 +44092,7 @@
       "language_or_format": "sha256",
       "name": "CHECKSUMS.SHA256",
       "owner": "unknown",
-      "path": "examples/evidence_weighted_ranking/minimal_candidate_only_ranking_v0/CHECKSUMS.SHA256",
+      "path": "examples/evidence/weighted_ranking/minimal_candidate_only_ranking_v0/CHECKSUMS.SHA256",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -44110,7 +44110,7 @@
       "capability_families": [
         "validate"
       ],
-      "command_hint": "review-only command preview for examples/evidence_weighted_ranking/minimal_conflicting_evidence_ranking_v0/CHECKSUMS.SHA256",
+      "command_hint": "review-only command preview for examples/evidence/weighted_ranking/minimal_conflicting_evidence_ranking_v0/CHECKSUMS.SHA256",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -44123,7 +44123,7 @@
       "language_or_format": "sha256",
       "name": "CHECKSUMS.SHA256",
       "owner": "unknown",
-      "path": "examples/evidence_weighted_ranking/minimal_conflicting_evidence_ranking_v0/CHECKSUMS.SHA256",
+      "path": "examples/evidence/weighted_ranking/minimal_conflicting_evidence_ranking_v0/CHECKSUMS.SHA256",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -44141,7 +44141,7 @@
       "capability_families": [
         "validate"
       ],
-      "command_hint": "review-only command preview for examples/evidence_weighted_ranking/minimal_strong_evidence_ranking_v0/CHECKSUMS.SHA256",
+      "command_hint": "review-only command preview for examples/evidence/weighted_ranking/minimal_strong_evidence_ranking_v0/CHECKSUMS.SHA256",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -44154,7 +44154,7 @@
       "language_or_format": "sha256",
       "name": "CHECKSUMS.SHA256",
       "owner": "unknown",
-      "path": "examples/evidence_weighted_ranking/minimal_strong_evidence_ranking_v0/CHECKSUMS.SHA256",
+      "path": "examples/evidence/weighted_ranking/minimal_strong_evidence_ranking_v0/CHECKSUMS.SHA256",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -44172,7 +44172,7 @@
       "capability_families": [
         "validate"
       ],
-      "command_hint": "review-only command preview for examples/evidence_weighted_ranking/minimal_weak_evidence_ranking_v0/CHECKSUMS.SHA256",
+      "command_hint": "review-only command preview for examples/evidence/weighted_ranking/minimal_weak_evidence_ranking_v0/CHECKSUMS.SHA256",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -44185,7 +44185,7 @@
       "language_or_format": "sha256",
       "name": "CHECKSUMS.SHA256",
       "owner": "unknown",
-      "path": "examples/evidence_weighted_ranking/minimal_weak_evidence_ranking_v0/CHECKSUMS.SHA256",
+      "path": "examples/evidence/weighted_ranking/minimal_weak_evidence_ranking_v0/CHECKSUMS.SHA256",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -44974,7 +44974,7 @@
         "context",
         "validate"
       ],
-      "command_hint": "review-only command preview for examples/index_packs/minimal_index_pack_v0/CHECKSUMS.SHA256",
+      "command_hint": "review-only command preview for examples/packs/index/minimal_index_pack_v0/CHECKSUMS.SHA256",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -44987,7 +44987,7 @@
       "language_or_format": "sha256",
       "name": "CHECKSUMS.SHA256",
       "owner": "unknown",
-      "path": "examples/index_packs/minimal_index_pack_v0/CHECKSUMS.SHA256",
+      "path": "examples/packs/index/minimal_index_pack_v0/CHECKSUMS.SHA256",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -45898,7 +45898,7 @@
         "context",
         "repo_policy"
       ],
-      "command_hint": "review-only command preview for examples/pack_builder/policy_blocked_pack_build_case_v0.json",
+      "command_hint": "review-only command preview for examples/packs/builder/policy_blocked_pack_build_case_v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -45911,7 +45911,7 @@
       "language_or_format": "json",
       "name": "policy_blocked_pack_build_case_v0.json",
       "owner": "unknown",
-      "path": "examples/pack_builder/policy_blocked_pack_build_case_v0.json",
+      "path": "examples/packs/builder/policy_blocked_pack_build_case_v0.json",
       "reasons": [
         "build_hint:build",
         "candidate_capability_can_be_future_wrapped",
@@ -45931,7 +45931,7 @@
       "capability_families": [
         "context"
       ],
-      "command_hint": "review-only command preview for examples/pack_exports/contribution_pack_export_v0.json",
+      "command_hint": "review-only command preview for examples/packs/exports/contribution_pack_export_v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -45944,7 +45944,7 @@
       "language_or_format": "json",
       "name": "contribution_pack_export_v0.json",
       "owner": "unknown",
-      "path": "examples/pack_exports/contribution_pack_export_v0.json",
+      "path": "examples/packs/exports/contribution_pack_export_v0.json",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -45962,7 +45962,7 @@
       "capability_families": [
         "context"
       ],
-      "command_hint": "review-only command preview for examples/pack_exports/evidence_pack_export_v0.json",
+      "command_hint": "review-only command preview for examples/packs/exports/evidence_pack_export_v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -45975,7 +45975,7 @@
       "language_or_format": "json",
       "name": "evidence_pack_export_v0.json",
       "owner": "unknown",
-      "path": "examples/pack_exports/evidence_pack_export_v0.json",
+      "path": "examples/packs/exports/evidence_pack_export_v0.json",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -45993,7 +45993,7 @@
       "capability_families": [
         "context"
       ],
-      "command_hint": "review-only command preview for examples/pack_exports/index_pack_preview_export_v0.json",
+      "command_hint": "review-only command preview for examples/packs/exports/index_pack_preview_export_v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -46006,7 +46006,7 @@
       "language_or_format": "json",
       "name": "index_pack_preview_export_v0.json",
       "owner": "unknown",
-      "path": "examples/pack_exports/index_pack_preview_export_v0.json",
+      "path": "examples/packs/exports/index_pack_preview_export_v0.json",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -46025,7 +46025,7 @@
         "context",
         "repo_policy"
       ],
-      "command_hint": "review-only command preview for examples/pack_exports/policy_blocked_pack_export_v0.json",
+      "command_hint": "review-only command preview for examples/packs/exports/policy_blocked_pack_export_v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -46038,7 +46038,7 @@
       "language_or_format": "json",
       "name": "policy_blocked_pack_export_v0.json",
       "owner": "unknown",
-      "path": "examples/pack_exports/policy_blocked_pack_export_v0.json",
+      "path": "examples/packs/exports/policy_blocked_pack_export_v0.json",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -46057,7 +46057,7 @@
       "capability_families": [
         "context"
       ],
-      "command_hint": "review-only command preview for examples/pack_exports/review_pack_export_v0.json",
+      "command_hint": "review-only command preview for examples/packs/exports/review_pack_export_v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -46070,7 +46070,7 @@
       "language_or_format": "json",
       "name": "review_pack_export_v0.json",
       "owner": "unknown",
-      "path": "examples/pack_exports/review_pack_export_v0.json",
+      "path": "examples/packs/exports/review_pack_export_v0.json",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -46088,7 +46088,7 @@
       "capability_families": [
         "context"
       ],
-      "command_hint": "review-only command preview for examples/pack_exports/source_pack_export_v0.json",
+      "command_hint": "review-only command preview for examples/packs/exports/source_pack_export_v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -46101,7 +46101,7 @@
       "language_or_format": "json",
       "name": "source_pack_export_v0.json",
       "owner": "unknown",
-      "path": "examples/pack_exports/source_pack_export_v0.json",
+      "path": "examples/packs/exports/source_pack_export_v0.json",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -46120,7 +46120,7 @@
         "context",
         "validate"
       ],
-      "command_hint": "review-only command preview for examples/pack_import_dry_run/minimal_contribution_pack_review/CHECKSUMS.SHA256",
+      "command_hint": "review-only command preview for examples/packs/import_dry_run/minimal_contribution_pack_review/CHECKSUMS.SHA256",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -46133,7 +46133,7 @@
       "language_or_format": "sha256",
       "name": "CHECKSUMS.SHA256",
       "owner": "unknown",
-      "path": "examples/pack_import_dry_run/minimal_contribution_pack_review/CHECKSUMS.SHA256",
+      "path": "examples/packs/import_dry_run/minimal_contribution_pack_review/CHECKSUMS.SHA256",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -46152,7 +46152,7 @@
       "capability_families": [
         "context"
       ],
-      "command_hint": "review-only command preview for examples/pack_import_dry_run/minimal_contribution_pack_review/PACK_IMPORT_DRY_RUN_INPUT.json",
+      "command_hint": "review-only command preview for examples/packs/import_dry_run/minimal_contribution_pack_review/PACK_IMPORT_DRY_RUN_INPUT.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -46165,7 +46165,7 @@
       "language_or_format": "json",
       "name": "PACK_IMPORT_DRY_RUN_INPUT.json",
       "owner": "unknown",
-      "path": "examples/pack_import_dry_run/minimal_contribution_pack_review/PACK_IMPORT_DRY_RUN_INPUT.json",
+      "path": "examples/packs/import_dry_run/minimal_contribution_pack_review/PACK_IMPORT_DRY_RUN_INPUT.json",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -46184,7 +46184,7 @@
         "context",
         "validate"
       ],
-      "command_hint": "review-only command preview for examples/pack_import_dry_run/minimal_evidence_pack_import/CHECKSUMS.SHA256",
+      "command_hint": "review-only command preview for examples/packs/import_dry_run/minimal_evidence_pack_import/CHECKSUMS.SHA256",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -46197,7 +46197,7 @@
       "language_or_format": "sha256",
       "name": "CHECKSUMS.SHA256",
       "owner": "unknown",
-      "path": "examples/pack_import_dry_run/minimal_evidence_pack_import/CHECKSUMS.SHA256",
+      "path": "examples/packs/import_dry_run/minimal_evidence_pack_import/CHECKSUMS.SHA256",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -46216,7 +46216,7 @@
       "capability_families": [
         "context"
       ],
-      "command_hint": "review-only command preview for examples/pack_import_dry_run/minimal_evidence_pack_import/PACK_IMPORT_DRY_RUN_INPUT.json",
+      "command_hint": "review-only command preview for examples/packs/import_dry_run/minimal_evidence_pack_import/PACK_IMPORT_DRY_RUN_INPUT.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -46229,7 +46229,7 @@
       "language_or_format": "json",
       "name": "PACK_IMPORT_DRY_RUN_INPUT.json",
       "owner": "unknown",
-      "path": "examples/pack_import_dry_run/minimal_evidence_pack_import/PACK_IMPORT_DRY_RUN_INPUT.json",
+      "path": "examples/packs/import_dry_run/minimal_evidence_pack_import/PACK_IMPORT_DRY_RUN_INPUT.json",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -46248,7 +46248,7 @@
         "context",
         "validate"
       ],
-      "command_hint": "review-only command preview for examples/pack_import_dry_run/minimal_index_pack_compare/CHECKSUMS.SHA256",
+      "command_hint": "review-only command preview for examples/packs/import_dry_run/minimal_index_pack_compare/CHECKSUMS.SHA256",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -46261,7 +46261,7 @@
       "language_or_format": "sha256",
       "name": "CHECKSUMS.SHA256",
       "owner": "unknown",
-      "path": "examples/pack_import_dry_run/minimal_index_pack_compare/CHECKSUMS.SHA256",
+      "path": "examples/packs/import_dry_run/minimal_index_pack_compare/CHECKSUMS.SHA256",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -46280,7 +46280,7 @@
       "capability_families": [
         "context"
       ],
-      "command_hint": "review-only command preview for examples/pack_import_dry_run/minimal_index_pack_compare/PACK_IMPORT_DRY_RUN_INPUT.json",
+      "command_hint": "review-only command preview for examples/packs/import_dry_run/minimal_index_pack_compare/PACK_IMPORT_DRY_RUN_INPUT.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -46293,7 +46293,7 @@
       "language_or_format": "json",
       "name": "PACK_IMPORT_DRY_RUN_INPUT.json",
       "owner": "unknown",
-      "path": "examples/pack_import_dry_run/minimal_index_pack_compare/PACK_IMPORT_DRY_RUN_INPUT.json",
+      "path": "examples/packs/import_dry_run/minimal_index_pack_compare/PACK_IMPORT_DRY_RUN_INPUT.json",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -46312,7 +46312,7 @@
         "context",
         "validate"
       ],
-      "command_hint": "review-only command preview for examples/pack_import_dry_run/minimal_pack_set_import/CHECKSUMS.SHA256",
+      "command_hint": "review-only command preview for examples/packs/import_dry_run/minimal_pack_set_import/CHECKSUMS.SHA256",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -46325,7 +46325,7 @@
       "language_or_format": "sha256",
       "name": "CHECKSUMS.SHA256",
       "owner": "unknown",
-      "path": "examples/pack_import_dry_run/minimal_pack_set_import/CHECKSUMS.SHA256",
+      "path": "examples/packs/import_dry_run/minimal_pack_set_import/CHECKSUMS.SHA256",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -46344,7 +46344,7 @@
       "capability_families": [
         "context"
       ],
-      "command_hint": "review-only command preview for examples/pack_import_dry_run/minimal_pack_set_import/PACK_IMPORT_DRY_RUN_INPUT.json",
+      "command_hint": "review-only command preview for examples/packs/import_dry_run/minimal_pack_set_import/PACK_IMPORT_DRY_RUN_INPUT.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -46357,7 +46357,7 @@
       "language_or_format": "json",
       "name": "PACK_IMPORT_DRY_RUN_INPUT.json",
       "owner": "unknown",
-      "path": "examples/pack_import_dry_run/minimal_pack_set_import/PACK_IMPORT_DRY_RUN_INPUT.json",
+      "path": "examples/packs/import_dry_run/minimal_pack_set_import/PACK_IMPORT_DRY_RUN_INPUT.json",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -46376,7 +46376,7 @@
         "context",
         "validate"
       ],
-      "command_hint": "review-only command preview for examples/pack_import_dry_run/minimal_source_pack_import/CHECKSUMS.SHA256",
+      "command_hint": "review-only command preview for examples/packs/import_dry_run/minimal_source_pack_import/CHECKSUMS.SHA256",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -46389,7 +46389,7 @@
       "language_or_format": "sha256",
       "name": "CHECKSUMS.SHA256",
       "owner": "unknown",
-      "path": "examples/pack_import_dry_run/minimal_source_pack_import/CHECKSUMS.SHA256",
+      "path": "examples/packs/import_dry_run/minimal_source_pack_import/CHECKSUMS.SHA256",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -46408,7 +46408,7 @@
       "capability_families": [
         "context"
       ],
-      "command_hint": "review-only command preview for examples/pack_import_dry_run/minimal_source_pack_import/PACK_IMPORT_DRY_RUN_INPUT.json",
+      "command_hint": "review-only command preview for examples/packs/import_dry_run/minimal_source_pack_import/PACK_IMPORT_DRY_RUN_INPUT.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -46421,7 +46421,7 @@
       "language_or_format": "json",
       "name": "PACK_IMPORT_DRY_RUN_INPUT.json",
       "owner": "unknown",
-      "path": "examples/pack_import_dry_run/minimal_source_pack_import/PACK_IMPORT_DRY_RUN_INPUT.json",
+      "path": "examples/packs/import_dry_run/minimal_source_pack_import/PACK_IMPORT_DRY_RUN_INPUT.json",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -46439,7 +46439,7 @@
       "capability_families": [
         "context"
       ],
-      "command_hint": "review-only command preview for examples/pack_quarantine/import_preview/contribution_pack_import_preview_v0.json",
+      "command_hint": "review-only command preview for examples/packs/quarantine/import_preview/contribution_pack_import_preview_v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -46452,7 +46452,7 @@
       "language_or_format": "json",
       "name": "contribution_pack_import_preview_v0.json",
       "owner": "unknown",
-      "path": "examples/pack_quarantine/import_preview/contribution_pack_import_preview_v0.json",
+      "path": "examples/packs/quarantine/import_preview/contribution_pack_import_preview_v0.json",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -46470,7 +46470,7 @@
       "capability_families": [
         "context"
       ],
-      "command_hint": "review-only command preview for examples/pack_quarantine/import_preview/evidence_pack_import_preview_v0.json",
+      "command_hint": "review-only command preview for examples/packs/quarantine/import_preview/evidence_pack_import_preview_v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -46483,7 +46483,7 @@
       "language_or_format": "json",
       "name": "evidence_pack_import_preview_v0.json",
       "owner": "unknown",
-      "path": "examples/pack_quarantine/import_preview/evidence_pack_import_preview_v0.json",
+      "path": "examples/packs/quarantine/import_preview/evidence_pack_import_preview_v0.json",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -46502,7 +46502,7 @@
         "context",
         "repo_policy"
       ],
-      "command_hint": "review-only command preview for examples/pack_quarantine/import_preview/policy_blocked_pack_import_preview_v0.json",
+      "command_hint": "review-only command preview for examples/packs/quarantine/import_preview/policy_blocked_pack_import_preview_v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -46515,7 +46515,7 @@
       "language_or_format": "json",
       "name": "policy_blocked_pack_import_preview_v0.json",
       "owner": "unknown",
-      "path": "examples/pack_quarantine/import_preview/policy_blocked_pack_import_preview_v0.json",
+      "path": "examples/packs/quarantine/import_preview/policy_blocked_pack_import_preview_v0.json",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -46534,7 +46534,7 @@
       "capability_families": [
         "context"
       ],
-      "command_hint": "review-only command preview for examples/pack_quarantine/import_preview/source_pack_import_preview_v0.json",
+      "command_hint": "review-only command preview for examples/packs/quarantine/import_preview/source_pack_import_preview_v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -46547,7 +46547,7 @@
       "language_or_format": "json",
       "name": "source_pack_import_preview_v0.json",
       "owner": "unknown",
-      "path": "examples/pack_quarantine/import_preview/source_pack_import_preview_v0.json",
+      "path": "examples/packs/quarantine/import_preview/source_pack_import_preview_v0.json",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -46813,7 +46813,7 @@
       "capability_families": [
         "validate"
       ],
-      "command_hint": "review-only command preview for examples/public_search_ranking_dry_run/minimal_compatibility_aware_ranking/CHECKSUMS.SHA256",
+      "command_hint": "review-only command preview for examples/index/public_search_ranking_dry_run/minimal_compatibility_aware_ranking/CHECKSUMS.SHA256",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -46826,7 +46826,7 @@
       "language_or_format": "sha256",
       "name": "CHECKSUMS.SHA256",
       "owner": "unknown",
-      "path": "examples/public_search_ranking_dry_run/minimal_compatibility_aware_ranking/CHECKSUMS.SHA256",
+      "path": "examples/index/public_search_ranking_dry_run/minimal_compatibility_aware_ranking/CHECKSUMS.SHA256",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -46844,7 +46844,7 @@
       "capability_families": [
         "validate"
       ],
-      "command_hint": "review-only command preview for examples/public_search_ranking_dry_run/minimal_conflict_visible_ranking/CHECKSUMS.SHA256",
+      "command_hint": "review-only command preview for examples/index/public_search_ranking_dry_run/minimal_conflict_visible_ranking/CHECKSUMS.SHA256",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -46857,7 +46857,7 @@
       "language_or_format": "sha256",
       "name": "CHECKSUMS.SHA256",
       "owner": "unknown",
-      "path": "examples/public_search_ranking_dry_run/minimal_conflict_visible_ranking/CHECKSUMS.SHA256",
+      "path": "examples/index/public_search_ranking_dry_run/minimal_conflict_visible_ranking/CHECKSUMS.SHA256",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -46875,7 +46875,7 @@
       "capability_families": [
         "validate"
       ],
-      "command_hint": "review-only command preview for examples/public_search_ranking_dry_run/minimal_current_order_fallback/CHECKSUMS.SHA256",
+      "command_hint": "review-only command preview for examples/index/public_search_ranking_dry_run/minimal_current_order_fallback/CHECKSUMS.SHA256",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -46888,7 +46888,7 @@
       "language_or_format": "sha256",
       "name": "CHECKSUMS.SHA256",
       "owner": "unknown",
-      "path": "examples/public_search_ranking_dry_run/minimal_current_order_fallback/CHECKSUMS.SHA256",
+      "path": "examples/index/public_search_ranking_dry_run/minimal_current_order_fallback/CHECKSUMS.SHA256",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -46906,7 +46906,7 @@
       "capability_families": [
         "validate"
       ],
-      "command_hint": "review-only command preview for examples/public_search_ranking_dry_run/minimal_evidence_weighted_ranking/CHECKSUMS.SHA256",
+      "command_hint": "review-only command preview for examples/index/public_search_ranking_dry_run/minimal_evidence_weighted_ranking/CHECKSUMS.SHA256",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -46919,7 +46919,7 @@
       "language_or_format": "sha256",
       "name": "CHECKSUMS.SHA256",
       "owner": "unknown",
-      "path": "examples/public_search_ranking_dry_run/minimal_evidence_weighted_ranking/CHECKSUMS.SHA256",
+      "path": "examples/index/public_search_ranking_dry_run/minimal_evidence_weighted_ranking/CHECKSUMS.SHA256",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -46937,7 +46937,7 @@
       "capability_families": [
         "validate"
       ],
-      "command_hint": "review-only command preview for examples/public_search_ranking_dry_run/minimal_gap_transparency_ranking/CHECKSUMS.SHA256",
+      "command_hint": "review-only command preview for examples/index/public_search_ranking_dry_run/minimal_gap_transparency_ranking/CHECKSUMS.SHA256",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -46950,7 +46950,7 @@
       "language_or_format": "sha256",
       "name": "CHECKSUMS.SHA256",
       "owner": "unknown",
-      "path": "examples/public_search_ranking_dry_run/minimal_gap_transparency_ranking/CHECKSUMS.SHA256",
+      "path": "examples/index/public_search_ranking_dry_run/minimal_gap_transparency_ranking/CHECKSUMS.SHA256",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -46968,7 +46968,7 @@
       "capability_families": [
         "validate"
       ],
-      "command_hint": "review-only command preview for examples/query_guard/minimal_fake_demand_throttled_v0/CHECKSUMS.SHA256",
+      "command_hint": "review-only command preview for examples/search/query_guard/minimal_fake_demand_throttled_v0/CHECKSUMS.SHA256",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -46981,7 +46981,7 @@
       "language_or_format": "sha256",
       "name": "CHECKSUMS.SHA256",
       "owner": "unknown",
-      "path": "examples/query_guard/minimal_fake_demand_throttled_v0/CHECKSUMS.SHA256",
+      "path": "examples/search/query_guard/minimal_fake_demand_throttled_v0/CHECKSUMS.SHA256",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -46999,7 +46999,7 @@
       "capability_families": [
         "validate"
       ],
-      "command_hint": "review-only command preview for examples/query_guard/minimal_private_path_rejected_v0/CHECKSUMS.SHA256",
+      "command_hint": "review-only command preview for examples/search/query_guard/minimal_private_path_rejected_v0/CHECKSUMS.SHA256",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -47012,7 +47012,7 @@
       "language_or_format": "sha256",
       "name": "CHECKSUMS.SHA256",
       "owner": "unknown",
-      "path": "examples/query_guard/minimal_private_path_rejected_v0/CHECKSUMS.SHA256",
+      "path": "examples/search/query_guard/minimal_private_path_rejected_v0/CHECKSUMS.SHA256",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -47030,7 +47030,7 @@
       "capability_families": [
         "validate"
       ],
-      "command_hint": "review-only command preview for examples/query_guard/minimal_public_safe_query_v0/CHECKSUMS.SHA256",
+      "command_hint": "review-only command preview for examples/search/query_guard/minimal_public_safe_query_v0/CHECKSUMS.SHA256",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -47043,7 +47043,7 @@
       "language_or_format": "sha256",
       "name": "CHECKSUMS.SHA256",
       "owner": "unknown",
-      "path": "examples/query_guard/minimal_public_safe_query_v0/CHECKSUMS.SHA256",
+      "path": "examples/search/query_guard/minimal_public_safe_query_v0/CHECKSUMS.SHA256",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -47062,7 +47062,7 @@
         "security",
         "validate"
       ],
-      "command_hint": "review-only command preview for examples/query_guard/minimal_secret_rejected_v0/CHECKSUMS.SHA256",
+      "command_hint": "review-only command preview for examples/search/query_guard/minimal_secret_rejected_v0/CHECKSUMS.SHA256",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -47075,7 +47075,7 @@
       "language_or_format": "sha256",
       "name": "CHECKSUMS.SHA256",
       "owner": "unknown",
-      "path": "examples/query_guard/minimal_secret_rejected_v0/CHECKSUMS.SHA256",
+      "path": "examples/search/query_guard/minimal_secret_rejected_v0/CHECKSUMS.SHA256",
       "reasons": [
         "candidate_tool_name_hint",
         "high_risk_hint:secret",
@@ -47094,7 +47094,7 @@
       "capability_families": [
         "validate"
       ],
-      "command_hint": "review-only command preview for examples/query_guard/minimal_source_stuffing_quarantined_v0/CHECKSUMS.SHA256",
+      "command_hint": "review-only command preview for examples/search/query_guard/minimal_source_stuffing_quarantined_v0/CHECKSUMS.SHA256",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -47107,7 +47107,7 @@
       "language_or_format": "sha256",
       "name": "CHECKSUMS.SHA256",
       "owner": "unknown",
-      "path": "examples/query_guard/minimal_source_stuffing_quarantined_v0/CHECKSUMS.SHA256",
+      "path": "examples/search/query_guard/minimal_source_stuffing_quarantined_v0/CHECKSUMS.SHA256",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -47125,7 +47125,7 @@
       "capability_families": [
         "validate"
       ],
-      "command_hint": "review-only command preview for examples/query_observations/minimal_query_observation_v0/CHECKSUMS.SHA256",
+      "command_hint": "review-only command preview for examples/search/query_observations/minimal_query_observation_v0/CHECKSUMS.SHA256",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -47138,7 +47138,7 @@
       "language_or_format": "sha256",
       "name": "CHECKSUMS.SHA256",
       "owner": "unknown",
-      "path": "examples/query_observations/minimal_query_observation_v0/CHECKSUMS.SHA256",
+      "path": "examples/search/query_observations/minimal_query_observation_v0/CHECKSUMS.SHA256",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -47156,7 +47156,7 @@
       "capability_families": [
         "validate"
       ],
-      "command_hint": "review-only command preview for examples/query_result_cache/minimal_absence_cache_entry_v0/CHECKSUMS.SHA256",
+      "command_hint": "review-only command preview for examples/search/query_result_cache/minimal_absence_cache_entry_v0/CHECKSUMS.SHA256",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -47169,7 +47169,7 @@
       "language_or_format": "sha256",
       "name": "CHECKSUMS.SHA256",
       "owner": "unknown",
-      "path": "examples/query_result_cache/minimal_absence_cache_entry_v0/CHECKSUMS.SHA256",
+      "path": "examples/search/query_result_cache/minimal_absence_cache_entry_v0/CHECKSUMS.SHA256",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -47187,7 +47187,7 @@
       "capability_families": [
         "validate"
       ],
-      "command_hint": "review-only command preview for examples/query_result_cache/minimal_cache_entry_v0/CHECKSUMS.SHA256",
+      "command_hint": "review-only command preview for examples/search/query_result_cache/minimal_cache_entry_v0/CHECKSUMS.SHA256",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -47200,7 +47200,7 @@
       "language_or_format": "sha256",
       "name": "CHECKSUMS.SHA256",
       "owner": "unknown",
-      "path": "examples/query_result_cache/minimal_cache_entry_v0/CHECKSUMS.SHA256",
+      "path": "examples/search/query_result_cache/minimal_cache_entry_v0/CHECKSUMS.SHA256",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -47373,7 +47373,7 @@
       "capability_families": [
         "build"
       ],
-      "command_hint": "review-only command preview for examples/reviewed_public_index_rebuilds/minimal_rebuild_contract_v0.json",
+      "command_hint": "review-only command preview for examples/index/reviewed_public_rebuilds/minimal_rebuild_contract_v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -47386,7 +47386,7 @@
       "language_or_format": "json",
       "name": "minimal_rebuild_contract_v0.json",
       "owner": "unknown",
-      "path": "examples/reviewed_public_index_rebuilds/minimal_rebuild_contract_v0.json",
+      "path": "examples/index/reviewed_public_rebuilds/minimal_rebuild_contract_v0.json",
       "reasons": [
         "build_hint:build",
         "candidate_capability_can_be_future_wrapped",
@@ -47404,7 +47404,7 @@
       "capability_families": [
         "build"
       ],
-      "command_hint": "review-only command preview for examples/reviewed_public_index_rebuilds/missing_evidence_rebuild_blocked_v0.json",
+      "command_hint": "review-only command preview for examples/index/reviewed_public_rebuilds/missing_evidence_rebuild_blocked_v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -47417,7 +47417,7 @@
       "language_or_format": "json",
       "name": "missing_evidence_rebuild_blocked_v0.json",
       "owner": "unknown",
-      "path": "examples/reviewed_public_index_rebuilds/missing_evidence_rebuild_blocked_v0.json",
+      "path": "examples/index/reviewed_public_rebuilds/missing_evidence_rebuild_blocked_v0.json",
       "reasons": [
         "build_hint:build",
         "candidate_capability_can_be_future_wrapped",
@@ -47436,7 +47436,7 @@
         "build",
         "repo_policy"
       ],
-      "command_hint": "review-only command preview for examples/reviewed_public_index_rebuilds/policy_blocked_rebuild_v0.json",
+      "command_hint": "review-only command preview for examples/index/reviewed_public_rebuilds/policy_blocked_rebuild_v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -47449,7 +47449,7 @@
       "language_or_format": "json",
       "name": "policy_blocked_rebuild_v0.json",
       "owner": "unknown",
-      "path": "examples/reviewed_public_index_rebuilds/policy_blocked_rebuild_v0.json",
+      "path": "examples/index/reviewed_public_rebuilds/policy_blocked_rebuild_v0.json",
       "reasons": [
         "build_hint:build",
         "candidate_capability_can_be_future_wrapped",
@@ -47468,7 +47468,7 @@
       "capability_families": [
         "build"
       ],
-      "command_hint": "review-only command preview for examples/reviewed_public_index_rebuilds/ready_candidate_rebuild_input_v0.json",
+      "command_hint": "review-only command preview for examples/index/reviewed_public_rebuilds/ready_candidate_rebuild_input_v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -47481,7 +47481,7 @@
       "language_or_format": "json",
       "name": "ready_candidate_rebuild_input_v0.json",
       "owner": "unknown",
-      "path": "examples/reviewed_public_index_rebuilds/ready_candidate_rebuild_input_v0.json",
+      "path": "examples/index/reviewed_public_rebuilds/ready_candidate_rebuild_input_v0.json",
       "reasons": [
         "build_hint:build",
         "candidate_capability_can_be_future_wrapped",
@@ -47499,7 +47499,7 @@
       "capability_families": [
         "validate"
       ],
-      "command_hint": "review-only command preview for examples/search_miss_ledger/minimal_no_hits_miss_v0/CHECKSUMS.SHA256",
+      "command_hint": "review-only command preview for examples/search/miss_ledger/minimal_no_hits_miss_v0/CHECKSUMS.SHA256",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -47512,7 +47512,7 @@
       "language_or_format": "sha256",
       "name": "CHECKSUMS.SHA256",
       "owner": "unknown",
-      "path": "examples/search_miss_ledger/minimal_no_hits_miss_v0/CHECKSUMS.SHA256",
+      "path": "examples/search/miss_ledger/minimal_no_hits_miss_v0/CHECKSUMS.SHA256",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -47530,7 +47530,7 @@
       "capability_families": [
         "validate"
       ],
-      "command_hint": "review-only command preview for examples/search_miss_ledger/minimal_weak_hits_miss_v0/CHECKSUMS.SHA256",
+      "command_hint": "review-only command preview for examples/search/miss_ledger/minimal_weak_hits_miss_v0/CHECKSUMS.SHA256",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -47543,7 +47543,7 @@
       "language_or_format": "sha256",
       "name": "CHECKSUMS.SHA256",
       "owner": "unknown",
-      "path": "examples/search_miss_ledger/minimal_weak_hits_miss_v0/CHECKSUMS.SHA256",
+      "path": "examples/search/miss_ledger/minimal_weak_hits_miss_v0/CHECKSUMS.SHA256",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -47561,7 +47561,7 @@
       "capability_families": [
         "validate"
       ],
-      "command_hint": "review-only command preview for examples/search_needs/minimal_compatibility_evidence_need_v0/CHECKSUMS.SHA256",
+      "command_hint": "review-only command preview for examples/search/needs/minimal_compatibility_evidence_need_v0/CHECKSUMS.SHA256",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -47574,7 +47574,7 @@
       "language_or_format": "sha256",
       "name": "CHECKSUMS.SHA256",
       "owner": "unknown",
-      "path": "examples/search_needs/minimal_compatibility_evidence_need_v0/CHECKSUMS.SHA256",
+      "path": "examples/search/needs/minimal_compatibility_evidence_need_v0/CHECKSUMS.SHA256",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -47592,7 +47592,7 @@
       "capability_families": [
         "validate"
       ],
-      "command_hint": "review-only command preview for examples/search_needs/minimal_unresolved_software_need_v0/CHECKSUMS.SHA256",
+      "command_hint": "review-only command preview for examples/search/needs/minimal_unresolved_software_need_v0/CHECKSUMS.SHA256",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -47605,7 +47605,7 @@
       "language_or_format": "sha256",
       "name": "CHECKSUMS.SHA256",
       "owner": "unknown",
-      "path": "examples/search_needs/minimal_unresolved_software_need_v0/CHECKSUMS.SHA256",
+      "path": "examples/search/needs/minimal_unresolved_software_need_v0/CHECKSUMS.SHA256",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -47623,7 +47623,7 @@
       "capability_families": [
         "validate"
       ],
-      "command_hint": "review-only command preview for examples/search_result_explanations/minimal_absence_gap_explanation_v0/CHECKSUMS.SHA256",
+      "command_hint": "review-only command preview for examples/search/result_explanations/minimal_absence_gap_explanation_v0/CHECKSUMS.SHA256",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -47636,7 +47636,7 @@
       "language_or_format": "sha256",
       "name": "CHECKSUMS.SHA256",
       "owner": "unknown",
-      "path": "examples/search_result_explanations/minimal_absence_gap_explanation_v0/CHECKSUMS.SHA256",
+      "path": "examples/search/result_explanations/minimal_absence_gap_explanation_v0/CHECKSUMS.SHA256",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -47654,7 +47654,7 @@
       "capability_families": [
         "validate"
       ],
-      "command_hint": "review-only command preview for examples/search_result_explanations/minimal_action_safety_explanation_v0/CHECKSUMS.SHA256",
+      "command_hint": "review-only command preview for examples/search/result_explanations/minimal_action_safety_explanation_v0/CHECKSUMS.SHA256",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -47667,7 +47667,7 @@
       "language_or_format": "sha256",
       "name": "CHECKSUMS.SHA256",
       "owner": "unknown",
-      "path": "examples/search_result_explanations/minimal_action_safety_explanation_v0/CHECKSUMS.SHA256",
+      "path": "examples/search/result_explanations/minimal_action_safety_explanation_v0/CHECKSUMS.SHA256",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -47685,7 +47685,7 @@
       "capability_families": [
         "validate"
       ],
-      "command_hint": "review-only command preview for examples/search_result_explanations/minimal_compatibility_explanation_v0/CHECKSUMS.SHA256",
+      "command_hint": "review-only command preview for examples/search/result_explanations/minimal_compatibility_explanation_v0/CHECKSUMS.SHA256",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -47698,7 +47698,7 @@
       "language_or_format": "sha256",
       "name": "CHECKSUMS.SHA256",
       "owner": "unknown",
-      "path": "examples/search_result_explanations/minimal_compatibility_explanation_v0/CHECKSUMS.SHA256",
+      "path": "examples/search/result_explanations/minimal_compatibility_explanation_v0/CHECKSUMS.SHA256",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -47716,7 +47716,7 @@
       "capability_families": [
         "validate"
       ],
-      "command_hint": "review-only command preview for examples/search_result_explanations/minimal_conflict_explanation_v0/CHECKSUMS.SHA256",
+      "command_hint": "review-only command preview for examples/search/result_explanations/minimal_conflict_explanation_v0/CHECKSUMS.SHA256",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -47729,7 +47729,7 @@
       "language_or_format": "sha256",
       "name": "CHECKSUMS.SHA256",
       "owner": "unknown",
-      "path": "examples/search_result_explanations/minimal_conflict_explanation_v0/CHECKSUMS.SHA256",
+      "path": "examples/search/result_explanations/minimal_conflict_explanation_v0/CHECKSUMS.SHA256",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -47747,7 +47747,7 @@
       "capability_families": [
         "validate"
       ],
-      "command_hint": "review-only command preview for examples/search_result_explanations/minimal_grouped_result_explanation_v0/CHECKSUMS.SHA256",
+      "command_hint": "review-only command preview for examples/search/result_explanations/minimal_grouped_result_explanation_v0/CHECKSUMS.SHA256",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -47760,7 +47760,7 @@
       "language_or_format": "sha256",
       "name": "CHECKSUMS.SHA256",
       "owner": "unknown",
-      "path": "examples/search_result_explanations/minimal_grouped_result_explanation_v0/CHECKSUMS.SHA256",
+      "path": "examples/search/result_explanations/minimal_grouped_result_explanation_v0/CHECKSUMS.SHA256",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -47778,7 +47778,7 @@
       "capability_families": [
         "validate"
       ],
-      "command_hint": "review-only command preview for examples/search_result_explanations/minimal_match_explanation_v0/CHECKSUMS.SHA256",
+      "command_hint": "review-only command preview for examples/search/result_explanations/minimal_match_explanation_v0/CHECKSUMS.SHA256",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -47791,7 +47791,7 @@
       "language_or_format": "sha256",
       "name": "CHECKSUMS.SHA256",
       "owner": "unknown",
-      "path": "examples/search_result_explanations/minimal_match_explanation_v0/CHECKSUMS.SHA256",
+      "path": "examples/search/result_explanations/minimal_match_explanation_v0/CHECKSUMS.SHA256",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -47809,7 +47809,7 @@
       "capability_families": [
         "validate"
       ],
-      "command_hint": "review-only command preview for examples/search_result_explanations/minimal_source_evidence_explanation_v0/CHECKSUMS.SHA256",
+      "command_hint": "review-only command preview for examples/search/result_explanations/minimal_source_evidence_explanation_v0/CHECKSUMS.SHA256",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -47822,7 +47822,7 @@
       "language_or_format": "sha256",
       "name": "CHECKSUMS.SHA256",
       "owner": "unknown",
-      "path": "examples/search_result_explanations/minimal_source_evidence_explanation_v0/CHECKSUMS.SHA256",
+      "path": "examples/search/result_explanations/minimal_source_evidence_explanation_v0/CHECKSUMS.SHA256",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -47841,7 +47841,7 @@
         "release",
         "validate"
       ],
-      "command_hint": "review-only command preview for examples/source_cache/dry_run/minimal_github_release_metadata_summary/CHECKSUMS.SHA256",
+      "command_hint": "review-only command preview for examples/sources/cache/dry_run/dry_run/minimal_github_release_metadata_summary/CHECKSUMS.SHA256",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -47854,7 +47854,7 @@
       "language_or_format": "sha256",
       "name": "CHECKSUMS.SHA256",
       "owner": "unknown",
-      "path": "examples/source_cache/dry_run/minimal_github_release_metadata_summary/CHECKSUMS.SHA256",
+      "path": "examples/sources/cache/dry_run/dry_run/minimal_github_release_metadata_summary/CHECKSUMS.SHA256",
       "reasons": [
         "candidate_tool_name_hint",
         "high_risk_hint:release",
@@ -47873,7 +47873,7 @@
       "capability_families": [
         "validate"
       ],
-      "command_hint": "review-only command preview for examples/source_cache/dry_run/minimal_internet_archive_metadata_summary/CHECKSUMS.SHA256",
+      "command_hint": "review-only command preview for examples/sources/cache/dry_run/dry_run/minimal_internet_archive_metadata_summary/CHECKSUMS.SHA256",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -47886,7 +47886,7 @@
       "language_or_format": "sha256",
       "name": "CHECKSUMS.SHA256",
       "owner": "unknown",
-      "path": "examples/source_cache/dry_run/minimal_internet_archive_metadata_summary/CHECKSUMS.SHA256",
+      "path": "examples/sources/cache/dry_run/dry_run/minimal_internet_archive_metadata_summary/CHECKSUMS.SHA256",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -47906,7 +47906,7 @@
         "package",
         "validate"
       ],
-      "command_hint": "review-only command preview for examples/source_cache/dry_run/minimal_package_metadata_summary/CHECKSUMS.SHA256",
+      "command_hint": "review-only command preview for examples/sources/cache/dry_run/dry_run/minimal_package_metadata_summary/CHECKSUMS.SHA256",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -47919,7 +47919,7 @@
       "language_or_format": "sha256",
       "name": "CHECKSUMS.SHA256",
       "owner": "unknown",
-      "path": "examples/source_cache/dry_run/minimal_package_metadata_summary/CHECKSUMS.SHA256",
+      "path": "examples/sources/cache/dry_run/dry_run/minimal_package_metadata_summary/CHECKSUMS.SHA256",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -47940,7 +47940,7 @@
         "release",
         "validate"
       ],
-      "command_hint": "review-only command preview for examples/source_cache/dry_run/minimal_software_heritage_identity_summary/CHECKSUMS.SHA256",
+      "command_hint": "review-only command preview for examples/sources/cache/dry_run/dry_run/minimal_software_heritage_identity_summary/CHECKSUMS.SHA256",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -47953,7 +47953,7 @@
       "language_or_format": "sha256",
       "name": "CHECKSUMS.SHA256",
       "owner": "unknown",
-      "path": "examples/source_cache/dry_run/minimal_software_heritage_identity_summary/CHECKSUMS.SHA256",
+      "path": "examples/sources/cache/dry_run/dry_run/minimal_software_heritage_identity_summary/CHECKSUMS.SHA256",
       "reasons": [
         "candidate_tool_name_hint",
         "high_risk_hint:release",
@@ -47972,7 +47972,7 @@
       "capability_families": [
         "validate"
       ],
-      "command_hint": "review-only command preview for examples/source_cache/dry_run/minimal_wayback_capture_metadata_summary/CHECKSUMS.SHA256",
+      "command_hint": "review-only command preview for examples/sources/cache/dry_run/dry_run/minimal_wayback_capture_metadata_summary/CHECKSUMS.SHA256",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -47985,7 +47985,7 @@
       "language_or_format": "sha256",
       "name": "CHECKSUMS.SHA256",
       "owner": "unknown",
-      "path": "examples/source_cache/dry_run/minimal_wayback_capture_metadata_summary/CHECKSUMS.SHA256",
+      "path": "examples/sources/cache/dry_run/dry_run/minimal_wayback_capture_metadata_summary/CHECKSUMS.SHA256",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -48003,7 +48003,7 @@
       "capability_families": [
         "validate"
       ],
-      "command_hint": "review-only command preview for examples/source_cache/minimal_ia_metadata_cache_record_v0/CHECKSUMS.SHA256",
+      "command_hint": "review-only command preview for examples/sources/cache/dry_run/minimal_ia_metadata_cache_record_v0/CHECKSUMS.SHA256",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -48016,7 +48016,7 @@
       "language_or_format": "sha256",
       "name": "CHECKSUMS.SHA256",
       "owner": "unknown",
-      "path": "examples/source_cache/minimal_ia_metadata_cache_record_v0/CHECKSUMS.SHA256",
+      "path": "examples/sources/cache/dry_run/minimal_ia_metadata_cache_record_v0/CHECKSUMS.SHA256",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -48034,7 +48034,7 @@
       "capability_families": [
         "validate"
       ],
-      "command_hint": "review-only command preview for examples/source_cache/minimal_recorded_fixture_cache_record_v0/CHECKSUMS.SHA256",
+      "command_hint": "review-only command preview for examples/sources/cache/dry_run/minimal_recorded_fixture_cache_record_v0/CHECKSUMS.SHA256",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -48047,7 +48047,7 @@
       "language_or_format": "sha256",
       "name": "CHECKSUMS.SHA256",
       "owner": "unknown",
-      "path": "examples/source_cache/minimal_recorded_fixture_cache_record_v0/CHECKSUMS.SHA256",
+      "path": "examples/sources/cache/dry_run/minimal_recorded_fixture_cache_record_v0/CHECKSUMS.SHA256",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -48065,7 +48065,7 @@
       "capability_families": [
         "validate"
       ],
-      "command_hint": "review-only command preview for examples/source_cache/minimal_wayback_availability_cache_record_v0/CHECKSUMS.SHA256",
+      "command_hint": "review-only command preview for examples/sources/cache/dry_run/minimal_wayback_availability_cache_record_v0/CHECKSUMS.SHA256",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -48078,7 +48078,7 @@
       "language_or_format": "sha256",
       "name": "CHECKSUMS.SHA256",
       "owner": "unknown",
-      "path": "examples/source_cache/minimal_wayback_availability_cache_record_v0/CHECKSUMS.SHA256",
+      "path": "examples/sources/cache/dry_run/minimal_wayback_availability_cache_record_v0/CHECKSUMS.SHA256",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -48098,7 +48098,7 @@
         "package",
         "repo_policy"
       ],
-      "command_hint": "review-only command preview for examples/source_packs/h2_package_registry_policy_pack_v0.json",
+      "command_hint": "review-only command preview for examples/packs/source/h2_package_registry_policy_pack_v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -48111,7 +48111,7 @@
       "language_or_format": "json",
       "name": "h2_package_registry_policy_pack_v0.json",
       "owner": "unknown",
-      "path": "examples/source_packs/h2_package_registry_policy_pack_v0.json",
+      "path": "examples/packs/source/h2_package_registry_policy_pack_v0.json",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -48132,7 +48132,7 @@
         "context",
         "package"
       ],
-      "command_hint": "review-only command preview for examples/source_packs/h2_package_registry_source_pack_manifest_v0.json",
+      "command_hint": "review-only command preview for examples/packs/source/h2_package_registry_source_pack_manifest_v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -48145,7 +48145,7 @@
       "language_or_format": "json",
       "name": "h2_package_registry_source_pack_manifest_v0.json",
       "owner": "unknown",
-      "path": "examples/source_packs/h2_package_registry_source_pack_manifest_v0.json",
+      "path": "examples/packs/source/h2_package_registry_source_pack_manifest_v0.json",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -48166,7 +48166,7 @@
         "package",
         "repo_policy"
       ],
-      "command_hint": "review-only command preview for examples/source_packs/h3_os_package_archive_policy_pack_v0.json",
+      "command_hint": "review-only command preview for examples/packs/source/h3_os_package_archive_policy_pack_v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -48179,7 +48179,7 @@
       "language_or_format": "json",
       "name": "h3_os_package_archive_policy_pack_v0.json",
       "owner": "unknown",
-      "path": "examples/source_packs/h3_os_package_archive_policy_pack_v0.json",
+      "path": "examples/packs/source/h3_os_package_archive_policy_pack_v0.json",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -48200,7 +48200,7 @@
         "context",
         "package"
       ],
-      "command_hint": "review-only command preview for examples/source_packs/h3_os_package_archive_source_pack_manifest_v0.json",
+      "command_hint": "review-only command preview for examples/packs/source/h3_os_package_archive_source_pack_manifest_v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -48213,7 +48213,7 @@
       "language_or_format": "json",
       "name": "h3_os_package_archive_source_pack_manifest_v0.json",
       "owner": "unknown",
-      "path": "examples/source_packs/h3_os_package_archive_source_pack_manifest_v0.json",
+      "path": "examples/packs/source/h3_os_package_archive_source_pack_manifest_v0.json",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -48234,7 +48234,7 @@
         "release",
         "repo_policy"
       ],
-      "command_hint": "review-only command preview for examples/source_packs/h4_code_source_release_policy_pack_v0.json",
+      "command_hint": "review-only command preview for examples/packs/source/h4_code_source_release_policy_pack_v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -48247,7 +48247,7 @@
       "language_or_format": "json",
       "name": "h4_code_source_release_policy_pack_v0.json",
       "owner": "unknown",
-      "path": "examples/source_packs/h4_code_source_release_policy_pack_v0.json",
+      "path": "examples/packs/source/h4_code_source_release_policy_pack_v0.json",
       "reasons": [
         "candidate_tool_name_hint",
         "context_hint:pack",
@@ -48268,7 +48268,7 @@
         "context",
         "release"
       ],
-      "command_hint": "review-only command preview for examples/source_packs/h4_code_source_release_source_pack_manifest_v0.json",
+      "command_hint": "review-only command preview for examples/packs/source/h4_code_source_release_source_pack_manifest_v0.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -48281,7 +48281,7 @@
       "language_or_format": "json",
       "name": "h4_code_source_release_source_pack_manifest_v0.json",
       "owner": "unknown",
-      "path": "examples/source_packs/h4_code_source_release_source_pack_manifest_v0.json",
+      "path": "examples/packs/source/h4_code_source_release_source_pack_manifest_v0.json",
       "reasons": [
         "candidate_tool_name_hint",
         "context_hint:pack",
@@ -48301,7 +48301,7 @@
         "context",
         "validate"
       ],
-      "command_hint": "review-only command preview for examples/source_packs/minimal_recorded_source_pack_v0/CHECKSUMS.SHA256",
+      "command_hint": "review-only command preview for examples/packs/source/minimal_recorded_source_pack_v0/CHECKSUMS.SHA256",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -48314,7 +48314,7 @@
       "language_or_format": "sha256",
       "name": "CHECKSUMS.SHA256",
       "owner": "unknown",
-      "path": "examples/source_packs/minimal_recorded_source_pack_v0/CHECKSUMS.SHA256",
+      "path": "examples/packs/source/minimal_recorded_source_pack_v0/CHECKSUMS.SHA256",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -48333,7 +48333,7 @@
       "capability_families": [
         "validate"
       ],
-      "command_hint": "review-only command preview for examples/source_pages/minimal_connector_approval_source_page_v0/CHECKSUMS.SHA256",
+      "command_hint": "review-only command preview for examples/sources/pages/minimal_connector_approval_source_page_v0/CHECKSUMS.SHA256",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -48346,7 +48346,7 @@
       "language_or_format": "sha256",
       "name": "CHECKSUMS.SHA256",
       "owner": "unknown",
-      "path": "examples/source_pages/minimal_connector_approval_source_page_v0/CHECKSUMS.SHA256",
+      "path": "examples/sources/pages/minimal_connector_approval_source_page_v0/CHECKSUMS.SHA256",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -48364,7 +48364,7 @@
       "capability_families": [
         "validate"
       ],
-      "command_hint": "review-only command preview for examples/source_pages/minimal_fixture_source_page_v0/CHECKSUMS.SHA256",
+      "command_hint": "review-only command preview for examples/sources/pages/minimal_fixture_source_page_v0/CHECKSUMS.SHA256",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -48377,7 +48377,7 @@
       "language_or_format": "sha256",
       "name": "CHECKSUMS.SHA256",
       "owner": "unknown",
-      "path": "examples/source_pages/minimal_fixture_source_page_v0/CHECKSUMS.SHA256",
+      "path": "examples/sources/pages/minimal_fixture_source_page_v0/CHECKSUMS.SHA256",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -48395,7 +48395,7 @@
       "capability_families": [
         "validate"
       ],
-      "command_hint": "review-only command preview for examples/source_pages/minimal_placeholder_source_page_v0/CHECKSUMS.SHA256",
+      "command_hint": "review-only command preview for examples/sources/pages/minimal_placeholder_source_page_v0/CHECKSUMS.SHA256",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -48408,7 +48408,7 @@
       "language_or_format": "sha256",
       "name": "CHECKSUMS.SHA256",
       "owner": "unknown",
-      "path": "examples/source_pages/minimal_placeholder_source_page_v0/CHECKSUMS.SHA256",
+      "path": "examples/sources/pages/minimal_placeholder_source_page_v0/CHECKSUMS.SHA256",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -48426,7 +48426,7 @@
       "capability_families": [
         "validate"
       ],
-      "command_hint": "review-only command preview for examples/source_pages/minimal_recorded_fixture_source_page_v0/CHECKSUMS.SHA256",
+      "command_hint": "review-only command preview for examples/sources/pages/minimal_recorded_fixture_source_page_v0/CHECKSUMS.SHA256",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -48439,7 +48439,7 @@
       "language_or_format": "sha256",
       "name": "CHECKSUMS.SHA256",
       "owner": "unknown",
-      "path": "examples/source_pages/minimal_recorded_fixture_source_page_v0/CHECKSUMS.SHA256",
+      "path": "examples/sources/pages/minimal_recorded_fixture_source_page_v0/CHECKSUMS.SHA256",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -48458,7 +48458,7 @@
         "release",
         "validate"
       ],
-      "command_hint": "review-only command preview for examples/source_sync/minimal_github_releases_sync_job_v0/CHECKSUMS.SHA256",
+      "command_hint": "review-only command preview for examples/sources/sync/minimal_github_releases_sync_job_v0/CHECKSUMS.SHA256",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -48471,7 +48471,7 @@
       "language_or_format": "sha256",
       "name": "CHECKSUMS.SHA256",
       "owner": "unknown",
-      "path": "examples/source_sync/minimal_github_releases_sync_job_v0/CHECKSUMS.SHA256",
+      "path": "examples/sources/sync/minimal_github_releases_sync_job_v0/CHECKSUMS.SHA256",
       "reasons": [
         "candidate_tool_name_hint",
         "high_risk_hint:release",
@@ -48490,7 +48490,7 @@
       "capability_families": [
         "release"
       ],
-      "command_hint": "review-only command preview for examples/source_sync/minimal_github_releases_sync_job_v0/SOURCE_SYNC_WORKER_JOB.json",
+      "command_hint": "review-only command preview for examples/sources/sync/minimal_github_releases_sync_job_v0/SOURCE_SYNC_WORKER_JOB.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -48503,7 +48503,7 @@
       "language_or_format": "json",
       "name": "SOURCE_SYNC_WORKER_JOB.json",
       "owner": "unknown",
-      "path": "examples/source_sync/minimal_github_releases_sync_job_v0/SOURCE_SYNC_WORKER_JOB.json",
+      "path": "examples/sources/sync/minimal_github_releases_sync_job_v0/SOURCE_SYNC_WORKER_JOB.json",
       "reasons": [
         "candidate_tool_name_hint",
         "high_risk_hint:release",
@@ -48521,7 +48521,7 @@
       "capability_families": [
         "validate"
       ],
-      "command_hint": "review-only command preview for examples/source_sync/minimal_ia_metadata_sync_job_v0/CHECKSUMS.SHA256",
+      "command_hint": "review-only command preview for examples/sources/sync/minimal_ia_metadata_sync_job_v0/CHECKSUMS.SHA256",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -48534,7 +48534,7 @@
       "language_or_format": "sha256",
       "name": "CHECKSUMS.SHA256",
       "owner": "unknown",
-      "path": "examples/source_sync/minimal_ia_metadata_sync_job_v0/CHECKSUMS.SHA256",
+      "path": "examples/sources/sync/minimal_ia_metadata_sync_job_v0/CHECKSUMS.SHA256",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -48552,7 +48552,7 @@
       "capability_families": [
         "unknown"
       ],
-      "command_hint": "review-only command preview for examples/source_sync/minimal_ia_metadata_sync_job_v0/SOURCE_SYNC_WORKER_JOB.json",
+      "command_hint": "review-only command preview for examples/sources/sync/minimal_ia_metadata_sync_job_v0/SOURCE_SYNC_WORKER_JOB.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -48565,7 +48565,7 @@
       "language_or_format": "json",
       "name": "SOURCE_SYNC_WORKER_JOB.json",
       "owner": "unknown",
-      "path": "examples/source_sync/minimal_ia_metadata_sync_job_v0/SOURCE_SYNC_WORKER_JOB.json",
+      "path": "examples/sources/sync/minimal_ia_metadata_sync_job_v0/SOURCE_SYNC_WORKER_JOB.json",
       "reasons": [
         "candidate_tool_name_hint",
         "insufficient_evidence_for_wrap_plan",
@@ -48583,7 +48583,7 @@
       "capability_families": [
         "validate"
       ],
-      "command_hint": "review-only command preview for examples/source_sync/minimal_manual_source_review_job_v0/CHECKSUMS.SHA256",
+      "command_hint": "review-only command preview for examples/sources/sync/minimal_manual_source_review_job_v0/CHECKSUMS.SHA256",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -48596,7 +48596,7 @@
       "language_or_format": "sha256",
       "name": "CHECKSUMS.SHA256",
       "owner": "unknown",
-      "path": "examples/source_sync/minimal_manual_source_review_job_v0/CHECKSUMS.SHA256",
+      "path": "examples/sources/sync/minimal_manual_source_review_job_v0/CHECKSUMS.SHA256",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -48614,7 +48614,7 @@
       "capability_families": [
         "unknown"
       ],
-      "command_hint": "review-only command preview for examples/source_sync/minimal_manual_source_review_job_v0/SOURCE_SYNC_WORKER_JOB.json",
+      "command_hint": "review-only command preview for examples/sources/sync/minimal_manual_source_review_job_v0/SOURCE_SYNC_WORKER_JOB.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -48627,7 +48627,7 @@
       "language_or_format": "json",
       "name": "SOURCE_SYNC_WORKER_JOB.json",
       "owner": "unknown",
-      "path": "examples/source_sync/minimal_manual_source_review_job_v0/SOURCE_SYNC_WORKER_JOB.json",
+      "path": "examples/sources/sync/minimal_manual_source_review_job_v0/SOURCE_SYNC_WORKER_JOB.json",
       "reasons": [
         "candidate_tool_name_hint",
         "insufficient_evidence_for_wrap_plan",
@@ -48645,7 +48645,7 @@
       "capability_families": [
         "validate"
       ],
-      "command_hint": "review-only command preview for examples/source_sync/minimal_wayback_availability_sync_job_v0/CHECKSUMS.SHA256",
+      "command_hint": "review-only command preview for examples/sources/sync/minimal_wayback_availability_sync_job_v0/CHECKSUMS.SHA256",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -48658,7 +48658,7 @@
       "language_or_format": "sha256",
       "name": "CHECKSUMS.SHA256",
       "owner": "unknown",
-      "path": "examples/source_sync/minimal_wayback_availability_sync_job_v0/CHECKSUMS.SHA256",
+      "path": "examples/sources/sync/minimal_wayback_availability_sync_job_v0/CHECKSUMS.SHA256",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -48676,7 +48676,7 @@
       "capability_families": [
         "unknown"
       ],
-      "command_hint": "review-only command preview for examples/source_sync/minimal_wayback_availability_sync_job_v0/SOURCE_SYNC_WORKER_JOB.json",
+      "command_hint": "review-only command preview for examples/sources/sync/minimal_wayback_availability_sync_job_v0/SOURCE_SYNC_WORKER_JOB.json",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -48689,7 +48689,7 @@
       "language_or_format": "json",
       "name": "SOURCE_SYNC_WORKER_JOB.json",
       "owner": "unknown",
-      "path": "examples/source_sync/minimal_wayback_availability_sync_job_v0/SOURCE_SYNC_WORKER_JOB.json",
+      "path": "examples/sources/sync/minimal_wayback_availability_sync_job_v0/SOURCE_SYNC_WORKER_JOB.json",
       "reasons": [
         "candidate_tool_name_hint",
         "insufficient_evidence_for_wrap_plan",
@@ -49320,7 +49320,7 @@
         "build",
         "context"
       ],
-      "command_hint": "python runtime/local_foundry/pack_builder.py",
+      "command_hint": "python runtime/local/foundry/pack_builder.py",
       "docs_refs": [
         "control/audits/r0-01-dev-production-reality-inventory-v0/architecture_leakage_summary.md",
         "control/audits/track-b-21-pack-builder-runtime-v0/README.md"
@@ -49336,7 +49336,7 @@
       "language_or_format": "python",
       "name": "pack_builder.py",
       "owner": "unknown",
-      "path": "runtime/local_foundry/pack_builder.py",
+      "path": "runtime/local/foundry/pack_builder.py",
       "reasons": [
         "build_hint:build",
         "candidate_capability_can_be_future_wrapped",
@@ -49355,7 +49355,7 @@
       "capability_families": [
         "context"
       ],
-      "command_hint": "python runtime/local_foundry/pack_export.py",
+      "command_hint": "python runtime/local/foundry/pack_export.py",
       "docs_refs": [
         "control/audits/track-b-22-pack-export-runtime-v0/README.md"
       ],
@@ -49370,7 +49370,7 @@
       "language_or_format": "python",
       "name": "pack_export.py",
       "owner": "unknown",
-      "path": "runtime/local_foundry/pack_export.py",
+      "path": "runtime/local/foundry/pack_export.py",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -49388,7 +49388,7 @@
       "capability_families": [
         "context"
       ],
-      "command_hint": "python runtime/local_foundry/pack_import_preview.py",
+      "command_hint": "python runtime/local/foundry/pack_import_preview.py",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -49401,7 +49401,7 @@
       "language_or_format": "python",
       "name": "pack_import_preview.py",
       "owner": "unknown",
-      "path": "runtime/local_foundry/pack_import_preview.py",
+      "path": "runtime/local/foundry/pack_import_preview.py",
       "reasons": [
         "candidate_capability_can_be_future_wrapped",
         "candidate_tool_name_hint",
@@ -49419,7 +49419,7 @@
       "capability_families": [
         "audit"
       ],
-      "command_hint": "python runtime/local_review/audit.py",
+      "command_hint": "python runtime/local/review/audit.py",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -49432,7 +49432,7 @@
       "language_or_format": "python",
       "name": "audit.py",
       "owner": "unknown",
-      "path": "runtime/local_review/audit.py",
+      "path": "runtime/local/review/audit.py",
       "reasons": [
         "audit_hint:audit",
         "candidate_capability_can_be_future_wrapped",
@@ -49450,7 +49450,7 @@
       "capability_families": [
         "build"
       ],
-      "command_hint": "python runtime/local_review/rebuild.py",
+      "command_hint": "python runtime/local/review/rebuild.py",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -49463,7 +49463,7 @@
       "language_or_format": "python",
       "name": "rebuild.py",
       "owner": "unknown",
-      "path": "runtime/local_review/rebuild.py",
+      "path": "runtime/local/review/rebuild.py",
       "reasons": [
         "build_hint:build",
         "candidate_capability_can_be_future_wrapped",
@@ -49481,7 +49481,7 @@
       "capability_families": [
         "audit"
       ],
-      "command_hint": "python runtime/local_worker/audit.py",
+      "command_hint": "python runtime/local/worker/audit.py",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -49494,7 +49494,7 @@
       "language_or_format": "python",
       "name": "audit.py",
       "owner": "unknown",
-      "path": "runtime/local_worker/audit.py",
+      "path": "runtime/local/worker/audit.py",
       "reasons": [
         "audit_hint:audit",
         "candidate_capability_can_be_future_wrapped",
@@ -49512,7 +49512,7 @@
       "capability_families": [
         "build"
       ],
-      "command_hint": "python runtime/public_index/rebuild.py",
+      "command_hint": "python runtime/index/public/rebuild.py",
       "docs_refs": [],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -49525,7 +49525,7 @@
       "language_or_format": "python",
       "name": "rebuild.py",
       "owner": "unknown",
-      "path": "runtime/public_index/rebuild.py",
+      "path": "runtime/index/public/rebuild.py",
       "reasons": [
         "build_hint:build",
         "candidate_capability_can_be_future_wrapped",
@@ -66601,7 +66601,7 @@
         "docs/operations/TEST_AND_EVAL_LANES.md",
         "docs/reference/EVIDENCE_PACK_CONTRACT.md",
         "docs/reference/PACK_IMPORT_PLANNING.md",
-        "examples/evidence_packs/minimal_evidence_pack_v0/README.md"
+        "examples/packs/evidence/minimal_evidence_pack_v0/README.md"
       ],
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -73254,7 +73254,7 @@
       "command_hint": "python scripts/validate_pack_set.py",
       "docs_refs": [
         "README.md",
-        "contracts/packs/README.md",
+        "contracts/pack/README.md",
         "control/audits/pack-import-local-dry-run-runtime-v0/COMMAND_RESULTS.md",
         "control/audits/pack-import-report-format-v0/FUTURE_VALIDATE_ONLY_TOOLING_PATH.md",
         "control/audits/pack-import-runtime-planning-v0/COMMAND_RESULTS.md",
@@ -74811,7 +74811,7 @@
         "control/audits/wayback-cdx-memento-connector-approval-v0/COMMAND_RESULTS.md",
         "docs/operations/QUERY_INTELLIGENCE_PRIVACY.md",
         "docs/reference/QUERY_OBSERVATION_CONTRACT.md",
-        "examples/query_observations/minimal_query_observation_v0/README.md",
+        "examples/search/query_observations/minimal_query_observation_v0/README.md",
         "scripts/README.md"
       ],
       "evidence_refs": [
@@ -76275,8 +76275,8 @@
         "control/audits/wayback-cdx-memento-connector-approval-v0/COMMAND_RESULTS.md",
         "docs/operations/QUERY_INTELLIGENCE_PRIVACY.md",
         "docs/reference/SEARCH_RESULT_CACHE_CONTRACT.md",
-        "examples/query_result_cache/minimal_absence_cache_entry_v0/README.md",
-        "examples/query_result_cache/minimal_cache_entry_v0/README.md",
+        "examples/search/query_result_cache/minimal_absence_cache_entry_v0/README.md",
+        "examples/search/query_result_cache/minimal_cache_entry_v0/README.md",
         "scripts/README.md"
       ],
       "evidence_refs": [

@@ -3,7 +3,7 @@ import unittest
 
 from scripts.demo_source_observation_seam import build_demo_result
 
-from runtime.source_observation import (
+from runtime.source.observation import (
     MetadataRequest,
     MetadataResponse,
     NormalizedObservation,

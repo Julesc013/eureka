@@ -2,7 +2,7 @@
 
 This audit pack records Pack Import Report Format v0.
 
-The milestone adds `contracts/control_schemas/audits/packs/pack_import_report.v0.json`, synthetic
+The milestone adds `contracts/schema/control/audits/packs/pack_import_report.v0.json`, synthetic
 example reports, `scripts/validate_pack_import_report.py`, docs, and tests.
 It is format/validation/example-only.
 

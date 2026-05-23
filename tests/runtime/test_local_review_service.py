@@ -2,10 +2,10 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from runtime.local_appliance import close_local_appliance, open_local_appliance
-from runtime.local_operator import write_operator_token_record
-from runtime.local_review import get_review_item, list_review_items, record_review_decision
-from runtime.local_service import LocalServiceApp
+from runtime.local.appliance import close_local_appliance, open_local_appliance
+from runtime.local.operator import write_operator_token_record
+from runtime.local.review import get_review_item, list_review_items, record_review_decision
+from runtime.local.service import LocalServiceApp
 from scripts.eureka_init_instance import initialize_instance
 from scripts.validate_local_review_rebuild import TOKEN, seed_review_records
 

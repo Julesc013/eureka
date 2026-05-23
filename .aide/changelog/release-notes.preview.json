@@ -777,7 +777,7 @@
       "category": "Added",
       "commit": "5f9ac9870626",
       "subject": "runtime(local): add appliance composition boundary",
-      "summary": "runtime/local_appliance runtime composition API."
+      "summary": "runtime/local/appliance runtime composition API."
     },
     {
       "breaking": false,
@@ -798,7 +798,7 @@
       "category": "Added",
       "commit": "15a46c118f90",
       "subject": "runtime(local): add read only localhost service",
-      "summary": "runtime/local_service read-only localhost service API."
+      "summary": "runtime/local/service read-only localhost service API."
     },
     {
       "breaking": false,
@@ -854,7 +854,7 @@
       "category": "Added",
       "commit": "5488d5b29987",
       "subject": "runtime(local): add deterministic worker runner",
-      "summary": "runtime/local_worker, worker runner scripts, LOCAL-09 policies, inventories, docs, tests, validator, queue handoff, and audit pack."
+      "summary": "runtime/local/worker, worker runner scripts, LOCAL-09 policies, inventories, docs, tests, validator, queue handoff, and audit pack."
     },
     {
       "breaking": false,
@@ -1197,7 +1197,7 @@
       "category": "Fixed",
       "commit": "ede77d3cb101",
       "subject": "fix(r0): resolve contract taxonomy blockers",
-      "summary": "moved unresolved contract taxonomy artifacts to contracts/control_schemas"
+      "summary": "moved unresolved contract taxonomy artifacts to contracts/schema/control"
     },
     {
       "breaking": false,

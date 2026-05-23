@@ -6,9 +6,9 @@ from pathlib import Path
 
 from scripts.demo_source_cache_store import build_demo_objects, run_demo
 
-from runtime.source_cache import SourceCacheStatus, SourceCacheStore, build_cache_entry
-from runtime.source_cache.errors import SourceCacheValidationError
-from runtime.source_cache.validation import validate_cache_payload
+from runtime.source.cache import SourceCacheStatus, SourceCacheStore, build_cache_entry
+from runtime.source.cache.errors import SourceCacheValidationError
+from runtime.source.cache.validation import validate_cache_payload
 
 
 class SourceCacheStoreTests(unittest.TestCase):

@@ -11,7 +11,7 @@
 
 ## Allowed Paths Used
 
-- `runtime/local_foundry/fixture_source_observation_slice.py`
+- `runtime/local/foundry/fixture_source_observation_slice.py`
 - `tests/runtime/test_fixture_source_observation_vertical_slice.py`
 - `tests/operations/test_fixture_source_observation_vertical_slice_script.py`
 - `.aide/queue/EUREKA-REVIEWED-INDEX-PERSISTENCE-01/**`

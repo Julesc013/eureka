@@ -20,7 +20,7 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.local_foundry.search_need import (  # noqa: E402
+from runtime.local.foundry.search_need import (  # noqa: E402
     REPORT_SCHEMA_VERSION,
     build_search_need_from_query_observation,
     build_search_need_from_search_miss,

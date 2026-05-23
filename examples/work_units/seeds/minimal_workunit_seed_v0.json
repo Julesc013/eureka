@@ -1,0 +1,125 @@
+{
+  "schema_version": "workunit_seed.v0",
+  "workunit_seed_id": "workunit_seed_minimal_v0",
+  "seed_status": "needs_human_review",
+  "seed_type": "search_need_review",
+  "seed_origin": "search_need_seed_manifest",
+  "seed_origin_ref": "control/inventory/observations/search_need_seed_manifest.json#search_need_seed_minimal_v0",
+  "related_observation_candidate_ids": [
+    "obs_candidate_minimal_v0"
+  ],
+  "related_review_queue_entry_ids": [
+    "review_queue_entry::obs_candidate_minimal_v0"
+  ],
+  "related_search_need_seed_ids": [
+    "search_need_seed_minimal_v0"
+  ],
+  "related_batch_id": "batch_0",
+  "related_query_ids": [
+    "windows_7_apps"
+  ],
+  "related_slot_ids": [
+    "batch_0::windows_7_apps::google_web_search"
+  ],
+  "proposed_workunit_label": "Review manual baseline SearchNeed seed",
+  "proposed_workunit_type": "search_need_review",
+  "proposed_inputs": {
+    "candidate_refs": [
+      "examples/observation_candidates/minimal_observation_candidate_v0.json"
+    ],
+    "search_need_seed_refs": [
+      "examples/search/need_seeds/minimal_search_need_seed_v0.json"
+    ],
+    "review_queue_refs": [
+      "control/inventory/observations/observation_candidate_review_queue.json"
+    ]
+  },
+  "allowed_actions": [
+    "review_seed_fields",
+    "draft_human_review_notes",
+    "mark_missing_evidence_for_later_review"
+  ],
+  "forbidden_actions": [
+    "execute_workunit",
+    "call_api",
+    "open_browser",
+    "download_file",
+    "approve_source",
+    "mutate_master_index"
+  ],
+  "proposed_output_contract": "future_workunit_review_packet",
+  "proposed_review_requirement": "human_review_required_before_track_b_use",
+  "source_policy_requirements": [
+    "Manual-only source posture remains unchanged.",
+    "Any future external observation requires separate human/operator review."
+  ],
+  "node_capability_requirements_future": [
+    "future_review_node_capability"
+  ],
+  "local_state_requirements_future": [
+    "none_for_current_seed",
+    "future runtime WorkUnit state must be Track B-owned"
+  ],
+  "idempotency_policy": "Repeated review should produce the same draft recommendations unless source policy or candidate inputs change.",
+  "recovery_policy": "If review evidence is insufficient, keep the seed in needs_more_evidence or deferred state.",
+  "budget_or_scope_limit": "Review only the referenced candidate and SearchNeed seed; no external access.",
+  "required_review_state": "needs_human_review_before_track_b_use",
+  "downstream_track_b_dependency": [
+    "Track B WorkUnit runtime contract required before activation.",
+    "Human review decision required before conversion."
+  ],
+  "review_required": true,
+  "execution_allowed_now": false,
+  "accepted_as_runtime_workunit": false,
+  "accepted_as_observed_baseline": false,
+  "accepted_as_evidence_truth": false,
+  "master_index_mutation_allowed": false,
+  "source_family": "broad_web_policy_blocked",
+  "source_access_mode": "manual_human_only",
+  "source_policy_status": "not_approved_for_agent_access",
+  "failure_mode_summary": [
+    "manual_observation_pending"
+  ],
+  "proposed_priority": {
+    "score": 40,
+    "band": "medium",
+    "model_ref": "control/inventory/observations/workunit_seed_priority_model.json"
+  },
+  "proposed_review_action": "approve_as_workunit_seed_future",
+  "product_boundary": {
+    "performed_observations": false,
+    "automated_external_search": false,
+    "scraped_external_systems": false,
+    "crawled_external_systems": false,
+    "called_external_apis": false,
+    "opened_browsers": false,
+    "fabricated_results": false,
+    "marked_pending_as_observed": false,
+    "changed_product_behavior": false,
+    "changed_public_routes": false,
+    "enabled_hosting": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "mutated_master_index": false,
+    "approved_source_access": false,
+    "executed_workunits": false,
+    "modified_track_b_files": false,
+    "accepted_runtime_workunit": false
+  },
+  "no_goals": [
+    "No WorkUnit execution.",
+    "No runtime WorkUnit creation.",
+    "No source approval.",
+    "No observed baseline or evidence truth creation.",
+    "No master-index mutation."
+  ],
+  "notes": [
+    "This is a compact non-executable example seed.",
+    "It remains a review-gated draft."
+  ]
+}

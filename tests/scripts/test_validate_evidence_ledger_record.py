@@ -7,8 +7,8 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[2]
-EXAMPLE = ROOT / "examples" / "evidence_ledger" / "minimal_compatibility_evidence_observation_v0" / "EVIDENCE_LEDGER_RECORD.json"
-ABSENCE = ROOT / "examples" / "evidence_ledger" / "minimal_absence_evidence_observation_v0" / "EVIDENCE_LEDGER_RECORD.json"
+EXAMPLE = ROOT / "examples" / "evidence" / "ledger" / "dry_run" / "minimal_compatibility_evidence_observation_v0" / "EVIDENCE_LEDGER_RECORD.json"
+ABSENCE = ROOT / "examples" / "evidence" / "ledger" / "dry_run" / "minimal_absence_evidence_observation_v0" / "EVIDENCE_LEDGER_RECORD.json"
 
 
 class EvidenceLedgerRecordValidatorTests(unittest.TestCase):
@@ -23,7 +23,7 @@ class EvidenceLedgerRecordValidatorTests(unittest.TestCase):
         self.assertEqual(report["example_count"], 3)
 
     def test_examples_encode_truth_and_review_boundaries(self) -> None:
-        for path in sorted((ROOT / "examples" / "evidence_ledger").glob("*/EVIDENCE_LEDGER_RECORD.json")):
+        for path in sorted((ROOT / "examples" / "evidence" / "ledger" / "dry_run").glob("*/EVIDENCE_LEDGER_RECORD.json")):
             payload = json.loads(path.read_text(encoding="utf-8"))
             self.assertFalse(payload["no_truth_guarantees"]["accepted_as_truth"])
             self.assertTrue(payload["confidence"]["confidence_not_truth"])

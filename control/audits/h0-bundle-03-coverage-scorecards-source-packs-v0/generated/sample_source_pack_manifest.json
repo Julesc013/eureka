@@ -10,7 +10,7 @@
   ],
   "coverage_records": [
     {
-      "coverage_record_ref": "examples/source_coverage/internet_archive_coverage_record_v0.json"
+      "coverage_record_ref": "examples/sources/coverage/internet_archive_coverage_record_v0.json"
     }
   ],
   "limitations": [

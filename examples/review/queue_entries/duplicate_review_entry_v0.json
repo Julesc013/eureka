@@ -1,0 +1,32 @@
+{
+  "schema_version": "local_review_queue_entry.v0",
+  "input_id": "duplicate_review_entry_v0",
+  "input_type": "candidate_record",
+  "input_ref": "examples/index/candidates/duplicate_possible_candidate_v0.json",
+  "input_public_safe": true,
+  "review_entry_status": "duplicate_possible",
+  "review_subject_type": "candidate_record",
+  "review_subject_ref": "candidate.duplicate_possible.fixture.v0",
+  "review_subject_summary": "Candidate may duplicate another local candidate.",
+  "review_decision": "mark_duplicate_possible",
+  "decision_scope": "local_review_only",
+  "decision_rationale": "Duplicate marker should be preserved without merging or deleting records.",
+  "duplicate_summary": {
+    "duplicate_possible": true,
+    "automatic_merge_allowed": false,
+    "automatic_delete_allowed": false,
+    "possible_duplicate_refs": [
+      "candidate.search_need.software_version.v0"
+    ]
+  },
+  "required_evidence": [
+    "candidate comparison"
+  ],
+  "missing_evidence": [],
+  "related_candidate_refs": [
+    "candidate.duplicate_possible.fixture.v0"
+  ],
+  "notes": [
+    "No automatic merge occurs."
+  ]
+}

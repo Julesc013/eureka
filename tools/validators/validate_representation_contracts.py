@@ -11,9 +11,9 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 SCHEMA_VERSION = "0.1.0"
 
 CONTRACT_PATHS = [
-    "contracts/representations/capability_negotiation.v0.json",
-    "contracts/representations/host_profile.v0.json",
-    "contracts/representations/representation_profile.v0.json",
+    "contracts/representation/capability_negotiation.v0.json",
+    "contracts/representation/host_profile.v0.json",
+    "contracts/representation/representation_profile.v0.json",
 ]
 HOST_INVENTORY = "control/inventory/publication/host_profiles.json"
 REPRESENTATION_INVENTORY = "control/inventory/publication/representation_profiles.json"

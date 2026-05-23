@@ -15,7 +15,7 @@ proof_level_required: L2
 recommended_after: LOCAL-10
 recommended_next: LOCAL-12
 completion_evidence:
-  - runtime/local_network package added
+  - runtime/local/network package added
   - explicit --bind-lan policy and host validation added
   - LAN read-only route policy and mutation block matrix added
   - local service client-scope gate blocks LAN review/rebuild mutation

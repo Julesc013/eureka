@@ -9,7 +9,7 @@ from runtime.engine.core import NormalizedCatalog
 from runtime.engine.index import LocalIndexSqliteStore, build_index_records
 from runtime.engine.interfaces.extract import extract_source_expansion_recorded_source_record
 from runtime.engine.interfaces.normalize import normalize_source_expansion_recorded_record
-from runtime.source_registry import load_source_registry
+from runtime.source.registry import load_source_registry
 
 
 def _build_source_expansion_catalog() -> NormalizedCatalog:

@@ -13,11 +13,11 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.local_appliance.config import load_instance_config  # noqa: E402
-from runtime.local_appliance.instance import resolve_instance_paths  # noqa: E402
-from runtime.local_operator import build_operator_auth_state, validate_operator_token, verify_operator_token  # noqa: E402
-from runtime.public_index import PublicIndexStore  # noqa: E402
-from runtime.source_observation.internet_archive_reviewed_index import (  # noqa: E402
+from runtime.local.appliance.config import load_instance_config  # noqa: E402
+from runtime.local.appliance.instance import resolve_instance_paths  # noqa: E402
+from runtime.local.operator import build_operator_auth_state, validate_operator_token, verify_operator_token  # noqa: E402
+from runtime.index.public import PublicIndexStore  # noqa: E402
+from runtime.source.observation.internet_archive_reviewed_index import (  # noqa: E402
     build_ia_reviewed_absence_packet,
     build_ia_reviewed_index_boundary_report,
     build_ia_reviewed_index_rebuild_report,

@@ -1,0 +1,28 @@
+{
+  "schema_version": "local_review_queue_entry.v0",
+  "input_id": "request_more_evidence_review_entry_v0",
+  "input_type": "evidence_candidate",
+  "input_ref": "examples/evidence/ledger/records/minimal_evidence_record_v0.json",
+  "input_public_safe": true,
+  "review_entry_status": "request_more_evidence",
+  "review_subject_type": "evidence_candidate",
+  "review_subject_ref": "evidence.minimal.fixture.v0",
+  "review_subject_summary": "Evidence candidate needs more local fixture context.",
+  "review_decision": "request_more_evidence",
+  "decision_scope": "local_review_only",
+  "decision_rationale": "More provenance is needed before downstream dry-run planning.",
+  "required_evidence": [
+    "source locator",
+    "claim subject",
+    "lineage refs"
+  ],
+  "missing_evidence": [
+    "lineage refs"
+  ],
+  "related_evidence_refs": [
+    "evidence.minimal.fixture.v0"
+  ],
+  "notes": [
+    "More evidence is requested without promotion."
+  ]
+}

@@ -1,6 +1,6 @@
 # Local WorkUnit Queue Runtime
 
-The runtime API lives in `runtime/workunit_queue`.
+The runtime API lives in `runtime/worker/workunit_queue`.
 
 ## Records
 

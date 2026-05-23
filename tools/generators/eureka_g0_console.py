@@ -13,12 +13,12 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.local_eval.g0_quality import PROJECTION_PROFILES, build_quality_console_view, load_quality_fixture  # noqa: E402
+from runtime.local.eval.g0_quality import PROJECTION_PROFILES, build_quality_console_view, load_quality_fixture  # noqa: E402
 
 
 def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--fixture", default="examples/search_quality/sample_quality_fixture.json")
+    parser.add_argument("--fixture", default="examples/search/quality/sample_quality_fixture.json")
     parser.add_argument("--projection", choices=PROJECTION_PROFILES, default="operator_workbench")
     parser.add_argument("--json", action="store_true")
     parser.add_argument("--output")

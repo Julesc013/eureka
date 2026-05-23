@@ -46,7 +46,7 @@
       "notes": "Classified explicitly so contracts/repo is not confused with control inventory records."
     },
     {
-      "path": "contracts/source_registry",
+      "path": "contracts/source/registry",
       "file_count": 5,
       "json_count": 0,
       "toml_count": 0,
@@ -54,13 +54,13 @@
       "python_count": 0,
       "apparent_owner": "legacy source registry schema authority",
       "current_role": "older YAML source registry schemas",
-      "proposed_role": "PRODUCT_PUBLIC_CONTRACT until migrated or retired in favor of contracts/sources",
+      "proposed_role": "PRODUCT_PUBLIC_CONTRACT until migrated or retired in favor of contracts/source/records",
       "authority_class": "PRODUCT_PUBLIC_CONTRACT",
       "migration_needed": true,
-      "notes": "Duplicate risk with contracts/sources is recorded in the duplicate authority report."
+      "notes": "Duplicate risk with contracts/source/records is recorded in the duplicate authority report."
     },
     {
-      "path": "contracts/sources",
+      "path": "contracts/source/records",
       "file_count": 11,
       "json_count": 11,
       "toml_count": 0,
@@ -74,7 +74,7 @@
       "notes": "Preferred source-family contract root for future source work."
     },
     {
-      "path": "contracts/source_cache",
+      "path": "contracts/source/cache",
       "file_count": 3,
       "json_count": 2,
       "toml_count": 0,
@@ -116,7 +116,7 @@
       "notes": "Must stay contracts authority, not runtime implementation authority."
     },
     {
-      "path": "contracts/packs",
+      "path": "contracts/pack",
       "file_count": 4,
       "json_count": 3,
       "toml_count": 0,
@@ -127,7 +127,7 @@
       "proposed_role": "PRODUCT_PUBLIC_CONTRACT pack authority",
       "authority_class": "PRODUCT_PUBLIC_CONTRACT",
       "migration_needed": false,
-      "notes": "contracts/control_schemas/policies/packs may describe control policies only, not pack truth."
+      "notes": "contracts/schema/control/policies/packs may describe control policies only, not pack truth."
     },
     {
       "path": "contracts/archive",
@@ -144,7 +144,7 @@
       "notes": "Name must not be confused with archive/ historical material root."
     },
     {
-      "path": "contracts/control_schemas",
+      "path": "contracts/schema/control",
       "file_count": 354,
       "json_count": 343,
       "toml_count": 0,

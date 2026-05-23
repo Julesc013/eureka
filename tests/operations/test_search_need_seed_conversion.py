@@ -32,10 +32,10 @@ SLOT_MANIFEST = REPO_ROOT / "control/inventory/observations/manual_observation_b
 TRACK_B_FILES = [
     REPO_ROOT / "contracts/node/eureka_node_manifest.v0.json",
     REPO_ROOT / "contracts/node/node_policy.v0.json",
-    REPO_ROOT / "contracts/control_schemas/policies/node/node_capability.v0.json",
-    REPO_ROOT / "contracts/control_schemas/policies/node/work_unit.v0.json",
-    REPO_ROOT / "contracts/control_schemas/policies/node/work_unit_result.v0.json",
-    REPO_ROOT / "contracts/control_schemas/policies/node/local_foundry_state.v0.json",
+    REPO_ROOT / "contracts/schema/control/policies/node/node_capability.v0.json",
+    REPO_ROOT / "contracts/schema/control/policies/node/work_unit.v0.json",
+    REPO_ROOT / "contracts/schema/control/policies/node/work_unit_result.v0.json",
+    REPO_ROOT / "contracts/schema/control/policies/node/local_foundry_state.v0.json",
 ]
 OBSERVATION_DIRS = [
     REPO_ROOT / "evals/search_usefulness/external_baselines/batches/batch_0/observations",
@@ -264,11 +264,11 @@ class SearchNeedSeedConversionTest(unittest.TestCase):
 
 
 def _seed() -> dict:
-    return deepcopy(_read_json(REPO_ROOT / "examples/search_need_seeds/minimal_search_need_seed_v0.json"))
+    return deepcopy(_read_json(REPO_ROOT / "examples/search/need_seeds/minimal_search_need_seed_v0.json"))
 
 
 def _conversion() -> dict:
-    return deepcopy(_read_json(REPO_ROOT / "examples/search_need_seed_conversions/minimal_candidate_to_need_conversion_v0.json"))
+    return deepcopy(_read_json(REPO_ROOT / "examples/search/need_seed_conversions/minimal_candidate_to_need_conversion_v0.json"))
 
 
 def _manifest() -> dict:

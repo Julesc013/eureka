@@ -16,7 +16,7 @@ from runtime.engine.interfaces.public.local_index import (
     LocalIndexStatusResult,
 )
 from runtime.engine.interfaces.service import LocalIndexService
-from runtime.source_registry import SourceRegistry
+from runtime.source.registry import SourceRegistry
 
 
 @dataclass(frozen=True)

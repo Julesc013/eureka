@@ -106,7 +106,7 @@ def validate_repo(root: Path = REPO_ROOT) -> dict[str, Any]:
         if not (root / rel).is_file():
             errors.append(f"missing doc: {rel}")
     for packet_id, filename in REQUIRED_PACKETS.items():
-        path = root / "contracts/search_interaction" / filename
+        path = root / "contracts/search/interaction" / filename
         packet = load_json(path, "", errors, require_schema=False)
         if packet.get("properties", {}).get("packet_type", {}).get("const") != packet_id:
             errors.append(f"{filename} packet_type must be {packet_id}")

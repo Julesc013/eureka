@@ -30,7 +30,7 @@ class SourceSyncWorkerContractValidatorTests(unittest.TestCase):
         report = json.loads(completed.stdout)
         self.assertEqual(report["status"], "valid")
         self.assertEqual(report["example_count"], 4)
-        self.assertEqual(report["contract_file"], "contracts/source_sync/source_sync_worker_job.v0.json")
+        self.assertEqual(report["contract_file"], "contracts/source/sync/source_sync_worker_job.v0.json")
 
 
 if __name__ == "__main__":

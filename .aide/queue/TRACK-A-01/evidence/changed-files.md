@@ -2,9 +2,9 @@
 
 ## Contract Bundle
 
-- `contracts/representations/host_profile.v0.json`
-- `contracts/representations/representation_profile.v0.json`
-- `contracts/representations/capability_negotiation.v0.json`
+- `contracts/representation/host_profile.v0.json`
+- `contracts/representation/representation_profile.v0.json`
+- `contracts/representation/capability_negotiation.v0.json`
 - `docs/reference/HOST_PROFILE_CONTRACT.md`
 - `docs/reference/REPRESENTATION_PROFILE_CONTRACT.md`
 - `docs/reference/CAPABILITY_NEGOTIATION_CONTRACT.md`

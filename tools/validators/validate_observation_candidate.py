@@ -10,7 +10,7 @@ from typing import Any, Mapping, Sequence, TextIO
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
-CANDIDATE_CONTRACT = "contracts/control_schemas/previews/query/observation_candidate.v0.json"
+CANDIDATE_CONTRACT = "contracts/schema/control/previews/query/observation_candidate.v0.json"
 REVIEW_CONTRACT = "contracts/query/observation_review_decision.v0.json"
 CANDIDATE_EXAMPLES = (
     "examples/observation_candidates/local_eval_extraction_gap_candidate_v0.json",
@@ -30,9 +30,9 @@ CANDIDATE_EXAMPLES = (
     "examples/observation_candidates/source_lead_observation_candidate_v0.json",
 )
 REVIEW_EXAMPLES = (
-    "examples/observation_reviews/approve_observation_candidate_review_v0.json",
-    "examples/observation_reviews/reject_observation_candidate_review_v0.json",
-    "examples/observation_reviews/request_more_evidence_review_v0.json",
+    "examples/review/observation_reviews/approve_observation_candidate_review_v0.json",
+    "examples/review/observation_reviews/reject_observation_candidate_review_v0.json",
+    "examples/review/observation_reviews/request_more_evidence_review_v0.json",
 )
 CANDIDATE_TYPES = {
     "local_eval_failure",

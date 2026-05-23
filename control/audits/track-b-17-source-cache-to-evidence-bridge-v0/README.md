@@ -8,11 +8,11 @@ The bridge cannot fetch live sources, run connectors, perform source sync, accep
 
 ## Added
 
-- `runtime/local_foundry/source_cache_to_evidence.py`
+- `runtime/local/foundry/source_cache_to_evidence.py`
 - `scripts/bridge_source_cache_to_evidence.py`
 - `scripts/validate_source_cache_to_evidence_bridge.py`
 - Bridge runtime, mapping, output, review, and path policies
-- Bridge examples under `examples/source_cache_to_evidence/`
+- Bridge examples under `examples/sources/cache/to_evidence/`
 - Runtime and script tests
 - Reference, architecture, and operations docs
 - Generated audit evidence under `generated/`

@@ -7,8 +7,8 @@ G-BUNDLE-01 validation is offline and fixture-only. No network/API/model/provide
 - `git diff --check`: PASS
 - JSON syntax for G-BUNDLE-01 contracts, policies, and report: PASS
 - `python scripts/validate_search_explanation_runtime.py`: PASS
-- `python scripts/explain_search_fixture.py --input examples/search_quality/input_bundles/software_search_explanation_bundle_v0.json --check`: PASS
-- `python scripts/summarize_search_explanations.py --input examples/search_quality --check`: PASS
+- `python scripts/explain_search_fixture.py --input examples/search/quality/input_bundles/software_search_explanation_bundle_v0.json --check`: PASS
+- `python scripts/summarize_search_explanations.py --input examples/search/quality --check`: PASS
 - G-BUNDLE-01 focused unit tests: PASS
 - `python -m unittest discover -s tests -t .`: PASS, 2777 tests
 - `python scripts/check_architecture_boundaries.py`: PASS

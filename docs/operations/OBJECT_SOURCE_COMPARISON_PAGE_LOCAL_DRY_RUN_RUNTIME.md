@@ -38,7 +38,7 @@ Not implemented:
 Approved roots:
 
 - `examples/object_pages`
-- `examples/source_pages`
+- `examples/sources/pages`
 - `examples/comparison_pages`
 - `examples/page_runtime_dry_run`
 

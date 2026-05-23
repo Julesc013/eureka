@@ -13,7 +13,7 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.source_observation.internet_archive_fixture_replay import (
+from runtime.source.observation.internet_archive_fixture_replay import (
     assert_no_forbidden_side_effects,
     assert_no_network_imports,
     build_fixture_replay_report,

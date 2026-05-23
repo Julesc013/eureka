@@ -32,7 +32,7 @@ Acceptance:
   runtime projections, and local state are classified separately.
 - Move candidates are mapped without moving files.
 - `data/`, `deploy/`, `archive/prototypes/legacy_runtime`,
-  `surfaces/web/workbench/local_html`, `contracts/control_schemas`, and `scripts/` are all accounted
+  `surfaces/web/workbench/local_html`, `contracts/schema/control`, and `scripts/` are all accounted
   for.
 
 ## Phase 2 - Generated Artifact Cleanup
@@ -82,15 +82,15 @@ Acceptance:
 
 Task: `R0-03 / REPO-LAYOUT-CONTRACT-TAXONOMY-CLEANUP`
 
-Status: completed for `control/schemas`, now under `contracts/control_schemas`.
+Status: completed for `control/schemas`, now under `contracts/schema/control`.
 
 Acceptance:
 
 - Product schemas and packets are authoritative under `contracts/`.
-- `contracts/control_schemas` is scoped to governance-only evidence with migration backlog.
+- `contracts/schema/control` is scoped to governance-only evidence with migration backlog.
 - Examples and fixtures do not masquerade as canonical registry truth.
 - Workbench view-model contract location is reserved under
-  `contracts/views/workbench/`.
+  `contracts/view/pages/workbench/`.
 - Search Interaction packet contract location is reserved under
   `contracts/search/interaction/`.
 - No broad file moves or runtime behavior changes are performed in R0-03.

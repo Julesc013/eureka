@@ -1,7 +1,7 @@
 import unittest
 from pathlib import Path
 
-from runtime.source_observation.internet_archive_evidence import (
+from runtime.source.observation.internet_archive_evidence import (
     build_ia_evidence_candidates,
     build_ia_evidence_candidate_records,
     load_default_ia_source_cache_records,

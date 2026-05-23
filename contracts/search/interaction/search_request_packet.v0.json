@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/search/interaction/search_request_packet.v0.json",
+  "title": "SearchRequestPacket",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "packet_type",
+    "created_at",
+    "request_id",
+    "raw_query",
+    "projection_profile",
+    "requested_depth",
+    "user_visible_mode",
+    "privacy_class"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "search_request_packet.v0"
+    },
+    "packet_type": {
+      "const": "SearchRequestPacket"
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "request_id": {
+      "type": "string"
+    },
+    "raw_query": {
+      "type": "string"
+    },
+    "projection_profile": {
+      "type": "string"
+    },
+    "requested_depth": {
+      "type": "string"
+    },
+    "user_visible_mode": {
+      "type": "string"
+    },
+    "privacy_class": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

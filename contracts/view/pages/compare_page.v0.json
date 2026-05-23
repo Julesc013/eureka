@@ -1,0 +1,197 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/view/pages/compare_page.v0.json",
+  "title": "Eureka ComparePage View Model Contract v0",
+  "description": "Canonical public-safe ComparePage view model for comparing objects, versions, states, sources, representations, packs, candidates, and evidence records without hiding disagreement or turning comparison output into canonical truth.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "view_model_id",
+    "view_family",
+    "route_family",
+    "canonical_route",
+    "page_title",
+    "page_status",
+    "comparison",
+    "comparison_identity",
+    "comparison_type",
+    "comparison_status",
+    "compared_subjects",
+    "comparison_axes",
+    "shared_fields",
+    "differing_fields",
+    "conflict_summary",
+    "evidence_summary",
+    "source_summary",
+    "compatibility_summary",
+    "representation_summary",
+    "rights_summary",
+    "risk_summary",
+    "review_summary",
+    "deduplication_summary",
+    "identity_resolution_summary",
+    "action_summary",
+    "actions",
+    "blocked_actions",
+    "limitations",
+    "warnings",
+    "representation_hints",
+    "semantic_requirements",
+    "generated_from",
+    "no_goals",
+    "notes"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "view_model_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9_-]*$"
+    },
+    "view_family": {
+      "type": "string",
+      "const": "ComparePageView"
+    },
+    "route_family": {
+      "type": "string",
+      "enum": [
+        "compare_page_future"
+      ]
+    },
+    "canonical_route": {
+      "type": "string",
+      "minLength": 1
+    },
+    "page_title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "page_status": {
+      "type": "string",
+      "minLength": 1
+    },
+    "comparison": {
+      "$ref": "#/$defs/flexible_object"
+    },
+    "comparison_identity": {
+      "$ref": "#/$defs/flexible_object"
+    },
+    "comparison_type": {
+      "type": "string",
+      "minLength": 1
+    },
+    "comparison_status": {
+      "type": "string",
+      "minLength": 1
+    },
+    "compared_subjects": {
+      "type": "array"
+    },
+    "comparison_axes": {
+      "type": "array"
+    },
+    "shared_fields": {
+      "type": "array"
+    },
+    "differing_fields": {
+      "type": "array"
+    },
+    "conflict_summary": {
+      "$ref": "#/$defs/flexible_object"
+    },
+    "evidence_summary": {
+      "$ref": "#/$defs/flexible_object"
+    },
+    "source_summary": {
+      "$ref": "#/$defs/flexible_object"
+    },
+    "compatibility_summary": {
+      "$ref": "#/$defs/flexible_object"
+    },
+    "representation_summary": {
+      "$ref": "#/$defs/flexible_object"
+    },
+    "rights_summary": {
+      "$ref": "#/$defs/flexible_object"
+    },
+    "risk_summary": {
+      "$ref": "#/$defs/flexible_object"
+    },
+    "review_summary": {
+      "$ref": "#/$defs/flexible_object"
+    },
+    "deduplication_summary": {
+      "$ref": "#/$defs/flexible_object"
+    },
+    "identity_resolution_summary": {
+      "$ref": "#/$defs/flexible_object"
+    },
+    "action_summary": {
+      "$ref": "#/$defs/flexible_object"
+    },
+    "actions": {
+      "type": "array"
+    },
+    "blocked_actions": {
+      "type": "array"
+    },
+    "limitations": {
+      "type": "array"
+    },
+    "warnings": {
+      "type": "array"
+    },
+    "representation_hints": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/$defs/representation_hint"
+      }
+    },
+    "semantic_requirements": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "generated_from": {
+      "$ref": "#/$defs/flexible_object"
+    },
+    "no_goals": {
+      "type": "array"
+    },
+    "notes": {
+      "type": "array"
+    }
+  },
+  "$defs": {
+    "flexible_object": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "representation_hint": {
+      "type": "object",
+      "required": [
+        "renderer_status",
+        "semantic_meaning_changes_allowed"
+      ],
+      "properties": {
+        "renderer_status": {
+          "type": "string"
+        },
+        "semantic_meaning_changes_allowed": {
+          "type": "boolean",
+          "const": false
+        },
+        "notes": {
+          "type": "array"
+        }
+      },
+      "additionalProperties": true
+    }
+  }
+}

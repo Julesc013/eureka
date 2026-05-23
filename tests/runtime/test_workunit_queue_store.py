@@ -4,7 +4,7 @@ import tempfile
 from pathlib import Path
 import unittest
 
-from runtime.workunit_queue import ALLOWED_WORKUNIT_TYPES, WorkUnit, WorkUnitQueueStore
+from runtime.worker.workunit_queue import ALLOWED_WORKUNIT_TYPES, WorkUnit, WorkUnitQueueStore
 
 
 class WorkUnitQueueStoreTests(unittest.TestCase):

@@ -1,0 +1,270 @@
+{
+  "$id": "https://eureka.local/contracts/schema/control/previews/h14/connectors/source_discovery_rollup_dry_run_request.v0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "notes": [
+    "H14 rollup dry-run contracts describe committed-artifact-only preview output.",
+    "They do not authorize source discovery, live access, model/provider calls, registry mutation, pack import/export, index writes, or truth acceptance."
+  ],
+  "product_boundary_required_false": {
+    "api_calls_made": false,
+    "changed_public_search_behavior": false,
+    "crawl_used": false,
+    "enabled_authenticated_access": false,
+    "enabled_connector_runtime": false,
+    "enabled_evidence_writes": false,
+    "enabled_external_api": false,
+    "enabled_hosting": false,
+    "enabled_live_access": false,
+    "enabled_local_access": false,
+    "enabled_model_provider": false,
+    "enabled_network_access": false,
+    "enabled_pack_acceptance": false,
+    "enabled_pack_export_import": false,
+    "enabled_pack_publication": false,
+    "enabled_pack_signing": false,
+    "enabled_private_access": false,
+    "enabled_registry_mutation": false,
+    "enabled_restricted_access": false,
+    "enabled_review_queue_writes": false,
+    "enabled_source_cache_writes": false,
+    "enabled_source_discovery": false,
+    "enabled_source_sync": false,
+    "enabled_user_supplied_url_fetch": false,
+    "evidence_write_performed": false,
+    "live_access_used": false,
+    "master_index_write_performed": false,
+    "model_provider_calls_made": false,
+    "model_provider_used": false,
+    "mutated_master_index": false,
+    "mutated_public_index": false,
+    "network_calls_made": false,
+    "network_used": false,
+    "pack_export_import_performed": false,
+    "public_index_write_performed": false,
+    "registry_mutation_performed": false,
+    "review_queue_write_performed": false,
+    "scrape_used": false,
+    "source_cache_write_performed": false,
+    "source_discovery_runtime_used": false,
+    "source_sync_used": false,
+    "web_search_used": false
+  },
+  "properties": {
+    "approval_refs": {
+      "description": "approval_refs field"
+    },
+    "approved_request_key": {
+      "description": "approved_request_key field"
+    },
+    "connector_family": {
+      "description": "connector_family field"
+    },
+    "connector_pack_export_requested": {
+      "description": "connector_pack_export_requested field"
+    },
+    "connector_pack_import_requested": {
+      "description": "connector_pack_import_requested field"
+    },
+    "connector_registry_mutation_requested": {
+      "description": "connector_registry_mutation_requested field"
+    },
+    "dry_run_requested": {
+      "description": "dry_run_requested field"
+    },
+    "evidence_write_requested": {
+      "description": "evidence_write_requested field"
+    },
+    "h0_h13_artifact_refs": {
+      "description": "h0_h13_artifact_refs field"
+    },
+    "input_artifact_scope": {
+      "description": "input_artifact_scope field"
+    },
+    "limitations": {
+      "description": "limitations field"
+    },
+    "live_access_requested": {
+      "description": "live_access_requested field"
+    },
+    "master_index_write_requested": {
+      "description": "master_index_write_requested field"
+    },
+    "model_provider_requested": {
+      "description": "model_provider_requested field"
+    },
+    "network_access_requested": {
+      "description": "network_access_requested field"
+    },
+    "operation_scope": {
+      "description": "operation_scope field"
+    },
+    "output_policy_ref": {
+      "description": "output_policy_ref field"
+    },
+    "pack_publication_requested": {
+      "description": "pack_publication_requested field"
+    },
+    "pack_signing_requested": {
+      "description": "pack_signing_requested field"
+    },
+    "policy_refs": {
+      "description": "policy_refs field"
+    },
+    "product_boundary": {
+      "description": "product_boundary field"
+    },
+    "public_index_write_requested": {
+      "description": "public_index_write_requested field"
+    },
+    "review_policy_ref": {
+      "description": "review_policy_ref field"
+    },
+    "review_queue_write_requested": {
+      "description": "review_queue_write_requested field"
+    },
+    "rollup_dry_run_request_id": {
+      "description": "rollup_dry_run_request_id field"
+    },
+    "rollup_operation_class": {
+      "description": "rollup_operation_class field"
+    },
+    "schema_version": {
+      "description": "schema_version field"
+    },
+    "source_cache_write_requested": {
+      "description": "source_cache_write_requested field"
+    },
+    "source_discovery_runtime_requested": {
+      "description": "source_discovery_runtime_requested field"
+    },
+    "source_id": {
+      "description": "source_id field"
+    },
+    "source_pack_export_requested": {
+      "description": "source_pack_export_requested field"
+    },
+    "source_pack_import_requested": {
+      "description": "source_pack_import_requested field"
+    },
+    "source_record_kind": {
+      "description": "source_record_kind field"
+    },
+    "source_registry_mutation_requested": {
+      "description": "source_registry_mutation_requested field"
+    },
+    "source_sync_requested": {
+      "description": "source_sync_requested field"
+    },
+    "truth_boundary": {
+      "description": "truth_boundary field"
+    },
+    "truth_policy_ref": {
+      "description": "truth_policy_ref field"
+    }
+  },
+  "required": [
+    "schema_version",
+    "rollup_dry_run_request_id",
+    "source_id",
+    "connector_family",
+    "source_record_kind",
+    "operation_scope",
+    "rollup_operation_class",
+    "approved_request_key",
+    "input_artifact_scope",
+    "h0_h13_artifact_refs",
+    "approval_refs",
+    "policy_refs",
+    "dry_run_requested",
+    "source_discovery_runtime_requested",
+    "live_access_requested",
+    "network_access_requested",
+    "model_provider_requested",
+    "source_sync_requested",
+    "source_registry_mutation_requested",
+    "connector_registry_mutation_requested",
+    "source_pack_export_requested",
+    "source_pack_import_requested",
+    "connector_pack_export_requested",
+    "connector_pack_import_requested",
+    "pack_signing_requested",
+    "pack_publication_requested",
+    "source_cache_write_requested",
+    "evidence_write_requested",
+    "review_queue_write_requested",
+    "public_index_write_requested",
+    "master_index_write_requested",
+    "output_policy_ref",
+    "review_policy_ref",
+    "truth_policy_ref",
+    "product_boundary",
+    "truth_boundary",
+    "limitations"
+  ],
+  "schema_version": "h14_source_discovery_rollup_dry_run_request.v0",
+  "title": "h14_source_discovery_rollup_dry_run_request.v0.json",
+  "truth_boundary_required_false": {
+    "accepted_candidate_truth": false,
+    "accepted_connector_truth": false,
+    "accepted_coverage_truth": false,
+    "accepted_dispute_truth": false,
+    "accepted_evidence_truth": false,
+    "accepted_freshness_truth": false,
+    "accepted_lineage_truth": false,
+    "accepted_pack_truth": false,
+    "accepted_provenance_truth": false,
+    "accepted_public_record": false,
+    "accepted_reliability_truth": false,
+    "accepted_revocation_truth": false,
+    "accepted_scorecard_truth": false,
+    "accepted_source_candidate": false,
+    "accepted_source_candidate_truth": false,
+    "accepted_source_discovery_truth": false,
+    "accepted_source_need_truth": false,
+    "accepted_source_truth": false,
+    "automatic_future_connector_approval": false,
+    "connector_approval_claimed": false,
+    "connector_pack_manifest_candidate_is_connector_approval": false,
+    "connector_registry_mutated": false,
+    "connector_scorecard_candidate_is_connector_approval": false,
+    "coverage_manifest_candidate_is_exhaustive": false,
+    "coverage_manifest_is_exhaustive_global_coverage": false,
+    "dispute_revocation_candidate_is_automatic_deletion": false,
+    "evidence_candidate_preview_is_accepted_evidence": false,
+    "evidence_preview_is_accepted_evidence": false,
+    "freshness_score_is_currentness_truth": false,
+    "launch_readiness_claimed": false,
+    "legal_approval_claimed": false,
+    "lineage_auto_merges_sources": false,
+    "master_index_mutated": false,
+    "master_index_mutation_allowed": false,
+    "normalized_record_is_public_truth": false,
+    "pack_export_import_permission_claimed": false,
+    "pack_import_export_boundary_candidate_grants_permission": false,
+    "pack_publication_permission_claimed": false,
+    "pack_signing_permission_claimed": false,
+    "production_readiness_claimed": false,
+    "public_index_mutated": false,
+    "public_index_mutation_allowed": false,
+    "reliability_score_is_reliability_truth": false,
+    "review_seed_is_review_decision": false,
+    "rights_clearance_claimed": false,
+    "rollup_dry_run_result_is_public_truth": false,
+    "safe_source_status_claimed": false,
+    "source_approval_claimed": false,
+    "source_cache_candidate_is_accepted_source": false,
+    "source_cache_preview_is_accepted_source": false,
+    "source_candidate_candidate_is_source_truth": false,
+    "source_completeness_claimed": false,
+    "source_discovery_candidate_is_registry_mutation": false,
+    "source_discovery_permission_claimed": false,
+    "source_dispute_revocation_candidate_is_accepted_truth": false,
+    "source_lineage_provenance_candidate_is_lineage_truth": false,
+    "source_need_candidate_is_source_approval": false,
+    "source_pack_manifest_candidate_is_exported_pack": false,
+    "source_registry_mutated": false,
+    "source_reliability_freshness_candidate_is_truth": false
+  },
+  "type": "object"
+}

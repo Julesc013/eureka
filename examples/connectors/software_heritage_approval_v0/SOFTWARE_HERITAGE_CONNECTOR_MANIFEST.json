@@ -58,7 +58,7 @@
     "evidence_attribution_required": true
   },
   "source_sync_worker_relationship": {
-    "source_sync_worker_contract_ref": "contracts/source_sync/source_sync_worker_job.v0.json",
+    "source_sync_worker_contract_ref": "contracts/source/sync/source_sync_worker_job.v0.json",
     "source_sync_worker_runtime_implemented_now": false,
     "future_jobs_must_be_approval_gated": true,
     "notes": [
@@ -66,7 +66,7 @@
     ]
   },
   "source_cache_relationship": {
-    "source_cache_record_contract_ref": "contracts/source_cache/source_cache_record.v0.json",
+    "source_cache_record_contract_ref": "contracts/source/cache/source_cache_record.v0.json",
     "source_cache_mutation_allowed_now": false,
     "future_outputs": [
       "software_heritage_swhid_metadata_summary",
@@ -80,7 +80,7 @@
     ]
   },
   "evidence_ledger_relationship": {
-    "evidence_ledger_record_contract_ref": "contracts/evidence_ledger/evidence_ledger_record.v0.json",
+    "evidence_ledger_record_contract_ref": "contracts/evidence/ledger/evidence_ledger_record.v0.json",
     "evidence_ledger_mutation_allowed_now": false,
     "future_outputs": [
       "software_identity_observation",

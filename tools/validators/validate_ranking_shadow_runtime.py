@@ -23,11 +23,11 @@ CONTRACTS = (
     "contracts/query/ranking_shadow_result.v0.json",
     "contracts/query/ranking_factor.v0.json",
     "contracts/query/ranking_input_bundle.v0.json",
-    "contracts/control_schemas/previews/query/ranking_output_bundle.v0.json",
+    "contracts/schema/control/previews/query/ranking_output_bundle.v0.json",
     "contracts/query/identity_merge_shadow.v0.json",
     "contracts/query/dedup_shadow_result.v0.json",
     "contracts/query/search_quality_query_set.v0.json",
-    "contracts/control_schemas/audits/query/search_quality_regression_report.v0.json",
+    "contracts/schema/control/audits/query/search_quality_regression_report.v0.json",
     "contracts/query/public_ranking_gate.v0.json",
 )
 POLICIES = (
@@ -43,33 +43,33 @@ POLICIES = (
     "control/inventory/search_quality/ranking_truth_policy.json",
 )
 EXAMPLES = (
-    "examples/search_quality/ranking/input_bundle_software_v0.json",
-    "examples/search_quality/ranking/input_bundle_extraction_gap_v0.json",
-    "examples/search_quality/ranking/ranking_shadow_result_v0.json",
-    "examples/search_quality/ranking/ranking_output_bundle_v0.json",
-    "examples/search_quality/ranking/policy_blocked_ranking_shadow_v0.json",
-    "examples/search_quality/identity/identity_merge_shadow_v0.json",
-    "examples/search_quality/identity/dedup_shadow_result_v0.json",
-    "examples/search_quality/identity/conflict_preserved_identity_shadow_v0.json",
-    "examples/search_quality/identity/policy_blocked_identity_shadow_v0.json",
-    "examples/search_quality/query_sets/minimal_search_quality_query_set_v0.json",
-    "examples/search_quality/query_sets/software_compatibility_query_set_v0.json",
-    "examples/search_quality/query_sets/extraction_gap_query_set_v0.json",
-    "examples/search_quality/query_sets/known_absence_query_set_v0.json",
-    "examples/search_quality/regression/minimal_regression_report_v0.json",
-    "examples/search_quality/regression/software_quality_regression_report_v0.json",
-    "examples/search_quality/regression/extraction_gap_regression_report_v0.json",
-    "examples/search_quality/regression/policy_blocked_regression_report_v0.json",
-    "examples/search_quality/public_ranking_gate/public_ranking_gate_blocked_v0.json",
-    "examples/search_quality/public_ranking_gate/public_ranking_gate_ready_future_v0.json",
+    "examples/search/quality/ranking/input_bundle_software_v0.json",
+    "examples/search/quality/ranking/input_bundle_extraction_gap_v0.json",
+    "examples/search/quality/ranking/ranking_shadow_result_v0.json",
+    "examples/search/quality/ranking/ranking_output_bundle_v0.json",
+    "examples/search/quality/ranking/policy_blocked_ranking_shadow_v0.json",
+    "examples/search/quality/identity/identity_merge_shadow_v0.json",
+    "examples/search/quality/identity/dedup_shadow_result_v0.json",
+    "examples/search/quality/identity/conflict_preserved_identity_shadow_v0.json",
+    "examples/search/quality/identity/policy_blocked_identity_shadow_v0.json",
+    "examples/search/quality/query_sets/minimal_search_quality_query_set_v0.json",
+    "examples/search/quality/query_sets/software_compatibility_query_set_v0.json",
+    "examples/search/quality/query_sets/extraction_gap_query_set_v0.json",
+    "examples/search/quality/query_sets/known_absence_query_set_v0.json",
+    "examples/search/quality/regression/minimal_regression_report_v0.json",
+    "examples/search/quality/regression/software_quality_regression_report_v0.json",
+    "examples/search/quality/regression/extraction_gap_regression_report_v0.json",
+    "examples/search/quality/regression/policy_blocked_regression_report_v0.json",
+    "examples/search/quality/public_ranking_gate/public_ranking_gate_blocked_v0.json",
+    "examples/search/quality/public_ranking_gate/public_ranking_gate_ready_future_v0.json",
 )
 PYTHON_FILES = (
-    "runtime/search_quality/ranking_shadow.py",
-    "runtime/search_quality/ranking_factors.py",
-    "runtime/search_quality/identity_shadow.py",
-    "runtime/search_quality/dedup_shadow.py",
-    "runtime/search_quality/quality_harness.py",
-    "runtime/search_quality/public_ranking_gate.py",
+    "runtime/search/quality/ranking_shadow.py",
+    "runtime/search/quality/ranking_factors.py",
+    "runtime/search/quality/identity_shadow.py",
+    "runtime/search/quality/dedup_shadow.py",
+    "runtime/search/quality/quality_harness.py",
+    "runtime/search/quality/public_ranking_gate.py",
     "scripts/run_ranking_shadow.py",
     "scripts/run_search_quality_regression.py",
     "scripts/summarize_ranking_shadow.py",
@@ -168,16 +168,16 @@ def validate_imports(root: Path, errors: list[str]) -> None:
 
 def validate_scripts(root: Path, errors: list[str]) -> None:
     commands = (
-        [sys.executable, "scripts/run_ranking_shadow.py", "--input", "examples/search_quality/ranking/input_bundle_software_v0.json", "--check", "--json"],
-        [sys.executable, "scripts/run_search_quality_regression.py", "--query-set", "examples/search_quality/query_sets/minimal_search_quality_query_set_v0.json", "--check", "--json"],
-        [sys.executable, "scripts/summarize_ranking_shadow.py", "--input", "examples/search_quality/ranking", "--check", "--json"],
+        [sys.executable, "scripts/run_ranking_shadow.py", "--input", "examples/search/quality/ranking/input_bundle_software_v0.json", "--check", "--json"],
+        [sys.executable, "scripts/run_search_quality_regression.py", "--query-set", "examples/search/quality/query_sets/minimal_search_quality_query_set_v0.json", "--check", "--json"],
+        [sys.executable, "scripts/summarize_ranking_shadow.py", "--input", "examples/search/quality/ranking", "--check", "--json"],
     )
     for command in commands:
         result = subprocess.run(command, cwd=root, capture_output=True, text=True, timeout=120, check=False)
         if result.returncode != 0:
             errors.append(f"script failed: {' '.join(command)} :: {result.stdout} {result.stderr}")
     forbidden = subprocess.run(
-        [sys.executable, "scripts/run_ranking_shadow.py", "--input", "examples/search_quality/ranking/input_bundle_software_v0.json", "--output", "site/dist/ranking.json"],
+        [sys.executable, "scripts/run_ranking_shadow.py", "--input", "examples/search/quality/ranking/input_bundle_software_v0.json", "--output", "site/dist/ranking.json"],
         cwd=root,
         capture_output=True,
         text=True,
@@ -187,7 +187,7 @@ def validate_scripts(root: Path, errors: list[str]) -> None:
     if forbidden.returncode == 0 or "refusing forbidden output root" not in forbidden.stdout:
         errors.append("ranking script must reject site/dist output")
     public = subprocess.run(
-        [sys.executable, "scripts/run_search_quality_regression.py", "--query-set", "examples/search_quality/query_sets/minimal_search_quality_query_set_v0.json", "--output", "site/dist/data/public_index/ranking.json"],
+        [sys.executable, "scripts/run_search_quality_regression.py", "--query-set", "examples/search/quality/query_sets/minimal_search_quality_query_set_v0.json", "--output", "site/dist/data/public_index/ranking.json"],
         cwd=root,
         capture_output=True,
         text=True,

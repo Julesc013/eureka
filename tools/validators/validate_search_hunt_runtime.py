@@ -19,8 +19,8 @@ if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
 from scripts.hunt_queue_progress import hunt_queue_current_or_advanced, post_hunt_current_allowed
-from runtime.local_appliance import close_local_appliance, open_local_appliance
-from runtime.search_hunt import (
+from runtime.local.appliance import close_local_appliance, open_local_appliance
+from runtime.search.hunt import (
     ALLOWED_SEARCH_HUNT_CHECKED_LAYERS,
     ALLOWED_SEARCH_HUNT_STATES,
     ALLOWED_SEARCH_HUNT_UNCHECKED_LAYERS,
@@ -51,16 +51,16 @@ INVENTORIES = {
     "control/inventory/hunt_01_next_task_decision.json": "hunt_01_next_task_decision.v0",
 }
 RUNTIME_FILES = (
-    "runtime/search_hunt/__init__.py",
-    "runtime/search_hunt/schema.py",
-    "runtime/search_hunt/records.py",
-    "runtime/search_hunt/store.py",
-    "runtime/search_hunt/transitions.py",
-    "runtime/search_hunt/search_summary.py",
-    "runtime/search_hunt/absence_summary.py",
-    "runtime/search_hunt/queries.py",
-    "runtime/search_hunt/validation.py",
-    "runtime/search_hunt/errors.py",
+    "runtime/search/hunt/__init__.py",
+    "runtime/search/hunt/schema.py",
+    "runtime/search/hunt/records.py",
+    "runtime/search/hunt/store.py",
+    "runtime/search/hunt/transitions.py",
+    "runtime/search/hunt/search_summary.py",
+    "runtime/search/hunt/absence_summary.py",
+    "runtime/search/hunt/queries.py",
+    "runtime/search/hunt/validation.py",
+    "runtime/search/hunt/errors.py",
 )
 SCRIPTS = (
     "scripts/eureka_search_hunt.py",
@@ -308,7 +308,7 @@ def validate_policies(payloads: Mapping[str, Mapping[str, Any]], errors: list[st
 
 def validate_inventories(payloads: Mapping[str, Mapping[str, Any]], errors: list[str]) -> None:
     inventory = payloads.get("control/inventory/search_hunt_runtime_inventory.json", {})
-    if inventory.get("runtime_package") != "runtime/search_hunt":
+    if inventory.get("runtime_package") != "runtime/search/hunt":
         errors.append("runtime inventory package mismatch")
     if inventory.get("store_id") != "search_hunt" or inventory.get("db_path") != "db/search_hunt.sqlite":
         errors.append("runtime inventory store path mismatch")

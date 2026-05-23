@@ -10,9 +10,9 @@ Allowed inputs:
 
 Current approved roots:
 
-- `examples/public_search_ranking_dry_run`
-- `examples/evidence_weighted_ranking`
-- `examples/compatibility_aware_ranking`
+- `examples/index/public_search_ranking_dry_run`
+- `examples/evidence/weighted_ranking`
+- `examples/search/compatibility_aware_ranking`
 
 Forbidden inputs:
 

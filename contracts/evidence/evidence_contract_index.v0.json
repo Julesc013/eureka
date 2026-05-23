@@ -7,8 +7,8 @@
   "created_by_task": "IA-BUNDLE-00",
   "purpose": "Locate current governed evidence contract material without duplicating the existing evidence ledger schemas.",
   "canonical_schema_refs": [
-    "contracts/evidence_ledger/evidence_ledger_record.v0.json",
-    "contracts/evidence_ledger/evidence_ledger_manifest.v0.json"
+    "contracts/evidence/ledger/evidence_ledger_record.v0.json",
+    "contracts/evidence/ledger/evidence_ledger_manifest.v0.json"
   ],
   "policy_inventory_refs": [
     "control/inventory/evidence_ledger/evidence_ledger_policy.json",
@@ -32,7 +32,7 @@
     "credentials_configured": false
   },
   "notes": [
-    "contracts/evidence_ledger remains the canonical schema family for current evidence ledger records and manifests.",
+    "contracts/evidence/ledger remains the canonical schema family for current evidence ledger records and manifests.",
     "Future H0 work may decide whether this pointer namespace becomes a broader evidence contract family."
   ]
 }

@@ -1,7 +1,7 @@
 {
   "schema_version": "source_cache_store_inventory.v0",
   "task": "R0-05",
-  "runtime_package": "runtime/source_cache",
+  "runtime_package": "runtime/source/cache",
   "public_api": [
     "SourceCacheStore",
     "SourceCacheEntry",

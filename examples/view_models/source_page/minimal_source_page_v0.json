@@ -521,9 +521,9 @@
   ],
   "generated_from": {
     "source_contracts": [
-      "contracts/views/source_page.v0.json",
+      "contracts/view/pages/source_page.v0.json",
       "docs/reference/SOURCE_PAGE_CONTRACT.md",
-      "contracts/source_registry/source_record.schema.yaml"
+      "contracts/source/registry/source_record.schema.yaml"
     ],
     "policy_inventory": "control/inventory/publication/source_page_view_model_policy.json",
     "route_matrix": "control/inventory/publication/route_view_representation_matrix.json",

@@ -1,115 +1,68 @@
 {
-  "schema_version": "path_taxonomy_policy.v0",
+  "forbidden_active_paths": [
+    "data",
+    "deploy",
+    "release/render",
+    "surfaces/native/cli"
+  ],
+  "non_claims": [
+    "This policy records remaining taxonomy debt; it does not claim all historical examples are fully reorganized.",
+    "Runtime compatibility packages are wrappers only and are not canonical implementation homes.",
+    "Path taxonomy does not change runtime behavior, source connector behavior, public search behavior, live-source behavior, or production readiness."
+  ],
   "policy_id": "eureka-second-level-path-taxonomy",
-  "status": "bootstrap_policy",
-  "summary": "Machine-checkable first-level taxonomy policy for roots whose second-level layout still carries bootstrap debt.",
   "root_rules": {
     "contracts": {
       "allowed_first_level": [
         "api",
         "archive",
+        "command",
         "connectors",
         "domain",
         "evidence",
         "gateway",
         "hosting",
         "identity",
+        "index",
         "native",
-        "packs",
+        "pack",
         "query",
         "relay",
         "repo",
+        "representation",
+        "resolution",
         "runtime",
+        "schema",
+        "search",
         "snapshots",
+        "source",
         "stores",
+        "surface",
         "testing",
+        "view",
         "workbench"
       ],
       "known_debt_first_level": [
-        "actions",
         "ai",
-        "audits",
-        "control_schemas",
-        "evidence_ledger",
         "explanation",
         "extraction",
-        "master_index",
         "node",
-        "pages",
-        "projections",
-        "representations",
-        "resolution_run",
         "scout",
-        "search",
-        "search_interaction",
-        "search_quality",
-        "source_cache",
-        "source_registry",
-        "source_sync",
-        "sources",
-        "ui",
-        "user_cost",
-        "view_models",
-        "views"
+        "user_cost"
       ],
       "target_families": [
         "contracts/schema/control",
         "contracts/evidence/ledger",
         "contracts/source/{registry,cache,sync,records}",
-        "contracts/view/{models,views}",
-        "contracts/surface/{pages,projections,ui}",
-        "contracts/search/{interaction,quality}"
-      ]
-    },
-    "runtime": {
-      "allowed_first_level": [
-        "connectors",
-        "engine",
-        "extraction",
-        "gateway",
-        "hosting",
-        "packs",
-        "relay",
-        "snapshots"
-      ],
-      "known_debt_first_level": [
-        "actions",
-        "agent_research",
-        "ai_escalation",
-        "candidate_index",
-        "evidence_ledger",
-        "extraction_safe_fixtures",
-        "local_appliance",
-        "local_eval",
-        "local_foundry",
-        "local_network",
-        "local_operator",
-        "local_review",
-        "local_service",
-        "local_worker",
-        "pages",
-        "public_index",
-        "resolution_run",
-        "review_queue",
-        "search_hunt",
-        "search_need",
-        "search_quality",
-        "source_cache",
-        "source_observation",
-        "source_registry",
-        "workunit_queue"
-      ],
-      "target_families": [
-        "runtime/local/{appliance,eval,foundry,network,operator,review,service,worker}",
-        "runtime/source/{registry,cache,observation}",
-        "runtime/index/{candidate,public}",
-        "runtime/evidence/ledger",
-        "runtime/review/queue",
-        "runtime/worker/workunit_queue"
+        "contracts/view/{models,pages}",
+        "contracts/surface/{pages,projection,ui}",
+        "contracts/search/{interaction,quality}",
+        "contracts/index/master",
+        "contracts/pack",
+        "contracts/command/actions"
       ]
     },
     "examples": {
-      "classify_unlisted_as_debt": true,
       "allowed_first_level": [
         "api",
         "connectors",
@@ -127,14 +80,8 @@
         "work_units",
         "workbench"
       ],
-      "known_debt_prefixes": [
-        "candidate",
-        "evidence_ledger",
-        "source_cache",
-        "source_",
-        "search_",
-        "workunit"
-      ],
+      "classify_unlisted_as_debt": true,
+      "known_debt_prefixes": [],
       "target_families": [
         "examples/packs",
         "examples/sources",
@@ -151,16 +98,67 @@
         "examples/work_units"
       ]
     },
-    "surfaces": {
-      "required_first_level": [
-        "api",
-        "cli",
-        "files",
-        "lite",
-        "native",
-        "text",
-        "web"
+    "runtime": {
+      "allowed_first_level": [
+        "connectors",
+        "engine",
+        "evidence",
+        "extraction",
+        "gateway",
+        "hosting",
+        "index",
+        "local",
+        "packs",
+        "pages",
+        "relay",
+        "resolution_run",
+        "review",
+        "search",
+        "snapshots",
+        "source",
+        "worker"
       ],
+      "compatibility_first_level": [
+        "candidate_index",
+        "evidence_ledger",
+        "local_appliance",
+        "local_eval",
+        "local_foundry",
+        "local_network",
+        "local_operator",
+        "local_review",
+        "local_service",
+        "local_worker",
+        "public_index",
+        "review_queue",
+        "search_hunt",
+        "search_need",
+        "search_quality",
+        "source_cache",
+        "source_observation",
+        "source_registry",
+        "workunit_queue"
+      ],
+      "compatibility_only_files": [
+        "__init__.py"
+      ],
+      "known_debt_first_level": [
+        "actions",
+        "agent_research",
+        "ai_escalation",
+        "extraction_safe_fixtures"
+      ],
+      "target_families": [
+        "runtime/local/{appliance,eval,foundry,network,operator,review,service,worker}",
+        "runtime/source/{registry,cache,observation}",
+        "runtime/index/{candidate,public}",
+        "runtime/evidence/ledger",
+        "runtime/review/queue",
+        "runtime/worker/workunit_queue",
+        "runtime/search/{hunt,need,quality}"
+      ]
+    },
+    "surfaces": {
       "allowed_first_level": [
         "api",
         "cli",
@@ -170,17 +168,19 @@
         "text",
         "web"
       ],
-      "known_debt_first_level": []
+      "known_debt_first_level": [],
+      "required_first_level": [
+        "api",
+        "cli",
+        "files",
+        "lite",
+        "native",
+        "text",
+        "web"
+      ]
     }
   },
-  "forbidden_active_paths": [
-    "data",
-    "deploy",
-    "release/render",
-    "surfaces/native/cli"
-  ],
-  "non_claims": [
-    "This policy records bootstrap taxonomy debt; it does not claim all debt is resolved.",
-    "Path taxonomy does not change runtime behavior, source connector behavior, or public search behavior."
-  ]
+  "schema_version": "path_taxonomy_policy.v0",
+  "status": "bootstrap_policy",
+  "summary": "Machine-checkable first-level taxonomy policy after the final closeout migration; canonical families are allowed, wrapper-only runtime import packages are compatibility paths, and remaining debt is explicit."
 }

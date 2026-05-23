@@ -2,7 +2,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from runtime.search_hunt.ia_bridge import (
+from runtime.search.hunt.ia_bridge import (
     build_ia_hunt_boundary_report,
     collect_ia_hunt_outputs,
     plan_ia_hunt_pipeline,

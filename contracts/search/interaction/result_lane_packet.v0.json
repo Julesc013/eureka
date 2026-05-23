@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/search/interaction/result_lane_packet.v0.json",
+  "title": "ResultLanePacket",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "packet_type",
+    "emitted_at",
+    "lane_id",
+    "lane_kind",
+    "state",
+    "result_count",
+    "result_ids",
+    "confidence",
+    "limitations"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "result_lane_packet.v0"
+    },
+    "packet_type": {
+      "const": "ResultLanePacket"
+    },
+    "emitted_at": {
+      "type": "string"
+    },
+    "lane_id": {
+      "type": "string"
+    },
+    "lane_kind": {
+      "type": "string"
+    },
+    "state": {
+      "type": "string"
+    },
+    "result_count": {
+      "type": "number"
+    },
+    "result_ids": {
+      "type": "array"
+    },
+    "confidence": {
+      "type": "number"
+    },
+    "limitations": {
+      "type": "array"
+    }
+  },
+  "additionalProperties": true
+}

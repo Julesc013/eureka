@@ -48,10 +48,10 @@ architectural oracle rather than as a throwaway scaffold.
 - first bounded decomposition and package-member seam under `runtime/engine/decomposition/` that lets one resolved target plus one explicit fetched bounded representation surface a compact ZIP member listing through the public boundary plus current surfaces, while returning explicit unsupported, unavailable, and blocked outcomes without forcing extraction, installers, import, or restore semantics
 - first bounded member-readback and preview seam under `runtime/engine/members/` that lets one resolved target plus one explicit representation and member path surface compact text previews or bounded byte readback through the public boundary plus current surfaces, while returning explicit unsupported, unavailable, and blocked outcomes without forcing extraction to disk, installers, import, or restore semantics
 - first repo-level archive-resolution eval corpus under `evals/archive_resolution/` that records hard software-resolution queries, explicit bad-result patterns, minimum granularity expectations, expected future result lanes, and allowed absence outcomes before broader investigation, ranking, decomposition, source-expansion, or optional AI claims are introduced
-- first bounded Source Registry v0 seam under `contracts/source_registry/`, `control/inventory/sources/`, and `runtime/source_registry/` that records explicit governed source metadata, validates seed inventory records with stdlib-only runtime checks, and projects bounded source-registry listing plus detail views through the public boundary and current web, CLI, plus local HTTP API surfaces without implying live sync, crawling, health scoring, trust scoring, or implemented placeholder connectors
+- first bounded Source Registry v0 seam under `contracts/source/registry/`, `control/inventory/sources/`, and `runtime/source/registry/` that records explicit governed source metadata, validates seed inventory records with stdlib-only runtime checks, and projects bounded source-registry listing plus detail views through the public boundary and current web, CLI, plus local HTTP API surfaces without implying live sync, crawling, health scoring, trust scoring, or implemented placeholder connectors
 - first bounded Source Coverage and Capability Model v0 seam under
-  `contracts/source_registry/`, `control/inventory/sources/`,
-  `runtime/source_registry/`, and current source-registry public projections
+  `contracts/source/registry/`, `control/inventory/sources/`,
+  `runtime/source/registry/`, and current source-registry public projections
   that records explicit capability booleans plus coverage-depth metadata for
   every seed source, keeps placeholder and local/private sources honest, and
   exposes safe source capability summaries through web, CLI, and local HTTP API
@@ -352,9 +352,9 @@ movement, current failure modes, source-family impact, public-search smoke
 status, hard-eval status, external-baseline pending status, and remaining gaps.
 It adds no source/runtime behavior and records no external observations.
 Source Pack Contract v0 is now implemented as contract/validation/example-only
-work under `contracts/packs/`, `docs/reference/SOURCE_PACK_CONTRACT.md`,
+work under `contracts/pack/`, `docs/reference/SOURCE_PACK_CONTRACT.md`,
 `docs/reference/PACK_LIFECYCLE.md`,
-`examples/source_packs/minimal_recorded_source_pack_v0/`, and
+`examples/packs/source/minimal_recorded_source_pack_v0/`, and
 `control/audits/source-pack-contract-v0/`. It defines the governed
 `SOURCE_PACK.json` manifest shape, source-record alignment, public-safe
 evidence inputs, fixture policy, privacy/rights posture, lifecycle status, and
@@ -362,9 +362,9 @@ checksum validation. It adds no import, indexing, upload, live connector,
 executable plugin, hosted submission, master-index acceptance, download,
 installer, or production extension behavior.
 Evidence Pack Contract v0 is now implemented as contract/validation/example-only
-work under `contracts/packs/evidence_pack.v0.json`,
+work under `contracts/pack/evidence_pack.v0.json`,
 `docs/reference/EVIDENCE_PACK_CONTRACT.md`,
-`examples/evidence_packs/minimal_evidence_pack_v0/`, and
+`examples/packs/evidence/minimal_evidence_pack_v0/`, and
 `control/audits/evidence-pack-contract-v0/`. It defines the governed
 `EVIDENCE_PACK.json` manifest shape, evidence kinds, claim types, source
 reference locators, snippet limits, privacy/rights posture, and checksum
@@ -372,9 +372,9 @@ validation. It adds no import, indexing, upload, live connector, executable
 plugin, hosted submission, master-index acceptance, canonical truth selection,
 download, installer, or production extension behavior.
 Index Pack Contract v0 is now implemented as contract/validation/example-only
-work under `contracts/packs/index_pack.v0.json`,
+work under `contracts/pack/index_pack.v0.json`,
 `docs/reference/INDEX_PACK_CONTRACT.md`,
-`examples/index_packs/minimal_index_pack_v0/`, and
+`examples/packs/index/minimal_index_pack_v0/`, and
 `control/audits/index-pack-contract-v0/`. It defines the governed
 `INDEX_PACK.json` manifest shape, summary-only index-build metadata, source
 coverage, field coverage, query examples, public-safe record summaries,
@@ -383,9 +383,9 @@ upload, raw SQLite or local-cache export, live connector, executable plugin,
 hosted ingestion, master-index acceptance, canonical truth selection, download,
 installer, or production extension behavior.
 Contribution Pack Contract v0 is now implemented as contract/validation/example-only
-work under `contracts/packs/contribution_pack.v0.json`,
+work under `contracts/pack/contribution_pack.v0.json`,
 `docs/reference/CONTRIBUTION_PACK_CONTRACT.md`,
-`examples/contribution_packs/minimal_contribution_pack_v0/`, and
+`examples/packs/contribution/minimal_contribution_pack_v0/`, and
 `control/audits/contribution-pack-contract-v0/`. It defines the governed
 `CONTRIBUTION_PACK.json` manifest shape, review-candidate contribution items,
 source/evidence/index pack references, manual-observation placeholders,
@@ -396,7 +396,7 @@ runtime, automatic acceptance, live connector, executable plugin, hosted
 ingestion, canonical truth selection, download, installer, or production
 extension behavior.
 Master Index Review Queue Contract v0 is now implemented as
-contract/validation/example-only work under `contracts/master_index/`,
+contract/validation/example-only work under `contracts/index/master/`,
 `docs/reference/MASTER_INDEX_REVIEW_QUEUE_CONTRACT.md`,
 `docs/architecture/MASTER_INDEX_REVIEW_QUEUE.md`,
 `control/inventory/master_index/`,
@@ -455,7 +455,7 @@ model calls, provider runtime loading, API keys, telemetry, evidence import,
 contribution import, local-index mutation, public-search AI, or master-index
 mutation.
 Pack Import Report Format v0 is now implemented as format/validation/example
-work under `contracts/packs/pack_import_report.v0.json`,
+work under `contracts/pack/pack_import_report.v0.json`,
 `examples/import_reports/`, `scripts/validate_pack_import_report.py`,
 `docs/reference/PACK_IMPORT_REPORT_FORMAT.md`, and
 `control/audits/pack-import-report-format-v0/`. It records validate-only pack
@@ -491,7 +491,7 @@ redaction before public or committed reports. No report path runtime, staging
 runtime, staged state, import behavior, local index mutation, public-search
 mutation, upload, or master-index mutation is implemented.
 Local Staging Manifest Format v0 is now implemented as contract/example/
-validation-only work under `contracts/packs/local_staging_manifest.v0.json`,
+validation-only work under `contracts/pack/local_staging_manifest.v0.json`,
 `examples/local_staging_manifests/minimal_local_staging_manifest_v0/`,
 `docs/reference/LOCAL_STAGING_MANIFEST_FORMAT.md`,
 `scripts/validate_local_staging_manifest.py`, and

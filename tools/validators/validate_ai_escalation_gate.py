@@ -25,10 +25,10 @@ from runtime.ai_escalation import (
     validate_ai_escalation_gate,
     validate_preflight,
 )
-from runtime.local_appliance import close_local_appliance, open_local_appliance
-from runtime.local_operator import write_operator_token_record
-from runtime.local_service import LocalServiceApp
-from runtime.search_hunt import build_hunt_exhaustion_report
+from runtime.local.appliance import close_local_appliance, open_local_appliance
+from runtime.local.operator import write_operator_token_record
+from runtime.local.service import LocalServiceApp
+from runtime.search.hunt import build_hunt_exhaustion_report
 from scripts.eureka_init_instance import initialize_instance
 
 
@@ -63,10 +63,10 @@ RUNTIME_FILES = (
     "runtime/ai_escalation/preflight.py",
     "runtime/ai_escalation/validation.py",
     "runtime/ai_escalation/errors.py",
-    "runtime/local_appliance/manifest.py",
-    "runtime/local_appliance/composition.py",
-    "runtime/local_appliance/status.py",
-    "runtime/local_service/routes.py",
+    "runtime/local/appliance/manifest.py",
+    "runtime/local/appliance/composition.py",
+    "runtime/local/appliance/status.py",
+    "runtime/local/service/routes.py",
     "surfaces/web/workbench/local_html/pages.py",
     "surfaces/web/workbench/local_html/view_models.py",
 )

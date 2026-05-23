@@ -1,0 +1,78 @@
+{
+  "$id": "contracts/schema/control/audits/audits/mvp_alpha_gate_decision.v0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "blockers": {
+      "type": "array"
+    },
+    "decision": {
+      "enum": [
+        "READY_FOR_OPERATOR_REVIEW",
+        "READY_WITH_WARNINGS",
+        "NEEDS_REMEDIATION",
+        "BLOCKED",
+        "FAIL"
+      ]
+    },
+    "decision_reason": {
+      "type": "string"
+    },
+    "deployment_allowed_current": {
+      "const": false,
+      "type": "boolean"
+    },
+    "gate_decision_id": {
+      "type": "string"
+    },
+    "launch_allowed_current": {
+      "const": false,
+      "type": "boolean"
+    },
+    "limitations": {
+      "type": "array"
+    },
+    "operator_review_required": {
+      "type": "boolean"
+    },
+    "product_boundary": {
+      "type": "object"
+    },
+    "production_claim_allowed": {
+      "const": false,
+      "type": "boolean"
+    },
+    "public_alpha_live_claim_allowed": {
+      "const": false,
+      "type": "boolean"
+    },
+    "remediation_required": {
+      "type": "boolean"
+    },
+    "required_next_task": {
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "mvp_alpha_gate_decision.v0"
+    },
+    "truth_boundary": {
+      "type": "object"
+    },
+    "warnings": {
+      "type": "array"
+    }
+  },
+  "required": [
+    "schema_version",
+    "gate_decision_id",
+    "decision",
+    "required_next_task",
+    "operator_review_required",
+    "launch_allowed_current",
+    "deployment_allowed_current",
+    "truth_boundary",
+    "product_boundary"
+  ],
+  "title": "Eureka MVP Alpha Gate Decision v0",
+  "type": "object"
+}

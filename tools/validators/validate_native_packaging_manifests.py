@@ -95,10 +95,10 @@ PRODUCT = {
 }
 REQUIRED_CONTRACTS = [
     "contracts/native/native_packaging_manifest.v0.json",
-    "contracts/control_schemas/previews/native/native_release_candidate_preview.v0.json",
+    "contracts/schema/control/previews/native/native_release_candidate_preview.v0.json",
     "contracts/native/native_build_log_record.v0.json",
     "contracts/native/native_smoke_evidence_packet.v0.json",
-    "contracts/control_schemas/audits/native/native_first_wave_integration_audit.v0.json",
+    "contracts/schema/control/audits/native/native_first_wave_integration_audit.v0.json",
     "contracts/native/native_manual_build_packet.v0.json",
     "contracts/native/native_artifact_manifest.v1.json",
 ]

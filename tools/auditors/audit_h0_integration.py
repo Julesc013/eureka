@@ -16,14 +16,14 @@ FORBIDDEN_OUTPUT_ROOTS = ("site/dist", "site/dist/data/public_index", "runtime",
 REQUIRED_PATHS = (
     "control/audits/h0-bundle-01-source-os-foundation-v0/h0_bundle_01_report.json",
     "control/audits/h0-bundle-02-connector-interface-replay-v0/h0_bundle_02_report.json",
-    "contracts/sources/source_registry.v2.json",
+    "contracts/source/records/source_registry.v2.json",
     "contracts/connectors/source_connector_interface.v0.json",
-    "contracts/sources/source_coverage_ledger.v0.json",
+    "contracts/source/records/source_coverage_ledger.v0.json",
     "contracts/connectors/connector_scorecard.v0.json",
-    "contracts/packs/source_pack_manifest.v0.json",
-    "examples/source_coverage/internet_archive_coverage_record_v0.json",
+    "contracts/pack/source_pack_manifest.v0.json",
+    "examples/sources/coverage/internet_archive_coverage_record_v0.json",
     "examples/connectors/core/scorecards/internet_archive_scorecard_v0.json",
-    "examples/source_packs/internet_archive_source_pack_manifest_v0.json",
+    "examples/packs/source/internet_archive_source_pack_manifest_v0.json",
 )
 
 
@@ -75,9 +75,9 @@ def audit_h0_integration(root: Path) -> dict[str, Any]:
         if report and report.get("status") not in {"pass", "pass_with_warnings"}:
             errors.append(f"{label} status is not pass/pass_with_warnings: {report.get('status')}")
     for rel in (
-        "examples/source_coverage/internet_archive_coverage_record_v0.json",
+        "examples/sources/coverage/internet_archive_coverage_record_v0.json",
         "examples/connectors/core/scorecards/internet_archive_scorecard_v0.json",
-        "examples/source_packs/internet_archive_source_pack_manifest_v0.json",
+        "examples/packs/source/internet_archive_source_pack_manifest_v0.json",
     ):
         payload = _load_optional_json(root / rel, warnings)
         if _has_forbidden_true(payload):
@@ -89,11 +89,11 @@ def audit_h0_integration(root: Path) -> dict[str, Any]:
         "h0_exit_gate": "FAIL" if errors else ("PASS_WITH_WARNINGS" if warnings else "PASS"),
         "h1_readiness": "NOT_READY" if errors else ("READY_WITH_WARNINGS" if warnings else "READY_FOR_H1_POLICY_PACKS"),
         "checks": {
-            "source_registry_exists": (root / "contracts/sources/source_registry.v2.json").is_file(),
+            "source_registry_exists": (root / "contracts/source/records/source_registry.v2.json").is_file(),
             "connector_interface_exists": (root / "contracts/connectors/source_connector_interface.v0.json").is_file(),
-            "coverage_ledger_exists": (root / "contracts/sources/source_coverage_ledger.v0.json").is_file(),
+            "coverage_ledger_exists": (root / "contracts/source/records/source_coverage_ledger.v0.json").is_file(),
             "connector_scorecard_exists": (root / "contracts/connectors/connector_scorecard.v0.json").is_file(),
-            "source_pack_exists": (root / "contracts/packs/source_pack_manifest.v0.json").is_file(),
+            "source_pack_exists": (root / "contracts/pack/source_pack_manifest.v0.json").is_file(),
             "live_access_enabled": False,
             "source_sync_enabled": False,
             "public_index_mutated": False,

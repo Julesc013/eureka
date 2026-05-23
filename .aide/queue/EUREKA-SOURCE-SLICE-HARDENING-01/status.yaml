@@ -7,7 +7,7 @@ implemented: true
 fixture_only: true
 local_only: true
 repairs_performed:
-  - runtime/local_foundry/fixture_source_observation_slice.py imported tempfile for default temp output.
+  - runtime/local/foundry/fixture_source_observation_slice.py imported tempfile for default temp output.
   - validate_fixture_slice_report now checks object evidence refs and rebuild no-mutation flags.
 tests_added:
   - deterministic ID proof

@@ -29,7 +29,7 @@ class ProbeQueueContractValidatorTests(unittest.TestCase):
         )
         report = json.loads(completed.stdout)
         self.assertEqual(report["status"], "valid")
-        self.assertEqual(report["contract_file"], "contracts/control_schemas/tasks/query/probe_queue_item.v0.json")
+        self.assertEqual(report["contract_file"], "contracts/schema/control/tasks/query/probe_queue_item.v0.json")
         self.assertEqual(report["example_count"], 3)
 
 

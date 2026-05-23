@@ -23,7 +23,7 @@
   ],
   "allowed_output_roots": [
     "control/audits/**/generated/",
-    "examples/source_coverage/",
+    "examples/sources/coverage/",
     "explicit temp test directory"
   ],
   "forbidden_output_roots": [

@@ -1,7 +1,7 @@
 # R0 Contract Reference Update And Product Cleanup
 
 R0-03B-2 updated active schema references that were inside the allowed control, docs, tests, examples, and validator boundary.
-It moved the remaining safe control and task schemas out of `contracts/` and into `contracts/control_schemas/`.
+It moved the remaining safe control and task schemas out of `contracts/` and into `contracts/schema/control/`.
 
 Historical audit evidence was left intact when it records a past contract path.
 The current active schema taxonomy now lives in generated inventory files, not in older audit narrative.

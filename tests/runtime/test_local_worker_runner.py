@@ -5,9 +5,9 @@ import tempfile
 from pathlib import Path
 import unittest
 
-from runtime.local_appliance import close_local_appliance, open_local_appliance
-from runtime.local_worker import LocalWorkerRunner
-from runtime.workunit_queue import WorkUnit
+from runtime.local.appliance import close_local_appliance, open_local_appliance
+from runtime.local.worker import LocalWorkerRunner
+from runtime.worker.workunit_queue import WorkUnit
 
 
 ROOT = Path(__file__).resolve().parents[2]

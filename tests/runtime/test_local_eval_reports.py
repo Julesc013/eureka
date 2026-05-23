@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import unittest
 
-from runtime.local_eval import build_json_report, build_markdown_summary, validate_eval_report, validate_no_forbidden_eval_effects
+from runtime.local.eval import build_json_report, build_markdown_summary, validate_eval_report, validate_no_forbidden_eval_effects
 
 
 class LocalEvalReportsTests(unittest.TestCase):

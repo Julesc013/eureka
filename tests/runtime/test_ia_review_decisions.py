@@ -1,7 +1,7 @@
 import unittest
 from pathlib import Path
 
-from runtime.source_observation.internet_archive_review import (
+from runtime.source.observation.internet_archive_review import (
     apply_ia_review_decision,
     build_ia_review_items_from_candidates,
     load_default_ia_candidate_records,

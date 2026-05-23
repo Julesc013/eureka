@@ -2,9 +2,9 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from runtime.public_index import PublicIndexRecord, PublicIndexStore
-from runtime.public_index.errors import PublicIndexValidationError
-from runtime.public_index.validation import (
+from runtime.index.public import PublicIndexRecord, PublicIndexStore
+from runtime.index.public.errors import PublicIndexValidationError
+from runtime.index.public.validation import (
     validate_no_public_truth_fields,
     validate_public_index_path,
 )

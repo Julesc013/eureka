@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import unittest
 
-from runtime.local_service.workbench_live_run import create_workbench_resolution_run, get_workbench_run_events
+from runtime.local.service.workbench_live_run import create_workbench_resolution_run, get_workbench_run_events
 
 
 class WorkbenchLiveRunEventsTests(unittest.TestCase):

@@ -1,6 +1,6 @@
 # Export Manifest Contract
 
-`contracts/actions/export_manifest.v0.json` describes records that could be included in a public-safe manifest export.
+`contracts/command/actions/export_manifest.v0.json` describes records that could be included in a public-safe manifest export.
 
 An export manifest is not pack import, pack submission, pack publication, accepted evidence, accepted candidate truth, public truth, public-index mutation, or master-index mutation.
 

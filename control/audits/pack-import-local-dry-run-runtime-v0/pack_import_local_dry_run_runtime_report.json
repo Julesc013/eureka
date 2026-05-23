@@ -123,11 +123,11 @@
       "upload_endpoint_enabled": false
     },
     "input_roots": [
-      "examples/contribution_packs",
-      "examples/evidence_packs",
-      "examples/index_packs",
-      "examples/pack_import_dry_run",
-      "examples/source_packs"
+      "examples/packs/contribution",
+      "examples/packs/evidence",
+      "examples/packs/index",
+      "examples/packs/import_dry_run",
+      "examples/packs/source"
     ],
     "mode": "local_dry_run",
     "mutation_impact_counts": {
@@ -164,7 +164,7 @@
         "pack_id": "example.minimal_contribution_pack_v0",
         "pack_kind": "contribution_pack",
         "pack_version": "0.1.0",
-        "path": "examples/contribution_packs/minimal_contribution_pack_v0/CONTRIBUTION_PACK.json",
+        "path": "examples/packs/contribution/minimal_contribution_pack_v0/CONTRIBUTION_PACK.json",
         "privacy_status": "public_safe",
         "promotion_readiness": "review_required",
         "public_safety_status": "public_safe",
@@ -174,7 +174,7 @@
         "title": "Minimal Synthetic Contribution Pack v0",
         "valid": true,
         "validation_status": "valid",
-        "validator_command": "python scripts/validate_contribution_pack.py --pack-root examples/contribution_packs/minimal_contribution_pack_v0 --json",
+        "validator_command": "python scripts/validate_contribution_pack.py --pack-root examples/packs/contribution/minimal_contribution_pack_v0 --json",
         "validator_exit_code": 0,
         "warnings": []
       },
@@ -184,7 +184,7 @@
         "pack_id": "example.minimal_evidence_pack_v0",
         "pack_kind": "evidence_pack",
         "pack_version": "0.1.0",
-        "path": "examples/evidence_packs/minimal_evidence_pack_v0/EVIDENCE_PACK.json",
+        "path": "examples/packs/evidence/minimal_evidence_pack_v0/EVIDENCE_PACK.json",
         "privacy_status": "public_safe",
         "promotion_readiness": "not_ready",
         "public_safety_status": "public_safe",
@@ -194,7 +194,7 @@
         "title": "Minimal Evidence Pack v0",
         "valid": true,
         "validation_status": "valid",
-        "validator_command": "python scripts/validate_evidence_pack.py --pack-root examples/evidence_packs/minimal_evidence_pack_v0 --json",
+        "validator_command": "python scripts/validate_evidence_pack.py --pack-root examples/packs/evidence/minimal_evidence_pack_v0 --json",
         "validator_exit_code": 0,
         "warnings": []
       },
@@ -204,7 +204,7 @@
         "pack_id": "example.minimal_index_pack_v0",
         "pack_kind": "index_pack",
         "pack_version": "0.1.0",
-        "path": "examples/index_packs/minimal_index_pack_v0/INDEX_PACK.json",
+        "path": "examples/packs/index/minimal_index_pack_v0/INDEX_PACK.json",
         "privacy_status": "public_safe",
         "promotion_readiness": "not_ready",
         "public_safety_status": "public_safe",
@@ -214,7 +214,7 @@
         "title": "Minimal Index Pack v0",
         "valid": true,
         "validation_status": "valid",
-        "validator_command": "python scripts/validate_index_pack.py --pack-root examples/index_packs/minimal_index_pack_v0 --json",
+        "validator_command": "python scripts/validate_index_pack.py --pack-root examples/packs/index/minimal_index_pack_v0 --json",
         "validator_exit_code": 0,
         "warnings": []
       },
@@ -224,7 +224,7 @@
         "pack_id": "example.pack_import_dry_run.contribution_pack.v0",
         "pack_kind": "contribution_pack",
         "pack_version": "0.1.0",
-        "path": "examples/pack_import_dry_run/minimal_contribution_pack_review/PACK_IMPORT_DRY_RUN_INPUT.json",
+        "path": "examples/packs/import_dry_run/minimal_contribution_pack_review/PACK_IMPORT_DRY_RUN_INPUT.json",
         "privacy_status": "public_safe",
         "promotion_readiness": "review_required",
         "public_safety_status": "review_required",
@@ -246,7 +246,7 @@
         "pack_id": "example.pack_import_dry_run.evidence_pack.v0",
         "pack_kind": "evidence_pack",
         "pack_version": "0.1.0",
-        "path": "examples/pack_import_dry_run/minimal_evidence_pack_import/PACK_IMPORT_DRY_RUN_INPUT.json",
+        "path": "examples/packs/import_dry_run/minimal_evidence_pack_import/PACK_IMPORT_DRY_RUN_INPUT.json",
         "privacy_status": "public_safe",
         "promotion_readiness": "not_ready",
         "public_safety_status": "public_safe",
@@ -268,7 +268,7 @@
         "pack_id": "example.pack_import_dry_run.index_pack.v0",
         "pack_kind": "index_pack",
         "pack_version": "0.1.0",
-        "path": "examples/pack_import_dry_run/minimal_index_pack_compare/PACK_IMPORT_DRY_RUN_INPUT.json",
+        "path": "examples/packs/import_dry_run/minimal_index_pack_compare/PACK_IMPORT_DRY_RUN_INPUT.json",
         "privacy_status": "public_safe",
         "promotion_readiness": "not_ready",
         "public_safety_status": "public_safe",
@@ -290,7 +290,7 @@
         "pack_id": "example.pack_import_dry_run.pack_set.v0",
         "pack_kind": "pack_set",
         "pack_version": "0.1.0",
-        "path": "examples/pack_import_dry_run/minimal_pack_set_import/PACK_IMPORT_DRY_RUN_INPUT.json",
+        "path": "examples/packs/import_dry_run/minimal_pack_set_import/PACK_IMPORT_DRY_RUN_INPUT.json",
         "privacy_status": "public_safe",
         "promotion_readiness": "review_required",
         "public_safety_status": "review_required",
@@ -312,7 +312,7 @@
         "pack_id": "example.pack_import_dry_run.source_pack.v0",
         "pack_kind": "source_pack",
         "pack_version": "0.1.0",
-        "path": "examples/pack_import_dry_run/minimal_source_pack_import/PACK_IMPORT_DRY_RUN_INPUT.json",
+        "path": "examples/packs/import_dry_run/minimal_source_pack_import/PACK_IMPORT_DRY_RUN_INPUT.json",
         "privacy_status": "public_safe",
         "promotion_readiness": "not_ready",
         "public_safety_status": "public_safe",
@@ -334,7 +334,7 @@
         "pack_id": "example.minimal_recorded_source_pack_v0",
         "pack_kind": "source_pack",
         "pack_version": "0.1.0",
-        "path": "examples/source_packs/minimal_recorded_source_pack_v0/SOURCE_PACK.json",
+        "path": "examples/packs/source/minimal_recorded_source_pack_v0/SOURCE_PACK.json",
         "privacy_status": "public_safe",
         "promotion_readiness": "not_ready",
         "public_safety_status": "public_safe",
@@ -344,7 +344,7 @@
         "title": "Example FOSS Project Release Metadata Fixture",
         "valid": true,
         "validation_status": "valid",
-        "validator_command": "python scripts/validate_source_pack.py --pack-root examples/source_packs/minimal_recorded_source_pack_v0 --json",
+        "validator_command": "python scripts/validate_source_pack.py --pack-root examples/packs/source/minimal_recorded_source_pack_v0 --json",
         "validator_exit_code": 0,
         "warnings": []
       }
@@ -382,11 +382,11 @@
   },
   "evidence_ledger_mutated": false,
   "examples": [
-    "examples/pack_import_dry_run/minimal_source_pack_import",
-    "examples/pack_import_dry_run/minimal_evidence_pack_import",
-    "examples/pack_import_dry_run/minimal_index_pack_compare",
-    "examples/pack_import_dry_run/minimal_contribution_pack_review",
-    "examples/pack_import_dry_run/minimal_pack_set_import"
+    "examples/packs/import_dry_run/minimal_source_pack_import",
+    "examples/packs/import_dry_run/minimal_evidence_pack_import",
+    "examples/packs/import_dry_run/minimal_index_pack_compare",
+    "examples/packs/import_dry_run/minimal_contribution_pack_review",
+    "examples/packs/import_dry_run/minimal_pack_set_import"
   ],
   "executable_payload_url_policy": {
     "downloads_enabled": false,
@@ -405,12 +405,12 @@
   },
   "input_model": {
     "approved_roots": [
-      "examples/source_packs",
-      "examples/evidence_packs",
-      "examples/index_packs",
-      "examples/contribution_packs",
+      "examples/packs/source",
+      "examples/packs/evidence",
+      "examples/packs/index",
+      "examples/packs/contribution",
       "examples/packs",
-      "examples/pack_import_dry_run"
+      "examples/packs/import_dry_run"
     ],
     "forbidden": [
       "arbitrary local paths",
@@ -559,5 +559,5 @@
     "validators_run_for_real_pack_examples": 4
   },
   "validator_script": "scripts/validate_pack_import_dry_run_report.py",
-  "worktree_status": "## main...origin/main\n?? control/audits/pack-import-local-dry-run-runtime-v0/\n?? control/inventory/packs/pack_import_local_dry_run_runtime.json\n?? docs/operations/PACK_IMPORT_LOCAL_DRY_RUN_RUNTIME.md\n?? examples/pack_import_dry_run/\n?? runtime/packs/\n?? scripts/run_pack_import_dry_run.py\n?? scripts/validate_pack_import_dry_run_report.py\n?? tests/operations/test_pack_import_local_dry_run_runtime.py\n?? tests/runtime/test_pack_import_dry_run.py\n?? tests/scripts/test_run_pack_import_dry_run.py\n?? tests/scripts/test_validate_pack_import_dry_run_report.py"
+  "worktree_status": "## main...origin/main\n?? control/audits/pack-import-local-dry-run-runtime-v0/\n?? control/inventory/packs/pack_import_local_dry_run_runtime.json\n?? docs/operations/PACK_IMPORT_LOCAL_DRY_RUN_RUNTIME.md\n?? examples/packs/import_dry_run/\n?? runtime/packs/\n?? scripts/run_pack_import_dry_run.py\n?? scripts/validate_pack_import_dry_run_report.py\n?? tests/operations/test_pack_import_local_dry_run_runtime.py\n?? tests/runtime/test_pack_import_dry_run.py\n?? tests/scripts/test_run_pack_import_dry_run.py\n?? tests/scripts/test_validate_pack_import_dry_run_report.py"
 }

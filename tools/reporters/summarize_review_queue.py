@@ -15,7 +15,7 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.local_foundry import review_queue  # noqa: E402
+from runtime.local.foundry import review_queue  # noqa: E402
 from scripts.record_review_queue import FORBIDDEN_OUTPUT_ROOTS, output_path_allowed  # noqa: E402
 
 

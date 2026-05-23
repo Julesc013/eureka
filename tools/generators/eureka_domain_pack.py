@@ -13,7 +13,7 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.local_eval.domain_packs import (
+from runtime.local.eval.domain_packs import (
     load_domain_packs_from_manifest,
     load_domain_seed_manifest,
     validate_domain_pack,

@@ -4,7 +4,7 @@
   "lanes": [
     {
       "lane_kind": "reviewed_local_results",
-      "packet_contract": "contracts/search_interaction/result_lane_packet.v0.json",
+      "packet_contract": "contracts/search/interaction/result_lane_packet.v0.json",
       "public_visibility": true,
       "operator_visibility": true,
       "native_read_only_visibility": true,
@@ -20,7 +20,7 @@
     },
     {
       "lane_kind": "local_candidate_results",
-      "packet_contract": "contracts/search_interaction/result_lane_packet.v0.json",
+      "packet_contract": "contracts/search/interaction/result_lane_packet.v0.json",
       "public_visibility": false,
       "operator_visibility": true,
       "native_read_only_visibility": false,
@@ -36,7 +36,7 @@
     },
     {
       "lane_kind": "source_cache_hits",
-      "packet_contract": "contracts/search_interaction/result_lane_packet.v0.json",
+      "packet_contract": "contracts/search/interaction/result_lane_packet.v0.json",
       "public_visibility": false,
       "operator_visibility": true,
       "native_read_only_visibility": false,
@@ -52,7 +52,7 @@
     },
     {
       "lane_kind": "IA_metadata_candidates",
-      "packet_contract": "contracts/search_interaction/result_lane_packet.v0.json",
+      "packet_contract": "contracts/search/interaction/result_lane_packet.v0.json",
       "public_visibility": false,
       "operator_visibility": true,
       "native_read_only_visibility": false,
@@ -68,7 +68,7 @@
     },
     {
       "lane_kind": "review_queue_items",
-      "packet_contract": "contracts/search_interaction/result_lane_packet.v0.json",
+      "packet_contract": "contracts/search/interaction/result_lane_packet.v0.json",
       "public_visibility": false,
       "operator_visibility": true,
       "native_read_only_visibility": false,
@@ -84,7 +84,7 @@
     },
     {
       "lane_kind": "known_absence",
-      "packet_contract": "contracts/search_interaction/result_lane_packet.v0.json",
+      "packet_contract": "contracts/search/interaction/result_lane_packet.v0.json",
       "public_visibility": true,
       "operator_visibility": true,
       "native_read_only_visibility": true,
@@ -100,7 +100,7 @@
     },
     {
       "lane_kind": "near_misses",
-      "packet_contract": "contracts/search_interaction/result_lane_packet.v0.json",
+      "packet_contract": "contracts/search/interaction/result_lane_packet.v0.json",
       "public_visibility": true,
       "operator_visibility": true,
       "native_read_only_visibility": false,
@@ -116,7 +116,7 @@
     },
     {
       "lane_kind": "blocked_actions",
-      "packet_contract": "contracts/search_interaction/result_lane_packet.v0.json",
+      "packet_contract": "contracts/search/interaction/result_lane_packet.v0.json",
       "public_visibility": true,
       "operator_visibility": true,
       "native_read_only_visibility": false,
@@ -132,7 +132,7 @@
     },
     {
       "lane_kind": "running_workunits",
-      "packet_contract": "contracts/search_interaction/result_lane_packet.v0.json",
+      "packet_contract": "contracts/search/interaction/result_lane_packet.v0.json",
       "public_visibility": false,
       "operator_visibility": true,
       "native_read_only_visibility": false,
@@ -148,7 +148,7 @@
     },
     {
       "lane_kind": "deferred_deepening",
-      "packet_contract": "contracts/search_interaction/result_lane_packet.v0.json",
+      "packet_contract": "contracts/search/interaction/result_lane_packet.v0.json",
       "public_visibility": false,
       "operator_visibility": true,
       "native_read_only_visibility": false,
@@ -164,7 +164,7 @@
     },
     {
       "lane_kind": "future_extraction_work",
-      "packet_contract": "contracts/search_interaction/result_lane_packet.v0.json",
+      "packet_contract": "contracts/search/interaction/result_lane_packet.v0.json",
       "public_visibility": false,
       "operator_visibility": true,
       "native_read_only_visibility": false,

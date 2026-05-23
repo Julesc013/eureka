@@ -145,7 +145,7 @@ def build_snapshot() -> dict[str, Any]:
                 "review_kind": "evidence_review",
                 "priority_class": "low",
                 "basis": "synthetic_example",
-                "promotion_policy_ref": "contracts/control_schemas/previews/query/candidate_promotion_assessment.v0.json",
+                "promotion_policy_ref": "contracts/schema/control/previews/query/candidate_promotion_assessment.v0.json",
                 "limitations": ["No candidate promotion or candidate mutation is performed."],
             }
         ],

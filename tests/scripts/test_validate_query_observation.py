@@ -7,7 +7,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[2]
-EXAMPLE = ROOT / "examples" / "query_observations" / "minimal_query_observation_v0" / "QUERY_OBSERVATION.json"
+EXAMPLE = ROOT / "examples" / "search" / "query_observations" / "minimal_query_observation_v0" / "QUERY_OBSERVATION.json"
 
 
 class QueryObservationValidatorTests(unittest.TestCase):

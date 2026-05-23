@@ -18,7 +18,7 @@ class SearchExplanationScriptTests(unittest.TestCase):
         result = self.run_cmd(
             "scripts/explain_search_fixture.py",
             "--input",
-            "examples/search_quality/input_bundles/software_search_explanation_bundle_v0.json",
+            "examples/search/quality/input_bundles/software_search_explanation_bundle_v0.json",
             "--check",
             "--json",
         )
@@ -32,7 +32,7 @@ class SearchExplanationScriptTests(unittest.TestCase):
             result = self.run_cmd(
                 "scripts/explain_search_fixture.py",
                 "--input",
-                "examples/search_quality/input_bundles/software_search_explanation_bundle_v0.json",
+                "examples/search/quality/input_bundles/software_search_explanation_bundle_v0.json",
                 "--output",
                 str(out),
                 "--bundle-output",
@@ -46,7 +46,7 @@ class SearchExplanationScriptTests(unittest.TestCase):
         result = self.run_cmd(
             "scripts/explain_search_fixture.py",
             "--input",
-            "examples/search_quality/input_bundles/software_search_explanation_bundle_v0.json",
+            "examples/search/quality/input_bundles/software_search_explanation_bundle_v0.json",
             "--output",
             "site/dist/explanation.json",
         )
@@ -57,7 +57,7 @@ class SearchExplanationScriptTests(unittest.TestCase):
         result = self.run_cmd(
             "scripts/summarize_search_explanations.py",
             "--input",
-            "examples/search_quality",
+            "examples/search/quality",
             "--output",
             "site/dist/data/public_index/explanation.json",
         )
@@ -65,7 +65,7 @@ class SearchExplanationScriptTests(unittest.TestCase):
         self.assertIn("refusing forbidden output root", result.stdout)
 
     def test_summary_script_check_passes(self) -> None:
-        result = self.run_cmd("scripts/summarize_search_explanations.py", "--input", "examples/search_quality", "--check")
+        result = self.run_cmd("scripts/summarize_search_explanations.py", "--input", "examples/search/quality", "--check")
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
         self.assertIn("status: pass", result.stdout)
 

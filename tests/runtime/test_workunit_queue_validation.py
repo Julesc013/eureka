@@ -4,7 +4,7 @@ import ast
 from pathlib import Path
 import unittest
 
-from runtime.workunit_queue import (
+from runtime.worker.workunit_queue import (
     ALLOWED_WORKUNIT_STATES,
     ALLOWED_WORKUNIT_TYPES,
     WorkUnit,
@@ -16,7 +16,7 @@ from runtime.workunit_queue import (
 
 
 ROOT = Path(__file__).resolve().parents[2]
-RUNTIME_DIR = ROOT / "runtime" / "workunit_queue"
+RUNTIME_DIR = ROOT / "runtime" / "worker" / "workunit_queue"
 FORBIDDEN_IMPORTS = (
     "runtime.connectors",
     "runtime.local_foundry",

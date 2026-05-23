@@ -12,17 +12,17 @@ REPORT = ROOT / "control" / "audits" / "source-cache-evidence-ledger-v0" / "sour
 class SourceCacheEvidenceLedgerOperationsTests(unittest.TestCase):
     def test_contracts_examples_and_report_exist(self) -> None:
         for path in (
-            ROOT / "contracts/source_cache/source_cache_record.v0.json",
-            ROOT / "contracts/source_cache/source_cache_manifest.v0.json",
-            ROOT / "contracts/evidence_ledger/evidence_ledger_record.v0.json",
-            ROOT / "contracts/evidence_ledger/evidence_ledger_manifest.v0.json",
+            ROOT / "contracts/source/cache/source_cache_record.v0.json",
+            ROOT / "contracts/source/cache/source_cache_manifest.v0.json",
+            ROOT / "contracts/evidence/ledger/evidence_ledger_record.v0.json",
+            ROOT / "contracts/evidence/ledger/evidence_ledger_manifest.v0.json",
             SOURCE_POLICY,
             LEDGER_POLICY,
             REPORT,
         ):
             self.assertTrue(path.is_file(), path)
-        self.assertEqual(len(list((ROOT / "examples/source_cache").glob("*/SOURCE_CACHE_RECORD.json"))), 3)
-        self.assertEqual(len(list((ROOT / "examples/evidence_ledger").glob("*/EVIDENCE_LEDGER_RECORD.json"))), 3)
+        self.assertEqual(len(list((ROOT / "examples/sources/cache/dry_run").glob("*/SOURCE_CACHE_RECORD.json"))), 3)
+        self.assertEqual(len(list((ROOT / "examples/evidence/ledger/dry_run").glob("*/EVIDENCE_LEDGER_RECORD.json"))), 3)
 
     def test_policy_hard_flags(self) -> None:
         source_policy = json.loads(SOURCE_POLICY.read_text(encoding="utf-8"))

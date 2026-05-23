@@ -36,7 +36,7 @@ Product-boundary fields for network, live probes, source sync, source connectors
 ## Commands
 
 ```bash
-python scripts/record_source_cache.py --input examples/source_cache_records/source_lead_record_v0.json --check
-python scripts/summarize_source_cache.py --input examples/source_cache_records --check
+python scripts/record_source_cache.py --input examples/sources/cache/records/source_lead_record_v0.json --check
+python scripts/summarize_source_cache.py --input examples/sources/cache/records --check
 python scripts/validate_local_source_cache_runtime.py
 ```

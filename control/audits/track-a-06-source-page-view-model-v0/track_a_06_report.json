@@ -4,7 +4,7 @@
   "track": "A",
   "task": "TRACK-A-06",
   "added_contracts": [
-    "contracts/views/source_page.v0.json",
+    "contracts/view/pages/source_page.v0.json",
     "docs/reference/SOURCE_PAGE_VIEW_MODEL_CONTRACT.md"
   ],
   "added_inventories": [

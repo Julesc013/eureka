@@ -22,7 +22,7 @@
 - `track_b_source_cache`: source cache runtime, policies, docs, examples, tests
 - `track_b_evidence_ledger`: evidence ledger runtime, policies, docs, examples, tests
 - `b23_or_later`: Track B integration audit and pack/export/promotion/review spine work
-- `runtime_or_tests`: `runtime/local_foundry/`, `scripts/`, and `tests/`
+- `runtime_or_tests`: `runtime/local/foundry/`, `scripts/`, and `tests/`
 - `docs_or_ops`: `docs/reference/`, `docs/architecture/`, and `docs/operations/`
 
 ## Risk Flags

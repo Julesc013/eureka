@@ -2,7 +2,7 @@
 
 | Milestone | Status | Evidence files | Validator/script | Current limitations | Next action |
 | --- | --- | --- | --- | --- | --- |
-| Source Registry v0 | implemented | `control/inventory/sources/`, `runtime/source_registry/` | `python -m unittest runtime.source_registry.tests.test_registry` | Inventory records are not live source health checks. | Keep source records aligned with public summaries. |
+| Source Registry v0 | implemented | `control/inventory/sources/`, `runtime/source/registry/` | `python -m unittest runtime.source_registry.tests.test_registry` | Inventory records are not live source health checks. | Keep source records aligned with public summaries. |
 | Source Coverage and Capability Model v0 | implemented | `control/inventory/sources/*.source.json` | `python -m unittest runtime.source_registry.tests.test_source_capability_coverage` | Capability fields are static metadata. | Continue fixture-backed source expansion. |
 | Real Source Coverage Pack v0 | implemented | recorded fixture connectors and tests | `python -m unittest tests.integration.test_real_source_coverage_pack` | Uses committed fixtures only. | Add fixture-only coverage where audit gaps justify it. |
 | Old-Platform Source Coverage Expansion v0 | implemented | old-platform fixtures/tests | `python -m unittest tests.integration.test_old_platform_source_coverage_expansion` | No live source behavior. | Keep hard eval cases covered. |

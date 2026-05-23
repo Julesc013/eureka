@@ -37,7 +37,7 @@ The validator checks in-memory and temp-file stores, idempotent init, contracts,
 Use the runtime API:
 
 ```python
-from runtime.source_cache import SourceCacheStore
+from runtime.source.cache import SourceCacheStore
 
 with SourceCacheStore.open("path/to/source-cache.sqlite") as store:
     store.init()

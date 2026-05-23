@@ -18,7 +18,7 @@ The conversion layer may read committed repo-local material only:
 - `control/inventory/observations/observation_candidate_review_queue.json`
 - OBS-AGENT-01, OBS-AGENT-02, and OBS-AGENT-03 audit artifacts
 - `examples/observation_candidates/**`
-- `examples/observation_reviews/**`
+- `examples/review/observation_reviews/**`
 - `contracts/query/**`
 - `docs/operations/**`
 - `evals/search_usefulness/**` when already committed

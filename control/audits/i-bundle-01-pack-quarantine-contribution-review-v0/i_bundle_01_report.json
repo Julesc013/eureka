@@ -1,13 +1,13 @@
 {
   "added_contracts": [
-    "contracts/packs/pack_quarantine_request.v0.json",
-    "contracts/packs/pack_quarantine_result.v0.json",
-    "contracts/packs/pack_fixity_report.v0.json",
-    "contracts/packs/pack_signature_envelope.v0.json",
-    "contracts/packs/pack_signature_verification_report.v0.json",
-    "contracts/packs/pack_import_preview.v0.json",
-    "contracts/packs/contribution_review_seed.v0.json",
-    "contracts/packs/pack_trust_revocation_preview.v0.json"
+    "contracts/pack/pack_quarantine_request.v0.json",
+    "contracts/pack/pack_quarantine_result.v0.json",
+    "contracts/pack/pack_fixity_report.v0.json",
+    "contracts/pack/pack_signature_envelope.v0.json",
+    "contracts/pack/pack_signature_verification_report.v0.json",
+    "contracts/pack/pack_import_preview.v0.json",
+    "contracts/pack/contribution_review_seed.v0.json",
+    "contracts/pack/pack_trust_revocation_preview.v0.json"
   ],
   "added_docs": [
     "docs/reference/PACK_QUARANTINE_RUNTIME.md",
@@ -23,7 +23,7 @@
     "docs/operations/PACK_IMPORT_PREVIEW_NO_IMPORT_POLICY.md"
   ],
   "added_examples": [
-    "examples/pack_quarantine/"
+    "examples/packs/quarantine/"
   ],
   "added_inventories": [
     "control/inventory/packs/pack_quarantine_policy.json",
@@ -38,11 +38,11 @@
     "control/inventory/packs/pack_trust_revocation_policy.json"
   ],
   "added_runtime_modules": [
-    "runtime/local_foundry/pack_quarantine.py",
-    "runtime/local_foundry/pack_fixity.py",
-    "runtime/local_foundry/pack_signature.py",
-    "runtime/local_foundry/pack_import_preview.py",
-    "runtime/local_foundry/contribution_review.py"
+    "runtime/local/foundry/pack_quarantine.py",
+    "runtime/local/foundry/pack_fixity.py",
+    "runtime/local/foundry/pack_signature.py",
+    "runtime/local/foundry/pack_import_preview.py",
+    "runtime/local/foundry/contribution_review.py"
   ],
   "added_scripts": [
     "scripts/quarantine_local_pack.py",

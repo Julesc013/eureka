@@ -263,7 +263,7 @@ Current scripts:
   it supports `--json` and performs no network calls
 - `validate_source_pack.py`: validates Source Pack Contract v0 directories.
   By default it checks the synthetic example pack under
-  `examples/source_packs/minimal_recorded_source_pack_v0/`, including
+  `examples/packs/source/minimal_recorded_source_pack_v0/`, including
   `SOURCE_PACK.json`, JSONL records, rights/privacy posture, disabled
   live/network behavior, checksum coverage, private-path rejection, and
   executable payload rejection. It supports `--pack-root`, `--json`, and
@@ -271,7 +271,7 @@ Current scripts:
   network
 - `validate_evidence_pack.py`: validates Evidence Pack Contract v0 directories.
   By default it checks the synthetic example pack under
-  `examples/evidence_packs/minimal_evidence_pack_v0/`, including
+  `examples/packs/evidence/minimal_evidence_pack_v0/`, including
   `EVIDENCE_PACK.json`, JSONL evidence/source-reference records, evidence id
   uniqueness, allowed claim types, snippet limits, rights/privacy posture,
   checksum coverage, private-path rejection, and executable payload rejection.
@@ -279,7 +279,7 @@ Current scripts:
   index, upload, execute, fetch, scrape, or contact a network
 - `validate_index_pack.py`: validates Index Pack Contract v0 directories. By
   default it checks the synthetic example pack under
-  `examples/index_packs/minimal_index_pack_v0/`, including `INDEX_PACK.json`,
+  `examples/packs/index/minimal_index_pack_v0/`, including `INDEX_PACK.json`,
   index/source/field coverage JSON, record-summary JSONL, query examples,
   checksum coverage, privacy/status consistency, private-path rejection, raw
   SQLite/cache rejection, and executable payload rejection. It supports
@@ -287,7 +287,7 @@ Current scripts:
   upload, export databases, execute, fetch, scrape, or contact a network
 - `validate_contribution_pack.py`: validates Contribution Pack Contract v0
   directories. By default it checks the synthetic example pack under
-  `examples/contribution_packs/minimal_contribution_pack_v0/`, including
+  `examples/packs/contribution/minimal_contribution_pack_v0/`, including
   `CONTRIBUTION_PACK.json`, contribution-item JSONL, referenced pack JSONL,
   pending manual-observation placeholders, checksums, privacy/status
   consistency, private-path rejection, raw SQLite/cache rejection, executable

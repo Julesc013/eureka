@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/command/actions/action_policy.v0.json",
+  "title": "Eureka Action Policy v0",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "action_policy_id",
+    "action_family",
+    "current_status",
+    "allowed_current",
+    "requires_review",
+    "requires_rights_review",
+    "requires_risk_review",
+    "requires_user_confirmation_future",
+    "allowed_inputs",
+    "allowed_outputs",
+    "forbidden_effects",
+    "truth_boundary",
+    "product_boundary",
+    "no_goals",
+    "notes"
+  ],
+  "properties": {
+    "schema_version": { "const": "action_policy.v0" },
+    "action_policy_id": { "type": "string" },
+    "action_family": { "type": "string" },
+    "current_status": { "type": "string" },
+    "allowed_current": { "type": "boolean" },
+    "requires_review": { "type": "boolean" },
+    "requires_rights_review": { "type": "boolean" },
+    "requires_risk_review": { "type": "boolean" },
+    "requires_user_confirmation_future": { "type": "boolean" },
+    "allowed_inputs": { "type": "array" },
+    "allowed_outputs": { "type": "array" },
+    "forbidden_effects": { "type": "array" },
+    "truth_boundary": { "type": "object" },
+    "product_boundary": { "type": "object" },
+    "no_goals": { "type": "array" },
+    "notes": { "type": "array" }
+  },
+  "additionalProperties": true
+}

@@ -35,11 +35,11 @@
     "control/inventory/observations/obs_human_review_packet_manifest.json"
   ],
   "added_examples": [
-    "examples/observation_reviews/human_review_packet_minimal_v0.json",
-    "examples/observation_reviews/human_review_decision_approve_source_lead_v0.json",
-    "examples/observation_reviews/human_review_decision_request_more_evidence_v0.json",
-    "examples/observation_reviews/human_review_decision_mark_policy_blocked_v0.json",
-    "examples/observation_reviews/human_review_decision_defer_v0.json"
+    "examples/review/observation_reviews/human_review_packet_minimal_v0.json",
+    "examples/review/observation_reviews/human_review_decision_approve_source_lead_v0.json",
+    "examples/review/observation_reviews/human_review_decision_request_more_evidence_v0.json",
+    "examples/review/observation_reviews/human_review_decision_mark_policy_blocked_v0.json",
+    "examples/review/observation_reviews/human_review_decision_defer_v0.json"
   ],
   "added_scripts": [
     "scripts/build_obs_human_review_packet.py",

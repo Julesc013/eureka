@@ -5,8 +5,9 @@ examples, connector examples, and audit proofs.
 
 ## Taxonomy Closeout
 
-The current first-level examples layout is classified taxonomy debt, not a junk
-drawer. Durable families for future moves are:
+The highest-volume task-phase example groups have been moved into durable
+families. Remaining first-level examples are classified taxonomy debt, not a
+junk drawer. Durable families for current and future examples are:
 
 - `examples/packs`
 - `examples/sources`
@@ -23,6 +24,6 @@ drawer. Durable families for future moves are:
 - `examples/relay`
 - `examples/work_units`
 
-Future moves should use a migration map first and update checksums, references,
+Further moves should use a migration map first and update checksums, references,
 validators, docs, and tests in the same change. Do not collapse connector fixture
 detail or change fixture meaning during taxonomy cleanup.

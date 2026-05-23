@@ -47,5 +47,5 @@ Validation:
 
 ```bash
 python scripts/validate_source_cache_to_evidence_bridge.py
-python scripts/bridge_source_cache_to_evidence.py --input examples/source_cache_records/source_metadata_record_v0.json --check
+python scripts/bridge_source_cache_to_evidence.py --input examples/sources/cache/records/source_metadata_record_v0.json --check
 ```

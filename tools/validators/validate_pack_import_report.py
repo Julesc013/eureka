@@ -9,7 +9,7 @@ from typing import Any, Mapping, Sequence, TextIO
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
-CONTRACT_PATH = REPO_ROOT / "contracts" / "packs" / "pack_import_report.v0.json"
+CONTRACT_PATH = REPO_ROOT / "contracts" / "pack" / "pack_import_report.v0.json"
 EXAMPLES_ROOT = REPO_ROOT / "examples" / "import_reports"
 DEFAULT_EXAMPLES = [
     EXAMPLES_ROOT / "validate_only_all_examples.passed.json",

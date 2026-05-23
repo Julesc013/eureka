@@ -15,7 +15,7 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.local_foundry import review_queue
+from runtime.local.foundry import review_queue
 from scripts import record_review_queue
 
 
@@ -36,16 +36,16 @@ DOC_FILES = [
 ]
 
 EXAMPLE_FILES = [
-    "examples/review_queue_entries/minimal_review_queue_entry_v0.json",
-    "examples/review_queue_entries/candidate_needs_review_v0.json",
-    "examples/review_queue_entries/evidence_candidate_needs_review_v0.json",
-    "examples/review_queue_entries/source_cache_record_needs_review_v0.json",
-    "examples/review_queue_entries/source_cache_bridge_needs_review_v0.json",
-    "examples/review_queue_entries/workunit_result_review_v0.json",
-    "examples/review_queue_entries/duplicate_review_entry_v0.json",
-    "examples/review_queue_entries/reject_review_entry_v0.json",
-    "examples/review_queue_entries/request_more_evidence_review_entry_v0.json",
-    "examples/review_queue_entries/policy_blocked_review_entry_v0.json",
+    "examples/review/queue_entries/minimal_review_queue_entry_v0.json",
+    "examples/review/queue_entries/candidate_needs_review_v0.json",
+    "examples/review/queue_entries/evidence_candidate_needs_review_v0.json",
+    "examples/review/queue_entries/source_cache_record_needs_review_v0.json",
+    "examples/review/queue_entries/source_cache_bridge_needs_review_v0.json",
+    "examples/review/queue_entries/workunit_result_review_v0.json",
+    "examples/review/queue_entries/duplicate_review_entry_v0.json",
+    "examples/review/queue_entries/reject_review_entry_v0.json",
+    "examples/review/queue_entries/request_more_evidence_review_entry_v0.json",
+    "examples/review/queue_entries/policy_blocked_review_entry_v0.json",
 ]
 
 AUDIT_FILES = [
@@ -62,7 +62,7 @@ SCRIPT_FILES = [
     "scripts/validate_local_review_queue_runtime.py",
 ]
 
-RUNTIME_FILE = "runtime/local_foundry/review_queue.py"
+RUNTIME_FILE = "runtime/local/foundry/review_queue.py"
 
 SAMPLE_ENTRY = (
     "control/audits/track-b-18-local-review-queue-runtime-v0/"
@@ -330,7 +330,7 @@ def validate_script_commands(errors: list[str]) -> None:
             sys.executable,
             "scripts/record_review_queue.py",
             "--input",
-            "examples/review_queue_entries/candidate_needs_review_v0.json",
+            "examples/review/queue_entries/candidate_needs_review_v0.json",
             "--check",
             "--json",
         ],
@@ -341,7 +341,7 @@ def validate_script_commands(errors: list[str]) -> None:
             sys.executable,
             "scripts/summarize_review_queue.py",
             "--input",
-            "examples/review_queue_entries",
+            "examples/review/queue_entries",
             "--check",
             "--json",
         ],
@@ -364,7 +364,7 @@ def validate_output_roots(errors: list[str]) -> None:
     for raw_path in [
         "site/dist/review.json",
         "runtime/review.json",
-        "contracts/master_index/review.json",
+        "contracts/index/master/review.json",
         "control/inventory/publication/review.json",
         ".aide.local/eureka/review.json",
     ]:

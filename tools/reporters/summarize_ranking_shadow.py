@@ -16,7 +16,7 @@ if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
 from runtime.extraction.guards import load_json  # noqa: E402
-from runtime.search_quality.ranking_shadow import load_ranking_policy  # noqa: E402
+from runtime.search.quality.ranking_shadow import load_ranking_policy  # noqa: E402
 from scripts.run_ranking_shadow import ensure_allowed_input_path, ensure_allowed_output_path  # noqa: E402
 
 
@@ -30,7 +30,7 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout) -> int:
     args = parser.parse_args(argv)
     try:
         policy = load_ranking_policy()
-        paths = collect_inputs(args.input or ["examples/search_quality/ranking"], policy)
+        paths = collect_inputs(args.input or ["examples/search/quality/ranking"], policy)
         records = [load_json(path) for path in paths]
         summary = summarize_records(records)
         wrote = False

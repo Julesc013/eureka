@@ -1,0 +1,141 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/surface/ui/design_tokens.v0.json",
+  "title": "Eureka Design Tokens Contract v0",
+  "description": "Generic contract-only design-token shape for future Eureka renderers. Tokens are presentation inputs and must not change route, source, evidence, status, rights, risk, limitation, gap, action, or product-boundary meaning.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "token_set_id",
+    "label",
+    "description",
+    "token_status",
+    "intended_profiles",
+    "color_tokens",
+    "typography_tokens",
+    "spacing_tokens",
+    "density_tokens",
+    "border_tokens",
+    "layout_tokens",
+    "link_tokens",
+    "form_tokens",
+    "table_tokens",
+    "badge_tokens",
+    "warning_tokens",
+    "action_tokens",
+    "compatibility_tokens",
+    "risk_rights_tokens",
+    "evidence_source_tokens",
+    "accessibility_tokens",
+    "degradation_tokens",
+    "forbidden_visual_claims",
+    "product_boundary",
+    "no_goals",
+    "notes"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "token_set_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9_-]*$"
+    },
+    "label": {
+      "type": "string",
+      "minLength": 1
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1
+    },
+    "token_status": {
+      "type": "string",
+      "enum": [
+        "contract_only",
+        "example",
+        "draft",
+        "validated",
+        "future_deferred"
+      ]
+    },
+    "intended_profiles": {
+      "$ref": "#/$defs/string_list"
+    },
+    "color_tokens": {
+      "type": "object"
+    },
+    "typography_tokens": {
+      "type": "object"
+    },
+    "spacing_tokens": {
+      "type": "object"
+    },
+    "density_tokens": {
+      "type": "object"
+    },
+    "border_tokens": {
+      "type": "object"
+    },
+    "layout_tokens": {
+      "type": "object"
+    },
+    "link_tokens": {
+      "type": "object"
+    },
+    "form_tokens": {
+      "type": "object"
+    },
+    "table_tokens": {
+      "type": "object"
+    },
+    "badge_tokens": {
+      "type": "object"
+    },
+    "warning_tokens": {
+      "type": "object"
+    },
+    "action_tokens": {
+      "type": "object"
+    },
+    "compatibility_tokens": {
+      "type": "object"
+    },
+    "risk_rights_tokens": {
+      "type": "object"
+    },
+    "evidence_source_tokens": {
+      "type": "object"
+    },
+    "accessibility_tokens": {
+      "type": "object"
+    },
+    "degradation_tokens": {
+      "type": "object"
+    },
+    "forbidden_visual_claims": {
+      "$ref": "#/$defs/string_list"
+    },
+    "product_boundary": {
+      "type": "object"
+    },
+    "no_goals": {
+      "$ref": "#/$defs/string_list"
+    },
+    "notes": {
+      "$ref": "#/$defs/string_list"
+    }
+  },
+  "$defs": {
+    "string_list": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    }
+  }
+}

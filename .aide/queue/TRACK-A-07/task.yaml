@@ -8,8 +8,8 @@ source_packet: .aide/context/latest-task-packet.md
 objective: Define canonical public-safe NeedPageView and CandidatePageView models before renderer or runtime refactors.
 scope:
   allowed_paths:
-    - contracts/views/need_page.v0.json
-    - contracts/views/candidate_page.v0.json
+    - contracts/view/pages/need_page.v0.json
+    - contracts/view/pages/candidate_page.v0.json
     - docs/reference/NEED_PAGE_VIEW_MODEL_CONTRACT.md
     - docs/reference/CANDIDATE_PAGE_VIEW_MODEL_CONTRACT.md
     - docs/roadmap/TRACK_EXECUTION_PLAN.md

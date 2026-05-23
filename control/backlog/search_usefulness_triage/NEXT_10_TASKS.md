@@ -6,7 +6,7 @@ Why: source coverage is the dominant gap, and capability depth must be governed 
 
 Prerequisite: current Source Registry v0 and Hard Test Pack v0 remain green.
 
-Likely files: `contracts/source_registry/`, `control/inventory/sources/`, `docs/architecture/`, `tests/operations/`.
+Likely files: `contracts/source/registry/`, `control/inventory/sources/`, `docs/architecture/`, `tests/operations/`.
 
 Acceptance criteria: source capability fields exist, source families map to query families, placeholders remain honest, and no live crawling is introduced.
 

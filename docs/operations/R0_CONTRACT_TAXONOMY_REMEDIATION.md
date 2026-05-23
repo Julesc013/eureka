@@ -10,10 +10,10 @@ R0-REMEDIATION-CONTRACT-TAXONOMY-01 resolves the 19 unresolved contract taxonomy
 
 ## Actions
 
-- Moved synthetic archive fixtures into `contracts/control_schemas/fixtures/archive/`.
-- Moved H14 candidate preview schemas into `contracts/control_schemas/previews/h14/connectors/`.
-- Moved work-unit control schemas into `contracts/control_schemas/policies/node/`.
-- Moved query candidate/review schemas into `contracts/control_schemas/previews/query/` and `contracts/control_schemas/tasks/query/`.
+- Moved synthetic archive fixtures into `contracts/schema/control/fixtures/archive/`.
+- Moved H14 candidate preview schemas into `contracts/schema/control/previews/h14/connectors/`.
+- Moved work-unit control schemas into `contracts/schema/control/policies/node/`.
+- Moved query candidate/review schemas into `contracts/schema/control/previews/query/` and `contracts/schema/control/tasks/query/`.
 - Updated active references in current scripts, tests, docs, examples, and control inventories.
 - Left historical audit narrative intact.
 

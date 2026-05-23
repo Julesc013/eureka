@@ -4,7 +4,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from runtime.local_appliance import close_local_appliance, open_local_appliance
+from runtime.local.appliance import close_local_appliance, open_local_appliance
 from scripts import eureka_rebuild_reviewed_index, eureka_review_queue, eureka_set_operator_token
 from scripts.eureka_init_instance import initialize_instance
 from scripts.validate_local_review_rebuild import TOKEN, seed_review_records

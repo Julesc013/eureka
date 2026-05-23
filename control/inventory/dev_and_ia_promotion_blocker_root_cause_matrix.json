@@ -51,13 +51,13 @@
         "tests.runtime.test_source_observation_seam"
       ],
       "root_cause": "IA source-observation runtime used task/audit vocabulary and direct banned transport import spelling.",
-      "source_of_truth": "runtime/source_observation owns stable source-observation mechanisms, not task IDs or control-plane vocabulary.",
+      "source_of_truth": "runtime/source/observation owns stable source-observation mechanisms, not task IDs or control-plane vocabulary.",
       "repair_strategy": "Rename runtime fields to stable product terms, rename live client label API, keep transport fail-closed, and scope R0-only dirty-tree checks to R0.",
       "files_to_change": [
-        "runtime/source_observation/internet_archive_candidate_index.py",
-        "runtime/source_observation/internet_archive_live_probe.py",
-        "runtime/source_observation/internet_archive_live_transport.py",
-        "runtime/source_observation/internet_archive_promotion.py",
+        "runtime/source/observation/internet_archive_candidate_index.py",
+        "runtime/source/observation/internet_archive_live_probe.py",
+        "runtime/source/observation/internet_archive_live_transport.py",
+        "runtime/source/observation/internet_archive_promotion.py",
         "scripts/validate_runtime_architecture_leakage.py"
       ],
       "tests_to_run": [

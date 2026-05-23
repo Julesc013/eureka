@@ -7,7 +7,7 @@ import unittest
 from urllib.parse import urlencode
 
 from runtime.gateway.public_api import build_demo_source_registry_public_api
-from runtime.source_registry import DEFAULT_SOURCE_INVENTORY_DIR, load_source_registry
+from runtime.source.registry import DEFAULT_SOURCE_INVENTORY_DIR, load_source_registry
 from surfaces.web.server import WorkbenchWsgiApp
 
 

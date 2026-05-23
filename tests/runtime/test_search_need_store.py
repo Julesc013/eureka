@@ -5,8 +5,8 @@ import tempfile
 from pathlib import Path
 import unittest
 
-from runtime.local_appliance import close_local_appliance, open_local_appliance
-from runtime.search_need import SearchNeed
+from runtime.local.appliance import close_local_appliance, open_local_appliance
+from runtime.search.need import SearchNeed
 
 
 ROOT = Path(__file__).resolve().parents[2]

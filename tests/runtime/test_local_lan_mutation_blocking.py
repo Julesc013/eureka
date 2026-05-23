@@ -6,8 +6,8 @@ import tempfile
 from pathlib import Path
 import unittest
 
-from runtime.local_appliance import close_local_appliance, open_local_appliance
-from runtime.local_service import LocalServiceApp
+from runtime.local.appliance import close_local_appliance, open_local_appliance
+from runtime.local.service import LocalServiceApp
 
 
 ROOT = Path(__file__).resolve().parents[2]

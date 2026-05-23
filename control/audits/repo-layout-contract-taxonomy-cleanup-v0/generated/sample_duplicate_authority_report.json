@@ -3,7 +3,7 @@
   "duplicate_risks": [
     {
       "risk_id": "control_schemas_policies_packs_vs_contracts_packs",
-      "canonical_authority": "contracts/packs/",
+      "canonical_authority": "contracts/pack/",
       "secondary_role": "control schema for policy/governance records only"
     },
     {

@@ -3,8 +3,8 @@
 Allowed inputs:
 
 - Approved repo-local evidence-ledger candidate JSON files.
-- Explicit `--example-root` values under `examples/evidence_ledger/`.
-- `--all-examples`, which reads `examples/evidence_ledger/dry_run/`.
+- Explicit `--example-root` values under `examples/evidence/ledger/dry_run/`.
+- `--all-examples`, which reads `examples/evidence/ledger/dry_run/dry_run/`.
 - Synthetic records created in unit tests under temporary directories.
 
 Forbidden inputs:

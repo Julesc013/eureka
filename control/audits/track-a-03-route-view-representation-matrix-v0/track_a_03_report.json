@@ -4,7 +4,7 @@
   "track": "A",
   "task": "TRACK-A-03",
   "added_contracts": [
-    "contracts/representations/route_view_representation_matrix.v0.json",
+    "contracts/representation/route_view_representation_matrix.v0.json",
     "docs/reference/ROUTE_VIEW_REPRESENTATION_MATRIX.md"
   ],
   "added_inventories": [

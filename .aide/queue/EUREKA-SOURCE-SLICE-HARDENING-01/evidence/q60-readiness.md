@@ -38,13 +38,13 @@ Recommended exact allowed paths:
 - `.aide/reports/eureka-product-boundary-preservation.md`
 - `.aide/reports/eureka-next-aide-task.md`
 - `.aide/context/latest-task-packet.md`
-- `runtime/local_foundry/fixture_source_observation_slice.py`
+- `runtime/local/foundry/fixture_source_observation_slice.py`
 - `tests/runtime/test_fixture_source_observation_vertical_slice.py`
 - `tests/operations/test_fixture_source_observation_vertical_slice_script.py`
 
 Optional only if Q60 explicitly proves the need:
 
-- a small new runtime-local view-model module under `runtime/local_foundry/**`;
+- a small new runtime-local view-model module under `runtime/local/foundry/**`;
 - matching tests under the existing Q58 test files or a narrowly named `tests/runtime/test_fixture_object_absence_surface.py`.
 
 ## Q60 Forbidden Paths

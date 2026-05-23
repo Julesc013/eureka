@@ -16,14 +16,14 @@ if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
 from runtime.extraction.guards import load_json, path_under, resolve_path  # noqa: E402
-from runtime.search_quality.dedup_shadow import build_dedup_shadow  # noqa: E402
-from runtime.search_quality.identity_shadow import build_identity_merge_shadow  # noqa: E402
-from runtime.search_quality.public_ranking_gate import build_public_ranking_gate, summarize_public_ranking_gate  # noqa: E402
-from runtime.search_quality.quality_harness import (  # noqa: E402
+from runtime.search.quality.dedup_shadow import build_dedup_shadow  # noqa: E402
+from runtime.search.quality.identity_shadow import build_identity_merge_shadow  # noqa: E402
+from runtime.search.quality.public_ranking_gate import build_public_ranking_gate, summarize_public_ranking_gate  # noqa: E402
+from runtime.search.quality.quality_harness import (  # noqa: E402
     build_search_quality_regression_report,
     summarize_regression_report,
 )
-from runtime.search_quality.ranking_shadow import build_ranking_output_bundle, build_ranking_shadow, load_ranking_policy  # noqa: E402
+from runtime.search.quality.ranking_shadow import build_ranking_output_bundle, build_ranking_shadow, load_ranking_policy  # noqa: E402
 from scripts.run_ranking_shadow import ensure_allowed_input_path, ensure_allowed_output_path, render_markdown as render_ranking_markdown  # noqa: E402
 
 

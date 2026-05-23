@@ -39,6 +39,11 @@
       "policy": "Example checksum manifests may be refreshed only when example contents are intentionally current."
     },
     {
+      "path": "examples/sources/coverage",
+      "artifact_class": "fixture_generated",
+      "policy": "Source coverage examples are public-safe fixture artifacts, not test coverage output."
+    },
+    {
       "path": "docs/operations/public_alpha_rehearsal_evidence_v0",
       "artifact_class": "historical_evidence",
       "policy": "Historical rehearsal evidence may be updated only through the owning evidence generator."

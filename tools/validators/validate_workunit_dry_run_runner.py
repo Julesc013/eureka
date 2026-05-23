@@ -15,7 +15,7 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.local_foundry import workunit_dry_run as runtime  # noqa: E402
+from runtime.local.foundry import workunit_dry_run as runtime  # noqa: E402
 from scripts.validate_eureka_workunit_result import validate_workunit_result_record  # noqa: E402
 
 
@@ -26,7 +26,7 @@ REVIEW_POLICY_PATH = "control/inventory/nodes/workunit_dry_run_review_policy.jso
 AUDIT_REPORT_PATH = "control/audits/track-b-10-workunit-dry-run-runner-v0/track_b_10_report.json"
 SAMPLE_REPORT_PATH = "control/audits/track-b-10-workunit-dry-run-runner-v0/generated/sample_workunit_dry_run_result.json"
 SAMPLE_SUMMARY_PATH = "control/audits/track-b-10-workunit-dry-run-runner-v0/generated/sample_workunit_dry_run_summary.md"
-EXAMPLE_ROOT = "examples/workunit_dry_runs"
+EXAMPLE_ROOT = "examples/work_units/dry_runs"
 DOC_PATHS = (
     "docs/reference/WORKUNIT_DRY_RUN_RUNNER.md",
     "docs/architecture/WORKUNIT_DRY_RUN_MODEL.md",
@@ -93,7 +93,7 @@ def validate_workunit_dry_run_runner(repo_root: Path = REPO_ROOT) -> dict[str, A
         AUDIT_REPORT_PATH,
         SAMPLE_REPORT_PATH,
         SAMPLE_SUMMARY_PATH,
-        "runtime/local_foundry/workunit_dry_run.py",
+        "runtime/local/foundry/workunit_dry_run.py",
         "scripts/run_workunit_dry_run.py",
         *DOC_PATHS,
     ]

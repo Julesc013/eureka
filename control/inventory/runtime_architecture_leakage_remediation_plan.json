@@ -18,15 +18,15 @@
       "task": "R0-03 or R0-04"
     },
     {
-      "path": "runtime/local_foundry/pack_builder.py",
+      "path": "runtime/local/foundry/pack_builder.py",
       "task": "R0-03 or R0-04"
     },
     {
-      "path": "runtime/local_foundry/pack_export.py",
+      "path": "runtime/local/foundry/pack_export.py",
       "task": "R0-03 or R0-04"
     },
     {
-      "path": "runtime/local_foundry/source_cache.py",
+      "path": "runtime/local/foundry/source_cache.py",
       "task": "R0-03 or R0-04"
     },
     {
@@ -34,7 +34,7 @@
       "task": "R0-03 or R0-04"
     },
     {
-      "path": "runtime/local_foundry/evidence_ledger.py",
+      "path": "runtime/local/foundry/evidence_ledger.py",
       "task": "R0-03 or R0-04"
     },
     {
@@ -42,7 +42,7 @@
       "task": "R0-03 or R0-04"
     },
     {
-      "path": "runtime/local_foundry/candidate_store.py",
+      "path": "runtime/local/foundry/candidate_store.py",
       "task": "R0-03 or R0-04"
     }
   ],

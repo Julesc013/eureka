@@ -25,10 +25,10 @@ from archive.prototypes.legacy_runtime.connectors.h4_code_source_release.live_pr
 )
 
 CONTRACTS = (
-    "contracts/control_schemas/previews/h4/connectors/code_source_live_probe_request.v0.json",
-    "contracts/control_schemas/previews/h4/connectors/code_source_live_probe_result.v0.json",
-    "contracts/control_schemas/previews/h4/connectors/code_source_live_probe_output_bundle.v0.json",
-    "contracts/control_schemas/previews/h4/connectors/code_source_connector_health_summary.v0.json",
+    "contracts/schema/control/previews/h4/connectors/code_source_live_probe_request.v0.json",
+    "contracts/schema/control/previews/h4/connectors/code_source_live_probe_result.v0.json",
+    "contracts/schema/control/previews/h4/connectors/code_source_live_probe_output_bundle.v0.json",
+    "contracts/schema/control/previews/h4/connectors/code_source_connector_health_summary.v0.json",
 )
 POLICIES = (
     "control/inventory/connectors/h4_code_source_live_probe_policy.json",

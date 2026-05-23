@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/view/models/core/result_lane_view_model.v0.json",
+  "title": "ResultLaneViewModel",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "packet_type",
+    "projection_profile",
+    "lanes",
+    "boundary_report"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "workbench_result_lane_page_view.v0"
+    },
+    "packet_type": {
+      "const": "ResultLanePageView"
+    },
+    "projection_profile": {
+      "type": "string"
+    },
+    "lanes": {
+      "type": "array"
+    },
+    "boundary_report": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": true
+}

@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import unittest
 
-from runtime.local_service.workbench_result_lanes import build_demo_lane_page, project_lane_for_profile
+from runtime.local.service.workbench_result_lanes import build_demo_lane_page, project_lane_for_profile
 
 
 class WorkbenchLaneViewModelTest(unittest.TestCase):

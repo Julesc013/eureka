@@ -16,8 +16,8 @@ if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
 from runtime.extraction.guards import load_json, path_under, resolve_path  # noqa: E402
-from runtime.search_quality.explanation import load_search_quality_policy  # noqa: E402
-from runtime.search_quality.explanation_summary import (  # noqa: E402
+from runtime.search.quality.explanation import load_search_quality_policy  # noqa: E402
+from runtime.search.quality.explanation_summary import (  # noqa: E402
     build_explanation_output_bundle,
     summarize_explanation_output_bundle,
 )

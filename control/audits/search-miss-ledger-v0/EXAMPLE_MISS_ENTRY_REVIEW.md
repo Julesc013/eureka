@@ -2,8 +2,8 @@
 
 Committed examples:
 
-- `examples/search_miss_ledger/minimal_no_hits_miss_v0/`
-- `examples/search_miss_ledger/minimal_weak_hits_miss_v0/`
+- `examples/search/miss_ledger/minimal_no_hits_miss_v0/`
+- `examples/search/miss_ledger/minimal_weak_hits_miss_v0/`
 
 `minimal_no_hits_miss_v0` uses the synthetic query
 `no-such-local-index-hit` and records a scoped no-hit miss against the public

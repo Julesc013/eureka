@@ -45,7 +45,7 @@ Q58-Q61 now prove one local fixture source can move through observation, evidenc
 - `.aide/reports/eureka-product-boundary-preservation.md`
 - `.aide/reports/eureka-next-aide-task.md`
 - `.aide/context/latest-task-packet.md`
-- `runtime/local_foundry/fixture_source_observation_slice.py`
+- `runtime/local/foundry/fixture_source_observation_slice.py`
 - `tests/runtime/test_fixture_source_observation_vertical_slice.py`
 - `tests/operations/test_fixture_source_observation_vertical_slice_script.py`
 - Optional new tests under `tests/runtime/**` only if they target the existing local fixture slice.

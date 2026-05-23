@@ -29,7 +29,7 @@
     "validate_runtime_composition",
     "validate_no_forbidden_runtime_flags"
   ],
-  "runtime_package": "runtime/local_appliance",
+  "runtime_package": "runtime/local/appliance",
   "schema_version": "local_runtime_composition_inventory.v0",
   "server_enabled": false,
   "stores_composed": [

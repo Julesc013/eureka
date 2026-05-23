@@ -7,7 +7,7 @@ import re
 from typing import Any, Mapping
 
 from runtime.engine.index import IndexRecord
-from runtime.source_registry import SourceRecordNotFoundError, SourceRegistry
+from runtime.source.registry import SourceRecordNotFoundError, SourceRegistry
 
 
 REPO_ROOT = Path(__file__).resolve().parents[3]

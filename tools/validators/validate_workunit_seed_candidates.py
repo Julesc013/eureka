@@ -36,19 +36,19 @@ OBSERVATION_DIRS = (
 )
 
 SEED_EXAMPLE_PATHS = (
-    "examples/workunit_seeds/minimal_workunit_seed_v0.json",
-    "examples/workunit_seeds/source_policy_review_workunit_seed_v0.json",
-    "examples/workunit_seeds/metadata_probe_planning_workunit_seed_v0.json",
-    "examples/workunit_seeds/extraction_gap_workunit_seed_v0.json",
-    "examples/workunit_seeds/compatibility_review_workunit_seed_v0.json",
-    "examples/workunit_seeds/policy_blocked_workunit_seed_v0.json",
+    "examples/work_units/seeds/minimal_workunit_seed_v0.json",
+    "examples/work_units/seeds/source_policy_review_workunit_seed_v0.json",
+    "examples/work_units/seeds/metadata_probe_planning_workunit_seed_v0.json",
+    "examples/work_units/seeds/extraction_gap_workunit_seed_v0.json",
+    "examples/work_units/seeds/compatibility_review_workunit_seed_v0.json",
+    "examples/work_units/seeds/policy_blocked_workunit_seed_v0.json",
 )
 
 CONVERSION_EXAMPLE_PATHS = (
-    "examples/workunit_seed_conversions/minimal_candidate_to_workunit_conversion_v0.json",
-    "examples/workunit_seed_conversions/search_need_seed_to_workunit_conversion_v0.json",
-    "examples/workunit_seed_conversions/source_gap_candidate_to_workunit_conversion_v0.json",
-    "examples/workunit_seed_conversions/request_more_evidence_workunit_conversion_v0.json",
+    "examples/work_units/seed_conversions/minimal_candidate_to_workunit_conversion_v0.json",
+    "examples/work_units/seed_conversions/search_need_seed_to_workunit_conversion_v0.json",
+    "examples/work_units/seed_conversions/source_gap_candidate_to_workunit_conversion_v0.json",
+    "examples/work_units/seed_conversions/request_more_evidence_workunit_conversion_v0.json",
 )
 
 REQUIRED_DOCS = (
@@ -155,7 +155,7 @@ EXTRA_FALSE_BOUNDARY_FIELDS = {
     "accepted_runtime_workunit",
 }
 TRACK_B_PREFIXES = (
-    "contracts/source_registry/",
+    "contracts/source/registry/",
     "contracts/workunit/",
     "contracts/node/",
     "contracts/local/",

@@ -49,9 +49,9 @@ The repo already has:
 
 Source Registry v0 is now implemented through:
 
-- draft schemas under `contracts/source_registry/`
+- draft schemas under `contracts/source/registry/`
 - governed seed records under `control/inventory/sources/`
-- stdlib-only runtime loading under `runtime/source_registry/`
+- stdlib-only runtime loading under `runtime/source/registry/`
 - bounded public projection through current web, CLI, and local HTTP API surfaces
 
 That means future connector work can land within one consistent model for

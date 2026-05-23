@@ -1,11 +1,11 @@
 import unittest
 
-from runtime.source_observation.internet_archive_promotion import (
+from runtime.source.observation.internet_archive_promotion import (
     build_ia_promotion_boundary_report,
     build_ia_promotion_dry_run_report,
     load_ia_promotion_dry_run_policy,
 )
-from runtime.source_observation.internet_archive_review import build_ia_review_boundary_report, build_ia_review_queue_report
+from runtime.source.observation.internet_archive_review import build_ia_review_boundary_report, build_ia_review_queue_report
 
 
 class IAPromotionBoundaryTests(unittest.TestCase):

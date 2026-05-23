@@ -22,7 +22,7 @@ from _p70_contract_common import (
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
-EXAMPLES_ROOT = REPO_ROOT / "examples" / "source_cache"
+EXAMPLES_ROOT = REPO_ROOT / "examples" / "sources" / "cache" / "dry_run"
 RECORD_FILE = "SOURCE_CACHE_RECORD.json"
 
 REQUIRED_TOP_LEVEL = {

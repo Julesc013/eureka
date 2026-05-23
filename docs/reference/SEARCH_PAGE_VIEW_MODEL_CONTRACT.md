@@ -1,6 +1,6 @@
 # SearchPage View Model Contract
 
-`contracts/views/search_page.v0.json` defines the first canonical public
+`contracts/view/pages/search_page.v0.json` defines the first canonical public
 SearchPage view model for Track A. It is a meaning layer for Eureka search
 pages, not a renderer implementation and not a runtime change.
 

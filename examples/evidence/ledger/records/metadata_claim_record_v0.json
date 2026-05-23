@@ -1,0 +1,41 @@
+{
+  "schema_version": "local_evidence_ledger_record.v0",
+  "input_id": "metadata_claim_fixture_v0",
+  "input_type": "committed_evidence_fixture",
+  "input_ref": "examples/evidence/ledger/records/metadata_claim_record_v0.json",
+  "input_status": "recorded_local",
+  "input_public_safe": true,
+  "input_summary": "Metadata claim fixture.",
+  "evidence_record_status": "metadata_claim_candidate",
+  "evidence_record_type": "metadata_claim",
+  "evidence_label": "Metadata Claim Fixture",
+  "source_id": "source:fixture:evidence:metadata",
+  "source_label": "Metadata Evidence Source",
+  "source_locator": "fixture:evidence-ledger:metadata",
+  "claim_type": "metadata",
+  "claim_summary": "A committed fixture reports a metadata field value.",
+  "claim_value": {
+    "field": "display_name",
+    "value": "Synthetic Metadata Item"
+  },
+  "claim_subject": "synthetic-metadata-item",
+  "observation_summary": "The metadata field is present in the fixture.",
+  "provenance_summary": "Committed metadata claim example.",
+  "lineage_refs": [
+    "fixture:metadata_claim_record_v0"
+  ],
+  "related_candidate_refs": [],
+  "related_source_cache_refs_future": [],
+  "related_search_need_refs": [],
+  "related_workunit_refs": [],
+  "related_pack_refs": [],
+  "related_review_refs_future": [],
+  "confidence_or_uncertainty": "low_confidence_review_required",
+  "conflict_summary": "",
+  "limitations": [
+    "Metadata is scoped to the fixture."
+  ],
+  "notes": [
+    "Sample input for the B-16 generated report."
+  ]
+}

@@ -6,7 +6,7 @@ from pathlib import Path
 from unittest import mock
 import unittest
 
-from runtime.local_foundry.search_miss_ledger import (
+from runtime.local.foundry.search_miss_ledger import (
     build_search_miss_from_query_observation,
     classify_miss_failure_modes,
     detect_exhaustive_absence_overclaim,
@@ -17,8 +17,8 @@ from runtime.local_foundry.search_miss_ledger import (
 
 
 ROOT = Path(__file__).resolve().parents[2]
-QUERY_EXAMPLES = ROOT / "examples" / "query_observations"
-MISS_EXAMPLES = ROOT / "examples" / "search_misses"
+QUERY_EXAMPLES = ROOT / "examples" / "search" / "query_observations"
+MISS_EXAMPLES = ROOT / "examples" / "search" / "misses"
 
 
 class SearchMissLedgerRuntimeTests(unittest.TestCase):

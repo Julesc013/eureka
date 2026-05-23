@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import unittest
 
-from runtime.search_hunt import SearchHuntSession, SearchHuntTransitionError, SearchHuntState, apply_transition, validate_transition
+from runtime.search.hunt import SearchHuntSession, SearchHuntTransitionError, SearchHuntState, apply_transition, validate_transition
 
 
 class SearchHuntTransitionTests(unittest.TestCase):

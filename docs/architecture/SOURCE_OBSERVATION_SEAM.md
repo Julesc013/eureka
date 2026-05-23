@@ -1,6 +1,6 @@
 # Source Observation Seam
 
-R0-04 adds `runtime/source_observation/` as the first clean product runtime seam for source metadata observation.
+R0-04 adds `runtime/source/observation/` as the first clean product runtime seam for source metadata observation.
 
 The package exists because earlier H-series connector work proved useful policies and fixtures, but those modules are named around task phases. Product runtime needs a domain-shaped boundary that later stores, review code, and index rebuilds can consume without importing phase-specific scaffolding.
 

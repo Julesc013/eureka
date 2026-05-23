@@ -42,6 +42,6 @@ Run:
 
 ```powershell
 python scripts/validate_search_need_runtime.py
-python scripts/record_search_need.py --input examples/search_misses/empty_result_search_miss_v0.json --check
+python scripts/record_search_need.py --input examples/search/misses/empty_result_search_miss_v0.json --check
 python -m unittest tests.runtime.test_search_need_runtime tests.operations.test_search_need_runtime_scripts
 ```

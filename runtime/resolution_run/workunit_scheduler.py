@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from typing import Any, Mapping
 
-from runtime.search_hunt.ia_bridge import plan_ia_hunt_pipeline
+from runtime.search.hunt.ia_bridge import plan_ia_hunt_pipeline
 
 
 def schedule_ia_hunt_workunits(

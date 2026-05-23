@@ -22,7 +22,7 @@ if str(REPO_ROOT) not in sys.path:
 from scripts.validate_observation_candidate import validate_candidate_record  # noqa: E402
 
 
-CONTRACT_PATH = "contracts/control_schemas/tasks/query/observation_candidate_review_queue.v0.json"
+CONTRACT_PATH = "contracts/schema/control/tasks/query/observation_candidate_review_queue.v0.json"
 POLICY_PATH = "control/inventory/observations/observation_candidate_review_queue_policy.json"
 TRIAGE_RULES_PATH = "control/inventory/observations/observation_candidate_triage_rules.json"
 QUEUE_PATH = "control/inventory/observations/observation_candidate_review_queue.json"
@@ -40,10 +40,10 @@ OBSERVATION_DIRS = (
 )
 
 EXAMPLE_PATHS = (
-    "examples/observation_reviews/review_queue_minimal_v0.json",
-    "examples/observation_reviews/review_queue_source_gap_batch_v0.json",
-    "examples/observation_reviews/review_queue_policy_blocked_batch_v0.json",
-    "examples/observation_reviews/review_queue_request_more_evidence_batch_v0.json",
+    "examples/review/observation_reviews/review_queue_minimal_v0.json",
+    "examples/review/observation_reviews/review_queue_source_gap_batch_v0.json",
+    "examples/review/observation_reviews/review_queue_policy_blocked_batch_v0.json",
+    "examples/review/observation_reviews/review_queue_request_more_evidence_batch_v0.json",
 )
 
 REQUIRED_DOCS = (
@@ -119,7 +119,7 @@ PRODUCT_BOUNDARY_FIELDS = {
 }
 EXTRA_FALSE_BOUNDARY_FIELDS = {"approved_source_access", "modified_track_b_files"}
 TRACK_B_PREFIXES = (
-    "contracts/source_registry/",
+    "contracts/source/registry/",
     "contracts/workunit/",
     "contracts/node/",
     "contracts/local/",

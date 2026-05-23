@@ -1,42 +1,8 @@
-"""Local reviewed public index runtime."""
+"""Compatibility package for runtime.public_index; canonical package is runtime.index.public."""
 
-from runtime.public_index.absence import build_absence_report
-from runtime.public_index.rebuild import rebuild_reviewed_public_index
-from runtime.public_index.records import (
-    PublicIndexAbsenceReport,
-    PublicIndexRebuild,
-    PublicIndexRecord,
-    PublicIndexSearchResult,
-    PublicIndexSummary,
-)
-from runtime.public_index.store import PublicIndexStore
-from runtime.public_index.validation import (
-    validate_no_public_acceptance_fields,
-    validate_no_task_vocabulary,
-    validate_public_index_absence_report,
-    validate_public_index_path,
-    validate_public_index_rebuild,
-    validate_public_index_record,
-    validate_public_index_search_result,
-)
+from pathlib import Path
 
-globals()["validate_no_" + "public" + "_truth_fields"] = validate_no_public_acceptance_fields
+_CANONICAL_PATH = Path(__file__).resolve().parents[1] / 'index' / 'public'
+__path__ = [str(_CANONICAL_PATH)]
 
-__all__ = [
-    "PublicIndexAbsenceReport",
-    "PublicIndexRebuild",
-    "PublicIndexRecord",
-    "PublicIndexSearchResult",
-    "PublicIndexStore",
-    "PublicIndexSummary",
-    "build_absence_report",
-    "rebuild_reviewed_public_index",
-    "validate_no_public_acceptance_fields",
-    "validate_no_public_truth_fields",
-    "validate_no_task_vocabulary",
-    "validate_public_index_absence_report",
-    "validate_public_index_path",
-    "validate_public_index_rebuild",
-    "validate_public_index_record",
-    "validate_public_index_search_result",
-]
+from runtime.index.public import *  # noqa: E402,F401,F403

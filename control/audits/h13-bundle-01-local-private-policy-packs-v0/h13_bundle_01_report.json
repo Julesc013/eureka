@@ -5,7 +5,7 @@
     "docs/operations/H13_LOCAL_PRIVATE_FIXTURE_PLAN.md"
   ],
   "added_examples": [
-    "examples/source_packs/h13_local_private_source_pack_manifest_v0.json",
+    "examples/packs/source/h13_local_private_source_pack_manifest_v0.json",
     "examples/connectors/h13_local_private/policies/",
     "examples/connectors/h13_local_private/coverage/",
     "examples/connectors/h13_local_private/scorecards/"

@@ -5,7 +5,7 @@ Implemented:
 - `runtime/engine/ranking/` dry-run modules for policy checks, factor extraction, explanation summaries, deterministic report building, and bounded errors.
 - `scripts/run_public_search_ranking_dry_run.py` for approved repo-local examples only.
 - `scripts/validate_public_search_ranking_dry_run_report.py` for dry-run and audit report validation.
-- Five synthetic public-safe examples under `examples/public_search_ranking_dry_run/`.
+- Five synthetic public-safe examples under `examples/index/public_search_ranking_dry_run/`.
 - Runtime, script, and operations tests for the local dry-run boundary.
 
 Not implemented:

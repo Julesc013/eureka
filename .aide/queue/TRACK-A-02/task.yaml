@@ -8,7 +8,7 @@ source_packet: .aide/context/latest-task-packet.md
 objective: Define semantic renderer parity before route/view/representation matrix and renderer runtime work.
 scope:
   allowed_paths:
-    - contracts/representations/semantic_renderer_parity.v0.json
+    - contracts/representation/semantic_renderer_parity.v0.json
     - docs/reference/SEMANTIC_RENDERER_PARITY_CONTRACT.md
     - docs/roadmap/TRACK_EXECUTION_PLAN.md
     - control/inventory/publication/semantic_renderer_parity_policy.json

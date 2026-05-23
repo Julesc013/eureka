@@ -6,7 +6,7 @@ import unittest
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
-SCHEMA = REPO_ROOT / "contracts" / "packs" / "local_staging_manifest.v0.json"
+SCHEMA = REPO_ROOT / "contracts" / "pack" / "local_staging_manifest.v0.json"
 EXAMPLE_ROOT = REPO_ROOT / "examples" / "local_staging_manifests" / "minimal_local_staging_manifest_v0"
 EXAMPLE_MANIFEST = EXAMPLE_ROOT / "LOCAL_STAGING_MANIFEST.json"
 REFERENCE_DOC = REPO_ROOT / "docs" / "reference" / "LOCAL_STAGING_MANIFEST_FORMAT.md"

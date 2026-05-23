@@ -1889,7 +1889,7 @@
       "capability_family": "build",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "contracts/master_index/reviewed_public_index_rebuild.v0.json",
+      "source_tool": "contracts/index/master/reviewed_public_index_rebuild.v0.json",
       "target_aide_command_hint": "future tools wrapper for build",
       "tool_id": "tool-contracts-master-index-reviewed-public-index-rebuild-v0-json"
     },
@@ -6677,7 +6677,7 @@
       "capability_family": "audit",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "contracts/control_schemas/audits/audits/mvp_alpha_readiness_audit.v0.json",
+      "source_tool": "contracts/schema/control/audits/audits/mvp_alpha_readiness_audit.v0.json",
       "target_aide_command_hint": "future tools wrapper for audit",
       "tool_id": "tool-control-schemas-audits-audits-mvp-alpha-readiness-audit-v0-json"
     },
@@ -6686,7 +6686,7 @@
       "capability_family": "audit",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "contracts/control_schemas/audits/h1/connectors/integration_audit.v0.json",
+      "source_tool": "contracts/schema/control/audits/h1/connectors/integration_audit.v0.json",
       "target_aide_command_hint": "future tools wrapper for audit",
       "tool_id": "tool-control-schemas-audits-h1-connectors-integration-audit-v0-json"
     },
@@ -6695,7 +6695,7 @@
       "capability_family": "audit",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "contracts/control_schemas/audits/h10/connectors/games_emulation_integration_audit.v0.json",
+      "source_tool": "contracts/schema/control/audits/h10/connectors/games_emulation_integration_audit.v0.json",
       "target_aide_command_hint": "future tools wrapper for audit",
       "tool_id": "tool-control-schemas-audits-h10-connectors-games-emulation-integration-audit-v0-json"
     },
@@ -6704,7 +6704,7 @@
       "capability_family": "audit",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "contracts/control_schemas/audits/h11/connectors/storefront_integration_audit.v0.json",
+      "source_tool": "contracts/schema/control/audits/h11/connectors/storefront_integration_audit.v0.json",
       "target_aide_command_hint": "future tools wrapper for audit",
       "tool_id": "tool-control-schemas-audits-h11-connectors-storefront-integration-audit-v0-json"
     },
@@ -6713,7 +6713,7 @@
       "capability_family": "audit",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "contracts/control_schemas/audits/h12/connectors/retro_community_integration_audit.v0.json",
+      "source_tool": "contracts/schema/control/audits/h12/connectors/retro_community_integration_audit.v0.json",
       "target_aide_command_hint": "future tools wrapper for audit",
       "tool_id": "tool-control-schemas-audits-h12-connectors-retro-community-integration-audit-v0-json"
     },
@@ -6722,7 +6722,7 @@
       "capability_family": "audit",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "contracts/control_schemas/audits/h13/connectors/local_private_integration_audit.v0.json",
+      "source_tool": "contracts/schema/control/audits/h13/connectors/local_private_integration_audit.v0.json",
       "target_aide_command_hint": "future tools wrapper for audit",
       "tool_id": "tool-control-schemas-audits-h13-connectors-local-private-integration-audit-v0-json"
     },
@@ -6731,7 +6731,7 @@
       "capability_family": "audit",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "contracts/control_schemas/audits/h14/connectors/source_discovery_integration_audit.v0.json",
+      "source_tool": "contracts/schema/control/audits/h14/connectors/source_discovery_integration_audit.v0.json",
       "target_aide_command_hint": "future tools wrapper for audit",
       "tool_id": "tool-control-schemas-audits-h14-connectors-source-discovery-integration-audit-v0-json"
     },
@@ -6740,7 +6740,7 @@
       "capability_family": "audit",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "contracts/control_schemas/audits/h2/connectors/package_connector_wave_postmortem.v0.json",
+      "source_tool": "contracts/schema/control/audits/h2/connectors/package_connector_wave_postmortem.v0.json",
       "target_aide_command_hint": "future tools wrapper for audit",
       "tool_id": "tool-control-schemas-audits-h2-connectors-package-connector-wave-postmortem-v0-json"
     },
@@ -6749,7 +6749,7 @@
       "capability_family": "audit",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "contracts/control_schemas/audits/h2/connectors/package_integration_audit.v0.json",
+      "source_tool": "contracts/schema/control/audits/h2/connectors/package_integration_audit.v0.json",
       "target_aide_command_hint": "future tools wrapper for audit",
       "tool_id": "tool-control-schemas-audits-h2-connectors-package-integration-audit-v0-json"
     },
@@ -6758,7 +6758,7 @@
       "capability_family": "audit",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "contracts/control_schemas/audits/h2/connectors/package_quality_delta_report.v0.json",
+      "source_tool": "contracts/schema/control/audits/h2/connectors/package_quality_delta_report.v0.json",
       "target_aide_command_hint": "future tools wrapper for audit",
       "tool_id": "tool-control-schemas-audits-h2-connectors-package-quality-delta-report-v0-json"
     },
@@ -6767,7 +6767,7 @@
       "capability_family": "audit",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "contracts/control_schemas/audits/h2/connectors/package_review_integration_result.v0.json",
+      "source_tool": "contracts/schema/control/audits/h2/connectors/package_review_integration_result.v0.json",
       "target_aide_command_hint": "future tools wrapper for audit",
       "tool_id": "tool-control-schemas-audits-h2-connectors-package-review-integration-result-v0-json"
     },
@@ -6776,7 +6776,7 @@
       "capability_family": "audit",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "contracts/control_schemas/audits/h3/connectors/os_package_connector_wave_postmortem.v0.json",
+      "source_tool": "contracts/schema/control/audits/h3/connectors/os_package_connector_wave_postmortem.v0.json",
       "target_aide_command_hint": "future tools wrapper for audit",
       "tool_id": "tool-control-schemas-audits-h3-connectors-os-package-connector-wave-postmortem-v0-json"
     },
@@ -6785,7 +6785,7 @@
       "capability_family": "audit",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "contracts/control_schemas/audits/h3/connectors/os_package_integration_audit.v0.json",
+      "source_tool": "contracts/schema/control/audits/h3/connectors/os_package_integration_audit.v0.json",
       "target_aide_command_hint": "future tools wrapper for audit",
       "tool_id": "tool-control-schemas-audits-h3-connectors-os-package-integration-audit-v0-json"
     },
@@ -6794,7 +6794,7 @@
       "capability_family": "audit",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "contracts/control_schemas/audits/h3/connectors/os_package_quality_delta_report.v0.json",
+      "source_tool": "contracts/schema/control/audits/h3/connectors/os_package_quality_delta_report.v0.json",
       "target_aide_command_hint": "future tools wrapper for audit",
       "tool_id": "tool-control-schemas-audits-h3-connectors-os-package-quality-delta-report-v0-json"
     },
@@ -6803,7 +6803,7 @@
       "capability_family": "audit",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "contracts/control_schemas/audits/h3/connectors/os_package_review_integration_result.v0.json",
+      "source_tool": "contracts/schema/control/audits/h3/connectors/os_package_review_integration_result.v0.json",
       "target_aide_command_hint": "future tools wrapper for audit",
       "tool_id": "tool-control-schemas-audits-h3-connectors-os-package-review-integration-result-v0-json"
     },
@@ -6812,7 +6812,7 @@
       "capability_family": "audit",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "contracts/control_schemas/audits/h4/connectors/code_source_integration_audit.v0.json",
+      "source_tool": "contracts/schema/control/audits/h4/connectors/code_source_integration_audit.v0.json",
       "target_aide_command_hint": "future tools wrapper for audit",
       "tool_id": "tool-control-schemas-audits-h4-connectors-code-source-integration-audit-v0-json"
     },
@@ -6821,7 +6821,7 @@
       "capability_family": "audit",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "contracts/control_schemas/audits/h5/connectors/vendor_update_integration_audit.v0.json",
+      "source_tool": "contracts/schema/control/audits/h5/connectors/vendor_update_integration_audit.v0.json",
       "target_aide_command_hint": "future tools wrapper for audit",
       "tool_id": "tool-control-schemas-audits-h5-connectors-vendor-update-integration-audit-v0-json"
     },
@@ -6830,7 +6830,7 @@
       "capability_family": "audit",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "contracts/control_schemas/audits/h6/connectors/web_archive_integration_audit.v0.json",
+      "source_tool": "contracts/schema/control/audits/h6/connectors/web_archive_integration_audit.v0.json",
       "target_aide_command_hint": "future tools wrapper for audit",
       "tool_id": "tool-control-schemas-audits-h6-connectors-web-archive-integration-audit-v0-json"
     },
@@ -6839,7 +6839,7 @@
       "capability_family": "audit",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "contracts/control_schemas/audits/h7/connectors/library_research_integration_audit.v0.json",
+      "source_tool": "contracts/schema/control/audits/h7/connectors/library_research_integration_audit.v0.json",
       "target_aide_command_hint": "future tools wrapper for audit",
       "tool_id": "tool-control-schemas-audits-h7-connectors-library-research-integration-audit-v0-json"
     },
@@ -6848,7 +6848,7 @@
       "capability_family": "audit",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "contracts/control_schemas/audits/h8/connectors/manuals_docs_integration_audit.v0.json",
+      "source_tool": "contracts/schema/control/audits/h8/connectors/manuals_docs_integration_audit.v0.json",
       "target_aide_command_hint": "future tools wrapper for audit",
       "tool_id": "tool-control-schemas-audits-h8-connectors-manuals-docs-integration-audit-v0-json"
     },
@@ -6857,7 +6857,7 @@
       "capability_family": "audit",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "contracts/control_schemas/audits/h9/connectors/media_metadata_integration_audit.v0.json",
+      "source_tool": "contracts/schema/control/audits/h9/connectors/media_metadata_integration_audit.v0.json",
       "target_aide_command_hint": "future tools wrapper for audit",
       "tool_id": "tool-control-schemas-audits-h9-connectors-media-metadata-integration-audit-v0-json"
     },
@@ -6866,7 +6866,7 @@
       "capability_family": "audit",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "contracts/control_schemas/audits/hosting/public_launch_readiness_audit.v0.json",
+      "source_tool": "contracts/schema/control/audits/hosting/public_launch_readiness_audit.v0.json",
       "target_aide_command_hint": "future tools wrapper for audit",
       "tool_id": "tool-control-schemas-audits-hosting-public-launch-readiness-audit-v0-json"
     },
@@ -6875,7 +6875,7 @@
       "capability_family": "audit",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "contracts/control_schemas/audits/native/native_first_wave_integration_audit.v0.json",
+      "source_tool": "contracts/schema/control/audits/native/native_first_wave_integration_audit.v0.json",
       "target_aide_command_hint": "future tools wrapper for audit",
       "tool_id": "tool-control-schemas-audits-native-native-first-wave-integration-audit-v0-json"
     },
@@ -6884,7 +6884,7 @@
       "capability_family": "audit",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "contracts/control_schemas/audits/packs/pack_import_report.v0.json",
+      "source_tool": "contracts/schema/control/audits/packs/pack_import_report.v0.json",
       "target_aide_command_hint": "future tools wrapper for audit",
       "tool_id": "tool-control-schemas-audits-packs-pack-import-report-v0-json"
     },
@@ -6893,7 +6893,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "contracts/control_schemas/fixtures/archive/software/payloads/synthetic-demo-app-package.zip",
+      "source_tool": "contracts/schema/control/fixtures/archive/software/payloads/synthetic-demo-app-package.zip",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-control-schemas-fixtures-archive-software-payloads-synthetic-demo-app-package-zip"
     },
@@ -6902,7 +6902,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "contracts/control_schemas/fixtures/h2/connectors/package_fixture.v0.json",
+      "source_tool": "contracts/schema/control/fixtures/h2/connectors/package_fixture.v0.json",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-control-schemas-fixtures-h2-connectors-package-fixture-v0-json"
     },
@@ -6911,7 +6911,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "contracts/control_schemas/fixtures/h2/connectors/package_fixture_replay_result.v0.json",
+      "source_tool": "contracts/schema/control/fixtures/h2/connectors/package_fixture_replay_result.v0.json",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-control-schemas-fixtures-h2-connectors-package-fixture-replay-result-v0-json"
     },
@@ -6920,7 +6920,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "contracts/control_schemas/fixtures/h3/connectors/os_package_fixture.v0.json",
+      "source_tool": "contracts/schema/control/fixtures/h3/connectors/os_package_fixture.v0.json",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-control-schemas-fixtures-h3-connectors-os-package-fixture-v0-json"
     },
@@ -6929,7 +6929,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "contracts/control_schemas/fixtures/h3/connectors/os_package_fixture_replay_result.v0.json",
+      "source_tool": "contracts/schema/control/fixtures/h3/connectors/os_package_fixture_replay_result.v0.json",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-control-schemas-fixtures-h3-connectors-os-package-fixture-replay-result-v0-json"
     },
@@ -6938,7 +6938,7 @@
       "capability_family": "validate",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "contracts/control_schemas/policies/hosting/public_alpha_operator_checklist.v0.json",
+      "source_tool": "contracts/schema/control/policies/hosting/public_alpha_operator_checklist.v0.json",
       "target_aide_command_hint": "future tools wrapper for validate",
       "tool_id": "tool-control-schemas-policies-hosting-public-alpha-operator-checklist-v0-json"
     },
@@ -6947,7 +6947,7 @@
       "capability_family": "install",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "contracts/control_schemas/policies/hosting/rollback_plan.v0.json",
+      "source_tool": "contracts/schema/control/policies/hosting/rollback_plan.v0.json",
       "target_aide_command_hint": "future tools wrapper for install",
       "tool_id": "tool-control-schemas-policies-hosting-rollback-plan-v0-json"
     },
@@ -6956,7 +6956,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "contracts/control_schemas/policies/packs/source_pack_export.v0.json",
+      "source_tool": "contracts/schema/control/policies/packs/source_pack_export.v0.json",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-control-schemas-policies-packs-source-pack-export-v0-json"
     },
@@ -6965,7 +6965,7 @@
       "capability_family": "release",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "contracts/control_schemas/previews/h10/connectors/platform_release_edition_candidate.v0.json",
+      "source_tool": "contracts/schema/control/previews/h10/connectors/platform_release_edition_candidate.v0.json",
       "target_aide_command_hint": "future tools wrapper for release",
       "tool_id": "tool-control-schemas-previews-h10-connectors-platform-release-edition-candidate-v0-json"
     },
@@ -6974,7 +6974,7 @@
       "capability_family": "release",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "contracts/control_schemas/previews/h11/connectors/version_release_channel_candidate.v0.json",
+      "source_tool": "contracts/schema/control/previews/h11/connectors/version_release_channel_candidate.v0.json",
       "target_aide_command_hint": "future tools wrapper for release",
       "tool_id": "tool-control-schemas-previews-h11-connectors-version-release-channel-candidate-v0-json"
     },
@@ -6983,7 +6983,7 @@
       "capability_family": "install",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "contracts/control_schemas/previews/h12/connectors/compatibility_install_note_candidate.v0.json",
+      "source_tool": "contracts/schema/control/previews/h12/connectors/compatibility_install_note_candidate.v0.json",
       "target_aide_command_hint": "future tools wrapper for install",
       "tool_id": "tool-control-schemas-previews-h12-connectors-compatibility-install-note-candidate-v0-json"
     },
@@ -6992,7 +6992,7 @@
       "capability_family": "validate",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "contracts/control_schemas/previews/h12/connectors/hash_checksum_candidate.v0.json",
+      "source_tool": "contracts/schema/control/previews/h12/connectors/hash_checksum_candidate.v0.json",
       "target_aide_command_hint": "future tools wrapper for validate",
       "tool_id": "tool-control-schemas-previews-h12-connectors-hash-checksum-candidate-v0-json"
     },
@@ -7001,7 +7001,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "contracts/control_schemas/previews/h13/connectors/pack_export_import_boundary_candidate.v0.json",
+      "source_tool": "contracts/schema/control/previews/h13/connectors/pack_export_import_boundary_candidate.v0.json",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-control-schemas-previews-h13-connectors-pack-export-import-boundary-candidate-v0-json"
     },
@@ -7010,7 +7010,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "contracts/control_schemas/previews/h14/connectors/pack_import_export_boundary_candidate.v0.json",
+      "source_tool": "contracts/schema/control/previews/h14/connectors/pack_import_export_boundary_candidate.v0.json",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-control-schemas-previews-h14-connectors-pack-import-export-boundary-candidate-v0-json"
     },
@@ -7019,7 +7019,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "contracts/control_schemas/previews/h2/connectors/package_connector_health_summary.v0.json",
+      "source_tool": "contracts/schema/control/previews/h2/connectors/package_connector_health_summary.v0.json",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-control-schemas-previews-h2-connectors-package-connector-health-summary-v0-json"
     },
@@ -7028,7 +7028,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "contracts/control_schemas/previews/h2/connectors/package_dependency_candidate.v0.json",
+      "source_tool": "contracts/schema/control/previews/h2/connectors/package_dependency_candidate.v0.json",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-control-schemas-previews-h2-connectors-package-dependency-candidate-v0-json"
     },
@@ -7037,7 +7037,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "contracts/control_schemas/previews/h2/connectors/package_file_candidate.v0.json",
+      "source_tool": "contracts/schema/control/previews/h2/connectors/package_file_candidate.v0.json",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-control-schemas-previews-h2-connectors-package-file-candidate-v0-json"
     },
@@ -7046,7 +7046,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "contracts/control_schemas/previews/h2/connectors/package_identity_candidate.v0.json",
+      "source_tool": "contracts/schema/control/previews/h2/connectors/package_identity_candidate.v0.json",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-control-schemas-previews-h2-connectors-package-identity-candidate-v0-json"
     },
@@ -7055,7 +7055,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "contracts/control_schemas/previews/h2/connectors/package_live_probe_output_bundle.v0.json",
+      "source_tool": "contracts/schema/control/previews/h2/connectors/package_live_probe_output_bundle.v0.json",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-control-schemas-previews-h2-connectors-package-live-probe-output-bundle-v0-json"
     },
@@ -7064,7 +7064,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "contracts/control_schemas/previews/h2/connectors/package_live_probe_request.v0.json",
+      "source_tool": "contracts/schema/control/previews/h2/connectors/package_live_probe_request.v0.json",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-control-schemas-previews-h2-connectors-package-live-probe-request-v0-json"
     },
@@ -7073,7 +7073,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "contracts/control_schemas/previews/h2/connectors/package_live_probe_result.v0.json",
+      "source_tool": "contracts/schema/control/previews/h2/connectors/package_live_probe_result.v0.json",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-control-schemas-previews-h2-connectors-package-live-probe-result-v0-json"
     },
@@ -7082,7 +7082,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "contracts/control_schemas/previews/h2/connectors/package_normalized_record.v0.json",
+      "source_tool": "contracts/schema/control/previews/h2/connectors/package_normalized_record.v0.json",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-control-schemas-previews-h2-connectors-package-normalized-record-v0-json"
     },
@@ -7091,7 +7091,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "contracts/control_schemas/previews/h3/connectors/os_package_connector_health_summary.v0.json",
+      "source_tool": "contracts/schema/control/previews/h3/connectors/os_package_connector_health_summary.v0.json",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-control-schemas-previews-h3-connectors-os-package-connector-health-summary-v0-json"
     },
@@ -7100,7 +7100,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "contracts/control_schemas/previews/h3/connectors/os_package_dependency_candidate.v0.json",
+      "source_tool": "contracts/schema/control/previews/h3/connectors/os_package_dependency_candidate.v0.json",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-control-schemas-previews-h3-connectors-os-package-dependency-candidate-v0-json"
     },
@@ -7109,7 +7109,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "contracts/control_schemas/previews/h3/connectors/os_package_file_candidate.v0.json",
+      "source_tool": "contracts/schema/control/previews/h3/connectors/os_package_file_candidate.v0.json",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-control-schemas-previews-h3-connectors-os-package-file-candidate-v0-json"
     },
@@ -7118,7 +7118,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "contracts/control_schemas/previews/h3/connectors/os_package_identity_candidate.v0.json",
+      "source_tool": "contracts/schema/control/previews/h3/connectors/os_package_identity_candidate.v0.json",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-control-schemas-previews-h3-connectors-os-package-identity-candidate-v0-json"
     },
@@ -7127,7 +7127,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "contracts/control_schemas/previews/h3/connectors/os_package_live_probe_output_bundle.v0.json",
+      "source_tool": "contracts/schema/control/previews/h3/connectors/os_package_live_probe_output_bundle.v0.json",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-control-schemas-previews-h3-connectors-os-package-live-probe-output-bundle-v0-json"
     },
@@ -7136,7 +7136,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "contracts/control_schemas/previews/h3/connectors/os_package_live_probe_request.v0.json",
+      "source_tool": "contracts/schema/control/previews/h3/connectors/os_package_live_probe_request.v0.json",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-control-schemas-previews-h3-connectors-os-package-live-probe-request-v0-json"
     },
@@ -7145,7 +7145,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "contracts/control_schemas/previews/h3/connectors/os_package_live_probe_result.v0.json",
+      "source_tool": "contracts/schema/control/previews/h3/connectors/os_package_live_probe_result.v0.json",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-control-schemas-previews-h3-connectors-os-package-live-probe-result-v0-json"
     },
@@ -7154,7 +7154,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "contracts/control_schemas/previews/h3/connectors/os_package_normalized_record.v0.json",
+      "source_tool": "contracts/schema/control/previews/h3/connectors/os_package_normalized_record.v0.json",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-control-schemas-previews-h3-connectors-os-package-normalized-record-v0-json"
     },
@@ -7163,7 +7163,7 @@
       "capability_family": "release",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "contracts/control_schemas/previews/h4/connectors/release_asset_candidate.v0.json",
+      "source_tool": "contracts/schema/control/previews/h4/connectors/release_asset_candidate.v0.json",
       "target_aide_command_hint": "future tools wrapper for release",
       "tool_id": "tool-control-schemas-previews-h4-connectors-release-asset-candidate-v0-json"
     },
@@ -7172,7 +7172,7 @@
       "capability_family": "release",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "contracts/control_schemas/previews/h4/connectors/release_identity_candidate.v0.json",
+      "source_tool": "contracts/schema/control/previews/h4/connectors/release_identity_candidate.v0.json",
       "target_aide_command_hint": "future tools wrapper for release",
       "tool_id": "tool-control-schemas-previews-h4-connectors-release-identity-candidate-v0-json"
     },
@@ -7181,7 +7181,7 @@
       "capability_family": "install",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "contracts/control_schemas/previews/h8/connectors/install_requirement_claim_candidate.v0.json",
+      "source_tool": "contracts/schema/control/previews/h8/connectors/install_requirement_claim_candidate.v0.json",
       "target_aide_command_hint": "future tools wrapper for install",
       "tool_id": "tool-control-schemas-previews-h8-connectors-install-requirement-claim-candidate-v0-json"
     },
@@ -7190,7 +7190,7 @@
       "capability_family": "release",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "contracts/control_schemas/previews/h9/connectors/music_work_recording_release_candidate.v0.json",
+      "source_tool": "contracts/schema/control/previews/h9/connectors/music_work_recording_release_candidate.v0.json",
       "target_aide_command_hint": "future tools wrapper for release",
       "tool_id": "tool-control-schemas-previews-h9-connectors-music-work-recording-release-candidate-v0-json"
     },
@@ -7199,7 +7199,7 @@
       "capability_family": "release",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "contracts/control_schemas/previews/native/native_release_candidate_preview.v0.json",
+      "source_tool": "contracts/schema/control/previews/native/native_release_candidate_preview.v0.json",
       "target_aide_command_hint": "future tools wrapper for release",
       "tool_id": "tool-control-schemas-previews-native-native-release-candidate-preview-v0-json"
     },
@@ -7208,7 +7208,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "contracts/control_schemas/previews/packs/pack_import_preview.v0.json",
+      "source_tool": "contracts/schema/control/previews/packs/pack_import_preview.v0.json",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-control-schemas-previews-packs-pack-import-preview-v0-json"
     },
@@ -7217,7 +7217,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "contracts/control_schemas/tasks/h2/connectors/package_next_phase_recommendation.v0.json",
+      "source_tool": "contracts/schema/control/tasks/h2/connectors/package_next_phase_recommendation.v0.json",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-control-schemas-tasks-h2-connectors-package-next-phase-recommendation-v0-json"
     },
@@ -7226,7 +7226,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "contracts/control_schemas/tasks/h3/connectors/os_package_next_phase_recommendation.v0.json",
+      "source_tool": "contracts/schema/control/tasks/h3/connectors/os_package_next_phase_recommendation.v0.json",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-control-schemas-tasks-h3-connectors-os-package-next-phase-recommendation-v0-json"
     },
@@ -9098,7 +9098,7 @@
       "capability_family": "validate",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/candidate_index/minimal_absence_candidate_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/index/candidate/minimal_absence_candidate_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "future tools wrapper for validate",
       "tool_id": "tool-examples-candidate-index-minimal-absence-candidate-v0-checksums-sha256"
     },
@@ -9107,7 +9107,7 @@
       "capability_family": "validate",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/candidate_index/minimal_conflict_candidate_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/index/candidate/minimal_conflict_candidate_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "future tools wrapper for validate",
       "tool_id": "tool-examples-candidate-index-minimal-conflict-candidate-v0-checksums-sha256"
     },
@@ -9116,7 +9116,7 @@
       "capability_family": "validate",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/candidate_index/minimal_evidence_candidate_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/index/candidate/minimal_evidence_candidate_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "future tools wrapper for validate",
       "tool_id": "tool-examples-candidate-index-minimal-evidence-candidate-v0-checksums-sha256"
     },
@@ -9125,7 +9125,7 @@
       "capability_family": "validate",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/candidate_index/minimal_object_candidate_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/index/candidate/minimal_object_candidate_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "future tools wrapper for validate",
       "tool_id": "tool-examples-candidate-index-minimal-object-candidate-v0-checksums-sha256"
     },
@@ -9134,7 +9134,7 @@
       "capability_family": "validate",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/candidate_promotion/minimal_promotion_review_required_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/review/candidate_promotion/minimal_promotion_review_required_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "future tools wrapper for validate",
       "tool_id": "tool-examples-candidate-promotion-minimal-promotion-review-required-v0-checksums-sha256"
     },
@@ -9143,7 +9143,7 @@
       "capability_family": "validate",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/candidate_promotion/minimal_quarantine_assessment_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/review/candidate_promotion/minimal_quarantine_assessment_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "future tools wrapper for validate",
       "tool_id": "tool-examples-candidate-promotion-minimal-quarantine-assessment-v0-checksums-sha256"
     },
@@ -9152,7 +9152,7 @@
       "capability_family": "validate",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/candidate_promotion/minimal_rejection_assessment_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/review/candidate_promotion/minimal_rejection_assessment_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "future tools wrapper for validate",
       "tool_id": "tool-examples-candidate-promotion-minimal-rejection-assessment-v0-checksums-sha256"
     },
@@ -9161,7 +9161,7 @@
       "capability_family": "validate",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/candidate_promotion/minimal_supersession_assessment_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/review/candidate_promotion/minimal_supersession_assessment_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "future tools wrapper for validate",
       "tool_id": "tool-examples-candidate-promotion-minimal-supersession-assessment-v0-checksums-sha256"
     },
@@ -9215,7 +9215,7 @@
       "capability_family": "validate",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/compatibility_aware_ranking/minimal_architecture_compatibility_ranking_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/search/compatibility_aware_ranking/minimal_architecture_compatibility_ranking_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "future tools wrapper for validate",
       "tool_id": "tool-examples-compatibility-aware-ranking-minimal-architecture-compatibility-ranking-v0-checksums-sha256"
     },
@@ -9224,7 +9224,7 @@
       "capability_family": "validate",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/compatibility_aware_ranking/minimal_conflicting_compatibility_ranking_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/search/compatibility_aware_ranking/minimal_conflicting_compatibility_ranking_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "future tools wrapper for validate",
       "tool_id": "tool-examples-compatibility-aware-ranking-minimal-conflicting-compatibility-ranking-v0-checksums-sha256"
     },
@@ -9233,7 +9233,7 @@
       "capability_family": "validate",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/compatibility_aware_ranking/minimal_dependency_gap_ranking_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/search/compatibility_aware_ranking/minimal_dependency_gap_ranking_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "future tools wrapper for validate",
       "tool_id": "tool-examples-compatibility-aware-ranking-minimal-dependency-gap-ranking-v0-checksums-sha256"
     },
@@ -9242,7 +9242,7 @@
       "capability_family": "validate",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/compatibility_aware_ranking/minimal_emulator_vm_feasibility_ranking_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/search/compatibility_aware_ranking/minimal_emulator_vm_feasibility_ranking_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "future tools wrapper for validate",
       "tool_id": "tool-examples-compatibility-aware-ranking-minimal-emulator-vm-feasibility-ranking-v0-checksums-sha256"
     },
@@ -9251,7 +9251,7 @@
       "capability_family": "validate",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/compatibility_aware_ranking/minimal_os_compatibility_ranking_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/search/compatibility_aware_ranking/minimal_os_compatibility_ranking_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "future tools wrapper for validate",
       "tool_id": "tool-examples-compatibility-aware-ranking-minimal-os-compatibility-ranking-v0-checksums-sha256"
     },
@@ -9260,7 +9260,7 @@
       "capability_family": "validate",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/compatibility_aware_ranking/minimal_unknown_compatibility_gap_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/search/compatibility_aware_ranking/minimal_unknown_compatibility_gap_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "future tools wrapper for validate",
       "tool_id": "tool-examples-compatibility-aware-ranking-minimal-unknown-compatibility-gap-v0-checksums-sha256"
     },
@@ -11267,7 +11267,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/contribution_packs/minimal_contribution_pack_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/packs/contribution/minimal_contribution_pack_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-examples-contribution-packs-minimal-contribution-pack-v0-checksums-sha256"
     },
@@ -11294,7 +11294,7 @@
       "capability_family": "validate",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/evidence_ledger/dry_run/minimal_availability_observation/CHECKSUMS.SHA256",
+      "source_tool": "examples/evidence/ledger/dry_run/dry_run/minimal_availability_observation/CHECKSUMS.SHA256",
       "target_aide_command_hint": "future tools wrapper for validate",
       "tool_id": "tool-examples-evidence-ledger-dry-run-minimal-availability-observation-checksums-sha256"
     },
@@ -11303,7 +11303,7 @@
       "capability_family": "validate",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/evidence_ledger/dry_run/minimal_capture_presence_observation/CHECKSUMS.SHA256",
+      "source_tool": "examples/evidence/ledger/dry_run/dry_run/minimal_capture_presence_observation/CHECKSUMS.SHA256",
       "target_aide_command_hint": "future tools wrapper for validate",
       "tool_id": "tool-examples-evidence-ledger-dry-run-minimal-capture-presence-observation-checksums-sha256"
     },
@@ -11312,7 +11312,7 @@
       "capability_family": "validate",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/evidence_ledger/dry_run/minimal_conflicting_claim_observation/CHECKSUMS.SHA256",
+      "source_tool": "examples/evidence/ledger/dry_run/dry_run/minimal_conflicting_claim_observation/CHECKSUMS.SHA256",
       "target_aide_command_hint": "future tools wrapper for validate",
       "tool_id": "tool-examples-evidence-ledger-dry-run-minimal-conflicting-claim-observation-checksums-sha256"
     },
@@ -11321,7 +11321,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/evidence_ledger/dry_run/minimal_package_metadata_observation/CHECKSUMS.SHA256",
+      "source_tool": "examples/evidence/ledger/dry_run/dry_run/minimal_package_metadata_observation/CHECKSUMS.SHA256",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-examples-evidence-ledger-dry-run-minimal-package-metadata-observation-checksums-sha256"
     },
@@ -11330,7 +11330,7 @@
       "capability_family": "release",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/evidence_ledger/dry_run/minimal_release_metadata_observation/CHECKSUMS.SHA256",
+      "source_tool": "examples/evidence/ledger/dry_run/dry_run/minimal_release_metadata_observation/CHECKSUMS.SHA256",
       "target_aide_command_hint": "future tools wrapper for release",
       "tool_id": "tool-examples-evidence-ledger-dry-run-minimal-release-metadata-observation-checksums-sha256"
     },
@@ -11339,7 +11339,7 @@
       "capability_family": "validate",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/evidence_ledger/dry_run/minimal_scoped_absence_observation/CHECKSUMS.SHA256",
+      "source_tool": "examples/evidence/ledger/dry_run/dry_run/minimal_scoped_absence_observation/CHECKSUMS.SHA256",
       "target_aide_command_hint": "future tools wrapper for validate",
       "tool_id": "tool-examples-evidence-ledger-dry-run-minimal-scoped-absence-observation-checksums-sha256"
     },
@@ -11348,7 +11348,7 @@
       "capability_family": "validate",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/evidence_ledger/dry_run/minimal_source_metadata_observation/CHECKSUMS.SHA256",
+      "source_tool": "examples/evidence/ledger/dry_run/dry_run/minimal_source_metadata_observation/CHECKSUMS.SHA256",
       "target_aide_command_hint": "future tools wrapper for validate",
       "tool_id": "tool-examples-evidence-ledger-dry-run-minimal-source-metadata-observation-checksums-sha256"
     },
@@ -11357,7 +11357,7 @@
       "capability_family": "validate",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/evidence_ledger/minimal_absence_evidence_observation_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/evidence/ledger/dry_run/minimal_absence_evidence_observation_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "future tools wrapper for validate",
       "tool_id": "tool-examples-evidence-ledger-minimal-absence-evidence-observation-v0-checksums-sha256"
     },
@@ -11366,7 +11366,7 @@
       "capability_family": "validate",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/evidence_ledger/minimal_compatibility_evidence_observation_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/evidence/ledger/dry_run/minimal_compatibility_evidence_observation_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "future tools wrapper for validate",
       "tool_id": "tool-examples-evidence-ledger-minimal-compatibility-evidence-observation-v0-checksums-sha256"
     },
@@ -11375,7 +11375,7 @@
       "capability_family": "validate",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/evidence_ledger/minimal_source_metadata_evidence_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/evidence/ledger/dry_run/minimal_source_metadata_evidence_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "future tools wrapper for validate",
       "tool_id": "tool-examples-evidence-ledger-minimal-source-metadata-evidence-v0-checksums-sha256"
     },
@@ -11384,7 +11384,7 @@
       "capability_family": "validate",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/evidence_ledger_records/checksum_claim_record_v0.json",
+      "source_tool": "examples/evidence/ledger/records/checksum_claim_record_v0.json",
       "target_aide_command_hint": "future tools wrapper for validate",
       "tool_id": "tool-examples-evidence-ledger-records-checksum-claim-record-v0-json"
     },
@@ -11393,7 +11393,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/evidence_packs/minimal_evidence_pack_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/packs/evidence/minimal_evidence_pack_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-examples-evidence-packs-minimal-evidence-pack-v0-checksums-sha256"
     },
@@ -11402,7 +11402,7 @@
       "capability_family": "validate",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/evidence_weighted_ranking/minimal_absence_gap_ranking_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/evidence/weighted_ranking/minimal_absence_gap_ranking_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "future tools wrapper for validate",
       "tool_id": "tool-examples-evidence-weighted-ranking-minimal-absence-gap-ranking-v0-checksums-sha256"
     },
@@ -11411,7 +11411,7 @@
       "capability_family": "validate",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/evidence_weighted_ranking/minimal_candidate_only_ranking_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/evidence/weighted_ranking/minimal_candidate_only_ranking_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "future tools wrapper for validate",
       "tool_id": "tool-examples-evidence-weighted-ranking-minimal-candidate-only-ranking-v0-checksums-sha256"
     },
@@ -11420,7 +11420,7 @@
       "capability_family": "validate",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/evidence_weighted_ranking/minimal_conflicting_evidence_ranking_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/evidence/weighted_ranking/minimal_conflicting_evidence_ranking_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "future tools wrapper for validate",
       "tool_id": "tool-examples-evidence-weighted-ranking-minimal-conflicting-evidence-ranking-v0-checksums-sha256"
     },
@@ -11429,7 +11429,7 @@
       "capability_family": "validate",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/evidence_weighted_ranking/minimal_strong_evidence_ranking_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/evidence/weighted_ranking/minimal_strong_evidence_ranking_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "future tools wrapper for validate",
       "tool_id": "tool-examples-evidence-weighted-ranking-minimal-strong-evidence-ranking-v0-checksums-sha256"
     },
@@ -11438,7 +11438,7 @@
       "capability_family": "validate",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/evidence_weighted_ranking/minimal_weak_evidence_ranking_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/evidence/weighted_ranking/minimal_weak_evidence_ranking_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "future tools wrapper for validate",
       "tool_id": "tool-examples-evidence-weighted-ranking-minimal-weak-evidence-ranking-v0-checksums-sha256"
     },
@@ -11663,7 +11663,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/index_packs/minimal_index_pack_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/packs/index/minimal_index_pack_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-examples-index-packs-minimal-index-pack-v0-checksums-sha256"
     },
@@ -11924,7 +11924,7 @@
       "capability_family": "build",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/pack_builder/policy_blocked_pack_build_case_v0.json",
+      "source_tool": "examples/packs/builder/policy_blocked_pack_build_case_v0.json",
       "target_aide_command_hint": "future tools wrapper for build",
       "tool_id": "tool-examples-pack-builder-policy-blocked-pack-build-case-v0-json"
     },
@@ -11933,7 +11933,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/pack_exports/contribution_pack_export_v0.json",
+      "source_tool": "examples/packs/exports/contribution_pack_export_v0.json",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-examples-pack-exports-contribution-pack-export-v0-json"
     },
@@ -11942,7 +11942,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/pack_exports/evidence_pack_export_v0.json",
+      "source_tool": "examples/packs/exports/evidence_pack_export_v0.json",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-examples-pack-exports-evidence-pack-export-v0-json"
     },
@@ -11951,7 +11951,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/pack_exports/index_pack_preview_export_v0.json",
+      "source_tool": "examples/packs/exports/index_pack_preview_export_v0.json",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-examples-pack-exports-index-pack-preview-export-v0-json"
     },
@@ -11960,7 +11960,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/pack_exports/policy_blocked_pack_export_v0.json",
+      "source_tool": "examples/packs/exports/policy_blocked_pack_export_v0.json",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-examples-pack-exports-policy-blocked-pack-export-v0-json"
     },
@@ -11969,7 +11969,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/pack_exports/review_pack_export_v0.json",
+      "source_tool": "examples/packs/exports/review_pack_export_v0.json",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-examples-pack-exports-review-pack-export-v0-json"
     },
@@ -11978,7 +11978,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/pack_exports/source_pack_export_v0.json",
+      "source_tool": "examples/packs/exports/source_pack_export_v0.json",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-examples-pack-exports-source-pack-export-v0-json"
     },
@@ -11987,7 +11987,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/pack_import_dry_run/minimal_contribution_pack_review/CHECKSUMS.SHA256",
+      "source_tool": "examples/packs/import_dry_run/minimal_contribution_pack_review/CHECKSUMS.SHA256",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-examples-pack-import-dry-run-minimal-contribution-pack-review-checksums-sha256"
     },
@@ -11996,7 +11996,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/pack_import_dry_run/minimal_contribution_pack_review/PACK_IMPORT_DRY_RUN_INPUT.json",
+      "source_tool": "examples/packs/import_dry_run/minimal_contribution_pack_review/PACK_IMPORT_DRY_RUN_INPUT.json",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-examples-pack-import-dry-run-minimal-contribution-pack-review-pack-import-dry-run-input-json"
     },
@@ -12005,7 +12005,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/pack_import_dry_run/minimal_evidence_pack_import/CHECKSUMS.SHA256",
+      "source_tool": "examples/packs/import_dry_run/minimal_evidence_pack_import/CHECKSUMS.SHA256",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-examples-pack-import-dry-run-minimal-evidence-pack-import-checksums-sha256"
     },
@@ -12014,7 +12014,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/pack_import_dry_run/minimal_evidence_pack_import/PACK_IMPORT_DRY_RUN_INPUT.json",
+      "source_tool": "examples/packs/import_dry_run/minimal_evidence_pack_import/PACK_IMPORT_DRY_RUN_INPUT.json",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-examples-pack-import-dry-run-minimal-evidence-pack-import-pack-import-dry-run-input-json"
     },
@@ -12023,7 +12023,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/pack_import_dry_run/minimal_index_pack_compare/CHECKSUMS.SHA256",
+      "source_tool": "examples/packs/import_dry_run/minimal_index_pack_compare/CHECKSUMS.SHA256",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-examples-pack-import-dry-run-minimal-index-pack-compare-checksums-sha256"
     },
@@ -12032,7 +12032,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/pack_import_dry_run/minimal_index_pack_compare/PACK_IMPORT_DRY_RUN_INPUT.json",
+      "source_tool": "examples/packs/import_dry_run/minimal_index_pack_compare/PACK_IMPORT_DRY_RUN_INPUT.json",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-examples-pack-import-dry-run-minimal-index-pack-compare-pack-import-dry-run-input-json"
     },
@@ -12041,7 +12041,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/pack_import_dry_run/minimal_pack_set_import/CHECKSUMS.SHA256",
+      "source_tool": "examples/packs/import_dry_run/minimal_pack_set_import/CHECKSUMS.SHA256",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-examples-pack-import-dry-run-minimal-pack-set-import-checksums-sha256"
     },
@@ -12050,7 +12050,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/pack_import_dry_run/minimal_pack_set_import/PACK_IMPORT_DRY_RUN_INPUT.json",
+      "source_tool": "examples/packs/import_dry_run/minimal_pack_set_import/PACK_IMPORT_DRY_RUN_INPUT.json",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-examples-pack-import-dry-run-minimal-pack-set-import-pack-import-dry-run-input-json"
     },
@@ -12059,7 +12059,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/pack_import_dry_run/minimal_source_pack_import/CHECKSUMS.SHA256",
+      "source_tool": "examples/packs/import_dry_run/minimal_source_pack_import/CHECKSUMS.SHA256",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-examples-pack-import-dry-run-minimal-source-pack-import-checksums-sha256"
     },
@@ -12068,7 +12068,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/pack_import_dry_run/minimal_source_pack_import/PACK_IMPORT_DRY_RUN_INPUT.json",
+      "source_tool": "examples/packs/import_dry_run/minimal_source_pack_import/PACK_IMPORT_DRY_RUN_INPUT.json",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-examples-pack-import-dry-run-minimal-source-pack-import-pack-import-dry-run-input-json"
     },
@@ -12077,7 +12077,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/pack_quarantine/import_preview/contribution_pack_import_preview_v0.json",
+      "source_tool": "examples/packs/quarantine/import_preview/contribution_pack_import_preview_v0.json",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-examples-pack-quarantine-import-preview-contribution-pack-import-preview-v0-json"
     },
@@ -12086,7 +12086,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/pack_quarantine/import_preview/evidence_pack_import_preview_v0.json",
+      "source_tool": "examples/packs/quarantine/import_preview/evidence_pack_import_preview_v0.json",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-examples-pack-quarantine-import-preview-evidence-pack-import-preview-v0-json"
     },
@@ -12095,7 +12095,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/pack_quarantine/import_preview/policy_blocked_pack_import_preview_v0.json",
+      "source_tool": "examples/packs/quarantine/import_preview/policy_blocked_pack_import_preview_v0.json",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-examples-pack-quarantine-import-preview-policy-blocked-pack-import-preview-v0-json"
     },
@@ -12104,7 +12104,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/pack_quarantine/import_preview/source_pack_import_preview_v0.json",
+      "source_tool": "examples/packs/quarantine/import_preview/source_pack_import_preview_v0.json",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-examples-pack-quarantine-import-preview-source-pack-import-preview-v0-json"
     },
@@ -12185,7 +12185,7 @@
       "capability_family": "validate",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/public_search_ranking_dry_run/minimal_compatibility_aware_ranking/CHECKSUMS.SHA256",
+      "source_tool": "examples/index/public_search_ranking_dry_run/minimal_compatibility_aware_ranking/CHECKSUMS.SHA256",
       "target_aide_command_hint": "future tools wrapper for validate",
       "tool_id": "tool-examples-public-search-ranking-dry-run-minimal-compatibility-aware-ranking-checksums-sha256"
     },
@@ -12194,7 +12194,7 @@
       "capability_family": "validate",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/public_search_ranking_dry_run/minimal_conflict_visible_ranking/CHECKSUMS.SHA256",
+      "source_tool": "examples/index/public_search_ranking_dry_run/minimal_conflict_visible_ranking/CHECKSUMS.SHA256",
       "target_aide_command_hint": "future tools wrapper for validate",
       "tool_id": "tool-examples-public-search-ranking-dry-run-minimal-conflict-visible-ranking-checksums-sha256"
     },
@@ -12203,7 +12203,7 @@
       "capability_family": "validate",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/public_search_ranking_dry_run/minimal_current_order_fallback/CHECKSUMS.SHA256",
+      "source_tool": "examples/index/public_search_ranking_dry_run/minimal_current_order_fallback/CHECKSUMS.SHA256",
       "target_aide_command_hint": "future tools wrapper for validate",
       "tool_id": "tool-examples-public-search-ranking-dry-run-minimal-current-order-fallback-checksums-sha256"
     },
@@ -12212,7 +12212,7 @@
       "capability_family": "validate",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/public_search_ranking_dry_run/minimal_evidence_weighted_ranking/CHECKSUMS.SHA256",
+      "source_tool": "examples/index/public_search_ranking_dry_run/minimal_evidence_weighted_ranking/CHECKSUMS.SHA256",
       "target_aide_command_hint": "future tools wrapper for validate",
       "tool_id": "tool-examples-public-search-ranking-dry-run-minimal-evidence-weighted-ranking-checksums-sha256"
     },
@@ -12221,7 +12221,7 @@
       "capability_family": "validate",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/public_search_ranking_dry_run/minimal_gap_transparency_ranking/CHECKSUMS.SHA256",
+      "source_tool": "examples/index/public_search_ranking_dry_run/minimal_gap_transparency_ranking/CHECKSUMS.SHA256",
       "target_aide_command_hint": "future tools wrapper for validate",
       "tool_id": "tool-examples-public-search-ranking-dry-run-minimal-gap-transparency-ranking-checksums-sha256"
     },
@@ -12230,7 +12230,7 @@
       "capability_family": "validate",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/query_guard/minimal_fake_demand_throttled_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/search/query_guard/minimal_fake_demand_throttled_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "future tools wrapper for validate",
       "tool_id": "tool-examples-query-guard-minimal-fake-demand-throttled-v0-checksums-sha256"
     },
@@ -12239,7 +12239,7 @@
       "capability_family": "validate",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/query_guard/minimal_private_path_rejected_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/search/query_guard/minimal_private_path_rejected_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "future tools wrapper for validate",
       "tool_id": "tool-examples-query-guard-minimal-private-path-rejected-v0-checksums-sha256"
     },
@@ -12248,7 +12248,7 @@
       "capability_family": "validate",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/query_guard/minimal_public_safe_query_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/search/query_guard/minimal_public_safe_query_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "future tools wrapper for validate",
       "tool_id": "tool-examples-query-guard-minimal-public-safe-query-v0-checksums-sha256"
     },
@@ -12257,7 +12257,7 @@
       "capability_family": "security",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/query_guard/minimal_secret_rejected_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/search/query_guard/minimal_secret_rejected_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "future tools wrapper for security",
       "tool_id": "tool-examples-query-guard-minimal-secret-rejected-v0-checksums-sha256"
     },
@@ -12266,7 +12266,7 @@
       "capability_family": "validate",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/query_guard/minimal_source_stuffing_quarantined_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/search/query_guard/minimal_source_stuffing_quarantined_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "future tools wrapper for validate",
       "tool_id": "tool-examples-query-guard-minimal-source-stuffing-quarantined-v0-checksums-sha256"
     },
@@ -12275,7 +12275,7 @@
       "capability_family": "validate",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/query_observations/minimal_query_observation_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/search/query_observations/minimal_query_observation_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "future tools wrapper for validate",
       "tool_id": "tool-examples-query-observations-minimal-query-observation-v0-checksums-sha256"
     },
@@ -12284,7 +12284,7 @@
       "capability_family": "validate",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/query_result_cache/minimal_absence_cache_entry_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/search/query_result_cache/minimal_absence_cache_entry_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "future tools wrapper for validate",
       "tool_id": "tool-examples-query-result-cache-minimal-absence-cache-entry-v0-checksums-sha256"
     },
@@ -12293,7 +12293,7 @@
       "capability_family": "validate",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/query_result_cache/minimal_cache_entry_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/search/query_result_cache/minimal_cache_entry_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "future tools wrapper for validate",
       "tool_id": "tool-examples-query-result-cache-minimal-cache-entry-v0-checksums-sha256"
     },
@@ -12347,7 +12347,7 @@
       "capability_family": "build",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/reviewed_public_index_rebuilds/minimal_rebuild_contract_v0.json",
+      "source_tool": "examples/index/reviewed_public_rebuilds/minimal_rebuild_contract_v0.json",
       "target_aide_command_hint": "future tools wrapper for build",
       "tool_id": "tool-examples-reviewed-public-index-rebuilds-minimal-rebuild-contract-v0-json"
     },
@@ -12356,7 +12356,7 @@
       "capability_family": "build",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/reviewed_public_index_rebuilds/missing_evidence_rebuild_blocked_v0.json",
+      "source_tool": "examples/index/reviewed_public_rebuilds/missing_evidence_rebuild_blocked_v0.json",
       "target_aide_command_hint": "future tools wrapper for build",
       "tool_id": "tool-examples-reviewed-public-index-rebuilds-missing-evidence-rebuild-blocked-v0-json"
     },
@@ -12365,7 +12365,7 @@
       "capability_family": "build",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/reviewed_public_index_rebuilds/policy_blocked_rebuild_v0.json",
+      "source_tool": "examples/index/reviewed_public_rebuilds/policy_blocked_rebuild_v0.json",
       "target_aide_command_hint": "future tools wrapper for build",
       "tool_id": "tool-examples-reviewed-public-index-rebuilds-policy-blocked-rebuild-v0-json"
     },
@@ -12374,7 +12374,7 @@
       "capability_family": "build",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/reviewed_public_index_rebuilds/ready_candidate_rebuild_input_v0.json",
+      "source_tool": "examples/index/reviewed_public_rebuilds/ready_candidate_rebuild_input_v0.json",
       "target_aide_command_hint": "future tools wrapper for build",
       "tool_id": "tool-examples-reviewed-public-index-rebuilds-ready-candidate-rebuild-input-v0-json"
     },
@@ -12383,7 +12383,7 @@
       "capability_family": "validate",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/search_miss_ledger/minimal_no_hits_miss_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/search/miss_ledger/minimal_no_hits_miss_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "future tools wrapper for validate",
       "tool_id": "tool-examples-search-miss-ledger-minimal-no-hits-miss-v0-checksums-sha256"
     },
@@ -12392,7 +12392,7 @@
       "capability_family": "validate",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/search_miss_ledger/minimal_weak_hits_miss_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/search/miss_ledger/minimal_weak_hits_miss_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "future tools wrapper for validate",
       "tool_id": "tool-examples-search-miss-ledger-minimal-weak-hits-miss-v0-checksums-sha256"
     },
@@ -12401,7 +12401,7 @@
       "capability_family": "validate",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/search_needs/minimal_compatibility_evidence_need_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/search/needs/minimal_compatibility_evidence_need_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "future tools wrapper for validate",
       "tool_id": "tool-examples-search-needs-minimal-compatibility-evidence-need-v0-checksums-sha256"
     },
@@ -12410,7 +12410,7 @@
       "capability_family": "validate",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/search_needs/minimal_unresolved_software_need_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/search/needs/minimal_unresolved_software_need_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "future tools wrapper for validate",
       "tool_id": "tool-examples-search-needs-minimal-unresolved-software-need-v0-checksums-sha256"
     },
@@ -12419,7 +12419,7 @@
       "capability_family": "validate",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/search_result_explanations/minimal_absence_gap_explanation_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/search/result_explanations/minimal_absence_gap_explanation_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "future tools wrapper for validate",
       "tool_id": "tool-examples-search-result-explanations-minimal-absence-gap-explanation-v0-checksums-sha256"
     },
@@ -12428,7 +12428,7 @@
       "capability_family": "validate",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/search_result_explanations/minimal_action_safety_explanation_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/search/result_explanations/minimal_action_safety_explanation_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "future tools wrapper for validate",
       "tool_id": "tool-examples-search-result-explanations-minimal-action-safety-explanation-v0-checksums-sha256"
     },
@@ -12437,7 +12437,7 @@
       "capability_family": "validate",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/search_result_explanations/minimal_compatibility_explanation_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/search/result_explanations/minimal_compatibility_explanation_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "future tools wrapper for validate",
       "tool_id": "tool-examples-search-result-explanations-minimal-compatibility-explanation-v0-checksums-sha256"
     },
@@ -12446,7 +12446,7 @@
       "capability_family": "validate",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/search_result_explanations/minimal_conflict_explanation_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/search/result_explanations/minimal_conflict_explanation_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "future tools wrapper for validate",
       "tool_id": "tool-examples-search-result-explanations-minimal-conflict-explanation-v0-checksums-sha256"
     },
@@ -12455,7 +12455,7 @@
       "capability_family": "validate",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/search_result_explanations/minimal_grouped_result_explanation_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/search/result_explanations/minimal_grouped_result_explanation_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "future tools wrapper for validate",
       "tool_id": "tool-examples-search-result-explanations-minimal-grouped-result-explanation-v0-checksums-sha256"
     },
@@ -12464,7 +12464,7 @@
       "capability_family": "validate",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/search_result_explanations/minimal_match_explanation_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/search/result_explanations/minimal_match_explanation_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "future tools wrapper for validate",
       "tool_id": "tool-examples-search-result-explanations-minimal-match-explanation-v0-checksums-sha256"
     },
@@ -12473,7 +12473,7 @@
       "capability_family": "validate",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/search_result_explanations/minimal_source_evidence_explanation_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/search/result_explanations/minimal_source_evidence_explanation_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "future tools wrapper for validate",
       "tool_id": "tool-examples-search-result-explanations-minimal-source-evidence-explanation-v0-checksums-sha256"
     },
@@ -12482,7 +12482,7 @@
       "capability_family": "release",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/source_cache/dry_run/minimal_github_release_metadata_summary/CHECKSUMS.SHA256",
+      "source_tool": "examples/sources/cache/dry_run/dry_run/minimal_github_release_metadata_summary/CHECKSUMS.SHA256",
       "target_aide_command_hint": "future tools wrapper for release",
       "tool_id": "tool-examples-source-cache-dry-run-minimal-github-release-metadata-summary-checksums-sha256"
     },
@@ -12491,7 +12491,7 @@
       "capability_family": "validate",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/source_cache/dry_run/minimal_internet_archive_metadata_summary/CHECKSUMS.SHA256",
+      "source_tool": "examples/sources/cache/dry_run/dry_run/minimal_internet_archive_metadata_summary/CHECKSUMS.SHA256",
       "target_aide_command_hint": "future tools wrapper for validate",
       "tool_id": "tool-examples-source-cache-dry-run-minimal-internet-archive-metadata-summary-checksums-sha256"
     },
@@ -12500,7 +12500,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/source_cache/dry_run/minimal_package_metadata_summary/CHECKSUMS.SHA256",
+      "source_tool": "examples/sources/cache/dry_run/dry_run/minimal_package_metadata_summary/CHECKSUMS.SHA256",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-examples-source-cache-dry-run-minimal-package-metadata-summary-checksums-sha256"
     },
@@ -12509,7 +12509,7 @@
       "capability_family": "release",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/source_cache/dry_run/minimal_software_heritage_identity_summary/CHECKSUMS.SHA256",
+      "source_tool": "examples/sources/cache/dry_run/dry_run/minimal_software_heritage_identity_summary/CHECKSUMS.SHA256",
       "target_aide_command_hint": "future tools wrapper for release",
       "tool_id": "tool-examples-source-cache-dry-run-minimal-software-heritage-identity-summary-checksums-sha256"
     },
@@ -12518,7 +12518,7 @@
       "capability_family": "validate",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/source_cache/dry_run/minimal_wayback_capture_metadata_summary/CHECKSUMS.SHA256",
+      "source_tool": "examples/sources/cache/dry_run/dry_run/minimal_wayback_capture_metadata_summary/CHECKSUMS.SHA256",
       "target_aide_command_hint": "future tools wrapper for validate",
       "tool_id": "tool-examples-source-cache-dry-run-minimal-wayback-capture-metadata-summary-checksums-sha256"
     },
@@ -12527,7 +12527,7 @@
       "capability_family": "validate",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/source_cache/minimal_ia_metadata_cache_record_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/sources/cache/dry_run/minimal_ia_metadata_cache_record_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "future tools wrapper for validate",
       "tool_id": "tool-examples-source-cache-minimal-ia-metadata-cache-record-v0-checksums-sha256"
     },
@@ -12536,7 +12536,7 @@
       "capability_family": "validate",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/source_cache/minimal_recorded_fixture_cache_record_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/sources/cache/dry_run/minimal_recorded_fixture_cache_record_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "future tools wrapper for validate",
       "tool_id": "tool-examples-source-cache-minimal-recorded-fixture-cache-record-v0-checksums-sha256"
     },
@@ -12545,7 +12545,7 @@
       "capability_family": "validate",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/source_cache/minimal_wayback_availability_cache_record_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/sources/cache/dry_run/minimal_wayback_availability_cache_record_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "future tools wrapper for validate",
       "tool_id": "tool-examples-source-cache-minimal-wayback-availability-cache-record-v0-checksums-sha256"
     },
@@ -12554,7 +12554,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/source_packs/h2_package_registry_policy_pack_v0.json",
+      "source_tool": "examples/packs/source/h2_package_registry_policy_pack_v0.json",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-examples-source-packs-h2-package-registry-policy-pack-v0-json"
     },
@@ -12563,7 +12563,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/source_packs/h2_package_registry_source_pack_manifest_v0.json",
+      "source_tool": "examples/packs/source/h2_package_registry_source_pack_manifest_v0.json",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-examples-source-packs-h2-package-registry-source-pack-manifest-v0-json"
     },
@@ -12572,7 +12572,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/source_packs/h3_os_package_archive_policy_pack_v0.json",
+      "source_tool": "examples/packs/source/h3_os_package_archive_policy_pack_v0.json",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-examples-source-packs-h3-os-package-archive-policy-pack-v0-json"
     },
@@ -12581,7 +12581,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/source_packs/h3_os_package_archive_source_pack_manifest_v0.json",
+      "source_tool": "examples/packs/source/h3_os_package_archive_source_pack_manifest_v0.json",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-examples-source-packs-h3-os-package-archive-source-pack-manifest-v0-json"
     },
@@ -12590,7 +12590,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/source_packs/h4_code_source_release_policy_pack_v0.json",
+      "source_tool": "examples/packs/source/h4_code_source_release_policy_pack_v0.json",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-examples-source-packs-h4-code-source-release-policy-pack-v0-json"
     },
@@ -12599,7 +12599,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/source_packs/h4_code_source_release_source_pack_manifest_v0.json",
+      "source_tool": "examples/packs/source/h4_code_source_release_source_pack_manifest_v0.json",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-examples-source-packs-h4-code-source-release-source-pack-manifest-v0-json"
     },
@@ -12608,7 +12608,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/source_packs/minimal_recorded_source_pack_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/packs/source/minimal_recorded_source_pack_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-examples-source-packs-minimal-recorded-source-pack-v0-checksums-sha256"
     },
@@ -12617,7 +12617,7 @@
       "capability_family": "validate",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/source_pages/minimal_connector_approval_source_page_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/sources/pages/minimal_connector_approval_source_page_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "future tools wrapper for validate",
       "tool_id": "tool-examples-source-pages-minimal-connector-approval-source-page-v0-checksums-sha256"
     },
@@ -12626,7 +12626,7 @@
       "capability_family": "validate",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/source_pages/minimal_fixture_source_page_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/sources/pages/minimal_fixture_source_page_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "future tools wrapper for validate",
       "tool_id": "tool-examples-source-pages-minimal-fixture-source-page-v0-checksums-sha256"
     },
@@ -12635,7 +12635,7 @@
       "capability_family": "validate",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/source_pages/minimal_placeholder_source_page_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/sources/pages/minimal_placeholder_source_page_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "future tools wrapper for validate",
       "tool_id": "tool-examples-source-pages-minimal-placeholder-source-page-v0-checksums-sha256"
     },
@@ -12644,7 +12644,7 @@
       "capability_family": "validate",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/source_pages/minimal_recorded_fixture_source_page_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/sources/pages/minimal_recorded_fixture_source_page_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "future tools wrapper for validate",
       "tool_id": "tool-examples-source-pages-minimal-recorded-fixture-source-page-v0-checksums-sha256"
     },
@@ -12653,7 +12653,7 @@
       "capability_family": "release",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/source_sync/minimal_github_releases_sync_job_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/sources/sync/minimal_github_releases_sync_job_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "future tools wrapper for release",
       "tool_id": "tool-examples-source-sync-minimal-github-releases-sync-job-v0-checksums-sha256"
     },
@@ -12662,7 +12662,7 @@
       "capability_family": "release",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/source_sync/minimal_github_releases_sync_job_v0/SOURCE_SYNC_WORKER_JOB.json",
+      "source_tool": "examples/sources/sync/minimal_github_releases_sync_job_v0/SOURCE_SYNC_WORKER_JOB.json",
       "target_aide_command_hint": "future tools wrapper for release",
       "tool_id": "tool-examples-source-sync-minimal-github-releases-sync-job-v0-source-sync-worker-job-json"
     },
@@ -12671,7 +12671,7 @@
       "capability_family": "validate",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/source_sync/minimal_ia_metadata_sync_job_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/sources/sync/minimal_ia_metadata_sync_job_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "future tools wrapper for validate",
       "tool_id": "tool-examples-source-sync-minimal-ia-metadata-sync-job-v0-checksums-sha256"
     },
@@ -12680,7 +12680,7 @@
       "capability_family": "validate",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/source_sync/minimal_manual_source_review_job_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/sources/sync/minimal_manual_source_review_job_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "future tools wrapper for validate",
       "tool_id": "tool-examples-source-sync-minimal-manual-source-review-job-v0-checksums-sha256"
     },
@@ -12689,7 +12689,7 @@
       "capability_family": "validate",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "examples/source_sync/minimal_wayback_availability_sync_job_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/sources/sync/minimal_wayback_availability_sync_job_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "future tools wrapper for validate",
       "tool_id": "tool-examples-source-sync-minimal-wayback-availability-sync-job-v0-checksums-sha256"
     },
@@ -12824,7 +12824,7 @@
       "capability_family": "build",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "runtime/local_foundry/pack_builder.py",
+      "source_tool": "runtime/local/foundry/pack_builder.py",
       "target_aide_command_hint": "future tools wrapper for build",
       "tool_id": "tool-runtime-local-foundry-pack-builder-py"
     },
@@ -12833,7 +12833,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "runtime/local_foundry/pack_export.py",
+      "source_tool": "runtime/local/foundry/pack_export.py",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-runtime-local-foundry-pack-export-py"
     },
@@ -12842,7 +12842,7 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "runtime/local_foundry/pack_import_preview.py",
+      "source_tool": "runtime/local/foundry/pack_import_preview.py",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-runtime-local-foundry-pack-import-preview-py"
     },
@@ -12851,7 +12851,7 @@
       "capability_family": "audit",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "runtime/local_review/audit.py",
+      "source_tool": "runtime/local/review/audit.py",
       "target_aide_command_hint": "future tools wrapper for audit",
       "tool_id": "tool-runtime-local-review-audit-py"
     },
@@ -12860,7 +12860,7 @@
       "capability_family": "build",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "runtime/local_review/rebuild.py",
+      "source_tool": "runtime/local/review/rebuild.py",
       "target_aide_command_hint": "future tools wrapper for build",
       "tool_id": "tool-runtime-local-review-rebuild-py"
     },
@@ -12869,7 +12869,7 @@
       "capability_family": "audit",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "runtime/local_worker/audit.py",
+      "source_tool": "runtime/local/worker/audit.py",
       "target_aide_command_hint": "future tools wrapper for audit",
       "tool_id": "tool-runtime-local-worker-audit-py"
     },
@@ -12878,7 +12878,7 @@
       "capability_family": "build",
       "execution_allowed": false,
       "recommended_fate": "wrap",
-      "source_tool": "runtime/public_index/rebuild.py",
+      "source_tool": "runtime/index/public/rebuild.py",
       "target_aide_command_hint": "future tools wrapper for build",
       "tool_id": "tool-runtime-public-index-rebuild-py"
     },
@@ -16932,16 +16932,16 @@
     ".aide/tools/tool-risk.schema.json",
     ".aide/tools/tool-wrap-plan.schema.json",
     ".github/workflows/pages.yml",
-    "contracts/actions/export_manifest.v0.json",
-    "contracts/source_sync/source_sync_job_kind.v0.json",
-    "contracts/source_sync/source_sync_worker_job.v0.json",
-    "contracts/source_sync/source_sync_worker_manifest.v0.json",
-    "contracts/ui/ui_contracts/stored_exports.ui_contract.yaml",
-    "contracts/ui/view_models/stored_exports.view_model.yaml",
+    "contracts/command/actions/export_manifest.v0.json",
+    "contracts/source/sync/source_sync_job_kind.v0.json",
+    "contracts/source/sync/source_sync_worker_job.v0.json",
+    "contracts/source/sync/source_sync_worker_manifest.v0.json",
+    "contracts/surface/ui/contracts/stored_exports.ui_contract.yaml",
+    "contracts/view/models/ui/stored_exports.view_model.yaml",
     "control/inventory/git/sync_workflow_commands.json",
     "control/inventory/observations/obs_track_b_sync_matrix.json",
     "archive/prototypes/legacy_runtime/connectors/h13_local_private/local_cas_import_boundary.py",
-    "contracts/control_schemas/previews/h13/connectors/local_cas_import_boundary_candidate.v0.json",
+    "contracts/schema/control/previews/h13/connectors/local_cas_import_boundary_candidate.v0.json",
     "crates/eureka-contracts/src/lib.rs",
     "crates/eureka-core/src/lib.rs",
     "crates/eureka-resolver/src/lib.rs",
@@ -16964,9 +16964,9 @@
     "examples/connectors/h13_local_private/fixtures/user_supplied_url_metadata_boundary/local_cas_import_boundary_record.json",
     "examples/connectors/h13_local_private/identity/local_cas_import_boundary_candidate_v0.json",
     "examples/connectors/h13_local_private/review_integration/h13_local_cas_import_boundary_review_seed_v0.json",
-    "examples/source_sync/minimal_ia_metadata_sync_job_v0/SOURCE_SYNC_WORKER_JOB.json",
-    "examples/source_sync/minimal_manual_source_review_job_v0/SOURCE_SYNC_WORKER_JOB.json",
-    "examples/source_sync/minimal_wayback_availability_sync_job_v0/SOURCE_SYNC_WORKER_JOB.json",
+    "examples/sources/sync/minimal_ia_metadata_sync_job_v0/SOURCE_SYNC_WORKER_JOB.json",
+    "examples/sources/sync/minimal_manual_source_review_job_v0/SOURCE_SYNC_WORKER_JOB.json",
+    "examples/sources/sync/minimal_wayback_availability_sync_job_v0/SOURCE_SYNC_WORKER_JOB.json",
     "runtime/actions/export_manifest.py",
     "runtime/engine/interfaces/service/export_store_service.py",
     "runtime/engine/store/export_store.py",
@@ -17219,16 +17219,16 @@
     ".aide/tools/tool-risk.schema.json",
     ".aide/tools/tool-wrap-plan.schema.json",
     ".github/workflows/pages.yml",
-    "contracts/actions/export_manifest.v0.json",
-    "contracts/source_sync/source_sync_job_kind.v0.json",
-    "contracts/source_sync/source_sync_worker_job.v0.json",
-    "contracts/source_sync/source_sync_worker_manifest.v0.json",
-    "contracts/ui/ui_contracts/stored_exports.ui_contract.yaml",
-    "contracts/ui/view_models/stored_exports.view_model.yaml",
+    "contracts/command/actions/export_manifest.v0.json",
+    "contracts/source/sync/source_sync_job_kind.v0.json",
+    "contracts/source/sync/source_sync_worker_job.v0.json",
+    "contracts/source/sync/source_sync_worker_manifest.v0.json",
+    "contracts/surface/ui/contracts/stored_exports.ui_contract.yaml",
+    "contracts/view/models/ui/stored_exports.view_model.yaml",
     "control/inventory/git/sync_workflow_commands.json",
     "control/inventory/observations/obs_track_b_sync_matrix.json",
     "archive/prototypes/legacy_runtime/connectors/h13_local_private/local_cas_import_boundary.py",
-    "contracts/control_schemas/previews/h13/connectors/local_cas_import_boundary_candidate.v0.json",
+    "contracts/schema/control/previews/h13/connectors/local_cas_import_boundary_candidate.v0.json",
     "crates/eureka-contracts/src/lib.rs",
     "crates/eureka-core/src/lib.rs",
     "crates/eureka-resolver/src/lib.rs",
@@ -17251,9 +17251,9 @@
     "examples/connectors/h13_local_private/fixtures/user_supplied_url_metadata_boundary/local_cas_import_boundary_record.json",
     "examples/connectors/h13_local_private/identity/local_cas_import_boundary_candidate_v0.json",
     "examples/connectors/h13_local_private/review_integration/h13_local_cas_import_boundary_review_seed_v0.json",
-    "examples/source_sync/minimal_ia_metadata_sync_job_v0/SOURCE_SYNC_WORKER_JOB.json",
-    "examples/source_sync/minimal_manual_source_review_job_v0/SOURCE_SYNC_WORKER_JOB.json",
-    "examples/source_sync/minimal_wayback_availability_sync_job_v0/SOURCE_SYNC_WORKER_JOB.json",
+    "examples/sources/sync/minimal_ia_metadata_sync_job_v0/SOURCE_SYNC_WORKER_JOB.json",
+    "examples/sources/sync/minimal_manual_source_review_job_v0/SOURCE_SYNC_WORKER_JOB.json",
+    "examples/sources/sync/minimal_wayback_availability_sync_job_v0/SOURCE_SYNC_WORKER_JOB.json",
     "runtime/actions/export_manifest.py",
     "runtime/engine/interfaces/service/export_store_service.py",
     "runtime/engine/store/export_store.py",

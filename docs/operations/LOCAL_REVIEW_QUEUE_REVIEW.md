@@ -20,7 +20,7 @@ Review queue output must not create public truth, evidence truth, source truth, 
 
 ```bash
 python scripts/validate_local_review_queue_runtime.py
-python scripts/record_review_queue.py --input examples/review_queue_entries/candidate_needs_review_v0.json --check
-python scripts/summarize_review_queue.py --input examples/review_queue_entries --check
+python scripts/record_review_queue.py --input examples/review/queue_entries/candidate_needs_review_v0.json --check
+python scripts/summarize_review_queue.py --input examples/review/queue_entries --check
 python -m unittest tests.runtime.test_local_review_queue_runtime tests.operations.test_local_review_queue_runtime_scripts
 ```

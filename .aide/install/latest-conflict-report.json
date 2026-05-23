@@ -3475,9 +3475,9 @@
       "conflict_id": "conflict-bc35d5f5445b",
       "conflict_type": "secret_like_path",
       "evidence_refs": [
-        "examples/query_guard/minimal_secret_rejected_v0/CHECKSUMS.SHA256"
+        "examples/search/query_guard/minimal_secret_rejected_v0/CHECKSUMS.SHA256"
       ],
-      "path": "examples/query_guard/minimal_secret_rejected_v0/CHECKSUMS.SHA256",
+      "path": "examples/search/query_guard/minimal_secret_rejected_v0/CHECKSUMS.SHA256",
       "reason": "Install planning cannot treat local, secret-like, or unsupported schema state as a portable install artifact.",
       "recommended_next_action": "Preserve or repair in a future explicit repair or upgrade phase; do not overwrite in Q43.",
       "status": "blocking"
@@ -3487,9 +3487,9 @@
       "conflict_id": "conflict-64f44c29970f",
       "conflict_type": "secret_like_path",
       "evidence_refs": [
-        "examples/query_guard/minimal_secret_rejected_v0/QUERY_GUARD_DECISION.json"
+        "examples/search/query_guard/minimal_secret_rejected_v0/QUERY_GUARD_DECISION.json"
       ],
-      "path": "examples/query_guard/minimal_secret_rejected_v0/QUERY_GUARD_DECISION.json",
+      "path": "examples/search/query_guard/minimal_secret_rejected_v0/QUERY_GUARD_DECISION.json",
       "reason": "Install planning cannot treat local, secret-like, or unsupported schema state as a portable install artifact.",
       "recommended_next_action": "Preserve or repair in a future explicit repair or upgrade phase; do not overwrite in Q43.",
       "status": "blocking"
@@ -3499,9 +3499,9 @@
       "conflict_id": "conflict-38a697b0049e",
       "conflict_type": "secret_like_path",
       "evidence_refs": [
-        "examples/query_guard/minimal_secret_rejected_v0/README.md"
+        "examples/search/query_guard/minimal_secret_rejected_v0/README.md"
       ],
-      "path": "examples/query_guard/minimal_secret_rejected_v0/README.md",
+      "path": "examples/search/query_guard/minimal_secret_rejected_v0/README.md",
       "reason": "Install planning cannot treat local, secret-like, or unsupported schema state as a portable install artifact.",
       "recommended_next_action": "Preserve or repair in a future explicit repair or upgrade phase; do not overwrite in Q43.",
       "status": "blocking"

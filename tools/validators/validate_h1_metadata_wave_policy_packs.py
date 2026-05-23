@@ -69,8 +69,8 @@ INVENTORY_FILES = (
     "control/inventory/source_packs/h1_metadata_wave_no_live_call_policy.json",
 )
 SOURCE_PACK_EXAMPLES = (
-    "examples/source_packs/h1_metadata_wave_source_pack_manifest_v0.json",
-    "examples/source_packs/h1_metadata_wave_policy_pack_v0.json",
+    "examples/packs/source/h1_metadata_wave_source_pack_manifest_v0.json",
+    "examples/packs/source/h1_metadata_wave_policy_pack_v0.json",
 )
 DOCS = (
     "docs/reference/H1_METADATA_WAVE_SOURCE_PACKS.md",

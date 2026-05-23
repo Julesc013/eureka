@@ -23,10 +23,10 @@ from scripts.hunt_queue_progress import (
     hunt_queue_current_or_advanced,
     post_hunt_current_allowed,
 )
-from runtime.local_appliance import close_local_appliance, open_local_appliance
-from runtime.local_operator.auth import build_cli_operator_auth_state
-from runtime.local_service import LocalServiceApp
-from runtime.search_hunt import build_hunt_exhaustion_report
+from runtime.local.appliance import close_local_appliance, open_local_appliance
+from runtime.local.operator.auth import build_cli_operator_auth_state
+from runtime.local.service import LocalServiceApp
+from runtime.search.hunt import build_hunt_exhaustion_report
 
 
 TASK_ID = "HUNT-04"
@@ -47,15 +47,15 @@ INVENTORIES = {
     "control/inventory/hunt_04_next_task_decision.json": "hunt_04_next_task_decision.v0",
 }
 RUNTIME_FILES = (
-    "runtime/search_hunt/exhaustion.py",
-    "runtime/search_hunt/reports.py",
-    "runtime/search_hunt/records.py",
-    "runtime/search_hunt/store.py",
-    "runtime/search_hunt/schema.py",
-    "runtime/search_hunt/queries.py",
-    "runtime/search_hunt/validation.py",
-    "runtime/local_service/routes.py",
-    "runtime/local_service/validation.py",
+    "runtime/search/hunt/exhaustion.py",
+    "runtime/search/hunt/reports.py",
+    "runtime/search/hunt/records.py",
+    "runtime/search/hunt/store.py",
+    "runtime/search/hunt/schema.py",
+    "runtime/search/hunt/queries.py",
+    "runtime/search/hunt/validation.py",
+    "runtime/local/service/routes.py",
+    "runtime/local/service/validation.py",
     "surfaces/web/workbench/local_html/pages.py",
     "surfaces/web/workbench/local_html/view_models.py",
 )

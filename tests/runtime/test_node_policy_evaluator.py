@@ -6,7 +6,7 @@ from pathlib import Path
 from unittest import mock
 import unittest
 
-from runtime.local_foundry.node_policy_evaluator import (
+from runtime.local.foundry.node_policy_evaluator import (
     build_node_policy_evaluation_result,
     detect_policy_boundary_violations,
     detect_truth_boundary_violations,

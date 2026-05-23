@@ -3,13 +3,13 @@
   "created_by_slice": "evidence_pack_contract_v0",
   "status": "implemented_contract_validation_example_only",
   "contract": {
-    "schema": "contracts/packs/evidence_pack.v0.json",
+    "schema": "contracts/pack/evidence_pack.v0.json",
     "manifest": "EVIDENCE_PACK.json",
     "contract_id": "eureka_evidence_pack_v0",
     "snippet_max_chars": 500
   },
   "example_pack": {
-    "path": "examples/evidence_packs/minimal_evidence_pack_v0",
+    "path": "examples/packs/evidence/minimal_evidence_pack_v0",
     "synthetic": true,
     "evidence_record_count": 4,
     "source_reference_count": 1,

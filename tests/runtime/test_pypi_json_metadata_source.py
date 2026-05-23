@@ -3,7 +3,7 @@ import unittest
 from pathlib import Path
 from unittest import mock
 
-from runtime.source_observation.sources import pypi_json_metadata as source
+from runtime.source.observation.sources import pypi_json_metadata as source
 
 
 class FakeResponse:

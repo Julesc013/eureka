@@ -1,13 +1,13 @@
 import unittest
 from pathlib import Path
 
-from runtime.source_observation.internet_archive_promotion import (
+from runtime.source.observation.internet_archive_promotion import (
     build_ia_promotion_preview,
     build_ia_promotion_previews,
     load_ia_promotion_dry_run_policy,
     validate_ia_promotion_preview,
 )
-from runtime.source_observation.internet_archive_review import (
+from runtime.source.observation.internet_archive_review import (
     apply_ia_review_decision,
     build_ia_review_items_from_candidates,
     load_default_ia_candidate_records,

@@ -3,7 +3,7 @@ from __future__ import annotations
 from pathlib import Path
 import unittest
 
-from runtime.local_eval.scout_schema import (
+from runtime.local.eval.scout_schema import (
     BLOCKED_ACTIONS,
     load_scout_example_records,
     load_scout_seed_records,

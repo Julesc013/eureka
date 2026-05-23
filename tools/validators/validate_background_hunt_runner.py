@@ -18,12 +18,12 @@ if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
 from scripts.hunt_queue_progress import hunt_queue_current_or_advanced
-from runtime.local_appliance import close_local_appliance, open_local_appliance
-from runtime.local_operator.auth import build_cli_operator_auth_state
-from runtime.local_service import LocalServiceApp
-from runtime.search_hunt import build_background_hunt_plan, run_background_hunt_batch, run_next_hunt_workunit
-from runtime.search_need import create_workunits_from_need
-from runtime.workunit_queue.records import WorkUnit, WorkUnitState, WorkUnitType
+from runtime.local.appliance import close_local_appliance, open_local_appliance
+from runtime.local.operator.auth import build_cli_operator_auth_state
+from runtime.local.service import LocalServiceApp
+from runtime.search.hunt import build_background_hunt_plan, run_background_hunt_batch, run_next_hunt_workunit
+from runtime.search.need import create_workunits_from_need
+from runtime.worker.workunit_queue.records import WorkUnit, WorkUnitState, WorkUnitType
 
 
 TASK_ID = "HUNT-07"
@@ -46,9 +46,9 @@ INVENTORIES = {
     "control/inventory/hunt_07_next_task_decision.json": "hunt_07_next_task_decision.v0",
 }
 REQUIRED_FILES = (
-    "runtime/search_hunt/runner.py",
-    "runtime/search_hunt/run_records.py",
-    "runtime/search_hunt/workunit_runner.py",
+    "runtime/search/hunt/runner.py",
+    "runtime/search/hunt/run_records.py",
+    "runtime/search/hunt/workunit_runner.py",
     "scripts/eureka_hunt_runner.py",
     "scripts/demo_background_hunt_runner.py",
     "scripts/validate_background_hunt_runner.py",
@@ -423,7 +423,7 @@ def validate_cli_and_demo(root: Path, errors: list[str]) -> None:
 
 
 def validate_runtime_imports(root: Path, errors: list[str]) -> None:
-    for rel in ("runtime/search_hunt/run_records.py", "runtime/search_hunt/runner.py", "runtime/search_hunt/workunit_runner.py"):
+    for rel in ("runtime/search/hunt/run_records.py", "runtime/search/hunt/runner.py", "runtime/search/hunt/workunit_runner.py"):
         path = root / rel
         tree = ast.parse(path.read_text(encoding="utf-8"), filename=str(path))
         for node in ast.walk(tree):
@@ -438,7 +438,7 @@ def validate_runtime_imports(root: Path, errors: list[str]) -> None:
 
 
 def validate_runtime_vocabulary(root: Path, errors: list[str]) -> None:
-    for rel in ("runtime/search_hunt/run_records.py", "runtime/search_hunt/runner.py", "runtime/search_hunt/workunit_runner.py"):
+    for rel in ("runtime/search/hunt/run_records.py", "runtime/search/hunt/runner.py", "runtime/search/hunt/workunit_runner.py"):
         text = (root / rel).read_text(encoding="utf-8")
         for marker in FORBIDDEN_RUNTIME_VOCABULARY:
             if marker in text:

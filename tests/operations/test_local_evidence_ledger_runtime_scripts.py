@@ -7,7 +7,7 @@ from scripts import record_evidence_ledger, summarize_evidence_ledger, validate_
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
-METADATA_CLAIM = REPO_ROOT / "examples/evidence_ledger_records/metadata_claim_record_v0.json"
+METADATA_CLAIM = REPO_ROOT / "examples/evidence/ledger/records/metadata_claim_record_v0.json"
 
 
 class LocalEvidenceLedgerRuntimeScriptTests(unittest.TestCase):
@@ -35,7 +35,7 @@ class LocalEvidenceLedgerRuntimeScriptTests(unittest.TestCase):
         self.assertFalse(record_evidence_ledger.output_path_allowed(REPO_ROOT / "runtime/evidence.json"))
 
     def test_summarizer_works_on_examples(self) -> None:
-        code = summarize_evidence_ledger.main(["--input", str(REPO_ROOT / "examples/evidence_ledger_records"), "--check"])
+        code = summarize_evidence_ledger.main(["--input", str(REPO_ROOT / "examples/evidence/ledger/records"), "--check"])
         self.assertEqual(code, 0)
 
     def test_summarizer_writes_explicit_report_to_temp_path(self) -> None:
@@ -45,7 +45,7 @@ class LocalEvidenceLedgerRuntimeScriptTests(unittest.TestCase):
             code = summarize_evidence_ledger.main(
                 [
                     "--input",
-                    str(REPO_ROOT / "examples/evidence_ledger_records"),
+                    str(REPO_ROOT / "examples/evidence/ledger/records"),
                     "--output",
                     str(output),
                     "--summary-output",
@@ -66,12 +66,12 @@ class LocalEvidenceLedgerRuntimeScriptTests(unittest.TestCase):
         report = record_evidence_ledger.build_report(METADATA_CLAIM)
         record = report["record"]
         record["product_boundary"]["enabled_telemetry"] = True
-        from runtime.local_foundry import evidence_ledger
+        from runtime.local.foundry import evidence_ledger
 
         self.assertTrue(evidence_ledger.detect_evidence_product_boundary_violations(record))
 
     def test_runtime_does_not_call_network_model_or_provider(self) -> None:
-        runtime_source = (REPO_ROOT / "runtime/local_foundry/evidence_ledger.py").read_text(encoding="utf-8")
+        runtime_source = (REPO_ROOT / "runtime/local/foundry/evidence_ledger.py").read_text(encoding="utf-8")
         scripts = (
             (REPO_ROOT / "scripts/record_evidence_ledger.py").read_text(encoding="utf-8")
             + (REPO_ROOT / "scripts/summarize_evidence_ledger.py").read_text(encoding="utf-8")

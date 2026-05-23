@@ -1,0 +1,37 @@
+{
+  "$id": "https://eureka.local/contracts/schema/control/previews/h1/connectors/live_probe_result.v0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "schema_version": {
+      "const": "h1_live_probe_result.v0"
+    }
+  },
+  "required": [
+    "schema_version",
+    "live_probe_result_id",
+    "live_probe_request_ref",
+    "source_id",
+    "connector_family",
+    "result_status",
+    "request_count",
+    "network_used",
+    "endpoint_used",
+    "response_status_code",
+    "response_fingerprint",
+    "response_summary",
+    "normalized_record",
+    "source_cache_candidate_preview",
+    "evidence_candidate_preview",
+    "review_queue_seed_preview",
+    "connector_health_summary",
+    "blocked_reason",
+    "warnings",
+    "limitations",
+    "truth_boundary",
+    "product_boundary",
+    "notes"
+  ],
+  "title": "Eureka h1_live_probe_result.v0",
+  "type": "object"
+}

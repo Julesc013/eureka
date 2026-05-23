@@ -2,7 +2,7 @@
 
 Example path:
 
-`examples/contribution_packs/minimal_contribution_pack_v0/`
+`examples/packs/contribution/minimal_contribution_pack_v0/`
 
 The example pack is synthetic and self-authored. It includes a compatibility
 suggestion, alias suggestion, absence report, pending synthetic manual

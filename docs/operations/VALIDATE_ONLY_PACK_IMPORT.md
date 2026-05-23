@@ -42,7 +42,7 @@ python scripts/validate_only_pack_import.py --all-examples --json
 Validate one explicit pack root:
 
 ```bash
-python scripts/validate_only_pack_import.py --pack-root examples/source_packs/minimal_recorded_source_pack_v0 --json
+python scripts/validate_only_pack_import.py --pack-root examples/packs/source/minimal_recorded_source_pack_v0 --json
 ```
 
 Include registered typed AI output examples as an `ai_output_bundle` report
@@ -85,7 +85,7 @@ It does not recursively scan arbitrary directories. Unknown roots become
 
 ## Report Generation
 
-The generated report uses `contracts/control_schemas/audits/packs/pack_import_report.v0.json` and is
+The generated report uses `contracts/schema/control/audits/packs/pack_import_report.v0.json` and is
 validated against `scripts/validate_pack_import_report.py`.
 
 The report records:

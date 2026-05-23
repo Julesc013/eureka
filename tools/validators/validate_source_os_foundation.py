@@ -13,15 +13,15 @@ from typing import Any, Mapping, Sequence, TextIO
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 CONTRACTS = (
-    "contracts/sources/source_registry.v2.json",
-    "contracts/sources/source_record.v2.json",
-    "contracts/sources/source_family.v0.json",
-    "contracts/sources/source_capability.v0.json",
-    "contracts/sources/source_policy.v0.json",
-    "contracts/sources/source_operation_policy.v0.json",
-    "contracts/sources/source_index_depth.v0.json",
-    "contracts/sources/source_trust_lane.v0.json",
-    "contracts/sources/source_approval_gate.v0.json",
+    "contracts/source/records/source_registry.v2.json",
+    "contracts/source/records/source_record.v2.json",
+    "contracts/source/records/source_family.v0.json",
+    "contracts/source/records/source_capability.v0.json",
+    "contracts/source/records/source_policy.v0.json",
+    "contracts/source/records/source_operation_policy.v0.json",
+    "contracts/source/records/source_index_depth.v0.json",
+    "contracts/source/records/source_trust_lane.v0.json",
+    "contracts/source/records/source_approval_gate.v0.json",
 )
 INVENTORIES = (
     "control/inventory/sources/source_registry_v2_policy.json",

@@ -1,11 +1,11 @@
 import unittest
 
-from runtime.local_eval.g0_quality import build_explanation_packet, build_score_breakdown, load_quality_fixture
+from runtime.local.eval.g0_quality import build_explanation_packet, build_score_breakdown, load_quality_fixture
 
 
 class G0ExplanationTests(unittest.TestCase):
     def test_explanation_contains_required_why_sections(self) -> None:
-        fixture = load_quality_fixture("examples/search_quality/sample_quality_fixture.json")
+        fixture = load_quality_fixture("examples/search/quality/sample_quality_fixture.json")
         record = fixture["records"][1]
         score = build_score_breakdown(record, fixture["query_context"], fixture["domain_context"])
         packet = build_explanation_packet(score, record)

@@ -7,7 +7,7 @@ This audit pack records the OBS side-lane review queue for repo-local Observatio
 - Review queue contract under `contracts/query/`.
 - Review queue policy and triage rules under `control/inventory/observations/`.
 - Deterministic review queue inventory and audit queue.
-- Queue examples under `examples/observation_reviews/`.
+- Queue examples under `examples/review/observation_reviews/`.
 - Builder, validator, and summarizer scripts.
 - Contract and operation tests.
 - Human review packet and future review item summaries.

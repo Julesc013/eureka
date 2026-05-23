@@ -1,7 +1,7 @@
 import unittest
 from typing import Any
 
-from runtime.search_hunt.ia_bridge import (
+from runtime.search.hunt.ia_bridge import (
     build_ia_hunt_result_lanes,
     plan_ia_hunt_pipeline,
     run_ia_hunt_pipeline_dry_run,

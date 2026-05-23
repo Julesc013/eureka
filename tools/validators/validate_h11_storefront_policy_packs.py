@@ -36,8 +36,8 @@ INVENTORY_FILES = (
     "control/inventory/source_packs/h11_storefront_no_purchase_download_account_policy.json",
 )
 SOURCE_PACK_EXAMPLES = (
-    "examples/source_packs/h11_storefront_source_pack_manifest_v0.json",
-    "examples/source_packs/h11_storefront_policy_pack_v0.json",
+    "examples/packs/source/h11_storefront_source_pack_manifest_v0.json",
+    "examples/packs/source/h11_storefront_policy_pack_v0.json",
 )
 EXTRA_EXAMPLES = (
     "examples/connectors/h11_storefront/coverage/h11_storefront_coverage_preview_v0.json",

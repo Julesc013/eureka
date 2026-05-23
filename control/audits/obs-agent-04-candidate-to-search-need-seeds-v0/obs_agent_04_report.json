@@ -25,14 +25,14 @@
     "control/inventory/observations/search_need_seed_priority_model.json"
   ],
   "added_examples": [
-    "examples/search_need_seeds/minimal_search_need_seed_v0.json",
-    "examples/search_need_seeds/source_gap_search_need_seed_v0.json",
-    "examples/search_need_seeds/extraction_gap_search_need_seed_v0.json",
-    "examples/search_need_seeds/compatibility_gap_search_need_seed_v0.json",
-    "examples/search_need_seeds/policy_blocked_search_need_seed_v0.json",
-    "examples/search_need_seed_conversions/minimal_candidate_to_need_conversion_v0.json",
-    "examples/search_need_seed_conversions/source_gap_candidate_to_need_conversion_v0.json",
-    "examples/search_need_seed_conversions/request_more_evidence_conversion_v0.json"
+    "examples/search/need_seeds/minimal_search_need_seed_v0.json",
+    "examples/search/need_seeds/source_gap_search_need_seed_v0.json",
+    "examples/search/need_seeds/extraction_gap_search_need_seed_v0.json",
+    "examples/search/need_seeds/compatibility_gap_search_need_seed_v0.json",
+    "examples/search/need_seeds/policy_blocked_search_need_seed_v0.json",
+    "examples/search/need_seed_conversions/minimal_candidate_to_need_conversion_v0.json",
+    "examples/search/need_seed_conversions/source_gap_candidate_to_need_conversion_v0.json",
+    "examples/search/need_seed_conversions/request_more_evidence_conversion_v0.json"
   ],
   "added_scripts": [
     "scripts/build_search_need_seed_candidates.py",

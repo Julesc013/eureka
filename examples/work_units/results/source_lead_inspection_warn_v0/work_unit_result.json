@@ -1,0 +1,233 @@
+{
+  "schema_version": "work_unit_result.v0",
+  "workunit_result_id": "source_lead_inspection_warn_v0",
+  "workunit_result_label": "Source lead inspection warn result example",
+  "workunit_id": "source_lead_inspection_v0",
+  "workunit_type": "source_lead_inspection",
+  "workunit_result_status": "warn",
+  "result_scope": "repo_local",
+  "produced_by": {
+    "producer_type": "contract_example",
+    "node_id": "local_autonomous_dry_run_node_v0",
+    "human_review_required": true
+  },
+  "produced_at_note": "Synthetic contract example; no source was queried.",
+  "source_workunit_ref": "examples/work_units/source_lead_inspection_v0/work_unit.json",
+  "node_manifest_ref": "examples/nodes/local_autonomous_dry_run_node_v0/eureka_node_manifest.json",
+  "node_policy_ref": "examples/nodes/policies/local_autonomous_dry_run_node_policy_v0.json",
+  "node_capability_refs": [
+    "source_lead_preparation"
+  ],
+  "execution_mode": "dry_run_only",
+  "execution_summary": {
+    "workunit_executed": false,
+    "runtime_used": false,
+    "network_used": false,
+    "model_provider_used": false,
+    "local_state_created": false,
+    "summary": "Dry-run result envelope for a source lead candidate."
+  },
+  "validation_summary": {
+    "validation_status": "warn",
+    "commands_run": [
+      "python scripts/validate_eureka_workunit_result.py"
+    ],
+    "validators_run": [
+      "validate_eureka_workunit_result"
+    ],
+    "tests_run": [],
+    "warnings_count": 1,
+    "errors_count": 0,
+    "warn_only": true,
+    "validation_artifacts": [],
+    "validation_limitations": [
+      "Warning is intentionally documented in this example."
+    ],
+    "notes": []
+  },
+  "planned_actions": [
+    {
+      "action_id": "plan_source_lead_summary",
+      "action_type": "prepare_source_lead",
+      "action_status": "planned",
+      "action_scope": "dry_run",
+      "allowed_by_policy": true,
+      "blocked_by_policy": false,
+      "reason": "Source lead proposal remains review-gated.",
+      "output_refs": [
+        "source_lead_candidate_example"
+      ],
+      "validation_refs": [],
+      "notes": []
+    }
+  ],
+  "executed_actions": [],
+  "skipped_actions": [
+    {
+      "action_id": "skip_source_access",
+      "action_type": "request_source_policy_approval_future",
+      "action_status": "skipped",
+      "action_scope": "source_policy",
+      "allowed_by_policy": true,
+      "blocked_by_policy": false,
+      "reason": "No source access is needed for this dry-run envelope.",
+      "output_refs": [],
+      "validation_refs": [],
+      "notes": []
+    }
+  ],
+  "blocked_actions": [],
+  "forbidden_actions_checked": [
+    {
+      "action_id": "check_live_probe_forbidden",
+      "action_type": "enable_live_probe",
+      "action_status": "forbidden_checked",
+      "action_scope": "source_boundary",
+      "allowed_by_policy": false,
+      "blocked_by_policy": true,
+      "reason": "Live probes are not enabled.",
+      "output_refs": [],
+      "validation_refs": [],
+      "notes": []
+    }
+  ],
+  "inputs_observed": [
+    {
+      "input_id": "source_workunit",
+      "input_type": "node_capability",
+      "input_ref": "examples/work_units/source_lead_inspection_v0/work_unit.json",
+      "input_status": "used",
+      "input_public_safe": true,
+      "input_used": true,
+      "input_limitations": [
+        "Input is a WorkUnit example only."
+      ],
+      "notes": []
+    }
+  ],
+  "outputs_proposed": [
+    {
+      "output_id": "source_lead_candidate_example",
+      "output_type": "source_lead_candidate",
+      "output_status": "needs_review",
+      "output_contract_ref": "contracts/schema/control/previews/query/observation_candidate.v0.json",
+      "output_ref": null,
+      "output_summary": "Reviewable source lead candidate.",
+      "output_public_safe": true,
+      "output_requires_review": true,
+      "output_truth_boundary": {
+        "accepted_public_truth": false,
+        "accepted_evidence_truth": false,
+        "master_index_mutation": false
+      },
+      "output_limitations": [
+        "Source lead is not source validation."
+      ],
+      "notes": []
+    }
+  ],
+  "outputs_rejected": [],
+  "output_contract_refs": [
+    "contracts/schema/control/previews/query/observation_candidate.v0.json"
+  ],
+  "review_gates": {
+    "human_review_required": true,
+    "source_policy_review_required": true,
+    "evidence_review_required": true,
+    "candidate_review_required": true,
+    "pack_review_required": true,
+    "master_index_review_required": true,
+    "rights_review_required": true,
+    "risk_review_required": true,
+    "privacy_review_required": true,
+    "operator_approval_required_for_network": true,
+    "operator_approval_required_for_hosted_behavior": true,
+    "legal_or_rights_decision_stop_required": true
+  },
+  "idempotency_result": {
+    "safe_to_rerun": true,
+    "duplicate_detected": false,
+    "duplicate_behavior_applied": "not_applicable",
+    "noop_recorded": false,
+    "resume_required": false,
+    "conflict_detected": false
+  },
+  "recovery_result": {
+    "dirty_tree_handled": "not_applicable",
+    "missing_dependency_handled": "not_applicable",
+    "stale_status_reconciled": "not_applicable",
+    "failed_validation_handled": "not_applicable",
+    "out_of_order_task_handled": "not_applicable",
+    "repeated_prompt_handled": "not_applicable"
+  },
+  "duplicate_result": {
+    "duplicate_detected": false,
+    "behavior_applied": "not_applicable",
+    "notes": []
+  },
+  "out_of_order_result": {
+    "out_of_order_detected": false,
+    "behavior_applied": "not_applicable"
+  },
+  "noop_result": {
+    "noop_recorded": false,
+    "noop_reason": "not_applicable",
+    "validated_without_changes": false
+  },
+  "quarantine_result": {
+    "quarantined": false,
+    "quarantine_reason": "not_applicable",
+    "review_required": false
+  },
+  "warnings": [
+    "Source lead requires human review before downstream use."
+  ],
+  "errors": [],
+  "limitations": [
+    "No source was queried."
+  ],
+  "audit_refs": [
+    "control/audits/track-b-05-workunit-result-contract-v0/track_b_05_report.json"
+  ],
+  "truth_boundary": {
+    "result_is_observed_baseline": false,
+    "result_is_accepted_evidence": false,
+    "result_is_public_truth": false,
+    "result_mutates_master_index": false,
+    "result_claims_rights_clearance": false,
+    "result_claims_malware_safety": false,
+    "result_claims_verified_installability": false,
+    "result_claims_exhaustive_global_search": false,
+    "result_claims_production_readiness": false
+  },
+  "product_boundary": {
+    "implemented_workunit_runtime": false,
+    "implemented_node_runtime": false,
+    "created_local_state": false,
+    "enabled_network_access": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_installers": false,
+    "enabled_execution": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "enabled_pack_import_runtime": false,
+    "enabled_review_runtime": false,
+    "enabled_model_provider_calls": false,
+    "mutated_master_index": false,
+    "claimed_rights_clearance": false,
+    "claimed_malware_safety": false,
+    "claimed_verified_installability": false,
+    "claimed_exhaustive_global_search": false,
+    "claimed_production_readiness": false
+  },
+  "no_goals": [
+    "No source validation",
+    "No live source access",
+    "No evidence acceptance"
+  ],
+  "notes": []
+}

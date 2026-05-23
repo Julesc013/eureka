@@ -12,7 +12,7 @@ from typing import Any, Mapping, Sequence, TextIO
 REPO_ROOT = Path(__file__).resolve().parents[2]
 SCHEMA_VERSION = "0.1.0"
 
-CONTRACT_PATH = "contracts/representations/renderer_parity_harness.v0.json"
+CONTRACT_PATH = "contracts/representation/renderer_parity_harness.v0.json"
 POLICY_PATH = "control/inventory/publication/renderer_parity_harness_policy.json"
 MATRIX_PATH = "control/inventory/publication/renderer_parity_check_matrix.json"
 REPRESENTATION_PROFILES_PATH = "control/inventory/publication/representation_profiles.json"

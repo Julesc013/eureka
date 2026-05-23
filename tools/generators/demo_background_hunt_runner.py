@@ -14,11 +14,11 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.local_appliance import close_local_appliance, open_local_appliance
-from runtime.local_operator import LocalOperatorAuthError, build_operator_auth_state, verify_operator_token
-from runtime.search_hunt import build_hunt_exhaustion_report, run_next_hunt_workunit, summarize_background_hunt
-from runtime.search_need import create_workunits_from_need
-from runtime.workunit_queue import WorkUnit, WorkUnitState
+from runtime.local.appliance import close_local_appliance, open_local_appliance
+from runtime.local.operator import LocalOperatorAuthError, build_operator_auth_state, verify_operator_token
+from runtime.search.hunt import build_hunt_exhaustion_report, run_next_hunt_workunit, summarize_background_hunt
+from runtime.search.need import create_workunits_from_need
+from runtime.worker.workunit_queue import WorkUnit, WorkUnitState
 
 
 def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr: TextIO = sys.stderr) -> int:

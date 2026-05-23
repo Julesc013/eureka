@@ -14,7 +14,7 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.source_observation.internet_archive_reviewed_index import (  # noqa: E402
+from runtime.source.observation.internet_archive_reviewed_index import (  # noqa: E402
     build_ia_reviewed_records_from_promotion_previews,
     load_default_ia_promotion_previews,
     load_ia_reviewed_index_policy,
@@ -32,12 +32,12 @@ from scripts.validate_ia_source_cache_write import validate_ia_source_cache_writ
 REQUIRED_FILES = (
     "control/policies/ia_reviewed_index_policy.json",
     "control/inventory/ia_reviewed_record_schema.json",
-    "examples/reviewed_index/internet_archive_metadata/expected_reviewed_records.json",
-    "examples/reviewed_index/internet_archive_metadata/expected_search_results.json",
-    "examples/reviewed_index/internet_archive_metadata/expected_object_packets.json",
-    "examples/reviewed_index/internet_archive_metadata/expected_absence_packets.json",
-    "examples/reviewed_index/internet_archive_metadata/expected_reviewed_index_boundary_report.json",
-    "runtime/source_observation/internet_archive_reviewed_index.py",
+    "examples/index/reviewed/internet_archive_metadata/expected_reviewed_records.json",
+    "examples/index/reviewed/internet_archive_metadata/expected_search_results.json",
+    "examples/index/reviewed/internet_archive_metadata/expected_object_packets.json",
+    "examples/index/reviewed/internet_archive_metadata/expected_absence_packets.json",
+    "examples/index/reviewed/internet_archive_metadata/expected_reviewed_index_boundary_report.json",
+    "runtime/source/observation/internet_archive_reviewed_index.py",
     "scripts/eureka_ia_reviewed_index_rebuild.py",
 )
 
@@ -350,7 +350,7 @@ def _validate_no_forbidden_git_state(repo_root: Path, errors: list[str], warning
             "site/dist/data/public_index",
             "runtime/connectors",
             "runtime/extraction",
-            "runtime/search_quality",
+            "runtime/search/quality",
             "native",
             "crates",
         ],

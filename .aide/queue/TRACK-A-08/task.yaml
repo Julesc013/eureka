@@ -4,9 +4,9 @@ title: PackPage, TaskPage, and ReviewPage view model contracts
 status: active
 source: user_prompt
 scope:
-  - contracts/views/pack_page.v0.json
-  - contracts/views/task_page.v0.json
-  - contracts/views/review_page.v0.json
+  - contracts/view/pages/pack_page.v0.json
+  - contracts/view/pages/task_page.v0.json
+  - contracts/view/pages/review_page.v0.json
   - control/inventory/publication/pack_page_view_model_policy.json
   - control/inventory/publication/task_page_view_model_policy.json
   - control/inventory/publication/review_page_view_model_policy.json

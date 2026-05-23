@@ -566,7 +566,7 @@
   "expected_source_cache_outputs": [
     {
       "output_kind": "npm_package_metadata_summary",
-      "source_cache_record_contract_ref": "contracts/source_cache/source_cache_record.v0.json",
+      "source_cache_record_contract_ref": "contracts/source/cache/source_cache_record.v0.json",
       "output_runtime_implemented": false,
       "raw_payload_allowed": false,
       "package_payload_allowed": false,
@@ -581,7 +581,7 @@
     },
     {
       "output_kind": "npm_version_metadata_summary",
-      "source_cache_record_contract_ref": "contracts/source_cache/source_cache_record.v0.json",
+      "source_cache_record_contract_ref": "contracts/source/cache/source_cache_record.v0.json",
       "output_runtime_implemented": false,
       "raw_payload_allowed": false,
       "package_payload_allowed": false,
@@ -596,7 +596,7 @@
     },
     {
       "output_kind": "npm_dist_tag_metadata_summary",
-      "source_cache_record_contract_ref": "contracts/source_cache/source_cache_record.v0.json",
+      "source_cache_record_contract_ref": "contracts/source/cache/source_cache_record.v0.json",
       "output_runtime_implemented": false,
       "raw_payload_allowed": false,
       "package_payload_allowed": false,
@@ -611,7 +611,7 @@
     },
     {
       "output_kind": "npm_tarball_metadata_summary",
-      "source_cache_record_contract_ref": "contracts/source_cache/source_cache_record.v0.json",
+      "source_cache_record_contract_ref": "contracts/source/cache/source_cache_record.v0.json",
       "output_runtime_implemented": false,
       "raw_payload_allowed": false,
       "package_payload_allowed": false,
@@ -626,7 +626,7 @@
     },
     {
       "output_kind": "npm_engines_metadata_summary",
-      "source_cache_record_contract_ref": "contracts/source_cache/source_cache_record.v0.json",
+      "source_cache_record_contract_ref": "contracts/source/cache/source_cache_record.v0.json",
       "output_runtime_implemented": false,
       "raw_payload_allowed": false,
       "package_payload_allowed": false,
@@ -641,7 +641,7 @@
     },
     {
       "output_kind": "npm_license_metadata_summary",
-      "source_cache_record_contract_ref": "contracts/source_cache/source_cache_record.v0.json",
+      "source_cache_record_contract_ref": "contracts/source/cache/source_cache_record.v0.json",
       "output_runtime_implemented": false,
       "raw_payload_allowed": false,
       "package_payload_allowed": false,
@@ -656,7 +656,7 @@
     },
     {
       "output_kind": "npm_dependency_metadata_summary",
-      "source_cache_record_contract_ref": "contracts/source_cache/source_cache_record.v0.json",
+      "source_cache_record_contract_ref": "contracts/source/cache/source_cache_record.v0.json",
       "output_runtime_implemented": false,
       "raw_payload_allowed": false,
       "package_payload_allowed": false,
@@ -671,7 +671,7 @@
     },
     {
       "output_kind": "npm_lifecycle_script_metadata_summary",
-      "source_cache_record_contract_ref": "contracts/source_cache/source_cache_record.v0.json",
+      "source_cache_record_contract_ref": "contracts/source/cache/source_cache_record.v0.json",
       "output_runtime_implemented": false,
       "raw_payload_allowed": false,
       "package_payload_allowed": false,
@@ -686,7 +686,7 @@
     },
     {
       "output_kind": "npm_deprecation_status_summary",
-      "source_cache_record_contract_ref": "contracts/source_cache/source_cache_record.v0.json",
+      "source_cache_record_contract_ref": "contracts/source/cache/source_cache_record.v0.json",
       "output_runtime_implemented": false,
       "raw_payload_allowed": false,
       "package_payload_allowed": false,
@@ -701,7 +701,7 @@
     },
     {
       "output_kind": "npm_publisher_maintainer_metadata_summary",
-      "source_cache_record_contract_ref": "contracts/source_cache/source_cache_record.v0.json",
+      "source_cache_record_contract_ref": "contracts/source/cache/source_cache_record.v0.json",
       "output_runtime_implemented": false,
       "raw_payload_allowed": false,
       "package_payload_allowed": false,
@@ -718,7 +718,7 @@
   "expected_evidence_ledger_outputs": [
     {
       "output_kind": "package_metadata_observation",
-      "evidence_ledger_record_contract_ref": "contracts/evidence_ledger/evidence_ledger_record.v0.json",
+      "evidence_ledger_record_contract_ref": "contracts/evidence/ledger/evidence_ledger_record.v0.json",
       "output_runtime_implemented": false,
       "accepted_as_truth": false,
       "requires_review": true,
@@ -734,7 +734,7 @@
     },
     {
       "output_kind": "package_version_observation",
-      "evidence_ledger_record_contract_ref": "contracts/evidence_ledger/evidence_ledger_record.v0.json",
+      "evidence_ledger_record_contract_ref": "contracts/evidence/ledger/evidence_ledger_record.v0.json",
       "output_runtime_implemented": false,
       "accepted_as_truth": false,
       "requires_review": true,
@@ -750,7 +750,7 @@
     },
     {
       "output_kind": "dist_tag_observation",
-      "evidence_ledger_record_contract_ref": "contracts/evidence_ledger/evidence_ledger_record.v0.json",
+      "evidence_ledger_record_contract_ref": "contracts/evidence/ledger/evidence_ledger_record.v0.json",
       "output_runtime_implemented": false,
       "accepted_as_truth": false,
       "requires_review": true,
@@ -766,7 +766,7 @@
     },
     {
       "output_kind": "tarball_metadata_observation",
-      "evidence_ledger_record_contract_ref": "contracts/evidence_ledger/evidence_ledger_record.v0.json",
+      "evidence_ledger_record_contract_ref": "contracts/evidence/ledger/evidence_ledger_record.v0.json",
       "output_runtime_implemented": false,
       "accepted_as_truth": false,
       "requires_review": true,
@@ -782,7 +782,7 @@
     },
     {
       "output_kind": "engines_observation",
-      "evidence_ledger_record_contract_ref": "contracts/evidence_ledger/evidence_ledger_record.v0.json",
+      "evidence_ledger_record_contract_ref": "contracts/evidence/ledger/evidence_ledger_record.v0.json",
       "output_runtime_implemented": false,
       "accepted_as_truth": false,
       "requires_review": true,
@@ -798,7 +798,7 @@
     },
     {
       "output_kind": "license_metadata_observation",
-      "evidence_ledger_record_contract_ref": "contracts/evidence_ledger/evidence_ledger_record.v0.json",
+      "evidence_ledger_record_contract_ref": "contracts/evidence/ledger/evidence_ledger_record.v0.json",
       "output_runtime_implemented": false,
       "accepted_as_truth": false,
       "requires_review": true,
@@ -814,7 +814,7 @@
     },
     {
       "output_kind": "dependency_metadata_observation",
-      "evidence_ledger_record_contract_ref": "contracts/evidence_ledger/evidence_ledger_record.v0.json",
+      "evidence_ledger_record_contract_ref": "contracts/evidence/ledger/evidence_ledger_record.v0.json",
       "output_runtime_implemented": false,
       "accepted_as_truth": false,
       "requires_review": true,
@@ -830,7 +830,7 @@
     },
     {
       "output_kind": "deprecation_status_observation",
-      "evidence_ledger_record_contract_ref": "contracts/evidence_ledger/evidence_ledger_record.v0.json",
+      "evidence_ledger_record_contract_ref": "contracts/evidence/ledger/evidence_ledger_record.v0.json",
       "output_runtime_implemented": false,
       "accepted_as_truth": false,
       "requires_review": true,
@@ -846,7 +846,7 @@
     },
     {
       "output_kind": "lifecycle_script_metadata_observation",
-      "evidence_ledger_record_contract_ref": "contracts/evidence_ledger/evidence_ledger_record.v0.json",
+      "evidence_ledger_record_contract_ref": "contracts/evidence/ledger/evidence_ledger_record.v0.json",
       "output_runtime_implemented": false,
       "accepted_as_truth": false,
       "requires_review": true,
@@ -862,7 +862,7 @@
     },
     {
       "output_kind": "scoped_package_identity_observation",
-      "evidence_ledger_record_contract_ref": "contracts/evidence_ledger/evidence_ledger_record.v0.json",
+      "evidence_ledger_record_contract_ref": "contracts/evidence/ledger/evidence_ledger_record.v0.json",
       "output_runtime_implemented": false,
       "accepted_as_truth": false,
       "requires_review": true,
@@ -878,7 +878,7 @@
     },
     {
       "output_kind": "scoped_absence_observation",
-      "evidence_ledger_record_contract_ref": "contracts/evidence_ledger/evidence_ledger_record.v0.json",
+      "evidence_ledger_record_contract_ref": "contracts/evidence/ledger/evidence_ledger_record.v0.json",
       "output_runtime_implemented": false,
       "accepted_as_truth": false,
       "requires_review": true,
@@ -1353,7 +1353,7 @@
       "command": "python scripts/validate_source_cache_contract.py",
       "status": "passed",
       "exit_code": 0,
-      "stdout_summary": "status: valid\nexample_count: 3\ncontract_file: contracts/source_cache/source_cache_record.v0.json",
+      "stdout_summary": "status: valid\nexample_count: 3\ncontract_file: contracts/source/cache/source_cache_record.v0.json",
       "stderr_summary": ""
     },
     {
@@ -1367,7 +1367,7 @@
       "command": "python scripts/validate_evidence_ledger_contract.py",
       "status": "passed",
       "exit_code": 0,
-      "stdout_summary": "status: valid\nexample_count: 3\ncontract_file: contracts/evidence_ledger/evidence_ledger_record.v0.json",
+      "stdout_summary": "status: valid\nexample_count: 3\ncontract_file: contracts/evidence/ledger/evidence_ledger_record.v0.json",
       "stderr_summary": ""
     },
     {
@@ -1388,7 +1388,7 @@
       "command": "python scripts/validate_source_sync_worker_contract.py",
       "status": "passed",
       "exit_code": 0,
-      "stdout_summary": "status: valid\ncontract_file: contracts/source_sync/source_sync_worker_job.v0.json\nexample_count: 4",
+      "stdout_summary": "status: valid\ncontract_file: contracts/source/sync/source_sync_worker_job.v0.json\nexample_count: 4",
       "stderr_summary": ""
     },
     {
@@ -1409,7 +1409,7 @@
       "command": "python scripts/validate_query_guard_decision.py --all-examples",
       "status": "passed",
       "exit_code": 0,
-      "stdout_summary": "Query Guard Decision validation\nstatus: valid\nexample_count: 5\nwarnings:\n- examples/query_guard/minimal_fake_demand_throttled_v0: P67 validates contract/example artifacts only; runtime query guard remains deferred.\n- examples/query_guard/minimal_private_path_rejected_v0: P67 validates contract/example artifacts only; runtime query guard remains deferred.\n- examples/query_guard/minimal_public_safe_query_v0: P67 validates contract/example artifacts only; runtime query guard remains deferred.\n- examples/query_guard/minimal_secret_rejected_v0: P67 validates contract/example artifacts only; runtime query guard remains deferred.\n- examples/query_guard/minimal_source_stuffing_quarantined_v0: P67 validates contract/example artifacts only; runtime query guard remains deferred.",
+      "stdout_summary": "Query Guard Decision validation\nstatus: valid\nexample_count: 5\nwarnings:\n- examples/search/query_guard/minimal_fake_demand_throttled_v0: P67 validates contract/example artifacts only; runtime query guard remains deferred.\n- examples/search/query_guard/minimal_private_path_rejected_v0: P67 validates contract/example artifacts only; runtime query guard remains deferred.\n- examples/search/query_guard/minimal_public_safe_query_v0: P67 validates contract/example artifacts only; runtime query guard remains deferred.\n- examples/search/query_guard/minimal_secret_rejected_v0: P67 validates contract/example artifacts only; runtime query guard remains deferred.\n- examples/search/query_guard/minimal_source_stuffing_quarantined_v0: P67 validates contract/example artifacts only; runtime query guard remains deferred.",
       "stderr_summary": ""
     },
     {

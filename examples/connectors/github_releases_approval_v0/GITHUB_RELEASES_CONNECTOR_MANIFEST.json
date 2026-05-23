@@ -49,17 +49,17 @@
     "evidence_attribution_required": true
   },
   "source_sync_worker_relationship": {
-    "worker_contract_ref": "contracts/source_sync/source_sync_worker_job.v0.json",
+    "worker_contract_ref": "contracts/source/sync/source_sync_worker_job.v0.json",
     "source_sync_worker_runtime_required_future": true,
     "source_sync_worker_runtime_implemented_now": false
   },
   "source_cache_relationship": {
-    "source_cache_contract_ref": "contracts/source_cache/source_cache_record.v0.json",
+    "source_cache_contract_ref": "contracts/source/cache/source_cache_record.v0.json",
     "source_cache_runtime_implemented_now": false,
     "source_cache_mutation_allowed_now": false
   },
   "evidence_ledger_relationship": {
-    "evidence_ledger_contract_ref": "contracts/evidence_ledger/evidence_ledger_record.v0.json",
+    "evidence_ledger_contract_ref": "contracts/evidence/ledger/evidence_ledger_record.v0.json",
     "evidence_ledger_runtime_implemented_now": false,
     "evidence_ledger_mutation_allowed_now": false
   },

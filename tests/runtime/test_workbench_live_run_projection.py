@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import unittest
 
-from runtime.local_service.workbench_live_run import create_workbench_resolution_run
+from runtime.local.service.workbench_live_run import create_workbench_resolution_run
 
 
 class WorkbenchLiveRunProjectionTests(unittest.TestCase):

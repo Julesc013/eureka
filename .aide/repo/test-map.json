@@ -1542,17 +1542,17 @@
       "reasons": [
         "test_path_detected"
       ],
-      "test_path": "runtime/source_registry/tests/__init__.py"
+      "test_path": "runtime/source/registry/tests/__init__.py"
     },
     {
       "confidence": "high",
       "likely_targets": [
-        "runtime/source_registry/registry.py"
+        "runtime/source/registry/registry.py"
       ],
       "reasons": [
         "test_prefix_filename"
       ],
-      "test_path": "runtime/source_registry/tests/test_registry.py"
+      "test_path": "runtime/source/registry/tests/test_registry.py"
     },
     {
       "confidence": "low",
@@ -1560,7 +1560,7 @@
       "reasons": [
         "test_prefix_filename"
       ],
-      "test_path": "runtime/source_registry/tests/test_source_capability_coverage.py"
+      "test_path": "runtime/source/registry/tests/test_source_capability_coverage.py"
     },
     {
       "confidence": "low",

@@ -1,7 +1,7 @@
 {
   "schema_version": "0.1.0",
   "registry_id": "example-minimal-host-profiles-v0",
-  "contract_ref": "contracts/representations/host_profile.v0.json",
+  "contract_ref": "contracts/representation/host_profile.v0.json",
   "status": "public_safe_example",
   "profiles": [
     {

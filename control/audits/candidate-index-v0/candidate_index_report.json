@@ -11,10 +11,10 @@
     "scripts/dry_run_candidate_index_record.py"
   ],
   "example_candidate_records": [
-    "examples/candidate_index/minimal_object_candidate_v0/CANDIDATE_INDEX_RECORD.json",
-    "examples/candidate_index/minimal_evidence_candidate_v0/CANDIDATE_INDEX_RECORD.json",
-    "examples/candidate_index/minimal_absence_candidate_v0/CANDIDATE_INDEX_RECORD.json",
-    "examples/candidate_index/minimal_conflict_candidate_v0/CANDIDATE_INDEX_RECORD.json"
+    "examples/index/candidate/minimal_object_candidate_v0/CANDIDATE_INDEX_RECORD.json",
+    "examples/index/candidate/minimal_evidence_candidate_v0/CANDIDATE_INDEX_RECORD.json",
+    "examples/index/candidate/minimal_absence_candidate_v0/CANDIDATE_INDEX_RECORD.json",
+    "examples/index/candidate/minimal_conflict_candidate_v0/CANDIDATE_INDEX_RECORD.json"
   ],
   "candidate_index_policy": "control/inventory/query_intelligence/candidate_index_policy.json",
   "candidate_type_taxonomy": [

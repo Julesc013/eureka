@@ -14,7 +14,7 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.local_appliance.paths import (
+from runtime.local.appliance.paths import (
     describe_instance_layout,
     resolve_instances_root,
     resolve_legacy_sibling_instance_root,

@@ -1,5 +1,5 @@
 {
-  "input_ref": "examples/source_cache_records/source_lead_record_v0.json",
+  "input_ref": "examples/sources/cache/records/source_lead_record_v0.json",
   "product_boundary": {
     "changed_public_search_behavior": false,
     "claimed_exhaustive_global_search": false,
@@ -28,7 +28,7 @@
     "_source_identity": "source:fixture:source-lead",
     "input_id": "source_lead_fixture_v0",
     "input_public_safe": true,
-    "input_ref": "examples/source_cache_records/source_lead_record_v0.json",
+    "input_ref": "examples/sources/cache/records/source_lead_record_v0.json",
     "input_status": "candidate_source_record",
     "input_summary": "Source lead candidate for a metadata fixture.",
     "input_type": "source_lead_candidate",

@@ -10,7 +10,7 @@ Q60 used `.aide/queue/EUREKA-SOURCE-SLICE-HARDENING-01/evidence/q60-readiness.md
 
 ## Allowed Paths Used
 
-- `runtime/local_foundry/fixture_source_observation_slice.py`
+- `runtime/local/foundry/fixture_source_observation_slice.py`
 - `tests/runtime/test_fixture_source_observation_vertical_slice.py`
 - `tests/operations/test_fixture_source_observation_vertical_slice_script.py`
 - `.aide/queue/EUREKA-OBJECT-ABSENCE-SURFACE-01/**`

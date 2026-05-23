@@ -18,5 +18,5 @@ Repair: the same resolver compatibility path allows runtime status and local ser
 
 Changed files:
 
-- `runtime/local_appliance/paths.py`
+- `runtime/local/appliance/paths.py`
 - `tests/runtime/test_local_appliance_paths.py`

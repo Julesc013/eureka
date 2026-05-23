@@ -1,6 +1,6 @@
 # Route/View/Representation Matrix
 
-`contracts/representations/route_view_representation_matrix.v0.json` defines
+`contracts/representation/route_view_representation_matrix.v0.json` defines
 the Track A matrix that binds Eureka route families to canonical view-model
 families, allowed representation profiles, host-profile exposure, semantic
 parity policy, and current/future status.

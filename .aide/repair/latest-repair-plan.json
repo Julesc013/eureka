@@ -103,7 +103,7 @@
     {
       "blocking": true,
       "evidence_refs": [
-        "examples/query_guard/minimal_secret_rejected_v0/CHECKSUMS.SHA256"
+        "examples/search/query_guard/minimal_secret_rejected_v0/CHECKSUMS.SHA256"
       ],
       "issue_id": "repair-4f9e3c13d424",
       "reason": "Secret-like path is present; repair may only block or require manual review, never overwrite or delete automatically.",
@@ -113,7 +113,7 @@
     {
       "blocking": true,
       "evidence_refs": [
-        "examples/query_guard/minimal_secret_rejected_v0/QUERY_GUARD_DECISION.json"
+        "examples/search/query_guard/minimal_secret_rejected_v0/QUERY_GUARD_DECISION.json"
       ],
       "issue_id": "repair-679e14e6da9a",
       "reason": "Secret-like path is present; repair may only block or require manual review, never overwrite or delete automatically.",
@@ -123,7 +123,7 @@
     {
       "blocking": true,
       "evidence_refs": [
-        "examples/query_guard/minimal_secret_rejected_v0/README.md"
+        "examples/search/query_guard/minimal_secret_rejected_v0/README.md"
       ],
       "issue_id": "repair-154537708718",
       "reason": "Secret-like path is present; repair may only block or require manual review, never overwrite or delete automatically.",
@@ -290,7 +290,7 @@
       "blocker": true,
       "diagnosis_id": "diagnosis-4f9e3c13d424",
       "evidence_refs": [
-        "examples/query_guard/minimal_secret_rejected_v0/CHECKSUMS.SHA256"
+        "examples/search/query_guard/minimal_secret_rejected_v0/CHECKSUMS.SHA256"
       ],
       "issue_id": "repair-4f9e3c13d424",
       "mandatory_migration_candidate": false,
@@ -304,7 +304,7 @@
       "blocker": true,
       "diagnosis_id": "diagnosis-679e14e6da9a",
       "evidence_refs": [
-        "examples/query_guard/minimal_secret_rejected_v0/QUERY_GUARD_DECISION.json"
+        "examples/search/query_guard/minimal_secret_rejected_v0/QUERY_GUARD_DECISION.json"
       ],
       "issue_id": "repair-679e14e6da9a",
       "mandatory_migration_candidate": false,
@@ -318,7 +318,7 @@
       "blocker": true,
       "diagnosis_id": "diagnosis-154537708718",
       "evidence_refs": [
-        "examples/query_guard/minimal_secret_rejected_v0/README.md"
+        "examples/search/query_guard/minimal_secret_rejected_v0/README.md"
       ],
       "issue_id": "repair-154537708718",
       "mandatory_migration_candidate": false,
@@ -617,7 +617,7 @@
       "repair_class": "secret_like_file",
       "rollback_hint": "Future apply must capture pre-repair target state, ownership ledger entry, validation output, and rollback notes before mutation.",
       "source_reference": "",
-      "target_path": "examples/query_guard/minimal_secret_rejected_v0/CHECKSUMS.SHA256",
+      "target_path": "examples/search/query_guard/minimal_secret_rejected_v0/CHECKSUMS.SHA256",
       "validation_required": [
         "py -3 .aide/scripts/aide_lite.py doctor",
         "py -3 .aide/scripts/aide_lite.py validate",
@@ -641,7 +641,7 @@
       "repair_class": "secret_like_file",
       "rollback_hint": "Future apply must capture pre-repair target state, ownership ledger entry, validation output, and rollback notes before mutation.",
       "source_reference": "",
-      "target_path": "examples/query_guard/minimal_secret_rejected_v0/QUERY_GUARD_DECISION.json",
+      "target_path": "examples/search/query_guard/minimal_secret_rejected_v0/QUERY_GUARD_DECISION.json",
       "validation_required": [
         "py -3 .aide/scripts/aide_lite.py doctor",
         "py -3 .aide/scripts/aide_lite.py validate",
@@ -665,7 +665,7 @@
       "repair_class": "secret_like_file",
       "rollback_hint": "Future apply must capture pre-repair target state, ownership ledger entry, validation output, and rollback notes before mutation.",
       "source_reference": "",
-      "target_path": "examples/query_guard/minimal_secret_rejected_v0/README.md",
+      "target_path": "examples/search/query_guard/minimal_secret_rejected_v0/README.md",
       "validation_required": [
         "py -3 .aide/scripts/aide_lite.py doctor",
         "py -3 .aide/scripts/aide_lite.py validate",
@@ -690,9 +690,9 @@
     "control/inventory/hosting/secrets_credential_policy.json",
     "docs/operations/SECRETS_AND_CREDENTIAL_POLICY.md",
     "examples/hosting/security/secrets_policy_example_v0.json",
-    "examples/query_guard/minimal_secret_rejected_v0/CHECKSUMS.SHA256",
-    "examples/query_guard/minimal_secret_rejected_v0/QUERY_GUARD_DECISION.json",
-    "examples/query_guard/minimal_secret_rejected_v0/README.md"
+    "examples/search/query_guard/minimal_secret_rejected_v0/CHECKSUMS.SHA256",
+    "examples/search/query_guard/minimal_secret_rejected_v0/QUERY_GUARD_DECISION.json",
+    "examples/search/query_guard/minimal_secret_rejected_v0/README.md"
   ],
   "required_migrations": [],
   "rollback_prerequisites": [

@@ -1,0 +1,31 @@
+{
+  "$id": "contracts/schema/control/tasks/audits/mvp_alpha_launch_decision_options.v0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "decision_options": {
+      "type": "array"
+    },
+    "deployment_execution_forbidden_current": {
+      "const": true,
+      "type": "boolean"
+    },
+    "next_task_mapping": {
+      "type": "object"
+    },
+    "notes": {
+      "type": "array"
+    },
+    "schema_version": {
+      "const": "mvp_alpha_launch_decision_options.v0"
+    }
+  },
+  "required": [
+    "schema_version",
+    "decision_options",
+    "next_task_mapping",
+    "deployment_execution_forbidden_current"
+  ],
+  "title": "Eureka MVP Alpha Launch Decision Options v0",
+  "type": "object"
+}

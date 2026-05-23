@@ -26,10 +26,10 @@ from archive.prototypes.legacy_runtime.connectors.h3_os_package_archives.live_pr
 
 
 CONTRACTS = (
-    "contracts/control_schemas/previews/h3/connectors/os_package_live_probe_request.v0.json",
-    "contracts/control_schemas/previews/h3/connectors/os_package_live_probe_result.v0.json",
-    "contracts/control_schemas/previews/h3/connectors/os_package_live_probe_output_bundle.v0.json",
-    "contracts/control_schemas/previews/h3/connectors/os_package_connector_health_summary.v0.json",
+    "contracts/schema/control/previews/h3/connectors/os_package_live_probe_request.v0.json",
+    "contracts/schema/control/previews/h3/connectors/os_package_live_probe_result.v0.json",
+    "contracts/schema/control/previews/h3/connectors/os_package_live_probe_output_bundle.v0.json",
+    "contracts/schema/control/previews/h3/connectors/os_package_connector_health_summary.v0.json",
 )
 POLICIES = (
     "control/inventory/connectors/h3_os_package_live_probe_policy.json",

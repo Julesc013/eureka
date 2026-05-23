@@ -14,7 +14,7 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.local_foundry import source_cache as runtime  # noqa: E402
+from runtime.local.foundry import source_cache as runtime  # noqa: E402
 from scripts import record_source_cache, summarize_source_cache  # noqa: E402
 
 
@@ -32,14 +32,14 @@ DOC_FILES = [
     "docs/operations/LOCAL_SOURCE_CACHE_REVIEW.md",
 ]
 EXAMPLE_FILES = [
-    "examples/source_cache_records/minimal_source_cache_record_v0.json",
-    "examples/source_cache_records/source_metadata_record_v0.json",
-    "examples/source_cache_records/source_locator_record_v0.json",
-    "examples/source_cache_records/source_policy_record_v0.json",
-    "examples/source_cache_records/source_coverage_record_v0.json",
-    "examples/source_cache_records/source_lead_record_v0.json",
-    "examples/source_cache_records/connector_fixture_record_v0.json",
-    "examples/source_cache_records/policy_blocked_source_cache_record_v0.json",
+    "examples/sources/cache/records/minimal_source_cache_record_v0.json",
+    "examples/sources/cache/records/source_metadata_record_v0.json",
+    "examples/sources/cache/records/source_locator_record_v0.json",
+    "examples/sources/cache/records/source_policy_record_v0.json",
+    "examples/sources/cache/records/source_coverage_record_v0.json",
+    "examples/sources/cache/records/source_lead_record_v0.json",
+    "examples/sources/cache/records/connector_fixture_record_v0.json",
+    "examples/sources/cache/records/policy_blocked_source_cache_record_v0.json",
 ]
 AUDIT_FILES = [
     "control/audits/track-b-15-local-source-cache-runtime-v0/README.md",
@@ -156,8 +156,8 @@ def _validate_sample_report(report: Mapping[str, Any], ref: str) -> list[str]:
 def _validate_script_checks(repo_root: Path) -> list[str]:
     errors: list[str] = []
     commands = [
-        [sys.executable, "scripts/record_source_cache.py", "--input", "examples/source_cache_records/source_lead_record_v0.json", "--check", "--json"],
-        [sys.executable, "scripts/summarize_source_cache.py", "--input", "examples/source_cache_records", "--check", "--json"],
+        [sys.executable, "scripts/record_source_cache.py", "--input", "examples/sources/cache/records/source_lead_record_v0.json", "--check", "--json"],
+        [sys.executable, "scripts/summarize_source_cache.py", "--input", "examples/sources/cache/records", "--check", "--json"],
     ]
     for command in commands:
         completed = subprocess.run(command, cwd=repo_root, capture_output=True, text=True, check=False)
@@ -181,8 +181,8 @@ def _validate_output_roots(repo_root: Path) -> list[str]:
     ]
     forbidden = [
         repo_root / "site/dist/source_cache.json",
-        repo_root / "runtime/source_cache.json",
-        repo_root / "contracts/source_cache.json",
+        repo_root / "runtime/source/cache.json",
+        repo_root / "contracts/source/cache.json",
         repo_root / "control/inventory/sources/source_cache.json",
         repo_root / ".aide.local/eureka/source_cache.json",
         repo_root / ".local/eureka/source_cache.json",

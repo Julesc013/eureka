@@ -1,0 +1,205 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/view/pages/evidence_page.v0.json",
+  "title": "Eureka EvidencePage View Model Contract v0",
+  "description": "Canonical public-safe EvidencePage view model for evidence records, candidates, observations, claims, snippets, source locators, provenance, confidence, review posture, and limitations without converting evidence into accepted truth.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "view_model_id",
+    "view_family",
+    "route_family",
+    "canonical_route",
+    "page_title",
+    "page_status",
+    "evidence",
+    "evidence_identity",
+    "evidence_type",
+    "evidence_status",
+    "claim_summary",
+    "observation_summary",
+    "source_locator_summary",
+    "snippet_summary",
+    "provenance_summary",
+    "related_source_refs",
+    "related_object_refs",
+    "related_candidate_refs",
+    "related_pack_refs",
+    "related_review_refs",
+    "confidence_or_uncertainty",
+    "conflict_summary",
+    "review_summary",
+    "rights_summary",
+    "risk_summary",
+    "privacy_summary",
+    "action_summary",
+    "actions",
+    "blocked_actions",
+    "limitations",
+    "warnings",
+    "representation_hints",
+    "semantic_requirements",
+    "generated_from",
+    "no_goals",
+    "notes"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "view_model_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9_-]*$"
+    },
+    "view_family": {
+      "type": "string",
+      "const": "EvidencePageView"
+    },
+    "route_family": {
+      "type": "string",
+      "enum": [
+        "evidence_page_future"
+      ]
+    },
+    "canonical_route": {
+      "type": "string",
+      "minLength": 1
+    },
+    "page_title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "page_status": {
+      "type": "string",
+      "minLength": 1
+    },
+    "evidence": {
+      "$ref": "#/$defs/flexible_object"
+    },
+    "evidence_identity": {
+      "$ref": "#/$defs/flexible_object"
+    },
+    "evidence_type": {
+      "type": "string",
+      "minLength": 1
+    },
+    "evidence_status": {
+      "type": "string",
+      "minLength": 1
+    },
+    "claim_summary": {
+      "$ref": "#/$defs/flexible_object"
+    },
+    "observation_summary": {
+      "$ref": "#/$defs/flexible_object"
+    },
+    "source_locator_summary": {
+      "$ref": "#/$defs/flexible_object"
+    },
+    "snippet_summary": {
+      "$ref": "#/$defs/flexible_object"
+    },
+    "provenance_summary": {
+      "$ref": "#/$defs/flexible_object"
+    },
+    "related_source_refs": {
+      "type": "array"
+    },
+    "related_object_refs": {
+      "type": "array"
+    },
+    "related_candidate_refs": {
+      "type": "array"
+    },
+    "related_pack_refs": {
+      "type": "array"
+    },
+    "related_review_refs": {
+      "type": "array"
+    },
+    "confidence_or_uncertainty": {
+      "$ref": "#/$defs/flexible_object"
+    },
+    "conflict_summary": {
+      "$ref": "#/$defs/flexible_object"
+    },
+    "review_summary": {
+      "$ref": "#/$defs/flexible_object"
+    },
+    "rights_summary": {
+      "$ref": "#/$defs/flexible_object"
+    },
+    "risk_summary": {
+      "$ref": "#/$defs/flexible_object"
+    },
+    "privacy_summary": {
+      "$ref": "#/$defs/flexible_object"
+    },
+    "action_summary": {
+      "$ref": "#/$defs/flexible_object"
+    },
+    "actions": {
+      "type": "array"
+    },
+    "blocked_actions": {
+      "type": "array"
+    },
+    "limitations": {
+      "type": "array"
+    },
+    "warnings": {
+      "type": "array"
+    },
+    "representation_hints": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/$defs/representation_hint"
+      }
+    },
+    "semantic_requirements": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "generated_from": {
+      "$ref": "#/$defs/flexible_object"
+    },
+    "no_goals": {
+      "type": "array"
+    },
+    "notes": {
+      "type": "array"
+    }
+  },
+  "$defs": {
+    "flexible_object": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "representation_hint": {
+      "type": "object",
+      "required": [
+        "renderer_status",
+        "semantic_meaning_changes_allowed"
+      ],
+      "properties": {
+        "renderer_status": {
+          "type": "string"
+        },
+        "semantic_meaning_changes_allowed": {
+          "type": "boolean",
+          "const": false
+        },
+        "notes": {
+          "type": "array"
+        }
+      },
+      "additionalProperties": true
+    }
+  }
+}

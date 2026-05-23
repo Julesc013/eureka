@@ -535,7 +535,7 @@
   ],
   "generated_from": {
     "source_contracts": [
-      "contracts/views/source_page.v0.json",
+      "contracts/view/pages/source_page.v0.json",
       "docs/reference/SOURCE_CACHE_CONTRACT.md",
       "docs/reference/EVIDENCE_LEDGER_CONTRACT.md"
     ],

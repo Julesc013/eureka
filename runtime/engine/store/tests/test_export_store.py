@@ -45,7 +45,7 @@ class LocalExportStoreTestCase(unittest.TestCase):
                         asserted_by_family="synthetic_fixture",
                         asserted_by_label="Synthetic Fixture",
                         evidence_kind="recorded_fixture",
-                        evidence_locator="contracts/control_schemas/fixtures/archive/software/synthetic_resolution_fixture.json",
+                        evidence_locator="contracts/schema/control/fixtures/archive/software/synthetic_resolution_fixture.json",
                     ),
                 ),
             )

@@ -26,9 +26,9 @@ CONTRACTS = (
     "contracts/extraction/extraction_policy.v0.json",
     "contracts/extraction/extraction_result.v0.json",
     "contracts/extraction/extraction_member.v0.json",
-    "contracts/control_schemas/previews/extraction/extraction_manifest_candidate.v0.json",
-    "contracts/control_schemas/previews/extraction/extraction_candidate_effect.v0.json",
-    "contracts/control_schemas/audits/extraction/extraction_safety_report.v0.json",
+    "contracts/schema/control/previews/extraction/extraction_manifest_candidate.v0.json",
+    "contracts/schema/control/previews/extraction/extraction_candidate_effect.v0.json",
+    "contracts/schema/control/audits/extraction/extraction_safety_report.v0.json",
 )
 POLICIES = (
     "control/inventory/extraction/extraction_sandbox_policy.json",

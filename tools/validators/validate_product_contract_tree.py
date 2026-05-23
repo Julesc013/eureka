@@ -230,7 +230,7 @@ def build_unresolved(
                 "path": path,
                 "reason": str(source.get("reason", "Move remains blocked by active references.")),
                 "severity": "high",
-                "recommended_next_action": "Update the active consumer in a task that is allowed to touch that path, then move the schema to contracts/control_schemas/.",
+                "recommended_next_action": "Update the active consumer in a task that is allowed to touch that path, then move the schema to contracts/schema/control/.",
             }
     return sorted(unresolved.values(), key=lambda item: item["path"])
 
@@ -304,7 +304,7 @@ def load_optional_json(path: Path) -> dict[str, Any]:
 
 
 def count_control_schema_files(root: Path) -> int:
-    base = root / "contracts/control_schemas"
+    base = root / "contracts/schema/control"
     if not base.exists():
         return 0
     return sum(1 for path in base.rglob("*") if path.is_file() and path.name not in {".gitkeep", "README.md"})
@@ -430,7 +430,7 @@ def render_operation_doc(result: Mapping[str, Any]) -> str:
             "# R0 Contract Reference Update And Product Cleanup",
             "",
             "R0-03B-2 updated active schema references that were inside the allowed control, docs, tests, examples, and validator boundary.",
-            "It moved the remaining safe control and task schemas out of `contracts/` and into `contracts/control_schemas/`.",
+            "It moved the remaining safe control and task schemas out of `contracts/` and into `contracts/schema/control/`.",
             "",
             "Historical audit evidence was left intact when it records a past contract path.",
             "The current active schema taxonomy now lives in generated inventory files, not in older audit narrative.",

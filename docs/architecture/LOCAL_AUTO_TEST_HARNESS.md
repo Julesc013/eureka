@@ -11,11 +11,11 @@ models, bind LAN, write `site/dist`, mutate a master index, or deploy.
 
 ## Runtime Boundary
 
-The runtime package is `runtime/local_eval`. It contains suite definitions, a
+The runtime package is `runtime/local/eval`. It contains suite definitions, a
 localhost runner, report builders, latency helpers, and safety assertions. It
 does not open ad hoc stores and does not mutate appliance state.
 
-The service under test remains the existing `runtime/local_service` adapter.
+The service under test remains the existing `runtime/local/service` adapter.
 The harness pressures only reviewed local index routes, workbench HTML routes,
 operator-token rejection behavior, and worker-kind policy posture.
 

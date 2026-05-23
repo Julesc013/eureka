@@ -160,7 +160,7 @@ def validate_root_inventory(payload: Mapping[str, Any], errors: list[str]) -> No
         "contracts",
         "contracts/repo",
         "contracts/testing",
-        "contracts/control_schemas",
+        "contracts/schema/control",
         "control/policies",
         "control/inventory",
         "examples",
@@ -170,8 +170,8 @@ def validate_root_inventory(payload: Mapping[str, Any], errors: list[str]) -> No
         if path not in roots:
             errors.append(f"root inventory missing {path}")
 
-    if roots.get("contracts/control_schemas", {}).get("authority_class") != "CONTROL_SCHEMA":
-        errors.append("contracts/control_schemas must be classified as CONTROL_SCHEMA")
+    if roots.get("contracts/schema/control", {}).get("authority_class") != "CONTROL_SCHEMA":
+        errors.append("contracts/schema/control must be classified as CONTROL_SCHEMA")
     if roots.get("examples", {}).get("authority_class") not in {"FIXTURE_SCHEMA", "EXAMPLE_PAYLOAD"}:
         errors.append("examples must be classified as fixture/example only")
     if roots.get("runtime", {}).get("authority_class") != "NOT_CONTRACT_AUTHORITY":
@@ -201,8 +201,8 @@ def validate_authority_matrix(payload: Mapping[str, Any], root: Path, errors: li
                 errors.append(f"{family_id} assigns product authority to examples")
             if canonical.startswith("runtime/"):
                 errors.append(f"{family_id} assigns product authority to runtime")
-            if canonical.startswith("contracts/control_schemas/"):
-                errors.append(f"{family_id} assigns product authority to contracts/control_schemas")
+            if canonical.startswith("contracts/schema/control/"):
+                errors.append(f"{family_id} assigns product authority to contracts/schema/control")
         if item.get("duplicate_authority_risk") is True and not item.get("migration_required"):
             errors.append(f"{family_id} records duplicate authority without migration_required")
 
@@ -230,8 +230,8 @@ def validate_authority_matrix(payload: Mapping[str, Any], root: Path, errors: li
             errors.append("testing_contracts must not be runtime implementation authority")
 
     workbench = families.get("Workbench_future_view_models", {})
-    if workbench.get("canonical_authority_path") != "contracts/views/workbench/":
-        errors.append("Workbench future view models must reserve contracts/views/workbench/")
+    if workbench.get("canonical_authority_path") != "contracts/view/pages/workbench/":
+        errors.append("Workbench future view models must reserve contracts/view/pages/workbench/")
     search = families.get("Search_Interaction_future_packets", {})
     if search.get("canonical_authority_path") != "contracts/search/interaction/":
         errors.append("Search Interaction future packets must reserve contracts/search/interaction/")
@@ -282,12 +282,12 @@ def validate_duplicate_report(payload: Mapping[str, Any], errors: list[str]) -> 
 
 def validate_control_schemas_decision(payload: Mapping[str, Any], errors: list[str]) -> None:
     if payload.get("decision") != "retain_as_control_schema_authority_with_migration_backlog":
-        errors.append("contracts/control_schemas decision must retain as control schema authority with migration backlog")
+        errors.append("contracts/schema/control decision must retain as control schema authority with migration backlog")
     require_true(payload, "control_schemas_allowed_now", errors)
     require_false(payload, "product_contracts_allowed_under_control_schemas", errors)
     require_true(payload, "migration_required", errors)
     if payload.get("control_schemas_scope") != "control/governance schemas only":
-        errors.append("contracts/control_schemas scope must be control/governance schemas only")
+        errors.append("contracts/schema/control scope must be control/governance schemas only")
 
 
 def validate_backlog(payload: Mapping[str, Any], errors: list[str]) -> None:

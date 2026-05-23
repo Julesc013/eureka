@@ -4,9 +4,9 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from runtime.local_appliance import close_local_appliance, open_local_appliance
-from runtime.local_operator.auth import build_cli_operator_auth_state
-from runtime.local_service import LocalServiceApp
+from runtime.local.appliance import close_local_appliance, open_local_appliance
+from runtime.local.operator.auth import build_cli_operator_auth_state
+from runtime.local.service import LocalServiceApp
 from scripts.eureka_hunt_workflow_smoke import run_workflow_smoke
 
 

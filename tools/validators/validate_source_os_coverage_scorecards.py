@@ -32,12 +32,12 @@ from runtime.connectors.core.source_pack import (  # noqa: E402
 
 
 CONTRACTS = (
-    "contracts/sources/source_coverage_ledger.v0.json",
-    "contracts/sources/source_coverage_manifest.v0.json",
+    "contracts/source/records/source_coverage_ledger.v0.json",
+    "contracts/source/records/source_coverage_manifest.v0.json",
     "contracts/connectors/connector_scorecard.v0.json",
-    "contracts/control_schemas/audits/connectors/connector_quality_delta.v0.json",
-    "contracts/packs/source_pack_manifest.v0.json",
-    "contracts/control_schemas/policies/packs/source_pack_export.v0.json",
+    "contracts/schema/control/audits/connectors/connector_quality_delta.v0.json",
+    "contracts/pack/source_pack_manifest.v0.json",
+    "contracts/schema/control/policies/packs/source_pack_export.v0.json",
 )
 INVENTORIES = (
     "control/inventory/sources/source_coverage_ledger_policy.json",
@@ -56,11 +56,11 @@ INVENTORIES = (
     "control/inventory/packs/source_pack_truth_policy.json",
 )
 COVERAGE_EXAMPLES = (
-    "examples/source_coverage/minimal_source_coverage_record_v0.json",
-    "examples/source_coverage/internet_archive_coverage_record_v0.json",
-    "examples/source_coverage/h1_metadata_wave_coverage_preview_v0.json",
-    "examples/source_coverage/policy_blocked_coverage_record_v0.json",
-    "examples/source_coverage/minimal_source_coverage_manifest_v0.json",
+    "examples/sources/coverage/minimal_source_coverage_record_v0.json",
+    "examples/sources/coverage/internet_archive_coverage_record_v0.json",
+    "examples/sources/coverage/h1_metadata_wave_coverage_preview_v0.json",
+    "examples/sources/coverage/policy_blocked_coverage_record_v0.json",
+    "examples/sources/coverage/minimal_source_coverage_manifest_v0.json",
 )
 SCORECARD_EXAMPLES = (
     "examples/connectors/core/scorecards/minimal_connector_scorecard_v0.json",
@@ -71,10 +71,10 @@ SCORECARD_EXAMPLES = (
     "examples/connectors/core/scorecards/policy_blocked_connector_scorecard_v0.json",
 )
 PACK_EXAMPLES = (
-    "examples/source_packs/minimal_source_pack_manifest_v0.json",
-    "examples/source_packs/internet_archive_source_pack_manifest_v0.json",
-    "examples/source_packs/h1_metadata_wave_source_pack_preview_v0.json",
-    "examples/source_packs/policy_blocked_source_pack_manifest_v0.json",
+    "examples/packs/source/minimal_source_pack_manifest_v0.json",
+    "examples/packs/source/internet_archive_source_pack_manifest_v0.json",
+    "examples/packs/source/h1_metadata_wave_source_pack_preview_v0.json",
+    "examples/packs/source/policy_blocked_source_pack_manifest_v0.json",
 )
 DOCS = (
     "docs/reference/SOURCE_COVERAGE_LEDGER.md",
@@ -222,9 +222,9 @@ def validate_python_no_network(root: Path, errors: list[str]) -> None:
 
 def validate_scripts(root: Path, errors: list[str]) -> None:
     commands = (
-        [sys.executable, "scripts/record_source_coverage.py", "--input", "examples/source_coverage/internet_archive_coverage_record_v0.json", "--check"],
+        [sys.executable, "scripts/record_source_coverage.py", "--input", "examples/sources/coverage/internet_archive_coverage_record_v0.json", "--check"],
         [sys.executable, "scripts/score_connector.py", "--input", "examples/connectors/core/scorecards/internet_archive_scorecard_v0.json", "--check"],
-        [sys.executable, "scripts/build_source_pack.py", "--input", "examples/source_packs/internet_archive_source_pack_manifest_v0.json", "--check"],
+        [sys.executable, "scripts/build_source_pack.py", "--input", "examples/packs/source/internet_archive_source_pack_manifest_v0.json", "--check"],
         [sys.executable, "scripts/audit_h0_integration.py", "--check"],
     )
     for command in commands:
@@ -232,9 +232,9 @@ def validate_scripts(root: Path, errors: list[str]) -> None:
         if result.returncode != 0:
             errors.append(f"script failed: {' '.join(command)} :: {result.stdout} {result.stderr}")
     forbidden_commands = (
-        [sys.executable, "scripts/record_source_coverage.py", "--input", "examples/source_coverage/internet_archive_coverage_record_v0.json", "--output", "site/dist/coverage.json"],
+        [sys.executable, "scripts/record_source_coverage.py", "--input", "examples/sources/coverage/internet_archive_coverage_record_v0.json", "--output", "site/dist/coverage.json"],
         [sys.executable, "scripts/score_connector.py", "--input", "examples/connectors/core/scorecards/internet_archive_scorecard_v0.json", "--output", "site/dist/data/public_index/scorecard.json"],
-        [sys.executable, "scripts/build_source_pack.py", "--input", "examples/source_packs/internet_archive_source_pack_manifest_v0.json", "--output", "contracts/source_pack.json"],
+        [sys.executable, "scripts/build_source_pack.py", "--input", "examples/packs/source/internet_archive_source_pack_manifest_v0.json", "--output", "contracts/source_pack.json"],
     )
     for command in forbidden_commands:
         result = subprocess.run(command, cwd=root, check=False, capture_output=True, text=True, timeout=120)

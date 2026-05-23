@@ -51,7 +51,7 @@ production suitability.
 
 ## Related Contracts
 
-- `contracts/views/evidence_page.v0.json`
+- `contracts/view/pages/evidence_page.v0.json`
 - `control/inventory/publication/evidence_page_view_model_policy.json`
 - `docs/reference/EVIDENCE_PACK_CONTRACT.md`
 - `docs/reference/SOURCE_PACK_CONTRACT.md`

@@ -56,7 +56,7 @@ class ViewModelPolicyIndexContractsTest(unittest.TestCase):
     def test_missing_schema_path_fails(self) -> None:
         index, _example, representations, semantic, route_matrix = load_payloads()
         index = copy.deepcopy(index)
-        index["view_model_families"][0]["schema_path"] = "contracts/views/missing_schema.json"
+        index["view_model_families"][0]["schema_path"] = "contracts/view/pages/missing_schema.json"
 
         errors = validate_index(index, representations, semantic, route_matrix)
 

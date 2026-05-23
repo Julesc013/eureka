@@ -36,11 +36,11 @@ REQUIRED_DOCS = (
 )
 
 EXAMPLE_PATHS = (
-    "examples/observation_reviews/human_review_packet_minimal_v0.json",
-    "examples/observation_reviews/human_review_decision_approve_source_lead_v0.json",
-    "examples/observation_reviews/human_review_decision_request_more_evidence_v0.json",
-    "examples/observation_reviews/human_review_decision_mark_policy_blocked_v0.json",
-    "examples/observation_reviews/human_review_decision_defer_v0.json",
+    "examples/review/observation_reviews/human_review_packet_minimal_v0.json",
+    "examples/review/observation_reviews/human_review_decision_approve_source_lead_v0.json",
+    "examples/review/observation_reviews/human_review_decision_request_more_evidence_v0.json",
+    "examples/review/observation_reviews/human_review_decision_mark_policy_blocked_v0.json",
+    "examples/review/observation_reviews/human_review_decision_defer_v0.json",
 )
 
 PENDING_BATCH_PATH = "evals/search_usefulness/external_baselines/batches/batch_0/observations/pending_batch_0_observations.json"

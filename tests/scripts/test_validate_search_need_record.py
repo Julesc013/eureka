@@ -7,7 +7,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[2]
-EXAMPLE = ROOT / "examples" / "search_needs" / "minimal_unresolved_software_need_v0" / "SEARCH_NEED_RECORD.json"
+EXAMPLE = ROOT / "examples" / "search" / "needs" / "minimal_unresolved_software_need_v0" / "SEARCH_NEED_RECORD.json"
 
 
 class SearchNeedRecordValidatorTests(unittest.TestCase):

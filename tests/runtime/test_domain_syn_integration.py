@@ -3,7 +3,7 @@ from __future__ import annotations
 from pathlib import Path
 import unittest
 
-from runtime.local_eval.domain_packs import REQUIRED_DOMAIN_IDS, load_domain_packs_from_manifest, map_domain_to_syn_cases
+from runtime.local.eval.domain_packs import REQUIRED_DOMAIN_IDS, load_domain_packs_from_manifest, map_domain_to_syn_cases
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]

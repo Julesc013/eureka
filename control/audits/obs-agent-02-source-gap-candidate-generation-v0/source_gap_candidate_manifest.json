@@ -410,7 +410,7 @@
   ],
   "source_roots_skipped": [
     "contracts/query/**",
-    "contracts/source_registry/**",
+    "contracts/source/registry/**",
     "site/dist/demo/**"
   ],
   "truth_boundary": {

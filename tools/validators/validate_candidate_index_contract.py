@@ -17,8 +17,8 @@ if str(REPO_ROOT) not in sys.path:
 from scripts.validate_candidate_index_record import validate_all_examples  # noqa: E402
 
 
-CONTRACT_PATH = REPO_ROOT / "contracts" / "control_schemas" / "previews" / "query" / "candidate_index_record.v0.json"
-LIFECYCLE_PATH = REPO_ROOT / "contracts" / "control_schemas" / "previews" / "query" / "candidate_lifecycle.v0.json"
+CONTRACT_PATH = REPO_ROOT / "contracts" / "schema" / "control" / "previews" / "query" / "candidate_index_record.v0.json"
+LIFECYCLE_PATH = REPO_ROOT / "contracts" / "schema" / "control" / "previews" / "query" / "candidate_lifecycle.v0.json"
 CONTRACT_README = REPO_ROOT / "contracts" / "query" / "README.md"
 POLICY_PATH = REPO_ROOT / "control" / "inventory" / "query_intelligence" / "candidate_index_policy.json"
 AUDIT_DIR = REPO_ROOT / "control" / "audits" / "candidate-index-v0"
@@ -158,11 +158,11 @@ def validate_candidate_index_contract() -> dict[str, Any]:
     errors: list[str] = []
     warnings: list[str] = []
 
-    contract = _read_json_object(CONTRACT_PATH, errors, "contracts/control_schemas/previews/query/candidate_index_record.v0.json")
+    contract = _read_json_object(CONTRACT_PATH, errors, "contracts/schema/control/previews/query/candidate_index_record.v0.json")
     if contract:
         _validate_contract_schema(contract, errors)
 
-    lifecycle = _read_json_object(LIFECYCLE_PATH, errors, "contracts/control_schemas/previews/query/candidate_lifecycle.v0.json")
+    lifecycle = _read_json_object(LIFECYCLE_PATH, errors, "contracts/schema/control/previews/query/candidate_lifecycle.v0.json")
     if lifecycle:
         _validate_lifecycle_schema(lifecycle, errors)
 
@@ -189,7 +189,7 @@ def validate_candidate_index_contract() -> dict[str, Any]:
     return {
         "status": "valid" if not errors else "invalid",
         "created_by": "candidate_index_contract_validator_v0",
-        "contract_file": "contracts/control_schemas/previews/query/candidate_index_record.v0.json",
+        "contract_file": "contracts/schema/control/previews/query/candidate_index_record.v0.json",
         "example_count": examples_report.get("example_count", 0),
         "report_id": _report_id(),
         "errors": errors,
@@ -313,7 +313,7 @@ def _validate_audit_pack(errors: list[str], warnings: list[str]) -> None:
     if report.get("report_id") != "candidate_index_v0":
         errors.append("report_id must be candidate_index_v0.")
     if report.get("contract_file") not in {
-        "contracts/control_schemas/previews/query/candidate_index_record.v0.json",
+        "contracts/schema/control/previews/query/candidate_index_record.v0.json",
         "contracts/query/candidate_index_record.v0.json",
     }:
         errors.append("report contract_file must point to the candidate index schema path.")

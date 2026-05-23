@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/search/interaction/search_plan_patch.v0.json",
+  "title": "SearchPlanPatch",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "packet_type",
+    "created_at",
+    "patch_id",
+    "run_id",
+    "source_feedback_ids",
+    "patch_operations",
+    "applied",
+    "reversible"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "search_plan_patch.v0"
+    },
+    "packet_type": {
+      "const": "SearchPlanPatch"
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "patch_id": {
+      "type": "string"
+    },
+    "run_id": {
+      "type": "string"
+    },
+    "source_feedback_ids": {
+      "type": "array"
+    },
+    "patch_operations": {
+      "type": "array"
+    },
+    "applied": {
+      "type": "boolean"
+    },
+    "reversible": {
+      "type": "boolean"
+    }
+  },
+  "additionalProperties": true
+}

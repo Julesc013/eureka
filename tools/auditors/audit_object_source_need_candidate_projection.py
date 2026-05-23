@@ -28,10 +28,10 @@ REPRESENTATION_PROFILES = "control/inventory/publication/representation_profiles
 SEMANTIC_PARITY_POLICY = "control/inventory/publication/semantic_renderer_parity_policy.json"
 
 SOURCE_VIEW_SCHEMAS = {
-    "ObjectPageView": "contracts/views/object_page.v0.json",
-    "SourcePageView": "contracts/views/source_page.v0.json",
-    "NeedPageView": "contracts/views/need_page.v0.json",
-    "CandidatePageView": "contracts/views/candidate_page.v0.json",
+    "ObjectPageView": "contracts/view/pages/object_page.v0.json",
+    "SourcePageView": "contracts/view/pages/source_page.v0.json",
+    "NeedPageView": "contracts/view/pages/need_page.v0.json",
+    "CandidatePageView": "contracts/view/pages/candidate_page.v0.json",
 }
 
 POLICY_FILES = {

@@ -14,7 +14,7 @@ from scripts.validate_search_miss_ledger_runtime import validate_search_miss_led
 
 
 ROOT = Path(__file__).resolve().parents[2]
-EMPTY_QUERY_OBSERVATION = ROOT / "examples" / "query_observations" / "empty_result_query_observation_v0.json"
+EMPTY_QUERY_OBSERVATION = ROOT / "examples" / "search" / "query_observations" / "empty_result_query_observation_v0.json"
 
 
 class SearchMissLedgerRuntimeScriptTests(unittest.TestCase):
@@ -52,7 +52,7 @@ class SearchMissLedgerRuntimeScriptTests(unittest.TestCase):
                 sys.executable,
                 "scripts/record_search_miss.py",
                 "--input",
-                "examples/query_observations/empty_result_query_observation_v0.json",
+                "examples/search/query_observations/empty_result_query_observation_v0.json",
                 "--output",
                 str(forbidden),
             ],
@@ -74,7 +74,7 @@ class SearchMissLedgerRuntimeScriptTests(unittest.TestCase):
                 sys.executable,
                 "scripts/record_search_miss.py",
                 "--input",
-                "examples/query_observations/empty_result_query_observation_v0.json",
+                "examples/search/query_observations/empty_result_query_observation_v0.json",
                 "--output",
                 str(forbidden),
             ],
@@ -112,7 +112,7 @@ class SearchMissLedgerRuntimeScriptTests(unittest.TestCase):
 def _tracked_relevant_files() -> list[str]:
     roots = [
         ROOT / "control" / "audits" / "track-b-08-search-miss-ledger-runtime-v0" / "generated",
-        ROOT / "examples" / "search_misses",
+        ROOT / "examples" / "search" / "misses",
     ]
     results: list[str] = []
     for root in roots:

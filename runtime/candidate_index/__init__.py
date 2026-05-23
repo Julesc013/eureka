@@ -1,5 +1,8 @@
-"""Local candidate-index runtime helpers."""
+"""Compatibility package for runtime.candidate_index; canonical package is runtime.index.candidate."""
 
-from .store import CandidateIndexStore
+from pathlib import Path
 
-__all__ = ["CandidateIndexStore"]
+_CANONICAL_PATH = Path(__file__).resolve().parents[1] / 'index' / 'candidate'
+__path__ = [str(_CANONICAL_PATH)]
+
+from runtime.index.candidate import *  # noqa: E402,F401,F403

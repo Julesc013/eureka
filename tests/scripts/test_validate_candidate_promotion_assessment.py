@@ -7,7 +7,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[2]
-EXAMPLE = ROOT / "examples" / "candidate_promotion" / "minimal_promotion_review_required_v0" / "CANDIDATE_PROMOTION_ASSESSMENT.json"
+EXAMPLE = ROOT / "examples" / "review" / "candidate_promotion" / "minimal_promotion_review_required_v0" / "CANDIDATE_PROMOTION_ASSESSMENT.json"
 
 
 class CandidatePromotionAssessmentValidatorTests(unittest.TestCase):

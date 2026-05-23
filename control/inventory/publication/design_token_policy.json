@@ -4,7 +4,7 @@
   "label": "Eureka design token policy",
   "description": "Contract-only policy for UI design tokens that may guide future renderers without changing Eureka product behavior or public meaning.",
   "status": "contract_only",
-  "contract_ref": "contracts/ui/design_tokens.v0.json",
+  "contract_ref": "contracts/surface/ui/design_tokens.v0.json",
   "allowed_token_families": [
     "accessibility_tokens",
     "action_tokens",

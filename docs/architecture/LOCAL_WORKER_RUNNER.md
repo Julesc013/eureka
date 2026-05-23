@@ -1,10 +1,10 @@
 # Local Worker Runner
 
-LOCAL-09 adds the deterministic local worker runner. It is the first execution layer for WorkUnits, but it is deliberately narrow: workers execute queued local records only, through `runtime/local_appliance`, and every run produces an auditable result.
+LOCAL-09 adds the deterministic local worker runner. It is the first execution layer for WorkUnits, but it is deliberately narrow: workers execute queued local records only, through `runtime/local/appliance`, and every run produces an auditable result.
 
 ## Role
 
-The runner lives in `runtime/local_worker`. It fetches a WorkUnit from the manifest-backed `workunit_queue`, evaluates the local worker policy, moves the record through queue state transitions, runs an enabled deterministic worker, and records result/audit references in queue metadata.
+The runner lives in `runtime/local/worker`. It fetches a WorkUnit from the manifest-backed `workunit_queue`, evaluates the local worker policy, moves the record through queue state transitions, runs an enabled deterministic worker, and records result/audit references in queue metadata.
 
 Enabled worker kinds:
 

@@ -19,8 +19,8 @@ from runtime.agent_research import (
     AgentResearchError,
     build_agent_research_report_schema,
 )
-from runtime.local_appliance import LocalApplianceError, close_local_appliance, open_local_appliance
-from runtime.local_operator import LocalOperatorAuthError, build_operator_auth_state, verify_operator_token
+from runtime.local.appliance import LocalApplianceError, close_local_appliance, open_local_appliance
+from runtime.local.operator import LocalOperatorAuthError, build_operator_auth_state, verify_operator_token
 
 
 def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr: TextIO = sys.stderr) -> int:

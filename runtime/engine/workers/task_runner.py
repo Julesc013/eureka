@@ -30,7 +30,7 @@ from runtime.engine.workers.task_kinds import (
     normalize_task_kind,
 )
 from runtime.engine.workers.task_store import LocalTaskStore
-from runtime.source_registry import DEFAULT_SOURCE_INVENTORY_DIR, SourceRegistry, load_source_registry
+from runtime.source.registry import DEFAULT_SOURCE_INVENTORY_DIR, SourceRegistry, load_source_registry
 
 
 DEFAULT_ARCHIVE_RESOLUTION_EVAL_DIR = (

@@ -18,13 +18,13 @@ if str(REPO_ROOT) not in sys.path:
 from scripts.demo_source_observation_seam import build_demo_result
 
 
-RUNTIME_ROOT = Path("runtime/source_observation")
+RUNTIME_ROOT = Path("runtime/source/observation")
 CONTRACT_PATHS = (
     "contracts/domain/source_record.v0.json",
     "contracts/domain/source_policy.v0.json",
     "contracts/runtime/metadata_request.v0.json",
     "contracts/runtime/metadata_response.v0.json",
-    "contracts/runtime/source_observation.v0.json",
+    "contracts/runtime/source/observation.v0.json",
     "contracts/runtime/normalized_observation.v0.json",
     "contracts/runtime/evidence_candidate.v0.json",
     "contracts/runtime/review_item.v0.json",
@@ -93,7 +93,7 @@ def validate_seam(root: Path = REPO_ROOT) -> dict[str, Any]:
     errors: list[str] = []
     warnings: list[str] = []
     if not (root / RUNTIME_ROOT).is_dir():
-        errors.append("runtime/source_observation package is missing")
+        errors.append("runtime/source/observation package is missing")
 
     forbidden_vocabulary_found = scan_forbidden_vocabulary(root, errors)
     h_series_dependencies = scan_h_series_dependencies(root, errors)

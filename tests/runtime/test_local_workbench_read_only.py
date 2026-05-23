@@ -7,8 +7,8 @@ import tempfile
 from pathlib import Path
 import unittest
 
-from runtime.local_appliance import close_local_appliance, open_local_appliance
-from runtime.local_service import LocalServiceApp
+from runtime.local.appliance import close_local_appliance, open_local_appliance
+from runtime.local.service import LocalServiceApp
 from surfaces.web.workbench.local_html.errors import LocalWorkbenchValidationError
 from surfaces.web.workbench.local_html.validation import (
     validate_local_workbench_page,
@@ -17,7 +17,7 @@ from surfaces.web.workbench.local_html.validation import (
     validate_no_mutation_controls,
     validate_no_mutation_controls as validate_controls,
 )
-from runtime.public_index import PublicIndexStore
+from runtime.index.public import PublicIndexStore
 from tests.runtime.test_public_index_store import make_record
 
 

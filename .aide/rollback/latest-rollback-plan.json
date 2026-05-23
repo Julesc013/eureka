@@ -907,9 +907,9 @@
     "control/inventory/hosting/secrets_credential_policy.json",
     "docs/operations/SECRETS_AND_CREDENTIAL_POLICY.md",
     "examples/hosting/security/secrets_policy_example_v0.json",
-    "examples/query_guard/minimal_secret_rejected_v0/CHECKSUMS.SHA256",
-    "examples/query_guard/minimal_secret_rejected_v0/QUERY_GUARD_DECISION.json",
-    "examples/query_guard/minimal_secret_rejected_v0/README.md"
+    "examples/search/query_guard/minimal_secret_rejected_v0/CHECKSUMS.SHA256",
+    "examples/search/query_guard/minimal_secret_rejected_v0/QUERY_GUARD_DECISION.json",
+    "examples/search/query_guard/minimal_secret_rejected_v0/README.md"
   ],
   "schema_version": "aide.rollback-plan.v0",
   "source_commit": "6f2698c6e109a3b35d20402bb9871c1e4a674688",

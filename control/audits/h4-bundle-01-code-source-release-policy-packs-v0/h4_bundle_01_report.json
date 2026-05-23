@@ -12,8 +12,8 @@
     "docs/operations/H4_CODE_SOURCE_RELEASE_FIXTURE_PLAN.md"
   ],
   "added_examples": [
-    "examples/source_packs/h4_code_source_release_source_pack_manifest_v0.json",
-    "examples/source_packs/h4_code_source_release_policy_pack_v0.json",
+    "examples/packs/source/h4_code_source_release_source_pack_manifest_v0.json",
+    "examples/packs/source/h4_code_source_release_policy_pack_v0.json",
     "examples/sources/source_records/*h4 code/source/release records*",
     "examples/connectors/h4_code_source_release/"
   ],

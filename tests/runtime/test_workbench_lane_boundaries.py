@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import unittest
 
-from runtime.local_service.workbench_result_lanes import build_blocked_action_lane, build_demo_lane_page
+from runtime.local.service.workbench_result_lanes import build_blocked_action_lane, build_demo_lane_page
 
 
 class WorkbenchLaneBoundaryTest(unittest.TestCase):

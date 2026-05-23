@@ -1,0 +1,167 @@
+{
+  "schema_version": "reviewed_public_index_rebuild.v0",
+  "rebuild_contract_id": "reviewed_public_index_rebuild.ready_candidate.fixture.v0",
+  "rebuild_label": "Ready candidate future rebuild input example",
+  "rebuild_status": "ready_for_future_dry_run",
+  "rebuild_scope": [
+    "candidate proposal rehearsal",
+    "future reviewed public record proposal"
+  ],
+  "rebuild_input_policy": {
+    "allowed_input_types": [
+      "candidate_promotion_dry_run",
+      "local_review_queue_entry",
+      "evidence_ledger_record"
+    ],
+    "forbidden_input_types": [
+      "unreviewed_candidate",
+      "unreviewed_evidence_candidate"
+    ]
+  },
+  "rebuild_output_policy": {
+    "allowed_output_types": [
+      "reviewed_public_record_proposal",
+      "public_search_card_candidate",
+      "public_no_claim_summary"
+    ],
+    "forbidden_output_types": [
+      "public_index_mutation_current",
+      "master_index_mutation"
+    ]
+  },
+  "reviewed_input_refs": [
+    {
+      "input_ref": "examples/review/candidate_promotion_dry_runs/ready_for_promotion_dry_run_v0.json",
+      "input_type": "candidate_promotion_dry_run",
+      "review_status": "ready_for_future_reviewed_record_proposal",
+      "provenance_refs": [
+        "evidence.metadata_claim.fixture.v0"
+      ],
+      "evidence_refs": [
+        "evidence.metadata_claim.fixture.v0"
+      ],
+      "limitations": [
+        "Ready is limited to a future rebuild dry-run."
+      ]
+    },
+    {
+      "input_ref": "examples/review/queue_entries/workunit_result_review_v0.json",
+      "input_type": "local_review_queue_entry",
+      "review_status": "approve_for_promotion_dry_run",
+      "provenance_refs": [],
+      "evidence_refs": [],
+      "limitations": [
+        "Local review is not public acceptance."
+      ]
+    }
+  ],
+  "blocked_input_refs": [],
+  "record_selection_policy": {
+    "review_required": true,
+    "evidence_required": true,
+    "ready_is_future_only": true
+  },
+  "evidence_requirements": {
+    "evidence_refs_required_for_ready_records": true,
+    "evidence_refs_present": true,
+    "missing_evidence_blocks_ready_status": true
+  },
+  "review_requirements": {
+    "review_refs_required_for_ready_records": true,
+    "review_refs_present": true,
+    "human_review_required_for_actual_rebuild": true
+  },
+  "source_policy_requirements": {
+    "source_policy_review_required": true,
+    "source_limitations_preserved": true
+  },
+  "rights_risk_requirements": {
+    "rights_review_required": true,
+    "risk_review_required": true,
+    "rights_or_risk_blocks_defer_or_block": true
+  },
+  "compatibility_requirements": {
+    "compatibility_caveats_preserved": true
+  },
+  "identity_requirements": {
+    "identity_uncertainty_blocks_or_defers": true
+  },
+  "conflict_policy": {
+    "conflict_preservation_required": true,
+    "conflict_status": "none_detected",
+    "automatic_conflict_resolution_allowed": false
+  },
+  "duplicate_policy": {
+    "duplicate_preservation_required": true,
+    "duplicate_status": "none_detected",
+    "automatic_merge_allowed": false,
+    "automatic_delete_allowed": false
+  },
+  "proposed_public_records": [
+    {
+      "proposal_ref": "examples/index/reviewed_public_records/software_candidate_record_proposal_v0.json",
+      "proposal_type": "object_public_record",
+      "proposal_status": "ready_for_future_rebuild_dry_run"
+    }
+  ],
+  "blocked_records": [],
+  "output_manifest_policy": {
+    "manifest_future_only": true,
+    "writes_public_index_current": false
+  },
+  "public_search_effect_policy": {
+    "public_search_behavior_changed_current": false,
+    "search_card_candidates_future_only": true
+  },
+  "public_index_mutation_policy": {
+    "public_index_mutation_allowed_current": false
+  },
+  "master_index_mutation_policy": {
+    "master_index_mutation_allowed_current": false
+  },
+  "audit_policy": {
+    "audit_report_required": true,
+    "audit_is_not_production_readiness": true
+  },
+  "truth_boundary": {
+    "rebuild_contract_is_public_truth": false,
+    "record_proposal_is_accepted_truth": false,
+    "record_proposal_is_accepted_evidence": false,
+    "public_index_mutation_allowed_current": false,
+    "master_index_mutation_allowed_current": false,
+    "human_review_required_for_actual_rebuild": true
+  },
+  "product_boundary": {
+    "implemented_public_index_rebuild_runtime": false,
+    "implemented_master_index_mutation": false,
+    "implemented_hosted_review_runtime": false,
+    "created_local_private_state": false,
+    "enabled_network_access": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_source_connectors": false,
+    "enabled_downloads": false,
+    "enabled_installers": false,
+    "enabled_execution": false,
+    "enabled_uploads": false,
+    "enabled_accounts": false,
+    "enabled_telemetry": false,
+    "enabled_pack_import_runtime": false,
+    "enabled_model_provider_calls": false,
+    "mutated_public_index": false,
+    "mutated_master_index": false,
+    "claimed_rights_clearance": false,
+    "claimed_malware_safety": false,
+    "claimed_verified_installability": false,
+    "claimed_exhaustive_global_search": false,
+    "claimed_production_readiness": false
+  },
+  "no_goals": [
+    "no current public index mutation",
+    "no current master index mutation",
+    "no current public truth creation"
+  ],
+  "notes": [
+    "Ready permits only future proposal review."
+  ]
+}

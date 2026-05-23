@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/schema/control/previews/query/observation_candidate.v0.json",
+  "title": "EurekaObservationCandidateV0",
+  "description": "Review-gated agent-assisted observation candidate contract. Candidate records are not observed baselines, evidence truth, source validation, or master-index mutations.",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "observation_candidate_id",
+    "candidate_type",
+    "candidate_status",
+    "origin",
+    "source_access_mode",
+    "source_policy_status",
+    "candidate_summary",
+    "limitations",
+    "required_human_review",
+    "accepted_as_observed_baseline",
+    "accepted_as_evidence_truth",
+    "master_index_mutation_allowed",
+    "product_boundary"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "observation_candidate.v0"
+    },
+    "candidate_type": {
+      "enum": [
+        "local_eval_failure",
+        "source_lead",
+        "search_need_seed",
+        "work_unit_seed",
+        "manual_slot_suggestion",
+        "approved_api_result_future",
+        "approved_metadata_probe_result_future",
+        "policy_blocked_candidate",
+        "not_evaluable_candidate"
+      ]
+    },
+    "candidate_status": {
+      "enum": [
+        "proposed",
+        "needs_human_review",
+        "approved_for_manual_observation",
+        "approved_as_source_lead",
+        "approved_as_work_unit_seed",
+        "rejected",
+        "duplicate",
+        "policy_blocked",
+        "needs_more_evidence",
+        "deferred"
+      ]
+    },
+    "origin": {
+      "enum": [
+        "local_eval",
+        "static_demo",
+        "search_usefulness_audit",
+        "committed_fixture",
+        "manual_pending_slot",
+        "approved_api_future",
+        "approved_metadata_probe_future",
+        "human_note_future",
+        "ai_summary_future"
+      ]
+    },
+    "required_human_review": {
+      "const": true
+    },
+    "accepted_as_observed_baseline": {
+      "const": false
+    },
+    "accepted_as_evidence_truth": {
+      "const": false
+    },
+    "master_index_mutation_allowed": {
+      "const": false
+    }
+  },
+  "x-contract-status": "contract_only",
+  "x-external-access-authorized": false,
+  "x-observation-runtime-implemented": false
+}

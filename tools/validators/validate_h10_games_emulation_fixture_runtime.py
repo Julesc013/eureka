@@ -25,17 +25,17 @@ from archive.prototypes.legacy_runtime.connectors.h10_games_emulation.normalizer
 )
 
 CONTRACTS = [
-    "contracts/control_schemas/fixtures/h10/connectors/games_emulation_fixture.v0.json",
-    "contracts/control_schemas/previews/h10/connectors/games_emulation_normalized_record.v0.json",
-    "contracts/control_schemas/previews/h10/connectors/game_software_identity_candidate.v0.json",
-    "contracts/control_schemas/previews/h10/connectors/platform_release_edition_candidate.v0.json",
-    "contracts/control_schemas/previews/h10/connectors/emulator_compatibility_candidate.v0.json",
-    "contracts/control_schemas/previews/h10/connectors/preservation_hashset_candidate.v0.json",
-    "contracts/control_schemas/previews/h10/connectors/rom_disc_media_identity_candidate.v0.json",
-    "contracts/control_schemas/previews/h10/connectors/game_relation_candidate.v0.json",
-    "contracts/control_schemas/previews/h10/connectors/emulator_action_candidate.v0.json",
-    "contracts/control_schemas/previews/h10/connectors/games_rights_safety_candidate.v0.json",
-    "contracts/control_schemas/fixtures/h10/connectors/games_emulation_fixture_replay_result.v0.json",
+    "contracts/schema/control/fixtures/h10/connectors/games_emulation_fixture.v0.json",
+    "contracts/schema/control/previews/h10/connectors/games_emulation_normalized_record.v0.json",
+    "contracts/schema/control/previews/h10/connectors/game_software_identity_candidate.v0.json",
+    "contracts/schema/control/previews/h10/connectors/platform_release_edition_candidate.v0.json",
+    "contracts/schema/control/previews/h10/connectors/emulator_compatibility_candidate.v0.json",
+    "contracts/schema/control/previews/h10/connectors/preservation_hashset_candidate.v0.json",
+    "contracts/schema/control/previews/h10/connectors/rom_disc_media_identity_candidate.v0.json",
+    "contracts/schema/control/previews/h10/connectors/game_relation_candidate.v0.json",
+    "contracts/schema/control/previews/h10/connectors/emulator_action_candidate.v0.json",
+    "contracts/schema/control/previews/h10/connectors/games_rights_safety_candidate.v0.json",
+    "contracts/schema/control/fixtures/h10/connectors/games_emulation_fixture_replay_result.v0.json",
 ]
 POLICIES = [
     "control/inventory/connectors/h10_games_emulation_fixture_runtime_policy.json",

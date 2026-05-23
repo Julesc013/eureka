@@ -14,9 +14,9 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.local_appliance import close_local_appliance, open_local_appliance
-from runtime.local_operator import LocalOperatorError, require_operator_token
-from runtime.local_review import get_review_item, list_review_items, record_review_decision
+from runtime.local.appliance import close_local_appliance, open_local_appliance
+from runtime.local.operator import LocalOperatorError, require_operator_token
+from runtime.local.review import get_review_item, list_review_items, record_review_decision
 
 
 class _Request:

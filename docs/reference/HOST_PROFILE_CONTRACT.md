@@ -1,6 +1,6 @@
 # Host Profile Contract
 
-`contracts/representations/host_profile.v0.json` defines a host/profile as a
+`contracts/representation/host_profile.v0.json` defines a host/profile as a
 representation selector. A host profile may choose defaults and allowed
 representation profiles, but it does not define a separate Eureka product and
 does not create runtime behavior.

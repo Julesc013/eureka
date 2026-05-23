@@ -6,7 +6,7 @@ import unittest
 
 class G0SmokeTests(unittest.TestCase):
     def test_smoke_all_projections(self) -> None:
-        fixture = "examples/search_quality/sample_quality_fixture.json"
+        fixture = "examples/search/quality/sample_quality_fixture.json"
         for projection in ("operator_workbench", "public_web", "native_desktop_read_only"):
             completed = subprocess.run(
                 [sys.executable, "scripts/eureka_g0_smoke.py", "--fixture", fixture, "--projection", projection, "--json"],

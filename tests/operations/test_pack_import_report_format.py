@@ -6,7 +6,7 @@ import unittest
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
-SCHEMA = REPO_ROOT / "contracts" / "control_schemas" / "audits" / "packs" / "pack_import_report.v0.json"
+SCHEMA = REPO_ROOT / "contracts" / "schema" / "control" / "audits" / "packs" / "pack_import_report.v0.json"
 EXAMPLES_ROOT = REPO_ROOT / "examples" / "import_reports"
 REFERENCE_DOC = REPO_ROOT / "docs" / "reference" / "PACK_IMPORT_REPORT_FORMAT.md"
 PIPELINE_DOC = REPO_ROOT / "docs" / "architecture" / "PACK_IMPORT_PIPELINE.md"

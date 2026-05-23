@@ -4,11 +4,11 @@ import json
 from pathlib import Path
 import unittest
 
-from runtime.search_quality.dedup_shadow import build_dedup_shadow
-from runtime.search_quality.identity_shadow import build_identity_merge_shadow
-from runtime.search_quality.public_ranking_gate import build_public_ranking_gate
-from runtime.search_quality.quality_harness import build_search_quality_regression_report, detect_quality_overclaim
-from runtime.search_quality.ranking_shadow import build_ranking_output_bundle, build_ranking_shadow
+from runtime.search.quality.dedup_shadow import build_dedup_shadow
+from runtime.search.quality.identity_shadow import build_identity_merge_shadow
+from runtime.search.quality.public_ranking_gate import build_public_ranking_gate
+from runtime.search.quality.quality_harness import build_search_quality_regression_report, detect_quality_overclaim
+from runtime.search.quality.ranking_shadow import build_ranking_output_bundle, build_ranking_shadow
 
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -20,8 +20,8 @@ def load(rel: str):
 
 class SearchQualityHarnessTests(unittest.TestCase):
     def setUp(self) -> None:
-        self.query_set = load("examples/search_quality/query_sets/minimal_search_quality_query_set_v0.json")
-        self.bundle = load("examples/search_quality/ranking/input_bundle_software_v0.json")
+        self.query_set = load("examples/search/quality/query_sets/minimal_search_quality_query_set_v0.json")
+        self.bundle = load("examples/search/quality/ranking/input_bundle_software_v0.json")
         ranking = build_ranking_shadow(self.bundle)
         identity = build_identity_merge_shadow(self.bundle["items"])
         dedup = build_dedup_shadow(self.bundle["items"])

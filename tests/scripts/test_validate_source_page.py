@@ -8,7 +8,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[2]
-EXAMPLE = ROOT / "examples" / "source_pages" / "minimal_fixture_source_page_v0" / "SOURCE_PAGE.json"
+EXAMPLE = ROOT / "examples" / "sources" / "pages" / "minimal_fixture_source_page_v0" / "SOURCE_PAGE.json"
 
 
 class SourcePageValidatorTests(unittest.TestCase):

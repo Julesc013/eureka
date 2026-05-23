@@ -26,11 +26,11 @@ from archive.prototypes.legacy_runtime.connectors.h2_package_registries.review_i
 AUDIT_DIR = Path("control/audits/h2-bundle-04-package-review-quality-audit-v0")
 REVIEW_DIR = Path("examples/connectors/h2_package_registries/review_integration")
 REQUIRED_JSON = (
-    "contracts/control_schemas/audits/h2/connectors/package_review_integration_result.v0.json",
-    "contracts/control_schemas/audits/h2/connectors/package_quality_delta_report.v0.json",
-    "contracts/control_schemas/audits/h2/connectors/package_connector_wave_postmortem.v0.json",
-    "contracts/control_schemas/audits/h2/connectors/package_integration_audit.v0.json",
-    "contracts/control_schemas/tasks/h2/connectors/package_next_phase_recommendation.v0.json",
+    "contracts/schema/control/audits/h2/connectors/package_review_integration_result.v0.json",
+    "contracts/schema/control/audits/h2/connectors/package_quality_delta_report.v0.json",
+    "contracts/schema/control/audits/h2/connectors/package_connector_wave_postmortem.v0.json",
+    "contracts/schema/control/audits/h2/connectors/package_integration_audit.v0.json",
+    "contracts/schema/control/tasks/h2/connectors/package_next_phase_recommendation.v0.json",
     "control/inventory/connectors/h2_package_review_integration_policy.json",
     "control/inventory/connectors/h2_package_review_output_policy.json",
     "control/inventory/connectors/h2_package_review_path_policy.json",

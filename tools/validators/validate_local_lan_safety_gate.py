@@ -22,9 +22,9 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.local_appliance import close_local_appliance, open_local_appliance
-from runtime.local_network import classify_client_scope, is_route_allowed_for_scope, validate_service_host
-from runtime.local_service import LocalServiceApp
+from runtime.local.appliance import close_local_appliance, open_local_appliance
+from runtime.local.network import classify_client_scope, is_route_allowed_for_scope, validate_service_host
+from runtime.local.service import LocalServiceApp
 
 
 TASK_ID = "LOCAL-11"
@@ -47,13 +47,13 @@ INVENTORIES = {
     "control/inventory/local_11_next_task_decision.json": "local_11_next_task_decision.v0",
 }
 RUNTIME_FILES = (
-    "runtime/local_network/__init__.py",
-    "runtime/local_network/client_scope.py",
-    "runtime/local_network/errors.py",
-    "runtime/local_network/hosts.py",
-    "runtime/local_network/policy.py",
-    "runtime/local_network/safety.py",
-    "runtime/local_network/validation.py",
+    "runtime/local/network/__init__.py",
+    "runtime/local/network/client_scope.py",
+    "runtime/local/network/errors.py",
+    "runtime/local/network/hosts.py",
+    "runtime/local/network/policy.py",
+    "runtime/local/network/safety.py",
+    "runtime/local/network/validation.py",
 )
 AUDIT_FILES = (
     "README.md",
@@ -242,7 +242,7 @@ def validate_inventories(payloads: Mapping[str, Mapping[str, Any]], errors: list
 
 
 def validate_runtime_imports(root: Path, errors: list[str]) -> None:
-    for path in (root / "runtime/local_network").glob("*.py"):
+    for path in (root / "runtime/local/network").glob("*.py"):
         tree = ast.parse(path.read_text(encoding="utf-8"), filename=str(path))
         for node in ast.walk(tree):
             modules: list[str] = []
@@ -256,7 +256,7 @@ def validate_runtime_imports(root: Path, errors: list[str]) -> None:
 
 
 def validate_runtime_vocabulary(root: Path, errors: list[str]) -> None:
-    for path in (root / "runtime/local_network").glob("*.py"):
+    for path in (root / "runtime/local/network").glob("*.py"):
         text = path.read_text(encoding="utf-8")
         for token in FORBIDDEN_RUNTIME_TOKENS:
             if token in text:

@@ -16,7 +16,7 @@ def run_cmd(args):
 class SourceOsCoverageScorecardScriptsTests(unittest.TestCase):
     def test_record_source_coverage_writes_no_files_by_default(self):
         before = set((REPO_ROOT / "control/audits/h0-bundle-03-coverage-scorecards-source-packs-v0/generated").glob("*"))
-        result = run_cmd(["scripts/record_source_coverage.py", "--input", "examples/source_coverage/internet_archive_coverage_record_v0.json"])
+        result = run_cmd(["scripts/record_source_coverage.py", "--input", "examples/sources/coverage/internet_archive_coverage_record_v0.json"])
         after = set((REPO_ROOT / "control/audits/h0-bundle-03-coverage-scorecards-source-packs-v0/generated").glob("*"))
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
         self.assertEqual(before, after)
@@ -25,9 +25,9 @@ class SourceOsCoverageScorecardScriptsTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             tmp_path = Path(tmp)
             commands = [
-                ["scripts/record_source_coverage.py", "--input", "examples/source_coverage/internet_archive_coverage_record_v0.json", "--output", str(tmp_path / "coverage.json")],
+                ["scripts/record_source_coverage.py", "--input", "examples/sources/coverage/internet_archive_coverage_record_v0.json", "--output", str(tmp_path / "coverage.json")],
                 ["scripts/score_connector.py", "--input", "examples/connectors/core/scorecards/internet_archive_scorecard_v0.json", "--output", str(tmp_path / "scorecard.json")],
-                ["scripts/build_source_pack.py", "--input", "examples/source_packs/internet_archive_source_pack_manifest_v0.json", "--output", str(tmp_path / "pack.json")],
+                ["scripts/build_source_pack.py", "--input", "examples/packs/source/internet_archive_source_pack_manifest_v0.json", "--output", str(tmp_path / "pack.json")],
             ]
             for command in commands:
                 result = run_cmd(command)
@@ -37,7 +37,7 @@ class SourceOsCoverageScorecardScriptsTests(unittest.TestCase):
             self.assertTrue((tmp_path / "pack.json").is_file())
 
     def test_scripts_refuse_site_dist_output(self):
-        result = run_cmd(["scripts/record_source_coverage.py", "--input", "examples/source_coverage/internet_archive_coverage_record_v0.json", "--output", "site/dist/coverage.json"])
+        result = run_cmd(["scripts/record_source_coverage.py", "--input", "examples/sources/coverage/internet_archive_coverage_record_v0.json", "--output", "site/dist/coverage.json"])
         self.assertNotEqual(result.returncode, 0)
 
     def test_scripts_refuse_data_public_index_output(self):
@@ -45,7 +45,7 @@ class SourceOsCoverageScorecardScriptsTests(unittest.TestCase):
         self.assertNotEqual(result.returncode, 0)
 
     def test_source_pack_refuses_contract_output(self):
-        result = run_cmd(["scripts/build_source_pack.py", "--input", "examples/source_packs/internet_archive_source_pack_manifest_v0.json", "--output", "contracts/pack.json"])
+        result = run_cmd(["scripts/build_source_pack.py", "--input", "examples/packs/source/internet_archive_source_pack_manifest_v0.json", "--output", "contracts/pack.json"])
         self.assertNotEqual(result.returncode, 0)
 
     def test_validator_passes_current_repo(self):

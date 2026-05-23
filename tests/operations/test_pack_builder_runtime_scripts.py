@@ -21,7 +21,7 @@ class PackBuilderRuntimeScriptsTest(unittest.TestCase):
                     "--pack-type",
                     "evidence_pack_draft",
                     "--input",
-                    "examples/evidence_ledger_records/metadata_claim_record_v0.json",
+                    "examples/evidence/ledger/records/metadata_claim_record_v0.json",
                     "--check",
                 ],
                 cwd=REPO_ROOT,
@@ -39,7 +39,7 @@ class PackBuilderRuntimeScriptsTest(unittest.TestCase):
                     "--pack-type",
                     "evidence_pack_draft",
                     "--input",
-                    "examples/evidence_ledger_records/metadata_claim_record_v0.json",
+                    "examples/evidence/ledger/records/metadata_claim_record_v0.json",
                     "--output",
                     str(output),
                 ]
@@ -55,7 +55,7 @@ class PackBuilderRuntimeScriptsTest(unittest.TestCase):
                     "--pack-type",
                     "evidence_pack_draft",
                     "--input",
-                    "examples/evidence_ledger_records/metadata_claim_record_v0.json",
+                    "examples/evidence/ledger/records/metadata_claim_record_v0.json",
                     "--output",
                     output,
                 ]
@@ -67,7 +67,7 @@ class PackBuilderRuntimeScriptsTest(unittest.TestCase):
             [
                 "scripts/summarize_local_pack.py",
                 "--input",
-                "examples/pack_drafts",
+                "examples/packs/drafts",
                 "--check",
             ]
         )
@@ -79,7 +79,7 @@ class PackBuilderRuntimeScriptsTest(unittest.TestCase):
             [
                 "scripts/summarize_local_pack.py",
                 "--input",
-                "examples/pack_drafts",
+                "examples/packs/drafts",
                 "--output",
                 "runtime/pack_summary.md",
             ]

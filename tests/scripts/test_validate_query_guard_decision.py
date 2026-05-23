@@ -7,11 +7,11 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[2]
-EXAMPLE = ROOT / "examples" / "query_guard" / "minimal_public_safe_query_v0" / "QUERY_GUARD_DECISION.json"
-PRIVATE_PATH_EXAMPLE = ROOT / "examples" / "query_guard" / "minimal_private_path_rejected_v0" / "QUERY_GUARD_DECISION.json"
-SECRET_EXAMPLE = ROOT / "examples" / "query_guard" / "minimal_secret_rejected_v0" / "QUERY_GUARD_DECISION.json"
-SOURCE_STUFFING_EXAMPLE = ROOT / "examples" / "query_guard" / "minimal_source_stuffing_quarantined_v0" / "QUERY_GUARD_DECISION.json"
-FAKE_DEMAND_EXAMPLE = ROOT / "examples" / "query_guard" / "minimal_fake_demand_throttled_v0" / "QUERY_GUARD_DECISION.json"
+EXAMPLE = ROOT / "examples" / "search" / "query_guard" / "minimal_public_safe_query_v0" / "QUERY_GUARD_DECISION.json"
+PRIVATE_PATH_EXAMPLE = ROOT / "examples" / "search" / "query_guard" / "minimal_private_path_rejected_v0" / "QUERY_GUARD_DECISION.json"
+SECRET_EXAMPLE = ROOT / "examples" / "search" / "query_guard" / "minimal_secret_rejected_v0" / "QUERY_GUARD_DECISION.json"
+SOURCE_STUFFING_EXAMPLE = ROOT / "examples" / "search" / "query_guard" / "minimal_source_stuffing_quarantined_v0" / "QUERY_GUARD_DECISION.json"
+FAKE_DEMAND_EXAMPLE = ROOT / "examples" / "search" / "query_guard" / "minimal_fake_demand_throttled_v0" / "QUERY_GUARD_DECISION.json"
 
 
 class QueryGuardDecisionValidatorTests(unittest.TestCase):

@@ -4,7 +4,7 @@ Final command results are recorded after implementation.
 
 - `git status --short`: WARN before commit; scoped AIDE/AGENTS changes are
   present, plus unrelated untracked product-adjacent files under
-  `contracts/representations/` and `control/inventory/publication/` that were
+  `contracts/representation/` and `control/inventory/publication/` that were
   not created or staged by this task.
 - `git diff --check`: PASS; PowerShell/git reported expected LF-to-CRLF
   working-tree notices only.

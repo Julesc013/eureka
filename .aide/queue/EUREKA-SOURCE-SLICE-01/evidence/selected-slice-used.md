@@ -9,7 +9,7 @@ Q58 followed Q57's selected slice:
 
 ## Allowed Paths Used
 
-- `runtime/local_foundry/fixture_source_observation_slice.py`
+- `runtime/local/foundry/fixture_source_observation_slice.py`
 - `scripts/validate_fixture_source_observation_vertical_slice.py`
 - `tests/runtime/test_fixture_source_observation_vertical_slice.py`
 - `tests/operations/test_fixture_source_observation_vertical_slice_script.py`

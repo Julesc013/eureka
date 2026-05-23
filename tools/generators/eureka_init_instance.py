@@ -19,7 +19,7 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.local_appliance.paths import describe_instance_layout, resolve_instance_root
+from runtime.local.appliance.paths import describe_instance_layout, resolve_instance_root
 
 TASK_ID = "LOCAL-02"
 INSTANCE_SCHEMA_VERSION = "eureka_local_instance.v0"

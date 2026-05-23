@@ -6,7 +6,7 @@ import unittest
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-EXAMPLE = ROOT / "examples" / "compatibility_aware_ranking" / "minimal_os_compatibility_ranking_v0" / "COMPATIBILITY_TARGET_PROFILE.json"
+EXAMPLE = ROOT / "examples" / "search" / "compatibility_aware_ranking" / "minimal_os_compatibility_ranking_v0" / "COMPATIBILITY_TARGET_PROFILE.json"
 
 
 class CompatibilityTargetProfileValidatorTests(unittest.TestCase):

@@ -32,10 +32,10 @@ SLOT_MANIFEST = REPO_ROOT / "control/inventory/observations/manual_observation_b
 TRACK_B_FILES = [
     REPO_ROOT / "contracts/node/eureka_node_manifest.v0.json",
     REPO_ROOT / "contracts/node/node_policy.v0.json",
-    REPO_ROOT / "contracts/control_schemas/policies/node/node_capability.v0.json",
-    REPO_ROOT / "contracts/control_schemas/policies/node/work_unit.v0.json",
-    REPO_ROOT / "contracts/control_schemas/policies/node/work_unit_result.v0.json",
-    REPO_ROOT / "contracts/control_schemas/policies/node/local_foundry_state.v0.json",
+    REPO_ROOT / "contracts/schema/control/policies/node/node_capability.v0.json",
+    REPO_ROOT / "contracts/schema/control/policies/node/work_unit.v0.json",
+    REPO_ROOT / "contracts/schema/control/policies/node/work_unit_result.v0.json",
+    REPO_ROOT / "contracts/schema/control/policies/node/local_foundry_state.v0.json",
 ]
 OBSERVATION_DIRS = [
     REPO_ROOT / "evals/search_usefulness/external_baselines/batches/batch_0/observations",
@@ -60,7 +60,7 @@ class ObsHumanReviewPacketTest(unittest.TestCase):
         self.assertEqual(validate_packet_manifest_payload(manifest, "manifest", REPO_ROOT), [])
 
     def test_decision_examples_validate(self) -> None:
-        for path in sorted((REPO_ROOT / "examples/observation_reviews").glob("human_review_decision_*_v0.json")):
+        for path in sorted((REPO_ROOT / "examples/review/observation_reviews").glob("human_review_decision_*_v0.json")):
             payload = _read_json(path)
 
             self.assertEqual(validate_decision_example_payload(payload, path.as_posix(), REPO_ROOT), [])
@@ -151,7 +151,7 @@ class ObsHumanReviewPacketTest(unittest.TestCase):
         self.assertTrue(any("human_decision" in error for error in errors))
 
     def test_synthetic_decision_example_may_have_human_decision(self) -> None:
-        example = _read_json(REPO_ROOT / "examples/observation_reviews/human_review_decision_approve_source_lead_v0.json")
+        example = _read_json(REPO_ROOT / "examples/review/observation_reviews/human_review_decision_approve_source_lead_v0.json")
 
         self.assertEqual(validate_decision_example_payload(example, "synthetic_example", REPO_ROOT), [])
 

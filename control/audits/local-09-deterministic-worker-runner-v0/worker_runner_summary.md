@@ -1,10 +1,10 @@
 # Worker Runner Summary
 
-LOCAL-09 adds `runtime/local_worker` and the `eureka_worker_runner.py` CLI.
+LOCAL-09 adds `runtime/local/worker` and the `eureka_worker_runner.py` CLI.
 
 The runner:
 
-- opens the local instance through `runtime/local_appliance`
+- opens the local instance through `runtime/local/appliance`
 - fetches queued WorkUnits from `workunit_queue`
 - evaluates worker policy before execution
 - transitions queued records through running to complete, failed, or blocked

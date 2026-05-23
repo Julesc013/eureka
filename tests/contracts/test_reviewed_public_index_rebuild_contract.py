@@ -99,7 +99,7 @@ class ReviewedPublicIndexRebuildContractTest(unittest.TestCase):
         self.assertTrue(any("automatic_evidence_acceptance_allowed" in error for error in errors))
 
     def test_missing_evidence_ready_claim_fails(self) -> None:
-        payload = _read_json("examples/reviewed_public_index_rebuilds/ready_candidate_rebuild_input_v0.json")
+        payload = _read_json("examples/index/reviewed_public_rebuilds/ready_candidate_rebuild_input_v0.json")
         payload["evidence_requirements"]["evidence_refs_present"] = False
         errors = validator.validate_rebuild_payload(payload, "broken", REPO_ROOT)
         self.assertTrue(any("evidence refs present" in error for error in errors))
@@ -169,11 +169,11 @@ class ReviewedPublicIndexRebuildContractTest(unittest.TestCase):
 
 
 def _rebuild() -> dict:
-    return deepcopy(_read_json("examples/reviewed_public_index_rebuilds/minimal_rebuild_contract_v0.json"))
+    return deepcopy(_read_json("examples/index/reviewed_public_rebuilds/minimal_rebuild_contract_v0.json"))
 
 
 def _proposal() -> dict:
-    return deepcopy(_read_json("examples/reviewed_public_records/software_candidate_record_proposal_v0.json"))
+    return deepcopy(_read_json("examples/index/reviewed_public_records/software_candidate_record_proposal_v0.json"))
 
 
 def _read_json(raw_path: str) -> dict:

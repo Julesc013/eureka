@@ -91,7 +91,7 @@ def check_checksums(root: Path, errors: list[str]) -> None:
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
-EXAMPLES_ROOT = REPO_ROOT / "examples" / "compatibility_aware_ranking"
+EXAMPLES_ROOT = REPO_ROOT / "examples" / "search" / "compatibility_aware_ranking"
 TOP_LEVEL_REQUIRED = {'hardware_peripheral_driver_requirements', 'private_path_included', 'target_environment', 'compatibility_target_profile_id', 'architecture_requirements', 'privacy', 'runtime_profile_store_implemented', 'emulator_vm_reconstruction_requirements', 'created_by_tool', 'schema_version', 'no_runtime_guarantees', 'limitations', 'notes', 'user_profile_tracking_enabled', 'compatibility_target_profile_kind', 'persistent_profile_store_implemented', 'runtime_dependency_requirements', 'telemetry_exported', 'credentials_included', 'local_machine_fingerprint_included', 'profile_identity', 'status', 'action_preferences', 'platform_requirements'}
 HARD_FALSE_FIELDS = {
     "runtime_profile_store_implemented",

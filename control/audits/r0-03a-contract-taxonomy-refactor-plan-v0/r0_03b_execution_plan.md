@@ -6,7 +6,7 @@ max expected changed files: 1270
 
 ## R0-03B-1
 
-Create contracts/control_schemas target roots and move audit, fixture, preview, task, validator, deprecated, and generated scaffold schemas.
+Create contracts/schema/control target roots and move audit, fixture, preview, task, validator, deprecated, and generated scaffold schemas.
 
 - moves: 21
 - reference updates: 0

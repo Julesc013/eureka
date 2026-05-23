@@ -2,7 +2,7 @@
 
 ## Q60 Product/Test Changes
 
-- `runtime/local_foundry/fixture_source_observation_slice.py`
+- `runtime/local/foundry/fixture_source_observation_slice.py`
   - Added deterministic surface packets under `surface_packets`.
   - Added packet validation for result/object/evidence/source/absence refs and no-live markers.
 - `tests/runtime/test_fixture_source_observation_vertical_slice.py`

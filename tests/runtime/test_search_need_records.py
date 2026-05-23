@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import unittest
 
-from runtime.search_need import SearchNeed, SearchNeedValidationError, validate_search_need
+from runtime.search.need import SearchNeed, SearchNeedValidationError, validate_search_need
 
 
 class SearchNeedRecordTests(unittest.TestCase):

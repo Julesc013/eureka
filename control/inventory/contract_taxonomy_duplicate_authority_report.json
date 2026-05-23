@@ -4,29 +4,29 @@
   "duplicate_risks": [
     {
       "risk_id": "control_schemas_policies_packs_vs_contracts_packs",
-      "paths": ["contracts/control_schemas/policies/packs/**", "contracts/packs/**"],
+      "paths": ["contracts/schema/control/policies/packs/**", "contracts/pack/**"],
       "problem": "Control policy schemas can look like pack contract authority if not scoped.",
-      "canonical_authority": "contracts/packs/",
+      "canonical_authority": "contracts/pack/",
       "secondary_role": "control schema for policy/governance records only",
-      "immediate_decision": "retain contracts/control_schemas as control-only with migration backlog",
+      "immediate_decision": "retain contracts/schema/control as control-only with migration backlog",
       "later_task": "REPO-LAYOUT-CONTRACT-AUTHORITY-MIGRATION-01",
       "blocks_workbench_foundation": false
     },
     {
       "risk_id": "contracts_source_registry_vs_contracts_sources",
-      "paths": ["contracts/source_registry/**", "contracts/sources/**"],
+      "paths": ["contracts/source/registry/**", "contracts/source/records/**"],
       "problem": "Older YAML registry schemas and newer JSON source contracts both describe source records/registry concepts.",
-      "canonical_authority": "contracts/sources/",
+      "canonical_authority": "contracts/source/records/",
       "secondary_role": "legacy schema reference pending migration",
-      "immediate_decision": "prefer contracts/sources for new source-family work",
+      "immediate_decision": "prefer contracts/source/records for new source-family work",
       "later_task": "REPO-LAYOUT-SOURCE-CONTRACT-MIGRATION-01",
       "blocks_workbench_foundation": false
     },
     {
       "risk_id": "contracts_source_cache_vs_contracts_stores",
-      "paths": ["contracts/source_cache/**", "contracts/stores/source_cache_*.json"],
+      "paths": ["contracts/source/cache/**", "contracts/stores/source_cache_*.json"],
       "problem": "Source-cache domain records and physical store schemas overlap.",
-      "canonical_authority": "contracts/stores/ for durable store schema; contracts/runtime or contracts/sources for packets",
+      "canonical_authority": "contracts/stores/ for durable store schema; contracts/runtime or contracts/source/records for packets",
       "secondary_role": "source-cache aliases until migration",
       "immediate_decision": "classify overlap and defer moves",
       "later_task": "REPO-LAYOUT-STORE-CONTRACT-MIGRATION-01",

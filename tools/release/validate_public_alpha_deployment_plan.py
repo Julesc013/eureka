@@ -34,16 +34,16 @@ REQUIRED_CONFIG_KEYS = {
 }
 RISKY_DISABLED_KEYS = REQUIRED_CONFIG_KEYS - {"RATE_LIMIT_ENABLED", "KILL_SWITCH_GLOBAL", "KILL_SWITCH_CONNECTORS", "KILL_SWITCH_DOWNLOADS"}
 REQUIRED_CONTRACTS = [
-    "contracts/control_schemas/policies/hosting/public_alpha_deployment_plan.v0.json",
-    "contracts/control_schemas/policies/hosting/public_alpha_deployment_step.v0.json",
-    "contracts/control_schemas/policies/hosting/public_alpha_environment_matrix.v0.json",
+    "contracts/schema/control/policies/hosting/public_alpha_deployment_plan.v0.json",
+    "contracts/schema/control/policies/hosting/public_alpha_deployment_step.v0.json",
+    "contracts/schema/control/policies/hosting/public_alpha_environment_matrix.v0.json",
     "contracts/hosting/public_alpha_config_manifest.v0.json",
-    "contracts/control_schemas/policies/hosting/public_alpha_static_backend_split.v0.json",
-    "contracts/control_schemas/policies/hosting/public_alpha_dns_readiness.v0.json",
+    "contracts/schema/control/policies/hosting/public_alpha_static_backend_split.v0.json",
+    "contracts/schema/control/policies/hosting/public_alpha_dns_readiness.v0.json",
     "contracts/hosting/public_alpha_provider_profile.v0.json",
-    "contracts/control_schemas/policies/hosting/public_alpha_rollout_gate.v0.json",
-    "contracts/control_schemas/policies/hosting/public_alpha_operator_checklist.v0.json",
-    "contracts/control_schemas/audits/hosting/public_alpha_deployment_noop_report.v0.json",
+    "contracts/schema/control/policies/hosting/public_alpha_rollout_gate.v0.json",
+    "contracts/schema/control/policies/hosting/public_alpha_operator_checklist.v0.json",
+    "contracts/schema/control/audits/hosting/public_alpha_deployment_noop_report.v0.json",
 ]
 REQUIRED_POLICIES = [
     "control/inventory/hosting/public_alpha_deployment_plan_policy.json",

@@ -7,8 +7,8 @@ import unittest
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
-SCHEMA = REPO_ROOT / "contracts" / "control_schemas" / "policies" / "packs" / "evidence_pack.v0.json"
-EXAMPLE_PACK = REPO_ROOT / "examples" / "evidence_packs" / "minimal_evidence_pack_v0"
+SCHEMA = REPO_ROOT / "contracts" / "schema" / "control" / "policies" / "packs" / "evidence_pack.v0.json"
+EXAMPLE_PACK = REPO_ROOT / "examples" / "packs" / "evidence" / "minimal_evidence_pack_v0"
 DOC = REPO_ROOT / "docs" / "reference" / "EVIDENCE_PACK_CONTRACT.md"
 SOURCE_DOC = REPO_ROOT / "docs" / "reference" / "SOURCE_PACK_CONTRACT.md"
 AUDIT_REPORT = REPO_ROOT / "control" / "audits" / "evidence-pack-contract-v0" / "evidence_pack_contract_report.json"

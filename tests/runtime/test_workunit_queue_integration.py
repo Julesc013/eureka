@@ -5,8 +5,8 @@ import tempfile
 from pathlib import Path
 import unittest
 
-from runtime.local_appliance import LocalReadOnlyStoreMutationError, close_local_appliance, open_local_appliance
-from runtime.workunit_queue import WorkUnit
+from runtime.local.appliance import LocalReadOnlyStoreMutationError, close_local_appliance, open_local_appliance
+from runtime.worker.workunit_queue import WorkUnit
 
 
 ROOT = Path(__file__).resolve().parents[2]

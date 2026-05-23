@@ -27,17 +27,17 @@ OBS02_MANIFEST_PATH = "control/inventory/observations/obs_agent_source_gap_candi
 OBS03_AUDIT_QUEUE_PATH = "control/audits/obs-agent-03-observation-candidate-review-queue-v0/observation_candidate_review_queue.json"
 
 SEARCH_NEED_SEED_EXAMPLES = (
-    "examples/search_need_seeds/minimal_search_need_seed_v0.json",
-    "examples/search_need_seeds/source_gap_search_need_seed_v0.json",
-    "examples/search_need_seeds/extraction_gap_search_need_seed_v0.json",
-    "examples/search_need_seeds/compatibility_gap_search_need_seed_v0.json",
-    "examples/search_need_seeds/policy_blocked_search_need_seed_v0.json",
+    "examples/search/need_seeds/minimal_search_need_seed_v0.json",
+    "examples/search/need_seeds/source_gap_search_need_seed_v0.json",
+    "examples/search/need_seeds/extraction_gap_search_need_seed_v0.json",
+    "examples/search/need_seeds/compatibility_gap_search_need_seed_v0.json",
+    "examples/search/need_seeds/policy_blocked_search_need_seed_v0.json",
 )
 
 SEARCH_NEED_CONVERSION_EXAMPLES = (
-    "examples/search_need_seed_conversions/minimal_candidate_to_need_conversion_v0.json",
-    "examples/search_need_seed_conversions/source_gap_candidate_to_need_conversion_v0.json",
-    "examples/search_need_seed_conversions/request_more_evidence_conversion_v0.json",
+    "examples/search/need_seed_conversions/minimal_candidate_to_need_conversion_v0.json",
+    "examples/search/need_seed_conversions/source_gap_candidate_to_need_conversion_v0.json",
+    "examples/search/need_seed_conversions/request_more_evidence_conversion_v0.json",
 )
 
 PRIMARY_INPUT_PATHS = (

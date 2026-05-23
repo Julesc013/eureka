@@ -4,8 +4,8 @@
   "backlog": [
     {
       "backlog_id": "migrate_or_reclassify_control_schemas_packs",
-      "current_paths": ["contracts/control_schemas/policies/packs/**"],
-      "target_authority": "contracts/packs/ remains product pack authority; contracts/control_schemas remains policy-schema only",
+      "current_paths": ["contracts/schema/control/policies/packs/**"],
+      "target_authority": "contracts/pack/ remains product pack authority; contracts/schema/control remains policy-schema only",
       "risk": "pack policy schemas may masquerade as pack manifest law",
       "prerequisite": "R0-03 authority matrix accepted",
       "recommended_task": "REPO-LAYOUT-CONTRACT-AUTHORITY-MIGRATION-01",
@@ -14,8 +14,8 @@
     },
     {
       "backlog_id": "clarify_contracts_source_registry_vs_sources",
-      "current_paths": ["contracts/source_registry/**", "contracts/sources/**"],
-      "target_authority": "contracts/sources/",
+      "current_paths": ["contracts/source/registry/**", "contracts/source/records/**"],
+      "target_authority": "contracts/source/records/",
       "risk": "two source registry representations can diverge",
       "prerequisite": "source-family migration plan",
       "recommended_task": "REPO-LAYOUT-SOURCE-CONTRACT-MIGRATION-01",
@@ -24,7 +24,7 @@
     },
     {
       "backlog_id": "clarify_source_cache_vs_stores_contracts",
-      "current_paths": ["contracts/source_cache/**", "contracts/stores/source_cache_*.json"],
+      "current_paths": ["contracts/source/cache/**", "contracts/stores/source_cache_*.json"],
       "target_authority": "contracts/stores/ for durable store shape",
       "risk": "source-cache packets and store rows can drift",
       "prerequisite": "store contract migration map",
@@ -54,8 +54,8 @@
     },
     {
       "backlog_id": "add_workbench_view_model_contract_location",
-      "current_paths": ["contracts/views/**", "surfaces/web/workbench/**", "surfaces/web/workbench/local_html/**"],
-      "target_authority": "contracts/views/workbench/",
+      "current_paths": ["contracts/view/pages/**", "surfaces/web/workbench/**", "surfaces/web/workbench/local_html/**"],
+      "target_authority": "contracts/view/pages/workbench/",
       "risk": "Workbench Foundation may otherwise put view law in surfaces or runtime",
       "prerequisite": "R0-03 reservation",
       "recommended_task": "WORKBENCH-FOUNDATION-00",

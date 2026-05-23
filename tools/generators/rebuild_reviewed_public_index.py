@@ -13,8 +13,8 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.public_index import rebuild_reviewed_public_index
-from runtime.public_index.validation import validate_public_index_path
+from runtime.index.public import rebuild_reviewed_public_index
+from runtime.index.public.validation import validate_public_index_path
 
 
 FORBIDDEN_OUTPUT_ROOTS = {

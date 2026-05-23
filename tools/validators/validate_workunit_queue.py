@@ -22,8 +22,8 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.local_appliance import close_local_appliance, open_local_appliance
-from runtime.workunit_queue import (
+from runtime.local.appliance import close_local_appliance, open_local_appliance
+from runtime.worker.workunit_queue import (
     ALLOWED_TRANSITIONS,
     ALLOWED_WORKUNIT_STATES,
     ALLOWED_WORKUNIT_TYPES,
@@ -51,14 +51,14 @@ INVENTORIES = {
     "control/inventory/local_07_next_task_decision.json": "local_07_next_task_decision.v0",
 }
 RUNTIME_FILES = (
-    "runtime/workunit_queue/__init__.py",
-    "runtime/workunit_queue/schema.py",
-    "runtime/workunit_queue/records.py",
-    "runtime/workunit_queue/store.py",
-    "runtime/workunit_queue/transitions.py",
-    "runtime/workunit_queue/queries.py",
-    "runtime/workunit_queue/validation.py",
-    "runtime/workunit_queue/errors.py",
+    "runtime/worker/workunit_queue/__init__.py",
+    "runtime/worker/workunit_queue/schema.py",
+    "runtime/worker/workunit_queue/records.py",
+    "runtime/worker/workunit_queue/store.py",
+    "runtime/worker/workunit_queue/transitions.py",
+    "runtime/worker/workunit_queue/queries.py",
+    "runtime/worker/workunit_queue/validation.py",
+    "runtime/worker/workunit_queue/errors.py",
 )
 SCRIPTS = (
     "scripts/eureka_workunit_queue.py",
@@ -256,7 +256,7 @@ def validate_policies(payloads: Mapping[str, Mapping[str, Any]], errors: list[st
 
 def validate_inventories(payloads: Mapping[str, Mapping[str, Any]], errors: list[str], warnings: list[str]) -> None:
     inventory = payloads.get("control/inventory/local_workunit_queue_inventory.json", {})
-    if inventory.get("runtime_package") != "runtime/workunit_queue":
+    if inventory.get("runtime_package") != "runtime/worker/workunit_queue":
         errors.append("workunit inventory runtime_package mismatch")
     if inventory.get("store_id") != "workunit_queue" or inventory.get("db_path") != "db/workunit_queue.sqlite":
         errors.append("workunit inventory store path mismatch")

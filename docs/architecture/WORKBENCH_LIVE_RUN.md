@@ -6,7 +6,7 @@ The foundation path is:
 
 ```text
 runtime/resolution_run
--> runtime/local_service/workbench_live_run
+-> runtime/local/service/workbench_live_run
 -> surfaces/web/workbench/local_html rendering
 -> local HTML/API routes
 ```
@@ -25,4 +25,4 @@ Boundaries:
 
 The presentation uses the surface-owned `surfaces/web/workbench/local_html`
 renderer. Runtime behavior remains in `runtime/resolution_run` and
-`runtime/local_service`.
+`runtime/local/service`.

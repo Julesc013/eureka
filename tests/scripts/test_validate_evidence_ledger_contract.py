@@ -18,7 +18,7 @@ class EvidenceLedgerContractValidatorTests(unittest.TestCase):
         report = json.loads(completed.stdout)
         self.assertEqual(report["status"], "valid")
         self.assertEqual(report["example_count"], 3)
-        self.assertEqual(report["contract_file"], "contracts/evidence_ledger/evidence_ledger_record.v0.json")
+        self.assertEqual(report["contract_file"], "contracts/evidence/ledger/evidence_ledger_record.v0.json")
 
 
 if __name__ == "__main__":

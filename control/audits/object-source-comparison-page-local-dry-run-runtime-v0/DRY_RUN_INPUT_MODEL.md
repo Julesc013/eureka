@@ -3,7 +3,7 @@
 Supported inputs:
 
 - Approved repo-local object page example JSON files under `examples/object_pages`.
-- Approved repo-local source page example JSON files under `examples/source_pages`.
+- Approved repo-local source page example JSON files under `examples/sources/pages`.
 - Approved repo-local comparison page example JSON files under `examples/comparison_pages`.
 - Approved repo-local page dry-run examples under `examples/page_runtime_dry_run`.
 - Explicit `--example-root` values under those approved roots.

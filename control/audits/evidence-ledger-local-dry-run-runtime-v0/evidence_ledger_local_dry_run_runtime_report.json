@@ -24,33 +24,33 @@
       "hosted runtime"
     ]
   },
-  "input_model": "Approved repo-local examples under examples/evidence_ledger/dry_run, explicit approved example roots, and synthetic temp test records only.",
+  "input_model": "Approved repo-local examples under examples/evidence/ledger/dry_run/dry_run, explicit approved example roots, and synthetic temp test records only.",
   "output_model": "Deterministic local_dry_run report with candidate summaries, classification counts, mutation summary, warnings, errors, and hard booleans.",
   "runtime_modules": [
-    "runtime/evidence_ledger/__init__.py",
-    "runtime/evidence_ledger/dry_run.py",
-    "runtime/evidence_ledger/models.py",
-    "runtime/evidence_ledger/policy.py",
-    "runtime/evidence_ledger/report.py",
-    "runtime/evidence_ledger/errors.py",
-    "runtime/evidence_ledger/README.md"
+    "runtime/evidence/ledger/__init__.py",
+    "runtime/evidence/ledger/dry_run.py",
+    "runtime/evidence/ledger/models.py",
+    "runtime/evidence/ledger/policy.py",
+    "runtime/evidence/ledger/report.py",
+    "runtime/evidence/ledger/errors.py",
+    "runtime/evidence/ledger/README.md"
   ],
   "cli_script": "scripts/run_evidence_ledger_dry_run.py",
   "validator_script": "scripts/validate_evidence_ledger_dry_run_report.py",
   "examples": [
-    "examples/evidence_ledger/dry_run/minimal_source_metadata_observation",
-    "examples/evidence_ledger/dry_run/minimal_availability_observation",
-    "examples/evidence_ledger/dry_run/minimal_release_metadata_observation",
-    "examples/evidence_ledger/dry_run/minimal_package_metadata_observation",
-    "examples/evidence_ledger/dry_run/minimal_capture_presence_observation",
-    "examples/evidence_ledger/dry_run/minimal_conflicting_claim_observation",
-    "examples/evidence_ledger/dry_run/minimal_scoped_absence_observation"
+    "examples/evidence/ledger/dry_run/dry_run/minimal_source_metadata_observation",
+    "examples/evidence/ledger/dry_run/dry_run/minimal_availability_observation",
+    "examples/evidence/ledger/dry_run/dry_run/minimal_release_metadata_observation",
+    "examples/evidence/ledger/dry_run/dry_run/minimal_package_metadata_observation",
+    "examples/evidence/ledger/dry_run/dry_run/minimal_capture_presence_observation",
+    "examples/evidence/ledger/dry_run/dry_run/minimal_conflicting_claim_observation",
+    "examples/evidence/ledger/dry_run/dry_run/minimal_scoped_absence_observation"
   ],
   "dry_run_results": {
     "report_id": "evidence-ledger-dry-run-1379c689d809acd1",
     "mode": "local_dry_run",
     "input_roots": [
-      "examples/evidence_ledger/dry_run"
+      "examples/evidence/ledger/dry_run/dry_run"
     ],
     "candidates_seen": 7,
     "candidates_valid": 7,

@@ -16,7 +16,7 @@ index mutation, or master-index mutation.
 - Standard-library runtime and CLI scripts.
 - Writes no files unless an explicit output path is provided.
 - Output paths are limited to `control/audits/**/generated/`,
-  `examples/pack_drafts/`, or explicit temporary test directories.
+  `examples/packs/drafts/`, or explicit temporary test directories.
 - All draft output remains review-gated.
 
 ## Supported Current Draft Types
@@ -43,6 +43,6 @@ index use.
 
 ```bash
 python scripts/validate_pack_builder_runtime.py
-python scripts/build_local_pack.py --pack-type evidence_pack_draft --input examples/evidence_ledger_records/metadata_claim_record_v0.json --check
-python scripts/summarize_local_pack.py --input examples/pack_drafts --check
+python scripts/build_local_pack.py --pack-type evidence_pack_draft --input examples/evidence/ledger/records/metadata_claim_record_v0.json --check
+python scripts/summarize_local_pack.py --input examples/packs/drafts --check
 ```

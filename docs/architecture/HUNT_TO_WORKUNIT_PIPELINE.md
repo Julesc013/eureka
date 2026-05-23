@@ -11,7 +11,7 @@ The pipeline is deliberately bounded:
 - No WorkUnit is run by this pipeline.
 - No source probe, extraction, model/provider call, review mutation, index mutation, or deployment is performed.
 
-SearchNeed kind mapping lives in `runtime/search_need/workunit_plan.py` and is summarized in `control/inventory/hunt_to_workunit_kind_matrix.json`.
+SearchNeed kind mapping lives in `runtime/search/need/workunit_plan.py` and is summarized in `control/inventory/hunt_to_workunit_kind_matrix.json`.
 
 HUNT-07 adds that deterministic background runner integration. It consumes linked WorkUnits from the HUNT-06 pipeline, runs only safe local worker kinds, and leaves policy-gated future work blocked.
 

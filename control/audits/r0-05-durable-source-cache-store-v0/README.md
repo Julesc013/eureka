@@ -2,7 +2,7 @@
 
 This audit pack records the first durable local source cache store.
 
-R0-05 adds a SQLite-backed runtime package under `runtime/source_cache/` that persists source records, metadata responses, source observations, normalized observations, and cache entries produced from the R0-04 source observation seam.
+R0-05 adds a SQLite-backed runtime package under `runtime/source/cache/` that persists source records, metadata responses, source observations, normalized observations, and cache entries produced from the R0-04 source observation seam.
 
 Boundaries:
 

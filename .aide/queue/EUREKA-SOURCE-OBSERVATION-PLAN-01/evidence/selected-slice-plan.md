@@ -31,8 +31,8 @@ Use synthetic/local fixture data from the existing source observation/source cac
 Preferred input refs:
 
 - `scripts/demo_source_cache_store.py::build_demo_objects`
-- `runtime/source_observation/**`
-- Optional comparison fixture: `examples/source_cache_records/source_metadata_record_v0.json`
+- `runtime/source/observation/**`
+- Optional comparison fixture: `examples/sources/cache/records/source_metadata_record_v0.json`
 
 ## What Remains Disabled
 
@@ -53,7 +53,7 @@ Preferred input refs:
 
 - `.aide/queue/EUREKA-SOURCE-SLICE-01/**`
 - `.aide/reports/eureka-fixture-source-observation-slice.md`
-- `runtime/local_foundry/fixture_source_observation_slice.py`
+- `runtime/local/foundry/fixture_source_observation_slice.py`
 - `scripts/validate_fixture_source_observation_vertical_slice.py`
 - `tests/runtime/test_fixture_source_observation_vertical_slice.py`
 - `tests/operations/test_fixture_source_observation_vertical_slice_script.py`

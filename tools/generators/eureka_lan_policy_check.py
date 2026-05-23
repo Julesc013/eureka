@@ -14,7 +14,7 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.local_network import build_firewall_warning, build_lan_warning, is_lan_bind_host, validate_service_host
+from runtime.local.network import build_firewall_warning, build_lan_warning, is_lan_bind_host, validate_service_host
 
 
 def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr: TextIO = sys.stderr) -> int:

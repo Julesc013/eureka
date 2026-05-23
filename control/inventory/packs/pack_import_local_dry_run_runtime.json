@@ -23,12 +23,12 @@
   "telemetry_enabled": false,
   "credentials_enabled": false,
   "approved_input_roots": [
-    "examples/source_packs",
-    "examples/evidence_packs",
-    "examples/index_packs",
-    "examples/contribution_packs",
+    "examples/packs/source",
+    "examples/packs/evidence",
+    "examples/packs/index",
+    "examples/packs/contribution",
     "examples/packs",
-    "examples/pack_import_dry_run"
+    "examples/packs/import_dry_run"
   ],
   "cli": "python scripts/run_pack_import_dry_run.py --all-examples --json",
   "validator": "python scripts/validate_pack_import_dry_run_report.py",

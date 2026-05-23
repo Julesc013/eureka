@@ -10,11 +10,11 @@ It does not turn source metadata into runtime truth on its own.
 
 The current Source Registry v0 implementation is split across:
 
-- `contracts/source_registry/` for draft schemas
+- `contracts/source/registry/` for draft schemas
 - `control/inventory/sources/` for governed seed records
-- `runtime/source_registry/` for stdlib-only runtime loading and filtering
+- `runtime/source/registry/` for stdlib-only runtime loading and filtering
 - `runtime/gateway/public_api/source_registry_boundary.py` for transport-neutral public projection
-- `contracts/ui/view_models/source_registry.view_model.yaml` for shared surface projection
+- `contracts/view/models/ui/source_registry.view_model.yaml` for shared surface projection
 
 ## Purpose
 

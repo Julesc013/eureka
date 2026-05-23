@@ -20,7 +20,7 @@ from typing import Any, Iterable, Mapping, Sequence, TextIO
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
-EXAMPLES_ROOT = REPO_ROOT / "examples" / "source_sync"
+EXAMPLES_ROOT = REPO_ROOT / "examples" / "sources" / "sync"
 JOB_FILE_NAME = "SOURCE_SYNC_WORKER_JOB.json"
 
 REQUIRED_TOP_LEVEL = {
@@ -262,7 +262,7 @@ def validate_all_examples(*, strict: bool = False) -> dict[str, Any]:
     results: list[dict[str, Any]] = []
     roots = sorted(path for path in EXAMPLES_ROOT.iterdir() if path.is_dir()) if EXAMPLES_ROOT.is_dir() else []
     if not roots:
-        errors.append("examples/source_sync: no example roots found.")
+        errors.append("examples/sources/sync: no example roots found.")
     for root in roots:
         report = validate_job_root(root, strict=strict)
         results.append(report)

@@ -26,8 +26,8 @@ REQUIRED_FILES = [
     "control/inventory/ia_live_probe_result_summary.json",
     "control/inventory/ia_live_probe_normalized_preview.json",
     "control/inventory/ia_live_probe_boundary_report.json",
-    "runtime/source_observation/internet_archive_live_transport.py",
-    "runtime/source_observation/internet_archive_live_probe.py",
+    "runtime/source/observation/internet_archive_live_transport.py",
+    "runtime/source/observation/internet_archive_live_probe.py",
     "scripts/eureka_ia_live_metadata_probe.py",
 ]
 
@@ -45,8 +45,8 @@ LATEST_BOUNDARY_PATHS = [
 ]
 
 ALLOWED_NETWORK_IMPORT_FILES = {
-    "runtime/source_observation/internet_archive_live_transport.py",
-    "runtime/source_observation/internet_archive_live_probe.py",
+    "runtime/source/observation/internet_archive_live_transport.py",
+    "runtime/source/observation/internet_archive_live_probe.py",
     "scripts/eureka_ia_live_metadata_probe.py",
 }
 
@@ -301,7 +301,7 @@ def _contains_raw_body(value: Any) -> bool:
 
 
 def _validate_network_imports(repo_root: Path, errors: list[str]) -> None:
-    for path in (repo_root / "runtime/source_observation").glob("internet_archive*.py"):
+    for path in (repo_root / "runtime/source/observation").glob("internet_archive*.py"):
         relative = path.relative_to(repo_root).as_posix()
         tree = ast.parse(path.read_text(encoding="utf-8"), filename=str(path))
         for node in ast.walk(tree):
@@ -345,7 +345,7 @@ def _validate_no_forbidden_git_state(repo_root: Path, errors: list[str], warning
             "--",
             "runtime/connectors",
             "runtime/extraction",
-            "runtime/search_quality",
+            "runtime/search/quality",
             "site/dist/data/public_index",
             "site/dist",
             "native",

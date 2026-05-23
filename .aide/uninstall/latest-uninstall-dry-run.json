@@ -10616,7 +10616,7 @@
       "preserve_target_state": true,
       "reason": "Target-specific or local state is preserved by default.",
       "recovery_hint": "Future uninstall apply requires ownership evidence, review, validation, and recovery instructions.",
-      "target_path": "examples/query_guard/minimal_secret_rejected_v0/CHECKSUMS.SHA256",
+      "target_path": "examples/search/query_guard/minimal_secret_rejected_v0/CHECKSUMS.SHA256",
       "uninstall_class": "preserve_local_state_ignored",
       "validation_required": [
         "py -3 .aide/scripts/aide_lite.py doctor",
@@ -10639,7 +10639,7 @@
       "preserve_target_state": true,
       "reason": "Target-specific or local state is preserved by default.",
       "recovery_hint": "Future uninstall apply requires ownership evidence, review, validation, and recovery instructions.",
-      "target_path": "examples/query_guard/minimal_secret_rejected_v0/QUERY_GUARD_DECISION.json",
+      "target_path": "examples/search/query_guard/minimal_secret_rejected_v0/QUERY_GUARD_DECISION.json",
       "uninstall_class": "preserve_local_state_ignored",
       "validation_required": [
         "py -3 .aide/scripts/aide_lite.py doctor",
@@ -10662,7 +10662,7 @@
       "preserve_target_state": true,
       "reason": "Target-specific or local state is preserved by default.",
       "recovery_hint": "Future uninstall apply requires ownership evidence, review, validation, and recovery instructions.",
-      "target_path": "examples/query_guard/minimal_secret_rejected_v0/README.md",
+      "target_path": "examples/search/query_guard/minimal_secret_rejected_v0/README.md",
       "uninstall_class": "preserve_local_state_ignored",
       "validation_required": [
         "py -3 .aide/scripts/aide_lite.py doctor",

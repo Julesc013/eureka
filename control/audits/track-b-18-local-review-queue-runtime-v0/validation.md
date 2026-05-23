@@ -18,8 +18,8 @@ Validation was run locally on 2026-05-09.
 - `python scripts/validate_local_evidence_ledger_runtime.py`: PASS
 - `python scripts/validate_source_cache_to_evidence_bridge.py`: PASS
 - `python scripts/validate_local_review_queue_runtime.py`: PASS
-- `python scripts/record_review_queue.py --input examples/review_queue_entries/candidate_needs_review_v0.json --check`: PASS
-- `python scripts/summarize_review_queue.py --input examples/review_queue_entries --check`: PASS
+- `python scripts/record_review_queue.py --input examples/review/queue_entries/candidate_needs_review_v0.json --check`: PASS
+- `python scripts/summarize_review_queue.py --input examples/review/queue_entries --check`: PASS
 - `python -m unittest tests.runtime.test_local_review_queue_runtime tests.operations.test_local_review_queue_runtime_scripts`: PASS
 - `python scripts/check_architecture_boundaries.py`: PASS
 - `python -m unittest discover -s tests -t .`: FAIL, unrelated OBS-agent hardening test reports staged scripts containing a forbidden Google-scraping string literal.

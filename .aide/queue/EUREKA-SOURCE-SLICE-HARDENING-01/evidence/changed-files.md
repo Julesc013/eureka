@@ -2,7 +2,7 @@
 
 Q59 product/test hardening:
 
-- `runtime/local_foundry/fixture_source_observation_slice.py`
+- `runtime/local/foundry/fixture_source_observation_slice.py`
   - repaired missing `tempfile` import for default temp output;
   - hardened report validation for positive result packet, object/evidence ref matching, and rebuild no-mutation flags.
 - `tests/runtime/test_fixture_source_observation_vertical_slice.py`

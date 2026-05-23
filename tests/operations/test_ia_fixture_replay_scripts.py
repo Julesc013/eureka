@@ -51,10 +51,10 @@ class IAFixtureReplayScriptTests(unittest.TestCase):
     def test_no_forbidden_network_imports_in_ia_replay_modules(self):
         forbidden = ("requests", "httpx", "aiohttp", "urllib.request", "selenium", "playwright", "openai")
         for relative in (
-            "runtime/source_observation/internet_archive_metadata.py",
-            "runtime/source_observation/internet_archive_normalization.py",
-            "runtime/source_observation/internet_archive_validation.py",
-            "runtime/source_observation/internet_archive_fixture_replay.py",
+            "runtime/source/observation/internet_archive_metadata.py",
+            "runtime/source/observation/internet_archive_normalization.py",
+            "runtime/source/observation/internet_archive_validation.py",
+            "runtime/source/observation/internet_archive_fixture_replay.py",
             "scripts/eureka_ia_fixture_replay.py",
             "scripts/validate_ia_fixture_replay.py",
         ):

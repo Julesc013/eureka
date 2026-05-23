@@ -11,4 +11,4 @@ Validation commands are recorded in the final task report.
 
 Older LOCAL phase validators were also sampled; several are phase-specific and
 fail once the queue is advanced to LOCAL-09 or once LOCAL-08 introduces
-operator-gated review/rebuild imports in `runtime/local_service`.
+operator-gated review/rebuild imports in `runtime/local/service`.

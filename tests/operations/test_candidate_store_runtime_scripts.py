@@ -15,7 +15,7 @@ from scripts.validate_candidate_store_runtime import validate_candidate_store_ru
 
 
 ROOT = Path(__file__).resolve().parents[2]
-SEARCH_NEED_INPUT = ROOT / "examples" / "search_needs" / "software_version_search_need_v0.json"
+SEARCH_NEED_INPUT = ROOT / "examples" / "search" / "needs" / "software_version_search_need_v0.json"
 
 
 class CandidateStoreScriptTests(unittest.TestCase):
@@ -78,7 +78,7 @@ class CandidateStoreScriptTests(unittest.TestCase):
     def test_summarizer_works_on_examples(self) -> None:
         stdout = io.StringIO()
 
-        result = summarize_candidate_store_main(["--input", str(ROOT / "examples" / "candidates"), "--check"], stdout=stdout)
+        result = summarize_candidate_store_main(["--input", str(ROOT / "examples" / "index" / "candidates"), "--check"], stdout=stdout)
 
         self.assertEqual(result, 0)
         self.assertIn("candidate_count: 7", stdout.getvalue())
@@ -111,7 +111,7 @@ class CandidateStoreScriptTests(unittest.TestCase):
 def _tracked_relevant_files() -> list[str]:
     roots = [
         ROOT / "control" / "audits" / "track-b-12-candidate-store-runtime-v0" / "generated",
-        ROOT / "examples" / "candidates",
+        ROOT / "examples" / "index" / "candidates",
     ]
     results: list[str] = []
     for root in roots:

@@ -1,7 +1,7 @@
 {
   "schema_version": "source_observation_seam_inventory.v0",
   "task": "R0-04",
-  "runtime_package": "runtime/source_observation",
+  "runtime_package": "runtime/source/observation",
   "public_api": [
     "SourceId",
     "SourceRecord",
@@ -25,7 +25,7 @@
     "contracts/domain/source_policy.v0.json",
     "contracts/runtime/metadata_request.v0.json",
     "contracts/runtime/metadata_response.v0.json",
-    "contracts/runtime/source_observation.v0.json",
+    "contracts/runtime/source/observation.v0.json",
     "contracts/runtime/normalized_observation.v0.json",
     "contracts/runtime/evidence_candidate.v0.json",
     "contracts/runtime/review_item.v0.json",

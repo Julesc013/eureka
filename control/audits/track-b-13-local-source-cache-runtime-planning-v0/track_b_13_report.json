@@ -19,10 +19,10 @@
     "control/inventory/source_cache/local_source_cache_rollout_plan.json"
   ],
   "added_examples": [
-    "examples/source_cache_plans/minimal_local_source_cache_plan_v0.json",
-    "examples/source_cache_plans/fixture_only_source_cache_plan_v0.json",
-    "examples/source_cache_plans/approved_metadata_probe_future_plan_v0.json",
-    "examples/source_cache_plans/policy_blocked_source_cache_plan_v0.json"
+    "examples/sources/cache/plans/minimal_local_source_cache_plan_v0.json",
+    "examples/sources/cache/plans/fixture_only_source_cache_plan_v0.json",
+    "examples/sources/cache/plans/approved_metadata_probe_future_plan_v0.json",
+    "examples/sources/cache/plans/policy_blocked_source_cache_plan_v0.json"
   ],
   "added_validators": [
     "scripts/validate_local_source_cache_runtime_plan.py",

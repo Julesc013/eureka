@@ -1,7 +1,7 @@
 {
   "schema_version": "0.1.0",
   "policy_id": "absence_page_view_model_policy_v0",
-  "contract_ref": "contracts/views/absence_page.v0.json",
+  "contract_ref": "contracts/view/pages/absence_page.v0.json",
   "label": "AbsencePage view model policy v0",
   "description": "Policy inventory for public-safe AbsencePageView records across standard, lite, text, file, API-adjacent, manifest, snapshot, relay, terminal, print, and native-card projections.",
   "status": "contract_only",

@@ -1137,7 +1137,7 @@
       {
         "evidence": [
           "label Archive Viewer synthetic_fixture recorded_fixture Synthetic Fixture",
-          "source_locator contracts/control_schemas/fixtures/archive/software/synthetic_resolution_fixture.json synthetic_fixture recorded_fixture Synthetic Fixture"
+          "source_locator contracts/schema/control/fixtures/archive/software/synthetic_resolution_fixture.json synthetic_fixture recorded_fixture Synthetic Fixture"
         ],
         "index_record_id": "resolved_object:fixture:software/archive-viewer@0.9.0",
         "label": "Archive Viewer",
@@ -1169,7 +1169,7 @@
       {
         "evidence": [
           "label ArchiveBox 0.8.5 synthetic_fixture recorded_fixture Synthetic Fixture",
-          "source_locator contracts/control_schemas/fixtures/archive/software/synthetic_resolution_fixture.json synthetic_fixture recorded_fixture Synthetic Fixture"
+          "source_locator contracts/schema/control/fixtures/archive/software/synthetic_resolution_fixture.json synthetic_fixture recorded_fixture Synthetic Fixture"
         ],
         "index_record_id": "resolved_object:fixture:software/archivebox@0.8.5",
         "label": "ArchiveBox 0.8.5",
@@ -1264,7 +1264,7 @@
       {
         "evidence": [
           "label Compatibility Lab synthetic_fixture recorded_fixture Synthetic Fixture",
-          "source_locator contracts/control_schemas/fixtures/archive/software/synthetic_resolution_fixture.json synthetic_fixture recorded_fixture Synthetic Fixture"
+          "source_locator contracts/schema/control/fixtures/archive/software/synthetic_resolution_fixture.json synthetic_fixture recorded_fixture Synthetic Fixture"
         ],
         "index_record_id": "resolved_object:fixture:software/compatibility-lab@3.2.1",
         "label": "Compatibility Lab",
@@ -1398,7 +1398,7 @@
       {
         "evidence": [
           "label Synthetic Demo App synthetic_fixture recorded_fixture Synthetic Fixture",
-          "source_locator contracts/control_schemas/fixtures/archive/software/synthetic_resolution_fixture.json synthetic_fixture recorded_fixture Synthetic Fixture"
+          "source_locator contracts/schema/control/fixtures/archive/software/synthetic_resolution_fixture.json synthetic_fixture recorded_fixture Synthetic Fixture"
         ],
         "index_record_id": "resolved_object:fixture:software/synthetic-demo-app@1.0.0",
         "label": "Synthetic Demo App",
@@ -1496,7 +1496,7 @@
       {
         "evidence": [
           "label Synthetic Demo Suite synthetic_fixture recorded_fixture Synthetic Fixture",
-          "source_locator contracts/control_schemas/fixtures/archive/software/synthetic_resolution_fixture.json synthetic_fixture recorded_fixture Synthetic Fixture"
+          "source_locator contracts/schema/control/fixtures/archive/software/synthetic_resolution_fixture.json synthetic_fixture recorded_fixture Synthetic Fixture"
         ],
         "index_record_id": "resolved_object:fixture:software/synthetic-demo-suite@2.0.0",
         "label": "Synthetic Demo Suite",
@@ -4323,7 +4323,7 @@
       {
         "evidence": [
           "label Archive Viewer synthetic_fixture recorded_fixture Synthetic Fixture",
-          "source_locator contracts/control_schemas/fixtures/archive/software/synthetic_resolution_fixture.json synthetic_fixture recorded_fixture Synthetic Fixture"
+          "source_locator contracts/schema/control/fixtures/archive/software/synthetic_resolution_fixture.json synthetic_fixture recorded_fixture Synthetic Fixture"
         ],
         "index_record_id": "state_or_release:state.archive-viewer.release",
         "label": "Archive Viewer 0.9.0",
@@ -4384,7 +4384,7 @@
       },
       {
         "evidence": [
-          "source_locator contracts/control_schemas/fixtures/archive/software/synthetic_resolution_fixture.json synthetic_fixture recorded_fixture Synthetic Fixture"
+          "source_locator contracts/schema/control/fixtures/archive/software/synthetic_resolution_fixture.json synthetic_fixture recorded_fixture Synthetic Fixture"
         ],
         "index_record_id": "evidence:fixture:software/archive-viewer@0.9.0:1",
         "label": "Archive Viewer evidence 2",

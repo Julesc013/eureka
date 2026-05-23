@@ -4,11 +4,11 @@ Source Sync Worker Contract v0 defines future source sync worker job and manifes
 
 ## Job Shape
 
-`contracts/source_sync/source_sync_worker_job.v0.json` records job identity, job kind taxonomy, source target, source policy, approval gates, scheduling, retry/timeout/rate-limit/circuit-breaker policy, User-Agent and source terms policy, input refs, expected outputs, safety requirements, privacy, rights/risk, limitations, and hard no-execution/no-mutation guarantees.
+`contracts/source/sync/source_sync_worker_job.v0.json` records job identity, job kind taxonomy, source target, source policy, approval gates, scheduling, retry/timeout/rate-limit/circuit-breaker policy, User-Agent and source terms policy, input refs, expected outputs, safety requirements, privacy, rights/risk, limitations, and hard no-execution/no-mutation guarantees.
 
 ## Future Worker Manifest
 
-`contracts/source_sync/source_sync_worker_manifest.v0.json` describes a future worker family, supported job kinds, allowed source families, defaults, required approvals, safety defaults, output policy, and no-runtime guarantees. Runtime is not implemented.
+`contracts/source/sync/source_sync_worker_manifest.v0.json` describes a future worker family, supported job kinds, allowed source families, defaults, required approvals, safety defaults, output policy, and no-runtime guarantees. Runtime is not implemented.
 
 ## Source Policy And Approval
 

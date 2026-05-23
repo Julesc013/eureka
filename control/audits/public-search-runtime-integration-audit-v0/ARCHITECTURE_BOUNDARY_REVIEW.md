@@ -15,7 +15,7 @@ Expected boundary:
 Audit result:
 
 - No unexpected integration was found.
-- `runtime/source_cache` and `runtime/evidence_ledger` are local dry-run packages,
+- `runtime/source/cache` and `runtime/evidence/ledger` are local dry-run packages,
   not gateway dependencies.
 - Public search gateway code remains in `runtime/gateway/public_api/` and does not
   import the P98/P99 dry-run runtimes.

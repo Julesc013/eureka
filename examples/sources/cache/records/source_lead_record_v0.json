@@ -1,0 +1,44 @@
+{
+  "schema_version": "local_source_cache_record.v0",
+  "input_id": "source_lead_fixture_v0",
+  "input_type": "source_lead_candidate",
+  "input_ref": "examples/sources/cache/records/source_lead_record_v0.json",
+  "input_status": "candidate_source_record",
+  "input_public_safe": true,
+  "input_summary": "Source lead candidate for a metadata fixture.",
+  "source_cache_record_status": "candidate_source_record",
+  "source_cache_record_type": "source_lead_record",
+  "source_id": "source:fixture:source-lead",
+  "source_label": "Source Lead Fixture",
+  "source_family": "source_lead_fixture",
+  "source_kind": "source_lead",
+  "source_locator": "fixture:source-cache:source-lead",
+  "source_access_mode": "repo_local_only",
+  "source_policy_status": "review_required",
+  "source_authority_posture": "lead_not_validated_source",
+  "source_coverage_summary": "Lead may help plan future source cache review.",
+  "source_metadata_summary": "Lead names a possible metadata source family without validating it.",
+  "source_health_summary": "No live source health check.",
+  "source_limitations": [
+    "Lead is provisional.",
+    "No source availability is established."
+  ],
+  "source_observation_summary": "The source lead is normalized into a reviewable fixture record.",
+  "normalized_fields": {
+    "lead_status": "candidate",
+    "downstream_bridge": "review_required_future"
+  },
+  "related_candidate_refs": [
+    "candidate.source_lead.fixture.v0"
+  ],
+  "related_search_need_refs": [],
+  "related_workunit_refs": [],
+  "related_source_lead_refs": [
+    "source_lead.fixture.v0"
+  ],
+  "related_pack_refs_future": [],
+  "related_evidence_refs_future": [],
+  "notes": [
+    "This is the sample input for the B-15 generated report."
+  ]
+}

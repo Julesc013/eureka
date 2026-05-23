@@ -4,17 +4,17 @@
   "repo_head": "adeb1174532be5682ce9a780d81872d392fa374c",
   "branch": "main",
   "worktree_status": "dirty_with_p65_changes_validated_pending_commit",
-  "contract_file": "contracts/control_schemas/previews/query/candidate_promotion_assessment.v0.json",
+  "contract_file": "contracts/schema/control/previews/query/candidate_promotion_assessment.v0.json",
   "validator_scripts": [
     "scripts/validate_candidate_promotion_assessment.py",
     "scripts/validate_candidate_promotion_policy.py",
     "scripts/dry_run_candidate_promotion_assessment.py"
   ],
   "example_promotion_assessments": [
-    "examples/candidate_promotion/minimal_promotion_review_required_v0/CANDIDATE_PROMOTION_ASSESSMENT.json",
-    "examples/candidate_promotion/minimal_rejection_assessment_v0/CANDIDATE_PROMOTION_ASSESSMENT.json",
-    "examples/candidate_promotion/minimal_quarantine_assessment_v0/CANDIDATE_PROMOTION_ASSESSMENT.json",
-    "examples/candidate_promotion/minimal_supersession_assessment_v0/CANDIDATE_PROMOTION_ASSESSMENT.json"
+    "examples/review/candidate_promotion/minimal_promotion_review_required_v0/CANDIDATE_PROMOTION_ASSESSMENT.json",
+    "examples/review/candidate_promotion/minimal_rejection_assessment_v0/CANDIDATE_PROMOTION_ASSESSMENT.json",
+    "examples/review/candidate_promotion/minimal_quarantine_assessment_v0/CANDIDATE_PROMOTION_ASSESSMENT.json",
+    "examples/review/candidate_promotion/minimal_supersession_assessment_v0/CANDIDATE_PROMOTION_ASSESSMENT.json"
   ],
   "candidate_promotion_policy": "control/inventory/query_intelligence/candidate_promotion_policy.json",
   "eligibility_gates": [

@@ -4,8 +4,8 @@ import json
 from pathlib import Path
 import unittest
 
-from runtime.search_quality.dedup_shadow import build_dedup_shadow, validate_dedup_shadow
-from runtime.search_quality.identity_shadow import build_identity_merge_shadow
+from runtime.search.quality.dedup_shadow import build_dedup_shadow, validate_dedup_shadow
+from runtime.search.quality.identity_shadow import build_identity_merge_shadow
 
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -17,7 +17,7 @@ def load(rel: str):
 
 class IdentityAndDedupShadowTests(unittest.TestCase):
     def setUp(self) -> None:
-        self.items = load("examples/search_quality/ranking/input_bundle_software_v0.json")["items"]
+        self.items = load("examples/search/quality/ranking/input_bundle_software_v0.json")["items"]
 
     def test_identity_merge_shadow_preserves_conflicts(self) -> None:
         record = build_identity_merge_shadow(self.items)

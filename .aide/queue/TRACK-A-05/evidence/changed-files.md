@@ -2,7 +2,7 @@
 
 ## Contract Bundle
 
-- `contracts/views/object_page.v0.json`
+- `contracts/view/pages/object_page.v0.json`
 - `docs/reference/OBJECT_PAGE_VIEW_MODEL_CONTRACT.md`
 - `control/inventory/publication/object_page_view_model_policy.json`
 - `examples/view_models/object_page/minimal_object_page_v0.json`

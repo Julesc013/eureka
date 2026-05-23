@@ -1,0 +1,575 @@
+{
+  "active_top_level_roots": [
+    ".aide",
+    ".aide.local.example",
+    ".github",
+    "archive",
+    "contracts",
+    "control",
+    "crates",
+    "docs",
+    "evals",
+    "examples",
+    "external",
+    "native",
+    "release",
+    "runtime",
+    "scripts",
+    "site",
+    "snapshots",
+    "surfaces",
+    "tests",
+    "tools"
+  ],
+  "aide_largest_tracked_files": [
+    {
+      "bytes": 14580448,
+      "path": ".aide/repo/dependency-map.json"
+    },
+    {
+      "bytes": 13700899,
+      "path": ".aide/roots/latest-root-classification.json"
+    },
+    {
+      "bytes": 11615992,
+      "path": ".aide/repo/file-inventory.json"
+    },
+    {
+      "bytes": 8192713,
+      "path": ".aide/context/repo-map.json"
+    },
+    {
+      "bytes": 7995713,
+      "path": ".aide/reports/file-quality-ledger/shards/file-quality-ledger-0003.json"
+    },
+    {
+      "bytes": 7992772,
+      "path": ".aide/reports/file-quality-ledger/shards/file-quality-ledger-0001.json"
+    },
+    {
+      "bytes": 7991561,
+      "path": ".aide/reports/file-quality-ledger/shards/file-quality-ledger-0002.json"
+    },
+    {
+      "bytes": 7988449,
+      "path": ".aide/reports/file-quality-ledger/shards/file-quality-ledger-0004.json"
+    },
+    {
+      "bytes": 6376339,
+      "path": ".aide/tools/eureka-tool-classification.json"
+    },
+    {
+      "bytes": 5729895,
+      "path": ".aide/tools/latest-tool-classification.json"
+    },
+    {
+      "bytes": 5553338,
+      "path": ".aide/tools/eureka-tool-inventory.json"
+    },
+    {
+      "bytes": 5512342,
+      "path": ".aide/context/repo-snapshot.json"
+    },
+    {
+      "bytes": 5264344,
+      "path": ".aide/repo/orphan-candidates.json"
+    },
+    {
+      "bytes": 3910697,
+      "path": ".aide/repo/doc-link-map.json"
+    },
+    {
+      "bytes": 3159948,
+      "path": ".aide/context/test-map.json"
+    },
+    {
+      "bytes": 2997028,
+      "path": ".aide/tools/latest-tool-inventory.json"
+    },
+    {
+      "bytes": 2140516,
+      "path": ".aide/reports/file-quality-ledger/shards/file-quality-ledger-0005.json"
+    },
+    {
+      "bytes": 2083770,
+      "path": ".aide/tools/latest-tool-wrap-plan.json"
+    },
+    {
+      "bytes": 1456547,
+      "path": ".aide/repo/ownership-map.json"
+    },
+    {
+      "bytes": 1433401,
+      "path": ".aide/scripts/aide_lite.py"
+    },
+    {
+      "bytes": 1426577,
+      "path": ".aide/export/aide-lite-pack-v0/files/.aide/scripts/aide_lite.py"
+    },
+    {
+      "bytes": 1382758,
+      "path": ".aide/install/latest-install-observation.json"
+    },
+    {
+      "bytes": 804681,
+      "path": ".aide/tools/latest-tool-adapter-map.json"
+    },
+    {
+      "bytes": 660956,
+      "path": ".aide/uninstall/latest-uninstall-plan.json"
+    },
+    {
+      "bytes": 633470,
+      "path": ".aide/uninstall/latest-uninstall-dry-run.json"
+    }
+  ],
+  "aide_tracked_file_count": 1990,
+  "branch": "dev",
+  "commit": "d971a418d16adcf547d4416b2e09aeccbcda38f4",
+  "control_audits_generated_count": 1314,
+  "control_audits_generated_largest_files": [
+    {
+      "bytes": 2598148,
+      "path": "control/audits/h14-bundle-04-source-discovery-review-quality-audit-v0/generated/h14_review_integration_result_v0.json"
+    },
+    {
+      "bytes": 2598148,
+      "path": "control/audits/h14-bundle-04-source-discovery-review-quality-audit-v0/generated/sample_h14_review_integration_result.json"
+    },
+    {
+      "bytes": 2001231,
+      "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_reference_graph.json"
+    },
+    {
+      "bytes": 1918353,
+      "path": "control/audits/h7-bundle-04-library-research-review-quality-audit-v0/generated/h7_review_integration_result_v0.json"
+    },
+    {
+      "bytes": 1918353,
+      "path": "control/audits/h7-bundle-04-library-research-review-quality-audit-v0/generated/sample_h7_review_integration_result.json"
+    },
+    {
+      "bytes": 1637416,
+      "path": "control/audits/h12-bundle-04-retro-community-review-quality-audit-v0/generated/h12_review_integration_result_v0.json"
+    },
+    {
+      "bytes": 1637416,
+      "path": "control/audits/h12-bundle-04-retro-community-review-quality-audit-v0/generated/sample_h12_review_integration_result.json"
+    },
+    {
+      "bytes": 1606724,
+      "path": "control/audits/r0-03b-2-contract-reference-product-cleanup-v0/generated/sample_reference_update_result.json"
+    },
+    {
+      "bytes": 1379182,
+      "path": "control/audits/h9-bundle-04-media-metadata-review-quality-audit-v0/generated/h9_review_integration_result_v0.json"
+    },
+    {
+      "bytes": 1379182,
+      "path": "control/audits/h9-bundle-04-media-metadata-review-quality-audit-v0/generated/sample_h9_review_integration_result.json"
+    },
+    {
+      "bytes": 1322389,
+      "path": "control/audits/h13-bundle-04-local-private-review-quality-audit-v0/generated/h13_review_integration_result_v0.json"
+    },
+    {
+      "bytes": 1322389,
+      "path": "control/audits/h13-bundle-04-local-private-review-quality-audit-v0/generated/sample_h13_review_integration_result.json"
+    },
+    {
+      "bytes": 1297105,
+      "path": "control/audits/h8-bundle-04-manuals-docs-review-quality-audit-v0/generated/h8_review_integration_result_v0.json"
+    },
+    {
+      "bytes": 1297105,
+      "path": "control/audits/h8-bundle-04-manuals-docs-review-quality-audit-v0/generated/sample_h8_review_integration_result.json"
+    },
+    {
+      "bytes": 1188454,
+      "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_taxonomy_inventory.json"
+    },
+    {
+      "bytes": 1078777,
+      "path": "control/audits/h11-bundle-04-storefront-review-quality-audit-v0/generated/h11_review_integration_result_v0.json"
+    },
+    {
+      "bytes": 1078777,
+      "path": "control/audits/h11-bundle-04-storefront-review-quality-audit-v0/generated/sample_h11_review_integration_result.json"
+    },
+    {
+      "bytes": 1027999,
+      "path": "control/audits/h10-bundle-04-games-emulation-review-quality-audit-v0/generated/h10_review_integration_result_v0.json"
+    },
+    {
+      "bytes": 1027999,
+      "path": "control/audits/h10-bundle-04-games-emulation-review-quality-audit-v0/generated/sample_h10_review_integration_result.json"
+    },
+    {
+      "bytes": 903053,
+      "path": "control/audits/r0-03b-1-contract-taxonomy-migration-v0/generated/sample_reference_update_report.json"
+    },
+    {
+      "bytes": 676846,
+      "path": "control/audits/h5-bundle-04-vendor-update-review-quality-audit-v0/generated/h5_review_integration_result_v0.json"
+    },
+    {
+      "bytes": 676846,
+      "path": "control/audits/h5-bundle-04-vendor-update-review-quality-audit-v0/generated/sample_h5_review_integration_result.json"
+    },
+    {
+      "bytes": 637617,
+      "path": "control/audits/h6-bundle-04-web-archive-review-quality-audit-v0/generated/h6_review_integration_result_v0.json"
+    },
+    {
+      "bytes": 637617,
+      "path": "control/audits/h6-bundle-04-web-archive-review-quality-audit-v0/generated/sample_h6_review_integration_result.json"
+    },
+    {
+      "bytes": 532327,
+      "path": "control/audits/r0-03a-contract-taxonomy-refactor-plan-v0/generated/sample_contract_migration_plan.json"
+    }
+  ],
+  "dirty": false,
+  "dirty_status": [],
+  "first_level": {
+    "contracts": [
+      "actions",
+      "ai",
+      "api",
+      "archive",
+      "connectors",
+      "control_schemas",
+      "domain",
+      "evidence",
+      "evidence_ledger",
+      "explanation",
+      "extraction",
+      "gateway",
+      "hosting",
+      "identity",
+      "master_index",
+      "native",
+      "node",
+      "packs",
+      "pages",
+      "projections",
+      "query",
+      "relay",
+      "repo",
+      "representations",
+      "resolution_run",
+      "runtime",
+      "scout",
+      "search",
+      "search_interaction",
+      "search_quality",
+      "snapshots",
+      "source_cache",
+      "source_registry",
+      "source_sync",
+      "sources",
+      "stores",
+      "testing",
+      "ui",
+      "user_cost",
+      "view_models",
+      "views",
+      "workbench"
+    ],
+    "examples": [
+      "actions",
+      "ai_assisted_drafting",
+      "ai_providers",
+      "audits",
+      "candidate_index",
+      "candidate_promotion",
+      "candidate_promotion_dry_runs",
+      "candidates",
+      "commit_messages",
+      "comparison_pages",
+      "compatibility_aware_ranking",
+      "connectors",
+      "contribution_packs",
+      "demand_dashboard",
+      "design_tokens",
+      "domain",
+      "evidence_ledger",
+      "evidence_ledger_plans",
+      "evidence_ledger_records",
+      "evidence_packs",
+      "evidence_weighted_ranking",
+      "extraction",
+      "f0",
+      "hosting",
+      "ia_hunt_bridge",
+      "ia_live_metadata_lane",
+      "identity_resolution",
+      "import_reports",
+      "index_packs",
+      "internet_archive_metadata",
+      "known_absence_pages",
+      "local_foundry_state",
+      "local_staging_manifests",
+      "manual_observations",
+      "master_index_review_queue",
+      "native",
+      "node_policy_evaluations",
+      "nodes",
+      "object_pages",
+      "observation_candidates",
+      "observation_reviews",
+      "pack_builder",
+      "pack_drafts",
+      "pack_exports",
+      "pack_import_dry_run",
+      "pack_quarantine",
+      "page_runtime_dry_run",
+      "play",
+      "probe_queue",
+      "public_search_ranking_dry_run",
+      "query_guard",
+      "query_observations",
+      "query_result_cache",
+      "relay",
+      "renderer_parity",
+      "representations",
+      "resolution_run",
+      "result_merge",
+      "review_queue",
+      "review_queue_entries",
+      "reviewed_index",
+      "reviewed_public_index_rebuilds",
+      "reviewed_public_records",
+      "scout",
+      "search_miss_ledger",
+      "search_misses",
+      "search_need_seed_conversions",
+      "search_need_seeds",
+      "search_needs",
+      "search_quality",
+      "search_result_explanations",
+      "snapshots",
+      "source_cache",
+      "source_cache_plans",
+      "source_cache_records",
+      "source_cache_to_evidence",
+      "source_coverage",
+      "source_packs",
+      "source_pages",
+      "source_sync",
+      "sources",
+      "static_projections",
+      "syn",
+      "syn_foundation",
+      "view_models",
+      "work_unit_results",
+      "work_units",
+      "workbench",
+      "workunit_dry_runs",
+      "workunit_seed_conversions",
+      "workunit_seeds",
+      "workunits"
+    ],
+    "runtime": [
+      "actions",
+      "agent_research",
+      "ai_escalation",
+      "candidate_index",
+      "connectors",
+      "engine",
+      "evidence_ledger",
+      "extraction",
+      "extraction_safe_fixtures",
+      "gateway",
+      "hosting",
+      "local_appliance",
+      "local_eval",
+      "local_foundry",
+      "local_network",
+      "local_operator",
+      "local_review",
+      "local_service",
+      "local_worker",
+      "packs",
+      "pages",
+      "public_index",
+      "relay",
+      "resolution_run",
+      "review_queue",
+      "search_hunt",
+      "search_need",
+      "search_quality",
+      "snapshots",
+      "source_cache",
+      "source_observation",
+      "source_registry",
+      "workunit_queue"
+    ]
+  },
+  "network_used": false,
+  "path_taxonomy_validator": {
+    "debt_count": 133,
+    "errors": [],
+    "forbidden_active_paths_present": [],
+    "returncode": 0,
+    "status": "valid"
+  },
+  "product_behavior_changed": false,
+  "repo_structure_validator": {
+    "errors": [],
+    "returncode": 0,
+    "status": "valid",
+    "strict": true
+  },
+  "schema_version": "eureka_structure_final_closeout_before_state.v1",
+  "task_id": "EUREKA-STRUCTURE-FINAL-CLOSEOUT-01",
+  "tracked_file_count": 20946,
+  "tracked_generated_paths": {
+    "build": [
+      "native/mac/appkit/build/README.md",
+      "native/mac/carbon/build/README.md",
+      "native/win/win32/build/README.md",
+      "native/win/winforms/build/README.md"
+    ],
+    "coverage": [
+      "examples/connectors/h11_storefront/coverage/h11_storefront_coverage_preview_v0.json",
+      "examples/connectors/h14_source_discovery/coverage/h14_source_discovery_coverage_preview_v0.json",
+      "examples/connectors/h1_metadata_wave/coverage/github_releases_coverage_preview_v0.json",
+      "examples/connectors/h1_metadata_wave/coverage/npm_registry_coverage_preview_v0.json",
+      "examples/connectors/h1_metadata_wave/coverage/osv_coverage_preview_v0.json",
+      "examples/connectors/h1_metadata_wave/coverage/pypi_coverage_preview_v0.json",
+      "examples/connectors/h1_metadata_wave/coverage/repology_coverage_preview_v0.json",
+      "examples/connectors/h1_metadata_wave/coverage/software_heritage_coverage_preview_v0.json",
+      "examples/connectors/h1_metadata_wave/coverage/wayback_cdx_memento_coverage_preview_v0.json",
+      "examples/connectors/h2_package_registries/coverage/conda_forge_coverage_preview_v0.json",
+      "examples/connectors/h2_package_registries/coverage/cpan_coverage_preview_v0.json",
+      "examples/connectors/h2_package_registries/coverage/cran_coverage_preview_v0.json",
+      "examples/connectors/h2_package_registries/coverage/crates_io_coverage_preview_v0.json",
+      "examples/connectors/h2_package_registries/coverage/maven_central_coverage_preview_v0.json",
+      "examples/connectors/h2_package_registries/coverage/nuget_coverage_preview_v0.json",
+      "examples/connectors/h2_package_registries/coverage/oci_registry_metadata_coverage_preview_v0.json",
+      "examples/connectors/h2_package_registries/coverage/rubygems_coverage_preview_v0.json",
+      "examples/connectors/h3_os_package_archives/coverage/arch_linux_archive_coverage_preview_v0.json",
+      "examples/connectors/h3_os_package_archives/coverage/chocolatey_coverage_preview_v0.json",
+      "examples/connectors/h3_os_package_archives/coverage/debian_snapshot_coverage_preview_v0.json",
+      "examples/connectors/h3_os_package_archives/coverage/fedora_rpm_metadata_coverage_preview_v0.json",
+      "examples/connectors/h3_os_package_archives/coverage/flathub_coverage_preview_v0.json",
+      "examples/connectors/h3_os_package_archives/coverage/freebsd_packages_ports_coverage_preview_v0.json",
+      "examples/connectors/h3_os_package_archives/coverage/homebrew_coverage_preview_v0.json",
+      "examples/connectors/h3_os_package_archives/coverage/macports_coverage_preview_v0.json",
+      "examples/connectors/h3_os_package_archives/coverage/nixpkgs_coverage_preview_v0.json",
+      "examples/connectors/h3_os_package_archives/coverage/pkgsrc_coverage_preview_v0.json",
+      "examples/connectors/h3_os_package_archives/coverage/snapcraft_coverage_preview_v0.json",
+      "examples/connectors/h3_os_package_archives/coverage/ubuntu_old_releases_coverage_preview_v0.json",
+      "examples/connectors/h3_os_package_archives/coverage/winget_coverage_preview_v0.json",
+      "examples/connectors/h4_code_source_release/coverage/fosshub_coverage_preview_v0.json",
+      "examples/connectors/h4_code_source_release/coverage/generic_git_repository_coverage_preview_v0.json",
+      "examples/connectors/h4_code_source_release/coverage/generic_release_host_coverage_preview_v0.json",
+      "examples/connectors/h4_code_source_release/coverage/github_archive_program_coverage_preview_v0.json",
+      "examples/connectors/h4_code_source_release/coverage/github_releases_coverage_preview_v0.json",
+      "examples/connectors/h4_code_source_release/coverage/github_repository_coverage_preview_v0.json",
+      "examples/connectors/h4_code_source_release/coverage/gitlab_releases_coverage_preview_v0.json",
+      "examples/connectors/h4_code_source_release/coverage/gitlab_repository_coverage_preview_v0.json",
+      "examples/connectors/h4_code_source_release/coverage/software_heritage_identity_coverage_preview_v0.json",
+      "examples/connectors/h4_code_source_release/coverage/sourceforge_coverage_preview_v0.json",
+      "examples/connectors/h5_vendor_update_driver/coverage/acer_support_downloads_coverage_preview_v0.json",
+      "examples/connectors/h5_vendor_update_driver/coverage/amd_driver_downloads_coverage_preview_v0.json",
+      "examples/connectors/h5_vendor_update_driver/coverage/apple_software_downloads_coverage_preview_v0.json",
+      "examples/connectors/h5_vendor_update_driver/coverage/apple_software_update_catalog_coverage_preview_v0.json",
+      "examples/connectors/h5_vendor_update_driver/coverage/asus_support_downloads_coverage_preview_v0.json",
+      "examples/connectors/h5_vendor_update_driver/coverage/dell_support_downloads_coverage_preview_v0.json",
+      "examples/connectors/h5_vendor_update_driver/coverage/generic_runtime_redistributable_coverage_preview_v0.json",
+      "examples/connectors/h5_vendor_update_driver/coverage/generic_vendor_driver_firmware_coverage_preview_v0.json",
+      "examples/connectors/h5_vendor_update_driver/coverage/hp_support_downloads_coverage_preview_v0.json",
+      "examples/connectors/h5_vendor_update_driver/coverage/intel_driver_support_coverage_preview_v0.json",
+      "examples/connectors/h5_vendor_update_driver/coverage/lenovo_support_downloads_coverage_preview_v0.json",
+      "examples/connectors/h5_vendor_update_driver/coverage/microsoft_download_center_coverage_preview_v0.json",
+      "examples/connectors/h5_vendor_update_driver/coverage/microsoft_runtime_redistributables_coverage_preview_v0.json",
+      "examples/connectors/h5_vendor_update_driver/coverage/microsoft_update_catalog_coverage_preview_v0.json",
+      "examples/connectors/h5_vendor_update_driver/coverage/nvidia_driver_downloads_coverage_preview_v0.json",
+      "examples/connectors/h6_web_archive_news_event/coverage/aapb_broadcast_archive_coverage_preview_v0.json",
+      "examples/connectors/h6_web_archive_news_event/coverage/archive_today_snapshot_coverage_preview_v0.json",
+      "examples/connectors/h6_web_archive_news_event/coverage/chronicling_america_coverage_preview_v0.json",
+      "examples/connectors/h6_web_archive_news_event/coverage/common_crawl_cdxj_coverage_preview_v0.json",
+      "examples/connectors/h6_web_archive_news_event/coverage/cspan_video_library_coverage_preview_v0.json",
+      "examples/connectors/h6_web_archive_news_event/coverage/gdelt_news_event_coverage_preview_v0.json",
+      "examples/connectors/h6_web_archive_news_event/coverage/generic_newspaper_archive_coverage_preview_v0.json",
+      "examples/connectors/h6_web_archive_news_event/coverage/generic_public_event_trace_coverage_preview_v0.json",
+      "examples/connectors/h6_web_archive_news_event/coverage/generic_web_archive_coverage_preview_v0.json",
+      "examples/connectors/h6_web_archive_news_event/coverage/public_warc_wacz_collection_coverage_preview_v0.json",
+      "examples/connectors/h6_web_archive_news_event/coverage/restricted_public_document_manifest_coverage_preview_v0.json",
+      "examples/connectors/h6_web_archive_news_event/coverage/trove_newspapers_coverage_preview_v0.json",
+      "examples/connectors/h6_web_archive_news_event/coverage/wayback_cdx_memento_coverage_preview_v0.json",
+      "examples/connectors/h7_library_research/coverage/h7_library_research_coverage_preview_v0.json",
+      "examples/connectors/h8_manuals_docs_standards/coverage/h8_manuals_docs_standards_coverage_preview_v0.json",
+      "examples/connectors/h9_media_metadata/coverage/h9_media_metadata_coverage_preview_v0.json"
+    ],
+    "dist": [
+      "native/mac/appkit/dist/README.md",
+      "native/mac/carbon/dist/README.md",
+      "native/win/win32/dist/README.md",
+      "native/win/winforms/dist/README.md",
+      "site/dist/.eureka-static-site-generated",
+      "site/dist/assets/site.css",
+      "site/dist/data/build_manifest.json",
+      "site/dist/data/eval_summary.json",
+      "site/dist/data/page_registry.json",
+      "site/dist/data/public_index/build_manifest.json",
+      "site/dist/data/public_index/checksums.sha256",
+      "site/dist/data/public_index/index_stats.json",
+      "site/dist/data/public_index/search_documents.ndjson",
+      "site/dist/data/public_index/source_coverage.json",
+      "site/dist/data/public_index_summary.json",
+      "site/dist/data/route_summary.json",
+      "site/dist/data/search_config.json",
+      "site/dist/data/search_handoff.json",
+      "site/dist/data/site_manifest.json",
+      "site/dist/data/source_summary.json",
+      "site/dist/demo-queries.html",
+      "site/dist/demo/README.txt",
+      "site/dist/demo/absence-example.html",
+      "site/dist/demo/comparison-example.html",
+      "site/dist/demo/data/demo_snapshots.json",
+      "site/dist/demo/eval-summary.html",
+      "site/dist/demo/index.html",
+      "site/dist/demo/query-plan-windows-7-apps.html",
+      "site/dist/demo/result-article-scan.html",
+      "site/dist/demo/result-firefox-xp.html",
+      "site/dist/demo/result-member-driver-inside-support-cd.html",
+      "site/dist/demo/source-example.html",
+      "site/dist/evals.html",
+      "site/dist/files/README.txt",
+      "site/dist/files/SHA256SUMS",
+      "site/dist/files/data/README.txt",
+      "site/dist/files/index.html",
+      "site/dist/files/index.txt",
+      "site/dist/files/manifest.json",
+      "site/dist/files/search.README.txt",
+      "site/dist/index.html",
+      "site/dist/limitations.html",
+      "site/dist/lite/README.txt",
+      "site/dist/lite/demo-queries.html",
+      "site/dist/lite/evals.html",
+      "site/dist/lite/index.html",
+      "site/dist/lite/limitations.html",
+      "site/dist/lite/search.html",
+      "site/dist/lite/sources.html",
+      "site/dist/local-quickstart.html",
+      "site/dist/roadmap.html",
+      "site/dist/search.html",
+      "site/dist/site_manifest.json",
+      "site/dist/sources.html",
+      "site/dist/status.html",
+      "site/dist/text/README.txt",
+      "site/dist/text/demo-queries.txt",
+      "site/dist/text/evals.txt",
+      "site/dist/text/index.txt",
+      "site/dist/text/limitations.txt",
+      "site/dist/text/search.txt",
+      "site/dist/text/sources.txt"
+    ],
+    "out": [],
+    "target": [],
+    "tmp": []
+  }
+}

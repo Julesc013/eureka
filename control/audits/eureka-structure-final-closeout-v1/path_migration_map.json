@@ -1,0 +1,1233 @@
+[
+  {
+    "class": "examples_taxonomy",
+    "compatibility_wrapper": false,
+    "new_path": "examples/index/reviewed_public_rebuilds",
+    "old_path": "examples/reviewed_public_index_rebuilds",
+    "reason": "Move substantive files into canonical taxonomy family.",
+    "references_updated": true,
+    "validation_covered_by": [
+      "validate_path_taxonomy",
+      "repo_structure_canon",
+      "architecture_boundaries",
+      "focused_import_tests"
+    ]
+  },
+  {
+    "class": "examples_taxonomy",
+    "compatibility_wrapper": false,
+    "new_path": "examples/index/public_search_ranking_dry_run",
+    "old_path": "examples/public_search_ranking_dry_run",
+    "reason": "Move substantive files into canonical taxonomy family.",
+    "references_updated": true,
+    "validation_covered_by": [
+      "validate_path_taxonomy",
+      "repo_structure_canon",
+      "architecture_boundaries",
+      "focused_import_tests"
+    ]
+  },
+  {
+    "class": "examples_taxonomy",
+    "compatibility_wrapper": false,
+    "new_path": "examples/review/candidate_promotion_dry_runs",
+    "old_path": "examples/candidate_promotion_dry_runs",
+    "reason": "Move substantive files into canonical taxonomy family.",
+    "references_updated": true,
+    "validation_covered_by": [
+      "validate_path_taxonomy",
+      "repo_structure_canon",
+      "architecture_boundaries",
+      "focused_import_tests"
+    ]
+  },
+  {
+    "class": "examples_taxonomy",
+    "compatibility_wrapper": false,
+    "new_path": "examples/search/need_seed_conversions",
+    "old_path": "examples/search_need_seed_conversions",
+    "reason": "Move substantive files into canonical taxonomy family.",
+    "references_updated": true,
+    "validation_covered_by": [
+      "validate_path_taxonomy",
+      "repo_structure_canon",
+      "architecture_boundaries",
+      "focused_import_tests"
+    ]
+  },
+  {
+    "class": "examples_taxonomy",
+    "compatibility_wrapper": false,
+    "new_path": "examples/search/compatibility_aware_ranking",
+    "old_path": "examples/compatibility_aware_ranking",
+    "reason": "Move substantive files into canonical taxonomy family.",
+    "references_updated": true,
+    "validation_covered_by": [
+      "validate_path_taxonomy",
+      "repo_structure_canon",
+      "architecture_boundaries",
+      "focused_import_tests"
+    ]
+  },
+  {
+    "class": "examples_taxonomy",
+    "compatibility_wrapper": false,
+    "new_path": "examples/search/result_explanations",
+    "old_path": "examples/search_result_explanations",
+    "reason": "Move substantive files into canonical taxonomy family.",
+    "references_updated": true,
+    "validation_covered_by": [
+      "validate_path_taxonomy",
+      "repo_structure_canon",
+      "architecture_boundaries",
+      "focused_import_tests"
+    ]
+  },
+  {
+    "class": "examples_taxonomy",
+    "compatibility_wrapper": false,
+    "new_path": "examples/evidence/weighted_ranking",
+    "old_path": "examples/evidence_weighted_ranking",
+    "reason": "Move substantive files into canonical taxonomy family.",
+    "references_updated": true,
+    "validation_covered_by": [
+      "validate_path_taxonomy",
+      "repo_structure_canon",
+      "architecture_boundaries",
+      "focused_import_tests"
+    ]
+  },
+  {
+    "class": "examples_taxonomy",
+    "compatibility_wrapper": false,
+    "new_path": "examples/work_units/seed_conversions",
+    "old_path": "examples/workunit_seed_conversions",
+    "reason": "Move substantive files into canonical taxonomy family.",
+    "references_updated": true,
+    "validation_covered_by": [
+      "validate_path_taxonomy",
+      "repo_structure_canon",
+      "architecture_boundaries",
+      "focused_import_tests"
+    ]
+  },
+  {
+    "class": "examples_taxonomy",
+    "compatibility_wrapper": false,
+    "new_path": "examples/sources/cache/to_evidence",
+    "old_path": "examples/source_cache_to_evidence",
+    "reason": "Move substantive files into canonical taxonomy family.",
+    "references_updated": true,
+    "validation_covered_by": [
+      "validate_path_taxonomy",
+      "repo_structure_canon",
+      "architecture_boundaries",
+      "focused_import_tests"
+    ]
+  },
+  {
+    "class": "examples_taxonomy",
+    "compatibility_wrapper": false,
+    "new_path": "examples/evidence/ledger/records",
+    "old_path": "examples/evidence_ledger_records",
+    "reason": "Move substantive files into canonical taxonomy family.",
+    "references_updated": true,
+    "validation_covered_by": [
+      "validate_path_taxonomy",
+      "repo_structure_canon",
+      "architecture_boundaries",
+      "focused_import_tests"
+    ]
+  },
+  {
+    "class": "examples_taxonomy",
+    "compatibility_wrapper": false,
+    "new_path": "examples/index/reviewed_public_records",
+    "old_path": "examples/reviewed_public_records",
+    "reason": "Move substantive files into canonical taxonomy family.",
+    "references_updated": true,
+    "validation_covered_by": [
+      "validate_path_taxonomy",
+      "repo_structure_canon",
+      "architecture_boundaries",
+      "focused_import_tests"
+    ]
+  },
+  {
+    "class": "examples_taxonomy",
+    "compatibility_wrapper": false,
+    "new_path": "examples/evidence/ledger/plans",
+    "old_path": "examples/evidence_ledger_plans",
+    "reason": "Move substantive files into canonical taxonomy family.",
+    "references_updated": true,
+    "validation_covered_by": [
+      "validate_path_taxonomy",
+      "repo_structure_canon",
+      "architecture_boundaries",
+      "focused_import_tests"
+    ]
+  },
+  {
+    "class": "examples_taxonomy",
+    "compatibility_wrapper": false,
+    "new_path": "examples/sources/cache/records",
+    "old_path": "examples/source_cache_records",
+    "reason": "Move substantive files into canonical taxonomy family.",
+    "references_updated": true,
+    "validation_covered_by": [
+      "validate_path_taxonomy",
+      "repo_structure_canon",
+      "architecture_boundaries",
+      "focused_import_tests"
+    ]
+  },
+  {
+    "class": "examples_taxonomy",
+    "compatibility_wrapper": false,
+    "new_path": "examples/review/queue_entries",
+    "old_path": "examples/review_queue_entries",
+    "reason": "Move substantive files into canonical taxonomy family.",
+    "references_updated": true,
+    "validation_covered_by": [
+      "validate_path_taxonomy",
+      "repo_structure_canon",
+      "architecture_boundaries",
+      "focused_import_tests"
+    ]
+  },
+  {
+    "class": "contract_taxonomy",
+    "compatibility_wrapper": false,
+    "new_path": "contracts/search/interaction",
+    "old_path": "contracts/search_interaction",
+    "reason": "Move substantive files into canonical taxonomy family.",
+    "references_updated": true,
+    "validation_covered_by": [
+      "validate_path_taxonomy",
+      "repo_structure_canon",
+      "architecture_boundaries",
+      "focused_import_tests"
+    ]
+  },
+  {
+    "class": "examples_taxonomy",
+    "compatibility_wrapper": false,
+    "new_path": "examples/packs/import_dry_run",
+    "old_path": "examples/pack_import_dry_run",
+    "reason": "Move substantive files into canonical taxonomy family.",
+    "references_updated": true,
+    "validation_covered_by": [
+      "validate_path_taxonomy",
+      "repo_structure_canon",
+      "architecture_boundaries",
+      "focused_import_tests"
+    ]
+  },
+  {
+    "class": "examples_taxonomy",
+    "compatibility_wrapper": false,
+    "new_path": "examples/review/candidate_promotion",
+    "old_path": "examples/candidate_promotion",
+    "reason": "Move substantive files into canonical taxonomy family.",
+    "references_updated": true,
+    "validation_covered_by": [
+      "validate_path_taxonomy",
+      "repo_structure_canon",
+      "architecture_boundaries",
+      "focused_import_tests"
+    ]
+  },
+  {
+    "class": "examples_taxonomy",
+    "compatibility_wrapper": false,
+    "new_path": "examples/review/observation_reviews",
+    "old_path": "examples/observation_reviews",
+    "reason": "Move substantive files into canonical taxonomy family.",
+    "references_updated": true,
+    "validation_covered_by": [
+      "validate_path_taxonomy",
+      "repo_structure_canon",
+      "architecture_boundaries",
+      "focused_import_tests"
+    ]
+  },
+  {
+    "class": "examples_taxonomy",
+    "compatibility_wrapper": false,
+    "new_path": "examples/review/manual_observations",
+    "old_path": "examples/manual_observations",
+    "reason": "Move substantive files into canonical taxonomy family.",
+    "references_updated": true,
+    "validation_covered_by": [
+      "validate_path_taxonomy",
+      "repo_structure_canon",
+      "architecture_boundaries",
+      "focused_import_tests"
+    ]
+  },
+  {
+    "class": "examples_taxonomy",
+    "compatibility_wrapper": false,
+    "new_path": "examples/packs/contribution",
+    "old_path": "examples/contribution_packs",
+    "reason": "Move substantive files into canonical taxonomy family.",
+    "references_updated": true,
+    "validation_covered_by": [
+      "validate_path_taxonomy",
+      "repo_structure_canon",
+      "architecture_boundaries",
+      "focused_import_tests"
+    ]
+  },
+  {
+    "class": "examples_taxonomy",
+    "compatibility_wrapper": false,
+    "new_path": "examples/sources/cache/plans",
+    "old_path": "examples/source_cache_plans",
+    "reason": "Move substantive files into canonical taxonomy family.",
+    "references_updated": true,
+    "validation_covered_by": [
+      "validate_path_taxonomy",
+      "repo_structure_canon",
+      "architecture_boundaries",
+      "focused_import_tests"
+    ]
+  },
+  {
+    "class": "examples_taxonomy",
+    "compatibility_wrapper": false,
+    "new_path": "examples/search/miss_ledger",
+    "old_path": "examples/search_miss_ledger",
+    "reason": "Move substantive files into canonical taxonomy family.",
+    "references_updated": true,
+    "validation_covered_by": [
+      "validate_path_taxonomy",
+      "repo_structure_canon",
+      "architecture_boundaries",
+      "focused_import_tests"
+    ]
+  },
+  {
+    "class": "examples_taxonomy",
+    "compatibility_wrapper": false,
+    "new_path": "examples/search/query_observations",
+    "old_path": "examples/query_observations",
+    "reason": "Move substantive files into canonical taxonomy family.",
+    "references_updated": true,
+    "validation_covered_by": [
+      "validate_path_taxonomy",
+      "repo_structure_canon",
+      "architecture_boundaries",
+      "focused_import_tests"
+    ]
+  },
+  {
+    "class": "examples_taxonomy",
+    "compatibility_wrapper": false,
+    "new_path": "examples/search/query_result_cache",
+    "old_path": "examples/query_result_cache",
+    "reason": "Move substantive files into canonical taxonomy family.",
+    "references_updated": true,
+    "validation_covered_by": [
+      "validate_path_taxonomy",
+      "repo_structure_canon",
+      "architecture_boundaries",
+      "focused_import_tests"
+    ]
+  },
+  {
+    "class": "runtime_taxonomy",
+    "compatibility_wrapper": true,
+    "new_path": "runtime/source/observation",
+    "old_path": "runtime/source_observation",
+    "reason": "Move substantive files into canonical taxonomy family.",
+    "references_updated": true,
+    "validation_covered_by": [
+      "validate_path_taxonomy",
+      "repo_structure_canon",
+      "architecture_boundaries",
+      "focused_import_tests"
+    ]
+  },
+  {
+    "class": "examples_taxonomy",
+    "compatibility_wrapper": false,
+    "new_path": "examples/search/need_seeds",
+    "old_path": "examples/search_need_seeds",
+    "reason": "Move substantive files into canonical taxonomy family.",
+    "references_updated": true,
+    "validation_covered_by": [
+      "validate_path_taxonomy",
+      "repo_structure_canon",
+      "architecture_boundaries",
+      "focused_import_tests"
+    ]
+  },
+  {
+    "class": "examples_taxonomy",
+    "compatibility_wrapper": false,
+    "new_path": "examples/work_units/results",
+    "old_path": "examples/work_unit_results",
+    "reason": "Move substantive files into canonical taxonomy family.",
+    "references_updated": true,
+    "validation_covered_by": [
+      "validate_path_taxonomy",
+      "repo_structure_canon",
+      "architecture_boundaries",
+      "focused_import_tests"
+    ]
+  },
+  {
+    "class": "examples_taxonomy",
+    "compatibility_wrapper": false,
+    "new_path": "examples/work_units/dry_runs",
+    "old_path": "examples/workunit_dry_runs",
+    "reason": "Move substantive files into canonical taxonomy family.",
+    "references_updated": true,
+    "validation_covered_by": [
+      "validate_path_taxonomy",
+      "repo_structure_canon",
+      "architecture_boundaries",
+      "focused_import_tests"
+    ]
+  },
+  {
+    "class": "contract_taxonomy",
+    "compatibility_wrapper": false,
+    "new_path": "contracts/schema/control",
+    "old_path": "contracts/control_schemas",
+    "reason": "Move substantive files into canonical taxonomy family.",
+    "references_updated": true,
+    "validation_covered_by": [
+      "validate_path_taxonomy",
+      "repo_structure_canon",
+      "architecture_boundaries",
+      "focused_import_tests"
+    ]
+  },
+  {
+    "class": "contract_taxonomy",
+    "compatibility_wrapper": false,
+    "new_path": "contracts/evidence/ledger",
+    "old_path": "contracts/evidence_ledger",
+    "reason": "Move substantive files into canonical taxonomy family.",
+    "references_updated": true,
+    "validation_covered_by": [
+      "validate_path_taxonomy",
+      "repo_structure_canon",
+      "architecture_boundaries",
+      "focused_import_tests"
+    ]
+  },
+  {
+    "class": "contract_taxonomy",
+    "compatibility_wrapper": false,
+    "new_path": "contracts/source/registry",
+    "old_path": "contracts/source_registry",
+    "reason": "Move substantive files into canonical taxonomy family.",
+    "references_updated": true,
+    "validation_covered_by": [
+      "validate_path_taxonomy",
+      "repo_structure_canon",
+      "architecture_boundaries",
+      "focused_import_tests"
+    ]
+  },
+  {
+    "class": "contract_taxonomy",
+    "compatibility_wrapper": false,
+    "new_path": "contracts/surface/ui/contracts",
+    "old_path": "contracts/ui/ui_contracts",
+    "reason": "Move substantive files into canonical taxonomy family.",
+    "references_updated": true,
+    "validation_covered_by": [
+      "validate_path_taxonomy",
+      "repo_structure_canon",
+      "architecture_boundaries",
+      "focused_import_tests"
+    ]
+  },
+  {
+    "class": "contract_taxonomy",
+    "compatibility_wrapper": false,
+    "new_path": "contracts/representation",
+    "old_path": "contracts/representations",
+    "reason": "Move substantive files into canonical taxonomy family.",
+    "references_updated": true,
+    "validation_covered_by": [
+      "validate_path_taxonomy",
+      "repo_structure_canon",
+      "architecture_boundaries",
+      "focused_import_tests"
+    ]
+  },
+  {
+    "class": "contract_taxonomy",
+    "compatibility_wrapper": false,
+    "new_path": "contracts/view/models/ui",
+    "old_path": "contracts/ui/view_models",
+    "reason": "Move substantive files into canonical taxonomy family.",
+    "references_updated": true,
+    "validation_covered_by": [
+      "validate_path_taxonomy",
+      "repo_structure_canon",
+      "architecture_boundaries",
+      "focused_import_tests"
+    ]
+  },
+  {
+    "class": "contract_taxonomy",
+    "compatibility_wrapper": false,
+    "new_path": "contracts/search/quality",
+    "old_path": "contracts/search_quality",
+    "reason": "Move substantive files into canonical taxonomy family.",
+    "references_updated": true,
+    "validation_covered_by": [
+      "validate_path_taxonomy",
+      "repo_structure_canon",
+      "architecture_boundaries",
+      "focused_import_tests"
+    ]
+  },
+  {
+    "class": "contract_taxonomy",
+    "compatibility_wrapper": false,
+    "new_path": "contracts/resolution/run",
+    "old_path": "contracts/resolution_run",
+    "reason": "Move substantive files into canonical taxonomy family.",
+    "references_updated": true,
+    "validation_covered_by": [
+      "validate_path_taxonomy",
+      "repo_structure_canon",
+      "architecture_boundaries",
+      "focused_import_tests"
+    ]
+  },
+  {
+    "class": "examples_taxonomy",
+    "compatibility_wrapper": false,
+    "new_path": "examples/packs/quarantine",
+    "old_path": "examples/pack_quarantine",
+    "reason": "Move substantive files into canonical taxonomy family.",
+    "references_updated": true,
+    "validation_covered_by": [
+      "validate_path_taxonomy",
+      "repo_structure_canon",
+      "architecture_boundaries",
+      "focused_import_tests"
+    ]
+  },
+  {
+    "class": "examples_taxonomy",
+    "compatibility_wrapper": false,
+    "new_path": "examples/sources/coverage",
+    "old_path": "examples/source_coverage",
+    "reason": "Move substantive files into canonical taxonomy family.",
+    "references_updated": true,
+    "validation_covered_by": [
+      "validate_path_taxonomy",
+      "repo_structure_canon",
+      "architecture_boundaries",
+      "focused_import_tests"
+    ]
+  },
+  {
+    "class": "examples_taxonomy",
+    "compatibility_wrapper": false,
+    "new_path": "examples/evidence/ledger/dry_run",
+    "old_path": "examples/evidence_ledger",
+    "reason": "Move substantive files into canonical taxonomy family.",
+    "references_updated": true,
+    "validation_covered_by": [
+      "validate_path_taxonomy",
+      "repo_structure_canon",
+      "architecture_boundaries",
+      "focused_import_tests"
+    ]
+  },
+  {
+    "class": "examples_taxonomy",
+    "compatibility_wrapper": false,
+    "new_path": "examples/index/candidate",
+    "old_path": "examples/candidate_index",
+    "reason": "Move substantive files into canonical taxonomy family.",
+    "references_updated": true,
+    "validation_covered_by": [
+      "validate_path_taxonomy",
+      "repo_structure_canon",
+      "architecture_boundaries",
+      "focused_import_tests"
+    ]
+  },
+  {
+    "class": "runtime_taxonomy",
+    "compatibility_wrapper": true,
+    "new_path": "runtime/local/appliance",
+    "old_path": "runtime/local_appliance",
+    "reason": "Move substantive files into canonical taxonomy family.",
+    "references_updated": true,
+    "validation_covered_by": [
+      "validate_path_taxonomy",
+      "repo_structure_canon",
+      "architecture_boundaries",
+      "focused_import_tests"
+    ]
+  },
+  {
+    "class": "runtime_taxonomy",
+    "compatibility_wrapper": true,
+    "new_path": "runtime/source/registry",
+    "old_path": "runtime/source_registry",
+    "reason": "Move substantive files into canonical taxonomy family.",
+    "references_updated": true,
+    "validation_covered_by": [
+      "validate_path_taxonomy",
+      "repo_structure_canon",
+      "architecture_boundaries",
+      "focused_import_tests"
+    ]
+  },
+  {
+    "class": "runtime_taxonomy",
+    "compatibility_wrapper": true,
+    "new_path": "runtime/index/candidate",
+    "old_path": "runtime/candidate_index",
+    "reason": "Move substantive files into canonical taxonomy family.",
+    "references_updated": true,
+    "validation_covered_by": [
+      "validate_path_taxonomy",
+      "repo_structure_canon",
+      "architecture_boundaries",
+      "focused_import_tests"
+    ]
+  },
+  {
+    "class": "runtime_taxonomy",
+    "compatibility_wrapper": true,
+    "new_path": "runtime/evidence/ledger",
+    "old_path": "runtime/evidence_ledger",
+    "reason": "Move substantive files into canonical taxonomy family.",
+    "references_updated": true,
+    "validation_covered_by": [
+      "validate_path_taxonomy",
+      "repo_structure_canon",
+      "architecture_boundaries",
+      "focused_import_tests"
+    ]
+  },
+  {
+    "class": "examples_taxonomy",
+    "compatibility_wrapper": false,
+    "new_path": "examples/packs/evidence",
+    "old_path": "examples/evidence_packs",
+    "reason": "Move substantive files into canonical taxonomy family.",
+    "references_updated": true,
+    "validation_covered_by": [
+      "validate_path_taxonomy",
+      "repo_structure_canon",
+      "architecture_boundaries",
+      "focused_import_tests"
+    ]
+  },
+  {
+    "class": "examples_taxonomy",
+    "compatibility_wrapper": false,
+    "new_path": "examples/index/reviewed",
+    "old_path": "examples/reviewed_index",
+    "reason": "Move substantive files into canonical taxonomy family.",
+    "references_updated": true,
+    "validation_covered_by": [
+      "validate_path_taxonomy",
+      "repo_structure_canon",
+      "architecture_boundaries",
+      "focused_import_tests"
+    ]
+  },
+  {
+    "class": "examples_taxonomy",
+    "compatibility_wrapper": false,
+    "new_path": "examples/search/quality",
+    "old_path": "examples/search_quality",
+    "reason": "Move substantive files into canonical taxonomy family.",
+    "references_updated": true,
+    "validation_covered_by": [
+      "validate_path_taxonomy",
+      "repo_structure_canon",
+      "architecture_boundaries",
+      "focused_import_tests"
+    ]
+  },
+  {
+    "class": "examples_taxonomy",
+    "compatibility_wrapper": false,
+    "new_path": "examples/work_units/seeds",
+    "old_path": "examples/workunit_seeds",
+    "reason": "Move substantive files into canonical taxonomy family.",
+    "references_updated": true,
+    "validation_covered_by": [
+      "validate_path_taxonomy",
+      "repo_structure_canon",
+      "architecture_boundaries",
+      "focused_import_tests"
+    ]
+  },
+  {
+    "class": "runtime_taxonomy",
+    "compatibility_wrapper": true,
+    "new_path": "runtime/local/operator",
+    "old_path": "runtime/local_operator",
+    "reason": "Move substantive files into canonical taxonomy family.",
+    "references_updated": true,
+    "validation_covered_by": [
+      "validate_path_taxonomy",
+      "repo_structure_canon",
+      "architecture_boundaries",
+      "focused_import_tests"
+    ]
+  },
+  {
+    "class": "runtime_taxonomy",
+    "compatibility_wrapper": true,
+    "new_path": "runtime/worker/workunit_queue",
+    "old_path": "runtime/workunit_queue",
+    "reason": "Move substantive files into canonical taxonomy family.",
+    "references_updated": true,
+    "validation_covered_by": [
+      "validate_path_taxonomy",
+      "repo_structure_canon",
+      "architecture_boundaries",
+      "focused_import_tests"
+    ]
+  },
+  {
+    "class": "runtime_taxonomy",
+    "compatibility_wrapper": true,
+    "new_path": "runtime/search/quality",
+    "old_path": "runtime/search_quality",
+    "reason": "Move substantive files into canonical taxonomy family.",
+    "references_updated": true,
+    "validation_covered_by": [
+      "validate_path_taxonomy",
+      "repo_structure_canon",
+      "architecture_boundaries",
+      "focused_import_tests"
+    ]
+  },
+  {
+    "class": "contract_taxonomy",
+    "compatibility_wrapper": false,
+    "new_path": "contracts/source/cache",
+    "old_path": "contracts/source_cache",
+    "reason": "Move substantive files into canonical taxonomy family.",
+    "references_updated": true,
+    "validation_covered_by": [
+      "validate_path_taxonomy",
+      "repo_structure_canon",
+      "architecture_boundaries",
+      "focused_import_tests"
+    ]
+  },
+  {
+    "class": "contract_taxonomy",
+    "compatibility_wrapper": false,
+    "new_path": "contracts/index/master",
+    "old_path": "contracts/master_index",
+    "reason": "Move substantive files into canonical taxonomy family.",
+    "references_updated": true,
+    "validation_covered_by": [
+      "validate_path_taxonomy",
+      "repo_structure_canon",
+      "architecture_boundaries",
+      "focused_import_tests"
+    ]
+  },
+  {
+    "class": "examples_taxonomy",
+    "compatibility_wrapper": false,
+    "new_path": "examples/search/misses",
+    "old_path": "examples/search_misses",
+    "reason": "Move substantive files into canonical taxonomy family.",
+    "references_updated": true,
+    "validation_covered_by": [
+      "validate_path_taxonomy",
+      "repo_structure_canon",
+      "architecture_boundaries",
+      "focused_import_tests"
+    ]
+  },
+  {
+    "class": "runtime_taxonomy",
+    "compatibility_wrapper": true,
+    "new_path": "runtime/local/foundry",
+    "old_path": "runtime/local_foundry",
+    "reason": "Move substantive files into canonical taxonomy family.",
+    "references_updated": true,
+    "validation_covered_by": [
+      "validate_path_taxonomy",
+      "repo_structure_canon",
+      "architecture_boundaries",
+      "focused_import_tests"
+    ]
+  },
+  {
+    "class": "runtime_taxonomy",
+    "compatibility_wrapper": true,
+    "new_path": "runtime/local/network",
+    "old_path": "runtime/local_network",
+    "reason": "Move substantive files into canonical taxonomy family.",
+    "references_updated": true,
+    "validation_covered_by": [
+      "validate_path_taxonomy",
+      "repo_structure_canon",
+      "architecture_boundaries",
+      "focused_import_tests"
+    ]
+  },
+  {
+    "class": "runtime_taxonomy",
+    "compatibility_wrapper": true,
+    "new_path": "runtime/local/service",
+    "old_path": "runtime/local_service",
+    "reason": "Move substantive files into canonical taxonomy family.",
+    "references_updated": true,
+    "validation_covered_by": [
+      "validate_path_taxonomy",
+      "repo_structure_canon",
+      "architecture_boundaries",
+      "focused_import_tests"
+    ]
+  },
+  {
+    "class": "contract_taxonomy",
+    "compatibility_wrapper": false,
+    "new_path": "contracts/source/sync",
+    "old_path": "contracts/source_sync",
+    "reason": "Move substantive files into canonical taxonomy family.",
+    "references_updated": true,
+    "validation_covered_by": [
+      "validate_path_taxonomy",
+      "repo_structure_canon",
+      "architecture_boundaries",
+      "focused_import_tests"
+    ]
+  },
+  {
+    "class": "contract_taxonomy",
+    "compatibility_wrapper": false,
+    "new_path": "contracts/view/models/core",
+    "old_path": "contracts/view_models",
+    "reason": "Move substantive files into canonical taxonomy family.",
+    "references_updated": true,
+    "validation_covered_by": [
+      "validate_path_taxonomy",
+      "repo_structure_canon",
+      "architecture_boundaries",
+      "focused_import_tests"
+    ]
+  },
+  {
+    "class": "contract_taxonomy",
+    "compatibility_wrapper": false,
+    "new_path": "contracts/surface/projection",
+    "old_path": "contracts/projections",
+    "reason": "Move substantive files into canonical taxonomy family.",
+    "references_updated": true,
+    "validation_covered_by": [
+      "validate_path_taxonomy",
+      "repo_structure_canon",
+      "architecture_boundaries",
+      "focused_import_tests"
+    ]
+  },
+  {
+    "class": "examples_taxonomy",
+    "compatibility_wrapper": false,
+    "new_path": "examples/packs/source",
+    "old_path": "examples/source_packs",
+    "reason": "Move substantive files into canonical taxonomy family.",
+    "references_updated": true,
+    "validation_covered_by": [
+      "validate_path_taxonomy",
+      "repo_structure_canon",
+      "architecture_boundaries",
+      "focused_import_tests"
+    ]
+  },
+  {
+    "class": "examples_taxonomy",
+    "compatibility_wrapper": false,
+    "new_path": "examples/packs/builder",
+    "old_path": "examples/pack_builder",
+    "reason": "Move substantive files into canonical taxonomy family.",
+    "references_updated": true,
+    "validation_covered_by": [
+      "validate_path_taxonomy",
+      "repo_structure_canon",
+      "architecture_boundaries",
+      "focused_import_tests"
+    ]
+  },
+  {
+    "class": "examples_taxonomy",
+    "compatibility_wrapper": false,
+    "new_path": "examples/packs/exports",
+    "old_path": "examples/pack_exports",
+    "reason": "Move substantive files into canonical taxonomy family.",
+    "references_updated": true,
+    "validation_covered_by": [
+      "validate_path_taxonomy",
+      "repo_structure_canon",
+      "architecture_boundaries",
+      "focused_import_tests"
+    ]
+  },
+  {
+    "class": "examples_taxonomy",
+    "compatibility_wrapper": false,
+    "new_path": "examples/sources/cache/dry_run",
+    "old_path": "examples/source_cache",
+    "reason": "Move substantive files into canonical taxonomy family.",
+    "references_updated": true,
+    "validation_covered_by": [
+      "validate_path_taxonomy",
+      "repo_structure_canon",
+      "architecture_boundaries",
+      "focused_import_tests"
+    ]
+  },
+  {
+    "class": "examples_taxonomy",
+    "compatibility_wrapper": false,
+    "new_path": "examples/sources/pages",
+    "old_path": "examples/source_pages",
+    "reason": "Move substantive files into canonical taxonomy family.",
+    "references_updated": true,
+    "validation_covered_by": [
+      "validate_path_taxonomy",
+      "repo_structure_canon",
+      "architecture_boundaries",
+      "focused_import_tests"
+    ]
+  },
+  {
+    "class": "examples_taxonomy",
+    "compatibility_wrapper": false,
+    "new_path": "examples/review/queue",
+    "old_path": "examples/review_queue",
+    "reason": "Move substantive files into canonical taxonomy family.",
+    "references_updated": true,
+    "validation_covered_by": [
+      "validate_path_taxonomy",
+      "repo_structure_canon",
+      "architecture_boundaries",
+      "focused_import_tests"
+    ]
+  },
+  {
+    "class": "examples_taxonomy",
+    "compatibility_wrapper": false,
+    "new_path": "examples/search/needs",
+    "old_path": "examples/search_needs",
+    "reason": "Move substantive files into canonical taxonomy family.",
+    "references_updated": true,
+    "validation_covered_by": [
+      "validate_path_taxonomy",
+      "repo_structure_canon",
+      "architecture_boundaries",
+      "focused_import_tests"
+    ]
+  },
+  {
+    "class": "runtime_taxonomy",
+    "compatibility_wrapper": true,
+    "new_path": "runtime/local/review",
+    "old_path": "runtime/local_review",
+    "reason": "Move substantive files into canonical taxonomy family.",
+    "references_updated": true,
+    "validation_covered_by": [
+      "validate_path_taxonomy",
+      "repo_structure_canon",
+      "architecture_boundaries",
+      "focused_import_tests"
+    ]
+  },
+  {
+    "class": "runtime_taxonomy",
+    "compatibility_wrapper": true,
+    "new_path": "runtime/local/worker",
+    "old_path": "runtime/local_worker",
+    "reason": "Move substantive files into canonical taxonomy family.",
+    "references_updated": true,
+    "validation_covered_by": [
+      "validate_path_taxonomy",
+      "repo_structure_canon",
+      "architecture_boundaries",
+      "focused_import_tests"
+    ]
+  },
+  {
+    "class": "runtime_taxonomy",
+    "compatibility_wrapper": true,
+    "new_path": "runtime/source/cache",
+    "old_path": "runtime/source_cache",
+    "reason": "Move substantive files into canonical taxonomy family.",
+    "references_updated": true,
+    "validation_covered_by": [
+      "validate_path_taxonomy",
+      "repo_structure_canon",
+      "architecture_boundaries",
+      "focused_import_tests"
+    ]
+  },
+  {
+    "class": "runtime_taxonomy",
+    "compatibility_wrapper": true,
+    "new_path": "runtime/index/public",
+    "old_path": "runtime/public_index",
+    "reason": "Move substantive files into canonical taxonomy family.",
+    "references_updated": true,
+    "validation_covered_by": [
+      "validate_path_taxonomy",
+      "repo_structure_canon",
+      "architecture_boundaries",
+      "focused_import_tests"
+    ]
+  },
+  {
+    "class": "runtime_taxonomy",
+    "compatibility_wrapper": true,
+    "new_path": "runtime/review/queue",
+    "old_path": "runtime/review_queue",
+    "reason": "Move substantive files into canonical taxonomy family.",
+    "references_updated": true,
+    "validation_covered_by": [
+      "validate_path_taxonomy",
+      "repo_structure_canon",
+      "architecture_boundaries",
+      "focused_import_tests"
+    ]
+  },
+  {
+    "class": "examples_taxonomy",
+    "compatibility_wrapper": false,
+    "new_path": "examples/packs/index",
+    "old_path": "examples/index_packs",
+    "reason": "Move substantive files into canonical taxonomy family.",
+    "references_updated": true,
+    "validation_covered_by": [
+      "validate_path_taxonomy",
+      "repo_structure_canon",
+      "architecture_boundaries",
+      "focused_import_tests"
+    ]
+  },
+  {
+    "class": "examples_taxonomy",
+    "compatibility_wrapper": false,
+    "new_path": "examples/packs/drafts",
+    "old_path": "examples/pack_drafts",
+    "reason": "Move substantive files into canonical taxonomy family.",
+    "references_updated": true,
+    "validation_covered_by": [
+      "validate_path_taxonomy",
+      "repo_structure_canon",
+      "architecture_boundaries",
+      "focused_import_tests"
+    ]
+  },
+  {
+    "class": "examples_taxonomy",
+    "compatibility_wrapper": false,
+    "new_path": "examples/sources/sync",
+    "old_path": "examples/source_sync",
+    "reason": "Move substantive files into canonical taxonomy family.",
+    "references_updated": true,
+    "validation_covered_by": [
+      "validate_path_taxonomy",
+      "repo_structure_canon",
+      "architecture_boundaries",
+      "focused_import_tests"
+    ]
+  },
+  {
+    "class": "examples_taxonomy",
+    "compatibility_wrapper": false,
+    "new_path": "examples/search/query_guard",
+    "old_path": "examples/query_guard",
+    "reason": "Move substantive files into canonical taxonomy family.",
+    "references_updated": true,
+    "validation_covered_by": [
+      "validate_path_taxonomy",
+      "repo_structure_canon",
+      "architecture_boundaries",
+      "focused_import_tests"
+    ]
+  },
+  {
+    "class": "runtime_taxonomy",
+    "compatibility_wrapper": true,
+    "new_path": "runtime/search/hunt",
+    "old_path": "runtime/search_hunt",
+    "reason": "Move substantive files into canonical taxonomy family.",
+    "references_updated": true,
+    "validation_covered_by": [
+      "validate_path_taxonomy",
+      "repo_structure_canon",
+      "architecture_boundaries",
+      "focused_import_tests"
+    ]
+  },
+  {
+    "class": "runtime_taxonomy",
+    "compatibility_wrapper": true,
+    "new_path": "runtime/search/need",
+    "old_path": "runtime/search_need",
+    "reason": "Move substantive files into canonical taxonomy family.",
+    "references_updated": true,
+    "validation_covered_by": [
+      "validate_path_taxonomy",
+      "repo_structure_canon",
+      "architecture_boundaries",
+      "focused_import_tests"
+    ]
+  },
+  {
+    "class": "examples_taxonomy",
+    "compatibility_wrapper": false,
+    "new_path": "examples/index/candidates",
+    "old_path": "examples/candidates",
+    "reason": "Move substantive files into canonical taxonomy family.",
+    "references_updated": true,
+    "validation_covered_by": [
+      "validate_path_taxonomy",
+      "repo_structure_canon",
+      "architecture_boundaries",
+      "focused_import_tests"
+    ]
+  },
+  {
+    "class": "runtime_taxonomy",
+    "compatibility_wrapper": true,
+    "new_path": "runtime/local/eval",
+    "old_path": "runtime/local_eval",
+    "reason": "Move substantive files into canonical taxonomy family.",
+    "references_updated": true,
+    "validation_covered_by": [
+      "validate_path_taxonomy",
+      "repo_structure_canon",
+      "architecture_boundaries",
+      "focused_import_tests"
+    ]
+  },
+  {
+    "class": "examples_taxonomy",
+    "compatibility_wrapper": false,
+    "new_path": "examples/work_units/yaml",
+    "old_path": "examples/workunits",
+    "reason": "Move substantive files into canonical taxonomy family.",
+    "references_updated": true,
+    "validation_covered_by": [
+      "validate_path_taxonomy",
+      "repo_structure_canon",
+      "architecture_boundaries",
+      "focused_import_tests"
+    ]
+  },
+  {
+    "class": "contract_taxonomy",
+    "compatibility_wrapper": false,
+    "new_path": "contracts/source/records",
+    "old_path": "contracts/sources",
+    "reason": "Move substantive files into canonical taxonomy family.",
+    "references_updated": true,
+    "validation_covered_by": [
+      "validate_path_taxonomy",
+      "repo_structure_canon",
+      "architecture_boundaries",
+      "focused_import_tests"
+    ]
+  },
+  {
+    "class": "contract_taxonomy",
+    "compatibility_wrapper": false,
+    "new_path": "contracts/command/actions",
+    "old_path": "contracts/actions",
+    "reason": "Move substantive files into canonical taxonomy family.",
+    "references_updated": true,
+    "validation_covered_by": [
+      "validate_path_taxonomy",
+      "repo_structure_canon",
+      "architecture_boundaries",
+      "focused_import_tests"
+    ]
+  },
+  {
+    "class": "contract_taxonomy",
+    "compatibility_wrapper": false,
+    "new_path": "contracts/view/pages",
+    "old_path": "contracts/views",
+    "reason": "Move substantive files into canonical taxonomy family.",
+    "references_updated": true,
+    "validation_covered_by": [
+      "validate_path_taxonomy",
+      "repo_structure_canon",
+      "architecture_boundaries",
+      "focused_import_tests"
+    ]
+  },
+  {
+    "class": "contract_taxonomy",
+    "compatibility_wrapper": false,
+    "new_path": "contracts/surface/pages",
+    "old_path": "contracts/pages",
+    "reason": "Move substantive files into canonical taxonomy family.",
+    "references_updated": true,
+    "validation_covered_by": [
+      "validate_path_taxonomy",
+      "repo_structure_canon",
+      "architecture_boundaries",
+      "focused_import_tests"
+    ]
+  },
+  {
+    "class": "contract_taxonomy",
+    "compatibility_wrapper": false,
+    "new_path": "contracts/pack",
+    "old_path": "contracts/packs",
+    "reason": "Move substantive files into canonical taxonomy family.",
+    "references_updated": true,
+    "validation_covered_by": [
+      "validate_path_taxonomy",
+      "repo_structure_canon",
+      "architecture_boundaries",
+      "focused_import_tests"
+    ]
+  },
+  {
+    "class": "contract_taxonomy",
+    "compatibility_wrapper": false,
+    "new_path": "contracts/surface/ui",
+    "old_path": "contracts/ui",
+    "reason": "Move substantive files into canonical taxonomy family.",
+    "references_updated": true,
+    "validation_covered_by": [
+      "validate_path_taxonomy",
+      "repo_structure_canon",
+      "architecture_boundaries",
+      "focused_import_tests"
+    ]
+  },
+  {
+    "class": "contract_taxonomy",
+    "compatibility_wrapper": false,
+    "new_path": "contracts/runtime/source/observation.v0.json",
+    "old_path": "contracts/runtime/source_observation.v0.json",
+    "reason": "Align the physical runtime source-observation schema path with its governed contract id and inventory references.",
+    "references_updated": true,
+    "validation_covered_by": [
+      "validate_source_observation_seam",
+      "validate_contract_taxonomy",
+      "focused_import_tests"
+    ]
+  }
+]

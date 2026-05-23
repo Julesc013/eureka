@@ -16,12 +16,12 @@
     "contracts/query/public_ranking_gate.v0.json"
   ],
   "added_runtime_modules": [
-    "runtime/search_quality/ranking_shadow.py",
-    "runtime/search_quality/ranking_factors.py",
-    "runtime/search_quality/identity_shadow.py",
-    "runtime/search_quality/dedup_shadow.py",
-    "runtime/search_quality/quality_harness.py",
-    "runtime/search_quality/public_ranking_gate.py"
+    "runtime/search/quality/ranking_shadow.py",
+    "runtime/search/quality/ranking_factors.py",
+    "runtime/search/quality/identity_shadow.py",
+    "runtime/search/quality/dedup_shadow.py",
+    "runtime/search/quality/quality_harness.py",
+    "runtime/search/quality/public_ranking_gate.py"
   ],
   "added_scripts": [
     "scripts/run_ranking_shadow.py",
@@ -54,11 +54,11 @@
     "control/inventory/search_quality/ranking_truth_policy.json"
   ],
   "added_examples": [
-    "examples/search_quality/ranking/",
-    "examples/search_quality/identity/",
-    "examples/search_quality/query_sets/",
-    "examples/search_quality/regression/",
-    "examples/search_quality/public_ranking_gate/"
+    "examples/search/quality/ranking/",
+    "examples/search/quality/identity/",
+    "examples/search/quality/query_sets/",
+    "examples/search/quality/regression/",
+    "examples/search/quality/public_ranking_gate/"
   ],
   "added_tests": [
     "tests/search_quality/test_ranking_shadow_runtime.py",

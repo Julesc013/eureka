@@ -18,7 +18,7 @@ Validation was run locally on 2026-05-09.
 - `python scripts/validate_local_evidence_ledger_runtime.py`: PASS
 - `python scripts/validate_source_cache_to_evidence_bridge.py`: PASS
 - `python scripts/validate_candidate_promotion_dry_run.py`: PASS
-- `python scripts/run_candidate_promotion_dry_run.py --candidate examples/candidates/search_need_candidate_v0.json --review examples/review_queue_entries/candidate_needs_review_v0.json --check`: PASS
+- `python scripts/run_candidate_promotion_dry_run.py --candidate examples/index/candidates/search_need_candidate_v0.json --review examples/review/queue_entries/candidate_needs_review_v0.json --check`: PASS
 - `python -m unittest tests.runtime.test_candidate_promotion_dry_run tests.operations.test_candidate_promotion_dry_run_scripts`: PASS
 - `python scripts/check_architecture_boundaries.py`: PASS
 - `python -m unittest discover -s tests -t .`: FAIL, unrelated OBS hardening phrase guard found exact `"google scrape"` strings in five OBS scripts.

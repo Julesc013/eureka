@@ -14,8 +14,8 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.local_eval import LocalEvalRunner, build_markdown_summary, validate_localhost_base_url
-from runtime.local_eval.reports import dumps_report
+from runtime.local.eval import LocalEvalRunner, build_markdown_summary, validate_localhost_base_url
+from runtime.local.eval.reports import dumps_report
 
 
 def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr: TextIO = sys.stderr) -> int:

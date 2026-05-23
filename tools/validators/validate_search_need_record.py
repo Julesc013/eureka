@@ -19,7 +19,7 @@ from typing import Any, Iterable, Mapping, Sequence, TextIO
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
-EXAMPLES_ROOT = REPO_ROOT / "examples" / "search_needs"
+EXAMPLES_ROOT = REPO_ROOT / "examples" / "search" / "needs"
 RECORD_FILE_NAME = "SEARCH_NEED_RECORD.json"
 
 REQUIRED_TOP_LEVEL = {
@@ -195,11 +195,11 @@ def validate_all_examples(*, strict: bool = False) -> dict[str, Any]:
     warnings: list[str] = []
     results: list[dict[str, Any]] = []
     if not EXAMPLES_ROOT.is_dir():
-        errors.append("examples/search_needs: missing examples root.")
+        errors.append("examples/search/needs: missing examples root.")
     else:
         roots = sorted(path for path in EXAMPLES_ROOT.iterdir() if path.is_dir())
         if not roots:
-            errors.append("examples/search_needs: no example roots found.")
+            errors.append("examples/search/needs: no example roots found.")
         for root in roots:
             result = validate_search_need_root(root, strict=strict)
             results.append(result)

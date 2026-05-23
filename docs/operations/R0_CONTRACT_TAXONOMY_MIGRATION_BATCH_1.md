@@ -6,7 +6,7 @@ R0-03B-1 executed the first contract taxonomy migration batch using the R0-03A m
 
 - moved schemas: 278
 - moved classes: audit_schema, fixture_schema, preview_schema
-- target roots: contracts/control_schemas/audits/, contracts/control_schemas/fixtures/, contracts/control_schemas/previews/
+- target roots: contracts/schema/control/audits/, contracts/schema/control/fixtures/, contracts/schema/control/previews/
 
 ## What Did Not Move
 

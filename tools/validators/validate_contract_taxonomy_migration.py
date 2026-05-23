@@ -40,13 +40,13 @@ REQUIRED_MARKDOWN = (
 )
 
 TARGET_SCHEMA_ROOTS = (
-    "contracts/control_schemas/audits",
-    "contracts/control_schemas/fixtures",
-    "contracts/control_schemas/previews",
-    "contracts/control_schemas/policies",
-    "contracts/control_schemas/validators",
-    "contracts/control_schemas/tasks",
-    "contracts/control_schemas/deprecated",
+    "contracts/schema/control/audits",
+    "contracts/schema/control/fixtures",
+    "contracts/schema/control/previews",
+    "contracts/schema/control/policies",
+    "contracts/schema/control/validators",
+    "contracts/schema/control/tasks",
+    "contracts/schema/control/deprecated",
 )
 
 ALLOWED_MOVED_CLASSES = {"audit_schema", "fixture_schema", "preview_schema"}

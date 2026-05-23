@@ -51,7 +51,7 @@
     "?? control/audits/compatibility-aware-ranking-contract-v0/",
     "?? control/inventory/search/compatibility_aware_ranking_policy.json",
     "?? docs/reference/COMPATIBILITY_AWARE_RANKING_CONTRACT.md",
-    "?? examples/compatibility_aware_ranking/",
+    "?? examples/search/compatibility_aware_ranking/",
     "?? scripts/dry_run_compatibility_aware_ranking.py",
     "?? scripts/validate_compatibility_aware_ranking_assessment.py",
     "?? scripts/validate_compatibility_aware_ranking_contract.py",
@@ -78,12 +78,12 @@
     "scripts/dry_run_compatibility_aware_ranking.py"
   ],
   "example_compatibility_rankings": [
-    "examples/compatibility_aware_ranking/minimal_os_compatibility_ranking_v0",
-    "examples/compatibility_aware_ranking/minimal_architecture_compatibility_ranking_v0",
-    "examples/compatibility_aware_ranking/minimal_dependency_gap_ranking_v0",
-    "examples/compatibility_aware_ranking/minimal_emulator_vm_feasibility_ranking_v0",
-    "examples/compatibility_aware_ranking/minimal_conflicting_compatibility_ranking_v0",
-    "examples/compatibility_aware_ranking/minimal_unknown_compatibility_gap_v0"
+    "examples/search/compatibility_aware_ranking/minimal_os_compatibility_ranking_v0",
+    "examples/search/compatibility_aware_ranking/minimal_architecture_compatibility_ranking_v0",
+    "examples/search/compatibility_aware_ranking/minimal_dependency_gap_ranking_v0",
+    "examples/search/compatibility_aware_ranking/minimal_emulator_vm_feasibility_ranking_v0",
+    "examples/search/compatibility_aware_ranking/minimal_conflicting_compatibility_ranking_v0",
+    "examples/search/compatibility_aware_ranking/minimal_unknown_compatibility_gap_v0"
   ],
   "compatibility_aware_ranking_policy": "control/inventory/search/compatibility_aware_ranking_policy.json",
   "compatibility_factor_taxonomy": "platform/os/architecture/runtime/dependency/hardware/driver/emulator/evidence/gap/action/risk factors",

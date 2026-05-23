@@ -7,7 +7,7 @@ from scripts import bridge_source_cache_to_evidence, validate_source_cache_to_ev
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
-SOURCE_METADATA = REPO_ROOT / "examples/source_cache_records/source_metadata_record_v0.json"
+SOURCE_METADATA = REPO_ROOT / "examples/sources/cache/records/source_metadata_record_v0.json"
 
 
 class SourceCacheToEvidenceBridgeScriptTests(unittest.TestCase):
@@ -60,12 +60,12 @@ class SourceCacheToEvidenceBridgeScriptTests(unittest.TestCase):
         report = bridge_source_cache_to_evidence.build_report(SOURCE_METADATA)
         result = report["bridge_result"]
         result["product_boundary"]["enabled_telemetry"] = True
-        from runtime.local_foundry import source_cache_to_evidence
+        from runtime.local.foundry import source_cache_to_evidence
 
         self.assertTrue(source_cache_to_evidence.detect_bridge_product_boundary_violations(result))
 
     def test_runtime_does_not_call_network_model_or_provider(self) -> None:
-        runtime_source = (REPO_ROOT / "runtime/local_foundry/source_cache_to_evidence.py").read_text(encoding="utf-8")
+        runtime_source = (REPO_ROOT / "runtime/local/foundry/source_cache_to_evidence.py").read_text(encoding="utf-8")
         script_source = (REPO_ROOT / "scripts/bridge_source_cache_to_evidence.py").read_text(encoding="utf-8")
         for token in ("requests", "urllib", "socket", "openai", "anthropic", "selenium", "playwright"):
             self.assertNotIn(token, runtime_source)

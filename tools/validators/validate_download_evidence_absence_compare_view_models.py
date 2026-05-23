@@ -11,10 +11,10 @@ from typing import Any, Mapping, Sequence, TextIO
 REPO_ROOT = Path(__file__).resolve().parents[2]
 SCHEMA_VERSION = "0.1.0"
 
-DOWNLOAD_CONTRACT_PATH = "contracts/views/download_manifest_page.v0.json"
-EVIDENCE_CONTRACT_PATH = "contracts/views/evidence_page.v0.json"
-ABSENCE_CONTRACT_PATH = "contracts/views/absence_page.v0.json"
-COMPARE_CONTRACT_PATH = "contracts/views/compare_page.v0.json"
+DOWNLOAD_CONTRACT_PATH = "contracts/view/pages/download_manifest_page.v0.json"
+EVIDENCE_CONTRACT_PATH = "contracts/view/pages/evidence_page.v0.json"
+ABSENCE_CONTRACT_PATH = "contracts/view/pages/absence_page.v0.json"
+COMPARE_CONTRACT_PATH = "contracts/view/pages/compare_page.v0.json"
 DOWNLOAD_POLICY_INVENTORY = "control/inventory/publication/download_manifest_view_model_policy.json"
 EVIDENCE_POLICY_INVENTORY = "control/inventory/publication/evidence_page_view_model_policy.json"
 ABSENCE_POLICY_INVENTORY = "control/inventory/publication/absence_page_view_model_policy.json"

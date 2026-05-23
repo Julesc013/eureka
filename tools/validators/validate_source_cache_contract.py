@@ -19,8 +19,8 @@ from _p70_contract_common import load_json_object, print_report  # noqa: E402
 from validate_source_cache_record import validate_all_examples  # noqa: E402
 
 
-CONTRACT_PATH = REPO_ROOT / "contracts/source_cache/source_cache_record.v0.json"
-MANIFEST_PATH = REPO_ROOT / "contracts/source_cache/source_cache_manifest.v0.json"
+CONTRACT_PATH = REPO_ROOT / "contracts/source/cache/source_cache_record.v0.json"
+MANIFEST_PATH = REPO_ROOT / "contracts/source/cache/source_cache_manifest.v0.json"
 POLICY_PATH = REPO_ROOT / "control/inventory/source_cache/source_cache_policy.json"
 REQUIRED_CONTRACT_FIELDS = {
     "schema_version",
@@ -131,10 +131,10 @@ FORBIDDEN = (
 def validate_source_cache_contract() -> dict[str, Any]:
     errors: list[str] = []
     warnings: list[str] = []
-    contract = load_json_object(CONTRACT_PATH, errors, "contracts/source_cache/source_cache_record.v0.json")
+    contract = load_json_object(CONTRACT_PATH, errors, "contracts/source/cache/source_cache_record.v0.json")
     if contract:
         _validate_contract(contract, errors)
-    manifest = load_json_object(MANIFEST_PATH, errors, "contracts/source_cache/source_cache_manifest.v0.json")
+    manifest = load_json_object(MANIFEST_PATH, errors, "contracts/source/cache/source_cache_manifest.v0.json")
     if manifest:
         _validate_manifest(manifest, errors)
     policy = load_json_object(POLICY_PATH, errors, "control/inventory/source_cache/source_cache_policy.json")
@@ -149,7 +149,7 @@ def validate_source_cache_contract() -> dict[str, Any]:
     return {
         "status": "valid" if not errors else "invalid",
         "created_by": "source_cache_contract_validator_v0",
-        "contract_file": "contracts/source_cache/source_cache_record.v0.json",
+        "contract_file": "contracts/source/cache/source_cache_record.v0.json",
         "example_count": examples.get("example_count", 0),
         "errors": errors,
         "warnings": warnings,
@@ -200,10 +200,10 @@ def _validate_docs(errors: list[str]) -> None:
 
 def _scan_forbidden(errors: list[str]) -> None:
     paths = [
-        REPO_ROOT / "contracts/source_cache",
+        REPO_ROOT / "contracts/source/cache",
         REPO_ROOT / "control/inventory/source_cache",
         REPO_ROOT / "docs/reference/SOURCE_CACHE_CONTRACT.md",
-        REPO_ROOT / "examples/source_cache",
+        REPO_ROOT / "examples/sources/cache/dry_run",
     ]
     text = "\n".join(path.read_text(encoding="utf-8") for base in paths for path in ([base] if base.is_file() else base.rglob("*")) if path.is_file()).casefold()
     for phrase in FORBIDDEN:

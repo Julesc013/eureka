@@ -7,8 +7,8 @@
     "Node capability and local state requirements remain future/deferred."
   ],
   "generated_from": [
-    "contracts/control_schemas/policies/node/work_unit.v0.json",
-    "contracts/control_schemas/policies/node/work_unit_result.v0.json",
+    "contracts/schema/control/policies/node/work_unit.v0.json",
+    "contracts/schema/control/policies/node/work_unit_result.v0.json",
     "contracts/query/workunit_seed.v0.json",
     "contracts/query/workunit_seed_conversion.v0.json",
     "control/audits/obs-agent-04-candidate-to-search-need-seeds-v0/search_need_seed_manifest.json",
@@ -18,16 +18,16 @@
     "control/inventory/observations/search_need_seed_manifest.json",
     "control/inventory/observations/workunit_seed_conversion_policy.json",
     "control/inventory/observations/workunit_seed_priority_model.json",
-    "examples/workunit_seed_conversions/minimal_candidate_to_workunit_conversion_v0.json",
-    "examples/workunit_seed_conversions/request_more_evidence_workunit_conversion_v0.json",
-    "examples/workunit_seed_conversions/search_need_seed_to_workunit_conversion_v0.json",
-    "examples/workunit_seed_conversions/source_gap_candidate_to_workunit_conversion_v0.json",
-    "examples/workunit_seeds/compatibility_review_workunit_seed_v0.json",
-    "examples/workunit_seeds/extraction_gap_workunit_seed_v0.json",
-    "examples/workunit_seeds/metadata_probe_planning_workunit_seed_v0.json",
-    "examples/workunit_seeds/minimal_workunit_seed_v0.json",
-    "examples/workunit_seeds/policy_blocked_workunit_seed_v0.json",
-    "examples/workunit_seeds/source_policy_review_workunit_seed_v0.json"
+    "examples/work_units/seed_conversions/minimal_candidate_to_workunit_conversion_v0.json",
+    "examples/work_units/seed_conversions/request_more_evidence_workunit_conversion_v0.json",
+    "examples/work_units/seed_conversions/search_need_seed_to_workunit_conversion_v0.json",
+    "examples/work_units/seed_conversions/source_gap_candidate_to_workunit_conversion_v0.json",
+    "examples/work_units/seeds/compatibility_review_workunit_seed_v0.json",
+    "examples/work_units/seeds/extraction_gap_workunit_seed_v0.json",
+    "examples/work_units/seeds/metadata_probe_planning_workunit_seed_v0.json",
+    "examples/work_units/seeds/minimal_workunit_seed_v0.json",
+    "examples/work_units/seeds/policy_blocked_workunit_seed_v0.json",
+    "examples/work_units/seeds/source_policy_review_workunit_seed_v0.json"
   ],
   "label": "WorkUnit seed draft manifest",
   "manifest_id": "workunit_seed_manifest_v0",
@@ -126,7 +126,7 @@
         "search_need_seed_source_gap_archive_metadata_v0"
       ],
       "review_required": true,
-      "seed_file_path": "examples/workunit_seeds/source_policy_review_workunit_seed_v0.json",
+      "seed_file_path": "examples/work_units/seeds/source_policy_review_workunit_seed_v0.json",
       "seed_status": "needs_human_review",
       "seed_type": "source_policy_review",
       "source_access_mode": "approved_metadata_probe_future",
@@ -171,7 +171,7 @@
         "search_need_seed_source_gap_archive_metadata_v0"
       ],
       "review_required": true,
-      "seed_file_path": "examples/workunit_seeds/metadata_probe_planning_workunit_seed_v0.json",
+      "seed_file_path": "examples/work_units/seeds/metadata_probe_planning_workunit_seed_v0.json",
       "seed_status": "needs_human_review",
       "seed_type": "approved_metadata_probe_planning_future",
       "source_access_mode": "approved_metadata_probe_future",
@@ -216,7 +216,7 @@
         "search_need_seed_extraction_gap_driver_inf_v0"
       ],
       "review_required": true,
-      "seed_file_path": "examples/workunit_seeds/extraction_gap_workunit_seed_v0.json",
+      "seed_file_path": "examples/work_units/seeds/extraction_gap_workunit_seed_v0.json",
       "seed_status": "needs_human_review",
       "seed_type": "container_deepening_planning_future",
       "source_access_mode": "repo_local_only",
@@ -259,7 +259,7 @@
         "search_need_seed_compatibility_gap_firefox_xp_v0"
       ],
       "review_required": true,
-      "seed_file_path": "examples/workunit_seeds/compatibility_review_workunit_seed_v0.json",
+      "seed_file_path": "examples/work_units/seeds/compatibility_review_workunit_seed_v0.json",
       "seed_status": "needs_more_evidence",
       "seed_type": "compatibility_evidence_review",
       "source_access_mode": "repo_local_only",
@@ -301,7 +301,7 @@
         "search_need_seed_minimal_v0"
       ],
       "review_required": true,
-      "seed_file_path": "examples/workunit_seeds/minimal_workunit_seed_v0.json",
+      "seed_file_path": "examples/work_units/seeds/minimal_workunit_seed_v0.json",
       "seed_status": "needs_human_review",
       "seed_type": "search_need_review",
       "source_access_mode": "manual_human_only",
@@ -345,7 +345,7 @@
         "search_need_seed_policy_blocked_broad_web_v0"
       ],
       "review_required": true,
-      "seed_file_path": "examples/workunit_seeds/policy_blocked_workunit_seed_v0.json",
+      "seed_file_path": "examples/work_units/seeds/policy_blocked_workunit_seed_v0.json",
       "seed_status": "policy_blocked",
       "seed_type": "policy_blocked_review",
       "source_access_mode": "no_autonomous_access",

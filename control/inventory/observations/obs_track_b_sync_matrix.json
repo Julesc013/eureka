@@ -7,11 +7,11 @@
   "description": "Read-only alignment of OBS side-lane draft artifacts with current local Track B contracts and audit reports.",
   "generated_from": [
     "contracts/node/eureka_node_manifest.v0.json",
-    "contracts/control_schemas/policies/node/local_foundry_state.v0.json",
-    "contracts/control_schemas/policies/node/node_capability.v0.json",
+    "contracts/schema/control/policies/node/local_foundry_state.v0.json",
+    "contracts/schema/control/policies/node/node_capability.v0.json",
     "contracts/node/node_policy.v0.json",
-    "contracts/control_schemas/policies/node/work_unit.v0.json",
-    "contracts/control_schemas/policies/node/work_unit_result.v0.json",
+    "contracts/schema/control/policies/node/work_unit.v0.json",
+    "contracts/schema/control/policies/node/work_unit_result.v0.json",
     "control/audits/obs-agent-01-local-eval-failure-mining-v0/local_eval_candidate_manifest.json",
     "control/audits/obs-agent-01-local-eval-failure-mining-v0/obs_agent_01_report.json",
     "control/audits/obs-agent-02-source-gap-candidate-generation-v0/obs_agent_02_report.json",
@@ -216,7 +216,7 @@
       "runtime_activation_allowed_now": false,
       "source_policy_approval_required": false,
       "track_b_artifact_family": "local_foundry_state_future",
-      "track_b_dependency_ref": "contracts/control_schemas/policies/node/local_foundry_state.v0.json"
+      "track_b_dependency_ref": "contracts/schema/control/policies/node/local_foundry_state.v0.json"
     },
     {
       "accepted_as_evidence_truth": false,
@@ -238,7 +238,7 @@
       "runtime_activation_allowed_now": false,
       "source_policy_approval_required": false,
       "track_b_artifact_family": "workunit_contract_future",
-      "track_b_dependency_ref": "contracts/control_schemas/policies/node/work_unit.v0.json"
+      "track_b_dependency_ref": "contracts/schema/control/policies/node/work_unit.v0.json"
     },
     {
       "accepted_as_evidence_truth": false,
@@ -260,7 +260,7 @@
       "runtime_activation_allowed_now": false,
       "source_policy_approval_required": false,
       "track_b_artifact_family": "workunit_result_contract_future",
-      "track_b_dependency_ref": "contracts/control_schemas/policies/node/work_unit_result.v0.json"
+      "track_b_dependency_ref": "contracts/schema/control/policies/node/work_unit_result.v0.json"
     }
   ],
   "matrix_id": "obs_track_b_sync_matrix_v0",

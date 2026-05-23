@@ -16,14 +16,14 @@ if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
 REQUIRED_CONTRACTS = [
-    "contracts/control_schemas/policies/hosting/hosted_wrapper_rehearsal.v0.json",
-    "contracts/control_schemas/audits/hosting/hosted_wrapper_smoke_report.v0.json",
-    "contracts/control_schemas/policies/hosting/public_alpha_smoke_matrix.v0.json",
-    "contracts/control_schemas/audits/hosting/public_alpha_blocked_request_report.v0.json",
-    "contracts/control_schemas/audits/hosting/public_alpha_status_report.v0.json",
-    "contracts/control_schemas/audits/hosting/public_launch_readiness_audit.v0.json",
-    "contracts/control_schemas/audits/hosting/public_launch_operator_signoff.v0.json",
-    "contracts/control_schemas/policies/hosting/post_launch_remediation_plan.v0.json",
+    "contracts/schema/control/policies/hosting/hosted_wrapper_rehearsal.v0.json",
+    "contracts/schema/control/audits/hosting/hosted_wrapper_smoke_report.v0.json",
+    "contracts/schema/control/policies/hosting/public_alpha_smoke_matrix.v0.json",
+    "contracts/schema/control/audits/hosting/public_alpha_blocked_request_report.v0.json",
+    "contracts/schema/control/audits/hosting/public_alpha_status_report.v0.json",
+    "contracts/schema/control/audits/hosting/public_launch_readiness_audit.v0.json",
+    "contracts/schema/control/audits/hosting/public_launch_operator_signoff.v0.json",
+    "contracts/schema/control/policies/hosting/post_launch_remediation_plan.v0.json",
 ]
 REQUIRED_POLICIES = [
     "control/inventory/hosting/hosted_wrapper_rehearsal_policy.json",

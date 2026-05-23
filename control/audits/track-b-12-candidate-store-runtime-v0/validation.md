@@ -24,8 +24,8 @@ Results:
 - `python scripts/validate_workunit_dry_run_runner.py`: PASS
 - `python scripts/validate_node_policy_evaluator.py`: PASS
 - `python scripts/validate_candidate_store_runtime.py`: PASS
-- `python scripts/record_candidate.py --input examples/search_needs/software_version_search_need_v0.json --check`: PASS
-- `python scripts/summarize_candidate_store.py --input examples/candidates --check`: PASS
+- `python scripts/record_candidate.py --input examples/search/needs/software_version_search_need_v0.json --check`: PASS
+- `python scripts/summarize_candidate_store.py --input examples/index/candidates --check`: PASS
 - `python -m unittest discover -s tests -t .`: PASS, 2075 tests
 - `python scripts/check_architecture_boundaries.py`: PASS
 - `python scripts/validate_track_a_contracts.py`: PASS

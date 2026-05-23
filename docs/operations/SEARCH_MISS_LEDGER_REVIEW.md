@@ -42,6 +42,6 @@ Run:
 
 ```powershell
 python scripts/validate_search_miss_ledger_runtime.py
-python scripts/record_search_miss.py --input examples/query_observations/empty_result_query_observation_v0.json --check
+python scripts/record_search_miss.py --input examples/search/query_observations/empty_result_query_observation_v0.json --check
 python -m unittest tests.runtime.test_search_miss_ledger_runtime tests.operations.test_search_miss_ledger_runtime_scripts
 ```

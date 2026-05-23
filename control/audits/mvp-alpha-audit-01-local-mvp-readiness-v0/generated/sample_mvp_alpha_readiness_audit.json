@@ -23,15 +23,15 @@
     "contracts/native/",
     "contracts/relay/",
     "contracts/snapshots/",
-    "contracts/actions/"
+    "contracts/command/actions/"
   ],
   "audited_examples": [
     "examples/",
     "examples/audits/mvp_alpha/"
   ],
   "audited_runtime_modules": [
-    "runtime/local_foundry/",
-    "runtime/search_quality/",
+    "runtime/local/foundry/",
+    "runtime/search/quality/",
     "runtime/actions/",
     "runtime/snapshots/",
     "runtime/relay/",

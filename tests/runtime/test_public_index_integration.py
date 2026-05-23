@@ -32,7 +32,7 @@ class PublicIndexIntegrationTests(unittest.TestCase):
 
     def test_no_h_series_module_import_or_connector_dependency(self):
         banned = ("runtime.connectors", "runtime.local_foundry", "runtime.search_quality")
-        for path in sorted((REPO_ROOT / "runtime/public_index").glob("*.py")):
+        for path in sorted((REPO_ROOT / "runtime/index/public").glob("*.py")):
             tree = ast.parse(path.read_text(encoding="utf-8"))
             text = path.read_text(encoding="utf-8").lower()
             self.assertNotIn("h1_", text)

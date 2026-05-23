@@ -5,8 +5,8 @@ import tempfile
 from pathlib import Path
 import unittest
 
-from runtime.local_appliance import close_local_appliance, open_local_appliance
-from runtime.search_hunt import build_hunt_exhaustion_report
+from runtime.local.appliance import close_local_appliance, open_local_appliance
+from runtime.search.hunt import build_hunt_exhaustion_report
 
 
 ROOT = Path(__file__).resolve().parents[2]

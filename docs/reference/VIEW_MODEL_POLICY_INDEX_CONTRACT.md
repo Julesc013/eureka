@@ -55,12 +55,12 @@ Track A validator family in deterministic order.
 
 ## Related Contracts
 
-- `contracts/views/view_model_policy_index.v0.json`
+- `contracts/view/pages/view_model_policy_index.v0.json`
 - `control/inventory/publication/view_model_policy_index.json`
 - `docs/operations/TRACK_A_VALIDATION.md`
-- `contracts/representations/semantic_renderer_parity.v0.json`
-- `contracts/representations/route_view_representation_matrix.v0.json`
-- all Track A canonical view-model contracts under `contracts/views/`
+- `contracts/representation/semantic_renderer_parity.v0.json`
+- `contracts/representation/route_view_representation_matrix.v0.json`
+- all Track A canonical view-model contracts under `contracts/view/pages/`
 
 ## No-Goals
 

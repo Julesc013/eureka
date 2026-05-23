@@ -3,8 +3,8 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from runtime.local_appliance import close_local_appliance, open_local_appliance
-from runtime.local_review import rebuild_reviewed_index, record_review_decision
+from runtime.local.appliance import close_local_appliance, open_local_appliance
+from runtime.local.review import rebuild_reviewed_index, record_review_decision
 from scripts.eureka_init_instance import initialize_instance
 from scripts.validate_local_review_rebuild import seed_review_records
 

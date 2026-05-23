@@ -11,12 +11,12 @@ from runtime.packs.errors import PackImportPolicyError
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
-SOURCE_PACKS_ROOT = REPO_ROOT / "examples" / "source_packs"
-EVIDENCE_PACKS_ROOT = REPO_ROOT / "examples" / "evidence_packs"
-INDEX_PACKS_ROOT = REPO_ROOT / "examples" / "index_packs"
-CONTRIBUTION_PACKS_ROOT = REPO_ROOT / "examples" / "contribution_packs"
+SOURCE_PACKS_ROOT = REPO_ROOT / "examples" / "packs" / "source"
+EVIDENCE_PACKS_ROOT = REPO_ROOT / "examples" / "packs" / "evidence"
+INDEX_PACKS_ROOT = REPO_ROOT / "examples" / "packs" / "index"
+CONTRIBUTION_PACKS_ROOT = REPO_ROOT / "examples" / "packs" / "contribution"
 PACKS_ROOT = REPO_ROOT / "examples" / "packs"
-PACK_IMPORT_DRY_RUN_ROOT = REPO_ROOT / "examples" / "pack_import_dry_run"
+PACK_IMPORT_DRY_RUN_ROOT = REPO_ROOT / "examples" / "packs" / "import_dry_run"
 AUDIT_ROOT = REPO_ROOT / "control" / "audits" / "pack-import-local-dry-run-runtime-v0"
 
 APPROVED_EXAMPLE_ROOTS = (

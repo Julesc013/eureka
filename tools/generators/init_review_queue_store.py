@@ -13,8 +13,8 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.review_queue import ReviewQueueStore
-from runtime.review_queue.validation import validate_review_queue_path
+from runtime.review.queue import ReviewQueueStore
+from runtime.review.queue.validation import validate_review_queue_path
 
 
 def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr: TextIO = sys.stderr) -> int:

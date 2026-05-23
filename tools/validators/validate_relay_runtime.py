@@ -40,7 +40,7 @@ CONTRACTS = [
     "contracts/relay/relay_security_policy.v0.json",
     "contracts/relay/old_browser_profile.v0.json",
     "contracts/relay/terminal_profile.v0.json",
-    "contracts/control_schemas/fixtures/relay/native_fixture_endpoint.v0.json",
+    "contracts/schema/control/fixtures/relay/native_fixture_endpoint.v0.json",
 ]
 POLICIES = [
     "control/inventory/relay/relay_profile_policy.json",

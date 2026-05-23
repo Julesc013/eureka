@@ -24,7 +24,7 @@ Eureka has many scaffolds and audits. Q58 should prove real local behavior acros
 
 - `.aide/queue/EUREKA-SOURCE-SLICE-01/**`
 - `.aide/reports/eureka-fixture-source-observation-slice.md`
-- `runtime/local_foundry/fixture_source_observation_slice.py`
+- `runtime/local/foundry/fixture_source_observation_slice.py`
 - `scripts/validate_fixture_source_observation_vertical_slice.py`
 - `tests/runtime/test_fixture_source_observation_vertical_slice.py`
 - `tests/operations/test_fixture_source_observation_vertical_slice_script.py`

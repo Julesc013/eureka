@@ -13,7 +13,7 @@ This task stops at step 3. There is no public-index rebuild runtime, public sear
 
 ## Boundaries
 
-`control/` stores policies and audit evidence. `contracts/master_index/` stores the governed schemas. `examples/` stores public-safe fixtures. No runtime code is added for B20.
+`control/` stores policies and audit evidence. `contracts/index/master/` stores the governed schemas. `examples/` stores public-safe fixtures. No runtime code is added for B20.
 
 The path policy forbids `site/dist/`, `site/dist/data/public_index/`, runtime output roots, publication inventory roots, production public-index roots, production master-index roots, and local private roots.
 

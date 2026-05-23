@@ -1,0 +1,44 @@
+{
+  "schema_version": "local_evidence_ledger_record.v0",
+  "input_id": "conflicting_evidence_fixture_v0",
+  "input_type": "committed_evidence_fixture",
+  "input_ref": "examples/evidence/ledger/records/conflicting_evidence_record_v0.json",
+  "input_status": "conflicting",
+  "input_public_safe": true,
+  "input_summary": "Conflicting evidence fixture.",
+  "evidence_record_status": "conflicting",
+  "evidence_record_type": "conflict_record",
+  "evidence_label": "Conflicting Evidence Fixture",
+  "source_id": "source:fixture:evidence:conflict",
+  "source_label": "Conflict Evidence Source",
+  "source_locator": "fixture:evidence-ledger:conflict",
+  "claim_type": "conflict",
+  "claim_summary": "Fixture preserves two different metadata values for review.",
+  "claim_value": {
+    "first_value": "synthetic-value-a",
+    "second_value": "synthetic-value-b"
+  },
+  "claim_subject": "synthetic-conflict-subject",
+  "observation_summary": "Conflict is preserved and requires review.",
+  "provenance_summary": "Committed conflict fixture.",
+  "lineage_refs": [
+    "fixture:conflicting_evidence_record_v0"
+  ],
+  "related_candidate_refs": [],
+  "related_source_cache_refs_future": [],
+  "related_search_need_refs": [],
+  "related_workunit_refs": [],
+  "related_pack_refs": [],
+  "related_review_refs_future": [],
+  "confidence_or_uncertainty": "conflict_review_required",
+  "conflict_summary": {
+    "conflict_preservation_required": true,
+    "automatic_conflict_resolution_allowed": false,
+    "automatic_merge_allowed": false,
+    "conflict_note": "Values differ in the fixture and must remain separate."
+  },
+  "limitations": [
+    "Conflict is not resolved."
+  ],
+  "notes": []
+}

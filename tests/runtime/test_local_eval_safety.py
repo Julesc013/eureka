@@ -7,7 +7,7 @@ import socket
 from pathlib import Path
 import unittest
 
-from runtime.local_eval import run_safety_checks
+from runtime.local.eval import run_safety_checks
 
 
 ROOT = Path(__file__).resolve().parents[2]

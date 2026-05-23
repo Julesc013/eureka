@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/search/interaction/user_feedback_event.v0.json",
+  "title": "UserFeedbackEvent",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "packet_type",
+    "created_at",
+    "feedback_id",
+    "run_id",
+    "target_type",
+    "target_id",
+    "feedback_type",
+    "rationale",
+    "creates_plan_patch"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "user_feedback_event.v0"
+    },
+    "packet_type": {
+      "const": "UserFeedbackEvent"
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "feedback_id": {
+      "type": "string"
+    },
+    "run_id": {
+      "type": "string"
+    },
+    "target_type": {
+      "type": "string"
+    },
+    "target_id": {
+      "type": "string"
+    },
+    "feedback_type": {
+      "type": "string"
+    },
+    "rationale": {
+      "type": "string"
+    },
+    "creates_plan_patch": {
+      "type": "boolean"
+    }
+  },
+  "additionalProperties": true
+}

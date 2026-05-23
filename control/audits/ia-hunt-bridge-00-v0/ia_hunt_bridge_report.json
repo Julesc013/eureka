@@ -15,7 +15,7 @@
       "control/policies/ia_hunt_non_claim_policy.json"
     ],
     "runtime": [
-      "runtime/search_hunt/ia_bridge.py"
+      "runtime/search/hunt/ia_bridge.py"
     ],
     "cli": [
       "scripts/eureka_ia_hunt_bridge.py"

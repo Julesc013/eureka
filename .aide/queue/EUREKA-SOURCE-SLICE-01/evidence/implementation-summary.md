@@ -15,7 +15,7 @@ Q58 added one deterministic local fixture harness that composes existing Eureka 
 
 ## Files Added
 
-- `runtime/local_foundry/fixture_source_observation_slice.py`
+- `runtime/local/foundry/fixture_source_observation_slice.py`
 - `scripts/validate_fixture_source_observation_vertical_slice.py`
 - `tests/runtime/test_fixture_source_observation_vertical_slice.py`
 - `tests/operations/test_fixture_source_observation_vertical_slice_script.py`

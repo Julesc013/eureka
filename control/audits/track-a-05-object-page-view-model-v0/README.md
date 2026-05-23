@@ -50,8 +50,8 @@ object page contract as inputs, not as permission to mutate public search or
 activate object pages:
 
 - `contracts/api/search_result_card.v0.json`
-- `contracts/views/search_page.v0.json`
-- `contracts/pages/object_page.v0.json`
+- `contracts/view/pages/search_page.v0.json`
+- `contracts/surface/pages/object_page.v0.json`
 
 Future object pages may connect to source/evidence records after governed
 runtime work. This milestone does not create source/evidence runtime outputs,

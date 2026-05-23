@@ -3,7 +3,7 @@
   "task": "WORKBENCH-FOUNDATION-00",
   "locations": [
     {
-      "path": "contracts/search_interaction/",
+      "path": "contracts/search/interaction/",
       "purpose": "SEARCH-INTERACTION-00 packet contracts",
       "runtime_owns_contracts": false,
       "surfaces_own_contracts": false
@@ -15,13 +15,13 @@
       "surfaces_own_contracts": false
     },
     {
-      "path": "contracts/view_models/",
+      "path": "contracts/view/models/core/",
       "purpose": "Surface-independent view model packets",
       "runtime_owns_contracts": false,
       "surfaces_own_contracts": false
     },
     {
-      "path": "contracts/projections/",
+      "path": "contracts/surface/projection/",
       "purpose": "Projection profile contracts",
       "runtime_owns_contracts": false,
       "surfaces_own_contracts": false
@@ -52,6 +52,6 @@
     }
   ],
   "notes": [
-    "R0-03 also records future taxonomy reservations under contracts/views/workbench/ and contracts/search/interaction/ for later reconciliation."
+    "R0-03 also records future taxonomy reservations under contracts/view/pages/workbench/ and contracts/search/interaction/ for later reconciliation."
   ]
 }

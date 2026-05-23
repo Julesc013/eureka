@@ -1,5 +1,5 @@
 {
-  "input_ref": "examples/evidence_ledger_records/metadata_claim_record_v0.json",
+  "input_ref": "examples/evidence/ledger/records/metadata_claim_record_v0.json",
   "product_boundary": {
     "changed_public_search_behavior": false,
     "claimed_exhaustive_global_search": false,
@@ -44,7 +44,7 @@
     "evidence_record_type": "metadata_claim",
     "input_id": "metadata_claim_fixture_v0",
     "input_public_safe": true,
-    "input_ref": "examples/evidence_ledger_records/metadata_claim_record_v0.json",
+    "input_ref": "examples/evidence/ledger/records/metadata_claim_record_v0.json",
     "input_status": "recorded_local",
     "input_summary": "Metadata claim fixture.",
     "input_type": "committed_evidence_fixture",

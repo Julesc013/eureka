@@ -97,8 +97,8 @@ INVENTORY_FILES = (
     "control/inventory/source_packs/h9_media_metadata_no_download_upload_policy.json",
 )
 SOURCE_PACK_EXAMPLES = (
-    "examples/source_packs/h9_media_metadata_source_pack_manifest_v0.json",
-    "examples/source_packs/h9_media_metadata_policy_pack_v0.json",
+    "examples/packs/source/h9_media_metadata_source_pack_manifest_v0.json",
+    "examples/packs/source/h9_media_metadata_policy_pack_v0.json",
 )
 EXTRA_EXAMPLES = (
     "examples/sources/source_records/media_metadata_policy_blocked_source_v2.json",

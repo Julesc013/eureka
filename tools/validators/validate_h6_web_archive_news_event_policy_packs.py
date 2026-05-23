@@ -109,8 +109,8 @@ INVENTORY_FILES = (
     "control/inventory/source_packs/h6_web_archive_news_event_no_fetch_crawl_policy.json",
 )
 SOURCE_PACK_EXAMPLES = (
-    "examples/source_packs/h6_web_archive_news_event_source_pack_manifest_v0.json",
-    "examples/source_packs/h6_web_archive_news_event_policy_pack_v0.json",
+    "examples/packs/source/h6_web_archive_news_event_source_pack_manifest_v0.json",
+    "examples/packs/source/h6_web_archive_news_event_policy_pack_v0.json",
 )
 EXTRA_EXAMPLES = (
     "examples/sources/source_records/web_archive_news_event_policy_blocked_source_v2.json",

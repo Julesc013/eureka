@@ -54,7 +54,7 @@
       "suggested_milestone": "Source Coverage and Capability Model v0",
       "acceptance_criteria": ["source capability fields are defined", "placeholder sources remain honest", "source gaps map to needed fixture families", "no live crawling is introduced"],
       "tests_to_add_first": ["source capability schema validation", "placeholder source cannot claim implemented capability", "search usefulness query family maps to source capability need"],
-      "likely_files": ["control/inventory/sources/", "contracts/source_registry/", "docs/architecture/", "tests/operations/"],
+      "likely_files": ["control/inventory/sources/", "contracts/source/registry/", "docs/architecture/", "tests/operations/"],
       "do_not_do": ["do not add live connectors", "do not scrape external systems", "do not mark placeholder sources implemented"],
       "notes": "Implemented as the source capability/coverage-depth model required before fixture expansion."
     },

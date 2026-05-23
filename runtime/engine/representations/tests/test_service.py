@@ -43,7 +43,7 @@ class DeterministicRepresentationsServiceTestCase(unittest.TestCase):
         self.assertEqual(result.representations[2].representation_kind, "fixture_archive")
         self.assertEqual(
             result.representations[1].access_locator,
-            "contracts/control_schemas/fixtures/archive/software/synthetic_resolution_fixture.json#fixture:software/synthetic-demo-app@1.0.0",
+            "contracts/schema/control/fixtures/archive/software/synthetic_resolution_fixture.json#fixture:software/synthetic-demo-app@1.0.0",
         )
 
     def test_github_release_target_returns_release_page_and_asset_summaries(self) -> None:

@@ -7,7 +7,7 @@ from scripts import record_source_cache, summarize_source_cache, validate_local_
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
-SOURCE_LEAD = REPO_ROOT / "examples/source_cache_records/source_lead_record_v0.json"
+SOURCE_LEAD = REPO_ROOT / "examples/sources/cache/records/source_lead_record_v0.json"
 
 
 class LocalSourceCacheRuntimeScriptTests(unittest.TestCase):
@@ -32,10 +32,10 @@ class LocalSourceCacheRuntimeScriptTests(unittest.TestCase):
         self.assertFalse(record_source_cache.output_path_allowed(REPO_ROOT / "site/dist/source_cache.json"))
 
     def test_record_script_refuses_runtime_output(self) -> None:
-        self.assertFalse(record_source_cache.output_path_allowed(REPO_ROOT / "runtime/source_cache.json"))
+        self.assertFalse(record_source_cache.output_path_allowed(REPO_ROOT / "runtime/source/cache.json"))
 
     def test_summarizer_works_on_examples(self) -> None:
-        code = summarize_source_cache.main(["--input", str(REPO_ROOT / "examples/source_cache_records"), "--check"])
+        code = summarize_source_cache.main(["--input", str(REPO_ROOT / "examples/sources/cache/records"), "--check"])
         self.assertEqual(code, 0)
 
     def test_summarizer_writes_explicit_report_to_temp_path(self) -> None:
@@ -45,7 +45,7 @@ class LocalSourceCacheRuntimeScriptTests(unittest.TestCase):
             code = summarize_source_cache.main(
                 [
                     "--input",
-                    str(REPO_ROOT / "examples/source_cache_records"),
+                    str(REPO_ROOT / "examples/sources/cache/records"),
                     "--output",
                     str(output),
                     "--summary-output",
@@ -66,12 +66,12 @@ class LocalSourceCacheRuntimeScriptTests(unittest.TestCase):
         report = record_source_cache.build_report(SOURCE_LEAD)
         record = report["record"]
         record["product_boundary"]["enabled_telemetry"] = True
-        from runtime.local_foundry import source_cache
+        from runtime.local.foundry import source_cache
 
         self.assertTrue(source_cache.detect_product_boundary_violations(record))
 
     def test_runtime_does_not_call_network_model_or_provider(self) -> None:
-        runtime_source = (REPO_ROOT / "runtime/local_foundry/source_cache.py").read_text(encoding="utf-8")
+        runtime_source = (REPO_ROOT / "runtime/local/foundry/source_cache.py").read_text(encoding="utf-8")
         scripts = (
             (REPO_ROOT / "scripts/record_source_cache.py").read_text(encoding="utf-8")
             + (REPO_ROOT / "scripts/summarize_source_cache.py").read_text(encoding="utf-8")

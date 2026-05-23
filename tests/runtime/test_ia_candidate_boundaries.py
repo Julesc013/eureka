@@ -2,7 +2,7 @@ import json
 import unittest
 from pathlib import Path
 
-from runtime.source_observation.internet_archive_candidate_index import (
+from runtime.source.observation.internet_archive_candidate_index import (
     build_ia_candidate_boundary_report,
     build_ia_candidate_write_report,
     build_ia_candidates_from_evidence,

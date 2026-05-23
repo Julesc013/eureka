@@ -4,7 +4,7 @@ status: completed
 purpose: Resolve contract/control schema authority before Workbench Foundation by classification, validator, tests, docs, and audit evidence.
 scope:
   - contracts/repo and contract taxonomy docs
-  - contracts/control_schemas decision
+  - contracts/schema/control decision
   - control inventory authority and duplicate-risk records
   - contract taxonomy validator and focused tests
 gate:

@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/schema/control/policies/packs/source_pack_export.v0.json",
+  "title": "Eureka Source Pack Export v0",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "source_pack_export_id",
+    "source_pack_manifest_ref",
+    "export_status",
+    "export_mode",
+    "included_record_refs",
+    "included_scorecard_refs",
+    "included_coverage_refs",
+    "limitations",
+    "review_posture",
+    "truth_boundary",
+    "product_boundary",
+    "notes"
+  ],
+  "properties": {
+    "schema_version": {"const": "source_pack_export.v0"},
+    "source_pack_export_id": {"type": "string", "minLength": 1},
+    "export_status": {
+      "enum": ["draft_only", "export_preview_only", "blocked_by_policy", "not_evaluable"]
+    },
+    "truth_boundary": {"type": "object"},
+    "product_boundary": {"type": "object"}
+  }
+}

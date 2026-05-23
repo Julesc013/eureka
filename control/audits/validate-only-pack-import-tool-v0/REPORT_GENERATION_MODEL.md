@@ -1,7 +1,7 @@
 # Report Generation Model
 
 The tool emits Pack Import Report v0 documents matching
-`contracts/packs/pack_import_report.v0.json`.
+`contracts/pack/pack_import_report.v0.json`.
 
 Reports include:
 

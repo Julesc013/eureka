@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import unittest
 
-from runtime.source_observation.ia_live_metadata_lane import REQUIRED_EVENT_TYPES, run_ia_live_metadata_lane_mock
+from runtime.source.observation.ia_live_metadata_lane import REQUIRED_EVENT_TYPES, run_ia_live_metadata_lane_mock
 
 
 class IALiveMetadataLaneEventsTests(unittest.TestCase):

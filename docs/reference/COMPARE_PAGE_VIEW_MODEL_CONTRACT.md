@@ -50,7 +50,7 @@ authorized bulk access, or production suitability.
 
 ## Related Contracts
 
-- `contracts/views/compare_page.v0.json`
+- `contracts/view/pages/compare_page.v0.json`
 - `control/inventory/publication/compare_page_view_model_policy.json`
 - `docs/reference/OBJECT_PAGE_VIEW_MODEL_CONTRACT.md`
 - `docs/reference/CANDIDATE_PAGE_VIEW_MODEL_CONTRACT.md`

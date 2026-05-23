@@ -5,9 +5,9 @@ import tempfile
 from pathlib import Path
 import unittest
 
-from runtime.local_appliance import close_local_appliance, open_local_appliance
-from runtime.search_hunt import build_background_hunt_plan
-from runtime.search_need import create_workunits_from_need
+from runtime.local.appliance import close_local_appliance, open_local_appliance
+from runtime.search.hunt import build_background_hunt_plan
+from runtime.search.need import create_workunits_from_need
 
 
 ROOT = Path(__file__).resolve().parents[2]

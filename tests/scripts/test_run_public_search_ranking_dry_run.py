@@ -8,7 +8,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 SCRIPT = ROOT / "scripts" / "run_public_search_ranking_dry_run.py"
-APPROVED_ROOT = ROOT / "examples" / "public_search_ranking_dry_run"
+APPROVED_ROOT = ROOT / "examples" / "index" / "public_search_ranking_dry_run"
 
 
 class RunPublicSearchRankingDryRunScriptTests(unittest.TestCase):

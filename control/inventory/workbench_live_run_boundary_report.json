@@ -5,7 +5,7 @@
   "local_service_projection_added": true,
   "surface_local_html_workbench_projection": true,
   "transitional_runtime_local_workbench_presentation_debt": false,
-  "debt_note": "surfaces/web/workbench/local_html owns local HTML presentation; runtime/resolution_run owns behavior and runtime/local_service only serves the projection.",
+  "debt_note": "surfaces/web/workbench/local_html owns local HTML presentation; runtime/resolution_run owns behavior and runtime/local/service only serves the projection.",
   "live_ia_call_performed": false,
   "source_probe_executed": false,
   "source_cache_write_performed": false,

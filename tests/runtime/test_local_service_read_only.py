@@ -6,9 +6,9 @@ import tempfile
 from pathlib import Path
 import unittest
 
-from runtime.local_appliance import close_local_appliance, open_local_appliance
-from runtime.local_service import LocalServiceApp, create_local_http_server, validate_host_allowed
-from runtime.local_service.errors import LocalServiceHostError
+from runtime.local.appliance import close_local_appliance, open_local_appliance
+from runtime.local.service import LocalServiceApp, create_local_http_server, validate_host_allowed
+from runtime.local.service.errors import LocalServiceHostError
 
 
 ROOT = Path(__file__).resolve().parents[2]

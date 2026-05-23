@@ -113,7 +113,7 @@
       "status": "passed",
       "returncode": 0,
       "duration_seconds": 0.06,
-      "summary": "status: valid\nexample_count: 3\ncontract_file: contracts/source_cache/source_cache_record.v0.json"
+      "summary": "status: valid\nexample_count: 3\ncontract_file: contracts/source/cache/source_cache_record.v0.json"
     },
     {
       "command": "python scripts/validate_evidence_ledger_record.py --all-examples",
@@ -127,7 +127,7 @@
       "status": "passed",
       "returncode": 0,
       "duration_seconds": 0.06,
-      "summary": "status: valid\nexample_count: 3\ncontract_file: contracts/evidence_ledger/evidence_ledger_record.v0.json"
+      "summary": "status: valid\nexample_count: 3\ncontract_file: contracts/evidence/ledger/evidence_ledger_record.v0.json"
     },
     {
       "command": "python scripts/validate_source_cache_evidence_ledger_contract.py",
@@ -148,7 +148,7 @@
       "status": "passed",
       "returncode": 0,
       "duration_seconds": 0.09,
-      "summary": "status: valid\ncontract_file: contracts/source_sync/source_sync_worker_job.v0.json\nexample_count: 4"
+      "summary": "status: valid\ncontract_file: contracts/source/sync/source_sync_worker_job.v0.json\nexample_count: 4"
     },
     {
       "command": "python scripts/validate_demand_dashboard_snapshot.py --all-examples",
@@ -169,7 +169,7 @@
       "status": "passed",
       "returncode": 0,
       "duration_seconds": 0.08,
-      "summary": "Query Guard Decision validation\nstatus: valid\nexample_count: 5\nwarnings:\n- examples/query_guard/minimal_fake_demand_throttled_v0: P67 validates contract/example artifacts only; runtime query guard remains deferred.\n- examples/query_guard/minimal_private_path_rejected_v0: P67 validates contract/example artifacts only; runtime query guard remains deferred.\n- examples/query_guard/minimal_public_safe_query_v0: P67 validates contract/example artifacts only; runtime query guard remains deferred.\n- examples/query_guard/minimal_secret_rejected_v0: P67 validates contract/example artifacts only; runtime query guard remains deferred.\n... (1 more lines)"
+      "summary": "Query Guard Decision validation\nstatus: valid\nexample_count: 5\nwarnings:\n- examples/search/query_guard/minimal_fake_demand_throttled_v0: P67 validates contract/example artifacts only; runtime query guard remains deferred.\n- examples/search/query_guard/minimal_private_path_rejected_v0: P67 validates contract/example artifacts only; runtime query guard remains deferred.\n- examples/search/query_guard/minimal_public_safe_query_v0: P67 validates contract/example artifacts only; runtime query guard remains deferred.\n- examples/search/query_guard/minimal_secret_rejected_v0: P67 validates contract/example artifacts only; runtime query guard remains deferred.\n... (1 more lines)"
     },
     {
       "command": "python scripts/validate_query_privacy_poisoning_guard_contract.py",

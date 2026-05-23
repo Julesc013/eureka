@@ -14,12 +14,12 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.source_observation.internet_archive_promotion import (  # noqa: E402
+from runtime.source.observation.internet_archive_promotion import (  # noqa: E402
     build_ia_promotion_previews,
     load_ia_promotion_dry_run_policy,
     validate_ia_promotion_preview,
 )
-from runtime.source_observation.internet_archive_review import (  # noqa: E402
+from runtime.source.observation.internet_archive_review import (  # noqa: E402
     apply_ia_review_decision,
     build_ia_review_items_from_candidates,
     load_default_ia_candidate_records,
@@ -41,12 +41,12 @@ REQUIRED_FILES = (
     "control/inventory/ia_review_item_schema.json",
     "control/inventory/ia_review_decision_schema.json",
     "control/inventory/ia_promotion_preview_schema.json",
-    "examples/review_queue/internet_archive_metadata/expected_review_items.json",
-    "examples/review_queue/internet_archive_metadata/expected_review_decisions.json",
-    "examples/review_queue/internet_archive_metadata/expected_promotion_preview.json",
-    "examples/review_queue/internet_archive_metadata/expected_review_boundary_report.json",
-    "runtime/source_observation/internet_archive_review.py",
-    "runtime/source_observation/internet_archive_promotion.py",
+    "examples/review/queue/internet_archive_metadata/expected_review_items.json",
+    "examples/review/queue/internet_archive_metadata/expected_review_decisions.json",
+    "examples/review/queue/internet_archive_metadata/expected_promotion_preview.json",
+    "examples/review/queue/internet_archive_metadata/expected_review_boundary_report.json",
+    "runtime/source/observation/internet_archive_review.py",
+    "runtime/source/observation/internet_archive_promotion.py",
     "scripts/eureka_ia_review_queue.py",
     "scripts/eureka_ia_promotion_dry_run.py",
 )
@@ -393,7 +393,7 @@ def _validate_no_forbidden_git_state(repo_root: Path, errors: list[str], warning
             "site/dist/data/public_index",
             "runtime/connectors",
             "runtime/extraction",
-            "runtime/search_quality",
+            "runtime/search/quality",
             "native",
             "crates",
         ],

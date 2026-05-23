@@ -6,7 +6,7 @@ R0-04 adds product-facing contracts:
 - `contracts/domain/source_policy.v0.json`
 - `contracts/runtime/metadata_request.v0.json`
 - `contracts/runtime/metadata_response.v0.json`
-- `contracts/runtime/source_observation.v0.json`
+- `contracts/runtime/source/observation.v0.json`
 - `contracts/runtime/normalized_observation.v0.json`
 - `contracts/runtime/evidence_candidate.v0.json`
 - `contracts/runtime/review_item.v0.json`

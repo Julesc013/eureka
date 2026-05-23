@@ -6,7 +6,7 @@ allowed_scope_summary: Local Workbench hunt visibility, read-only views, focused
 gate:
   - HUNT-01 completed
   - use explicit local instance
-  - read Search Hunt sessions from runtime/search_hunt through Local Appliance composition
+  - read Search Hunt sessions from runtime/search/hunt through Local Appliance composition
   - no WorkUnit creation
   - no source probes
   - no AI/model/provider calls

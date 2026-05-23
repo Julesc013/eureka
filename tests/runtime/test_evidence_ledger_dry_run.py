@@ -3,7 +3,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from runtime.evidence_ledger.dry_run import classify_candidate, run_evidence_ledger_dry_run
+from runtime.evidence.ledger.dry_run import classify_candidate, run_evidence_ledger_dry_run
 
 
 def candidate(**overrides):

@@ -47,7 +47,7 @@ class ValidatePublicSearchRankingDryRunReportScriptTests(unittest.TestCase):
             "evidence_ledger_mutated",
             "master_index_mutated",
         ]
-        base = run_public_search_ranking_dry_run([Path("examples/public_search_ranking_dry_run")]).to_dict()
+        base = run_public_search_ranking_dry_run([Path("examples/index/public_search_ranking_dry_run")]).to_dict()
         with tempfile.TemporaryDirectory() as temp_dir:
             for key in false_keys:
                 payload = json.loads(json.dumps(base))

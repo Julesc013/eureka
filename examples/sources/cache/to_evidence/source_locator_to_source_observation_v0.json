@@ -1,0 +1,38 @@
+{
+  "schema_version": "local_source_cache_record.v0",
+  "input_id": "source_locator_bridge_case_v0",
+  "input_type": "committed_source_fixture",
+  "input_ref": "examples/sources/cache/to_evidence/source_locator_to_source_observation_v0.json",
+  "input_status": "recorded_local",
+  "input_public_safe": true,
+  "input_summary": "Bridge case for source locator mapping.",
+  "source_cache_record_status": "recorded_local",
+  "source_cache_record_type": "source_locator",
+  "source_id": "source:bridge:locator",
+  "source_label": "Locator Bridge Source",
+  "source_family": "locator_bridge_fixture",
+  "source_kind": "committed_fixture",
+  "source_locator": "fixture:bridge:locator",
+  "source_access_mode": "repo_local_only",
+  "source_policy_status": "fixture_only",
+  "source_authority_posture": "locator_only",
+  "source_coverage_summary": "Represents only a committed fixture locator.",
+  "source_metadata_summary": "Locator points to a repo fixture, not a live endpoint.",
+  "source_health_summary": "No live endpoint check.",
+  "source_limitations": [
+    "Locator cannot be dereferenced by this bridge."
+  ],
+  "source_observation_summary": "The locator is safe to summarize locally.",
+  "normalized_fields": {
+    "locator_kind": "fixture"
+  },
+  "related_candidate_refs": [],
+  "related_search_need_refs": [],
+  "related_workunit_refs": [],
+  "related_source_lead_refs": [],
+  "related_pack_refs_future": [],
+  "related_evidence_refs_future": [],
+  "notes": [
+    "URL fetch remains disabled."
+  ]
+}

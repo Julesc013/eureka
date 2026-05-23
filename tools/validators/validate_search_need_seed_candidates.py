@@ -36,17 +36,17 @@ OBSERVATION_DIRS = (
 )
 
 SEED_EXAMPLE_PATHS = (
-    "examples/search_need_seeds/minimal_search_need_seed_v0.json",
-    "examples/search_need_seeds/source_gap_search_need_seed_v0.json",
-    "examples/search_need_seeds/extraction_gap_search_need_seed_v0.json",
-    "examples/search_need_seeds/compatibility_gap_search_need_seed_v0.json",
-    "examples/search_need_seeds/policy_blocked_search_need_seed_v0.json",
+    "examples/search/need_seeds/minimal_search_need_seed_v0.json",
+    "examples/search/need_seeds/source_gap_search_need_seed_v0.json",
+    "examples/search/need_seeds/extraction_gap_search_need_seed_v0.json",
+    "examples/search/need_seeds/compatibility_gap_search_need_seed_v0.json",
+    "examples/search/need_seeds/policy_blocked_search_need_seed_v0.json",
 )
 
 CONVERSION_EXAMPLE_PATHS = (
-    "examples/search_need_seed_conversions/minimal_candidate_to_need_conversion_v0.json",
-    "examples/search_need_seed_conversions/source_gap_candidate_to_need_conversion_v0.json",
-    "examples/search_need_seed_conversions/request_more_evidence_conversion_v0.json",
+    "examples/search/need_seed_conversions/minimal_candidate_to_need_conversion_v0.json",
+    "examples/search/need_seed_conversions/source_gap_candidate_to_need_conversion_v0.json",
+    "examples/search/need_seed_conversions/request_more_evidence_conversion_v0.json",
 )
 
 REQUIRED_DOCS = (
@@ -141,7 +141,7 @@ EXTRA_FALSE_BOUNDARY_FIELDS = {
     "accepted_runtime_search_need",
 }
 TRACK_B_PREFIXES = (
-    "contracts/source_registry/",
+    "contracts/source/registry/",
     "contracts/workunit/",
     "contracts/node/",
     "contracts/local/",

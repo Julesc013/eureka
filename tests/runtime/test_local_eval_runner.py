@@ -7,7 +7,7 @@ import socket
 from pathlib import Path
 import unittest
 
-from runtime.local_eval import LocalEvalRunner
+from runtime.local.eval import LocalEvalRunner
 
 
 ROOT = Path(__file__).resolve().parents[2]

@@ -4,7 +4,7 @@ import json
 from pathlib import Path
 import unittest
 
-from runtime.local_eval.scout_schema import REQUIRED_RELATION_TYPES, REQUIRED_WORKUNIT_SEED_TYPES
+from runtime.local.eval.scout_schema import REQUIRED_RELATION_TYPES, REQUIRED_WORKUNIT_SEED_TYPES
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]

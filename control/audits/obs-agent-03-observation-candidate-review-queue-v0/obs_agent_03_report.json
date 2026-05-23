@@ -57,10 +57,10 @@
     "control/inventory/observations/observation_candidate_triage_rules.json"
   ],
   "added_examples": [
-    "examples/observation_reviews/review_queue_minimal_v0.json",
-    "examples/observation_reviews/review_queue_source_gap_batch_v0.json",
-    "examples/observation_reviews/review_queue_policy_blocked_batch_v0.json",
-    "examples/observation_reviews/review_queue_request_more_evidence_batch_v0.json"
+    "examples/review/observation_reviews/review_queue_minimal_v0.json",
+    "examples/review/observation_reviews/review_queue_source_gap_batch_v0.json",
+    "examples/review/observation_reviews/review_queue_policy_blocked_batch_v0.json",
+    "examples/review/observation_reviews/review_queue_request_more_evidence_batch_v0.json"
   ],
   "added_scripts": [
     "scripts/build_observation_candidate_review_queue.py",

@@ -211,7 +211,7 @@ def _safe_artifact_root(raw: str | Path) -> Path:
         path = REPO_ROOT / path
     resolved = path.resolve()
     rel = resolved.relative_to(REPO_ROOT.resolve()).as_posix().lower()
-    allowed = ("control/audits", "control/inventory/source_packs", "control/inventory/connectors", "examples/connectors/h14_source_discovery", "examples/source_packs", "examples/sources")
+    allowed = ("control/audits", "control/inventory/source_packs", "control/inventory/connectors", "examples/connectors/h14_source_discovery", "examples/packs/source", "examples/sources")
     if any(rel == prefix or rel.startswith(prefix + "/") for prefix in allowed):
         return resolved
     raise ValueError("artifact root must be an allowlisted committed H0-H14 artifact root")

@@ -5,10 +5,10 @@ remove ambiguity about where evidence contract material is found before the
 first IA connector foundation task.
 
 The current canonical evidence ledger schemas remain under
-`contracts/evidence_ledger/`:
+`contracts/evidence/ledger/`:
 
-- `contracts/evidence_ledger/evidence_ledger_record.v0.json`
-- `contracts/evidence_ledger/evidence_ledger_manifest.v0.json`
+- `contracts/evidence/ledger/evidence_ledger_record.v0.json`
+- `contracts/evidence/ledger/evidence_ledger_manifest.v0.json`
 
 Evidence-ledger runtime planning and source-cache-to-evidence policies remain
 under `control/inventory/evidence_ledger/`.

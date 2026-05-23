@@ -16,8 +16,8 @@ if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
 from eureka_init_instance import initialize_instance
-from runtime.local_appliance import LocalApplianceError, close_local_appliance, open_local_appliance
-from runtime.workunit_queue import WorkUnit, WorkUnitQueueError
+from runtime.local.appliance import LocalApplianceError, close_local_appliance, open_local_appliance
+from runtime.worker.workunit_queue import WorkUnit, WorkUnitQueueError
 
 
 def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr: TextIO = sys.stderr) -> int:

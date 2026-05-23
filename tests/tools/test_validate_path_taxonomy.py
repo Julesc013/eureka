@@ -36,7 +36,7 @@ class PathTaxonomyValidatorTestCase(unittest.TestCase):
                 "surfaces/native/README.md",
                 "surfaces/text/README.md",
                 "surfaces/web/README.md",
-                "contracts/control_schemas/README.md",
+                "contracts/ai/README.md",
                 "contracts/repo/root_allowlist.contract.toml",
             ):
                 write(root / path, "ok\n")
@@ -45,15 +45,15 @@ class PathTaxonomyValidatorTestCase(unittest.TestCase):
             report = validate_path_taxonomy(root, root / "control/policies/path_taxonomy_policy.json")
 
         self.assertEqual(report["status"], "valid")
-        self.assertIn("contracts/control_schemas", report["debt_paths"])
+        self.assertIn("contracts/ai", report["debt_paths"])
 
 
 def write_policy(path: Path) -> None:
     payload = {
         "root_rules": {
             "contracts": {
-                "allowed_first_level": ["repo"],
-                "known_debt_first_level": ["control_schemas"]
+                "allowed_first_level": ["repo", "schema"],
+                "known_debt_first_level": ["ai"]
             },
             "surfaces": {
                 "required_first_level": ["api", "cli", "files", "lite", "native", "text", "web"],

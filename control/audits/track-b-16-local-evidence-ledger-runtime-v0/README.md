@@ -4,7 +4,7 @@ This audit pack records the first fixture-only local evidence ledger runtime for
 
 ## Added
 
-- `runtime/local_foundry/evidence_ledger.py`
+- `runtime/local/foundry/evidence_ledger.py`
 - `scripts/record_evidence_ledger.py`
 - `scripts/summarize_evidence_ledger.py`
 - `scripts/validate_local_evidence_ledger_runtime.py`
@@ -24,8 +24,8 @@ Primary commands:
 python scripts/validate_local_evidence_ledger_runtime_plan.py
 python scripts/validate_local_source_cache_runtime.py
 python scripts/validate_local_evidence_ledger_runtime.py
-python scripts/record_evidence_ledger.py --input examples/evidence_ledger_records/metadata_claim_record_v0.json --check
-python scripts/summarize_evidence_ledger.py --input examples/evidence_ledger_records --check
+python scripts/record_evidence_ledger.py --input examples/evidence/ledger/records/metadata_claim_record_v0.json --check
+python scripts/summarize_evidence_ledger.py --input examples/evidence/ledger/records --check
 python -m unittest discover -s tests -t .
 python scripts/check_architecture_boundaries.py
 ```

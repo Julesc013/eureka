@@ -4,12 +4,12 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[2]
-JOB_CONTRACT = ROOT / "contracts" / "source_sync" / "source_sync_worker_job.v0.json"
-MANIFEST_CONTRACT = ROOT / "contracts" / "source_sync" / "source_sync_worker_manifest.v0.json"
-KIND_CONTRACT = ROOT / "contracts" / "source_sync" / "source_sync_job_kind.v0.json"
+JOB_CONTRACT = ROOT / "contracts" / "source" / "sync" / "source_sync_worker_job.v0.json"
+MANIFEST_CONTRACT = ROOT / "contracts" / "source" / "sync" / "source_sync_worker_manifest.v0.json"
+KIND_CONTRACT = ROOT / "contracts" / "source" / "sync" / "source_sync_job_kind.v0.json"
 POLICY = ROOT / "control" / "inventory" / "source_sync" / "source_sync_worker_policy.json"
 REPORT = ROOT / "control" / "audits" / "source-sync-worker-contract-v0" / "source_sync_worker_contract_report.json"
-EXAMPLES = ROOT / "examples" / "source_sync"
+EXAMPLES = ROOT / "examples" / "sources" / "sync"
 
 
 class SourceSyncWorkerOperationsTests(unittest.TestCase):

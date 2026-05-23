@@ -15,7 +15,7 @@ from scripts.validate_local_evidence_ledger_runtime_plan import (
 
 
 ROOT = Path(__file__).resolve().parents[2]
-PLAN_EXAMPLE = ROOT / "examples/evidence_ledger_plans/minimal_local_evidence_ledger_plan_v0.json"
+PLAN_EXAMPLE = ROOT / "examples/evidence/ledger/plans/minimal_local_evidence_ledger_plan_v0.json"
 BRIDGE_PLAN = ROOT / "control/inventory/evidence_ledger/source_cache_to_evidence_bridge_plan.json"
 
 

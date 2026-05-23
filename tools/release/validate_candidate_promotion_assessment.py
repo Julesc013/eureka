@@ -20,7 +20,7 @@ from typing import Any, Iterable, Mapping, Sequence, TextIO
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
-EXAMPLES_ROOT = REPO_ROOT / "examples" / "candidate_promotion"
+EXAMPLES_ROOT = REPO_ROOT / "examples" / "review" / "candidate_promotion"
 ASSESSMENT_FILE_NAME = "CANDIDATE_PROMOTION_ASSESSMENT.json"
 
 REQUIRED_TOP_LEVEL = {
@@ -247,11 +247,11 @@ def validate_all_examples(*, strict: bool = False) -> dict[str, Any]:
     warnings: list[str] = []
     results: list[dict[str, Any]] = []
     if not EXAMPLES_ROOT.is_dir():
-        errors.append("examples/candidate_promotion: missing examples root.")
+        errors.append("examples/review/candidate_promotion: missing examples root.")
     else:
         roots = sorted(path for path in EXAMPLES_ROOT.iterdir() if path.is_dir())
         if not roots:
-            errors.append("examples/candidate_promotion: no example roots found.")
+            errors.append("examples/review/candidate_promotion: no example roots found.")
         for root in roots:
             result = validate_assessment_root(root, strict=strict)
             results.append(result)

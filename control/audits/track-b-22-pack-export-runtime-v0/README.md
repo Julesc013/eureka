@@ -6,11 +6,11 @@ adds deterministic SHA-256 fixity, and records unsigned signature placeholders.
 
 ## Added
 
-- `runtime/local_foundry/pack_export.py`
+- `runtime/local/foundry/pack_export.py`
 - `scripts/export_local_pack.py`
 - `scripts/validate_pack_export_runtime.py`
 - Pack export policies under `control/inventory/packs/`
-- Pack export examples under `examples/pack_exports/`
+- Pack export examples under `examples/packs/exports/`
 - Reference, architecture, and operations docs for pack export
 - Runtime and operation tests for pack export behavior
 
@@ -40,7 +40,7 @@ Primary commands:
 
 ```bash
 python scripts/validate_pack_export_runtime.py
-python scripts/export_local_pack.py --input examples/pack_drafts/evidence_pack_draft_v0.json --check
+python scripts/export_local_pack.py --input examples/packs/drafts/evidence_pack_draft_v0.json --check
 python -m unittest discover -s tests -t .
 python scripts/check_architecture_boundaries.py
 ```

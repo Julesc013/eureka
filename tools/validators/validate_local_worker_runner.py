@@ -22,14 +22,14 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.local_appliance import close_local_appliance, open_local_appliance
-from runtime.local_worker import (
+from runtime.local.appliance import close_local_appliance, open_local_appliance
+from runtime.local.worker import (
     BLOCKED_WORKER_KINDS,
     ENABLED_WORKER_KINDS,
     LocalWorkerRunner,
     get_default_worker_registry,
 )
-from runtime.workunit_queue import WorkUnit, WorkUnitState
+from runtime.worker.workunit_queue import WorkUnit, WorkUnitState
 
 
 TASK_ID = "LOCAL-09"
@@ -51,15 +51,15 @@ INVENTORIES = {
     "control/inventory/local_09_next_task_decision.json": "local_09_next_task_decision.v0",
 }
 RUNTIME_FILES = (
-    "runtime/local_worker/__init__.py",
-    "runtime/local_worker/audit.py",
-    "runtime/local_worker/errors.py",
-    "runtime/local_worker/policy.py",
-    "runtime/local_worker/registry.py",
-    "runtime/local_worker/results.py",
-    "runtime/local_worker/runner.py",
-    "runtime/local_worker/validation.py",
-    "runtime/local_worker/workers.py",
+    "runtime/local/worker/__init__.py",
+    "runtime/local/worker/audit.py",
+    "runtime/local/worker/errors.py",
+    "runtime/local/worker/policy.py",
+    "runtime/local/worker/registry.py",
+    "runtime/local/worker/results.py",
+    "runtime/local/worker/runner.py",
+    "runtime/local/worker/validation.py",
+    "runtime/local/worker/workers.py",
 )
 SCRIPTS = (
     "scripts/eureka_worker_runner.py",
@@ -172,8 +172,8 @@ def validate(root: Path) -> dict[str, Any]:
         "errors": errors,
         "warnings": warnings,
         "runtime_package_added": all((root / rel).is_file() for rel in RUNTIME_FILES),
-        "runner_added": (root / "runtime/local_worker/runner.py").is_file(),
-        "registry_added": (root / "runtime/local_worker/registry.py").is_file(),
+        "runner_added": (root / "runtime/local/worker/runner.py").is_file(),
+        "registry_added": (root / "runtime/local/worker/registry.py").is_file(),
         "cli_added": (root / "scripts/eureka_worker_runner.py").is_file(),
         "demo_added": (root / "scripts/demo_local_worker_runner.py").is_file(),
         "validator_added": True,
@@ -271,7 +271,7 @@ def validate_policies(payloads: Mapping[str, Mapping[str, Any]], errors: list[st
 
 def validate_inventories(payloads: Mapping[str, Mapping[str, Any]], errors: list[str]) -> None:
     inventory = payloads.get("control/inventory/local_worker_runner_inventory.json", {})
-    if inventory.get("runtime_package") != "runtime/local_worker":
+    if inventory.get("runtime_package") != "runtime/local/worker":
         errors.append("worker inventory runtime_package mismatch")
     if inventory.get("enabled_worker_kinds") != list(EXPECTED_ENABLED):
         errors.append("worker inventory enabled kinds mismatch")

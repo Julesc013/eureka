@@ -62,7 +62,7 @@ R0_VALIDATORS = (
     "scripts/validate_r0_production_review.py",
 )
 
-FORBIDDEN_CHANGED_ROOTS = ("runtime/connectors/", "runtime/local_foundry/", "runtime/extraction/", "runtime/search_quality/", "surfaces/", "site/", "native/", "crates/", "examples/", ".aide.local/", ".local/", ".cache/", "secrets/")
+FORBIDDEN_CHANGED_ROOTS = ("runtime/connectors/", "runtime/local/foundry/", "runtime/extraction/", "runtime/search/quality/", "surfaces/", "site/", "native/", "crates/", "examples/", ".aide.local/", ".local/", ".cache/", "secrets/")
 
 
 def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout) -> int:

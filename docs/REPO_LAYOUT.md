@@ -11,12 +11,22 @@ eureka/
   control/                governance, inventories, audits, policies, evidence
   contracts/              schemas, contracts, packets, and public authority
     repo/                 repository structure canon
-    control_schemas/      migrated schema authority formerly under control
-                         (known taxonomy debt; see path taxonomy policy)
+    schema/control/       schema authority formerly under control
+    source/               source records, cache, registry, and sync contracts
+    evidence/ledger/      evidence ledger contract authority
+    view/                 view/page/model contract authority
+    surface/              surface projection and page contracts
   runtime/                Python reference runtime
     engine/               current engine/kernel boundary
     gateway/              gateway runtime behavior
     connectors/           bounded source acquisition adapters
+    local/                local appliance/eval/foundry/service/worker families
+    source/               source cache, registry, and observation runtime families
+    index/                candidate and public index runtime families
+    evidence/ledger/      evidence ledger runtime family
+    review/queue/         review queue runtime family
+    worker/workunit_queue/ work-unit queue runtime family
+    search/               search hunt, need, and quality runtime families
   surfaces/               user-facing projections and adapters
     api/                  API projection notes; runtime service stays in gateway
     cli/                  current local stdlib CLI surface
@@ -83,12 +93,16 @@ paths such as `release/render` and `surfaces/native/cli`.
 `scripts/validate_taxonomy_closeout_policy.py` record the targeted closeout
 decision after the root cleanup:
 
-- Runtime flat names are frozen compatibility paths until family-by-family
-  migration.
-- Contract family moves are migration-map-first, with `contracts/control_schemas`
-  classified as a compatibility authority path.
-- Examples stay public-safe fixtures and move only through durable families with
-  checksum/reference remediation.
+- Runtime flat first-level names such as `runtime/source/cache` and
+  `runtime/local/service` are compatibility shim packages. Canonical runtime
+  authority lives under the family paths above.
+- Contract family moves are migration-map-backed, with
+  `contracts/schema/control` replacing the former migrated `control_schemas`
+  authority path.
+- Examples stay public-safe fixtures; high-volume task-phase groups now live
+  under durable families such as `examples/packs`, `examples/sources`,
+  `examples/search`, `examples/review`, `examples/evidence`, `examples/index`,
+  and `examples/work_units`.
 - `.aide/` generated/export/report material is control-plane evidence, not
   product truth.
 

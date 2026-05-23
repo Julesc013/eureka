@@ -16,8 +16,8 @@ if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
 from scripts.run_one_source_live_test import run_one_source_live_test
-from runtime.review_queue import ReviewDecisionKind
-from runtime.source_observation.sources import pypi_json_metadata
+from runtime.review.queue import ReviewDecisionKind
+from runtime.source.observation.sources import pypi_json_metadata
 
 
 POLICY_PATHS = (
@@ -28,7 +28,7 @@ CONTRACT_PATHS = (
     "contracts/runtime/live_metadata_test_request.v0.json",
     "contracts/runtime/live_metadata_test_result.v0.json",
 )
-SOURCE_MODULE = Path("runtime/source_observation/sources/pypi_json_metadata.py")
+SOURCE_MODULE = Path("runtime/source/observation/sources/pypi_json_metadata.py")
 GENERATED_RESULT = Path("control/audits/r0-09-one-source-live-test-v0/generated/sample_live_test_output.json")
 BANNED_IMPORT_ROOTS = {
     "requests",

@@ -2,7 +2,7 @@
   "report_id": "pack_import_report_format_v0",
   "created_by_slice": "pack_import_report_format_v0",
   "status": "implemented",
-  "contract": "contracts/packs/pack_import_report.v0.json",
+  "contract": "contracts/pack/pack_import_report.v0.json",
   "validator": "scripts/validate_pack_import_report.py",
   "examples": [
     {

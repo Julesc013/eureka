@@ -5,16 +5,16 @@
   "track": "J0",
   "purpose": "safe_actions_manifests_citation_export",
   "added_contracts": [
-    "contracts/actions/action_taxonomy.v0.json",
-    "contracts/actions/action_policy.v0.json",
-    "contracts/actions/action_manifest.v0.json",
-    "contracts/actions/action_result_preview.v0.json",
-    "contracts/actions/acquisition_manifest.v0.json",
-    "contracts/actions/citation_bundle.v0.json",
-    "contracts/actions/export_manifest.v0.json",
-    "contracts/actions/preservation_manifest.v0.json",
-    "contracts/actions/blocked_action_report.v0.json",
-    "contracts/actions/compare_action_manifest.v0.json"
+    "contracts/command/actions/action_taxonomy.v0.json",
+    "contracts/command/actions/action_policy.v0.json",
+    "contracts/command/actions/action_manifest.v0.json",
+    "contracts/command/actions/action_result_preview.v0.json",
+    "contracts/command/actions/acquisition_manifest.v0.json",
+    "contracts/command/actions/citation_bundle.v0.json",
+    "contracts/command/actions/export_manifest.v0.json",
+    "contracts/command/actions/preservation_manifest.v0.json",
+    "contracts/command/actions/blocked_action_report.v0.json",
+    "contracts/command/actions/compare_action_manifest.v0.json"
   ],
   "added_runtime_modules": [
     "runtime/actions/__init__.py",

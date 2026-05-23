@@ -407,7 +407,7 @@
   ],
   "generated_from": {
     "source_contracts": [
-      "contracts/control_schemas/tasks/query/probe_queue_item.v0.json",
+      "contracts/schema/control/tasks/query/probe_queue_item.v0.json",
       "contracts/query/search_need_lifecycle.v0.json"
     ],
     "policy_inventory": "control/inventory/publication/need_page_view_model_policy.json",

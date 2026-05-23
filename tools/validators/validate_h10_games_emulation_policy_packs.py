@@ -35,8 +35,8 @@ INVENTORY_FILES = (
     "control/inventory/source_packs/h10_games_emulation_no_download_execute_policy.json",
 )
 SOURCE_PACK_EXAMPLES = (
-    "examples/source_packs/h10_games_emulation_source_pack_manifest_v0.json",
-    "examples/source_packs/h10_games_emulation_policy_pack_v0.json",
+    "examples/packs/source/h10_games_emulation_source_pack_manifest_v0.json",
+    "examples/packs/source/h10_games_emulation_policy_pack_v0.json",
 )
 EXTRA_EXAMPLES = (
     "examples/connectors/h10_games_emulation/coverage/h10_games_emulation_coverage_preview_v0.json",

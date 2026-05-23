@@ -8,12 +8,12 @@ The runtime cannot host moderation, accept evidence, accept candidates, promote 
 
 ## Added
 
-- `runtime/local_foundry/review_queue.py`
+- `runtime/local/foundry/review_queue.py`
 - `scripts/record_review_queue.py`
 - `scripts/summarize_review_queue.py`
 - `scripts/validate_local_review_queue_runtime.py`
 - Review runtime, status, subject, decision, output, path, and truth policies
-- Review queue examples under `examples/review_queue_entries/`
+- Review queue examples under `examples/review/queue_entries/`
 - Runtime and script tests
 - Reference, architecture, and operations docs
 - Generated audit evidence under `generated/`

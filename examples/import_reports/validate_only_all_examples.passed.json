@@ -20,12 +20,12 @@
   ],
   "pack_results": [
     {
-      "pack_root": "examples/source_packs/minimal_recorded_source_pack_v0",
+      "pack_root": "examples/packs/source/minimal_recorded_source_pack_v0",
       "pack_type": "source_pack",
       "pack_id": "example.minimal_recorded_source_pack_v0",
       "pack_version": "0.1.0",
       "validator_id": "source_pack_validator_v0",
-      "validator_command": "python scripts/validate_source_pack.py --pack-root examples/source_packs/minimal_recorded_source_pack_v0",
+      "validator_command": "python scripts/validate_source_pack.py --pack-root examples/packs/source/minimal_recorded_source_pack_v0",
       "validation_status": "passed",
       "checksum_status": "passed",
       "schema_status": "passed",
@@ -43,12 +43,12 @@
       "recommended_next_action": "no_action"
     },
     {
-      "pack_root": "examples/evidence_packs/minimal_evidence_pack_v0",
+      "pack_root": "examples/packs/evidence/minimal_evidence_pack_v0",
       "pack_type": "evidence_pack",
       "pack_id": "example.minimal_evidence_pack_v0",
       "pack_version": "0.1.0",
       "validator_id": "evidence_pack_validator_v0",
-      "validator_command": "python scripts/validate_evidence_pack.py --pack-root examples/evidence_packs/minimal_evidence_pack_v0",
+      "validator_command": "python scripts/validate_evidence_pack.py --pack-root examples/packs/evidence/minimal_evidence_pack_v0",
       "validation_status": "passed",
       "checksum_status": "passed",
       "schema_status": "passed",
@@ -66,12 +66,12 @@
       "recommended_next_action": "no_action"
     },
     {
-      "pack_root": "examples/index_packs/minimal_index_pack_v0",
+      "pack_root": "examples/packs/index/minimal_index_pack_v0",
       "pack_type": "index_pack",
       "pack_id": "example.minimal_index_pack_v0",
       "pack_version": "0.1.0",
       "validator_id": "index_pack_validator_v0",
-      "validator_command": "python scripts/validate_index_pack.py --pack-root examples/index_packs/minimal_index_pack_v0",
+      "validator_command": "python scripts/validate_index_pack.py --pack-root examples/packs/index/minimal_index_pack_v0",
       "validation_status": "passed",
       "checksum_status": "passed",
       "schema_status": "passed",
@@ -89,12 +89,12 @@
       "recommended_next_action": "no_action"
     },
     {
-      "pack_root": "examples/contribution_packs/minimal_contribution_pack_v0",
+      "pack_root": "examples/packs/contribution/minimal_contribution_pack_v0",
       "pack_type": "contribution_pack",
       "pack_id": "example.minimal_contribution_pack_v0",
       "pack_version": "0.1.0",
       "validator_id": "contribution_pack_validator_v0",
-      "validator_command": "python scripts/validate_contribution_pack.py --pack-root examples/contribution_packs/minimal_contribution_pack_v0",
+      "validator_command": "python scripts/validate_contribution_pack.py --pack-root examples/packs/contribution/minimal_contribution_pack_v0",
       "validation_status": "passed",
       "checksum_status": "passed",
       "schema_status": "passed",

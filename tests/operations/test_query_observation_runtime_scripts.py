@@ -14,7 +14,7 @@ from scripts.validate_query_observation_runtime import validate_query_observatio
 
 
 ROOT = Path(__file__).resolve().parents[2]
-MINIMAL = ROOT / "examples" / "query_observations" / "minimal_query_observation_v0.json"
+MINIMAL = ROOT / "examples" / "search" / "query_observations" / "minimal_query_observation_v0.json"
 
 
 class QueryObservationRuntimeScriptTests(unittest.TestCase):
@@ -52,7 +52,7 @@ class QueryObservationRuntimeScriptTests(unittest.TestCase):
                 sys.executable,
                 "scripts/record_query_observation.py",
                 "--input",
-                "examples/query_observations/minimal_query_observation_v0.json",
+                "examples/search/query_observations/minimal_query_observation_v0.json",
                 "--output",
                 str(forbidden),
             ],
@@ -74,7 +74,7 @@ class QueryObservationRuntimeScriptTests(unittest.TestCase):
                 sys.executable,
                 "scripts/record_query_observation.py",
                 "--input",
-                "examples/query_observations/minimal_query_observation_v0.json",
+                "examples/search/query_observations/minimal_query_observation_v0.json",
                 "--output",
                 str(forbidden),
             ],
@@ -112,7 +112,7 @@ class QueryObservationRuntimeScriptTests(unittest.TestCase):
 def _tracked_relevant_files() -> list[str]:
     roots = [
         ROOT / "control" / "audits" / "track-b-07-query-observation-runtime-v0" / "generated",
-        ROOT / "examples" / "query_observations",
+        ROOT / "examples" / "search" / "query_observations",
     ]
     results: list[str] = []
     for root in roots:

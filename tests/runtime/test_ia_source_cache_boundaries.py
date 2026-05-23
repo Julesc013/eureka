@@ -2,7 +2,7 @@ import json
 import unittest
 from pathlib import Path
 
-from runtime.source_observation.internet_archive_source_cache import (
+from runtime.source.observation.internet_archive_source_cache import (
     build_ia_source_cache_boundary_report,
     build_ia_source_cache_record,
     build_ia_source_cache_write_report,

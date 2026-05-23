@@ -39,7 +39,7 @@ Primary directory moves:
 - `data/public_index` -> `site/dist/data/public_index`
 - `deploy/render/render.yaml` -> `release/hosting/render/render.yaml`
 - `deploy/README.md` -> `docs/operations/hosting/render_deployment.md`
-- `control/schemas` -> `contracts/control_schemas`
+- `control/schemas` -> `contracts/schema/control`
 - `control/prototypes/legacy_runtime` -> `archive/prototypes/legacy_runtime`
 - `runtime/local_workbench` -> `surfaces/web/workbench/local_html`
 - `scripts/*.py` implementations -> `tools/{validators,generators,auditors,reporters,migrations,release}/`
@@ -118,7 +118,7 @@ Supplemental broad discovery:
 
 - Public index path failures after moving `data/public_index` were fixed by updating builders, validators, runtime public search loading, and generated static-site summaries.
 - `site/build.py --clean` deleting the canonical public index was fixed by preserving/restoring `site/dist/data/public_index` during clean builds.
-- Runtime architecture leakage failures for migrated `contracts/control_schemas` and generated public-index artifacts were fixed in the policy classification.
+- Runtime architecture leakage failures for migrated `contracts/schema/control` and generated public-index artifacts were fixed in the policy classification.
 - Archived prototype import failures were fixed by updating tests, tools, and archived prototype modules to `archive.prototypes.legacy_runtime`.
 - Script wrapper import/inspection failures were fixed by strengthening wrapper import behavior and preserving legacy inspection markers where tests still inspect the script file.
 - Native summary validation was fixed after moving implementation to `tools/reporters`.

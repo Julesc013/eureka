@@ -8,5 +8,5 @@ public/master index state.
 Run:
 
 ```powershell
-python scripts/build_source_pack.py --input examples/source_packs/internet_archive_source_pack_manifest_v0.json --check
+python scripts/build_source_pack.py --input examples/packs/source/internet_archive_source_pack_manifest_v0.json --check
 ```

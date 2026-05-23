@@ -16,8 +16,8 @@
     "docs/operations/H9_MEDIA_METADATA_FIXTURE_PLAN.md"
   ],
   "added_examples": [
-    "examples/source_packs/h9_media_metadata_source_pack_manifest_v0.json",
-    "examples/source_packs/h9_media_metadata_policy_pack_v0.json",
+    "examples/packs/source/h9_media_metadata_source_pack_manifest_v0.json",
+    "examples/packs/source/h9_media_metadata_policy_pack_v0.json",
     "examples/sources/source_records/*h9 media metadata source records",
     "examples/connectors/h9_media_metadata/"
   ],

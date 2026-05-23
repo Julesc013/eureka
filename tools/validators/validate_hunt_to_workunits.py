@@ -18,10 +18,10 @@ if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
 from scripts.hunt_queue_progress import hunt_queue_current_or_advanced
-from runtime.local_appliance import close_local_appliance, open_local_appliance
-from runtime.local_operator.auth import build_cli_operator_auth_state
-from runtime.local_service import LocalServiceApp
-from runtime.search_need import (
+from runtime.local.appliance import close_local_appliance, open_local_appliance
+from runtime.local.operator.auth import build_cli_operator_auth_state
+from runtime.local.service import LocalServiceApp
+from runtime.search.need import (
     SearchNeedKind,
     build_workunit_plan_for_need,
     create_workunits_from_need,
@@ -51,8 +51,8 @@ INVENTORIES = {
     "control/inventory/hunt_06_next_task_decision.json": "hunt_06_next_task_decision.v0",
 }
 REQUIRED_FILES = (
-    "runtime/search_need/workunit_plan.py",
-    "runtime/search_need/workunits.py",
+    "runtime/search/need/workunit_plan.py",
+    "runtime/search/need/workunits.py",
     "scripts/eureka_need_to_workunits.py",
     "scripts/demo_hunt_to_workunits.py",
     "scripts/validate_hunt_to_workunits.py",
@@ -373,7 +373,7 @@ def validate_cli_and_demo(root: Path, errors: list[str]) -> None:
 
 
 def validate_runtime_imports(root: Path, errors: list[str]) -> None:
-    for rel in ("runtime/search_need/workunit_plan.py", "runtime/search_need/workunits.py"):
+    for rel in ("runtime/search/need/workunit_plan.py", "runtime/search/need/workunits.py"):
         path = root / rel
         tree = ast.parse(path.read_text(encoding="utf-8"), filename=str(path))
         for node in ast.walk(tree):
@@ -388,7 +388,7 @@ def validate_runtime_imports(root: Path, errors: list[str]) -> None:
 
 
 def validate_runtime_vocabulary(root: Path, errors: list[str]) -> None:
-    for rel in ("runtime/search_need/workunit_plan.py", "runtime/search_need/workunits.py"):
+    for rel in ("runtime/search/need/workunit_plan.py", "runtime/search/need/workunits.py"):
         text = (root / rel).read_text(encoding="utf-8")
         for marker in FORBIDDEN_RUNTIME_VOCABULARY:
             if marker in text:

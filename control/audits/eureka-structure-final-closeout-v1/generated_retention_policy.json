@@ -1,0 +1,73 @@
+{
+  "classes": [
+    {
+      "authority": false,
+      "class": "export_only",
+      "path": ".aide/export",
+      "retention": "portable artifact only; do not import as active product source"
+    },
+    {
+      "authority": false,
+      "class": "evidence_report",
+      "path": ".aide/reports",
+      "retention": "retention-capped repo-operating evidence"
+    },
+    {
+      "authority": false,
+      "class": "cache",
+      "path": ".aide/cache",
+      "retention": "ignored/local unless explicitly tiny and justified"
+    },
+    {
+      "authority": false,
+      "class": "generated_inventory",
+      "path": ".aide/repo",
+      "retention": "generated context inventory; not product truth"
+    },
+    {
+      "authority": false,
+      "class": "generated_inventory",
+      "path": ".aide/roots",
+      "retention": "generated root classification; not product truth"
+    },
+    {
+      "authority": false,
+      "class": "generated_inventory",
+      "path": ".aide/tools",
+      "retention": "generated tool inventory/classification; not product truth"
+    },
+    {
+      "authority": false,
+      "class": "audit_generated_evidence",
+      "path": "control/audits/**/generated",
+      "retention": "audit evidence only; do not treat samples as source truth"
+    },
+    {
+      "authority": false,
+      "class": "governed_static_artifact",
+      "path": "site/dist",
+      "retention": "committed generated public artifact; source inputs remain site/* outside dist and contracts/runtime data sources"
+    }
+  ],
+  "created_by": "EUREKA-STRUCTURE-FINAL-CLOSEOUT-01",
+  "hard_rules": [
+    "Generated/export/report material must not become product truth.",
+    "New tracked tmp/out/target output requires explicit policy before promotion.",
+    "Generated fixture changes must be justified by reference/schema updates and covered by validators."
+  ],
+  "model_provider_used": false,
+  "network_used": false,
+  "non_claims": [
+    "This policy does not claim production readiness.",
+    "This policy does not enable live-source, network, provider, telemetry, account, upload, or download behavior."
+  ],
+  "observed_counts": {
+    ".aide_tracked_file_count": 1990,
+    "control_audits_generated_file_count": 1314,
+    "site_dist_tracked_file_count": 58,
+    "tracked_tmp_count": 0
+  },
+  "product_behavior_changed": false,
+  "schema_version": "generated_retention_policy.v1",
+  "status": "active_bootstrap_policy"
+}

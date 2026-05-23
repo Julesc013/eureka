@@ -15,7 +15,7 @@ class RankingShadowScriptTests(unittest.TestCase):
         return subprocess.run([sys.executable, *args], cwd=ROOT, capture_output=True, text=True, check=False)
 
     def test_ranking_script_writes_no_files_by_default(self) -> None:
-        result = self.run_cmd("scripts/run_ranking_shadow.py", "--input", "examples/search_quality/ranking/input_bundle_software_v0.json", "--check", "--json")
+        result = self.run_cmd("scripts/run_ranking_shadow.py", "--input", "examples/search/quality/ranking/input_bundle_software_v0.json", "--check", "--json")
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
         self.assertIn('"wrote_files": false', result.stdout)
 
@@ -26,7 +26,7 @@ class RankingShadowScriptTests(unittest.TestCase):
             result = self.run_cmd(
                 "scripts/run_ranking_shadow.py",
                 "--input",
-                "examples/search_quality/ranking/input_bundle_software_v0.json",
+                "examples/search/quality/ranking/input_bundle_software_v0.json",
                 "--output",
                 str(out),
                 "--bundle-output",
@@ -37,17 +37,17 @@ class RankingShadowScriptTests(unittest.TestCase):
             self.assertTrue(bundle.exists())
 
     def test_ranking_script_refuses_site_dist_output(self) -> None:
-        result = self.run_cmd("scripts/run_ranking_shadow.py", "--input", "examples/search_quality/ranking/input_bundle_software_v0.json", "--output", "site/dist/ranking.json")
+        result = self.run_cmd("scripts/run_ranking_shadow.py", "--input", "examples/search/quality/ranking/input_bundle_software_v0.json", "--output", "site/dist/ranking.json")
         self.assertNotEqual(result.returncode, 0)
         self.assertIn("refusing forbidden output root", result.stdout)
 
     def test_regression_script_refuses_public_index_output(self) -> None:
-        result = self.run_cmd("scripts/run_search_quality_regression.py", "--query-set", "examples/search_quality/query_sets/minimal_search_quality_query_set_v0.json", "--output", "site/dist/data/public_index/ranking.json")
+        result = self.run_cmd("scripts/run_search_quality_regression.py", "--query-set", "examples/search/quality/query_sets/minimal_search_quality_query_set_v0.json", "--output", "site/dist/data/public_index/ranking.json")
         self.assertNotEqual(result.returncode, 0)
         self.assertIn("refusing forbidden output root", result.stdout)
 
     def test_summary_script_check_passes(self) -> None:
-        result = self.run_cmd("scripts/summarize_ranking_shadow.py", "--input", "examples/search_quality/ranking", "--check")
+        result = self.run_cmd("scripts/summarize_ranking_shadow.py", "--input", "examples/search/quality/ranking", "--check")
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
         self.assertIn("status: pass", result.stdout)
 

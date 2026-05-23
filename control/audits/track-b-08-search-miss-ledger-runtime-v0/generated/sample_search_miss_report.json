@@ -1,5 +1,5 @@
 {
-  "input_ref": "examples/query_observations/weak_result_query_observation_v0.json",
+  "input_ref": "examples/search/query_observations/weak_result_query_observation_v0.json",
   "product_boundary": {
     "changed_public_search_behavior": false,
     "claimed_exhaustive_global_search": false,

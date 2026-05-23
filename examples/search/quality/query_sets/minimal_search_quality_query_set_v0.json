@@ -1,0 +1,41 @@
+{
+  "schema_version": "search_quality_query_set.v0",
+  "query_set_id": "query_set.minimal.v0",
+  "query_set_status": "fixture_only",
+  "query_cases": [
+    {
+      "query_case_id": "query_case.vintage_app_exact.v0",
+      "ranking_input_bundle_ref": "examples/search/quality/ranking/input_bundle_software_v0.json",
+      "query_ref": "search_need.software_version.vintage_app.v0"
+    }
+  ],
+  "expected_result_refs": [
+    "candidate.search_need.software_version.v0"
+  ],
+  "expected_near_miss_refs": [
+    "candidate.near_miss.wrong_version.v0"
+  ],
+  "expected_absence_refs": [
+    "search.known_absence.f651284a402d.v0"
+  ],
+  "quality_objectives": [
+    "exact fixture candidate present",
+    "near miss remains identifiable"
+  ],
+  "source_scope": "examples/search/quality",
+  "fixture_scope": "minimal fixture query set",
+  "limitations": [
+    "Not a production quality claim."
+  ],
+  "no_claims": {
+    "production_search_quality": false,
+    "global_absence_claimed": false
+  },
+  "truth_boundary": {
+    "ranking_shadow_accepts_result_as_truth": false
+  },
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "changed_ranking_behavior": false
+  }
+}

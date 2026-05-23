@@ -4,11 +4,11 @@ F0 may resume only after R0-10 reports that the recovered runtime path is usable
 
 F0 must preserve these seams:
 
-- `runtime/source_observation`
-- `runtime/source_cache`
-- `runtime/evidence_ledger`
-- `runtime/review_queue`
-- `runtime/public_index`
+- `runtime/source/observation`
+- `runtime/source/cache`
+- `runtime/evidence/ledger`
+- `runtime/review/queue`
+- `runtime/index/public`
 
 F0 must not return to scaffold-only or H-series-shaped product architecture. New work must use domain names and must not turn task, prompt, audit, or bundle vocabulary into production runtime architecture.
 

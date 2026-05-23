@@ -7,7 +7,7 @@
   "db_path": "db/search_hunt.sqlite",
   "deployment_performed": false,
   "model_provider_enabled": false,
-  "runtime_package": "runtime/search_hunt",
+  "runtime_package": "runtime/search/hunt",
   "schema_version": "search_hunt_runtime_inventory.v0",
   "source_probe_execution_enabled": false,
   "states": [

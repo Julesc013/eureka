@@ -1,7 +1,7 @@
 {
   "schema_version": "public_index_store_inventory.v0",
   "task": "R0-08",
-  "runtime_package": "runtime/public_index",
+  "runtime_package": "runtime/index/public",
   "public_api": [
     "PublicIndexStore",
     "PublicIndexRecord",

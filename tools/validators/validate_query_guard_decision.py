@@ -20,7 +20,7 @@ from typing import Any, Iterable, Mapping, Sequence, TextIO
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
-EXAMPLES_ROOT = REPO_ROOT / "examples" / "query_guard"
+EXAMPLES_ROOT = REPO_ROOT / "examples" / "search" / "query_guard"
 DECISION_FILE_NAME = "QUERY_GUARD_DECISION.json"
 
 REQUIRED_TOP_LEVEL = {
@@ -267,11 +267,11 @@ def validate_all_examples(*, strict: bool = False) -> dict[str, Any]:
     warnings: list[str] = []
     results: list[dict[str, Any]] = []
     if not EXAMPLES_ROOT.is_dir():
-        errors.append("examples/query_guard: missing examples root.")
+        errors.append("examples/search/query_guard: missing examples root.")
     else:
         roots = sorted(path for path in EXAMPLES_ROOT.iterdir() if path.is_dir())
         if not roots:
-            errors.append("examples/query_guard: no example roots found.")
+            errors.append("examples/search/query_guard: no example roots found.")
         for root in roots:
             result = validate_decision_root(root, strict=strict)
             results.append(result)

@@ -12,7 +12,7 @@ from typing import Any, Sequence, TextIO
 REPO_ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.local_service.workbench_live_run import create_workbench_resolution_run
+from runtime.local.service.workbench_live_run import create_workbench_resolution_run
 
 
 def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout) -> int:

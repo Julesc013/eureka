@@ -1,0 +1,105 @@
+{
+  "$id": "contracts/schema/control/audits/audits/mvp_alpha_readiness_audit.v0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "audit_id": {
+      "type": "string"
+    },
+    "audit_scope": {
+      "type": "string"
+    },
+    "audit_status": {
+      "enum": [
+        "pass",
+        "pass_with_warnings",
+        "needs_remediation",
+        "blocked",
+        "fail",
+        "not_evaluable"
+      ]
+    },
+    "audited_audit_packs": {
+      "type": "array"
+    },
+    "audited_contracts": {
+      "type": "array"
+    },
+    "audited_examples": {
+      "type": "array"
+    },
+    "audited_runtime_modules": {
+      "type": "array"
+    },
+    "audited_scripts": {
+      "type": "array"
+    },
+    "audited_tests": {
+      "type": "array"
+    },
+    "audited_tracks": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "blockers": {
+      "type": "array"
+    },
+    "limitations": {
+      "type": "array"
+    },
+    "local_mvp_path_results": {
+      "type": "object"
+    },
+    "next_recommended_action": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "array"
+    },
+    "operator_gated_items": {
+      "type": "array"
+    },
+    "product_boundary": {
+      "type": "object"
+    },
+    "public_claim_boundary_results": {
+      "type": "object"
+    },
+    "remediation_items": {
+      "type": "array"
+    },
+    "schema_version": {
+      "const": "mvp_alpha_readiness_audit.v0"
+    },
+    "track_gate_results": {
+      "type": "array"
+    },
+    "truth_boundary": {
+      "type": "object"
+    },
+    "unsafe_behavior_results": {
+      "type": "object"
+    },
+    "validation_summary": {
+      "type": "object"
+    },
+    "warnings": {
+      "type": "array"
+    }
+  },
+  "required": [
+    "schema_version",
+    "audit_id",
+    "audit_status",
+    "audit_scope",
+    "audited_tracks",
+    "track_gate_results",
+    "truth_boundary",
+    "product_boundary",
+    "next_recommended_action"
+  ],
+  "title": "Eureka MVP Alpha Readiness Audit v0",
+  "type": "object"
+}

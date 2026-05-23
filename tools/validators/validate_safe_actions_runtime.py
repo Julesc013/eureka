@@ -24,16 +24,16 @@ from runtime.actions.preservation_manifest import validate_preservation_manifest
 
 
 CONTRACTS = (
-    "contracts/control_schemas/policies/actions/action_taxonomy.v0.json",
-    "contracts/actions/action_policy.v0.json",
-    "contracts/actions/action_manifest.v0.json",
-    "contracts/control_schemas/previews/actions/action_result_preview.v0.json",
-    "contracts/actions/acquisition_manifest.v0.json",
-    "contracts/control_schemas/policies/actions/citation_bundle.v0.json",
-    "contracts/actions/export_manifest.v0.json",
-    "contracts/actions/preservation_manifest.v0.json",
-    "contracts/control_schemas/audits/actions/blocked_action_report.v0.json",
-    "contracts/actions/compare_action_manifest.v0.json",
+    "contracts/schema/control/policies/actions/action_taxonomy.v0.json",
+    "contracts/command/actions/action_policy.v0.json",
+    "contracts/command/actions/action_manifest.v0.json",
+    "contracts/schema/control/previews/actions/action_result_preview.v0.json",
+    "contracts/command/actions/acquisition_manifest.v0.json",
+    "contracts/schema/control/policies/actions/citation_bundle.v0.json",
+    "contracts/command/actions/export_manifest.v0.json",
+    "contracts/command/actions/preservation_manifest.v0.json",
+    "contracts/schema/control/audits/actions/blocked_action_report.v0.json",
+    "contracts/command/actions/compare_action_manifest.v0.json",
 )
 POLICIES = (
     "control/inventory/actions/action_taxonomy_policy.json",

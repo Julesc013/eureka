@@ -3,10 +3,10 @@
 Planned final changed files for the DownloadManifest, EvidencePage,
 AbsencePage, and ComparePage view model contract bundle:
 
-- `contracts/views/download_manifest_page.v0.json`
-- `contracts/views/evidence_page.v0.json`
-- `contracts/views/absence_page.v0.json`
-- `contracts/views/compare_page.v0.json`
+- `contracts/view/pages/download_manifest_page.v0.json`
+- `contracts/view/pages/evidence_page.v0.json`
+- `contracts/view/pages/absence_page.v0.json`
+- `contracts/view/pages/compare_page.v0.json`
 - `docs/reference/DOWNLOAD_MANIFEST_VIEW_MODEL_CONTRACT.md`
 - `docs/reference/EVIDENCE_PAGE_VIEW_MODEL_CONTRACT.md`
 - `docs/reference/ABSENCE_PAGE_VIEW_MODEL_CONTRACT.md`

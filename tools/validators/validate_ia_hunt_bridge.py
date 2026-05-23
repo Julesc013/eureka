@@ -15,7 +15,7 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.search_hunt.ia_bridge import (  # noqa: E402
+from runtime.search.hunt.ia_bridge import (  # noqa: E402
     IA_WORKUNIT_STATES,
     IA_WORKUNIT_TYPES,
     build_ia_hunt_boundary_report,
@@ -112,7 +112,7 @@ def validate_repo(root: Path = REPO_ROOT) -> dict[str, Any]:
     for rel in REQUIRED_EXAMPLES:
         if not (root / rel).is_file():
             errors.append(f"missing example: {rel}")
-    for rel in ("runtime/search_hunt/ia_bridge.py", "scripts/eureka_ia_hunt_bridge.py"):
+    for rel in ("runtime/search/hunt/ia_bridge.py", "scripts/eureka_ia_hunt_bridge.py"):
         if not (root / rel).is_file():
             errors.append(f"missing implementation file: {rel}")
 
@@ -181,7 +181,7 @@ def validate_repo(root: Path = REPO_ROOT) -> dict[str, Any]:
         "policy_added": True,
         "workunit_schema_added": True,
         "pipeline_matrix_added": True,
-        "bridge_runtime_added": (root / "runtime/search_hunt/ia_bridge.py").is_file(),
+        "bridge_runtime_added": (root / "runtime/search/hunt/ia_bridge.py").is_file(),
         "bridge_cli_added": (root / "scripts/eureka_ia_hunt_bridge.py").is_file(),
         "result_lane_integration_added": True,
         "examples_added": all((root / rel).is_file() for rel in REQUIRED_EXAMPLES),

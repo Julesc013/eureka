@@ -97,7 +97,7 @@ class ObservationCandidateContractsTest(unittest.TestCase):
         self.assertTrue(any("accepted_as_observed_baseline" in error for error in errors))
 
     def test_review_decision_accepting_truth_fails(self) -> None:
-        review = _read_json(REPO_ROOT / "examples/observation_reviews/approve_observation_candidate_review_v0.json")
+        review = _read_json(REPO_ROOT / "examples/review/observation_reviews/approve_observation_candidate_review_v0.json")
         broken = deepcopy(review)
         broken["accepted_as_evidence_truth"] = True
         broken["master_index_mutation_allowed"] = True

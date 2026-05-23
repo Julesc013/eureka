@@ -70,8 +70,8 @@ INVENTORY_FILES = (
     "control/inventory/source_packs/h7_library_research_no_harvest_download_policy.json",
 )
 SOURCE_PACK_EXAMPLES = (
-    "examples/source_packs/h7_library_research_source_pack_manifest_v0.json",
-    "examples/source_packs/h7_library_research_policy_pack_v0.json",
+    "examples/packs/source/h7_library_research_source_pack_manifest_v0.json",
+    "examples/packs/source/h7_library_research_policy_pack_v0.json",
 )
 EXTRA_EXAMPLES = (
     "examples/sources/source_records/library_research_policy_blocked_source_v2.json",

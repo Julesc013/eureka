@@ -17,7 +17,7 @@ SEARCH_PAGE_POLICY = "control/inventory/publication/search_page_view_model_polic
 ROUTE_MATRIX = "control/inventory/publication/route_view_representation_matrix.json"
 REPRESENTATION_PROFILES = "control/inventory/publication/representation_profiles.json"
 SEMANTIC_PARITY_POLICY = "control/inventory/publication/semantic_renderer_parity_policy.json"
-SEARCH_PAGE_SCHEMA = "contracts/views/search_page.v0.json"
+SEARCH_PAGE_SCHEMA = "contracts/view/pages/search_page.v0.json"
 
 ARTIFACT_BINDINGS: tuple[dict[str, str], ...] = (
     {

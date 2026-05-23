@@ -4,7 +4,7 @@ import ast
 from pathlib import Path
 import unittest
 
-from runtime.local_worker import BLOCKED_WORKER_KINDS, ENABLED_WORKER_KINDS, get_default_worker_registry
+from runtime.local.worker import BLOCKED_WORKER_KINDS, ENABLED_WORKER_KINDS, get_default_worker_registry
 
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -59,7 +59,7 @@ class LocalWorkerRegistryTests(unittest.TestCase):
             "aiohttp",
             "urllib.request",
         )
-        for path in (ROOT / "runtime" / "local_worker").glob("*.py"):
+        for path in (ROOT / "runtime" / "local" / "worker").glob("*.py"):
             tree = ast.parse(path.read_text(encoding="utf-8"), filename=str(path))
             for node in ast.walk(tree):
                 modules: list[str] = []
@@ -72,7 +72,7 @@ class LocalWorkerRegistryTests(unittest.TestCase):
 
     def test_no_production_leakage_terms_in_runtime_package(self) -> None:
         forbidden = ("LOCAL-", "BUNDLE", "task", "prompt", "agent")
-        for path in (ROOT / "runtime" / "local_worker").glob("*.py"):
+        for path in (ROOT / "runtime" / "local" / "worker").glob("*.py"):
             text = path.read_text(encoding="utf-8")
             for token in forbidden:
                 self.assertNotIn(token, text)

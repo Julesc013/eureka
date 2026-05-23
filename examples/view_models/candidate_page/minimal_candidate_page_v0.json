@@ -337,7 +337,7 @@
   ],
   "generated_from": {
     "source_contracts": [
-      "contracts/control_schemas/previews/query/candidate_index_record.v0.json",
+      "contracts/schema/control/previews/query/candidate_index_record.v0.json",
       "docs/reference/CANDIDATE_INDEX_CONTRACT.md"
     ],
     "policy_inventory": "control/inventory/publication/candidate_page_view_model_policy.json",

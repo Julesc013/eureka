@@ -14,8 +14,8 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.local_appliance import LocalApplianceError
-from runtime.local_service import LocalServiceError, create_local_http_server, validate_host_allowed
+from runtime.local.appliance import LocalApplianceError
+from runtime.local.service import LocalServiceError, create_local_http_server, validate_host_allowed
 
 
 def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr: TextIO = sys.stderr) -> int:

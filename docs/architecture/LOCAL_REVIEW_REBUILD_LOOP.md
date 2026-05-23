@@ -6,7 +6,7 @@ local decision, and rebuild the reviewed public index from accepted review
 items.
 
 The loop uses the existing local runtime composition boundary. Service and UI
-code open `runtime/local_appliance`, then operate through `review_queue` and
+code open `runtime/local/appliance`, then operate through `review_queue` and
 `public_index`; no ad hoc SQLite path is used.
 
 ## Boundary

@@ -1,6 +1,6 @@
 # Evidence Ledger Store Summary
 
-R0-06 adds `runtime/evidence_ledger` as a durable SQLite store for local evidence candidate records and event history.
+R0-06 adds `runtime/evidence/ledger` as a durable SQLite store for local evidence candidate records and event history.
 
 The store persists:
 

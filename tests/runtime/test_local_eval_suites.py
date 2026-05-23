@@ -4,7 +4,7 @@ import ast
 from pathlib import Path
 import unittest
 
-from runtime.local_eval import get_default_local_eval_suites, get_default_query_suite, validate_localhost_base_url
+from runtime.local.eval import get_default_local_eval_suites, get_default_query_suite, validate_localhost_base_url
 
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -48,7 +48,7 @@ class LocalEvalSuitesTests(unittest.TestCase):
             "httpx",
             "aiohttp",
         )
-        for path in (ROOT / "runtime" / "local_eval").glob("*.py"):
+        for path in (ROOT / "runtime" / "local" / "eval").glob("*.py"):
             tree = ast.parse(path.read_text(encoding="utf-8"), filename=str(path))
             for node in ast.walk(tree):
                 modules: list[str] = []
@@ -61,7 +61,7 @@ class LocalEvalSuitesTests(unittest.TestCase):
 
     def test_no_production_leakage_terms_in_runtime_package(self) -> None:
         forbidden = ("LOCAL-", "BUNDLE", "task", "prompt", "agent")
-        for path in (ROOT / "runtime" / "local_eval").glob("*.py"):
+        for path in (ROOT / "runtime" / "local" / "eval").glob("*.py"):
             text = path.read_text(encoding="utf-8")
             for token in forbidden:
                 self.assertNotIn(token, text)

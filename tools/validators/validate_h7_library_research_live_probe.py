@@ -29,10 +29,10 @@ from archive.prototypes.legacy_runtime.connectors.h7_library_research.live_probe
 
 EXPECTED_SOURCES = H7_SOURCE_IDS
 CONTRACTS = (
-    "contracts/control_schemas/previews/h7/connectors/library_research_live_probe_request.v0.json",
-    "contracts/control_schemas/previews/h7/connectors/library_research_live_probe_result.v0.json",
-    "contracts/control_schemas/previews/h7/connectors/library_research_live_probe_output_bundle.v0.json",
-    "contracts/control_schemas/previews/h7/connectors/library_research_connector_health_summary.v0.json",
+    "contracts/schema/control/previews/h7/connectors/library_research_live_probe_request.v0.json",
+    "contracts/schema/control/previews/h7/connectors/library_research_live_probe_result.v0.json",
+    "contracts/schema/control/previews/h7/connectors/library_research_live_probe_output_bundle.v0.json",
+    "contracts/schema/control/previews/h7/connectors/library_research_connector_health_summary.v0.json",
 )
 POLICIES = (
     "control/inventory/connectors/h7_library_research_live_probe_policy.json",

@@ -2,8 +2,8 @@ from __future__ import annotations
 
 import unittest
 
-from runtime.local_worker import LocalWorkerResult, LocalWorkerRun, LocalWorkerStatus, validate_worker_result
-from runtime.local_worker.errors import LocalWorkerValidationError
+from runtime.local.worker import LocalWorkerResult, LocalWorkerRun, LocalWorkerStatus, validate_worker_result
+from runtime.local.worker.errors import LocalWorkerValidationError
 
 
 class LocalWorkerResultTests(unittest.TestCase):

@@ -14,7 +14,7 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.local_foundry import pack_builder
+from runtime.local.foundry import pack_builder
 
 
 POLICY_FILES = [
@@ -28,21 +28,21 @@ POLICY_FILES = [
 ]
 
 PACK_BUILDER_EXAMPLES = [
-    "examples/pack_builder/source_pack_draft_case_v0.json",
-    "examples/pack_builder/evidence_pack_draft_case_v0.json",
-    "examples/pack_builder/contribution_pack_draft_case_v0.json",
-    "examples/pack_builder/review_pack_draft_case_v0.json",
-    "examples/pack_builder/index_pack_preview_case_v0.json",
-    "examples/pack_builder/policy_blocked_pack_build_case_v0.json",
+    "examples/packs/builder/source_pack_draft_case_v0.json",
+    "examples/packs/builder/evidence_pack_draft_case_v0.json",
+    "examples/packs/builder/contribution_pack_draft_case_v0.json",
+    "examples/packs/builder/review_pack_draft_case_v0.json",
+    "examples/packs/builder/index_pack_preview_case_v0.json",
+    "examples/packs/builder/policy_blocked_pack_build_case_v0.json",
 ]
 
 PACK_DRAFT_EXAMPLES = [
-    "examples/pack_drafts/source_pack_draft_v0.json",
-    "examples/pack_drafts/evidence_pack_draft_v0.json",
-    "examples/pack_drafts/contribution_pack_draft_v0.json",
-    "examples/pack_drafts/review_pack_draft_v0.json",
-    "examples/pack_drafts/index_pack_preview_v0.json",
-    "examples/pack_drafts/policy_blocked_pack_draft_v0.json",
+    "examples/packs/drafts/source_pack_draft_v0.json",
+    "examples/packs/drafts/evidence_pack_draft_v0.json",
+    "examples/packs/drafts/contribution_pack_draft_v0.json",
+    "examples/packs/drafts/review_pack_draft_v0.json",
+    "examples/packs/drafts/index_pack_preview_v0.json",
+    "examples/packs/drafts/policy_blocked_pack_draft_v0.json",
 ]
 
 DOC_FILES = [
@@ -227,14 +227,14 @@ def _validate_script_commands() -> list[str]:
             "--pack-type",
             "evidence_pack_draft",
             "--input",
-            "examples/evidence_ledger_records/metadata_claim_record_v0.json",
+            "examples/evidence/ledger/records/metadata_claim_record_v0.json",
             "--check",
         ],
         [
             sys.executable,
             "scripts/summarize_local_pack.py",
             "--input",
-            "examples/pack_drafts",
+            "examples/packs/drafts",
             "--check",
         ],
     ]
@@ -255,7 +255,7 @@ def _validate_forbidden_output_roots() -> list[str]:
             "--pack-type",
             "evidence_pack_draft",
             "--input",
-            "examples/evidence_ledger_records/metadata_claim_record_v0.json",
+            "examples/evidence/ledger/records/metadata_claim_record_v0.json",
             "--output",
             output,
         ]
@@ -268,7 +268,7 @@ def _validate_forbidden_output_roots() -> list[str]:
 def _validate_no_banned_imports() -> list[str]:
     errors: list[str] = []
     for path in (
-        "runtime/local_foundry/pack_builder.py",
+        "runtime/local/foundry/pack_builder.py",
         "scripts/build_local_pack.py",
         "scripts/summarize_local_pack.py",
         "scripts/validate_pack_builder_runtime.py",

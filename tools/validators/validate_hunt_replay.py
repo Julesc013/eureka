@@ -17,11 +17,11 @@ if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
 from scripts.hunt_queue_progress import hunt_queue_current_or_advanced
-from runtime.local_appliance import close_local_appliance, open_local_appliance
-from runtime.local_operator import write_operator_token_record
-from runtime.local_operator.auth import build_cli_operator_auth_state
-from runtime.local_service import LocalServiceApp
-from runtime.search_hunt import (
+from runtime.local.appliance import close_local_appliance, open_local_appliance
+from runtime.local.operator import write_operator_token_record
+from runtime.local.operator.auth import build_cli_operator_auth_state
+from runtime.local.service import LocalServiceApp
+from runtime.search.hunt import (
     BLOCKED_REPLAY_STEP_KINDS,
     ENABLED_REPLAY_STEP_KINDS,
     build_replay_fixture_from_hunt,
@@ -52,24 +52,24 @@ INVENTORIES = {
     "control/inventory/hunt_10_next_task_decision.json": "hunt_10_next_task_decision.v0",
 }
 RUNTIME_FILES = (
-    "runtime/search_hunt/replay.py",
-    "runtime/search_hunt/replay_records.py",
-    "runtime/search_hunt/replay_fixtures.py",
-    "runtime/search_hunt/replay_diff.py",
-    "runtime/search_hunt/replay_validation.py",
-    "runtime/search_hunt/schema.py",
-    "runtime/search_hunt/store.py",
-    "runtime/search_hunt/validation.py",
-    "runtime/local_service/routes.py",
+    "runtime/search/hunt/replay.py",
+    "runtime/search/hunt/replay_records.py",
+    "runtime/search/hunt/replay_fixtures.py",
+    "runtime/search/hunt/replay_diff.py",
+    "runtime/search/hunt/replay_validation.py",
+    "runtime/search/hunt/schema.py",
+    "runtime/search/hunt/store.py",
+    "runtime/search/hunt/validation.py",
+    "runtime/local/service/routes.py",
     "surfaces/web/workbench/local_html/pages.py",
     "surfaces/web/workbench/local_html/view_models.py",
 )
 REPLAY_RUNTIME_FILES = (
-    "runtime/search_hunt/replay.py",
-    "runtime/search_hunt/replay_records.py",
-    "runtime/search_hunt/replay_fixtures.py",
-    "runtime/search_hunt/replay_diff.py",
-    "runtime/search_hunt/replay_validation.py",
+    "runtime/search/hunt/replay.py",
+    "runtime/search/hunt/replay_records.py",
+    "runtime/search/hunt/replay_fixtures.py",
+    "runtime/search/hunt/replay_diff.py",
+    "runtime/search/hunt/replay_validation.py",
 )
 SCRIPTS = (
     "scripts/eureka_hunt_replay.py",

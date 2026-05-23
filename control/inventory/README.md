@@ -15,7 +15,7 @@ Current inventory coverage:
   route inventory and current safe/blocked route classification
 - `docs/operations/public_alpha_hosting_pack/ROUTE_SAFETY_SUMMARY.md` consumes
   the public-alpha route inventory as an operator-readable summary
-- `runtime/source_registry/` is the current stdlib-only runtime consumer of those records
+- `runtime/source/registry/` is the current stdlib-only runtime consumer of those records
 
 Inventory records are:
 

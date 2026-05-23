@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import unittest
 
-from runtime.local_network import classify_client_scope
+from runtime.local.network import classify_client_scope
 from scripts.eureka_lan_read_only_probe import validate_base_url
 
 

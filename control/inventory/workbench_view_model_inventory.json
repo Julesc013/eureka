@@ -4,7 +4,7 @@
   "views": [
     {
       "view_id": "SearchView",
-      "owning_contract_location": "contracts/view_models/",
+      "owning_contract_location": "contracts/view/models/core/",
       "primary_packet_family": "SearchPacket",
       "current_runtime_sources": [
         "existing runtime packets or future contract only"
@@ -32,7 +32,7 @@
     },
     {
       "view_id": "HuntView",
-      "owning_contract_location": "contracts/view_models/",
+      "owning_contract_location": "contracts/view/models/core/",
       "primary_packet_family": "HuntStatePacket",
       "current_runtime_sources": [
         "existing runtime packets or future contract only"
@@ -60,7 +60,7 @@
     },
     {
       "view_id": "SearchNeedView",
-      "owning_contract_location": "contracts/view_models/",
+      "owning_contract_location": "contracts/view/models/core/",
       "primary_packet_family": "SearchNeedPacket",
       "current_runtime_sources": [
         "existing runtime packets or future contract only"
@@ -88,7 +88,7 @@
     },
     {
       "view_id": "WorkUnitView",
-      "owning_contract_location": "contracts/view_models/",
+      "owning_contract_location": "contracts/view/models/core/",
       "primary_packet_family": "WorkUnitPacket",
       "current_runtime_sources": [
         "existing runtime packets or future contract only"
@@ -116,7 +116,7 @@
     },
     {
       "view_id": "SourceView",
-      "owning_contract_location": "contracts/view_models/",
+      "owning_contract_location": "contracts/view/models/core/",
       "primary_packet_family": "SourceRecordPacket",
       "current_runtime_sources": [
         "existing runtime packets or future contract only"
@@ -144,7 +144,7 @@
     },
     {
       "view_id": "SourceCacheView",
-      "owning_contract_location": "contracts/view_models/",
+      "owning_contract_location": "contracts/view/models/core/",
       "primary_packet_family": "SourceCacheRecordPacket",
       "current_runtime_sources": [
         "existing runtime packets or future contract only"
@@ -172,7 +172,7 @@
     },
     {
       "view_id": "EvidenceView",
-      "owning_contract_location": "contracts/view_models/",
+      "owning_contract_location": "contracts/view/models/core/",
       "primary_packet_family": "EvidencePacket",
       "current_runtime_sources": [
         "existing runtime packets or future contract only"
@@ -200,7 +200,7 @@
     },
     {
       "view_id": "CandidateView",
-      "owning_contract_location": "contracts/view_models/",
+      "owning_contract_location": "contracts/view/models/core/",
       "primary_packet_family": "CandidatePacket",
       "current_runtime_sources": [
         "existing runtime packets or future contract only"
@@ -228,7 +228,7 @@
     },
     {
       "view_id": "ReviewQueueView",
-      "owning_contract_location": "contracts/view_models/",
+      "owning_contract_location": "contracts/view/models/core/",
       "primary_packet_family": "ReviewPacket",
       "current_runtime_sources": [
         "existing runtime packets or future contract only"
@@ -256,7 +256,7 @@
     },
     {
       "view_id": "PromotionPreviewView",
-      "owning_contract_location": "contracts/view_models/",
+      "owning_contract_location": "contracts/view/models/core/",
       "primary_packet_family": "PromotionPreviewPacket",
       "current_runtime_sources": [
         "existing runtime packets or future contract only"
@@ -284,7 +284,7 @@
     },
     {
       "view_id": "ReviewedIndexView",
-      "owning_contract_location": "contracts/view_models/",
+      "owning_contract_location": "contracts/view/models/core/",
       "primary_packet_family": "ReviewedRecordPacket",
       "current_runtime_sources": [
         "existing runtime packets or future contract only"
@@ -312,7 +312,7 @@
     },
     {
       "view_id": "AbsenceView",
-      "owning_contract_location": "contracts/view_models/",
+      "owning_contract_location": "contracts/view/models/core/",
       "primary_packet_family": "AbsencePacket",
       "current_runtime_sources": [
         "existing runtime packets or future contract only"
@@ -340,7 +340,7 @@
     },
     {
       "view_id": "IAConnectorView",
-      "owning_contract_location": "contracts/view_models/",
+      "owning_contract_location": "contracts/view/models/core/",
       "primary_packet_family": "SourceRecordPacket",
       "current_runtime_sources": [
         "existing runtime packets or future contract only"
@@ -368,7 +368,7 @@
     },
     {
       "view_id": "SynFoundryView",
-      "owning_contract_location": "contracts/view_models/",
+      "owning_contract_location": "contracts/view/models/core/",
       "primary_packet_family": "CoverageReportPacket",
       "current_runtime_sources": [
         "existing runtime packets or future contract only"
@@ -396,7 +396,7 @@
     },
     {
       "view_id": "DomainPackView",
-      "owning_contract_location": "contracts/view_models/",
+      "owning_contract_location": "contracts/view/models/core/",
       "primary_packet_family": "DomainPackPacket",
       "current_runtime_sources": [
         "existing runtime packets or future contract only"
@@ -424,7 +424,7 @@
     },
     {
       "view_id": "ScoutTrailView",
-      "owning_contract_location": "contracts/view_models/",
+      "owning_contract_location": "contracts/view/models/core/",
       "primary_packet_family": "DiscoveryTrailPacket",
       "current_runtime_sources": [
         "existing runtime packets or future contract only"
@@ -452,7 +452,7 @@
     },
     {
       "view_id": "ExtractionLabView",
-      "owning_contract_location": "contracts/view_models/",
+      "owning_contract_location": "contracts/view/models/core/",
       "primary_packet_family": "ActionPosturePacket",
       "current_runtime_sources": [
         "existing runtime packets or future contract only"
@@ -480,7 +480,7 @@
     },
     {
       "view_id": "SnapshotView",
-      "owning_contract_location": "contracts/view_models/",
+      "owning_contract_location": "contracts/view/models/core/",
       "primary_packet_family": "SnapshotPacket",
       "current_runtime_sources": [
         "existing runtime packets or future contract only"
@@ -508,7 +508,7 @@
     },
     {
       "view_id": "RelayView",
-      "owning_contract_location": "contracts/view_models/",
+      "owning_contract_location": "contracts/view/models/core/",
       "primary_packet_family": "RelayPacket",
       "current_runtime_sources": [
         "existing runtime packets or future contract only"
@@ -536,7 +536,7 @@
     },
     {
       "view_id": "OpsStatusView",
-      "owning_contract_location": "contracts/view_models/",
+      "owning_contract_location": "contracts/view/models/core/",
       "primary_packet_family": "OpsStatusPacket",
       "current_runtime_sources": [
         "existing runtime packets or future contract only"
@@ -564,7 +564,7 @@
     },
     {
       "view_id": "AuditView",
-      "owning_contract_location": "contracts/view_models/",
+      "owning_contract_location": "contracts/view/models/core/",
       "primary_packet_family": "OpsStatusPacket",
       "current_runtime_sources": [
         "existing runtime packets or future contract only"

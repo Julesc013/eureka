@@ -11,8 +11,8 @@
     "scripts/dry_run_search_need_record.py"
   ],
   "example_search_need_records": [
-    "examples/search_needs/minimal_unresolved_software_need_v0/SEARCH_NEED_RECORD.json",
-    "examples/search_needs/minimal_compatibility_evidence_need_v0/SEARCH_NEED_RECORD.json"
+    "examples/search/needs/minimal_unresolved_software_need_v0/SEARCH_NEED_RECORD.json",
+    "examples/search/needs/minimal_compatibility_evidence_need_v0/SEARCH_NEED_RECORD.json"
   ],
   "search_need_policy": "control/inventory/query_intelligence/search_need_record_policy.json",
   "need_identity_model": {

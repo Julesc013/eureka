@@ -112,19 +112,19 @@
   "legacy_quarantine_findings": [
     {
       "count": 54,
-      "path": "runtime/local_foundry/pack_builder.py"
+      "path": "runtime/local/foundry/pack_builder.py"
     },
     {
       "count": 53,
-      "path": "runtime/local_foundry/pack_export.py"
+      "path": "runtime/local/foundry/pack_export.py"
     },
     {
       "count": 53,
-      "path": "runtime/local_foundry/source_cache.py"
+      "path": "runtime/local/foundry/source_cache.py"
     },
     {
       "count": 49,
-      "path": "runtime/local_foundry/evidence_ledger.py"
+      "path": "runtime/local/foundry/evidence_ledger.py"
     },
     {
       "count": 47,
@@ -132,11 +132,11 @@
     },
     {
       "count": 46,
-      "path": "runtime/local_foundry/candidate_store.py"
+      "path": "runtime/local/foundry/candidate_store.py"
     },
     {
       "count": 45,
-      "path": "runtime/local_foundry/pack_quarantine.py"
+      "path": "runtime/local/foundry/pack_quarantine.py"
     }
   ],
   "new_unallowlisted_production_findings_before": 1030,

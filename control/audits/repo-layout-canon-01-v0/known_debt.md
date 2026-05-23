@@ -9,7 +9,7 @@ This task records debt only. It does not move files.
 | `deploy/` | Release definitions outside `release/`. | `REPO-LAYOUT-INVENTORY-02` |
 | `archive/prototypes/legacy_runtime` | Prototype runtime under governance root. | `REPO-LAYOUT-ARCHIVE-05` |
 | `surfaces/web/workbench/local_html` | Workbench presentation under runtime. | `REPO-LAYOUT-WORKBENCH-SURFACE-07` |
-| `contracts/control_schemas` | Duplicate schema/contract authority risk. | `REPO-LAYOUT-CONTRACT-AUTHORITY-06` |
+| `contracts/schema/control` | Duplicate schema/contract authority risk. | `REPO-LAYOUT-CONTRACT-AUTHORITY-06` |
 | `scripts/` | Large tool implementation tree under thin-wrapper root. | `REPO-LAYOUT-TOOLS-04` |
 
 Acceptance for this task is that the debt is explicit, validated, and left in

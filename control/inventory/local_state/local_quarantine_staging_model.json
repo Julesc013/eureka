@@ -167,7 +167,7 @@
     "conflicts_preserved": true
   },
   "local_staging_manifest_format": {
-    "schema": "contracts/packs/local_staging_manifest.v0.json",
+    "schema": "contracts/pack/local_staging_manifest.v0.json",
     "example_manifest_root": "examples/local_staging_manifests/minimal_local_staging_manifest_v0",
     "validator_command": "python scripts/validate_local_staging_manifest.py --all-examples",
     "status": "contract_example_validation_only",

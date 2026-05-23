@@ -1,6 +1,6 @@
 # Path Resolution
 
-Shared path helpers live in `runtime/local_appliance/paths.py`.
+Shared path helpers live in `runtime/local/appliance/paths.py`.
 
 The resolver exposes:
 

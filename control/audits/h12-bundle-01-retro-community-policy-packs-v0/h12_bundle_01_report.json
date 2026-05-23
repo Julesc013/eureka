@@ -5,7 +5,7 @@
     "docs/operations/H12_RETRO_COMMUNITY_FIXTURE_PLAN.md"
   ],
   "added_examples": [
-    "examples/source_packs/h12_retro_community_source_pack_manifest_v0.json",
+    "examples/packs/source/h12_retro_community_source_pack_manifest_v0.json",
     "examples/connectors/h12_retro_community/policies/",
     "examples/connectors/h12_retro_community/coverage/",
     "examples/connectors/h12_retro_community/scorecards/"

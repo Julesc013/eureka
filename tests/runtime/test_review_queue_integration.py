@@ -27,7 +27,7 @@ class ReviewQueueIntegrationTests(unittest.TestCase):
 
     def test_no_h_series_module_import_or_connector_dependency(self):
         banned = ("runtime.connectors", "runtime.local_foundry")
-        for path in sorted((REPO_ROOT / "runtime/review_queue").glob("*.py")):
+        for path in sorted((REPO_ROOT / "runtime/review/queue").glob("*.py")):
             tree = ast.parse(path.read_text(encoding="utf-8"))
             text = path.read_text(encoding="utf-8")
             self.assertNotIn("h1_", text.lower())

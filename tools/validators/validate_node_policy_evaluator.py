@@ -12,7 +12,7 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.local_foundry import node_policy_evaluator
+from runtime.local.foundry import node_policy_evaluator
 from scripts import evaluate_node_policy
 
 

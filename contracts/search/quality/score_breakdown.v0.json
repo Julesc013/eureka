@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/search/quality/score_breakdown.v0.json",
+  "title": "G0ScoreBreakdown",
+  "type": "object",
+  "required": ["schema_version", "record_type", "score_breakdown_id", "query_context", "result_ref", "score", "signals", "uncertainty", "limitations", "accepted_truth", "review_required"],
+  "properties": {
+    "schema_version": {"const": "score_breakdown.v0"},
+    "record_type": {"const": "score_breakdown"},
+    "signals": {"type": "array"},
+    "accepted_truth": {"const": false},
+    "review_required": {"const": true}
+  },
+  "additionalProperties": true
+}

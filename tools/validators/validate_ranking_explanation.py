@@ -13,7 +13,7 @@ from typing import Any, Mapping, Sequence, TextIO
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
-EXAMPLES_ROOT = REPO_ROOT / "examples" / "evidence_weighted_ranking"
+EXAMPLES_ROOT = REPO_ROOT / "examples" / "evidence" / "weighted_ranking"
 
 TOP_LEVEL_REQUIRED = {
     "schema_version",

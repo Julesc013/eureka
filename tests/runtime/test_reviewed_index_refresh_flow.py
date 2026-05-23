@@ -4,8 +4,8 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from runtime.local_appliance import close_local_appliance, open_local_appliance
-from runtime.local_service.workbench_review_promote import run_review_promote_flow
+from runtime.local.appliance import close_local_appliance, open_local_appliance
+from runtime.local.service.workbench_review_promote import run_review_promote_flow
 from scripts.eureka_init_instance import initialize_instance
 
 

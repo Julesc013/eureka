@@ -29,10 +29,10 @@ DOC_FILES = [
     "docs/operations/LOCAL_SOURCE_CACHE_PRIVACY_RISK_POLICY.md",
 ]
 EXAMPLE_FILES = [
-    "examples/source_cache_plans/minimal_local_source_cache_plan_v0.json",
-    "examples/source_cache_plans/fixture_only_source_cache_plan_v0.json",
-    "examples/source_cache_plans/approved_metadata_probe_future_plan_v0.json",
-    "examples/source_cache_plans/policy_blocked_source_cache_plan_v0.json",
+    "examples/sources/cache/plans/minimal_local_source_cache_plan_v0.json",
+    "examples/sources/cache/plans/fixture_only_source_cache_plan_v0.json",
+    "examples/sources/cache/plans/approved_metadata_probe_future_plan_v0.json",
+    "examples/sources/cache/plans/policy_blocked_source_cache_plan_v0.json",
 ]
 AUDIT_FILES = [
     "control/audits/track-b-13-local-source-cache-runtime-planning-v0/README.md",
@@ -360,8 +360,8 @@ def _validate_path_policy(policy: Mapping[str, Any], repo_root: Path, ref: str) 
             errors.append(f"{ref}: allowed output root rejected: {candidate}")
     for candidate in (
         repo_root / "site/dist/source_cache.json",
-        repo_root / "runtime/source_cache.json",
-        repo_root / "contracts/source_cache.json",
+        repo_root / "runtime/source/cache.json",
+        repo_root / "contracts/source/cache.json",
         repo_root / ".aide.local/eureka/source_cache/source_cache.json",
     ):
         if output_path_allowed(candidate, repo_root):

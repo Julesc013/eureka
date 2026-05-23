@@ -420,7 +420,7 @@
   "expected_source_cache_outputs": [
     {
       "output_kind": "pypi_project_metadata_summary",
-      "source_cache_record_contract_ref": "contracts/source_cache/source_cache_record.v0.json",
+      "source_cache_record_contract_ref": "contracts/source/cache/source_cache_record.v0.json",
       "output_runtime_implemented": false,
       "raw_payload_allowed": false,
       "package_payload_allowed": false,
@@ -434,7 +434,7 @@
     },
     {
       "output_kind": "pypi_release_metadata_summary",
-      "source_cache_record_contract_ref": "contracts/source_cache/source_cache_record.v0.json",
+      "source_cache_record_contract_ref": "contracts/source/cache/source_cache_record.v0.json",
       "output_runtime_implemented": false,
       "raw_payload_allowed": false,
       "package_payload_allowed": false,
@@ -448,7 +448,7 @@
     },
     {
       "output_kind": "pypi_file_metadata_summary",
-      "source_cache_record_contract_ref": "contracts/source_cache/source_cache_record.v0.json",
+      "source_cache_record_contract_ref": "contracts/source/cache/source_cache_record.v0.json",
       "output_runtime_implemented": false,
       "raw_payload_allowed": false,
       "package_payload_allowed": false,
@@ -462,7 +462,7 @@
     },
     {
       "output_kind": "pypi_requires_python_summary",
-      "source_cache_record_contract_ref": "contracts/source_cache/source_cache_record.v0.json",
+      "source_cache_record_contract_ref": "contracts/source/cache/source_cache_record.v0.json",
       "output_runtime_implemented": false,
       "raw_payload_allowed": false,
       "package_payload_allowed": false,
@@ -476,7 +476,7 @@
     },
     {
       "output_kind": "pypi_classifier_summary",
-      "source_cache_record_contract_ref": "contracts/source_cache/source_cache_record.v0.json",
+      "source_cache_record_contract_ref": "contracts/source/cache/source_cache_record.v0.json",
       "output_runtime_implemented": false,
       "raw_payload_allowed": false,
       "package_payload_allowed": false,
@@ -490,7 +490,7 @@
     },
     {
       "output_kind": "pypi_yanked_status_summary",
-      "source_cache_record_contract_ref": "contracts/source_cache/source_cache_record.v0.json",
+      "source_cache_record_contract_ref": "contracts/source/cache/source_cache_record.v0.json",
       "output_runtime_implemented": false,
       "raw_payload_allowed": false,
       "package_payload_allowed": false,
@@ -504,7 +504,7 @@
     },
     {
       "output_kind": "pypi_dependency_metadata_summary",
-      "source_cache_record_contract_ref": "contracts/source_cache/source_cache_record.v0.json",
+      "source_cache_record_contract_ref": "contracts/source/cache/source_cache_record.v0.json",
       "output_runtime_implemented": false,
       "raw_payload_allowed": false,
       "package_payload_allowed": false,
@@ -520,7 +520,7 @@
   "expected_evidence_ledger_outputs": [
     {
       "output_kind": "package_metadata_observation",
-      "evidence_ledger_record_contract_ref": "contracts/evidence_ledger/evidence_ledger_record.v0.json",
+      "evidence_ledger_record_contract_ref": "contracts/evidence/ledger/evidence_ledger_record.v0.json",
       "output_runtime_implemented": false,
       "accepted_as_truth": false,
       "requires_review": true,
@@ -534,7 +534,7 @@
     },
     {
       "output_kind": "package_release_observation",
-      "evidence_ledger_record_contract_ref": "contracts/evidence_ledger/evidence_ledger_record.v0.json",
+      "evidence_ledger_record_contract_ref": "contracts/evidence/ledger/evidence_ledger_record.v0.json",
       "output_runtime_implemented": false,
       "accepted_as_truth": false,
       "requires_review": true,
@@ -548,7 +548,7 @@
     },
     {
       "output_kind": "package_version_observation",
-      "evidence_ledger_record_contract_ref": "contracts/evidence_ledger/evidence_ledger_record.v0.json",
+      "evidence_ledger_record_contract_ref": "contracts/evidence/ledger/evidence_ledger_record.v0.json",
       "output_runtime_implemented": false,
       "accepted_as_truth": false,
       "requires_review": true,
@@ -562,7 +562,7 @@
     },
     {
       "output_kind": "package_file_metadata_observation",
-      "evidence_ledger_record_contract_ref": "contracts/evidence_ledger/evidence_ledger_record.v0.json",
+      "evidence_ledger_record_contract_ref": "contracts/evidence/ledger/evidence_ledger_record.v0.json",
       "output_runtime_implemented": false,
       "accepted_as_truth": false,
       "requires_review": true,
@@ -576,7 +576,7 @@
     },
     {
       "output_kind": "requires_python_observation",
-      "evidence_ledger_record_contract_ref": "contracts/evidence_ledger/evidence_ledger_record.v0.json",
+      "evidence_ledger_record_contract_ref": "contracts/evidence/ledger/evidence_ledger_record.v0.json",
       "output_runtime_implemented": false,
       "accepted_as_truth": false,
       "requires_review": true,
@@ -590,7 +590,7 @@
     },
     {
       "output_kind": "classifier_observation",
-      "evidence_ledger_record_contract_ref": "contracts/evidence_ledger/evidence_ledger_record.v0.json",
+      "evidence_ledger_record_contract_ref": "contracts/evidence/ledger/evidence_ledger_record.v0.json",
       "output_runtime_implemented": false,
       "accepted_as_truth": false,
       "requires_review": true,
@@ -604,7 +604,7 @@
     },
     {
       "output_kind": "yanked_status_observation",
-      "evidence_ledger_record_contract_ref": "contracts/evidence_ledger/evidence_ledger_record.v0.json",
+      "evidence_ledger_record_contract_ref": "contracts/evidence/ledger/evidence_ledger_record.v0.json",
       "output_runtime_implemented": false,
       "accepted_as_truth": false,
       "requires_review": true,
@@ -618,7 +618,7 @@
     },
     {
       "output_kind": "dependency_metadata_observation",
-      "evidence_ledger_record_contract_ref": "contracts/evidence_ledger/evidence_ledger_record.v0.json",
+      "evidence_ledger_record_contract_ref": "contracts/evidence/ledger/evidence_ledger_record.v0.json",
       "output_runtime_implemented": false,
       "accepted_as_truth": false,
       "requires_review": true,
@@ -632,7 +632,7 @@
     },
     {
       "output_kind": "scoped_absence_observation",
-      "evidence_ledger_record_contract_ref": "contracts/evidence_ledger/evidence_ledger_record.v0.json",
+      "evidence_ledger_record_contract_ref": "contracts/evidence/ledger/evidence_ledger_record.v0.json",
       "output_runtime_implemented": false,
       "accepted_as_truth": false,
       "requires_review": true,

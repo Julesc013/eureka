@@ -8,7 +8,7 @@
 | `.aide/reports/eureka-*` | AIDE reports | yes | Q54-Q61 reports | expected_generated_state |
 | `.aide/context/latest-*` | AIDE generated context | yes | pack/review-pack outputs | expected_generated_state |
 | `.aide/repo/**`, `.aide/quality/**`, `.aide/roots/**`, `.aide/tools/**` | AIDE generated maps | yes | Q56/current commands | expected_generated_state |
-| `runtime/local_foundry/fixture_source_observation_slice.py` | runtime/local fixture harness | yes | Q57/Q59/Q60/Q61 allowed paths | expected fixture implementation |
+| `runtime/local/foundry/fixture_source_observation_slice.py` | runtime/local fixture harness | yes | Q57/Q59/Q60/Q61 allowed paths | expected fixture implementation |
 | `scripts/validate_fixture_source_observation_vertical_slice.py` | validator script | yes | Q57 allowed path | expected fixture validator |
 | `tests/runtime/test_fixture_source_observation_vertical_slice.py` | targeted test | yes | Q57/Q60/Q61 allowed path | expected test implementation |
 | `tests/operations/test_fixture_source_observation_vertical_slice_script.py` | targeted test | yes | Q57/Q60/Q61 allowed path | expected test implementation |

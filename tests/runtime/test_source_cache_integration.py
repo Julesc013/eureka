@@ -40,7 +40,7 @@ class SourceCacheIntegrationTests(unittest.TestCase):
         self.assertEqual(0, result["network_dependencies"])
 
     def test_no_runtime_connectors_dependency(self) -> None:
-        root = Path(__file__).resolve().parents[2] / "runtime/source_cache"
+        root = Path(__file__).resolve().parents[2] / "runtime/source/cache"
         text = "\n".join(path.read_text(encoding="utf-8") for path in root.glob("*.py"))
         self.assertNotIn("runtime.connectors", text)
         self.assertNotIn("runtime.local_foundry", text)

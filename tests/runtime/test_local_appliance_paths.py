@@ -2,8 +2,8 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from runtime.local_appliance.errors import LocalInstancePathError
-from runtime.local_appliance.paths import (
+from runtime.local.appliance.errors import LocalInstancePathError
+from runtime.local.appliance.paths import (
     describe_instance_layout,
     resolve_default_instance_root,
     resolve_instance_root,

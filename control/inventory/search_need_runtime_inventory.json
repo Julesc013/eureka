@@ -1,7 +1,7 @@
 {
   "schema_version": "search_need_runtime_inventory.v0",
   "task": "HUNT-05",
-  "runtime_package": "runtime/search_need",
+  "runtime_package": "runtime/search/need",
   "store_id": "search_need",
   "db_path": "db/search_need.sqlite",
   "states": [

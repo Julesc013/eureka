@@ -1,0 +1,25 @@
+{
+  "schema_version": "local_review_queue_entry.v0",
+  "input_id": "source_cache_record_needs_review_v0",
+  "input_type": "source_cache_record",
+  "input_ref": "examples/sources/cache/records/source_metadata_record_v0.json",
+  "input_public_safe": true,
+  "review_entry_status": "needs_review",
+  "review_subject_type": "source_cache_record",
+  "review_subject_ref": "source_cache.source_metadata.fixture.v0",
+  "review_subject_summary": "Source metadata fixture requires review before bridge use.",
+  "review_decision": "no_decision_yet",
+  "decision_scope": "local_review_only",
+  "decision_rationale": "Source cache records are observations and need local review.",
+  "required_evidence": [
+    "source locator",
+    "source limitations"
+  ],
+  "missing_evidence": [],
+  "related_source_cache_refs": [
+    "source_cache.source_metadata.fixture.v0"
+  ],
+  "notes": [
+    "No live source access is implied."
+  ]
+}

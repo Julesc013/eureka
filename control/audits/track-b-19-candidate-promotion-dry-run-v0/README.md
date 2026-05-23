@@ -8,11 +8,11 @@ The dry-run cannot promote candidates, accept evidence, create public records, w
 
 ## Added
 
-- `runtime/local_foundry/candidate_promotion_dry_run.py`
+- `runtime/local/foundry/candidate_promotion_dry_run.py`
 - `scripts/run_candidate_promotion_dry_run.py`
 - `scripts/validate_candidate_promotion_dry_run.py`
 - Promotion dry-run, readiness, blocker, output, path, and truth policies
-- Promotion dry-run examples under `examples/candidate_promotion_dry_runs/`
+- Promotion dry-run examples under `examples/review/candidate_promotion_dry_runs/`
 - Runtime and script tests
 - Reference, architecture, and operations docs
 - Generated audit evidence under `generated/`

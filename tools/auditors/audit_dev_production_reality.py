@@ -501,15 +501,15 @@ def classify_kind(
         return "queue_or_task_control"
     if lower.startswith("control/audits/"):
         return "audit_evidence"
-    if lower.startswith("contracts/control_schemas/audits/"):
+    if lower.startswith("contracts/schema/control/audits/"):
         return "audit_contract"
-    if lower.startswith("contracts/control_schemas/fixtures/"):
+    if lower.startswith("contracts/schema/control/fixtures/"):
         return "fixture_contract"
-    if lower.startswith("contracts/control_schemas/previews/"):
+    if lower.startswith("contracts/schema/control/previews/"):
         return "preview_contract"
-    if lower.startswith("contracts/control_schemas/policies/"):
+    if lower.startswith("contracts/schema/control/policies/"):
         return "policy_contract"
-    if lower.startswith("contracts/control_schemas/validators/") or lower.startswith("contracts/control_schemas/tasks/") or lower.startswith("contracts/control_schemas/deprecated/"):
+    if lower.startswith("contracts/schema/control/validators/") or lower.startswith("contracts/schema/control/tasks/") or lower.startswith("contracts/schema/control/deprecated/"):
         return "generated_scaffold"
     if lower.startswith("control/inventory/tests/"):
         return "test_artifact" if "test_artifact" in ARTIFACT_KINDS else "audit_evidence"

@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import unittest
 
-from runtime.search_hunt import diff_replay_outputs
+from runtime.search.hunt import diff_replay_outputs
 
 
 class HuntReplayDiffTests(unittest.TestCase):

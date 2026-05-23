@@ -103,9 +103,9 @@ def _ensure_allowed_input_path(path_text: str) -> Path:
         pass
     allowed = (
         "examples/actions",
-        "examples/pack_exports",
-        "examples/pack_quarantine",
-        "examples/search_quality",
+        "examples/packs/exports",
+        "examples/packs/quarantine",
+        "examples/search/quality",
         "control/audits",
     )
     rel = resolved.relative_to(REPO_ROOT.resolve()).as_posix()

@@ -16,7 +16,7 @@ python scripts/validate_only_pack_import.py --all-examples --json
 Validate one explicit pack root:
 
 ```bash
-python scripts/validate_only_pack_import.py --pack-root examples/source_packs/minimal_recorded_source_pack_v0 --json
+python scripts/validate_only_pack_import.py --pack-root examples/packs/source/minimal_recorded_source_pack_v0 --json
 ```
 
 Include typed AI output examples without model calls:

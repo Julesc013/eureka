@@ -12,7 +12,7 @@ from runtime.pages.errors import PagePolicyError
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 OBJECT_PAGE_EXAMPLES_ROOT = REPO_ROOT / "examples" / "object_pages"
-SOURCE_PAGE_EXAMPLES_ROOT = REPO_ROOT / "examples" / "source_pages"
+SOURCE_PAGE_EXAMPLES_ROOT = REPO_ROOT / "examples" / "sources" / "pages"
 COMPARISON_PAGE_EXAMPLES_ROOT = REPO_ROOT / "examples" / "comparison_pages"
 PAGE_DRY_RUN_EXAMPLES_ROOT = REPO_ROOT / "examples" / "page_runtime_dry_run"
 AUDIT_ROOT = REPO_ROOT / "control" / "audits" / "object-source-comparison-page-local-dry-run-runtime-v0"

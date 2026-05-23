@@ -24,11 +24,11 @@ from archive.prototypes.legacy_runtime.connectors.h12_retro_community.review_int
 AUDIT_DIR = Path("control/audits/h12-bundle-04-retro-community-review-quality-audit-v0")
 REVIEW_DIR = Path("examples/connectors/h12_retro_community/review_integration")
 REQUIRED_JSON = (
-    "contracts/control_schemas/audits/h12/connectors/retro_community_review_integration_result.v0.json",
-    "contracts/control_schemas/audits/h12/connectors/retro_community_quality_delta_report.v0.json",
-    "contracts/control_schemas/audits/h12/connectors/retro_community_connector_wave_postmortem.v0.json",
-    "contracts/control_schemas/audits/h12/connectors/retro_community_integration_audit.v0.json",
-    "contracts/control_schemas/tasks/h12/connectors/retro_community_next_phase_recommendation.v0.json",
+    "contracts/schema/control/audits/h12/connectors/retro_community_review_integration_result.v0.json",
+    "contracts/schema/control/audits/h12/connectors/retro_community_quality_delta_report.v0.json",
+    "contracts/schema/control/audits/h12/connectors/retro_community_connector_wave_postmortem.v0.json",
+    "contracts/schema/control/audits/h12/connectors/retro_community_integration_audit.v0.json",
+    "contracts/schema/control/tasks/h12/connectors/retro_community_next_phase_recommendation.v0.json",
     "control/inventory/connectors/h12_retro_community_review_integration_policy.json",
     "control/inventory/connectors/h12_retro_community_review_output_policy.json",
     "control/inventory/connectors/h12_retro_community_review_path_policy.json",

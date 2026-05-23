@@ -6,7 +6,7 @@ allowed_scope_summary: Search Hunt exhaustion report records, local visibility, 
 gate:
   - HUNT-03 completed
   - use explicit local instance
-  - use runtime/search_hunt state machine and command history
+  - use runtime/search/hunt state machine and command history
   - no WorkUnit creation
   - no source probes
   - no AI/model/provider calls

@@ -46,10 +46,10 @@ Eureka-specific capability tags added in Q56:
 - `scripts/validate_pack_set.py`
 - `site/validate.py`
 - `site/build.py`
-- `runtime/source_observation/validation.py`
-- `runtime/source_cache/validation.py`
-- `runtime/evidence_ledger/validation.py`
-- `runtime/public_index/validation.py`
+- `runtime/source/observation/validation.py`
+- `runtime/source/cache/validation.py`
+- `runtime/evidence/ledger/validation.py`
+- `runtime/index/public/validation.py`
 - `control/inventory/tests/command_matrix.json`
 - `docs/operations/TEST_AND_EVAL_LANES.md`
 

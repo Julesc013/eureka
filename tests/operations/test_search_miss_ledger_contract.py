@@ -9,7 +9,7 @@ ROOT = Path(__file__).resolve().parents[2]
 AUDIT_DIR = ROOT / "control" / "audits" / "search-miss-ledger-v0"
 REPORT_PATH = AUDIT_DIR / "search_miss_ledger_report.json"
 POLICY_PATH = ROOT / "control" / "inventory" / "query_intelligence" / "search_miss_ledger_policy.json"
-EXAMPLE_ROOT = ROOT / "examples" / "search_miss_ledger"
+EXAMPLE_ROOT = ROOT / "examples" / "search" / "miss_ledger"
 REQUIRED_FILES = {
     "README.md",
     "CONTRACT_SUMMARY.md",

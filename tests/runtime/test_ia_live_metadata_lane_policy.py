@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import unittest
 
-from runtime.source_observation.ia_live_metadata_lane import request_ia_live_metadata_lane, run_ia_live_metadata_lane_live
+from runtime.source.observation.ia_live_metadata_lane import request_ia_live_metadata_lane, run_ia_live_metadata_lane_live
 
 
 class IALiveMetadataLanePolicyTests(unittest.TestCase):

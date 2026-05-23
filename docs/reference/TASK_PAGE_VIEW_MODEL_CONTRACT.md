@@ -47,7 +47,7 @@ Current examples must not imply:
 
 ## Related Contracts
 
-- `contracts/views/task_page.v0.json`
+- `contracts/view/pages/task_page.v0.json`
 - `control/inventory/publication/task_page_view_model_policy.json`
 - `docs/reference/NEED_PAGE_VIEW_MODEL_CONTRACT.md`
 - `docs/reference/CANDIDATE_PAGE_VIEW_MODEL_CONTRACT.md`

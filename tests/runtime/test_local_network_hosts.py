@@ -2,8 +2,8 @@ from __future__ import annotations
 
 import unittest
 
-from runtime.local_network import classify_client_scope, validate_service_host
-from runtime.local_network.errors import LocalNetworkHostError
+from runtime.local.network import classify_client_scope, validate_service_host
+from runtime.local.network.errors import LocalNetworkHostError
 
 
 class LocalNetworkHostTests(unittest.TestCase):

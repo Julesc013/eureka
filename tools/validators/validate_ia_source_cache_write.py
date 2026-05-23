@@ -14,7 +14,7 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.source_observation.internet_archive_source_cache import (  # noqa: E402
+from runtime.source.observation.internet_archive_source_cache import (  # noqa: E402
     build_ia_source_cache_record,
     load_fixture_normalized_records,
     load_ia_source_cache_policy,
@@ -29,9 +29,9 @@ from scripts.validate_ia_metadata_policy import validate_ia_metadata_policy  # n
 REQUIRED_FILES = (
     "control/policies/ia_source_cache_policy.json",
     "control/inventory/ia_source_cache_record_schema.json",
-    "examples/source_cache/internet_archive_metadata/expected_source_cache_records.json",
-    "examples/source_cache/internet_archive_metadata/expected_source_cache_boundary_report.json",
-    "runtime/source_observation/internet_archive_source_cache.py",
+    "examples/sources/cache/dry_run/internet_archive_metadata/expected_source_cache_records.json",
+    "examples/sources/cache/dry_run/internet_archive_metadata/expected_source_cache_boundary_report.json",
+    "runtime/source/observation/internet_archive_source_cache.py",
     "scripts/eureka_ia_source_cache_write.py",
 )
 
@@ -265,7 +265,7 @@ def _validate_no_forbidden_git_state(repo_root: Path, errors: list[str], warning
             "site/dist/data/public_index",
             "runtime/connectors",
             "runtime/extraction",
-            "runtime/search_quality",
+            "runtime/search/quality",
             "native",
             "crates",
         ],

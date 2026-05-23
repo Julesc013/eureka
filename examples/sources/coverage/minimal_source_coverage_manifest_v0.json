@@ -1,0 +1,33 @@
+{
+  "schema_version": "source_coverage_manifest.v0",
+  "coverage_manifest_id": "coverage_manifest.minimal_source_os_h0.v0",
+  "manifest_status": "local_dry_run",
+  "coverage_records": [
+    {"coverage_record_ref": "examples/sources/coverage/minimal_source_coverage_record_v0.json"},
+    {"coverage_record_ref": "examples/sources/coverage/internet_archive_coverage_record_v0.json"},
+    {"coverage_record_ref": "examples/sources/coverage/policy_blocked_coverage_record_v0.json"}
+  ],
+  "source_family_counts": {"archive_metadata": 2, "restricted_source_manifest_only": 1},
+  "trust_lane_counts": {"preservation": 1, "policy_blocked": 1, "unknown": 1},
+  "index_depth_counts": {"D0_source_known": 2, "D3_representation_indexed": 1},
+  "connector_family_counts": {"api_json": 2, "internet_archive_metadata_connector": 1, "restricted_manifest_only": 1},
+  "blocked_source_count": 1,
+  "unknown_source_count": 1,
+  "reviewed_source_count_future": 0,
+  "limitations": ["H0 examples are not global coverage.", "Manifest is local policy evidence only."],
+  "truth_boundary": {
+    "coverage_manifest_is_public_truth": false,
+    "coverage_manifest_is_exhaustive_global_coverage": false,
+    "coverage_manifest_can_mutate_public_index": false,
+    "coverage_manifest_can_mutate_master_index": false
+  },
+  "product_boundary": {
+    "changed_public_search_behavior": false,
+    "enabled_live_probes": false,
+    "enabled_source_sync": false,
+    "enabled_downloads": false,
+    "mutated_public_index": false,
+    "mutated_master_index": false
+  },
+  "notes": ["Rollup of committed H0 examples only."]
+}

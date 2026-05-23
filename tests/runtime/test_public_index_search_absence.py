@@ -1,6 +1,6 @@
 import unittest
 
-from runtime.public_index import PublicIndexStore
+from runtime.index.public import PublicIndexStore
 from tests.runtime.test_public_index_store import make_record
 
 

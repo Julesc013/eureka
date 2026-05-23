@@ -13,8 +13,8 @@ from typing import Any, Mapping, Sequence, TextIO
 REPO_ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.local_service.workbench_live_run import build_command_response, create_workbench_resolution_run  # noqa: E402
-from runtime.source_observation.ia_live_metadata_lane import REQUIRED_EVENT_TYPES  # noqa: E402
+from runtime.local.service.workbench_live_run import build_command_response, create_workbench_resolution_run  # noqa: E402
+from runtime.source.observation.ia_live_metadata_lane import REQUIRED_EVENT_TYPES  # noqa: E402
 
 
 REQUIRED_FILES = (
@@ -34,8 +34,8 @@ REQUIRED_FILES = (
     "control/inventory/ia_live_metadata_lane_validation_matrix.json",
     "control/inventory/ia_live_metadata_lane_result.json",
     "control/inventory/ia_live_metadata_lane_next_task_decision.json",
-    "runtime/source_observation/ia_live_metadata_lane.py",
-    "runtime/local_service/workbench_live_run.py",
+    "runtime/source/observation/ia_live_metadata_lane.py",
+    "runtime/local/service/workbench_live_run.py",
     "scripts/eureka_ia_live_metadata_lane.py",
     "docs/architecture/IA_LIVE_METADATA_LANE.md",
     "docs/architecture/LIVE_SOURCE_ACTION_POLICY.md",

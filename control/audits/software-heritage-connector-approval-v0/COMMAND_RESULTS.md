@@ -233,7 +233,7 @@ example_count: 3
 ```text
 status: valid
 example_count: 3
-contract_file: contracts/source_cache/source_cache_record.v0.json
+contract_file: contracts/source/cache/source_cache_record.v0.json
 ```
 
 ## Evidence ledger record examples validator
@@ -258,7 +258,7 @@ example_count: 3
 ```text
 status: valid
 example_count: 3
-contract_file: contracts/evidence_ledger/evidence_ledger_record.v0.json
+contract_file: contracts/evidence/ledger/evidence_ledger_record.v0.json
 ```
 
 ## Source cache/evidence ledger contract validator
@@ -294,7 +294,7 @@ example_count: 4
 - summary:
 ```text
 status: valid
-contract_file: contracts/source_sync/source_sync_worker_job.v0.json
+contract_file: contracts/source/sync/source_sync_worker_job.v0.json
 example_count: 4
 ```
 
@@ -335,10 +335,10 @@ Query Guard Decision validation
 status: valid
 example_count: 5
 warnings:
-- examples/query_guard/minimal_fake_demand_throttled_v0: P67 validates contract/example artifacts only; runtime query guard remains deferred.
-- examples/query_guard/minimal_private_path_rejected_v0: P67 validates contract/example artifacts only; runtime query guard remains deferred.
-- examples/query_guard/minimal_public_safe_query_v0: P67 validates contract/example artifacts only; runtime query guard remains deferred.
-- examples/query_guard/minimal_secret_rejected_v0: P67 validates contract/example artifacts only; runtime query guard remains deferred.
+- examples/search/query_guard/minimal_fake_demand_throttled_v0: P67 validates contract/example artifacts only; runtime query guard remains deferred.
+- examples/search/query_guard/minimal_private_path_rejected_v0: P67 validates contract/example artifacts only; runtime query guard remains deferred.
+- examples/search/query_guard/minimal_public_safe_query_v0: P67 validates contract/example artifacts only; runtime query guard remains deferred.
+- examples/search/query_guard/minimal_secret_rejected_v0: P67 validates contract/example artifacts only; runtime query guard remains deferred.
 ```
 
 ## Query privacy poisoning guard contract validator

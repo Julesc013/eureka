@@ -2,9 +2,9 @@
   "AI_reranking_enabled": false,
   "ad_signal_enabled": false,
   "approved_input_roots": [
-    "examples/public_search_ranking_dry_run",
-    "examples/evidence_weighted_ranking",
-    "examples/compatibility_aware_ranking"
+    "examples/index/public_search_ranking_dry_run",
+    "examples/evidence/weighted_ranking",
+    "examples/search/compatibility_aware_ranking"
   ],
   "candidate_index_mutation_allowed": false,
   "candidate_promotion_allowed": false,

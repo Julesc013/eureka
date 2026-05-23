@@ -126,7 +126,7 @@ def validate_repo(root: Path = REPO_ROOT) -> dict[str, Any]:
         if not (root / rel).is_file():
             errors.append(f"missing example: {rel}")
     for rel in (
-        "runtime/local_service/workbench_result_lanes.py",
+        "runtime/local/service/workbench_result_lanes.py",
         "surfaces/web/workbench/project_result_lanes.py",
         "scripts/eureka_workbench_result_lanes.py",
     ):

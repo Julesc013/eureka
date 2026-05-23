@@ -193,7 +193,7 @@
       "status": "passed",
       "returncode": 0,
       "duration_seconds": 0.08,
-      "stdout_tail": "status: valid\nexample_count: 3\ncontract_file: contracts/source_cache/source_cache_record.v0.json\n",
+      "stdout_tail": "status: valid\nexample_count: 3\ncontract_file: contracts/source/cache/source_cache_record.v0.json\n",
       "stderr_tail": ""
     },
     {
@@ -209,7 +209,7 @@
       "status": "passed",
       "returncode": 0,
       "duration_seconds": 0.08,
-      "stdout_tail": "status: valid\nexample_count: 3\ncontract_file: contracts/evidence_ledger/evidence_ledger_record.v0.json\n",
+      "stdout_tail": "status: valid\nexample_count: 3\ncontract_file: contracts/evidence/ledger/evidence_ledger_record.v0.json\n",
       "stderr_tail": ""
     },
     {
@@ -233,7 +233,7 @@
       "status": "passed",
       "returncode": 0,
       "duration_seconds": 0.1,
-      "stdout_tail": "status: valid\ncontract_file: contracts/source_sync/source_sync_worker_job.v0.json\nexample_count: 4\n",
+      "stdout_tail": "status: valid\ncontract_file: contracts/source/sync/source_sync_worker_job.v0.json\nexample_count: 4\n",
       "stderr_tail": ""
     },
     {
@@ -257,7 +257,7 @@
       "status": "passed",
       "returncode": 0,
       "duration_seconds": 0.1,
-      "stdout_tail": "Query Guard Decision validation\nstatus: valid\nexample_count: 5\nwarnings:\n- examples/query_guard/minimal_fake_demand_throttled_v0: P67 validates contract/example artifacts only; runtime query guard remains deferred.\n- examples/query_guard/minimal_private_path_rejected_v0: P67 validates contract/example artifacts only; runtime query guard remains deferred.\n- examples/query_guard/minimal_public_safe_query_v0: P67 validates contract/example artifacts only; runtime query guard remains deferred.\n- examples/query_guard/minimal_secret_rejected_v0: P67 validates contract/example artifacts only; runtime query guard remains deferred.\n- examples/query_guard/minimal_source_stuffing_quarantined_v0: P67 validates contract/example artifacts only; runtime query guard remains deferred.\n",
+      "stdout_tail": "Query Guard Decision validation\nstatus: valid\nexample_count: 5\nwarnings:\n- examples/search/query_guard/minimal_fake_demand_throttled_v0: P67 validates contract/example artifacts only; runtime query guard remains deferred.\n- examples/search/query_guard/minimal_private_path_rejected_v0: P67 validates contract/example artifacts only; runtime query guard remains deferred.\n- examples/search/query_guard/minimal_public_safe_query_v0: P67 validates contract/example artifacts only; runtime query guard remains deferred.\n- examples/search/query_guard/minimal_secret_rejected_v0: P67 validates contract/example artifacts only; runtime query guard remains deferred.\n- examples/search/query_guard/minimal_source_stuffing_quarantined_v0: P67 validates contract/example artifacts only; runtime query guard remains deferred.\n",
       "stderr_tail": ""
     },
     {

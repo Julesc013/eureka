@@ -1,6 +1,6 @@
 # Local Appliance Runtime API
 
-The public runtime API lives in `runtime/local_appliance`.
+The public runtime API lives in `runtime/local/appliance`.
 
 ## Instance API
 
@@ -73,7 +73,7 @@ These helpers are intended for future service/workbench/worker startup checks an
 
 ## LOCAL-04 Service Consumer
 
-`runtime/local_service` is the first product-facing consumer of this API. It opens the runtime with `read_only=True` and serves status/search/object/source/absence reads over localhost.
+`runtime/local/service` is the first product-facing consumer of this API. It opens the runtime with `read_only=True` and serves status/search/object/source/absence reads over localhost.
 
 The service does not receive a direct database path. Store paths continue to come from the local instance manifest.
 

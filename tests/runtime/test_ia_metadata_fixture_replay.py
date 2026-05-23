@@ -2,7 +2,7 @@ import json
 import unittest
 from pathlib import Path
 
-from runtime.source_observation.internet_archive_fixture_replay import (
+from runtime.source.observation.internet_archive_fixture_replay import (
     assert_no_forbidden_side_effects,
     assert_no_network_imports,
     build_fixture_replay_report,

@@ -21,7 +21,7 @@ from _p70_contract_common import (
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
-EXAMPLES_ROOT = REPO_ROOT / "examples" / "evidence_ledger"
+EXAMPLES_ROOT = REPO_ROOT / "examples" / "evidence" / "ledger" / "dry_run"
 RECORD_FILE = "EVIDENCE_LEDGER_RECORD.json"
 
 REQUIRED_TOP_LEVEL = {

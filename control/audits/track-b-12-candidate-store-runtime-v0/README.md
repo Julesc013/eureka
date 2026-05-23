@@ -4,12 +4,12 @@ This audit pack records the first bounded Candidate Store runtime for Track B.
 
 ## Added
 
-- `runtime/local_foundry/candidate_store.py`
+- `runtime/local/foundry/candidate_store.py`
 - `scripts/record_candidate.py`
 - `scripts/summarize_candidate_store.py`
 - `scripts/validate_candidate_store_runtime.py`
 - candidate status, type, origin, output, review, dedup, and runtime policies
-- candidate examples under `examples/candidates/`
+- candidate examples under `examples/index/candidates/`
 - generated sample candidate store snapshot and summary
 - reference, architecture, and review documentation
 

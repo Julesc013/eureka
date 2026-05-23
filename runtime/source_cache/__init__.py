@@ -1,44 +1,8 @@
-"""Local dry-run source cache helpers.
+"""Compatibility package for runtime.source_cache; canonical package is runtime.source.cache."""
 
-P98 implements a bounded local dry-run only. It does not call live sources,
-execute connectors, or write authoritative source-cache state.
-"""
+from pathlib import Path
 
-from runtime.source_cache.dry_run import (
-    classify_candidate,
-    discover_candidates,
-    load_candidate,
-    run_source_cache_dry_run,
-    validate_candidate_shape,
-)
-from runtime.source_cache.models import (
-    SourceCacheCandidateSummary,
-    SourceCacheDryRunError,
-    SourceCacheDryRunReport,
-)
-from runtime.source_cache.records import (
-    SourceCacheEntry,
-    SourceCacheRead,
-    SourceCacheStatus,
-    SourceCacheSummary,
-    SourceCacheWrite,
-)
-from runtime.source_cache.store import SourceCacheStore, build_cache_entry
+_CANONICAL_PATH = Path(__file__).resolve().parents[1] / 'source' / 'cache'
+__path__ = [str(_CANONICAL_PATH)]
 
-__all__ = [
-    "SourceCacheCandidateSummary",
-    "SourceCacheDryRunError",
-    "SourceCacheDryRunReport",
-    "SourceCacheEntry",
-    "SourceCacheRead",
-    "SourceCacheStatus",
-    "SourceCacheStore",
-    "SourceCacheSummary",
-    "SourceCacheWrite",
-    "build_cache_entry",
-    "classify_candidate",
-    "discover_candidates",
-    "load_candidate",
-    "run_source_cache_dry_run",
-    "validate_candidate_shape",
-]
+from runtime.source.cache import *  # noqa: E402,F401,F403

@@ -3,8 +3,8 @@
 Planned final changed files for the NeedPage and CandidatePage view model
 contract bundle:
 
-- `contracts/views/need_page.v0.json`
-- `contracts/views/candidate_page.v0.json`
+- `contracts/view/pages/need_page.v0.json`
+- `contracts/view/pages/candidate_page.v0.json`
 - `docs/reference/NEED_PAGE_VIEW_MODEL_CONTRACT.md`
 - `docs/reference/CANDIDATE_PAGE_VIEW_MODEL_CONTRACT.md`
 - `control/inventory/publication/need_page_view_model_policy.json`

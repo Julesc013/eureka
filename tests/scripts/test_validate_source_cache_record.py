@@ -7,7 +7,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[2]
-EXAMPLE = ROOT / "examples" / "source_cache" / "minimal_ia_metadata_cache_record_v0" / "SOURCE_CACHE_RECORD.json"
+EXAMPLE = ROOT / "examples" / "sources" / "cache" / "dry_run" / "minimal_ia_metadata_cache_record_v0" / "SOURCE_CACHE_RECORD.json"
 
 
 class SourceCacheRecordValidatorTests(unittest.TestCase):
@@ -22,7 +22,7 @@ class SourceCacheRecordValidatorTests(unittest.TestCase):
         self.assertEqual(report["example_count"], 3)
 
     def test_examples_encode_hard_boundaries(self) -> None:
-        for path in sorted((ROOT / "examples" / "source_cache").glob("*/SOURCE_CACHE_RECORD.json")):
+        for path in sorted((ROOT / "examples" / "sources" / "cache" / "dry_run").glob("*/SOURCE_CACHE_RECORD.json")):
             payload = json.loads(path.read_text(encoding="utf-8"))
             self.assertFalse(payload["cache_kind"]["raw_payload_allowed"])
             self.assertFalse(payload["source_policy"]["live_source_enabled_now"])

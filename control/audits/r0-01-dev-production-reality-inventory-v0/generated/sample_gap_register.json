@@ -75,7 +75,7 @@
         "public launch claims"
       ],
       "evidence_paths": [
-        "contracts/actions/action_result_preview.v0.json",
+        "contracts/command/actions/action_result_preview.v0.json",
         "contracts/api/examples/search_result_card_firefox_xp_candidate.v0.json",
         "contracts/archive/fixtures/README.md",
         "contracts/archive/fixtures/software/README.md",
@@ -101,9 +101,9 @@
       ],
       "evidence_paths": [
         "contracts/README.md",
-        "contracts/actions/action_policy.v0.json",
-        "contracts/actions/action_result_preview.v0.json",
-        "contracts/actions/citation_bundle.v0.json",
+        "contracts/command/actions/action_policy.v0.json",
+        "contracts/command/actions/action_result_preview.v0.json",
+        "contracts/command/actions/citation_bundle.v0.json",
         "contracts/api/examples/search_result_card_firefox_xp_candidate.v0.json",
         "contracts/archive/README.md",
         "contracts/archive/fixtures/README.md",

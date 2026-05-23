@@ -4,7 +4,7 @@
   "track": "B",
   "task": "TRACK-B-18",
   "added_runtime_modules": [
-    "runtime/local_foundry/review_queue.py"
+    "runtime/local/foundry/review_queue.py"
   ],
   "added_scripts": [
     "scripts/record_review_queue.py",
@@ -26,16 +26,16 @@
     "control/inventory/review/local_review_queue_truth_policy.json"
   ],
   "added_examples": [
-    "examples/review_queue_entries/minimal_review_queue_entry_v0.json",
-    "examples/review_queue_entries/candidate_needs_review_v0.json",
-    "examples/review_queue_entries/evidence_candidate_needs_review_v0.json",
-    "examples/review_queue_entries/source_cache_record_needs_review_v0.json",
-    "examples/review_queue_entries/source_cache_bridge_needs_review_v0.json",
-    "examples/review_queue_entries/workunit_result_review_v0.json",
-    "examples/review_queue_entries/duplicate_review_entry_v0.json",
-    "examples/review_queue_entries/reject_review_entry_v0.json",
-    "examples/review_queue_entries/request_more_evidence_review_entry_v0.json",
-    "examples/review_queue_entries/policy_blocked_review_entry_v0.json"
+    "examples/review/queue_entries/minimal_review_queue_entry_v0.json",
+    "examples/review/queue_entries/candidate_needs_review_v0.json",
+    "examples/review/queue_entries/evidence_candidate_needs_review_v0.json",
+    "examples/review/queue_entries/source_cache_record_needs_review_v0.json",
+    "examples/review/queue_entries/source_cache_bridge_needs_review_v0.json",
+    "examples/review/queue_entries/workunit_result_review_v0.json",
+    "examples/review/queue_entries/duplicate_review_entry_v0.json",
+    "examples/review/queue_entries/reject_review_entry_v0.json",
+    "examples/review/queue_entries/request_more_evidence_review_entry_v0.json",
+    "examples/review/queue_entries/policy_blocked_review_entry_v0.json"
   ],
   "added_tests": [
     "tests/runtime/test_local_review_queue_runtime.py",

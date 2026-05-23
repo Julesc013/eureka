@@ -2,7 +2,7 @@
 
 ## Contract Bundle
 
-- `contracts/representations/semantic_renderer_parity.v0.json`
+- `contracts/representation/semantic_renderer_parity.v0.json`
 - `docs/reference/SEMANTIC_RENDERER_PARITY_CONTRACT.md`
 - `control/inventory/publication/semantic_renderer_parity_policy.json`
 - `examples/representations/semantic_renderer_parity/minimal_absence_page_parity_v0.json`

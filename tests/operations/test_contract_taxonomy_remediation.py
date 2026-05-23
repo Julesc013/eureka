@@ -65,19 +65,19 @@ class ContractTaxonomyRemediationTests(unittest.TestCase):
     def test_resolver_classifies_archive_fixture_contracts_as_fixture_schemas(self) -> None:
         spec = resolver.REMEDIATION_MOVES["contracts/archive/fixtures/software/synthetic_resolution_fixture.json"]
         self.assertEqual(spec["classification"], "fixture_schema")
-        self.assertTrue(spec["target_path"].startswith("contracts/control_schemas/fixtures/archive/"))
+        self.assertTrue(spec["target_path"].startswith("contracts/schema/control/fixtures/archive/"))
 
     def test_resolver_classifies_h14_candidates_as_control_previews(self) -> None:
         h14 = [spec for old, spec in resolver.REMEDIATION_MOVES.items() if old.startswith("contracts/connectors/h14_")]
         self.assertTrue(h14)
         self.assertTrue(all(spec["classification"] == "preview_schema" for spec in h14))
-        self.assertTrue(all(spec["target_path"].startswith("contracts/control_schemas/previews/h14/") for spec in h14))
+        self.assertTrue(all(spec["target_path"].startswith("contracts/schema/control/previews/h14/") for spec in h14))
 
     def test_resolver_moves_node_and_query_non_product_schemas(self) -> None:
-        self.assertEqual(resolver.REMEDIATION_MOVES["contracts/node/work_unit.v0.json"]["target_path"], "contracts/control_schemas/policies/node/work_unit.v0.json")
+        self.assertEqual(resolver.REMEDIATION_MOVES["contracts/node/work_unit.v0.json"]["target_path"], "contracts/schema/control/policies/node/work_unit.v0.json")
         self.assertEqual(
             resolver.REMEDIATION_MOVES["contracts/query/observation_candidate_review_queue.v0.json"]["target_path"],
-            "contracts/control_schemas/tasks/query/observation_candidate_review_queue.v0.json",
+            "contracts/schema/control/tasks/query/observation_candidate_review_queue.v0.json",
         )
 
     def test_resolver_updates_active_references_and_retires_shims(self) -> None:
@@ -87,7 +87,7 @@ class ContractTaxonomyRemediationTests(unittest.TestCase):
             self.assertEqual(result["remediation_result"]["unresolved_after"], 0)
             self.assertEqual(result["remediation_result"]["shims_retired"], 19)
             self.assertIn(
-                "contracts/control_schemas/previews/h14/connectors/source_need_candidate.v0.json",
+                "contracts/schema/control/previews/h14/connectors/source_need_candidate.v0.json",
                 (root / "scripts/validate_demo.py").read_text(encoding="utf-8"),
             )
 
@@ -108,7 +108,7 @@ class ContractTaxonomyRemediationTests(unittest.TestCase):
             write_json(root / "control/inventory/r0_contract_taxonomy_final_state.json", {"schema_version": "r0_contract_taxonomy_final_state.v0", "contracts_root_status": "clean"})
             write_json(
                 root / "control/inventory/r0_contract_taxonomy_resolved_items.json",
-                {"schema_version": "r0_contract_taxonomy_resolved_items.v0", "resolved": [{"source_path": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json", "target_path": "contracts/control_schemas/fixtures/archive/software/synthetic_resolution_fixture.json", "classification": "fixture_schema"}]},
+                {"schema_version": "r0_contract_taxonomy_resolved_items.v0", "resolved": [{"source_path": "contracts/archive/fixtures/software/synthetic_resolution_fixture.json", "target_path": "contracts/schema/control/fixtures/archive/software/synthetic_resolution_fixture.json", "classification": "fixture_schema"}]},
             )
             errors: list[str] = []
             validator.validate_moved_paths(root, {"r0_contract_taxonomy_resolved_items": json.loads((root / "control/inventory/r0_contract_taxonomy_resolved_items.json").read_text())}, errors)
@@ -125,7 +125,7 @@ class ContractTaxonomyRemediationTests(unittest.TestCase):
                         "resolved": [
                             {
                                 "source_path": "contracts/connectors/h14_source_need_candidate.v0.json",
-                                "target_path": "contracts/control_schemas/previews/h14/connectors/source_need_candidate.v0.json",
+                                "target_path": "contracts/schema/control/previews/h14/connectors/source_need_candidate.v0.json",
                                 "classification": "preview_schema",
                             }
                         ]

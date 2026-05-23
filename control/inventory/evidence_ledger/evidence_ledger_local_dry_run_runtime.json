@@ -20,8 +20,8 @@
   "truth_acceptance_enabled": false,
   "promotion_decision_enabled": false,
   "approved_input_roots": [
-    "examples/evidence_ledger/dry_run",
-    "examples/evidence_ledger"
+    "examples/evidence/ledger/dry_run/dry_run",
+    "examples/evidence/ledger/dry_run"
   ],
   "cli": "python scripts/run_evidence_ledger_dry_run.py --all-examples --json",
   "validator": "python scripts/validate_evidence_ledger_dry_run_report.py",

@@ -18,7 +18,7 @@
   "telemetry_enabled": false,
   "credentials_enabled": false,
   "approved_input_roots": [
-    "examples/source_cache/dry_run"
+    "examples/sources/cache/dry_run/dry_run"
   ],
   "cli": "python scripts/run_source_cache_dry_run.py --all-examples --json",
   "validator": "python scripts/validate_source_cache_dry_run_report.py",

@@ -396,7 +396,7 @@ def validate_no_forbidden_git_state(repo_root: Path) -> list[str]:
             "site/dist/data/public_index",
             "runtime/connectors",
             "runtime/extraction",
-            "runtime/search_quality",
+            "runtime/search/quality",
             "native",
             "crates",
         ],

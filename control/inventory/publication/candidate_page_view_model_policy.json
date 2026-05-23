@@ -1,7 +1,7 @@
 {
   "schema_version": "0.1.0",
   "policy_id": "candidate_page_view_model_policy_v0",
-  "contract_ref": "contracts/views/candidate_page.v0.json",
+  "contract_ref": "contracts/view/pages/candidate_page.v0.json",
   "label": "CandidatePage view model policy v0",
   "description": "Policy inventory for canonical public-safe CandidatePageView records across standard, lite, text, file, API-adjacent, snapshot, relay, terminal, print, and native-card projections.",
   "status": "contract_only",

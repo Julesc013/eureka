@@ -11,8 +11,8 @@
     "scripts/dry_run_search_result_cache_entry.py"
   ],
   "example_cache_entries": [
-    "examples/query_result_cache/minimal_cache_entry_v0/SEARCH_RESULT_CACHE_ENTRY.json",
-    "examples/query_result_cache/minimal_absence_cache_entry_v0/SEARCH_RESULT_CACHE_ENTRY.json"
+    "examples/search/query_result_cache/minimal_cache_entry_v0/SEARCH_RESULT_CACHE_ENTRY.json",
+    "examples/search/query_result_cache/minimal_absence_cache_entry_v0/SEARCH_RESULT_CACHE_ENTRY.json"
   ],
   "cache_policy": "control/inventory/query_intelligence/search_result_cache_policy.json",
   "cache_key_policy": {

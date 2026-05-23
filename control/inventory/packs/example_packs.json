@@ -6,7 +6,7 @@
     {
       "pack_id": "example.minimal_recorded_source_pack_v0",
       "pack_type": "source_pack",
-      "path": "examples/source_packs/minimal_recorded_source_pack_v0",
+      "path": "examples/packs/source/minimal_recorded_source_pack_v0",
       "status": "active_example",
       "owning_contract": "Source Pack Contract v0",
       "validator": "python scripts/validate_source_pack.py",
@@ -16,7 +16,7 @@
     {
       "pack_id": "example.minimal_evidence_pack_v0",
       "pack_type": "evidence_pack",
-      "path": "examples/evidence_packs/minimal_evidence_pack_v0",
+      "path": "examples/packs/evidence/minimal_evidence_pack_v0",
       "status": "active_example",
       "owning_contract": "Evidence Pack Contract v0",
       "validator": "python scripts/validate_evidence_pack.py",
@@ -26,7 +26,7 @@
     {
       "pack_id": "example.minimal_index_pack_v0",
       "pack_type": "index_pack",
-      "path": "examples/index_packs/minimal_index_pack_v0",
+      "path": "examples/packs/index/minimal_index_pack_v0",
       "status": "active_example",
       "owning_contract": "Index Pack Contract v0",
       "validator": "python scripts/validate_index_pack.py",
@@ -36,7 +36,7 @@
     {
       "pack_id": "example.minimal_contribution_pack_v0",
       "pack_type": "contribution_pack",
-      "path": "examples/contribution_packs/minimal_contribution_pack_v0",
+      "path": "examples/packs/contribution/minimal_contribution_pack_v0",
       "status": "active_example",
       "owning_contract": "Contribution Pack Contract v0",
       "validator": "python scripts/validate_contribution_pack.py",

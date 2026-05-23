@@ -24,7 +24,7 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.local_eval import get_default_local_eval_suites, get_default_query_suite, validate_eval_report, validate_no_forbidden_eval_effects
+from runtime.local.eval import get_default_local_eval_suites, get_default_query_suite, validate_eval_report, validate_no_forbidden_eval_effects
 
 
 TASK_ID = "LOCAL-10"
@@ -49,15 +49,15 @@ INVENTORIES = {
     "control/inventory/local_10_next_task_decision.json": "local_10_next_task_decision.v0",
 }
 RUNTIME_FILES = (
-    "runtime/local_eval/__init__.py",
-    "runtime/local_eval/assertions.py",
-    "runtime/local_eval/errors.py",
-    "runtime/local_eval/latency.py",
-    "runtime/local_eval/reports.py",
-    "runtime/local_eval/runner.py",
-    "runtime/local_eval/safety.py",
-    "runtime/local_eval/suites.py",
-    "runtime/local_eval/validation.py",
+    "runtime/local/eval/__init__.py",
+    "runtime/local/eval/assertions.py",
+    "runtime/local/eval/errors.py",
+    "runtime/local/eval/latency.py",
+    "runtime/local/eval/reports.py",
+    "runtime/local/eval/runner.py",
+    "runtime/local/eval/safety.py",
+    "runtime/local/eval/suites.py",
+    "runtime/local/eval/validation.py",
 )
 SCRIPTS = (
     "scripts/eureka_local_auto_test.py",
@@ -280,7 +280,7 @@ def validate_inventories(payloads: Mapping[str, Mapping[str, Any]], errors: list
 
 
 def validate_runtime_imports(root: Path, errors: list[str]) -> None:
-    for path in (root / "runtime/local_eval").glob("*.py"):
+    for path in (root / "runtime/local/eval").glob("*.py"):
         tree = ast.parse(path.read_text(encoding="utf-8"), filename=str(path))
         for node in ast.walk(tree):
             modules: list[str] = []
@@ -294,7 +294,7 @@ def validate_runtime_imports(root: Path, errors: list[str]) -> None:
 
 
 def validate_runtime_vocabulary(root: Path, errors: list[str]) -> None:
-    for path in (root / "runtime/local_eval").glob("*.py"):
+    for path in (root / "runtime/local/eval").glob("*.py"):
         text = path.read_text(encoding="utf-8")
         for token in FORBIDDEN_RUNTIME_TOKENS:
             if token in text:

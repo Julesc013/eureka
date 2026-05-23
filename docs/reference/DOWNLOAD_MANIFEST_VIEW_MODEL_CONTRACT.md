@@ -40,7 +40,7 @@ Current examples must keep these unavailable or false:
 
 ## Related Contracts
 
-- `contracts/views/download_manifest_page.v0.json`
+- `contracts/view/pages/download_manifest_page.v0.json`
 - `control/inventory/publication/download_manifest_view_model_policy.json`
 - `docs/reference/ROUTE_VIEW_REPRESENTATION_MATRIX.md`
 - `docs/reference/SEMANTIC_RENDERER_PARITY_CONTRACT.md`

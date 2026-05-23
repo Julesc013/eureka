@@ -17,8 +17,8 @@ if str(REPO_ROOT) not in sys.path:
 from scripts.validate_comparison_page import validate_all_examples  # noqa: E402
 
 
-CONTRACT_PATH = REPO_ROOT / "contracts" / "pages" / "comparison_page.v0.json"
-SECTION_CONTRACT_PATH = REPO_ROOT / "contracts" / "pages" / "comparison_page_section.v0.json"
+CONTRACT_PATH = REPO_ROOT / "contracts" / "surface" / "pages" / "comparison_page.v0.json"
+SECTION_CONTRACT_PATH = REPO_ROOT / "contracts" / "surface" / "pages" / "comparison_page_section.v0.json"
 POLICY_PATH = REPO_ROOT / "control" / "inventory" / "pages" / "comparison_page_policy.json"
 AUDIT_DIR = REPO_ROOT / "control" / "audits" / "comparison-page-contract-v0"
 REPORT_PATH = AUDIT_DIR / "comparison_page_contract_report.json"
@@ -202,10 +202,10 @@ REQUIRED_DOC_PHRASES = (
 def validate_comparison_page_contract() -> dict[str, Any]:
     errors: list[str] = []
     warnings: list[str] = []
-    contract = _read_json_object(CONTRACT_PATH, errors, "contracts/pages/comparison_page.v0.json")
+    contract = _read_json_object(CONTRACT_PATH, errors, "contracts/surface/pages/comparison_page.v0.json")
     if contract:
         _validate_contract(contract, errors)
-    section = _read_json_object(SECTION_CONTRACT_PATH, errors, "contracts/pages/comparison_page_section.v0.json")
+    section = _read_json_object(SECTION_CONTRACT_PATH, errors, "contracts/surface/pages/comparison_page_section.v0.json")
     if section:
         for key in (
             "x-runtime_comparison_page_implemented",
@@ -233,8 +233,8 @@ def validate_comparison_page_contract() -> dict[str, Any]:
     return {
         "status": "valid" if not errors else "invalid",
         "created_by": "comparison_page_contract_validator_v0",
-        "contract_file": "contracts/pages/comparison_page.v0.json",
-        "section_contract_file": "contracts/pages/comparison_page_section.v0.json",
+        "contract_file": "contracts/surface/pages/comparison_page.v0.json",
+        "section_contract_file": "contracts/surface/pages/comparison_page_section.v0.json",
         "policy_file": "control/inventory/pages/comparison_page_policy.json",
         "report_id": _report_id(),
         "example_count": examples.get("example_count", 0),

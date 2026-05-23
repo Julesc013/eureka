@@ -1,7 +1,7 @@
 {
   "schema_version": "g0_quality_eval_manifest.v0",
   "task": "AIDE-BATCH-G0-QUALITY-FOUNDATION-01",
-  "fixture": "examples/search_quality/sample_quality_fixture.json",
+  "fixture": "examples/search/quality/sample_quality_fixture.json",
   "cases": [
     "reviewed local hit",
     "provisional IA metadata candidate",

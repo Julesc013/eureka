@@ -12,7 +12,7 @@ The generator may inspect committed repo-local files under:
 - `control/audits/**`
 - `control/inventory/observations/**`
 - `control/inventory/sources/**`
-- `contracts/source_registry/**`
+- `contracts/source/registry/**`
 - `contracts/query/**`
 - `docs/reference/**`
 - `docs/operations/**`

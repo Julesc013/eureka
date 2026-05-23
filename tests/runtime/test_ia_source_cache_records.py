@@ -1,7 +1,7 @@
 import unittest
 from pathlib import Path
 
-from runtime.source_observation.internet_archive_source_cache import (
+from runtime.source.observation.internet_archive_source_cache import (
     build_ia_source_cache_record,
     load_fixture_normalized_records,
     load_ia_source_cache_policy,

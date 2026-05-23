@@ -24,11 +24,11 @@ from archive.prototypes.legacy_runtime.connectors.h7_library_research.review_int
 AUDIT_DIR = Path("control/audits/h7-bundle-04-library-research-review-quality-audit-v0")
 REVIEW_DIR = Path("examples/connectors/h7_library_research/review_integration")
 REQUIRED_JSON = (
-    "contracts/control_schemas/audits/h7/connectors/library_research_review_integration_result.v0.json",
-    "contracts/control_schemas/audits/h7/connectors/library_research_quality_delta_report.v0.json",
-    "contracts/control_schemas/audits/h7/connectors/library_research_connector_wave_postmortem.v0.json",
-    "contracts/control_schemas/audits/h7/connectors/library_research_integration_audit.v0.json",
-    "contracts/control_schemas/tasks/h7/connectors/library_research_next_phase_recommendation.v0.json",
+    "contracts/schema/control/audits/h7/connectors/library_research_review_integration_result.v0.json",
+    "contracts/schema/control/audits/h7/connectors/library_research_quality_delta_report.v0.json",
+    "contracts/schema/control/audits/h7/connectors/library_research_connector_wave_postmortem.v0.json",
+    "contracts/schema/control/audits/h7/connectors/library_research_integration_audit.v0.json",
+    "contracts/schema/control/tasks/h7/connectors/library_research_next_phase_recommendation.v0.json",
     "control/inventory/connectors/h7_library_research_review_integration_policy.json",
     "control/inventory/connectors/h7_library_research_review_output_policy.json",
     "control/inventory/connectors/h7_library_research_review_path_policy.json",

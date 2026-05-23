@@ -1,6 +1,6 @@
 # Renderer Parity Harness Contract
 
-`contracts/representations/renderer_parity_harness.v0.json` defines the Track A harness shape for checking rendered or projected outputs against canonical view-model meaning.
+`contracts/representation/renderer_parity_harness.v0.json` defines the Track A harness shape for checking rendered or projected outputs against canonical view-model meaning.
 
 The harness is semantic parity, not pixel parity. A projection may simplify layout, styling, density, icons, previews, or interaction, but it must preserve identity, source posture, evidence posture, candidate or review state, compatibility caveats, rights and risk posture, limitations, unresolved gaps, allowed actions, blocked actions, and public/static capability limits.
 

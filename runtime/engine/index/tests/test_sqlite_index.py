@@ -16,7 +16,7 @@ from runtime.engine.interfaces.normalize import (
     normalize_extracted_record,
     normalize_github_release_record,
 )
-from runtime.source_registry import load_source_registry
+from runtime.source.registry import load_source_registry
 
 
 def _build_catalog() -> NormalizedCatalog:

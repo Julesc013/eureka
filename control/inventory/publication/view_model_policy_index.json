@@ -16,7 +16,7 @@
         "search",
         "text_static"
       ],
-      "schema_path": "contracts/views/search_page.v0.json",
+      "schema_path": "contracts/view/pages/search_page.v0.json",
       "policy_inventory_path": "control/inventory/publication/search_page_view_model_policy.json",
       "documentation_path": "docs/reference/SEARCH_PAGE_VIEW_MODEL_CONTRACT.md",
       "example_paths": [
@@ -69,7 +69,7 @@
       "route_families": [
         "object_page_future"
       ],
-      "schema_path": "contracts/views/object_page.v0.json",
+      "schema_path": "contracts/view/pages/object_page.v0.json",
       "policy_inventory_path": "control/inventory/publication/object_page_view_model_policy.json",
       "documentation_path": "docs/reference/OBJECT_PAGE_VIEW_MODEL_CONTRACT.md",
       "example_paths": [
@@ -123,7 +123,7 @@
       "route_families": [
         "source_detail"
       ],
-      "schema_path": "contracts/views/source_page.v0.json",
+      "schema_path": "contracts/view/pages/source_page.v0.json",
       "policy_inventory_path": "control/inventory/publication/source_page_view_model_policy.json",
       "documentation_path": "docs/reference/SOURCE_PAGE_VIEW_MODEL_CONTRACT.md",
       "example_paths": [
@@ -174,7 +174,7 @@
       "route_families": [
         "need_page_future"
       ],
-      "schema_path": "contracts/views/need_page.v0.json",
+      "schema_path": "contracts/view/pages/need_page.v0.json",
       "policy_inventory_path": "control/inventory/publication/need_page_view_model_policy.json",
       "documentation_path": "docs/reference/NEED_PAGE_VIEW_MODEL_CONTRACT.md",
       "example_paths": [
@@ -225,7 +225,7 @@
       "route_families": [
         "candidate_page_future"
       ],
-      "schema_path": "contracts/views/candidate_page.v0.json",
+      "schema_path": "contracts/view/pages/candidate_page.v0.json",
       "policy_inventory_path": "control/inventory/publication/candidate_page_view_model_policy.json",
       "documentation_path": "docs/reference/CANDIDATE_PAGE_VIEW_MODEL_CONTRACT.md",
       "example_paths": [
@@ -274,7 +274,7 @@
       "route_families": [
         "pack_page_future"
       ],
-      "schema_path": "contracts/views/pack_page.v0.json",
+      "schema_path": "contracts/view/pages/pack_page.v0.json",
       "policy_inventory_path": "control/inventory/publication/pack_page_view_model_policy.json",
       "documentation_path": "docs/reference/PACK_PAGE_VIEW_MODEL_CONTRACT.md",
       "example_paths": [
@@ -324,7 +324,7 @@
       "route_families": [
         "task_page_future"
       ],
-      "schema_path": "contracts/views/task_page.v0.json",
+      "schema_path": "contracts/view/pages/task_page.v0.json",
       "policy_inventory_path": "control/inventory/publication/task_page_view_model_policy.json",
       "documentation_path": "docs/reference/TASK_PAGE_VIEW_MODEL_CONTRACT.md",
       "example_paths": [
@@ -375,7 +375,7 @@
       "route_families": [
         "review_page_future"
       ],
-      "schema_path": "contracts/views/review_page.v0.json",
+      "schema_path": "contracts/view/pages/review_page.v0.json",
       "policy_inventory_path": "control/inventory/publication/review_page_view_model_policy.json",
       "documentation_path": "docs/reference/REVIEW_PAGE_VIEW_MODEL_CONTRACT.md",
       "example_paths": [
@@ -425,7 +425,7 @@
       "route_families": [
         "download_manifest_future"
       ],
-      "schema_path": "contracts/views/download_manifest_page.v0.json",
+      "schema_path": "contracts/view/pages/download_manifest_page.v0.json",
       "policy_inventory_path": "control/inventory/publication/download_manifest_view_model_policy.json",
       "documentation_path": "docs/reference/DOWNLOAD_MANIFEST_VIEW_MODEL_CONTRACT.md",
       "example_paths": [
@@ -476,7 +476,7 @@
       "route_families": [
         "evidence_page_future"
       ],
-      "schema_path": "contracts/views/evidence_page.v0.json",
+      "schema_path": "contracts/view/pages/evidence_page.v0.json",
       "policy_inventory_path": "control/inventory/publication/evidence_page_view_model_policy.json",
       "documentation_path": "docs/reference/EVIDENCE_PAGE_VIEW_MODEL_CONTRACT.md",
       "example_paths": [
@@ -526,7 +526,7 @@
       "route_families": [
         "absence_page_future"
       ],
-      "schema_path": "contracts/views/absence_page.v0.json",
+      "schema_path": "contracts/view/pages/absence_page.v0.json",
       "policy_inventory_path": "control/inventory/publication/absence_page_view_model_policy.json",
       "documentation_path": "docs/reference/ABSENCE_PAGE_VIEW_MODEL_CONTRACT.md",
       "example_paths": [
@@ -576,7 +576,7 @@
       "route_families": [
         "compare_page_future"
       ],
-      "schema_path": "contracts/views/compare_page.v0.json",
+      "schema_path": "contracts/view/pages/compare_page.v0.json",
       "policy_inventory_path": "control/inventory/publication/compare_page_view_model_policy.json",
       "documentation_path": "docs/reference/COMPARE_PAGE_VIEW_MODEL_CONTRACT.md",
       "example_paths": [
@@ -641,19 +641,19 @@
     "control/inventory/publication/compare_page_view_model_policy.json"
   ],
   "schema_files": [
-    "contracts/views/view_model_policy_index.v0.json",
-    "contracts/views/search_page.v0.json",
-    "contracts/views/object_page.v0.json",
-    "contracts/views/source_page.v0.json",
-    "contracts/views/need_page.v0.json",
-    "contracts/views/candidate_page.v0.json",
-    "contracts/views/pack_page.v0.json",
-    "contracts/views/task_page.v0.json",
-    "contracts/views/review_page.v0.json",
-    "contracts/views/download_manifest_page.v0.json",
-    "contracts/views/evidence_page.v0.json",
-    "contracts/views/absence_page.v0.json",
-    "contracts/views/compare_page.v0.json"
+    "contracts/view/pages/view_model_policy_index.v0.json",
+    "contracts/view/pages/search_page.v0.json",
+    "contracts/view/pages/object_page.v0.json",
+    "contracts/view/pages/source_page.v0.json",
+    "contracts/view/pages/need_page.v0.json",
+    "contracts/view/pages/candidate_page.v0.json",
+    "contracts/view/pages/pack_page.v0.json",
+    "contracts/view/pages/task_page.v0.json",
+    "contracts/view/pages/review_page.v0.json",
+    "contracts/view/pages/download_manifest_page.v0.json",
+    "contracts/view/pages/evidence_page.v0.json",
+    "contracts/view/pages/absence_page.v0.json",
+    "contracts/view/pages/compare_page.v0.json"
   ],
   "documentation_files": [
     "docs/reference/VIEW_MODEL_POLICY_INDEX_CONTRACT.md",

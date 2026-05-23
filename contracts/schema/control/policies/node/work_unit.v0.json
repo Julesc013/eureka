@@ -1,0 +1,136 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/schema/control/policies/node/work_unit.v0.json",
+  "title": "EurekaWorkUnitV0",
+  "description": "Contract-only WorkUnit record for replay-safe, policy-scoped future node work. A WorkUnit describes bounded work; it does not grant runtime permission or accepted truth.",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "workunit_id",
+    "workunit_label",
+    "workunit_type",
+    "workunit_status",
+    "workunit_scope",
+    "priority",
+    "created_from",
+    "related_node_manifest_refs",
+    "required_node_modes",
+    "required_node_capabilities",
+    "required_node_policy_refs",
+    "source_access_requirements",
+    "network_requirements",
+    "model_provider_requirements",
+    "credential_requirements",
+    "local_state_requirements",
+    "input_refs",
+    "input_summary",
+    "allowed_actions",
+    "forbidden_actions",
+    "expected_outputs",
+    "forbidden_outputs",
+    "output_contract_refs",
+    "review_gates",
+    "idempotency",
+    "recovery_policy",
+    "duplicate_policy",
+    "out_of_order_policy",
+    "validation_policy",
+    "budget_policy_future",
+    "audit_policy",
+    "truth_boundary",
+    "product_boundary",
+    "no_goals",
+    "notes"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "work_unit.v0"
+    },
+    "workunit_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "workunit_type": {
+      "type": "string"
+    },
+    "workunit_status": {
+      "type": "string"
+    },
+    "source_access_requirements": {
+      "type": "object",
+      "required": [
+        "source_access_required",
+        "current_enabled",
+        "source_policy_approval_required",
+        "operator_approval_required",
+        "human_review_required",
+        "kill_switch_policy_required",
+        "rate_or_budget_policy_required"
+      ],
+      "properties": {
+        "current_enabled": {
+          "type": "boolean",
+          "const": false
+        }
+      }
+    },
+    "network_requirements": {
+      "type": "object",
+      "required": [
+        "network_required",
+        "current_enabled",
+        "operator_approval_required",
+        "source_policy_required",
+        "kill_switch_policy_required",
+        "rate_or_budget_policy_required"
+      ],
+      "properties": {
+        "current_enabled": {
+          "type": "boolean",
+          "const": false
+        }
+      }
+    },
+    "truth_boundary": {
+      "type": "object",
+      "required": [
+        "can_create_observed_baseline",
+        "can_create_accepted_evidence",
+        "can_create_public_truth",
+        "can_mutate_master_index",
+        "can_claim_rights_clearance",
+        "can_claim_malware_safety",
+        "can_claim_verified_installability",
+        "can_claim_exhaustive_global_search"
+      ],
+      "properties": {
+        "can_create_observed_baseline": {
+          "type": "boolean",
+          "const": false
+        },
+        "can_create_accepted_evidence": {
+          "type": "boolean",
+          "const": false
+        },
+        "can_create_public_truth": {
+          "type": "boolean",
+          "const": false
+        },
+        "can_mutate_master_index": {
+          "type": "boolean",
+          "const": false
+        }
+      }
+    }
+  },
+  "x-contract-status": "contract_only",
+  "x-workunit-is-runtime-permission": false,
+  "x-workunit-runtime-implemented": false,
+  "x-node-runtime-implemented": false,
+  "x-network-access-enabled": false,
+  "x-model-provider-calls-enabled": false,
+  "x-local-state-created": false,
+  "x-master-index-mutation-allowed": false
+}

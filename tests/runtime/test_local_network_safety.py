@@ -2,8 +2,8 @@ from __future__ import annotations
 
 import unittest
 
-from runtime.local_network import build_firewall_warning, build_lan_warning, validate_lan_mode_safe, validate_lan_read_only_route, validate_no_lan_mutation
-from runtime.local_network.errors import LocalNetworkPolicyError, LocalNetworkSafetyError
+from runtime.local.network import build_firewall_warning, build_lan_warning, validate_lan_mode_safe, validate_lan_read_only_route, validate_no_lan_mutation
+from runtime.local.network.errors import LocalNetworkPolicyError, LocalNetworkSafetyError
 
 
 class LocalNetworkSafetyTests(unittest.TestCase):

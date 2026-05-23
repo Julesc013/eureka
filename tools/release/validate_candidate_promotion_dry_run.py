@@ -15,7 +15,7 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.local_foundry import candidate_promotion_dry_run as promotion
+from runtime.local.foundry import candidate_promotion_dry_run as promotion
 from scripts import run_candidate_promotion_dry_run
 
 
@@ -35,13 +35,13 @@ DOC_FILES = [
 ]
 
 EXAMPLE_FILES = [
-    "examples/candidate_promotion_dry_runs/minimal_promotion_dry_run_v0.json",
-    "examples/candidate_promotion_dry_runs/ready_for_promotion_dry_run_v0.json",
-    "examples/candidate_promotion_dry_runs/missing_evidence_promotion_dry_run_v0.json",
-    "examples/candidate_promotion_dry_runs/conflict_blocked_promotion_dry_run_v0.json",
-    "examples/candidate_promotion_dry_runs/duplicate_blocked_promotion_dry_run_v0.json",
-    "examples/candidate_promotion_dry_runs/policy_blocked_promotion_dry_run_v0.json",
-    "examples/candidate_promotion_dry_runs/rights_risk_blocked_promotion_dry_run_v0.json",
+    "examples/review/candidate_promotion_dry_runs/minimal_promotion_dry_run_v0.json",
+    "examples/review/candidate_promotion_dry_runs/ready_for_promotion_dry_run_v0.json",
+    "examples/review/candidate_promotion_dry_runs/missing_evidence_promotion_dry_run_v0.json",
+    "examples/review/candidate_promotion_dry_runs/conflict_blocked_promotion_dry_run_v0.json",
+    "examples/review/candidate_promotion_dry_runs/duplicate_blocked_promotion_dry_run_v0.json",
+    "examples/review/candidate_promotion_dry_runs/policy_blocked_promotion_dry_run_v0.json",
+    "examples/review/candidate_promotion_dry_runs/rights_risk_blocked_promotion_dry_run_v0.json",
 ]
 
 AUDIT_FILES = [
@@ -57,7 +57,7 @@ SCRIPT_FILES = [
     "scripts/validate_candidate_promotion_dry_run.py",
 ]
 
-RUNTIME_FILE = "runtime/local_foundry/candidate_promotion_dry_run.py"
+RUNTIME_FILE = "runtime/local/foundry/candidate_promotion_dry_run.py"
 SAMPLE_RECORD = "control/audits/track-b-19-candidate-promotion-dry-run-v0/generated/sample_candidate_promotion_dry_run.json"
 
 FORBIDDEN_TEXT_TOKENS = [
@@ -240,9 +240,9 @@ def validate_script_commands(errors: list[str]) -> None:
             sys.executable,
             "scripts/run_candidate_promotion_dry_run.py",
             "--candidate",
-            "examples/candidates/search_need_candidate_v0.json",
+            "examples/index/candidates/search_need_candidate_v0.json",
             "--review",
-            "examples/review_queue_entries/candidate_needs_review_v0.json",
+            "examples/review/queue_entries/candidate_needs_review_v0.json",
             "--check",
             "--json",
         ],
@@ -260,7 +260,7 @@ def validate_output_roots(errors: list[str]) -> None:
     for raw_path in [
         "site/dist/promotion.json",
         "runtime/promotion.json",
-        "contracts/master_index/promotion.json",
+        "contracts/index/master/promotion.json",
         "control/inventory/publication/promotion.json",
         "public_index/promotion.json",
         "master_index/promotion.json",

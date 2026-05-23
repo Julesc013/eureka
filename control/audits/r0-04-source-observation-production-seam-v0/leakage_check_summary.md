@@ -1,6 +1,6 @@
 # Leakage Check Summary
 
-`scripts/validate_source_observation_seam.py` scans `runtime/source_observation/` and the new contracts for forbidden task, prompt, audit, bundle, and boundary-check vocabulary.
+`scripts/validate_source_observation_seam.py` scans `runtime/source/observation/` and the new contracts for forbidden task, prompt, audit, bundle, and boundary-check vocabulary.
 
 Current counts:
 

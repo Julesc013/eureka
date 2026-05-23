@@ -127,10 +127,10 @@ TRACK_B_PREFIXES = (
 )
 
 HISTORICAL_PATH_ALIASES = {
-    "contracts/node/local_foundry_state.v0.json": "contracts/control_schemas/policies/node/local_foundry_state.v0.json",
-    "contracts/node/node_capability.v0.json": "contracts/control_schemas/policies/node/node_capability.v0.json",
-    "contracts/node/work_unit.v0.json": "contracts/control_schemas/policies/node/work_unit.v0.json",
-    "contracts/node/work_unit_result.v0.json": "contracts/control_schemas/policies/node/work_unit_result.v0.json",
+    "contracts/node/local_foundry_state.v0.json": "contracts/schema/control/policies/node/local_foundry_state.v0.json",
+    "contracts/node/node_capability.v0.json": "contracts/schema/control/policies/node/node_capability.v0.json",
+    "contracts/node/work_unit.v0.json": "contracts/schema/control/policies/node/work_unit.v0.json",
+    "contracts/node/work_unit_result.v0.json": "contracts/schema/control/policies/node/work_unit_result.v0.json",
 }
 
 FORBIDDEN_MATRIX_MARKERS = (

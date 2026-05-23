@@ -28,10 +28,10 @@ B2_MOVE_CLASSES = {
     "deprecated_schema",
 }
 CONTROL_SCHEMA_TARGETS = (
-    "contracts/control_schemas/policies/",
-    "contracts/control_schemas/tasks/",
-    "contracts/control_schemas/validators/",
-    "contracts/control_schemas/deprecated/",
+    "contracts/schema/control/policies/",
+    "contracts/schema/control/tasks/",
+    "contracts/schema/control/validators/",
+    "contracts/schema/control/deprecated/",
 )
 FORBIDDEN_UPDATE_PREFIXES = ("runtime/", "surfaces/", "site/", "native/", "crates/")
 FORBIDDEN_OUTPUT_ROOTS = (
@@ -347,7 +347,7 @@ def iter_candidate_text_files(root: Path) -> list[Path]:
         "contracts",
         "control/inventory",
         "control/policies",
-        "contracts/control_schemas",
+        "contracts/schema/control",
         "docs/architecture",
         "docs/operations",
         "docs/reference",
@@ -382,7 +382,7 @@ def partition_bad_and_historical_refs(move: Mapping[str, Any]) -> tuple[list[str
 def is_allowed_active_update_path(path: str) -> bool:
     return (
         path.startswith("contracts/")
-        or path.startswith("contracts/control_schemas/")
+        or path.startswith("contracts/schema/control/")
         or path.startswith("control/inventory/")
         or path.startswith("control/policies/contract_")
         or path.startswith("docs/operations/")

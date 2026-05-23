@@ -2,9 +2,9 @@ from __future__ import annotations
 
 import unittest
 
-from runtime.local_worker import evaluate_worker_policy, validate_no_forbidden_worker_kind
-from runtime.local_worker.errors import LocalWorkerValidationError
-from runtime.workunit_queue import WorkUnit
+from runtime.local.worker import evaluate_worker_policy, validate_no_forbidden_worker_kind
+from runtime.local.worker.errors import LocalWorkerValidationError
+from runtime.worker.workunit_queue import WorkUnit
 
 
 class LocalWorkerPolicyTests(unittest.TestCase):

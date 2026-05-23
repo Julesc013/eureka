@@ -78,8 +78,8 @@
 - `runtime/gateway/tests/__init__.py`: `placeholder` / `delete_if_unreferenced`
 - `runtime/gateway/workers/.gitkeep`: `placeholder` / `investigate`
 - `runtime/hosting/__init__.py`: `placeholder` / `delete_if_unreferenced`
-- `runtime/local_foundry/__init__.py`: `placeholder` / `delete_if_unreferenced`
-- `runtime/source_registry/tests/__init__.py`: `placeholder` / `delete_if_unreferenced`
+- `runtime/local/foundry/__init__.py`: `placeholder` / `delete_if_unreferenced`
+- `runtime/source/registry/tests/__init__.py`: `placeholder` / `delete_if_unreferenced`
 - `site/dist/.nojekyll`: `placeholder` / `investigate`
 - `surfaces/__init__.py`: `placeholder` / `delete_if_unreferenced`
 - `surfaces/native/__init__.py`: `placeholder` / `delete_if_unreferenced`

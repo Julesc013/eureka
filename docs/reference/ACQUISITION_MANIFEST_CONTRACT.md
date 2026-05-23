@@ -1,6 +1,6 @@
 # Acquisition Manifest Contract
 
-`contracts/actions/acquisition_manifest.v0.json` is descriptive only.
+`contracts/command/actions/acquisition_manifest.v0.json` is descriptive only.
 
 It may list source refs, access path candidates, locator summaries, fixity refs, rights posture, risk posture, compatibility posture, and reviews required before any future access.
 

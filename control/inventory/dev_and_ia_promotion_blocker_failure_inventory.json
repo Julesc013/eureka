@@ -12,11 +12,11 @@
       "failure_type": "failure_and_error",
       "failure_area": "candidate_index_records",
       "traceback_summary": "Generic candidate record validator treated the IA integration expected-output directory as a CANDIDATE_INDEX_RECORD example.",
-      "failing_assertion_summary": "Expected four generic candidate record examples and valid all-example scan; got missing record under examples/candidate_index/internet_archive_metadata.",
+      "failing_assertion_summary": "Expected four generic candidate record examples and valid all-example scan; got missing record under examples/index/candidate/internet_archive_metadata.",
       "suspected_root_cause": "IA metadata expected-candidate fixtures shared the generic examples root but are validated by the IA candidate integration validator, not by the generic CANDIDATE_INDEX_RECORD example validator.",
       "related_files": [
         "scripts/validate_candidate_index_record.py",
-        "examples/candidate_index/internet_archive_metadata/expected_candidates.json"
+        "examples/index/candidate/internet_archive_metadata/expected_candidates.json"
       ],
       "introduced_by_dev_baseline": true,
       "blocks_promotion": true,
@@ -52,10 +52,10 @@
       "failing_assertion_summary": "Source-observation seam flagged truth_boundary, product_boundary, preview_only, user_agent/agent vocabulary, and urllib.request in the IA live transport path.",
       "suspected_root_cause": "IA pilot runtime carried audit-era vocabulary into product runtime modules.",
       "related_files": [
-        "runtime/source_observation/internet_archive_candidate_index.py",
-        "runtime/source_observation/internet_archive_live_probe.py",
-        "runtime/source_observation/internet_archive_live_transport.py",
-        "runtime/source_observation/internet_archive_promotion.py",
+        "runtime/source/observation/internet_archive_candidate_index.py",
+        "runtime/source/observation/internet_archive_live_probe.py",
+        "runtime/source/observation/internet_archive_live_transport.py",
+        "runtime/source/observation/internet_archive_promotion.py",
         "contracts/repo/root_allowlist.contract.toml"
       ],
       "introduced_by_dev_baseline": true,

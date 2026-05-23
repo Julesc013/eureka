@@ -11,9 +11,9 @@ of scope.
 
 Primary artifacts:
 
-- `contracts/packs/index_pack.v0.json`
+- `contracts/pack/index_pack.v0.json`
 - `docs/reference/INDEX_PACK_CONTRACT.md`
-- `examples/index_packs/minimal_index_pack_v0/`
+- `examples/packs/index/minimal_index_pack_v0/`
 - `scripts/validate_index_pack.py`
 - `tests/scripts/test_validate_index_pack.py`
 - `tests/operations/test_index_pack_contract.py`

@@ -5,8 +5,8 @@ import tempfile
 from pathlib import Path
 import unittest
 
-from runtime.local_appliance import close_local_appliance, open_local_appliance
-from runtime.search_hunt import (
+from runtime.local.appliance import close_local_appliance, open_local_appliance
+from runtime.search.hunt import (
     build_replay_fixture_from_hunt,
     build_replay_plan_from_hunt,
     run_hunt_replay,

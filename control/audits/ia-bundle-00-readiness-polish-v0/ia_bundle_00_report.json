@@ -17,7 +17,7 @@
       "evidence": [
         "contracts/evidence/README.md",
         "contracts/evidence/evidence_contract_index.v0.json",
-        "contracts/evidence_ledger/"
+        "contracts/evidence/ledger/"
       ]
     },
     {
@@ -47,7 +47,7 @@
     "decision": "created_contracts_evidence",
     "notes": [
       "contracts/evidence/ is a pointer and index namespace only.",
-      "Canonical evidence ledger schemas remain in contracts/evidence_ledger/.",
+      "Canonical evidence ledger schemas remain in contracts/evidence/ledger/.",
       "Evidence-ledger runtime and source-cache bridge policies remain under control/inventory/evidence_ledger/.",
       "No evidence runtime, write path, source access, candidate acceptance, or truth acceptance is enabled."
     ]

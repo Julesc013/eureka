@@ -4,7 +4,7 @@ This audit pack records the Track B node capability milestone.
 
 ## Added
 
-- `contracts/control_schemas/policies/node/node_capability.v0.json` defines declarative capability records.
+- `contracts/schema/control/policies/node/node_capability.v0.json` defines declarative capability records.
 - Capability policy, matrix, dependency, and side-effect inventories live under `control/inventory/nodes/`.
 - Six example capability records cover current repo-local, dry-run, validate-only, future source/model, and blocked postures.
 - `scripts/validate_eureka_node_capability.py` and `tests/contracts/test_eureka_node_capability.py` validate the capability boundary.

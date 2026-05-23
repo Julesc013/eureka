@@ -6,7 +6,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 AUDIT_DIR = ROOT / "control" / "audits" / "object-page-contract-v0"
 REPORT_PATH = AUDIT_DIR / "object_page_contract_report.json"
-CONTRACT_PATH = ROOT / "contracts" / "pages" / "object_page.v0.json"
+CONTRACT_PATH = ROOT / "contracts" / "surface" / "pages" / "object_page.v0.json"
 DOC_PATH = ROOT / "docs" / "reference" / "OBJECT_PAGE_CONTRACT.md"
 
 

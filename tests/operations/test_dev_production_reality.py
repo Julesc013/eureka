@@ -46,8 +46,8 @@ def detect_truth_boundary_violations(): pass
 def build_h1_connector_health_summary(): pass
 """,
     )
-    write(root / "runtime/local_foundry/source_cache.py", '"""Fixture-only local source cache helpers with no runtime side effects."""\n')
-    write(root / "contracts/control_schemas/previews/h1/connectors/live_probe_result.v0.json", "{}")
+    write(root / "runtime/local/foundry/source_cache.py", '"""Fixture-only local source cache helpers with no runtime side effects."""\n')
+    write(root / "contracts/schema/control/previews/h1/connectors/live_probe_result.v0.json", "{}")
     write(root / "docs/operations/EMPTY.md", "")
     write(root / "scripts/validate_fixture.py", "from pathlib import Path\nREQUIRED = ['a']\nassert Path('a').exists()\n")
     write(root / "tests/operations/test_fixture.py", "from pathlib import Path\n\ndef test_files():\n    assert Path('a').is_file()\n")
@@ -81,7 +81,7 @@ class DevProductionRealityTests(unittest.TestCase):
             artifacts = {item["path"]: item for item in audit["artifact_taxonomy"]["artifacts"]}
             self.assertEqual("fixture_runtime", artifacts["runtime/connectors/h1_metadata_wave/__init__.py"]["artifact_kind"])
             self.assertEqual("empty_or_zero_byte", artifacts["docs/operations/EMPTY.md"]["maturity"])
-            self.assertEqual("preview_contract", artifacts["contracts/control_schemas/previews/h1/connectors/live_probe_result.v0.json"]["artifact_kind"])
+            self.assertEqual("preview_contract", artifacts["contracts/schema/control/previews/h1/connectors/live_probe_result.v0.json"]["artifact_kind"])
             leak_terms = {item["term"] for item in audit["runtime_architecture_leakage_report"]["leaks"]}
             self.assertIn("H1", leak_terms)
             god = artifacts["runtime/connectors/h1_metadata_wave/live_probe_common.py"]["signals"]

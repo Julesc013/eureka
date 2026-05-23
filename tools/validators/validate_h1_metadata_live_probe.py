@@ -26,9 +26,9 @@ from archive.prototypes.legacy_runtime.connectors.h1_metadata_wave.live_probe_co
 
 
 CONTRACTS = (
-    "contracts/control_schemas/previews/h1/connectors/live_probe_request.v0.json",
-    "contracts/control_schemas/previews/h1/connectors/live_probe_result.v0.json",
-    "contracts/control_schemas/previews/h1/connectors/live_probe_output_bundle.v0.json",
+    "contracts/schema/control/previews/h1/connectors/live_probe_request.v0.json",
+    "contracts/schema/control/previews/h1/connectors/live_probe_result.v0.json",
+    "contracts/schema/control/previews/h1/connectors/live_probe_output_bundle.v0.json",
 )
 POLICIES = (
     "control/inventory/connectors/h1_metadata_live_probe_policy.json",

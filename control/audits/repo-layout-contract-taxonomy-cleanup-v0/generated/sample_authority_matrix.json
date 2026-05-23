@@ -9,7 +9,7 @@
     {
       "family_id": "Workbench_future_view_models",
       "authority_class": "PRODUCT_PUBLIC_CONTRACT",
-      "canonical_authority_path": "contracts/views/workbench/"
+      "canonical_authority_path": "contracts/view/pages/workbench/"
     },
     {
       "family_id": "Search_Interaction_future_packets",

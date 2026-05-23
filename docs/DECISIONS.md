@@ -243,7 +243,7 @@
 ## ADR-041: Add Source Registry v0 as the First Inventory-Backed Source Control Plane
 
 - Status: accepted
-- Decision: Eureka now maintains Source Registry v0 through draft governed source-registry schemas, explicit governed seed records under `control/inventory/sources/`, a stdlib-only runtime loader and filter layer under `runtime/source_registry/`, and a bounded public source-registry boundary reused by current web, CLI, and local HTTP API surfaces.
+- Decision: Eureka now maintains Source Registry v0 through draft governed source-registry schemas, explicit governed seed records under `control/inventory/sources/`, a stdlib-only runtime loader and filter layer under `runtime/source/registry/`, and a bounded public source-registry boundary reused by current web, CLI, and local HTTP API surfaces.
 - Why: the repo already contains more than one source family, and future source growth needs an explicit, inspectable inventory and policy plane before broader connector work, resolution runs, local indexing, or hosted-alpha preparation continue.
 
 ## ADR-042: Add Resolution Run Model v0 as the First Durable Investigation Envelope
@@ -1109,9 +1109,9 @@ Planning v0.
 
 Status: accepted
 
-Source Pack Contract v0 adds `contracts/packs/source_pack.v0.json`,
+Source Pack Contract v0 adds `contracts/pack/source_pack.v0.json`,
 `docs/reference/SOURCE_PACK_CONTRACT.md`, `docs/reference/PACK_LIFECYCLE.md`,
-`examples/source_packs/minimal_recorded_source_pack_v0/`,
+`examples/packs/source/minimal_recorded_source_pack_v0/`,
 `scripts/validate_source_pack.py`, and
 `control/audits/source-pack-contract-v0/`.
 
@@ -1137,9 +1137,9 @@ Source/Evidence/Index Pack Import Planning v0.
 
 Status: accepted
 
-Evidence Pack Contract v0 adds `contracts/packs/evidence_pack.v0.json`,
+Evidence Pack Contract v0 adds `contracts/pack/evidence_pack.v0.json`,
 `docs/reference/EVIDENCE_PACK_CONTRACT.md`,
-`examples/evidence_packs/minimal_evidence_pack_v0/`,
+`examples/packs/evidence/minimal_evidence_pack_v0/`,
 `scripts/validate_evidence_pack.py`, and
 `control/audits/evidence-pack-contract-v0/`.
 
@@ -1163,9 +1163,9 @@ Source/Evidence/Index Pack Import Planning v0.
 
 Status: accepted
 
-Index Pack Contract v0 adds `contracts/packs/index_pack.v0.json`,
+Index Pack Contract v0 adds `contracts/pack/index_pack.v0.json`,
 `docs/reference/INDEX_PACK_CONTRACT.md`,
-`examples/index_packs/minimal_index_pack_v0/`,
+`examples/packs/index/minimal_index_pack_v0/`,
 `scripts/validate_index_pack.py`, and
 `control/audits/index-pack-contract-v0/`.
 
@@ -1190,9 +1190,9 @@ Source/Evidence/Index Pack Import Planning v0.
 Status: accepted
 
 Contribution Pack Contract v0 adds
-`contracts/packs/contribution_pack.v0.json`,
+`contracts/pack/contribution_pack.v0.json`,
 `docs/reference/CONTRIBUTION_PACK_CONTRACT.md`,
-`examples/contribution_packs/minimal_contribution_pack_v0/`,
+`examples/packs/contribution/minimal_contribution_pack_v0/`,
 `scripts/validate_contribution_pack.py`, and
 `control/audits/contribution-pack-contract-v0/`.
 
@@ -1219,9 +1219,9 @@ Source/Evidence/Index Pack Import Planning v0.
 Status: accepted
 
 Master Index Review Queue Contract v0 adds
-`contracts/master_index/review_queue_manifest.v0.json`,
-`contracts/master_index/review_queue_entry.v0.json`,
-`contracts/master_index/review_decision.v0.json`,
+`contracts/index/master/review_queue_manifest.v0.json`,
+`contracts/index/master/review_queue_entry.v0.json`,
+`contracts/index/master/review_decision.v0.json`,
 `control/inventory/master_index/`,
 `docs/reference/MASTER_INDEX_REVIEW_QUEUE_CONTRACT.md`,
 `docs/architecture/MASTER_INDEX_REVIEW_QUEUE.md`,
@@ -1361,7 +1361,7 @@ recommended milestone is Manual Observation Batch 0 Execution, human-operated.
 Status: accepted
 
 Pack Import Report Format v0 adds
-`contracts/packs/pack_import_report.v0.json`,
+`contracts/pack/pack_import_report.v0.json`,
 `examples/import_reports/`, `scripts/validate_pack_import_report.py`,
 `docs/reference/PACK_IMPORT_REPORT_FORMAT.md`, focused tests, and
 `control/audits/pack-import-report-format-v0/`.
@@ -1476,7 +1476,7 @@ Staged Pack Inspector v0 follows.
 Status: accepted
 
 Local Staging Manifest Format v0 adds
-`contracts/packs/local_staging_manifest.v0.json`,
+`contracts/pack/local_staging_manifest.v0.json`,
 `examples/local_staging_manifests/minimal_local_staging_manifest_v0/`,
 `docs/reference/LOCAL_STAGING_MANIFEST_FORMAT.md`,
 `scripts/validate_local_staging_manifest.py`, focused tests, local-state

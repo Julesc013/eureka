@@ -8,11 +8,11 @@ F0 must prove behavior before expanding.
 
 Required seams:
 
-- `runtime/source_observation`
-- `runtime/source_cache`
-- `runtime/evidence_ledger`
-- `runtime/review_queue`
-- `runtime/public_index`
+- `runtime/source/observation`
+- `runtime/source/cache`
+- `runtime/evidence/ledger`
+- `runtime/review/queue`
+- `runtime/index/public`
 
 Current handoff state: F0 is not released yet. R0-11 child-tasked the remaining contract taxonomy blocker, so F0 remains blocked until remediation passes.
 

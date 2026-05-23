@@ -48,6 +48,8 @@ def validate_path_taxonomy(
         dirs = _first_level_dirs(tracked_files, root_name)
         allowed = set(_string_list(rule.get("allowed_first_level")))
         known_debt = set(_string_list(rule.get("known_debt_first_level")))
+        compatibility = set(_string_list(rule.get("compatibility_first_level")))
+        compatibility_only_files = set(_string_list(rule.get("compatibility_only_files")))
         known_debt_prefixes = tuple(_string_list(rule.get("known_debt_prefixes")))
         required = set(_string_list(rule.get("required_first_level")))
         classify_unlisted_as_debt = rule.get("classify_unlisted_as_debt") is True
@@ -58,8 +60,17 @@ def validate_path_taxonomy(
 
         unexpected: list[str] = []
         debt: list[str] = []
+        compatibility_present: list[str] = []
         for name in dirs:
             if name in allowed:
+                continue
+            if name in compatibility:
+                compatibility_present.append(name)
+                offenders = _compatibility_offenders(tracked_files, root_name, name, compatibility_only_files)
+                for offender in offenders:
+                    errors.append(
+                        f"{root_name}/{name}: compatibility path contains non-wrapper file {offender}."
+                    )
                 continue
             if name in known_debt or any(name.startswith(prefix) for prefix in known_debt_prefixes):
                 debt.append(name)
@@ -77,6 +88,7 @@ def validate_path_taxonomy(
         root_reports[root_name] = {
             "actual_first_level": dirs,
             "allowed_first_level": sorted(allowed),
+            "compatibility_first_level": sorted(set(compatibility_present)),
             "known_debt_first_level": sorted(set(debt)),
             "unexpected_first_level": unexpected,
             "missing_required_first_level": missing_required,
@@ -136,6 +148,25 @@ def _first_level_dirs(tracked_files: Sequence[str], root_name: str) -> list[str]
         if path.startswith(prefix) and "/" in path[len(prefix) :]
     }
     return sorted(dirs)
+
+
+def _compatibility_offenders(
+    tracked_files: Sequence[str],
+    root_name: str,
+    first_level: str,
+    allowed_files: set[str],
+) -> list[str]:
+    if not allowed_files:
+        return []
+    prefix = f"{root_name}/{first_level}/"
+    offenders: list[str] = []
+    for path in tracked_files:
+        if not path.startswith(prefix):
+            continue
+        relative = path[len(prefix) :]
+        if relative not in allowed_files:
+            offenders.append(path)
+    return offenders
 
 
 def _mapping(value: Any) -> Mapping[str, Any]:

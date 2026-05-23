@@ -7,8 +7,8 @@ Validation evidence from the B-16 run:
 - `python scripts/validate_local_source_cache_runtime.py`: PASS
 - `python scripts/validate_local_evidence_ledger_runtime_plan.py`: PASS
 - `python scripts/validate_local_evidence_ledger_runtime.py`: PASS
-- `python scripts/record_evidence_ledger.py --input examples/evidence_ledger_records/metadata_claim_record_v0.json --check`: PASS
-- `python scripts/summarize_evidence_ledger.py --input examples/evidence_ledger_records --check`: PASS
+- `python scripts/record_evidence_ledger.py --input examples/evidence/ledger/records/metadata_claim_record_v0.json --check`: PASS
+- `python scripts/summarize_evidence_ledger.py --input examples/evidence/ledger/records --check`: PASS
 - Focused B-16 unit tests: PASS
 - Earlier Track B validators: PASS
 - Track A validator: PASS

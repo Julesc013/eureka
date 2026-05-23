@@ -25,11 +25,11 @@ BATCH_DOC_PATHS = (
     "evals/search_usefulness/external_baselines/batches/batch_0/FAILURE_TAXONOMY.md",
 )
 VALID_EXAMPLE_PATHS = (
-    "examples/manual_observations/valid_no_result_observation_v0.json",
-    "examples/manual_observations/valid_observed_result_v0.json",
-    "examples/manual_observations/valid_pending_slot_observation_v0.json",
+    "examples/review/manual_observations/valid_no_result_observation_v0.json",
+    "examples/review/manual_observations/valid_observed_result_v0.json",
+    "examples/review/manual_observations/valid_pending_slot_observation_v0.json",
 )
-INVALID_EXAMPLE_PATH = "examples/manual_observations/invalid_fabricated_observation_v0.json"
+INVALID_EXAMPLE_PATH = "examples/review/manual_observations/invalid_fabricated_observation_v0.json"
 
 REQUIRED_FIELDS = {
     "anti_fabrication_attestation",

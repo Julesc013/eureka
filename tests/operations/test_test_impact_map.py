@@ -13,8 +13,8 @@ class TestImpactMapTests(unittest.TestCase):
         payload = json.loads((REPO_ROOT / "control/inventory/test_impact_map.json").read_text(encoding="utf-8"))
         patterns = {row["path_pattern"]: row for row in payload["mappings"]}
         for pattern in [
-            "contracts/search_interaction/**",
-            "runtime/local_service/**",
+            "contracts/search/interaction/**",
+            "runtime/local/service/**",
             "scripts/eureka_*.py",
             "scripts/validate_*.py",
             "tests/**",
@@ -24,7 +24,7 @@ class TestImpactMapTests(unittest.TestCase):
 
     def test_runtime_local_service_selects_result_lane_tests(self) -> None:
         payload = json.loads((REPO_ROOT / "control/inventory/test_impact_map.json").read_text(encoding="utf-8"))
-        row = next(item for item in payload["mappings"] if item["path_pattern"] == "runtime/local_service/**")
+        row = next(item for item in payload["mappings"] if item["path_pattern"] == "runtime/local/service/**")
         self.assertIn("python scripts/validate_workbench_result_lanes.py", row["validators"])
         self.assertIn("tests.runtime.test_workbench_result_lanes", row["test_modules"])
         self.assertTrue(row["full_discovery_required_before_promotion"])

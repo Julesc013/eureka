@@ -2,14 +2,14 @@ import json
 import unittest
 from pathlib import Path
 
-from runtime.local_foundry import evidence_ledger, source_cache, source_cache_to_evidence
+from runtime.local.foundry import evidence_ledger, source_cache, source_cache_to_evidence
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 
 
 def load_source_cache_example(name: str) -> dict:
-    return json.loads((REPO_ROOT / "examples/source_cache_records" / name).read_text(encoding="utf-8"))
+    return json.loads((REPO_ROOT / "examples/sources/cache/records" / name).read_text(encoding="utf-8"))
 
 
 class SourceCacheToEvidenceBridgeRuntimeTests(unittest.TestCase):
@@ -110,7 +110,7 @@ class SourceCacheToEvidenceBridgeRuntimeTests(unittest.TestCase):
         self.assertTrue(any("enabled_network_access" in error for error in errors), errors)
 
     def test_runtime_does_not_call_network_model_or_provider(self) -> None:
-        source = (REPO_ROOT / "runtime/local_foundry/source_cache_to_evidence.py").read_text(encoding="utf-8")
+        source = (REPO_ROOT / "runtime/local/foundry/source_cache_to_evidence.py").read_text(encoding="utf-8")
         forbidden = ["requests", "urllib", "http.client", "socket", "openai", "anthropic", "selenium", "playwright"]
         for token in forbidden:
             self.assertNotIn(token, source)

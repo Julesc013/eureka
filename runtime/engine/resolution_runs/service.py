@@ -29,7 +29,7 @@ from runtime.engine.interfaces.service import (
 from runtime.engine.query_planner import derive_search_query_from_task
 from runtime.engine.resolve.source_summary import normalized_record_to_source_summary
 from runtime.engine.resolution_runs.run_store import LocalResolutionRunStore
-from runtime.source_registry import SourceRecordNotFoundError, SourceRegistry
+from runtime.source.registry import SourceRecordNotFoundError, SourceRegistry
 
 
 @dataclass(frozen=True)

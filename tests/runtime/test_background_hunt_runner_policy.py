@@ -5,10 +5,10 @@ import tempfile
 from pathlib import Path
 import unittest
 
-from runtime.local_appliance import close_local_appliance, open_local_appliance
-from runtime.search_hunt import build_background_hunt_plan, run_next_hunt_workunit
-from runtime.search_need import create_workunits_from_need
-from runtime.workunit_queue.records import WorkUnit, WorkUnitType
+from runtime.local.appliance import close_local_appliance, open_local_appliance
+from runtime.search.hunt import build_background_hunt_plan, run_next_hunt_workunit
+from runtime.search.need import create_workunits_from_need
+from runtime.worker.workunit_queue.records import WorkUnit, WorkUnitType
 
 
 ROOT = Path(__file__).resolve().parents[2]

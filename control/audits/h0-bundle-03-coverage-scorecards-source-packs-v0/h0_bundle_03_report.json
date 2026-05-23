@@ -5,12 +5,12 @@
   "track": "H0",
   "purpose": "coverage_ledger_scorecards_source_packs_h0_audit",
   "added_contracts": [
-    "contracts/sources/source_coverage_ledger.v0.json",
-    "contracts/sources/source_coverage_manifest.v0.json",
+    "contracts/source/records/source_coverage_ledger.v0.json",
+    "contracts/source/records/source_coverage_manifest.v0.json",
     "contracts/connectors/connector_scorecard.v0.json",
     "contracts/connectors/connector_quality_delta.v0.json",
-    "contracts/packs/source_pack_manifest.v0.json",
-    "contracts/packs/source_pack_export.v0.json"
+    "contracts/pack/source_pack_manifest.v0.json",
+    "contracts/pack/source_pack_export.v0.json"
   ],
   "added_runtime_modules": [
     "runtime/connectors/core/coverage_ledger.py",
@@ -54,9 +54,9 @@
     "control/inventory/packs/source_pack_truth_policy.json"
   ],
   "added_examples": [
-    "examples/source_coverage/",
+    "examples/sources/coverage/",
     "examples/connectors/core/scorecards/",
-    "examples/source_packs/"
+    "examples/packs/source/"
   ],
   "added_tests": [
     "tests/connectors/test_source_os_coverage_scorecards.py",

@@ -204,9 +204,9 @@
       "conflict_id": "upgrade-conflict-bc35d5f5445b",
       "conflict_type": "secret_like_path",
       "evidence_refs": [
-        "examples/query_guard/minimal_secret_rejected_v0/CHECKSUMS.SHA256"
+        "examples/search/query_guard/minimal_secret_rejected_v0/CHECKSUMS.SHA256"
       ],
-      "path": "examples/query_guard/minimal_secret_rejected_v0/CHECKSUMS.SHA256",
+      "path": "examples/search/query_guard/minimal_secret_rejected_v0/CHECKSUMS.SHA256",
       "reason": "Tracked secret-like path blocks safe upgrade apply.",
       "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
       "status": "blocking"
@@ -216,9 +216,9 @@
       "conflict_id": "upgrade-conflict-64f44c29970f",
       "conflict_type": "secret_like_path",
       "evidence_refs": [
-        "examples/query_guard/minimal_secret_rejected_v0/QUERY_GUARD_DECISION.json"
+        "examples/search/query_guard/minimal_secret_rejected_v0/QUERY_GUARD_DECISION.json"
       ],
-      "path": "examples/query_guard/minimal_secret_rejected_v0/QUERY_GUARD_DECISION.json",
+      "path": "examples/search/query_guard/minimal_secret_rejected_v0/QUERY_GUARD_DECISION.json",
       "reason": "Tracked secret-like path blocks safe upgrade apply.",
       "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
       "status": "blocking"
@@ -228,9 +228,9 @@
       "conflict_id": "upgrade-conflict-38a697b0049e",
       "conflict_type": "secret_like_path",
       "evidence_refs": [
-        "examples/query_guard/minimal_secret_rejected_v0/README.md"
+        "examples/search/query_guard/minimal_secret_rejected_v0/README.md"
       ],
-      "path": "examples/query_guard/minimal_secret_rejected_v0/README.md",
+      "path": "examples/search/query_guard/minimal_secret_rejected_v0/README.md",
       "reason": "Tracked secret-like path blocks safe upgrade apply.",
       "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
       "status": "blocking"

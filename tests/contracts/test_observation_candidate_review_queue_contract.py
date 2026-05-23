@@ -18,7 +18,7 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 
 class ObservationCandidateReviewQueueContractTest(unittest.TestCase):
     def test_contract_json_is_valid_and_declares_boundaries(self) -> None:
-        payload = _read_json(REPO_ROOT / "contracts/control_schemas/tasks/query/observation_candidate_review_queue.v0.json")
+        payload = _read_json(REPO_ROOT / "contracts/schema/control/tasks/query/observation_candidate_review_queue.v0.json")
 
         errors = validate_contract_payload(payload, "contract")
 
@@ -52,7 +52,7 @@ class ObservationCandidateReviewQueueContractTest(unittest.TestCase):
 
     def test_review_decision_ref_must_remain_null(self) -> None:
         entry = _entry()
-        entry["review_decision_ref"] = "examples/observation_reviews/approve_observation_candidate_review_v0.json"
+        entry["review_decision_ref"] = "examples/review/observation_reviews/approve_observation_candidate_review_v0.json"
 
         errors = validate_queue_entry(entry, "broken", REPO_ROOT)
 
@@ -68,7 +68,7 @@ class ObservationCandidateReviewQueueContractTest(unittest.TestCase):
 
 
 def _entry() -> dict:
-    queue = _read_json(REPO_ROOT / "examples/observation_reviews/review_queue_minimal_v0.json")
+    queue = _read_json(REPO_ROOT / "examples/review/observation_reviews/review_queue_minimal_v0.json")
     return deepcopy(queue["queue_entries"][0])
 
 

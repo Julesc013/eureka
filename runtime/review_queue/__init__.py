@@ -1,46 +1,8 @@
-"""Durable review queue runtime package."""
+"""Compatibility package for runtime.review_queue; canonical package is runtime.review.queue."""
 
-from .decisions import ReviewDecision, ReviewDecisionKind
-from .errors import (
-    ReviewQueueError,
-    ReviewQueueMigrationError,
-    ReviewQueueStoreError,
-    ReviewQueueValidationError,
-)
-from .migrations import ReviewQueueMigration
-from .records import ReviewEvent, ReviewEventKind, ReviewItemRecord, ReviewQueueStatus, ReviewQueueSummary
-from .store import ReviewQueueStore
-from .validation import (
-    ensure_valid,
-    validate_no_task_vocabulary,
-    validate_review_decision,
-    validate_review_event,
-    validate_review_item_record,
-    validate_review_queue_path,
-)
-from . import validation as _validation
+from pathlib import Path
 
-globals()["validate_no_" + "public" + "_truth_fields"] = getattr(_validation, "validate_no_" + "public" + "_truth_fields")
+_CANONICAL_PATH = Path(__file__).resolve().parents[1] / 'review' / 'queue'
+__path__ = [str(_CANONICAL_PATH)]
 
-__all__ = [
-    "ReviewDecision",
-    "ReviewDecisionKind",
-    "ReviewEvent",
-    "ReviewEventKind",
-    "ReviewItemRecord",
-    "ReviewQueueError",
-    "ReviewQueueMigration",
-    "ReviewQueueMigrationError",
-    "ReviewQueueStatus",
-    "ReviewQueueStore",
-    "ReviewQueueStoreError",
-    "ReviewQueueSummary",
-    "ReviewQueueValidationError",
-    "ensure_valid",
-    "validate_no_" + "public" + "_truth_fields",
-    "validate_no_task_vocabulary",
-    "validate_review_decision",
-    "validate_review_event",
-    "validate_review_item_record",
-    "validate_review_queue_path",
-]
+from runtime.review.queue import *  # noqa: E402,F401,F403

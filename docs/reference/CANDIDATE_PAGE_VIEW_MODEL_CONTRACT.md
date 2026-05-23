@@ -1,6 +1,6 @@
 # CandidatePage View Model Contract
 
-`contracts/views/candidate_page.v0.json` defines the first canonical public
+`contracts/view/pages/candidate_page.v0.json` defines the first canonical public
 CandidatePage view model for Track A. A candidate is provisional review context,
 not public truth. It may come from search needs, source observations, source
 cache records, evidence packs, contribution packs, index packs, manual
@@ -31,9 +31,9 @@ blocked actions, limitations, or gaps.
 
 CandidatePageView references these governance inputs:
 
-- `contracts/control_schemas/previews/query/candidate_index_record.v0.json`
-- `contracts/control_schemas/previews/query/candidate_lifecycle.v0.json`
-- `contracts/control_schemas/previews/query/candidate_promotion_policy.v0.json`
+- `contracts/schema/control/previews/query/candidate_index_record.v0.json`
+- `contracts/schema/control/previews/query/candidate_lifecycle.v0.json`
+- `contracts/schema/control/previews/query/candidate_promotion_policy.v0.json`
 - `docs/reference/CANDIDATE_INDEX_CONTRACT.md`
 - `docs/reference/MASTER_INDEX_REVIEW_QUEUE_CONTRACT.md`
 - `docs/reference/CONTRIBUTION_PACK_CONTRACT.md`

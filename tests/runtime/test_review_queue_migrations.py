@@ -1,8 +1,8 @@
 import unittest
 
-from runtime.review_queue.migrations import MIGRATIONS
-from runtime.review_queue import ReviewQueueStore
-from runtime.review_queue.schema import REQUIRED_TABLES, SCHEMA_VERSION
+from runtime.review.queue.migrations import MIGRATIONS
+from runtime.review.queue import ReviewQueueStore
+from runtime.review.queue.schema import REQUIRED_TABLES, SCHEMA_VERSION
 
 
 class ReviewQueueMigrationTests(unittest.TestCase):

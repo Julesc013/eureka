@@ -13,7 +13,7 @@ import json
 from pathlib import Path
 from typing import Any, Mapping, Sequence
 
-from runtime.local_foundry import pack_builder, review_queue
+from runtime.local.foundry import pack_builder, review_queue
 
 
 SOURCE_ID = "internet_archive"

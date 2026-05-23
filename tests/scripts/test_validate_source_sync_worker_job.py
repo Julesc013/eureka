@@ -7,9 +7,9 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[2]
-EXAMPLE = ROOT / "examples" / "source_sync" / "minimal_ia_metadata_sync_job_v0" / "SOURCE_SYNC_WORKER_JOB.json"
-MANUAL_EXAMPLE = ROOT / "examples" / "source_sync" / "minimal_manual_source_review_job_v0" / "SOURCE_SYNC_WORKER_JOB.json"
-GITHUB_EXAMPLE = ROOT / "examples" / "source_sync" / "minimal_github_releases_sync_job_v0" / "SOURCE_SYNC_WORKER_JOB.json"
+EXAMPLE = ROOT / "examples" / "sources" / "sync" / "minimal_ia_metadata_sync_job_v0" / "SOURCE_SYNC_WORKER_JOB.json"
+MANUAL_EXAMPLE = ROOT / "examples" / "sources" / "sync" / "minimal_manual_source_review_job_v0" / "SOURCE_SYNC_WORKER_JOB.json"
+GITHUB_EXAMPLE = ROOT / "examples" / "sources" / "sync" / "minimal_github_releases_sync_job_v0" / "SOURCE_SYNC_WORKER_JOB.json"
 
 
 class SourceSyncWorkerJobValidatorTests(unittest.TestCase):

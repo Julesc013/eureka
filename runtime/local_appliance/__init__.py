@@ -1,81 +1,8 @@
-"""Stable local appliance runtime composition API."""
+"""Compatibility package for runtime.local_appliance; canonical package is runtime.local.appliance."""
 
-from .composition import LocalApplianceRuntime, close_local_appliance, open_local_appliance
-from .config import LocalInstanceConfig, load_instance_config, validate_instance_config
-from .errors import (
-    LocalApplianceError,
-    LocalInstanceConfigError,
-    LocalInstancePathError,
-    LocalMigrationStateError,
-    LocalReadOnlyStoreMutationError,
-    LocalRuntimeClosedError,
-    LocalRuntimeCompositionError,
-    LocalRuntimeIntegrityError,
-    LocalStoreManifestError,
-    LocalUnsupportedInstanceVersionError,
-)
-from .instance import LocalInstancePaths, LocalInstanceRef, load_instance_ref, resolve_instance_paths
-from .manifest import LocalStoreEntry, LocalStoreManifest, load_store_manifest, validate_store_manifest
-from .migration import LocalMigrationState, load_migration_state, migration_needed, validate_migration_state
-from .paths import (
-    describe_instance_layout,
-    resolve_default_instance_root,
-    resolve_instance_root,
-    resolve_instances_root,
-    resolve_legacy_sibling_instance_root,
-    resolve_repo_root,
-    resolve_workspace_root,
-    validate_instance_root_not_inside_repo,
-)
-from .status import LocalRuntimeStatus, build_local_runtime_status
-from .validation import (
-    validate_instance_root,
-    validate_no_forbidden_runtime_flags,
-    validate_runtime_composition,
-    validate_supported_instance_version,
-)
+from pathlib import Path
 
-__all__ = [
-    "LocalApplianceError",
-    "LocalApplianceRuntime",
-    "LocalInstanceConfig",
-    "LocalInstanceConfigError",
-    "LocalInstancePathError",
-    "LocalInstancePaths",
-    "LocalInstanceRef",
-    "LocalMigrationState",
-    "LocalMigrationStateError",
-    "LocalReadOnlyStoreMutationError",
-    "LocalRuntimeClosedError",
-    "LocalRuntimeCompositionError",
-    "LocalRuntimeIntegrityError",
-    "LocalRuntimeStatus",
-    "LocalStoreEntry",
-    "LocalStoreManifest",
-    "LocalStoreManifestError",
-    "LocalUnsupportedInstanceVersionError",
-    "build_local_runtime_status",
-    "close_local_appliance",
-    "load_instance_config",
-    "load_instance_ref",
-    "load_migration_state",
-    "load_store_manifest",
-    "migration_needed",
-    "open_local_appliance",
-    "describe_instance_layout",
-    "resolve_default_instance_root",
-    "resolve_instance_root",
-    "resolve_instance_paths",
-    "resolve_instances_root",
-    "resolve_legacy_sibling_instance_root",
-    "resolve_repo_root",
-    "resolve_workspace_root",
-    "validate_instance_root_not_inside_repo",
-    "validate_instance_config",
-    "validate_instance_root",
-    "validate_migration_state",
-    "validate_no_forbidden_runtime_flags",
-    "validate_runtime_composition",
-    "validate_store_manifest",
-    "validate_supported_instance_version",
-]
+_CANONICAL_PATH = Path(__file__).resolve().parents[1] / 'local' / 'appliance'
+__path__ = [str(_CANONICAL_PATH)]
+
+from runtime.local.appliance import *  # noqa: E402,F401,F403

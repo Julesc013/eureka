@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import unittest
 
-from runtime.source_observation.ia_live_metadata_lane import (
+from runtime.source.observation.ia_live_metadata_lane import (
     plan_ia_live_metadata_lane,
     run_ia_live_metadata_lane_dry_run,
     run_ia_live_metadata_lane_mock,

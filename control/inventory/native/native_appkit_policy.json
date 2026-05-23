@@ -19,8 +19,8 @@
     "python_runtime",
     "runtime/engine",
     "runtime/connectors",
-    "runtime/local_foundry",
-    "runtime/search_quality"
+    "runtime/local/foundry",
+    "runtime/search/quality"
   ],
   "download_allowed": false,
   "install_allowed": false,

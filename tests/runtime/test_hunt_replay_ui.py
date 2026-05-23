@@ -5,9 +5,9 @@ import tempfile
 from pathlib import Path
 import unittest
 
-from runtime.local_appliance import close_local_appliance, open_local_appliance
-from runtime.local_service import LocalServiceApp
-from runtime.search_hunt import build_replay_fixture_from_hunt, run_hunt_replay
+from runtime.local.appliance import close_local_appliance, open_local_appliance
+from runtime.local.service import LocalServiceApp
+from runtime.search.hunt import build_replay_fixture_from_hunt, run_hunt_replay
 from scripts.eureka_hunt_workflow_smoke import run_workflow_smoke
 
 

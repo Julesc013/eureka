@@ -21,7 +21,7 @@ Current input roots are committed examples and policy inventories:
 
 - `examples/nodes/`
 - `examples/work_units/`
-- `examples/work_unit_results/`
+- `examples/work_units/results/`
 - `control/inventory/nodes/`
 - `control/audits/**/generated/`
 - explicit temporary test directories

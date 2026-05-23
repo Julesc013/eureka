@@ -16,9 +16,9 @@ if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
 from runtime.extraction.guards import load_json, path_under, resolve_path  # noqa: E402
-from runtime.search_quality.dedup_shadow import build_dedup_shadow  # noqa: E402
-from runtime.search_quality.identity_shadow import build_identity_merge_shadow  # noqa: E402
-from runtime.search_quality.ranking_shadow import (  # noqa: E402
+from runtime.search.quality.dedup_shadow import build_dedup_shadow  # noqa: E402
+from runtime.search.quality.identity_shadow import build_identity_merge_shadow  # noqa: E402
+from runtime.search.quality.ranking_shadow import (  # noqa: E402
     build_ranking_output_bundle,
     build_ranking_shadow,
     load_ranking_policy,

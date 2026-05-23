@@ -11,7 +11,7 @@ Required lanes:
 - Track B node, policy, capability, WorkUnit, WorkUnit result, and Local
   Foundry validators
 - `python scripts/validate_query_observation_runtime.py`
-- `python scripts/record_query_observation.py --input examples/query_observations/minimal_query_observation_v0.json --check`
+- `python scripts/record_query_observation.py --input examples/search/query_observations/minimal_query_observation_v0.json --check`
 - `python -m unittest discover -s tests -t .`
 - `python scripts/check_architecture_boundaries.py`
 - Track A and OBS validators when present

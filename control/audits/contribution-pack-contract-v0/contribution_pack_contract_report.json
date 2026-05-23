@@ -3,12 +3,12 @@
   "created_by_slice": "contribution_pack_contract_v0",
   "status": "implemented_contract_validation_example_only",
   "contract": {
-    "schema": "contracts/packs/contribution_pack.v0.json",
+    "schema": "contracts/pack/contribution_pack.v0.json",
     "contract_id": "eureka_contribution_pack_v0",
     "reference_doc": "docs/reference/CONTRIBUTION_PACK_CONTRACT.md"
   },
   "example_pack": {
-    "path": "examples/contribution_packs/minimal_contribution_pack_v0",
+    "path": "examples/packs/contribution/minimal_contribution_pack_v0",
     "pack_id": "example.minimal_contribution_pack_v0",
     "status": "shareable_candidate",
     "synthetic": true,

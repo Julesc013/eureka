@@ -12,7 +12,7 @@ from runtime.engine.compatibility import compatibility_evidence_payloads, compat
 from runtime.engine.ranking import assign_result_usefulness
 from runtime.engine.representations import RepresentationSummary
 from runtime.engine.resolve.source_summary import normalized_record_to_source_summary
-from runtime.source_registry import SourceRecord, SourceRegistry
+from runtime.source.registry import SourceRecord, SourceRegistry
 
 
 def build_index_records(

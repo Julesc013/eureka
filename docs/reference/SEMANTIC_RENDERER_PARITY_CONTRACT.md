@@ -1,6 +1,6 @@
 # Semantic Renderer Parity Contract
 
-`contracts/representations/semantic_renderer_parity.v0.json` defines the
+`contracts/representation/semantic_renderer_parity.v0.json` defines the
 Track A policy record that every Eureka renderer/projection must satisfy before
 future view-model or renderer work can widen.
 

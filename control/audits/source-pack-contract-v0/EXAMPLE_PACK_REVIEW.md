@@ -2,7 +2,7 @@
 
 Example pack:
 
-`examples/source_packs/minimal_recorded_source_pack_v0/`
+`examples/packs/source/minimal_recorded_source_pack_v0/`
 
 Review summary:
 

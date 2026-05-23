@@ -3,9 +3,9 @@
 Planned final changed files for the PackPage, TaskPage, and ReviewPage view
 model contract bundle:
 
-- `contracts/views/pack_page.v0.json`
-- `contracts/views/task_page.v0.json`
-- `contracts/views/review_page.v0.json`
+- `contracts/view/pages/pack_page.v0.json`
+- `contracts/view/pages/task_page.v0.json`
+- `contracts/view/pages/review_page.v0.json`
 - `docs/reference/PACK_PAGE_VIEW_MODEL_CONTRACT.md`
 - `docs/reference/TASK_PAGE_VIEW_MODEL_CONTRACT.md`
 - `docs/reference/REVIEW_PAGE_VIEW_MODEL_CONTRACT.md`

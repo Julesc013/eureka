@@ -6,7 +6,7 @@ The implementation follows Q60 readiness:
 
 - selected task: `Q61 Eureka Reviewed Index Persistence v0`
 - status: `READY_FOR_Q61_WITH_WARNINGS`
-- allowed product path: `runtime/local_foundry/fixture_source_observation_slice.py`
+- allowed product path: `runtime/local/foundry/fixture_source_observation_slice.py`
 - allowed tests: existing Q58-Q60 fixture slice tests
 - required next proof: deterministic local reviewed-index artifact, rebuild/load/search/object/absence behavior, validation, and evidence.
 

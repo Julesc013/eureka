@@ -1,0 +1,132 @@
+{
+  "$id": "contracts/schema/control/previews/h7/connectors/library_research_live_probe_request.v0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "api_query_requested": {
+      "type": "boolean"
+    },
+    "approval_refs": {
+      "type": "array"
+    },
+    "approved_request_key": {
+      "type": "string"
+    },
+    "article_download_requested": {
+      "const": false
+    },
+    "book_scan_download_requested": {
+      "const": false
+    },
+    "bypass_or_automation_requested": {
+      "const": false
+    },
+    "connector_family": {
+      "type": "string"
+    },
+    "dataset_download_requested": {
+      "const": false
+    },
+    "doi_or_identifier_context": {
+      "type": "object"
+    },
+    "dry_run_only": {
+      "type": "boolean"
+    },
+    "endpoint_or_metadata_class": {
+      "type": "string"
+    },
+    "full_text_fetch_requested": {
+      "const": false
+    },
+    "identifier_or_query_context": {
+      "type": "object"
+    },
+    "iiif_manifest_fetch_requested": {
+      "type": "boolean"
+    },
+    "isbn_or_catalog_context": {
+      "type": "object"
+    },
+    "limitations": {
+      "type": "array"
+    },
+    "live_probe_request_id": {
+      "type": "string"
+    },
+    "live_requested": {
+      "type": "boolean"
+    },
+    "media_download_requested": {
+      "const": false
+    },
+    "notes": {
+      "type": "array"
+    },
+    "oai_pmh_harvest_requested": {
+      "type": "boolean"
+    },
+    "operation_scope": {
+      "const": "metadata_only"
+    },
+    "output_policy_ref": {
+      "type": "string"
+    },
+    "patent_document_download_requested": {
+      "const": false
+    },
+    "patent_or_publication_context": {
+      "type": "object"
+    },
+    "pdf_download_requested": {
+      "const": false
+    },
+    "policy_refs": {
+      "type": "array"
+    },
+    "product_boundary": {
+      "type": "object"
+    },
+    "repository_or_collection_context": {
+      "type": "object"
+    },
+    "request_shape": {
+      "type": "object"
+    },
+    "restricted_source_requested": {
+      "const": false
+    },
+    "review_policy_ref": {
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "h7_library_research_live_probe_request.v0"
+    },
+    "scraping_or_crawling_requested": {
+      "const": false
+    },
+    "source_id": {
+      "type": "string"
+    },
+    "source_record_kind": {
+      "type": "string"
+    },
+    "truth_boundary": {
+      "type": "object"
+    },
+    "truth_policy_ref": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "schema_version",
+    "live_probe_request_id",
+    "source_id",
+    "operation_scope",
+    "approved_request_key",
+    "live_requested",
+    "dry_run_only"
+  ],
+  "title": "h7_library_research_live_probe_request.v0",
+  "type": "object"
+}

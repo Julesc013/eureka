@@ -20,7 +20,7 @@
       ]
     },
     {
-      "path_pattern": "contracts/search_interaction/**",
+      "path_pattern": "contracts/search/interaction/**",
       "owning_subsystem": "search_interaction_contracts",
       "validators": [
         "python scripts/validate_search_interaction_contract.py",
@@ -57,7 +57,7 @@
       ]
     },
     {
-      "path_pattern": "runtime/source_observation/**",
+      "path_pattern": "runtime/source/observation/**",
       "owning_subsystem": "source_observation_runtime",
       "validators": [
         "python scripts/audit_runtime_architecture_leakage.py --check --json",
@@ -73,7 +73,7 @@
       ]
     },
     {
-      "path_pattern": "runtime/source_cache/**",
+      "path_pattern": "runtime/source/cache/**",
       "owning_subsystem": "source_cache_runtime",
       "validators": [
         "python scripts/validate_ia_source_cache_write.py"
@@ -88,7 +88,7 @@
       ]
     },
     {
-      "path_pattern": "runtime/evidence_ledger/**",
+      "path_pattern": "runtime/evidence/ledger/**",
       "owning_subsystem": "evidence_ledger_runtime",
       "validators": [
         "python scripts/validate_ia_evidence_ledger_integration.py"
@@ -103,13 +103,13 @@
       ]
     },
     {
-      "path_pattern": "runtime/candidate_index/**",
+      "path_pattern": "runtime/index/candidate/**",
       "owning_subsystem": "candidate_index_runtime",
       "validators": [
         "python scripts/validate_ia_candidate_index_integration.py"
       ],
       "test_modules": [
-        "tests.runtime.test_candidate_index_store"
+        "tests.runtime.test_ia_candidate_index_integration"
       ],
       "smoke_commands": [],
       "full_discovery_required_before_promotion": true,
@@ -118,7 +118,7 @@
       ]
     },
     {
-      "path_pattern": "runtime/review_queue/**",
+      "path_pattern": "runtime/review/queue/**",
       "owning_subsystem": "review_queue_runtime",
       "validators": [
         "python scripts/validate_ia_review_promotion_dry_run.py"
@@ -133,7 +133,7 @@
       ]
     },
     {
-      "path_pattern": "runtime/public_index/**",
+      "path_pattern": "runtime/index/public/**",
       "owning_subsystem": "public_index_runtime",
       "validators": [
         "python scripts/validate_ia_reviewed_index_rebuild.py"
@@ -167,7 +167,7 @@
       ]
     },
     {
-      "path_pattern": "runtime/local_service/**",
+      "path_pattern": "runtime/local/service/**",
       "owning_subsystem": "local_service_runtime",
       "validators": [
         "python scripts/validate_workbench_result_lanes.py",

@@ -8,7 +8,7 @@ auditable, and disabled until a later approved implementation slice.
 Current evidence:
 
 - Search result explanation contracts exist in `contracts/search/`.
-- Seven explanation examples exist in `examples/search_result_explanations/`.
+- Seven explanation examples exist in `examples/search/result_explanations/`.
 - P96 validators exist and have passed in prior contract evidence.
 - Public search is implemented locally in `local_index_only` mode.
 - Public result cards and public search response envelopes exist.

@@ -25,7 +25,7 @@ CONTRACTS = (
     "contracts/query/known_absence_record.v0.json",
     "contracts/query/search_gap_explanation.v0.json",
     "contracts/query/explanation_input_bundle.v0.json",
-    "contracts/control_schemas/previews/query/explanation_output_bundle.v0.json",
+    "contracts/schema/control/previews/query/explanation_output_bundle.v0.json",
 )
 POLICIES = (
     "control/inventory/search_quality/search_explanation_policy.json",
@@ -38,31 +38,31 @@ POLICIES = (
     "control/inventory/search_quality/explanation_review_policy.json",
 )
 EXAMPLES = (
-    "examples/search_quality/explanations/exact_candidate_explanation_v0.json",
-    "examples/search_quality/explanations/source_cache_supported_explanation_v0.json",
-    "examples/search_quality/explanations/evidence_supported_explanation_v0.json",
-    "examples/search_quality/explanations/extraction_member_explanation_v0.json",
-    "examples/search_quality/explanations/policy_blocked_explanation_v0.json",
-    "examples/search_quality/near_misses/wrong_version_near_miss_v0.json",
-    "examples/search_quality/near_misses/wrong_platform_near_miss_v0.json",
-    "examples/search_quality/near_misses/source_only_near_miss_v0.json",
-    "examples/search_quality/near_misses/extraction_gap_near_miss_v0.json",
-    "examples/search_quality/known_absence/no_reviewed_result_absence_v0.json",
-    "examples/search_quality/known_absence/source_gap_absence_v0.json",
-    "examples/search_quality/known_absence/extraction_needed_absence_v0.json",
-    "examples/search_quality/known_absence/policy_blocked_absence_v0.json",
-    "examples/search_quality/input_bundles/software_search_explanation_bundle_v0.json",
-    "examples/search_quality/input_bundles/extraction_gap_explanation_bundle_v0.json",
-    "examples/search_quality/output_bundles/software_search_explanation_output_v0.json",
-    "examples/search_quality/output_bundles/known_absence_output_v0.json",
+    "examples/search/quality/explanations/exact_candidate_explanation_v0.json",
+    "examples/search/quality/explanations/source_cache_supported_explanation_v0.json",
+    "examples/search/quality/explanations/evidence_supported_explanation_v0.json",
+    "examples/search/quality/explanations/extraction_member_explanation_v0.json",
+    "examples/search/quality/explanations/policy_blocked_explanation_v0.json",
+    "examples/search/quality/near_misses/wrong_version_near_miss_v0.json",
+    "examples/search/quality/near_misses/wrong_platform_near_miss_v0.json",
+    "examples/search/quality/near_misses/source_only_near_miss_v0.json",
+    "examples/search/quality/near_misses/extraction_gap_near_miss_v0.json",
+    "examples/search/quality/known_absence/no_reviewed_result_absence_v0.json",
+    "examples/search/quality/known_absence/source_gap_absence_v0.json",
+    "examples/search/quality/known_absence/extraction_needed_absence_v0.json",
+    "examples/search/quality/known_absence/policy_blocked_absence_v0.json",
+    "examples/search/quality/input_bundles/software_search_explanation_bundle_v0.json",
+    "examples/search/quality/input_bundles/extraction_gap_explanation_bundle_v0.json",
+    "examples/search/quality/output_bundles/software_search_explanation_output_v0.json",
+    "examples/search/quality/output_bundles/known_absence_output_v0.json",
 )
 PYTHON_FILES = (
-    "runtime/search_quality/__init__.py",
-    "runtime/search_quality/explanation.py",
-    "runtime/search_quality/near_miss.py",
-    "runtime/search_quality/known_absence.py",
-    "runtime/search_quality/gap_explanation.py",
-    "runtime/search_quality/explanation_summary.py",
+    "runtime/search/quality/__init__.py",
+    "runtime/search/quality/explanation.py",
+    "runtime/search/quality/near_miss.py",
+    "runtime/search/quality/known_absence.py",
+    "runtime/search/quality/gap_explanation.py",
+    "runtime/search/quality/explanation_summary.py",
     "scripts/explain_search_fixture.py",
     "scripts/summarize_search_explanations.py",
     "scripts/validate_search_explanation_runtime.py",
@@ -165,15 +165,15 @@ def validate_imports(root: Path, errors: list[str]) -> None:
 
 def validate_scripts(root: Path, errors: list[str]) -> None:
     commands = (
-        [sys.executable, "scripts/explain_search_fixture.py", "--input", "examples/search_quality/input_bundles/software_search_explanation_bundle_v0.json", "--check", "--json"],
-        [sys.executable, "scripts/summarize_search_explanations.py", "--input", "examples/search_quality", "--check", "--json"],
+        [sys.executable, "scripts/explain_search_fixture.py", "--input", "examples/search/quality/input_bundles/software_search_explanation_bundle_v0.json", "--check", "--json"],
+        [sys.executable, "scripts/summarize_search_explanations.py", "--input", "examples/search/quality", "--check", "--json"],
     )
     for command in commands:
         result = subprocess.run(command, cwd=root, capture_output=True, text=True, timeout=120, check=False)
         if result.returncode != 0:
             errors.append(f"script failed: {' '.join(command)} :: {result.stdout} {result.stderr}")
     forbidden = subprocess.run(
-        [sys.executable, "scripts/explain_search_fixture.py", "--input", "examples/search_quality/input_bundles/software_search_explanation_bundle_v0.json", "--output", "site/dist/explanation.json"],
+        [sys.executable, "scripts/explain_search_fixture.py", "--input", "examples/search/quality/input_bundles/software_search_explanation_bundle_v0.json", "--output", "site/dist/explanation.json"],
         cwd=root,
         capture_output=True,
         text=True,
@@ -183,7 +183,7 @@ def validate_scripts(root: Path, errors: list[str]) -> None:
     if forbidden.returncode == 0 or "refusing forbidden output root" not in forbidden.stdout:
         errors.append("explanation script must reject site/dist output")
     public = subprocess.run(
-        [sys.executable, "scripts/summarize_search_explanations.py", "--input", "examples/search_quality", "--output", "site/dist/data/public_index/explanation.json"],
+        [sys.executable, "scripts/summarize_search_explanations.py", "--input", "examples/search/quality", "--output", "site/dist/data/public_index/explanation.json"],
         cwd=root,
         capture_output=True,
         text=True,

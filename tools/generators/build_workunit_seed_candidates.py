@@ -27,23 +27,23 @@ SEARCH_NEED_MANIFEST_PATH = "control/inventory/observations/search_need_seed_man
 OBS01_MANIFEST_PATH = "control/inventory/observations/obs_agent_candidate_batch_0_local_eval_manifest.json"
 OBS02_MANIFEST_PATH = "control/inventory/observations/obs_agent_source_gap_candidate_manifest.json"
 OBS04_AUDIT_MANIFEST_PATH = "control/audits/obs-agent-04-candidate-to-search-need-seeds-v0/search_need_seed_manifest.json"
-TRACK_B_WORKUNIT_CONTRACT_PATH = "contracts/control_schemas/policies/node/work_unit.v0.json"
-TRACK_B_WORKUNIT_RESULT_CONTRACT_PATH = "contracts/control_schemas/policies/node/work_unit_result.v0.json"
+TRACK_B_WORKUNIT_CONTRACT_PATH = "contracts/schema/control/policies/node/work_unit.v0.json"
+TRACK_B_WORKUNIT_RESULT_CONTRACT_PATH = "contracts/schema/control/policies/node/work_unit_result.v0.json"
 
 WORKUNIT_SEED_EXAMPLES = (
-    "examples/workunit_seeds/minimal_workunit_seed_v0.json",
-    "examples/workunit_seeds/source_policy_review_workunit_seed_v0.json",
-    "examples/workunit_seeds/metadata_probe_planning_workunit_seed_v0.json",
-    "examples/workunit_seeds/extraction_gap_workunit_seed_v0.json",
-    "examples/workunit_seeds/compatibility_review_workunit_seed_v0.json",
-    "examples/workunit_seeds/policy_blocked_workunit_seed_v0.json",
+    "examples/work_units/seeds/minimal_workunit_seed_v0.json",
+    "examples/work_units/seeds/source_policy_review_workunit_seed_v0.json",
+    "examples/work_units/seeds/metadata_probe_planning_workunit_seed_v0.json",
+    "examples/work_units/seeds/extraction_gap_workunit_seed_v0.json",
+    "examples/work_units/seeds/compatibility_review_workunit_seed_v0.json",
+    "examples/work_units/seeds/policy_blocked_workunit_seed_v0.json",
 )
 
 WORKUNIT_CONVERSION_EXAMPLES = (
-    "examples/workunit_seed_conversions/minimal_candidate_to_workunit_conversion_v0.json",
-    "examples/workunit_seed_conversions/search_need_seed_to_workunit_conversion_v0.json",
-    "examples/workunit_seed_conversions/source_gap_candidate_to_workunit_conversion_v0.json",
-    "examples/workunit_seed_conversions/request_more_evidence_workunit_conversion_v0.json",
+    "examples/work_units/seed_conversions/minimal_candidate_to_workunit_conversion_v0.json",
+    "examples/work_units/seed_conversions/search_need_seed_to_workunit_conversion_v0.json",
+    "examples/work_units/seed_conversions/source_gap_candidate_to_workunit_conversion_v0.json",
+    "examples/work_units/seed_conversions/request_more_evidence_workunit_conversion_v0.json",
 )
 
 PRIMARY_INPUT_PATHS = (

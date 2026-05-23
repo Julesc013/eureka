@@ -9,7 +9,7 @@ from pathlib import Path
 from typing import Any
 
 ROOT = Path(__file__).resolve().parents[2]
-EXAMPLES_ROOT = ROOT / "examples" / "search_result_explanations"
+EXAMPLES_ROOT = ROOT / "examples" / "search" / "result_explanations"
 
 STATUSES = {
     "draft_example",

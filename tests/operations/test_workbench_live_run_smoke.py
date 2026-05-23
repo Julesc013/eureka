@@ -2,8 +2,8 @@ from __future__ import annotations
 
 import unittest
 
-from runtime.local_service.request_context import build_request_context
-from runtime.local_service.routes import route_request
+from runtime.local.service.request_context import build_request_context
+from runtime.local.service.routes import route_request
 
 
 class WorkbenchLiveRunSmokeTests(unittest.TestCase):

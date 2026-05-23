@@ -3,9 +3,9 @@
   "created_by_slice": "master_index_review_queue_contract_v0",
   "status": "implemented_contract_validation_example_only",
   "schemas": [
-    "contracts/master_index/review_queue_manifest.v0.json",
-    "contracts/master_index/review_queue_entry.v0.json",
-    "contracts/master_index/review_decision.v0.json"
+    "contracts/index/master/review_queue_manifest.v0.json",
+    "contracts/index/master/review_queue_entry.v0.json",
+    "contracts/index/master/review_decision.v0.json"
   ],
   "inventory_files": [
     "control/inventory/master_index/review_queue_policy.json",

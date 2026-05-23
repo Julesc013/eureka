@@ -4,7 +4,7 @@
   "track": "A",
   "task": "TRACK-A-02",
   "added_contracts": [
-    "contracts/representations/semantic_renderer_parity.v0.json",
+    "contracts/representation/semantic_renderer_parity.v0.json",
     "docs/reference/SEMANTIC_RENDERER_PARITY_CONTRACT.md"
   ],
   "added_inventories": [

@@ -1,0 +1,39 @@
+{
+  "schema_version": "local_source_cache_record.v0",
+  "input_id": "source_coverage_bridge_case_v0",
+  "input_type": "committed_public_data_summary",
+  "input_ref": "examples/sources/cache/to_evidence/source_coverage_to_coverage_claim_v0.json",
+  "input_status": "source_observation",
+  "input_public_safe": true,
+  "input_summary": "Bridge case for source coverage summary.",
+  "source_cache_record_status": "source_observation",
+  "source_cache_record_type": "source_coverage_record",
+  "source_id": "source:bridge:coverage",
+  "source_label": "Coverage Bridge Source",
+  "source_family": "coverage_bridge_fixture",
+  "source_kind": "committed_summary",
+  "source_locator": "fixture:bridge:coverage",
+  "source_access_mode": "committed_fixture_only",
+  "source_policy_status": "fixture_only",
+  "source_authority_posture": "coverage_summary_only",
+  "source_coverage_summary": "Synthetic coverage spans metadata, locator, and limitation examples.",
+  "source_metadata_summary": "Coverage text is local and non-authoritative.",
+  "source_health_summary": "No freshness check.",
+  "source_limitations": [
+    "Coverage summary is scoped to this fixture.",
+    "No claim of complete source coverage."
+  ],
+  "source_observation_summary": "The source fixture carries a bounded coverage summary.",
+  "normalized_fields": {
+    "coverage_scope": "fixture_scope_only"
+  },
+  "related_candidate_refs": [],
+  "related_search_need_refs": [],
+  "related_workunit_refs": [],
+  "related_source_lead_refs": [],
+  "related_pack_refs_future": [],
+  "related_evidence_refs_future": [],
+  "notes": [
+    "Coverage remains review-gated."
+  ]
+}

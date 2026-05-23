@@ -6,10 +6,10 @@
   WorkUnit result, and local foundry state.
 - `contracts/query/`: query observation, search miss, SearchNeed, candidate,
   and observation-review related contracts.
-- `contracts/source_cache/`: source cache record and manifest contracts.
-- `contracts/packs/`: source, evidence, index, contribution, and pack staging
+- `contracts/source/cache/`: source cache record and manifest contracts.
+- `contracts/pack/`: source, evidence, index, contribution, and pack staging
   contracts.
-- `contracts/master_index/`: review queue and reviewed public-record proposal
+- `contracts/index/master/`: review queue and reviewed public-record proposal
   contracts.
 - `docs/reference/EVIDENCE_LEDGER_CONTRACT.md`: current evidence ledger
   contract reference.

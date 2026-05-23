@@ -25,7 +25,7 @@ The current governed component set is intentionally small:
 5. `app-native`
 6. `connectors`
 
-`contracts/ui` is a shared surface-contract area jointly used by web and native surfaces, but it is not treated as a seventh governed component.
+`contracts/surface/ui` is a shared surface-contract area jointly used by web and native surfaces, but it is not treated as a seventh governed component.
 
 ## Dependency Law
 
@@ -33,8 +33,8 @@ The current dependency policy is now expressed as concrete path globs in `.aide/
 
 Allowed:
 
-- `surfaces/web/**` depends on `contracts/archive/**`, `contracts/gateway/public_api/**`, and `contracts/ui/**` in the normal path
-- `surfaces/native/**` depends on `contracts/archive/**`, `contracts/gateway/public_api/**`, and `contracts/ui/**` in the normal path
+- `surfaces/web/**` depends on `contracts/archive/**`, `contracts/gateway/public_api/**`, and `contracts/surface/ui/**` in the normal path
+- `surfaces/native/**` depends on `contracts/archive/**`, `contracts/gateway/public_api/**`, and `contracts/surface/ui/**` in the normal path
 - `surfaces/native/**` may depend on `runtime/engine/sdk/**` only as a future explicitly bounded offline path
 - `runtime/gateway/**` depends on `runtime/engine/interfaces/public/**`, `runtime/engine/interfaces/service/**`, `contracts/archive/**`, and `contracts/gateway/public_api/**`
 - `runtime/connectors/**` depends on `runtime/engine/interfaces/ingest/**`, `runtime/engine/interfaces/extract/**`, `runtime/engine/interfaces/normalize/**`, and `contracts/archive/**`

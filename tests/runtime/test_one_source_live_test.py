@@ -4,10 +4,10 @@ import unittest
 from pathlib import Path
 from unittest import mock
 
-from runtime.source_observation.sources import pypi_json_metadata as source
+from runtime.source.observation.sources import pypi_json_metadata as source
 from scripts.run_one_source_live_test import run_one_source_live_test
 from scripts.validate_one_source_live_test import validate
-from runtime.review_queue import ReviewDecisionKind
+from runtime.review.queue import ReviewDecisionKind
 
 
 class FakeResponse:

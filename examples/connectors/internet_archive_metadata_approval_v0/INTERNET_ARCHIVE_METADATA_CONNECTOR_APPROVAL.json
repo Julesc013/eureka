@@ -251,7 +251,7 @@
   "expected_source_cache_outputs": [
     {
       "output_kind": "internet_archive_item_metadata_summary",
-      "source_cache_record_contract_ref": "contracts/source_cache/source_cache_record.v0.json",
+      "source_cache_record_contract_ref": "contracts/source/cache/source_cache_record.v0.json",
       "output_runtime_implemented": false,
       "raw_payload_allowed": false,
       "public_safe_metadata_only": true,
@@ -262,7 +262,7 @@
     },
     {
       "output_kind": "internet_archive_file_listing_metadata_summary",
-      "source_cache_record_contract_ref": "contracts/source_cache/source_cache_record.v0.json",
+      "source_cache_record_contract_ref": "contracts/source/cache/source_cache_record.v0.json",
       "output_runtime_implemented": false,
       "raw_payload_allowed": false,
       "public_safe_metadata_only": true,
@@ -273,7 +273,7 @@
     },
     {
       "output_kind": "internet_archive_collection_metadata_summary",
-      "source_cache_record_contract_ref": "contracts/source_cache/source_cache_record.v0.json",
+      "source_cache_record_contract_ref": "contracts/source/cache/source_cache_record.v0.json",
       "output_runtime_implemented": false,
       "raw_payload_allowed": false,
       "public_safe_metadata_only": true,
@@ -284,7 +284,7 @@
     },
     {
       "output_kind": "internet_archive_availability_summary",
-      "source_cache_record_contract_ref": "contracts/source_cache/source_cache_record.v0.json",
+      "source_cache_record_contract_ref": "contracts/source/cache/source_cache_record.v0.json",
       "output_runtime_implemented": false,
       "raw_payload_allowed": false,
       "public_safe_metadata_only": true,
@@ -297,7 +297,7 @@
   "expected_evidence_ledger_outputs": [
     {
       "output_kind": "source_metadata_observation",
-      "evidence_ledger_record_contract_ref": "contracts/evidence_ledger/evidence_ledger_record.v0.json",
+      "evidence_ledger_record_contract_ref": "contracts/evidence/ledger/evidence_ledger_record.v0.json",
       "output_runtime_implemented": false,
       "accepted_as_truth": false,
       "requires_review": true,
@@ -308,7 +308,7 @@
     },
     {
       "output_kind": "availability_observation",
-      "evidence_ledger_record_contract_ref": "contracts/evidence_ledger/evidence_ledger_record.v0.json",
+      "evidence_ledger_record_contract_ref": "contracts/evidence/ledger/evidence_ledger_record.v0.json",
       "output_runtime_implemented": false,
       "accepted_as_truth": false,
       "requires_review": true,
@@ -319,7 +319,7 @@
     },
     {
       "output_kind": "file_listing_observation",
-      "evidence_ledger_record_contract_ref": "contracts/evidence_ledger/evidence_ledger_record.v0.json",
+      "evidence_ledger_record_contract_ref": "contracts/evidence/ledger/evidence_ledger_record.v0.json",
       "output_runtime_implemented": false,
       "accepted_as_truth": false,
       "requires_review": true,
@@ -330,7 +330,7 @@
     },
     {
       "output_kind": "release_or_item_metadata_observation",
-      "evidence_ledger_record_contract_ref": "contracts/evidence_ledger/evidence_ledger_record.v0.json",
+      "evidence_ledger_record_contract_ref": "contracts/evidence/ledger/evidence_ledger_record.v0.json",
       "output_runtime_implemented": false,
       "accepted_as_truth": false,
       "requires_review": true,
@@ -341,7 +341,7 @@
     },
     {
       "output_kind": "scoped_absence_observation",
-      "evidence_ledger_record_contract_ref": "contracts/evidence_ledger/evidence_ledger_record.v0.json",
+      "evidence_ledger_record_contract_ref": "contracts/evidence/ledger/evidence_ledger_record.v0.json",
       "output_runtime_implemented": false,
       "accepted_as_truth": false,
       "requires_review": true,

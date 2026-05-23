@@ -26,7 +26,7 @@ scope:
     - control/inventory/sources/source_operation_policy.json
     - control/inventory/sources/source_approval_gate_policy.json
     - control/inventory/sources/source_expansion_no_live_call_policy.json
-    - contracts/sources/**
+    - contracts/source/records/**
     - docs/reference/SOURCE_REGISTRY_V2.md
     - docs/reference/SOURCE_RECORD_CONTRACT.md
     - docs/reference/SOURCE_CAPABILITY_CONTRACT.md

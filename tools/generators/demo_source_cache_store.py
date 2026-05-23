@@ -13,9 +13,9 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.source_cache import SourceCacheStatus, SourceCacheStore, build_cache_entry
-from runtime.source_cache.validation import validate_cache_path
-from runtime.source_observation import (
+from runtime.source.cache import SourceCacheStatus, SourceCacheStore, build_cache_entry
+from runtime.source.cache.validation import validate_cache_path
+from runtime.source.observation import (
     MetadataRequest,
     MetadataResponse,
     SourceCapability,

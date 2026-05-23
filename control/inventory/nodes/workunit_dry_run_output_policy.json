@@ -30,7 +30,7 @@
   ],
   "allowed_output_roots": [
     "control/audits/**/generated/",
-    "examples/workunit_dry_runs/**",
+    "examples/work_units/dry_runs/**",
     "explicit temporary directory in tests"
   ],
   "forbidden_output_roots": [

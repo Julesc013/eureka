@@ -2,8 +2,8 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from runtime.review_queue import ReviewQueueStore
-from runtime.source_observation.internet_archive_review import (
+from runtime.review.queue import ReviewQueueStore
+from runtime.source.observation.internet_archive_review import (
     apply_ia_review_decision,
     build_ia_review_items_from_candidates,
     load_default_ia_candidate_records,

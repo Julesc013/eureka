@@ -5,7 +5,7 @@ Implemented:
 - `runtime/packs/` stdlib-only dry-run modules.
 - `scripts/run_pack_import_dry_run.py` CLI.
 - `scripts/validate_pack_import_dry_run_report.py` report/audit validator.
-- Synthetic P104 examples under `examples/pack_import_dry_run/`.
+- Synthetic P104 examples under `examples/packs/import_dry_run/`.
 - Tests covering runtime classification, CLI policy, validator negatives, and
   operations metadata.
 

@@ -133,7 +133,7 @@ python scripts/eureka_validate_instance.py --instance $Instance --json
 
 Local instances are not product truth and are not source code. They may contain config, SQLite stores, logs, run files, imports, exports, and temporary files. They must not be committed, and scripts should continue to require an explicit `--instance` path instead of guessing mutable state from the repo path.
 
-The current runtime path resolver is `runtime/local_appliance/instance.py`. A future broader LOCAL task can add a workspace-level resolver if scripts need shared `workspace_root`, `repo_root`, `instances_root`, and named-instance discovery.
+The current runtime path resolver is `runtime/local/appliance/instance.py`. A future broader LOCAL task can add a workspace-level resolver if scripts need shared `workspace_root`, `repo_root`, `instances_root`, and named-instance discovery.
 
 ## Installed Layout Notes
 

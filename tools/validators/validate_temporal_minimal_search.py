@@ -20,7 +20,7 @@ from scripts.validate_design_tokens import (
 )
 
 
-CONTRACT_PATH = "contracts/ui/temporal_minimal_search.v0.json"
+CONTRACT_PATH = "contracts/surface/ui/temporal_minimal_search.v0.json"
 DESIGN_LANGUAGE_EXAMPLE = "examples/design_tokens/temporal_minimal_search_v0.json"
 TOKEN_INVENTORY = TOKEN_INVENTORY_PATH
 PROFILE_MATRIX = "control/inventory/publication/design_profile_matrix.json"

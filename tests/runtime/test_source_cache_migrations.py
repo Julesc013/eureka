@@ -3,9 +3,9 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from runtime.source_cache import SourceCacheStore
-from runtime.source_cache.migrations import MIGRATIONS, apply_migrations, get_applied_migrations
-from runtime.source_cache.schema import REQUIRED_TABLES, SCHEMA_VERSION
+from runtime.source.cache import SourceCacheStore
+from runtime.source.cache.migrations import MIGRATIONS, apply_migrations, get_applied_migrations
+from runtime.source.cache.schema import REQUIRED_TABLES, SCHEMA_VERSION
 
 
 class SourceCacheMigrationTests(unittest.TestCase):

@@ -13,9 +13,9 @@ from typing import Any, Mapping, Sequence, TextIO
 REPO_ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.local_service.request_context import build_request_context
-from runtime.local_service.routes import route_request
-from runtime.local_service.workbench_live_run import (
+from runtime.local.service.request_context import build_request_context
+from runtime.local.service.routes import route_request
+from runtime.local.service.workbench_live_run import (
     build_command_response,
     create_workbench_resolution_run,
 )
@@ -35,7 +35,7 @@ REQUIRED_FILES = (
     "control/inventory/workbench_live_run_smoke_result.json",
     "control/inventory/workbench_live_run_validation_matrix.json",
     "control/inventory/workbench_live_run_result.json",
-    "runtime/local_service/workbench_live_run.py",
+    "runtime/local/service/workbench_live_run.py",
     "scripts/eureka_workbench_live_run.py",
     "docs/architecture/WORKBENCH_LIVE_RUN.md",
     "docs/architecture/WORKBENCH_RUN_PROJECTION.md",

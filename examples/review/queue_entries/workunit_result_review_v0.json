@@ -1,0 +1,25 @@
+{
+  "schema_version": "local_review_queue_entry.v0",
+  "input_id": "workunit_result_review_v0",
+  "input_type": "workunit_result",
+  "input_ref": "examples/work_units/results/search_need_review_pass_v0/work_unit_result.json",
+  "input_public_safe": true,
+  "review_entry_status": "ready_for_promotion_dry_run",
+  "review_subject_type": "workunit_result",
+  "review_subject_ref": "search_need_review_pass_v0",
+  "review_subject_summary": "Validation-only WorkUnit result can seed a local promotion dry-run check.",
+  "review_decision": "approve_for_promotion_dry_run",
+  "decision_scope": "local_promotion_dry_run_only",
+  "decision_rationale": "Result is local, validation-only, and review-gated for dry-run planning.",
+  "required_evidence": [
+    "workunit result envelope",
+    "validation summary"
+  ],
+  "missing_evidence": [],
+  "related_workunit_refs": [
+    "search_need_review_v0"
+  ],
+  "notes": [
+    "Approval is limited to local dry-run planning."
+  ]
+}

@@ -10,10 +10,11 @@
 
 `runtime/engine` remains the current engine/kernel boundary.
 
-The remaining flat runtime package names are taxonomy-closeout compatibility
-paths. Current names are frozen until a family-by-family migration can update
-imports, validators, docs, examples, and tests without changing product
-behavior.
+The active taxonomy now uses canonical families such as `runtime/local/`,
+`runtime/source/`, `runtime/index/`, `runtime/evidence/`, `runtime/review/`,
+`runtime/search/`, and `runtime/worker/`. The old first-level runtime package
+names remain as wrapper-only compatibility packages for import stability; they
+are not canonical implementation homes.
 
 Future target families are recorded in
 `control/policies/taxonomy_closeout_policy.json` and

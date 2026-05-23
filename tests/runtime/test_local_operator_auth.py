@@ -3,7 +3,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from runtime.local_operator import (
+from runtime.local.operator import (
     LocalOperatorError,
     hash_operator_token,
     load_operator_token_record,

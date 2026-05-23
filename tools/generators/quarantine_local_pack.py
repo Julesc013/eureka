@@ -14,7 +14,7 @@ if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
 from runtime.extraction.guards import ensure_allowed_input_path, ensure_allowed_output_path  # noqa: E402
-from runtime.local_foundry import pack_quarantine  # noqa: E402
+from runtime.local.foundry import pack_quarantine  # noqa: E402
 
 
 def main(argv: list[str] | None = None) -> int:

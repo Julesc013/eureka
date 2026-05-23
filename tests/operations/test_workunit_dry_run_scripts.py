@@ -125,7 +125,7 @@ class WorkUnitDryRunScriptTests(unittest.TestCase):
 def _tracked_relevant_files() -> list[str]:
     roots = [
         ROOT / "control" / "audits" / "track-b-10-workunit-dry-run-runner-v0" / "generated",
-        ROOT / "examples" / "workunit_dry_runs",
+        ROOT / "examples" / "work_units" / "dry_runs",
     ]
     results: list[str] = []
     for root in roots:

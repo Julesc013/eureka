@@ -1,6 +1,6 @@
 # Reviewed Public Record Proposal Contract
 
-`contracts/master_index/reviewed_public_record_proposal.v0.json` defines the shape of a future reviewed public record proposal.
+`contracts/index/master/reviewed_public_record_proposal.v0.json` defines the shape of a future reviewed public record proposal.
 
 A proposal is review material. It is not a public record, accepted evidence, accepted candidate truth, rights clearance, malware safety, verified installability, or permission to mutate a public or master index.
 

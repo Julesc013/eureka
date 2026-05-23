@@ -7,7 +7,7 @@ from unittest import mock
 from scripts.demo_source_observation_seam import build_demo_result, main as demo_main
 from scripts.validate_source_observation_seam import validate_seam
 
-from runtime.source_observation import (
+from runtime.source.observation import (
     MetadataRequest,
     MetadataResponse,
     ResponseFingerprint,
@@ -59,7 +59,7 @@ class SourceObservationValidationTests(unittest.TestCase):
         self.assertEqual(result["network_dependencies"], 0)
 
     def test_no_h_series_module_import_or_connector_dependency(self) -> None:
-        root = Path(__file__).resolve().parents[2] / "runtime/source_observation"
+        root = Path(__file__).resolve().parents[2] / "runtime/source/observation"
         text = "\n".join(path.read_text(encoding="utf-8") for path in root.glob("*.py"))
         self.assertNotIn("runtime.connectors", text)
         self.assertNotIn("h1_metadata_wave", text)

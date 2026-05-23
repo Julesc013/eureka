@@ -22,7 +22,7 @@ Blocked dry-runs should preserve their blockers. Conflicts are not resolved auto
 ## Commands
 
 ```bash
-python scripts/run_candidate_promotion_dry_run.py --candidate examples/candidates/search_need_candidate_v0.json --review examples/review_queue_entries/candidate_needs_review_v0.json --check
+python scripts/run_candidate_promotion_dry_run.py --candidate examples/index/candidates/search_need_candidate_v0.json --review examples/review/queue_entries/candidate_needs_review_v0.json --check
 python scripts/validate_candidate_promotion_dry_run.py
 ```
 

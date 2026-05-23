@@ -2,7 +2,7 @@
 
 ## Q61 Product/Test Changes
 
-- `runtime/local_foundry/fixture_source_observation_slice.py`
+- `runtime/local/foundry/fixture_source_observation_slice.py`
   - Added deterministic reviewed-index artifact schema, builder, writer, loader, validator, search helper, object lookup helper, and absence helper.
   - Writes `reviewed-index-artifact.json` under the isolated fixture output root.
   - Adds `persistent_reviewed_index` proof to the fixture run report.

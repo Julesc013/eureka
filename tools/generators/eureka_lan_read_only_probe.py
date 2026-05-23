@@ -17,7 +17,7 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.local_network import classify_client_scope
+from runtime.local.network import classify_client_scope
 
 
 READ_ONLY_ROUTES: tuple[tuple[str, str, dict[str, str]], ...] = (

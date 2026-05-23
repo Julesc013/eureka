@@ -9,7 +9,7 @@ ROOT = Path(__file__).resolve().parents[2]
 AUDIT_DIR = ROOT / "control" / "audits" / "candidate-index-v0"
 REPORT_PATH = AUDIT_DIR / "candidate_index_report.json"
 POLICY_PATH = ROOT / "control" / "inventory" / "query_intelligence" / "candidate_index_policy.json"
-EXAMPLE_ROOT = ROOT / "examples" / "candidate_index"
+EXAMPLE_ROOT = ROOT / "examples" / "index" / "candidate"
 REQUIRED_FILES = {
     "README.md",
     "CONTRACT_SUMMARY.md",
@@ -53,7 +53,7 @@ class CandidateIndexContractAuditTests(unittest.TestCase):
         self.assertIn(
             self.report["contract_file"],
             {
-                "contracts/control_schemas/previews/query/candidate_index_record.v0.json",
+                "contracts/schema/control/previews/query/candidate_index_record.v0.json",
                 "contracts/query/candidate_index_record.v0.json",
             },
         )

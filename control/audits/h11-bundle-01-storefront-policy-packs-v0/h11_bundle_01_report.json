@@ -17,8 +17,8 @@
     "docs/operations/H11_STOREFRONT_FIXTURE_PLAN.md"
   ],
   "added_examples": [
-    "examples/source_packs/h11_storefront_source_pack_manifest_v0.json",
-    "examples/source_packs/h11_storefront_policy_pack_v0.json",
+    "examples/packs/source/h11_storefront_source_pack_manifest_v0.json",
+    "examples/packs/source/h11_storefront_policy_pack_v0.json",
     "examples/sources/source_records/*h11_storefront_source_records",
     "examples/connectors/h11_storefront/"
   ],

@@ -22,7 +22,7 @@ class SearchResultExplanationTestMixin:
         return json.loads((ROOT / rel).read_text(encoding="utf-8"))
 
     def sample(self):
-        return self.load("examples/search_result_explanations/minimal_match_explanation_v0/SEARCH_RESULT_EXPLANATION.json")
+        return self.load("examples/search/result_explanations/minimal_match_explanation_v0/SEARCH_RESULT_EXPLANATION.json")
 
 
 class ValidateSearchResultExplanationTests(SearchResultExplanationTestMixin, unittest.TestCase):

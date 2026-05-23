@@ -1,6 +1,6 @@
 # ObjectPage View Model Contract
 
-`contracts/views/object_page.v0.json` defines the first canonical public
+`contracts/view/pages/object_page.v0.json` defines the first canonical public
 ObjectPage view model for Track A. It is a meaning layer for future Eureka
 object/product pages, not a renderer implementation, route activation, hosted
 backend, or runtime object-page feature.
@@ -36,7 +36,7 @@ terminal, print, and native-card projections must preserve.
 ObjectPageView also relates to:
 
 - `contracts/api/search_result_card.v0.json` for future result-card references.
-- `contracts/views/search_page.v0.json` for search-to-object navigation.
+- `contracts/view/pages/search_page.v0.json` for search-to-object navigation.
 - `control/inventory/publication/route_view_representation_matrix.json` for the
   `object_page_future` route/view binding.
 - `control/inventory/publication/semantic_renderer_parity_policy.json` for

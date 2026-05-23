@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import unittest
 
-from runtime.local_service.workbench_review_promote import (
+from runtime.local.service.workbench_review_promote import (
     build_promotion_preview,
     create_review_item_from_candidate,
     record_review_decision,

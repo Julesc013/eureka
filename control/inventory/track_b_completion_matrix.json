@@ -99,7 +99,7 @@
         "control/audits/track-b-03-node-capability-contract-v0/track_b_03_report.json"
       ],
       "contract_paths": [
-        "contracts/control_schemas/policies/node/node_capability.v0.json"
+        "contracts/schema/control/policies/node/node_capability.v0.json"
       ],
       "policy_paths": [
         "control/inventory/nodes/node_capability_registry.json",
@@ -139,7 +139,7 @@
         "control/audits/track-b-04-workunit-contract-v0/track_b_04_report.json"
       ],
       "contract_paths": [
-        "contracts/control_schemas/policies/node/work_unit.v0.json"
+        "contracts/schema/control/policies/node/work_unit.v0.json"
       ],
       "policy_paths": [
         "control/inventory/nodes/workunit_policy.json",
@@ -181,7 +181,7 @@
         "control/audits/track-b-05-workunit-result-contract-v0/track_b_05_report.json"
       ],
       "contract_paths": [
-        "contracts/control_schemas/policies/node/work_unit_result.v0.json"
+        "contracts/schema/control/policies/node/work_unit_result.v0.json"
       ],
       "policy_paths": [
         "control/inventory/nodes/workunit_result_policy.json",
@@ -200,8 +200,8 @@
         "tests/contracts/test_eureka_workunit_result.py"
       ],
       "example_paths": [
-        "examples/work_unit_results/search_need_review_pass_v0/work_unit_result.json",
-        "examples/work_unit_results/policy_blocked_result_v0/work_unit_result.json"
+        "examples/work_units/results/search_need_review_pass_v0/work_unit_result.json",
+        "examples/work_units/results/policy_blocked_result_v0/work_unit_result.json"
       ],
       "audit_paths": [
         "control/audits/track-b-05-workunit-result-contract-v0"
@@ -223,7 +223,7 @@
         "control/audits/track-b-06-local-foundry-state-contract-v0/track_b_06_report.json"
       ],
       "contract_paths": [
-        "contracts/control_schemas/policies/node/local_foundry_state.v0.json"
+        "contracts/schema/control/policies/node/local_foundry_state.v0.json"
       ],
       "policy_paths": [
         "control/inventory/local_state/local_foundry_state_policy.json",
@@ -272,7 +272,7 @@
         "control/inventory/observations/query_observation_poisoning_guard_policy.json"
       ],
       "runtime_paths": [
-        "runtime/local_foundry/query_observation.py"
+        "runtime/local/foundry/query_observation.py"
       ],
       "script_paths": [
         "scripts/record_query_observation.py",
@@ -286,7 +286,7 @@
         "tests/operations/test_query_observation_runtime_scripts.py"
       ],
       "example_paths": [
-        "examples/query_observations/minimal_query_observation_v0.json"
+        "examples/search/query_observations/minimal_query_observation_v0.json"
       ],
       "audit_paths": [
         "control/audits/track-b-07-query-observation-runtime-v0"
@@ -317,7 +317,7 @@
         "control/inventory/observations/search_miss_failure_mode_policy.json"
       ],
       "runtime_paths": [
-        "runtime/local_foundry/search_miss_ledger.py"
+        "runtime/local/foundry/search_miss_ledger.py"
       ],
       "script_paths": [
         "scripts/record_search_miss.py",
@@ -331,7 +331,7 @@
         "tests/operations/test_search_miss_ledger_runtime_scripts.py"
       ],
       "example_paths": [
-        "examples/search_misses/minimal_search_miss_v0.json"
+        "examples/search/misses/minimal_search_miss_v0.json"
       ],
       "audit_paths": [
         "control/audits/track-b-08-search-miss-ledger-runtime-v0"
@@ -362,7 +362,7 @@
         "control/inventory/observations/search_need_status_policy.json"
       ],
       "runtime_paths": [
-        "runtime/local_foundry/search_need.py"
+        "runtime/local/foundry/search_need.py"
       ],
       "script_paths": [
         "scripts/record_search_need.py",
@@ -376,7 +376,7 @@
         "tests/operations/test_search_need_runtime_scripts.py"
       ],
       "example_paths": [
-        "examples/search_needs/minimal_search_need_v0.json"
+        "examples/search/needs/minimal_search_need_v0.json"
       ],
       "audit_paths": [
         "control/audits/track-b-09-search-need-runtime-v0"
@@ -398,8 +398,8 @@
         "control/audits/track-b-10-workunit-dry-run-runner-v0/track_b_10_report.json"
       ],
       "contract_paths": [
-        "contracts/control_schemas/policies/node/work_unit.v0.json",
-        "contracts/control_schemas/policies/node/work_unit_result.v0.json"
+        "contracts/schema/control/policies/node/work_unit.v0.json",
+        "contracts/schema/control/policies/node/work_unit_result.v0.json"
       ],
       "policy_paths": [
         "control/inventory/nodes/workunit_dry_run_policy.json",
@@ -408,7 +408,7 @@
         "control/inventory/nodes/workunit_dry_run_review_policy.json"
       ],
       "runtime_paths": [
-        "runtime/local_foundry/workunit_dry_run.py"
+        "runtime/local/foundry/workunit_dry_run.py"
       ],
       "script_paths": [
         "scripts/run_workunit_dry_run.py",
@@ -423,7 +423,7 @@
       ],
       "example_paths": [
         "examples/work_units/search_need_review_v0/work_unit.json",
-        "examples/work_unit_results/search_need_review_pass_v0/work_unit_result.json"
+        "examples/work_units/results/search_need_review_pass_v0/work_unit_result.json"
       ],
       "audit_paths": [
         "control/audits/track-b-10-workunit-dry-run-runner-v0"
@@ -454,7 +454,7 @@
         "control/inventory/nodes/node_policy_evaluation_decision_registry.json"
       ],
       "runtime_paths": [
-        "runtime/local_foundry/node_policy_evaluator.py"
+        "runtime/local/foundry/node_policy_evaluator.py"
       ],
       "script_paths": [
         "scripts/evaluate_node_policy.py",
@@ -490,7 +490,7 @@
         "control/audits/track-b-12-candidate-store-runtime-v0/track_b_12_report.json"
       ],
       "contract_paths": [
-        "contracts/control_schemas/previews/query/candidate_index_record.v0.json"
+        "contracts/schema/control/previews/query/candidate_index_record.v0.json"
       ],
       "policy_paths": [
         "control/inventory/candidates/candidate_store_runtime_policy.json",
@@ -499,7 +499,7 @@
         "control/inventory/candidates/candidate_output_policy.json"
       ],
       "runtime_paths": [
-        "runtime/local_foundry/candidate_store.py"
+        "runtime/local/foundry/candidate_store.py"
       ],
       "script_paths": [
         "scripts/summarize_candidate_store.py",
@@ -513,7 +513,7 @@
         "tests/operations/test_candidate_store_runtime_scripts.py"
       ],
       "example_paths": [
-        "examples/candidates/minimal_candidate_v0.json"
+        "examples/index/candidates/minimal_candidate_v0.json"
       ],
       "audit_paths": [
         "control/audits/track-b-12-candidate-store-runtime-v0"
@@ -536,7 +536,7 @@
         "control/audits/track-b-13-local-source-cache-runtime-planning-v0/source_cache_runtime_readiness.md"
       ],
       "contract_paths": [
-        "contracts/source_cache/source_cache_record.v0.json"
+        "contracts/source/cache/source_cache_record.v0.json"
       ],
       "policy_paths": [
         "control/inventory/source_cache/local_source_cache_runtime_plan.json",
@@ -554,7 +554,7 @@
         "tests/operations/test_local_source_cache_runtime_plan.py"
       ],
       "example_paths": [
-        "examples/source_cache_plans/minimal_local_source_cache_plan_v0.json"
+        "examples/sources/cache/plans/minimal_local_source_cache_plan_v0.json"
       ],
       "audit_paths": [
         "control/audits/track-b-13-local-source-cache-runtime-planning-v0"
@@ -595,7 +595,7 @@
         "tests/operations/test_local_evidence_ledger_runtime_plan.py"
       ],
       "example_paths": [
-        "examples/evidence_ledger_plans/minimal_local_evidence_ledger_plan_v0.json"
+        "examples/evidence/ledger/plans/minimal_local_evidence_ledger_plan_v0.json"
       ],
       "audit_paths": [
         "control/audits/track-b-14-local-evidence-ledger-runtime-planning-v0"
@@ -619,7 +619,7 @@
         "control/audits/track-b-15-local-source-cache-runtime-v0/track_b_15_report.json"
       ],
       "contract_paths": [
-        "contracts/source_cache/source_cache_record.v0.json"
+        "contracts/source/cache/source_cache_record.v0.json"
       ],
       "policy_paths": [
         "control/inventory/source_cache/local_source_cache_record_runtime_policy.json",
@@ -630,7 +630,7 @@
         "control/inventory/source_cache/local_source_cache_runtime_review_policy.json"
       ],
       "runtime_paths": [
-        "runtime/local_foundry/source_cache.py"
+        "runtime/local/foundry/source_cache.py"
       ],
       "script_paths": [
         "scripts/record_source_cache.py",
@@ -645,7 +645,7 @@
         "tests/operations/test_local_source_cache_runtime_scripts.py"
       ],
       "example_paths": [
-        "examples/source_cache_records/minimal_source_cache_record_v0.json"
+        "examples/sources/cache/records/minimal_source_cache_record_v0.json"
       ],
       "audit_paths": [
         "control/audits/track-b-15-local-source-cache-runtime-v0"
@@ -681,7 +681,7 @@
         "control/inventory/evidence_ledger/local_evidence_ledger_provenance_policy.json"
       ],
       "runtime_paths": [
-        "runtime/local_foundry/evidence_ledger.py"
+        "runtime/local/foundry/evidence_ledger.py"
       ],
       "script_paths": [
         "scripts/record_evidence_ledger.py",
@@ -696,7 +696,7 @@
         "tests/operations/test_local_evidence_ledger_runtime_scripts.py"
       ],
       "example_paths": [
-        "examples/evidence_ledger_records/minimal_evidence_record_v0.json"
+        "examples/evidence/ledger/records/minimal_evidence_record_v0.json"
       ],
       "audit_paths": [
         "control/audits/track-b-16-local-evidence-ledger-runtime-v0"
@@ -720,7 +720,7 @@
         "control/audits/track-b-17-source-cache-to-evidence-bridge-v0/track_b_17_report.json"
       ],
       "contract_paths": [
-        "contracts/source_cache/source_cache_record.v0.json",
+        "contracts/source/cache/source_cache_record.v0.json",
         "docs/reference/EVIDENCE_LEDGER_CONTRACT.md"
       ],
       "policy_paths": [
@@ -731,7 +731,7 @@
         "control/inventory/evidence_ledger/source_cache_to_evidence_path_policy.json"
       ],
       "runtime_paths": [
-        "runtime/local_foundry/source_cache_to_evidence.py"
+        "runtime/local/foundry/source_cache_to_evidence.py"
       ],
       "script_paths": [
         "scripts/bridge_source_cache_to_evidence.py",
@@ -745,7 +745,7 @@
         "tests/operations/test_source_cache_to_evidence_bridge_scripts.py"
       ],
       "example_paths": [
-        "examples/source_cache_to_evidence/minimal_bridge_case_v0.json"
+        "examples/sources/cache/to_evidence/minimal_bridge_case_v0.json"
       ],
       "audit_paths": [
         "control/audits/track-b-17-source-cache-to-evidence-bridge-v0"
@@ -767,7 +767,7 @@
         "control/audits/track-b-18-local-review-queue-runtime-v0/track_b_18_report.json"
       ],
       "contract_paths": [
-        "contracts/control_schemas/tasks/master_index/review_queue_entry.v0.json",
+        "contracts/schema/control/tasks/master_index/review_queue_entry.v0.json",
         "docs/reference/MASTER_INDEX_REVIEW_QUEUE_CONTRACT.md"
       ],
       "policy_paths": [
@@ -780,7 +780,7 @@
         "control/inventory/review/local_review_queue_truth_policy.json"
       ],
       "runtime_paths": [
-        "runtime/local_foundry/review_queue.py"
+        "runtime/local/foundry/review_queue.py"
       ],
       "script_paths": [
         "scripts/record_review_queue.py",
@@ -795,7 +795,7 @@
         "tests/operations/test_local_review_queue_runtime_scripts.py"
       ],
       "example_paths": [
-        "examples/review_queue_entries/minimal_review_queue_entry_v0.json"
+        "examples/review/queue_entries/minimal_review_queue_entry_v0.json"
       ],
       "audit_paths": [
         "control/audits/track-b-18-local-review-queue-runtime-v0"
@@ -817,7 +817,7 @@
         "control/audits/track-b-19-candidate-promotion-dry-run-v0/track_b_19_report.json"
       ],
       "contract_paths": [
-        "contracts/control_schemas/previews/query/candidate_index_record.v0.json"
+        "contracts/schema/control/previews/query/candidate_index_record.v0.json"
       ],
       "policy_paths": [
         "control/inventory/review/candidate_promotion_dry_run_policy.json",
@@ -828,7 +828,7 @@
         "control/inventory/review/candidate_promotion_truth_policy.json"
       ],
       "runtime_paths": [
-        "runtime/local_foundry/candidate_promotion_dry_run.py"
+        "runtime/local/foundry/candidate_promotion_dry_run.py"
       ],
       "script_paths": [
         "scripts/run_candidate_promotion_dry_run.py",
@@ -842,7 +842,7 @@
         "tests/operations/test_candidate_promotion_dry_run_scripts.py"
       ],
       "example_paths": [
-        "examples/candidate_promotion_dry_runs/minimal_promotion_dry_run_v0.json"
+        "examples/review/candidate_promotion_dry_runs/minimal_promotion_dry_run_v0.json"
       ],
       "audit_paths": [
         "control/audits/track-b-19-candidate-promotion-dry-run-v0"
@@ -865,8 +865,8 @@
         "control/audits/track-b-20-reviewed-public-index-rebuild-contract-v0/track_b_20_report.json"
       ],
       "contract_paths": [
-        "contracts/master_index/reviewed_public_index_rebuild.v0.json",
-        "contracts/master_index/reviewed_public_record_proposal.v0.json"
+        "contracts/index/master/reviewed_public_index_rebuild.v0.json",
+        "contracts/index/master/reviewed_public_record_proposal.v0.json"
       ],
       "policy_paths": [
         "control/inventory/review/reviewed_public_index_rebuild_policy.json",
@@ -887,8 +887,8 @@
         "tests/contracts/test_reviewed_public_index_rebuild_contract.py"
       ],
       "example_paths": [
-        "examples/reviewed_public_index_rebuilds/minimal_rebuild_contract_v0.json",
-        "examples/reviewed_public_records/minimal_reviewed_public_record_proposal_v0.json"
+        "examples/index/reviewed_public_rebuilds/minimal_rebuild_contract_v0.json",
+        "examples/index/reviewed_public_records/minimal_reviewed_public_record_proposal_v0.json"
       ],
       "audit_paths": [
         "control/audits/track-b-20-reviewed-public-index-rebuild-contract-v0"
@@ -910,10 +910,10 @@
         "control/audits/track-b-21-pack-builder-runtime-v0/track_b_21_report.json"
       ],
       "contract_paths": [
-        "contracts/control_schemas/policies/packs/source_pack.v0.json",
-        "contracts/control_schemas/policies/packs/evidence_pack.v0.json",
-        "contracts/control_schemas/policies/packs/index_pack.v0.json",
-        "contracts/control_schemas/policies/packs/contribution_pack.v0.json"
+        "contracts/schema/control/policies/packs/source_pack.v0.json",
+        "contracts/schema/control/policies/packs/evidence_pack.v0.json",
+        "contracts/schema/control/policies/packs/index_pack.v0.json",
+        "contracts/schema/control/policies/packs/contribution_pack.v0.json"
       ],
       "policy_paths": [
         "control/inventory/packs/pack_builder_runtime_policy.json",
@@ -925,7 +925,7 @@
         "control/inventory/packs/pack_builder_truth_policy.json"
       ],
       "runtime_paths": [
-        "runtime/local_foundry/pack_builder.py"
+        "runtime/local/foundry/pack_builder.py"
       ],
       "script_paths": [
         "scripts/build_local_pack.py",
@@ -940,8 +940,8 @@
         "tests/operations/test_pack_builder_runtime_scripts.py"
       ],
       "example_paths": [
-        "examples/pack_builder/evidence_pack_draft_case_v0.json",
-        "examples/pack_drafts/evidence_pack_draft_v0.json"
+        "examples/packs/builder/evidence_pack_draft_case_v0.json",
+        "examples/packs/drafts/evidence_pack_draft_v0.json"
       ],
       "audit_paths": [
         "control/audits/track-b-21-pack-builder-runtime-v0"
@@ -963,10 +963,10 @@
         "control/audits/track-b-22-pack-export-runtime-v0/track_b_22_report.json"
       ],
       "contract_paths": [
-        "contracts/control_schemas/policies/packs/source_pack.v0.json",
-        "contracts/control_schemas/policies/packs/evidence_pack.v0.json",
-        "contracts/control_schemas/policies/packs/index_pack.v0.json",
-        "contracts/control_schemas/policies/packs/contribution_pack.v0.json"
+        "contracts/schema/control/policies/packs/source_pack.v0.json",
+        "contracts/schema/control/policies/packs/evidence_pack.v0.json",
+        "contracts/schema/control/policies/packs/index_pack.v0.json",
+        "contracts/schema/control/policies/packs/contribution_pack.v0.json"
       ],
       "policy_paths": [
         "control/inventory/packs/pack_export_runtime_policy.json",
@@ -979,7 +979,7 @@
         "control/inventory/packs/pack_export_fixity_policy.json"
       ],
       "runtime_paths": [
-        "runtime/local_foundry/pack_export.py"
+        "runtime/local/foundry/pack_export.py"
       ],
       "script_paths": [
         "scripts/export_local_pack.py",
@@ -993,7 +993,7 @@
         "tests/operations/test_pack_export_runtime_scripts.py"
       ],
       "example_paths": [
-        "examples/pack_exports/evidence_pack_export_v0.json"
+        "examples/packs/exports/evidence_pack_export_v0.json"
       ],
       "audit_paths": [
         "control/audits/track-b-22-pack-export-runtime-v0"
@@ -1011,25 +1011,25 @@
   "contract_families": [
     "contracts/node",
     "contracts/query",
-    "contracts/source_cache",
-    "contracts/packs",
-    "contracts/master_index",
+    "contracts/source/cache",
+    "contracts/pack",
+    "contracts/index/master",
     "docs/reference/EVIDENCE_LEDGER_CONTRACT.md"
   ],
   "runtime_families": [
-    "runtime/local_foundry/query_observation.py",
-    "runtime/local_foundry/search_miss_ledger.py",
-    "runtime/local_foundry/search_need.py",
-    "runtime/local_foundry/workunit_dry_run.py",
-    "runtime/local_foundry/node_policy_evaluator.py",
-    "runtime/local_foundry/candidate_store.py",
-    "runtime/local_foundry/source_cache.py",
-    "runtime/local_foundry/evidence_ledger.py",
-    "runtime/local_foundry/source_cache_to_evidence.py",
-    "runtime/local_foundry/review_queue.py",
-    "runtime/local_foundry/candidate_promotion_dry_run.py",
-    "runtime/local_foundry/pack_builder.py",
-    "runtime/local_foundry/pack_export.py"
+    "runtime/local/foundry/query_observation.py",
+    "runtime/local/foundry/search_miss_ledger.py",
+    "runtime/local/foundry/search_need.py",
+    "runtime/local/foundry/workunit_dry_run.py",
+    "runtime/local/foundry/node_policy_evaluator.py",
+    "runtime/local/foundry/candidate_store.py",
+    "runtime/local/foundry/source_cache.py",
+    "runtime/local/foundry/evidence_ledger.py",
+    "runtime/local/foundry/source_cache_to_evidence.py",
+    "runtime/local/foundry/review_queue.py",
+    "runtime/local/foundry/candidate_promotion_dry_run.py",
+    "runtime/local/foundry/pack_builder.py",
+    "runtime/local/foundry/pack_export.py"
   ],
   "validator_families": [
     "scripts/validate_eureka_node_manifest.py",
@@ -1066,22 +1066,22 @@
     "control/inventory/packs"
   ],
   "example_families": [
-    "examples/query_observations",
-    "examples/search_misses",
-    "examples/search_needs",
+    "examples/search/query_observations",
+    "examples/search/misses",
+    "examples/search/needs",
     "examples/work_units",
-    "examples/work_unit_results",
-    "examples/candidates",
-    "examples/source_cache_records",
-    "examples/evidence_ledger_records",
-    "examples/source_cache_to_evidence",
-    "examples/review_queue_entries",
-    "examples/candidate_promotion_dry_runs",
-    "examples/reviewed_public_index_rebuilds",
-    "examples/reviewed_public_records",
-    "examples/pack_builder",
-    "examples/pack_drafts",
-    "examples/pack_exports"
+    "examples/work_units/results",
+    "examples/index/candidates",
+    "examples/sources/cache/records",
+    "examples/evidence/ledger/records",
+    "examples/sources/cache/to_evidence",
+    "examples/review/queue_entries",
+    "examples/review/candidate_promotion_dry_runs",
+    "examples/index/reviewed_public_rebuilds",
+    "examples/index/reviewed_public_records",
+    "examples/packs/builder",
+    "examples/packs/drafts",
+    "examples/packs/exports"
   ],
   "audit_packs": [
     "control/audits/track-b-01-eureka-node-manifest-v0",

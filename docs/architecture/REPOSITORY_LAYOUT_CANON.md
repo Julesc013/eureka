@@ -16,7 +16,7 @@ The validator is `scripts/validate_repo_structure_canon.py`.
 The repository is bootstrap and pre-product. EUREKA-STRUCTURE-BIG-BANG-01 reconciled the recorded layout debt without claiming production readiness:
 generated public-index artifacts now live under `site/dist/data/public_index`,
 deployment definitions under `release/`, retired prototypes under `archive/`,
-schema authority under `contracts/control_schemas`, workbench presentation under
+schema authority under `contracts/schema/control`, workbench presentation under
 `surfaces/web/workbench/local_html`, and substantive tool implementations under
 `tools/` behind `scripts/` wrappers.
 
@@ -100,7 +100,7 @@ and the move map in
 `control/audits/eureka-structure-big-bang-v1/path_migration_map.json`.
 
 Product/public contract authority remains under `contracts/`;
-`contracts/control_schemas/` is retained as migrated schema authority and must
+`contracts/schema/control/` is retained as migrated schema authority and must
 not be reintroduced under `control/`. `examples/` and `runtime/` are not
 contract authority.
 

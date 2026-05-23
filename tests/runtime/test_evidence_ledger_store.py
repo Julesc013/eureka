@@ -3,7 +3,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from runtime.evidence_ledger import (
+from runtime.evidence.ledger import (
     EvidenceCandidateRecord,
     EvidenceConflict,
     EvidenceEvent,
@@ -11,12 +11,12 @@ from runtime.evidence_ledger import (
     EvidenceLedgerStore,
     EvidenceReviewStatus,
 )
-from runtime.evidence_ledger.validation import (
+from runtime.evidence.ledger.validation import (
     validate_evidence_ledger_path,
     validate_no_public_truth_fields,
 )
-from runtime.source_cache import SourceCacheStatus, SourceCacheStore, build_cache_entry
-from runtime.source_observation import build_evidence_candidate
+from runtime.source.cache import SourceCacheStatus, SourceCacheStore, build_cache_entry
+from runtime.source.observation import build_evidence_candidate
 from scripts.demo_source_cache_store import build_demo_objects
 
 

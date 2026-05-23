@@ -17,7 +17,7 @@
     "/api/v1/source/<source_id>",
     "/api/v1/absence"
   ],
-  "runtime_package": "runtime/local_service",
+  "runtime_package": "runtime/local/service",
   "schema_version": "local_http_service_inventory.v0",
   "source_probe_execution_enabled": false,
   "task": "LOCAL-04",

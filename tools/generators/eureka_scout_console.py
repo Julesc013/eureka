@@ -13,7 +13,7 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.local_eval.scout_schema import (  # noqa: E402
+from runtime.local.eval.scout_schema import (  # noqa: E402
     PROJECTION_PROFILES,
     build_scout_console_view,
     load_scout_example_records,

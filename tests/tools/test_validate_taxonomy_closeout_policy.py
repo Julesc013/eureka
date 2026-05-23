@@ -39,9 +39,9 @@ def write_minimal_fixture(root: Path) -> None:
         {
             "status": "active_closeout_policy",
             "product_behavior_change_allowed": False,
-            "runtime": {"closeout_mode": "freeze_current_names", "target_families": ["runtime/local"]},
-            "contracts": {"closeout_mode": "migration_map_first", "target_families": ["contracts/source"]},
-            "examples": {"closeout_mode": "migration_map_first", "target_families": ["examples/packs"]},
+            "runtime": {"closeout_mode": "canonical_with_compatibility_wrappers", "target_families": ["runtime/local"]},
+            "contracts": {"closeout_mode": "canonical_paths_with_alias_inventory", "target_families": ["contracts/source"]},
+            "examples": {"closeout_mode": "canonical_families_with_remaining_classified_debt", "target_families": ["examples/packs"]},
         },
     )
     write_json(
@@ -67,6 +67,8 @@ def write_minimal_fixture(root: Path) -> None:
         "control/audits/taxonomy-closeout-v1/contracts_taxonomy_migration_map.json",
         "control/audits/taxonomy-closeout-v1/examples_taxonomy_closeout.json",
         "control/audits/taxonomy-closeout-v1/aide_ledger_size_report.json",
+        "control/audits/eureka-structure-final-closeout-v1/before_state.json",
+        "control/audits/eureka-structure-final-closeout-v1/path_migration_map.json",
     ]:
         write_json(root / relative, {"status": "valid"})
     for relative in [
@@ -77,8 +79,8 @@ def write_minimal_fixture(root: Path) -> None:
         "control/audits/taxonomy-closeout-v1/aide_ledger_size_report.md",
     ]:
         write(root / relative, "ok\n")
-    write(root / "contracts/control_schemas/README.md", "compatibility canonical target not active runtime\n")
-    write(root / "runtime/README.md", "runtime/engine taxonomy closeout current names are frozen\n")
+    write(root / "contracts/schema/control/README.md", "compatibility canonical target not active runtime\n")
+    write(root / "runtime/README.md", "runtime/engine taxonomy closeout compatibility\n")
     write(root / "runtime/pages/README.md", "runtime metadata not presentation surfaces/web\n")
     write(root / "examples/README.md", "durable families taxonomy closeout public-safe\n")
     write(root / ".aide/README.md", "not product truth export-only retention-capped\n")

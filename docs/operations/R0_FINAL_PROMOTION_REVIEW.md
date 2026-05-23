@@ -9,7 +9,7 @@ The recovered R0 state on `dev` is promotion-ready for a dev-to-main baseline up
 ## Checked
 
 - Git state: current branch, `HEAD`, `origin/dev`, `origin/main`, dev/main ancestry, sync status, and working-tree scope.
-- R0 runtime seams: `runtime/source_observation`, `runtime/source_cache`, `runtime/evidence_ledger`, `runtime/review_queue`, `runtime/public_index`, and the one-source PyPI metadata live pipeline evidence.
+- R0 runtime seams: `runtime/source/observation`, `runtime/source/cache`, `runtime/evidence/ledger`, `runtime/review/queue`, `runtime/index/public`, and the one-source PyPI metadata live pipeline evidence.
 - R0 remediation evidence: contract taxonomy remediation, generated artifact drift remediation, and legacy runtime leakage remediation.
 - Validation evidence: full unittest discovery, generated artifact cleanliness, architecture boundary checks, and R0 validators.
 - Warning disposition: prior R0 warnings, resolved contract taxonomy warnings, generated artifact drift, and remaining legacy leakage allowlist debt.

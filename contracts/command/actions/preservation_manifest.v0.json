@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/command/actions/preservation_manifest.v0.json",
+  "title": "Eureka Preservation Manifest v0",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "preservation_manifest_id",
+    "preservation_status",
+    "subject_refs",
+    "source_refs",
+    "evidence_refs",
+    "fixity_refs",
+    "preservation_actions_current",
+    "preservation_actions_future",
+    "blocked_actions",
+    "storage_or_cas_refs_future",
+    "limitations",
+    "truth_boundary",
+    "product_boundary"
+  ],
+  "properties": {
+    "schema_version": { "const": "preservation_manifest.v0" },
+    "preservation_status": { "enum": ["metadata_manifest_only", "example_only", "blocked_by_policy", "not_evaluable"] },
+    "truth_boundary": {
+      "type": "object",
+      "properties": {
+        "preservation_manifest_mirrors_file": { "const": false },
+        "preservation_manifest_captures_file": { "const": false },
+        "public_index_mutated": { "const": false },
+        "master_index_mutated": { "const": false }
+      }
+    }
+  },
+  "additionalProperties": true
+}

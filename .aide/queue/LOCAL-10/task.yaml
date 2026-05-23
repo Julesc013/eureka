@@ -13,7 +13,7 @@ proof_level_required: L2
 recommended_after: LOCAL-09
 recommended_next: LOCAL-11
 completion_evidence:
-  - runtime/local_eval package added
+  - runtime/local/eval package added
   - deterministic local auto-test and auto-search scripts added
   - latency, safety, service, search, absence, and workbench suites added
   - LOCAL-10 validator and focused tests added

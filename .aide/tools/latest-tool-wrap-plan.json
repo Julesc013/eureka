@@ -5344,7 +5344,7 @@
         "unknown",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "contracts/actions/export_manifest.v0.json",
+      "source_tool": "contracts/command/actions/export_manifest.v0.json",
       "target_aide_command_hint": "review before wrapper mapping",
       "validation_plan": [
         "tools validate",
@@ -5416,7 +5416,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "contracts/master_index/reviewed_public_index_rebuild.v0.json",
+      "source_tool": "contracts/index/master/reviewed_public_index_rebuild.v0.json",
       "target_aide_command_hint": "aide build",
       "validation_plan": [
         "tools validate",
@@ -5584,7 +5584,7 @@
         "unknown",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "contracts/source_sync/source_sync_job_kind.v0.json",
+      "source_tool": "contracts/source/sync/source_sync_job_kind.v0.json",
       "target_aide_command_hint": "review before wrapper mapping",
       "validation_plan": [
         "tools validate",
@@ -5608,7 +5608,7 @@
         "unknown",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "contracts/source_sync/source_sync_worker_job.v0.json",
+      "source_tool": "contracts/source/sync/source_sync_worker_job.v0.json",
       "target_aide_command_hint": "review before wrapper mapping",
       "validation_plan": [
         "tools validate",
@@ -5632,7 +5632,7 @@
         "unknown",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "contracts/source_sync/source_sync_worker_manifest.v0.json",
+      "source_tool": "contracts/source/sync/source_sync_worker_manifest.v0.json",
       "target_aide_command_hint": "review before wrapper mapping",
       "validation_plan": [
         "tools validate",
@@ -5680,7 +5680,7 @@
         "unknown",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "contracts/ui/ui_contracts/stored_exports.ui_contract.yaml",
+      "source_tool": "contracts/surface/ui/contracts/stored_exports.ui_contract.yaml",
       "target_aide_command_hint": "review before wrapper mapping",
       "validation_plan": [
         "tools validate",
@@ -5704,7 +5704,7 @@
         "unknown",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "contracts/ui/view_models/stored_exports.view_model.yaml",
+      "source_tool": "contracts/view/models/ui/stored_exports.view_model.yaml",
       "target_aide_command_hint": "review before wrapper mapping",
       "validation_plan": [
         "tools validate",
@@ -18376,7 +18376,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "contracts/control_schemas/audits/audits/mvp_alpha_readiness_audit.v0.json",
+      "source_tool": "contracts/schema/control/audits/audits/mvp_alpha_readiness_audit.v0.json",
       "target_aide_command_hint": "aide audit",
       "validation_plan": [
         "tools validate",
@@ -18400,7 +18400,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "contracts/control_schemas/audits/h1/connectors/integration_audit.v0.json",
+      "source_tool": "contracts/schema/control/audits/h1/connectors/integration_audit.v0.json",
       "target_aide_command_hint": "aide audit",
       "validation_plan": [
         "tools validate",
@@ -18424,7 +18424,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "contracts/control_schemas/audits/h10/connectors/games_emulation_integration_audit.v0.json",
+      "source_tool": "contracts/schema/control/audits/h10/connectors/games_emulation_integration_audit.v0.json",
       "target_aide_command_hint": "aide audit",
       "validation_plan": [
         "tools validate",
@@ -18448,7 +18448,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "contracts/control_schemas/audits/h11/connectors/storefront_integration_audit.v0.json",
+      "source_tool": "contracts/schema/control/audits/h11/connectors/storefront_integration_audit.v0.json",
       "target_aide_command_hint": "aide audit",
       "validation_plan": [
         "tools validate",
@@ -18472,7 +18472,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "contracts/control_schemas/audits/h12/connectors/retro_community_integration_audit.v0.json",
+      "source_tool": "contracts/schema/control/audits/h12/connectors/retro_community_integration_audit.v0.json",
       "target_aide_command_hint": "aide audit",
       "validation_plan": [
         "tools validate",
@@ -18496,7 +18496,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "contracts/control_schemas/audits/h13/connectors/local_private_integration_audit.v0.json",
+      "source_tool": "contracts/schema/control/audits/h13/connectors/local_private_integration_audit.v0.json",
       "target_aide_command_hint": "aide audit",
       "validation_plan": [
         "tools validate",
@@ -18520,7 +18520,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "contracts/control_schemas/audits/h14/connectors/source_discovery_integration_audit.v0.json",
+      "source_tool": "contracts/schema/control/audits/h14/connectors/source_discovery_integration_audit.v0.json",
       "target_aide_command_hint": "aide audit",
       "validation_plan": [
         "tools validate",
@@ -18544,7 +18544,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "contracts/control_schemas/audits/h2/connectors/package_connector_wave_postmortem.v0.json",
+      "source_tool": "contracts/schema/control/audits/h2/connectors/package_connector_wave_postmortem.v0.json",
       "target_aide_command_hint": "aide audit",
       "validation_plan": [
         "tools validate",
@@ -18568,7 +18568,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "contracts/control_schemas/audits/h2/connectors/package_integration_audit.v0.json",
+      "source_tool": "contracts/schema/control/audits/h2/connectors/package_integration_audit.v0.json",
       "target_aide_command_hint": "aide audit",
       "validation_plan": [
         "tools validate",
@@ -18592,7 +18592,7 @@
         "low",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "contracts/control_schemas/audits/h2/connectors/package_quality_delta_report.v0.json",
+      "source_tool": "contracts/schema/control/audits/h2/connectors/package_quality_delta_report.v0.json",
       "target_aide_command_hint": "aide audit",
       "validation_plan": [
         "tools validate",
@@ -18616,7 +18616,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "contracts/control_schemas/audits/h2/connectors/package_review_integration_result.v0.json",
+      "source_tool": "contracts/schema/control/audits/h2/connectors/package_review_integration_result.v0.json",
       "target_aide_command_hint": "aide audit",
       "validation_plan": [
         "tools validate",
@@ -18640,7 +18640,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "contracts/control_schemas/audits/h3/connectors/os_package_connector_wave_postmortem.v0.json",
+      "source_tool": "contracts/schema/control/audits/h3/connectors/os_package_connector_wave_postmortem.v0.json",
       "target_aide_command_hint": "aide audit",
       "validation_plan": [
         "tools validate",
@@ -18664,7 +18664,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "contracts/control_schemas/audits/h3/connectors/os_package_integration_audit.v0.json",
+      "source_tool": "contracts/schema/control/audits/h3/connectors/os_package_integration_audit.v0.json",
       "target_aide_command_hint": "aide audit",
       "validation_plan": [
         "tools validate",
@@ -18688,7 +18688,7 @@
         "low",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "contracts/control_schemas/audits/h3/connectors/os_package_quality_delta_report.v0.json",
+      "source_tool": "contracts/schema/control/audits/h3/connectors/os_package_quality_delta_report.v0.json",
       "target_aide_command_hint": "aide audit",
       "validation_plan": [
         "tools validate",
@@ -18712,7 +18712,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "contracts/control_schemas/audits/h3/connectors/os_package_review_integration_result.v0.json",
+      "source_tool": "contracts/schema/control/audits/h3/connectors/os_package_review_integration_result.v0.json",
       "target_aide_command_hint": "aide audit",
       "validation_plan": [
         "tools validate",
@@ -18736,7 +18736,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "contracts/control_schemas/audits/h4/connectors/code_source_integration_audit.v0.json",
+      "source_tool": "contracts/schema/control/audits/h4/connectors/code_source_integration_audit.v0.json",
       "target_aide_command_hint": "aide audit",
       "validation_plan": [
         "tools validate",
@@ -18760,7 +18760,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "contracts/control_schemas/audits/h5/connectors/vendor_update_integration_audit.v0.json",
+      "source_tool": "contracts/schema/control/audits/h5/connectors/vendor_update_integration_audit.v0.json",
       "target_aide_command_hint": "aide audit",
       "validation_plan": [
         "tools validate",
@@ -18784,7 +18784,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "contracts/control_schemas/audits/h6/connectors/web_archive_integration_audit.v0.json",
+      "source_tool": "contracts/schema/control/audits/h6/connectors/web_archive_integration_audit.v0.json",
       "target_aide_command_hint": "aide audit",
       "validation_plan": [
         "tools validate",
@@ -18808,7 +18808,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "contracts/control_schemas/audits/h7/connectors/library_research_integration_audit.v0.json",
+      "source_tool": "contracts/schema/control/audits/h7/connectors/library_research_integration_audit.v0.json",
       "target_aide_command_hint": "aide audit",
       "validation_plan": [
         "tools validate",
@@ -18832,7 +18832,7 @@
         "low",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "contracts/control_schemas/audits/h8/connectors/manuals_docs_integration_audit.v0.json",
+      "source_tool": "contracts/schema/control/audits/h8/connectors/manuals_docs_integration_audit.v0.json",
       "target_aide_command_hint": "aide audit",
       "validation_plan": [
         "tools validate",
@@ -18856,7 +18856,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "contracts/control_schemas/audits/h9/connectors/media_metadata_integration_audit.v0.json",
+      "source_tool": "contracts/schema/control/audits/h9/connectors/media_metadata_integration_audit.v0.json",
       "target_aide_command_hint": "aide audit",
       "validation_plan": [
         "tools validate",
@@ -18880,7 +18880,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "contracts/control_schemas/audits/hosting/public_launch_readiness_audit.v0.json",
+      "source_tool": "contracts/schema/control/audits/hosting/public_launch_readiness_audit.v0.json",
       "target_aide_command_hint": "aide audit",
       "validation_plan": [
         "tools validate",
@@ -18904,7 +18904,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "contracts/control_schemas/audits/native/native_first_wave_integration_audit.v0.json",
+      "source_tool": "contracts/schema/control/audits/native/native_first_wave_integration_audit.v0.json",
       "target_aide_command_hint": "aide audit",
       "validation_plan": [
         "tools validate",
@@ -18928,7 +18928,7 @@
         "low",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "contracts/control_schemas/audits/packs/pack_import_report.v0.json",
+      "source_tool": "contracts/schema/control/audits/packs/pack_import_report.v0.json",
       "target_aide_command_hint": "aide audit",
       "validation_plan": [
         "tools validate",
@@ -18952,7 +18952,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "contracts/control_schemas/fixtures/archive/software/payloads/synthetic-demo-app-package.zip",
+      "source_tool": "contracts/schema/control/fixtures/archive/software/payloads/synthetic-demo-app-package.zip",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -18976,7 +18976,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "contracts/control_schemas/fixtures/h2/connectors/package_fixture.v0.json",
+      "source_tool": "contracts/schema/control/fixtures/h2/connectors/package_fixture.v0.json",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -19000,7 +19000,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "contracts/control_schemas/fixtures/h2/connectors/package_fixture_replay_result.v0.json",
+      "source_tool": "contracts/schema/control/fixtures/h2/connectors/package_fixture_replay_result.v0.json",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -19024,7 +19024,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "contracts/control_schemas/fixtures/h3/connectors/os_package_fixture.v0.json",
+      "source_tool": "contracts/schema/control/fixtures/h3/connectors/os_package_fixture.v0.json",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -19048,7 +19048,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "contracts/control_schemas/fixtures/h3/connectors/os_package_fixture_replay_result.v0.json",
+      "source_tool": "contracts/schema/control/fixtures/h3/connectors/os_package_fixture_replay_result.v0.json",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -19072,7 +19072,7 @@
         "low",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "contracts/control_schemas/policies/hosting/public_alpha_operator_checklist.v0.json",
+      "source_tool": "contracts/schema/control/policies/hosting/public_alpha_operator_checklist.v0.json",
       "target_aide_command_hint": "aide validate",
       "validation_plan": [
         "tools validate",
@@ -19096,7 +19096,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "contracts/control_schemas/policies/hosting/rollback_plan.v0.json",
+      "source_tool": "contracts/schema/control/policies/hosting/rollback_plan.v0.json",
       "target_aide_command_hint": "aide install",
       "validation_plan": [
         "tools validate",
@@ -19120,7 +19120,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "contracts/control_schemas/policies/packs/source_pack_export.v0.json",
+      "source_tool": "contracts/schema/control/policies/packs/source_pack_export.v0.json",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -19144,7 +19144,7 @@
         "release",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "contracts/control_schemas/previews/h10/connectors/platform_release_edition_candidate.v0.json",
+      "source_tool": "contracts/schema/control/previews/h10/connectors/platform_release_edition_candidate.v0.json",
       "target_aide_command_hint": "aide release",
       "validation_plan": [
         "tools validate",
@@ -19168,7 +19168,7 @@
         "release",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "contracts/control_schemas/previews/h11/connectors/version_release_channel_candidate.v0.json",
+      "source_tool": "contracts/schema/control/previews/h11/connectors/version_release_channel_candidate.v0.json",
       "target_aide_command_hint": "aide release",
       "validation_plan": [
         "tools validate",
@@ -19192,7 +19192,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "contracts/control_schemas/previews/h12/connectors/compatibility_install_note_candidate.v0.json",
+      "source_tool": "contracts/schema/control/previews/h12/connectors/compatibility_install_note_candidate.v0.json",
       "target_aide_command_hint": "aide install",
       "validation_plan": [
         "tools validate",
@@ -19216,7 +19216,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "contracts/control_schemas/previews/h12/connectors/hash_checksum_candidate.v0.json",
+      "source_tool": "contracts/schema/control/previews/h12/connectors/hash_checksum_candidate.v0.json",
       "target_aide_command_hint": "aide validate",
       "validation_plan": [
         "tools validate",
@@ -19240,7 +19240,7 @@
         "unknown",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "contracts/control_schemas/previews/h13/connectors/local_cas_import_boundary_candidate.v0.json",
+      "source_tool": "contracts/schema/control/previews/h13/connectors/local_cas_import_boundary_candidate.v0.json",
       "target_aide_command_hint": "review before wrapper mapping",
       "validation_plan": [
         "tools validate",
@@ -19264,7 +19264,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "contracts/control_schemas/previews/h13/connectors/pack_export_import_boundary_candidate.v0.json",
+      "source_tool": "contracts/schema/control/previews/h13/connectors/pack_export_import_boundary_candidate.v0.json",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -19288,7 +19288,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "contracts/control_schemas/previews/h14/connectors/pack_import_export_boundary_candidate.v0.json",
+      "source_tool": "contracts/schema/control/previews/h14/connectors/pack_import_export_boundary_candidate.v0.json",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -19312,7 +19312,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "contracts/control_schemas/previews/h2/connectors/package_connector_health_summary.v0.json",
+      "source_tool": "contracts/schema/control/previews/h2/connectors/package_connector_health_summary.v0.json",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -19336,7 +19336,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "contracts/control_schemas/previews/h2/connectors/package_dependency_candidate.v0.json",
+      "source_tool": "contracts/schema/control/previews/h2/connectors/package_dependency_candidate.v0.json",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -19360,7 +19360,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "contracts/control_schemas/previews/h2/connectors/package_file_candidate.v0.json",
+      "source_tool": "contracts/schema/control/previews/h2/connectors/package_file_candidate.v0.json",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -19384,7 +19384,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "contracts/control_schemas/previews/h2/connectors/package_identity_candidate.v0.json",
+      "source_tool": "contracts/schema/control/previews/h2/connectors/package_identity_candidate.v0.json",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -19408,7 +19408,7 @@
         "release",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "contracts/control_schemas/previews/h2/connectors/package_live_probe_output_bundle.v0.json",
+      "source_tool": "contracts/schema/control/previews/h2/connectors/package_live_probe_output_bundle.v0.json",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -19432,7 +19432,7 @@
         "release",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "contracts/control_schemas/previews/h2/connectors/package_live_probe_request.v0.json",
+      "source_tool": "contracts/schema/control/previews/h2/connectors/package_live_probe_request.v0.json",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -19456,7 +19456,7 @@
         "release",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "contracts/control_schemas/previews/h2/connectors/package_live_probe_result.v0.json",
+      "source_tool": "contracts/schema/control/previews/h2/connectors/package_live_probe_result.v0.json",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -19480,7 +19480,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "contracts/control_schemas/previews/h2/connectors/package_normalized_record.v0.json",
+      "source_tool": "contracts/schema/control/previews/h2/connectors/package_normalized_record.v0.json",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -19504,7 +19504,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "contracts/control_schemas/previews/h3/connectors/os_package_connector_health_summary.v0.json",
+      "source_tool": "contracts/schema/control/previews/h3/connectors/os_package_connector_health_summary.v0.json",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -19528,7 +19528,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "contracts/control_schemas/previews/h3/connectors/os_package_dependency_candidate.v0.json",
+      "source_tool": "contracts/schema/control/previews/h3/connectors/os_package_dependency_candidate.v0.json",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -19552,7 +19552,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "contracts/control_schemas/previews/h3/connectors/os_package_file_candidate.v0.json",
+      "source_tool": "contracts/schema/control/previews/h3/connectors/os_package_file_candidate.v0.json",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -19576,7 +19576,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "contracts/control_schemas/previews/h3/connectors/os_package_identity_candidate.v0.json",
+      "source_tool": "contracts/schema/control/previews/h3/connectors/os_package_identity_candidate.v0.json",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -19600,7 +19600,7 @@
         "release",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "contracts/control_schemas/previews/h3/connectors/os_package_live_probe_output_bundle.v0.json",
+      "source_tool": "contracts/schema/control/previews/h3/connectors/os_package_live_probe_output_bundle.v0.json",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -19624,7 +19624,7 @@
         "release",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "contracts/control_schemas/previews/h3/connectors/os_package_live_probe_request.v0.json",
+      "source_tool": "contracts/schema/control/previews/h3/connectors/os_package_live_probe_request.v0.json",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -19648,7 +19648,7 @@
         "release",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "contracts/control_schemas/previews/h3/connectors/os_package_live_probe_result.v0.json",
+      "source_tool": "contracts/schema/control/previews/h3/connectors/os_package_live_probe_result.v0.json",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -19672,7 +19672,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "contracts/control_schemas/previews/h3/connectors/os_package_normalized_record.v0.json",
+      "source_tool": "contracts/schema/control/previews/h3/connectors/os_package_normalized_record.v0.json",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -19696,7 +19696,7 @@
         "release",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "contracts/control_schemas/previews/h4/connectors/release_asset_candidate.v0.json",
+      "source_tool": "contracts/schema/control/previews/h4/connectors/release_asset_candidate.v0.json",
       "target_aide_command_hint": "aide release",
       "validation_plan": [
         "tools validate",
@@ -19720,7 +19720,7 @@
         "release",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "contracts/control_schemas/previews/h4/connectors/release_identity_candidate.v0.json",
+      "source_tool": "contracts/schema/control/previews/h4/connectors/release_identity_candidate.v0.json",
       "target_aide_command_hint": "aide release",
       "validation_plan": [
         "tools validate",
@@ -19744,7 +19744,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "contracts/control_schemas/previews/h8/connectors/install_requirement_claim_candidate.v0.json",
+      "source_tool": "contracts/schema/control/previews/h8/connectors/install_requirement_claim_candidate.v0.json",
       "target_aide_command_hint": "aide install",
       "validation_plan": [
         "tools validate",
@@ -19768,7 +19768,7 @@
         "release",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "contracts/control_schemas/previews/h9/connectors/music_work_recording_release_candidate.v0.json",
+      "source_tool": "contracts/schema/control/previews/h9/connectors/music_work_recording_release_candidate.v0.json",
       "target_aide_command_hint": "aide release",
       "validation_plan": [
         "tools validate",
@@ -19792,7 +19792,7 @@
         "release",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "contracts/control_schemas/previews/native/native_release_candidate_preview.v0.json",
+      "source_tool": "contracts/schema/control/previews/native/native_release_candidate_preview.v0.json",
       "target_aide_command_hint": "aide release",
       "validation_plan": [
         "tools validate",
@@ -19816,7 +19816,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "contracts/control_schemas/previews/packs/pack_import_preview.v0.json",
+      "source_tool": "contracts/schema/control/previews/packs/pack_import_preview.v0.json",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -19840,7 +19840,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "contracts/control_schemas/tasks/h2/connectors/package_next_phase_recommendation.v0.json",
+      "source_tool": "contracts/schema/control/tasks/h2/connectors/package_next_phase_recommendation.v0.json",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -19864,7 +19864,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "contracts/control_schemas/tasks/h3/connectors/os_package_next_phase_recommendation.v0.json",
+      "source_tool": "contracts/schema/control/tasks/h3/connectors/os_package_next_phase_recommendation.v0.json",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -25024,7 +25024,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/candidate_index/minimal_absence_candidate_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/index/candidate/minimal_absence_candidate_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "aide validate",
       "validation_plan": [
         "tools validate",
@@ -25048,7 +25048,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/candidate_index/minimal_conflict_candidate_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/index/candidate/minimal_conflict_candidate_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "aide validate",
       "validation_plan": [
         "tools validate",
@@ -25072,7 +25072,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/candidate_index/minimal_evidence_candidate_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/index/candidate/minimal_evidence_candidate_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "aide validate",
       "validation_plan": [
         "tools validate",
@@ -25096,7 +25096,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/candidate_index/minimal_object_candidate_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/index/candidate/minimal_object_candidate_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "aide validate",
       "validation_plan": [
         "tools validate",
@@ -25120,7 +25120,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/candidate_promotion/minimal_promotion_review_required_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/review/candidate_promotion/minimal_promotion_review_required_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "aide validate",
       "validation_plan": [
         "tools validate",
@@ -25144,7 +25144,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/candidate_promotion/minimal_quarantine_assessment_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/review/candidate_promotion/minimal_quarantine_assessment_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "aide validate",
       "validation_plan": [
         "tools validate",
@@ -25168,7 +25168,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/candidate_promotion/minimal_rejection_assessment_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/review/candidate_promotion/minimal_rejection_assessment_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "aide validate",
       "validation_plan": [
         "tools validate",
@@ -25192,7 +25192,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/candidate_promotion/minimal_supersession_assessment_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/review/candidate_promotion/minimal_supersession_assessment_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "aide validate",
       "validation_plan": [
         "tools validate",
@@ -25336,7 +25336,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/compatibility_aware_ranking/minimal_architecture_compatibility_ranking_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/search/compatibility_aware_ranking/minimal_architecture_compatibility_ranking_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "aide validate",
       "validation_plan": [
         "tools validate",
@@ -25360,7 +25360,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/compatibility_aware_ranking/minimal_conflicting_compatibility_ranking_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/search/compatibility_aware_ranking/minimal_conflicting_compatibility_ranking_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "aide validate",
       "validation_plan": [
         "tools validate",
@@ -25384,7 +25384,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/compatibility_aware_ranking/minimal_dependency_gap_ranking_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/search/compatibility_aware_ranking/minimal_dependency_gap_ranking_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "aide validate",
       "validation_plan": [
         "tools validate",
@@ -25408,7 +25408,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/compatibility_aware_ranking/minimal_emulator_vm_feasibility_ranking_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/search/compatibility_aware_ranking/minimal_emulator_vm_feasibility_ranking_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "aide validate",
       "validation_plan": [
         "tools validate",
@@ -25432,7 +25432,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/compatibility_aware_ranking/minimal_os_compatibility_ranking_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/search/compatibility_aware_ranking/minimal_os_compatibility_ranking_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "aide validate",
       "validation_plan": [
         "tools validate",
@@ -25456,7 +25456,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/compatibility_aware_ranking/minimal_unknown_compatibility_gap_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/search/compatibility_aware_ranking/minimal_unknown_compatibility_gap_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "aide validate",
       "validation_plan": [
         "tools validate",
@@ -31168,7 +31168,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/contribution_packs/minimal_contribution_pack_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/packs/contribution/minimal_contribution_pack_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -31240,7 +31240,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/evidence_ledger/dry_run/minimal_availability_observation/CHECKSUMS.SHA256",
+      "source_tool": "examples/evidence/ledger/dry_run/dry_run/minimal_availability_observation/CHECKSUMS.SHA256",
       "target_aide_command_hint": "aide validate",
       "validation_plan": [
         "tools validate",
@@ -31264,7 +31264,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/evidence_ledger/dry_run/minimal_capture_presence_observation/CHECKSUMS.SHA256",
+      "source_tool": "examples/evidence/ledger/dry_run/dry_run/minimal_capture_presence_observation/CHECKSUMS.SHA256",
       "target_aide_command_hint": "aide validate",
       "validation_plan": [
         "tools validate",
@@ -31288,7 +31288,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/evidence_ledger/dry_run/minimal_conflicting_claim_observation/CHECKSUMS.SHA256",
+      "source_tool": "examples/evidence/ledger/dry_run/dry_run/minimal_conflicting_claim_observation/CHECKSUMS.SHA256",
       "target_aide_command_hint": "aide validate",
       "validation_plan": [
         "tools validate",
@@ -31312,7 +31312,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/evidence_ledger/dry_run/minimal_package_metadata_observation/CHECKSUMS.SHA256",
+      "source_tool": "examples/evidence/ledger/dry_run/dry_run/minimal_package_metadata_observation/CHECKSUMS.SHA256",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -31336,7 +31336,7 @@
         "release",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/evidence_ledger/dry_run/minimal_release_metadata_observation/CHECKSUMS.SHA256",
+      "source_tool": "examples/evidence/ledger/dry_run/dry_run/minimal_release_metadata_observation/CHECKSUMS.SHA256",
       "target_aide_command_hint": "aide release",
       "validation_plan": [
         "tools validate",
@@ -31360,7 +31360,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/evidence_ledger/dry_run/minimal_scoped_absence_observation/CHECKSUMS.SHA256",
+      "source_tool": "examples/evidence/ledger/dry_run/dry_run/minimal_scoped_absence_observation/CHECKSUMS.SHA256",
       "target_aide_command_hint": "aide validate",
       "validation_plan": [
         "tools validate",
@@ -31384,7 +31384,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/evidence_ledger/dry_run/minimal_source_metadata_observation/CHECKSUMS.SHA256",
+      "source_tool": "examples/evidence/ledger/dry_run/dry_run/minimal_source_metadata_observation/CHECKSUMS.SHA256",
       "target_aide_command_hint": "aide validate",
       "validation_plan": [
         "tools validate",
@@ -31408,7 +31408,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/evidence_ledger/minimal_absence_evidence_observation_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/evidence/ledger/dry_run/minimal_absence_evidence_observation_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "aide validate",
       "validation_plan": [
         "tools validate",
@@ -31432,7 +31432,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/evidence_ledger/minimal_compatibility_evidence_observation_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/evidence/ledger/dry_run/minimal_compatibility_evidence_observation_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "aide validate",
       "validation_plan": [
         "tools validate",
@@ -31456,7 +31456,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/evidence_ledger/minimal_source_metadata_evidence_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/evidence/ledger/dry_run/minimal_source_metadata_evidence_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "aide validate",
       "validation_plan": [
         "tools validate",
@@ -31480,7 +31480,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/evidence_ledger_records/checksum_claim_record_v0.json",
+      "source_tool": "examples/evidence/ledger/records/checksum_claim_record_v0.json",
       "target_aide_command_hint": "aide validate",
       "validation_plan": [
         "tools validate",
@@ -31504,7 +31504,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/evidence_packs/minimal_evidence_pack_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/packs/evidence/minimal_evidence_pack_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -31528,7 +31528,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/evidence_weighted_ranking/minimal_absence_gap_ranking_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/evidence/weighted_ranking/minimal_absence_gap_ranking_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "aide validate",
       "validation_plan": [
         "tools validate",
@@ -31552,7 +31552,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/evidence_weighted_ranking/minimal_candidate_only_ranking_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/evidence/weighted_ranking/minimal_candidate_only_ranking_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "aide validate",
       "validation_plan": [
         "tools validate",
@@ -31576,7 +31576,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/evidence_weighted_ranking/minimal_conflicting_evidence_ranking_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/evidence/weighted_ranking/minimal_conflicting_evidence_ranking_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "aide validate",
       "validation_plan": [
         "tools validate",
@@ -31600,7 +31600,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/evidence_weighted_ranking/minimal_strong_evidence_ranking_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/evidence/weighted_ranking/minimal_strong_evidence_ranking_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "aide validate",
       "validation_plan": [
         "tools validate",
@@ -31624,7 +31624,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/evidence_weighted_ranking/minimal_weak_evidence_ranking_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/evidence/weighted_ranking/minimal_weak_evidence_ranking_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "aide validate",
       "validation_plan": [
         "tools validate",
@@ -32224,7 +32224,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/index_packs/minimal_index_pack_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/packs/index/minimal_index_pack_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -32920,7 +32920,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/pack_builder/policy_blocked_pack_build_case_v0.json",
+      "source_tool": "examples/packs/builder/policy_blocked_pack_build_case_v0.json",
       "target_aide_command_hint": "aide build",
       "validation_plan": [
         "tools validate",
@@ -32944,7 +32944,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/pack_exports/contribution_pack_export_v0.json",
+      "source_tool": "examples/packs/exports/contribution_pack_export_v0.json",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -32968,7 +32968,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/pack_exports/evidence_pack_export_v0.json",
+      "source_tool": "examples/packs/exports/evidence_pack_export_v0.json",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -32992,7 +32992,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/pack_exports/index_pack_preview_export_v0.json",
+      "source_tool": "examples/packs/exports/index_pack_preview_export_v0.json",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -33016,7 +33016,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/pack_exports/policy_blocked_pack_export_v0.json",
+      "source_tool": "examples/packs/exports/policy_blocked_pack_export_v0.json",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -33040,7 +33040,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/pack_exports/review_pack_export_v0.json",
+      "source_tool": "examples/packs/exports/review_pack_export_v0.json",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -33064,7 +33064,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/pack_exports/source_pack_export_v0.json",
+      "source_tool": "examples/packs/exports/source_pack_export_v0.json",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -33088,7 +33088,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/pack_import_dry_run/minimal_contribution_pack_review/CHECKSUMS.SHA256",
+      "source_tool": "examples/packs/import_dry_run/minimal_contribution_pack_review/CHECKSUMS.SHA256",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -33112,7 +33112,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/pack_import_dry_run/minimal_contribution_pack_review/PACK_IMPORT_DRY_RUN_INPUT.json",
+      "source_tool": "examples/packs/import_dry_run/minimal_contribution_pack_review/PACK_IMPORT_DRY_RUN_INPUT.json",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -33136,7 +33136,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/pack_import_dry_run/minimal_evidence_pack_import/CHECKSUMS.SHA256",
+      "source_tool": "examples/packs/import_dry_run/minimal_evidence_pack_import/CHECKSUMS.SHA256",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -33160,7 +33160,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/pack_import_dry_run/minimal_evidence_pack_import/PACK_IMPORT_DRY_RUN_INPUT.json",
+      "source_tool": "examples/packs/import_dry_run/minimal_evidence_pack_import/PACK_IMPORT_DRY_RUN_INPUT.json",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -33184,7 +33184,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/pack_import_dry_run/minimal_index_pack_compare/CHECKSUMS.SHA256",
+      "source_tool": "examples/packs/import_dry_run/minimal_index_pack_compare/CHECKSUMS.SHA256",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -33208,7 +33208,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/pack_import_dry_run/minimal_index_pack_compare/PACK_IMPORT_DRY_RUN_INPUT.json",
+      "source_tool": "examples/packs/import_dry_run/minimal_index_pack_compare/PACK_IMPORT_DRY_RUN_INPUT.json",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -33232,7 +33232,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/pack_import_dry_run/minimal_pack_set_import/CHECKSUMS.SHA256",
+      "source_tool": "examples/packs/import_dry_run/minimal_pack_set_import/CHECKSUMS.SHA256",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -33256,7 +33256,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/pack_import_dry_run/minimal_pack_set_import/PACK_IMPORT_DRY_RUN_INPUT.json",
+      "source_tool": "examples/packs/import_dry_run/minimal_pack_set_import/PACK_IMPORT_DRY_RUN_INPUT.json",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -33280,7 +33280,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/pack_import_dry_run/minimal_source_pack_import/CHECKSUMS.SHA256",
+      "source_tool": "examples/packs/import_dry_run/minimal_source_pack_import/CHECKSUMS.SHA256",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -33304,7 +33304,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/pack_import_dry_run/minimal_source_pack_import/PACK_IMPORT_DRY_RUN_INPUT.json",
+      "source_tool": "examples/packs/import_dry_run/minimal_source_pack_import/PACK_IMPORT_DRY_RUN_INPUT.json",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -33328,7 +33328,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/pack_quarantine/import_preview/contribution_pack_import_preview_v0.json",
+      "source_tool": "examples/packs/quarantine/import_preview/contribution_pack_import_preview_v0.json",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -33352,7 +33352,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/pack_quarantine/import_preview/evidence_pack_import_preview_v0.json",
+      "source_tool": "examples/packs/quarantine/import_preview/evidence_pack_import_preview_v0.json",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -33376,7 +33376,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/pack_quarantine/import_preview/policy_blocked_pack_import_preview_v0.json",
+      "source_tool": "examples/packs/quarantine/import_preview/policy_blocked_pack_import_preview_v0.json",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -33400,7 +33400,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/pack_quarantine/import_preview/source_pack_import_preview_v0.json",
+      "source_tool": "examples/packs/quarantine/import_preview/source_pack_import_preview_v0.json",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -33616,7 +33616,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/public_search_ranking_dry_run/minimal_compatibility_aware_ranking/CHECKSUMS.SHA256",
+      "source_tool": "examples/index/public_search_ranking_dry_run/minimal_compatibility_aware_ranking/CHECKSUMS.SHA256",
       "target_aide_command_hint": "aide validate",
       "validation_plan": [
         "tools validate",
@@ -33640,7 +33640,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/public_search_ranking_dry_run/minimal_conflict_visible_ranking/CHECKSUMS.SHA256",
+      "source_tool": "examples/index/public_search_ranking_dry_run/minimal_conflict_visible_ranking/CHECKSUMS.SHA256",
       "target_aide_command_hint": "aide validate",
       "validation_plan": [
         "tools validate",
@@ -33664,7 +33664,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/public_search_ranking_dry_run/minimal_current_order_fallback/CHECKSUMS.SHA256",
+      "source_tool": "examples/index/public_search_ranking_dry_run/minimal_current_order_fallback/CHECKSUMS.SHA256",
       "target_aide_command_hint": "aide validate",
       "validation_plan": [
         "tools validate",
@@ -33688,7 +33688,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/public_search_ranking_dry_run/minimal_evidence_weighted_ranking/CHECKSUMS.SHA256",
+      "source_tool": "examples/index/public_search_ranking_dry_run/minimal_evidence_weighted_ranking/CHECKSUMS.SHA256",
       "target_aide_command_hint": "aide validate",
       "validation_plan": [
         "tools validate",
@@ -33712,7 +33712,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/public_search_ranking_dry_run/minimal_gap_transparency_ranking/CHECKSUMS.SHA256",
+      "source_tool": "examples/index/public_search_ranking_dry_run/minimal_gap_transparency_ranking/CHECKSUMS.SHA256",
       "target_aide_command_hint": "aide validate",
       "validation_plan": [
         "tools validate",
@@ -33736,7 +33736,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/query_guard/minimal_fake_demand_throttled_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/search/query_guard/minimal_fake_demand_throttled_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "aide validate",
       "validation_plan": [
         "tools validate",
@@ -33760,7 +33760,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/query_guard/minimal_private_path_rejected_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/search/query_guard/minimal_private_path_rejected_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "aide validate",
       "validation_plan": [
         "tools validate",
@@ -33784,7 +33784,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/query_guard/minimal_public_safe_query_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/search/query_guard/minimal_public_safe_query_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "aide validate",
       "validation_plan": [
         "tools validate",
@@ -33808,7 +33808,7 @@
         "security",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/query_guard/minimal_secret_rejected_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/search/query_guard/minimal_secret_rejected_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "aide security",
       "validation_plan": [
         "tools validate",
@@ -33832,7 +33832,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/query_guard/minimal_source_stuffing_quarantined_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/search/query_guard/minimal_source_stuffing_quarantined_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "aide validate",
       "validation_plan": [
         "tools validate",
@@ -33856,7 +33856,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/query_observations/minimal_query_observation_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/search/query_observations/minimal_query_observation_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "aide validate",
       "validation_plan": [
         "tools validate",
@@ -33880,7 +33880,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/query_result_cache/minimal_absence_cache_entry_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/search/query_result_cache/minimal_absence_cache_entry_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "aide validate",
       "validation_plan": [
         "tools validate",
@@ -33904,7 +33904,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/query_result_cache/minimal_cache_entry_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/search/query_result_cache/minimal_cache_entry_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "aide validate",
       "validation_plan": [
         "tools validate",
@@ -34048,7 +34048,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/reviewed_public_index_rebuilds/minimal_rebuild_contract_v0.json",
+      "source_tool": "examples/index/reviewed_public_rebuilds/minimal_rebuild_contract_v0.json",
       "target_aide_command_hint": "aide build",
       "validation_plan": [
         "tools validate",
@@ -34072,7 +34072,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/reviewed_public_index_rebuilds/missing_evidence_rebuild_blocked_v0.json",
+      "source_tool": "examples/index/reviewed_public_rebuilds/missing_evidence_rebuild_blocked_v0.json",
       "target_aide_command_hint": "aide build",
       "validation_plan": [
         "tools validate",
@@ -34096,7 +34096,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/reviewed_public_index_rebuilds/policy_blocked_rebuild_v0.json",
+      "source_tool": "examples/index/reviewed_public_rebuilds/policy_blocked_rebuild_v0.json",
       "target_aide_command_hint": "aide build",
       "validation_plan": [
         "tools validate",
@@ -34120,7 +34120,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/reviewed_public_index_rebuilds/ready_candidate_rebuild_input_v0.json",
+      "source_tool": "examples/index/reviewed_public_rebuilds/ready_candidate_rebuild_input_v0.json",
       "target_aide_command_hint": "aide build",
       "validation_plan": [
         "tools validate",
@@ -34144,7 +34144,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/search_miss_ledger/minimal_no_hits_miss_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/search/miss_ledger/minimal_no_hits_miss_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "aide validate",
       "validation_plan": [
         "tools validate",
@@ -34168,7 +34168,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/search_miss_ledger/minimal_weak_hits_miss_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/search/miss_ledger/minimal_weak_hits_miss_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "aide validate",
       "validation_plan": [
         "tools validate",
@@ -34192,7 +34192,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/search_needs/minimal_compatibility_evidence_need_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/search/needs/minimal_compatibility_evidence_need_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "aide validate",
       "validation_plan": [
         "tools validate",
@@ -34216,7 +34216,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/search_needs/minimal_unresolved_software_need_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/search/needs/minimal_unresolved_software_need_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "aide validate",
       "validation_plan": [
         "tools validate",
@@ -34240,7 +34240,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/search_result_explanations/minimal_absence_gap_explanation_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/search/result_explanations/minimal_absence_gap_explanation_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "aide validate",
       "validation_plan": [
         "tools validate",
@@ -34264,7 +34264,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/search_result_explanations/minimal_action_safety_explanation_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/search/result_explanations/minimal_action_safety_explanation_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "aide validate",
       "validation_plan": [
         "tools validate",
@@ -34288,7 +34288,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/search_result_explanations/minimal_compatibility_explanation_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/search/result_explanations/minimal_compatibility_explanation_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "aide validate",
       "validation_plan": [
         "tools validate",
@@ -34312,7 +34312,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/search_result_explanations/minimal_conflict_explanation_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/search/result_explanations/minimal_conflict_explanation_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "aide validate",
       "validation_plan": [
         "tools validate",
@@ -34336,7 +34336,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/search_result_explanations/minimal_grouped_result_explanation_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/search/result_explanations/minimal_grouped_result_explanation_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "aide validate",
       "validation_plan": [
         "tools validate",
@@ -34360,7 +34360,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/search_result_explanations/minimal_match_explanation_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/search/result_explanations/minimal_match_explanation_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "aide validate",
       "validation_plan": [
         "tools validate",
@@ -34384,7 +34384,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/search_result_explanations/minimal_source_evidence_explanation_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/search/result_explanations/minimal_source_evidence_explanation_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "aide validate",
       "validation_plan": [
         "tools validate",
@@ -34408,7 +34408,7 @@
         "release",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/source_cache/dry_run/minimal_github_release_metadata_summary/CHECKSUMS.SHA256",
+      "source_tool": "examples/sources/cache/dry_run/dry_run/minimal_github_release_metadata_summary/CHECKSUMS.SHA256",
       "target_aide_command_hint": "aide release",
       "validation_plan": [
         "tools validate",
@@ -34432,7 +34432,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/source_cache/dry_run/minimal_internet_archive_metadata_summary/CHECKSUMS.SHA256",
+      "source_tool": "examples/sources/cache/dry_run/dry_run/minimal_internet_archive_metadata_summary/CHECKSUMS.SHA256",
       "target_aide_command_hint": "aide validate",
       "validation_plan": [
         "tools validate",
@@ -34456,7 +34456,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/source_cache/dry_run/minimal_package_metadata_summary/CHECKSUMS.SHA256",
+      "source_tool": "examples/sources/cache/dry_run/dry_run/minimal_package_metadata_summary/CHECKSUMS.SHA256",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -34480,7 +34480,7 @@
         "release",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/source_cache/dry_run/minimal_software_heritage_identity_summary/CHECKSUMS.SHA256",
+      "source_tool": "examples/sources/cache/dry_run/dry_run/minimal_software_heritage_identity_summary/CHECKSUMS.SHA256",
       "target_aide_command_hint": "aide release",
       "validation_plan": [
         "tools validate",
@@ -34504,7 +34504,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/source_cache/dry_run/minimal_wayback_capture_metadata_summary/CHECKSUMS.SHA256",
+      "source_tool": "examples/sources/cache/dry_run/dry_run/minimal_wayback_capture_metadata_summary/CHECKSUMS.SHA256",
       "target_aide_command_hint": "aide validate",
       "validation_plan": [
         "tools validate",
@@ -34528,7 +34528,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/source_cache/minimal_ia_metadata_cache_record_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/sources/cache/dry_run/minimal_ia_metadata_cache_record_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "aide validate",
       "validation_plan": [
         "tools validate",
@@ -34552,7 +34552,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/source_cache/minimal_recorded_fixture_cache_record_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/sources/cache/dry_run/minimal_recorded_fixture_cache_record_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "aide validate",
       "validation_plan": [
         "tools validate",
@@ -34576,7 +34576,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/source_cache/minimal_wayback_availability_cache_record_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/sources/cache/dry_run/minimal_wayback_availability_cache_record_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "aide validate",
       "validation_plan": [
         "tools validate",
@@ -34600,7 +34600,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/source_packs/h2_package_registry_policy_pack_v0.json",
+      "source_tool": "examples/packs/source/h2_package_registry_policy_pack_v0.json",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -34624,7 +34624,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/source_packs/h2_package_registry_source_pack_manifest_v0.json",
+      "source_tool": "examples/packs/source/h2_package_registry_source_pack_manifest_v0.json",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -34648,7 +34648,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/source_packs/h3_os_package_archive_policy_pack_v0.json",
+      "source_tool": "examples/packs/source/h3_os_package_archive_policy_pack_v0.json",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -34672,7 +34672,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/source_packs/h3_os_package_archive_source_pack_manifest_v0.json",
+      "source_tool": "examples/packs/source/h3_os_package_archive_source_pack_manifest_v0.json",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -34696,7 +34696,7 @@
         "release",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/source_packs/h4_code_source_release_policy_pack_v0.json",
+      "source_tool": "examples/packs/source/h4_code_source_release_policy_pack_v0.json",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -34720,7 +34720,7 @@
         "release",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/source_packs/h4_code_source_release_source_pack_manifest_v0.json",
+      "source_tool": "examples/packs/source/h4_code_source_release_source_pack_manifest_v0.json",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -34744,7 +34744,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/source_packs/minimal_recorded_source_pack_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/packs/source/minimal_recorded_source_pack_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -34768,7 +34768,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/source_pages/minimal_connector_approval_source_page_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/sources/pages/minimal_connector_approval_source_page_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "aide validate",
       "validation_plan": [
         "tools validate",
@@ -34792,7 +34792,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/source_pages/minimal_fixture_source_page_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/sources/pages/minimal_fixture_source_page_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "aide validate",
       "validation_plan": [
         "tools validate",
@@ -34816,7 +34816,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/source_pages/minimal_placeholder_source_page_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/sources/pages/minimal_placeholder_source_page_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "aide validate",
       "validation_plan": [
         "tools validate",
@@ -34840,7 +34840,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/source_pages/minimal_recorded_fixture_source_page_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/sources/pages/minimal_recorded_fixture_source_page_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "aide validate",
       "validation_plan": [
         "tools validate",
@@ -34864,7 +34864,7 @@
         "release",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/source_sync/minimal_github_releases_sync_job_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/sources/sync/minimal_github_releases_sync_job_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "aide release",
       "validation_plan": [
         "tools validate",
@@ -34888,7 +34888,7 @@
         "release",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/source_sync/minimal_github_releases_sync_job_v0/SOURCE_SYNC_WORKER_JOB.json",
+      "source_tool": "examples/sources/sync/minimal_github_releases_sync_job_v0/SOURCE_SYNC_WORKER_JOB.json",
       "target_aide_command_hint": "aide release",
       "validation_plan": [
         "tools validate",
@@ -34912,7 +34912,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/source_sync/minimal_ia_metadata_sync_job_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/sources/sync/minimal_ia_metadata_sync_job_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "aide validate",
       "validation_plan": [
         "tools validate",
@@ -34936,7 +34936,7 @@
         "unknown",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/source_sync/minimal_ia_metadata_sync_job_v0/SOURCE_SYNC_WORKER_JOB.json",
+      "source_tool": "examples/sources/sync/minimal_ia_metadata_sync_job_v0/SOURCE_SYNC_WORKER_JOB.json",
       "target_aide_command_hint": "review before wrapper mapping",
       "validation_plan": [
         "tools validate",
@@ -34960,7 +34960,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/source_sync/minimal_manual_source_review_job_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/sources/sync/minimal_manual_source_review_job_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "aide validate",
       "validation_plan": [
         "tools validate",
@@ -34984,7 +34984,7 @@
         "unknown",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/source_sync/minimal_manual_source_review_job_v0/SOURCE_SYNC_WORKER_JOB.json",
+      "source_tool": "examples/sources/sync/minimal_manual_source_review_job_v0/SOURCE_SYNC_WORKER_JOB.json",
       "target_aide_command_hint": "review before wrapper mapping",
       "validation_plan": [
         "tools validate",
@@ -35008,7 +35008,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/source_sync/minimal_wayback_availability_sync_job_v0/CHECKSUMS.SHA256",
+      "source_tool": "examples/sources/sync/minimal_wayback_availability_sync_job_v0/CHECKSUMS.SHA256",
       "target_aide_command_hint": "aide validate",
       "validation_plan": [
         "tools validate",
@@ -35032,7 +35032,7 @@
         "unknown",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "examples/source_sync/minimal_wayback_availability_sync_job_v0/SOURCE_SYNC_WORKER_JOB.json",
+      "source_tool": "examples/sources/sync/minimal_wayback_availability_sync_job_v0/SOURCE_SYNC_WORKER_JOB.json",
       "target_aide_command_hint": "review before wrapper mapping",
       "validation_plan": [
         "tools validate",
@@ -35512,7 +35512,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "runtime/local_foundry/pack_builder.py",
+      "source_tool": "runtime/local/foundry/pack_builder.py",
       "target_aide_command_hint": "aide build",
       "validation_plan": [
         "tools validate",
@@ -35536,7 +35536,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "runtime/local_foundry/pack_export.py",
+      "source_tool": "runtime/local/foundry/pack_export.py",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -35560,7 +35560,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "runtime/local_foundry/pack_import_preview.py",
+      "source_tool": "runtime/local/foundry/pack_import_preview.py",
       "target_aide_command_hint": "aide context",
       "validation_plan": [
         "tools validate",
@@ -35584,7 +35584,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "runtime/local_review/audit.py",
+      "source_tool": "runtime/local/review/audit.py",
       "target_aide_command_hint": "aide audit",
       "validation_plan": [
         "tools validate",
@@ -35608,7 +35608,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "runtime/local_review/rebuild.py",
+      "source_tool": "runtime/local/review/rebuild.py",
       "target_aide_command_hint": "aide build",
       "validation_plan": [
         "tools validate",
@@ -35632,7 +35632,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "runtime/local_worker/audit.py",
+      "source_tool": "runtime/local/worker/audit.py",
       "target_aide_command_hint": "aide audit",
       "validation_plan": [
         "tools validate",
@@ -35656,7 +35656,7 @@
         "medium",
         "unknown_tool_execution_disabled"
       ],
-      "source_tool": "runtime/public_index/rebuild.py",
+      "source_tool": "runtime/index/public/rebuild.py",
       "target_aide_command_hint": "aide build",
       "validation_plan": [
         "tools validate",

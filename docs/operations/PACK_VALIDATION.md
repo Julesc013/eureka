@@ -40,8 +40,8 @@ With no `--pack-root`, the command validates all known repo example packs from
 Validate one explicit pack root:
 
 ```bash
-python scripts/validate_pack_set.py --pack-root examples/source_packs/minimal_recorded_source_pack_v0
-python scripts/validate_pack_set.py --pack-root examples/evidence_packs/minimal_evidence_pack_v0 --json
+python scripts/validate_pack_set.py --pack-root examples/packs/source/minimal_recorded_source_pack_v0
+python scripts/validate_pack_set.py --pack-root examples/packs/evidence/minimal_evidence_pack_v0 --json
 ```
 
 The aggregate validator detects pack type from the root manifest:
@@ -57,10 +57,10 @@ mismatch between requested type and detected manifest.
 
 ## Known Example Roots
 
-- `examples/source_packs/minimal_recorded_source_pack_v0`
-- `examples/evidence_packs/minimal_evidence_pack_v0`
-- `examples/index_packs/minimal_index_pack_v0`
-- `examples/contribution_packs/minimal_contribution_pack_v0`
+- `examples/packs/source/minimal_recorded_source_pack_v0`
+- `examples/packs/evidence/minimal_evidence_pack_v0`
+- `examples/packs/index/minimal_index_pack_v0`
+- `examples/packs/contribution/minimal_contribution_pack_v0`
 - `examples/master_index_review_queue/minimal_review_queue_v0`
 
 ## JSON Output

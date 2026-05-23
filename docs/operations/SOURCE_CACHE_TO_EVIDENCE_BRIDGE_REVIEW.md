@@ -28,6 +28,6 @@ Automatic evidence acceptance, public index use, master-index mutation, rights c
 
 ```bash
 python scripts/validate_source_cache_to_evidence_bridge.py
-python scripts/bridge_source_cache_to_evidence.py --input examples/source_cache_records/source_metadata_record_v0.json --check
+python scripts/bridge_source_cache_to_evidence.py --input examples/sources/cache/records/source_metadata_record_v0.json --check
 python -m unittest tests.runtime.test_source_cache_to_evidence_bridge tests.operations.test_source_cache_to_evidence_bridge_scripts
 ```

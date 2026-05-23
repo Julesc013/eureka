@@ -77,8 +77,8 @@ INVENTORY_FILES = (
     "control/inventory/source_packs/h2_package_registry_no_download_policy.json",
 )
 SOURCE_PACK_EXAMPLES = (
-    "examples/source_packs/h2_package_registry_source_pack_manifest_v0.json",
-    "examples/source_packs/h2_package_registry_policy_pack_v0.json",
+    "examples/packs/source/h2_package_registry_source_pack_manifest_v0.json",
+    "examples/packs/source/h2_package_registry_policy_pack_v0.json",
 )
 EXTRA_EXAMPLES = (
     "examples/sources/source_records/package_registry_policy_blocked_source_v2.json",

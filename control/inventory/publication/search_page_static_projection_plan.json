@@ -8,7 +8,7 @@
   "status": "ready_for_dry_run",
   "source_view_family": "SearchPageView",
   "source_fixture": "examples/view_models/search_page/static_projection_reference_v0.json",
-  "source_view_schema": "contracts/views/search_page.v0.json",
+  "source_view_schema": "contracts/view/pages/search_page.v0.json",
   "default_output_root": "control/audits/track-a-13-static-searchpage-projection-dry-run-v0/generated",
   "projection_targets": [
     {

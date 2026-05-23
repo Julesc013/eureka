@@ -1,6 +1,6 @@
 # R0 Source Observation Seam
 
-R0-04 adds a standard-library-only runtime seam under `runtime/source_observation/`.
+R0-04 adds a standard-library-only runtime seam under `runtime/source/observation/`.
 
 ## Run The Demo
 
@@ -25,7 +25,7 @@ python scripts/validate_source_observation_seam.py
 The validator checks:
 
 - product contracts are present and JSON-valid
-- `runtime/source_observation/` has no forbidden control vocabulary
+- `runtime/source/observation/` has no forbidden control vocabulary
 - the runtime package does not import network or provider modules
 - the demo output keeps evidence and review in candidate states
 - durable writes and public index writes remain disabled

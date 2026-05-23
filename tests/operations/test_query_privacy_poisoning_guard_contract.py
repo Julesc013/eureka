@@ -9,7 +9,7 @@ PRIVACY_RISK = ROOT / "contracts" / "query" / "query_privacy_risk.v0.json"
 POISONING_RISK = ROOT / "contracts" / "query" / "query_poisoning_risk.v0.json"
 POLICY = ROOT / "control" / "inventory" / "query_intelligence" / "query_privacy_poisoning_guard_policy.json"
 REPORT = ROOT / "control" / "audits" / "query-privacy-poisoning-guard-v0" / "query_privacy_poisoning_guard_report.json"
-EXAMPLES = ROOT / "examples" / "query_guard"
+EXAMPLES = ROOT / "examples" / "search" / "query_guard"
 
 
 class QueryPrivacyPoisoningGuardOperationsTests(unittest.TestCase):

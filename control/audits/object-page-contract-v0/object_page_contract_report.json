@@ -4,7 +4,7 @@
   "repo_head": "19ce6d84d95daddea2a4c068467df2b5f8facbfa",
   "branch": "main",
   "worktree_status": "P79 working tree modified before commit; final git status recorded in final response.",
-  "contract_file": "contracts/pages/object_page.v0.json",
+  "contract_file": "contracts/surface/pages/object_page.v0.json",
   "validator_scripts": [
     "scripts/validate_object_page.py",
     "scripts/validate_object_page_contract.py",

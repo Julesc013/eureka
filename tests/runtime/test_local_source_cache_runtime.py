@@ -2,14 +2,14 @@ import json
 import unittest
 from pathlib import Path
 
-from runtime.local_foundry import source_cache
+from runtime.local.foundry import source_cache
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 
 
 def load_example(name: str) -> dict:
-    return json.loads((REPO_ROOT / "examples/source_cache_records" / name).read_text(encoding="utf-8"))
+    return json.loads((REPO_ROOT / "examples/sources/cache/records" / name).read_text(encoding="utf-8"))
 
 
 class LocalSourceCacheRuntimeTests(unittest.TestCase):
@@ -97,7 +97,7 @@ class LocalSourceCacheRuntimeTests(unittest.TestCase):
         self.assertEqual(snapshot["review_required_count"], 1)
 
     def test_runtime_does_not_import_network_model_or_provider_modules(self) -> None:
-        source = (REPO_ROOT / "runtime/local_foundry/source_cache.py").read_text(encoding="utf-8")
+        source = (REPO_ROOT / "runtime/local/foundry/source_cache.py").read_text(encoding="utf-8")
         forbidden = ["requests", "urllib", "http.client", "socket", "openai", "anthropic", "selenium", "playwright"]
         for token in forbidden:
             self.assertNotIn(token, source)

@@ -2,8 +2,8 @@ from __future__ import annotations
 
 import unittest
 
-from runtime.search_need.records import SearchNeed, SearchNeedDesiredOutcome, SearchNeedKind
-from runtime.search_need.workunit_plan import map_need_kind_to_workunit_plan
+from runtime.search.need.records import SearchNeed, SearchNeedDesiredOutcome, SearchNeedKind
+from runtime.search.need.workunit_plan import map_need_kind_to_workunit_plan
 
 
 def need(kind: SearchNeedKind) -> SearchNeed:

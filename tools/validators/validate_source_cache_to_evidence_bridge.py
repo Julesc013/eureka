@@ -14,7 +14,7 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.local_foundry import evidence_ledger, source_cache, source_cache_to_evidence as bridge  # noqa: E402
+from runtime.local.foundry import evidence_ledger, source_cache, source_cache_to_evidence as bridge  # noqa: E402
 from scripts import bridge_source_cache_to_evidence  # noqa: E402
 
 
@@ -31,12 +31,12 @@ DOC_FILES = [
     "docs/operations/SOURCE_CACHE_TO_EVIDENCE_BRIDGE_REVIEW.md",
 ]
 EXAMPLE_FILES = [
-    "examples/source_cache_to_evidence/minimal_bridge_case_v0.json",
-    "examples/source_cache_to_evidence/source_metadata_to_metadata_claim_v0.json",
-    "examples/source_cache_to_evidence/source_locator_to_source_observation_v0.json",
-    "examples/source_cache_to_evidence/source_policy_to_policy_claim_v0.json",
-    "examples/source_cache_to_evidence/source_coverage_to_coverage_claim_v0.json",
-    "examples/source_cache_to_evidence/policy_blocked_bridge_case_v0.json",
+    "examples/sources/cache/to_evidence/minimal_bridge_case_v0.json",
+    "examples/sources/cache/to_evidence/source_metadata_to_metadata_claim_v0.json",
+    "examples/sources/cache/to_evidence/source_locator_to_source_observation_v0.json",
+    "examples/sources/cache/to_evidence/source_policy_to_policy_claim_v0.json",
+    "examples/sources/cache/to_evidence/source_coverage_to_coverage_claim_v0.json",
+    "examples/sources/cache/to_evidence/policy_blocked_bridge_case_v0.json",
 ]
 AUDIT_FILES = [
     "control/audits/track-b-17-source-cache-to-evidence-bridge-v0/README.md",
@@ -169,7 +169,7 @@ def _validate_script_checks(repo_root: Path) -> list[str]:
         sys.executable,
         "scripts/bridge_source_cache_to_evidence.py",
         "--input",
-        "examples/source_cache_records/source_metadata_record_v0.json",
+        "examples/sources/cache/records/source_metadata_record_v0.json",
         "--check",
         "--json",
     ]
@@ -212,7 +212,7 @@ def _validate_output_roots(repo_root: Path) -> list[str]:
 
 def _validate_synthetic_boundaries() -> list[str]:
     errors: list[str] = []
-    record = bridge.load_source_cache_record(REPO_ROOT / "examples/source_cache_records/source_metadata_record_v0.json")
+    record = bridge.load_source_cache_record(REPO_ROOT / "examples/sources/cache/records/source_metadata_record_v0.json")
     candidates = bridge.map_source_cache_record_to_evidence_candidates(record)
     result = bridge.build_bridge_result(record, candidates)
     result["truth_boundary"]["bridge_output_is_accepted_evidence"] = True

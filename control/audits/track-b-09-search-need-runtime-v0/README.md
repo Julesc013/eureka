@@ -8,11 +8,11 @@ telemetry, absence proof, accepted truth, or master-index mutations.
 
 ## Added
 
-- `runtime/local_foundry/search_need.py`
+- `runtime/local/foundry/search_need.py`
 - `scripts/record_search_need.py`
 - `scripts/validate_search_need_runtime.py`
 - SearchNeed runtime, status, intent, output, and review policies
-- six compact public-safe examples under `examples/search_needs/`
+- six compact public-safe examples under `examples/search/needs/`
 - SearchNeed reference, architecture, and review docs
 - runtime and script tests
 - generated sample report and summary from committed synthetic examples
@@ -42,7 +42,7 @@ review queue behavior remain future tasks.
 
 ```powershell
 python scripts/validate_search_need_runtime.py
-python scripts/record_search_need.py --input examples/search_misses/empty_result_search_miss_v0.json --check
+python scripts/record_search_need.py --input examples/search/misses/empty_result_search_miss_v0.json --check
 python -m unittest discover -s tests -t .
 ```
 

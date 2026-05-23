@@ -13,7 +13,7 @@ from typing import Any, Mapping, Sequence, TextIO
 REPO_ROOT = Path(__file__).resolve().parents[2]
 SCHEMA_VERSION = "0.1.0"
 
-CONTRACT_PATH = "contracts/ui/design_tokens.v0.json"
+CONTRACT_PATH = "contracts/surface/ui/design_tokens.v0.json"
 POLICY_PATH = "control/inventory/publication/design_token_policy.json"
 TOKEN_INVENTORY_PATH = "control/inventory/publication/temporal_minimal_search_tokens.json"
 EXAMPLE_PATHS = [

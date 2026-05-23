@@ -6,7 +6,7 @@ Status: pass with warnings, due to the pre-existing runtime leakage gate.
 
 LOCAL-04 adds:
 
-- `runtime/local_service`
+- `runtime/local/service`
 - `scripts/eureka_local_server.py`
 - `scripts/eureka_local_service_smoke.py`
 - `scripts/validate_local_http_service.py`

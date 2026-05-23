@@ -4,12 +4,12 @@
 
 This tree is for governed semantics and public boundaries. It is not the place for hidden runtime coupling.
 
-`contracts/control_schemas/policies/packs/source_pack.v0.json` defines Source Pack Contract v0 for
+`contracts/schema/control/policies/packs/source_pack.v0.json` defines Source Pack Contract v0 for
 portable source metadata and fixture-evidence bundles. It is contract and
 validation only; it does not implement import, indexing, uploads, live
 connectors, executable plugins, or master-index acceptance.
 
-`contracts/master_index/` defines Master Index Review Queue Contract v0 for
+`contracts/index/master/` defines Master Index Review Queue Contract v0 for
 future review queue manifests, entries, and decisions. It is contract and
 validation only; it does not implement queue runtime, uploads, accounts,
 moderation UI, hosted master-index writes, live connectors, or automatic
@@ -24,7 +24,7 @@ master-index mutation.
 
 `contracts/evidence/` is a pointer namespace for current evidence contract
 material. The canonical evidence ledger schemas remain under
-`contracts/evidence_ledger/`; the pointer namespace adds no runtime, write
+`contracts/evidence/ledger/`; the pointer namespace adds no runtime, write
 path, source access, evidence acceptance, candidate acceptance, public-index
 mutation, or master-index mutation.
 
@@ -34,6 +34,6 @@ references, allowed fixture modes, forbidden current modes, and boundary
 booleans only; it does not approve live source access, downloads, scraping,
 public-index mutation, master-index mutation, or evidence acceptance.
 
-`contracts/control_schemas/fixtures/connectors/source_connector_fixture.v0.json` defines the shared
+`contracts/schema/control/fixtures/connectors/source_connector_fixture.v0.json` defines the shared
 fixture manifest shape for connector tests. It requires committed public-safe
 fixtures and false live-call, network, and external API flags.

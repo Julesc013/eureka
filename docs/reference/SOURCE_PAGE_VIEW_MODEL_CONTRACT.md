@@ -1,6 +1,6 @@
 # SourcePage View Model Contract
 
-`contracts/views/source_page.v0.json` defines the first canonical public
+`contracts/view/pages/source_page.v0.json` defines the first canonical public
 SourcePage view model for Track A. It is a meaning layer for source list,
 source detail, and source coverage pages, not a renderer implementation, route
 activation, hosted backend, source connector, source sync runtime, crawler,
@@ -37,7 +37,7 @@ and native-card projections must preserve.
 
 SourcePageView also relates to:
 
-- `contracts/source_registry/` for governed source identity and capability
+- `contracts/source/registry/` for governed source identity and capability
   vocabulary.
 - `docs/reference/SOURCE_PACK_CONTRACT.md` for future source-pack references.
 - `docs/reference/EVIDENCE_PACK_CONTRACT.md` for future evidence-pack
