@@ -1,8 +1,96 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://eureka.local/contracts/relay/relay_manifest.v0.json",
-  "title": "Relay Manifest",
-  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "blocked_actions": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "boundary_report_ref": {
+      "type": "string"
+    },
+    "capability_profile_ref": {
+      "type": "string"
+    },
+    "download_enabled": {
+      "const": false
+    },
+    "extraction_enabled": {
+      "const": false
+    },
+    "limitations": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "live_source_actions_enabled": {
+      "const": false
+    },
+    "model_provider_enabled": {
+      "const": false
+    },
+    "mutation_enabled": {
+      "const": false
+    },
+    "no_goals": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "product_boundary": {
+      "type": "object"
+    },
+    "profiles": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "read_only": {
+      "const": true
+    },
+    "relay_id": {
+      "type": "string"
+    },
+    "relay_manifest_id": {
+      "type": "string"
+    },
+    "relay_mode": {
+      "type": "string"
+    },
+    "relay_version": {
+      "type": "string"
+    },
+    "routes": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "schema_version": {
+      "const": "relay_manifest.v0"
+    },
+    "snapshot_ref": {
+      "type": "string"
+    },
+    "snapshot_refs": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "supported_projection_profiles": {
+      "type": "array"
+    },
+    "truth_boundary": {
+      "type": "object"
+    }
+  },
   "required": [
     "schema_version",
     "relay_manifest_id",
@@ -16,19 +104,20 @@
     "truth_boundary",
     "product_boundary"
   ],
-  "properties": {
-    "schema_version": { "const": "relay_manifest.v0" },
-    "relay_manifest_id": { "type": "string" },
-    "relay_mode": { "type": "string" },
-    "routes": { "type": "array", "items": { "type": "string" } },
-    "profiles": { "type": "array", "items": { "type": "string" } },
-    "snapshot_refs": { "type": "array", "items": { "type": "string" } },
-    "no_goals": { "type": "array", "items": { "type": "string" } },
-    "blocked_actions": { "type": "array", "items": { "type": "string" } },
-    "limitations": { "type": "array", "items": { "type": "string" } },
-    "truth_boundary": { "type": "object" },
-    "product_boundary": { "type": "object" }
-  },
-  "additionalProperties": true
+  "snapshot_relay_required_fields": [
+    "relay_id",
+    "relay_version",
+    "snapshot_ref",
+    "read_only",
+    "live_source_actions_enabled",
+    "mutation_enabled",
+    "download_enabled",
+    "extraction_enabled",
+    "model_provider_enabled",
+    "supported_projection_profiles",
+    "capability_profile_ref",
+    "boundary_report_ref"
+  ],
+  "title": "Relay Manifest",
+  "type": "object"
 }
-

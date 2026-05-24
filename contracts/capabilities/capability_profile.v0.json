@@ -1,0 +1,67 @@
+{
+  "$id": "https://eureka.local/contracts/capability_profile.v0.v0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "limitations": {
+      "description": "Required limitations field for capability_profile.v0."
+    },
+    "profile_id": {
+      "description": "Required profile_id field for capability_profile.v0."
+    },
+    "profile_version": {
+      "description": "Required profile_version field for capability_profile.v0."
+    },
+    "record_type": {
+      "description": "Required record_type field for capability_profile.v0."
+    },
+    "schema_version": {
+      "description": "Required schema_version field for capability_profile.v0."
+    },
+    "supported_packet_versions": {
+      "description": "Required supported_packet_versions field for capability_profile.v0."
+    },
+    "supported_projection_profiles": {
+      "description": "Required supported_projection_profiles field for capability_profile.v0."
+    },
+    "supports_download": {
+      "description": "Required supports_download field for capability_profile.v0."
+    },
+    "supports_extraction": {
+      "description": "Required supports_extraction field for capability_profile.v0."
+    },
+    "supports_live_source_actions": {
+      "description": "Required supports_live_source_actions field for capability_profile.v0."
+    },
+    "supports_mutation": {
+      "description": "Required supports_mutation field for capability_profile.v0."
+    },
+    "supports_native_read_only": {
+      "description": "Required supports_native_read_only field for capability_profile.v0."
+    },
+    "supports_read_only_search": {
+      "description": "Required supports_read_only_search field for capability_profile.v0."
+    },
+    "supports_review": {
+      "description": "Required supports_review field for capability_profile.v0."
+    }
+  },
+  "required": [
+    "schema_version",
+    "record_type",
+    "profile_id",
+    "profile_version",
+    "supported_packet_versions",
+    "supported_projection_profiles",
+    "supports_read_only_search",
+    "supports_live_source_actions",
+    "supports_review",
+    "supports_mutation",
+    "supports_download",
+    "supports_extraction",
+    "supports_native_read_only",
+    "limitations"
+  ],
+  "title": "Capability Profile.V0",
+  "type": "object"
+}

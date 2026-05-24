@@ -1,0 +1,29 @@
+{
+  "created_at": "2026-05-25T00:00:00Z",
+  "limitations": [
+    "read-only snapshot/relay capability profile"
+  ],
+  "profile_id": "public_api_read_only",
+  "profile_version": "0.0",
+  "record_type": "capability_profile",
+  "schema_version": "capability_profile.v0",
+  "supported_packet_versions": [
+    "snapshot_relay_00.v0"
+  ],
+  "supported_projection_profiles": [
+    "operator_workbench_snapshot_reader",
+    "public_web_read_only",
+    "public_api_read_only",
+    "relay_client_read_only",
+    "native_desktop_read_only",
+    "lite_client_read_only",
+    "text_client_read_only"
+  ],
+  "supports_download": false,
+  "supports_extraction": false,
+  "supports_live_source_actions": false,
+  "supports_mutation": false,
+  "supports_native_read_only": false,
+  "supports_read_only_search": true,
+  "supports_review": false
+}

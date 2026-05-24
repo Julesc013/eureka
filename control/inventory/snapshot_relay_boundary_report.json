@@ -1,0 +1,19 @@
+{
+  "committed_data_public_index_mutated": false,
+  "deployment_performed": false,
+  "download_performed": false,
+  "extraction_executed": false,
+  "live_source_call_performed": false,
+  "master_index_mutated": false,
+  "model_provider_used": false,
+  "operator_instance_mutated": false,
+  "operator_tokens_included": false,
+  "private_local_state_included": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "raw_live_source_response_committed": false,
+  "schema_version": "snapshot_relay_boundary_report.v0",
+  "source_probe_executed": false,
+  "task": "AIDE-BATCH-SNAPSHOT-RELAY-00",
+  "upload_performed": false
+}

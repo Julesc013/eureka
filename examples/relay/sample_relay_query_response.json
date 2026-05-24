@@ -1,0 +1,59 @@
+{
+  "created_at": "2026-05-25T00:00:00Z",
+  "download_enabled": false,
+  "extraction_enabled": false,
+  "limitations": [
+    "read-only relay query over snapshot records"
+  ],
+  "live_source_actions_enabled": false,
+  "mutation_enabled": false,
+  "query": "sampleproject",
+  "query_response_id": "relay_query_response_5b6c5c8ce5733e67",
+  "read_only": true,
+  "record_type": "relay_query_response",
+  "result_count": 1,
+  "results": [
+    {
+      "action_posture": "view_cite_export_only",
+      "created_at": "2026-05-25T00:00:00Z",
+      "domain_id": "legacy_software",
+      "evidence_summary_refs": [
+        "evidence-summary-sampleproject-001"
+      ],
+      "limitations": [
+        "fixture reviewed record for snapshot relay validation"
+      ],
+      "non_claims": [
+        "not_public_truth",
+        "not_production_deployment",
+        "not_public_launch",
+        "not_live_source_action",
+        "not_store_mutation",
+        "not_download_or_extraction"
+      ],
+      "object_id": "sampleproject",
+      "private_fields_removed": true,
+      "public_safe": true,
+      "public_safe_fields": [
+        "record_id",
+        "object_id",
+        "title",
+        "domain_id",
+        "result_kind"
+      ],
+      "record_id": "reviewed-sampleproject-001",
+      "record_type": "snapshot_record",
+      "result_kind": "reviewed_object_record",
+      "reviewed_only": true,
+      "reviewed_status": "reviewed_local",
+      "schema_version": "snapshot_record.v0",
+      "snapshot_id": "snapshot_record_snapshot_d312d1309b739568",
+      "source_context": "fixture_reviewed_record",
+      "source_summary_refs": [
+        "source-summary-sampleproject-001"
+      ],
+      "title": "SampleProject 1.0 reviewed local record"
+    }
+  ],
+  "schema_version": "relay_query_response.v0"
+}

@@ -1,0 +1,9 @@
+{
+  "downloads_enabled": false,
+  "extraction_enabled": false,
+  "live_source_actions_enabled": false,
+  "mutation_enabled": false,
+  "relay_read_only": true,
+  "schema_version": "relay_read_only_matrix.v0",
+  "task": "AIDE-BATCH-SNAPSHOT-RELAY-00"
+}

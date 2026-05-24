@@ -1,0 +1,107 @@
+{
+  "$id": "https://eureka.local/contracts/snapshot_boundary_report.v0.v0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "committed_data_public_index_mutated": {
+      "description": "Required committed_data_public_index_mutated field for snapshot_boundary_report.v0."
+    },
+    "created_at": {
+      "description": "Required created_at field for snapshot_boundary_report.v0."
+    },
+    "deployment_performed": {
+      "description": "Required deployment_performed field for snapshot_boundary_report.v0."
+    },
+    "download_performed": {
+      "description": "Required download_performed field for snapshot_boundary_report.v0."
+    },
+    "extraction_executed": {
+      "description": "Required extraction_executed field for snapshot_boundary_report.v0."
+    },
+    "limitations": {
+      "description": "Required limitations field for snapshot_boundary_report.v0."
+    },
+    "live_source_call_performed": {
+      "description": "Required live_source_call_performed field for snapshot_boundary_report.v0."
+    },
+    "master_index_mutated": {
+      "description": "Required master_index_mutated field for snapshot_boundary_report.v0."
+    },
+    "model_provider_used": {
+      "description": "Required model_provider_used field for snapshot_boundary_report.v0."
+    },
+    "non_claims": {
+      "description": "Required non_claims field for snapshot_boundary_report.v0."
+    },
+    "operator_instance_mutated": {
+      "description": "Required operator_instance_mutated field for snapshot_boundary_report.v0."
+    },
+    "operator_tokens_included": {
+      "description": "Required operator_tokens_included field for snapshot_boundary_report.v0."
+    },
+    "private_local_state_included": {
+      "description": "Required private_local_state_included field for snapshot_boundary_report.v0."
+    },
+    "production_readiness_claimed": {
+      "description": "Required production_readiness_claimed field for snapshot_boundary_report.v0."
+    },
+    "public_launch_readiness_claimed": {
+      "description": "Required public_launch_readiness_claimed field for snapshot_boundary_report.v0."
+    },
+    "public_safe": {
+      "description": "Required public_safe field for snapshot_boundary_report.v0."
+    },
+    "raw_live_source_response_committed": {
+      "description": "Required raw_live_source_response_committed field for snapshot_boundary_report.v0."
+    },
+    "record_type": {
+      "description": "Required record_type field for snapshot_boundary_report.v0."
+    },
+    "reviewed_only": {
+      "description": "Required reviewed_only field for snapshot_boundary_report.v0."
+    },
+    "schema_version": {
+      "description": "Required schema_version field for snapshot_boundary_report.v0."
+    },
+    "snapshot_id": {
+      "description": "Required snapshot_id field for snapshot_boundary_report.v0."
+    },
+    "source_context": {
+      "description": "Required source_context field for snapshot_boundary_report.v0."
+    },
+    "source_probe_executed": {
+      "description": "Required source_probe_executed field for snapshot_boundary_report.v0."
+    },
+    "upload_performed": {
+      "description": "Required upload_performed field for snapshot_boundary_report.v0."
+    }
+  },
+  "required": [
+    "schema_version",
+    "record_type",
+    "snapshot_id",
+    "created_at",
+    "source_context",
+    "reviewed_only",
+    "public_safe",
+    "limitations",
+    "non_claims",
+    "private_local_state_included",
+    "operator_tokens_included",
+    "raw_live_source_response_committed",
+    "live_source_call_performed",
+    "source_probe_executed",
+    "operator_instance_mutated",
+    "master_index_mutated",
+    "committed_data_public_index_mutated",
+    "download_performed",
+    "upload_performed",
+    "extraction_executed",
+    "model_provider_used",
+    "deployment_performed",
+    "production_readiness_claimed",
+    "public_launch_readiness_claimed"
+  ],
+  "title": "Snapshot Boundary Report.V0",
+  "type": "object"
+}

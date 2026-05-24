@@ -1,0 +1,17 @@
+{
+  "repairs": [
+    {
+      "classification": "repairable",
+      "id": "dispatch-routing",
+      "repair": "shared snapshot CLI dispatcher routes by arguments as well as invoked name"
+    },
+    {
+      "classification": "warning_out_of_scope_policy_mismatch",
+      "id": "generated-cleanliness-audit-pack-drift",
+      "repair": "Recorded warning; did not edit global generated-artifact policy because it is outside SNAPSHOT-RELAY-00 allowed paths.",
+      "status": "deferred"
+    }
+  ],
+  "schema_version": "snapshot_relay_failure_repair_log.v0",
+  "task": "AIDE-BATCH-SNAPSHOT-RELAY-00"
+}

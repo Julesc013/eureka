@@ -1,9 +1,4 @@
+
 # Snapshot Schemas
 
-This directory records schema notes for Eureka static snapshot examples.
-
-Signed Snapshot Format v0 is a contract and seed example only. The schema files
-here describe deterministic static manifests for offline clients, future relay
-surfaces, and future native clients. They do not add real signing keys,
-production signatures, executable downloads, live backend behavior, live source
-probes, or public `/snapshots/` deployment.
+Schema references for reviewed-record snapshots. SNAPSHOT-RELAY-00 adds read-only envelope, manifest, integrity manifest, relay, and capability examples without private signing material or deployment output.

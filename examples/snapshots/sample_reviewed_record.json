@@ -1,0 +1,26 @@
+{
+  "action_posture": "view_cite_export_only",
+  "domain_id": "legacy_software",
+  "evidence_summary_refs": [
+    "evidence-summary-sampleproject-001"
+  ],
+  "limitations": [
+    "fixture reviewed record for snapshot relay validation"
+  ],
+  "object_id": "sampleproject",
+  "private_notes": "removed by snapshot projection",
+  "public_safe_fields": [
+    "record_id",
+    "object_id",
+    "title",
+    "domain_id",
+    "result_kind"
+  ],
+  "record_id": "reviewed-sampleproject-001",
+  "result_kind": "reviewed_object_record",
+  "reviewed_status": "reviewed_local",
+  "source_summary_refs": [
+    "source-summary-sampleproject-001"
+  ],
+  "title": "SampleProject 1.0 reviewed local record"
+}

@@ -1,0 +1,28 @@
+{
+  "boundary_report_ref": "relay_boundary_fe46b52d4e7fe15e",
+  "capability_profile_ref": "public_api_read_only",
+  "created_at": "2026-05-25T00:00:00Z",
+  "download_enabled": false,
+  "extraction_enabled": false,
+  "limitations": [
+    "read-only relay manifest for snapshot fixture"
+  ],
+  "live_source_actions_enabled": false,
+  "model_provider_enabled": false,
+  "mutation_enabled": false,
+  "read_only": true,
+  "record_type": "relay_manifest",
+  "relay_id": "relay_fe46b52d4e7fe15e",
+  "relay_version": "snapshot_relay_00.v0",
+  "schema_version": "relay_manifest.v0",
+  "snapshot_ref": "snapshot_record_set_c2e32ad904f4e32d",
+  "supported_projection_profiles": [
+    "operator_workbench_snapshot_reader",
+    "public_web_read_only",
+    "public_api_read_only",
+    "relay_client_read_only",
+    "native_desktop_read_only",
+    "lite_client_read_only",
+    "text_client_read_only"
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "$id": "https://eureka.local/contracts/snapshot_envelope.v0.v0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "absence_summary_count": {
+      "description": "Required absence_summary_count field for snapshot_envelope.v0."
+    },
+    "build_plan_ref": {
+      "description": "Required build_plan_ref field for snapshot_envelope.v0."
+    },
+    "capability_profile_ref": {
+      "description": "Required capability_profile_ref field for snapshot_envelope.v0."
+    },
+    "created_at": {
+      "description": "Required created_at field for snapshot_envelope.v0."
+    },
+    "evidence_summary_count": {
+      "description": "Required evidence_summary_count field for snapshot_envelope.v0."
+    },
+    "integrity_manifest_ref": {
+      "description": "Required integrity_manifest_ref field for snapshot_envelope.v0."
+    },
+    "known_need_count": {
+      "description": "Required known_need_count field for snapshot_envelope.v0."
+    },
+    "limitations": {
+      "description": "Required limitations field for snapshot_envelope.v0."
+    },
+    "manifest_ref": {
+      "description": "Required manifest_ref field for snapshot_envelope.v0."
+    },
+    "non_claims": {
+      "description": "Required non_claims field for snapshot_envelope.v0."
+    },
+    "production_claim": {
+      "description": "Required production_claim field for snapshot_envelope.v0."
+    },
+    "public_launch_claim": {
+      "description": "Required public_launch_claim field for snapshot_envelope.v0."
+    },
+    "public_safe": {
+      "description": "Required public_safe field for snapshot_envelope.v0."
+    },
+    "record_count": {
+      "description": "Required record_count field for snapshot_envelope.v0."
+    },
+    "record_type": {
+      "description": "Required record_type field for snapshot_envelope.v0."
+    },
+    "reviewed_only": {
+      "description": "Required reviewed_only field for snapshot_envelope.v0."
+    },
+    "schema_version": {
+      "description": "Required schema_version field for snapshot_envelope.v0."
+    },
+    "snapshot_id": {
+      "description": "Required snapshot_id field for snapshot_envelope.v0."
+    },
+    "snapshot_version": {
+      "description": "Required snapshot_version field for snapshot_envelope.v0."
+    },
+    "source_context": {
+      "description": "Required source_context field for snapshot_envelope.v0."
+    },
+    "source_summary_count": {
+      "description": "Required source_summary_count field for snapshot_envelope.v0."
+    }
+  },
+  "required": [
+    "schema_version",
+    "record_type",
+    "snapshot_id",
+    "created_at",
+    "source_context",
+    "reviewed_only",
+    "public_safe",
+    "limitations",
+    "non_claims",
+    "snapshot_version",
+    "build_plan_ref",
+    "manifest_ref",
+    "integrity_manifest_ref",
+    "capability_profile_ref",
+    "record_count",
+    "source_summary_count",
+    "evidence_summary_count",
+    "absence_summary_count",
+    "known_need_count",
+    "production_claim",
+    "public_launch_claim"
+  ],
+  "title": "Snapshot Envelope.V0",
+  "type": "object"
+}

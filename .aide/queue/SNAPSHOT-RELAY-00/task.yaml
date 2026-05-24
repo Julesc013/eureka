@@ -1,8 +1,5 @@
-schema_version: aide.task.v0
-id: SNAPSHOT-RELAY-00
-title: Read-only snapshot and relay path
-status: queued
-purpose: Read-only snapshot and relay path.
-allowed_scope_summary: Workbench local loop, local apply proof, docs, validators, tests, inventory, audit evidence, and AIDE metadata only.
-gate: No operator-instance mutation, committed instance state, master/public index mutation, source probes, downloads, extraction, model/provider calls, deployment, production readiness claim, or public launch claim.
-recommended_next: PUBLIC-ALPHA-READONLY-00
+
+task_id: SNAPSHOT-RELAY-00
+status: completed
+result: pass_with_warnings
+next_task: PUBLIC-ALPHA-READONLY-00

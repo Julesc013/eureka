@@ -1,8 +1,2 @@
-schema_version: aide.task.v0
-id: PUBLIC-ALPHA-READONLY-00
-title: Public reviewed-index-only alpha
-status: queued
-purpose: Public reviewed-index-only alpha.
-allowed_scope_summary: Workbench local loop, local apply proof, docs, validators, tests, inventory, audit evidence, and AIDE metadata only.
-gate: No operator-instance mutation, committed instance state, master/public index mutation, source probes, downloads, extraction, model/provider calls, deployment, production readiness claim, or public launch claim.
-recommended_next:
+task_id: PUBLIC-ALPHA-READONLY-00
+status: planned

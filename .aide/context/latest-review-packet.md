@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (7030 chars, 1758 approximate tokens)
+- `.aide/context/latest-task-packet.md` (7687 chars, 1922 approximate tokens)
 
 ## Context Packet Reference
 
@@ -35,29 +35,29 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/AIDE-BATCH-SOURCE-WAVE-00` (??; matches active task allowed path)
-- allowed: `.aide/queue/PUBLIC-DEMAND-SIGNAL-00` (??; matches active task allowed path)
-- allowed: `.aide/queue/SOURCE-WAVE-00/task.yaml` (M; matches active task allowed path)
+- allowed: `.aide/queue/AIDE-BATCH-SNAPSHOT-RELAY-00` (??; matches active task allowed path)
+- allowed: `.aide/queue/NATIVE-SNAPSHOT-CLIENT-00` (??; matches active task allowed path)
+- allowed: `.aide/queue/PUBLIC-ALPHA-READONLY-00/task.yaml` (M; matches active task allowed path)
+- allowed: `.aide/queue/PUBLIC-DEMAND-SIGNAL-00/task.yaml` (M; matches active task allowed path)
+- allowed: `.aide/queue/PUBLIC-SOURCE-REQUEST-QUEUE-00` (??; matches active task allowed path)
+- allowed: `.aide/queue/SNAPSHOT-RELAY-00/task.yaml` (M; matches active task allowed path)
 - allowed: `.aide/queue/index.yaml` (M; matches active task allowed path)
 - allowed: `.aide/reports/eureka-repo-health.json` (M; matches active task allowed path)
 - allowed: `.aide/reports/eureka-repo-health.md` (M; matches active task allowed path)
-- allowed: `contracts/source/families/crates_io_metadata.v0.json` (??; matches active task allowed path)
-- allowed: `contracts/source/families/github_releases_metadata.v0.json` (??; matches active task allowed path)
-- allowed: `contracts/source/families/internet_archive_metadata_v2.v0.json` (??; matches active task allowed path)
-- allowed: `contracts/source/families/manual_source_pack.v0.json` (M; matches active task allowed path)
-- allowed: `contracts/source/families/maven_metadata.v0.json` (??; matches active task allowed path)
-- allowed: `contracts/source/families/npm_metadata.v0.json` (??; matches active task allowed path)
-- allowed: `contracts/source/families/nuget_metadata.v0.json` (??; matches active task allowed path)
-- allowed: `contracts/source/families/open_library_metadata.v0.json` (??; matches active task allowed path)
-- allowed: `contracts/source/families/package_registry_metadata.v0.json` (??; matches active task allowed path)
-- allowed: `contracts/source/families/pypi_metadata.v0.json` (??; matches active task allowed path)
-- allowed: `contracts/source/families/software_heritage_metadata.v0.json` (??; matches active task allowed path)
-- allowed: `contracts/source/families/wayback_cdx_metadata.v0.json` (??; matches active task allowed path)
-- allowed: `contracts/source/families/wikidata_metadata.v0.json` (??; matches active task allowed path)
-- allowed: `control/audits/source-wave-00-v0` (??; matches active task allowed path)
-- allowed: `control/inventory/source_wave_boundary_report.json` (??; matches active task allowed path)
-- allowed: `control/inventory/source_wave_capability_matrix.json` (??; matches active task allowed path)
-- additional changed paths omitted from compact packet: 93; see task evidence changed-files report
+- allowed: `contracts/capabilities` (??; matches active task allowed path)
+- allowed: `contracts/relay/relay_boundary_report.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/relay/relay_health_packet.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/relay/relay_manifest.v0.json` (M; matches active task allowed path)
+- allowed: `contracts/relay/relay_projection.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/relay/relay_query_response.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/relay/relay_record_index.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/snapshot` (??; matches active task allowed path)
+- allowed: `control/audits/snapshot-relay-00-v0` (??; matches active task allowed path)
+- allowed: `control/inventory/relay_contract_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/relay_manifest_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/relay_projection_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/relay_read_only_matrix.json` (??; matches active task allowed path)
+- additional changed paths omitted from compact packet: 92; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -67,8 +67,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 6708
-- approx_tokens: 1677
+- chars: 6527
+- approx_tokens: 1632
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

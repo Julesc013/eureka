@@ -1,0 +1,75 @@
+{
+  "$id": "https://eureka.local/contracts/snapshot_manifest.v0.v0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "absence_summary_count": {
+      "description": "Required absence_summary_count field for snapshot_manifest.v0."
+    },
+    "created_at": {
+      "description": "Required created_at field for snapshot_manifest.v0."
+    },
+    "evidence_summary_count": {
+      "description": "Required evidence_summary_count field for snapshot_manifest.v0."
+    },
+    "known_need_count": {
+      "description": "Required known_need_count field for snapshot_manifest.v0."
+    },
+    "limitations": {
+      "description": "Required limitations field for snapshot_manifest.v0."
+    },
+    "non_claims": {
+      "description": "Required non_claims field for snapshot_manifest.v0."
+    },
+    "public_safe": {
+      "description": "Required public_safe field for snapshot_manifest.v0."
+    },
+    "record_count": {
+      "description": "Required record_count field for snapshot_manifest.v0."
+    },
+    "record_refs": {
+      "description": "Required record_refs field for snapshot_manifest.v0."
+    },
+    "record_type": {
+      "description": "Required record_type field for snapshot_manifest.v0."
+    },
+    "reviewed_only": {
+      "description": "Required reviewed_only field for snapshot_manifest.v0."
+    },
+    "schema_version": {
+      "description": "Required schema_version field for snapshot_manifest.v0."
+    },
+    "snapshot_id": {
+      "description": "Required snapshot_id field for snapshot_manifest.v0."
+    },
+    "snapshot_version": {
+      "description": "Required snapshot_version field for snapshot_manifest.v0."
+    },
+    "source_context": {
+      "description": "Required source_context field for snapshot_manifest.v0."
+    },
+    "source_summary_count": {
+      "description": "Required source_summary_count field for snapshot_manifest.v0."
+    }
+  },
+  "required": [
+    "schema_version",
+    "record_type",
+    "snapshot_id",
+    "created_at",
+    "source_context",
+    "reviewed_only",
+    "public_safe",
+    "limitations",
+    "non_claims",
+    "snapshot_version",
+    "record_count",
+    "record_refs",
+    "source_summary_count",
+    "evidence_summary_count",
+    "absence_summary_count",
+    "known_need_count"
+  ],
+  "title": "Snapshot Manifest.V0",
+  "type": "object"
+}

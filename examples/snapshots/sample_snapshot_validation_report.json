@@ -1,0 +1,22 @@
+{
+  "created_at": "2026-05-25T00:00:00Z",
+  "errors": [],
+  "limitations": [
+    "schema and boundary validation only"
+  ],
+  "non_claims": [
+    "not_public_truth",
+    "not_production_deployment",
+    "not_public_launch",
+    "not_live_source_action",
+    "not_store_mutation",
+    "not_download_or_extraction"
+  ],
+  "public_safe": true,
+  "record_type": "snapshot_validation_report",
+  "reviewed_only": true,
+  "schema_version": "snapshot_validation_report.v0",
+  "snapshot_id": "snapshot_record_set_c2e32ad904f4e32d",
+  "source_context": "fixture_reviewed_records",
+  "status": "pass"
+}

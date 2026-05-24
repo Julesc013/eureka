@@ -1,0 +1,47 @@
+{
+  "$id": "https://eureka.local/contracts/projection_capability.v0.v0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "download_enabled": {
+      "description": "Required download_enabled field for projection_capability.v0."
+    },
+    "extraction_enabled": {
+      "description": "Required extraction_enabled field for projection_capability.v0."
+    },
+    "live_source_actions_enabled": {
+      "description": "Required live_source_actions_enabled field for projection_capability.v0."
+    },
+    "mutation_enabled": {
+      "description": "Required mutation_enabled field for projection_capability.v0."
+    },
+    "negotiation_id": {
+      "description": "Required negotiation_id field for projection_capability.v0."
+    },
+    "read_only": {
+      "description": "Required read_only field for projection_capability.v0."
+    },
+    "requested_projection_profile": {
+      "description": "Required requested_projection_profile field for projection_capability.v0."
+    },
+    "schema_version": {
+      "description": "Required schema_version field for projection_capability.v0."
+    },
+    "supported": {
+      "description": "Required supported field for projection_capability.v0."
+    }
+  },
+  "required": [
+    "schema_version",
+    "negotiation_id",
+    "requested_projection_profile",
+    "supported",
+    "read_only",
+    "mutation_enabled",
+    "live_source_actions_enabled",
+    "download_enabled",
+    "extraction_enabled"
+  ],
+  "title": "Projection Capability.V0",
+  "type": "object"
+}

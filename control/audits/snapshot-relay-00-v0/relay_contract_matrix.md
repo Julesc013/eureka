@@ -1,0 +1,17 @@
+# relay_contract_matrix
+
+```json
+{
+  "contracts": [
+    "relay_manifest",
+    "relay_projection",
+    "relay_record_index",
+    "relay_query_response",
+    "relay_health_packet",
+    "relay_boundary_report"
+  ],
+  "read_only": true,
+  "schema_version": "relay_contract_matrix.v0",
+  "task": "AIDE-BATCH-SNAPSHOT-RELAY-00"
+}
+```

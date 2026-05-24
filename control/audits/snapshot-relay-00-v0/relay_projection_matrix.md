@@ -1,0 +1,17 @@
+# relay_projection_matrix
+
+```json
+{
+  "projections": [
+    "api_read_only",
+    "web_read_only",
+    "text_read_only",
+    "files_read_only",
+    "lite_read_only",
+    "native_read_only_future"
+  ],
+  "read_only": true,
+  "schema_version": "relay_projection_matrix.v0",
+  "task": "AIDE-BATCH-SNAPSHOT-RELAY-00"
+}
+```

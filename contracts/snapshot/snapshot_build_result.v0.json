@@ -1,0 +1,79 @@
+{
+  "$id": "https://eureka.local/contracts/snapshot_build_result.v0.v0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "boundary_report": {
+      "description": "Required boundary_report field for snapshot_build_result.v0."
+    },
+    "capability_profile": {
+      "description": "Required capability_profile field for snapshot_build_result.v0."
+    },
+    "created_at": {
+      "description": "Required created_at field for snapshot_build_result.v0."
+    },
+    "envelope": {
+      "description": "Required envelope field for snapshot_build_result.v0."
+    },
+    "integrity_manifest": {
+      "description": "Required integrity_manifest field for snapshot_build_result.v0."
+    },
+    "limitations": {
+      "description": "Required limitations field for snapshot_build_result.v0."
+    },
+    "manifest": {
+      "description": "Required manifest field for snapshot_build_result.v0."
+    },
+    "non_claims": {
+      "description": "Required non_claims field for snapshot_build_result.v0."
+    },
+    "plan": {
+      "description": "Required plan field for snapshot_build_result.v0."
+    },
+    "public_safe": {
+      "description": "Required public_safe field for snapshot_build_result.v0."
+    },
+    "record_set": {
+      "description": "Required record_set field for snapshot_build_result.v0."
+    },
+    "record_type": {
+      "description": "Required record_type field for snapshot_build_result.v0."
+    },
+    "reviewed_only": {
+      "description": "Required reviewed_only field for snapshot_build_result.v0."
+    },
+    "schema_version": {
+      "description": "Required schema_version field for snapshot_build_result.v0."
+    },
+    "snapshot_id": {
+      "description": "Required snapshot_id field for snapshot_build_result.v0."
+    },
+    "source_context": {
+      "description": "Required source_context field for snapshot_build_result.v0."
+    },
+    "validation_report": {
+      "description": "Required validation_report field for snapshot_build_result.v0."
+    }
+  },
+  "required": [
+    "schema_version",
+    "record_type",
+    "snapshot_id",
+    "created_at",
+    "source_context",
+    "reviewed_only",
+    "public_safe",
+    "limitations",
+    "non_claims",
+    "plan",
+    "record_set",
+    "manifest",
+    "integrity_manifest",
+    "capability_profile",
+    "envelope",
+    "validation_report",
+    "boundary_report"
+  ],
+  "title": "Snapshot Build Result.V0",
+  "type": "object"
+}

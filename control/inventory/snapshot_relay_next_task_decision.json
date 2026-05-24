@@ -1,0 +1,11 @@
+{
+  "planned_after": [
+    "PUBLIC-DEMAND-SIGNAL-00",
+    "PUBLIC-SOURCE-REQUEST-QUEUE-00",
+    "NATIVE-SNAPSHOT-CLIENT-00"
+  ],
+  "rationale": "Reviewed-record snapshots and read-only relay packets are now the foundation for a public reviewed-index-only alpha.",
+  "recommended_next_task": "PUBLIC-ALPHA-READONLY-00 - Public reviewed-index-only alpha foundation",
+  "schema_version": "snapshot_relay_next_task_decision.v0",
+  "task": "AIDE-BATCH-SNAPSHOT-RELAY-00"
+}

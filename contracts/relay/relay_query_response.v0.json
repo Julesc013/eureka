@@ -1,0 +1,59 @@
+{
+  "$id": "https://eureka.local/contracts/relay_query_response.v0.v0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "created_at": {
+      "description": "Required created_at field for relay_query_response.v0."
+    },
+    "download_enabled": {
+      "description": "Required download_enabled field for relay_query_response.v0."
+    },
+    "extraction_enabled": {
+      "description": "Required extraction_enabled field for relay_query_response.v0."
+    },
+    "live_source_actions_enabled": {
+      "description": "Required live_source_actions_enabled field for relay_query_response.v0."
+    },
+    "mutation_enabled": {
+      "description": "Required mutation_enabled field for relay_query_response.v0."
+    },
+    "query": {
+      "description": "Required query field for relay_query_response.v0."
+    },
+    "query_response_id": {
+      "description": "Required query_response_id field for relay_query_response.v0."
+    },
+    "read_only": {
+      "description": "Required read_only field for relay_query_response.v0."
+    },
+    "record_type": {
+      "description": "Required record_type field for relay_query_response.v0."
+    },
+    "result_count": {
+      "description": "Required result_count field for relay_query_response.v0."
+    },
+    "results": {
+      "description": "Required results field for relay_query_response.v0."
+    },
+    "schema_version": {
+      "description": "Required schema_version field for relay_query_response.v0."
+    }
+  },
+  "required": [
+    "schema_version",
+    "record_type",
+    "query_response_id",
+    "created_at",
+    "query",
+    "read_only",
+    "result_count",
+    "results",
+    "mutation_enabled",
+    "live_source_actions_enabled",
+    "download_enabled",
+    "extraction_enabled"
+  ],
+  "title": "Relay Query Response.V0",
+  "type": "object"
+}

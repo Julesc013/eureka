@@ -1,0 +1,7 @@
+{
+  "raw_response_included": false,
+  "source_family": "manual_source_pack",
+  "source_locator_summary": "fixture://manual_source_pack/sampleproject",
+  "summary_id": "source-summary-sampleproject-001",
+  "title": "Manual source pack fixture summary"
+}

@@ -1,13 +1,16 @@
 {
   "branch": "dev",
-  "current_recommended_task": "SNAPSHOT-RELAY-00 - Reviewed-record snapshot and read-only relay foundation",
+  "current_recommended_task": "PUBLIC-ALPHA-READONLY-00 - Public reviewed-index-only alpha foundation",
   "deployment_performed": false,
-  "full_unittest_discovery_status": "not_rerun_for_source_wave_known_out_of_scope_debt",
-  "head": "a92b622cb4e9fbbf99b52bbd88402042b136a601",
+  "full_unittest_discovery_status": "not_rerun_for_snapshot_relay_known_out_of_scope_debt",
+  "head": "28eddd8f1d1a5a6511166c92e518c5091c8a7148",
+  "origin_dev": "28eddd8f1d1a5a6511166c92e518c5091c8a7148",
+  "origin_main": "e582028b1db977e28ba6ddc0ed284ca6ccf48234",
   "production_readiness_claimed": false,
   "public_launch_readiness_claimed": false,
   "schema_version": "eureka_repo_health.v0",
+  "snapshot_relay_result_status": "pass_with_warnings",
+  "snapshot_relay_status": "completed_pass_with_warnings",
   "source_action_kernel_status": "completed",
-  "source_wave_required_family_count": 8,
   "source_wave_status": "completed_pass_with_warnings"
 }

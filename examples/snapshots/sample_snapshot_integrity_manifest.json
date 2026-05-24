@@ -1,0 +1,50 @@
+{
+  "created_at": "2026-05-25T00:00:00Z",
+  "deterministic": true,
+  "entries": [
+    {
+      "path": "absence_summaries",
+      "sha256": "cdc06937e5a53b089f0976c376732c09ee690a235fa6157eab4a16ee85fbfc4e"
+    },
+    {
+      "path": "evidence_summaries",
+      "sha256": "41bcc5ba3520f15630258ae617a05596ca4c947d0df27bc48e4f1413db699940"
+    },
+    {
+      "path": "manifest",
+      "sha256": "eeb2256ee07ff6fc9008c87a9a68932be1dc92a282afbe7616e34007d93ab1fc"
+    },
+    {
+      "path": "need_summaries",
+      "sha256": "a274a6e41b2d671821a7f09e5c7b1b264afc6ec865ca41f31e1057bd280958b6"
+    },
+    {
+      "path": "records",
+      "sha256": "b05af9c101123c893b577edf708c3377dadb096316fb9f5d8c646fad81dd19ac"
+    },
+    {
+      "path": "source_summaries",
+      "sha256": "30a6707843d3cc617b103338aec24dba1839e6056133519a1c0acf483824002e"
+    }
+  ],
+  "entry_count": 6,
+  "hash_algorithm": "sha256",
+  "limitations": [
+    "hashes prove local packet integrity only, not source authenticity"
+  ],
+  "non_claims": [
+    "not_public_truth",
+    "not_production_deployment",
+    "not_public_launch",
+    "not_live_source_action",
+    "not_store_mutation",
+    "not_download_or_extraction"
+  ],
+  "private_signing_key_included": false,
+  "public_safe": true,
+  "record_type": "snapshot_integrity_manifest",
+  "reviewed_only": true,
+  "schema_version": "snapshot_integrity_manifest.v0",
+  "snapshot_id": "snapshot_integrity_737c2539169e5bd8",
+  "source_context": "fixture_reviewed_records"
+}

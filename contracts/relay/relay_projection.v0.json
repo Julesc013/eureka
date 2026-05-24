@@ -1,0 +1,55 @@
+{
+  "$id": "https://eureka.local/contracts/relay_projection.v0.v0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "created_at": {
+      "description": "Required created_at field for relay_projection.v0."
+    },
+    "download_enabled": {
+      "description": "Required download_enabled field for relay_projection.v0."
+    },
+    "extraction_enabled": {
+      "description": "Required extraction_enabled field for relay_projection.v0."
+    },
+    "live_source_actions_enabled": {
+      "description": "Required live_source_actions_enabled field for relay_projection.v0."
+    },
+    "mutation_enabled": {
+      "description": "Required mutation_enabled field for relay_projection.v0."
+    },
+    "projection_id": {
+      "description": "Required projection_id field for relay_projection.v0."
+    },
+    "projection_profile": {
+      "description": "Required projection_profile field for relay_projection.v0."
+    },
+    "query_response": {
+      "description": "Required query_response field for relay_projection.v0."
+    },
+    "read_only": {
+      "description": "Required read_only field for relay_projection.v0."
+    },
+    "record_type": {
+      "description": "Required record_type field for relay_projection.v0."
+    },
+    "schema_version": {
+      "description": "Required schema_version field for relay_projection.v0."
+    }
+  },
+  "required": [
+    "schema_version",
+    "record_type",
+    "projection_id",
+    "created_at",
+    "projection_profile",
+    "read_only",
+    "query_response",
+    "mutation_enabled",
+    "live_source_actions_enabled",
+    "download_enabled",
+    "extraction_enabled"
+  ],
+  "title": "Relay Projection.V0",
+  "type": "object"
+}

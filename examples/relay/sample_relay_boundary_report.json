@@ -1,0 +1,25 @@
+{
+  "committed_data_public_index_mutated": false,
+  "created_at": "2026-05-25T00:00:00Z",
+  "deployment_performed": false,
+  "download_performed": false,
+  "extraction_executed": false,
+  "limitations": [
+    "relay boundary report for read-only snapshot projection"
+  ],
+  "live_source_call_performed": false,
+  "master_index_mutated": false,
+  "model_provider_used": false,
+  "operator_instance_mutated": false,
+  "operator_tokens_included": false,
+  "private_local_state_included": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "raw_live_source_response_committed": false,
+  "read_only": true,
+  "record_type": "relay_boundary_report",
+  "relay_id": "relay_fe46b52d4e7fe15e",
+  "schema_version": "relay_boundary_report.v0",
+  "source_probe_executed": false,
+  "upload_performed": false
+}

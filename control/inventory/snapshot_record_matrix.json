@@ -1,0 +1,15 @@
+{
+  "private_fields_removed": true,
+  "record_classes": [
+    "reviewed_object_record",
+    "reviewed_source_summary",
+    "reviewed_evidence_summary",
+    "known_absence_summary",
+    "known_need_summary",
+    "limitation_summary",
+    "action_posture_summary"
+  ],
+  "schema_version": "snapshot_record_matrix.v0",
+  "task": "AIDE-BATCH-SNAPSHOT-RELAY-00",
+  "unreviewed_truth_allowed": false
+}

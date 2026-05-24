@@ -1,0 +1,59 @@
+{
+  "$id": "https://eureka.local/contracts/snapshot_need_summary.v0.v0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "created_at": {
+      "description": "Required created_at field for snapshot_need_summary.v0."
+    },
+    "limitations": {
+      "description": "Required limitations field for snapshot_need_summary.v0."
+    },
+    "need_id": {
+      "description": "Required need_id field for snapshot_need_summary.v0."
+    },
+    "non_claims": {
+      "description": "Required non_claims field for snapshot_need_summary.v0."
+    },
+    "public_safe": {
+      "description": "Required public_safe field for snapshot_need_summary.v0."
+    },
+    "record_type": {
+      "description": "Required record_type field for snapshot_need_summary.v0."
+    },
+    "reviewed_only": {
+      "description": "Required reviewed_only field for snapshot_need_summary.v0."
+    },
+    "schema_version": {
+      "description": "Required schema_version field for snapshot_need_summary.v0."
+    },
+    "snapshot_id": {
+      "description": "Required snapshot_id field for snapshot_need_summary.v0."
+    },
+    "source_context": {
+      "description": "Required source_context field for snapshot_need_summary.v0."
+    },
+    "summary_id": {
+      "description": "Required summary_id field for snapshot_need_summary.v0."
+    },
+    "title": {
+      "description": "Required title field for snapshot_need_summary.v0."
+    }
+  },
+  "required": [
+    "schema_version",
+    "record_type",
+    "snapshot_id",
+    "created_at",
+    "source_context",
+    "reviewed_only",
+    "public_safe",
+    "limitations",
+    "non_claims",
+    "summary_id",
+    "need_id",
+    "title"
+  ],
+  "title": "Snapshot Need Summary.V0",
+  "type": "object"
+}

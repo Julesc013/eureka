@@ -1,9 +1,11 @@
-current_recommended_task: SNAPSHOT-RELAY-00 - Reviewed-record snapshot and read-only relay foundation
+
+current_recommended_task: PUBLIC-ALPHA-READONLY-00 - Public reviewed-index-only alpha foundation
 completed:
   - SOURCE-ACTION-KERNEL-00
   - SOURCE-WAVE-00
-planned:
   - SNAPSHOT-RELAY-00
+planned:
   - PUBLIC-ALPHA-READONLY-00
   - PUBLIC-DEMAND-SIGNAL-00
   - PUBLIC-SOURCE-REQUEST-QUEUE-00
+  - NATIVE-SNAPSHOT-CLIENT-00

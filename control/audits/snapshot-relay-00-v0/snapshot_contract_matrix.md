@@ -1,0 +1,25 @@
+# snapshot_contract_matrix
+
+```json
+{
+  "contracts": [
+    "contracts/snapshot/snapshot_absence_summary.v0.json",
+    "contracts/snapshot/snapshot_boundary_report.v0.json",
+    "contracts/snapshot/snapshot_build_plan.v0.json",
+    "contracts/snapshot/snapshot_build_result.v0.json",
+    "contracts/snapshot/snapshot_envelope.v0.json",
+    "contracts/snapshot/snapshot_evidence_summary.v0.json",
+    "contracts/snapshot/snapshot_integrity_manifest.v0.json",
+    "contracts/snapshot/snapshot_manifest.v0.json",
+    "contracts/snapshot/snapshot_need_summary.v0.json",
+    "contracts/snapshot/snapshot_record.v0.json",
+    "contracts/snapshot/snapshot_record_set.v0.json",
+    "contracts/snapshot/snapshot_source_summary.v0.json",
+    "contracts/snapshot/snapshot_validation_report.v0.json"
+  ],
+  "public_safe_required": true,
+  "reviewed_only_required": true,
+  "schema_version": "snapshot_contract_matrix.v0",
+  "task": "AIDE-BATCH-SNAPSHOT-RELAY-00"
+}
+```

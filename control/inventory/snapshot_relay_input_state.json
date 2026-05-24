@@ -1,0 +1,20 @@
+{
+  "ahead_behind_origin_main_origin_dev": "0\t2",
+  "branch": "dev",
+  "head": "28eddd8f1d1a5a6511166c92e518c5091c8a7148",
+  "local_apply_gate_verified": true,
+  "local_loop_verified": true,
+  "merge_base": "e582028b1db977e28ba6ddc0ed284ca6ccf48234",
+  "origin_dev": "28eddd8f1d1a5a6511166c92e518c5091c8a7148",
+  "origin_main": "e582028b1db977e28ba6ddc0ed284ca6ccf48234",
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "resolution_run_kernel_found": true,
+  "schema_version": "snapshot_relay_input_state.v0",
+  "source_action_kernel_found": true,
+  "source_action_kernel_status": "pass_with_warnings",
+  "source_wave_found": true,
+  "source_wave_status": "pass_with_warnings",
+  "task": "AIDE-BATCH-SNAPSHOT-RELAY-00",
+  "working_tree_clean_before": true
+}
