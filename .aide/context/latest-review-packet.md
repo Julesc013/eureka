@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (7479 chars, 1870 approximate tokens)
+- `.aide/context/latest-task-packet.md` (4803 chars, 1201 approximate tokens)
 
 ## Context Packet Reference
 
@@ -35,29 +35,22 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/AIDE-BATCH-WORKBENCH-LOCAL-LOOP-CLOSEOUT-01` (??; matches active task allowed path)
-- allowed: `.aide/queue/DEV-TO-MAIN-PROMOTION-REVIEW-02` (??; matches active task allowed path)
-- allowed: `.aide/queue/PUBLIC-ALPHA-READONLY-00/task.yaml` (M; matches active task allowed path)
-- allowed: `.aide/queue/SNAPSHOT-RELAY-00/task.yaml` (M; matches active task allowed path)
+- allowed: `.aide/queue/DEV-TO-MAIN-PROMOTION-REVIEW-02/task.yaml` (M; matches active task allowed path)
 - allowed: `.aide/queue/SOURCE-ACTION-KERNEL-00/task.yaml` (M; matches active task allowed path)
-- allowed: `.aide/queue/SOURCE-WAVE-00/task.yaml` (M; matches active task allowed path)
-- allowed: `.aide/queue/WORKBENCH-LOCAL-LOOP-CLOSEOUT-01/task.yaml` (M; matches active task allowed path)
-- allowed: `.aide/queue/index.yaml` (M; matches active task allowed path)
-- allowed: `.aide/reports/eureka-repo-health.json` (M; matches active task allowed path)
-- allowed: `.aide/reports/eureka-repo-health.md` (M; matches active task allowed path)
-- allowed: `contracts/local_loop` (??; matches active task allowed path)
-- allowed: `control/audits/workbench-local-loop-closeout-01-v0` (??; matches active task allowed path)
-- allowed: `control/inventory/workbench_local_loop_api_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/workbench_local_loop_apply_proof.json` (??; matches active task allowed path)
-- allowed: `control/inventory/workbench_local_loop_boundary_report.json` (??; matches active task allowed path)
-- allowed: `control/inventory/workbench_local_loop_event_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/workbench_local_loop_failure_repair_log.json` (??; matches active task allowed path)
-- allowed: `control/inventory/workbench_local_loop_input_state.json` (??; matches active task allowed path)
-- allowed: `control/inventory/workbench_local_loop_next_task_decision.json` (??; matches active task allowed path)
-- allowed: `control/inventory/workbench_local_loop_policy_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/workbench_local_loop_result.json` (??; matches active task allowed path)
-- allowed: `control/inventory/workbench_local_loop_rollback_proof.json` (??; matches active task allowed path)
-- additional changed paths omitted from compact packet: 34; see task evidence changed-files report
+- allowed: `control/audits/dev-to-main-promotion-review-02-v0` (??; matches active task allowed path)
+- allowed: `control/inventory/dev_to_main_promotion_02_boundary_report.json` (??; matches active task allowed path)
+- allowed: `control/inventory/dev_to_main_promotion_02_branch_state.json` (??; matches active task allowed path)
+- allowed: `control/inventory/dev_to_main_promotion_02_failure_repair_log.json` (??; matches active task allowed path)
+- allowed: `control/inventory/dev_to_main_promotion_02_input_state.json` (??; matches active task allowed path)
+- allowed: `control/inventory/dev_to_main_promotion_02_next_task_decision.json` (??; matches active task allowed path)
+- allowed: `control/inventory/dev_to_main_promotion_02_result.json` (??; matches active task allowed path)
+- allowed: `control/inventory/dev_to_main_promotion_02_scope_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/dev_to_main_promotion_02_validation_matrix.json` (??; matches active task allowed path)
+- allowed: `docs/operations/DEV_TO_MAIN_PROMOTION_REVIEW_02.md` (??; matches active task allowed path)
+- allowed: `docs/operations/POST_LOCAL_LOOP_PROMOTION_PLAN.md` (??; matches active task allowed path)
+- allowed: `scripts/validate_dev_to_main_promotion_02.py` (??; matches active task allowed path)
+- allowed: `tests/operations/test_dev_to_main_promotion_02.py` (??; matches active task allowed path)
+- allowed: `tests/scripts/test_validate_dev_to_main_promotion_02.py` (??; matches active task allowed path)
 
 ## Validation Summary
 
@@ -67,8 +60,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 6727
-- approx_tokens: 1682
+- chars: 6153
+- approx_tokens: 1539
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

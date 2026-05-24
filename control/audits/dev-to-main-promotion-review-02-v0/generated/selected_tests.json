@@ -1,0 +1,123 @@
+{
+  "changed_paths": [
+    ".aide/context/latest-review-packet.md",
+    ".aide/context/latest-task-packet.md",
+    ".aide/queue/DEV-TO-MAIN-PROMOTION-REVIEW-02/task.yaml",
+    ".aide/queue/SOURCE-ACTION-KERNEL-00/task.yaml",
+    "control/audits/dev-to-main-promotion-review-02-v0/README.md",
+    "control/audits/dev-to-main-promotion-review-02-v0/boundary_report.md",
+    "control/audits/dev-to-main-promotion-review-02-v0/branch_state.md",
+    "control/audits/dev-to-main-promotion-review-02-v0/dev_to_main_promotion_02_report.json",
+    "control/audits/dev-to-main-promotion-review-02-v0/full_discovery_summary.md",
+    "control/audits/dev-to-main-promotion-review-02-v0/generated/full_unittest_summary.txt",
+    "control/audits/dev-to-main-promotion-review-02-v0/generated/promotion_selector.json",
+    "control/audits/dev-to-main-promotion-review-02-v0/generated/sample_summary.md",
+    "control/audits/dev-to-main-promotion-review-02-v0/generated/selected_tests.json",
+    "control/audits/dev-to-main-promotion-review-02-v0/promotion_result.md",
+    "control/audits/dev-to-main-promotion-review-02-v0/scope_matrix.md",
+    "control/audits/dev-to-main-promotion-review-02-v0/validation.md",
+    "control/audits/dev-to-main-promotion-review-02-v0/validation_matrix.md",
+    "control/inventory/dev_to_main_promotion_02_boundary_report.json",
+    "control/inventory/dev_to_main_promotion_02_branch_state.json",
+    "control/inventory/dev_to_main_promotion_02_failure_repair_log.json",
+    "control/inventory/dev_to_main_promotion_02_input_state.json",
+    "control/inventory/dev_to_main_promotion_02_next_task_decision.json",
+    "control/inventory/dev_to_main_promotion_02_result.json",
+    "control/inventory/dev_to_main_promotion_02_scope_matrix.json",
+    "control/inventory/dev_to_main_promotion_02_validation_matrix.json",
+    "docs/operations/DEV_TO_MAIN_PROMOTION_REVIEW_02.md",
+    "docs/operations/POST_LOCAL_LOOP_PROMOTION_PLAN.md",
+    "scripts/validate_dev_to_main_promotion_02.py",
+    "tests/operations/test_dev_to_main_promotion_02.py",
+    "tests/scripts/test_validate_dev_to_main_promotion_02.py"
+  ],
+  "failed_first_commands": [],
+  "full_discovery_deferred_until": [
+    "main_promotion",
+    "release_candidate",
+    "high_risk_runtime_bridge"
+  ],
+  "full_discovery_required": false,
+  "known_failures": [],
+  "matched_impact_patterns": [
+    "scripts/validate_*.py",
+    "control/inventory/**",
+    "tests/**"
+  ],
+  "mode": "changed+failed_first",
+  "promotion_allowed": true,
+  "schema_version": "test_selection_result.v0",
+  "selected_commands": [
+    {
+      "command": "git diff --check",
+      "lane_id": "L0_static_preflight",
+      "reason": "base preflight",
+      "source": "test_lane_policy"
+    },
+    {
+      "command": "python scripts/check_architecture_boundaries.py",
+      "lane_id": "L0_static_preflight",
+      "reason": "base preflight",
+      "source": "test_lane_policy"
+    },
+    {
+      "command": "python scripts/check_generated_artifact_cleanliness.py --check --json",
+      "lane_id": "L0_static_preflight",
+      "reason": "base preflight",
+      "source": "test_lane_policy"
+    },
+    {
+      "command": "python -m unittest tests.scripts.test_validate_test_lane_policy",
+      "lane_id": "L1_focused_unit",
+      "reason": "validator_scripts focused test",
+      "source": "scripts/validate_*.py"
+    },
+    {
+      "command": "python scripts/validate_test_lane_policy.py",
+      "lane_id": "L2_impact_integration",
+      "reason": "validator_scripts smoke",
+      "source": "scripts/validate_*.py"
+    },
+    {
+      "command": "python -m unittest tests.operations.test_test_impact_map",
+      "lane_id": "L1_focused_unit",
+      "reason": "control_inventory focused test",
+      "source": "control/inventory/**"
+    },
+    {
+      "command": "python -m unittest tests.operations.test_test_failure_ledger",
+      "lane_id": "L1_focused_unit",
+      "reason": "control_inventory focused test",
+      "source": "control/inventory/**"
+    },
+    {
+      "command": "python -m unittest tests.operations.test_test_lane_policy",
+      "lane_id": "L1_focused_unit",
+      "reason": "tests focused test",
+      "source": "tests/**"
+    },
+    {
+      "command": "python -m unittest tests.scripts.test_eureka_test_select",
+      "lane_id": "L1_focused_unit",
+      "reason": "tests focused test",
+      "source": "tests/**"
+    }
+  ],
+  "selected_lanes": [
+    "L0_static_preflight",
+    "L1_focused_unit",
+    "L2_impact_integration"
+  ],
+  "skip_reasons": [
+    "not selected for per-commit default; required before promotion/high-risk gates"
+  ],
+  "skipped_commands": [
+    {
+      "command": "python -m unittest discover -s tests -t .",
+      "lane_id": "L3_full_discovery",
+      "reason": "not selected for per-commit default; required before promotion/high-risk gates"
+    }
+  ],
+  "task": "",
+  "warnings": []
+}

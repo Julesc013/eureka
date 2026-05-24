@@ -2,15 +2,15 @@
 
 ## PHASE
 
-WORKBENCH-LOCAL-LOOP-CLOSEOUT - AIDE-BATCH-WORKBENCH-LOCAL-LOOP-CLOSEOUT-01
+UNSPECIFIED - DEV-TO-MAIN-PROMOTION-REVIEW-02
 
 ## GOAL
 
-Prove query to reviewed local result through the Local Apply Gate in temp scope.
+DEV-TO-MAIN-PROMOTION-REVIEW-02
 
 ## WHY
 
-Close the first safe local product loop by composing the ResolutionRunKernel, Workbench projection, review/promote flow, Local Apply Gate, reviewed local index refresh, search-after-apply proof, and rollback proof without mutating the real operator instance.
+Continue AIDE token survival by using repo-local context refs, compact objectives, deterministic validation, and evidence packets instead of long chat history.
 
 ## CONTEXT_REFS
 
@@ -43,77 +43,18 @@ Close the first safe local product loop by composing the ResolutionRunKernel, Wo
 ## ALLOWED_PATHS
 
 - `.aide/**`
-- `contracts/local_loop/**`
-- `contracts/local_apply/**`
-- `contracts/instances/**`
-- `contracts/review/**`
-- `contracts/candidates/**`
-- `contracts/public_index/**`
-- `contracts/resolution_run/**`
-- `contracts/search_interaction/**`
-- `contracts/workbench/**`
-- `contracts/view_models/**`
-- `contracts/projections/**`
-- `runtime/local_loop/**`
-- `runtime/local_apply/**`
-- `runtime/instances/**`
-- `runtime/public_index/**`
-- `runtime/review_queue/**`
-- `runtime/candidate_index/**`
-- `runtime/candidate_store/**`
-- `runtime/evidence_ledger/**`
-- `runtime/source_cache/**`
-- `runtime/resolution_run/**`
-- `runtime/local_service/**`
-- `runtime/local_workbench/**`
-- `runtime/local_eval/**`
-- `runtime/search_hunt/**`
-- `runtime/search_need/**`
-- `runtime/workunit_queue/**`
-- `surfaces/web/workbench/**`
-- `surfaces/api/**`
-- `surfaces/web/**`
-- `scripts/eureka_local_loop_closeout.py`
-- `scripts/eureka_local_apply.py`
-- `scripts/eureka_local_apply_backup.py`
-- `scripts/eureka_local_apply_rollback.py`
-- `scripts/eureka_workbench_review_promote.py`
-- `scripts/eureka_workbench_live_run.py`
-- `scripts/eureka_resolution_run.py`
-- `scripts/validate_workbench_local_loop_closeout.py`
-- `scripts/validate_local_apply_gate.py`
-- `scripts/validate_workbench_review_promote.py`
-- `scripts/validate_workbench_live_run.py`
-- `scripts/validate_resolution_run_kernel.py`
-- `scripts/eureka_test_select.py`
-- `tools/generators/eureka_local_loop_closeout.py`
-- `tools/validators/validate_workbench_local_loop_closeout.py`
-- `tests/runtime/test_workbench_local_loop_closeout.py`
-- `tests/runtime/test_local_loop_search_after_apply.py`
-- `tests/runtime/test_local_loop_rollback.py`
-- `tests/runtime/test_local_loop_boundaries.py`
-- `tests/operations/test_workbench_local_loop_scripts.py`
-- `tests/operations/test_workbench_local_loop_smoke.py`
-- `tests/scripts/test_validate_workbench_local_loop_closeout.py`
-- `examples/local_loop/**`
-- `examples/local_apply/**`
-- `examples/workbench/review_promote/**`
-- `examples/reviewed_index_refresh/**`
-- `examples/workbench/live_run/**`
-- `examples/ia_live_metadata_lane/**`
-- `examples/ia_hunt_bridge/**`
-- `examples/workbench/result_lanes/**`
-- `control/policies/workbench_local_loop_policy.json`
-- `control/policies/workbench_local_loop_non_claim_policy.json`
-- `control/policies/workbench_local_loop_boundary_policy.json`
-- `control/policies/workbench_local_loop_operator_policy.json`
-- `control/policies/generated_artifact_policy.json`
-- `control/inventory/workbench_local_loop_*.json`
-- `control/audits/workbench-local-loop-closeout-01-v0/**`
+- `AGENTS.md`
 - `docs/operations/**`
 - `docs/reference/**`
-- `docs/architecture/WORKBENCH_LOCAL_LOOP.md`
-- `docs/architecture/LOCAL_PRODUCT_LOOP.md`
+- `control/inventory/**`
+- `control/audits/**`
+- `control/policies/**`
+- `scripts/local_queue_progress.py`
+- `scripts/validate_*.py`
+- `scripts/check_*.py`
+- `tests/operations/**`
+- `tests/scripts/**`
+- `tests/aide/**`
 
 ## FORBIDDEN_PATHS
 
@@ -124,15 +65,16 @@ Close the first safe local product loop by composing the ResolutionRunKernel, Wo
 - `.local/**`
 - `.cache/**`
 - `eureka-instance/**`
-- `runtime/connectors/**`
-- `runtime/extraction/**`
-- `runtime/search_quality/**`
-- `site/dist/**`
-- `site/dist/data/public_index/**`
-- `data/public_index/**`
+- `runtime/**`
+- `contracts/**`
+- `surfaces/**`
+- `site/**`
 - `native/**`
 - `crates/**`
+- `examples/**`
 - `evals/**`
+- `tests/**` unless this is an AIDE/control-plane test repair
+- `scripts/**` unless this is an AIDE validator/check repair
 - raw provider credentials, API keys, local caches, raw prompt logs, raw responses, and source AIDE repository state
 
 ## IMPLEMENTATION
@@ -151,9 +93,7 @@ Close the first safe local product loop by composing the ResolutionRunKernel, Wo
 - `py -3 .aide/scripts/aide_lite.py snapshot`
 - `py -3 .aide/scripts/aide_lite.py index`
 - `py -3 .aide/scripts/aide_lite.py context`
-- `py -3 .aide/scripts/aide_lite.py pack --task "AIDE-BATCH-WORKBENCH-LOCAL-LOOP-CLOSEOUT-01"`
-- `python scripts/validate_workbench_local_loop_closeout.py`
-- `python scripts/validate_local_apply_gate.py`
+- `py -3 .aide/scripts/aide_lite.py pack --task "AIDE-EVAL-GREEN-01"`
 - `py -3 .aide/scripts/aide_lite.py test`
 - `py -3 .aide/scripts/aide_lite.py selftest`
 - `py -3 .aide/scripts/aide_lite.py verify`
@@ -181,8 +121,9 @@ Close the first safe local product loop by composing the ResolutionRunKernel, Wo
 
 ## NON_GOALS
 
-- No production/public launch claim.
-- No public hosted behavior, public live source fanout, master-index mutation, committed public-index mutation, committed instance state, automatic candidate acceptance, review bypass, source probe, live IA call requirement, downloads/uploads, extraction, execution/install/emulation, model/provider calls, deployment, SOURCE-WAVE implementation, SNAPSHOT-RELAY implementation, native client implementation, or broad repo layout refactor.
+- No Eureka product behavior change.
+- No source probes, extraction, model/provider calls, deployment, production-readiness claim, public-launch claim, main promotion, force-push, history rewrite, SYN implementation, or F0 implementation.
+- No Gateway, provider calls, live model routing, local model setup, exact tokenizer, provider billing ledger, Runtime, Service, Commander, Mobile, MCP/A2A, UI, host/app implementation, or autonomous loop unless a future reviewed queue item explicitly authorizes it.
 
 ## ACCEPTANCE
 
@@ -199,8 +140,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4806
-- approx_tokens: 1202
+- chars: 4782
+- approx_tokens: 1196
 - budget_status: PASS
 - warnings:
   - none

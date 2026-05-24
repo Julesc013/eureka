@@ -1,0 +1,210 @@
+{
+  "schema_version": "dev_to_main_promotion_02_scope_matrix.v0",
+  "task": "DEV-TO-MAIN-PROMOTION-REVIEW-02",
+  "promotion_scope": [
+    {
+      "subsystem_id": "repo_layout_taxonomy",
+      "result_file": "control/inventory/repo_layout_canon_result.json",
+      "status": "canon_defined",
+      "validator": "python scripts/validate_repo_structure_canon.py",
+      "focused_tests": [],
+      "production_claim": false,
+      "public_launch_claim": false,
+      "unsafe_actions_enabled": false,
+      "notes": "Root and taxonomy cleanup is promoted as repository structure baseline evidence only."
+    },
+    {
+      "subsystem_id": "test_lane_router",
+      "result_file": "control/inventory/test_lane_router_result.json",
+      "status": "pass",
+      "validator": "python scripts/validate_test_lane_policy.py",
+      "focused_tests": [],
+      "production_claim": false,
+      "public_launch_claim": false,
+      "unsafe_actions_enabled": false,
+      "notes": "Lane selector remains development acceleration; full discovery remains promotion gate."
+    },
+    {
+      "subsystem_id": "ia_metadata_pilot",
+      "result_file": "control/inventory/ia_pilot_closeout_result.json",
+      "status": "pass",
+      "validator": "python scripts/validate_ia_live_metadata_lane.py",
+      "focused_tests": [],
+      "production_claim": false,
+      "public_launch_claim": false,
+      "unsafe_actions_enabled": false,
+      "notes": "Promoted as metadata-lane foundation; live calls remain policy-gated."
+    },
+    {
+      "subsystem_id": "ia_hunt_bridge",
+      "result_file": "control/inventory/ia_hunt_bridge_result.json",
+      "status": "pass",
+      "validator": "python scripts/validate_ia_hunt_bridge.py",
+      "focused_tests": [],
+      "production_claim": false,
+      "public_launch_claim": false,
+      "unsafe_actions_enabled": false,
+      "notes": "Promotes dry-run WorkUnit and HUNT bridge proof."
+    },
+    {
+      "subsystem_id": "workbench_foundation",
+      "result_file": "control/inventory/workbench_foundation_result.json",
+      "status": "pass",
+      "validator": "python scripts/validate_workbench_foundation.py",
+      "focused_tests": [],
+      "production_claim": false,
+      "public_launch_claim": false,
+      "unsafe_actions_enabled": false,
+      "notes": "Promotes operator Workbench doctrine and projection boundaries."
+    },
+    {
+      "subsystem_id": "search_interaction",
+      "result_file": "control/inventory/search_interaction_result.json",
+      "status": "pass",
+      "validator": "python scripts/validate_search_interaction_contract.py",
+      "focused_tests": [],
+      "production_claim": false,
+      "public_launch_claim": false,
+      "unsafe_actions_enabled": false,
+      "notes": "Promotes governed search interaction contracts."
+    },
+    {
+      "subsystem_id": "workbench_result_lanes",
+      "result_file": "control/inventory/workbench_result_lanes_result.json",
+      "status": "pass_with_warnings",
+      "validator": "python scripts/validate_workbench_result_lanes.py",
+      "focused_tests": [],
+      "production_claim": false,
+      "public_launch_claim": false,
+      "unsafe_actions_enabled": false,
+      "notes": "Result lane baseline promoted with existing warning classification."
+    },
+    {
+      "subsystem_id": "syn_foundation",
+      "result_file": "control/inventory/syn_foundation_result.json",
+      "status": "pass",
+      "validator": "python scripts/validate_syn_foundry.py",
+      "focused_tests": [],
+      "production_claim": false,
+      "public_launch_claim": false,
+      "unsafe_actions_enabled": false,
+      "notes": "Promotes synthetic query foundry foundation."
+    },
+    {
+      "subsystem_id": "domain_foundation",
+      "result_file": "control/inventory/domain_foundation_result.json",
+      "status": "pass",
+      "validator": "python scripts/validate_domain_packs.py",
+      "focused_tests": [],
+      "production_claim": false,
+      "public_launch_claim": false,
+      "unsafe_actions_enabled": false,
+      "notes": "Promotes domain pack foundation."
+    },
+    {
+      "subsystem_id": "scout_schema",
+      "result_file": "control/inventory/scout_schema_result.json",
+      "status": "pass",
+      "validator": "python scripts/validate_scout_schema.py",
+      "focused_tests": [],
+      "production_claim": false,
+      "public_launch_claim": false,
+      "unsafe_actions_enabled": false,
+      "notes": "Promotes SCOUT relation schema foundation."
+    },
+    {
+      "subsystem_id": "f0_foundation",
+      "result_file": "control/inventory/f0_foundation_result.json",
+      "status": "pass",
+      "validator": "python scripts/validate_f0_foundation.py",
+      "focused_tests": [],
+      "production_claim": false,
+      "public_launch_claim": false,
+      "unsafe_actions_enabled": false,
+      "notes": "Promotes fixture-only extraction/member foundation."
+    },
+    {
+      "subsystem_id": "g0_foundation",
+      "result_file": "control/inventory/g0_foundation_result.json",
+      "status": "pass",
+      "validator": "python scripts/validate_g0_foundation.py",
+      "focused_tests": [],
+      "production_claim": false,
+      "public_launch_claim": false,
+      "unsafe_actions_enabled": false,
+      "notes": "Promotes deterministic quality and explanation foundation."
+    },
+    {
+      "subsystem_id": "resolution_run_kernel",
+      "result_file": "control/inventory/resolution_run_result.json",
+      "status": "pass",
+      "validator": "python scripts/validate_resolution_run_kernel.py",
+      "focused_tests": [],
+      "production_claim": false,
+      "public_launch_claim": false,
+      "unsafe_actions_enabled": false,
+      "notes": "Promotes headless run kernel baseline."
+    },
+    {
+      "subsystem_id": "workbench_live_run",
+      "result_file": "control/inventory/workbench_live_run_result.json",
+      "status": "pass",
+      "validator": "python scripts/validate_workbench_live_run.py",
+      "focused_tests": [],
+      "production_claim": false,
+      "public_launch_claim": false,
+      "unsafe_actions_enabled": false,
+      "notes": "Promotes local Workbench run projection."
+    },
+    {
+      "subsystem_id": "ia_live_metadata_lane",
+      "result_file": "control/inventory/ia_live_metadata_lane_result.json",
+      "status": "pass",
+      "validator": "python scripts/validate_ia_live_metadata_lane.py",
+      "focused_tests": [],
+      "production_claim": false,
+      "public_launch_claim": false,
+      "unsafe_actions_enabled": false,
+      "notes": "Promotes operator-gated IA metadata lane; no public fanout."
+    },
+    {
+      "subsystem_id": "workbench_review_promote",
+      "result_file": "control/inventory/workbench_review_promote_result.json",
+      "status": "pass",
+      "validator": "python scripts/validate_workbench_review_promote.py",
+      "focused_tests": [],
+      "production_claim": false,
+      "public_launch_claim": false,
+      "unsafe_actions_enabled": false,
+      "notes": "Promotes review and promotion-preview flow."
+    },
+    {
+      "subsystem_id": "local_apply_gate",
+      "result_file": "control/inventory/local_apply_gate_result.json",
+      "status": "pass",
+      "validator": "python scripts/validate_local_apply_gate.py",
+      "focused_tests": [
+        "python -m unittest tests.runtime.test_local_apply_gate",
+        "python -m unittest tests.operations.test_local_apply_smoke"
+      ],
+      "production_claim": false,
+      "public_launch_claim": false,
+      "unsafe_actions_enabled": false,
+      "notes": "Promotes explicit temp/local apply gate proof with backup, audit, and rollback."
+    },
+    {
+      "subsystem_id": "workbench_local_loop_closeout",
+      "result_file": "control/inventory/workbench_local_loop_result.json",
+      "status": "pass",
+      "validator": "python scripts/validate_workbench_local_loop_closeout.py",
+      "focused_tests": [
+        "python -m unittest tests.runtime.test_workbench_local_loop_closeout",
+        "python -m unittest tests.operations.test_workbench_local_loop_smoke"
+      ],
+      "production_claim": false,
+      "public_launch_claim": false,
+      "unsafe_actions_enabled": false,
+      "notes": "Promotes complete temp-scope local product loop proof."
+    }
+  ]
+}

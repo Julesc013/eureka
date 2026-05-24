@@ -1,0 +1,62 @@
+{
+  "changed_paths": [],
+  "failed_first_commands": [],
+  "full_discovery_deferred_until": [],
+  "full_discovery_required": true,
+  "known_failures": [],
+  "matched_impact_patterns": [],
+  "mode": "promotion",
+  "promotion_allowed": true,
+  "schema_version": "test_selection_result.v0",
+  "selected_commands": [
+    {
+      "command": "git diff --check",
+      "lane_id": "L0_static_preflight",
+      "reason": "base preflight",
+      "source": "test_lane_policy"
+    },
+    {
+      "command": "python scripts/check_architecture_boundaries.py",
+      "lane_id": "L0_static_preflight",
+      "reason": "base preflight",
+      "source": "test_lane_policy"
+    },
+    {
+      "command": "python scripts/check_generated_artifact_cleanliness.py --check --json",
+      "lane_id": "L0_static_preflight",
+      "reason": "base preflight",
+      "source": "test_lane_policy"
+    },
+    {
+      "command": "python -m unittest discover -s tests -t .",
+      "lane_id": "L3_full_discovery",
+      "reason": "explicit full/promotion mode",
+      "source": "selector"
+    },
+    {
+      "command": "python scripts/validate_test_lane_policy.py",
+      "lane_id": "L4_promotion_release",
+      "reason": "promotion policy validation",
+      "source": "selector"
+    }
+  ],
+  "selected_lanes": [
+    "L0_static_preflight",
+    "L1_focused_unit",
+    "L2_impact_integration",
+    "L3_full_discovery",
+    "L4_promotion_release"
+  ],
+  "skip_reasons": [
+    "no changed path or task id selected an owning subsystem"
+  ],
+  "skipped_commands": [
+    {
+      "command": "impact mapped focused subsystem tests",
+      "lane_id": "L1_focused_unit",
+      "reason": "no changed path or task id selected an owning subsystem"
+    }
+  ],
+  "task": "",
+  "warnings": []
+}

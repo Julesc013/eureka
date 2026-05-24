@@ -1,0 +1,5 @@
+Command: python -m unittest discover -s tests -t .
+Status: pass
+Tests: 4944
+Duration seconds: 2591.156
+Final line: OK

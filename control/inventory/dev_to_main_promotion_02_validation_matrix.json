@@ -1,0 +1,132 @@
+{
+  "schema_version": "dev_to_main_promotion_02_validation_matrix.v0",
+  "task": "DEV-TO-MAIN-PROMOTION-REVIEW-02",
+  "status": "pass",
+  "full_unittest_discovery_status": "pass",
+  "full_unittest_discovery_count": 4944,
+  "full_unittest_discovery_seconds": 2591.156,
+  "commands": [
+    {
+      "command": "python scripts/eureka_test_select.py --changed --failed-first --json",
+      "status": "pass",
+      "evidence": "control/audits/dev-to-main-promotion-review-02-v0/generated/selected_tests.json"
+    },
+    {
+      "command": "python scripts/eureka_test_select.py --promotion --json",
+      "status": "pass",
+      "evidence": "control/audits/dev-to-main-promotion-review-02-v0/generated/promotion_selector.json"
+    },
+    {
+      "command": "python scripts/validate_dev_to_main_promotion_02.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_workbench_local_loop_closeout.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_local_apply_gate.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_workbench_review_promote.py --json",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_ia_live_metadata_lane.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_workbench_live_run.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_resolution_run_kernel.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_g0_foundation.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_f0_foundation.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_scout_schema.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_domain_packs.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_syn_foundry.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_ia_hunt_bridge.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_workbench_result_lanes.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_search_interaction_contract.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_workbench_foundation.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_test_lane_policy.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_contract_taxonomy.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_repo_structure_canon.py",
+      "status": "pass"
+    },
+    {
+      "command": "python -m unittest tests.operations.test_dev_to_main_promotion_02 tests.scripts.test_validate_dev_to_main_promotion_02",
+      "status": "pass",
+      "tests_run": 6
+    },
+    {
+      "command": "python -m unittest tests.runtime.test_workbench_local_loop_closeout tests.runtime.test_local_loop_search_after_apply tests.runtime.test_local_loop_rollback tests.runtime.test_local_loop_boundaries tests.operations.test_workbench_local_loop_scripts tests.operations.test_workbench_local_loop_smoke tests.scripts.test_validate_workbench_local_loop_closeout",
+      "status": "pass",
+      "tests_run": 11
+    },
+    {
+      "command": "python -m unittest tests.runtime.test_local_apply_gate tests.runtime.test_local_apply_backup tests.runtime.test_local_apply_rollback tests.runtime.test_local_apply_audit tests.runtime.test_local_apply_boundaries tests.runtime.test_local_apply_reviewed_index_refresh tests.operations.test_local_apply_scripts tests.operations.test_local_apply_smoke tests.scripts.test_validate_local_apply_gate",
+      "status": "pass",
+      "tests_run": 13
+    },
+    {
+      "command": "python -m unittest tests.scripts.test_validate_test_lane_policy tests.operations.test_test_impact_map tests.operations.test_test_failure_ledger tests.operations.test_test_lane_policy tests.scripts.test_eureka_test_select",
+      "status": "pass",
+      "tests_run": 9
+    },
+    {
+      "command": "python scripts/check_architecture_boundaries.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/check_generated_artifact_cleanliness.py --check --json",
+      "status": "fail_repaired",
+      "reason": "Pre-commit run reported task-local audit-generated evidence as uncommitted generated drift; rerun after committing evidence is expected to pass."
+    },
+    {
+      "command": "python -m unittest discover -s tests -t .",
+      "status": "pass",
+      "tests_run": 4944,
+      "duration_seconds": 2591.156,
+      "evidence": "control/audits/dev-to-main-promotion-review-02-v0/generated/full_unittest_summary.txt"
+    }
+  ]
+}

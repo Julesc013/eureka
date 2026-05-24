@@ -1,0 +1,18 @@
+{
+  "schema_version": "dev_to_main_promotion_02_failure_repair_log.v0",
+  "task": "DEV-TO-MAIN-PROMOTION-REVIEW-02",
+  "repairs": [
+    {
+      "failure": "python scripts/check_generated_artifact_cleanliness.py --check --json",
+      "classification": "task_local_audit_generated_drift_before_commit",
+      "repair": "Commit task-local promotion audit evidence and rerun generated-artifact cleanliness after commit.",
+      "status": "pending_post_commit_rerun"
+    },
+    {
+      "failure": "python .aide/scripts/aide_lite.py verify",
+      "classification": "aide_task_packet_allowed_path_drift",
+      "repair": "Regenerated formal AIDE task/review packets and added tests/scripts/** to the task packet allowed paths for the promotion validator script test.",
+      "status": "repaired"
+    }
+  ]
+}
