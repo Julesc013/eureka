@@ -1,0 +1,21 @@
+{
+  "branch": "dev",
+  "head": "dc110c3e6f26fa74c98a97e8b1eacea774cade10",
+  "ia_hunt_bridge_found": true,
+  "ia_live_metadata_lane_found": true,
+  "operator_instance_mutation_default": false,
+  "origin_dev": "dc110c3e6f26fa74c98a97e8b1eacea774cade10",
+  "origin_main": "79563d01c8cc01163eae53a973ad225d7b8edffb",
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "repo_health_workbench_review_promote_status_before": "completed_pending_validation",
+  "resolution_run_kernel_found": true,
+  "reviewed_index_refresh_temp_proof_found": true,
+  "schema_version": "local_apply_gate_input_state.v0",
+  "search_interaction_found": true,
+  "task": "AIDE-BATCH-LOCAL-APPLY-GATE-01",
+  "workbench_live_run_found": true,
+  "workbench_result_lanes_found": true,
+  "workbench_review_promote_found": true,
+  "working_tree_clean_before": true
+}

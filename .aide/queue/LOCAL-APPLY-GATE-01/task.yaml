@@ -1,8 +1,8 @@
 id: LOCAL-APPLY-GATE-01
 title: Local operator apply gate
-status: queued
-purpose: Add explicit operator apply gates for local instance writes after review/promote flow is governed.
-allowed_scope_summary: Future task must define dry-run preview, operator token, backup/snapshot, audit log, rollback, validators, tests, and audit evidence.
-gate: WORKBENCH-REVIEW-PROMOTE-01 should complete first; no default operator instance mutation, force push, deployment, or production/public launch claim.
+status: completed
+purpose: Added explicit operator apply gates for local instance writes after review/promote flow is governed.
+allowed_scope_summary: Dry-run preview, operator token, backup/snapshot, audit log, rollback, validators, tests, and audit evidence.
+gate: No default operator instance mutation, force push, deployment, or production/public launch claim.
 recommended_after: WORKBENCH-REVIEW-PROMOTE-01
-recommended_next: SOURCE-WAVE-00
+recommended_next: WORKBENCH-LOCAL-LOOP-CLOSEOUT-01

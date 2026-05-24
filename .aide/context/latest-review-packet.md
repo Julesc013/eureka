@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (5914 chars, 1479 approximate tokens)
+- `.aide/context/latest-task-packet.md` (5243 chars, 1311 approximate tokens)
 
 ## Context Packet Reference
 
@@ -35,29 +35,29 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/AIDE-BATCH-WORKBENCH-REVIEW-PROMOTE-01` (??; matches active task allowed path)
-- allowed: `.aide/queue/WORKBENCH-REVIEW-PROMOTE-01/task.yaml` (M; matches active task allowed path)
+- allowed: `.aide/queue/AIDE-BATCH-LOCAL-APPLY-GATE-01` (??; matches active task allowed path)
+- allowed: `.aide/queue/LOCAL-APPLY-GATE-01/task.yaml` (M; matches active task allowed path)
+- allowed: `.aide/queue/PUBLIC-ALPHA-READONLY-00` (??; matches active task allowed path)
+- allowed: `.aide/queue/SNAPSHOT-RELAY-00/task.yaml` (M; matches active task allowed path)
+- allowed: `.aide/queue/SOURCE-ACTION-KERNEL-00` (??; matches active task allowed path)
+- allowed: `.aide/queue/SOURCE-WAVE-00/task.yaml` (M; matches active task allowed path)
+- allowed: `.aide/queue/WORKBENCH-LOCAL-LOOP-CLOSEOUT-01` (??; matches active task allowed path)
 - allowed: `.aide/queue/index.yaml` (M; matches active task allowed path)
 - allowed: `.aide/reports/eureka-repo-health.json` (M; matches active task allowed path)
 - allowed: `.aide/reports/eureka-repo-health.md` (M; matches active task allowed path)
-- allowed: `control/audits/workbench-review-promote-01-v0` (??; matches active task allowed path)
-- allowed: `control/inventory/workbench_review_promote_api_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/workbench_review_promote_boundary_report.json` (??; matches active task allowed path)
-- allowed: `control/inventory/workbench_review_promote_candidate_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/workbench_review_promote_decision_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/workbench_review_promote_event_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/workbench_review_promote_failure_repair_log.json` (??; matches active task allowed path)
-- allowed: `control/inventory/workbench_review_promote_input_state.json` (??; matches active task allowed path)
-- allowed: `control/inventory/workbench_review_promote_next_task_decision.json` (??; matches active task allowed path)
-- allowed: `control/inventory/workbench_review_promote_permission_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/workbench_review_promote_preview_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/workbench_review_promote_result.json` (??; matches active task allowed path)
-- allowed: `control/inventory/workbench_review_promote_route_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/workbench_review_promote_smoke_result.json` (??; matches active task allowed path)
-- allowed: `control/inventory/workbench_review_promote_state_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/workbench_review_promote_validation_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/workbench_reviewed_index_refresh_matrix.json` (??; matches active task allowed path)
-- additional changed paths omitted from compact packet: 25; see task evidence changed-files report
+- allowed: `contracts/instances` (??; matches active task allowed path)
+- allowed: `contracts/local_apply` (??; matches active task allowed path)
+- allowed: `control/audits/local-apply-gate-01-v0` (??; matches active task allowed path)
+- allowed: `control/inventory/local_apply_audit_log_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/local_apply_backup_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/local_apply_boundary_report.json` (??; matches active task allowed path)
+- allowed: `control/inventory/local_apply_failure_repair_log.json` (??; matches active task allowed path)
+- allowed: `control/inventory/local_apply_gate_api_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/local_apply_gate_command_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/local_apply_gate_event_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/local_apply_gate_input_state.json` (??; matches active task allowed path)
+- allowed: `control/inventory/local_apply_gate_permission_matrix.json` (??; matches active task allowed path)
+- additional changed paths omitted from compact packet: 51; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -67,8 +67,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 6906
-- approx_tokens: 1727
+- chars: 6589
+- approx_tokens: 1648
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

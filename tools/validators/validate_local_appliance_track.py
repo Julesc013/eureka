@@ -452,8 +452,11 @@ def local_track_handoff_queue(queue_current: str | None) -> bool:
         "IA-LIVE-METADATA-LANE-01",
         "WORKBENCH-REVIEW-PROMOTE-01",
         "LOCAL-APPLY-GATE-01",
+        "WORKBENCH-LOCAL-LOOP-CLOSEOUT-01",
+        "SOURCE-ACTION-KERNEL-00",
         "SOURCE-WAVE-00",
         "SNAPSHOT-RELAY-00",
+        "PUBLIC-ALPHA-READONLY-00",
     }
     return any(queue_current == task or queue_current.startswith(f"{task} ") for task in handoff_tasks)
 
@@ -469,8 +472,12 @@ def latest_packet_is_later_control_or_handoff(packet_text: str) -> bool:
         "SCOUT-",
         "F0-",
         "G0",
+        "LOCAL-APPLY-",
+        "WORKBENCH-",
+        "SOURCE-ACTION-",
         "SOURCE-WAVE-",
         "SNAPSHOT-RELAY-",
+        "PUBLIC-ALPHA-",
     )
     return any(marker in packet_text for marker in markers)
 
@@ -507,8 +514,11 @@ def validate_git_alignment(root: Path, report: Mapping[str, Any], errors: list[s
             "IA-LIVE-METADATA-LANE-01",
             "WORKBENCH-REVIEW-PROMOTE-01",
             "LOCAL-APPLY-GATE-01",
+            "WORKBENCH-LOCAL-LOOP-CLOSEOUT-01",
+            "SOURCE-ACTION-KERNEL-00",
             "SOURCE-WAVE-00",
             "SNAPSHOT-RELAY-00",
+            "PUBLIC-ALPHA-READONLY-00",
         }:
             warnings.append("origin/dev is ahead of origin/main after Local Appliance queue work")
     else:

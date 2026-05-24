@@ -1,0 +1,25 @@
+{
+  "repairs": [
+    {
+      "failure": "validate_local_appliance_track rejected advanced local-apply queue health metadata",
+      "repair": "Recognized LOCAL-APPLY-GATE-01 and following Workbench/source/snapshot/public tasks as later handoff states; refreshed repo health metadata.",
+      "rerun": "python -m unittest tests.operations.test_local_appliance_track tests.operations.test_local_instance_bootstrap tests.operations.test_local_instance_migration_guard",
+      "rerun_status": "pass"
+    },
+    {
+      "failure": "validate_local_instance_bootstrap treated local apply runtime/contracts/examples paths as forbidden after LOCAL-01 completion",
+      "repair": "Updated shared local queue progress helper to classify LOCAL-APPLY-GATE-01 as a later handoff state.",
+      "rerun": "python scripts/validate_local_instance_bootstrap.py --json",
+      "rerun_status": "pass"
+    },
+    {
+      "failure": "validate_local_instance_migration_guard treated local apply runtime/contracts/examples paths as forbidden after LOCAL-02 completion",
+      "repair": "Updated shared local queue progress helper to classify LOCAL-APPLY-GATE-01 as a later handoff state.",
+      "rerun": "python scripts/validate_local_instance_migration_guard.py --json",
+      "rerun_status": "pass"
+    }
+  ],
+  "schema_version": "local_apply_failure_repair_log.v0",
+  "status": "pass",
+  "task": "AIDE-BATCH-LOCAL-APPLY-GATE-01"
+}

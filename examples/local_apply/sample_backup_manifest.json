@@ -1,0 +1,20 @@
+{
+  "backup_created_before_apply": true,
+  "backup_id": "sample_backup",
+  "committed_data_public_index_mutated": false,
+  "committed_instance_state": false,
+  "deployment_performed": false,
+  "download_performed": false,
+  "extraction_executed": false,
+  "files": [],
+  "master_index_mutated": false,
+  "model_provider_used": false,
+  "operator_instance_mutated": false,
+  "operator_instance_mutation_enabled_by_default": false,
+  "plan_id": "local_apply_plan_sample",
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "schema_version": "local_apply_backup_manifest.v0",
+  "target_instance_path": "<explicit-outside-repo-instance-path>",
+  "upload_performed": false
+}

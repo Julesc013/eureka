@@ -1,0 +1,33 @@
+{
+  "after_hashes": {},
+  "backup_manifest_ref": "sample_backup",
+  "before_hashes": {},
+  "committed_data_public_index_mutated": false,
+  "committed_instance_state": false,
+  "created_at": "2026-05-22T00:00:00Z",
+  "deployment_performed": false,
+  "download_performed": false,
+  "extraction_executed": false,
+  "files_created": [],
+  "files_deleted": [],
+  "files_modified": [
+    "db/public_index.sqlite"
+  ],
+  "master_index_mutated": false,
+  "model_provider_used": false,
+  "mutation_id": "sample_mutation",
+  "operation_kind": "reviewed_index_refresh",
+  "operator_instance_mutated": false,
+  "operator_instance_mutation_enabled_by_default": false,
+  "plan_id": "local_apply_plan_sample",
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "rollback_plan_ref": "sample_rollback",
+  "schema_version": "local_apply_mutation_manifest.v0",
+  "stores_modified": [
+    "public_index"
+  ],
+  "target_instance_path": "<explicit-outside-repo-instance-path>",
+  "upload_performed": false,
+  "validation_result_ref": "sample_validation"
+}

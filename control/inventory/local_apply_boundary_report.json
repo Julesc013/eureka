@@ -1,0 +1,20 @@
+{
+  "committed_data_public_index_mutated": false,
+  "committed_instance_state": false,
+  "deployment_performed": false,
+  "download_performed": false,
+  "explicit_local_instance_mutation_performed_in_temp_smoke": true,
+  "extraction_executed": false,
+  "master_index_mutated": false,
+  "model_provider_used": false,
+  "native_read_only_projection_blocked": true,
+  "operator_instance_mutated": false,
+  "operator_instance_mutation_enabled_by_default": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "public_projection_blocked": true,
+  "schema_version": "local_apply_boundary_report.v0",
+  "status": "pass",
+  "task": "AIDE-BATCH-LOCAL-APPLY-GATE-01",
+  "upload_performed": false
+}

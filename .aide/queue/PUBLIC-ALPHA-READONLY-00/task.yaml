@@ -1,0 +1,7 @@
+id: PUBLIC-ALPHA-READONLY-00
+title: Public alpha read-only reviewed-index planning
+status: queued
+purpose: Follow-on work after the local apply gate.
+allowed_scope_summary: Future task must provide reviewed scope before implementation.
+gate: No production/public launch claim without future explicit policy.
+recommended_after: SNAPSHOT-RELAY-00

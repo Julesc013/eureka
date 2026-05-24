@@ -1,0 +1,33 @@
+{
+  "apply_performed": true,
+  "audit_id": "sample_audit",
+  "boundary_report_ref": "sample_boundary",
+  "command": "apply_local_change",
+  "committed_data_public_index_mutated": false,
+  "committed_instance_state": false,
+  "deployment_performed": false,
+  "download_performed": false,
+  "dry_run": false,
+  "extraction_executed": false,
+  "master_index_mutated": false,
+  "model_provider_used": false,
+  "mutation_id": "sample_mutation",
+  "operator_context_redacted": {
+    "operator_token_present": true,
+    "operator_token_stored": false
+  },
+  "operator_instance_mutated": false,
+  "operator_instance_mutation_enabled_by_default": false,
+  "plan_id": "local_apply_plan_sample",
+  "policy_result": "pass",
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "raw_token_stored": false,
+  "schema_version": "local_apply_audit_log.v0",
+  "target_instance_path": "<explicit-outside-repo-instance-path>",
+  "timestamp": "2026-05-22T00:00:00Z",
+  "upload_performed": false,
+  "validation_result": {
+    "status": "pass"
+  }
+}

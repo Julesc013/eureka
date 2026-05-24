@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-22
 repo: julesc013/eureka
-current_recommended_task: LOCAL-APPLY-GATE-01 — Explicit operator-instance apply, backup, audit, and rollback gate
+current_recommended_task: WORKBENCH-LOCAL-LOOP-CLOSEOUT-01 — Prove query to reviewed local result through apply gate
 entries:
   - id: DEV-AND-IA-TO-MAIN-PROMOTION-REVIEW
     title: Promote repaired dev IA pilot plus repo layout canon baseline to main
@@ -646,30 +646,66 @@ entries:
     recommended_next: WORKBENCH-REVIEW-PROMOTE-01
   - id: WORKBENCH-REVIEW-PROMOTE-01
     title: Browser review and promote flow over run candidates
-    status: queued
-    purpose: Add operator-gated browser review/promote after live lane policy exists.
-    allowed_scope_summary: Future task must define review command policy, promotion preview, local review queue integration, validators, tests, and audit evidence.
-    gate: IA-LIVE-METADATA-LANE-01 should complete first; no ungated reviewed-index mutation or production/public launch claim.
+    status: completed
+    purpose: Added operator-gated browser review/promote after live lane policy exists.
+    allowed_scope_summary: Review command policy, promotion preview, local review queue integration, validators, tests, and audit evidence.
+    gate: IA-LIVE-METADATA-LANE-01 completed first; no ungated reviewed-index mutation or production/public launch claim.
     task: .aide/queue/WORKBENCH-REVIEW-PROMOTE-01/task.yaml
     recommended_after: IA-LIVE-METADATA-LANE-01
     recommended_next: LOCAL-APPLY-GATE-01
   - id: LOCAL-APPLY-GATE-01
     title: Local operator apply gate
-    status: queued
-    purpose: Add explicit operator apply gates for local instance writes after review/promote flow is governed.
-    allowed_scope_summary: Future task must define dry-run preview, operator token, backup/snapshot, audit log, rollback, validators, tests, and audit evidence.
-    gate: WORKBENCH-REVIEW-PROMOTE-01 should complete first; no default operator instance mutation, force push, deployment, or production/public launch claim.
+    status: completed
+    purpose: Added explicit operator apply gates for local instance writes after review/promote flow is governed.
+    allowed_scope_summary: Dry-run preview, operator token, backup/snapshot, audit log, rollback, validators, tests, and audit evidence.
+    gate: WORKBENCH-REVIEW-PROMOTE-01 completed first; no default operator instance mutation, force push, deployment, or production/public launch claim.
     task: .aide/queue/LOCAL-APPLY-GATE-01/task.yaml
     recommended_after: WORKBENCH-REVIEW-PROMOTE-01
+    recommended_next: WORKBENCH-LOCAL-LOOP-CLOSEOUT-01
+  - id: WORKBENCH-LOCAL-LOOP-CLOSEOUT-01
+    title: Prove query to reviewed local result through apply gate
+    status: queued
+    purpose: Prove query to ResolutionRun to candidate to review to apply to reviewed local result through the local apply gate.
+    allowed_scope_summary: Future task must provide reviewed scope before implementation.
+    gate: LOCAL-APPLY-GATE-01 completed; no public launch, production deployment, live source fanout, or ungated operator mutation.
+    task: .aide/queue/WORKBENCH-LOCAL-LOOP-CLOSEOUT-01/task.yaml
+    recommended_after: LOCAL-APPLY-GATE-01
+    recommended_next: DEV-TO-MAIN-PROMOTION-REVIEW-02
+  - id: SOURCE-ACTION-KERNEL-00
+    title: Generic source-action kernel planning
+    status: queued
+    purpose: Define a generic source-action adapter model before adding more source families.
+    allowed_scope_summary: Future task must provide reviewed scope before implementation.
+    gate: Workbench local loop closeout should complete first; no new live source behavior by default.
+    task: .aide/queue/SOURCE-ACTION-KERNEL-00/task.yaml
+    recommended_after: WORKBENCH-LOCAL-LOOP-CLOSEOUT-01
     recommended_next: SOURCE-WAVE-00
   - id: SOURCE-WAVE-00
     title: Next source-family metadata wave planning
-    status: deferred
+    status: queued
     purpose: Plan the next source-family metadata wave after the headless run kernel, Workbench live-run projection, IA live metadata lane, review/promote flow, and local apply gate exist.
     allowed_scope_summary: Future task must provide reviewed scope before implementation.
-    gate: Deferred so source expansion plugs into one reusable run kernel rather than script-level vertical slices; no live source expansion without future explicit policy.
+    gate: Source expansion plugs into one reusable run kernel rather than script-level vertical slices; no live source expansion without future explicit policy.
     task: .aide/queue/SOURCE-WAVE-00/task.yaml
-    recommended_after: LOCAL-APPLY-GATE-01
+    recommended_after: SOURCE-ACTION-KERNEL-00
+    recommended_next: SNAPSHOT-RELAY-00
+  - id: SNAPSHOT-RELAY-00
+    title: Read-only snapshot and relay planning
+    status: queued
+    purpose: Plan read-only snapshot and relay distribution after the local loop is proved.
+    allowed_scope_summary: Future task must provide reviewed scope before implementation.
+    gate: No public live source fanout, downloads, extraction, deployment, production readiness claim, or public launch claim.
+    task: .aide/queue/SNAPSHOT-RELAY-00/task.yaml
+    recommended_after: SOURCE-WAVE-00
+    recommended_next: PUBLIC-ALPHA-READONLY-00
+  - id: PUBLIC-ALPHA-READONLY-00
+    title: Public alpha read-only reviewed-index planning
+    status: queued
+    purpose: Plan public reviewed-index-only alpha after snapshot/relay exists.
+    allowed_scope_summary: Future task must provide reviewed scope before implementation.
+    gate: No public live source fanout, downloads, extraction, accounts, deployment, production readiness claim, or public launch claim by default.
+    task: .aide/queue/PUBLIC-ALPHA-READONLY-00/task.yaml
+    recommended_after: SNAPSHOT-RELAY-00
   - id: HUNT-TO-MAIN-PROMOTION-REVIEW
     title: Review/promote HUNT baseline to main
     status: queued

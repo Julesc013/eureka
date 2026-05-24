@@ -1,0 +1,41 @@
+{
+  "boundary_false_fields": [
+    "operator_instance_mutated",
+    "operator_instance_mutation_enabled_by_default",
+    "committed_instance_state",
+    "master_index_mutated",
+    "committed_data_public_index_mutated",
+    "download_performed",
+    "upload_performed",
+    "extraction_executed",
+    "model_provider_used",
+    "deployment_performed",
+    "production_readiness_claimed",
+    "public_launch_readiness_claimed"
+  ],
+  "description": "Governed local apply plan contract for the local apply gate.",
+  "family": "local_apply",
+  "native_projection_apply_enabled": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "public_projection_apply_enabled": false,
+  "required_fields": [
+    "schema_version",
+    "plan_id",
+    "target_instance_path",
+    "target_instance_descriptor",
+    "operation_kind",
+    "source_preview_ref",
+    "required_operator_token",
+    "required_confirmation",
+    "dry_run",
+    "apply_allowed",
+    "backup_required",
+    "rollback_required",
+    "mutation_scope",
+    "blocked_actions",
+    "non_claims"
+  ],
+  "schema_version": "local_apply_plan.v0",
+  "task": "LOCAL-APPLY-GATE-01"
+}

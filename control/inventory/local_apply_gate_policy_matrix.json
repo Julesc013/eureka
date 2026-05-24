@@ -1,0 +1,31 @@
+{
+  "policies": [
+    "local_apply_gate_policy",
+    "local_apply_backup_policy",
+    "local_apply_rollback_policy",
+    "local_apply_audit_policy",
+    "local_apply_non_claim_policy",
+    "operator_instance_mutation_policy"
+  ],
+  "required_false": [
+    "operator_instance_mutated",
+    "operator_instance_mutation_enabled_by_default",
+    "committed_instance_state",
+    "master_index_mutated",
+    "committed_data_public_index_mutated",
+    "download_performed",
+    "upload_performed",
+    "extraction_executed",
+    "model_provider_used",
+    "deployment_performed",
+    "production_readiness_claimed",
+    "public_launch_readiness_claimed"
+  ],
+  "required_truths": {
+    "backup_required_before_apply": true,
+    "operator_token_required": true,
+    "rollback_plan_required_before_apply": true
+  },
+  "schema_version": "local_apply_gate_policy_matrix.v0",
+  "task": "AIDE-BATCH-LOCAL-APPLY-GATE-01"
+}

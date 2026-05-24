@@ -1,0 +1,45 @@
+{
+  "apply_allowed": false,
+  "backup_required": true,
+  "blocked_actions": [
+    "master_index_mutation",
+    "download",
+    "extraction",
+    "deployment"
+  ],
+  "committed_data_public_index_mutated": false,
+  "committed_instance_state": false,
+  "deployment_performed": false,
+  "download_performed": false,
+  "dry_run": true,
+  "extraction_executed": false,
+  "master_index_mutated": false,
+  "model_provider_used": false,
+  "mutation_scope": {
+    "repo_mutation_allowed": false,
+    "schema_version": "instance_mutation_scope.v0"
+  },
+  "non_claims": [
+    "not production readiness",
+    "not public launch readiness"
+  ],
+  "operation_kind": "reviewed_index_refresh",
+  "operator_instance_mutated": false,
+  "operator_instance_mutation_enabled_by_default": false,
+  "plan_id": "local_apply_plan_sample",
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "required_confirmation": "APPLY_TO_LOCAL_INSTANCE",
+  "required_operator_token": true,
+  "rollback_required": true,
+  "schema_version": "local_apply_plan.v0",
+  "source_preview_ref": "local_apply_preview_sample",
+  "target_instance_descriptor": {
+    "instance_root": "<explicit-outside-repo-instance-path>",
+    "schema_version": "instance_descriptor.v0",
+    "valid": true
+  },
+  "target_instance_path": "<explicit-outside-repo-instance-path>",
+  "task": "AIDE-BATCH-LOCAL-APPLY-GATE-01",
+  "upload_performed": false
+}

@@ -1,0 +1,8 @@
+{
+  "exact_apply_confirmation": "APPLY_TO_LOCAL_INSTANCE",
+  "exact_rollback_confirmation": "ROLLBACK_LOCAL_INSTANCE",
+  "operator_token_required": true,
+  "repo_internal_target_blocked": true,
+  "schema_version": "local_apply_gate_permission_matrix.v0",
+  "task": "AIDE-BATCH-LOCAL-APPLY-GATE-01"
+}

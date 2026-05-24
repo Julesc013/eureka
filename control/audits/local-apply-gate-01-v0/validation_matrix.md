@@ -1,0 +1,33 @@
+# Validation Matrix
+
+- `git diff --check`: pass
+- `python scripts/eureka_test_select.py --changed --failed-first --json`: pass
+- `python scripts/validate_local_apply_gate.py`: pass
+- `python scripts/validate_workbench_review_promote.py`: pass
+- `python scripts/validate_ia_live_metadata_lane.py`: pass
+- `python scripts/validate_workbench_live_run.py`: pass
+- `python scripts/validate_resolution_run_kernel.py`: pass
+- `python scripts/validate_g0_foundation.py`: pass
+- `python scripts/validate_f0_foundation.py`: pass
+- `python scripts/validate_scout_schema.py`: pass
+- `python scripts/validate_domain_packs.py`: pass
+- `python scripts/validate_syn_foundry.py`: pass
+- `python scripts/validate_ia_hunt_bridge.py`: pass
+- `python scripts/validate_workbench_result_lanes.py`: pass
+- `python scripts/validate_search_interaction_contract.py`: pass
+- `python scripts/validate_workbench_foundation.py`: pass
+- `python scripts/validate_test_lane_policy.py`: pass
+- `python scripts/validate_contract_taxonomy.py`: pass
+- `python scripts/validate_repo_structure_canon.py`: pass
+- `python -m unittest tests.runtime.test_local_apply_gate ... tests.scripts.test_validate_local_apply_gate`: pass
+- `python -m unittest tests.operations.test_local_appliance_track tests.operations.test_local_instance_bootstrap tests.operations.test_local_instance_migration_guard`: pass
+- `python scripts/check_architecture_boundaries.py`: pass
+- `python scripts/check_generated_artifact_cleanliness.py --check --json`: pass
+- `python .aide/scripts/aide_lite.py doctor`: pass
+- `python .aide/scripts/aide_lite.py validate`: pass
+- `python .aide/scripts/aide_lite.py test`: pass
+- `python .aide/scripts/aide_lite.py selftest`: pass
+- `python .aide/scripts/aide_lite.py verify`: pass
+- `python .aide/scripts/aide_lite.py review-pack`: pass
+- `python .aide/scripts/aide_lite.py commit check --latest`: pending_after_commit
+- `python -m unittest discover -s tests -t .`: pass

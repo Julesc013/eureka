@@ -1,0 +1,14 @@
+{
+  "native_read_only_projection": "blocked",
+  "operator_projection": [
+    "preview",
+    "plan",
+    "backup",
+    "apply",
+    "rollback",
+    "audit"
+  ],
+  "public_projection": "blocked",
+  "schema_version": "local_apply_gate_api_matrix.v0",
+  "task": "AIDE-BATCH-LOCAL-APPLY-GATE-01"
+}

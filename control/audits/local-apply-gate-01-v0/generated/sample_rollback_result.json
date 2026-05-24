@@ -1,0 +1,19 @@
+{
+  "committed_data_public_index_mutated": false,
+  "committed_instance_state": false,
+  "deployment_performed": false,
+  "download_performed": false,
+  "extraction_executed": false,
+  "master_index_mutated": false,
+  "model_provider_used": false,
+  "operator_instance_mutated": false,
+  "operator_instance_mutation_enabled_by_default": false,
+  "post_rollback_validation_passed": true,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "rollback_performed": true,
+  "rollback_plan_id": "sample_rollback",
+  "schema_version": "local_apply_rollback_result.v0",
+  "status": "pass",
+  "upload_performed": false
+}

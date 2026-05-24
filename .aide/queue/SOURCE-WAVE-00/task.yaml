@@ -1,7 +1,7 @@
 id: SOURCE-WAVE-00
 title: Next source-family metadata wave planning
-status: deferred
-purpose: Plan the next source-family metadata wave after the headless run kernel, Workbench live-run projection, IA live metadata lane, review/promote flow, and local apply gate exist.
+status: queued
+purpose: Follow-on work after the local apply gate.
 allowed_scope_summary: Future task must provide reviewed scope before implementation.
-gate: Deferred so source expansion plugs into one reusable run kernel rather than script-level vertical slices; no live source expansion without future explicit policy.
-recommended_after: LOCAL-APPLY-GATE-01
+gate: No production/public launch claim without future explicit policy.
+recommended_after: SOURCE-ACTION-KERNEL-00

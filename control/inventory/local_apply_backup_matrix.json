@@ -1,0 +1,6 @@
+{
+  "backup_location": "<instance>/backups/local_apply/<backup_id>",
+  "backup_required_before_apply": true,
+  "schema_version": "local_apply_backup_matrix.v0",
+  "task": "AIDE-BATCH-LOCAL-APPLY-GATE-01"
+}

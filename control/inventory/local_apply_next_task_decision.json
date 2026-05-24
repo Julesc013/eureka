@@ -1,0 +1,14 @@
+{
+  "planned_after": [
+    "DEV-TO-MAIN-PROMOTION-REVIEW-02",
+    "SOURCE-ACTION-KERNEL-00",
+    "SOURCE-WAVE-00",
+    "SNAPSHOT-RELAY-00"
+  ],
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "recommended_next_task": "WORKBENCH-LOCAL-LOOP-CLOSEOUT-01 \u2014 Prove query to reviewed local result through apply gate",
+  "schema_version": "local_apply_next_task_decision.v0",
+  "status": "pass",
+  "task": "AIDE-BATCH-LOCAL-APPLY-GATE-01"
+}

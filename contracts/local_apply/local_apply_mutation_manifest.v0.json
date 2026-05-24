@@ -1,0 +1,41 @@
+{
+  "boundary_false_fields": [
+    "operator_instance_mutated",
+    "operator_instance_mutation_enabled_by_default",
+    "committed_instance_state",
+    "master_index_mutated",
+    "committed_data_public_index_mutated",
+    "download_performed",
+    "upload_performed",
+    "extraction_executed",
+    "model_provider_used",
+    "deployment_performed",
+    "production_readiness_claimed",
+    "public_launch_readiness_claimed"
+  ],
+  "description": "Governed local apply mutation manifest contract for the local apply gate.",
+  "family": "local_apply",
+  "native_projection_apply_enabled": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "public_projection_apply_enabled": false,
+  "required_fields": [
+    "schema_version",
+    "mutation_id",
+    "plan_id",
+    "target_instance_path",
+    "operation_kind",
+    "files_created",
+    "files_modified",
+    "files_deleted",
+    "stores_modified",
+    "before_hashes",
+    "after_hashes",
+    "backup_manifest_ref",
+    "rollback_plan_ref",
+    "validation_result_ref",
+    "created_at"
+  ],
+  "schema_version": "local_apply_mutation_manifest.v0",
+  "task": "LOCAL-APPLY-GATE-01"
+}

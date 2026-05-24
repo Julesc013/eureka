@@ -1,0 +1,8 @@
+id: AIDE-BATCH-LOCAL-APPLY-GATE-01
+title: Explicit operator-instance apply, backup, audit, and rollback gate
+status: completed
+purpose: Implemented the governed local apply boundary after Workbench review/promote.
+allowed_scope_summary: Local apply contracts, runtime gate, CLI, validator, tests, docs, policies, inventories, and audit evidence.
+gate: No silent operator instance mutation, committed instance state, master/public mutation, downloads, extraction, model/provider calls, deployment, or readiness claim.
+recommended_after: WORKBENCH-REVIEW-PROMOTE-01
+recommended_next: WORKBENCH-LOCAL-LOOP-CLOSEOUT-01

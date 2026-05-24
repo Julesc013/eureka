@@ -1,0 +1,6 @@
+{
+  "apply_enabled": false,
+  "projection": "native_desktop_read_only",
+  "schema_version": "local_apply_projection.v0",
+  "status": "blocked"
+}

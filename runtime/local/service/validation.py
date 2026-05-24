@@ -73,7 +73,18 @@ def is_operator_mutation_route(path: str) -> bool:
         return True
     if _is_search_need_mutation_route(value):
         return True
+    if _is_local_apply_mutation_route(value):
+        return True
     return value.startswith("/review/") and value.endswith("/decision")
+
+
+def _is_local_apply_mutation_route(path: str) -> bool:
+    parts = [part for part in str(path or "").split("/") if part]
+    if len(parts) == 4 and parts[:3] == ["api", "v1", "local-apply"]:
+        return parts[3] in {"preview", "plan", "audit"}
+    if len(parts) == 5 and parts[:3] == ["api", "v1", "local-apply"]:
+        return parts[4] in {"apply", "rollback", "backup"}
+    return False
 
 
 def _is_hunt_command_mutation_route(path: str) -> bool:

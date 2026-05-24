@@ -1,0 +1,16 @@
+{
+  "commands": [
+    "preview_local_apply",
+    "create_local_apply_plan",
+    "validate_local_apply_plan",
+    "create_pre_apply_backup",
+    "apply_local_change",
+    "validate_post_apply",
+    "create_rollback_plan",
+    "run_rollback",
+    "validate_post_rollback",
+    "inspect_apply_audit_log"
+  ],
+  "schema_version": "local_apply_gate_command_matrix.v0",
+  "task": "AIDE-BATCH-LOCAL-APPLY-GATE-01"
+}

@@ -1,5 +1,6 @@
 """Routes over the local appliance runtime."""
 
+import json
 from typing import Any
 
 from .request_context import LocalRequestContext
@@ -207,6 +208,14 @@ def route_request(
         return _workbench_review_promote_response(request_context, endpoint="promotion_preview")
     if path == "/api/v1/reviewed-index/refresh-preview":
         return _workbench_review_promote_response(request_context, endpoint="reviewed_index_refresh_preview")
+    if path == "/apply":
+        if _wants_json(request_context):
+            return _local_apply_preview_response(request_context, endpoint="apply")
+        return _local_apply_html_response(request_context)
+    if path == "/api/v1/local-apply/preview":
+        return _local_apply_preview_response(request_context, endpoint="local_apply_preview")
+    if path == "/api/v1/local-apply/audit":
+        return _local_apply_audit_response(request_context)
     if path == "/index/rebuild-preview":
         if _wants_json(request_context):
             return _workbench_review_promote_response(request_context, endpoint="reviewed_index_refresh_preview")
@@ -1073,6 +1082,74 @@ def _workbench_review_promote_response(request_context: LocalRequestContext, end
     return json_response(200, payload)
 
 
+def _local_apply_preview_response(request_context: LocalRequestContext, endpoint: str = "local_apply_preview") -> LocalServiceResponse:
+    target = first_param(request_context.params, "instance", "")
+    payload = _local_apply().build_local_apply_preview(target_instance=target or None)
+    payload.update(
+        {
+            "endpoint": endpoint,
+            "operator_projection": True,
+            "public_projection_blocked": True,
+            "native_read_only_projection_blocked": True,
+            "api_apply_enabled": False,
+            "cli_apply_gate_required": True,
+        }
+    )
+    return json_response(200, payload)
+
+
+def _local_apply_plan_response(request_context: LocalRequestContext) -> LocalServiceResponse:
+    target = first_param(request_context.body_params, "instance", first_param(request_context.params, "instance", ""))
+    preview = _local_apply().build_local_apply_preview(target_instance=target or None)
+    plan = _local_apply().build_local_apply_plan(
+        preview,
+        target or "",
+        {
+            "apply": False,
+            "operator_token_present": bool(first_param(request_context.body_params, "operator_token", "")),
+            "confirmation": first_param(request_context.body_params, "confirm", ""),
+        },
+    )
+    return json_response(
+        200,
+        {
+            "schema_version": "local_apply_api_plan_response.v0",
+            "status": "pass" if plan.get("status") in {"preview_created", "apply_ready"} else "blocked",
+            "preview": preview,
+            "plan": plan,
+            "apply_performed": False,
+            "public_projection_blocked": True,
+            "native_read_only_projection_blocked": True,
+            "cli_apply_gate_required": True,
+        },
+    )
+
+
+def _local_apply_audit_response(request_context: LocalRequestContext) -> LocalServiceResponse:
+    return json_response(
+        200,
+        {
+            "schema_version": "local_apply_api_audit_response.v0",
+            "status": "pass",
+            "audit_endpoint_reserved": True,
+            "instance_path_required_for_records": True,
+            "raw_token_stored": False,
+            "public_projection_blocked": True,
+            "native_read_only_projection_blocked": True,
+        },
+    )
+
+
+def _local_apply_html_response(request_context: LocalRequestContext) -> LocalServiceResponse:
+    payload = _local_apply().build_local_apply_preview(target_instance=first_param(request_context.params, "instance", "") or None)
+    html = (
+        "<!doctype html><title>Eureka Local Apply</title><main><h1>Local Apply</h1><pre>"
+        + _html().escape(json.dumps(payload, indent=2, sort_keys=True))
+        + "</pre></main>"
+    )
+    return html_response(200, html, {"schema_version": "local_apply_html_response.v0", "status": payload.get("status", "preview_created")})
+
+
 def _workbench_review_promote_html_response(request_context: LocalRequestContext, endpoint: str = "promotion") -> LocalServiceResponse:
     response = _workbench_review_promote_response(request_context, endpoint=endpoint)
     payload = response.payload
@@ -1173,6 +1250,22 @@ def _mutation_response(runtime: Any, request_context: LocalRequestContext, opera
         return _workbench_review_promote_decision_response(request_context, first_param(request_context.body_params, "review_item_id", ""))
     if path == "/api/v1/reviewed-index/refresh-preview":
         return _workbench_review_promote_response(request_context, endpoint="reviewed_index_refresh_preview")
+    if path in {"/api/v1/local-apply/preview", "/api/v1/local-apply/plan"}:
+        return _local_apply_plan_response(request_context)
+    if path.startswith("/api/v1/local-apply/") and (path.endswith("/apply") or path.endswith("/rollback")):
+        return error_response(
+            409,
+            "local_apply_cli_required",
+            "local apply mutations are reserved for the explicit CLI gate in this build",
+            {
+                "path": path,
+                "operator_token_required": True,
+                "exact_apply_confirmation": "APPLY_TO_LOCAL_INSTANCE",
+                "exact_rollback_confirmation": "ROLLBACK_LOCAL_INSTANCE",
+                "public_projection_blocked": True,
+                "native_read_only_projection_blocked": True,
+            },
+        )
     if path.startswith("/review/") and path.endswith("/decision"):
         review_item_id = path.removeprefix("/review/").removesuffix("/decision").strip("/")
         return _record_decision_response(runtime, request_context, review_item_id)
@@ -1552,7 +1645,15 @@ def _is_operator_mutation_path(method: str, path: str) -> bool:
         _parse_hunt_mutation_path(path) is not None or _parse_need_mutation_path(path) is not None
         or (path.startswith("/api/v1/review/") and path.endswith("/decision"))
         or path in {"/api/v1/promotion-preview", "/api/v1/reviewed-index/refresh-preview"}
+        or _is_local_apply_api_mutation_path(path)
     )
+
+
+def _is_local_apply_api_mutation_path(path: str) -> bool:
+    value = str(path or "")
+    if value in {"/api/v1/local-apply/preview", "/api/v1/local-apply/plan"}:
+        return True
+    return value.startswith("/api/v1/local-apply/") and (value.endswith("/apply") or value.endswith("/rollback"))
 
 
 def _parse_hunt_route(path: str) -> tuple[str, str] | None:
@@ -1905,6 +2006,14 @@ def _operator_auth_error() -> Any:
 
 def _require_operator_token(request_context: LocalRequestContext, config: Any, operator_auth_state: Any) -> Any:
     return _operator_auth().require_operator_token(request_context, config, operator_auth_state)
+
+
+def _local_apply() -> Any:
+    return __import__("runtime.local.apply", fromlist=["build_local_apply_preview"])
+
+
+def _html() -> Any:
+    return __import__("html", fromlist=["escape"])
 
 
 def _lan_warnings() -> list[str]:

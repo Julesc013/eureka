@@ -1,0 +1,20 @@
+{
+  "event_types": [
+    "local_apply.preview_created",
+    "local_apply.plan_created",
+    "local_apply.policy_checked",
+    "local_apply.backup_created",
+    "local_apply.rollback_plan_created",
+    "local_apply.apply_blocked",
+    "local_apply.apply_started",
+    "local_apply.apply_completed",
+    "local_apply.post_apply_validated",
+    "local_apply.rollback_started",
+    "local_apply.rollback_completed",
+    "local_apply.post_rollback_validated",
+    "local_apply.audit_written",
+    "warning.emitted"
+  ],
+  "schema_version": "local_apply_gate_event_matrix.v0",
+  "task": "AIDE-BATCH-LOCAL-APPLY-GATE-01"
+}

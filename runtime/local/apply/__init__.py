@@ -1,0 +1,41 @@
+"""Local operator apply gate for explicit instance mutations."""
+
+from .gate import (
+    APPLY_CONFIRMATION,
+    ROLLBACK_CONFIRMATION,
+    apply_reviewed_index_refresh,
+    build_local_apply_boundary_report,
+    build_local_apply_plan,
+    build_local_apply_preview,
+    build_mutation_manifest,
+    build_rollback_plan,
+    create_pre_apply_backup,
+    default_policy,
+    load_policy,
+    run_local_apply,
+    run_rollback,
+    validate_local_apply_plan,
+    validate_post_apply,
+    validate_post_rollback,
+    write_local_apply_audit_log,
+)
+
+__all__ = [
+    "APPLY_CONFIRMATION",
+    "ROLLBACK_CONFIRMATION",
+    "apply_reviewed_index_refresh",
+    "build_local_apply_boundary_report",
+    "build_local_apply_plan",
+    "build_local_apply_preview",
+    "build_mutation_manifest",
+    "build_rollback_plan",
+    "create_pre_apply_backup",
+    "default_policy",
+    "load_policy",
+    "run_local_apply",
+    "run_rollback",
+    "validate_local_apply_plan",
+    "validate_post_apply",
+    "validate_post_rollback",
+    "write_local_apply_audit_log",
+]

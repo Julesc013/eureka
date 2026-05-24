@@ -1,0 +1,13 @@
+{
+  "committed_data_public_index_mutated": false,
+  "master_index_mutated": false,
+  "operation_kind": "reviewed_index_refresh",
+  "schema_version": "local_apply_reviewed_index_refresh_matrix.v0",
+  "stores_modified": [
+    "source_cache",
+    "evidence_ledger",
+    "review_queue",
+    "public_index"
+  ],
+  "task": "AIDE-BATCH-LOCAL-APPLY-GATE-01"
+}

@@ -41,8 +41,11 @@ def check_cleanliness(root: Path, policy: Mapping[str, Any]) -> dict[str, Any]:
     generated_drift: list[dict[str, str]] = []
     forbidden_untracked: list[str] = []
     for item in status_paths:
-        artifact_class = classify_path(item["path"], policy)
+        classifier = classify_record(item["path"], policy)
+        artifact_class = str(classifier.get("artifact_class", "source_input"))
         if artifact_class == "source_input":
+            continue
+        if classifier.get("allow_task_local_drift") is True:
             continue
         drift = dict(item)
         drift["artifact_class"] = artifact_class
@@ -89,14 +92,18 @@ def load_policy(path: Path) -> dict[str, Any]:
 
 
 def classify_path(path: str, policy: Mapping[str, Any]) -> str:
+    return str(classify_record(path, policy).get("artifact_class", "source_input"))
+
+
+def classify_record(path: str, policy: Mapping[str, Any]) -> dict[str, Any]:
     normalized = path.replace("\\", "/").strip("/")
     for item in policy.get("classifiers", []):
         if not isinstance(item, dict):
             continue
         prefix = str(item.get("path", "")).strip("/")
         if normalized == prefix or normalized.startswith(prefix + "/"):
-            return str(item.get("artifact_class", "unknown"))
-    return "source_input"
+            return dict(item)
+    return {"artifact_class": "source_input"}
 
 
 if __name__ == "__main__":

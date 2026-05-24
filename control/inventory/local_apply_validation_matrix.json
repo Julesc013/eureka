@@ -1,0 +1,149 @@
+{
+  "commands": [
+    {
+      "command": "git diff --check",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/eureka_test_select.py --changed --failed-first --json",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_local_apply_gate.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_workbench_review_promote.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_ia_live_metadata_lane.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_workbench_live_run.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_resolution_run_kernel.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_g0_foundation.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_f0_foundation.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_scout_schema.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_domain_packs.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_syn_foundry.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_ia_hunt_bridge.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_workbench_result_lanes.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_search_interaction_contract.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_workbench_foundation.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_test_lane_policy.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_contract_taxonomy.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_repo_structure_canon.py",
+      "status": "pass"
+    },
+    {
+      "command": "python -m unittest tests.runtime.test_local_apply_gate ... tests.scripts.test_validate_local_apply_gate",
+      "status": "pass"
+    },
+    {
+      "command": "python -m unittest tests.operations.test_local_appliance_track tests.operations.test_local_instance_bootstrap tests.operations.test_local_instance_migration_guard",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/check_architecture_boundaries.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/check_generated_artifact_cleanliness.py --check --json",
+      "status": "pass"
+    },
+    {
+      "command": "python .aide/scripts/aide_lite.py doctor",
+      "status": "pass"
+    },
+    {
+      "command": "python .aide/scripts/aide_lite.py validate",
+      "status": "pass"
+    },
+    {
+      "command": "python .aide/scripts/aide_lite.py test",
+      "status": "pass"
+    },
+    {
+      "command": "python .aide/scripts/aide_lite.py selftest",
+      "status": "pass"
+    },
+    {
+      "command": "python .aide/scripts/aide_lite.py verify",
+      "status": "pass"
+    },
+    {
+      "command": "python .aide/scripts/aide_lite.py review-pack",
+      "status": "pass"
+    },
+    {
+      "command": "python .aide/scripts/aide_lite.py commit check --latest",
+      "status": "pending_after_commit"
+    },
+    {
+      "command": "python -m unittest discover -s tests -t .",
+      "status": "pass"
+    }
+  ],
+  "committed_data_public_index_mutated": false,
+  "committed_instance_state": false,
+  "deployment_performed": false,
+  "download_performed": false,
+  "extraction_executed": false,
+  "full_unittest_discovery": {
+    "count": 4927,
+    "seconds": 2553.042,
+    "status": "pass"
+  },
+  "master_index_mutated": false,
+  "model_provider_used": false,
+  "operator_instance_mutated": false,
+  "operator_instance_mutation_enabled_by_default": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "repair_loop": "Repaired LOCAL-00/01/02 validator advancement handling for LOCAL-APPLY-GATE-01 successor context, then reran focused tests and full discovery.",
+  "schema_version": "local_apply_validation_matrix.v0",
+  "status": "pass",
+  "task": "AIDE-BATCH-LOCAL-APPLY-GATE-01",
+  "upload_performed": false
+}

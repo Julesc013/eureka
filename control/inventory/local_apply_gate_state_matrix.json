@@ -1,0 +1,19 @@
+{
+  "schema_version": "local_apply_gate_state_matrix.v0",
+  "states": [
+    "preview_created",
+    "plan_created",
+    "plan_validated",
+    "backup_created",
+    "rollback_plan_created",
+    "apply_blocked",
+    "apply_ready",
+    "apply_performed",
+    "post_apply_validated",
+    "rollback_ready",
+    "rollback_performed",
+    "post_rollback_validated",
+    "failed"
+  ],
+  "task": "AIDE-BATCH-LOCAL-APPLY-GATE-01"
+}

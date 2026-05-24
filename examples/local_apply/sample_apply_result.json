@@ -1,0 +1,23 @@
+{
+  "apply_performed": true,
+  "audit_log_created": true,
+  "backup_created_before_apply": true,
+  "committed_data_public_index_mutated": false,
+  "committed_instance_state": false,
+  "deployment_performed": false,
+  "download_performed": false,
+  "extraction_executed": false,
+  "master_index_mutated": false,
+  "model_provider_used": false,
+  "mutation_manifest_created": true,
+  "operator_instance_mutated": false,
+  "operator_instance_mutation_enabled_by_default": false,
+  "post_apply_validation_passed": true,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "rollback_plan_created": true,
+  "schema_version": "local_apply_result.v0",
+  "status": "pass",
+  "task": "AIDE-BATCH-LOCAL-APPLY-GATE-01",
+  "upload_performed": false
+}

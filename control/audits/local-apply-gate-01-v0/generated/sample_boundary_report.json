@@ -1,0 +1,17 @@
+{
+  "boundary_report_id": "sample_boundary",
+  "committed_data_public_index_mutated": false,
+  "committed_instance_state": false,
+  "deployment_performed": false,
+  "download_performed": false,
+  "explicit_local_instance_mutation_performed": true,
+  "extraction_executed": false,
+  "master_index_mutated": false,
+  "model_provider_used": false,
+  "operator_instance_mutated": false,
+  "operator_instance_mutation_enabled_by_default": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "schema_version": "local_apply_boundary_report.v0",
+  "upload_performed": false
+}

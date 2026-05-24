@@ -1,0 +1,6 @@
+{
+  "rollback_confirmation": "ROLLBACK_LOCAL_INSTANCE",
+  "rollback_required": true,
+  "schema_version": "local_apply_rollback_matrix.v0",
+  "task": "AIDE-BATCH-LOCAL-APPLY-GATE-01"
+}

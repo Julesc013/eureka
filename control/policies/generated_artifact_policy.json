@@ -29,6 +29,12 @@
       "policy": "Allowed only as explicit remediation audit output."
     },
     {
+      "path": "control/audits/local-apply-gate-01-v0",
+      "artifact_class": "audit_generated",
+      "allow_task_local_drift": true,
+      "policy": "Task-local LOCAL-APPLY-GATE-01 audit evidence is reviewed with the batch and is not product runtime state."
+    },
+    {
       "path": "control/audits",
       "artifact_class": "audit_generated",
       "policy": "Audit generated outputs are evidence, not product runtime state."

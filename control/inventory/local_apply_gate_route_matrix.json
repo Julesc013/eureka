@@ -1,0 +1,17 @@
+{
+  "native_apply_enabled": false,
+  "public_apply_enabled": false,
+  "routes": [
+    "/apply",
+    "/apply/{plan_id}",
+    "/apply/{plan_id}/backup",
+    "/apply/{plan_id}/rollback",
+    "/api/v1/local-apply/preview",
+    "/api/v1/local-apply/plan",
+    "/api/v1/local-apply/{plan_id}/apply",
+    "/api/v1/local-apply/{plan_id}/rollback",
+    "/api/v1/local-apply/audit"
+  ],
+  "schema_version": "local_apply_gate_route_matrix.v0",
+  "task": "AIDE-BATCH-LOCAL-APPLY-GATE-01"
+}
