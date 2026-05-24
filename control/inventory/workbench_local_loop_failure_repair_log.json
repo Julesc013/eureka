@@ -1,0 +1,13 @@
+{
+  "repairs": [
+    {
+      "failure": "Initial full unittest discovery failed 16 tests in legacy HUNT, LOCAL, and runtime leakage validators after the queue advanced to DEV-TO-MAIN-PROMOTION-REVIEW-02 and new local-loop paths were added.",
+      "repair": "Extended HUNT and LOCAL queue-progress compatibility allowlists for WORKBENCH-LOCAL-LOOP-CLOSEOUT-01, DEV-TO-MAIN-PROMOTION-REVIEW-02, SOURCE-ACTION-KERNEL-00, and PUBLIC-ALPHA-READONLY-00; treated dev-to-main promotion review as an advanced post-HUNT state; removed the control-plane AIDE task token from runtime/local_loop/closeout.py.",
+      "rerun": "Focused failure cluster passed 77 tests; full unittest discovery rerun passed 4938 tests.",
+      "scope": "validation_compatibility",
+      "status": "repaired"
+    }
+  ],
+  "schema_version": "workbench_local_loop_failure_repair_log.v0",
+  "task": "AIDE-BATCH-WORKBENCH-LOCAL-LOOP-CLOSEOUT-01"
+}

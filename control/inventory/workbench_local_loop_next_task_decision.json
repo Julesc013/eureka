@@ -1,0 +1,13 @@
+{
+  "planned_after": [
+    "SOURCE-ACTION-KERNEL-00",
+    "SOURCE-WAVE-00",
+    "SNAPSHOT-RELAY-00",
+    "PUBLIC-ALPHA-READONLY-00"
+  ],
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "recommended_next_task": "DEV-TO-MAIN-PROMOTION-REVIEW-02",
+  "schema_version": "workbench_local_loop_next_task_decision.v0",
+  "task": "AIDE-BATCH-WORKBENCH-LOCAL-LOOP-CLOSEOUT-01"
+}

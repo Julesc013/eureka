@@ -1,0 +1,18 @@
+{
+  "additional_properties_allowed": true,
+  "contract": "local_loop_boundary_report",
+  "required_fields": [
+    "schema_version",
+    "boundary_report_id",
+    "local_loop_requires_apply_gate",
+    "temp_instance_apply_only_for_automated_tests",
+    "operator_instance_mutated",
+    "master_index_mutated",
+    "committed_data_public_index_mutated",
+    "production_readiness_claimed",
+    "public_launch_readiness_claimed"
+  ],
+  "schema_version": "local_loop_boundary_report.schema.v0",
+  "status": "governed_contract",
+  "type": "object"
+}

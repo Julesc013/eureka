@@ -1,0 +1,16 @@
+{
+  "additional_properties_allowed": true,
+  "contract": "local_loop_step",
+  "required_fields": [
+    "schema_version",
+    "step_id",
+    "step_kind",
+    "state",
+    "inputs",
+    "outputs",
+    "blocked_actions"
+  ],
+  "schema_version": "local_loop_step.schema.v0",
+  "status": "governed_contract",
+  "type": "object"
+}

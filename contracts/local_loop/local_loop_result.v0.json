@@ -1,0 +1,26 @@
+{
+  "additional_properties_allowed": true,
+  "contract": "local_loop_result",
+  "required_fields": [
+    "schema_version",
+    "loop_id",
+    "query",
+    "run_id",
+    "candidate_id",
+    "review_item_id",
+    "review_decision_id",
+    "promotion_preview_id",
+    "local_apply_plan_id",
+    "backup_manifest_id",
+    "mutation_manifest_id",
+    "audit_id",
+    "rollback_plan_id",
+    "search_after_apply_proof_id",
+    "rollback_proof_id",
+    "status",
+    "boundaries"
+  ],
+  "schema_version": "local_loop_result.schema.v0",
+  "status": "governed_contract",
+  "type": "object"
+}

@@ -1,0 +1,15 @@
+{
+  "additional_properties_allowed": true,
+  "contract": "local_loop_search_after_apply_proof",
+  "required_fields": [
+    "schema_version",
+    "proof_id",
+    "search_after_apply",
+    "search_after_rollback",
+    "search_after_apply_passed",
+    "search_after_rollback_passed"
+  ],
+  "schema_version": "local_loop_search_after_apply_proof.schema.v0",
+  "status": "governed_contract",
+  "type": "object"
+}

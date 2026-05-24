@@ -1,0 +1,15 @@
+{
+  "public_native_mutation_enabled": false,
+  "routes": [
+    "/local-loop",
+    "/local-loop/{loop_id}",
+    "/api/v1/local-loop/plan",
+    "/api/v1/local-loop/dry-run",
+    "/api/v1/local-loop/apply-temp",
+    "/api/v1/local-loop/{loop_id}",
+    "/api/v1/local-loop/{loop_id}/events",
+    "/api/v1/local-loop/{loop_id}/proofs"
+  ],
+  "schema_version": "workbench_local_loop_route_matrix.v0",
+  "task": "AIDE-BATCH-WORKBENCH-LOCAL-LOOP-CLOSEOUT-01"
+}

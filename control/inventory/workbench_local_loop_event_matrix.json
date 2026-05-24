@@ -1,0 +1,22 @@
+{
+  "event_types": [
+    "local_loop.started",
+    "local_loop.run_created",
+    "local_loop.candidate_selected",
+    "local_loop.review_item_created",
+    "local_loop.review_decision_recorded",
+    "local_loop.promotion_preview_created",
+    "local_loop.apply_preview_created",
+    "local_loop.backup_created",
+    "local_loop.apply_completed_temp",
+    "local_loop.search_after_apply_passed",
+    "local_loop.rollback_started",
+    "local_loop.rollback_completed",
+    "local_loop.search_after_rollback_passed",
+    "local_loop.completed",
+    "local_loop.blocked",
+    "warning.emitted"
+  ],
+  "schema_version": "workbench_local_loop_event_matrix.v0",
+  "task": "AIDE-BATCH-WORKBENCH-LOCAL-LOOP-CLOSEOUT-01"
+}

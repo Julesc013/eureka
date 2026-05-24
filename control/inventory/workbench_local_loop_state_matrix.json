@@ -1,0 +1,21 @@
+{
+  "schema_version": "workbench_local_loop_state_matrix.v0",
+  "states": [
+    "planned",
+    "run_created",
+    "candidate_selected",
+    "review_item_created",
+    "review_decision_recorded",
+    "promotion_preview_created",
+    "apply_preview_created",
+    "backup_created",
+    "temp_apply_performed",
+    "search_after_apply_passed",
+    "rollback_performed",
+    "search_after_rollback_passed",
+    "completed",
+    "blocked",
+    "failed"
+  ],
+  "task": "AIDE-BATCH-WORKBENCH-LOCAL-LOOP-CLOSEOUT-01"
+}

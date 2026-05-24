@@ -1,0 +1,21 @@
+{
+  "branch": "dev",
+  "head": "157ab49dd05801c6dd85193ba2c7f27895ecc88b",
+  "ia_hunt_bridge_found": true,
+  "ia_live_metadata_lane_found": true,
+  "local_apply_gate_found": true,
+  "operator_instance_mutation_default": false,
+  "origin_dev": "157ab49dd05801c6dd85193ba2c7f27895ecc88b",
+  "origin_main": "79563d01c8cc01163eae53a973ad225d7b8edffb",
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "resolution_run_kernel_found": true,
+  "reviewed_index_refresh_temp_proof_found": true,
+  "schema_version": "workbench_local_loop_input_state.v0",
+  "search_interaction_found": false,
+  "task": "AIDE-BATCH-WORKBENCH-LOCAL-LOOP-CLOSEOUT-01",
+  "workbench_live_run_found": true,
+  "workbench_result_lanes_found": true,
+  "workbench_review_promote_found": true,
+  "working_tree_clean_before": true
+}

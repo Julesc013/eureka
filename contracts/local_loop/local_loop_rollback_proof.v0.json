@@ -1,0 +1,15 @@
+{
+  "additional_properties_allowed": true,
+  "contract": "local_loop_rollback_proof",
+  "required_fields": [
+    "schema_version",
+    "proof_id",
+    "rollback_plan_id",
+    "rollback_passed",
+    "post_rollback_validation_passed",
+    "search_after_rollback_passed"
+  ],
+  "schema_version": "local_loop_rollback_proof.schema.v0",
+  "status": "governed_contract",
+  "type": "object"
+}

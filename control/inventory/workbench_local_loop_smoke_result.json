@@ -1,0 +1,17 @@
+{
+  "committed_data_public_index_mutated": false,
+  "committed_instance_state": false,
+  "dry_run_loop_passed": true,
+  "errors": [],
+  "master_index_mutated": false,
+  "native_read_only_projection_blocked": true,
+  "operator_instance_mutated": false,
+  "public_projection_blocked": true,
+  "rollback_passed": true,
+  "schema_version": "workbench_local_loop_smoke_result.v0",
+  "search_after_apply_passed": true,
+  "search_after_rollback_passed": true,
+  "status": "pass",
+  "task": "AIDE-BATCH-WORKBENCH-LOCAL-LOOP-CLOSEOUT-01",
+  "temp_apply_loop_passed": true
+}

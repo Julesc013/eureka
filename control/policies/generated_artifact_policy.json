@@ -35,6 +35,12 @@
       "policy": "Task-local LOCAL-APPLY-GATE-01 audit evidence is reviewed with the batch and is not product runtime state."
     },
     {
+      "path": "control/audits/workbench-local-loop-closeout-01-v0",
+      "artifact_class": "audit_generated",
+      "allow_task_local_drift": true,
+      "policy": "Task-local WORKBENCH-LOCAL-LOOP-CLOSEOUT-01 audit evidence is reviewed with the batch and is not product runtime state."
+    },
+    {
       "path": "control/audits",
       "artifact_class": "audit_generated",
       "policy": "Audit generated outputs are evidence, not product runtime state."

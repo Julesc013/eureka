@@ -1,0 +1,3 @@
+# Search After Apply Proof
+
+See the corresponding JSON inventory and generated audit artifacts for machine-readable evidence.

@@ -1,0 +1,46 @@
+{
+  "apis": [
+    {
+      "mutation": "read",
+      "projection": "operator_workbench",
+      "route": "/local-loop"
+    },
+    {
+      "mutation": "read",
+      "projection": "operator_workbench",
+      "route": "/local-loop/{loop_id}"
+    },
+    {
+      "mutation": "read",
+      "projection": "operator_workbench",
+      "route": "/api/v1/local-loop/plan"
+    },
+    {
+      "mutation": "read",
+      "projection": "operator_workbench",
+      "route": "/api/v1/local-loop/dry-run"
+    },
+    {
+      "mutation": "temp_apply_only",
+      "projection": "operator_workbench",
+      "route": "/api/v1/local-loop/apply-temp"
+    },
+    {
+      "mutation": "read",
+      "projection": "operator_workbench",
+      "route": "/api/v1/local-loop/{loop_id}"
+    },
+    {
+      "mutation": "read",
+      "projection": "operator_workbench",
+      "route": "/api/v1/local-loop/{loop_id}/events"
+    },
+    {
+      "mutation": "read",
+      "projection": "operator_workbench",
+      "route": "/api/v1/local-loop/{loop_id}/proofs"
+    }
+  ],
+  "schema_version": "workbench_local_loop_api_matrix.v0",
+  "task": "AIDE-BATCH-WORKBENCH-LOCAL-LOOP-CLOSEOUT-01"
+}

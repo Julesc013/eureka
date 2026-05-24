@@ -1,0 +1,8 @@
+schema_version: aide.task.v0
+id: AIDE-BATCH-WORKBENCH-LOCAL-LOOP-CLOSEOUT-01
+title: Prove query to reviewed local result through apply gate
+status: completed
+purpose: Prove query to reviewed local result through apply gate.
+allowed_scope_summary: Workbench local loop, local apply proof, docs, validators, tests, inventory, audit evidence, and AIDE metadata only.
+gate: No operator-instance mutation, committed instance state, master/public index mutation, source probes, downloads, extraction, model/provider calls, deployment, production readiness claim, or public launch claim.
+recommended_next: DEV-TO-MAIN-PROMOTION-REVIEW-02

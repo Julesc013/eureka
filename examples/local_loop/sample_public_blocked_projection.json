@@ -1,0 +1,30 @@
+{
+  "apply_controls_visible": false,
+  "apply_enabled": false,
+  "blocked_reasons": [
+    "public_web projection is read-only"
+  ],
+  "committed_data_public_index_mutated": false,
+  "committed_instance_state": false,
+  "deployment_performed": false,
+  "download_performed": false,
+  "extraction_executed": false,
+  "loop_id": "local_loop_mode_blocked_plan_local_loop_pla_dd8505b74f",
+  "master_index_mutated": false,
+  "model_provider_used": false,
+  "mutation_allowed": false,
+  "operator_instance_mutated": false,
+  "operator_instance_mutation_enabled_by_default": false,
+  "production_readiness_claimed": false,
+  "projection_profile": "public_web",
+  "proofs": {
+    "apply": {},
+    "rollback": {},
+    "search": {}
+  },
+  "public_launch_readiness_claimed": false,
+  "read_only": true,
+  "schema_version": "workbench_local_loop_projection.v0",
+  "status": "blocked",
+  "upload_performed": false
+}

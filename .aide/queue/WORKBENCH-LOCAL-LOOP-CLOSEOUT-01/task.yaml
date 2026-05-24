@@ -1,7 +1,8 @@
+schema_version: aide.task.v0
 id: WORKBENCH-LOCAL-LOOP-CLOSEOUT-01
 title: Prove query to reviewed local result through apply gate
-status: queued
-purpose: Follow-on work after the local apply gate.
-allowed_scope_summary: Future task must provide reviewed scope before implementation.
-gate: No production/public launch claim without future explicit policy.
-recommended_after: LOCAL-APPLY-GATE-01
+status: completed
+purpose: Prove query to reviewed local result through apply gate.
+allowed_scope_summary: Workbench local loop, local apply proof, docs, validators, tests, inventory, audit evidence, and AIDE metadata only.
+gate: No operator-instance mutation, committed instance state, master/public index mutation, source probes, downloads, extraction, model/provider calls, deployment, production readiness claim, or public launch claim.
+recommended_next: DEV-TO-MAIN-PROMOTION-REVIEW-02

@@ -1,7 +1,8 @@
+schema_version: aide.task.v0
 id: PUBLIC-ALPHA-READONLY-00
-title: Public alpha read-only reviewed-index planning
+title: Public reviewed-index-only alpha
 status: queued
-purpose: Follow-on work after the local apply gate.
-allowed_scope_summary: Future task must provide reviewed scope before implementation.
-gate: No production/public launch claim without future explicit policy.
-recommended_after: SNAPSHOT-RELAY-00
+purpose: Public reviewed-index-only alpha.
+allowed_scope_summary: Workbench local loop, local apply proof, docs, validators, tests, inventory, audit evidence, and AIDE metadata only.
+gate: No operator-instance mutation, committed instance state, master/public index mutation, source probes, downloads, extraction, model/provider calls, deployment, production readiness claim, or public launch claim.
+recommended_next:

@@ -1,0 +1,33 @@
+{
+  "policies": [
+    "workbench_local_loop_policy",
+    "workbench_local_loop_non_claim_policy",
+    "workbench_local_loop_boundary_policy",
+    "workbench_local_loop_operator_policy"
+  ],
+  "required_false": [
+    "operator_instance_mutation_default",
+    "public_loop_mutation_enabled",
+    "native_loop_mutation_enabled",
+    "master_index_mutation_enabled",
+    "committed_data_public_index_mutation_enabled",
+    "downloads_enabled",
+    "extraction_enabled",
+    "model_provider_enabled",
+    "deployment_enabled",
+    "production_readiness_claimed",
+    "public_launch_readiness_claimed"
+  ],
+  "required_true": [
+    "local_loop_requires_apply_gate",
+    "local_loop_uses_temp_instance_for_automated_tests",
+    "operator_token_required_for_apply",
+    "explicit_confirmation_required_for_apply",
+    "backup_required_before_apply",
+    "rollback_required",
+    "audit_log_required",
+    "mutation_manifest_required"
+  ],
+  "schema_version": "workbench_local_loop_policy_matrix.v0",
+  "task": "AIDE-BATCH-WORKBENCH-LOCAL-LOOP-CLOSEOUT-01"
+}

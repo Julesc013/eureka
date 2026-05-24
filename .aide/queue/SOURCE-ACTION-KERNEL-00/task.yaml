@@ -1,7 +1,8 @@
+schema_version: aide.task.v0
 id: SOURCE-ACTION-KERNEL-00
-title: Generic source-action kernel planning
+title: General source action adapter model
 status: queued
-purpose: Follow-on work after the local apply gate.
-allowed_scope_summary: Future task must provide reviewed scope before implementation.
-gate: No production/public launch claim without future explicit policy.
-recommended_after: WORKBENCH-LOCAL-LOOP-CLOSEOUT-01
+purpose: General source action adapter model.
+allowed_scope_summary: Workbench local loop, local apply proof, docs, validators, tests, inventory, audit evidence, and AIDE metadata only.
+gate: No operator-instance mutation, committed instance state, master/public index mutation, source probes, downloads, extraction, model/provider calls, deployment, production readiness claim, or public launch claim.
+recommended_next: SOURCE-WAVE-00

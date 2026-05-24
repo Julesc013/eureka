@@ -1,16 +1,15 @@
 {
   "branch": "dev",
   "current_queue_item": "WORKBENCH-LOCAL-LOOP-CLOSEOUT-01",
-  "current_recommended_task": "WORKBENCH-LOCAL-LOOP-CLOSEOUT-01 \u2014 Prove query to reviewed local result through apply gate",
+  "current_recommended_task": "DEV-TO-MAIN-PROMOTION-REVIEW-02 - Promote completed local product loop baseline",
   "current_task": "WORKBENCH-LOCAL-LOOP-CLOSEOUT-01",
   "deployment_performed": false,
   "f0_current_status": "completed",
-  "full_unittest_discovery_count": 4927,
+  "full_unittest_discovery_count": 4938,
   "full_unittest_discovery_status": "pass",
   "g0_current_status": "completed",
   "ia_live_metadata_lane_status": "completed",
-  "lan_enabled": false,
-  "latest_completed_task": "AIDE-BATCH-LOCAL-APPLY-GATE-01",
+  "latest_completed_task": "AIDE-BATCH-WORKBENCH-LOCAL-LOOP-CLOSEOUT-01",
   "local_apply_gate_status": "completed",
   "local_apply_gate_validation_status": "pass",
   "main_pushed": false,
@@ -20,6 +19,8 @@
   "schema_version": "eureka_repo_health.v0",
   "updated": "2026-05-24",
   "workbench_live_run_status": "completed",
+  "workbench_local_loop_status": "completed",
+  "workbench_local_loop_validation_status": "pass",
   "workbench_review_promote_status": "completed",
   "workbench_review_promote_validation_status": "pass"
 }

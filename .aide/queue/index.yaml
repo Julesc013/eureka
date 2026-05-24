@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
 updated: 2026-05-22
 repo: julesc013/eureka
-current_recommended_task: WORKBENCH-LOCAL-LOOP-CLOSEOUT-01 — Prove query to reviewed local result through apply gate
+current_recommended_task: DEV-TO-MAIN-PROMOTION-REVIEW-02 - Promote completed local product loop baseline
 entries:
   - id: DEV-AND-IA-TO-MAIN-PROMOTION-REVIEW
     title: Promote repaired dev IA pilot plus repo layout canon baseline to main

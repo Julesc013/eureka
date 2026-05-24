@@ -204,6 +204,7 @@ def current_queue_has_advanced_past_hunt_promotion(root: Path) -> bool:
         return current.startswith(
             (
                 "DEV-AND-IA-",
+                "DEV-TO-MAIN-",
                 "IA-",
                 "REPO-LAYOUT-",
                 "WORKBENCH-",
