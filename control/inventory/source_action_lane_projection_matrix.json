@@ -1,0 +1,14 @@
+{
+  "lane_projection_targets": [
+    "source_cache_hits",
+    "ia_metadata_candidates",
+    "local_candidate_results",
+    "review_queue_items",
+    "blocked_actions",
+    "running_workunits",
+    "deferred_deepening",
+    "known_absence",
+    "near_misses"
+  ],
+  "schema_version": "source_action_lane_projection_matrix.v0"
+}

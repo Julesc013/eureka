@@ -1,0 +1,31 @@
+{
+  "default_false_fields": [
+    "live_call_performed",
+    "accepted_truth",
+    "master_index_mutated",
+    "operator_instance_mutated",
+    "production_readiness_claimed",
+    "public_launch_readiness_claimed"
+  ],
+  "notes": "Governed contract shape for SOURCE-ACTION-KERNEL-00; examples carry concrete deterministic payloads.",
+  "record_type": "source_action_manifest_contract",
+  "required_fields": [
+    "source_family",
+    "display_name",
+    "manifest_version",
+    "adapter_id",
+    "supported_action_kinds",
+    "supported_transport_modes",
+    "capability_profile_ref",
+    "policy_ref",
+    "fixture_refs",
+    "live_policy_required",
+    "default_enabled",
+    "public_fanout_allowed",
+    "downloads_allowed",
+    "extraction_allowed",
+    "review_required"
+  ],
+  "schema_version": "source_action_manifest.schema.v0",
+  "task": "AIDE-BATCH-SOURCE-ACTION-KERNEL-00"
+}

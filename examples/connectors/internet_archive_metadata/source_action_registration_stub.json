@@ -1,0 +1,7 @@
+{
+  "accepted_truth": false,
+  "live_call_performed": false,
+  "registration_stub": true,
+  "schema_version": "source_action_adapter_registration.v0",
+  "source_family": "internet_archive_metadata"
+}

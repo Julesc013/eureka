@@ -1,7 +1,7 @@
 schema_version: aide.task.v0
 id: SOURCE-ACTION-KERNEL-00
 title: General source action adapter model
-status: queued
+status: completed
 purpose: Add the generic source action adapter model after the local product loop baseline is promoted.
 allowed_scope_summary: Source action contracts, policies, adapters, validators, docs, tests, inventory, and audit evidence only when this task is selected.
 gate: No source-family expansion, public live fanout, downloads, extraction, model/provider calls, deployment, production readiness claim, or public launch claim until explicitly scoped.

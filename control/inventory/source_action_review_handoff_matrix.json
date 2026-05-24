@@ -1,0 +1,11 @@
+{
+  "promotion_performed": false,
+  "review_acceptance_performed": false,
+  "rules": [
+    "source action output may propose review item",
+    "source action output may not accept review",
+    "source action output may not promote",
+    "source action output may not rebuild reviewed index"
+  ],
+  "schema_version": "source_action_review_handoff_matrix.v0"
+}

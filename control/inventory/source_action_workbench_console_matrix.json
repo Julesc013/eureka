@@ -1,0 +1,12 @@
+{
+  "full_html_required": false,
+  "public_live_fanout_enabled": false,
+  "routes": [
+    "/sources/actions",
+    "/sources/actions/{source_action_id}",
+    "/sources/families",
+    "/sources/scorecards",
+    "/sources/policies"
+  ],
+  "schema_version": "source_action_workbench_console_matrix.v0"
+}

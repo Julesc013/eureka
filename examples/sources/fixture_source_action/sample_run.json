@@ -1,0 +1,604 @@
+{
+  "accepted_truth": false,
+  "boundary_report": {
+    "accepted_truth": false,
+    "boundary_report_id": "source_action_boundary_report_f4833c4f2ef0775c",
+    "candidate_write_performed": false,
+    "created_at": "2026-05-25T00:00:00Z",
+    "deployment_performed": false,
+    "download_performed": false,
+    "dry_run": true,
+    "evidence_write_performed": false,
+    "extraction_executed": false,
+    "limitations": [
+      "boundary_report_for_fixture_or_mock_source_action"
+    ],
+    "live_call_performed": false,
+    "master_index_mutated": false,
+    "model_provider_used": false,
+    "non_claims": [
+      "not_truth",
+      "not_review_acceptance",
+      "not_reviewed_index_mutation",
+      "not_master_or_public_index_mutation",
+      "not_public_live_fanout",
+      "not_download_or_extraction",
+      "not_production_or_public_launch_readiness"
+    ],
+    "operator_instance_mutated": false,
+    "policy_ref": "control/policies/source_action_kernel_policy.json",
+    "production_readiness_claimed": false,
+    "projection_profile": "operator_workbench",
+    "public_launch_readiness_claimed": false,
+    "raw_response_committed": false,
+    "record_type": "source_action_boundary_report",
+    "review_required": true,
+    "review_write_performed": false,
+    "reviewed_index_mutated": false,
+    "schema_version": "source_action_boundary_report.v0",
+    "source_action_id": "source_action_65ad12d4ae7a9842",
+    "source_action_run_id": "source_action_run_fa0d963c2c41cbf8",
+    "source_cache_write_performed": false,
+    "source_family": "fixture_source_action",
+    "upload_performed": false
+  },
+  "candidate_mapping_plan": {
+    "accepted_truth": false,
+    "candidate_mapping_plan_id": "candidate_mapping_plan_934c90e57be3da39",
+    "created_at": "2026-05-25T00:00:00Z",
+    "dry_run": true,
+    "limitations": [
+      "mapping_plan_only_no_store_mutation"
+    ],
+    "live_call_performed": false,
+    "mapping_type": "candidate_record_plan",
+    "non_claims": [
+      "not_truth",
+      "not_review_acceptance",
+      "not_reviewed_index_mutation",
+      "not_master_or_public_index_mutation",
+      "not_public_live_fanout",
+      "not_download_or_extraction",
+      "not_production_or_public_launch_readiness"
+    ],
+    "planned_records": [
+      {
+        "confidence": "fixture",
+        "identifiers": {
+          "action_kind": "metadata_search",
+          "fixture_key": "sampleproject",
+          "query": "sampleproject"
+        },
+        "observation_id": "source_observation_19fa3477c15f3f43",
+        "provenance": {
+          "fixture": true,
+          "raw_response_persisted": false,
+          "transport_mode": "fixture"
+        },
+        "source_family": "fixture_source_action",
+        "source_locator": "fixture://source-action/locator_abc01ea9e1e75e57",
+        "summary": "Deterministic fixture metadata result for source-action kernel validation.",
+        "title": "Fixture result for sampleproject"
+      }
+    ],
+    "policy_ref": "control/policies/source_action_kernel_policy.json",
+    "projection_profile": "operator_workbench",
+    "record_type": "candidate_mapping_plan",
+    "review_required": true,
+    "schema_version": "candidate_mapping_plan.v0",
+    "source_action_id": "source_action_65ad12d4ae7a9842",
+    "source_family": "fixture_source_action",
+    "store_mutation_performed": false,
+    "write_performed": false
+  },
+  "created_at": "2026-05-25T00:00:00Z",
+  "dry_run": true,
+  "evidence_candidate_mapping_plan": {
+    "accepted_truth": false,
+    "created_at": "2026-05-25T00:00:00Z",
+    "dry_run": true,
+    "evidence_candidate_mapping_plan_id": "evidence_candidate_mapping_plan_0c1f23fb81217e94",
+    "limitations": [
+      "mapping_plan_only_no_store_mutation"
+    ],
+    "live_call_performed": false,
+    "mapping_type": "evidence_candidate_plan",
+    "non_claims": [
+      "not_truth",
+      "not_review_acceptance",
+      "not_reviewed_index_mutation",
+      "not_master_or_public_index_mutation",
+      "not_public_live_fanout",
+      "not_download_or_extraction",
+      "not_production_or_public_launch_readiness"
+    ],
+    "planned_records": [
+      {
+        "confidence": "fixture",
+        "identifiers": {
+          "action_kind": "metadata_search",
+          "fixture_key": "sampleproject",
+          "query": "sampleproject"
+        },
+        "observation_id": "source_observation_19fa3477c15f3f43",
+        "provenance": {
+          "fixture": true,
+          "raw_response_persisted": false,
+          "transport_mode": "fixture"
+        },
+        "source_family": "fixture_source_action",
+        "source_locator": "fixture://source-action/locator_abc01ea9e1e75e57",
+        "summary": "Deterministic fixture metadata result for source-action kernel validation.",
+        "title": "Fixture result for sampleproject"
+      }
+    ],
+    "policy_ref": "control/policies/source_action_kernel_policy.json",
+    "projection_profile": "operator_workbench",
+    "record_type": "evidence_candidate_mapping_plan",
+    "review_required": true,
+    "schema_version": "evidence_candidate_mapping_plan.v0",
+    "source_action_id": "source_action_65ad12d4ae7a9842",
+    "source_family": "fixture_source_action",
+    "store_mutation_performed": false,
+    "write_performed": false
+  },
+  "limitations": [
+    "source_action_outputs_are_plans_not_truth"
+  ],
+  "live_call_performed": false,
+  "non_claims": [
+    "not_truth",
+    "not_review_acceptance",
+    "not_reviewed_index_mutation",
+    "not_master_or_public_index_mutation",
+    "not_public_live_fanout",
+    "not_download_or_extraction",
+    "not_production_or_public_launch_readiness"
+  ],
+  "normalizer_result": {
+    "accepted_truth": false,
+    "created_at": "2026-05-25T00:00:00Z",
+    "dry_run": true,
+    "limitations": [
+      "normalized_fixture_or_mock_records"
+    ],
+    "live_call_performed": false,
+    "non_claims": [
+      "not_truth",
+      "not_review_acceptance",
+      "not_reviewed_index_mutation",
+      "not_master_or_public_index_mutation",
+      "not_public_live_fanout",
+      "not_download_or_extraction",
+      "not_production_or_public_launch_readiness"
+    ],
+    "normalizer_result_id": "source_normalizer_result_a85750079a53f115",
+    "observation_count": 1,
+    "observations": [
+      {
+        "confidence": "fixture",
+        "identifiers": {
+          "action_kind": "metadata_search",
+          "fixture_key": "sampleproject",
+          "query": "sampleproject"
+        },
+        "observation_id": "source_observation_19fa3477c15f3f43",
+        "provenance": {
+          "fixture": true,
+          "raw_response_persisted": false,
+          "transport_mode": "fixture"
+        },
+        "source_family": "fixture_source_action",
+        "source_locator": "fixture://source-action/locator_abc01ea9e1e75e57",
+        "summary": "Deterministic fixture metadata result for source-action kernel validation.",
+        "title": "Fixture result for sampleproject"
+      }
+    ],
+    "policy_ref": "control/policies/source_action_kernel_policy.json",
+    "projection_profile": "operator_workbench",
+    "record_type": "source_normalizer_result",
+    "review_required": true,
+    "schema_version": "source_normalizer_result.v0",
+    "source_action_id": "source_action_65ad12d4ae7a9842",
+    "source_family": "fixture_source_action",
+    "transport_result_id": "source_transport_result_fa0d963c2c41cbf8"
+  },
+  "policy_ref": "control/policies/source_action_kernel_policy.json",
+  "policy_result": {
+    "accepted_truth": false,
+    "allowed": true,
+    "blocked_reasons": [],
+    "created_at": "2026-05-25T00:00:00Z",
+    "dry_run": true,
+    "limitations": [
+      "policy_checked"
+    ],
+    "live_call_performed": false,
+    "non_claims": [
+      "not_truth",
+      "not_review_acceptance",
+      "not_reviewed_index_mutation",
+      "not_master_or_public_index_mutation",
+      "not_public_live_fanout",
+      "not_download_or_extraction",
+      "not_production_or_public_launch_readiness"
+    ],
+    "policy_ref": "control/policies/source_action_kernel_policy.json",
+    "projection_profile": "operator_workbench",
+    "record_type": "source_action_policy_check",
+    "review_required": true,
+    "schema_version": "source_action_policy_check.v0",
+    "source_action_id": "source_action_65ad12d4ae7a9842",
+    "source_family": "fixture_source_action"
+  },
+  "projection_profile": "operator_workbench",
+  "record_type": "source_action_run",
+  "request_plan": {
+    "accepted_truth": false,
+    "action_kind": "metadata_search",
+    "blocked_reasons": [],
+    "created_at": "2026-05-25T00:00:00Z",
+    "dry_run": true,
+    "limitations": [
+      "fixture_or_mock_transport_only"
+    ],
+    "live_allowed": false,
+    "live_call_performed": false,
+    "non_claims": [
+      "not_truth",
+      "not_review_acceptance",
+      "not_reviewed_index_mutation",
+      "not_master_or_public_index_mutation",
+      "not_public_live_fanout",
+      "not_download_or_extraction",
+      "not_production_or_public_launch_readiness"
+    ],
+    "policy_ref": "control/policies/source_action_kernel_policy.json",
+    "projection_profile": "operator_workbench",
+    "query_context": {
+      "query": "sampleproject"
+    },
+    "rate_limit_policy_ref": "control/policies/source_action_rate_limit_policy.json",
+    "record_type": "source_request_plan",
+    "redaction_policy_ref": "control/policies/source_action_transport_policy.json",
+    "request_budget": {
+      "max_requests": 0,
+      "timeout_seconds": 5
+    },
+    "request_plan_id": "source_request_plan_38f8041f2604f094",
+    "review_required": true,
+    "schema_version": "source_request_plan.v0",
+    "source_action_id": "source_action_65ad12d4ae7a9842",
+    "source_family": "fixture_source_action",
+    "transport_mode": "fixture"
+  },
+  "result_lane_projection_plan": {
+    "accepted_truth": false,
+    "created_at": "2026-05-25T00:00:00Z",
+    "dry_run": true,
+    "lane_count": 3,
+    "lane_projection_plan_id": "result_lane_projection_plan_442e2d859fd73acc",
+    "lanes": [
+      {
+        "item_count": 1,
+        "lane_kind": "source_cache_hits"
+      },
+      {
+        "item_count": 1,
+        "lane_kind": "local_candidate_results",
+        "source_family": "fixture_source_action"
+      },
+      {
+        "blocked": [
+          "live_source_call",
+          "download",
+          "extraction",
+          "review_acceptance"
+        ],
+        "item_count": 1,
+        "lane_kind": "blocked_actions"
+      }
+    ],
+    "limitations": [
+      "lane_projection_plan_only"
+    ],
+    "live_call_performed": false,
+    "non_claims": [
+      "not_truth",
+      "not_review_acceptance",
+      "not_reviewed_index_mutation",
+      "not_master_or_public_index_mutation",
+      "not_public_live_fanout",
+      "not_download_or_extraction",
+      "not_production_or_public_launch_readiness"
+    ],
+    "policy_ref": "control/policies/source_action_kernel_policy.json",
+    "projection_profile": "operator_workbench",
+    "record_type": "result_lane_projection_plan",
+    "review_required": true,
+    "schema_version": "result_lane_projection_plan.v0",
+    "source_action_id": "source_action_65ad12d4ae7a9842",
+    "source_family": "fixture_source_action"
+  },
+  "review_handoff_plan": {
+    "accepted_truth": false,
+    "candidate_count": 1,
+    "created_at": "2026-05-25T00:00:00Z",
+    "dry_run": true,
+    "limitations": [
+      "review_handoff_is_not_review_acceptance"
+    ],
+    "live_call_performed": false,
+    "non_claims": [
+      "not_truth",
+      "not_review_acceptance",
+      "not_reviewed_index_mutation",
+      "not_master_or_public_index_mutation",
+      "not_public_live_fanout",
+      "not_download_or_extraction",
+      "not_production_or_public_launch_readiness"
+    ],
+    "policy_ref": "control/policies/source_action_kernel_policy.json",
+    "projection_profile": "operator_workbench",
+    "promotion_performed": false,
+    "record_type": "review_handoff_plan",
+    "review_acceptance_performed": false,
+    "review_handoff_plan_id": "review_handoff_plan_6c965e826135715d",
+    "review_item_plan_count": 1,
+    "review_required": true,
+    "schema_version": "review_handoff_plan.v0",
+    "source_action_id": "source_action_65ad12d4ae7a9842",
+    "source_family": "fixture_source_action"
+  },
+  "review_required": true,
+  "schema_version": "source_action_run.v0",
+  "scorecard": {
+    "accepted_truth": false,
+    "created_at": "2026-05-25T00:00:00Z",
+    "dimensions": {
+      "accepted_evidence_yield": "not-measured",
+      "domain_coverage": "fixture-only",
+      "false_positive_rate": "not-measured",
+      "identifier_richness": "sample",
+      "locator_stability": "stable-fixture",
+      "metadata_quality": "fixture-high",
+      "provenance_quality": "fixture",
+      "rate_limit_reliability": "not-applicable-fixture",
+      "rights_risk": "not-assessed",
+      "safety_risk": "low-fixture-only"
+    },
+    "dry_run": true,
+    "limitations": [
+      "scorecard_is_fixture_only"
+    ],
+    "live_call_performed": false,
+    "non_claims": [
+      "not_truth",
+      "not_review_acceptance",
+      "not_reviewed_index_mutation",
+      "not_master_or_public_index_mutation",
+      "not_public_live_fanout",
+      "not_download_or_extraction",
+      "not_production_or_public_launch_readiness"
+    ],
+    "policy_ref": "control/policies/source_action_kernel_policy.json",
+    "projection_profile": "operator_workbench",
+    "record_type": "source_action_scorecard",
+    "review_required": true,
+    "schema_version": "source_action_scorecard.v0",
+    "source_action_id": "source_action_scorecard_cd3aa285b16bc31e",
+    "source_family": "fixture_source_action"
+  },
+  "source_action_id": "source_action_65ad12d4ae7a9842",
+  "source_action_run_id": "source_action_run_fa0d963c2c41cbf8",
+  "source_backoff_decision": {
+    "accepted_truth": false,
+    "backoff_required": false,
+    "created_at": "2026-05-25T00:00:00Z",
+    "dry_run": true,
+    "limitations": [
+      "backoff_decision_only"
+    ],
+    "live_call_performed": false,
+    "non_claims": [
+      "not_truth",
+      "not_review_acceptance",
+      "not_reviewed_index_mutation",
+      "not_master_or_public_index_mutation",
+      "not_public_live_fanout",
+      "not_download_or_extraction",
+      "not_production_or_public_launch_readiness"
+    ],
+    "policy_ref": "control/policies/source_action_kernel_policy.json",
+    "projection_profile": "operator_workbench",
+    "reason": "no_backoff_for_fixture_transport",
+    "record_type": "source_backoff_decision",
+    "retry_after_seconds": 0,
+    "review_required": true,
+    "schema_version": "source_backoff_decision.v0",
+    "source_action_id": "source_action_65ad12d4ae7a9842",
+    "source_family": "fixture_source_action"
+  },
+  "source_cache_mapping_plan": {
+    "accepted_truth": false,
+    "created_at": "2026-05-25T00:00:00Z",
+    "dry_run": true,
+    "limitations": [
+      "mapping_plan_only_no_store_mutation"
+    ],
+    "live_call_performed": false,
+    "mapping_type": "source_cache_record_plan",
+    "non_claims": [
+      "not_truth",
+      "not_review_acceptance",
+      "not_reviewed_index_mutation",
+      "not_master_or_public_index_mutation",
+      "not_public_live_fanout",
+      "not_download_or_extraction",
+      "not_production_or_public_launch_readiness"
+    ],
+    "planned_records": [
+      {
+        "confidence": "fixture",
+        "identifiers": {
+          "action_kind": "metadata_search",
+          "fixture_key": "sampleproject",
+          "query": "sampleproject"
+        },
+        "observation_id": "source_observation_19fa3477c15f3f43",
+        "provenance": {
+          "fixture": true,
+          "raw_response_persisted": false,
+          "transport_mode": "fixture"
+        },
+        "source_family": "fixture_source_action",
+        "source_locator": "fixture://source-action/locator_abc01ea9e1e75e57",
+        "summary": "Deterministic fixture metadata result for source-action kernel validation.",
+        "title": "Fixture result for sampleproject"
+      }
+    ],
+    "policy_ref": "control/policies/source_action_kernel_policy.json",
+    "projection_profile": "operator_workbench",
+    "record_type": "source_cache_mapping_plan",
+    "review_required": true,
+    "schema_version": "source_cache_mapping_plan.v0",
+    "source_action_id": "source_action_65ad12d4ae7a9842",
+    "source_cache_mapping_plan_id": "source_cache_mapping_plan_9ca73cc0e7340002",
+    "source_family": "fixture_source_action",
+    "store_mutation_performed": false,
+    "write_performed": false
+  },
+  "source_family": "fixture_source_action",
+  "source_observation_envelope": {
+    "accepted_truth": false,
+    "created_at": "2026-05-25T00:00:00Z",
+    "dry_run": true,
+    "limitations": [
+      "observation_envelope_is_not_truth"
+    ],
+    "live_call_performed": false,
+    "non_claims": [
+      "not_truth",
+      "not_review_acceptance",
+      "not_reviewed_index_mutation",
+      "not_master_or_public_index_mutation",
+      "not_public_live_fanout",
+      "not_download_or_extraction",
+      "not_production_or_public_launch_readiness"
+    ],
+    "observation_count": 1,
+    "observation_envelope_id": "source_observation_envelope_4989a7e231c82166",
+    "observations": [
+      {
+        "confidence": "fixture",
+        "identifiers": {
+          "action_kind": "metadata_search",
+          "fixture_key": "sampleproject",
+          "query": "sampleproject"
+        },
+        "observation_id": "source_observation_19fa3477c15f3f43",
+        "provenance": {
+          "fixture": true,
+          "raw_response_persisted": false,
+          "transport_mode": "fixture"
+        },
+        "source_family": "fixture_source_action",
+        "source_locator": "fixture://source-action/locator_abc01ea9e1e75e57",
+        "summary": "Deterministic fixture metadata result for source-action kernel validation.",
+        "title": "Fixture result for sampleproject"
+      }
+    ],
+    "policy_ref": "control/policies/source_action_kernel_policy.json",
+    "projection_profile": "operator_workbench",
+    "record_type": "source_observation_envelope",
+    "review_required": true,
+    "schema_version": "source_observation_envelope.v0",
+    "source_action_id": "source_action_65ad12d4ae7a9842",
+    "source_family": "fixture_source_action"
+  },
+  "source_rate_limit_ledger": {
+    "accepted_truth": false,
+    "created_at": "2026-05-25T00:00:00Z",
+    "dry_run": true,
+    "kill_switch_required": true,
+    "limitations": [
+      "fixture_transport_has_zero_remote_requests"
+    ],
+    "live_call_performed": false,
+    "non_claims": [
+      "not_truth",
+      "not_review_acceptance",
+      "not_reviewed_index_mutation",
+      "not_master_or_public_index_mutation",
+      "not_public_live_fanout",
+      "not_download_or_extraction",
+      "not_production_or_public_launch_readiness"
+    ],
+    "policy_ref": "control/policies/source_action_kernel_policy.json",
+    "projection_profile": "operator_workbench",
+    "rate_limit_ledger_id": "source_rate_limit_ledger_abdbfb453593a07d",
+    "rate_limited": false,
+    "record_type": "source_rate_limit_ledger",
+    "retry_after_respected": true,
+    "review_required": true,
+    "schema_version": "source_rate_limit_ledger.v0",
+    "source_action_id": "source_action_65ad12d4ae7a9842",
+    "source_family": "fixture_source_action",
+    "total_requests": 0
+  },
+  "status": "completed",
+  "transport_result": {
+    "accepted_truth": false,
+    "created_at": "2026-05-25T00:00:00Z",
+    "dry_run": true,
+    "limitations": [
+      "fixture_or_mock_summary_only"
+    ],
+    "live_call_performed": false,
+    "non_claims": [
+      "not_truth",
+      "not_review_acceptance",
+      "not_reviewed_index_mutation",
+      "not_master_or_public_index_mutation",
+      "not_public_live_fanout",
+      "not_download_or_extraction",
+      "not_production_or_public_launch_readiness"
+    ],
+    "normalized_preview_available": true,
+    "policy_ref": "control/policies/source_action_kernel_policy.json",
+    "projection_profile": "operator_workbench",
+    "rate_limited": false,
+    "raw_response_persisted": false,
+    "record_type": "source_transport_result",
+    "records": [
+      {
+        "accepted_truth": false,
+        "identifiers": {
+          "action_kind": "metadata_search",
+          "fixture_key": "sampleproject",
+          "query": "sampleproject"
+        },
+        "live_call_performed": false,
+        "review_required": true,
+        "source_family": "fixture_source_action",
+        "source_locator": "fixture://source-action/locator_abc01ea9e1e75e57",
+        "source_record_id": "fixture_source_record_abc01ea9e1e75e57",
+        "summary": "Deterministic fixture metadata result for source-action kernel validation.",
+        "title": "Fixture result for sampleproject",
+        "transport_mode": "fixture"
+      }
+    ],
+    "redacted_summary_available": true,
+    "request_plan_id": "source_request_plan_38f8041f2604f094",
+    "response_summary_ref": "source_response_summary_4e7958f55a065c0b",
+    "review_required": true,
+    "schema_version": "source_transport_result.v0",
+    "source_action_id": "source_action_65ad12d4ae7a9842",
+    "source_family": "fixture_source_action",
+    "status": "completed",
+    "tls_error": false,
+    "total_requests": 0,
+    "transport_mode": "fixture",
+    "transport_result_id": "source_transport_result_fa0d963c2c41cbf8"
+  }
+}

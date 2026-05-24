@@ -1,0 +1,21 @@
+{
+  "ahead_behind_origin_main_origin_dev": "0\t0",
+  "branch": "dev",
+  "dev_to_main_promotion_02_found": true,
+  "head": "e582028b1db977e28ba6ddc0ed284ca6ccf48234",
+  "ia_live_metadata_lane_found": true,
+  "local_apply_gate_verified": true,
+  "local_loop_verified": true,
+  "merge_base": "e582028b1db977e28ba6ddc0ed284ca6ccf48234",
+  "origin_dev": "e582028b1db977e28ba6ddc0ed284ca6ccf48234",
+  "origin_main": "e582028b1db977e28ba6ddc0ed284ca6ccf48234",
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "resolution_run_kernel_found": true,
+  "schema_version": "source_action_kernel_input_state.v0",
+  "source_action_kernel_existing": false,
+  "task": "AIDE-BATCH-SOURCE-ACTION-KERNEL-00",
+  "workbench_live_run_found": true,
+  "workbench_review_promote_found": true,
+  "working_tree_clean_before": true
+}

@@ -1,0 +1,55 @@
+{
+  "accepted_truth": false,
+  "adapter_id": "internet_archive_metadata_reference",
+  "capabilities": [
+    "metadata_search",
+    "item_metadata_read",
+    "file_manifest_metadata"
+  ],
+  "capability_profile_ref": "contracts/source/action/source_capability_profile.v0.json",
+  "created_at": "2026-05-25T00:00:00Z",
+  "default_enabled": false,
+  "display_name": "Internet Archive Metadata Reference",
+  "downloads_allowed": false,
+  "dry_run": true,
+  "extraction_allowed": false,
+  "fixture_refs": [
+    "examples/sources/internet_archive_metadata/source_family_descriptor.json"
+  ],
+  "fixture_supported": true,
+  "implements_live_behavior": false,
+  "limitations": [
+    "registration_stub_only",
+    "existing_ia_metadata_lane_behavior_unchanged",
+    "no_live_ia_call_performed"
+  ],
+  "live_call_performed": false,
+  "live_enabled_by_default": false,
+  "live_policy_required": true,
+  "manifest_version": "0.0",
+  "mock_supported": true,
+  "non_claims": [
+    "not_truth",
+    "not_source_expansion",
+    "not_live_ia_behavior"
+  ],
+  "policy_ref": "control/policies/source_action_kernel_policy.json",
+  "projection_profile": "operator_workbench",
+  "public_allowed_default": false,
+  "public_fanout_allowed": false,
+  "record_type": "source_family_descriptor",
+  "review_required": true,
+  "schema_version": "source_family_descriptor.v0",
+  "source_action_id": "source_action_manifest_a1b1a2997ba120fb",
+  "source_family": "internet_archive_metadata",
+  "supported_action_kinds": [
+    "metadata_search",
+    "item_metadata_read",
+    "file_manifest_metadata"
+  ],
+  "supported_transport_modes": [
+    "fixture",
+    "mock_live",
+    "operator_approved_live"
+  ]
+}

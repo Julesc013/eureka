@@ -1,0 +1,12 @@
+{
+  "fixture_source_action_passed": true,
+  "ia_metadata_reference_manifest_validation_passed": true,
+  "live_source_call_performed": false,
+  "new_york_fixture_source_action_passed": true,
+  "operator_approved_live_blocked_by_default": true,
+  "schema_version": "source_action_smoke_result.v0",
+  "source_action_manifest_validation_passed": true,
+  "source_probe_executed": false,
+  "status": "pass",
+  "task": "AIDE-BATCH-SOURCE-ACTION-KERNEL-00"
+}

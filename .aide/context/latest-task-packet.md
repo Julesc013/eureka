@@ -1,148 +1,95 @@
-# AIDE Latest Task Packet
+# SOURCE-ACTION-KERNEL-00 Task Packet
 
 ## PHASE
-
-UNSPECIFIED - DEV-TO-MAIN-PROMOTION-REVIEW-02
+SOURCE-ACTION-KERNEL-00.
 
 ## GOAL
-
-DEV-TO-MAIN-PROMOTION-REVIEW-02
+Add the generic source action adapter model and source-family extension seam for future metadata-only source families.
 
 ## WHY
-
-Continue AIDE token survival by using repo-local context refs, compact objectives, deterministic validation, and evidence packets instead of long chat history.
+Future source work should plug into one reusable source action lifecycle instead of becoming one-off vertical scripts.
 
 ## CONTEXT_REFS
-
-- `AGENTS.md`
-- `.aide/queue/index.yaml`
-- `.aide/memory/project-state.md`
-- `.aide/memory/decisions.md`
-- `.aide/memory/open-risks.md`
-- `.aide/context/repo-snapshot.json` (present)
-- `.aide/context/repo-map.json` (present)
-- `.aide/context/repo-map.md` (present)
-- `.aide/context/test-map.json` (present)
-- `.aide/context/context-index.json` (present)
-- `.aide/context/latest-context-packet.md` (present)
-- `.aide/repo/latest-repo-intelligence.md` (present)
-- `.aide/repo/file-inventory.json` (present)
-- `.aide/reports/file-quality-summary.md` (present)
-- `.aide/reports/file-quality-ledger.json` (present)
-- `.aide/refactors/latest-refactor-readiness.md` (present)
-- `.aide/refactors/latest-refactor-plan.example.json` (present)
-- `.aide/routing/latest-route-decision.json` (present)
-- `.aide/routing/latest-route-decision.md` (present)
-- `.aide/cache/latest-cache-keys.json` (present)
-- `.aide/cache/latest-cache-keys.md` (present)
-- `.aide/prompts/compact-task.md`
-- `.aide/policies/token-budget.yaml`
-- `.aide/policies/cache.yaml`
-- `.aide/policies/local-state.yaml`
+- `.aide/context/latest-context-packet.md`
+- `control/inventory/dev_to_main_promotion_02_result.json`
+- `control/inventory/workbench_local_loop_result.json`
+- `control/inventory/local_apply_gate_result.json`
 
 ## ALLOWED_PATHS
-
-- `.aide/**`
-- `AGENTS.md`
-- `docs/operations/**`
-- `docs/reference/**`
-- `control/inventory/**`
-- `control/audits/**`
-- `control/policies/**`
-- `scripts/local_queue_progress.py`
-- `scripts/validate_*.py`
-- `scripts/check_*.py`
-- `tests/operations/**`
-- `tests/scripts/**`
-- `tests/aide/**`
+- `contracts/source/action/**`
+- `contracts/source/families/**`
+- `runtime/source/action/**`
+- `runtime/connectors/fixture_source_action/**`
+- `runtime/connectors/internet_archive_metadata/**`
+- `scripts/eureka_source_action*.py`
+- `scripts/validate_source_action_kernel.py`
+- `tools/validators/validate_source_action_kernel.py`
+- `tools/generators/source_action_fixture_builder.py`
+- `tools/auditors/source_action_boundary_auditor.py`
+- `tests/runtime/test_source_action*.py`
+- `tests/operations/test_source_action*.py`
+- `tests/scripts/test_validate_source_action_kernel.py`
+- `examples/source_actions/**`
+- `examples/sources/**`
+- `examples/connectors/fixture_source_action/**`
+- `examples/connectors/internet_archive_metadata/**`
+- `control/policies/source_action*.json`
+- `control/inventory/source_action*.json`
+- `control/audits/source-action-kernel-00-v0/**`
+- `docs/architecture/SOURCE_ACTION*.md`
+- `docs/operations/*SOURCE_ACTION*.md`
+- `docs/reference/SOURCE_ACTION*.md`
+- `.aide/queue/AIDE-BATCH-SOURCE-ACTION-KERNEL-00/task.yaml`
+- `.aide/context/latest-task-packet.md`
+- `.aide/context/latest-review-packet.md`
+- `.aide/reports/eureka-repo-health.*`
 
 ## FORBIDDEN_PATHS
-
-- `.git/**`
-- `.env`
-- `secrets/**`
+- `instances/**`
 - `.aide.local/**`
-- `.local/**`
-- `.cache/**`
-- `eureka-instance/**`
-- `runtime/**`
-- `contracts/**`
-- `surfaces/**`
-- `site/**`
+- `secrets/**`
+- `.env`
+- `site/dist/**`
+- `data/public_index/**`
+- `runtime/extraction/**`
 - `native/**`
 - `crates/**`
-- `examples/**`
-- `evals/**`
-- `tests/**` unless this is an AIDE/control-plane test repair
-- `scripts/**` unless this is an AIDE validator/check repair
-- raw provider credentials, API keys, local caches, raw prompt logs, raw responses, and source AIDE repository state
 
 ## IMPLEMENTATION
-
-- Read the queue packet and relevant repo refs first.
-- Keep changes inside the allowed paths.
-- Make the smallest coherent diff that satisfies acceptance.
-- Preserve generated/manual boundaries.
-- Do not inline whole source files unless exact contents are required.
-- Use exact refs such as `path#Lstart-Lend` when file details are load-bearing.
+- Add source action contracts, policies, matrices, examples, docs, audit pack, and result evidence.
+- Implement a deterministic fixture source action adapter.
+- Add an Internet Archive metadata reference registration stub without changing live IA behavior.
+- Add CLI wrappers, tool implementations, validator, and focused tests.
 
 ## VALIDATION
-
-- `py -3 .aide/scripts/aide_lite.py doctor`
-- `py -3 .aide/scripts/aide_lite.py validate`
-- `py -3 .aide/scripts/aide_lite.py snapshot`
-- `py -3 .aide/scripts/aide_lite.py index`
-- `py -3 .aide/scripts/aide_lite.py context`
-- `py -3 .aide/scripts/aide_lite.py pack --task "AIDE-EVAL-GREEN-01"`
-- `py -3 .aide/scripts/aide_lite.py test`
-- `py -3 .aide/scripts/aide_lite.py selftest`
-- `py -3 .aide/scripts/aide_lite.py verify`
-- `py -3 .aide/scripts/aide_lite.py review-pack`
-- `py -3 .aide/scripts/aide_lite.py eval run`
-- `python scripts/check_architecture_boundaries.py`
-- `python scripts/check_generated_artifact_cleanliness.py --check --json`
-- `python -m unittest discover -s tests -t .`
-- `git diff --check`
-
-## COMMITS
-
-- Commit coherent subdeliverables with verbose bodies.
-- Stop at review gates.
+- `python scripts/validate_source_action_kernel.py`
+- source-action focused unit/script tests
+- subsystem validators
+- architecture and generated-artifact checks
+- AIDE Lite checks
+- full discovery if practical
 
 ## EVIDENCE
-
-- changed files
-- validation commands and results
-- verifier result
-- review packet path and result when review-pack is available
-- advisory route decision path and result when Q17 routing is available
-- compact packet size and budget status
-- unresolved risks and deferrals
+- `control/inventory/source_action_kernel_result.json`
+- `control/inventory/source_action_validation_matrix.json`
+- `control/audits/source-action-kernel-00-v0/`
 
 ## NON_GOALS
-
-- No Eureka product behavior change.
-- No source probes, extraction, model/provider calls, deployment, production-readiness claim, public-launch claim, main promotion, force-push, history rewrite, SYN implementation, or F0 implementation.
-- No Gateway, provider calls, live model routing, local model setup, exact tokenizer, provider billing ledger, Runtime, Service, Commander, Mobile, MCP/A2A, UI, host/app implementation, or autonomous loop unless a future reviewed queue item explicitly authorizes it.
+- No live source calls.
+- No source probes.
+- No downloads, uploads, extraction, execution, model/provider calls, or deployment.
+- No operator-instance, reviewed-index, master-index, or public-index mutation.
+- No production or public launch readiness claim.
 
 ## ACCEPTANCE
-
-- Task-specific acceptance criteria are met.
-- Validation is run and recorded.
-- Evidence is written.
-- No secrets, raw prompt logs, local caches, or `.aide.local` contents are committed.
+- Fixture source action passes.
+- Manifest validation passes.
+- Mapping, review handoff, lane projection, boundary report, and scorecard are produced.
+- Unsafe boundary flags remain false.
+- Recommended next task is SOURCE-WAVE-00.
 
 ## OUTPUT_SCHEMA
-
-Return a compact final report with `STATUS`, `SUMMARY`, `COMMITS`, `CHANGED_FILES`, `VALIDATION`, route/verifier/token results, `RISKS`, and `NEXT`.
-Include the verifier result when Q12 verifier behavior is available.
+`source_action_kernel_result.v0`.
 
 ## TOKEN_ESTIMATE
-
-- method: chars / 4, rounded up
-- chars: 4782
-- approx_tokens: 1196
-- budget_status: PASS
-- warnings:
-  - none
-- formal ledger: `.aide/reports/token-ledger.jsonl`
+Medium batch packet; use repo files for details rather than embedding full prompts.

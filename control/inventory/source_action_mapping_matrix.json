@@ -1,0 +1,12 @@
+{
+  "mapping_types": [
+    "source_observation",
+    "source_cache_record_plan",
+    "evidence_candidate_plan",
+    "candidate_record_plan",
+    "review_handoff_plan",
+    "lane_projection_plan"
+  ],
+  "schema_version": "source_action_mapping_matrix.v0",
+  "store_mutation_performed": false
+}

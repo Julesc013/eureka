@@ -1,0 +1,33 @@
+{
+  "default_false_fields": [
+    "live_call_performed",
+    "accepted_truth",
+    "master_index_mutated",
+    "operator_instance_mutated",
+    "production_readiness_claimed",
+    "public_launch_readiness_claimed"
+  ],
+  "notes": "Governed contract shape for SOURCE-ACTION-KERNEL-00; examples carry concrete deterministic payloads.",
+  "record_type": "source_action_boundary_report_contract",
+  "required_fields": [
+    "boundary_report_id",
+    "source_action_run_id",
+    "live_call_performed",
+    "raw_response_committed",
+    "source_cache_write_performed",
+    "evidence_write_performed",
+    "candidate_write_performed",
+    "review_write_performed",
+    "reviewed_index_mutated",
+    "master_index_mutated",
+    "operator_instance_mutated",
+    "download_performed",
+    "extraction_executed",
+    "model_provider_used",
+    "deployment_performed",
+    "production_readiness_claimed",
+    "public_launch_readiness_claimed"
+  ],
+  "schema_version": "source_action_boundary_report.schema.v0",
+  "task": "AIDE-BATCH-SOURCE-ACTION-KERNEL-00"
+}

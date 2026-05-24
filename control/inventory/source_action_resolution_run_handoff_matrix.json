@@ -1,0 +1,10 @@
+{
+  "handoff": [
+    "ResolutionRunKernel can schedule SourceActionRun",
+    "SourceActionRun can emit events",
+    "SourceActionRun can update lane projection",
+    "SourceActionRun can prepare review handoff plan",
+    "SourceActionRun cannot mutate reviewed/master index"
+  ],
+  "schema_version": "source_action_resolution_run_handoff_matrix.v0"
+}

@@ -1,0 +1,24 @@
+{
+  "schema_version": "source_action_transport_matrix.v0",
+  "transport_modes": [
+    {
+      "enabled_by_default": true,
+      "live_call_performed": false,
+      "mode": "fixture"
+    },
+    {
+      "enabled_by_default": true,
+      "live_call_performed": false,
+      "mode": "mock_live"
+    },
+    {
+      "enabled_by_default": false,
+      "mode": "operator_approved_live",
+      "requires_operator_policy": true
+    },
+    {
+      "enabled_by_default": false,
+      "mode": "disabled"
+    }
+  ]
+}

@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (4803 chars, 1201 approximate tokens)
+- `.aide/context/latest-task-packet.md` (3334 chars, 834 approximate tokens)
 
 ## Context Packet Reference
 
@@ -35,22 +35,29 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/DEV-TO-MAIN-PROMOTION-REVIEW-02/task.yaml` (M; matches active task allowed path)
-- allowed: `.aide/queue/SOURCE-ACTION-KERNEL-00/task.yaml` (M; matches active task allowed path)
-- allowed: `control/audits/dev-to-main-promotion-review-02-v0` (??; matches active task allowed path)
-- allowed: `control/inventory/dev_to_main_promotion_02_boundary_report.json` (??; matches active task allowed path)
-- allowed: `control/inventory/dev_to_main_promotion_02_branch_state.json` (??; matches active task allowed path)
-- allowed: `control/inventory/dev_to_main_promotion_02_failure_repair_log.json` (??; matches active task allowed path)
-- allowed: `control/inventory/dev_to_main_promotion_02_input_state.json` (??; matches active task allowed path)
-- allowed: `control/inventory/dev_to_main_promotion_02_next_task_decision.json` (??; matches active task allowed path)
-- allowed: `control/inventory/dev_to_main_promotion_02_result.json` (??; matches active task allowed path)
-- allowed: `control/inventory/dev_to_main_promotion_02_scope_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/dev_to_main_promotion_02_validation_matrix.json` (??; matches active task allowed path)
-- allowed: `docs/operations/DEV_TO_MAIN_PROMOTION_REVIEW_02.md` (??; matches active task allowed path)
-- allowed: `docs/operations/POST_LOCAL_LOOP_PROMOTION_PLAN.md` (??; matches active task allowed path)
-- allowed: `scripts/validate_dev_to_main_promotion_02.py` (??; matches active task allowed path)
-- allowed: `tests/operations/test_dev_to_main_promotion_02.py` (??; matches active task allowed path)
-- allowed: `tests/scripts/test_validate_dev_to_main_promotion_02.py` (??; matches active task allowed path)
+- unknown: `.aide/queue/AIDE-BATCH-SOURCE-ACTION-KERNEL-00` (??; does not match active task allowed paths)
+- unknown: `.aide/queue/SOURCE-ACTION-KERNEL-00/task.yaml` (M; does not match active task allowed paths)
+- unknown: `.aide/queue/index.yaml` (M; does not match active task allowed paths)
+- allowed: `.aide/reports/eureka-repo-health.json` (M; matches active task allowed path)
+- allowed: `.aide/reports/eureka-repo-health.md` (M; matches active task allowed path)
+- allowed: `contracts/source/action` (??; matches active task allowed path)
+- allowed: `contracts/source/families` (??; matches active task allowed path)
+- allowed: `control/audits/source-action-kernel-00-v0` (??; matches active task allowed path)
+- allowed: `control/inventory/source_action_adapter_manifest_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/source_action_backoff_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/source_action_boundary_report.json` (??; matches active task allowed path)
+- allowed: `control/inventory/source_action_capability_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/source_action_contract_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/source_action_failure_repair_log.json` (??; matches active task allowed path)
+- allowed: `control/inventory/source_action_kernel_input_state.json` (??; matches active task allowed path)
+- allowed: `control/inventory/source_action_kernel_result.json` (??; matches active task allowed path)
+- allowed: `control/inventory/source_action_lane_projection_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/source_action_lifecycle_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/source_action_mapping_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/source_action_next_task_decision.json` (??; matches active task allowed path)
+- allowed: `control/inventory/source_action_normalizer_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/source_action_policy_matrix.json` (??; matches active task allowed path)
+- additional changed paths omitted from compact packet: 61; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -60,8 +67,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 6153
-- approx_tokens: 1539
+- chars: 6729
+- approx_tokens: 1683
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

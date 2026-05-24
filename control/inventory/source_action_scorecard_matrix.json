@@ -1,0 +1,15 @@
+{
+  "dimensions": [
+    "metadata_quality",
+    "provenance_quality",
+    "identifier_richness",
+    "locator_stability",
+    "false_positive_rate",
+    "accepted_evidence_yield",
+    "rights_risk",
+    "safety_risk",
+    "rate_limit_reliability",
+    "domain_coverage"
+  ],
+  "schema_version": "source_action_scorecard_matrix.v0"
+}

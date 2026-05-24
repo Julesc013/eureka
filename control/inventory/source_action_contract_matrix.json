@@ -1,0 +1,25 @@
+{
+  "all_required_contracts_added": true,
+  "contracts": [
+    "source_action_manifest",
+    "source_action_policy",
+    "source_capability_profile",
+    "source_request_plan",
+    "source_transport_plan",
+    "source_transport_result",
+    "source_normalizer_result",
+    "source_observation_envelope",
+    "source_cache_mapping_plan",
+    "evidence_candidate_mapping_plan",
+    "candidate_mapping_plan",
+    "review_handoff_plan",
+    "result_lane_projection_plan",
+    "source_rate_limit_ledger",
+    "source_backoff_decision",
+    "source_action_boundary_report",
+    "source_action_run",
+    "source_action_scorecard",
+    "source_action_adapter_registration"
+  ],
+  "schema_version": "source_action_contract_matrix.v0"
+}

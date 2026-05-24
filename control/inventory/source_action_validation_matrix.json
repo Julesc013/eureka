@@ -1,0 +1,61 @@
+{
+  "commands": [
+    {
+      "command": "python scripts/validate_source_action_kernel.py --json",
+      "status": "pass"
+    },
+    {
+      "command": "python -m unittest source-action focused modules",
+      "status": "pass",
+      "test_count": 14
+    },
+    {
+      "command": "python scripts/eureka_test_select.py --changed --failed-first --json",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/eureka_test_select.py --promotion --json",
+      "status": "pass"
+    },
+    {
+      "command": "git diff --check",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/check_architecture_boundaries.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/check_generated_artifact_cleanliness.py --check --json",
+      "status": "precommit_fail_expected_task_local_audit_generated_drift"
+    },
+    {
+      "command": "subsystem validators requested by SOURCE-ACTION-KERNEL-00",
+      "status": "pass"
+    },
+    {
+      "command": "AIDE Lite doctor/validate/test/selftest/review-pack",
+      "status": "pass"
+    },
+    {
+      "command": "AIDE Lite verify",
+      "status": "warn",
+      "warnings": [
+        "task packet context ref warnings",
+        "active task diff-scope warning"
+      ]
+    },
+    {
+      "classification": "source-action focused lanes pass; remaining full-discovery failures are outside allowed paths and include stale checksum/public-index/generated drift and legacy leakage gate findings",
+      "command": "python -m unittest discover -s tests -t .",
+      "errors": 46,
+      "failures": 23,
+      "seconds": 2929.312,
+      "status": "fail_out_of_scope",
+      "test_count": 4958
+    }
+  ],
+  "schema_version": "source_action_validation_matrix.v0",
+  "status": "pass_with_warnings",
+  "task": "AIDE-BATCH-SOURCE-ACTION-KERNEL-00"
+}

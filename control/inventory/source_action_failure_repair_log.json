@@ -1,0 +1,26 @@
+{
+  "repairs": [
+    {
+      "classification": "task_local",
+      "issue": "IA metadata source descriptor did not satisfy source action manifest validator",
+      "repair": "Added registration/manifest fields while preserving live disabled/default false boundaries."
+    },
+    {
+      "classification": "task_local_metadata",
+      "issue": "AIDE task/review packets too compact for AIDE Lite validation",
+      "repair": "Rebuilt packets through required sectioned schema and regenerated review pack."
+    },
+    {
+      "classification": "expected_precommit_generated_evidence_drift",
+      "issue": "Generated artifact cleanliness failed before commit because task-local audit/generated pack was untracked",
+      "repair": "Record and rerun after commit when audit pack is tracked."
+    },
+    {
+      "classification": "out_of_scope_stale_generated_checksum_and_legacy_gate_failures",
+      "issue": "Full discovery failed after 4958 tests",
+      "repair": "No in-scope source-action repair required; source-action validator and focused tests pass."
+    }
+  ],
+  "schema_version": "source_action_failure_repair_log.v0",
+  "task": "AIDE-BATCH-SOURCE-ACTION-KERNEL-00"
+}

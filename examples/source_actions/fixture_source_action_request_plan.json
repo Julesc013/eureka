@@ -1,0 +1,39 @@
+{
+  "accepted_truth": false,
+  "action_kind": "metadata_search",
+  "blocked_reasons": [],
+  "created_at": "2026-05-25T00:00:00Z",
+  "dry_run": true,
+  "limitations": [
+    "fixture_or_mock_transport_only"
+  ],
+  "live_allowed": false,
+  "live_call_performed": false,
+  "non_claims": [
+    "not_truth",
+    "not_review_acceptance",
+    "not_reviewed_index_mutation",
+    "not_master_or_public_index_mutation",
+    "not_public_live_fanout",
+    "not_download_or_extraction",
+    "not_production_or_public_launch_readiness"
+  ],
+  "policy_ref": "control/policies/source_action_kernel_policy.json",
+  "projection_profile": "operator_workbench",
+  "query_context": {
+    "query": "sampleproject"
+  },
+  "rate_limit_policy_ref": "control/policies/source_action_rate_limit_policy.json",
+  "record_type": "source_request_plan",
+  "redaction_policy_ref": "control/policies/source_action_transport_policy.json",
+  "request_budget": {
+    "max_requests": 0,
+    "timeout_seconds": 5
+  },
+  "request_plan_id": "source_request_plan_38f8041f2604f094",
+  "review_required": true,
+  "schema_version": "source_request_plan.v0",
+  "source_action_id": "source_action_65ad12d4ae7a9842",
+  "source_family": "fixture_source_action",
+  "transport_mode": "fixture"
+}

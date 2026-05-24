@@ -1,0 +1,6 @@
+schema_version: aide.task.v0
+id: AIDE-BATCH-SOURCE-ACTION-KERNEL-00
+title: Generic source action adapter model and source-family extension seam
+status: completed
+recommended_next: SOURCE-WAVE-00
+gate: No live source calls, no source probes, no downloads, no extraction, no model/provider calls, no operator instance mutation, no master/public mutation, and no production/public launch claim.

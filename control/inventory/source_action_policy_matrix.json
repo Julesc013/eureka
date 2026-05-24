@@ -1,0 +1,14 @@
+{
+  "live_source_calls_enabled_by_default": false,
+  "policies": [
+    "control/policies/source_action_kernel_policy.json",
+    "control/policies/source_action_adapter_policy.json",
+    "control/policies/source_action_transport_policy.json",
+    "control/policies/source_action_rate_limit_policy.json",
+    "control/policies/source_action_mapping_policy.json",
+    "control/policies/source_action_non_claim_policy.json",
+    "control/policies/source_action_future_live_policy.json"
+  ],
+  "public_live_source_action_enabled": false,
+  "schema_version": "source_action_policy_matrix.v0"
+}

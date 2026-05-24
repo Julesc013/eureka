@@ -1,0 +1,8 @@
+{
+  "normalizer_outputs": [
+    "source_normalizer_result",
+    "source_observation_envelope"
+  ],
+  "raw_response_persisted": false,
+  "schema_version": "source_action_normalizer_matrix.v0"
+}

@@ -1,0 +1,48 @@
+{
+  "accepted_truth": false,
+  "created_at": "2026-05-25T00:00:00Z",
+  "dry_run": true,
+  "lane_count": 3,
+  "lane_projection_plan_id": "result_lane_projection_plan_442e2d859fd73acc",
+  "lanes": [
+    {
+      "item_count": 1,
+      "lane_kind": "source_cache_hits"
+    },
+    {
+      "item_count": 1,
+      "lane_kind": "local_candidate_results",
+      "source_family": "fixture_source_action"
+    },
+    {
+      "blocked": [
+        "live_source_call",
+        "download",
+        "extraction",
+        "review_acceptance"
+      ],
+      "item_count": 1,
+      "lane_kind": "blocked_actions"
+    }
+  ],
+  "limitations": [
+    "lane_projection_plan_only"
+  ],
+  "live_call_performed": false,
+  "non_claims": [
+    "not_truth",
+    "not_review_acceptance",
+    "not_reviewed_index_mutation",
+    "not_master_or_public_index_mutation",
+    "not_public_live_fanout",
+    "not_download_or_extraction",
+    "not_production_or_public_launch_readiness"
+  ],
+  "policy_ref": "control/policies/source_action_kernel_policy.json",
+  "projection_profile": "operator_workbench",
+  "record_type": "result_lane_projection_plan",
+  "review_required": true,
+  "schema_version": "result_lane_projection_plan.v0",
+  "source_action_id": "source_action_65ad12d4ae7a9842",
+  "source_family": "fixture_source_action"
+}

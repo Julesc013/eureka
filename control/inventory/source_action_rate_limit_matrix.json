@@ -1,0 +1,95 @@
+{
+  "families": [
+    {
+      "backoff_required": true,
+      "cache_ttl_default": "fixture_or_policy",
+      "kill_switch_required": true,
+      "max_requests_default": 0,
+      "operator_override_required": true,
+      "retry_after_respected": true,
+      "source_family": "fixture_source_action",
+      "timeout_seconds_default": 5
+    },
+    {
+      "backoff_required": true,
+      "cache_ttl_default": "fixture_or_policy",
+      "kill_switch_required": true,
+      "max_requests_default": 0,
+      "operator_override_required": true,
+      "retry_after_respected": true,
+      "source_family": "internet_archive_metadata",
+      "timeout_seconds_default": 5
+    },
+    {
+      "backoff_required": true,
+      "cache_ttl_default": "fixture_or_policy",
+      "kill_switch_required": true,
+      "max_requests_default": 0,
+      "operator_override_required": true,
+      "retry_after_respected": true,
+      "source_family": "wayback_cdx",
+      "timeout_seconds_default": 5
+    },
+    {
+      "backoff_required": true,
+      "cache_ttl_default": "fixture_or_policy",
+      "kill_switch_required": true,
+      "max_requests_default": 0,
+      "operator_override_required": true,
+      "retry_after_respected": true,
+      "source_family": "github_releases",
+      "timeout_seconds_default": 5
+    },
+    {
+      "backoff_required": true,
+      "cache_ttl_default": "fixture_or_policy",
+      "kill_switch_required": true,
+      "max_requests_default": 0,
+      "operator_override_required": true,
+      "retry_after_respected": true,
+      "source_family": "software_heritage",
+      "timeout_seconds_default": 5
+    },
+    {
+      "backoff_required": true,
+      "cache_ttl_default": "fixture_or_policy",
+      "kill_switch_required": true,
+      "max_requests_default": 0,
+      "operator_override_required": true,
+      "retry_after_respected": true,
+      "source_family": "package_registries",
+      "timeout_seconds_default": 5
+    },
+    {
+      "backoff_required": true,
+      "cache_ttl_default": "fixture_or_policy",
+      "kill_switch_required": true,
+      "max_requests_default": 0,
+      "operator_override_required": true,
+      "retry_after_respected": true,
+      "source_family": "open_library",
+      "timeout_seconds_default": 5
+    },
+    {
+      "backoff_required": true,
+      "cache_ttl_default": "fixture_or_policy",
+      "kill_switch_required": true,
+      "max_requests_default": 0,
+      "operator_override_required": true,
+      "retry_after_respected": true,
+      "source_family": "wikidata",
+      "timeout_seconds_default": 5
+    },
+    {
+      "backoff_required": true,
+      "cache_ttl_default": "fixture_or_policy",
+      "kill_switch_required": true,
+      "max_requests_default": 0,
+      "operator_override_required": true,
+      "retry_after_respected": true,
+      "source_family": "manual_source_pack",
+      "timeout_seconds_default": 5
+    }
+  ],
+  "schema_version": "source_action_rate_limit_matrix.v0"
+}

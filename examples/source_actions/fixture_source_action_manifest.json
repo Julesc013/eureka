@@ -1,0 +1,39 @@
+{
+  "accepted_truth": false,
+  "adapter_id": "fixture_source_action",
+  "capability_profile_ref": "contracts/source/action/source_capability_profile.v0.json",
+  "created_at": "2026-05-25T00:00:00Z",
+  "default_enabled": false,
+  "display_name": "Fixture Source Action",
+  "downloads_allowed": false,
+  "dry_run": true,
+  "extraction_allowed": false,
+  "fixture_refs": [
+    "examples/source_actions/fixture_source_action_manifest.json"
+  ],
+  "limitations": [
+    "deterministic_fixture_only"
+  ],
+  "live_call_performed": false,
+  "live_policy_required": true,
+  "manifest_version": "0.0",
+  "non_claims": [
+    "not_truth",
+    "not_live_source_behavior"
+  ],
+  "policy_ref": "control/policies/source_action_kernel_policy.json",
+  "projection_profile": "operator_workbench",
+  "public_fanout_allowed": false,
+  "record_type": "source_action_manifest",
+  "review_required": true,
+  "schema_version": "source_action_manifest.v0",
+  "source_action_id": "source_action_manifest_abdbfb453593a07d",
+  "source_family": "fixture_source_action",
+  "supported_action_kinds": [
+    "metadata_search"
+  ],
+  "supported_transport_modes": [
+    "fixture",
+    "mock_live"
+  ]
+}

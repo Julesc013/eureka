@@ -1,0 +1,23 @@
+{
+  "candidate_index_mutated": false,
+  "candidate_write_performed": false,
+  "deployment_performed": false,
+  "download_performed": false,
+  "evidence_write_performed": false,
+  "extraction_executed": false,
+  "live_call_performed": false,
+  "master_index_mutated": false,
+  "model_provider_used": false,
+  "operator_instance_mutated": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "raw_live_source_response_committed": false,
+  "raw_response_committed": false,
+  "review_write_performed": false,
+  "reviewed_index_mutated": false,
+  "schema_version": "source_action_boundary_report.v0",
+  "source_cache_write_performed": false,
+  "source_probe_executed": false,
+  "task": "AIDE-BATCH-SOURCE-ACTION-KERNEL-00",
+  "upload_performed": false
+}

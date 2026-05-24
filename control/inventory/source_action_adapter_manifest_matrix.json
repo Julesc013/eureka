@@ -1,0 +1,14 @@
+{
+  "adapters": [
+    "fixture_source_action",
+    "internet_archive_metadata_reference",
+    "future_wayback_cdx",
+    "future_github_releases",
+    "future_software_heritage",
+    "future_package_registries",
+    "future_open_library",
+    "future_wikidata",
+    "future_manual_source_pack"
+  ],
+  "schema_version": "source_action_adapter_manifest_matrix.v0"
+}

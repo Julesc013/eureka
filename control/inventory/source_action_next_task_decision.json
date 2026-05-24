@@ -1,0 +1,10 @@
+{
+  "planned_after": [
+    "SNAPSHOT-RELAY-00",
+    "PUBLIC-ALPHA-READONLY-00",
+    "PUBLIC-DEMAND-SIGNAL-00"
+  ],
+  "recommended_next_task": "SOURCE-WAVE-00 - Metadata-only source family wave using SourceActionKernel",
+  "schema_version": "source_action_next_task_decision.v0",
+  "task": "AIDE-BATCH-SOURCE-ACTION-KERNEL-00"
+}
