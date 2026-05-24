@@ -16,6 +16,11 @@
   "active_rebase": false,
   "active_cherry_pick": false,
   "active_revert": false,
-  "promotion_performed": false,
-  "origin_main_equals_origin_dev_after": false
+  "promotion_performed": true,
+  "origin_main_after": "daefc1663f84e9be530016d3bdff578e501fb0ca",
+  "origin_dev_after": "daefc1663f84e9be530016d3bdff578e501fb0ca",
+  "ahead_behind_after": "0 0",
+  "branch_after": "dev",
+  "working_tree_clean_after": true,
+  "origin_main_equals_origin_dev_after": true
 }

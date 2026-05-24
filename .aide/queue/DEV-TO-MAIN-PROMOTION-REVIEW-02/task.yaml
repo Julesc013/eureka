@@ -1,7 +1,7 @@
 schema_version: aide.task.v0
 id: DEV-TO-MAIN-PROMOTION-REVIEW-02
 title: Promote completed local product loop baseline
-status: in_progress
+status: completed
 purpose: Verify and fast-forward promote the completed local product loop baseline from dev to main.
 allowed_scope_summary: Promotion review evidence, validator, focused tests, docs, inventory, audit pack, branch fast-forward, and AIDE metadata only.
 gate: No operator-instance mutation, committed instance state, master/public index mutation, source probes, downloads, extraction, model/provider calls, deployment, production readiness claim, or public launch claim.

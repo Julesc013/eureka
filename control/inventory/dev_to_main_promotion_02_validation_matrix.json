@@ -119,7 +119,41 @@
     {
       "command": "python scripts/check_generated_artifact_cleanliness.py --check --json",
       "status": "fail_repaired",
-      "reason": "Pre-commit run reported task-local audit-generated evidence as uncommitted generated drift; rerun after committing evidence is expected to pass."
+      "reason": "Pre-commit run reported task-local audit-generated evidence as uncommitted generated drift; post-commit rerun passed."
+    },
+    {
+      "command": "python scripts/check_generated_artifact_cleanliness.py --check --json",
+      "status": "pass",
+      "phase": "post_commit"
+    },
+    {
+      "command": "python .aide/scripts/aide_lite.py doctor",
+      "status": "pass"
+    },
+    {
+      "command": "python .aide/scripts/aide_lite.py validate",
+      "status": "pass"
+    },
+    {
+      "command": "python .aide/scripts/aide_lite.py test",
+      "status": "pass"
+    },
+    {
+      "command": "python .aide/scripts/aide_lite.py selftest",
+      "status": "pass"
+    },
+    {
+      "command": "python .aide/scripts/aide_lite.py verify",
+      "status": "fail_repaired",
+      "reason": "AIDE task packet allowed-path drift for tests/scripts was repaired; rerun passed."
+    },
+    {
+      "command": "python .aide/scripts/aide_lite.py review-pack",
+      "status": "pass"
+    },
+    {
+      "command": "python .aide/scripts/aide_lite.py commit check --latest",
+      "status": "pass"
     },
     {
       "command": "python -m unittest discover -s tests -t .",

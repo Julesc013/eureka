@@ -1,7 +1,7 @@
 schema_version: aide.queue-index.v0
-updated: 2026-05-22
+updated: 2026-05-24
 repo: julesc013/eureka
-current_recommended_task: DEV-TO-MAIN-PROMOTION-REVIEW-02 - Promote completed local product loop baseline
+current_recommended_task: SOURCE-ACTION-KERNEL-00 - Generic source action adapter model and source-family extension seam
 entries:
   - id: DEV-AND-IA-TO-MAIN-PROMOTION-REVIEW
     title: Promote repaired dev IA pilot plus repo layout canon baseline to main
@@ -664,13 +664,22 @@ entries:
     recommended_next: WORKBENCH-LOCAL-LOOP-CLOSEOUT-01
   - id: WORKBENCH-LOCAL-LOOP-CLOSEOUT-01
     title: Prove query to reviewed local result through apply gate
-    status: queued
-    purpose: Prove query to ResolutionRun to candidate to review to apply to reviewed local result through the local apply gate.
-    allowed_scope_summary: Future task must provide reviewed scope before implementation.
+    status: completed
+    purpose: Proved query to ResolutionRun to candidate to review to local apply to reviewed local result through the local apply gate.
+    allowed_scope_summary: Temp-scope local loop proof, apply gate, docs, validator, tests, inventory, audit evidence, and AIDE metadata.
     gate: LOCAL-APPLY-GATE-01 completed; no public launch, production deployment, live source fanout, or ungated operator mutation.
     task: .aide/queue/WORKBENCH-LOCAL-LOOP-CLOSEOUT-01/task.yaml
     recommended_after: LOCAL-APPLY-GATE-01
     recommended_next: DEV-TO-MAIN-PROMOTION-REVIEW-02
+  - id: DEV-TO-MAIN-PROMOTION-REVIEW-02
+    title: Promote completed local product loop baseline
+    status: completed
+    purpose: Promoted the completed local product loop baseline from dev to main by fast-forward only.
+    allowed_scope_summary: Promotion review evidence, validator, focused tests, docs, inventory, audit pack, branch fast-forward, and AIDE metadata only.
+    gate: Full discovery passed; no force push, rebase, deployment, source probe, download, extraction, model/provider call, production readiness claim, or public launch claim.
+    task: .aide/queue/DEV-TO-MAIN-PROMOTION-REVIEW-02/task.yaml
+    recommended_after: WORKBENCH-LOCAL-LOOP-CLOSEOUT-01
+    recommended_next: SOURCE-ACTION-KERNEL-00
   - id: SOURCE-ACTION-KERNEL-00
     title: Generic source-action kernel planning
     status: queued

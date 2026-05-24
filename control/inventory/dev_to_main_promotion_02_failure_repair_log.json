@@ -6,7 +6,7 @@
       "failure": "python scripts/check_generated_artifact_cleanliness.py --check --json",
       "classification": "task_local_audit_generated_drift_before_commit",
       "repair": "Commit task-local promotion audit evidence and rerun generated-artifact cleanliness after commit.",
-      "status": "pending_post_commit_rerun"
+      "status": "repaired"
     },
     {
       "failure": "python .aide/scripts/aide_lite.py verify",
