@@ -1,0 +1,120 @@
+{
+  "accepted_truth": false,
+  "action_kind": "origin_metadata_read",
+  "created_at": "2026-05-25T00:00:00Z",
+  "fixture_name": "fixture_origin_metadata.json",
+  "limitations": [
+    "deterministic_source_wave_fixture"
+  ],
+  "live_call_performed": false,
+  "normalizer_result": {
+    "accepted_truth": false,
+    "created_at": "2026-05-25T00:00:00Z",
+    "dry_run": true,
+    "limitations": [
+      "normalized_fixture_or_mock_records"
+    ],
+    "live_call_performed": false,
+    "non_claims": [
+      "not_truth",
+      "not_review_acceptance",
+      "not_reviewed_index_mutation",
+      "not_master_or_public_index_mutation",
+      "not_public_live_fanout",
+      "not_download_or_extraction",
+      "not_production_or_public_launch_readiness"
+    ],
+    "normalizer_result_id": "source_normalizer_result_6786469992bead57",
+    "observation_count": 1,
+    "observations": [
+      {
+        "confidence": "metadata_fixture",
+        "identifiers": {
+          "capability": "origin_metadata_read",
+          "fixture_key": "fixture_32964f5e75c16e4a",
+          "query": "sampleproject",
+          "source_family": "software_heritage_metadata"
+        },
+        "observation_id": "source_wave_observation_4f0cf540e8a37ac7",
+        "provenance": {
+          "fixture": true,
+          "raw_response_persisted": false,
+          "transport_mode": "fixture"
+        },
+        "source_family": "software_heritage_metadata",
+        "source_locator": "fixture://software_heritage_metadata/locator_08ce31e07356340b",
+        "summary": "Deterministic metadata-only source wave fixture. This is a candidate input, not truth.",
+        "title": "Software Heritage Metadata fixture for sampleproject"
+      }
+    ],
+    "policy_ref": "control/policies/source_action_kernel_policy.json",
+    "projection_profile": "operator_workbench",
+    "record_type": "source_normalizer_result",
+    "review_required": true,
+    "schema_version": "source_normalizer_result.v0",
+    "source_action_id": "source_action_456011a44332de0e",
+    "source_family": "software_heritage_metadata",
+    "transport_result_id": "source_transport_result_41efce6a48d3238f"
+  },
+  "raw_response_persisted": false,
+  "record_type": "source_wave_fixture",
+  "review_required": true,
+  "schema_version": "source_wave_fixture.v0",
+  "source_family": "software_heritage_metadata",
+  "transport_result": {
+    "accepted_truth": false,
+    "created_at": "2026-05-25T00:00:00Z",
+    "dry_run": true,
+    "limitations": [
+      "fixture_or_mock_summary_only"
+    ],
+    "live_call_performed": false,
+    "non_claims": [
+      "not_truth",
+      "not_review_acceptance",
+      "not_reviewed_index_mutation",
+      "not_master_or_public_index_mutation",
+      "not_public_live_fanout",
+      "not_download_or_extraction",
+      "not_production_or_public_launch_readiness"
+    ],
+    "normalized_preview_available": true,
+    "policy_ref": "control/policies/source_action_kernel_policy.json",
+    "projection_profile": "operator_workbench",
+    "rate_limited": false,
+    "raw_response_persisted": false,
+    "record_type": "source_transport_result",
+    "records": [
+      {
+        "accepted_truth": false,
+        "action_kind": "origin_metadata_read",
+        "identifiers": {
+          "capability": "origin_metadata_read",
+          "fixture_key": "fixture_32964f5e75c16e4a",
+          "query": "sampleproject",
+          "source_family": "software_heritage_metadata"
+        },
+        "live_call_performed": false,
+        "review_required": true,
+        "source_family": "software_heritage_metadata",
+        "source_locator": "fixture://software_heritage_metadata/locator_08ce31e07356340b",
+        "source_record_id": "source_wave_record_f1d774260f898118",
+        "summary": "Deterministic metadata-only source wave fixture. This is a candidate input, not truth.",
+        "title": "Software Heritage Metadata fixture for sampleproject",
+        "transport_mode": "fixture"
+      }
+    ],
+    "redacted_summary_available": true,
+    "request_plan_id": "source_request_plan_f2b5b9d2ab635ee4",
+    "response_summary_ref": "source_response_summary_ecb6ed2e7afe035f",
+    "review_required": true,
+    "schema_version": "source_transport_result.v0",
+    "source_action_id": "source_action_456011a44332de0e",
+    "source_family": "software_heritage_metadata",
+    "status": "completed",
+    "tls_error": false,
+    "total_requests": 0,
+    "transport_mode": "fixture",
+    "transport_result_id": "source_transport_result_41efce6a48d3238f"
+  }
+}

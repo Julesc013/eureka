@@ -1,0 +1,101 @@
+{
+  "mappings": [
+    {
+      "mapping_plans": [
+        "source_observation",
+        "source_cache_record_plan",
+        "evidence_candidate_plan",
+        "candidate_record_plan",
+        "review_handoff_plan",
+        "result_lane_projection_plan"
+      ],
+      "source_family": "internet_archive_metadata_v2",
+      "store_mutation_performed": false
+    },
+    {
+      "mapping_plans": [
+        "source_observation",
+        "source_cache_record_plan",
+        "evidence_candidate_plan",
+        "candidate_record_plan",
+        "review_handoff_plan",
+        "result_lane_projection_plan"
+      ],
+      "source_family": "wayback_cdx_metadata",
+      "store_mutation_performed": false
+    },
+    {
+      "mapping_plans": [
+        "source_observation",
+        "source_cache_record_plan",
+        "evidence_candidate_plan",
+        "candidate_record_plan",
+        "review_handoff_plan",
+        "result_lane_projection_plan"
+      ],
+      "source_family": "github_releases_metadata",
+      "store_mutation_performed": false
+    },
+    {
+      "mapping_plans": [
+        "source_observation",
+        "source_cache_record_plan",
+        "evidence_candidate_plan",
+        "candidate_record_plan",
+        "review_handoff_plan",
+        "result_lane_projection_plan"
+      ],
+      "source_family": "software_heritage_metadata",
+      "store_mutation_performed": false
+    },
+    {
+      "mapping_plans": [
+        "source_observation",
+        "source_cache_record_plan",
+        "evidence_candidate_plan",
+        "candidate_record_plan",
+        "review_handoff_plan",
+        "result_lane_projection_plan"
+      ],
+      "source_family": "package_registry_metadata",
+      "store_mutation_performed": false
+    },
+    {
+      "mapping_plans": [
+        "source_observation",
+        "source_cache_record_plan",
+        "evidence_candidate_plan",
+        "candidate_record_plan",
+        "review_handoff_plan",
+        "result_lane_projection_plan"
+      ],
+      "source_family": "open_library_metadata",
+      "store_mutation_performed": false
+    },
+    {
+      "mapping_plans": [
+        "source_observation",
+        "source_cache_record_plan",
+        "evidence_candidate_plan",
+        "candidate_record_plan",
+        "review_handoff_plan",
+        "result_lane_projection_plan"
+      ],
+      "source_family": "wikidata_metadata",
+      "store_mutation_performed": false
+    },
+    {
+      "mapping_plans": [
+        "source_observation",
+        "source_cache_record_plan",
+        "evidence_candidate_plan",
+        "candidate_record_plan",
+        "review_handoff_plan",
+        "result_lane_projection_plan"
+      ],
+      "source_family": "manual_source_pack",
+      "store_mutation_performed": false
+    }
+  ],
+  "schema_version": "source_wave_mapping_matrix.v0"
+}

@@ -1,0 +1,50 @@
+{
+  "accepted_truth": false,
+  "candidate_mapping_plan_id": "candidate_mapping_plan_2d6085115169dbac",
+  "created_at": "2026-05-25T00:00:00Z",
+  "dry_run": true,
+  "limitations": [
+    "mapping_plan_only_no_store_mutation"
+  ],
+  "live_call_performed": false,
+  "mapping_type": "candidate_record_plan",
+  "non_claims": [
+    "not_truth",
+    "not_review_acceptance",
+    "not_reviewed_index_mutation",
+    "not_master_or_public_index_mutation",
+    "not_public_live_fanout",
+    "not_download_or_extraction",
+    "not_production_or_public_launch_readiness"
+  ],
+  "planned_records": [
+    {
+      "confidence": "metadata_fixture",
+      "identifiers": {
+        "capability": "metadata_search",
+        "fixture_key": "fixture_e27728e498cdb4af",
+        "query": "sampleproject",
+        "source_family": "internet_archive_metadata_v2"
+      },
+      "observation_id": "source_wave_observation_b4c55b47441b4c2c",
+      "provenance": {
+        "fixture": true,
+        "raw_response_persisted": false,
+        "transport_mode": "fixture"
+      },
+      "source_family": "internet_archive_metadata_v2",
+      "source_locator": "fixture://internet_archive_metadata_v2/locator_34930a414bfd9d5c",
+      "summary": "Deterministic metadata-only source wave fixture. This is a candidate input, not truth.",
+      "title": "Internet Archive Metadata v2 fixture for sampleproject"
+    }
+  ],
+  "policy_ref": "control/policies/source_action_kernel_policy.json",
+  "projection_profile": "operator_workbench",
+  "record_type": "candidate_mapping_plan",
+  "review_required": true,
+  "schema_version": "candidate_mapping_plan.v0",
+  "source_action_id": "source_action_57ad2c87211a2014",
+  "source_family": "internet_archive_metadata_v2",
+  "store_mutation_performed": false,
+  "write_performed": false
+}

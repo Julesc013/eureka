@@ -1,0 +1,9 @@
+{
+  "adapter_id": "software_heritage_metadata_adapter",
+  "fixture_transport": true,
+  "live_enabled_default": false,
+  "mock_transport": true,
+  "schema_version": "source_wave_connector_registration_example.v0",
+  "source_family": "software_heritage_metadata",
+  "store_mutation_performed": false
+}

@@ -1,0 +1,53 @@
+{
+  "normalizers": [
+    {
+      "normalizer_result": true,
+      "raw_response_persisted": false,
+      "source_family": "internet_archive_metadata_v2",
+      "source_observation_envelope": true
+    },
+    {
+      "normalizer_result": true,
+      "raw_response_persisted": false,
+      "source_family": "wayback_cdx_metadata",
+      "source_observation_envelope": true
+    },
+    {
+      "normalizer_result": true,
+      "raw_response_persisted": false,
+      "source_family": "github_releases_metadata",
+      "source_observation_envelope": true
+    },
+    {
+      "normalizer_result": true,
+      "raw_response_persisted": false,
+      "source_family": "software_heritage_metadata",
+      "source_observation_envelope": true
+    },
+    {
+      "normalizer_result": true,
+      "raw_response_persisted": false,
+      "source_family": "package_registry_metadata",
+      "source_observation_envelope": true
+    },
+    {
+      "normalizer_result": true,
+      "raw_response_persisted": false,
+      "source_family": "open_library_metadata",
+      "source_observation_envelope": true
+    },
+    {
+      "normalizer_result": true,
+      "raw_response_persisted": false,
+      "source_family": "wikidata_metadata",
+      "source_observation_envelope": true
+    },
+    {
+      "normalizer_result": true,
+      "raw_response_persisted": false,
+      "source_family": "manual_source_pack",
+      "source_observation_envelope": true
+    }
+  ],
+  "schema_version": "source_wave_normalizer_matrix.v0"
+}

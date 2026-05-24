@@ -1,0 +1,42 @@
+{
+  "accepted_truth": false,
+  "boundary_report_id": "source_action_boundary_report_40f73f85cf037807",
+  "candidate_write_performed": false,
+  "created_at": "2026-05-25T00:00:00Z",
+  "deployment_performed": false,
+  "download_performed": false,
+  "dry_run": true,
+  "evidence_write_performed": false,
+  "extraction_executed": false,
+  "limitations": [
+    "boundary_report_for_fixture_or_mock_source_action"
+  ],
+  "live_call_performed": false,
+  "master_index_mutated": false,
+  "model_provider_used": false,
+  "non_claims": [
+    "not_truth",
+    "not_review_acceptance",
+    "not_reviewed_index_mutation",
+    "not_master_or_public_index_mutation",
+    "not_public_live_fanout",
+    "not_download_or_extraction",
+    "not_production_or_public_launch_readiness"
+  ],
+  "operator_instance_mutated": false,
+  "policy_ref": "control/policies/source_action_kernel_policy.json",
+  "production_readiness_claimed": false,
+  "projection_profile": "operator_workbench",
+  "public_launch_readiness_claimed": false,
+  "raw_response_committed": false,
+  "record_type": "source_action_boundary_report",
+  "review_required": true,
+  "review_write_performed": false,
+  "reviewed_index_mutated": false,
+  "schema_version": "source_action_boundary_report.v0",
+  "source_action_id": "source_action_57ad2c87211a2014",
+  "source_action_run_id": "source_action_run_e3236da7e69b8377",
+  "source_cache_write_performed": false,
+  "source_family": "internet_archive_metadata_v2",
+  "upload_performed": false
+}

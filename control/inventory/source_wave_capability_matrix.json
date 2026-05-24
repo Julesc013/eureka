@@ -1,0 +1,93 @@
+{
+  "capabilities": [
+    {
+      "capability_id": "metadata_search",
+      "fixture_supported": true,
+      "live_enabled_by_default": false,
+      "mock_supported": true,
+      "public_allowed_default": false,
+      "source_family": "internet_archive_metadata_v2"
+    },
+    {
+      "capability_id": "item_metadata_read",
+      "fixture_supported": true,
+      "live_enabled_by_default": false,
+      "mock_supported": true,
+      "public_allowed_default": false,
+      "source_family": "internet_archive_metadata_v2"
+    },
+    {
+      "capability_id": "file_manifest_metadata",
+      "fixture_supported": true,
+      "live_enabled_by_default": false,
+      "mock_supported": true,
+      "public_allowed_default": false,
+      "source_family": "internet_archive_metadata_v2"
+    },
+    {
+      "capability_id": "capture_availability_lookup",
+      "fixture_supported": true,
+      "live_enabled_by_default": false,
+      "mock_supported": true,
+      "public_allowed_default": false,
+      "source_family": "wayback_cdx_metadata"
+    },
+    {
+      "capability_id": "release_metadata_read",
+      "fixture_supported": true,
+      "live_enabled_by_default": false,
+      "mock_supported": true,
+      "public_allowed_default": false,
+      "source_family": "github_releases_metadata"
+    },
+    {
+      "capability_id": "origin_metadata_read",
+      "fixture_supported": true,
+      "live_enabled_by_default": false,
+      "mock_supported": true,
+      "public_allowed_default": false,
+      "source_family": "software_heritage_metadata"
+    },
+    {
+      "capability_id": "package_metadata_read",
+      "fixture_supported": true,
+      "live_enabled_by_default": false,
+      "mock_supported": true,
+      "public_allowed_default": false,
+      "source_family": "package_registry_metadata"
+    },
+    {
+      "capability_id": "bibliographic_metadata_read",
+      "fixture_supported": true,
+      "live_enabled_by_default": false,
+      "mock_supported": true,
+      "public_allowed_default": false,
+      "source_family": "open_library_metadata"
+    },
+    {
+      "capability_id": "entity_metadata_read",
+      "fixture_supported": true,
+      "live_enabled_by_default": false,
+      "mock_supported": true,
+      "public_allowed_default": false,
+      "source_family": "wikidata_metadata"
+    },
+    {
+      "capability_id": "source_pack_replay",
+      "fixture_supported": true,
+      "live_enabled_by_default": false,
+      "mock_supported": true,
+      "public_allowed_default": false,
+      "source_family": "manual_source_pack"
+    },
+    {
+      "capability_id": "fixture_replay",
+      "fixture_supported": true,
+      "live_enabled_by_default": false,
+      "mock_supported": true,
+      "public_allowed_default": false,
+      "source_family": "manual_source_pack"
+    }
+  ],
+  "schema_version": "source_wave_capability_matrix.v0"
+}

@@ -1,0 +1,77 @@
+{
+  "manifests": [
+    {
+      "adapter_id": "internet_archive_metadata_v2_adapter",
+      "downloads_allowed": false,
+      "extraction_allowed": false,
+      "live_enabled_default": false,
+      "manifest": "contracts/source/families/internet_archive_metadata_v2.v0.json",
+      "public_fanout_allowed_default": false,
+      "source_family": "internet_archive_metadata_v2"
+    },
+    {
+      "adapter_id": "wayback_cdx_metadata_adapter",
+      "downloads_allowed": false,
+      "extraction_allowed": false,
+      "live_enabled_default": false,
+      "manifest": "contracts/source/families/wayback_cdx_metadata.v0.json",
+      "public_fanout_allowed_default": false,
+      "source_family": "wayback_cdx_metadata"
+    },
+    {
+      "adapter_id": "github_releases_metadata_adapter",
+      "downloads_allowed": false,
+      "extraction_allowed": false,
+      "live_enabled_default": false,
+      "manifest": "contracts/source/families/github_releases_metadata.v0.json",
+      "public_fanout_allowed_default": false,
+      "source_family": "github_releases_metadata"
+    },
+    {
+      "adapter_id": "software_heritage_metadata_adapter",
+      "downloads_allowed": false,
+      "extraction_allowed": false,
+      "live_enabled_default": false,
+      "manifest": "contracts/source/families/software_heritage_metadata.v0.json",
+      "public_fanout_allowed_default": false,
+      "source_family": "software_heritage_metadata"
+    },
+    {
+      "adapter_id": "package_registry_metadata_adapter",
+      "downloads_allowed": false,
+      "extraction_allowed": false,
+      "live_enabled_default": false,
+      "manifest": "contracts/source/families/package_registry_metadata.v0.json",
+      "public_fanout_allowed_default": false,
+      "source_family": "package_registry_metadata"
+    },
+    {
+      "adapter_id": "open_library_metadata_adapter",
+      "downloads_allowed": false,
+      "extraction_allowed": false,
+      "live_enabled_default": false,
+      "manifest": "contracts/source/families/open_library_metadata.v0.json",
+      "public_fanout_allowed_default": false,
+      "source_family": "open_library_metadata"
+    },
+    {
+      "adapter_id": "wikidata_metadata_adapter",
+      "downloads_allowed": false,
+      "extraction_allowed": false,
+      "live_enabled_default": false,
+      "manifest": "contracts/source/families/wikidata_metadata.v0.json",
+      "public_fanout_allowed_default": false,
+      "source_family": "wikidata_metadata"
+    },
+    {
+      "adapter_id": "manual_source_pack_adapter",
+      "downloads_allowed": false,
+      "extraction_allowed": false,
+      "live_enabled_default": false,
+      "manifest": "contracts/source/families/manual_source_pack.v0.json",
+      "public_fanout_allowed_default": false,
+      "source_family": "manual_source_pack"
+    }
+  ],
+  "schema_version": "source_wave_manifest_matrix.v0"
+}

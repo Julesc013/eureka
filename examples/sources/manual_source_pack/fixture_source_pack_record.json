@@ -1,0 +1,120 @@
+{
+  "accepted_truth": false,
+  "action_kind": "source_pack_replay",
+  "created_at": "2026-05-25T00:00:00Z",
+  "fixture_name": "fixture_source_pack_record.json",
+  "limitations": [
+    "deterministic_source_wave_fixture"
+  ],
+  "live_call_performed": false,
+  "normalizer_result": {
+    "accepted_truth": false,
+    "created_at": "2026-05-25T00:00:00Z",
+    "dry_run": true,
+    "limitations": [
+      "normalized_fixture_or_mock_records"
+    ],
+    "live_call_performed": false,
+    "non_claims": [
+      "not_truth",
+      "not_review_acceptance",
+      "not_reviewed_index_mutation",
+      "not_master_or_public_index_mutation",
+      "not_public_live_fanout",
+      "not_download_or_extraction",
+      "not_production_or_public_launch_readiness"
+    ],
+    "normalizer_result_id": "source_normalizer_result_2b94226d06ab6ce7",
+    "observation_count": 1,
+    "observations": [
+      {
+        "confidence": "metadata_fixture",
+        "identifiers": {
+          "capability": "source_pack_replay",
+          "fixture_key": "fixture_9464cd967964cb8d",
+          "query": "sampleproject",
+          "source_family": "manual_source_pack"
+        },
+        "observation_id": "source_wave_observation_e0a7b7b76b2cee09",
+        "provenance": {
+          "fixture": true,
+          "raw_response_persisted": false,
+          "transport_mode": "fixture"
+        },
+        "source_family": "manual_source_pack",
+        "source_locator": "fixture://manual_source_pack/locator_6efb30422c53daf3",
+        "summary": "Deterministic metadata-only source wave fixture. This is a candidate input, not truth.",
+        "title": "Manual Source Pack fixture for sampleproject"
+      }
+    ],
+    "policy_ref": "control/policies/source_action_kernel_policy.json",
+    "projection_profile": "operator_workbench",
+    "record_type": "source_normalizer_result",
+    "review_required": true,
+    "schema_version": "source_normalizer_result.v0",
+    "source_action_id": "source_action_8bb75c60addab8af",
+    "source_family": "manual_source_pack",
+    "transport_result_id": "source_transport_result_15764e3bf7c8b29d"
+  },
+  "raw_response_persisted": false,
+  "record_type": "source_wave_fixture",
+  "review_required": true,
+  "schema_version": "source_wave_fixture.v0",
+  "source_family": "manual_source_pack",
+  "transport_result": {
+    "accepted_truth": false,
+    "created_at": "2026-05-25T00:00:00Z",
+    "dry_run": true,
+    "limitations": [
+      "fixture_or_mock_summary_only"
+    ],
+    "live_call_performed": false,
+    "non_claims": [
+      "not_truth",
+      "not_review_acceptance",
+      "not_reviewed_index_mutation",
+      "not_master_or_public_index_mutation",
+      "not_public_live_fanout",
+      "not_download_or_extraction",
+      "not_production_or_public_launch_readiness"
+    ],
+    "normalized_preview_available": true,
+    "policy_ref": "control/policies/source_action_kernel_policy.json",
+    "projection_profile": "operator_workbench",
+    "rate_limited": false,
+    "raw_response_persisted": false,
+    "record_type": "source_transport_result",
+    "records": [
+      {
+        "accepted_truth": false,
+        "action_kind": "source_pack_replay",
+        "identifiers": {
+          "capability": "source_pack_replay",
+          "fixture_key": "fixture_9464cd967964cb8d",
+          "query": "sampleproject",
+          "source_family": "manual_source_pack"
+        },
+        "live_call_performed": false,
+        "review_required": true,
+        "source_family": "manual_source_pack",
+        "source_locator": "fixture://manual_source_pack/locator_6efb30422c53daf3",
+        "source_record_id": "source_wave_record_98dfa2b62c50fb6c",
+        "summary": "Deterministic metadata-only source wave fixture. This is a candidate input, not truth.",
+        "title": "Manual Source Pack fixture for sampleproject",
+        "transport_mode": "fixture"
+      }
+    ],
+    "redacted_summary_available": true,
+    "request_plan_id": "source_request_plan_15c5951596078803",
+    "response_summary_ref": "source_response_summary_355e28de912441b4",
+    "review_required": true,
+    "schema_version": "source_transport_result.v0",
+    "source_action_id": "source_action_8bb75c60addab8af",
+    "source_family": "manual_source_pack",
+    "status": "completed",
+    "tls_error": false,
+    "total_requests": 0,
+    "transport_mode": "fixture",
+    "transport_result_id": "source_transport_result_15764e3bf7c8b29d"
+  }
+}

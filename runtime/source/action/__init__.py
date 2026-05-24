@@ -31,6 +31,23 @@ from .action_kernel import (
     validate_source_action_manifest,
     write_json_if_requested,
 )
+from .source_wave import (
+    OPTIONAL_DESCRIPTOR_ONLY_FAMILIES,
+    REQUIRED_SOURCE_WAVE_FAMILIES,
+    SOURCE_WAVE_FAMILIES,
+    SourceWaveAdapter,
+    build_optional_descriptor,
+    build_source_family_manifest,
+    build_source_wave_adapter,
+    build_source_wave_boundary_report,
+    build_source_wave_mapping_plan,
+    build_source_wave_scorecard,
+    get_source_family_manifest,
+    list_registered_source_families,
+    register_source_wave_adapters,
+    run_source_family_fixture_action,
+    smoke_source_wave_families,
+)
 
 __all__ = [
     "SourceActionPolicyError",
@@ -62,4 +79,19 @@ __all__ = [
     "update_source_rate_limit_ledger",
     "validate_source_action_manifest",
     "write_json_if_requested",
+    "OPTIONAL_DESCRIPTOR_ONLY_FAMILIES",
+    "REQUIRED_SOURCE_WAVE_FAMILIES",
+    "SOURCE_WAVE_FAMILIES",
+    "SourceWaveAdapter",
+    "build_optional_descriptor",
+    "build_source_family_manifest",
+    "build_source_wave_adapter",
+    "build_source_wave_boundary_report",
+    "build_source_wave_mapping_plan",
+    "build_source_wave_scorecard",
+    "get_source_family_manifest",
+    "list_registered_source_families",
+    "register_source_wave_adapters",
+    "run_source_family_fixture_action",
+    "smoke_source_wave_families",
 ]

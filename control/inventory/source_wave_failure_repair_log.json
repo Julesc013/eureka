@@ -1,0 +1,9 @@
+{
+  "out_of_scope_known_full_discovery_debt": [
+    "public-index/generated checksum drift",
+    "legacy leakage gate findings"
+  ],
+  "repairs": [],
+  "schema_version": "source_wave_failure_repair_log.v0",
+  "task": "AIDE-BATCH-SOURCE-WAVE-00"
+}

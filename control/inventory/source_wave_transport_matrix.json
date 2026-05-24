@@ -1,0 +1,93 @@
+{
+  "schema_version": "source_wave_transport_matrix.v0",
+  "transports": [
+    {
+      "default_transport": "fixture",
+      "live_source_calls_enabled_by_default": false,
+      "source_family": "internet_archive_metadata_v2",
+      "total_remote_requests_in_smoke": 0,
+      "transport_modes": [
+        "fixture",
+        "mock_live",
+        "operator_approved_live_disabled_for_wave"
+      ]
+    },
+    {
+      "default_transport": "fixture",
+      "live_source_calls_enabled_by_default": false,
+      "source_family": "wayback_cdx_metadata",
+      "total_remote_requests_in_smoke": 0,
+      "transport_modes": [
+        "fixture",
+        "mock_live",
+        "operator_approved_live_disabled_for_wave"
+      ]
+    },
+    {
+      "default_transport": "fixture",
+      "live_source_calls_enabled_by_default": false,
+      "source_family": "github_releases_metadata",
+      "total_remote_requests_in_smoke": 0,
+      "transport_modes": [
+        "fixture",
+        "mock_live",
+        "operator_approved_live_disabled_for_wave"
+      ]
+    },
+    {
+      "default_transport": "fixture",
+      "live_source_calls_enabled_by_default": false,
+      "source_family": "software_heritage_metadata",
+      "total_remote_requests_in_smoke": 0,
+      "transport_modes": [
+        "fixture",
+        "mock_live",
+        "operator_approved_live_disabled_for_wave"
+      ]
+    },
+    {
+      "default_transport": "fixture",
+      "live_source_calls_enabled_by_default": false,
+      "source_family": "package_registry_metadata",
+      "total_remote_requests_in_smoke": 0,
+      "transport_modes": [
+        "fixture",
+        "mock_live",
+        "operator_approved_live_disabled_for_wave"
+      ]
+    },
+    {
+      "default_transport": "fixture",
+      "live_source_calls_enabled_by_default": false,
+      "source_family": "open_library_metadata",
+      "total_remote_requests_in_smoke": 0,
+      "transport_modes": [
+        "fixture",
+        "mock_live",
+        "operator_approved_live_disabled_for_wave"
+      ]
+    },
+    {
+      "default_transport": "fixture",
+      "live_source_calls_enabled_by_default": false,
+      "source_family": "wikidata_metadata",
+      "total_remote_requests_in_smoke": 0,
+      "transport_modes": [
+        "fixture",
+        "mock_live",
+        "operator_approved_live_disabled_for_wave"
+      ]
+    },
+    {
+      "default_transport": "fixture",
+      "live_source_calls_enabled_by_default": false,
+      "source_family": "manual_source_pack",
+      "total_remote_requests_in_smoke": 0,
+      "transport_modes": [
+        "fixture",
+        "mock_live",
+        "operator_approved_live_disabled_for_wave"
+      ]
+    }
+  ]
+}

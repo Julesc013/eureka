@@ -1,0 +1,11 @@
+{
+  "planned_after": [
+    "PUBLIC-ALPHA-READONLY-00",
+    "PUBLIC-DEMAND-SIGNAL-00",
+    "PUBLIC-SOURCE-REQUEST-QUEUE-00"
+  ],
+  "rationale": "Source families now enter through SourceActionKernel; reviewed records should next become read-only snapshots/relay packets before public alpha.",
+  "recommended_next_task": "SNAPSHOT-RELAY-00 - Reviewed-record snapshot and read-only relay foundation",
+  "schema_version": "source_wave_next_task_decision.v0",
+  "task": "AIDE-BATCH-SOURCE-WAVE-00"
+}

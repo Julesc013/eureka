@@ -1,0 +1,30 @@
+{
+  "accepted_truth": false,
+  "candidate_count": 1,
+  "created_at": "2026-05-25T00:00:00Z",
+  "dry_run": true,
+  "limitations": [
+    "review_handoff_is_not_review_acceptance"
+  ],
+  "live_call_performed": false,
+  "non_claims": [
+    "not_truth",
+    "not_review_acceptance",
+    "not_reviewed_index_mutation",
+    "not_master_or_public_index_mutation",
+    "not_public_live_fanout",
+    "not_download_or_extraction",
+    "not_production_or_public_launch_readiness"
+  ],
+  "policy_ref": "control/policies/source_action_kernel_policy.json",
+  "projection_profile": "operator_workbench",
+  "promotion_performed": false,
+  "record_type": "review_handoff_plan",
+  "review_acceptance_performed": false,
+  "review_handoff_plan_id": "review_handoff_plan_30f081e26adcf1c8",
+  "review_item_plan_count": 1,
+  "review_required": true,
+  "schema_version": "review_handoff_plan.v0",
+  "source_action_id": "source_action_57ad2c87211a2014",
+  "source_family": "internet_archive_metadata_v2"
+}

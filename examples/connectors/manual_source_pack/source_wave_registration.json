@@ -1,0 +1,9 @@
+{
+  "adapter_id": "manual_source_pack_adapter",
+  "fixture_transport": true,
+  "live_enabled_default": false,
+  "mock_transport": true,
+  "schema_version": "source_wave_connector_registration_example.v0",
+  "source_family": "manual_source_pack",
+  "store_mutation_performed": false
+}

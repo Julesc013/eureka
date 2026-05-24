@@ -1,0 +1,18 @@
+{
+  "ahead_behind_origin_main_origin_dev": "0\t1",
+  "branch": "dev",
+  "head": "a92b622cb4e9fbbf99b52bbd88402042b136a601",
+  "local_apply_gate_verified": true,
+  "local_loop_verified": true,
+  "merge_base": "e582028b1db977e28ba6ddc0ed284ca6ccf48234",
+  "origin_dev": "a92b622cb4e9fbbf99b52bbd88402042b136a601",
+  "origin_main": "e582028b1db977e28ba6ddc0ed284ca6ccf48234",
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "resolution_run_kernel_found": true,
+  "schema_version": "source_wave_input_state.v0",
+  "source_action_kernel_found": true,
+  "source_action_kernel_status": "pass_with_warnings",
+  "task": "AIDE-BATCH-SOURCE-WAVE-00",
+  "working_tree_clean_before": true
+}

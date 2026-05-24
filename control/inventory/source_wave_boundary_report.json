@@ -1,0 +1,31 @@
+{
+  "candidate_index_mutated": false,
+  "deployment_performed": false,
+  "download_performed": false,
+  "evidence_write_performed": false,
+  "extraction_executed": false,
+  "families": [
+    "internet_archive_metadata_v2",
+    "wayback_cdx_metadata",
+    "github_releases_metadata",
+    "software_heritage_metadata",
+    "package_registry_metadata",
+    "open_library_metadata",
+    "wikidata_metadata",
+    "manual_source_pack"
+  ],
+  "live_source_call_performed": false,
+  "master_index_mutated": false,
+  "model_provider_used": false,
+  "operator_instance_mutated": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "raw_live_source_response_committed": false,
+  "required_family_count": 8,
+  "reviewed_index_mutated": false,
+  "schema_version": "source_wave_boundary_report.v0",
+  "source_cache_write_performed": false,
+  "source_probe_executed": false,
+  "task": "AIDE-BATCH-SOURCE-WAVE-00",
+  "upload_performed": false
+}

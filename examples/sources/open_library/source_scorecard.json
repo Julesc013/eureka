@@ -1,0 +1,50 @@
+{
+  "accepted_truth": false,
+  "created_at": "2026-05-25T00:00:00Z",
+  "dimensions": {
+    "accepted_evidence_yield": "not-measured",
+    "best_for_domains": [
+      "manuals",
+      "books",
+      "bibliographic identity"
+    ],
+    "domain_coverage": "fixture-only",
+    "false_positive_rate": "not-measured",
+    "false_positive_risk": "medium-fixture-unmeasured",
+    "identifier_richness": "sample",
+    "known_failure_modes": [
+      "edition ambiguity",
+      "metadata sparsity",
+      "duplicate works"
+    ],
+    "locator_stability": "stable-fixture",
+    "metadata_quality": "fixture-high",
+    "next_validation_task": "SOURCE-WAVE-OPEN-LIBRARY-LIVE-GATE",
+    "provenance_quality": "fixture",
+    "rate_limit_reliability": "not-applicable-fixture",
+    "rate_limit_risk": "future-live-gated",
+    "rights_risk": "metadata-only-not-assessed",
+    "safety_risk": "low-fixture-only"
+  },
+  "dry_run": true,
+  "limitations": [
+    "scorecard_is_fixture_only"
+  ],
+  "live_call_performed": false,
+  "non_claims": [
+    "not_truth",
+    "not_review_acceptance",
+    "not_reviewed_index_mutation",
+    "not_master_or_public_index_mutation",
+    "not_public_live_fanout",
+    "not_download_or_extraction",
+    "not_production_or_public_launch_readiness"
+  ],
+  "policy_ref": "control/policies/source_action_kernel_policy.json",
+  "projection_profile": "operator_workbench",
+  "record_type": "source_action_scorecard",
+  "review_required": true,
+  "schema_version": "source_action_scorecard.v0",
+  "source_action_id": "source_action_scorecard_181bd1641cb9329b",
+  "source_family": "open_library_metadata"
+}

@@ -1,0 +1,88 @@
+{
+  "families": [
+    {
+      "capabilities": [
+        "metadata_search",
+        "item_metadata_read",
+        "file_manifest_metadata"
+      ],
+      "display_name": "Internet Archive Metadata v2",
+      "future_live_task": "SOURCE-WAVE-IA-METADATA-V2-LIVE-GATE",
+      "metadata_only": true,
+      "source_family": "internet_archive_metadata_v2",
+      "status": "registered_fixture_only"
+    },
+    {
+      "capabilities": [
+        "capture_availability_lookup"
+      ],
+      "display_name": "Wayback CDX Metadata",
+      "future_live_task": "SOURCE-WAVE-WAYBACK-CDX-LIVE-GATE",
+      "metadata_only": true,
+      "source_family": "wayback_cdx_metadata",
+      "status": "registered_fixture_only"
+    },
+    {
+      "capabilities": [
+        "release_metadata_read"
+      ],
+      "display_name": "GitHub Releases Metadata",
+      "future_live_task": "SOURCE-WAVE-GITHUB-RELEASES-LIVE-GATE",
+      "metadata_only": true,
+      "source_family": "github_releases_metadata",
+      "status": "registered_fixture_only"
+    },
+    {
+      "capabilities": [
+        "origin_metadata_read"
+      ],
+      "display_name": "Software Heritage Metadata",
+      "future_live_task": "SOURCE-WAVE-SWH-LIVE-GATE",
+      "metadata_only": true,
+      "source_family": "software_heritage_metadata",
+      "status": "registered_fixture_only"
+    },
+    {
+      "capabilities": [
+        "package_metadata_read"
+      ],
+      "display_name": "Package Registry Metadata",
+      "future_live_task": "SOURCE-WAVE-PACKAGE-REGISTRY-LIVE-GATE",
+      "metadata_only": true,
+      "source_family": "package_registry_metadata",
+      "status": "registered_fixture_only"
+    },
+    {
+      "capabilities": [
+        "bibliographic_metadata_read"
+      ],
+      "display_name": "Open Library Metadata",
+      "future_live_task": "SOURCE-WAVE-OPEN-LIBRARY-LIVE-GATE",
+      "metadata_only": true,
+      "source_family": "open_library_metadata",
+      "status": "registered_fixture_only"
+    },
+    {
+      "capabilities": [
+        "entity_metadata_read"
+      ],
+      "display_name": "Wikidata Metadata",
+      "future_live_task": "SOURCE-WAVE-WIKIDATA-LIVE-GATE",
+      "metadata_only": true,
+      "source_family": "wikidata_metadata",
+      "status": "registered_fixture_only"
+    },
+    {
+      "capabilities": [
+        "source_pack_replay",
+        "fixture_replay"
+      ],
+      "display_name": "Manual Source Pack",
+      "future_live_task": "SOURCE-WAVE-MANUAL-PACK-IMPORT-GATE",
+      "metadata_only": true,
+      "source_family": "manual_source_pack",
+      "status": "registered_fixture_only"
+    }
+  ],
+  "schema_version": "source_wave_family_matrix.v0"
+}

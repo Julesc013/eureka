@@ -1,0 +1,61 @@
+{
+  "review_handoffs": [
+    {
+      "may_accept_review": false,
+      "may_create_review_handoff_plan": true,
+      "may_promote": false,
+      "may_rebuild_reviewed_index": false,
+      "source_family": "internet_archive_metadata_v2"
+    },
+    {
+      "may_accept_review": false,
+      "may_create_review_handoff_plan": true,
+      "may_promote": false,
+      "may_rebuild_reviewed_index": false,
+      "source_family": "wayback_cdx_metadata"
+    },
+    {
+      "may_accept_review": false,
+      "may_create_review_handoff_plan": true,
+      "may_promote": false,
+      "may_rebuild_reviewed_index": false,
+      "source_family": "github_releases_metadata"
+    },
+    {
+      "may_accept_review": false,
+      "may_create_review_handoff_plan": true,
+      "may_promote": false,
+      "may_rebuild_reviewed_index": false,
+      "source_family": "software_heritage_metadata"
+    },
+    {
+      "may_accept_review": false,
+      "may_create_review_handoff_plan": true,
+      "may_promote": false,
+      "may_rebuild_reviewed_index": false,
+      "source_family": "package_registry_metadata"
+    },
+    {
+      "may_accept_review": false,
+      "may_create_review_handoff_plan": true,
+      "may_promote": false,
+      "may_rebuild_reviewed_index": false,
+      "source_family": "open_library_metadata"
+    },
+    {
+      "may_accept_review": false,
+      "may_create_review_handoff_plan": true,
+      "may_promote": false,
+      "may_rebuild_reviewed_index": false,
+      "source_family": "wikidata_metadata"
+    },
+    {
+      "may_accept_review": false,
+      "may_create_review_handoff_plan": true,
+      "may_promote": false,
+      "may_rebuild_reviewed_index": false,
+      "source_family": "manual_source_pack"
+    }
+  ],
+  "schema_version": "source_wave_review_handoff_matrix.v0"
+}

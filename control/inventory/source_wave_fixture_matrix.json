@@ -1,0 +1,102 @@
+{
+  "fixtures": [
+    {
+      "accepted_evidence": false,
+      "fixture_files": [
+        "fixture_metadata_search.json",
+        "fixture_item_metadata.json"
+      ],
+      "fixture_refs": [
+        "examples/sources/internet_archive_metadata/source_family_descriptor.json"
+      ],
+      "raw_live_response": false,
+      "reviewed_truth": false,
+      "source_family": "internet_archive_metadata_v2"
+    },
+    {
+      "accepted_evidence": false,
+      "fixture_files": [
+        "fixture_capture_availability.json"
+      ],
+      "fixture_refs": [
+        "examples/sources/wayback_cdx/source_family_descriptor.json"
+      ],
+      "raw_live_response": false,
+      "reviewed_truth": false,
+      "source_family": "wayback_cdx_metadata"
+    },
+    {
+      "accepted_evidence": false,
+      "fixture_files": [
+        "fixture_release_metadata.json"
+      ],
+      "fixture_refs": [
+        "examples/sources/github_releases/source_family_descriptor.json"
+      ],
+      "raw_live_response": false,
+      "reviewed_truth": false,
+      "source_family": "github_releases_metadata"
+    },
+    {
+      "accepted_evidence": false,
+      "fixture_files": [
+        "fixture_origin_metadata.json"
+      ],
+      "fixture_refs": [
+        "examples/sources/software_heritage/source_family_descriptor.json"
+      ],
+      "raw_live_response": false,
+      "reviewed_truth": false,
+      "source_family": "software_heritage_metadata"
+    },
+    {
+      "accepted_evidence": false,
+      "fixture_files": [
+        "fixture_package_metadata.json"
+      ],
+      "fixture_refs": [
+        "examples/sources/package_registries/source_family_descriptor.json"
+      ],
+      "raw_live_response": false,
+      "reviewed_truth": false,
+      "source_family": "package_registry_metadata"
+    },
+    {
+      "accepted_evidence": false,
+      "fixture_files": [
+        "fixture_bibliographic_metadata.json"
+      ],
+      "fixture_refs": [
+        "examples/sources/open_library/source_family_descriptor.json"
+      ],
+      "raw_live_response": false,
+      "reviewed_truth": false,
+      "source_family": "open_library_metadata"
+    },
+    {
+      "accepted_evidence": false,
+      "fixture_files": [
+        "fixture_entity_metadata.json"
+      ],
+      "fixture_refs": [
+        "examples/sources/wikidata/source_family_descriptor.json"
+      ],
+      "raw_live_response": false,
+      "reviewed_truth": false,
+      "source_family": "wikidata_metadata"
+    },
+    {
+      "accepted_evidence": false,
+      "fixture_files": [
+        "fixture_source_pack_record.json"
+      ],
+      "fixture_refs": [
+        "examples/sources/manual_source_pack/source_family_descriptor.json"
+      ],
+      "raw_live_response": false,
+      "reviewed_truth": false,
+      "source_family": "manual_source_pack"
+    }
+  ],
+  "schema_version": "source_wave_fixture_matrix.v0"
+}

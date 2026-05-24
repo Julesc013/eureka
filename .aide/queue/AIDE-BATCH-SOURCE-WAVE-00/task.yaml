@@ -1,0 +1,4 @@
+task_id: AIDE-BATCH-SOURCE-WAVE-00
+status: completed
+result: pass_with_warnings
+next_task: SNAPSHOT-RELAY-00

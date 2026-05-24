@@ -1,0 +1,212 @@
+{
+  "schema_version": "source_wave_scorecard_matrix.v0",
+  "scorecards": [
+    {
+      "accepted_evidence_yield": "not-measured",
+      "best_for_domains": [
+        "archived software metadata",
+        "item manifests",
+        "collection metadata"
+      ],
+      "domain_coverage": "fixture-only",
+      "false_positive_rate": "not-measured",
+      "false_positive_risk": "medium-fixture-unmeasured",
+      "identifier_richness": "sample",
+      "known_failure_modes": [
+        "ambiguous item identity",
+        "sparse metadata",
+        "collection noise"
+      ],
+      "locator_stability": "stable-fixture",
+      "metadata_quality": "fixture-high",
+      "next_validation_task": "SOURCE-WAVE-IA-METADATA-V2-LIVE-GATE",
+      "provenance_quality": "fixture",
+      "rate_limit_reliability": "not-applicable-fixture",
+      "rate_limit_risk": "future-live-gated",
+      "rights_risk": "metadata-only-not-assessed",
+      "safety_risk": "low-fixture-only",
+      "source_family": "internet_archive_metadata_v2"
+    },
+    {
+      "accepted_evidence_yield": "not-measured",
+      "best_for_domains": [
+        "archived URL availability",
+        "support-page traces"
+      ],
+      "domain_coverage": "fixture-only",
+      "false_positive_rate": "not-measured",
+      "false_positive_risk": "medium-fixture-unmeasured",
+      "identifier_richness": "sample",
+      "known_failure_modes": [
+        "URL canonicalization drift",
+        "capture gaps",
+        "robots exclusions"
+      ],
+      "locator_stability": "stable-fixture",
+      "metadata_quality": "fixture-high",
+      "next_validation_task": "SOURCE-WAVE-WAYBACK-CDX-LIVE-GATE",
+      "provenance_quality": "fixture",
+      "rate_limit_reliability": "not-applicable-fixture",
+      "rate_limit_risk": "future-live-gated",
+      "rights_risk": "metadata-only-not-assessed",
+      "safety_risk": "low-fixture-only",
+      "source_family": "wayback_cdx_metadata"
+    },
+    {
+      "accepted_evidence_yield": "not-measured",
+      "best_for_domains": [
+        "release identity",
+        "asset metadata",
+        "version lineage"
+      ],
+      "domain_coverage": "fixture-only",
+      "false_positive_rate": "not-measured",
+      "false_positive_risk": "medium-fixture-unmeasured",
+      "identifier_richness": "sample",
+      "known_failure_modes": [
+        "renamed repositories",
+        "deleted assets",
+        "rate limits"
+      ],
+      "locator_stability": "stable-fixture",
+      "metadata_quality": "fixture-high",
+      "next_validation_task": "SOURCE-WAVE-GITHUB-RELEASES-LIVE-GATE",
+      "provenance_quality": "fixture",
+      "rate_limit_reliability": "not-applicable-fixture",
+      "rate_limit_risk": "future-live-gated",
+      "rights_risk": "metadata-only-not-assessed",
+      "safety_risk": "low-fixture-only",
+      "source_family": "github_releases_metadata"
+    },
+    {
+      "accepted_evidence_yield": "not-measured",
+      "best_for_domains": [
+        "source origin traces",
+        "revision identity",
+        "archive provenance"
+      ],
+      "domain_coverage": "fixture-only",
+      "false_positive_rate": "not-measured",
+      "false_positive_risk": "medium-fixture-unmeasured",
+      "identifier_richness": "sample",
+      "known_failure_modes": [
+        "origin aliases",
+        "missing releases",
+        "snapshot lag"
+      ],
+      "locator_stability": "stable-fixture",
+      "metadata_quality": "fixture-high",
+      "next_validation_task": "SOURCE-WAVE-SWH-LIVE-GATE",
+      "provenance_quality": "fixture",
+      "rate_limit_reliability": "not-applicable-fixture",
+      "rate_limit_risk": "future-live-gated",
+      "rights_risk": "metadata-only-not-assessed",
+      "safety_risk": "low-fixture-only",
+      "source_family": "software_heritage_metadata"
+    },
+    {
+      "accepted_evidence_yield": "not-measured",
+      "best_for_domains": [
+        "package versions",
+        "ecosystem identifiers",
+        "release metadata"
+      ],
+      "domain_coverage": "fixture-only",
+      "false_positive_rate": "not-measured",
+      "false_positive_risk": "medium-fixture-unmeasured",
+      "identifier_richness": "sample",
+      "known_failure_modes": [
+        "namespace squatting",
+        "registry-specific semantics",
+        "yanked versions"
+      ],
+      "locator_stability": "stable-fixture",
+      "metadata_quality": "fixture-high",
+      "next_validation_task": "SOURCE-WAVE-PACKAGE-REGISTRY-LIVE-GATE",
+      "provenance_quality": "fixture",
+      "rate_limit_reliability": "not-applicable-fixture",
+      "rate_limit_risk": "future-live-gated",
+      "rights_risk": "metadata-only-not-assessed",
+      "safety_risk": "low-fixture-only",
+      "source_family": "package_registry_metadata"
+    },
+    {
+      "accepted_evidence_yield": "not-measured",
+      "best_for_domains": [
+        "manuals",
+        "books",
+        "bibliographic identity"
+      ],
+      "domain_coverage": "fixture-only",
+      "false_positive_rate": "not-measured",
+      "false_positive_risk": "medium-fixture-unmeasured",
+      "identifier_richness": "sample",
+      "known_failure_modes": [
+        "edition ambiguity",
+        "metadata sparsity",
+        "duplicate works"
+      ],
+      "locator_stability": "stable-fixture",
+      "metadata_quality": "fixture-high",
+      "next_validation_task": "SOURCE-WAVE-OPEN-LIBRARY-LIVE-GATE",
+      "provenance_quality": "fixture",
+      "rate_limit_reliability": "not-applicable-fixture",
+      "rate_limit_risk": "future-live-gated",
+      "rights_risk": "metadata-only-not-assessed",
+      "safety_risk": "low-fixture-only",
+      "source_family": "open_library_metadata"
+    },
+    {
+      "accepted_evidence_yield": "not-measured",
+      "best_for_domains": [
+        "entity identity",
+        "external identifiers",
+        "relation hints"
+      ],
+      "domain_coverage": "fixture-only",
+      "false_positive_rate": "not-measured",
+      "false_positive_risk": "medium-fixture-unmeasured",
+      "identifier_richness": "sample",
+      "known_failure_modes": [
+        "entity ambiguity",
+        "stale claims",
+        "weak source statements"
+      ],
+      "locator_stability": "stable-fixture",
+      "metadata_quality": "fixture-high",
+      "next_validation_task": "SOURCE-WAVE-WIKIDATA-LIVE-GATE",
+      "provenance_quality": "fixture",
+      "rate_limit_reliability": "not-applicable-fixture",
+      "rate_limit_risk": "future-live-gated",
+      "rights_risk": "metadata-only-not-assessed",
+      "safety_risk": "low-fixture-only",
+      "source_family": "wikidata_metadata"
+    },
+    {
+      "accepted_evidence_yield": "not-measured",
+      "best_for_domains": [
+        "curated source leads",
+        "offline evidence packets",
+        "operator-reviewed packs"
+      ],
+      "domain_coverage": "fixture-only",
+      "false_positive_rate": "not-measured",
+      "false_positive_risk": "medium-fixture-unmeasured",
+      "identifier_richness": "sample",
+      "known_failure_modes": [
+        "pack schema drift",
+        "operator transcription errors",
+        "stale references"
+      ],
+      "locator_stability": "stable-fixture",
+      "metadata_quality": "fixture-high",
+      "next_validation_task": "SOURCE-WAVE-MANUAL-PACK-IMPORT-GATE",
+      "provenance_quality": "fixture",
+      "rate_limit_reliability": "not-applicable-fixture",
+      "rate_limit_risk": "future-live-gated",
+      "rights_risk": "metadata-only-not-assessed",
+      "safety_risk": "low-fixture-only",
+      "source_family": "manual_source_pack"
+    }
+  ]
+}

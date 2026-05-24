@@ -1,11 +1,11 @@
 # Eureka Repo Health
 
-- Branch: dev
-- origin/main: `e582028b1db977e28ba6ddc0ed284ca6ccf48234`
-- origin/dev: `e582028b1db977e28ba6ddc0ed284ca6ccf48234`
-- Current completed task: SOURCE-ACTION-KERNEL-00
-- Source action kernel status: completed / pass_with_warnings
-- Full unittest discovery: fail_out_of_scope, 4,958 tests, 23 failures, 46 errors
-- Current recommended next task: SOURCE-WAVE-00
-- Production readiness claimed: false
-- Public launch readiness claimed: false
+- branch: dev
+- head at source-wave evidence generation: a92b622cb4e9fbbf99b52bbd88402042b136a601
+- source_action_kernel_status: completed
+- source_wave_status: completed_pass_with_warnings
+- source_wave_required_family_count: 8
+- current_recommended_task: SNAPSHOT-RELAY-00 - Reviewed-record snapshot and read-only relay foundation
+- deployment_performed: false
+- production_readiness_claimed: false
+- public_launch_readiness_claimed: false

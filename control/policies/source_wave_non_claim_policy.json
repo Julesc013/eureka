@@ -1,0 +1,29 @@
+{
+  "created_at": "2026-05-25T00:00:00Z",
+  "deployment_enabled": false,
+  "downloads_enabled": false,
+  "extraction_enabled": false,
+  "live_source_calls_enabled_by_default": false,
+  "model_provider_enabled": false,
+  "notes": [
+    "metadata fixtures and mock transports only",
+    "outputs are plans and candidates, not truth"
+  ],
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "public_live_source_fanout_enabled": false,
+  "schema_version": "source_wave_non_claim_policy.v0",
+  "source_wave_adds_metadata_families_only": true,
+  "source_wave_does_not_accept_evidence": true,
+  "source_wave_does_not_create_reviewed_records": true,
+  "source_wave_does_not_mutate_master_index": true,
+  "source_wave_does_not_mutate_operator_instance": true,
+  "source_wave_does_not_mutate_public_index": true,
+  "source_wave_outputs_are_not_truth": true,
+  "source_wave_requires_boundary_report": true,
+  "source_wave_requires_fixture_or_mock_transport": true,
+  "source_wave_requires_scorecard": true,
+  "source_wave_requires_source_family_manifest": true,
+  "source_wave_uses_source_action_kernel": true,
+  "task": "AIDE-BATCH-SOURCE-WAVE-00"
+}

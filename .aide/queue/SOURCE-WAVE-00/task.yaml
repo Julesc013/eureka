@@ -1,8 +1,4 @@
-schema_version: aide.task.v0
-id: SOURCE-WAVE-00
-title: Next metadata-only source wave
-status: queued
-purpose: Next metadata-only source wave.
-allowed_scope_summary: Workbench local loop, local apply proof, docs, validators, tests, inventory, audit evidence, and AIDE metadata only.
-gate: No operator-instance mutation, committed instance state, master/public index mutation, source probes, downloads, extraction, model/provider calls, deployment, production readiness claim, or public launch claim.
-recommended_next: SNAPSHOT-RELAY-00
+task_id: SOURCE-WAVE-00
+status: completed
+result: pass_with_warnings
+next_task: SNAPSHOT-RELAY-00

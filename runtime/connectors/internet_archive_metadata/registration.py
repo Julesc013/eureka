@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from typing import Any
 
+from runtime.source.action import build_source_wave_adapter
 from runtime.source.action.action_kernel import CREATED_AT, stable_id
 
 
@@ -37,3 +38,7 @@ def build_registration() -> dict[str, Any]:
         ],
         "non_claims": ["not_truth", "not_source_expansion", "not_live_ia_behavior"],
     }
+
+
+def build_adapter():
+    return build_source_wave_adapter("internet_archive_metadata_v2")

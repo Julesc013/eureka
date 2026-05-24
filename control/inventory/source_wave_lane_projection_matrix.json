@@ -1,0 +1,77 @@
+{
+  "lanes": [
+    {
+      "lane_projection_plan_created": true,
+      "lane_targets": [
+        "local_candidate_results",
+        "blocked_actions"
+      ],
+      "reviewed_index_mutated": false,
+      "source_family": "internet_archive_metadata_v2"
+    },
+    {
+      "lane_projection_plan_created": true,
+      "lane_targets": [
+        "local_candidate_results",
+        "blocked_actions"
+      ],
+      "reviewed_index_mutated": false,
+      "source_family": "wayback_cdx_metadata"
+    },
+    {
+      "lane_projection_plan_created": true,
+      "lane_targets": [
+        "local_candidate_results",
+        "blocked_actions"
+      ],
+      "reviewed_index_mutated": false,
+      "source_family": "github_releases_metadata"
+    },
+    {
+      "lane_projection_plan_created": true,
+      "lane_targets": [
+        "local_candidate_results",
+        "blocked_actions"
+      ],
+      "reviewed_index_mutated": false,
+      "source_family": "software_heritage_metadata"
+    },
+    {
+      "lane_projection_plan_created": true,
+      "lane_targets": [
+        "local_candidate_results",
+        "blocked_actions"
+      ],
+      "reviewed_index_mutated": false,
+      "source_family": "package_registry_metadata"
+    },
+    {
+      "lane_projection_plan_created": true,
+      "lane_targets": [
+        "local_candidate_results",
+        "blocked_actions"
+      ],
+      "reviewed_index_mutated": false,
+      "source_family": "open_library_metadata"
+    },
+    {
+      "lane_projection_plan_created": true,
+      "lane_targets": [
+        "local_candidate_results",
+        "blocked_actions"
+      ],
+      "reviewed_index_mutated": false,
+      "source_family": "wikidata_metadata"
+    },
+    {
+      "lane_projection_plan_created": true,
+      "lane_targets": [
+        "local_candidate_results",
+        "blocked_actions"
+      ],
+      "reviewed_index_mutated": false,
+      "source_family": "manual_source_pack"
+    }
+  ],
+  "schema_version": "source_wave_lane_projection_matrix.v0"
+}

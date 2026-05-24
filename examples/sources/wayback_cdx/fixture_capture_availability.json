@@ -1,0 +1,120 @@
+{
+  "accepted_truth": false,
+  "action_kind": "capture_availability_lookup",
+  "created_at": "2026-05-25T00:00:00Z",
+  "fixture_name": "fixture_capture_availability.json",
+  "limitations": [
+    "deterministic_source_wave_fixture"
+  ],
+  "live_call_performed": false,
+  "normalizer_result": {
+    "accepted_truth": false,
+    "created_at": "2026-05-25T00:00:00Z",
+    "dry_run": true,
+    "limitations": [
+      "normalized_fixture_or_mock_records"
+    ],
+    "live_call_performed": false,
+    "non_claims": [
+      "not_truth",
+      "not_review_acceptance",
+      "not_reviewed_index_mutation",
+      "not_master_or_public_index_mutation",
+      "not_public_live_fanout",
+      "not_download_or_extraction",
+      "not_production_or_public_launch_readiness"
+    ],
+    "normalizer_result_id": "source_normalizer_result_c8d5aed47fcc626b",
+    "observation_count": 1,
+    "observations": [
+      {
+        "confidence": "metadata_fixture",
+        "identifiers": {
+          "capability": "capture_availability_lookup",
+          "fixture_key": "fixture_913c4ae6798608e4",
+          "query": "sampleproject",
+          "source_family": "wayback_cdx_metadata"
+        },
+        "observation_id": "source_wave_observation_a106b3c14cc01f2d",
+        "provenance": {
+          "fixture": true,
+          "raw_response_persisted": false,
+          "transport_mode": "fixture"
+        },
+        "source_family": "wayback_cdx_metadata",
+        "source_locator": "fixture://wayback_cdx_metadata/locator_497404ea0d0a7ab4",
+        "summary": "Deterministic metadata-only source wave fixture. This is a candidate input, not truth.",
+        "title": "Wayback CDX Metadata fixture for sampleproject"
+      }
+    ],
+    "policy_ref": "control/policies/source_action_kernel_policy.json",
+    "projection_profile": "operator_workbench",
+    "record_type": "source_normalizer_result",
+    "review_required": true,
+    "schema_version": "source_normalizer_result.v0",
+    "source_action_id": "source_action_8b7e7d95e9eb85b9",
+    "source_family": "wayback_cdx_metadata",
+    "transport_result_id": "source_transport_result_ea20a8852b71d188"
+  },
+  "raw_response_persisted": false,
+  "record_type": "source_wave_fixture",
+  "review_required": true,
+  "schema_version": "source_wave_fixture.v0",
+  "source_family": "wayback_cdx_metadata",
+  "transport_result": {
+    "accepted_truth": false,
+    "created_at": "2026-05-25T00:00:00Z",
+    "dry_run": true,
+    "limitations": [
+      "fixture_or_mock_summary_only"
+    ],
+    "live_call_performed": false,
+    "non_claims": [
+      "not_truth",
+      "not_review_acceptance",
+      "not_reviewed_index_mutation",
+      "not_master_or_public_index_mutation",
+      "not_public_live_fanout",
+      "not_download_or_extraction",
+      "not_production_or_public_launch_readiness"
+    ],
+    "normalized_preview_available": true,
+    "policy_ref": "control/policies/source_action_kernel_policy.json",
+    "projection_profile": "operator_workbench",
+    "rate_limited": false,
+    "raw_response_persisted": false,
+    "record_type": "source_transport_result",
+    "records": [
+      {
+        "accepted_truth": false,
+        "action_kind": "capture_availability_lookup",
+        "identifiers": {
+          "capability": "capture_availability_lookup",
+          "fixture_key": "fixture_913c4ae6798608e4",
+          "query": "sampleproject",
+          "source_family": "wayback_cdx_metadata"
+        },
+        "live_call_performed": false,
+        "review_required": true,
+        "source_family": "wayback_cdx_metadata",
+        "source_locator": "fixture://wayback_cdx_metadata/locator_497404ea0d0a7ab4",
+        "source_record_id": "source_wave_record_6bf15a1a8203a21f",
+        "summary": "Deterministic metadata-only source wave fixture. This is a candidate input, not truth.",
+        "title": "Wayback CDX Metadata fixture for sampleproject",
+        "transport_mode": "fixture"
+      }
+    ],
+    "redacted_summary_available": true,
+    "request_plan_id": "source_request_plan_8ceac7669fa24ce4",
+    "response_summary_ref": "source_response_summary_3420406b06c9c041",
+    "review_required": true,
+    "schema_version": "source_transport_result.v0",
+    "source_action_id": "source_action_8b7e7d95e9eb85b9",
+    "source_family": "wayback_cdx_metadata",
+    "status": "completed",
+    "tls_error": false,
+    "total_requests": 0,
+    "transport_mode": "fixture",
+    "transport_result_id": "source_transport_result_ea20a8852b71d188"
+  }
+}

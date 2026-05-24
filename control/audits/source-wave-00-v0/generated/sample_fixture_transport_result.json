@@ -1,0 +1,56 @@
+{
+  "accepted_truth": false,
+  "created_at": "2026-05-25T00:00:00Z",
+  "dry_run": true,
+  "limitations": [
+    "fixture_or_mock_summary_only"
+  ],
+  "live_call_performed": false,
+  "non_claims": [
+    "not_truth",
+    "not_review_acceptance",
+    "not_reviewed_index_mutation",
+    "not_master_or_public_index_mutation",
+    "not_public_live_fanout",
+    "not_download_or_extraction",
+    "not_production_or_public_launch_readiness"
+  ],
+  "normalized_preview_available": true,
+  "policy_ref": "control/policies/source_action_kernel_policy.json",
+  "projection_profile": "operator_workbench",
+  "rate_limited": false,
+  "raw_response_persisted": false,
+  "record_type": "source_transport_result",
+  "records": [
+    {
+      "accepted_truth": false,
+      "action_kind": "metadata_search",
+      "identifiers": {
+        "capability": "metadata_search",
+        "fixture_key": "fixture_e27728e498cdb4af",
+        "query": "sampleproject",
+        "source_family": "internet_archive_metadata_v2"
+      },
+      "live_call_performed": false,
+      "review_required": true,
+      "source_family": "internet_archive_metadata_v2",
+      "source_locator": "fixture://internet_archive_metadata_v2/locator_34930a414bfd9d5c",
+      "source_record_id": "source_wave_record_1b3d1857b35c5b13",
+      "summary": "Deterministic metadata-only source wave fixture. This is a candidate input, not truth.",
+      "title": "Internet Archive Metadata v2 fixture for sampleproject",
+      "transport_mode": "fixture"
+    }
+  ],
+  "redacted_summary_available": true,
+  "request_plan_id": "source_request_plan_b550b236728c57c1",
+  "response_summary_ref": "source_response_summary_5378c1b1e01a1b44",
+  "review_required": true,
+  "schema_version": "source_transport_result.v0",
+  "source_action_id": "source_action_57ad2c87211a2014",
+  "source_family": "internet_archive_metadata_v2",
+  "status": "completed",
+  "tls_error": false,
+  "total_requests": 0,
+  "transport_mode": "fixture",
+  "transport_result_id": "source_transport_result_e3236da7e69b8377"
+}
