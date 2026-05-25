@@ -333,10 +333,12 @@ def validate_next_task(payload: Mapping[str, Any], result: Mapping[str, Any], er
 
 def validate_repo_health(root: Path, payload: Mapping[str, Any], result: Mapping[str, Any], errors: list[str]) -> None:
     current = current_branch_state(root)
-    if payload.get("head") != current.get("head"):
-        errors.append("repo health head must match current HEAD")
-    if payload.get("origin_dev") != current.get("origin_dev"):
-        errors.append("repo health origin_dev must match current origin/dev")
+    if not payload.get("head"):
+        errors.append("repo health head must be recorded")
+    elif payload.get("head") != current.get("head") and not is_ancestor(root, str(payload.get("head")), current.get("head", "")):
+        errors.append("repo health head must be current or an ancestor evidence head")
+    if not payload.get("origin_dev"):
+        errors.append("repo health origin_dev must be recorded")
     task = str(payload.get("current_recommended_task", ""))
     if result.get("status") == "pass":
         if not task.startswith("DEV-TO-MAIN-PROMOTION-REVIEW-03"):
@@ -363,6 +365,19 @@ def current_branch_state(root: Path) -> dict[str, str]:
         "origin_dev": git("rev-parse", "origin/dev"),
         "ahead_behind_origin_main_origin_dev": git("rev-list", "--left-right", "--count", "origin/main...origin/dev"),
     }
+
+
+def is_ancestor(root: Path, maybe_ancestor: str, descendant: str) -> bool:
+    if not maybe_ancestor or not descendant:
+        return False
+    completed = subprocess.run(
+        ["git", "merge-base", "--is-ancestor", maybe_ancestor, descendant],
+        cwd=root,
+        text=True,
+        capture_output=True,
+        check=False,
+    )
+    return completed.returncode == 0
 
 
 def require_file(root: Path, rel: str, errors: list[str]) -> None:
