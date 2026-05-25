@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (7687 chars, 1922 approximate tokens)
+- `.aide/context/latest-task-packet.md` (4480 chars, 1120 approximate tokens)
 
 ## Context Packet Reference
 
@@ -35,29 +35,29 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/AIDE-BATCH-SNAPSHOT-RELAY-00` (??; matches active task allowed path)
-- allowed: `.aide/queue/NATIVE-SNAPSHOT-CLIENT-00` (??; matches active task allowed path)
-- allowed: `.aide/queue/PUBLIC-ALPHA-READONLY-00/task.yaml` (M; matches active task allowed path)
-- allowed: `.aide/queue/PUBLIC-DEMAND-SIGNAL-00/task.yaml` (M; matches active task allowed path)
-- allowed: `.aide/queue/PUBLIC-SOURCE-REQUEST-QUEUE-00` (??; matches active task allowed path)
-- allowed: `.aide/queue/SNAPSHOT-RELAY-00/task.yaml` (M; matches active task allowed path)
+- allowed: `.aide/queue/DEV-TO-MAIN-PROMOTION-REVIEW-03` (??; matches active task allowed path)
+- allowed: `.aide/queue/SOURCE-SNAPSHOT-BASELINE-CLOSEOUT-01` (??; matches active task allowed path)
 - allowed: `.aide/queue/index.yaml` (M; matches active task allowed path)
 - allowed: `.aide/reports/eureka-repo-health.json` (M; matches active task allowed path)
 - allowed: `.aide/reports/eureka-repo-health.md` (M; matches active task allowed path)
-- allowed: `contracts/capabilities` (??; matches active task allowed path)
-- allowed: `contracts/relay/relay_boundary_report.v0.json` (??; matches active task allowed path)
-- allowed: `contracts/relay/relay_health_packet.v0.json` (??; matches active task allowed path)
-- allowed: `contracts/relay/relay_manifest.v0.json` (M; matches active task allowed path)
-- allowed: `contracts/relay/relay_projection.v0.json` (??; matches active task allowed path)
-- allowed: `contracts/relay/relay_query_response.v0.json` (??; matches active task allowed path)
-- allowed: `contracts/relay/relay_record_index.v0.json` (??; matches active task allowed path)
-- allowed: `contracts/snapshot` (??; matches active task allowed path)
-- allowed: `control/audits/snapshot-relay-00-v0` (??; matches active task allowed path)
-- allowed: `control/inventory/relay_contract_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/relay_manifest_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/relay_projection_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/relay_read_only_matrix.json` (??; matches active task allowed path)
-- additional changed paths omitted from compact packet: 92; see task evidence changed-files report
+- allowed: `control/audits/source-snapshot-baseline-closeout-01-v0` (??; matches active task allowed path)
+- allowed: `control/inventory/snapshot_relay_result.json` (M; matches active task allowed path)
+- allowed: `control/inventory/source_action_kernel_result.json` (M; matches active task allowed path)
+- allowed: `control/inventory/source_snapshot_closeout_boundary_report.json` (??; matches active task allowed path)
+- allowed: `control/inventory/source_snapshot_closeout_branch_state.json` (??; matches active task allowed path)
+- allowed: `control/inventory/source_snapshot_closeout_failure_inventory.json` (??; matches active task allowed path)
+- allowed: `control/inventory/source_snapshot_closeout_failure_repair_log.json` (??; matches active task allowed path)
+- allowed: `control/inventory/source_snapshot_closeout_full_discovery_result.json` (??; matches active task allowed path)
+- allowed: `control/inventory/source_snapshot_closeout_input_state.json` (??; matches active task allowed path)
+- allowed: `control/inventory/source_snapshot_closeout_next_task_decision.json` (??; matches active task allowed path)
+- allowed: `control/inventory/source_snapshot_closeout_repair_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/source_snapshot_closeout_result.json` (??; matches active task allowed path)
+- allowed: `control/inventory/source_snapshot_closeout_scope_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/source_snapshot_closeout_validation_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/source_wave_result.json` (M; matches active task allowed path)
+- allowed: `docs/operations/POST_SOURCE_SNAPSHOT_CLOSEOUT_PLAN.md` (??; matches active task allowed path)
+- allowed: `docs/operations/SOURCE_SNAPSHOT_BASELINE_CLOSEOUT.md` (??; matches active task allowed path)
+- additional changed paths omitted from compact packet: 3; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -67,8 +67,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 6527
-- approx_tokens: 1632
+- chars: 6845
+- approx_tokens: 1712
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

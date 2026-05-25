@@ -1,0 +1,11 @@
+
+task_id: SOURCE-SNAPSHOT-BASELINE-CLOSEOUT-01
+status: blocked
+result: blocked
+next_task: SOURCE-SNAPSHOT-BASELINE-CLOSEOUT-01-CONTINUE
+blocked_by:
+  - full_unittest_discovery
+  - public_index_generated_drift
+  - checksum_manifest_drift
+  - queue_handoff_drift
+  - legacy_leakage_validator_drift

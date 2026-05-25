@@ -1,0 +1,20 @@
+{
+  "committed_data_public_index_mutated": false,
+  "committed_instance_state": false,
+  "deployment_performed": false,
+  "download_performed": false,
+  "extraction_executed": false,
+  "live_source_call_performed": false,
+  "marketplace_or_app_store_readiness_claimed": false,
+  "master_index_mutated": false,
+  "model_provider_used": false,
+  "operator_tokens_committed": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "raw_live_source_response_committed": false,
+  "schema_version": "source_snapshot_closeout_boundary_report.v0",
+  "secrets_committed": false,
+  "source_probe_executed": false,
+  "task": "SOURCE-SNAPSHOT-BASELINE-CLOSEOUT-01",
+  "upload_performed": false
+}

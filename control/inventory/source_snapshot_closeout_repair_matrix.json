@@ -1,0 +1,55 @@
+{
+  "repairs": [
+    {
+      "failure_category": "stale_generated_artifact_metadata",
+      "notes": "Repo health SHA fields and next-task state were refreshed to the current closeout-blocked baseline.",
+      "paths": [
+        ".aide/reports/eureka-repo-health.json",
+        ".aide/reports/eureka-repo-health.md",
+        ".aide/queue/index.yaml"
+      ],
+      "repair_id": "metadata_staleness_refresh",
+      "repair_status": "repaired_in_closeout_evidence"
+    },
+    {
+      "failure_category": "public_index_generated_drift",
+      "notes": "Full discovery reports public search index checksum/generated drift. This task forbids site/dist/** and public-index artifact mutation.",
+      "paths": [
+        "site/dist/data/public_index/**"
+      ],
+      "repair_id": "public_index_generated_drift",
+      "repair_status": "blocked_forbidden_path"
+    },
+    {
+      "failure_category": "checksum_manifest_drift",
+      "notes": "Candidate/search/pack checksum drift requires governed example checksum repair outside this closeout write set.",
+      "paths": [
+        "examples/**/CHECKSUMS.SHA256",
+        "examples/packs/**"
+      ],
+      "repair_id": "governed_example_checksum_drift",
+      "repair_status": "blocked_out_of_scope"
+    },
+    {
+      "failure_category": "queue_handoff_drift",
+      "notes": "Older queue validators expect HUNT/LOCAL task pointers and conflict with current post-source/snapshot queue state.",
+      "paths": [
+        "historical HUNT/LOCAL validators and queue ledger policy"
+      ],
+      "repair_id": "historical_queue_validator_drift",
+      "repair_status": "blocked_split_task"
+    },
+    {
+      "failure_category": "legacy_leakage_validator_drift",
+      "notes": "Leakage gate still reports unallowlisted production-path leakage. Needs dedicated leakage/taxonomy remediation before promotion.",
+      "paths": [
+        "control/inventory/runtime_leakage*.json",
+        "scripts/validate_runtime_architecture_leakage.py"
+      ],
+      "repair_id": "legacy_leakage_gate_drift",
+      "repair_status": "blocked_split_task"
+    }
+  ],
+  "schema_version": "source_snapshot_closeout_repair_matrix.v0",
+  "task": "SOURCE-SNAPSHOT-BASELINE-CLOSEOUT-01"
+}

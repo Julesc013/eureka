@@ -1,0 +1,118 @@
+{
+  "changed_paths": [
+    ".aide/context/latest-review-packet.md",
+    ".aide/context/latest-task-packet.md",
+    ".aide/queue/DEV-TO-MAIN-PROMOTION-REVIEW-03/task.yaml",
+    ".aide/queue/SOURCE-SNAPSHOT-BASELINE-CLOSEOUT-01/task.yaml",
+    ".aide/queue/index.yaml",
+    ".aide/reports/eureka-repo-health.json",
+    ".aide/reports/eureka-repo-health.md",
+    "control/audits/source-snapshot-baseline-closeout-01-v0/generated/full_unittest_summary.txt",
+    "control/inventory/snapshot_relay_result.json",
+    "control/inventory/source_action_kernel_result.json",
+    "control/inventory/source_snapshot_closeout_boundary_report.json",
+    "control/inventory/source_snapshot_closeout_branch_state.json",
+    "control/inventory/source_snapshot_closeout_failure_inventory.json",
+    "control/inventory/source_snapshot_closeout_failure_repair_log.json",
+    "control/inventory/source_snapshot_closeout_full_discovery_result.json",
+    "control/inventory/source_snapshot_closeout_input_state.json",
+    "control/inventory/source_snapshot_closeout_next_task_decision.json",
+    "control/inventory/source_snapshot_closeout_repair_matrix.json",
+    "control/inventory/source_snapshot_closeout_result.json",
+    "control/inventory/source_snapshot_closeout_scope_matrix.json",
+    "control/inventory/source_snapshot_closeout_validation_matrix.json",
+    "control/inventory/source_wave_result.json",
+    "scripts/validate_source_snapshot_baseline_closeout.py",
+    "tests/operations/test_source_snapshot_baseline_closeout.py",
+    "tests/scripts/test_validate_source_snapshot_baseline_closeout.py"
+  ],
+  "failed_first_commands": [],
+  "full_discovery_deferred_until": [
+    "main_promotion",
+    "release_candidate",
+    "high_risk_runtime_bridge"
+  ],
+  "full_discovery_required": false,
+  "known_failures": [],
+  "matched_impact_patterns": [
+    "scripts/validate_*.py",
+    "control/inventory/**",
+    "tests/**"
+  ],
+  "mode": "changed+failed_first",
+  "promotion_allowed": true,
+  "schema_version": "test_selection_result.v0",
+  "selected_commands": [
+    {
+      "command": "git diff --check",
+      "lane_id": "L0_static_preflight",
+      "reason": "base preflight",
+      "source": "test_lane_policy"
+    },
+    {
+      "command": "python scripts/check_architecture_boundaries.py",
+      "lane_id": "L0_static_preflight",
+      "reason": "base preflight",
+      "source": "test_lane_policy"
+    },
+    {
+      "command": "python scripts/check_generated_artifact_cleanliness.py --check --json",
+      "lane_id": "L0_static_preflight",
+      "reason": "base preflight",
+      "source": "test_lane_policy"
+    },
+    {
+      "command": "python -m unittest tests.scripts.test_validate_test_lane_policy",
+      "lane_id": "L1_focused_unit",
+      "reason": "validator_scripts focused test",
+      "source": "scripts/validate_*.py"
+    },
+    {
+      "command": "python scripts/validate_test_lane_policy.py",
+      "lane_id": "L2_impact_integration",
+      "reason": "validator_scripts smoke",
+      "source": "scripts/validate_*.py"
+    },
+    {
+      "command": "python -m unittest tests.operations.test_test_impact_map",
+      "lane_id": "L1_focused_unit",
+      "reason": "control_inventory focused test",
+      "source": "control/inventory/**"
+    },
+    {
+      "command": "python -m unittest tests.operations.test_test_failure_ledger",
+      "lane_id": "L1_focused_unit",
+      "reason": "control_inventory focused test",
+      "source": "control/inventory/**"
+    },
+    {
+      "command": "python -m unittest tests.operations.test_test_lane_policy",
+      "lane_id": "L1_focused_unit",
+      "reason": "tests focused test",
+      "source": "tests/**"
+    },
+    {
+      "command": "python -m unittest tests.scripts.test_eureka_test_select",
+      "lane_id": "L1_focused_unit",
+      "reason": "tests focused test",
+      "source": "tests/**"
+    }
+  ],
+  "selected_lanes": [
+    "L0_static_preflight",
+    "L1_focused_unit",
+    "L2_impact_integration"
+  ],
+  "skip_reasons": [
+    "not selected for per-commit default; required before promotion/high-risk gates"
+  ],
+  "skipped_commands": [
+    {
+      "command": "python -m unittest discover -s tests -t .",
+      "lane_id": "L3_full_discovery",
+      "reason": "not selected for per-commit default; required before promotion/high-risk gates"
+    }
+  ],
+  "task": "",
+  "warnings": []
+}

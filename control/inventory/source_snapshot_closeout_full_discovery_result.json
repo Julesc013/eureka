@@ -1,0 +1,18 @@
+{
+  "category_counts": {
+    "checksum_manifest_drift": 46,
+    "legacy_leakage_validator_drift": 2,
+    "public_index_generated_drift": 5,
+    "queue_handoff_drift": 38
+  },
+  "command": "python -m unittest discover -s tests -t .",
+  "errors": 46,
+  "failure_headers_parsed": 91,
+  "failures": 45,
+  "schema_version": "source_snapshot_closeout_full_discovery_result.v0",
+  "seconds": 2980.412,
+  "status": "fail",
+  "summary_path": "control/audits/source-snapshot-baseline-closeout-01-v0/generated/full_unittest_summary.txt",
+  "task": "SOURCE-SNAPSHOT-BASELINE-CLOSEOUT-01",
+  "test_count": 4984
+}

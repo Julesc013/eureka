@@ -1,0 +1,23 @@
+{
+  "entries": [
+    {
+      "command": "python -m unittest discover -s tests -t .",
+      "id": "full_discovery_rerun",
+      "result": "4984 tests, 45 failures, 46 errors",
+      "status": "completed_red"
+    },
+    {
+      "id": "metadata_staleness_refresh",
+      "notes": "Current head/origin_dev and closeout next-task state recorded in repo health and queue metadata.",
+      "status": "completed"
+    },
+    {
+      "id": "remaining_failures",
+      "notes": "Remaining failures require forbidden site/dist writes, broad governed example checksum repair, or split queue/leakage policy remediation.",
+      "status": "blocked"
+    }
+  ],
+  "schema_version": "source_snapshot_closeout_failure_repair_log.v0",
+  "status": "blocked",
+  "task": "SOURCE-SNAPSHOT-BASELINE-CLOSEOUT-01"
+}

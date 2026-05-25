@@ -1,0 +1,11 @@
+{
+  "blocked_promotion_task": "DEV-TO-MAIN-PROMOTION-REVIEW-03 - Promote source-action/source-wave/snapshot-relay baseline",
+  "blocked_public_alpha_task": "PUBLIC-ALPHA-READONLY-00 - Public reviewed-index-only alpha foundation",
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "rationale": "Full discovery remains red after closeout classification; public alpha must wait for green full discovery or an approved remediation split.",
+  "recommended_next_task": "SOURCE-SNAPSHOT-BASELINE-CLOSEOUT-01-CONTINUE - Repair full-discovery checksum/public-index/queue/leakage blockers",
+  "schema_version": "source_snapshot_closeout_next_task_decision.v0",
+  "status": "blocked",
+  "task": "SOURCE-SNAPSHOT-BASELINE-CLOSEOUT-01"
+}

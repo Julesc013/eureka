@@ -1,0 +1,47 @@
+{
+  "commands": [
+    {
+      "command": "python scripts/eureka_test_select.py --changed --failed-first --json",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_source_action_kernel.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_source_wave.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_snapshot_relay.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/check_architecture_boundaries.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/check_generated_artifact_cleanliness.py --check --json",
+      "status": "pass"
+    },
+    {
+      "command": "python .aide/scripts/aide_lite.py doctor",
+      "status": "pass"
+    },
+    {
+      "command": "python .aide/scripts/aide_lite.py validate",
+      "status": "pass_with_warnings"
+    },
+    {
+      "command": "python -m unittest discover -s tests -t .",
+      "status": "fail"
+    }
+  ],
+  "full_unittest_discovery_count": 4984,
+  "full_unittest_discovery_errors": 46,
+  "full_unittest_discovery_failures": 45,
+  "full_unittest_discovery_status": "fail",
+  "schema_version": "source_snapshot_closeout_validation_matrix.v0",
+  "status": "blocked",
+  "task": "SOURCE-SNAPSHOT-BASELINE-CLOSEOUT-01"
+}

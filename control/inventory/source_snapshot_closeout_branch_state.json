@@ -1,0 +1,14 @@
+{
+  "active_operation": false,
+  "ahead_behind_origin_dev_head": "0\t0",
+  "ahead_behind_origin_main_origin_dev": "0\t3",
+  "branch": "dev",
+  "dev_ahead_of_main_by_source_snapshot_commits": true,
+  "head": "833095f056e808b28a599361f70c10f22137ee56",
+  "merge_base": "e582028b1db977e28ba6ddc0ed284ca6ccf48234",
+  "origin_dev": "833095f056e808b28a599361f70c10f22137ee56",
+  "origin_main": "e582028b1db977e28ba6ddc0ed284ca6ccf48234",
+  "schema_version": "source_snapshot_closeout_branch_state.v0",
+  "task": "SOURCE-SNAPSHOT-BASELINE-CLOSEOUT-01",
+  "working_tree_clean_before": true
+}

@@ -1,10 +1,14 @@
 
-current_recommended_task: PUBLIC-ALPHA-READONLY-00 - Public reviewed-index-only alpha foundation
+current_recommended_task: SOURCE-SNAPSHOT-BASELINE-CLOSEOUT-01-CONTINUE - Repair full-discovery checksum/public-index/queue/leakage blockers
 completed:
   - SOURCE-ACTION-KERNEL-00
   - SOURCE-WAVE-00
   - SNAPSHOT-RELAY-00
+blocked:
+  - SOURCE-SNAPSHOT-BASELINE-CLOSEOUT-01
 planned:
+  - SOURCE-SNAPSHOT-BASELINE-CLOSEOUT-01-CONTINUE
+  - DEV-TO-MAIN-PROMOTION-REVIEW-03
   - PUBLIC-ALPHA-READONLY-00
   - PUBLIC-DEMAND-SIGNAL-00
   - PUBLIC-SOURCE-REQUEST-QUEUE-00

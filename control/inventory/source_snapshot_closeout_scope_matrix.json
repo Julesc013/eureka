@@ -1,0 +1,45 @@
+{
+  "schema_version": "source_snapshot_closeout_scope_matrix.v0",
+  "scope": [
+    {
+      "closeout_needed": true,
+      "focused_tests": "tests.runtime.test_source_action_kernel and related focused modules",
+      "focused_validator": "python scripts/validate_source_action_kernel.py",
+      "full_discovery_status": "fail_out_of_scope",
+      "result_file": "control/inventory/source_action_kernel_result.json",
+      "status": "pass_with_warnings",
+      "subsystem_id": "source_action_kernel",
+      "unsafe_boundaries_false": true,
+      "warnings": [
+        "Focused source-action tests and validators pass; full discovery red is from preexisting/out-of-scope checksum, public-index/generated drift, and legacy leakage gate failures outside SOURCE-ACTION-KERNEL-00 allowed write set."
+      ]
+    },
+    {
+      "closeout_needed": true,
+      "focused_tests": "tests.runtime.test_source_wave and related focused modules",
+      "focused_validator": "python scripts/validate_source_wave.py",
+      "full_discovery_status": "not_run_deferred_known_out_of_scope_debt",
+      "result_file": "control/inventory/source_wave_result.json",
+      "status": "pass_with_warnings",
+      "subsystem_id": "source_wave",
+      "unsafe_boundaries_false": true,
+      "warnings": [
+        "Full discovery was not rerun for SOURCE-WAVE-00 because the immediately preceding full run was long and red from out-of-scope stale checksum/public-index/generated drift and legacy leakage gate failures; focused source-wave and subsystem validators are the closeout lane."
+      ]
+    },
+    {
+      "closeout_needed": true,
+      "focused_tests": "tests.runtime.test_snapshot_build/test_relay_projection/test_capability_profile and related modules",
+      "focused_validator": "python scripts/validate_snapshot_relay.py",
+      "full_discovery_status": "not_run_deferred_known_out_of_scope_debt",
+      "result_file": "control/inventory/snapshot_relay_result.json",
+      "status": "pass_with_warnings",
+      "subsystem_id": "snapshot_relay",
+      "unsafe_boundaries_false": true,
+      "warnings": [
+        "Full discovery is deferred for SNAPSHOT-RELAY-00 unless final selected lanes indicate high risk; focused snapshot relay and subsystem validators are the closeout lane."
+      ]
+    }
+  ],
+  "task": "SOURCE-SNAPSHOT-BASELINE-CLOSEOUT-01"
+}

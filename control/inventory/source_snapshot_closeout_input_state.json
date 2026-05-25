@@ -1,0 +1,23 @@
+{
+  "ahead_behind_origin_dev_head": "0\t0",
+  "ahead_behind_origin_main_origin_dev": "0\t3",
+  "branch": "dev",
+  "head": "833095f056e808b28a599361f70c10f22137ee56",
+  "merge_base": "e582028b1db977e28ba6ddc0ed284ca6ccf48234",
+  "origin_dev": "833095f056e808b28a599361f70c10f22137ee56",
+  "origin_main": "e582028b1db977e28ba6ddc0ed284ca6ccf48234",
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "schema_version": "source_snapshot_closeout_input_state.v0",
+  "snapshot_relay_found": true,
+  "snapshot_relay_full_discovery_status": "not_run_deferred_known_out_of_scope_debt",
+  "snapshot_relay_status": "pass_with_warnings",
+  "source_action_full_discovery_status": "fail_out_of_scope",
+  "source_action_kernel_found": true,
+  "source_action_kernel_status": "pass_with_warnings",
+  "source_wave_found": true,
+  "source_wave_full_discovery_status": "not_run_deferred_known_out_of_scope_debt",
+  "source_wave_status": "pass_with_warnings",
+  "task": "SOURCE-SNAPSHOT-BASELINE-CLOSEOUT-01",
+  "working_tree_clean_before": true
+}
