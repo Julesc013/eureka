@@ -1,0 +1,53 @@
+name: Quick Lanes
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - dev
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  quick-lanes:
+    name: Quick validation lanes
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Diff whitespace check
+        run: git diff --check
+
+      - name: Select changed and failed-first tests
+        run: python scripts/eureka_test_select.py --changed --failed-first --json > quick_lane_selection.json
+
+      - name: Architecture boundaries
+        run: python scripts/check_architecture_boundaries.py
+
+      - name: Generated artifact cleanliness
+        run: python scripts/check_generated_artifact_cleanliness.py --check --json > generated_artifact_cleanliness.json
+
+      - name: AIDE validate
+        run: python .aide/scripts/aide_lite.py validate
+
+      - name: Upload quick lane summaries
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: quick-lanes-${{ github.run_id }}
+          path: |
+            quick_lane_selection.json
+            generated_artifact_cleanliness.json
+          retention-days: 7

@@ -70,7 +70,7 @@
     },
     {
       "lane_id": "L3_full_discovery",
-      "purpose": "Run the complete unittest discovery suite.",
+      "purpose": "Run the complete unittest discovery suite through the artifact harness or CI.",
       "expected_duration": "30-60+ minutes",
       "required_for_commit": false,
       "required_for_runtime_change": false,
@@ -87,7 +87,11 @@
         "pre-public deployment gate"
       ],
       "required_outputs": [
-        "full discovery command result",
+        "full discovery harness command result",
+        "stdout artifact path",
+        "stderr artifact path",
+        "exit-code artifact path",
+        "compact JSON summary path",
         "failure ledger updates"
       ]
     },

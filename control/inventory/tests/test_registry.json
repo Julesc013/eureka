@@ -50,18 +50,36 @@
       "category": "integration",
       "owner_area": "tests",
       "required_for": [
-        "standard",
-        "full"
+        "manual_direct"
       ],
       "requires": [
         "python"
       ],
       "network": "none",
       "writes": "temporary files only where integration tests create temp stores",
-      "expected_runtime": "seconds",
+      "expected_runtime": "30-90 minutes",
       "failure_means": "A cross-component, operations, eval, architecture, or parity guardrail regressed.",
       "advisory_or_required": "required",
-      "notes": "Includes architecture, integration, operations, eval, and parity validation."
+      "notes": "Direct full discovery command retained for transparency. AI-assisted sessions should use the full_unittest_discovery_harness record or CI instead of running this interactively."
+    },
+    {
+      "test_id": "full_unittest_discovery_harness",
+      "label": "Full unittest discovery artifact harness",
+      "command": "python scripts/run_full_unittest_discovery.py",
+      "category": "operations",
+      "owner_area": "scripts",
+      "required_for": [
+        "full"
+      ],
+      "requires": [
+        "python"
+      ],
+      "network": "none",
+      "writes": ".aide.local/test-runs/<timestamp>/ by default, or the explicit --out directory",
+      "expected_runtime": "30-90 minutes",
+      "failure_means": "The full discovery suite failed or could not produce compact test artifacts.",
+      "advisory_or_required": "required",
+      "notes": "Runs python -m unittest discover -s tests -t . with stdout/stderr redirected to files, writes exit code, environment, failure families, failed tests, and full_unittest_summary.json for compact AI review."
     },
     {
       "test_id": "architecture_boundaries",

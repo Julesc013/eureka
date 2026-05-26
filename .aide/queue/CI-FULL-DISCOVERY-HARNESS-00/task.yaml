@@ -1,0 +1,8 @@
+task_id: CI-FULL-DISCOVERY-HARNESS-00
+status: completed
+result: pass
+task_type: tooling_governance
+summary: Move full unittest discovery out of AI sessions and into local/CI artifact harnesses.
+waiting_status_added: WAITING_FOR_EXTERNAL_FULL_DISCOVERY
+full_discovery_run_inside_ai: false
+recommended_next_task: SOURCE-SNAPSHOT-BASELINE-CLOSEOUT-01

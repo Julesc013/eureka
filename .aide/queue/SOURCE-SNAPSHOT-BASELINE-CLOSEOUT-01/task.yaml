@@ -1,11 +1,17 @@
-
 task_id: SOURCE-SNAPSHOT-BASELINE-CLOSEOUT-01
-status: blocked
-result: blocked
-next_task: SOURCE-SNAPSHOT-BASELINE-CLOSEOUT-01-CONTINUE
-blocked_by:
-  - full_unittest_discovery
-  - public_index_generated_drift
-  - checksum_manifest_drift
-  - queue_handoff_drift
-  - legacy_leakage_validator_drift
+status: planned_external_full_discovery_handoff
+result: waiting_required
+required_flow:
+  - run_focused_validators
+  - run_focused_tests
+  - create_external_full_discovery_handoff_json
+  - stop_with_WAITING_FOR_EXTERNAL_FULL_DISCOVERY
+after_external_summary:
+  - read_full_unittest_summary_json
+  - repair_actual_failure_families_only
+  - rerun_focused_tests
+forbidden:
+  - run_full_unittest_discovery_inside_ai
+  - babysit_test_output
+waiting_status: WAITING_FOR_EXTERNAL_FULL_DISCOVERY
+next_task_after_external_green: DEV-TO-MAIN-PROMOTION-REVIEW-03

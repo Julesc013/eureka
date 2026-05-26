@@ -2,45 +2,45 @@
 
 ## PHASE
 
-SOURCE-SNAPSHOT-BASELINE-CLOSEOUT-01 - Close SourceAction / SourceWave / SnapshotRelay validation debt before public alpha.
+SOURCE-SNAPSHOT-BASELINE-CLOSEOUT-01 - Close source/snapshot validation debt
+using external full-discovery handoff.
 
 ## GOAL
 
-Verify the source/snapshot baseline and record whether it is ready for promotion and public-alpha work. The current closeout is blocked because full unittest discovery remains red.
+Run focused source/snapshot validators and tests, write an external full
+discovery handoff, then stop with `WAITING_FOR_EXTERNAL_FULL_DISCOVERY`.
 
 ## WHY
 
-SourceActionKernel, SourceWave, and SnapshotRelay were completed with focused validators passing, but full discovery was red or deferred. Public alpha must not start from a warning-bearing baseline without either a green full discovery run or an exact blocker inventory.
+SOURCE-ACTION-KERNEL-00, SOURCE-WAVE-00, and SNAPSHOT-RELAY-00 are implemented
+with focused validation success, but the baseline still carries full-discovery
+warning/deferred debt. Full discovery must now run outside AI sessions through
+the harness or CI artifact lane.
 
 ## CONTEXT_REFS
 
 - `control/inventory/source_action_kernel_result.json`
 - `control/inventory/source_wave_result.json`
 - `control/inventory/snapshot_relay_result.json`
-- `control/inventory/source_snapshot_closeout_result.json`
-- `control/inventory/source_snapshot_closeout_failure_inventory.json`
-- `control/audits/source-snapshot-baseline-closeout-01-v0/generated/full_unittest_summary.txt`
+- `docs/operations/FULL_DISCOVERY_CI_RUNBOOK.md`
+- `contracts/testing/external_full_discovery_handoff.v0.json`
+- `contracts/testing/full_unittest_summary.v0.json`
+
+## REQUIRED_FLOW
+
+1. Run focused validators and focused source/snapshot tests only.
+2. Write `external_full_discovery_handoff.json` as compact handoff evidence.
+3. Do not run `python -m unittest discover -s tests -t .` inside AI.
+4. Stop with `WAITING_FOR_EXTERNAL_FULL_DISCOVERY`.
+5. Resume only after an operator or CI provides `full_unittest_summary.json`.
 
 ## ALLOWED_PATHS
 
 - `.aide/queue/SOURCE-SNAPSHOT-BASELINE-CLOSEOUT-01/**`
-- `.aide/queue/DEV-TO-MAIN-PROMOTION-REVIEW-03/**`
-- `.aide/queue/PUBLIC-ALPHA-READONLY-00/**`
-- `.aide/queue/index.yaml`
 - `.aide/context/latest-task-packet.md`
-- `.aide/context/latest-review-packet.md`
-- `.aide/reports/eureka-repo-health.json`
-- `.aide/reports/eureka-repo-health.md`
 - `control/inventory/source_snapshot_closeout_*.json`
-- `control/inventory/source_action_kernel_result.json`
-- `control/inventory/source_wave_result.json`
-- `control/inventory/snapshot_relay_result.json`
 - `control/audits/source-snapshot-baseline-closeout-01-v0/**`
 - `docs/operations/SOURCE_SNAPSHOT_BASELINE_CLOSEOUT.md`
-- `docs/operations/POST_SOURCE_SNAPSHOT_CLOSEOUT_PLAN.md`
-- `scripts/validate_source_snapshot_baseline_closeout.py`
-- `tests/operations/test_source_snapshot_baseline_closeout.py`
-- `tests/scripts/test_validate_source_snapshot_baseline_closeout.py`
 
 ## FORBIDDEN_PATHS
 
@@ -49,45 +49,47 @@ SourceActionKernel, SourceWave, and SnapshotRelay were completed with focused va
 - `.aide.local/**`
 - `secrets/**`
 - `.env`
-- private local files
-- committed operator tokens or credentials
-- raw prompts or raw responses
-- raw live source response bodies
 - `site/dist/**`
-- `site/dist/data/public_index/**`
 - `data/public_index/**`
+- `runtime/connectors/**`
 - `runtime/extraction/**`
 - `runtime/search_quality/**`
 - `native/**`
 - `crates/**`
+- raw live source responses
+- raw live IA responses
 
 ## IMPLEMENTATION
 
-- Added a closeout validator and focused closeout tests.
-- Captured full unittest discovery output under the closeout audit pack.
-- Classified current full-discovery failures into queue handoff drift, checksum manifest drift, public-index generated drift, and legacy leakage validator drift.
-- Refreshed AIDE repo-health and queue metadata to block promotion/public alpha until follow-up remediation.
+- Run focused validators and tests only.
+- Write a governed external full-discovery handoff artifact.
+- Stop at `WAITING_FOR_EXTERNAL_FULL_DISCOVERY`.
+- After the external run, read compact summary JSON only and repair actual
+  failure families.
 
 ## VALIDATION
 
-- `python scripts/validate_source_snapshot_baseline_closeout.py --json`
-- `python scripts/validate_source_action_kernel.py --json`
-- `python scripts/validate_source_wave.py --json`
-- `python scripts/validate_snapshot_relay.py --json`
-- Focused closeout and source/snapshot unittest modules
-- `git diff --check`
+- Focused source/snapshot validators.
+- Focused closeout tests.
+- `python scripts/eureka_test_select.py --changed --failed-first --json`
 - `python scripts/check_architecture_boundaries.py`
-- `python scripts/check_generated_artifact_cleanliness.py --check --json`
-- AIDE Lite doctor and validate
-- `python -m unittest discover -s tests -t .`
+- No interactive `python -m unittest discover -s tests -t .`.
 
 ## EVIDENCE
 
-- `control/inventory/source_snapshot_closeout_result.json`
-- `control/inventory/source_snapshot_closeout_full_discovery_result.json`
-- `control/inventory/source_snapshot_closeout_failure_inventory.json`
-- `control/inventory/source_snapshot_closeout_repair_matrix.json`
-- `control/audits/source-snapshot-baseline-closeout-01-v0/`
+- `external_full_discovery_handoff.json`
+- focused validator outputs
+- focused test outputs
+- later external `full_unittest_summary.json`
+
+## ALLOWED_STATUS
+
+- `pass`
+- `pass_with_warnings`
+- `partial`
+- `blocked`
+- `fail`
+- `WAITING_FOR_EXTERNAL_FULL_DISCOVERY`
 
 ## NON_GOALS
 
@@ -95,18 +97,20 @@ SourceActionKernel, SourceWave, and SnapshotRelay were completed with focused va
 - No promotion to main.
 - No deployment.
 - No production/public launch claim.
-- No live source calls, source probes, downloads, uploads, extraction, or model calls.
+- No live source calls, downloads, uploads, extraction, or model calls.
 - No operator instance mutation.
-- No master/public index semantic mutation.
-- No edits to forbidden public index artifacts.
+- No full unittest discovery inside AI.
 
 ## ACCEPTANCE
 
-The closeout validator passes, focused subsystem validators pass, unsafe boundaries remain false, and full discovery failure is honestly recorded as blocked rather than reported as green. Public alpha and promotion remain blocked until follow-up remediation makes full discovery pass or records an approved split.
+The closeout records focused validation status, writes a governed external
+handoff, and honestly waits for machine/operator full discovery artifacts
+instead of streaming full discovery in an AI loop.
 
 ## OUTPUT_SCHEMA
 
-`source_snapshot_closeout_result.v0`
+`external_full_discovery_handoff.v0` followed by `full_unittest_summary.v0`
+after the external run completes.
 
 ## TOKEN_ESTIMATE
 

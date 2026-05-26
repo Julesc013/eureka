@@ -1,0 +1,15 @@
+{
+  "artifacts": [
+    {"path": ".aide.local/test-runs/<run-id>/full_unittest_stdout.txt", "committed_by_default": false, "kind": "stdout_log"},
+    {"path": ".aide.local/test-runs/<run-id>/full_unittest_stderr.txt", "committed_by_default": false, "kind": "stderr_log"},
+    {"path": ".aide.local/test-runs/<run-id>/full_unittest_exit_code.txt", "committed_by_default": false, "kind": "exit_code"},
+    {"path": ".aide.local/test-runs/<run-id>/full_unittest_summary.json", "committed_by_default": false, "kind": "compact_summary"},
+    {"path": ".aide.local/test-runs/<run-id>/failure_families.json", "committed_by_default": false, "kind": "failure_families"},
+    {"path": ".aide.local/test-runs/<run-id>/failed_tests.txt", "committed_by_default": false, "kind": "failed_tests"},
+    {"path": ".aide.local/test-runs/<run-id>/paths_touched.txt", "committed_by_default": false, "kind": "paths_touched"},
+    {"path": ".aide.local/test-runs/<run-id>/environment.json", "committed_by_default": false, "kind": "environment"}
+  ],
+  "durable_closeout_evidence_policy": "Commit compact summaries under control/audits only when a specific closeout or promotion task needs durable evidence.",
+  "schema_version": "ci_full_discovery_harness_artifact_matrix.v0",
+  "task": "CI-FULL-DISCOVERY-HARNESS-00"
+}

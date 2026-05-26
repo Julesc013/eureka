@@ -1,0 +1,17 @@
+{
+  "command": "python scripts/run_full_unittest_discovery.py --out .aide.local/test-runs/source_snapshot_closeout",
+  "do_not_paste": [
+    "full_unittest_stdout.txt",
+    "full_unittest_stderr.txt"
+  ],
+  "expected_duration_class": "long",
+  "focused_validation_status": "pass",
+  "paste_back": [
+    "full_unittest_summary.json"
+  ],
+  "reason_required": "Promotion closeout requires full discovery evidence outside AI.",
+  "run_outside_ai": true,
+  "schema_version": "external_full_discovery_handoff.v0",
+  "suggested_output_dir": ".aide.local/test-runs/source_snapshot_closeout",
+  "task": "SOURCE-SNAPSHOT-BASELINE-CLOSEOUT-01"
+}

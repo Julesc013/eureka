@@ -1,0 +1,51 @@
+name: Promotion Gate
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  promotion-gate:
+    name: Promotion validation gate
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Quick preflight
+        run: |
+          git diff --check
+          python scripts/eureka_test_select.py --changed --failed-first --json > quick_lane_selection.json
+          python scripts/check_architecture_boundaries.py
+          python scripts/check_generated_artifact_cleanliness.py --check --json > generated_artifact_cleanliness.json
+
+      - name: Full discovery harness
+        run: |
+          python scripts/run_full_unittest_discovery.py \
+            --out ".aide.local/test-runs/promotion-${{ github.run_id }}"
+
+      - name: Promotion validators
+        if: success()
+        run: |
+          python .aide/scripts/aide_lite.py validate
+          python .aide/scripts/aide_lite.py verify
+
+      - name: Upload promotion artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: promotion-gate-${{ github.run_id }}
+          path: |
+            quick_lane_selection.json
+            generated_artifact_cleanliness.json
+            .aide.local/test-runs/promotion-${{ github.run_id }}/
+          retention-days: 14

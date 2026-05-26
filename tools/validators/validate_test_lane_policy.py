@@ -166,8 +166,8 @@ def validate_repo(root: Path) -> dict[str, Any]:
         errors.append("failed-first selector must prioritize known failures")
     if "L3_full_discovery" not in set(promotion.get("selected_lanes", [])):
         errors.append("promotion selector must include L3 full discovery")
-    if not any(item.get("command") == "python -m unittest discover -s tests -t ." for item in promotion.get("selected_commands", [])):
-        errors.append("promotion selector must include full discovery command")
+    if not any(item.get("command") == "python scripts/run_full_unittest_discovery.py" for item in promotion.get("selected_commands", [])):
+        errors.append("promotion selector must include full discovery harness command")
     if promotion.get("full_discovery_required") is not True:
         errors.append("promotion selector must mark full discovery required")
     active_blockers = [

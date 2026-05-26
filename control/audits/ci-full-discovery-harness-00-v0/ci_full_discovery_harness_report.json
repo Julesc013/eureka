@@ -1,0 +1,10 @@
+{
+  "full_discovery_run_inside_ai": false,
+  "local_harness": "scripts/run_full_unittest_discovery.py",
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "schema_version": "ci_full_discovery_harness_report.v0",
+  "status": "pass_with_warnings",
+  "task": "CI-FULL-DISCOVERY-HARNESS-00",
+  "waiting_status": "WAITING_FOR_EXTERNAL_FULL_DISCOVERY"
+}

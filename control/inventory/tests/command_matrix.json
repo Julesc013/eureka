@@ -16,11 +16,10 @@
     },
     {
       "lane_id": "standard",
-      "purpose": "Normal Codex completion checks for most Python/docs/governance tasks.",
+      "purpose": "Normal Codex completion checks for most Python/docs/governance tasks using focused lanes instead of full discovery.",
       "commands": [
         "runtime_tests",
         "surfaces_tests",
-        "repo_tests",
         "architecture_boundaries",
         "operating_layer_validation",
         "comprehensive_audit_pack_validation",
@@ -454,11 +453,11 @@
     },
     {
       "lane_id": "full",
-      "purpose": "Pre-sync or pre-PR evidence lane.",
+      "purpose": "Promotion, nightly, manual, or pre-main evidence lane.",
       "commands": [
         "runtime_tests",
         "surfaces_tests",
-        "repo_tests",
+        "full_unittest_discovery_harness",
         "architecture_boundaries",
         "public_alpha_smoke",
         "hosting_pack_generator_check",

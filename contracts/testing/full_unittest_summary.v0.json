@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/testing/full_unittest_summary.v0.json",
+  "title": "Full Unittest Summary",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "command",
+    "exit_code",
+    "status",
+    "started_at",
+    "finished_at",
+    "duration_seconds",
+    "git",
+    "counts",
+    "failed_tests",
+    "failed_modules",
+    "failure_families",
+    "stdout_path",
+    "stderr_path",
+    "exit_code_path",
+    "environment_path",
+    "tail_excerpt",
+    "generated_by"
+  ],
+  "properties": {
+    "schema_version": { "const": "full_unittest_summary.v0" },
+    "command": { "type": "string" },
+    "exit_code": { "type": "integer" },
+    "status": { "enum": ["pass", "fail", "error", "timeout", "unknown"] },
+    "started_at": { "type": ["string", "null"] },
+    "finished_at": { "type": ["string", "null"] },
+    "duration_seconds": { "type": ["number", "null"] },
+    "git": {
+      "type": "object",
+      "required": ["branch", "head", "working_tree_clean"],
+      "properties": {
+        "branch": { "type": ["string", "null"] },
+        "head": { "type": ["string", "null"] },
+        "working_tree_clean": { "type": ["boolean", "null"] }
+      },
+      "additionalProperties": true
+    },
+    "counts": {
+      "type": "object",
+      "required": ["tests_run", "failures", "errors", "skipped"],
+      "properties": {
+        "tests_run": { "type": "integer", "minimum": 0 },
+        "failures": { "type": "integer", "minimum": 0 },
+        "errors": { "type": "integer", "minimum": 0 },
+        "skipped": { "type": "integer", "minimum": 0 }
+      },
+      "additionalProperties": true
+    },
+    "failed_tests": { "type": "array", "items": { "type": "string" } },
+    "failed_modules": { "type": "array", "items": { "type": "string" } },
+    "failure_families": {
+      "type": "array",
+      "items": { "$ref": "failure_family.v0.json" }
+    },
+    "stdout_path": { "type": "string" },
+    "stderr_path": { "type": "string" },
+    "exit_code_path": { "type": "string" },
+    "environment_path": { "type": ["string", "null"] },
+    "path_classification": { "type": "object" },
+    "tail_excerpt": { "type": "string" },
+    "generated_by": { "type": "string" }
+  },
+  "additionalProperties": true
+}

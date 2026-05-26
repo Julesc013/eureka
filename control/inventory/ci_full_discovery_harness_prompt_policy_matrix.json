@@ -1,0 +1,11 @@
+{
+  "prompt_updates": [
+    {"path": ".aide/queue/SOURCE-SNAPSHOT-BASELINE-CLOSEOUT-01/task.yaml", "requires_waiting_status": true},
+    {"path": ".aide/queue/DEV-TO-MAIN-PROMOTION-REVIEW-03/task.yaml", "requires_external_summary": true},
+    {"path": ".aide/queue/PUBLIC-ALPHA-READONLY-00/task.yaml", "blocked_until_external_summary": true},
+    {"path": ".aide/context/latest-task-packet.md", "requires_external_handoff": true}
+  ],
+  "schema_version": "ci_full_discovery_harness_prompt_policy_matrix.v0",
+  "status_added": "WAITING_FOR_EXTERNAL_FULL_DISCOVERY",
+  "task": "CI-FULL-DISCOVERY-HARNESS-00"
+}

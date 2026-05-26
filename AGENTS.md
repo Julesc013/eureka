@@ -56,6 +56,31 @@
 - Use structured Markdown commit bodies for substantive work; run `py -3 .aide/scripts/aide_lite.py commit check --latest` after committing when practical.
 - If prompts repeat, arrive out of order, or interrupt incomplete work, resume from repo-local queue/status/evidence first. Reconcile repeated or out-of-order prompts before editing, and ask the user only after repo-local evidence is insufficient to choose a safe continuation.
 
+## Long-Test Token Discipline
+
+Agents must not stream repeated progress updates while long-running validation
+commands execute.
+
+For commands expected to exceed 120 seconds:
+
+1. Run the command through a repo-local harness or CI.
+2. Capture stdout/stderr to files.
+3. Produce a compact JSON summary.
+4. Report only the summary.
+5. Do not poll repeatedly in chat unless the user explicitly asks.
+
+Full unittest discovery is a promotion/nightly/manual gate, not a normal
+per-edit validation step. During AI-assisted work, use focused lanes selected
+by `scripts/eureka_test_select.py --changed --failed-first --json` unless the
+task explicitly requires promotion validation.
+
+Full unittest discovery must not run inside AI sessions by default. If full
+discovery is required, write `external_full_discovery_handoff.json`, stop with
+`WAITING_FOR_EXTERNAL_FULL_DISCOVERY`, and resume only after an operator or CI
+returns `full_unittest_summary.json`. Do not paste full logs into the AI
+session; request targeted traceback excerpts only when the compact summary is
+insufficient.
+
 <!-- AIDE-PORTABLE:BEGIN section=aide-lite-pack-v0 mode=managed -->
 ## AIDE Lite Portable Guidance
 

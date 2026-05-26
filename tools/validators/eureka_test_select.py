@@ -19,7 +19,7 @@ FAILURE_LEDGER_PATH = REPO_ROOT / "control/inventory/test_failure_ledger.json"
 
 ACTIVE_FAILURE_STATUSES = {"new", "reproduced", "fixed_pending_full"}
 BLOCKING_LEVELS = {"promotion_blocker", "release_blocker", "commit_blocker"}
-FULL_DISCOVERY_COMMAND = "python -m unittest discover -s tests -t ."
+FULL_DISCOVERY_COMMAND = "python scripts/run_full_unittest_discovery.py"
 
 
 def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout) -> int:
@@ -114,7 +114,7 @@ def select_tests(args: argparse.Namespace, root: Path = REPO_ROOT) -> dict[str, 
             {
                 "command": FULL_DISCOVERY_COMMAND,
                 "lane_id": "L3_full_discovery",
-                "reason": "not selected for per-commit default; required before promotion/high-risk gates",
+                "reason": "not selected for per-commit default; run through the artifact harness before promotion/high-risk gates",
             }
         )
         if any(mapping.get("full_discovery_required_before_promotion") for mapping in matched_mappings):

@@ -35,7 +35,8 @@ The command matrix defines these lanes:
 - `standard`: runtime, surfaces, repo tests, boundary checks, and operating
   layer validation
 - `full`: standard checks plus public-alpha smoke, hosting-pack check, Python
-  oracle golden check, archive eval runner, and search usefulness audit
+  oracle golden check, archive eval runner, search usefulness audit, and full
+  unittest discovery through the artifact harness or CI
 - `docs_only`: docs/audit/index validation plus whitespace diff checks
 - `public_alpha`: route inventory, smoke, wrapper, and hosting-pack safety checks
 - `publication_static_site`: publication inventory plus current static-site
@@ -49,6 +50,40 @@ The command matrix defines these lanes:
   route/docs/README drift, parity/golden discipline, and AIDE/test registry
   consistency
 - `rust_optional`: Cargo checks only when the local toolchain exists
+
+## Long-Test Token Discipline
+
+Full unittest discovery must not be babysat inside AI chat sessions. Commands
+expected to exceed 120 seconds should run through a repo-local harness or CI,
+capture stdout/stderr to files, and produce a compact JSON summary.
+
+Use focused lanes during normal AI-assisted development:
+
+```bash
+python scripts/eureka_test_select.py --changed --failed-first --json
+```
+
+Reserve full discovery for promotion, nightly, manual local verification, and
+pre-main merge gates. The local harness command is:
+
+```bash
+python scripts/run_full_unittest_discovery.py
+```
+
+The harness writes `full_unittest_stdout.txt`, `full_unittest_stderr.txt`,
+`full_unittest_exit_code.txt`, `full_unittest_summary.json`,
+`failure_families.json`, `failed_tests.txt`, `paths_touched.txt`, and
+`environment.json` under `.aide.local/test-runs/<run-id>/` by default.
+
+If full discovery is required during an AI task, create an
+`external_full_discovery_handoff.v0` artifact and stop with:
+
+```text
+WAITING_FOR_EXTERNAL_FULL_DISCOVERY
+```
+
+The operator or CI returns `full_unittest_summary.json`. AI sessions should not
+read full logs unless a targeted traceback excerpt is needed.
 
 ## Required vs Advisory
 
@@ -84,6 +119,9 @@ For non-trivial tasks:
 4. Run the lane that matches the task.
 5. Report exactly what passed, what was skipped, and why.
 6. Sync origin at the end when the environment supports it.
+
+If the matching lane includes a long-running command, report the compact
+artifact summary instead of streaming repeated progress updates.
 
 Large tasks should use a two-pass flow: implementation first, hardening second.
 The hardening pass should reread changed files, check claims against evidence,

@@ -1,0 +1,16 @@
+{
+  "branch": "dev",
+  "current_recommended_task_before": "SOURCE-SNAPSHOT-BASELINE-CLOSEOUT-01-CONTINUE - Repair full-discovery checksum/public-index/queue/leakage blockers",
+  "full_discovery_current_policy_problem": "Full unittest discovery had been run or deferred inside closeout tasks, consuming AI session time and producing large logs instead of compact external artifacts.",
+  "head": "7156820925114d9c22f517435f5dfeb99f262091",
+  "origin_dev": "7156820925114d9c22f517435f5dfeb99f262091",
+  "origin_main": "e582028b1db977e28ba6ddc0ed284ca6ccf48234",
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "schema_version": "ci_full_discovery_harness_input_state.v0",
+  "snapshot_relay_status": "pass_with_warnings",
+  "source_action_kernel_status": "pass_with_warnings",
+  "source_wave_status": "pass_with_warnings",
+  "task": "CI-FULL-DISCOVERY-HARNESS-00",
+  "working_tree_clean_before": true
+}

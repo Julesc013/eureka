@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/testing/failure_family.v0.json",
+  "title": "Unittest Failure Family",
+  "type": "object",
+  "required": [
+    "family_id",
+    "family_hash",
+    "exception_type",
+    "normalized_message",
+    "representative_test",
+    "representative_traceback_excerpt",
+    "failed_tests",
+    "suspected_owner",
+    "suspected_root_cause",
+    "first_seen_at"
+  ],
+  "properties": {
+    "family_id": { "type": "string" },
+    "family_hash": { "type": "string" },
+    "exception_type": { "type": "string" },
+    "normalized_message": { "type": "string" },
+    "representative_test": { "type": ["string", "null"] },
+    "representative_traceback_excerpt": { "type": "string" },
+    "failed_tests": { "type": "array", "items": { "type": "string" } },
+    "suspected_owner": { "type": "string" },
+    "suspected_root_cause": { "type": "string" },
+    "first_seen_at": { "type": "string" }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,52 @@
+{
+  "command": "python -m unittest discover -s tests -t .",
+  "counts": {
+    "errors": 0,
+    "failures": 1,
+    "skipped": 0,
+    "tests_run": 2
+  },
+  "duration_seconds": 1.0,
+  "environment_path": ".aide.local/test-runs/sample/environment.json",
+  "exit_code": 1,
+  "exit_code_path": ".aide.local/test-runs/sample/full_unittest_exit_code.txt",
+  "failed_modules": [
+    "sample_tests"
+  ],
+  "failed_tests": [
+    "test_alpha (sample_tests.SampleCase.test_alpha)"
+  ],
+  "failure_families": [
+    {
+      "exception_type": "AssertionError",
+      "failed_tests": [
+        "test_alpha (sample_tests.SampleCase.test_alpha)"
+      ],
+      "family_hash": "sample1234567890",
+      "family_id": "unittest-sample1234567890",
+      "first_seen_at": "2026-05-26T00:00:00Z",
+      "normalized_message": "1 != 2",
+      "representative_test": "test_alpha (sample_tests.SampleCase.test_alpha)",
+      "representative_traceback_excerpt": "AssertionError: 1 != 2",
+      "suspected_owner": "unknown",
+      "suspected_root_cause": "unknown"
+    }
+  ],
+  "finished_at": "2026-05-26T00:00:01Z",
+  "generated_by": "scripts/run_full_unittest_discovery.py",
+  "git": {
+    "branch": "dev",
+    "head": "sample",
+    "working_tree_clean": true
+  },
+  "schema_version": "full_unittest_summary.v0",
+  "paths_touched": [
+    "sample_tests.py"
+  ],
+  "paths_touched_path": ".aide.local/test-runs/sample/paths_touched.txt",
+  "started_at": "2026-05-26T00:00:00Z",
+  "status": "fail",
+  "stderr_path": ".aide.local/test-runs/sample/full_unittest_stderr.txt",
+  "stdout_path": ".aide.local/test-runs/sample/full_unittest_stdout.txt",
+  "tail_excerpt": "FAILED (failures=1)"
+}

@@ -1,0 +1,9 @@
+{
+  "schema_version": "ci_full_discovery_harness_workflow_matrix.v0",
+  "task": "CI-FULL-DISCOVERY-HARNESS-00",
+  "workflows": [
+    {"path": ".github/workflows/quick-lanes.yml", "triggers": ["push", "workflow_dispatch"], "runs_full_discovery": false, "uploads_artifacts": true},
+    {"path": ".github/workflows/full-discovery.yml", "triggers": ["workflow_dispatch", "schedule"], "runs_full_discovery": true, "uploads_artifacts": true},
+    {"path": ".github/workflows/promotion-gate.yml", "triggers": ["workflow_dispatch"], "runs_full_discovery": true, "uploads_artifacts": true}
+  ]
+}

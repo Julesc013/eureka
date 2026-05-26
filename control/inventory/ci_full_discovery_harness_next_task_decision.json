@@ -1,0 +1,8 @@
+{
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "recommended_next_task": "SOURCE-SNAPSHOT-BASELINE-CLOSEOUT-01 - Close source/snapshot validation debt using external full-discovery handoff",
+  "requires_external_full_discovery_handoff": true,
+  "schema_version": "ci_full_discovery_harness_next_task_decision.v0",
+  "task": "CI-FULL-DISCOVERY-HARNESS-00"
+}

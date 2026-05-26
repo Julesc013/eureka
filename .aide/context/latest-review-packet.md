@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (4480 chars, 1120 approximate tokens)
+- `.aide/context/latest-task-packet.md` (3412 chars, 853 approximate tokens)
 
 ## Context Packet Reference
 
@@ -33,31 +33,31 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Changed Files Summary
 
-- allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
+- unknown: `.aide/context/latest-review-packet.md` (M; does not match active task allowed paths)
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/DEV-TO-MAIN-PROMOTION-REVIEW-03` (??; matches active task allowed path)
-- allowed: `.aide/queue/SOURCE-SNAPSHOT-BASELINE-CLOSEOUT-01` (??; matches active task allowed path)
-- allowed: `.aide/queue/index.yaml` (M; matches active task allowed path)
-- allowed: `.aide/reports/eureka-repo-health.json` (M; matches active task allowed path)
-- allowed: `.aide/reports/eureka-repo-health.md` (M; matches active task allowed path)
-- allowed: `control/audits/source-snapshot-baseline-closeout-01-v0` (??; matches active task allowed path)
-- allowed: `control/inventory/snapshot_relay_result.json` (M; matches active task allowed path)
-- allowed: `control/inventory/source_action_kernel_result.json` (M; matches active task allowed path)
-- allowed: `control/inventory/source_snapshot_closeout_boundary_report.json` (??; matches active task allowed path)
-- allowed: `control/inventory/source_snapshot_closeout_branch_state.json` (??; matches active task allowed path)
-- allowed: `control/inventory/source_snapshot_closeout_failure_inventory.json` (??; matches active task allowed path)
-- allowed: `control/inventory/source_snapshot_closeout_failure_repair_log.json` (??; matches active task allowed path)
-- allowed: `control/inventory/source_snapshot_closeout_full_discovery_result.json` (??; matches active task allowed path)
-- allowed: `control/inventory/source_snapshot_closeout_input_state.json` (??; matches active task allowed path)
-- allowed: `control/inventory/source_snapshot_closeout_next_task_decision.json` (??; matches active task allowed path)
-- allowed: `control/inventory/source_snapshot_closeout_repair_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/source_snapshot_closeout_result.json` (??; matches active task allowed path)
-- allowed: `control/inventory/source_snapshot_closeout_scope_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/source_snapshot_closeout_validation_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/source_wave_result.json` (M; matches active task allowed path)
-- allowed: `docs/operations/POST_SOURCE_SNAPSHOT_CLOSEOUT_PLAN.md` (??; matches active task allowed path)
-- allowed: `docs/operations/SOURCE_SNAPSHOT_BASELINE_CLOSEOUT.md` (??; matches active task allowed path)
-- additional changed paths omitted from compact packet: 3; see task evidence changed-files report
+- unknown: `.aide/policies/long_test_token_discipline.md` (??; does not match active task allowed paths)
+- unknown: `.aide/policies/test_execution_policy.md` (??; does not match active task allowed paths)
+- unknown: `.aide/queue/CI-FULL-DISCOVERY-HARNESS-00` (??; does not match active task allowed paths)
+- unknown: `.aide/queue/DEV-TO-MAIN-PROMOTION-REVIEW-03/task.yaml` (M; does not match active task allowed paths)
+- unknown: `.aide/queue/PUBLIC-ALPHA-READONLY-00/task.yaml` (M; does not match active task allowed paths)
+- allowed: `.aide/queue/SOURCE-SNAPSHOT-BASELINE-CLOSEOUT-01/task.yaml` (M; matches active task allowed path)
+- unknown: `.aide/queue/index.yaml` (M; does not match active task allowed paths)
+- unknown: `.aide/reports/eureka-repo-health.json` (M; does not match active task allowed paths)
+- unknown: `.aide/reports/eureka-repo-health.md` (M; does not match active task allowed paths)
+- unknown: `.github/workflows/full-discovery.yml` (??; does not match active task allowed paths)
+- unknown: `.github/workflows/promotion-gate.yml` (??; does not match active task allowed paths)
+- unknown: `.github/workflows/quick-lanes.yml` (??; does not match active task allowed paths)
+- unknown: `AGENTS.md` (M; does not match active task allowed paths)
+- unknown: `contracts/testing/external_full_discovery_handoff.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/testing/failure_family.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/testing/full_unittest_summary.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/testing/test_run_artifact_manifest.v0.json` (??; does not match active task allowed paths)
+- unknown: `control/audits/ci-full-discovery-harness-00-v0` (??; does not match active task allowed paths)
+- unknown: `control/inventory/ci_full_discovery_harness_artifact_matrix.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/ci_full_discovery_harness_failure_repair_log.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/ci_full_discovery_harness_input_state.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/ci_full_discovery_harness_next_task_decision.json` (??; does not match active task allowed paths)
+- additional changed paths omitted from compact packet: 30; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -67,8 +67,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 6845
-- approx_tokens: 1712
+- chars: 6841
+- approx_tokens: 1711
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

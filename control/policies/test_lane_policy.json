@@ -1,7 +1,8 @@
 {
   "schema_version": "test_lane_policy.v0",
   "task": "TEST-LANE-ROUTER-01",
-  "doctrine": "Fast task gates select L0/L1/L2 by impact; promotion gates require L3 full discovery and L4 promotion/release checks.",
+  "doctrine": "Fast task gates select L0/L1/L2 by impact; promotion gates require L3 full discovery through an artifact harness and L4 promotion/release checks.",
+  "long_test_token_discipline": "Commands expected to exceed 120 seconds must run through a repo-local harness or CI, capture stdout/stderr artifacts, and produce a compact JSON summary for AI review.",
   "full_discovery_per_commit_required": false,
   "full_discovery_for_promotion_required": true,
   "skip_reasons_required": true,
@@ -40,6 +41,14 @@
     "full discovery remains required before promotion",
     "full discovery remains required before a high-risk runtime bridge"
   ],
+  "full_discovery_execution": {
+    "normal_ai_edit_command": "python scripts/eureka_test_select.py --changed --failed-first --json",
+    "harness_command": "python scripts/run_full_unittest_discovery.py",
+    "direct_command": "python -m unittest discover -s tests -t .",
+    "direct_command_allowed_in_ai_loop": false,
+    "default_summary_root": ".aide.local/test-runs/",
+    "github_actions_workflow": "Full Discovery"
+  },
   "promotion_refusal_conditions": [
     "known blocking failure is new",
     "known blocking failure is reproduced",

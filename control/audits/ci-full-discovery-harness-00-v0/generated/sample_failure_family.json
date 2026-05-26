@@ -1,0 +1,14 @@
+{
+  "exception_type": "AssertionError",
+  "failed_tests": [
+    "test_alpha (sample_tests.SampleCase.test_alpha)"
+  ],
+  "family_hash": "sample1234567890",
+  "family_id": "unittest-sample1234567890",
+  "first_seen_at": "2026-05-26T00:00:00Z",
+  "normalized_message": "1 != 2",
+  "representative_test": "test_alpha (sample_tests.SampleCase.test_alpha)",
+  "representative_traceback_excerpt": "AssertionError: 1 != 2",
+  "suspected_owner": "unknown",
+  "suspected_root_cause": "unknown"
+}

@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/testing/external_full_discovery_handoff.v0.json",
+  "title": "External Full Discovery Handoff",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "task",
+    "command",
+    "suggested_output_dir",
+    "run_outside_ai",
+    "expected_duration_class",
+    "paste_back",
+    "do_not_paste",
+    "focused_validation_status",
+    "reason_required"
+  ],
+  "properties": {
+    "schema_version": { "const": "external_full_discovery_handoff.v0" },
+    "task": { "type": "string" },
+    "command": { "type": "string" },
+    "suggested_output_dir": { "type": "string" },
+    "run_outside_ai": { "const": true },
+    "expected_duration_class": { "enum": ["long", "very_long"] },
+    "paste_back": { "type": "array", "items": { "type": "string" } },
+    "do_not_paste": { "type": "array", "items": { "type": "string" } },
+    "focused_validation_status": { "type": "string" },
+    "reason_required": { "type": "string" }
+  },
+  "additionalProperties": true
+}

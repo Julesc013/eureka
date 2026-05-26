@@ -1,19 +1,20 @@
 {
   "branch": "dev",
-  "current_recommended_task": "SOURCE-SNAPSHOT-BASELINE-CLOSEOUT-01-CONTINUE - Repair full-discovery checksum/public-index/queue/leakage blockers",
+  "current_recommended_task": "SOURCE-SNAPSHOT-BASELINE-CLOSEOUT-01 - Close source/snapshot validation debt using external full-discovery handoff",
   "deployment_performed": false,
+  "full_discovery_policy": "external_handoff_required_for_ai_sessions",
   "full_unittest_discovery_count": 4984,
   "full_unittest_discovery_errors": 46,
   "full_unittest_discovery_failures": 45,
-  "full_unittest_discovery_status": "fail",
-  "head": "833095f056e808b28a599361f70c10f22137ee56",
-  "origin_dev": "833095f056e808b28a599361f70c10f22137ee56",
+  "full_unittest_discovery_status": "fail_known_debt_externalized",
+  "head": "7156820925114d9c22f517435f5dfeb99f262091",
+  "origin_dev": "7156820925114d9c22f517435f5dfeb99f262091",
   "origin_main": "e582028b1db977e28ba6ddc0ed284ca6ccf48234",
   "production_readiness_claimed": false,
   "public_launch_readiness_claimed": false,
   "schema_version": "eureka_repo_health.v0",
-  "snapshot_relay_status": "completed_pass_with_warnings_closeout_blocked",
-  "source_action_kernel_status": "completed_pass_with_warnings_closeout_blocked",
-  "source_snapshot_closeout_status": "blocked",
-  "source_wave_status": "completed_pass_with_warnings_closeout_blocked"
+  "snapshot_relay_status": "completed_pass_with_warnings_external_full_discovery_required",
+  "source_action_kernel_status": "completed_pass_with_warnings_external_full_discovery_required",
+  "source_snapshot_closeout_status": "planned_external_full_discovery_handoff",
+  "source_wave_status": "completed_pass_with_warnings_external_full_discovery_required"
 }

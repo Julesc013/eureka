@@ -11,9 +11,12 @@ Promotion requires full validation:
 
 `scripts/eureka_test_select.py --promotion --json` must include:
 
-- `python -m unittest discover -s tests -t .`
+- `python scripts/run_full_unittest_discovery.py`
 - `full_discovery_required: true`
 - `promotion_allowed: false` when active blocking failures remain
 
-Per-commit selected lanes may defer full discovery, but promotion may not.
+Per-commit selected lanes may defer full discovery, but promotion may not. The
+harness wraps the underlying `python -m unittest discover -s tests -t .` command
+and writes stdout, stderr, exit code, environment, failure-family, failed-test,
+and compact JSON summary artifacts before returning the discovery exit code.
 

@@ -1,2 +1,7 @@
 task_id: PUBLIC-ALPHA-READONLY-00
-status: planned
+status: planned_after_promotion_review
+requires:
+  - SOURCE-SNAPSHOT-BASELINE-CLOSEOUT-01
+  - DEV-TO-MAIN-PROMOTION-REVIEW-03
+  - external_full_discovery_summary_pass
+readiness_claimed: false

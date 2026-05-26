@@ -1,0 +1,21 @@
+{
+  "policies": [
+    {
+      "policy": "no_ai_babysitting",
+      "requirement": "AI agents must not babysit long-running test commands.",
+      "implemented_in": ["AGENTS.md", "docs/operations/AI_TEST_TOKEN_DISCIPLINE.md", ".aide/policies/long_test_token_discipline.md"]
+    },
+    {
+      "policy": "external_full_discovery",
+      "requirement": "Full unittest discovery runs through local harness or CI.",
+      "implemented_in": ["scripts/run_full_unittest_discovery.py", ".github/workflows/full-discovery.yml"]
+    },
+    {
+      "policy": "compact_ai_handoff",
+      "requirement": "AI reads full_unittest_summary.json, not full logs.",
+      "implemented_in": ["contracts/testing/full_unittest_summary.v0.json", "scripts/validate_test_run_summary.py"]
+    }
+  ],
+  "schema_version": "ci_full_discovery_harness_policy_matrix.v0",
+  "task": "CI-FULL-DISCOVERY-HARNESS-00"
+}

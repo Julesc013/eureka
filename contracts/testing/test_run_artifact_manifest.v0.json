@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/testing/test_run_artifact_manifest.v0.json",
+  "title": "Test Run Artifact Manifest",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "run_id",
+    "artifact_root",
+    "artifacts",
+    "logs_committed",
+    "default_local_root",
+    "summary_artifact",
+    "created_by"
+  ],
+  "properties": {
+    "schema_version": { "const": "test_run_artifact_manifest.v0" },
+    "run_id": { "type": "string" },
+    "artifact_root": { "type": "string" },
+    "default_local_root": { "type": "string" },
+    "summary_artifact": { "type": "string" },
+    "logs_committed": { "const": false },
+    "created_by": { "type": "string" },
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["path", "kind", "committed_by_default"],
+        "properties": {
+          "path": { "type": "string" },
+          "kind": { "type": "string" },
+          "committed_by_default": { "type": "boolean" }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

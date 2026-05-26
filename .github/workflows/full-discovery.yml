@@ -1,0 +1,54 @@
+name: Full Discovery
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - dev
+      - main
+  schedule:
+    - cron: "37 3 * * *"
+
+permissions:
+  contents: read
+
+jobs:
+  full-discovery:
+    name: Full unittest discovery
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Record changed paths
+        shell: bash
+        run: |
+          mkdir -p ".aide.local/test-runs/github-${{ github.run_id }}"
+          if [ "${{ github.event_name }}" = "push" ] && [ -n "${{ github.event.before }}" ]; then
+            git diff --name-only "${{ github.event.before }}" "${{ github.sha }}" > ".aide.local/test-runs/github-${{ github.run_id }}/paths_touched.txt" || true
+          else
+            git diff --name-only HEAD~1..HEAD > ".aide.local/test-runs/github-${{ github.run_id }}/paths_touched.txt" || true
+          fi
+
+      - name: Run full discovery harness
+        run: |
+          python scripts/run_full_unittest_discovery.py \
+            --out ".aide.local/test-runs/github-${{ github.run_id }}" \
+            --paths-touched-file ".aide.local/test-runs/github-${{ github.run_id }}/paths_touched.txt"
+
+      - name: Upload full discovery artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: full-discovery-${{ github.run_id }}
+          path: .aide.local/test-runs/github-${{ github.run_id }}/
+          retention-days: 14

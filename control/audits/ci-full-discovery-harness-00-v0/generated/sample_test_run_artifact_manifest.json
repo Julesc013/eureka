@@ -1,0 +1,19 @@
+{
+  "artifact_root": ".aide.local/test-runs/sample",
+  "artifacts": [
+    {"committed_by_default": false, "kind": "stdout_log", "path": "full_unittest_stdout.txt"},
+    {"committed_by_default": false, "kind": "stderr_log", "path": "full_unittest_stderr.txt"},
+    {"committed_by_default": false, "kind": "exit_code", "path": "full_unittest_exit_code.txt"},
+    {"committed_by_default": false, "kind": "compact_summary", "path": "full_unittest_summary.json"},
+    {"committed_by_default": false, "kind": "failure_families", "path": "failure_families.json"},
+    {"committed_by_default": false, "kind": "failed_tests", "path": "failed_tests.txt"},
+    {"committed_by_default": false, "kind": "paths_touched", "path": "paths_touched.txt"},
+    {"committed_by_default": false, "kind": "environment", "path": "environment.json"}
+  ],
+  "created_by": "scripts/run_full_unittest_discovery.py",
+  "default_local_root": ".aide.local/test-runs/<run-id>",
+  "logs_committed": false,
+  "run_id": "sample",
+  "schema_version": "test_run_artifact_manifest.v0",
+  "summary_artifact": "full_unittest_summary.json"
+}

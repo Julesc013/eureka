@@ -66,7 +66,7 @@ class EurekaTestSelectScriptTests(unittest.TestCase):
             payload = self.run_selector("--repo-root", str(root), "--promotion")
 
         commands = {item["command"] for item in payload["selected_commands"]}
-        self.assertIn("python -m unittest discover -s tests -t .", commands)
+        self.assertIn("python scripts/run_full_unittest_discovery.py", commands)
         self.assertTrue(payload["full_discovery_required"])
         self.assertFalse(payload["promotion_allowed"])
         self.assertIn("L4_promotion_release", payload["selected_lanes"])

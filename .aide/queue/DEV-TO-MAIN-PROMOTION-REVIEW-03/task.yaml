@@ -1,6 +1,10 @@
-
 task_id: DEV-TO-MAIN-PROMOTION-REVIEW-03
 status: blocked_pending_source_snapshot_closeout
 requires:
   - SOURCE-SNAPSHOT-BASELINE-CLOSEOUT-01
-  - full_unittest_discovery_pass
+  - external_full_discovery_summary_pass
+  - no_active_full_discovery_failure_families
+full_discovery_policy:
+  run_inside_ai: false
+  accepted_evidence: full_unittest_summary.json
+  waiting_status: WAITING_FOR_EXTERNAL_FULL_DISCOVERY

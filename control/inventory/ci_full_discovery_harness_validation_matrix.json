@@ -1,0 +1,23 @@
+{
+  "commands": [
+    {"command": "git diff --check", "status": "pass"},
+    {"command": "python -m unittest tests.scripts.test_summarize_unittest_log", "status": "pass"},
+    {"command": "python -m unittest tests.scripts.test_validate_test_run_summary", "status": "pass"},
+    {"command": "python -m unittest tests.scripts.test_run_full_unittest_discovery", "status": "pass"},
+    {"command": "python -m unittest tests.scripts.test_run_failed_tests", "status": "pass"},
+    {"command": "python -m unittest tests.operations.test_ci_full_discovery_harness", "status": "pass"},
+    {"command": "python scripts/eureka_test_select.py --changed --failed-first --json", "status": "pass"},
+    {"command": "python scripts/check_architecture_boundaries.py", "status": "pass"},
+    {"command": "python scripts/check_generated_artifact_cleanliness.py --check --json", "status": "uncommitted_generated_audit_pack", "note": "reports added control/audits/ci-full-discovery-harness-00-v0/ while this task is uncommitted; rerun after commit"},
+    {"command": "python scripts/validate_repo_structure_canon.py --strict --json", "status": "known_strict_warning", "note": "strict mode exits nonzero for existing scripts_large_tool_tree warning; new harness scripts use the repo wrapper convention"},
+    {"command": "py -3 .aide/scripts/aide_lite.py doctor", "status": "pass"},
+    {"command": "py -3 .aide/scripts/aide_lite.py validate", "status": "pass"},
+    {"command": "py -3 .aide/scripts/aide_lite.py test", "status": "pass"},
+    {"command": "py -3 .aide/scripts/aide_lite.py selftest", "status": "pass"},
+    {"command": "py -3 .aide/scripts/aide_lite.py verify", "status": "warn_no_errors"},
+    {"command": "py -3 .aide/scripts/aide_lite.py review-pack", "status": "pass"}
+  ],
+  "explicitly_not_run": ["python -m unittest discover -s tests -t ."],
+  "schema_version": "ci_full_discovery_harness_validation_matrix.v0",
+  "task": "CI-FULL-DISCOVERY-HARNESS-00"
+}
