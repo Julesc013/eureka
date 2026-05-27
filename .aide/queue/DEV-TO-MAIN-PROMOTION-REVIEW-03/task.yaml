@@ -1,10 +1,21 @@
 task_id: DEV-TO-MAIN-PROMOTION-REVIEW-03
-status: blocked_pending_source_snapshot_closeout
+status: completed
+result: pass
 requires:
   - SOURCE-SNAPSHOT-BASELINE-CLOSEOUT-01
   - external_full_discovery_summary_pass
   - no_active_full_discovery_failure_families
+promotion:
+  scope: source_snapshot_baseline
+  performed: true
+  method: fast_forward_only
+  origin_main_equals_origin_dev: true
+  force_push_performed: false
+  rebase_performed: false
+  history_rewrite_performed: false
 full_discovery_policy:
   run_inside_ai: false
   accepted_evidence: full_unittest_summary.json
-  waiting_status: WAITING_FOR_EXTERNAL_FULL_DISCOVERY
+  result: pass
+  tests_run: 5008
+next_task: PUBLIC-ALPHA-READONLY-00

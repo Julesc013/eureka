@@ -1,6 +1,13 @@
 task_id: SOURCE-SNAPSHOT-BASELINE-CLOSEOUT-01
-status: WAITING_FOR_EXTERNAL_FULL_DISCOVERY
-result: external_full_discovery_handoff_created
+status: completed
+result: pass
+external_full_discovery:
+  status: pass
+  tests_run: 5008
+  failures: 0
+  errors: 0
+  exit_code: 0
+  expected_refusal_trace_nonblocking: true
 required_flow:
   - run_focused_validators
   - run_focused_tests

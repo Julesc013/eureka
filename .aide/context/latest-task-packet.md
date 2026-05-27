@@ -2,11 +2,11 @@
 
 ## PHASE
 
-UNSPECIFIED - SOURCE-SNAPSHOT-BASELINE-CLOSEOUT-01
+PUBLIC-ALPHA-READONLY-00
 
 ## GOAL
 
-SOURCE-SNAPSHOT-BASELINE-CLOSEOUT-01
+Public reviewed-index-only alpha foundation.
 
 ## WHY
 
@@ -16,6 +16,9 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 - `AGENTS.md`
 - `.aide/queue/index.yaml`
+- `.aide/queue/PUBLIC-ALPHA-READONLY-00/task.yaml`
+- `control/inventory/dev_to_main_promotion_03_result.json`
+- `control/inventory/source_snapshot_closeout_result.json`
 - `.aide/memory/project-state.md`
 - `.aide/memory/decisions.md`
 - `.aide/memory/open-risks.md`
@@ -89,18 +92,12 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 - `py -3 .aide/scripts/aide_lite.py doctor`
 - `py -3 .aide/scripts/aide_lite.py validate`
-- `py -3 .aide/scripts/aide_lite.py snapshot`
-- `py -3 .aide/scripts/aide_lite.py index`
-- `py -3 .aide/scripts/aide_lite.py context`
-- `py -3 .aide/scripts/aide_lite.py pack --task "AIDE-EVAL-GREEN-01"`
 - `py -3 .aide/scripts/aide_lite.py test`
 - `py -3 .aide/scripts/aide_lite.py selftest`
 - `py -3 .aide/scripts/aide_lite.py verify`
 - `py -3 .aide/scripts/aide_lite.py review-pack`
-- `py -3 .aide/scripts/aide_lite.py eval run`
 - `python scripts/check_architecture_boundaries.py`
 - `python scripts/check_generated_artifact_cleanliness.py --check --json`
-- `python -m unittest discover -s tests -t .`
 - `git diff --check`
 
 ## COMMITS
@@ -120,8 +117,7 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 ## NON_GOALS
 
-- No Eureka product behavior change.
-- No source probes, extraction, model/provider calls, deployment, production-readiness claim, public-launch claim, main promotion, force-push, history rewrite, SYN implementation, or F0 implementation.
+- No source probes, extraction, model/provider calls, deployment, production-readiness claim, public-launch claim, force-push, history rewrite, SYN implementation, or F0 implementation.
 - No Gateway, provider calls, live model routing, local model setup, exact tokenizer, provider billing ledger, Runtime, Service, Commander, Mobile, MCP/A2A, UI, host/app implementation, or autonomous loop unless a future reviewed queue item explicitly authorizes it.
 
 ## ACCEPTANCE

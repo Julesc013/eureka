@@ -8,7 +8,7 @@
 | `python scripts/validate_source_wave.py` | PASS |
 | `python scripts/validate_snapshot_relay.py` | PASS |
 | `python scripts/check_architecture_boundaries.py` | PASS |
-| `python scripts/check_generated_artifact_cleanliness.py --check --json` | post_commit_required |
+| `python scripts/check_generated_artifact_cleanliness.py --check --json` | PASS |
 | `python scripts/validate_dev_to_main_promotion_03.py` | PASS |
 | `python -m unittest tests.operations.test_dev_to_main_promotion_03` | PASS |
 | `python -m unittest tests.scripts.test_validate_dev_to_main_promotion_03` | PASS |
@@ -18,5 +18,6 @@
 | `python .aide/scripts/aide_lite.py selftest` | PASS |
 | `python .aide/scripts/aide_lite.py verify` | PASS_WITH_WARNINGS |
 | `python .aide/scripts/aide_lite.py review-pack` | PASS |
+| `git rev-list --left-right --count origin/main...origin/dev` | PASS, `0 0` |
 
 Full unittest discovery was not rerun inside the AI session.

@@ -10,7 +10,8 @@ Initial evidence validation:
 - promotion-03 validator: PASS
 - focused promotion tests: PASS
 - architecture boundaries: PASS
-- generated artifact cleanliness: post_commit_required
+- generated artifact cleanliness: PASS
+- branch equality after promotion: PASS
 - AIDE checks: PASS_WITH_WARNINGS, 0 errors
 
 No full unittest discovery is run inside this AI session.

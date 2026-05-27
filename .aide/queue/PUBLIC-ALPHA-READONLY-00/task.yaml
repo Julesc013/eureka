@@ -1,5 +1,5 @@
 task_id: PUBLIC-ALPHA-READONLY-00
-status: planned_after_promotion_review
+status: current_recommended
 requires:
   - SOURCE-SNAPSHOT-BASELINE-CLOSEOUT-01
   - DEV-TO-MAIN-PROMOTION-REVIEW-03

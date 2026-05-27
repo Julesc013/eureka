@@ -36,8 +36,8 @@
     },
     {
       "command": "python scripts/check_generated_artifact_cleanliness.py --check --json",
-      "status": "post_commit_required",
-      "notes": "Pre-commit run reports the newly added audit pack as uncommitted audit-generated drift; rerun after commit must pass."
+      "status": "pass",
+      "notes": "Post-review commit rerun passed; final post-promotion evidence commit also requires a post-commit rerun."
     },
     {
       "command": "python scripts/validate_dev_to_main_promotion_03.py",
@@ -75,6 +75,11 @@
     {
       "command": "python .aide/scripts/aide_lite.py review-pack",
       "status": "pass"
+    },
+    {
+      "command": "git fetch origin main dev && git rev-list --left-right --count origin/main...origin/dev",
+      "status": "pass",
+      "notes": "Post-promotion branch equality verified as 0 0 before this evidence update."
     }
   ]
 }

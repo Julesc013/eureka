@@ -14,5 +14,12 @@
   "local_dev_equals_origin_dev": true,
   "working_tree_clean_before": true,
   "active_git_operation": false,
-  "promotion_stage": "pre_fast_forward_review"
+  "promotion_stage": "post_fast_forward_verified",
+  "head_after": "5fac451ad1965245435e5ac1ced1624b514021b9",
+  "origin_main_after": "5fac451ad1965245435e5ac1ced1624b514021b9",
+  "origin_dev_after": "5fac451ad1965245435e5ac1ced1624b514021b9",
+  "merge_base_after": "5fac451ad1965245435e5ac1ced1624b514021b9",
+  "ahead_behind_origin_main_origin_dev_after": "0 0",
+  "origin_main_equals_origin_dev_after": true,
+  "working_tree_clean_after": true
 }

@@ -5,6 +5,7 @@ fast-forward-only promotion from `dev` to `main`.
 
 - external full discovery: PASS, 5008 tests
 - source-action/source-wave/snapshot-relay: verified
+- promotion: fast-forwarded, origin/main equals origin/dev
 - next task after promotion: PUBLIC-ALPHA-READONLY-00
 - production/public launch readiness claimed: false
 

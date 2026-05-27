@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (4792 chars, 1198 approximate tokens)
+- `.aide/context/latest-task-packet.md` (4594 chars, 1149 approximate tokens)
 
 ## Context Packet Reference
 
@@ -33,20 +33,23 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Changed Files Summary
 
-- allowed: `control/audits/dev-to-main-promotion-review-03-v0` (??; matches active task allowed path)
-- allowed: `control/inventory/dev_to_main_promotion_03_boundary_report.json` (??; matches active task allowed path)
-- allowed: `control/inventory/dev_to_main_promotion_03_branch_state.json` (??; matches active task allowed path)
-- allowed: `control/inventory/dev_to_main_promotion_03_failure_repair_log.json` (??; matches active task allowed path)
-- allowed: `control/inventory/dev_to_main_promotion_03_input_state.json` (??; matches active task allowed path)
-- allowed: `control/inventory/dev_to_main_promotion_03_next_task_decision.json` (??; matches active task allowed path)
-- allowed: `control/inventory/dev_to_main_promotion_03_result.json` (??; matches active task allowed path)
-- allowed: `control/inventory/dev_to_main_promotion_03_scope_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/dev_to_main_promotion_03_validation_matrix.json` (??; matches active task allowed path)
-- allowed: `docs/operations/DEV_TO_MAIN_PROMOTION_REVIEW_03.md` (??; matches active task allowed path)
-- allowed: `docs/operations/POST_SOURCE_SNAPSHOT_PROMOTION_PLAN.md` (??; matches active task allowed path)
-- allowed: `scripts/validate_dev_to_main_promotion_03.py` (??; matches active task allowed path)
-- allowed: `tests/operations/test_dev_to_main_promotion_03.py` (??; matches active task allowed path)
-- unknown: `tests/scripts/test_validate_dev_to_main_promotion_03.py` (??; does not match active task allowed paths)
+- allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
+- allowed: `.aide/queue/DEV-TO-MAIN-PROMOTION-REVIEW-03/task.yaml` (M; matches active task allowed path)
+- allowed: `.aide/queue/PUBLIC-ALPHA-READONLY-00/task.yaml` (M; matches active task allowed path)
+- allowed: `.aide/queue/SOURCE-SNAPSHOT-BASELINE-CLOSEOUT-01/task.yaml` (M; matches active task allowed path)
+- allowed: `.aide/queue/index.yaml` (M; matches active task allowed path)
+- allowed: `.aide/reports/eureka-repo-health.json` (M; matches active task allowed path)
+- allowed: `.aide/reports/eureka-repo-health.md` (M; matches active task allowed path)
+- allowed: `control/audits/dev-to-main-promotion-review-03-v0/branch_state.md` (M; matches active task allowed path)
+- allowed: `control/audits/dev-to-main-promotion-review-03-v0/dev_to_main_promotion_03_report.json` (M; matches active task allowed path)
+- allowed: `control/audits/dev-to-main-promotion-review-03-v0/generated/sample_summary.md` (M; matches active task allowed path)
+- allowed: `control/audits/dev-to-main-promotion-review-03-v0/promotion_result.md` (M; matches active task allowed path)
+- allowed: `control/audits/dev-to-main-promotion-review-03-v0/validation.md` (M; matches active task allowed path)
+- allowed: `control/audits/dev-to-main-promotion-review-03-v0/validation_matrix.md` (M; matches active task allowed path)
+- allowed: `control/inventory/dev_to_main_promotion_03_branch_state.json` (M; matches active task allowed path)
+- allowed: `control/inventory/dev_to_main_promotion_03_result.json` (M; matches active task allowed path)
+- allowed: `control/inventory/dev_to_main_promotion_03_validation_matrix.json` (M; matches active task allowed path)
+- unknown: `tools/validators/validate_source_snapshot_baseline_closeout.py` (M; does not match active task allowed paths)
 
 ## Validation Summary
 
@@ -56,8 +59,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 5788
-- approx_tokens: 1447
+- chars: 6093
+- approx_tokens: 1524
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:
