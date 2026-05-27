@@ -17,6 +17,7 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
+from scripts.hunt_queue_progress import hunt_queue_current_or_advanced
 from runtime.local.appliance import close_local_appliance, open_local_appliance
 from runtime.local.operator.auth import build_cli_operator_auth_state
 from runtime.local.service import LocalServiceApp
@@ -425,9 +426,7 @@ def validate_runtime_vocabulary(root: Path, errors: list[str]) -> None:
 
 
 def validate_queue(root: Path, errors: list[str]) -> None:
-    queue = root / ".aide" / "queue" / "index.yaml"
-    text = queue.read_text(encoding="utf-8") if queue.is_file() else ""
-    if NEXT_TASK not in text:
+    if not hunt_queue_current_or_advanced(root, TASK_ID, NEXT_TASK):
         errors.append("queue does not point to HUNT-06")
     decision = load_json(root / "control/inventory/hunt_05_next_task_decision.json", "hunt_05_next_task_decision.v0", errors)
     if not str(decision.get("recommended_next_task", "")).startswith(NEXT_TASK):

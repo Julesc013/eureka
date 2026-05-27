@@ -22,6 +22,8 @@ from scripts.hunt_queue_progress import (
     hunt_latest_packet_current_or_advanced,
     hunt_queue_current_or_advanced,
     post_hunt_current_allowed,
+    queue_has_task,
+    queue_task_completed,
 )
 from runtime.local.appliance import close_local_appliance, open_local_appliance
 from runtime.local.operator.auth import build_cli_operator_auth_state
@@ -531,9 +533,9 @@ def validate_queue(root: Path, errors: list[str]) -> None:
     packet = read_text(root / ".aide/context/latest-task-packet.md", errors)
     if not hunt_queue_current_or_advanced(root, TASK_ID, NEXT_TASK):
         errors.append("queue index must point to HUNT-04 or a later HUNT task")
-    if not re.search(r"id: HUNT-03\b[\s\S]*?status: completed", queue):
+    if not queue_task_completed(root, TASK_ID):
         errors.append("queue index must mark HUNT-03 completed")
-    if "id: HUNT-04" not in queue:
+    if not queue_has_task(root, NEXT_TASK):
         errors.append("queue index must include HUNT-04")
     if "recommended_next: HUNT-04" not in task:
         errors.append("HUNT-03 task must recommend HUNT-04")

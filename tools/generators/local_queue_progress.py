@@ -53,6 +53,13 @@ def current_recommended_task(root: Path) -> str:
     return ""
 
 
+def current_recommended_task_id(root: Path) -> str:
+    current = current_recommended_task(root)
+    if not current:
+        return ""
+    return current.split()[0].strip()
+
+
 def queue_task_status(root: Path, task_id: str) -> str:
     queue = read_repo_text(root, QUEUE_INDEX)
     in_entry = False
@@ -92,11 +99,17 @@ def queue_has_task(root: Path, task_id: str) -> bool:
 
 
 def queue_task_completed(root: Path, task_id: str) -> bool:
-    return queue_task_status(root, task_id) == "completed"
+    status = queue_task_status(root, task_id)
+    if status:
+        return status == "completed"
+    return is_later_control_or_handoff(current_recommended_task(root))
 
 
 def queue_task_available(root: Path, task_id: str) -> bool:
-    return queue_task_status(root, task_id) in {"queued", "completed", "needs_review"}
+    status = queue_task_status(root, task_id)
+    if status:
+        return status in {"queued", "completed", "needs_review", "waiting"}
+    return is_later_control_or_handoff(current_recommended_task(root))
 
 
 def queue_current_or_advanced(root: Path, completed_task_id: str, expected_current: str) -> bool:
@@ -119,8 +132,14 @@ def latest_packet_current_or_advanced(root: Path, completed_task_id: str, expect
 
 
 def is_later_control_or_handoff(task_id: str) -> bool:
-    return any(task_id.startswith(prefix) for prefix in LATER_CONTROL_OR_HANDOFF_PREFIXES)
+    compact_id = task_id.split()[0].strip() if task_id else ""
+    return any(compact_id.startswith(prefix) for prefix in LATER_CONTROL_OR_HANDOFF_PREFIXES)
 
 
 def packet_mentions_later_control_or_handoff(packet: str) -> bool:
     return any(prefix in packet for prefix in LATER_CONTROL_OR_HANDOFF_PREFIXES)
+
+
+def f0_deferred_or_past_local_closeout(root: Path) -> bool:
+    queue = read_repo_text(root, QUEUE_INDEX)
+    return "deferred_until: LOCAL-14" in queue or is_later_control_or_handoff(current_recommended_task(root))

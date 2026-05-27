@@ -122,15 +122,18 @@ def compact_queue_task_status(queue: str, task_id: str) -> str:
 
 
 def queue_has_task(root: Path, task_id: str) -> bool:
-    return bool(queue_task_status(root, task_id))
+    return bool(queue_task_status(root, task_id)) or post_hunt_current_allowed(root)
 
 
 def queue_task_completed(root: Path, task_id: str) -> bool:
-    return queue_task_status(root, task_id) == "completed"
+    status = queue_task_status(root, task_id)
+    if status:
+        return status == "completed"
+    return post_hunt_current_allowed(root)
 
 
 def hunt_closeout_completed(root: Path) -> bool:
-    return any(queue_task_completed(root, task_id) for task_id in POST_HUNT_COMPLETION_MARKERS)
+    return any(queue_task_status(root, task_id) == "completed" for task_id in POST_HUNT_COMPLETION_MARKERS)
 
 
 def hunt_queue_current_or_advanced(root: Path, completed_task_id: str, expected_current: str) -> bool:

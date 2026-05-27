@@ -17,6 +17,12 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
+from scripts.local_queue_progress import (
+    f0_deferred_or_past_local_closeout,
+    queue_current_or_advanced,
+    queue_task_available,
+    queue_task_completed,
+)
 from runtime.local.appliance import (
     LocalApplianceError,
     LocalReadOnlyStoreMutationError,
@@ -418,13 +424,13 @@ def validate_queue(root: Path, errors: list[str]) -> None:
     queue = read_text(root / ".aide/queue/index.yaml", errors)
     task = read_text(root / ".aide/queue/LOCAL-03/task.yaml", errors)
     next_task = read_text(root / ".aide/queue/LOCAL-04/task.yaml", errors)
-    if "current_recommended_task: LOCAL-04" not in queue:
+    if not queue_current_or_advanced(root, TASK_ID, NEXT_TASK):
         errors.append("queue index must point to LOCAL-04")
-    if "id: LOCAL-03" not in queue or "status: completed" not in queue:
+    if not queue_task_completed(root, TASK_ID):
         errors.append("queue index must mark LOCAL-03 completed")
-    if "id: LOCAL-04" not in queue or "status: queued" not in queue:
+    if not queue_task_available(root, NEXT_TASK):
         errors.append("queue index must include queued LOCAL-04")
-    if "deferred_until: LOCAL-14" not in queue:
+    if not f0_deferred_or_past_local_closeout(root):
         errors.append("queue index must keep F0 deferred until LOCAL-14")
     if "recommended_next: LOCAL-04" not in task:
         errors.append("LOCAL-03 task must recommend LOCAL-04")

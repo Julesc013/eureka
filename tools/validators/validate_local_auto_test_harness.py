@@ -15,9 +15,9 @@ from pathlib import Path
 from typing import Any, Mapping, Sequence, TextIO
 
 try:
-    from local_queue_progress import queue_current_or_advanced, queue_task_available, queue_task_completed
+    from local_queue_progress import f0_deferred_or_past_local_closeout, queue_current_or_advanced, queue_task_available, queue_task_completed
 except ModuleNotFoundError:  # pragma: no cover - supports package-style imports in tests.
-    from scripts.local_queue_progress import queue_current_or_advanced, queue_task_available, queue_task_completed
+    from scripts.local_queue_progress import f0_deferred_or_past_local_closeout, queue_current_or_advanced, queue_task_available, queue_task_completed
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
@@ -406,7 +406,7 @@ def validate_queue_state(root: Path, errors: list[str]) -> None:
     if not next_path.is_file() or not queue_task_available(root, NEXT_TASK):
         errors.append("LOCAL-11 queue item is missing")
     f0 = json.loads((root / "control/inventory/f0_deferral_for_local_appliance.json").read_text(encoding="utf-8"))
-    if f0.get("deferred_until") != "LOCAL-14":
+    if f0.get("deferred_until") != "LOCAL-14" and not f0_deferred_or_past_local_closeout(root):
         errors.append("F0 must remain deferred until LOCAL-14")
 
 

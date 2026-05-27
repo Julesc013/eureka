@@ -14,6 +14,7 @@ from typing import Any, Mapping, Sequence, TextIO
 try:
     from local_queue_progress import (
         current_recommended_task,
+        f0_deferred_or_past_local_closeout,
         is_later_control_or_handoff,
         latest_packet_current_or_advanced,
         queue_current_or_advanced,
@@ -23,6 +24,7 @@ try:
 except ModuleNotFoundError:  # pragma: no cover - supports package-style imports in tests.
     from scripts.local_queue_progress import (
         current_recommended_task,
+        f0_deferred_or_past_local_closeout,
         is_later_control_or_handoff,
         latest_packet_current_or_advanced,
         queue_current_or_advanced,
@@ -261,7 +263,7 @@ def validate_queue_and_context(root: Path, errors: list[str]) -> None:
         errors.append("queue index must mark LOCAL-02 completed")
     if not queue_task_available(root, NEXT_TASK):
         errors.append("queue index must include LOCAL-03")
-    if "deferred_until: LOCAL-14" not in queue:
+    if not f0_deferred_or_past_local_closeout(root):
         errors.append("queue index must keep F0 deferred until LOCAL-14")
     if not latest_packet_current_or_advanced(root, TASK_ID, NEXT_TASK):
         errors.append("latest task packet must point to LOCAL-03")

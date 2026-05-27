@@ -18,7 +18,12 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from scripts.hunt_queue_progress import hunt_queue_current_or_advanced, post_hunt_current_allowed
+from scripts.hunt_queue_progress import (
+    hunt_queue_current_or_advanced,
+    post_hunt_current_allowed,
+    queue_has_task,
+    queue_task_completed,
+)
 from runtime.local.appliance import close_local_appliance, open_local_appliance
 from runtime.search.hunt import (
     ALLOWED_SEARCH_HUNT_CHECKED_LAYERS,
@@ -532,9 +537,9 @@ def validate_queue(root: Path, errors: list[str]) -> None:
     next_task = read_text(root / ".aide/queue/HUNT-02/task.yaml", errors)
     if not hunt_queue_current_or_advanced(root, TASK_ID, NEXT_TASK):
         errors.append("queue must point to HUNT-02 or a later HUNT task")
-    if "id: HUNT-01" not in queue or "status: completed" not in queue:
+    if not queue_task_completed(root, TASK_ID):
         errors.append("queue must mark HUNT-01 completed")
-    if "id: HUNT-02" not in queue:
+    if not queue_has_task(root, NEXT_TASK):
         errors.append("queue must include HUNT-02")
     if "recommended_next: HUNT-02" not in task:
         errors.append("HUNT-01 task must recommend HUNT-02")

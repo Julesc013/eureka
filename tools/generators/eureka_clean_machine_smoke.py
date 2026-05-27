@@ -38,6 +38,8 @@ def run_smoke(*, repo: Path, instance: Path, port: int) -> dict[str, Any]:
         raise ValueError(f"repo does not exist: {repo_root}")
     instance_path = instance if instance.is_absolute() else repo_root / instance
     commands: list[dict[str, Any]] = []
+    site_dist_before = set(git_status_paths(repo_root, "site/dist"))
+    master_index_before = set(git_status_paths(repo_root, "site/dist/data/public_index"))
 
     init = run_script(repo_root, "scripts/eureka_init_instance.py", "--instance", str(instance_path), "--json")
     commands.append(command_record("init_instance", init))
@@ -75,8 +77,8 @@ def run_smoke(*, repo: Path, instance: Path, port: int) -> dict[str, Any]:
     commands.append(command_record("shutdown_check", shutdown))
     shutdown_payload = parse_json(shutdown.stdout)
 
-    site_dist_mutated = bool(git_status_paths(repo_root, "site/dist"))
-    master_index_mutated = bool(git_status_paths(repo_root, "site/dist/data/public_index"))
+    site_dist_mutated = set(git_status_paths(repo_root, "site/dist")) != site_dist_before
+    master_index_mutated = set(git_status_paths(repo_root, "site/dist/data/public_index")) != master_index_before
     committed_state = committed_instance_state(repo_root, instance_path)
     ok = all(
         (
