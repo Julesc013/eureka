@@ -32,23 +32,23 @@ jobs:
       - name: Record changed paths
         shell: bash
         run: |
-          mkdir -p ".aide.local/test-runs/github-${{ github.run_id }}"
+          mkdir -p "../eureka-test-runs/github-${{ github.run_id }}"
           if [ "${{ github.event_name }}" = "push" ] && [ -n "${{ github.event.before }}" ]; then
-            git diff --name-only "${{ github.event.before }}" "${{ github.sha }}" > ".aide.local/test-runs/github-${{ github.run_id }}/paths_touched.txt" || true
+            git diff --name-only "${{ github.event.before }}" "${{ github.sha }}" > "../eureka-test-runs/github-${{ github.run_id }}/paths_touched.txt" || true
           else
-            git diff --name-only HEAD~1..HEAD > ".aide.local/test-runs/github-${{ github.run_id }}/paths_touched.txt" || true
+            git diff --name-only HEAD~1..HEAD > "../eureka-test-runs/github-${{ github.run_id }}/paths_touched.txt" || true
           fi
 
       - name: Run full discovery harness
         run: |
           python scripts/run_full_unittest_discovery.py \
-            --out ".aide.local/test-runs/github-${{ github.run_id }}" \
-            --paths-touched-file ".aide.local/test-runs/github-${{ github.run_id }}/paths_touched.txt"
+            --out "../eureka-test-runs/github-${{ github.run_id }}" \
+            --paths-touched-file "../eureka-test-runs/github-${{ github.run_id }}/paths_touched.txt"
 
       - name: Upload full discovery artifacts
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: full-discovery-${{ github.run_id }}
-          path: .aide.local/test-runs/github-${{ github.run_id }}/
+          path: ../eureka-test-runs/github-${{ github.run_id }}/
           retention-days: 14

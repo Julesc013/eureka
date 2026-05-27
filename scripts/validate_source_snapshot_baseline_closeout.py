@@ -13,6 +13,7 @@ from typing import Any, Mapping, Sequence, TextIO
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 TASK = "SOURCE-SNAPSHOT-BASELINE-CLOSEOUT-01"
+WAITING_STATUS = "WAITING_FOR_EXTERNAL_FULL_DISCOVERY"
 PASS_STATUSES = {"pass", "pass_with_warnings"}
 
 RESULT_FILES = {
@@ -33,7 +34,10 @@ REQUIRED_FILES = {
     "control/inventory/source_snapshot_closeout_result.json",
     "control/inventory/source_snapshot_closeout_next_task_decision.json",
     "control/inventory/source_snapshot_closeout_failure_repair_log.json",
+    "control/inventory/source_snapshot_closeout_external_handoff.json",
+    "control/inventory/source_snapshot_closeout_external_full_discovery_handoff.json",
     "control/audits/source-snapshot-baseline-closeout-01-v0/README.md",
+    "control/audits/source-snapshot-baseline-closeout-01-v0/external_full_discovery_handoff.json",
     "control/audits/source-snapshot-baseline-closeout-01-v0/source_snapshot_closeout_report.json",
     "control/audits/source-snapshot-baseline-closeout-01-v0/branch_state.md",
     "control/audits/source-snapshot-baseline-closeout-01-v0/scope_matrix.md",
@@ -80,6 +84,8 @@ RESULT_REQUIRED_BOOLEANS = (
     "aide_checks_passed",
 )
 
+EXPECTED_HANDOFF_COMMAND = "python scripts/run_full_unittest_discovery.py --out ../eureka-test-runs/source_snapshot_closeout"
+
 
 def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
@@ -119,6 +125,9 @@ def validate(root: Path = REPO_ROOT) -> dict[str, Any]:
     full_discovery = load_json(root / "control/inventory/source_snapshot_closeout_full_discovery_result.json", errors)
     result = load_json(root / "control/inventory/source_snapshot_closeout_result.json", errors)
     next_task = load_json(root / "control/inventory/source_snapshot_closeout_next_task_decision.json", errors)
+    inventory_alias_handoff = load_json(root / "control/inventory/source_snapshot_closeout_external_handoff.json", errors)
+    inventory_handoff = load_json(root / "control/inventory/source_snapshot_closeout_external_full_discovery_handoff.json", errors)
+    audit_handoff = load_json(root / "control/audits/source-snapshot-baseline-closeout-01-v0/external_full_discovery_handoff.json", errors)
     repo_health = load_json(root / ".aide/reports/eureka-repo-health.json", errors)
 
     validate_prior_results(prior_results, errors)
@@ -127,9 +136,12 @@ def validate(root: Path = REPO_ROOT) -> dict[str, Any]:
     validate_scope_matrix(scope_matrix, errors)
     validate_failure_inventory(failure_inventory, full_discovery, result, errors)
     validate_repair_matrix(repair_matrix, errors)
-    validate_validation_matrix(validation_matrix, errors)
+    validate_validation_matrix(validation_matrix, result, errors)
     validate_boundary(boundary, result, errors)
     validate_full_discovery(full_discovery, result, errors)
+    validate_external_handoff(inventory_alias_handoff, "inventory alias handoff", result, errors)
+    validate_external_handoff(inventory_handoff, "inventory handoff", result, errors)
+    validate_external_handoff(audit_handoff, "audit handoff", result, errors)
     validate_result(result, errors)
     validate_next_task(next_task, result, errors)
     validate_repo_health(root, repo_health, result, errors)
@@ -221,7 +233,10 @@ def validate_failure_inventory(
     if not isinstance(entries, list):
         errors.append("failure inventory requires failures list")
         return
-    expected = int(full_discovery.get("failures", 0) or 0) + int(full_discovery.get("errors", 0) or 0)
+    if full_discovery.get("status") == "external_not_provided":
+        expected = int(full_discovery.get("previous_failures", 0) or 0) + int(full_discovery.get("previous_errors", 0) or 0)
+    else:
+        expected = int(full_discovery.get("failures", 0) or 0) + int(full_discovery.get("errors", 0) or 0)
     if expected and len(entries) != expected:
         errors.append(f"failure inventory count {len(entries)} does not match full discovery red count {expected}")
     categories = {str(item.get("suspected_root_cause")) for item in entries if isinstance(item, Mapping)}
@@ -254,18 +269,22 @@ def validate_repair_matrix(payload: Mapping[str, Any], errors: list[str]) -> Non
         errors.append("repair matrix must record blocked_forbidden_path")
 
 
-def validate_validation_matrix(payload: Mapping[str, Any], errors: list[str]) -> None:
+def validate_validation_matrix(payload: Mapping[str, Any], result: Mapping[str, Any], errors: list[str]) -> None:
     commands = payload.get("commands")
     if not isinstance(commands, list) or not commands:
         errors.append("validation matrix requires commands")
         return
     text = json.dumps(commands)
-    for command in (
+    required_commands = [
         "python scripts/validate_source_action_kernel.py",
         "python scripts/validate_source_wave.py",
         "python scripts/validate_snapshot_relay.py",
-        "python -m unittest discover -s tests -t .",
-    ):
+    ]
+    if result.get("status") == WAITING_STATUS:
+        required_commands.append("python scripts/run_full_unittest_discovery.py")
+    else:
+        required_commands.append("python -m unittest discover -s tests -t .")
+    for command in required_commands:
         if command not in text:
             errors.append(f"validation matrix missing {command}")
 
@@ -278,11 +297,25 @@ def validate_boundary(boundary: Mapping[str, Any], result: Mapping[str, Any], er
 
 
 def validate_full_discovery(full_discovery: Mapping[str, Any], result: Mapping[str, Any], errors: list[str]) -> None:
+    status = full_discovery.get("status")
+    if status not in {"pass", "fail", "external_not_provided"}:
+        errors.append("full discovery status must be pass, fail, or external_not_provided")
+    if status == "external_not_provided":
+        if full_discovery.get("command") != EXPECTED_HANDOFF_COMMAND:
+            errors.append("external handoff command mismatch")
+        if result.get("status") != WAITING_STATUS:
+            errors.append("external handoff full discovery status requires waiting result")
+        if result.get("external_full_discovery_summary_received") is not False:
+            errors.append("waiting result requires external_full_discovery_summary_received=false")
+        if full_discovery.get("full_discovery_run_inside_ai") is not False:
+            errors.append("external handoff requires full_discovery_run_inside_ai=false")
+        if full_discovery.get("external_summary_received") is not False:
+            errors.append("external handoff requires external_summary_received=false")
+        if result.get("full_unittest_discovery_passed") is not False:
+            errors.append("waiting result requires full_unittest_discovery_passed=false")
+        return
     if full_discovery.get("command") != "python -m unittest discover -s tests -t .":
         errors.append("full discovery result command mismatch")
-    status = full_discovery.get("status")
-    if status not in {"pass", "fail"}:
-        errors.append("full discovery status must be pass or fail")
     passed = status == "pass"
     if result.get("full_unittest_discovery_passed") is not passed:
         errors.append("result full_unittest_discovery_passed must match full discovery result")
@@ -293,10 +326,48 @@ def validate_full_discovery(full_discovery: Mapping[str, Any], result: Mapping[s
             errors.append("red full discovery requires failures/errors counts")
 
 
+def validate_external_handoff(
+    payload: Mapping[str, Any],
+    payload_name: str,
+    result: Mapping[str, Any],
+    errors: list[str],
+) -> None:
+    if result.get("status") != WAITING_STATUS:
+        return
+    if payload.get("schema_version") != "external_full_discovery_handoff.v0":
+        errors.append(f"{payload_name} schema_version mismatch")
+    if payload.get("task") != TASK:
+        errors.append(f"{payload_name} task mismatch")
+    if payload.get("command") != EXPECTED_HANDOFF_COMMAND:
+        errors.append(f"{payload_name} command mismatch")
+    if payload.get("run_outside_ai") is not True:
+        errors.append(f"{payload_name} requires run_outside_ai=true")
+    if payload.get("full_discovery_run_inside_ai") is not False:
+        errors.append(f"{payload_name} requires full_discovery_run_inside_ai=false")
+    if payload.get("waiting_status") != WAITING_STATUS:
+        errors.append(f"{payload_name} must record WAITING_FOR_EXTERNAL_FULL_DISCOVERY")
+    paste_back = payload.get("paste_back")
+    if not isinstance(paste_back, list):
+        errors.append(f"{payload_name} requires paste_back list")
+    else:
+        paste_back_text = json.dumps(paste_back)
+        for expected in ("full_unittest_summary.json", "failure_families.json", "failed_tests.txt", "git status --short --branch"):
+            if expected not in paste_back_text:
+                errors.append(f"{payload_name} paste_back missing {expected}")
+    do_not_paste = payload.get("do_not_paste")
+    if not isinstance(do_not_paste, list):
+        errors.append(f"{payload_name} requires do_not_paste list")
+    else:
+        do_not_paste_text = json.dumps(do_not_paste)
+        for forbidden in ("full_unittest_stdout.txt", "full_unittest_stderr.txt"):
+            if forbidden not in do_not_paste_text:
+                errors.append(f"{payload_name} do_not_paste missing {forbidden}")
+
+
 def validate_result(result: Mapping[str, Any], errors: list[str]) -> None:
     if result.get("task") != TASK:
         errors.append("result task mismatch")
-    if result.get("status") not in {"pass", "pass_with_warnings", "partial", "blocked", "fail"}:
+    if result.get("status") not in {"pass", "pass_with_warnings", "partial", "blocked", "fail", WAITING_STATUS}:
         errors.append("result status invalid")
     for field in RESULT_REQUIRED_BOOLEANS:
         if result.get(field) is not True:
@@ -312,6 +383,15 @@ def validate_result(result: Mapping[str, Any], errors: list[str]) -> None:
         ):
             if result.get(field) is not True:
                 errors.append(f"pass result requires {field}=true")
+    elif result.get("status") == WAITING_STATUS:
+        if result.get("external_full_discovery_summary_received") is not False:
+            errors.append("waiting result requires external_full_discovery_summary_received=false")
+        if result.get("full_discovery_run_inside_ai") is not False:
+            errors.append("waiting result requires full_discovery_run_inside_ai=false")
+        if result.get("dev_ready_for_main_promotion") is not False:
+            errors.append("waiting result requires dev_ready_for_main_promotion=false")
+        if result.get("public_alpha_can_start_after_promotion") is not False:
+            errors.append("waiting result requires public_alpha_can_start_after_promotion=false")
     else:
         if result.get("dev_ready_for_main_promotion") is not False:
             errors.append("non-pass result requires dev_ready_for_main_promotion=false")
@@ -324,6 +404,11 @@ def validate_next_task(payload: Mapping[str, Any], result: Mapping[str, Any], er
     if result.get("status") == "pass":
         if not next_task.startswith("DEV-TO-MAIN-PROMOTION-REVIEW-03"):
             errors.append("passing closeout must recommend DEV-TO-MAIN-PROMOTION-REVIEW-03")
+    elif result.get("status") == WAITING_STATUS:
+        if not next_task.startswith("SOURCE-SNAPSHOT-BASELINE-CLOSEOUT-01"):
+            errors.append("waiting closeout must keep SOURCE-SNAPSHOT-BASELINE-CLOSEOUT-01 active")
+        if payload.get("waiting_status") != WAITING_STATUS:
+            errors.append("waiting closeout next task must record WAITING_FOR_EXTERNAL_FULL_DISCOVERY")
     elif not next_task.startswith("SOURCE-SNAPSHOT-BASELINE-CLOSEOUT-01-CONTINUE"):
         errors.append("blocked closeout must recommend SOURCE-SNAPSHOT-BASELINE-CLOSEOUT-01-CONTINUE")
     for field in ("production_readiness_claimed", "public_launch_readiness_claimed"):
@@ -343,6 +428,11 @@ def validate_repo_health(root: Path, payload: Mapping[str, Any], result: Mapping
     if result.get("status") == "pass":
         if not task.startswith("DEV-TO-MAIN-PROMOTION-REVIEW-03"):
             errors.append("repo health must recommend promotion after passing closeout")
+    elif result.get("status") == WAITING_STATUS:
+        if not task.startswith("SOURCE-SNAPSHOT-BASELINE-CLOSEOUT-01"):
+            errors.append("repo health must recommend source snapshot closeout while waiting")
+        if payload.get("source_snapshot_closeout_status") != WAITING_STATUS:
+            errors.append("repo health must record WAITING_FOR_EXTERNAL_FULL_DISCOVERY closeout status")
     elif not task.startswith("SOURCE-SNAPSHOT-BASELINE-CLOSEOUT-01-CONTINUE"):
         errors.append("repo health must recommend closeout continuation while blocked")
 

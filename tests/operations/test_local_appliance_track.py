@@ -5,6 +5,8 @@ import json
 from pathlib import Path
 import unittest
 
+from scripts.local_queue_progress import current_recommended_task, is_later_control_or_handoff
+
 
 ROOT = Path(__file__).resolve().parents[2]
 VALIDATOR = ROOT / "scripts" / "validate_local_appliance_track.py"
@@ -25,8 +27,11 @@ def load_json(rel: str) -> dict:
 class LocalApplianceTrackTests(unittest.TestCase):
     def test_queue_points_to_local_track_successor(self) -> None:
         text = (ROOT / ".aide/queue/index.yaml").read_text(encoding="utf-8")
+        current = current_recommended_task(ROOT)
         self.assertTrue(
-            "current_recommended_task: LOCAL-01" in text or "current_recommended_task: LOCAL-02" in text,
+            "current_recommended_task: LOCAL-01" in text
+            or "current_recommended_task: LOCAL-02" in text
+            or is_later_control_or_handoff(current),
             text,
         )
         if "current_recommended_task: LOCAL-02" in text:

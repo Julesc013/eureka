@@ -63,6 +63,25 @@ class HuntMainPromotionGateTests(unittest.TestCase):
             self.assertEqual("SYN-00", current_recommended_task_id(root))
             self.assertTrue(post_hunt_current_allowed(root))
 
+    def test_post_hunt_queue_accepts_source_snapshot_wait_state(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            queue = root / ".aide/queue/index.yaml"
+            queue.parent.mkdir(parents=True)
+            queue.write_text(
+                "current_recommended_task: SOURCE-SNAPSHOT-BASELINE-CLOSEOUT-01 - Close source/snapshot validation debt\n"
+                "completed:\n"
+                "  - SOURCE-ACTION-KERNEL-00\n"
+                "  - SOURCE-WAVE-00\n"
+                "  - SNAPSHOT-RELAY-00\n"
+                "  - CI-FULL-DISCOVERY-HARNESS-00\n"
+                "waiting:\n"
+                "  - SOURCE-SNAPSHOT-BASELINE-CLOSEOUT-01\n",
+                encoding="utf-8",
+            )
+            self.assertEqual("SOURCE-SNAPSHOT-BASELINE-CLOSEOUT-01", current_recommended_task_id(root))
+            self.assertTrue(post_hunt_current_allowed(root))
+
 
 if __name__ == "__main__":
     unittest.main()

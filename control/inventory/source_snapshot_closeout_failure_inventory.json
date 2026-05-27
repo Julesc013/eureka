@@ -5,6 +5,23 @@
     "public_index_generated_drift": 5,
     "queue_handoff_drift": 38
   },
+  "latest_external_attempt": {
+    "artifact_path_was_repo_local_private_root": true,
+    "classification": {
+      "checksum_manifest_drift": 4,
+      "forbidden_output_root": 1,
+      "repo_structure_canon": 2,
+      "repo_local_private_root_presence": 46,
+      "stale_queue_latest_task_expectations": 17
+    },
+    "errors": 47,
+    "failed_test_count": 230,
+    "failure_family_count": 98,
+    "failures": 182,
+    "primary_root_cause": "full discovery harness wrote artifacts under repo-local .aide.local, which current no-private-root validators correctly reject",
+    "status": "fail",
+    "tests_run": 5004
+  },
   "failures": [
     {
       "blocking_level": "blocks_full_discovery_and_public_alpha",
@@ -1197,18 +1214,28 @@
       "public_index_generated_drift": 5,
       "queue_handoff_drift": 38
     },
-    "command": "python -m unittest discover -s tests -t .",
-    "errors": 46,
-    "failure_headers_parsed": 91,
-    "failures": 45,
+    "command": "python scripts/run_full_unittest_discovery.py --out ../eureka-test-runs/source_snapshot_closeout",
+    "current_status_note": "Current full discovery has not been run inside AI. These counts are historical prior evidence pending external refresh.",
+    "errors": 0,
+    "external_summary_received": false,
+    "failure_headers_parsed": 0,
+    "failures": 0,
+    "full_discovery_run_inside_ai": false,
+    "previous_errors": 46,
+    "previous_failure_headers_parsed": 91,
+    "previous_failures": 45,
+    "previous_seconds": 2980.412,
+    "previous_status": "fail",
+    "previous_summary_path": "control/audits/source-snapshot-baseline-closeout-01-v0/generated/full_unittest_summary.txt",
+    "previous_test_count": 4984,
     "schema_version": "source_snapshot_closeout_full_discovery_result.v0",
-    "seconds": 2980.412,
-    "status": "fail",
-    "summary_path": "control/audits/source-snapshot-baseline-closeout-01-v0/generated/full_unittest_summary.txt",
+    "seconds": 0,
+    "status": "external_not_provided",
+    "summary_path": "../eureka-test-runs/source_snapshot_closeout/full_unittest_summary.json",
     "task": "SOURCE-SNAPSHOT-BASELINE-CLOSEOUT-01",
-    "test_count": 4984
+    "test_count": 0
   },
   "schema_version": "source_snapshot_closeout_failure_inventory.v0",
-  "status": "blocked",
+  "status": "WAITING_FOR_EXTERNAL_FULL_DISCOVERY",
   "task": "SOURCE-SNAPSHOT-BASELINE-CLOSEOUT-01"
 }

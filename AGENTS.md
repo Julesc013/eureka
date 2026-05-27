@@ -80,6 +80,9 @@ discovery is required, write `external_full_discovery_handoff.json`, stop with
 returns `full_unittest_summary.json`. Do not paste full logs into the AI
 session; request targeted traceback excerpts only when the compact summary is
 insufficient.
+Full-discovery artifacts must be written outside the repo by default, preferably
+under `../eureka-test-runs/<run-id>`. Do not use repo-local `.aide.local/test-runs`
+for full discovery unless an exceptional debugging command explicitly opts in.
 
 <!-- AIDE-PORTABLE:BEGIN section=aide-lite-pack-v0 mode=managed -->
 ## AIDE Lite Portable Guidance

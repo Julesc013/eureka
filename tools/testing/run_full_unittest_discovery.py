@@ -6,6 +6,7 @@ from __future__ import annotations
 import argparse
 import datetime as dt
 import json
+import os
 import platform
 import subprocess
 import sys
@@ -15,6 +16,14 @@ from typing import Any, Sequence, TextIO
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_TIMEOUT_SECONDS = 7200
+DEFAULT_OUTPUT_ROOT_NAME = "eureka-test-runs"
+FORBIDDEN_REPO_LOCAL_OUTPUT_ROOTS = {
+    ".aide.local",
+    ".cache",
+    ".local",
+    "eureka-instance",
+    "secrets",
+}
 
 sys.path.insert(0, str(REPO_ROOT))
 from tools.reporters.summarize_unittest_log import summarize_paths, write_json  # noqa: E402
@@ -22,7 +31,12 @@ from tools.reporters.summarize_unittest_log import summarize_paths, write_json  
 
 def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--out", help="Output directory; defaults to .aide.local/test-runs/<timestamp>")
+    parser.add_argument("--out", help="Output directory; defaults to ../eureka-test-runs/<timestamp>")
+    parser.add_argument(
+        "--allow-repo-local-output",
+        action="store_true",
+        help="Allow output below a forbidden repo-local private root for exceptional debugging.",
+    )
     parser.add_argument("--start-dir", default="tests", help="unittest discover -s value")
     parser.add_argument("--top-level-dir", default=".", help="unittest discover -t value")
     parser.add_argument("--pattern", default="test*.py", help="unittest discover -p value")
@@ -31,7 +45,10 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout) -> int:
     parser.add_argument("--no-fail-exit", action="store_true")
     args = parser.parse_args(argv)
 
-    out_dir = Path(args.out) if args.out else default_output_dir()
+    try:
+        out_dir = normalize_output_dir(Path(args.out) if args.out else default_output_dir(), args.allow_repo_local_output)
+    except ValueError as exc:
+        parser.error(str(exc))
     result = run_discovery(
         out_dir=out_dir,
         start_dir=args.start_dir,
@@ -64,7 +81,9 @@ def run_discovery(
     pattern: str = "test*.py",
     timeout_seconds: int = DEFAULT_TIMEOUT_SECONDS,
     paths_touched_file: Path | None = None,
+    allow_repo_local_output: bool = False,
 ) -> dict[str, Any]:
+    out_dir = normalize_output_dir(out_dir, allow_repo_local_output)
     out_dir.mkdir(parents=True, exist_ok=True)
     stdout_path = out_dir / "full_unittest_stdout.txt"
     stderr_path = out_dir / "full_unittest_stderr.txt"
@@ -150,7 +169,46 @@ def run_discovery(
 
 def default_output_dir() -> Path:
     stamp = dt.datetime.now(dt.timezone.utc).strftime("%Y%m%dT%H%M%SZ")
-    return REPO_ROOT / ".aide.local" / "test-runs" / stamp
+    return REPO_ROOT.parent / DEFAULT_OUTPUT_ROOT_NAME / stamp
+
+
+def normalize_output_dir(out_dir: Path, allow_repo_local_output: bool = False) -> Path:
+    expanded = out_dir.expanduser()
+    if not expanded.is_absolute():
+        expanded = REPO_ROOT / expanded
+    resolved = expanded.resolve()
+    if allow_repo_local_output:
+        return resolved
+    rel = relative_to_repo(resolved)
+    if rel is None:
+        return resolved
+    parts = rel.parts
+    if not parts:
+        raise ValueError(
+            "refusing full-discovery output at repo root; use a sibling path such as "
+            "../eureka-test-runs/<run-id> or pass --allow-repo-local-output for exceptional debugging"
+        )
+    first = parts[0]
+    if first in FORBIDDEN_REPO_LOCAL_OUTPUT_ROOTS:
+        raise ValueError(
+            f"refusing full-discovery output inside repo-private root: {rel.as_posix()}; "
+            "use ../eureka-test-runs/<run-id> or pass --allow-repo-local-output for exceptional debugging"
+        )
+    return resolved
+
+
+def relative_to_repo(path: Path) -> Path | None:
+    repo = REPO_ROOT.resolve()
+    try:
+        return path.relative_to(repo)
+    except ValueError:
+        try:
+            common = os.path.commonpath([str(path), str(repo)])
+        except ValueError:
+            return None
+        if common != str(repo):
+            return None
+        return Path(os.path.relpath(path, repo))
 
 
 def command_display(*, start_dir: str, top_level_dir: str, pattern: str) -> str:

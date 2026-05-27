@@ -1,18 +1,46 @@
 {
-  "category_counts": {
+  "command": "python scripts/run_full_unittest_discovery.py --out ../eureka-test-runs/source_snapshot_closeout",
+  "direct_unittest_discovery_command": "python -m unittest discover -s tests -t .",
+  "errors": 0,
+  "external_summary_received": false,
+  "failed_tests_path": "../eureka-test-runs/source_snapshot_closeout/failed_tests.txt",
+  "failure_families_path": "../eureka-test-runs/source_snapshot_closeout/failure_families.json",
+  "failures": 0,
+  "full_discovery_run_inside_ai": false,
+  "latest_external_attempt": {
+    "errors": 47,
+    "failed_test_count": 230,
+    "failure_family_count": 98,
+    "failures": 182,
+    "primary_root_cause": "repo-local .aide.local full-discovery output root violated no-private-root policy",
+    "status": "fail",
+    "tests_run": 5004
+  },
+  "paste_back": [
+    "../eureka-test-runs/source_snapshot_closeout/full_unittest_summary.json",
+    "../eureka-test-runs/source_snapshot_closeout/failure_families.json",
+    "../eureka-test-runs/source_snapshot_closeout/failed_tests.txt",
+    "git status --short --branch"
+  ],
+  "previous_category_counts": {
     "checksum_manifest_drift": 46,
     "legacy_leakage_validator_drift": 2,
     "public_index_generated_drift": 5,
     "queue_handoff_drift": 38
   },
-  "command": "python -m unittest discover -s tests -t .",
-  "errors": 46,
-  "failure_headers_parsed": 91,
-  "failures": 45,
+  "previous_errors": 46,
+  "previous_failure_headers_parsed": 91,
+  "previous_failures": 45,
+  "previous_seconds": 2980.412,
+  "previous_status": "fail",
+  "previous_summary_path": "control/audits/source-snapshot-baseline-closeout-01-v0/generated/full_unittest_summary.txt",
+  "previous_test_count": 4984,
   "schema_version": "source_snapshot_closeout_full_discovery_result.v0",
-  "seconds": 2980.412,
-  "status": "fail",
-  "summary_path": "control/audits/source-snapshot-baseline-closeout-01-v0/generated/full_unittest_summary.txt",
+  "seconds": 0,
+  "status": "external_not_provided",
+  "summary_path": "../eureka-test-runs/source_snapshot_closeout/full_unittest_summary.json",
+  "suggested_output_dir": "../eureka-test-runs/source_snapshot_closeout",
   "task": "SOURCE-SNAPSHOT-BASELINE-CLOSEOUT-01",
-  "test_count": 4984
+  "test_count": 0,
+  "waiting_status": "WAITING_FOR_EXTERNAL_FULL_DISCOVERY"
 }

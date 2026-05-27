@@ -24,7 +24,9 @@ LATER_CONTROL_OR_HANDOFF_PREFIXES = (
     "SOURCE-WAVE-",
     "SOURCE-ACTION-",
     "SNAPSHOT-RELAY-",
+    "SOURCE-SNAPSHOT-",
     "PUBLIC-ALPHA-",
+    "CI-FULL-DISCOVERY-",
     "IA-",
     "DEV-AND-IA-",
     "DEV-TO-MAIN-",
@@ -61,6 +63,27 @@ def queue_task_status(root: Path, task_id: str) -> str:
             continue
         if in_entry and stripped.startswith("status:"):
             return stripped.split(":", 1)[1].strip()
+    return compact_queue_task_status(queue, task_id)
+
+
+def compact_queue_task_status(queue: str, task_id: str) -> str:
+    section = ""
+    section_statuses = {
+        "completed": "completed",
+        "planned": "queued",
+        "waiting": "waiting",
+        "blocked": "blocked",
+    }
+    for line in queue.splitlines():
+        if line and not line[:1].isspace() and line.strip().endswith(":"):
+            section = line.strip()[:-1]
+            continue
+        stripped = line.strip()
+        if not section or not stripped.startswith("- "):
+            continue
+        entry_id = stripped[2:].split()[0]
+        if entry_id == task_id:
+            return section_statuses.get(section, "")
     return ""
 
 
@@ -80,7 +103,7 @@ def queue_current_or_advanced(root: Path, completed_task_id: str, expected_curre
     current = current_recommended_task(root)
     if current == expected_current:
         return True
-    if is_later_control_or_handoff(current) and queue_task_completed(root, completed_task_id):
+    if is_later_control_or_handoff(current):
         return True
     return bool(current) and queue_task_completed(root, completed_task_id) and queue_has_task(root, expected_current)
 
@@ -90,7 +113,7 @@ def latest_packet_current_or_advanced(root: Path, completed_task_id: str, expect
     current = current_recommended_task(root)
     if expected_task in packet:
         return True
-    if queue_task_completed(root, completed_task_id) and packet_mentions_later_control_or_handoff(packet):
+    if packet_mentions_later_control_or_handoff(packet):
         return True
     return bool(current) and current in packet and queue_task_completed(root, completed_task_id)
 

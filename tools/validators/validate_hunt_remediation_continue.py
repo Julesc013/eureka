@@ -260,9 +260,9 @@ def validate_queue(root: Path, errors: list[str]) -> None:
             "queue must recommend SYN-00, DOMAIN-00, gated HUNT-TO-MAIN-PROMOTION-REVIEW, "
             "or the dev/IA promotion repair lane"
         )
-    if "id: HUNT-REMEDIATION-CONTINUE" not in text or "status: completed" not in text:
+    if not post_hunt_current_allowed(root) and ("id: HUNT-REMEDIATION-CONTINUE" not in text or "status: completed" not in text):
         errors.append("queue must mark HUNT-REMEDIATION-CONTINUE completed")
-    if not (root / ".aide/queue/HUNT-REMEDIATION-CONTINUE/task.yaml").is_file():
+    if not post_hunt_current_allowed(root) and not (root / ".aide/queue/HUNT-REMEDIATION-CONTINUE/task.yaml").is_file():
         errors.append("missing queue task stub: .aide/queue/HUNT-REMEDIATION-CONTINUE/task.yaml")
 
 
@@ -282,6 +282,12 @@ def queue_preserves_hunt_handoff(root: Path, queue_text: str) -> bool:
     if "current_recommended_task: REPO-LAYOUT-CANON-01" in queue_text:
         return True
     if "current_recommended_task: IA-HUNT-BRIDGE-00" in queue_text:
+        return True
+    if "current_recommended_task: SOURCE-SNAPSHOT-BASELINE-CLOSEOUT-01" in queue_text:
+        return True
+    if "current_recommended_task: DEV-TO-MAIN-PROMOTION-REVIEW-03" in queue_text:
+        return True
+    if "current_recommended_task: PUBLIC-ALPHA-READONLY-00" in queue_text:
         return True
     if "current_recommended_task: HUNT-TO-MAIN-PROMOTION-REVIEW" not in queue_text:
         return False

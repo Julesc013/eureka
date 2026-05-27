@@ -40,6 +40,11 @@ class SourceSnapshotBaselineCloseoutTests(unittest.TestCase):
             self.assertEqual(result["status"], "blocked")
             self.assertFalse(result["full_unittest_discovery_passed"])
             self.assertFalse(result["dev_ready_for_main_promotion"])
+        elif full["status"] == "external_not_provided":
+            self.assertEqual(result["status"], load_validator().WAITING_STATUS)
+            self.assertFalse(result["external_full_discovery_summary_received"])
+            self.assertFalse(result["full_unittest_discovery_passed"])
+            self.assertFalse(result["dev_ready_for_main_promotion"])
 
     def test_validator_passes(self) -> None:
         result = load_validator().validate(REPO_ROOT)

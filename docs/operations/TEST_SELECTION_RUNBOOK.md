@@ -26,10 +26,10 @@ python scripts/run_full_unittest_discovery.py
 ```
 
 The harness writes compact results to
-`.aide.local/test-runs/<timestamp>/full_unittest_summary.json` by default, or
-to the path passed with `--out`. Use
-`--out control/audits/manual-test-runs/generated` only when a reviewed closeout
-or promotion task needs durable audit evidence.
+`../eureka-test-runs/<timestamp>/full_unittest_summary.json` by default, or
+to the path passed with `--out`. Keep full-discovery output outside the repo;
+commit compact audit evidence separately when a reviewed closeout or promotion
+task needs durable evidence.
 
 If a runtime task defers full discovery, record the deferral and run full
 discovery before promotion or another high-risk runtime bridge.

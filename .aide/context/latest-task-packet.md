@@ -1,117 +1,147 @@
-# SOURCE-SNAPSHOT-BASELINE-CLOSEOUT-01 Task Packet
+# AIDE Latest Task Packet
 
 ## PHASE
 
-SOURCE-SNAPSHOT-BASELINE-CLOSEOUT-01 - Close source/snapshot validation debt
-using external full-discovery handoff.
+UNSPECIFIED - SOURCE-SNAPSHOT-BASELINE-CLOSEOUT-01
 
 ## GOAL
 
-Run focused source/snapshot validators and tests, write an external full
-discovery handoff, then stop with `WAITING_FOR_EXTERNAL_FULL_DISCOVERY`.
+SOURCE-SNAPSHOT-BASELINE-CLOSEOUT-01
 
 ## WHY
 
-SOURCE-ACTION-KERNEL-00, SOURCE-WAVE-00, and SNAPSHOT-RELAY-00 are implemented
-with focused validation success, but the baseline still carries full-discovery
-warning/deferred debt. Full discovery must now run outside AI sessions through
-the harness or CI artifact lane.
+Continue AIDE token survival by using repo-local context refs, compact objectives, deterministic validation, and evidence packets instead of long chat history.
 
 ## CONTEXT_REFS
 
-- `control/inventory/source_action_kernel_result.json`
-- `control/inventory/source_wave_result.json`
-- `control/inventory/snapshot_relay_result.json`
-- `docs/operations/FULL_DISCOVERY_CI_RUNBOOK.md`
-- `contracts/testing/external_full_discovery_handoff.v0.json`
-- `contracts/testing/full_unittest_summary.v0.json`
-
-## REQUIRED_FLOW
-
-1. Run focused validators and focused source/snapshot tests only.
-2. Write `external_full_discovery_handoff.json` as compact handoff evidence.
-3. Do not run `python -m unittest discover -s tests -t .` inside AI.
-4. Stop with `WAITING_FOR_EXTERNAL_FULL_DISCOVERY`.
-5. Resume only after an operator or CI provides `full_unittest_summary.json`.
+- `AGENTS.md`
+- `.aide/queue/index.yaml`
+- `.aide/memory/project-state.md`
+- `.aide/memory/decisions.md`
+- `.aide/memory/open-risks.md`
+- `.aide/context/repo-snapshot.json` (present)
+- `.aide/context/repo-map.json` (present)
+- `.aide/context/repo-map.md` (present)
+- `.aide/context/test-map.json` (present)
+- `.aide/context/context-index.json` (present)
+- `.aide/context/latest-context-packet.md` (present)
+- `.aide/repo/latest-repo-intelligence.md` (present)
+- `.aide/repo/file-inventory.json` (present)
+- `.aide/reports/file-quality-summary.md` (present)
+- `.aide/reports/file-quality-ledger.json` (present)
+- `.aide/refactors/latest-refactor-readiness.md` (present)
+- `.aide/refactors/latest-refactor-plan.example.json` (present)
+- `.aide/routing/latest-route-decision.json` (present)
+- `.aide/routing/latest-route-decision.md` (present)
+- `.aide/cache/latest-cache-keys.json` (present)
+- `.aide/cache/latest-cache-keys.md` (present)
+- `.aide/prompts/compact-task.md`
+- `.aide/policies/token-budget.yaml`
+- `.aide/policies/cache.yaml`
+- `.aide/policies/local-state.yaml`
 
 ## ALLOWED_PATHS
 
-- `.aide/queue/SOURCE-SNAPSHOT-BASELINE-CLOSEOUT-01/**`
-- `.aide/context/latest-task-packet.md`
-- `control/inventory/source_snapshot_closeout_*.json`
-- `control/audits/source-snapshot-baseline-closeout-01-v0/**`
-- `docs/operations/SOURCE_SNAPSHOT_BASELINE_CLOSEOUT.md`
+- `.aide/**`
+- `AGENTS.md`
+- `docs/operations/**`
+- `docs/reference/**`
+- `control/inventory/**`
+- `control/audits/**`
+- `control/policies/**`
+- `scripts/local_queue_progress.py`
+- `scripts/validate_*.py`
+- `scripts/check_*.py`
+- `tests/operations/**`
+- `tests/aide/**`
 
 ## FORBIDDEN_PATHS
 
-- `eureka-instance/**`
-- `instances/**`
-- `.aide.local/**`
-- `secrets/**`
+- `.git/**`
 - `.env`
-- `site/dist/**`
-- `data/public_index/**`
-- `runtime/connectors/**`
-- `runtime/extraction/**`
-- `runtime/search_quality/**`
+- `secrets/**`
+- `.aide.local/**`
+- `.local/**`
+- `.cache/**`
+- `eureka-instance/**`
+- `runtime/**`
+- `contracts/**`
+- `surfaces/**`
+- `site/**`
 - `native/**`
 - `crates/**`
-- raw live source responses
-- raw live IA responses
+- `examples/**`
+- `evals/**`
+- `tests/**` unless this is an AIDE/control-plane test repair
+- `scripts/**` unless this is an AIDE validator/check repair
+- raw provider credentials, API keys, local caches, raw prompt logs, raw responses, and source AIDE repository state
 
 ## IMPLEMENTATION
 
-- Run focused validators and tests only.
-- Write a governed external full-discovery handoff artifact.
-- Stop at `WAITING_FOR_EXTERNAL_FULL_DISCOVERY`.
-- After the external run, read compact summary JSON only and repair actual
-  failure families.
+- Read the queue packet and relevant repo refs first.
+- Keep changes inside the allowed paths.
+- Make the smallest coherent diff that satisfies acceptance.
+- Preserve generated/manual boundaries.
+- Do not inline whole source files unless exact contents are required.
+- Use exact refs such as `path#Lstart-Lend` when file details are load-bearing.
 
 ## VALIDATION
 
-- Focused source/snapshot validators.
-- Focused closeout tests.
-- `python scripts/eureka_test_select.py --changed --failed-first --json`
+- `py -3 .aide/scripts/aide_lite.py doctor`
+- `py -3 .aide/scripts/aide_lite.py validate`
+- `py -3 .aide/scripts/aide_lite.py snapshot`
+- `py -3 .aide/scripts/aide_lite.py index`
+- `py -3 .aide/scripts/aide_lite.py context`
+- `py -3 .aide/scripts/aide_lite.py pack --task "AIDE-EVAL-GREEN-01"`
+- `py -3 .aide/scripts/aide_lite.py test`
+- `py -3 .aide/scripts/aide_lite.py selftest`
+- `py -3 .aide/scripts/aide_lite.py verify`
+- `py -3 .aide/scripts/aide_lite.py review-pack`
+- `py -3 .aide/scripts/aide_lite.py eval run`
 - `python scripts/check_architecture_boundaries.py`
-- No interactive `python -m unittest discover -s tests -t .`.
+- `python scripts/check_generated_artifact_cleanliness.py --check --json`
+- `python -m unittest discover -s tests -t .`
+- `git diff --check`
+
+## COMMITS
+
+- Commit coherent subdeliverables with verbose bodies.
+- Stop at review gates.
 
 ## EVIDENCE
 
-- `external_full_discovery_handoff.json`
-- focused validator outputs
-- focused test outputs
-- later external `full_unittest_summary.json`
-
-## ALLOWED_STATUS
-
-- `pass`
-- `pass_with_warnings`
-- `partial`
-- `blocked`
-- `fail`
-- `WAITING_FOR_EXTERNAL_FULL_DISCOVERY`
+- changed files
+- validation commands and results
+- verifier result
+- review packet path and result when review-pack is available
+- advisory route decision path and result when Q17 routing is available
+- compact packet size and budget status
+- unresolved risks and deferrals
 
 ## NON_GOALS
 
-- No public alpha implementation.
-- No promotion to main.
-- No deployment.
-- No production/public launch claim.
-- No live source calls, downloads, uploads, extraction, or model calls.
-- No operator instance mutation.
-- No full unittest discovery inside AI.
+- No Eureka product behavior change.
+- No source probes, extraction, model/provider calls, deployment, production-readiness claim, public-launch claim, main promotion, force-push, history rewrite, SYN implementation, or F0 implementation.
+- No Gateway, provider calls, live model routing, local model setup, exact tokenizer, provider billing ledger, Runtime, Service, Commander, Mobile, MCP/A2A, UI, host/app implementation, or autonomous loop unless a future reviewed queue item explicitly authorizes it.
 
 ## ACCEPTANCE
 
-The closeout records focused validation status, writes a governed external
-handoff, and honestly waits for machine/operator full discovery artifacts
-instead of streaming full discovery in an AI loop.
+- Task-specific acceptance criteria are met.
+- Validation is run and recorded.
+- Evidence is written.
+- No secrets, raw prompt logs, local caches, or `.aide.local` contents are committed.
 
 ## OUTPUT_SCHEMA
 
-`external_full_discovery_handoff.v0` followed by `full_unittest_summary.v0`
-after the external run completes.
+Return a compact final report with `STATUS`, `SUMMARY`, `COMMITS`, `CHANGED_FILES`, `VALIDATION`, route/verifier/token results, `RISKS`, and `NEXT`.
+Include the verifier result when Q12 verifier behavior is available.
 
 ## TOKEN_ESTIMATE
 
-Compact packet; use inventory and audit files for full details.
+- method: chars / 4, rounded up
+- chars: 4792
+- approx_tokens: 1198
+- budget_status: PASS
+- warnings:
+  - none
+- formal ledger: `.aide/reports/token-ledger.jsonl`

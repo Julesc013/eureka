@@ -12,9 +12,11 @@ Full unittest discovery is externalized:
 python scripts/run_full_unittest_discovery.py
 ```
 
-The harness writes local artifacts under `.aide.local/test-runs/<run-id>/`.
-That local directory is not committed. Durable closeout evidence must be a
-compact summary copied intentionally into `control/audits/`.
+The harness writes local artifacts outside the repository under
+`../eureka-test-runs/<run-id>/` by default. Repo-local private roots such as
+`.aide.local/test-runs/` are forbidden unless an exceptional debugging command
+explicitly opts in. Durable closeout evidence must be a compact summary copied
+intentionally into `control/audits/`.
 
 Allowed waiting status:
 

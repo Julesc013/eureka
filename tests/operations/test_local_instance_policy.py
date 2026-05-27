@@ -5,6 +5,8 @@ import subprocess
 from pathlib import Path
 import unittest
 
+from scripts.local_queue_progress import current_recommended_task, is_later_control_or_handoff
+
 
 ROOT = Path(__file__).resolve().parents[2]
 
@@ -76,8 +78,12 @@ class LocalInstancePolicyTests(unittest.TestCase):
 
     def test_queue_points_to_local_02(self) -> None:
         text = (ROOT / ".aide/queue/index.yaml").read_text(encoding="utf-8")
-        self.assertIn("current_recommended_task: LOCAL-02", text)
-        self.assertIn("id: LOCAL-02", text)
+        current = current_recommended_task(ROOT)
+        if is_later_control_or_handoff(current):
+            self.assertTrue(current, text)
+        else:
+            self.assertIn("current_recommended_task: LOCAL-02", text)
+            self.assertIn("id: LOCAL-02", text)
 
     def test_default_instance_root_is_ignored(self) -> None:
         completed = subprocess.run(

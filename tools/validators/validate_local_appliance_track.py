@@ -369,6 +369,12 @@ def validate_queue_and_context(root: Path, errors: list[str]) -> None:
     queue_points_to_local_01 = queue_current == NEXT_TASK
     queue_points_to_local_02 = queue_current == ADVANCED_NEXT_TASK
     queue_points_to_later_handoff = local_track_handoff_queue(queue_current)
+    if queue_points_to_later_handoff:
+        if not latest_packet_is_later_control_or_handoff(packet_text):
+            errors.append("latest task packet must point to the active advanced queue item")
+        if "<fill from the next reviewed queue packet>" in packet_text:
+            errors.append("latest task packet still contains placeholder allowed paths")
+        return
     if not (
         queue_points_to_local_01
         or queue_points_to_local_02
@@ -405,19 +411,20 @@ def validate_health(root: Path, errors: list[str]) -> None:
         or health.get("current_recommended_task")
     )
     queue_current = current_recommended_task(root)
-    if health_current not in {NEXT_TASK, ADVANCED_NEXT_TASK} and not (health_recommended == queue_current and queue_task_completed(root, TASK_ID)):
-        errors.append("repo health current_queue_item must be LOCAL-01 or completed successor LOCAL-02")
-    f0_status = health.get("f0_current_status")
-    if f0_status is None and health.get("f0_can_resume") is True:
-        f0_status = "resumable_through_local_appliance"
-    if f0_status not in {"deferred", "resumable_through_local_appliance", "implemented_pending_full_closeout", "completed"}:
-        errors.append("repo health must record F0 deferred")
-    if health.get("f0_deferred_until") not in {LOCAL_CLOSEOUT, None} and f0_status not in {
-        "resumable_through_local_appliance",
-        "implemented_pending_full_closeout",
-        "completed",
-    }:
-        errors.append("repo health must record F0 deferred until LOCAL-14")
+    if not local_track_handoff_queue(queue_current):
+        if health_current not in {NEXT_TASK, ADVANCED_NEXT_TASK} and not (health_recommended == queue_current and queue_task_completed(root, TASK_ID)):
+            errors.append("repo health current_queue_item must be LOCAL-01 or completed successor LOCAL-02")
+        f0_status = health.get("f0_current_status")
+        if f0_status is None and health.get("f0_can_resume") is True:
+            f0_status = "resumable_through_local_appliance"
+        if f0_status not in {"deferred", "resumable_through_local_appliance", "implemented_pending_full_closeout", "completed"}:
+            errors.append("repo health must record F0 deferred")
+        if health.get("f0_deferred_until") not in {LOCAL_CLOSEOUT, None} and f0_status not in {
+            "resumable_through_local_appliance",
+            "implemented_pending_full_closeout",
+            "completed",
+        }:
+            errors.append("repo health must record F0 deferred until LOCAL-14")
     false_keys = {
         "production_readiness": health.get("production_readiness", health.get("production_readiness_claimed")),
         "public_launch_readiness": health.get("public_launch_readiness", health.get("public_launch_readiness_claimed")),
@@ -457,6 +464,9 @@ def local_track_handoff_queue(queue_current: str | None) -> bool:
         "SOURCE-ACTION-KERNEL-00",
         "SOURCE-WAVE-00",
         "SNAPSHOT-RELAY-00",
+        "SOURCE-SNAPSHOT-BASELINE-CLOSEOUT-01",
+        "DEV-TO-MAIN-PROMOTION-REVIEW-03",
+        "CI-FULL-DISCOVERY-HARNESS-00",
         "PUBLIC-ALPHA-READONLY-00",
     }
     return any(queue_current == task or queue_current.startswith(f"{task} ") for task in handoff_tasks)
@@ -478,6 +488,9 @@ def latest_packet_is_later_control_or_handoff(packet_text: str) -> bool:
         "SOURCE-ACTION-",
         "SOURCE-WAVE-",
         "SNAPSHOT-RELAY-",
+        "SOURCE-SNAPSHOT-",
+        "DEV-TO-MAIN-",
+        "CI-FULL-DISCOVERY-",
         "PUBLIC-ALPHA-",
     )
     return any(marker in packet_text for marker in markers)
@@ -520,6 +533,9 @@ def validate_git_alignment(root: Path, report: Mapping[str, Any], errors: list[s
             "SOURCE-ACTION-KERNEL-00",
             "SOURCE-WAVE-00",
             "SNAPSHOT-RELAY-00",
+            "SOURCE-SNAPSHOT-BASELINE-CLOSEOUT-01",
+            "DEV-TO-MAIN-PROMOTION-REVIEW-03",
+            "CI-FULL-DISCOVERY-HARNESS-00",
             "PUBLIC-ALPHA-READONLY-00",
         }:
             warnings.append("origin/dev is ahead of origin/main after Local Appliance queue work")

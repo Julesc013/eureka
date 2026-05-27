@@ -73,7 +73,7 @@ python scripts/run_full_unittest_discovery.py
 The harness writes `full_unittest_stdout.txt`, `full_unittest_stderr.txt`,
 `full_unittest_exit_code.txt`, `full_unittest_summary.json`,
 `failure_families.json`, `failed_tests.txt`, `paths_touched.txt`, and
-`environment.json` under `.aide.local/test-runs/<run-id>/` by default.
+`environment.json` under `../eureka-test-runs/<run-id>/` by default.
 
 If full discovery is required during an AI task, create an
 `external_full_discovery_handoff.v0` artifact and stop with:

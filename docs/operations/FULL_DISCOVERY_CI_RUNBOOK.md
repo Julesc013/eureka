@@ -11,7 +11,7 @@ Use:
 python scripts/run_full_unittest_discovery.py
 ```
 
-By default this writes under `.aide.local/test-runs/<run-id>/`:
+By default this writes under `../eureka-test-runs/<run-id>/`:
 
 - `full_unittest_stdout.txt`
 - `full_unittest_stderr.txt`
@@ -22,14 +22,16 @@ By default this writes under `.aide.local/test-runs/<run-id>/`:
 - `paths_touched.txt`
 - `environment.json`
 
-Do not commit `.aide.local/`. Commit only compact summary evidence under
-`control/audits/` when a closeout or promotion task explicitly needs durable
-evidence.
+Do not write full-discovery artifacts under repo-local private roots such as
+`.aide.local/`. The harness refuses those roots unless
+`--allow-repo-local-output` is supplied for exceptional debugging. Commit only
+compact summary evidence under `control/audits/` when a closeout or promotion
+task explicitly needs durable evidence.
 
 ## CI
 
 Use the `Full Discovery` GitHub Actions workflow for manual and scheduled runs.
-It uploads the whole `.aide.local/test-runs/...` directory as a short-retention
+It uploads the whole `../eureka-test-runs/...` directory as a short-retention
 artifact using `actions/upload-artifact`.
 
 The schedule intentionally avoids minute `0`. Scheduled workflows run on the

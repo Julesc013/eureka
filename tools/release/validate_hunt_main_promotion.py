@@ -214,6 +214,9 @@ def current_queue_has_advanced_past_hunt_promotion(root: Path) -> bool:
                 "G0",
                 "SOURCE-WAVE-",
                 "SNAPSHOT-RELAY-",
+                "SOURCE-SNAPSHOT-",
+                "CI-FULL-DISCOVERY-",
+                "PUBLIC-ALPHA-",
             )
         )
     return False

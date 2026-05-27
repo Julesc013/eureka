@@ -31,7 +31,7 @@ jobs:
       - name: Full discovery harness
         run: |
           python scripts/run_full_unittest_discovery.py \
-            --out ".aide.local/test-runs/promotion-${{ github.run_id }}"
+            --out "../eureka-test-runs/promotion-${{ github.run_id }}"
 
       - name: Promotion validators
         if: success()
@@ -47,5 +47,5 @@ jobs:
           path: |
             quick_lane_selection.json
             generated_artifact_cleanliness.json
-            .aide.local/test-runs/promotion-${{ github.run_id }}/
+            ../eureka-test-runs/promotion-${{ github.run_id }}/
           retention-days: 14

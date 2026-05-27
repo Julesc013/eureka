@@ -1,11 +1,25 @@
 # Validation Matrix
 
+- `git diff --check`: pass
 - `python scripts/eureka_test_select.py --changed --failed-first --json`: pass
 - `python scripts/validate_source_action_kernel.py`: pass
 - `python scripts/validate_source_wave.py`: pass
 - `python scripts/validate_snapshot_relay.py`: pass
 - `python scripts/check_architecture_boundaries.py`: pass
 - `python scripts/check_generated_artifact_cleanliness.py --check --json`: pass
+- `python -m unittest tests.operations.test_source_snapshot_baseline_closeout tests.scripts.test_validate_source_snapshot_baseline_closeout`: pass
+- `python -m unittest tests.scripts.test_validate_test_lane_policy`: pass
+- `python scripts/validate_test_lane_policy.py`: pass
+- `python -m unittest tests.operations.test_test_lane_policy`: pass
+- `python -m unittest tests.operations.test_test_impact_map`: pass
+- `python -m unittest tests.operations.test_test_failure_ledger`: pass
+- `python -m unittest tests.scripts.test_eureka_test_select`: pass
 - `python .aide/scripts/aide_lite.py doctor`: pass
-- `python .aide/scripts/aide_lite.py validate`: pass_with_warnings
-- `python -m unittest discover -s tests -t .`: fail
+- `python .aide/scripts/aide_lite.py validate`: pass
+- `python .aide/scripts/aide_lite.py test`: pass
+- `python .aide/scripts/aide_lite.py selftest`: pass
+- `python .aide/scripts/aide_lite.py verify`: pass
+- `python .aide/scripts/aide_lite.py review-pack`: pass
+- `python .aide/scripts/aide_lite.py commit check --latest`: pass
+- `python scripts/validate_source_snapshot_baseline_closeout.py --json`: pass
+- `python scripts/run_full_unittest_discovery.py --out ../eureka-test-runs/source_snapshot_closeout`: not_run_by_policy

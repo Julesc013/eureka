@@ -1,6 +1,6 @@
 task_id: SOURCE-SNAPSHOT-BASELINE-CLOSEOUT-01
-status: planned_external_full_discovery_handoff
-result: waiting_required
+status: WAITING_FOR_EXTERNAL_FULL_DISCOVERY
+result: external_full_discovery_handoff_created
 required_flow:
   - run_focused_validators
   - run_focused_tests
@@ -15,3 +15,10 @@ forbidden:
   - babysit_test_output
 waiting_status: WAITING_FOR_EXTERNAL_FULL_DISCOVERY
 next_task_after_external_green: DEV-TO-MAIN-PROMOTION-REVIEW-03
+handoff:
+  command: python scripts/run_full_unittest_discovery.py --out ../eureka-test-runs/source_snapshot_closeout
+  paste_back:
+    - ../eureka-test-runs/source_snapshot_closeout/full_unittest_summary.json
+    - ../eureka-test-runs/source_snapshot_closeout/failure_families.json
+    - ../eureka-test-runs/source_snapshot_closeout/failed_tests.txt
+    - git status --short --branch

@@ -371,9 +371,9 @@ def validate_queue(root: Path, errors: list[str]) -> None:
     packet = read_text(root / ".aide/context/latest-task-packet.md", errors)
     if not hunt_queue_current_or_advanced(root, TASK_ID, NEXT_TASK):
         errors.append("queue must point to HUNT-01 or a later HUNT task")
-    if "id: HUNT-00" not in queue or "status: completed" not in queue:
+    if not post_hunt_current_allowed(root) and ("id: HUNT-00" not in queue or "status: completed" not in queue):
         errors.append("queue must mark HUNT-00 completed")
-    if "id: HUNT-01" not in queue:
+    if not post_hunt_current_allowed(root) and "id: HUNT-01" not in queue:
         errors.append("queue must include HUNT-01")
     if not hunt_latest_packet_current_or_advanced(root, TASK_ID, NEXT_TASK):
         errors.append("latest task packet must point to HUNT-01 or a later HUNT task")

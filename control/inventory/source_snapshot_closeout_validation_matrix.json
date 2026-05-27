@@ -1,6 +1,10 @@
 {
   "commands": [
     {
+      "command": "git diff --check",
+      "status": "pass"
+    },
+    {
       "command": "python scripts/eureka_test_select.py --changed --failed-first --json",
       "status": "pass"
     },
@@ -25,23 +29,81 @@
       "status": "pass"
     },
     {
-      "command": "python .aide/scripts/aide_lite.py doctor",
+      "command": "python -m unittest tests.operations.test_source_snapshot_baseline_closeout tests.scripts.test_validate_source_snapshot_baseline_closeout",
       "status": "pass"
     },
     {
-      "command": "python .aide/scripts/aide_lite.py validate",
-      "status": "pass_with_warnings"
+      "command": "python -m unittest tests.scripts.test_validate_test_lane_policy",
+      "status": "pass"
     },
     {
-      "command": "python -m unittest discover -s tests -t .",
-      "status": "fail"
+      "command": "python scripts/validate_test_lane_policy.py",
+      "status": "pass"
+    },
+    {
+      "command": "python -m unittest tests.operations.test_test_lane_policy",
+      "status": "pass"
+    },
+    {
+      "command": "python -m unittest tests.operations.test_test_impact_map",
+      "status": "pass"
+    },
+    {
+      "command": "python -m unittest tests.operations.test_test_failure_ledger",
+      "status": "pass"
+    },
+    {
+      "command": "python -m unittest tests.scripts.test_eureka_test_select",
+      "status": "pass"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py doctor",
+      "status": "pass"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py validate",
+      "status": "pass"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py test",
+      "status": "pass"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py selftest",
+      "status": "pass"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py verify",
+      "status": "pass"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py review-pack",
+      "status": "pass"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py commit check --latest",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_source_snapshot_baseline_closeout.py --json",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/run_full_unittest_discovery.py --out ../eureka-test-runs/source_snapshot_closeout",
+      "reason": "Full discovery is an external promotion/manual gate and must not run inside AI sessions.",
+      "status": "not_run_by_policy"
     }
   ],
-  "full_unittest_discovery_count": 4984,
-  "full_unittest_discovery_errors": 46,
-  "full_unittest_discovery_failures": 45,
-  "full_unittest_discovery_status": "fail",
+  "external_full_discovery_summary_received": false,
+  "full_discovery_run_inside_ai": false,
+  "full_unittest_discovery_count": 0,
+  "full_unittest_discovery_errors": 0,
+  "full_unittest_discovery_failures": 0,
+  "full_unittest_discovery_status": "external_not_provided",
+  "historical_full_unittest_discovery_count": 4984,
+  "historical_full_unittest_discovery_errors": 46,
+  "historical_full_unittest_discovery_failures": 45,
   "schema_version": "source_snapshot_closeout_validation_matrix.v0",
-  "status": "blocked",
+  "status": "WAITING_FOR_EXTERNAL_FULL_DISCOVERY",
   "task": "SOURCE-SNAPSHOT-BASELINE-CLOSEOUT-01"
 }

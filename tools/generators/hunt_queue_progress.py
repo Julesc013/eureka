@@ -46,7 +46,21 @@ POST_HUNT_TASKS = {
     "SOURCE-ACTION-KERNEL-00",
     "SOURCE-WAVE-00",
     "SNAPSHOT-RELAY-00",
+    "SOURCE-SNAPSHOT-BASELINE-CLOSEOUT-01",
+    "DEV-TO-MAIN-PROMOTION-REVIEW-03",
+    "CI-FULL-DISCOVERY-HARNESS-00",
     "PUBLIC-ALPHA-READONLY-00",
+}
+POST_HUNT_COMPLETION_MARKERS = {
+    "HUNT-12",
+    "HUNT-REMEDIATION",
+    "HUNT-REMEDIATION-CONTINUE",
+    "HUNT-TO-MAIN-PROMOTION-REVIEW",
+    "DEV-TO-MAIN-PROMOTION-REVIEW-02",
+    "SOURCE-ACTION-KERNEL-00",
+    "SOURCE-WAVE-00",
+    "SNAPSHOT-RELAY-00",
+    "CI-FULL-DISCOVERY-HARNESS-00",
 }
 
 
@@ -83,6 +97,27 @@ def queue_task_status(root: Path, task_id: str) -> str:
             continue
         if in_entry and stripped.startswith("status:"):
             return stripped.split(":", 1)[1].strip()
+    return compact_queue_task_status(queue, task_id)
+
+
+def compact_queue_task_status(queue: str, task_id: str) -> str:
+    section = ""
+    section_statuses = {
+        "completed": "completed",
+        "planned": "queued",
+        "waiting": "waiting",
+        "blocked": "blocked",
+    }
+    for line in queue.splitlines():
+        if line and not line[:1].isspace() and line.strip().endswith(":"):
+            section = line.strip()[:-1]
+            continue
+        stripped = line.strip()
+        if not section or not stripped.startswith("- "):
+            continue
+        entry_id = stripped[2:].split()[0]
+        if entry_id == task_id:
+            return section_statuses.get(section, "")
     return ""
 
 
@@ -95,13 +130,15 @@ def queue_task_completed(root: Path, task_id: str) -> bool:
 
 
 def hunt_closeout_completed(root: Path) -> bool:
-    return queue_task_completed(root, "HUNT-12")
+    return any(queue_task_completed(root, task_id) for task_id in POST_HUNT_COMPLETION_MARKERS)
 
 
 def hunt_queue_current_or_advanced(root: Path, completed_task_id: str, expected_current: str) -> bool:
     current = current_recommended_task(root)
     current_id = current_recommended_task_id(root)
     if current == expected_current or current_id == expected_current:
+        return True
+    if post_hunt_current_allowed(root):
         return True
     if not current or not queue_task_completed(root, completed_task_id) or not queue_has_task(root, expected_current):
         return False
@@ -113,6 +150,8 @@ def hunt_latest_packet_current_or_advanced(root: Path, completed_task_id: str, e
     current = current_recommended_task(root)
     current_id = current_recommended_task_id(root)
     if expected_task in packet:
+        return True
+    if post_hunt_current_allowed(root) and current_id and current_id in packet:
         return True
     if not queue_task_completed(root, completed_task_id):
         return False

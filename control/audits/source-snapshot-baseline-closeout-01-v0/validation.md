@@ -1,4 +1,4 @@
 
 # Validation
 
-Focused source/snapshot validators pass, architecture boundaries pass, generated artifact cleanliness passes, and AIDE checks are pass/warn. Full discovery remains red and blocks promotion/public alpha.
+Focused source/snapshot validators, selected focused tests, architecture boundaries, generated artifact cleanliness, and AIDE checks pass. Current full discovery is external-only and has not been provided yet, so promotion and public alpha remain blocked.
