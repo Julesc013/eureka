@@ -1,0 +1,27 @@
+{
+  "$id": "contracts/publication/public_alpha_rollback_plan.v0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "rollback_plan_id": {
+      "type": "string"
+    },
+    "rollback_required": {
+      "const": true
+    },
+    "schema_version": {
+      "const": "public_alpha_rollback_plan.v0"
+    },
+    "steps": {
+      "type": "array"
+    }
+  },
+  "required": [
+    "schema_version",
+    "rollback_plan_id",
+    "rollback_required",
+    "steps"
+  ],
+  "title": "Public Alpha Rollback Plan v0",
+  "type": "object"
+}

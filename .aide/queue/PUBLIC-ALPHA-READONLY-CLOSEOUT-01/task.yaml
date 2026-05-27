@@ -1,0 +1,13 @@
+task_id: PUBLIC-ALPHA-READONLY-CLOSEOUT-01
+status: current_recommended
+requires:
+  - PUBLIC-ALPHA-READONLY-00
+  - PUBLIC-ALPHA-HOSTING-READINESS-00
+scope:
+  - closeout public alpha read-only and hosting-readiness evidence
+  - request external full discovery if required
+  - classify compact summary if external discovery fails
+  - prepare promotion review only after pass
+deployment_allowed: false
+readiness_claimed: false
+next_task_on_pass: DEV-TO-MAIN-PROMOTION-REVIEW-04

@@ -1,0 +1,12 @@
+{
+  "schema_version": "public_alpha_hosting_next_task_decision.v0",
+  "task": "PUBLIC-ALPHA-HOSTING-READINESS-00",
+  "status": "pass",
+  "recommended_next_task": "PUBLIC-ALPHA-READONLY-CLOSEOUT-01",
+  "next_task_reason": "Close the public alpha read-only plus hosting-readiness baseline with focused evidence and external full discovery handoff before promotion.",
+  "do_not_launch_yet": true,
+  "do_not_deploy_yet": true,
+  "requires_external_full_discovery_before_launch_candidate": true,
+  "deployment_performed": false,
+  "public_launch_readiness_claimed": false
+}

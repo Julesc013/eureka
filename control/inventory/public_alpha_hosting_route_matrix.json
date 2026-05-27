@@ -1,0 +1,54 @@
+{
+  "schema_version": "public_alpha_hosting_route_matrix.v0",
+  "task": "PUBLIC-ALPHA-HOSTING-READINESS-00",
+  "web_routes": [
+    {
+      "route": "/alpha",
+      "method": "GET",
+      "mode": "reviewed_snapshot_read_only",
+      "public_mutation_enabled": false
+    },
+    {
+      "route": "/alpha/object",
+      "method": "GET",
+      "mode": "reviewed_snapshot_read_only",
+      "public_mutation_enabled": false
+    },
+    {
+      "route": "/alpha/source",
+      "method": "GET",
+      "mode": "reviewed_snapshot_read_only",
+      "public_mutation_enabled": false
+    },
+    {
+      "route": "/alpha/evidence",
+      "method": "GET",
+      "mode": "reviewed_snapshot_read_only",
+      "public_mutation_enabled": false
+    },
+    {
+      "route": "/alpha/absence",
+      "method": "GET",
+      "mode": "reviewed_snapshot_read_only",
+      "public_mutation_enabled": false
+    },
+    {
+      "route": "/alpha/needs",
+      "method": "GET",
+      "mode": "reviewed_snapshot_read_only",
+      "public_mutation_enabled": false
+    }
+  ],
+  "allowed_methods": [
+    "GET",
+    "HEAD"
+  ],
+  "forbidden_methods": [
+    "POST",
+    "PUT",
+    "PATCH",
+    "DELETE"
+  ],
+  "deployment_performed": false,
+  "public_launch_readiness_claimed": false
+}

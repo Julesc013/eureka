@@ -1,0 +1,11 @@
+{
+  "schema_version": "public_alpha_non_claim_policy.v0",
+  "policy_id": "public_alpha_non_claim_policy",
+  "status": "active",
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "rights_clearance_claimed": false,
+  "malware_safety_claimed": false,
+  "coverage_completeness_claimed": false,
+  "absence_means_not_in_current_reviewed_snapshot": true
+}

@@ -1,0 +1,11 @@
+{
+  "schema_version": "public_alpha_observability_policy.v0",
+  "policy_id": "public_alpha_observability_policy",
+  "status": "active",
+  "health_check_required": true,
+  "smoke_check_required": true,
+  "redaction_required": true,
+  "raw_query_logging_allowed": false,
+  "operator_token_logging_allowed": false,
+  "incident_checklist_required": true
+}

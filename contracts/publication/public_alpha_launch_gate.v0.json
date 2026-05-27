@@ -1,0 +1,31 @@
+{
+  "$id": "contracts/publication/public_alpha_launch_gate.v0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "deployment_approval_required": {
+      "const": true
+    },
+    "external_full_discovery_required": {
+      "const": true
+    },
+    "gate_id": {
+      "type": "string"
+    },
+    "launch_allowed_current": {
+      "const": false
+    },
+    "schema_version": {
+      "const": "public_alpha_launch_gate.v0"
+    }
+  },
+  "required": [
+    "schema_version",
+    "gate_id",
+    "external_full_discovery_required",
+    "deployment_approval_required",
+    "launch_allowed_current"
+  ],
+  "title": "Public Alpha Launch Gate v0",
+  "type": "object"
+}

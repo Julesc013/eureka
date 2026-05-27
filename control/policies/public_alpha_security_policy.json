@@ -1,0 +1,14 @@
+{
+  "schema_version": "public_alpha_security_policy.v0",
+  "policy_id": "public_alpha_security_policy",
+  "status": "active",
+  "security_headers_required": true,
+  "content_security_policy_required": true,
+  "inline_secret_allowed": false,
+  "public_write_routes_allowed": false,
+  "read_only_methods": [
+    "GET",
+    "HEAD"
+  ],
+  "request_size_limit_required": true
+}

@@ -1,0 +1,16 @@
+{
+  "schema_version": "public_alpha_hosting_rate_limit_matrix.v0",
+  "task": "PUBLIC-ALPHA-HOSTING-READINESS-00",
+  "anonymous_rate_limits_required": true,
+  "per_ip_limits_required": true,
+  "burst_limits_required": true,
+  "write_rate_limits_required": false,
+  "recommended_limits": {
+    "status_per_minute": 60,
+    "search_per_minute": 30,
+    "object_per_minute": 60,
+    "summary_per_minute": 60
+  },
+  "launch_blocked_without_rate_limits": true,
+  "public_mutation_enabled": false
+}

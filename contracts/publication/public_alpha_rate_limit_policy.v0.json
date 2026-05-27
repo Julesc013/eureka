@@ -1,0 +1,27 @@
+{
+  "$id": "contracts/publication/public_alpha_rate_limit_policy.v0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "anonymous_rate_limits_required": {
+      "const": true
+    },
+    "policy_id": {
+      "type": "string"
+    },
+    "rate_limit_rules": {
+      "type": "array"
+    },
+    "schema_version": {
+      "const": "public_alpha_rate_limit_policy.v0"
+    }
+  },
+  "required": [
+    "schema_version",
+    "policy_id",
+    "anonymous_rate_limits_required",
+    "rate_limit_rules"
+  ],
+  "title": "Public Alpha Rate Limit Policy v0",
+  "type": "object"
+}

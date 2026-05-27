@@ -1,0 +1,10 @@
+{
+  "schema_version": "public_alpha_rate_limit_policy.v0",
+  "policy_id": "public_alpha_rate_limit_policy",
+  "status": "active",
+  "anonymous_rate_limits_required": true,
+  "per_ip_limits_required": true,
+  "burst_limits_required": true,
+  "write_rate_limits_required": false,
+  "launch_blocked_without_rate_limits": true
+}

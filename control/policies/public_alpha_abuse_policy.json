@@ -1,0 +1,10 @@
+{
+  "schema_version": "public_alpha_abuse_policy.v0",
+  "policy_id": "public_alpha_abuse_policy",
+  "status": "active",
+  "abuse_contact_required_before_launch": true,
+  "takedown_process_required_before_launch": true,
+  "public_mutation_enabled": false,
+  "source_submission_enabled": false,
+  "account_required": false
+}

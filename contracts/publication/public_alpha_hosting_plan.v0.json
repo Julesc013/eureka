@@ -1,0 +1,43 @@
+{
+  "$id": "contracts/publication/public_alpha_hosting_plan.v0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "deployment_performed": {
+      "const": false
+    },
+    "hosting_modes": {
+      "type": "array"
+    },
+    "launch_allowed_current": {
+      "const": false
+    },
+    "plan_id": {
+      "type": "string"
+    },
+    "preferred_modes": {
+      "type": "array"
+    },
+    "production_readiness_claimed": {
+      "const": false
+    },
+    "public_launch_readiness_claimed": {
+      "const": false
+    },
+    "schema_version": {
+      "const": "public_alpha_hosting_plan.v0"
+    }
+  },
+  "required": [
+    "schema_version",
+    "plan_id",
+    "hosting_modes",
+    "preferred_modes",
+    "deployment_performed",
+    "launch_allowed_current",
+    "production_readiness_claimed",
+    "public_launch_readiness_claimed"
+  ],
+  "title": "Public Alpha Hosting Plan v0",
+  "type": "object"
+}

@@ -1,0 +1,11 @@
+{
+  "schema_version": "public_alpha_no_deploy_policy.v0",
+  "policy_id": "public_alpha_no_deploy_policy",
+  "status": "active",
+  "deployment_allowed_current": false,
+  "deployment_performed": false,
+  "provider_api_call_allowed": false,
+  "site_dist_mutation_allowed": false,
+  "credentials_in_repo_allowed": false,
+  "requires_future_operator_approval": true
+}

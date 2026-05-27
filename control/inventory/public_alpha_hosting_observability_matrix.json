@@ -1,0 +1,12 @@
+{
+  "schema_version": "public_alpha_hosting_observability_matrix.v0",
+  "task": "PUBLIC-ALPHA-HOSTING-READINESS-00",
+  "health_check_required": true,
+  "smoke_check_required": true,
+  "redaction_required": true,
+  "raw_query_logging_allowed": false,
+  "operator_token_logging_allowed": false,
+  "raw_live_source_response_logging_allowed": false,
+  "incident_checklist_required": true,
+  "deployment_performed": false
+}

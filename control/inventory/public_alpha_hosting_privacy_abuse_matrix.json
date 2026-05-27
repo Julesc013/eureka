@@ -1,0 +1,12 @@
+{
+  "schema_version": "public_alpha_hosting_privacy_abuse_matrix.v0",
+  "task": "PUBLIC-ALPHA-HOSTING-READINESS-00",
+  "privacy_notice_required": true,
+  "abuse_contact_required": true,
+  "takedown_process_required": true,
+  "accounts_enabled": false,
+  "public_submission_enabled": false,
+  "public_mutation_enabled": false,
+  "raw_query_retention_allowed": false,
+  "absence_language_limited_to_reviewed_snapshot": true
+}

@@ -1,0 +1,27 @@
+{
+  "$id": "contracts/publication/public_alpha_privacy_notice.v0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "accounts_enabled": {
+      "const": false
+    },
+    "notice_id": {
+      "type": "string"
+    },
+    "raw_query_retention_allowed": {
+      "const": false
+    },
+    "schema_version": {
+      "const": "public_alpha_privacy_notice.v0"
+    }
+  },
+  "required": [
+    "schema_version",
+    "notice_id",
+    "accounts_enabled",
+    "raw_query_retention_allowed"
+  ],
+  "title": "Public Alpha Privacy Notice v0",
+  "type": "object"
+}

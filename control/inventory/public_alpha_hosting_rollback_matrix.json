@@ -1,0 +1,22 @@
+{
+  "schema_version": "public_alpha_hosting_rollback_matrix.v0",
+  "task": "PUBLIC-ALPHA-HOSTING-READINESS-00",
+  "rollback_plan_required": true,
+  "static_snapshot_site": {
+    "rollback_path": "restore prior static artifact and prior reviewed snapshot manifest",
+    "requires_operator_approval": true
+  },
+  "read_only_relay_service": {
+    "rollback_path": "pin previous relay manifest and restart read-only service",
+    "requires_operator_approval": true
+  },
+  "local_preview_server": {
+    "rollback_path": "stop local preview process and remove preview-only environment",
+    "requires_operator_approval": false
+  },
+  "future_dynamic_gateway": {
+    "rollback_path": "blocked until a future reviewed launch task defines a dynamic gateway rollback",
+    "requires_operator_approval": true
+  },
+  "deployment_performed": false
+}

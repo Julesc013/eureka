@@ -1,0 +1,13 @@
+task_id: PUBLIC-ALPHA-LAUNCH-CANDIDATE-00
+status: planned
+requires:
+  - DEV-TO-MAIN-PROMOTION-REVIEW-04
+  - explicit_operator_deployment_approval
+  - external_full_discovery_summary_pass
+scope:
+  - launch-candidate review only
+  - no deployment without explicit future approval
+  - preserve reviewed-snapshot-only public alpha boundaries
+deployment_allowed: false
+readiness_claimed: false
+public_launch_readiness_claimed: false

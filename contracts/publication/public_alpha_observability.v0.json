@@ -1,0 +1,27 @@
+{
+  "$id": "contracts/publication/public_alpha_observability.v0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "observability_id": {
+      "type": "string"
+    },
+    "raw_query_logging_allowed": {
+      "const": false
+    },
+    "redaction_required": {
+      "const": true
+    },
+    "schema_version": {
+      "const": "public_alpha_observability.v0"
+    }
+  },
+  "required": [
+    "schema_version",
+    "observability_id",
+    "redaction_required",
+    "raw_query_logging_allowed"
+  ],
+  "title": "Public Alpha Observability v0",
+  "type": "object"
+}

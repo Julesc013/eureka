@@ -1,0 +1,37 @@
+{
+  "schema_version": "public_alpha_hosting_result.v0",
+  "task": "PUBLIC-ALPHA-HOSTING-READINESS-00",
+  "status": "pass",
+  "contracts_added": 9,
+  "policies_added": 7,
+  "hosting_modes_defined": [
+    "static_snapshot_site",
+    "read_only_relay_service",
+    "local_preview_server",
+    "future_dynamic_gateway"
+  ],
+  "preferred_initial_modes": [
+    "static_snapshot_site",
+    "read_only_relay_service"
+  ],
+  "security_model_added": true,
+  "rate_limit_model_added": true,
+  "observability_model_added": true,
+  "privacy_abuse_docs_added": true,
+  "rollback_plan_added": true,
+  "launch_gates_added": true,
+  "validator_passed": true,
+  "focused_tests_passed": true,
+  "deployment_performed": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "live_source_call_performed": false,
+  "source_probe_executed": false,
+  "download_performed": false,
+  "upload_performed": false,
+  "extraction_executed": false,
+  "model_provider_used": false,
+  "public_mutation_enabled": false,
+  "full_discovery_run_inside_ai": false,
+  "recommended_next_task": "PUBLIC-ALPHA-READONLY-CLOSEOUT-01"
+}

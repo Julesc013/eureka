@@ -1,0 +1,31 @@
+{
+  "$id": "contracts/publication/public_alpha_environment.v0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "environment_id": {
+      "type": "string"
+    },
+    "required_variables": {
+      "type": "array"
+    },
+    "risky_defaults_disabled": {
+      "const": true
+    },
+    "schema_version": {
+      "const": "public_alpha_environment.v0"
+    },
+    "secrets_in_repo_allowed": {
+      "const": false
+    }
+  },
+  "required": [
+    "schema_version",
+    "environment_id",
+    "required_variables",
+    "risky_defaults_disabled",
+    "secrets_in_repo_allowed"
+  ],
+  "title": "Public Alpha Environment v0",
+  "type": "object"
+}

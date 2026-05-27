@@ -1,0 +1,27 @@
+{
+  "$id": "contracts/publication/public_alpha_security_headers.v0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "csp_required": {
+      "const": true
+    },
+    "header_policy_id": {
+      "type": "string"
+    },
+    "headers": {
+      "type": "array"
+    },
+    "schema_version": {
+      "const": "public_alpha_security_headers.v0"
+    }
+  },
+  "required": [
+    "schema_version",
+    "header_policy_id",
+    "headers",
+    "csp_required"
+  ],
+  "title": "Public Alpha Security Headers v0",
+  "type": "object"
+}

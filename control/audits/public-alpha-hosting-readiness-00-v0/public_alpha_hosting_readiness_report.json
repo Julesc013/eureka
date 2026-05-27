@@ -1,0 +1,27 @@
+{
+  "schema_version": "public_alpha_hosting_readiness_report.v0",
+  "task": "PUBLIC-ALPHA-HOSTING-READINESS-00",
+  "status": "pass",
+  "contracts": "contracts/publication/",
+  "policies": "control/policies/public_alpha_*_policy.json",
+  "matrices": "control/inventory/public_alpha_hosting_*.json",
+  "docs": [
+    "docs/architecture/PUBLIC_ALPHA_HOSTING.md",
+    "docs/architecture/PUBLIC_ALPHA_SECURITY_MODEL.md",
+    "docs/operations/PUBLIC_ALPHA_HOSTING_RUNBOOK.md",
+    "docs/operations/PUBLIC_ALPHA_ROLLBACK_RUNBOOK.md",
+    "docs/operations/PUBLIC_ALPHA_ABUSE_AND_TAKEDOWN.md",
+    "docs/operations/POST_PUBLIC_ALPHA_HOSTING_PLAN.md",
+    "docs/reference/PUBLIC_ALPHA_ENVIRONMENT.md",
+    "docs/reference/PUBLIC_ALPHA_LAUNCH_GATES.md"
+  ],
+  "deployment_performed": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "live_source_call_performed": false,
+  "download_performed": false,
+  "extraction_executed": false,
+  "model_provider_used": false,
+  "public_mutation_enabled": false,
+  "next_task": "PUBLIC-ALPHA-READONLY-CLOSEOUT-01"
+}

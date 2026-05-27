@@ -1,0 +1,16 @@
+{
+  "schema_version": "public_alpha_hosting_input_state.v0",
+  "task": "PUBLIC-ALPHA-HOSTING-READINESS-00",
+  "branch": "dev",
+  "input_head": "53a71f4386b8a8a9ff6fb09b5237968a212a774f",
+  "origin_dev": "53a71f4386b8a8a9ff6fb09b5237968a212a774f",
+  "origin_main": "ddb334c35127628386438d6b6079adce5dec08b2",
+  "public_alpha_readonly_result": "control/inventory/public_alpha_readonly_00_result.json",
+  "snapshot_relay_result": "control/inventory/snapshot_relay_result.json",
+  "source_wave_result": "control/inventory/source_wave_result.json",
+  "source_action_kernel_result": "control/inventory/source_action_kernel_result.json",
+  "deployment_performed": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "full_discovery_run_inside_ai": false
+}

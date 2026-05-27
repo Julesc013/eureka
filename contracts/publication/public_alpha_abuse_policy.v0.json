@@ -1,0 +1,27 @@
+{
+  "$id": "contracts/publication/public_alpha_abuse_policy.v0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "abuse_contact_required": {
+      "const": true
+    },
+    "policy_id": {
+      "type": "string"
+    },
+    "public_mutation_enabled": {
+      "const": false
+    },
+    "schema_version": {
+      "const": "public_alpha_abuse_policy.v0"
+    }
+  },
+  "required": [
+    "schema_version",
+    "policy_id",
+    "abuse_contact_required",
+    "public_mutation_enabled"
+  ],
+  "title": "Public Alpha Abuse Policy v0",
+  "type": "object"
+}

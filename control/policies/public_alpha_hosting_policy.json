@@ -1,0 +1,20 @@
+{
+  "schema_version": "public_alpha_hosting_policy.v0",
+  "policy_id": "public_alpha_hosting_policy",
+  "status": "active",
+  "allowed_hosting_modes": [
+    "static_snapshot_site",
+    "read_only_relay_service",
+    "local_preview_server",
+    "future_dynamic_gateway"
+  ],
+  "preferred_initial_modes": [
+    "static_snapshot_site",
+    "read_only_relay_service"
+  ],
+  "deployment_performed": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "live_source_fanout_enabled": false,
+  "public_mutation_enabled": false
+}

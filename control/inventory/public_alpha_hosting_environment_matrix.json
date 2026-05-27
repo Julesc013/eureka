@@ -1,0 +1,19 @@
+{
+  "schema_version": "public_alpha_hosting_environment_matrix.v0",
+  "task": "PUBLIC-ALPHA-HOSTING-READINESS-00",
+  "required_variables": [
+    "EUREKA_ALPHA_SNAPSHOT_MANIFEST",
+    "EUREKA_ALPHA_RELAY_MANIFEST",
+    "EUREKA_ALPHA_ENVIRONMENT",
+    "EUREKA_ALPHA_READ_ONLY"
+  ],
+  "optional_variables": [
+    "EUREKA_ALPHA_BASE_URL",
+    "EUREKA_ALPHA_RATE_LIMIT_PROFILE",
+    "EUREKA_ALPHA_LOG_REDACTION_PROFILE"
+  ],
+  "secrets_required": false,
+  "credentials_in_repo_allowed": false,
+  "risky_defaults_disabled": true,
+  "deployment_performed": false
+}

@@ -1,0 +1,12 @@
+task_id: DEV-TO-MAIN-PROMOTION-REVIEW-04
+status: planned
+requires:
+  - PUBLIC-ALPHA-READONLY-CLOSEOUT-01
+  - external_full_discovery_summary_pass
+scope:
+  - promote public alpha read-only baseline from dev to main by fast-forward only
+  - verify no deployment or launch claim
+deployment_allowed: false
+force_push_allowed: false
+readiness_claimed: false
+next_task_on_pass: PUBLIC-ALPHA-LAUNCH-CANDIDATE-00
