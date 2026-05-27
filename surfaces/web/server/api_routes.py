@@ -47,6 +47,7 @@ from runtime.gateway.public_api import (
     ResolutionJobsPublicApi,
     QueryPlanRequest,
     QueryPlannerPublicApi,
+    PublicAlphaReadOnlyApi,
     PublicSearchPublicApi,
     ResolutionRunReadRequest,
     ResolutionWorkspaceReadError,
@@ -62,6 +63,7 @@ from runtime.gateway.public_api import (
     build_demo_local_index_public_api,
     build_demo_stored_exports_public_api,
     build_demo_public_search_public_api,
+    build_demo_public_alpha_readonly_api,
     acquisition_envelope_to_view_model,
     action_plan_envelope_to_view_model,
     absence_envelope_to_view_model,
@@ -322,6 +324,48 @@ def build_api_index_document(
                 "response_content_types": ["application/json"],
             },
             {
+                "path": "/api/v1/alpha/status",
+                "method": "GET",
+                "query_parameters": [],
+                "response_content_types": ["application/json"],
+            },
+            {
+                "path": "/api/v1/alpha/search",
+                "method": "GET",
+                "query_parameters": ["q", "limit"],
+                "response_content_types": ["application/json"],
+            },
+            {
+                "path": "/api/v1/alpha/object/{object_id}",
+                "method": "GET",
+                "query_parameters": [],
+                "response_content_types": ["application/json"],
+            },
+            {
+                "path": "/api/v1/alpha/source/{summary_id}",
+                "method": "GET",
+                "query_parameters": [],
+                "response_content_types": ["application/json"],
+            },
+            {
+                "path": "/api/v1/alpha/evidence/{summary_id}",
+                "method": "GET",
+                "query_parameters": [],
+                "response_content_types": ["application/json"],
+            },
+            {
+                "path": "/api/v1/alpha/absence/{summary_id}",
+                "method": "GET",
+                "query_parameters": [],
+                "response_content_types": ["application/json"],
+            },
+            {
+                "path": "/api/v1/alpha/needs",
+                "method": "GET",
+                "query_parameters": [],
+                "response_content_types": ["application/json"],
+            },
+            {
                 "path": "/api/search",
                 "method": "GET",
                 "query_parameters": ["q"],
@@ -446,6 +490,7 @@ def handle_api_request(
     source_registry_public_api: SourceRegistryPublicApi | None,
     session_id: str,
     public_search_public_api: PublicSearchPublicApi | None = None,
+    public_alpha_readonly_api: PublicAlphaReadOnlyApi | None = None,
     server_config: WebServerConfig | None = None,
 ) -> SerializedHttpResponse | None:
     if not path.startswith("/api"):
@@ -475,6 +520,45 @@ def handle_api_request(
     if path == "/api/v1/status":
         public_search_api = public_search_public_api or build_demo_public_search_public_api()
         response = public_search_api.status(query)
+        return json_response(response.status_code, response.body)
+
+    if path == "/api/v1/alpha/status":
+        alpha_api = public_alpha_readonly_api or build_demo_public_alpha_readonly_api()
+        response = alpha_api.status(query)
+        return json_response(response.status_code, response.body)
+
+    if path == "/api/v1/alpha/search":
+        alpha_api = public_alpha_readonly_api or build_demo_public_alpha_readonly_api()
+        response = alpha_api.search(query)
+        return json_response(response.status_code, response.body)
+
+    if path.startswith("/api/v1/alpha/object/"):
+        alpha_api = public_alpha_readonly_api or build_demo_public_alpha_readonly_api()
+        object_id = unquote(path.removeprefix("/api/v1/alpha/object/"))
+        response = alpha_api.object(object_id, query)
+        return json_response(response.status_code, response.body)
+
+    if path.startswith("/api/v1/alpha/source/"):
+        alpha_api = public_alpha_readonly_api or build_demo_public_alpha_readonly_api()
+        summary_id = unquote(path.removeprefix("/api/v1/alpha/source/"))
+        response = alpha_api.source_summary(summary_id, query)
+        return json_response(response.status_code, response.body)
+
+    if path.startswith("/api/v1/alpha/evidence/"):
+        alpha_api = public_alpha_readonly_api or build_demo_public_alpha_readonly_api()
+        summary_id = unquote(path.removeprefix("/api/v1/alpha/evidence/"))
+        response = alpha_api.evidence_summary(summary_id, query)
+        return json_response(response.status_code, response.body)
+
+    if path.startswith("/api/v1/alpha/absence/"):
+        alpha_api = public_alpha_readonly_api or build_demo_public_alpha_readonly_api()
+        summary_id = unquote(path.removeprefix("/api/v1/alpha/absence/"))
+        response = alpha_api.absence_summary(summary_id, query)
+        return json_response(response.status_code, response.body)
+
+    if path == "/api/v1/alpha/needs":
+        alpha_api = public_alpha_readonly_api or build_demo_public_alpha_readonly_api()
+        response = alpha_api.known_needs(query)
         return json_response(response.status_code, response.body)
 
     if path == "/api/v1/search":

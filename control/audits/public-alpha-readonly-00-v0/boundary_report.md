@@ -1,0 +1,19 @@
+# Boundary Report
+
+- read_only: true
+- snapshot_backed: true
+- relay_backed: true
+- reviewed_index_only: true
+- deployment_performed: false
+- production_readiness_claimed: false
+- public_launch_readiness_claimed: false
+- live_source_call_performed: false
+- source_probe_executed: false
+- download_performed: false
+- upload_performed: false
+- extraction_executed: false
+- model_provider_used: false
+- master_index_mutated: false
+- data_public_index_mutated: false
+- committed_instance_state: false
+- raw_live_source_response_committed: false

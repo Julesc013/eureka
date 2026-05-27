@@ -1,7 +1,17 @@
 task_id: PUBLIC-ALPHA-READONLY-00
-status: current_recommended
+status: completed
+result: pass
 requires:
   - SOURCE-SNAPSHOT-BASELINE-CLOSEOUT-01
   - DEV-TO-MAIN-PROMOTION-REVIEW-03
   - external_full_discovery_summary_pass
 readiness_claimed: false
+implementation:
+  mode: reviewed_snapshot_read_only
+  snapshot_backed: true
+  relay_backed: true
+  read_only: true
+  deployment_performed: false
+  production_readiness_claimed: false
+  public_launch_readiness_claimed: false
+next_task: PUBLIC-ALPHA-HOSTING-READINESS-00

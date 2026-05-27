@@ -1,0 +1,60 @@
+{
+  "schema_version": "public_alpha_readonly_00_validation_matrix.v0",
+  "task": "PUBLIC-ALPHA-READONLY-00",
+  "status": "pass",
+  "full_discovery_run_inside_ai": false,
+  "commands": [
+    {
+      "command": "python scripts/validate_public_alpha_readonly.py --json",
+      "status": "pass"
+    },
+    {
+      "command": "python -m unittest runtime.gateway.tests.test_public_alpha_readonly surfaces.web.tests.test_public_alpha_readonly_routes tests.scripts.test_validate_public_alpha_readonly",
+      "status": "pass"
+    },
+    {
+      "command": "git diff --check",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_public_search_contract.py --json",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_public_search_index.py --json",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_snapshot_relay.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/check_architecture_boundaries.py",
+      "status": "pass"
+    },
+    {
+      "command": "python .aide/scripts/aide_lite.py doctor",
+      "status": "pass"
+    },
+    {
+      "command": "python .aide/scripts/aide_lite.py validate",
+      "status": "pass"
+    },
+    {
+      "command": "python .aide/scripts/aide_lite.py test",
+      "status": "pass"
+    },
+    {
+      "command": "python .aide/scripts/aide_lite.py selftest",
+      "status": "pass"
+    },
+    {
+      "command": "python .aide/scripts/aide_lite.py verify",
+      "status": "pass"
+    },
+    {
+      "command": "python .aide/scripts/aide_lite.py review-pack",
+      "status": "pass"
+    }
+  ]
+}

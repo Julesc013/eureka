@@ -52,6 +52,7 @@ from runtime.gateway.public_api import (
     ResolutionJobsPublicApi,
     QueryPlanRequest,
     QueryPlannerPublicApi,
+    PublicAlphaReadOnlyApi,
     PublicSearchPublicApi,
     ResolutionRunReadRequest,
     ResolutionWorkspaceReadError,
@@ -70,6 +71,7 @@ from runtime.gateway.public_api import (
     archive_resolution_evals_envelope_to_view_model,
     build_demo_local_index_public_api,
     build_demo_local_tasks_public_api,
+    build_demo_public_alpha_readonly_api,
     build_demo_public_search_public_api,
     build_demo_archive_resolution_evals_public_api,
     build_demo_resolution_memory_public_api,
@@ -108,6 +110,7 @@ from surfaces.web.workbench import (
     render_local_tasks_html,
     render_member_access_html,
     render_query_plan_html,
+    render_public_alpha_readonly_html,
     render_public_search_html,
     render_representations_html,
     render_resolution_runs_html,
@@ -583,6 +586,7 @@ class WorkbenchWsgiApp:
         local_index_public_api: LocalIndexPublicApi | None = None,
         stored_exports_public_api: StoredExportsPublicApi | None = None,
         search_public_api: SearchPublicApi,
+        public_alpha_readonly_api: PublicAlphaReadOnlyApi | None = None,
         public_search_public_api: PublicSearchPublicApi | None = None,
         source_registry_public_api: SourceRegistryPublicApi | None = None,
         default_target_ref: str,
@@ -607,6 +611,7 @@ class WorkbenchWsgiApp:
         self._local_index_public_api = local_index_public_api
         self._stored_exports_public_api = stored_exports_public_api
         self._search_public_api = search_public_api
+        self._public_alpha_readonly_api = public_alpha_readonly_api
         self._public_search_public_api = public_search_public_api
         self._source_registry_public_api = source_registry_public_api
         self._default_target_ref = default_target_ref
@@ -645,6 +650,7 @@ class WorkbenchWsgiApp:
             source_registry_public_api=self._source_registry_public_api,
             session_id=self._session_id,
             public_search_public_api=self._public_search_public_api,
+            public_alpha_readonly_api=self._public_alpha_readonly_api,
             server_config=self._server_config,
         )
         if api_response is not None:
@@ -701,6 +707,12 @@ class WorkbenchWsgiApp:
             "/inspect/bundle",
             "/actions/export-resolution-manifest",
             "/actions/export-resolution-bundle",
+            "/alpha",
+            "/alpha/object",
+            "/alpha/source",
+            "/alpha/evidence",
+            "/alpha/absence",
+            "/alpha/needs",
             "/store/manifest",
             "/store/bundle",
             "/stored/artifact",
@@ -714,7 +726,9 @@ class WorkbenchWsgiApp:
                     message=(
                         "This bootstrap workbench serves compatibility-first pages at '/', '/search', "
                         "'/status', '/absence/resolve', '/absence/search', '/compare', '/compatibility', '/decompose', '/evals/archive-resolution', '/fetch', '/member', '/query-plan', '/action-plan', '/handoff', '/index/build', '/index/status', '/index/search', '/representations', '/tasks', '/task', '/task/run/validate-source-registry', '/task/run/build-local-index', '/task/run/query-local-index', '/task/run/validate-archive-resolution-evals', '/runs', '/run', '/run/resolve', '/run/search', '/run/planned-search', '/sources', '/source', '/subject', '/inspect/bundle', '/actions/export-resolution-manifest', and "
-                        "'/actions/export-resolution-bundle', '/store/manifest', "
+                        "'/actions/export-resolution-bundle', '/alpha', "
+                        "'/alpha/object', '/alpha/source', '/alpha/evidence', "
+                        "'/alpha/absence', '/alpha/needs', '/store/manifest', "
                         "'/store/bundle', '/stored/artifact', '/memories', '/memory', and "
                         "'/memory/create'."
                     ),
@@ -735,6 +749,41 @@ class WorkbenchWsgiApp:
                 start_response,
                 status="200 OK",
                 body=_render_status_page(self._server_config.to_status_dict()),
+            )
+
+        if path in {"/alpha", "/alpha/object", "/alpha/source", "/alpha/evidence", "/alpha/absence", "/alpha/needs"}:
+            alpha_api = self._public_alpha_readonly_api or build_demo_public_alpha_readonly_api()
+            if path == "/alpha":
+                if self._resolve_optional_query_value(query_string, "q") is None:
+                    response = alpha_api.status(query)
+                else:
+                    response = alpha_api.search(query)
+            elif path == "/alpha/object":
+                response = alpha_api.object(
+                    self._resolve_optional_query_value(query_string, "id") or "",
+                    query,
+                )
+            elif path == "/alpha/source":
+                response = alpha_api.source_summary(
+                    self._resolve_optional_query_value(query_string, "id") or "",
+                    query,
+                )
+            elif path == "/alpha/evidence":
+                response = alpha_api.evidence_summary(
+                    self._resolve_optional_query_value(query_string, "id") or "",
+                    query,
+                )
+            elif path == "/alpha/absence":
+                response = alpha_api.absence_summary(
+                    self._resolve_optional_query_value(query_string, "id") or "",
+                    query,
+                )
+            else:
+                response = alpha_api.known_needs(query)
+            return self._respond(
+                start_response,
+                status=status_line(response.status_code),
+                body=render_public_alpha_readonly_html(response.body),
             )
 
         if path == "/":

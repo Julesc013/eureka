@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (4594 chars, 1149 approximate tokens)
+- `.aide/context/latest-task-packet.md` (5655 chars, 1414 approximate tokens)
 
 ## Context Packet Reference
 
@@ -33,23 +33,31 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Changed Files Summary
 
+- allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/DEV-TO-MAIN-PROMOTION-REVIEW-03/task.yaml` (M; matches active task allowed path)
+- allowed: `.aide/queue/PUBLIC-ALPHA-HOSTING-READINESS-00` (??; matches active task allowed path)
 - allowed: `.aide/queue/PUBLIC-ALPHA-READONLY-00/task.yaml` (M; matches active task allowed path)
-- allowed: `.aide/queue/SOURCE-SNAPSHOT-BASELINE-CLOSEOUT-01/task.yaml` (M; matches active task allowed path)
 - allowed: `.aide/queue/index.yaml` (M; matches active task allowed path)
 - allowed: `.aide/reports/eureka-repo-health.json` (M; matches active task allowed path)
 - allowed: `.aide/reports/eureka-repo-health.md` (M; matches active task allowed path)
-- allowed: `control/audits/dev-to-main-promotion-review-03-v0/branch_state.md` (M; matches active task allowed path)
-- allowed: `control/audits/dev-to-main-promotion-review-03-v0/dev_to_main_promotion_03_report.json` (M; matches active task allowed path)
-- allowed: `control/audits/dev-to-main-promotion-review-03-v0/generated/sample_summary.md` (M; matches active task allowed path)
-- allowed: `control/audits/dev-to-main-promotion-review-03-v0/promotion_result.md` (M; matches active task allowed path)
-- allowed: `control/audits/dev-to-main-promotion-review-03-v0/validation.md` (M; matches active task allowed path)
-- allowed: `control/audits/dev-to-main-promotion-review-03-v0/validation_matrix.md` (M; matches active task allowed path)
-- allowed: `control/inventory/dev_to_main_promotion_03_branch_state.json` (M; matches active task allowed path)
-- allowed: `control/inventory/dev_to_main_promotion_03_result.json` (M; matches active task allowed path)
-- allowed: `control/inventory/dev_to_main_promotion_03_validation_matrix.json` (M; matches active task allowed path)
-- unknown: `tools/validators/validate_source_snapshot_baseline_closeout.py` (M; does not match active task allowed paths)
+- allowed: `control/audits/public-alpha-readonly-00-v0` (??; matches active task allowed path)
+- allowed: `control/inventory/public_alpha_readonly_00_boundary_report.json` (??; matches active task allowed path)
+- allowed: `control/inventory/public_alpha_readonly_00_failure_repair_log.json` (??; matches active task allowed path)
+- allowed: `control/inventory/public_alpha_readonly_00_next_task_decision.json` (??; matches active task allowed path)
+- allowed: `control/inventory/public_alpha_readonly_00_result.json` (??; matches active task allowed path)
+- allowed: `control/inventory/public_alpha_readonly_00_validation_matrix.json` (??; matches active task allowed path)
+- allowed: `docs/operations/PUBLIC_ALPHA_READONLY_00.md` (??; matches active task allowed path)
+- allowed: `runtime/gateway/public_api/__init__.py` (M; matches active task allowed path)
+- allowed: `runtime/gateway/public_api/demo_support.py` (M; matches active task allowed path)
+- allowed: `runtime/gateway/public_api/public_alpha_readonly.py` (??; matches active task allowed path)
+- allowed: `runtime/gateway/tests/test_public_alpha_readonly.py` (??; matches active task allowed path)
+- allowed: `scripts/validate_public_alpha_readonly.py` (??; matches active task allowed path)
+- allowed: `surfaces/web/server/api_routes.py` (M; matches active task allowed path)
+- allowed: `surfaces/web/server/workbench_server.py` (M; matches active task allowed path)
+- allowed: `surfaces/web/tests/test_public_alpha_readonly_routes.py` (??; matches active task allowed path)
+- allowed: `surfaces/web/workbench/__init__.py` (M; matches active task allowed path)
+- allowed: `surfaces/web/workbench/render_public_alpha_readonly.py` (??; matches active task allowed path)
+- additional changed paths omitted from compact packet: 2; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -59,8 +67,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 6093
-- approx_tokens: 1524
+- chars: 6697
+- approx_tokens: 1675
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

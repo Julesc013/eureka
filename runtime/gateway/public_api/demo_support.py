@@ -75,6 +75,7 @@ from runtime.gateway.public_api.representation_selection_boundary import (
 from runtime.gateway.public_api.search_boundary import SearchPublicApi
 from runtime.gateway.public_api.public_search import PublicSearchPublicApi
 from runtime.gateway.public_api.public_search_index import load_public_search_index_records
+from runtime.gateway.public_api.public_alpha_readonly import PublicAlphaReadOnlyApi
 from runtime.gateway.public_api.source_registry_boundary import SourceRegistryPublicApi
 from runtime.gateway.public_api.stored_exports import StoredExportsPublicApi
 from runtime.gateway.public_api.subject_states_boundary import SubjectStatesPublicApi
@@ -127,6 +128,15 @@ def build_demo_public_search_public_api() -> PublicSearchPublicApi:
         index_status=index_status,
         index_document_count=index_document_count,
     )
+
+
+def build_demo_public_alpha_readonly_api() -> PublicAlphaReadOnlyApi:
+    from runtime.relay import build_relay_from_snapshot
+    from runtime.snapshots import build_snapshot_from_examples
+
+    snapshot = build_snapshot_from_examples()
+    relay = build_relay_from_snapshot(snapshot, "public_api_read_only")
+    return PublicAlphaReadOnlyApi(snapshot_build_result=snapshot, relay_build_result=relay)
 
 
 def build_demo_local_index_public_api() -> LocalIndexPublicApi:

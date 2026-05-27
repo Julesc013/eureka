@@ -1,0 +1,19 @@
+{
+  "schema_version": "public_alpha_readonly_00_failure_repair_log.v0",
+  "task": "PUBLIC-ALPHA-READONLY-00",
+  "status": "pass",
+  "repairs": [
+    {
+      "family": "missing reviewed-snapshot public alpha route",
+      "status": "repaired",
+      "summary": "Added /api/v1/alpha/* and /alpha/* read-only routes backed by snapshot/relay fixtures."
+    },
+    {
+      "family": "unsafe public alpha controls",
+      "status": "guarded",
+      "summary": "Public alpha read-only routes reject live, local path, credential, transfer, mutation, and execution controls."
+    }
+  ],
+  "remaining_failures": 0,
+  "remaining_errors": 0
+}

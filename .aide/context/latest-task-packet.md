@@ -17,6 +17,7 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 - `AGENTS.md`
 - `.aide/queue/index.yaml`
 - `.aide/queue/PUBLIC-ALPHA-READONLY-00/task.yaml`
+- `control/inventory/public_alpha_readonly_00_result.json`
 - `control/inventory/dev_to_main_promotion_03_result.json`
 - `control/inventory/source_snapshot_closeout_result.json`
 - `.aide/memory/project-state.md`
@@ -52,9 +53,20 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 - `control/inventory/**`
 - `control/audits/**`
 - `control/policies/**`
+- `runtime/gateway/public_api/public_alpha_readonly.py`
+- `runtime/gateway/public_api/demo_support.py`
+- `runtime/gateway/public_api/__init__.py`
+- `surfaces/web/server/api_routes.py`
+- `surfaces/web/server/workbench_server.py`
+- `surfaces/web/workbench/render_public_alpha_readonly.py`
+- `surfaces/web/workbench/__init__.py`
 - `scripts/local_queue_progress.py`
 - `scripts/validate_*.py`
 - `scripts/check_*.py`
+- `tools/validators/validate_public_alpha_readonly.py`
+- `runtime/gateway/tests/test_public_alpha_readonly.py`
+- `surfaces/web/tests/test_public_alpha_readonly_routes.py`
+- `tests/scripts/test_validate_public_alpha_readonly.py`
 - `tests/operations/**`
 - `tests/aide/**`
 
@@ -67,15 +79,15 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 - `.local/**`
 - `.cache/**`
 - `eureka-instance/**`
-- `runtime/**`
+- `runtime/**` except `runtime/gateway/public_api/public_alpha_readonly.py`, `runtime/gateway/public_api/demo_support.py`, `runtime/gateway/public_api/__init__.py`, and `runtime/gateway/tests/test_public_alpha_readonly.py`
 - `contracts/**`
-- `surfaces/**`
+- `surfaces/**` except `surfaces/web/server/api_routes.py`, `surfaces/web/server/workbench_server.py`, `surfaces/web/workbench/render_public_alpha_readonly.py`, `surfaces/web/workbench/__init__.py`, and `surfaces/web/tests/test_public_alpha_readonly_routes.py`
 - `site/**`
 - `native/**`
 - `crates/**`
 - `examples/**`
 - `evals/**`
-- `tests/**` unless this is an AIDE/control-plane test repair
+- `tests/**` except focused public-alpha read-only tests
 - `scripts/**` unless this is an AIDE validator/check repair
 - raw provider credentials, API keys, local caches, raw prompt logs, raw responses, and source AIDE repository state
 

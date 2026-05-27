@@ -152,6 +152,7 @@ from runtime.gateway.public_api.demo_support import (
     build_demo_decomposition_public_api,
     build_demo_local_index_public_api,
     build_demo_local_tasks_public_api,
+    build_demo_public_alpha_readonly_api,
     build_demo_member_access_public_api,
     build_demo_public_search_public_api,
     build_demo_query_planner_public_api,
@@ -206,6 +207,7 @@ from runtime.gateway.public_api.public_search import (
     public_search_error_response,
     validate_public_search_query,
 )
+from runtime.gateway.public_api.public_alpha_readonly import PublicAlphaReadOnlyApi
 from runtime.gateway.public_api.local_index_boundary import (
     LocalIndexPublicApi,
     local_index_build_to_public_envelope,
@@ -294,6 +296,7 @@ __all__ = [
     "ResolutionMemoryPublicApi",
     "PlannedSearchRunRequest",
     "PublicSearchPublicApi",
+    "PublicAlphaReadOnlyApi",
     "PublicSearchRequest",
     "QueryPlanRequest",
     "DecompositionPublicApi",
@@ -380,6 +383,7 @@ __all__ = [
     "build_demo_local_tasks_public_api",
     "build_demo_member_access_public_api",
     "build_demo_public_search_public_api",
+    "build_demo_public_alpha_readonly_api",
     "build_demo_query_planner_public_api",
     "build_demo_resolution_memory_public_api",
     "build_demo_representation_selection_public_api",

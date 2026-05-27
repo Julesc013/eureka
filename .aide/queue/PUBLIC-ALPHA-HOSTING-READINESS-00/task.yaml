@@ -1,0 +1,17 @@
+task_id: PUBLIC-ALPHA-HOSTING-READINESS-00
+status: current_recommended
+requires:
+  - PUBLIC-ALPHA-READONLY-00
+  - reviewed_snapshot_read_only_routes_pass
+  - no_deployment_performed
+scope:
+  - hosting topology
+  - environment config
+  - static/relay deployment model
+  - rate limits
+  - security headers
+  - logs and observability
+  - backup and rollback
+  - privacy, abuse, and takedown docs
+readiness_claimed: false
+deployment_allowed: false

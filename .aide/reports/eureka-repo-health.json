@@ -1,6 +1,6 @@
 {
   "branch": "dev",
-  "current_recommended_task": "PUBLIC-ALPHA-READONLY-00 - Public reviewed-index-only alpha foundation",
+  "current_recommended_task": "PUBLIC-ALPHA-HOSTING-READINESS-00 - Public alpha hosting readiness without deployment",
   "deployment_performed": false,
   "full_discovery_policy": "external_handoff_required_for_ai_sessions",
   "full_unittest_discovery_count": 5008,
@@ -12,6 +12,7 @@
   "origin_main": "5fac451ad1965245435e5ac1ced1624b514021b9",
   "origin_main_equals_origin_dev": true,
   "production_readiness_claimed": false,
+  "public_alpha_readonly_status": "completed_pass",
   "public_launch_readiness_claimed": false,
   "schema_version": "eureka_repo_health.v0",
   "snapshot_relay_status": "completed_pass",
