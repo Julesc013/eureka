@@ -1,0 +1,80 @@
+{
+  "schema_version": "dev_to_main_promotion_03_validation_matrix.v0",
+  "task": "DEV-TO-MAIN-PROMOTION-REVIEW-03",
+  "full_unittest_discovery_status": "pass",
+  "full_unittest_discovery_count": 5008,
+  "full_unittest_discovery_failures": 0,
+  "full_unittest_discovery_errors": 0,
+  "full_unittest_discovery_exit_code": 0,
+  "full_discovery_run_inside_ai": false,
+  "expected_refusal_trace_nonblocking": true,
+  "commands": [
+    {
+      "command": "python scripts/validate_test_run_summary.py ../eureka-test-runs/source_snapshot_closeout/full_unittest_summary.json --json",
+      "status": "pass",
+      "notes": "External repo-sibling compact summary validated before promotion evidence."
+    },
+    {
+      "command": "python scripts/validate_source_snapshot_baseline_closeout.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_source_action_kernel.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_source_wave.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_snapshot_relay.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/check_architecture_boundaries.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/check_generated_artifact_cleanliness.py --check --json",
+      "status": "post_commit_required",
+      "notes": "Pre-commit run reports the newly added audit pack as uncommitted audit-generated drift; rerun after commit must pass."
+    },
+    {
+      "command": "python scripts/validate_dev_to_main_promotion_03.py",
+      "status": "pass"
+    },
+    {
+      "command": "python -m unittest tests.operations.test_dev_to_main_promotion_03",
+      "status": "pass"
+    },
+    {
+      "command": "python -m unittest tests.scripts.test_validate_dev_to_main_promotion_03",
+      "status": "pass"
+    },
+    {
+      "command": "python .aide/scripts/aide_lite.py doctor",
+      "status": "pass"
+    },
+    {
+      "command": "python .aide/scripts/aide_lite.py validate",
+      "status": "pass"
+    },
+    {
+      "command": "python .aide/scripts/aide_lite.py test",
+      "status": "pass"
+    },
+    {
+      "command": "python .aide/scripts/aide_lite.py selftest",
+      "status": "pass"
+    },
+    {
+      "command": "python .aide/scripts/aide_lite.py verify",
+      "status": "pass_with_warnings",
+      "notes": "0 errors; one stale task-packet diff-scope warning for the new promotion-03 script test path."
+    },
+    {
+      "command": "python .aide/scripts/aide_lite.py review-pack",
+      "status": "pass"
+    }
+  ]
+}

@@ -33,31 +33,20 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Changed Files Summary
 
-- allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
-- allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
-- allowed: `.aide/policies/long_test_token_discipline.md` (M; matches active task allowed path)
-- allowed: `.aide/policies/test_execution_policy.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/SOURCE-SNAPSHOT-BASELINE-CLOSEOUT-01/task.yaml` (MM; matches active task allowed path)
-- allowed: `.aide/queue/index.yaml` (M; matches active task allowed path)
-- allowed: `.aide/reports/eureka-repo-health.json` (MM; matches active task allowed path)
-- allowed: `.aide/reports/eureka-repo-health.md` (MM; matches active task allowed path)
-- unknown: `.github/workflows/full-discovery.yml` (M; does not match active task allowed paths)
-- unknown: `.github/workflows/promotion-gate.yml` (M; does not match active task allowed paths)
-- allowed: `AGENTS.md` (M; matches active task allowed path)
-- allowed: `control/audits/source-snapshot-baseline-closeout-01-v0/README.md` (M; matches active task allowed path)
-- allowed: `control/audits/source-snapshot-baseline-closeout-01-v0/branch_state.md` (M; matches active task allowed path)
-- allowed: `control/audits/source-snapshot-baseline-closeout-01-v0/external_full_discovery_handoff.json` (AM; matches active task allowed path)
-- allowed: `control/audits/source-snapshot-baseline-closeout-01-v0/full_discovery_summary.md` (MM; matches active task allowed path)
-- allowed: `control/audits/source-snapshot-baseline-closeout-01-v0/next_task_decision.md` (MM; matches active task allowed path)
-- allowed: `control/audits/source-snapshot-baseline-closeout-01-v0/source_snapshot_closeout_report.json` (M; matches active task allowed path)
-- allowed: `control/audits/source-snapshot-baseline-closeout-01-v0/validation.md` (M; matches active task allowed path)
-- allowed: `control/audits/source-snapshot-baseline-closeout-01-v0/validation_matrix.md` (MM; matches active task allowed path)
-- allowed: `control/inventory/source_snapshot_closeout_branch_state.json` (M; matches active task allowed path)
-- allowed: `control/inventory/source_snapshot_closeout_external_full_discovery_handoff.json` (AM; matches active task allowed path)
-- allowed: `control/inventory/source_snapshot_closeout_external_handoff.json` (AM; matches active task allowed path)
-- allowed: `control/inventory/source_snapshot_closeout_failure_inventory.json` (MM; matches active task allowed path)
-- allowed: `control/inventory/source_snapshot_closeout_failure_repair_log.json` (MM; matches active task allowed path)
-- additional changed paths omitted from compact packet: 28; see task evidence changed-files report
+- allowed: `control/audits/dev-to-main-promotion-review-03-v0` (??; matches active task allowed path)
+- allowed: `control/inventory/dev_to_main_promotion_03_boundary_report.json` (??; matches active task allowed path)
+- allowed: `control/inventory/dev_to_main_promotion_03_branch_state.json` (??; matches active task allowed path)
+- allowed: `control/inventory/dev_to_main_promotion_03_failure_repair_log.json` (??; matches active task allowed path)
+- allowed: `control/inventory/dev_to_main_promotion_03_input_state.json` (??; matches active task allowed path)
+- allowed: `control/inventory/dev_to_main_promotion_03_next_task_decision.json` (??; matches active task allowed path)
+- allowed: `control/inventory/dev_to_main_promotion_03_result.json` (??; matches active task allowed path)
+- allowed: `control/inventory/dev_to_main_promotion_03_scope_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/dev_to_main_promotion_03_validation_matrix.json` (??; matches active task allowed path)
+- allowed: `docs/operations/DEV_TO_MAIN_PROMOTION_REVIEW_03.md` (??; matches active task allowed path)
+- allowed: `docs/operations/POST_SOURCE_SNAPSHOT_PROMOTION_PLAN.md` (??; matches active task allowed path)
+- allowed: `scripts/validate_dev_to_main_promotion_03.py` (??; matches active task allowed path)
+- allowed: `tests/operations/test_dev_to_main_promotion_03.py` (??; matches active task allowed path)
+- unknown: `tests/scripts/test_validate_dev_to_main_promotion_03.py` (??; does not match active task allowed paths)
 
 ## Validation Summary
 
@@ -67,8 +56,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 6955
-- approx_tokens: 1739
+- chars: 5788
+- approx_tokens: 1447
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

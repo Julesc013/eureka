@@ -1,0 +1,60 @@
+{
+  "schema_version": "dev_to_main_promotion_03_scope_matrix.v0",
+  "task": "DEV-TO-MAIN-PROMOTION-REVIEW-03",
+  "promotion_scope": [
+    {
+      "subsystem_id": "ci_full_discovery_harness",
+      "result_file": "control/inventory/ci_full_discovery_harness_result.json",
+      "status": "pass_with_warnings",
+      "promotion_included": true,
+      "unsafe_actions_enabled": false,
+      "production_claim": false,
+      "public_launch_claim": false
+    },
+    {
+      "subsystem_id": "source_snapshot_baseline_closeout",
+      "result_file": "control/inventory/source_snapshot_closeout_result.json",
+      "status": "effective_pass_from_external_full_discovery",
+      "promotion_included": true,
+      "unsafe_actions_enabled": false,
+      "production_claim": false,
+      "public_launch_claim": false
+    },
+    {
+      "subsystem_id": "source_action_kernel",
+      "result_file": "control/inventory/source_action_kernel_result.json",
+      "status": "pass_with_warnings",
+      "promotion_included": true,
+      "unsafe_actions_enabled": false,
+      "production_claim": false,
+      "public_launch_claim": false
+    },
+    {
+      "subsystem_id": "source_wave",
+      "result_file": "control/inventory/source_wave_result.json",
+      "status": "pass_with_warnings",
+      "promotion_included": true,
+      "unsafe_actions_enabled": false,
+      "production_claim": false,
+      "public_launch_claim": false
+    },
+    {
+      "subsystem_id": "snapshot_relay",
+      "result_file": "control/inventory/snapshot_relay_result.json",
+      "status": "pass_with_warnings",
+      "promotion_included": true,
+      "unsafe_actions_enabled": false,
+      "production_claim": false,
+      "public_launch_claim": false
+    },
+    {
+      "subsystem_id": "local_product_loop_baseline",
+      "result_file": "control/inventory/dev_to_main_promotion_02_result.json",
+      "status": "pass",
+      "promotion_included": true,
+      "unsafe_actions_enabled": false,
+      "production_claim": false,
+      "public_launch_claim": false
+    }
+  ]
+}

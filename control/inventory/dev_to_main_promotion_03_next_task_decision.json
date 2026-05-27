@@ -1,0 +1,14 @@
+{
+  "schema_version": "dev_to_main_promotion_03_next_task_decision.v0",
+  "task": "DEV-TO-MAIN-PROMOTION-REVIEW-03",
+  "status": "pass",
+  "recommended_next_task": "PUBLIC-ALPHA-READONLY-00 - Public reviewed-index-only alpha foundation",
+  "public_alpha_can_start_after_promotion": true,
+  "requires_origin_main_equals_origin_dev": true,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "deployment_performed": false,
+  "live_source_call_performed": false,
+  "source_probe_executed": false,
+  "model_provider_used": false
+}
