@@ -33,7 +33,21 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Changed Files Summary
 
-- none
+- allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
+- unknown: `control/inventory/legacy_runtime_leakage_remediation_result.json` (M; does not match active task allowed paths)
+- allowed: `control/inventory/public_alpha_readonly_closeout_failure_repair_log.json` (M; matches active task allowed path)
+- allowed: `control/inventory/public_alpha_readonly_closeout_full_discovery_result.json` (M; matches active task allowed path)
+- unknown: `control/inventory/public_alpha_routes.json` (M; does not match active task allowed paths)
+- unknown: `runtime/gateway/public_api/__init__.py` (M; does not match active task allowed paths)
+- unknown: `scripts/validate_dev_to_main_promotion_03.py` (M; does not match active task allowed paths)
+- unknown: `scripts/validate_public_alpha_hosting_readiness.py` (M; does not match active task allowed paths)
+- allowed: `scripts/validate_public_alpha_readonly_closeout.py` (M; matches active task allowed path)
+- unknown: `tools/generators/hunt_queue_progress.py` (M; does not match active task allowed paths)
+- unknown: `tools/validators/validate_legacy_runtime_leakage_remediation.py` (M; does not match active task allowed paths)
+- unknown: `tools/validators/validate_local_appliance_track.py` (M; does not match active task allowed paths)
+- unknown: `tools/validators/validate_public_alpha_hosting_readiness.py` (??; does not match active task allowed paths)
+- unknown: `tools/validators/validate_public_alpha_readonly_closeout.py` (??; does not match active task allowed paths)
+- unknown: `tools/validators/validate_source_snapshot_baseline_closeout.py` (M; does not match active task allowed paths)
 
 ## Validation Summary
 
@@ -43,8 +57,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 4251
-- approx_tokens: 1063
+- chars: 5918
+- approx_tokens: 1480
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

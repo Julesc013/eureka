@@ -116,9 +116,6 @@ from runtime.gateway.public_api.resolution_boundary import (
     resolution_job_to_public_envelope,
 )
 from runtime.gateway.public_api.resolution_actions import (
-    EXPORT_RESOLUTION_BUNDLE_ACTION_ID,
-    EXPORT_RESOLUTION_BUNDLE_LABEL,
-    EXPORT_RESOLUTION_BUNDLE_ROUTE,
     EXPORT_RESOLUTION_MANIFEST_ACTION_ID,
     EXPORT_RESOLUTION_MANIFEST_LABEL,
     EXPORT_RESOLUTION_MANIFEST_ROUTE,
@@ -179,9 +176,6 @@ from runtime.gateway.public_api.resolution_bundle_inspection import (
     bundle_inspection_result_to_public_envelope,
 )
 from runtime.gateway.public_api.stored_exports import (
-    STORE_RESOLUTION_BUNDLE_ACTION_ID,
-    STORE_RESOLUTION_BUNDLE_LABEL,
-    STORE_RESOLUTION_BUNDLE_ROUTE,
     STORE_RESOLUTION_MANIFEST_ACTION_ID,
     STORE_RESOLUTION_MANIFEST_LABEL,
     STORE_RESOLUTION_MANIFEST_ROUTE,
@@ -317,9 +311,6 @@ __all__ = [
     "RepresentationSelectionPublicApi",
     "ExplainResolveMissRequest",
     "ExplainSearchMissRequest",
-    "EXPORT_RESOLUTION_BUNDLE_ACTION_ID",
-    "EXPORT_RESOLUTION_BUNDLE_LABEL",
-    "EXPORT_RESOLUTION_BUNDLE_ROUTE",
     "EXPORT_RESOLUTION_MANIFEST_ACTION_ID",
     "EXPORT_RESOLUTION_MANIFEST_LABEL",
     "EXPORT_RESOLUTION_MANIFEST_ROUTE",
@@ -346,9 +337,6 @@ __all__ = [
     "SourceRegistryPublicApi",
     "SubjectStatesCatalogRequest",
     "SubjectStatesPublicApi",
-    "STORE_RESOLUTION_BUNDLE_ACTION_ID",
-    "STORE_RESOLUTION_BUNDLE_LABEL",
-    "STORE_RESOLUTION_BUNDLE_ROUTE",
     "STORE_RESOLUTION_MANIFEST_ACTION_ID",
     "STORE_RESOLUTION_MANIFEST_LABEL",
     "STORE_RESOLUTION_MANIFEST_ROUTE",

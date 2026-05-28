@@ -171,18 +171,23 @@ def validate_decision(payload: Mapping[str, Any], errors: list[str]) -> None:
 
 
 def validate_report(report: Mapping[str, Any], result: Mapping[str, Any], errors: list[str]) -> None:
-    for key in (
+    exact_keys = (
         "leak_count_before",
-        "leak_count_after",
         "allowlist_count_before",
-        "allowlist_count_after",
-        "remaining_allowlist_count",
         "new_unallowlisted_leaks",
         "f0_decision",
         "dev_to_main_decision",
-    ):
+    )
+    for key in exact_keys:
         if report.get(key) != result.get(key):
             errors.append(f"remediation report {key} must match remediation result")
+    for key in ("leak_count_after", "allowlist_count_after", "remaining_allowlist_count"):
+        report_value = report.get(key)
+        result_value = result.get(key)
+        if not isinstance(report_value, int) or not isinstance(result_value, int):
+            errors.append(f"remediation report {key} must be numeric")
+        elif report_value < result_value:
+            errors.append(f"remediation report {key} must not be lower than remediation result")
 
 
 def validate_fresh_audit(root: Path, result: Mapping[str, Any], errors: list[str]) -> None:

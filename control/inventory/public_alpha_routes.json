@@ -186,6 +186,96 @@
         "local_dev": "allowed",
         "public_alpha": "allowed"
       },
+      "notes": "Public alpha reviewed snapshot search page. Uses the public alpha read-only API projection and exposes no public mutation controls.",
+      "owning_module": "surfaces.web.server.workbench_server.WorkbenchWsgiApp",
+      "reason": "Public alpha search is read-only, snapshot-backed, and uses no caller-provided local path controls.",
+      "route_pattern": "/alpha",
+      "surface_type": "html",
+      "write_read_behavior": "read-only public alpha search HTML"
+    },
+    {
+      "classification": "safe_public_alpha",
+      "local_path_parameters": [],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "allowed"
+      },
+      "notes": "Public alpha reviewed object packet page. The object id is a governed packet identifier, not a local path.",
+      "owning_module": "surfaces.web.server.workbench_server.WorkbenchWsgiApp",
+      "reason": "Public alpha object packets are read-only and snapshot-backed.",
+      "route_pattern": "/alpha/object",
+      "surface_type": "html",
+      "write_read_behavior": "read-only public alpha object HTML"
+    },
+    {
+      "classification": "safe_public_alpha",
+      "local_path_parameters": [],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "allowed"
+      },
+      "notes": "Public alpha source summary page. The summary id is a governed packet identifier, not a local path.",
+      "owning_module": "surfaces.web.server.workbench_server.WorkbenchWsgiApp",
+      "reason": "Public alpha source summaries are read-only and snapshot-backed.",
+      "route_pattern": "/alpha/source",
+      "surface_type": "html",
+      "write_read_behavior": "read-only public alpha source HTML"
+    },
+    {
+      "classification": "safe_public_alpha",
+      "local_path_parameters": [],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "allowed"
+      },
+      "notes": "Public alpha evidence summary page. The summary id is a governed packet identifier, not a local path.",
+      "owning_module": "surfaces.web.server.workbench_server.WorkbenchWsgiApp",
+      "reason": "Public alpha evidence summaries are read-only and snapshot-backed.",
+      "route_pattern": "/alpha/evidence",
+      "surface_type": "html",
+      "write_read_behavior": "read-only public alpha evidence HTML"
+    },
+    {
+      "classification": "safe_public_alpha",
+      "local_path_parameters": [],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "allowed"
+      },
+      "notes": "Public alpha absence summary page. Absence means not present in the reviewed snapshot, not a global existence claim.",
+      "owning_module": "surfaces.web.server.workbench_server.WorkbenchWsgiApp",
+      "reason": "Public alpha absence summaries are read-only and snapshot-backed.",
+      "route_pattern": "/alpha/absence",
+      "surface_type": "html",
+      "write_read_behavior": "read-only public alpha absence HTML"
+    },
+    {
+      "classification": "safe_public_alpha",
+      "local_path_parameters": [],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "allowed"
+      },
+      "notes": "Public alpha known needs page. Need records are reviewed snapshot packets and do not trigger public source actions.",
+      "owning_module": "surfaces.web.server.workbench_server.WorkbenchWsgiApp",
+      "reason": "Public alpha known needs are read-only and snapshot-backed.",
+      "route_pattern": "/alpha/needs",
+      "surface_type": "html",
+      "write_read_behavior": "read-only public alpha needs HTML"
+    },
+    {
+      "classification": "safe_public_alpha",
+      "local_path_parameters": [],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "allowed"
+      },
       "notes": "Local Public Search Runtime v0 status route. Reports local_index_only and disabled live/download/upload/local-path/telemetry capabilities without private paths.",
       "owning_module": "surfaces.web.server.api_routes.handle_api_request",
       "reason": "Public search status is read-only and exposes safe capability flags only.",
@@ -252,6 +342,111 @@
       "route_pattern": "/api/v1/source/{source_id}",
       "surface_type": "api",
       "write_read_behavior": "read-only public-search source detail JSON"
+    },
+    {
+      "classification": "safe_public_alpha",
+      "local_path_parameters": [],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "allowed"
+      },
+      "notes": "Public alpha reviewed snapshot status route. Reports read-only/snapshot-backed capability flags only.",
+      "owning_module": "surfaces.web.server.api_routes.handle_api_request",
+      "reason": "Public alpha status is read-only and exposes no caller-provided local filesystem controls.",
+      "route_pattern": "/api/v1/alpha/status",
+      "surface_type": "api",
+      "write_read_behavior": "read-only public alpha status JSON"
+    },
+    {
+      "classification": "safe_public_alpha",
+      "local_path_parameters": [],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "allowed"
+      },
+      "notes": "Public alpha reviewed snapshot search route. It rejects live, local path, credential, mutation, and transfer controls.",
+      "owning_module": "surfaces.web.server.api_routes.handle_api_request",
+      "reason": "Public alpha search is read-only, snapshot-backed, and does not perform live source fanout.",
+      "route_pattern": "/api/v1/alpha/search",
+      "surface_type": "api",
+      "write_read_behavior": "read-only public alpha search JSON"
+    },
+    {
+      "classification": "safe_public_alpha",
+      "local_path_parameters": [],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "allowed"
+      },
+      "notes": "Public alpha object packet route by governed object id. Does not read local paths or perform source actions.",
+      "owning_module": "surfaces.web.server.api_routes.handle_api_request",
+      "reason": "Public alpha object packets are read-only and snapshot-backed.",
+      "route_pattern": "/api/v1/alpha/object/{object_id}",
+      "surface_type": "api",
+      "write_read_behavior": "read-only public alpha object JSON"
+    },
+    {
+      "classification": "safe_public_alpha",
+      "local_path_parameters": [],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "allowed"
+      },
+      "notes": "Public alpha source summary route by governed summary id. Does not trigger live source fanout.",
+      "owning_module": "surfaces.web.server.api_routes.handle_api_request",
+      "reason": "Public alpha source summaries are read-only and snapshot-backed.",
+      "route_pattern": "/api/v1/alpha/source/{summary_id}",
+      "surface_type": "api",
+      "write_read_behavior": "read-only public alpha source JSON"
+    },
+    {
+      "classification": "safe_public_alpha",
+      "local_path_parameters": [],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "allowed"
+      },
+      "notes": "Public alpha evidence summary route by governed summary id. Does not expose payload bytes.",
+      "owning_module": "surfaces.web.server.api_routes.handle_api_request",
+      "reason": "Public alpha evidence summaries are read-only and snapshot-backed.",
+      "route_pattern": "/api/v1/alpha/evidence/{summary_id}",
+      "surface_type": "api",
+      "write_read_behavior": "read-only public alpha evidence JSON"
+    },
+    {
+      "classification": "safe_public_alpha",
+      "local_path_parameters": [],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "allowed"
+      },
+      "notes": "Public alpha absence summary route by governed summary id. Absence is scoped to the reviewed snapshot.",
+      "owning_module": "surfaces.web.server.api_routes.handle_api_request",
+      "reason": "Public alpha absence summaries are read-only and snapshot-backed.",
+      "route_pattern": "/api/v1/alpha/absence/{summary_id}",
+      "surface_type": "api",
+      "write_read_behavior": "read-only public alpha absence JSON"
+    },
+    {
+      "classification": "safe_public_alpha",
+      "local_path_parameters": [],
+      "method": "GET",
+      "mode_behavior": {
+        "local_dev": "allowed",
+        "public_alpha": "allowed"
+      },
+      "notes": "Public alpha known needs route. Need records are reviewed snapshot packets and do not trigger public source actions.",
+      "owning_module": "surfaces.web.server.api_routes.handle_api_request",
+      "reason": "Public alpha known needs are read-only and snapshot-backed.",
+      "route_pattern": "/api/v1/alpha/needs",
+      "surface_type": "api",
+      "write_read_behavior": "read-only public alpha needs JSON"
     },
     {
       "classification": "safe_public_alpha",

@@ -468,6 +468,10 @@ def local_track_handoff_queue(queue_current: str | None) -> bool:
         "DEV-TO-MAIN-PROMOTION-REVIEW-03",
         "CI-FULL-DISCOVERY-HARNESS-00",
         "PUBLIC-ALPHA-READONLY-00",
+        "PUBLIC-ALPHA-HOSTING-READINESS-00",
+        "PUBLIC-ALPHA-READONLY-CLOSEOUT-01",
+        "DEV-TO-MAIN-PROMOTION-REVIEW-04",
+        "PUBLIC-ALPHA-LAUNCH-CANDIDATE-00",
     }
     return any(queue_current == task or queue_current.startswith(f"{task} ") for task in handoff_tasks)
 

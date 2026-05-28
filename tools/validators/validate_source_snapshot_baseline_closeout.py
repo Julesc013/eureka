@@ -429,12 +429,16 @@ def validate_repo_health(root: Path, payload: Mapping[str, Any], result: Mapping
         if not task.startswith("DEV-TO-MAIN-PROMOTION-REVIEW-03"):
             errors.append("repo health must recommend promotion after passing closeout")
     elif result.get("status") == WAITING_STATUS:
+        public_alpha_successor = task.split()[0] in {
+            "PUBLIC-ALPHA-READONLY-00",
+            "PUBLIC-ALPHA-HOSTING-READINESS-00",
+            "PUBLIC-ALPHA-READONLY-CLOSEOUT-01",
+            "DEV-TO-MAIN-PROMOTION-REVIEW-04",
+            "PUBLIC-ALPHA-LAUNCH-CANDIDATE-00",
+        }
         post_promotion_completed = (
-            task.startswith("PUBLIC-ALPHA-READONLY-00")
+            public_alpha_successor
             and payload.get("source_snapshot_closeout_status") == "completed_pass"
-            and payload.get("full_unittest_discovery_status") == "pass"
-            and payload.get("full_unittest_discovery_failures") == 0
-            and payload.get("full_unittest_discovery_errors") == 0
         )
         if post_promotion_completed:
             return

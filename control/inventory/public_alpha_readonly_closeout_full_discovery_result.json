@@ -13,5 +13,18 @@
   "failed_tests_path": "../eureka-test-runs/public_alpha_readonly_closeout/failed_tests.txt",
   "command": "python scripts/run_full_unittest_discovery.py --out ../eureka-test-runs/public_alpha_readonly_closeout",
   "full_discovery_run_inside_ai": false,
-  "waiting_status": "WAITING_FOR_EXTERNAL_FULL_DISCOVERY"
+  "waiting_status": "WAITING_FOR_EXTERNAL_FULL_DISCOVERY",
+  "previous_external_attempt": {
+    "summary_path": "../eureka-test-runs/public_alpha_readonly_closeout/full_unittest_summary.json",
+    "dev_head": "7c022c70830fc264244751add910c302fb9c274f",
+    "status": "fail",
+    "tests_run": 5029,
+    "failures": 29,
+    "errors": 1,
+    "exit_code": 1,
+    "compact_summary_consumed": true,
+    "raw_logs_committed": false,
+    "repair_applied": true,
+    "rerun_required": true
+  }
 }

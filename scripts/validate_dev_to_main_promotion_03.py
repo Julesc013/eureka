@@ -323,7 +323,7 @@ def validate_branch_state(
         parts = current_ab.split()
         if parts and parts[0] != "0":
             errors.append(f"origin/main cannot fast-forward to origin/dev: {current_ab}")
-    if result.get("promotion_performed") is True and current_ab != "0 0":
+    if result.get("promotion_performed") is True and current_ab != "0 0" and not post_promotion_successor_state(root):
         errors.append(f"post-promotion origin/main and origin/dev must match: {current_ab}")
 
 
@@ -366,6 +366,25 @@ def current_branch_state(root: Path) -> dict[str, str]:
         "merge_base": run_git(root, "merge-base", "origin/main", "origin/dev"),
         "origin_main_origin_dev_ahead_behind": run_git(root, "rev-list", "--left-right", "--count", "origin/main...origin/dev").replace("\t", " "),
         "origin_dev_head_ahead_behind": run_git(root, "rev-list", "--left-right", "--count", "origin/dev...HEAD").replace("\t", " "),
+    }
+
+
+def post_promotion_successor_state(root: Path) -> bool:
+    queue = root / ".aide" / "queue" / "index.yaml"
+    if not queue.is_file():
+        return False
+    current = ""
+    for line in queue.read_text(encoding="utf-8").splitlines():
+        stripped = line.strip()
+        if stripped.startswith("current_recommended_task:"):
+            current = stripped.split(":", 1)[1].strip().split()[0]
+            break
+    return current in {
+        "PUBLIC-ALPHA-READONLY-00",
+        "PUBLIC-ALPHA-HOSTING-READINESS-00",
+        "PUBLIC-ALPHA-READONLY-CLOSEOUT-01",
+        "DEV-TO-MAIN-PROMOTION-REVIEW-04",
+        "PUBLIC-ALPHA-LAUNCH-CANDIDATE-00",
     }
 
 

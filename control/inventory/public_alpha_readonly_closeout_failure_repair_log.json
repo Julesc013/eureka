@@ -1,12 +1,50 @@
 {
   "schema_version": "public_alpha_readonly_closeout_failure_repair_log.v0",
   "task": "PUBLIC-ALPHA-READONLY-CLOSEOUT-01",
-  "status": "no_repairs_required_before_external_full_discovery",
-  "repairs": [],
+  "status": "external_full_discovery_failed_repaired_waiting_for_rerun",
+  "external_attempt": {
+    "summary_path": "../eureka-test-runs/public_alpha_readonly_closeout/full_unittest_summary.json",
+    "dev_head": "7c022c70830fc264244751add910c302fb9c274f",
+    "status": "fail",
+    "tests_run": 5029,
+    "failures": 29,
+    "errors": 1,
+    "exit_code": 1,
+    "working_tree_clean": true
+  },
+  "repairs": [
+    {
+      "family": "public_alpha_route_inventory_drift",
+      "repair": "Added the public alpha read-only HTML and API routes to control/inventory/public_alpha_routes.json."
+    },
+    {
+      "family": "stale_hunt_local_successor_queue_expectations",
+      "repair": "Extended existing HUNT/LOCAL successor allowlists to recognize the public-alpha hosting, closeout, promotion, and launch-candidate lane."
+    },
+    {
+      "family": "stale_source_snapshot_and_promotion_validators",
+      "repair": "Allowed historical source-snapshot and promotion validators to accept the current public-alpha successor state without requiring main promotion for in-progress dev work."
+    },
+    {
+      "family": "repo_structure_canon_scripts_debt",
+      "repair": "Moved new public-alpha validator implementations to tools/validators and restored scripts/ entries to compatibility wrappers."
+    },
+    {
+      "family": "runtime_architecture_leakage_barrel_exports",
+      "repair": "Removed package-barrel re-exports of uppercase bundle action constants while leaving owning modules intact."
+    },
+    {
+      "family": "legacy_runtime_leakage_remediation_count_drift",
+      "repair": "Refreshed current remediation result counts after the barrel export cleanup and kept generated audit evidence historical."
+    }
+  ],
   "focused_failures_remaining": 0,
-  "external_full_discovery_summary_received": false,
+  "external_full_discovery_summary_received": true,
+  "external_full_discovery_passed": false,
+  "external_full_discovery_rerun_required": true,
   "notes": [
-    "Focused closeout evidence is complete.",
-    "External full discovery must run outside the AI session before promotion."
+    "The external summary was compact and sufficient; raw full discovery stdout/stderr were not consumed or committed.",
+    "Focused repairs have been applied for the compact failure families.",
+    "External full discovery must rerun outside the AI session before promotion."
   ]
 }
