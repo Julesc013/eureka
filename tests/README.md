@@ -1,61 +1,26 @@
 # Root Tests
 
-`tests/` is reserved for verification that crosses component boundaries.
+`tests/` is reserved for verification that crosses component boundaries or
+protects repo-wide operating discipline.
 
-- `architecture/`: repo-local architectural guardrail checks and synthetic violation fixtures for the narrow boundary checker
-- `evals/`: repo-level validation for shared benchmark and evaluation assets
-- `hardening/`: high-risk regression guards for eval truth, public-alpha path
-  safety, route/docs/README drift, parity/golden discipline, and repo
-  operating metadata consistency
-- `integration/`: cross-component checks across contracts, runtime, and surfaces
-- `operations/`: repo-operating checks for public-alpha posture, hosting-pack
-  evidence, test/eval operating-layer metadata, and audit packs
-- `scripts/`: compatibility and command-entrypoint checks for stable `scripts/`
-  wrappers
-- `tools/`: implementation-level checks for substantive tooling under `tools/`
-- `parity/`: planning docs for future Python-oracle to Rust-candidate parity checks
-- `end_to_end/`: higher-level product workflow checks once real behavior exists
+Current families:
 
-Component-local tests stay with their owning component and should not be duplicated here.
+- `architecture/`: architecture boundary guards and synthetic violations.
+- `evals/`: repo-level validation for benchmark/eval assets.
+- `hardening/`: high-risk guards for eval truth, path safety, route/docs drift,
+  parity/golden discipline, and repo metadata consistency.
+- `integration/`: cross-component checks across contracts, runtime, and
+  surfaces.
+- `operations/`: repo-operating checks for public-alpha posture, audit packs,
+  launch gates, and validation matrices.
+- `scripts/`: stable `scripts/` wrapper checks.
+- `tools/`: implementation-level checks for tooling under `tools/`.
+- `parity/`: Python-oracle to Rust-candidate parity checks and plans.
+- `end_to_end/`: higher-level workflow checks.
 
-Result Lanes + User-Cost Ranking v0 adds component-local ranking tests under
-`runtime/engine/ranking/tests/` plus cross-component checks where lane/cost
-annotations flow through public search and index projection. These tests guard
-bounded deterministic usefulness hints only, not production ranking.
+Component-local tests stay with their owning component. Full unittest discovery
+must run outside AI chat/model sessions through the harness or CI when required:
 
-Compatibility Evidence Pack v0 adds component-local compatibility-evidence
-tests under `runtime/engine/compatibility/tests/` plus projection checks where
-source-backed evidence flows through local index, search, compatibility, CLI,
-and web output. These tests guard fixture-backed evidence and unknown outcomes,
-not a compatibility oracle or installer/runtime execution behavior.
-
-Search Usefulness Audit Delta v0 adds
-`tests/operations/test_search_usefulness_audit_delta.py` to validate the
-committed delta pack, baseline limitations, selected wedges, current audit
-counts, pending/manual external-baseline posture, and next recommendation. It
-does not exercise product behavior.
-
-Search Usefulness Audit Delta v1 adds
-`tests/operations/test_search_usefulness_audit_delta_v1.py` to validate the
-second committed delta pack, v0 baseline reference, current audit counts,
-archive-eval movement, pending/manual external-baseline posture, and Hard Eval
-Satisfaction Pack v0 recommendation. It does not exercise product behavior.
-
-Hard Eval Satisfaction Pack v0 adds
-`tests/evals/test_hard_eval_satisfaction_pack.py` to validate the hard-eval
-satisfaction report, source-backed partial movement, the unchanged
-article-inside-scan capability gap, and the rule that any later satisfied task
-must have source-backed structured evidence.
-
-Old-Platform Result Refinement Pack v0 adds
-`tests/evals/test_old_platform_result_refinement.py` to validate the
-result-refinement report, strict result-shape checks, expected-lane checks,
-bad-result avoidance, one source-backed satisfied driver/member task, and
-explicit remaining partial/capability-gap explanations.
-
-Old-Platform Source Coverage Expansion v0 adds
-`tests/integration/test_old_platform_source_coverage_expansion.py` and expands
-component-local connector/index/compatibility tests. These checks guard the
-expanded committed fixture corpus only; they do not add live source calls,
-scraping, crawling, arbitrary local filesystem ingestion, or real binary
-handling.
+```powershell
+python scripts/run_full_unittest_discovery.py --out ..\eureka-test-runs\manual_full_discovery
+```

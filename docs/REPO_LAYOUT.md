@@ -1,120 +1,63 @@
 # Repo Layout
 
-Eureka's active bootstrap tree is governed by `contracts/repo/*` and the
-component boundaries in `AGENTS.md`.
+Eureka's layout follows the component boundaries in [AGENTS.md](../AGENTS.md)
+and the current architecture posture in [ARCHITECTURE.md](ARCHITECTURE.md).
 
 ```text
 eureka/
-  .aide/                  repo-local automation metadata
-  .aide.local.example/    committed local-state template
+  .aide/                  repo-local operating metadata and task packets
+  .aide.local.example/    committed example for machine-local AIDE state
   .github/                repository automation
-  control/                governance, inventories, audits, policies, evidence
+  control/                governance, audits, inventories, policies, evidence
   contracts/              schemas, contracts, packets, and public authority
-    repo/                 repository structure canon
-    schema/control/       schema authority formerly under control
-    source/               source records, cache, registry, and sync contracts
-    evidence/ledger/      evidence ledger contract authority
-    view/                 view/page/model contract authority
-    surface/              surface projection and page contracts
   runtime/                Python reference runtime
-    engine/               current engine/kernel boundary
-    gateway/              gateway runtime behavior
-    connectors/           bounded source acquisition adapters
-    local/                local appliance/eval/foundry/service/worker families
-    source/               source cache, registry, and observation runtime families
-    index/                candidate and public index runtime families
-    evidence/ledger/      evidence ledger runtime family
-    review/queue/         review queue runtime family
-    worker/workunit_queue/ work-unit queue runtime family
-    search/               search hunt, need, and quality runtime families
-  surfaces/               user-facing projections and adapters
-    api/                  API projection notes; runtime service stays in gateway
-    cli/                  current local stdlib CLI surface
-    files/                static files projection notes
-    lite/                 lightweight static projection notes
-    native/               native projection adapters, not native project authority
-    text/                 plain-text static projection notes
-    web/
-      server/
-      workbench/
-        local_html/       server-rendered local workbench presentation
-  site/                   static site source and generated public artifact
-    assets/
-    data/
-    pages/
-    templates/
-    dist/
-      data/public_index/  committed generated public-index artifact
-  snapshots/
-    examples/
-    schema/
-  native/                 canonical native client project root
-  crates/                 Rust parity and future production-lane experiments
+  surfaces/               web, CLI, API, text, file, lite, and native projections
+  site/                   static site source and generated static artifact tree
+  snapshots/              snapshot schemas and public-safe examples
   docs/                   human documentation
-  evals/                  system and replay evaluations
-  examples/               public-safe examples and fixtures
-  tools/                  substantive repo tooling implementations
-    validators/
-    generators/
-    auditors/
-    reporters/
-    migrations/
-    release/
-  scripts/                thin compatibility wrappers and command entry points
-  release/                release and deployment definitions
-    hosting/
-      render/
+  evals/                  repo-level evaluations
+  examples/               public-safe fixtures, packs, and examples
+  tests/                  cross-component and repo-operating tests
+  tools/                  implementation helpers
+  scripts/                stable command wrappers
+  release/                release and hosting plans
   external/               pinned outside references
-  archive/                retired, quarantined, or historical material
-    prototypes/
+  archive/                retired, historical, or quarantined material
+  native/                 native client project root and skeletons
+  crates/                 Rust parity and future migration lane
 ```
 
 ## Ownership Intent
 
-- `control/`: governance and planning assets; not runtime behavior or schema authority.
-- `contracts/`: governed assets that define shared meaning and public boundaries.
-- `runtime/`: engine, gateway, connector, store, and local-service implementation.
-- `surfaces/`: user-facing projections over runtime and contract packets.
-- `site/`: static site inputs plus inventoried generated/public artifacts.
-- `tools/`: implementation for validators, generators, auditors, reporters, migrations, and release helpers.
-- `scripts/`: stable command paths that wrap `tools/` implementations.
-- `release/`: deployment and packaging definitions; no generated release output.
-- `archive/`: retained historical material that is not active source authority.
+- `control/` owns governance and planning assets, not runtime behavior.
+- `contracts/` owns shared meaning, packets, schemas, and public boundaries.
+- `runtime/` owns Python reference runtime behavior.
+- `surfaces/` owns user-facing projections.
+- `site/` owns static site source and generated static publication artifacts.
+- `snapshots/` owns read-only snapshot schema/examples.
+- `tools/` owns substantive validator/generator/auditor implementations.
+- `scripts/` owns stable command entry points that wrap `tools/`.
+- `release/` owns release and hosting plans, not generated release output.
+- `archive/` owns retained historical material that is not active authority.
 
-## Second-Level Taxonomy
+## Generated And Local State
 
-`control/policies/path_taxonomy_policy.json` and
-`scripts/validate_path_taxonomy.py` record the current allowed surface families,
-the remaining contracts/runtime/examples taxonomy debt, and forbidden active
-paths such as `release/render` and `surfaces/native/cli`.
+Do not commit local instances, private caches, raw logs, tokens, provider
+credentials, raw live source responses, or full-discovery raw output. Full
+discovery artifacts should live outside the repo, normally under
+`../eureka-test-runs/<run-id>`.
 
-`control/policies/taxonomy_closeout_policy.json`,
-`control/policies/aide_ledger_size_policy.json`, and
-`scripts/validate_taxonomy_closeout_policy.py` record the targeted closeout
-decision after the root cleanup:
-
-- Runtime flat first-level names such as `runtime/source/cache` and
-  `runtime/local/service` are compatibility shim packages. Canonical runtime
-  authority lives under the family paths above.
-- Contract family moves are migration-map-backed, with
-  `contracts/schema/control` replacing the former migrated `control_schemas`
-  authority path.
-- Examples stay public-safe fixtures; high-volume task-phase groups now live
-  under durable families such as `examples/packs`, `examples/sources`,
-  `examples/search`, `examples/review`, `examples/evidence`, `examples/index`,
-  and `examples/work_units`.
-- `.aide/` generated/export/report material is control-plane evidence, not
-  product truth.
+`site/dist/` is the governed generated static artifact tree. It is not a Python
+backend deployment and must not be treated as public launch evidence by itself.
 
 ## Test Boundary
 
-Component-local tests live inside the component they validate, such as
-`runtime/engine/tests`, `runtime/gateway/tests`, `runtime/connectors/tests`,
-`surfaces/web/tests`, or `surfaces/native/tests`.
+Component-local tests live inside the component they validate. Root `tests/` is
+for cross-component, hardening, operation, integration, and end-to-end checks.
+Root `evals/` is for system-level and replay evaluations.
 
-Root `tests/` is reserved for cross-component integration and end-to-end
-coverage. Root `evals/` is reserved for system-level and replay-style
-evaluation, not unit-style component checks.
+## References
 
-`runtime/engine/interfaces/` is reserved for concrete dependency boundary paths
-that other runtime components may rely on.
+- [Root README](../README.md)
+- [Architecture](ARCHITECTURE.md)
+- [Test and eval lanes](operations/TEST_AND_EVAL_LANES.md)

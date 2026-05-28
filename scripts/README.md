@@ -4,6 +4,12 @@ This directory holds thin compatibility wrappers and stable command entry
 points. Substantive implementations live under `tools/`; the wrappers preserve
 documented commands such as `python scripts/validate_repo_structure_canon.py`.
 
+Current posture: scripts are local/repo command entry points. They must not hide
+deployment, public launch, live source fanout, downloads/uploads, broad
+extraction, model/provider calls, public mutation, or full-discovery raw-log
+commits. Prefer documenting `scripts/` commands rather than direct `tools/`
+paths.
+
 Current scripts:
 
 - `check_architecture_boundaries.py`: runs the narrow bootstrap architectural-boundary checker for Python imports and enforces the current proven layering between surfaces, `runtime/gateway/public_api`, connectors, and engine; it emits readable text by default, supports `--json`, and remains a repo-local guardrail rather than a universal policy engine

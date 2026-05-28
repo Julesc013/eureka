@@ -1,5 +1,12 @@
 # Open Questions
 
+> Current-status note: this is a historical and active question ledger. Some
+> questions are answered by later evidence, while others remain open. For the
+> current public-alpha read-only and launch-candidate posture, start with
+> [README.md](../README.md), [docs/BOOTSTRAP_STATUS.md](BOOTSTRAP_STATUS.md),
+> and [docs/ROADMAP.md](ROADMAP.md). Open questions are not accepted behavior or
+> launch evidence.
+
 These questions are intentionally left open during bootstrap:
 
 1. What exact object identity boundary should Eureka use for composite software artifacts?

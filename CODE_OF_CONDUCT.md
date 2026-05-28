@@ -1,5 +1,10 @@
 # Code of Conduct
 
+Eureka is a pre-product repository with local-first and public-alpha-read-only
+foundations. Community and contributor conduct should preserve evidence,
+privacy, safety boundaries, and clear separation between candidates, plans, and
+accepted truth.
+
 Eureka work should be respectful, evidence-focused, and careful with user,
 source, and preservation contexts.
 

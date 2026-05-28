@@ -1,26 +1,36 @@
 # Runtime
 
-`runtime/` holds product execution areas. Bootstrap separates engine, gateway, and connectors so their dependencies stay explicit before any real logic is added.
+`runtime/` holds Eureka's Python reference runtime. Python remains the
+executable reference backend and product-oracle lane for the current baseline.
 
-- `engine/`: core resolution, preservation, reconstruction, and snapshotting logic
-- `gateway/`: public-facing runtime boundary, brokering, scheduling, and publishing
-- `connectors/`: bounded acquisition adapters that feed governed engine interfaces
+Current families include:
+
+- `engine/`: core resolution, planning, indexing, eval, memory, and interface
+  boundaries
+- `gateway/`: gateway-facing runtime and public API projections
+- `connectors/`: bounded acquisition/metadata adapters
+- `local/`: local appliance, service, worker, and foundry families
+- `source/`: source cache, source registry, and source observation families
+- `index/`: candidate and public-index runtime families
+- `evidence/`: evidence ledger runtime family
+- `review/`: review queue runtime family
+- `search/`: search hunt, need, quality, and explanation families
+- `worker/`: work-unit queue and worker families
 
 ## Taxonomy Closeout
 
-`runtime/engine` remains the current engine/kernel boundary.
+`runtime/engine` remains the current engine/kernel boundary. The active
+taxonomy uses canonical families such as `runtime/local/`, `runtime/source/`,
+`runtime/index/`, `runtime/evidence/`, `runtime/review/`, `runtime/search/`,
+and `runtime/worker/`.
 
-The active taxonomy now uses canonical families such as `runtime/local/`,
-`runtime/source/`, `runtime/index/`, `runtime/evidence/`, `runtime/review/`,
-`runtime/search/`, and `runtime/worker/`. The old first-level runtime package
-names remain as wrapper-only compatibility packages for import stability; they
-are not canonical implementation homes.
+Old first-level runtime package names remain compatibility shims for import
+stability. They are not canonical implementation homes. New implementation
+should move to the canonical family path instead.
 
-Each retained compatibility package has a local `README.md` status marker and
-is constrained by `control/policies/path_taxonomy_policy.json` to contain only
-`__init__.py` plus that marker. If an old first-level runtime path needs new
-implementation, move the implementation to the canonical family instead.
+## Current Runtime Boundaries
 
-Future target families are recorded in
-`control/policies/taxonomy_closeout_policy.json` and
-`docs/architecture/PATH_TAXONOMY_CLOSEOUT.md`.
+The runtime supports local/operator behavior and read-only public-alpha route
+foundations. Public live source fanout, downloads, uploads, broad extraction,
+model/provider calls, public mutation, deployment, native marketplace behavior,
+and automatic master/public index mutation remain disabled or gated.

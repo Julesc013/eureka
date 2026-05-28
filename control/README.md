@@ -1,12 +1,19 @@
 # Control
 
-`control/` holds repo governance assets that are about managing Eureka rather than implementing Eureka runtime behavior.
+`control/` holds governance assets that manage Eureka rather than implementing
+runtime behavior.
 
-- `governance/`: policies, decisions, and stewarded operating material
-- `audits/`: dated repo-governance audit packs and finding schemas
-- `inventory/`: component and asset inventories
-- `matrices/`: comparison tables, dependency matrices, and policy grids
-- `research/`: bounded research notes that inform later implementation
-- `packaging/`: future packaging and distribution planning
+Current contents include:
 
-This tree is intentionally light during bootstrap.
+- `audits/`: audit packs, review evidence, and generated samples
+- `inventory/`: structured matrices, status files, and command/test registries
+- `policies/`: repo and product-boundary policies
+- `backlog/`: governed future-work triage
+- `research/`: bounded research notes kept separate from product truth
+
+`control/` may record whether a capability is planned, blocked, validated, or
+approved. It must not secretly define runtime behavior or accepted product truth
+without the matching contracts/runtime evidence.
+
+For current status, start with [../README.md](../README.md) and
+[../docs/BOOTSTRAP_STATUS.md](../docs/BOOTSTRAP_STATUS.md).

@@ -1,15 +1,19 @@
 # Surfaces
 
-`surfaces/` contains Eureka's user-facing applications and projection notes.
-Bootstrap keeps each surface family separate so dependency rules stay explicit.
+`surfaces/` contains Eureka's user-facing projections and adapters. Surfaces
+should consume gateway public APIs and contracts rather than engine internals.
 
-- `web/` uses gateway public APIs and contracts in the normal online path
-- `cli/` is the current local stdlib CLI surface
-- `api/` records API projection ownership; runtime service behavior remains in `runtime/gateway/`
-- `text/`, `files/`, and `lite/` record static projection families emitted under `site/dist/`
-- `native/` uses contracts and gateway public APIs in the normal path, with any future engine SDK use explicitly gated to offline or local mode
+Current families:
 
-Current bootstrap proof points:
+- `web/`: local Workbench and read-only public-alpha HTML projections
+- `cli/`: current local stdlib CLI surface
+- `api/`: API projection notes; runtime service behavior stays in
+  `runtime/gateway/`
+- `text/`, `files/`, `lite/`: static projection families emitted under
+  `site/dist/`
+- `native/`: native projection adapters; canonical native client projects live
+  under `native/`
 
-- `web/` contains the compatibility-first HTML workbench slice
-- `cli/` contains the first non-web surface slice, proving reuse across surface families without direct engine imports from the surface layer
+The Workbench is a local operator cockpit, not a public mutation UI. Public
+alpha surfaces are read-only and snapshot-backed. Native and marketplace
+surfaces are not ready for distribution.

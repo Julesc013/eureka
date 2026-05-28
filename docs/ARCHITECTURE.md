@@ -1,99 +1,93 @@
 # Architecture
 
-Eureka is organized as one product monorepo with four primary product-facing
-partitions:
+Eureka is organized as a governed monorepo with explicit boundaries between
+control-plane governance, contract authority, Python reference runtime, and
+user-facing surfaces.
 
-- `control/`: repo governance, inventories, matrices, research, and packaging planning
-- `contracts/`: governed schemas, protocols, public APIs, and shared UI contracts
-- `runtime/`: engine, gateway, and connector implementation space
-- `surfaces/`: web and native user-facing surfaces
+## Current Product Shape
 
-## AIDE Versus Eureka
+The current executable product shape is:
 
-`.aide/` is a pinned repo operating layer. It exists to describe repo identity, governed components, owned paths, dependency rules, commands, eval groupings, and compatibility metadata for the repo contract.
+- local-first Python reference backend
+- local operator Workbench
+- read-only public-alpha routes backed by reviewed snapshots
+- governed source action and metadata source-family foundations
+- focused validators and audit packs
 
-`.aide/` is not allowed to define product semantics or runtime behavior. Eureka product meaning lives in governed contracts and in future runtime implementations, not in AIDE metadata.
+It is not a deployed service, public launch, production platform, native app, or
+marketplace/action manager.
 
-## Governed Components
+## Primary Partitions
 
-The current governed component set is intentionally small:
-
-1. `archive-contracts`
-2. `engine`
-3. `gateway`
-4. `workbench-web`
-5. `app-native`
-6. `connectors`
-
-`contracts/surface/ui` is a shared surface-contract area jointly used by web and native surfaces, but it is not treated as a seventh governed component.
+- `control/`: governance, inventories, audits, policies, and evidence.
+- `contracts/`: governed schemas, protocols, packets, public APIs, and shared
+  UI contracts.
+- `runtime/`: Python reference runtime for engine, gateway, connectors, stores,
+  local service, review, source, evidence, index, and worker families.
+- `surfaces/`: user-facing projections over gateway/contracts.
+- `site/`: static site source plus generated static artifacts.
+- `snapshots/`: read-only snapshot schemas and examples.
+- `native/`: native client skeleton/planning lane.
+- `crates/`: Rust parity and future migration lane.
 
 ## Dependency Law
 
-The current dependency policy is now expressed as concrete path globs in `.aide/policies/dependencies.yaml`. It is specific enough for future mechanical enforcement, but it is still advisory today.
+Allowed normal-path dependencies:
 
-Allowed:
+- Web surfaces use gateway public APIs and contracts.
+- Native surfaces use contracts and gateway public APIs.
+- Native may use `runtime/engine/sdk` only if an explicit offline/local mode is
+  adopted later.
+- Gateway may depend on `runtime/engine/interfaces/public/**`,
+  `runtime/engine/interfaces/service/**`, and governed contract paths.
+- Connectors may depend on `runtime/engine/interfaces/ingest/**`,
+  `runtime/engine/interfaces/extract/**`,
+  `runtime/engine/interfaces/normalize/**`, and governed archive contract
+  paths.
 
-- `surfaces/web/**` depends on `contracts/archive/**`, `contracts/gateway/public_api/**`, and `contracts/surface/ui/**` in the normal path
-- `surfaces/native/**` depends on `contracts/archive/**`, `contracts/gateway/public_api/**`, and `contracts/surface/ui/**` in the normal path
-- `surfaces/native/**` may depend on `runtime/engine/sdk/**` only as a future explicitly bounded offline path
-- `runtime/gateway/**` depends on `runtime/engine/interfaces/public/**`, `runtime/engine/interfaces/service/**`, `contracts/archive/**`, and `contracts/gateway/public_api/**`
-- `runtime/connectors/**` depends on `runtime/engine/interfaces/ingest/**`, `runtime/engine/interfaces/extract/**`, `runtime/engine/interfaces/normalize/**`, and `contracts/archive/**`
+Forbidden dependencies:
 
-Forbidden:
+- Engine must not depend on `surfaces/*`.
+- Web must not depend on engine internals in the normal path.
+- Connectors must not invent object truth.
+- Connectors must not own trust semantics.
+- `.aide/` must not define product semantics or runtime behavior.
 
-- `runtime/engine/**` depends on `surfaces/*`
-- `surfaces/web/**` depends on `runtime/engine` internals in the normal path
-- `runtime/connectors/**` defines its own object model
-- `runtime/connectors/**` owns trust semantics
-- `.aide/` defines product semantics or runtime behavior
+Run:
+
+```powershell
+python scripts/check_architecture_boundaries.py
+```
+
+## AIDE Versus Eureka
+
+`.aide/` is repo-operating metadata for compact task packets, queues, reports,
+and coordination. It is not product truth. Product truth lives in accepted
+contracts, runtime behavior, reviewed records, and accepted architecture docs.
 
 ## Accepted Architecture Docs
 
-Detailed product-architecture direction now lives under `docs/architecture/`:
+Start with:
 
 - [Temporal Object Resolver](architecture/TEMPORAL_OBJECT_RESOLVER.md)
-- [Logical Graphs](architecture/LOGICAL_GRAPHS.md)
-- [Physical Subsystems](architecture/PHYSICAL_SUBSYSTEMS.md)
-- [Data Model](architecture/DATA_MODEL.md)
-- [Source Strategy](architecture/SOURCE_STRATEGY.md)
-- [Query Planner](architecture/QUERY_PLANNER.md)
-- [Resolution Memory](architecture/RESOLUTION_MEMORY.md)
-- [Streaming Runs](architecture/STREAMING_RUNS.md)
-- [Action Router](architecture/ACTION_ROUTER.md)
+- [Local Product Loop](architecture/LOCAL_PRODUCT_LOOP.md)
+- [Workbench Local Loop](architecture/WORKBENCH_LOCAL_LOOP.md)
+- [Public Alpha Launch Candidate](architecture/PUBLIC_ALPHA_LAUNCH_CANDIDATE.md)
+- [Snapshot Relay](architecture/SNAPSHOT_RELAY.md)
+- [Source Action Kernel](architecture/SOURCE_ACTION_KERNEL.md)
+- [Source Family Model](architecture/SOURCE_FAMILY_MODEL.md)
+- [Pack Import Pipeline](architecture/PACK_IMPORT_PIPELINE.md)
+- [Master Index Review Queue](architecture/MASTER_INDEX_REVIEW_QUEUE.md)
 - [Rust Backend Lane](architecture/RUST_BACKEND_LANE.md)
 - [AI Policy](architecture/AI_POLICY.md)
 
-These documents describe accepted architecture direction and staging. They do
-not imply that every subsystem is already implemented in the current repo.
+The full architecture index is [architecture/README.md](architecture/README.md).
 
-One bounded backend step from that architecture is now implemented:
-Source Registry v0 provides explicit governed seed records plus a bounded
-runtime and public projection path without implying live sync, crawling, or
-placeholder connector implementation.
+## Safety Posture
 
-## Related Standards
-
-The supporting standards and policy guidance for the architecture live under
-`docs/standards/`:
-
-- [Source Registry Schema](standards/SOURCE_REGISTRY_SCHEMA.md)
-- [Identifier Policy](standards/IDENTIFIER_POLICY.md)
-- [Privacy And Shared Evidence](standards/PRIVACY_AND_SHARED_EVIDENCE.md)
-
-## Related Evals
-
-Eval-governed improvement guidance lives under:
-
-- [Search Benchmark Design](evals/SEARCH_BENCHMARK_DESIGN.md)
-
-## Current Unresolved Questions
-
-- What becomes the minimum normative object identity boundary for bundled or multi-file software artifacts?
-- Which archive trust semantics should be first-class in `contracts/archive/trust`, and which remain policy overlays?
-- How narrow should the future offline native path be before `runtime/engine/sdk` is exposed?
-- Which gateway operations should be public product contracts versus internal broker or worker protocols?
-- What packaging forms matter in v1 beyond software archives and repositories?
-
-## Related Research
-
-- See [control/research/temporal-object-resolution-engine.md](../control/research/temporal-object-resolution-engine.md) for a research-only candidate next operating layer that informed the accepted doctrine and architecture docs without being silently promoted wholesale into runtime claims.
+Architecture docs may describe future systems. Future architecture is not
+current runtime behavior until implementation, validation, review, and promotion
+evidence exist. Public mutation, live source fanout, downloads, uploads,
+extraction, model/provider calls, deployment, native marketplace behavior, and
+master/public index mutation remain disabled or gated as described in the root
+[README](../README.md).

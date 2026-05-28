@@ -1,5 +1,13 @@
 # Decisions
 
+> Current-status note: this is a historical accepted-decision ledger. It may
+> describe earlier milestones and future plans. For the current public-alpha
+> read-only and launch-candidate posture, start with [README.md](../README.md),
+> [docs/BOOTSTRAP_STATUS.md](BOOTSTRAP_STATUS.md), and
+> [docs/ROADMAP.md](ROADMAP.md). This ledger does not claim deployment, public
+> launch, production readiness, full source coverage, native readiness, or
+> marketplace readiness.
+
 ## ADR-001: Use One Eureka Monorepo
 
 - Status: accepted

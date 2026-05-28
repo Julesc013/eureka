@@ -1,905 +1,387 @@
 # Eureka
 
-**Local-first temporal object resolution for archived and current digital
-objects.**
+Eureka is a local-first artefact-resolution engine for hard-to-find software,
+media, documents, source traces, and other technical/cultural objects.
 
-Eureka is a reference backend prototype for turning vague requests into
-evidence-backed, actionable resolution results. It combines governed source
-registries, deterministic planning, local indexing, resolution runs, bounded
-provenance, evals, and public-alpha safety checks to answer questions like
-"which exact thing should I inspect, fetch, compare, or preserve next?"
+Eureka is currently a Python reference backend and local-first prototype. It has
+a promoted local product loop, read-only public-alpha route foundations, a
+launch-candidate gate record, and snapshot-backed relay foundations. It has not
+been deployed, has not launched publicly, and does not claim production
+readiness.
 
-**Current status:** Python reference backend prototype / not production.
-See [Bootstrap Status](docs/BOOTSTRAP_STATUS.md) and
-[Roadmap](docs/ROADMAP.md).
+## What Eureka Is
 
-Repo-operating note: Eureka includes a target-scoped AIDE Lite import for
-compact task packets, token-discipline evidence, structured commits, WorkUnit
-recovery, and dry-run Git workflow governance. See
-[AIDE Lite Import](docs/reference/aide-lite-import.md) and
-[AIDE Governance Sync](docs/reference/aide-governance-sync.md).
+Eureka treats search as an investigation rather than a single ranked answer. It
+helps an operator turn a vague request into reviewed, evidence-backed records:
+what object may match, which source observed it, what evidence exists, what is
+absent or uncertain, and what explicit next action is safe.
 
-## Why Eureka Exists
+The current executable lane is a local Python reference backend. Rust, native,
+marketplace, hosted deployment, and action-manager work are staged or planned
+lanes, not current product claims.
 
-Archive and software searches often return the wrong unit of work. A user asks
-for an old driver, a pre-support-drop browser release, an app for Windows 7, or
-an article inside a scanned magazine, and gets an ISO, a ZIP, a support CD, a
-dead website, or a noisy result list. The real work is then manual detective
-work:
+## Current Status
 
-- containers must be opened before the useful member is visible
-- versions, platforms, and compatibility constraints matter
-- metadata is inconsistent or absent
-- sources disagree or preserve different fragments
-- misses rarely explain what was checked
-- provenance is often collapsed into one uninspectable answer
+The public alpha read-only baseline has been promoted to `main`. A subsequent
+launch-candidate gate has passed on `dev` and recommends
+`PUBLIC-ALPHA-DEPLOY-DRY-RUN-00` as the next task. A launch candidate is not a
+launch, and a deploy dry run is not a public launch.
 
-Eureka treats search as an investigation. Its direction is to find the smallest
-actionable unit supported by evidence, preserve disagreement, explain absence,
-and route the user toward a bounded next step without pretending uncertain
-results are canonical truth.
+Current bounded facts:
 
-## What Eureka Is / Is Not
+- Local operator Workbench and local product loop foundations exist.
+- Public-alpha read-only web and API route foundations exist.
+- Public alpha routes are snapshot-backed and read-only.
+- Public live source fanout is disabled.
+- Public mutation is disabled.
+- Downloads, uploads, executable actions, and installer behavior are disabled.
+- Extraction is disabled except safe fixture/member-manifest foundations.
+- Model/provider calls are disabled.
+- Full unittest discovery is handled outside AI chat/model sessions through a
+  harness or CI artifact flow.
 
-| Eureka is | Eureka is not |
-| --- | --- |
-| A temporal object resolver | A production search engine |
-| A local-first Python reference backend | An open-internet hosted service |
-| An evidence-backed archive/search prototype | An app store, installer, or downloader |
-| A governed monorepo for backend, contracts, evals, and surfaces | A native GUI app |
-| An eval-governed research-to-product codebase | An LLM-first search wrapper |
-| A future Rust migration lane with Python-oracle parity fixtures | An active Rust production backend |
+## What Eureka Is Not
+
+Eureka is not:
+
+- a production hosted service
+- a publicly launched product
+- a full Archive.org search engine
+- a full web crawler
+- an app store, installer, downloader, or marketplace manager
+- a native client ready for distribution
+- an AI authority or LLM-first answer engine
+- a broad corpus coverage claim
+- a live public fanout service for source APIs
+
+## Core Idea: Search As Investigation
+
+Hard artefact search often fails because the useful unit is smaller or messier
+than the source item: a driver inside a support CD, an article inside a scan, a
+release asset inside a project, a dead link trace, or a package version with
+compatibility constraints. Eureka records the investigation trail instead of
+pretending one candidate is automatically truth.
+
+Important boundaries:
+
+- Candidates are not truth.
+- Source observations are not truth.
+- Review gates truth.
+- Promotion previews are not promotion.
+- Local apply is explicit and operator-gated.
+- Snapshots and relays are read-only data products.
 
 ## Current Capabilities
 
-| Area | Current bounded capability |
+### Local Product Loop
+
+The local product loop supports the current reference flow:
+
+1. Query.
+2. Resolution run.
+3. Result lanes.
+4. Candidate.
+5. Review.
+6. Promotion preview.
+7. Local apply gate.
+8. Reviewed result.
+9. Rollback.
+
+This loop is local/operator-facing. It does not create public truth or mutate a
+master/public index without review and promotion gates.
+
+### Workbench
+
+The Workbench is operator Mission Control for the local loop. It is a local
+cockpit for inspecting runs, lanes, candidates, review handoffs, promotion
+previews, local apply gates, reviewed results, and rollback evidence. It is not
+a public mutation UI.
+
+### Public Alpha Read-Only
+
+The public-alpha foundation exposes read-only routes locally:
+
+- `/alpha`
+- `/alpha/object`
+- `/alpha/source`
+- `/alpha/evidence`
+- `/alpha/absence`
+- `/alpha/needs`
+- `/api/v1/alpha/status`
+- `/api/v1/alpha/search`
+- `/api/v1/alpha/object/{object_id}`
+- `/api/v1/alpha/source/{summary_id}`
+- `/api/v1/alpha/evidence/{summary_id}`
+- `/api/v1/alpha/absence/{summary_id}`
+- `/api/v1/alpha/needs`
+
+These routes are snapshot-backed and read-only. They do not enable live source
+fanout, downloads, uploads, extraction, accounts, telemetry, model/provider
+calls, public mutation, or deployment.
+
+### Source Action Kernel
+
+The Source Action Kernel records the generic source action seam:
+
+- policy gate
+- request plan
+- transport
+- normalizer
+- mapping plans
+- lane projection
+- review handoff
+- boundary report
+- scorecard
+
+It is a governed action shape, not permission to call sources live. Source
+actions remain policy/operator gated.
+
+### Source Wave
+
+The current metadata source wave covers fixture/mock or governed metadata lanes
+for:
+
+- Internet Archive metadata
+- Wayback/CDX metadata
+- GitHub Releases metadata
+- Software Heritage metadata
+- package registry metadata
+- Open Library metadata
+- Wikidata metadata
+- manual source packs
+
+These are not a full web crawler and not full Archive.org search.
+
+### Snapshot And Relay
+
+Snapshot/relay foundations cover:
+
+- reviewed records
+- integrity manifests
+- capability profiles
+- read-only relay query
+
+Snapshots and relays are read-only data products. They do not include private
+local state, raw live source responses, public mutation, or deployment claims.
+
+### Domains, Scout, F0, G0, SYN
+
+Eureka keeps several foundations explicit:
+
+- `SYN`: synthetic query and fixture foundations for deterministic local work.
+- `DOMAIN`: domain packs and query interpretation boundaries.
+- `SCOUT`: discovery trails and source-trust scaffolding.
+- `F0`: safe extraction/member-discovery foundations, without broad extraction.
+- `G0`: identity, near-miss, explanation, user-cost, and actionability signals.
+
+## Local Quick Start
+
+From a Windows checkout:
+
+```powershell
+cd D:\Projects\Eureka\eureka
+python scripts/eureka_validate_instance.py --instance ..\instances\default --json
+python scripts/eureka_local_server.py --instance ..\instances\default --host 127.0.0.1 --port 8765 --operator-token local-dev-token
+```
+
+Useful local URLs:
+
+- <http://127.0.0.1:8765/>
+- <http://127.0.0.1:8765/search?q=sampleproject>
+- <http://127.0.0.1:8765/alpha>
+- <http://127.0.0.1:8765/alpha/needs>
+
+Use a local development token only for local operator testing. Do not commit
+tokens.
+
+## Workbench And Local Operator Loop
+
+The local Workbench is the operator-facing projection of the product loop. It is
+for inspecting evidence and applying reviewed local changes behind explicit
+gates. Operators should use it with temporary or private local instances and
+keep local state out of the repository.
+
+Key references:
+
+- [Local HTML Workbench runbook](docs/operations/LOCAL_HTML_WORKBENCH_RUNBOOK.md)
+- [Workbench local loop runbook](docs/operations/WORKBENCH_LOCAL_LOOP_RUNBOOK.md)
+- [Local apply gate runbook](docs/operations/LOCAL_APPLY_GATE_RUNBOOK.md)
+
+## Public Alpha Read-Only Routes
+
+For local route validation and public-alpha posture, use:
+
+```powershell
+python scripts/validate_public_alpha_readonly.py
+python scripts/validate_public_alpha_hosting_readiness.py
+python scripts/validate_public_alpha_launch_candidate.py
+```
+
+The launch-candidate gate says the baseline can move to a deploy dry run. It
+does not deploy or launch Eureka.
+
+References:
+
+- [Public alpha read-only closeout](docs/operations/PUBLIC_ALPHA_READONLY_CLOSEOUT.md)
+- [Public alpha launch candidate runbook](docs/operations/PUBLIC_ALPHA_LAUNCH_CANDIDATE_RUNBOOK.md)
+- [Public alpha deploy dry-run plan](docs/operations/PUBLIC_ALPHA_DEPLOY_DRY_RUN_PLAN.md)
+
+## Source Actions And Source Families
+
+Source families and source actions are governed through contracts, inventories,
+runbooks, validators, and audit evidence. They are intentionally separated from
+truth acceptance.
+
+An agent or operator may propose a source observation, candidate, scorecard, or
+review handoff. Acceptance requires review. Live source actions require explicit
+policy/operator approval.
+
+References:
+
+- [Source Action Kernel runbook](docs/operations/SOURCE_ACTION_KERNEL_RUNBOOK.md)
+- [Source Wave runbook](docs/operations/SOURCE_WAVE_RUNBOOK.md)
+- [Source policy gates](docs/operations/SOURCE_POLICY_GATES.md)
+
+## Snapshot And Relay
+
+Snapshot and relay work provides read-only reviewed-record data products for
+static and local consumption. It does not make a public mutable service.
+
+Use:
+
+```powershell
+python scripts/validate_snapshot_relay.py
+```
+
+References:
+
+- [Snapshot relay runbook](docs/operations/SNAPSHOT_RELAY_RUNBOOK.md)
+- [Snapshot to relay handoff](docs/operations/SNAPSHOT_TO_RELAY_HANDOFF.md)
+- [Read-only relay model](docs/architecture/READ_ONLY_RELAY_MODEL.md)
+
+## Testing And Validation
+
+During normal development, use focused tests:
+
+```powershell
+python scripts/eureka_test_select.py --changed --failed-first --json
+```
+
+The public-alpha closeout/promotion gate wrapper is:
+
+```powershell
+python scripts/eureka_gate.py public-alpha-closeout --watch --clean
+```
+
+Full unittest discovery is a promotion/nightly/manual lane and must run outside
+AI chat/model sessions through the harness or CI:
+
+```powershell
+python scripts/run_full_unittest_discovery.py --out ..\eureka-test-runs\manual_full_discovery
+```
+
+AI agents must not babysit full discovery. Full logs stay local/artifact-only.
+AI reads compact summaries and handoffs.
+
+The GitHub Actions workflow for full discovery is the preferred shared evidence
+path when branch state has been pushed.
+
+Reference:
+
+- [Test and eval lanes](docs/operations/TEST_AND_EVAL_LANES.md)
+
+## Safety Boundaries
+
+| Capability | Current status |
 | --- | --- |
-| Source and ingestion | Source Registry v0, Source Coverage and Capability Model v0, Real Source Coverage Pack v0, synthetic fixtures, recorded GitHub Releases fixtures, recorded Internet Archive-like fixtures, local bundle fixtures, article/scan recorded fixtures, governed source IDs, explicit placeholder posture for future sources |
-| Resolution and search | exact resolution, deterministic search, Query Planner v0 plus Old-Platform Software Planner Pack v0, local SQLite index with FTS5 preferred and deterministic fallback |
-| Evidence and explanation | provenance summaries, source summaries, source-backed compatibility evidence, absence reasoning, comparison/disagreement, subject/state timelines |
-| Actions and artifacts | representation/access-path summaries, compatibility checks, strategy-aware action plans, handoff selection, acquisition/fetch, ZIP decomposition, member preview/readback, manifest and bundle export, bundle inspection, local stored artifacts |
-| Backend infrastructure | Resolution Run Model v0, Local Worker and Task Model v0, Resolution Memory v0, architecture-boundary checker |
-| Surfaces | server-rendered HTML workbench, stdlib local HTTP API, stdlib CLI surface |
-| Operations and evals | Archive Resolution Eval Runner v0, Search Usefulness Audit v0, Search Usefulness Backlog Triage v0, Search Usefulness Audit Delta v0/v1, Hard Eval Satisfaction Pack v0, Old-Platform Result Refinement Pack v0, More Source Coverage Expansion v1, Article/Scan Fixture Pack v0, Manual External Baseline Observation Pack v0, Manual Observation Batch 0, Manual Observation Entry Helper v0, LIVE_ALPHA_00 Static Public Site Pack, LIVE_ALPHA_01 Production Public-Alpha Wrapper, Public Publication Plane Contracts v0, GitHub Pages Deployment Enablement v0, Static Site Generation Migration v0, Generated Public Data Summaries v0, Lite/Text/Files Seed Surfaces v0, Static Resolver Demo Snapshots v0, Custom Domain / Alternate Host Readiness v0, Live Backend Handoff Contract v0, Live Probe Gateway Contract v0, Repository Shape Consolidation v0, Static Artifact Promotion Review v0, GitHub Pages Run Evidence Review v0, Public Search API Contract v0, Signed Snapshot Format v0, Signed Snapshot Consumer Contract v0, Native Client Contract v0, Native Action / Download / Install Policy v0, Native Local Cache / Privacy Policy v0, Native Client Project Readiness Review v0, Test/Eval Operating Layer v0, Comprehensive Repo Audit v0, Hard Test Pack v0, Public Alpha Safe Mode v0, Deployment Readiness Review, Hosting Pack v0, Python-oracle golden fixture pack |
-| Rust lane | minimal workspace plus isolated source-registry and query-planner parity candidates; not wired into Python runtime or surfaces |
-
-The current corpus is intentionally small. The current archive-resolution hard
-eval packet is satisfied under strict fixture-backed checks, but that does not
-mean broad corpus coverage or production ranking exists. Search Usefulness
-Audit still records many source, compatibility, planner, representation, and
-member-access gaps.
-External Google and Internet Archive baselines remain pending/manual; Manual
-Observation Batch 0 only prepares 39 prioritized slots for later human
-observation and records no external results.
-The static public site pack under `site/dist/` and Public Alpha Rehearsal
-Evidence v0 under `docs/operations/public_alpha_rehearsal_evidence_v0/` are
-documentation/evidence packs for later hosting review. They do not deploy
-Eureka, add backend hosting, add live source probes, scrape external systems,
-or claim production readiness.
-The public-alpha wrapper under `scripts/run_public_alpha_server.py` adds a
-localhost-default process/config guard for future supervised rehearsals. It
-does not deploy, add provider files, enable live probes, add auth/TLS/rate
-limiting/process management, or approve production.
-Public Publication Plane Contracts v0 under
-`control/inventory/publication/` now governs public routes, route stability,
-status vocabulary, client profiles, public data files, base-path portability,
-deployment target semantics, and redirects before any GitHub Pages deployment
-or static-generation migration. The contract slice itself added no deployment
-workflow, generator, DNS, provider configuration, live backend behavior, or
-external observations.
-GitHub Pages Deployment Enablement v0 now adds a workflow and artifact checker
-for publishing only `site/dist/` as a static Pages artifact after validation.
-It does not deploy the Python backend, enable live probes, add a custom domain,
-introduce a generator, or claim a successful public deployment without GitHub
-Actions evidence.
-Static Site Generation Migration v0 now adds a stdlib-only `site/` source tree
-and generator that renders no-JS pages into `site/dist/`. Repository Shape
-Consolidation v0 makes `site/dist/` the single generated static deployment
-artifact, with no Node/npm or frontend framework introduced.
-Static Artifact Promotion Review v0 conditionally promotes `site/dist/` as the
-active repo-local static publication artifact and records local validation,
-workflow, generated-artifact, safety, base-path, public-data, and stale-reference
-evidence. GitHub Actions deployment status remains unverified until run evidence
-is checked.
-GitHub Pages Run Evidence Review v0 records the current-head Pages workflow
-evidence under `control/audits/github-pages-run-evidence-v0/`. The workflow is
-configured for `site/dist/`, and the remote pre-upload validation steps passed,
-but the run failed while configuring Pages because the repository Pages site was
-not enabled/configured for GitHub Actions. No Pages artifact was uploaded, no
-deployment URL was emitted, and no deployment success claim is allowed.
-Public Search API Contract v0 now defines contract-first request, response,
-error, and route envelopes for `local_index_only` public search under
-`contracts/api/`, `control/inventory/publication/public_search_routes.json`,
-and `docs/reference/PUBLIC_SEARCH_API_CONTRACT.md`.
-Local Public Search Runtime v0 now implements those routes as a
-local/prototype backend runtime only through the gateway and stdlib web server:
-`/search`, `/api/v1/search`, `/api/v1/query-plan`, `/api/v1/status`,
-`/api/v1/sources`, and `/api/v1/source/{source_id}`. It is
-`local_index_only`. Public Search Static Handoff v0 now adds a no-JS static
-handoff at `site/dist/search.html`, plus lite/text/files handoff outputs and
-`site/dist/data/search_handoff.json`. Hosted public search remains unavailable
-and unverified; GitHub Pages does not run Python, and the handoff does not add
-backend hosting, live probes, external calls, URL fetching, scraping, crawling,
-downloads, installers, uploads, local path search, accounts, telemetry, or
-production API stability.
-Public Search Rehearsal v0 now records local/prototype route evidence under
-`control/audits/public-search-rehearsal-v0/` and expands
-`scripts/public_search_smoke.py` to cover representative safe queries and
-blocked request cases. It does not deploy hosted search, enable live probes,
-enable downloads/installs/uploads/local paths, add accounts or telemetry, or
-claim production API stability.
-Search Usefulness Source Expansion v2 now adds fixture-only recorded metadata
-for selected source-gap families under
-`runtime/connectors/source_expansion_recorded/`,
-`control/inventory/sources/`, and
-`control/audits/search-usefulness-source-expansion-v2/`. The current
-search-usefulness audit moved from covered=5/partial=22/source_gap=26/
-capability_gap=9/unknown=2 to covered=5/partial=40/source_gap=10/
-capability_gap=7/unknown=2. The expansion remains deterministic and
-fixture-only: no live source calls, scraping, crawling, external observations,
-real binaries, downloads, installs, uploads, local path search, telemetry,
-hosted search, malware-safety claim, rights-clearance claim, or production
-relevance claim was added.
-Search Usefulness Delta v2 now records the measured effect of that fixture-only
-source expansion under `control/audits/search-usefulness-delta-v2/`. It uses
-the committed P32 report as the machine-derived baseline, confirms the current
-audit counts above, records selected query movement and source-family impact,
-marks exact failure-mode deltas as unavailable, and recommends Source Pack
-Contract v0 next. It adds no new source/runtime behavior and keeps external
-baselines pending/manual.
-Source Pack Contract v0 now defines the first portable source-pack format under
-`contracts/pack/source_pack.v0.json`, `docs/reference/SOURCE_PACK_CONTRACT.md`,
-`examples/packs/source/minimal_recorded_source_pack_v0/`, and
-`control/audits/source-pack-contract-v0/`. It adds a checksum-validating
-stdlib validator and tests for a tiny synthetic example pack, but it does not
-implement import, indexing, uploads, live connectors, executable plugins,
-downloads/installers, or master-index acceptance.
-Evidence Pack Contract v0 now defines the first portable evidence-pack format
-under `contracts/pack/evidence_pack.v0.json`,
-`docs/reference/EVIDENCE_PACK_CONTRACT.md`,
-`examples/packs/evidence/minimal_evidence_pack_v0/`, and
-`control/audits/evidence-pack-contract-v0/`. It adds a checksum-validating
-stdlib validator and tests for public-safe claims, observations, snippets, and
-source references, but it does not implement import, indexing, uploads, live
-connectors, executable plugins, canonical truth selection, or master-index
-acceptance.
-Index Pack Contract v0 now defines the first portable index-pack format under
-`contracts/pack/index_pack.v0.json`, `docs/reference/INDEX_PACK_CONTRACT.md`,
-`examples/packs/index/minimal_index_pack_v0/`, and
-`control/audits/index-pack-contract-v0/`. It adds a checksum-validating stdlib
-validator and tests for summary-only index-build metadata, source coverage,
-field coverage, query examples, and public-safe record summaries, but it does
-not implement import, merge, uploads, raw SQLite/local-cache export, live
-connectors, executable plugins, canonical truth selection, or master-index
-acceptance.
-Contribution Pack Contract v0 now defines the first portable contribution-pack
-format under `contracts/pack/contribution_pack.v0.json`,
-`docs/reference/CONTRIBUTION_PACK_CONTRACT.md`,
-`examples/packs/contribution/minimal_contribution_pack_v0/`, and
-`control/audits/contribution-pack-contract-v0/`. It adds a checksum-validating
-stdlib validator and tests for review-candidate contribution items, referenced
-source/evidence packs, manual-observation placeholders, alias suggestions,
-absence reports, privacy/rights posture, and no raw DB/cache or executable
-payloads, but it does not implement upload, import, moderation, accounts,
-master-index review queue runtime, automatic acceptance, live connectors,
-canonical truth selection, or master-index acceptance.
-Master Index Review Queue Contract v0 now defines the future governance layer
-under `contracts/index/master/`,
-`docs/reference/MASTER_INDEX_REVIEW_QUEUE_CONTRACT.md`,
-`docs/architecture/MASTER_INDEX_REVIEW_QUEUE.md`,
-`examples/master_index_review_queue/minimal_review_queue_v0/`, and
-`control/audits/master-index-review-queue-contract-v0/`. It adds queue-entry,
-review-decision, queue-manifest, policy, taxonomy, acceptance-requirement,
-validator, and test coverage for review candidates, conflict preservation,
-privacy/rights/risk review, and limited accepted_public posture, but it does
-not implement queue runtime, uploads, imports, moderation, accounts, hosted
-master index writes, automatic acceptance, live connectors, rights-clearance
-claims, malware-safety claims, canonical truth selection, or production
-readiness.
-Source/Evidence/Index Pack Import Planning v0 now defines the planning-only
-future local import boundary under
-`control/audits/pack-import-planning-v0/`,
-`docs/reference/PACK_IMPORT_PLANNING.md`, and
-`docs/architecture/PACK_IMPORT_PIPELINE.md`. It recommends validate-only as the
-first future mode and private local quarantine as the next mode while adding no
-import runtime, staging directories, local search/index mutation, canonical
-registry mutation, uploads, hosted/master-index mutation, automatic acceptance,
-live fetch, arbitrary directory scanning, executable plugin behavior, or
-production claims.
-Pack Import Validator Aggregator v0 now adds
-`scripts/validate_pack_set.py`, `control/inventory/packs/example_packs.json`,
-`docs/operations/PACK_VALIDATION.md`, and
-`control/audits/pack-import-validator-aggregator-v0/`. It validates all known
-source/evidence/index/contribution/master-index review queue examples through
-one offline command and reports pass/fail/unavailable/unknown-type status, but
-it does not implement import, staging, local index mutation, uploads,
-submissions, hosted/master-index mutation, rights clearance, malware safety,
-canonical truth, or production extension support.
-AI Provider Contract v0 now adds `contracts/ai/`,
-`control/inventory/ai_providers/`,
-`examples/ai_providers/disabled_stub_provider_v0/`,
-`docs/reference/AI_PROVIDER_CONTRACT.md`,
-`docs/reference/TYPED_AI_OUTPUT_CONTRACT.md`,
-`docs/architecture/AI_ASSISTANCE_BOUNDARY.md`, and
-`control/audits/ai-provider-contract-v0/`. It defines disabled-by-default
-provider manifests, future task requests, typed AI output envelopes, privacy,
-credential, logging, evidence-linking, and review policy, plus a validator and
-tests. It does not implement model calls, runtime provider loading, API keys,
-credential storage, telemetry, embeddings, vector search, LLM reranking, AI in
-public search, AI-generated evidence acceptance, local index mutation, or
-master-index mutation.
-Typed AI Output Validator v0 now validates standalone typed AI output
-candidates through `scripts/validate_ai_output.py` without model calls,
-provider runtime, telemetry, evidence import, contribution import, public-search
-AI, local index mutation, or master-index mutation. Pack Import Report Format
-v0 now adds `contracts/pack/pack_import_report.v0.json`,
-`examples/import_reports/`, `scripts/validate_pack_import_report.py`, and
-`control/audits/pack-import-report-format-v0/` as a durable validate-only
-report envelope for pack validation outcomes. It does not implement import,
-staging, indexing, uploads, runtime mutation, model calls, network behavior, or
-master-index mutation.
-Validate-Only Pack Import Tool v0 now adds
-`scripts/validate_only_pack_import.py`,
-`docs/operations/VALIDATE_ONLY_PACK_IMPORT.md`, and
-`control/audits/validate-only-pack-import-tool-v0/`. It validates explicit pack
-roots or known examples, emits Pack Import Report v0, and does not import,
-stage, index, upload, call networks, call models, mutate runtime state, mutate
-public search, or mutate the master index.
-Local Quarantine/Staging Model v0 now adds
-`control/inventory/local_state/`,
-`docs/architecture/LOCAL_QUARANTINE_STAGING_MODEL.md`,
-`docs/reference/LOCAL_STAGING_PATH_POLICY.md`,
-`scripts/validate_local_quarantine_staging_model.py`, and
-`control/audits/local-quarantine-staging-model-v0/`. It is planning-only: no
-staging runtime exists, no staged state is created, and future local state is
-private by default, ignored for development roots, resettable/deletable, and
-kept out of public search and the master index. The next Codex-safe milestone
-was Staging Report Path Contract v0.
-Staging Report Path Contract v0 now adds
-`control/inventory/local_state/staging_report_path_contract.json`,
-`docs/reference/STAGING_REPORT_PATH_CONTRACT.md`,
-`docs/operations/LOCAL_REPORT_PATHS.md`,
-`scripts/validate_staging_report_path_contract.py`, and
-`control/audits/staging-report-path-contract-v0/`. It keeps report output on
-stdout by default, requires explicit output paths for file writes, blocks
-forbidden public/runtime/canonical roots, requires redaction, and creates no
-report path runtime, staging runtime, staged state, search impact, or
-master-index impact. The next Codex-safe milestone is Local Staging Manifest
-Format v0.
-Public Search Result Card Contract v0 now defines the canonical contract-only
-result-card envelope under `contracts/api/search_result_card.v0.json`,
-`contracts/api/examples/`, `docs/reference/PUBLIC_SEARCH_RESULT_CARD_CONTRACT.md`,
-and `control/audits/public-search-result-card-contract-v0/`. It aligns
-`search_response.v0.json` with a reusable card shape for future web, API,
-lite/text, native, relay, snapshot, and contribution consumers while adding no
-runtime routes, live search, live probes, downloads, installers, execution,
-uploads, malware-safety claim, rights-clearance claim, or production ranking
-claim.
-Public Search Safety / Abuse Guard v0 now defines the guardrails for local
-runtime search and future hosted review: `local_index_only` only, bounded
-request/result/time limits, forbidden URL/local path/credential/download/install
-/upload parameters, disabled live/external modes, privacy-first logging posture,
-operator controls, runtime-readiness checklist, validator, and tests. It adds no
-rate-limit middleware, auth/accounts/session behavior, telemetry
-runtime, hosted backend, live probes, downloads, installers, uploads, local path
-search, arbitrary URL fetch, or production safety claim.
-Generated Public Data Summaries v0 now adds deterministic static JSON summaries
-under `site/dist/data/` for page, source, eval, route, and build state. These
-files feed the lite/text/files seed surfaces and remain inputs for future
-snapshot, relay, and native-client consumers; they are not a live API, do not
-add live probes or external observations, and do not make production stability
-claims.
-Lite/Text/Files Seed Surfaces v0 now adds static compatibility seed surfaces
-under `site/dist/lite/`, `site/dist/text/`, and `site/dist/files/`. They are
-no-JS/no-download
-publication surfaces for old browsers, text readers, file-tree browsing, and
-future snapshot/relay/native-client planning; they are not live search,
-snapshots, relay behavior, native-client runtime, executable mirrors, or
-production support claims.
-Static Resolver Demo Snapshots v0 now adds fixture-backed static no-JS resolver
-examples under `site/dist/demo/`. They show query planning, member-level results,
-compatibility evidence, absence, comparison, source detail, article/scan
-fixtures, and eval summaries; they are not live search, a live API, backend
-hosting, external observations, or production resolver behavior.
-Custom Domain / Alternate Host Readiness v0 now adds governed domain and
-alternate-static-host readiness records, base-path portability guidance,
-operator checklist, and `scripts/validate_static_host_readiness.py`. It does
-not configure DNS, add `site/dist/CNAME`, deploy an alternate host, add
-provider config, enable live probes, host a backend, or claim production
-readiness.
-Live Backend Handoff Contract v0 now adds contract-only `/api/v1` route
-reservations, disabled live capability flags, and a future error-envelope
-reference. It does not deploy or host a backend, make `/api/v1` live, enable
-live probes, finalize CORS/auth/rate-limit policy, or create production API
-guarantees.
-Live Probe Gateway Contract v0 now adds disabled-by-default source-probe
-policy, candidate source limits, cache/evidence expectations, and operator
-gates before any external probe. It does not implement live probes, call
-Internet Archive, Wayback, GitHub, Software Heritage, package registries, or
-other external sources, fetch URLs, scrape, crawl, enable downloads, or turn
-Google into a live probe source.
-Rust Query Planner Parity Candidate v0 now adds an isolated deterministic Rust
-planner model under `crates/eureka-core/`, expands Python-oracle planner
-goldens, and adds a stdlib parity-structure check. Python remains the planner
-oracle; Rust is not wired into web, CLI, HTTP API, workers, public-alpha paths,
-or production runtime.
-Rust Source Registry Parity Catch-up v0 updates the isolated Rust source model
-to the current nine-source Python capability/coverage shape. Rust Local Index
-Parity Planning v0 adds the future local-index parity plan, cases, acceptance
-schema, and validator only; it does not implement a Rust index, add SQLite
-behavior, or wire Rust into runtime surfaces.
-Compatibility Surface Strategy v0 now adds governed multi-surface strategy,
-expanded surface capability records, a surface route matrix, old-client
-degradation policy, and native/snapshot/relay readiness docs. It does not add
-new runtime behavior, snapshots, relay services, native app projects, live
-`/api/v1`, live probes, or production API guarantees.
-Signed Snapshot Format v0 now adds an experimental static/offline snapshot
-contract and a deterministic seed example under
-`snapshots/examples/static_snapshot_v0/`, with checksums and
-signature-placeholder documentation only. It does not add real signing keys,
-production signatures, executable downloads, a public `/snapshots/` route,
-relay services, native-client runtime, live backend behavior, or live probes.
-Signed Snapshot Consumer Contract v0 defines how future file-tree, text, lite
-HTML, relay, native, and audit consumers should read that snapshot format,
-validate checksums, and treat v0 signatures as placeholders. It does not
-implement a snapshot reader runtime, relay, native client, production signing,
-real signing keys, executable downloads, live backend behavior, or live probes.
-Native Client Contract v0 defines future Windows/macOS/native client inputs,
-lane policy, readiness checks, and prohibited actions while keeping CLI as the
-only current native-like surface. It does not create Visual Studio or Xcode
-projects, native GUI apps, FFI, installer automation, package-manager behavior,
-download/execution automation, relay sidecars, live probes, or Rust runtime
-wiring.
-Native Action / Download / Install Policy v0 defines future inspect, preview,
-export, download, mirror, install handoff, package-manager handoff, execute,
-restore, uninstall, rollback, malware-scan, and rights/access policy before any
-native or public download surface exists. It does not implement downloads,
-installers, package-manager integration, malware scanning, rights clearance,
-native clients, relay runtime, or executable trust claims.
-Native Local Cache / Privacy Policy v0 defines future public/private cache,
-local path, user state, resolution memory, telemetry/logging, credentials,
-deletion/export/reset, portable-mode, snapshot, relay, and public-alpha privacy
-policy before native project readiness work. It does not implement cache
-runtime, private file ingestion, local archive scanning, telemetry, analytics,
-accounts, cloud sync, uploads, native clients, or relay runtime.
-
-## Quickstart
-
-### Requirements
-
-- Python 3
-- no outside Python packages for the current executable lane
-- optional Rust toolchain only for the `crates/` workspace checks
-
-```bash
-git clone https://github.com/Julesc013/eureka.git
-cd eureka
-```
-
-### Verify the Repo
-
-```bash
-python -m unittest discover -s runtime -t .
-python -m unittest discover -s surfaces -t .
-python -m unittest discover -s tests -t .
-python scripts/check_architecture_boundaries.py
-python scripts/validate_live_backend_handoff.py
-python scripts/validate_live_probe_gateway.py
-python scripts/validate_public_search_contract.py
-python scripts/validate_public_search_result_card_contract.py
-python scripts/validate_public_search_safety.py
-python scripts/validate_local_public_search_runtime.py
-python scripts/validate_compatibility_surfaces.py
-python scripts/check_rust_query_planner_parity.py
-```
-
-### Run Evals and Safety Checks
-
-```bash
-python scripts/run_archive_resolution_evals.py
-python scripts/run_archive_resolution_evals.py --json
-python scripts/run_search_usefulness_audit.py
-python scripts/public_search_smoke.py
-python scripts/public_alpha_smoke.py
-python scripts/run_public_alpha_server.py --check-config
-python scripts/generate_python_oracle_golden.py --check
-python -m unittest discover -s tests/hardening -t .
-python scripts/validate_public_static_site.py
-python scripts/validate_publication_inventory.py
-python scripts/check_github_pages_static_artifact.py --path site/dist
-python site/build.py --check
-python site/validate.py
-python scripts/generate_public_data_summaries.py --check
-python scripts/generate_compatibility_surfaces.py --check
-python scripts/generate_static_resolver_demos.py --check
-python scripts/validate_live_probe_gateway.py
-python scripts/validate_compatibility_surfaces.py
-python scripts/generate_static_snapshot.py --check
-python scripts/validate_static_snapshot.py
-python scripts/validate_snapshot_consumer_contract.py
-python scripts/validate_native_client_contract.py
-python scripts/validate_action_policy.py
-python scripts/validate_local_cache_privacy_policy.py
-python scripts/check_rust_query_planner_parity.py
-python scripts/generate_public_alpha_rehearsal_evidence.py --check
-```
-
-For larger tasks, the command registry and lane guidance live in
-`control/inventory/tests/` and
-`docs/operations/TEST_AND_EVAL_LANES.md`.
-
-### Try the CLI
-
-```bash
-python scripts/demo_cli_workbench.py resolve fixture:software/synthetic-demo-app@1.0.0
-python scripts/demo_cli_workbench.py search archive
-python scripts/demo_cli_workbench.py query-plan "Windows 7 apps"
-python scripts/demo_cli_workbench.py sources
-python scripts/demo_cli_workbench.py evals-archive-resolution --task windows_7_apps --json
-```
-
-### Try the Local HTTP API Helper
-
-```bash
-python scripts/demo_http_api.py --mode public_alpha status
-python scripts/demo_http_api.py query-plan "Windows 7 apps"
-python scripts/demo_http_api.py sources
-python scripts/demo_http_api.py resolve github-release:cli/cli@v2.65.0
-```
-
-### Try the Web Workbench
-
-Render one page to stdout:
-
-```bash
-python scripts/demo_web_workbench.py --render-once
-python scripts/demo_web_workbench.py --render-once --search-query archive
-```
-
-Start the local stdlib server in trusted local-dev mode:
-
-```bash
-python scripts/demo_web_workbench.py --mode local_dev
-```
-
-Start the constrained public-alpha mode locally:
-
-```bash
-python scripts/run_public_alpha_server.py --check-config
-python scripts/run_public_alpha_server.py --print-config-json
-python scripts/demo_web_workbench.py --mode public_alpha --host 127.0.0.1 --port 8080
-```
-
-`public_alpha` blocks caller-provided local filesystem controls. It is a
-supervised demo posture, not production hosting.
-
-### Optional Rust Checks
-
-Run these only where Cargo is installed:
-
-```bash
-cargo check --workspace --manifest-path crates/Cargo.toml
-cargo test --workspace --manifest-path crates/Cargo.toml
-```
-
-The Rust workspace is not an active backend. Python remains the reference
-runtime and oracle.
-
-## Example Workflows
-
-### Compile a Hard Archive Query
-
-```bash
-python scripts/demo_cli_workbench.py query-plan "Windows 7 apps"
-```
-
-This runs the deterministic Query Planner v0 and emits the bounded
-`ResolutionTask` shape for a hard archive-resolution query family.
-
-### Build and Query a Local Index
-
-```bash
-python scripts/demo_cli_workbench.py index-build --index-path .demo-index/eureka-local-index.sqlite3 --json
-python scripts/demo_cli_workbench.py index-query archive --index-path .demo-index/eureka-local-index.sqlite3 --json
-```
-
-This is a local-dev workflow. Public-alpha mode blocks arbitrary caller-provided
-local path controls.
-
-### Inspect Source Registry State
-
-```bash
-python scripts/demo_cli_workbench.py sources
-python scripts/demo_cli_workbench.py sources --coverage-depth source_known
-python scripts/demo_cli_workbench.py sources --capability recorded_fixture_backed
-python scripts/demo_cli_workbench.py source github-releases-recorded-fixtures
-```
-
-This shows the governed source inventory, capability flags, coverage depth, and
-placeholder posture through the public boundary. Placeholder sources remain
-placeholders; this does not imply live connector support.
-
-### Run the Archive Eval Harness
-
-```bash
-python scripts/run_archive_resolution_evals.py --task windows_7_apps
-```
-
-The eval runner reports satisfied, partial, not-satisfied, not-evaluable, and
-capability-gap checks. It is not a ranking benchmark.
-
-### Run the Search Usefulness Audit
-
-```bash
-python scripts/run_search_usefulness_audit.py --query windows_7_apps
-```
-
-The usefulness audit runs a broad local query pack and aggregates source,
-planner, index, decomposition, representation, compatibility, actionability,
-and UX gaps. Google and Internet Archive baselines are pending manual
-observations; the script performs no scraping.
-
-### Check Public-Alpha Posture
-
-```bash
-python scripts/public_alpha_smoke.py
-python scripts/demo_http_api.py --mode public_alpha status
-```
-
-These checks exercise safe public-alpha routes and blocked local-path routes
-without deploying anything.
-
-## Architecture At a Glance
-
-```text
-raw query or target_ref
-  -> query planner / exact resolver / deterministic search
-  -> source registry + local corpus + optional local index
-  -> resolution run, evidence, absence, representations, actions
-  -> gateway public boundary
-  -> CLI / HTML / local HTTP API
-  -> memory, evals, public-alpha checks, Python-oracle goldens
-```
-
-Boundary rule of thumb:
-
-```text
-control/       governance and inventories
-contracts/     governed schemas and surface contracts
-runtime/engine engine behavior and interfaces
-runtime/gateway public runtime boundary
-surfaces/      CLI, HTML, and local HTTP API
-crates/        future Rust lane, isolated from active runtime
-```
-
-The accepted architecture frames Eureka through:
-
-- six logical graphs:
-  [object, representation, temporal, claim/provenance, access/action,
-  user/strategy](docs/architecture/LOGICAL_GRAPHS.md)
-- five physical subsystem directions:
-  [CAS store, canonical core, lexical index, semantic recall index,
-  worker plane](docs/architecture/PHYSICAL_SUBSYSTEMS.md)
-
-Only bounded Python reference slices are active today. Vector/semantic recall,
-production queues, and production Rust services remain future work.
-
-## Repository Map
-
-| Path | Purpose |
-| --- | --- |
-| `.aide/` | Repo-operating metadata only; not product runtime behavior |
-| `contracts/` | Governed schemas, protocols, public API contracts, UI contracts |
-| `control/` | Governance material, source inventory, route inventory, research notes |
-| `control/inventory/publication/` | Public publication-plane contracts for routes, client profiles, data files, deployment targets, redirects, and base-path portability |
-| `crates/` | Future Rust backend lane; currently skeleton plus source-registry parity candidate |
-| `docs/` | Vision, architecture, roadmap, operations, standards, decisions |
-| `docs/operations/public_alpha_hosting_pack/` | Supervised public-alpha hosting-pack runbook and templates |
-| `docs/operations/public_alpha_rehearsal_evidence_v0/` | Supervised local/static public-alpha rehearsal evidence pack; no deployment approval |
-| `evals/` | Archive-resolution eval packet and related eval scaffolding |
-| `site/dist/` | No-JS static public artifact for static Pages publication review; no backend or live source behavior |
-| `runtime/` | Python reference engine, connectors, gateway public boundary, source registry |
-| `scripts/` | Demo commands, eval runner, safety checks, golden generators |
-| `snapshots/` | Static/offline snapshot format schema and deterministic seed examples; no real keys or executable downloads |
-| `surfaces/` | Server-rendered web workbench, local HTTP API, native CLI surface |
-| `tests/` | Integration, operations, parity, architecture, and script tests |
-
-## Documentation Map
-
-Start here:
-
-- [Bootstrap Status](docs/BOOTSTRAP_STATUS.md)
-- [Roadmap](docs/ROADMAP.md)
-- [Decisions](docs/DECISIONS.md)
-- [Open Questions](docs/OPEN_QUESTIONS.md)
-- [Scripts](scripts/README.md)
-
-Product and doctrine:
-
-- [Eureka Thesis](docs/vision/EUREKA_THESIS.md)
-- [Doctrine](docs/vision/DOCTRINE.md)
-- [Product Promise](docs/vision/PRODUCT_PROMISE.md)
-- [Temporal Object Resolver](docs/architecture/TEMPORAL_OBJECT_RESOLVER.md)
-- [Research note: temporal object resolution engine](control/research/temporal-object-resolution-engine.md)
-
-Architecture:
-
-- [Architecture Overview](docs/ARCHITECTURE.md)
-- [Logical Graphs](docs/architecture/LOGICAL_GRAPHS.md)
-- [Physical Subsystems](docs/architecture/PHYSICAL_SUBSYSTEMS.md)
-- [Query Planner](docs/architecture/QUERY_PLANNER.md)
-- [Resolution Memory](docs/architecture/RESOLUTION_MEMORY.md)
-- [AI Policy](docs/architecture/AI_POLICY.md)
-- [Rust Backend Lane](docs/architecture/RUST_BACKEND_LANE.md)
-- [Publication Plane](docs/architecture/PUBLICATION_PLANE.md)
-- [Live Probe Gateway](docs/architecture/LIVE_PROBE_GATEWAY.md)
-- [Compatibility Surfaces](docs/architecture/COMPATIBILITY_SURFACES.md)
-
-Roadmaps and operations:
-
-- [Backend Roadmap](docs/roadmap/BACKEND_ROADMAP.md)
-- [Public Alpha](docs/roadmap/PUBLIC_ALPHA.md)
-- [Rust Migration](docs/roadmap/RUST_MIGRATION.md)
-- [Native Apps Later](docs/roadmap/NATIVE_APPS_LATER.md)
-- [Public Alpha Safe Mode](docs/operations/PUBLIC_ALPHA_SAFE_MODE.md)
-- [Public Alpha Readiness Review](docs/operations/PUBLIC_ALPHA_READINESS_REVIEW.md)
-- [Public Alpha Hosting Pack](docs/operations/public_alpha_hosting_pack/README.md)
-- [Public Route Contract](docs/reference/PUBLIC_ROUTE_CONTRACT.md)
-- [Public Data Contract](docs/reference/PUBLIC_DATA_CONTRACT.md)
-- [Public Search API Contract](docs/reference/PUBLIC_SEARCH_API_CONTRACT.md)
-- [Public Search Result Card Contract](docs/reference/PUBLIC_SEARCH_RESULT_CARD_CONTRACT.md)
-- [Public Search Safety / Abuse Guard](docs/operations/PUBLIC_SEARCH_SAFETY_AND_ABUSE_GUARD.md)
-- [Public Search Runtime Readiness Checklist](docs/operations/PUBLIC_SEARCH_RUNTIME_READINESS_CHECKLIST.md)
-- [Client Profile Contract](docs/reference/CLIENT_PROFILE_CONTRACT.md)
-- [Live Probe Gateway Contract](docs/reference/LIVE_PROBE_GATEWAY_CONTRACT.md)
-- [Snapshot Format Contract](docs/reference/SNAPSHOT_FORMAT_CONTRACT.md)
-- [Snapshot Signature Policy](docs/reference/SNAPSHOT_SIGNATURE_POLICY.md)
-- [Test and Eval Lanes](docs/operations/TEST_AND_EVAL_LANES.md)
-- [Hard Test Pack](docs/operations/HARD_TEST_PACK.md)
-- [Comprehensive Audit Pack](control/audits/2026-04-25-comprehensive-test-eval-audit/README.md)
-- [Search Usefulness Backlog Triage](control/backlog/search_usefulness_triage/README.md)
-- [Search Usefulness Audit Delta](control/audits/search-usefulness-delta-v0/README.md)
-
-Evals and parity:
-
-- [Archive Resolution Evals](evals/archive_resolution/README.md)
-- [Search Usefulness Audit](evals/search_usefulness/README.md)
-- [Search Benchmark Design](docs/evals/SEARCH_BENCHMARK_DESIGN.md)
-- [Rust Parity Plan](tests/parity/PARITY_PLAN.md)
-- [Python Oracle Golden Fixtures](tests/parity/golden/python_oracle/v0/README.md)
-
-## Current Maturity
-
-Eureka is substantial, but it is still a prototype/reference backend:
-
-- Python is the executable specification, reference backend, and oracle.
-- Public-alpha safe mode exists, but it is not production deployment.
-- The public-alpha wrapper exists as a local process/config guard; it is not
-  hosting infrastructure or production approval.
-- Public Publication Plane Contracts v0 exist as route/data/client/deployment
-  inventory governance. They do not deploy anything or add static generation.
-- GitHub Pages Deployment Enablement v0 configures a static-only workflow for
-  `site/dist/`, with deployment success still unverified until GitHub Actions
-  evidence exists.
-- Static Site Generation Migration v0 adds a stdlib-only generator under
-  `site/`. Repository Shape Consolidation v0 makes generated `site/dist/` the
-  only active Pages artifact.
-- Static Artifact Promotion Review v0 conditionally promotes `site/dist/` as
-  the active repo-local static artifact. It records no GitHub Actions
-  deployment success, backend hosting, live probes, public search runtime, or
-  production-readiness claim.
-- GitHub Pages Run Evidence Review v0 records a current-head Pages workflow
-  failure at the Pages configuration step. The `site/dist` checks passed before
-  the failure, but no Pages artifact or deployment URL exists yet.
-- Public Search API Contract v0 is implemented as contract/governance, and
-  Local Public Search Runtime v0 implements the first local/prototype backend
-  routes for `local_index_only` search: `/search`, `/api/v1/search`,
-  `/api/v1/query-plan`, `/api/v1/status`, `/api/v1/sources`, and
-  `/api/v1/source/{source_id}`. This is not hosted deployment and does not add
-  live probes, downloads, installs, uploads, local path search, arbitrary URL
-  fetch, accounts, telemetry, or production API stability.
-- Public Search Static Handoff v0 is implemented as static publication only.
-  `site/dist/search.html`, `site/dist/lite/search.html`,
-  `site/dist/text/search.txt`, `site/dist/files/search.README.txt`, and
-  `site/dist/data/search_handoff.json` point users toward local/prototype
-  search while keeping hosted backend search unconfigured/unverified and
-  preserving no-JS, no-live-probe, no-download, no-upload, no-local-path-search
-  boundaries.
-- Public Search Rehearsal v0 is implemented as local/prototype evidence only.
-  It records route coverage, nine representative safe-query outcomes, fourteen
-  blocked-request outcomes, static handoff review, public-alpha review, and
-  contract alignment without hosted deployment, live probes, downloads,
-  installs, uploads, local path search, accounts, telemetry, or production
-  claims.
-- Search Usefulness Source Expansion v2 is implemented as fixture-only source
-  coverage. It adds six recorded fixture source families and 15 tiny metadata
-  records, reducing source_gap from 26 to 10 and increasing partial from 22 to
-  40 without live probes, scraping, crawling, external observations, real
-  binaries, download/install/upload actions, local path search, telemetry,
-  hosted search, or production relevance claims.
-- Public Search Result Card Contract v0 is implemented as contract/governance
-  only. It defines the future result card used by public search responses and
-  old-client/native/relay/snapshot consumers, but it does not make search live,
-  add route handlers, enable downloads, installers, execution, uploads, malware
-  safety, rights clearance, or production ranking guarantees.
-- Public Search Safety / Abuse Guard v0 now constrains the local runtime and
-  future hosted review. It defines request/result/time limits, forbidden
-  parameters, disabled modes, error mapping, logging/privacy posture, operator
-  controls, and the runtime readiness checklist, but it does not add hosted
-  deployment, rate-limit middleware, auth/accounts, telemetry runtime, live
-  probes, downloads, uploads, local path search, arbitrary URL fetch, or
-  production safety guarantees.
-- Generated Public Data Summaries v0 adds static machine-readable summaries
-  under `site/dist/data/`. They are not live API semantics and do not add
-  external observations.
-- Lite/Text/Files Seed Surfaces v0 adds static compatibility seed surfaces
-  under `site/dist/lite/`, `site/dist/text/`, and `site/dist/files/`.
-  They do not add live search, downloads, snapshots, relay behavior, or native
-  runtime.
-- Static Resolver Demo Snapshots v0 adds static fixture-backed demo pages under
-  `site/dist/demo/`. They do not add live search, a live API, external
-  observations, backend hosting, or production behavior.
-- Custom Domain / Alternate Host Readiness v0 adds static-host portability
-  contracts and validation. It does not configure DNS, add CNAME, deploy an
-  alternate host, add provider config, or make Eureka production-ready.
-- Live Backend Handoff Contract v0 reserves `/api/v1`, capability flags, and
-  an error-envelope expectation for a future hosted backend. It does not make
-  `/api/v1` live, deploy backend hosting, enable live probes, or create a
-  stable production API.
-- Live Probe Gateway Contract v0 defines disabled-by-default source-probe
-  policy, per-source caps, cache/evidence expectations, and operator gates.
-  It does not implement probes, call external sources, fetch URLs, scrape,
-  crawl, enable downloads, or promote Google beyond manual baselines.
-- The hosting pack supports supervised rehearsal evidence, not open-internet
-  approval.
-- Rust has a workspace, parity fixtures, and isolated source-registry plus
-  query-planner candidates. It does not replace Python and is not used by web,
-  CLI, HTTP API, workers, public-alpha paths, or production paths.
-- Compatibility Surface Strategy v0 is strategy/contracts/inventory only. It
-  guides old-browser, text, file-tree, snapshot, relay, API, CLI, web, and
-  future native clients without implementing snapshots, relay services, native
-  apps, live API behavior, or new runtime behavior.
-- Signed Snapshot Format v0 is a contract and deterministic seed example only.
-  It does not add real signing keys, production signatures, executable
-  downloads, a public `/snapshots/` route, relay behavior, native-client
-  runtime, live backend behavior, or live probes.
-- Signed Snapshot Consumer Contract v0 is contract/design only. It does not
-  implement a snapshot reader runtime, relay, native client, production signing,
-  real signing keys, executable downloads, live backend behavior, or live
-  probes.
-- Native Client Contract v0 is contract/design only. It does not create native
-  app projects, GUI clients, FFI, installer automation, downloads, relay
-  sidecars, live probes, or Rust runtime wiring; CLI remains the only current
-  native-like surface.
-- Native Action / Download / Install Policy v0 is policy/contract only. It does
-  not implement downloads, installers, package-manager integration, malware
-  scanning, rights clearance, native clients, relay runtime, or executable
-  trust claims.
-- Native Local Cache / Privacy Policy v0 is policy/contract only. It does not
-  implement local cache runtime, private file ingestion, local archive scanning,
-  telemetry, analytics, accounts, cloud sync, uploads, native clients, or relay
-  runtime.
-- Native Client Project Readiness Review v0 is review/evidence only. It records
-  the decision `ready_for_minimal_project_skeleton_after_human_approval` for the
-  `windows_7_x64_winforms_net48` lane, but it does not create Visual Studio or
-  Xcode projects, native app source trees, GUI behavior, FFI, cache runtime,
-  downloads, installers, relay runtime, live probes, or runtime wiring.
-- Windows 7 WinForms Native Skeleton Planning v0 is planning only. It proposes
-  `clients/windows/winforms-net48/` and
-  `Eureka.Clients.Windows.WinForms`, records Windows host / Visual Studio 2022 /
-  .NET Framework 4.8 / x64 / Windows 7 SP1+ requirements, and limits any future
-  skeleton to read-only static public data and seed snapshot demo inspection.
-  It does not create `clients/`, a Visual Studio solution, `.csproj`, C# source,
-  GUI behavior, FFI, cache runtime, downloads, installers, telemetry, relay
-  runtime, live probes, or runtime wiring.
-- Relay Prototype Planning v0 is planning only. It selects a future
-  `local_static_http_relay_prototype` as the first relay candidate, with
-  localhost-only/read-only/static defaults over allowlisted public data and seed
-  snapshot files. It does not implement a relay server, open sockets, add HTTP,
-  FTP, SMB, AFP, NFS, WebDAV, Gopher, protocol translation, native sidecar,
-  snapshot mount, private file serving, live backend proxying, live probes, or
-  old-client relay support.
-- Full Project State Audit v0 records the current full repo checkpoint under
-  `control/audits/full-project-state-audit-v0/`, including milestone status,
-  broad verification, eval/search state, external-baseline pending state,
-  publication/static/public-alpha status, source/retrieval state,
-  snapshot/relay/native/Rust status, risks, blockers, human-operated work,
-  explicit deferrals, and next milestone recommendations. It is
-  audit/reporting only and adds no product runtime behavior.
-- Native apps are deferred. The current native surface is a stdlib CLI proof.
-- Live crawling, source sync, fuzzy retrieval, vector search, LLM planning,
-  auth, accounts, HTTPS/TLS, rate limiting, process supervision, and deployment
-  infrastructure are intentionally out of scope. Current result lanes and
-  user-cost scores are bounded deterministic hints, not production ranking.
+| Public hosted service | Not launched |
+| Production readiness | Not claimed |
+| Public live source fanout | Disabled |
+| Downloads | Disabled |
+| Uploads | Disabled |
+| Extraction | Disabled except safe fixture/member-manifest foundation |
+| Model/provider calls | Disabled |
+| Public mutation | Disabled |
+| Master/public index mutation | Review/promotion-gated, not automatic |
+| Native marketplace manager | Not implemented |
 
 ## Roadmap
 
-Accepted immediate next milestone:
+Current next sequence:
 
-1. Local Staging Manifest Format v0
-2. Staged Pack Inspector v0
-3. Manual Observation Batch 0 Execution, human-operated parallel work
-4. Search Usefulness Baseline Comparison Report v0 after observations
-5. IA Metadata Live Probe Approval Pack v0 only after explicit approval
-6. Public Hosted Search Rehearsal Plan v0 after source/safety confidence
-7. GitHub Pages Workflow Repair v0 as an operator/Pages follow-up before any
-   deployment-success claim
+1. `PUBLIC-ALPHA-DEPLOY-DRY-RUN-00`
+2. `PUBLIC-ALPHA-LAUNCH-00`
+3. `PUBLIC-DEMAND-SIGNAL-00`
+4. `PUBLIC-SOURCE-REQUEST-QUEUE-00`
+5. live metadata pilots
+6. `NATIVE-SNAPSHOT-CLIENT-00`
+7. `ACTION-MANIFEST-00`
 
-Broader near-term direction:
+The just-recorded `PUBLIC-ALPHA-LAUNCH-CANDIDATE-00` gate is not launch.
+`PUBLIC-ALPHA-DEPLOY-DRY-RUN-00` is not public launch. Launch requires explicit
+manual approval.
 
-1. keep the GitHub Pages workflow static-only and driven by publication-plane
-   contracts, with `site/dist/` as the only uploaded artifact
-2. repair or configure GitHub Pages so the static workflow can pass before
-   recording any hosted result as deployment evidence
-3. fill a first manual Google and Internet Archive baseline batch without
-   scraping or fabricated comparisons
-4. keep using audit deltas to measure source, planner, representation,
-   member, lane, and compatibility-evidence movement
-5. keep Python as oracle while adding Rust candidates only when parity fixtures
-   exist
-6. preserve public-alpha safety checks and capture rehearsal evidence
-7. keep snapshot contracts checksum/signature-policy governed before relay or
-   native-client consumption
-8. expand source and eval coverage without weakening hard queries
-9. harden backend contracts, run models, memory, and local index behavior
-10. move toward hosted alpha only after explicit blockers are resolved
-11. keep native app shells later, after backend infrastructure is stronger
+## Repository Layout
 
-No exact dates are promised.
-
-## Development Rules
-
-- Keep the Python executable lane stdlib-only unless the repo deliberately
-  changes that policy.
-- Preserve architecture boundaries; surfaces must not import engine internals.
-- Use gateway public APIs from web, CLI, and HTTP-facing code.
-- Treat evals and Python-oracle goldens as guardrails, not decoration.
-- Use the test registry and command matrix when choosing verification lanes for
-  larger tasks.
-- Do not claim production readiness without evidence and accepted decisions.
-- For nontrivial Codex/agent tasks, work in two passes: implementation, then
-  hardening.
-- Verify before claiming completion.
-- Sync the branch to origin at the end of each completed prompt/task when the
-  environment supports it.
-
-Useful checks:
-
-```bash
-python -m unittest discover -s runtime -t .
-python -m unittest discover -s surfaces -t .
-python -m unittest discover -s tests -t .
-python scripts/check_architecture_boundaries.py
-python scripts/public_alpha_smoke.py
-python scripts/validate_publication_inventory.py
-python -m unittest discover -s tests/hardening -t .
+```text
+.aide/       repo operating metadata and compact task context
+control/     governance, audits, inventories, policies, evidence
+contracts/   packet, schema, API, and shared contract authority
+runtime/     Python reference runtime
+surfaces/    web, CLI, API, text, file, lite, and native projections
+site/        static site source and generated static artifact tree
+snapshots/   snapshot schemas and public-safe examples
+examples/    public-safe fixtures, packs, and examples
+evals/       repo-level evaluations
+tests/       cross-component and repo-operating tests
+tools/       implementation helpers for validators/generators/auditors
+scripts/     stable command wrappers
+release/     release and hosting plans, not generated release output
+archive/     retired, historical, or quarantined material
+native/      canonical native client project root and skeletons
+crates/      Rust parity/future migration lane
 ```
 
-## Contributing
+Scripts are stable command wrappers. Tools contain implementation helpers.
+Runtime contains the Python reference runtime. Surfaces contain projections.
+Contracts contain packet/schema authority. Control contains governance, audits,
+and inventories.
 
-There is not yet a formal open-source contribution process. For now, useful
-contributions should be small, evidence-backed, boundary-preserving, and honest
-about maturity. Start with the docs above, run the verification commands, and
-avoid broadening scope into production deployment, native apps, live crawling,
-or ungoverned retrieval semantics.
+More detail:
 
-## License
+- [Docs index](docs/README.md)
+- [Architecture](docs/ARCHITECTURE.md)
+- [Repo layout](docs/REPO_LAYOUT.md)
+- [Roadmap](docs/ROADMAP.md)
 
-No license file is present in this repository yet. Licensing is not finalized.
+## For Contributors And Agents
 
-## Acknowledgements
+Humans and agents should use packet contracts and scripts. Agents may propose
+candidates, summaries, and review handoff plans. Agents may not create accepted
+truth.
 
-Eureka is shaped by the archive, preservation, software-history, search,
-package-inspection, and reproducibility ecosystems. This README also borrows
-general quality principles from public README curation projects: strong
-opening identity, honest status, useful quickstart commands, clear navigation,
-and no decorative claims the repo cannot support.
+Agents may not:
 
-## Current Checkpoint
+- mutate master/public indexes
+- run live source actions without policy/operator approval
+- run long full-discovery tests inside chat/model sessions
+- commit tokens, credentials, raw private logs, raw live source responses, or
+  local instance state
+- claim deployment, public launch, production readiness, broad corpus coverage,
+  native marketplace readiness, or AI authority without governed evidence
 
-Post-Queue State Checkpoint v0 now lives under
-`control/audits/post-queue-state-checkpoint-v0/`. It records the post-P01..P09
-repo state, verification results, eval/audit status, external-baseline pending
-status, risks, deferrals, and next recommended work. It is audit/reporting only
-and does not add product runtime behavior, deployment behavior, live probes,
-external observations, production signing, relay services, or native clients.
+Read:
+
+- [Contributing](CONTRIBUTING.md)
+- [Security policy](SECURITY.md)
+- [Agent instructions](AGENTS.md)
+
+## License / Status Notes
+
+No root `LICENSE` file is currently present, and licensing is not finalized.
+Until a license is selected by the repository owner or an authorized legal
+decision-maker, do not assume permission to copy, redistribute, package,
+publish, or commercialize the code beyond permissions granted by the repository
+owner and applicable platform terms.
+
+See [License Selection Required](docs/operations/LICENSE_SELECTION_REQUIRED.md).

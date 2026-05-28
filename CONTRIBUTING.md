@@ -1,32 +1,70 @@
 # Contributing
 
-Eureka is pre-production and prototype-stage. Contributions are welcome when
-they preserve auditability, boundary clarity, and honest maturity labels.
+Eureka is a local-first prototype with a Python reference backend, a promoted
+local product loop, read-only public-alpha foundations, and a passed
+launch-candidate gate. Contributions are welcome when they preserve
+auditability, boundary clarity, and honest maturity labels.
 
-Before opening a change:
+## Before Opening A Change
 
-- Read `AGENTS.md`, `README.md`, and the relevant docs under `docs/`.
-- Keep changes narrowly scoped to the affected contract, control, runtime, or
+- Read [README.md](README.md), [AGENTS.md](AGENTS.md), and the relevant docs
+  under [docs/](docs/README.md).
+- Keep changes narrowly scoped to the affected control, contract, runtime, or
   surface boundary.
-- Run the validators and tests that match the changed files. For larger work,
-  use `control/inventory/tests/command_matrix.json` and
-  `docs/operations/TEST_AND_EVAL_LANES.md`.
-- Do not weaken hard evals, validators, architecture checks, or safety guards
-  to make a change pass.
-- Do not add live probes, source API calls, scraping, crawling, arbitrary URL
-  fetching, downloads, uploads, installers, accounts, telemetry, AI runtime, or
-  credentials without an explicit approved milestone.
-- Do not commit secrets, API keys, private local paths, copyrighted payload
-  dumps, executable payloads, installer files, raw private caches, or raw local
-  indexes.
-- Treat pack, source, AI, and external-baseline claims as evidence-backed and
-  candidate-gated. Validation is not import, staging, acceptance, truth,
-  rights clearance, or malware safety.
+- Use governed contracts and packet shapes rather than hidden coupling.
+- Run validators and tests that match the changed paths.
+- Do not weaken safety checks, hard evals, validators, architecture checks, or
+  generated-artifact guards to make a change pass.
 
-Current contribution intake is through the repository workflow, such as issues
-and pull requests. Eureka does not have hosted product submission, account, or
-public contribution intake behavior.
+## Safety Rules
 
-Root governance documents are minimal pre-production placeholders. Full legal,
-security, privacy, takedown, and hosted-service policies remain future
-operator/legal work.
+Do not add or enable live probes, source API calls, scraping, crawling,
+arbitrary URL fetching, downloads, uploads, installers, executable actions,
+accounts, telemetry, model/provider calls, credentials, public mutation, or
+master/public index mutation without an explicit approved milestone.
+
+Do not commit secrets, API keys, operator tokens, private local paths, local
+instance state, raw private caches, raw local indexes, raw live source
+responses, full-discovery raw logs, executable payloads, installers, or
+copyrighted payload dumps.
+
+Treat pack, source, AI, search, and external-baseline claims as evidence-backed
+and review-gated. Candidates, observations, and summaries are not accepted
+truth.
+
+## Testing Discipline
+
+Use focused lanes during normal development:
+
+```powershell
+python scripts/eureka_test_select.py --changed --failed-first --json
+```
+
+Use the public-alpha gate wrapper when the change touches launch/public-alpha
+posture:
+
+```powershell
+python scripts/eureka_gate.py public-alpha-closeout --watch --clean
+```
+
+Full unittest discovery must run outside AI chat/model sessions through the
+harness or CI:
+
+```powershell
+python scripts/run_full_unittest_discovery.py --out ..\eureka-test-runs\manual_full_discovery
+```
+
+## Branch And Review Posture
+
+Current contribution intake is through repository workflow, such as issues and
+pull requests. Eureka does not currently have hosted product submission,
+accounts, marketplace intake, or public contribution intake behavior.
+
+Public-alpha launch, deployment, production readiness, live metadata pilots,
+native distribution, and action-layer work all require explicit review gates.
+
+## Licensing
+
+No root `LICENSE` file is currently present. Do not assume open-source license
+terms until the repository owner or authorized legal decision-maker selects one.
+See [License Selection Required](docs/operations/LICENSE_SELECTION_REQUIRED.md).

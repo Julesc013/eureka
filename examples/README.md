@@ -3,11 +3,15 @@
 `examples/` holds public-safe fixtures, packs, source observations, review
 examples, connector examples, and audit proofs.
 
+Examples are not live source responses, private caches, executable mirrors,
+installer repositories, or accepted truth. They must stay public-safe and
+reviewable.
+
 ## Taxonomy Closeout
 
 The highest-volume task-phase example groups have been moved into durable
 families. Remaining first-level examples are classified taxonomy debt, not a
-junk drawer. Durable families for current and future examples are:
+junk drawer. Durable families for current and future examples include:
 
 - `examples/packs`
 - `examples/sources`
@@ -24,6 +28,6 @@ junk drawer. Durable families for current and future examples are:
 - `examples/relay`
 - `examples/work_units`
 
-Further moves should use a migration map first and update checksums, references,
-validators, docs, and tests in the same change. Do not collapse connector fixture
-detail or change fixture meaning during taxonomy cleanup.
+Further moves should use a migration map first and update checksums,
+references, validators, docs, and tests in the same change. Do not collapse
+connector fixture detail or change fixture meaning during taxonomy cleanup.

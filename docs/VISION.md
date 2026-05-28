@@ -1,31 +1,36 @@
 # Vision
 
-Eureka exists to make software artifacts and related digital objects legible,
-preservable, and actionable even when the original distribution context is
-incomplete.
+Eureka exists to make hard-to-find software, media, documents, source traces,
+and related digital objects legible, preservable, and actionable when their
+original distribution context is incomplete.
 
-The accepted product direction is no longer "archive search" in the flat sense.
-Eureka is a temporal object resolver that should help users find, verify,
-compare, explain, and act on current and archived digital objects with minimal
-detective work.
+The accepted direction is not flat archive search. Eureka is a temporal
+object-resolution system: it should help users find, verify, compare, explain,
+and safely act on current and archived objects with less manual detective work.
+
+## Product Promise
+
+Eureka should eventually answer:
+
+- What exact object or member is likely relevant?
+- Which source observed it?
+- What evidence supports or weakens the match?
+- What is absent, disputed, or unknown?
+- What safe next step can an operator take?
+
+## Current Scope Honesty
+
+The current repository is a local-first Python reference prototype with
+read-only public-alpha foundations. It does not yet provide a public hosted
+service, public launch, broad corpus coverage, native app distribution, full
+web crawling, full Archive.org search, download/install behavior, or AI truth
+authority.
 
 ## Accepted Vision Docs
 
 - [Eureka Thesis](vision/EUREKA_THESIS.md)
 - [Product Promise](vision/PRODUCT_PROMISE.md)
 - [Doctrine](vision/DOCTRINE.md)
-
-## Scope Honesty
-
-These documents record accepted direction and doctrine. They do not claim that
-the current bootstrap repo already implements the full resolver.
-
-The current repo remains:
-
-- bootstrap and pre-product
-- Python stdlib in the executable lane
-- bounded and deterministic
-- explicit about deferred semantics
 
 ## Research Kept Separate
 

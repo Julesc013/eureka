@@ -1,28 +1,20 @@
 # Root Evals
 
-`evals/` is reserved for repo-level evaluations that measure system behavior over time rather than component-local correctness.
+`evals/` is reserved for repo-level evaluations that measure system behavior
+over time rather than component-local correctness.
 
-- `archive_resolution/`: hard software-resolution benchmark tasks that guard future investigation, ranking, decomposition, source-expansion, and optional AI work
-- `search_usefulness/`: broad Search Usefulness Audit v0 query pack,
-  observation schemas, and report guidance for classifying current Eureka
-  usefulness, source gaps, capability gaps, and pending manual external
-  baselines
-- `system/`: system-level evaluation sets
-- `replay/`: replayable captured scenarios and regression-oriented runs
+Current families:
 
-Benchmark-design guidance now lives in:
+- `archive_resolution/`: hard software-resolution benchmark tasks.
+- `search_usefulness/`: broad query pack and manual external-baseline status.
+- `system/`: system-level evaluation sets.
+- `replay/`: replayable scenarios and regression-oriented runs.
 
-- [docs/evals/SEARCH_BENCHMARK_DESIGN.md](../docs/evals/SEARCH_BENCHMARK_DESIGN.md)
+Evals are evidence tools. They are not production relevance claims, broad corpus
+coverage claims, Google/Internet Archive comparison claims, or proof of public
+launch readiness.
 
-Repo-level audit findings and hard-test proposals now live under:
+Related docs:
 
-- [control/audits/](../control/audits/README.md)
-
-Search usefulness backlog triage now lives under:
-
-- [control/backlog/search_usefulness_triage/](../control/backlog/search_usefulness_triage/README.md)
-
-Source Coverage and Capability Model v0 adds source capability and
-coverage-depth metadata that later eval deltas can use when Real Source
-Coverage Pack v0 adds recorded fixtures. It does not add live source access or
-external baseline observations.
+- [Search Benchmark Design](../docs/evals/SEARCH_BENCHMARK_DESIGN.md)
+- [Test and Eval Lanes](../docs/operations/TEST_AND_EVAL_LANES.md)
