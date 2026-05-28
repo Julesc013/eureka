@@ -14,12 +14,12 @@
   "local_dev_equals_origin_dev": true,
   "working_tree_clean_before": true,
   "active_git_operation": false,
-  "promotion_stage": "pre_fast_forward_reviewed",
-  "head_after": null,
-  "origin_main_after": null,
-  "origin_dev_after": null,
-  "merge_base_after": null,
-  "ahead_behind_origin_main_origin_dev_after": null,
-  "origin_main_equals_origin_dev_after": false,
-  "working_tree_clean_after": null
+  "promotion_stage": "post_fast_forward_verified",
+  "head_after": "536af43faecf3bd34ef576e94519d3ebeb56e6d8",
+  "origin_main_after": "536af43faecf3bd34ef576e94519d3ebeb56e6d8",
+  "origin_dev_after": "536af43faecf3bd34ef576e94519d3ebeb56e6d8",
+  "merge_base_after": "536af43faecf3bd34ef576e94519d3ebeb56e6d8",
+  "ahead_behind_origin_main_origin_dev_after": "0 0",
+  "origin_main_equals_origin_dev_after": true,
+  "working_tree_clean_after": true
 }

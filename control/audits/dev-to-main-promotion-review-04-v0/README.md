@@ -15,4 +15,7 @@ The promotion evidence consumes a fresh external full-discovery gate result:
 The expected refusal-path trace for `site/dist` is classified as
 `expected_refusal_trace_nonblocking` because unittest completed successfully.
 
+The first fast-forward promotion verified `origin/main == origin/dev` at
+`536af43faecf3bd34ef576e94519d3ebeb56e6d8`.
+
 This is not a deployment, production-readiness claim, or public-launch claim.
