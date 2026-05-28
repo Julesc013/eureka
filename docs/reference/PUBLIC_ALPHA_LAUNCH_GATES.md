@@ -1,24 +1,24 @@
 # Public Alpha Launch Gates
 
-`PUBLIC-ALPHA-HOSTING-READINESS-00` does not approve launch. A future launch
-candidate must satisfy all gates below.
+The launch path is deliberately staged:
 
-## Required Gates
+1. Read-only public alpha foundation.
+2. Hosting readiness.
+3. Closeout with external full discovery.
+4. Main promotion.
+5. Launch-candidate gate.
+6. Deploy dry run.
+7. Explicit launch task with manual approval.
 
-- Public routes are read-only.
-- API routes are read-only.
-- No live source fanout is enabled.
-- No public mutation is enabled.
-- Downloads, uploads, extraction, and model/provider calls are disabled.
-- Snapshot/relay validation passes.
-- Public alpha read-only validation passes.
-- Hosting-readiness validation passes.
-- External full discovery passes before launch candidate approval.
-- Security headers and CSP are configured for the hosting mode.
-- Anonymous rate limits and request size limits are configured.
-- Privacy, abuse, and takedown docs are present.
-- Rollback plan is present and rehearsable.
-- Deployment approval is explicit in a future reviewed task.
+`launch_candidate_ready: true` means the baseline can move to a dry run. It does
+not mean the service is deployed, production-ready, or public-launch-ready.
 
-Until those gates pass, production readiness and public launch readiness remain
-false.
+Hard blockers include:
+
+- deployment already performed by a non-deploy task
+- production or public launch readiness claimed
+- public mutation enabled
+- public live source fanout enabled
+- downloads, extraction, or model/provider calls enabled
+- missing or failing external full discovery
+- missing rollback, security, privacy, or abuse documentation

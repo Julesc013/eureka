@@ -1,0 +1,13 @@
+task_id: PUBLIC-ALPHA-DEPLOY-DRY-RUN-00
+status: planned
+requires:
+  - PUBLIC-ALPHA-LAUNCH-CANDIDATE-00
+  - explicit_operator_dry_run_approval
+scope:
+  - dry-run deployment rehearsal for read-only public alpha
+  - verify environment, packaging, smoke checks, security headers, and rollback
+  - no public launch without explicit future approval
+deployment_allowed: false
+public_launch_allowed: false
+production_readiness_claimed: false
+public_launch_readiness_claimed: false

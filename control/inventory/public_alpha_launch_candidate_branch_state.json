@@ -1,0 +1,20 @@
+{
+  "schema_version": "public_alpha_launch_candidate_branch_state.v0",
+  "task": "PUBLIC-ALPHA-LAUNCH-CANDIDATE-00",
+  "branch": "dev",
+  "head": "ba70874c2bd0fdf7c2a3e32577d24dc7ee909dc8",
+  "origin_main": "ba70874c2bd0fdf7c2a3e32577d24dc7ee909dc8",
+  "origin_dev": "ba70874c2bd0fdf7c2a3e32577d24dc7ee909dc8",
+  "ahead_behind_origin_main_origin_dev": "0 0",
+  "ahead_behind_origin_dev_head": "0 0",
+  "origin_main_equals_origin_dev": true,
+  "working_tree_clean_before": true,
+  "active_git_operation": false,
+  "local_dev_equals_origin_dev": true,
+  "main_dev_promotion_state_valid": true,
+  "deployment_performed": false,
+  "history_rewrite_performed": false,
+  "force_push_performed": false,
+  "rebase_performed": false,
+  "branch_deleted": false
+}

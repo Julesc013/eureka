@@ -1,0 +1,63 @@
+{
+  "schema_version": "public_alpha_launch_candidate_route_matrix.v0",
+  "task": "PUBLIC-ALPHA-LAUNCH-CANDIDATE-00",
+  "routes": [
+    {
+      "route": "/alpha",
+      "projection": "public_web",
+      "read_only": true,
+      "snapshot_backed": true,
+      "relay_backed": true,
+      "public_mutation_enabled": false,
+      "live_source_fanout_enabled": false
+    },
+    {
+      "route": "/alpha/object",
+      "projection": "public_web",
+      "read_only": true,
+      "snapshot_backed": true,
+      "relay_backed": true,
+      "public_mutation_enabled": false,
+      "live_source_fanout_enabled": false
+    },
+    {
+      "route": "/alpha/source",
+      "projection": "public_web",
+      "read_only": true,
+      "snapshot_backed": true,
+      "relay_backed": true,
+      "public_mutation_enabled": false,
+      "live_source_fanout_enabled": false
+    },
+    {
+      "route": "/alpha/evidence",
+      "projection": "public_web",
+      "read_only": true,
+      "snapshot_backed": true,
+      "relay_backed": true,
+      "public_mutation_enabled": false,
+      "live_source_fanout_enabled": false
+    },
+    {
+      "route": "/alpha/absence",
+      "projection": "public_web",
+      "read_only": true,
+      "snapshot_backed": true,
+      "relay_backed": true,
+      "public_mutation_enabled": false,
+      "live_source_fanout_enabled": false
+    },
+    {
+      "route": "/alpha/needs",
+      "projection": "public_web",
+      "read_only": true,
+      "snapshot_backed": true,
+      "relay_backed": true,
+      "public_mutation_enabled": false,
+      "live_source_fanout_enabled": false
+    }
+  ],
+  "public_routes_read_only": true,
+  "public_live_source_fanout_enabled": false,
+  "public_mutation_enabled": false
+}

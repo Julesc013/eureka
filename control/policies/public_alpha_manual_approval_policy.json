@@ -1,0 +1,12 @@
+{
+  "schema_version": "public_alpha_manual_approval_policy.v0",
+  "policy_id": "public_alpha_manual_approval_policy",
+  "status": "active",
+  "manual_approval_required_for_launch": true,
+  "manual_approval_required_for_deployment": true,
+  "manual_approval_required_for_live_source_fanout": true,
+  "manual_approval_required_for_public_mutation": true,
+  "implicit_launch_approval_allowed": false,
+  "deployment_performed": false,
+  "public_launch_performed": false
+}

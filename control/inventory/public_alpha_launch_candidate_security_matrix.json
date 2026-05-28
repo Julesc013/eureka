@@ -1,0 +1,20 @@
+{
+  "schema_version": "public_alpha_launch_candidate_security_matrix.v0",
+  "task": "PUBLIC-ALPHA-LAUNCH-CANDIDATE-00",
+  "security_model_exists": true,
+  "security_headers_contract_exists": true,
+  "csp_baseline_exists": true,
+  "rate_limit_model_exists": true,
+  "observability_model_exists": true,
+  "privacy_notice_exists": true,
+  "abuse_takedown_process_exists": true,
+  "rollback_plan_exists": true,
+  "manual_approval_gate_exists": true,
+  "credentials_in_repo_allowed": false,
+  "inline_secrets_allowed": false,
+  "public_mutation_enabled": false,
+  "public_live_source_fanout_enabled": false,
+  "downloads_enabled": false,
+  "extraction_enabled": false,
+  "model_provider_enabled": false
+}

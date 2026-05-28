@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (4770 chars, 1193 approximate tokens)
+- `.aide/context/latest-task-packet.md` (6368 chars, 1592 approximate tokens)
 
 ## Context Packet Reference
 
@@ -33,21 +33,31 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Changed Files Summary
 
-- unknown: `control/audits/dev-to-main-promotion-review-04-v0` (??; does not match active task allowed paths)
-- unknown: `control/inventory/dev_to_main_promotion_04_boundary_report.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/dev_to_main_promotion_04_branch_state.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/dev_to_main_promotion_04_failure_repair_log.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/dev_to_main_promotion_04_input_state.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/dev_to_main_promotion_04_next_task_decision.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/dev_to_main_promotion_04_result.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/dev_to_main_promotion_04_scope_matrix.json` (??; does not match active task allowed paths)
-- unknown: `control/inventory/dev_to_main_promotion_04_validation_matrix.json` (??; does not match active task allowed paths)
-- unknown: `control/policies/generated_artifact_policy.json` (M; does not match active task allowed paths)
-- unknown: `docs/operations/DEV_TO_MAIN_PROMOTION_REVIEW_04.md` (??; does not match active task allowed paths)
-- unknown: `docs/operations/POST_PUBLIC_ALPHA_READONLY_PROMOTION_PLAN.md` (??; does not match active task allowed paths)
-- unknown: `scripts/validate_dev_to_main_promotion_04.py` (??; does not match active task allowed paths)
-- unknown: `tests/operations/test_dev_to_main_promotion_04.py` (??; does not match active task allowed paths)
-- unknown: `tests/scripts/test_validate_dev_to_main_promotion_04.py` (??; does not match active task allowed paths)
+- allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
+- allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
+- allowed: `.aide/queue/PUBLIC-ALPHA-DEPLOY-DRY-RUN-00` (??; matches active task allowed path)
+- allowed: `.aide/queue/PUBLIC-ALPHA-LAUNCH-CANDIDATE-00/task.yaml` (M; matches active task allowed path)
+- allowed: `.aide/queue/index.yaml` (M; matches active task allowed path)
+- allowed: `contracts/publication/public_alpha_blocker_register.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/publication/public_alpha_deploy_dry_run_plan.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/publication/public_alpha_go_no_go.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/publication/public_alpha_launch_candidate.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/publication/public_alpha_launch_decision.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/publication/public_alpha_launch_gate.v0.json` (M; matches active task allowed path)
+- allowed: `control/audits/public-alpha-launch-candidate-00-v0` (??; matches active task allowed path)
+- allowed: `control/inventory/public_alpha_launch_candidate_api_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/public_alpha_launch_candidate_blocker_register.json` (??; matches active task allowed path)
+- allowed: `control/inventory/public_alpha_launch_candidate_boundary_report.json` (??; matches active task allowed path)
+- allowed: `control/inventory/public_alpha_launch_candidate_branch_state.json` (??; matches active task allowed path)
+- allowed: `control/inventory/public_alpha_launch_candidate_deploy_dry_run_plan.json` (??; matches active task allowed path)
+- allowed: `control/inventory/public_alpha_launch_candidate_failure_repair_log.json` (??; matches active task allowed path)
+- allowed: `control/inventory/public_alpha_launch_candidate_go_no_go_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/public_alpha_launch_candidate_input_state.json` (??; matches active task allowed path)
+- allowed: `control/inventory/public_alpha_launch_candidate_next_task_decision.json` (??; matches active task allowed path)
+- allowed: `control/inventory/public_alpha_launch_candidate_ops_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/public_alpha_launch_candidate_result.json` (??; matches active task allowed path)
+- allowed: `control/inventory/public_alpha_launch_candidate_route_matrix.json` (??; matches active task allowed path)
+- additional changed paths omitted from compact packet: 25; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -57,8 +67,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 6005
-- approx_tokens: 1502
+- chars: 6991
+- approx_tokens: 1748
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

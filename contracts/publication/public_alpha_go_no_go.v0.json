@@ -1,0 +1,62 @@
+{
+  "$id": "contracts/publication/public_alpha_go_no_go.v0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Public Alpha Go No Go v0",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "record_type",
+    "created_at",
+    "baseline_commit",
+    "gate_status",
+    "go_no_go",
+    "manual_approval_required",
+    "deployment_performed",
+    "production_readiness_claimed",
+    "public_launch_readiness_claimed",
+    "blockers",
+    "warnings"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "public_alpha_go_no_go.v0"
+    },
+    "record_type": {
+      "const": "public_alpha_go_no_go"
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "baseline_commit": {
+      "type": "string"
+    },
+    "gate_status": {
+      "type": "string"
+    },
+    "go_no_go": {
+      "enum": [
+        "go_to_deploy_dry_run",
+        "no_go"
+      ]
+    },
+    "manual_approval_required": {
+      "const": true
+    },
+    "deployment_performed": {
+      "const": false
+    },
+    "production_readiness_claimed": {
+      "const": false
+    },
+    "public_launch_readiness_claimed": {
+      "const": false
+    },
+    "blockers": {
+      "type": "array"
+    },
+    "warnings": {
+      "type": "array"
+    }
+  }
+}

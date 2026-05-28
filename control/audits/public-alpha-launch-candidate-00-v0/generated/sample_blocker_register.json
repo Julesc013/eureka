@@ -1,0 +1,14 @@
+{
+  "schema_version": "public_alpha_blocker_register.v0",
+  "record_type": "public_alpha_blocker_register",
+  "created_at": "2026-05-29T06:15:13+10:00",
+  "baseline_commit": "ba70874c2bd0fdf7c2a3e32577d24dc7ee909dc8",
+  "gate_status": "pass",
+  "hard_blockers_remaining": 0,
+  "blockers": [],
+  "warnings": [],
+  "manual_approval_required": true,
+  "deployment_performed": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}

@@ -1,13 +1,16 @@
 task_id: PUBLIC-ALPHA-LAUNCH-CANDIDATE-00
-status: planned
+status: pass
 requires:
   - DEV-TO-MAIN-PROMOTION-REVIEW-04
-  - explicit_operator_deployment_approval
   - external_full_discovery_summary_pass
 scope:
   - launch-candidate review only
   - no deployment without explicit future approval
   - preserve reviewed-snapshot-only public alpha boundaries
+evidence:
+  - control/inventory/public_alpha_launch_candidate_result.json
+  - control/audits/public-alpha-launch-candidate-00-v0/
+next_recommended_task: PUBLIC-ALPHA-DEPLOY-DRY-RUN-00
 deployment_allowed: false
 readiness_claimed: false
 public_launch_readiness_claimed: false

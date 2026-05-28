@@ -1,0 +1,72 @@
+{
+  "schema_version": "public_alpha_launch_candidate_scope_matrix.v0",
+  "task": "PUBLIC-ALPHA-LAUNCH-CANDIDATE-00",
+  "baseline_commit": "ba70874c2bd0fdf7c2a3e32577d24dc7ee909dc8",
+  "scope": [
+    {
+      "component": "public_alpha_readonly_foundation",
+      "evidence": "control/inventory/public_alpha_readonly_00_result.json",
+      "status": "pass"
+    },
+    {
+      "component": "public_alpha_hosting_readiness",
+      "evidence": "control/inventory/public_alpha_hosting_result.json",
+      "status": "pass"
+    },
+    {
+      "component": "public_alpha_readonly_closeout",
+      "evidence": "control/inventory/public_alpha_readonly_closeout_result.json",
+      "status": "pass"
+    },
+    {
+      "component": "dev_to_main_promotion_04",
+      "evidence": "control/inventory/dev_to_main_promotion_04_result.json",
+      "status": "pass"
+    },
+    {
+      "component": "snapshot_relay",
+      "evidence": "control/inventory/snapshot_relay_result.json",
+      "status": "pass_with_warnings"
+    },
+    {
+      "component": "source_wave",
+      "evidence": "control/inventory/source_wave_result.json",
+      "status": "pass_with_warnings"
+    },
+    {
+      "component": "source_action_kernel",
+      "evidence": "control/inventory/source_action_kernel_result.json",
+      "status": "pass_with_warnings"
+    },
+    {
+      "component": "ci_full_discovery_harness",
+      "evidence": "control/inventory/ci_full_discovery_harness_result.json",
+      "status": "pass"
+    }
+  ],
+  "result_file_mappings": [
+    {
+      "expected": "control/inventory/public_alpha_readonly_result.json",
+      "actual": "control/inventory/public_alpha_readonly_00_result.json"
+    },
+    {
+      "expected": "control/inventory/public_alpha_hosting_result.json",
+      "actual": "control/inventory/public_alpha_hosting_result.json"
+    },
+    {
+      "expected": "control/inventory/public_alpha_readonly_closeout_result.json",
+      "actual": "control/inventory/public_alpha_readonly_closeout_result.json"
+    }
+  ],
+  "out_of_scope": [
+    "deployment",
+    "public_launch",
+    "live_source_fanout",
+    "public_mutation",
+    "downloads",
+    "extraction",
+    "model_provider_calls",
+    "native_clients",
+    "marketplace_actions"
+  ]
+}

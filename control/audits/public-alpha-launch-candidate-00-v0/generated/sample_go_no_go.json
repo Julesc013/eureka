@@ -1,0 +1,14 @@
+{
+  "schema_version": "public_alpha_go_no_go.v0",
+  "record_type": "public_alpha_go_no_go",
+  "created_at": "2026-05-29T06:15:13+10:00",
+  "baseline_commit": "ba70874c2bd0fdf7c2a3e32577d24dc7ee909dc8",
+  "gate_status": "pass",
+  "go_no_go": "go_to_deploy_dry_run",
+  "manual_approval_required": true,
+  "deployment_performed": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "blockers": [],
+  "warnings": []
+}

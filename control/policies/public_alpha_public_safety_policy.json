@@ -1,0 +1,18 @@
+{
+  "schema_version": "public_alpha_public_safety_policy.v0",
+  "policy_id": "public_alpha_public_safety_policy",
+  "status": "active",
+  "read_only_snapshot_backed_alpha_only": true,
+  "public_mutation_enabled": false,
+  "public_live_source_fanout_enabled": false,
+  "downloads_enabled": false,
+  "uploads_enabled": false,
+  "extraction_enabled": false,
+  "model_provider_enabled": false,
+  "accounts_enabled_by_default": false,
+  "public_write_actions_enabled": false,
+  "rollback_plan_required": true,
+  "privacy_notice_required": true,
+  "abuse_contact_required": true,
+  "external_full_discovery_required": true
+}

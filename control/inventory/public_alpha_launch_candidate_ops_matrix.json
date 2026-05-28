@@ -1,0 +1,24 @@
+{
+  "schema_version": "public_alpha_launch_candidate_ops_matrix.v0",
+  "task": "PUBLIC-ALPHA-LAUNCH-CANDIDATE-00",
+  "hosting_modes_considered": [
+    "static_snapshot_site",
+    "read_only_relay_service",
+    "local_preview_server",
+    "future_dynamic_gateway"
+  ],
+  "preferred_deploy_dry_run_modes": [
+    "static_snapshot_site",
+    "read_only_relay_service"
+  ],
+  "health_check_defined": true,
+  "smoke_check_defined": true,
+  "rollback_check_defined": true,
+  "environment_checklist_defined": true,
+  "observability_plan_defined": true,
+  "manual_approval_required_before_deploy": true,
+  "deployment_performed": false,
+  "public_launch_performed": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}

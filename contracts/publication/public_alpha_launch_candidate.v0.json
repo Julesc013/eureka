@@ -1,0 +1,103 @@
+{
+  "$id": "contracts/publication/public_alpha_launch_candidate.v0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Public Alpha Launch Candidate v0",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "record_type",
+    "created_at",
+    "candidate_id",
+    "baseline_commit",
+    "gate_status",
+    "public_alpha_routes_verified",
+    "public_alpha_api_verified",
+    "snapshot_relay_verified",
+    "hosting_readiness_verified",
+    "external_full_discovery_verified",
+    "security_docs_verified",
+    "privacy_abuse_docs_verified",
+    "rollback_plan_verified",
+    "manual_approval_required",
+    "deployment_performed",
+    "production_readiness_claimed",
+    "public_launch_readiness_claimed",
+    "launch_candidate_ready",
+    "launch_requires_manual_approval"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "public_alpha_launch_candidate.v0"
+    },
+    "record_type": {
+      "const": "public_alpha_launch_candidate"
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "candidate_id": {
+      "type": "string"
+    },
+    "baseline_commit": {
+      "type": "string"
+    },
+    "gate_status": {
+      "enum": [
+        "pass",
+        "pass_with_warnings",
+        "partial",
+        "blocked",
+        "fail"
+      ]
+    },
+    "blockers": {
+      "type": "array"
+    },
+    "warnings": {
+      "type": "array"
+    },
+    "public_alpha_routes_verified": {
+      "type": "boolean"
+    },
+    "public_alpha_api_verified": {
+      "type": "boolean"
+    },
+    "snapshot_relay_verified": {
+      "type": "boolean"
+    },
+    "hosting_readiness_verified": {
+      "type": "boolean"
+    },
+    "external_full_discovery_verified": {
+      "type": "boolean"
+    },
+    "security_docs_verified": {
+      "type": "boolean"
+    },
+    "privacy_abuse_docs_verified": {
+      "type": "boolean"
+    },
+    "rollback_plan_verified": {
+      "type": "boolean"
+    },
+    "manual_approval_required": {
+      "const": true
+    },
+    "deployment_performed": {
+      "const": false
+    },
+    "production_readiness_claimed": {
+      "const": false
+    },
+    "public_launch_readiness_claimed": {
+      "const": false
+    },
+    "launch_candidate_ready": {
+      "type": "boolean"
+    },
+    "launch_requires_manual_approval": {
+      "const": true
+    }
+  }
+}

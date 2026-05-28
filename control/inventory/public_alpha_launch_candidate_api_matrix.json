@@ -1,0 +1,27 @@
+{
+  "schema_version": "public_alpha_launch_candidate_api_matrix.v0",
+  "task": "PUBLIC-ALPHA-LAUNCH-CANDIDATE-00",
+  "api_routes": [
+    "/api/v1/alpha/status",
+    "/api/v1/alpha/search",
+    "/api/v1/alpha/object/{object_id}",
+    "/api/v1/alpha/source/{summary_id}",
+    "/api/v1/alpha/evidence/{summary_id}",
+    "/api/v1/alpha/absence/{summary_id}",
+    "/api/v1/alpha/needs"
+  ],
+  "read_only_methods": [
+    "GET",
+    "HEAD"
+  ],
+  "public_api_read_only": true,
+  "public_write_actions_enabled": false,
+  "public_mutation_enabled": false,
+  "public_live_source_fanout_enabled": false,
+  "download_enabled": false,
+  "upload_enabled": false,
+  "extraction_enabled": false,
+  "model_provider_enabled": false,
+  "accounts_enabled": false,
+  "deployment_performed": false
+}

@@ -1,0 +1,59 @@
+{
+  "$id": "contracts/publication/public_alpha_deploy_dry_run_plan.v0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Public Alpha Deploy Dry Run Plan v0",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "record_type",
+    "created_at",
+    "baseline_commit",
+    "gate_status",
+    "dry_run_id",
+    "manual_approval_required",
+    "deployment_performed",
+    "production_readiness_claimed",
+    "public_launch_readiness_claimed",
+    "blockers",
+    "warnings"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "public_alpha_deploy_dry_run_plan.v0"
+    },
+    "record_type": {
+      "const": "public_alpha_deploy_dry_run_plan"
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "baseline_commit": {
+      "type": "string"
+    },
+    "gate_status": {
+      "type": "string"
+    },
+    "dry_run_id": {
+      "type": "string"
+    },
+    "manual_approval_required": {
+      "const": true
+    },
+    "deployment_performed": {
+      "const": false
+    },
+    "production_readiness_claimed": {
+      "const": false
+    },
+    "public_launch_readiness_claimed": {
+      "const": false
+    },
+    "blockers": {
+      "type": "array"
+    },
+    "warnings": {
+      "type": "array"
+    }
+  }
+}

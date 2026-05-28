@@ -1,0 +1,82 @@
+{
+  "schema_version": "public_alpha_blocker_register.v0",
+  "record_type": "public_alpha_blocker_register",
+  "created_at": "2026-05-29T06:15:13+10:00",
+  "task": "PUBLIC-ALPHA-LAUNCH-CANDIDATE-00",
+  "baseline_commit": "ba70874c2bd0fdf7c2a3e32577d24dc7ee909dc8",
+  "gate_status": "pass",
+  "hard_blockers_remaining": 0,
+  "launch_warnings_remaining": 0,
+  "blockers": [],
+  "warnings": [],
+  "register": [
+    {
+      "id": "missing_external_full_discovery",
+      "classification": "hard_blocker",
+      "active": false,
+      "evidence": "dev_to_main_promotion_04_result.full_unittest_discovery_passed=true"
+    },
+    {
+      "id": "failed_external_full_discovery",
+      "classification": "hard_blocker",
+      "active": false,
+      "evidence": "failures=0 errors=0 exit_code=0"
+    },
+    {
+      "id": "public_mutation_enabled",
+      "classification": "hard_blocker",
+      "active": false
+    },
+    {
+      "id": "public_live_source_fanout_enabled",
+      "classification": "hard_blocker",
+      "active": false
+    },
+    {
+      "id": "downloads_enabled",
+      "classification": "hard_blocker",
+      "active": false
+    },
+    {
+      "id": "extraction_enabled",
+      "classification": "hard_blocker",
+      "active": false
+    },
+    {
+      "id": "model_provider_enabled",
+      "classification": "hard_blocker",
+      "active": false
+    },
+    {
+      "id": "deployment_performed",
+      "classification": "hard_blocker",
+      "active": false
+    },
+    {
+      "id": "production_readiness_claimed",
+      "classification": "hard_blocker",
+      "active": false
+    },
+    {
+      "id": "public_launch_readiness_claimed",
+      "classification": "hard_blocker",
+      "active": false
+    },
+    {
+      "id": "limited_reviewed_corpus",
+      "classification": "accepted_nonblocking_debt",
+      "active": true,
+      "note": "Alpha candidate can proceed to deploy dry-run planning, but public copy must remain honest about limited reviewed coverage."
+    },
+    {
+      "id": "github_actions_vs_dirty_tree_distinction",
+      "classification": "future_work",
+      "active": true,
+      "note": "Continue using local external gate for dirty candidate trees and CI for pushed branch validation."
+    }
+  ],
+  "manual_approval_required": true,
+  "deployment_performed": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}

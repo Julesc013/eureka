@@ -3,11 +3,32 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "additionalProperties": true,
   "properties": {
+    "baseline_commit": {
+      "type": "string"
+    },
+    "blockers": {
+      "type": "array"
+    },
+    "created_at": {
+      "type": "string"
+    },
     "deployment_approval_required": {
       "const": true
     },
+    "deployment_performed": {
+      "const": false
+    },
     "external_full_discovery_required": {
       "const": true
+    },
+    "gate_status": {
+      "enum": [
+        "pass",
+        "pass_with_warnings",
+        "partial",
+        "blocked",
+        "fail"
+      ]
     },
     "gate_id": {
       "type": "string"
@@ -15,16 +36,39 @@
     "launch_allowed_current": {
       "const": false
     },
+    "manual_approval_required": {
+      "const": true
+    },
+    "production_readiness_claimed": {
+      "const": false
+    },
+    "public_launch_readiness_claimed": {
+      "const": false
+    },
+    "record_type": {
+      "const": "public_alpha_launch_gate"
+    },
     "schema_version": {
       "const": "public_alpha_launch_gate.v0"
+    },
+    "warnings": {
+      "type": "array"
     }
   },
   "required": [
     "schema_version",
+    "record_type",
+    "created_at",
+    "baseline_commit",
+    "gate_status",
     "gate_id",
     "external_full_discovery_required",
     "deployment_approval_required",
-    "launch_allowed_current"
+    "launch_allowed_current",
+    "manual_approval_required",
+    "deployment_performed",
+    "production_readiness_claimed",
+    "public_launch_readiness_claimed"
   ],
   "title": "Public Alpha Launch Gate v0",
   "type": "object"

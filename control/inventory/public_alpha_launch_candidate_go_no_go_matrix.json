@@ -1,0 +1,41 @@
+{
+  "schema_version": "public_alpha_go_no_go.v0",
+  "record_type": "public_alpha_go_no_go",
+  "created_at": "2026-05-29T06:15:13+10:00",
+  "task": "PUBLIC-ALPHA-LAUNCH-CANDIDATE-00",
+  "baseline_commit": "ba70874c2bd0fdf7c2a3e32577d24dc7ee909dc8",
+  "gate_status": "pass",
+  "go_no_go": "go_to_deploy_dry_run",
+  "go_no_go_items": [
+    {
+      "gate": "public_alpha_readonly_verified",
+      "status": "pass"
+    },
+    {
+      "gate": "public_alpha_hosting_verified",
+      "status": "pass"
+    },
+    {
+      "gate": "snapshot_relay_verified",
+      "status": "pass"
+    },
+    {
+      "gate": "external_full_discovery_verified",
+      "status": "pass"
+    },
+    {
+      "gate": "manual_approval_required_for_launch",
+      "status": "pass"
+    },
+    {
+      "gate": "no_deployment_or_launch_claim",
+      "status": "pass"
+    }
+  ],
+  "manual_approval_required": true,
+  "deployment_performed": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "blockers": [],
+  "warnings": []
+}

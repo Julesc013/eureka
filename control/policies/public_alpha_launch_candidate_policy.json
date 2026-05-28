@@ -1,0 +1,23 @@
+{
+  "schema_version": "public_alpha_launch_candidate_policy.v0",
+  "policy_id": "public_alpha_launch_candidate_policy",
+  "status": "active",
+  "task": "PUBLIC-ALPHA-LAUNCH-CANDIDATE-00",
+  "launch_candidate_task_must_not_deploy": true,
+  "manual_approval_required_for_launch": true,
+  "production_readiness_claim_forbidden": true,
+  "public_launch_readiness_claim_forbidden": true,
+  "public_launch_performed": false,
+  "deployment_performed": false,
+  "public_mutation_enabled": false,
+  "public_live_source_fanout_enabled": false,
+  "downloads_enabled": false,
+  "extraction_enabled": false,
+  "model_provider_enabled": false,
+  "accounts_enabled_by_default": false,
+  "public_write_actions_enabled": false,
+  "rollback_plan_required": true,
+  "privacy_notice_required": true,
+  "abuse_contact_required": true,
+  "external_full_discovery_required": true
+}

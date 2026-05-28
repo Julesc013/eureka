@@ -1,0 +1,60 @@
+{
+  "$id": "contracts/publication/public_alpha_blocker_register.v0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Public Alpha Blocker Register v0",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "record_type",
+    "created_at",
+    "baseline_commit",
+    "gate_status",
+    "blockers",
+    "warnings",
+    "hard_blockers_remaining",
+    "manual_approval_required",
+    "deployment_performed",
+    "production_readiness_claimed",
+    "public_launch_readiness_claimed"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "public_alpha_blocker_register.v0"
+    },
+    "record_type": {
+      "const": "public_alpha_blocker_register"
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "baseline_commit": {
+      "type": "string"
+    },
+    "gate_status": {
+      "type": "string"
+    },
+    "blockers": {
+      "type": "array"
+    },
+    "warnings": {
+      "type": "array"
+    },
+    "hard_blockers_remaining": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "manual_approval_required": {
+      "const": true
+    },
+    "deployment_performed": {
+      "const": false
+    },
+    "production_readiness_claimed": {
+      "const": false
+    },
+    "public_launch_readiness_claimed": {
+      "const": false
+    }
+  }
+}

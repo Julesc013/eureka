@@ -1,0 +1,32 @@
+{
+  "schema_version": "public_alpha_deploy_dry_run_plan.v0",
+  "record_type": "public_alpha_deploy_dry_run_plan",
+  "created_at": "2026-05-29T06:15:13+10:00",
+  "task": "PUBLIC-ALPHA-LAUNCH-CANDIDATE-00",
+  "dry_run_id": "PUBLIC-ALPHA-DEPLOY-DRY-RUN-00",
+  "baseline_commit": "ba70874c2bd0fdf7c2a3e32577d24dc7ee909dc8",
+  "gate_status": "pass",
+  "dry_run_scope": [
+    "verify deployment inputs",
+    "verify environment checklist",
+    "verify static snapshot or read-only relay packaging",
+    "verify security headers plan",
+    "verify rollback checklist",
+    "verify smoke checks"
+  ],
+  "dry_run_forbidden": [
+    "public launch",
+    "production readiness claim",
+    "live source fanout",
+    "public mutation",
+    "downloads",
+    "extraction",
+    "model/provider calls"
+  ],
+  "manual_approval_required": true,
+  "deployment_performed": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "blockers": [],
+  "warnings": []
+}

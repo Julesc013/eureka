@@ -1,0 +1,13 @@
+{
+  "schema_version": "public_alpha_launch_non_claim_policy.v0",
+  "policy_id": "public_alpha_launch_non_claim_policy",
+  "status": "active",
+  "launch_candidate_ready_may_be_recorded": true,
+  "production_readiness_claim_forbidden": true,
+  "public_launch_readiness_claim_forbidden": true,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "public_launch_performed": false,
+  "deployment_performed": false,
+  "public_marketing_claim_allowed": false
+}

@@ -1,0 +1,81 @@
+{
+  "schema_version": "public_alpha_launch_candidate_validation_matrix.v0",
+  "task": "PUBLIC-ALPHA-LAUNCH-CANDIDATE-00",
+  "validations": [
+    {
+      "name": "public_alpha_launch_candidate",
+      "command": "python scripts/validate_public_alpha_launch_candidate.py",
+      "status": "pass"
+    },
+    {
+      "name": "public_alpha_readonly_closeout",
+      "command": "python scripts/validate_public_alpha_readonly_closeout.py",
+      "status": "pass"
+    },
+    {
+      "name": "public_alpha_readonly",
+      "command": "python scripts/validate_public_alpha_readonly.py",
+      "status": "pass"
+    },
+    {
+      "name": "public_alpha_hosting",
+      "command": "python scripts/validate_public_alpha_hosting_readiness.py",
+      "status": "pass"
+    },
+    {
+      "name": "snapshot_relay",
+      "command": "python scripts/validate_snapshot_relay.py",
+      "status": "pass"
+    },
+    {
+      "name": "source_wave",
+      "command": "python scripts/validate_source_wave.py",
+      "status": "pass"
+    },
+    {
+      "name": "source_action_kernel",
+      "command": "python scripts/validate_source_action_kernel.py",
+      "status": "pass"
+    },
+    {
+      "name": "architecture_boundaries",
+      "command": "python scripts/check_architecture_boundaries.py",
+      "status": "pass"
+    },
+    {
+      "name": "generated_artifact_cleanliness",
+      "command": "python scripts/check_generated_artifact_cleanliness.py --check --json",
+      "status": "pass"
+    },
+    {
+      "name": "unit_tests_operations",
+      "command": "python -m unittest tests.operations.test_public_alpha_launch_candidate",
+      "status": "pass"
+    },
+    {
+      "name": "unit_tests_validator_script",
+      "command": "python -m unittest tests.scripts.test_validate_public_alpha_launch_candidate",
+      "status": "pass"
+    },
+    {
+      "name": "aide_checks",
+      "commands": [
+        "python .aide/scripts/aide_lite.py doctor",
+        "python .aide/scripts/aide_lite.py validate",
+        "python .aide/scripts/aide_lite.py test",
+        "python .aide/scripts/aide_lite.py selftest",
+        "python .aide/scripts/aide_lite.py verify",
+        "python .aide/scripts/aide_lite.py review-pack"
+      ],
+      "status": "pass"
+    },
+    {
+      "name": "external_full_discovery",
+      "status": "prior_pass",
+      "tests_run": 5057,
+      "full_discovery_run_inside_ai": false
+    }
+  ],
+  "focused_validators_required": true,
+  "full_discovery_not_run_inside_ai": true
+}
