@@ -2,7 +2,7 @@
   "schema_version": "public_alpha_readonly_closeout_full_discovery_handoff.v0",
   "task": "PUBLIC-ALPHA-READONLY-CLOSEOUT-01",
   "status": "WAITING_FOR_EXTERNAL_FULL_DISCOVERY",
-  "dev_head": "98e1a2f41795689e7870aacf65ab255ea3f32f2f",
+  "dev_head": "pushed origin/dev after generated route summary repair",
   "preferred_command": "python scripts/eureka_test_gate.py --gate public_alpha_readonly_closeout --watch --clean",
   "command": "python scripts/run_full_unittest_discovery.py --out ../eureka-test-runs/public_alpha_readonly_closeout",
   "output_dir": "../eureka-test-runs/public_alpha_readonly_closeout",
