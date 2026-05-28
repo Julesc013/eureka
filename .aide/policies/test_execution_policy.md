@@ -18,6 +18,10 @@ The harness writes local artifacts outside the repository under
 explicitly opts in. Durable closeout evidence must be a compact summary copied
 intentionally into `control/audits/`.
 
+The harness may emit compact heartbeat lines for the operator, but raw unittest
+stdout/stderr remain file artifacts and should not be pasted into AI sessions
+unless the compact summaries are insufficient.
+
 Allowed waiting status:
 
 ```text

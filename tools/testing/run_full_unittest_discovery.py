@@ -10,12 +10,14 @@ import os
 import platform
 import subprocess
 import sys
+import time
 from pathlib import Path
 from typing import Any, Sequence, TextIO
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_TIMEOUT_SECONDS = 7200
+DEFAULT_HEARTBEAT_SECONDS = 15
 DEFAULT_OUTPUT_ROOT_NAME = "eureka-test-runs"
 FORBIDDEN_REPO_LOCAL_OUTPUT_ROOTS = {
     ".aide.local",
@@ -41,9 +43,18 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout) -> int:
     parser.add_argument("--top-level-dir", default=".", help="unittest discover -t value")
     parser.add_argument("--pattern", default="test*.py", help="unittest discover -p value")
     parser.add_argument("--timeout-seconds", type=int, default=DEFAULT_TIMEOUT_SECONDS)
+    parser.add_argument(
+        "--heartbeat-seconds",
+        type=int,
+        default=DEFAULT_HEARTBEAT_SECONDS,
+        help="Emit a compact operator progress heartbeat this often while discovery runs.",
+    )
+    parser.add_argument("--no-progress", action="store_true", help="Suppress operator progress output.")
     parser.add_argument("--paths-touched-file")
     parser.add_argument("--no-fail-exit", action="store_true")
     args = parser.parse_args(argv)
+    if args.heartbeat_seconds < 1:
+        parser.error("--heartbeat-seconds must be at least 1")
 
     try:
         out_dir = normalize_output_dir(Path(args.out) if args.out else default_output_dir(), args.allow_repo_local_output)
@@ -55,7 +66,9 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout) -> int:
         top_level_dir=args.top_level_dir,
         pattern=args.pattern,
         timeout_seconds=args.timeout_seconds,
+        heartbeat_seconds=args.heartbeat_seconds,
         paths_touched_file=Path(args.paths_touched_file) if args.paths_touched_file else None,
+        progress_stream=None if args.no_progress else sys.stderr,
     )
     print(
         json.dumps(
@@ -80,8 +93,10 @@ def run_discovery(
     top_level_dir: str = ".",
     pattern: str = "test*.py",
     timeout_seconds: int = DEFAULT_TIMEOUT_SECONDS,
+    heartbeat_seconds: int = DEFAULT_HEARTBEAT_SECONDS,
     paths_touched_file: Path | None = None,
     allow_repo_local_output: bool = False,
+    progress_stream: TextIO | None = None,
 ) -> dict[str, Any]:
     out_dir = normalize_output_dir(out_dir, allow_repo_local_output)
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -111,17 +126,29 @@ def run_discovery(
     display_command = command_display(start_dir=start_dir, top_level_dir=top_level_dir, pattern=pattern)
     started_at = now_utc()
     start_time = dt.datetime.now(dt.timezone.utc)
+    monotonic_start = time.monotonic()
     timed_out = False
+    interrupted = False
+    emit_progress(progress_stream, f"started: {display_command}")
+    emit_progress(progress_stream, f"output_dir: {out_dir}")
+    emit_progress(progress_stream, "raw unittest stdout/stderr are captured to files; compact summaries are written at finish")
     with stdout_path.open("w", encoding="utf-8") as out, stderr_path.open("w", encoding="utf-8") as err:
         process = subprocess.Popen(command, cwd=REPO_ROOT, stdout=out, stderr=err, text=True)
-        try:
-            exit_code = process.wait(timeout=timeout_seconds)
-        except subprocess.TimeoutExpired:
+        exit_code = wait_for_process_with_progress(
+            process=process,
+            timeout_seconds=timeout_seconds,
+            heartbeat_seconds=heartbeat_seconds,
+            started_monotonic=monotonic_start,
+            stdout_path=stdout_path,
+            stderr_path=stderr_path,
+            progress_stream=progress_stream,
+        )
+        if exit_code == 124:
             timed_out = True
-            process.kill()
-            process.wait()
             err.write(f"\nTIMEOUT: unittest discovery exceeded {timeout_seconds} seconds\n")
-            exit_code = 124
+        elif exit_code == 130:
+            interrupted = True
+            err.write("\nINTERRUPTED: unittest discovery was stopped by operator\n")
 
     finished_at = now_utc()
     duration_seconds = (dt.datetime.now(dt.timezone.utc) - start_time).total_seconds()
@@ -133,6 +160,7 @@ def run_discovery(
         pattern=pattern,
         timeout_seconds=timeout_seconds,
         timed_out=timed_out,
+        interrupted=interrupted,
     )
     write_json(environment_path, environment)
     git = environment["git"]
@@ -152,11 +180,24 @@ def run_discovery(
     )
     if timed_out:
         summary["status"] = "timeout"
+    if interrupted:
+        summary["status"] = "interrupted"
     summary["paths_touched_path"] = str(paths_touched_path)
     summary["paths_touched"] = read_lines(paths_touched_path)
     write_json(summary_path, summary)
     write_json(families_path, {"schema_version": "failure_family_list.v0", "failure_families": summary["failure_families"]})
     failed_tests_path.write_text("\n".join(summary["failed_tests"]) + ("\n" if summary["failed_tests"] else ""), encoding="utf-8")
+    emit_progress(
+        progress_stream,
+        (
+            "finished: "
+            f"status={summary.get('status')} exit_code={exit_code} "
+            f"duration={format_duration(duration_seconds)} tests={summary.get('counts', {}).get('tests_run')}"
+        ),
+    )
+    emit_progress(progress_stream, f"summary: {summary_path}")
+    emit_progress(progress_stream, f"failure_families: {families_path}")
+    emit_progress(progress_stream, f"failed_tests: {failed_tests_path}")
     return {
         "exit_code": exit_code,
         "summary_path": summary_path,
@@ -165,6 +206,89 @@ def run_discovery(
         "environment_path": environment_path,
         "paths_touched_path": paths_touched_path,
     }
+
+
+def wait_for_process_with_progress(
+    *,
+    process: subprocess.Popen[str],
+    timeout_seconds: int,
+    heartbeat_seconds: int,
+    started_monotonic: float,
+    stdout_path: Path,
+    stderr_path: Path,
+    progress_stream: TextIO | None,
+) -> int:
+    deadline = started_monotonic + timeout_seconds
+    next_heartbeat = started_monotonic + heartbeat_seconds
+    while True:
+        remaining = deadline - time.monotonic()
+        if remaining <= 0:
+            emit_progress(progress_stream, f"timeout reached after {format_duration(timeout_seconds)}; stopping child process")
+            process.kill()
+            process.wait()
+            return 124
+        try:
+            exit_code = process.wait(timeout=min(1.0, remaining))
+        except subprocess.TimeoutExpired:
+            now = time.monotonic()
+            if now >= next_heartbeat:
+                elapsed = now - started_monotonic
+                emit_progress(
+                    progress_stream,
+                    (
+                        f"still running after {format_duration(elapsed)}; "
+                        f"pid={process.pid}; stdout={format_size(stdout_path)}; stderr={format_size(stderr_path)}"
+                    ),
+                )
+                while next_heartbeat <= now:
+                    next_heartbeat += heartbeat_seconds
+            continue
+        except KeyboardInterrupt:
+            emit_progress(progress_stream, "interrupted by operator; stopping child test process")
+            stop_process(process)
+            return 130
+        return int(exit_code)
+
+
+def stop_process(process: subprocess.Popen[str]) -> None:
+    if process.poll() is not None:
+        return
+    process.terminate()
+    try:
+        process.wait(timeout=10)
+    except subprocess.TimeoutExpired:
+        process.kill()
+        process.wait()
+
+
+def emit_progress(stream: TextIO | None, message: str) -> None:
+    if stream is None:
+        return
+    print(f"[full-discovery] {message}", file=stream, flush=True)
+
+
+def format_duration(seconds: float) -> str:
+    total = max(0, int(seconds))
+    hours, remainder = divmod(total, 3600)
+    minutes, secs = divmod(remainder, 60)
+    if hours:
+        return f"{hours:d}:{minutes:02d}:{secs:02d}"
+    return f"{minutes:d}:{secs:02d}"
+
+
+def format_size(path: Path) -> str:
+    try:
+        size = path.stat().st_size
+    except FileNotFoundError:
+        size = 0
+    units = ("B", "KiB", "MiB", "GiB")
+    value = float(size)
+    for unit in units:
+        if value < 1024 or unit == units[-1]:
+            if unit == "B":
+                return f"{int(value)} {unit}"
+            return f"{value:.1f} {unit}"
+        value /= 1024
 
 
 def default_output_dir() -> Path:
@@ -226,6 +350,7 @@ def environment_payload(
     pattern: str,
     timeout_seconds: int,
     timed_out: bool,
+    interrupted: bool,
 ) -> dict[str, Any]:
     return {
         "schema_version": "full_unittest_environment.v0",
@@ -239,6 +364,7 @@ def environment_payload(
         "pattern": pattern,
         "timeout_seconds": timeout_seconds,
         "timed_out": timed_out,
+        "interrupted": interrupted,
         "git": git_metadata(),
         "environment_variables_recorded": False,
         "secrets_recorded": False,

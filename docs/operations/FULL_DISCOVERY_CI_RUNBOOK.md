@@ -11,6 +11,14 @@ Use:
 python scripts/run_full_unittest_discovery.py
 ```
 
+The harness prints compact progress to the operator terminal while raw unittest
+stdout and stderr stay in artifact files. For shorter heartbeat intervals during
+manual runs, use:
+
+```bash
+python scripts/run_full_unittest_discovery.py --heartbeat-seconds 10
+```
+
 By default this writes under `../eureka-test-runs/<run-id>/`:
 
 - `full_unittest_stdout.txt`
@@ -27,6 +35,28 @@ Do not write full-discovery artifacts under repo-local private roots such as
 `--allow-repo-local-output` is supplied for exceptional debugging. Commit only
 compact summary evidence under `control/audits/` when a closeout or promotion
 task explicitly needs durable evidence.
+
+For a detached local PowerShell run, start the harness outside the AI session and
+return after it finishes:
+
+```powershell
+$RunId = "public_alpha_readonly_closeout"
+$Out = Resolve-Path -LiteralPath "..\eureka-test-runs" -ErrorAction SilentlyContinue
+if (-not $Out) { New-Item -ItemType Directory -Force "..\eureka-test-runs" | Out-Null }
+Remove-Item -Recurse -Force "..\eureka-test-runs\$RunId" -ErrorAction SilentlyContinue
+$Process = Start-Process -FilePath "python" `
+  -ArgumentList @("scripts/run_full_unittest_discovery.py", "--out", "..\eureka-test-runs\$RunId", "--heartbeat-seconds", "10") `
+  -WorkingDirectory (Get-Location) `
+  -RedirectStandardOutput "..\eureka-test-runs\$RunId.harness.out.txt" `
+  -RedirectStandardError "..\eureka-test-runs\$RunId.harness.err.txt" `
+  -WindowStyle Hidden `
+  -PassThru
+"Started full discovery PID=$($Process.Id)"
+```
+
+The AI session should not monitor that process. When it completes, paste only
+`full_unittest_summary.json`, `failure_families.json`, `failed_tests.txt`, and
+`git status --short --branch`.
 
 ## CI
 
