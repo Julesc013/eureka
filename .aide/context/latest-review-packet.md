@@ -33,21 +33,21 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Changed Files Summary
 
-- unknown: `.aide/policies/test_execution_policy.md` (M; does not match active task allowed paths)
-- unknown: `contracts/testing/test_gate.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/testing/test_gate_handoff.v0.json` (??; does not match active task allowed paths)
-- unknown: `contracts/testing/test_gate_status.v0.json` (??; does not match active task allowed paths)
-- unknown: `docs/operations/AI_TEST_TOKEN_DISCIPLINE.md` (M; does not match active task allowed paths)
-- unknown: `docs/operations/FULL_DISCOVERY_CI_RUNBOOK.md` (M; does not match active task allowed paths)
-- allowed: `docs/operations/POST_PUBLIC_ALPHA_READONLY_CLOSEOUT_PLAN.md` (M; matches active task allowed path)
-- allowed: `docs/operations/PUBLIC_ALPHA_READONLY_CLOSEOUT.md` (M; matches active task allowed path)
-- unknown: `docs/operations/TEST_AND_EVAL_LANES.md` (M; does not match active task allowed paths)
-- unknown: `docs/operations/TEST_GATE_ORCHESTRATOR.md` (??; does not match active task allowed paths)
-- unknown: `scripts/eureka_test_gate.py` (??; does not match active task allowed paths)
-- unknown: `tests/scripts/test_eureka_test_gate.py` (??; does not match active task allowed paths)
-- unknown: `tests/scripts/test_start_full_discovery.py` (M; does not match active task allowed paths)
-- unknown: `tools/testing/eureka_test_gate.py` (??; does not match active task allowed paths)
-- unknown: `tools/testing/start_full_discovery.py` (M; does not match active task allowed paths)
+- unknown: `control/audits/dev-to-main-promotion-review-04-v0` (??; does not match active task allowed paths)
+- unknown: `control/inventory/dev_to_main_promotion_04_boundary_report.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/dev_to_main_promotion_04_branch_state.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/dev_to_main_promotion_04_failure_repair_log.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/dev_to_main_promotion_04_input_state.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/dev_to_main_promotion_04_next_task_decision.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/dev_to_main_promotion_04_result.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/dev_to_main_promotion_04_scope_matrix.json` (??; does not match active task allowed paths)
+- unknown: `control/inventory/dev_to_main_promotion_04_validation_matrix.json` (??; does not match active task allowed paths)
+- unknown: `control/policies/generated_artifact_policy.json` (M; does not match active task allowed paths)
+- unknown: `docs/operations/DEV_TO_MAIN_PROMOTION_REVIEW_04.md` (??; does not match active task allowed paths)
+- unknown: `docs/operations/POST_PUBLIC_ALPHA_READONLY_PROMOTION_PLAN.md` (??; does not match active task allowed paths)
+- unknown: `scripts/validate_dev_to_main_promotion_04.py` (??; does not match active task allowed paths)
+- unknown: `tests/operations/test_dev_to_main_promotion_04.py` (??; does not match active task allowed paths)
+- unknown: `tests/scripts/test_validate_dev_to_main_promotion_04.py` (??; does not match active task allowed paths)
 
 ## Validation Summary
 
@@ -57,8 +57,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 5745
-- approx_tokens: 1437
+- chars: 6005
+- approx_tokens: 1502
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

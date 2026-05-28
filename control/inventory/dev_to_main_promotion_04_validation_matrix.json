@@ -1,0 +1,89 @@
+{
+  "schema_version": "dev_to_main_promotion_04_validation_matrix.v0",
+  "task": "DEV-TO-MAIN-PROMOTION-REVIEW-04",
+  "full_unittest_discovery_status": "pass",
+  "full_unittest_discovery_passed": true,
+  "full_unittest_discovery_count": 5057,
+  "full_discovery_failures_remaining": 0,
+  "full_discovery_errors_remaining": 0,
+  "full_unittest_discovery_exit_code": 0,
+  "full_discovery_run_inside_ai": false,
+  "expected_refusal_trace_nonblocking": true,
+  "fresh_external_full_discovery_head": "317092ac431d1bf2882b199f90e66d78c097e99b",
+  "commands": [
+    {
+      "command": "python scripts/validate_test_run_summary.py ../eureka-test-runs/public_alpha_readonly_closeout/full_unittest_summary.json --json",
+      "status": "pass",
+      "notes": "External repo-sibling compact summary validated before promotion evidence."
+    },
+    {
+      "command": "python scripts/validate_dev_to_main_promotion_04.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_public_alpha_readonly_closeout.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_public_alpha_readonly.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_public_alpha_hosting_readiness.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_snapshot_relay.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_source_wave.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_source_action_kernel.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/check_architecture_boundaries.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/check_generated_artifact_cleanliness.py --check --json",
+      "status": "pass"
+    },
+    {
+      "command": "python -m unittest tests.operations.test_dev_to_main_promotion_04",
+      "status": "pass"
+    },
+    {
+      "command": "python -m unittest tests.scripts.test_validate_dev_to_main_promotion_04",
+      "status": "pass"
+    },
+    {
+      "command": "python .aide/scripts/aide_lite.py doctor",
+      "status": "pass"
+    },
+    {
+      "command": "python .aide/scripts/aide_lite.py validate",
+      "status": "pass"
+    },
+    {
+      "command": "python .aide/scripts/aide_lite.py test",
+      "status": "pass"
+    },
+    {
+      "command": "python .aide/scripts/aide_lite.py selftest",
+      "status": "pass"
+    },
+    {
+      "command": "python .aide/scripts/aide_lite.py verify",
+      "status": "pass_with_warnings",
+      "notes": "Expected stale active-task diff-scope warnings only; 0 errors."
+    },
+    {
+      "command": "python .aide/scripts/aide_lite.py review-pack",
+      "status": "pass"
+    }
+  ]
+}
