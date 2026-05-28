@@ -28,6 +28,12 @@ python scripts/start_full_discovery.py --run-id <run-id>
 python scripts/check_full_discovery.py --run-id <run-id>
 ```
 
+To wait without AI polling and print compact handoff artifacts at completion:
+
+```bash
+python scripts/check_full_discovery.py --run-id <run-id> --watch --interval-seconds 300 --handoff
+```
+
 Full-discovery output should use an external sibling directory such as
 `../eureka-test-runs/<run-id>`, not repo-local `.aide.local/test-runs/`.
 

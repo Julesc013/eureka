@@ -52,6 +52,13 @@ Check it later without reading raw logs:
 python scripts/check_full_discovery.py --run-id public_alpha_readonly_closeout
 ```
 
+Or let the local watcher wait at a low interval and print the compact handoff
+when the run completes:
+
+```powershell
+python scripts/check_full_discovery.py --run-id public_alpha_readonly_closeout --watch --interval-seconds 300 --handoff
+```
+
 The check command reads `status.json` and the compact summary when present. The
 AI session should not monitor the process. When it completes, paste only
 `full_unittest_summary.json`, `failure_families.json`, `failed_tests.txt`, and

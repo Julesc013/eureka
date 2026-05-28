@@ -75,6 +75,12 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr:
         print("", file=stdout)
         print("Check:", file=stdout)
         print(f"  python scripts/check_full_discovery.py --run-id {metadata['run_id']}", file=stdout)
+        print("", file=stdout)
+        print("Watch to completion:", file=stdout)
+        print(
+            f"  python scripts/check_full_discovery.py --run-id {metadata['run_id']} --watch --interval-seconds 300 --handoff",
+            file=stdout,
+        )
     return 0
 
 

@@ -89,6 +89,7 @@ class StartFullDiscoveryTests(unittest.TestCase):
             self.assertEqual(0, exit_code, stderr.getvalue())
             self.assertIn("Started:", stdout.getvalue())
             self.assertIn("python scripts/check_full_discovery.py --run-id tiny_run", stdout.getvalue())
+            self.assertIn("--watch --interval-seconds 300 --handoff", stdout.getvalue())
             status = self.wait_for_status(out_dir, {"pass"})
             self.assertEqual("tiny_run", status["run_id"])
             self.assertEqual("pass", status["status"])

@@ -77,6 +77,12 @@ python scripts/start_full_discovery.py --run-id <run-id>
 python scripts/check_full_discovery.py --run-id <run-id>
 ```
 
+To let the terminal wait and print compact handoff output when complete:
+
+```bash
+python scripts/check_full_discovery.py --run-id <run-id> --watch --interval-seconds 300 --handoff
+```
+
 The harness writes `full_unittest_stdout.txt`, `full_unittest_stderr.txt`,
 `full_unittest_exit_code.txt`, `full_unittest_summary.json`,
 `failure_families.json`, `failed_tests.txt`, `paths_touched.txt`, and

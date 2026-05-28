@@ -5,12 +5,16 @@ from __future__ import annotations
 
 import argparse
 import json
+import subprocess
 import sys
+import time
 from pathlib import Path
-from typing import Any, Sequence, TextIO
+from typing import Any, Callable, Sequence, TextIO
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
+DEFAULT_WATCH_INTERVAL_SECONDS = 300.0
+TERMINAL_STATUSES = {"pass", "fail", "error", "cancelled", "timeout"}
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
@@ -28,9 +32,19 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr:
     parser.add_argument("--out", help="Explicit output directory.")
     parser.add_argument("--allow-repo-local-output", action="store_true")
     parser.add_argument("--json", action="store_true", help="Print machine-readable status.")
+    parser.add_argument("--watch", action="store_true", help="Wait until the run reaches a terminal status.")
+    parser.add_argument(
+        "--interval-seconds",
+        type=float,
+        default=DEFAULT_WATCH_INTERVAL_SECONDS,
+        help="Seconds between watch updates; defaults to 300.",
+    )
+    parser.add_argument("--handoff", action="store_true", help="Print compact paste-ready handoff artifacts when complete.")
     args = parser.parse_args(argv)
     if not args.run_id and not args.out:
         parser.error("one of --run-id or --out is required")
+    if args.interval_seconds <= 0:
+        parser.error("--interval-seconds must be greater than 0")
 
     try:
         out_dir = normalize_output_dir(
@@ -39,6 +53,21 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr:
         )
     except ValueError as exc:
         parser.error(str(exc))
+
+    if args.watch:
+        try:
+            payload = watch_status(
+                out_dir=out_dir,
+                interval_seconds=args.interval_seconds,
+                stdout=stdout,
+                stderr=stderr,
+            )
+        except FileNotFoundError as exc:
+            print(f"check_full_discovery: {exc}", file=stderr)
+            return 2
+        if args.handoff:
+            print_handoff(payload, stdout=stdout)
+        return status_exit_code(payload)
 
     try:
         payload = load_status(out_dir)
@@ -50,7 +79,9 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr:
         print(json.dumps(payload, indent=2, sort_keys=True), file=stdout)
     else:
         print_status(payload, stdout=stdout)
-    return 0
+        if args.handoff and is_terminal(payload):
+            print_handoff(payload, stdout=stdout)
+    return status_exit_code(payload) if args.handoff and is_terminal(payload) else 0
 
 
 def load_status(out_dir: Path) -> dict[str, Any]:
@@ -77,6 +108,47 @@ def load_status(out_dir: Path) -> dict[str, Any]:
             }
         )
     return status
+
+
+def watch_status(
+    *,
+    out_dir: Path,
+    interval_seconds: float = DEFAULT_WATCH_INTERVAL_SECONDS,
+    stdout: TextIO,
+    stderr: TextIO,
+    sleep: Callable[[float], None] = time.sleep,
+) -> dict[str, Any]:
+    last_line = ""
+    while True:
+        payload = load_status(out_dir)
+        line = watch_line(payload)
+        if line != last_line:
+            print(line, file=stdout, flush=True)
+            last_line = line
+        if is_terminal(payload):
+            print_status(payload, stdout=stdout)
+            return payload
+        sleep(interval_seconds)
+
+
+def watch_line(payload: dict[str, Any]) -> str:
+    return (
+        "[full-discovery] "
+        f"status={payload.get('status')} "
+        f"elapsed={format_duration(float(payload.get('elapsed_seconds') or 0))} "
+        f"pid={payload.get('pid')} "
+        f"stdout_bytes={payload.get('stdout_bytes')} "
+        f"stderr_bytes={payload.get('stderr_bytes')} "
+        f"updated_at={payload.get('updated_at')}"
+    )
+
+
+def is_terminal(payload: dict[str, Any]) -> bool:
+    return str(payload.get("status") or "").lower() in TERMINAL_STATUSES
+
+
+def status_exit_code(payload: dict[str, Any]) -> int:
+    return 0 if str(payload.get("status") or "").lower() == "pass" else 1
 
 
 def status_from_summary(*, summary: dict[str, Any], artifacts: dict[str, Path], out_dir: Path) -> dict[str, Any]:
@@ -123,11 +195,43 @@ def print_status(payload: dict[str, Any], *, stdout: TextIO) -> None:
     print(f"failed_tests: {payload.get('failed_tests_path')}", file=stdout)
 
 
+def print_handoff(payload: dict[str, Any], *, stdout: TextIO) -> None:
+    print("", file=stdout)
+    print("=== full_unittest_summary.json ===", file=stdout)
+    print(read_text(Path(str(payload.get("summary_path") or ""))), file=stdout)
+    print("=== failure_families.json ===", file=stdout)
+    print(read_text(Path(str(payload.get("failure_families_path") or ""))), file=stdout)
+    print("=== failed_tests.txt ===", file=stdout)
+    print(read_text(Path(str(payload.get("failed_tests_path") or ""))), file=stdout)
+    print("=== git status --short --branch ===", file=stdout)
+    print(git_status_short(), file=stdout)
+
+
 def read_json(path: Path) -> dict[str, Any] | None:
     try:
         return json.loads(path.read_text(encoding="utf-8"))
     except FileNotFoundError:
         return None
+
+
+def read_text(path: Path) -> str:
+    try:
+        return path.read_text(encoding="utf-8").rstrip()
+    except OSError:
+        return f"<missing: {path}>"
+
+
+def git_status_short() -> str:
+    completed = subprocess.run(
+        ["git", "status", "--short", "--branch"],
+        cwd=REPO_ROOT,
+        text=True,
+        capture_output=True,
+        check=False,
+    )
+    if completed.returncode != 0:
+        return completed.stderr.strip() or f"git status failed with exit code {completed.returncode}"
+    return completed.stdout.rstrip()
 
 
 def byte_count(path: Path) -> int:
