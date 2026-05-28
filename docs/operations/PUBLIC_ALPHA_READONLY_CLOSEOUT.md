@@ -32,14 +32,17 @@ operator command:
 
 ```powershell
 python scripts/run_full_unittest_discovery.py `
-  --out ../eureka-test-runs/public_alpha_readonly_closeout `
-  --heartbeat-seconds 10
+  --out ../eureka-test-runs/public_alpha_readonly_closeout
 ```
 
-The harness prints compact heartbeat lines to the terminal while keeping raw
-unittest stdout/stderr in files. Operators may also use the detached PowerShell
-pattern in `docs/operations/FULL_DISCOVERY_CI_RUNBOOK.md` and return when the
-compact artifacts are available.
+The harness prints an immediate start banner and periodic heartbeat while
+keeping raw unittest stdout/stderr in files. Operators may also use the
+background workflow:
+
+```powershell
+python scripts/start_full_discovery.py --run-id public_alpha_readonly_closeout
+python scripts/check_full_discovery.py --run-id public_alpha_readonly_closeout
+```
 
 The operator should paste back only the compact summary, failure families, failed
 tests list, and `git status --short --branch`.

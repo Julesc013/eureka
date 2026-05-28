@@ -22,6 +22,10 @@ The harness may emit compact heartbeat lines for the operator, but raw unittest
 stdout/stderr remain file artifacts and should not be pasted into AI sessions
 unless the compact summaries are insufficient.
 
+For background local runs, use `python scripts/start_full_discovery.py --run-id
+<run-id>` and check later with `python scripts/check_full_discovery.py --run-id
+<run-id>`. AI sessions should consume only compact status and summary artifacts.
+
 Allowed waiting status:
 
 ```text

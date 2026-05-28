@@ -12,13 +12,14 @@ import subprocess
 import sys
 import time
 from pathlib import Path
-from typing import Any, Sequence, TextIO
+from typing import Any, Callable, Sequence, TextIO
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_TIMEOUT_SECONDS = 7200
-DEFAULT_HEARTBEAT_SECONDS = 15
+DEFAULT_HEARTBEAT_SECONDS = 30
 DEFAULT_OUTPUT_ROOT_NAME = "eureka-test-runs"
+STATUS_SCHEMA_VERSION = "full_discovery_status.v0"
 FORBIDDEN_REPO_LOCAL_OUTPUT_ROOTS = {
     ".aide.local",
     ".cache",
@@ -33,6 +34,7 @@ from tools.reporters.summarize_unittest_log import summarize_paths, write_json  
 
 def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--run-id", help="Logical run id for status.json; defaults to output directory name.")
     parser.add_argument("--out", help="Output directory; defaults to ../eureka-test-runs/<timestamp>")
     parser.add_argument(
         "--allow-repo-local-output",
@@ -49,7 +51,8 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout) -> int:
         default=DEFAULT_HEARTBEAT_SECONDS,
         help="Emit a compact operator progress heartbeat this often while discovery runs.",
     )
-    parser.add_argument("--no-progress", action="store_true", help="Suppress operator progress output.")
+    parser.add_argument("--quiet", action="store_true", help="Suppress operator progress output.")
+    parser.add_argument("--no-progress", action="store_true", dest="quiet", help="Alias for --quiet.")
     parser.add_argument("--paths-touched-file")
     parser.add_argument("--no-fail-exit", action="store_true")
     args = parser.parse_args(argv)
@@ -67,8 +70,9 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout) -> int:
         pattern=args.pattern,
         timeout_seconds=args.timeout_seconds,
         heartbeat_seconds=args.heartbeat_seconds,
+        run_id=args.run_id,
         paths_touched_file=Path(args.paths_touched_file) if args.paths_touched_file else None,
-        progress_stream=None if args.no_progress else sys.stderr,
+        progress_stream=None if args.quiet else sys.stderr,
     )
     print(
         json.dumps(
@@ -94,19 +98,22 @@ def run_discovery(
     pattern: str = "test*.py",
     timeout_seconds: int = DEFAULT_TIMEOUT_SECONDS,
     heartbeat_seconds: int = DEFAULT_HEARTBEAT_SECONDS,
+    run_id: str | None = None,
     paths_touched_file: Path | None = None,
     allow_repo_local_output: bool = False,
     progress_stream: TextIO | None = None,
 ) -> dict[str, Any]:
     out_dir = normalize_output_dir(out_dir, allow_repo_local_output)
     out_dir.mkdir(parents=True, exist_ok=True)
-    stdout_path = out_dir / "full_unittest_stdout.txt"
-    stderr_path = out_dir / "full_unittest_stderr.txt"
-    exit_code_path = out_dir / "full_unittest_exit_code.txt"
-    environment_path = out_dir / "environment.json"
-    summary_path = out_dir / "full_unittest_summary.json"
-    families_path = out_dir / "failure_families.json"
-    failed_tests_path = out_dir / "failed_tests.txt"
+    artifacts = discovery_artifact_paths(out_dir)
+    stdout_path = artifacts["stdout_path"]
+    stderr_path = artifacts["stderr_path"]
+    exit_code_path = artifacts["exit_code_path"]
+    environment_path = artifacts["environment_path"]
+    summary_path = artifacts["summary_path"]
+    families_path = artifacts["failure_families_path"]
+    failed_tests_path = artifacts["failed_tests_path"]
+    status_path = artifacts["status_path"]
     paths_touched_path = paths_touched_file or out_dir / "paths_touched.txt"
     if not paths_touched_path.exists():
         write_paths_touched(paths_touched_path)
@@ -129,11 +136,43 @@ def run_discovery(
     monotonic_start = time.monotonic()
     timed_out = False
     interrupted = False
-    emit_progress(progress_stream, f"started: {display_command}")
-    emit_progress(progress_stream, f"output_dir: {out_dir}")
-    emit_progress(progress_stream, "raw unittest stdout/stderr are captured to files; compact summaries are written at finish")
+    run_id = run_id or out_dir.name
+    write_run_status(
+        status_path=status_path,
+        run_id=run_id,
+        status="starting",
+        pid=None,
+        command=display_command,
+        started_at=started_at,
+        start_time=start_time,
+        stdout_path=stdout_path,
+        stderr_path=stderr_path,
+        summary_path=summary_path,
+        failure_families_path=families_path,
+        failed_tests_path=failed_tests_path,
+        exit_code=None,
+    )
+    emit_progress(progress_stream, f"run_id={run_id}")
+    emit_progress(progress_stream, f"command={display_command}")
+    emit_progress(progress_stream, f"output={out_dir}")
+    emit_progress(progress_stream, f"stdout={stdout_path}")
+    emit_progress(progress_stream, f"stderr={stderr_path}")
     with stdout_path.open("w", encoding="utf-8") as out, stderr_path.open("w", encoding="utf-8") as err:
         process = subprocess.Popen(command, cwd=REPO_ROOT, stdout=out, stderr=err, text=True)
+        emit_progress(progress_stream, f"status=running pid={process.pid}")
+        write_status = make_status_writer(
+            status_path=status_path,
+            run_id=run_id,
+            command=display_command,
+            started_at=started_at,
+            start_time=start_time,
+            stdout_path=stdout_path,
+            stderr_path=stderr_path,
+            summary_path=summary_path,
+            failure_families_path=families_path,
+            failed_tests_path=failed_tests_path,
+        )
+        write_status(status="running", pid=process.pid, exit_code=None)
         exit_code = wait_for_process_with_progress(
             process=process,
             timeout_seconds=timeout_seconds,
@@ -142,6 +181,7 @@ def run_discovery(
             stdout_path=stdout_path,
             stderr_path=stderr_path,
             progress_stream=progress_stream,
+            status_writer=write_status,
         )
         if exit_code == 124:
             timed_out = True
@@ -181,23 +221,41 @@ def run_discovery(
     if timed_out:
         summary["status"] = "timeout"
     if interrupted:
-        summary["status"] = "interrupted"
+        summary["status"] = "cancelled"
     summary["paths_touched_path"] = str(paths_touched_path)
     summary["paths_touched"] = read_lines(paths_touched_path)
+    summary["status_path"] = str(status_path)
     write_json(summary_path, summary)
     write_json(families_path, {"schema_version": "failure_family_list.v0", "failure_families": summary["failure_families"]})
     failed_tests_path.write_text("\n".join(summary["failed_tests"]) + ("\n" if summary["failed_tests"] else ""), encoding="utf-8")
+    write_run_status(
+        status_path=status_path,
+        run_id=run_id,
+        status=str(summary.get("status") or "error"),
+        pid=None,
+        command=display_command,
+        started_at=started_at,
+        start_time=start_time,
+        stdout_path=stdout_path,
+        stderr_path=stderr_path,
+        summary_path=summary_path,
+        failure_families_path=families_path,
+        failed_tests_path=failed_tests_path,
+        exit_code=exit_code,
+    )
     emit_progress(
         progress_stream,
         (
-            "finished: "
-            f"status={summary.get('status')} exit_code={exit_code} "
-            f"duration={format_duration(duration_seconds)} tests={summary.get('counts', {}).get('tests_run')}"
+            "completed "
+            f"status={summary.get('status')} tests={summary.get('counts', {}).get('tests_run')} "
+            f"failures={summary.get('counts', {}).get('failures')} errors={summary.get('counts', {}).get('errors')} "
+            f"duration={format_duration(duration_seconds)} exit_code={exit_code}"
         ),
     )
-    emit_progress(progress_stream, f"summary: {summary_path}")
-    emit_progress(progress_stream, f"failure_families: {families_path}")
-    emit_progress(progress_stream, f"failed_tests: {failed_tests_path}")
+    emit_progress(progress_stream, f"summary={summary_path}")
+    emit_progress(progress_stream, f"failure_families={families_path}")
+    emit_progress(progress_stream, f"failed_tests={failed_tests_path}")
+    emit_progress(progress_stream, f"status_file={status_path}")
     return {
         "exit_code": exit_code,
         "summary_path": summary_path,
@@ -205,7 +263,100 @@ def run_discovery(
         "stderr_path": stderr_path,
         "environment_path": environment_path,
         "paths_touched_path": paths_touched_path,
+        "status_path": status_path,
     }
+
+
+def discovery_artifact_paths(out_dir: Path) -> dict[str, Path]:
+    return {
+        "stdout_path": out_dir / "full_unittest_stdout.txt",
+        "stderr_path": out_dir / "full_unittest_stderr.txt",
+        "exit_code_path": out_dir / "full_unittest_exit_code.txt",
+        "environment_path": out_dir / "environment.json",
+        "summary_path": out_dir / "full_unittest_summary.json",
+        "failure_families_path": out_dir / "failure_families.json",
+        "failed_tests_path": out_dir / "failed_tests.txt",
+        "status_path": out_dir / "status.json",
+    }
+
+
+def make_status_writer(
+    *,
+    status_path: Path,
+    run_id: str,
+    command: str,
+    started_at: str,
+    start_time: dt.datetime,
+    stdout_path: Path,
+    stderr_path: Path,
+    summary_path: Path,
+    failure_families_path: Path,
+    failed_tests_path: Path,
+) -> Callable[[str, int | None, int | None], None]:
+    def write(status: str, pid: int | None, exit_code: int | None) -> None:
+        write_run_status(
+            status_path=status_path,
+            run_id=run_id,
+            status=status,
+            pid=pid,
+            command=command,
+            started_at=started_at,
+            start_time=start_time,
+            stdout_path=stdout_path,
+            stderr_path=stderr_path,
+            summary_path=summary_path,
+            failure_families_path=failure_families_path,
+            failed_tests_path=failed_tests_path,
+            exit_code=exit_code,
+        )
+
+    return write
+
+
+def write_run_status(
+    *,
+    status_path: Path,
+    run_id: str,
+    status: str,
+    pid: int | None,
+    command: str,
+    started_at: str,
+    start_time: dt.datetime,
+    stdout_path: Path,
+    stderr_path: Path,
+    summary_path: Path,
+    failure_families_path: Path,
+    failed_tests_path: Path,
+    exit_code: int | None,
+) -> dict[str, Any]:
+    now = dt.datetime.now(dt.timezone.utc)
+    payload: dict[str, Any] = {
+        "schema_version": STATUS_SCHEMA_VERSION,
+        "run_id": run_id,
+        "status": status,
+        "pid": pid,
+        "command": command,
+        "started_at": started_at,
+        "updated_at": now.replace(microsecond=0).isoformat().replace("+00:00", "Z"),
+        "elapsed_seconds": round((now - start_time).total_seconds(), 3),
+        "stdout_path": str(stdout_path),
+        "stderr_path": str(stderr_path),
+        "stdout_bytes": file_size(stdout_path),
+        "stderr_bytes": file_size(stderr_path),
+        "exit_code": exit_code,
+        "summary_path": str(summary_path),
+        "failure_families_path": str(failure_families_path),
+        "failed_tests_path": str(failed_tests_path),
+    }
+    write_json_atomic(status_path, payload)
+    return payload
+
+
+def write_json_atomic(path: Path, payload: Any) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    tmp = path.with_name(f"{path.name}.tmp")
+    tmp.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    tmp.replace(path)
 
 
 def wait_for_process_with_progress(
@@ -217,6 +368,7 @@ def wait_for_process_with_progress(
     stdout_path: Path,
     stderr_path: Path,
     progress_stream: TextIO | None,
+    status_writer: Callable[[str, int | None, int | None], None] | None = None,
 ) -> int:
     deadline = started_monotonic + timeout_seconds
     next_heartbeat = started_monotonic + heartbeat_seconds
@@ -226,6 +378,8 @@ def wait_for_process_with_progress(
             emit_progress(progress_stream, f"timeout reached after {format_duration(timeout_seconds)}; stopping child process")
             process.kill()
             process.wait()
+            if status_writer:
+                status_writer("timeout", process.pid, 124)
             return 124
         try:
             exit_code = process.wait(timeout=min(1.0, remaining))
@@ -236,16 +390,20 @@ def wait_for_process_with_progress(
                 emit_progress(
                     progress_stream,
                     (
-                        f"still running after {format_duration(elapsed)}; "
-                        f"pid={process.pid}; stdout={format_size(stdout_path)}; stderr={format_size(stderr_path)}"
+                        f"running elapsed={format_duration(elapsed)} "
+                        f"pid={process.pid} stdout={format_size(stdout_path)} stderr={format_size(stderr_path)}"
                     ),
                 )
+                if status_writer:
+                    status_writer("running", process.pid, None)
                 while next_heartbeat <= now:
                     next_heartbeat += heartbeat_seconds
             continue
         except KeyboardInterrupt:
             emit_progress(progress_stream, "interrupted by operator; stopping child test process")
             stop_process(process)
+            if status_writer:
+                status_writer("cancelled", process.pid, 130)
             return 130
         return int(exit_code)
 
@@ -277,10 +435,7 @@ def format_duration(seconds: float) -> str:
 
 
 def format_size(path: Path) -> str:
-    try:
-        size = path.stat().st_size
-    except FileNotFoundError:
-        size = 0
+    size = file_size(path)
     units = ("B", "KiB", "MiB", "GiB")
     value = float(size)
     for unit in units:
@@ -291,9 +446,23 @@ def format_size(path: Path) -> str:
         value /= 1024
 
 
+def file_size(path: Path) -> int:
+    try:
+        return path.stat().st_size
+    except FileNotFoundError:
+        return 0
+
+
 def default_output_dir() -> Path:
     stamp = dt.datetime.now(dt.timezone.utc).strftime("%Y%m%dT%H%M%SZ")
-    return REPO_ROOT.parent / DEFAULT_OUTPUT_ROOT_NAME / stamp
+    return output_dir_for_run_id(stamp)
+
+
+def output_dir_for_run_id(run_id: str) -> Path:
+    normalized = run_id.strip().replace("\\", "/").strip("/")
+    if not normalized or "/" in normalized or normalized in {".", ".."}:
+        raise ValueError("run-id must be a single directory name")
+    return REPO_ROOT.parent / DEFAULT_OUTPUT_ROOT_NAME / normalized
 
 
 def normalize_output_dir(out_dir: Path, allow_repo_local_output: bool = False) -> Path:

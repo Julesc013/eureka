@@ -70,10 +70,18 @@ pre-main merge gates. The local harness command is:
 python scripts/run_full_unittest_discovery.py
 ```
 
+For a background local run, use:
+
+```bash
+python scripts/start_full_discovery.py --run-id <run-id>
+python scripts/check_full_discovery.py --run-id <run-id>
+```
+
 The harness writes `full_unittest_stdout.txt`, `full_unittest_stderr.txt`,
 `full_unittest_exit_code.txt`, `full_unittest_summary.json`,
 `failure_families.json`, `failed_tests.txt`, `paths_touched.txt`, and
-`environment.json` under `../eureka-test-runs/<run-id>/` by default.
+`environment.json` under `../eureka-test-runs/<run-id>/` by default. It also
+writes `status.json` atomically while a run is active.
 
 If full discovery is required during an AI task, create an
 `external_full_discovery_handoff.v0` artifact and stop with:

@@ -2,6 +2,13 @@
 
 The next step is external full discovery outside the AI session.
 
+Preferred background run:
+
+```powershell
+python scripts/start_full_discovery.py --run-id public_alpha_readonly_closeout
+python scripts/check_full_discovery.py --run-id public_alpha_readonly_closeout
+```
+
 ## If External Full Discovery Passes
 
 1. Validate the compact summary with `scripts/validate_test_run_summary.py`.

@@ -65,6 +65,7 @@ class RunFullUnittestDiscoveryTests(unittest.TestCase):
             self.assertTrue((out_dir / "environment.json").is_file())
             self.assertTrue((out_dir / "failure_families.json").is_file())
             self.assertTrue((out_dir / "failed_tests.txt").is_file())
+            self.assertTrue((out_dir / "status.json").is_file())
 
     def test_harness_emits_operator_progress_when_requested(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
@@ -90,10 +91,16 @@ class RunFullUnittestDiscoveryTests(unittest.TestCase):
 
             text = progress.getvalue()
             self.assertEqual(result["exit_code"], 0)
-            self.assertIn("[full-discovery] started:", text)
-            self.assertIn("[full-discovery] output_dir:", text)
-            self.assertIn("[full-discovery] finished:", text)
+            self.assertIn("[full-discovery] run_id=run", text)
+            self.assertIn("[full-discovery] command=python -m unittest discover", text)
+            self.assertIn("[full-discovery] output=", text)
+            self.assertIn("[full-discovery] status=running pid=", text)
+            self.assertIn("[full-discovery] completed status=pass", text)
             self.assertIn("full_unittest_summary.json", text)
+            status = json.loads((out_dir / "status.json").read_text(encoding="utf-8"))
+            self.assertEqual("full_discovery_status.v0", status["schema_version"])
+            self.assertEqual("pass", status["status"])
+            self.assertEqual(0, status["exit_code"])
 
     def test_harness_emits_heartbeat_for_slow_run(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
@@ -121,7 +128,7 @@ class RunFullUnittestDiscoveryTests(unittest.TestCase):
             )
 
             self.assertEqual(result["exit_code"], 0)
-            self.assertIn("still running after", progress.getvalue())
+            self.assertIn("running elapsed=", progress.getvalue())
 
     def test_harness_timeout_writes_compact_artifacts(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
@@ -153,6 +160,9 @@ class RunFullUnittestDiscoveryTests(unittest.TestCase):
             self.assertEqual(summary["status"], "timeout")
             self.assertIn("TIMEOUT: unittest discovery exceeded 1 seconds", stderr_text)
             self.assertIn("timeout reached after", progress.getvalue())
+            status = json.loads((out_dir / "status.json").read_text(encoding="utf-8"))
+            self.assertEqual("timeout", status["status"])
+            self.assertEqual(124, status["exit_code"])
 
     def test_cli_can_suppress_progress(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
