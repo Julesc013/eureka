@@ -2,6 +2,14 @@
 
 Run this outside the AI session from the repository root:
 
+Preferred gate wrapper:
+
+```powershell
+python scripts/eureka_test_gate.py --gate public_alpha_readonly_closeout --watch --clean
+```
+
+Lower-level harness command:
+
 ```powershell
 python scripts/run_full_unittest_discovery.py --out ../eureka-test-runs/public_alpha_readonly_closeout
 ```

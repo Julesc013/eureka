@@ -11,7 +11,7 @@ Live probes: none
 External observations: none
 
 Source records summarized: 15
-Public-alpha routes summarized: 94
+Public-alpha routes summarized: 107
 
 Files:
 - SNAPSHOT_MANIFEST.json

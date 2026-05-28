@@ -1,6 +1,6 @@
 {
-  "branch": "main",
-  "commit_sha": "7a3d112f08aca877d5c82f2e29a1dc6d381c6cbe",
+  "branch": "dev",
+  "commit_sha": "98e1a2f41795689e7870aacf65ab255ea3f32f2f",
   "created_by_slice": "public_alpha_rehearsal_evidence_v0",
   "eval_audit": {
     "archive_eval_status": {
@@ -106,7 +106,7 @@
       "deferred": 0,
       "local_dev_only": 49,
       "review_required": 2,
-      "safe_public_alpha": 38
+      "safe_public_alpha": 51
     }
   },
   "signoff_status": "unsigned",

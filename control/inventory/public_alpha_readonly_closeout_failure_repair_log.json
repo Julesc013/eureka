@@ -4,13 +4,15 @@
   "status": "external_full_discovery_failed_repaired_waiting_for_rerun",
   "external_attempt": {
     "summary_path": "../eureka-test-runs/public_alpha_readonly_closeout/full_unittest_summary.json",
-    "dev_head": "7c022c70830fc264244751add910c302fb9c274f",
+    "dev_head": "0ad9fef058376930c27c9e23aeffa55f56f6e4a7",
+    "current_dev_head_after_orchestrator": "98e1a2f41795689e7870aacf65ab255ea3f32f2f",
     "status": "fail",
-    "tests_run": 5029,
-    "failures": 29,
-    "errors": 1,
+    "tests_run": 5039,
+    "failures": 4,
+    "errors": 4,
     "exit_code": 1,
-    "working_tree_clean": true
+    "working_tree_clean": false,
+    "stale_relative_to_current_dev": true
   },
   "repairs": [
     {
@@ -36,6 +38,18 @@
     {
       "family": "legacy_runtime_leakage_remediation_count_drift",
       "repair": "Refreshed current remediation result counts after the barrel export cleanup and kept generated audit evidence historical."
+    },
+    {
+      "family": "public_alpha_route_summary_generated_drift",
+      "repair": "Refreshed deterministic public-alpha route summaries after the route inventory grew to 107 total routes and 51 safe public-alpha routes."
+    },
+    {
+      "family": "public_alpha_rehearsal_evidence_drift",
+      "repair": "Regenerated the public alpha rehearsal evidence pack from the current route inventory and static-site validation state."
+    },
+    {
+      "family": "static_artifact_checksum_drift",
+      "repair": "Regenerated compatibility surface checksums and static snapshot route summary/checksums after public data route_summary.json changed."
     }
   ],
   "focused_failures_remaining": 0,

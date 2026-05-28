@@ -1,8 +1,8 @@
 # Commit And Artifacts
 
 - repository: `Julesc013/eureka`
-- branch: `main`
-- recorded commit sha: `7a3d112f08aca877d5c82f2e29a1dc6d381c6cbe`
+- branch: `dev`
+- recorded commit sha: `98e1a2f41795689e7870aacf65ab255ea3f32f2f`
 - recorded at: `2026-04-27 static rehearsal evidence snapshot`
 
 ## Referenced Artifacts
