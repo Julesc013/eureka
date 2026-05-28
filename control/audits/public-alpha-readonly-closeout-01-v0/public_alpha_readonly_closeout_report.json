@@ -1,0 +1,19 @@
+{
+  "schema_version": "public_alpha_readonly_closeout_report.v0",
+  "task": "PUBLIC-ALPHA-READONLY-CLOSEOUT-01",
+  "status": "waiting_for_external_full_discovery",
+  "dev_head": "dcfa9d19241f1ab253e596d28521060dac0c5337",
+  "public_alpha_readonly_verified": true,
+  "public_alpha_hosting_verified": true,
+  "snapshot_relay_verified": true,
+  "focused_validators_passed": true,
+  "external_full_discovery_summary_received": false,
+  "public_alpha_ready_for_main_promotion": false,
+  "external_handoff": "control/audits/public-alpha-readonly-closeout-01-v0/external_full_discovery_handoff.json",
+  "deployment_performed": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "public_mutation_enabled": false,
+  "public_live_source_fanout_enabled": false,
+  "recommended_next_task": "external_full_discovery"
+}

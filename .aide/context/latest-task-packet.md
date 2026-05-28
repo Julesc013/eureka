@@ -2,25 +2,24 @@
 
 ## PHASE
 
-PUBLIC-ALPHA-HOSTING-READINESS-00
+PUBLIC-ALPHA-READONLY-CLOSEOUT-01
 
 ## GOAL
 
-Define hosting, security, operations, privacy, abuse, takedown, rollback, and
-launch-gate readiness for the read-only public alpha without deploying or
-claiming launch readiness.
+Close the public read-only alpha route foundation and hosting-readiness baseline
+before promotion. This task is a validation closeout and external full-discovery
+handoff, not a launch or deployment task.
 
 ## WHY
 
-Public alpha routes exist on `dev`, but a route foundation is not a launch
-foundation. This task records the hosting, security, ops, and non-claim gates
-needed before any future launch-candidate review.
+Public alpha routes and hosting readiness are implemented on `dev`. Promotion to
+main requires a compact closeout record and a full-discovery run outside the AI
+session before `DEV-TO-MAIN-PROMOTION-REVIEW-04`.
 
 ## CONTEXT_REFS
 
 - `AGENTS.md`
 - `.aide/queue/index.yaml`
-- `.aide/queue/PUBLIC-ALPHA-HOSTING-READINESS-00/task.yaml`
 - `.aide/queue/PUBLIC-ALPHA-READONLY-CLOSEOUT-01/task.yaml`
 - `.aide/context/repo-map.json`
 - `.aide/context/test-map.json`
@@ -28,37 +27,28 @@ needed before any future launch-candidate review.
 - `.aide/context/latest-context-packet.md`
 - `control/inventory/public_alpha_readonly_00_result.json`
 - `control/inventory/public_alpha_hosting_result.json`
-- `control/inventory/snapshot_relay_result.json`
-- `docs/architecture/PUBLIC_ALPHA_HOSTING.md`
-- `docs/architecture/PUBLIC_ALPHA_SECURITY_MODEL.md`
-- `docs/reference/PUBLIC_ALPHA_LAUNCH_GATES.md`
+- `control/inventory/public_alpha_readonly_closeout_result.json`
+- `control/inventory/public_alpha_readonly_closeout_full_discovery_handoff.json`
+- `control/audits/public-alpha-readonly-closeout-01-v0/`
 
 ## ALLOWED_PATHS
 
-- `.aide/queue/PUBLIC-ALPHA-HOSTING-READINESS-00/**`
 - `.aide/queue/PUBLIC-ALPHA-READONLY-CLOSEOUT-01/**`
 - `.aide/queue/DEV-TO-MAIN-PROMOTION-REVIEW-04/**`
 - `.aide/queue/PUBLIC-ALPHA-LAUNCH-CANDIDATE-00/**`
+- `.aide/queue/PUBLIC-DEMAND-SIGNAL-00/**`
 - `.aide/queue/index.yaml`
 - `.aide/context/latest-task-packet.md`
 - `.aide/context/latest-review-packet.md`
 - `.aide/reports/eureka-repo-health.json`
 - `.aide/reports/eureka-repo-health.md`
-- `contracts/publication/**`
-- `control/policies/public_alpha_*.json`
-- `control/inventory/public_alpha_hosting_*.json`
-- `control/audits/public-alpha-hosting-readiness-00-v0/**`
-- `docs/architecture/PUBLIC_ALPHA_HOSTING.md`
-- `docs/architecture/PUBLIC_ALPHA_SECURITY_MODEL.md`
-- `docs/operations/PUBLIC_ALPHA_HOSTING_RUNBOOK.md`
-- `docs/operations/PUBLIC_ALPHA_ROLLBACK_RUNBOOK.md`
-- `docs/operations/PUBLIC_ALPHA_ABUSE_AND_TAKEDOWN.md`
-- `docs/operations/POST_PUBLIC_ALPHA_HOSTING_PLAN.md`
-- `docs/reference/PUBLIC_ALPHA_ENVIRONMENT.md`
-- `docs/reference/PUBLIC_ALPHA_LAUNCH_GATES.md`
-- `scripts/validate_public_alpha_hosting_readiness.py`
-- `tests/operations/test_public_alpha_hosting_readiness.py`
-- `tests/scripts/test_validate_public_alpha_hosting_readiness.py`
+- `control/inventory/public_alpha_readonly_closeout_*.json`
+- `control/audits/public-alpha-readonly-closeout-01-v0/**`
+- `docs/operations/PUBLIC_ALPHA_READONLY_CLOSEOUT.md`
+- `docs/operations/POST_PUBLIC_ALPHA_READONLY_CLOSEOUT_PLAN.md`
+- `scripts/validate_public_alpha_readonly_closeout.py`
+- `tests/operations/test_public_alpha_readonly_closeout.py`
+- `tests/scripts/test_validate_public_alpha_readonly_closeout.py`
 
 ## FORBIDDEN_PATHS
 
@@ -70,26 +60,29 @@ needed before any future launch-candidate review.
 - `instances/**`
 - `../eureka-test-runs/**`
 - `site/dist/**`
+- `site/dist/data/public_index/**`
 - `data/public_index/**`
 - `runtime/extraction/**`
 - `runtime/search_quality/**`
 - `native/**`
 - `crates/**`
-- raw provider credentials, API keys, local caches, raw prompt logs, raw
-  responses, raw full-discovery logs, and operator instance state
+- raw live source responses, raw full-discovery logs, operator tokens, provider
+  credentials, and committed local instance state
 
 ## VALIDATION
 
 - `git diff --check`
-- `python scripts/validate_public_alpha_hosting_readiness.py`
+- `python scripts/validate_public_alpha_readonly_closeout.py`
 - `python scripts/validate_public_alpha_readonly.py`
+- `python scripts/validate_public_alpha_hosting_readiness.py`
 - `python scripts/validate_snapshot_relay.py`
 - `python scripts/validate_source_wave.py`
 - `python scripts/validate_source_action_kernel.py`
+- `python scripts/validate_test_run_summary.py --help`
 - `python scripts/check_architecture_boundaries.py`
 - `python scripts/check_generated_artifact_cleanliness.py --check --json`
-- `python -m unittest tests.operations.test_public_alpha_hosting_readiness`
-- `python -m unittest tests.scripts.test_validate_public_alpha_hosting_readiness`
+- `python -m unittest tests.operations.test_public_alpha_readonly_closeout`
+- `python -m unittest tests.scripts.test_validate_public_alpha_readonly_closeout`
 - `python .aide/scripts/aide_lite.py doctor`
 - `python .aide/scripts/aide_lite.py validate`
 - `python .aide/scripts/aide_lite.py test`
@@ -99,53 +92,43 @@ needed before any future launch-candidate review.
 
 ## IMPLEMENTATION
 
-- Keep all changes inside the allowed readiness, policy, docs, inventory, audit,
-  validator, test, and AIDE queue/context paths.
-- Treat this as planning and validation evidence only.
-- Preserve public alpha read-only behavior; do not add runtime mutation,
-  deployment, live source fanout, downloads, extraction, or model/provider calls.
-- Prefer compact structured evidence over raw logs.
+- Record closeout matrices for route/API/hosting/security/boundaries.
+- Verify prior public alpha read-only, hosting, snapshot relay, source wave,
+  source action, source snapshot closeout, and CI full-discovery harness results.
+- Create an external full-discovery handoff for the current dev head.
+- Keep promotion readiness false until a compact external full-discovery summary
+  is returned and validated.
 
 ## EVIDENCE
 
-- Hosting contracts under `contracts/publication/`.
-- Control policies under `control/policies/public_alpha_*`.
-- Readiness matrices under `control/inventory/public_alpha_hosting_*`.
-- Docs under `docs/architecture/`, `docs/operations/`, and `docs/reference/`.
-- Audit pack under `control/audits/public-alpha-hosting-readiness-00-v0/`.
-- Validator and focused tests under `scripts/` and `tests/`.
+- `control/inventory/public_alpha_readonly_closeout_*.json`
+- `control/audits/public-alpha-readonly-closeout-01-v0/`
+- `docs/operations/PUBLIC_ALPHA_READONLY_CLOSEOUT.md`
+- `docs/operations/POST_PUBLIC_ALPHA_READONLY_CLOSEOUT_PLAN.md`
+- focused validator and tests
 
 ## NON_GOALS
 
-- No deployment.
-- No public launch claim.
-- No production readiness claim.
-- No live source fanout.
-- No public mutation.
-- No downloads, uploads, or extraction.
-- No model/provider calls.
-- No public/master index mutation.
-- No committed instance state.
-- No full unittest discovery inside the AI session.
+- No deployment, publication, production readiness claim, public launch readiness
+  claim, live source fanout, public mutation, accounts, downloads, uploads,
+  extraction, model/provider calls, native work, marketplace work, or full
+  discovery inside the AI session.
 
 ## ACCEPTANCE
 
-- Hosting contracts, policies, matrices, docs, audit pack, validator, and
-  focused tests exist.
-- Launch gates require future explicit approval and external full discovery.
-- Boundaries remain false.
-- Recommended next task is `PUBLIC-ALPHA-READONLY-CLOSEOUT-01`.
+- Focused closeout validator and tests pass.
+- External full-discovery handoff exists.
+- Status is `WAITING_FOR_EXTERNAL_FULL_DISCOVERY`.
+- `DEV-TO-MAIN-PROMOTION-REVIEW-04` remains blocked until full discovery passes.
 
 ## OUTPUT_SCHEMA
 
-Return `STATUS`, `SUMMARY`, `PUBLIC_ALPHA_HOSTING`, `VALIDATION`,
+Return `STATUS`, `SUMMARY`, `PUBLIC_ALPHA_CLOSEOUT`, `VALIDATION`,
 `BOUNDARIES`, and `NEXT_TASK`.
 
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 6200
-- approx_tokens: 1550
+- chars: 5800
+- approx_tokens: 1450
 - budget_status: PASS
-- warnings:
-  - none

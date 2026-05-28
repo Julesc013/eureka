@@ -1,0 +1,26 @@
+{
+  "schema_version": "public_alpha_readonly_closeout_hosting_matrix.v0",
+  "task": "PUBLIC-ALPHA-READONLY-CLOSEOUT-01",
+  "hosting_result": "control/inventory/public_alpha_hosting_result.json",
+  "hosting_modes_verified": [
+    "static_snapshot_site",
+    "read_only_relay_service",
+    "local_preview_server",
+    "future_dynamic_gateway"
+  ],
+  "preferred_initial_modes": [
+    "static_snapshot_site",
+    "read_only_relay_service"
+  ],
+  "required_docs": [
+    "docs/architecture/PUBLIC_ALPHA_HOSTING.md",
+    "docs/operations/PUBLIC_ALPHA_HOSTING_RUNBOOK.md",
+    "docs/operations/PUBLIC_ALPHA_ROLLBACK_RUNBOOK.md",
+    "docs/reference/PUBLIC_ALPHA_ENVIRONMENT.md",
+    "docs/reference/PUBLIC_ALPHA_LAUNCH_GATES.md"
+  ],
+  "launch_requires_future_explicit_approval": true,
+  "external_full_discovery_required_before_promotion": true,
+  "deployment_performed": false,
+  "public_launch_readiness_claimed": false
+}

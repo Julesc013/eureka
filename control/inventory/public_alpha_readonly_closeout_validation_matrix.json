@@ -1,0 +1,26 @@
+{
+  "schema_version": "public_alpha_readonly_closeout_validation_matrix.v0",
+  "task": "PUBLIC-ALPHA-READONLY-CLOSEOUT-01",
+  "status": "waiting_for_external_full_discovery",
+  "focused_validation_required": true,
+  "focused_validators_passed": true,
+  "full_discovery_run_inside_ai": false,
+  "external_full_discovery_required": true,
+  "external_full_discovery_summary_received": false,
+  "commands": [
+    "git diff --check",
+    "python scripts/validate_public_alpha_readonly_closeout.py",
+    "python scripts/validate_public_alpha_readonly.py",
+    "python scripts/validate_public_alpha_hosting_readiness.py",
+    "python scripts/validate_snapshot_relay.py",
+    "python scripts/validate_source_wave.py",
+    "python scripts/validate_source_action_kernel.py",
+    "python scripts/validate_test_run_summary.py --help",
+    "python scripts/check_architecture_boundaries.py",
+    "python scripts/check_generated_artifact_cleanliness.py --check --json",
+    "python -m unittest tests.operations.test_public_alpha_readonly_closeout",
+    "python -m unittest tests.scripts.test_validate_public_alpha_readonly_closeout"
+  ],
+  "deployment_performed": false,
+  "public_launch_readiness_claimed": false
+}

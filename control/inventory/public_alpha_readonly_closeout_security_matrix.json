@@ -1,0 +1,20 @@
+{
+  "schema_version": "public_alpha_readonly_closeout_security_matrix.v0",
+  "task": "PUBLIC-ALPHA-READONLY-CLOSEOUT-01",
+  "security_matrix": "control/inventory/public_alpha_hosting_security_matrix.json",
+  "rate_limit_matrix": "control/inventory/public_alpha_hosting_rate_limit_matrix.json",
+  "observability_matrix": "control/inventory/public_alpha_hosting_observability_matrix.json",
+  "privacy_abuse_matrix": "control/inventory/public_alpha_hosting_privacy_abuse_matrix.json",
+  "rollback_matrix": "control/inventory/public_alpha_hosting_rollback_matrix.json",
+  "security_model_exists": true,
+  "rate_limit_model_exists": true,
+  "observability_model_exists": true,
+  "privacy_notice_exists": true,
+  "abuse_takedown_process_exists": true,
+  "rollback_plan_exists": true,
+  "credentials_in_repo_allowed": false,
+  "inline_secrets_allowed": false,
+  "raw_query_logging_allowed": false,
+  "public_mutation_enabled": false,
+  "deployment_performed": false
+}

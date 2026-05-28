@@ -1,5 +1,6 @@
 task_id: PUBLIC-ALPHA-READONLY-CLOSEOUT-01
 status: current_recommended
+result: waiting_for_external_full_discovery
 requires:
   - PUBLIC-ALPHA-READONLY-00
   - PUBLIC-ALPHA-HOSTING-READINESS-00
@@ -10,4 +11,15 @@ scope:
   - prepare promotion review only after pass
 deployment_allowed: false
 readiness_claimed: false
+full_discovery_run_inside_ai: false
+external_full_discovery_required: true
+external_full_discovery_summary_received: false
+waiting_status: WAITING_FOR_EXTERNAL_FULL_DISCOVERY
+handoff:
+  command: python scripts/run_full_unittest_discovery.py --out ../eureka-test-runs/public_alpha_readonly_closeout
+  paste_back:
+    - ../eureka-test-runs/public_alpha_readonly_closeout/full_unittest_summary.json
+    - ../eureka-test-runs/public_alpha_readonly_closeout/failure_families.json
+    - ../eureka-test-runs/public_alpha_readonly_closeout/failed_tests.txt
+    - git status --short --branch
 next_task_on_pass: DEV-TO-MAIN-PROMOTION-REVIEW-04

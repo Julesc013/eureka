@@ -1,0 +1,26 @@
+{
+  "schema_version": "public_alpha_readonly_closeout_api_matrix.v0",
+  "task": "PUBLIC-ALPHA-READONLY-CLOSEOUT-01",
+  "source_matrix": "control/inventory/public_alpha_hosting_api_matrix.json",
+  "api_routes": [
+    "/api/v1/alpha/status",
+    "/api/v1/alpha/search",
+    "/api/v1/alpha/object/{object_id}",
+    "/api/v1/alpha/source/{summary_id}",
+    "/api/v1/alpha/evidence/{summary_id}",
+    "/api/v1/alpha/absence/{summary_id}",
+    "/api/v1/alpha/needs"
+  ],
+  "read_only_methods": [
+    "GET",
+    "HEAD"
+  ],
+  "public_write_actions_enabled": false,
+  "public_live_source_fanout_enabled": false,
+  "download_enabled": false,
+  "upload_enabled": false,
+  "extraction_enabled": false,
+  "model_provider_enabled": false,
+  "accounts_enabled": false,
+  "deployment_performed": false
+}

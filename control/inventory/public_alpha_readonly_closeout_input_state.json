@@ -1,0 +1,15 @@
+{
+  "schema_version": "public_alpha_readonly_closeout_input_state.v0",
+  "task": "PUBLIC-ALPHA-READONLY-CLOSEOUT-01",
+  "branch": "dev",
+  "head": "dcfa9d19241f1ab253e596d28521060dac0c5337",
+  "origin_dev": "dcfa9d19241f1ab253e596d28521060dac0c5337",
+  "origin_main": "ddb334c35127628386438d6b6079adce5dec08b2",
+  "origin_main_behind_origin_dev": true,
+  "origin_main_origin_dev_ahead_behind": "0 2",
+  "external_full_discovery_summary_provided_for_head": false,
+  "full_discovery_run_inside_ai": false,
+  "deployment_performed": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}

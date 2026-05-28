@@ -1,0 +1,17 @@
+{
+  "schema_version": "public_alpha_readonly_closeout_full_discovery_result.v0",
+  "task": "PUBLIC-ALPHA-READONLY-CLOSEOUT-01",
+  "status": "external_not_provided",
+  "dev_head": "dcfa9d19241f1ab253e596d28521060dac0c5337",
+  "external_summary_received": false,
+  "full_unittest_discovery_passed": false,
+  "full_unittest_discovery_count": 0,
+  "full_discovery_failures_remaining": null,
+  "full_discovery_errors_remaining": null,
+  "summary_path": "../eureka-test-runs/public_alpha_readonly_closeout/full_unittest_summary.json",
+  "failure_families_path": "../eureka-test-runs/public_alpha_readonly_closeout/failure_families.json",
+  "failed_tests_path": "../eureka-test-runs/public_alpha_readonly_closeout/failed_tests.txt",
+  "command": "python scripts/run_full_unittest_discovery.py --out ../eureka-test-runs/public_alpha_readonly_closeout",
+  "full_discovery_run_inside_ai": false,
+  "waiting_status": "WAITING_FOR_EXTERNAL_FULL_DISCOVERY"
+}

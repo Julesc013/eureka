@@ -1,0 +1,52 @@
+{
+  "schema_version": "public_alpha_readonly_closeout_scope_matrix.v0",
+  "task": "PUBLIC-ALPHA-READONLY-CLOSEOUT-01",
+  "result_file_mappings": [
+    {
+      "expected": "control/inventory/public_alpha_readonly_result.json",
+      "actual": "control/inventory/public_alpha_readonly_00_result.json",
+      "status": "pass",
+      "note": "Current public alpha readonly result file retains the task suffix used by PUBLIC-ALPHA-READONLY-00."
+    },
+    {
+      "expected": "control/inventory/public_alpha_hosting_result.json",
+      "actual": "control/inventory/public_alpha_hosting_result.json",
+      "status": "pass"
+    },
+    {
+      "expected": "control/inventory/snapshot_relay_result.json",
+      "actual": "control/inventory/snapshot_relay_result.json",
+      "status": "pass_with_warnings"
+    },
+    {
+      "expected": "control/inventory/source_wave_result.json",
+      "actual": "control/inventory/source_wave_result.json",
+      "status": "pass_with_warnings"
+    },
+    {
+      "expected": "control/inventory/source_action_kernel_result.json",
+      "actual": "control/inventory/source_action_kernel_result.json",
+      "status": "pass_with_warnings"
+    },
+    {
+      "expected": "control/inventory/source_snapshot_closeout_result.json",
+      "actual": "control/inventory/source_snapshot_closeout_result.json",
+      "status": "historical_waiting_evidence_superseded_by_promotion"
+    },
+    {
+      "expected": "control/inventory/ci_full_discovery_harness_result.json",
+      "actual": "control/inventory/ci_full_discovery_harness_result.json",
+      "status": "pass_with_warnings"
+    }
+  ],
+  "closeout_scope": [
+    "public_alpha_readonly_routes",
+    "public_alpha_readonly_api",
+    "snapshot_relay_projection",
+    "hosting_readiness_plan",
+    "security_rate_limit_observability_privacy_abuse_rollback",
+    "external_full_discovery_handoff"
+  ],
+  "deployment_performed": false,
+  "public_launch_readiness_claimed": false
+}

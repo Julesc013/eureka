@@ -1,0 +1,62 @@
+{
+  "schema_version": "public_alpha_readonly_closeout_route_matrix.v0",
+  "task": "PUBLIC-ALPHA-READONLY-CLOSEOUT-01",
+  "source_matrix": "control/inventory/public_alpha_hosting_route_matrix.json",
+  "routes": [
+    {
+      "route": "/alpha",
+      "method": "GET",
+      "read_only": true,
+      "snapshot_backed": true,
+      "relay_backed": true,
+      "public_mutation_enabled": false
+    },
+    {
+      "route": "/alpha/object",
+      "method": "GET",
+      "read_only": true,
+      "snapshot_backed": true,
+      "relay_backed": true,
+      "public_mutation_enabled": false
+    },
+    {
+      "route": "/alpha/source",
+      "method": "GET",
+      "read_only": true,
+      "snapshot_backed": true,
+      "relay_backed": true,
+      "public_mutation_enabled": false
+    },
+    {
+      "route": "/alpha/evidence",
+      "method": "GET",
+      "read_only": true,
+      "snapshot_backed": true,
+      "relay_backed": true,
+      "public_mutation_enabled": false
+    },
+    {
+      "route": "/alpha/absence",
+      "method": "GET",
+      "read_only": true,
+      "snapshot_backed": true,
+      "relay_backed": true,
+      "public_mutation_enabled": false
+    },
+    {
+      "route": "/alpha/needs",
+      "method": "GET",
+      "read_only": true,
+      "snapshot_backed": true,
+      "relay_backed": true,
+      "public_mutation_enabled": false
+    }
+  ],
+  "forbidden_methods": [
+    "POST",
+    "PUT",
+    "PATCH",
+    "DELETE"
+  ],
+  "deployment_performed": false
+}
