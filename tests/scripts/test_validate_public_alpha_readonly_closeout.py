@@ -11,7 +11,7 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 
 
 class ValidatePublicAlphaReadOnlyCloseoutScriptTests(unittest.TestCase):
-    def test_validator_passes_plain_and_json_in_waiting_state(self) -> None:
+    def test_validator_passes_plain_and_json_in_passing_state(self) -> None:
         plain = subprocess.run(
             [sys.executable, "scripts/validate_public_alpha_readonly_closeout.py"],
             cwd=REPO_ROOT,
@@ -20,7 +20,7 @@ class ValidatePublicAlphaReadOnlyCloseoutScriptTests(unittest.TestCase):
             check=False,
         )
         self.assertEqual(plain.returncode, 0, plain.stdout + plain.stderr)
-        self.assertIn("waiting_for_external_full_discovery", plain.stdout)
+        self.assertIn("pass", plain.stdout)
 
         completed = subprocess.run(
             [sys.executable, "scripts/validate_public_alpha_readonly_closeout.py", "--json"],
@@ -31,11 +31,12 @@ class ValidatePublicAlphaReadOnlyCloseoutScriptTests(unittest.TestCase):
         )
         self.assertEqual(completed.returncode, 0, completed.stdout + completed.stderr)
         payload = json.loads(completed.stdout)
-        self.assertEqual(payload["status"], "waiting_for_external_full_discovery")
+        self.assertEqual(payload["status"], "pass")
         self.assertEqual(payload["errors"], [])
-        self.assertFalse(payload["external_full_discovery_summary_received"])
-        self.assertFalse(payload["full_unittest_discovery_passed"])
-        self.assertFalse(payload["public_alpha_ready_for_main_promotion"])
+        self.assertTrue(payload["external_full_discovery_summary_received"])
+        self.assertTrue(payload["full_unittest_discovery_passed"])
+        self.assertEqual(payload["full_unittest_discovery_count"], 5050)
+        self.assertTrue(payload["public_alpha_ready_for_main_promotion"])
 
 
 if __name__ == "__main__":

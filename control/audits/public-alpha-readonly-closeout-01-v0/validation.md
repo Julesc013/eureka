@@ -1,5 +1,7 @@
 # Validation
 
-Focused validators and tests are the allowed AI-session lane. Full unittest
-discovery is not run inside the AI session and must be executed externally using
-the handoff command.
+Focused validators and tests passed in the AI-session lane.
+
+Full unittest discovery was executed externally through the test gate and passed
+with 5050 tests, 0 failures, 0 errors, and exit code 0. Raw stdout/stderr logs
+were not committed.

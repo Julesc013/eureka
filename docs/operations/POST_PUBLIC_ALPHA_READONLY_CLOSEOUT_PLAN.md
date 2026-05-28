@@ -1,6 +1,7 @@
 # Post Public Alpha Read-Only Closeout Plan
 
-The next step is external full discovery outside the AI session.
+External full discovery has passed outside the AI session. The next step is
+`DEV-TO-MAIN-PROMOTION-REVIEW-04`.
 
 Preferred background run:
 
@@ -9,12 +10,17 @@ python scripts/eureka_test_gate.py --gate public_alpha_readonly_closeout --backg
 python scripts/eureka_test_gate.py --gate public_alpha_readonly_closeout --handoff
 ```
 
-## If External Full Discovery Passes
+## External Full Discovery Result
 
-1. Validate the compact summary with `scripts/validate_test_run_summary.py`.
-2. Update the closeout result to `pass`.
-3. Keep deployment and public launch claims false.
-4. Proceed to `DEV-TO-MAIN-PROMOTION-REVIEW-04`.
+```text
+status: pass
+tests_run: 5050
+failures: 0
+errors: 0
+exit_code: 0
+```
+
+Deployment and public launch claims remain false.
 
 ## If External Full Discovery Fails
 

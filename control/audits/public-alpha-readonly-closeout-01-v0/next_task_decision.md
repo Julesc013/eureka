@@ -1,9 +1,10 @@
 # Next Task Decision
 
-Current status remains `PUBLIC-ALPHA-READONLY-CLOSEOUT-01` until external full
-discovery is returned.
+`PUBLIC-ALPHA-READONLY-CLOSEOUT-01` is closed with passing external full
+discovery evidence.
 
-If the external compact summary passes, the next task becomes
-`DEV-TO-MAIN-PROMOTION-REVIEW-04`.
+The next task is `DEV-TO-MAIN-PROMOTION-REVIEW-04`.
 
-Promotion, launch-candidate work, and deployment remain blocked while waiting.
+Launch-candidate work and deployment remain blocked until a separate promotion
+review completes. No deployment approval or public launch readiness claim is
+included in this closeout.

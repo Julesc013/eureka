@@ -26,9 +26,19 @@ forbidden.
 
 ## External Full Discovery
 
-No external full-discovery summary has been provided for the current dev head.
-The closeout therefore stops at `WAITING_FOR_EXTERNAL_FULL_DISCOVERY` with this
-preferred operator command:
+External full discovery has passed for dev head
+`19a1d935ed585f6581d1d51fbb6e72464295a201`:
+
+```text
+tests_run: 5050
+failures: 0
+errors: 0
+exit_code: 0
+status: pass
+```
+
+The earlier `WAITING_FOR_EXTERNAL_FULL_DISCOVERY` state has been satisfied.
+The preferred operator command for any future rerun remains:
 
 ```powershell
 python scripts/eureka_test_gate.py --gate public_alpha_readonly_closeout --watch --clean

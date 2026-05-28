@@ -6,7 +6,6 @@ import unittest
 
 from scripts.validate_public_alpha_readonly_closeout import (
     BOUNDARY_FALSE_FIELDS,
-    WAITING_STATUS,
     validate_public_alpha_readonly_closeout,
 )
 
@@ -19,13 +18,14 @@ def load_json(rel: str) -> dict:
 
 
 class PublicAlphaReadOnlyCloseoutTests(unittest.TestCase):
-    def test_validator_accepts_waiting_state(self) -> None:
+    def test_validator_accepts_passing_closeout_state(self) -> None:
         report = validate_public_alpha_readonly_closeout()
 
-        self.assertEqual(report["status"], WAITING_STATUS, report["errors"])
-        self.assertFalse(report["external_full_discovery_summary_received"])
-        self.assertFalse(report["full_unittest_discovery_passed"])
-        self.assertFalse(report["public_alpha_ready_for_main_promotion"])
+        self.assertEqual(report["status"], "pass", report["errors"])
+        self.assertTrue(report["external_full_discovery_summary_received"])
+        self.assertTrue(report["full_unittest_discovery_passed"])
+        self.assertEqual(report["full_unittest_discovery_count"], 5050)
+        self.assertTrue(report["public_alpha_ready_for_main_promotion"])
 
     def test_scope_matrix_records_current_result_file_mapping(self) -> None:
         scope = load_json("control/inventory/public_alpha_readonly_closeout_scope_matrix.json")
@@ -83,8 +83,10 @@ class PublicAlphaReadOnlyCloseoutTests(unittest.TestCase):
         self.assertEqual(handoff["status"], "WAITING_FOR_EXTERNAL_FULL_DISCOVERY")
         self.assertIn("../eureka-test-runs/public_alpha_readonly_closeout", handoff["command"])
         self.assertIs(handoff["full_discovery_run_inside_ai"], False)
-        self.assertEqual(result["status"], WAITING_STATUS)
-        self.assertFalse(result["public_alpha_ready_for_main_promotion"])
+        self.assertEqual(result["status"], "pass")
+        self.assertTrue(result["external_full_discovery_summary_received"])
+        self.assertTrue(result["full_unittest_discovery_passed"])
+        self.assertTrue(result["public_alpha_ready_for_main_promotion"])
 
 
 if __name__ == "__main__":

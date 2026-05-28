@@ -1,11 +1,13 @@
 {
   "schema_version": "public_alpha_readonly_closeout_next_task_decision.v0",
   "task": "PUBLIC-ALPHA-READONLY-CLOSEOUT-01",
-  "status": "waiting_for_external_full_discovery",
-  "current_recommended_task": "PUBLIC-ALPHA-READONLY-CLOSEOUT-01",
-  "next_action": "run external full discovery outside AI",
+  "status": "pass",
+  "current_recommended_task": "DEV-TO-MAIN-PROMOTION-REVIEW-04",
+  "next_action": "promote public alpha read-only foundation after promotion review",
   "external_command": "python scripts/run_full_unittest_discovery.py --out ../eureka-test-runs/public_alpha_readonly_closeout",
-  "promotion_allowed": false,
+  "external_full_discovery_status": "pass",
+  "external_full_discovery_tests_run": 5050,
+  "promotion_allowed": true,
   "launch_allowed": false,
   "deployment_performed": false,
   "public_launch_readiness_claimed": false

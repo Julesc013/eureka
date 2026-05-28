@@ -1,7 +1,7 @@
 {
   "schema_version": "public_alpha_readonly_closeout_failure_repair_log.v0",
   "task": "PUBLIC-ALPHA-READONLY-CLOSEOUT-01",
-  "status": "external_full_discovery_failed_repaired_waiting_for_rerun",
+  "status": "external_full_discovery_passed_after_repair",
   "external_attempt": {
     "summary_path": "../eureka-test-runs/public_alpha_readonly_closeout/full_unittest_summary.json",
     "dev_head": "0ad9fef058376930c27c9e23aeffa55f56f6e4a7",
@@ -54,11 +54,22 @@
   ],
   "focused_failures_remaining": 0,
   "external_full_discovery_summary_received": true,
-  "external_full_discovery_passed": false,
-  "external_full_discovery_rerun_required": true,
+  "external_full_discovery_passed": true,
+  "external_full_discovery_rerun_required": false,
+  "final_external_attempt": {
+    "summary_path": "../eureka-test-runs/public_alpha_readonly_closeout/full_unittest_summary.json",
+    "dev_head": "19a1d935ed585f6581d1d51fbb6e72464295a201",
+    "status": "pass",
+    "tests_run": 5050,
+    "failures": 0,
+    "errors": 0,
+    "exit_code": 0,
+    "working_tree_clean": true,
+    "expected_refusal_trace_nonblocking": true
+  },
   "notes": [
     "The external summary was compact and sufficient; raw full discovery stdout/stderr were not consumed or committed.",
     "Focused repairs have been applied for the compact failure families.",
-    "External full discovery must rerun outside the AI session before promotion."
+    "The rerun passed outside the AI session; the remaining refusal-path trace is nonblocking because unittest returned OK."
   ]
 }

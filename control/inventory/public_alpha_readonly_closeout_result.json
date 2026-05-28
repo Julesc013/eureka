@@ -1,17 +1,19 @@
 {
   "schema_version": "public_alpha_readonly_closeout_result.v0",
   "task": "PUBLIC-ALPHA-READONLY-CLOSEOUT-01",
-  "status": "waiting_for_external_full_discovery",
+  "status": "pass",
   "public_alpha_readonly_verified": true,
   "public_alpha_hosting_verified": true,
   "snapshot_relay_verified": true,
   "source_wave_verified": true,
   "source_action_kernel_verified": true,
   "focused_validators_passed": true,
-  "external_full_discovery_summary_received": false,
-  "full_unittest_discovery_passed": false,
-  "full_unittest_discovery_count": 0,
-  "public_alpha_ready_for_main_promotion": false,
+  "external_full_discovery_summary_received": true,
+  "full_unittest_discovery_passed": true,
+  "full_unittest_discovery_count": 5050,
+  "full_discovery_failures_remaining": 0,
+  "full_discovery_errors_remaining": 0,
+  "public_alpha_ready_for_main_promotion": true,
   "deployment_performed": false,
   "production_readiness_claimed": false,
   "public_launch_readiness_claimed": false,
@@ -20,5 +22,5 @@
   "download_performed": false,
   "extraction_executed": false,
   "model_provider_used": false,
-  "recommended_next_task": "external_full_discovery"
+  "recommended_next_task": "DEV-TO-MAIN-PROMOTION-REVIEW-04 - Promote public alpha read-only foundation"
 }

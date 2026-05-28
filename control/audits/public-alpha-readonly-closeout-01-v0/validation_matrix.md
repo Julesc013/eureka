@@ -1,7 +1,6 @@
 # Validation Matrix
 
-Focused validation is required and full unittest discovery is external-only.
+Focused validation passed and full unittest discovery was run externally.
 
-The closeout validator accepts the current waiting state because the external
-full-discovery handoff is present and no compact summary has been provided for
-the current dev head yet.
+The compact external summary passed with 5050 tests, 0 failures, 0 errors, and
+exit code 0. Full discovery was not run inside the AI session.
