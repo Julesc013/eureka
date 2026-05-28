@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/testing/eureka_ai_handoff.v0.json",
+  "title": "Eureka AI Handoff",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "gate",
+    "status",
+    "git",
+    "full_discovery",
+    "failure_families_top",
+    "failed_tests_count",
+    "recommended_next_task",
+    "safe_to_continue",
+    "paste_to_ai"
+  ],
+  "properties": {
+    "schema_version": { "const": "eureka_ai_handoff.v0" },
+    "gate": {
+      "enum": ["public-alpha-closeout", "source-snapshot-closeout", "promotion-gate"]
+    },
+    "run_id": { "type": "string" },
+    "task": { "type": "string" },
+    "status": {
+      "enum": ["pass", "fail", "error", "cancelled", "timeout", "unknown"]
+    },
+    "git": {
+      "type": "object",
+      "required": ["branch", "head", "working_tree_clean"],
+      "properties": {
+        "branch": { "type": ["string", "null"] },
+        "head": { "type": ["string", "null"] },
+        "working_tree_clean": { "type": ["boolean", "null"] }
+      },
+      "additionalProperties": true
+    },
+    "full_discovery": {
+      "type": "object",
+      "required": ["status", "tests_run", "failures", "errors", "duration_seconds"],
+      "properties": {
+        "status": { "type": "string" },
+        "tests_run": { "type": ["integer", "null"], "minimum": 0 },
+        "failures": { "type": ["integer", "null"], "minimum": 0 },
+        "errors": { "type": ["integer", "null"], "minimum": 0 },
+        "duration_seconds": { "type": ["number", "null"] },
+        "exit_code": { "type": ["integer", "null"] }
+      },
+      "additionalProperties": true
+    },
+    "failure_families_top": {
+      "type": "array",
+      "items": { "type": "object" }
+    },
+    "failed_tests_count": { "type": "integer", "minimum": 0 },
+    "recommended_next_task": { "type": "string" },
+    "safe_to_continue": { "type": "boolean" },
+    "paste_to_ai": { "type": "string" },
+    "raw_logs_included": { "const": false },
+    "raw_stdout_stderr_included": { "const": false }
+  },
+  "additionalProperties": true
+}

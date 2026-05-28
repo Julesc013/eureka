@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/testing/eureka_gate.v0.json",
+  "title": "Eureka Gate",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "gate",
+    "run_id",
+    "description",
+    "output_dir_policy",
+    "supported_modes"
+  ],
+  "properties": {
+    "schema_version": { "const": "eureka_gate.v0" },
+    "gate": {
+      "enum": ["public-alpha-closeout", "source-snapshot-closeout", "promotion-gate"]
+    },
+    "run_id": { "type": "string" },
+    "description": { "type": "string" },
+    "output_dir_policy": { "const": "repo_external_eureka_test_runs" },
+    "supported_modes": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "watch",
+          "background",
+          "status",
+          "handoff",
+          "commit_handoff",
+          "github"
+        ]
+      },
+      "minItems": 1
+    },
+    "foreground_command": { "type": "string" },
+    "background_command": { "type": "string" },
+    "status_command": { "type": "string" },
+    "handoff_command": { "type": "string" },
+    "commit_handoff_command": { "type": "string" }
+  },
+  "additionalProperties": true
+}

@@ -80,8 +80,20 @@ python scripts/check_full_discovery.py --run-id <run-id>
 Preferred gate wrapper:
 
 ```bash
-python scripts/eureka_test_gate.py --gate <gate> --watch --clean
+python scripts/eureka_gate.py public-alpha-closeout --watch --clean
 ```
+
+Status, background, and handoff modes:
+
+```bash
+python scripts/eureka_gate.py public-alpha-closeout --background --clean
+python scripts/eureka_gate.py public-alpha-closeout --status
+python scripts/eureka_gate.py public-alpha-closeout --handoff
+```
+
+The gate wrapper writes `ai_handoff.json`, `ai_handoff.md`, and optionally
+repo-visible compact evidence via `--commit-handoff`. Raw stdout/stderr remain
+outside the repo.
 
 To let the terminal wait and print compact handoff output when complete:
 

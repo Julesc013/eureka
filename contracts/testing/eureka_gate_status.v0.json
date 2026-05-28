@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/testing/eureka_gate_status.v0.json",
+  "title": "Eureka Gate Status",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "gate",
+    "run_id",
+    "status",
+    "out_dir",
+    "status_path",
+    "summary_path",
+    "failure_families_path",
+    "failed_tests_path",
+    "ai_handoff_json_path",
+    "ai_handoff_md_path"
+  ],
+  "properties": {
+    "schema_version": { "const": "eureka_gate_status.v0" },
+    "gate": {
+      "enum": ["public-alpha-closeout", "source-snapshot-closeout", "promotion-gate"]
+    },
+    "run_id": { "type": "string" },
+    "status": {
+      "enum": ["missing", "starting", "running", "pass", "fail", "error", "cancelled", "timeout", "unknown"]
+    },
+    "pid": { "type": ["integer", "null"] },
+    "elapsed_seconds": { "type": ["number", "null"] },
+    "stdout_bytes": { "type": ["integer", "null"], "minimum": 0 },
+    "stderr_bytes": { "type": ["integer", "null"], "minimum": 0 },
+    "exit_code": { "type": ["integer", "null"] },
+    "updated_at": { "type": ["string", "null"] },
+    "out_dir": { "type": "string" },
+    "status_path": { "type": "string" },
+    "summary_path": { "type": "string" },
+    "failure_families_path": { "type": "string" },
+    "failed_tests_path": { "type": "string" },
+    "ai_handoff_json_path": { "type": "string" },
+    "ai_handoff_md_path": { "type": "string" },
+    "ai_handoff_zip_path": { "type": "string" }
+  },
+  "additionalProperties": true
+}

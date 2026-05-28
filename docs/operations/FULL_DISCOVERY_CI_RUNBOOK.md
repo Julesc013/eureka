@@ -38,19 +38,45 @@ Do not write full-discovery artifacts under repo-local private roots such as
 compact summary evidence under `control/audits/` when a closeout or promotion
 task explicitly needs durable evidence.
 
+## Unified Gate Command
+
+Prefer the unified gate command for closeout and promotion gates:
+
+```powershell
+python scripts/eureka_gate.py public-alpha-closeout --watch --clean
+```
+
+Background:
+
+```powershell
+python scripts/eureka_gate.py public-alpha-closeout --background --clean
+```
+
+Status and handoff:
+
+```powershell
+python scripts/eureka_gate.py public-alpha-closeout --status
+python scripts/eureka_gate.py public-alpha-closeout --handoff
+```
+
+The gate command writes `ai_handoff.json`, `ai_handoff.md`, and
+`ai_handoff.zip` beside the compact full-discovery artifacts. Use
+`--commit-handoff` only when a task explicitly needs compact repo-visible
+evidence for an AI or connector workflow; it must never commit raw logs.
+
 ## Background Local Run
 
 Preferred one-command gate wrapper:
 
 ```powershell
-python scripts/eureka_test_gate.py --gate public_alpha_readonly_closeout --background --clean
-python scripts/eureka_test_gate.py --gate public_alpha_readonly_closeout --handoff
+python scripts/eureka_gate.py public-alpha-closeout --background --clean
+python scripts/eureka_gate.py public-alpha-closeout --handoff
 ```
 
 Foreground gate wrapper:
 
 ```powershell
-python scripts/eureka_test_gate.py --gate public_alpha_readonly_closeout --watch --clean
+python scripts/eureka_gate.py public-alpha-closeout --watch --clean
 ```
 
 To avoid tying up the terminal or AI session, start a detached local run:
@@ -73,9 +99,10 @@ python scripts/check_full_discovery.py --run-id public_alpha_readonly_closeout -
 ```
 
 The check command reads `status.json` and the compact summary when present. The
-AI session should not monitor the process. When it completes, paste only
-`full_unittest_summary.json`, `failure_families.json`, `failed_tests.txt`, and
-`git status --short --branch`.
+AI session should not monitor the process. When using the gate command, paste
+only `ai_handoff.md` or commit the compact handoff with `--commit-handoff`.
+When using the lower-level checker, return only `full_unittest_summary.json`,
+`failure_families.json`, `failed_tests.txt`, and `git status --short --branch`.
 
 ## CI
 
