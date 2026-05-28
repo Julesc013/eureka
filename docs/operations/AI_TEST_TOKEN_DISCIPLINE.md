@@ -28,10 +28,22 @@ python scripts/start_full_discovery.py --run-id <run-id>
 python scripts/check_full_discovery.py --run-id <run-id>
 ```
 
+Preferred one-command gate:
+
+```bash
+python scripts/eureka_test_gate.py --gate <gate> --watch --clean
+```
+
 To wait without AI polling and print compact handoff artifacts at completion:
 
 ```bash
 python scripts/check_full_discovery.py --run-id <run-id> --watch --interval-seconds 300 --handoff
+```
+
+Or, with the gate wrapper:
+
+```bash
+python scripts/eureka_test_gate.py --gate <gate> --handoff
 ```
 
 Full-discovery output should use an external sibling directory such as

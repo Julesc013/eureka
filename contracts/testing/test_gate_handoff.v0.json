@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/testing/test_gate_handoff.v0.json",
+  "title": "Eureka Test Gate Handoff",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "gate",
+    "run_id",
+    "status",
+    "ai_handoff_path",
+    "summary_path",
+    "failure_families_path",
+    "failed_tests_path",
+    "git_status_short",
+    "next"
+  ],
+  "properties": {
+    "schema_version": { "const": "test_gate_handoff.v0" },
+    "gate": { "type": "string" },
+    "run_id": { "type": "string" },
+    "status": { "enum": ["pass", "fail", "error", "cancelled", "timeout", "unknown"] },
+    "tests_run": { "type": ["integer", "null"], "minimum": 0 },
+    "failures": { "type": ["integer", "null"], "minimum": 0 },
+    "errors": { "type": ["integer", "null"], "minimum": 0 },
+    "exit_code": { "type": ["integer", "null"] },
+    "ai_handoff_path": { "type": "string" },
+    "summary_path": { "type": "string" },
+    "failure_families_path": { "type": "string" },
+    "failed_tests_path": { "type": "string" },
+    "git_status_short": { "type": "string" },
+    "next": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": true
+}

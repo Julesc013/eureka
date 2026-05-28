@@ -5,8 +5,8 @@ The next step is external full discovery outside the AI session.
 Preferred background run:
 
 ```powershell
-python scripts/start_full_discovery.py --run-id public_alpha_readonly_closeout
-python scripts/check_full_discovery.py --run-id public_alpha_readonly_closeout --watch --interval-seconds 300 --handoff
+python scripts/eureka_test_gate.py --gate public_alpha_readonly_closeout --background --clean
+python scripts/eureka_test_gate.py --gate public_alpha_readonly_closeout --handoff
 ```
 
 ## If External Full Discovery Passes

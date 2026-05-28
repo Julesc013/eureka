@@ -77,6 +77,12 @@ python scripts/start_full_discovery.py --run-id <run-id>
 python scripts/check_full_discovery.py --run-id <run-id>
 ```
 
+Preferred gate wrapper:
+
+```bash
+python scripts/eureka_test_gate.py --gate <gate> --watch --clean
+```
+
 To let the terminal wait and print compact handoff output when complete:
 
 ```bash

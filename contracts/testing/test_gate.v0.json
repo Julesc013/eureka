@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/testing/test_gate.v0.json",
+  "title": "Eureka Test Gate",
+  "type": "object",
+  "required": ["schema_version", "gate", "run_id", "description", "output_dir_policy", "supported_modes"],
+  "properties": {
+    "schema_version": { "const": "test_gate.v0" },
+    "gate": { "type": "string" },
+    "run_id": { "type": "string" },
+    "description": { "type": "string" },
+    "output_dir_policy": { "enum": ["repo_external_eureka_test_runs"] },
+    "supported_modes": {
+      "type": "array",
+      "items": { "enum": ["watch", "background", "status", "handoff", "github"] },
+      "minItems": 1
+    },
+    "foreground_command": { "type": "string" },
+    "background_command": { "type": "string" },
+    "status_command": { "type": "string" },
+    "handoff_command": { "type": "string" },
+    "next_on_pass": { "type": "array", "items": { "type": "string" } },
+    "next_on_fail": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": true
+}

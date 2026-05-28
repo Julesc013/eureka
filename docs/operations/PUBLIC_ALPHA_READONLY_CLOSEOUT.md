@@ -28,7 +28,13 @@ forbidden.
 
 No external full-discovery summary has been provided for the current dev head.
 The closeout therefore stops at `WAITING_FOR_EXTERNAL_FULL_DISCOVERY` with this
-operator command:
+preferred operator command:
+
+```powershell
+python scripts/eureka_test_gate.py --gate public_alpha_readonly_closeout --watch --clean
+```
+
+The lower-level harness command remains:
 
 ```powershell
 python scripts/run_full_unittest_discovery.py `

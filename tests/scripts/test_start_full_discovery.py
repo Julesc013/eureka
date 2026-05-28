@@ -4,10 +4,20 @@ import io
 import json
 from pathlib import Path
 import tempfile
-import time
 import unittest
+from unittest.mock import patch
 
-from scripts.start_full_discovery import main
+import scripts.start_full_discovery as start_tool
+
+
+main = start_tool.main
+
+
+class FakeProcess:
+    pid = 4321
+
+    def wait(self) -> int:
+        return 0
 
 
 class StartFullDiscoveryTests(unittest.TestCase):
@@ -18,15 +28,10 @@ class StartFullDiscoveryTests(unittest.TestCase):
         (tests_dir / "test_tiny.py").write_text(source, encoding="utf-8")
         return tests_dir
 
-    def wait_for_status(self, out_dir: Path, expected: set[str]) -> dict[str, object]:
+    def read_status(self, out_dir: Path) -> dict[str, object]:
         status_path = out_dir / "status.json"
-        for _ in range(100):
-            if status_path.exists():
-                payload = json.loads(status_path.read_text(encoding="utf-8"))
-                if payload.get("status") in expected:
-                    return payload
-            time.sleep(0.1)
-        self.fail(f"status did not reach {sorted(expected)}")
+        self.assertTrue(status_path.is_file())
+        return json.loads(status_path.read_text(encoding="utf-8"))
 
     def write_stale_status(self, out_dir: Path) -> None:
         out_dir.mkdir(parents=True, exist_ok=True)
@@ -69,32 +74,38 @@ class StartFullDiscoveryTests(unittest.TestCase):
             stdout = io.StringIO()
             stderr = io.StringIO()
 
-            exit_code = main(
-                [
-                    "--run-id",
-                    "tiny_run",
-                    "--out",
-                    str(out_dir),
-                    "--start-dir",
-                    str(tests_dir),
-                    "--top-level-dir",
-                    str(root),
-                    "--heartbeat-seconds",
-                    "1",
-                ],
-                stdout=stdout,
-                stderr=stderr,
-            )
+            with patch.object(start_tool.subprocess, "Popen", return_value=FakeProcess()) as popen, patch.object(
+                start_tool,
+                "track_detached_process",
+                lambda process: None,
+            ):
+                exit_code = main(
+                    [
+                        "--run-id",
+                        "tiny_run",
+                        "--out",
+                        str(out_dir),
+                        "--start-dir",
+                        str(tests_dir),
+                        "--top-level-dir",
+                        str(root),
+                        "--heartbeat-seconds",
+                        "1",
+                    ],
+                    stdout=stdout,
+                    stderr=stderr,
+                )
 
             self.assertEqual(0, exit_code, stderr.getvalue())
             self.assertIn("Started:", stdout.getvalue())
             self.assertIn("python scripts/check_full_discovery.py --run-id tiny_run", stdout.getvalue())
             self.assertIn("--watch --interval-seconds 300 --handoff", stdout.getvalue())
-            status = self.wait_for_status(out_dir, {"pass"})
+            popen.assert_called_once()
+            status = self.read_status(out_dir)
             self.assertEqual("tiny_run", status["run_id"])
-            self.assertEqual("pass", status["status"])
-            self.assertEqual(0, status["exit_code"])
-            self.assertTrue((out_dir / "full_unittest_summary.json").is_file())
+            self.assertEqual("running", status["status"])
+            self.assertEqual(4321, status["pid"])
+            self.assertIsNone(status["exit_code"])
             self.assertTrue((out_dir / "harness_stdout.txt").is_file())
             self.assertTrue((out_dir / "harness_stderr.txt").is_file())
 
@@ -111,26 +122,34 @@ class StartFullDiscoveryTests(unittest.TestCase):
             out_dir = root / "json_run"
             stdout = io.StringIO()
 
-            exit_code = main(
-                [
-                    "--run-id",
-                    "json_run",
-                    "--out",
-                    str(out_dir),
-                    "--start-dir",
-                    str(tests_dir),
-                    "--top-level-dir",
-                    str(root),
-                    "--json",
-                ],
-                stdout=stdout,
-            )
+            with patch.object(start_tool.subprocess, "Popen", return_value=FakeProcess()), patch.object(
+                start_tool,
+                "track_detached_process",
+                lambda process: None,
+            ):
+                exit_code = main(
+                    [
+                        "--run-id",
+                        "json_run",
+                        "--out",
+                        str(out_dir),
+                        "--start-dir",
+                        str(tests_dir),
+                        "--top-level-dir",
+                        str(root),
+                        "--json",
+                    ],
+                    stdout=stdout,
+                )
 
             self.assertEqual(0, exit_code)
             payload = json.loads(stdout.getvalue())
             self.assertEqual("full_discovery_start.v0", payload["schema_version"])
             self.assertEqual("json_run", payload["run_id"])
-            self.wait_for_status(out_dir, {"pass"})
+            self.assertEqual(4321, payload["pid"])
+            status = self.read_status(out_dir)
+            self.assertEqual("running", status["status"])
+            self.assertEqual(4321, status["pid"])
 
     def test_start_full_discovery_ignores_stale_running_status(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
@@ -147,23 +166,30 @@ class StartFullDiscoveryTests(unittest.TestCase):
             stdout = io.StringIO()
             stderr = io.StringIO()
 
-            exit_code = main(
-                [
-                    "--run-id",
-                    "stale_run",
-                    "--out",
-                    str(out_dir),
-                    "--start-dir",
-                    str(tests_dir),
-                    "--top-level-dir",
-                    str(root),
-                ],
-                stdout=stdout,
-                stderr=stderr,
-            )
+            with patch.object(start_tool.subprocess, "Popen", return_value=FakeProcess()), patch.object(
+                start_tool,
+                "track_detached_process",
+                lambda process: None,
+            ):
+                exit_code = main(
+                    [
+                        "--run-id",
+                        "stale_run",
+                        "--out",
+                        str(out_dir),
+                        "--start-dir",
+                        str(tests_dir),
+                        "--top-level-dir",
+                        str(root),
+                    ],
+                    stdout=stdout,
+                    stderr=stderr,
+                )
 
             self.assertEqual(0, exit_code, stderr.getvalue())
-            self.wait_for_status(out_dir, {"pass"})
+            status = self.read_status(out_dir)
+            self.assertEqual("running", status["status"])
+            self.assertEqual(4321, status["pid"])
 
 
 if __name__ == "__main__":

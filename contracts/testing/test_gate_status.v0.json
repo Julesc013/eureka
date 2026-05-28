@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/testing/test_gate_status.v0.json",
+  "title": "Eureka Test Gate Status",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "gate",
+    "run_id",
+    "status",
+    "out_dir",
+    "status_path",
+    "summary_path",
+    "failure_families_path",
+    "failed_tests_path",
+    "ai_handoff_path"
+  ],
+  "properties": {
+    "schema_version": { "const": "test_gate_status.v0" },
+    "gate": { "type": "string" },
+    "run_id": { "type": "string" },
+    "status": { "enum": ["missing", "starting", "running", "pass", "fail", "error", "cancelled", "timeout", "unknown"] },
+    "pid": { "type": ["integer", "null"] },
+    "elapsed_seconds": { "type": ["number", "null"] },
+    "stdout_bytes": { "type": ["integer", "null"], "minimum": 0 },
+    "stderr_bytes": { "type": ["integer", "null"], "minimum": 0 },
+    "exit_code": { "type": ["integer", "null"] },
+    "out_dir": { "type": "string" },
+    "status_path": { "type": "string" },
+    "summary_path": { "type": "string" },
+    "failure_families_path": { "type": "string" },
+    "failed_tests_path": { "type": "string" },
+    "ai_handoff_path": { "type": "string" }
+  },
+  "additionalProperties": true
+}

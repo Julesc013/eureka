@@ -40,6 +40,19 @@ task explicitly needs durable evidence.
 
 ## Background Local Run
 
+Preferred one-command gate wrapper:
+
+```powershell
+python scripts/eureka_test_gate.py --gate public_alpha_readonly_closeout --background --clean
+python scripts/eureka_test_gate.py --gate public_alpha_readonly_closeout --handoff
+```
+
+Foreground gate wrapper:
+
+```powershell
+python scripts/eureka_test_gate.py --gate public_alpha_readonly_closeout --watch --clean
+```
+
 To avoid tying up the terminal or AI session, start a detached local run:
 
 ```powershell

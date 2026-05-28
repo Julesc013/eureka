@@ -27,6 +27,8 @@ For background local runs, use `python scripts/start_full_discovery.py --run-id
 <run-id>`. AI sessions should consume only compact status and summary artifacts.
 Use `--watch --interval-seconds 300 --handoff` when the operator wants the
 terminal to wait and print compact handoff output at completion.
+Preferred named gates use `python scripts/eureka_test_gate.py --gate <gate>
+--watch --clean` and return `ai_handoff.md`.
 
 Allowed waiting status:
 

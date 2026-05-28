@@ -34,14 +34,19 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 ## Changed Files Summary
 
 - unknown: `.aide/policies/test_execution_policy.md` (M; does not match active task allowed paths)
+- unknown: `contracts/testing/test_gate.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/testing/test_gate_handoff.v0.json` (??; does not match active task allowed paths)
+- unknown: `contracts/testing/test_gate_status.v0.json` (??; does not match active task allowed paths)
 - unknown: `docs/operations/AI_TEST_TOKEN_DISCIPLINE.md` (M; does not match active task allowed paths)
 - unknown: `docs/operations/FULL_DISCOVERY_CI_RUNBOOK.md` (M; does not match active task allowed paths)
 - allowed: `docs/operations/POST_PUBLIC_ALPHA_READONLY_CLOSEOUT_PLAN.md` (M; matches active task allowed path)
 - allowed: `docs/operations/PUBLIC_ALPHA_READONLY_CLOSEOUT.md` (M; matches active task allowed path)
 - unknown: `docs/operations/TEST_AND_EVAL_LANES.md` (M; does not match active task allowed paths)
-- unknown: `tests/scripts/test_check_full_discovery.py` (M; does not match active task allowed paths)
+- unknown: `docs/operations/TEST_GATE_ORCHESTRATOR.md` (??; does not match active task allowed paths)
+- unknown: `scripts/eureka_test_gate.py` (??; does not match active task allowed paths)
+- unknown: `tests/scripts/test_eureka_test_gate.py` (??; does not match active task allowed paths)
 - unknown: `tests/scripts/test_start_full_discovery.py` (M; does not match active task allowed paths)
-- unknown: `tools/testing/check_full_discovery.py` (M; does not match active task allowed paths)
+- unknown: `tools/testing/eureka_test_gate.py` (??; does not match active task allowed paths)
 - unknown: `tools/testing/start_full_discovery.py` (M; does not match active task allowed paths)
 
 ## Validation Summary
@@ -52,8 +57,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 5258
-- approx_tokens: 1315
+- chars: 5745
+- approx_tokens: 1437
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

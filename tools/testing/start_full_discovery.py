@@ -158,6 +158,10 @@ def start_discovery(*, args: argparse.Namespace, out_dir: Path) -> dict[str, Any
             creationflags=creationflags,
             start_new_session=start_new_session,
         )
+        status = read_json(artifacts["status_path"]) or {}
+        if status.get("status") not in {"pass", "fail", "error", "cancelled", "timeout"}:
+            status.update({"status": "running", "pid": process.pid, "updated_at": now_utc()})
+            write_json_atomic(artifacts["status_path"], status)
     track_detached_process(process)
 
     metadata = {
@@ -173,10 +177,6 @@ def start_discovery(*, args: argparse.Namespace, out_dir: Path) -> dict[str, Any
         "harness_stderr_path": str(harness_stderr_path),
         "command": command,
     }
-    status = read_json(artifacts["status_path"]) or {}
-    if status.get("status") not in {"pass", "fail", "error", "cancelled", "timeout"}:
-        status.update({"status": "running", "pid": process.pid, "updated_at": now_utc()})
-        write_json_atomic(artifacts["status_path"], status)
     return metadata
 
 
