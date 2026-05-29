@@ -1,13 +1,21 @@
 task_id: DEV-TO-MAIN-PROMOTION-REVIEW-05
-status: planned
+status: WAITING_FOR_EXTERNAL_FULL_DISCOVERY
 requires:
   - PUBLIC-ALPHA-DEPLOY-DRY-RUN-00
   - focused_validators_pass
+  - external_full_discovery_summary_pass
 scope:
   - promote launch-candidate and deploy dry-run evidence to main
   - fast-forward only
   - no deployment
   - no public launch
+evidence:
+  - control/inventory/dev_to_main_promotion_05_full_discovery_handoff.json
+  - control/inventory/dev_to_main_promotion_05_result.json
+  - control/audits/dev-to-main-promotion-review-05-v0/
+external_full_discovery:
+  status: waiting
+  command: python scripts/eureka_test_gate.py --gate promotion_gate --watch --clean
 deployment_allowed: false
 public_launch_allowed: false
 production_readiness_claimed: false

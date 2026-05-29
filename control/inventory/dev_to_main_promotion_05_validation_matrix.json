@@ -1,0 +1,84 @@
+{
+  "schema_version": "dev_to_main_promotion_05_validation_matrix.v0",
+  "task": "DEV-TO-MAIN-PROMOTION-REVIEW-05",
+  "status": "waiting_for_external_full_discovery",
+  "validations": [
+    {
+      "name": "dev_to_main_promotion_05",
+      "command": "python scripts/validate_dev_to_main_promotion_05.py",
+      "status": "pass",
+      "result": "waiting_for_external_full_discovery accepted"
+    },
+    {
+      "name": "public_alpha_deploy_dry_run",
+      "command": "python scripts/validate_public_alpha_deploy_dry_run.py",
+      "status": "pass"
+    },
+    {
+      "name": "public_alpha_launch_candidate",
+      "command": "python scripts/validate_public_alpha_launch_candidate.py",
+      "status": "pass"
+    },
+    {
+      "name": "public_alpha_readonly_closeout",
+      "command": "python scripts/validate_public_alpha_readonly_closeout.py",
+      "status": "pass"
+    },
+    {
+      "name": "public_alpha_readonly",
+      "command": "python scripts/validate_public_alpha_readonly.py",
+      "status": "pass"
+    },
+    {
+      "name": "public_alpha_hosting",
+      "command": "python scripts/validate_public_alpha_hosting_readiness.py",
+      "status": "pass"
+    },
+    {
+      "name": "snapshot_relay",
+      "command": "python scripts/validate_snapshot_relay.py",
+      "status": "pass"
+    },
+    {
+      "name": "source_wave",
+      "command": "python scripts/validate_source_wave.py",
+      "status": "pass"
+    },
+    {
+      "name": "source_action_kernel",
+      "command": "python scripts/validate_source_action_kernel.py",
+      "status": "pass"
+    },
+    {
+      "name": "architecture_boundaries",
+      "command": "python scripts/check_architecture_boundaries.py",
+      "status": "pass"
+    },
+    {
+      "name": "generated_artifact_cleanliness",
+      "command": "python scripts/check_generated_artifact_cleanliness.py --check --json",
+      "status": "pass"
+    },
+    {
+      "name": "operations_unit_tests",
+      "command": "python -m unittest tests.operations.test_dev_to_main_promotion_05",
+      "status": "pass"
+    },
+    {
+      "name": "validator_unit_tests",
+      "command": "python -m unittest tests.scripts.test_validate_dev_to_main_promotion_05",
+      "status": "pass"
+    },
+    {
+      "name": "aide_checks",
+      "command": "doctor, validate, test, selftest, verify, review-pack",
+      "status": "pass"
+    },
+    {
+      "name": "external_full_discovery",
+      "status": "waiting",
+      "full_discovery_run_inside_ai": false,
+      "handoff": "control/inventory/dev_to_main_promotion_05_full_discovery_handoff.json"
+    }
+  ]
+}

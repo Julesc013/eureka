@@ -1,0 +1,13 @@
+{
+  "schema_version": "dev_to_main_promotion_05_next_task_decision.v0",
+  "task": "DEV-TO-MAIN-PROMOTION-REVIEW-05",
+  "status": "waiting_for_external_full_discovery",
+  "recommended_next_task": "external_full_discovery",
+  "external_full_discovery_command": "python scripts/eureka_test_gate.py --gate promotion_gate --watch --clean",
+  "after_external_pass": "resume DEV-TO-MAIN-PROMOTION-REVIEW-05 and fast-forward main to dev",
+  "after_external_fail": "classify compact failure families and repair only in-scope causes",
+  "deployment_performed": false,
+  "public_launch_performed": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}

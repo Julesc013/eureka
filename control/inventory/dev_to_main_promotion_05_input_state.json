@@ -1,0 +1,20 @@
+{
+  "schema_version": "dev_to_main_promotion_05_input_state.v0",
+  "task": "DEV-TO-MAIN-PROMOTION-REVIEW-05",
+  "created_at": "2026-05-29T17:17:24+10:00",
+  "branch": "dev",
+  "head": "1775e5bbf5792a63ff29ebf5dfc887c4300e77bb",
+  "origin_main": "7a73de52971f7240f05ead11d0426256c8bd75c9",
+  "origin_dev": "1775e5bbf5792a63ff29ebf5dfc887c4300e77bb",
+  "ahead_behind_origin_main_origin_dev": "0 1",
+  "promotion_scope": "public_alpha_launch_candidate_plus_deploy_dry_run",
+  "public_alpha_deploy_dry_run_result": "control/inventory/public_alpha_deploy_dry_run_result.json",
+  "public_alpha_launch_candidate_result": "control/inventory/public_alpha_launch_candidate_result.json",
+  "external_full_discovery_current_head_required": true,
+  "external_full_discovery_current_head_received": false,
+  "full_discovery_run_inside_ai": false,
+  "deployment_performed": false,
+  "public_launch_performed": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}

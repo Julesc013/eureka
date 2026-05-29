@@ -1,0 +1,10 @@
+{
+  "schema_version": "dev_to_main_promotion_05_failure_repair_log.v0",
+  "task": "DEV-TO-MAIN-PROMOTION-REVIEW-05",
+  "status": "no_repairs_required_waiting_for_external_full_discovery",
+  "repairs": [],
+  "notes": [
+    "No in-scope failures were repaired before the external full-discovery handoff.",
+    "Promotion to main is intentionally blocked until a current external full-discovery pass is returned."
+  ]
+}

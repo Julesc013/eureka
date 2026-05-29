@@ -2,69 +2,55 @@
 
 ## PHASE
 
-PUBLIC-ALPHA-DEPLOY-DRY-RUN-00
+DEV-TO-MAIN-PROMOTION-REVIEW-05
 
 ## GOAL
 
-Rehearse deployment mechanics for the read-only public alpha without deploying,
-publishing, writing the static distribution output root, changing DNS, mutating indexes, calling live
-sources/providers, or claiming production/public launch readiness.
+Promote the public alpha launch-candidate and deploy dry-run evidence from
+`dev` to `main` only after a current external full-discovery run passes. The
+current state is waiting for that external gate.
 
 ## WHY
 
-`PUBLIC-ALPHA-LAUNCH-CANDIDATE-00` passed and produced a go-to-dry-run
-decision. The dry-run gate verifies the deploy manifest, environment checklist,
-smoke checklist, rollback rehearsal, and no-deploy boundaries before promotion
-and any future explicit launch task.
+`PUBLIC-ALPHA-DEPLOY-DRY-RUN-00` passed on `dev`, but promotion policy requires
+external full discovery before fast-forwarding `main`. This task records the
+handoff and blocks promotion until the compact external result is returned.
 
 ## CONTEXT_REFS
 
 - `AGENTS.md`
 - `.aide/queue/index.yaml`
-- `.aide/queue/PUBLIC-ALPHA-DEPLOY-DRY-RUN-00/task.yaml`
+- `.aide/queue/DEV-TO-MAIN-PROMOTION-REVIEW-05/task.yaml`
 - `.aide/context/repo-map.json`
 - `.aide/context/test-map.json`
 - `.aide/context/context-index.json`
 - `.aide/context/latest-context-packet.md`
-- `control/inventory/public_alpha_launch_candidate_result.json`
 - `control/inventory/public_alpha_deploy_dry_run_result.json`
-- `control/audits/public-alpha-deploy-dry-run-00-v0/`
+- `control/inventory/public_alpha_launch_candidate_result.json`
+- `control/inventory/dev_to_main_promotion_05_result.json`
+- `control/inventory/dev_to_main_promotion_05_full_discovery_handoff.json`
+- `control/audits/dev-to-main-promotion-review-05-v0/`
 
 ## ALLOWED_PATHS
 
-- `.aide/queue/PUBLIC-ALPHA-DEPLOY-DRY-RUN-00/**`
 - `.aide/queue/DEV-TO-MAIN-PROMOTION-REVIEW-05/**`
 - `.aide/queue/PUBLIC-ALPHA-LAUNCH-00/**`
+- `.aide/queue/PUBLIC-DEMAND-SIGNAL-00/**`
+- `.aide/queue/PUBLIC-SOURCE-REQUEST-QUEUE-00/**`
 - `.aide/queue/index.yaml`
 - `.aide/context/latest-task-packet.md`
 - `.aide/context/latest-review-packet.md`
-- `contracts/publication/public_alpha_deploy_dry_run.v0.json`
-- `contracts/publication/public_alpha_deploy_manifest.v0.json`
-- `contracts/publication/public_alpha_environment_checklist.v0.json`
-- `contracts/publication/public_alpha_smoke_check.v0.json`
-- `contracts/publication/public_alpha_rollback_rehearsal.v0.json`
-- `contracts/publication/public_alpha_deploy_dry_run_gate.v0.json`
-- `control/policies/public_alpha_deploy_dry_run_policy.json`
-- `control/policies/public_alpha_dry_run_no_deploy_policy.json`
-- `control/policies/public_alpha_deploy_smoke_policy.json`
-- `control/policies/public_alpha_rollback_rehearsal_policy.json`
+- `.aide/reports/eureka-repo-health.json`
+- `.aide/reports/eureka-repo-health.md`
+- `control/inventory/dev_to_main_promotion_05_*.json`
+- `control/audits/dev-to-main-promotion-review-05-v0/**`
+- `docs/operations/DEV_TO_MAIN_PROMOTION_REVIEW_05.md`
+- `docs/operations/POST_PUBLIC_ALPHA_DEPLOY_DRY_RUN_PROMOTION_PLAN.md`
+- `scripts/validate_dev_to_main_promotion_05.py`
+- `tools/validators/validate_dev_to_main_promotion_05.py`
+- `tests/operations/test_dev_to_main_promotion_05.py`
+- `tests/scripts/test_validate_dev_to_main_promotion_05.py`
 - `control/policies/generated_artifact_policy.json`
-- `control/inventory/public_alpha_deploy_dry_run_*.json`
-- `control/audits/public-alpha-deploy-dry-run-00-v0/**`
-- `docs/operations/PUBLIC_ALPHA_DEPLOY_DRY_RUN_RUNBOOK.md`
-- `docs/operations/PUBLIC_ALPHA_DEPLOY_MANIFEST.md`
-- `docs/operations/PUBLIC_ALPHA_DEPLOY_SMOKE_CHECKS.md`
-- `docs/operations/PUBLIC_ALPHA_DEPLOY_ROLLBACK_REHEARSAL.md`
-- `docs/operations/POST_PUBLIC_ALPHA_DEPLOY_DRY_RUN_PLAN.md`
-- `docs/reference/PUBLIC_ALPHA_DEPLOY_DRY_RUN_GATES.md`
-- `release/hosting/public_alpha_deploy_dry_run_report.md`
-- `release/hosting/public_alpha_dry_run_smoke_checklist.md`
-- `release/hosting/public_alpha_dry_run_rollback_rehearsal.md`
-- `release/hosting/public_alpha_dry_run_environment.md`
-- `scripts/validate_public_alpha_deploy_dry_run.py`
-- `tools/validators/validate_public_alpha_deploy_dry_run.py`
-- `tests/operations/test_public_alpha_deploy_dry_run.py`
-- `tests/scripts/test_validate_public_alpha_deploy_dry_run.py`
 
 ## FORBIDDEN_PATHS
 
@@ -75,8 +61,7 @@ and any future explicit launch task.
 - `eureka-instance/**`
 - `instances/**`
 - `../eureka-test-runs/**`
-- `static distribution output root`
-- `static public-index output root`
+- static distribution output roots
 - `data/public_index/**`
 - `runtime/extraction/**`
 - `runtime/search_quality/**`
@@ -88,14 +73,20 @@ and any future explicit launch task.
 ## VALIDATION
 
 - `git diff --check`
+- `python scripts/validate_dev_to_main_promotion_05.py`
 - `python scripts/validate_public_alpha_deploy_dry_run.py`
 - `python scripts/validate_public_alpha_launch_candidate.py`
+- `python scripts/validate_public_alpha_readonly_closeout.py`
 - `python scripts/validate_public_alpha_readonly.py`
 - `python scripts/validate_public_alpha_hosting_readiness.py`
+- `python scripts/validate_snapshot_relay.py`
+- `python scripts/validate_source_wave.py`
+- `python scripts/validate_source_action_kernel.py`
+- `python scripts/validate_test_run_summary.py --help`
 - `python scripts/check_architecture_boundaries.py`
 - `python scripts/check_generated_artifact_cleanliness.py --check --json`
-- `python -m unittest tests.operations.test_public_alpha_deploy_dry_run`
-- `python -m unittest tests.scripts.test_validate_public_alpha_deploy_dry_run`
+- `python -m unittest tests.operations.test_dev_to_main_promotion_05`
+- `python -m unittest tests.scripts.test_validate_dev_to_main_promotion_05`
 - `python .aide/scripts/aide_lite.py doctor`
 - `python .aide/scripts/aide_lite.py validate`
 - `python .aide/scripts/aide_lite.py test`
@@ -105,19 +96,18 @@ and any future explicit launch task.
 
 ## IMPLEMENTATION
 
-- Record dry-run contracts, policies, manifest, environment checklist, smoke
-  checklist, rollback rehearsal, boundary report, validator, and tests.
-- Keep deployment, launch, DNS changes, the static distribution output root writes, index mutation, live
-  source fanout, public mutation, downloads, extraction, and model calls
-  disabled.
-- Recommend `DEV-TO-MAIN-PROMOTION-REVIEW-05` before any explicit launch task.
+- Record promotion-05 branch, scope, validation, boundary, and waiting
+  full-discovery handoff evidence.
+- Verify deploy dry-run and launch-candidate evidence remains safe.
+- Do not fast-forward `main` until a current external full-discovery pass is
+  returned.
 
 ## EVIDENCE
 
-- `control/inventory/public_alpha_deploy_dry_run_*.json`
-- `control/audits/public-alpha-deploy-dry-run-00-v0/`
-- `docs/operations/PUBLIC_ALPHA_DEPLOY_DRY_RUN_RUNBOOK.md`
-- focused dry-run validator and tests
+- `control/inventory/dev_to_main_promotion_05_*.json`
+- `control/audits/dev-to-main-promotion-review-05-v0/`
+- `docs/operations/DEV_TO_MAIN_PROMOTION_REVIEW_05.md`
+- focused promotion validator and tests
 
 ## NON_GOALS
 
@@ -128,20 +118,18 @@ work, or full discovery inside the AI session.
 
 ## ACCEPTANCE
 
-- Dry-run validator and tests pass.
-- Deploy manifest, environment checklist, smoke checklist, and rollback
-  rehearsal are present and pass.
-- Deployment and public launch remain false.
-- Next recommended task is `DEV-TO-MAIN-PROMOTION-REVIEW-05`.
+- Promotion-05 validator and tests pass in waiting state.
+- External full-discovery handoff exists.
+- `main` is not promoted while waiting.
+- Next action is external full discovery.
 
 ## OUTPUT_SCHEMA
 
-Return `STATUS`, `SUMMARY`, `PUBLIC_ALPHA_DEPLOY_DRY_RUN`, `VALIDATION`,
-`BOUNDARIES`, and `NEXT_TASK`.
+Return `STATUS`, `SUMMARY`, `VALIDATION`, `BOUNDARIES`, and `NEXT_TASK`.
 
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 7200
-- approx_tokens: 1800
+- chars: 6500
+- approx_tokens: 1625
 - budget_status: PASS

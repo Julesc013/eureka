@@ -14,12 +14,12 @@ completed:
   - PUBLIC-ALPHA-DEPLOY-DRY-RUN-00
 blocked: []
 planned:
-  - DEV-TO-MAIN-PROMOTION-REVIEW-05
   - PUBLIC-ALPHA-LAUNCH-00
   - PUBLIC-DEMAND-SIGNAL-00
   - PUBLIC-SOURCE-REQUEST-QUEUE-00
   - NATIVE-SNAPSHOT-CLIENT-00
-waiting: []
+waiting:
+  - DEV-TO-MAIN-PROMOTION-REVIEW-05
 status_options:
   - pass
   - pass_with_warnings
