@@ -9,6 +9,17 @@
   "full_discovery_failures_remaining": null,
   "full_discovery_errors_remaining": null,
   "full_discovery_exit_code": null,
+  "latest_external_attempt": {
+    "run_id": "promotion_gate",
+    "status": "fail",
+    "tests_run": 5081,
+    "failures": 22,
+    "errors": 3,
+    "exit_code": 1,
+    "head": "617f1a8d306fa81855a54e76df885b5a64364b10",
+    "raw_logs_committed": false,
+    "compact_failure_artifacts_reviewed": true
+  },
   "full_discovery_run_inside_ai": false,
   "handoff": "control/inventory/dev_to_main_promotion_05_full_discovery_handoff.json"
 }

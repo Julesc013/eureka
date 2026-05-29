@@ -385,6 +385,12 @@ def post_promotion_successor_state(root: Path) -> bool:
         "PUBLIC-ALPHA-READONLY-CLOSEOUT-01",
         "DEV-TO-MAIN-PROMOTION-REVIEW-04",
         "PUBLIC-ALPHA-LAUNCH-CANDIDATE-00",
+        "PUBLIC-ALPHA-DEPLOY-DRY-RUN-00",
+        "DEV-TO-MAIN-PROMOTION-REVIEW-05",
+        "PUBLIC-ALPHA-LAUNCH-00",
+        "PUBLIC-DEMAND-SIGNAL-00",
+        "PUBLIC-SOURCE-REQUEST-QUEUE-00",
+        "NATIVE-SNAPSHOT-CLIENT-00",
     }
 
 

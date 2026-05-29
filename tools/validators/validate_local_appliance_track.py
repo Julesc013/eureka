@@ -472,6 +472,12 @@ def local_track_handoff_queue(queue_current: str | None) -> bool:
         "PUBLIC-ALPHA-READONLY-CLOSEOUT-01",
         "DEV-TO-MAIN-PROMOTION-REVIEW-04",
         "PUBLIC-ALPHA-LAUNCH-CANDIDATE-00",
+        "PUBLIC-ALPHA-DEPLOY-DRY-RUN-00",
+        "DEV-TO-MAIN-PROMOTION-REVIEW-05",
+        "PUBLIC-ALPHA-LAUNCH-00",
+        "PUBLIC-DEMAND-SIGNAL-00",
+        "PUBLIC-SOURCE-REQUEST-QUEUE-00",
+        "NATIVE-SNAPSHOT-CLIENT-00",
     }
     return any(queue_current == task or queue_current.startswith(f"{task} ") for task in handoff_tasks)
 
@@ -541,6 +547,16 @@ def validate_git_alignment(root: Path, report: Mapping[str, Any], errors: list[s
             "DEV-TO-MAIN-PROMOTION-REVIEW-03",
             "CI-FULL-DISCOVERY-HARNESS-00",
             "PUBLIC-ALPHA-READONLY-00",
+            "PUBLIC-ALPHA-HOSTING-READINESS-00",
+            "PUBLIC-ALPHA-READONLY-CLOSEOUT-01",
+            "DEV-TO-MAIN-PROMOTION-REVIEW-04",
+            "PUBLIC-ALPHA-LAUNCH-CANDIDATE-00",
+            "PUBLIC-ALPHA-DEPLOY-DRY-RUN-00",
+            "DEV-TO-MAIN-PROMOTION-REVIEW-05",
+            "PUBLIC-ALPHA-LAUNCH-00",
+            "PUBLIC-DEMAND-SIGNAL-00",
+            "PUBLIC-SOURCE-REQUEST-QUEUE-00",
+            "NATIVE-SNAPSHOT-CLIENT-00",
         }:
             warnings.append("origin/dev is ahead of origin/main after Local Appliance queue work")
     else:

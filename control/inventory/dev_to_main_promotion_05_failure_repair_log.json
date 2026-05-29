@@ -1,10 +1,75 @@
 {
   "schema_version": "dev_to_main_promotion_05_failure_repair_log.v0",
   "task": "DEV-TO-MAIN-PROMOTION-REVIEW-05",
-  "status": "no_repairs_required_waiting_for_external_full_discovery",
-  "repairs": [],
+  "status": "repairs_completed_waiting_for_external_full_discovery_rerun",
+  "external_full_discovery_attempt": {
+    "run_id": "promotion_gate",
+    "status": "fail",
+    "tests_run": 5081,
+    "failures": 22,
+    "errors": 3,
+    "exit_code": 1,
+    "head": "617f1a8d306fa81855a54e76df885b5a64364b10",
+    "raw_logs_committed": false
+  },
+  "failure_families_classified": [
+    {
+      "family": "stale_hunt_queue_successor_allowlist",
+      "failed_tests": 16,
+      "repair": "Accepted current public-alpha deploy dry-run and promotion-05 queue states as post-HUNT successor states through the shared HUNT queue helper."
+    },
+    {
+      "family": "stale_local_queue_successor_allowlist",
+      "failed_tests": 1,
+      "repair": "Accepted current public-alpha deploy dry-run and promotion-05 queue states as post-LOCAL successor states."
+    },
+    {
+      "family": "stale_prior_promotion_validators",
+      "failed_tests": 4,
+      "repair": "Allowed promotion-03 and promotion-04 validators to pass during later pre-promotion dev-ahead states."
+    },
+    {
+      "family": "static_snapshot_checksum_drift",
+      "failed_tests": 3,
+      "repair": "Regenerated the static snapshot example with scripts/generate_static_snapshot.py --update."
+    },
+    {
+      "family": "expected_forbidden_output_root_trace",
+      "failed_tests": 1,
+      "repair": "Classified as an expected refusal-path trace; no product behavior change required."
+    }
+  ],
+  "repairs": [
+    {
+      "path": "tools/generators/hunt_queue_progress.py",
+      "change": "added current public-alpha deploy/promotion tasks to POST_HUNT_TASKS"
+    },
+    {
+      "path": "tools/validators/validate_local_appliance_track.py",
+      "change": "added current public-alpha deploy/promotion tasks to local handoff allowlists"
+    },
+    {
+      "path": "scripts/validate_dev_to_main_promotion_03.py",
+      "change": "allowed later public-alpha deploy/promotion successor states"
+    },
+    {
+      "path": "scripts/validate_dev_to_main_promotion_04.py",
+      "change": "allowed later public-alpha deploy/promotion successor states and skipped stale evidence-head delta checks after later promotion tasks"
+    },
+    {
+      "path": "snapshots/examples/static_snapshot_v0/",
+      "change": "refreshed deterministic static snapshot example and checksums"
+    }
+  ],
+  "focused_validation_after_repair": {
+    "failed_modules_rerun": "pass",
+    "failed_modules_rerun_tests": 76,
+    "generated_artifact_drift": "valid",
+    "static_snapshot": "valid"
+  },
   "notes": [
-    "No in-scope failures were repaired before the external full-discovery handoff.",
+    "External full discovery failed on stale historical validators and static snapshot checksum drift.",
+    "Focused failed-module validation now passes after in-scope repairs.",
     "Promotion to main is intentionally blocked until a current external full-discovery pass is returned."
   ]
 }

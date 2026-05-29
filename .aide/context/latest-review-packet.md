@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (4744 chars, 1186 approximate tokens)
+- `.aide/context/latest-task-packet.md` (5252 chars, 1313 approximate tokens)
 
 ## Context Packet Reference
 
@@ -33,28 +33,17 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Changed Files Summary
 
-- allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/queue/DEV-TO-MAIN-PROMOTION-REVIEW-05/task.yaml` (M; matches active task allowed path)
-- allowed: `.aide/queue/index.yaml` (M; matches active task allowed path)
-- allowed: `control/audits/dev-to-main-promotion-review-05-v0` (??; matches active task allowed path)
-- allowed: `control/inventory/dev_to_main_promotion_05_boundary_report.json` (??; matches active task allowed path)
-- allowed: `control/inventory/dev_to_main_promotion_05_branch_state.json` (??; matches active task allowed path)
-- allowed: `control/inventory/dev_to_main_promotion_05_failure_repair_log.json` (??; matches active task allowed path)
-- allowed: `control/inventory/dev_to_main_promotion_05_full_discovery_handoff.json` (??; matches active task allowed path)
-- allowed: `control/inventory/dev_to_main_promotion_05_full_discovery_result.json` (??; matches active task allowed path)
-- allowed: `control/inventory/dev_to_main_promotion_05_input_state.json` (??; matches active task allowed path)
-- allowed: `control/inventory/dev_to_main_promotion_05_next_task_decision.json` (??; matches active task allowed path)
-- allowed: `control/inventory/dev_to_main_promotion_05_result.json` (??; matches active task allowed path)
-- allowed: `control/inventory/dev_to_main_promotion_05_scope_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/dev_to_main_promotion_05_validation_matrix.json` (??; matches active task allowed path)
-- allowed: `control/policies/generated_artifact_policy.json` (M; matches active task allowed path)
-- allowed: `docs/operations/DEV_TO_MAIN_PROMOTION_REVIEW_05.md` (??; matches active task allowed path)
-- allowed: `docs/operations/POST_PUBLIC_ALPHA_DEPLOY_DRY_RUN_PROMOTION_PLAN.md` (??; matches active task allowed path)
-- allowed: `scripts/validate_dev_to_main_promotion_05.py` (??; matches active task allowed path)
-- allowed: `tests/operations/test_dev_to_main_promotion_05.py` (??; matches active task allowed path)
-- allowed: `tests/scripts/test_validate_dev_to_main_promotion_05.py` (??; matches active task allowed path)
-- allowed: `tools/validators/validate_dev_to_main_promotion_05.py` (??; matches active task allowed path)
+- allowed: `control/inventory/dev_to_main_promotion_05_failure_repair_log.json` (M; matches active task allowed path)
+- allowed: `control/inventory/dev_to_main_promotion_05_full_discovery_result.json` (M; matches active task allowed path)
+- allowed: `scripts/validate_dev_to_main_promotion_03.py` (M; matches active task allowed path)
+- allowed: `scripts/validate_dev_to_main_promotion_04.py` (M; matches active task allowed path)
+- allowed: `snapshots/examples/static_snapshot_v0/CHECKSUMS.SHA256` (M; matches active task allowed path)
+- allowed: `snapshots/examples/static_snapshot_v0/ROUTE_SUMMARY.json` (M; matches active task allowed path)
+- allowed: `snapshots/examples/static_snapshot_v0/index.txt` (M; matches active task allowed path)
+- allowed: `tools/generators/hunt_queue_progress.py` (M; matches active task allowed path)
+- allowed: `tools/validators/validate_local_appliance_track.py` (M; matches active task allowed path)
 
 ## Validation Summary
 
@@ -64,8 +53,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 6597
-- approx_tokens: 1650
+- chars: 5373
+- approx_tokens: 1344
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

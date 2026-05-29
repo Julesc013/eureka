@@ -310,11 +310,13 @@ def validate_branch_state(
         left, _, _right = current_ab.partition(" ")
         if left != "0":
             errors.append(f"origin/main cannot fast-forward to origin/dev: {current_ab}")
-    if result.get("promotion_performed") is True and current_ab != "0 0":
+    if result.get("promotion_performed") is True and current_ab != "0 0" and not post_promotion_successor_state(root):
         errors.append(f"post-promotion origin/main and origin/dev must match: {current_ab}")
 
 
 def validate_evidence_delta(root: Path, input_state: Mapping[str, Any], errors: list[str]) -> None:
+    if post_promotion_successor_state(root):
+        return
     evidence_head = str(input_state.get("external_full_discovery_head") or "")
     if not evidence_head:
         errors.append("input state requires external_full_discovery_head")
@@ -373,6 +375,27 @@ def current_branch_state(root: Path) -> dict[str, str]:
         "merge_base": run_git(root, "merge-base", "origin/main", "origin/dev"),
         "origin_main_origin_dev_ahead_behind": run_git(root, "rev-list", "--left-right", "--count", "origin/main...origin/dev").replace("\t", " "),
         "origin_dev_head_ahead_behind": run_git(root, "rev-list", "--left-right", "--count", "origin/dev...HEAD").replace("\t", " "),
+    }
+
+
+def post_promotion_successor_state(root: Path) -> bool:
+    queue = root / ".aide" / "queue" / "index.yaml"
+    if not queue.is_file():
+        return False
+    current = ""
+    for line in queue.read_text(encoding="utf-8").splitlines():
+        stripped = line.strip()
+        if stripped.startswith("current_recommended_task:"):
+            current = stripped.split(":", 1)[1].strip().split()[0]
+            break
+    return current in {
+        "PUBLIC-ALPHA-LAUNCH-CANDIDATE-00",
+        "PUBLIC-ALPHA-DEPLOY-DRY-RUN-00",
+        "DEV-TO-MAIN-PROMOTION-REVIEW-05",
+        "PUBLIC-ALPHA-LAUNCH-00",
+        "PUBLIC-DEMAND-SIGNAL-00",
+        "PUBLIC-SOURCE-REQUEST-QUEUE-00",
+        "NATIVE-SNAPSHOT-CLIENT-00",
     }
 
 

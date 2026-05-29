@@ -47,10 +47,15 @@ handoff and blocks promotion until the compact external result is returned.
 - `docs/operations/DEV_TO_MAIN_PROMOTION_REVIEW_05.md`
 - `docs/operations/POST_PUBLIC_ALPHA_DEPLOY_DRY_RUN_PROMOTION_PLAN.md`
 - `scripts/validate_dev_to_main_promotion_05.py`
+- `scripts/validate_dev_to_main_promotion_03.py`
+- `scripts/validate_dev_to_main_promotion_04.py`
+- `tools/generators/hunt_queue_progress.py`
+- `tools/validators/validate_local_appliance_track.py`
 - `tools/validators/validate_dev_to_main_promotion_05.py`
 - `tests/operations/test_dev_to_main_promotion_05.py`
 - `tests/scripts/test_validate_dev_to_main_promotion_05.py`
 - `control/policies/generated_artifact_policy.json`
+- `snapshots/examples/static_snapshot_v0/**`
 
 ## FORBIDDEN_PATHS
 
@@ -87,6 +92,8 @@ handoff and blocks promotion until the compact external result is returned.
 - `python scripts/check_generated_artifact_cleanliness.py --check --json`
 - `python -m unittest tests.operations.test_dev_to_main_promotion_05`
 - `python -m unittest tests.scripts.test_validate_dev_to_main_promotion_05`
+- `python -m unittest <failed promotion_gate modules>`
+- `python scripts/check_generated_artifact_drift.py --json`
 - `python .aide/scripts/aide_lite.py doctor`
 - `python .aide/scripts/aide_lite.py validate`
 - `python .aide/scripts/aide_lite.py test`
@@ -98,6 +105,8 @@ handoff and blocks promotion until the compact external result is returned.
 
 - Record promotion-05 branch, scope, validation, boundary, and waiting
   full-discovery handoff evidence.
+- Repair stale HUNT/LOCAL/promotion validator successor-state assumptions and
+  static snapshot checksum drift exposed by the external promotion gate.
 - Verify deploy dry-run and launch-candidate evidence remains safe.
 - Do not fast-forward `main` until a current external full-discovery pass is
   returned.
