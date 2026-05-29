@@ -77,6 +77,12 @@
       "policy": "Task-local PUBLIC-ALPHA-LAUNCH-00 audit evidence is reviewed with the manual launch approval gate and is not product runtime state."
     },
     {
+      "path": "control/audits/public-alpha-launch-defer-00-v0",
+      "artifact_class": "audit_generated",
+      "allow_task_local_drift": true,
+      "policy": "Task-local PUBLIC-ALPHA-LAUNCH-DEFER-00 audit evidence records the launch deferral and active discovery redirect; it is not product runtime state."
+    },
+    {
       "path": "control/audits",
       "artifact_class": "audit_generated",
       "policy": "Audit generated outputs are evidence, not product runtime state."

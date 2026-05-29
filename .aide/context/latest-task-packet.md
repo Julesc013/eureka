@@ -2,11 +2,11 @@
 
 ## PHASE
 
-UNSPECIFIED - PUBLIC-ALPHA-LAUNCH-00
+UNSPECIFIED - PUBLIC-ALPHA-LAUNCH-DEFER-00
 
 ## GOAL
 
-PUBLIC-ALPHA-LAUNCH-00
+PUBLIC-ALPHA-LAUNCH-DEFER-00
 
 ## WHY
 
@@ -53,9 +53,7 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 - `scripts/validate_*.py`
 - `scripts/check_*.py`
 - `tests/operations/**`
-- `tests/scripts/**`
 - `tests/aide/**`
-- `tools/validators/**`
 
 ## FORBIDDEN_PATHS
 
@@ -141,8 +139,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4764
-- approx_tokens: 1191
+- chars: 4776
+- approx_tokens: 1194
 - budget_status: PASS
 - warnings:
   - none

@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (4809 chars, 1203 approximate tokens)
+- `.aide/context/latest-task-packet.md` (4776 chars, 1194 approximate tokens)
 
 ## Context Packet Reference
 
@@ -34,10 +34,17 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 ## Changed Files Summary
 
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
-- allowed: `scripts/validate_public_alpha_launch.py` (??; matches active task allowed path)
-- allowed: `tests/operations/test_public_alpha_launch.py` (??; matches active task allowed path)
-- allowed: `tests/scripts/test_validate_public_alpha_launch.py` (??; matches active task allowed path)
-- allowed: `tools/validators/validate_public_alpha_launch.py` (??; matches active task allowed path)
+- allowed: `.aide/queue/ACTIVE-DISCOVERY-AND-CANDIDATE-INTAKE-00` (??; matches active task allowed path)
+- allowed: `.aide/queue/PUBLIC-ALPHA-LAUNCH-DEFER-00` (??; matches active task allowed path)
+- allowed: `.aide/queue/index.yaml` (M; matches active task allowed path)
+- allowed: `control/audits/public-alpha-launch-defer-00-v0` (??; matches active task allowed path)
+- allowed: `control/inventory/public_alpha_launch_defer_reason_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/public_alpha_launch_defer_result.json` (??; matches active task allowed path)
+- allowed: `control/policies/generated_artifact_policy.json` (M; matches active task allowed path)
+- allowed: `docs/operations/ACTIVE_DISCOVERY_NEXT_PLAN.md` (??; matches active task allowed path)
+- allowed: `docs/operations/PUBLIC_ALPHA_LAUNCH_DEFERRED.md` (??; matches active task allowed path)
+- allowed: `scripts/validate_public_alpha_launch_defer.py` (??; matches active task allowed path)
+- allowed: `tests/operations/test_public_alpha_launch_defer.py` (??; matches active task allowed path)
 
 ## Validation Summary
 
@@ -47,8 +54,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 4724
-- approx_tokens: 1181
+- chars: 5423
+- approx_tokens: 1356
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

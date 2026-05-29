@@ -1,0 +1,57 @@
+{
+  "schema_version": "public_alpha_launch_defer_reason_matrix.v0",
+  "task": "PUBLIC-ALPHA-LAUNCH-DEFER-00",
+  "status": "deferred",
+  "reasons": [
+    {
+      "reason_id": "reviewed_corpus_too_small",
+      "severity": "launch_blocker",
+      "finding": "The read-only public shell works, but the reviewed searchable corpus is still too small for a useful public search alpha.",
+      "required_response": "Build candidate intake and seed batches before staging or public launch."
+    },
+    {
+      "reason_id": "active_discovery_not_public_ready",
+      "severity": "launch_blocker",
+      "finding": "Weak or missing local results do not yet reliably become candidate-producing source actions and review items.",
+      "required_response": "Implement query-to-source-action planning, candidate lanes, source-cache handoff, and review queue intake."
+    },
+    {
+      "reason_id": "archive_org_wide_metadata_search_required",
+      "severity": "next_capability",
+      "finding": "Public alpha must be able to search Archive.org item metadata beyond Eureka's local reviewed index, without requiring Eureka to pre-index all Archive.org records.",
+      "required_response": "Use Internet Archive metadata search APIs as a governed live metadata candidate source, with rate limits, cache policy, kill switch, redaction, and review requirements."
+    },
+    {
+      "reason_id": "no_broad_crawling_or_downloads",
+      "severity": "safety_boundary",
+      "finding": "Archive.org-wide search must not mean arbitrary crawling, file downloads, extraction, execution, or automatic truth acceptance.",
+      "required_response": "Keep discovery metadata-only and candidate-only until separate review and promotion gates approve records."
+    }
+  ],
+  "source_references": [
+    {
+      "label": "Internet Archive Item Search APIs",
+      "url": "https://archive.org/developers/item-search-apis.html",
+      "used_for": "Archive.org-wide item metadata search and cursor-based deep paging design."
+    },
+    {
+      "label": "Internet Archive Item Metadata API: Read",
+      "url": "https://archive.org/developers/md-read.html",
+      "used_for": "Per-identifier metadata read design after search candidates are selected."
+    },
+    {
+      "label": "Internet Archive Metadata Schema",
+      "url": "https://archive.org/developers/metadata-schema/index.html",
+      "used_for": "Candidate metadata field normalization and source/evidence mapping."
+    }
+  ],
+  "non_claims": {
+    "deployment_performed": false,
+    "public_launch_performed": false,
+    "production_readiness_claimed": false,
+    "public_launch_readiness_claimed": false,
+    "downloads_enabled": false,
+    "full_archive_org_mirror_claimed": false,
+    "automatic_reviewed_truth_claimed": false
+  }
+}

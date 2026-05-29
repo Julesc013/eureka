@@ -1,0 +1,16 @@
+task_id: PUBLIC-ALPHA-LAUNCH-DEFER-00
+status: pass
+goal: Defer PUBLIC-ALPHA-LAUNCH-00 until active discovery and candidate intake make public alpha useful.
+decision_kind: product_direction_correction
+preserve_evidence:
+  - PUBLIC-ALPHA-LAUNCH-CANDIDATE-00
+  - PUBLIC-ALPHA-DEPLOY-DRY-RUN-00
+boundaries:
+  deployment_performed: false
+  public_launch_performed: false
+  production_readiness_claimed: false
+  public_launch_readiness_claimed: false
+reason:
+  - insufficient_candidate_discovery_and_index_coverage
+  - archive_org_wide_metadata_search_required_before_public_alpha
+next_task: ACTIVE-DISCOVERY-AND-CANDIDATE-INTAKE-00

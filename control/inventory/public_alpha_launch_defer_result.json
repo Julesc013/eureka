@@ -1,0 +1,57 @@
+{
+  "schema_version": "public_alpha_launch_defer_result.v0",
+  "task": "PUBLIC-ALPHA-LAUNCH-DEFER-00",
+  "deferred_task": "PUBLIC-ALPHA-LAUNCH-00",
+  "status": "deferred",
+  "decision_kind": "product_direction_correction",
+  "decision_at": "2026-05-30T05:59:01+10:00",
+  "reason_code": "insufficient_candidate_discovery_and_index_coverage",
+  "reason_summary": "Public alpha launch is deferred because the current reviewed/searchable corpus is too small and active candidate discovery is not yet available enough for public users to judge Eureka as a search engine.",
+  "preserved_evidence": {
+    "public_alpha_launch_candidate_result": "pass",
+    "public_alpha_deploy_dry_run_result": "pass",
+    "local_public_preview_observed_in_session": true,
+    "local_public_preview_url": "http://127.0.0.1:8765/",
+    "local_public_preview_smoke_checks_passed": 18,
+    "local_public_preview_server_stopped_after_review": true
+  },
+  "required_next_capability": {
+    "capability_id": "archive_org_wide_metadata_candidate_discovery",
+    "must_support_archive_org_wide_metadata_search": true,
+    "source_surface": "Internet Archive item metadata search APIs",
+    "allowed_initial_endpoints": [
+      "https://archive.org/advancedsearch.php",
+      "https://archive.org/services/search/v1/scrape",
+      "https://archive.org/metadata/{identifier}"
+    ],
+    "claim_limits": [
+      "Searches Archive.org metadata surfaces made available by Internet Archive APIs; it does not claim a private mirror, complete corpus copy, or guaranteed exhaustive immutable result set.",
+      "Candidate results are provisional leads and require review before becoming local reviewed records.",
+      "No downloads, file fetches, extraction, installation, execution, upload, or automatic public/master index mutation are approved by this decision."
+    ]
+  },
+  "deployment_performed": false,
+  "public_launch_performed": false,
+  "staging_deployment_performed": false,
+  "public_alpha_launch_approval_active": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "public_mutation_enabled": false,
+  "public_live_source_fanout_enabled": false,
+  "downloads_enabled": false,
+  "extraction_enabled": false,
+  "model_provider_enabled": false,
+  "recommended_next_task": "ACTIVE-DISCOVERY-AND-CANDIDATE-INTAKE-00",
+  "next_queue": [
+    "ACTIVE-DISCOVERY-AND-CANDIDATE-INTAKE-00",
+    "QUERY-TO-SOURCE-ACTION-PLANNER-00",
+    "CANDIDATE-INDEX-RUNTIME-00",
+    "SOURCE-ACTION-LIVE-METADATA-PILOTS-00",
+    "SCOUT-RUNTIME-00",
+    "REVIEW-BATCH-00",
+    "SEED-BATCH-FRONTIER-MEDIA-00",
+    "SEED-BATCH-LEGACY-SOFTWARE-00",
+    "SNAPSHOT-REFRESH-00",
+    "PUBLIC-ALPHA-REASSESS-00"
+  ]
+}

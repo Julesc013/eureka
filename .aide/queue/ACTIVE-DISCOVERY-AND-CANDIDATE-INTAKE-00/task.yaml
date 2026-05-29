@@ -1,0 +1,17 @@
+task_id: ACTIVE-DISCOVERY-AND-CANDIDATE-INTAKE-00
+status: planned
+goal: Turn weak public-search queries into source-action plans, Archive.org-wide metadata candidate searches, candidate records, review items, and snapshot refresh inputs.
+requires:
+  - PUBLIC-ALPHA-LAUNCH-DEFER-00
+scope:
+  - query to reviewed local results
+  - query to local candidates and source-cache hits
+  - approved Internet Archive metadata search across Archive.org item metadata
+  - candidate index records, not reviewed truth
+  - review queue handoff
+  - no downloads, extraction, installs, uploads, accounts, telemetry, or automatic promotion
+blocked_until:
+  - explicit source-action policy gate for Archive.org-wide metadata search
+  - rate limit, timeout, retry, cache, and kill-switch policy
+  - redacted candidate output contract
+  - review queue and candidate index write policy
