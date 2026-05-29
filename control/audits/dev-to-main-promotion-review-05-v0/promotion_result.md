@@ -1,8 +1,15 @@
 # Promotion Result
 
-Promotion performed: false
+Promotion performed: true
 
-Reason: external full discovery has passed and the task is ready for the
-fast-forward promotion step.
+Method: fast-forward only
 
-Next action: fast-forward `main` to `dev`, then record final branch equality.
+- main_pushed: true
+- dev_pushed: true
+- origin_main_equals_origin_dev: true
+- force_push_performed: false
+- rebase_performed: false
+- history_rewrite_performed: false
+- branch_deleted: false
+
+Next task: `PUBLIC-ALPHA-LAUNCH-00`.

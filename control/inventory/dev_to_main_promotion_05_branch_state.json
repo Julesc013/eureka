@@ -2,11 +2,11 @@
   "schema_version": "dev_to_main_promotion_05_branch_state.v0",
   "task": "DEV-TO-MAIN-PROMOTION-REVIEW-05",
   "branch": "dev",
-  "head": "8f02824e0fb87431e104a63516af74089fbb461d",
-  "origin_main": "7a73de52971f7240f05ead11d0426256c8bd75c9",
-  "origin_dev": "8f02824e0fb87431e104a63516af74089fbb461d",
-  "merge_base": "7a73de52971f7240f05ead11d0426256c8bd75c9",
-  "ahead_behind_origin_main_origin_dev": "0 3",
+  "head": "8f79a788721001ee366872ae975b906cb3db51ba",
+  "origin_main": "8f79a788721001ee366872ae975b906cb3db51ba",
+  "origin_dev": "8f79a788721001ee366872ae975b906cb3db51ba",
+  "merge_base": "8f79a788721001ee366872ae975b906cb3db51ba",
+  "ahead_behind_origin_main_origin_dev": "0 0",
   "ahead_behind_origin_dev_head": "0 0",
   "origin_main_can_fast_forward_to_origin_dev": true,
   "origin_main_ahead_of_origin_dev": false,
@@ -17,5 +17,9 @@
   "promotion_waiting_for_external_full_discovery": false,
   "external_full_discovery_passed": true,
   "promotion_ready": true,
-  "promotion_performed": false
+  "promotion_performed": true,
+  "promotion_method": "fast_forward_only",
+  "main_pushed": true,
+  "dev_pushed": true,
+  "origin_main_equals_origin_dev": true
 }

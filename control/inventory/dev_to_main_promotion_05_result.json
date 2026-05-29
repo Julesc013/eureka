@@ -18,10 +18,15 @@
   "full_discovery_errors_remaining": 0,
   "full_discovery_exit_code": 0,
   "promotion_ready": true,
-  "promotion_performed": false,
-  "main_pushed": false,
+  "promotion_performed": true,
+  "promotion_method": "fast_forward_only",
+  "main_pushed": true,
   "dev_pushed": true,
-  "origin_main_equals_origin_dev": false,
+  "origin_main_equals_origin_dev": true,
+  "force_push_performed": false,
+  "rebase_performed": false,
+  "history_rewrite_performed": false,
+  "branch_deleted": false,
   "deployment_performed": false,
   "public_launch_performed": false,
   "production_readiness_claimed": false,
@@ -33,5 +38,5 @@
   "model_provider_used": false,
   "site_dist_written": false,
   "dns_changed": false,
-  "recommended_next_task": "fast_forward_main_to_dev"
+  "recommended_next_task": "PUBLIC-ALPHA-LAUNCH-00 - Explicit manual launch task for read-only alpha"
 }

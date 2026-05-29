@@ -1,5 +1,5 @@
 task_id: DEV-TO-MAIN-PROMOTION-REVIEW-05
-status: WAITING_FOR_EXTERNAL_FULL_DISCOVERY
+status: PASS
 requires:
   - PUBLIC-ALPHA-DEPLOY-DRY-RUN-00
   - focused_validators_pass
@@ -16,13 +16,22 @@ evidence:
   - control/inventory/dev_to_main_promotion_05_failure_repair_log.json
   - control/audits/dev-to-main-promotion-review-05-v0/
 external_full_discovery:
-  status: waiting
+  status: pass
   command: python scripts/eureka_test_gate.py --gate promotion_gate --watch --clean
   latest_attempt_status: fail
   latest_attempt_tests_run: 5081
   latest_attempt_failures: 22
   latest_attempt_errors: 3
   focused_repairs_completed: true
+  rerun_status: pass
+  rerun_tests_run: 5081
+  rerun_failures: 0
+  rerun_errors: 0
+promotion_performed: true
+promotion_method: fast_forward_only
+main_pushed: true
+dev_pushed: true
+origin_main_equals_origin_dev: true
 deployment_allowed: false
 public_launch_allowed: false
 production_readiness_claimed: false

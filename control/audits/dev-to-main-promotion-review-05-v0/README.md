@@ -1,17 +1,20 @@
 # DEV-TO-MAIN-PROMOTION-REVIEW-05
 
-Status: `READY_FOR_FAST_FORWARD_PROMOTION`
+Status: `PASS`
 
-This promotion review verifies the public alpha launch-candidate and deploy
-dry-run evidence. External full discovery has passed for the current repaired
-`dev` head, so `main` may be promoted by fast-forward only.
+This promotion review verified the public alpha launch-candidate and deploy
+dry-run evidence. External full discovery passed for the repaired `dev` head,
+and `main` was promoted by fast-forward only.
 
-- dev head: `8f02824e0fb87431e104a63516af74089fbb461d`
-- origin/main: `7a73de52971f7240f05ead11d0426256c8bd75c9`
-- origin/main...origin/dev: `0 3`
+- promoted head: `8f79a788721001ee366872ae975b906cb3db51ba`
+- origin/main: `8f79a788721001ee366872ae975b906cb3db51ba`
+- origin/dev: `8f79a788721001ee366872ae975b906cb3db51ba`
+- origin/main...origin/dev: `0 0`
 - external full discovery: PASS, 5081 tests
+- promotion_performed: true
+- promotion_method: fast_forward_only
 - deployment_performed: false
 - public_launch_performed: false
 - public_launch_readiness_claimed: false
 
-Next action: fast-forward `main` to `dev`, then record final branch equality.
+Next task: `PUBLIC-ALPHA-LAUNCH-00`.

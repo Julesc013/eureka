@@ -2,60 +2,58 @@
 
 ## PHASE
 
-DEV-TO-MAIN-PROMOTION-REVIEW-05
+UNSPECIFIED - PUBLIC-ALPHA-LAUNCH-00
 
 ## GOAL
 
-Promote the public alpha launch-candidate and deploy dry-run evidence from
-`dev` to `main` only after a current external full-discovery run passes. The
-current state is waiting for that external gate.
+PUBLIC-ALPHA-LAUNCH-00
 
 ## WHY
 
-`PUBLIC-ALPHA-DEPLOY-DRY-RUN-00` passed on `dev`, but promotion policy requires
-external full discovery before fast-forwarding `main`. This task records the
-handoff and blocks promotion until the compact external result is returned.
+Continue AIDE token survival by using repo-local context refs, compact objectives, deterministic validation, and evidence packets instead of long chat history.
 
 ## CONTEXT_REFS
 
 - `AGENTS.md`
 - `.aide/queue/index.yaml`
-- `.aide/queue/DEV-TO-MAIN-PROMOTION-REVIEW-05/task.yaml`
-- `.aide/context/repo-map.json`
-- `.aide/context/test-map.json`
-- `.aide/context/context-index.json`
-- `.aide/context/latest-context-packet.md`
-- `control/inventory/public_alpha_deploy_dry_run_result.json`
-- `control/inventory/public_alpha_launch_candidate_result.json`
-- `control/inventory/dev_to_main_promotion_05_result.json`
-- `control/inventory/dev_to_main_promotion_05_full_discovery_handoff.json`
-- `control/audits/dev-to-main-promotion-review-05-v0/`
+- `.aide/memory/project-state.md`
+- `.aide/memory/decisions.md`
+- `.aide/memory/open-risks.md`
+- `.aide/context/repo-snapshot.json` (present)
+- `.aide/context/repo-map.json` (present)
+- `.aide/context/repo-map.md` (present)
+- `.aide/context/test-map.json` (present)
+- `.aide/context/context-index.json` (present)
+- `.aide/context/latest-context-packet.md` (present)
+- `.aide/repo/latest-repo-intelligence.md` (present)
+- `.aide/repo/file-inventory.json` (present)
+- `.aide/reports/file-quality-summary.md` (present)
+- `.aide/reports/file-quality-ledger.json` (present)
+- `.aide/refactors/latest-refactor-readiness.md` (present)
+- `.aide/refactors/latest-refactor-plan.example.json` (present)
+- `.aide/routing/latest-route-decision.json` (present)
+- `.aide/routing/latest-route-decision.md` (present)
+- `.aide/cache/latest-cache-keys.json` (present)
+- `.aide/cache/latest-cache-keys.md` (present)
+- `.aide/prompts/compact-task.md`
+- `.aide/policies/token-budget.yaml`
+- `.aide/policies/cache.yaml`
+- `.aide/policies/local-state.yaml`
 
 ## ALLOWED_PATHS
 
-- `.aide/queue/DEV-TO-MAIN-PROMOTION-REVIEW-05/**`
-- `.aide/queue/PUBLIC-ALPHA-LAUNCH-00/**`
-- `.aide/queue/PUBLIC-DEMAND-SIGNAL-00/**`
-- `.aide/queue/PUBLIC-SOURCE-REQUEST-QUEUE-00/**`
-- `.aide/queue/index.yaml`
-- `.aide/context/latest-task-packet.md`
-- `.aide/context/latest-review-packet.md`
-- `.aide/reports/eureka-repo-health.json`
-- `.aide/reports/eureka-repo-health.md`
-- `control/inventory/dev_to_main_promotion_05_*.json`
-- `control/audits/dev-to-main-promotion-review-05-v0/**`
-- `docs/operations/DEV_TO_MAIN_PROMOTION_REVIEW_05.md`
-- `docs/operations/POST_PUBLIC_ALPHA_DEPLOY_DRY_RUN_PROMOTION_PLAN.md`
-- `scripts/validate_dev_to_main_promotion_05.py`
-- `scripts/validate_dev_to_main_promotion_03.py`
-- `scripts/validate_dev_to_main_promotion_04.py`
-- `tools/generators/hunt_queue_progress.py`
-- `tools/validators/validate_local_appliance_track.py`
-- `tools/validators/validate_dev_to_main_promotion_05.py`
-- `tests/operations/test_dev_to_main_promotion_05.py`
-- `tests/scripts/test_validate_dev_to_main_promotion_05.py`
-- `control/policies/generated_artifact_policy.json`
-- `snapshots/examples/static_snapshot_v0/**`
+- `.aide/**`
+- `AGENTS.md`
+- `docs/operations/**`
+- `docs/reference/**`
+- `control/inventory/**`
+- `control/audits/**`
+- `control/policies/**`
+- `scripts/local_queue_progress.py`
+- `scripts/validate_*.py`
+- `scripts/check_*.py`
+- `tests/operations/**`
+- `tests/aide/**`
 
 ## FORBIDDEN_PATHS
 
@@ -63,82 +61,87 @@ handoff and blocks promotion until the compact external result is returned.
 - `.env`
 - `secrets/**`
 - `.aide.local/**`
+- `.local/**`
+- `.cache/**`
 - `eureka-instance/**`
-- `instances/**`
-- `../eureka-test-runs/**`
-- static distribution output roots
-- `data/public_index/**`
-- `runtime/extraction/**`
-- `runtime/search_quality/**`
+- `runtime/**`
+- `contracts/**`
+- `surfaces/**`
+- `site/**`
 - `native/**`
 - `crates/**`
-- raw live source responses, raw full-discovery logs, operator tokens, provider
-  credentials, and committed local instance state
-
-## VALIDATION
-
-- `git diff --check`
-- `python scripts/validate_dev_to_main_promotion_05.py`
-- `python scripts/validate_public_alpha_deploy_dry_run.py`
-- `python scripts/validate_public_alpha_launch_candidate.py`
-- `python scripts/validate_public_alpha_readonly_closeout.py`
-- `python scripts/validate_public_alpha_readonly.py`
-- `python scripts/validate_public_alpha_hosting_readiness.py`
-- `python scripts/validate_snapshot_relay.py`
-- `python scripts/validate_source_wave.py`
-- `python scripts/validate_source_action_kernel.py`
-- `python scripts/validate_test_run_summary.py --help`
-- `python scripts/check_architecture_boundaries.py`
-- `python scripts/check_generated_artifact_cleanliness.py --check --json`
-- `python -m unittest tests.operations.test_dev_to_main_promotion_05`
-- `python -m unittest tests.scripts.test_validate_dev_to_main_promotion_05`
-- `python -m unittest <failed promotion_gate modules>`
-- `python scripts/check_generated_artifact_drift.py --json`
-- `python .aide/scripts/aide_lite.py doctor`
-- `python .aide/scripts/aide_lite.py validate`
-- `python .aide/scripts/aide_lite.py test`
-- `python .aide/scripts/aide_lite.py selftest`
-- `python .aide/scripts/aide_lite.py verify`
-- `python .aide/scripts/aide_lite.py review-pack`
+- `examples/**`
+- `evals/**`
+- `tests/**` unless this is an AIDE/control-plane test repair
+- `scripts/**` unless this is an AIDE validator/check repair
+- raw provider credentials, API keys, local caches, raw prompt logs, raw responses, and source AIDE repository state
 
 ## IMPLEMENTATION
 
-- Record promotion-05 branch, scope, validation, boundary, and waiting
-  full-discovery handoff evidence.
-- Repair stale HUNT/LOCAL/promotion validator successor-state assumptions and
-  static snapshot checksum drift exposed by the external promotion gate.
-- Verify deploy dry-run and launch-candidate evidence remains safe.
-- Do not fast-forward `main` until a current external full-discovery pass is
-  returned.
+- Read the queue packet and relevant repo refs first.
+- Keep changes inside the allowed paths.
+- Make the smallest coherent diff that satisfies acceptance.
+- Preserve generated/manual boundaries.
+- Do not inline whole source files unless exact contents are required.
+- Use exact refs such as `path#Lstart-Lend` when file details are load-bearing.
+
+## VALIDATION
+
+- `py -3 .aide/scripts/aide_lite.py doctor`
+- `py -3 .aide/scripts/aide_lite.py validate`
+- `py -3 .aide/scripts/aide_lite.py snapshot`
+- `py -3 .aide/scripts/aide_lite.py index`
+- `py -3 .aide/scripts/aide_lite.py context`
+- `py -3 .aide/scripts/aide_lite.py pack --task "AIDE-EVAL-GREEN-01"`
+- `py -3 .aide/scripts/aide_lite.py test`
+- `py -3 .aide/scripts/aide_lite.py selftest`
+- `py -3 .aide/scripts/aide_lite.py verify`
+- `py -3 .aide/scripts/aide_lite.py review-pack`
+- `py -3 .aide/scripts/aide_lite.py eval run`
+- `python scripts/check_architecture_boundaries.py`
+- `python scripts/check_generated_artifact_cleanliness.py --check --json`
+- `python -m unittest discover -s tests -t .`
+- `git diff --check`
+
+## COMMITS
+
+- Commit coherent subdeliverables with verbose bodies.
+- Stop at review gates.
 
 ## EVIDENCE
 
-- `control/inventory/dev_to_main_promotion_05_*.json`
-- `control/audits/dev-to-main-promotion-review-05-v0/`
-- `docs/operations/DEV_TO_MAIN_PROMOTION_REVIEW_05.md`
-- focused promotion validator and tests
+- changed files
+- validation commands and results
+- verifier result
+- review packet path and result when review-pack is available
+- advisory route decision path and result when Q17 routing is available
+- compact packet size and budget status
+- unresolved risks and deferrals
 
 ## NON_GOALS
 
-No deployment, publication, DNS change, production readiness claim, public
-launch readiness claim, live source fanout, public mutation, accounts,
-downloads, uploads, extraction, model/provider calls, native work, marketplace
-work, or full discovery inside the AI session.
+- No Eureka product behavior change.
+- No source probes, extraction, model/provider calls, deployment, production-readiness claim, public-launch claim, main promotion, force-push, history rewrite, SYN implementation, or F0 implementation.
+- No Gateway, provider calls, live model routing, local model setup, exact tokenizer, provider billing ledger, Runtime, Service, Commander, Mobile, MCP/A2A, UI, host/app implementation, or autonomous loop unless a future reviewed queue item explicitly authorizes it.
 
 ## ACCEPTANCE
 
-- Promotion-05 validator and tests pass in waiting state.
-- External full-discovery handoff exists.
-- `main` is not promoted while waiting.
-- Next action is external full discovery.
+- Task-specific acceptance criteria are met.
+- Validation is run and recorded.
+- Evidence is written.
+- No secrets, raw prompt logs, local caches, or `.aide.local` contents are committed.
 
 ## OUTPUT_SCHEMA
 
-Return `STATUS`, `SUMMARY`, `VALIDATION`, `BOUNDARIES`, and `NEXT_TASK`.
+Return a compact final report with `STATUS`, `SUMMARY`, `COMMITS`, `CHANGED_FILES`, `VALIDATION`, route/verifier/token results, `RISKS`, and `NEXT`.
+Include the verifier result when Q12 verifier behavior is available.
 
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 6500
-- approx_tokens: 1625
+- chars: 4764
+- approx_tokens: 1191
 - budget_status: PASS
+- warnings:
+  - none
+- formal ledger: `.aide/reports/token-ledger.jsonl`

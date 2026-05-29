@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (5252 chars, 1313 approximate tokens)
+- `.aide/context/latest-task-packet.md` (4764 chars, 1191 approximate tokens)
 
 ## Context Packet Reference
 
@@ -33,23 +33,17 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Changed Files Summary
 
+- allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
+- allowed: `.aide/queue/DEV-TO-MAIN-PROMOTION-REVIEW-05/task.yaml` (M; matches active task allowed path)
+- allowed: `.aide/queue/index.yaml` (M; matches active task allowed path)
 - allowed: `control/audits/dev-to-main-promotion-review-05-v0/README.md` (M; matches active task allowed path)
 - allowed: `control/audits/dev-to-main-promotion-review-05-v0/branch_state.md` (M; matches active task allowed path)
 - allowed: `control/audits/dev-to-main-promotion-review-05-v0/dev_to_main_promotion_05_report.json` (M; matches active task allowed path)
-- allowed: `control/audits/dev-to-main-promotion-review-05-v0/full_discovery_evidence.md` (M; matches active task allowed path)
 - allowed: `control/audits/dev-to-main-promotion-review-05-v0/generated/sample_summary.md` (M; matches active task allowed path)
 - allowed: `control/audits/dev-to-main-promotion-review-05-v0/promotion_result.md` (M; matches active task allowed path)
-- allowed: `control/audits/dev-to-main-promotion-review-05-v0/validation.md` (M; matches active task allowed path)
-- allowed: `control/audits/dev-to-main-promotion-review-05-v0/validation_matrix.md` (M; matches active task allowed path)
 - allowed: `control/inventory/dev_to_main_promotion_05_branch_state.json` (M; matches active task allowed path)
-- allowed: `control/inventory/dev_to_main_promotion_05_failure_repair_log.json` (M; matches active task allowed path)
-- allowed: `control/inventory/dev_to_main_promotion_05_full_discovery_result.json` (M; matches active task allowed path)
-- allowed: `control/inventory/dev_to_main_promotion_05_input_state.json` (M; matches active task allowed path)
 - allowed: `control/inventory/dev_to_main_promotion_05_next_task_decision.json` (M; matches active task allowed path)
 - allowed: `control/inventory/dev_to_main_promotion_05_result.json` (M; matches active task allowed path)
-- allowed: `control/inventory/dev_to_main_promotion_05_validation_matrix.json` (M; matches active task allowed path)
-- allowed: `tests/operations/test_dev_to_main_promotion_05.py` (M; matches active task allowed path)
-- allowed: `tests/scripts/test_validate_dev_to_main_promotion_05.py` (M; matches active task allowed path)
 
 ## Validation Summary
 
@@ -59,8 +53,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 6236
-- approx_tokens: 1559
+- chars: 5462
+- approx_tokens: 1366
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:
