@@ -18,7 +18,17 @@ class PublicSearchValidationTestCase(unittest.TestCase):
         self.assertEqual(request.normalized_query, "windows 7 apps")
         self.assertEqual(request.limit, 10)
         self.assertEqual(request.mode, "local_index_only")
+        self.assertEqual(request.source_policy, "local_index_only")
         self.assertEqual(request.profile, "api_client")
+
+    def test_archive_org_metadata_candidate_source_policy_is_allowed(self) -> None:
+        request = validate_public_search_query(
+            parse_qs("q=audacity&source_policy=archive_org_metadata_candidates")
+        )
+
+        self.assertIsInstance(request, PublicSearchRequest)
+        assert isinstance(request, PublicSearchRequest)
+        self.assertEqual(request.source_policy, "archive_org_metadata_candidates")
 
     def test_missing_and_too_long_queries_return_governed_errors(self) -> None:
         missing = validate_public_search_query({})
@@ -50,6 +60,7 @@ class PublicSearchValidationTestCase(unittest.TestCase):
     def test_mode_profile_include_and_limit_are_bounded(self) -> None:
         cases = [
             ("q=archive&mode=live_probe", "live_probes_disabled"),
+            ("q=archive&source_policy=live_probe", "unsupported_mode"),
             ("q=archive&profile=admin", "unsupported_profile"),
             ("q=archive&include=raw_payload", "unsupported_include"),
             ("q=archive&limit=99", "limit_too_large"),

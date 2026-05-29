@@ -49,6 +49,9 @@ from runtime.engine.snapshots import ResolutionBundleExportService, ResolutionBu
 from runtime.engine.store import LocalExportStore, ResolutionExportStoreEngineService
 from runtime.engine.synthetic_records import synthesize_member_normalized_records
 from runtime.source.registry import load_source_registry
+from runtime.source.observation.archive_org_public_metadata import (
+    ArchiveOrgMetadataCandidateProvider,
+)
 from runtime.gateway.public_api.action_plan_boundary import ActionPlanPublicApi
 from runtime.gateway.public_api.archive_resolution_evals_boundary import (
     ArchiveResolutionEvalsPublicApi,
@@ -109,7 +112,12 @@ def build_demo_search_public_api() -> SearchPublicApi:
     return SearchPublicApi(search_service)
 
 
-def build_demo_public_search_public_api() -> PublicSearchPublicApi:
+def build_demo_public_search_public_api(
+    *,
+    archive_org_metadata_candidates_enabled: bool = False,
+    archive_org_metadata_candidate_rows: int = 5,
+    archive_org_metadata_timeout_seconds: int = 5,
+) -> PublicSearchPublicApi:
     source_registry = load_source_registry()
     public_index = load_public_search_index_records()
     if public_index.status == "valid" and public_index.records:
@@ -127,6 +135,19 @@ def build_demo_public_search_public_api() -> PublicSearchPublicApi:
         query_planner=DeterministicQueryPlannerService(),
         index_status=index_status,
         index_document_count=index_document_count,
+        archive_org_metadata_candidates=(
+            ArchiveOrgMetadataCandidateProvider(
+                rows=archive_org_metadata_candidate_rows,
+                timeout_seconds=archive_org_metadata_timeout_seconds,
+            )
+            if archive_org_metadata_candidates_enabled
+            else None
+        ),
+        default_source_policy=(
+            "archive_org_metadata_candidates"
+            if archive_org_metadata_candidates_enabled
+            else "local_index_only"
+        ),
     )
 
 

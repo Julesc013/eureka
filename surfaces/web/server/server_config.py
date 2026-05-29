@@ -325,6 +325,7 @@ def _safe_wrapper_summary(value: Mapping[str, object] | None) -> dict[str, objec
         "allow_nonlocal_bind",
         "live_probes_enabled",
         "live_internet_archive_enabled",
+        "archive_org_metadata_candidates_enabled",
         "downloads_enabled",
         "local_paths_enabled",
         "user_storage_enabled",

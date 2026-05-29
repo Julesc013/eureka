@@ -85,10 +85,11 @@
     "source_policy": {
       "type": "string",
       "enum": [
-        "local_index_only"
+        "local_index_only",
+        "archive_org_metadata_candidates"
       ],
       "default": "local_index_only",
-      "description": "Restricts search to a controlled local index. Future values require a new contract review."
+      "description": "Restricts search to a controlled local index, or allows Archive.org metadata-only review candidates when explicitly enabled by the runtime."
     }
   },
   "not": {
@@ -237,6 +238,10 @@
   },
   "x-allowed_modes": [
     "local_index_only"
+  ],
+  "x-allowed_source_policies": [
+    "local_index_only",
+    "archive_org_metadata_candidates"
   ],
   "x-implemented_runtime_modes": [],
   "x-forbidden_parameters": [

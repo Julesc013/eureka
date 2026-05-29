@@ -14,7 +14,9 @@ Search Static Handoff v0 as a no-JS, disabled-hosted-backend entry point.
 - [x] `python scripts/validate_public_search_production_contract.py` passes locally.
 - [x] `python scripts/validate_public_search_result_card_contract.py` passes locally.
 - [x] `python scripts/validate_public_search_safety.py` passes locally.
-- [x] `contracts/api/search_request.v0.json` remains `local_index_only` only.
+- [x] `contracts/api/search_request.v0.json` keeps `mode=local_index_only`;
+  `source_policy=archive_org_metadata_candidates` is available only for
+  bounded review-only Archive.org metadata candidates.
 - [x] `contracts/api/search_response.v0.json` still aligns with result cards.
 - [x] `contracts/api/error_response.v0.json` contains required safety error
   codes.
@@ -31,8 +33,11 @@ Search Static Handoff v0 as a no-JS, disabled-hosted-backend entry point.
   caller-provided.
 - [x] Request parser rejects local path, URL, credential, download, install,
   execute, upload, live-probe, and arbitrary-source parameters.
-- [x] No live probes or external source calls are reachable from public search.
+- [x] No live probes are reachable from public search. The only external source
+  call currently allowed is bounded Archive.org metadata candidate search.
 - [x] No arbitrary URL fetch is reachable from public search.
+- [x] Archive.org metadata candidates are review-only and do not download,
+  extract, mutate indexes, or promote reviewed truth.
 - [x] No downloads, installers, execution, mirrors, restore, rollback, or uploads
   are exposed.
 - [x] Raw source payloads and private local paths are never returned.
@@ -58,6 +63,8 @@ Search Static Handoff v0 as a no-JS, disabled-hosted-backend entry point.
 - [x] P54 local config check fails closed when `EUREKA_OPERATOR_KILL_SWITCH=1`.
 - [x] Live probes, downloads, installs, local paths, uploads, and telemetry flags
   default disabled.
+- [x] `EUREKA_ARCHIVE_ORG_METADATA_CANDIDATES` controls the metadata-only
+  candidate path separately from live probes.
 - [ ] Logging/privacy posture is accepted before any hosted rehearsal.
 - [ ] Raw query logging is disabled by default or sanitized with short retention
   after policy review.

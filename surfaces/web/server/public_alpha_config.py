@@ -37,6 +37,7 @@ class PublicAlphaWrapperConfig:
     allow_nonlocal_bind: bool = False
     allow_live_probes: bool = False
     allow_live_ia: bool = False
+    allow_archive_org_metadata_candidates: bool = True
     disable_downloads: bool = True
     disable_local_paths: bool = True
     disable_user_storage: bool = True
@@ -71,6 +72,10 @@ class PublicAlphaWrapperConfig:
             errors.append("live probes are not supported by this milestone and must remain disabled")
         if self.allow_live_ia:
             errors.append("live Internet Archive access is not supported by this milestone")
+        if self.allow_archive_org_metadata_candidates and self.max_results_per_source > MAX_RESULTS_PER_SOURCE_LIMIT:
+            errors.append(
+                f"Archive.org metadata candidate rows must be <= {MAX_RESULTS_PER_SOURCE_LIMIT}"
+            )
         if not self.disable_downloads:
             errors.append("downloads/export/readback controls must remain disabled or route-blocked")
         if not self.disable_local_paths:
@@ -98,6 +103,10 @@ class PublicAlphaWrapperConfig:
             warnings.append(
                 "nonlocal bind requested; this is still not deployment approval or production readiness"
             )
+            if self.allow_archive_org_metadata_candidates:
+                warnings.append(
+                    "Archive.org metadata candidates are enabled; public exposure still needs external abuse controls"
+                )
         return tuple(warnings)
 
     def to_summary_dict(self) -> dict[str, object]:
@@ -114,6 +123,7 @@ class PublicAlphaWrapperConfig:
             "allow_nonlocal_bind": self.allow_nonlocal_bind,
             "live_probes_enabled": self.allow_live_probes,
             "live_internet_archive_enabled": self.allow_live_ia,
+            "archive_org_metadata_candidates_enabled": self.allow_archive_org_metadata_candidates,
             "downloads_enabled": not self.disable_downloads,
             "local_paths_enabled": not self.disable_local_paths,
             "user_storage_enabled": not self.disable_user_storage,
@@ -130,6 +140,11 @@ class PublicAlphaWrapperConfig:
             "route_policy": {
                 "local_path_controls": "disabled",
                 "live_probes": "disabled",
+                "archive_org_metadata_candidates": (
+                    "metadata_only_candidate_search"
+                    if self.allow_archive_org_metadata_candidates
+                    else "disabled"
+                ),
                 "downloads": "disabled_or_route_blocked",
                 "user_storage": "disabled",
             },
@@ -172,6 +187,11 @@ def load_public_alpha_wrapper_config(
         ),
         allow_live_probes=_bool_env(env, "EUREKA_ALLOW_LIVE_PROBES", False),
         allow_live_ia=_bool_env(env, "EUREKA_ALLOW_LIVE_IA", False),
+        allow_archive_org_metadata_candidates=_bool_env(
+            env,
+            "EUREKA_ARCHIVE_ORG_METADATA_CANDIDATES",
+            True,
+        ),
         disable_downloads=_bool_env(env, "EUREKA_DISABLE_DOWNLOADS", True),
         disable_local_paths=_bool_env(env, "EUREKA_DISABLE_LOCAL_PATHS", True),
         disable_user_storage=_bool_env(env, "EUREKA_DISABLE_USER_STORAGE", True),

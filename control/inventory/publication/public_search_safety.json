@@ -20,6 +20,10 @@
   "allowed_modes": [
     "local_index_only"
   ],
+  "allowed_source_policies": [
+    "local_index_only",
+    "archive_org_metadata_candidates"
+  ],
   "disabled_modes": [
     "live_probe",
     "live_federated",
@@ -46,6 +50,8 @@
     "max_result_limit": 25,
     "max_checked_sources_v0": "controlled_local_index_only",
     "max_live_sources_v0": 0,
+    "max_metadata_candidate_sources_v0": 1,
+    "max_metadata_candidate_rows_per_source": 10,
     "raw_source_payloads_allowed": false,
     "download_urls_allowed": false,
     "install_urls_allowed": false
@@ -89,7 +95,9 @@
     "arbitrary_url_fetching",
     "live_external_source_fanout",
     "google_scraping",
-    "internet_archive_live_calls",
+    "unapproved_internet_archive_live_calls",
+    "internet_archive_file_fetches",
+    "internet_archive_downloads",
     "wayback_live_calls",
     "github_live_calls",
     "package_registry_live_calls",
@@ -196,6 +204,7 @@
       "EUREKA_SEARCH_MODE": "local_index_only",
       "EUREKA_ALLOW_UPLOADS": "0",
       "EUREKA_ALLOW_ARBITRARY_URL_FETCH": "0",
+      "EUREKA_ARCHIVE_ORG_METADATA_CANDIDATES": "1",
       "EUREKA_GLOBAL_TIMEOUT_MS": "5000"
     },
     "kill_switch_required": true,
@@ -208,6 +217,8 @@
   "public_alpha_defaults": {
     "compatible_with_public_alpha_safe_mode": true,
     "public_search_live": false,
+    "archive_org_metadata_candidate_search_allowed": true,
+    "archive_org_metadata_candidate_search_default": true,
     "local_prototype_routes_allowed": true,
     "hosted_public_search_live": false,
     "local_paths_allowed": false,
@@ -216,7 +227,7 @@
     "installs_allowed": false,
     "uploads_allowed": false,
     "telemetry_allowed": false,
-    "notes": "Public-alpha safe mode remains non-production and may expose local/prototype /api/v1 search only under local_index_only constraints."
+    "notes": "Public-alpha safe mode remains non-production and may expose local/prototype /api/v1 search under local_index_only mode with optional Archive.org metadata-only review candidates."
   },
   "static_site_defaults": {
     "github_pages_static_only": true,
@@ -268,6 +279,7 @@
     "local index root is server-owned and not caller-provided",
     "no local path parameters accepted",
     "no live probes accepted",
+    "Archive.org metadata candidate search remains metadata-only, bounded, and review-only",
     "no downloads, installs, execution, or uploads exposed",
     "stable error mapping implemented and tested",
     "HTML and JSON response behavior defined",
@@ -284,6 +296,7 @@
     "It does not implement rate-limit middleware, auth, sessions, telemetry, logging runtime, live probes, downloads, installers, uploads, local path ingestion, or backend hosting.",
     "Public Search Rehearsal v0 records local safe-query and blocked-request evidence.",
     "Hosted public search exposure remains blocked until the readiness checklist, operator controls, and hosted rehearsal gates are satisfied.",
+    "Archive.org metadata candidate search is the only approved external metadata source policy for this local public-alpha runtime; it is not a live probe, arbitrary URL fetch, download, source-cache mutation, or reviewed-truth claim.",
     "Hosted Public Search Wrapper v0 adds local/prototype wrapper readiness and rehearsal checks for local_index_only routes only. It does not deploy hosted search, enable live probes, add telemetry, add accounts, or change no_hosted_public_search_live.",
     "Static Site Search Integration v0 adds no-JS search surfaces and public data summaries while preserving disabled hosted search, live probes, downloads, uploads, local paths, arbitrary URL fetch, accounts, and telemetry.",
     "Public Search Safety Evidence v0 records local safe-query, blocked-request, limit/status, static handoff, public index, hosted-wrapper, privacy/redaction, and operator-gated rate-limit evidence without hosted deployment or live probes.",

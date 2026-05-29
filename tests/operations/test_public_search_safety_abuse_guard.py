@@ -76,6 +76,10 @@ class PublicSearchSafetyAbuseGuardTest(unittest.TestCase):
         payload = json.loads(SAFETY.read_text(encoding="utf-8"))
         self.assertEqual(payload["first_allowed_mode"], "local_index_only")
         self.assertEqual(payload["allowed_modes"], ["local_index_only"])
+        self.assertEqual(
+            payload["allowed_source_policies"],
+            ["local_index_only", "archive_org_metadata_candidates"],
+        )
         self.assertIn("live_probe", payload["disabled_modes"])
         self.assertIn("arbitrary_url_fetch", payload["disabled_modes"])
         self.assertIn("local_path_search", payload["disabled_modes"])
@@ -90,6 +94,7 @@ class PublicSearchSafetyAbuseGuardTest(unittest.TestCase):
         self.assertEqual(payload["result_limits"]["default_result_limit"], 10)
         self.assertEqual(payload["result_limits"]["max_result_limit"], 25)
         self.assertEqual(payload["result_limits"]["max_live_sources_v0"], 0)
+        self.assertEqual(payload["result_limits"]["max_metadata_candidate_sources_v0"], 1)
         self.assertEqual(payload["timeout_policy"]["max_runtime_ms_contract"], 3000)
 
     def test_forbidden_parameters_and_behaviors_are_complete(self) -> None:
@@ -102,7 +107,8 @@ class PublicSearchSafetyAbuseGuardTest(unittest.TestCase):
             "arbitrary_url_fetching",
             "live_external_source_fanout",
             "google_scraping",
-            "internet_archive_live_calls",
+            "unapproved_internet_archive_live_calls",
+            "internet_archive_file_fetches",
             "local_filesystem_search",
             "downloads",
             "installs",

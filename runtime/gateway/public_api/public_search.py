@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 import re
-from typing import Any, Mapping, Sequence
+from typing import Any, Mapping, Protocol, Sequence
 from urllib.parse import quote
 
 from runtime.engine.index import IndexRecord
@@ -17,6 +17,8 @@ SEARCH_RESPONSE_CONTRACT_ID = "eureka_public_search_response_v0"
 ERROR_RESPONSE_CONTRACT_ID = "eureka_public_search_error_response_v0"
 RESULT_CARD_CONTRACT_ID = "eureka_public_search_result_card_v0"
 MODE = "local_index_only"
+ARCHIVE_ORG_METADATA_CANDIDATES = "archive_org_metadata_candidates"
+ALLOWED_SOURCE_POLICIES = frozenset({MODE, ARCHIVE_ORG_METADATA_CANDIDATES})
 MAX_QUERY_LENGTH = 160
 DEFAULT_RESULT_LIMIT = 10
 MAX_RESULT_LIMIT = 25
@@ -109,6 +111,11 @@ class PublicSearchRequest:
     cursor: str | None = None
 
 
+class ArchiveOrgMetadataCandidateProvider(Protocol):
+    def search_metadata_candidates(self, query: str, limit: int) -> Mapping[str, Any]:
+        ...
+
+
 class PublicSearchPublicApi:
     def __init__(
         self,
@@ -118,12 +125,18 @@ class PublicSearchPublicApi:
         query_planner: QueryPlannerService,
         index_status: str = "controlled_local_index_only",
         index_document_count: int | None = None,
+        archive_org_metadata_candidates: ArchiveOrgMetadataCandidateProvider | None = None,
+        default_source_policy: str = MODE,
     ) -> None:
         self._index_records = tuple(index_records)
         self._source_registry = source_registry
         self._query_planner = query_planner
         self._index_status = index_status
         self._index_document_count = index_document_count if index_document_count is not None else len(index_records)
+        self._archive_org_metadata_candidates = archive_org_metadata_candidates
+        if default_source_policy not in ALLOWED_SOURCE_POLICIES:
+            raise ValueError(f"unsupported default source policy: {default_source_policy}")
+        self._default_source_policy = default_source_policy
 
     def search(
         self,
@@ -134,6 +147,7 @@ class PublicSearchPublicApi:
         request_or_error = validate_public_search_query(
             query,
             default_profile=default_profile,
+            default_source_policy=self._default_source_policy,
         )
         if isinstance(request_or_error, PublicApiResponse):
             return request_or_error
@@ -149,11 +163,19 @@ class PublicSearchPublicApi:
             public_result_card_from_index_record(record, terms, self._source_registry)
             for record in limited
         ]
+        archive_candidate_result = _archive_org_candidate_search_result(
+            self._archive_org_metadata_candidates,
+            request,
+            terms,
+        )
+        archive_candidate_cards = _archive_org_candidate_cards(archive_candidate_result, terms)
         body = _search_success_envelope(
             request,
             cards,
             checked_sources=_checked_sources(limited, self._source_registry),
             plan=_plan_to_public_dict(self._query_planner, request.normalized_query),
+            archive_candidate_result=archive_candidate_result,
+            archive_candidate_cards=archive_candidate_cards,
         )
         body["index_status"] = self._index_status
         body["index_document_count"] = self._index_document_count
@@ -169,6 +191,7 @@ class PublicSearchPublicApi:
             query,
             default_profile=default_profile,
             allowed_parameters=SEARCH_QUERY_PARAMETERS,
+            default_source_policy=self._default_source_policy,
         )
         if isinstance(request_or_error, PublicApiResponse):
             return request_or_error
@@ -208,6 +231,8 @@ class PublicSearchPublicApi:
                     "hosted_public_deployment": False,
                     "mode": MODE,
                     "live_probes_enabled": False,
+                    "archive_org_metadata_candidate_search_available": self._archive_org_metadata_candidates is not None,
+                    "archive_org_metadata_candidate_search_default": self._default_source_policy == ARCHIVE_ORG_METADATA_CANDIDATES,
                     "downloads_enabled": False,
                     "installs_enabled": False,
                     "uploads_enabled": False,
@@ -219,6 +244,8 @@ class PublicSearchPublicApi:
                 "hosted_search_implemented": False,
                 "local_runtime_available": True,
                 "live_probes_enabled": False,
+                "archive_org_metadata_candidate_search_available": self._archive_org_metadata_candidates is not None,
+                "archive_org_metadata_candidate_search_default": self._default_source_policy == ARCHIVE_ORG_METADATA_CANDIDATES,
                 "downloads_enabled": False,
                 "uploads_enabled": False,
                 "installs_enabled": False,
@@ -315,6 +342,7 @@ def validate_public_search_query(
     *,
     default_profile: str = "api_client",
     allowed_parameters: frozenset[str] = SEARCH_QUERY_PARAMETERS,
+    default_source_policy: str = MODE,
 ) -> PublicSearchRequest | PublicApiResponse:
     forbidden = _forbidden_parameter_error(query)
     if forbidden is not None:
@@ -379,12 +407,15 @@ def validate_public_search_query(
             parameter="mode",
         )
 
-    source_policy = _optional_value(query, "source_policy") or MODE
-    if source_policy != MODE:
+    source_policy = _optional_value(query, "source_policy") or default_source_policy
+    if source_policy not in ALLOWED_SOURCE_POLICIES:
         return public_search_error_response(
             400,
             code="unsupported_mode",
-            message="Public search v0 only supports local_index_only source_policy.",
+            message=(
+                "Public search supports local_index_only or "
+                "archive_org_metadata_candidates source_policy."
+            ),
             parameter="source_policy",
         )
 
@@ -517,13 +548,236 @@ def public_result_card_from_index_record(
     return card
 
 
+def _archive_org_candidate_search_result(
+    provider: ArchiveOrgMetadataCandidateProvider | None,
+    request: PublicSearchRequest,
+    terms: Sequence[str],
+) -> dict[str, Any] | None:
+    del terms
+    if request.source_policy != ARCHIVE_ORG_METADATA_CANDIDATES:
+        return None
+    if provider is None:
+        return {
+            "schema_version": "archive_org_metadata_candidate_search.v0",
+            "status": "unavailable",
+            "query": request.normalized_query,
+            "source_id": "internet_archive_metadata",
+            "source_family": "internet_archive",
+            "candidate_count": 0,
+            "candidates": [],
+            "total_http_requests": 0,
+            "live_call_performed": False,
+            "metadata_request_performed": False,
+            "source_probe_executed": False,
+            "raw_response_committed": False,
+            "download_performed": False,
+            "upload_performed": False,
+            "extraction_executed": False,
+            "accepted_truth": False,
+            "review_required": True,
+            "failure_reason": "archive_org_metadata_candidate_provider_unavailable",
+            "warnings": [
+                "Archive.org metadata candidate search is not configured for this public-search API instance."
+            ],
+            "limitations": [
+                "archive_org_metadata_candidate_provider_unavailable",
+                "candidate_not_reviewed_truth",
+                "no_download",
+                "no_auto_promotion",
+            ],
+        }
+    return dict(provider.search_metadata_candidates(request.normalized_query, request.limit))
+
+
+def _archive_org_candidate_cards(
+    result: Mapping[str, Any] | None,
+    terms: Sequence[str],
+) -> list[dict[str, Any]]:
+    if not result or result.get("status") != "succeeded":
+        return []
+    cards: list[dict[str, Any]] = []
+    for candidate in result.get("candidates", []) or []:
+        if isinstance(candidate, Mapping):
+            cards.append(_archive_org_candidate_card(candidate, terms))
+    return cards
+
+
+def _archive_org_candidate_card(
+    candidate: Mapping[str, Any],
+    matched_terms: Sequence[str],
+) -> dict[str, Any]:
+    title = str(candidate.get("candidate_title") or candidate.get("identifier") or "Archive.org metadata candidate")
+    summary = str(candidate.get("candidate_summary") or "Archive.org metadata candidate; review required before use.")
+    identifier = str(candidate.get("identifier") or "")
+    target_ref = f"archive.org:item:{identifier}" if identifier else str(candidate.get("candidate_id") or "")
+    source = {
+        "source_id": "internet_archive_metadata",
+        "source_family": "internet_archive",
+        "source_label": "Internet Archive metadata search",
+        "source_status": "live_metadata_candidate_source",
+        "posture": "candidate_only",
+        "coverage_depth": "archive_org_metadata_search",
+        "trust_lane": "candidate_only",
+        "source_lane": "metadata_source",
+        "checked_as": "archive_org_metadata_candidate_search",
+        "limitations": [
+            "metadata_only",
+            "candidate_not_reviewed_truth",
+            "no_download",
+            "no_auto_promotion",
+        ],
+    }
+    warnings = [
+        _warning(
+            "archive_org_metadata_candidate",
+            "Archive.org metadata candidate requires review before promotion.",
+            "info",
+        ),
+        _warning("no_download", "Downloads are disabled in public search v0.", "caution"),
+        _warning("no_rights_clearance", "No rights clearance is claimed.", "caution"),
+        _warning("no_malware_scan", "Executable-like material was not scanned.", "warning"),
+    ]
+    limitations = sorted(
+        set(candidate.get("limitations") or [])
+        | {
+            "archive_org_metadata_only",
+            "candidate_not_reviewed_truth",
+            "external_metadata_source",
+            "no_download",
+            "no_install",
+            "no_execute",
+            "no_upload",
+            "no_extraction",
+            "no_auto_promotion",
+            "no_rights_clearance",
+            "no_malware_scan",
+            "not_production_ranking",
+        }
+    )
+    text = f"{title} {summary} {identifier}".casefold()
+    matched = [term for term in matched_terms if term in text]
+    return {
+        "schema_version": SCHEMA_VERSION,
+        "contract_id": RESULT_CARD_CONTRACT_ID,
+        "stability": _card_stability(),
+        "result_id": str(candidate.get("candidate_id") or target_ref),
+        "title": title,
+        "subtitle": summary,
+        "summary": summary,
+        "record_kind": "archive_org_metadata_candidate",
+        "matched_query_terms": matched,
+        "why_matched": [f"matched term: {term}" for term in matched[:6]]
+        or ["Archive.org metadata search returned this candidate."],
+        "why_ranked": ["Archive.org metadata search order; candidate requires review."],
+        "result_lane": "source_candidates",
+        "user_cost": {
+            "score": 3,
+            "label": "medium",
+            "reasons": ["external_metadata_candidate", "review_required"],
+            "explanation": "Metadata candidate from Archive.org; review required before promotion.",
+        },
+        "source": source,
+        "identity": {
+            "public_target_ref": target_ref,
+            "target_ref": target_ref,
+            "resolved_resource_id": None,
+            "object_id": identifier,
+            "release_or_state_id": str(candidate.get("date") or "") or None,
+            "representation_id": None,
+            "member_target_ref": None,
+            "native_source_id": identifier,
+            "identity_status": "candidate",
+            "notes": ["Archive.org identifier is public metadata; identity still requires Eureka review."],
+        },
+        "evidence": {
+            "evidence_count": 1,
+            "summaries": [
+                {
+                    "evidence_id": f"{candidate.get('candidate_id')}:archive_org_metadata",
+                    "evidence_kind": "archive_org_metadata_search_summary",
+                    "source_id": "internet_archive_metadata",
+                    "locator": None,
+                    "snippet": summary[:280],
+                    "confidence": "unknown",
+                }
+            ],
+            "provenance_notes": ["public-safe Archive.org metadata summary only"],
+            "missing_evidence": [],
+        },
+        "compatibility": {
+            "status": "unknown",
+            "target_platforms": [],
+            "architecture": "unknown",
+            "evidence_summaries": [],
+            "confidence": "unknown",
+            "caveats": [],
+            "unknowns": ["Archive.org metadata does not establish compatibility."],
+        },
+        "parent_lineage": [],
+        "member": None,
+        "representation": None,
+        "actions": {
+            "allowed": [
+                _action("inspect", "allowed", "Inspect public metadata for this candidate."),
+                _action("view_source", "allowed", "View governed source summary metadata."),
+                _action("view_provenance", "allowed", "View public-safe metadata provenance."),
+            ],
+            "blocked": [
+                _action("download", "blocked", "Downloads are disabled by Public Search Safety / Abuse Guard v0."),
+                _action("install_handoff", "blocked", "Installer handoff is disabled in v0."),
+                _action("execute", "blocked", "Execution is disabled in v0."),
+                _action("upload", "blocked", "Uploads and private source submission are disabled in v0."),
+            ],
+            "future_gated": [
+                _action("review_candidate", "future_gated", "Promotion requires a future review workflow action."),
+                _action("download_member", "future_gated", "Member downloads require a future rights and safety policy."),
+            ],
+        },
+        "rights": {
+            "rights_status": "unknown",
+            "distribution_allowed": "unknown",
+            "notes": ["Archive.org metadata does not grant Eureka distribution permission."],
+        },
+        "risk": {
+            "executable_risk": "unknown",
+            "malware_scan_status": "not_scanned",
+            "warnings": [
+                {
+                    "warning_type": "no_malware_scan",
+                    "message": "No malware scan or executable safety claim is made.",
+                    "severity": "warning",
+                }
+            ],
+        },
+        "warnings": warnings,
+        "limitations": limitations,
+        "gaps": [{"gap_type": "review_required", "message": "Candidate has not been reviewed or promoted."}],
+        "links": {
+            "inspect": None,
+            "source": "/api/v1/sources",
+            "evidence": None,
+            "absence": None,
+            "archive_org_details": _archive_org_details_url(candidate),
+        },
+        "debug": None,
+        "source_id": source["source_id"],
+        "source_family": source["source_family"],
+        "public_target_ref": target_ref,
+        "target_ref": target_ref,
+        "resolved_resource_id": None,
+    }
+
+
 def _search_success_envelope(
     request: PublicSearchRequest,
     results: list[dict[str, Any]],
     *,
     checked_sources: list[dict[str, Any]],
     plan: dict[str, Any] | None,
+    archive_candidate_result: Mapping[str, Any] | None = None,
+    archive_candidate_cards: list[dict[str, Any]] | None = None,
 ) -> dict[str, Any]:
+    candidate_cards = archive_candidate_cards or []
     gaps: list[dict[str, Any]] = []
     absence_summary: dict[str, Any] | None = {
         "status": "none",
@@ -531,6 +785,9 @@ def _search_success_envelope(
         "searched_scope": "controlled local index",
         "next_actions": [],
     }
+    if request.source_policy == ARCHIVE_ORG_METADATA_CANDIDATES:
+        checked_sources = list(checked_sources)
+        checked_sources.append(_archive_org_checked_source(archive_candidate_result))
     if not results:
         gaps.append(
             {
@@ -550,6 +807,29 @@ def _search_success_envelope(
                 "do not infer global absence from this local prototype result",
             ],
         }
+    if candidate_cards:
+        gaps.append(
+            {
+                "gap_type": "candidate_results_available",
+                "message": "Archive.org metadata candidates are available; review is required before promotion.",
+                "source_id": "internet_archive_metadata",
+                "next_action": "review Archive.org metadata candidates",
+            }
+        )
+        if not results:
+            absence_summary = {
+                "status": "candidate_results_only",
+                "message": (
+                    "No reviewed local-index records matched, but Archive.org "
+                    "metadata candidates were found for review."
+                ),
+                "searched_scope": "controlled local index plus Archive.org metadata candidate search",
+                "next_actions": [
+                    "review Archive.org metadata candidates",
+                    "promote useful reviewed records only after manual review",
+                    "do not infer reviewed truth from candidate metadata",
+                ],
+            }
 
     query = _query_block(
         request,
@@ -565,6 +845,7 @@ def _search_success_envelope(
         "schema_version": SCHEMA_VERSION,
         "contract_id": SEARCH_RESPONSE_CONTRACT_ID,
         "mode": MODE,
+        "source_policy": request.source_policy,
         "query": query,
         "limits": {
             "result_limit": request.limit,
@@ -572,11 +853,14 @@ def _search_success_envelope(
         },
         "result_count": len(results),
         "results": results,
+        "candidate_result_count": len(candidate_cards),
+        "candidate_results": candidate_cards,
+        "archive_org_metadata_candidate_search": _candidate_search_summary(archive_candidate_result),
         "checked_sources": checked_sources,
         "checked": checked_sources,
         "gaps": gaps,
-        "warnings": _global_warnings(),
-        "limitations": _global_limitations(),
+        "warnings": _global_warnings(request.source_policy) + _candidate_warnings(archive_candidate_result),
+        "limitations": _global_limitations() + _candidate_limitations(archive_candidate_result),
         "absence_summary": absence_summary,
         "absence": _absence_report_from_summary(absence_summary, checked_sources, gaps),
         "source_status": _source_status_from_checked_sources(checked_sources),
@@ -588,6 +872,10 @@ def _search_success_envelope(
         "request_limits": _request_limits(),
         "next_actions": _next_actions_for_response(absence_summary),
         "live_probes_enabled": False,
+        "archive_org_metadata_candidate_search_enabled": request.source_policy == ARCHIVE_ORG_METADATA_CANDIDATES,
+        "archive_org_metadata_external_call_performed": bool(
+            (archive_candidate_result or {}).get("live_call_performed", False)
+        ),
         "downloads_enabled": False,
         "uploads_enabled": False,
         "installs_enabled": False,
@@ -815,13 +1103,19 @@ def _query_block(
     *,
     interpreted_task_kind: str | None,
 ) -> dict[str, Any]:
+    notices = [
+        "local_index_only: searched controlled repo-owned/demo index records."
+    ]
+    if request.source_policy == ARCHIVE_ORG_METADATA_CANDIDATES:
+        notices.append(
+            "archive_org_metadata_candidates: also queried Archive.org metadata for review-only candidates."
+        )
     return {
         "raw": request.raw_query,
         "normalized": request.normalized_query,
+        "source_policy": request.source_policy,
         "interpreted_task_kind": interpreted_task_kind,
-        "notices": [
-            "local_index_only: searched controlled repo-owned/demo index records only.",
-        ],
+        "notices": notices,
     }
 
 
@@ -893,6 +1187,98 @@ def _checked_source_from_record(record: Any, *, checked_as: str = "local_index")
         "checked_as": checked_as,
         "limitations": _source_limitations(record),
     }
+
+
+def _archive_org_checked_source(result: Mapping[str, Any] | None) -> dict[str, Any]:
+    status = str((result or {}).get("status") or "not_requested")
+    checked_as = "archive_org_metadata_candidate_search"
+    if status in {"unavailable", "failed"}:
+        checked_as = f"{checked_as}_{status}"
+    return {
+        "source_id": "internet_archive_metadata",
+        "source_family": "internet_archive",
+        "source_label": "Internet Archive metadata search",
+        "coverage_depth": "archive_org_metadata_search",
+        "status": status,
+        "posture": "candidate_only",
+        "checked_as": checked_as,
+        "limitations": [
+            "metadata_only",
+            "candidate_not_reviewed_truth",
+            "no_download",
+            "no_auto_promotion",
+        ],
+        "capabilities_summary": ["metadata_search"],
+        "connector_mode": "metadata_only_http",
+        "live_access_mode": "metadata_candidate_search",
+    }
+
+
+def _candidate_search_summary(result: Mapping[str, Any] | None) -> dict[str, Any]:
+    if not result:
+        return {
+            "enabled": False,
+            "status": "not_requested",
+            "candidate_count": 0,
+            "total_http_requests": 0,
+            "live_call_performed": False,
+            "raw_response_committed": False,
+            "download_performed": False,
+            "accepted_truth": False,
+        }
+    return {
+        "enabled": True,
+        "status": str(result.get("status") or "unknown"),
+        "candidate_count": int(result.get("candidate_count", 0) or 0),
+        "total_http_requests": int(result.get("total_http_requests", 0) or 0),
+        "live_call_performed": bool(result.get("live_call_performed", False)),
+        "metadata_request_performed": bool(result.get("metadata_request_performed", False)),
+        "source_probe_executed": bool(result.get("source_probe_executed", False)),
+        "cache_hit": bool(result.get("cache_hit", False)),
+        "raw_response_committed": bool(result.get("raw_response_committed", False)),
+        "download_performed": bool(result.get("download_performed", False)),
+        "upload_performed": bool(result.get("upload_performed", False)),
+        "extraction_executed": bool(result.get("extraction_executed", False)),
+        "accepted_truth": bool(result.get("accepted_truth", False)),
+        "review_required": bool(result.get("review_required", True)),
+        "failure_reason": result.get("failure_reason"),
+        "limitations": list(result.get("limitations") or []),
+    }
+
+
+def _candidate_warnings(result: Mapping[str, Any] | None) -> list[dict[str, str]]:
+    if not result:
+        return []
+    warnings = []
+    for item in result.get("warnings", []) or []:
+        warnings.append(_warning("archive_org_metadata_candidate_search", str(item), "info"))
+    if result.get("status") == "failed":
+        warnings.append(
+            _warning(
+                "archive_org_metadata_candidate_search_failed",
+                "Archive.org metadata candidate search failed for this request.",
+                "warning",
+            )
+        )
+    return warnings
+
+
+def _candidate_limitations(result: Mapping[str, Any] | None) -> list[str]:
+    if not result:
+        return []
+    return [str(item) for item in result.get("limitations", []) or [] if str(item)]
+
+
+def _archive_org_details_url(candidate: Mapping[str, Any]) -> str | None:
+    locator = candidate.get("source_locator")
+    if not isinstance(locator, Mapping):
+        return None
+    url = locator.get("url")
+    if not isinstance(url, str):
+        return None
+    if not url.startswith("https://archive.org/details/"):
+        return None
+    return url
 
 
 def _source_for_record(record: IndexRecord, source_registry: SourceRegistry) -> dict[str, Any]:
@@ -1329,11 +1715,16 @@ def _card_stability() -> dict[str, list[str]]:
     }
 
 
-def _global_warnings() -> list[dict[str, str]]:
+def _global_warnings(source_policy: str = MODE) -> list[dict[str, str]]:
+    search_scope = (
+        "Public search runtime searches controlled local index records and Archive.org metadata-only candidates."
+        if source_policy == ARCHIVE_ORG_METADATA_CANDIDATES
+        else "Public search runtime searches controlled local index records only."
+    )
     return [
         {
             "warning_type": "local_index_only",
-            "message": "Public search runtime searches controlled local index records only.",
+            "message": search_scope,
         },
         {
             "warning_type": "not_hosted_public_deployment",
@@ -1404,6 +1795,10 @@ def _source_status_from_checked_sources(
             status = "active_fixture"
         elif raw_status in {"active_recorded_fixture", "recorded_fixture"}:
             status = "active_recorded_fixture"
+        elif raw_status in {"succeeded", "zero_results"}:
+            status = "metadata_candidate_source"
+        elif raw_status in {"failed", "rate_limited", "unavailable"}:
+            status = "metadata_candidate_source_limited"
         elif raw_status in {"live_disabled", "live_deferred"}:
             status = "live_disabled"
         elif raw_status == "local_private_future":
@@ -1417,7 +1812,7 @@ def _source_status_from_checked_sources(
                 "coverage_depth": str(source.get("coverage_depth") or "unknown"),
                 "live_supported": False,
                 "live_enabled": False,
-                "network_required": False,
+                "network_required": source.get("source_id") == "internet_archive_metadata",
                 "last_checked": None,
                 "last_synced": None,
                 "limitations": list(source.get("limitations") or ["local_index_only"]),

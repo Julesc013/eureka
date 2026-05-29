@@ -93,6 +93,7 @@
         "mentions_or_traces",
         "absence_or_next_steps",
         "still_searching",
+        "source_candidates",
         "other"
       ]
     },
@@ -234,6 +235,13 @@
             "string",
             "null"
           ]
+        },
+        "archive_org_details": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Optional external details page for Archive.org metadata candidates; not a download URL."
         }
       },
       "description": "Base-path-safe public links only. Values must not be private paths, download URLs, or install URLs."
@@ -385,6 +393,7 @@
             "recorded_fixture",
             "static_summary",
             "future_live_probe",
+            "archive_org_metadata_candidate_search",
             "not_checked"
           ]
         },

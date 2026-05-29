@@ -7,7 +7,9 @@ from urllib.parse import quote
 
 def render_public_search_html(envelope: Mapping[str, Any] | None) -> str:
     query = ""
+    source_policy = "local_index_only"
     if envelope is not None:
+        source_policy = str(envelope.get("source_policy") or source_policy)
         query_block = envelope.get("query")
         if isinstance(query_block, Mapping):
             query = str(query_block.get("raw") or query_block.get("normalized") or "")
@@ -26,7 +28,7 @@ def render_public_search_html(envelope: Mapping[str, Any] | None) -> str:
         "  <body>",
         "    <header>",
         "      <h1>Eureka Public Search</h1>",
-        "      <p>Local-index-only prototype search over controlled Eureka records.</p>",
+        f"      <p>{escape(_search_subtitle(source_policy))}</p>",
         "      <nav>",
         "        <a href=\"/api/v1/status\">Status JSON</a>",
         "        <a href=\"/api/v1/sources\">Sources JSON</a>",
@@ -45,8 +47,9 @@ def render_public_search_html(envelope: Mapping[str, Any] | None) -> str:
         "      <section>",
         "        <h2>Safety Posture</h2>",
         "        <ul>",
-        "          <li>Mode: local-index-only.</li>",
-        "          <li>No live probes, arbitrary URL fetches, downloads, installs, uploads, local path search, accounts, or telemetry.</li>",
+        f"          <li>Source policy: {escape(source_policy)}.</li>",
+        "          <li>No arbitrary URL fetches, downloads, installs, uploads, local path search, accounts, or telemetry.</li>",
+        f"          <li>{escape(_source_policy_safety_note(source_policy))}</li>",
         "          <li>Local/prototype backend runtime only. This is not hosted public deployment and not a production claim.</li>",
         "        </ul>",
         "      </section>",
@@ -90,13 +93,16 @@ def _render_error(envelope: Mapping[str, Any]) -> list[str]:
 def _render_success(envelope: Mapping[str, Any]) -> list[str]:
     query = _mapping(envelope.get("query"))
     results = _mapping_list(envelope.get("results"))
+    candidate_results = _mapping_list(envelope.get("candidate_results"))
     lines = [
         "      <section>",
         "        <h2>Search State</h2>",
         "        <dl>",
         f"          <dt>Mode</dt><dd>{escape(str(envelope.get('mode') or 'local_index_only'))}</dd>",
+        f"          <dt>Source policy</dt><dd>{escape(str(envelope.get('source_policy') or query.get('source_policy') or 'local_index_only'))}</dd>",
         f"          <dt>Query</dt><dd>{escape(str(query.get('normalized') or ''))}</dd>",
         f"          <dt>Results</dt><dd>{len(results)}</dd>",
+        f"          <dt>Candidate results</dt><dd>{len(candidate_results)}</dd>",
         "        </dl>",
         "      </section>",
     ]
@@ -116,6 +122,11 @@ def _render_success(envelope: Mapping[str, Any]) -> list[str]:
                 "      </section>",
             ]
         )
+    if candidate_results:
+        lines.extend(["      <section>", "        <h2>Candidate Results</h2>", "        <ol>"])
+        for card in candidate_results:
+            lines.extend(_render_card(card))
+        lines.extend(["        </ol>", "      </section>"])
     gaps = _mapping_list(envelope.get("gaps"))
     if gaps:
         lines.extend(["      <section>", "        <h2>Gaps</h2>", "        <ul>"])
@@ -196,6 +207,21 @@ def _render_warnings(value: Any) -> list[str]:
 
 def _action_ids(actions: list[Mapping[str, Any]]) -> list[str]:
     return [str(item.get("action_id") or "unknown") for item in actions]
+
+
+def _search_subtitle(source_policy: str) -> str:
+    if source_policy == "archive_org_metadata_candidates":
+        return "Reviewed local results plus Archive.org metadata-only candidates."
+    return "Local-index-only prototype search over controlled Eureka records."
+
+
+def _source_policy_safety_note(source_policy: str) -> str:
+    if source_policy == "archive_org_metadata_candidates":
+        return (
+            "Archive.org access is metadata-only and candidate-only; it does not "
+            "download files or create reviewed truth."
+        )
+    return "No live probes are performed in local-index-only mode."
 
 
 def _mapping(value: Any) -> Mapping[str, Any]:

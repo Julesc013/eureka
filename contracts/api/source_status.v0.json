@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://eureka.local/contracts/api/source_status.v0.json",
   "title": "EurekaPublicSourceStatusV0",
-  "description": "Public-safe source status summary for local-index-only public search. This is contract/schema only and does not enable live connectors.",
+  "description": "Public-safe source status summary for local-index-only public search plus optional metadata-only candidate sources. This does not enable downloads, live probes, or source trust.",
   "type": "object",
   "additionalProperties": false,
   "required": [
@@ -39,7 +39,9 @@
         "placeholder",
         "local_private_future",
         "live_disabled",
-        "live_enabled_future"
+        "live_enabled_future",
+        "metadata_candidate_source",
+        "metadata_candidate_source_limited"
       ]
     },
     "coverage_depth": {
@@ -90,5 +92,5 @@
   },
   "x-contract_id": "eureka_public_source_status_v0",
   "x-status": "contract_only",
-  "x-live_support_rule": "live_enabled must remain false unless a later approved live connector milestone records runtime evidence"
+  "x-live_support_rule": "live_enabled remains false for metadata-only candidate sources; network_required may be true only for an explicitly approved metadata candidate source policy"
 }

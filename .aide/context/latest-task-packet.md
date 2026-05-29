@@ -2,11 +2,11 @@
 
 ## PHASE
 
-UNSPECIFIED - PUBLIC-ALPHA-LAUNCH-DEFER-00
+UNSPECIFIED - ACTIVE-DISCOVERY-AND-CANDIDATE-INTAKE-00
 
 ## GOAL
 
-PUBLIC-ALPHA-LAUNCH-DEFER-00
+ACTIVE-DISCOVERY-AND-CANDIDATE-INTAKE-00
 
 ## WHY
 
@@ -49,9 +49,19 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 - `control/inventory/**`
 - `control/audits/**`
 - `control/policies/**`
+- `contracts/api/**`
+- `runtime/gateway/public_api/**`
+- `runtime/gateway/tests/**`
+- `runtime/source/observation/**`
+- `surfaces/web/server/**`
+- `surfaces/web/workbench/**`
+- `surfaces/web/tests/**`
 - `scripts/local_queue_progress.py`
 - `scripts/validate_*.py`
 - `scripts/check_*.py`
+- `tools/release/**`
+- `tools/validators/**`
+- `tests/runtime/**`
 - `tests/operations/**`
 - `tests/aide/**`
 
@@ -64,9 +74,9 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 - `.local/**`
 - `.cache/**`
 - `eureka-instance/**`
-- `runtime/**`
-- `contracts/**`
-- `surfaces/**`
+- `runtime/**` unless covered by allowed paths above
+- `contracts/**` unless covered by allowed paths above
+- `surfaces/**` unless covered by allowed paths above
 - `site/**`
 - `native/**`
 - `crates/**`
@@ -120,9 +130,9 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 ## NON_GOALS
 
-- No Eureka product behavior change.
-- No source probes, extraction, model/provider calls, deployment, production-readiness claim, public-launch claim, main promotion, force-push, history rewrite, SYN implementation, or F0 implementation.
-- No Gateway, provider calls, live model routing, local model setup, exact tokenizer, provider billing ledger, Runtime, Service, Commander, Mobile, MCP/A2A, UI, host/app implementation, or autonomous loop unless a future reviewed queue item explicitly authorizes it.
+- No downloads, extraction, installs, uploads, accounts, telemetry, production-readiness claim, public-launch claim, deployment, main promotion, force-push, history rewrite, SYN implementation, or F0 implementation.
+- No model/provider calls, live model routing, local model setup, exact tokenizer, provider billing ledger, Commander, Mobile, MCP/A2A, or autonomous loop unless a future reviewed queue item explicitly authorizes it.
+- No source-cache mutation, evidence-ledger mutation, candidate promotion, public-index mutation, local-index mutation, or master-index mutation.
 
 ## ACCEPTANCE
 
@@ -139,8 +149,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4776
-- approx_tokens: 1194
+- chars: 4800
+- approx_tokens: 1200
 - budget_status: PASS
 - warnings:
   - none

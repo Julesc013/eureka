@@ -26,6 +26,7 @@ class PublicAlphaWrapperConfigTest(unittest.TestCase):
         self.assertEqual(summary["host"], "127.0.0.1")
         self.assertFalse(summary["live_probes_enabled"])
         self.assertFalse(summary["live_internet_archive_enabled"])
+        self.assertTrue(summary["archive_org_metadata_candidates_enabled"])
         self.assertFalse(summary["downloads_enabled"])
         self.assertFalse(summary["local_paths_enabled"])
         self.assertFalse(summary["user_storage_enabled"])
@@ -55,6 +56,12 @@ class PublicAlphaWrapperConfigTest(unittest.TestCase):
 
         self.assertEqual(config.to_summary_dict()["status"], "invalid")
         self.assertIn("live probes", "\n".join(config.validation_errors()))
+
+    def test_archive_org_metadata_candidates_can_be_disabled(self) -> None:
+        config = load_public_alpha_wrapper_config({"EUREKA_ARCHIVE_ORG_METADATA_CANDIDATES": "0"})
+
+        self.assertEqual(config.to_summary_dict()["status"], "valid")
+        self.assertFalse(config.to_summary_dict()["archive_org_metadata_candidates_enabled"])
 
     def test_path_root_env_names_are_reported_without_values(self) -> None:
         private_path = "D:/private/eureka-index"

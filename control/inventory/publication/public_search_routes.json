@@ -10,6 +10,10 @@
   "contract_modes": [
     "local_index_only"
   ],
+  "allowed_source_policies": [
+    "local_index_only",
+    "archive_org_metadata_candidates"
+  ],
   "runtime_modes_implemented": [
     "local_index_only"
   ],
@@ -38,7 +42,8 @@
     "live_probe",
     "external_search",
     "automated_google_query",
-    "automated_internet_archive_query",
+    "unapproved_automated_internet_archive_query",
+    "internet_archive_download_or_file_fetch",
     "arbitrary_url_fetch",
     "download",
     "install",
@@ -68,13 +73,17 @@
       "allowed_modes": [
         "local_index_only"
       ],
+      "allowed_source_policies": [
+        "local_index_only",
+        "archive_org_metadata_candidates"
+      ],
       "live_probe_allowed": false,
       "downloads_allowed": false,
       "local_paths_allowed": false,
       "uploads_allowed": false,
       "auth_required": false,
       "rate_limit_required_before_public": true,
-      "notes": "Local/prototype backend HTML search route implemented through the stdlib workbench server. Static search handoff is implemented at /search.html; hosted public deployment remains future.",
+      "notes": "Local/prototype backend HTML search route implemented through the stdlib workbench server. Archive.org metadata candidate search is source-policy gated, bounded, review-only, and performs no downloads. Static search handoff is implemented at /search.html; hosted public deployment remains future.",
       "public_search_safety_required": true,
       "runtime_readiness_checklist_required": true
     },
@@ -96,13 +105,17 @@
       "allowed_modes": [
         "local_index_only"
       ],
+      "allowed_source_policies": [
+        "local_index_only",
+        "archive_org_metadata_candidates"
+      ],
       "live_probe_allowed": false,
       "downloads_allowed": false,
       "local_paths_allowed": false,
       "uploads_allowed": false,
       "auth_required": false,
       "rate_limit_required_before_public": true,
-      "notes": "Local/prototype JSON search endpoint implemented for local_index_only mode. It is not hosted, not deployed, and does not fan out to external sources.",
+      "notes": "Local/prototype JSON search endpoint implemented for local_index_only mode. Archive.org metadata candidate search can be enabled as a bounded review-only source policy. It is not hosted, not deployed, and does not expose downloads or arbitrary source fanout.",
       "public_search_safety_required": true,
       "runtime_readiness_checklist_required": true
     },
@@ -222,7 +235,7 @@
   "created_by_slice": "public_search_safety_abuse_guard_v0",
   "notes": [
     "This inventory records Local Public Search Runtime v0 route handlers for local/prototype backend use only.",
-    "No hosted backend behavior, live probes, source adapters, external API calls, downloads, uploads, account behavior, telemetry, or production API guarantee are added.",
+    "No hosted backend behavior, live probes, source adapters beyond the bounded Archive.org metadata candidate source policy, downloads, uploads, account behavior, telemetry, or production API guarantee are added.",
     "The current static site remains site/dist and now includes an honest /search.html handoff. Hosted public search is not deployed.",
     "Public Search Safety / Abuse Guard v0 now defines the policy-only request limits, forbidden parameters, disabled modes, privacy posture, and operator controls required before any reserved public search route can be implemented.",
     "Local public search runtime and static search handoff are implemented; hosted public deployment remains future.",

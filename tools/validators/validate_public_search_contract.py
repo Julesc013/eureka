@@ -80,7 +80,8 @@ REQUIRED_DOC_PHRASES = {
         "local/prototype backend runtime only",
         "does not make public search hosted",
         "does not claim production API stability",
-        "must not fan out to live Internet Archive, Google",
+        "archive_org_metadata_candidates",
+        "must not fan out to Google",
         "downloads_disabled",
         "installs_disabled",
         "uploads_disabled",
@@ -192,9 +193,10 @@ def _validate_request_schema(payload: Any, errors: list[str]) -> None:
     if mode_enum != ["local_index_only"]:
         errors.append("search_request.v0.json: mode enum must contain only local_index_only.")
     source_policy_enum = _string_list(_mapping(properties.get("source_policy")).get("enum"))
-    if source_policy_enum != ["local_index_only"]:
+    if source_policy_enum != ["local_index_only", "archive_org_metadata_candidates"]:
         errors.append(
-            "search_request.v0.json: source_policy enum must contain only local_index_only."
+            "search_request.v0.json: source_policy enum must contain local_index_only "
+            "and archive_org_metadata_candidates."
         )
     include_enum = _string_list(
         _mapping(_mapping(properties.get("include")).get("items")).get("enum")

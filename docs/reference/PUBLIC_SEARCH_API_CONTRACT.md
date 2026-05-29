@@ -40,12 +40,14 @@ public index remain public-safe. This evidence is not hosted deployment proof.
 - Runtime readiness checklist:
   `docs/operations/PUBLIC_SEARCH_RUNTIME_READINESS_CHECKLIST.md`
 
-The first allowed mode is `local_index_only`. Future public search must accept a
-bounded user query, search a controlled local index, and return result lanes,
-user-cost hints, compatibility summaries, source/evidence summaries, and bounded
-absence information. It must not fan out to live Internet Archive, Google,
-package registries, arbitrary URLs, user local paths, uploads, downloads, or
-installers.
+The first allowed mode remains `local_index_only`. Public alpha may also enable
+the `archive_org_metadata_candidates` source policy, which performs a bounded
+Archive.org item-metadata search and returns review-only candidate cards. Future
+public search must accept a bounded user query, search controlled reviewed
+records first, and return result lanes, user-cost hints, compatibility
+summaries, source/evidence summaries, candidate lanes, and bounded absence
+information. It must not fan out to Google, package registries, arbitrary URLs,
+user local paths, uploads, downloads, installers, or unapproved live sources.
 
 ## Request
 
@@ -67,7 +69,10 @@ Optional fields:
   `evidence_summaries`, `compatibility_summaries`, `absence_summary`,
   `evidence`, `compatibility`, `source_summary`, `limitations`, `gaps`, or
   `actions`.
-- `source_policy`: `local_index_only` only.
+- `source_policy`: `local_index_only` or
+  `archive_org_metadata_candidates`. The Archive.org policy is metadata-only,
+  bounded to the governed Archive.org item search endpoint, and returns
+  review-only candidates rather than reviewed results.
 
 Forbidden parameters include `index_path`, `store_root`, `run_store_root`,
 `task_store_root`, `memory_store_root`, `local_path`, `path`, `file_path`,
@@ -87,7 +92,12 @@ The envelope includes:
 - `query`: raw and normalized query text, interpreted task kind if available,
   and notices.
 - `limits`: result and query length limits.
-- `results`: compact result-card records.
+- `results`: compact reviewed/local result-card records.
+- `candidate_results`: review-only candidate result-card records returned by
+  explicitly enabled metadata source policies.
+- `archive_org_metadata_candidate_search`: public-safe summary of the
+  Archive.org metadata candidate lookup, with raw responses, downloads,
+  extraction, source-cache mutation, and promotion forbidden.
 - `checked_sources`: sources considered as local index, recorded fixture,
   static summary, or not checked.
 - `gaps`: bounded coverage gaps and possible next actions.
@@ -163,8 +173,11 @@ The route inventory now records local/prototype runtime handlers for:
 
 Every route is marked `local_runtime_implemented`, `implementation_scope:
 local_prototype_backend`, and `hosted_public_deployment: false`. Live probes,
-downloads, local paths, uploads, and external source fanout are disabled for all
-routes. Rate limiting remains required before any hosted public exposure.
+downloads, local paths, uploads, and arbitrary external source fanout are
+disabled for all routes. The only approved external source policy in this
+runtime is bounded Archive.org metadata candidate search, and it must not return
+download URLs or promote truth. Rate limiting remains required before any hosted
+public exposure.
 
 ## Client Degradation
 
@@ -179,7 +192,8 @@ The live backend handoff still reserves hosted `/api/v1` behavior for future
 deployment review. Local Public Search Runtime v0 is not hosted public
 deployment and does not change GitHub Pages, which remains static-only. The
 live probe gateway remains disabled and does not become an implementation
-detail of `local_index_only`. Public data summaries under `site/dist/data`
+detail of `local_index_only`. Archive.org metadata candidate search is a
+separate source policy and not a live-probe mode. Public data summaries under `site/dist/data`
 remain static publication artifacts, not a live search API; this includes
 `site/dist/data/search_handoff.json`, which records that hosted search is
 unavailable/unverified. Native clients,
@@ -273,7 +287,7 @@ until operator evidence verifies it.
 ## Out Of Scope
 
 This contract and local runtime do not implement hosted backend deployment,
-live source probes, Internet Archive calls, Google
+live source probes, unapproved Internet Archive calls, Google
 queries, arbitrary URL fetch, crawling, downloads, installers, uploads,
 accounts, telemetry, native clients, relay runtime, snapshot reader runtime,
 TLS, auth, rate limiting, process management, custom domains, production API

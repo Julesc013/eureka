@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (4776 chars, 1194 approximate tokens)
+- `.aide/context/latest-task-packet.md` (5254 chars, 1314 approximate tokens)
 
 ## Context Packet Reference
 
@@ -33,18 +33,31 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Changed Files Summary
 
+- allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/ACTIVE-DISCOVERY-AND-CANDIDATE-INTAKE-00` (??; matches active task allowed path)
-- allowed: `.aide/queue/PUBLIC-ALPHA-LAUNCH-DEFER-00` (??; matches active task allowed path)
-- allowed: `.aide/queue/index.yaml` (M; matches active task allowed path)
-- allowed: `control/audits/public-alpha-launch-defer-00-v0` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_launch_defer_reason_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_launch_defer_result.json` (??; matches active task allowed path)
-- allowed: `control/policies/generated_artifact_policy.json` (M; matches active task allowed path)
-- allowed: `docs/operations/ACTIVE_DISCOVERY_NEXT_PLAN.md` (??; matches active task allowed path)
-- allowed: `docs/operations/PUBLIC_ALPHA_LAUNCH_DEFERRED.md` (??; matches active task allowed path)
-- allowed: `scripts/validate_public_alpha_launch_defer.py` (??; matches active task allowed path)
-- allowed: `tests/operations/test_public_alpha_launch_defer.py` (??; matches active task allowed path)
+- allowed: `contracts/api/search_request.v0.json` (M; matches active task allowed path)
+- allowed: `contracts/api/search_response.v0.json` (M; matches active task allowed path)
+- allowed: `contracts/api/search_result_card.v0.json` (M; matches active task allowed path)
+- allowed: `contracts/api/source_status.v0.json` (M; matches active task allowed path)
+- allowed: `control/inventory/publication/public_search_routes.json` (M; matches active task allowed path)
+- allowed: `control/inventory/publication/public_search_safety.json` (M; matches active task allowed path)
+- allowed: `docs/operations/PUBLIC_SEARCH_LOCAL_INDEX_ONLY_MODE.md` (M; matches active task allowed path)
+- allowed: `docs/operations/PUBLIC_SEARCH_RUNTIME_READINESS_CHECKLIST.md` (M; matches active task allowed path)
+- allowed: `docs/operations/PUBLIC_SEARCH_SAFETY_AND_ABUSE_GUARD.md` (M; matches active task allowed path)
+- allowed: `docs/reference/PUBLIC_SEARCH_API_CONTRACT.md` (M; matches active task allowed path)
+- allowed: `runtime/gateway/public_api/demo_support.py` (M; matches active task allowed path)
+- allowed: `runtime/gateway/public_api/public_search.py` (M; matches active task allowed path)
+- allowed: `runtime/gateway/tests/test_public_search_api.py` (M; matches active task allowed path)
+- allowed: `runtime/gateway/tests/test_public_search_validation.py` (M; matches active task allowed path)
+- allowed: `runtime/source/observation/archive_org_public_metadata.py` (??; matches active task allowed path)
+- allowed: `runtime/source/observation/internet_archive_live_transport.py` (M; matches active task allowed path)
+- allowed: `surfaces/web/server/public_alpha_config.py` (M; matches active task allowed path)
+- allowed: `surfaces/web/server/server_config.py` (M; matches active task allowed path)
+- allowed: `surfaces/web/tests/test_public_alpha_wrapper_config.py` (M; matches active task allowed path)
+- allowed: `surfaces/web/workbench/render_public_search.py` (M; matches active task allowed path)
+- allowed: `tests/operations/test_public_search_api_contract.py` (M; matches active task allowed path)
+- allowed: `tests/operations/test_public_search_safety_abuse_guard.py` (M; matches active task allowed path)
+- additional changed paths omitted from compact packet: 4; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -54,8 +67,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 5423
-- approx_tokens: 1356
+- chars: 6724
+- approx_tokens: 1681
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

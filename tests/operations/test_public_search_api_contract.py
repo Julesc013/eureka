@@ -70,7 +70,10 @@ class PublicSearchApiContractTest(unittest.TestCase):
         self.assertEqual(properties["limit"]["default"], 10)
         self.assertEqual(properties["limit"]["maximum"], 25)
         self.assertEqual(properties["mode"]["enum"], ["local_index_only"])
-        self.assertEqual(properties["source_policy"]["enum"], ["local_index_only"])
+        self.assertEqual(
+            properties["source_policy"]["enum"],
+            ["local_index_only", "archive_org_metadata_candidates"],
+        )
         self.assertNotIn("live_probe", properties["mode"]["enum"])
 
     def test_forbidden_parameters_present(self) -> None:

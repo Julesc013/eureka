@@ -35,6 +35,15 @@
       "type": "string",
       "const": "local_index_only"
     },
+    "source_policy": {
+      "type": "string",
+      "enum": [
+        "local_index_only",
+        "archive_org_metadata_candidates"
+      ],
+      "default": "local_index_only",
+      "description": "The candidate-source policy used for this response. Archive.org metadata candidates remain review-only and are not reviewed truth."
+    },
     "query": {
       "type": "object",
       "additionalProperties": false,
@@ -51,6 +60,13 @@
         "normalized": {
           "type": "string",
           "maxLength": 160
+        },
+        "source_policy": {
+          "type": "string",
+          "enum": [
+            "local_index_only",
+            "archive_org_metadata_candidates"
+          ]
         },
         "interpreted_task_kind": {
           "type": [
@@ -92,6 +108,22 @@
         "$ref": "#/$defs/result"
       }
     },
+    "candidate_result_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "candidate_results": {
+      "description": "Review-only candidate result cards from explicitly enabled metadata source policies. These are not reviewed local results.",
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/result"
+      }
+    },
+    "archive_org_metadata_candidate_search": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Public-safe summary of Archive.org metadata candidate lookup. Raw IA responses are forbidden."
+    },
     "checked_sources": {
       "type": "array",
       "items": {
@@ -127,7 +159,8 @@
           "enum": [
             "none",
             "bounded_absence",
-            "insufficient_local_coverage"
+            "insufficient_local_coverage",
+            "candidate_results_only"
           ]
         },
         "message": {
@@ -313,6 +346,12 @@
     "live_probes_enabled": {
       "const": false
     },
+    "archive_org_metadata_candidate_search_enabled": {
+      "type": "boolean"
+    },
+    "archive_org_metadata_external_call_performed": {
+      "type": "boolean"
+    },
     "downloads_enabled": {
       "const": false
     },
@@ -444,6 +483,7 @@
             "mentions_or_traces",
             "absence_or_next_steps",
             "still_searching",
+            "source_candidates",
             "other"
           ]
         },
@@ -526,6 +566,19 @@
                 "string",
                 "null"
               ]
+            },
+            "absence": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "archive_org_details": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "Optional external details page for Archive.org metadata candidates; not a download URL."
             }
           }
         },
@@ -674,7 +727,10 @@
             "local_index",
             "recorded_fixture",
             "static_summary",
-            "not_checked"
+            "not_checked",
+            "archive_org_metadata_candidate_search",
+            "archive_org_metadata_candidate_search_failed",
+            "archive_org_metadata_candidate_search_unavailable"
           ]
         },
         "limitations": {

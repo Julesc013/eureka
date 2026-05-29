@@ -25,6 +25,11 @@ controlled local index records owned by the Eureka runtime.
 Operational summary: no live probes, no downloads, no installs, no uploads, no
 caller-provided local paths, and no arbitrary URL fetches are allowed.
 
+Public alpha can layer `source_policy=archive_org_metadata_candidates` on top of
+this mode. That source policy queries Archive.org item metadata for review-only
+candidates after the local reviewed result path, without downloads, extraction,
+raw response return, index mutation, or automatic promotion.
+
 The mode may read only governed public/local-index records selected by the
 runtime. It must not accept caller-provided index roots, store
 roots, local filesystem paths, URLs, credentials, uploaded files, or source
@@ -34,9 +39,10 @@ secrets.
 
 `local_index_only` does not allow:
 
-- live external calls;
-- live Internet Archive, Wayback, Google, GitHub, package-registry, or search
-  engine queries;
+- unapproved live external calls;
+- live Wayback, Google, GitHub, package-registry, or search engine queries;
+- Internet Archive file fetches, downloads, arbitrary URL fetches, or
+  unapproved IA calls beyond the metadata candidate source policy;
 - arbitrary URL fetch;
 - scraping, crawling, or source fanout;
 - local path search or private file ingestion;

@@ -24,6 +24,7 @@ API_DOC = REPO_ROOT / "docs" / "reference" / "PUBLIC_SEARCH_API_CONTRACT.md"
 CARD_DOC = REPO_ROOT / "docs" / "reference" / "PUBLIC_SEARCH_RESULT_CARD_CONTRACT.md"
 
 REQUIRED_ALLOWED_MODES = {"local_index_only"}
+REQUIRED_ALLOWED_SOURCE_POLICIES = {"local_index_only", "archive_org_metadata_candidates"}
 REQUIRED_DISABLED_MODES = {
     "live_probe",
     "live_federated",
@@ -64,7 +65,9 @@ REQUIRED_FORBIDDEN_BEHAVIORS = {
     "arbitrary_url_fetching",
     "live_external_source_fanout",
     "google_scraping",
-    "internet_archive_live_calls",
+    "unapproved_internet_archive_live_calls",
+    "internet_archive_file_fetches",
+    "internet_archive_downloads",
     "wayback_live_calls",
     "github_live_calls",
     "package_registry_live_calls",
@@ -237,6 +240,11 @@ def _validate_safety_inventory(payload: Any, errors: list[str]) -> None:
             errors.append(f"public_search_safety.json: {key} must be {expected_value!r}.")
     if set(_string_list(payload.get("allowed_modes"))) != REQUIRED_ALLOWED_MODES:
         errors.append("public_search_safety.json: allowed_modes must contain only local_index_only.")
+    if set(_string_list(payload.get("allowed_source_policies"))) != REQUIRED_ALLOWED_SOURCE_POLICIES:
+        errors.append(
+            "public_search_safety.json: allowed_source_policies must contain "
+            "local_index_only and archive_org_metadata_candidates."
+        )
     disabled_modes = set(_string_list(payload.get("disabled_modes")))
     if not REQUIRED_DISABLED_MODES.issubset(disabled_modes):
         errors.append(
@@ -288,6 +296,7 @@ def _validate_limits(payload: Mapping[str, Any], errors: list[str]) -> None:
         "max_result_limit": 25,
         "max_checked_sources_v0": "controlled_local_index_only",
         "max_live_sources_v0": 0,
+        "max_metadata_candidate_sources_v0": 1,
         "raw_source_payloads_allowed": False,
         "download_urls_allowed": False,
         "install_urls_allowed": False,
@@ -420,6 +429,12 @@ def _validate_request_alignment(request: Any, safety: Any, errors: list[str]) ->
     mode_enum = set(_string_list(_mapping(properties.get("mode")).get("enum")))
     if mode_enum != REQUIRED_ALLOWED_MODES:
         errors.append("search_request.v0.json: mode enum must contain only local_index_only.")
+    source_policy_enum = set(_string_list(_mapping(properties.get("source_policy")).get("enum")))
+    if source_policy_enum != REQUIRED_ALLOWED_SOURCE_POLICIES:
+        errors.append(
+            "search_request.v0.json: source_policy enum must contain local_index_only "
+            "and archive_org_metadata_candidates."
+        )
     q = _mapping(properties.get("q"))
     if q.get("maxLength") != 160:
         errors.append("search_request.v0.json: q maxLength must be 160.")

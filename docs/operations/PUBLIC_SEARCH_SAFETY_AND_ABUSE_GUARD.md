@@ -9,7 +9,9 @@ v0. Local/prototype `/search`, `/api/v1/search`, `/api/v1/query-plan`,
 these guardrails. This milestone still does not add rate-limit middleware,
 auth, sessions, telemetry, logging runtime, backend hosting, live probes,
 downloads, installers, execution, uploads, local path search, or deployment
-provider configuration.
+provider configuration. It does allow one bounded Archive.org metadata-only
+candidate source policy for public-alpha usefulness; that policy returns
+review-only candidates and does not fetch files.
 It does not enable live probes.
 
 ## P57 Safety Evidence
@@ -39,9 +41,19 @@ public query
   -> source/evidence/compatibility/absence response
 ```
 
-It must not become live external fanout, arbitrary URL fetch, local filesystem
-search, downloads, installers, uploads, accounts, telemetry by default, or
-unbounded query/result behavior.
+The allowed source policies are:
+
+- `local_index_only`
+- `archive_org_metadata_candidates`
+
+`archive_org_metadata_candidates` may query Archive.org item metadata as a
+bounded, review-only candidate source. It is not a live probe mode, arbitrary
+URL fetch, crawler, downloader, source-cache mutation, evidence-ledger mutation,
+or reviewed-truth promotion.
+
+It must not become unapproved live external fanout, arbitrary URL fetch, local
+filesystem search, downloads, installers, uploads, accounts, telemetry by
+default, or unbounded query/result behavior.
 
 ## Policy Inventory
 
@@ -59,7 +71,9 @@ The policy records `status: local_runtime_guard_active`,
 Hosted Public Search Wrapper v0 adds a local/prototype wrapper around the same
 guarded public search API. The wrapper keeps `local_index_only`, no live probes,
 no downloads, no uploads, no local paths, no arbitrary URL fetch, no telemetry,
-and no accounts; hosted deployment evidence remains a later operator step.
+and no accounts. Archive.org metadata candidates may be enabled for local
+public-alpha usefulness, but hosted deployment evidence remains a later operator
+step.
 
 ## Allowed Mode
 
@@ -76,6 +90,16 @@ Disabled modes are:
 - `upload_search`
 - `download_or_install`
 
+## Allowed Source Policies
+
+- `local_index_only`
+- `archive_org_metadata_candidates`
+
+The Archive.org source policy is capped to one metadata source and at most 10
+candidate rows per request. It uses a descriptive User-Agent/contact, honors
+transport rate-limit responses, keeps an in-process cache for repeated queries,
+and returns only public-safe summaries.
+
 ## Request, Result, And Time Limits
 
 Policy defaults for Local Public Search Runtime v0 are:
@@ -91,6 +115,8 @@ Policy defaults for Local Public Search Runtime v0 are:
 - maximum runtime target: 3000 ms
 - checked sources in v0: controlled local index only
 - live sources in v0: 0
+- metadata candidate sources in v0: 1
+- maximum Archive.org metadata candidate rows per source: 10
 
 These are local runtime bounds and hosted-exposure targets, not production
 middleware.
@@ -137,7 +163,9 @@ Public search v0 forbids:
 - arbitrary URL fetching
 - live external source fanout
 - Google scraping
-- Internet Archive live calls
+- unapproved Internet Archive live calls
+- Internet Archive file fetches
+- Internet Archive downloads
 - Wayback live calls
 - GitHub live calls
 - package registry live calls
@@ -154,6 +182,11 @@ Public search v0 forbids:
 - credential submission
 - raw source payload return
 - unbounded query or result behavior
+
+The approved Archive.org metadata candidate source policy is the explicit
+exception to the unapproved Internet Archive call rule. It may call
+Archive.org item search metadata only and must keep downloads, file payloads,
+raw response return, extraction, mutation, and candidate promotion disabled.
 
 ## Error Mapping
 
@@ -210,6 +243,7 @@ Hosted public search must provide controls equivalent to:
 - `EUREKA_SEARCH_TIMEOUT_MS=3000`
 - `EUREKA_PUBLIC_SEARCH_ENABLED=0`
 - `EUREKA_OPERATOR_KILL_SWITCH=1`
+- `EUREKA_ARCHIVE_ORG_METADATA_CANDIDATES=1`
 
 The operator kill switch is required before any hosted wrapper can be exposed.
 These flags remain hosted-runtime requirements. This milestone adds no process
@@ -221,8 +255,8 @@ Public Alpha Safe Mode remains non-production and local. It already blocks live
 probes, caller-provided local paths, downloads, fixture byte fetches, user
 storage, deployment approval, and production readiness by default. Local Public
 Search Runtime v0 may expose `/api/v1/search` in public-alpha only as
-local/prototype backend runtime with `local_index_only` validation. Hosted
-public search is not live.
+local/prototype backend runtime with `local_index_only` validation and optional
+Archive.org metadata-only candidates. Hosted public search is not live.
 
 GitHub Pages remains static-only. `site/dist` may describe this policy but must
 not add a search form, claim hosted search exists, or imply backend deployment.
@@ -233,8 +267,9 @@ Live Backend Handoff Contract v0 remains future/reserved for hosted runtime.
 Local Public Search Runtime v0 does not create hosted routes.
 
 Live Probe Gateway Contract v0 remains disabled by default. `local_index_only`
-does not call Internet Archive, Wayback, Google, GitHub, package registries, or
-any external source.
+reviewed-result lookup does not call Internet Archive, Wayback, Google, GitHub,
+package registries, or any external source. Archive.org metadata candidates are
+governed by the separate `archive_org_metadata_candidates` source policy.
 
 ## Action And Privacy Policy Relationships
 
@@ -269,6 +304,7 @@ Still future or blocked until explicit approval:
 - rate-limit middleware
 - auth, accounts, sessions, TLS, process management
 - live probes or external source fanout
+- additional live metadata sources beyond Archive.org candidate search
 - local filesystem search
 - downloads, installers, execution, mirrors, uploads
 - telemetry/logging runtime
