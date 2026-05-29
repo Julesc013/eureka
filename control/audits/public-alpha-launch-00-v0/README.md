@@ -6,10 +6,12 @@ The promoted read-only public alpha baseline is ready for an explicit manual
 launch task, but no acceptable launch approval record is present.
 
 - current branch: `dev`
-- head: `21a64d740d2f79524bd0880121dd65211aec520b`
+- launch baseline head: `21a64d740d2f79524bd0880121dd65211aec520b`
+- current dev head after waiting evidence: `37648cd4c58308dc884df8c1e9a8b39acdce2de2`
 - origin/main: `21a64d740d2f79524bd0880121dd65211aec520b`
-- origin/dev: `21a64d740d2f79524bd0880121dd65211aec520b`
-- origin/main...origin/dev: `0 0`
+- origin/dev: `37648cd4c58308dc884df8c1e9a8b39acdce2de2`
+- origin/main...origin/dev: `0 1`
+- dev ahead of main only by waiting approval evidence: true
 - promotion gate: PASS, 5081 tests
 - deployment_performed: false
 - public_launch_performed: false

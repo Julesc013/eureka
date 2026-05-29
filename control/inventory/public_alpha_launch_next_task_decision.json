@@ -3,6 +3,8 @@
   "task": "PUBLIC-ALPHA-LAUNCH-00",
   "status": "waiting_for_manual_launch_approval",
   "recommended_next_task": "PUBLIC-ALPHA-LAUNCH-00",
+  "dev_ahead_of_main_only_by_waiting_evidence": true,
+  "main_not_pushed_for_waiting_approval_gate": true,
   "required_approval_file": "control/approvals/public-alpha-launch-00-approval.json",
   "alternate_task_local_record": "control/inventory/public_alpha_launch_manual_approval.json",
   "required_approval_phrase": "LAUNCH_READ_ONLY_PUBLIC_ALPHA",

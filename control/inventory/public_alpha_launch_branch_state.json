@@ -1,0 +1,15 @@
+{
+  "schema_version": "public_alpha_launch_branch_state.v0",
+  "task": "PUBLIC-ALPHA-LAUNCH-00",
+  "status": "waiting_for_manual_launch_approval",
+  "launch_baseline_head": "21a64d740d2f79524bd0880121dd65211aec520b",
+  "launch_baseline_origin_main_equals_origin_dev": true,
+  "current_dev_head_after_waiting_evidence": "37648cd4c58308dc884df8c1e9a8b39acdce2de2",
+  "current_origin_main": "21a64d740d2f79524bd0880121dd65211aec520b",
+  "current_origin_dev": "37648cd4c58308dc884df8c1e9a8b39acdce2de2",
+  "ahead_behind_origin_main_origin_dev": "0 1",
+  "dev_ahead_of_main_only_by_waiting_evidence": true,
+  "working_tree_clean": true,
+  "deployment_performed": false,
+  "public_launch_performed": false
+}
