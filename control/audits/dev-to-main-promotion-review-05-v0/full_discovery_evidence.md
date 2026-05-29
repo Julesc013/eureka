@@ -1,18 +1,23 @@
 # Full Discovery Evidence
 
-Current status: `WAITING_FOR_EXTERNAL_FULL_DISCOVERY`
+Current status: `PASS`
 
-Required command:
+External command run by the operator:
 
 ```powershell
 python scripts/eureka_test_gate.py --gate promotion_gate --watch --clean
 ```
 
-Alternative command:
+Compact result:
 
-```powershell
-python scripts/run_full_unittest_discovery.py --out ../eureka-test-runs/dev_to_main_promotion_05
-```
+- gate: `promotion_gate`
+- head: `8f02824e0fb87431e104a63516af74089fbb461d`
+- tests_run: 5081
+- failures: 0
+- errors: 0
+- exit_code: 0
+- duration_seconds: 2926.539254
 
-Return either the `ai_handoff.md` from the gate command or the compact summary,
-failure families, failed tests, and `git status --short --branch`.
+The compact summary still records an expected refusal-path trace for forbidden
+output roots. It is nonblocking because unittest completed with status PASS,
+exit code 0, failures 0, and errors 0.

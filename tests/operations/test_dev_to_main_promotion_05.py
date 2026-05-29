@@ -18,12 +18,17 @@ def load_json(rel: str) -> dict:
 
 
 class DevToMainPromotion05Tests(unittest.TestCase):
-    def test_validator_accepts_waiting_handoff_state(self) -> None:
+    def test_validator_accepts_current_promotion_state(self) -> None:
         report = validate_dev_to_main_promotion_05()
 
-        self.assertEqual(report["status"], "waiting_for_external_full_discovery", report["errors"])
-        self.assertFalse(report["external_full_discovery_summary_received"])
-        self.assertFalse(report["promotion_performed"])
+        self.assertIn(report["status"], {"waiting_for_external_full_discovery", "pass"}, report["errors"])
+        if report["status"] == "waiting_for_external_full_discovery":
+            self.assertFalse(report["external_full_discovery_summary_received"])
+            self.assertFalse(report["promotion_performed"])
+        else:
+            self.assertTrue(report["external_full_discovery_summary_received"])
+            self.assertTrue(report["full_unittest_discovery_passed"])
+            self.assertTrue(report["promotion_ready"])
         self.assertTrue(report["public_alpha_deploy_dry_run_verified"])
         self.assertTrue(report["public_alpha_launch_candidate_verified"])
 
@@ -44,12 +49,19 @@ class DevToMainPromotion05Tests(unittest.TestCase):
         handoff = load_json("control/inventory/dev_to_main_promotion_05_full_discovery_handoff.json")
         result = load_json("control/inventory/dev_to_main_promotion_05_result.json")
 
-        self.assertEqual(handoff["status"], "WAITING_FOR_EXTERNAL_FULL_DISCOVERY")
         self.assertIn("--gate promotion_gate", handoff["preferred_command"])
         self.assertIn("../eureka-test-runs/dev_to_main_promotion_05", handoff["alternate_command"])
         self.assertFalse(handoff["full_discovery_run_inside_ai"])
-        self.assertEqual(result["status"], "waiting_for_external_full_discovery")
-        self.assertFalse(result["promotion_performed"])
+        if result["status"] == "waiting_for_external_full_discovery":
+            self.assertEqual(handoff["status"], "WAITING_FOR_EXTERNAL_FULL_DISCOVERY")
+            self.assertFalse(result["promotion_performed"])
+        else:
+            full = load_json("control/inventory/dev_to_main_promotion_05_full_discovery_result.json")
+            self.assertEqual(result["status"], "pass")
+            self.assertTrue(full["external_summary_received"])
+            self.assertTrue(full["full_unittest_discovery_passed"])
+            self.assertEqual(full["full_discovery_failures_remaining"], 0)
+            self.assertEqual(full["full_discovery_errors_remaining"], 0)
 
     def test_boundary_report_keeps_forbidden_actions_false(self) -> None:
         boundary = load_json("control/inventory/dev_to_main_promotion_05_boundary_report.json")

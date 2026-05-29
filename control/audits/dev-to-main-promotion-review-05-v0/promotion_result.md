@@ -2,9 +2,7 @@
 
 Promotion performed: false
 
-Reason: external full discovery has not yet been supplied for current `dev`
-head `1775e5bbf5792a63ff29ebf5dfc887c4300e77bb`.
+Reason: external full discovery has passed and the task is ready for the
+fast-forward promotion step.
 
-When a passing external summary is returned, resume
-`DEV-TO-MAIN-PROMOTION-REVIEW-05` and fast-forward `main` only if all branch and
-boundary checks still pass.
+Next action: fast-forward `main` to `dev`, then record final branch equality.

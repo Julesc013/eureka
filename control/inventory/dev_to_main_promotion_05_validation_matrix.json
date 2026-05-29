@@ -1,13 +1,13 @@
 {
   "schema_version": "dev_to_main_promotion_05_validation_matrix.v0",
   "task": "DEV-TO-MAIN-PROMOTION-REVIEW-05",
-  "status": "waiting_for_external_full_discovery",
+  "status": "pass",
   "validations": [
     {
       "name": "dev_to_main_promotion_05",
       "command": "python scripts/validate_dev_to_main_promotion_05.py",
       "status": "pass",
-      "result": "waiting_for_external_full_discovery accepted"
+      "result": "external full discovery pass accepted; ready for fast-forward promotion"
     },
     {
       "name": "public_alpha_deploy_dry_run",
@@ -76,9 +76,13 @@
     },
     {
       "name": "external_full_discovery",
-      "status": "waiting",
+      "status": "pass",
+      "tests_run": 5081,
+      "failures": 0,
+      "errors": 0,
+      "exit_code": 0,
       "full_discovery_run_inside_ai": false,
-      "handoff": "control/inventory/dev_to_main_promotion_05_full_discovery_handoff.json"
+      "gate": "promotion_gate"
     }
   ]
 }

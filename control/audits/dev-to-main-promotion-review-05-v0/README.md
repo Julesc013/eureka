@@ -1,22 +1,17 @@
 # DEV-TO-MAIN-PROMOTION-REVIEW-05
 
-Status: `WAITING_FOR_EXTERNAL_FULL_DISCOVERY`
+Status: `READY_FOR_FAST_FORWARD_PROMOTION`
 
 This promotion review verifies the public alpha launch-candidate and deploy
-dry-run evidence but does not promote `main` until an external full-discovery
-pass is returned for the current `dev` head.
+dry-run evidence. External full discovery has passed for the current repaired
+`dev` head, so `main` may be promoted by fast-forward only.
 
-- dev head: `1775e5bbf5792a63ff29ebf5dfc887c4300e77bb`
+- dev head: `8f02824e0fb87431e104a63516af74089fbb461d`
 - origin/main: `7a73de52971f7240f05ead11d0426256c8bd75c9`
-- origin/main...origin/dev: `0 1`
+- origin/main...origin/dev: `0 3`
+- external full discovery: PASS, 5081 tests
 - deployment_performed: false
 - public_launch_performed: false
 - public_launch_readiness_claimed: false
 
-Run:
-
-```powershell
-python scripts/eureka_test_gate.py --gate promotion_gate --watch --clean
-```
-
-Then return the generated `ai_handoff.md`.
+Next action: fast-forward `main` to `dev`, then record final branch equality.

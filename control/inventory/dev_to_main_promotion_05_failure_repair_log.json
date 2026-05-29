@@ -1,7 +1,7 @@
 {
   "schema_version": "dev_to_main_promotion_05_failure_repair_log.v0",
   "task": "DEV-TO-MAIN-PROMOTION-REVIEW-05",
-  "status": "repairs_completed_waiting_for_external_full_discovery_rerun",
+  "status": "repairs_verified_by_external_full_discovery",
   "external_full_discovery_attempt": {
     "run_id": "promotion_gate",
     "status": "fail",
@@ -67,9 +67,20 @@
     "generated_artifact_drift": "valid",
     "static_snapshot": "valid"
   },
+  "external_full_discovery_rerun": {
+    "run_id": "promotion_gate",
+    "status": "pass",
+    "tests_run": 5081,
+    "failures": 0,
+    "errors": 0,
+    "exit_code": 0,
+    "head": "8f02824e0fb87431e104a63516af74089fbb461d",
+    "raw_logs_committed": false
+  },
   "notes": [
     "External full discovery failed on stale historical validators and static snapshot checksum drift.",
     "Focused failed-module validation now passes after in-scope repairs.",
-    "Promotion to main is intentionally blocked until a current external full-discovery pass is returned."
+    "External full discovery rerun passed after focused repairs.",
+    "Promotion to main is allowed only by fast-forward after branch and boundary validation."
   ]
 }
