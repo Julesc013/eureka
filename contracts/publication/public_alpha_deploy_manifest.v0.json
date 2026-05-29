@@ -1,0 +1,51 @@
+{
+  "$id": "contracts/publication/public_alpha_deploy_manifest.v0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Public Alpha Deploy Manifest v0",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "record_type",
+    "manifest_id",
+    "baseline_commit",
+    "hosting_mode",
+    "inputs",
+    "outputs",
+    "deployment_performed",
+    "public_launch_performed"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "public_alpha_deploy_manifest.v0"
+    },
+    "record_type": {
+      "const": "public_alpha_deploy_manifest"
+    },
+    "manifest_id": {
+      "type": "string"
+    },
+    "baseline_commit": {
+      "type": "string"
+    },
+    "hosting_mode": {
+      "enum": [
+        "static_snapshot_site",
+        "read_only_relay_service",
+        "local_preview_server"
+      ]
+    },
+    "inputs": {
+      "type": "array"
+    },
+    "outputs": {
+      "type": "array"
+    },
+    "deployment_performed": {
+      "const": false
+    },
+    "public_launch_performed": {
+      "const": false
+    }
+  }
+}

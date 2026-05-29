@@ -1,0 +1,23 @@
+{
+  "schema_version": "public_alpha_deploy_dry_run_policy.v0",
+  "policy_id": "public_alpha_deploy_dry_run_policy",
+  "status": "active",
+  "task": "PUBLIC-ALPHA-DEPLOY-DRY-RUN-00",
+  "dry_run_only": true,
+  "deployment_performed": false,
+  "public_launch_performed": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "manual_approval_required_for_deploy": true,
+  "manual_approval_required_for_launch": true,
+  "site_dist_write_allowed": false,
+  "dns_change_allowed": false,
+  "provider_call_allowed": false,
+  "live_source_call_allowed": false,
+  "public_mutation_enabled": false,
+  "public_live_source_fanout_enabled": false,
+  "downloads_enabled": false,
+  "extraction_enabled": false,
+  "model_provider_enabled": false,
+  "indexes_mutation_allowed": false
+}

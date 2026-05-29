@@ -1,0 +1,60 @@
+{
+  "schema_version": "public_alpha_deploy_dry_run_validation_matrix.v0",
+  "task": "PUBLIC-ALPHA-DEPLOY-DRY-RUN-00",
+  "validations": [
+    {
+      "name": "public_alpha_deploy_dry_run",
+      "command": "python scripts/validate_public_alpha_deploy_dry_run.py",
+      "status": "pass"
+    },
+    {
+      "name": "public_alpha_launch_candidate",
+      "command": "python scripts/validate_public_alpha_launch_candidate.py",
+      "status": "pass"
+    },
+    {
+      "name": "public_alpha_readonly",
+      "command": "python scripts/validate_public_alpha_readonly.py",
+      "status": "pass"
+    },
+    {
+      "name": "public_alpha_hosting",
+      "command": "python scripts/validate_public_alpha_hosting_readiness.py",
+      "status": "pass"
+    },
+    {
+      "name": "architecture_boundaries",
+      "command": "python scripts/check_architecture_boundaries.py",
+      "status": "pass"
+    },
+    {
+      "name": "generated_artifact_cleanliness",
+      "command": "python scripts/check_generated_artifact_cleanliness.py --check --json",
+      "status": "pass"
+    },
+    {
+      "name": "unit_tests_operations",
+      "command": "python -m unittest tests.operations.test_public_alpha_deploy_dry_run",
+      "status": "pass"
+    },
+    {
+      "name": "unit_tests_validator_script",
+      "command": "python -m unittest tests.scripts.test_validate_public_alpha_deploy_dry_run",
+      "status": "pass"
+    },
+    {
+      "name": "aide_checks",
+      "commands": [
+        "python .aide/scripts/aide_lite.py doctor",
+        "python .aide/scripts/aide_lite.py validate",
+        "python .aide/scripts/aide_lite.py test",
+        "python .aide/scripts/aide_lite.py selftest",
+        "python .aide/scripts/aide_lite.py verify",
+        "python .aide/scripts/aide_lite.py review-pack"
+      ],
+      "status": "pass"
+    }
+  ],
+  "focused_validation_only": true,
+  "full_discovery_not_run_inside_ai": true
+}

@@ -1,0 +1,14 @@
+{
+  "schema_version": "public_alpha_deploy_dry_run_security_headers_matrix.v0",
+  "task": "PUBLIC-ALPHA-DEPLOY-DRY-RUN-00",
+  "security_headers_contract": "contracts/publication/public_alpha_security_headers.v0.json",
+  "csp_plan_present": true,
+  "rate_limit_policy_present": true,
+  "observability_policy_present": true,
+  "privacy_notice_present": true,
+  "abuse_policy_present": true,
+  "inline_secrets_allowed": false,
+  "credentials_committed": false,
+  "deployment_performed": false,
+  "public_launch_performed": false
+}

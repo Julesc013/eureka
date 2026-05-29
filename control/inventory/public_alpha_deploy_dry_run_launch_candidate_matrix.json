@@ -1,0 +1,18 @@
+{
+  "schema_version": "public_alpha_deploy_dry_run_launch_candidate_matrix.v0",
+  "task": "PUBLIC-ALPHA-DEPLOY-DRY-RUN-00",
+  "launch_candidate_result": "control/inventory/public_alpha_launch_candidate_result.json",
+  "launch_candidate_status": "pass",
+  "launch_candidate_ready": true,
+  "public_alpha_readonly_verified": true,
+  "public_alpha_hosting_verified": true,
+  "snapshot_relay_verified": true,
+  "external_full_discovery_verified": true,
+  "external_full_discovery_tests_run": 5057,
+  "public_routes_read_only": true,
+  "public_api_read_only": true,
+  "hard_blockers_remaining": 0,
+  "launch_warnings_remaining": 0,
+  "deployment_performed": false,
+  "public_launch_performed": false
+}

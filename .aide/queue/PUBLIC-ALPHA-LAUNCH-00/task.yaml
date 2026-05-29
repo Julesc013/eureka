@@ -1,0 +1,12 @@
+task_id: PUBLIC-ALPHA-LAUNCH-00
+status: planned
+requires:
+  - DEV-TO-MAIN-PROMOTION-REVIEW-05
+  - explicit_manual_launch_approval
+scope:
+  - explicit public alpha launch task
+  - launch approval must name commit, environment, rollback path, and smoke checks
+deployment_allowed: false
+public_launch_allowed: false
+production_readiness_claimed: false
+public_launch_readiness_claimed: false

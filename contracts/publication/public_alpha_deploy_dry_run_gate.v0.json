@@ -1,0 +1,51 @@
+{
+  "$id": "contracts/publication/public_alpha_deploy_dry_run_gate.v0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Public Alpha Deploy Dry Run Gate v0",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "record_type",
+    "gate_id",
+    "baseline_commit",
+    "deploy_dry_run_rehearsal_passed",
+    "deploy_smoke_passed",
+    "rollback_rehearsal_passed",
+    "manual_approval_required_for_launch",
+    "deployment_performed",
+    "public_launch_performed"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "public_alpha_deploy_dry_run_gate.v0"
+    },
+    "record_type": {
+      "const": "public_alpha_deploy_dry_run_gate"
+    },
+    "gate_id": {
+      "type": "string"
+    },
+    "baseline_commit": {
+      "type": "string"
+    },
+    "deploy_dry_run_rehearsal_passed": {
+      "type": "boolean"
+    },
+    "deploy_smoke_passed": {
+      "type": "boolean"
+    },
+    "rollback_rehearsal_passed": {
+      "type": "boolean"
+    },
+    "manual_approval_required_for_launch": {
+      "const": true
+    },
+    "deployment_performed": {
+      "const": false
+    },
+    "public_launch_performed": {
+      "const": false
+    }
+  }
+}

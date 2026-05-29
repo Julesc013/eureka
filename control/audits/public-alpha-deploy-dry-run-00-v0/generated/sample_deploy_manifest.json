@@ -1,0 +1,11 @@
+{
+  "schema_version": "public_alpha_deploy_manifest.v0",
+  "record_type": "public_alpha_deploy_manifest",
+  "manifest_id": "public-alpha-dry-run-2026-05-29",
+  "baseline_commit": "7a73de52971f7240f05ead11d0426256c8bd75c9",
+  "hosting_mode": "static_snapshot_site",
+  "inputs": [],
+  "outputs": [],
+  "deployment_performed": false,
+  "public_launch_performed": false
+}

@@ -1,4 +1,4 @@
-current_recommended_task: PUBLIC-ALPHA-DEPLOY-DRY-RUN-00 - Dry-run deployment rehearsal for read-only alpha
+current_recommended_task: DEV-TO-MAIN-PROMOTION-REVIEW-05 - Promote public alpha launch-candidate and dry-run evidence
 completed:
   - SOURCE-ACTION-KERNEL-00
   - SOURCE-WAVE-00
@@ -11,9 +11,10 @@ completed:
   - PUBLIC-ALPHA-READONLY-CLOSEOUT-01
   - DEV-TO-MAIN-PROMOTION-REVIEW-04
   - PUBLIC-ALPHA-LAUNCH-CANDIDATE-00
+  - PUBLIC-ALPHA-DEPLOY-DRY-RUN-00
 blocked: []
 planned:
-  - PUBLIC-ALPHA-DEPLOY-DRY-RUN-00
+  - DEV-TO-MAIN-PROMOTION-REVIEW-05
   - PUBLIC-ALPHA-LAUNCH-00
   - PUBLIC-DEMAND-SIGNAL-00
   - PUBLIC-SOURCE-REQUEST-QUEUE-00

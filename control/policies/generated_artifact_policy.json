@@ -59,6 +59,12 @@
       "policy": "Task-local PUBLIC-ALPHA-LAUNCH-CANDIDATE-00 audit evidence is reviewed with the launch-candidate evidence and is not product runtime state."
     },
     {
+      "path": "control/audits/public-alpha-deploy-dry-run-00-v0",
+      "artifact_class": "audit_generated",
+      "allow_task_local_drift": true,
+      "policy": "Task-local PUBLIC-ALPHA-DEPLOY-DRY-RUN-00 audit evidence is reviewed with the dry-run evidence and is not product runtime state."
+    },
+    {
       "path": "control/audits",
       "artifact_class": "audit_generated",
       "policy": "Audit generated outputs are evidence, not product runtime state."

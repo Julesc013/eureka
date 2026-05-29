@@ -1,0 +1,77 @@
+{
+  "$id": "contracts/publication/public_alpha_deploy_dry_run.v0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Public Alpha Deploy Dry Run v0",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "record_type",
+    "created_at",
+    "dry_run_id",
+    "baseline_commit",
+    "source_branch",
+    "dry_run_status",
+    "deploy_dry_run_rehearsal_passed",
+    "deploy_smoke_passed",
+    "rollback_rehearsal_passed",
+    "manual_approval_required_for_deploy",
+    "deployment_performed",
+    "public_launch_performed",
+    "production_readiness_claimed",
+    "public_launch_readiness_claimed"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "public_alpha_deploy_dry_run.v0"
+    },
+    "record_type": {
+      "const": "public_alpha_deploy_dry_run"
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "dry_run_id": {
+      "type": "string"
+    },
+    "baseline_commit": {
+      "type": "string"
+    },
+    "source_branch": {
+      "type": "string"
+    },
+    "dry_run_status": {
+      "enum": [
+        "pass",
+        "pass_with_warnings",
+        "partial",
+        "blocked",
+        "fail"
+      ]
+    },
+    "deploy_dry_run_rehearsal_passed": {
+      "type": "boolean"
+    },
+    "deploy_smoke_passed": {
+      "type": "boolean"
+    },
+    "rollback_rehearsal_passed": {
+      "type": "boolean"
+    },
+    "manual_approval_required_for_deploy": {
+      "const": true
+    },
+    "deployment_performed": {
+      "const": false
+    },
+    "public_launch_performed": {
+      "const": false
+    },
+    "production_readiness_claimed": {
+      "const": false
+    },
+    "public_launch_readiness_claimed": {
+      "const": false
+    }
+  }
+}

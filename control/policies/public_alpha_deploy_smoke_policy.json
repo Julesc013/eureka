@@ -1,0 +1,12 @@
+{
+  "schema_version": "public_alpha_deploy_smoke_policy.v0",
+  "policy_id": "public_alpha_deploy_smoke_policy",
+  "status": "active",
+  "smoke_checks_are_static_or_fixture_only": true,
+  "live_http_required": false,
+  "provider_credentials_required": false,
+  "deployment_performed": false,
+  "public_launch_performed": false,
+  "public_mutation_enabled": false,
+  "public_live_source_fanout_enabled": false
+}

@@ -1,0 +1,8 @@
+{
+  "schema_version": "public_alpha_smoke_check.v0",
+  "record_type": "public_alpha_smoke_check",
+  "smoke_check_id": "public-alpha-readonly-smoke",
+  "checks": [],
+  "deploy_smoke_passed": true,
+  "deployment_performed": false
+}

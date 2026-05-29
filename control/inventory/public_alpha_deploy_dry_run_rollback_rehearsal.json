@@ -1,0 +1,33 @@
+{
+  "schema_version": "public_alpha_rollback_rehearsal.v0",
+  "record_type": "public_alpha_rollback_rehearsal",
+  "task": "PUBLIC-ALPHA-DEPLOY-DRY-RUN-00",
+  "rollback_rehearsal_id": "public-alpha-rollback-plan-rehearsal",
+  "rollback_target": "last promoted read-only public alpha baseline",
+  "steps": [
+    {
+      "id": "identify_candidate_commit",
+      "status": "pass"
+    },
+    {
+      "id": "identify_prior_artifact_or_snapshot",
+      "status": "pass"
+    },
+    {
+      "id": "define_smoke_after_rollback",
+      "status": "pass"
+    },
+    {
+      "id": "confirm_no_public_write_state_to_revert",
+      "status": "pass"
+    },
+    {
+      "id": "record_no_live_source_or_secret_logs",
+      "status": "pass"
+    }
+  ],
+  "rollback_rehearsal_passed": true,
+  "deployment_performed": false,
+  "public_launch_performed": false,
+  "public_mutation_state_created": false
+}

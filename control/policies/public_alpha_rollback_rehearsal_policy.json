@@ -1,0 +1,11 @@
+{
+  "schema_version": "public_alpha_rollback_rehearsal_policy.v0",
+  "policy_id": "public_alpha_rollback_rehearsal_policy",
+  "status": "active",
+  "rollback_rehearsal_required": true,
+  "rollback_rehearsal_is_plan_only": true,
+  "deployment_performed": false,
+  "public_launch_performed": false,
+  "public_mutation_state_created": false,
+  "rollback_target_required": true
+}

@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (6368 chars, 1592 approximate tokens)
+- `.aide/context/latest-task-packet.md` (5656 chars, 1414 approximate tokens)
 
 ## Context Packet Reference
 
@@ -35,29 +35,29 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/PUBLIC-ALPHA-DEPLOY-DRY-RUN-00` (??; matches active task allowed path)
-- allowed: `.aide/queue/PUBLIC-ALPHA-LAUNCH-CANDIDATE-00/task.yaml` (M; matches active task allowed path)
+- allowed: `.aide/queue/DEV-TO-MAIN-PROMOTION-REVIEW-05` (??; matches active task allowed path)
+- allowed: `.aide/queue/PUBLIC-ALPHA-DEPLOY-DRY-RUN-00/task.yaml` (M; matches active task allowed path)
+- allowed: `.aide/queue/PUBLIC-ALPHA-LAUNCH-00` (??; matches active task allowed path)
 - allowed: `.aide/queue/index.yaml` (M; matches active task allowed path)
-- allowed: `contracts/publication/public_alpha_blocker_register.v0.json` (??; matches active task allowed path)
-- allowed: `contracts/publication/public_alpha_deploy_dry_run_plan.v0.json` (??; matches active task allowed path)
-- allowed: `contracts/publication/public_alpha_go_no_go.v0.json` (??; matches active task allowed path)
-- allowed: `contracts/publication/public_alpha_launch_candidate.v0.json` (??; matches active task allowed path)
-- allowed: `contracts/publication/public_alpha_launch_decision.v0.json` (??; matches active task allowed path)
-- allowed: `contracts/publication/public_alpha_launch_gate.v0.json` (M; matches active task allowed path)
-- allowed: `control/audits/public-alpha-launch-candidate-00-v0` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_launch_candidate_api_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_launch_candidate_blocker_register.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_launch_candidate_boundary_report.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_launch_candidate_branch_state.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_launch_candidate_deploy_dry_run_plan.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_launch_candidate_failure_repair_log.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_launch_candidate_go_no_go_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_launch_candidate_input_state.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_launch_candidate_next_task_decision.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_launch_candidate_ops_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_launch_candidate_result.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_launch_candidate_route_matrix.json` (??; matches active task allowed path)
-- additional changed paths omitted from compact packet: 25; see task evidence changed-files report
+- allowed: `contracts/publication/public_alpha_deploy_dry_run.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/publication/public_alpha_deploy_dry_run_gate.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/publication/public_alpha_deploy_manifest.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/publication/public_alpha_environment_checklist.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/publication/public_alpha_rollback_rehearsal.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/publication/public_alpha_smoke_check.v0.json` (??; matches active task allowed path)
+- allowed: `control/audits/public-alpha-deploy-dry-run-00-v0` (??; matches active task allowed path)
+- allowed: `control/inventory/public_alpha_deploy_dry_run_boundary_report.json` (??; matches active task allowed path)
+- allowed: `control/inventory/public_alpha_deploy_dry_run_branch_state.json` (??; matches active task allowed path)
+- allowed: `control/inventory/public_alpha_deploy_dry_run_environment_checklist.json` (??; matches active task allowed path)
+- allowed: `control/inventory/public_alpha_deploy_dry_run_failure_repair_log.json` (??; matches active task allowed path)
+- allowed: `control/inventory/public_alpha_deploy_dry_run_input_state.json` (??; matches active task allowed path)
+- allowed: `control/inventory/public_alpha_deploy_dry_run_launch_candidate_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/public_alpha_deploy_dry_run_manifest.json` (??; matches active task allowed path)
+- allowed: `control/inventory/public_alpha_deploy_dry_run_next_task_decision.json` (??; matches active task allowed path)
+- allowed: `control/inventory/public_alpha_deploy_dry_run_result.json` (??; matches active task allowed path)
+- allowed: `control/inventory/public_alpha_deploy_dry_run_rollback_rehearsal.json` (??; matches active task allowed path)
+- allowed: `control/inventory/public_alpha_deploy_dry_run_security_headers_matrix.json` (??; matches active task allowed path)
+- additional changed paths omitted from compact packet: 21; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -67,8 +67,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 6991
-- approx_tokens: 1748
+- chars: 6972
+- approx_tokens: 1743
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

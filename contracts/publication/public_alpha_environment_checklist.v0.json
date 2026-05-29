@@ -1,0 +1,39 @@
+{
+  "$id": "contracts/publication/public_alpha_environment_checklist.v0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Public Alpha Environment Checklist v0",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "record_type",
+    "environment_id",
+    "checks",
+    "credentials_committed",
+    "provider_credentials_required",
+    "deployment_performed"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "public_alpha_environment_checklist.v0"
+    },
+    "record_type": {
+      "const": "public_alpha_environment_checklist"
+    },
+    "environment_id": {
+      "type": "string"
+    },
+    "checks": {
+      "type": "array"
+    },
+    "credentials_committed": {
+      "const": false
+    },
+    "provider_credentials_required": {
+      "const": false
+    },
+    "deployment_performed": {
+      "const": false
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "schema_version": "public_alpha_rollback_rehearsal.v0",
+  "record_type": "public_alpha_rollback_rehearsal",
+  "rollback_rehearsal_id": "public-alpha-rollback-plan-rehearsal",
+  "steps": [],
+  "rollback_rehearsal_passed": true,
+  "deployment_performed": false,
+  "public_launch_performed": false
+}

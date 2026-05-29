@@ -1,0 +1,13 @@
+{
+  "schema_version": "public_alpha_dry_run_no_deploy_policy.v0",
+  "policy_id": "public_alpha_dry_run_no_deploy_policy",
+  "status": "active",
+  "deployment_performed": false,
+  "public_launch_performed": false,
+  "deploy_command_executed": false,
+  "hosting_provider_mutated": false,
+  "dns_changed": false,
+  "site_dist_written": false,
+  "public_index_mutated": false,
+  "requires_future_operator_approval": true
+}

@@ -1,0 +1,14 @@
+task_id: DEV-TO-MAIN-PROMOTION-REVIEW-05
+status: planned
+requires:
+  - PUBLIC-ALPHA-DEPLOY-DRY-RUN-00
+  - focused_validators_pass
+scope:
+  - promote launch-candidate and deploy dry-run evidence to main
+  - fast-forward only
+  - no deployment
+  - no public launch
+deployment_allowed: false
+public_launch_allowed: false
+production_readiness_claimed: false
+public_launch_readiness_claimed: false

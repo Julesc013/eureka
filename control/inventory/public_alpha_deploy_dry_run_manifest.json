@@ -1,0 +1,27 @@
+{
+  "schema_version": "public_alpha_deploy_manifest.v0",
+  "record_type": "public_alpha_deploy_manifest",
+  "task": "PUBLIC-ALPHA-DEPLOY-DRY-RUN-00",
+  "manifest_id": "public-alpha-dry-run-2026-05-29",
+  "baseline_commit": "7a73de52971f7240f05ead11d0426256c8bd75c9",
+  "hosting_mode": "static_snapshot_site",
+  "inputs": [
+    "control/inventory/public_alpha_launch_candidate_result.json",
+    "contracts/publication/public_alpha_hosting_plan.v0.json",
+    "contracts/publication/public_alpha_security_headers.v0.json",
+    "contracts/publication/public_alpha_rate_limit_policy.v0.json",
+    "contracts/publication/public_alpha_rollback_plan.v0.json"
+  ],
+  "outputs": [
+    "control/inventory/public_alpha_deploy_dry_run_result.json",
+    "control/audits/public-alpha-deploy-dry-run-00-v0/"
+  ],
+  "site_dist_write_planned": false,
+  "site_dist_written": false,
+  "deployment_performed": false,
+  "public_launch_performed": false,
+  "provider_credentials_required": false,
+  "dns_change_required": false,
+  "public_mutation_enabled": false,
+  "public_live_source_fanout_enabled": false
+}

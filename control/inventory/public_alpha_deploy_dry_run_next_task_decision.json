@@ -1,0 +1,17 @@
+{
+  "schema_version": "public_alpha_deploy_dry_run_next_task_decision.v0",
+  "task": "PUBLIC-ALPHA-DEPLOY-DRY-RUN-00",
+  "status": "pass",
+  "recommended_next_task": "DEV-TO-MAIN-PROMOTION-REVIEW-05 - Promote public alpha launch-candidate and dry-run evidence",
+  "planned_after": [
+    "PUBLIC-ALPHA-LAUNCH-00 - Explicit manual public alpha launch task",
+    "PUBLIC-DEMAND-SIGNAL-00",
+    "PUBLIC-SOURCE-REQUEST-QUEUE-00"
+  ],
+  "public_alpha_launch_task_stub_created": true,
+  "launch_requires_manual_approval": true,
+  "deployment_performed": false,
+  "public_launch_performed": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}

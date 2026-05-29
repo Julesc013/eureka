@@ -1,0 +1,40 @@
+{
+  "schema_version": "public_alpha_smoke_check.v0",
+  "record_type": "public_alpha_smoke_check",
+  "task": "PUBLIC-ALPHA-DEPLOY-DRY-RUN-00",
+  "smoke_check_id": "public-alpha-readonly-smoke",
+  "checks": [
+    {
+      "id": "status_route_defined",
+      "target": "/api/v1/alpha/status",
+      "status": "pass"
+    },
+    {
+      "id": "search_route_defined",
+      "target": "/api/v1/alpha/search",
+      "status": "pass"
+    },
+    {
+      "id": "object_route_defined",
+      "target": "/api/v1/alpha/object/{object_id}",
+      "status": "pass"
+    },
+    {
+      "id": "web_index_route_defined",
+      "target": "/alpha",
+      "status": "pass"
+    },
+    {
+      "id": "public_write_actions_disabled",
+      "status": "pass"
+    },
+    {
+      "id": "live_source_fanout_disabled",
+      "status": "pass"
+    }
+  ],
+  "deploy_smoke_passed": true,
+  "live_http_used": false,
+  "deployment_performed": false,
+  "public_launch_performed": false
+}

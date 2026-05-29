@@ -1,0 +1,14 @@
+{
+  "schema_version": "public_alpha_deploy_dry_run_branch_state.v0",
+  "task": "PUBLIC-ALPHA-DEPLOY-DRY-RUN-00",
+  "branch": "dev",
+  "head": "7a73de52971f7240f05ead11d0426256c8bd75c9",
+  "origin_main": "7a73de52971f7240f05ead11d0426256c8bd75c9",
+  "origin_dev": "7a73de52971f7240f05ead11d0426256c8bd75c9",
+  "origin_main_equals_origin_dev_before": true,
+  "working_tree_clean_before": true,
+  "active_git_operation": false,
+  "direct_main_work": false,
+  "deployment_performed": false,
+  "public_launch_performed": false
+}

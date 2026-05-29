@@ -1,0 +1,41 @@
+{
+  "schema_version": "public_alpha_environment_checklist.v0",
+  "record_type": "public_alpha_environment_checklist",
+  "task": "PUBLIC-ALPHA-DEPLOY-DRY-RUN-00",
+  "environment_id": "public-alpha-dry-run-local",
+  "checks": [
+    {
+      "id": "environment_name_recorded",
+      "status": "pass"
+    },
+    {
+      "id": "credentials_not_committed",
+      "status": "pass"
+    },
+    {
+      "id": "read_only_public_routes",
+      "status": "pass"
+    },
+    {
+      "id": "security_headers_plan_present",
+      "status": "pass"
+    },
+    {
+      "id": "rate_limits_plan_present",
+      "status": "pass"
+    },
+    {
+      "id": "rollback_target_documented",
+      "status": "pass"
+    },
+    {
+      "id": "manual_approval_required",
+      "status": "pass"
+    }
+  ],
+  "credentials_committed": false,
+  "provider_credentials_required": false,
+  "deployment_performed": false,
+  "public_launch_performed": false,
+  "dns_changed": false
+}

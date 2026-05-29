@@ -1,0 +1,39 @@
+{
+  "$id": "contracts/publication/public_alpha_rollback_rehearsal.v0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Public Alpha Rollback Rehearsal v0",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "record_type",
+    "rollback_rehearsal_id",
+    "steps",
+    "rollback_rehearsal_passed",
+    "deployment_performed",
+    "public_launch_performed"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "public_alpha_rollback_rehearsal.v0"
+    },
+    "record_type": {
+      "const": "public_alpha_rollback_rehearsal"
+    },
+    "rollback_rehearsal_id": {
+      "type": "string"
+    },
+    "steps": {
+      "type": "array"
+    },
+    "rollback_rehearsal_passed": {
+      "type": "boolean"
+    },
+    "deployment_performed": {
+      "const": false
+    },
+    "public_launch_performed": {
+      "const": false
+    }
+  }
+}
