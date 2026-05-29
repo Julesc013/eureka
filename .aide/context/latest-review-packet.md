@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (4764 chars, 1191 approximate tokens)
+- `.aide/context/latest-task-packet.md` (4809 chars, 1203 approximate tokens)
 
 ## Context Packet Reference
 
@@ -33,15 +33,11 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Changed Files Summary
 
-- allowed: `.aide/queue/PUBLIC-ALPHA-LAUNCH-00/task.yaml` (M; matches active task allowed path)
-- allowed: `control/audits/public-alpha-launch-00-v0/README.md` (A; matches active task allowed path)
-- allowed: `control/audits/public-alpha-launch-00-v0/manual_approval_missing.md` (A; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_launch_boundary_report.json` (A; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_launch_input_state.json` (A; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_launch_next_task_decision.json` (A; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_launch_result.json` (A; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_launch_validation_matrix.json` (A; matches active task allowed path)
-- allowed: `control/policies/generated_artifact_policy.json` (M; matches active task allowed path)
+- allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
+- allowed: `scripts/validate_public_alpha_launch.py` (??; matches active task allowed path)
+- allowed: `tests/operations/test_public_alpha_launch.py` (??; matches active task allowed path)
+- allowed: `tests/scripts/test_validate_public_alpha_launch.py` (??; matches active task allowed path)
+- allowed: `tools/validators/validate_public_alpha_launch.py` (??; matches active task allowed path)
 
 ## Validation Summary
 
@@ -51,8 +47,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 5202
-- approx_tokens: 1301
+- chars: 4724
+- approx_tokens: 1181
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

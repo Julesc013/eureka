@@ -53,7 +53,9 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 - `scripts/validate_*.py`
 - `scripts/check_*.py`
 - `tests/operations/**`
+- `tests/scripts/**`
 - `tests/aide/**`
+- `tools/validators/**`
 
 ## FORBIDDEN_PATHS
 
