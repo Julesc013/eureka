@@ -1,0 +1,24 @@
+{
+  "schema_version": "public_alpha_launch_next_task_decision.v0",
+  "task": "PUBLIC-ALPHA-LAUNCH-00",
+  "status": "waiting_for_manual_launch_approval",
+  "recommended_next_task": "PUBLIC-ALPHA-LAUNCH-00",
+  "required_approval_file": "control/approvals/public-alpha-launch-00-approval.json",
+  "alternate_task_local_record": "control/inventory/public_alpha_launch_manual_approval.json",
+  "required_approval_phrase": "LAUNCH_READ_ONLY_PUBLIC_ALPHA",
+  "required_target_environment": "staging or public_alpha",
+  "required_deployment_mode": [
+    "static_snapshot_site",
+    "read_only_relay_service",
+    "local_public_preview",
+    "other_explicitly_approved"
+  ],
+  "required_target_url_or_domain": true,
+  "required_deployment_command": true,
+  "required_rollback_command": true,
+  "required_rollback_contact": true,
+  "deployment_performed": false,
+  "public_launch_performed": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}

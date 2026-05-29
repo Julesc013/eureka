@@ -1,0 +1,32 @@
+{
+  "schema_version": "public_alpha_launch_validation_matrix.v0",
+  "task": "PUBLIC-ALPHA-LAUNCH-00",
+  "status": "waiting_for_manual_launch_approval",
+  "validations": [
+    {
+      "name": "branch_state",
+      "status": "pass",
+      "result": "origin/main equals origin/dev at 21a64d740d2f79524bd0880121dd65211aec520b"
+    },
+    {
+      "name": "promotion_05",
+      "command": "python scripts/validate_dev_to_main_promotion_05.py --json",
+      "status": "pass"
+    },
+    {
+      "name": "public_alpha_deploy_dry_run",
+      "command": "python scripts/validate_public_alpha_deploy_dry_run.py",
+      "status": "pass"
+    },
+    {
+      "name": "public_alpha_launch_candidate",
+      "command": "python scripts/validate_public_alpha_launch_candidate.py",
+      "status": "pass"
+    },
+    {
+      "name": "manual_approval",
+      "status": "missing",
+      "required_phrase": "LAUNCH_READ_ONLY_PUBLIC_ALPHA"
+    }
+  ]
+}

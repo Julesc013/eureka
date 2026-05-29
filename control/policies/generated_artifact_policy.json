@@ -71,6 +71,12 @@
       "policy": "Task-local DEV-TO-MAIN-PROMOTION-REVIEW-05 audit evidence is reviewed with the promotion evidence and is not product runtime state."
     },
     {
+      "path": "control/audits/public-alpha-launch-00-v0",
+      "artifact_class": "audit_generated",
+      "allow_task_local_drift": true,
+      "policy": "Task-local PUBLIC-ALPHA-LAUNCH-00 audit evidence is reviewed with the manual launch approval gate and is not product runtime state."
+    },
+    {
       "path": "control/audits",
       "artifact_class": "audit_generated",
       "policy": "Audit generated outputs are evidence, not product runtime state."

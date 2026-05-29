@@ -1,11 +1,16 @@
 task_id: PUBLIC-ALPHA-LAUNCH-00
-status: planned
+status: WAITING_FOR_MANUAL_LAUNCH_APPROVAL
 requires:
   - DEV-TO-MAIN-PROMOTION-REVIEW-05
   - explicit_manual_launch_approval
 scope:
   - explicit public alpha launch task
   - launch approval must name commit, environment, rollback path, and smoke checks
+manual_approval:
+  status: missing
+  required_approval_file: control/approvals/public-alpha-launch-00-approval.json
+  alternate_task_local_record: control/inventory/public_alpha_launch_manual_approval.json
+  required_phrase: LAUNCH_READ_ONLY_PUBLIC_ALPHA
 deployment_allowed: false
 public_launch_allowed: false
 production_readiness_claimed: false

@@ -33,17 +33,15 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Changed Files Summary
 
-- allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/DEV-TO-MAIN-PROMOTION-REVIEW-05/task.yaml` (M; matches active task allowed path)
-- allowed: `.aide/queue/index.yaml` (M; matches active task allowed path)
-- allowed: `control/audits/dev-to-main-promotion-review-05-v0/README.md` (M; matches active task allowed path)
-- allowed: `control/audits/dev-to-main-promotion-review-05-v0/branch_state.md` (M; matches active task allowed path)
-- allowed: `control/audits/dev-to-main-promotion-review-05-v0/dev_to_main_promotion_05_report.json` (M; matches active task allowed path)
-- allowed: `control/audits/dev-to-main-promotion-review-05-v0/generated/sample_summary.md` (M; matches active task allowed path)
-- allowed: `control/audits/dev-to-main-promotion-review-05-v0/promotion_result.md` (M; matches active task allowed path)
-- allowed: `control/inventory/dev_to_main_promotion_05_branch_state.json` (M; matches active task allowed path)
-- allowed: `control/inventory/dev_to_main_promotion_05_next_task_decision.json` (M; matches active task allowed path)
-- allowed: `control/inventory/dev_to_main_promotion_05_result.json` (M; matches active task allowed path)
+- allowed: `.aide/queue/PUBLIC-ALPHA-LAUNCH-00/task.yaml` (M; matches active task allowed path)
+- allowed: `control/audits/public-alpha-launch-00-v0/README.md` (A; matches active task allowed path)
+- allowed: `control/audits/public-alpha-launch-00-v0/manual_approval_missing.md` (A; matches active task allowed path)
+- allowed: `control/inventory/public_alpha_launch_boundary_report.json` (A; matches active task allowed path)
+- allowed: `control/inventory/public_alpha_launch_input_state.json` (A; matches active task allowed path)
+- allowed: `control/inventory/public_alpha_launch_next_task_decision.json` (A; matches active task allowed path)
+- allowed: `control/inventory/public_alpha_launch_result.json` (A; matches active task allowed path)
+- allowed: `control/inventory/public_alpha_launch_validation_matrix.json` (A; matches active task allowed path)
+- allowed: `control/policies/generated_artifact_policy.json` (M; matches active task allowed path)
 
 ## Validation Summary
 
@@ -53,8 +51,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 5462
-- approx_tokens: 1366
+- chars: 5202
+- approx_tokens: 1301
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:
