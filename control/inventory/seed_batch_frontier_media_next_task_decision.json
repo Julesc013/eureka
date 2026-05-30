@@ -1,0 +1,10 @@
+{
+  "schema_version": "seed_batch_frontier_media_next_task_decision.v0",
+  "task": "SEED-BATCH-FRONTIER-MEDIA-00",
+  "status": "pass",
+  "recommended_next_task": "SEED-BATCH-LEGACY-SOFTWARE-00",
+  "reason": "The frontier media wedge exercises the active discovery stack; the next corpus-building wedge should cover legacy software.",
+  "planned_after": ["SNAPSHOT-REFRESH-00", "PUBLIC-ALPHA-REASSESS-00"],
+  "deployment_performed": false,
+  "public_launch_readiness_claimed": false
+}

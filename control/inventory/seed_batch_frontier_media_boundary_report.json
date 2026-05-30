@@ -1,0 +1,21 @@
+{
+  "schema_version": "seed_batch_boundary_report.v0",
+  "batch_id": "seed_batch_frontier_media_00",
+  "seed_batch_outputs_are_not_truth": true,
+  "candidates_require_review": true,
+  "operator_live_metadata_run_performed": false,
+  "raw_live_response_committed": false,
+  "review_required": true,
+  "accepted_truth": false,
+  "accepted_truth_created": false,
+  "reviewed_index_mutated": false,
+  "master_index_mutated": false,
+  "public_index_mutated": false,
+  "public_mutation_enabled": false,
+  "download_performed": false,
+  "extraction_executed": false,
+  "model_provider_used": false,
+  "deployment_performed": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}

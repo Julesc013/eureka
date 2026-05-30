@@ -1,0 +1,6 @@
+{
+  "schema_version": "sample_public_alpha_reassess_input.v0",
+  "path": "examples/seed_batches/frontier_media/public_alpha_reassess_input.json",
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}

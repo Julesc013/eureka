@@ -1,0 +1,26 @@
+{
+  "schema_version": "seed_batch_frontier_media_validation_matrix.v0",
+  "task": "SEED-BATCH-FRONTIER-MEDIA-00",
+  "status": "pass",
+  "focused_validation": [
+    "scripts/validate_seed_batch_frontier_media.py",
+    "scripts/validate_review_batch.py",
+    "scripts/validate_scout_runtime.py",
+    "scripts/validate_candidate_index_runtime.py",
+    "scripts/validate_query_to_source_action_planner.py",
+    "scripts/validate_public_alpha_readonly.py",
+    "scripts/validate_source_action_kernel.py",
+    "scripts/validate_source_wave.py",
+    "scripts/validate_domain_packs.py",
+    "scripts/check_architecture_boundaries.py",
+    "scripts/check_generated_artifact_cleanliness.py --check --json",
+    "focused seed batch unittest modules",
+    "AIDE Lite doctor/validate/test/selftest/verify/review-pack"
+  ],
+  "full_discovery": "NOT_RUN_BY_POLICY",
+  "accepted_truth_created": false,
+  "reviewed_index_mutated": false,
+  "master_index_mutated": false,
+  "public_index_mutated": false,
+  "deployment_performed": false
+}

@@ -1,0 +1,19 @@
+{
+  "schema_version": "seed_batch_run_contract.v0",
+  "record_type": "seed_batch_run",
+  "required_fields": [
+    "schema_version",
+    "batch_id",
+    "mode",
+    "query_count",
+    "candidate_count",
+    "fixture_seed_batch_passed",
+    "operator_live_metadata_run_performed",
+    "accepted_truth",
+    "accepted_truth_created",
+    "reviewed_index_mutated",
+    "public_index_mutated"
+  ],
+  "operator_live_metadata_run_performed": false,
+  "accepted_truth": false
+}

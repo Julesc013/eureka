@@ -1,0 +1,18 @@
+{
+  "schema_version": "seed_batch_frontier_media_policy.v0",
+  "task": "SEED-BATCH-FRONTIER-MEDIA-00",
+  "seed_batch_outputs_are_not_truth": true,
+  "candidates_require_review": true,
+  "reviewed_index_mutation_enabled": false,
+  "public_index_mutation_enabled": false,
+  "master_index_mutation_enabled": false,
+  "automatic_candidate_acceptance_enabled": false,
+  "source_actions_bounded": true,
+  "archive_org_metadata_candidates_allowed": true,
+  "live_metadata_optional_and_operator_gated": true,
+  "raw_live_responses_committed": false,
+  "downloads_enabled": false,
+  "extraction_enabled": false,
+  "model_provider_enabled": false,
+  "deployment_enabled": false
+}

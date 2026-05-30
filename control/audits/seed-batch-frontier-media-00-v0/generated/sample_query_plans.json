@@ -1,0 +1,6 @@
+{
+  "schema_version": "sample_query_plans.v0",
+  "path": "examples/seed_batches/frontier_media/query_plans.json",
+  "query_plan_count": 12,
+  "accepted_truth": false
+}

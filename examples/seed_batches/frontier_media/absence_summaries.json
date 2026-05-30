@@ -1,0 +1,10 @@
+[
+  {
+    "absence_id": "seed_absence:ca7d7272ff295051",
+    "absence_kind": "reviewed_truth_not_created",
+    "accepted_truth": false,
+    "review_required": true,
+    "schema_version": "seed_batch_absence_summary.v0",
+    "summary": "Fixture candidates exist, but reviewed truth and public index records are intentionally absent."
+  }
+]

@@ -1,0 +1,22 @@
+{
+  "schema_version": "seed_batch_frontier_media_input_state.v0",
+  "task": "SEED-BATCH-FRONTIER-MEDIA-00",
+  "branch": "dev",
+  "expected_head": "2d0ca483 feat(review): add batch candidate review",
+  "prior_result_mappings": {
+    "review_batch": "control/inventory/review_batch_result.json",
+    "scout_runtime": "control/inventory/scout_runtime_result.json",
+    "candidate_index": "control/inventory/candidate_index_result.json",
+    "query_planner": "control/audits/query-to-source-action-planner-00-v0/query_to_source_action_planner_report.json",
+    "source_action_kernel": "control/inventory/source_action_kernel_result.json",
+    "source_wave": "control/inventory/source_wave_result.json",
+    "domain_foundation": "control/inventory/domain_foundation_result.json",
+    "public_alpha_launch_defer": "control/inventory/public_alpha_launch_defer_result.json"
+  },
+  "launch_track_deferred_for_discovery_coverage": true,
+  "candidates_remain_review_only": true,
+  "accepted_truth_created": false,
+  "reviewed_index_mutated": false,
+  "master_index_mutated": false,
+  "public_index_mutated": false
+}

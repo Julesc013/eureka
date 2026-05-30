@@ -1,0 +1,11 @@
+{
+  "schema_version": "seed_batch_frontier_media_public_alpha_reassess_matrix.v0",
+  "task": "SEED-BATCH-FRONTIER-MEDIA-00",
+  "public_alpha_reassess_input_created": true,
+  "public_launch_readiness_claimed": false,
+  "production_readiness_claimed": false,
+  "requires_review_local_apply_snapshot_before_reassess": true,
+  "accepted_truth_created": false,
+  "reviewed_index_mutated": false,
+  "public_index_mutated": false
+}

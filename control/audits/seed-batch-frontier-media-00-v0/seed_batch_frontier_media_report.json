@@ -1,0 +1,14 @@
+{
+  "schema_version": "seed_batch_frontier_media_report.v0",
+  "task": "SEED-BATCH-FRONTIER-MEDIA-00",
+  "status": "pass",
+  "query_count": 12,
+  "candidate_count": 12,
+  "fixture_seed_batch_passed": true,
+  "operator_live_metadata_run_performed": false,
+  "accepted_truth_created": false,
+  "reviewed_index_mutated": false,
+  "master_index_mutated": false,
+  "public_index_mutated": false,
+  "deployment_performed": false
+}

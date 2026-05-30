@@ -1,0 +1,206 @@
+[
+  {
+    "accepted_truth": false,
+    "batch_id": "seed_batch_frontier_media_00",
+    "candidate_id": "seed_frontier_media_frontier_media_q01_candidate",
+    "confidence_label": "medium",
+    "domain_id": "frontier_resolution_media",
+    "fixture_derived": true,
+    "query_id": "frontier_media_q01",
+    "review_required": true,
+    "schema_version": "seed_batch_candidate_summary.v0",
+    "source_family": "internet_archive_metadata",
+    "source_locator": {
+      "locator_kind": "archive_org_details_page",
+      "url": "https://archive.org/details/seed_frontier_media_01_new_york_1993_d_theater_hd_demo_tape_original_source"
+    },
+    "title": "New York 1993 D-Theater HD demo tape original source fixture metadata lead"
+  },
+  {
+    "accepted_truth": false,
+    "batch_id": "seed_batch_frontier_media_00",
+    "candidate_id": "seed_frontier_media_frontier_media_q02_candidate",
+    "confidence_label": "medium",
+    "domain_id": "frontier_resolution_media",
+    "fixture_derived": true,
+    "query_id": "frontier_media_q02",
+    "review_required": true,
+    "schema_version": "seed_batch_candidate_summary.v0",
+    "source_family": "internet_archive_metadata",
+    "source_locator": {
+      "locator_kind": "archive_org_details_page",
+      "url": "https://archive.org/details/seed_frontier_media_02_new_york_1993_d_vhs_hdtv_demo_tape"
+    },
+    "title": "New York 1993 D-VHS HDTV demo tape fixture metadata lead"
+  },
+  {
+    "accepted_truth": false,
+    "batch_id": "seed_batch_frontier_media_00",
+    "candidate_id": "seed_frontier_media_frontier_media_q03_candidate",
+    "confidence_label": "medium",
+    "domain_id": "frontier_resolution_media",
+    "fixture_derived": true,
+    "query_id": "frontier_media_q03",
+    "review_required": true,
+    "schema_version": "seed_batch_candidate_summary.v0",
+    "source_family": "internet_archive_metadata",
+    "source_locator": {
+      "locator_kind": "archive_org_details_page",
+      "url": "https://archive.org/details/seed_frontier_media_03_jvc_d_theater_new_york_hd_demo"
+    },
+    "title": "JVC D-Theater New York HD demo fixture metadata lead"
+  },
+  {
+    "accepted_truth": false,
+    "batch_id": "seed_batch_frontier_media_00",
+    "candidate_id": "seed_frontier_media_frontier_media_q04_candidate",
+    "confidence_label": "medium",
+    "domain_id": "frontier_resolution_media",
+    "fixture_derived": true,
+    "query_id": "frontier_media_q04",
+    "review_required": true,
+    "schema_version": "seed_batch_candidate_summary.v0",
+    "source_family": "internet_archive_metadata",
+    "source_locator": {
+      "locator_kind": "archive_org_details_page",
+      "url": "https://archive.org/details/seed_frontier_media_04_d_theater_d_vhs_city_footage_1993"
+    },
+    "title": "D-Theater D-VHS city footage 1993 fixture metadata lead"
+  },
+  {
+    "accepted_truth": false,
+    "batch_id": "seed_batch_frontier_media_00",
+    "candidate_id": "seed_frontier_media_frontier_media_q05_candidate",
+    "confidence_label": "medium",
+    "domain_id": "frontier_resolution_media",
+    "fixture_derived": true,
+    "query_id": "frontier_media_q05",
+    "review_required": true,
+    "schema_version": "seed_batch_candidate_summary.v0",
+    "source_family": "internet_archive_metadata",
+    "source_locator": {
+      "locator_kind": "archive_org_details_page",
+      "url": "https://archive.org/details/seed_frontier_media_05_hi_vision_muse_new_york_1993_hdtv_demo"
+    },
+    "title": "Hi-Vision MUSE New York 1993 HDTV demo fixture metadata lead"
+  },
+  {
+    "accepted_truth": false,
+    "batch_id": "seed_batch_frontier_media_00",
+    "candidate_id": "seed_frontier_media_frontier_media_q06_candidate",
+    "confidence_label": "low",
+    "domain_id": "frontier_resolution_media",
+    "fixture_derived": true,
+    "query_id": "frontier_media_q06",
+    "review_required": true,
+    "schema_version": "seed_batch_candidate_summary.v0",
+    "source_family": "internet_archive_metadata",
+    "source_locator": {
+      "locator_kind": "archive_org_details_page",
+      "url": "https://archive.org/details/seed_frontier_media_06_early_hdtv_new_york_1993_demo_footage"
+    },
+    "title": "early HDTV New York 1993 demo footage fixture metadata lead"
+  },
+  {
+    "accepted_truth": false,
+    "batch_id": "seed_batch_frontier_media_00",
+    "candidate_id": "seed_frontier_media_frontier_media_q07_candidate",
+    "confidence_label": "low",
+    "domain_id": "frontier_resolution_media",
+    "fixture_derived": true,
+    "query_id": "frontier_media_q07",
+    "review_required": true,
+    "schema_version": "seed_batch_candidate_summary.v0",
+    "source_family": "internet_archive_metadata",
+    "source_locator": {
+      "locator_kind": "archive_org_details_page",
+      "url": "https://archive.org/details/seed_frontier_media_07_d_theater_demo_tape_jvc_city"
+    },
+    "title": "D-Theater demo tape JVC city fixture metadata lead"
+  },
+  {
+    "accepted_truth": false,
+    "batch_id": "seed_batch_frontier_media_00",
+    "candidate_id": "seed_frontier_media_frontier_media_q08_candidate",
+    "confidence_label": "low",
+    "domain_id": "frontier_resolution_media",
+    "fixture_derived": true,
+    "query_id": "frontier_media_q08",
+    "review_required": true,
+    "schema_version": "seed_batch_candidate_summary.v0",
+    "source_family": "internet_archive_metadata",
+    "source_locator": {
+      "locator_kind": "archive_org_details_page",
+      "url": "https://archive.org/details/seed_frontier_media_08_hdvs_hi_vision_demo_new_york_footage"
+    },
+    "title": "HDVS Hi-Vision demo New York footage fixture metadata lead"
+  },
+  {
+    "accepted_truth": false,
+    "batch_id": "seed_batch_frontier_media_00",
+    "candidate_id": "seed_frontier_media_frontier_media_q09_candidate",
+    "confidence_label": "low",
+    "domain_id": "frontier_resolution_media",
+    "fixture_derived": true,
+    "query_id": "frontier_media_q09",
+    "review_required": true,
+    "schema_version": "seed_batch_candidate_summary.v0",
+    "source_family": "internet_archive_metadata",
+    "source_locator": {
+      "locator_kind": "archive_org_details_page",
+      "url": "https://archive.org/details/seed_frontier_media_09_japanese_hdtv_demonstration_tape_new_york"
+    },
+    "title": "Japanese HDTV demonstration tape New York fixture metadata lead"
+  },
+  {
+    "accepted_truth": false,
+    "batch_id": "seed_batch_frontier_media_00",
+    "candidate_id": "seed_frontier_media_frontier_media_q10_candidate",
+    "confidence_label": "low",
+    "domain_id": "frontier_resolution_media",
+    "fixture_derived": true,
+    "query_id": "frontier_media_q10",
+    "review_required": true,
+    "schema_version": "seed_batch_candidate_summary.v0",
+    "source_family": "internet_archive_metadata",
+    "source_locator": {
+      "locator_kind": "archive_org_details_page",
+      "url": "https://archive.org/details/seed_frontier_media_10_muse_laserdisc_new_york_hd_demo"
+    },
+    "title": "MUSE LaserDisc New York HD demo fixture metadata lead"
+  },
+  {
+    "accepted_truth": false,
+    "batch_id": "seed_batch_frontier_media_00",
+    "candidate_id": "seed_frontier_media_frontier_media_q11_candidate",
+    "confidence_label": "low",
+    "domain_id": "frontier_resolution_media",
+    "fixture_derived": true,
+    "query_id": "frontier_media_q11",
+    "review_required": true,
+    "schema_version": "seed_batch_candidate_summary.v0",
+    "source_family": "internet_archive_metadata",
+    "source_locator": {
+      "locator_kind": "archive_org_details_page",
+      "url": "https://archive.org/details/seed_frontier_media_11_d_vhs_demo_tape_urban_footage"
+    },
+    "title": "D-VHS demo tape urban footage fixture metadata lead"
+  },
+  {
+    "accepted_truth": false,
+    "batch_id": "seed_batch_frontier_media_00",
+    "candidate_id": "seed_frontier_media_frontier_media_q12_candidate",
+    "confidence_label": "low",
+    "domain_id": "frontier_resolution_media",
+    "fixture_derived": true,
+    "query_id": "frontier_media_q12",
+    "review_required": true,
+    "schema_version": "seed_batch_candidate_summary.v0",
+    "source_family": "internet_archive_metadata",
+    "source_locator": {
+      "locator_kind": "archive_org_details_page",
+      "url": "https://archive.org/details/seed_frontier_media_12_early_high_definition_city_footage_archival_source"
+    },
+    "title": "early high definition city footage archival source fixture metadata lead"
+  }
+]

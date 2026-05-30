@@ -1,0 +1,4156 @@
+[
+  {
+    "accepted_truth": false,
+    "accepted_truth_created": false,
+    "batch_id": "seed_batch_frontier_media_00",
+    "candidate_suppressions": [
+      "suppress_generic_city_or_tourism_media"
+    ],
+    "created_at": "2026-05-31T00:00:00Z",
+    "deployment_performed": false,
+    "domain_id": "frontier_resolution_media",
+    "download_performed": false,
+    "extraction_executed": false,
+    "intent": "find_frontier_resolution_media",
+    "master_index_mutated": false,
+    "model_provider_used": false,
+    "operator_instance_mutated": false,
+    "plan_id": "seed_query_plan:d4a8f229c25b08e8",
+    "planner_domain_pack": "frontier_resolution_media",
+    "planner_intent": "find_frontier_resolution_media",
+    "planner_plan": {
+      "candidate_lane_expectations": [
+        {
+          "expected": true,
+          "lane": "reviewed_local_results",
+          "source": "controlled local index",
+          "truth_status": "reviewed_only"
+        },
+        {
+          "expected": true,
+          "lane": "archive_org_metadata_candidates",
+          "review_required": true,
+          "source": "internet_archive_metadata",
+          "truth_status": "candidate_only"
+        },
+        {
+          "blocked_actions": [
+            "download",
+            "install_handoff",
+            "execute",
+            "upload",
+            "extract"
+          ],
+          "expected": true,
+          "lane": "blocked_actions"
+        },
+        {
+          "domain_pack": "frontier_resolution_media",
+          "expected": true,
+          "lane": "source_actions_planned",
+          "truth_status": "plan_only"
+        }
+      ],
+      "candidate_suppressions": [
+        {
+          "applies_to": [
+            "candidate_results",
+            "source_query_rewrites"
+          ],
+          "reason": "Frontier-resolution media searches should avoid generic location media when a technical tape/source is requested.",
+          "suppression_id": "suppress_generic_city_or_tourism_media",
+          "terms": [
+            "tourism",
+            "city guide",
+            "travel guide",
+            "stock footage"
+          ]
+        }
+      ],
+      "domain_pack": "frontier_resolution_media",
+      "explanation": {
+        "blocked": [
+          "download",
+          "install_handoff",
+          "execute",
+          "upload",
+          "extract",
+          "model_provider_call",
+          "automatic_promotion"
+        ],
+        "domain_pack": "frontier_resolution_media",
+        "factors": [
+          {
+            "factor": "intent",
+            "reasons": [
+              "frontier-resolution media terms were detected"
+            ],
+            "value": "find_frontier_resolution_media"
+          },
+          {
+            "factor": "domain_pack",
+            "value": "frontier_resolution_media"
+          },
+          {
+            "factor": "source_families",
+            "value": [
+              "internet_archive_metadata",
+              "wayback_cdx_metadata",
+              "wikidata_metadata",
+              "manual_source_pack"
+            ]
+          },
+          {
+            "factor": "archive_org_metadata_query",
+            "value": "(mediatype:movies OR mediatype:texts OR mediatype:collection) \"New York\" 1993 (\"D-Theater\" OR \"D-VHS\" OR \"D VHS\" OR JVC OR \"Hi-Vision\" OR MUSE OR \"HD demo\" OR \"demo tape\") -tourism -\"city guide\" -\"travel guide\" -\"stock footage\""
+          },
+          {
+            "factor": "candidate_suppressions",
+            "value": [
+              "suppress_generic_city_or_tourism_media"
+            ]
+          }
+        ],
+        "intent": "find_frontier_resolution_media",
+        "plan_id": "query_source_plan:be74e8a9f3f2e7b6",
+        "query": "New York 1993 D-Theater HD demo tape original source",
+        "schema_version": "query_plan_explanation_packet.v0",
+        "summary": "Deterministic query planner selected a domain pack, source families, metadata query rewrites, suppressions, and review-only candidate lanes.",
+        "uncertainty": [
+          "Archive.org metadata results are candidates only.",
+          "A metadata match does not establish compatibility, rights, safety, or provenance truth."
+        ]
+      },
+      "intent": "find_frontier_resolution_media",
+      "intent_confidence": "high",
+      "intent_reasons": [
+        "frontier-resolution media terms were detected"
+      ],
+      "non_claims": [
+        "not_production_readiness",
+        "not_public_launch_readiness",
+        "not_accepted_truth",
+        "not_rights_clearance",
+        "not_malware_scan",
+        "not_download_permission",
+        "not_full_archive_exhaustiveness_claim"
+      ],
+      "normalized_query": "New York 1993 D-Theater HD demo tape original source",
+      "plan_id": "query_source_plan:be74e8a9f3f2e7b6",
+      "planner_id": "eureka_query_to_source_action_planner_v0",
+      "raw_query": "New York 1993 D-Theater HD demo tape original source",
+      "result_lane_plans": [
+        {
+          "expected": true,
+          "lane": "reviewed_local_results",
+          "source": "controlled local index",
+          "truth_status": "reviewed_only"
+        },
+        {
+          "expected": true,
+          "lane": "archive_org_metadata_candidates",
+          "review_required": true,
+          "source": "internet_archive_metadata",
+          "truth_status": "candidate_only"
+        },
+        {
+          "blocked_actions": [
+            "download",
+            "install_handoff",
+            "execute",
+            "upload",
+            "extract"
+          ],
+          "expected": true,
+          "lane": "blocked_actions"
+        },
+        {
+          "domain_pack": "frontier_resolution_media",
+          "expected": true,
+          "lane": "source_actions_planned",
+          "truth_status": "plan_only"
+        }
+      ],
+      "review_handoff_plans": [
+        {
+          "accepted_reviewed_truth_created": false,
+          "candidate_states": [
+            "new",
+            "needs_review",
+            "useful_lead",
+            "near_miss",
+            "rejected",
+            "duplicate"
+          ],
+          "handoff_id": "review_handoff:21677c49747fed03",
+          "handoff_kind": "candidate_metadata_review",
+          "index_mutation_performed": false,
+          "notes": [
+            "Candidate metadata can become a reviewed record only through a later explicit review task.",
+            "This planner does not promote candidates or mutate public, local, or master indexes."
+          ],
+          "review_required": true,
+          "schema_version": "review_handoff_plan.v0"
+        }
+      ],
+      "safety": {
+        "accepted_truth_created": false,
+        "candidate_index_mutated": false,
+        "candidate_only": true,
+        "deployment_performed": false,
+        "download_performed": false,
+        "extraction_executed": false,
+        "install_handoff_enabled": false,
+        "master_index_mutated": false,
+        "model_provider_used": false,
+        "public_index_mutated": false,
+        "review_required": true,
+        "reviewed_index_mutated": false,
+        "source_cache_mutated": false,
+        "upload_performed": false
+      },
+      "schema_version": "query_to_source_action_plan.v0",
+      "source_actions": [
+        {
+          "accepted_truth": false,
+          "action_kind": "metadata_search",
+          "candidate_only": true,
+          "domain_pack": "frontier_resolution_media",
+          "download_performed": false,
+          "execution_mode": "metadata_candidate_runtime",
+          "extraction_executed": false,
+          "index_mutation_performed": false,
+          "intent": "find_frontier_resolution_media",
+          "limitations": [
+            "metadata_only",
+            "candidate_not_reviewed_truth",
+            "no_download",
+            "no_extraction",
+            "no_auto_promotion"
+          ],
+          "model_provider_used": false,
+          "query": "(mediatype:movies OR mediatype:texts OR mediatype:collection) \"New York\" 1993 (\"D-Theater\" OR \"D-VHS\" OR \"D VHS\" OR JVC OR \"Hi-Vision\" OR MUSE OR \"HD demo\" OR \"demo tape\") -tourism -\"city guide\" -\"travel guide\" -\"stock footage\"",
+          "review_required": true,
+          "schema_version": "source_action_plan.v0",
+          "source_family": "internet_archive_metadata",
+          "transport_mode": "metadata_only_http"
+        },
+        {
+          "accepted_truth": false,
+          "action_kind": "metadata_search",
+          "candidate_only": true,
+          "domain_pack": "frontier_resolution_media",
+          "download_performed": false,
+          "execution_mode": "planned_future",
+          "extraction_executed": false,
+          "index_mutation_performed": false,
+          "intent": "find_frontier_resolution_media",
+          "limitations": [
+            "metadata_only",
+            "candidate_not_reviewed_truth",
+            "no_download",
+            "no_extraction",
+            "no_auto_promotion",
+            "not_executed_in_public_search_v0",
+            "source_family_future_or_operator_scoped"
+          ],
+          "model_provider_used": false,
+          "query": "New York 1993 D-Theater HD demo tape original source -tourism -\"city guide\" -\"travel guide\" -\"stock footage\"",
+          "review_required": true,
+          "schema_version": "source_action_plan.v0",
+          "source_family": "wayback_cdx_metadata",
+          "transport_mode": "not_executed"
+        },
+        {
+          "accepted_truth": false,
+          "action_kind": "metadata_search",
+          "candidate_only": true,
+          "domain_pack": "frontier_resolution_media",
+          "download_performed": false,
+          "execution_mode": "planned_future",
+          "extraction_executed": false,
+          "index_mutation_performed": false,
+          "intent": "find_frontier_resolution_media",
+          "limitations": [
+            "metadata_only",
+            "candidate_not_reviewed_truth",
+            "no_download",
+            "no_extraction",
+            "no_auto_promotion",
+            "not_executed_in_public_search_v0",
+            "source_family_future_or_operator_scoped"
+          ],
+          "model_provider_used": false,
+          "query": "New York 1993 D-Theater HD demo tape original source -tourism -\"city guide\" -\"travel guide\" -\"stock footage\"",
+          "review_required": true,
+          "schema_version": "source_action_plan.v0",
+          "source_family": "wikidata_metadata",
+          "transport_mode": "not_executed"
+        },
+        {
+          "accepted_truth": false,
+          "action_kind": "metadata_search",
+          "candidate_only": true,
+          "domain_pack": "frontier_resolution_media",
+          "download_performed": false,
+          "execution_mode": "planned_future",
+          "extraction_executed": false,
+          "index_mutation_performed": false,
+          "intent": "find_frontier_resolution_media",
+          "limitations": [
+            "metadata_only",
+            "candidate_not_reviewed_truth",
+            "no_download",
+            "no_extraction",
+            "no_auto_promotion",
+            "not_executed_in_public_search_v0",
+            "source_family_future_or_operator_scoped"
+          ],
+          "model_provider_used": false,
+          "query": "New York 1993 D-Theater HD demo tape original source",
+          "review_required": true,
+          "schema_version": "source_action_plan.v0",
+          "source_family": "manual_source_pack",
+          "transport_mode": "not_executed"
+        }
+      ],
+      "source_families": [
+        "internet_archive_metadata",
+        "wayback_cdx_metadata",
+        "wikidata_metadata",
+        "manual_source_pack"
+      ],
+      "source_query_rewrites": {
+        "archive_org_metadata": "(mediatype:movies OR mediatype:texts OR mediatype:collection) \"New York\" 1993 (\"D-Theater\" OR \"D-VHS\" OR \"D VHS\" OR JVC OR \"Hi-Vision\" OR MUSE OR \"HD demo\" OR \"demo tape\") -tourism -\"city guide\" -\"travel guide\" -\"stock footage\"",
+        "wayback_cdx_metadata": "New York 1993 D-Theater HD demo tape original source -tourism -\"city guide\" -\"travel guide\" -\"stock footage\"",
+        "wikidata_metadata": "New York 1993 D-Theater HD demo tape original source -tourism -\"city guide\" -\"travel guide\" -\"stock footage\""
+      },
+      "work_units": [
+        {
+          "domain_pack": "frontier_resolution_media",
+          "intent": "find_frontier_resolution_media",
+          "mutation_allowed": false,
+          "operator_action": "review_candidates",
+          "query": "New York 1993 D-Theater HD demo tape original source",
+          "review_required": true,
+          "schema_version": "query_plan_work_unit.v0",
+          "source_families": [
+            "internet_archive_metadata",
+            "wayback_cdx_metadata",
+            "wikidata_metadata",
+            "manual_source_pack"
+          ],
+          "work_unit_id": "query_work_unit:21677c49747fed03",
+          "work_unit_type": "candidate_metadata_review"
+        }
+      ]
+    },
+    "planner_plan_id": "query_source_plan:be74e8a9f3f2e7b6",
+    "production_readiness_claimed": false,
+    "public_index_mutated": false,
+    "public_launch_readiness_claimed": false,
+    "public_mutation_enabled": false,
+    "query_id": "frontier_media_q01",
+    "raw_live_response_committed": false,
+    "raw_query": "New York 1993 D-Theater HD demo tape original source",
+    "review_required": true,
+    "reviewed_index_mutated": false,
+    "schema_version": "seed_batch_query_plan.v0",
+    "source_query_rewrites": {
+      "archive_org_metadata": "(mediatype:movies OR mediatype:texts OR mediatype:collection) \"New York\" 1993 (\"D-Theater\" OR \"D-VHS\" OR \"D VHS\" OR JVC OR \"Hi-Vision\" OR MUSE OR \"HD demo\" OR \"demo tape\") -tourism -\"city guide\" -\"travel guide\" -\"stock footage\"",
+      "internet_archive_metadata": "(mediatype:movies OR mediatype:texts OR mediatype:collection) \"New York\" 1993 (\"D-Theater\" OR \"D-VHS\" OR \"D VHS\" OR JVC OR \"Hi-Vision\" OR MUSE OR \"HD demo\" OR \"demo tape\") -tourism -\"city guide\" -\"travel guide\" -\"stock footage\"",
+      "manual_source_pack": "New York 1993 D-Theater HD demo tape original source",
+      "wayback_cdx_metadata": "New York 1993 D-Theater HD demo tape original source",
+      "wikidata_metadata": "New York 1993 D-Theater HD demo tape original source"
+    }
+  },
+  {
+    "accepted_truth": false,
+    "accepted_truth_created": false,
+    "batch_id": "seed_batch_frontier_media_00",
+    "candidate_suppressions": [
+      "suppress_generic_city_or_tourism_media"
+    ],
+    "created_at": "2026-05-31T00:00:00Z",
+    "deployment_performed": false,
+    "domain_id": "frontier_resolution_media",
+    "download_performed": false,
+    "extraction_executed": false,
+    "intent": "find_frontier_resolution_media",
+    "master_index_mutated": false,
+    "model_provider_used": false,
+    "operator_instance_mutated": false,
+    "plan_id": "seed_query_plan:edc7638d3affe128",
+    "planner_domain_pack": "frontier_resolution_media",
+    "planner_intent": "find_frontier_resolution_media",
+    "planner_plan": {
+      "candidate_lane_expectations": [
+        {
+          "expected": true,
+          "lane": "reviewed_local_results",
+          "source": "controlled local index",
+          "truth_status": "reviewed_only"
+        },
+        {
+          "expected": true,
+          "lane": "archive_org_metadata_candidates",
+          "review_required": true,
+          "source": "internet_archive_metadata",
+          "truth_status": "candidate_only"
+        },
+        {
+          "blocked_actions": [
+            "download",
+            "install_handoff",
+            "execute",
+            "upload",
+            "extract"
+          ],
+          "expected": true,
+          "lane": "blocked_actions"
+        },
+        {
+          "domain_pack": "frontier_resolution_media",
+          "expected": true,
+          "lane": "source_actions_planned",
+          "truth_status": "plan_only"
+        }
+      ],
+      "candidate_suppressions": [
+        {
+          "applies_to": [
+            "candidate_results",
+            "source_query_rewrites"
+          ],
+          "reason": "Frontier-resolution media searches should avoid generic location media when a technical tape/source is requested.",
+          "suppression_id": "suppress_generic_city_or_tourism_media",
+          "terms": [
+            "tourism",
+            "city guide",
+            "travel guide",
+            "stock footage"
+          ]
+        }
+      ],
+      "domain_pack": "frontier_resolution_media",
+      "explanation": {
+        "blocked": [
+          "download",
+          "install_handoff",
+          "execute",
+          "upload",
+          "extract",
+          "model_provider_call",
+          "automatic_promotion"
+        ],
+        "domain_pack": "frontier_resolution_media",
+        "factors": [
+          {
+            "factor": "intent",
+            "reasons": [
+              "frontier-resolution media terms were detected"
+            ],
+            "value": "find_frontier_resolution_media"
+          },
+          {
+            "factor": "domain_pack",
+            "value": "frontier_resolution_media"
+          },
+          {
+            "factor": "source_families",
+            "value": [
+              "internet_archive_metadata",
+              "wayback_cdx_metadata",
+              "wikidata_metadata",
+              "manual_source_pack"
+            ]
+          },
+          {
+            "factor": "archive_org_metadata_query",
+            "value": "(mediatype:movies OR mediatype:texts OR mediatype:collection) \"New York\" 1993 (\"D-Theater\" OR \"D-VHS\" OR \"D VHS\" OR JVC OR \"Hi-Vision\" OR MUSE OR \"HD demo\" OR \"demo tape\") -tourism -\"city guide\" -\"travel guide\" -\"stock footage\""
+          },
+          {
+            "factor": "candidate_suppressions",
+            "value": [
+              "suppress_generic_city_or_tourism_media"
+            ]
+          }
+        ],
+        "intent": "find_frontier_resolution_media",
+        "plan_id": "query_source_plan:0dc1f3956c5ef0e2",
+        "query": "New York 1993 D-VHS HDTV demo tape",
+        "schema_version": "query_plan_explanation_packet.v0",
+        "summary": "Deterministic query planner selected a domain pack, source families, metadata query rewrites, suppressions, and review-only candidate lanes.",
+        "uncertainty": [
+          "Archive.org metadata results are candidates only.",
+          "A metadata match does not establish compatibility, rights, safety, or provenance truth."
+        ]
+      },
+      "intent": "find_frontier_resolution_media",
+      "intent_confidence": "high",
+      "intent_reasons": [
+        "frontier-resolution media terms were detected"
+      ],
+      "non_claims": [
+        "not_production_readiness",
+        "not_public_launch_readiness",
+        "not_accepted_truth",
+        "not_rights_clearance",
+        "not_malware_scan",
+        "not_download_permission",
+        "not_full_archive_exhaustiveness_claim"
+      ],
+      "normalized_query": "New York 1993 D-VHS HDTV demo tape",
+      "plan_id": "query_source_plan:0dc1f3956c5ef0e2",
+      "planner_id": "eureka_query_to_source_action_planner_v0",
+      "raw_query": "New York 1993 D-VHS HDTV demo tape",
+      "result_lane_plans": [
+        {
+          "expected": true,
+          "lane": "reviewed_local_results",
+          "source": "controlled local index",
+          "truth_status": "reviewed_only"
+        },
+        {
+          "expected": true,
+          "lane": "archive_org_metadata_candidates",
+          "review_required": true,
+          "source": "internet_archive_metadata",
+          "truth_status": "candidate_only"
+        },
+        {
+          "blocked_actions": [
+            "download",
+            "install_handoff",
+            "execute",
+            "upload",
+            "extract"
+          ],
+          "expected": true,
+          "lane": "blocked_actions"
+        },
+        {
+          "domain_pack": "frontier_resolution_media",
+          "expected": true,
+          "lane": "source_actions_planned",
+          "truth_status": "plan_only"
+        }
+      ],
+      "review_handoff_plans": [
+        {
+          "accepted_reviewed_truth_created": false,
+          "candidate_states": [
+            "new",
+            "needs_review",
+            "useful_lead",
+            "near_miss",
+            "rejected",
+            "duplicate"
+          ],
+          "handoff_id": "review_handoff:e0fbe30ffae340f3",
+          "handoff_kind": "candidate_metadata_review",
+          "index_mutation_performed": false,
+          "notes": [
+            "Candidate metadata can become a reviewed record only through a later explicit review task.",
+            "This planner does not promote candidates or mutate public, local, or master indexes."
+          ],
+          "review_required": true,
+          "schema_version": "review_handoff_plan.v0"
+        }
+      ],
+      "safety": {
+        "accepted_truth_created": false,
+        "candidate_index_mutated": false,
+        "candidate_only": true,
+        "deployment_performed": false,
+        "download_performed": false,
+        "extraction_executed": false,
+        "install_handoff_enabled": false,
+        "master_index_mutated": false,
+        "model_provider_used": false,
+        "public_index_mutated": false,
+        "review_required": true,
+        "reviewed_index_mutated": false,
+        "source_cache_mutated": false,
+        "upload_performed": false
+      },
+      "schema_version": "query_to_source_action_plan.v0",
+      "source_actions": [
+        {
+          "accepted_truth": false,
+          "action_kind": "metadata_search",
+          "candidate_only": true,
+          "domain_pack": "frontier_resolution_media",
+          "download_performed": false,
+          "execution_mode": "metadata_candidate_runtime",
+          "extraction_executed": false,
+          "index_mutation_performed": false,
+          "intent": "find_frontier_resolution_media",
+          "limitations": [
+            "metadata_only",
+            "candidate_not_reviewed_truth",
+            "no_download",
+            "no_extraction",
+            "no_auto_promotion"
+          ],
+          "model_provider_used": false,
+          "query": "(mediatype:movies OR mediatype:texts OR mediatype:collection) \"New York\" 1993 (\"D-Theater\" OR \"D-VHS\" OR \"D VHS\" OR JVC OR \"Hi-Vision\" OR MUSE OR \"HD demo\" OR \"demo tape\") -tourism -\"city guide\" -\"travel guide\" -\"stock footage\"",
+          "review_required": true,
+          "schema_version": "source_action_plan.v0",
+          "source_family": "internet_archive_metadata",
+          "transport_mode": "metadata_only_http"
+        },
+        {
+          "accepted_truth": false,
+          "action_kind": "metadata_search",
+          "candidate_only": true,
+          "domain_pack": "frontier_resolution_media",
+          "download_performed": false,
+          "execution_mode": "planned_future",
+          "extraction_executed": false,
+          "index_mutation_performed": false,
+          "intent": "find_frontier_resolution_media",
+          "limitations": [
+            "metadata_only",
+            "candidate_not_reviewed_truth",
+            "no_download",
+            "no_extraction",
+            "no_auto_promotion",
+            "not_executed_in_public_search_v0",
+            "source_family_future_or_operator_scoped"
+          ],
+          "model_provider_used": false,
+          "query": "New York 1993 D-VHS HDTV demo tape -tourism -\"city guide\" -\"travel guide\" -\"stock footage\"",
+          "review_required": true,
+          "schema_version": "source_action_plan.v0",
+          "source_family": "wayback_cdx_metadata",
+          "transport_mode": "not_executed"
+        },
+        {
+          "accepted_truth": false,
+          "action_kind": "metadata_search",
+          "candidate_only": true,
+          "domain_pack": "frontier_resolution_media",
+          "download_performed": false,
+          "execution_mode": "planned_future",
+          "extraction_executed": false,
+          "index_mutation_performed": false,
+          "intent": "find_frontier_resolution_media",
+          "limitations": [
+            "metadata_only",
+            "candidate_not_reviewed_truth",
+            "no_download",
+            "no_extraction",
+            "no_auto_promotion",
+            "not_executed_in_public_search_v0",
+            "source_family_future_or_operator_scoped"
+          ],
+          "model_provider_used": false,
+          "query": "New York 1993 D-VHS HDTV demo tape -tourism -\"city guide\" -\"travel guide\" -\"stock footage\"",
+          "review_required": true,
+          "schema_version": "source_action_plan.v0",
+          "source_family": "wikidata_metadata",
+          "transport_mode": "not_executed"
+        },
+        {
+          "accepted_truth": false,
+          "action_kind": "metadata_search",
+          "candidate_only": true,
+          "domain_pack": "frontier_resolution_media",
+          "download_performed": false,
+          "execution_mode": "planned_future",
+          "extraction_executed": false,
+          "index_mutation_performed": false,
+          "intent": "find_frontier_resolution_media",
+          "limitations": [
+            "metadata_only",
+            "candidate_not_reviewed_truth",
+            "no_download",
+            "no_extraction",
+            "no_auto_promotion",
+            "not_executed_in_public_search_v0",
+            "source_family_future_or_operator_scoped"
+          ],
+          "model_provider_used": false,
+          "query": "New York 1993 D-VHS HDTV demo tape",
+          "review_required": true,
+          "schema_version": "source_action_plan.v0",
+          "source_family": "manual_source_pack",
+          "transport_mode": "not_executed"
+        }
+      ],
+      "source_families": [
+        "internet_archive_metadata",
+        "wayback_cdx_metadata",
+        "wikidata_metadata",
+        "manual_source_pack"
+      ],
+      "source_query_rewrites": {
+        "archive_org_metadata": "(mediatype:movies OR mediatype:texts OR mediatype:collection) \"New York\" 1993 (\"D-Theater\" OR \"D-VHS\" OR \"D VHS\" OR JVC OR \"Hi-Vision\" OR MUSE OR \"HD demo\" OR \"demo tape\") -tourism -\"city guide\" -\"travel guide\" -\"stock footage\"",
+        "wayback_cdx_metadata": "New York 1993 D-VHS HDTV demo tape -tourism -\"city guide\" -\"travel guide\" -\"stock footage\"",
+        "wikidata_metadata": "New York 1993 D-VHS HDTV demo tape -tourism -\"city guide\" -\"travel guide\" -\"stock footage\""
+      },
+      "work_units": [
+        {
+          "domain_pack": "frontier_resolution_media",
+          "intent": "find_frontier_resolution_media",
+          "mutation_allowed": false,
+          "operator_action": "review_candidates",
+          "query": "New York 1993 D-VHS HDTV demo tape",
+          "review_required": true,
+          "schema_version": "query_plan_work_unit.v0",
+          "source_families": [
+            "internet_archive_metadata",
+            "wayback_cdx_metadata",
+            "wikidata_metadata",
+            "manual_source_pack"
+          ],
+          "work_unit_id": "query_work_unit:e0fbe30ffae340f3",
+          "work_unit_type": "candidate_metadata_review"
+        }
+      ]
+    },
+    "planner_plan_id": "query_source_plan:0dc1f3956c5ef0e2",
+    "production_readiness_claimed": false,
+    "public_index_mutated": false,
+    "public_launch_readiness_claimed": false,
+    "public_mutation_enabled": false,
+    "query_id": "frontier_media_q02",
+    "raw_live_response_committed": false,
+    "raw_query": "New York 1993 D-VHS HDTV demo tape",
+    "review_required": true,
+    "reviewed_index_mutated": false,
+    "schema_version": "seed_batch_query_plan.v0",
+    "source_query_rewrites": {
+      "archive_org_metadata": "(mediatype:movies OR mediatype:texts OR mediatype:collection) \"New York\" 1993 (\"D-Theater\" OR \"D-VHS\" OR \"D VHS\" OR JVC OR \"Hi-Vision\" OR MUSE OR \"HD demo\" OR \"demo tape\") -tourism -\"city guide\" -\"travel guide\" -\"stock footage\"",
+      "internet_archive_metadata": "(mediatype:movies OR mediatype:texts OR mediatype:collection) \"New York\" 1993 (\"D-Theater\" OR \"D-VHS\" OR \"D VHS\" OR JVC OR \"Hi-Vision\" OR MUSE OR \"HD demo\" OR \"demo tape\") -tourism -\"city guide\" -\"travel guide\" -\"stock footage\"",
+      "manual_source_pack": "New York 1993 D-VHS HDTV demo tape",
+      "wayback_cdx_metadata": "New York 1993 D-VHS HDTV demo tape",
+      "wikidata_metadata": "New York 1993 D-VHS HDTV demo tape"
+    }
+  },
+  {
+    "accepted_truth": false,
+    "accepted_truth_created": false,
+    "batch_id": "seed_batch_frontier_media_00",
+    "candidate_suppressions": [
+      "suppress_generic_city_or_tourism_media"
+    ],
+    "created_at": "2026-05-31T00:00:00Z",
+    "deployment_performed": false,
+    "domain_id": "frontier_resolution_media",
+    "download_performed": false,
+    "extraction_executed": false,
+    "intent": "find_frontier_resolution_media",
+    "master_index_mutated": false,
+    "model_provider_used": false,
+    "operator_instance_mutated": false,
+    "plan_id": "seed_query_plan:1f71a1830d1d1c25",
+    "planner_domain_pack": "frontier_resolution_media",
+    "planner_intent": "find_frontier_resolution_media",
+    "planner_plan": {
+      "candidate_lane_expectations": [
+        {
+          "expected": true,
+          "lane": "reviewed_local_results",
+          "source": "controlled local index",
+          "truth_status": "reviewed_only"
+        },
+        {
+          "expected": true,
+          "lane": "archive_org_metadata_candidates",
+          "review_required": true,
+          "source": "internet_archive_metadata",
+          "truth_status": "candidate_only"
+        },
+        {
+          "blocked_actions": [
+            "download",
+            "install_handoff",
+            "execute",
+            "upload",
+            "extract"
+          ],
+          "expected": true,
+          "lane": "blocked_actions"
+        },
+        {
+          "domain_pack": "frontier_resolution_media",
+          "expected": true,
+          "lane": "source_actions_planned",
+          "truth_status": "plan_only"
+        }
+      ],
+      "candidate_suppressions": [
+        {
+          "applies_to": [
+            "candidate_results",
+            "source_query_rewrites"
+          ],
+          "reason": "Frontier-resolution media searches should avoid generic location media when a technical tape/source is requested.",
+          "suppression_id": "suppress_generic_city_or_tourism_media",
+          "terms": [
+            "tourism",
+            "city guide",
+            "travel guide",
+            "stock footage"
+          ]
+        }
+      ],
+      "domain_pack": "frontier_resolution_media",
+      "explanation": {
+        "blocked": [
+          "download",
+          "install_handoff",
+          "execute",
+          "upload",
+          "extract",
+          "model_provider_call",
+          "automatic_promotion"
+        ],
+        "domain_pack": "frontier_resolution_media",
+        "factors": [
+          {
+            "factor": "intent",
+            "reasons": [
+              "frontier-resolution media terms were detected"
+            ],
+            "value": "find_frontier_resolution_media"
+          },
+          {
+            "factor": "domain_pack",
+            "value": "frontier_resolution_media"
+          },
+          {
+            "factor": "source_families",
+            "value": [
+              "internet_archive_metadata",
+              "wayback_cdx_metadata",
+              "wikidata_metadata",
+              "manual_source_pack"
+            ]
+          },
+          {
+            "factor": "archive_org_metadata_query",
+            "value": "(mediatype:movies OR mediatype:texts OR mediatype:collection) \"New York\" (\"D-Theater\" OR \"D-VHS\" OR \"D VHS\" OR JVC OR \"Hi-Vision\" OR MUSE OR \"HD demo\" OR \"demo tape\") -tourism -\"city guide\" -\"travel guide\" -\"stock footage\""
+          },
+          {
+            "factor": "candidate_suppressions",
+            "value": [
+              "suppress_generic_city_or_tourism_media"
+            ]
+          }
+        ],
+        "intent": "find_frontier_resolution_media",
+        "plan_id": "query_source_plan:bb98186e0ab43b54",
+        "query": "JVC D-Theater New York HD demo",
+        "schema_version": "query_plan_explanation_packet.v0",
+        "summary": "Deterministic query planner selected a domain pack, source families, metadata query rewrites, suppressions, and review-only candidate lanes.",
+        "uncertainty": [
+          "Archive.org metadata results are candidates only.",
+          "A metadata match does not establish compatibility, rights, safety, or provenance truth."
+        ]
+      },
+      "intent": "find_frontier_resolution_media",
+      "intent_confidence": "high",
+      "intent_reasons": [
+        "frontier-resolution media terms were detected"
+      ],
+      "non_claims": [
+        "not_production_readiness",
+        "not_public_launch_readiness",
+        "not_accepted_truth",
+        "not_rights_clearance",
+        "not_malware_scan",
+        "not_download_permission",
+        "not_full_archive_exhaustiveness_claim"
+      ],
+      "normalized_query": "JVC D-Theater New York HD demo",
+      "plan_id": "query_source_plan:bb98186e0ab43b54",
+      "planner_id": "eureka_query_to_source_action_planner_v0",
+      "raw_query": "JVC D-Theater New York HD demo",
+      "result_lane_plans": [
+        {
+          "expected": true,
+          "lane": "reviewed_local_results",
+          "source": "controlled local index",
+          "truth_status": "reviewed_only"
+        },
+        {
+          "expected": true,
+          "lane": "archive_org_metadata_candidates",
+          "review_required": true,
+          "source": "internet_archive_metadata",
+          "truth_status": "candidate_only"
+        },
+        {
+          "blocked_actions": [
+            "download",
+            "install_handoff",
+            "execute",
+            "upload",
+            "extract"
+          ],
+          "expected": true,
+          "lane": "blocked_actions"
+        },
+        {
+          "domain_pack": "frontier_resolution_media",
+          "expected": true,
+          "lane": "source_actions_planned",
+          "truth_status": "plan_only"
+        }
+      ],
+      "review_handoff_plans": [
+        {
+          "accepted_reviewed_truth_created": false,
+          "candidate_states": [
+            "new",
+            "needs_review",
+            "useful_lead",
+            "near_miss",
+            "rejected",
+            "duplicate"
+          ],
+          "handoff_id": "review_handoff:5c4a419986fd5e02",
+          "handoff_kind": "candidate_metadata_review",
+          "index_mutation_performed": false,
+          "notes": [
+            "Candidate metadata can become a reviewed record only through a later explicit review task.",
+            "This planner does not promote candidates or mutate public, local, or master indexes."
+          ],
+          "review_required": true,
+          "schema_version": "review_handoff_plan.v0"
+        }
+      ],
+      "safety": {
+        "accepted_truth_created": false,
+        "candidate_index_mutated": false,
+        "candidate_only": true,
+        "deployment_performed": false,
+        "download_performed": false,
+        "extraction_executed": false,
+        "install_handoff_enabled": false,
+        "master_index_mutated": false,
+        "model_provider_used": false,
+        "public_index_mutated": false,
+        "review_required": true,
+        "reviewed_index_mutated": false,
+        "source_cache_mutated": false,
+        "upload_performed": false
+      },
+      "schema_version": "query_to_source_action_plan.v0",
+      "source_actions": [
+        {
+          "accepted_truth": false,
+          "action_kind": "metadata_search",
+          "candidate_only": true,
+          "domain_pack": "frontier_resolution_media",
+          "download_performed": false,
+          "execution_mode": "metadata_candidate_runtime",
+          "extraction_executed": false,
+          "index_mutation_performed": false,
+          "intent": "find_frontier_resolution_media",
+          "limitations": [
+            "metadata_only",
+            "candidate_not_reviewed_truth",
+            "no_download",
+            "no_extraction",
+            "no_auto_promotion"
+          ],
+          "model_provider_used": false,
+          "query": "(mediatype:movies OR mediatype:texts OR mediatype:collection) \"New York\" (\"D-Theater\" OR \"D-VHS\" OR \"D VHS\" OR JVC OR \"Hi-Vision\" OR MUSE OR \"HD demo\" OR \"demo tape\") -tourism -\"city guide\" -\"travel guide\" -\"stock footage\"",
+          "review_required": true,
+          "schema_version": "source_action_plan.v0",
+          "source_family": "internet_archive_metadata",
+          "transport_mode": "metadata_only_http"
+        },
+        {
+          "accepted_truth": false,
+          "action_kind": "metadata_search",
+          "candidate_only": true,
+          "domain_pack": "frontier_resolution_media",
+          "download_performed": false,
+          "execution_mode": "planned_future",
+          "extraction_executed": false,
+          "index_mutation_performed": false,
+          "intent": "find_frontier_resolution_media",
+          "limitations": [
+            "metadata_only",
+            "candidate_not_reviewed_truth",
+            "no_download",
+            "no_extraction",
+            "no_auto_promotion",
+            "not_executed_in_public_search_v0",
+            "source_family_future_or_operator_scoped"
+          ],
+          "model_provider_used": false,
+          "query": "JVC D-Theater New York HD demo -tourism -\"city guide\" -\"travel guide\" -\"stock footage\"",
+          "review_required": true,
+          "schema_version": "source_action_plan.v0",
+          "source_family": "wayback_cdx_metadata",
+          "transport_mode": "not_executed"
+        },
+        {
+          "accepted_truth": false,
+          "action_kind": "metadata_search",
+          "candidate_only": true,
+          "domain_pack": "frontier_resolution_media",
+          "download_performed": false,
+          "execution_mode": "planned_future",
+          "extraction_executed": false,
+          "index_mutation_performed": false,
+          "intent": "find_frontier_resolution_media",
+          "limitations": [
+            "metadata_only",
+            "candidate_not_reviewed_truth",
+            "no_download",
+            "no_extraction",
+            "no_auto_promotion",
+            "not_executed_in_public_search_v0",
+            "source_family_future_or_operator_scoped"
+          ],
+          "model_provider_used": false,
+          "query": "JVC D-Theater New York HD demo -tourism -\"city guide\" -\"travel guide\" -\"stock footage\"",
+          "review_required": true,
+          "schema_version": "source_action_plan.v0",
+          "source_family": "wikidata_metadata",
+          "transport_mode": "not_executed"
+        },
+        {
+          "accepted_truth": false,
+          "action_kind": "metadata_search",
+          "candidate_only": true,
+          "domain_pack": "frontier_resolution_media",
+          "download_performed": false,
+          "execution_mode": "planned_future",
+          "extraction_executed": false,
+          "index_mutation_performed": false,
+          "intent": "find_frontier_resolution_media",
+          "limitations": [
+            "metadata_only",
+            "candidate_not_reviewed_truth",
+            "no_download",
+            "no_extraction",
+            "no_auto_promotion",
+            "not_executed_in_public_search_v0",
+            "source_family_future_or_operator_scoped"
+          ],
+          "model_provider_used": false,
+          "query": "JVC D-Theater New York HD demo",
+          "review_required": true,
+          "schema_version": "source_action_plan.v0",
+          "source_family": "manual_source_pack",
+          "transport_mode": "not_executed"
+        }
+      ],
+      "source_families": [
+        "internet_archive_metadata",
+        "wayback_cdx_metadata",
+        "wikidata_metadata",
+        "manual_source_pack"
+      ],
+      "source_query_rewrites": {
+        "archive_org_metadata": "(mediatype:movies OR mediatype:texts OR mediatype:collection) \"New York\" (\"D-Theater\" OR \"D-VHS\" OR \"D VHS\" OR JVC OR \"Hi-Vision\" OR MUSE OR \"HD demo\" OR \"demo tape\") -tourism -\"city guide\" -\"travel guide\" -\"stock footage\"",
+        "wayback_cdx_metadata": "JVC D-Theater New York HD demo -tourism -\"city guide\" -\"travel guide\" -\"stock footage\"",
+        "wikidata_metadata": "JVC D-Theater New York HD demo -tourism -\"city guide\" -\"travel guide\" -\"stock footage\""
+      },
+      "work_units": [
+        {
+          "domain_pack": "frontier_resolution_media",
+          "intent": "find_frontier_resolution_media",
+          "mutation_allowed": false,
+          "operator_action": "review_candidates",
+          "query": "JVC D-Theater New York HD demo",
+          "review_required": true,
+          "schema_version": "query_plan_work_unit.v0",
+          "source_families": [
+            "internet_archive_metadata",
+            "wayback_cdx_metadata",
+            "wikidata_metadata",
+            "manual_source_pack"
+          ],
+          "work_unit_id": "query_work_unit:5c4a419986fd5e02",
+          "work_unit_type": "candidate_metadata_review"
+        }
+      ]
+    },
+    "planner_plan_id": "query_source_plan:bb98186e0ab43b54",
+    "production_readiness_claimed": false,
+    "public_index_mutated": false,
+    "public_launch_readiness_claimed": false,
+    "public_mutation_enabled": false,
+    "query_id": "frontier_media_q03",
+    "raw_live_response_committed": false,
+    "raw_query": "JVC D-Theater New York HD demo",
+    "review_required": true,
+    "reviewed_index_mutated": false,
+    "schema_version": "seed_batch_query_plan.v0",
+    "source_query_rewrites": {
+      "archive_org_metadata": "(mediatype:movies OR mediatype:texts OR mediatype:collection) \"New York\" (\"D-Theater\" OR \"D-VHS\" OR \"D VHS\" OR JVC OR \"Hi-Vision\" OR MUSE OR \"HD demo\" OR \"demo tape\") -tourism -\"city guide\" -\"travel guide\" -\"stock footage\"",
+      "internet_archive_metadata": "(mediatype:movies OR mediatype:texts OR mediatype:collection) \"New York\" (\"D-Theater\" OR \"D-VHS\" OR \"D VHS\" OR JVC OR \"Hi-Vision\" OR MUSE OR \"HD demo\" OR \"demo tape\") -tourism -\"city guide\" -\"travel guide\" -\"stock footage\"",
+      "manual_source_pack": "JVC D-Theater New York HD demo",
+      "wayback_cdx_metadata": "JVC D-Theater New York HD demo",
+      "wikidata_metadata": "JVC D-Theater New York HD demo"
+    }
+  },
+  {
+    "accepted_truth": false,
+    "accepted_truth_created": false,
+    "batch_id": "seed_batch_frontier_media_00",
+    "candidate_suppressions": [
+      "suppress_generic_city_or_tourism_media",
+      "suppress_stock_footage"
+    ],
+    "created_at": "2026-05-31T00:00:00Z",
+    "deployment_performed": false,
+    "domain_id": "frontier_resolution_media",
+    "download_performed": false,
+    "extraction_executed": false,
+    "intent": "find_frontier_resolution_media",
+    "master_index_mutated": false,
+    "model_provider_used": false,
+    "operator_instance_mutated": false,
+    "plan_id": "seed_query_plan:1b2339d9b3407109",
+    "planner_domain_pack": "frontier_resolution_media",
+    "planner_intent": "find_frontier_resolution_media",
+    "planner_plan": {
+      "candidate_lane_expectations": [
+        {
+          "expected": true,
+          "lane": "reviewed_local_results",
+          "source": "controlled local index",
+          "truth_status": "reviewed_only"
+        },
+        {
+          "expected": true,
+          "lane": "archive_org_metadata_candidates",
+          "review_required": true,
+          "source": "internet_archive_metadata",
+          "truth_status": "candidate_only"
+        },
+        {
+          "blocked_actions": [
+            "download",
+            "install_handoff",
+            "execute",
+            "upload",
+            "extract"
+          ],
+          "expected": true,
+          "lane": "blocked_actions"
+        },
+        {
+          "domain_pack": "frontier_resolution_media",
+          "expected": true,
+          "lane": "source_actions_planned",
+          "truth_status": "plan_only"
+        }
+      ],
+      "candidate_suppressions": [
+        {
+          "applies_to": [
+            "candidate_results",
+            "source_query_rewrites"
+          ],
+          "reason": "Frontier-resolution media searches should avoid generic location media when a technical tape/source is requested.",
+          "suppression_id": "suppress_generic_city_or_tourism_media",
+          "terms": [
+            "tourism",
+            "city guide",
+            "travel guide",
+            "stock footage"
+          ]
+        }
+      ],
+      "domain_pack": "frontier_resolution_media",
+      "explanation": {
+        "blocked": [
+          "download",
+          "install_handoff",
+          "execute",
+          "upload",
+          "extract",
+          "model_provider_call",
+          "automatic_promotion"
+        ],
+        "domain_pack": "frontier_resolution_media",
+        "factors": [
+          {
+            "factor": "intent",
+            "reasons": [
+              "frontier-resolution media terms were detected"
+            ],
+            "value": "find_frontier_resolution_media"
+          },
+          {
+            "factor": "domain_pack",
+            "value": "frontier_resolution_media"
+          },
+          {
+            "factor": "source_families",
+            "value": [
+              "internet_archive_metadata",
+              "wayback_cdx_metadata",
+              "wikidata_metadata",
+              "manual_source_pack"
+            ]
+          },
+          {
+            "factor": "archive_org_metadata_query",
+            "value": "(mediatype:movies OR mediatype:texts OR mediatype:collection) 1993 (\"D-Theater\" OR \"D-VHS\" OR \"D VHS\" OR JVC OR \"Hi-Vision\" OR MUSE OR \"HD demo\" OR \"demo tape\") -tourism -\"city guide\" -\"travel guide\" -\"stock footage\""
+          },
+          {
+            "factor": "candidate_suppressions",
+            "value": [
+              "suppress_generic_city_or_tourism_media"
+            ]
+          }
+        ],
+        "intent": "find_frontier_resolution_media",
+        "plan_id": "query_source_plan:c6c1b81e4ae2e432",
+        "query": "D-Theater D-VHS city footage 1993",
+        "schema_version": "query_plan_explanation_packet.v0",
+        "summary": "Deterministic query planner selected a domain pack, source families, metadata query rewrites, suppressions, and review-only candidate lanes.",
+        "uncertainty": [
+          "Archive.org metadata results are candidates only.",
+          "A metadata match does not establish compatibility, rights, safety, or provenance truth."
+        ]
+      },
+      "intent": "find_frontier_resolution_media",
+      "intent_confidence": "high",
+      "intent_reasons": [
+        "frontier-resolution media terms were detected"
+      ],
+      "non_claims": [
+        "not_production_readiness",
+        "not_public_launch_readiness",
+        "not_accepted_truth",
+        "not_rights_clearance",
+        "not_malware_scan",
+        "not_download_permission",
+        "not_full_archive_exhaustiveness_claim"
+      ],
+      "normalized_query": "D-Theater D-VHS city footage 1993",
+      "plan_id": "query_source_plan:c6c1b81e4ae2e432",
+      "planner_id": "eureka_query_to_source_action_planner_v0",
+      "raw_query": "D-Theater D-VHS city footage 1993",
+      "result_lane_plans": [
+        {
+          "expected": true,
+          "lane": "reviewed_local_results",
+          "source": "controlled local index",
+          "truth_status": "reviewed_only"
+        },
+        {
+          "expected": true,
+          "lane": "archive_org_metadata_candidates",
+          "review_required": true,
+          "source": "internet_archive_metadata",
+          "truth_status": "candidate_only"
+        },
+        {
+          "blocked_actions": [
+            "download",
+            "install_handoff",
+            "execute",
+            "upload",
+            "extract"
+          ],
+          "expected": true,
+          "lane": "blocked_actions"
+        },
+        {
+          "domain_pack": "frontier_resolution_media",
+          "expected": true,
+          "lane": "source_actions_planned",
+          "truth_status": "plan_only"
+        }
+      ],
+      "review_handoff_plans": [
+        {
+          "accepted_reviewed_truth_created": false,
+          "candidate_states": [
+            "new",
+            "needs_review",
+            "useful_lead",
+            "near_miss",
+            "rejected",
+            "duplicate"
+          ],
+          "handoff_id": "review_handoff:db25f863b1cf3872",
+          "handoff_kind": "candidate_metadata_review",
+          "index_mutation_performed": false,
+          "notes": [
+            "Candidate metadata can become a reviewed record only through a later explicit review task.",
+            "This planner does not promote candidates or mutate public, local, or master indexes."
+          ],
+          "review_required": true,
+          "schema_version": "review_handoff_plan.v0"
+        }
+      ],
+      "safety": {
+        "accepted_truth_created": false,
+        "candidate_index_mutated": false,
+        "candidate_only": true,
+        "deployment_performed": false,
+        "download_performed": false,
+        "extraction_executed": false,
+        "install_handoff_enabled": false,
+        "master_index_mutated": false,
+        "model_provider_used": false,
+        "public_index_mutated": false,
+        "review_required": true,
+        "reviewed_index_mutated": false,
+        "source_cache_mutated": false,
+        "upload_performed": false
+      },
+      "schema_version": "query_to_source_action_plan.v0",
+      "source_actions": [
+        {
+          "accepted_truth": false,
+          "action_kind": "metadata_search",
+          "candidate_only": true,
+          "domain_pack": "frontier_resolution_media",
+          "download_performed": false,
+          "execution_mode": "metadata_candidate_runtime",
+          "extraction_executed": false,
+          "index_mutation_performed": false,
+          "intent": "find_frontier_resolution_media",
+          "limitations": [
+            "metadata_only",
+            "candidate_not_reviewed_truth",
+            "no_download",
+            "no_extraction",
+            "no_auto_promotion"
+          ],
+          "model_provider_used": false,
+          "query": "(mediatype:movies OR mediatype:texts OR mediatype:collection) 1993 (\"D-Theater\" OR \"D-VHS\" OR \"D VHS\" OR JVC OR \"Hi-Vision\" OR MUSE OR \"HD demo\" OR \"demo tape\") -tourism -\"city guide\" -\"travel guide\" -\"stock footage\"",
+          "review_required": true,
+          "schema_version": "source_action_plan.v0",
+          "source_family": "internet_archive_metadata",
+          "transport_mode": "metadata_only_http"
+        },
+        {
+          "accepted_truth": false,
+          "action_kind": "metadata_search",
+          "candidate_only": true,
+          "domain_pack": "frontier_resolution_media",
+          "download_performed": false,
+          "execution_mode": "planned_future",
+          "extraction_executed": false,
+          "index_mutation_performed": false,
+          "intent": "find_frontier_resolution_media",
+          "limitations": [
+            "metadata_only",
+            "candidate_not_reviewed_truth",
+            "no_download",
+            "no_extraction",
+            "no_auto_promotion",
+            "not_executed_in_public_search_v0",
+            "source_family_future_or_operator_scoped"
+          ],
+          "model_provider_used": false,
+          "query": "D-Theater D-VHS city footage 1993 -tourism -\"city guide\" -\"travel guide\" -\"stock footage\"",
+          "review_required": true,
+          "schema_version": "source_action_plan.v0",
+          "source_family": "wayback_cdx_metadata",
+          "transport_mode": "not_executed"
+        },
+        {
+          "accepted_truth": false,
+          "action_kind": "metadata_search",
+          "candidate_only": true,
+          "domain_pack": "frontier_resolution_media",
+          "download_performed": false,
+          "execution_mode": "planned_future",
+          "extraction_executed": false,
+          "index_mutation_performed": false,
+          "intent": "find_frontier_resolution_media",
+          "limitations": [
+            "metadata_only",
+            "candidate_not_reviewed_truth",
+            "no_download",
+            "no_extraction",
+            "no_auto_promotion",
+            "not_executed_in_public_search_v0",
+            "source_family_future_or_operator_scoped"
+          ],
+          "model_provider_used": false,
+          "query": "D-Theater D-VHS city footage 1993 -tourism -\"city guide\" -\"travel guide\" -\"stock footage\"",
+          "review_required": true,
+          "schema_version": "source_action_plan.v0",
+          "source_family": "wikidata_metadata",
+          "transport_mode": "not_executed"
+        },
+        {
+          "accepted_truth": false,
+          "action_kind": "metadata_search",
+          "candidate_only": true,
+          "domain_pack": "frontier_resolution_media",
+          "download_performed": false,
+          "execution_mode": "planned_future",
+          "extraction_executed": false,
+          "index_mutation_performed": false,
+          "intent": "find_frontier_resolution_media",
+          "limitations": [
+            "metadata_only",
+            "candidate_not_reviewed_truth",
+            "no_download",
+            "no_extraction",
+            "no_auto_promotion",
+            "not_executed_in_public_search_v0",
+            "source_family_future_or_operator_scoped"
+          ],
+          "model_provider_used": false,
+          "query": "D-Theater D-VHS city footage 1993",
+          "review_required": true,
+          "schema_version": "source_action_plan.v0",
+          "source_family": "manual_source_pack",
+          "transport_mode": "not_executed"
+        }
+      ],
+      "source_families": [
+        "internet_archive_metadata",
+        "wayback_cdx_metadata",
+        "wikidata_metadata",
+        "manual_source_pack"
+      ],
+      "source_query_rewrites": {
+        "archive_org_metadata": "(mediatype:movies OR mediatype:texts OR mediatype:collection) 1993 (\"D-Theater\" OR \"D-VHS\" OR \"D VHS\" OR JVC OR \"Hi-Vision\" OR MUSE OR \"HD demo\" OR \"demo tape\") -tourism -\"city guide\" -\"travel guide\" -\"stock footage\"",
+        "wayback_cdx_metadata": "D-Theater D-VHS city footage 1993 -tourism -\"city guide\" -\"travel guide\" -\"stock footage\"",
+        "wikidata_metadata": "D-Theater D-VHS city footage 1993 -tourism -\"city guide\" -\"travel guide\" -\"stock footage\""
+      },
+      "work_units": [
+        {
+          "domain_pack": "frontier_resolution_media",
+          "intent": "find_frontier_resolution_media",
+          "mutation_allowed": false,
+          "operator_action": "review_candidates",
+          "query": "D-Theater D-VHS city footage 1993",
+          "review_required": true,
+          "schema_version": "query_plan_work_unit.v0",
+          "source_families": [
+            "internet_archive_metadata",
+            "wayback_cdx_metadata",
+            "wikidata_metadata",
+            "manual_source_pack"
+          ],
+          "work_unit_id": "query_work_unit:db25f863b1cf3872",
+          "work_unit_type": "candidate_metadata_review"
+        }
+      ]
+    },
+    "planner_plan_id": "query_source_plan:c6c1b81e4ae2e432",
+    "production_readiness_claimed": false,
+    "public_index_mutated": false,
+    "public_launch_readiness_claimed": false,
+    "public_mutation_enabled": false,
+    "query_id": "frontier_media_q04",
+    "raw_live_response_committed": false,
+    "raw_query": "D-Theater D-VHS city footage 1993",
+    "review_required": true,
+    "reviewed_index_mutated": false,
+    "schema_version": "seed_batch_query_plan.v0",
+    "source_query_rewrites": {
+      "archive_org_metadata": "(mediatype:movies OR mediatype:texts OR mediatype:collection) 1993 (\"D-Theater\" OR \"D-VHS\" OR \"D VHS\" OR JVC OR \"Hi-Vision\" OR MUSE OR \"HD demo\" OR \"demo tape\") -tourism -\"city guide\" -\"travel guide\" -\"stock footage\"",
+      "internet_archive_metadata": "(mediatype:movies OR mediatype:texts OR mediatype:collection) 1993 (\"D-Theater\" OR \"D-VHS\" OR \"D VHS\" OR JVC OR \"Hi-Vision\" OR MUSE OR \"HD demo\" OR \"demo tape\") -tourism -\"city guide\" -\"travel guide\" -\"stock footage\"",
+      "manual_source_pack": "D-Theater D-VHS city footage 1993",
+      "wayback_cdx_metadata": "D-Theater D-VHS city footage 1993",
+      "wikidata_metadata": "D-Theater D-VHS city footage 1993"
+    }
+  },
+  {
+    "accepted_truth": false,
+    "accepted_truth_created": false,
+    "batch_id": "seed_batch_frontier_media_00",
+    "candidate_suppressions": [
+      "suppress_generic_city_or_tourism_media"
+    ],
+    "created_at": "2026-05-31T00:00:00Z",
+    "deployment_performed": false,
+    "domain_id": "frontier_resolution_media",
+    "download_performed": false,
+    "extraction_executed": false,
+    "intent": "find_frontier_resolution_media",
+    "master_index_mutated": false,
+    "model_provider_used": false,
+    "operator_instance_mutated": false,
+    "plan_id": "seed_query_plan:3c12f38bb56f962d",
+    "planner_domain_pack": "frontier_resolution_media",
+    "planner_intent": "find_frontier_resolution_media",
+    "planner_plan": {
+      "candidate_lane_expectations": [
+        {
+          "expected": true,
+          "lane": "reviewed_local_results",
+          "source": "controlled local index",
+          "truth_status": "reviewed_only"
+        },
+        {
+          "expected": true,
+          "lane": "archive_org_metadata_candidates",
+          "review_required": true,
+          "source": "internet_archive_metadata",
+          "truth_status": "candidate_only"
+        },
+        {
+          "blocked_actions": [
+            "download",
+            "install_handoff",
+            "execute",
+            "upload",
+            "extract"
+          ],
+          "expected": true,
+          "lane": "blocked_actions"
+        },
+        {
+          "domain_pack": "frontier_resolution_media",
+          "expected": true,
+          "lane": "source_actions_planned",
+          "truth_status": "plan_only"
+        }
+      ],
+      "candidate_suppressions": [
+        {
+          "applies_to": [
+            "candidate_results",
+            "source_query_rewrites"
+          ],
+          "reason": "Frontier-resolution media searches should avoid generic location media when a technical tape/source is requested.",
+          "suppression_id": "suppress_generic_city_or_tourism_media",
+          "terms": [
+            "tourism",
+            "city guide",
+            "travel guide",
+            "stock footage"
+          ]
+        }
+      ],
+      "domain_pack": "frontier_resolution_media",
+      "explanation": {
+        "blocked": [
+          "download",
+          "install_handoff",
+          "execute",
+          "upload",
+          "extract",
+          "model_provider_call",
+          "automatic_promotion"
+        ],
+        "domain_pack": "frontier_resolution_media",
+        "factors": [
+          {
+            "factor": "intent",
+            "reasons": [
+              "frontier-resolution media terms were detected"
+            ],
+            "value": "find_frontier_resolution_media"
+          },
+          {
+            "factor": "domain_pack",
+            "value": "frontier_resolution_media"
+          },
+          {
+            "factor": "source_families",
+            "value": [
+              "internet_archive_metadata",
+              "wayback_cdx_metadata",
+              "wikidata_metadata",
+              "manual_source_pack"
+            ]
+          },
+          {
+            "factor": "archive_org_metadata_query",
+            "value": "(mediatype:movies OR mediatype:texts OR mediatype:collection) \"New York\" 1993 (\"D-Theater\" OR \"D-VHS\" OR \"D VHS\" OR JVC OR \"Hi-Vision\" OR MUSE OR \"HD demo\" OR \"demo tape\") -tourism -\"city guide\" -\"travel guide\" -\"stock footage\""
+          },
+          {
+            "factor": "candidate_suppressions",
+            "value": [
+              "suppress_generic_city_or_tourism_media"
+            ]
+          }
+        ],
+        "intent": "find_frontier_resolution_media",
+        "plan_id": "query_source_plan:7e1897eca18e498f",
+        "query": "Hi-Vision MUSE New York 1993 HDTV demo",
+        "schema_version": "query_plan_explanation_packet.v0",
+        "summary": "Deterministic query planner selected a domain pack, source families, metadata query rewrites, suppressions, and review-only candidate lanes.",
+        "uncertainty": [
+          "Archive.org metadata results are candidates only.",
+          "A metadata match does not establish compatibility, rights, safety, or provenance truth."
+        ]
+      },
+      "intent": "find_frontier_resolution_media",
+      "intent_confidence": "high",
+      "intent_reasons": [
+        "frontier-resolution media terms were detected"
+      ],
+      "non_claims": [
+        "not_production_readiness",
+        "not_public_launch_readiness",
+        "not_accepted_truth",
+        "not_rights_clearance",
+        "not_malware_scan",
+        "not_download_permission",
+        "not_full_archive_exhaustiveness_claim"
+      ],
+      "normalized_query": "Hi-Vision MUSE New York 1993 HDTV demo",
+      "plan_id": "query_source_plan:7e1897eca18e498f",
+      "planner_id": "eureka_query_to_source_action_planner_v0",
+      "raw_query": "Hi-Vision MUSE New York 1993 HDTV demo",
+      "result_lane_plans": [
+        {
+          "expected": true,
+          "lane": "reviewed_local_results",
+          "source": "controlled local index",
+          "truth_status": "reviewed_only"
+        },
+        {
+          "expected": true,
+          "lane": "archive_org_metadata_candidates",
+          "review_required": true,
+          "source": "internet_archive_metadata",
+          "truth_status": "candidate_only"
+        },
+        {
+          "blocked_actions": [
+            "download",
+            "install_handoff",
+            "execute",
+            "upload",
+            "extract"
+          ],
+          "expected": true,
+          "lane": "blocked_actions"
+        },
+        {
+          "domain_pack": "frontier_resolution_media",
+          "expected": true,
+          "lane": "source_actions_planned",
+          "truth_status": "plan_only"
+        }
+      ],
+      "review_handoff_plans": [
+        {
+          "accepted_reviewed_truth_created": false,
+          "candidate_states": [
+            "new",
+            "needs_review",
+            "useful_lead",
+            "near_miss",
+            "rejected",
+            "duplicate"
+          ],
+          "handoff_id": "review_handoff:b34f956cd033a868",
+          "handoff_kind": "candidate_metadata_review",
+          "index_mutation_performed": false,
+          "notes": [
+            "Candidate metadata can become a reviewed record only through a later explicit review task.",
+            "This planner does not promote candidates or mutate public, local, or master indexes."
+          ],
+          "review_required": true,
+          "schema_version": "review_handoff_plan.v0"
+        }
+      ],
+      "safety": {
+        "accepted_truth_created": false,
+        "candidate_index_mutated": false,
+        "candidate_only": true,
+        "deployment_performed": false,
+        "download_performed": false,
+        "extraction_executed": false,
+        "install_handoff_enabled": false,
+        "master_index_mutated": false,
+        "model_provider_used": false,
+        "public_index_mutated": false,
+        "review_required": true,
+        "reviewed_index_mutated": false,
+        "source_cache_mutated": false,
+        "upload_performed": false
+      },
+      "schema_version": "query_to_source_action_plan.v0",
+      "source_actions": [
+        {
+          "accepted_truth": false,
+          "action_kind": "metadata_search",
+          "candidate_only": true,
+          "domain_pack": "frontier_resolution_media",
+          "download_performed": false,
+          "execution_mode": "metadata_candidate_runtime",
+          "extraction_executed": false,
+          "index_mutation_performed": false,
+          "intent": "find_frontier_resolution_media",
+          "limitations": [
+            "metadata_only",
+            "candidate_not_reviewed_truth",
+            "no_download",
+            "no_extraction",
+            "no_auto_promotion"
+          ],
+          "model_provider_used": false,
+          "query": "(mediatype:movies OR mediatype:texts OR mediatype:collection) \"New York\" 1993 (\"D-Theater\" OR \"D-VHS\" OR \"D VHS\" OR JVC OR \"Hi-Vision\" OR MUSE OR \"HD demo\" OR \"demo tape\") -tourism -\"city guide\" -\"travel guide\" -\"stock footage\"",
+          "review_required": true,
+          "schema_version": "source_action_plan.v0",
+          "source_family": "internet_archive_metadata",
+          "transport_mode": "metadata_only_http"
+        },
+        {
+          "accepted_truth": false,
+          "action_kind": "metadata_search",
+          "candidate_only": true,
+          "domain_pack": "frontier_resolution_media",
+          "download_performed": false,
+          "execution_mode": "planned_future",
+          "extraction_executed": false,
+          "index_mutation_performed": false,
+          "intent": "find_frontier_resolution_media",
+          "limitations": [
+            "metadata_only",
+            "candidate_not_reviewed_truth",
+            "no_download",
+            "no_extraction",
+            "no_auto_promotion",
+            "not_executed_in_public_search_v0",
+            "source_family_future_or_operator_scoped"
+          ],
+          "model_provider_used": false,
+          "query": "Hi-Vision MUSE New York 1993 HDTV demo -tourism -\"city guide\" -\"travel guide\" -\"stock footage\"",
+          "review_required": true,
+          "schema_version": "source_action_plan.v0",
+          "source_family": "wayback_cdx_metadata",
+          "transport_mode": "not_executed"
+        },
+        {
+          "accepted_truth": false,
+          "action_kind": "metadata_search",
+          "candidate_only": true,
+          "domain_pack": "frontier_resolution_media",
+          "download_performed": false,
+          "execution_mode": "planned_future",
+          "extraction_executed": false,
+          "index_mutation_performed": false,
+          "intent": "find_frontier_resolution_media",
+          "limitations": [
+            "metadata_only",
+            "candidate_not_reviewed_truth",
+            "no_download",
+            "no_extraction",
+            "no_auto_promotion",
+            "not_executed_in_public_search_v0",
+            "source_family_future_or_operator_scoped"
+          ],
+          "model_provider_used": false,
+          "query": "Hi-Vision MUSE New York 1993 HDTV demo -tourism -\"city guide\" -\"travel guide\" -\"stock footage\"",
+          "review_required": true,
+          "schema_version": "source_action_plan.v0",
+          "source_family": "wikidata_metadata",
+          "transport_mode": "not_executed"
+        },
+        {
+          "accepted_truth": false,
+          "action_kind": "metadata_search",
+          "candidate_only": true,
+          "domain_pack": "frontier_resolution_media",
+          "download_performed": false,
+          "execution_mode": "planned_future",
+          "extraction_executed": false,
+          "index_mutation_performed": false,
+          "intent": "find_frontier_resolution_media",
+          "limitations": [
+            "metadata_only",
+            "candidate_not_reviewed_truth",
+            "no_download",
+            "no_extraction",
+            "no_auto_promotion",
+            "not_executed_in_public_search_v0",
+            "source_family_future_or_operator_scoped"
+          ],
+          "model_provider_used": false,
+          "query": "Hi-Vision MUSE New York 1993 HDTV demo",
+          "review_required": true,
+          "schema_version": "source_action_plan.v0",
+          "source_family": "manual_source_pack",
+          "transport_mode": "not_executed"
+        }
+      ],
+      "source_families": [
+        "internet_archive_metadata",
+        "wayback_cdx_metadata",
+        "wikidata_metadata",
+        "manual_source_pack"
+      ],
+      "source_query_rewrites": {
+        "archive_org_metadata": "(mediatype:movies OR mediatype:texts OR mediatype:collection) \"New York\" 1993 (\"D-Theater\" OR \"D-VHS\" OR \"D VHS\" OR JVC OR \"Hi-Vision\" OR MUSE OR \"HD demo\" OR \"demo tape\") -tourism -\"city guide\" -\"travel guide\" -\"stock footage\"",
+        "wayback_cdx_metadata": "Hi-Vision MUSE New York 1993 HDTV demo -tourism -\"city guide\" -\"travel guide\" -\"stock footage\"",
+        "wikidata_metadata": "Hi-Vision MUSE New York 1993 HDTV demo -tourism -\"city guide\" -\"travel guide\" -\"stock footage\""
+      },
+      "work_units": [
+        {
+          "domain_pack": "frontier_resolution_media",
+          "intent": "find_frontier_resolution_media",
+          "mutation_allowed": false,
+          "operator_action": "review_candidates",
+          "query": "Hi-Vision MUSE New York 1993 HDTV demo",
+          "review_required": true,
+          "schema_version": "query_plan_work_unit.v0",
+          "source_families": [
+            "internet_archive_metadata",
+            "wayback_cdx_metadata",
+            "wikidata_metadata",
+            "manual_source_pack"
+          ],
+          "work_unit_id": "query_work_unit:b34f956cd033a868",
+          "work_unit_type": "candidate_metadata_review"
+        }
+      ]
+    },
+    "planner_plan_id": "query_source_plan:7e1897eca18e498f",
+    "production_readiness_claimed": false,
+    "public_index_mutated": false,
+    "public_launch_readiness_claimed": false,
+    "public_mutation_enabled": false,
+    "query_id": "frontier_media_q05",
+    "raw_live_response_committed": false,
+    "raw_query": "Hi-Vision MUSE New York 1993 HDTV demo",
+    "review_required": true,
+    "reviewed_index_mutated": false,
+    "schema_version": "seed_batch_query_plan.v0",
+    "source_query_rewrites": {
+      "archive_org_metadata": "(mediatype:movies OR mediatype:texts OR mediatype:collection) \"New York\" 1993 (\"D-Theater\" OR \"D-VHS\" OR \"D VHS\" OR JVC OR \"Hi-Vision\" OR MUSE OR \"HD demo\" OR \"demo tape\") -tourism -\"city guide\" -\"travel guide\" -\"stock footage\"",
+      "internet_archive_metadata": "(mediatype:movies OR mediatype:texts OR mediatype:collection) \"New York\" 1993 (\"D-Theater\" OR \"D-VHS\" OR \"D VHS\" OR JVC OR \"Hi-Vision\" OR MUSE OR \"HD demo\" OR \"demo tape\") -tourism -\"city guide\" -\"travel guide\" -\"stock footage\"",
+      "manual_source_pack": "Hi-Vision MUSE New York 1993 HDTV demo",
+      "wayback_cdx_metadata": "Hi-Vision MUSE New York 1993 HDTV demo",
+      "wikidata_metadata": "Hi-Vision MUSE New York 1993 HDTV demo"
+    }
+  },
+  {
+    "accepted_truth": false,
+    "accepted_truth_created": false,
+    "batch_id": "seed_batch_frontier_media_00",
+    "candidate_suppressions": [
+      "suppress_generic_city_or_tourism_media",
+      "suppress_modern_hd_stock"
+    ],
+    "created_at": "2026-05-31T00:00:00Z",
+    "deployment_performed": false,
+    "domain_id": "frontier_resolution_media",
+    "download_performed": false,
+    "extraction_executed": false,
+    "intent": "find_frontier_resolution_media",
+    "master_index_mutated": false,
+    "model_provider_used": false,
+    "operator_instance_mutated": false,
+    "plan_id": "seed_query_plan:3fee564222e22091",
+    "planner_domain_pack": "general_archive_metadata",
+    "planner_intent": "broad_research_need",
+    "planner_plan": {
+      "candidate_lane_expectations": [
+        {
+          "expected": true,
+          "lane": "reviewed_local_results",
+          "source": "controlled local index",
+          "truth_status": "reviewed_only"
+        },
+        {
+          "expected": true,
+          "lane": "archive_org_metadata_candidates",
+          "review_required": true,
+          "source": "internet_archive_metadata",
+          "truth_status": "candidate_only"
+        },
+        {
+          "blocked_actions": [
+            "download",
+            "install_handoff",
+            "execute",
+            "upload",
+            "extract"
+          ],
+          "expected": true,
+          "lane": "blocked_actions"
+        },
+        {
+          "domain_pack": "general_archive_metadata",
+          "expected": true,
+          "lane": "source_actions_planned",
+          "truth_status": "plan_only"
+        }
+      ],
+      "candidate_suppressions": [],
+      "domain_pack": "general_archive_metadata",
+      "explanation": {
+        "blocked": [
+          "download",
+          "install_handoff",
+          "execute",
+          "upload",
+          "extract",
+          "model_provider_call",
+          "automatic_promotion"
+        ],
+        "domain_pack": "general_archive_metadata",
+        "factors": [
+          {
+            "factor": "intent",
+            "reasons": [
+              "query has enough detail for a broad metadata research plan"
+            ],
+            "value": "broad_research_need"
+          },
+          {
+            "factor": "domain_pack",
+            "value": "general_archive_metadata"
+          },
+          {
+            "factor": "source_families",
+            "value": [
+              "internet_archive_metadata",
+              "manual_source_pack"
+            ]
+          },
+          {
+            "factor": "archive_org_metadata_query",
+            "value": "(early hdtv new york 1993 demo footage)"
+          },
+          {
+            "factor": "candidate_suppressions",
+            "value": []
+          }
+        ],
+        "intent": "broad_research_need",
+        "plan_id": "query_source_plan:44fe267ee2a8fcd7",
+        "query": "early HDTV New York 1993 demo footage",
+        "schema_version": "query_plan_explanation_packet.v0",
+        "summary": "Deterministic query planner selected a domain pack, source families, metadata query rewrites, suppressions, and review-only candidate lanes.",
+        "uncertainty": [
+          "Archive.org metadata results are candidates only.",
+          "A metadata match does not establish compatibility, rights, safety, or provenance truth."
+        ]
+      },
+      "intent": "broad_research_need",
+      "intent_confidence": "medium",
+      "intent_reasons": [
+        "query has enough detail for a broad metadata research plan"
+      ],
+      "non_claims": [
+        "not_production_readiness",
+        "not_public_launch_readiness",
+        "not_accepted_truth",
+        "not_rights_clearance",
+        "not_malware_scan",
+        "not_download_permission",
+        "not_full_archive_exhaustiveness_claim"
+      ],
+      "normalized_query": "early HDTV New York 1993 demo footage",
+      "plan_id": "query_source_plan:44fe267ee2a8fcd7",
+      "planner_id": "eureka_query_to_source_action_planner_v0",
+      "raw_query": "early HDTV New York 1993 demo footage",
+      "result_lane_plans": [
+        {
+          "expected": true,
+          "lane": "reviewed_local_results",
+          "source": "controlled local index",
+          "truth_status": "reviewed_only"
+        },
+        {
+          "expected": true,
+          "lane": "archive_org_metadata_candidates",
+          "review_required": true,
+          "source": "internet_archive_metadata",
+          "truth_status": "candidate_only"
+        },
+        {
+          "blocked_actions": [
+            "download",
+            "install_handoff",
+            "execute",
+            "upload",
+            "extract"
+          ],
+          "expected": true,
+          "lane": "blocked_actions"
+        },
+        {
+          "domain_pack": "general_archive_metadata",
+          "expected": true,
+          "lane": "source_actions_planned",
+          "truth_status": "plan_only"
+        }
+      ],
+      "review_handoff_plans": [
+        {
+          "accepted_reviewed_truth_created": false,
+          "candidate_states": [
+            "new",
+            "needs_review",
+            "useful_lead",
+            "near_miss",
+            "rejected",
+            "duplicate"
+          ],
+          "handoff_id": "review_handoff:32cbe1c1a30e3bb7",
+          "handoff_kind": "candidate_metadata_review",
+          "index_mutation_performed": false,
+          "notes": [
+            "Candidate metadata can become a reviewed record only through a later explicit review task.",
+            "This planner does not promote candidates or mutate public, local, or master indexes."
+          ],
+          "review_required": true,
+          "schema_version": "review_handoff_plan.v0"
+        }
+      ],
+      "safety": {
+        "accepted_truth_created": false,
+        "candidate_index_mutated": false,
+        "candidate_only": true,
+        "deployment_performed": false,
+        "download_performed": false,
+        "extraction_executed": false,
+        "install_handoff_enabled": false,
+        "master_index_mutated": false,
+        "model_provider_used": false,
+        "public_index_mutated": false,
+        "review_required": true,
+        "reviewed_index_mutated": false,
+        "source_cache_mutated": false,
+        "upload_performed": false
+      },
+      "schema_version": "query_to_source_action_plan.v0",
+      "source_actions": [
+        {
+          "accepted_truth": false,
+          "action_kind": "metadata_search",
+          "candidate_only": true,
+          "domain_pack": "general_archive_metadata",
+          "download_performed": false,
+          "execution_mode": "metadata_candidate_runtime",
+          "extraction_executed": false,
+          "index_mutation_performed": false,
+          "intent": "broad_research_need",
+          "limitations": [
+            "metadata_only",
+            "candidate_not_reviewed_truth",
+            "no_download",
+            "no_extraction",
+            "no_auto_promotion"
+          ],
+          "model_provider_used": false,
+          "query": "(early hdtv new york 1993 demo footage)",
+          "review_required": true,
+          "schema_version": "source_action_plan.v0",
+          "source_family": "internet_archive_metadata",
+          "transport_mode": "metadata_only_http"
+        },
+        {
+          "accepted_truth": false,
+          "action_kind": "metadata_search",
+          "candidate_only": true,
+          "domain_pack": "general_archive_metadata",
+          "download_performed": false,
+          "execution_mode": "planned_future",
+          "extraction_executed": false,
+          "index_mutation_performed": false,
+          "intent": "broad_research_need",
+          "limitations": [
+            "metadata_only",
+            "candidate_not_reviewed_truth",
+            "no_download",
+            "no_extraction",
+            "no_auto_promotion",
+            "not_executed_in_public_search_v0",
+            "source_family_future_or_operator_scoped"
+          ],
+          "model_provider_used": false,
+          "query": "early HDTV New York 1993 demo footage",
+          "review_required": true,
+          "schema_version": "source_action_plan.v0",
+          "source_family": "manual_source_pack",
+          "transport_mode": "not_executed"
+        }
+      ],
+      "source_families": [
+        "internet_archive_metadata",
+        "manual_source_pack"
+      ],
+      "source_query_rewrites": {
+        "archive_org_metadata": "(early hdtv new york 1993 demo footage)"
+      },
+      "work_units": [
+        {
+          "domain_pack": "general_archive_metadata",
+          "intent": "broad_research_need",
+          "mutation_allowed": false,
+          "operator_action": "review_candidates",
+          "query": "early HDTV New York 1993 demo footage",
+          "review_required": true,
+          "schema_version": "query_plan_work_unit.v0",
+          "source_families": [
+            "internet_archive_metadata",
+            "manual_source_pack"
+          ],
+          "work_unit_id": "query_work_unit:32cbe1c1a30e3bb7",
+          "work_unit_type": "candidate_metadata_review"
+        }
+      ]
+    },
+    "planner_plan_id": "query_source_plan:44fe267ee2a8fcd7",
+    "production_readiness_claimed": false,
+    "public_index_mutated": false,
+    "public_launch_readiness_claimed": false,
+    "public_mutation_enabled": false,
+    "query_id": "frontier_media_q06",
+    "raw_live_response_committed": false,
+    "raw_query": "early HDTV New York 1993 demo footage",
+    "review_required": true,
+    "reviewed_index_mutated": false,
+    "schema_version": "seed_batch_query_plan.v0",
+    "source_query_rewrites": {
+      "archive_org_metadata": "(mediatype:movies OR mediatype:texts OR mediatype:collection) (early HDTV New York 1993 demo footage OR \"D-Theater\" OR \"D-VHS\" OR JVC OR \"Hi-Vision\" OR MUSE OR \"HD demo\" OR \"demo tape\") -tourism -\"stock footage\"",
+      "internet_archive_metadata": "(mediatype:movies OR mediatype:texts OR mediatype:collection) (early HDTV New York 1993 demo footage OR \"D-Theater\" OR \"D-VHS\" OR JVC OR \"Hi-Vision\" OR MUSE OR \"HD demo\" OR \"demo tape\") -tourism -\"stock footage\"",
+      "manual_source_pack": "early HDTV New York 1993 demo footage",
+      "wayback_cdx_metadata": "early HDTV New York 1993 demo footage",
+      "wikidata_metadata": "early HDTV New York 1993 demo footage"
+    }
+  },
+  {
+    "accepted_truth": false,
+    "accepted_truth_created": false,
+    "batch_id": "seed_batch_frontier_media_00",
+    "candidate_suppressions": [
+      "suppress_generic_city_or_tourism_media"
+    ],
+    "created_at": "2026-05-31T00:00:00Z",
+    "deployment_performed": false,
+    "domain_id": "frontier_resolution_media",
+    "download_performed": false,
+    "extraction_executed": false,
+    "intent": "find_frontier_resolution_media",
+    "master_index_mutated": false,
+    "model_provider_used": false,
+    "operator_instance_mutated": false,
+    "plan_id": "seed_query_plan:4c4fc2167e7f8bb6",
+    "planner_domain_pack": "frontier_resolution_media",
+    "planner_intent": "find_frontier_resolution_media",
+    "planner_plan": {
+      "candidate_lane_expectations": [
+        {
+          "expected": true,
+          "lane": "reviewed_local_results",
+          "source": "controlled local index",
+          "truth_status": "reviewed_only"
+        },
+        {
+          "expected": true,
+          "lane": "archive_org_metadata_candidates",
+          "review_required": true,
+          "source": "internet_archive_metadata",
+          "truth_status": "candidate_only"
+        },
+        {
+          "blocked_actions": [
+            "download",
+            "install_handoff",
+            "execute",
+            "upload",
+            "extract"
+          ],
+          "expected": true,
+          "lane": "blocked_actions"
+        },
+        {
+          "domain_pack": "frontier_resolution_media",
+          "expected": true,
+          "lane": "source_actions_planned",
+          "truth_status": "plan_only"
+        }
+      ],
+      "candidate_suppressions": [
+        {
+          "applies_to": [
+            "candidate_results",
+            "source_query_rewrites"
+          ],
+          "reason": "Frontier-resolution media searches should avoid generic location media when a technical tape/source is requested.",
+          "suppression_id": "suppress_generic_city_or_tourism_media",
+          "terms": [
+            "tourism",
+            "city guide",
+            "travel guide",
+            "stock footage"
+          ]
+        }
+      ],
+      "domain_pack": "frontier_resolution_media",
+      "explanation": {
+        "blocked": [
+          "download",
+          "install_handoff",
+          "execute",
+          "upload",
+          "extract",
+          "model_provider_call",
+          "automatic_promotion"
+        ],
+        "domain_pack": "frontier_resolution_media",
+        "factors": [
+          {
+            "factor": "intent",
+            "reasons": [
+              "frontier-resolution media terms were detected"
+            ],
+            "value": "find_frontier_resolution_media"
+          },
+          {
+            "factor": "domain_pack",
+            "value": "frontier_resolution_media"
+          },
+          {
+            "factor": "source_families",
+            "value": [
+              "internet_archive_metadata",
+              "wayback_cdx_metadata",
+              "wikidata_metadata",
+              "manual_source_pack"
+            ]
+          },
+          {
+            "factor": "archive_org_metadata_query",
+            "value": "(mediatype:movies OR mediatype:texts OR mediatype:collection) (\"D-Theater\" OR \"D-VHS\" OR \"D VHS\" OR JVC OR \"Hi-Vision\" OR MUSE OR \"HD demo\" OR \"demo tape\") -tourism -\"city guide\" -\"travel guide\" -\"stock footage\""
+          },
+          {
+            "factor": "candidate_suppressions",
+            "value": [
+              "suppress_generic_city_or_tourism_media"
+            ]
+          }
+        ],
+        "intent": "find_frontier_resolution_media",
+        "plan_id": "query_source_plan:637ba0848bda52ed",
+        "query": "D-Theater demo tape JVC city",
+        "schema_version": "query_plan_explanation_packet.v0",
+        "summary": "Deterministic query planner selected a domain pack, source families, metadata query rewrites, suppressions, and review-only candidate lanes.",
+        "uncertainty": [
+          "Archive.org metadata results are candidates only.",
+          "A metadata match does not establish compatibility, rights, safety, or provenance truth."
+        ]
+      },
+      "intent": "find_frontier_resolution_media",
+      "intent_confidence": "high",
+      "intent_reasons": [
+        "frontier-resolution media terms were detected"
+      ],
+      "non_claims": [
+        "not_production_readiness",
+        "not_public_launch_readiness",
+        "not_accepted_truth",
+        "not_rights_clearance",
+        "not_malware_scan",
+        "not_download_permission",
+        "not_full_archive_exhaustiveness_claim"
+      ],
+      "normalized_query": "D-Theater demo tape JVC city",
+      "plan_id": "query_source_plan:637ba0848bda52ed",
+      "planner_id": "eureka_query_to_source_action_planner_v0",
+      "raw_query": "D-Theater demo tape JVC city",
+      "result_lane_plans": [
+        {
+          "expected": true,
+          "lane": "reviewed_local_results",
+          "source": "controlled local index",
+          "truth_status": "reviewed_only"
+        },
+        {
+          "expected": true,
+          "lane": "archive_org_metadata_candidates",
+          "review_required": true,
+          "source": "internet_archive_metadata",
+          "truth_status": "candidate_only"
+        },
+        {
+          "blocked_actions": [
+            "download",
+            "install_handoff",
+            "execute",
+            "upload",
+            "extract"
+          ],
+          "expected": true,
+          "lane": "blocked_actions"
+        },
+        {
+          "domain_pack": "frontier_resolution_media",
+          "expected": true,
+          "lane": "source_actions_planned",
+          "truth_status": "plan_only"
+        }
+      ],
+      "review_handoff_plans": [
+        {
+          "accepted_reviewed_truth_created": false,
+          "candidate_states": [
+            "new",
+            "needs_review",
+            "useful_lead",
+            "near_miss",
+            "rejected",
+            "duplicate"
+          ],
+          "handoff_id": "review_handoff:5071437cb5822a2e",
+          "handoff_kind": "candidate_metadata_review",
+          "index_mutation_performed": false,
+          "notes": [
+            "Candidate metadata can become a reviewed record only through a later explicit review task.",
+            "This planner does not promote candidates or mutate public, local, or master indexes."
+          ],
+          "review_required": true,
+          "schema_version": "review_handoff_plan.v0"
+        }
+      ],
+      "safety": {
+        "accepted_truth_created": false,
+        "candidate_index_mutated": false,
+        "candidate_only": true,
+        "deployment_performed": false,
+        "download_performed": false,
+        "extraction_executed": false,
+        "install_handoff_enabled": false,
+        "master_index_mutated": false,
+        "model_provider_used": false,
+        "public_index_mutated": false,
+        "review_required": true,
+        "reviewed_index_mutated": false,
+        "source_cache_mutated": false,
+        "upload_performed": false
+      },
+      "schema_version": "query_to_source_action_plan.v0",
+      "source_actions": [
+        {
+          "accepted_truth": false,
+          "action_kind": "metadata_search",
+          "candidate_only": true,
+          "domain_pack": "frontier_resolution_media",
+          "download_performed": false,
+          "execution_mode": "metadata_candidate_runtime",
+          "extraction_executed": false,
+          "index_mutation_performed": false,
+          "intent": "find_frontier_resolution_media",
+          "limitations": [
+            "metadata_only",
+            "candidate_not_reviewed_truth",
+            "no_download",
+            "no_extraction",
+            "no_auto_promotion"
+          ],
+          "model_provider_used": false,
+          "query": "(mediatype:movies OR mediatype:texts OR mediatype:collection) (\"D-Theater\" OR \"D-VHS\" OR \"D VHS\" OR JVC OR \"Hi-Vision\" OR MUSE OR \"HD demo\" OR \"demo tape\") -tourism -\"city guide\" -\"travel guide\" -\"stock footage\"",
+          "review_required": true,
+          "schema_version": "source_action_plan.v0",
+          "source_family": "internet_archive_metadata",
+          "transport_mode": "metadata_only_http"
+        },
+        {
+          "accepted_truth": false,
+          "action_kind": "metadata_search",
+          "candidate_only": true,
+          "domain_pack": "frontier_resolution_media",
+          "download_performed": false,
+          "execution_mode": "planned_future",
+          "extraction_executed": false,
+          "index_mutation_performed": false,
+          "intent": "find_frontier_resolution_media",
+          "limitations": [
+            "metadata_only",
+            "candidate_not_reviewed_truth",
+            "no_download",
+            "no_extraction",
+            "no_auto_promotion",
+            "not_executed_in_public_search_v0",
+            "source_family_future_or_operator_scoped"
+          ],
+          "model_provider_used": false,
+          "query": "D-Theater demo tape JVC city -tourism -\"city guide\" -\"travel guide\" -\"stock footage\"",
+          "review_required": true,
+          "schema_version": "source_action_plan.v0",
+          "source_family": "wayback_cdx_metadata",
+          "transport_mode": "not_executed"
+        },
+        {
+          "accepted_truth": false,
+          "action_kind": "metadata_search",
+          "candidate_only": true,
+          "domain_pack": "frontier_resolution_media",
+          "download_performed": false,
+          "execution_mode": "planned_future",
+          "extraction_executed": false,
+          "index_mutation_performed": false,
+          "intent": "find_frontier_resolution_media",
+          "limitations": [
+            "metadata_only",
+            "candidate_not_reviewed_truth",
+            "no_download",
+            "no_extraction",
+            "no_auto_promotion",
+            "not_executed_in_public_search_v0",
+            "source_family_future_or_operator_scoped"
+          ],
+          "model_provider_used": false,
+          "query": "D-Theater demo tape JVC city -tourism -\"city guide\" -\"travel guide\" -\"stock footage\"",
+          "review_required": true,
+          "schema_version": "source_action_plan.v0",
+          "source_family": "wikidata_metadata",
+          "transport_mode": "not_executed"
+        },
+        {
+          "accepted_truth": false,
+          "action_kind": "metadata_search",
+          "candidate_only": true,
+          "domain_pack": "frontier_resolution_media",
+          "download_performed": false,
+          "execution_mode": "planned_future",
+          "extraction_executed": false,
+          "index_mutation_performed": false,
+          "intent": "find_frontier_resolution_media",
+          "limitations": [
+            "metadata_only",
+            "candidate_not_reviewed_truth",
+            "no_download",
+            "no_extraction",
+            "no_auto_promotion",
+            "not_executed_in_public_search_v0",
+            "source_family_future_or_operator_scoped"
+          ],
+          "model_provider_used": false,
+          "query": "D-Theater demo tape JVC city",
+          "review_required": true,
+          "schema_version": "source_action_plan.v0",
+          "source_family": "manual_source_pack",
+          "transport_mode": "not_executed"
+        }
+      ],
+      "source_families": [
+        "internet_archive_metadata",
+        "wayback_cdx_metadata",
+        "wikidata_metadata",
+        "manual_source_pack"
+      ],
+      "source_query_rewrites": {
+        "archive_org_metadata": "(mediatype:movies OR mediatype:texts OR mediatype:collection) (\"D-Theater\" OR \"D-VHS\" OR \"D VHS\" OR JVC OR \"Hi-Vision\" OR MUSE OR \"HD demo\" OR \"demo tape\") -tourism -\"city guide\" -\"travel guide\" -\"stock footage\"",
+        "wayback_cdx_metadata": "D-Theater demo tape JVC city -tourism -\"city guide\" -\"travel guide\" -\"stock footage\"",
+        "wikidata_metadata": "D-Theater demo tape JVC city -tourism -\"city guide\" -\"travel guide\" -\"stock footage\""
+      },
+      "work_units": [
+        {
+          "domain_pack": "frontier_resolution_media",
+          "intent": "find_frontier_resolution_media",
+          "mutation_allowed": false,
+          "operator_action": "review_candidates",
+          "query": "D-Theater demo tape JVC city",
+          "review_required": true,
+          "schema_version": "query_plan_work_unit.v0",
+          "source_families": [
+            "internet_archive_metadata",
+            "wayback_cdx_metadata",
+            "wikidata_metadata",
+            "manual_source_pack"
+          ],
+          "work_unit_id": "query_work_unit:5071437cb5822a2e",
+          "work_unit_type": "candidate_metadata_review"
+        }
+      ]
+    },
+    "planner_plan_id": "query_source_plan:637ba0848bda52ed",
+    "production_readiness_claimed": false,
+    "public_index_mutated": false,
+    "public_launch_readiness_claimed": false,
+    "public_mutation_enabled": false,
+    "query_id": "frontier_media_q07",
+    "raw_live_response_committed": false,
+    "raw_query": "D-Theater demo tape JVC city",
+    "review_required": true,
+    "reviewed_index_mutated": false,
+    "schema_version": "seed_batch_query_plan.v0",
+    "source_query_rewrites": {
+      "archive_org_metadata": "(mediatype:movies OR mediatype:texts OR mediatype:collection) (\"D-Theater\" OR \"D-VHS\" OR \"D VHS\" OR JVC OR \"Hi-Vision\" OR MUSE OR \"HD demo\" OR \"demo tape\") -tourism -\"city guide\" -\"travel guide\" -\"stock footage\"",
+      "internet_archive_metadata": "(mediatype:movies OR mediatype:texts OR mediatype:collection) (\"D-Theater\" OR \"D-VHS\" OR \"D VHS\" OR JVC OR \"Hi-Vision\" OR MUSE OR \"HD demo\" OR \"demo tape\") -tourism -\"city guide\" -\"travel guide\" -\"stock footage\"",
+      "manual_source_pack": "D-Theater demo tape JVC city",
+      "wayback_cdx_metadata": "D-Theater demo tape JVC city",
+      "wikidata_metadata": "D-Theater demo tape JVC city"
+    }
+  },
+  {
+    "accepted_truth": false,
+    "accepted_truth_created": false,
+    "batch_id": "seed_batch_frontier_media_00",
+    "candidate_suppressions": [
+      "suppress_generic_city_or_tourism_media"
+    ],
+    "created_at": "2026-05-31T00:00:00Z",
+    "deployment_performed": false,
+    "domain_id": "frontier_resolution_media",
+    "download_performed": false,
+    "extraction_executed": false,
+    "intent": "find_frontier_resolution_media",
+    "master_index_mutated": false,
+    "model_provider_used": false,
+    "operator_instance_mutated": false,
+    "plan_id": "seed_query_plan:a5f797c70ba6909a",
+    "planner_domain_pack": "frontier_resolution_media",
+    "planner_intent": "find_frontier_resolution_media",
+    "planner_plan": {
+      "candidate_lane_expectations": [
+        {
+          "expected": true,
+          "lane": "reviewed_local_results",
+          "source": "controlled local index",
+          "truth_status": "reviewed_only"
+        },
+        {
+          "expected": true,
+          "lane": "archive_org_metadata_candidates",
+          "review_required": true,
+          "source": "internet_archive_metadata",
+          "truth_status": "candidate_only"
+        },
+        {
+          "blocked_actions": [
+            "download",
+            "install_handoff",
+            "execute",
+            "upload",
+            "extract"
+          ],
+          "expected": true,
+          "lane": "blocked_actions"
+        },
+        {
+          "domain_pack": "frontier_resolution_media",
+          "expected": true,
+          "lane": "source_actions_planned",
+          "truth_status": "plan_only"
+        }
+      ],
+      "candidate_suppressions": [
+        {
+          "applies_to": [
+            "candidate_results",
+            "source_query_rewrites"
+          ],
+          "reason": "Frontier-resolution media searches should avoid generic location media when a technical tape/source is requested.",
+          "suppression_id": "suppress_generic_city_or_tourism_media",
+          "terms": [
+            "tourism",
+            "city guide",
+            "travel guide",
+            "stock footage"
+          ]
+        }
+      ],
+      "domain_pack": "frontier_resolution_media",
+      "explanation": {
+        "blocked": [
+          "download",
+          "install_handoff",
+          "execute",
+          "upload",
+          "extract",
+          "model_provider_call",
+          "automatic_promotion"
+        ],
+        "domain_pack": "frontier_resolution_media",
+        "factors": [
+          {
+            "factor": "intent",
+            "reasons": [
+              "frontier-resolution media terms were detected"
+            ],
+            "value": "find_frontier_resolution_media"
+          },
+          {
+            "factor": "domain_pack",
+            "value": "frontier_resolution_media"
+          },
+          {
+            "factor": "source_families",
+            "value": [
+              "internet_archive_metadata",
+              "wayback_cdx_metadata",
+              "wikidata_metadata",
+              "manual_source_pack"
+            ]
+          },
+          {
+            "factor": "archive_org_metadata_query",
+            "value": "(mediatype:movies OR mediatype:texts OR mediatype:collection) \"New York\" (\"D-Theater\" OR \"D-VHS\" OR \"D VHS\" OR JVC OR \"Hi-Vision\" OR MUSE OR \"HD demo\" OR \"demo tape\") -tourism -\"city guide\" -\"travel guide\" -\"stock footage\""
+          },
+          {
+            "factor": "candidate_suppressions",
+            "value": [
+              "suppress_generic_city_or_tourism_media"
+            ]
+          }
+        ],
+        "intent": "find_frontier_resolution_media",
+        "plan_id": "query_source_plan:79162488c53dfe96",
+        "query": "HDVS Hi-Vision demo New York footage",
+        "schema_version": "query_plan_explanation_packet.v0",
+        "summary": "Deterministic query planner selected a domain pack, source families, metadata query rewrites, suppressions, and review-only candidate lanes.",
+        "uncertainty": [
+          "Archive.org metadata results are candidates only.",
+          "A metadata match does not establish compatibility, rights, safety, or provenance truth."
+        ]
+      },
+      "intent": "find_frontier_resolution_media",
+      "intent_confidence": "high",
+      "intent_reasons": [
+        "frontier-resolution media terms were detected"
+      ],
+      "non_claims": [
+        "not_production_readiness",
+        "not_public_launch_readiness",
+        "not_accepted_truth",
+        "not_rights_clearance",
+        "not_malware_scan",
+        "not_download_permission",
+        "not_full_archive_exhaustiveness_claim"
+      ],
+      "normalized_query": "HDVS Hi-Vision demo New York footage",
+      "plan_id": "query_source_plan:79162488c53dfe96",
+      "planner_id": "eureka_query_to_source_action_planner_v0",
+      "raw_query": "HDVS Hi-Vision demo New York footage",
+      "result_lane_plans": [
+        {
+          "expected": true,
+          "lane": "reviewed_local_results",
+          "source": "controlled local index",
+          "truth_status": "reviewed_only"
+        },
+        {
+          "expected": true,
+          "lane": "archive_org_metadata_candidates",
+          "review_required": true,
+          "source": "internet_archive_metadata",
+          "truth_status": "candidate_only"
+        },
+        {
+          "blocked_actions": [
+            "download",
+            "install_handoff",
+            "execute",
+            "upload",
+            "extract"
+          ],
+          "expected": true,
+          "lane": "blocked_actions"
+        },
+        {
+          "domain_pack": "frontier_resolution_media",
+          "expected": true,
+          "lane": "source_actions_planned",
+          "truth_status": "plan_only"
+        }
+      ],
+      "review_handoff_plans": [
+        {
+          "accepted_reviewed_truth_created": false,
+          "candidate_states": [
+            "new",
+            "needs_review",
+            "useful_lead",
+            "near_miss",
+            "rejected",
+            "duplicate"
+          ],
+          "handoff_id": "review_handoff:a19f8be8d14f47aa",
+          "handoff_kind": "candidate_metadata_review",
+          "index_mutation_performed": false,
+          "notes": [
+            "Candidate metadata can become a reviewed record only through a later explicit review task.",
+            "This planner does not promote candidates or mutate public, local, or master indexes."
+          ],
+          "review_required": true,
+          "schema_version": "review_handoff_plan.v0"
+        }
+      ],
+      "safety": {
+        "accepted_truth_created": false,
+        "candidate_index_mutated": false,
+        "candidate_only": true,
+        "deployment_performed": false,
+        "download_performed": false,
+        "extraction_executed": false,
+        "install_handoff_enabled": false,
+        "master_index_mutated": false,
+        "model_provider_used": false,
+        "public_index_mutated": false,
+        "review_required": true,
+        "reviewed_index_mutated": false,
+        "source_cache_mutated": false,
+        "upload_performed": false
+      },
+      "schema_version": "query_to_source_action_plan.v0",
+      "source_actions": [
+        {
+          "accepted_truth": false,
+          "action_kind": "metadata_search",
+          "candidate_only": true,
+          "domain_pack": "frontier_resolution_media",
+          "download_performed": false,
+          "execution_mode": "metadata_candidate_runtime",
+          "extraction_executed": false,
+          "index_mutation_performed": false,
+          "intent": "find_frontier_resolution_media",
+          "limitations": [
+            "metadata_only",
+            "candidate_not_reviewed_truth",
+            "no_download",
+            "no_extraction",
+            "no_auto_promotion"
+          ],
+          "model_provider_used": false,
+          "query": "(mediatype:movies OR mediatype:texts OR mediatype:collection) \"New York\" (\"D-Theater\" OR \"D-VHS\" OR \"D VHS\" OR JVC OR \"Hi-Vision\" OR MUSE OR \"HD demo\" OR \"demo tape\") -tourism -\"city guide\" -\"travel guide\" -\"stock footage\"",
+          "review_required": true,
+          "schema_version": "source_action_plan.v0",
+          "source_family": "internet_archive_metadata",
+          "transport_mode": "metadata_only_http"
+        },
+        {
+          "accepted_truth": false,
+          "action_kind": "metadata_search",
+          "candidate_only": true,
+          "domain_pack": "frontier_resolution_media",
+          "download_performed": false,
+          "execution_mode": "planned_future",
+          "extraction_executed": false,
+          "index_mutation_performed": false,
+          "intent": "find_frontier_resolution_media",
+          "limitations": [
+            "metadata_only",
+            "candidate_not_reviewed_truth",
+            "no_download",
+            "no_extraction",
+            "no_auto_promotion",
+            "not_executed_in_public_search_v0",
+            "source_family_future_or_operator_scoped"
+          ],
+          "model_provider_used": false,
+          "query": "HDVS Hi-Vision demo New York footage -tourism -\"city guide\" -\"travel guide\" -\"stock footage\"",
+          "review_required": true,
+          "schema_version": "source_action_plan.v0",
+          "source_family": "wayback_cdx_metadata",
+          "transport_mode": "not_executed"
+        },
+        {
+          "accepted_truth": false,
+          "action_kind": "metadata_search",
+          "candidate_only": true,
+          "domain_pack": "frontier_resolution_media",
+          "download_performed": false,
+          "execution_mode": "planned_future",
+          "extraction_executed": false,
+          "index_mutation_performed": false,
+          "intent": "find_frontier_resolution_media",
+          "limitations": [
+            "metadata_only",
+            "candidate_not_reviewed_truth",
+            "no_download",
+            "no_extraction",
+            "no_auto_promotion",
+            "not_executed_in_public_search_v0",
+            "source_family_future_or_operator_scoped"
+          ],
+          "model_provider_used": false,
+          "query": "HDVS Hi-Vision demo New York footage -tourism -\"city guide\" -\"travel guide\" -\"stock footage\"",
+          "review_required": true,
+          "schema_version": "source_action_plan.v0",
+          "source_family": "wikidata_metadata",
+          "transport_mode": "not_executed"
+        },
+        {
+          "accepted_truth": false,
+          "action_kind": "metadata_search",
+          "candidate_only": true,
+          "domain_pack": "frontier_resolution_media",
+          "download_performed": false,
+          "execution_mode": "planned_future",
+          "extraction_executed": false,
+          "index_mutation_performed": false,
+          "intent": "find_frontier_resolution_media",
+          "limitations": [
+            "metadata_only",
+            "candidate_not_reviewed_truth",
+            "no_download",
+            "no_extraction",
+            "no_auto_promotion",
+            "not_executed_in_public_search_v0",
+            "source_family_future_or_operator_scoped"
+          ],
+          "model_provider_used": false,
+          "query": "HDVS Hi-Vision demo New York footage",
+          "review_required": true,
+          "schema_version": "source_action_plan.v0",
+          "source_family": "manual_source_pack",
+          "transport_mode": "not_executed"
+        }
+      ],
+      "source_families": [
+        "internet_archive_metadata",
+        "wayback_cdx_metadata",
+        "wikidata_metadata",
+        "manual_source_pack"
+      ],
+      "source_query_rewrites": {
+        "archive_org_metadata": "(mediatype:movies OR mediatype:texts OR mediatype:collection) \"New York\" (\"D-Theater\" OR \"D-VHS\" OR \"D VHS\" OR JVC OR \"Hi-Vision\" OR MUSE OR \"HD demo\" OR \"demo tape\") -tourism -\"city guide\" -\"travel guide\" -\"stock footage\"",
+        "wayback_cdx_metadata": "HDVS Hi-Vision demo New York footage -tourism -\"city guide\" -\"travel guide\" -\"stock footage\"",
+        "wikidata_metadata": "HDVS Hi-Vision demo New York footage -tourism -\"city guide\" -\"travel guide\" -\"stock footage\""
+      },
+      "work_units": [
+        {
+          "domain_pack": "frontier_resolution_media",
+          "intent": "find_frontier_resolution_media",
+          "mutation_allowed": false,
+          "operator_action": "review_candidates",
+          "query": "HDVS Hi-Vision demo New York footage",
+          "review_required": true,
+          "schema_version": "query_plan_work_unit.v0",
+          "source_families": [
+            "internet_archive_metadata",
+            "wayback_cdx_metadata",
+            "wikidata_metadata",
+            "manual_source_pack"
+          ],
+          "work_unit_id": "query_work_unit:a19f8be8d14f47aa",
+          "work_unit_type": "candidate_metadata_review"
+        }
+      ]
+    },
+    "planner_plan_id": "query_source_plan:79162488c53dfe96",
+    "production_readiness_claimed": false,
+    "public_index_mutated": false,
+    "public_launch_readiness_claimed": false,
+    "public_mutation_enabled": false,
+    "query_id": "frontier_media_q08",
+    "raw_live_response_committed": false,
+    "raw_query": "HDVS Hi-Vision demo New York footage",
+    "review_required": true,
+    "reviewed_index_mutated": false,
+    "schema_version": "seed_batch_query_plan.v0",
+    "source_query_rewrites": {
+      "archive_org_metadata": "(mediatype:movies OR mediatype:texts OR mediatype:collection) \"New York\" (\"D-Theater\" OR \"D-VHS\" OR \"D VHS\" OR JVC OR \"Hi-Vision\" OR MUSE OR \"HD demo\" OR \"demo tape\") -tourism -\"city guide\" -\"travel guide\" -\"stock footage\"",
+      "internet_archive_metadata": "(mediatype:movies OR mediatype:texts OR mediatype:collection) \"New York\" (\"D-Theater\" OR \"D-VHS\" OR \"D VHS\" OR JVC OR \"Hi-Vision\" OR MUSE OR \"HD demo\" OR \"demo tape\") -tourism -\"city guide\" -\"travel guide\" -\"stock footage\"",
+      "manual_source_pack": "HDVS Hi-Vision demo New York footage",
+      "wayback_cdx_metadata": "HDVS Hi-Vision demo New York footage",
+      "wikidata_metadata": "HDVS Hi-Vision demo New York footage"
+    }
+  },
+  {
+    "accepted_truth": false,
+    "accepted_truth_created": false,
+    "batch_id": "seed_batch_frontier_media_00",
+    "candidate_suppressions": [
+      "suppress_generic_city_or_tourism_media",
+      "suppress_tourism_media"
+    ],
+    "created_at": "2026-05-31T00:00:00Z",
+    "deployment_performed": false,
+    "domain_id": "frontier_resolution_media",
+    "download_performed": false,
+    "extraction_executed": false,
+    "intent": "find_frontier_resolution_media",
+    "master_index_mutated": false,
+    "model_provider_used": false,
+    "operator_instance_mutated": false,
+    "plan_id": "seed_query_plan:7a33d4f81101018f",
+    "planner_domain_pack": "general_archive_metadata",
+    "planner_intent": "broad_research_need",
+    "planner_plan": {
+      "candidate_lane_expectations": [
+        {
+          "expected": true,
+          "lane": "reviewed_local_results",
+          "source": "controlled local index",
+          "truth_status": "reviewed_only"
+        },
+        {
+          "expected": true,
+          "lane": "archive_org_metadata_candidates",
+          "review_required": true,
+          "source": "internet_archive_metadata",
+          "truth_status": "candidate_only"
+        },
+        {
+          "blocked_actions": [
+            "download",
+            "install_handoff",
+            "execute",
+            "upload",
+            "extract"
+          ],
+          "expected": true,
+          "lane": "blocked_actions"
+        },
+        {
+          "domain_pack": "general_archive_metadata",
+          "expected": true,
+          "lane": "source_actions_planned",
+          "truth_status": "plan_only"
+        }
+      ],
+      "candidate_suppressions": [],
+      "domain_pack": "general_archive_metadata",
+      "explanation": {
+        "blocked": [
+          "download",
+          "install_handoff",
+          "execute",
+          "upload",
+          "extract",
+          "model_provider_call",
+          "automatic_promotion"
+        ],
+        "domain_pack": "general_archive_metadata",
+        "factors": [
+          {
+            "factor": "intent",
+            "reasons": [
+              "query has enough detail for a broad metadata research plan"
+            ],
+            "value": "broad_research_need"
+          },
+          {
+            "factor": "domain_pack",
+            "value": "general_archive_metadata"
+          },
+          {
+            "factor": "source_families",
+            "value": [
+              "internet_archive_metadata",
+              "manual_source_pack"
+            ]
+          },
+          {
+            "factor": "archive_org_metadata_query",
+            "value": "(japanese hdtv demonstration tape new york)"
+          },
+          {
+            "factor": "candidate_suppressions",
+            "value": []
+          }
+        ],
+        "intent": "broad_research_need",
+        "plan_id": "query_source_plan:9ea2c7f9cf6af06f",
+        "query": "Japanese HDTV demonstration tape New York",
+        "schema_version": "query_plan_explanation_packet.v0",
+        "summary": "Deterministic query planner selected a domain pack, source families, metadata query rewrites, suppressions, and review-only candidate lanes.",
+        "uncertainty": [
+          "Archive.org metadata results are candidates only.",
+          "A metadata match does not establish compatibility, rights, safety, or provenance truth."
+        ]
+      },
+      "intent": "broad_research_need",
+      "intent_confidence": "medium",
+      "intent_reasons": [
+        "query has enough detail for a broad metadata research plan"
+      ],
+      "non_claims": [
+        "not_production_readiness",
+        "not_public_launch_readiness",
+        "not_accepted_truth",
+        "not_rights_clearance",
+        "not_malware_scan",
+        "not_download_permission",
+        "not_full_archive_exhaustiveness_claim"
+      ],
+      "normalized_query": "Japanese HDTV demonstration tape New York",
+      "plan_id": "query_source_plan:9ea2c7f9cf6af06f",
+      "planner_id": "eureka_query_to_source_action_planner_v0",
+      "raw_query": "Japanese HDTV demonstration tape New York",
+      "result_lane_plans": [
+        {
+          "expected": true,
+          "lane": "reviewed_local_results",
+          "source": "controlled local index",
+          "truth_status": "reviewed_only"
+        },
+        {
+          "expected": true,
+          "lane": "archive_org_metadata_candidates",
+          "review_required": true,
+          "source": "internet_archive_metadata",
+          "truth_status": "candidate_only"
+        },
+        {
+          "blocked_actions": [
+            "download",
+            "install_handoff",
+            "execute",
+            "upload",
+            "extract"
+          ],
+          "expected": true,
+          "lane": "blocked_actions"
+        },
+        {
+          "domain_pack": "general_archive_metadata",
+          "expected": true,
+          "lane": "source_actions_planned",
+          "truth_status": "plan_only"
+        }
+      ],
+      "review_handoff_plans": [
+        {
+          "accepted_reviewed_truth_created": false,
+          "candidate_states": [
+            "new",
+            "needs_review",
+            "useful_lead",
+            "near_miss",
+            "rejected",
+            "duplicate"
+          ],
+          "handoff_id": "review_handoff:e6a1cfe4509056a5",
+          "handoff_kind": "candidate_metadata_review",
+          "index_mutation_performed": false,
+          "notes": [
+            "Candidate metadata can become a reviewed record only through a later explicit review task.",
+            "This planner does not promote candidates or mutate public, local, or master indexes."
+          ],
+          "review_required": true,
+          "schema_version": "review_handoff_plan.v0"
+        }
+      ],
+      "safety": {
+        "accepted_truth_created": false,
+        "candidate_index_mutated": false,
+        "candidate_only": true,
+        "deployment_performed": false,
+        "download_performed": false,
+        "extraction_executed": false,
+        "install_handoff_enabled": false,
+        "master_index_mutated": false,
+        "model_provider_used": false,
+        "public_index_mutated": false,
+        "review_required": true,
+        "reviewed_index_mutated": false,
+        "source_cache_mutated": false,
+        "upload_performed": false
+      },
+      "schema_version": "query_to_source_action_plan.v0",
+      "source_actions": [
+        {
+          "accepted_truth": false,
+          "action_kind": "metadata_search",
+          "candidate_only": true,
+          "domain_pack": "general_archive_metadata",
+          "download_performed": false,
+          "execution_mode": "metadata_candidate_runtime",
+          "extraction_executed": false,
+          "index_mutation_performed": false,
+          "intent": "broad_research_need",
+          "limitations": [
+            "metadata_only",
+            "candidate_not_reviewed_truth",
+            "no_download",
+            "no_extraction",
+            "no_auto_promotion"
+          ],
+          "model_provider_used": false,
+          "query": "(japanese hdtv demonstration tape new york)",
+          "review_required": true,
+          "schema_version": "source_action_plan.v0",
+          "source_family": "internet_archive_metadata",
+          "transport_mode": "metadata_only_http"
+        },
+        {
+          "accepted_truth": false,
+          "action_kind": "metadata_search",
+          "candidate_only": true,
+          "domain_pack": "general_archive_metadata",
+          "download_performed": false,
+          "execution_mode": "planned_future",
+          "extraction_executed": false,
+          "index_mutation_performed": false,
+          "intent": "broad_research_need",
+          "limitations": [
+            "metadata_only",
+            "candidate_not_reviewed_truth",
+            "no_download",
+            "no_extraction",
+            "no_auto_promotion",
+            "not_executed_in_public_search_v0",
+            "source_family_future_or_operator_scoped"
+          ],
+          "model_provider_used": false,
+          "query": "Japanese HDTV demonstration tape New York",
+          "review_required": true,
+          "schema_version": "source_action_plan.v0",
+          "source_family": "manual_source_pack",
+          "transport_mode": "not_executed"
+        }
+      ],
+      "source_families": [
+        "internet_archive_metadata",
+        "manual_source_pack"
+      ],
+      "source_query_rewrites": {
+        "archive_org_metadata": "(japanese hdtv demonstration tape new york)"
+      },
+      "work_units": [
+        {
+          "domain_pack": "general_archive_metadata",
+          "intent": "broad_research_need",
+          "mutation_allowed": false,
+          "operator_action": "review_candidates",
+          "query": "Japanese HDTV demonstration tape New York",
+          "review_required": true,
+          "schema_version": "query_plan_work_unit.v0",
+          "source_families": [
+            "internet_archive_metadata",
+            "manual_source_pack"
+          ],
+          "work_unit_id": "query_work_unit:e6a1cfe4509056a5",
+          "work_unit_type": "candidate_metadata_review"
+        }
+      ]
+    },
+    "planner_plan_id": "query_source_plan:9ea2c7f9cf6af06f",
+    "production_readiness_claimed": false,
+    "public_index_mutated": false,
+    "public_launch_readiness_claimed": false,
+    "public_mutation_enabled": false,
+    "query_id": "frontier_media_q09",
+    "raw_live_response_committed": false,
+    "raw_query": "Japanese HDTV demonstration tape New York",
+    "review_required": true,
+    "reviewed_index_mutated": false,
+    "schema_version": "seed_batch_query_plan.v0",
+    "source_query_rewrites": {
+      "archive_org_metadata": "(mediatype:movies OR mediatype:texts OR mediatype:collection) (Japanese HDTV demonstration tape New York OR \"D-Theater\" OR \"D-VHS\" OR JVC OR \"Hi-Vision\" OR MUSE OR \"HD demo\" OR \"demo tape\") -tourism -\"stock footage\"",
+      "internet_archive_metadata": "(mediatype:movies OR mediatype:texts OR mediatype:collection) (Japanese HDTV demonstration tape New York OR \"D-Theater\" OR \"D-VHS\" OR JVC OR \"Hi-Vision\" OR MUSE OR \"HD demo\" OR \"demo tape\") -tourism -\"stock footage\"",
+      "manual_source_pack": "Japanese HDTV demonstration tape New York",
+      "wayback_cdx_metadata": "Japanese HDTV demonstration tape New York",
+      "wikidata_metadata": "Japanese HDTV demonstration tape New York"
+    }
+  },
+  {
+    "accepted_truth": false,
+    "accepted_truth_created": false,
+    "batch_id": "seed_batch_frontier_media_00",
+    "candidate_suppressions": [
+      "suppress_generic_city_or_tourism_media"
+    ],
+    "created_at": "2026-05-31T00:00:00Z",
+    "deployment_performed": false,
+    "domain_id": "frontier_resolution_media",
+    "download_performed": false,
+    "extraction_executed": false,
+    "intent": "find_frontier_resolution_media",
+    "master_index_mutated": false,
+    "model_provider_used": false,
+    "operator_instance_mutated": false,
+    "plan_id": "seed_query_plan:2f419a4e0a96f032",
+    "planner_domain_pack": "frontier_resolution_media",
+    "planner_intent": "find_frontier_resolution_media",
+    "planner_plan": {
+      "candidate_lane_expectations": [
+        {
+          "expected": true,
+          "lane": "reviewed_local_results",
+          "source": "controlled local index",
+          "truth_status": "reviewed_only"
+        },
+        {
+          "expected": true,
+          "lane": "archive_org_metadata_candidates",
+          "review_required": true,
+          "source": "internet_archive_metadata",
+          "truth_status": "candidate_only"
+        },
+        {
+          "blocked_actions": [
+            "download",
+            "install_handoff",
+            "execute",
+            "upload",
+            "extract"
+          ],
+          "expected": true,
+          "lane": "blocked_actions"
+        },
+        {
+          "domain_pack": "frontier_resolution_media",
+          "expected": true,
+          "lane": "source_actions_planned",
+          "truth_status": "plan_only"
+        }
+      ],
+      "candidate_suppressions": [
+        {
+          "applies_to": [
+            "candidate_results",
+            "source_query_rewrites"
+          ],
+          "reason": "Frontier-resolution media searches should avoid generic location media when a technical tape/source is requested.",
+          "suppression_id": "suppress_generic_city_or_tourism_media",
+          "terms": [
+            "tourism",
+            "city guide",
+            "travel guide",
+            "stock footage"
+          ]
+        }
+      ],
+      "domain_pack": "frontier_resolution_media",
+      "explanation": {
+        "blocked": [
+          "download",
+          "install_handoff",
+          "execute",
+          "upload",
+          "extract",
+          "model_provider_call",
+          "automatic_promotion"
+        ],
+        "domain_pack": "frontier_resolution_media",
+        "factors": [
+          {
+            "factor": "intent",
+            "reasons": [
+              "frontier-resolution media terms were detected"
+            ],
+            "value": "find_frontier_resolution_media"
+          },
+          {
+            "factor": "domain_pack",
+            "value": "frontier_resolution_media"
+          },
+          {
+            "factor": "source_families",
+            "value": [
+              "internet_archive_metadata",
+              "wayback_cdx_metadata",
+              "wikidata_metadata",
+              "manual_source_pack"
+            ]
+          },
+          {
+            "factor": "archive_org_metadata_query",
+            "value": "(mediatype:movies OR mediatype:texts OR mediatype:collection) \"New York\" (\"D-Theater\" OR \"D-VHS\" OR \"D VHS\" OR JVC OR \"Hi-Vision\" OR MUSE OR \"HD demo\" OR \"demo tape\") -tourism -\"city guide\" -\"travel guide\" -\"stock footage\""
+          },
+          {
+            "factor": "candidate_suppressions",
+            "value": [
+              "suppress_generic_city_or_tourism_media"
+            ]
+          }
+        ],
+        "intent": "find_frontier_resolution_media",
+        "plan_id": "query_source_plan:6cac21379fba37d1",
+        "query": "MUSE LaserDisc New York HD demo",
+        "schema_version": "query_plan_explanation_packet.v0",
+        "summary": "Deterministic query planner selected a domain pack, source families, metadata query rewrites, suppressions, and review-only candidate lanes.",
+        "uncertainty": [
+          "Archive.org metadata results are candidates only.",
+          "A metadata match does not establish compatibility, rights, safety, or provenance truth."
+        ]
+      },
+      "intent": "find_frontier_resolution_media",
+      "intent_confidence": "high",
+      "intent_reasons": [
+        "frontier-resolution media terms were detected"
+      ],
+      "non_claims": [
+        "not_production_readiness",
+        "not_public_launch_readiness",
+        "not_accepted_truth",
+        "not_rights_clearance",
+        "not_malware_scan",
+        "not_download_permission",
+        "not_full_archive_exhaustiveness_claim"
+      ],
+      "normalized_query": "MUSE LaserDisc New York HD demo",
+      "plan_id": "query_source_plan:6cac21379fba37d1",
+      "planner_id": "eureka_query_to_source_action_planner_v0",
+      "raw_query": "MUSE LaserDisc New York HD demo",
+      "result_lane_plans": [
+        {
+          "expected": true,
+          "lane": "reviewed_local_results",
+          "source": "controlled local index",
+          "truth_status": "reviewed_only"
+        },
+        {
+          "expected": true,
+          "lane": "archive_org_metadata_candidates",
+          "review_required": true,
+          "source": "internet_archive_metadata",
+          "truth_status": "candidate_only"
+        },
+        {
+          "blocked_actions": [
+            "download",
+            "install_handoff",
+            "execute",
+            "upload",
+            "extract"
+          ],
+          "expected": true,
+          "lane": "blocked_actions"
+        },
+        {
+          "domain_pack": "frontier_resolution_media",
+          "expected": true,
+          "lane": "source_actions_planned",
+          "truth_status": "plan_only"
+        }
+      ],
+      "review_handoff_plans": [
+        {
+          "accepted_reviewed_truth_created": false,
+          "candidate_states": [
+            "new",
+            "needs_review",
+            "useful_lead",
+            "near_miss",
+            "rejected",
+            "duplicate"
+          ],
+          "handoff_id": "review_handoff:b8c394eff798fdf6",
+          "handoff_kind": "candidate_metadata_review",
+          "index_mutation_performed": false,
+          "notes": [
+            "Candidate metadata can become a reviewed record only through a later explicit review task.",
+            "This planner does not promote candidates or mutate public, local, or master indexes."
+          ],
+          "review_required": true,
+          "schema_version": "review_handoff_plan.v0"
+        }
+      ],
+      "safety": {
+        "accepted_truth_created": false,
+        "candidate_index_mutated": false,
+        "candidate_only": true,
+        "deployment_performed": false,
+        "download_performed": false,
+        "extraction_executed": false,
+        "install_handoff_enabled": false,
+        "master_index_mutated": false,
+        "model_provider_used": false,
+        "public_index_mutated": false,
+        "review_required": true,
+        "reviewed_index_mutated": false,
+        "source_cache_mutated": false,
+        "upload_performed": false
+      },
+      "schema_version": "query_to_source_action_plan.v0",
+      "source_actions": [
+        {
+          "accepted_truth": false,
+          "action_kind": "metadata_search",
+          "candidate_only": true,
+          "domain_pack": "frontier_resolution_media",
+          "download_performed": false,
+          "execution_mode": "metadata_candidate_runtime",
+          "extraction_executed": false,
+          "index_mutation_performed": false,
+          "intent": "find_frontier_resolution_media",
+          "limitations": [
+            "metadata_only",
+            "candidate_not_reviewed_truth",
+            "no_download",
+            "no_extraction",
+            "no_auto_promotion"
+          ],
+          "model_provider_used": false,
+          "query": "(mediatype:movies OR mediatype:texts OR mediatype:collection) \"New York\" (\"D-Theater\" OR \"D-VHS\" OR \"D VHS\" OR JVC OR \"Hi-Vision\" OR MUSE OR \"HD demo\" OR \"demo tape\") -tourism -\"city guide\" -\"travel guide\" -\"stock footage\"",
+          "review_required": true,
+          "schema_version": "source_action_plan.v0",
+          "source_family": "internet_archive_metadata",
+          "transport_mode": "metadata_only_http"
+        },
+        {
+          "accepted_truth": false,
+          "action_kind": "metadata_search",
+          "candidate_only": true,
+          "domain_pack": "frontier_resolution_media",
+          "download_performed": false,
+          "execution_mode": "planned_future",
+          "extraction_executed": false,
+          "index_mutation_performed": false,
+          "intent": "find_frontier_resolution_media",
+          "limitations": [
+            "metadata_only",
+            "candidate_not_reviewed_truth",
+            "no_download",
+            "no_extraction",
+            "no_auto_promotion",
+            "not_executed_in_public_search_v0",
+            "source_family_future_or_operator_scoped"
+          ],
+          "model_provider_used": false,
+          "query": "MUSE LaserDisc New York HD demo -tourism -\"city guide\" -\"travel guide\" -\"stock footage\"",
+          "review_required": true,
+          "schema_version": "source_action_plan.v0",
+          "source_family": "wayback_cdx_metadata",
+          "transport_mode": "not_executed"
+        },
+        {
+          "accepted_truth": false,
+          "action_kind": "metadata_search",
+          "candidate_only": true,
+          "domain_pack": "frontier_resolution_media",
+          "download_performed": false,
+          "execution_mode": "planned_future",
+          "extraction_executed": false,
+          "index_mutation_performed": false,
+          "intent": "find_frontier_resolution_media",
+          "limitations": [
+            "metadata_only",
+            "candidate_not_reviewed_truth",
+            "no_download",
+            "no_extraction",
+            "no_auto_promotion",
+            "not_executed_in_public_search_v0",
+            "source_family_future_or_operator_scoped"
+          ],
+          "model_provider_used": false,
+          "query": "MUSE LaserDisc New York HD demo -tourism -\"city guide\" -\"travel guide\" -\"stock footage\"",
+          "review_required": true,
+          "schema_version": "source_action_plan.v0",
+          "source_family": "wikidata_metadata",
+          "transport_mode": "not_executed"
+        },
+        {
+          "accepted_truth": false,
+          "action_kind": "metadata_search",
+          "candidate_only": true,
+          "domain_pack": "frontier_resolution_media",
+          "download_performed": false,
+          "execution_mode": "planned_future",
+          "extraction_executed": false,
+          "index_mutation_performed": false,
+          "intent": "find_frontier_resolution_media",
+          "limitations": [
+            "metadata_only",
+            "candidate_not_reviewed_truth",
+            "no_download",
+            "no_extraction",
+            "no_auto_promotion",
+            "not_executed_in_public_search_v0",
+            "source_family_future_or_operator_scoped"
+          ],
+          "model_provider_used": false,
+          "query": "MUSE LaserDisc New York HD demo",
+          "review_required": true,
+          "schema_version": "source_action_plan.v0",
+          "source_family": "manual_source_pack",
+          "transport_mode": "not_executed"
+        }
+      ],
+      "source_families": [
+        "internet_archive_metadata",
+        "wayback_cdx_metadata",
+        "wikidata_metadata",
+        "manual_source_pack"
+      ],
+      "source_query_rewrites": {
+        "archive_org_metadata": "(mediatype:movies OR mediatype:texts OR mediatype:collection) \"New York\" (\"D-Theater\" OR \"D-VHS\" OR \"D VHS\" OR JVC OR \"Hi-Vision\" OR MUSE OR \"HD demo\" OR \"demo tape\") -tourism -\"city guide\" -\"travel guide\" -\"stock footage\"",
+        "wayback_cdx_metadata": "MUSE LaserDisc New York HD demo -tourism -\"city guide\" -\"travel guide\" -\"stock footage\"",
+        "wikidata_metadata": "MUSE LaserDisc New York HD demo -tourism -\"city guide\" -\"travel guide\" -\"stock footage\""
+      },
+      "work_units": [
+        {
+          "domain_pack": "frontier_resolution_media",
+          "intent": "find_frontier_resolution_media",
+          "mutation_allowed": false,
+          "operator_action": "review_candidates",
+          "query": "MUSE LaserDisc New York HD demo",
+          "review_required": true,
+          "schema_version": "query_plan_work_unit.v0",
+          "source_families": [
+            "internet_archive_metadata",
+            "wayback_cdx_metadata",
+            "wikidata_metadata",
+            "manual_source_pack"
+          ],
+          "work_unit_id": "query_work_unit:b8c394eff798fdf6",
+          "work_unit_type": "candidate_metadata_review"
+        }
+      ]
+    },
+    "planner_plan_id": "query_source_plan:6cac21379fba37d1",
+    "production_readiness_claimed": false,
+    "public_index_mutated": false,
+    "public_launch_readiness_claimed": false,
+    "public_mutation_enabled": false,
+    "query_id": "frontier_media_q10",
+    "raw_live_response_committed": false,
+    "raw_query": "MUSE LaserDisc New York HD demo",
+    "review_required": true,
+    "reviewed_index_mutated": false,
+    "schema_version": "seed_batch_query_plan.v0",
+    "source_query_rewrites": {
+      "archive_org_metadata": "(mediatype:movies OR mediatype:texts OR mediatype:collection) \"New York\" (\"D-Theater\" OR \"D-VHS\" OR \"D VHS\" OR JVC OR \"Hi-Vision\" OR MUSE OR \"HD demo\" OR \"demo tape\") -tourism -\"city guide\" -\"travel guide\" -\"stock footage\"",
+      "internet_archive_metadata": "(mediatype:movies OR mediatype:texts OR mediatype:collection) \"New York\" (\"D-Theater\" OR \"D-VHS\" OR \"D VHS\" OR JVC OR \"Hi-Vision\" OR MUSE OR \"HD demo\" OR \"demo tape\") -tourism -\"city guide\" -\"travel guide\" -\"stock footage\"",
+      "manual_source_pack": "MUSE LaserDisc New York HD demo",
+      "wayback_cdx_metadata": "MUSE LaserDisc New York HD demo",
+      "wikidata_metadata": "MUSE LaserDisc New York HD demo"
+    }
+  },
+  {
+    "accepted_truth": false,
+    "accepted_truth_created": false,
+    "batch_id": "seed_batch_frontier_media_00",
+    "candidate_suppressions": [
+      "suppress_generic_city_or_tourism_media",
+      "suppress_stock_footage"
+    ],
+    "created_at": "2026-05-31T00:00:00Z",
+    "deployment_performed": false,
+    "domain_id": "frontier_resolution_media",
+    "download_performed": false,
+    "extraction_executed": false,
+    "intent": "find_frontier_resolution_media",
+    "master_index_mutated": false,
+    "model_provider_used": false,
+    "operator_instance_mutated": false,
+    "plan_id": "seed_query_plan:e270b10eebcda619",
+    "planner_domain_pack": "frontier_resolution_media",
+    "planner_intent": "find_frontier_resolution_media",
+    "planner_plan": {
+      "candidate_lane_expectations": [
+        {
+          "expected": true,
+          "lane": "reviewed_local_results",
+          "source": "controlled local index",
+          "truth_status": "reviewed_only"
+        },
+        {
+          "expected": true,
+          "lane": "archive_org_metadata_candidates",
+          "review_required": true,
+          "source": "internet_archive_metadata",
+          "truth_status": "candidate_only"
+        },
+        {
+          "blocked_actions": [
+            "download",
+            "install_handoff",
+            "execute",
+            "upload",
+            "extract"
+          ],
+          "expected": true,
+          "lane": "blocked_actions"
+        },
+        {
+          "domain_pack": "frontier_resolution_media",
+          "expected": true,
+          "lane": "source_actions_planned",
+          "truth_status": "plan_only"
+        }
+      ],
+      "candidate_suppressions": [
+        {
+          "applies_to": [
+            "candidate_results",
+            "source_query_rewrites"
+          ],
+          "reason": "Frontier-resolution media searches should avoid generic location media when a technical tape/source is requested.",
+          "suppression_id": "suppress_generic_city_or_tourism_media",
+          "terms": [
+            "tourism",
+            "city guide",
+            "travel guide",
+            "stock footage"
+          ]
+        }
+      ],
+      "domain_pack": "frontier_resolution_media",
+      "explanation": {
+        "blocked": [
+          "download",
+          "install_handoff",
+          "execute",
+          "upload",
+          "extract",
+          "model_provider_call",
+          "automatic_promotion"
+        ],
+        "domain_pack": "frontier_resolution_media",
+        "factors": [
+          {
+            "factor": "intent",
+            "reasons": [
+              "frontier-resolution media terms were detected"
+            ],
+            "value": "find_frontier_resolution_media"
+          },
+          {
+            "factor": "domain_pack",
+            "value": "frontier_resolution_media"
+          },
+          {
+            "factor": "source_families",
+            "value": [
+              "internet_archive_metadata",
+              "wayback_cdx_metadata",
+              "wikidata_metadata",
+              "manual_source_pack"
+            ]
+          },
+          {
+            "factor": "archive_org_metadata_query",
+            "value": "(mediatype:movies OR mediatype:texts OR mediatype:collection) (\"D-Theater\" OR \"D-VHS\" OR \"D VHS\" OR JVC OR \"Hi-Vision\" OR MUSE OR \"HD demo\" OR \"demo tape\") -tourism -\"city guide\" -\"travel guide\" -\"stock footage\""
+          },
+          {
+            "factor": "candidate_suppressions",
+            "value": [
+              "suppress_generic_city_or_tourism_media"
+            ]
+          }
+        ],
+        "intent": "find_frontier_resolution_media",
+        "plan_id": "query_source_plan:2b9bb16022f07de6",
+        "query": "D-VHS demo tape urban footage",
+        "schema_version": "query_plan_explanation_packet.v0",
+        "summary": "Deterministic query planner selected a domain pack, source families, metadata query rewrites, suppressions, and review-only candidate lanes.",
+        "uncertainty": [
+          "Archive.org metadata results are candidates only.",
+          "A metadata match does not establish compatibility, rights, safety, or provenance truth."
+        ]
+      },
+      "intent": "find_frontier_resolution_media",
+      "intent_confidence": "high",
+      "intent_reasons": [
+        "frontier-resolution media terms were detected"
+      ],
+      "non_claims": [
+        "not_production_readiness",
+        "not_public_launch_readiness",
+        "not_accepted_truth",
+        "not_rights_clearance",
+        "not_malware_scan",
+        "not_download_permission",
+        "not_full_archive_exhaustiveness_claim"
+      ],
+      "normalized_query": "D-VHS demo tape urban footage",
+      "plan_id": "query_source_plan:2b9bb16022f07de6",
+      "planner_id": "eureka_query_to_source_action_planner_v0",
+      "raw_query": "D-VHS demo tape urban footage",
+      "result_lane_plans": [
+        {
+          "expected": true,
+          "lane": "reviewed_local_results",
+          "source": "controlled local index",
+          "truth_status": "reviewed_only"
+        },
+        {
+          "expected": true,
+          "lane": "archive_org_metadata_candidates",
+          "review_required": true,
+          "source": "internet_archive_metadata",
+          "truth_status": "candidate_only"
+        },
+        {
+          "blocked_actions": [
+            "download",
+            "install_handoff",
+            "execute",
+            "upload",
+            "extract"
+          ],
+          "expected": true,
+          "lane": "blocked_actions"
+        },
+        {
+          "domain_pack": "frontier_resolution_media",
+          "expected": true,
+          "lane": "source_actions_planned",
+          "truth_status": "plan_only"
+        }
+      ],
+      "review_handoff_plans": [
+        {
+          "accepted_reviewed_truth_created": false,
+          "candidate_states": [
+            "new",
+            "needs_review",
+            "useful_lead",
+            "near_miss",
+            "rejected",
+            "duplicate"
+          ],
+          "handoff_id": "review_handoff:a7788e520fb6e111",
+          "handoff_kind": "candidate_metadata_review",
+          "index_mutation_performed": false,
+          "notes": [
+            "Candidate metadata can become a reviewed record only through a later explicit review task.",
+            "This planner does not promote candidates or mutate public, local, or master indexes."
+          ],
+          "review_required": true,
+          "schema_version": "review_handoff_plan.v0"
+        }
+      ],
+      "safety": {
+        "accepted_truth_created": false,
+        "candidate_index_mutated": false,
+        "candidate_only": true,
+        "deployment_performed": false,
+        "download_performed": false,
+        "extraction_executed": false,
+        "install_handoff_enabled": false,
+        "master_index_mutated": false,
+        "model_provider_used": false,
+        "public_index_mutated": false,
+        "review_required": true,
+        "reviewed_index_mutated": false,
+        "source_cache_mutated": false,
+        "upload_performed": false
+      },
+      "schema_version": "query_to_source_action_plan.v0",
+      "source_actions": [
+        {
+          "accepted_truth": false,
+          "action_kind": "metadata_search",
+          "candidate_only": true,
+          "domain_pack": "frontier_resolution_media",
+          "download_performed": false,
+          "execution_mode": "metadata_candidate_runtime",
+          "extraction_executed": false,
+          "index_mutation_performed": false,
+          "intent": "find_frontier_resolution_media",
+          "limitations": [
+            "metadata_only",
+            "candidate_not_reviewed_truth",
+            "no_download",
+            "no_extraction",
+            "no_auto_promotion"
+          ],
+          "model_provider_used": false,
+          "query": "(mediatype:movies OR mediatype:texts OR mediatype:collection) (\"D-Theater\" OR \"D-VHS\" OR \"D VHS\" OR JVC OR \"Hi-Vision\" OR MUSE OR \"HD demo\" OR \"demo tape\") -tourism -\"city guide\" -\"travel guide\" -\"stock footage\"",
+          "review_required": true,
+          "schema_version": "source_action_plan.v0",
+          "source_family": "internet_archive_metadata",
+          "transport_mode": "metadata_only_http"
+        },
+        {
+          "accepted_truth": false,
+          "action_kind": "metadata_search",
+          "candidate_only": true,
+          "domain_pack": "frontier_resolution_media",
+          "download_performed": false,
+          "execution_mode": "planned_future",
+          "extraction_executed": false,
+          "index_mutation_performed": false,
+          "intent": "find_frontier_resolution_media",
+          "limitations": [
+            "metadata_only",
+            "candidate_not_reviewed_truth",
+            "no_download",
+            "no_extraction",
+            "no_auto_promotion",
+            "not_executed_in_public_search_v0",
+            "source_family_future_or_operator_scoped"
+          ],
+          "model_provider_used": false,
+          "query": "D-VHS demo tape urban footage -tourism -\"city guide\" -\"travel guide\" -\"stock footage\"",
+          "review_required": true,
+          "schema_version": "source_action_plan.v0",
+          "source_family": "wayback_cdx_metadata",
+          "transport_mode": "not_executed"
+        },
+        {
+          "accepted_truth": false,
+          "action_kind": "metadata_search",
+          "candidate_only": true,
+          "domain_pack": "frontier_resolution_media",
+          "download_performed": false,
+          "execution_mode": "planned_future",
+          "extraction_executed": false,
+          "index_mutation_performed": false,
+          "intent": "find_frontier_resolution_media",
+          "limitations": [
+            "metadata_only",
+            "candidate_not_reviewed_truth",
+            "no_download",
+            "no_extraction",
+            "no_auto_promotion",
+            "not_executed_in_public_search_v0",
+            "source_family_future_or_operator_scoped"
+          ],
+          "model_provider_used": false,
+          "query": "D-VHS demo tape urban footage -tourism -\"city guide\" -\"travel guide\" -\"stock footage\"",
+          "review_required": true,
+          "schema_version": "source_action_plan.v0",
+          "source_family": "wikidata_metadata",
+          "transport_mode": "not_executed"
+        },
+        {
+          "accepted_truth": false,
+          "action_kind": "metadata_search",
+          "candidate_only": true,
+          "domain_pack": "frontier_resolution_media",
+          "download_performed": false,
+          "execution_mode": "planned_future",
+          "extraction_executed": false,
+          "index_mutation_performed": false,
+          "intent": "find_frontier_resolution_media",
+          "limitations": [
+            "metadata_only",
+            "candidate_not_reviewed_truth",
+            "no_download",
+            "no_extraction",
+            "no_auto_promotion",
+            "not_executed_in_public_search_v0",
+            "source_family_future_or_operator_scoped"
+          ],
+          "model_provider_used": false,
+          "query": "D-VHS demo tape urban footage",
+          "review_required": true,
+          "schema_version": "source_action_plan.v0",
+          "source_family": "manual_source_pack",
+          "transport_mode": "not_executed"
+        }
+      ],
+      "source_families": [
+        "internet_archive_metadata",
+        "wayback_cdx_metadata",
+        "wikidata_metadata",
+        "manual_source_pack"
+      ],
+      "source_query_rewrites": {
+        "archive_org_metadata": "(mediatype:movies OR mediatype:texts OR mediatype:collection) (\"D-Theater\" OR \"D-VHS\" OR \"D VHS\" OR JVC OR \"Hi-Vision\" OR MUSE OR \"HD demo\" OR \"demo tape\") -tourism -\"city guide\" -\"travel guide\" -\"stock footage\"",
+        "wayback_cdx_metadata": "D-VHS demo tape urban footage -tourism -\"city guide\" -\"travel guide\" -\"stock footage\"",
+        "wikidata_metadata": "D-VHS demo tape urban footage -tourism -\"city guide\" -\"travel guide\" -\"stock footage\""
+      },
+      "work_units": [
+        {
+          "domain_pack": "frontier_resolution_media",
+          "intent": "find_frontier_resolution_media",
+          "mutation_allowed": false,
+          "operator_action": "review_candidates",
+          "query": "D-VHS demo tape urban footage",
+          "review_required": true,
+          "schema_version": "query_plan_work_unit.v0",
+          "source_families": [
+            "internet_archive_metadata",
+            "wayback_cdx_metadata",
+            "wikidata_metadata",
+            "manual_source_pack"
+          ],
+          "work_unit_id": "query_work_unit:a7788e520fb6e111",
+          "work_unit_type": "candidate_metadata_review"
+        }
+      ]
+    },
+    "planner_plan_id": "query_source_plan:2b9bb16022f07de6",
+    "production_readiness_claimed": false,
+    "public_index_mutated": false,
+    "public_launch_readiness_claimed": false,
+    "public_mutation_enabled": false,
+    "query_id": "frontier_media_q11",
+    "raw_live_response_committed": false,
+    "raw_query": "D-VHS demo tape urban footage",
+    "review_required": true,
+    "reviewed_index_mutated": false,
+    "schema_version": "seed_batch_query_plan.v0",
+    "source_query_rewrites": {
+      "archive_org_metadata": "(mediatype:movies OR mediatype:texts OR mediatype:collection) (\"D-Theater\" OR \"D-VHS\" OR \"D VHS\" OR JVC OR \"Hi-Vision\" OR MUSE OR \"HD demo\" OR \"demo tape\") -tourism -\"city guide\" -\"travel guide\" -\"stock footage\"",
+      "internet_archive_metadata": "(mediatype:movies OR mediatype:texts OR mediatype:collection) (\"D-Theater\" OR \"D-VHS\" OR \"D VHS\" OR JVC OR \"Hi-Vision\" OR MUSE OR \"HD demo\" OR \"demo tape\") -tourism -\"city guide\" -\"travel guide\" -\"stock footage\"",
+      "manual_source_pack": "D-VHS demo tape urban footage",
+      "wayback_cdx_metadata": "D-VHS demo tape urban footage",
+      "wikidata_metadata": "D-VHS demo tape urban footage"
+    }
+  },
+  {
+    "accepted_truth": false,
+    "accepted_truth_created": false,
+    "batch_id": "seed_batch_frontier_media_00",
+    "candidate_suppressions": [
+      "suppress_generic_city_or_tourism_media",
+      "suppress_modern_hd_stock"
+    ],
+    "created_at": "2026-05-31T00:00:00Z",
+    "deployment_performed": false,
+    "domain_id": "frontier_resolution_media",
+    "download_performed": false,
+    "extraction_executed": false,
+    "intent": "find_frontier_resolution_media",
+    "master_index_mutated": false,
+    "model_provider_used": false,
+    "operator_instance_mutated": false,
+    "plan_id": "seed_query_plan:73e6f0acab63e1e1",
+    "planner_domain_pack": "general_archive_metadata",
+    "planner_intent": "broad_research_need",
+    "planner_plan": {
+      "candidate_lane_expectations": [
+        {
+          "expected": true,
+          "lane": "reviewed_local_results",
+          "source": "controlled local index",
+          "truth_status": "reviewed_only"
+        },
+        {
+          "expected": true,
+          "lane": "archive_org_metadata_candidates",
+          "review_required": true,
+          "source": "internet_archive_metadata",
+          "truth_status": "candidate_only"
+        },
+        {
+          "blocked_actions": [
+            "download",
+            "install_handoff",
+            "execute",
+            "upload",
+            "extract"
+          ],
+          "expected": true,
+          "lane": "blocked_actions"
+        },
+        {
+          "domain_pack": "general_archive_metadata",
+          "expected": true,
+          "lane": "source_actions_planned",
+          "truth_status": "plan_only"
+        }
+      ],
+      "candidate_suppressions": [],
+      "domain_pack": "general_archive_metadata",
+      "explanation": {
+        "blocked": [
+          "download",
+          "install_handoff",
+          "execute",
+          "upload",
+          "extract",
+          "model_provider_call",
+          "automatic_promotion"
+        ],
+        "domain_pack": "general_archive_metadata",
+        "factors": [
+          {
+            "factor": "intent",
+            "reasons": [
+              "query has enough detail for a broad metadata research plan"
+            ],
+            "value": "broad_research_need"
+          },
+          {
+            "factor": "domain_pack",
+            "value": "general_archive_metadata"
+          },
+          {
+            "factor": "source_families",
+            "value": [
+              "internet_archive_metadata",
+              "manual_source_pack"
+            ]
+          },
+          {
+            "factor": "archive_org_metadata_query",
+            "value": "(early high definition city footage archival)"
+          },
+          {
+            "factor": "candidate_suppressions",
+            "value": []
+          }
+        ],
+        "intent": "broad_research_need",
+        "plan_id": "query_source_plan:f99083eb504e8683",
+        "query": "early high definition city footage archival source",
+        "schema_version": "query_plan_explanation_packet.v0",
+        "summary": "Deterministic query planner selected a domain pack, source families, metadata query rewrites, suppressions, and review-only candidate lanes.",
+        "uncertainty": [
+          "Archive.org metadata results are candidates only.",
+          "A metadata match does not establish compatibility, rights, safety, or provenance truth."
+        ]
+      },
+      "intent": "broad_research_need",
+      "intent_confidence": "medium",
+      "intent_reasons": [
+        "query has enough detail for a broad metadata research plan"
+      ],
+      "non_claims": [
+        "not_production_readiness",
+        "not_public_launch_readiness",
+        "not_accepted_truth",
+        "not_rights_clearance",
+        "not_malware_scan",
+        "not_download_permission",
+        "not_full_archive_exhaustiveness_claim"
+      ],
+      "normalized_query": "early high definition city footage archival source",
+      "plan_id": "query_source_plan:f99083eb504e8683",
+      "planner_id": "eureka_query_to_source_action_planner_v0",
+      "raw_query": "early high definition city footage archival source",
+      "result_lane_plans": [
+        {
+          "expected": true,
+          "lane": "reviewed_local_results",
+          "source": "controlled local index",
+          "truth_status": "reviewed_only"
+        },
+        {
+          "expected": true,
+          "lane": "archive_org_metadata_candidates",
+          "review_required": true,
+          "source": "internet_archive_metadata",
+          "truth_status": "candidate_only"
+        },
+        {
+          "blocked_actions": [
+            "download",
+            "install_handoff",
+            "execute",
+            "upload",
+            "extract"
+          ],
+          "expected": true,
+          "lane": "blocked_actions"
+        },
+        {
+          "domain_pack": "general_archive_metadata",
+          "expected": true,
+          "lane": "source_actions_planned",
+          "truth_status": "plan_only"
+        }
+      ],
+      "review_handoff_plans": [
+        {
+          "accepted_reviewed_truth_created": false,
+          "candidate_states": [
+            "new",
+            "needs_review",
+            "useful_lead",
+            "near_miss",
+            "rejected",
+            "duplicate"
+          ],
+          "handoff_id": "review_handoff:29064d2f96f0b164",
+          "handoff_kind": "candidate_metadata_review",
+          "index_mutation_performed": false,
+          "notes": [
+            "Candidate metadata can become a reviewed record only through a later explicit review task.",
+            "This planner does not promote candidates or mutate public, local, or master indexes."
+          ],
+          "review_required": true,
+          "schema_version": "review_handoff_plan.v0"
+        }
+      ],
+      "safety": {
+        "accepted_truth_created": false,
+        "candidate_index_mutated": false,
+        "candidate_only": true,
+        "deployment_performed": false,
+        "download_performed": false,
+        "extraction_executed": false,
+        "install_handoff_enabled": false,
+        "master_index_mutated": false,
+        "model_provider_used": false,
+        "public_index_mutated": false,
+        "review_required": true,
+        "reviewed_index_mutated": false,
+        "source_cache_mutated": false,
+        "upload_performed": false
+      },
+      "schema_version": "query_to_source_action_plan.v0",
+      "source_actions": [
+        {
+          "accepted_truth": false,
+          "action_kind": "metadata_search",
+          "candidate_only": true,
+          "domain_pack": "general_archive_metadata",
+          "download_performed": false,
+          "execution_mode": "metadata_candidate_runtime",
+          "extraction_executed": false,
+          "index_mutation_performed": false,
+          "intent": "broad_research_need",
+          "limitations": [
+            "metadata_only",
+            "candidate_not_reviewed_truth",
+            "no_download",
+            "no_extraction",
+            "no_auto_promotion"
+          ],
+          "model_provider_used": false,
+          "query": "(early high definition city footage archival)",
+          "review_required": true,
+          "schema_version": "source_action_plan.v0",
+          "source_family": "internet_archive_metadata",
+          "transport_mode": "metadata_only_http"
+        },
+        {
+          "accepted_truth": false,
+          "action_kind": "metadata_search",
+          "candidate_only": true,
+          "domain_pack": "general_archive_metadata",
+          "download_performed": false,
+          "execution_mode": "planned_future",
+          "extraction_executed": false,
+          "index_mutation_performed": false,
+          "intent": "broad_research_need",
+          "limitations": [
+            "metadata_only",
+            "candidate_not_reviewed_truth",
+            "no_download",
+            "no_extraction",
+            "no_auto_promotion",
+            "not_executed_in_public_search_v0",
+            "source_family_future_or_operator_scoped"
+          ],
+          "model_provider_used": false,
+          "query": "early high definition city footage archival source",
+          "review_required": true,
+          "schema_version": "source_action_plan.v0",
+          "source_family": "manual_source_pack",
+          "transport_mode": "not_executed"
+        }
+      ],
+      "source_families": [
+        "internet_archive_metadata",
+        "manual_source_pack"
+      ],
+      "source_query_rewrites": {
+        "archive_org_metadata": "(early high definition city footage archival)"
+      },
+      "work_units": [
+        {
+          "domain_pack": "general_archive_metadata",
+          "intent": "broad_research_need",
+          "mutation_allowed": false,
+          "operator_action": "review_candidates",
+          "query": "early high definition city footage archival source",
+          "review_required": true,
+          "schema_version": "query_plan_work_unit.v0",
+          "source_families": [
+            "internet_archive_metadata",
+            "manual_source_pack"
+          ],
+          "work_unit_id": "query_work_unit:29064d2f96f0b164",
+          "work_unit_type": "candidate_metadata_review"
+        }
+      ]
+    },
+    "planner_plan_id": "query_source_plan:f99083eb504e8683",
+    "production_readiness_claimed": false,
+    "public_index_mutated": false,
+    "public_launch_readiness_claimed": false,
+    "public_mutation_enabled": false,
+    "query_id": "frontier_media_q12",
+    "raw_live_response_committed": false,
+    "raw_query": "early high definition city footage archival source",
+    "review_required": true,
+    "reviewed_index_mutated": false,
+    "schema_version": "seed_batch_query_plan.v0",
+    "source_query_rewrites": {
+      "archive_org_metadata": "(mediatype:movies OR mediatype:texts OR mediatype:collection) (early high definition city footage archival source OR \"D-Theater\" OR \"D-VHS\" OR JVC OR \"Hi-Vision\" OR MUSE OR \"HD demo\" OR \"demo tape\") -tourism -\"stock footage\"",
+      "internet_archive_metadata": "(mediatype:movies OR mediatype:texts OR mediatype:collection) (early high definition city footage archival source OR \"D-Theater\" OR \"D-VHS\" OR JVC OR \"Hi-Vision\" OR MUSE OR \"HD demo\" OR \"demo tape\") -tourism -\"stock footage\"",
+      "manual_source_pack": "early high definition city footage archival source",
+      "wayback_cdx_metadata": "early high definition city footage archival source",
+      "wikidata_metadata": "early high definition city footage archival source"
+    }
+  }
+]

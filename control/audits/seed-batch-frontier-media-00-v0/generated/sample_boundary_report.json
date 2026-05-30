@@ -1,0 +1,8 @@
+{
+  "schema_version": "sample_boundary_report.v0",
+  "path": "examples/seed_batches/frontier_media/boundary_report.json",
+  "accepted_truth_created": false,
+  "reviewed_index_mutated": false,
+  "public_index_mutated": false,
+  "deployment_performed": false
+}

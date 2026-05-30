@@ -2,11 +2,11 @@
 
 ## PHASE
 
-UNSPECIFIED - REVIEW-BATCH-00
+UNSPECIFIED - SEED-BATCH-FRONTIER-MEDIA-00
 
 ## GOAL
 
-REVIEW-BATCH-00
+SEED-BATCH-FRONTIER-MEDIA-00
 
 ## WHY
 
@@ -44,52 +44,60 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 - `.aide/**`
 - `AGENTS.md`
-- `contracts/review/**`
+- `contracts/seed_batches/**`
+- `contracts/search/query_plan/**`
 - `contracts/candidates/**`
 - `contracts/scout/**`
-- `contracts/local_apply/**`
+- `contracts/discovery/**`
+- `contracts/review/**`
+- `contracts/source/action/**`
+- `contracts/source/families/**`
 - `contracts/snapshot/**`
 - `contracts/workbench/**`
 - `contracts/view_models/**`
 - `contracts/projections/**`
-- `contracts/search/query_plan/**`
-- `contracts/source/action/**`
 - `docs/architecture/**`
 - `docs/operations/**`
 - `docs/reference/**`
 - `control/inventory/**`
 - `control/audits/**`
 - `control/policies/**`
-- `runtime/review/batch/**`
-- `runtime/review/queue/**`
+- `runtime/seed_batches/**`
+- `runtime/search/query_plan/**`
 - `runtime/candidate_index/**`
 - `runtime/candidate_store/**`
 - `runtime/candidates/**`
 - `runtime/scout/**`
 - `runtime/discovery/**`
-- `runtime/snapshots/**`
+- `runtime/review/batch/**`
+- `runtime/review/queue/**`
+- `runtime/source/action/**`
+- `runtime/connectors/internet_archive_metadata/**`
 - `runtime/resolution_run/**`
+- `runtime/local_eval/**`
 - `runtime/local_service/**`
 - `runtime/local_workbench/**`
 - `runtime/gateway/**`
-- `runtime/local_eval/**`
 - `surfaces/api/**`
 - `surfaces/web/**`
-- `examples/review_batch/**`
-- `examples/review/**`
-- `examples/candidates/**`
-- `examples/candidate_index/**`
-- `examples/scout/**`
-- `examples/discovery/**`
-- `examples/local_apply/**`
-- `examples/snapshots/**`
-- `scripts/eureka_review_batch.py`
-- `scripts/eureka_review_batch_decision.py`
-- `scripts/eureka_review_batch_preview.py`
-- `scripts/eureka_review_batch_handoff.py`
+- `examples/seed_batches/**`
+- `examples/seed_batches/frontier_media/**`
+- `examples/query_plans/frontier_media/**`
+- `examples/candidates/frontier_media/**`
+- `examples/scout/frontier_media/**`
+- `examples/review_batch/frontier_media/**`
+- `examples/public_alpha/frontier_media/**`
 - `scripts/local_queue_progress.py`
 - `scripts/validate_*.py`
 - `scripts/check_*.py`
+- `scripts/eureka_seed_batch_frontier_media.py`
+- `scripts/eureka_seed_batch_run.py`
+- `scripts/eureka_seed_batch_report.py`
+- `scripts/eureka_query_plan.py`
+- `scripts/eureka_candidate_ingest.py`
+- `scripts/eureka_scout_runtime.py`
+- `scripts/eureka_review_batch.py`
+- `scripts/eureka_test_select.py`
 - `tests/runtime/**`
 - `tests/operations/**`
 - `tests/scripts/**`
@@ -132,11 +140,12 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 - `py -3 .aide/scripts/aide_lite.py snapshot`
 - `py -3 .aide/scripts/aide_lite.py index`
 - `py -3 .aide/scripts/aide_lite.py context`
-- `py -3 .aide/scripts/aide_lite.py pack --task "REVIEW-BATCH-00"`
+- `py -3 .aide/scripts/aide_lite.py pack --task "SEED-BATCH-FRONTIER-MEDIA-00"`
 - `py -3 .aide/scripts/aide_lite.py test`
 - `py -3 .aide/scripts/aide_lite.py selftest`
 - `py -3 .aide/scripts/aide_lite.py verify`
 - `py -3 .aide/scripts/aide_lite.py review-pack`
+- `python scripts/validate_seed_batch_frontier_media.py`
 - `python scripts/validate_review_batch.py`
 - `python scripts/validate_scout_runtime.py`
 - `python scripts/validate_candidate_index_runtime.py`
@@ -147,7 +156,7 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 - `python scripts/validate_domain_packs.py`
 - `python scripts/check_architecture_boundaries.py`
 - `python scripts/check_generated_artifact_cleanliness.py --check --json`
-- focused REVIEW-BATCH unittest modules
+- focused SEED-BATCH-FRONTIER-MEDIA unittest modules
 - `git diff --check`
 
 ## COMMITS
@@ -167,9 +176,8 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 ## NON_GOALS
 
-- No deployment, publishing, production-readiness claim, public-launch claim, main promotion, force-push, history rewrite, broad crawling, arbitrary scraping, downloads, uploads, extraction, execution, install/emulation, model/provider calls, or live source calls.
-- No automatic candidate acceptance, reviewed-index mutation, master/public index mutation, public mutation, operator instance mutation by default, local apply execution, or snapshot refresh execution.
-- No full unittest discovery inside AI sessions by default.
+- No deployment, publishing, production-readiness claim, public-launch claim, main promotion, force-push, history rewrite, broad crawling, arbitrary scraping, downloads, uploads, extraction, execution, install/emulation, model/provider calls, or full discovery inside AI sessions.
+- No automatic candidate acceptance, reviewed-index mutation, master/public index mutation, public mutation, operator instance mutation by default, local apply execution, snapshot refresh execution, or raw live metadata response commits.
 
 ## ACCEPTANCE
 
@@ -186,8 +194,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4750
-- approx_tokens: 1188
+- chars: 4776
+- approx_tokens: 1194
 - budget_status: PASS
 - warnings:
   - none

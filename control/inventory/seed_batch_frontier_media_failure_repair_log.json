@@ -1,0 +1,13 @@
+{
+  "schema_version": "seed_batch_frontier_media_failure_repair_log.v0",
+  "task": "SEED-BATCH-FRONTIER-MEDIA-00",
+  "status": "pass",
+  "repairs": [
+    {
+      "issue": "Initial example projection included full SCOUT runtime packets and was too large for a compact seed-batch example.",
+      "repair": "Runtime still builds full SCOUT outputs, but generated examples now store compact SCOUT and run summaries."
+    }
+  ],
+  "open_failures": [],
+  "full_discovery": "NOT_RUN_BY_POLICY"
+}

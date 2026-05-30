@@ -1,0 +1,7 @@
+{
+  "schema_version": "sample_query_set.v0",
+  "path": "examples/seed_batches/frontier_media/query_set.json",
+  "query_count": 12,
+  "domain_id": "frontier_resolution_media",
+  "accepted_truth": false
+}

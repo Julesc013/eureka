@@ -1,0 +1,26 @@
+{
+  "schema_version": "seed_batch_contract.v0",
+  "record_type": "seed_batch",
+  "required_fields": [
+    "schema_version",
+    "batch_id",
+    "domain_id",
+    "query_set",
+    "source_plan_refs",
+    "candidate_refs",
+    "scout_refs",
+    "review_batch_refs",
+    "known_need_refs",
+    "absence_refs",
+    "snapshot_refresh_handoff_refs",
+    "public_alpha_reassess_refs",
+    "accepted_truth_created",
+    "reviewed_index_mutated",
+    "public_index_mutated",
+    "limitations",
+    "created_at"
+  ],
+  "accepted_truth_created": false,
+  "reviewed_index_mutated": false,
+  "public_index_mutated": false
+}

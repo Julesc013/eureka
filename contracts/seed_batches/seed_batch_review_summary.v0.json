@@ -1,0 +1,16 @@
+{
+  "schema_version": "seed_batch_review_summary_contract.v0",
+  "record_type": "seed_batch_review_summary",
+  "required_fields": [
+    "schema_version",
+    "batch_id",
+    "review_batch_refs",
+    "promotion_preview_refs",
+    "local_apply_handoff_refs",
+    "snapshot_refresh_handoff_refs",
+    "review_required",
+    "accepted_truth"
+  ],
+  "promotion_preview_is_not_promotion": true,
+  "accepted_truth": false
+}

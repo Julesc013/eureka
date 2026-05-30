@@ -1,0 +1,6 @@
+{
+  "schema_version": "sample_scout_trails.v0",
+  "path": "examples/seed_batches/frontier_media/scout_trails.json",
+  "projection": "compact_summary",
+  "accepted_truth": false
+}

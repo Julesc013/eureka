@@ -1,0 +1,11 @@
+{
+  "schema_version": "seed_batch_frontier_media_review_matrix.v0",
+  "task": "SEED-BATCH-FRONTIER-MEDIA-00",
+  "review_outputs": ["review_batch_packet", "decision_preview", "promotion_previews", "local_apply_handoff", "snapshot_refresh_handoff"],
+  "promotion_preview_is_not_promotion": true,
+  "local_apply_executed": false,
+  "snapshot_refresh_executed": false,
+  "accepted_truth_created": false,
+  "reviewed_index_mutated": false,
+  "public_index_mutated": false
+}

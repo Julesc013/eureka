@@ -1,0 +1,22 @@
+{
+  "schema_version": "seed_batch_frontier_media_smoke_result.v0",
+  "task": "SEED-BATCH-FRONTIER-MEDIA-00",
+  "status": "pass",
+  "commands": [
+    "python scripts/eureka_seed_batch_frontier_media.py --fixture --json",
+    "python scripts/eureka_seed_batch_frontier_media.py --fixture --write-examples --json",
+    "python scripts/eureka_seed_batch_report.py --from-examples --json"
+  ],
+  "query_count": 12,
+  "candidate_count": 12,
+  "fixture_seed_batch_passed": true,
+  "operator_live_metadata_run_performed": false,
+  "accepted_truth_created": false,
+  "reviewed_index_mutated": false,
+  "master_index_mutated": false,
+  "public_index_mutated": false,
+  "download_performed": false,
+  "extraction_executed": false,
+  "model_provider_used": false,
+  "deployment_performed": false
+}

@@ -1,0 +1,84 @@
+{
+  "accepted_truth": false,
+  "accepted_truth_created": false,
+  "batch_id": "seed_batch_frontier_media_00",
+  "deployment_performed": false,
+  "download_performed": false,
+  "extraction_executed": false,
+  "master_index_mutated": false,
+  "model_provider_used": false,
+  "operator_instance_mutated": false,
+  "production_readiness_claimed": false,
+  "public_index_mutated": false,
+  "public_launch_readiness_claimed": false,
+  "public_mutation_enabled": false,
+  "raw_live_response_committed": false,
+  "related_path_count": 870,
+  "relation_count": 870,
+  "review_required": true,
+  "reviewed_index_mutated": false,
+  "run_count": 12,
+  "sample_runs": [
+    {
+      "accepted_truth": false,
+      "candidate_refs": [
+        "seed_frontier_media_frontier_media_q01_candidate",
+        "seed_frontier_media_frontier_media_q02_candidate",
+        "seed_frontier_media_frontier_media_q03_candidate",
+        "seed_frontier_media_frontier_media_q04_candidate",
+        "seed_frontier_media_frontier_media_q05_candidate",
+        "seed_frontier_media_frontier_media_q06_candidate"
+      ],
+      "relation_count": 80,
+      "review_required": true,
+      "scout_run_id": "scout_run:6dd5ab0197b095dc",
+      "seed_candidate_id": "seed_frontier_media_frontier_media_q01_candidate"
+    },
+    {
+      "accepted_truth": false,
+      "candidate_refs": [
+        "seed_frontier_media_frontier_media_q01_candidate",
+        "seed_frontier_media_frontier_media_q02_candidate",
+        "seed_frontier_media_frontier_media_q03_candidate",
+        "seed_frontier_media_frontier_media_q04_candidate",
+        "seed_frontier_media_frontier_media_q05_candidate",
+        "seed_frontier_media_frontier_media_q06_candidate"
+      ],
+      "relation_count": 78,
+      "review_required": true,
+      "scout_run_id": "scout_run:58ec0d2fc11be225",
+      "seed_candidate_id": "seed_frontier_media_frontier_media_q02_candidate"
+    },
+    {
+      "accepted_truth": false,
+      "candidate_refs": [
+        "seed_frontier_media_frontier_media_q01_candidate",
+        "seed_frontier_media_frontier_media_q02_candidate",
+        "seed_frontier_media_frontier_media_q03_candidate",
+        "seed_frontier_media_frontier_media_q04_candidate",
+        "seed_frontier_media_frontier_media_q05_candidate",
+        "seed_frontier_media_frontier_media_q06_candidate"
+      ],
+      "relation_count": 75,
+      "review_required": true,
+      "scout_run_id": "scout_run:1de28535700f0373",
+      "seed_candidate_id": "seed_frontier_media_frontier_media_q03_candidate"
+    }
+  ],
+  "schema_version": "seed_batch_scout_trails_summary.v0",
+  "scout_refs": [
+    "scout_run:6dd5ab0197b095dc",
+    "scout_run:58ec0d2fc11be225",
+    "scout_run:1de28535700f0373",
+    "scout_run:00c561b4d2afadda",
+    "scout_run:0d759c389cc34cf2",
+    "scout_run:70815e3246858bb4",
+    "scout_run:170430a1caf1fb42",
+    "scout_run:d456172a7197f6d9",
+    "scout_run:8d9efd681054078a",
+    "scout_run:ebda1307af5df654",
+    "scout_run:6dc83a2b3b96e24e",
+    "scout_run:a123ce6c837ec10b"
+  ],
+  "workunit_seed_count": 60
+}

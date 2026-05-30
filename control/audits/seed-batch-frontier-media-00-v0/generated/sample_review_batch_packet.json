@@ -1,0 +1,6 @@
+{
+  "schema_version": "sample_review_batch_packet.v0",
+  "path": "examples/seed_batches/frontier_media/review_batch_packet.json",
+  "operator_context_required": true,
+  "accepted_truth": false
+}

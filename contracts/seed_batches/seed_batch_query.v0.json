@@ -1,0 +1,21 @@
+{
+  "schema_version": "seed_batch_query_contract.v0",
+  "record_type": "seed_batch_query",
+  "required_fields": [
+    "schema_version",
+    "batch_id",
+    "query_id",
+    "raw_query",
+    "intent",
+    "domain_id",
+    "expected_source_families",
+    "promoted_terms",
+    "suppressions",
+    "expected_candidate_kinds",
+    "known_uncertainties",
+    "review_priority",
+    "accepted_truth",
+    "created_at"
+  ],
+  "accepted_truth": false
+}

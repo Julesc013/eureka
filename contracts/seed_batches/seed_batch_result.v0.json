@@ -1,0 +1,21 @@
+{
+  "schema_version": "seed_batch_result_contract.v0",
+  "record_type": "seed_batch_result",
+  "required_fields": [
+    "schema_version",
+    "task",
+    "status",
+    "contracts_added",
+    "policies_added",
+    "query_matrix_added",
+    "source_plan_matrix_added",
+    "runtime_seed_batch_added",
+    "fixture_seed_batch_passed",
+    "operator_live_metadata_run_performed",
+    "accepted_truth_created",
+    "reviewed_index_mutated",
+    "master_index_mutated",
+    "public_index_mutated",
+    "recommended_next_task"
+  ]
+}

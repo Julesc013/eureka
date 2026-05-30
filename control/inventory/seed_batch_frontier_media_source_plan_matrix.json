@@ -1,0 +1,39 @@
+{
+  "schema_version": "seed_batch_frontier_media_source_plan_matrix.v0",
+  "task": "SEED-BATCH-FRONTIER-MEDIA-00",
+  "source_families": [
+    {
+      "source_family": "internet_archive_metadata",
+      "status": "allowed",
+      "bounded": true,
+      "metadata_only": true,
+      "downloads_enabled": false,
+      "execution_mode": "fixture_metadata_candidates_by_default"
+    },
+    {
+      "source_family": "wayback_cdx_metadata",
+      "status": "planned",
+      "descriptor_only": true,
+      "live_call_by_default": false,
+      "downloads_enabled": false
+    },
+    {
+      "source_family": "wikidata_metadata",
+      "status": "planned",
+      "descriptor_only": true,
+      "live_call_by_default": false,
+      "downloads_enabled": false
+    },
+    {
+      "source_family": "manual_source_pack",
+      "status": "allowed",
+      "fixture_source_pack_replay": true,
+      "live_call_by_default": false,
+      "downloads_enabled": false
+    }
+  ],
+  "arbitrary_web_crawling_enabled": false,
+  "accepted_truth_created": false,
+  "reviewed_index_mutated": false,
+  "public_index_mutated": false
+}

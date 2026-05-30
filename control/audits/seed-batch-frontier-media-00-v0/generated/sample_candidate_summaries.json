@@ -1,0 +1,7 @@
+{
+  "schema_version": "sample_candidate_summaries.v0",
+  "path": "examples/seed_batches/frontier_media/candidate_summaries.json",
+  "candidate_count": 12,
+  "fixture_derived": true,
+  "accepted_truth": false
+}

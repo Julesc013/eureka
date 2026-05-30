@@ -107,6 +107,12 @@
       "policy": "Task-local REVIEW-BATCH-00 audit evidence records candidate batch review validation; it is not product runtime state."
     },
     {
+      "path": "control/audits/seed-batch-frontier-media-00-v0",
+      "artifact_class": "audit_generated",
+      "allow_task_local_drift": true,
+      "policy": "Task-local SEED-BATCH-FRONTIER-MEDIA-00 audit evidence records curated seed-batch validation; it is not product runtime state."
+    },
+    {
       "path": "control/audits",
       "artifact_class": "audit_generated",
       "policy": "Audit generated outputs are evidence, not product runtime state."

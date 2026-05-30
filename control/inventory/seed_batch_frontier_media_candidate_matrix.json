@@ -1,0 +1,12 @@
+{
+  "schema_version": "seed_batch_frontier_media_candidate_matrix.v0",
+  "task": "SEED-BATCH-FRONTIER-MEDIA-00",
+  "candidate_source": "fixture_derived_archive_org_metadata_candidates",
+  "candidate_count": 12,
+  "candidate_kinds": ["source_metadata_candidate", "provenance_lead", "review_seed"],
+  "candidate_index_mode": "seed_batch_fixture",
+  "candidates_require_review": true,
+  "accepted_truth_created": false,
+  "reviewed_index_mutated": false,
+  "public_index_mutated": false
+}

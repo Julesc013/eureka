@@ -1,0 +1,979 @@
+{
+  "accepted_truth": false,
+  "accepted_truth_created": false,
+  "batch_id": "seed_batch_frontier_media_00",
+  "candidate_count": 12,
+  "candidate_refs": [
+    "seed_frontier_media_frontier_media_q01_candidate",
+    "seed_frontier_media_frontier_media_q02_candidate",
+    "seed_frontier_media_frontier_media_q03_candidate",
+    "seed_frontier_media_frontier_media_q04_candidate",
+    "seed_frontier_media_frontier_media_q05_candidate",
+    "seed_frontier_media_frontier_media_q06_candidate",
+    "seed_frontier_media_frontier_media_q07_candidate",
+    "seed_frontier_media_frontier_media_q08_candidate",
+    "seed_frontier_media_frontier_media_q09_candidate",
+    "seed_frontier_media_frontier_media_q10_candidate",
+    "seed_frontier_media_frontier_media_q11_candidate",
+    "seed_frontier_media_frontier_media_q12_candidate"
+  ],
+  "candidates": [
+    {
+      "accepted_truth": false,
+      "action_posture": {
+        "accepted_truth": false,
+        "allowed_actions": [
+          "inspect",
+          "view_source",
+          "view_provenance",
+          "read"
+        ],
+        "blocked_actions": [
+          "download",
+          "install_handoff",
+          "execute",
+          "upload",
+          "extract",
+          "promote"
+        ],
+        "future_gated_actions": [
+          "create_review_handoff",
+          "update_candidate_state"
+        ],
+        "public_mutation_enabled": false
+      },
+      "candidate_id": "seed_frontier_media_frontier_media_q01_candidate",
+      "candidate_kind": "source_metadata_candidate",
+      "confidence_label": "medium",
+      "created_at": "2026-05-30T00:00:00Z",
+      "dedupe_key": "c6d2647279003b537f9e9146",
+      "description": "Fixture-derived Archive.org metadata candidate for frontier-resolution media discovery.",
+      "domain_id": "frontier_resolution_media",
+      "evidence_candidate_refs": [],
+      "fingerprint": {
+        "candidate_id": "seed_frontier_media_frontier_media_q01_candidate",
+        "checksum_hint": "",
+        "collision_notes": [],
+        "dedupe_key": "c6d2647279003b537f9e9146",
+        "domain_id": "frontier_resolution_media",
+        "fingerprint_id": "candidate-fingerprint:c6d2647279003b537f9e9146",
+        "normalized_title": "new york 1993 d-theater hd demo tape original source fixture metadata lead",
+        "object_hint": "new york 1993 d-theater hd demo tape original source fixture metadata lead",
+        "platform_hint": "d-theater",
+        "schema_version": "candidate_fingerprint.v0",
+        "source_family": "internet_archive_metadata",
+        "source_locator": "https://archive.org/details/seed_frontier_media_01_new_york_1993_d_theater_hd_demo_tape_original_source",
+        "version_hint": "1993"
+      },
+      "limitations": [
+        "fixture_derived",
+        "candidate_not_reviewed_truth",
+        "review_required_for_promotion",
+        "no_download",
+        "no_extraction",
+        "no_auto_promotion"
+      ],
+      "match_reasons": [
+        "fixture_frontier_media_seed",
+        "archive_org_metadata_candidate",
+        "requires_operator_review"
+      ],
+      "matched_query": "New York 1993 D-Theater HD demo tape original source",
+      "query_plan_ref": "seed_query_plan:d4a8f229c25b08e8",
+      "review_state": "needs_review",
+      "reviewed_record_ref": null,
+      "schema_version": "candidate_record.v0",
+      "source_action_ref": "seed_source_action:664d1ea3ff2008c1",
+      "source_family": "internet_archive_metadata",
+      "source_locator": {
+        "locator_kind": "archive_org_details_page",
+        "url": "https://archive.org/details/seed_frontier_media_01_new_york_1993_d_theater_hd_demo_tape_original_source"
+      },
+      "source_observation_ref": "seed_source_observation:2573f9452cc140d8",
+      "suppressions": [
+        "suppress_generic_city_or_tourism_media"
+      ],
+      "title": "New York 1993 D-Theater HD demo tape original source fixture metadata lead",
+      "updated_at": "2026-05-30T00:00:00Z"
+    },
+    {
+      "accepted_truth": false,
+      "action_posture": {
+        "accepted_truth": false,
+        "allowed_actions": [
+          "inspect",
+          "view_source",
+          "view_provenance",
+          "read"
+        ],
+        "blocked_actions": [
+          "download",
+          "install_handoff",
+          "execute",
+          "upload",
+          "extract",
+          "promote"
+        ],
+        "future_gated_actions": [
+          "create_review_handoff",
+          "update_candidate_state"
+        ],
+        "public_mutation_enabled": false
+      },
+      "candidate_id": "seed_frontier_media_frontier_media_q02_candidate",
+      "candidate_kind": "source_metadata_candidate",
+      "confidence_label": "medium",
+      "created_at": "2026-05-30T00:00:00Z",
+      "dedupe_key": "be9d4e67d58083487308615f",
+      "description": "Fixture-derived Archive.org metadata candidate for frontier-resolution media discovery.",
+      "domain_id": "frontier_resolution_media",
+      "evidence_candidate_refs": [],
+      "fingerprint": {
+        "candidate_id": "seed_frontier_media_frontier_media_q02_candidate",
+        "checksum_hint": "",
+        "collision_notes": [],
+        "dedupe_key": "be9d4e67d58083487308615f",
+        "domain_id": "frontier_resolution_media",
+        "fingerprint_id": "candidate-fingerprint:be9d4e67d58083487308615f",
+        "normalized_title": "new york 1993 d-vhs hdtv demo tape fixture metadata lead",
+        "object_hint": "new york 1993 d-vhs hdtv demo tape fixture metadata lead",
+        "platform_hint": "d-vhs",
+        "schema_version": "candidate_fingerprint.v0",
+        "source_family": "internet_archive_metadata",
+        "source_locator": "https://archive.org/details/seed_frontier_media_02_new_york_1993_d_vhs_hdtv_demo_tape",
+        "version_hint": "1993"
+      },
+      "limitations": [
+        "fixture_derived",
+        "candidate_not_reviewed_truth",
+        "review_required_for_promotion",
+        "no_download",
+        "no_extraction",
+        "no_auto_promotion"
+      ],
+      "match_reasons": [
+        "fixture_frontier_media_seed",
+        "archive_org_metadata_candidate",
+        "requires_operator_review"
+      ],
+      "matched_query": "New York 1993 D-VHS HDTV demo tape",
+      "query_plan_ref": "seed_query_plan:edc7638d3affe128",
+      "review_state": "needs_review",
+      "reviewed_record_ref": null,
+      "schema_version": "candidate_record.v0",
+      "source_action_ref": "seed_source_action:bd283f0b22b10928",
+      "source_family": "internet_archive_metadata",
+      "source_locator": {
+        "locator_kind": "archive_org_details_page",
+        "url": "https://archive.org/details/seed_frontier_media_02_new_york_1993_d_vhs_hdtv_demo_tape"
+      },
+      "source_observation_ref": "seed_source_observation:e68cb25ae5875a21",
+      "suppressions": [
+        "suppress_generic_city_or_tourism_media"
+      ],
+      "title": "New York 1993 D-VHS HDTV demo tape fixture metadata lead",
+      "updated_at": "2026-05-30T00:00:00Z"
+    },
+    {
+      "accepted_truth": false,
+      "action_posture": {
+        "accepted_truth": false,
+        "allowed_actions": [
+          "inspect",
+          "view_source",
+          "view_provenance",
+          "read"
+        ],
+        "blocked_actions": [
+          "download",
+          "install_handoff",
+          "execute",
+          "upload",
+          "extract",
+          "promote"
+        ],
+        "future_gated_actions": [
+          "create_review_handoff",
+          "update_candidate_state"
+        ],
+        "public_mutation_enabled": false
+      },
+      "candidate_id": "seed_frontier_media_frontier_media_q03_candidate",
+      "candidate_kind": "source_metadata_candidate",
+      "confidence_label": "medium",
+      "created_at": "2026-05-30T00:00:00Z",
+      "dedupe_key": "9e9ee601090156cdbe7fe4f8",
+      "description": "Fixture-derived Archive.org metadata candidate for frontier-resolution media discovery.",
+      "domain_id": "frontier_resolution_media",
+      "evidence_candidate_refs": [],
+      "fingerprint": {
+        "candidate_id": "seed_frontier_media_frontier_media_q03_candidate",
+        "checksum_hint": "",
+        "collision_notes": [],
+        "dedupe_key": "9e9ee601090156cdbe7fe4f8",
+        "domain_id": "frontier_resolution_media",
+        "fingerprint_id": "candidate-fingerprint:9e9ee601090156cdbe7fe4f8",
+        "normalized_title": "jvc d-theater new york hd demo fixture metadata lead",
+        "object_hint": "jvc d-theater new york hd demo fixture metadata lead",
+        "platform_hint": "d-theater",
+        "schema_version": "candidate_fingerprint.v0",
+        "source_family": "internet_archive_metadata",
+        "source_locator": "https://archive.org/details/seed_frontier_media_03_jvc_d_theater_new_york_hd_demo",
+        "version_hint": ""
+      },
+      "limitations": [
+        "fixture_derived",
+        "candidate_not_reviewed_truth",
+        "review_required_for_promotion",
+        "no_download",
+        "no_extraction",
+        "no_auto_promotion"
+      ],
+      "match_reasons": [
+        "fixture_frontier_media_seed",
+        "archive_org_metadata_candidate",
+        "requires_operator_review"
+      ],
+      "matched_query": "JVC D-Theater New York HD demo",
+      "query_plan_ref": "seed_query_plan:1f71a1830d1d1c25",
+      "review_state": "needs_review",
+      "reviewed_record_ref": null,
+      "schema_version": "candidate_record.v0",
+      "source_action_ref": "seed_source_action:483136ddc2690eca",
+      "source_family": "internet_archive_metadata",
+      "source_locator": {
+        "locator_kind": "archive_org_details_page",
+        "url": "https://archive.org/details/seed_frontier_media_03_jvc_d_theater_new_york_hd_demo"
+      },
+      "source_observation_ref": "seed_source_observation:198d1a00db63f6e1",
+      "suppressions": [
+        "suppress_generic_city_or_tourism_media"
+      ],
+      "title": "JVC D-Theater New York HD demo fixture metadata lead",
+      "updated_at": "2026-05-30T00:00:00Z"
+    },
+    {
+      "accepted_truth": false,
+      "action_posture": {
+        "accepted_truth": false,
+        "allowed_actions": [
+          "inspect",
+          "view_source",
+          "view_provenance",
+          "read"
+        ],
+        "blocked_actions": [
+          "download",
+          "install_handoff",
+          "execute",
+          "upload",
+          "extract",
+          "promote"
+        ],
+        "future_gated_actions": [
+          "create_review_handoff",
+          "update_candidate_state"
+        ],
+        "public_mutation_enabled": false
+      },
+      "candidate_id": "seed_frontier_media_frontier_media_q04_candidate",
+      "candidate_kind": "source_metadata_candidate",
+      "confidence_label": "medium",
+      "created_at": "2026-05-30T00:00:00Z",
+      "dedupe_key": "b12da0bc3da93d48f88c9a5b",
+      "description": "Fixture-derived Archive.org metadata candidate for frontier-resolution media discovery.",
+      "domain_id": "frontier_resolution_media",
+      "evidence_candidate_refs": [],
+      "fingerprint": {
+        "candidate_id": "seed_frontier_media_frontier_media_q04_candidate",
+        "checksum_hint": "",
+        "collision_notes": [],
+        "dedupe_key": "b12da0bc3da93d48f88c9a5b",
+        "domain_id": "frontier_resolution_media",
+        "fingerprint_id": "candidate-fingerprint:b12da0bc3da93d48f88c9a5b",
+        "normalized_title": "d-theater d-vhs city footage 1993 fixture metadata lead",
+        "object_hint": "d-theater d-vhs city footage 1993 fixture metadata lead",
+        "platform_hint": "d-theater",
+        "schema_version": "candidate_fingerprint.v0",
+        "source_family": "internet_archive_metadata",
+        "source_locator": "https://archive.org/details/seed_frontier_media_04_d_theater_d_vhs_city_footage_1993",
+        "version_hint": "1993"
+      },
+      "limitations": [
+        "fixture_derived",
+        "candidate_not_reviewed_truth",
+        "review_required_for_promotion",
+        "no_download",
+        "no_extraction",
+        "no_auto_promotion"
+      ],
+      "match_reasons": [
+        "fixture_frontier_media_seed",
+        "archive_org_metadata_candidate",
+        "requires_operator_review"
+      ],
+      "matched_query": "D-Theater D-VHS city footage 1993",
+      "query_plan_ref": "seed_query_plan:1b2339d9b3407109",
+      "review_state": "needs_review",
+      "reviewed_record_ref": null,
+      "schema_version": "candidate_record.v0",
+      "source_action_ref": "seed_source_action:f9064a7bc6ee8917",
+      "source_family": "internet_archive_metadata",
+      "source_locator": {
+        "locator_kind": "archive_org_details_page",
+        "url": "https://archive.org/details/seed_frontier_media_04_d_theater_d_vhs_city_footage_1993"
+      },
+      "source_observation_ref": "seed_source_observation:f08b0413524e835e",
+      "suppressions": [
+        "suppress_generic_city_or_tourism_media",
+        "suppress_stock_footage"
+      ],
+      "title": "D-Theater D-VHS city footage 1993 fixture metadata lead",
+      "updated_at": "2026-05-30T00:00:00Z"
+    },
+    {
+      "accepted_truth": false,
+      "action_posture": {
+        "accepted_truth": false,
+        "allowed_actions": [
+          "inspect",
+          "view_source",
+          "view_provenance",
+          "read"
+        ],
+        "blocked_actions": [
+          "download",
+          "install_handoff",
+          "execute",
+          "upload",
+          "extract",
+          "promote"
+        ],
+        "future_gated_actions": [
+          "create_review_handoff",
+          "update_candidate_state"
+        ],
+        "public_mutation_enabled": false
+      },
+      "candidate_id": "seed_frontier_media_frontier_media_q05_candidate",
+      "candidate_kind": "source_metadata_candidate",
+      "confidence_label": "medium",
+      "created_at": "2026-05-30T00:00:00Z",
+      "dedupe_key": "da431639a085f439d1bc7a02",
+      "description": "Fixture-derived Archive.org metadata candidate for frontier-resolution media discovery.",
+      "domain_id": "frontier_resolution_media",
+      "evidence_candidate_refs": [],
+      "fingerprint": {
+        "candidate_id": "seed_frontier_media_frontier_media_q05_candidate",
+        "checksum_hint": "",
+        "collision_notes": [],
+        "dedupe_key": "da431639a085f439d1bc7a02",
+        "domain_id": "frontier_resolution_media",
+        "fingerprint_id": "candidate-fingerprint:da431639a085f439d1bc7a02",
+        "normalized_title": "hi-vision muse new york 1993 hdtv demo fixture metadata lead",
+        "object_hint": "hi-vision muse new york 1993 hdtv demo fixture metadata lead",
+        "platform_hint": "",
+        "schema_version": "candidate_fingerprint.v0",
+        "source_family": "internet_archive_metadata",
+        "source_locator": "https://archive.org/details/seed_frontier_media_05_hi_vision_muse_new_york_1993_hdtv_demo",
+        "version_hint": "1993"
+      },
+      "limitations": [
+        "fixture_derived",
+        "candidate_not_reviewed_truth",
+        "review_required_for_promotion",
+        "no_download",
+        "no_extraction",
+        "no_auto_promotion"
+      ],
+      "match_reasons": [
+        "fixture_frontier_media_seed",
+        "archive_org_metadata_candidate",
+        "requires_operator_review"
+      ],
+      "matched_query": "Hi-Vision MUSE New York 1993 HDTV demo",
+      "query_plan_ref": "seed_query_plan:3c12f38bb56f962d",
+      "review_state": "needs_review",
+      "reviewed_record_ref": null,
+      "schema_version": "candidate_record.v0",
+      "source_action_ref": "seed_source_action:cea9383b089c66d1",
+      "source_family": "internet_archive_metadata",
+      "source_locator": {
+        "locator_kind": "archive_org_details_page",
+        "url": "https://archive.org/details/seed_frontier_media_05_hi_vision_muse_new_york_1993_hdtv_demo"
+      },
+      "source_observation_ref": "seed_source_observation:35b13e5daa65fdd9",
+      "suppressions": [
+        "suppress_generic_city_or_tourism_media"
+      ],
+      "title": "Hi-Vision MUSE New York 1993 HDTV demo fixture metadata lead",
+      "updated_at": "2026-05-30T00:00:00Z"
+    },
+    {
+      "accepted_truth": false,
+      "action_posture": {
+        "accepted_truth": false,
+        "allowed_actions": [
+          "inspect",
+          "view_source",
+          "view_provenance",
+          "read"
+        ],
+        "blocked_actions": [
+          "download",
+          "install_handoff",
+          "execute",
+          "upload",
+          "extract",
+          "promote"
+        ],
+        "future_gated_actions": [
+          "create_review_handoff",
+          "update_candidate_state"
+        ],
+        "public_mutation_enabled": false
+      },
+      "candidate_id": "seed_frontier_media_frontier_media_q06_candidate",
+      "candidate_kind": "source_metadata_candidate",
+      "confidence_label": "low",
+      "created_at": "2026-05-30T00:00:00Z",
+      "dedupe_key": "1bc11d42cbbb5ae435d65f57",
+      "description": "Fixture-derived Archive.org metadata candidate for frontier-resolution media discovery.",
+      "domain_id": "frontier_resolution_media",
+      "evidence_candidate_refs": [],
+      "fingerprint": {
+        "candidate_id": "seed_frontier_media_frontier_media_q06_candidate",
+        "checksum_hint": "",
+        "collision_notes": [],
+        "dedupe_key": "1bc11d42cbbb5ae435d65f57",
+        "domain_id": "frontier_resolution_media",
+        "fingerprint_id": "candidate-fingerprint:1bc11d42cbbb5ae435d65f57",
+        "normalized_title": "early hdtv new york 1993 demo footage fixture metadata lead",
+        "object_hint": "early hdtv new york 1993 demo footage fixture metadata lead",
+        "platform_hint": "",
+        "schema_version": "candidate_fingerprint.v0",
+        "source_family": "internet_archive_metadata",
+        "source_locator": "https://archive.org/details/seed_frontier_media_06_early_hdtv_new_york_1993_demo_footage",
+        "version_hint": "1993"
+      },
+      "limitations": [
+        "fixture_derived",
+        "candidate_not_reviewed_truth",
+        "review_required_for_promotion",
+        "no_download",
+        "no_extraction",
+        "no_auto_promotion"
+      ],
+      "match_reasons": [
+        "fixture_frontier_media_seed",
+        "archive_org_metadata_candidate",
+        "requires_operator_review"
+      ],
+      "matched_query": "early HDTV New York 1993 demo footage",
+      "query_plan_ref": "seed_query_plan:3fee564222e22091",
+      "review_state": "needs_review",
+      "reviewed_record_ref": null,
+      "schema_version": "candidate_record.v0",
+      "source_action_ref": "seed_source_action:a9f61fdf38976d59",
+      "source_family": "internet_archive_metadata",
+      "source_locator": {
+        "locator_kind": "archive_org_details_page",
+        "url": "https://archive.org/details/seed_frontier_media_06_early_hdtv_new_york_1993_demo_footage"
+      },
+      "source_observation_ref": "seed_source_observation:3870dcc4134f3ef3",
+      "suppressions": [
+        "suppress_generic_city_or_tourism_media",
+        "suppress_modern_hd_stock"
+      ],
+      "title": "early HDTV New York 1993 demo footage fixture metadata lead",
+      "updated_at": "2026-05-30T00:00:00Z"
+    },
+    {
+      "accepted_truth": false,
+      "action_posture": {
+        "accepted_truth": false,
+        "allowed_actions": [
+          "inspect",
+          "view_source",
+          "view_provenance",
+          "read"
+        ],
+        "blocked_actions": [
+          "download",
+          "install_handoff",
+          "execute",
+          "upload",
+          "extract",
+          "promote"
+        ],
+        "future_gated_actions": [
+          "create_review_handoff",
+          "update_candidate_state"
+        ],
+        "public_mutation_enabled": false
+      },
+      "candidate_id": "seed_frontier_media_frontier_media_q07_candidate",
+      "candidate_kind": "source_metadata_candidate",
+      "confidence_label": "low",
+      "created_at": "2026-05-30T00:00:00Z",
+      "dedupe_key": "57c46d150b5aa93794c027a4",
+      "description": "Fixture-derived Archive.org metadata candidate for frontier-resolution media discovery.",
+      "domain_id": "frontier_resolution_media",
+      "evidence_candidate_refs": [],
+      "fingerprint": {
+        "candidate_id": "seed_frontier_media_frontier_media_q07_candidate",
+        "checksum_hint": "",
+        "collision_notes": [],
+        "dedupe_key": "57c46d150b5aa93794c027a4",
+        "domain_id": "frontier_resolution_media",
+        "fingerprint_id": "candidate-fingerprint:57c46d150b5aa93794c027a4",
+        "normalized_title": "d-theater demo tape jvc city fixture metadata lead",
+        "object_hint": "d-theater demo tape jvc city fixture metadata lead",
+        "platform_hint": "d-theater",
+        "schema_version": "candidate_fingerprint.v0",
+        "source_family": "internet_archive_metadata",
+        "source_locator": "https://archive.org/details/seed_frontier_media_07_d_theater_demo_tape_jvc_city",
+        "version_hint": ""
+      },
+      "limitations": [
+        "fixture_derived",
+        "candidate_not_reviewed_truth",
+        "review_required_for_promotion",
+        "no_download",
+        "no_extraction",
+        "no_auto_promotion"
+      ],
+      "match_reasons": [
+        "fixture_frontier_media_seed",
+        "archive_org_metadata_candidate",
+        "requires_operator_review"
+      ],
+      "matched_query": "D-Theater demo tape JVC city",
+      "query_plan_ref": "seed_query_plan:4c4fc2167e7f8bb6",
+      "review_state": "needs_review",
+      "reviewed_record_ref": null,
+      "schema_version": "candidate_record.v0",
+      "source_action_ref": "seed_source_action:2e10a73ed47c53d9",
+      "source_family": "internet_archive_metadata",
+      "source_locator": {
+        "locator_kind": "archive_org_details_page",
+        "url": "https://archive.org/details/seed_frontier_media_07_d_theater_demo_tape_jvc_city"
+      },
+      "source_observation_ref": "seed_source_observation:46878b2afa17257f",
+      "suppressions": [
+        "suppress_generic_city_or_tourism_media"
+      ],
+      "title": "D-Theater demo tape JVC city fixture metadata lead",
+      "updated_at": "2026-05-30T00:00:00Z"
+    },
+    {
+      "accepted_truth": false,
+      "action_posture": {
+        "accepted_truth": false,
+        "allowed_actions": [
+          "inspect",
+          "view_source",
+          "view_provenance",
+          "read"
+        ],
+        "blocked_actions": [
+          "download",
+          "install_handoff",
+          "execute",
+          "upload",
+          "extract",
+          "promote"
+        ],
+        "future_gated_actions": [
+          "create_review_handoff",
+          "update_candidate_state"
+        ],
+        "public_mutation_enabled": false
+      },
+      "candidate_id": "seed_frontier_media_frontier_media_q08_candidate",
+      "candidate_kind": "source_metadata_candidate",
+      "confidence_label": "low",
+      "created_at": "2026-05-30T00:00:00Z",
+      "dedupe_key": "04b7df97c9bcc9f5471a9dc0",
+      "description": "Fixture-derived Archive.org metadata candidate for frontier-resolution media discovery.",
+      "domain_id": "frontier_resolution_media",
+      "evidence_candidate_refs": [],
+      "fingerprint": {
+        "candidate_id": "seed_frontier_media_frontier_media_q08_candidate",
+        "checksum_hint": "",
+        "collision_notes": [],
+        "dedupe_key": "04b7df97c9bcc9f5471a9dc0",
+        "domain_id": "frontier_resolution_media",
+        "fingerprint_id": "candidate-fingerprint:04b7df97c9bcc9f5471a9dc0",
+        "normalized_title": "hdvs hi-vision demo new york footage fixture metadata lead",
+        "object_hint": "hdvs hi-vision demo new york footage fixture metadata lead",
+        "platform_hint": "",
+        "schema_version": "candidate_fingerprint.v0",
+        "source_family": "internet_archive_metadata",
+        "source_locator": "https://archive.org/details/seed_frontier_media_08_hdvs_hi_vision_demo_new_york_footage",
+        "version_hint": ""
+      },
+      "limitations": [
+        "fixture_derived",
+        "candidate_not_reviewed_truth",
+        "review_required_for_promotion",
+        "no_download",
+        "no_extraction",
+        "no_auto_promotion"
+      ],
+      "match_reasons": [
+        "fixture_frontier_media_seed",
+        "archive_org_metadata_candidate",
+        "requires_operator_review"
+      ],
+      "matched_query": "HDVS Hi-Vision demo New York footage",
+      "query_plan_ref": "seed_query_plan:a5f797c70ba6909a",
+      "review_state": "needs_review",
+      "reviewed_record_ref": null,
+      "schema_version": "candidate_record.v0",
+      "source_action_ref": "seed_source_action:21e94e7ac10a9b5f",
+      "source_family": "internet_archive_metadata",
+      "source_locator": {
+        "locator_kind": "archive_org_details_page",
+        "url": "https://archive.org/details/seed_frontier_media_08_hdvs_hi_vision_demo_new_york_footage"
+      },
+      "source_observation_ref": "seed_source_observation:55da1c0238a9f523",
+      "suppressions": [
+        "suppress_generic_city_or_tourism_media"
+      ],
+      "title": "HDVS Hi-Vision demo New York footage fixture metadata lead",
+      "updated_at": "2026-05-30T00:00:00Z"
+    },
+    {
+      "accepted_truth": false,
+      "action_posture": {
+        "accepted_truth": false,
+        "allowed_actions": [
+          "inspect",
+          "view_source",
+          "view_provenance",
+          "read"
+        ],
+        "blocked_actions": [
+          "download",
+          "install_handoff",
+          "execute",
+          "upload",
+          "extract",
+          "promote"
+        ],
+        "future_gated_actions": [
+          "create_review_handoff",
+          "update_candidate_state"
+        ],
+        "public_mutation_enabled": false
+      },
+      "candidate_id": "seed_frontier_media_frontier_media_q09_candidate",
+      "candidate_kind": "source_metadata_candidate",
+      "confidence_label": "low",
+      "created_at": "2026-05-30T00:00:00Z",
+      "dedupe_key": "2a292fd17982000796b26cf4",
+      "description": "Fixture-derived Archive.org metadata candidate for frontier-resolution media discovery.",
+      "domain_id": "frontier_resolution_media",
+      "evidence_candidate_refs": [],
+      "fingerprint": {
+        "candidate_id": "seed_frontier_media_frontier_media_q09_candidate",
+        "checksum_hint": "",
+        "collision_notes": [],
+        "dedupe_key": "2a292fd17982000796b26cf4",
+        "domain_id": "frontier_resolution_media",
+        "fingerprint_id": "candidate-fingerprint:2a292fd17982000796b26cf4",
+        "normalized_title": "japanese hdtv demonstration tape new york fixture metadata lead",
+        "object_hint": "japanese hdtv demonstration tape new york fixture metadata lead",
+        "platform_hint": "",
+        "schema_version": "candidate_fingerprint.v0",
+        "source_family": "internet_archive_metadata",
+        "source_locator": "https://archive.org/details/seed_frontier_media_09_japanese_hdtv_demonstration_tape_new_york",
+        "version_hint": ""
+      },
+      "limitations": [
+        "fixture_derived",
+        "candidate_not_reviewed_truth",
+        "review_required_for_promotion",
+        "no_download",
+        "no_extraction",
+        "no_auto_promotion"
+      ],
+      "match_reasons": [
+        "fixture_frontier_media_seed",
+        "archive_org_metadata_candidate",
+        "requires_operator_review"
+      ],
+      "matched_query": "Japanese HDTV demonstration tape New York",
+      "query_plan_ref": "seed_query_plan:7a33d4f81101018f",
+      "review_state": "needs_review",
+      "reviewed_record_ref": null,
+      "schema_version": "candidate_record.v0",
+      "source_action_ref": "seed_source_action:cc6fc7013029557d",
+      "source_family": "internet_archive_metadata",
+      "source_locator": {
+        "locator_kind": "archive_org_details_page",
+        "url": "https://archive.org/details/seed_frontier_media_09_japanese_hdtv_demonstration_tape_new_york"
+      },
+      "source_observation_ref": "seed_source_observation:dacc5dd113bf3b38",
+      "suppressions": [
+        "suppress_generic_city_or_tourism_media",
+        "suppress_tourism_media"
+      ],
+      "title": "Japanese HDTV demonstration tape New York fixture metadata lead",
+      "updated_at": "2026-05-30T00:00:00Z"
+    },
+    {
+      "accepted_truth": false,
+      "action_posture": {
+        "accepted_truth": false,
+        "allowed_actions": [
+          "inspect",
+          "view_source",
+          "view_provenance",
+          "read"
+        ],
+        "blocked_actions": [
+          "download",
+          "install_handoff",
+          "execute",
+          "upload",
+          "extract",
+          "promote"
+        ],
+        "future_gated_actions": [
+          "create_review_handoff",
+          "update_candidate_state"
+        ],
+        "public_mutation_enabled": false
+      },
+      "candidate_id": "seed_frontier_media_frontier_media_q10_candidate",
+      "candidate_kind": "source_metadata_candidate",
+      "confidence_label": "low",
+      "created_at": "2026-05-30T00:00:00Z",
+      "dedupe_key": "455fa245203062ffde4b3eaa",
+      "description": "Fixture-derived Archive.org metadata candidate for frontier-resolution media discovery.",
+      "domain_id": "frontier_resolution_media",
+      "evidence_candidate_refs": [],
+      "fingerprint": {
+        "candidate_id": "seed_frontier_media_frontier_media_q10_candidate",
+        "checksum_hint": "",
+        "collision_notes": [],
+        "dedupe_key": "455fa245203062ffde4b3eaa",
+        "domain_id": "frontier_resolution_media",
+        "fingerprint_id": "candidate-fingerprint:455fa245203062ffde4b3eaa",
+        "normalized_title": "muse laserdisc new york hd demo fixture metadata lead",
+        "object_hint": "muse laserdisc new york hd demo fixture metadata lead",
+        "platform_hint": "",
+        "schema_version": "candidate_fingerprint.v0",
+        "source_family": "internet_archive_metadata",
+        "source_locator": "https://archive.org/details/seed_frontier_media_10_muse_laserdisc_new_york_hd_demo",
+        "version_hint": ""
+      },
+      "limitations": [
+        "fixture_derived",
+        "candidate_not_reviewed_truth",
+        "review_required_for_promotion",
+        "no_download",
+        "no_extraction",
+        "no_auto_promotion"
+      ],
+      "match_reasons": [
+        "fixture_frontier_media_seed",
+        "archive_org_metadata_candidate",
+        "requires_operator_review"
+      ],
+      "matched_query": "MUSE LaserDisc New York HD demo",
+      "query_plan_ref": "seed_query_plan:2f419a4e0a96f032",
+      "review_state": "needs_review",
+      "reviewed_record_ref": null,
+      "schema_version": "candidate_record.v0",
+      "source_action_ref": "seed_source_action:c50e060f9aa06449",
+      "source_family": "internet_archive_metadata",
+      "source_locator": {
+        "locator_kind": "archive_org_details_page",
+        "url": "https://archive.org/details/seed_frontier_media_10_muse_laserdisc_new_york_hd_demo"
+      },
+      "source_observation_ref": "seed_source_observation:83dad717b4863a2f",
+      "suppressions": [
+        "suppress_generic_city_or_tourism_media"
+      ],
+      "title": "MUSE LaserDisc New York HD demo fixture metadata lead",
+      "updated_at": "2026-05-30T00:00:00Z"
+    },
+    {
+      "accepted_truth": false,
+      "action_posture": {
+        "accepted_truth": false,
+        "allowed_actions": [
+          "inspect",
+          "view_source",
+          "view_provenance",
+          "read"
+        ],
+        "blocked_actions": [
+          "download",
+          "install_handoff",
+          "execute",
+          "upload",
+          "extract",
+          "promote"
+        ],
+        "future_gated_actions": [
+          "create_review_handoff",
+          "update_candidate_state"
+        ],
+        "public_mutation_enabled": false
+      },
+      "candidate_id": "seed_frontier_media_frontier_media_q11_candidate",
+      "candidate_kind": "source_metadata_candidate",
+      "confidence_label": "low",
+      "created_at": "2026-05-30T00:00:00Z",
+      "dedupe_key": "e2ac3fe713059b2eb2671a8a",
+      "description": "Fixture-derived Archive.org metadata candidate for frontier-resolution media discovery.",
+      "domain_id": "frontier_resolution_media",
+      "evidence_candidate_refs": [],
+      "fingerprint": {
+        "candidate_id": "seed_frontier_media_frontier_media_q11_candidate",
+        "checksum_hint": "",
+        "collision_notes": [],
+        "dedupe_key": "e2ac3fe713059b2eb2671a8a",
+        "domain_id": "frontier_resolution_media",
+        "fingerprint_id": "candidate-fingerprint:e2ac3fe713059b2eb2671a8a",
+        "normalized_title": "d-vhs demo tape urban footage fixture metadata lead",
+        "object_hint": "d-vhs demo tape urban footage fixture metadata lead",
+        "platform_hint": "d-vhs",
+        "schema_version": "candidate_fingerprint.v0",
+        "source_family": "internet_archive_metadata",
+        "source_locator": "https://archive.org/details/seed_frontier_media_11_d_vhs_demo_tape_urban_footage",
+        "version_hint": ""
+      },
+      "limitations": [
+        "fixture_derived",
+        "candidate_not_reviewed_truth",
+        "review_required_for_promotion",
+        "no_download",
+        "no_extraction",
+        "no_auto_promotion"
+      ],
+      "match_reasons": [
+        "fixture_frontier_media_seed",
+        "archive_org_metadata_candidate",
+        "requires_operator_review"
+      ],
+      "matched_query": "D-VHS demo tape urban footage",
+      "query_plan_ref": "seed_query_plan:e270b10eebcda619",
+      "review_state": "needs_review",
+      "reviewed_record_ref": null,
+      "schema_version": "candidate_record.v0",
+      "source_action_ref": "seed_source_action:7d8d47cfd2dd3925",
+      "source_family": "internet_archive_metadata",
+      "source_locator": {
+        "locator_kind": "archive_org_details_page",
+        "url": "https://archive.org/details/seed_frontier_media_11_d_vhs_demo_tape_urban_footage"
+      },
+      "source_observation_ref": "seed_source_observation:eab76940e78eb42b",
+      "suppressions": [
+        "suppress_generic_city_or_tourism_media",
+        "suppress_stock_footage"
+      ],
+      "title": "D-VHS demo tape urban footage fixture metadata lead",
+      "updated_at": "2026-05-30T00:00:00Z"
+    },
+    {
+      "accepted_truth": false,
+      "action_posture": {
+        "accepted_truth": false,
+        "allowed_actions": [
+          "inspect",
+          "view_source",
+          "view_provenance",
+          "read"
+        ],
+        "blocked_actions": [
+          "download",
+          "install_handoff",
+          "execute",
+          "upload",
+          "extract",
+          "promote"
+        ],
+        "future_gated_actions": [
+          "create_review_handoff",
+          "update_candidate_state"
+        ],
+        "public_mutation_enabled": false
+      },
+      "candidate_id": "seed_frontier_media_frontier_media_q12_candidate",
+      "candidate_kind": "source_metadata_candidate",
+      "confidence_label": "low",
+      "created_at": "2026-05-30T00:00:00Z",
+      "dedupe_key": "399245dbd1512ed03bc91459",
+      "description": "Fixture-derived Archive.org metadata candidate for frontier-resolution media discovery.",
+      "domain_id": "frontier_resolution_media",
+      "evidence_candidate_refs": [],
+      "fingerprint": {
+        "candidate_id": "seed_frontier_media_frontier_media_q12_candidate",
+        "checksum_hint": "",
+        "collision_notes": [],
+        "dedupe_key": "399245dbd1512ed03bc91459",
+        "domain_id": "frontier_resolution_media",
+        "fingerprint_id": "candidate-fingerprint:399245dbd1512ed03bc91459",
+        "normalized_title": "early high definition city footage archival source fixture metadata lead",
+        "object_hint": "early high definition city footage archival source fixture metadata lead",
+        "platform_hint": "",
+        "schema_version": "candidate_fingerprint.v0",
+        "source_family": "internet_archive_metadata",
+        "source_locator": "https://archive.org/details/seed_frontier_media_12_early_high_definition_city_footage_archival_source",
+        "version_hint": ""
+      },
+      "limitations": [
+        "fixture_derived",
+        "candidate_not_reviewed_truth",
+        "review_required_for_promotion",
+        "no_download",
+        "no_extraction",
+        "no_auto_promotion"
+      ],
+      "match_reasons": [
+        "fixture_frontier_media_seed",
+        "archive_org_metadata_candidate",
+        "requires_operator_review"
+      ],
+      "matched_query": "early high definition city footage archival source",
+      "query_plan_ref": "seed_query_plan:73e6f0acab63e1e1",
+      "review_state": "needs_review",
+      "reviewed_record_ref": null,
+      "schema_version": "candidate_record.v0",
+      "source_action_ref": "seed_source_action:6b029a12dbb46033",
+      "source_family": "internet_archive_metadata",
+      "source_locator": {
+        "locator_kind": "archive_org_details_page",
+        "url": "https://archive.org/details/seed_frontier_media_12_early_high_definition_city_footage_archival_source"
+      },
+      "source_observation_ref": "seed_source_observation:19a5c0b6eae6d357",
+      "suppressions": [
+        "suppress_generic_city_or_tourism_media",
+        "suppress_modern_hd_stock"
+      ],
+      "title": "early high definition city footage archival source fixture metadata lead",
+      "updated_at": "2026-05-30T00:00:00Z"
+    }
+  ],
+  "created_at": "2026-05-31T00:00:00Z",
+  "deployment_performed": false,
+  "download_performed": false,
+  "extraction_executed": false,
+  "master_index_mutated": false,
+  "model_provider_used": false,
+  "operator_instance_mutated": false,
+  "production_readiness_claimed": false,
+  "public_index_mutated": false,
+  "public_launch_readiness_claimed": false,
+  "public_mutation_enabled": false,
+  "raw_live_response_committed": false,
+  "review_required": true,
+  "reviewed_index_mutated": false,
+  "schema_version": "seed_batch_candidate_index.v0",
+  "store_mode": "seed_batch_fixture"
+}
