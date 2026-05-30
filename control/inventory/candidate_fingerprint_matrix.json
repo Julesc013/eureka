@@ -1,0 +1,20 @@
+{
+  "schema_version": "candidate_fingerprint_matrix.v0",
+  "task": "CANDIDATE-INDEX-RUNTIME-00",
+  "required_fields": [
+    "fingerprint_id",
+    "candidate_id",
+    "normalized_title",
+    "source_family",
+    "source_locator",
+    "domain_id",
+    "object_hint",
+    "version_hint",
+    "platform_hint",
+    "checksum_hint",
+    "dedupe_key",
+    "collision_notes"
+  ],
+  "dedupe_key_deterministic": true,
+  "collision_resolution": "review_required"
+}

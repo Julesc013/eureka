@@ -1,0 +1,8 @@
+{
+  "schema_version": "candidate_index_snapshot.v0",
+  "store_mode": "example_fixture",
+  "candidate_count": 4,
+  "accepted_truth_created": false,
+  "reviewed_index_mutated": false,
+  "master_index_mutated": false
+}

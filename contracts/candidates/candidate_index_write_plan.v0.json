@@ -1,0 +1,22 @@
+{
+  "schema_version": "candidate_index_write_plan_contract.v0",
+  "record_schema": "candidate_index_write_plan.v0",
+  "required_fields": [
+    "plan_id",
+    "candidate_id",
+    "target",
+    "write_allowed",
+    "write_applied",
+    "requires_explicit_apply",
+    "candidate_record"
+  ],
+  "allowed_targets": [
+    "temp_store",
+    "operator_local_candidate_index"
+  ],
+  "forbidden_targets": [
+    "reviewed_index",
+    "master_index",
+    "public_index"
+  ]
+}

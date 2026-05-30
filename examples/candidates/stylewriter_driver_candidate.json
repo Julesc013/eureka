@@ -1,0 +1,60 @@
+{
+  "schema_version": "candidate_record.v0",
+  "candidate_id": "stylewriter_driver_candidate",
+  "candidate_kind": "source_metadata_candidate",
+  "source_family": "internet_archive",
+  "source_locator": {
+    "locator_kind": "archive_org_details_page",
+    "url": "https://archive.org/details/stylewriter_2500_mac_os_8_driver_fixture"
+  },
+  "title": "StyleWriter 2500 Mac OS 8 driver support media lead",
+  "description": "Candidate metadata for Apple StyleWriter 2500 Mac OS 8 driver or support media.",
+  "matched_query": "StyleWriter 2500 Mac OS 8 driver",
+  "query_plan_ref": "query_source_plan:example_stylewriter",
+  "source_action_ref": "source_action:internet_archive_metadata:example_stylewriter",
+  "source_observation_ref": "archive_org_metadata:example_stylewriter",
+  "evidence_candidate_refs": [],
+  "domain_id": "driver_support_media",
+  "confidence_label": "medium",
+  "match_reasons": [
+    "driver/support-media terms were detected",
+    "internet_archive_candidate"
+  ],
+  "suppressions": [
+    "suppress_unrelated_driver_models"
+  ],
+  "limitations": [
+    "candidate_not_reviewed_truth",
+    "review_required_for_promotion",
+    "no_download",
+    "no_extraction",
+    "no_auto_promotion"
+  ],
+  "action_posture": {
+    "allowed_actions": [
+      "inspect",
+      "view_source",
+      "view_provenance",
+      "read"
+    ],
+    "blocked_actions": [
+      "download",
+      "install_handoff",
+      "execute",
+      "upload",
+      "extract",
+      "promote"
+    ],
+    "future_gated_actions": [
+      "create_review_handoff",
+      "update_candidate_state"
+    ],
+    "public_mutation_enabled": false,
+    "accepted_truth": false
+  },
+  "review_state": "needs_review",
+  "accepted_truth": false,
+  "reviewed_record_ref": null,
+  "created_at": "2026-05-30T00:00:00Z",
+  "updated_at": "2026-05-30T00:00:00Z"
+}

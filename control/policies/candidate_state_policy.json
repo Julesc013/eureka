@@ -1,0 +1,46 @@
+{
+  "schema_version": "candidate_state_policy.v0",
+  "task": "CANDIDATE-INDEX-RUNTIME-00",
+  "states": [
+    "new",
+    "seen",
+    "useful_lead",
+    "needs_review",
+    "review_item_created",
+    "rejected_wrong_object",
+    "rejected_wrong_version",
+    "rejected_wrong_platform",
+    "rejected_low_quality",
+    "duplicate",
+    "blocked",
+    "accepted_local_reviewed"
+  ],
+  "automatic_transitions": [
+    ["new", "seen"],
+    ["seen", "duplicate"],
+    ["seen", "needs_review"],
+    ["needs_review", "review_item_created"]
+  ],
+  "operator_review_only_transitions": [
+    ["needs_review", "useful_lead"],
+    ["needs_review", "rejected_wrong_object"],
+    ["needs_review", "rejected_wrong_version"],
+    ["needs_review", "rejected_wrong_platform"],
+    ["needs_review", "rejected_low_quality"],
+    ["needs_review", "blocked"],
+    ["review_item_created", "accepted_local_reviewed"]
+  ],
+  "public_candidate_mutation_enabled": false,
+  "automatic_candidate_acceptance_enabled": false,
+  "reviewed_index_mutation_enabled": false,
+  "master_index_mutation_enabled": false,
+  "accepted_truth_created": false,
+  "review_required_for_promotion": true,
+  "downloads_enabled": false,
+  "extraction_enabled": false,
+  "model_provider_enabled": false,
+  "deployment_enabled": false,
+  "candidates_are_not_truth": true,
+  "candidate_index_is_not_reviewed_index": true,
+  "candidate_persistence_operator_or_temp_only": true
+}

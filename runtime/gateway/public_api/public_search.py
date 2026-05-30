@@ -116,6 +116,11 @@ class ArchiveOrgMetadataCandidateProvider(Protocol):
         ...
 
 
+class CandidateIndexSearchProvider(Protocol):
+    def search_candidates(self, query: str, limit: int) -> Mapping[str, Any]:
+        ...
+
+
 class PublicSearchPublicApi:
     def __init__(
         self,
@@ -126,6 +131,7 @@ class PublicSearchPublicApi:
         index_status: str = "controlled_local_index_only",
         index_document_count: int | None = None,
         archive_org_metadata_candidates: ArchiveOrgMetadataCandidateProvider | None = None,
+        candidate_index_search: CandidateIndexSearchProvider | None = None,
         default_source_policy: str = MODE,
     ) -> None:
         self._index_records = tuple(index_records)
@@ -134,6 +140,7 @@ class PublicSearchPublicApi:
         self._index_status = index_status
         self._index_document_count = index_document_count if index_document_count is not None else len(index_records)
         self._archive_org_metadata_candidates = archive_org_metadata_candidates
+        self._candidate_index_search = candidate_index_search
         if default_source_policy not in ALLOWED_SOURCE_POLICIES:
             raise ValueError(f"unsupported default source policy: {default_source_policy}")
         self._default_source_policy = default_source_policy
@@ -169,6 +176,12 @@ class PublicSearchPublicApi:
             terms,
         )
         archive_candidate_cards = _archive_org_candidate_cards(archive_candidate_result, terms)
+        candidate_index_result = _candidate_index_search_result(
+            self._candidate_index_search,
+            request,
+            terms,
+        )
+        candidate_index_cards = _candidate_index_candidate_cards(candidate_index_result, terms)
         body = _search_success_envelope(
             request,
             cards,
@@ -176,6 +189,8 @@ class PublicSearchPublicApi:
             plan=_plan_to_public_dict(self._query_planner, request.normalized_query),
             archive_candidate_result=archive_candidate_result,
             archive_candidate_cards=archive_candidate_cards,
+            candidate_index_result=candidate_index_result,
+            candidate_index_cards=candidate_index_cards,
         )
         body["index_status"] = self._index_status
         body["index_document_count"] = self._index_document_count
@@ -589,6 +604,24 @@ def _archive_org_candidate_search_result(
     return dict(provider.search_metadata_candidates(request.normalized_query, request.limit))
 
 
+def _candidate_index_search_result(
+    provider: CandidateIndexSearchProvider | None,
+    request: PublicSearchRequest,
+    terms: Sequence[str],
+) -> dict[str, Any] | None:
+    del terms
+    if provider is None:
+        return None
+    result = dict(provider.search_candidates(request.normalized_query, request.limit))
+    result.setdefault("schema_version", "candidate_search_result.v0")
+    result.setdefault("accepted_truth", False)
+    result.setdefault("review_required", True)
+    result.setdefault("public_mutation_enabled", False)
+    result.setdefault("reviewed_index_mutated", False)
+    result.setdefault("master_index_mutated", False)
+    return result
+
+
 def _archive_org_candidate_cards(
     result: Mapping[str, Any] | None,
     terms: Sequence[str],
@@ -600,6 +633,166 @@ def _archive_org_candidate_cards(
         if isinstance(candidate, Mapping):
             cards.append(_archive_org_candidate_card(candidate, terms))
     return cards
+
+
+def _candidate_index_candidate_cards(
+    result: Mapping[str, Any] | None,
+    terms: Sequence[str],
+) -> list[dict[str, Any]]:
+    if not result:
+        return []
+    cards: list[dict[str, Any]] = []
+    for candidate in result.get("results", []) or []:
+        if isinstance(candidate, Mapping):
+            cards.append(_candidate_index_candidate_card(candidate, terms))
+    return cards
+
+
+def _candidate_index_candidate_card(
+    candidate: Mapping[str, Any],
+    matched_terms: Sequence[str],
+) -> dict[str, Any]:
+    title = str(candidate.get("title") or candidate.get("candidate_id") or "Candidate index result")
+    summary = str(candidate.get("description") or "Stored candidate; review required before use.")
+    candidate_id = str(candidate.get("candidate_id") or "")
+    source_family = str(candidate.get("source_family") or "candidate_index")
+    locator = candidate.get("source_locator") if isinstance(candidate.get("source_locator"), Mapping) else {}
+    target_ref = candidate_id or str(locator.get("url") or "")
+    text = f"{title} {summary} {target_ref}".casefold()
+    matched = [term for term in matched_terms if term in text]
+    source = {
+        "source_id": "candidate_index",
+        "source_family": source_family,
+        "source_label": "Local candidate index",
+        "source_status": "local_candidate_memory",
+        "posture": "candidate_only",
+        "coverage_depth": "local_candidate_index",
+        "trust_lane": "candidate_only",
+        "source_lane": "candidate_index",
+        "checked_as": "candidate_index_search",
+        "domain_pack": str(candidate.get("domain_id") or ""),
+        "limitations": [
+            "candidate_not_reviewed_truth",
+            "local_candidate_memory",
+            "no_download",
+            "no_extraction",
+            "no_auto_promotion",
+        ],
+    }
+    return {
+        "schema_version": SCHEMA_VERSION,
+        "contract_id": RESULT_CARD_CONTRACT_ID,
+        "stability": _card_stability(),
+        "result_id": candidate_id or target_ref,
+        "title": title,
+        "subtitle": summary,
+        "summary": summary,
+        "record_kind": "candidate_index_record",
+        "matched_query_terms": matched,
+        "why_matched": [f"matched term: {term}" for term in matched[:6]]
+        or ["Stored candidate matched the query."],
+        "why_ranked": ["Local candidate index match; candidate requires review."],
+        "result_lane": "candidate_index",
+        "user_cost": {
+            "score": 2,
+            "label": "low",
+            "reasons": ["candidate_index_memory", "review_required"],
+            "explanation": "Stored candidate memory; review required before promotion.",
+        },
+        "source": source,
+        "identity": {
+            "public_target_ref": target_ref,
+            "target_ref": target_ref,
+            "resolved_resource_id": None,
+            "object_id": candidate_id,
+            "release_or_state_id": None,
+            "representation_id": None,
+            "member_target_ref": None,
+            "native_source_id": candidate_id,
+            "identity_status": "candidate",
+            "notes": ["Candidate index identity still requires Eureka review."],
+        },
+        "evidence": {
+            "evidence_count": 1,
+            "summaries": [
+                {
+                    "evidence_id": f"{candidate_id}:candidate_index",
+                    "evidence_kind": "candidate_index_summary",
+                    "source_id": "candidate_index",
+                    "locator": None,
+                    "snippet": summary[:280],
+                    "confidence": "unknown",
+                }
+            ],
+            "provenance_notes": ["public-safe local candidate summary only"],
+            "missing_evidence": [],
+        },
+        "compatibility": {
+            "status": "unknown",
+            "target_platforms": [],
+            "architecture": "unknown",
+            "evidence_summaries": [],
+            "confidence": "unknown",
+            "caveats": [],
+            "unknowns": ["Candidate index memory does not establish compatibility."],
+        },
+        "parent_lineage": [],
+        "member": None,
+        "representation": None,
+        "actions": {
+            "allowed": [
+                _action("inspect", "allowed", "Inspect candidate summary metadata."),
+                _action("view_source", "allowed", "View governed source summary metadata."),
+                _action("view_provenance", "allowed", "View public-safe candidate provenance."),
+            ],
+            "blocked": [
+                _action("download", "blocked", "Downloads are disabled by Public Search Safety / Abuse Guard v0."),
+                _action("install_handoff", "blocked", "Installer handoff is disabled in v0."),
+                _action("execute", "blocked", "Execution is disabled in v0."),
+                _action("upload", "blocked", "Uploads and private source submission are disabled in v0."),
+                _action("accept", "blocked", "Public candidate acceptance is disabled."),
+                _action("promote", "blocked", "Candidate promotion requires a separate review workflow."),
+            ],
+            "future_gated": [
+                _action("review_candidate", "future_gated", "Promotion requires a future review workflow action."),
+            ],
+        },
+        "rights": {
+            "rights_status": "unknown",
+            "distribution_allowed": "unknown",
+            "notes": ["Candidate memory does not grant Eureka distribution permission."],
+        },
+        "risk": {
+            "executable_risk": "unknown",
+            "malware_scan_status": "not_scanned",
+            "warnings": [
+                {
+                    "warning_type": "candidate_not_reviewed_truth",
+                    "message": "Candidate memory requires review before promotion.",
+                    "severity": "info",
+                }
+            ],
+        },
+        "warnings": [
+            _warning("candidate_not_reviewed_truth", "Candidate requires review before promotion.", "info"),
+        ],
+        "limitations": sorted(
+            set(candidate.get("limitations") or [])
+            | {
+                "candidate_not_reviewed_truth",
+                "local_candidate_memory",
+                "no_download",
+                "no_install",
+                "no_execute",
+                "no_upload",
+                "no_extraction",
+                "no_auto_promotion",
+            }
+        ),
+        "source_locator": dict(locator),
+        "accepted_truth": False,
+        "review_required": True,
+    }
 
 
 def _archive_org_candidate_card(
@@ -790,8 +983,10 @@ def _search_success_envelope(
     plan: dict[str, Any] | None,
     archive_candidate_result: Mapping[str, Any] | None = None,
     archive_candidate_cards: list[dict[str, Any]] | None = None,
+    candidate_index_result: Mapping[str, Any] | None = None,
+    candidate_index_cards: list[dict[str, Any]] | None = None,
 ) -> dict[str, Any]:
-    candidate_cards = archive_candidate_cards or []
+    candidate_cards = list(archive_candidate_cards or []) + list(candidate_index_cards or [])
     gaps: list[dict[str, Any]] = []
     absence_summary: dict[str, Any] | None = {
         "status": "none",
@@ -802,6 +997,9 @@ def _search_success_envelope(
     if request.source_policy == ARCHIVE_ORG_METADATA_CANDIDATES:
         checked_sources = list(checked_sources)
         checked_sources.append(_archive_org_checked_source(archive_candidate_result))
+    if candidate_index_result is not None:
+        checked_sources = list(checked_sources)
+        checked_sources.append(_candidate_index_checked_source(candidate_index_result))
     if not results:
         gaps.append(
             {
@@ -825,21 +1023,21 @@ def _search_success_envelope(
         gaps.append(
             {
                 "gap_type": "candidate_results_available",
-                "message": "Archive.org metadata candidates are available; review is required before promotion.",
-                "source_id": "internet_archive_metadata",
-                "next_action": "review Archive.org metadata candidates",
+                "message": "Candidate results are available; review is required before promotion.",
+                "source_id": "candidate_index_or_source_action",
+                "next_action": "review candidate results",
             }
         )
         if not results:
             absence_summary = {
                 "status": "candidate_results_only",
                 "message": (
-                    "No reviewed local-index records matched, but Archive.org "
-                    "metadata candidates were found for review."
+                    "No reviewed local-index records matched, but candidate "
+                    "results were found for review."
                 ),
-                "searched_scope": "controlled local index plus Archive.org metadata candidate search",
+                "searched_scope": "controlled local index plus candidate search lanes",
                 "next_actions": [
-                    "review Archive.org metadata candidates",
+                    "review candidate results",
                     "promote useful reviewed records only after manual review",
                     "do not infer reviewed truth from candidate metadata",
                 ],
@@ -870,6 +1068,7 @@ def _search_success_envelope(
         "candidate_result_count": len(candidate_cards),
         "candidate_results": candidate_cards,
         "archive_org_metadata_candidate_search": _candidate_search_summary(archive_candidate_result),
+        "candidate_index_search": _candidate_index_search_summary(candidate_index_result),
         "checked_sources": checked_sources,
         "checked": checked_sources,
         "gaps": gaps,
@@ -887,6 +1086,7 @@ def _search_success_envelope(
         "next_actions": _next_actions_for_response(absence_summary),
         "live_probes_enabled": False,
         "archive_org_metadata_candidate_search_enabled": request.source_policy == ARCHIVE_ORG_METADATA_CANDIDATES,
+        "candidate_index_search_enabled": candidate_index_result is not None,
         "archive_org_metadata_external_call_performed": bool(
             (archive_candidate_result or {}).get("live_call_performed", False)
         ),
@@ -1228,6 +1428,29 @@ def _archive_org_checked_source(result: Mapping[str, Any] | None) -> dict[str, A
     }
 
 
+def _candidate_index_checked_source(result: Mapping[str, Any] | None) -> dict[str, Any]:
+    status = "available" if result is not None else "not_requested"
+    return {
+        "source_id": "candidate_index",
+        "source_family": "candidate_index",
+        "source_label": "Local candidate index",
+        "coverage_depth": "local_candidate_memory",
+        "status": status,
+        "posture": "candidate_only",
+        "checked_as": "candidate_index_search",
+        "limitations": [
+            "candidate_not_reviewed_truth",
+            "local_candidate_memory",
+            "no_download",
+            "no_extraction",
+            "no_auto_promotion",
+        ],
+        "capabilities_summary": ["candidate_search"],
+        "connector_mode": "local_read_only",
+        "live_access_mode": "none",
+    }
+
+
 def _candidate_search_summary(result: Mapping[str, Any] | None) -> dict[str, Any]:
     if not result:
         return {
@@ -1262,6 +1485,30 @@ def _candidate_search_summary(result: Mapping[str, Any] | None) -> dict[str, Any
         "review_required": bool(result.get("review_required", True)),
         "failure_reason": result.get("failure_reason"),
         "limitations": list(result.get("limitations") or []),
+    }
+
+
+def _candidate_index_search_summary(result: Mapping[str, Any] | None) -> dict[str, Any]:
+    if not result:
+        return {
+            "enabled": False,
+            "status": "not_requested",
+            "result_count": 0,
+            "accepted_truth": False,
+            "public_mutation_enabled": False,
+            "reviewed_index_mutated": False,
+            "master_index_mutated": False,
+        }
+    return {
+        "enabled": True,
+        "status": "succeeded",
+        "query": str(result.get("query") or ""),
+        "result_count": int(result.get("result_count", 0) or 0),
+        "accepted_truth": bool(result.get("accepted_truth", False)),
+        "review_required": bool(result.get("review_required", True)),
+        "public_mutation_enabled": bool(result.get("public_mutation_enabled", False)),
+        "reviewed_index_mutated": bool(result.get("reviewed_index_mutated", False)),
+        "master_index_mutated": bool(result.get("master_index_mutated", False)),
     }
 
 
@@ -1822,6 +2069,8 @@ def _source_status_from_checked_sources(
             status = "live_disabled"
         elif raw_status == "local_private_future":
             status = "local_private_future"
+        elif raw_status == "available" and source.get("source_id") == "candidate_index":
+            status = "local_candidate_memory"
         statuses.append(
             {
                 "source_id": str(source.get("source_id") or "unknown-source"),

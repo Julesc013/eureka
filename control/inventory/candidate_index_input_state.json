@@ -1,0 +1,11 @@
+{
+  "schema_version": "candidate_index_input_state.v0",
+  "task": "CANDIDATE-INDEX-RUNTIME-00",
+  "public_alpha_launch": "deferred",
+  "archive_org_metadata_candidates_available": true,
+  "query_planner_available": true,
+  "reviewed_search_mode": "local_index_only",
+  "candidate_search_mode": "local_temp_or_example_index",
+  "deployment_performed": false,
+  "public_launch_performed": false
+}

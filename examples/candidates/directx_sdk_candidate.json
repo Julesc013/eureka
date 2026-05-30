@@ -1,0 +1,60 @@
+{
+  "schema_version": "candidate_record.v0",
+  "candidate_id": "directx_sdk_candidate",
+  "candidate_kind": "source_metadata_candidate",
+  "source_family": "internet_archive",
+  "source_locator": {
+    "locator_kind": "archive_org_details_page",
+    "url": "https://archive.org/details/directx_sdk_june_2010_fixture"
+  },
+  "title": "DirectX SDK June 2010 offline installer metadata lead",
+  "description": "Candidate metadata for the DirectX SDK June 2010 offline installer.",
+  "matched_query": "DirectX SDK June 2010 offline installer",
+  "query_plan_ref": "query_source_plan:example_directx",
+  "source_action_ref": "source_action:internet_archive_metadata:example_directx",
+  "source_observation_ref": "archive_org_metadata:example_directx",
+  "evidence_candidate_refs": [],
+  "domain_id": "legacy_software",
+  "confidence_label": "medium",
+  "match_reasons": [
+    "named artifact, version, date, or installer terms were detected",
+    "internet_archive_candidate"
+  ],
+  "suppressions": [
+    "suppress_os_images_for_software_queries"
+  ],
+  "limitations": [
+    "candidate_not_reviewed_truth",
+    "review_required_for_promotion",
+    "no_download",
+    "no_extraction",
+    "no_auto_promotion"
+  ],
+  "action_posture": {
+    "allowed_actions": [
+      "inspect",
+      "view_source",
+      "view_provenance",
+      "read"
+    ],
+    "blocked_actions": [
+      "download",
+      "install_handoff",
+      "execute",
+      "upload",
+      "extract",
+      "promote"
+    ],
+    "future_gated_actions": [
+      "create_review_handoff",
+      "update_candidate_state"
+    ],
+    "public_mutation_enabled": false,
+    "accepted_truth": false
+  },
+  "review_state": "needs_review",
+  "accepted_truth": false,
+  "reviewed_record_ref": null,
+  "created_at": "2026-05-30T00:00:00Z",
+  "updated_at": "2026-05-30T00:00:00Z"
+}

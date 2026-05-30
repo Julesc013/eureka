@@ -1,0 +1,13 @@
+{
+  "schema_version": "candidate_ingest_matrix.v0",
+  "task": "CANDIDATE-INDEX-RUNTIME-00",
+  "supported_inputs": [
+    "archive_org_metadata_candidate",
+    "example_candidate_record"
+  ],
+  "default_target": "temp_store",
+  "dry_run_default": true,
+  "operator_instance_mutation_default": false,
+  "accepted_truth_created": false,
+  "reviewed_index_mutated": false
+}

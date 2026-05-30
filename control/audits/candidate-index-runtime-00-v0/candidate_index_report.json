@@ -1,0 +1,20 @@
+{
+  "schema_version": "candidate_index_report.v0",
+  "task": "CANDIDATE-INDEX-RUNTIME-00",
+  "status": "pass",
+  "runtime_package": "runtime/candidate_store",
+  "contracts_added": true,
+  "policies_added": true,
+  "examples_added": true,
+  "cli_added": true,
+  "validator_added": true,
+  "tests_added": true,
+  "accepted_truth_created": false,
+  "reviewed_index_mutated": false,
+  "master_index_mutated": false,
+  "public_mutation_enabled": false,
+  "download_performed": false,
+  "extraction_executed": false,
+  "model_provider_used": false,
+  "deployment_performed": false
+}

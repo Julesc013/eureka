@@ -1,0 +1,40 @@
+{
+  "schema_version": "candidate_record_matrix.v0",
+  "task": "CANDIDATE-INDEX-RUNTIME-00",
+  "candidate_kinds": [
+    "source_metadata_candidate",
+    "artifact_candidate",
+    "source_lead",
+    "provenance_lead",
+    "near_miss",
+    "collection_candidate",
+    "file_manifest_candidate",
+    "review_seed"
+  ],
+  "required_fields": [
+    "candidate_id",
+    "candidate_kind",
+    "source_family",
+    "source_locator",
+    "title",
+    "description",
+    "matched_query",
+    "query_plan_ref",
+    "source_action_ref",
+    "source_observation_ref",
+    "evidence_candidate_refs",
+    "domain_id",
+    "confidence_label",
+    "match_reasons",
+    "suppressions",
+    "limitations",
+    "action_posture",
+    "review_state",
+    "accepted_truth",
+    "reviewed_record_ref",
+    "created_at",
+    "updated_at"
+  ],
+  "accepted_truth": false,
+  "reviewed_record_ref": null
+}

@@ -1,0 +1,38 @@
+{
+  "schema_version": "candidate_lane_packet.v0",
+  "lane_id": "candidate_results",
+  "projection_profile": "public_web",
+  "truth_status": "candidate_only",
+  "review_required": true,
+  "accepted_truth": false,
+  "candidate_count": 1,
+  "candidates": [
+    {
+      "candidate_id": "archive_org_dtheater_candidate",
+      "title": "New York 1993 D-Theater HD demo tape source lead",
+      "accepted_truth": false,
+      "review_required": true
+    }
+  ],
+  "allowed_actions": [
+    "inspect",
+    "view_source",
+    "view_provenance",
+    "read"
+  ],
+  "blocked_actions": [
+    "accept",
+    "reject",
+    "promote",
+    "download",
+    "extract",
+    "execute",
+    "install_handoff",
+    "upload"
+  ],
+  "future_gated_actions": [
+    "create_review_handoff",
+    "update_candidate_state"
+  ],
+  "public_mutation_enabled": false
+}

@@ -1,0 +1,6 @@
+{
+  "schema_version": "candidate_index_failure_repair_log.v0",
+  "task": "CANDIDATE-INDEX-RUNTIME-00",
+  "repairs": [],
+  "open_failures": []
+}

@@ -1,0 +1,19 @@
+{
+  "schema_version": "candidate_index_record_contract.v0",
+  "record_schema": "candidate_index_record.v0",
+  "purpose": "Candidate index entry wrapper for local/temp candidate memory.",
+  "required_fields": [
+    "candidate_id",
+    "candidate_record",
+    "fingerprint",
+    "dedupe_key",
+    "review_state",
+    "indexed_at",
+    "accepted_truth"
+  ],
+  "invariants": {
+    "candidate_index_is_not_reviewed_index": true,
+    "accepted_truth": false,
+    "reviewed_index_mutation_enabled": false
+  }
+}

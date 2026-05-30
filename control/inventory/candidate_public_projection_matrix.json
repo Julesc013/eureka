@@ -1,0 +1,23 @@
+{
+  "schema_version": "candidate_public_projection_matrix.v0",
+  "task": "CANDIDATE-INDEX-RUNTIME-00",
+  "public_candidate_summaries_allowed": true,
+  "allowed_public_actions": [
+    "inspect",
+    "view_source",
+    "view_provenance",
+    "read"
+  ],
+  "blocked_public_actions": [
+    "accept",
+    "reject",
+    "promote",
+    "update_state",
+    "download",
+    "extract",
+    "execute",
+    "upload"
+  ],
+  "accepted_truth": false,
+  "public_candidate_mutation_enabled": false
+}

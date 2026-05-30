@@ -1,0 +1,16 @@
+{
+  "schema_version": "candidate_review_handoff_matrix.v0",
+  "task": "CANDIDATE-INDEX-RUNTIME-00",
+  "operator_actions": [
+    "mark_useful_lead",
+    "reject_wrong_object",
+    "reject_wrong_version",
+    "reject_wrong_platform",
+    "reject_low_quality",
+    "block",
+    "create_review_item"
+  ],
+  "public_actions": [],
+  "promotion_requires_review": true,
+  "automatic_promotion_enabled": false
+}

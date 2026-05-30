@@ -1,0 +1,9 @@
+{
+  "schema_version": "candidate_deduplication_matrix.v0",
+  "task": "CANDIDATE-INDEX-RUNTIME-00",
+  "dedupe_method": "candidate_fingerprint",
+  "duplicate_state": "duplicate",
+  "automatic_merge_enabled": false,
+  "automatic_acceptance_enabled": false,
+  "review_required_for_collision": true
+}

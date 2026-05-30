@@ -1,0 +1,8 @@
+{
+  "schema_version": "candidate_lane_packet.v0",
+  "lane_id": "candidate_results",
+  "truth_status": "candidate_only",
+  "review_required": true,
+  "accepted_truth": false,
+  "public_mutation_enabled": false
+}

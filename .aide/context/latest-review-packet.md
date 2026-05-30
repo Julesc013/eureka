@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (5268 chars, 1317 approximate tokens)
+- `.aide/context/latest-task-packet.md` (6252 chars, 1563 approximate tokens)
 
 ## Context Packet Reference
 
@@ -35,29 +35,29 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
-- allowed: `contracts/search/README.md` (M; matches active task allowed path)
-- allowed: `contracts/search/query_plan/README.md` (A; matches active task allowed path)
-- allowed: `contracts/search/query_plan/query_to_source_action_plan.v0.json` (A; matches active task allowed path)
-- allowed: `control/audits/query-to-source-action-planner-00-v0/README.md` (A; matches active task allowed path)
-- allowed: `control/audits/query-to-source-action-planner-00-v0/query_to_source_action_planner_report.json` (A; matches active task allowed path)
-- allowed: `control/audits/query-to-source-action-planner-00-v0/validation.md` (A; matches active task allowed path)
-- allowed: `control/policies/generated_artifact_policy.json` (M; matches active task allowed path)
-- allowed: `docs/architecture/QUERY_TO_SOURCE_ACTION_PLANNER.md` (A; matches active task allowed path)
-- allowed: `examples/query_plans/README.md` (A; matches active task allowed path)
-- allowed: `examples/query_plans/ambiguous_query_example.json` (A; matches active task allowed path)
-- allowed: `examples/query_plans/directx_sdk_june_2010_offline_installer.json` (A; matches active task allowed path)
-- allowed: `examples/query_plans/new_york_1993_d_theater_hd_demo_tape_original_source.json` (A; matches active task allowed path)
-- allowed: `examples/query_plans/stylewriter_2500_mac_os_8_driver.json` (A; matches active task allowed path)
-- allowed: `examples/query_plans/windows_7_compatible_portable_utilities_not_windows_7_iso.json` (A; matches active task allowed path)
-- allowed: `runtime/gateway/public_api/public_search.py` (M; matches active task allowed path)
-- allowed: `runtime/search/__init__.py` (M; matches active task allowed path)
-- allowed: `runtime/search/query_plan/__init__.py` (A; matches active task allowed path)
-- allowed: `runtime/search/query_plan/planner.py` (A; matches active task allowed path)
-- allowed: `runtime/source/observation/archive_org_public_metadata.py` (M; matches active task allowed path)
-- allowed: `scripts/eureka_query_plan.py` (A; matches active task allowed path)
-- allowed: `scripts/validate_query_to_source_action_planner.py` (A; matches active task allowed path)
-- allowed: `tests/runtime/test_archive_org_candidate_planning.py` (A; matches active task allowed path)
-- additional changed paths omitted from compact packet: 6; see task evidence changed-files report
+- allowed: `.aide/queue/CANDIDATE-INDEX-RUNTIME-00` (??; matches active task allowed path)
+- allowed: `.aide/queue/PUBLIC-ALPHA-REASSESS-00` (??; matches active task allowed path)
+- allowed: `.aide/queue/REVIEW-BATCH-00` (??; matches active task allowed path)
+- allowed: `.aide/queue/SCOUT-RUNTIME-00` (??; matches active task allowed path)
+- allowed: `.aide/queue/SEED-BATCH-FRONTIER-MEDIA-00` (??; matches active task allowed path)
+- allowed: `.aide/queue/SEED-BATCH-LEGACY-SOFTWARE-00` (??; matches active task allowed path)
+- allowed: `.aide/queue/SNAPSHOT-REFRESH-00` (??; matches active task allowed path)
+- allowed: `.aide/queue/index.yaml` (M; matches active task allowed path)
+- allowed: `contracts/candidates` (??; matches active task allowed path)
+- allowed: `control/audits/candidate-index-runtime-00-v0` (??; matches active task allowed path)
+- allowed: `control/inventory/candidate_boundary_report.json` (??; matches active task allowed path)
+- allowed: `control/inventory/candidate_deduplication_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/candidate_fingerprint_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/candidate_index_failure_repair_log.json` (??; matches active task allowed path)
+- allowed: `control/inventory/candidate_index_input_state.json` (??; matches active task allowed path)
+- allowed: `control/inventory/candidate_index_next_task_decision.json` (??; matches active task allowed path)
+- allowed: `control/inventory/candidate_index_result.json` (??; matches active task allowed path)
+- allowed: `control/inventory/candidate_index_smoke_result.json` (??; matches active task allowed path)
+- allowed: `control/inventory/candidate_index_validation_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/candidate_ingest_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/candidate_public_projection_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/candidate_record_matrix.json` (??; matches active task allowed path)
+- additional changed paths omitted from compact packet: 40; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -67,8 +67,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 6798
-- approx_tokens: 1700
+- chars: 6628
+- approx_tokens: 1657
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

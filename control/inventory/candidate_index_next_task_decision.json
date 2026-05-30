@@ -1,0 +1,13 @@
+{
+  "schema_version": "candidate_index_next_task_decision.v0",
+  "task": "CANDIDATE-INDEX-RUNTIME-00",
+  "recommended_next_task": "SCOUT-RUNTIME-00",
+  "reason": "Candidate memory enables relation expansion and discovery trails over candidate records.",
+  "planned_after": [
+    "REVIEW-BATCH-00",
+    "SEED-BATCH-FRONTIER-MEDIA-00",
+    "SEED-BATCH-LEGACY-SOFTWARE-00",
+    "SNAPSHOT-REFRESH-00",
+    "PUBLIC-ALPHA-REASSESS-00"
+  ]
+}

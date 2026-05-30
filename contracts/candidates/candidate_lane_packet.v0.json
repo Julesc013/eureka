@@ -1,0 +1,21 @@
+{
+  "schema_version": "candidate_lane_packet_contract.v0",
+  "record_schema": "candidate_lane_packet.v0",
+  "required_fields": [
+    "lane_id",
+    "projection_profile",
+    "truth_status",
+    "review_required",
+    "accepted_truth",
+    "candidate_count",
+    "candidates",
+    "allowed_actions",
+    "blocked_actions",
+    "future_gated_actions"
+  ],
+  "invariants": {
+    "truth_status": "candidate_only",
+    "accepted_truth": false,
+    "public_mutation_enabled": false
+  }
+}

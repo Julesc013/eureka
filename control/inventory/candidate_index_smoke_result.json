@@ -1,0 +1,12 @@
+{
+  "schema_version": "candidate_index_smoke_result.v0",
+  "task": "CANDIDATE-INDEX-RUNTIME-00",
+  "status": "pass",
+  "candidate_normalization_passed": true,
+  "candidate_search_passed": true,
+  "review_handoff_passed": true,
+  "accepted_truth_created": false,
+  "reviewed_index_mutated": false,
+  "master_index_mutated": false,
+  "deployment_performed": false
+}

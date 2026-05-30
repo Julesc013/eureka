@@ -1,0 +1,12 @@
+{
+  "schema_version": "candidate_boundary_report.v0",
+  "operation": "candidate_index_runtime",
+  "accepted_truth_created": false,
+  "reviewed_index_mutated": false,
+  "master_index_mutated": false,
+  "public_mutation_enabled": false,
+  "download_performed": false,
+  "extraction_executed": false,
+  "model_provider_used": false,
+  "deployment_performed": false
+}

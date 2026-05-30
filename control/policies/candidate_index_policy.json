@@ -1,0 +1,21 @@
+{
+  "schema_version": "candidate_index_policy.v0",
+  "task": "CANDIDATE-INDEX-RUNTIME-00",
+  "candidates_are_not_truth": true,
+  "candidate_index_is_not_reviewed_index": true,
+  "candidate_persistence_operator_or_temp_only": true,
+  "public_candidate_mutation_enabled": false,
+  "automatic_candidate_acceptance_enabled": false,
+  "reviewed_index_mutation_enabled": false,
+  "master_index_mutation_enabled": false,
+  "public_index_mutation_enabled": false,
+  "operator_instance_mutation_default": false,
+  "accepted_truth_created": false,
+  "review_required_for_promotion": true,
+  "downloads_enabled": false,
+  "extraction_enabled": false,
+  "model_provider_enabled": false,
+  "deployment_enabled": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}

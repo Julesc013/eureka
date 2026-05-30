@@ -1,0 +1,23 @@
+{
+  "schema_version": "candidate_search_lane_matrix.v0",
+  "task": "CANDIDATE-INDEX-RUNTIME-00",
+  "lanes": [
+    {
+      "lane_id": "reviewed_local_results",
+      "truth_status": "reviewed_only",
+      "source": "controlled local index"
+    },
+    {
+      "lane_id": "candidate_results",
+      "truth_status": "candidate_only",
+      "source": "candidate index"
+    },
+    {
+      "lane_id": "source_action_current_run_candidates",
+      "truth_status": "candidate_only",
+      "source": "source action runtime"
+    }
+  ],
+  "public_candidate_mutation_enabled": false,
+  "review_required": true
+}

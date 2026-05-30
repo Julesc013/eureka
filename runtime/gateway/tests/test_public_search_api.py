@@ -98,6 +98,32 @@ class PublicSearchPublicApiTestCase(unittest.TestCase):
         self.assertTrue(source_status["internet_archive_metadata"]["network_required"])
         self.assertFalse(source_status["internet_archive_metadata"]["live_enabled"])
 
+    def test_candidate_index_lane_is_review_only_when_provider_is_available(self) -> None:
+        public_api = PublicSearchPublicApi(
+            index_records=(),
+            source_registry=load_source_registry(),
+            query_planner=DeterministicQueryPlannerService(),
+            candidate_index_search=FakeCandidateIndexSearchProvider(),
+        )
+
+        response = public_api.search(parse_qs("q=D-Theater+New+York+1993"))
+
+        self.assertEqual(response.status_code, 200)
+        payload = response.body
+        self.assertEqual(payload["results"], [])
+        self.assertEqual(payload["candidate_result_count"], 1)
+        self.assertTrue(payload["candidate_index_search_enabled"])
+        self.assertFalse(payload["candidate_index_search"]["accepted_truth"])
+        candidate = payload["candidate_results"][0]
+        self.assertEqual(candidate["result_lane"], "candidate_index")
+        self.assertEqual(candidate["source"]["checked_as"], "candidate_index_search")
+        blocked_actions = {item["action_id"] for item in candidate["actions"]["blocked"]}
+        self.assertIn("download", blocked_actions)
+        self.assertIn("promote", blocked_actions)
+        source_status = {item["source_id"]: item for item in payload["source_status"]}
+        self.assertEqual(source_status["candidate_index"]["status"], "local_candidate_memory")
+        self.assertFalse(source_status["candidate_index"]["network_required"])
+
 
 class FakeArchiveOrgCandidateProvider:
     def search_metadata_candidates(self, query: str, limit: int) -> dict[str, object]:
@@ -135,6 +161,38 @@ class FakeArchiveOrgCandidateProvider:
             "review_required": True,
             "warnings": ["Archive.org metadata candidate requires review."],
             "limitations": ["archive_org_metadata_only", "candidate_not_reviewed_truth"],
+        }
+
+
+class FakeCandidateIndexSearchProvider:
+    def search_candidates(self, query: str, limit: int) -> dict[str, object]:
+        return {
+            "schema_version": "candidate_search_result.v0",
+            "query": query,
+            "result_count": 1,
+            "results": [
+                {
+                    "schema_version": "candidate_summary.v0",
+                    "candidate_id": "archive_org_dtheater_candidate",
+                    "candidate_kind": "source_metadata_candidate",
+                    "source_family": "internet_archive",
+                    "source_locator": {
+                        "url": "https://archive.org/details/new_york_1993_dtheater_demo_fixture"
+                    },
+                    "title": "New York 1993 D-Theater HD demo tape source lead",
+                    "description": "Stored candidate from local candidate index.",
+                    "domain_id": "frontier_resolution_media",
+                    "review_state": "needs_review",
+                    "limitations": ["candidate_not_reviewed_truth"],
+                    "accepted_truth": False,
+                    "review_required": True,
+                }
+            ],
+            "accepted_truth": False,
+            "review_required": True,
+            "public_mutation_enabled": False,
+            "reviewed_index_mutated": False,
+            "master_index_mutated": False,
         }
 
 

@@ -1,0 +1,12 @@
+{
+  "schema_version": "candidate_review_handoff.v0",
+  "handoff_id": "candidate_review_handoff:example_dtheater",
+  "candidate_id": "archive_org_dtheater_candidate",
+  "review_state": "needs_review",
+  "recommended_review_action": "create_review_item",
+  "review_required": true,
+  "accepted_truth": false,
+  "reviewed_record_ref": null,
+  "promotion_requires_review": true,
+  "public_mutation_enabled": false
+}

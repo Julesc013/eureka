@@ -1,0 +1,14 @@
+{
+  "schema_version": "candidate_search_request_contract.v0",
+  "record_schema": "candidate_search_request.v0",
+  "required_fields": [
+    "query",
+    "candidate_index_ref",
+    "projection_profile",
+    "read_only"
+  ],
+  "defaults": {
+    "read_only": true,
+    "public_mutation_enabled": false
+  }
+}

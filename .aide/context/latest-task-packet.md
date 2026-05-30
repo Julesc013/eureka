@@ -2,11 +2,11 @@
 
 ## PHASE
 
-UNSPECIFIED - QUERY-TO-SOURCE-ACTION-PLANNER-00
+UNSPECIFIED - CANDIDATE-INDEX-RUNTIME-00
 
 ## GOAL
 
-QUERY-TO-SOURCE-ACTION-PLANNER-00
+CANDIDATE-INDEX-RUNTIME-00
 
 ## WHY
 
@@ -50,18 +50,46 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 - `control/inventory/**`
 - `control/audits/**`
 - `control/policies/**`
-- `contracts/search/**`
+- `contracts/candidates/**`
+- `contracts/search/query_plan/**`
+- `contracts/source/action/**`
+- `contracts/review/**`
+- `contracts/workbench/**`
+- `contracts/view_models/**`
+- `contracts/projections/**`
+- `contracts/local_apply/**`
+- `contracts/instances/**`
 - `runtime/gateway/public_api/**`
 - `runtime/gateway/tests/**`
-- `runtime/search/**`
+- `runtime/candidate_store/**`
+- `runtime/candidates/**`
+- `runtime/search/query_plan/**`
+- `runtime/source/action/**`
+- `runtime/connectors/internet_archive_metadata/**`
+- `runtime/review/queue/**`
+- `runtime/resolution_run/**`
+- `runtime/local_service/**`
+- `runtime/local_workbench/**`
+- `runtime/gateway/**`
+- `runtime/local_eval/**`
 - `runtime/source/observation/**`
+- `examples/candidates/**`
+- `examples/candidate_index/**`
+- `examples/search/candidate_lanes/**`
+- `examples/public_alpha/candidates/**`
 - `examples/query_plans/**`
+- `examples/sources/internet_archive_metadata/**`
+- `scripts/eureka_candidate_index.py`
+- `scripts/eureka_candidate_search.py`
+- `scripts/eureka_candidate_ingest.py`
+- `scripts/eureka_candidate_review_handoff.py`
 - `scripts/eureka_query_plan.py`
 - `scripts/local_queue_progress.py`
 - `scripts/validate_*.py`
 - `scripts/check_*.py`
 - `tests/runtime/**`
 - `tests/operations/**`
+- `tests/scripts/**`
 - `tests/aide/**`
 
 ## FORBIDDEN_PATHS
@@ -101,15 +129,16 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 - `py -3 .aide/scripts/aide_lite.py snapshot`
 - `py -3 .aide/scripts/aide_lite.py index`
 - `py -3 .aide/scripts/aide_lite.py context`
-- `py -3 .aide/scripts/aide_lite.py pack --task "QUERY-TO-SOURCE-ACTION-PLANNER-00"`
+- `py -3 .aide/scripts/aide_lite.py pack --task "CANDIDATE-INDEX-RUNTIME-00"`
 - `py -3 .aide/scripts/aide_lite.py test`
 - `py -3 .aide/scripts/aide_lite.py selftest`
 - `py -3 .aide/scripts/aide_lite.py verify`
 - `py -3 .aide/scripts/aide_lite.py review-pack`
 - `python scripts/check_architecture_boundaries.py`
 - `python scripts/check_generated_artifact_cleanliness.py --check --json`
+- `python scripts/validate_candidate_index_runtime.py`
 - `python scripts/validate_query_to_source_action_planner.py`
-- focused query planner unittest modules
+- focused candidate-index unittest modules
 - `git diff --check`
 
 ## COMMITS
@@ -130,7 +159,7 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 ## NON_GOALS
 
 - No downloads, extraction, installs, uploads, accounts, telemetry, production-readiness claim, public-launch claim, deployment, main promotion, force-push, history rewrite, SYN implementation, or F0 implementation.
-- No source-cache mutation, evidence-ledger mutation, candidate promotion, public-index mutation, local-index mutation, or master-index mutation.
+- No source-cache mutation, evidence-ledger mutation, candidate promotion, reviewed-index mutation, public-index mutation, local-index mutation, or master-index mutation.
 - No model/provider calls, live model routing, local model setup, exact tokenizer, provider billing ledger, Commander, Mobile, MCP/A2A, or autonomous loop unless a future reviewed queue item explicitly authorizes it.
 
 ## ACCEPTANCE

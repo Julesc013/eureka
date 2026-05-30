@@ -1,0 +1,27 @@
+{
+  "schema_version": "candidate_boundary_report_contract.v0",
+  "record_schema": "candidate_boundary_report.v0",
+  "required_fields": [
+    "operation",
+    "candidates_are_not_truth",
+    "candidate_index_is_not_reviewed_index",
+    "accepted_truth_created",
+    "reviewed_index_mutated",
+    "master_index_mutated",
+    "public_mutation_enabled",
+    "download_performed",
+    "extraction_executed",
+    "model_provider_used",
+    "deployment_performed"
+  ],
+  "required_false_fields": [
+    "accepted_truth_created",
+    "reviewed_index_mutated",
+    "master_index_mutated",
+    "public_mutation_enabled",
+    "download_performed",
+    "extraction_executed",
+    "model_provider_used",
+    "deployment_performed"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "schema_version": "candidate_record.v0",
+  "candidate_id": "archive_org_dtheater_candidate",
+  "candidate_kind": "source_metadata_candidate",
+  "source_family": "internet_archive",
+  "title": "New York 1993 D-Theater HD demo tape source lead",
+  "review_state": "needs_review",
+  "accepted_truth": false,
+  "reviewed_record_ref": null
+}

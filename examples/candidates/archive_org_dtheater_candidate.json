@@ -1,0 +1,60 @@
+{
+  "schema_version": "candidate_record.v0",
+  "candidate_id": "archive_org_dtheater_candidate",
+  "candidate_kind": "source_metadata_candidate",
+  "source_family": "internet_archive",
+  "source_locator": {
+    "locator_kind": "archive_org_details_page",
+    "url": "https://archive.org/details/new_york_1993_dtheater_demo_fixture"
+  },
+  "title": "New York 1993 D-Theater HD demo tape source lead",
+  "description": "Archive.org metadata candidate for a frontier-resolution D-Theater source lead.",
+  "matched_query": "New York 1993 D-Theater HD demo tape original source",
+  "query_plan_ref": "query_source_plan:example_dtheater",
+  "source_action_ref": "source_action:internet_archive_metadata:example_dtheater",
+  "source_observation_ref": "archive_org_metadata:example_dtheater",
+  "evidence_candidate_refs": [],
+  "domain_id": "frontier_resolution_media",
+  "confidence_label": "medium",
+  "match_reasons": [
+    "frontier-resolution media terms were detected",
+    "internet_archive_candidate"
+  ],
+  "suppressions": [
+    "suppress_generic_city_or_tourism_media"
+  ],
+  "limitations": [
+    "candidate_not_reviewed_truth",
+    "review_required_for_promotion",
+    "no_download",
+    "no_extraction",
+    "no_auto_promotion"
+  ],
+  "action_posture": {
+    "allowed_actions": [
+      "inspect",
+      "view_source",
+      "view_provenance",
+      "read"
+    ],
+    "blocked_actions": [
+      "download",
+      "install_handoff",
+      "execute",
+      "upload",
+      "extract",
+      "promote"
+    ],
+    "future_gated_actions": [
+      "create_review_handoff",
+      "update_candidate_state"
+    ],
+    "public_mutation_enabled": false,
+    "accepted_truth": false
+  },
+  "review_state": "needs_review",
+  "accepted_truth": false,
+  "reviewed_record_ref": null,
+  "created_at": "2026-05-30T00:00:00Z",
+  "updated_at": "2026-05-30T00:00:00Z"
+}

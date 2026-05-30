@@ -1,4 +1,4 @@
-current_recommended_task: ACTIVE-DISCOVERY-AND-CANDIDATE-INTAKE-00 - Build Archive.org-wide metadata candidate intake before public launch
+current_recommended_task: SCOUT-RUNTIME-00 - Relation expansion and discovery trails over candidates
 completed:
   - SOURCE-ACTION-KERNEL-00
   - SOURCE-WAVE-00
@@ -14,12 +14,11 @@ completed:
   - PUBLIC-ALPHA-DEPLOY-DRY-RUN-00
   - DEV-TO-MAIN-PROMOTION-REVIEW-05
   - PUBLIC-ALPHA-LAUNCH-DEFER-00
-blocked: []
-planned:
   - ACTIVE-DISCOVERY-AND-CANDIDATE-INTAKE-00
   - QUERY-TO-SOURCE-ACTION-PLANNER-00
   - CANDIDATE-INDEX-RUNTIME-00
-  - SOURCE-ACTION-LIVE-METADATA-PILOTS-00
+blocked: []
+planned:
   - SCOUT-RUNTIME-00
   - REVIEW-BATCH-00
   - SEED-BATCH-FRONTIER-MEDIA-00

@@ -1,0 +1,7 @@
+{
+  "schema_version": "candidate_search_result.v0",
+  "query": "D-Theater New York 1993",
+  "result_count": 1,
+  "accepted_truth": false,
+  "review_required": true
+}

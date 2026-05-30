@@ -1,0 +1,34 @@
+{
+  "schema_version": "candidate_state_contract.v0",
+  "record_schema": "candidate_state.v0",
+  "states": [
+    "new",
+    "seen",
+    "useful_lead",
+    "needs_review",
+    "review_item_created",
+    "rejected_wrong_object",
+    "rejected_wrong_version",
+    "rejected_wrong_platform",
+    "rejected_low_quality",
+    "duplicate",
+    "blocked",
+    "accepted_local_reviewed"
+  ],
+  "automatic_transitions": [
+    ["new", "seen"],
+    ["seen", "duplicate"],
+    ["seen", "needs_review"],
+    ["needs_review", "review_item_created"]
+  ],
+  "operator_review_only_transitions": [
+    ["needs_review", "useful_lead"],
+    ["needs_review", "rejected_wrong_object"],
+    ["needs_review", "rejected_wrong_version"],
+    ["needs_review", "rejected_wrong_platform"],
+    ["needs_review", "rejected_low_quality"],
+    ["needs_review", "blocked"],
+    ["review_item_created", "accepted_local_reviewed"]
+  ],
+  "public_transitions_enabled": false
+}

@@ -1,0 +1,18 @@
+{
+  "schema_version": "candidate_review_handoff_contract.v0",
+  "record_schema": "candidate_review_handoff.v0",
+  "required_fields": [
+    "handoff_id",
+    "candidate_id",
+    "review_state",
+    "recommended_review_action",
+    "review_required",
+    "accepted_truth",
+    "candidate_summary"
+  ],
+  "invariants": {
+    "review_required": true,
+    "accepted_truth": false,
+    "promotion_requires_review": true
+  }
+}

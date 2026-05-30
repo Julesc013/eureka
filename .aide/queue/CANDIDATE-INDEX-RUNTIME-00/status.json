@@ -1,0 +1,7 @@
+{
+  "schema_version": "aide_queue_task_status.v0",
+  "task": "CANDIDATE-INDEX-RUNTIME-00",
+  "status": "pass",
+  "summary": "Persistent review-only candidate index runtime, examples, CLIs, validator, tests, and audit pack added.",
+  "next_recommended_task": "SCOUT-RUNTIME-00"
+}

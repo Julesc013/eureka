@@ -1,0 +1,21 @@
+{
+  "schema_version": "candidate_search_result.v0",
+  "query": "D-Theater New York 1993",
+  "result_count": 1,
+  "results": [
+    {
+      "schema_version": "candidate_summary.v0",
+      "candidate_id": "archive_org_dtheater_candidate",
+      "candidate_kind": "source_metadata_candidate",
+      "source_family": "internet_archive",
+      "title": "New York 1993 D-Theater HD demo tape source lead",
+      "domain_id": "frontier_resolution_media",
+      "review_state": "needs_review",
+      "accepted_truth": false,
+      "review_required": true
+    }
+  ],
+  "accepted_truth": false,
+  "review_required": true,
+  "public_mutation_enabled": false
+}
