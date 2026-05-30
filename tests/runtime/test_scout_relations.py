@@ -5,6 +5,7 @@ from pathlib import Path
 import unittest
 
 from runtime.local.eval.scout_schema import REQUIRED_RELATION_TYPES, REQUIRED_WORKUNIT_SEED_TYPES
+from runtime.scout import infer_candidate_relations, load_candidate_index_from_examples
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
@@ -37,6 +38,19 @@ class ScoutRelationTests(unittest.TestCase):
         for item in matrix["workunit_seed_suggestion_types"]:
             self.assertFalse(item["creates_runtime_workunit"])
             self.assertTrue(item["review_required"])
+
+    def test_runtime_relations_are_candidate_only(self) -> None:
+        index = load_candidate_index_from_examples()
+        seed = next(item for item in index["candidates"] if item["candidate_id"] == "archive_org_dtheater_candidate")
+        relations = infer_candidate_relations(seed, index)
+        relation_types = {item["relation_type"] for item in relations}
+
+        self.assertIn("same_source_family", relation_types)
+        self.assertIn("source_lead_from_candidate", relation_types)
+        for relation in relations:
+            self.assertTrue(relation["review_required"])
+            self.assertFalse(relation["accepted_truth"])
+            self.assertFalse(relation["live_source_call_performed"])
 
 
 if __name__ == "__main__":

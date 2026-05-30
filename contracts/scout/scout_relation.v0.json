@@ -1,0 +1,27 @@
+{
+  "schema_version": "scout_relation_contract.v0",
+  "record_schema": "scout_relation.v0",
+  "purpose": "Runtime relation record connecting review-only candidate refs.",
+  "required_fields": [
+    "schema_version",
+    "record_type",
+    "scout_run_id",
+    "relation_id",
+    "candidate_refs",
+    "relation_type",
+    "from_ref",
+    "to_ref",
+    "relation_path",
+    "confidence_label",
+    "evidence_refs",
+    "limitations",
+    "review_required",
+    "accepted_truth",
+    "created_at"
+  ],
+  "invariants": {
+    "review_required": true,
+    "accepted_truth": false,
+    "evidence_refs_created_by_scout": false
+  }
+}

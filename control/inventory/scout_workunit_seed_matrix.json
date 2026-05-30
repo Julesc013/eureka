@@ -1,6 +1,7 @@
 {
-  "schema_version": "scout_workunit_seed_matrix.v0",
-  "task": "AIDE-BATCH-SCOUT-SCHEMA-01",
+  "schema_version": "scout_workunit_seed_matrix.v1",
+  "task": "SCOUT-RUNTIME-00",
+  "previous_schema_task": "AIDE-BATCH-SCOUT-SCHEMA-01",
   "workunit_seed_suggestion_types": [
     {
       "creates_runtime_workunit": false,
@@ -42,5 +43,17 @@
       "review_required": true,
       "suggestion_type": "review_provenance_claim"
     }
-  ]
+  ],
+  "runtime_workunit_seed_types": [
+    "inspect_related_collection",
+    "compare_near_miss",
+    "trace_archived_url",
+    "inspect_source_family",
+    "verify_candidate_identity",
+    "deduplicate_candidate_cluster",
+    "request_more_evidence"
+  ],
+  "creates_runtime_workunit_by_default": false,
+  "review_required": true,
+  "accepted_truth": false
 }

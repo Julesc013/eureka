@@ -1,0 +1,25 @@
+{
+  "schema_version": "scout_projection_matrix.v0",
+  "task": "SCOUT-RUNTIME-00",
+  "projection_profiles": [
+    "public_web",
+    "operator_workbench"
+  ],
+  "public_allowed_actions": [
+    "inspect",
+    "view_provenance",
+    "read"
+  ],
+  "public_blocked_actions": [
+    "accept",
+    "promote",
+    "download",
+    "extract",
+    "execute",
+    "crawl",
+    "live_source_call",
+    "call_model_provider"
+  ],
+  "public_mutation_enabled": false,
+  "accepted_truth": false
+}

@@ -1,0 +1,13 @@
+{
+  "schema_version": "scout_runtime_smoke_result.v0",
+  "task": "SCOUT-RUNTIME-00",
+  "status": "pass",
+  "relations_passed": true,
+  "discovery_trails_passed": true,
+  "related_paths_passed": true,
+  "source_trust_passed": true,
+  "workunit_seeds_passed": true,
+  "accepted_truth_created": false,
+  "live_source_call_performed": false,
+  "deployment_performed": false
+}

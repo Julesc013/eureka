@@ -1,0 +1,6 @@
+{
+  "schema_version": "related_path_packets_example.v0",
+  "related_paths_count": 3,
+  "public_mutation_enabled": false,
+  "accepted_truth": false
+}

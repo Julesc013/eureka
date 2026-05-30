@@ -1,0 +1,24 @@
+{
+  "schema_version": "scout_runtime_input_state.v0",
+  "task": "SCOUT-RUNTIME-00",
+  "branch": "dev",
+  "latest_required_commit": "ada6d217 feat(search): add candidate index runtime",
+  "selected_contract_authority": "contracts/scout",
+  "contracts_discovery_exists": false,
+  "prior_result_mapping": {
+    "candidate_index_runtime": "control/inventory/candidate_index_result.json",
+    "query_planner": "control/audits/query-to-source-action-planner-00-v0/query_to_source_action_planner_report.json",
+    "source_action_kernel": "control/inventory/source_action_kernel_result.json",
+    "source_wave": "control/inventory/source_wave_result.json",
+    "domain_foundation": "control/inventory/domain_foundation_result.json",
+    "scout_schema": "control/inventory/scout_schema_result.json"
+  },
+  "candidate_index_runtime_exists": true,
+  "query_planner_exists": true,
+  "scout_schema_foundation_exists": true,
+  "candidates_remain_review_only": true,
+  "accepted_truth_created": false,
+  "reviewed_index_mutated": false,
+  "master_index_mutated": false,
+  "public_index_mutated": false
+}

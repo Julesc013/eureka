@@ -1,0 +1,9 @@
+{
+  "schema_version": "scout_workunit_seeds_example.v0",
+  "seed_types": [
+    "verify_candidate_identity",
+    "request_more_evidence"
+  ],
+  "creates_runtime_workunit": false,
+  "accepted_truth": false
+}

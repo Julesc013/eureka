@@ -1,0 +1,23 @@
+{
+  "schema_version": "scout_runtime_report.v0",
+  "task": "SCOUT-RUNTIME-00",
+  "status": "pass",
+  "runtime_package": "runtime/scout",
+  "contracts_added": true,
+  "policies_added": true,
+  "candidate_integration_added": true,
+  "relations_added": true,
+  "discovery_trails_added": true,
+  "related_paths_added": true,
+  "source_trust_observations_added": true,
+  "workunit_seeds_added": true,
+  "accepted_truth_created": false,
+  "reviewed_index_mutated": false,
+  "master_index_mutated": false,
+  "public_mutation_enabled": false,
+  "live_source_call_performed": false,
+  "download_performed": false,
+  "extraction_executed": false,
+  "model_provider_used": false,
+  "deployment_performed": false
+}

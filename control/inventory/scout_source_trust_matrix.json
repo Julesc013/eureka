@@ -1,19 +1,11 @@
 {
-  "accepted_truth": false,
   "schema_version": "scout_source_trust_matrix.v0",
-  "task": "AIDE-BATCH-SCOUT-SCHEMA-01",
-  "trust_dimensions": [
-    "metadata_quality",
-    "provenance_quality",
-    "rights_risk",
-    "safety_risk",
-    "source_reliability"
+  "task": "SCOUT-RUNTIME-00",
+  "observation_kinds": [
+    "candidate_source_family_cluster"
   ],
-  "trust_observation_kinds": [
-    "metadata_quality_hint",
-    "provenance_quality_hint",
-    "rights_risk_hint",
-    "safety_risk_hint",
-    "false_positive_hint"
-  ]
+  "accepted_evidence_count_claim_enabled": false,
+  "live_verification_claim_enabled": false,
+  "review_required": true,
+  "accepted_truth": false
 }

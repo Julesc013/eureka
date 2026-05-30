@@ -1,0 +1,10 @@
+{
+  "schema_version": "scout_relations_example.v0",
+  "relation_types": [
+    "same_source_family",
+    "same_source_locator",
+    "source_lead_from_candidate"
+  ],
+  "review_required": true,
+  "accepted_truth": false
+}

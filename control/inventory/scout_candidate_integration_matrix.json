@@ -1,0 +1,25 @@
+{
+  "schema_version": "scout_candidate_integration_matrix.v0",
+  "task": "SCOUT-RUNTIME-00",
+  "accepted_inputs": [
+    "CandidateRecord",
+    "CandidateIndex",
+    "CandidateSearchResult",
+    "CandidateLanePacket"
+  ],
+  "outputs": [
+    "DiscoveryTrail",
+    "RelatedPathPacket",
+    "SourceTrustObservation",
+    "ScoutWorkUnitSeed",
+    "BoundaryReport"
+  ],
+  "candidate_lane_extension_fields": [
+    "related_paths_count",
+    "discovery_trail_ref",
+    "source_trust_hint",
+    "workunit_seed_count"
+  ],
+  "accepted_truth": false,
+  "review_required": true
+}

@@ -1,0 +1,36 @@
+{
+  "schema_version": "scout_boundary_report_contract.v0",
+  "record_schema": "scout_boundary_report.v0",
+  "purpose": "Boundary report for SCOUT runtime packets.",
+  "required_fields": [
+    "schema_version",
+    "record_type",
+    "scout_run_id",
+    "candidate_refs",
+    "scout_outputs_are_not_truth",
+    "review_required",
+    "accepted_truth",
+    "created_at",
+    "accepted_truth_created",
+    "reviewed_index_mutated",
+    "master_index_mutated",
+    "public_mutation_enabled",
+    "live_source_call_performed",
+    "download_performed",
+    "extraction_executed",
+    "model_provider_used",
+    "deployment_performed"
+  ],
+  "required_false_fields": [
+    "accepted_truth",
+    "accepted_truth_created",
+    "reviewed_index_mutated",
+    "master_index_mutated",
+    "public_mutation_enabled",
+    "live_source_call_performed",
+    "download_performed",
+    "extraction_executed",
+    "model_provider_used",
+    "deployment_performed"
+  ]
+}

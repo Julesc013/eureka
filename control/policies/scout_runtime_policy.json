@@ -1,8 +1,6 @@
 {
-  "schema_version": "scout_relation_policy.v0",
+  "schema_version": "scout_runtime_policy.v0",
   "task": "SCOUT-RUNTIME-00",
-  "relation_inference": "deterministic_local_candidate_fields",
-  "relation_confidence_is_review_hint_only": true,
   "scout_outputs_are_not_truth": true,
   "scout_does_not_accept_candidates": true,
   "scout_does_not_promote_records": true,
@@ -17,5 +15,8 @@
   "extraction_enabled": false,
   "model_provider_enabled": false,
   "public_mutation_enabled": false,
-  "review_required_for_outputs": true
+  "review_required_for_outputs": true,
+  "deployment_enabled": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
 }

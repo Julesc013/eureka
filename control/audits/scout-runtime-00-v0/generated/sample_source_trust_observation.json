@@ -1,0 +1,7 @@
+{
+  "schema_version": "source_trust_observation.v0",
+  "observation_kind": "candidate_source_family_cluster",
+  "accepted_evidence_count": 0,
+  "live_verified": false,
+  "accepted_truth": false
+}

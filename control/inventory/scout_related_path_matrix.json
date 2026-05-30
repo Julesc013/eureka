@@ -1,0 +1,17 @@
+{
+  "schema_version": "scout_related_path_matrix.v0",
+  "task": "SCOUT-RUNTIME-00",
+  "related_path_kinds": [
+    "related_candidate",
+    "related_source_path",
+    "related_collection",
+    "related_platform",
+    "related_format_family",
+    "related_package_family",
+    "related_review_handoff",
+    "related_workunit_seed"
+  ],
+  "public_read_only_projection_allowed": true,
+  "public_mutation_enabled": false,
+  "accepted_truth": false
+}

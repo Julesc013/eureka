@@ -1,0 +1,21 @@
+{
+  "schema_version": "scout_boundary_report.v0",
+  "record_type": "scout_boundary_report",
+  "scout_run_id": "scout_run:sample_dtheater",
+  "candidate_refs": [
+    "archive_org_dtheater_candidate"
+  ],
+  "scout_outputs_are_not_truth": true,
+  "review_required": true,
+  "accepted_truth": false,
+  "created_at": "2026-05-30T00:00:00Z",
+  "accepted_truth_created": false,
+  "reviewed_index_mutated": false,
+  "master_index_mutated": false,
+  "public_mutation_enabled": false,
+  "live_source_call_performed": false,
+  "download_performed": false,
+  "extraction_executed": false,
+  "model_provider_used": false,
+  "deployment_performed": false
+}

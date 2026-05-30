@@ -1,0 +1,11 @@
+{
+  "schema_version": "discovery_trail.v0",
+  "trail_id": "discovery_trail:sample_dtheater",
+  "seed_id": "archive_org_dtheater_candidate",
+  "relation_path": [
+    "same_source_family",
+    "same_source_locator"
+  ],
+  "review_required": true,
+  "accepted_truth": false
+}

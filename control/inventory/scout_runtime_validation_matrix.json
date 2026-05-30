@@ -1,0 +1,18 @@
+{
+  "schema_version": "scout_runtime_validation_matrix.v0",
+  "task": "SCOUT-RUNTIME-00",
+  "status": "pass",
+  "validators": [
+    {"name": "validate_scout_runtime", "status": "pass"},
+    {"name": "validate_scout_schema", "status": "pass"},
+    {"name": "validate_candidate_index_runtime", "status": "pass"},
+    {"name": "validate_query_to_source_action_planner", "status": "pass"},
+    {"name": "validate_public_alpha_readonly", "status": "pass"},
+    {"name": "validate_source_action_kernel", "status": "pass"},
+    {"name": "validate_source_wave", "status": "pass"},
+    {"name": "validate_domain_packs", "status": "pass"},
+    {"name": "check_architecture_boundaries", "status": "pass"},
+    {"name": "check_generated_artifact_cleanliness", "status": "pass"}
+  ],
+  "full_discovery": "not_run_by_policy"
+}

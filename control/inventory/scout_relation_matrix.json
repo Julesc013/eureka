@@ -1,0 +1,26 @@
+{
+  "schema_version": "scout_relation_matrix.v0",
+  "task": "SCOUT-RUNTIME-00",
+  "relation_types": [
+    "same_source_family",
+    "same_source_locator",
+    "same_collection",
+    "same_creator",
+    "same_uploader",
+    "same_domain",
+    "same_platform",
+    "same_format_family",
+    "same_filename_pattern",
+    "same_version_family",
+    "same_package_family",
+    "same_archived_url",
+    "same_identifier_hint",
+    "near_miss_cluster",
+    "duplicate_candidate",
+    "provenance_chain",
+    "source_lead_from_candidate"
+  ],
+  "evidence_refs_created_by_scout": false,
+  "review_required": true,
+  "accepted_truth": false
+}

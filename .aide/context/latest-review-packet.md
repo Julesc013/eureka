@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (6252 chars, 1563 approximate tokens)
+- `.aide/context/latest-task-packet.md` (6892 chars, 1723 approximate tokens)
 
 ## Context Packet Reference
 
@@ -35,29 +35,29 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/CANDIDATE-INDEX-RUNTIME-00` (??; matches active task allowed path)
-- allowed: `.aide/queue/PUBLIC-ALPHA-REASSESS-00` (??; matches active task allowed path)
-- allowed: `.aide/queue/REVIEW-BATCH-00` (??; matches active task allowed path)
-- allowed: `.aide/queue/SCOUT-RUNTIME-00` (??; matches active task allowed path)
-- allowed: `.aide/queue/SEED-BATCH-FRONTIER-MEDIA-00` (??; matches active task allowed path)
-- allowed: `.aide/queue/SEED-BATCH-LEGACY-SOFTWARE-00` (??; matches active task allowed path)
-- allowed: `.aide/queue/SNAPSHOT-REFRESH-00` (??; matches active task allowed path)
+- allowed: `.aide/queue/SCOUT-RUNTIME-00/README.md` (M; matches active task allowed path)
+- allowed: `.aide/queue/SCOUT-RUNTIME-00/status.json` (??; matches active task allowed path)
 - allowed: `.aide/queue/index.yaml` (M; matches active task allowed path)
-- allowed: `contracts/candidates` (??; matches active task allowed path)
-- allowed: `control/audits/candidate-index-runtime-00-v0` (??; matches active task allowed path)
-- allowed: `control/inventory/candidate_boundary_report.json` (??; matches active task allowed path)
-- allowed: `control/inventory/candidate_deduplication_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/candidate_fingerprint_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/candidate_index_failure_repair_log.json` (??; matches active task allowed path)
-- allowed: `control/inventory/candidate_index_input_state.json` (??; matches active task allowed path)
-- allowed: `control/inventory/candidate_index_next_task_decision.json` (??; matches active task allowed path)
-- allowed: `control/inventory/candidate_index_result.json` (??; matches active task allowed path)
-- allowed: `control/inventory/candidate_index_smoke_result.json` (??; matches active task allowed path)
-- allowed: `control/inventory/candidate_index_validation_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/candidate_ingest_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/candidate_public_projection_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/candidate_record_matrix.json` (??; matches active task allowed path)
-- additional changed paths omitted from compact packet: 40; see task evidence changed-files report
+- allowed: `contracts/scout/related_path_packet.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/scout/scout_boundary_report.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/scout/scout_relation.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/scout/scout_run.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/scout/scout_workunit_seed.v0.json` (??; matches active task allowed path)
+- allowed: `control/audits/scout-runtime-00-v0` (??; matches active task allowed path)
+- allowed: `control/inventory/scout_boundary_report.json` (??; matches active task allowed path)
+- allowed: `control/inventory/scout_candidate_integration_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/scout_contract_authority_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/scout_projection_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/scout_related_path_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/scout_relation_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/scout_runtime_failure_repair_log.json` (??; matches active task allowed path)
+- allowed: `control/inventory/scout_runtime_input_state.json` (??; matches active task allowed path)
+- allowed: `control/inventory/scout_runtime_next_task_decision.json` (??; matches active task allowed path)
+- allowed: `control/inventory/scout_runtime_result.json` (??; matches active task allowed path)
+- allowed: `control/inventory/scout_runtime_smoke_result.json` (??; matches active task allowed path)
+- allowed: `control/inventory/scout_runtime_validation_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/scout_source_trust_matrix.json` (M; matches active task allowed path)
+- additional changed paths omitted from compact packet: 41; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -67,8 +67,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 6628
-- approx_tokens: 1657
+- chars: 6663
+- approx_tokens: 1666
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

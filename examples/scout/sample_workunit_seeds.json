@@ -1,0 +1,29 @@
+{
+  "schema_version": "scout_workunit_seeds_example.v0",
+  "workunit_seeds": [
+    {
+      "schema_version": "scout_workunit_seed.v0",
+      "record_type": "scout_workunit_seed",
+      "scout_run_id": "scout_run:sample_dtheater",
+      "workunit_seed_id": "scout_workunit_seed:sample_verify_identity",
+      "seed_type": "verify_candidate_identity",
+      "seed_id": "archive_org_dtheater_candidate",
+      "candidate_refs": [
+        "archive_org_dtheater_candidate",
+        "directx_sdk_candidate"
+      ],
+      "relation_type": "source_lead_from_candidate",
+      "relation_path": [
+        "same_source_family",
+        "source_lead_from_candidate"
+      ],
+      "creates_runtime_workunit": false,
+      "confidence_label": "low",
+      "evidence_refs": [],
+      "review_required": true,
+      "accepted_truth": false,
+      "created_at": "2026-05-30T00:00:00Z"
+    }
+  ],
+  "accepted_truth": false
+}

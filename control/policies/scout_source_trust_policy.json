@@ -1,15 +1,22 @@
 {
-  "dimensions": [
-    "metadata_quality",
-    "provenance_quality",
-    "rights_risk",
-    "safety_risk",
-    "source_reliability"
-  ],
-  "review_required": true,
   "schema_version": "scout_source_trust_policy.v0",
-  "source_trust_does_not_accept_evidence": true,
-  "source_trust_does_not_mutate_indexes": true,
-  "source_trust_is_observation_only": true,
-  "task": "AIDE-BATCH-SCOUT-SCHEMA-01"
+  "task": "SCOUT-RUNTIME-00",
+  "source_trust_observations_are_review_hints": true,
+  "accepted_evidence_count_claim_enabled": false,
+  "live_verification_claim_enabled": false,
+  "scout_outputs_are_not_truth": true,
+  "scout_does_not_accept_candidates": true,
+  "scout_does_not_promote_records": true,
+  "scout_does_not_mutate_reviewed_index": true,
+  "scout_does_not_mutate_master_index": true,
+  "scout_does_not_mutate_public_index": true,
+  "scout_uses_local_candidates_only_by_default": true,
+  "live_source_calls_enabled": false,
+  "crawling_enabled": false,
+  "arbitrary_scraping_enabled": false,
+  "downloads_enabled": false,
+  "extraction_enabled": false,
+  "model_provider_enabled": false,
+  "public_mutation_enabled": false,
+  "review_required_for_outputs": true
 }

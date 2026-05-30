@@ -1,0 +1,18 @@
+{
+  "schema_version": "scout_trail_matrix.v0",
+  "task": "SCOUT-RUNTIME-00",
+  "trail_model": "candidate_relation_steps",
+  "required_step_fields": [
+    "step_id",
+    "relation_id",
+    "relation_type",
+    "from_ref",
+    "to_ref",
+    "explanation",
+    "review_required",
+    "accepted_truth"
+  ],
+  "review_required": true,
+  "accepted_truth": false,
+  "live_source_calls_enabled": false
+}

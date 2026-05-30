@@ -1,0 +1,8 @@
+{
+  "schema_version": "scout_run.v0",
+  "scout_run_id": "scout_run:sample_dtheater",
+  "seed_candidate_id": "archive_org_dtheater_candidate",
+  "relation_count": 3,
+  "review_required": true,
+  "accepted_truth": false
+}

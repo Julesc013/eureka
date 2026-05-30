@@ -1,0 +1,20 @@
+{
+  "schema_version": "scout_boundary_report.v0",
+  "task": "SCOUT-RUNTIME-00",
+  "scout_outputs_are_not_truth": true,
+  "accepted_truth_created": false,
+  "reviewed_index_mutated": false,
+  "master_index_mutated": false,
+  "public_index_mutated": false,
+  "public_mutation_enabled": false,
+  "live_source_call_performed": false,
+  "source_probe_executed": false,
+  "crawling_performed": false,
+  "arbitrary_scraping_performed": false,
+  "download_performed": false,
+  "extraction_executed": false,
+  "model_provider_used": false,
+  "deployment_performed": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}

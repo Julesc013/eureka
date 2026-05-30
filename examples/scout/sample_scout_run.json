@@ -1,0 +1,29 @@
+{
+  "schema_version": "scout_run.v0",
+  "record_type": "scout_run",
+  "scout_run_id": "scout_run:sample_dtheater",
+  "seed_candidate_id": "archive_org_dtheater_candidate",
+  "candidate_refs": [
+    "archive_org_dtheater_candidate",
+    "directx_sdk_candidate",
+    "stylewriter_driver_candidate",
+    "windows_7_portable_candidate"
+  ],
+  "relation_count": 3,
+  "relations": [
+    "scout_relation:sample_same_source_family",
+    "scout_relation:sample_same_source_locator",
+    "scout_relation:sample_source_lead"
+  ],
+  "discovery_trail_ref": "discovery_trail:sample_dtheater",
+  "related_paths_count": 3,
+  "source_trust_observation_ids": [
+    "source_trust_observation:sample_internet_archive"
+  ],
+  "workunit_seed_ids": [
+    "scout_workunit_seed:sample_verify_identity"
+  ],
+  "review_required": true,
+  "accepted_truth": false,
+  "created_at": "2026-05-30T00:00:00Z"
+}

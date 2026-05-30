@@ -1,0 +1,28 @@
+{
+  "schema_version": "scout_run_contract.v0",
+  "record_schema": "scout_run.v0",
+  "purpose": "Deterministic SCOUT relation expansion packet over local review-only candidates.",
+  "required_fields": [
+    "schema_version",
+    "record_type",
+    "scout_run_id",
+    "seed_candidate_id",
+    "candidate_refs",
+    "relations",
+    "discovery_trail",
+    "related_paths",
+    "source_trust_observations",
+    "workunit_seeds",
+    "limitations",
+    "review_required",
+    "accepted_truth",
+    "created_at"
+  ],
+  "invariants": {
+    "review_required": true,
+    "accepted_truth": false,
+    "live_source_calls_enabled": false,
+    "crawling_enabled": false,
+    "index_mutation_enabled": false
+  }
+}

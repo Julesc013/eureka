@@ -1,0 +1,15 @@
+{
+  "schema_version": "scout_contract_authority_matrix.v0",
+  "task": "SCOUT-RUNTIME-00",
+  "selected_authority": "contracts/scout",
+  "contracts_scout_exists": true,
+  "contracts_discovery_exists": false,
+  "duplicate_authority_created": false,
+  "runtime_contracts_added": [
+    "contracts/scout/scout_run.v0.json",
+    "contracts/scout/scout_relation.v0.json",
+    "contracts/scout/related_path_packet.v0.json",
+    "contracts/scout/scout_workunit_seed.v0.json",
+    "contracts/scout/scout_boundary_report.v0.json"
+  ]
+}

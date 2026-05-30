@@ -1,8 +1,8 @@
 {
-  "schema_version": "scout_relation_policy.v0",
+  "schema_version": "scout_trail_policy.v0",
   "task": "SCOUT-RUNTIME-00",
-  "relation_inference": "deterministic_local_candidate_fields",
-  "relation_confidence_is_review_hint_only": true,
+  "discovery_trails_are_explanations_not_truth": true,
+  "trail_steps_must_reference_candidate_relations": true,
   "scout_outputs_are_not_truth": true,
   "scout_does_not_accept_candidates": true,
   "scout_does_not_promote_records": true,

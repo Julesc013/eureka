@@ -1,0 +1,25 @@
+{
+  "schema_version": "scout_projection.v0",
+  "projection_profile": "public_web",
+  "scout_run_id": "scout_run:sample_dtheater",
+  "related_paths_count": 3,
+  "discovery_trail_ref": "discovery_trail:sample_dtheater",
+  "source_trust_hint": "internet_archive:candidate_count=4",
+  "workunit_seed_count": 1,
+  "allowed_actions": [
+    "inspect",
+    "view_provenance",
+    "read"
+  ],
+  "blocked_actions": [
+    "accept",
+    "promote",
+    "download",
+    "extract",
+    "crawl",
+    "live_source_call"
+  ],
+  "review_required": true,
+  "accepted_truth": false,
+  "public_mutation_enabled": false
+}

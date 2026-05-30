@@ -2,11 +2,11 @@
 
 ## PHASE
 
-UNSPECIFIED - CANDIDATE-INDEX-RUNTIME-00
+UNSPECIFIED - SCOUT-RUNTIME-00
 
 ## GOAL
 
-CANDIDATE-INDEX-RUNTIME-00
+SCOUT-RUNTIME-00
 
 ## WHY
 
@@ -50,6 +50,8 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 - `control/inventory/**`
 - `control/audits/**`
 - `control/policies/**`
+- `contracts/scout/**`
+- `contracts/discovery/**`
 - `contracts/candidates/**`
 - `contracts/search/query_plan/**`
 - `contracts/source/action/**`
@@ -59,8 +61,13 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 - `contracts/projections/**`
 - `contracts/local_apply/**`
 - `contracts/instances/**`
+- `contracts/workunit/**`
+- `contracts/domain/**`
 - `runtime/gateway/public_api/**`
 - `runtime/gateway/tests/**`
+- `runtime/scout/**`
+- `runtime/discovery/**`
+- `runtime/candidate_index/**`
 - `runtime/candidate_store/**`
 - `runtime/candidates/**`
 - `runtime/search/query_plan/**`
@@ -72,13 +79,25 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 - `runtime/local_workbench/**`
 - `runtime/gateway/**`
 - `runtime/local_eval/**`
+- `runtime/workunit_queue/**`
 - `runtime/source/observation/**`
+- `surfaces/api/**`
+- `surfaces/web/**`
 - `examples/candidates/**`
 - `examples/candidate_index/**`
 - `examples/search/candidate_lanes/**`
+- `examples/public_alpha/**`
 - `examples/public_alpha/candidates/**`
+- `examples/public_alpha/scout/**`
+- `examples/scout/**`
+- `examples/discovery/**`
 - `examples/query_plans/**`
 - `examples/sources/internet_archive_metadata/**`
+- `scripts/eureka_scout_runtime.py`
+- `scripts/eureka_scout_trails.py`
+- `scripts/eureka_scout_relations.py`
+- `scripts/eureka_scout_source_trust.py`
+- `scripts/validate_scout_runtime.py`
 - `scripts/eureka_candidate_index.py`
 - `scripts/eureka_candidate_search.py`
 - `scripts/eureka_candidate_ingest.py`
@@ -129,16 +148,17 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 - `py -3 .aide/scripts/aide_lite.py snapshot`
 - `py -3 .aide/scripts/aide_lite.py index`
 - `py -3 .aide/scripts/aide_lite.py context`
-- `py -3 .aide/scripts/aide_lite.py pack --task "CANDIDATE-INDEX-RUNTIME-00"`
+- `py -3 .aide/scripts/aide_lite.py pack --task "SCOUT-RUNTIME-00"`
 - `py -3 .aide/scripts/aide_lite.py test`
 - `py -3 .aide/scripts/aide_lite.py selftest`
 - `py -3 .aide/scripts/aide_lite.py verify`
 - `py -3 .aide/scripts/aide_lite.py review-pack`
 - `python scripts/check_architecture_boundaries.py`
 - `python scripts/check_generated_artifact_cleanliness.py --check --json`
+- `python scripts/validate_scout_runtime.py`
 - `python scripts/validate_candidate_index_runtime.py`
 - `python scripts/validate_query_to_source_action_planner.py`
-- focused candidate-index unittest modules
+- focused SCOUT and candidate-index unittest modules
 - `git diff --check`
 
 ## COMMITS
@@ -159,7 +179,7 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 ## NON_GOALS
 
 - No downloads, extraction, installs, uploads, accounts, telemetry, production-readiness claim, public-launch claim, deployment, main promotion, force-push, history rewrite, SYN implementation, or F0 implementation.
-- No source-cache mutation, evidence-ledger mutation, candidate promotion, reviewed-index mutation, public-index mutation, local-index mutation, or master-index mutation.
+- No source-cache mutation, evidence-ledger mutation, candidate promotion, reviewed-index mutation, public-index mutation, local-index mutation, master-index mutation, live source calls, crawling, scraping, or SCOUT accepted-truth claims.
 - No model/provider calls, live model routing, local model setup, exact tokenizer, provider billing ledger, Commander, Mobile, MCP/A2A, or autonomous loop unless a future reviewed queue item explicitly authorizes it.
 
 ## ACCEPTANCE

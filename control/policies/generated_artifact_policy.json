@@ -95,6 +95,12 @@
       "policy": "Task-local CANDIDATE-INDEX-RUNTIME-00 audit evidence records candidate memory validation; it is not product runtime state."
     },
     {
+      "path": "control/audits/scout-runtime-00-v0",
+      "artifact_class": "audit_generated",
+      "allow_task_local_drift": true,
+      "policy": "Task-local SCOUT-RUNTIME-00 audit evidence records candidate relation expansion validation; it is not product runtime state."
+    },
+    {
       "path": "control/audits",
       "artifact_class": "audit_generated",
       "policy": "Audit generated outputs are evidence, not product runtime state."

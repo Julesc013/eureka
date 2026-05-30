@@ -1,0 +1,6 @@
+{
+  "schema_version": "scout_runtime_failure_repair_log.v0",
+  "task": "SCOUT-RUNTIME-00",
+  "repairs": [],
+  "open_failures": []
+}

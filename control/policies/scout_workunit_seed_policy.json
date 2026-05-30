@@ -1,8 +1,9 @@
 {
-  "schema_version": "scout_relation_policy.v0",
+  "schema_version": "scout_workunit_seed_policy.v0",
   "task": "SCOUT-RUNTIME-00",
-  "relation_inference": "deterministic_local_candidate_fields",
-  "relation_confidence_is_review_hint_only": true,
+  "workunit_seeds_are_suggestions_only": true,
+  "creates_runtime_workunit_by_default": false,
+  "operator_review_required_before_workunit_creation": true,
   "scout_outputs_are_not_truth": true,
   "scout_does_not_accept_candidates": true,
   "scout_does_not_promote_records": true,

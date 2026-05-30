@@ -1,0 +1,29 @@
+{
+  "schema_version": "related_path_packets_example.v0",
+  "related_paths": [
+    {
+      "schema_version": "related_path_packet.v0",
+      "record_type": "related_path_packet",
+      "scout_run_id": "scout_run:sample_dtheater",
+      "related_path_id": "related_path:sample_dtheater_source_family",
+      "path_kind": "related_candidate",
+      "seed_id": "archive_org_dtheater_candidate",
+      "candidate_refs": [
+        "archive_org_dtheater_candidate",
+        "directx_sdk_candidate"
+      ],
+      "relation_type": "same_source_family",
+      "relation_path": [
+        "same_source_family"
+      ],
+      "path_ref": "directx_sdk_candidate",
+      "confidence_label": "medium",
+      "evidence_refs": [],
+      "review_required": true,
+      "accepted_truth": false,
+      "created_at": "2026-05-30T00:00:00Z"
+    }
+  ],
+  "public_mutation_enabled": false,
+  "accepted_truth": false
+}
