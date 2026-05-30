@@ -1,0 +1,6 @@
+{
+  "schema_version": "review_batch_failure_repair_log.v0",
+  "task": "REVIEW-BATCH-00",
+  "repairs": [],
+  "status": "no_failures_recorded"
+}

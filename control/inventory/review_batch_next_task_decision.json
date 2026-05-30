@@ -1,0 +1,8 @@
+{
+  "schema_version": "review_batch_next_task_decision.v0",
+  "task": "REVIEW-BATCH-00",
+  "recommended_next_task": "SEED-BATCH-FRONTIER-MEDIA-00",
+  "reason": "Batch review throughput now exists, so the next useful product move is a curated frontier-resolution media seed batch.",
+  "deployment_performed": false,
+  "public_launch_readiness_claimed": false
+}

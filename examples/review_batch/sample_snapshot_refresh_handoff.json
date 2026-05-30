@@ -1,0 +1,17 @@
+{
+  "schema_version": "batch_snapshot_refresh_handoff.v0",
+  "record_type": "batch_snapshot_refresh_handoff",
+  "handoff_id": "batch_snapshot_refresh_handoff:sample",
+  "promotion_preview_refs": [
+    "batch_promotion_preview:sample"
+  ],
+  "handoff_status": "handoff_ready",
+  "snapshot_refresh_handoff_only": true,
+  "snapshot_refresh_command_hint": "python scripts/eureka_snapshot_build.py --preview-only --json",
+  "operator_context_required": true,
+  "snapshot_refresh_executed": false,
+  "requires_separate_snapshot_refresh_gate": true,
+  "review_required": true,
+  "accepted_truth": false,
+  "created_at": "2026-05-31T00:00:00Z"
+}

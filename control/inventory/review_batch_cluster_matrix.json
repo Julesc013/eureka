@@ -1,0 +1,18 @@
+{
+  "schema_version": "review_batch_cluster_matrix.v0",
+  "task": "REVIEW-BATCH-00",
+  "candidate_cluster_kinds": [
+    "duplicate_cluster",
+    "near_miss_cluster",
+    "same_source_family_cluster",
+    "same_collection_cluster",
+    "same_domain_cluster",
+    "same_platform_cluster",
+    "same_format_family_cluster",
+    "provenance_chain_cluster",
+    "review_priority_cluster"
+  ],
+  "cluster_source": "candidate_index_plus_scout_relations",
+  "review_required": true,
+  "accepted_truth": false
+}

@@ -1,0 +1,20 @@
+{
+  "schema_version": "review_batch_state_update_list.v0",
+  "state_updates": [
+    {
+      "schema_version": "review_batch_state_update.v0",
+      "record_type": "review_batch_state_update",
+      "state_update_id": "review_batch_state_update:sample",
+      "review_batch_id": "review_batch:sample",
+      "decision_id": "review_batch_decision:sample",
+      "candidate_id": "archive_org_dtheater_candidate",
+      "old_state": "needs_review",
+      "new_state": "promotion_preview_created",
+      "transition_preview": true,
+      "transition_applied": false,
+      "review_required": true,
+      "accepted_truth": false,
+      "created_at": "2026-05-31T00:00:00Z"
+    }
+  ]
+}

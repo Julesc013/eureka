@@ -2,11 +2,11 @@
 
 ## PHASE
 
-UNSPECIFIED - SCOUT-RUNTIME-00
+UNSPECIFIED - REVIEW-BATCH-00
 
 ## GOAL
 
-SCOUT-RUNTIME-00
+REVIEW-BATCH-00
 
 ## WHY
 
@@ -44,65 +44,49 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 - `.aide/**`
 - `AGENTS.md`
+- `contracts/review/**`
+- `contracts/candidates/**`
+- `contracts/scout/**`
+- `contracts/local_apply/**`
+- `contracts/snapshot/**`
+- `contracts/workbench/**`
+- `contracts/view_models/**`
+- `contracts/projections/**`
+- `contracts/search/query_plan/**`
+- `contracts/source/action/**`
 - `docs/architecture/**`
 - `docs/operations/**`
 - `docs/reference/**`
 - `control/inventory/**`
 - `control/audits/**`
 - `control/policies/**`
-- `contracts/scout/**`
-- `contracts/discovery/**`
-- `contracts/candidates/**`
-- `contracts/search/query_plan/**`
-- `contracts/source/action/**`
-- `contracts/review/**`
-- `contracts/workbench/**`
-- `contracts/view_models/**`
-- `contracts/projections/**`
-- `contracts/local_apply/**`
-- `contracts/instances/**`
-- `contracts/workunit/**`
-- `contracts/domain/**`
-- `runtime/gateway/public_api/**`
-- `runtime/gateway/tests/**`
-- `runtime/scout/**`
-- `runtime/discovery/**`
+- `runtime/review/batch/**`
+- `runtime/review/queue/**`
 - `runtime/candidate_index/**`
 - `runtime/candidate_store/**`
 - `runtime/candidates/**`
-- `runtime/search/query_plan/**`
-- `runtime/source/action/**`
-- `runtime/connectors/internet_archive_metadata/**`
-- `runtime/review/queue/**`
+- `runtime/scout/**`
+- `runtime/discovery/**`
+- `runtime/snapshots/**`
 - `runtime/resolution_run/**`
 - `runtime/local_service/**`
 - `runtime/local_workbench/**`
 - `runtime/gateway/**`
 - `runtime/local_eval/**`
-- `runtime/workunit_queue/**`
-- `runtime/source/observation/**`
 - `surfaces/api/**`
 - `surfaces/web/**`
+- `examples/review_batch/**`
+- `examples/review/**`
 - `examples/candidates/**`
 - `examples/candidate_index/**`
-- `examples/search/candidate_lanes/**`
-- `examples/public_alpha/**`
-- `examples/public_alpha/candidates/**`
-- `examples/public_alpha/scout/**`
 - `examples/scout/**`
 - `examples/discovery/**`
-- `examples/query_plans/**`
-- `examples/sources/internet_archive_metadata/**`
-- `scripts/eureka_scout_runtime.py`
-- `scripts/eureka_scout_trails.py`
-- `scripts/eureka_scout_relations.py`
-- `scripts/eureka_scout_source_trust.py`
-- `scripts/validate_scout_runtime.py`
-- `scripts/eureka_candidate_index.py`
-- `scripts/eureka_candidate_search.py`
-- `scripts/eureka_candidate_ingest.py`
-- `scripts/eureka_candidate_review_handoff.py`
-- `scripts/eureka_query_plan.py`
+- `examples/local_apply/**`
+- `examples/snapshots/**`
+- `scripts/eureka_review_batch.py`
+- `scripts/eureka_review_batch_decision.py`
+- `scripts/eureka_review_batch_preview.py`
+- `scripts/eureka_review_batch_handoff.py`
 - `scripts/local_queue_progress.py`
 - `scripts/validate_*.py`
 - `scripts/check_*.py`
@@ -148,17 +132,22 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 - `py -3 .aide/scripts/aide_lite.py snapshot`
 - `py -3 .aide/scripts/aide_lite.py index`
 - `py -3 .aide/scripts/aide_lite.py context`
-- `py -3 .aide/scripts/aide_lite.py pack --task "SCOUT-RUNTIME-00"`
+- `py -3 .aide/scripts/aide_lite.py pack --task "REVIEW-BATCH-00"`
 - `py -3 .aide/scripts/aide_lite.py test`
 - `py -3 .aide/scripts/aide_lite.py selftest`
 - `py -3 .aide/scripts/aide_lite.py verify`
 - `py -3 .aide/scripts/aide_lite.py review-pack`
-- `python scripts/check_architecture_boundaries.py`
-- `python scripts/check_generated_artifact_cleanliness.py --check --json`
+- `python scripts/validate_review_batch.py`
 - `python scripts/validate_scout_runtime.py`
 - `python scripts/validate_candidate_index_runtime.py`
 - `python scripts/validate_query_to_source_action_planner.py`
-- focused SCOUT and candidate-index unittest modules
+- `python scripts/validate_public_alpha_readonly.py`
+- `python scripts/validate_source_action_kernel.py`
+- `python scripts/validate_source_wave.py`
+- `python scripts/validate_domain_packs.py`
+- `python scripts/check_architecture_boundaries.py`
+- `python scripts/check_generated_artifact_cleanliness.py --check --json`
+- focused REVIEW-BATCH unittest modules
 - `git diff --check`
 
 ## COMMITS
@@ -178,9 +167,9 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 ## NON_GOALS
 
-- No downloads, extraction, installs, uploads, accounts, telemetry, production-readiness claim, public-launch claim, deployment, main promotion, force-push, history rewrite, SYN implementation, or F0 implementation.
-- No source-cache mutation, evidence-ledger mutation, candidate promotion, reviewed-index mutation, public-index mutation, local-index mutation, master-index mutation, live source calls, crawling, scraping, or SCOUT accepted-truth claims.
-- No model/provider calls, live model routing, local model setup, exact tokenizer, provider billing ledger, Commander, Mobile, MCP/A2A, or autonomous loop unless a future reviewed queue item explicitly authorizes it.
+- No deployment, publishing, production-readiness claim, public-launch claim, main promotion, force-push, history rewrite, broad crawling, arbitrary scraping, downloads, uploads, extraction, execution, install/emulation, model/provider calls, or live source calls.
+- No automatic candidate acceptance, reviewed-index mutation, master/public index mutation, public mutation, operator instance mutation by default, local apply execution, or snapshot refresh execution.
+- No full unittest discovery inside AI sessions by default.
 
 ## ACCEPTANCE
 
@@ -197,8 +186,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4786
-- approx_tokens: 1197
+- chars: 4750
+- approx_tokens: 1188
 - budget_status: PASS
 - warnings:
   - none

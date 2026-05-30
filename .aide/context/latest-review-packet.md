@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (6892 chars, 1723 approximate tokens)
+- `.aide/context/latest-task-packet.md` (6367 chars, 1592 approximate tokens)
 
 ## Context Packet Reference
 
@@ -33,31 +33,31 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Changed Files Summary
 
-- allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/SCOUT-RUNTIME-00/README.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/SCOUT-RUNTIME-00/status.json` (??; matches active task allowed path)
+- allowed: `.aide/queue/REVIEW-BATCH-00/README.md` (M; matches active task allowed path)
+- allowed: `.aide/queue/REVIEW-BATCH-00/status.json` (??; matches active task allowed path)
 - allowed: `.aide/queue/index.yaml` (M; matches active task allowed path)
-- allowed: `contracts/scout/related_path_packet.v0.json` (??; matches active task allowed path)
-- allowed: `contracts/scout/scout_boundary_report.v0.json` (??; matches active task allowed path)
-- allowed: `contracts/scout/scout_relation.v0.json` (??; matches active task allowed path)
-- allowed: `contracts/scout/scout_run.v0.json` (??; matches active task allowed path)
-- allowed: `contracts/scout/scout_workunit_seed.v0.json` (??; matches active task allowed path)
-- allowed: `control/audits/scout-runtime-00-v0` (??; matches active task allowed path)
-- allowed: `control/inventory/scout_boundary_report.json` (??; matches active task allowed path)
-- allowed: `control/inventory/scout_candidate_integration_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/scout_contract_authority_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/scout_projection_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/scout_related_path_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/scout_relation_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/scout_runtime_failure_repair_log.json` (??; matches active task allowed path)
-- allowed: `control/inventory/scout_runtime_input_state.json` (??; matches active task allowed path)
-- allowed: `control/inventory/scout_runtime_next_task_decision.json` (??; matches active task allowed path)
-- allowed: `control/inventory/scout_runtime_result.json` (??; matches active task allowed path)
-- allowed: `control/inventory/scout_runtime_smoke_result.json` (??; matches active task allowed path)
-- allowed: `control/inventory/scout_runtime_validation_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/scout_source_trust_matrix.json` (M; matches active task allowed path)
-- additional changed paths omitted from compact packet: 41; see task evidence changed-files report
+- allowed: `contracts/review` (??; matches active task allowed path)
+- allowed: `control/audits/review-batch-00-v0` (??; matches active task allowed path)
+- allowed: `control/inventory/review_batch_boundary_report.json` (??; matches active task allowed path)
+- allowed: `control/inventory/review_batch_cluster_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/review_batch_contract_authority_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/review_batch_decision_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/review_batch_failure_repair_log.json` (??; matches active task allowed path)
+- allowed: `control/inventory/review_batch_input_state.json` (??; matches active task allowed path)
+- allowed: `control/inventory/review_batch_local_apply_handoff_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/review_batch_next_task_decision.json` (??; matches active task allowed path)
+- allowed: `control/inventory/review_batch_projection_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/review_batch_promotion_preview_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/review_batch_result.json` (??; matches active task allowed path)
+- allowed: `control/inventory/review_batch_smoke_result.json` (??; matches active task allowed path)
+- allowed: `control/inventory/review_batch_snapshot_handoff_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/review_batch_state_transition_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/review_batch_validation_matrix.json` (??; matches active task allowed path)
+- allowed: `control/policies/generated_artifact_policy.json` (M; matches active task allowed path)
+- allowed: `control/policies/review_batch_decision_policy.json` (??; matches active task allowed path)
+- allowed: `control/policies/review_batch_local_apply_handoff_policy.json` (??; matches active task allowed path)
+- additional changed paths omitted from compact packet: 31; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -67,8 +67,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 6663
-- approx_tokens: 1666
+- chars: 6755
+- approx_tokens: 1689
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

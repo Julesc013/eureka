@@ -1,0 +1,15 @@
+{
+  "schema_version": "review_batch_smoke_result.v0",
+  "task": "REVIEW-BATCH-00",
+  "status": "pass",
+  "clusters_built": true,
+  "batch_packet_built": true,
+  "decision_preview_built": true,
+  "promotion_preview_built": true,
+  "local_apply_handoff_built": true,
+  "snapshot_refresh_handoff_built": true,
+  "accepted_truth_created": false,
+  "reviewed_index_mutated": false,
+  "master_index_mutated": false,
+  "public_mutation_enabled": false
+}

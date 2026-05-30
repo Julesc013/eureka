@@ -1,0 +1,15 @@
+{
+  "schema_version": "review_batch_report.v0",
+  "task": "REVIEW-BATCH-00",
+  "status": "pass",
+  "runtime_review_batch_added": true,
+  "candidate_clusters_added": true,
+  "batch_decisions_added": true,
+  "promotion_previews_added": true,
+  "local_apply_handoff_added": true,
+  "snapshot_refresh_handoff_added": true,
+  "accepted_truth_created": false,
+  "reviewed_index_mutated": false,
+  "master_index_mutated": false,
+  "public_mutation_enabled": false
+}

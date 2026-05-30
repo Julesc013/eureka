@@ -1,0 +1,26 @@
+{
+  "schema_version": "review_batch_decision_contract.v0",
+  "record_schema": "review_batch_decision.v0",
+  "purpose": "Validated operator-context batch decision preview.",
+  "required_fields": [
+    "schema_version",
+    "record_type",
+    "decision_id",
+    "review_batch_id",
+    "candidate_refs",
+    "cluster_refs",
+    "decision",
+    "operator_context_required",
+    "allowed",
+    "decision_status",
+    "blocked_reasons",
+    "review_required",
+    "accepted_truth",
+    "created_at"
+  ],
+  "invariants": {
+    "operator_context_required": true,
+    "creates_accepted_truth": false,
+    "accepted_truth": false
+  }
+}

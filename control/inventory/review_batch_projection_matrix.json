@@ -1,0 +1,14 @@
+{
+  "schema_version": "review_batch_projection_matrix.v0",
+  "task": "REVIEW-BATCH-00",
+  "public_projection": {
+    "read_only": true,
+    "decision_actions_visible": false,
+    "public_mutation_enabled": false
+  },
+  "operator_workbench_projection": {
+    "decision_actions_visible": true,
+    "operator_context_required": true,
+    "automatic_promotion_enabled": false
+  }
+}

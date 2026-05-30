@@ -1,0 +1,16 @@
+{
+  "schema_version": "review_batch_validation_matrix.v0",
+  "task": "REVIEW-BATCH-00",
+  "status": "pass",
+  "review_batch": "pass",
+  "scout_runtime": "pass",
+  "candidate_index": "pass",
+  "query_planner": "pass",
+  "public_alpha_readonly": "pass",
+  "source_action_kernel": "pass",
+  "source_wave": "pass",
+  "domain_packs": "pass",
+  "architecture_boundaries": "pass",
+  "generated_artifact_cleanliness": "pass",
+  "full_discovery": "not_run_by_policy"
+}

@@ -1,0 +1,26 @@
+{
+  "schema_version": "batch_promotion_preview_contract.v0",
+  "record_schema": "batch_promotion_preview.v0",
+  "purpose": "Preview of a local-reviewed promotion candidate; not promotion.",
+  "required_fields": [
+    "schema_version",
+    "record_type",
+    "preview_id",
+    "review_batch_id",
+    "decision_id",
+    "candidate_id",
+    "promotion_preview_is_not_promotion",
+    "reviewed_local_record_preview",
+    "local_apply_required",
+    "snapshot_refresh_required",
+    "review_required",
+    "accepted_truth",
+    "created_at"
+  ],
+  "invariants": {
+    "promotion_preview_is_not_promotion": true,
+    "local_apply_required": true,
+    "snapshot_refresh_required": true,
+    "accepted_truth": false
+  }
+}

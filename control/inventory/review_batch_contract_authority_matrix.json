@@ -1,0 +1,17 @@
+{
+  "schema_version": "review_batch_contract_authority_matrix.v0",
+  "task": "REVIEW-BATCH-00",
+  "selected_review_contract_root": "contracts/review",
+  "existing_related_roots": [
+    "contracts/stores",
+    "contracts/local_apply",
+    "contracts/snapshot",
+    "contracts/scout",
+    "contracts/candidates"
+  ],
+  "duplicate_authority_created": false,
+  "notes": [
+    "contracts/review is the governed root for batch-review packet contracts.",
+    "contracts/stores remains the durable review queue store root."
+  ]
+}

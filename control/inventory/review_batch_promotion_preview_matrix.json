@@ -1,0 +1,10 @@
+{
+  "schema_version": "review_batch_promotion_preview_matrix.v0",
+  "task": "REVIEW-BATCH-00",
+  "promotion_preview_is_not_promotion": true,
+  "created_by_decision": "accept_local_reviewed_preview",
+  "local_apply_required": true,
+  "snapshot_refresh_required": true,
+  "accepted_truth_created": false,
+  "reviewed_index_mutated": false
+}

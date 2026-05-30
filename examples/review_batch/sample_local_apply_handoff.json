@@ -1,0 +1,17 @@
+{
+  "schema_version": "batch_local_apply_handoff.v0",
+  "record_type": "batch_local_apply_handoff",
+  "handoff_id": "batch_local_apply_handoff:sample",
+  "promotion_preview_refs": [
+    "batch_promotion_preview:sample"
+  ],
+  "handoff_status": "handoff_ready",
+  "local_apply_handoff_only": true,
+  "local_apply_command_hint": "python scripts/eureka_local_apply.py --dry-run --json",
+  "operator_context_required": true,
+  "local_apply_executed": false,
+  "requires_separate_local_apply_gate": true,
+  "review_required": true,
+  "accepted_truth": false,
+  "created_at": "2026-05-31T00:00:00Z"
+}

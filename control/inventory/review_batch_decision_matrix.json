@@ -1,0 +1,19 @@
+{
+  "schema_version": "review_batch_decision_matrix.v0",
+  "task": "REVIEW-BATCH-00",
+  "batch_decisions": [
+    "accept_local_reviewed_preview",
+    "reject_wrong_object",
+    "reject_wrong_version",
+    "reject_wrong_platform",
+    "reject_low_quality",
+    "mark_duplicate",
+    "mark_useful_lead",
+    "needs_more_evidence",
+    "block_candidate",
+    "defer_candidate"
+  ],
+  "operator_context_required": true,
+  "public_decisions_enabled": false,
+  "automatic_acceptance_enabled": false
+}

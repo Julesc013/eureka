@@ -101,6 +101,12 @@
       "policy": "Task-local SCOUT-RUNTIME-00 audit evidence records candidate relation expansion validation; it is not product runtime state."
     },
     {
+      "path": "control/audits/review-batch-00-v0",
+      "artifact_class": "audit_generated",
+      "allow_task_local_drift": true,
+      "policy": "Task-local REVIEW-BATCH-00 audit evidence records candidate batch review validation; it is not product runtime state."
+    },
+    {
       "path": "control/audits",
       "artifact_class": "audit_generated",
       "policy": "Audit generated outputs are evidence, not product runtime state."

@@ -1,0 +1,8 @@
+{
+  "schema_version": "aide_queue_task_status.v0",
+  "task": "REVIEW-BATCH-00",
+  "status": "pass",
+  "latest_commit": "pending_commit",
+  "next_task": "SEED-BATCH-FRONTIER-MEDIA-00",
+  "full_discovery": "not_run_by_policy"
+}

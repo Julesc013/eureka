@@ -1,0 +1,27 @@
+{
+  "schema_version": "review_batch_packet_contract.v0",
+  "record_schema": "review_batch_packet.v0",
+  "purpose": "Operator-gated batch review packet over candidate clusters.",
+  "required_fields": [
+    "schema_version",
+    "record_type",
+    "review_batch_id",
+    "candidate_refs",
+    "cluster_refs",
+    "operator_context_required",
+    "decisions",
+    "promotion_previews",
+    "local_apply_handoff",
+    "snapshot_refresh_handoff",
+    "limitations",
+    "review_required",
+    "accepted_truth",
+    "created_at"
+  ],
+  "invariants": {
+    "operator_context_required": true,
+    "review_required": true,
+    "accepted_truth": false,
+    "public_mutation_enabled": false
+  }
+}

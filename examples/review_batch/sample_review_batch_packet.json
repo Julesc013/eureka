@@ -1,0 +1,28 @@
+{
+  "schema_version": "review_batch_packet.v0",
+  "record_type": "review_batch_packet",
+  "review_batch_id": "review_batch:sample",
+  "candidate_refs": [
+    "archive_org_dtheater_candidate",
+    "windows_7_portable_candidate"
+  ],
+  "cluster_refs": [
+    "candidate_cluster:5c6d4e3436394f96"
+  ],
+  "operator_context_required": true,
+  "allowed_batch_decisions": [
+    "mark_useful_lead",
+    "accept_local_reviewed_preview"
+  ],
+  "decisions": [],
+  "promotion_previews": [],
+  "local_apply_handoff": null,
+  "snapshot_refresh_handoff": null,
+  "limitations": [
+    "batch_review_is_operator_gated",
+    "promotion_preview_is_not_promotion"
+  ],
+  "review_required": true,
+  "accepted_truth": false,
+  "created_at": "2026-05-31T00:00:00Z"
+}

@@ -1,4 +1,9 @@
 # REVIEW-BATCH-00
 
-Planned task: batch review over candidate groups, duplicate clusters, useful
-leads, and near misses.
+Implemented task: batch review over candidate groups, duplicate clusters,
+useful leads, near misses, promotion previews, and local-apply/snapshot
+handoffs.
+
+Status: pass
+
+Next: SEED-BATCH-FRONTIER-MEDIA-00

@@ -1,0 +1,17 @@
+{
+  "schema_version": "review_batch_boundary_report.v0",
+  "task": "REVIEW-BATCH-00",
+  "batch_review_requires_operator_context": true,
+  "promotion_preview_is_not_promotion": true,
+  "local_apply_handoff_only": true,
+  "snapshot_refresh_handoff_only": true,
+  "accepted_truth_created": false,
+  "reviewed_index_mutated": false,
+  "master_index_mutated": false,
+  "public_mutation_enabled": false,
+  "live_source_call_performed": false,
+  "download_performed": false,
+  "extraction_executed": false,
+  "model_provider_used": false,
+  "deployment_performed": false
+}

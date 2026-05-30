@@ -1,0 +1,44 @@
+{
+  "schema_version": "review_batch_state_transition_matrix.v0",
+  "task": "REVIEW-BATCH-00",
+  "batch_state_transitions": [
+    [
+      "new",
+      "seen"
+    ],
+    [
+      "seen",
+      "needs_review"
+    ],
+    [
+      "needs_review",
+      "useful_lead"
+    ],
+    [
+      "needs_review",
+      "rejected_wrong_object"
+    ],
+    [
+      "needs_review",
+      "rejected_wrong_version"
+    ],
+    [
+      "needs_review",
+      "duplicate"
+    ],
+    [
+      "needs_review",
+      "blocked"
+    ],
+    [
+      "needs_review",
+      "review_item_created"
+    ],
+    [
+      "review_item_created",
+      "promotion_preview_created"
+    ]
+  ],
+  "transition_applied_by_default": false,
+  "creates_reviewed_truth": false
+}

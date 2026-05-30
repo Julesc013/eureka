@@ -1,0 +1,9 @@
+{
+  "schema_version": "review_batch_local_apply_handoff_matrix.v0",
+  "task": "REVIEW-BATCH-00",
+  "local_apply_handoff_only": true,
+  "local_apply_executed": false,
+  "requires_separate_local_apply_gate": true,
+  "operator_instance_mutated": false,
+  "reviewed_index_mutated": false
+}

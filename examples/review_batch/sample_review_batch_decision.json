@@ -1,0 +1,25 @@
+{
+  "schema_version": "review_batch_decision.v0",
+  "record_type": "review_batch_decision",
+  "decision_id": "review_batch_decision:sample",
+  "review_batch_id": "review_batch:sample",
+  "candidate_refs": [
+    "archive_org_dtheater_candidate"
+  ],
+  "cluster_refs": [
+    "candidate_cluster:5c6d4e3436394f96"
+  ],
+  "decision": "accept_local_reviewed_preview",
+  "operator_context_required": true,
+  "operator_context_present": true,
+  "operator_token_present": true,
+  "dry_run": true,
+  "allowed": true,
+  "decision_status": "validated_preview",
+  "blocked_reasons": [],
+  "creates_accepted_truth": false,
+  "promotion_preview_requested": true,
+  "review_required": true,
+  "accepted_truth": false,
+  "created_at": "2026-05-31T00:00:00Z"
+}

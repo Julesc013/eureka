@@ -1,0 +1,21 @@
+{
+  "schema_version": "review_batch_input_state.v0",
+  "task": "REVIEW-BATCH-00",
+  "branch": "dev",
+  "starting_head": "f060f88a0903c78a368766f8ebd4795467d77086",
+  "prior_result_mappings": {
+    "scout_runtime": "control/inventory/scout_runtime_result.json",
+    "candidate_index": "control/inventory/candidate_index_result.json",
+    "query_planner": "control/audits/query-to-source-action-planner-00-v0/query_to_source_action_planner_report.json",
+    "source_action_kernel": "control/inventory/source_action_kernel_result.json",
+    "source_wave": "control/inventory/source_wave_result.json",
+    "domain_foundation": "control/inventory/domain_foundation_result.json",
+    "local_apply_gate": "control/inventory/local_apply_gate_result.json",
+    "snapshot_relay": "control/inventory/snapshot_relay_result.json"
+  },
+  "required_foundation_present": true,
+  "accepted_truth_created": false,
+  "reviewed_index_mutated": false,
+  "master_index_mutated": false,
+  "public_mutation_enabled": false
+}
