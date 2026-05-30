@@ -1,4 +1,4 @@
-current_recommended_task: SEED-BATCH-LEGACY-SOFTWARE-00 - First curated discovery batch over legacy software
+current_recommended_task: SNAPSHOT-REFRESH-00 - Refresh reviewed/candidate snapshots from seed batch handoffs
 completed:
   - SOURCE-ACTION-KERNEL-00
   - SOURCE-WAVE-00
@@ -20,11 +20,13 @@ completed:
   - SCOUT-RUNTIME-00
   - REVIEW-BATCH-00
   - SEED-BATCH-FRONTIER-MEDIA-00
+  - SEED-BATCH-LEGACY-SOFTWARE-00
 blocked: []
 planned:
-  - SEED-BATCH-LEGACY-SOFTWARE-00
   - SNAPSHOT-REFRESH-00
   - PUBLIC-ALPHA-REASSESS-00
+  - SEED-BATCH-MANUALS-SCANS-00
+  - SEED-BATCH-DRIVER-SUPPORT-00
 waiting: []
 status_options:
   - pass

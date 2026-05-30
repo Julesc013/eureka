@@ -1,0 +1,11 @@
+{
+  "schema_version": "seed_batch_legacy_software_scout_matrix.v0",
+  "task": "SEED-BATCH-LEGACY-SOFTWARE-00",
+  "scout_inputs": ["candidate_index", "candidate_records"],
+  "scout_outputs": ["relations", "discovery_trails", "related_paths", "source_trust_observations", "workunit_seeds"],
+  "live_source_calls_enabled": false,
+  "crawling_enabled": false,
+  "accepted_truth_created": false,
+  "reviewed_index_mutated": false,
+  "public_index_mutated": false
+}

@@ -1,0 +1,10 @@
+[
+  {
+    "absence_id": "legacy_seed_absence:6f9f2ff169454b4e",
+    "absence_kind": "download_install_execute_absent",
+    "accepted_truth": false,
+    "review_required": true,
+    "schema_version": "seed_batch_absence_summary.v0",
+    "summary": "Fixture candidates exist, but download, install, execute, reviewed truth, and public index records are intentionally absent."
+  }
+]

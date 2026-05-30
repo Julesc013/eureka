@@ -1,0 +1,16 @@
+{
+  "schema_version": "seed_batch_legacy_software_source_plan_matrix.v0",
+  "task": "SEED-BATCH-LEGACY-SOFTWARE-00",
+  "source_families": [
+    {"source_family": "internet_archive_metadata", "status": "allowed", "bounded": true, "metadata_only": true, "downloads_enabled": false, "execution_mode": "fixture_metadata_candidates_by_default"},
+    {"source_family": "github_releases_metadata", "status": "fixture", "descriptor_allowed": true, "live_call_by_default": false, "downloads_enabled": false},
+    {"source_family": "package_registry_metadata", "status": "fixture", "descriptor_allowed": true, "package_download_enabled": false, "downloads_enabled": false},
+    {"source_family": "software_heritage_metadata", "status": "fixture", "descriptor_allowed": true, "blob_fetch_enabled": false, "downloads_enabled": false},
+    {"source_family": "wayback_cdx_metadata", "status": "planned", "capture_availability_only": true, "live_call_by_default": false, "downloads_enabled": false},
+    {"source_family": "manual_source_pack", "status": "allowed", "fixture_source_pack_replay": true, "live_call_by_default": false, "downloads_enabled": false}
+  ],
+  "arbitrary_web_crawling_enabled": false,
+  "accepted_truth_created": false,
+  "reviewed_index_mutated": false,
+  "public_index_mutated": false
+}

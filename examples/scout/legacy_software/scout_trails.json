@@ -1,0 +1,89 @@
+{
+  "accepted_truth": false,
+  "accepted_truth_created": false,
+  "batch_id": "seed_batch_legacy_software_00",
+  "deployment_performed": false,
+  "download_performed": false,
+  "extraction_executed": false,
+  "install_execution_enabled": false,
+  "master_index_mutated": false,
+  "model_provider_used": false,
+  "operator_instance_mutated": false,
+  "production_readiness_claimed": false,
+  "public_index_mutated": false,
+  "public_launch_readiness_claimed": false,
+  "public_mutation_enabled": false,
+  "raw_live_response_committed": false,
+  "related_path_count": 722,
+  "relation_count": 722,
+  "review_required": true,
+  "reviewed_index_mutated": false,
+  "run_count": 16,
+  "sample_runs": [
+    {
+      "accepted_truth": false,
+      "candidate_refs": [
+        "seed_legacy_software_legacy_software_q01_candidate",
+        "seed_legacy_software_legacy_software_q02_candidate",
+        "seed_legacy_software_legacy_software_q03_candidate",
+        "seed_legacy_software_legacy_software_q04_candidate",
+        "seed_legacy_software_legacy_software_q05_candidate",
+        "seed_legacy_software_legacy_software_q06_candidate"
+      ],
+      "relation_count": 66,
+      "review_required": true,
+      "scout_run_id": "scout_run:9e91894a5e3f2294",
+      "seed_candidate_id": "seed_legacy_software_legacy_software_q01_candidate"
+    },
+    {
+      "accepted_truth": false,
+      "candidate_refs": [
+        "seed_legacy_software_legacy_software_q01_candidate",
+        "seed_legacy_software_legacy_software_q02_candidate",
+        "seed_legacy_software_legacy_software_q03_candidate",
+        "seed_legacy_software_legacy_software_q04_candidate",
+        "seed_legacy_software_legacy_software_q05_candidate",
+        "seed_legacy_software_legacy_software_q06_candidate"
+      ],
+      "relation_count": 62,
+      "review_required": true,
+      "scout_run_id": "scout_run:c2797847038110a6",
+      "seed_candidate_id": "seed_legacy_software_legacy_software_q02_candidate"
+    },
+    {
+      "accepted_truth": false,
+      "candidate_refs": [
+        "seed_legacy_software_legacy_software_q01_candidate",
+        "seed_legacy_software_legacy_software_q02_candidate",
+        "seed_legacy_software_legacy_software_q03_candidate",
+        "seed_legacy_software_legacy_software_q04_candidate",
+        "seed_legacy_software_legacy_software_q05_candidate",
+        "seed_legacy_software_legacy_software_q06_candidate"
+      ],
+      "relation_count": 21,
+      "review_required": true,
+      "scout_run_id": "scout_run:2c92557d69966669",
+      "seed_candidate_id": "seed_legacy_software_legacy_software_q03_candidate"
+    }
+  ],
+  "schema_version": "seed_batch_scout_trails_summary.v0",
+  "scout_refs": [
+    "scout_run:9e91894a5e3f2294",
+    "scout_run:c2797847038110a6",
+    "scout_run:2c92557d69966669",
+    "scout_run:b2fef794db554f49",
+    "scout_run:245020e36739bcc5",
+    "scout_run:9168ec54dc2ee87f",
+    "scout_run:13e56448d4528c23",
+    "scout_run:d972bb58d4870367",
+    "scout_run:3d10eae9ef4e13f8",
+    "scout_run:0f037a4f10c8d754",
+    "scout_run:37a9f24cb15b7d8d",
+    "scout_run:5522b590cdd793b9",
+    "scout_run:c89128a4228165bc",
+    "scout_run:5c29471f25d8079c",
+    "scout_run:1dac3fed977bcca1",
+    "scout_run:a1e888a18a0c83ba"
+  ],
+  "workunit_seed_count": 70
+}

@@ -25,5 +25,6 @@ Boundary fields must remain false for this task:
 - `public_index_mutated`
 - `download_performed`
 - `extraction_executed`
+- `install_execution_enabled`
 - `model_provider_used`
 - `deployment_performed`

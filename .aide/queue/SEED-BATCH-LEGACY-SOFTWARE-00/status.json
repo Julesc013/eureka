@@ -1,0 +1,15 @@
+{
+  "schema_version": "aide_queue_task_status.v0",
+  "task": "SEED-BATCH-LEGACY-SOFTWARE-00",
+  "status": "pass",
+  "latest_commit_expected": "feat(seed): add legacy software discovery batch",
+  "full_discovery": "NOT_RUN_BY_POLICY",
+  "accepted_truth_created": false,
+  "reviewed_index_mutated": false,
+  "master_index_mutated": false,
+  "public_index_mutated": false,
+  "download_performed": false,
+  "install_execution_enabled": false,
+  "deployment_performed": false,
+  "next_task": "SNAPSHOT-REFRESH-00"
+}

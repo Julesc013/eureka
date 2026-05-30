@@ -1,0 +1,12 @@
+{
+  "schema_version": "seed_batch_legacy_software_public_alpha_reassess_matrix.v0",
+  "task": "SEED-BATCH-LEGACY-SOFTWARE-00",
+  "public_alpha_reassess_input_created": true,
+  "public_launch_readiness_claimed": false,
+  "production_readiness_claimed": false,
+  "requires_review_local_apply_snapshot_before_reassess": true,
+  "software_safety_claimed": false,
+  "accepted_truth_created": false,
+  "reviewed_index_mutated": false,
+  "public_index_mutated": false
+}

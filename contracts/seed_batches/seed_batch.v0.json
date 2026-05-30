@@ -17,10 +17,16 @@
     "accepted_truth_created",
     "reviewed_index_mutated",
     "public_index_mutated",
+    "downloads_enabled",
+    "extraction_enabled",
+    "install_execution_enabled",
     "limitations",
     "created_at"
   ],
   "accepted_truth_created": false,
   "reviewed_index_mutated": false,
-  "public_index_mutated": false
+  "public_index_mutated": false,
+  "downloads_enabled": false,
+  "extraction_enabled": false,
+  "install_execution_enabled": false
 }

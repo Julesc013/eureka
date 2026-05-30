@@ -1,0 +1,1260 @@
+[
+  {
+    "accepted_truth": false,
+    "applied_suppressions": [
+      {
+        "public_explanation": "Crack-related results are blocked.",
+        "review_override_allowed": false,
+        "suppression_id": "crack"
+      },
+      {
+        "public_explanation": "OS image results are outside this software utility search.",
+        "review_override_allowed": false,
+        "suppression_id": "generic_os_iso"
+      },
+      {
+        "public_explanation": "Keygen-related results are blocked.",
+        "review_override_allowed": false,
+        "suppression_id": "keygen"
+      },
+      {
+        "public_explanation": "Operating-system images are excluded from this seed batch.",
+        "review_override_allowed": false,
+        "suppression_id": "operating_system_image"
+      },
+      {
+        "public_explanation": "Serial-number results are blocked.",
+        "review_override_allowed": false,
+        "suppression_id": "serial"
+      },
+      {
+        "public_explanation": "Torrent-only leads are suppressed.",
+        "review_override_allowed": false,
+        "suppression_id": "torrent_only"
+      },
+      {
+        "public_explanation": "Unrelated modern releases are suppressed.",
+        "review_override_allowed": false,
+        "suppression_id": "unrelated_modern_version"
+      },
+      {
+        "public_explanation": "Unsafe or blocked leads are not promoted.",
+        "review_override_allowed": false,
+        "suppression_id": "unsafe_or_blocked"
+      },
+      {
+        "public_explanation": "Warez results are blocked.",
+        "review_override_allowed": false,
+        "suppression_id": "warez"
+      }
+    ],
+    "batch_id": "seed_batch_legacy_software_00",
+    "blocked_actions": [
+      "download",
+      "install_handoff",
+      "execute",
+      "package_download",
+      "promote"
+    ],
+    "candidate_id": "seed_legacy_software_legacy_software_q01_candidate",
+    "confidence_label": "medium",
+    "domain_id": "legacy_software",
+    "fixture_derived": true,
+    "query_id": "legacy_software_q01",
+    "review_required": true,
+    "schema_version": "seed_batch_candidate_summary.v0",
+    "source_family": "internet_archive_metadata",
+    "source_locator": {
+      "locator_kind": "archive_org_details_page",
+      "url": "https://archive.org/details/seed_legacy_software_01_windows_7_compatible_portable_utilities_not_windows_7_iso"
+    },
+    "suppressions": [
+      "crack",
+      "generic_os_iso",
+      "keygen",
+      "operating_system_image",
+      "serial",
+      "torrent_only",
+      "unrelated_modern_version",
+      "unsafe_or_blocked",
+      "warez"
+    ],
+    "title": "Windows 7-compatible portable utilities, not Windows 7 ISO fixture metadata lead"
+  },
+  {
+    "accepted_truth": false,
+    "applied_suppressions": [
+      {
+        "public_explanation": "Crack-related results are blocked.",
+        "review_override_allowed": false,
+        "suppression_id": "crack"
+      },
+      {
+        "public_explanation": "Keygen-related results are blocked.",
+        "review_override_allowed": false,
+        "suppression_id": "keygen"
+      },
+      {
+        "public_explanation": "Serial-number results are blocked.",
+        "review_override_allowed": false,
+        "suppression_id": "serial"
+      },
+      {
+        "public_explanation": "Torrent-only leads are suppressed.",
+        "review_override_allowed": false,
+        "suppression_id": "torrent_only"
+      },
+      {
+        "public_explanation": "Unsafe or blocked leads are not promoted.",
+        "review_override_allowed": false,
+        "suppression_id": "unsafe_or_blocked"
+      },
+      {
+        "public_explanation": "Warez results are blocked.",
+        "review_override_allowed": false,
+        "suppression_id": "warez"
+      },
+      {
+        "public_explanation": "Web-installer stubs are suppressed for offline-installer searches.",
+        "review_override_allowed": false,
+        "suppression_id": "web_installer_when_offline_requested"
+      },
+      {
+        "public_explanation": "Wrong-version results are suppressed.",
+        "review_override_allowed": false,
+        "suppression_id": "wrong_version"
+      }
+    ],
+    "batch_id": "seed_batch_legacy_software_00",
+    "blocked_actions": [
+      "download",
+      "install_handoff",
+      "execute",
+      "package_download",
+      "promote"
+    ],
+    "candidate_id": "seed_legacy_software_legacy_software_q02_candidate",
+    "confidence_label": "medium",
+    "domain_id": "legacy_software",
+    "fixture_derived": true,
+    "query_id": "legacy_software_q02",
+    "review_required": true,
+    "schema_version": "seed_batch_candidate_summary.v0",
+    "source_family": "internet_archive_metadata",
+    "source_locator": {
+      "locator_kind": "archive_org_details_page",
+      "url": "https://archive.org/details/seed_legacy_software_02_directx_sdk_june_2010_offline_installer"
+    },
+    "suppressions": [
+      "crack",
+      "keygen",
+      "serial",
+      "torrent_only",
+      "unsafe_or_blocked",
+      "warez",
+      "web_installer_when_offline_requested",
+      "wrong_version"
+    ],
+    "title": "DirectX SDK June 2010 offline installer fixture metadata lead"
+  },
+  {
+    "accepted_truth": false,
+    "applied_suppressions": [
+      {
+        "public_explanation": "Crack-related results are blocked.",
+        "review_override_allowed": false,
+        "suppression_id": "crack"
+      },
+      {
+        "public_explanation": "Generic driver-updater results are suppressed.",
+        "review_override_allowed": false,
+        "suppression_id": "fake_driver_updater"
+      },
+      {
+        "public_explanation": "Keygen-related results are blocked.",
+        "review_override_allowed": false,
+        "suppression_id": "keygen"
+      },
+      {
+        "public_explanation": "Serial-number results are blocked.",
+        "review_override_allowed": false,
+        "suppression_id": "serial"
+      },
+      {
+        "public_explanation": "Torrent-only leads are suppressed.",
+        "review_override_allowed": false,
+        "suppression_id": "torrent_only"
+      },
+      {
+        "public_explanation": "Unsafe or blocked leads are not promoted.",
+        "review_override_allowed": false,
+        "suppression_id": "unsafe_or_blocked"
+      },
+      {
+        "public_explanation": "Warez results are blocked.",
+        "review_override_allowed": false,
+        "suppression_id": "warez"
+      },
+      {
+        "public_explanation": "Wrong-platform results are suppressed.",
+        "review_override_allowed": false,
+        "suppression_id": "wrong_platform"
+      },
+      {
+        "public_explanation": "Wrong-version results are suppressed.",
+        "review_override_allowed": false,
+        "suppression_id": "wrong_version"
+      }
+    ],
+    "batch_id": "seed_batch_legacy_software_00",
+    "blocked_actions": [
+      "download",
+      "install_handoff",
+      "execute",
+      "package_download",
+      "promote"
+    ],
+    "candidate_id": "seed_legacy_software_legacy_software_q03_candidate",
+    "confidence_label": "medium",
+    "domain_id": "driver_support_media",
+    "fixture_derived": true,
+    "query_id": "legacy_software_q03",
+    "review_required": true,
+    "schema_version": "seed_batch_candidate_summary.v0",
+    "source_family": "manual_source_pack",
+    "source_locator": {
+      "descriptor_ref": "fixture://manual_source_pack/seed_legacy_software_03_stylewriter_2500_mac_os_8_driver",
+      "locator_kind": "fixture_metadata_descriptor"
+    },
+    "suppressions": [
+      "crack",
+      "fake_driver_updater",
+      "keygen",
+      "serial",
+      "torrent_only",
+      "unsafe_or_blocked",
+      "warez",
+      "wrong_platform",
+      "wrong_version"
+    ],
+    "title": "StyleWriter 2500 Mac OS 8 driver fixture metadata lead"
+  },
+  {
+    "accepted_truth": false,
+    "applied_suppressions": [
+      {
+        "public_explanation": "Crack-related results are blocked.",
+        "review_override_allowed": false,
+        "suppression_id": "crack"
+      },
+      {
+        "public_explanation": "Keygen-related results are blocked.",
+        "review_override_allowed": false,
+        "suppression_id": "keygen"
+      },
+      {
+        "public_explanation": "Suspicious software leads are suppressed.",
+        "review_override_allowed": false,
+        "suppression_id": "malware_suspicious"
+      },
+      {
+        "public_explanation": "Serial-number results are blocked.",
+        "review_override_allowed": false,
+        "suppression_id": "serial"
+      },
+      {
+        "public_explanation": "Torrent-only leads are suppressed.",
+        "review_override_allowed": false,
+        "suppression_id": "torrent_only"
+      },
+      {
+        "public_explanation": "Unrelated modern releases are suppressed.",
+        "review_override_allowed": false,
+        "suppression_id": "unrelated_modern_version"
+      },
+      {
+        "public_explanation": "Unsafe or blocked leads are not promoted.",
+        "review_override_allowed": false,
+        "suppression_id": "unsafe_or_blocked"
+      },
+      {
+        "public_explanation": "Warez results are blocked.",
+        "review_override_allowed": false,
+        "suppression_id": "warez"
+      }
+    ],
+    "batch_id": "seed_batch_legacy_software_00",
+    "blocked_actions": [
+      "download",
+      "install_handoff",
+      "execute",
+      "package_download",
+      "promote"
+    ],
+    "candidate_id": "seed_legacy_software_legacy_software_q04_candidate",
+    "confidence_label": "medium",
+    "domain_id": "legacy_software",
+    "fixture_derived": true,
+    "query_id": "legacy_software_q04",
+    "review_required": true,
+    "schema_version": "seed_batch_candidate_summary.v0",
+    "source_family": "manual_source_pack",
+    "source_locator": {
+      "descriptor_ref": "fixture://manual_source_pack/seed_legacy_software_04_windows_98_registry_repair_utility",
+      "locator_kind": "fixture_metadata_descriptor"
+    },
+    "suppressions": [
+      "crack",
+      "keygen",
+      "malware_suspicious",
+      "serial",
+      "torrent_only",
+      "unrelated_modern_version",
+      "unsafe_or_blocked",
+      "warez"
+    ],
+    "title": "Windows 98 registry repair utility fixture metadata lead"
+  },
+  {
+    "accepted_truth": false,
+    "applied_suppressions": [
+      {
+        "public_explanation": "Crack-related results are blocked.",
+        "review_override_allowed": false,
+        "suppression_id": "crack"
+      },
+      {
+        "public_explanation": "Generic driver-updater results are suppressed.",
+        "review_override_allowed": false,
+        "suppression_id": "fake_driver_updater"
+      },
+      {
+        "public_explanation": "Keygen-related results are blocked.",
+        "review_override_allowed": false,
+        "suppression_id": "keygen"
+      },
+      {
+        "public_explanation": "Serial-number results are blocked.",
+        "review_override_allowed": false,
+        "suppression_id": "serial"
+      },
+      {
+        "public_explanation": "Torrent-only leads are suppressed.",
+        "review_override_allowed": false,
+        "suppression_id": "torrent_only"
+      },
+      {
+        "public_explanation": "Unsafe or blocked leads are not promoted.",
+        "review_override_allowed": false,
+        "suppression_id": "unsafe_or_blocked"
+      },
+      {
+        "public_explanation": "Warez results are blocked.",
+        "review_override_allowed": false,
+        "suppression_id": "warez"
+      },
+      {
+        "public_explanation": "Wrong-platform results are suppressed.",
+        "review_override_allowed": false,
+        "suppression_id": "wrong_platform"
+      },
+      {
+        "public_explanation": "Wrong-version results are suppressed.",
+        "review_override_allowed": false,
+        "suppression_id": "wrong_version"
+      }
+    ],
+    "batch_id": "seed_batch_legacy_software_00",
+    "blocked_actions": [
+      "download",
+      "install_handoff",
+      "execute",
+      "package_download",
+      "promote"
+    ],
+    "candidate_id": "seed_legacy_software_legacy_software_q05_candidate",
+    "confidence_label": "medium",
+    "domain_id": "driver_support_media",
+    "fixture_derived": true,
+    "query_id": "legacy_software_q05",
+    "review_required": true,
+    "schema_version": "seed_batch_candidate_summary.v0",
+    "source_family": "internet_archive_metadata",
+    "source_locator": {
+      "locator_kind": "archive_org_details_page",
+      "url": "https://archive.org/details/seed_legacy_software_05_sound_blaster_live_windows_98_driver_support_cd"
+    },
+    "suppressions": [
+      "crack",
+      "fake_driver_updater",
+      "keygen",
+      "serial",
+      "torrent_only",
+      "unsafe_or_blocked",
+      "warez",
+      "wrong_platform",
+      "wrong_version"
+    ],
+    "title": "Sound Blaster Live Windows 98 driver support CD fixture metadata lead"
+  },
+  {
+    "accepted_truth": false,
+    "applied_suppressions": [
+      {
+        "public_explanation": "Crack-related results are blocked.",
+        "review_override_allowed": false,
+        "suppression_id": "crack"
+      },
+      {
+        "public_explanation": "Keygen-related results are blocked.",
+        "review_override_allowed": false,
+        "suppression_id": "keygen"
+      },
+      {
+        "public_explanation": "Serial-number results are blocked.",
+        "review_override_allowed": false,
+        "suppression_id": "serial"
+      },
+      {
+        "public_explanation": "Torrent-only leads are suppressed.",
+        "review_override_allowed": false,
+        "suppression_id": "torrent_only"
+      },
+      {
+        "public_explanation": "Unsafe or blocked leads are not promoted.",
+        "review_override_allowed": false,
+        "suppression_id": "unsafe_or_blocked"
+      },
+      {
+        "public_explanation": "Warez results are blocked.",
+        "review_override_allowed": false,
+        "suppression_id": "warez"
+      },
+      {
+        "public_explanation": "Web-installer stubs are suppressed for offline-installer searches.",
+        "review_override_allowed": false,
+        "suppression_id": "web_installer_when_offline_requested"
+      },
+      {
+        "public_explanation": "Wrong-platform results are suppressed.",
+        "review_override_allowed": false,
+        "suppression_id": "wrong_platform"
+      },
+      {
+        "public_explanation": "Wrong-version results are suppressed.",
+        "review_override_allowed": false,
+        "suppression_id": "wrong_version"
+      }
+    ],
+    "batch_id": "seed_batch_legacy_software_00",
+    "blocked_actions": [
+      "download",
+      "install_handoff",
+      "execute",
+      "package_download",
+      "promote"
+    ],
+    "candidate_id": "seed_legacy_software_legacy_software_q06_candidate",
+    "confidence_label": "medium",
+    "domain_id": "legacy_software",
+    "fixture_derived": true,
+    "query_id": "legacy_software_q06",
+    "review_required": true,
+    "schema_version": "seed_batch_candidate_summary.v0",
+    "source_family": "internet_archive_metadata",
+    "source_locator": {
+      "locator_kind": "archive_org_details_page",
+      "url": "https://archive.org/details/seed_legacy_software_06_quicktime_7_windows_xp_offline_installer"
+    },
+    "suppressions": [
+      "crack",
+      "keygen",
+      "serial",
+      "torrent_only",
+      "unsafe_or_blocked",
+      "warez",
+      "web_installer_when_offline_requested",
+      "wrong_platform",
+      "wrong_version"
+    ],
+    "title": "QuickTime 7 Windows XP offline installer fixture metadata lead"
+  },
+  {
+    "accepted_truth": false,
+    "applied_suppressions": [
+      {
+        "public_explanation": "Crack-related results are blocked.",
+        "review_override_allowed": false,
+        "suppression_id": "crack"
+      },
+      {
+        "public_explanation": "Keygen-related results are blocked.",
+        "review_override_allowed": false,
+        "suppression_id": "keygen"
+      },
+      {
+        "public_explanation": "Serial-number results are blocked.",
+        "review_override_allowed": false,
+        "suppression_id": "serial"
+      },
+      {
+        "public_explanation": "Torrent-only leads are suppressed.",
+        "review_override_allowed": false,
+        "suppression_id": "torrent_only"
+      },
+      {
+        "public_explanation": "Unrelated modern releases are suppressed.",
+        "review_override_allowed": false,
+        "suppression_id": "unrelated_modern_version"
+      },
+      {
+        "public_explanation": "Unsafe or blocked leads are not promoted.",
+        "review_override_allowed": false,
+        "suppression_id": "unsafe_or_blocked"
+      },
+      {
+        "public_explanation": "Warez results are blocked.",
+        "review_override_allowed": false,
+        "suppression_id": "warez"
+      },
+      {
+        "public_explanation": "Wrong-version results are suppressed.",
+        "review_override_allowed": false,
+        "suppression_id": "wrong_version"
+      }
+    ],
+    "batch_id": "seed_batch_legacy_software_00",
+    "blocked_actions": [
+      "download",
+      "install_handoff",
+      "execute",
+      "package_download",
+      "promote"
+    ],
+    "candidate_id": "seed_legacy_software_legacy_software_q07_candidate",
+    "confidence_label": "medium",
+    "domain_id": "legacy_software",
+    "fixture_derived": true,
+    "query_id": "legacy_software_q07",
+    "review_required": true,
+    "schema_version": "seed_batch_candidate_summary.v0",
+    "source_family": "internet_archive_metadata",
+    "source_locator": {
+      "locator_kind": "archive_org_details_page",
+      "url": "https://archive.org/details/seed_legacy_software_07_winamp_5_666_full_installer"
+    },
+    "suppressions": [
+      "crack",
+      "keygen",
+      "serial",
+      "torrent_only",
+      "unrelated_modern_version",
+      "unsafe_or_blocked",
+      "warez",
+      "wrong_version"
+    ],
+    "title": "Winamp 5.666 full installer fixture metadata lead"
+  },
+  {
+    "accepted_truth": false,
+    "applied_suppressions": [
+      {
+        "public_explanation": "Crack-related results are blocked.",
+        "review_override_allowed": false,
+        "suppression_id": "crack"
+      },
+      {
+        "public_explanation": "Keygen-related results are blocked.",
+        "review_override_allowed": false,
+        "suppression_id": "keygen"
+      },
+      {
+        "public_explanation": "Serial-number results are blocked.",
+        "review_override_allowed": false,
+        "suppression_id": "serial"
+      },
+      {
+        "public_explanation": "Torrent-only leads are suppressed.",
+        "review_override_allowed": false,
+        "suppression_id": "torrent_only"
+      },
+      {
+        "public_explanation": "Unsafe or blocked leads are not promoted.",
+        "review_override_allowed": false,
+        "suppression_id": "unsafe_or_blocked"
+      },
+      {
+        "public_explanation": "Warez results are blocked.",
+        "review_override_allowed": false,
+        "suppression_id": "warez"
+      },
+      {
+        "public_explanation": "Web-installer stubs are suppressed for offline-installer searches.",
+        "review_override_allowed": false,
+        "suppression_id": "web_installer_when_offline_requested"
+      },
+      {
+        "public_explanation": "Wrong-version results are suppressed.",
+        "review_override_allowed": false,
+        "suppression_id": "wrong_version"
+      }
+    ],
+    "batch_id": "seed_batch_legacy_software_00",
+    "blocked_actions": [
+      "download",
+      "install_handoff",
+      "execute",
+      "package_download",
+      "promote"
+    ],
+    "candidate_id": "seed_legacy_software_legacy_software_q08_candidate",
+    "confidence_label": "medium",
+    "domain_id": "legacy_software",
+    "fixture_derived": true,
+    "query_id": "legacy_software_q08",
+    "review_required": true,
+    "schema_version": "seed_batch_candidate_summary.v0",
+    "source_family": "package_registry_metadata",
+    "source_locator": {
+      "descriptor_ref": "fixture://package_registry_metadata/seed_legacy_software_08_visual_c_2010_redistributable_offline_installer_windows_7",
+      "locator_kind": "fixture_metadata_descriptor"
+    },
+    "suppressions": [
+      "crack",
+      "keygen",
+      "serial",
+      "torrent_only",
+      "unsafe_or_blocked",
+      "warez",
+      "web_installer_when_offline_requested",
+      "wrong_version"
+    ],
+    "title": "Visual C++ 2010 redistributable offline installer Windows 7 fixture metadata lead"
+  },
+  {
+    "accepted_truth": false,
+    "applied_suppressions": [
+      {
+        "public_explanation": "Crack-related results are blocked.",
+        "review_override_allowed": false,
+        "suppression_id": "crack"
+      },
+      {
+        "public_explanation": "Keygen-related results are blocked.",
+        "review_override_allowed": false,
+        "suppression_id": "keygen"
+      },
+      {
+        "public_explanation": "Serial-number results are blocked.",
+        "review_override_allowed": false,
+        "suppression_id": "serial"
+      },
+      {
+        "public_explanation": "Torrent-only leads are suppressed.",
+        "review_override_allowed": false,
+        "suppression_id": "torrent_only"
+      },
+      {
+        "public_explanation": "Unrelated modern releases are suppressed.",
+        "review_override_allowed": false,
+        "suppression_id": "unrelated_modern_version"
+      },
+      {
+        "public_explanation": "Unsafe or blocked leads are not promoted.",
+        "review_override_allowed": false,
+        "suppression_id": "unsafe_or_blocked"
+      },
+      {
+        "public_explanation": "Warez results are blocked.",
+        "review_override_allowed": false,
+        "suppression_id": "warez"
+      },
+      {
+        "public_explanation": "Wrong-platform results are suppressed.",
+        "review_override_allowed": false,
+        "suppression_id": "wrong_platform"
+      }
+    ],
+    "batch_id": "seed_batch_legacy_software_00",
+    "blocked_actions": [
+      "download",
+      "install_handoff",
+      "execute",
+      "package_download",
+      "promote"
+    ],
+    "candidate_id": "seed_legacy_software_legacy_software_q09_candidate",
+    "confidence_label": "medium",
+    "domain_id": "legacy_software",
+    "fixture_derived": true,
+    "query_id": "legacy_software_q09",
+    "review_required": true,
+    "schema_version": "seed_batch_candidate_summary.v0",
+    "source_family": "github_releases_metadata",
+    "source_locator": {
+      "descriptor_ref": "fixture://github_releases_metadata/seed_legacy_software_09_old_7_zip_windows_2000_compatible_release",
+      "locator_kind": "fixture_metadata_descriptor"
+    },
+    "suppressions": [
+      "crack",
+      "keygen",
+      "serial",
+      "torrent_only",
+      "unrelated_modern_version",
+      "unsafe_or_blocked",
+      "warez",
+      "wrong_platform"
+    ],
+    "title": "old 7-Zip Windows 2000 compatible release fixture metadata lead"
+  },
+  {
+    "accepted_truth": false,
+    "applied_suppressions": [
+      {
+        "public_explanation": "Crack-related results are blocked.",
+        "review_override_allowed": false,
+        "suppression_id": "crack"
+      },
+      {
+        "public_explanation": "Keygen-related results are blocked.",
+        "review_override_allowed": false,
+        "suppression_id": "keygen"
+      },
+      {
+        "public_explanation": "Serial-number results are blocked.",
+        "review_override_allowed": false,
+        "suppression_id": "serial"
+      },
+      {
+        "public_explanation": "Torrent-only leads are suppressed.",
+        "review_override_allowed": false,
+        "suppression_id": "torrent_only"
+      },
+      {
+        "public_explanation": "Unrelated modern releases are suppressed.",
+        "review_override_allowed": false,
+        "suppression_id": "unrelated_modern_version"
+      },
+      {
+        "public_explanation": "Unsafe or blocked leads are not promoted.",
+        "review_override_allowed": false,
+        "suppression_id": "unsafe_or_blocked"
+      },
+      {
+        "public_explanation": "Warez results are blocked.",
+        "review_override_allowed": false,
+        "suppression_id": "warez"
+      },
+      {
+        "public_explanation": "Wrong-platform results are suppressed.",
+        "review_override_allowed": false,
+        "suppression_id": "wrong_platform"
+      }
+    ],
+    "batch_id": "seed_batch_legacy_software_00",
+    "blocked_actions": [
+      "download",
+      "install_handoff",
+      "execute",
+      "package_download",
+      "promote"
+    ],
+    "candidate_id": "seed_legacy_software_legacy_software_q10_candidate",
+    "confidence_label": "medium",
+    "domain_id": "legacy_software",
+    "fixture_derived": true,
+    "query_id": "legacy_software_q10",
+    "review_required": true,
+    "schema_version": "seed_batch_candidate_summary.v0",
+    "source_family": "internet_archive_metadata",
+    "source_locator": {
+      "locator_kind": "archive_org_details_page",
+      "url": "https://archive.org/details/seed_legacy_software_10_irfanview_old_windows_xp_compatible_installer"
+    },
+    "suppressions": [
+      "crack",
+      "keygen",
+      "serial",
+      "torrent_only",
+      "unrelated_modern_version",
+      "unsafe_or_blocked",
+      "warez",
+      "wrong_platform"
+    ],
+    "title": "IrfanView old Windows XP compatible installer fixture metadata lead"
+  },
+  {
+    "accepted_truth": false,
+    "applied_suppressions": [
+      {
+        "public_explanation": "Crack-related results are blocked.",
+        "review_override_allowed": false,
+        "suppression_id": "crack"
+      },
+      {
+        "public_explanation": "Keygen-related results are blocked.",
+        "review_override_allowed": false,
+        "suppression_id": "keygen"
+      },
+      {
+        "public_explanation": "Serial-number results are blocked.",
+        "review_override_allowed": false,
+        "suppression_id": "serial"
+      },
+      {
+        "public_explanation": "Torrent-only leads are suppressed.",
+        "review_override_allowed": false,
+        "suppression_id": "torrent_only"
+      },
+      {
+        "public_explanation": "Unsafe or blocked leads are not promoted.",
+        "review_override_allowed": false,
+        "suppression_id": "unsafe_or_blocked"
+      },
+      {
+        "public_explanation": "Warez results are blocked.",
+        "review_override_allowed": false,
+        "suppression_id": "warez"
+      },
+      {
+        "public_explanation": "Web-installer stubs are suppressed for offline-installer searches.",
+        "review_override_allowed": false,
+        "suppression_id": "web_installer_when_offline_requested"
+      },
+      {
+        "public_explanation": "Wrong-version results are suppressed.",
+        "review_override_allowed": false,
+        "suppression_id": "wrong_version"
+      }
+    ],
+    "batch_id": "seed_batch_legacy_software_00",
+    "blocked_actions": [
+      "download",
+      "install_handoff",
+      "execute",
+      "package_download",
+      "promote"
+    ],
+    "candidate_id": "seed_legacy_software_legacy_software_q11_candidate",
+    "confidence_label": "low",
+    "domain_id": "legacy_software",
+    "fixture_derived": true,
+    "query_id": "legacy_software_q11",
+    "review_required": true,
+    "schema_version": "seed_batch_candidate_summary.v0",
+    "source_family": "internet_archive_metadata",
+    "source_locator": {
+      "locator_kind": "archive_org_details_page",
+      "url": "https://archive.org/details/seed_legacy_software_11_java_6_offline_installer_windows_xp"
+    },
+    "suppressions": [
+      "crack",
+      "keygen",
+      "serial",
+      "torrent_only",
+      "unsafe_or_blocked",
+      "warez",
+      "web_installer_when_offline_requested",
+      "wrong_version"
+    ],
+    "title": "Java 6 offline installer Windows XP fixture metadata lead"
+  },
+  {
+    "accepted_truth": false,
+    "applied_suppressions": [
+      {
+        "public_explanation": "Crack-related results are blocked.",
+        "review_override_allowed": false,
+        "suppression_id": "crack"
+      },
+      {
+        "public_explanation": "Generic driver-updater results are suppressed.",
+        "review_override_allowed": false,
+        "suppression_id": "fake_driver_updater"
+      },
+      {
+        "public_explanation": "Keygen-related results are blocked.",
+        "review_override_allowed": false,
+        "suppression_id": "keygen"
+      },
+      {
+        "public_explanation": "Serial-number results are blocked.",
+        "review_override_allowed": false,
+        "suppression_id": "serial"
+      },
+      {
+        "public_explanation": "Torrent-only leads are suppressed.",
+        "review_override_allowed": false,
+        "suppression_id": "torrent_only"
+      },
+      {
+        "public_explanation": "Unsafe or blocked leads are not promoted.",
+        "review_override_allowed": false,
+        "suppression_id": "unsafe_or_blocked"
+      },
+      {
+        "public_explanation": "Warez results are blocked.",
+        "review_override_allowed": false,
+        "suppression_id": "warez"
+      },
+      {
+        "public_explanation": "Web-installer stubs are suppressed for offline-installer searches.",
+        "review_override_allowed": false,
+        "suppression_id": "web_installer_when_offline_requested"
+      },
+      {
+        "public_explanation": "Wrong-platform results are suppressed.",
+        "review_override_allowed": false,
+        "suppression_id": "wrong_platform"
+      }
+    ],
+    "batch_id": "seed_batch_legacy_software_00",
+    "blocked_actions": [
+      "download",
+      "install_handoff",
+      "execute",
+      "package_download",
+      "promote"
+    ],
+    "candidate_id": "seed_legacy_software_legacy_software_q12_candidate",
+    "confidence_label": "low",
+    "domain_id": "driver_support_media",
+    "fixture_derived": true,
+    "query_id": "legacy_software_q12",
+    "review_required": true,
+    "schema_version": "seed_batch_candidate_summary.v0",
+    "source_family": "wayback_cdx_metadata",
+    "source_locator": {
+      "descriptor_ref": "fixture://wayback_cdx_metadata/seed_legacy_software_12_microsoft_intellipoint_windows_7_driver_offline_installer",
+      "locator_kind": "fixture_metadata_descriptor"
+    },
+    "suppressions": [
+      "crack",
+      "fake_driver_updater",
+      "keygen",
+      "serial",
+      "torrent_only",
+      "unsafe_or_blocked",
+      "warez",
+      "web_installer_when_offline_requested",
+      "wrong_platform"
+    ],
+    "title": "Microsoft IntelliPoint Windows 7 driver offline installer fixture metadata lead"
+  },
+  {
+    "accepted_truth": false,
+    "applied_suppressions": [
+      {
+        "public_explanation": "Crack-related results are blocked.",
+        "review_override_allowed": false,
+        "suppression_id": "crack"
+      },
+      {
+        "public_explanation": "Keygen-related results are blocked.",
+        "review_override_allowed": false,
+        "suppression_id": "keygen"
+      },
+      {
+        "public_explanation": "Serial-number results are blocked.",
+        "review_override_allowed": false,
+        "suppression_id": "serial"
+      },
+      {
+        "public_explanation": "Torrent-only leads are suppressed.",
+        "review_override_allowed": false,
+        "suppression_id": "torrent_only"
+      },
+      {
+        "public_explanation": "Unrelated modern releases are suppressed.",
+        "review_override_allowed": false,
+        "suppression_id": "unrelated_modern_version"
+      },
+      {
+        "public_explanation": "Unsafe or blocked leads are not promoted.",
+        "review_override_allowed": false,
+        "suppression_id": "unsafe_or_blocked"
+      },
+      {
+        "public_explanation": "Warez results are blocked.",
+        "review_override_allowed": false,
+        "suppression_id": "warez"
+      },
+      {
+        "public_explanation": "Wrong-platform results are suppressed.",
+        "review_override_allowed": false,
+        "suppression_id": "wrong_platform"
+      }
+    ],
+    "batch_id": "seed_batch_legacy_software_00",
+    "blocked_actions": [
+      "download",
+      "install_handoff",
+      "execute",
+      "package_download",
+      "promote"
+    ],
+    "candidate_id": "seed_legacy_software_legacy_software_q13_candidate",
+    "confidence_label": "low",
+    "domain_id": "legacy_software",
+    "fixture_derived": true,
+    "query_id": "legacy_software_q13",
+    "review_required": true,
+    "schema_version": "seed_batch_candidate_summary.v0",
+    "source_family": "wayback_cdx_metadata",
+    "source_locator": {
+      "descriptor_ref": "fixture://wayback_cdx_metadata/seed_legacy_software_13_powertoys_for_windows_xp",
+      "locator_kind": "fixture_metadata_descriptor"
+    },
+    "suppressions": [
+      "crack",
+      "keygen",
+      "serial",
+      "torrent_only",
+      "unrelated_modern_version",
+      "unsafe_or_blocked",
+      "warez",
+      "wrong_platform"
+    ],
+    "title": "PowerToys for Windows XP fixture metadata lead"
+  },
+  {
+    "accepted_truth": false,
+    "applied_suppressions": [
+      {
+        "public_explanation": "Crack-related results are blocked.",
+        "review_override_allowed": false,
+        "suppression_id": "crack"
+      },
+      {
+        "public_explanation": "Keygen-related results are blocked.",
+        "review_override_allowed": false,
+        "suppression_id": "keygen"
+      },
+      {
+        "public_explanation": "Suspicious software leads are suppressed.",
+        "review_override_allowed": false,
+        "suppression_id": "malware_suspicious"
+      },
+      {
+        "public_explanation": "Operating-system images are excluded from this seed batch.",
+        "review_override_allowed": false,
+        "suppression_id": "operating_system_image"
+      },
+      {
+        "public_explanation": "Serial-number results are blocked.",
+        "review_override_allowed": false,
+        "suppression_id": "serial"
+      },
+      {
+        "public_explanation": "Torrent-only leads are suppressed.",
+        "review_override_allowed": false,
+        "suppression_id": "torrent_only"
+      },
+      {
+        "public_explanation": "Unrelated modern releases are suppressed.",
+        "review_override_allowed": false,
+        "suppression_id": "unrelated_modern_version"
+      },
+      {
+        "public_explanation": "Unsafe or blocked leads are not promoted.",
+        "review_override_allowed": false,
+        "suppression_id": "unsafe_or_blocked"
+      },
+      {
+        "public_explanation": "Warez results are blocked.",
+        "review_override_allowed": false,
+        "suppression_id": "warez"
+      }
+    ],
+    "batch_id": "seed_batch_legacy_software_00",
+    "blocked_actions": [
+      "download",
+      "install_handoff",
+      "execute",
+      "package_download",
+      "promote"
+    ],
+    "candidate_id": "seed_legacy_software_legacy_software_q14_candidate",
+    "confidence_label": "low",
+    "domain_id": "legacy_software",
+    "fixture_derived": true,
+    "query_id": "legacy_software_q14",
+    "review_required": true,
+    "schema_version": "seed_batch_candidate_summary.v0",
+    "source_family": "package_registry_metadata",
+    "source_locator": {
+      "descriptor_ref": "fixture://package_registry_metadata/seed_legacy_software_14_windows_7_compatible_file_recovery_utility_portable",
+      "locator_kind": "fixture_metadata_descriptor"
+    },
+    "suppressions": [
+      "crack",
+      "keygen",
+      "malware_suspicious",
+      "operating_system_image",
+      "serial",
+      "torrent_only",
+      "unrelated_modern_version",
+      "unsafe_or_blocked",
+      "warez"
+    ],
+    "title": "Windows 7 compatible file recovery utility portable fixture metadata lead"
+  },
+  {
+    "accepted_truth": false,
+    "applied_suppressions": [
+      {
+        "public_explanation": "Crack-related results are blocked.",
+        "review_override_allowed": false,
+        "suppression_id": "crack"
+      },
+      {
+        "public_explanation": "Keygen-related results are blocked.",
+        "review_override_allowed": false,
+        "suppression_id": "keygen"
+      },
+      {
+        "public_explanation": "Suspicious software leads are suppressed.",
+        "review_override_allowed": false,
+        "suppression_id": "malware_suspicious"
+      },
+      {
+        "public_explanation": "Serial-number results are blocked.",
+        "review_override_allowed": false,
+        "suppression_id": "serial"
+      },
+      {
+        "public_explanation": "Torrent-only leads are suppressed.",
+        "review_override_allowed": false,
+        "suppression_id": "torrent_only"
+      },
+      {
+        "public_explanation": "Unsafe or blocked leads are not promoted.",
+        "review_override_allowed": false,
+        "suppression_id": "unsafe_or_blocked"
+      },
+      {
+        "public_explanation": "Warez results are blocked.",
+        "review_override_allowed": false,
+        "suppression_id": "warez"
+      },
+      {
+        "public_explanation": "Wrong-platform results are suppressed.",
+        "review_override_allowed": false,
+        "suppression_id": "wrong_platform"
+      }
+    ],
+    "batch_id": "seed_batch_legacy_software_00",
+    "blocked_actions": [
+      "download",
+      "install_handoff",
+      "execute",
+      "package_download",
+      "promote"
+    ],
+    "candidate_id": "seed_legacy_software_legacy_software_q15_candidate",
+    "confidence_label": "low",
+    "domain_id": "legacy_software",
+    "fixture_derived": true,
+    "query_id": "legacy_software_q15",
+    "review_required": true,
+    "schema_version": "seed_batch_candidate_summary.v0",
+    "source_family": "software_heritage_metadata",
+    "source_locator": {
+      "descriptor_ref": "fixture://software_heritage_metadata/seed_legacy_software_15_legacy_ftp_client_windows_98_installer",
+      "locator_kind": "fixture_metadata_descriptor"
+    },
+    "suppressions": [
+      "crack",
+      "keygen",
+      "malware_suspicious",
+      "serial",
+      "torrent_only",
+      "unsafe_or_blocked",
+      "warez",
+      "wrong_platform"
+    ],
+    "title": "legacy FTP client Windows 98 installer fixture metadata lead"
+  },
+  {
+    "accepted_truth": false,
+    "applied_suppressions": [
+      {
+        "public_explanation": "Crack-related results are blocked.",
+        "review_override_allowed": false,
+        "suppression_id": "crack"
+      },
+      {
+        "public_explanation": "Keygen-related results are blocked.",
+        "review_override_allowed": false,
+        "suppression_id": "keygen"
+      },
+      {
+        "public_explanation": "Serial-number results are blocked.",
+        "review_override_allowed": false,
+        "suppression_id": "serial"
+      },
+      {
+        "public_explanation": "Torrent-only leads are suppressed.",
+        "review_override_allowed": false,
+        "suppression_id": "torrent_only"
+      },
+      {
+        "public_explanation": "Unrelated modern releases are suppressed.",
+        "review_override_allowed": false,
+        "suppression_id": "unrelated_modern_version"
+      },
+      {
+        "public_explanation": "Unsafe or blocked leads are not promoted.",
+        "review_override_allowed": false,
+        "suppression_id": "unsafe_or_blocked"
+      },
+      {
+        "public_explanation": "Warez results are blocked.",
+        "review_override_allowed": false,
+        "suppression_id": "warez"
+      },
+      {
+        "public_explanation": "Web-installer stubs are suppressed for offline-installer searches.",
+        "review_override_allowed": false,
+        "suppression_id": "web_installer_when_offline_requested"
+      },
+      {
+        "public_explanation": "Wrong-platform results are suppressed.",
+        "review_override_allowed": false,
+        "suppression_id": "wrong_platform"
+      }
+    ],
+    "batch_id": "seed_batch_legacy_software_00",
+    "blocked_actions": [
+      "download",
+      "install_handoff",
+      "execute",
+      "package_download",
+      "promote"
+    ],
+    "candidate_id": "seed_legacy_software_legacy_software_q16_candidate",
+    "confidence_label": "low",
+    "domain_id": "legacy_software",
+    "fixture_derived": true,
+    "query_id": "legacy_software_q16",
+    "review_required": true,
+    "schema_version": "seed_batch_candidate_summary.v0",
+    "source_family": "software_heritage_metadata",
+    "source_locator": {
+      "descriptor_ref": "fixture://software_heritage_metadata/seed_legacy_software_16_old_pdf_reader_windows_2000_compatible_installer",
+      "locator_kind": "fixture_metadata_descriptor"
+    },
+    "suppressions": [
+      "crack",
+      "keygen",
+      "serial",
+      "torrent_only",
+      "unrelated_modern_version",
+      "unsafe_or_blocked",
+      "warez",
+      "web_installer_when_offline_requested",
+      "wrong_platform"
+    ],
+    "title": "old PDF reader Windows 2000 compatible installer fixture metadata lead"
+  }
+]

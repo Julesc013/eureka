@@ -8,3 +8,8 @@ Public projections may show read-only summaries. Public users cannot accept,
 reject, promote, mutate, download, extract, or execute source actions.
 
 Operator review remains policy-gated and separate from local apply.
+
+Legacy software review packets also surface suppressions such as cracks,
+keygens, serials, fake driver updaters, wrong platform/version, and web
+installers when offline installers were requested. These suppressions do not
+constitute software safety claims.

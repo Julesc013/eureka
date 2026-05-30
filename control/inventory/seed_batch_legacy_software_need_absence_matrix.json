@@ -1,0 +1,10 @@
+{
+  "schema_version": "seed_batch_legacy_software_need_absence_matrix.v0",
+  "task": "SEED-BATCH-LEGACY-SOFTWARE-00",
+  "known_need_kind": "software_safety_and_provenance_review",
+  "known_need_count": 16,
+  "absence_kinds": ["download_install_execute_absent"],
+  "accepted_truth_created": false,
+  "reviewed_index_mutated": false,
+  "public_index_mutated": false
+}

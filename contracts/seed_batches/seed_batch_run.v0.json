@@ -12,8 +12,14 @@
     "accepted_truth",
     "accepted_truth_created",
     "reviewed_index_mutated",
-    "public_index_mutated"
+    "public_index_mutated",
+    "download_performed",
+    "extraction_executed",
+    "install_execution_enabled"
   ],
   "operator_live_metadata_run_performed": false,
-  "accepted_truth": false
+  "accepted_truth": false,
+  "download_performed": false,
+  "extraction_executed": false,
+  "install_execution_enabled": false
 }

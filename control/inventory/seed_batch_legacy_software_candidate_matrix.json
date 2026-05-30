@@ -1,0 +1,13 @@
+{
+  "schema_version": "seed_batch_legacy_software_candidate_matrix.v0",
+  "task": "SEED-BATCH-LEGACY-SOFTWARE-00",
+  "candidate_source": "fixture_derived_metadata_candidates",
+  "candidate_count": 16,
+  "candidate_kinds": ["source_metadata_candidate", "artifact_candidate", "source_lead", "review_seed"],
+  "candidate_index_mode": "seed_batch_fixture",
+  "suppressions_visible": true,
+  "candidates_require_review": true,
+  "accepted_truth_created": false,
+  "reviewed_index_mutated": false,
+  "public_index_mutated": false
+}

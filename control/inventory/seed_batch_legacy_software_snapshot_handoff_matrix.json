@@ -1,0 +1,10 @@
+{
+  "schema_version": "seed_batch_legacy_software_snapshot_handoff_matrix.v0",
+  "task": "SEED-BATCH-LEGACY-SOFTWARE-00",
+  "snapshot_refresh_handoff_created": true,
+  "snapshot_refresh_executed": false,
+  "requires_separate_snapshot_refresh_gate": true,
+  "accepted_truth_created": false,
+  "reviewed_index_mutated": false,
+  "public_index_mutated": false
+}

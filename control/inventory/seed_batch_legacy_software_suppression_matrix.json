@@ -1,0 +1,27 @@
+{
+  "schema_version": "seed_batch_legacy_software_suppression_matrix.v0",
+  "task": "SEED-BATCH-LEGACY-SOFTWARE-00",
+  "suppressions": [
+    {"suppression_id": "generic_os_iso", "reason": "Suppress operating-system ISO results when the query asks for utilities or installers.", "applies_to_queries": ["legacy_software_q01"], "public_explanation": "OS image results are outside this software utility search.", "action_posture": "blocked_for_promotion", "review_override_allowed": false},
+    {"suppression_id": "operating_system_image", "reason": "Avoid treating OS install media as an app, driver, or utility candidate by itself.", "applies_to_queries": ["legacy_software_q01", "legacy_software_q14"], "public_explanation": "Operating-system images are excluded from this seed batch.", "action_posture": "blocked_for_promotion", "review_override_allowed": false},
+    {"suppression_id": "crack", "reason": "Crack-related results are unsupported and unsafe for review promotion.", "applies_to_queries": ["*"], "public_explanation": "Crack-related results are blocked.", "action_posture": "blocked", "review_override_allowed": false},
+    {"suppression_id": "keygen", "reason": "Keygen-related results are unsupported and unsafe for review promotion.", "applies_to_queries": ["*"], "public_explanation": "Keygen-related results are blocked.", "action_posture": "blocked", "review_override_allowed": false},
+    {"suppression_id": "serial", "reason": "Serial-number-seeking results are unsupported and unsafe for review promotion.", "applies_to_queries": ["*"], "public_explanation": "Serial-number results are blocked.", "action_posture": "blocked", "review_override_allowed": false},
+    {"suppression_id": "warez", "reason": "Warez distribution results are unsupported.", "applies_to_queries": ["*"], "public_explanation": "Warez results are blocked.", "action_posture": "blocked", "review_override_allowed": false},
+    {"suppression_id": "torrent_only", "reason": "Torrent-only records are not useful controlled metadata leads in this batch.", "applies_to_queries": ["*"], "public_explanation": "Torrent-only leads are suppressed.", "action_posture": "blocked", "review_override_allowed": false},
+    {"suppression_id": "malware_suspicious", "reason": "Malware-looking or repackaged download metadata requires blocking or stronger review.", "applies_to_queries": ["*"], "public_explanation": "Suspicious software leads are suppressed.", "action_posture": "blocked", "review_override_allowed": false},
+    {"suppression_id": "fake_driver_updater", "reason": "Driver-updater SEO pages are not driver/support-media evidence.", "applies_to_queries": ["legacy_software_q03", "legacy_software_q05", "legacy_software_q12"], "public_explanation": "Generic driver-updater results are suppressed.", "action_posture": "blocked_for_promotion", "review_override_allowed": false},
+    {"suppression_id": "wrong_platform", "reason": "Wrong operating-system platform matches are not useful candidates.", "applies_to_queries": ["*"], "public_explanation": "Wrong-platform results are suppressed.", "action_posture": "blocked_for_promotion", "review_override_allowed": false},
+    {"suppression_id": "wrong_version", "reason": "Wrong major-version matches are not useful candidates.", "applies_to_queries": ["*"], "public_explanation": "Wrong-version results are suppressed.", "action_posture": "blocked_for_promotion", "review_override_allowed": false},
+    {"suppression_id": "web_installer_when_offline_requested", "reason": "Offline-installer queries should not be satisfied by web stubs.", "applies_to_queries": ["legacy_software_q02", "legacy_software_q06", "legacy_software_q08", "legacy_software_q11", "legacy_software_q12", "legacy_software_q16"], "public_explanation": "Web-installer stubs are suppressed for offline-installer searches.", "action_posture": "blocked_for_promotion", "review_override_allowed": false},
+    {"suppression_id": "unrelated_modern_version", "reason": "Modern versions often do not support the target legacy platform.", "applies_to_queries": ["*"], "public_explanation": "Unrelated modern releases are suppressed.", "action_posture": "blocked_for_promotion", "review_override_allowed": false},
+    {"suppression_id": "source_only_mention", "reason": "A source-code-only mention is not an installer, driver, or support-media candidate by itself.", "applies_to_queries": ["*"], "public_explanation": "Source-only mentions need more evidence.", "action_posture": "needs_more_evidence", "review_override_allowed": false},
+    {"suppression_id": "duplicate", "reason": "Duplicate metadata should collapse into review clusters.", "applies_to_queries": ["*"], "public_explanation": "Duplicate leads are clustered.", "action_posture": "cluster_for_review", "review_override_allowed": false},
+    {"suppression_id": "low_metadata_match", "reason": "Weak title-only matches need stronger metadata before promotion.", "applies_to_queries": ["*"], "public_explanation": "Low-confidence metadata matches need review.", "action_posture": "needs_more_evidence", "review_override_allowed": false},
+    {"suppression_id": "unsafe_or_blocked", "reason": "Unsafe or blocked software-search results cannot be promoted.", "applies_to_queries": ["*"], "public_explanation": "Unsafe or blocked leads are not promoted.", "action_posture": "blocked", "review_override_allowed": false}
+  ],
+  "cracks_keygens_serials_supported": false,
+  "malware_clean_claims_allowed": false,
+  "download_performed": false,
+  "install_execution_enabled": false
+}
