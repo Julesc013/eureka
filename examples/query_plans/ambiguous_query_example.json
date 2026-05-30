@@ -1,0 +1,18 @@
+{
+  "schema_version": "query_plan_example.v0",
+  "example_query": "best apps",
+  "expected_intent": "ambiguous_query",
+  "expected_domain_pack": "general_archive_metadata",
+  "expected_source_families": [
+    "internet_archive_metadata"
+  ],
+  "archive_org_metadata_query": "(apps)",
+  "expected_candidate_suppressions": [],
+  "candidate_only": true,
+  "review_required": true,
+  "accepted_truth_created": false,
+  "download_performed": false,
+  "extraction_executed": false,
+  "model_provider_used": false,
+  "index_mutation_performed": false
+}

@@ -1,0 +1,147 @@
+{
+  "schema_version": "0.1.0",
+  "contract_id": "query_to_source_action_plan.v0",
+  "title": "Query To Source Action Plan Contract v0",
+  "status": "runtime_draft",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "planner_id",
+    "plan_id",
+    "raw_query",
+    "normalized_query",
+    "intent",
+    "intent_confidence",
+    "intent_reasons",
+    "domain_pack",
+    "source_families",
+    "source_query_rewrites",
+    "candidate_suppressions",
+    "candidate_lane_expectations",
+    "source_actions",
+    "work_units",
+    "result_lane_plans",
+    "review_handoff_plans",
+    "explanation",
+    "safety",
+    "non_claims"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "query_to_source_action_plan.v0"
+    },
+    "intent": {
+      "enum": [
+        "find_exact_artifact",
+        "find_software",
+        "find_driver_or_support_media",
+        "find_frontier_resolution_media",
+        "find_manual_or_document",
+        "find_source_release_or_package",
+        "identify_provenance",
+        "broad_research_need",
+        "ambiguous_query"
+      ]
+    },
+    "domain_pack": {
+      "enum": [
+        "legacy_software",
+        "driver_support_media",
+        "frontier_resolution_media",
+        "manuals_docs_scans",
+        "package_source_release",
+        "web_archive_trace",
+        "general_archive_metadata"
+      ]
+    },
+    "source_families": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "internet_archive_metadata",
+          "wayback_cdx_metadata",
+          "github_releases_metadata",
+          "software_heritage_metadata",
+          "package_registry_metadata",
+          "open_library_metadata",
+          "wikidata_metadata",
+          "manual_source_pack"
+        ]
+      }
+    },
+    "source_query_rewrites": {
+      "type": "object",
+      "required": [
+        "archive_org_metadata"
+      ]
+    },
+    "candidate_suppressions": {
+      "type": "array"
+    },
+    "candidate_lane_expectations": {
+      "type": "array"
+    },
+    "source_actions": {
+      "type": "array"
+    },
+    "work_units": {
+      "type": "array"
+    },
+    "review_handoff_plans": {
+      "type": "array"
+    },
+    "safety": {
+      "type": "object",
+      "properties": {
+        "candidate_only": {
+          "const": true
+        },
+        "review_required": {
+          "const": true
+        },
+        "accepted_truth_created": {
+          "const": false
+        },
+        "source_cache_mutated": {
+          "const": false
+        },
+        "candidate_index_mutated": {
+          "const": false
+        },
+        "reviewed_index_mutated": {
+          "const": false
+        },
+        "master_index_mutated": {
+          "const": false
+        },
+        "public_index_mutated": {
+          "const": false
+        },
+        "download_performed": {
+          "const": false
+        },
+        "upload_performed": {
+          "const": false
+        },
+        "extraction_executed": {
+          "const": false
+        },
+        "install_handoff_enabled": {
+          "const": false
+        },
+        "model_provider_used": {
+          "const": false
+        },
+        "deployment_performed": {
+          "const": false
+        }
+      }
+    }
+  },
+  "additionalProperties": true,
+  "notes": [
+    "The runtime planner is deterministic and metadata-only.",
+    "Archive.org metadata may be queried when the bounded public source policy enables candidate search.",
+    "All candidates remain review-only and do not mutate public, local, reviewed, or master indexes."
+  ]
+}

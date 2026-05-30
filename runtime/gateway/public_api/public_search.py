@@ -620,6 +620,8 @@ def _archive_org_candidate_card(
         "trust_lane": "candidate_only",
         "source_lane": "metadata_source",
         "checked_as": "archive_org_metadata_candidate_search",
+        "query_intent": str(candidate.get("query_intent") or ""),
+        "domain_pack": str(candidate.get("domain_pack") or ""),
         "limitations": [
             "metadata_only",
             "candidate_not_reviewed_truth",
@@ -668,7 +670,19 @@ def _archive_org_candidate_card(
         "matched_query_terms": matched,
         "why_matched": [f"matched term: {term}" for term in matched[:6]]
         or ["Archive.org metadata search returned this candidate."],
-        "why_ranked": ["Archive.org metadata search order; candidate requires review."],
+        "why_ranked": [
+            "Archive.org metadata search order; candidate requires review.",
+            *(
+                [f"query plan intent: {candidate.get('query_intent')}"]
+                if candidate.get("query_intent")
+                else []
+            ),
+            *(
+                [f"domain pack: {candidate.get('domain_pack')}"]
+                if candidate.get("domain_pack")
+                else []
+            ),
+        ],
         "result_lane": "source_candidates",
         "user_cost": {
             "score": 3,
@@ -1229,7 +1243,12 @@ def _candidate_search_summary(result: Mapping[str, Any] | None) -> dict[str, Any
     return {
         "enabled": True,
         "status": str(result.get("status") or "unknown"),
+        "query": str(result.get("query") or ""),
+        "source_query": str(result.get("source_query") or result.get("query") or ""),
+        "query_plan": dict(result.get("query_plan") or {}),
         "candidate_count": int(result.get("candidate_count", 0) or 0),
+        "suppressed_candidate_count": int(result.get("suppressed_candidate_count", 0) or 0),
+        "candidate_suppressions_applied": list(result.get("candidate_suppressions_applied") or []),
         "total_http_requests": int(result.get("total_http_requests", 0) or 0),
         "live_call_performed": bool(result.get("live_call_performed", False)),
         "metadata_request_performed": bool(result.get("metadata_request_performed", False)),

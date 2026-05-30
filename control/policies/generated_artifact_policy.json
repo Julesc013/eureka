@@ -83,6 +83,12 @@
       "policy": "Task-local PUBLIC-ALPHA-LAUNCH-DEFER-00 audit evidence records the launch deferral and active discovery redirect; it is not product runtime state."
     },
     {
+      "path": "control/audits/query-to-source-action-planner-00-v0",
+      "artifact_class": "audit_generated",
+      "allow_task_local_drift": true,
+      "policy": "Task-local QUERY-TO-SOURCE-ACTION-PLANNER-00 audit evidence records candidate-only source planning; it is not product runtime state."
+    },
+    {
       "path": "control/audits",
       "artifact_class": "audit_generated",
       "policy": "Audit generated outputs are evidence, not product runtime state."

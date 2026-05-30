@@ -22,3 +22,15 @@ Search contracts define governed public-search presentation and future search be
 
 P96 adds contract-only search result explanation schemas for future result-level explanations. They define evidence-first, public-safe, user-readable and audit-readable explanation records, components, and policy gates. No runtime explanation generator, hidden score, result suppression, public search response change, ranking change, model call, telemetry, source/evidence/candidate/index mutation, or production search behavior is added.
 <!-- P96-SEARCH-RESULT-EXPLANATION-CONTRACT-END -->
+
+<!-- QUERY-TO-SOURCE-ACTION-PLANNER-START -->
+## Query To Source Action Planner v0
+
+`query_plan/query_to_source_action_plan.v0.json` defines the runtime-draft packet
+for deterministic query intent classification, domain-pack routing, source
+query rewrites, candidate suppressions, candidate lane expectations, and
+review-only source-action planning. The packet may steer Archive.org
+metadata-only candidate search. It does not create accepted truth, mutate
+indexes, enable downloads or extraction, call model providers, or claim public
+launch readiness.
+<!-- QUERY-TO-SOURCE-ACTION-PLANNER-END -->

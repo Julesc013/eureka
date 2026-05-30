@@ -4,9 +4,11 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 import hashlib
+import re
 import urllib.parse
 from typing import Any, Callable, Mapping
 
+from runtime.search.query_plan import archive_org_metadata_query, plan_query_to_source_actions
 from runtime.source.observation.internet_archive_live_transport import (
     IALiveTransport,
     IALiveTransportPolicy,
@@ -47,8 +49,10 @@ class ArchiveOrgMetadataCandidateProvider:
         normalized_query = _normalize_query(query)
         if not normalized_query:
             return _empty_result("blocked", "empty_query", query="")
+        query_plan = plan_query_to_source_actions(normalized_query)
+        source_query = archive_org_metadata_query(query_plan)
         rows = _bounded_rows(limit, self.rows)
-        cache_key = (normalized_query, rows)
+        cache_key = (normalized_query, source_query, rows)
         cache = getattr(self, "_cache")
         if cache_key in cache:
             cached = _clone_json(cache[cache_key])
@@ -59,7 +63,7 @@ class ArchiveOrgMetadataCandidateProvider:
             cached["source_probe_executed"] = False
             return cached
 
-        request_url = build_archive_org_metadata_search_url(normalized_query, rows)
+        request_url = build_archive_org_metadata_search_url(source_query, rows)
         policy = IALiveTransportPolicy(
             allowed_domains=("archive.org",),
             total_http_requests_max=1,
@@ -101,16 +105,26 @@ class ArchiveOrgMetadataCandidateProvider:
         if payload.get("error"):
             return _failure_result(normalized_query, "archive_org_error", str(payload.get("error")))
 
-        candidates = _candidate_records(normalized_query, payload, rows)
+        candidate_result = _candidate_records(
+            normalized_query,
+            payload,
+            rows,
+            query_plan=query_plan,
+        )
+        candidates = candidate_result["candidates"]
         result = {
             "schema_version": SCHEMA_VERSION,
             "status": "succeeded",
             "query": normalized_query,
+            "source_query": source_query,
+            "query_plan": _public_query_plan_summary(query_plan),
             "source_id": SOURCE_ID,
             "source_family": SOURCE_FAMILY,
             "source_label": "Internet Archive metadata search",
             "endpoint_class": "archive_org_metadata_search",
             "candidate_count": len(candidates),
+            "suppressed_candidate_count": candidate_result["suppressed_candidate_count"],
+            "candidate_suppressions_applied": candidate_result["candidate_suppressions_applied"],
             "candidates": candidates,
             "total_http_requests": 1,
             "live_call_performed": True,
@@ -149,12 +163,30 @@ def build_archive_org_metadata_search_url(query: str, rows: int) -> str:
     return f"{ARCHIVE_ORG_BASE_URL}/advancedsearch.php?{urllib.parse.urlencode(params)}"
 
 
-def _candidate_records(query: str, payload: Mapping[str, Any], rows: int) -> list[dict[str, Any]]:
+def _candidate_records(
+    query: str,
+    payload: Mapping[str, Any],
+    rows: int,
+    *,
+    query_plan: Mapping[str, Any],
+) -> dict[str, Any]:
     response = payload.get("response", {})
     docs = response.get("docs", []) if isinstance(response, Mapping) else []
     candidates: list[dict[str, Any]] = []
+    suppressions = [
+        item
+        for item in query_plan.get("candidate_suppressions", [])
+        if isinstance(item, Mapping)
+    ]
+    suppressed_count = 0
+    applied: set[str] = set()
     for index, item in enumerate(docs[:rows] if isinstance(docs, list) else []):
         if not isinstance(item, Mapping):
+            continue
+        suppression_id = _candidate_suppression_id(item, suppressions)
+        if suppression_id:
+            suppressed_count += 1
+            applied.add(suppression_id)
             continue
         identifier = _text(item.get("identifier"))
         if not identifier:
@@ -180,6 +212,9 @@ def _candidate_records(query: str, payload: Mapping[str, Any], rows: int) -> lis
             "source_id": SOURCE_ID,
             "source_family": SOURCE_FAMILY,
             "source_label": "Internet Archive metadata search",
+            "query_plan_ref": query_plan.get("plan_id"),
+            "query_intent": query_plan.get("intent"),
+            "domain_pack": query_plan.get("domain_pack"),
             "accepted_truth": False,
             "review_required": True,
             "raw_response_committed": False,
@@ -190,7 +225,11 @@ def _candidate_records(query: str, payload: Mapping[str, Any], rows: int) -> lis
             "warnings": _warnings(),
         }
         candidates.append(candidate)
-    return candidates
+    return {
+        "candidates": candidates,
+        "suppressed_candidate_count": suppressed_count,
+        "candidate_suppressions_applied": sorted(applied),
+    }
 
 
 def _empty_result(status: str, reason: str, *, query: str) -> dict[str, Any]:
@@ -237,6 +276,71 @@ def _failure_result(
         }
     )
     return result
+
+
+def _public_query_plan_summary(query_plan: Mapping[str, Any]) -> dict[str, Any]:
+    return {
+        "schema_version": "query_to_source_action_plan_summary.v0",
+        "plan_id": str(query_plan.get("plan_id") or ""),
+        "planner_id": str(query_plan.get("planner_id") or ""),
+        "intent": str(query_plan.get("intent") or ""),
+        "intent_confidence": str(query_plan.get("intent_confidence") or ""),
+        "domain_pack": str(query_plan.get("domain_pack") or ""),
+        "source_families": [str(item) for item in query_plan.get("source_families", []) or []],
+        "archive_org_metadata_query": archive_org_metadata_query(query_plan),
+        "candidate_suppressions": [
+            {
+                "suppression_id": str(item.get("suppression_id") or ""),
+                "terms": [str(term) for term in item.get("terms", []) or []],
+                "reason": str(item.get("reason") or ""),
+            }
+            for item in query_plan.get("candidate_suppressions", []) or []
+            if isinstance(item, Mapping)
+        ],
+        "candidate_lane_expectations": [
+            dict(item)
+            for item in query_plan.get("candidate_lane_expectations", []) or []
+            if isinstance(item, Mapping)
+        ],
+        "explanation": dict(query_plan.get("explanation") or {}),
+        "accepted_truth": False,
+        "review_required": True,
+        "download_performed": False,
+        "extraction_executed": False,
+        "model_provider_used": False,
+        "index_mutation_performed": False,
+    }
+
+
+def _candidate_suppression_id(
+    item: Mapping[str, Any],
+    suppressions: list[Mapping[str, Any]],
+) -> str:
+    haystack = " ".join(
+        part
+        for part in (
+            _text(item.get("identifier")),
+            _text(item.get("title")),
+            _text_or_list(item.get("description")),
+            _text(item.get("mediatype")),
+            " ".join(_text_list(item.get("collection"))),
+        )
+        if part
+    ).casefold()
+    for suppression in suppressions:
+        for term in suppression.get("terms", []) or []:
+            if _contains_suppression_term(haystack, str(term)):
+                return str(suppression.get("suppression_id") or "candidate_suppressed")
+    return ""
+
+
+def _contains_suppression_term(haystack: str, term: str) -> bool:
+    normalized = term.casefold().strip()
+    if not normalized:
+        return False
+    if re.fullmatch(r"[a-z0-9.]+", normalized):
+        return re.search(rf"\b{re.escape(normalized)}\b", haystack) is not None
+    return normalized in haystack
 
 
 def _bounded_rows(*values: int) -> int:

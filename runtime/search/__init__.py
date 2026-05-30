@@ -1,1 +1,1 @@
-"""Canonical runtime.search runtime package family."""
+"""Search runtime helpers outside the reviewed local-index engine."""

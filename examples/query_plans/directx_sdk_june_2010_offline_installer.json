@@ -1,0 +1,23 @@
+{
+  "schema_version": "query_plan_example.v0",
+  "example_query": "DirectX SDK June 2010 offline installer",
+  "expected_intent": "find_exact_artifact",
+  "expected_domain_pack": "legacy_software",
+  "expected_source_families": [
+    "internet_archive_metadata",
+    "github_releases_metadata",
+    "package_registry_metadata",
+    "manual_source_pack"
+  ],
+  "archive_org_metadata_query": "mediatype:software \"DirectX SDK\" \"June 2010\" (\"offline installer\" OR redistributable OR installer OR SDK) -iso -\"operating system image\" -\"installation media\" -\"windows 7 iso\"",
+  "expected_candidate_suppressions": [
+    "suppress_os_images_for_software_queries"
+  ],
+  "candidate_only": true,
+  "review_required": true,
+  "accepted_truth_created": false,
+  "download_performed": false,
+  "extraction_executed": false,
+  "model_provider_used": false,
+  "index_mutation_performed": false
+}

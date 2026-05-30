@@ -1,0 +1,23 @@
+{
+  "schema_version": "query_plan_example.v0",
+  "example_query": "New York 1993 D-Theater HD demo tape original source",
+  "expected_intent": "find_frontier_resolution_media",
+  "expected_domain_pack": "frontier_resolution_media",
+  "expected_source_families": [
+    "internet_archive_metadata",
+    "wayback_cdx_metadata",
+    "wikidata_metadata",
+    "manual_source_pack"
+  ],
+  "archive_org_metadata_query": "(mediatype:movies OR mediatype:texts OR mediatype:collection) \"New York\" 1993 (\"D-Theater\" OR \"D-VHS\" OR \"D VHS\" OR JVC OR \"Hi-Vision\" OR MUSE OR \"HD demo\" OR \"demo tape\") -tourism -\"city guide\" -\"travel guide\" -\"stock footage\"",
+  "expected_candidate_suppressions": [
+    "suppress_generic_city_or_tourism_media"
+  ],
+  "candidate_only": true,
+  "review_required": true,
+  "accepted_truth_created": false,
+  "download_performed": false,
+  "extraction_executed": false,
+  "model_provider_used": false,
+  "index_mutation_performed": false
+}

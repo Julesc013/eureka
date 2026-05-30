@@ -1,0 +1,69 @@
+{
+  "schema_version": "query_to_source_action_planner_audit.v0",
+  "task": "QUERY-TO-SOURCE-ACTION-PLANNER-00",
+  "status": "validated",
+  "summary": "Added a deterministic domain-aware query planner for source actions and candidate lanes.",
+  "runtime_added": [
+    "runtime/search/query_plan/planner.py"
+  ],
+  "public_candidate_lane_integration": [
+    "runtime/source/observation/archive_org_public_metadata.py"
+  ],
+  "contracts_added": [
+    "contracts/search/query_plan/query_to_source_action_plan.v0.json"
+  ],
+  "examples_added": [
+    "examples/query_plans/new_york_1993_d_theater_hd_demo_tape_original_source.json",
+    "examples/query_plans/windows_7_compatible_portable_utilities_not_windows_7_iso.json",
+    "examples/query_plans/stylewriter_2500_mac_os_8_driver.json",
+    "examples/query_plans/directx_sdk_june_2010_offline_installer.json",
+    "examples/query_plans/ambiguous_query_example.json"
+  ],
+  "archive_org_metadata_candidate_path": {
+    "source_policy": "archive_org_metadata_candidates",
+    "metadata_only": true,
+    "candidate_only": true,
+    "review_required": true,
+    "source_query_rewrite_enabled": true,
+    "candidate_suppressions_enabled": true
+  },
+  "boundary_flags": {
+    "deployment_performed": false,
+    "public_launch_performed": false,
+    "production_readiness_claimed": false,
+    "public_launch_readiness_claimed": false,
+    "accepted_truth_created": false,
+    "source_cache_mutated": false,
+    "candidate_index_mutated": false,
+    "reviewed_index_mutated": false,
+    "master_index_mutated": false,
+    "public_index_mutated": false,
+    "downloads_enabled": false,
+    "download_performed": false,
+    "uploads_enabled": false,
+    "extraction_enabled": false,
+    "extraction_executed": false,
+    "install_handoff_enabled": false,
+    "model_provider_used": false,
+    "telemetry_enabled": false
+  },
+  "validation_summary": {
+    "git_diff_check": "pass_with_windows_crlf_warnings",
+    "validate_query_to_source_action_planner": "pass",
+    "validate_public_alpha_readonly": "pass",
+    "validate_source_action_kernel": "pass",
+    "validate_source_wave": "pass",
+    "validate_domain_packs": "pass",
+    "check_architecture_boundaries": "pass",
+    "check_generated_artifact_cleanliness": "pass",
+    "focused_query_planner_tests": "pass",
+    "public_search_api_regression_tests": "pass",
+    "aide_doctor": "pass",
+    "aide_validate": "pass",
+    "aide_test": "pass",
+    "aide_selftest": "pass",
+    "aide_verify": "pass",
+    "aide_review_pack": "pass"
+  },
+  "next_task": "CANDIDATE-INDEX-RUNTIME-00"
+}

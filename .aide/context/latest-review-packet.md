@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (5254 chars, 1314 approximate tokens)
+- `.aide/context/latest-task-packet.md` (5268 chars, 1317 approximate tokens)
 
 ## Context Packet Reference
 
@@ -35,29 +35,29 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
-- allowed: `contracts/api/search_request.v0.json` (M; matches active task allowed path)
-- allowed: `contracts/api/search_response.v0.json` (M; matches active task allowed path)
-- allowed: `contracts/api/search_result_card.v0.json` (M; matches active task allowed path)
-- allowed: `contracts/api/source_status.v0.json` (M; matches active task allowed path)
-- allowed: `control/inventory/publication/public_search_routes.json` (M; matches active task allowed path)
-- allowed: `control/inventory/publication/public_search_safety.json` (M; matches active task allowed path)
-- allowed: `docs/operations/PUBLIC_SEARCH_LOCAL_INDEX_ONLY_MODE.md` (M; matches active task allowed path)
-- allowed: `docs/operations/PUBLIC_SEARCH_RUNTIME_READINESS_CHECKLIST.md` (M; matches active task allowed path)
-- allowed: `docs/operations/PUBLIC_SEARCH_SAFETY_AND_ABUSE_GUARD.md` (M; matches active task allowed path)
-- allowed: `docs/reference/PUBLIC_SEARCH_API_CONTRACT.md` (M; matches active task allowed path)
-- allowed: `runtime/gateway/public_api/demo_support.py` (M; matches active task allowed path)
+- allowed: `contracts/search/README.md` (M; matches active task allowed path)
+- allowed: `contracts/search/query_plan/README.md` (A; matches active task allowed path)
+- allowed: `contracts/search/query_plan/query_to_source_action_plan.v0.json` (A; matches active task allowed path)
+- allowed: `control/audits/query-to-source-action-planner-00-v0/README.md` (A; matches active task allowed path)
+- allowed: `control/audits/query-to-source-action-planner-00-v0/query_to_source_action_planner_report.json` (A; matches active task allowed path)
+- allowed: `control/audits/query-to-source-action-planner-00-v0/validation.md` (A; matches active task allowed path)
+- allowed: `control/policies/generated_artifact_policy.json` (M; matches active task allowed path)
+- allowed: `docs/architecture/QUERY_TO_SOURCE_ACTION_PLANNER.md` (A; matches active task allowed path)
+- allowed: `examples/query_plans/README.md` (A; matches active task allowed path)
+- allowed: `examples/query_plans/ambiguous_query_example.json` (A; matches active task allowed path)
+- allowed: `examples/query_plans/directx_sdk_june_2010_offline_installer.json` (A; matches active task allowed path)
+- allowed: `examples/query_plans/new_york_1993_d_theater_hd_demo_tape_original_source.json` (A; matches active task allowed path)
+- allowed: `examples/query_plans/stylewriter_2500_mac_os_8_driver.json` (A; matches active task allowed path)
+- allowed: `examples/query_plans/windows_7_compatible_portable_utilities_not_windows_7_iso.json` (A; matches active task allowed path)
 - allowed: `runtime/gateway/public_api/public_search.py` (M; matches active task allowed path)
-- allowed: `runtime/gateway/tests/test_public_search_api.py` (M; matches active task allowed path)
-- allowed: `runtime/gateway/tests/test_public_search_validation.py` (M; matches active task allowed path)
-- allowed: `runtime/source/observation/archive_org_public_metadata.py` (??; matches active task allowed path)
-- allowed: `runtime/source/observation/internet_archive_live_transport.py` (M; matches active task allowed path)
-- allowed: `surfaces/web/server/public_alpha_config.py` (M; matches active task allowed path)
-- allowed: `surfaces/web/server/server_config.py` (M; matches active task allowed path)
-- allowed: `surfaces/web/tests/test_public_alpha_wrapper_config.py` (M; matches active task allowed path)
-- allowed: `surfaces/web/workbench/render_public_search.py` (M; matches active task allowed path)
-- allowed: `tests/operations/test_public_search_api_contract.py` (M; matches active task allowed path)
-- allowed: `tests/operations/test_public_search_safety_abuse_guard.py` (M; matches active task allowed path)
-- additional changed paths omitted from compact packet: 4; see task evidence changed-files report
+- allowed: `runtime/search/__init__.py` (M; matches active task allowed path)
+- allowed: `runtime/search/query_plan/__init__.py` (A; matches active task allowed path)
+- allowed: `runtime/search/query_plan/planner.py` (A; matches active task allowed path)
+- allowed: `runtime/source/observation/archive_org_public_metadata.py` (M; matches active task allowed path)
+- allowed: `scripts/eureka_query_plan.py` (A; matches active task allowed path)
+- allowed: `scripts/validate_query_to_source_action_planner.py` (A; matches active task allowed path)
+- allowed: `tests/runtime/test_archive_org_candidate_planning.py` (A; matches active task allowed path)
+- additional changed paths omitted from compact packet: 6; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -67,8 +67,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 6724
-- approx_tokens: 1681
+- chars: 6798
+- approx_tokens: 1700
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

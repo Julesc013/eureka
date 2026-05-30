@@ -1,0 +1,22 @@
+{
+  "schema_version": "query_plan_example.v0",
+  "example_query": "StyleWriter 2500 Mac OS 8 driver",
+  "expected_intent": "find_driver_or_support_media",
+  "expected_domain_pack": "driver_support_media",
+  "expected_source_families": [
+    "internet_archive_metadata",
+    "wayback_cdx_metadata",
+    "manual_source_pack"
+  ],
+  "archive_org_metadata_query": "(mediatype:software OR mediatype:texts) \"StyleWriter 2500\" \"Mac OS 8\" (driver OR drivers OR firmware OR \"support cd\" OR printer) -\"unrelated printer model\" -laserwriter -\"stylewriter 2400\"",
+  "expected_candidate_suppressions": [
+    "suppress_unrelated_driver_models"
+  ],
+  "candidate_only": true,
+  "review_required": true,
+  "accepted_truth_created": false,
+  "download_performed": false,
+  "extraction_executed": false,
+  "model_provider_used": false,
+  "index_mutation_performed": false
+}

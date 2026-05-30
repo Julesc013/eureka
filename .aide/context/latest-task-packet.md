@@ -2,11 +2,11 @@
 
 ## PHASE
 
-UNSPECIFIED - ACTIVE-DISCOVERY-AND-CANDIDATE-INTAKE-00
+UNSPECIFIED - QUERY-TO-SOURCE-ACTION-PLANNER-00
 
 ## GOAL
 
-ACTIVE-DISCOVERY-AND-CANDIDATE-INTAKE-00
+QUERY-TO-SOURCE-ACTION-PLANNER-00
 
 ## WHY
 
@@ -44,23 +44,22 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 - `.aide/**`
 - `AGENTS.md`
+- `docs/architecture/**`
 - `docs/operations/**`
 - `docs/reference/**`
 - `control/inventory/**`
 - `control/audits/**`
 - `control/policies/**`
-- `contracts/api/**`
+- `contracts/search/**`
 - `runtime/gateway/public_api/**`
 - `runtime/gateway/tests/**`
+- `runtime/search/**`
 - `runtime/source/observation/**`
-- `surfaces/web/server/**`
-- `surfaces/web/workbench/**`
-- `surfaces/web/tests/**`
+- `examples/query_plans/**`
+- `scripts/eureka_query_plan.py`
 - `scripts/local_queue_progress.py`
 - `scripts/validate_*.py`
 - `scripts/check_*.py`
-- `tools/release/**`
-- `tools/validators/**`
 - `tests/runtime/**`
 - `tests/operations/**`
 - `tests/aide/**`
@@ -80,10 +79,10 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 - `site/**`
 - `native/**`
 - `crates/**`
-- `examples/**`
+- `examples/**` unless covered by allowed paths above
 - `evals/**`
-- `tests/**` unless this is an AIDE/control-plane test repair
-- `scripts/**` unless this is an AIDE validator/check repair
+- `tests/**` unless covered by allowed paths above
+- `scripts/**` unless covered by allowed paths above
 - raw provider credentials, API keys, local caches, raw prompt logs, raw responses, and source AIDE repository state
 
 ## IMPLEMENTATION
@@ -102,15 +101,15 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 - `py -3 .aide/scripts/aide_lite.py snapshot`
 - `py -3 .aide/scripts/aide_lite.py index`
 - `py -3 .aide/scripts/aide_lite.py context`
-- `py -3 .aide/scripts/aide_lite.py pack --task "AIDE-EVAL-GREEN-01"`
+- `py -3 .aide/scripts/aide_lite.py pack --task "QUERY-TO-SOURCE-ACTION-PLANNER-00"`
 - `py -3 .aide/scripts/aide_lite.py test`
 - `py -3 .aide/scripts/aide_lite.py selftest`
 - `py -3 .aide/scripts/aide_lite.py verify`
 - `py -3 .aide/scripts/aide_lite.py review-pack`
-- `py -3 .aide/scripts/aide_lite.py eval run`
 - `python scripts/check_architecture_boundaries.py`
 - `python scripts/check_generated_artifact_cleanliness.py --check --json`
-- `python -m unittest discover -s tests -t .`
+- `python scripts/validate_query_to_source_action_planner.py`
+- focused query planner unittest modules
 - `git diff --check`
 
 ## COMMITS
@@ -131,8 +130,8 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 ## NON_GOALS
 
 - No downloads, extraction, installs, uploads, accounts, telemetry, production-readiness claim, public-launch claim, deployment, main promotion, force-push, history rewrite, SYN implementation, or F0 implementation.
-- No model/provider calls, live model routing, local model setup, exact tokenizer, provider billing ledger, Commander, Mobile, MCP/A2A, or autonomous loop unless a future reviewed queue item explicitly authorizes it.
 - No source-cache mutation, evidence-ledger mutation, candidate promotion, public-index mutation, local-index mutation, or master-index mutation.
+- No model/provider calls, live model routing, local model setup, exact tokenizer, provider billing ledger, Commander, Mobile, MCP/A2A, or autonomous loop unless a future reviewed queue item explicitly authorizes it.
 
 ## ACCEPTANCE
 
@@ -149,8 +148,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4800
-- approx_tokens: 1200
+- chars: 4786
+- approx_tokens: 1197
 - budget_status: PASS
 - warnings:
   - none
