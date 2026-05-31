@@ -1,0 +1,6 @@
+{
+  "repairs": [],
+  "schema_version": "live_metadata_pilot_failure_repair_log.v0",
+  "status": "no_failures_recorded",
+  "task": "LIVE-METADATA-PILOT-BATCH-00"
+}

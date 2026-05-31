@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LiveMetadataPilotResult",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "task",
+    "status",
+    "approval_verified",
+    "operator_live_metadata_run_performed",
+    "raw_live_response_committed",
+    "download_performed",
+    "extraction_executed",
+    "accepted_truth_created",
+    "reviewed_index_mutated",
+    "public_index_mutated"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "live_metadata_pilot_result.v0"
+    },
+    "task": {
+      "const": "LIVE-METADATA-PILOT-BATCH-00"
+    },
+    "status": {
+      "enum": [
+        "waiting_for_operator_live_metadata_approval",
+        "pass",
+        "pass_with_warnings",
+        "partial",
+        "blocked",
+        "fail"
+      ]
+    },
+    "approval_verified": {
+      "type": "boolean"
+    },
+    "operator_live_metadata_run_performed": {
+      "type": "boolean"
+    },
+    "raw_live_response_committed": {
+      "const": false
+    },
+    "download_performed": {
+      "const": false
+    },
+    "extraction_executed": {
+      "const": false
+    },
+    "accepted_truth_created": {
+      "const": false
+    },
+    "reviewed_index_mutated": {
+      "const": false
+    },
+    "public_index_mutated": {
+      "const": false
+    }
+  },
+  "additionalProperties": true
+}

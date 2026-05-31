@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (5026 chars, 1257 approximate tokens)
+- `.aide/context/latest-task-packet.md` (5520 chars, 1380 approximate tokens)
 
 ## Context Packet Reference
 
@@ -35,29 +35,29 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/PUBLIC-SEARCH-UX-GATE-00` (??; matches active task allowed path)
-- allowed: `.aide/queue/PUBLIC-SEARCH-UX-MODEL-00` (??; matches active task allowed path)
-- allowed: `.aide/queue/PUBLIC-SEARCH-UX-MVP-00` (??; matches active task allowed path)
+- allowed: `.aide/queue/LIVE-METADATA-PILOT-BATCH-00/README.md` (M; matches active task allowed path)
+- allowed: `.aide/queue/LIVE-METADATA-PILOT-BATCH-00/status.json` (??; matches active task allowed path)
 - allowed: `.aide/queue/index.yaml` (M; matches active task allowed path)
-- allowed: `contracts/view/models/public_search` (??; matches active task allowed path)
-- allowed: `control/audits/public-search-ux-model-00-v0` (??; matches active task allowed path)
-- allowed: `control/inventory/public_search_ux_model_boundary_report.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_search_ux_model_contract_authority_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_search_ux_model_failure_repair_log.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_search_ux_model_input_state.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_search_ux_model_next_task_decision.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_search_ux_model_projection_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_search_ux_model_result.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_search_ux_model_result_card_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_search_ux_model_validation_matrix.json` (??; matches active task allowed path)
-- allowed: `control/policies/generated_artifact_policy.json` (M; matches active task allowed path)
-- allowed: `control/policies/public_search_ux_model_policy.json` (??; matches active task allowed path)
-- allowed: `docs/architecture/PUBLIC_SEARCH_UX_MODEL.md` (??; matches active task allowed path)
-- allowed: `docs/operations/PUBLIC_SEARCH_UX_MODEL_RUNBOOK.md` (??; matches active task allowed path)
-- allowed: `docs/reference/PUBLIC_SEARCH_RESULT_CARD_VIEW_MODEL.md` (??; matches active task allowed path)
-- allowed: `docs/reference/PUBLIC_SEARCH_VIEW_MODELS.md` (??; matches active task allowed path)
-- allowed: `examples/view_models/public_search` (??; matches active task allowed path)
-- additional changed paths omitted from compact packet: 9; see task evidence changed-files report
+- allowed: `contracts/source/action/live_metadata_pilot_approval.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/source/action/live_metadata_pilot_request_plan.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/source/action/live_metadata_pilot_result.v0.json` (??; matches active task allowed path)
+- allowed: `control/audits/live-metadata-pilot-batch-00-v0` (??; matches active task allowed path)
+- allowed: `control/inventory/live_metadata_pilot_batch_approval_state.json` (??; matches active task allowed path)
+- allowed: `control/inventory/live_metadata_pilot_batch_input_state.json` (??; matches active task allowed path)
+- allowed: `control/inventory/live_metadata_pilot_boundary_report.json` (??; matches active task allowed path)
+- allowed: `control/inventory/live_metadata_pilot_candidate_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/live_metadata_pilot_failure_repair_log.json` (??; matches active task allowed path)
+- allowed: `control/inventory/live_metadata_pilot_next_task_decision.json` (??; matches active task allowed path)
+- allowed: `control/inventory/live_metadata_pilot_public_alpha_reassess_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/live_metadata_pilot_redaction_summary.json` (??; matches active task allowed path)
+- allowed: `control/inventory/live_metadata_pilot_request_plan_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/live_metadata_pilot_result.json` (??; matches active task allowed path)
+- allowed: `control/inventory/live_metadata_pilot_review_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/live_metadata_pilot_scout_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/live_metadata_pilot_seed_query_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/live_metadata_pilot_smoke_result.json` (??; matches active task allowed path)
+- allowed: `control/inventory/live_metadata_pilot_snapshot_handoff_matrix.json` (??; matches active task allowed path)
+- additional changed paths omitted from compact packet: 36; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -67,8 +67,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 6770
-- approx_tokens: 1693
+- chars: 6931
+- approx_tokens: 1733
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

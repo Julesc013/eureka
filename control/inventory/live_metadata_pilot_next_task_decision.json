@@ -1,0 +1,12 @@
+{
+  "planned_after": [
+    "SNAPSHOT-REFRESH-01",
+    "PUBLIC-ALPHA-REASSESS-01",
+    "SEED-BATCH-MANUALS-SCANS-00",
+    "SEED-BATCH-DRIVER-SUPPORT-00"
+  ],
+  "recommended_next_task": "LIVE-METADATA-PILOT-BATCH-00 - provide approval and run bounded metadata pilot",
+  "schema_version": "live_metadata_pilot_next_task_decision.v0",
+  "status": "waiting_for_operator_live_metadata_approval",
+  "task": "LIVE-METADATA-PILOT-BATCH-00"
+}

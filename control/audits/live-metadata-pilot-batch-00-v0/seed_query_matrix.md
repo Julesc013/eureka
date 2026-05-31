@@ -1,0 +1,3068 @@
+# Seed Query Matrix
+
+```json
+{
+  "queries": [
+    {
+      "accepted_truth": false,
+      "domain_id": "frontier_resolution_media",
+      "expected_candidate_kinds": [
+        "source_metadata_candidate",
+        "provenance_lead",
+        "review_seed"
+      ],
+      "live_allowed": false,
+      "pilot_batch_id": "live_metadata_pilot_batch_00",
+      "query_id": "frontier_media_q01",
+      "query_plan": {
+        "accepted_truth": false,
+        "accepted_truth_created": false,
+        "batch_id": "seed_batch_frontier_media_00",
+        "candidate_suppressions": [
+          "suppress_generic_city_or_tourism_media"
+        ],
+        "created_at": "2026-05-31T00:00:00Z",
+        "deployment_performed": false,
+        "domain_id": "frontier_resolution_media",
+        "download_performed": false,
+        "extraction_executed": false,
+        "intent": "find_frontier_resolution_media",
+        "master_index_mutated": false,
+        "model_provider_used": false,
+        "operator_instance_mutated": false,
+        "plan_id": "seed_query_plan:d4a8f229c25b08e8",
+        "planner_domain_pack": "frontier_resolution_media",
+        "planner_intent": "find_frontier_resolution_media",
+        "planner_plan": {
+          "candidate_lane_expectations": [
+            {
+              "expected": true,
+              "lane": "reviewed_local_results",
+              "source": "controlled local index",
+              "truth_status": "reviewed_only"
+            },
+            {
+              "expected": true,
+              "lane": "archive_org_metadata_candidates",
+              "review_required": true,
+              "source": "internet_archive_metadata",
+              "truth_status": "candidate_only"
+            },
+            {
+              "blocked_actions": [
+                "download",
+                "install_handoff",
+                "execute",
+                "upload",
+                "extract"
+              ],
+              "expected": true,
+              "lane": "blocked_actions"
+            },
+            {
+              "domain_pack": "frontier_resolution_media",
+              "expected": true,
+              "lane": "source_actions_planned",
+              "truth_status": "plan_only"
+            }
+          ],
+          "candidate_suppressions": [
+            {
+              "applies_to": [
+                "candidate_results",
+                "source_query_rewrites"
+              ],
+              "reason": "Frontier-resolution media searches should avoid generic location media when a technical tape/source is requested.",
+              "suppression_id": "suppress_generic_city_or_tourism_media",
+              "terms": [
+                "tourism",
+                "city guide",
+                "travel guide",
+                "stock footage"
+              ]
+            }
+          ],
+          "domain_pack": "frontier_resolution_media",
+          "explanation": {
+            "blocked": [
+              "download",
+              "install_handoff",
+              "execute",
+              "upload",
+              "extract",
+              "model_provider_call",
+              "automatic_promotion"
+            ],
+            "domain_pack": "frontier_resolution_media",
+            "factors": [
+              {
+                "factor": "intent",
+                "reasons": [
+                  "frontier-resolution media terms were detected"
+                ],
+                "value": "find_frontier_resolution_media"
+              },
+              {
+                "factor": "domain_pack",
+                "value": "frontier_resolution_media"
+              },
+              {
+                "factor": "source_families",
+                "value": [
+                  "internet_archive_metadata",
+                  "wayback_cdx_metadata",
+                  "wikidata_metadata",
+                  "manual_source_pack"
+                ]
+              },
+              {
+                "factor": "archive_org_metadata_query",
+                "value": "(mediatype:movies OR mediatype:texts OR mediatype:collection) \"New York\" 1993 (\"D-Theater\" OR \"D-VHS\" OR \"D VHS\" OR JVC OR \"Hi-Vision\" OR MUSE OR \"HD demo\" OR \"demo tape\") -tourism -\"city guide\" -\"travel guide\" -\"stock footage\""
+              },
+              {
+                "factor": "candidate_suppressions",
+                "value": [
+                  "suppress_generic_city_or_tourism_media"
+                ]
+              }
+            ],
+            "intent": "find_frontier_resolution_media",
+            "plan_id": "query_source_plan:be74e8a9f3f2e7b6",
+            "query": "New York 1993 D-Theater HD demo tape original source",
+            "schema_version": "query_plan_explanation_packet.v0",
+            "summary": "Deterministic query planner selected a domain pack, source families, metadata query rewrites, suppressions, and review-only candidate lanes.",
+            "uncertainty": [
+              "Archive.org metadata results are candidates only.",
+              "A metadata match does not establish compatibility, rights, safety, or provenance truth."
+            ]
+          },
+          "intent": "find_frontier_resolution_media",
+          "intent_confidence": "high",
+          "intent_reasons": [
+            "frontier-resolution media terms were detected"
+          ],
+          "non_claims": [
+            "not_production_readiness",
+            "not_public_launch_readiness",
+            "not_accepted_truth",
+            "not_rights_clearance",
+            "not_malware_scan",
+            "not_download_permission",
+            "not_full_archive_exhaustiveness_claim"
+          ],
+          "normalized_query": "New York 1993 D-Theater HD demo tape original source",
+          "plan_id": "query_source_plan:be74e8a9f3f2e7b6",
+          "planner_id": "eureka_query_to_source_action_planner_v0",
+          "raw_query": "New York 1993 D-Theater HD demo tape original source",
+          "result_lane_plans": [
+            {
+              "expected": true,
+              "lane": "reviewed_local_results",
+              "source": "controlled local index",
+              "truth_status": "reviewed_only"
+            },
+            {
+              "expected": true,
+              "lane": "archive_org_metadata_candidates",
+              "review_required": true,
+              "source": "internet_archive_metadata",
+              "truth_status": "candidate_only"
+            },
+            {
+              "blocked_actions": [
+                "download",
+                "install_handoff",
+                "execute",
+                "upload",
+                "extract"
+              ],
+              "expected": true,
+              "lane": "blocked_actions"
+            },
+            {
+              "domain_pack": "frontier_resolution_media",
+              "expected": true,
+              "lane": "source_actions_planned",
+              "truth_status": "plan_only"
+            }
+          ],
+          "review_handoff_plans": [
+            {
+              "accepted_reviewed_truth_created": false,
+              "candidate_states": [
+                "new",
+                "needs_review",
+                "useful_lead",
+                "near_miss",
+                "rejected",
+                "duplicate"
+              ],
+              "handoff_id": "review_handoff:21677c49747fed03",
+              "handoff_kind": "candidate_metadata_review",
+              "index_mutation_performed": false,
+              "notes": [
+                "Candidate metadata can become a reviewed record only through a later explicit review task.",
+                "This planner does not promote candidates or mutate public, local, or master indexes."
+              ],
+              "review_required": true,
+              "schema_version": "review_handoff_plan.v0"
+            }
+          ],
+          "safety": {
+            "accepted_truth_created": false,
+            "candidate_index_mutated": false,
+            "candidate_only": true,
+            "deployment_performed": false,
+            "download_performed": false,
+            "extraction_executed": false,
+            "install_handoff_enabled": false,
+            "master_index_mutated": false,
+            "model_provider_used": false,
+            "public_index_mutated": false,
+            "review_required": true,
+            "reviewed_index_mutated": false,
+            "source_cache_mutated": false,
+            "upload_performed": false
+          },
+          "schema_version": "query_to_source_action_plan.v0",
+          "source_actions": [
+            {
+              "accepted_truth": false,
+              "action_kind": "metadata_search",
+              "candidate_only": true,
+              "domain_pack": "frontier_resolution_media",
+              "download_performed": false,
+              "execution_mode": "metadata_candidate_runtime",
+              "extraction_executed": false,
+              "index_mutation_performed": false,
+              "intent": "find_frontier_resolution_media",
+              "limitations": [
+                "metadata_only",
+                "candidate_not_reviewed_truth",
+                "no_download",
+                "no_extraction",
+                "no_auto_promotion"
+              ],
+              "model_provider_used": false,
+              "query": "(mediatype:movies OR mediatype:texts OR mediatype:collection) \"New York\" 1993 (\"D-Theater\" OR \"D-VHS\" OR \"D VHS\" OR JVC OR \"Hi-Vision\" OR MUSE OR \"HD demo\" OR \"demo tape\") -tourism -\"city guide\" -\"travel guide\" -\"stock footage\"",
+              "review_required": true,
+              "schema_version": "source_action_plan.v0",
+              "source_family": "internet_archive_metadata",
+              "transport_mode": "metadata_only_http"
+            },
+            {
+              "accepted_truth": false,
+              "action_kind": "metadata_search",
+              "candidate_only": true,
+              "domain_pack": "frontier_resolution_media",
+              "download_performed": false,
+              "execution_mode": "planned_future",
+              "extraction_executed": false,
+              "index_mutation_performed": false,
+              "intent": "find_frontier_resolution_media",
+              "limitations": [
+                "metadata_only",
+                "candidate_not_reviewed_truth",
+                "no_download",
+                "no_extraction",
+                "no_auto_promotion",
+                "not_executed_in_public_search_v0",
+                "source_family_future_or_operator_scoped"
+              ],
+              "model_provider_used": false,
+              "query": "New York 1993 D-Theater HD demo tape original source -tourism -\"city guide\" -\"travel guide\" -\"stock footage\"",
+              "review_required": true,
+              "schema_version": "source_action_plan.v0",
+              "source_family": "wayback_cdx_metadata",
+              "transport_mode": "not_executed"
+            },
+            {
+              "accepted_truth": false,
+              "action_kind": "metadata_search",
+              "candidate_only": true,
+              "domain_pack": "frontier_resolution_media",
+              "download_performed": false,
+              "execution_mode": "planned_future",
+              "extraction_executed": false,
+              "index_mutation_performed": false,
+              "intent": "find_frontier_resolution_media",
+              "limitations": [
+                "metadata_only",
+                "candidate_not_reviewed_truth",
+                "no_download",
+                "no_extraction",
+                "no_auto_promotion",
+                "not_executed_in_public_search_v0",
+                "source_family_future_or_operator_scoped"
+              ],
+              "model_provider_used": false,
+              "query": "New York 1993 D-Theater HD demo tape original source -tourism -\"city guide\" -\"travel guide\" -\"stock footage\"",
+              "review_required": true,
+              "schema_version": "source_action_plan.v0",
+              "source_family": "wikidata_metadata",
+              "transport_mode": "not_executed"
+            },
+            {
+              "accepted_truth": false,
+              "action_kind": "metadata_search",
+              "candidate_only": true,
+              "domain_pack": "frontier_resolution_media",
+              "download_performed": false,
+              "execution_mode": "planned_future",
+              "extraction_executed": false,
+              "index_mutation_performed": false,
+              "intent": "find_frontier_resolution_media",
+              "limitations": [
+                "metadata_only",
+                "candidate_not_reviewed_truth",
+                "no_download",
+                "no_extraction",
+                "no_auto_promotion",
+                "not_executed_in_public_search_v0",
+                "source_family_future_or_operator_scoped"
+              ],
+              "model_provider_used": false,
+              "query": "New York 1993 D-Theater HD demo tape original source",
+              "review_required": true,
+              "schema_version": "source_action_plan.v0",
+              "source_family": "manual_source_pack",
+              "transport_mode": "not_executed"
+            }
+          ],
+          "source_families": [
+            "internet_archive_metadata",
+            "wayback_cdx_metadata",
+            "wikidata_metadata",
+            "manual_source_pack"
+          ],
+          "source_query_rewrites": {
+            "archive_org_metadata": "(mediatype:movies OR mediatype:texts OR mediatype:collection) \"New York\" 1993 (\"D-Theater\" OR \"D-VHS\" OR \"D VHS\" OR JVC OR \"Hi-Vision\" OR MUSE OR \"HD demo\" OR \"demo tape\") -tourism -\"city guide\" -\"travel guide\" -\"stock footage\"",
+            "wayback_cdx_metadata": "New York 1993 D-Theater HD demo tape original source -tourism -\"city guide\" -\"travel guide\" -\"stock footage\"",
+            "wikidata_metadata": "New York 1993 D-Theater HD demo tape original source -tourism -\"city guide\" -\"travel guide\" -\"stock footage\""
+          },
+          "work_units": [
+            {
+              "domain_pack": "frontier_resolution_media",
+              "intent": "find_frontier_resolution_media",
+              "mutation_allowed": false,
+              "operator_action": "review_candidates",
+              "query": "New York 1993 D-Theater HD demo tape original source",
+              "review_required": true,
+              "schema_version": "query_plan_work_unit.v0",
+              "source_families": [
+                "internet_archive_metadata",
+                "wayback_cdx_metadata",
+                "wikidata_metadata",
+                "manual_source_pack"
+              ],
+              "work_unit_id": "query_work_unit:21677c49747fed03",
+              "work_unit_type": "candidate_metadata_review"
+            }
+          ]
+        },
+        "planner_plan_id": "query_source_plan:be74e8a9f3f2e7b6",
+        "production_readiness_claimed": false,
+        "public_index_mutated": false,
+        "public_launch_readiness_claimed": false,
+        "public_mutation_enabled": false,
+        "query_id": "frontier_media_q01",
+        "raw_live_response_committed": false,
+        "raw_query": "New York 1993 D-Theater HD demo tape original source",
+        "review_required": true,
+        "reviewed_index_mutated": false,
+        "schema_version": "seed_batch_query_plan.v0",
+        "source_query_rewrites": {
+          "archive_org_metadata": "(mediatype:movies OR mediatype:texts OR mediatype:collection) \"New York\" 1993 (\"D-Theater\" OR \"D-VHS\" OR \"D VHS\" OR JVC OR \"Hi-Vision\" OR MUSE OR \"HD demo\" OR \"demo tape\") -tourism -\"city guide\" -\"travel guide\" -\"stock footage\"",
+          "internet_archive_metadata": "(mediatype:movies OR mediatype:texts OR mediatype:collection) \"New York\" 1993 (\"D-Theater\" OR \"D-VHS\" OR \"D VHS\" OR JVC OR \"Hi-Vision\" OR MUSE OR \"HD demo\" OR \"demo tape\") -tourism -\"city guide\" -\"travel guide\" -\"stock footage\"",
+          "manual_source_pack": "New York 1993 D-Theater HD demo tape original source",
+          "wayback_cdx_metadata": "New York 1993 D-Theater HD demo tape original source",
+          "wikidata_metadata": "New York 1993 D-Theater HD demo tape original source"
+        }
+      },
+      "query_plan_ref": "seed_query_plan:d4a8f229c25b08e8",
+      "raw_query": "New York 1993 D-Theater HD demo tape original source",
+      "request_budget": {
+        "max_requests_per_query": 2,
+        "rows_per_search": 3
+      },
+      "review_priority": 1,
+      "review_required": true,
+      "schema_version": "live_metadata_pilot_seed_query.v0",
+      "seed_batch_id": "seed_batch_frontier_media_00",
+      "source_family": "internet_archive_metadata",
+      "suppressions": [
+        "suppress_generic_city_or_tourism_media"
+      ]
+    },
+    {
+      "accepted_truth": false,
+      "domain_id": "frontier_resolution_media",
+      "expected_candidate_kinds": [
+        "source_metadata_candidate",
+        "provenance_lead",
+        "review_seed"
+      ],
+      "live_allowed": false,
+      "pilot_batch_id": "live_metadata_pilot_batch_00",
+      "query_id": "frontier_media_q03",
+      "query_plan": {
+        "accepted_truth": false,
+        "accepted_truth_created": false,
+        "batch_id": "seed_batch_frontier_media_00",
+        "candidate_suppressions": [
+          "suppress_generic_city_or_tourism_media"
+        ],
+        "created_at": "2026-05-31T00:00:00Z",
+        "deployment_performed": false,
+        "domain_id": "frontier_resolution_media",
+        "download_performed": false,
+        "extraction_executed": false,
+        "intent": "find_frontier_resolution_media",
+        "master_index_mutated": false,
+        "model_provider_used": false,
+        "operator_instance_mutated": false,
+        "plan_id": "seed_query_plan:1f71a1830d1d1c25",
+        "planner_domain_pack": "frontier_resolution_media",
+        "planner_intent": "find_frontier_resolution_media",
+        "planner_plan": {
+          "candidate_lane_expectations": [
+            {
+              "expected": true,
+              "lane": "reviewed_local_results",
+              "source": "controlled local index",
+              "truth_status": "reviewed_only"
+            },
+            {
+              "expected": true,
+              "lane": "archive_org_metadata_candidates",
+              "review_required": true,
+              "source": "internet_archive_metadata",
+              "truth_status": "candidate_only"
+            },
+            {
+              "blocked_actions": [
+                "download",
+                "install_handoff",
+                "execute",
+                "upload",
+                "extract"
+              ],
+              "expected": true,
+              "lane": "blocked_actions"
+            },
+            {
+              "domain_pack": "frontier_resolution_media",
+              "expected": true,
+              "lane": "source_actions_planned",
+              "truth_status": "plan_only"
+            }
+          ],
+          "candidate_suppressions": [
+            {
+              "applies_to": [
+                "candidate_results",
+                "source_query_rewrites"
+              ],
+              "reason": "Frontier-resolution media searches should avoid generic location media when a technical tape/source is requested.",
+              "suppression_id": "suppress_generic_city_or_tourism_media",
+              "terms": [
+                "tourism",
+                "city guide",
+                "travel guide",
+                "stock footage"
+              ]
+            }
+          ],
+          "domain_pack": "frontier_resolution_media",
+          "explanation": {
+            "blocked": [
+              "download",
+              "install_handoff",
+              "execute",
+              "upload",
+              "extract",
+              "model_provider_call",
+              "automatic_promotion"
+            ],
+            "domain_pack": "frontier_resolution_media",
+            "factors": [
+              {
+                "factor": "intent",
+                "reasons": [
+                  "frontier-resolution media terms were detected"
+                ],
+                "value": "find_frontier_resolution_media"
+              },
+              {
+                "factor": "domain_pack",
+                "value": "frontier_resolution_media"
+              },
+              {
+                "factor": "source_families",
+                "value": [
+                  "internet_archive_metadata",
+                  "wayback_cdx_metadata",
+                  "wikidata_metadata",
+                  "manual_source_pack"
+                ]
+              },
+              {
+                "factor": "archive_org_metadata_query",
+                "value": "(mediatype:movies OR mediatype:texts OR mediatype:collection) \"New York\" (\"D-Theater\" OR \"D-VHS\" OR \"D VHS\" OR JVC OR \"Hi-Vision\" OR MUSE OR \"HD demo\" OR \"demo tape\") -tourism -\"city guide\" -\"travel guide\" -\"stock footage\""
+              },
+              {
+                "factor": "candidate_suppressions",
+                "value": [
+                  "suppress_generic_city_or_tourism_media"
+                ]
+              }
+            ],
+            "intent": "find_frontier_resolution_media",
+            "plan_id": "query_source_plan:bb98186e0ab43b54",
+            "query": "JVC D-Theater New York HD demo",
+            "schema_version": "query_plan_explanation_packet.v0",
+            "summary": "Deterministic query planner selected a domain pack, source families, metadata query rewrites, suppressions, and review-only candidate lanes.",
+            "uncertainty": [
+              "Archive.org metadata results are candidates only.",
+              "A metadata match does not establish compatibility, rights, safety, or provenance truth."
+            ]
+          },
+          "intent": "find_frontier_resolution_media",
+          "intent_confidence": "high",
+          "intent_reasons": [
+            "frontier-resolution media terms were detected"
+          ],
+          "non_claims": [
+            "not_production_readiness",
+            "not_public_launch_readiness",
+            "not_accepted_truth",
+            "not_rights_clearance",
+            "not_malware_scan",
+            "not_download_permission",
+            "not_full_archive_exhaustiveness_claim"
+          ],
+          "normalized_query": "JVC D-Theater New York HD demo",
+          "plan_id": "query_source_plan:bb98186e0ab43b54",
+          "planner_id": "eureka_query_to_source_action_planner_v0",
+          "raw_query": "JVC D-Theater New York HD demo",
+          "result_lane_plans": [
+            {
+              "expected": true,
+              "lane": "reviewed_local_results",
+              "source": "controlled local index",
+              "truth_status": "reviewed_only"
+            },
+            {
+              "expected": true,
+              "lane": "archive_org_metadata_candidates",
+              "review_required": true,
+              "source": "internet_archive_metadata",
+              "truth_status": "candidate_only"
+            },
+            {
+              "blocked_actions": [
+                "download",
+                "install_handoff",
+                "execute",
+                "upload",
+                "extract"
+              ],
+              "expected": true,
+              "lane": "blocked_actions"
+            },
+            {
+              "domain_pack": "frontier_resolution_media",
+              "expected": true,
+              "lane": "source_actions_planned",
+              "truth_status": "plan_only"
+            }
+          ],
+          "review_handoff_plans": [
+            {
+              "accepted_reviewed_truth_created": false,
+              "candidate_states": [
+                "new",
+                "needs_review",
+                "useful_lead",
+                "near_miss",
+                "rejected",
+                "duplicate"
+              ],
+              "handoff_id": "review_handoff:5c4a419986fd5e02",
+              "handoff_kind": "candidate_metadata_review",
+              "index_mutation_performed": false,
+              "notes": [
+                "Candidate metadata can become a reviewed record only through a later explicit review task.",
+                "This planner does not promote candidates or mutate public, local, or master indexes."
+              ],
+              "review_required": true,
+              "schema_version": "review_handoff_plan.v0"
+            }
+          ],
+          "safety": {
+            "accepted_truth_created": false,
+            "candidate_index_mutated": false,
+            "candidate_only": true,
+            "deployment_performed": false,
+            "download_performed": false,
+            "extraction_executed": false,
+            "install_handoff_enabled": false,
+            "master_index_mutated": false,
+            "model_provider_used": false,
+            "public_index_mutated": false,
+            "review_required": true,
+            "reviewed_index_mutated": false,
+            "source_cache_mutated": false,
+            "upload_performed": false
+          },
+          "schema_version": "query_to_source_action_plan.v0",
+          "source_actions": [
+            {
+              "accepted_truth": false,
+              "action_kind": "metadata_search",
+              "candidate_only": true,
+              "domain_pack": "frontier_resolution_media",
+              "download_performed": false,
+              "execution_mode": "metadata_candidate_runtime",
+              "extraction_executed": false,
+              "index_mutation_performed": false,
+              "intent": "find_frontier_resolution_media",
+              "limitations": [
+                "metadata_only",
+                "candidate_not_reviewed_truth",
+                "no_download",
+                "no_extraction",
+                "no_auto_promotion"
+              ],
+              "model_provider_used": false,
+              "query": "(mediatype:movies OR mediatype:texts OR mediatype:collection) \"New York\" (\"D-Theater\" OR \"D-VHS\" OR \"D VHS\" OR JVC OR \"Hi-Vision\" OR MUSE OR \"HD demo\" OR \"demo tape\") -tourism -\"city guide\" -\"travel guide\" -\"stock footage\"",
+              "review_required": true,
+              "schema_version": "source_action_plan.v0",
+              "source_family": "internet_archive_metadata",
+              "transport_mode": "metadata_only_http"
+            },
+            {
+              "accepted_truth": false,
+              "action_kind": "metadata_search",
+              "candidate_only": true,
+              "domain_pack": "frontier_resolution_media",
+              "download_performed": false,
+              "execution_mode": "planned_future",
+              "extraction_executed": false,
+              "index_mutation_performed": false,
+              "intent": "find_frontier_resolution_media",
+              "limitations": [
+                "metadata_only",
+                "candidate_not_reviewed_truth",
+                "no_download",
+                "no_extraction",
+                "no_auto_promotion",
+                "not_executed_in_public_search_v0",
+                "source_family_future_or_operator_scoped"
+              ],
+              "model_provider_used": false,
+              "query": "JVC D-Theater New York HD demo -tourism -\"city guide\" -\"travel guide\" -\"stock footage\"",
+              "review_required": true,
+              "schema_version": "source_action_plan.v0",
+              "source_family": "wayback_cdx_metadata",
+              "transport_mode": "not_executed"
+            },
+            {
+              "accepted_truth": false,
+              "action_kind": "metadata_search",
+              "candidate_only": true,
+              "domain_pack": "frontier_resolution_media",
+              "download_performed": false,
+              "execution_mode": "planned_future",
+              "extraction_executed": false,
+              "index_mutation_performed": false,
+              "intent": "find_frontier_resolution_media",
+              "limitations": [
+                "metadata_only",
+                "candidate_not_reviewed_truth",
+                "no_download",
+                "no_extraction",
+                "no_auto_promotion",
+                "not_executed_in_public_search_v0",
+                "source_family_future_or_operator_scoped"
+              ],
+              "model_provider_used": false,
+              "query": "JVC D-Theater New York HD demo -tourism -\"city guide\" -\"travel guide\" -\"stock footage\"",
+              "review_required": true,
+              "schema_version": "source_action_plan.v0",
+              "source_family": "wikidata_metadata",
+              "transport_mode": "not_executed"
+            },
+            {
+              "accepted_truth": false,
+              "action_kind": "metadata_search",
+              "candidate_only": true,
+              "domain_pack": "frontier_resolution_media",
+              "download_performed": false,
+              "execution_mode": "planned_future",
+              "extraction_executed": false,
+              "index_mutation_performed": false,
+              "intent": "find_frontier_resolution_media",
+              "limitations": [
+                "metadata_only",
+                "candidate_not_reviewed_truth",
+                "no_download",
+                "no_extraction",
+                "no_auto_promotion",
+                "not_executed_in_public_search_v0",
+                "source_family_future_or_operator_scoped"
+              ],
+              "model_provider_used": false,
+              "query": "JVC D-Theater New York HD demo",
+              "review_required": true,
+              "schema_version": "source_action_plan.v0",
+              "source_family": "manual_source_pack",
+              "transport_mode": "not_executed"
+            }
+          ],
+          "source_families": [
+            "internet_archive_metadata",
+            "wayback_cdx_metadata",
+            "wikidata_metadata",
+            "manual_source_pack"
+          ],
+          "source_query_rewrites": {
+            "archive_org_metadata": "(mediatype:movies OR mediatype:texts OR mediatype:collection) \"New York\" (\"D-Theater\" OR \"D-VHS\" OR \"D VHS\" OR JVC OR \"Hi-Vision\" OR MUSE OR \"HD demo\" OR \"demo tape\") -tourism -\"city guide\" -\"travel guide\" -\"stock footage\"",
+            "wayback_cdx_metadata": "JVC D-Theater New York HD demo -tourism -\"city guide\" -\"travel guide\" -\"stock footage\"",
+            "wikidata_metadata": "JVC D-Theater New York HD demo -tourism -\"city guide\" -\"travel guide\" -\"stock footage\""
+          },
+          "work_units": [
+            {
+              "domain_pack": "frontier_resolution_media",
+              "intent": "find_frontier_resolution_media",
+              "mutation_allowed": false,
+              "operator_action": "review_candidates",
+              "query": "JVC D-Theater New York HD demo",
+              "review_required": true,
+              "schema_version": "query_plan_work_unit.v0",
+              "source_families": [
+                "internet_archive_metadata",
+                "wayback_cdx_metadata",
+                "wikidata_metadata",
+                "manual_source_pack"
+              ],
+              "work_unit_id": "query_work_unit:5c4a419986fd5e02",
+              "work_unit_type": "candidate_metadata_review"
+            }
+          ]
+        },
+        "planner_plan_id": "query_source_plan:bb98186e0ab43b54",
+        "production_readiness_claimed": false,
+        "public_index_mutated": false,
+        "public_launch_readiness_claimed": false,
+        "public_mutation_enabled": false,
+        "query_id": "frontier_media_q03",
+        "raw_live_response_committed": false,
+        "raw_query": "JVC D-Theater New York HD demo",
+        "review_required": true,
+        "reviewed_index_mutated": false,
+        "schema_version": "seed_batch_query_plan.v0",
+        "source_query_rewrites": {
+          "archive_org_metadata": "(mediatype:movies OR mediatype:texts OR mediatype:collection) \"New York\" (\"D-Theater\" OR \"D-VHS\" OR \"D VHS\" OR JVC OR \"Hi-Vision\" OR MUSE OR \"HD demo\" OR \"demo tape\") -tourism -\"city guide\" -\"travel guide\" -\"stock footage\"",
+          "internet_archive_metadata": "(mediatype:movies OR mediatype:texts OR mediatype:collection) \"New York\" (\"D-Theater\" OR \"D-VHS\" OR \"D VHS\" OR JVC OR \"Hi-Vision\" OR MUSE OR \"HD demo\" OR \"demo tape\") -tourism -\"city guide\" -\"travel guide\" -\"stock footage\"",
+          "manual_source_pack": "JVC D-Theater New York HD demo",
+          "wayback_cdx_metadata": "JVC D-Theater New York HD demo",
+          "wikidata_metadata": "JVC D-Theater New York HD demo"
+        }
+      },
+      "query_plan_ref": "seed_query_plan:1f71a1830d1d1c25",
+      "raw_query": "JVC D-Theater New York HD demo",
+      "request_budget": {
+        "max_requests_per_query": 2,
+        "rows_per_search": 3
+      },
+      "review_priority": 2,
+      "review_required": true,
+      "schema_version": "live_metadata_pilot_seed_query.v0",
+      "seed_batch_id": "seed_batch_frontier_media_00",
+      "source_family": "internet_archive_metadata",
+      "suppressions": [
+        "suppress_generic_city_or_tourism_media"
+      ]
+    },
+    {
+      "accepted_truth": false,
+      "domain_id": "frontier_resolution_media",
+      "expected_candidate_kinds": [
+        "source_metadata_candidate",
+        "provenance_lead",
+        "review_seed"
+      ],
+      "live_allowed": false,
+      "pilot_batch_id": "live_metadata_pilot_batch_00",
+      "query_id": "frontier_media_q05",
+      "query_plan": {
+        "accepted_truth": false,
+        "accepted_truth_created": false,
+        "batch_id": "seed_batch_frontier_media_00",
+        "candidate_suppressions": [
+          "suppress_generic_city_or_tourism_media"
+        ],
+        "created_at": "2026-05-31T00:00:00Z",
+        "deployment_performed": false,
+        "domain_id": "frontier_resolution_media",
+        "download_performed": false,
+        "extraction_executed": false,
+        "intent": "find_frontier_resolution_media",
+        "master_index_mutated": false,
+        "model_provider_used": false,
+        "operator_instance_mutated": false,
+        "plan_id": "seed_query_plan:3c12f38bb56f962d",
+        "planner_domain_pack": "frontier_resolution_media",
+        "planner_intent": "find_frontier_resolution_media",
+        "planner_plan": {
+          "candidate_lane_expectations": [
+            {
+              "expected": true,
+              "lane": "reviewed_local_results",
+              "source": "controlled local index",
+              "truth_status": "reviewed_only"
+            },
+            {
+              "expected": true,
+              "lane": "archive_org_metadata_candidates",
+              "review_required": true,
+              "source": "internet_archive_metadata",
+              "truth_status": "candidate_only"
+            },
+            {
+              "blocked_actions": [
+                "download",
+                "install_handoff",
+                "execute",
+                "upload",
+                "extract"
+              ],
+              "expected": true,
+              "lane": "blocked_actions"
+            },
+            {
+              "domain_pack": "frontier_resolution_media",
+              "expected": true,
+              "lane": "source_actions_planned",
+              "truth_status": "plan_only"
+            }
+          ],
+          "candidate_suppressions": [
+            {
+              "applies_to": [
+                "candidate_results",
+                "source_query_rewrites"
+              ],
+              "reason": "Frontier-resolution media searches should avoid generic location media when a technical tape/source is requested.",
+              "suppression_id": "suppress_generic_city_or_tourism_media",
+              "terms": [
+                "tourism",
+                "city guide",
+                "travel guide",
+                "stock footage"
+              ]
+            }
+          ],
+          "domain_pack": "frontier_resolution_media",
+          "explanation": {
+            "blocked": [
+              "download",
+              "install_handoff",
+              "execute",
+              "upload",
+              "extract",
+              "model_provider_call",
+              "automatic_promotion"
+            ],
+            "domain_pack": "frontier_resolution_media",
+            "factors": [
+              {
+                "factor": "intent",
+                "reasons": [
+                  "frontier-resolution media terms were detected"
+                ],
+                "value": "find_frontier_resolution_media"
+              },
+              {
+                "factor": "domain_pack",
+                "value": "frontier_resolution_media"
+              },
+              {
+                "factor": "source_families",
+                "value": [
+                  "internet_archive_metadata",
+                  "wayback_cdx_metadata",
+                  "wikidata_metadata",
+                  "manual_source_pack"
+                ]
+              },
+              {
+                "factor": "archive_org_metadata_query",
+                "value": "(mediatype:movies OR mediatype:texts OR mediatype:collection) \"New York\" 1993 (\"D-Theater\" OR \"D-VHS\" OR \"D VHS\" OR JVC OR \"Hi-Vision\" OR MUSE OR \"HD demo\" OR \"demo tape\") -tourism -\"city guide\" -\"travel guide\" -\"stock footage\""
+              },
+              {
+                "factor": "candidate_suppressions",
+                "value": [
+                  "suppress_generic_city_or_tourism_media"
+                ]
+              }
+            ],
+            "intent": "find_frontier_resolution_media",
+            "plan_id": "query_source_plan:7e1897eca18e498f",
+            "query": "Hi-Vision MUSE New York 1993 HDTV demo",
+            "schema_version": "query_plan_explanation_packet.v0",
+            "summary": "Deterministic query planner selected a domain pack, source families, metadata query rewrites, suppressions, and review-only candidate lanes.",
+            "uncertainty": [
+              "Archive.org metadata results are candidates only.",
+              "A metadata match does not establish compatibility, rights, safety, or provenance truth."
+            ]
+          },
+          "intent": "find_frontier_resolution_media",
+          "intent_confidence": "high",
+          "intent_reasons": [
+            "frontier-resolution media terms were detected"
+          ],
+          "non_claims": [
+            "not_production_readiness",
+            "not_public_launch_readiness",
+            "not_accepted_truth",
+            "not_rights_clearance",
+            "not_malware_scan",
+            "not_download_permission",
+            "not_full_archive_exhaustiveness_claim"
+          ],
+          "normalized_query": "Hi-Vision MUSE New York 1993 HDTV demo",
+          "plan_id": "query_source_plan:7e1897eca18e498f",
+          "planner_id": "eureka_query_to_source_action_planner_v0",
+          "raw_query": "Hi-Vision MUSE New York 1993 HDTV demo",
+          "result_lane_plans": [
+            {
+              "expected": true,
+              "lane": "reviewed_local_results",
+              "source": "controlled local index",
+              "truth_status": "reviewed_only"
+            },
+            {
+              "expected": true,
+              "lane": "archive_org_metadata_candidates",
+              "review_required": true,
+              "source": "internet_archive_metadata",
+              "truth_status": "candidate_only"
+            },
+            {
+              "blocked_actions": [
+                "download",
+                "install_handoff",
+                "execute",
+                "upload",
+                "extract"
+              ],
+              "expected": true,
+              "lane": "blocked_actions"
+            },
+            {
+              "domain_pack": "frontier_resolution_media",
+              "expected": true,
+              "lane": "source_actions_planned",
+              "truth_status": "plan_only"
+            }
+          ],
+          "review_handoff_plans": [
+            {
+              "accepted_reviewed_truth_created": false,
+              "candidate_states": [
+                "new",
+                "needs_review",
+                "useful_lead",
+                "near_miss",
+                "rejected",
+                "duplicate"
+              ],
+              "handoff_id": "review_handoff:b34f956cd033a868",
+              "handoff_kind": "candidate_metadata_review",
+              "index_mutation_performed": false,
+              "notes": [
+                "Candidate metadata can become a reviewed record only through a later explicit review task.",
+                "This planner does not promote candidates or mutate public, local, or master indexes."
+              ],
+              "review_required": true,
+              "schema_version": "review_handoff_plan.v0"
+            }
+          ],
+          "safety": {
+            "accepted_truth_created": false,
+            "candidate_index_mutated": false,
+            "candidate_only": true,
+            "deployment_performed": false,
+            "download_performed": false,
+            "extraction_executed": false,
+            "install_handoff_enabled": false,
+            "master_index_mutated": false,
+            "model_provider_used": false,
+            "public_index_mutated": false,
+            "review_required": true,
+            "reviewed_index_mutated": false,
+            "source_cache_mutated": false,
+            "upload_performed": false
+          },
+          "schema_version": "query_to_source_action_plan.v0",
+          "source_actions": [
+            {
+              "accepted_truth": false,
+              "action_kind": "metadata_search",
+              "candidate_only": true,
+              "domain_pack": "frontier_resolution_media",
+              "download_performed": false,
+              "execution_mode": "metadata_candidate_runtime",
+              "extraction_executed": false,
+              "index_mutation_performed": false,
+              "intent": "find_frontier_resolution_media",
+              "limitations": [
+                "metadata_only",
+                "candidate_not_reviewed_truth",
+                "no_download",
+                "no_extraction",
+                "no_auto_promotion"
+              ],
+              "model_provider_used": false,
+              "query": "(mediatype:movies OR mediatype:texts OR mediatype:collection) \"New York\" 1993 (\"D-Theater\" OR \"D-VHS\" OR \"D VHS\" OR JVC OR \"Hi-Vision\" OR MUSE OR \"HD demo\" OR \"demo tape\") -tourism -\"city guide\" -\"travel guide\" -\"stock footage\"",
+              "review_required": true,
+              "schema_version": "source_action_plan.v0",
+              "source_family": "internet_archive_metadata",
+              "transport_mode": "metadata_only_http"
+            },
+            {
+              "accepted_truth": false,
+              "action_kind": "metadata_search",
+              "candidate_only": true,
+              "domain_pack": "frontier_resolution_media",
+              "download_performed": false,
+              "execution_mode": "planned_future",
+              "extraction_executed": false,
+              "index_mutation_performed": false,
+              "intent": "find_frontier_resolution_media",
+              "limitations": [
+                "metadata_only",
+                "candidate_not_reviewed_truth",
+                "no_download",
+                "no_extraction",
+                "no_auto_promotion",
+                "not_executed_in_public_search_v0",
+                "source_family_future_or_operator_scoped"
+              ],
+              "model_provider_used": false,
+              "query": "Hi-Vision MUSE New York 1993 HDTV demo -tourism -\"city guide\" -\"travel guide\" -\"stock footage\"",
+              "review_required": true,
+              "schema_version": "source_action_plan.v0",
+              "source_family": "wayback_cdx_metadata",
+              "transport_mode": "not_executed"
+            },
+            {
+              "accepted_truth": false,
+              "action_kind": "metadata_search",
+              "candidate_only": true,
+              "domain_pack": "frontier_resolution_media",
+              "download_performed": false,
+              "execution_mode": "planned_future",
+              "extraction_executed": false,
+              "index_mutation_performed": false,
+              "intent": "find_frontier_resolution_media",
+              "limitations": [
+                "metadata_only",
+                "candidate_not_reviewed_truth",
+                "no_download",
+                "no_extraction",
+                "no_auto_promotion",
+                "not_executed_in_public_search_v0",
+                "source_family_future_or_operator_scoped"
+              ],
+              "model_provider_used": false,
+              "query": "Hi-Vision MUSE New York 1993 HDTV demo -tourism -\"city guide\" -\"travel guide\" -\"stock footage\"",
+              "review_required": true,
+              "schema_version": "source_action_plan.v0",
+              "source_family": "wikidata_metadata",
+              "transport_mode": "not_executed"
+            },
+            {
+              "accepted_truth": false,
+              "action_kind": "metadata_search",
+              "candidate_only": true,
+              "domain_pack": "frontier_resolution_media",
+              "download_performed": false,
+              "execution_mode": "planned_future",
+              "extraction_executed": false,
+              "index_mutation_performed": false,
+              "intent": "find_frontier_resolution_media",
+              "limitations": [
+                "metadata_only",
+                "candidate_not_reviewed_truth",
+                "no_download",
+                "no_extraction",
+                "no_auto_promotion",
+                "not_executed_in_public_search_v0",
+                "source_family_future_or_operator_scoped"
+              ],
+              "model_provider_used": false,
+              "query": "Hi-Vision MUSE New York 1993 HDTV demo",
+              "review_required": true,
+              "schema_version": "source_action_plan.v0",
+              "source_family": "manual_source_pack",
+              "transport_mode": "not_executed"
+            }
+          ],
+          "source_families": [
+            "internet_archive_metadata",
+            "wayback_cdx_metadata",
+            "wikidata_metadata",
+            "manual_source_pack"
+          ],
+          "source_query_rewrites": {
+            "archive_org_metadata": "(mediatype:movies OR mediatype:texts OR mediatype:collection) \"New York\" 1993 (\"D-Theater\" OR \"D-VHS\" OR \"D VHS\" OR JVC OR \"Hi-Vision\" OR MUSE OR \"HD demo\" OR \"demo tape\") -tourism -\"city guide\" -\"travel guide\" -\"stock footage\"",
+            "wayback_cdx_metadata": "Hi-Vision MUSE New York 1993 HDTV demo -tourism -\"city guide\" -\"travel guide\" -\"stock footage\"",
+            "wikidata_metadata": "Hi-Vision MUSE New York 1993 HDTV demo -tourism -\"city guide\" -\"travel guide\" -\"stock footage\""
+          },
+          "work_units": [
+            {
+              "domain_pack": "frontier_resolution_media",
+              "intent": "find_frontier_resolution_media",
+              "mutation_allowed": false,
+              "operator_action": "review_candidates",
+              "query": "Hi-Vision MUSE New York 1993 HDTV demo",
+              "review_required": true,
+              "schema_version": "query_plan_work_unit.v0",
+              "source_families": [
+                "internet_archive_metadata",
+                "wayback_cdx_metadata",
+                "wikidata_metadata",
+                "manual_source_pack"
+              ],
+              "work_unit_id": "query_work_unit:b34f956cd033a868",
+              "work_unit_type": "candidate_metadata_review"
+            }
+          ]
+        },
+        "planner_plan_id": "query_source_plan:7e1897eca18e498f",
+        "production_readiness_claimed": false,
+        "public_index_mutated": false,
+        "public_launch_readiness_claimed": false,
+        "public_mutation_enabled": false,
+        "query_id": "frontier_media_q05",
+        "raw_live_response_committed": false,
+        "raw_query": "Hi-Vision MUSE New York 1993 HDTV demo",
+        "review_required": true,
+        "reviewed_index_mutated": false,
+        "schema_version": "seed_batch_query_plan.v0",
+        "source_query_rewrites": {
+          "archive_org_metadata": "(mediatype:movies OR mediatype:texts OR mediatype:collection) \"New York\" 1993 (\"D-Theater\" OR \"D-VHS\" OR \"D VHS\" OR JVC OR \"Hi-Vision\" OR MUSE OR \"HD demo\" OR \"demo tape\") -tourism -\"city guide\" -\"travel guide\" -\"stock footage\"",
+          "internet_archive_metadata": "(mediatype:movies OR mediatype:texts OR mediatype:collection) \"New York\" 1993 (\"D-Theater\" OR \"D-VHS\" OR \"D VHS\" OR JVC OR \"Hi-Vision\" OR MUSE OR \"HD demo\" OR \"demo tape\") -tourism -\"city guide\" -\"travel guide\" -\"stock footage\"",
+          "manual_source_pack": "Hi-Vision MUSE New York 1993 HDTV demo",
+          "wayback_cdx_metadata": "Hi-Vision MUSE New York 1993 HDTV demo",
+          "wikidata_metadata": "Hi-Vision MUSE New York 1993 HDTV demo"
+        }
+      },
+      "query_plan_ref": "seed_query_plan:3c12f38bb56f962d",
+      "raw_query": "Hi-Vision MUSE New York 1993 HDTV demo",
+      "request_budget": {
+        "max_requests_per_query": 2,
+        "rows_per_search": 3
+      },
+      "review_priority": 1,
+      "review_required": true,
+      "schema_version": "live_metadata_pilot_seed_query.v0",
+      "seed_batch_id": "seed_batch_frontier_media_00",
+      "source_family": "internet_archive_metadata",
+      "suppressions": [
+        "suppress_generic_city_or_tourism_media"
+      ]
+    },
+    {
+      "accepted_truth": false,
+      "domain_id": "frontier_resolution_media",
+      "expected_candidate_kinds": [
+        "source_metadata_candidate",
+        "provenance_lead",
+        "review_seed"
+      ],
+      "live_allowed": false,
+      "pilot_batch_id": "live_metadata_pilot_batch_00",
+      "query_id": "frontier_media_q06",
+      "query_plan": {
+        "accepted_truth": false,
+        "accepted_truth_created": false,
+        "batch_id": "seed_batch_frontier_media_00",
+        "candidate_suppressions": [
+          "suppress_generic_city_or_tourism_media",
+          "suppress_modern_hd_stock"
+        ],
+        "created_at": "2026-05-31T00:00:00Z",
+        "deployment_performed": false,
+        "domain_id": "frontier_resolution_media",
+        "download_performed": false,
+        "extraction_executed": false,
+        "intent": "find_frontier_resolution_media",
+        "master_index_mutated": false,
+        "model_provider_used": false,
+        "operator_instance_mutated": false,
+        "plan_id": "seed_query_plan:3fee564222e22091",
+        "planner_domain_pack": "general_archive_metadata",
+        "planner_intent": "broad_research_need",
+        "planner_plan": {
+          "candidate_lane_expectations": [
+            {
+              "expected": true,
+              "lane": "reviewed_local_results",
+              "source": "controlled local index",
+              "truth_status": "reviewed_only"
+            },
+            {
+              "expected": true,
+              "lane": "archive_org_metadata_candidates",
+              "review_required": true,
+              "source": "internet_archive_metadata",
+              "truth_status": "candidate_only"
+            },
+            {
+              "blocked_actions": [
+                "download",
+                "install_handoff",
+                "execute",
+                "upload",
+                "extract"
+              ],
+              "expected": true,
+              "lane": "blocked_actions"
+            },
+            {
+              "domain_pack": "general_archive_metadata",
+              "expected": true,
+              "lane": "source_actions_planned",
+              "truth_status": "plan_only"
+            }
+          ],
+          "candidate_suppressions": [],
+          "domain_pack": "general_archive_metadata",
+          "explanation": {
+            "blocked": [
+              "download",
+              "install_handoff",
+              "execute",
+              "upload",
+              "extract",
+              "model_provider_call",
+              "automatic_promotion"
+            ],
+            "domain_pack": "general_archive_metadata",
+            "factors": [
+              {
+                "factor": "intent",
+                "reasons": [
+                  "query has enough detail for a broad metadata research plan"
+                ],
+                "value": "broad_research_need"
+              },
+              {
+                "factor": "domain_pack",
+                "value": "general_archive_metadata"
+              },
+              {
+                "factor": "source_families",
+                "value": [
+                  "internet_archive_metadata",
+                  "manual_source_pack"
+                ]
+              },
+              {
+                "factor": "archive_org_metadata_query",
+                "value": "(early hdtv new york 1993 demo footage)"
+              },
+              {
+                "factor": "candidate_suppressions",
+                "value": []
+              }
+            ],
+            "intent": "broad_research_need",
+            "plan_id": "query_source_plan:44fe267ee2a8fcd7",
+            "query": "early HDTV New York 1993 demo footage",
+            "schema_version": "query_plan_explanation_packet.v0",
+            "summary": "Deterministic query planner selected a domain pack, source families, metadata query rewrites, suppressions, and review-only candidate lanes.",
+            "uncertainty": [
+              "Archive.org metadata results are candidates only.",
+              "A metadata match does not establish compatibility, rights, safety, or provenance truth."
+            ]
+          },
+          "intent": "broad_research_need",
+          "intent_confidence": "medium",
+          "intent_reasons": [
+            "query has enough detail for a broad metadata research plan"
+          ],
+          "non_claims": [
+            "not_production_readiness",
+            "not_public_launch_readiness",
+            "not_accepted_truth",
+            "not_rights_clearance",
+            "not_malware_scan",
+            "not_download_permission",
+            "not_full_archive_exhaustiveness_claim"
+          ],
+          "normalized_query": "early HDTV New York 1993 demo footage",
+          "plan_id": "query_source_plan:44fe267ee2a8fcd7",
+          "planner_id": "eureka_query_to_source_action_planner_v0",
+          "raw_query": "early HDTV New York 1993 demo footage",
+          "result_lane_plans": [
+            {
+              "expected": true,
+              "lane": "reviewed_local_results",
+              "source": "controlled local index",
+              "truth_status": "reviewed_only"
+            },
+            {
+              "expected": true,
+              "lane": "archive_org_metadata_candidates",
+              "review_required": true,
+              "source": "internet_archive_metadata",
+              "truth_status": "candidate_only"
+            },
+            {
+              "blocked_actions": [
+                "download",
+                "install_handoff",
+                "execute",
+                "upload",
+                "extract"
+              ],
+              "expected": true,
+              "lane": "blocked_actions"
+            },
+            {
+              "domain_pack": "general_archive_metadata",
+              "expected": true,
+              "lane": "source_actions_planned",
+              "truth_status": "plan_only"
+            }
+          ],
+          "review_handoff_plans": [
+            {
+              "accepted_reviewed_truth_created": false,
+              "candidate_states": [
+                "new",
+                "needs_review",
+                "useful_lead",
+                "near_miss",
+                "rejected",
+                "duplicate"
+              ],
+              "handoff_id": "review_handoff:32cbe1c1a30e3bb7",
+              "handoff_kind": "candidate_metadata_review",
+              "index_mutation_performed": false,
+              "notes": [
+                "Candidate metadata can become a reviewed record only through a later explicit review task.",
+                "This planner does not promote candidates or mutate public, local, or master indexes."
+              ],
+              "review_required": true,
+              "schema_version": "review_handoff_plan.v0"
+            }
+          ],
+          "safety": {
+            "accepted_truth_created": false,
+            "candidate_index_mutated": false,
+            "candidate_only": true,
+            "deployment_performed": false,
+            "download_performed": false,
+            "extraction_executed": false,
+            "install_handoff_enabled": false,
+            "master_index_mutated": false,
+            "model_provider_used": false,
+            "public_index_mutated": false,
+            "review_required": true,
+            "reviewed_index_mutated": false,
+            "source_cache_mutated": false,
+            "upload_performed": false
+          },
+          "schema_version": "query_to_source_action_plan.v0",
+          "source_actions": [
+            {
+              "accepted_truth": false,
+              "action_kind": "metadata_search",
+              "candidate_only": true,
+              "domain_pack": "general_archive_metadata",
+              "download_performed": false,
+              "execution_mode": "metadata_candidate_runtime",
+              "extraction_executed": false,
+              "index_mutation_performed": false,
+              "intent": "broad_research_need",
+              "limitations": [
+                "metadata_only",
+                "candidate_not_reviewed_truth",
+                "no_download",
+                "no_extraction",
+                "no_auto_promotion"
+              ],
+              "model_provider_used": false,
+              "query": "(early hdtv new york 1993 demo footage)",
+              "review_required": true,
+              "schema_version": "source_action_plan.v0",
+              "source_family": "internet_archive_metadata",
+              "transport_mode": "metadata_only_http"
+            },
+            {
+              "accepted_truth": false,
+              "action_kind": "metadata_search",
+              "candidate_only": true,
+              "domain_pack": "general_archive_metadata",
+              "download_performed": false,
+              "execution_mode": "planned_future",
+              "extraction_executed": false,
+              "index_mutation_performed": false,
+              "intent": "broad_research_need",
+              "limitations": [
+                "metadata_only",
+                "candidate_not_reviewed_truth",
+                "no_download",
+                "no_extraction",
+                "no_auto_promotion",
+                "not_executed_in_public_search_v0",
+                "source_family_future_or_operator_scoped"
+              ],
+              "model_provider_used": false,
+              "query": "early HDTV New York 1993 demo footage",
+              "review_required": true,
+              "schema_version": "source_action_plan.v0",
+              "source_family": "manual_source_pack",
+              "transport_mode": "not_executed"
+            }
+          ],
+          "source_families": [
+            "internet_archive_metadata",
+            "manual_source_pack"
+          ],
+          "source_query_rewrites": {
+            "archive_org_metadata": "(early hdtv new york 1993 demo footage)"
+          },
+          "work_units": [
+            {
+              "domain_pack": "general_archive_metadata",
+              "intent": "broad_research_need",
+              "mutation_allowed": false,
+              "operator_action": "review_candidates",
+              "query": "early HDTV New York 1993 demo footage",
+              "review_required": true,
+              "schema_version": "query_plan_work_unit.v0",
+              "source_families": [
+                "internet_archive_metadata",
+                "manual_source_pack"
+              ],
+              "work_unit_id": "query_work_unit:32cbe1c1a30e3bb7",
+              "work_unit_type": "candidate_metadata_review"
+            }
+          ]
+        },
+        "planner_plan_id": "query_source_plan:44fe267ee2a8fcd7",
+        "production_readiness_claimed": false,
+        "public_index_mutated": false,
+        "public_launch_readiness_claimed": false,
+        "public_mutation_enabled": false,
+        "query_id": "frontier_media_q06",
+        "raw_live_response_committed": false,
+        "raw_query": "early HDTV New York 1993 demo footage",
+        "review_required": true,
+        "reviewed_index_mutated": false,
+        "schema_version": "seed_batch_query_plan.v0",
+        "source_query_rewrites": {
+          "archive_org_metadata": "(mediatype:movies OR mediatype:texts OR mediatype:collection) (early HDTV New York 1993 demo footage OR \"D-Theater\" OR \"D-VHS\" OR JVC OR \"Hi-Vision\" OR MUSE OR \"HD demo\" OR \"demo tape\") -tourism -\"stock footage\"",
+          "internet_archive_metadata": "(mediatype:movies OR mediatype:texts OR mediatype:collection) (early HDTV New York 1993 demo footage OR \"D-Theater\" OR \"D-VHS\" OR JVC OR \"Hi-Vision\" OR MUSE OR \"HD demo\" OR \"demo tape\") -tourism -\"stock footage\"",
+          "manual_source_pack": "early HDTV New York 1993 demo footage",
+          "wayback_cdx_metadata": "early HDTV New York 1993 demo footage",
+          "wikidata_metadata": "early HDTV New York 1993 demo footage"
+        }
+      },
+      "query_plan_ref": "seed_query_plan:3fee564222e22091",
+      "raw_query": "early HDTV New York 1993 demo footage",
+      "request_budget": {
+        "max_requests_per_query": 2,
+        "rows_per_search": 3
+      },
+      "review_priority": 3,
+      "review_required": true,
+      "schema_version": "live_metadata_pilot_seed_query.v0",
+      "seed_batch_id": "seed_batch_frontier_media_00",
+      "source_family": "internet_archive_metadata",
+      "suppressions": [
+        "suppress_generic_city_or_tourism_media",
+        "suppress_modern_hd_stock"
+      ]
+    },
+    {
+      "accepted_truth": false,
+      "domain_id": "legacy_software",
+      "expected_candidate_kinds": [
+        "source_metadata_candidate",
+        "artifact_candidate",
+        "source_lead",
+        "review_seed"
+      ],
+      "live_allowed": false,
+      "pilot_batch_id": "live_metadata_pilot_batch_00",
+      "query_id": "legacy_software_q01",
+      "query_plan": {
+        "accepted_truth": false,
+        "accepted_truth_created": false,
+        "batch_id": "seed_batch_legacy_software_00",
+        "candidate_suppressions": [
+          "generic_os_iso",
+          "operating_system_image",
+          "unrelated_modern_version"
+        ],
+        "created_at": "2026-05-31T00:00:00Z",
+        "deployment_performed": false,
+        "domain_id": "legacy_software",
+        "download_performed": false,
+        "extraction_executed": false,
+        "install_execution_enabled": false,
+        "intent": "find_software",
+        "master_index_mutated": false,
+        "model_provider_used": false,
+        "operator_instance_mutated": false,
+        "plan_id": "legacy_seed_query_plan:e93196d42a8b499d",
+        "planner_domain_pack": "legacy_software",
+        "planner_intent": "find_software",
+        "planner_plan": {
+          "candidate_lane_expectations": [
+            {
+              "expected": true,
+              "lane": "reviewed_local_results",
+              "source": "controlled local index",
+              "truth_status": "reviewed_only"
+            },
+            {
+              "expected": true,
+              "lane": "archive_org_metadata_candidates",
+              "review_required": true,
+              "source": "internet_archive_metadata",
+              "truth_status": "candidate_only"
+            },
+            {
+              "blocked_actions": [
+                "download",
+                "install_handoff",
+                "execute",
+                "upload",
+                "extract"
+              ],
+              "expected": true,
+              "lane": "blocked_actions"
+            },
+            {
+              "domain_pack": "legacy_software",
+              "expected": true,
+              "lane": "source_actions_planned",
+              "truth_status": "plan_only"
+            }
+          ],
+          "candidate_suppressions": [
+            {
+              "applies_to": [
+                "candidate_results",
+                "source_query_rewrites"
+              ],
+              "reason": "Software and utility searches should not be satisfied by OS images.",
+              "suppression_id": "suppress_os_images_for_software_queries",
+              "terms": [
+                "iso",
+                "operating system image",
+                "installation media",
+                "windows 7 iso"
+              ]
+            },
+            {
+              "applies_to": [
+                "candidate_results",
+                "source_query_rewrites"
+              ],
+              "reason": "Portable utility queries should prefer directly usable or portable utility metadata.",
+              "suppression_id": "suppress_install_media_when_portable_requested",
+              "terms": [
+                "installer only",
+                "setup disc",
+                "install dvd"
+              ]
+            }
+          ],
+          "domain_pack": "legacy_software",
+          "explanation": {
+            "blocked": [
+              "download",
+              "install_handoff",
+              "execute",
+              "upload",
+              "extract",
+              "model_provider_call",
+              "automatic_promotion"
+            ],
+            "domain_pack": "legacy_software",
+            "factors": [
+              {
+                "factor": "intent",
+                "reasons": [
+                  "software or utility terms were detected"
+                ],
+                "value": "find_software"
+              },
+              {
+                "factor": "domain_pack",
+                "value": "legacy_software"
+              },
+              {
+                "factor": "source_families",
+                "value": [
+                  "internet_archive_metadata",
+                  "github_releases_metadata",
+                  "package_registry_metadata",
+                  "manual_source_pack"
+                ]
+              },
+              {
+                "factor": "archive_org_metadata_query",
+                "value": "mediatype:software \"Windows 7\" (windows 7 compatible portable utilities windows 7 portable utilities utility software application installer) -iso -\"operating system image\" -\"installation media\" -\"windows 7 iso\" -\"installer only\" -\"setup disc\" -\"install dvd\""
+              },
+              {
+                "factor": "candidate_suppressions",
+                "value": [
+                  "suppress_os_images_for_software_queries",
+                  "suppress_install_media_when_portable_requested"
+                ]
+              }
+            ],
+            "intent": "find_software",
+            "plan_id": "query_source_plan:ff4bcecdd9e45162",
+            "query": "Windows 7-compatible portable utilities, not Windows 7 ISO",
+            "schema_version": "query_plan_explanation_packet.v0",
+            "summary": "Deterministic query planner selected a domain pack, source families, metadata query rewrites, suppressions, and review-only candidate lanes.",
+            "uncertainty": [
+              "Archive.org metadata results are candidates only.",
+              "A metadata match does not establish compatibility, rights, safety, or provenance truth."
+            ]
+          },
+          "intent": "find_software",
+          "intent_confidence": "medium",
+          "intent_reasons": [
+            "software or utility terms were detected"
+          ],
+          "non_claims": [
+            "not_production_readiness",
+            "not_public_launch_readiness",
+            "not_accepted_truth",
+            "not_rights_clearance",
+            "not_malware_scan",
+            "not_download_permission",
+            "not_full_archive_exhaustiveness_claim"
+          ],
+          "normalized_query": "Windows 7-compatible portable utilities, not Windows 7 ISO",
+          "plan_id": "query_source_plan:ff4bcecdd9e45162",
+          "planner_id": "eureka_query_to_source_action_planner_v0",
+          "raw_query": "Windows 7-compatible portable utilities, not Windows 7 ISO",
+          "result_lane_plans": [
+            {
+              "expected": true,
+              "lane": "reviewed_local_results",
+              "source": "controlled local index",
+              "truth_status": "reviewed_only"
+            },
+            {
+              "expected": true,
+              "lane": "archive_org_metadata_candidates",
+              "review_required": true,
+              "source": "internet_archive_metadata",
+              "truth_status": "candidate_only"
+            },
+            {
+              "blocked_actions": [
+                "download",
+                "install_handoff",
+                "execute",
+                "upload",
+                "extract"
+              ],
+              "expected": true,
+              "lane": "blocked_actions"
+            },
+            {
+              "domain_pack": "legacy_software",
+              "expected": true,
+              "lane": "source_actions_planned",
+              "truth_status": "plan_only"
+            }
+          ],
+          "review_handoff_plans": [
+            {
+              "accepted_reviewed_truth_created": false,
+              "candidate_states": [
+                "new",
+                "needs_review",
+                "useful_lead",
+                "near_miss",
+                "rejected",
+                "duplicate"
+              ],
+              "handoff_id": "review_handoff:0152e7509240b9eb",
+              "handoff_kind": "candidate_metadata_review",
+              "index_mutation_performed": false,
+              "notes": [
+                "Candidate metadata can become a reviewed record only through a later explicit review task.",
+                "This planner does not promote candidates or mutate public, local, or master indexes."
+              ],
+              "review_required": true,
+              "schema_version": "review_handoff_plan.v0"
+            }
+          ],
+          "safety": {
+            "accepted_truth_created": false,
+            "candidate_index_mutated": false,
+            "candidate_only": true,
+            "deployment_performed": false,
+            "download_performed": false,
+            "extraction_executed": false,
+            "install_handoff_enabled": false,
+            "master_index_mutated": false,
+            "model_provider_used": false,
+            "public_index_mutated": false,
+            "review_required": true,
+            "reviewed_index_mutated": false,
+            "source_cache_mutated": false,
+            "upload_performed": false
+          },
+          "schema_version": "query_to_source_action_plan.v0",
+          "source_actions": [
+            {
+              "accepted_truth": false,
+              "action_kind": "metadata_search",
+              "candidate_only": true,
+              "domain_pack": "legacy_software",
+              "download_performed": false,
+              "execution_mode": "metadata_candidate_runtime",
+              "extraction_executed": false,
+              "index_mutation_performed": false,
+              "intent": "find_software",
+              "limitations": [
+                "metadata_only",
+                "candidate_not_reviewed_truth",
+                "no_download",
+                "no_extraction",
+                "no_auto_promotion"
+              ],
+              "model_provider_used": false,
+              "query": "mediatype:software \"Windows 7\" (windows 7 compatible portable utilities windows 7 portable utilities utility software application installer) -iso -\"operating system image\" -\"installation media\" -\"windows 7 iso\" -\"installer only\" -\"setup disc\" -\"install dvd\"",
+              "review_required": true,
+              "schema_version": "source_action_plan.v0",
+              "source_family": "internet_archive_metadata",
+              "transport_mode": "metadata_only_http"
+            },
+            {
+              "accepted_truth": false,
+              "action_kind": "metadata_search",
+              "candidate_only": true,
+              "domain_pack": "legacy_software",
+              "download_performed": false,
+              "execution_mode": "planned_future",
+              "extraction_executed": false,
+              "index_mutation_performed": false,
+              "intent": "find_software",
+              "limitations": [
+                "metadata_only",
+                "candidate_not_reviewed_truth",
+                "no_download",
+                "no_extraction",
+                "no_auto_promotion",
+                "not_executed_in_public_search_v0",
+                "source_family_future_or_operator_scoped"
+              ],
+              "model_provider_used": false,
+              "query": "Windows 7-compatible portable utilities, not Windows 7 ISO",
+              "review_required": true,
+              "schema_version": "source_action_plan.v0",
+              "source_family": "github_releases_metadata",
+              "transport_mode": "not_executed"
+            },
+            {
+              "accepted_truth": false,
+              "action_kind": "metadata_search",
+              "candidate_only": true,
+              "domain_pack": "legacy_software",
+              "download_performed": false,
+              "execution_mode": "planned_future",
+              "extraction_executed": false,
+              "index_mutation_performed": false,
+              "intent": "find_software",
+              "limitations": [
+                "metadata_only",
+                "candidate_not_reviewed_truth",
+                "no_download",
+                "no_extraction",
+                "no_auto_promotion",
+                "not_executed_in_public_search_v0",
+                "source_family_future_or_operator_scoped"
+              ],
+              "model_provider_used": false,
+              "query": "Windows 7-compatible portable utilities, not Windows 7 ISO",
+              "review_required": true,
+              "schema_version": "source_action_plan.v0",
+              "source_family": "package_registry_metadata",
+              "transport_mode": "not_executed"
+            },
+            {
+              "accepted_truth": false,
+              "action_kind": "metadata_search",
+              "candidate_only": true,
+              "domain_pack": "legacy_software",
+              "download_performed": false,
+              "execution_mode": "planned_future",
+              "extraction_executed": false,
+              "index_mutation_performed": false,
+              "intent": "find_software",
+              "limitations": [
+                "metadata_only",
+                "candidate_not_reviewed_truth",
+                "no_download",
+                "no_extraction",
+                "no_auto_promotion",
+                "not_executed_in_public_search_v0",
+                "source_family_future_or_operator_scoped"
+              ],
+              "model_provider_used": false,
+              "query": "Windows 7-compatible portable utilities, not Windows 7 ISO",
+              "review_required": true,
+              "schema_version": "source_action_plan.v0",
+              "source_family": "manual_source_pack",
+              "transport_mode": "not_executed"
+            }
+          ],
+          "source_families": [
+            "internet_archive_metadata",
+            "github_releases_metadata",
+            "package_registry_metadata",
+            "manual_source_pack"
+          ],
+          "source_query_rewrites": {
+            "archive_org_metadata": "mediatype:software \"Windows 7\" (windows 7 compatible portable utilities windows 7 portable utilities utility software application installer) -iso -\"operating system image\" -\"installation media\" -\"windows 7 iso\" -\"installer only\" -\"setup disc\" -\"install dvd\""
+          },
+          "work_units": [
+            {
+              "domain_pack": "legacy_software",
+              "intent": "find_software",
+              "mutation_allowed": false,
+              "operator_action": "review_candidates",
+              "query": "Windows 7-compatible portable utilities, not Windows 7 ISO",
+              "review_required": true,
+              "schema_version": "query_plan_work_unit.v0",
+              "source_families": [
+                "internet_archive_metadata",
+                "github_releases_metadata",
+                "package_registry_metadata",
+                "manual_source_pack"
+              ],
+              "work_unit_id": "query_work_unit:0152e7509240b9eb",
+              "work_unit_type": "candidate_metadata_review"
+            }
+          ]
+        },
+        "planner_plan_id": "query_source_plan:ff4bcecdd9e45162",
+        "production_readiness_claimed": false,
+        "public_index_mutated": false,
+        "public_launch_readiness_claimed": false,
+        "public_mutation_enabled": false,
+        "query_id": "legacy_software_q01",
+        "raw_live_response_committed": false,
+        "raw_query": "Windows 7-compatible portable utilities, not Windows 7 ISO",
+        "review_required": true,
+        "reviewed_index_mutated": false,
+        "schema_version": "seed_batch_query_plan.v0",
+        "source_query_rewrites": {
+          "archive_org_metadata": "(mediatype:software OR mediatype:texts OR mediatype:collection) (Windows 7-compatible portable utilities, not Windows 7 ISO OR \"offline installer\" OR \"portable\" OR \"driver\" OR \"support CD\") -iso -crack -keygen -serial -warez -torrent -\"driver updater\"",
+          "github_releases_metadata": "Windows 7-compatible portable utilities, not Windows 7 ISO",
+          "internet_archive_metadata": "(mediatype:software OR mediatype:texts OR mediatype:collection) (Windows 7-compatible portable utilities, not Windows 7 ISO OR \"offline installer\" OR \"portable\" OR \"driver\" OR \"support CD\") -iso -crack -keygen -serial -warez -torrent -\"driver updater\"",
+          "manual_source_pack": "Windows 7-compatible portable utilities, not Windows 7 ISO",
+          "package_registry_metadata": "Windows 7-compatible portable utilities, not Windows 7 ISO",
+          "software_heritage_metadata": "Windows 7-compatible portable utilities, not Windows 7 ISO",
+          "wayback_cdx_metadata": "Windows 7-compatible portable utilities, not Windows 7 ISO"
+        }
+      },
+      "query_plan_ref": "legacy_seed_query_plan:e93196d42a8b499d",
+      "raw_query": "Windows 7-compatible portable utilities, not Windows 7 ISO",
+      "request_budget": {
+        "max_requests_per_query": 2,
+        "rows_per_search": 3
+      },
+      "review_priority": 1,
+      "review_required": true,
+      "schema_version": "live_metadata_pilot_seed_query.v0",
+      "seed_batch_id": "seed_batch_legacy_software_00",
+      "source_family": "internet_archive_metadata",
+      "suppressions": [
+        "generic_os_iso",
+        "operating_system_image",
+        "unrelated_modern_version"
+      ]
+    },
+    {
+      "accepted_truth": false,
+      "domain_id": "legacy_software",
+      "expected_candidate_kinds": [
+        "source_metadata_candidate",
+        "artifact_candidate",
+        "source_lead",
+        "review_seed"
+      ],
+      "live_allowed": false,
+      "pilot_batch_id": "live_metadata_pilot_batch_00",
+      "query_id": "legacy_software_q02",
+      "query_plan": {
+        "accepted_truth": false,
+        "accepted_truth_created": false,
+        "batch_id": "seed_batch_legacy_software_00",
+        "candidate_suppressions": [
+          "web_installer_when_offline_requested",
+          "wrong_version"
+        ],
+        "created_at": "2026-05-31T00:00:00Z",
+        "deployment_performed": false,
+        "domain_id": "legacy_software",
+        "download_performed": false,
+        "extraction_executed": false,
+        "install_execution_enabled": false,
+        "intent": "find_software",
+        "master_index_mutated": false,
+        "model_provider_used": false,
+        "operator_instance_mutated": false,
+        "plan_id": "legacy_seed_query_plan:596e6747763713b9",
+        "planner_domain_pack": "legacy_software",
+        "planner_intent": "find_exact_artifact",
+        "planner_plan": {
+          "candidate_lane_expectations": [
+            {
+              "expected": true,
+              "lane": "reviewed_local_results",
+              "source": "controlled local index",
+              "truth_status": "reviewed_only"
+            },
+            {
+              "expected": true,
+              "lane": "archive_org_metadata_candidates",
+              "review_required": true,
+              "source": "internet_archive_metadata",
+              "truth_status": "candidate_only"
+            },
+            {
+              "blocked_actions": [
+                "download",
+                "install_handoff",
+                "execute",
+                "upload",
+                "extract"
+              ],
+              "expected": true,
+              "lane": "blocked_actions"
+            },
+            {
+              "domain_pack": "legacy_software",
+              "expected": true,
+              "lane": "source_actions_planned",
+              "truth_status": "plan_only"
+            }
+          ],
+          "candidate_suppressions": [
+            {
+              "applies_to": [
+                "candidate_results",
+                "source_query_rewrites"
+              ],
+              "reason": "Software and utility searches should not be satisfied by OS images.",
+              "suppression_id": "suppress_os_images_for_software_queries",
+              "terms": [
+                "iso",
+                "operating system image",
+                "installation media",
+                "windows 7 iso"
+              ]
+            }
+          ],
+          "domain_pack": "legacy_software",
+          "explanation": {
+            "blocked": [
+              "download",
+              "install_handoff",
+              "execute",
+              "upload",
+              "extract",
+              "model_provider_call",
+              "automatic_promotion"
+            ],
+            "domain_pack": "legacy_software",
+            "factors": [
+              {
+                "factor": "intent",
+                "reasons": [
+                  "named artifact, version, date, or installer terms were detected"
+                ],
+                "value": "find_exact_artifact"
+              },
+              {
+                "factor": "domain_pack",
+                "value": "legacy_software"
+              },
+              {
+                "factor": "source_families",
+                "value": [
+                  "internet_archive_metadata",
+                  "github_releases_metadata",
+                  "package_registry_metadata",
+                  "manual_source_pack"
+                ]
+              },
+              {
+                "factor": "archive_org_metadata_query",
+                "value": "mediatype:software \"DirectX SDK\" \"June 2010\" (\"offline installer\" OR redistributable OR installer OR SDK) -iso -\"operating system image\" -\"installation media\" -\"windows 7 iso\""
+              },
+              {
+                "factor": "candidate_suppressions",
+                "value": [
+                  "suppress_os_images_for_software_queries"
+                ]
+              }
+            ],
+            "intent": "find_exact_artifact",
+            "plan_id": "query_source_plan:5d75e7552ec13284",
+            "query": "DirectX SDK June 2010 offline installer",
+            "schema_version": "query_plan_explanation_packet.v0",
+            "summary": "Deterministic query planner selected a domain pack, source families, metadata query rewrites, suppressions, and review-only candidate lanes.",
+            "uncertainty": [
+              "Archive.org metadata results are candidates only.",
+              "A metadata match does not establish compatibility, rights, safety, or provenance truth."
+            ]
+          },
+          "intent": "find_exact_artifact",
+          "intent_confidence": "high",
+          "intent_reasons": [
+            "named artifact, version, date, or installer terms were detected"
+          ],
+          "non_claims": [
+            "not_production_readiness",
+            "not_public_launch_readiness",
+            "not_accepted_truth",
+            "not_rights_clearance",
+            "not_malware_scan",
+            "not_download_permission",
+            "not_full_archive_exhaustiveness_claim"
+          ],
+          "normalized_query": "DirectX SDK June 2010 offline installer",
+          "plan_id": "query_source_plan:5d75e7552ec13284",
+          "planner_id": "eureka_query_to_source_action_planner_v0",
+          "raw_query": "DirectX SDK June 2010 offline installer",
+          "result_lane_plans": [
+            {
+              "expected": true,
+              "lane": "reviewed_local_results",
+              "source": "controlled local index",
+              "truth_status": "reviewed_only"
+            },
+            {
+              "expected": true,
+              "lane": "archive_org_metadata_candidates",
+              "review_required": true,
+              "source": "internet_archive_metadata",
+              "truth_status": "candidate_only"
+            },
+            {
+              "blocked_actions": [
+                "download",
+                "install_handoff",
+                "execute",
+                "upload",
+                "extract"
+              ],
+              "expected": true,
+              "lane": "blocked_actions"
+            },
+            {
+              "domain_pack": "legacy_software",
+              "expected": true,
+              "lane": "source_actions_planned",
+              "truth_status": "plan_only"
+            }
+          ],
+          "review_handoff_plans": [
+            {
+              "accepted_reviewed_truth_created": false,
+              "candidate_states": [
+                "new",
+                "needs_review",
+                "useful_lead",
+                "near_miss",
+                "rejected",
+                "duplicate"
+              ],
+              "handoff_id": "review_handoff:e9a7684d6ad61c4a",
+              "handoff_kind": "candidate_metadata_review",
+              "index_mutation_performed": false,
+              "notes": [
+                "Candidate metadata can become a reviewed record only through a later explicit review task.",
+                "This planner does not promote candidates or mutate public, local, or master indexes."
+              ],
+              "review_required": true,
+              "schema_version": "review_handoff_plan.v0"
+            }
+          ],
+          "safety": {
+            "accepted_truth_created": false,
+            "candidate_index_mutated": false,
+            "candidate_only": true,
+            "deployment_performed": false,
+            "download_performed": false,
+            "extraction_executed": false,
+            "install_handoff_enabled": false,
+            "master_index_mutated": false,
+            "model_provider_used": false,
+            "public_index_mutated": false,
+            "review_required": true,
+            "reviewed_index_mutated": false,
+            "source_cache_mutated": false,
+            "upload_performed": false
+          },
+          "schema_version": "query_to_source_action_plan.v0",
+          "source_actions": [
+            {
+              "accepted_truth": false,
+              "action_kind": "metadata_search",
+              "candidate_only": true,
+              "domain_pack": "legacy_software",
+              "download_performed": false,
+              "execution_mode": "metadata_candidate_runtime",
+              "extraction_executed": false,
+              "index_mutation_performed": false,
+              "intent": "find_exact_artifact",
+              "limitations": [
+                "metadata_only",
+                "candidate_not_reviewed_truth",
+                "no_download",
+                "no_extraction",
+                "no_auto_promotion"
+              ],
+              "model_provider_used": false,
+              "query": "mediatype:software \"DirectX SDK\" \"June 2010\" (\"offline installer\" OR redistributable OR installer OR SDK) -iso -\"operating system image\" -\"installation media\" -\"windows 7 iso\"",
+              "review_required": true,
+              "schema_version": "source_action_plan.v0",
+              "source_family": "internet_archive_metadata",
+              "transport_mode": "metadata_only_http"
+            },
+            {
+              "accepted_truth": false,
+              "action_kind": "metadata_search",
+              "candidate_only": true,
+              "domain_pack": "legacy_software",
+              "download_performed": false,
+              "execution_mode": "planned_future",
+              "extraction_executed": false,
+              "index_mutation_performed": false,
+              "intent": "find_exact_artifact",
+              "limitations": [
+                "metadata_only",
+                "candidate_not_reviewed_truth",
+                "no_download",
+                "no_extraction",
+                "no_auto_promotion",
+                "not_executed_in_public_search_v0",
+                "source_family_future_or_operator_scoped"
+              ],
+              "model_provider_used": false,
+              "query": "DirectX SDK June 2010 offline installer",
+              "review_required": true,
+              "schema_version": "source_action_plan.v0",
+              "source_family": "github_releases_metadata",
+              "transport_mode": "not_executed"
+            },
+            {
+              "accepted_truth": false,
+              "action_kind": "metadata_search",
+              "candidate_only": true,
+              "domain_pack": "legacy_software",
+              "download_performed": false,
+              "execution_mode": "planned_future",
+              "extraction_executed": false,
+              "index_mutation_performed": false,
+              "intent": "find_exact_artifact",
+              "limitations": [
+                "metadata_only",
+                "candidate_not_reviewed_truth",
+                "no_download",
+                "no_extraction",
+                "no_auto_promotion",
+                "not_executed_in_public_search_v0",
+                "source_family_future_or_operator_scoped"
+              ],
+              "model_provider_used": false,
+              "query": "DirectX SDK June 2010 offline installer",
+              "review_required": true,
+              "schema_version": "source_action_plan.v0",
+              "source_family": "package_registry_metadata",
+              "transport_mode": "not_executed"
+            },
+            {
+              "accepted_truth": false,
+              "action_kind": "metadata_search",
+              "candidate_only": true,
+              "domain_pack": "legacy_software",
+              "download_performed": false,
+              "execution_mode": "planned_future",
+              "extraction_executed": false,
+              "index_mutation_performed": false,
+              "intent": "find_exact_artifact",
+              "limitations": [
+                "metadata_only",
+                "candidate_not_reviewed_truth",
+                "no_download",
+                "no_extraction",
+                "no_auto_promotion",
+                "not_executed_in_public_search_v0",
+                "source_family_future_or_operator_scoped"
+              ],
+              "model_provider_used": false,
+              "query": "DirectX SDK June 2010 offline installer",
+              "review_required": true,
+              "schema_version": "source_action_plan.v0",
+              "source_family": "manual_source_pack",
+              "transport_mode": "not_executed"
+            }
+          ],
+          "source_families": [
+            "internet_archive_metadata",
+            "github_releases_metadata",
+            "package_registry_metadata",
+            "manual_source_pack"
+          ],
+          "source_query_rewrites": {
+            "archive_org_metadata": "mediatype:software \"DirectX SDK\" \"June 2010\" (\"offline installer\" OR redistributable OR installer OR SDK) -iso -\"operating system image\" -\"installation media\" -\"windows 7 iso\""
+          },
+          "work_units": [
+            {
+              "domain_pack": "legacy_software",
+              "intent": "find_exact_artifact",
+              "mutation_allowed": false,
+              "operator_action": "review_candidates",
+              "query": "DirectX SDK June 2010 offline installer",
+              "review_required": true,
+              "schema_version": "query_plan_work_unit.v0",
+              "source_families": [
+                "internet_archive_metadata",
+                "github_releases_metadata",
+                "package_registry_metadata",
+                "manual_source_pack"
+              ],
+              "work_unit_id": "query_work_unit:e9a7684d6ad61c4a",
+              "work_unit_type": "candidate_metadata_review"
+            }
+          ]
+        },
+        "planner_plan_id": "query_source_plan:5d75e7552ec13284",
+        "production_readiness_claimed": false,
+        "public_index_mutated": false,
+        "public_launch_readiness_claimed": false,
+        "public_mutation_enabled": false,
+        "query_id": "legacy_software_q02",
+        "raw_live_response_committed": false,
+        "raw_query": "DirectX SDK June 2010 offline installer",
+        "review_required": true,
+        "reviewed_index_mutated": false,
+        "schema_version": "seed_batch_query_plan.v0",
+        "source_query_rewrites": {
+          "archive_org_metadata": "(mediatype:software OR mediatype:texts OR mediatype:collection) (DirectX SDK June 2010 offline installer OR \"offline installer\" OR \"portable\" OR \"driver\" OR \"support CD\") -iso -crack -keygen -serial -warez -torrent -\"driver updater\"",
+          "github_releases_metadata": "DirectX SDK June 2010 offline installer",
+          "internet_archive_metadata": "(mediatype:software OR mediatype:texts OR mediatype:collection) (DirectX SDK June 2010 offline installer OR \"offline installer\" OR \"portable\" OR \"driver\" OR \"support CD\") -iso -crack -keygen -serial -warez -torrent -\"driver updater\"",
+          "manual_source_pack": "DirectX SDK June 2010 offline installer",
+          "package_registry_metadata": "DirectX SDK June 2010 offline installer",
+          "software_heritage_metadata": "DirectX SDK June 2010 offline installer",
+          "wayback_cdx_metadata": "DirectX SDK June 2010 offline installer"
+        }
+      },
+      "query_plan_ref": "legacy_seed_query_plan:596e6747763713b9",
+      "raw_query": "DirectX SDK June 2010 offline installer",
+      "request_budget": {
+        "max_requests_per_query": 2,
+        "rows_per_search": 3
+      },
+      "review_priority": 1,
+      "review_required": true,
+      "schema_version": "live_metadata_pilot_seed_query.v0",
+      "seed_batch_id": "seed_batch_legacy_software_00",
+      "source_family": "internet_archive_metadata",
+      "suppressions": [
+        "web_installer_when_offline_requested",
+        "wrong_version"
+      ]
+    },
+    {
+      "accepted_truth": false,
+      "domain_id": "driver_support_media",
+      "expected_candidate_kinds": [
+        "source_metadata_candidate",
+        "artifact_candidate",
+        "source_lead",
+        "review_seed"
+      ],
+      "live_allowed": false,
+      "pilot_batch_id": "live_metadata_pilot_batch_00",
+      "query_id": "legacy_software_q03",
+      "query_plan": {
+        "accepted_truth": false,
+        "accepted_truth_created": false,
+        "batch_id": "seed_batch_legacy_software_00",
+        "candidate_suppressions": [
+          "fake_driver_updater",
+          "wrong_platform",
+          "wrong_version"
+        ],
+        "created_at": "2026-05-31T00:00:00Z",
+        "deployment_performed": false,
+        "domain_id": "driver_support_media",
+        "download_performed": false,
+        "extraction_executed": false,
+        "install_execution_enabled": false,
+        "intent": "find_driver_or_support_media",
+        "master_index_mutated": false,
+        "model_provider_used": false,
+        "operator_instance_mutated": false,
+        "plan_id": "legacy_seed_query_plan:2b57d5c013189e89",
+        "planner_domain_pack": "driver_support_media",
+        "planner_intent": "find_driver_or_support_media",
+        "planner_plan": {
+          "candidate_lane_expectations": [
+            {
+              "expected": true,
+              "lane": "reviewed_local_results",
+              "source": "controlled local index",
+              "truth_status": "reviewed_only"
+            },
+            {
+              "expected": true,
+              "lane": "archive_org_metadata_candidates",
+              "review_required": true,
+              "source": "internet_archive_metadata",
+              "truth_status": "candidate_only"
+            },
+            {
+              "blocked_actions": [
+                "download",
+                "install_handoff",
+                "execute",
+                "upload",
+                "extract"
+              ],
+              "expected": true,
+              "lane": "blocked_actions"
+            },
+            {
+              "domain_pack": "driver_support_media",
+              "expected": true,
+              "lane": "source_actions_planned",
+              "truth_status": "plan_only"
+            }
+          ],
+          "candidate_suppressions": [
+            {
+              "applies_to": [
+                "candidate_results",
+                "source_query_rewrites"
+              ],
+              "reason": "Driver/support-media plans should avoid adjacent but different hardware models.",
+              "suppression_id": "suppress_unrelated_driver_models",
+              "terms": [
+                "unrelated printer model",
+                "laserwriter",
+                "stylewriter 2400"
+              ]
+            }
+          ],
+          "domain_pack": "driver_support_media",
+          "explanation": {
+            "blocked": [
+              "download",
+              "install_handoff",
+              "execute",
+              "upload",
+              "extract",
+              "model_provider_call",
+              "automatic_promotion"
+            ],
+            "domain_pack": "driver_support_media",
+            "factors": [
+              {
+                "factor": "intent",
+                "reasons": [
+                  "driver/support-media terms were detected"
+                ],
+                "value": "find_driver_or_support_media"
+              },
+              {
+                "factor": "domain_pack",
+                "value": "driver_support_media"
+              },
+              {
+                "factor": "source_families",
+                "value": [
+                  "internet_archive_metadata",
+                  "wayback_cdx_metadata",
+                  "manual_source_pack"
+                ]
+              },
+              {
+                "factor": "archive_org_metadata_query",
+                "value": "(mediatype:software OR mediatype:texts) \"StyleWriter 2500\" \"Mac OS 8\" (driver OR drivers OR firmware OR \"support cd\" OR printer) -\"unrelated printer model\" -laserwriter -\"stylewriter 2400\""
+              },
+              {
+                "factor": "candidate_suppressions",
+                "value": [
+                  "suppress_unrelated_driver_models"
+                ]
+              }
+            ],
+            "intent": "find_driver_or_support_media",
+            "plan_id": "query_source_plan:1c09f0e4def46b6e",
+            "query": "StyleWriter 2500 Mac OS 8 driver",
+            "schema_version": "query_plan_explanation_packet.v0",
+            "summary": "Deterministic query planner selected a domain pack, source families, metadata query rewrites, suppressions, and review-only candidate lanes.",
+            "uncertainty": [
+              "Archive.org metadata results are candidates only.",
+              "A metadata match does not establish compatibility, rights, safety, or provenance truth."
+            ]
+          },
+          "intent": "find_driver_or_support_media",
+          "intent_confidence": "high",
+          "intent_reasons": [
+            "driver/support-media terms were detected"
+          ],
+          "non_claims": [
+            "not_production_readiness",
+            "not_public_launch_readiness",
+            "not_accepted_truth",
+            "not_rights_clearance",
+            "not_malware_scan",
+            "not_download_permission",
+            "not_full_archive_exhaustiveness_claim"
+          ],
+          "normalized_query": "StyleWriter 2500 Mac OS 8 driver",
+          "plan_id": "query_source_plan:1c09f0e4def46b6e",
+          "planner_id": "eureka_query_to_source_action_planner_v0",
+          "raw_query": "StyleWriter 2500 Mac OS 8 driver",
+          "result_lane_plans": [
+            {
+              "expected": true,
+              "lane": "reviewed_local_results",
+              "source": "controlled local index",
+              "truth_status": "reviewed_only"
+            },
+            {
+              "expected": true,
+              "lane": "archive_org_metadata_candidates",
+              "review_required": true,
+              "source": "internet_archive_metadata",
+              "truth_status": "candidate_only"
+            },
+            {
+              "blocked_actions": [
+                "download",
+                "install_handoff",
+                "execute",
+                "upload",
+                "extract"
+              ],
+              "expected": true,
+              "lane": "blocked_actions"
+            },
+            {
+              "domain_pack": "driver_support_media",
+              "expected": true,
+              "lane": "source_actions_planned",
+              "truth_status": "plan_only"
+            }
+          ],
+          "review_handoff_plans": [
+            {
+              "accepted_reviewed_truth_created": false,
+              "candidate_states": [
+                "new",
+                "needs_review",
+                "useful_lead",
+                "near_miss",
+                "rejected",
+                "duplicate"
+              ],
+              "handoff_id": "review_handoff:f7004dc00a0aba59",
+              "handoff_kind": "candidate_metadata_review",
+              "index_mutation_performed": false,
+              "notes": [
+                "Candidate metadata can become a reviewed record only through a later explicit review task.",
+                "This planner does not promote candidates or mutate public, local, or master indexes."
+              ],
+              "review_required": true,
+              "schema_version": "review_handoff_plan.v0"
+            }
+          ],
+          "safety": {
+            "accepted_truth_created": false,
+            "candidate_index_mutated": false,
+            "candidate_only": true,
+            "deployment_performed": false,
+            "download_performed": false,
+            "extraction_executed": false,
+            "install_handoff_enabled": false,
+            "master_index_mutated": false,
+            "model_provider_used": false,
+            "public_index_mutated": false,
+            "review_required": true,
+            "reviewed_index_mutated": false,
+            "source_cache_mutated": false,
+            "upload_performed": false
+          },
+          "schema_version": "query_to_source_action_plan.v0",
+          "source_actions": [
+            {
+              "accepted_truth": false,
+              "action_kind": "metadata_search",
+              "candidate_only": true,
+              "domain_pack": "driver_support_media",
+              "download_performed": false,
+              "execution_mode": "metadata_candidate_runtime",
+              "extraction_executed": false,
+              "index_mutation_performed": false,
+              "intent": "find_driver_or_support_media",
+              "limitations": [
+                "metadata_only",
+                "candidate_not_reviewed_truth",
+                "no_download",
+                "no_extraction",
+                "no_auto_promotion"
+              ],
+              "model_provider_used": false,
+              "query": "(mediatype:software OR mediatype:texts) \"StyleWriter 2500\" \"Mac OS 8\" (driver OR drivers OR firmware OR \"support cd\" OR printer) -\"unrelated printer model\" -laserwriter -\"stylewriter 2400\"",
+              "review_required": true,
+              "schema_version": "source_action_plan.v0",
+              "source_family": "internet_archive_metadata",
+              "transport_mode": "metadata_only_http"
+            },
+            {
+              "accepted_truth": false,
+              "action_kind": "metadata_search",
+              "candidate_only": true,
+              "domain_pack": "driver_support_media",
+              "download_performed": false,
+              "execution_mode": "planned_future",
+              "extraction_executed": false,
+              "index_mutation_performed": false,
+              "intent": "find_driver_or_support_media",
+              "limitations": [
+                "metadata_only",
+                "candidate_not_reviewed_truth",
+                "no_download",
+                "no_extraction",
+                "no_auto_promotion",
+                "not_executed_in_public_search_v0",
+                "source_family_future_or_operator_scoped"
+              ],
+              "model_provider_used": false,
+              "query": "StyleWriter 2500 Mac OS 8 driver -\"unrelated printer model\" -laserwriter -\"stylewriter 2400\"",
+              "review_required": true,
+              "schema_version": "source_action_plan.v0",
+              "source_family": "wayback_cdx_metadata",
+              "transport_mode": "not_executed"
+            },
+            {
+              "accepted_truth": false,
+              "action_kind": "metadata_search",
+              "candidate_only": true,
+              "domain_pack": "driver_support_media",
+              "download_performed": false,
+              "execution_mode": "planned_future",
+              "extraction_executed": false,
+              "index_mutation_performed": false,
+              "intent": "find_driver_or_support_media",
+              "limitations": [
+                "metadata_only",
+                "candidate_not_reviewed_truth",
+                "no_download",
+                "no_extraction",
+                "no_auto_promotion",
+                "not_executed_in_public_search_v0",
+                "source_family_future_or_operator_scoped"
+              ],
+              "model_provider_used": false,
+              "query": "StyleWriter 2500 Mac OS 8 driver",
+              "review_required": true,
+              "schema_version": "source_action_plan.v0",
+              "source_family": "manual_source_pack",
+              "transport_mode": "not_executed"
+            }
+          ],
+          "source_families": [
+            "internet_archive_metadata",
+            "wayback_cdx_metadata",
+            "manual_source_pack"
+          ],
+          "source_query_rewrites": {
+            "archive_org_metadata": "(mediatype:software OR mediatype:texts) \"StyleWriter 2500\" \"Mac OS 8\" (driver OR drivers OR firmware OR \"support cd\" OR printer) -\"unrelated printer model\" -laserwriter -\"stylewriter 2400\"",
+            "wayback_cdx_metadata": "StyleWriter 2500 Mac OS 8 driver -\"unrelated printer model\" -laserwriter -\"stylewriter 2400\""
+          },
+          "work_units": [
+            {
+              "domain_pack": "driver_support_media",
+              "intent": "find_driver_or_support_media",
+              "mutation_allowed": false,
+              "operator_action": "review_candidates",
+              "query": "StyleWriter 2500 Mac OS 8 driver",
+              "review_required": true,
+              "schema_version": "query_plan_work_unit.v0",
+              "source_families": [
+                "internet_archive_metadata",
+                "wayback_cdx_metadata",
+                "manual_source_pack"
+              ],
+              "work_unit_id": "query_work_unit:f7004dc00a0aba59",
+              "work_unit_type": "candidate_metadata_review"
+            }
+          ]
+        },
+        "planner_plan_id": "query_source_plan:1c09f0e4def46b6e",
+        "production_readiness_claimed": false,
+        "public_index_mutated": false,
+        "public_launch_readiness_claimed": false,
+        "public_mutation_enabled": false,
+        "query_id": "legacy_software_q03",
+        "raw_live_response_committed": false,
+        "raw_query": "StyleWriter 2500 Mac OS 8 driver",
+        "review_required": true,
+        "reviewed_index_mutated": false,
+        "schema_version": "seed_batch_query_plan.v0",
+        "source_query_rewrites": {
+          "archive_org_metadata": "(mediatype:software OR mediatype:texts OR mediatype:collection) (StyleWriter 2500 Mac OS 8 driver OR \"offline installer\" OR \"portable\" OR \"driver\" OR \"support CD\") -iso -crack -keygen -serial -warez -torrent -\"driver updater\"",
+          "github_releases_metadata": "StyleWriter 2500 Mac OS 8 driver",
+          "internet_archive_metadata": "(mediatype:software OR mediatype:texts OR mediatype:collection) (StyleWriter 2500 Mac OS 8 driver OR \"offline installer\" OR \"portable\" OR \"driver\" OR \"support CD\") -iso -crack -keygen -serial -warez -torrent -\"driver updater\"",
+          "manual_source_pack": "StyleWriter 2500 Mac OS 8 driver",
+          "package_registry_metadata": "StyleWriter 2500 Mac OS 8 driver",
+          "software_heritage_metadata": "StyleWriter 2500 Mac OS 8 driver",
+          "wayback_cdx_metadata": "StyleWriter 2500 Mac OS 8 driver"
+        }
+      },
+      "query_plan_ref": "legacy_seed_query_plan:2b57d5c013189e89",
+      "raw_query": "StyleWriter 2500 Mac OS 8 driver",
+      "request_budget": {
+        "max_requests_per_query": 2,
+        "rows_per_search": 3
+      },
+      "review_priority": 1,
+      "review_required": true,
+      "schema_version": "live_metadata_pilot_seed_query.v0",
+      "seed_batch_id": "seed_batch_legacy_software_00",
+      "source_family": "internet_archive_metadata",
+      "suppressions": [
+        "fake_driver_updater",
+        "wrong_platform",
+        "wrong_version"
+      ]
+    },
+    {
+      "accepted_truth": false,
+      "domain_id": "legacy_software",
+      "expected_candidate_kinds": [
+        "source_metadata_candidate",
+        "artifact_candidate",
+        "source_lead",
+        "review_seed"
+      ],
+      "live_allowed": false,
+      "pilot_batch_id": "live_metadata_pilot_batch_00",
+      "query_id": "legacy_software_q06",
+      "query_plan": {
+        "accepted_truth": false,
+        "accepted_truth_created": false,
+        "batch_id": "seed_batch_legacy_software_00",
+        "candidate_suppressions": [
+          "web_installer_when_offline_requested",
+          "wrong_platform",
+          "wrong_version"
+        ],
+        "created_at": "2026-05-31T00:00:00Z",
+        "deployment_performed": false,
+        "domain_id": "legacy_software",
+        "download_performed": false,
+        "extraction_executed": false,
+        "install_execution_enabled": false,
+        "intent": "find_software",
+        "master_index_mutated": false,
+        "model_provider_used": false,
+        "operator_instance_mutated": false,
+        "plan_id": "legacy_seed_query_plan:4bab156cf23bbaa4",
+        "planner_domain_pack": "legacy_software",
+        "planner_intent": "find_exact_artifact",
+        "planner_plan": {
+          "candidate_lane_expectations": [
+            {
+              "expected": true,
+              "lane": "reviewed_local_results",
+              "source": "controlled local index",
+              "truth_status": "reviewed_only"
+            },
+            {
+              "expected": true,
+              "lane": "archive_org_metadata_candidates",
+              "review_required": true,
+              "source": "internet_archive_metadata",
+              "truth_status": "candidate_only"
+            },
+            {
+              "blocked_actions": [
+                "download",
+                "install_handoff",
+                "execute",
+                "upload",
+                "extract"
+              ],
+              "expected": true,
+              "lane": "blocked_actions"
+            },
+            {
+              "domain_pack": "legacy_software",
+              "expected": true,
+              "lane": "source_actions_planned",
+              "truth_status": "plan_only"
+            }
+          ],
+          "candidate_suppressions": [
+            {
+              "applies_to": [
+                "candidate_results",
+                "source_query_rewrites"
+              ],
+              "reason": "Software and utility searches should not be satisfied by OS images.",
+              "suppression_id": "suppress_os_images_for_software_queries",
+              "terms": [
+                "iso",
+                "operating system image",
+                "installation media",
+                "windows 7 iso"
+              ]
+            }
+          ],
+          "domain_pack": "legacy_software",
+          "explanation": {
+            "blocked": [
+              "download",
+              "install_handoff",
+              "execute",
+              "upload",
+              "extract",
+              "model_provider_call",
+              "automatic_promotion"
+            ],
+            "domain_pack": "legacy_software",
+            "factors": [
+              {
+                "factor": "intent",
+                "reasons": [
+                  "named artifact, version, date, or installer terms were detected"
+                ],
+                "value": "find_exact_artifact"
+              },
+              {
+                "factor": "domain_pack",
+                "value": "legacy_software"
+              },
+              {
+                "factor": "source_families",
+                "value": [
+                  "internet_archive_metadata",
+                  "github_releases_metadata",
+                  "package_registry_metadata",
+                  "manual_source_pack"
+                ]
+              },
+              {
+                "factor": "archive_org_metadata_query",
+                "value": "mediatype:software \"Windows XP\" (quicktime 7 windows xp offline installer portable utilities utility software application installer) -iso -\"operating system image\" -\"installation media\" -\"windows 7 iso\""
+              },
+              {
+                "factor": "candidate_suppressions",
+                "value": [
+                  "suppress_os_images_for_software_queries"
+                ]
+              }
+            ],
+            "intent": "find_exact_artifact",
+            "plan_id": "query_source_plan:6133f9cf4ded924a",
+            "query": "QuickTime 7 Windows XP offline installer",
+            "schema_version": "query_plan_explanation_packet.v0",
+            "summary": "Deterministic query planner selected a domain pack, source families, metadata query rewrites, suppressions, and review-only candidate lanes.",
+            "uncertainty": [
+              "Archive.org metadata results are candidates only.",
+              "A metadata match does not establish compatibility, rights, safety, or provenance truth."
+            ]
+          },
+          "intent": "find_exact_artifact",
+          "intent_confidence": "high",
+          "intent_reasons": [
+            "named artifact, version, date, or installer terms were detected"
+          ],
+          "non_claims": [
+            "not_production_readiness",
+            "not_public_launch_readiness",
+            "not_accepted_truth",
+            "not_rights_clearance",
+            "not_malware_scan",
+            "not_download_permission",
+            "not_full_archive_exhaustiveness_claim"
+          ],
+          "normalized_query": "QuickTime 7 Windows XP offline installer",
+          "plan_id": "query_source_plan:6133f9cf4ded924a",
+          "planner_id": "eureka_query_to_source_action_planner_v0",
+          "raw_query": "QuickTime 7 Windows XP offline installer",
+          "result_lane_plans": [
+            {
+              "expected": true,
+              "lane": "reviewed_local_results",
+              "source": "controlled local index",
+              "truth_status": "reviewed_only"
+            },
+            {
+              "expected": true,
+              "lane": "archive_org_metadata_candidates",
+              "review_required": true,
+              "source": "internet_archive_metadata",
+              "truth_status": "candidate_only"
+            },
+            {
+              "blocked_actions": [
+                "download",
+                "install_handoff",
+                "execute",
+                "upload",
+                "extract"
+              ],
+              "expected": true,
+              "lane": "blocked_actions"
+            },
+            {
+              "domain_pack": "legacy_software",
+              "expected": true,
+              "lane": "source_actions_planned",
+              "truth_status": "plan_only"
+            }
+          ],
+          "review_handoff_plans": [
+            {
+              "accepted_reviewed_truth_created": false,
+              "candidate_states": [
+                "new",
+                "needs_review",
+                "useful_lead",
+                "near_miss",
+                "rejected",
+                "duplicate"
+              ],
+              "handoff_id": "review_handoff:fb12ffdf0abeb4b6",
+              "handoff_kind": "candidate_metadata_review",
+              "index_mutation_performed": false,
+              "notes": [
+                "Candidate metadata can become a reviewed record only through a later explicit review task.",
+                "This planner does not promote candidates or mutate public, local, or master indexes."
+              ],
+              "review_required": true,
+              "schema_version": "review_handoff_plan.v0"
+            }
+          ],
+          "safety": {
+            "accepted_truth_created": false,
+            "candidate_index_mutated": false,
+            "candidate_only": true,
+            "deployment_performed": false,
+            "download_performed": false,
+            "extraction_executed": false,
+            "install_handoff_enabled": false,
+            "master_index_mutated": false,
+            "model_provider_used": false,
+            "public_index_mutated": false,
+            "review_required": true,
+            "reviewed_index_mutated": false,
+            "source_cache_mutated": false,
+            "upload_performed": false
+          },
+          "schema_version": "query_to_source_action_plan.v0",
+          "source_actions": [
+            {
+              "accepted_truth": false,
+              "action_kind": "metadata_search",
+              "candidate_only": true,
+              "domain_pack": "legacy_software",
+              "download_performed": false,
+              "execution_mode": "metadata_candidate_runtime",
+              "extraction_executed": false,
+              "index_mutation_performed": false,
+              "intent": "find_exact_artifact",
+              "limitations": [
+                "metadata_only",
+                "candidate_not_reviewed_truth",
+                "no_download",
+                "no_extraction",
+                "no_auto_promotion"
+              ],
+              "model_provider_used": false,
+              "query": "mediatype:software \"Windows XP\" (quicktime 7 windows xp offline installer portable utilities utility software application installer) -iso -\"operating system image\" -\"installation media\" -\"windows 7 iso\"",
+              "review_required": true,
+              "schema_version": "source_action_plan.v0",
+              "source_family": "internet_archive_metadata",
+              "transport_mode": "metadata_only_http"
+            },
+            {
+              "accepted_truth": false,
+              "action_kind": "metadata_search",
+              "candidate_only": true,
+              "domain_pack": "legacy_software",
+              "download_performed": false,
+              "execution_mode": "planned_future",
+              "extraction_executed": false,
+              "index_mutation_performed": false,
+              "intent": "find_exact_artifact",
+              "limitations": [
+                "metadata_only",
+                "candidate_not_reviewed_truth",
+                "no_download",
+                "no_extraction",
+                "no_auto_promotion",
+                "not_executed_in_public_search_v0",
+                "source_family_future_or_operator_scoped"
+              ],
+              "model_provider_used": false,
+              "query": "QuickTime 7 Windows XP offline installer",
+              "review_required": true,
+              "schema_version": "source_action_plan.v0",
+              "source_family": "github_releases_metadata",
+              "transport_mode": "not_executed"
+            },
+            {
+              "accepted_truth": false,
+              "action_kind": "metadata_search",
+              "candidate_only": true,
+              "domain_pack": "legacy_software",
+              "download_performed": false,
+              "execution_mode": "planned_future",
+              "extraction_executed": false,
+              "index_mutation_performed": false,
+              "intent": "find_exact_artifact",
+              "limitations": [
+                "metadata_only",
+                "candidate_not_reviewed_truth",
+                "no_download",
+                "no_extraction",
+                "no_auto_promotion",
+                "not_executed_in_public_search_v0",
+                "source_family_future_or_operator_scoped"
+              ],
+              "model_provider_used": false,
+              "query": "QuickTime 7 Windows XP offline installer",
+              "review_required": true,
+              "schema_version": "source_action_plan.v0",
+              "source_family": "package_registry_metadata",
+              "transport_mode": "not_executed"
+            },
+            {
+              "accepted_truth": false,
+              "action_kind": "metadata_search",
+              "candidate_only": true,
+              "domain_pack": "legacy_software",
+              "download_performed": false,
+              "execution_mode": "planned_future",
+              "extraction_executed": false,
+              "index_mutation_performed": false,
+              "intent": "find_exact_artifact",
+              "limitations": [
+                "metadata_only",
+                "candidate_not_reviewed_truth",
+                "no_download",
+                "no_extraction",
+                "no_auto_promotion",
+                "not_executed_in_public_search_v0",
+                "source_family_future_or_operator_scoped"
+              ],
+              "model_provider_used": false,
+              "query": "QuickTime 7 Windows XP offline installer",
+              "review_required": true,
+              "schema_version": "source_action_plan.v0",
+              "source_family": "manual_source_pack",
+              "transport_mode": "not_executed"
+            }
+          ],
+          "source_families": [
+            "internet_archive_metadata",
+            "github_releases_metadata",
+            "package_registry_metadata",
+            "manual_source_pack"
+          ],
+          "source_query_rewrites": {
+            "archive_org_metadata": "mediatype:software \"Windows XP\" (quicktime 7 windows xp offline installer portable utilities utility software application installer) -iso -\"operating system image\" -\"installation media\" -\"windows 7 iso\""
+          },
+          "work_units": [
+            {
+              "domain_pack": "legacy_software",
+              "intent": "find_exact_artifact",
+              "mutation_allowed": false,
+              "operator_action": "review_candidates",
+              "query": "QuickTime 7 Windows XP offline installer",
+              "review_required": true,
+              "schema_version": "query_plan_work_unit.v0",
+              "source_families": [
+                "internet_archive_metadata",
+                "github_releases_metadata",
+                "package_registry_metadata",
+                "manual_source_pack"
+              ],
+              "work_unit_id": "query_work_unit:fb12ffdf0abeb4b6",
+              "work_unit_type": "candidate_metadata_review"
+            }
+          ]
+        },
+        "planner_plan_id": "query_source_plan:6133f9cf4ded924a",
+        "production_readiness_claimed": false,
+        "public_index_mutated": false,
+        "public_launch_readiness_claimed": false,
+        "public_mutation_enabled": false,
+        "query_id": "legacy_software_q06",
+        "raw_live_response_committed": false,
+        "raw_query": "QuickTime 7 Windows XP offline installer",
+        "review_required": true,
+        "reviewed_index_mutated": false,
+        "schema_version": "seed_batch_query_plan.v0",
+        "source_query_rewrites": {
+          "archive_org_metadata": "(mediatype:software OR mediatype:texts OR mediatype:collection) (QuickTime 7 Windows XP offline installer OR \"offline installer\" OR \"portable\" OR \"driver\" OR \"support CD\") -iso -crack -keygen -serial -warez -torrent -\"driver updater\"",
+          "github_releases_metadata": "QuickTime 7 Windows XP offline installer",
+          "internet_archive_metadata": "(mediatype:software OR mediatype:texts OR mediatype:collection) (QuickTime 7 Windows XP offline installer OR \"offline installer\" OR \"portable\" OR \"driver\" OR \"support CD\") -iso -crack -keygen -serial -warez -torrent -\"driver updater\"",
+          "manual_source_pack": "QuickTime 7 Windows XP offline installer",
+          "package_registry_metadata": "QuickTime 7 Windows XP offline installer",
+          "software_heritage_metadata": "QuickTime 7 Windows XP offline installer",
+          "wayback_cdx_metadata": "QuickTime 7 Windows XP offline installer"
+        }
+      },
+      "query_plan_ref": "legacy_seed_query_plan:4bab156cf23bbaa4",
+      "raw_query": "QuickTime 7 Windows XP offline installer",
+      "request_budget": {
+        "max_requests_per_query": 2,
+        "rows_per_search": 3
+      },
+      "review_priority": 2,
+      "review_required": true,
+      "schema_version": "live_metadata_pilot_seed_query.v0",
+      "seed_batch_id": "seed_batch_legacy_software_00",
+      "source_family": "internet_archive_metadata",
+      "suppressions": [
+        "web_installer_when_offline_requested",
+        "wrong_platform",
+        "wrong_version"
+      ]
+    }
+  ]
+}
+```

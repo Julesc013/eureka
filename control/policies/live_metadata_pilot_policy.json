@@ -1,0 +1,20 @@
+{
+  "schema_version": "live_metadata_pilot_policy.v0",
+  "task": "LIVE-METADATA-PILOT-BATCH-00",
+  "live_metadata_requires_operator_approval": true,
+  "metadata_only": true,
+  "raw_live_response_commit_allowed": false,
+  "downloads_enabled": false,
+  "extraction_enabled": false,
+  "accepted_truth_created": false,
+  "reviewed_index_mutation_enabled": false,
+  "public_index_mutation_enabled": false,
+  "master_index_mutation_enabled": false,
+  "public_live_source_fanout_enabled": false,
+  "public_mutation_enabled": false,
+  "model_provider_enabled": false,
+  "deployment_enabled": false,
+  "rate_limit_required": true,
+  "redaction_required": true,
+  "review_required": true
+}

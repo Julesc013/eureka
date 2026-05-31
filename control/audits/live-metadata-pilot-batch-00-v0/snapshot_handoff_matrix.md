@@ -1,0 +1,67 @@
+# Snapshot Handoff Matrix
+
+```json
+{
+  "accepted_truth": false,
+  "accepted_truth_created": false,
+  "candidate_index_mutated": false,
+  "created_at": "2026-05-31T00:00:00Z",
+  "deployment_performed": false,
+  "download_performed": false,
+  "extraction_executed": false,
+  "master_index_mutated": false,
+  "model_provider_used": false,
+  "operator_instance_mutated": false,
+  "pilot_batch_id": "live_metadata_pilot_batch_00",
+  "production_readiness_claimed": false,
+  "public_index_mutated": false,
+  "public_launch_readiness_claimed": false,
+  "public_live_source_fanout_enabled": false,
+  "public_mutation_enabled": false,
+  "raw_live_response_committed": false,
+  "requires_separate_snapshot_refresh_gate": true,
+  "review_required": true,
+  "reviewed_index_mutated": false,
+  "schema_version": "live_metadata_pilot_snapshot_refresh_handoff.v0",
+  "snapshot_refresh_executed": false,
+  "snapshot_refresh_handoff": {
+    "accepted_truth": false,
+    "accepted_truth_created": false,
+    "created_at": "2026-05-31T00:00:00Z",
+    "deployment_performed": false,
+    "download_performed": false,
+    "extraction_executed": false,
+    "handoff_id": "batch_snapshot_refresh_handoff:cf1cbb66a638b486",
+    "handoff_status": "blocked_no_promotion_previews",
+    "limitations": [
+      "batch_review_is_operator_gated",
+      "promotion_preview_is_not_promotion",
+      "local_apply_is_separate_gate",
+      "snapshot_refresh_is_separate_gate",
+      "no_automatic_truth_creation",
+      "no_public_mutation"
+    ],
+    "live_source_call_performed": false,
+    "master_index_mutated": false,
+    "model_provider_used": false,
+    "operator_context_required": true,
+    "operator_instance_mutated": false,
+    "production_readiness_claimed": false,
+    "promotion_preview_refs": [],
+    "public_index_mutated": false,
+    "public_launch_readiness_claimed": false,
+    "public_mutation_enabled": false,
+    "record_type": "batch_snapshot_refresh_handoff",
+    "requires_separate_snapshot_refresh_gate": true,
+    "review_required": true,
+    "reviewed_index_mutated": false,
+    "schema_version": "batch_snapshot_refresh_handoff.v0",
+    "snapshot_refresh_command_hint": "python scripts/eureka_snapshot_build.py --preview-only --json",
+    "snapshot_refresh_executed": false,
+    "snapshot_refresh_handoff_only": true
+  },
+  "snapshot_refresh_handoff_refs": [
+    "batch_snapshot_refresh_handoff:cf1cbb66a638b486"
+  ]
+}
+```

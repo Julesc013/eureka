@@ -1,0 +1,38 @@
+{
+  "arbitrary_web_crawling_enabled": false,
+  "public_live_source_fanout_enabled": false,
+  "schema_version": "live_metadata_pilot_source_plan_matrix.v0",
+  "source_families": [
+    {
+      "bounded": true,
+      "downloads_enabled": false,
+      "metadata_only": true,
+      "raw_response_commit_allowed": false,
+      "source_family": "internet_archive_metadata",
+      "status": "allowed_if_approved"
+    },
+    {
+      "live_enabled": false,
+      "source_family": "wayback_cdx_metadata",
+      "status": "fixture_or_descriptor_only"
+    },
+    {
+      "live_enabled": false,
+      "source_family": "github_releases_metadata",
+      "status": "fixture_or_descriptor_only"
+    },
+    {
+      "live_enabled": false,
+      "package_download_enabled": false,
+      "source_family": "package_registry_metadata",
+      "status": "fixture_or_descriptor_only"
+    },
+    {
+      "blob_fetch_enabled": false,
+      "live_enabled": false,
+      "source_family": "software_heritage_metadata",
+      "status": "fixture_or_descriptor_only"
+    }
+  ],
+  "task": "LIVE-METADATA-PILOT-BATCH-00"
+}

@@ -137,6 +137,12 @@
       "policy": "Task-local PUBLIC-SEARCH-UX-MODEL-00 audit evidence records canonical public search UX view-model validation; it is not product runtime state."
     },
     {
+      "path": "control/audits/live-metadata-pilot-batch-00-v0",
+      "artifact_class": "audit_generated",
+      "allow_task_local_drift": true,
+      "policy": "Task-local LIVE-METADATA-PILOT-BATCH-00 audit evidence records approval-gated live metadata pilot validation; it is not product runtime state."
+    },
+    {
       "path": "control/audits",
       "artifact_class": "audit_generated",
       "policy": "Audit generated outputs are evidence, not product runtime state."

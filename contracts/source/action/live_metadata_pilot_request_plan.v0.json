@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LiveMetadataPilotRequestPlan",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "pilot_batch_id",
+    "request_plan_id",
+    "query_id",
+    "source_family",
+    "endpoint_class",
+    "metadata_only",
+    "redaction_required",
+    "raw_response_commit_allowed",
+    "downloads_enabled",
+    "extraction_enabled",
+    "review_required",
+    "accepted_truth"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "live_metadata_pilot_request_plan.v0"
+    },
+    "pilot_batch_id": {
+      "type": "string"
+    },
+    "request_plan_id": {
+      "type": "string"
+    },
+    "query_id": {
+      "type": "string"
+    },
+    "source_family": {
+      "const": "internet_archive_metadata"
+    },
+    "endpoint_class": {
+      "enum": [
+        "metadata_search",
+        "item_metadata_read"
+      ]
+    },
+    "metadata_only": {
+      "const": true
+    },
+    "redaction_required": {
+      "const": true
+    },
+    "raw_response_commit_allowed": {
+      "const": false
+    },
+    "downloads_enabled": {
+      "const": false
+    },
+    "extraction_enabled": {
+      "const": false
+    },
+    "review_required": {
+      "const": true
+    },
+    "accepted_truth": {
+      "const": false
+    }
+  },
+  "additionalProperties": true
+}

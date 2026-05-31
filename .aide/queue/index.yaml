@@ -1,4 +1,4 @@
-current_recommended_task: LIVE-METADATA-PILOT-BATCH-00 - Operator-approved live metadata pilot over seed queries
+current_recommended_task: LIVE-METADATA-PILOT-BATCH-00 - provide approval and run bounded metadata pilot
 completed:
   - SOURCE-ACTION-KERNEL-00
   - SOURCE-WAVE-00
@@ -33,11 +33,13 @@ planned:
   - SEED-BATCH-DRIVER-SUPPORT-00
   - SNAPSHOT-REFRESH-01
   - PUBLIC-ALPHA-REASSESS-01
-waiting: []
+waiting:
+  - LIVE-METADATA-PILOT-BATCH-00
 status_options:
   - pass
   - pass_with_warnings
   - partial
   - blocked
   - fail
+  - WAITING_FOR_OPERATOR_LIVE_METADATA_APPROVAL
   - WAITING_FOR_EXTERNAL_FULL_DISCOVERY

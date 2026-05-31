@@ -1,0 +1,18 @@
+{
+  "schema_version": "aide_queue_task_status.v0",
+  "task": "LIVE-METADATA-PILOT-BATCH-00",
+  "status": "WAITING_FOR_OPERATOR_LIVE_METADATA_APPROVAL",
+  "latest_commit_expected": "policy(source): prepare live metadata pilot approval",
+  "approval_required_path": "control/approvals/live-metadata-pilot-batch-00-approval.json",
+  "approval_phrase": "RUN_BOUNDED_LIVE_METADATA_PILOT",
+  "dry_run_passed": true,
+  "fixture_mode_passed": true,
+  "operator_live_metadata_run_performed": false,
+  "raw_live_response_committed": false,
+  "download_performed": false,
+  "extraction_executed": false,
+  "accepted_truth_created": false,
+  "reviewed_index_mutated": false,
+  "public_index_mutated": false,
+  "next_task": "LIVE-METADATA-PILOT-BATCH-00 - provide approval and run bounded metadata pilot"
+}

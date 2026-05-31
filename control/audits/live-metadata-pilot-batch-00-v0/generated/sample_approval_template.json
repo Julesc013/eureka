@@ -1,0 +1,35 @@
+{
+  "accepted_truth_allowed": false,
+  "acknowledged_boundaries": [
+    "metadata_only",
+    "no_raw_response_commit",
+    "no_downloads",
+    "no_extraction",
+    "no_public_mutation",
+    "no_accepted_truth",
+    "review_required"
+  ],
+  "allowed_seed_batches": [
+    "seed_batch_frontier_media_00",
+    "seed_batch_legacy_software_00"
+  ],
+  "allowed_source_families": [
+    "internet_archive_metadata"
+  ],
+  "approval_phrase": "RUN_BOUNDED_LIVE_METADATA_PILOT",
+  "approved_at": "",
+  "approved_by": "",
+  "downloads_allowed": false,
+  "extraction_allowed": false,
+  "max_requests_per_query": 2,
+  "max_total_requests": 24,
+  "public_index_mutation_allowed": false,
+  "rate_limit_policy_ref": "control/policies/live_metadata_pilot_source_policy.json",
+  "raw_response_commit_allowed": false,
+  "redaction_policy_ref": "control/policies/live_metadata_pilot_redaction_policy.json",
+  "reviewed_index_mutation_allowed": false,
+  "schema_version": "live_metadata_pilot_approval.v0",
+  "task": "LIVE-METADATA-PILOT-BATCH-00",
+  "timeout_seconds": 15,
+  "user_agent_policy_ref": "control/policies/live_metadata_pilot_source_policy.json"
+}
