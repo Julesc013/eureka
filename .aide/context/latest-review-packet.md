@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (7129 chars, 1783 approximate tokens)
+- `.aide/context/latest-task-packet.md` (7190 chars, 1798 approximate tokens)
 
 ## Context Packet Reference
 
@@ -33,31 +33,31 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Changed Files Summary
 
+- allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/SNAPSHOT-REFRESH-01/README.md` (M; matches active task allowed path)
+- allowed: `.aide/queue/PUBLIC-ALPHA-REASSESS-01/README.md` (M; matches active task allowed path)
+- allowed: `.aide/queue/PUBLIC-ALPHA-REASSESS-02` (??; matches active task allowed path)
+- allowed: `.aide/queue/REVIEW-LIVE-METADATA-CANDIDATES-00` (??; matches active task allowed path)
+- allowed: `.aide/queue/SNAPSHOT-REFRESH-02` (??; matches active task allowed path)
 - allowed: `.aide/queue/index.yaml` (M; matches active task allowed path)
-- allowed: `contracts/snapshot/snapshot_live_metadata_candidate_section.v0.json` (??; matches active task allowed path)
-- allowed: `control/audits/snapshot-refresh-01-v0` (??; matches active task allowed path)
-- allowed: `control/inventory/snapshot_refresh_01_boundary_report.json` (??; matches active task allowed path)
-- allowed: `control/inventory/snapshot_refresh_01_candidate_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/snapshot_refresh_01_failure_repair_log.json` (??; matches active task allowed path)
-- allowed: `control/inventory/snapshot_refresh_01_input_state.json` (??; matches active task allowed path)
-- allowed: `control/inventory/snapshot_refresh_01_live_metadata_candidate_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/snapshot_refresh_01_need_absence_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/snapshot_refresh_01_next_task_decision.json` (??; matches active task allowed path)
-- allowed: `control/inventory/snapshot_refresh_01_public_alpha_reassess_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/snapshot_refresh_01_public_search_view_model_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/snapshot_refresh_01_relay_projection_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/snapshot_refresh_01_result.json` (??; matches active task allowed path)
-- allowed: `control/inventory/snapshot_refresh_01_review_queue_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/snapshot_refresh_01_reviewed_record_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/snapshot_refresh_01_smoke_result.json` (??; matches active task allowed path)
-- allowed: `control/inventory/snapshot_refresh_01_source_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/snapshot_refresh_01_validation_matrix.json` (??; matches active task allowed path)
-- allowed: `control/policies/generated_artifact_policy.json` (M; matches active task allowed path)
-- allowed: `control/policies/snapshot_refresh_candidate_policy.json` (M; matches active task allowed path)
-- allowed: `control/policies/snapshot_refresh_live_metadata_policy.json` (??; matches active task allowed path)
-- additional changed paths omitted from compact packet: 34; see task evidence changed-files report
+- allowed: `contracts/publication/public_alpha_live_metadata_reassess.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/publication/public_alpha_next_work_recommendation.v0.json` (M; matches active task allowed path)
+- allowed: `contracts/publication/public_alpha_reassess.v0.json` (M; matches active task allowed path)
+- allowed: `contracts/publication/public_alpha_reassess_decision.v0.json` (M; matches active task allowed path)
+- allowed: `contracts/publication/public_alpha_usefulness_metrics.v0.json` (M; matches active task allowed path)
+- allowed: `control/audits/public-alpha-reassess-01-v0` (??; matches active task allowed path)
+- allowed: `control/inventory/public_alpha_reassess_01_boundary_report.json` (??; matches active task allowed path)
+- allowed: `control/inventory/public_alpha_reassess_01_candidate_usefulness_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/public_alpha_reassess_01_failure_repair_log.json` (??; matches active task allowed path)
+- allowed: `control/inventory/public_alpha_reassess_01_input_state.json` (??; matches active task allowed path)
+- allowed: `control/inventory/public_alpha_reassess_01_launch_blocker_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/public_alpha_reassess_01_live_metadata_candidate_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/public_alpha_reassess_01_need_absence_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/public_alpha_reassess_01_next_task_decision.json` (??; matches active task allowed path)
+- allowed: `control/inventory/public_alpha_reassess_01_next_work_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/public_alpha_reassess_01_public_search_view_model_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/public_alpha_reassess_01_query_coverage_matrix.json` (??; matches active task allowed path)
+- additional changed paths omitted from compact packet: 39; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -67,8 +67,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 6959
-- approx_tokens: 1740
+- chars: 6961
+- approx_tokens: 1741
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

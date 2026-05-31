@@ -1,0 +1,93 @@
+# Launch Blocker Matrix
+
+```json
+{
+  "blockers": [
+    {
+      "blocker_id": "reviewed_record_count_below_threshold",
+      "evidence": "Reviewed records 1 < threshold 25.",
+      "launch_blocking": true,
+      "public_explanation": "Reviewed records 1 < threshold 25.",
+      "schema_version": "public_alpha_launch_blocker.v0",
+      "severity": "launch_blocking"
+    },
+    {
+      "blocker_id": "insufficient_domain_coverage",
+      "evidence": "Reviewed domains 1 < threshold 3.",
+      "launch_blocking": true,
+      "public_explanation": "Reviewed domains 1 < threshold 3.",
+      "schema_version": "public_alpha_launch_blocker.v0",
+      "severity": "launch_blocking"
+    },
+    {
+      "blocker_id": "candidate_heavy_review_light_snapshot",
+      "evidence": "Candidate/reviewed ratio is 36.0; candidates are not accepted truth.",
+      "launch_blocking": true,
+      "public_explanation": "Candidate/reviewed ratio is 36.0; candidates are not accepted truth.",
+      "schema_version": "public_alpha_launch_blocker.v0",
+      "severity": "launch_blocking"
+    },
+    {
+      "blocker_id": "live_metadata_candidates_not_reviewed",
+      "evidence": "Live metadata candidates present: 8; reviewed promotions: 0.",
+      "launch_blocking": true,
+      "public_explanation": "Live metadata candidates present: 8; reviewed promotions: 0.",
+      "schema_version": "public_alpha_launch_blocker.v0",
+      "severity": "launch_blocking"
+    },
+    {
+      "blocker_id": "no_public_launch_approval",
+      "evidence": "No explicit future manual approval exists for a public launch.",
+      "launch_blocking": true,
+      "public_explanation": "No explicit future manual approval exists for a public launch.",
+      "schema_version": "public_alpha_launch_blocker.v0",
+      "severity": "launch_blocking"
+    },
+    {
+      "blocker_id": "public_launch_track_deferred",
+      "evidence": "Public alpha launch remains deferred for discovery coverage.",
+      "launch_blocking": true,
+      "public_explanation": "Public alpha launch remains deferred for discovery coverage.",
+      "schema_version": "public_alpha_launch_blocker.v0",
+      "severity": "launch_blocking"
+    },
+    {
+      "blocker_id": "no_post_live_metadata_review_batch_applied",
+      "evidence": "Live metadata candidates have not been reviewed and locally applied.",
+      "launch_blocking": true,
+      "public_explanation": "Live metadata candidates have not been reviewed and locally applied.",
+      "schema_version": "public_alpha_launch_blocker.v0",
+      "severity": "launch_blocking"
+    },
+    {
+      "blocker_id": "no_snapshot_publication_rehearsal_after_reviewed_promotions",
+      "evidence": "No publication rehearsal has run after any reviewed promotions from live metadata.",
+      "launch_blocking": true,
+      "public_explanation": "No publication rehearsal has run after any reviewed promotions from live metadata.",
+      "schema_version": "public_alpha_launch_blocker.v0",
+      "severity": "launch_blocking"
+    }
+  ],
+  "blockers_count": 8,
+  "created_at": "2026-06-01T00:00:00Z",
+  "launch_blocked": true,
+  "nonblocking_positives": [
+    "candidate_discovery_stack_present",
+    "live_metadata_pilot_present",
+    "seed_batches_present",
+    "review_batch_present",
+    "snapshot_refresh_present",
+    "public_search_ux_models_present",
+    "needs_absences_present"
+  ],
+  "reassess_id": "public_alpha_reassess_01",
+  "schema_version": "public_alpha_launch_blocker_register.v0",
+  "warnings": [
+    "route correctness is not product usefulness",
+    "live metadata candidates improve discovery but remain unreviewed",
+    "candidate-rich snapshots remain internal review material",
+    "current reviewed corpus is too thin for public search expectations"
+  ],
+  "warnings_count": 4
+}
+```

@@ -1,0 +1,31 @@
+# Boundary Report
+
+```json
+{
+  "accepted_truth_created": false,
+  "candidate_promoted_to_reviewed": false,
+  "created_at": "2026-06-01T00:00:00Z",
+  "deployment_performed": false,
+  "download_performed": false,
+  "extraction_executed": false,
+  "launch_recommended": false,
+  "live_metadata_candidate_promoted": false,
+  "live_metadata_candidates_are_not_reviewed_truth": true,
+  "live_source_call_performed": false,
+  "master_index_mutated": false,
+  "model_provider_used": false,
+  "production_readiness_claimed": false,
+  "public_index_mutated": false,
+  "public_launch_performed": false,
+  "public_launch_readiness_claimed": false,
+  "public_live_source_fanout_enabled": false,
+  "public_mutation_enabled": false,
+  "reassess_id": "public_alpha_reassess_01",
+  "reassessment_is_not_launch": true,
+  "record_type": "public_alpha_reassess_boundary_report",
+  "reviewed_index_mutated": false,
+  "schema_version": "public_alpha_reassess_boundary_report.v0",
+  "site_dist_written": false,
+  "source_probe_executed": false
+}
+```

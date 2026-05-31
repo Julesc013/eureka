@@ -1,0 +1,7 @@
+{
+  "below_threshold": true,
+  "reviewed_record_count": 1,
+  "reviewed_record_threshold": 25,
+  "schema_version": "public_alpha_reassess_01_reviewed_record_matrix.v0",
+  "task": "PUBLIC-ALPHA-REASSESS-01"
+}

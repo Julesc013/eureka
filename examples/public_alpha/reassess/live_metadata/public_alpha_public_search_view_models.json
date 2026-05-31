@@ -1,0 +1,56 @@
+{
+  "accepted_truth_created": false,
+  "candidate_promoted_to_reviewed": false,
+  "candidate_verified_separation_visible": true,
+  "created_at": "2026-06-01T00:00:00Z",
+  "deployment_performed": false,
+  "download_performed": false,
+  "extraction_executed": false,
+  "launch_sufficient": false,
+  "live_metadata_candidate_promoted": false,
+  "live_metadata_candidate_status": "candidate",
+  "live_source_call_performed": false,
+  "master_index_mutated": false,
+  "model_provider_used": false,
+  "optional_states": [
+    "near_miss"
+  ],
+  "production_readiness_claimed": false,
+  "projection_profiles": [
+    "public_web",
+    "operator_workbench",
+    "api_json",
+    "classic_html",
+    "text"
+  ],
+  "projection_ref": "snapshot_public_search_view_model_projection:304b1f193deaf515",
+  "public_index_mutated": false,
+  "public_launch_performed": false,
+  "public_launch_readiness_claimed": false,
+  "public_live_source_fanout_enabled": false,
+  "public_mutation_enabled": false,
+  "public_search_view_models_available": true,
+  "read_only": true,
+  "reassess_id": "public_alpha_reassess_01",
+  "required_states": [
+    "verified",
+    "candidate",
+    "known_need",
+    "absence",
+    "source_lead"
+  ],
+  "required_states_available": true,
+  "result_card_count": 8,
+  "reviewed_index_mutated": false,
+  "schema_version": "public_alpha_reassess_01_public_search_view_model_matrix.v0",
+  "site_dist_written": false,
+  "source_probe_executed": false,
+  "status_counts": {
+    "absence": 2,
+    "candidate": 8,
+    "known_need": 28,
+    "near_miss": 0,
+    "source_lead": 0,
+    "verified": 1
+  }
+}

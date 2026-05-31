@@ -10,7 +10,6 @@
     "recommendations",
     "needs_more_reviewed_records",
     "needs_more_seed_batches",
-    "needs_live_metadata_pilot",
     "deployment_performed",
     "public_launch_performed"
   ],
@@ -22,6 +21,8 @@
     "needs_more_reviewed_records": { "type": "boolean" },
     "needs_more_seed_batches": { "type": "boolean" },
     "needs_live_metadata_pilot": { "type": "boolean" },
+    "needs_live_candidate_review": { "type": "boolean" },
+    "needs_snapshot_refresh_after_review": { "type": "boolean" },
     "deployment_performed": { "const": false },
     "public_launch_performed": { "const": false }
   },

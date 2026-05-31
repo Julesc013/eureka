@@ -1,0 +1,7 @@
+{
+  "absence_summary_count": 2,
+  "known_need_count": 28,
+  "launch_sufficient": false,
+  "schema_version": "public_alpha_reassess_01_need_absence_matrix.v0",
+  "task": "PUBLIC-ALPHA-REASSESS-01"
+}

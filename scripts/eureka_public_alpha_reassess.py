@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Run the PUBLIC-ALPHA-REASSESS-00 example reassessment."""
+"""Run public alpha reassessment examples."""
 
 from __future__ import annotations
 
@@ -14,7 +14,7 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.public_alpha import run_public_alpha_reassess  # noqa: E402
+from runtime.public_alpha import run_public_alpha_reassess, run_public_alpha_reassess_01  # noqa: E402
 
 
 def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout) -> int:
@@ -24,15 +24,26 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout) -> int:
         action="store_true",
         help="Use committed snapshot refresh examples.",
     )
+    parser.add_argument(
+        "--from-live-metadata-refresh-examples",
+        action="store_true",
+        help="Use committed live metadata snapshot refresh examples.",
+    )
     parser.add_argument("--write-examples", action="store_true", help="Write public-safe reassessment examples.")
     parser.add_argument("--json", action="store_true", help="Emit JSON. This is the default shape.")
     args = parser.parse_args(argv)
-    if not args.from_snapshot_refresh_examples:
-        parser.error("--from-snapshot-refresh-examples is required")
-    result = run_public_alpha_reassess(
-        from_snapshot_refresh_examples=True,
-        write_examples=args.write_examples,
-    )
+    if args.from_live_metadata_refresh_examples:
+        result = run_public_alpha_reassess_01(
+            from_live_metadata_refresh_examples=True,
+            write_examples=args.write_examples,
+        )
+    elif args.from_snapshot_refresh_examples:
+        result = run_public_alpha_reassess(
+            from_snapshot_refresh_examples=True,
+            write_examples=args.write_examples,
+        )
+    else:
+        parser.error("--from-snapshot-refresh-examples or --from-live-metadata-refresh-examples is required")
     print(json.dumps(result, indent=2, sort_keys=True), file=stdout)
     return 0 if result["status"] == "pass" else 1
 

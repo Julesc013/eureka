@@ -1,0 +1,15 @@
+{
+  "demo_mode_recommended": true,
+  "launch_recommended": false,
+  "planned_after": [
+    "SNAPSHOT-REFRESH-02",
+    "PUBLIC-ALPHA-REASSESS-02",
+    "SEED-BATCH-MANUALS-SCANS-00",
+    "SEED-BATCH-DRIVER-SUPPORT-00"
+  ],
+  "rationale": "Current snapshot is more useful for internal review, but reviewed-record count remains launch-blocking.",
+  "recommended_next_task": "REVIEW-LIVE-METADATA-CANDIDATES-00 - Review live metadata candidates for possible local promotion",
+  "schema_version": "public_alpha_reassess_01_next_task_decision.v0",
+  "status": "pass",
+  "task": "PUBLIC-ALPHA-REASSESS-01"
+}

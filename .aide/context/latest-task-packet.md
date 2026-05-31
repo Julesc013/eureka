@@ -2,19 +2,18 @@
 
 ## PHASE
 
-SNAPSHOT-REFRESH-01 - refresh snapshots after bounded live metadata pilot
+PUBLIC-ALPHA-REASSESS-01 - reassess alpha after live metadata snapshot refresh
 
 ## GOAL
 
-Package existing reviewed records, seed-batch candidates, and redacted live
-metadata candidates into read-only snapshot, relay, public-search view-model,
-and public-alpha reassessment packets.
+Produce an evidence-based public-alpha product decision after the live metadata
+pilot and `SNAPSHOT-REFRESH-01`.
 
 ## WHY
 
-The bounded live metadata pilot produced real source-backed candidate
-summaries. They need to be visible in the snapshot layer without being promoted
-to reviewed truth or public index material.
+The snapshot is more useful for internal demo and review because it now includes
+live-metadata-derived candidates, but the public search corpus still has only
+one reviewed record. The reassessment must keep that distinction explicit.
 
 ## CONTEXT_REFS
 
@@ -24,29 +23,35 @@ to reviewed truth or public index material.
 - `.aide/context/context-index.json`
 - `.aide/context/latest-context-packet.md`
 - `.aide/reports/eureka-aide-lite-operating-handoff.md`
+- `control/inventory/snapshot_refresh_01_result.json`
 - `control/inventory/live_metadata_pilot_result.json`
-- `control/inventory/snapshot_refresh_result.json`
-- `control/inventory/public_search_ux_model_result.json`
 - `control/inventory/public_alpha_reassess_result.json`
+- `control/inventory/public_search_ux_model_result.json`
 
 ## CURRENT_STATE
 
-- Live metadata source family: internet_archive_metadata
-- Selected live pilot queries: 8
-- Total live metadata requests: 16
-- Existing reviewed records: 1
-- Seed fixture candidates: 28
-- Live metadata candidates: 8
-- Known needs: 28
-- Bounded absences: 2
+- reviewed records: 1
+- fixture candidates: 28
+- live metadata candidates: 8
+- total candidates: 36
+- known needs: 28
+- bounded absences: 2
+- public launch track: deferred for discovery coverage
 
 ## ALLOWED_PATHS
 
-- `.aide/queue/SNAPSHOT-REFRESH-01/**`
 - `.aide/queue/PUBLIC-ALPHA-REASSESS-01/**`
+- `.aide/queue/REVIEW-LIVE-METADATA-CANDIDATES-00/**`
+- `.aide/queue/SNAPSHOT-REFRESH-02/**`
+- `.aide/queue/PUBLIC-ALPHA-REASSESS-02/**`
+- `.aide/queue/SEED-BATCH-MANUALS-SCANS-00/**`
+- `.aide/queue/SEED-BATCH-DRIVER-SUPPORT-00/**`
 - `.aide/queue/index.yaml`
 - `.aide/context/latest-task-packet.md`
 - `.aide/context/latest-review-packet.md`
+- `.aide/reports/eureka-repo-health.json`
+- `.aide/reports/eureka-repo-health.md`
+- `contracts/publication/**`
 - `contracts/snapshot/**`
 - `contracts/relay/**`
 - `contracts/capabilities/**`
@@ -56,83 +61,73 @@ to reviewed truth or public index material.
 - `contracts/discovery/**`
 - `contracts/review/**`
 - `contracts/search/query_plan/**`
-- `contracts/source/action/**`
 - `contracts/view/models/public_search/**`
 - `contracts/view_models/**`
 - `contracts/projections/**`
+- `runtime/public_alpha/**`
+- `runtime/gateway/**`
 - `runtime/snapshots/**`
 - `runtime/relay/**`
 - `runtime/capabilities/**`
 - `runtime/seed_batches/**`
 - `runtime/candidate_index/**`
-- `runtime/candidate_store/**`
-- `runtime/candidates/**`
 - `runtime/scout/**`
-- `runtime/discovery/**`
 - `runtime/review/batch/**`
-- `runtime/review/queue/**`
-- `runtime/source/action/**`
 - `runtime/local_eval/**`
 - `runtime/local_service/**`
 - `runtime/local_workbench/**`
-- `runtime/gateway/**`
-- `runtime/public_alpha/**`
 - `surfaces/api/**`
 - `surfaces/web/**`
 - `surfaces/web/workbench/**`
 - `surfaces/files/**`
 - `surfaces/text/**`
 - `surfaces/lite/**`
-- `scripts/eureka_snapshot_refresh.py`
-- `scripts/eureka_snapshot_refresh_report.py`
-- `scripts/eureka_relay_project.py`
-- `scripts/eureka_snapshot_validate.py`
+- `scripts/eureka_public_alpha_reassess.py`
+- `scripts/eureka_public_alpha_reassess_report.py`
+- `scripts/eureka_public_alpha_route_smoke.py`
+- `scripts/validate_public_alpha_reassess.py`
 - `scripts/validate_snapshot_refresh.py`
 - `scripts/validate_live_metadata_pilot_batch.py`
 - `scripts/validate_public_search_ux_model.py`
-- `scripts/validate_public_alpha_reassess.py`
 - `scripts/validate_seed_batch_frontier_media.py`
 - `scripts/validate_seed_batch_legacy_software.py`
 - `scripts/validate_review_batch.py`
-- `scripts/validate_scout_runtime.py`
 - `scripts/validate_candidate_index_runtime.py`
-- `scripts/validate_snapshot_relay.py`
 - `scripts/validate_public_alpha_readonly.py`
 - `scripts/eureka_test_select.py`
-- `tests/runtime/test_snapshot_refresh.py`
-- `tests/runtime/test_snapshot_refresh_seed_handoffs.py`
-- `tests/runtime/test_snapshot_refresh_candidate_sections.py`
-- `tests/runtime/test_snapshot_refresh_live_metadata_section.py`
-- `tests/runtime/test_snapshot_refresh_needs_absences.py`
-- `tests/runtime/test_snapshot_refresh_review_queue_summary.py`
-- `tests/runtime/test_snapshot_refresh_relay_projection.py`
-- `tests/runtime/test_snapshot_refresh_public_search_view_models.py`
-- `tests/runtime/test_snapshot_refresh_boundaries.py`
-- `tests/operations/test_snapshot_refresh_scripts.py`
-- `tests/scripts/test_validate_snapshot_refresh.py`
-- `examples/snapshots/refresh/**`
-- `examples/relay/refresh/**`
-- `examples/live_metadata_pilot/**`
-- `examples/candidates/live_metadata/**`
-- `examples/scout/live_metadata/**`
-- `examples/review_batch/live_metadata/**`
+- `tests/runtime/test_public_alpha_reassess.py`
+- `tests/runtime/test_public_alpha_reassess_metrics.py`
+- `tests/runtime/test_public_alpha_reassess_routes.py`
+- `tests/runtime/test_public_alpha_reassess_decision.py`
+- `tests/runtime/test_public_alpha_reassess_live_metadata.py`
+- `tests/runtime/test_public_alpha_reassess_public_search_view_models.py`
+- `tests/runtime/test_public_alpha_reassess_boundaries.py`
+- `tests/operations/test_public_alpha_reassess_scripts.py`
+- `tests/scripts/test_validate_public_alpha_reassess.py`
 - `examples/public_alpha/reassess/**`
-- `control/policies/snapshot_refresh_policy.json`
-- `control/policies/snapshot_refresh_reviewed_record_policy.json`
-- `control/policies/snapshot_refresh_candidate_policy.json`
-- `control/policies/snapshot_refresh_live_metadata_policy.json`
-- `control/policies/snapshot_refresh_need_absence_policy.json`
-- `control/policies/snapshot_refresh_relay_policy.json`
-- `control/policies/snapshot_refresh_non_claim_policy.json`
+- `examples/snapshots/refresh/**`
+- `examples/snapshots/refresh/live_metadata/**`
+- `examples/relay/refresh/**`
+- `examples/seed_batches/frontier_media/**`
+- `examples/seed_batches/legacy_software/**`
+- `examples/live_metadata_pilot/**`
+- `examples/view_models/public_search/**`
+- `control/policies/public_alpha_reassess_policy.json`
+- `control/policies/public_alpha_reassess_threshold_policy.json`
+- `control/policies/public_alpha_reassess_route_smoke_policy.json`
+- `control/policies/public_alpha_reassess_live_metadata_policy.json`
+- `control/policies/public_alpha_reassess_non_claim_policy.json`
+- `control/policies/public_alpha_reassess_next_work_policy.json`
 - `control/policies/generated_artifact_policy.json`
-- `control/inventory/snapshot_refresh_01_*.json`
-- `docs/architecture/SNAPSHOT_REFRESH_01.md`
-- `docs/architecture/SNAPSHOT_LIVE_METADATA_HANDOFFS.md`
-- `docs/architecture/LIVE_METADATA_CANDIDATE_SNAPSHOT_SECTION.md`
-- `docs/operations/SNAPSHOT_REFRESH_01_RUNBOOK.md`
-- `docs/operations/POST_SNAPSHOT_REFRESH_01_PLAN.md`
-- `docs/reference/SNAPSHOT_LIVE_METADATA_SECTION.md`
-- `control/audits/snapshot-refresh-01-v0/**`
+- `control/inventory/public_alpha_reassess_01_*.json`
+- `docs/architecture/PUBLIC_ALPHA_REASSESS_01.md`
+- `docs/operations/PUBLIC_ALPHA_REASSESS_01_RUNBOOK.md`
+- `docs/operations/PUBLIC_ALPHA_USEFULNESS_THRESHOLDS.md`
+- `docs/operations/POST_PUBLIC_ALPHA_REASSESS_01_PLAN.md`
+- `docs/reference/PUBLIC_ALPHA_REASSESS_DECISION.md`
+- `docs/reference/PUBLIC_ALPHA_USEFULNESS_METRICS.md`
+- `docs/reference/PUBLIC_ALPHA_LIVE_METADATA_REASSESSMENT.md`
+- `control/audits/public-alpha-reassess-01-v0/**`
 
 ## FORBIDDEN_PATHS
 
@@ -165,37 +160,40 @@ to reviewed truth or public index material.
 
 ## IMPLEMENTATION
 
-- Add a live metadata candidate snapshot section.
-- Keep reviewed records, seed candidates, and live metadata candidates separate.
-- Build relay, public search view-model, and public alpha reassessment packets.
-- Write inventory and audit evidence.
-- Preserve all no-mutation and no-launch boundaries.
+- Add live metadata reassessment contracts and policy.
+- Build v1 runtime metrics, blocker, decision, boundary, and next-work packets.
+- Generate public-safe examples, inventory packets, and audit evidence.
+- Validate public search view-model coverage and route/API smoke from examples.
+- Keep live metadata candidates review-only and launch recommendation false.
 
 ## VALIDATION
 
 - `git diff --check`
+- `python scripts/validate_public_alpha_reassess.py`
 - `python scripts/validate_snapshot_refresh.py`
 - `python scripts/validate_live_metadata_pilot_batch.py`
 - `python scripts/validate_public_search_ux_model.py`
-- `python scripts/validate_public_alpha_reassess.py`
 - seed, review, SCOUT, candidate, planner, relay, public-readonly, source validators
-- focused snapshot refresh unittest modules
+- focused public alpha reassess unittest modules
 - AIDE Lite doctor, validate, test, selftest, verify, review-pack, and commit check
 
 Full unittest discovery is not run by policy.
 
 ## ACCEPTANCE
 
-- Live metadata pilot output is integrated into snapshot refresh 01.
-- Live metadata candidates are distinct from fixture candidates and reviewed records.
-- Public search view-model projection marks live metadata results as candidates.
-- Boundary reports keep all mutation, deployment, extraction, download, and readiness flags false.
+- Counts are recorded: 1 reviewed, 28 fixture candidates, 8 live metadata
+  candidates, 28 needs, 2 absences.
+- Launch remains not recommended.
+- Internal demo/review is recommended.
+- Live candidate review and a later snapshot refresh are recommended.
+- Boundary reports keep all mutation, deployment, extraction, download, model,
+  live-source, and readiness flags false.
 - Focused validators and tests pass.
 
 ## OUTPUT_SCHEMA
 
-Final report uses the user-requested SNAPSHOT_REFRESH_01 format with validation
-and boundary summaries.
+Final report uses the user-requested PUBLIC_ALPHA_REASSESS_01 format with
+validation and boundary summaries.
 
 ## TOKEN_ESTIMATE
 
@@ -203,6 +201,6 @@ medium
 
 ## EVIDENCE
 
-- `examples/snapshots/refresh/live_metadata/`
-- `control/inventory/snapshot_refresh_01_result.json`
-- `control/audits/snapshot-refresh-01-v0/`
+- `examples/public_alpha/reassess/live_metadata/`
+- `control/inventory/public_alpha_reassess_01_result.json`
+- `control/audits/public-alpha-reassess-01-v0/`
