@@ -9,7 +9,7 @@
   "master_index_mutated": false,
   "model_provider_used": false,
   "operator_instance_mutated": false,
-  "operator_live_metadata_run_performed": false,
+  "operator_live_metadata_run_performed": true,
   "production_readiness_claimed": false,
   "public_index_mutated": false,
   "public_launch_readiness_claimed": false,
@@ -18,6 +18,6 @@
   "raw_live_response_committed": false,
   "reviewed_index_mutated": false,
   "schema_version": "live_metadata_pilot_smoke_result.v0",
-  "status": "waiting_for_operator_live_metadata_approval",
+  "status": "pass",
   "task": "LIVE-METADATA-PILOT-BATCH-00"
 }

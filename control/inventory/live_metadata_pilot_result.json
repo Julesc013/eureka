@@ -1,7 +1,7 @@
 {
   "accepted_truth_created": false,
   "approval_template_added": true,
-  "approval_verified": false,
+  "approval_verified": true,
   "candidate_index_handoff_created": true,
   "candidate_summaries_created": true,
   "deployment_performed": false,
@@ -10,12 +10,12 @@
   "extraction_executed": false,
   "fixture_mode_passed": true,
   "master_index_mutated": false,
-  "operator_live_metadata_run_performed": false,
+  "operator_live_metadata_run_performed": true,
   "policies_added": true,
   "public_alpha_reassess_input_created": true,
   "public_index_mutated": false,
   "raw_live_response_committed": false,
-  "recommended_next_task": "LIVE-METADATA-PILOT-BATCH-00 - provide approval and run bounded metadata pilot",
+  "recommended_next_task": "SNAPSHOT-REFRESH-01 - Refresh snapshots after live metadata pilot",
   "request_plan_matrix_added": true,
   "review_batch_packet_created": true,
   "reviewed_index_mutated": false,
@@ -26,7 +26,7 @@
   "selected_query_count": 8,
   "snapshot_refresh_handoff_created": true,
   "source_family": "internet_archive_metadata",
-  "status": "waiting_for_operator_live_metadata_approval",
+  "status": "pass",
   "task": "LIVE-METADATA-PILOT-BATCH-00",
-  "total_live_requests": 0
+  "total_live_requests": 16
 }

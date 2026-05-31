@@ -151,6 +151,12 @@ def validate() -> dict[str, Any]:
 def _runtime_checks() -> dict[str, bool]:
     approval = load_live_metadata_pilot_approval()
     approval_state = validate_live_metadata_pilot_approval(approval) if approval.get("approval_phrase") else approval
+    approval_present = bool(approval.get("approval_phrase"))
+    approval_gate_valid = (
+        approval_state.get("approval_verified") is True
+        if approval_present
+        else approval_state.get("approval_verified") is not True
+    )
     queries = select_live_metadata_seed_queries()
     plans = build_live_metadata_request_plans(queries)
     dry_run = run_live_metadata_pilot_batch(dry_run=True)
@@ -159,7 +165,7 @@ def _runtime_checks() -> dict[str, bool]:
     boundary = fixture["boundary_report"]
     return {
         "approval_template_builds": template["approval_phrase"] == "RUN_BOUNDED_LIVE_METADATA_PILOT",
-        "approval_missing_waits": approval_state.get("approval_verified") is not True,
+        "approval_gate_state_valid": approval_gate_valid,
         "selected_query_mix": (
             len([item for item in queries if item["seed_batch_id"] == "seed_batch_frontier_media_00"]) >= 4
             and len([item for item in queries if item["seed_batch_id"] == "seed_batch_legacy_software_00"]) >= 4

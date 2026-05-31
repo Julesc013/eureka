@@ -1,5 +1,5 @@
 {
-  "expected_task_status": "waiting_for_operator_live_metadata_approval",
+  "expected_task_status": "pass",
   "full_discovery": "NOT_RUN_BY_POLICY",
   "schema_version": "live_metadata_pilot_validation_matrix.v0",
   "status": "pass",

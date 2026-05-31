@@ -3,49 +3,19 @@
 ```json
 {
   "accepted_truth_created": false,
-  "alternative_approval_path": "control/inventory/live_metadata_pilot_batch_manual_approval.json",
-  "approval_present": false,
-  "approval_template": {
-    "accepted_truth_allowed": false,
-    "acknowledged_boundaries": [
-      "metadata_only",
-      "no_raw_response_commit",
-      "no_downloads",
-      "no_extraction",
-      "no_public_mutation",
-      "no_accepted_truth",
-      "review_required"
-    ],
-    "allowed_seed_batches": [
-      "seed_batch_frontier_media_00",
-      "seed_batch_legacy_software_00"
-    ],
-    "allowed_source_families": [
-      "internet_archive_metadata"
-    ],
-    "approval_phrase": "RUN_BOUNDED_LIVE_METADATA_PILOT",
-    "approved_at": "",
-    "approved_by": "",
-    "downloads_allowed": false,
-    "extraction_allowed": false,
-    "max_requests_per_query": 2,
-    "max_total_requests": 24,
-    "public_index_mutation_allowed": false,
-    "rate_limit_policy_ref": "control/policies/live_metadata_pilot_source_policy.json",
-    "raw_response_commit_allowed": false,
-    "redaction_policy_ref": "control/policies/live_metadata_pilot_redaction_policy.json",
-    "reviewed_index_mutation_allowed": false,
-    "schema_version": "live_metadata_pilot_approval.v0",
-    "task": "LIVE-METADATA-PILOT-BATCH-00",
-    "timeout_seconds": 15,
-    "user_agent_policy_ref": "control/policies/live_metadata_pilot_source_policy.json"
-  },
-  "approval_verified": false,
+  "allowed_source_families": [
+    "internet_archive_metadata"
+  ],
+  "approval_present": true,
+  "approval_verified": true,
+  "blocked_reasons": [],
   "candidate_index_mutated": false,
   "deployment_performed": false,
   "download_performed": false,
   "extraction_executed": false,
   "master_index_mutated": false,
+  "max_requests_per_query": 2,
+  "max_total_requests": 24,
   "model_provider_used": false,
   "operator_instance_mutated": false,
   "operator_live_metadata_run_performed": false,
@@ -55,10 +25,9 @@
   "public_live_source_fanout_enabled": false,
   "public_mutation_enabled": false,
   "raw_live_response_committed": false,
-  "required_approval_path": "control/approvals/live-metadata-pilot-batch-00-approval.json",
   "reviewed_index_mutated": false,
-  "schema_version": "live_metadata_pilot_approval_state.v0",
-  "status": "waiting_for_operator_live_metadata_approval",
-  "task": "LIVE-METADATA-PILOT-BATCH-00"
+  "schema_version": "live_metadata_pilot_approval_validation.v0",
+  "task": "LIVE-METADATA-PILOT-BATCH-00",
+  "timeout_seconds": 15
 }
 ```

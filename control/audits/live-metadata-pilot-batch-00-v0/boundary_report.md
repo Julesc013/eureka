@@ -13,7 +13,7 @@
   "metadata_only": true,
   "model_provider_used": false,
   "operator_instance_mutated": false,
-  "operator_live_metadata_run_performed": false,
+  "operator_live_metadata_run_performed": true,
   "pilot_batch_id": "live_metadata_pilot_batch_00",
   "production_readiness_claimed": false,
   "public_index_mutated": false,
@@ -25,6 +25,6 @@
   "reviewed_index_mutated": false,
   "schema_version": "live_metadata_pilot_boundary_report.v0",
   "task": "LIVE-METADATA-PILOT-BATCH-00",
-  "total_live_requests": 0
+  "total_live_requests": 16
 }
 ```

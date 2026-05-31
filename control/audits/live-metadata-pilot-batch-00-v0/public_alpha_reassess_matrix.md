@@ -14,7 +14,7 @@
   "master_index_mutated": false,
   "model_provider_used": false,
   "operator_instance_mutated": false,
-  "operator_live_metadata_run_performed": false,
+  "operator_live_metadata_run_performed": true,
   "pilot_batch_id": "live_metadata_pilot_batch_00",
   "production_readiness_claimed": false,
   "public_index_mutated": false,
@@ -26,6 +26,6 @@
   "reviewed_index_mutated": false,
   "schema_version": "live_metadata_pilot_public_alpha_reassess_input.v0",
   "selected_query_count": 8,
-  "total_live_requests": 0
+  "total_live_requests": 16
 }
 ```

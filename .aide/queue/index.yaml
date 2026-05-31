@@ -1,4 +1,4 @@
-current_recommended_task: LIVE-METADATA-PILOT-BATCH-00 - provide approval and run bounded metadata pilot
+current_recommended_task: SNAPSHOT-REFRESH-01 - Refresh snapshots after live metadata pilot
 completed:
   - SOURCE-ACTION-KERNEL-00
   - SOURCE-WAVE-00
@@ -24,17 +24,16 @@ completed:
   - SNAPSHOT-REFRESH-00
   - PUBLIC-ALPHA-REASSESS-00
   - PUBLIC-SEARCH-UX-MODEL-00
+  - LIVE-METADATA-PILOT-BATCH-00
 blocked: []
 planned:
-  - LIVE-METADATA-PILOT-BATCH-00
+  - SNAPSHOT-REFRESH-01
+  - PUBLIC-ALPHA-REASSESS-01
   - PUBLIC-SEARCH-UX-MVP-00
   - PUBLIC-SEARCH-UX-GATE-00
   - SEED-BATCH-MANUALS-SCANS-00
   - SEED-BATCH-DRIVER-SUPPORT-00
-  - SNAPSHOT-REFRESH-01
-  - PUBLIC-ALPHA-REASSESS-01
-waiting:
-  - LIVE-METADATA-PILOT-BATCH-00
+waiting: []
 status_options:
   - pass
   - pass_with_warnings

@@ -62,11 +62,11 @@
           "schema_version": "review_batch_candidate_summary.v0",
           "source_family": "internet_archive_metadata",
           "source_locator": {
-            "identifier_hash": "acb08039f65e7b20",
+            "identifier_hash": "f73ee8216e536feb",
             "locator_kind": "redacted_archive_org_metadata_summary",
             "request_plan_id": "live_metadata_request_plan:2ee1238a44c933bb"
           },
-          "title": "Fixture redacted Internet Archive metadata summary for New York 1993 D-Theater HD demo tape original source."
+          "title": "Redacted live IA metadata summary for New York 1993 D-Theater HD demo tape original source"
         },
         {
           "accepted_truth": false,
@@ -78,11 +78,11 @@
           "schema_version": "review_batch_candidate_summary.v0",
           "source_family": "internet_archive_metadata",
           "source_locator": {
-            "identifier_hash": "6628eab2261842c3",
+            "identifier_hash": "664edb11ce00d6d8",
             "locator_kind": "redacted_archive_org_metadata_summary",
             "request_plan_id": "live_metadata_request_plan:0ac41bb5e1e9a32a"
           },
-          "title": "Fixture redacted Internet Archive metadata summary for JVC D-Theater New York HD demo."
+          "title": "Redacted live IA metadata summary for JVC D-Theater New York HD demo"
         },
         {
           "accepted_truth": false,
@@ -94,11 +94,11 @@
           "schema_version": "review_batch_candidate_summary.v0",
           "source_family": "internet_archive_metadata",
           "source_locator": {
-            "identifier_hash": "4141cef21b38ef4a",
+            "identifier_hash": "f73ee8216e536feb",
             "locator_kind": "redacted_archive_org_metadata_summary",
             "request_plan_id": "live_metadata_request_plan:de91338c0be8faa8"
           },
-          "title": "Fixture redacted Internet Archive metadata summary for Hi-Vision MUSE New York 1993 HDTV demo."
+          "title": "Redacted live IA metadata summary for Hi-Vision MUSE New York 1993 HDTV demo"
         },
         {
           "accepted_truth": false,
@@ -110,11 +110,11 @@
           "schema_version": "review_batch_candidate_summary.v0",
           "source_family": "internet_archive_metadata",
           "source_locator": {
-            "identifier_hash": "93f2ba8b16a65c02",
+            "identifier_hash": "ce88ebfa1edab05c",
             "locator_kind": "redacted_archive_org_metadata_summary",
             "request_plan_id": "live_metadata_request_plan:329a4cdef5174e42"
           },
-          "title": "Fixture redacted Internet Archive metadata summary for early HDTV New York 1993 demo footage."
+          "title": "Redacted live IA metadata summary for early HDTV New York 1993 demo footage"
         },
         {
           "accepted_truth": false,
@@ -126,11 +126,11 @@
           "schema_version": "review_batch_candidate_summary.v0",
           "source_family": "internet_archive_metadata",
           "source_locator": {
-            "identifier_hash": "ab65ad543d2117e1",
+            "identifier_hash": "e3364703516b5e71",
             "locator_kind": "redacted_archive_org_metadata_summary",
             "request_plan_id": "live_metadata_request_plan:d863f1df03bf6e31"
           },
-          "title": "Fixture redacted Internet Archive metadata summary for Windows 7-compatible portable utilities, not Windows 7 ISO."
+          "title": "Redacted live IA metadata summary for Windows 7-compatible portable utilities, not Windows 7 ISO"
         },
         {
           "accepted_truth": false,
@@ -142,11 +142,11 @@
           "schema_version": "review_batch_candidate_summary.v0",
           "source_family": "internet_archive_metadata",
           "source_locator": {
-            "identifier_hash": "10e8fe27357765f5",
+            "identifier_hash": "04631f42311aa0ca",
             "locator_kind": "redacted_archive_org_metadata_summary",
             "request_plan_id": "live_metadata_request_plan:3ecc6325324f5b4c"
           },
-          "title": "Fixture redacted Internet Archive metadata summary for DirectX SDK June 2010 offline installer."
+          "title": "Redacted live IA metadata summary for DirectX SDK June 2010 offline installer"
         },
         {
           "accepted_truth": false,
@@ -158,11 +158,11 @@
           "schema_version": "review_batch_candidate_summary.v0",
           "source_family": "internet_archive_metadata",
           "source_locator": {
-            "identifier_hash": "133436094793b92c",
+            "identifier_hash": "04631f42311aa0ca",
             "locator_kind": "redacted_archive_org_metadata_summary",
             "request_plan_id": "live_metadata_request_plan:f306403c80116097"
           },
-          "title": "Fixture redacted Internet Archive metadata summary for StyleWriter 2500 Mac OS 8 driver."
+          "title": "Redacted live IA metadata summary for StyleWriter 2500 Mac OS 8 driver"
         },
         {
           "accepted_truth": false,
@@ -174,11 +174,11 @@
           "schema_version": "review_batch_candidate_summary.v0",
           "source_family": "internet_archive_metadata",
           "source_locator": {
-            "identifier_hash": "d76351e9ca479051",
+            "identifier_hash": "04631f42311aa0ca",
             "locator_kind": "redacted_archive_org_metadata_summary",
             "request_plan_id": "live_metadata_request_plan:6f13cfb79e2dfe62"
           },
-          "title": "Fixture redacted Internet Archive metadata summary for QuickTime 7 Windows XP offline installer."
+          "title": "Redacted live IA metadata summary for QuickTime 7 Windows XP offline installer"
         }
       ],
       "cluster_refs": [
@@ -630,11 +630,11 @@
             "schema_version": "review_batch_candidate_summary.v0",
             "source_family": "internet_archive_metadata",
             "source_locator": {
-              "identifier_hash": "acb08039f65e7b20",
+              "identifier_hash": "f73ee8216e536feb",
               "locator_kind": "redacted_archive_org_metadata_summary",
               "request_plan_id": "live_metadata_request_plan:2ee1238a44c933bb"
             },
-            "title": "Fixture redacted Internet Archive metadata summary for New York 1993 D-Theater HD demo tape original source."
+            "title": "Redacted live IA metadata summary for New York 1993 D-Theater HD demo tape original source"
           },
           {
             "accepted_truth": false,
@@ -646,11 +646,11 @@
             "schema_version": "review_batch_candidate_summary.v0",
             "source_family": "internet_archive_metadata",
             "source_locator": {
-              "identifier_hash": "6628eab2261842c3",
+              "identifier_hash": "664edb11ce00d6d8",
               "locator_kind": "redacted_archive_org_metadata_summary",
               "request_plan_id": "live_metadata_request_plan:0ac41bb5e1e9a32a"
             },
-            "title": "Fixture redacted Internet Archive metadata summary for JVC D-Theater New York HD demo."
+            "title": "Redacted live IA metadata summary for JVC D-Theater New York HD demo"
           },
           {
             "accepted_truth": false,
@@ -662,11 +662,11 @@
             "schema_version": "review_batch_candidate_summary.v0",
             "source_family": "internet_archive_metadata",
             "source_locator": {
-              "identifier_hash": "4141cef21b38ef4a",
+              "identifier_hash": "f73ee8216e536feb",
               "locator_kind": "redacted_archive_org_metadata_summary",
               "request_plan_id": "live_metadata_request_plan:de91338c0be8faa8"
             },
-            "title": "Fixture redacted Internet Archive metadata summary for Hi-Vision MUSE New York 1993 HDTV demo."
+            "title": "Redacted live IA metadata summary for Hi-Vision MUSE New York 1993 HDTV demo"
           },
           {
             "accepted_truth": false,
@@ -678,11 +678,11 @@
             "schema_version": "review_batch_candidate_summary.v0",
             "source_family": "internet_archive_metadata",
             "source_locator": {
-              "identifier_hash": "93f2ba8b16a65c02",
+              "identifier_hash": "ce88ebfa1edab05c",
               "locator_kind": "redacted_archive_org_metadata_summary",
               "request_plan_id": "live_metadata_request_plan:329a4cdef5174e42"
             },
-            "title": "Fixture redacted Internet Archive metadata summary for early HDTV New York 1993 demo footage."
+            "title": "Redacted live IA metadata summary for early HDTV New York 1993 demo footage"
           },
           {
             "accepted_truth": false,
@@ -694,11 +694,11 @@
             "schema_version": "review_batch_candidate_summary.v0",
             "source_family": "internet_archive_metadata",
             "source_locator": {
-              "identifier_hash": "ab65ad543d2117e1",
+              "identifier_hash": "e3364703516b5e71",
               "locator_kind": "redacted_archive_org_metadata_summary",
               "request_plan_id": "live_metadata_request_plan:d863f1df03bf6e31"
             },
-            "title": "Fixture redacted Internet Archive metadata summary for Windows 7-compatible portable utilities, not Windows 7 ISO."
+            "title": "Redacted live IA metadata summary for Windows 7-compatible portable utilities, not Windows 7 ISO"
           },
           {
             "accepted_truth": false,
@@ -710,11 +710,11 @@
             "schema_version": "review_batch_candidate_summary.v0",
             "source_family": "internet_archive_metadata",
             "source_locator": {
-              "identifier_hash": "10e8fe27357765f5",
+              "identifier_hash": "04631f42311aa0ca",
               "locator_kind": "redacted_archive_org_metadata_summary",
               "request_plan_id": "live_metadata_request_plan:3ecc6325324f5b4c"
             },
-            "title": "Fixture redacted Internet Archive metadata summary for DirectX SDK June 2010 offline installer."
+            "title": "Redacted live IA metadata summary for DirectX SDK June 2010 offline installer"
           },
           {
             "accepted_truth": false,
@@ -726,11 +726,11 @@
             "schema_version": "review_batch_candidate_summary.v0",
             "source_family": "internet_archive_metadata",
             "source_locator": {
-              "identifier_hash": "133436094793b92c",
+              "identifier_hash": "04631f42311aa0ca",
               "locator_kind": "redacted_archive_org_metadata_summary",
               "request_plan_id": "live_metadata_request_plan:f306403c80116097"
             },
-            "title": "Fixture redacted Internet Archive metadata summary for StyleWriter 2500 Mac OS 8 driver."
+            "title": "Redacted live IA metadata summary for StyleWriter 2500 Mac OS 8 driver"
           },
           {
             "accepted_truth": false,
@@ -742,11 +742,11 @@
             "schema_version": "review_batch_candidate_summary.v0",
             "source_family": "internet_archive_metadata",
             "source_locator": {
-              "identifier_hash": "d76351e9ca479051",
+              "identifier_hash": "04631f42311aa0ca",
               "locator_kind": "redacted_archive_org_metadata_summary",
               "request_plan_id": "live_metadata_request_plan:6f13cfb79e2dfe62"
             },
-            "title": "Fixture redacted Internet Archive metadata summary for QuickTime 7 Windows XP offline installer."
+            "title": "Redacted live IA metadata summary for QuickTime 7 Windows XP offline installer"
           }
         ],
         "cluster_id": "candidate_cluster:e02dc653c4ae6429",
@@ -855,11 +855,11 @@
             "schema_version": "review_batch_candidate_summary.v0",
             "source_family": "internet_archive_metadata",
             "source_locator": {
-              "identifier_hash": "acb08039f65e7b20",
+              "identifier_hash": "f73ee8216e536feb",
               "locator_kind": "redacted_archive_org_metadata_summary",
               "request_plan_id": "live_metadata_request_plan:2ee1238a44c933bb"
             },
-            "title": "Fixture redacted Internet Archive metadata summary for New York 1993 D-Theater HD demo tape original source."
+            "title": "Redacted live IA metadata summary for New York 1993 D-Theater HD demo tape original source"
           },
           {
             "accepted_truth": false,
@@ -871,11 +871,11 @@
             "schema_version": "review_batch_candidate_summary.v0",
             "source_family": "internet_archive_metadata",
             "source_locator": {
-              "identifier_hash": "6628eab2261842c3",
+              "identifier_hash": "664edb11ce00d6d8",
               "locator_kind": "redacted_archive_org_metadata_summary",
               "request_plan_id": "live_metadata_request_plan:0ac41bb5e1e9a32a"
             },
-            "title": "Fixture redacted Internet Archive metadata summary for JVC D-Theater New York HD demo."
+            "title": "Redacted live IA metadata summary for JVC D-Theater New York HD demo"
           },
           {
             "accepted_truth": false,
@@ -887,11 +887,11 @@
             "schema_version": "review_batch_candidate_summary.v0",
             "source_family": "internet_archive_metadata",
             "source_locator": {
-              "identifier_hash": "4141cef21b38ef4a",
+              "identifier_hash": "f73ee8216e536feb",
               "locator_kind": "redacted_archive_org_metadata_summary",
               "request_plan_id": "live_metadata_request_plan:de91338c0be8faa8"
             },
-            "title": "Fixture redacted Internet Archive metadata summary for Hi-Vision MUSE New York 1993 HDTV demo."
+            "title": "Redacted live IA metadata summary for Hi-Vision MUSE New York 1993 HDTV demo"
           },
           {
             "accepted_truth": false,
@@ -903,11 +903,11 @@
             "schema_version": "review_batch_candidate_summary.v0",
             "source_family": "internet_archive_metadata",
             "source_locator": {
-              "identifier_hash": "93f2ba8b16a65c02",
+              "identifier_hash": "ce88ebfa1edab05c",
               "locator_kind": "redacted_archive_org_metadata_summary",
               "request_plan_id": "live_metadata_request_plan:329a4cdef5174e42"
             },
-            "title": "Fixture redacted Internet Archive metadata summary for early HDTV New York 1993 demo footage."
+            "title": "Redacted live IA metadata summary for early HDTV New York 1993 demo footage"
           },
           {
             "accepted_truth": false,
@@ -919,11 +919,11 @@
             "schema_version": "review_batch_candidate_summary.v0",
             "source_family": "internet_archive_metadata",
             "source_locator": {
-              "identifier_hash": "ab65ad543d2117e1",
+              "identifier_hash": "e3364703516b5e71",
               "locator_kind": "redacted_archive_org_metadata_summary",
               "request_plan_id": "live_metadata_request_plan:d863f1df03bf6e31"
             },
-            "title": "Fixture redacted Internet Archive metadata summary for Windows 7-compatible portable utilities, not Windows 7 ISO."
+            "title": "Redacted live IA metadata summary for Windows 7-compatible portable utilities, not Windows 7 ISO"
           },
           {
             "accepted_truth": false,
@@ -935,11 +935,11 @@
             "schema_version": "review_batch_candidate_summary.v0",
             "source_family": "internet_archive_metadata",
             "source_locator": {
-              "identifier_hash": "10e8fe27357765f5",
+              "identifier_hash": "04631f42311aa0ca",
               "locator_kind": "redacted_archive_org_metadata_summary",
               "request_plan_id": "live_metadata_request_plan:3ecc6325324f5b4c"
             },
-            "title": "Fixture redacted Internet Archive metadata summary for DirectX SDK June 2010 offline installer."
+            "title": "Redacted live IA metadata summary for DirectX SDK June 2010 offline installer"
           },
           {
             "accepted_truth": false,
@@ -951,11 +951,11 @@
             "schema_version": "review_batch_candidate_summary.v0",
             "source_family": "internet_archive_metadata",
             "source_locator": {
-              "identifier_hash": "133436094793b92c",
+              "identifier_hash": "04631f42311aa0ca",
               "locator_kind": "redacted_archive_org_metadata_summary",
               "request_plan_id": "live_metadata_request_plan:f306403c80116097"
             },
-            "title": "Fixture redacted Internet Archive metadata summary for StyleWriter 2500 Mac OS 8 driver."
+            "title": "Redacted live IA metadata summary for StyleWriter 2500 Mac OS 8 driver"
           },
           {
             "accepted_truth": false,
@@ -967,11 +967,11 @@
             "schema_version": "review_batch_candidate_summary.v0",
             "source_family": "internet_archive_metadata",
             "source_locator": {
-              "identifier_hash": "d76351e9ca479051",
+              "identifier_hash": "04631f42311aa0ca",
               "locator_kind": "redacted_archive_org_metadata_summary",
               "request_plan_id": "live_metadata_request_plan:6f13cfb79e2dfe62"
             },
-            "title": "Fixture redacted Internet Archive metadata summary for QuickTime 7 Windows XP offline installer."
+            "title": "Redacted live IA metadata summary for QuickTime 7 Windows XP offline installer"
           }
         ],
         "cluster_id": "candidate_cluster:318db3632ba7b7bc",
@@ -1022,11 +1022,11 @@
             "schema_version": "review_batch_candidate_summary.v0",
             "source_family": "internet_archive_metadata",
             "source_locator": {
-              "identifier_hash": "acb08039f65e7b20",
+              "identifier_hash": "f73ee8216e536feb",
               "locator_kind": "redacted_archive_org_metadata_summary",
               "request_plan_id": "live_metadata_request_plan:2ee1238a44c933bb"
             },
-            "title": "Fixture redacted Internet Archive metadata summary for New York 1993 D-Theater HD demo tape original source."
+            "title": "Redacted live IA metadata summary for New York 1993 D-Theater HD demo tape original source"
           },
           {
             "accepted_truth": false,
@@ -1038,11 +1038,11 @@
             "schema_version": "review_batch_candidate_summary.v0",
             "source_family": "internet_archive_metadata",
             "source_locator": {
-              "identifier_hash": "6628eab2261842c3",
+              "identifier_hash": "664edb11ce00d6d8",
               "locator_kind": "redacted_archive_org_metadata_summary",
               "request_plan_id": "live_metadata_request_plan:0ac41bb5e1e9a32a"
             },
-            "title": "Fixture redacted Internet Archive metadata summary for JVC D-Theater New York HD demo."
+            "title": "Redacted live IA metadata summary for JVC D-Theater New York HD demo"
           },
           {
             "accepted_truth": false,
@@ -1054,11 +1054,11 @@
             "schema_version": "review_batch_candidate_summary.v0",
             "source_family": "internet_archive_metadata",
             "source_locator": {
-              "identifier_hash": "4141cef21b38ef4a",
+              "identifier_hash": "f73ee8216e536feb",
               "locator_kind": "redacted_archive_org_metadata_summary",
               "request_plan_id": "live_metadata_request_plan:de91338c0be8faa8"
             },
-            "title": "Fixture redacted Internet Archive metadata summary for Hi-Vision MUSE New York 1993 HDTV demo."
+            "title": "Redacted live IA metadata summary for Hi-Vision MUSE New York 1993 HDTV demo"
           },
           {
             "accepted_truth": false,
@@ -1070,11 +1070,11 @@
             "schema_version": "review_batch_candidate_summary.v0",
             "source_family": "internet_archive_metadata",
             "source_locator": {
-              "identifier_hash": "93f2ba8b16a65c02",
+              "identifier_hash": "ce88ebfa1edab05c",
               "locator_kind": "redacted_archive_org_metadata_summary",
               "request_plan_id": "live_metadata_request_plan:329a4cdef5174e42"
             },
-            "title": "Fixture redacted Internet Archive metadata summary for early HDTV New York 1993 demo footage."
+            "title": "Redacted live IA metadata summary for early HDTV New York 1993 demo footage"
           },
           {
             "accepted_truth": false,
@@ -1086,11 +1086,11 @@
             "schema_version": "review_batch_candidate_summary.v0",
             "source_family": "internet_archive_metadata",
             "source_locator": {
-              "identifier_hash": "ab65ad543d2117e1",
+              "identifier_hash": "e3364703516b5e71",
               "locator_kind": "redacted_archive_org_metadata_summary",
               "request_plan_id": "live_metadata_request_plan:d863f1df03bf6e31"
             },
-            "title": "Fixture redacted Internet Archive metadata summary for Windows 7-compatible portable utilities, not Windows 7 ISO."
+            "title": "Redacted live IA metadata summary for Windows 7-compatible portable utilities, not Windows 7 ISO"
           },
           {
             "accepted_truth": false,
@@ -1102,11 +1102,11 @@
             "schema_version": "review_batch_candidate_summary.v0",
             "source_family": "internet_archive_metadata",
             "source_locator": {
-              "identifier_hash": "10e8fe27357765f5",
+              "identifier_hash": "04631f42311aa0ca",
               "locator_kind": "redacted_archive_org_metadata_summary",
               "request_plan_id": "live_metadata_request_plan:3ecc6325324f5b4c"
             },
-            "title": "Fixture redacted Internet Archive metadata summary for DirectX SDK June 2010 offline installer."
+            "title": "Redacted live IA metadata summary for DirectX SDK June 2010 offline installer"
           },
           {
             "accepted_truth": false,
@@ -1118,11 +1118,11 @@
             "schema_version": "review_batch_candidate_summary.v0",
             "source_family": "internet_archive_metadata",
             "source_locator": {
-              "identifier_hash": "d76351e9ca479051",
+              "identifier_hash": "04631f42311aa0ca",
               "locator_kind": "redacted_archive_org_metadata_summary",
               "request_plan_id": "live_metadata_request_plan:6f13cfb79e2dfe62"
             },
-            "title": "Fixture redacted Internet Archive metadata summary for QuickTime 7 Windows XP offline installer."
+            "title": "Redacted live IA metadata summary for QuickTime 7 Windows XP offline installer"
           }
         ],
         "cluster_id": "candidate_cluster:acfe2152cda2d670",
@@ -1190,11 +1190,11 @@
             "schema_version": "review_batch_candidate_summary.v0",
             "source_family": "internet_archive_metadata",
             "source_locator": {
-              "identifier_hash": "acb08039f65e7b20",
+              "identifier_hash": "f73ee8216e536feb",
               "locator_kind": "redacted_archive_org_metadata_summary",
               "request_plan_id": "live_metadata_request_plan:2ee1238a44c933bb"
             },
-            "title": "Fixture redacted Internet Archive metadata summary for New York 1993 D-Theater HD demo tape original source."
+            "title": "Redacted live IA metadata summary for New York 1993 D-Theater HD demo tape original source"
           },
           {
             "accepted_truth": false,
@@ -1206,11 +1206,11 @@
             "schema_version": "review_batch_candidate_summary.v0",
             "source_family": "internet_archive_metadata",
             "source_locator": {
-              "identifier_hash": "6628eab2261842c3",
+              "identifier_hash": "664edb11ce00d6d8",
               "locator_kind": "redacted_archive_org_metadata_summary",
               "request_plan_id": "live_metadata_request_plan:0ac41bb5e1e9a32a"
             },
-            "title": "Fixture redacted Internet Archive metadata summary for JVC D-Theater New York HD demo."
+            "title": "Redacted live IA metadata summary for JVC D-Theater New York HD demo"
           },
           {
             "accepted_truth": false,
@@ -1222,11 +1222,11 @@
             "schema_version": "review_batch_candidate_summary.v0",
             "source_family": "internet_archive_metadata",
             "source_locator": {
-              "identifier_hash": "ab65ad543d2117e1",
+              "identifier_hash": "e3364703516b5e71",
               "locator_kind": "redacted_archive_org_metadata_summary",
               "request_plan_id": "live_metadata_request_plan:d863f1df03bf6e31"
             },
-            "title": "Fixture redacted Internet Archive metadata summary for Windows 7-compatible portable utilities, not Windows 7 ISO."
+            "title": "Redacted live IA metadata summary for Windows 7-compatible portable utilities, not Windows 7 ISO"
           },
           {
             "accepted_truth": false,
@@ -1238,11 +1238,11 @@
             "schema_version": "review_batch_candidate_summary.v0",
             "source_family": "internet_archive_metadata",
             "source_locator": {
-              "identifier_hash": "10e8fe27357765f5",
+              "identifier_hash": "04631f42311aa0ca",
               "locator_kind": "redacted_archive_org_metadata_summary",
               "request_plan_id": "live_metadata_request_plan:3ecc6325324f5b4c"
             },
-            "title": "Fixture redacted Internet Archive metadata summary for DirectX SDK June 2010 offline installer."
+            "title": "Redacted live IA metadata summary for DirectX SDK June 2010 offline installer"
           },
           {
             "accepted_truth": false,
@@ -1254,11 +1254,11 @@
             "schema_version": "review_batch_candidate_summary.v0",
             "source_family": "internet_archive_metadata",
             "source_locator": {
-              "identifier_hash": "d76351e9ca479051",
+              "identifier_hash": "04631f42311aa0ca",
               "locator_kind": "redacted_archive_org_metadata_summary",
               "request_plan_id": "live_metadata_request_plan:6f13cfb79e2dfe62"
             },
-            "title": "Fixture redacted Internet Archive metadata summary for QuickTime 7 Windows XP offline installer."
+            "title": "Redacted live IA metadata summary for QuickTime 7 Windows XP offline installer"
           }
         ],
         "cluster_id": "candidate_cluster:944d9d65e2d640ae",
@@ -1313,11 +1313,11 @@
             "schema_version": "review_batch_candidate_summary.v0",
             "source_family": "internet_archive_metadata",
             "source_locator": {
-              "identifier_hash": "acb08039f65e7b20",
+              "identifier_hash": "f73ee8216e536feb",
               "locator_kind": "redacted_archive_org_metadata_summary",
               "request_plan_id": "live_metadata_request_plan:2ee1238a44c933bb"
             },
-            "title": "Fixture redacted Internet Archive metadata summary for New York 1993 D-Theater HD demo tape original source."
+            "title": "Redacted live IA metadata summary for New York 1993 D-Theater HD demo tape original source"
           },
           {
             "accepted_truth": false,
@@ -1329,11 +1329,11 @@
             "schema_version": "review_batch_candidate_summary.v0",
             "source_family": "internet_archive_metadata",
             "source_locator": {
-              "identifier_hash": "6628eab2261842c3",
+              "identifier_hash": "664edb11ce00d6d8",
               "locator_kind": "redacted_archive_org_metadata_summary",
               "request_plan_id": "live_metadata_request_plan:0ac41bb5e1e9a32a"
             },
-            "title": "Fixture redacted Internet Archive metadata summary for JVC D-Theater New York HD demo."
+            "title": "Redacted live IA metadata summary for JVC D-Theater New York HD demo"
           }
         ],
         "cluster_id": "candidate_cluster:6426e52bf1767fd8",
@@ -1388,11 +1388,11 @@
             "schema_version": "review_batch_candidate_summary.v0",
             "source_family": "internet_archive_metadata",
             "source_locator": {
-              "identifier_hash": "acb08039f65e7b20",
+              "identifier_hash": "f73ee8216e536feb",
               "locator_kind": "redacted_archive_org_metadata_summary",
               "request_plan_id": "live_metadata_request_plan:2ee1238a44c933bb"
             },
-            "title": "Fixture redacted Internet Archive metadata summary for New York 1993 D-Theater HD demo tape original source."
+            "title": "Redacted live IA metadata summary for New York 1993 D-Theater HD demo tape original source"
           },
           {
             "accepted_truth": false,
@@ -1404,11 +1404,11 @@
             "schema_version": "review_batch_candidate_summary.v0",
             "source_family": "internet_archive_metadata",
             "source_locator": {
-              "identifier_hash": "6628eab2261842c3",
+              "identifier_hash": "664edb11ce00d6d8",
               "locator_kind": "redacted_archive_org_metadata_summary",
               "request_plan_id": "live_metadata_request_plan:0ac41bb5e1e9a32a"
             },
-            "title": "Fixture redacted Internet Archive metadata summary for JVC D-Theater New York HD demo."
+            "title": "Redacted live IA metadata summary for JVC D-Theater New York HD demo"
           },
           {
             "accepted_truth": false,
@@ -1420,11 +1420,11 @@
             "schema_version": "review_batch_candidate_summary.v0",
             "source_family": "internet_archive_metadata",
             "source_locator": {
-              "identifier_hash": "4141cef21b38ef4a",
+              "identifier_hash": "f73ee8216e536feb",
               "locator_kind": "redacted_archive_org_metadata_summary",
               "request_plan_id": "live_metadata_request_plan:de91338c0be8faa8"
             },
-            "title": "Fixture redacted Internet Archive metadata summary for Hi-Vision MUSE New York 1993 HDTV demo."
+            "title": "Redacted live IA metadata summary for Hi-Vision MUSE New York 1993 HDTV demo"
           },
           {
             "accepted_truth": false,
@@ -1436,11 +1436,11 @@
             "schema_version": "review_batch_candidate_summary.v0",
             "source_family": "internet_archive_metadata",
             "source_locator": {
-              "identifier_hash": "93f2ba8b16a65c02",
+              "identifier_hash": "ce88ebfa1edab05c",
               "locator_kind": "redacted_archive_org_metadata_summary",
               "request_plan_id": "live_metadata_request_plan:329a4cdef5174e42"
             },
-            "title": "Fixture redacted Internet Archive metadata summary for early HDTV New York 1993 demo footage."
+            "title": "Redacted live IA metadata summary for early HDTV New York 1993 demo footage"
           },
           {
             "accepted_truth": false,
@@ -1452,11 +1452,11 @@
             "schema_version": "review_batch_candidate_summary.v0",
             "source_family": "internet_archive_metadata",
             "source_locator": {
-              "identifier_hash": "ab65ad543d2117e1",
+              "identifier_hash": "e3364703516b5e71",
               "locator_kind": "redacted_archive_org_metadata_summary",
               "request_plan_id": "live_metadata_request_plan:d863f1df03bf6e31"
             },
-            "title": "Fixture redacted Internet Archive metadata summary for Windows 7-compatible portable utilities, not Windows 7 ISO."
+            "title": "Redacted live IA metadata summary for Windows 7-compatible portable utilities, not Windows 7 ISO"
           },
           {
             "accepted_truth": false,
@@ -1468,11 +1468,11 @@
             "schema_version": "review_batch_candidate_summary.v0",
             "source_family": "internet_archive_metadata",
             "source_locator": {
-              "identifier_hash": "10e8fe27357765f5",
+              "identifier_hash": "04631f42311aa0ca",
               "locator_kind": "redacted_archive_org_metadata_summary",
               "request_plan_id": "live_metadata_request_plan:3ecc6325324f5b4c"
             },
-            "title": "Fixture redacted Internet Archive metadata summary for DirectX SDK June 2010 offline installer."
+            "title": "Redacted live IA metadata summary for DirectX SDK June 2010 offline installer"
           },
           {
             "accepted_truth": false,
@@ -1484,11 +1484,11 @@
             "schema_version": "review_batch_candidate_summary.v0",
             "source_family": "internet_archive_metadata",
             "source_locator": {
-              "identifier_hash": "133436094793b92c",
+              "identifier_hash": "04631f42311aa0ca",
               "locator_kind": "redacted_archive_org_metadata_summary",
               "request_plan_id": "live_metadata_request_plan:f306403c80116097"
             },
-            "title": "Fixture redacted Internet Archive metadata summary for StyleWriter 2500 Mac OS 8 driver."
+            "title": "Redacted live IA metadata summary for StyleWriter 2500 Mac OS 8 driver"
           },
           {
             "accepted_truth": false,
@@ -1500,11 +1500,11 @@
             "schema_version": "review_batch_candidate_summary.v0",
             "source_family": "internet_archive_metadata",
             "source_locator": {
-              "identifier_hash": "d76351e9ca479051",
+              "identifier_hash": "04631f42311aa0ca",
               "locator_kind": "redacted_archive_org_metadata_summary",
               "request_plan_id": "live_metadata_request_plan:6f13cfb79e2dfe62"
             },
-            "title": "Fixture redacted Internet Archive metadata summary for QuickTime 7 Windows XP offline installer."
+            "title": "Redacted live IA metadata summary for QuickTime 7 Windows XP offline installer"
           }
         ],
         "cluster_id": "candidate_cluster:0fa632b9298bb132",

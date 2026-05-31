@@ -1,0 +1,47 @@
+{
+  "schema_version": "live_metadata_pilot_approval.v0",
+  "task": "LIVE-METADATA-PILOT-BATCH-00",
+  "approved_by": "Jules",
+  "approved_at": "2026-05-31T20:52:10+10:00",
+  "approval_phrase": "RUN_BOUNDED_LIVE_METADATA_PILOT",
+  "allowed_source_families": [
+    "internet_archive_metadata"
+  ],
+  "allowed_seed_batches": [
+    "frontier_media",
+    "legacy_software"
+  ],
+  "selected_query_count": 8,
+  "max_total_requests": 24,
+  "max_requests_per_query": 2,
+  "rows_per_search": 3,
+  "timeout_seconds": 15,
+  "rate_limit_delay_seconds": 2,
+  "rate_limit_policy_ref": "control/policies/live_metadata_pilot_source_policy.json",
+  "user_agent_policy_ref": "control/policies/live_metadata_pilot_source_policy.json",
+  "redaction_policy_ref": "control/policies/live_metadata_pilot_redaction_policy.json",
+  "raw_response_commit_allowed": false,
+  "downloads_allowed": false,
+  "extraction_allowed": false,
+  "accepted_truth_allowed": false,
+  "reviewed_index_mutation_allowed": false,
+  "public_index_mutation_allowed": false,
+  "master_index_mutation_allowed": false,
+  "public_mutation_allowed": false,
+  "model_provider_allowed": false,
+  "deployment_allowed": false,
+  "acknowledged_boundaries": [
+    "metadata_only",
+    "no_raw_response_commit",
+    "no_downloads",
+    "no_extraction",
+    "no_public_mutation",
+    "no_accepted_truth",
+    "review_required"
+  ],
+  "notes": [
+    "Approval is limited to a bounded Internet Archive metadata pilot over selected seed queries.",
+    "No raw live responses may be committed.",
+    "All outputs are source observations, candidate summaries, review handoffs, snapshot-refresh handoffs, and reassessment inputs only."
+  ]
+}

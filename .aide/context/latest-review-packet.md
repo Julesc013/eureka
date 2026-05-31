@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (5520 chars, 1380 approximate tokens)
+- `.aide/context/latest-task-packet.md` (5145 chars, 1287 approximate tokens)
 
 ## Context Packet Reference
 
@@ -33,31 +33,31 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Changed Files Summary
 
-- allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/queue/LIVE-METADATA-PILOT-BATCH-00/README.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/LIVE-METADATA-PILOT-BATCH-00/status.json` (??; matches active task allowed path)
+- allowed: `.aide/queue/LIVE-METADATA-PILOT-BATCH-00/status.json` (M; matches active task allowed path)
 - allowed: `.aide/queue/index.yaml` (M; matches active task allowed path)
-- allowed: `contracts/source/action/live_metadata_pilot_approval.v0.json` (??; matches active task allowed path)
-- allowed: `contracts/source/action/live_metadata_pilot_request_plan.v0.json` (??; matches active task allowed path)
-- allowed: `contracts/source/action/live_metadata_pilot_result.v0.json` (??; matches active task allowed path)
-- allowed: `control/audits/live-metadata-pilot-batch-00-v0` (??; matches active task allowed path)
-- allowed: `control/inventory/live_metadata_pilot_batch_approval_state.json` (??; matches active task allowed path)
-- allowed: `control/inventory/live_metadata_pilot_batch_input_state.json` (??; matches active task allowed path)
-- allowed: `control/inventory/live_metadata_pilot_boundary_report.json` (??; matches active task allowed path)
-- allowed: `control/inventory/live_metadata_pilot_candidate_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/live_metadata_pilot_failure_repair_log.json` (??; matches active task allowed path)
-- allowed: `control/inventory/live_metadata_pilot_next_task_decision.json` (??; matches active task allowed path)
-- allowed: `control/inventory/live_metadata_pilot_public_alpha_reassess_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/live_metadata_pilot_redaction_summary.json` (??; matches active task allowed path)
-- allowed: `control/inventory/live_metadata_pilot_request_plan_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/live_metadata_pilot_result.json` (??; matches active task allowed path)
-- allowed: `control/inventory/live_metadata_pilot_review_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/live_metadata_pilot_scout_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/live_metadata_pilot_seed_query_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/live_metadata_pilot_smoke_result.json` (??; matches active task allowed path)
-- allowed: `control/inventory/live_metadata_pilot_snapshot_handoff_matrix.json` (??; matches active task allowed path)
-- additional changed paths omitted from compact packet: 36; see task evidence changed-files report
+- allowed: `control/approvals` (??; matches active task allowed path)
+- allowed: `control/audits/live-metadata-pilot-batch-00-v0/approval_state.md` (M; matches active task allowed path)
+- allowed: `control/audits/live-metadata-pilot-batch-00-v0/boundary_report.md` (M; matches active task allowed path)
+- allowed: `control/audits/live-metadata-pilot-batch-00-v0/candidate_matrix.md` (M; matches active task allowed path)
+- allowed: `control/audits/live-metadata-pilot-batch-00-v0/generated/sample_boundary_report.json` (M; matches active task allowed path)
+- allowed: `control/audits/live-metadata-pilot-batch-00-v0/generated/sample_candidate_summaries.json` (M; matches active task allowed path)
+- allowed: `control/audits/live-metadata-pilot-batch-00-v0/generated/sample_public_alpha_reassess_input.json` (M; matches active task allowed path)
+- allowed: `control/audits/live-metadata-pilot-batch-00-v0/generated/sample_redacted_metadata_summary.json` (M; matches active task allowed path)
+- allowed: `control/audits/live-metadata-pilot-batch-00-v0/generated/sample_review_batch_packet.json` (M; matches active task allowed path)
+- allowed: `control/audits/live-metadata-pilot-batch-00-v0/generated/sample_summary.md` (M; matches active task allowed path)
+- allowed: `control/audits/live-metadata-pilot-batch-00-v0/live_metadata_pilot_report.json` (M; matches active task allowed path)
+- allowed: `control/audits/live-metadata-pilot-batch-00-v0/public_alpha_reassess_matrix.md` (M; matches active task allowed path)
+- allowed: `control/audits/live-metadata-pilot-batch-00-v0/redaction_summary.md` (M; matches active task allowed path)
+- allowed: `control/audits/live-metadata-pilot-batch-00-v0/review_matrix.md` (M; matches active task allowed path)
+- allowed: `control/audits/live-metadata-pilot-batch-00-v0/smoke_result.md` (M; matches active task allowed path)
+- allowed: `control/audits/live-metadata-pilot-batch-00-v0/transport_summary.md` (M; matches active task allowed path)
+- allowed: `control/inventory/live_metadata_pilot_batch_approval_state.json` (M; matches active task allowed path)
+- allowed: `control/inventory/live_metadata_pilot_boundary_report.json` (M; matches active task allowed path)
+- allowed: `control/inventory/live_metadata_pilot_candidate_matrix.json` (M; matches active task allowed path)
+- allowed: `control/inventory/live_metadata_pilot_next_task_decision.json` (M; matches active task allowed path)
+- additional changed paths omitted from compact packet: 18; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -67,8 +67,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 6931
-- approx_tokens: 1733
+- chars: 7143
+- approx_tokens: 1786
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

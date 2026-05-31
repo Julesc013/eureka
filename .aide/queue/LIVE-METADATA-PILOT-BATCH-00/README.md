@@ -1,6 +1,6 @@
 # LIVE-METADATA-PILOT-BATCH-00
 
-Task status: waiting for operator live metadata approval.
+Task status: pass.
 
 Implemented:
 
@@ -13,11 +13,20 @@ Implemented:
 - review-only candidate records
 - SCOUT, review batch, snapshot handoff, and public alpha reassess handoffs
 
-Blocked:
+Live pilot result:
 
-- approved live metadata calls
+- approval verified: true
+- source family: internet_archive_metadata
+- selected queries: 8
+- total live requests: 16
+- candidate summaries created: true
+- candidate index handoff created: true
+- SCOUT trails created: true
+- review batch packet created: true
+- snapshot refresh handoff created: true
+- public alpha reassess input created: true
 
-Required approval:
+Approval used:
 
 ```text
 control/approvals/live-metadata-pilot-batch-00-approval.json

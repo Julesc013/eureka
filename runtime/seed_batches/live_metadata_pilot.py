@@ -753,10 +753,13 @@ def write_live_metadata_pilot_examples(
     payload = dict(result or run_live_metadata_pilot_batch(fixture=True, write_examples=False))
     repo_root = _repo_root()
     base = root or repo_root / "examples" / "live_metadata_pilot"
+    fixture_transport = payload.get("transport_summary", {})
+    if payload.get("mode") != "fixture":
+        fixture_transport = run_live_metadata_requests(payload["request_plans"], mode="fixture")
     files = {
         "approval_template.json": approval_template(),
         "dry_run_request_plans.json": payload["request_plans"],
-        "fixture_transport_summary.json": _fixture_only_transport(payload.get("transport_summary", {})),
+        "fixture_transport_summary.json": _fixture_only_transport(fixture_transport),
         "redacted_metadata_summary.json": payload["redaction_summary"],
         "candidate_summaries.json": payload["candidate_summaries"],
         "scout_trails.json": _scout_summary(payload["scout_outputs"]),
