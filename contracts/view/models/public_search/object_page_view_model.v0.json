@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/view/models/public_search/object_page_view_model.v0.json",
+  "title": "ObjectPageViewModel",
+  "type": "object",
+  "required": ["schema_version", "view_model_id", "page_kind", "canonical_route", "primary_result_card", "read_only"],
+  "properties": {
+    "schema_version": { "const": "object_page_view_model.v0" },
+    "page_kind": { "const": "object" },
+    "read_only": { "const": true }
+  },
+  "additionalProperties": true
+}

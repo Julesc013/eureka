@@ -1,0 +1,12 @@
+{
+  "planned_after": [
+    "PUBLIC-SEARCH-UX-MVP-00",
+    "PUBLIC-SEARCH-UX-GATE-00",
+    "SNAPSHOT-REFRESH-01",
+    "PUBLIC-ALPHA-REASSESS-01"
+  ],
+  "recommended_next_task": "LIVE-METADATA-PILOT-BATCH-00 - Operator-approved live metadata pilot over seed queries",
+  "schema_version": "public_search_ux_model_next_task_decision.v0",
+  "status": "pass",
+  "task": "PUBLIC-SEARCH-UX-MODEL-00"
+}

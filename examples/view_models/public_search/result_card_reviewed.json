@@ -1,0 +1,62 @@
+{
+  "accepted_truth": true,
+  "action_posture": {
+    "allowed_actions": [
+      "copy_citation",
+      "open",
+      "view_evidence",
+      "view_source"
+    ],
+    "blocked_actions": [
+      "download",
+      "install",
+      "execute",
+      "upload",
+      "promote",
+      "mutate_public_index",
+      "run_live_source_fanout",
+      "call_model_provider"
+    ],
+    "created_at": "2026-05-31T00:00:00Z",
+    "downloads_enabled": false,
+    "extraction_enabled": false,
+    "model_provider_enabled": false,
+    "operator_action_required_for_mutation": true,
+    "public_live_source_fanout_enabled": false,
+    "public_mutation_enabled": false,
+    "review_required": false,
+    "schema_version": "action_posture_view_model.v0",
+    "status": "verified",
+    "view_model_id": "action_posture:ae6b2367c6eef93c"
+  },
+  "compatibility_label": "partial",
+  "confidence_label": "reviewed",
+  "created_at": "2026-05-31T00:00:00Z",
+  "domain": "legacy_software",
+  "evidence_summary": {
+    "evidence_count": 1,
+    "evidence_refs": [
+      "evidence-summary-sampleproject-001"
+    ],
+    "summary": "Reviewed record has source and evidence summary references."
+  },
+  "limitations": [
+    "fixture reviewed record for snapshot relay validation"
+  ],
+  "match_reasons": [
+    "reviewed_record_present",
+    "snapshot_ref_available"
+  ],
+  "object_type": "reviewed_object_record",
+  "review_required": false,
+  "rights_label": "rights_not_cleared_for_download",
+  "risk_label": "low_public_read_only",
+  "schema_version": "result_card_view_model.v0",
+  "snippet": "Reviewed local record from the committed snapshot projection.",
+  "source_family": "fixture_reviewed_record",
+  "source_label": "Reviewed local snapshot",
+  "status": "verified",
+  "title": "SampleProject 1.0 reviewed local record",
+  "url": "/object/sampleproject",
+  "view_model_id": "result_card:62fdb0cdc5cd3d80"
+}

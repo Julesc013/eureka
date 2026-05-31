@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/view/models/public_search/action_posture_view_model.v0.json",
+  "title": "ActionPostureViewModel",
+  "type": "object",
+  "required": ["schema_version", "view_model_id", "status", "allowed_actions", "blocked_actions", "public_mutation_enabled", "downloads_enabled", "extraction_enabled", "model_provider_enabled"],
+  "properties": {
+    "schema_version": { "const": "action_posture_view_model.v0" },
+    "public_mutation_enabled": { "const": false },
+    "downloads_enabled": { "const": false },
+    "extraction_enabled": { "const": false },
+    "model_provider_enabled": { "const": false }
+  },
+  "additionalProperties": true
+}

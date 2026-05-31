@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/view/models/public_search/capability_profile_view_model.v0.json",
+  "title": "CapabilityProfileViewModel",
+  "type": "object",
+  "required": ["schema_version", "view_model_id", "projection_profile", "supported_projection_profiles", "read_only", "public_mutation_enabled", "public_live_source_fanout_enabled", "agent_json_packets_supported", "html_scrape_required_for_agents"],
+  "properties": {
+    "schema_version": { "const": "capability_profile_view_model.v0" },
+    "read_only": { "const": true },
+    "public_mutation_enabled": { "const": false },
+    "public_live_source_fanout_enabled": { "const": false },
+    "html_scrape_required_for_agents": { "const": false }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/view/models/public_search/no_results_need_view_model.v0.json",
+  "title": "NoResultsNeedViewModel",
+  "type": "object",
+  "required": ["schema_version", "view_model_id", "query", "headline", "known_need_ref", "absence_ref", "near_matches", "review_required", "accepted_truth"],
+  "properties": {
+    "schema_version": { "const": "no_results_need_view_model.v0" },
+    "headline": { "const": "No reviewed result yet." },
+    "review_required": { "const": true },
+    "accepted_truth": { "const": false }
+  },
+  "additionalProperties": true
+}

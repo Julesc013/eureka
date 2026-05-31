@@ -1,0 +1,23 @@
+# Boundary Report
+
+```json
+{
+  "accepted_truth_created": false,
+  "created_at": "2026-05-31T00:00:00Z",
+  "deployment_performed": false,
+  "download_performed": false,
+  "extraction_executed": false,
+  "master_index_mutated": false,
+  "model_provider_used": false,
+  "production_readiness_claimed": false,
+  "public_index_mutated": false,
+  "public_launch_performed": false,
+  "public_launch_readiness_claimed": false,
+  "public_live_source_fanout_enabled": false,
+  "public_mutation_enabled": false,
+  "reviewed_index_mutated": false,
+  "schema_version": "public_search_ux_model_boundary_report.v0",
+  "site_dist_written": false,
+  "task": "PUBLIC-SEARCH-UX-MODEL-00"
+}
+```

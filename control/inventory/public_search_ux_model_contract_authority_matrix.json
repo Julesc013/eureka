@@ -1,0 +1,7 @@
+{
+  "duplicate_contracts_views_root_created": false,
+  "reason": "Existing authority is contracts/view/models; contracts/views is not introduced.",
+  "schema_version": "public_search_ux_model_contract_authority_matrix.v0",
+  "selected_authority_root": "contracts/view/models/public_search",
+  "task": "PUBLIC-SEARCH-UX-MODEL-00"
+}

@@ -1,0 +1,22 @@
+{
+  "agent_json_packets_supported": true,
+  "candidate_review_public_actions_enabled": false,
+  "created_at": "2026-05-31T00:00:00Z",
+  "downloads_enabled": false,
+  "extraction_enabled": false,
+  "html_scrape_required_for_agents": false,
+  "model_provider_enabled": false,
+  "projection_profile": "public_web",
+  "public_live_source_fanout_enabled": false,
+  "public_mutation_enabled": false,
+  "read_only": true,
+  "schema_version": "capability_profile_view_model.v0",
+  "supported_projection_profiles": [
+    "public_web",
+    "operator_workbench",
+    "api_json",
+    "classic_html",
+    "text"
+  ],
+  "view_model_id": "capability_profile:public_web"
+}

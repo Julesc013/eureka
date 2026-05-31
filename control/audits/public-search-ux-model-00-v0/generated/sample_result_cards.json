@@ -1,0 +1,389 @@
+[
+  {
+    "accepted_truth": true,
+    "action_posture": {
+      "allowed_actions": [
+        "copy_citation",
+        "open",
+        "view_evidence",
+        "view_source"
+      ],
+      "blocked_actions": [
+        "download",
+        "install",
+        "execute",
+        "upload",
+        "promote",
+        "mutate_public_index",
+        "run_live_source_fanout",
+        "call_model_provider"
+      ],
+      "created_at": "2026-05-31T00:00:00Z",
+      "downloads_enabled": false,
+      "extraction_enabled": false,
+      "model_provider_enabled": false,
+      "operator_action_required_for_mutation": true,
+      "public_live_source_fanout_enabled": false,
+      "public_mutation_enabled": false,
+      "review_required": false,
+      "schema_version": "action_posture_view_model.v0",
+      "status": "verified",
+      "view_model_id": "action_posture:ae6b2367c6eef93c"
+    },
+    "compatibility_label": "partial",
+    "confidence_label": "reviewed",
+    "created_at": "2026-05-31T00:00:00Z",
+    "domain": "legacy_software",
+    "evidence_summary": {
+      "evidence_count": 1,
+      "evidence_refs": [
+        "evidence-summary-sampleproject-001"
+      ],
+      "summary": "Reviewed record has source and evidence summary references."
+    },
+    "limitations": [
+      "fixture reviewed record for snapshot relay validation"
+    ],
+    "match_reasons": [
+      "reviewed_record_present",
+      "snapshot_ref_available"
+    ],
+    "object_type": "reviewed_object_record",
+    "review_required": false,
+    "rights_label": "rights_not_cleared_for_download",
+    "risk_label": "low_public_read_only",
+    "schema_version": "result_card_view_model.v0",
+    "snippet": "Reviewed local record from the committed snapshot projection.",
+    "source_family": "fixture_reviewed_record",
+    "source_label": "Reviewed local snapshot",
+    "status": "verified",
+    "title": "SampleProject 1.0 reviewed local record",
+    "url": "/object/sampleproject",
+    "view_model_id": "result_card:62fdb0cdc5cd3d80"
+  },
+  {
+    "accepted_truth": false,
+    "action_posture": {
+      "allowed_actions": [
+        "inspect",
+        "read",
+        "view_provenance",
+        "view_source"
+      ],
+      "blocked_actions": [
+        "download",
+        "install",
+        "execute",
+        "upload",
+        "promote",
+        "mutate_public_index",
+        "run_live_source_fanout",
+        "call_model_provider"
+      ],
+      "created_at": "2026-05-31T00:00:00Z",
+      "downloads_enabled": false,
+      "extraction_enabled": false,
+      "model_provider_enabled": false,
+      "operator_action_required_for_mutation": true,
+      "public_live_source_fanout_enabled": false,
+      "public_mutation_enabled": false,
+      "review_required": true,
+      "schema_version": "action_posture_view_model.v0",
+      "status": "candidate",
+      "view_model_id": "action_posture:faf296435446abd3"
+    },
+    "compatibility_label": "unreviewed",
+    "confidence_label": "candidate",
+    "created_at": "2026-05-31T00:00:00Z",
+    "domain": "frontier_resolution_media",
+    "evidence_summary": {
+      "evidence_count": 3,
+      "evidence_refs": [
+        "scout_run:6dd5ab0197b095dc",
+        "scout_run:58ec0d2fc11be225",
+        "scout_run:1de28535700f0373"
+      ],
+      "summary": "Candidate has metadata and SCOUT trail references, but is not reviewed truth."
+    },
+    "limitations": [
+      "fixture_derived",
+      "review_required",
+      "candidate_not_verified"
+    ],
+    "match_reasons": [
+      "query_ref_match",
+      "candidate_snapshot_ref_present",
+      "review_required"
+    ],
+    "object_type": "metadata_candidate",
+    "review_required": true,
+    "rights_label": "rights_not_cleared",
+    "risk_label": "review_required",
+    "schema_version": "result_card_view_model.v0",
+    "snippet": "Review-only metadata lead from seed snapshot candidate memory.",
+    "source_family": "internet_archive_metadata",
+    "source_label": "Internet Archive metadata",
+    "status": "candidate",
+    "title": "New York 1993 D-Theater HD demo tape original source fixture metadata lead",
+    "url": "/candidate/seed_frontier_media_frontier_media_q01_candidate",
+    "view_model_id": "result_card:7d746aeeba909210"
+  },
+  {
+    "accepted_truth": false,
+    "action_posture": {
+      "allowed_actions": [
+        "inspect",
+        "read",
+        "view_provenance",
+        "view_source"
+      ],
+      "blocked_actions": [
+        "download",
+        "install",
+        "execute",
+        "upload",
+        "promote",
+        "mutate_public_index",
+        "run_live_source_fanout",
+        "call_model_provider"
+      ],
+      "created_at": "2026-05-31T00:00:00Z",
+      "downloads_enabled": false,
+      "extraction_enabled": false,
+      "model_provider_enabled": false,
+      "operator_action_required_for_mutation": true,
+      "public_live_source_fanout_enabled": false,
+      "public_mutation_enabled": false,
+      "review_required": true,
+      "schema_version": "action_posture_view_model.v0",
+      "status": "near_miss",
+      "view_model_id": "action_posture:315283040ae170a1"
+    },
+    "compatibility_label": "unreviewed",
+    "confidence_label": "candidate",
+    "created_at": "2026-05-31T00:00:00Z",
+    "domain": "driver_support_media",
+    "evidence_summary": {
+      "evidence_count": 3,
+      "evidence_refs": [
+        "scout_run:9e91894a5e3f2294",
+        "scout_run:c2797847038110a6",
+        "scout_run:2c92557d69966669"
+      ],
+      "summary": "Candidate has metadata and SCOUT trail references, but is not reviewed truth."
+    },
+    "limitations": [
+      "fixture_derived",
+      "review_required",
+      "candidate_not_verified"
+    ],
+    "match_reasons": [
+      "query_ref_match",
+      "candidate_snapshot_ref_present",
+      "review_required"
+    ],
+    "object_type": "metadata_candidate",
+    "review_required": true,
+    "rights_label": "rights_not_cleared",
+    "risk_label": "review_required",
+    "schema_version": "result_card_view_model.v0",
+    "snippet": "Review-only metadata lead from seed snapshot candidate memory.",
+    "source_family": "manual_source_pack",
+    "source_label": "Manual Source Pack",
+    "status": "near_miss",
+    "title": "StyleWriter 2500 Mac OS 8 driver fixture metadata lead",
+    "url": "/candidate/seed_legacy_software_legacy_software_q03_candidate",
+    "view_model_id": "result_card:dd930ebab488fe9a"
+  },
+  {
+    "accepted_truth": false,
+    "action_posture": {
+      "allowed_actions": [
+        "view_need",
+        "view_evidence",
+        "refine_query"
+      ],
+      "blocked_actions": [
+        "download",
+        "install",
+        "execute",
+        "upload",
+        "promote",
+        "mutate_public_index",
+        "run_live_source_fanout",
+        "call_model_provider"
+      ],
+      "created_at": "2026-05-31T00:00:00Z",
+      "downloads_enabled": false,
+      "extraction_enabled": false,
+      "model_provider_enabled": false,
+      "operator_action_required_for_mutation": true,
+      "public_live_source_fanout_enabled": false,
+      "public_mutation_enabled": false,
+      "review_required": true,
+      "schema_version": "action_posture_view_model.v0",
+      "status": "known_need",
+      "view_model_id": "action_posture:f3c0e4d386f45d93"
+    },
+    "compatibility_label": "not_applicable",
+    "confidence_label": "need",
+    "created_at": "2026-05-31T00:00:00Z",
+    "domain": "discovery_need",
+    "evidence_summary": {
+      "evidence_count": 1,
+      "evidence_refs": [
+        "seed_frontier_media_frontier_media_q01_candidate"
+      ],
+      "summary": "Need is linked to review-only candidates."
+    },
+    "limitations": [
+      "need_not_result",
+      "review_required"
+    ],
+    "match_reasons": [
+      "known_need_ref",
+      "candidate_requires_review"
+    ],
+    "object_type": "provenance_review",
+    "review_required": true,
+    "rights_label": "not_applicable",
+    "risk_label": "unresolved",
+    "schema_version": "result_card_view_model.v0",
+    "snippet": "Operator must verify source identity, format, rights, and provenance before promotion.",
+    "source_family": "seed_batch_review",
+    "source_label": "Seed batch review",
+    "status": "known_need",
+    "title": "Known need: Operator must verify source identity, format, rights, and provenance before promotion.",
+    "url": "/need/seed_known_need:bf3d2dd91c7ecb1d",
+    "view_model_id": "result_card:6c7f87f1ca4ac834"
+  },
+  {
+    "accepted_truth": false,
+    "action_posture": {
+      "allowed_actions": [
+        "view_need",
+        "view_evidence",
+        "refine_query"
+      ],
+      "blocked_actions": [
+        "download",
+        "install",
+        "execute",
+        "upload",
+        "promote",
+        "mutate_public_index",
+        "run_live_source_fanout",
+        "call_model_provider"
+      ],
+      "created_at": "2026-05-31T00:00:00Z",
+      "downloads_enabled": false,
+      "extraction_enabled": false,
+      "model_provider_enabled": false,
+      "operator_action_required_for_mutation": true,
+      "public_live_source_fanout_enabled": false,
+      "public_mutation_enabled": false,
+      "review_required": true,
+      "schema_version": "action_posture_view_model.v0",
+      "status": "absence",
+      "view_model_id": "action_posture:84ce25420118b84b"
+    },
+    "compatibility_label": "not_applicable",
+    "confidence_label": "bounded_absence",
+    "created_at": "2026-05-31T00:00:00Z",
+    "domain": "bounded_absence",
+    "evidence_summary": {
+      "evidence_count": 1,
+      "evidence_refs": [
+        "seed_absence:ca7d7272ff295051"
+      ],
+      "summary": "Bounded absence describes the current snapshot, not the whole web."
+    },
+    "limitations": [
+      "absence_scope_is_current_snapshot",
+      "not_global_absence"
+    ],
+    "match_reasons": [
+      "bounded_absence_statement",
+      "reviewed_truth_not_present"
+    ],
+    "object_type": "reviewed_truth_not_created",
+    "review_required": true,
+    "rights_label": "not_applicable",
+    "risk_label": "scope_limited",
+    "schema_version": "result_card_view_model.v0",
+    "snippet": "Fixture candidates exist, but reviewed truth and public index records are intentionally absent.",
+    "source_family": "snapshot_refresh",
+    "source_label": "Snapshot refresh",
+    "status": "absence",
+    "title": "Absence: Fixture candidates exist, but reviewed truth and public index records are intentionally absent.",
+    "url": "/absence/seed_absence:ca7d7272ff295051",
+    "view_model_id": "result_card:b12eb21341bdb606"
+  },
+  {
+    "accepted_truth": false,
+    "action_posture": {
+      "allowed_actions": [
+        "inspect",
+        "read",
+        "view_provenance",
+        "view_source"
+      ],
+      "blocked_actions": [
+        "download",
+        "install",
+        "execute",
+        "upload",
+        "promote",
+        "mutate_public_index",
+        "run_live_source_fanout",
+        "call_model_provider"
+      ],
+      "created_at": "2026-05-31T00:00:00Z",
+      "downloads_enabled": false,
+      "extraction_enabled": false,
+      "model_provider_enabled": false,
+      "operator_action_required_for_mutation": true,
+      "public_live_source_fanout_enabled": false,
+      "public_mutation_enabled": false,
+      "review_required": true,
+      "schema_version": "action_posture_view_model.v0",
+      "status": "source_lead",
+      "view_model_id": "action_posture:cfc8355d3b3a3ba8"
+    },
+    "compatibility_label": "unreviewed",
+    "confidence_label": "lead",
+    "created_at": "2026-05-31T00:00:00Z",
+    "domain": "legacy_software",
+    "evidence_summary": {
+      "evidence_count": 3,
+      "evidence_refs": [
+        "scout_run:9e91894a5e3f2294",
+        "scout_run:c2797847038110a6",
+        "scout_run:2c92557d69966669"
+      ],
+      "summary": "Candidate has metadata and SCOUT trail references, but is not reviewed truth."
+    },
+    "limitations": [
+      "fixture_derived",
+      "review_required",
+      "candidate_not_verified"
+    ],
+    "match_reasons": [
+      "query_ref_match",
+      "candidate_snapshot_ref_present",
+      "review_required"
+    ],
+    "object_type": "metadata_candidate",
+    "review_required": true,
+    "rights_label": "rights_not_cleared",
+    "risk_label": "review_required",
+    "schema_version": "result_card_view_model.v0",
+    "snippet": "Source-family lead for follow-up review, not an artifact result.",
+    "source_family": "internet_archive_metadata",
+    "source_label": "Internet Archive metadata",
+    "status": "source_lead",
+    "title": "Windows 7-compatible portable utilities, not Windows 7 ISO fixture metadata lead",
+    "url": "/source/internet_archive_metadata",
+    "view_model_id": "result_card:cccd2380a42cb118"
+  }
+]

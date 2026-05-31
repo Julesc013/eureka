@@ -1,0 +1,17 @@
+{
+  "candidate_verified_separation_required": true,
+  "created_at": "2026-05-31T00:00:00Z",
+  "needs_and_absences_visible": true,
+  "review_only_result_count": 5,
+  "reviewed_result_count": 1,
+  "schema_version": "search_coverage_view_model.v0",
+  "status_counts": {
+    "absence": 1,
+    "candidate": 1,
+    "known_need": 1,
+    "near_miss": 1,
+    "source_lead": 1,
+    "verified": 1
+  },
+  "view_model_id": "search_coverage:seed_snapshot"
+}

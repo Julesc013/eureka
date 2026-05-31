@@ -1,0 +1,109 @@
+{
+  "canonical_route": "/source/internet_archive_metadata",
+  "capability_profile": {
+    "agent_json_packets_supported": true,
+    "candidate_review_public_actions_enabled": false,
+    "created_at": "2026-05-31T00:00:00Z",
+    "downloads_enabled": false,
+    "extraction_enabled": false,
+    "html_scrape_required_for_agents": false,
+    "model_provider_enabled": false,
+    "projection_profile": "public_web",
+    "public_live_source_fanout_enabled": false,
+    "public_mutation_enabled": false,
+    "read_only": true,
+    "schema_version": "capability_profile_view_model.v0",
+    "supported_projection_profiles": [
+      "public_web",
+      "operator_workbench",
+      "api_json",
+      "classic_html",
+      "text"
+    ],
+    "view_model_id": "capability_profile:public_web"
+  },
+  "created_at": "2026-05-31T00:00:00Z",
+  "downloads_enabled": false,
+  "extraction_enabled": false,
+  "model_provider_enabled": false,
+  "page_kind": "source",
+  "primary_result_card": {
+    "accepted_truth": false,
+    "action_posture": {
+      "allowed_actions": [
+        "inspect",
+        "read",
+        "view_provenance",
+        "view_source"
+      ],
+      "blocked_actions": [
+        "download",
+        "install",
+        "execute",
+        "upload",
+        "promote",
+        "mutate_public_index",
+        "run_live_source_fanout",
+        "call_model_provider"
+      ],
+      "created_at": "2026-05-31T00:00:00Z",
+      "downloads_enabled": false,
+      "extraction_enabled": false,
+      "model_provider_enabled": false,
+      "operator_action_required_for_mutation": true,
+      "public_live_source_fanout_enabled": false,
+      "public_mutation_enabled": false,
+      "review_required": true,
+      "schema_version": "action_posture_view_model.v0",
+      "status": "source_lead",
+      "view_model_id": "action_posture:cfc8355d3b3a3ba8"
+    },
+    "compatibility_label": "unreviewed",
+    "confidence_label": "lead",
+    "created_at": "2026-05-31T00:00:00Z",
+    "domain": "legacy_software",
+    "evidence_summary": {
+      "evidence_count": 3,
+      "evidence_refs": [
+        "scout_run:9e91894a5e3f2294",
+        "scout_run:c2797847038110a6",
+        "scout_run:2c92557d69966669"
+      ],
+      "summary": "Candidate has metadata and SCOUT trail references, but is not reviewed truth."
+    },
+    "limitations": [
+      "fixture_derived",
+      "review_required",
+      "candidate_not_verified"
+    ],
+    "match_reasons": [
+      "query_ref_match",
+      "candidate_snapshot_ref_present",
+      "review_required"
+    ],
+    "object_type": "metadata_candidate",
+    "review_required": true,
+    "rights_label": "rights_not_cleared",
+    "risk_label": "review_required",
+    "schema_version": "result_card_view_model.v0",
+    "snippet": "Source-family lead for follow-up review, not an artifact result.",
+    "source_family": "internet_archive_metadata",
+    "source_label": "Internet Archive metadata",
+    "status": "source_lead",
+    "title": "Windows 7-compatible portable utilities, not Windows 7 ISO fixture metadata lead",
+    "url": "/source/internet_archive_metadata",
+    "view_model_id": "result_card:cccd2380a42cb118"
+  },
+  "projection_profile": "public_web",
+  "public_live_source_fanout_enabled": false,
+  "public_mutation_enabled": false,
+  "read_only": true,
+  "schema_version": "source_page_view_model.v0",
+  "source_identity": {
+    "downloads_enabled": false,
+    "metadata_only": true,
+    "source_family": "internet_archive_metadata",
+    "source_label": "Internet Archive metadata"
+  },
+  "view_model_id": "source:c19c353b17e780c0"
+}

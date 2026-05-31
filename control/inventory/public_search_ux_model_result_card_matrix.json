@@ -1,0 +1,33 @@
+{
+  "candidate_statuses_are_not_verified": true,
+  "required_fields": [
+    "title",
+    "url",
+    "status",
+    "object_type",
+    "domain",
+    "source_family",
+    "source_label",
+    "snippet",
+    "match_reasons",
+    "evidence_summary",
+    "confidence_label",
+    "risk_label",
+    "rights_label",
+    "compatibility_label",
+    "action_posture",
+    "review_required",
+    "accepted_truth",
+    "limitations"
+  ],
+  "schema_version": "public_search_ux_model_result_card_matrix.v0",
+  "statuses": [
+    "verified",
+    "candidate",
+    "near_miss",
+    "known_need",
+    "absence",
+    "source_lead"
+  ],
+  "task": "PUBLIC-SEARCH-UX-MODEL-00"
+}

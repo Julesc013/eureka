@@ -1,0 +1,19 @@
+{
+  "schema_version": "public_search_ux_model_policy.v0",
+  "task": "PUBLIC-SEARCH-UX-MODEL-00",
+  "public_ux_is_search_first": true,
+  "view_models_are_canonical_packets": true,
+  "candidates_are_not_verified_results": true,
+  "needs_and_absences_are_first_class_states": true,
+  "agents_consume_json_packets": true,
+  "duplicate_contract_authority_created": false,
+  "public_projection_read_only": true,
+  "public_mutation_enabled": false,
+  "public_live_source_fanout_enabled": false,
+  "downloads_enabled": false,
+  "extraction_enabled": false,
+  "model_provider_enabled": false,
+  "deployment_enabled": false,
+  "public_launch_readiness_claimed": false,
+  "production_readiness_claimed": false
+}

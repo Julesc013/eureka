@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/view/models/public_search/search_coverage_view_model.v0.json",
+  "title": "SearchCoverageViewModel",
+  "type": "object",
+  "required": ["schema_version", "view_model_id", "status_counts", "reviewed_result_count", "review_only_result_count", "candidate_verified_separation_required"],
+  "properties": {
+    "schema_version": { "const": "search_coverage_view_model.v0" },
+    "candidate_verified_separation_required": { "const": true }
+  },
+  "additionalProperties": true
+}

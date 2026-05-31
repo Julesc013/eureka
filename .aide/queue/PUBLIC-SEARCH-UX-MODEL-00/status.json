@@ -1,0 +1,32 @@
+{
+  "schema_version": "aide_task_status.v0",
+  "task": "PUBLIC-SEARCH-UX-MODEL-00",
+  "status": "pass",
+  "contract_authority_root": "contracts/view/models/public_search",
+  "duplicate_contract_authority_created": false,
+  "result_card_statuses": [
+    "verified",
+    "candidate",
+    "near_miss",
+    "known_need",
+    "absence",
+    "source_lead"
+  ],
+  "projection_profiles": [
+    "public_web",
+    "operator_workbench",
+    "api_json",
+    "classic_html",
+    "text"
+  ],
+  "deployment_performed": false,
+  "public_launch_performed": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "public_mutation_enabled": false,
+  "public_live_source_fanout_enabled": false,
+  "download_performed": false,
+  "extraction_executed": false,
+  "model_provider_used": false,
+  "recommended_next_task": "LIVE-METADATA-PILOT-BATCH-00 - Operator-approved live metadata pilot over seed queries"
+}

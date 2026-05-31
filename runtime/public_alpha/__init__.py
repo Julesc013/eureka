@@ -15,6 +15,15 @@ from runtime.public_alpha.reassess import (
     write_public_alpha_reassess_examples,
     write_public_alpha_reassess_inventory_and_audit,
 )
+from runtime.public_alpha.search_ux_models import (
+    build_action_posture_view_model,
+    build_capability_profile_view_model,
+    build_public_search_ux_model_bundle,
+    build_search_page_view_model,
+    project_public_search_view_model,
+    write_public_search_ux_model_examples,
+    write_public_search_ux_model_inventory_and_audit,
+)
 
 __all__ = [
     "assess_candidate_usefulness",
@@ -30,4 +39,11 @@ __all__ = [
     "smoke_public_alpha_routes_from_examples",
     "write_public_alpha_reassess_examples",
     "write_public_alpha_reassess_inventory_and_audit",
+    "build_action_posture_view_model",
+    "build_capability_profile_view_model",
+    "build_public_search_ux_model_bundle",
+    "build_search_page_view_model",
+    "project_public_search_view_model",
+    "write_public_search_ux_model_examples",
+    "write_public_search_ux_model_inventory_and_audit",
 ]

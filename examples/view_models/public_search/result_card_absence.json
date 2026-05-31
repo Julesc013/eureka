@@ -1,0 +1,62 @@
+{
+  "accepted_truth": false,
+  "action_posture": {
+    "allowed_actions": [
+      "view_need",
+      "view_evidence",
+      "refine_query"
+    ],
+    "blocked_actions": [
+      "download",
+      "install",
+      "execute",
+      "upload",
+      "promote",
+      "mutate_public_index",
+      "run_live_source_fanout",
+      "call_model_provider"
+    ],
+    "created_at": "2026-05-31T00:00:00Z",
+    "downloads_enabled": false,
+    "extraction_enabled": false,
+    "model_provider_enabled": false,
+    "operator_action_required_for_mutation": true,
+    "public_live_source_fanout_enabled": false,
+    "public_mutation_enabled": false,
+    "review_required": true,
+    "schema_version": "action_posture_view_model.v0",
+    "status": "absence",
+    "view_model_id": "action_posture:84ce25420118b84b"
+  },
+  "compatibility_label": "not_applicable",
+  "confidence_label": "bounded_absence",
+  "created_at": "2026-05-31T00:00:00Z",
+  "domain": "bounded_absence",
+  "evidence_summary": {
+    "evidence_count": 1,
+    "evidence_refs": [
+      "seed_absence:ca7d7272ff295051"
+    ],
+    "summary": "Bounded absence describes the current snapshot, not the whole web."
+  },
+  "limitations": [
+    "absence_scope_is_current_snapshot",
+    "not_global_absence"
+  ],
+  "match_reasons": [
+    "bounded_absence_statement",
+    "reviewed_truth_not_present"
+  ],
+  "object_type": "reviewed_truth_not_created",
+  "review_required": true,
+  "rights_label": "not_applicable",
+  "risk_label": "scope_limited",
+  "schema_version": "result_card_view_model.v0",
+  "snippet": "Fixture candidates exist, but reviewed truth and public index records are intentionally absent.",
+  "source_family": "snapshot_refresh",
+  "source_label": "Snapshot refresh",
+  "status": "absence",
+  "title": "Absence: Fixture candidates exist, but reviewed truth and public index records are intentionally absent.",
+  "url": "/absence/seed_absence:ca7d7272ff295051",
+  "view_model_id": "result_card:b12eb21341bdb606"
+}

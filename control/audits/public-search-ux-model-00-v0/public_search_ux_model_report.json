@@ -1,0 +1,39 @@
+{
+  "accepted_truth_created": false,
+  "contract_authority_root": "contracts/view/models/public_search",
+  "contracts_added": true,
+  "deployment_performed": false,
+  "docs_added": true,
+  "download_performed": false,
+  "examples_added": true,
+  "extraction_executed": false,
+  "master_index_mutated": false,
+  "model_provider_used": false,
+  "projection_helpers_added": true,
+  "projection_profiles": [
+    "public_web",
+    "operator_workbench",
+    "api_json",
+    "classic_html",
+    "text"
+  ],
+  "public_index_mutated": false,
+  "public_live_source_fanout_enabled": false,
+  "public_mutation_enabled": false,
+  "recommended_next_task": "LIVE-METADATA-PILOT-BATCH-00 - Operator-approved live metadata pilot over seed queries",
+  "result_card_statuses": [
+    "absence",
+    "candidate",
+    "known_need",
+    "near_miss",
+    "source_lead",
+    "verified"
+  ],
+  "reviewed_index_mutated": false,
+  "runtime_view_model_builder_added": true,
+  "schema_version": "public_search_ux_model_result.v0",
+  "status": "pass",
+  "task": "PUBLIC-SEARCH-UX-MODEL-00",
+  "tests_added": true,
+  "validator_added": true
+}
