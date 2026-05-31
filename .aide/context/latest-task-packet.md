@@ -2,169 +2,131 @@
 
 ## PHASE
 
-UNSPECIFIED - SEED-BATCH-LEGACY-SOFTWARE-00
+SNAPSHOT-REFRESH-00
 
 ## GOAL
 
-SEED-BATCH-LEGACY-SOFTWARE-00
+Refresh reviewed/candidate snapshot projection material from completed
+frontier-media and legacy-software seed-batch handoffs without converting
+candidates into reviewed truth.
 
 ## WHY
 
-Continue AIDE token survival by using repo-local context refs, compact objectives, deterministic validation, and evidence packets instead of long chat history.
+Public-alpha reassessment needs compact, public-safe snapshot material that
+separates reviewed records, review-only candidates, unresolved needs, bounded
+absences, and review queue summaries.
 
 ## CONTEXT_REFS
 
 - `AGENTS.md`
 - `.aide/queue/index.yaml`
-- `.aide/memory/project-state.md`
-- `.aide/memory/decisions.md`
-- `.aide/memory/open-risks.md`
-- `.aide/context/repo-snapshot.json` (present)
-- `.aide/context/repo-map.json` (present)
-- `.aide/context/repo-map.md` (present)
-- `.aide/context/test-map.json` (present)
-- `.aide/context/context-index.json` (present)
-- `.aide/context/latest-context-packet.md` (present)
-- `.aide/repo/latest-repo-intelligence.md` (present)
-- `.aide/repo/file-inventory.json` (present)
-- `.aide/reports/file-quality-summary.md` (present)
-- `.aide/reports/file-quality-ledger.json` (present)
-- `.aide/refactors/latest-refactor-readiness.md` (present)
-- `.aide/refactors/latest-refactor-plan.example.json` (present)
-- `.aide/routing/latest-route-decision.json` (present)
-- `.aide/routing/latest-route-decision.md` (present)
-- `.aide/cache/latest-cache-keys.json` (present)
-- `.aide/cache/latest-cache-keys.md` (present)
-- `.aide/prompts/compact-task.md`
-- `.aide/policies/token-budget.yaml`
-- `.aide/policies/cache.yaml`
-- `.aide/policies/local-state.yaml`
+- `control/inventory/seed_batch_frontier_media_result.json`
+- `control/inventory/seed_batch_legacy_software_result.json`
+- `control/inventory/snapshot_refresh_result.json`
+- `control/audits/snapshot-refresh-00-v0/`
+- `.aide/context/repo-map.json`
+- `.aide/context/test-map.json`
+- `.aide/context/context-index.json`
+- `.aide/context/latest-context-packet.md`
 
 ## ALLOWED_PATHS
 
-- `.aide/**`
-- `AGENTS.md`
-- `contracts/seed_batches/**`
-- `docs/architecture/**`
-- `docs/operations/**`
-- `docs/reference/**`
-- `control/inventory/**`
-- `control/audits/**`
-- `control/policies/**`
-- `runtime/seed_batches/**`
-- `examples/seed_batches/**`
-- `examples/seed_batches/legacy_software/**`
-- `examples/query_plans/legacy_software/**`
-- `examples/candidates/legacy_software/**`
-- `examples/scout/legacy_software/**`
-- `examples/review_batch/legacy_software/**`
-- `examples/public_alpha/legacy_software/**`
-- `scripts/local_queue_progress.py`
-- `scripts/validate_*.py`
-- `scripts/check_*.py`
-- `scripts/eureka_seed_batch_legacy_software.py`
-- `scripts/eureka_seed_batch_run.py`
-- `scripts/eureka_seed_batch_report.py`
-- `tests/runtime/**`
-- `tests/operations/**`
-- `tests/scripts/**`
-- `tests/aide/**`
+- `.aide/queue/SNAPSHOT-REFRESH-00/**`
+- `.aide/queue/index.yaml`
+- `.aide/context/latest-task-packet.md`
+- `.aide/context/latest-review-packet.md`
+- `contracts/snapshot/**`
+- `runtime/snapshots/**`
+- `scripts/eureka_snapshot_refresh.py`
+- `scripts/eureka_snapshot_refresh_report.py`
+- `scripts/validate_snapshot_refresh.py`
+- `tests/runtime/test_snapshot_refresh*.py`
+- `tests/operations/test_snapshot_refresh_scripts.py`
+- `tests/scripts/test_validate_snapshot_refresh.py`
+- `examples/snapshots/refresh/**`
+- `examples/relay/refresh/**`
+- `examples/public_alpha/reassess/**`
+- `control/policies/snapshot_refresh*.json`
+- `control/policies/generated_artifact_policy.json`
+- `control/inventory/snapshot_refresh*.json`
+- `control/audits/snapshot-refresh-00-v0/**`
+- `docs/architecture/SNAPSHOT_REFRESH.md`
+- `docs/architecture/SNAPSHOT_SEED_BATCH_HANDOFFS.md`
+- `docs/architecture/CANDIDATE_SNAPSHOT_SECTION.md`
+- `docs/operations/SNAPSHOT_REFRESH_RUNBOOK.md`
+- `docs/operations/POST_SNAPSHOT_REFRESH_PLAN.md`
+- `docs/reference/SNAPSHOT_REFRESH_PLAN.md`
+- `docs/reference/SNAPSHOT_CANDIDATE_SECTION.md`
+- `docs/reference/SNAPSHOT_NEED_ABSENCE_SECTION.md`
 
 ## FORBIDDEN_PATHS
 
-- `.git/**`
-- `.env`
-- `secrets/**`
-- `.aide.local/**`
-- `.local/**`
-- `.cache/**`
-- `eureka-instance/**`
-- `runtime/**` unless covered by allowed paths above
-- `contracts/**` unless covered by allowed paths above
-- `surfaces/**` unless covered by allowed paths above
-- `site/**`
-- `native/**`
-- `crates/**`
-- `examples/**` unless covered by allowed paths above
-- `evals/**`
-- `tests/**` unless covered by allowed paths above
-- `scripts/**` unless covered by allowed paths above
-- raw provider credentials, API keys, local caches, raw prompt logs, raw responses, and source AIDE repository state
+- deployment output roots
+- public index roots
+- local instance roots
+- private AIDE local-state roots
+- secret and environment files
+- raw live source responses
+- provider credentials
+- private local files
 
 ## IMPLEMENTATION
 
-- Read the queue packet and relevant repo refs first.
-- Keep changes inside the allowed paths.
-- Make the smallest coherent diff that satisfies acceptance.
-- Preserve generated/manual boundaries.
-- Do not inline whole source files unless exact contents are required.
-- Use exact refs such as `path#Lstart-Lend` when file details are load-bearing.
+- Added snapshot refresh runtime projection helpers.
+- Added CLI, report CLI, validator, contracts, policies, examples, docs,
+  inventory packets, audit evidence, and focused tests.
+- Updated the queue handoff to `PUBLIC-ALPHA-REASSESS-00`.
 
 ## VALIDATION
 
-- `py -3 .aide/scripts/aide_lite.py doctor`
-- `py -3 .aide/scripts/aide_lite.py validate`
-- `py -3 .aide/scripts/aide_lite.py snapshot`
-- `py -3 .aide/scripts/aide_lite.py index`
-- `py -3 .aide/scripts/aide_lite.py context`
-- `py -3 .aide/scripts/aide_lite.py pack --task "SEED-BATCH-LEGACY-SOFTWARE-00"`
-- `py -3 .aide/scripts/aide_lite.py test`
-- `py -3 .aide/scripts/aide_lite.py selftest`
-- `py -3 .aide/scripts/aide_lite.py verify`
-- `py -3 .aide/scripts/aide_lite.py review-pack`
-- `python scripts/validate_seed_batch_legacy_software.py`
-- `python scripts/validate_seed_batch_frontier_media.py`
-- `python scripts/validate_review_batch.py`
-- `python scripts/validate_scout_runtime.py`
-- `python scripts/validate_candidate_index_runtime.py`
-- `python scripts/validate_query_to_source_action_planner.py`
-- `python scripts/validate_public_alpha_readonly.py`
-- `python scripts/validate_source_action_kernel.py`
-- `python scripts/validate_source_wave.py`
-- `python scripts/validate_domain_packs.py`
-- `python scripts/check_architecture_boundaries.py`
-- `python scripts/check_generated_artifact_cleanliness.py --check --json`
-- focused SEED-BATCH-LEGACY-SOFTWARE unittest modules
-- `git diff --check`
+- `python scripts/validate_snapshot_refresh.py`
+- existing seed, review, SCOUT, candidate, query planner, snapshot relay,
+  public alpha read-only, source-action, and source-wave validators
+- focused snapshot refresh unittest modules
+- AIDE Lite doctor/validate/test/selftest/verify/review-pack
 
 ## COMMITS
 
-- Commit coherent subdeliverables with verbose bodies.
-- Stop at review gates.
+Commit as `feat(snapshot): refresh seed batch snapshots` after focused
+validation passes.
 
 ## EVIDENCE
 
-- changed files
-- validation commands and results
-- verifier result
-- review packet path and result when review-pack is available
-- advisory route decision path and result when Q17 routing is available
-- compact packet size and budget status
-- unresolved risks and deferrals
+- `control/inventory/snapshot_refresh_result.json`
+- `control/inventory/snapshot_refresh_validation_matrix.json`
+- `control/audits/snapshot-refresh-00-v0/`
+- `examples/snapshots/refresh/`
 
 ## NON_GOALS
 
-- No deployment, publishing, production-readiness claim, public-launch claim, main promotion, force-push, history rewrite, broad crawling, arbitrary scraping, downloads, uploads, extraction, execution, install/emulation, model/provider calls, package download, software safety claim, crack/keygen/serial support, or full discovery inside AI sessions.
-- No automatic candidate acceptance, reviewed-index mutation, master/public index mutation, public mutation, operator instance mutation by default, local apply execution, snapshot refresh execution, or raw live metadata response commits.
+No deployment, public launch, production-readiness claim, public-launch claim,
+candidate acceptance, reviewed/master/public index mutation, operator instance
+mutation, deployment-output write, live source call, source probe, broad crawl,
+download, extraction, execution, install, model/provider call, or full unittest
+discovery inside this AI session.
 
 ## ACCEPTANCE
 
-- Task-specific acceptance criteria are met.
-- Validation is run and recorded.
-- Evidence is written.
-- No secrets, raw prompt logs, local caches, or `.aide.local` contents are committed.
+- Candidate sections exist and keep `accepted_truth: false`.
+- Reviewed record section uses existing reviewed records only.
+- Need/absence and review queue sections are projected.
+- Relay projection is read-only.
+- Public alpha reassess input exists.
+- Boundary flags remain false.
+- Focused validators and tests pass.
 
 ## OUTPUT_SCHEMA
 
-Return a compact final report with `STATUS`, `SUMMARY`, `COMMITS`, `CHANGED_FILES`, `VALIDATION`, route/verifier/token results, `RISKS`, and `NEXT`.
-Include the verifier result when Q12 verifier behavior is available.
+Return a compact final report with STATUS, SUMMARY, SNAPSHOT_REFRESH,
+VALIDATION, BOUNDARIES, and NEXT_TASK.
 
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4778
-- approx_tokens: 1195
 - budget_status: PASS
 - warnings:
   - none
-- formal ledger: `.aide/reports/token-ledger.jsonl`
+
+## NEXT
+
+`PUBLIC-ALPHA-REASSESS-00`

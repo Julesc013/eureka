@@ -1,0 +1,39 @@
+{
+  "$id": "https://eureka.local/contracts/snapshot_need_absence_section.v0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Snapshot Need Absence Section",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "record_type",
+    "section_id",
+    "snapshot_refresh_id",
+    "known_needs",
+    "absence_summaries",
+    "known_need_refs",
+    "absence_refs",
+    "known_need_count",
+    "absence_count",
+    "bounded_absence_statements",
+    "unresolved_needs_remain_unresolved",
+    "accepted_truth",
+    "accepted_truth_created",
+    "limitations",
+    "created_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "snapshot_need_absence_section.v0"
+    },
+    "bounded_absence_statements": {
+      "const": true
+    },
+    "unresolved_needs_remain_unresolved": {
+      "const": true
+    },
+    "accepted_truth": {
+      "const": false
+    }
+  }
+}

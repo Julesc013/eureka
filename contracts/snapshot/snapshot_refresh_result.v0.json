@@ -1,0 +1,55 @@
+{
+  "$id": "https://eureka.local/contracts/snapshot_refresh_result.v0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Snapshot Refresh Result",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "task",
+    "status",
+    "snapshot_refresh_id",
+    "source_batches",
+    "reviewed_record_refs",
+    "candidate_section_refs",
+    "review_queue_section_refs",
+    "need_absence_section_refs",
+    "relay_projection_refs",
+    "public_alpha_reassess_refs",
+    "accepted_truth_created",
+    "candidate_promoted_to_reviewed",
+    "reviewed_index_mutated",
+    "master_index_mutated",
+    "public_index_mutated",
+    "site_dist_written",
+    "download_performed",
+    "extraction_executed",
+    "model_provider_used",
+    "deployment_performed",
+    "limitations",
+    "created_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "snapshot_refresh_result.v0"
+    },
+    "accepted_truth_created": {
+      "const": false
+    },
+    "candidate_promoted_to_reviewed": {
+      "const": false
+    },
+    "reviewed_index_mutated": {
+      "const": false
+    },
+    "master_index_mutated": {
+      "const": false
+    },
+    "public_index_mutated": {
+      "const": false
+    },
+    "site_dist_written": {
+      "const": false
+    }
+  }
+}

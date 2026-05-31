@@ -119,6 +119,12 @@
       "policy": "Task-local SEED-BATCH-LEGACY-SOFTWARE-00 audit evidence records curated legacy-software seed-batch validation; it is not product runtime state."
     },
     {
+      "path": "control/audits/snapshot-refresh-00-v0",
+      "artifact_class": "audit_generated",
+      "allow_task_local_drift": true,
+      "policy": "Task-local SNAPSHOT-REFRESH-00 audit evidence records seed-batch snapshot projection validation; it is not product runtime state."
+    },
+    {
       "path": "control/audits",
       "artifact_class": "audit_generated",
       "policy": "Audit generated outputs are evidence, not product runtime state."

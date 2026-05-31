@@ -1,0 +1,121 @@
+{
+  "accepted_truth": false,
+  "accepted_truth_created": false,
+  "candidate_promoted_to_reviewed": false,
+  "candidate_results_are_review_only": true,
+  "created_at": "2026-05-31T00:00:00Z",
+  "deployment_performed": false,
+  "download_enabled": false,
+  "extraction_enabled": false,
+  "limitations": [
+    "relay projection preview only; no public route or dist write"
+  ],
+  "live_source_actions_enabled": false,
+  "model_provider_enabled": false,
+  "mutation_enabled": false,
+  "query_previews": [
+    {
+      "live_source_actions_enabled": false,
+      "mutation_enabled": false,
+      "query": "D-Theater New York 1993",
+      "read_only": true,
+      "result_count": 5,
+      "results": [
+        {
+          "accepted_truth": false,
+          "candidate_id": "seed_frontier_media_frontier_media_q01_candidate",
+          "domain_id": "frontier_resolution_media",
+          "review_required": true,
+          "title": "New York 1993 D-Theater HD demo tape original source fixture metadata lead"
+        },
+        {
+          "accepted_truth": false,
+          "candidate_id": "seed_frontier_media_frontier_media_q02_candidate",
+          "domain_id": "frontier_resolution_media",
+          "review_required": true,
+          "title": "New York 1993 D-VHS HDTV demo tape fixture metadata lead"
+        },
+        {
+          "accepted_truth": false,
+          "candidate_id": "seed_frontier_media_frontier_media_q03_candidate",
+          "domain_id": "frontier_resolution_media",
+          "review_required": true,
+          "title": "JVC D-Theater New York HD demo fixture metadata lead"
+        },
+        {
+          "accepted_truth": false,
+          "candidate_id": "seed_frontier_media_frontier_media_q04_candidate",
+          "domain_id": "frontier_resolution_media",
+          "review_required": true,
+          "title": "D-Theater D-VHS city footage 1993 fixture metadata lead"
+        },
+        {
+          "accepted_truth": false,
+          "candidate_id": "seed_frontier_media_frontier_media_q05_candidate",
+          "domain_id": "frontier_resolution_media",
+          "review_required": true,
+          "title": "Hi-Vision MUSE New York 1993 HDTV demo fixture metadata lead"
+        }
+      ],
+      "schema_version": "snapshot_refresh_relay_query_preview.v0"
+    },
+    {
+      "live_source_actions_enabled": false,
+      "mutation_enabled": false,
+      "query": "Windows 7 offline utility",
+      "read_only": true,
+      "result_count": 5,
+      "results": [
+        {
+          "accepted_truth": false,
+          "candidate_id": "seed_legacy_software_legacy_software_q01_candidate",
+          "domain_id": "legacy_software",
+          "review_required": true,
+          "title": "Windows 7-compatible portable utilities, not Windows 7 ISO fixture metadata lead"
+        },
+        {
+          "accepted_truth": false,
+          "candidate_id": "seed_legacy_software_legacy_software_q02_candidate",
+          "domain_id": "legacy_software",
+          "review_required": true,
+          "title": "DirectX SDK June 2010 offline installer fixture metadata lead"
+        },
+        {
+          "accepted_truth": false,
+          "candidate_id": "seed_legacy_software_legacy_software_q04_candidate",
+          "domain_id": "legacy_software",
+          "review_required": true,
+          "title": "Windows 98 registry repair utility fixture metadata lead"
+        },
+        {
+          "accepted_truth": false,
+          "candidate_id": "seed_legacy_software_legacy_software_q05_candidate",
+          "domain_id": "driver_support_media",
+          "review_required": true,
+          "title": "Sound Blaster Live Windows 98 driver support CD fixture metadata lead"
+        },
+        {
+          "accepted_truth": false,
+          "candidate_id": "seed_legacy_software_legacy_software_q06_candidate",
+          "domain_id": "legacy_software",
+          "review_required": true,
+          "title": "QuickTime 7 Windows XP offline installer fixture metadata lead"
+        }
+      ],
+      "schema_version": "snapshot_refresh_relay_query_preview.v0"
+    }
+  ],
+  "read_only": true,
+  "record_type": "snapshot_refresh_relay_projection",
+  "relay_projection_id": "snapshot_refresh_relay_projection:872596f41f789177",
+  "schema_version": "snapshot_refresh_relay_projection.v0",
+  "sections": {
+    "absence_summaries": 2,
+    "candidate_sections": 2,
+    "candidates": 28,
+    "known_needs": 28,
+    "review_queue_candidates": 28,
+    "reviewed_records": 1
+  },
+  "snapshot_refresh_id": "snapshot_refresh_00"
+}

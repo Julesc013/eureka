@@ -1,0 +1,14 @@
+{
+  "accepted_truth_created": false,
+  "candidate_count": 28,
+  "candidate_promoted_to_reviewed": false,
+  "fixture_snapshot_refresh_passed": true,
+  "public_alpha_reassess_input_created": true,
+  "relay_projection_created": true,
+  "reviewed_record_count": 1,
+  "schema_version": "snapshot_refresh_smoke_result.v0",
+  "site_dist_written": false,
+  "source_batch_count": 2,
+  "status": "pass",
+  "task": "SNAPSHOT-REFRESH-00"
+}

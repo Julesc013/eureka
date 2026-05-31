@@ -1,0 +1,45 @@
+{
+  "$id": "https://eureka.local/contracts/snapshot_refresh_boundary_report.v0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Snapshot Refresh Boundary Report",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "record_type",
+    "snapshot_refresh_id",
+    "snapshot_refresh_is_projection",
+    "candidates_remain_candidates",
+    "accepted_truth_created",
+    "candidate_promoted_to_reviewed",
+    "reviewed_index_mutated",
+    "master_index_mutated",
+    "public_index_mutated",
+    "site_dist_written",
+    "download_performed",
+    "extraction_executed",
+    "model_provider_used",
+    "deployment_performed",
+    "production_readiness_claimed",
+    "public_launch_readiness_claimed",
+    "limitations",
+    "created_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "snapshot_refresh_boundary_report.v0"
+    },
+    "snapshot_refresh_is_projection": {
+      "const": true
+    },
+    "candidates_remain_candidates": {
+      "const": true
+    },
+    "accepted_truth_created": {
+      "const": false
+    },
+    "candidate_promoted_to_reviewed": {
+      "const": false
+    }
+  }
+}

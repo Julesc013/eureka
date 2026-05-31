@@ -1,0 +1,14 @@
+# Relay Projection Matrix
+
+```json
+{
+  "mutation_enabled": false,
+  "read_only": true,
+  "relay_projection_refs": [
+    "snapshot_refresh_relay_projection:872596f41f789177"
+  ],
+  "schema_version": "snapshot_refresh_relay_projection_matrix.v0",
+  "site_dist_written": false,
+  "task": "SNAPSHOT-REFRESH-00"
+}
+```

@@ -1,0 +1,33 @@
+{
+  "$id": "https://eureka.local/contracts/snapshot_seed_batch_summary.v0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Snapshot Seed Batch Summary",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "record_type",
+    "section_id",
+    "snapshot_refresh_id",
+    "source_batches",
+    "source_batch_count",
+    "total_candidate_count",
+    "total_query_count",
+    "review_required",
+    "accepted_truth",
+    "accepted_truth_created",
+    "limitations",
+    "created_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "snapshot_seed_batch_summary.v0"
+    },
+    "review_required": {
+      "const": true
+    },
+    "accepted_truth": {
+      "const": false
+    }
+  }
+}

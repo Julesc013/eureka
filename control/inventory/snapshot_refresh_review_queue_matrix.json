@@ -1,0 +1,9 @@
+{
+  "operator_context_required": true,
+  "review_queue_candidate_count": 28,
+  "review_queue_section_refs": [
+    "snapshot_review_queue_section:926a3295f93557fa"
+  ],
+  "schema_version": "snapshot_refresh_review_queue_matrix.v0",
+  "task": "SNAPSHOT-REFRESH-00"
+}

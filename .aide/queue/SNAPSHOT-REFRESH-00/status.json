@@ -1,0 +1,16 @@
+{
+  "schema_version": "aide_queue_task_status.v0",
+  "task": "SNAPSHOT-REFRESH-00",
+  "status": "pass",
+  "latest_commit_expected": "feat(snapshot): refresh seed batch snapshots",
+  "result": "control/inventory/snapshot_refresh_result.json",
+  "audit": "control/audits/snapshot-refresh-00-v0/",
+  "next_task": "PUBLIC-ALPHA-REASSESS-00",
+  "full_discovery": "NOT_RUN_BY_POLICY",
+  "accepted_truth_created": false,
+  "reviewed_index_mutated": false,
+  "master_index_mutated": false,
+  "public_index_mutated": false,
+  "site_dist_written": false,
+  "deployment_performed": false
+}

@@ -1,0 +1,22 @@
+{
+  "full_discovery": "NOT_RUN_BY_POLICY",
+  "schema_version": "snapshot_refresh_validation_matrix.v0",
+  "status": "pass",
+  "task": "SNAPSHOT-REFRESH-00",
+  "validation_commands": [
+    "python scripts/validate_snapshot_refresh.py",
+    "python scripts/validate_seed_batch_legacy_software.py",
+    "python scripts/validate_seed_batch_frontier_media.py",
+    "python scripts/validate_review_batch.py",
+    "python scripts/validate_scout_runtime.py",
+    "python scripts/validate_candidate_index_runtime.py",
+    "python scripts/validate_query_to_source_action_planner.py",
+    "python scripts/validate_snapshot_relay.py",
+    "python scripts/validate_public_alpha_readonly.py",
+    "python scripts/validate_source_action_kernel.py",
+    "python scripts/validate_source_wave.py",
+    "python scripts/check_architecture_boundaries.py",
+    "python scripts/check_generated_artifact_cleanliness.py --check --json",
+    "focused snapshot refresh unittest modules"
+  ]
+}

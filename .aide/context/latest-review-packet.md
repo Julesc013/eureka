@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (6020 chars, 1505 approximate tokens)
+- `.aide/context/latest-task-packet.md` (4103 chars, 1026 approximate tokens)
 
 ## Context Packet Reference
 
@@ -35,29 +35,29 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/SEED-BATCH-LEGACY-SOFTWARE-00/README.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/SEED-BATCH-LEGACY-SOFTWARE-00/status.json` (??; matches active task allowed path)
+- allowed: `.aide/queue/SNAPSHOT-REFRESH-00/README.md` (M; matches active task allowed path)
+- allowed: `.aide/queue/SNAPSHOT-REFRESH-00/status.json` (??; matches active task allowed path)
 - allowed: `.aide/queue/index.yaml` (M; matches active task allowed path)
-- allowed: `contracts/seed_batches/seed_batch.v0.json` (M; matches active task allowed path)
-- allowed: `contracts/seed_batches/seed_batch_boundary_report.v0.json` (M; matches active task allowed path)
-- allowed: `contracts/seed_batches/seed_batch_run.v0.json` (M; matches active task allowed path)
-- allowed: `control/audits/seed-batch-legacy-software-00-v0` (??; matches active task allowed path)
-- allowed: `control/inventory/seed_batch_legacy_software_boundary_report.json` (??; matches active task allowed path)
-- allowed: `control/inventory/seed_batch_legacy_software_candidate_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/seed_batch_legacy_software_failure_repair_log.json` (??; matches active task allowed path)
-- allowed: `control/inventory/seed_batch_legacy_software_input_state.json` (??; matches active task allowed path)
-- allowed: `control/inventory/seed_batch_legacy_software_need_absence_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/seed_batch_legacy_software_next_task_decision.json` (??; matches active task allowed path)
-- allowed: `control/inventory/seed_batch_legacy_software_public_alpha_reassess_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/seed_batch_legacy_software_query_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/seed_batch_legacy_software_result.json` (??; matches active task allowed path)
-- allowed: `control/inventory/seed_batch_legacy_software_review_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/seed_batch_legacy_software_scout_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/seed_batch_legacy_software_smoke_result.json` (??; matches active task allowed path)
-- allowed: `control/inventory/seed_batch_legacy_software_snapshot_handoff_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/seed_batch_legacy_software_source_plan_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/seed_batch_legacy_software_suppression_matrix.json` (??; matches active task allowed path)
-- additional changed paths omitted from compact packet: 38; see task evidence changed-files report
+- allowed: `contracts/snapshot/snapshot_candidate_section.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/snapshot/snapshot_need_absence_section.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/snapshot/snapshot_refresh_boundary_report.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/snapshot/snapshot_refresh_plan.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/snapshot/snapshot_refresh_result.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/snapshot/snapshot_review_queue_section.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/snapshot/snapshot_seed_batch_summary.v0.json` (??; matches active task allowed path)
+- allowed: `control/audits/snapshot-refresh-00-v0` (??; matches active task allowed path)
+- allowed: `control/inventory/snapshot_refresh_boundary_report.json` (??; matches active task allowed path)
+- allowed: `control/inventory/snapshot_refresh_candidate_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/snapshot_refresh_failure_repair_log.json` (??; matches active task allowed path)
+- allowed: `control/inventory/snapshot_refresh_input_state.json` (??; matches active task allowed path)
+- allowed: `control/inventory/snapshot_refresh_need_absence_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/snapshot_refresh_next_task_decision.json` (??; matches active task allowed path)
+- allowed: `control/inventory/snapshot_refresh_public_alpha_reassess_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/snapshot_refresh_relay_projection_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/snapshot_refresh_result.json` (??; matches active task allowed path)
+- allowed: `control/inventory/snapshot_refresh_review_queue_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/snapshot_refresh_reviewed_record_matrix.json` (??; matches active task allowed path)
+- additional changed paths omitted from compact packet: 35; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -67,8 +67,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 6985
-- approx_tokens: 1747
+- chars: 6837
+- approx_tokens: 1710
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

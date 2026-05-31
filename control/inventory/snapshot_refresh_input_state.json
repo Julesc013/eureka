@@ -1,0 +1,21 @@
+{
+  "accepted_truth_created": false,
+  "branch": "dev",
+  "created_at": "2026-05-31T00:00:00Z",
+  "input_results": {
+    "candidate_index": "control/inventory/candidate_index_result.json",
+    "public_alpha_launch_defer": "control/inventory/public_alpha_launch_defer_result.json",
+    "public_alpha_readonly_equivalent": "control/inventory/public_alpha_readonly_00_result.json",
+    "query_planner_equivalent": "control/audits/query-to-source-action-planner-00-v0/query_to_source_action_planner_report.json",
+    "review_batch": "control/inventory/review_batch_result.json",
+    "scout_runtime": "control/inventory/scout_runtime_result.json",
+    "seed_batch_frontier_media": "control/inventory/seed_batch_frontier_media_result.json",
+    "seed_batch_legacy_software": "control/inventory/seed_batch_legacy_software_result.json",
+    "snapshot_relay": "control/inventory/snapshot_relay_result.json"
+  },
+  "master_index_mutated": false,
+  "public_index_mutated": false,
+  "reviewed_index_mutated": false,
+  "schema_version": "snapshot_refresh_input_state.v0",
+  "task": "SNAPSHOT-REFRESH-00"
+}

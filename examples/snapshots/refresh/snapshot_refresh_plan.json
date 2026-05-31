@@ -1,0 +1,90 @@
+{
+  "accepted_truth_created": false,
+  "candidate_projection_source": "seed_batch_handoffs",
+  "candidate_section_refs": [
+    "snapshot_candidate_section:f4757d4c670cac9c",
+    "snapshot_candidate_section:7f6e2afa5c56d5f5"
+  ],
+  "created_at": "2026-05-31T00:00:00Z",
+  "limitations": [
+    "snapshot_refresh_is_projection_only",
+    "candidates_remain_candidates",
+    "seed_outputs_are_not_truth",
+    "review_required_before_promotion",
+    "local_apply_is_separate_gate",
+    "public_alpha_reassess_is_separate_gate",
+    "no_site_dist_write",
+    "no_public_index_mutation",
+    "no_deployment_or_launch_claim"
+  ],
+  "need_absence_section_refs": [
+    "snapshot_need_absence_section:cb11d546482aace6"
+  ],
+  "public_alpha_reassess_refs": [
+    "snapshot_public_alpha_reassess:872596f41f789177"
+  ],
+  "public_index_mutated": false,
+  "record_type": "snapshot_refresh_plan",
+  "refresh_mode": "examples_projection_only",
+  "relay_projection_refs": [
+    "snapshot_relay_projection:872596f41f789177"
+  ],
+  "review_queue_section_refs": [
+    "snapshot_review_queue_section:cb11d546482aace6"
+  ],
+  "reviewed_index_mutated": false,
+  "reviewed_record_refs": [
+    "reviewed-sampleproject-001"
+  ],
+  "reviewed_records_source": "existing_reviewed_snapshot_examples",
+  "schema_version": "snapshot_refresh_plan.v0",
+  "snapshot_refresh_id": "snapshot_refresh_00",
+  "source_batches": [
+    {
+      "accepted_truth": false,
+      "accepted_truth_created": false,
+      "batch_id": "seed_batch_frontier_media_00",
+      "candidate_count": 12,
+      "domain_id": "frontier_resolution_media",
+      "domain_key": "frontier_media",
+      "fixture_derived": true,
+      "public_alpha_reassess_refs": [
+        "public_alpha_reassess_input:efa88f81027a122d"
+      ],
+      "public_index_mutated": false,
+      "query_count": 12,
+      "review_batch_refs": [
+        "review_batch:2ec562a70fa95f36"
+      ],
+      "review_required": true,
+      "reviewed_index_mutated": false,
+      "schema_version": "snapshot_seed_batch_summary_item.v0",
+      "snapshot_refresh_handoff_refs": [
+        "batch_snapshot_refresh_handoff:b09870cfc0795e2b"
+      ]
+    },
+    {
+      "accepted_truth": false,
+      "accepted_truth_created": false,
+      "batch_id": "seed_batch_legacy_software_00",
+      "candidate_count": 16,
+      "domain_id": "legacy_software",
+      "domain_key": "legacy_software",
+      "fixture_derived": true,
+      "public_alpha_reassess_refs": [
+        "public_alpha_reassess_input:73fcfb03da74dc6f"
+      ],
+      "public_index_mutated": false,
+      "query_count": 16,
+      "review_batch_refs": [
+        "review_batch:d731b2afdb62ed84"
+      ],
+      "review_required": true,
+      "reviewed_index_mutated": false,
+      "schema_version": "snapshot_seed_batch_summary_item.v0",
+      "snapshot_refresh_handoff_refs": [
+        "batch_snapshot_refresh_handoff:6f0f668aee63e3bc"
+      ]
+    }
+  ]
+}

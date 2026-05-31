@@ -1,0 +1,9 @@
+{
+  "production_readiness_claimed": false,
+  "public_alpha_reassess_refs": [
+    "public_alpha_reassess:872596f41f789177"
+  ],
+  "public_launch_readiness_claimed": false,
+  "schema_version": "snapshot_refresh_public_alpha_reassess_matrix.v0",
+  "task": "SNAPSHOT-REFRESH-00"
+}

@@ -1,0 +1,19 @@
+{
+  "schema_version": "snapshot_refresh_reviewed_record_policy.v0",
+  "task": "SNAPSHOT-REFRESH-00",
+  "snapshot_refresh_is_projection": true,
+  "candidates_remain_candidates": true,
+  "seed_outputs_are_not_truth": true,
+  "reviewed_records_only_from_existing_reviewed_sources": true,
+  "no_candidate_auto_acceptance": true,
+  "no_reviewed_index_mutation": true,
+  "no_master_index_mutation": true,
+  "no_public_index_mutation": true,
+  "no_public_mutation": true,
+  "no_deployment": true,
+  "no_public_launch_claim": true,
+  "no_production_claim": true,
+  "downloads_enabled": false,
+  "extraction_enabled": false,
+  "model_provider_enabled": false
+}

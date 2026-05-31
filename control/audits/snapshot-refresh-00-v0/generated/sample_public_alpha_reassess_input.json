@@ -1,0 +1,23 @@
+{
+  "absence_count": 2,
+  "accepted_truth": false,
+  "accepted_truth_created": false,
+  "candidate_count": 28,
+  "candidate_promoted_to_reviewed": false,
+  "created_at": "2026-05-31T00:00:00Z",
+  "known_need_count": 28,
+  "production_readiness_claimed": false,
+  "public_alpha_reassess_id": "public_alpha_reassess:872596f41f789177",
+  "public_launch_readiness_claimed": false,
+  "reassess_note": "Use for PUBLIC-ALPHA-REASSESS-00 only; snapshot refresh does not launch, deploy, or accept candidates.",
+  "record_type": "snapshot_refresh_public_alpha_reassess_input",
+  "review_queue_candidate_count": 28,
+  "review_required": true,
+  "reviewed_record_count": 1,
+  "schema_version": "snapshot_refresh_public_alpha_reassess_input.v0",
+  "seed_batch_refs": [
+    "seed_batch_frontier_media_00",
+    "seed_batch_legacy_software_00"
+  ],
+  "snapshot_refresh_id": "snapshot_refresh_00"
+}

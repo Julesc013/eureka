@@ -1,0 +1,11 @@
+# Need And Absence Matrix
+
+```json
+{
+  "absence_count": 2,
+  "bounded_absence_statements": true,
+  "known_need_count": 28,
+  "schema_version": "snapshot_refresh_need_absence_matrix.v0",
+  "task": "SNAPSHOT-REFRESH-00"
+}
+```
