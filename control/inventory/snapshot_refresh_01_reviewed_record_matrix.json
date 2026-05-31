@@ -1,0 +1,9 @@
+{
+  "reviewed_record_count": 1,
+  "reviewed_record_refs": [
+    "reviewed-sampleproject-001"
+  ],
+  "reviewed_records_only_from_existing_reviewed_sources": true,
+  "schema_version": "snapshot_refresh_01_reviewed_record_matrix.v0",
+  "task": "SNAPSHOT-REFRESH-01"
+}

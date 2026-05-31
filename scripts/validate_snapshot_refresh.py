@@ -16,7 +16,9 @@ if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
 from runtime.snapshots import (  # noqa: E402
+    build_snapshot_refresh_01_inventory_packets,
     build_snapshot_refresh_inventory_packets,
+    run_snapshot_refresh_01,
     run_snapshot_refresh,
 )
 
@@ -25,6 +27,7 @@ REQUIRED_CONTRACTS = [
     "contracts/snapshot/snapshot_refresh_plan.v0.json",
     "contracts/snapshot/snapshot_refresh_result.v0.json",
     "contracts/snapshot/snapshot_candidate_section.v0.json",
+    "contracts/snapshot/snapshot_live_metadata_candidate_section.v0.json",
     "contracts/snapshot/snapshot_review_queue_section.v0.json",
     "contracts/snapshot/snapshot_need_absence_section.v0.json",
     "contracts/snapshot/snapshot_seed_batch_summary.v0.json",
@@ -34,6 +37,7 @@ REQUIRED_POLICIES = [
     "control/policies/snapshot_refresh_policy.json",
     "control/policies/snapshot_refresh_reviewed_record_policy.json",
     "control/policies/snapshot_refresh_candidate_policy.json",
+    "control/policies/snapshot_refresh_live_metadata_policy.json",
     "control/policies/snapshot_refresh_need_absence_policy.json",
     "control/policies/snapshot_refresh_relay_policy.json",
     "control/policies/snapshot_refresh_non_claim_policy.json",
@@ -48,6 +52,17 @@ REQUIRED_MATRICES = [
     "control/inventory/snapshot_refresh_relay_projection_matrix.json",
     "control/inventory/snapshot_refresh_public_alpha_reassess_matrix.json",
     "control/inventory/snapshot_refresh_boundary_report.json",
+    "control/inventory/snapshot_refresh_01_input_state.json",
+    "control/inventory/snapshot_refresh_01_source_matrix.json",
+    "control/inventory/snapshot_refresh_01_reviewed_record_matrix.json",
+    "control/inventory/snapshot_refresh_01_candidate_matrix.json",
+    "control/inventory/snapshot_refresh_01_live_metadata_candidate_matrix.json",
+    "control/inventory/snapshot_refresh_01_need_absence_matrix.json",
+    "control/inventory/snapshot_refresh_01_review_queue_matrix.json",
+    "control/inventory/snapshot_refresh_01_relay_projection_matrix.json",
+    "control/inventory/snapshot_refresh_01_public_search_view_model_matrix.json",
+    "control/inventory/snapshot_refresh_01_public_alpha_reassess_matrix.json",
+    "control/inventory/snapshot_refresh_01_boundary_report.json",
 ]
 REQUIRED_EXAMPLES = [
     "examples/snapshots/refresh/snapshot_refresh_plan.json",
@@ -60,8 +75,22 @@ REQUIRED_EXAMPLES = [
     "examples/snapshots/refresh/refreshed_relay_projection.json",
     "examples/snapshots/refresh/public_alpha_reassess_input.json",
     "examples/snapshots/refresh/boundary_report.json",
+    "examples/snapshots/refresh/live_metadata/snapshot_refresh_plan.json",
+    "examples/snapshots/refresh/live_metadata/reviewed_record_section.json",
+    "examples/snapshots/refresh/live_metadata/candidate_section_frontier_media.json",
+    "examples/snapshots/refresh/live_metadata/candidate_section_legacy_software.json",
+    "examples/snapshots/refresh/live_metadata/live_metadata_candidate_section.json",
+    "examples/snapshots/refresh/live_metadata/review_queue_section.json",
+    "examples/snapshots/refresh/live_metadata/need_absence_section.json",
+    "examples/snapshots/refresh/live_metadata/seed_batch_summary_section.json",
+    "examples/snapshots/refresh/live_metadata/refreshed_relay_projection.json",
+    "examples/snapshots/refresh/live_metadata/public_search_view_model_projection.json",
+    "examples/snapshots/refresh/live_metadata/public_alpha_reassess_input.json",
+    "examples/snapshots/refresh/live_metadata/boundary_report.json",
     "examples/relay/refresh/refreshed_relay_projection.json",
+    "examples/relay/refresh/live_metadata_refreshed_relay_projection.json",
     "examples/public_alpha/reassess/snapshot_refresh_reassess_input.json",
+    "examples/public_alpha/reassess/live_metadata/snapshot_refresh_01_reassess_input.json",
 ]
 REQUIRED_DOCS = [
     "docs/architecture/SNAPSHOT_REFRESH.md",
@@ -72,6 +101,12 @@ REQUIRED_DOCS = [
     "docs/reference/SNAPSHOT_REFRESH_PLAN.md",
     "docs/reference/SNAPSHOT_CANDIDATE_SECTION.md",
     "docs/reference/SNAPSHOT_NEED_ABSENCE_SECTION.md",
+    "docs/architecture/SNAPSHOT_REFRESH_01.md",
+    "docs/architecture/SNAPSHOT_LIVE_METADATA_HANDOFFS.md",
+    "docs/architecture/LIVE_METADATA_CANDIDATE_SNAPSHOT_SECTION.md",
+    "docs/operations/SNAPSHOT_REFRESH_01_RUNBOOK.md",
+    "docs/operations/POST_SNAPSHOT_REFRESH_01_PLAN.md",
+    "docs/reference/SNAPSHOT_LIVE_METADATA_SECTION.md",
 ]
 REQUIRED_CLI = [
     "scripts/eureka_snapshot_refresh.py",
@@ -79,10 +114,12 @@ REQUIRED_CLI = [
 ]
 REQUIRED_TRUE = [
     "snapshot_refresh_is_projection",
+    "live_metadata_candidates_remain_candidates",
     "candidates_remain_candidates",
     "seed_outputs_are_not_truth",
     "reviewed_records_only_from_existing_reviewed_sources",
     "no_candidate_auto_acceptance",
+    "no_live_metadata_auto_acceptance",
     "no_reviewed_index_mutation",
     "no_master_index_mutation",
     "no_public_index_mutation",
@@ -95,6 +132,7 @@ REQUIRED_FALSE = [
     "downloads_enabled",
     "extraction_enabled",
     "model_provider_enabled",
+    "raw_live_response_included",
 ]
 
 
@@ -123,7 +161,7 @@ def validate() -> dict[str, Any]:
     failures = [name for name, passed in checks.items() if not passed]
     return {
         "schema_version": "snapshot_refresh_validation.v0",
-        "task": "SNAPSHOT-REFRESH-00",
+        "task": "SNAPSHOT-REFRESH-00+01",
         "status": "pass" if not failures else "fail",
         "checks": checks,
         "failures": failures,
@@ -145,7 +183,11 @@ def validate() -> dict[str, Any]:
 def _runtime_checks() -> dict[str, bool]:
     result = run_snapshot_refresh(from_seed_examples=True)
     inventory = build_snapshot_refresh_inventory_packets(result)
+    live_result = run_snapshot_refresh_01(from_live_metadata_pilot_examples=True)
+    live_inventory = build_snapshot_refresh_01_inventory_packets(live_result)
     candidate_sections = list(result.get("candidate_sections") or [])
+    live_section = live_result["live_metadata_candidate_section"]
+    live_cards = live_result["public_search_view_model_projection"]["result_cards"]
     boundary = result["boundary_report"]
     return {
         "snapshot_refresh_example_builds": result["fixture_snapshot_refresh_passed"] is True,
@@ -168,6 +210,23 @@ def _runtime_checks() -> dict[str, bool]:
             "snapshot_refresh_candidate_matrix.json",
             "snapshot_refresh_relay_projection_matrix.json",
         }.issubset(set(inventory)),
+        "live_metadata_refresh_example_builds": live_result["fixture_snapshot_refresh_passed"] is True,
+        "live_metadata_candidate_section_exists": live_section["candidate_count"] > 0,
+        "live_metadata_candidates_review_only": live_section["accepted_truth"] is False
+        and live_section["raw_response_included"] is False
+        and all(
+            candidate.get("accepted_truth") is False
+            and candidate.get("reviewed_record_ref") is None
+            and candidate.get("raw_response_included") is False
+            and candidate.get("public_search_status") == "candidate"
+            for candidate in live_section.get("candidates", [])
+        ),
+        "public_search_view_model_projection_exists": len(live_cards) == live_section["candidate_count"]
+        and all(card.get("status") == "candidate" and card.get("accepted_truth") is False for card in live_cards),
+        "live_metadata_inventory_packets_build": {
+            "snapshot_refresh_01_live_metadata_candidate_matrix.json",
+            "snapshot_refresh_01_public_search_view_model_matrix.json",
+        }.issubset(set(live_inventory)),
         "no_accepted_truth": result["accepted_truth_created"] is False,
         "no_candidate_promotion": result["candidate_promoted_to_reviewed"] is False,
         "no_index_mutation": all(
@@ -182,6 +241,23 @@ def _runtime_checks() -> dict[str, bool]:
         "no_readiness_claims": all(
             boundary.get(key) is False
             for key in ("production_readiness_claimed", "public_launch_readiness_claimed")
+        ),
+        "live_metadata_no_boundaries_crossed": all(
+            live_result.get(key) is False
+            for key in (
+                "accepted_truth_created",
+                "candidate_promoted_to_reviewed",
+                "live_metadata_candidate_promoted",
+                "raw_live_response_included",
+                "reviewed_index_mutated",
+                "master_index_mutated",
+                "public_index_mutated",
+                "site_dist_written",
+                "download_performed",
+                "extraction_executed",
+                "model_provider_used",
+                "deployment_performed",
+            )
         ),
     }
 
@@ -198,11 +274,13 @@ def _prior_results_present() -> bool:
     required = [
         "control/inventory/seed_batch_frontier_media_result.json",
         "control/inventory/seed_batch_legacy_software_result.json",
+        "control/inventory/live_metadata_pilot_result.json",
         "control/inventory/review_batch_result.json",
         "control/inventory/scout_runtime_result.json",
         "control/inventory/candidate_index_result.json",
         "control/audits/query-to-source-action-planner-00-v0/query_to_source_action_planner_report.json",
         "control/inventory/snapshot_relay_result.json",
+        "control/inventory/public_search_ux_model_result.json",
         "control/inventory/public_alpha_readonly_00_result.json",
         "control/inventory/public_alpha_launch_defer_result.json",
     ]
@@ -215,6 +293,7 @@ def _prior_results_present() -> bool:
     for path in (
         "control/inventory/seed_batch_frontier_media_result.json",
         "control/inventory/seed_batch_legacy_software_result.json",
+        "control/inventory/live_metadata_pilot_result.json",
     ):
         payload = _load_json(path)
         if any(

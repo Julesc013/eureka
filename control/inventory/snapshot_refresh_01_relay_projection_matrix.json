@@ -1,0 +1,10 @@
+{
+  "mutation_enabled": false,
+  "read_only": true,
+  "relay_projection_refs": [
+    "snapshot_refresh_relay_projection:304b1f193deaf515"
+  ],
+  "schema_version": "snapshot_refresh_01_relay_projection_matrix.v0",
+  "site_dist_written": false,
+  "task": "SNAPSHOT-REFRESH-01"
+}

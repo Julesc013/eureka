@@ -1,0 +1,31 @@
+{
+  "absence_count": 2,
+  "accepted_truth": false,
+  "accepted_truth_created": false,
+  "candidate_count": 36,
+  "candidate_promoted_to_reviewed": false,
+  "created_at": "2026-06-01T00:00:00Z",
+  "demo_mode_recommended": true,
+  "fixture_candidate_count": 28,
+  "known_need_count": 28,
+  "launch_recommended": false,
+  "live_metadata_candidate_count": 8,
+  "live_metadata_candidate_promoted": false,
+  "live_metadata_pilot_ref": "control/inventory/live_metadata_pilot_result.json",
+  "needs_more_reviewed_records": true,
+  "production_readiness_claimed": false,
+  "public_alpha_reassess_id": "public_alpha_reassess:304b1f193deaf515",
+  "public_launch_readiness_claimed": false,
+  "raw_live_response_included": false,
+  "reassess_note": "Use for PUBLIC-ALPHA-REASSESS-01 only; snapshot refresh does not launch, deploy, or accept candidates.",
+  "record_type": "snapshot_refresh_public_alpha_reassess_input",
+  "review_queue_candidate_count": 36,
+  "review_required": true,
+  "reviewed_record_count": 1,
+  "schema_version": "snapshot_refresh_public_alpha_reassess_input.v0",
+  "seed_batch_refs": [
+    "seed_batch_frontier_media_00",
+    "seed_batch_legacy_software_00"
+  ],
+  "snapshot_refresh_id": "snapshot_refresh_01"
+}

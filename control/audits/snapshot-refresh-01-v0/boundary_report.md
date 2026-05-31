@@ -1,0 +1,39 @@
+# Boundary Report
+
+```json
+{
+  "accepted_truth_created": false,
+  "candidate_promoted_to_reviewed": false,
+  "candidates_remain_candidates": true,
+  "created_at": "2026-06-01T00:00:00Z",
+  "deployment_performed": false,
+  "download_performed": false,
+  "extraction_executed": false,
+  "limitations": [
+    "snapshot_refresh_is_projection_only",
+    "live_metadata_candidates_remain_candidates",
+    "redacted_metadata_summaries_only",
+    "raw_live_responses_excluded",
+    "review_required_before_promotion",
+    "local_apply_is_separate_gate",
+    "public_alpha_reassess_is_separate_gate",
+    "no_site_dist_write",
+    "no_public_index_mutation",
+    "no_deployment_or_launch_claim"
+  ],
+  "live_metadata_candidate_promoted": false,
+  "live_metadata_candidates_remain_candidates": true,
+  "master_index_mutated": false,
+  "model_provider_used": false,
+  "production_readiness_claimed": false,
+  "public_index_mutated": false,
+  "public_launch_readiness_claimed": false,
+  "raw_live_response_included": false,
+  "record_type": "snapshot_refresh_boundary_report",
+  "reviewed_index_mutated": false,
+  "schema_version": "snapshot_refresh_boundary_report.v0",
+  "site_dist_written": false,
+  "snapshot_refresh_id": "snapshot_refresh_01",
+  "snapshot_refresh_is_projection": true
+}
+```

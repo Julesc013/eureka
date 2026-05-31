@@ -1,0 +1,26 @@
+{
+  "candidate_count": 36,
+  "candidate_sections": [
+    {
+      "accepted_truth": false,
+      "batch_id": "seed_batch_frontier_media_00",
+      "candidate_count": 12,
+      "candidate_promoted_to_reviewed": false,
+      "domain_key": "frontier_media",
+      "fixture_derived": true,
+      "section_id": "snapshot_candidate_section:b62a5f5f5a9f4f0a"
+    },
+    {
+      "accepted_truth": false,
+      "batch_id": "seed_batch_legacy_software_00",
+      "candidate_count": 16,
+      "candidate_promoted_to_reviewed": false,
+      "domain_key": "legacy_software",
+      "fixture_derived": true,
+      "section_id": "snapshot_candidate_section:0ea8e58174653d73"
+    }
+  ],
+  "fixture_candidate_count": 28,
+  "schema_version": "snapshot_refresh_01_candidate_matrix.v0",
+  "task": "SNAPSHOT-REFRESH-01"
+}

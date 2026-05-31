@@ -1,0 +1,28 @@
+# Smoke Result
+
+```json
+{
+  "accepted_truth_created": false,
+  "candidate_count": 36,
+  "candidate_promoted_to_reviewed": false,
+  "deployment_performed": false,
+  "download_performed": false,
+  "extraction_executed": false,
+  "fixture_snapshot_refresh_passed": true,
+  "live_metadata_candidate_count": 8,
+  "live_metadata_candidate_promoted": false,
+  "live_metadata_pilot_integrated": true,
+  "master_index_mutated": false,
+  "model_provider_used": false,
+  "production_readiness_claimed": false,
+  "public_index_mutated": false,
+  "public_launch_readiness_claimed": false,
+  "raw_live_response_included": false,
+  "reviewed_index_mutated": false,
+  "reviewed_record_count": 1,
+  "schema_version": "snapshot_refresh_01_smoke_result.v0",
+  "site_dist_written": false,
+  "status": "pass",
+  "task": "SNAPSHOT-REFRESH-01"
+}
+```
