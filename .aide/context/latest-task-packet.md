@@ -2,131 +2,154 @@
 
 ## PHASE
 
-SNAPSHOT-REFRESH-00
+PUBLIC-ALPHA-REASSESS-00 - product-readiness reassessment
 
 ## GOAL
 
-Refresh reviewed/candidate snapshot projection material from completed
-frontier-media and legacy-software seed-batch handoffs without converting
-candidates into reviewed truth.
+Reassess whether public alpha should proceed toward launch after refreshed seed
+snapshots. The expected honest outcome is to keep launch deferred while
+recording that the current projection is useful for internal demo and operator
+review.
 
 ## WHY
 
-Public-alpha reassessment needs compact, public-safe snapshot material that
-separates reviewed records, review-only candidates, unresolved needs, bounded
-absences, and review queue summaries.
+The public alpha routes and read-only projections are structurally present, but
+the refreshed snapshot has only 1 reviewed record and 28 review-only
+candidates. Product usefulness must be measured separately from route
+correctness.
 
 ## CONTEXT_REFS
 
 - `AGENTS.md`
-- `.aide/queue/index.yaml`
-- `control/inventory/seed_batch_frontier_media_result.json`
-- `control/inventory/seed_batch_legacy_software_result.json`
-- `control/inventory/snapshot_refresh_result.json`
-- `control/audits/snapshot-refresh-00-v0/`
+- `.aide/context/latest-context-packet.md`
 - `.aide/context/repo-map.json`
 - `.aide/context/test-map.json`
 - `.aide/context/context-index.json`
-- `.aide/context/latest-context-packet.md`
+- `.aide/reports/eureka-aide-lite-operating-handoff.md`
+- `control/inventory/snapshot_refresh_result.json`
+- `examples/snapshots/refresh/snapshot_refresh_result.json`
+- `control/inventory/public_alpha_readonly_00_result.json`
+- `control/inventory/public_alpha_launch_defer_result.json`
 
 ## ALLOWED_PATHS
 
-- `.aide/queue/SNAPSHOT-REFRESH-00/**`
+- `.aide/queue/PUBLIC-ALPHA-REASSESS-00/**`
+- `.aide/queue/LIVE-METADATA-PILOT-BATCH-00/**`
+- `.aide/queue/SNAPSHOT-REFRESH-01/**`
+- `.aide/queue/PUBLIC-ALPHA-REASSESS-01/**`
 - `.aide/queue/index.yaml`
 - `.aide/context/latest-task-packet.md`
 - `.aide/context/latest-review-packet.md`
-- `contracts/snapshot/**`
-- `runtime/snapshots/**`
-- `scripts/eureka_snapshot_refresh.py`
-- `scripts/eureka_snapshot_refresh_report.py`
-- `scripts/validate_snapshot_refresh.py`
-- `tests/runtime/test_snapshot_refresh*.py`
-- `tests/operations/test_snapshot_refresh_scripts.py`
-- `tests/scripts/test_validate_snapshot_refresh.py`
-- `examples/snapshots/refresh/**`
-- `examples/relay/refresh/**`
+- `.aide/reports/**`
+- `contracts/publication/**`
+- `runtime/public_alpha/**`
+- `scripts/eureka_public_alpha_reassess.py`
+- `scripts/eureka_public_alpha_reassess_report.py`
+- `scripts/eureka_public_alpha_route_smoke.py`
+- `scripts/validate_public_alpha_reassess.py`
+- `tests/runtime/test_public_alpha_reassess*.py`
+- `tests/operations/test_public_alpha_reassess_scripts.py`
+- `tests/scripts/test_validate_public_alpha_reassess.py`
 - `examples/public_alpha/reassess/**`
-- `control/policies/snapshot_refresh*.json`
+- `control/policies/public_alpha_reassess*.json`
 - `control/policies/generated_artifact_policy.json`
-- `control/inventory/snapshot_refresh*.json`
-- `control/audits/snapshot-refresh-00-v0/**`
-- `docs/architecture/SNAPSHOT_REFRESH.md`
-- `docs/architecture/SNAPSHOT_SEED_BATCH_HANDOFFS.md`
-- `docs/architecture/CANDIDATE_SNAPSHOT_SECTION.md`
-- `docs/operations/SNAPSHOT_REFRESH_RUNBOOK.md`
-- `docs/operations/POST_SNAPSHOT_REFRESH_PLAN.md`
-- `docs/reference/SNAPSHOT_REFRESH_PLAN.md`
-- `docs/reference/SNAPSHOT_CANDIDATE_SECTION.md`
-- `docs/reference/SNAPSHOT_NEED_ABSENCE_SECTION.md`
+- `control/inventory/public_alpha_reassess*.json`
+- `control/audits/public-alpha-reassess-00-v0/**`
+- `docs/architecture/PUBLIC_ALPHA_REASSESS.md`
+- `docs/operations/PUBLIC_ALPHA_REASSESS_RUNBOOK.md`
+- `docs/operations/PUBLIC_ALPHA_USEFULNESS_THRESHOLDS.md`
+- `docs/operations/POST_PUBLIC_ALPHA_REASSESS_PLAN.md`
+- `docs/reference/PUBLIC_ALPHA_REASSESS_DECISION.md`
+- `docs/reference/PUBLIC_ALPHA_USEFULNESS_METRICS.md`
 
 ## FORBIDDEN_PATHS
 
-- deployment output roots
-- public index roots
-- local instance roots
-- private AIDE local-state roots
-- secret and environment files
-- raw live source responses
-- provider credentials
+- `eureka-instance/**`
+- `instances/**`
+- `.aide.local/**`
+- `../eureka-test-runs/**`
+- `secrets/**`
+- `.env`
 - private local files
+- committed operator tokens
+- provider credentials
+- raw live source responses
+- raw IA responses
+- raw full-discovery stdout/stderr logs
+- `site/dist/**`
+- `site/dist/data/public_index/**`
+- `data/public_index/**`
+- `runtime/extraction/**`
+- `runtime/search_quality/**`
+- `native/**`
+- `crates/**`
 
 ## IMPLEMENTATION
 
-- Added snapshot refresh runtime projection helpers.
-- Added CLI, report CLI, validator, contracts, policies, examples, docs,
-  inventory packets, audit evidence, and focused tests.
-- Updated the queue handoff to `PUBLIC-ALPHA-REASSESS-00`.
+- Add deterministic public-alpha reassessment runtime over snapshot-refresh
+  examples.
+- Add contracts, policies, metrics/matrices, examples, docs, validator, scripts,
+  tests, and audit evidence.
+- Record conservative launch blockers and next-work recommendations.
+- Update queue state to recommend `LIVE-METADATA-PILOT-BATCH-00`.
 
 ## VALIDATION
 
-- `python scripts/validate_snapshot_refresh.py`
-- existing seed, review, SCOUT, candidate, query planner, snapshot relay,
-  public alpha read-only, source-action, and source-wave validators
-- focused snapshot refresh unittest modules
-- AIDE Lite doctor/validate/test/selftest/verify/review-pack
+- `git diff --check`
+- `python scripts/validate_public_alpha_reassess.py`
+- focused prior validators for snapshot refresh, seed batches, review batch,
+  SCOUT, candidate index, query planner, snapshot relay, public alpha read-only,
+  source action kernel, and source wave
+- focused public-alpha reassess unittest modules
+- AIDE Lite doctor, validate, test, selftest, verify, review-pack, and commit
+  check when practical
+
+Full unittest discovery is not run by policy.
 
 ## COMMITS
 
-Commit as `feat(snapshot): refresh seed batch snapshots` after focused
-validation passes.
+Use commit message:
+
+```text
+product(public): reassess alpha after seed snapshots
+```
 
 ## EVIDENCE
 
-- `control/inventory/snapshot_refresh_result.json`
-- `control/inventory/snapshot_refresh_validation_matrix.json`
-- `control/audits/snapshot-refresh-00-v0/`
-- `examples/snapshots/refresh/`
+- `control/inventory/public_alpha_reassess_result.json`
+- `control/inventory/public_alpha_reassess_boundary_report.json`
+- `control/audits/public-alpha-reassess-00-v0/`
+- `examples/public_alpha/reassess/public_alpha_reassess_decision.json`
 
 ## NON_GOALS
 
-No deployment, public launch, production-readiness claim, public-launch claim,
-candidate acceptance, reviewed/master/public index mutation, operator instance
-mutation, deployment-output write, live source call, source probe, broad crawl,
-download, extraction, execution, install, model/provider call, or full unittest
-discovery inside this AI session.
+- No deployment.
+- No public launch.
+- No production-readiness claim.
+- No public-launch-readiness claim.
+- No candidate acceptance or reviewed-index mutation.
+- No public/master index mutation.
+- No site-dist write.
+- No live source calls, source probes, downloads, extraction, or model calls.
 
 ## ACCEPTANCE
 
-- Candidate sections exist and keep `accepted_truth: false`.
-- Reviewed record section uses existing reviewed records only.
-- Need/absence and review queue sections are projected.
-- Relay projection is read-only.
-- Public alpha reassess input exists.
+- Reassessment records reviewed records: 1, candidates: 28, known needs: 28,
+  bounded absence summaries: 2.
+- `launch_recommended` is false.
+- `demo_mode_recommended` is true.
+- `needs_more_reviewed_records`, `needs_more_seed_batches`, and
+  `needs_live_metadata_pilot` are true.
 - Boundary flags remain false.
-- Focused validators and tests pass.
+- Recommended next task is `LIVE-METADATA-PILOT-BATCH-00`.
 
 ## OUTPUT_SCHEMA
 
-Return a compact final report with STATUS, SUMMARY, SNAPSHOT_REFRESH,
-VALIDATION, BOUNDARIES, and NEXT_TASK.
+Return `STATUS`, `SUMMARY`, `PUBLIC_ALPHA_REASSESS`, `VALIDATION`,
+`BOUNDARIES`, and `NEXT_TASK`.
 
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
+- approx_tokens: 1050
 - budget_status: PASS
-- warnings:
-  - none
-
-## NEXT
-
-`PUBLIC-ALPHA-REASSESS-00`

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "eureka.contracts.publication.public_alpha_launch_blocker.v0",
+  "title": "Public Alpha Launch Blocker",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "blocker_id",
+    "severity",
+    "evidence",
+    "public_explanation",
+    "launch_blocking"
+  ],
+  "properties": {
+    "schema_version": { "const": "public_alpha_launch_blocker.v0" },
+    "blocker_id": { "type": "string" },
+    "severity": { "type": "string" },
+    "evidence": { "type": "string" },
+    "public_explanation": { "type": "string" },
+    "launch_blocking": { "type": "boolean" }
+  },
+  "additionalProperties": true
+}

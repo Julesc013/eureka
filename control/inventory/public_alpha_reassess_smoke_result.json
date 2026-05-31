@@ -1,0 +1,18 @@
+{
+  "demo_mode_recommended": true,
+  "deployment_performed": false,
+  "download_performed": false,
+  "extraction_executed": false,
+  "launch_recommended": false,
+  "model_provider_used": false,
+  "production_readiness_claimed": false,
+  "public_launch_performed": false,
+  "public_launch_readiness_claimed": false,
+  "public_live_source_fanout_enabled": false,
+  "public_mutation_enabled": false,
+  "route_smoke_status": "pass",
+  "schema_version": "public_alpha_reassess_smoke_result.v0",
+  "site_dist_written": false,
+  "status": "pass",
+  "task": "PUBLIC-ALPHA-REASSESS-00"
+}

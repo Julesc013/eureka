@@ -1,0 +1,19 @@
+{
+  "schema_version": "aide_task_status.v0",
+  "task": "PUBLIC-ALPHA-REASSESS-00",
+  "status": "pass",
+  "reviewed_record_count": 1,
+  "candidate_count": 28,
+  "known_need_count": 28,
+  "absence_summary_count": 2,
+  "launch_recommended": false,
+  "demo_mode_recommended": true,
+  "needs_more_reviewed_records": true,
+  "needs_more_seed_batches": true,
+  "needs_live_metadata_pilot": true,
+  "deployment_performed": false,
+  "public_launch_performed": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "recommended_next_task": "LIVE-METADATA-PILOT-BATCH-00 - Operator-approved live metadata pilot over seed queries"
+}

@@ -125,6 +125,12 @@
       "policy": "Task-local SNAPSHOT-REFRESH-00 audit evidence records seed-batch snapshot projection validation; it is not product runtime state."
     },
     {
+      "path": "control/audits/public-alpha-reassess-00-v0",
+      "artifact_class": "audit_generated",
+      "allow_task_local_drift": true,
+      "policy": "Task-local PUBLIC-ALPHA-REASSESS-00 audit evidence records product-readiness reassessment validation; it is not product runtime state."
+    },
+    {
       "path": "control/audits",
       "artifact_class": "audit_generated",
       "policy": "Audit generated outputs are evidence, not product runtime state."

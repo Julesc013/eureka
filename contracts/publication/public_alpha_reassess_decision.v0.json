@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "eureka.contracts.publication.public_alpha_reassess_decision.v0",
+  "title": "Public Alpha Reassess Decision",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "reassess_id",
+    "decision",
+    "launch_recommended",
+    "demo_mode_recommended",
+    "needs_more_reviewed_records",
+    "needs_more_seed_batches",
+    "needs_live_metadata_pilot",
+    "deployment_performed",
+    "public_launch_performed",
+    "production_readiness_claimed",
+    "public_launch_readiness_claimed"
+  ],
+  "properties": {
+    "schema_version": { "const": "public_alpha_reassess_decision.v0" },
+    "reassess_id": { "type": "string" },
+    "decision": { "enum": ["remain_deferred", "eligible_for_future_manual_launch_review"] },
+    "launch_recommended": { "type": "boolean" },
+    "demo_mode_recommended": { "type": "boolean" },
+    "needs_more_reviewed_records": { "type": "boolean" },
+    "needs_more_seed_batches": { "type": "boolean" },
+    "needs_live_metadata_pilot": { "type": "boolean" },
+    "deployment_performed": { "const": false },
+    "public_launch_performed": { "const": false },
+    "production_readiness_claimed": { "const": false },
+    "public_launch_readiness_claimed": { "const": false }
+  },
+  "additionalProperties": true
+}

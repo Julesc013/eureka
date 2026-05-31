@@ -1,0 +1,26 @@
+{
+  "deployment_performed": false,
+  "download_performed": false,
+  "extraction_executed": false,
+  "input_results": {
+    "candidate_index": "control/inventory/candidate_index_result.json",
+    "public_alpha_launch_defer": "control/inventory/public_alpha_launch_defer_result.json",
+    "public_alpha_readonly_equivalent": "control/inventory/public_alpha_readonly_00_result.json",
+    "query_planner_equivalent": "control/audits/query-to-source-action-planner-00-v0/query_to_source_action_planner_report.json",
+    "review_batch": "control/inventory/review_batch_result.json",
+    "scout_runtime": "control/inventory/scout_runtime_result.json",
+    "seed_batch_frontier_media": "control/inventory/seed_batch_frontier_media_result.json",
+    "seed_batch_legacy_software": "control/inventory/seed_batch_legacy_software_result.json",
+    "snapshot_refresh": "control/inventory/snapshot_refresh_result.json",
+    "snapshot_relay": "control/inventory/snapshot_relay_result.json"
+  },
+  "model_provider_used": false,
+  "production_readiness_claimed": false,
+  "public_launch_performed": false,
+  "public_launch_readiness_claimed": false,
+  "public_live_source_fanout_enabled": false,
+  "public_mutation_enabled": false,
+  "schema_version": "public_alpha_reassess_input_state.v0",
+  "site_dist_written": false,
+  "task": "PUBLIC-ALPHA-REASSESS-00"
+}

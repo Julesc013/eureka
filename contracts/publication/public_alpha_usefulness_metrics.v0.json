@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "eureka.contracts.publication.public_alpha_usefulness_metrics.v0",
+  "title": "Public Alpha Usefulness Metrics",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "reassess_id",
+    "reviewed_record_count",
+    "candidate_count",
+    "candidate_to_reviewed_ratio",
+    "known_need_count",
+    "absence_summary_count",
+    "domains_represented",
+    "reviewed_domain_count",
+    "query_count",
+    "queries_with_reviewed_result",
+    "queries_with_candidate_result",
+    "queries_with_need_or_absence",
+    "public_routes_smoked",
+    "public_api_routes_smoked",
+    "usefulness_score"
+  ],
+  "properties": {
+    "schema_version": { "const": "public_alpha_usefulness_metrics.v0" },
+    "reassess_id": { "type": "string" },
+    "reviewed_record_count": { "type": "integer", "minimum": 0 },
+    "candidate_count": { "type": "integer", "minimum": 0 },
+    "candidate_to_reviewed_ratio": { "type": "number", "minimum": 0 },
+    "known_need_count": { "type": "integer", "minimum": 0 },
+    "absence_summary_count": { "type": "integer", "minimum": 0 },
+    "domains_represented": { "type": "array", "items": { "type": "string" } },
+    "reviewed_domain_count": { "type": "integer", "minimum": 0 },
+    "query_count": { "type": "integer", "minimum": 0 },
+    "queries_with_reviewed_result": { "type": "integer", "minimum": 0 },
+    "queries_with_candidate_result": { "type": "integer", "minimum": 0 },
+    "queries_with_need_or_absence": { "type": "integer", "minimum": 0 },
+    "public_routes_smoked": { "type": "integer", "minimum": 0 },
+    "public_api_routes_smoked": { "type": "integer", "minimum": 0 },
+    "usefulness_score": { "type": "number", "minimum": 0, "maximum": 1 }
+  },
+  "additionalProperties": true
+}

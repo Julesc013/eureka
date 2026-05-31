@@ -1,0 +1,18 @@
+{
+  "schema_version": "public_alpha_reassess_route_smoke_policy.v0",
+  "task": "PUBLIC-ALPHA-REASSESS-00",
+  "reassessment_is_not_launch": true,
+  "reassessment_must_not_deploy": true,
+  "launch_requires_explicit_future_manual_approval": true,
+  "route_smoke_uses_examples_by_default": true,
+  "local_server_smoke_optional": true,
+  "candidate_only_snapshot_not_enough_for_launch": true,
+  "needs_and_absences_are_useful_but_not_launch_sufficient": true,
+  "public_mutation_enabled": false,
+  "public_live_source_fanout_enabled": false,
+  "downloads_enabled": false,
+  "extraction_enabled": false,
+  "model_provider_enabled": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false
+}

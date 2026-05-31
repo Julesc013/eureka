@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "eureka.contracts.publication.public_alpha_reassess_boundary_report.v0",
+  "title": "Public Alpha Reassess Boundary Report",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "record_type",
+    "reassess_id",
+    "reassessment_is_not_launch",
+    "deployment_performed",
+    "public_launch_performed",
+    "production_readiness_claimed",
+    "public_launch_readiness_claimed",
+    "site_dist_written",
+    "public_mutation_enabled",
+    "public_live_source_fanout_enabled",
+    "download_performed",
+    "extraction_executed",
+    "model_provider_used"
+  ],
+  "properties": {
+    "schema_version": { "const": "public_alpha_reassess_boundary_report.v0" },
+    "record_type": { "const": "public_alpha_reassess_boundary_report" },
+    "reassess_id": { "type": "string" },
+    "reassessment_is_not_launch": { "const": true },
+    "deployment_performed": { "const": false },
+    "public_launch_performed": { "const": false },
+    "production_readiness_claimed": { "const": false },
+    "public_launch_readiness_claimed": { "const": false },
+    "site_dist_written": { "const": false },
+    "public_mutation_enabled": { "const": false },
+    "public_live_source_fanout_enabled": { "const": false },
+    "download_performed": { "const": false },
+    "extraction_executed": { "const": false },
+    "model_provider_used": { "const": false }
+  },
+  "additionalProperties": true
+}

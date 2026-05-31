@@ -1,0 +1,14 @@
+{
+  "demo_mode_recommended": true,
+  "launch_recommended": false,
+  "planned_after": [
+    "SEED-BATCH-MANUALS-SCANS-00",
+    "SEED-BATCH-DRIVER-SUPPORT-00",
+    "SNAPSHOT-REFRESH-01",
+    "PUBLIC-ALPHA-REASSESS-01"
+  ],
+  "recommended_next_task": "LIVE-METADATA-PILOT-BATCH-00 - Operator-approved live metadata pilot over seed queries",
+  "schema_version": "public_alpha_reassess_next_task_decision.v0",
+  "status": "pass",
+  "task": "PUBLIC-ALPHA-REASSESS-00"
+}
