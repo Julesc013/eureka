@@ -1,0 +1,406 @@
+{
+  "absence_count": 2,
+  "absence_refs": [
+    "seed_absence:ca7d7272ff295051",
+    "legacy_seed_absence:6f9f2ff169454b4e"
+  ],
+  "absence_summaries": [
+    {
+      "absence_id": "seed_absence:ca7d7272ff295051",
+      "absence_kind": "reviewed_truth_not_created",
+      "accepted_truth": false,
+      "review_required": true,
+      "schema_version": "seed_batch_absence_summary.v0",
+      "summary": "Fixture candidates exist, but reviewed truth and public index records are intentionally absent."
+    },
+    {
+      "absence_id": "legacy_seed_absence:6f9f2ff169454b4e",
+      "absence_kind": "download_install_execute_absent",
+      "accepted_truth": false,
+      "review_required": true,
+      "schema_version": "seed_batch_absence_summary.v0",
+      "summary": "Fixture candidates exist, but download, install, execute, reviewed truth, and public index records are intentionally absent."
+    }
+  ],
+  "accepted_truth": false,
+  "accepted_truth_created": false,
+  "bounded_absence_statements": true,
+  "created_at": "2026-06-01T00:00:00Z",
+  "known_need_count": 28,
+  "known_need_refs": [
+    "seed_known_need:bf3d2dd91c7ecb1d",
+    "seed_known_need:a56648741d5d7a3f",
+    "seed_known_need:f05334a9e028baba",
+    "seed_known_need:f6ed20adc68b8da2",
+    "seed_known_need:61c501c67390acdd",
+    "seed_known_need:1ce04be562d7c113",
+    "seed_known_need:bd43c1d5259a1654",
+    "seed_known_need:4593d6bd9ebc9c61",
+    "seed_known_need:d6e999ea65d8e38b",
+    "seed_known_need:386e3ba4cc2fcd79",
+    "seed_known_need:785fe2431ffff0bb",
+    "seed_known_need:d76285e55169142b",
+    "legacy_seed_known_need:f365fc0cb5b5db12",
+    "legacy_seed_known_need:13f0b3028430f483",
+    "legacy_seed_known_need:a9f8bfd0eed2942d",
+    "legacy_seed_known_need:3f8bf76cffa964f4",
+    "legacy_seed_known_need:5634343d7e685767",
+    "legacy_seed_known_need:8d05fa6d50ac2306",
+    "legacy_seed_known_need:999052319d9b227c",
+    "legacy_seed_known_need:e98aa7c575ca9867",
+    "legacy_seed_known_need:7cb6512c4dc0da73",
+    "legacy_seed_known_need:7333a1812ea246ca",
+    "legacy_seed_known_need:6893f5d22c78b72e",
+    "legacy_seed_known_need:bcf3be92cd6db4f0",
+    "legacy_seed_known_need:fc503c9b2e085b97",
+    "legacy_seed_known_need:a5bb2779f2e0e679",
+    "legacy_seed_known_need:d1c5e6cb53579a3c",
+    "legacy_seed_known_need:5e7e8af956af0b1a"
+  ],
+  "known_needs": [
+    {
+      "accepted_truth": false,
+      "candidate_refs": [
+        "seed_frontier_media_frontier_media_q01_candidate"
+      ],
+      "need_id": "seed_known_need:bf3d2dd91c7ecb1d",
+      "need_kind": "provenance_review",
+      "query_id": "frontier_media_q01",
+      "review_required": true,
+      "schema_version": "seed_batch_known_need.v0",
+      "summary": "Operator must verify source identity, format, rights, and provenance before promotion."
+    },
+    {
+      "accepted_truth": false,
+      "candidate_refs": [
+        "seed_frontier_media_frontier_media_q02_candidate"
+      ],
+      "need_id": "seed_known_need:a56648741d5d7a3f",
+      "need_kind": "provenance_review",
+      "query_id": "frontier_media_q02",
+      "review_required": true,
+      "schema_version": "seed_batch_known_need.v0",
+      "summary": "Operator must verify source identity, format, rights, and provenance before promotion."
+    },
+    {
+      "accepted_truth": false,
+      "candidate_refs": [
+        "seed_frontier_media_frontier_media_q03_candidate"
+      ],
+      "need_id": "seed_known_need:f05334a9e028baba",
+      "need_kind": "provenance_review",
+      "query_id": "frontier_media_q03",
+      "review_required": true,
+      "schema_version": "seed_batch_known_need.v0",
+      "summary": "Operator must verify source identity, format, rights, and provenance before promotion."
+    },
+    {
+      "accepted_truth": false,
+      "candidate_refs": [
+        "seed_frontier_media_frontier_media_q04_candidate"
+      ],
+      "need_id": "seed_known_need:f6ed20adc68b8da2",
+      "need_kind": "provenance_review",
+      "query_id": "frontier_media_q04",
+      "review_required": true,
+      "schema_version": "seed_batch_known_need.v0",
+      "summary": "Operator must verify source identity, format, rights, and provenance before promotion."
+    },
+    {
+      "accepted_truth": false,
+      "candidate_refs": [
+        "seed_frontier_media_frontier_media_q05_candidate"
+      ],
+      "need_id": "seed_known_need:61c501c67390acdd",
+      "need_kind": "provenance_review",
+      "query_id": "frontier_media_q05",
+      "review_required": true,
+      "schema_version": "seed_batch_known_need.v0",
+      "summary": "Operator must verify source identity, format, rights, and provenance before promotion."
+    },
+    {
+      "accepted_truth": false,
+      "candidate_refs": [
+        "seed_frontier_media_frontier_media_q06_candidate"
+      ],
+      "need_id": "seed_known_need:1ce04be562d7c113",
+      "need_kind": "provenance_review",
+      "query_id": "frontier_media_q06",
+      "review_required": true,
+      "schema_version": "seed_batch_known_need.v0",
+      "summary": "Operator must verify source identity, format, rights, and provenance before promotion."
+    },
+    {
+      "accepted_truth": false,
+      "candidate_refs": [
+        "seed_frontier_media_frontier_media_q07_candidate"
+      ],
+      "need_id": "seed_known_need:bd43c1d5259a1654",
+      "need_kind": "provenance_review",
+      "query_id": "frontier_media_q07",
+      "review_required": true,
+      "schema_version": "seed_batch_known_need.v0",
+      "summary": "Operator must verify source identity, format, rights, and provenance before promotion."
+    },
+    {
+      "accepted_truth": false,
+      "candidate_refs": [
+        "seed_frontier_media_frontier_media_q08_candidate"
+      ],
+      "need_id": "seed_known_need:4593d6bd9ebc9c61",
+      "need_kind": "provenance_review",
+      "query_id": "frontier_media_q08",
+      "review_required": true,
+      "schema_version": "seed_batch_known_need.v0",
+      "summary": "Operator must verify source identity, format, rights, and provenance before promotion."
+    },
+    {
+      "accepted_truth": false,
+      "candidate_refs": [
+        "seed_frontier_media_frontier_media_q09_candidate"
+      ],
+      "need_id": "seed_known_need:d6e999ea65d8e38b",
+      "need_kind": "provenance_review",
+      "query_id": "frontier_media_q09",
+      "review_required": true,
+      "schema_version": "seed_batch_known_need.v0",
+      "summary": "Operator must verify source identity, format, rights, and provenance before promotion."
+    },
+    {
+      "accepted_truth": false,
+      "candidate_refs": [
+        "seed_frontier_media_frontier_media_q10_candidate"
+      ],
+      "need_id": "seed_known_need:386e3ba4cc2fcd79",
+      "need_kind": "provenance_review",
+      "query_id": "frontier_media_q10",
+      "review_required": true,
+      "schema_version": "seed_batch_known_need.v0",
+      "summary": "Operator must verify source identity, format, rights, and provenance before promotion."
+    },
+    {
+      "accepted_truth": false,
+      "candidate_refs": [
+        "seed_frontier_media_frontier_media_q11_candidate"
+      ],
+      "need_id": "seed_known_need:785fe2431ffff0bb",
+      "need_kind": "provenance_review",
+      "query_id": "frontier_media_q11",
+      "review_required": true,
+      "schema_version": "seed_batch_known_need.v0",
+      "summary": "Operator must verify source identity, format, rights, and provenance before promotion."
+    },
+    {
+      "accepted_truth": false,
+      "candidate_refs": [
+        "seed_frontier_media_frontier_media_q12_candidate"
+      ],
+      "need_id": "seed_known_need:d76285e55169142b",
+      "need_kind": "provenance_review",
+      "query_id": "frontier_media_q12",
+      "review_required": true,
+      "schema_version": "seed_batch_known_need.v0",
+      "summary": "Operator must verify source identity, format, rights, and provenance before promotion."
+    },
+    {
+      "accepted_truth": false,
+      "candidate_refs": [
+        "seed_legacy_software_legacy_software_q01_candidate"
+      ],
+      "need_id": "legacy_seed_known_need:f365fc0cb5b5db12",
+      "need_kind": "software_safety_and_provenance_review",
+      "query_id": "legacy_software_q01",
+      "review_required": true,
+      "schema_version": "seed_batch_known_need.v0",
+      "summary": "Operator must verify identity, platform, version, rights, provenance, and safety posture before promotion."
+    },
+    {
+      "accepted_truth": false,
+      "candidate_refs": [
+        "seed_legacy_software_legacy_software_q02_candidate"
+      ],
+      "need_id": "legacy_seed_known_need:13f0b3028430f483",
+      "need_kind": "software_safety_and_provenance_review",
+      "query_id": "legacy_software_q02",
+      "review_required": true,
+      "schema_version": "seed_batch_known_need.v0",
+      "summary": "Operator must verify identity, platform, version, rights, provenance, and safety posture before promotion."
+    },
+    {
+      "accepted_truth": false,
+      "candidate_refs": [
+        "seed_legacy_software_legacy_software_q03_candidate"
+      ],
+      "need_id": "legacy_seed_known_need:a9f8bfd0eed2942d",
+      "need_kind": "software_safety_and_provenance_review",
+      "query_id": "legacy_software_q03",
+      "review_required": true,
+      "schema_version": "seed_batch_known_need.v0",
+      "summary": "Operator must verify identity, platform, version, rights, provenance, and safety posture before promotion."
+    },
+    {
+      "accepted_truth": false,
+      "candidate_refs": [
+        "seed_legacy_software_legacy_software_q04_candidate"
+      ],
+      "need_id": "legacy_seed_known_need:3f8bf76cffa964f4",
+      "need_kind": "software_safety_and_provenance_review",
+      "query_id": "legacy_software_q04",
+      "review_required": true,
+      "schema_version": "seed_batch_known_need.v0",
+      "summary": "Operator must verify identity, platform, version, rights, provenance, and safety posture before promotion."
+    },
+    {
+      "accepted_truth": false,
+      "candidate_refs": [
+        "seed_legacy_software_legacy_software_q05_candidate"
+      ],
+      "need_id": "legacy_seed_known_need:5634343d7e685767",
+      "need_kind": "software_safety_and_provenance_review",
+      "query_id": "legacy_software_q05",
+      "review_required": true,
+      "schema_version": "seed_batch_known_need.v0",
+      "summary": "Operator must verify identity, platform, version, rights, provenance, and safety posture before promotion."
+    },
+    {
+      "accepted_truth": false,
+      "candidate_refs": [
+        "seed_legacy_software_legacy_software_q06_candidate"
+      ],
+      "need_id": "legacy_seed_known_need:8d05fa6d50ac2306",
+      "need_kind": "software_safety_and_provenance_review",
+      "query_id": "legacy_software_q06",
+      "review_required": true,
+      "schema_version": "seed_batch_known_need.v0",
+      "summary": "Operator must verify identity, platform, version, rights, provenance, and safety posture before promotion."
+    },
+    {
+      "accepted_truth": false,
+      "candidate_refs": [
+        "seed_legacy_software_legacy_software_q07_candidate"
+      ],
+      "need_id": "legacy_seed_known_need:999052319d9b227c",
+      "need_kind": "software_safety_and_provenance_review",
+      "query_id": "legacy_software_q07",
+      "review_required": true,
+      "schema_version": "seed_batch_known_need.v0",
+      "summary": "Operator must verify identity, platform, version, rights, provenance, and safety posture before promotion."
+    },
+    {
+      "accepted_truth": false,
+      "candidate_refs": [
+        "seed_legacy_software_legacy_software_q08_candidate"
+      ],
+      "need_id": "legacy_seed_known_need:e98aa7c575ca9867",
+      "need_kind": "software_safety_and_provenance_review",
+      "query_id": "legacy_software_q08",
+      "review_required": true,
+      "schema_version": "seed_batch_known_need.v0",
+      "summary": "Operator must verify identity, platform, version, rights, provenance, and safety posture before promotion."
+    },
+    {
+      "accepted_truth": false,
+      "candidate_refs": [
+        "seed_legacy_software_legacy_software_q09_candidate"
+      ],
+      "need_id": "legacy_seed_known_need:7cb6512c4dc0da73",
+      "need_kind": "software_safety_and_provenance_review",
+      "query_id": "legacy_software_q09",
+      "review_required": true,
+      "schema_version": "seed_batch_known_need.v0",
+      "summary": "Operator must verify identity, platform, version, rights, provenance, and safety posture before promotion."
+    },
+    {
+      "accepted_truth": false,
+      "candidate_refs": [
+        "seed_legacy_software_legacy_software_q10_candidate"
+      ],
+      "need_id": "legacy_seed_known_need:7333a1812ea246ca",
+      "need_kind": "software_safety_and_provenance_review",
+      "query_id": "legacy_software_q10",
+      "review_required": true,
+      "schema_version": "seed_batch_known_need.v0",
+      "summary": "Operator must verify identity, platform, version, rights, provenance, and safety posture before promotion."
+    },
+    {
+      "accepted_truth": false,
+      "candidate_refs": [
+        "seed_legacy_software_legacy_software_q11_candidate"
+      ],
+      "need_id": "legacy_seed_known_need:6893f5d22c78b72e",
+      "need_kind": "software_safety_and_provenance_review",
+      "query_id": "legacy_software_q11",
+      "review_required": true,
+      "schema_version": "seed_batch_known_need.v0",
+      "summary": "Operator must verify identity, platform, version, rights, provenance, and safety posture before promotion."
+    },
+    {
+      "accepted_truth": false,
+      "candidate_refs": [
+        "seed_legacy_software_legacy_software_q12_candidate"
+      ],
+      "need_id": "legacy_seed_known_need:bcf3be92cd6db4f0",
+      "need_kind": "software_safety_and_provenance_review",
+      "query_id": "legacy_software_q12",
+      "review_required": true,
+      "schema_version": "seed_batch_known_need.v0",
+      "summary": "Operator must verify identity, platform, version, rights, provenance, and safety posture before promotion."
+    },
+    {
+      "accepted_truth": false,
+      "candidate_refs": [
+        "seed_legacy_software_legacy_software_q13_candidate"
+      ],
+      "need_id": "legacy_seed_known_need:fc503c9b2e085b97",
+      "need_kind": "software_safety_and_provenance_review",
+      "query_id": "legacy_software_q13",
+      "review_required": true,
+      "schema_version": "seed_batch_known_need.v0",
+      "summary": "Operator must verify identity, platform, version, rights, provenance, and safety posture before promotion."
+    },
+    {
+      "accepted_truth": false,
+      "candidate_refs": [
+        "seed_legacy_software_legacy_software_q14_candidate"
+      ],
+      "need_id": "legacy_seed_known_need:a5bb2779f2e0e679",
+      "need_kind": "software_safety_and_provenance_review",
+      "query_id": "legacy_software_q14",
+      "review_required": true,
+      "schema_version": "seed_batch_known_need.v0",
+      "summary": "Operator must verify identity, platform, version, rights, provenance, and safety posture before promotion."
+    },
+    {
+      "accepted_truth": false,
+      "candidate_refs": [
+        "seed_legacy_software_legacy_software_q15_candidate"
+      ],
+      "need_id": "legacy_seed_known_need:d1c5e6cb53579a3c",
+      "need_kind": "software_safety_and_provenance_review",
+      "query_id": "legacy_software_q15",
+      "review_required": true,
+      "schema_version": "seed_batch_known_need.v0",
+      "summary": "Operator must verify identity, platform, version, rights, provenance, and safety posture before promotion."
+    },
+    {
+      "accepted_truth": false,
+      "candidate_refs": [
+        "seed_legacy_software_legacy_software_q16_candidate"
+      ],
+      "need_id": "legacy_seed_known_need:5e7e8af956af0b1a",
+      "need_kind": "software_safety_and_provenance_review",
+      "query_id": "legacy_software_q16",
+      "review_required": true,
+      "schema_version": "seed_batch_known_need.v0",
+      "summary": "Operator must verify identity, platform, version, rights, provenance, and safety posture before promotion."
+    }
+  ],
+  "limitations": [
+    "known needs and absences are bounded unresolved statements"
+  ],
+  "record_type": "snapshot_need_absence_section",
+  "schema_version": "snapshot_need_absence_section.v0",
+  "section_id": "snapshot_need_absence_section:8934b59115d965bc",
+  "snapshot_refresh_id": "snapshot_refresh_03",
+  "unresolved_needs_remain_unresolved": true
+}

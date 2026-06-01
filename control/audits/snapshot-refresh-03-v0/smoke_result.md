@@ -1,0 +1,27 @@
+# Smoke Result
+
+```json
+{
+  "accepted_truth_created": false,
+  "artifact_verified_claim_created": false,
+  "deployment_performed": false,
+  "download_performed": false,
+  "extraction_executed": false,
+  "fixture_snapshot_refresh_passed": true,
+  "local_apply_live_metadata_integrated": true,
+  "malware_clean_claim_created": false,
+  "master_index_mutated": false,
+  "model_provider_used": false,
+  "operator_instance_mutated": false,
+  "production_readiness_claimed": false,
+  "public_index_mutated": false,
+  "public_launch_readiness_claimed": false,
+  "reviewed_index_mutated": false,
+  "rights_clearance_claim_created": false,
+  "schema_version": "snapshot_refresh_03_smoke_result.v0",
+  "site_dist_written": false,
+  "status": "pass",
+  "task": "SNAPSHOT-REFRESH-03",
+  "verified_download_claim_created": false
+}
+```

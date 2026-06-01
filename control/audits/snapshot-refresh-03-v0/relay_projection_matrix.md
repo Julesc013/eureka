@@ -1,0 +1,28 @@
+# Relay Projection Matrix
+
+```json
+{
+  "mutation_enabled": false,
+  "read_only": true,
+  "relay_projection_refs": [
+    "snapshot_refresh_relay_projection:d3361b4fb43b938c"
+  ],
+  "schema_version": "snapshot_refresh_03_relay_projection_matrix.v0",
+  "sections": {
+    "absence_summaries": 2,
+    "candidate_sections": 2,
+    "existing_reviewed_records": 1,
+    "fixture_candidates": 28,
+    "known_needs": 28,
+    "live_metadata_candidates": 8,
+    "needs_more_evidence_not_applied": 2,
+    "rejected_or_duplicate_not_applied": 2,
+    "reviewed_metadata_records_from_local_apply": 1,
+    "reviewed_source_leads_from_local_apply": 2,
+    "total_limited_reviewed_record_projection_count": 4,
+    "useful_leads_not_applied": 1
+  },
+  "site_dist_written": false,
+  "task": "SNAPSHOT-REFRESH-03"
+}
+```

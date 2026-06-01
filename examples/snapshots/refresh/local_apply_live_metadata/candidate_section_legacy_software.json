@@ -1,0 +1,743 @@
+{
+  "accepted_truth": false,
+  "accepted_truth_created": false,
+  "batch_id": "seed_batch_legacy_software_00",
+  "candidate_count": 16,
+  "candidate_promoted_to_reviewed": false,
+  "candidate_refs": [
+    "seed_legacy_software_legacy_software_q01_candidate",
+    "seed_legacy_software_legacy_software_q02_candidate",
+    "seed_legacy_software_legacy_software_q03_candidate",
+    "seed_legacy_software_legacy_software_q04_candidate",
+    "seed_legacy_software_legacy_software_q05_candidate",
+    "seed_legacy_software_legacy_software_q06_candidate",
+    "seed_legacy_software_legacy_software_q07_candidate",
+    "seed_legacy_software_legacy_software_q08_candidate",
+    "seed_legacy_software_legacy_software_q09_candidate",
+    "seed_legacy_software_legacy_software_q10_candidate",
+    "seed_legacy_software_legacy_software_q11_candidate",
+    "seed_legacy_software_legacy_software_q12_candidate",
+    "seed_legacy_software_legacy_software_q13_candidate",
+    "seed_legacy_software_legacy_software_q14_candidate",
+    "seed_legacy_software_legacy_software_q15_candidate",
+    "seed_legacy_software_legacy_software_q16_candidate"
+  ],
+  "candidates": [
+    {
+      "accepted_truth": false,
+      "action_posture": {
+        "allowed_actions": [
+          "inspect",
+          "view_source",
+          "view_provenance",
+          "read"
+        ],
+        "blocked_actions": [
+          "download",
+          "install_handoff",
+          "execute",
+          "upload",
+          "promote"
+        ],
+        "public_mutation_enabled": false,
+        "review_required": true
+      },
+      "batch_id": "seed_batch_legacy_software_00",
+      "candidate_id": "seed_legacy_software_legacy_software_q01_candidate",
+      "candidate_snapshot_ref": "snapshot_candidate:a71ad1cf967baebb",
+      "domain_id": "legacy_software",
+      "fixture_derived": true,
+      "limitations": [
+        "fixture_derived",
+        "review_required"
+      ],
+      "live_metadata_derived": false,
+      "public_search_status": "candidate",
+      "query_refs": [
+        "legacy_software_q01"
+      ],
+      "review_state": "needs_review",
+      "reviewed_record_ref": null,
+      "schema_version": "snapshot_candidate_section_item.v0",
+      "scout_trail_refs": [
+        "scout_run:9e91894a5e3f2294",
+        "scout_run:c2797847038110a6",
+        "scout_run:2c92557d69966669"
+      ],
+      "source_family": "internet_archive_metadata",
+      "title": "Windows 7-compatible portable utilities, not Windows 7 ISO fixture metadata lead"
+    },
+    {
+      "accepted_truth": false,
+      "action_posture": {
+        "allowed_actions": [
+          "inspect",
+          "view_source",
+          "view_provenance",
+          "read"
+        ],
+        "blocked_actions": [
+          "download",
+          "install_handoff",
+          "execute",
+          "upload",
+          "promote"
+        ],
+        "public_mutation_enabled": false,
+        "review_required": true
+      },
+      "batch_id": "seed_batch_legacy_software_00",
+      "candidate_id": "seed_legacy_software_legacy_software_q02_candidate",
+      "candidate_snapshot_ref": "snapshot_candidate:61a5c2b21483033b",
+      "domain_id": "legacy_software",
+      "fixture_derived": true,
+      "limitations": [
+        "fixture_derived",
+        "review_required"
+      ],
+      "live_metadata_derived": false,
+      "public_search_status": "candidate",
+      "query_refs": [
+        "legacy_software_q02"
+      ],
+      "review_state": "needs_review",
+      "reviewed_record_ref": null,
+      "schema_version": "snapshot_candidate_section_item.v0",
+      "scout_trail_refs": [
+        "scout_run:9e91894a5e3f2294",
+        "scout_run:c2797847038110a6",
+        "scout_run:2c92557d69966669"
+      ],
+      "source_family": "internet_archive_metadata",
+      "title": "DirectX SDK June 2010 offline installer fixture metadata lead"
+    },
+    {
+      "accepted_truth": false,
+      "action_posture": {
+        "allowed_actions": [
+          "inspect",
+          "view_source",
+          "view_provenance",
+          "read"
+        ],
+        "blocked_actions": [
+          "download",
+          "install_handoff",
+          "execute",
+          "upload",
+          "promote"
+        ],
+        "public_mutation_enabled": false,
+        "review_required": true
+      },
+      "batch_id": "seed_batch_legacy_software_00",
+      "candidate_id": "seed_legacy_software_legacy_software_q03_candidate",
+      "candidate_snapshot_ref": "snapshot_candidate:7f5da05fb2e87033",
+      "domain_id": "driver_support_media",
+      "fixture_derived": true,
+      "limitations": [
+        "fixture_derived",
+        "review_required"
+      ],
+      "live_metadata_derived": false,
+      "public_search_status": "candidate",
+      "query_refs": [
+        "legacy_software_q03"
+      ],
+      "review_state": "needs_review",
+      "reviewed_record_ref": null,
+      "schema_version": "snapshot_candidate_section_item.v0",
+      "scout_trail_refs": [
+        "scout_run:9e91894a5e3f2294",
+        "scout_run:c2797847038110a6",
+        "scout_run:2c92557d69966669"
+      ],
+      "source_family": "manual_source_pack",
+      "title": "StyleWriter 2500 Mac OS 8 driver fixture metadata lead"
+    },
+    {
+      "accepted_truth": false,
+      "action_posture": {
+        "allowed_actions": [
+          "inspect",
+          "view_source",
+          "view_provenance",
+          "read"
+        ],
+        "blocked_actions": [
+          "download",
+          "install_handoff",
+          "execute",
+          "upload",
+          "promote"
+        ],
+        "public_mutation_enabled": false,
+        "review_required": true
+      },
+      "batch_id": "seed_batch_legacy_software_00",
+      "candidate_id": "seed_legacy_software_legacy_software_q04_candidate",
+      "candidate_snapshot_ref": "snapshot_candidate:893a96e456492f2c",
+      "domain_id": "legacy_software",
+      "fixture_derived": true,
+      "limitations": [
+        "fixture_derived",
+        "review_required"
+      ],
+      "live_metadata_derived": false,
+      "public_search_status": "candidate",
+      "query_refs": [
+        "legacy_software_q04"
+      ],
+      "review_state": "needs_review",
+      "reviewed_record_ref": null,
+      "schema_version": "snapshot_candidate_section_item.v0",
+      "scout_trail_refs": [
+        "scout_run:9e91894a5e3f2294",
+        "scout_run:c2797847038110a6",
+        "scout_run:2c92557d69966669"
+      ],
+      "source_family": "manual_source_pack",
+      "title": "Windows 98 registry repair utility fixture metadata lead"
+    },
+    {
+      "accepted_truth": false,
+      "action_posture": {
+        "allowed_actions": [
+          "inspect",
+          "view_source",
+          "view_provenance",
+          "read"
+        ],
+        "blocked_actions": [
+          "download",
+          "install_handoff",
+          "execute",
+          "upload",
+          "promote"
+        ],
+        "public_mutation_enabled": false,
+        "review_required": true
+      },
+      "batch_id": "seed_batch_legacy_software_00",
+      "candidate_id": "seed_legacy_software_legacy_software_q05_candidate",
+      "candidate_snapshot_ref": "snapshot_candidate:e5bedf9f9f9d9621",
+      "domain_id": "driver_support_media",
+      "fixture_derived": true,
+      "limitations": [
+        "fixture_derived",
+        "review_required"
+      ],
+      "live_metadata_derived": false,
+      "public_search_status": "candidate",
+      "query_refs": [
+        "legacy_software_q05"
+      ],
+      "review_state": "needs_review",
+      "reviewed_record_ref": null,
+      "schema_version": "snapshot_candidate_section_item.v0",
+      "scout_trail_refs": [
+        "scout_run:9e91894a5e3f2294",
+        "scout_run:c2797847038110a6",
+        "scout_run:2c92557d69966669"
+      ],
+      "source_family": "internet_archive_metadata",
+      "title": "Sound Blaster Live Windows 98 driver support CD fixture metadata lead"
+    },
+    {
+      "accepted_truth": false,
+      "action_posture": {
+        "allowed_actions": [
+          "inspect",
+          "view_source",
+          "view_provenance",
+          "read"
+        ],
+        "blocked_actions": [
+          "download",
+          "install_handoff",
+          "execute",
+          "upload",
+          "promote"
+        ],
+        "public_mutation_enabled": false,
+        "review_required": true
+      },
+      "batch_id": "seed_batch_legacy_software_00",
+      "candidate_id": "seed_legacy_software_legacy_software_q06_candidate",
+      "candidate_snapshot_ref": "snapshot_candidate:ab5881e3ae5826c7",
+      "domain_id": "legacy_software",
+      "fixture_derived": true,
+      "limitations": [
+        "fixture_derived",
+        "review_required"
+      ],
+      "live_metadata_derived": false,
+      "public_search_status": "candidate",
+      "query_refs": [
+        "legacy_software_q06"
+      ],
+      "review_state": "needs_review",
+      "reviewed_record_ref": null,
+      "schema_version": "snapshot_candidate_section_item.v0",
+      "scout_trail_refs": [
+        "scout_run:9e91894a5e3f2294",
+        "scout_run:c2797847038110a6",
+        "scout_run:2c92557d69966669"
+      ],
+      "source_family": "internet_archive_metadata",
+      "title": "QuickTime 7 Windows XP offline installer fixture metadata lead"
+    },
+    {
+      "accepted_truth": false,
+      "action_posture": {
+        "allowed_actions": [
+          "inspect",
+          "view_source",
+          "view_provenance",
+          "read"
+        ],
+        "blocked_actions": [
+          "download",
+          "install_handoff",
+          "execute",
+          "upload",
+          "promote"
+        ],
+        "public_mutation_enabled": false,
+        "review_required": true
+      },
+      "batch_id": "seed_batch_legacy_software_00",
+      "candidate_id": "seed_legacy_software_legacy_software_q07_candidate",
+      "candidate_snapshot_ref": "snapshot_candidate:545f17cd6ea1382a",
+      "domain_id": "legacy_software",
+      "fixture_derived": true,
+      "limitations": [
+        "fixture_derived",
+        "review_required"
+      ],
+      "live_metadata_derived": false,
+      "public_search_status": "candidate",
+      "query_refs": [
+        "legacy_software_q07"
+      ],
+      "review_state": "needs_review",
+      "reviewed_record_ref": null,
+      "schema_version": "snapshot_candidate_section_item.v0",
+      "scout_trail_refs": [
+        "scout_run:9e91894a5e3f2294",
+        "scout_run:c2797847038110a6",
+        "scout_run:2c92557d69966669"
+      ],
+      "source_family": "internet_archive_metadata",
+      "title": "Winamp 5.666 full installer fixture metadata lead"
+    },
+    {
+      "accepted_truth": false,
+      "action_posture": {
+        "allowed_actions": [
+          "inspect",
+          "view_source",
+          "view_provenance",
+          "read"
+        ],
+        "blocked_actions": [
+          "download",
+          "install_handoff",
+          "execute",
+          "upload",
+          "promote"
+        ],
+        "public_mutation_enabled": false,
+        "review_required": true
+      },
+      "batch_id": "seed_batch_legacy_software_00",
+      "candidate_id": "seed_legacy_software_legacy_software_q08_candidate",
+      "candidate_snapshot_ref": "snapshot_candidate:c1c9c625a79ce8b2",
+      "domain_id": "legacy_software",
+      "fixture_derived": true,
+      "limitations": [
+        "fixture_derived",
+        "review_required"
+      ],
+      "live_metadata_derived": false,
+      "public_search_status": "candidate",
+      "query_refs": [
+        "legacy_software_q08"
+      ],
+      "review_state": "needs_review",
+      "reviewed_record_ref": null,
+      "schema_version": "snapshot_candidate_section_item.v0",
+      "scout_trail_refs": [
+        "scout_run:9e91894a5e3f2294",
+        "scout_run:c2797847038110a6",
+        "scout_run:2c92557d69966669"
+      ],
+      "source_family": "package_registry_metadata",
+      "title": "Visual C++ 2010 redistributable offline installer Windows 7 fixture metadata lead"
+    },
+    {
+      "accepted_truth": false,
+      "action_posture": {
+        "allowed_actions": [
+          "inspect",
+          "view_source",
+          "view_provenance",
+          "read"
+        ],
+        "blocked_actions": [
+          "download",
+          "install_handoff",
+          "execute",
+          "upload",
+          "promote"
+        ],
+        "public_mutation_enabled": false,
+        "review_required": true
+      },
+      "batch_id": "seed_batch_legacy_software_00",
+      "candidate_id": "seed_legacy_software_legacy_software_q09_candidate",
+      "candidate_snapshot_ref": "snapshot_candidate:d6325d734a4c7415",
+      "domain_id": "legacy_software",
+      "fixture_derived": true,
+      "limitations": [
+        "fixture_derived",
+        "review_required"
+      ],
+      "live_metadata_derived": false,
+      "public_search_status": "candidate",
+      "query_refs": [
+        "legacy_software_q09"
+      ],
+      "review_state": "needs_review",
+      "reviewed_record_ref": null,
+      "schema_version": "snapshot_candidate_section_item.v0",
+      "scout_trail_refs": [
+        "scout_run:9e91894a5e3f2294",
+        "scout_run:c2797847038110a6",
+        "scout_run:2c92557d69966669"
+      ],
+      "source_family": "github_releases_metadata",
+      "title": "old 7-Zip Windows 2000 compatible release fixture metadata lead"
+    },
+    {
+      "accepted_truth": false,
+      "action_posture": {
+        "allowed_actions": [
+          "inspect",
+          "view_source",
+          "view_provenance",
+          "read"
+        ],
+        "blocked_actions": [
+          "download",
+          "install_handoff",
+          "execute",
+          "upload",
+          "promote"
+        ],
+        "public_mutation_enabled": false,
+        "review_required": true
+      },
+      "batch_id": "seed_batch_legacy_software_00",
+      "candidate_id": "seed_legacy_software_legacy_software_q10_candidate",
+      "candidate_snapshot_ref": "snapshot_candidate:180f726c0726706f",
+      "domain_id": "legacy_software",
+      "fixture_derived": true,
+      "limitations": [
+        "fixture_derived",
+        "review_required"
+      ],
+      "live_metadata_derived": false,
+      "public_search_status": "candidate",
+      "query_refs": [
+        "legacy_software_q10"
+      ],
+      "review_state": "needs_review",
+      "reviewed_record_ref": null,
+      "schema_version": "snapshot_candidate_section_item.v0",
+      "scout_trail_refs": [
+        "scout_run:9e91894a5e3f2294",
+        "scout_run:c2797847038110a6",
+        "scout_run:2c92557d69966669"
+      ],
+      "source_family": "internet_archive_metadata",
+      "title": "IrfanView old Windows XP compatible installer fixture metadata lead"
+    },
+    {
+      "accepted_truth": false,
+      "action_posture": {
+        "allowed_actions": [
+          "inspect",
+          "view_source",
+          "view_provenance",
+          "read"
+        ],
+        "blocked_actions": [
+          "download",
+          "install_handoff",
+          "execute",
+          "upload",
+          "promote"
+        ],
+        "public_mutation_enabled": false,
+        "review_required": true
+      },
+      "batch_id": "seed_batch_legacy_software_00",
+      "candidate_id": "seed_legacy_software_legacy_software_q11_candidate",
+      "candidate_snapshot_ref": "snapshot_candidate:6b6b179c3d00f4a2",
+      "domain_id": "legacy_software",
+      "fixture_derived": true,
+      "limitations": [
+        "fixture_derived",
+        "review_required"
+      ],
+      "live_metadata_derived": false,
+      "public_search_status": "candidate",
+      "query_refs": [
+        "legacy_software_q11"
+      ],
+      "review_state": "needs_review",
+      "reviewed_record_ref": null,
+      "schema_version": "snapshot_candidate_section_item.v0",
+      "scout_trail_refs": [
+        "scout_run:9e91894a5e3f2294",
+        "scout_run:c2797847038110a6",
+        "scout_run:2c92557d69966669"
+      ],
+      "source_family": "internet_archive_metadata",
+      "title": "Java 6 offline installer Windows XP fixture metadata lead"
+    },
+    {
+      "accepted_truth": false,
+      "action_posture": {
+        "allowed_actions": [
+          "inspect",
+          "view_source",
+          "view_provenance",
+          "read"
+        ],
+        "blocked_actions": [
+          "download",
+          "install_handoff",
+          "execute",
+          "upload",
+          "promote"
+        ],
+        "public_mutation_enabled": false,
+        "review_required": true
+      },
+      "batch_id": "seed_batch_legacy_software_00",
+      "candidate_id": "seed_legacy_software_legacy_software_q12_candidate",
+      "candidate_snapshot_ref": "snapshot_candidate:6f2c83a065bb82cf",
+      "domain_id": "driver_support_media",
+      "fixture_derived": true,
+      "limitations": [
+        "fixture_derived",
+        "review_required"
+      ],
+      "live_metadata_derived": false,
+      "public_search_status": "candidate",
+      "query_refs": [
+        "legacy_software_q12"
+      ],
+      "review_state": "needs_review",
+      "reviewed_record_ref": null,
+      "schema_version": "snapshot_candidate_section_item.v0",
+      "scout_trail_refs": [
+        "scout_run:9e91894a5e3f2294",
+        "scout_run:c2797847038110a6",
+        "scout_run:2c92557d69966669"
+      ],
+      "source_family": "wayback_cdx_metadata",
+      "title": "Microsoft IntelliPoint Windows 7 driver offline installer fixture metadata lead"
+    },
+    {
+      "accepted_truth": false,
+      "action_posture": {
+        "allowed_actions": [
+          "inspect",
+          "view_source",
+          "view_provenance",
+          "read"
+        ],
+        "blocked_actions": [
+          "download",
+          "install_handoff",
+          "execute",
+          "upload",
+          "promote"
+        ],
+        "public_mutation_enabled": false,
+        "review_required": true
+      },
+      "batch_id": "seed_batch_legacy_software_00",
+      "candidate_id": "seed_legacy_software_legacy_software_q13_candidate",
+      "candidate_snapshot_ref": "snapshot_candidate:f73916bce6596d8e",
+      "domain_id": "legacy_software",
+      "fixture_derived": true,
+      "limitations": [
+        "fixture_derived",
+        "review_required"
+      ],
+      "live_metadata_derived": false,
+      "public_search_status": "candidate",
+      "query_refs": [
+        "legacy_software_q13"
+      ],
+      "review_state": "needs_review",
+      "reviewed_record_ref": null,
+      "schema_version": "snapshot_candidate_section_item.v0",
+      "scout_trail_refs": [
+        "scout_run:9e91894a5e3f2294",
+        "scout_run:c2797847038110a6",
+        "scout_run:2c92557d69966669"
+      ],
+      "source_family": "wayback_cdx_metadata",
+      "title": "PowerToys for Windows XP fixture metadata lead"
+    },
+    {
+      "accepted_truth": false,
+      "action_posture": {
+        "allowed_actions": [
+          "inspect",
+          "view_source",
+          "view_provenance",
+          "read"
+        ],
+        "blocked_actions": [
+          "download",
+          "install_handoff",
+          "execute",
+          "upload",
+          "promote"
+        ],
+        "public_mutation_enabled": false,
+        "review_required": true
+      },
+      "batch_id": "seed_batch_legacy_software_00",
+      "candidate_id": "seed_legacy_software_legacy_software_q14_candidate",
+      "candidate_snapshot_ref": "snapshot_candidate:ccfd23d3b8f6ef8d",
+      "domain_id": "legacy_software",
+      "fixture_derived": true,
+      "limitations": [
+        "fixture_derived",
+        "review_required"
+      ],
+      "live_metadata_derived": false,
+      "public_search_status": "candidate",
+      "query_refs": [
+        "legacy_software_q14"
+      ],
+      "review_state": "needs_review",
+      "reviewed_record_ref": null,
+      "schema_version": "snapshot_candidate_section_item.v0",
+      "scout_trail_refs": [
+        "scout_run:9e91894a5e3f2294",
+        "scout_run:c2797847038110a6",
+        "scout_run:2c92557d69966669"
+      ],
+      "source_family": "package_registry_metadata",
+      "title": "Windows 7 compatible file recovery utility portable fixture metadata lead"
+    },
+    {
+      "accepted_truth": false,
+      "action_posture": {
+        "allowed_actions": [
+          "inspect",
+          "view_source",
+          "view_provenance",
+          "read"
+        ],
+        "blocked_actions": [
+          "download",
+          "install_handoff",
+          "execute",
+          "upload",
+          "promote"
+        ],
+        "public_mutation_enabled": false,
+        "review_required": true
+      },
+      "batch_id": "seed_batch_legacy_software_00",
+      "candidate_id": "seed_legacy_software_legacy_software_q15_candidate",
+      "candidate_snapshot_ref": "snapshot_candidate:8a14291e94e88842",
+      "domain_id": "legacy_software",
+      "fixture_derived": true,
+      "limitations": [
+        "fixture_derived",
+        "review_required"
+      ],
+      "live_metadata_derived": false,
+      "public_search_status": "candidate",
+      "query_refs": [
+        "legacy_software_q15"
+      ],
+      "review_state": "needs_review",
+      "reviewed_record_ref": null,
+      "schema_version": "snapshot_candidate_section_item.v0",
+      "scout_trail_refs": [
+        "scout_run:9e91894a5e3f2294",
+        "scout_run:c2797847038110a6",
+        "scout_run:2c92557d69966669"
+      ],
+      "source_family": "software_heritage_metadata",
+      "title": "legacy FTP client Windows 98 installer fixture metadata lead"
+    },
+    {
+      "accepted_truth": false,
+      "action_posture": {
+        "allowed_actions": [
+          "inspect",
+          "view_source",
+          "view_provenance",
+          "read"
+        ],
+        "blocked_actions": [
+          "download",
+          "install_handoff",
+          "execute",
+          "upload",
+          "promote"
+        ],
+        "public_mutation_enabled": false,
+        "review_required": true
+      },
+      "batch_id": "seed_batch_legacy_software_00",
+      "candidate_id": "seed_legacy_software_legacy_software_q16_candidate",
+      "candidate_snapshot_ref": "snapshot_candidate:0aa0ac6912070592",
+      "domain_id": "legacy_software",
+      "fixture_derived": true,
+      "limitations": [
+        "fixture_derived",
+        "review_required"
+      ],
+      "live_metadata_derived": false,
+      "public_search_status": "candidate",
+      "query_refs": [
+        "legacy_software_q16"
+      ],
+      "review_state": "needs_review",
+      "reviewed_record_ref": null,
+      "schema_version": "snapshot_candidate_section_item.v0",
+      "scout_trail_refs": [
+        "scout_run:9e91894a5e3f2294",
+        "scout_run:c2797847038110a6",
+        "scout_run:2c92557d69966669"
+      ],
+      "source_family": "software_heritage_metadata",
+      "title": "old PDF reader Windows 2000 compatible installer fixture metadata lead"
+    }
+  ],
+  "created_at": "2026-06-01T00:00:00Z",
+  "domain_key": "legacy_software",
+  "limitations": [
+    "fixture seed candidates are projected as review-only candidates"
+  ],
+  "public_index_mutated": false,
+  "record_type": "snapshot_candidate_section",
+  "review_required": true,
+  "reviewed_index_mutated": false,
+  "schema_version": "snapshot_candidate_section.v0",
+  "section_id": "snapshot_candidate_section:0ea8e58174653d73",
+  "snapshot_refresh_id": "snapshot_refresh_03"
+}

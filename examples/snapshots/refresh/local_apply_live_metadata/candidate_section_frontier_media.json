@@ -1,0 +1,563 @@
+{
+  "accepted_truth": false,
+  "accepted_truth_created": false,
+  "batch_id": "seed_batch_frontier_media_00",
+  "candidate_count": 12,
+  "candidate_promoted_to_reviewed": false,
+  "candidate_refs": [
+    "seed_frontier_media_frontier_media_q01_candidate",
+    "seed_frontier_media_frontier_media_q02_candidate",
+    "seed_frontier_media_frontier_media_q03_candidate",
+    "seed_frontier_media_frontier_media_q04_candidate",
+    "seed_frontier_media_frontier_media_q05_candidate",
+    "seed_frontier_media_frontier_media_q06_candidate",
+    "seed_frontier_media_frontier_media_q07_candidate",
+    "seed_frontier_media_frontier_media_q08_candidate",
+    "seed_frontier_media_frontier_media_q09_candidate",
+    "seed_frontier_media_frontier_media_q10_candidate",
+    "seed_frontier_media_frontier_media_q11_candidate",
+    "seed_frontier_media_frontier_media_q12_candidate"
+  ],
+  "candidates": [
+    {
+      "accepted_truth": false,
+      "action_posture": {
+        "allowed_actions": [
+          "inspect",
+          "view_source",
+          "view_provenance",
+          "read"
+        ],
+        "blocked_actions": [
+          "download",
+          "install_handoff",
+          "execute",
+          "upload",
+          "promote"
+        ],
+        "public_mutation_enabled": false,
+        "review_required": true
+      },
+      "batch_id": "seed_batch_frontier_media_00",
+      "candidate_id": "seed_frontier_media_frontier_media_q01_candidate",
+      "candidate_snapshot_ref": "snapshot_candidate:bdb15f785b5adc26",
+      "domain_id": "frontier_resolution_media",
+      "fixture_derived": true,
+      "limitations": [
+        "fixture_derived",
+        "review_required"
+      ],
+      "live_metadata_derived": false,
+      "public_search_status": "candidate",
+      "query_refs": [
+        "frontier_media_q01"
+      ],
+      "review_state": "needs_review",
+      "reviewed_record_ref": null,
+      "schema_version": "snapshot_candidate_section_item.v0",
+      "scout_trail_refs": [
+        "scout_run:6dd5ab0197b095dc",
+        "scout_run:58ec0d2fc11be225",
+        "scout_run:1de28535700f0373"
+      ],
+      "source_family": "internet_archive_metadata",
+      "title": "New York 1993 D-Theater HD demo tape original source fixture metadata lead"
+    },
+    {
+      "accepted_truth": false,
+      "action_posture": {
+        "allowed_actions": [
+          "inspect",
+          "view_source",
+          "view_provenance",
+          "read"
+        ],
+        "blocked_actions": [
+          "download",
+          "install_handoff",
+          "execute",
+          "upload",
+          "promote"
+        ],
+        "public_mutation_enabled": false,
+        "review_required": true
+      },
+      "batch_id": "seed_batch_frontier_media_00",
+      "candidate_id": "seed_frontier_media_frontier_media_q02_candidate",
+      "candidate_snapshot_ref": "snapshot_candidate:3f05c77bdc89efc9",
+      "domain_id": "frontier_resolution_media",
+      "fixture_derived": true,
+      "limitations": [
+        "fixture_derived",
+        "review_required"
+      ],
+      "live_metadata_derived": false,
+      "public_search_status": "candidate",
+      "query_refs": [
+        "frontier_media_q02"
+      ],
+      "review_state": "needs_review",
+      "reviewed_record_ref": null,
+      "schema_version": "snapshot_candidate_section_item.v0",
+      "scout_trail_refs": [
+        "scout_run:6dd5ab0197b095dc",
+        "scout_run:58ec0d2fc11be225",
+        "scout_run:1de28535700f0373"
+      ],
+      "source_family": "internet_archive_metadata",
+      "title": "New York 1993 D-VHS HDTV demo tape fixture metadata lead"
+    },
+    {
+      "accepted_truth": false,
+      "action_posture": {
+        "allowed_actions": [
+          "inspect",
+          "view_source",
+          "view_provenance",
+          "read"
+        ],
+        "blocked_actions": [
+          "download",
+          "install_handoff",
+          "execute",
+          "upload",
+          "promote"
+        ],
+        "public_mutation_enabled": false,
+        "review_required": true
+      },
+      "batch_id": "seed_batch_frontier_media_00",
+      "candidate_id": "seed_frontier_media_frontier_media_q03_candidate",
+      "candidate_snapshot_ref": "snapshot_candidate:09d62b84128e81d3",
+      "domain_id": "frontier_resolution_media",
+      "fixture_derived": true,
+      "limitations": [
+        "fixture_derived",
+        "review_required"
+      ],
+      "live_metadata_derived": false,
+      "public_search_status": "candidate",
+      "query_refs": [
+        "frontier_media_q03"
+      ],
+      "review_state": "needs_review",
+      "reviewed_record_ref": null,
+      "schema_version": "snapshot_candidate_section_item.v0",
+      "scout_trail_refs": [
+        "scout_run:6dd5ab0197b095dc",
+        "scout_run:58ec0d2fc11be225",
+        "scout_run:1de28535700f0373"
+      ],
+      "source_family": "internet_archive_metadata",
+      "title": "JVC D-Theater New York HD demo fixture metadata lead"
+    },
+    {
+      "accepted_truth": false,
+      "action_posture": {
+        "allowed_actions": [
+          "inspect",
+          "view_source",
+          "view_provenance",
+          "read"
+        ],
+        "blocked_actions": [
+          "download",
+          "install_handoff",
+          "execute",
+          "upload",
+          "promote"
+        ],
+        "public_mutation_enabled": false,
+        "review_required": true
+      },
+      "batch_id": "seed_batch_frontier_media_00",
+      "candidate_id": "seed_frontier_media_frontier_media_q04_candidate",
+      "candidate_snapshot_ref": "snapshot_candidate:3190c1aab1a33650",
+      "domain_id": "frontier_resolution_media",
+      "fixture_derived": true,
+      "limitations": [
+        "fixture_derived",
+        "review_required"
+      ],
+      "live_metadata_derived": false,
+      "public_search_status": "candidate",
+      "query_refs": [
+        "frontier_media_q04"
+      ],
+      "review_state": "needs_review",
+      "reviewed_record_ref": null,
+      "schema_version": "snapshot_candidate_section_item.v0",
+      "scout_trail_refs": [
+        "scout_run:6dd5ab0197b095dc",
+        "scout_run:58ec0d2fc11be225",
+        "scout_run:1de28535700f0373"
+      ],
+      "source_family": "internet_archive_metadata",
+      "title": "D-Theater D-VHS city footage 1993 fixture metadata lead"
+    },
+    {
+      "accepted_truth": false,
+      "action_posture": {
+        "allowed_actions": [
+          "inspect",
+          "view_source",
+          "view_provenance",
+          "read"
+        ],
+        "blocked_actions": [
+          "download",
+          "install_handoff",
+          "execute",
+          "upload",
+          "promote"
+        ],
+        "public_mutation_enabled": false,
+        "review_required": true
+      },
+      "batch_id": "seed_batch_frontier_media_00",
+      "candidate_id": "seed_frontier_media_frontier_media_q05_candidate",
+      "candidate_snapshot_ref": "snapshot_candidate:0235e5438093be55",
+      "domain_id": "frontier_resolution_media",
+      "fixture_derived": true,
+      "limitations": [
+        "fixture_derived",
+        "review_required"
+      ],
+      "live_metadata_derived": false,
+      "public_search_status": "candidate",
+      "query_refs": [
+        "frontier_media_q05"
+      ],
+      "review_state": "needs_review",
+      "reviewed_record_ref": null,
+      "schema_version": "snapshot_candidate_section_item.v0",
+      "scout_trail_refs": [
+        "scout_run:6dd5ab0197b095dc",
+        "scout_run:58ec0d2fc11be225",
+        "scout_run:1de28535700f0373"
+      ],
+      "source_family": "internet_archive_metadata",
+      "title": "Hi-Vision MUSE New York 1993 HDTV demo fixture metadata lead"
+    },
+    {
+      "accepted_truth": false,
+      "action_posture": {
+        "allowed_actions": [
+          "inspect",
+          "view_source",
+          "view_provenance",
+          "read"
+        ],
+        "blocked_actions": [
+          "download",
+          "install_handoff",
+          "execute",
+          "upload",
+          "promote"
+        ],
+        "public_mutation_enabled": false,
+        "review_required": true
+      },
+      "batch_id": "seed_batch_frontier_media_00",
+      "candidate_id": "seed_frontier_media_frontier_media_q06_candidate",
+      "candidate_snapshot_ref": "snapshot_candidate:7c1c9aefbdc8d0a8",
+      "domain_id": "frontier_resolution_media",
+      "fixture_derived": true,
+      "limitations": [
+        "fixture_derived",
+        "review_required"
+      ],
+      "live_metadata_derived": false,
+      "public_search_status": "candidate",
+      "query_refs": [
+        "frontier_media_q06"
+      ],
+      "review_state": "needs_review",
+      "reviewed_record_ref": null,
+      "schema_version": "snapshot_candidate_section_item.v0",
+      "scout_trail_refs": [
+        "scout_run:6dd5ab0197b095dc",
+        "scout_run:58ec0d2fc11be225",
+        "scout_run:1de28535700f0373"
+      ],
+      "source_family": "internet_archive_metadata",
+      "title": "early HDTV New York 1993 demo footage fixture metadata lead"
+    },
+    {
+      "accepted_truth": false,
+      "action_posture": {
+        "allowed_actions": [
+          "inspect",
+          "view_source",
+          "view_provenance",
+          "read"
+        ],
+        "blocked_actions": [
+          "download",
+          "install_handoff",
+          "execute",
+          "upload",
+          "promote"
+        ],
+        "public_mutation_enabled": false,
+        "review_required": true
+      },
+      "batch_id": "seed_batch_frontier_media_00",
+      "candidate_id": "seed_frontier_media_frontier_media_q07_candidate",
+      "candidate_snapshot_ref": "snapshot_candidate:fb393e9b4616f729",
+      "domain_id": "frontier_resolution_media",
+      "fixture_derived": true,
+      "limitations": [
+        "fixture_derived",
+        "review_required"
+      ],
+      "live_metadata_derived": false,
+      "public_search_status": "candidate",
+      "query_refs": [
+        "frontier_media_q07"
+      ],
+      "review_state": "needs_review",
+      "reviewed_record_ref": null,
+      "schema_version": "snapshot_candidate_section_item.v0",
+      "scout_trail_refs": [
+        "scout_run:6dd5ab0197b095dc",
+        "scout_run:58ec0d2fc11be225",
+        "scout_run:1de28535700f0373"
+      ],
+      "source_family": "internet_archive_metadata",
+      "title": "D-Theater demo tape JVC city fixture metadata lead"
+    },
+    {
+      "accepted_truth": false,
+      "action_posture": {
+        "allowed_actions": [
+          "inspect",
+          "view_source",
+          "view_provenance",
+          "read"
+        ],
+        "blocked_actions": [
+          "download",
+          "install_handoff",
+          "execute",
+          "upload",
+          "promote"
+        ],
+        "public_mutation_enabled": false,
+        "review_required": true
+      },
+      "batch_id": "seed_batch_frontier_media_00",
+      "candidate_id": "seed_frontier_media_frontier_media_q08_candidate",
+      "candidate_snapshot_ref": "snapshot_candidate:c3a6ee764e953b80",
+      "domain_id": "frontier_resolution_media",
+      "fixture_derived": true,
+      "limitations": [
+        "fixture_derived",
+        "review_required"
+      ],
+      "live_metadata_derived": false,
+      "public_search_status": "candidate",
+      "query_refs": [
+        "frontier_media_q08"
+      ],
+      "review_state": "needs_review",
+      "reviewed_record_ref": null,
+      "schema_version": "snapshot_candidate_section_item.v0",
+      "scout_trail_refs": [
+        "scout_run:6dd5ab0197b095dc",
+        "scout_run:58ec0d2fc11be225",
+        "scout_run:1de28535700f0373"
+      ],
+      "source_family": "internet_archive_metadata",
+      "title": "HDVS Hi-Vision demo New York footage fixture metadata lead"
+    },
+    {
+      "accepted_truth": false,
+      "action_posture": {
+        "allowed_actions": [
+          "inspect",
+          "view_source",
+          "view_provenance",
+          "read"
+        ],
+        "blocked_actions": [
+          "download",
+          "install_handoff",
+          "execute",
+          "upload",
+          "promote"
+        ],
+        "public_mutation_enabled": false,
+        "review_required": true
+      },
+      "batch_id": "seed_batch_frontier_media_00",
+      "candidate_id": "seed_frontier_media_frontier_media_q09_candidate",
+      "candidate_snapshot_ref": "snapshot_candidate:7c0614af7f528ac1",
+      "domain_id": "frontier_resolution_media",
+      "fixture_derived": true,
+      "limitations": [
+        "fixture_derived",
+        "review_required"
+      ],
+      "live_metadata_derived": false,
+      "public_search_status": "candidate",
+      "query_refs": [
+        "frontier_media_q09"
+      ],
+      "review_state": "needs_review",
+      "reviewed_record_ref": null,
+      "schema_version": "snapshot_candidate_section_item.v0",
+      "scout_trail_refs": [
+        "scout_run:6dd5ab0197b095dc",
+        "scout_run:58ec0d2fc11be225",
+        "scout_run:1de28535700f0373"
+      ],
+      "source_family": "internet_archive_metadata",
+      "title": "Japanese HDTV demonstration tape New York fixture metadata lead"
+    },
+    {
+      "accepted_truth": false,
+      "action_posture": {
+        "allowed_actions": [
+          "inspect",
+          "view_source",
+          "view_provenance",
+          "read"
+        ],
+        "blocked_actions": [
+          "download",
+          "install_handoff",
+          "execute",
+          "upload",
+          "promote"
+        ],
+        "public_mutation_enabled": false,
+        "review_required": true
+      },
+      "batch_id": "seed_batch_frontier_media_00",
+      "candidate_id": "seed_frontier_media_frontier_media_q10_candidate",
+      "candidate_snapshot_ref": "snapshot_candidate:3efead2d2de1b58e",
+      "domain_id": "frontier_resolution_media",
+      "fixture_derived": true,
+      "limitations": [
+        "fixture_derived",
+        "review_required"
+      ],
+      "live_metadata_derived": false,
+      "public_search_status": "candidate",
+      "query_refs": [
+        "frontier_media_q10"
+      ],
+      "review_state": "needs_review",
+      "reviewed_record_ref": null,
+      "schema_version": "snapshot_candidate_section_item.v0",
+      "scout_trail_refs": [
+        "scout_run:6dd5ab0197b095dc",
+        "scout_run:58ec0d2fc11be225",
+        "scout_run:1de28535700f0373"
+      ],
+      "source_family": "internet_archive_metadata",
+      "title": "MUSE LaserDisc New York HD demo fixture metadata lead"
+    },
+    {
+      "accepted_truth": false,
+      "action_posture": {
+        "allowed_actions": [
+          "inspect",
+          "view_source",
+          "view_provenance",
+          "read"
+        ],
+        "blocked_actions": [
+          "download",
+          "install_handoff",
+          "execute",
+          "upload",
+          "promote"
+        ],
+        "public_mutation_enabled": false,
+        "review_required": true
+      },
+      "batch_id": "seed_batch_frontier_media_00",
+      "candidate_id": "seed_frontier_media_frontier_media_q11_candidate",
+      "candidate_snapshot_ref": "snapshot_candidate:252f51f52b5755cb",
+      "domain_id": "frontier_resolution_media",
+      "fixture_derived": true,
+      "limitations": [
+        "fixture_derived",
+        "review_required"
+      ],
+      "live_metadata_derived": false,
+      "public_search_status": "candidate",
+      "query_refs": [
+        "frontier_media_q11"
+      ],
+      "review_state": "needs_review",
+      "reviewed_record_ref": null,
+      "schema_version": "snapshot_candidate_section_item.v0",
+      "scout_trail_refs": [
+        "scout_run:6dd5ab0197b095dc",
+        "scout_run:58ec0d2fc11be225",
+        "scout_run:1de28535700f0373"
+      ],
+      "source_family": "internet_archive_metadata",
+      "title": "D-VHS demo tape urban footage fixture metadata lead"
+    },
+    {
+      "accepted_truth": false,
+      "action_posture": {
+        "allowed_actions": [
+          "inspect",
+          "view_source",
+          "view_provenance",
+          "read"
+        ],
+        "blocked_actions": [
+          "download",
+          "install_handoff",
+          "execute",
+          "upload",
+          "promote"
+        ],
+        "public_mutation_enabled": false,
+        "review_required": true
+      },
+      "batch_id": "seed_batch_frontier_media_00",
+      "candidate_id": "seed_frontier_media_frontier_media_q12_candidate",
+      "candidate_snapshot_ref": "snapshot_candidate:a3082674839d607b",
+      "domain_id": "frontier_resolution_media",
+      "fixture_derived": true,
+      "limitations": [
+        "fixture_derived",
+        "review_required"
+      ],
+      "live_metadata_derived": false,
+      "public_search_status": "candidate",
+      "query_refs": [
+        "frontier_media_q12"
+      ],
+      "review_state": "needs_review",
+      "reviewed_record_ref": null,
+      "schema_version": "snapshot_candidate_section_item.v0",
+      "scout_trail_refs": [
+        "scout_run:6dd5ab0197b095dc",
+        "scout_run:58ec0d2fc11be225",
+        "scout_run:1de28535700f0373"
+      ],
+      "source_family": "internet_archive_metadata",
+      "title": "early high definition city footage archival source fixture metadata lead"
+    }
+  ],
+  "created_at": "2026-06-01T00:00:00Z",
+  "domain_key": "frontier_media",
+  "limitations": [
+    "fixture seed candidates are projected as review-only candidates"
+  ],
+  "public_index_mutated": false,
+  "record_type": "snapshot_candidate_section",
+  "review_required": true,
+  "reviewed_index_mutated": false,
+  "schema_version": "snapshot_candidate_section.v0",
+  "section_id": "snapshot_candidate_section:b62a5f5f5a9f4f0a",
+  "snapshot_refresh_id": "snapshot_refresh_03"
+}

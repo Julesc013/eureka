@@ -1,0 +1,35 @@
+{
+  "$id": "https://eureka.local/contracts/snapshot_local_apply_section.v0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Snapshot Local Apply Section",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "section_id",
+    "snapshot_refresh_id",
+    "local_apply_ref",
+    "eligible_preview_count",
+    "reviewed_metadata_records_created",
+    "reviewed_source_leads_created",
+    "reviewed_record_delta_count",
+    "operator_instance_mutated",
+    "public_index_mutated",
+    "master_index_mutated",
+    "created_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "snapshot_local_apply_section.v0"
+    },
+    "operator_instance_mutated": {
+      "const": false
+    },
+    "public_index_mutated": {
+      "const": false
+    },
+    "master_index_mutated": {
+      "const": false
+    }
+  }
+}

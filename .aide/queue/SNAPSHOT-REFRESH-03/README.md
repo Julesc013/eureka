@@ -1,6 +1,6 @@
 # SNAPSHOT-REFRESH-03
 
-Status: planned
+Status: pass
 
 Refresh snapshots after local apply of live metadata previews.
 
@@ -17,3 +17,12 @@ Boundary:
 - do not create verified-download, malware-clean, or rights-clearance claims
 - do not mutate public/master indexes
 - do not deploy or claim launch readiness
+
+Result:
+
+- existing reviewed records: 1
+- reviewed metadata records from local apply: 1
+- reviewed source leads from local apply: 2
+- reviewed record delta count: 3
+- total limited reviewed record projection count: 4
+- next task: `PUBLIC-ALPHA-REASSESS-03`

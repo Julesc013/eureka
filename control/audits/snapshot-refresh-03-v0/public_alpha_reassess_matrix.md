@@ -1,0 +1,14 @@
+# Public Alpha Reassess Matrix
+
+```json
+{
+  "production_readiness_claimed": false,
+  "public_alpha_reassess_refs": [
+    "public_alpha_reassess:d3361b4fb43b938c"
+  ],
+  "public_launch_readiness_claimed": false,
+  "schema_version": "snapshot_refresh_03_public_alpha_reassess_matrix.v0",
+  "task": "SNAPSHOT-REFRESH-03",
+  "total_limited_reviewed_record_projection_count": 4
+}
+```

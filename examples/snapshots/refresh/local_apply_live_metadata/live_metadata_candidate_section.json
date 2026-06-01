@@ -1,0 +1,530 @@
+{
+  "accepted_truth": false,
+  "candidate_count": 8,
+  "candidate_refs": [
+    "live_metadata_pilot_frontier_media_q01_01",
+    "live_metadata_pilot_frontier_media_q03_02",
+    "live_metadata_pilot_frontier_media_q05_03",
+    "live_metadata_pilot_frontier_media_q06_04",
+    "live_metadata_pilot_legacy_software_q01_05",
+    "live_metadata_pilot_legacy_software_q02_06",
+    "live_metadata_pilot_legacy_software_q03_07",
+    "live_metadata_pilot_legacy_software_q06_08"
+  ],
+  "candidates": [
+    {
+      "accepted_truth": false,
+      "action_posture": {
+        "accepted_truth": false,
+        "allowed_actions": [
+          "inspect",
+          "view_source",
+          "view_provenance",
+          "read"
+        ],
+        "blocked_actions": [
+          "download",
+          "execute",
+          "extract",
+          "install_handoff",
+          "promote",
+          "upload"
+        ],
+        "downloads_enabled": false,
+        "extraction_enabled": false,
+        "public_mutation_enabled": false,
+        "review_required": true,
+        "schema_version": "snapshot_review_only_action_posture.v0"
+      },
+      "candidate_id": "live_metadata_pilot_frontier_media_q01_01",
+      "candidate_snapshot_ref": "snapshot_live_metadata_candidate:59dce857242c0a22",
+      "domain_id": "frontier_resolution_media",
+      "fixture_derived": false,
+      "limitations": [
+        "redacted_metadata_summary_only",
+        "candidate_not_reviewed_truth",
+        "review_required_for_promotion",
+        "no_raw_response_commit",
+        "no_download",
+        "no_extraction",
+        "no_auto_promotion",
+        "live_metadata_derived_review_only"
+      ],
+      "live_metadata_derived": true,
+      "live_metadata_pilot_ref": "control/inventory/live_metadata_pilot_result.json",
+      "public_search_status": "candidate",
+      "query_refs": [
+        "seed_query_plan:d4a8f229c25b08e8",
+        "New York 1993 D-Theater HD demo tape original source"
+      ],
+      "raw_response_included": false,
+      "review_state": "needs_review",
+      "reviewed_record_ref": null,
+      "schema_version": "snapshot_live_metadata_candidate_item.v0",
+      "scout_trail_refs": [
+        "scout_run:79fc980867d066b2"
+      ],
+      "source_family": "internet_archive_metadata",
+      "source_locator": {
+        "identifier_hash": "f73ee8216e536feb",
+        "locator_kind": "redacted_archive_org_metadata_summary",
+        "request_plan_id": "live_metadata_request_plan:2ee1238a44c933bb"
+      },
+      "source_observation_ref": "live_metadata_source_observation:efc74d7dbc7eff8b",
+      "title": "Redacted live IA metadata summary for New York 1993 D-Theater HD demo tape original source"
+    },
+    {
+      "accepted_truth": false,
+      "action_posture": {
+        "accepted_truth": false,
+        "allowed_actions": [
+          "inspect",
+          "view_source",
+          "view_provenance",
+          "read"
+        ],
+        "blocked_actions": [
+          "download",
+          "execute",
+          "extract",
+          "install_handoff",
+          "promote",
+          "upload"
+        ],
+        "downloads_enabled": false,
+        "extraction_enabled": false,
+        "public_mutation_enabled": false,
+        "review_required": true,
+        "schema_version": "snapshot_review_only_action_posture.v0"
+      },
+      "candidate_id": "live_metadata_pilot_frontier_media_q03_02",
+      "candidate_snapshot_ref": "snapshot_live_metadata_candidate:37fec3a7961c44ec",
+      "domain_id": "frontier_resolution_media",
+      "fixture_derived": false,
+      "limitations": [
+        "redacted_metadata_summary_only",
+        "candidate_not_reviewed_truth",
+        "review_required_for_promotion",
+        "no_raw_response_commit",
+        "no_download",
+        "no_extraction",
+        "no_auto_promotion",
+        "live_metadata_derived_review_only"
+      ],
+      "live_metadata_derived": true,
+      "live_metadata_pilot_ref": "control/inventory/live_metadata_pilot_result.json",
+      "public_search_status": "candidate",
+      "query_refs": [
+        "seed_query_plan:1f71a1830d1d1c25",
+        "JVC D-Theater New York HD demo"
+      ],
+      "raw_response_included": false,
+      "review_state": "needs_review",
+      "reviewed_record_ref": null,
+      "schema_version": "snapshot_live_metadata_candidate_item.v0",
+      "scout_trail_refs": [
+        "scout_run:3b579dace44932e0"
+      ],
+      "source_family": "internet_archive_metadata",
+      "source_locator": {
+        "identifier_hash": "664edb11ce00d6d8",
+        "locator_kind": "redacted_archive_org_metadata_summary",
+        "request_plan_id": "live_metadata_request_plan:0ac41bb5e1e9a32a"
+      },
+      "source_observation_ref": "live_metadata_source_observation:aa933bbd7ad9d765",
+      "title": "Redacted live IA metadata summary for JVC D-Theater New York HD demo"
+    },
+    {
+      "accepted_truth": false,
+      "action_posture": {
+        "accepted_truth": false,
+        "allowed_actions": [
+          "inspect",
+          "view_source",
+          "view_provenance",
+          "read"
+        ],
+        "blocked_actions": [
+          "download",
+          "execute",
+          "extract",
+          "install_handoff",
+          "promote",
+          "upload"
+        ],
+        "downloads_enabled": false,
+        "extraction_enabled": false,
+        "public_mutation_enabled": false,
+        "review_required": true,
+        "schema_version": "snapshot_review_only_action_posture.v0"
+      },
+      "candidate_id": "live_metadata_pilot_frontier_media_q05_03",
+      "candidate_snapshot_ref": "snapshot_live_metadata_candidate:8f50e9f98dec2f58",
+      "domain_id": "frontier_resolution_media",
+      "fixture_derived": false,
+      "limitations": [
+        "redacted_metadata_summary_only",
+        "candidate_not_reviewed_truth",
+        "review_required_for_promotion",
+        "no_raw_response_commit",
+        "no_download",
+        "no_extraction",
+        "no_auto_promotion",
+        "live_metadata_derived_review_only"
+      ],
+      "live_metadata_derived": true,
+      "live_metadata_pilot_ref": "control/inventory/live_metadata_pilot_result.json",
+      "public_search_status": "candidate",
+      "query_refs": [
+        "seed_query_plan:3c12f38bb56f962d",
+        "Hi-Vision MUSE New York 1993 HDTV demo"
+      ],
+      "raw_response_included": false,
+      "review_state": "needs_review",
+      "reviewed_record_ref": null,
+      "schema_version": "snapshot_live_metadata_candidate_item.v0",
+      "scout_trail_refs": [
+        "scout_run:858fe77598d69bc0"
+      ],
+      "source_family": "internet_archive_metadata",
+      "source_locator": {
+        "identifier_hash": "f73ee8216e536feb",
+        "locator_kind": "redacted_archive_org_metadata_summary",
+        "request_plan_id": "live_metadata_request_plan:de91338c0be8faa8"
+      },
+      "source_observation_ref": "live_metadata_source_observation:eba7e261f2b6befa",
+      "title": "Redacted live IA metadata summary for Hi-Vision MUSE New York 1993 HDTV demo"
+    },
+    {
+      "accepted_truth": false,
+      "action_posture": {
+        "accepted_truth": false,
+        "allowed_actions": [
+          "inspect",
+          "view_source",
+          "view_provenance",
+          "read"
+        ],
+        "blocked_actions": [
+          "download",
+          "execute",
+          "extract",
+          "install_handoff",
+          "promote",
+          "upload"
+        ],
+        "downloads_enabled": false,
+        "extraction_enabled": false,
+        "public_mutation_enabled": false,
+        "review_required": true,
+        "schema_version": "snapshot_review_only_action_posture.v0"
+      },
+      "candidate_id": "live_metadata_pilot_frontier_media_q06_04",
+      "candidate_snapshot_ref": "snapshot_live_metadata_candidate:0d35e20bf96031c2",
+      "domain_id": "frontier_resolution_media",
+      "fixture_derived": false,
+      "limitations": [
+        "redacted_metadata_summary_only",
+        "candidate_not_reviewed_truth",
+        "review_required_for_promotion",
+        "no_raw_response_commit",
+        "no_download",
+        "no_extraction",
+        "no_auto_promotion",
+        "live_metadata_derived_review_only"
+      ],
+      "live_metadata_derived": true,
+      "live_metadata_pilot_ref": "control/inventory/live_metadata_pilot_result.json",
+      "public_search_status": "candidate",
+      "query_refs": [
+        "seed_query_plan:3fee564222e22091",
+        "early HDTV New York 1993 demo footage"
+      ],
+      "raw_response_included": false,
+      "review_state": "needs_review",
+      "reviewed_record_ref": null,
+      "schema_version": "snapshot_live_metadata_candidate_item.v0",
+      "scout_trail_refs": [
+        "scout_run:11bac23bf2801f10"
+      ],
+      "source_family": "internet_archive_metadata",
+      "source_locator": {
+        "identifier_hash": "ce88ebfa1edab05c",
+        "locator_kind": "redacted_archive_org_metadata_summary",
+        "request_plan_id": "live_metadata_request_plan:329a4cdef5174e42"
+      },
+      "source_observation_ref": "live_metadata_source_observation:e42957553d3edf79",
+      "title": "Redacted live IA metadata summary for early HDTV New York 1993 demo footage"
+    },
+    {
+      "accepted_truth": false,
+      "action_posture": {
+        "accepted_truth": false,
+        "allowed_actions": [
+          "inspect",
+          "view_source",
+          "view_provenance",
+          "read"
+        ],
+        "blocked_actions": [
+          "download",
+          "execute",
+          "extract",
+          "install_handoff",
+          "promote",
+          "upload"
+        ],
+        "downloads_enabled": false,
+        "extraction_enabled": false,
+        "public_mutation_enabled": false,
+        "review_required": true,
+        "schema_version": "snapshot_review_only_action_posture.v0"
+      },
+      "candidate_id": "live_metadata_pilot_legacy_software_q01_05",
+      "candidate_snapshot_ref": "snapshot_live_metadata_candidate:c86c49bff1d0b810",
+      "domain_id": "legacy_software",
+      "fixture_derived": false,
+      "limitations": [
+        "redacted_metadata_summary_only",
+        "candidate_not_reviewed_truth",
+        "review_required_for_promotion",
+        "no_raw_response_commit",
+        "no_download",
+        "no_extraction",
+        "no_auto_promotion",
+        "live_metadata_derived_review_only"
+      ],
+      "live_metadata_derived": true,
+      "live_metadata_pilot_ref": "control/inventory/live_metadata_pilot_result.json",
+      "public_search_status": "candidate",
+      "query_refs": [
+        "legacy_seed_query_plan:e93196d42a8b499d",
+        "Windows 7-compatible portable utilities, not Windows 7 ISO"
+      ],
+      "raw_response_included": false,
+      "review_state": "needs_review",
+      "reviewed_record_ref": null,
+      "schema_version": "snapshot_live_metadata_candidate_item.v0",
+      "scout_trail_refs": [
+        "scout_run:d3f8f5c8cb2de7bf"
+      ],
+      "source_family": "internet_archive_metadata",
+      "source_locator": {
+        "identifier_hash": "e3364703516b5e71",
+        "locator_kind": "redacted_archive_org_metadata_summary",
+        "request_plan_id": "live_metadata_request_plan:d863f1df03bf6e31"
+      },
+      "source_observation_ref": "live_metadata_source_observation:0899b4ead04957a5",
+      "title": "Redacted live IA metadata summary for Windows 7-compatible portable utilities, not Windows 7 ISO"
+    },
+    {
+      "accepted_truth": false,
+      "action_posture": {
+        "accepted_truth": false,
+        "allowed_actions": [
+          "inspect",
+          "view_source",
+          "view_provenance",
+          "read"
+        ],
+        "blocked_actions": [
+          "download",
+          "execute",
+          "extract",
+          "install_handoff",
+          "promote",
+          "upload"
+        ],
+        "downloads_enabled": false,
+        "extraction_enabled": false,
+        "public_mutation_enabled": false,
+        "review_required": true,
+        "schema_version": "snapshot_review_only_action_posture.v0"
+      },
+      "candidate_id": "live_metadata_pilot_legacy_software_q02_06",
+      "candidate_snapshot_ref": "snapshot_live_metadata_candidate:baafb31b350bb2cd",
+      "domain_id": "legacy_software",
+      "fixture_derived": false,
+      "limitations": [
+        "redacted_metadata_summary_only",
+        "candidate_not_reviewed_truth",
+        "review_required_for_promotion",
+        "no_raw_response_commit",
+        "no_download",
+        "no_extraction",
+        "no_auto_promotion",
+        "live_metadata_derived_review_only"
+      ],
+      "live_metadata_derived": true,
+      "live_metadata_pilot_ref": "control/inventory/live_metadata_pilot_result.json",
+      "public_search_status": "candidate",
+      "query_refs": [
+        "legacy_seed_query_plan:596e6747763713b9",
+        "DirectX SDK June 2010 offline installer"
+      ],
+      "raw_response_included": false,
+      "review_state": "needs_review",
+      "reviewed_record_ref": null,
+      "schema_version": "snapshot_live_metadata_candidate_item.v0",
+      "scout_trail_refs": [
+        "scout_run:d94052665c697ec8"
+      ],
+      "source_family": "internet_archive_metadata",
+      "source_locator": {
+        "identifier_hash": "04631f42311aa0ca",
+        "locator_kind": "redacted_archive_org_metadata_summary",
+        "request_plan_id": "live_metadata_request_plan:3ecc6325324f5b4c"
+      },
+      "source_observation_ref": "live_metadata_source_observation:f9a237e73d2ddb6d",
+      "title": "Redacted live IA metadata summary for DirectX SDK June 2010 offline installer"
+    },
+    {
+      "accepted_truth": false,
+      "action_posture": {
+        "accepted_truth": false,
+        "allowed_actions": [
+          "inspect",
+          "view_source",
+          "view_provenance",
+          "read"
+        ],
+        "blocked_actions": [
+          "download",
+          "execute",
+          "extract",
+          "install_handoff",
+          "promote",
+          "upload"
+        ],
+        "downloads_enabled": false,
+        "extraction_enabled": false,
+        "public_mutation_enabled": false,
+        "review_required": true,
+        "schema_version": "snapshot_review_only_action_posture.v0"
+      },
+      "candidate_id": "live_metadata_pilot_legacy_software_q03_07",
+      "candidate_snapshot_ref": "snapshot_live_metadata_candidate:5e9c9aefe19275e6",
+      "domain_id": "driver_support_media",
+      "fixture_derived": false,
+      "limitations": [
+        "redacted_metadata_summary_only",
+        "candidate_not_reviewed_truth",
+        "review_required_for_promotion",
+        "no_raw_response_commit",
+        "no_download",
+        "no_extraction",
+        "no_auto_promotion",
+        "live_metadata_derived_review_only"
+      ],
+      "live_metadata_derived": true,
+      "live_metadata_pilot_ref": "control/inventory/live_metadata_pilot_result.json",
+      "public_search_status": "candidate",
+      "query_refs": [
+        "legacy_seed_query_plan:2b57d5c013189e89",
+        "StyleWriter 2500 Mac OS 8 driver"
+      ],
+      "raw_response_included": false,
+      "review_state": "needs_review",
+      "reviewed_record_ref": null,
+      "schema_version": "snapshot_live_metadata_candidate_item.v0",
+      "scout_trail_refs": [
+        "scout_run:7f493d3fde1000d3"
+      ],
+      "source_family": "internet_archive_metadata",
+      "source_locator": {
+        "identifier_hash": "04631f42311aa0ca",
+        "locator_kind": "redacted_archive_org_metadata_summary",
+        "request_plan_id": "live_metadata_request_plan:f306403c80116097"
+      },
+      "source_observation_ref": "live_metadata_source_observation:37a5836c2a110bbd",
+      "title": "Redacted live IA metadata summary for StyleWriter 2500 Mac OS 8 driver"
+    },
+    {
+      "accepted_truth": false,
+      "action_posture": {
+        "accepted_truth": false,
+        "allowed_actions": [
+          "inspect",
+          "view_source",
+          "view_provenance",
+          "read"
+        ],
+        "blocked_actions": [
+          "download",
+          "execute",
+          "extract",
+          "install_handoff",
+          "promote",
+          "upload"
+        ],
+        "downloads_enabled": false,
+        "extraction_enabled": false,
+        "public_mutation_enabled": false,
+        "review_required": true,
+        "schema_version": "snapshot_review_only_action_posture.v0"
+      },
+      "candidate_id": "live_metadata_pilot_legacy_software_q06_08",
+      "candidate_snapshot_ref": "snapshot_live_metadata_candidate:4c0b71aae1348a24",
+      "domain_id": "legacy_software",
+      "fixture_derived": false,
+      "limitations": [
+        "redacted_metadata_summary_only",
+        "candidate_not_reviewed_truth",
+        "review_required_for_promotion",
+        "no_raw_response_commit",
+        "no_download",
+        "no_extraction",
+        "no_auto_promotion",
+        "live_metadata_derived_review_only"
+      ],
+      "live_metadata_derived": true,
+      "live_metadata_pilot_ref": "control/inventory/live_metadata_pilot_result.json",
+      "public_search_status": "candidate",
+      "query_refs": [
+        "legacy_seed_query_plan:4bab156cf23bbaa4",
+        "QuickTime 7 Windows XP offline installer"
+      ],
+      "raw_response_included": false,
+      "review_state": "needs_review",
+      "reviewed_record_ref": null,
+      "schema_version": "snapshot_live_metadata_candidate_item.v0",
+      "scout_trail_refs": [
+        "scout_run:4b7bc56bb7cecd05"
+      ],
+      "source_family": "internet_archive_metadata",
+      "source_locator": {
+        "identifier_hash": "04631f42311aa0ca",
+        "locator_kind": "redacted_archive_org_metadata_summary",
+        "request_plan_id": "live_metadata_request_plan:6f13cfb79e2dfe62"
+      },
+      "source_observation_ref": "live_metadata_source_observation:c7194f99afda2bb5",
+      "title": "Redacted live IA metadata summary for QuickTime 7 Windows XP offline installer"
+    }
+  ],
+  "created_at": "2026-06-01T00:00:00Z",
+  "limitations": [
+    "live_metadata_derived_review_only",
+    "redacted_summary_only",
+    "no_raw_response_included",
+    "review_required_before_promotion"
+  ],
+  "live_metadata_pilot_ref": "control/inventory/live_metadata_pilot_result.json",
+  "raw_response_included": false,
+  "record_type": "snapshot_live_metadata_candidate_section",
+  "review_required": true,
+  "reviewed_record_refs": [],
+  "schema_version": "snapshot_live_metadata_candidate_section.v0",
+  "section_id": "snapshot_live_metadata_candidate_section:7c3eba6cf2eb16bd",
+  "snapshot_refresh_id": "snapshot_refresh_03",
+  "source_family": "internet_archive_metadata",
+  "source_observation_summary_refs": [
+    "live_metadata_source_observation:efc74d7dbc7eff8b",
+    "live_metadata_source_observation:aa933bbd7ad9d765",
+    "live_metadata_source_observation:eba7e261f2b6befa",
+    "live_metadata_source_observation:e42957553d3edf79",
+    "live_metadata_source_observation:0899b4ead04957a5",
+    "live_metadata_source_observation:f9a237e73d2ddb6d",
+    "live_metadata_source_observation:37a5836c2a110bbd",
+    "live_metadata_source_observation:c7194f99afda2bb5"
+  ]
+}

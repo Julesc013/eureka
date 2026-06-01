@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (6117 chars, 1530 approximate tokens)
+- `.aide/context/latest-task-packet.md` (5352 chars, 1338 approximate tokens)
 
 ## Context Packet Reference
 
@@ -34,30 +34,30 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 ## Changed Files Summary
 
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/LOCAL-APPLY-LIVE-METADATA-PREVIEWS-00/README.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/SNAPSHOT-REFRESH-03` (??; matches active task allowed path)
+- allowed: `.aide/queue/PUBLIC-ALPHA-REASSESS-03` (??; matches active task allowed path)
+- allowed: `.aide/queue/SNAPSHOT-REFRESH-03/README.md` (M; matches active task allowed path)
 - allowed: `.aide/queue/index.yaml` (M; matches active task allowed path)
-- allowed: `contracts/local_apply/live_metadata_apply_boundary_report.v0.json` (??; matches active task allowed path)
-- allowed: `contracts/local_apply/live_metadata_apply_rollback_plan.v0.json` (??; matches active task allowed path)
-- allowed: `contracts/local_apply/live_metadata_local_apply_plan.v0.json` (??; matches active task allowed path)
-- allowed: `contracts/local_apply/live_metadata_local_apply_result.v0.json` (??; matches active task allowed path)
-- allowed: `contracts/local_apply/live_metadata_local_apply_validation.v0.json` (??; matches active task allowed path)
-- allowed: `contracts/review/live_metadata_reviewed_record.v0.json` (??; matches active task allowed path)
-- allowed: `contracts/review/live_metadata_source_lead.v0.json` (??; matches active task allowed path)
-- allowed: `control/audits/local-apply-live-metadata-previews-00-v0` (??; matches active task allowed path)
-- allowed: `control/inventory/local_apply_live_metadata_apply_plan_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/local_apply_live_metadata_boundary_report.json` (??; matches active task allowed path)
-- allowed: `control/inventory/local_apply_live_metadata_eligibility_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/local_apply_live_metadata_failure_repair_log.json` (??; matches active task allowed path)
-- allowed: `control/inventory/local_apply_live_metadata_input_state.json` (??; matches active task allowed path)
-- allowed: `control/inventory/local_apply_live_metadata_next_task_decision.json` (??; matches active task allowed path)
-- allowed: `control/inventory/local_apply_live_metadata_preview_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/local_apply_live_metadata_public_alpha_reassess_handoff_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/local_apply_live_metadata_result.json` (??; matches active task allowed path)
-- allowed: `control/inventory/local_apply_live_metadata_reviewed_record_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/local_apply_live_metadata_smoke_result.json` (??; matches active task allowed path)
-- allowed: `control/inventory/local_apply_live_metadata_snapshot_handoff_matrix.json` (??; matches active task allowed path)
-- additional changed paths omitted from compact packet: 41; see task evidence changed-files report
+- allowed: `contracts/snapshot/snapshot_local_apply_section.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/snapshot/snapshot_reviewed_metadata_record_section.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/snapshot/snapshot_reviewed_record_section.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/snapshot/snapshot_reviewed_source_lead_section.v0.json` (??; matches active task allowed path)
+- allowed: `control/audits/snapshot-refresh-03-v0` (??; matches active task allowed path)
+- allowed: `control/inventory/snapshot_refresh_03_boundary_report.json` (??; matches active task allowed path)
+- allowed: `control/inventory/snapshot_refresh_03_candidate_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/snapshot_refresh_03_failure_repair_log.json` (??; matches active task allowed path)
+- allowed: `control/inventory/snapshot_refresh_03_input_state.json` (??; matches active task allowed path)
+- allowed: `control/inventory/snapshot_refresh_03_live_metadata_candidate_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/snapshot_refresh_03_live_metadata_review_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/snapshot_refresh_03_local_apply_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/snapshot_refresh_03_need_absence_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/snapshot_refresh_03_next_task_decision.json` (??; matches active task allowed path)
+- allowed: `control/inventory/snapshot_refresh_03_public_alpha_reassess_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/snapshot_refresh_03_public_search_view_model_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/snapshot_refresh_03_relay_projection_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/snapshot_refresh_03_result.json` (??; matches active task allowed path)
+- allowed: `control/inventory/snapshot_refresh_03_review_queue_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/snapshot_refresh_03_reviewed_metadata_record_matrix.json` (??; matches active task allowed path)
+- additional changed paths omitted from compact packet: 39; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -67,8 +67,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 7032
-- approx_tokens: 1758
+- chars: 6984
+- approx_tokens: 1746
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

@@ -1,0 +1,46 @@
+{
+  "artifact_verified_claim_created": false,
+  "committed_instance_state": false,
+  "created_at": "2026-06-01T00:00:00Z",
+  "eligible_preview_count": 3,
+  "limitations": [
+    "snapshot_refresh_is_projection_only",
+    "local_apply_outputs_are_limited_reviewed_metadata_or_source_lead_records",
+    "metadata_source_lead_records_are_not_verified_artifacts",
+    "raw_live_responses_excluded",
+    "no_verified_download_claim",
+    "no_malware_clean_claim",
+    "no_rights_clearance_claim",
+    "no_operator_instance_mutation",
+    "no_site_dist_write",
+    "no_public_index_mutation",
+    "no_deployment_or_launch_claim"
+  ],
+  "limited_claim_scope": "metadata_or_source_lead_only",
+  "local_apply_ref": "control/inventory/local_apply_live_metadata_result.json",
+  "malware_clean_claim_created": false,
+  "master_index_mutated": false,
+  "needs_more_evidence_not_applied": 2,
+  "operator_instance_mutated": false,
+  "public_index_mutated": false,
+  "record_type": "snapshot_local_apply_section",
+  "rejected_or_duplicate_not_applied": 2,
+  "reviewed_metadata_record_refs": [
+    "reviewed_metadata_record:6f1765a8357c0e38"
+  ],
+  "reviewed_metadata_records_created": 1,
+  "reviewed_record_delta_count": 3,
+  "reviewed_source_lead_refs": [
+    "reviewed_source_lead:be997026927f3db6",
+    "reviewed_source_lead:dfe70f3ad254ba07"
+  ],
+  "reviewed_source_leads_created": 2,
+  "rights_clearance_claim_created": false,
+  "schema_version": "snapshot_local_apply_section.v0",
+  "section_id": "snapshot_local_apply_section:7cbf0af3acb05b3a",
+  "snapshot_refresh_handoff_ref": "examples/local_apply/live_metadata/snapshot_refresh_handoff.json",
+  "snapshot_refresh_id": "snapshot_refresh_03",
+  "temp_instance_apply_passed": true,
+  "useful_leads_not_applied": 1,
+  "verified_download_claim_created": false
+}

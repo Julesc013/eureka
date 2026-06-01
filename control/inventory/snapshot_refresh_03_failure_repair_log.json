@@ -1,0 +1,22 @@
+{
+  "accepted_truth_created": false,
+  "artifact_verified_claim_created": false,
+  "deployment_performed": false,
+  "download_performed": false,
+  "extraction_executed": false,
+  "malware_clean_claim_created": false,
+  "master_index_mutated": false,
+  "model_provider_used": false,
+  "operator_instance_mutated": false,
+  "production_readiness_claimed": false,
+  "public_index_mutated": false,
+  "public_launch_readiness_claimed": false,
+  "repairs": [],
+  "reviewed_index_mutated": false,
+  "rights_clearance_claim_created": false,
+  "schema_version": "snapshot_refresh_03_failure_repair_log.v0",
+  "site_dist_written": false,
+  "status": "no_failures_recorded",
+  "task": "SNAPSHOT-REFRESH-03",
+  "verified_download_claim_created": false
+}

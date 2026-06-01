@@ -1,0 +1,10 @@
+{
+  "needs_more_evidence_not_applied": 2,
+  "operator_instance_mutated": false,
+  "rejected_or_duplicate_not_applied": 2,
+  "reviewed_preview_applied_through_temp_local_apply": true,
+  "schema_version": "snapshot_refresh_03_live_metadata_review_matrix.v0",
+  "source_ref": "control/inventory/live_metadata_review_result.json",
+  "task": "SNAPSHOT-REFRESH-03",
+  "useful_leads_not_applied": 1
+}

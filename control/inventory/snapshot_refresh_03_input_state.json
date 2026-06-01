@@ -1,0 +1,38 @@
+{
+  "accepted_truth_created": false,
+  "artifact_verified_claim_created": false,
+  "branch": "dev",
+  "created_at": "2026-06-01T00:00:00Z",
+  "deployment_performed": false,
+  "download_performed": false,
+  "equivalent_filename_mappings": {
+    "query_planner_result": "control/audits/query-to-source-action-planner-00-v0/query_to_source_action_planner_report.json"
+  },
+  "extraction_executed": false,
+  "input_results": {
+    "candidate_index": "control/inventory/candidate_index_result.json",
+    "live_metadata_pilot": "control/inventory/live_metadata_pilot_result.json",
+    "live_metadata_review": "control/inventory/live_metadata_review_result.json",
+    "local_apply_live_metadata": "control/inventory/local_apply_live_metadata_result.json",
+    "public_alpha_reassess_02": "control/inventory/public_alpha_reassess_02_result.json",
+    "public_search_ux_model": "control/inventory/public_search_ux_model_result.json",
+    "query_planner": "control/audits/query-to-source-action-planner-00-v0/query_to_source_action_planner_report.json",
+    "review_batch": "control/inventory/review_batch_result.json",
+    "scout_runtime": "control/inventory/scout_runtime_result.json",
+    "snapshot_refresh_01": "control/inventory/snapshot_refresh_01_result.json",
+    "snapshot_refresh_02": "control/inventory/snapshot_refresh_02_result.json"
+  },
+  "malware_clean_claim_created": false,
+  "master_index_mutated": false,
+  "model_provider_used": false,
+  "operator_instance_mutated": false,
+  "production_readiness_claimed": false,
+  "public_index_mutated": false,
+  "public_launch_readiness_claimed": false,
+  "reviewed_index_mutated": false,
+  "rights_clearance_claim_created": false,
+  "schema_version": "snapshot_refresh_03_input_state.v0",
+  "site_dist_written": false,
+  "task": "SNAPSHOT-REFRESH-03",
+  "verified_download_claim_created": false
+}

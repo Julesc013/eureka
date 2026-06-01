@@ -63,6 +63,20 @@ from runtime.snapshots.refresh_02 import (
     write_snapshot_refresh_02_examples,
     write_snapshot_refresh_02_inventory_and_audit,
 )
+from runtime.snapshots.refresh_03 import (
+    build_existing_reviewed_record_section,
+    build_local_apply_section,
+    build_reviewed_metadata_record_section,
+    build_reviewed_source_lead_section,
+    build_snapshot_refresh_03_boundary_report,
+    build_snapshot_refresh_03_inventory_packets,
+    build_snapshot_refresh_03_plan,
+    load_local_apply_live_metadata_handoff,
+    run_snapshot_refresh_03,
+    validate_snapshot_refresh_03_result,
+    write_snapshot_refresh_03_examples,
+    write_snapshot_refresh_03_inventory_and_audit,
+)
 
 __all__ = [
     "build_snapshot_envelope",
@@ -117,4 +131,16 @@ __all__ = [
     "validate_snapshot_refresh_02_result",
     "write_snapshot_refresh_02_examples",
     "write_snapshot_refresh_02_inventory_and_audit",
+    "build_existing_reviewed_record_section",
+    "build_local_apply_section",
+    "build_reviewed_metadata_record_section",
+    "build_reviewed_source_lead_section",
+    "build_snapshot_refresh_03_boundary_report",
+    "build_snapshot_refresh_03_inventory_packets",
+    "build_snapshot_refresh_03_plan",
+    "load_local_apply_live_metadata_handoff",
+    "run_snapshot_refresh_03",
+    "validate_snapshot_refresh_03_result",
+    "write_snapshot_refresh_03_examples",
+    "write_snapshot_refresh_03_inventory_and_audit",
 ]
