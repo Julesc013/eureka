@@ -1,0 +1,94 @@
+{
+  "accepted_truth": false,
+  "accepted_truth_created": false,
+  "batch_id": "seed_batch_manuals_scans_00",
+  "deployment_performed": false,
+  "download_performed": false,
+  "extraction_executed": false,
+  "file_fetch_performed": false,
+  "master_index_mutated": false,
+  "model_provider_used": false,
+  "ocr_performed": false,
+  "ocr_quality_claim_created": false,
+  "operator_instance_mutated": false,
+  "production_readiness_claimed": false,
+  "public_index_mutated": false,
+  "public_launch_readiness_claimed": false,
+  "public_mutation_enabled": false,
+  "raw_live_response_committed": false,
+  "related_path_count": 582,
+  "relation_count": 582,
+  "review_required": true,
+  "reviewed_index_mutated": false,
+  "rights_clearance_claim_created": false,
+  "run_count": 16,
+  "sample_runs": [
+    {
+      "accepted_truth": false,
+      "candidate_refs": [
+        "seed_manuals_scans_manuals_scans_q01_candidate",
+        "seed_manuals_scans_manuals_scans_q02_candidate",
+        "seed_manuals_scans_manuals_scans_q03_candidate",
+        "seed_manuals_scans_manuals_scans_q04_candidate",
+        "seed_manuals_scans_manuals_scans_q05_candidate",
+        "seed_manuals_scans_manuals_scans_q06_candidate"
+      ],
+      "relation_count": 42,
+      "review_required": true,
+      "scout_run_id": "scout_run:474eea13cd25868a",
+      "seed_candidate_id": "seed_manuals_scans_manuals_scans_q01_candidate"
+    },
+    {
+      "accepted_truth": false,
+      "candidate_refs": [
+        "seed_manuals_scans_manuals_scans_q01_candidate",
+        "seed_manuals_scans_manuals_scans_q02_candidate",
+        "seed_manuals_scans_manuals_scans_q03_candidate",
+        "seed_manuals_scans_manuals_scans_q04_candidate",
+        "seed_manuals_scans_manuals_scans_q05_candidate",
+        "seed_manuals_scans_manuals_scans_q06_candidate"
+      ],
+      "relation_count": 39,
+      "review_required": true,
+      "scout_run_id": "scout_run:13d3b851e49f4856",
+      "seed_candidate_id": "seed_manuals_scans_manuals_scans_q02_candidate"
+    },
+    {
+      "accepted_truth": false,
+      "candidate_refs": [
+        "seed_manuals_scans_manuals_scans_q01_candidate",
+        "seed_manuals_scans_manuals_scans_q02_candidate",
+        "seed_manuals_scans_manuals_scans_q03_candidate",
+        "seed_manuals_scans_manuals_scans_q04_candidate",
+        "seed_manuals_scans_manuals_scans_q05_candidate",
+        "seed_manuals_scans_manuals_scans_q06_candidate"
+      ],
+      "relation_count": 41,
+      "review_required": true,
+      "scout_run_id": "scout_run:ddc4d564804c8f4e",
+      "seed_candidate_id": "seed_manuals_scans_manuals_scans_q03_candidate"
+    }
+  ],
+  "scan_completeness_claim_created": false,
+  "schema_version": "seed_batch_scout_trails_summary.v0",
+  "scout_refs": [
+    "scout_run:474eea13cd25868a",
+    "scout_run:13d3b851e49f4856",
+    "scout_run:ddc4d564804c8f4e",
+    "scout_run:ad020f1369ce154f",
+    "scout_run:88b87c14d0133276",
+    "scout_run:062d18ce78ba5fbb",
+    "scout_run:bc2017205cef2e5c",
+    "scout_run:bd538c6a217e5d95",
+    "scout_run:c4070df43d9f8a08",
+    "scout_run:78698b914a506587",
+    "scout_run:c2bdf205ef0eb8dd",
+    "scout_run:a5a6c1a379a8b6d3",
+    "scout_run:b4191173da71649f",
+    "scout_run:b5d6d91ac36e2342",
+    "scout_run:ec3afaa4f44e5a8d",
+    "scout_run:279e3d2a96586fd0"
+  ],
+  "task": "SEED-BATCH-MANUALS-SCANS-00",
+  "workunit_seed_count": 66
+}

@@ -1,0 +1,27 @@
+# Snapshot Handoff Matrix
+
+- accepted_truth: false
+- accepted_truth_created: false
+- batch_id: seed_batch_manuals_scans_00
+- created_at: 2026-06-02T00:00:00Z
+- deployment_performed: false
+- download_performed: false
+- extraction_executed: false
+- file_fetch_performed: false
+- master_index_mutated: false
+- model_provider_used: false
+- ocr_performed: false
+- ocr_quality_claim_created: false
+- operator_instance_mutated: false
+- production_readiness_claimed: false
+- public_index_mutated: false
+- public_launch_readiness_claimed: false
+- public_mutation_enabled: false
+- raw_live_response_committed: false
+- requires_separate_snapshot_refresh_gate: true
+- review_required: true
+- reviewed_index_mutated: false
+- rights_clearance_claim_created: false
+- scan_completeness_claim_created: false
+- schema_version: seed_batch_snapshot_refresh_handoff.v0
+- snapshot_refresh_executed: false

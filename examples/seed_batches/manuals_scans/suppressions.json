@@ -1,0 +1,194 @@
+[
+  {
+    "accepted_truth": false,
+    "applies_to_queries": [
+      "*"
+    ],
+    "batch_id": "seed_batch_manuals_scans_00",
+    "reason": "Metadata-only review must not imply a full document download or public fetch action.",
+    "review_override_allowed": false,
+    "schema_version": "seed_batch_suppression.v0",
+    "suppression_id": "full_book_download_when_metadata_only"
+  },
+  {
+    "accepted_truth": false,
+    "applies_to_queries": [
+      "*"
+    ],
+    "batch_id": "seed_batch_manuals_scans_00",
+    "reason": "Metadata candidates cannot create rights-clearance claims.",
+    "review_override_allowed": false,
+    "schema_version": "seed_batch_suppression.v0",
+    "suppression_id": "rights_claim_missing"
+  },
+  {
+    "accepted_truth": false,
+    "applies_to_queries": [
+      "*"
+    ],
+    "batch_id": "seed_batch_manuals_scans_00",
+    "reason": "Fixture metadata does not prove that every page or insert is present.",
+    "review_override_allowed": false,
+    "schema_version": "seed_batch_suppression.v0",
+    "suppression_id": "scan_completeness_unknown"
+  },
+  {
+    "accepted_truth": false,
+    "applies_to_queries": [
+      "*"
+    ],
+    "batch_id": "seed_batch_manuals_scans_00",
+    "reason": "OCR quality is not assessed without OCR or document inspection.",
+    "review_override_allowed": false,
+    "schema_version": "seed_batch_suppression.v0",
+    "suppression_id": "ocr_quality_unknown"
+  },
+  {
+    "accepted_truth": false,
+    "applies_to_queries": [
+      "manuals_scans_q01",
+      "manuals_scans_q02",
+      "manuals_scans_q07",
+      "manuals_scans_q08"
+    ],
+    "batch_id": "seed_batch_manuals_scans_00",
+    "reason": "Model-adjacent manuals must be reviewed before being treated as relevant.",
+    "review_override_allowed": false,
+    "schema_version": "seed_batch_suppression.v0",
+    "suppression_id": "wrong_model"
+  },
+  {
+    "accepted_truth": false,
+    "applies_to_queries": [
+      "*"
+    ],
+    "batch_id": "seed_batch_manuals_scans_00",
+    "reason": "Service, user, deployment, and setup manuals are distinct evidence classes.",
+    "review_override_allowed": false,
+    "schema_version": "seed_batch_suppression.v0",
+    "suppression_id": "wrong_manual_type"
+  },
+  {
+    "accepted_truth": false,
+    "applies_to_queries": [
+      "manuals_scans_q09",
+      "manuals_scans_q11",
+      "manuals_scans_q12",
+      "manuals_scans_q13"
+    ],
+    "batch_id": "seed_batch_manuals_scans_00",
+    "reason": "Platform-specific documentation must match the queried system context.",
+    "review_override_allowed": false,
+    "schema_version": "seed_batch_suppression.v0",
+    "suppression_id": "wrong_platform"
+  },
+  {
+    "accepted_truth": false,
+    "applies_to_queries": [
+      "manuals_scans_q10",
+      "manuals_scans_q13",
+      "manuals_scans_q14"
+    ],
+    "batch_id": "seed_batch_manuals_scans_00",
+    "reason": "Wrong version documentation can mislead review and public search.",
+    "review_override_allowed": false,
+    "schema_version": "seed_batch_suppression.v0",
+    "suppression_id": "wrong_version"
+  },
+  {
+    "accepted_truth": false,
+    "applies_to_queries": [
+      "*"
+    ],
+    "batch_id": "seed_batch_manuals_scans_00",
+    "reason": "Generic search hits are not sufficient review evidence.",
+    "review_override_allowed": false,
+    "schema_version": "seed_batch_suppression.v0",
+    "suppression_id": "generic_search_result"
+  },
+  {
+    "accepted_truth": false,
+    "applies_to_queries": [
+      "*"
+    ],
+    "batch_id": "seed_batch_manuals_scans_00",
+    "reason": "A source mention without document metadata remains only a lead.",
+    "review_override_allowed": false,
+    "schema_version": "seed_batch_suppression.v0",
+    "suppression_id": "source_only_mention"
+  },
+  {
+    "accepted_truth": false,
+    "applies_to_queries": [
+      "*"
+    ],
+    "batch_id": "seed_batch_manuals_scans_00",
+    "reason": "Duplicate metadata should collapse into review clusters.",
+    "review_override_allowed": false,
+    "schema_version": "seed_batch_suppression.v0",
+    "suppression_id": "duplicate"
+  },
+  {
+    "accepted_truth": false,
+    "applies_to_queries": [
+      "*"
+    ],
+    "batch_id": "seed_batch_manuals_scans_00",
+    "reason": "Weak title-only matches need stronger metadata before promotion.",
+    "review_override_allowed": false,
+    "schema_version": "seed_batch_suppression.v0",
+    "suppression_id": "low_metadata_match"
+  },
+  {
+    "accepted_truth": false,
+    "applies_to_queries": [
+      "*"
+    ],
+    "batch_id": "seed_batch_manuals_scans_00",
+    "reason": "Blocked or unsafe source posture cannot be promoted.",
+    "review_override_allowed": false,
+    "schema_version": "seed_batch_suppression.v0",
+    "suppression_id": "unsafe_or_blocked"
+  },
+  {
+    "accepted_truth": false,
+    "applies_to_queries": [
+      "manuals_scans_q10",
+      "manuals_scans_q11",
+      "manuals_scans_q12",
+      "manuals_scans_q13",
+      "manuals_scans_q14"
+    ],
+    "batch_id": "seed_batch_manuals_scans_00",
+    "reason": "Executable downloads are outside this document metadata batch.",
+    "review_override_allowed": false,
+    "schema_version": "seed_batch_suppression.v0",
+    "suppression_id": "executable_download"
+  },
+  {
+    "accepted_truth": false,
+    "applies_to_queries": [
+      "manuals_scans_q10",
+      "manuals_scans_q11",
+      "manuals_scans_q12",
+      "manuals_scans_q13",
+      "manuals_scans_q14"
+    ],
+    "batch_id": "seed_batch_manuals_scans_00",
+    "reason": "Installer results belong to a separate software or driver/support review lane.",
+    "review_override_allowed": false,
+    "schema_version": "seed_batch_suppression.v0",
+    "suppression_id": "software_installer_result"
+  },
+  {
+    "accepted_truth": false,
+    "applies_to_queries": [
+      "*"
+    ],
+    "batch_id": "seed_batch_manuals_scans_00",
+    "reason": "Modern documentation frequently lacks relevance to legacy document queries.",
+    "review_override_allowed": false,
+    "schema_version": "seed_batch_suppression.v0",
+    "suppression_id": "unrelated_modern_documentation"
+  }
+]

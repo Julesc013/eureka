@@ -1,0 +1,604 @@
+[
+  {
+    "accepted_truth": false,
+    "applied_suppressions": [
+      "scan_completeness_unknown",
+      "wrong_model",
+      "wrong_manual_type"
+    ],
+    "batch_id": "seed_batch_manuals_scans_00",
+    "blocked_actions": [
+      "download",
+      "fetch_file",
+      "ocr",
+      "extract",
+      "promote",
+      "claim_rights_clearance"
+    ],
+    "candidate_id": "seed_manuals_scans_manuals_scans_q01_candidate",
+    "confidence_label": "medium",
+    "domain_id": "manuals_docs_scans",
+    "fixture_derived": true,
+    "ocr_quality_claim_created": false,
+    "query_id": "manuals_scans_q01",
+    "review_required": true,
+    "rights_clearance_claim_created": false,
+    "scan_completeness_claim_created": false,
+    "schema_version": "seed_batch_candidate_summary.v0",
+    "source_family": "internet_archive_metadata",
+    "source_locator": {
+      "locator_kind": "archive_org_details_page",
+      "url": "https://archive.org/details/seed_manuals_scans_01_jvc_d_vhs_d_theater_manual"
+    },
+    "suppressions": [
+      "wrong_model",
+      "wrong_manual_type",
+      "scan_completeness_unknown"
+    ],
+    "title": "JVC D-VHS D-Theater manual fixture metadata lead"
+  },
+  {
+    "accepted_truth": false,
+    "applied_suppressions": [
+      "ocr_quality_unknown",
+      "wrong_model",
+      "wrong_manual_type"
+    ],
+    "batch_id": "seed_batch_manuals_scans_00",
+    "blocked_actions": [
+      "download",
+      "fetch_file",
+      "ocr",
+      "extract",
+      "promote",
+      "claim_rights_clearance"
+    ],
+    "candidate_id": "seed_manuals_scans_manuals_scans_q02_candidate",
+    "confidence_label": "medium",
+    "domain_id": "manuals_docs_scans",
+    "fixture_derived": true,
+    "ocr_quality_claim_created": false,
+    "query_id": "manuals_scans_q02",
+    "review_required": true,
+    "rights_clearance_claim_created": false,
+    "scan_completeness_claim_created": false,
+    "schema_version": "seed_batch_candidate_summary.v0",
+    "source_family": "manual_source_pack",
+    "source_locator": {
+      "descriptor_ref": "fixture://manual_source_pack/seed_manuals_scans_02_jvc_d_theater_user_guide",
+      "locator_kind": "fixture_metadata_descriptor"
+    },
+    "suppressions": [
+      "wrong_model",
+      "wrong_manual_type",
+      "ocr_quality_unknown"
+    ],
+    "title": "JVC D-Theater user guide fixture metadata lead"
+  },
+  {
+    "accepted_truth": false,
+    "applied_suppressions": [
+      "rights_claim_missing",
+      "wrong_manual_type"
+    ],
+    "batch_id": "seed_batch_manuals_scans_00",
+    "blocked_actions": [
+      "download",
+      "fetch_file",
+      "ocr",
+      "extract",
+      "promote",
+      "claim_rights_clearance"
+    ],
+    "candidate_id": "seed_manuals_scans_manuals_scans_q03_candidate",
+    "confidence_label": "medium",
+    "domain_id": "manuals_docs_scans",
+    "fixture_derived": true,
+    "ocr_quality_claim_created": false,
+    "query_id": "manuals_scans_q03",
+    "review_required": true,
+    "rights_clearance_claim_created": false,
+    "scan_completeness_claim_created": false,
+    "schema_version": "seed_batch_candidate_summary.v0",
+    "source_family": "internet_archive_metadata",
+    "source_locator": {
+      "locator_kind": "archive_org_details_page",
+      "url": "https://archive.org/details/seed_manuals_scans_03_d_vhs_service_manual"
+    },
+    "suppressions": [
+      "wrong_model",
+      "wrong_manual_type",
+      "rights_claim_missing"
+    ],
+    "title": "D-VHS service manual fixture metadata lead"
+  },
+  {
+    "accepted_truth": false,
+    "applied_suppressions": [
+      "scan_completeness_unknown",
+      "wrong_manual_type",
+      "generic_search_result"
+    ],
+    "batch_id": "seed_batch_manuals_scans_00",
+    "blocked_actions": [
+      "download",
+      "fetch_file",
+      "ocr",
+      "extract",
+      "promote",
+      "claim_rights_clearance"
+    ],
+    "candidate_id": "seed_manuals_scans_manuals_scans_q04_candidate",
+    "confidence_label": "medium",
+    "domain_id": "manuals_docs_scans",
+    "fixture_derived": true,
+    "ocr_quality_claim_created": false,
+    "query_id": "manuals_scans_q04",
+    "review_required": true,
+    "rights_clearance_claim_created": false,
+    "scan_completeness_claim_created": false,
+    "schema_version": "seed_batch_candidate_summary.v0",
+    "source_family": "wikidata_metadata",
+    "source_locator": {
+      "descriptor_ref": "fixture://wikidata_metadata/seed_manuals_scans_04_muse_hi_vision_technical_manual",
+      "locator_kind": "fixture_metadata_descriptor"
+    },
+    "suppressions": [
+      "wrong_manual_type",
+      "generic_search_result",
+      "scan_completeness_unknown"
+    ],
+    "title": "MUSE Hi-Vision technical manual fixture metadata lead"
+  },
+  {
+    "accepted_truth": false,
+    "applied_suppressions": [
+      "wrong_manual_type",
+      "low_metadata_match"
+    ],
+    "batch_id": "seed_batch_manuals_scans_00",
+    "blocked_actions": [
+      "download",
+      "fetch_file",
+      "ocr",
+      "extract",
+      "promote",
+      "claim_rights_clearance"
+    ],
+    "candidate_id": "seed_manuals_scans_manuals_scans_q05_candidate",
+    "confidence_label": "medium",
+    "domain_id": "manuals_docs_scans",
+    "fixture_derived": true,
+    "ocr_quality_claim_created": false,
+    "query_id": "manuals_scans_q05",
+    "review_required": true,
+    "rights_clearance_claim_created": false,
+    "scan_completeness_claim_created": false,
+    "schema_version": "seed_batch_candidate_summary.v0",
+    "source_family": "manual_source_pack",
+    "source_locator": {
+      "descriptor_ref": "fixture://manual_source_pack/seed_manuals_scans_05_sony_hdvs_equipment_manual",
+      "locator_kind": "fixture_metadata_descriptor"
+    },
+    "suppressions": [
+      "wrong_model",
+      "wrong_manual_type",
+      "low_metadata_match"
+    ],
+    "title": "Sony HDVS equipment manual fixture metadata lead"
+  },
+  {
+    "accepted_truth": false,
+    "applied_suppressions": [
+      "generic_search_result",
+      "source_only_mention",
+      "low_metadata_match"
+    ],
+    "batch_id": "seed_batch_manuals_scans_00",
+    "blocked_actions": [
+      "download",
+      "fetch_file",
+      "ocr",
+      "extract",
+      "promote",
+      "claim_rights_clearance"
+    ],
+    "candidate_id": "seed_manuals_scans_manuals_scans_q06_candidate",
+    "confidence_label": "medium",
+    "domain_id": "manuals_docs_scans",
+    "fixture_derived": true,
+    "ocr_quality_claim_created": false,
+    "query_id": "manuals_scans_q06",
+    "review_required": true,
+    "rights_clearance_claim_created": false,
+    "scan_completeness_claim_created": false,
+    "schema_version": "seed_batch_candidate_summary.v0",
+    "source_family": "wayback_cdx_metadata",
+    "source_locator": {
+      "descriptor_ref": "fixture://wayback_cdx_metadata/seed_manuals_scans_06_early_hdtv_demonstration_manual",
+      "locator_kind": "fixture_metadata_descriptor"
+    },
+    "suppressions": [
+      "generic_search_result",
+      "source_only_mention",
+      "low_metadata_match"
+    ],
+    "title": "early HDTV demonstration manual fixture metadata lead"
+  },
+  {
+    "accepted_truth": false,
+    "applied_suppressions": [
+      "wrong_model",
+      "wrong_manual_type"
+    ],
+    "batch_id": "seed_batch_manuals_scans_00",
+    "blocked_actions": [
+      "download",
+      "fetch_file",
+      "ocr",
+      "extract",
+      "promote",
+      "claim_rights_clearance"
+    ],
+    "candidate_id": "seed_manuals_scans_manuals_scans_q07_candidate",
+    "confidence_label": "medium",
+    "domain_id": "manuals_docs_scans",
+    "fixture_derived": true,
+    "ocr_quality_claim_created": false,
+    "query_id": "manuals_scans_q07",
+    "review_required": true,
+    "rights_clearance_claim_created": false,
+    "scan_completeness_claim_created": false,
+    "schema_version": "seed_batch_candidate_summary.v0",
+    "source_family": "open_library_metadata",
+    "source_locator": {
+      "descriptor_ref": "fixture://open_library_metadata/seed_manuals_scans_07_stylewriter_2500_user_guide",
+      "locator_kind": "fixture_metadata_descriptor"
+    },
+    "suppressions": [
+      "wrong_model",
+      "wrong_manual_type",
+      "wrong_platform"
+    ],
+    "title": "StyleWriter 2500 user guide fixture metadata lead"
+  },
+  {
+    "accepted_truth": false,
+    "applied_suppressions": [
+      "rights_claim_missing",
+      "wrong_model",
+      "wrong_manual_type"
+    ],
+    "batch_id": "seed_batch_manuals_scans_00",
+    "blocked_actions": [
+      "download",
+      "fetch_file",
+      "ocr",
+      "extract",
+      "promote",
+      "claim_rights_clearance"
+    ],
+    "candidate_id": "seed_manuals_scans_manuals_scans_q08_candidate",
+    "confidence_label": "medium",
+    "domain_id": "manuals_docs_scans",
+    "fixture_derived": true,
+    "ocr_quality_claim_created": false,
+    "query_id": "manuals_scans_q08",
+    "review_required": true,
+    "rights_clearance_claim_created": false,
+    "scan_completeness_claim_created": false,
+    "schema_version": "seed_batch_candidate_summary.v0",
+    "source_family": "manual_source_pack",
+    "source_locator": {
+      "descriptor_ref": "fixture://manual_source_pack/seed_manuals_scans_08_stylewriter_2500_service_manual",
+      "locator_kind": "fixture_metadata_descriptor"
+    },
+    "suppressions": [
+      "wrong_model",
+      "wrong_manual_type",
+      "rights_claim_missing"
+    ],
+    "title": "StyleWriter 2500 service manual fixture metadata lead"
+  },
+  {
+    "accepted_truth": false,
+    "applied_suppressions": [
+      "wrong_platform",
+      "unrelated_modern_documentation"
+    ],
+    "batch_id": "seed_batch_manuals_scans_00",
+    "blocked_actions": [
+      "download",
+      "fetch_file",
+      "ocr",
+      "extract",
+      "promote",
+      "claim_rights_clearance"
+    ],
+    "candidate_id": "seed_manuals_scans_manuals_scans_q09_candidate",
+    "confidence_label": "medium",
+    "domain_id": "manuals_docs_scans",
+    "fixture_derived": true,
+    "ocr_quality_claim_created": false,
+    "query_id": "manuals_scans_q09",
+    "review_required": true,
+    "rights_clearance_claim_created": false,
+    "scan_completeness_claim_created": false,
+    "schema_version": "seed_batch_candidate_summary.v0",
+    "source_family": "wayback_cdx_metadata",
+    "source_locator": {
+      "descriptor_ref": "fixture://wayback_cdx_metadata/seed_manuals_scans_09_mac_os_8_printer_setup_manual_stylewriter",
+      "locator_kind": "fixture_metadata_descriptor"
+    },
+    "suppressions": [
+      "wrong_platform",
+      "wrong_model",
+      "unrelated_modern_documentation"
+    ],
+    "title": "Mac OS 8 printer setup manual StyleWriter fixture metadata lead"
+  },
+  {
+    "accepted_truth": false,
+    "applied_suppressions": [
+      "wrong_version",
+      "executable_download",
+      "software_installer_result"
+    ],
+    "batch_id": "seed_batch_manuals_scans_00",
+    "blocked_actions": [
+      "download",
+      "fetch_file",
+      "ocr",
+      "extract",
+      "promote",
+      "claim_rights_clearance"
+    ],
+    "candidate_id": "seed_manuals_scans_manuals_scans_q10_candidate",
+    "confidence_label": "medium",
+    "domain_id": "manuals_docs_scans",
+    "fixture_derived": true,
+    "ocr_quality_claim_created": false,
+    "query_id": "manuals_scans_q10",
+    "review_required": true,
+    "rights_clearance_claim_created": false,
+    "scan_completeness_claim_created": false,
+    "schema_version": "seed_batch_candidate_summary.v0",
+    "source_family": "manual_source_pack",
+    "source_locator": {
+      "descriptor_ref": "fixture://manual_source_pack/seed_manuals_scans_10_directx_sdk_june_2010_documentation",
+      "locator_kind": "fixture_metadata_descriptor"
+    },
+    "suppressions": [
+      "wrong_version",
+      "software_installer_result",
+      "executable_download"
+    ],
+    "title": "DirectX SDK June 2010 documentation fixture metadata lead"
+  },
+  {
+    "accepted_truth": false,
+    "applied_suppressions": [
+      "wrong_platform",
+      "software_installer_result",
+      "unrelated_modern_documentation"
+    ],
+    "batch_id": "seed_batch_manuals_scans_00",
+    "blocked_actions": [
+      "download",
+      "fetch_file",
+      "ocr",
+      "extract",
+      "promote",
+      "claim_rights_clearance"
+    ],
+    "candidate_id": "seed_manuals_scans_manuals_scans_q11_candidate",
+    "confidence_label": "medium",
+    "domain_id": "manuals_docs_scans",
+    "fixture_derived": true,
+    "ocr_quality_claim_created": false,
+    "query_id": "manuals_scans_q11",
+    "review_required": true,
+    "rights_clearance_claim_created": false,
+    "scan_completeness_claim_created": false,
+    "schema_version": "seed_batch_candidate_summary.v0",
+    "source_family": "open_library_metadata",
+    "source_locator": {
+      "descriptor_ref": "fixture://open_library_metadata/seed_manuals_scans_11_windows_7_compatibility_guide_portable_software",
+      "locator_kind": "fixture_metadata_descriptor"
+    },
+    "suppressions": [
+      "wrong_platform",
+      "software_installer_result",
+      "unrelated_modern_documentation"
+    ],
+    "title": "Windows 7 compatibility guide portable software fixture metadata lead"
+  },
+  {
+    "accepted_truth": false,
+    "applied_suppressions": [
+      "wrong_platform",
+      "software_installer_result"
+    ],
+    "batch_id": "seed_batch_manuals_scans_00",
+    "blocked_actions": [
+      "download",
+      "fetch_file",
+      "ocr",
+      "extract",
+      "promote",
+      "claim_rights_clearance"
+    ],
+    "candidate_id": "seed_manuals_scans_manuals_scans_q12_candidate",
+    "confidence_label": "medium",
+    "domain_id": "manuals_docs_scans",
+    "fixture_derived": true,
+    "ocr_quality_claim_created": false,
+    "query_id": "manuals_scans_q12",
+    "review_required": true,
+    "rights_clearance_claim_created": false,
+    "scan_completeness_claim_created": false,
+    "schema_version": "seed_batch_candidate_summary.v0",
+    "source_family": "internet_archive_metadata",
+    "source_locator": {
+      "locator_kind": "archive_org_details_page",
+      "url": "https://archive.org/details/seed_manuals_scans_12_sound_blaster_live_user_manual_windows_98"
+    },
+    "suppressions": [
+      "wrong_platform",
+      "wrong_model",
+      "software_installer_result"
+    ],
+    "title": "Sound Blaster Live user manual Windows 98 fixture metadata lead"
+  },
+  {
+    "accepted_truth": false,
+    "applied_suppressions": [
+      "wrong_platform",
+      "wrong_version",
+      "software_installer_result"
+    ],
+    "batch_id": "seed_batch_manuals_scans_00",
+    "blocked_actions": [
+      "download",
+      "fetch_file",
+      "ocr",
+      "extract",
+      "promote",
+      "claim_rights_clearance"
+    ],
+    "candidate_id": "seed_manuals_scans_manuals_scans_q13_candidate",
+    "confidence_label": "low",
+    "domain_id": "manuals_docs_scans",
+    "fixture_derived": true,
+    "ocr_quality_claim_created": false,
+    "query_id": "manuals_scans_q13",
+    "review_required": true,
+    "rights_clearance_claim_created": false,
+    "scan_completeness_claim_created": false,
+    "schema_version": "seed_batch_candidate_summary.v0",
+    "source_family": "wayback_cdx_metadata",
+    "source_locator": {
+      "descriptor_ref": "fixture://wayback_cdx_metadata/seed_manuals_scans_13_quicktime_7_deployment_guide_windows_xp",
+      "locator_kind": "fixture_metadata_descriptor"
+    },
+    "suppressions": [
+      "wrong_version",
+      "wrong_platform",
+      "software_installer_result"
+    ],
+    "title": "QuickTime 7 deployment guide Windows XP fixture metadata lead"
+  },
+  {
+    "accepted_truth": false,
+    "applied_suppressions": [
+      "wrong_version",
+      "executable_download",
+      "software_installer_result"
+    ],
+    "batch_id": "seed_batch_manuals_scans_00",
+    "blocked_actions": [
+      "download",
+      "fetch_file",
+      "ocr",
+      "extract",
+      "promote",
+      "claim_rights_clearance"
+    ],
+    "candidate_id": "seed_manuals_scans_manuals_scans_q14_candidate",
+    "confidence_label": "low",
+    "domain_id": "manuals_docs_scans",
+    "fixture_derived": true,
+    "ocr_quality_claim_created": false,
+    "query_id": "manuals_scans_q14",
+    "review_required": true,
+    "rights_clearance_claim_created": false,
+    "scan_completeness_claim_created": false,
+    "schema_version": "seed_batch_candidate_summary.v0",
+    "source_family": "manual_source_pack",
+    "source_locator": {
+      "descriptor_ref": "fixture://manual_source_pack/seed_manuals_scans_14_visual_c_2010_redistributable_documentation",
+      "locator_kind": "fixture_metadata_descriptor"
+    },
+    "suppressions": [
+      "wrong_version",
+      "software_installer_result",
+      "executable_download"
+    ],
+    "title": "Visual C++ 2010 redistributable documentation fixture metadata lead"
+  },
+  {
+    "accepted_truth": false,
+    "applied_suppressions": [
+      "wrong_manual_type",
+      "source_only_mention"
+    ],
+    "batch_id": "seed_batch_manuals_scans_00",
+    "blocked_actions": [
+      "download",
+      "fetch_file",
+      "ocr",
+      "extract",
+      "promote",
+      "claim_rights_clearance"
+    ],
+    "candidate_id": "seed_manuals_scans_manuals_scans_q15_candidate",
+    "confidence_label": "low",
+    "domain_id": "manuals_docs_scans",
+    "fixture_derived": true,
+    "ocr_quality_claim_created": false,
+    "query_id": "manuals_scans_q15",
+    "review_required": true,
+    "rights_clearance_claim_created": false,
+    "scan_completeness_claim_created": false,
+    "schema_version": "seed_batch_candidate_summary.v0",
+    "source_family": "open_library_metadata",
+    "source_locator": {
+      "descriptor_ref": "fixture://open_library_metadata/seed_manuals_scans_15_apple_printer_driver_installation_manual",
+      "locator_kind": "fixture_metadata_descriptor"
+    },
+    "suppressions": [
+      "wrong_manual_type",
+      "software_installer_result",
+      "source_only_mention"
+    ],
+    "title": "Apple printer driver installation manual fixture metadata lead"
+  },
+  {
+    "accepted_truth": false,
+    "applied_suppressions": [
+      "scan_completeness_unknown",
+      "ocr_quality_unknown",
+      "generic_search_result"
+    ],
+    "batch_id": "seed_batch_manuals_scans_00",
+    "blocked_actions": [
+      "download",
+      "fetch_file",
+      "ocr",
+      "extract",
+      "promote",
+      "claim_rights_clearance"
+    ],
+    "candidate_id": "seed_manuals_scans_manuals_scans_q16_candidate",
+    "confidence_label": "low",
+    "domain_id": "manuals_docs_scans",
+    "fixture_derived": true,
+    "ocr_quality_claim_created": false,
+    "query_id": "manuals_scans_q16",
+    "review_required": true,
+    "rights_clearance_claim_created": false,
+    "scan_completeness_claim_created": false,
+    "schema_version": "seed_batch_candidate_summary.v0",
+    "source_family": "manual_source_pack",
+    "source_locator": {
+      "descriptor_ref": "fixture://manual_source_pack/seed_manuals_scans_16_legacy_software_installation_notes_scanned_manual",
+      "locator_kind": "fixture_metadata_descriptor"
+    },
+    "suppressions": [
+      "generic_search_result",
+      "ocr_quality_unknown",
+      "scan_completeness_unknown"
+    ],
+    "title": "legacy software installation notes scanned manual fixture metadata lead"
+  }
+]

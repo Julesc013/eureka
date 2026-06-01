@@ -1,0 +1,620 @@
+{
+  "accepted_truth_created": false,
+  "public_index_mutated": false,
+  "queries": [
+    {
+      "accepted_truth": false,
+      "batch_id": "seed_batch_manuals_scans_00",
+      "domain_id": "manuals_docs_scans",
+      "expected_candidate_kinds": [
+        "source_metadata_candidate",
+        "document_metadata_candidate",
+        "source_lead",
+        "review_seed"
+      ],
+      "expected_source_families": [
+        "internet_archive_metadata",
+        "open_library_metadata",
+        "wikidata_metadata",
+        "wayback_cdx_metadata",
+        "manual_source_pack"
+      ],
+      "intent": "find_manual_or_scan",
+      "known_uncertainties": [
+        "exact model",
+        "manual type",
+        "scan completeness",
+        "rights status"
+      ],
+      "promoted_terms": [
+        "JVC",
+        "D-VHS",
+        "D-Theater",
+        "manual"
+      ],
+      "query_id": "manuals_scans_q01",
+      "raw_query": "JVC D-VHS D-Theater manual",
+      "review_priority": 1,
+      "review_required": true,
+      "schema_version": "seed_batch_query.v0",
+      "suppressions": [
+        "wrong_model",
+        "wrong_manual_type",
+        "scan_completeness_unknown"
+      ]
+    },
+    {
+      "accepted_truth": false,
+      "batch_id": "seed_batch_manuals_scans_00",
+      "domain_id": "manuals_docs_scans",
+      "expected_candidate_kinds": [
+        "source_metadata_candidate",
+        "document_metadata_candidate",
+        "source_lead",
+        "review_seed"
+      ],
+      "expected_source_families": [
+        "internet_archive_metadata",
+        "open_library_metadata",
+        "wikidata_metadata",
+        "wayback_cdx_metadata",
+        "manual_source_pack"
+      ],
+      "intent": "find_user_guide",
+      "known_uncertainties": [
+        "model family",
+        "user guide identity",
+        "OCR quality"
+      ],
+      "promoted_terms": [
+        "JVC",
+        "D-Theater",
+        "user guide"
+      ],
+      "query_id": "manuals_scans_q02",
+      "raw_query": "JVC D-Theater user guide",
+      "review_priority": 1,
+      "review_required": true,
+      "schema_version": "seed_batch_query.v0",
+      "suppressions": [
+        "wrong_model",
+        "wrong_manual_type",
+        "ocr_quality_unknown"
+      ]
+    },
+    {
+      "accepted_truth": false,
+      "batch_id": "seed_batch_manuals_scans_00",
+      "domain_id": "manuals_docs_scans",
+      "expected_candidate_kinds": [
+        "source_metadata_candidate",
+        "document_metadata_candidate",
+        "source_lead",
+        "review_seed"
+      ],
+      "expected_source_families": [
+        "internet_archive_metadata",
+        "open_library_metadata",
+        "wikidata_metadata",
+        "wayback_cdx_metadata",
+        "manual_source_pack"
+      ],
+      "intent": "find_service_manual",
+      "known_uncertainties": [
+        "service manual model",
+        "rights status",
+        "source provenance"
+      ],
+      "promoted_terms": [
+        "D-VHS",
+        "service manual"
+      ],
+      "query_id": "manuals_scans_q03",
+      "raw_query": "D-VHS service manual",
+      "review_priority": 1,
+      "review_required": true,
+      "schema_version": "seed_batch_query.v0",
+      "suppressions": [
+        "wrong_model",
+        "wrong_manual_type",
+        "rights_claim_missing"
+      ]
+    },
+    {
+      "accepted_truth": false,
+      "batch_id": "seed_batch_manuals_scans_00",
+      "domain_id": "manuals_docs_scans",
+      "expected_candidate_kinds": [
+        "source_metadata_candidate",
+        "document_metadata_candidate",
+        "source_lead",
+        "review_seed"
+      ],
+      "expected_source_families": [
+        "internet_archive_metadata",
+        "open_library_metadata",
+        "wikidata_metadata",
+        "wayback_cdx_metadata",
+        "manual_source_pack"
+      ],
+      "intent": "find_technical_manual",
+      "known_uncertainties": [
+        "technical manual identity",
+        "scan completeness"
+      ],
+      "promoted_terms": [
+        "MUSE",
+        "Hi-Vision",
+        "technical manual"
+      ],
+      "query_id": "manuals_scans_q04",
+      "raw_query": "MUSE Hi-Vision technical manual",
+      "review_priority": 1,
+      "review_required": true,
+      "schema_version": "seed_batch_query.v0",
+      "suppressions": [
+        "wrong_manual_type",
+        "generic_search_result",
+        "scan_completeness_unknown"
+      ]
+    },
+    {
+      "accepted_truth": false,
+      "batch_id": "seed_batch_manuals_scans_00",
+      "domain_id": "manuals_docs_scans",
+      "expected_candidate_kinds": [
+        "source_metadata_candidate",
+        "document_metadata_candidate",
+        "source_lead",
+        "review_seed"
+      ],
+      "expected_source_families": [
+        "internet_archive_metadata",
+        "open_library_metadata",
+        "wikidata_metadata",
+        "wayback_cdx_metadata",
+        "manual_source_pack"
+      ],
+      "intent": "find_equipment_manual",
+      "known_uncertainties": [
+        "equipment model",
+        "document title variant"
+      ],
+      "promoted_terms": [
+        "Sony",
+        "HDVS",
+        "equipment manual"
+      ],
+      "query_id": "manuals_scans_q05",
+      "raw_query": "Sony HDVS equipment manual",
+      "review_priority": 1,
+      "review_required": true,
+      "schema_version": "seed_batch_query.v0",
+      "suppressions": [
+        "wrong_model",
+        "wrong_manual_type",
+        "low_metadata_match"
+      ]
+    },
+    {
+      "accepted_truth": false,
+      "batch_id": "seed_batch_manuals_scans_00",
+      "domain_id": "manuals_docs_scans",
+      "expected_candidate_kinds": [
+        "source_metadata_candidate",
+        "document_metadata_candidate",
+        "source_lead",
+        "review_seed"
+      ],
+      "expected_source_families": [
+        "internet_archive_metadata",
+        "open_library_metadata",
+        "wikidata_metadata",
+        "wayback_cdx_metadata",
+        "manual_source_pack"
+      ],
+      "intent": "find_demonstration_manual",
+      "known_uncertainties": [
+        "document specificity",
+        "demonstration system"
+      ],
+      "promoted_terms": [
+        "early HDTV",
+        "demonstration manual"
+      ],
+      "query_id": "manuals_scans_q06",
+      "raw_query": "early HDTV demonstration manual",
+      "review_priority": 2,
+      "review_required": true,
+      "schema_version": "seed_batch_query.v0",
+      "suppressions": [
+        "generic_search_result",
+        "source_only_mention",
+        "low_metadata_match"
+      ]
+    },
+    {
+      "accepted_truth": false,
+      "batch_id": "seed_batch_manuals_scans_00",
+      "domain_id": "manuals_docs_scans",
+      "expected_candidate_kinds": [
+        "source_metadata_candidate",
+        "document_metadata_candidate",
+        "source_lead",
+        "review_seed"
+      ],
+      "expected_source_families": [
+        "internet_archive_metadata",
+        "open_library_metadata",
+        "wikidata_metadata",
+        "wayback_cdx_metadata",
+        "manual_source_pack"
+      ],
+      "intent": "find_user_guide",
+      "known_uncertainties": [
+        "printer model",
+        "Mac OS context"
+      ],
+      "promoted_terms": [
+        "StyleWriter 2500",
+        "user guide"
+      ],
+      "query_id": "manuals_scans_q07",
+      "raw_query": "StyleWriter 2500 user guide",
+      "review_priority": 1,
+      "review_required": true,
+      "schema_version": "seed_batch_query.v0",
+      "suppressions": [
+        "wrong_model",
+        "wrong_manual_type",
+        "wrong_platform"
+      ]
+    },
+    {
+      "accepted_truth": false,
+      "batch_id": "seed_batch_manuals_scans_00",
+      "domain_id": "manuals_docs_scans",
+      "expected_candidate_kinds": [
+        "source_metadata_candidate",
+        "document_metadata_candidate",
+        "source_lead",
+        "review_seed"
+      ],
+      "expected_source_families": [
+        "internet_archive_metadata",
+        "open_library_metadata",
+        "wikidata_metadata",
+        "wayback_cdx_metadata",
+        "manual_source_pack"
+      ],
+      "intent": "find_service_manual",
+      "known_uncertainties": [
+        "service manual availability",
+        "source provenance"
+      ],
+      "promoted_terms": [
+        "StyleWriter 2500",
+        "service manual"
+      ],
+      "query_id": "manuals_scans_q08",
+      "raw_query": "StyleWriter 2500 service manual",
+      "review_priority": 1,
+      "review_required": true,
+      "schema_version": "seed_batch_query.v0",
+      "suppressions": [
+        "wrong_model",
+        "wrong_manual_type",
+        "rights_claim_missing"
+      ]
+    },
+    {
+      "accepted_truth": false,
+      "batch_id": "seed_batch_manuals_scans_00",
+      "domain_id": "manuals_docs_scans",
+      "expected_candidate_kinds": [
+        "source_metadata_candidate",
+        "document_metadata_candidate",
+        "source_lead",
+        "review_seed"
+      ],
+      "expected_source_families": [
+        "internet_archive_metadata",
+        "open_library_metadata",
+        "wikidata_metadata",
+        "wayback_cdx_metadata",
+        "manual_source_pack"
+      ],
+      "intent": "find_setup_manual",
+      "known_uncertainties": [
+        "platform version",
+        "printer model mapping"
+      ],
+      "promoted_terms": [
+        "Mac OS 8",
+        "printer setup",
+        "StyleWriter"
+      ],
+      "query_id": "manuals_scans_q09",
+      "raw_query": "Mac OS 8 printer setup manual StyleWriter",
+      "review_priority": 2,
+      "review_required": true,
+      "schema_version": "seed_batch_query.v0",
+      "suppressions": [
+        "wrong_platform",
+        "wrong_model",
+        "unrelated_modern_documentation"
+      ]
+    },
+    {
+      "accepted_truth": false,
+      "batch_id": "seed_batch_manuals_scans_00",
+      "domain_id": "manuals_docs_scans",
+      "expected_candidate_kinds": [
+        "source_metadata_candidate",
+        "document_metadata_candidate",
+        "source_lead",
+        "review_seed"
+      ],
+      "expected_source_families": [
+        "internet_archive_metadata",
+        "open_library_metadata",
+        "wikidata_metadata",
+        "wayback_cdx_metadata",
+        "manual_source_pack"
+      ],
+      "intent": "find_software_documentation",
+      "known_uncertainties": [
+        "documentation bundle identity",
+        "installer vs documentation result"
+      ],
+      "promoted_terms": [
+        "DirectX SDK",
+        "June 2010",
+        "documentation"
+      ],
+      "query_id": "manuals_scans_q10",
+      "raw_query": "DirectX SDK June 2010 documentation",
+      "review_priority": 2,
+      "review_required": true,
+      "schema_version": "seed_batch_query.v0",
+      "suppressions": [
+        "wrong_version",
+        "software_installer_result",
+        "executable_download"
+      ]
+    },
+    {
+      "accepted_truth": false,
+      "batch_id": "seed_batch_manuals_scans_00",
+      "domain_id": "manuals_docs_scans",
+      "expected_candidate_kinds": [
+        "source_metadata_candidate",
+        "document_metadata_candidate",
+        "source_lead",
+        "review_seed"
+      ],
+      "expected_source_families": [
+        "internet_archive_metadata",
+        "open_library_metadata",
+        "wikidata_metadata",
+        "wayback_cdx_metadata",
+        "manual_source_pack"
+      ],
+      "intent": "find_compatibility_guide",
+      "known_uncertainties": [
+        "guide provenance",
+        "software list scope"
+      ],
+      "promoted_terms": [
+        "Windows 7",
+        "compatibility guide",
+        "portable software"
+      ],
+      "query_id": "manuals_scans_q11",
+      "raw_query": "Windows 7 compatibility guide portable software",
+      "review_priority": 2,
+      "review_required": true,
+      "schema_version": "seed_batch_query.v0",
+      "suppressions": [
+        "wrong_platform",
+        "software_installer_result",
+        "unrelated_modern_documentation"
+      ]
+    },
+    {
+      "accepted_truth": false,
+      "batch_id": "seed_batch_manuals_scans_00",
+      "domain_id": "manuals_docs_scans",
+      "expected_candidate_kinds": [
+        "source_metadata_candidate",
+        "document_metadata_candidate",
+        "source_lead",
+        "review_seed"
+      ],
+      "expected_source_families": [
+        "internet_archive_metadata",
+        "open_library_metadata",
+        "wikidata_metadata",
+        "wayback_cdx_metadata",
+        "manual_source_pack"
+      ],
+      "intent": "find_user_manual",
+      "known_uncertainties": [
+        "hardware revision",
+        "Windows 98 support context"
+      ],
+      "promoted_terms": [
+        "Sound Blaster Live",
+        "user manual",
+        "Windows 98"
+      ],
+      "query_id": "manuals_scans_q12",
+      "raw_query": "Sound Blaster Live user manual Windows 98",
+      "review_priority": 2,
+      "review_required": true,
+      "schema_version": "seed_batch_query.v0",
+      "suppressions": [
+        "wrong_platform",
+        "wrong_model",
+        "software_installer_result"
+      ]
+    },
+    {
+      "accepted_truth": false,
+      "batch_id": "seed_batch_manuals_scans_00",
+      "domain_id": "manuals_docs_scans",
+      "expected_candidate_kinds": [
+        "source_metadata_candidate",
+        "document_metadata_candidate",
+        "source_lead",
+        "review_seed"
+      ],
+      "expected_source_families": [
+        "internet_archive_metadata",
+        "open_library_metadata",
+        "wikidata_metadata",
+        "wayback_cdx_metadata",
+        "manual_source_pack"
+      ],
+      "intent": "find_deployment_guide",
+      "known_uncertainties": [
+        "deployment guide identity",
+        "platform support"
+      ],
+      "promoted_terms": [
+        "QuickTime 7",
+        "deployment guide",
+        "Windows XP"
+      ],
+      "query_id": "manuals_scans_q13",
+      "raw_query": "QuickTime 7 deployment guide Windows XP",
+      "review_priority": 2,
+      "review_required": true,
+      "schema_version": "seed_batch_query.v0",
+      "suppressions": [
+        "wrong_version",
+        "wrong_platform",
+        "software_installer_result"
+      ]
+    },
+    {
+      "accepted_truth": false,
+      "batch_id": "seed_batch_manuals_scans_00",
+      "domain_id": "manuals_docs_scans",
+      "expected_candidate_kinds": [
+        "source_metadata_candidate",
+        "document_metadata_candidate",
+        "source_lead",
+        "review_seed"
+      ],
+      "expected_source_families": [
+        "internet_archive_metadata",
+        "open_library_metadata",
+        "wikidata_metadata",
+        "wayback_cdx_metadata",
+        "manual_source_pack"
+      ],
+      "intent": "find_software_documentation",
+      "known_uncertainties": [
+        "runtime documentation identity",
+        "installer result suppression"
+      ],
+      "promoted_terms": [
+        "Visual C++ 2010",
+        "redistributable",
+        "documentation"
+      ],
+      "query_id": "manuals_scans_q14",
+      "raw_query": "Visual C++ 2010 redistributable documentation",
+      "review_priority": 2,
+      "review_required": true,
+      "schema_version": "seed_batch_query.v0",
+      "suppressions": [
+        "wrong_version",
+        "software_installer_result",
+        "executable_download"
+      ]
+    },
+    {
+      "accepted_truth": false,
+      "batch_id": "seed_batch_manuals_scans_00",
+      "domain_id": "manuals_docs_scans",
+      "expected_candidate_kinds": [
+        "source_metadata_candidate",
+        "document_metadata_candidate",
+        "source_lead",
+        "review_seed"
+      ],
+      "expected_source_families": [
+        "internet_archive_metadata",
+        "open_library_metadata",
+        "wikidata_metadata",
+        "wayback_cdx_metadata",
+        "manual_source_pack"
+      ],
+      "intent": "find_installation_manual",
+      "known_uncertainties": [
+        "printer family",
+        "driver version",
+        "document source"
+      ],
+      "promoted_terms": [
+        "Apple",
+        "printer driver",
+        "installation manual"
+      ],
+      "query_id": "manuals_scans_q15",
+      "raw_query": "Apple printer driver installation manual",
+      "review_priority": 2,
+      "review_required": true,
+      "schema_version": "seed_batch_query.v0",
+      "suppressions": [
+        "wrong_manual_type",
+        "software_installer_result",
+        "source_only_mention"
+      ]
+    },
+    {
+      "accepted_truth": false,
+      "batch_id": "seed_batch_manuals_scans_00",
+      "domain_id": "manuals_docs_scans",
+      "expected_candidate_kinds": [
+        "source_metadata_candidate",
+        "document_metadata_candidate",
+        "source_lead",
+        "review_seed"
+      ],
+      "expected_source_families": [
+        "internet_archive_metadata",
+        "open_library_metadata",
+        "wikidata_metadata",
+        "wayback_cdx_metadata",
+        "manual_source_pack"
+      ],
+      "intent": "find_scanned_installation_notes",
+      "known_uncertainties": [
+        "software identity",
+        "scan completeness",
+        "OCR quality"
+      ],
+      "promoted_terms": [
+        "legacy software",
+        "installation notes",
+        "scanned manual"
+      ],
+      "query_id": "manuals_scans_q16",
+      "raw_query": "legacy software installation notes scanned manual",
+      "review_priority": 3,
+      "review_required": true,
+      "schema_version": "seed_batch_query.v0",
+      "suppressions": [
+        "generic_search_result",
+        "ocr_quality_unknown",
+        "scan_completeness_unknown"
+      ]
+    }
+  ],
+  "reviewed_index_mutated": false,
+  "schema_version": "seed_batch_manuals_scans_query_matrix.v0",
+  "task": "SEED-BATCH-MANUALS-SCANS-00"
+}

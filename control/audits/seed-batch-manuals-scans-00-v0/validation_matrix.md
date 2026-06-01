@@ -1,0 +1,7 @@
+# Validation Matrix
+
+- focused_validation_required: true
+- full_discovery: NOT_RUN_BY_POLICY
+- schema_version: seed_batch_manuals_scans_validation_matrix.v0
+- status: pass
+- task: SEED-BATCH-MANUALS-SCANS-00

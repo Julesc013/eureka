@@ -1,0 +1,51 @@
+{
+  "accepted_truth": false,
+  "accepted_truth_created": false,
+  "deployment_performed": false,
+  "download_performed": false,
+  "extraction_executed": false,
+  "file_fetch_performed": false,
+  "local_apply_handoff_refs": [
+    "batch_local_apply_handoff:3ee78251349cb8eb"
+  ],
+  "master_index_mutated": false,
+  "model_provider_used": false,
+  "ocr_performed": false,
+  "ocr_quality_claim_created": false,
+  "operator_instance_mutated": false,
+  "production_readiness_claimed": false,
+  "promotion_preview_refs": [
+    "batch_promotion_preview:12a680a93f7901df",
+    "batch_promotion_preview:e3cdd375db40d43c",
+    "batch_promotion_preview:827f2f6766d244ce",
+    "batch_promotion_preview:26f84aa4639b6a2a",
+    "batch_promotion_preview:9daf95bbf2c0a10b",
+    "batch_promotion_preview:01efbddc981c1190",
+    "batch_promotion_preview:7d2c9afd6c4de42b",
+    "batch_promotion_preview:86bcce809d8f651a",
+    "batch_promotion_preview:82c8616ad31dcbf6",
+    "batch_promotion_preview:9374eb9c80921628",
+    "batch_promotion_preview:2599b49dbbcb8d1b",
+    "batch_promotion_preview:a1c7ea683021e5fa",
+    "batch_promotion_preview:149e4013cfed5c83",
+    "batch_promotion_preview:baa390d8cdfe6f4e",
+    "batch_promotion_preview:f325342f04241bbf",
+    "batch_promotion_preview:694a006d21426f79"
+  ],
+  "public_index_mutated": false,
+  "public_launch_readiness_claimed": false,
+  "public_mutation_enabled": false,
+  "raw_live_response_committed": false,
+  "review_batch_refs": [
+    "review_batch:a1aadfe9fee7a5eb"
+  ],
+  "review_required": true,
+  "reviewed_index_mutated": false,
+  "rights_clearance_claim_created": false,
+  "scan_completeness_claim_created": false,
+  "schema_version": "seed_batch_manuals_scans_review_matrix.v0",
+  "snapshot_refresh_handoff_refs": [
+    "batch_snapshot_refresh_handoff:3ee78251349cb8eb"
+  ],
+  "task": "SEED-BATCH-MANUALS-SCANS-00"
+}

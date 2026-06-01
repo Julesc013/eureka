@@ -1,0 +1,36 @@
+{
+  "accepted_truth": false,
+  "accepted_truth_created": false,
+  "batch_id": "seed_batch_manuals_scans_00",
+  "candidate_count": 16,
+  "created_at": "2026-06-02T00:00:00Z",
+  "deployment_performed": false,
+  "domain_id": "manuals_docs_scans",
+  "download_performed": false,
+  "extraction_executed": false,
+  "file_fetch_performed": false,
+  "master_index_mutated": false,
+  "model_provider_used": false,
+  "ocr_performed": false,
+  "ocr_quality_claim_created": false,
+  "operator_instance_mutated": false,
+  "production_readiness_claimed": false,
+  "public_alpha_reassess_id": "public_alpha_reassess_input:4402c0855add6cc9",
+  "public_index_mutated": false,
+  "public_launch_readiness_claimed": false,
+  "public_mutation_enabled": false,
+  "query_count": 16,
+  "raw_live_response_committed": false,
+  "reassess_note": "Use after review/local-apply/snapshot gates; this seed batch adds document-domain discovery but is not launch readiness.",
+  "review_batch_refs": [
+    "review_batch:a1aadfe9fee7a5eb"
+  ],
+  "review_required": true,
+  "reviewed_index_mutated": false,
+  "rights_clearance_claim_created": false,
+  "scan_completeness_claim_created": false,
+  "schema_version": "seed_batch_public_alpha_reassess_input.v0",
+  "snapshot_refresh_handoff_refs": [
+    "batch_snapshot_refresh_handoff:3ee78251349cb8eb"
+  ]
+}

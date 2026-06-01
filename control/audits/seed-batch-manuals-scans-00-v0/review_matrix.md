@@ -1,0 +1,24 @@
+# Review Matrix
+
+- accepted_truth: false
+- accepted_truth_created: false
+- deployment_performed: false
+- download_performed: false
+- extraction_executed: false
+- file_fetch_performed: false
+- master_index_mutated: false
+- model_provider_used: false
+- ocr_performed: false
+- ocr_quality_claim_created: false
+- operator_instance_mutated: false
+- production_readiness_claimed: false
+- public_index_mutated: false
+- public_launch_readiness_claimed: false
+- public_mutation_enabled: false
+- raw_live_response_committed: false
+- review_required: true
+- reviewed_index_mutated: false
+- rights_clearance_claim_created: false
+- scan_completeness_claim_created: false
+- schema_version: seed_batch_manuals_scans_review_matrix.v0
+- task: SEED-BATCH-MANUALS-SCANS-00

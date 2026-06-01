@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (5571 chars, 1393 approximate tokens)
+- `.aide/context/latest-task-packet.md` (5563 chars, 1391 approximate tokens)
 
 ## Context Packet Reference
 
@@ -33,31 +33,31 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Changed Files Summary
 
+- allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/PUBLIC-ALPHA-REASSESS-03/README.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/PUBLIC-ALPHA-REASSESS-04` (??; matches active task allowed path)
-- allowed: `.aide/queue/SEED-BATCH-DRIVER-SUPPORT-00` (??; matches active task allowed path)
-- allowed: `.aide/queue/SEED-BATCH-MANUALS-SCANS-00` (??; matches active task allowed path)
-- allowed: `.aide/queue/SNAPSHOT-REFRESH-04` (??; matches active task allowed path)
+- allowed: `.aide/queue/SEED-BATCH-MANUALS-SCANS-00/README.md` (M; matches active task allowed path)
 - allowed: `.aide/queue/index.yaml` (M; matches active task allowed path)
-- allowed: `contracts/publication/public_alpha_limited_reviewed_record_reassess.v0.json` (??; matches active task allowed path)
-- allowed: `control/audits/public-alpha-reassess-03-v0` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_reassess_03_boundary_report.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_reassess_03_candidate_usefulness_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_reassess_03_failure_repair_log.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_reassess_03_input_state.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_reassess_03_launch_blocker_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_reassess_03_limited_reviewed_record_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_reassess_03_need_absence_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_reassess_03_next_task_decision.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_reassess_03_next_work_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_reassess_03_public_search_view_model_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_reassess_03_query_coverage_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_reassess_03_result.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_reassess_03_reviewed_record_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_reassess_03_route_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_reassess_03_smoke_result.json` (??; matches active task allowed path)
-- additional changed paths omitted from compact packet: 34; see task evidence changed-files report
+- allowed: `control/audits/seed-batch-manuals-scans-00-v0` (??; matches active task allowed path)
+- allowed: `control/inventory/seed_batch_manuals_scans_boundary_report.json` (??; matches active task allowed path)
+- allowed: `control/inventory/seed_batch_manuals_scans_candidate_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/seed_batch_manuals_scans_failure_repair_log.json` (??; matches active task allowed path)
+- allowed: `control/inventory/seed_batch_manuals_scans_input_state.json` (??; matches active task allowed path)
+- allowed: `control/inventory/seed_batch_manuals_scans_need_absence_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/seed_batch_manuals_scans_next_task_decision.json` (??; matches active task allowed path)
+- allowed: `control/inventory/seed_batch_manuals_scans_public_alpha_reassess_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/seed_batch_manuals_scans_query_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/seed_batch_manuals_scans_result.json` (??; matches active task allowed path)
+- allowed: `control/inventory/seed_batch_manuals_scans_review_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/seed_batch_manuals_scans_scout_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/seed_batch_manuals_scans_smoke_result.json` (??; matches active task allowed path)
+- allowed: `control/inventory/seed_batch_manuals_scans_snapshot_handoff_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/seed_batch_manuals_scans_source_plan_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/seed_batch_manuals_scans_suppression_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/seed_batch_manuals_scans_validation_matrix.json` (??; matches active task allowed path)
+- allowed: `control/policies/generated_artifact_policy.json` (M; matches active task allowed path)
+- allowed: `control/policies/seed_batch_manuals_scans_candidate_policy.json` (??; matches active task allowed path)
+- allowed: `control/policies/seed_batch_manuals_scans_live_metadata_policy.json` (??; matches active task allowed path)
+- additional changed paths omitted from compact packet: 31; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -67,8 +67,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 6977
-- approx_tokens: 1745
+- chars: 6999
+- approx_tokens: 1750
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

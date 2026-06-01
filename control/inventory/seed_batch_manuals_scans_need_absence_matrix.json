@@ -1,0 +1,236 @@
+{
+  "absence_summaries": [
+    {
+      "absence_id": "manuals_scans_absence:f1c5ade03e859084",
+      "absence_kind": "reviewed_truth_not_created",
+      "accepted_truth": false,
+      "review_required": true,
+      "schema_version": "seed_batch_absence_summary.v0",
+      "summary": "Fixture candidates exist, but reviewed truth and public index records are intentionally absent."
+    },
+    {
+      "absence_id": "manuals_scans_absence:4a34ac6be3d7b6af",
+      "absence_kind": "scan_quality_not_verified",
+      "accepted_truth": false,
+      "review_required": true,
+      "schema_version": "seed_batch_absence_summary.v0",
+      "summary": "No file fetch, OCR, scan completeness review, or rights-clearance review was performed."
+    }
+  ],
+  "absence_summary_count": 2,
+  "accepted_truth_created": false,
+  "deployment_performed": false,
+  "download_performed": false,
+  "extraction_executed": false,
+  "file_fetch_performed": false,
+  "known_need_count": 16,
+  "known_needs": [
+    {
+      "accepted_truth": false,
+      "candidate_refs": [
+        "seed_manuals_scans_manuals_scans_q01_candidate"
+      ],
+      "need_id": "manuals_scans_known_need:693cc3c2e8bc56b5",
+      "need_kind": "document_identity_review",
+      "query_id": "manuals_scans_q01",
+      "review_required": true,
+      "schema_version": "seed_batch_known_need.v0",
+      "summary": "Operator must verify document identity, model/version fit, rights posture, scan completeness, and OCR quality before promotion."
+    },
+    {
+      "accepted_truth": false,
+      "candidate_refs": [
+        "seed_manuals_scans_manuals_scans_q02_candidate"
+      ],
+      "need_id": "manuals_scans_known_need:7198907907cdb77d",
+      "need_kind": "document_identity_review",
+      "query_id": "manuals_scans_q02",
+      "review_required": true,
+      "schema_version": "seed_batch_known_need.v0",
+      "summary": "Operator must verify document identity, model/version fit, rights posture, scan completeness, and OCR quality before promotion."
+    },
+    {
+      "accepted_truth": false,
+      "candidate_refs": [
+        "seed_manuals_scans_manuals_scans_q03_candidate"
+      ],
+      "need_id": "manuals_scans_known_need:db44466b973f8c91",
+      "need_kind": "document_identity_review",
+      "query_id": "manuals_scans_q03",
+      "review_required": true,
+      "schema_version": "seed_batch_known_need.v0",
+      "summary": "Operator must verify document identity, model/version fit, rights posture, scan completeness, and OCR quality before promotion."
+    },
+    {
+      "accepted_truth": false,
+      "candidate_refs": [
+        "seed_manuals_scans_manuals_scans_q04_candidate"
+      ],
+      "need_id": "manuals_scans_known_need:a4c8a0c69b5baed5",
+      "need_kind": "document_identity_review",
+      "query_id": "manuals_scans_q04",
+      "review_required": true,
+      "schema_version": "seed_batch_known_need.v0",
+      "summary": "Operator must verify document identity, model/version fit, rights posture, scan completeness, and OCR quality before promotion."
+    },
+    {
+      "accepted_truth": false,
+      "candidate_refs": [
+        "seed_manuals_scans_manuals_scans_q05_candidate"
+      ],
+      "need_id": "manuals_scans_known_need:1c252f33f5e92449",
+      "need_kind": "document_identity_review",
+      "query_id": "manuals_scans_q05",
+      "review_required": true,
+      "schema_version": "seed_batch_known_need.v0",
+      "summary": "Operator must verify document identity, model/version fit, rights posture, scan completeness, and OCR quality before promotion."
+    },
+    {
+      "accepted_truth": false,
+      "candidate_refs": [
+        "seed_manuals_scans_manuals_scans_q06_candidate"
+      ],
+      "need_id": "manuals_scans_known_need:dda17f87f28156a9",
+      "need_kind": "document_identity_review",
+      "query_id": "manuals_scans_q06",
+      "review_required": true,
+      "schema_version": "seed_batch_known_need.v0",
+      "summary": "Operator must verify document identity, model/version fit, rights posture, scan completeness, and OCR quality before promotion."
+    },
+    {
+      "accepted_truth": false,
+      "candidate_refs": [
+        "seed_manuals_scans_manuals_scans_q07_candidate"
+      ],
+      "need_id": "manuals_scans_known_need:9936b9da158f3d50",
+      "need_kind": "document_identity_review",
+      "query_id": "manuals_scans_q07",
+      "review_required": true,
+      "schema_version": "seed_batch_known_need.v0",
+      "summary": "Operator must verify document identity, model/version fit, rights posture, scan completeness, and OCR quality before promotion."
+    },
+    {
+      "accepted_truth": false,
+      "candidate_refs": [
+        "seed_manuals_scans_manuals_scans_q08_candidate"
+      ],
+      "need_id": "manuals_scans_known_need:b5ad031cbc776456",
+      "need_kind": "document_identity_review",
+      "query_id": "manuals_scans_q08",
+      "review_required": true,
+      "schema_version": "seed_batch_known_need.v0",
+      "summary": "Operator must verify document identity, model/version fit, rights posture, scan completeness, and OCR quality before promotion."
+    },
+    {
+      "accepted_truth": false,
+      "candidate_refs": [
+        "seed_manuals_scans_manuals_scans_q09_candidate"
+      ],
+      "need_id": "manuals_scans_known_need:7934c7a6b00576d7",
+      "need_kind": "document_identity_review",
+      "query_id": "manuals_scans_q09",
+      "review_required": true,
+      "schema_version": "seed_batch_known_need.v0",
+      "summary": "Operator must verify document identity, model/version fit, rights posture, scan completeness, and OCR quality before promotion."
+    },
+    {
+      "accepted_truth": false,
+      "candidate_refs": [
+        "seed_manuals_scans_manuals_scans_q10_candidate"
+      ],
+      "need_id": "manuals_scans_known_need:010d251c51047f9a",
+      "need_kind": "document_identity_review",
+      "query_id": "manuals_scans_q10",
+      "review_required": true,
+      "schema_version": "seed_batch_known_need.v0",
+      "summary": "Operator must verify document identity, model/version fit, rights posture, scan completeness, and OCR quality before promotion."
+    },
+    {
+      "accepted_truth": false,
+      "candidate_refs": [
+        "seed_manuals_scans_manuals_scans_q11_candidate"
+      ],
+      "need_id": "manuals_scans_known_need:dc8759f6fd0bccab",
+      "need_kind": "document_identity_review",
+      "query_id": "manuals_scans_q11",
+      "review_required": true,
+      "schema_version": "seed_batch_known_need.v0",
+      "summary": "Operator must verify document identity, model/version fit, rights posture, scan completeness, and OCR quality before promotion."
+    },
+    {
+      "accepted_truth": false,
+      "candidate_refs": [
+        "seed_manuals_scans_manuals_scans_q12_candidate"
+      ],
+      "need_id": "manuals_scans_known_need:44f460d8077741f0",
+      "need_kind": "document_identity_review",
+      "query_id": "manuals_scans_q12",
+      "review_required": true,
+      "schema_version": "seed_batch_known_need.v0",
+      "summary": "Operator must verify document identity, model/version fit, rights posture, scan completeness, and OCR quality before promotion."
+    },
+    {
+      "accepted_truth": false,
+      "candidate_refs": [
+        "seed_manuals_scans_manuals_scans_q13_candidate"
+      ],
+      "need_id": "manuals_scans_known_need:8469f5c4ff7b89bf",
+      "need_kind": "document_identity_review",
+      "query_id": "manuals_scans_q13",
+      "review_required": true,
+      "schema_version": "seed_batch_known_need.v0",
+      "summary": "Operator must verify document identity, model/version fit, rights posture, scan completeness, and OCR quality before promotion."
+    },
+    {
+      "accepted_truth": false,
+      "candidate_refs": [
+        "seed_manuals_scans_manuals_scans_q14_candidate"
+      ],
+      "need_id": "manuals_scans_known_need:3ffef66e6b78b22d",
+      "need_kind": "document_identity_review",
+      "query_id": "manuals_scans_q14",
+      "review_required": true,
+      "schema_version": "seed_batch_known_need.v0",
+      "summary": "Operator must verify document identity, model/version fit, rights posture, scan completeness, and OCR quality before promotion."
+    },
+    {
+      "accepted_truth": false,
+      "candidate_refs": [
+        "seed_manuals_scans_manuals_scans_q15_candidate"
+      ],
+      "need_id": "manuals_scans_known_need:5c66b9d166a1da8c",
+      "need_kind": "document_identity_review",
+      "query_id": "manuals_scans_q15",
+      "review_required": true,
+      "schema_version": "seed_batch_known_need.v0",
+      "summary": "Operator must verify document identity, model/version fit, rights posture, scan completeness, and OCR quality before promotion."
+    },
+    {
+      "accepted_truth": false,
+      "candidate_refs": [
+        "seed_manuals_scans_manuals_scans_q16_candidate"
+      ],
+      "need_id": "manuals_scans_known_need:479a0b4688a6ae41",
+      "need_kind": "document_identity_review",
+      "query_id": "manuals_scans_q16",
+      "review_required": true,
+      "schema_version": "seed_batch_known_need.v0",
+      "summary": "Operator must verify document identity, model/version fit, rights posture, scan completeness, and OCR quality before promotion."
+    }
+  ],
+  "master_index_mutated": false,
+  "model_provider_used": false,
+  "ocr_performed": false,
+  "ocr_quality_claim_created": false,
+  "operator_instance_mutated": false,
+  "production_readiness_claimed": false,
+  "public_index_mutated": false,
+  "public_launch_readiness_claimed": false,
+  "public_mutation_enabled": false,
+  "raw_live_response_committed": false,
+  "reviewed_index_mutated": false,
+  "rights_clearance_claim_created": false,
+  "scan_completeness_claim_created": false,
+  "schema_version": "seed_batch_manuals_scans_need_absence_matrix.v0",
+  "task": "SEED-BATCH-MANUALS-SCANS-00"
+}

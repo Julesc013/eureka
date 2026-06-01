@@ -2,26 +2,20 @@
 
 ## PHASE
 
-PUBLIC-ALPHA-REASSESS-03 - reassess alpha after local apply snapshot refresh
+SEED-BATCH-MANUALS-SCANS-00 - add manuals and scanned-documents discovery batch
 
 ## GOAL
 
-Reassess whether the read-only public alpha should proceed toward launch after
-`SNAPSHOT-REFRESH-03` projected local-apply-derived limited reviewed metadata
-and source-lead records.
+Add `manuals_docs_scans` as the third discovery domain using the existing query
+planner, candidate index, SCOUT, review batch, snapshot handoff, public-alpha
+reassess, and public search UX model lanes.
 
 ## WHY
 
-The snapshot now exposes four limited reviewed projections:
-
-- existing reviewed records: 1
-- limited reviewed metadata records: 1
-- limited reviewed source leads: 2
-
-This improves internal demo and review usefulness, but it does not prove public
-launch readiness. Limited metadata/source-lead records are not verified
-downloadable artifacts, malware-clean files, rights-cleared records, or
-installable software.
+`PUBLIC-ALPHA-REASSESS-03` kept public launch deferred. The limited reviewed
+projection count is 4, which improves internal demo/review usefulness but is
+below launch threshold. Manuals and scanned documents are a safer third-domain
+corpus wedge before driver/support-media work.
 
 ## CONTEXT_REFS
 
@@ -31,27 +25,24 @@ installable software.
 - `.aide/context/test-map.json`
 - `.aide/context/context-index.json`
 - `.aide/context/latest-context-packet.md`
-- `control/inventory/snapshot_refresh_03_result.json`
-- `control/inventory/local_apply_live_metadata_result.json`
-- `examples/snapshots/refresh/local_apply_live_metadata/`
-- `examples/public_alpha/reassess/local_apply_live_metadata/`
-- `control/audits/public-alpha-reassess-03-v0/`
+- `control/inventory/public_alpha_reassess_03_result.json`
+- `runtime/seed_batches/frontier_media.py`
+- `runtime/seed_batches/legacy_software.py`
+- `scripts/validate_seed_batch_frontier_media.py`
+- `scripts/validate_seed_batch_legacy_software.py`
+- `examples/seed_batches/frontier_media/`
+- `examples/seed_batches/legacy_software/`
 
 ## CURRENT_STATE
 
+- `dev == origin/dev` at task start.
+- latest prior commit: `8ba7c760 feat(task): reassess alpha after local apply`
+- public alpha launch recommended: false
 - total limited reviewed projection count: 4
-- fixture candidates: 28
-- live metadata candidates: 8
-- known needs: 28
-- absence summaries: 2
-- launch recommended: false
-- demo mode recommended: true
-- internal review recommended: true
-- next recommended task: `SEED-BATCH-MANUALS-SCANS-00`
+- next needed domain: `manuals_docs_scans`
 
 ## ALLOWED_PATHS
 
-- `.aide/queue/PUBLIC-ALPHA-REASSESS-03/**`
 - `.aide/queue/SEED-BATCH-MANUALS-SCANS-00/**`
 - `.aide/queue/SEED-BATCH-DRIVER-SUPPORT-00/**`
 - `.aide/queue/SNAPSHOT-REFRESH-04/**`
@@ -59,30 +50,41 @@ installable software.
 - `.aide/queue/index.yaml`
 - `.aide/context/latest-task-packet.md`
 - `.aide/context/latest-review-packet.md`
-- `contracts/publication/**`
+- `contracts/seed_batches/**`
+- `contracts/candidates/**`
+- `contracts/scout/**`
+- `contracts/review/**`
+- `contracts/search/query_plan/**`
+- `runtime/seed_batches/**`
+- `runtime/candidate_index/**`
+- `runtime/candidate_store/**`
+- `runtime/scout/**`
+- `runtime/review/batch/**`
 - `runtime/public_alpha/**`
-- `runtime/local_eval/**`
-- `runtime/gateway/**`
-- `scripts/eureka_public_alpha_reassess.py`
-- `scripts/eureka_public_alpha_reassess_report.py`
-- `scripts/eureka_public_alpha_route_smoke.py`
-- `scripts/validate_public_alpha_reassess.py`
-- `tests/runtime/test_public_alpha_reassess*.py`
-- `tests/operations/test_public_alpha_reassess_scripts.py`
-- `tests/scripts/test_validate_public_alpha_reassess.py`
-- `examples/public_alpha/reassess/local_apply_live_metadata/**`
-- `examples/snapshots/refresh/local_apply_live_metadata/**`
-- `control/policies/public_alpha_reassess*.json`
+- `scripts/eureka_seed_batch_manuals_scans.py`
+- `scripts/eureka_seed_batch_run.py`
+- `scripts/eureka_seed_batch_report.py`
+- `scripts/validate_seed_batch_manuals_scans.py`
+- `scripts/validate_seed_batch_frontier_media.py`
+- `scripts/validate_seed_batch_legacy_software.py`
+- `tests/runtime/test_*manuals_scans*.py`
+- `tests/operations/test_seed_batch_manuals_scans_scripts.py`
+- `tests/scripts/test_validate_seed_batch_manuals_scans.py`
+- `examples/seed_batches/manuals_scans/**`
+- `examples/query_plans/manuals_scans/**`
+- `examples/candidates/manuals_scans/**`
+- `examples/scout/manuals_scans/**`
+- `examples/review_batch/manuals_scans/**`
+- `examples/public_alpha/manuals_scans/**`
+- `control/policies/seed_batch_manuals_scans*.json`
 - `control/policies/generated_artifact_policy.json`
-- `control/inventory/public_alpha_reassess_03*.json`
-- `docs/architecture/PUBLIC_ALPHA_REASSESS_03.md`
-- `docs/operations/PUBLIC_ALPHA_REASSESS_03_RUNBOOK.md`
-- `docs/operations/PUBLIC_ALPHA_USEFULNESS_THRESHOLDS.md`
-- `docs/operations/POST_PUBLIC_ALPHA_REASSESS_03_PLAN.md`
-- `docs/reference/PUBLIC_ALPHA_REASSESS_DECISION.md`
-- `docs/reference/PUBLIC_ALPHA_USEFULNESS_METRICS.md`
-- `docs/reference/PUBLIC_ALPHA_LIMITED_REVIEWED_RECORD_REASSESSMENT.md`
-- `control/audits/public-alpha-reassess-03-v0/**`
+- `control/inventory/seed_batch_manuals_scans*.json`
+- `docs/architecture/SEED_BATCH_MANUALS_SCANS.md`
+- `docs/operations/SEED_BATCH_MANUALS_SCANS_RUNBOOK.md`
+- `docs/operations/POST_SEED_BATCH_MANUALS_SCANS_PLAN.md`
+- `docs/reference/MANUALS_SCANS_QUERY_SET.md`
+- `docs/reference/MANUALS_SCANS_SUPPRESSIONS.md`
+- `control/audits/seed-batch-manuals-scans-00-v0/**`
 
 ## FORBIDDEN_PATHS
 
@@ -104,55 +106,48 @@ installable software.
 
 ## NON_GOALS
 
-- No deployment or publication.
-- No public launch or production readiness claim.
-- No local apply execution.
-- No public/master/reviewed index mutation.
-- No operator instance mutation.
-- No source probes or live source calls.
-- No download, extraction, execution, install, emulation, or model behavior.
-- No verified-download, malware-clean, rights-clearance, or artifact-verified claim.
+- No deployment, publication, public launch, or readiness claim.
+- No accepted truth, reviewed/master/public index mutation, or operator instance mutation.
+- No live source calls, downloads, file fetches, OCR, extraction, model/provider calls, or raw live responses.
+- No rights-clearance, scan-completeness, or OCR-quality claims.
 - No full unittest discovery inside AI.
 
 ## IMPLEMENTATION
 
-- Add `runtime/public_alpha/reassess_03.py`.
-- Add limited-reviewed-record publication contract and policy.
-- Add CLI/report flags for local-apply live metadata examples.
-- Add examples, inventory matrices, audit evidence, docs, and focused tests.
-- Keep launch recommendation false and route next work to manuals/scans seed batch.
+- Add `runtime/seed_batches/manuals_scans.py`.
+- Add dedicated and generic CLI support.
+- Add manuals/scans policies, docs, examples, inventory, audit evidence, validator, and focused tests.
+- Keep all outputs metadata-only, review-required, candidate-only, and public-alpha reassess input only.
 
 ## VALIDATION
 
 - `git diff --check`
-- `python scripts/validate_public_alpha_reassess.py`
-- related snapshot refresh, local apply, live metadata review, live metadata pilot,
-  public search UX, seed batch, review batch, scout, candidate index, query
-  planner, snapshot relay, public alpha readonly, source action, architecture,
-  and generated-artifact validators
-- focused public alpha reassess unittest modules
+- `python scripts/validate_seed_batch_manuals_scans.py`
+- related public-alpha, snapshot, existing seed-batch, review-batch, SCOUT,
+  candidate-index, query-planner, public-search UX, public-alpha readonly,
+  source-action, architecture, and generated-artifact validators
+- focused manuals/scans unittest modules
 - AIDE Lite doctor, validate, test, selftest, verify, review-pack, and commit check
 
 Full unittest discovery is not run by policy.
 
 ## ACCEPTANCE
 
-- existing reviewed records: 1
-- limited reviewed metadata records: 1
-- limited reviewed source leads: 2
-- total limited reviewed projection count: 4
-- launch recommended: false
-- demo mode recommended: true
-- internal review recommended: true
-- needs more reviewed records/domains/seed batches: true
-- next recommended task: `SEED-BATCH-MANUALS-SCANS-00`
-- no deployment, launch, mutation, download, extraction, model, or artifact/safety/rights claim
+- fixture seed batch passes
+- 16 required manuals/scans queries are present
+- required suppressions are present
+- source families are bounded metadata/descriptor/source-pack only
+- candidate index, SCOUT, review, snapshot handoff, public-alpha input, docs,
+  inventory, and audit evidence exist
+- no downloads, file fetches, OCR, extraction, source calls, mutation, readiness,
+  rights-clearance, scan-completeness, or OCR-quality claims
+- next recommended task: `SEED-BATCH-DRIVER-SUPPORT-00`
 
 ## EVIDENCE
 
-- `control/inventory/public_alpha_reassess_03_result.json`
-- `examples/public_alpha/reassess/local_apply_live_metadata/`
-- `control/audits/public-alpha-reassess-03-v0/`
+- `control/inventory/seed_batch_manuals_scans_result.json`
+- `examples/seed_batches/manuals_scans/`
+- `control/audits/seed-batch-manuals-scans-00-v0/`
 
 ## TOKEN_ESTIMATE
 
@@ -160,5 +155,5 @@ medium
 
 ## OUTPUT_SCHEMA
 
-Final report uses the user-requested `PUBLIC_ALPHA_REASSESS_03` format with
-validation and boundary summaries.
+Final report uses `STATUS`, `SUMMARY`, `SEED_BATCH_MANUALS_SCANS`, `VALIDATION`,
+`BOUNDARIES`, and `NEXT_TASK`.

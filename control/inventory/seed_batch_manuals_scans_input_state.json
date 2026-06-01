@@ -1,0 +1,8 @@
+{
+  "current_limited_reviewed_projection_count": 4,
+  "prior_latest_commit": "8ba7c760 feat(task): reassess alpha after local apply",
+  "public_alpha_launch_deferred": true,
+  "schema_version": "seed_batch_manuals_scans_input_state.v0",
+  "target_domain": "manuals_docs_scans",
+  "task": "SEED-BATCH-MANUALS-SCANS-00"
+}

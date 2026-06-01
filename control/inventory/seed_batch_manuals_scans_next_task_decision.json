@@ -1,0 +1,6 @@
+{
+  "rationale": "Manuals/scans expands a lower-risk third discovery domain; driver/support media can follow with stricter executable/download boundaries.",
+  "recommended_next_task": "SEED-BATCH-DRIVER-SUPPORT-00 - Add driver and support-media discovery batch",
+  "schema_version": "seed_batch_manuals_scans_next_task_decision.v0",
+  "task": "SEED-BATCH-MANUALS-SCANS-00"
+}
