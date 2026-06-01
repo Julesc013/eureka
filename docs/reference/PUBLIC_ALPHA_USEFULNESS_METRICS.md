@@ -46,3 +46,18 @@ Live metadata candidates are counted as candidates, not reviewed records.
 - local-apply need
 
 Review previews are counted separately from reviewed records.
+
+`PUBLIC-ALPHA-REASSESS-03` adds:
+
+- existing reviewed record count
+- reviewed metadata record count
+- reviewed source lead count
+- reviewed record delta count
+- total limited reviewed record projection count
+- limited reviewed record to candidate ratio
+- queries with limited reviewed result
+- needs-more-domain and needs-more-reviewed-artifact flags
+
+Limited reviewed metadata/source-lead records are counted for internal
+usefulness, but not as verified artifacts, malware-clean files, rights-cleared
+records, or public launch readiness.

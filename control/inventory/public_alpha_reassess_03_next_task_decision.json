@@ -1,0 +1,15 @@
+{
+  "demo_mode_recommended": true,
+  "launch_recommended": false,
+  "planned_after": [
+    "SEED-BATCH-DRIVER-SUPPORT-00",
+    "SNAPSHOT-REFRESH-04",
+    "PUBLIC-ALPHA-REASSESS-04",
+    "DEV-TO-MAIN-PROMOTION-REVIEW-06"
+  ],
+  "rationale": "Public alpha still lacks domain coverage and enough reviewed records; manuals/scans are a safer third-domain next step.",
+  "recommended_next_task": "SEED-BATCH-MANUALS-SCANS-00 - Add manuals and scanned-documents discovery batch",
+  "schema_version": "public_alpha_reassess_03_next_task_decision.v0",
+  "status": "pass",
+  "task": "PUBLIC-ALPHA-REASSESS-03"
+}

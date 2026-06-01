@@ -1,0 +1,11 @@
+{
+  "below_threshold": true,
+  "existing_reviewed_record_count": 1,
+  "limited_records_are_verified_artifacts": false,
+  "reviewed_metadata_record_count": 1,
+  "reviewed_record_threshold": 25,
+  "reviewed_source_lead_count": 2,
+  "schema_version": "public_alpha_reassess_03_reviewed_record_matrix.v0",
+  "task": "PUBLIC-ALPHA-REASSESS-03",
+  "total_limited_reviewed_record_projection_count": 4
+}

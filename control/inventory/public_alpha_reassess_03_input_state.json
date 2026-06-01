@@ -1,0 +1,38 @@
+{
+  "artifact_verified_claim_created": false,
+  "deployment_performed": false,
+  "download_performed": false,
+  "equivalent_filename_mappings": {
+    "public_alpha_readonly_result": "control/inventory/public_alpha_readonly_00_result.json"
+  },
+  "extraction_executed": false,
+  "input_results": {
+    "live_metadata_pilot": "control/inventory/live_metadata_pilot_result.json",
+    "live_metadata_review": "control/inventory/live_metadata_review_result.json",
+    "local_apply_live_metadata": "control/inventory/local_apply_live_metadata_result.json",
+    "public_alpha_readonly_equivalent": "control/inventory/public_alpha_readonly_00_result.json",
+    "public_alpha_reassess_02": "control/inventory/public_alpha_reassess_02_result.json",
+    "public_search_ux_model": "control/inventory/public_search_ux_model_result.json",
+    "snapshot_refresh_01": "control/inventory/snapshot_refresh_01_result.json",
+    "snapshot_refresh_02": "control/inventory/snapshot_refresh_02_result.json",
+    "snapshot_refresh_03": "control/inventory/snapshot_refresh_03_result.json"
+  },
+  "live_source_call_performed": false,
+  "malware_clean_claim_created": false,
+  "master_index_mutated": false,
+  "model_provider_used": false,
+  "operator_instance_mutated": false,
+  "production_readiness_claimed": false,
+  "public_index_mutated": false,
+  "public_launch_performed": false,
+  "public_launch_readiness_claimed": false,
+  "public_live_source_fanout_enabled": false,
+  "public_mutation_enabled": false,
+  "reviewed_index_mutated": false,
+  "rights_clearance_claim_created": false,
+  "schema_version": "public_alpha_reassess_03_input_state.v0",
+  "site_dist_written": false,
+  "source_probe_executed": false,
+  "task": "PUBLIC-ALPHA-REASSESS-03",
+  "verified_download_claim_created": false
+}

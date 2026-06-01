@@ -104,6 +104,44 @@ class PublicAlphaReassessScriptTests(unittest.TestCase):
         self.assertIn('"task": "PUBLIC-ALPHA-REASSESS-02"', completed.stdout)
         self.assertIn('"launch_recommended": false', completed.stdout)
 
+    def test_local_apply_reassess_script_runs(self) -> None:
+        completed = subprocess.run(
+            [
+                sys.executable,
+                str(REPO_ROOT / "scripts" / "eureka_public_alpha_reassess.py"),
+                "--from-local-apply-live-metadata-refresh-examples",
+                "--json",
+            ],
+            cwd=REPO_ROOT,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            text=True,
+            check=False,
+        )
+
+        self.assertEqual(0, completed.returncode, completed.stderr)
+        self.assertIn('"total_limited_reviewed_record_projection_count": 4', completed.stdout)
+        self.assertIn('"needs_seed_batch_manuals_scans": true', completed.stdout)
+
+    def test_local_apply_report_script_runs(self) -> None:
+        completed = subprocess.run(
+            [
+                sys.executable,
+                str(REPO_ROOT / "scripts" / "eureka_public_alpha_reassess_report.py"),
+                "--from-local-apply-live-metadata-examples",
+                "--json",
+            ],
+            cwd=REPO_ROOT,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            text=True,
+            check=False,
+        )
+
+        self.assertEqual(0, completed.returncode, completed.stderr)
+        self.assertIn('"task": "PUBLIC-ALPHA-REASSESS-03"', completed.stdout)
+        self.assertIn('"launch_recommended": false', completed.stdout)
+
 
 if __name__ == "__main__":
     unittest.main()

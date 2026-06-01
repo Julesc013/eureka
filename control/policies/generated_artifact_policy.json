@@ -173,6 +173,12 @@
       "policy": "Task-local PUBLIC-ALPHA-REASSESS-02 audit evidence records review-preview public alpha reassessment validation; it is not product runtime state."
     },
     {
+      "path": "control/audits/public-alpha-reassess-03-v0",
+      "artifact_class": "audit_generated",
+      "allow_task_local_drift": true,
+      "policy": "Task-local PUBLIC-ALPHA-REASSESS-03 audit evidence records limited reviewed metadata/source-lead reassessment validation; it is not product runtime state."
+    },
+    {
       "path": "control/audits/local-apply-live-metadata-previews-00-v0",
       "artifact_class": "audit_generated",
       "allow_task_local_drift": true,

@@ -60,3 +60,22 @@ needs_public_alpha_reassess_after_apply: true
 
 Reviewed metadata/source-lead previews improve readiness, but they are not
 applied reviewed records and do not authorize public launch.
+
+For `PUBLIC-ALPHA-REASSESS-03`, the decision adds local-apply-derived limited
+reviewed record evidence:
+
+```text
+decision: remain_deferred
+launch_recommended: false
+demo_mode_recommended: true
+internal_review_recommended: true
+needs_more_reviewed_records: true
+needs_more_domains: true
+needs_more_seed_batches: true
+needs_more_reviewed_artifact_records: true
+needs_seed_batch_manuals_scans: true
+needs_seed_batch_driver_support: true
+```
+
+Limited reviewed metadata/source-lead records improve usefulness, but they are
+not verified downloadable artifacts and do not authorize public launch.

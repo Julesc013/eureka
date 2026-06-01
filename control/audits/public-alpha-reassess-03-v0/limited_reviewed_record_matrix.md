@@ -1,0 +1,49 @@
+# Limited Reviewed Record Matrix
+
+```json
+{
+  "artifact_verified": false,
+  "artifact_verified_claim_created": false,
+  "created_at": "2026-06-02T00:00:00Z",
+  "deployment_performed": false,
+  "download_performed": false,
+  "existing_reviewed_record_count": 1,
+  "extraction_executed": false,
+  "launch_sufficient": false,
+  "limited_record_refs": [
+    "reviewed_metadata_record:6f1765a8357c0e38",
+    "reviewed_source_lead:be997026927f3db6",
+    "reviewed_source_lead:dfe70f3ad254ba07"
+  ],
+  "limited_reviewed_records_are_verified_artifacts": false,
+  "limited_reviewed_records_count_for_usefulness": true,
+  "live_source_call_performed": false,
+  "local_apply_ref": "control/inventory/local_apply_live_metadata_result.json",
+  "malware_clean_claim": false,
+  "malware_clean_claim_created": false,
+  "master_index_mutated": false,
+  "model_provider_used": false,
+  "needs_more_reviewed_artifact_records": true,
+  "operator_instance_mutated": false,
+  "production_readiness_claimed": false,
+  "public_index_mutated": false,
+  "public_launch_performed": false,
+  "public_launch_readiness_claimed": false,
+  "public_live_source_fanout_enabled": false,
+  "public_mutation_enabled": false,
+  "reassess_id": "public_alpha_reassess_03",
+  "reviewed_index_mutated": false,
+  "reviewed_metadata_record_count": 1,
+  "reviewed_record_delta_count": 3,
+  "reviewed_source_lead_count": 2,
+  "rights_clearance_claim": false,
+  "rights_clearance_claim_created": false,
+  "schema_version": "public_alpha_limited_reviewed_record_reassess.v0",
+  "site_dist_written": false,
+  "snapshot_refresh_ref": "snapshot_refresh_03",
+  "source_probe_executed": false,
+  "total_limited_reviewed_record_projection_count": 4,
+  "verified_download_claim": false,
+  "verified_download_claim_created": false
+}
+```

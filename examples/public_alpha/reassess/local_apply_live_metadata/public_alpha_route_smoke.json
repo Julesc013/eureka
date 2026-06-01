@@ -1,0 +1,148 @@
+{
+  "created_at": "2026-06-02T00:00:00Z",
+  "deployment_performed": false,
+  "example_metadata_only": true,
+  "live_network_used": false,
+  "local_server_started": false,
+  "missing_routes": [],
+  "mutation_enabled": false,
+  "public_api_routes_smoked": 7,
+  "public_launch_performed": false,
+  "public_routes_smoked": 6,
+  "reassess_id": "public_alpha_reassess_03",
+  "route_smoke_status": "pass",
+  "routes": [
+    {
+      "deployment_performed": false,
+      "mutation_enabled": false,
+      "read_only": true,
+      "route": "/alpha",
+      "route_family": "web",
+      "schema_version": "public_alpha_route_smoke_row.v0",
+      "source": "public_alpha_readonly_00_result",
+      "status": "pass"
+    },
+    {
+      "deployment_performed": false,
+      "mutation_enabled": false,
+      "read_only": true,
+      "route": "/alpha/object",
+      "route_family": "web",
+      "schema_version": "public_alpha_route_smoke_row.v0",
+      "source": "public_alpha_readonly_00_result",
+      "status": "pass"
+    },
+    {
+      "deployment_performed": false,
+      "mutation_enabled": false,
+      "read_only": true,
+      "route": "/alpha/source",
+      "route_family": "web",
+      "schema_version": "public_alpha_route_smoke_row.v0",
+      "source": "public_alpha_readonly_00_result",
+      "status": "pass"
+    },
+    {
+      "deployment_performed": false,
+      "mutation_enabled": false,
+      "read_only": true,
+      "route": "/alpha/evidence",
+      "route_family": "web",
+      "schema_version": "public_alpha_route_smoke_row.v0",
+      "source": "public_alpha_readonly_00_result",
+      "status": "pass"
+    },
+    {
+      "deployment_performed": false,
+      "mutation_enabled": false,
+      "read_only": true,
+      "route": "/alpha/absence",
+      "route_family": "web",
+      "schema_version": "public_alpha_route_smoke_row.v0",
+      "source": "public_alpha_readonly_00_result",
+      "status": "pass"
+    },
+    {
+      "deployment_performed": false,
+      "mutation_enabled": false,
+      "read_only": true,
+      "route": "/alpha/needs",
+      "route_family": "web",
+      "schema_version": "public_alpha_route_smoke_row.v0",
+      "source": "public_alpha_readonly_00_result",
+      "status": "pass"
+    },
+    {
+      "deployment_performed": false,
+      "mutation_enabled": false,
+      "read_only": true,
+      "route": "/api/v1/alpha/status",
+      "route_family": "api",
+      "schema_version": "public_alpha_route_smoke_row.v0",
+      "source": "public_alpha_readonly_00_result",
+      "status": "pass"
+    },
+    {
+      "deployment_performed": false,
+      "mutation_enabled": false,
+      "read_only": true,
+      "route": "/api/v1/alpha/search",
+      "route_family": "api",
+      "schema_version": "public_alpha_route_smoke_row.v0",
+      "source": "public_alpha_readonly_00_result",
+      "status": "pass"
+    },
+    {
+      "deployment_performed": false,
+      "mutation_enabled": false,
+      "read_only": true,
+      "route": "/api/v1/alpha/object/{object_id}",
+      "route_family": "api",
+      "schema_version": "public_alpha_route_smoke_row.v0",
+      "source": "public_alpha_readonly_00_result",
+      "status": "pass"
+    },
+    {
+      "deployment_performed": false,
+      "mutation_enabled": false,
+      "read_only": true,
+      "route": "/api/v1/alpha/source/{summary_id}",
+      "route_family": "api",
+      "schema_version": "public_alpha_route_smoke_row.v0",
+      "source": "public_alpha_readonly_00_result",
+      "status": "pass"
+    },
+    {
+      "deployment_performed": false,
+      "mutation_enabled": false,
+      "read_only": true,
+      "route": "/api/v1/alpha/evidence/{summary_id}",
+      "route_family": "api",
+      "schema_version": "public_alpha_route_smoke_row.v0",
+      "source": "public_alpha_readonly_00_result",
+      "status": "pass"
+    },
+    {
+      "deployment_performed": false,
+      "mutation_enabled": false,
+      "read_only": true,
+      "route": "/api/v1/alpha/absence/{summary_id}",
+      "route_family": "api",
+      "schema_version": "public_alpha_route_smoke_row.v0",
+      "source": "public_alpha_readonly_00_result",
+      "status": "pass"
+    },
+    {
+      "deployment_performed": false,
+      "mutation_enabled": false,
+      "read_only": true,
+      "route": "/api/v1/alpha/needs",
+      "route_family": "api",
+      "schema_version": "public_alpha_route_smoke_row.v0",
+      "source": "public_alpha_readonly_00_result",
+      "status": "pass"
+    }
+  ],
+  "schema_version": "public_alpha_route_smoke.v0",
+  "source_reassess_id": "public_alpha_reassess_00"
+}

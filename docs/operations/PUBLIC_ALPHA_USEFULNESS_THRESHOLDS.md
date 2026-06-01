@@ -37,3 +37,16 @@ operator review, but it is still not launch-sufficient as a public search
 engine. Review previews improve readiness but do not count as reviewed records
 until an explicit local apply gate applies them and later snapshots are
 refreshed.
+
+Current v3 local-apply snapshot:
+
+- existing reviewed records: 1
+- limited reviewed metadata records: 1
+- limited reviewed source leads: 2
+- total limited reviewed projection count: 4
+- fixture candidates: 28
+- live-metadata candidates: 8
+
+This improves internal demo and review value, but four limited reviewed
+metadata/source-lead projections are still below the 25-record threshold and do
+not count as verified artifacts.
