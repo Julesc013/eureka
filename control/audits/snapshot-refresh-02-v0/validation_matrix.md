@@ -1,0 +1,15 @@
+# Validation Matrix
+
+```json
+{
+  "full_discovery": "NOT_RUN_BY_POLICY",
+  "schema_version": "snapshot_refresh_02_validation_matrix.v0",
+  "status": "pass",
+  "task": "SNAPSHOT-REFRESH-02",
+  "validation_commands": [
+    "python scripts/validate_snapshot_refresh.py",
+    "python scripts/validate_review_live_metadata_candidates.py",
+    "focused snapshot refresh unittest modules"
+  ]
+}
+```

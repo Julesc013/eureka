@@ -1,0 +1,755 @@
+{
+  "accepted_truth_created": false,
+  "candidate_verified_separation_visible": true,
+  "created_at": "2026-06-01T00:00:00Z",
+  "downloads_enabled": false,
+  "extraction_enabled": false,
+  "limitations": [
+    "snapshot_refresh_is_projection_only",
+    "review_previews_remain_preview_only",
+    "local_apply_required_before_reviewed_mutation",
+    "live_metadata_candidates_remain_candidates_until_applied",
+    "raw_live_responses_excluded",
+    "no_verified_download_claim",
+    "no_malware_clean_claim",
+    "no_rights_clearance_claim",
+    "no_site_dist_write",
+    "no_public_index_mutation",
+    "no_deployment_or_launch_claim"
+  ],
+  "malware_clean_claim_created": false,
+  "model_provider_enabled": false,
+  "projection_id": "snapshot_public_search_view_model_projection:2ab037cc55842dd9",
+  "projection_profiles": [
+    "public_web",
+    "operator_workbench",
+    "api_json",
+    "classic_html",
+    "text"
+  ],
+  "public_live_source_fanout_enabled": false,
+  "public_mutation_enabled": false,
+  "raw_live_response_included": false,
+  "read_only": true,
+  "record_type": "snapshot_public_search_view_model_projection",
+  "result_cards": [
+    {
+      "accepted_truth": false,
+      "action_posture": {
+        "accepted_truth": false,
+        "allowed_actions": [
+          "inspect",
+          "view_source",
+          "view_provenance",
+          "read"
+        ],
+        "blocked_actions": [
+          "download",
+          "install_handoff",
+          "execute",
+          "extract",
+          "promote"
+        ],
+        "downloads_enabled": false,
+        "extraction_enabled": false,
+        "public_mutation_enabled": false,
+        "review_required": true,
+        "schema_version": "snapshot_review_only_action_posture.v0"
+      },
+      "compatibility_label": "unreviewed",
+      "confidence_label": "candidate",
+      "created_at": "2026-06-01T00:00:00Z",
+      "domain": "frontier_resolution_media",
+      "evidence_summary": {
+        "evidence_count": 2,
+        "evidence_refs": [
+          "scout_run:79fc980867d066b2",
+          "live_metadata_source_observation:efc74d7dbc7eff8b"
+        ]
+      },
+      "limitations": [
+        "redacted_metadata_summary_only",
+        "candidate_not_reviewed_truth",
+        "review_required_for_promotion",
+        "no_raw_response_commit",
+        "no_download",
+        "no_extraction",
+        "no_auto_promotion",
+        "live_metadata_derived_review_only"
+      ],
+      "match_reasons": [
+        "bounded_live_metadata_pilot",
+        "review_required"
+      ],
+      "object_type": "metadata_candidate",
+      "review_required": true,
+      "rights_label": "rights_not_cleared",
+      "risk_label": "review_required",
+      "schema_version": "result_card_view_model.v0",
+      "snippet": "Live-metadata candidate remains review-only; no raw response or artifact claim is included.",
+      "source_family": "internet_archive_metadata",
+      "source_label": "Internet Archive metadata",
+      "status": "candidate",
+      "title": "Redacted live IA metadata summary for New York 1993 D-Theater HD demo tape original source",
+      "url": "/candidate/live_metadata_pilot_frontier_media_q01_01",
+      "view_model_id": "result_card:59dce857242c0a22"
+    },
+    {
+      "accepted_truth": false,
+      "action_posture": {
+        "accepted_truth": false,
+        "allowed_actions": [
+          "inspect",
+          "view_source",
+          "view_provenance",
+          "read"
+        ],
+        "blocked_actions": [
+          "download",
+          "install_handoff",
+          "execute",
+          "extract",
+          "promote"
+        ],
+        "downloads_enabled": false,
+        "extraction_enabled": false,
+        "public_mutation_enabled": false,
+        "review_required": true,
+        "schema_version": "snapshot_review_only_action_posture.v0"
+      },
+      "compatibility_label": "unreviewed",
+      "confidence_label": "candidate",
+      "created_at": "2026-06-01T00:00:00Z",
+      "domain": "frontier_resolution_media",
+      "evidence_summary": {
+        "evidence_count": 2,
+        "evidence_refs": [
+          "scout_run:3b579dace44932e0",
+          "live_metadata_source_observation:aa933bbd7ad9d765"
+        ]
+      },
+      "limitations": [
+        "redacted_metadata_summary_only",
+        "candidate_not_reviewed_truth",
+        "review_required_for_promotion",
+        "no_raw_response_commit",
+        "no_download",
+        "no_extraction",
+        "no_auto_promotion",
+        "live_metadata_derived_review_only"
+      ],
+      "match_reasons": [
+        "bounded_live_metadata_pilot",
+        "review_required"
+      ],
+      "object_type": "metadata_candidate",
+      "review_required": true,
+      "rights_label": "rights_not_cleared",
+      "risk_label": "review_required",
+      "schema_version": "result_card_view_model.v0",
+      "snippet": "Live-metadata candidate remains review-only; no raw response or artifact claim is included.",
+      "source_family": "internet_archive_metadata",
+      "source_label": "Internet Archive metadata",
+      "status": "candidate",
+      "title": "Redacted live IA metadata summary for JVC D-Theater New York HD demo",
+      "url": "/candidate/live_metadata_pilot_frontier_media_q03_02",
+      "view_model_id": "result_card:37fec3a7961c44ec"
+    },
+    {
+      "accepted_truth": false,
+      "action_posture": {
+        "accepted_truth": false,
+        "allowed_actions": [
+          "inspect",
+          "view_source",
+          "view_provenance",
+          "read"
+        ],
+        "blocked_actions": [
+          "download",
+          "install_handoff",
+          "execute",
+          "extract",
+          "promote"
+        ],
+        "downloads_enabled": false,
+        "extraction_enabled": false,
+        "public_mutation_enabled": false,
+        "review_required": true,
+        "schema_version": "snapshot_review_only_action_posture.v0"
+      },
+      "compatibility_label": "unreviewed",
+      "confidence_label": "candidate",
+      "created_at": "2026-06-01T00:00:00Z",
+      "domain": "frontier_resolution_media",
+      "evidence_summary": {
+        "evidence_count": 2,
+        "evidence_refs": [
+          "scout_run:858fe77598d69bc0",
+          "live_metadata_source_observation:eba7e261f2b6befa"
+        ]
+      },
+      "limitations": [
+        "redacted_metadata_summary_only",
+        "candidate_not_reviewed_truth",
+        "review_required_for_promotion",
+        "no_raw_response_commit",
+        "no_download",
+        "no_extraction",
+        "no_auto_promotion",
+        "live_metadata_derived_review_only"
+      ],
+      "match_reasons": [
+        "bounded_live_metadata_pilot",
+        "review_required"
+      ],
+      "object_type": "metadata_candidate",
+      "review_required": true,
+      "rights_label": "rights_not_cleared",
+      "risk_label": "review_required",
+      "schema_version": "result_card_view_model.v0",
+      "snippet": "Live-metadata candidate remains review-only; no raw response or artifact claim is included.",
+      "source_family": "internet_archive_metadata",
+      "source_label": "Internet Archive metadata",
+      "status": "candidate",
+      "title": "Redacted live IA metadata summary for Hi-Vision MUSE New York 1993 HDTV demo",
+      "url": "/candidate/live_metadata_pilot_frontier_media_q05_03",
+      "view_model_id": "result_card:8f50e9f98dec2f58"
+    },
+    {
+      "accepted_truth": false,
+      "action_posture": {
+        "accepted_truth": false,
+        "allowed_actions": [
+          "inspect",
+          "view_source",
+          "view_provenance",
+          "read"
+        ],
+        "blocked_actions": [
+          "download",
+          "install_handoff",
+          "execute",
+          "extract",
+          "promote"
+        ],
+        "downloads_enabled": false,
+        "extraction_enabled": false,
+        "public_mutation_enabled": false,
+        "review_required": true,
+        "schema_version": "snapshot_review_only_action_posture.v0"
+      },
+      "compatibility_label": "unreviewed",
+      "confidence_label": "candidate",
+      "created_at": "2026-06-01T00:00:00Z",
+      "domain": "frontier_resolution_media",
+      "evidence_summary": {
+        "evidence_count": 2,
+        "evidence_refs": [
+          "scout_run:11bac23bf2801f10",
+          "live_metadata_source_observation:e42957553d3edf79"
+        ]
+      },
+      "limitations": [
+        "redacted_metadata_summary_only",
+        "candidate_not_reviewed_truth",
+        "review_required_for_promotion",
+        "no_raw_response_commit",
+        "no_download",
+        "no_extraction",
+        "no_auto_promotion",
+        "live_metadata_derived_review_only"
+      ],
+      "match_reasons": [
+        "bounded_live_metadata_pilot",
+        "review_required"
+      ],
+      "object_type": "metadata_candidate",
+      "review_required": true,
+      "rights_label": "rights_not_cleared",
+      "risk_label": "review_required",
+      "schema_version": "result_card_view_model.v0",
+      "snippet": "Live-metadata candidate remains review-only; no raw response or artifact claim is included.",
+      "source_family": "internet_archive_metadata",
+      "source_label": "Internet Archive metadata",
+      "status": "candidate",
+      "title": "Redacted live IA metadata summary for early HDTV New York 1993 demo footage",
+      "url": "/candidate/live_metadata_pilot_frontier_media_q06_04",
+      "view_model_id": "result_card:0d35e20bf96031c2"
+    },
+    {
+      "accepted_truth": false,
+      "action_posture": {
+        "accepted_truth": false,
+        "allowed_actions": [
+          "inspect",
+          "view_source",
+          "view_provenance",
+          "read"
+        ],
+        "blocked_actions": [
+          "download",
+          "install_handoff",
+          "execute",
+          "extract",
+          "promote"
+        ],
+        "downloads_enabled": false,
+        "extraction_enabled": false,
+        "public_mutation_enabled": false,
+        "review_required": true,
+        "schema_version": "snapshot_review_only_action_posture.v0"
+      },
+      "compatibility_label": "unreviewed",
+      "confidence_label": "candidate",
+      "created_at": "2026-06-01T00:00:00Z",
+      "domain": "legacy_software",
+      "evidence_summary": {
+        "evidence_count": 2,
+        "evidence_refs": [
+          "scout_run:d3f8f5c8cb2de7bf",
+          "live_metadata_source_observation:0899b4ead04957a5"
+        ]
+      },
+      "limitations": [
+        "redacted_metadata_summary_only",
+        "candidate_not_reviewed_truth",
+        "review_required_for_promotion",
+        "no_raw_response_commit",
+        "no_download",
+        "no_extraction",
+        "no_auto_promotion",
+        "live_metadata_derived_review_only"
+      ],
+      "match_reasons": [
+        "bounded_live_metadata_pilot",
+        "review_required"
+      ],
+      "object_type": "metadata_candidate",
+      "review_required": true,
+      "rights_label": "rights_not_cleared",
+      "risk_label": "review_required",
+      "schema_version": "result_card_view_model.v0",
+      "snippet": "Live-metadata candidate remains review-only; no raw response or artifact claim is included.",
+      "source_family": "internet_archive_metadata",
+      "source_label": "Internet Archive metadata",
+      "status": "candidate",
+      "title": "Redacted live IA metadata summary for Windows 7-compatible portable utilities, not Windows 7 ISO",
+      "url": "/candidate/live_metadata_pilot_legacy_software_q01_05",
+      "view_model_id": "result_card:c86c49bff1d0b810"
+    },
+    {
+      "accepted_truth": false,
+      "action_posture": {
+        "accepted_truth": false,
+        "allowed_actions": [
+          "inspect",
+          "view_source",
+          "view_provenance",
+          "read"
+        ],
+        "blocked_actions": [
+          "download",
+          "install_handoff",
+          "execute",
+          "extract",
+          "promote"
+        ],
+        "downloads_enabled": false,
+        "extraction_enabled": false,
+        "public_mutation_enabled": false,
+        "review_required": true,
+        "schema_version": "snapshot_review_only_action_posture.v0"
+      },
+      "compatibility_label": "unreviewed",
+      "confidence_label": "candidate",
+      "created_at": "2026-06-01T00:00:00Z",
+      "domain": "legacy_software",
+      "evidence_summary": {
+        "evidence_count": 2,
+        "evidence_refs": [
+          "scout_run:d94052665c697ec8",
+          "live_metadata_source_observation:f9a237e73d2ddb6d"
+        ]
+      },
+      "limitations": [
+        "redacted_metadata_summary_only",
+        "candidate_not_reviewed_truth",
+        "review_required_for_promotion",
+        "no_raw_response_commit",
+        "no_download",
+        "no_extraction",
+        "no_auto_promotion",
+        "live_metadata_derived_review_only"
+      ],
+      "match_reasons": [
+        "bounded_live_metadata_pilot",
+        "review_required"
+      ],
+      "object_type": "metadata_candidate",
+      "review_required": true,
+      "rights_label": "rights_not_cleared",
+      "risk_label": "review_required",
+      "schema_version": "result_card_view_model.v0",
+      "snippet": "Live-metadata candidate remains review-only; no raw response or artifact claim is included.",
+      "source_family": "internet_archive_metadata",
+      "source_label": "Internet Archive metadata",
+      "status": "candidate",
+      "title": "Redacted live IA metadata summary for DirectX SDK June 2010 offline installer",
+      "url": "/candidate/live_metadata_pilot_legacy_software_q02_06",
+      "view_model_id": "result_card:baafb31b350bb2cd"
+    },
+    {
+      "accepted_truth": false,
+      "action_posture": {
+        "accepted_truth": false,
+        "allowed_actions": [
+          "inspect",
+          "view_source",
+          "view_provenance",
+          "read"
+        ],
+        "blocked_actions": [
+          "download",
+          "install_handoff",
+          "execute",
+          "extract",
+          "promote"
+        ],
+        "downloads_enabled": false,
+        "extraction_enabled": false,
+        "public_mutation_enabled": false,
+        "review_required": true,
+        "schema_version": "snapshot_review_only_action_posture.v0"
+      },
+      "compatibility_label": "unreviewed",
+      "confidence_label": "candidate",
+      "created_at": "2026-06-01T00:00:00Z",
+      "domain": "driver_support_media",
+      "evidence_summary": {
+        "evidence_count": 2,
+        "evidence_refs": [
+          "scout_run:7f493d3fde1000d3",
+          "live_metadata_source_observation:37a5836c2a110bbd"
+        ]
+      },
+      "limitations": [
+        "redacted_metadata_summary_only",
+        "candidate_not_reviewed_truth",
+        "review_required_for_promotion",
+        "no_raw_response_commit",
+        "no_download",
+        "no_extraction",
+        "no_auto_promotion",
+        "live_metadata_derived_review_only"
+      ],
+      "match_reasons": [
+        "bounded_live_metadata_pilot",
+        "review_required"
+      ],
+      "object_type": "metadata_candidate",
+      "review_required": true,
+      "rights_label": "rights_not_cleared",
+      "risk_label": "review_required",
+      "schema_version": "result_card_view_model.v0",
+      "snippet": "Live-metadata candidate remains review-only; no raw response or artifact claim is included.",
+      "source_family": "internet_archive_metadata",
+      "source_label": "Internet Archive metadata",
+      "status": "candidate",
+      "title": "Redacted live IA metadata summary for StyleWriter 2500 Mac OS 8 driver",
+      "url": "/candidate/live_metadata_pilot_legacy_software_q03_07",
+      "view_model_id": "result_card:5e9c9aefe19275e6"
+    },
+    {
+      "accepted_truth": false,
+      "action_posture": {
+        "accepted_truth": false,
+        "allowed_actions": [
+          "inspect",
+          "view_source",
+          "view_provenance",
+          "read"
+        ],
+        "blocked_actions": [
+          "download",
+          "install_handoff",
+          "execute",
+          "extract",
+          "promote"
+        ],
+        "downloads_enabled": false,
+        "extraction_enabled": false,
+        "public_mutation_enabled": false,
+        "review_required": true,
+        "schema_version": "snapshot_review_only_action_posture.v0"
+      },
+      "compatibility_label": "unreviewed",
+      "confidence_label": "candidate",
+      "created_at": "2026-06-01T00:00:00Z",
+      "domain": "legacy_software",
+      "evidence_summary": {
+        "evidence_count": 2,
+        "evidence_refs": [
+          "scout_run:4b7bc56bb7cecd05",
+          "live_metadata_source_observation:c7194f99afda2bb5"
+        ]
+      },
+      "limitations": [
+        "redacted_metadata_summary_only",
+        "candidate_not_reviewed_truth",
+        "review_required_for_promotion",
+        "no_raw_response_commit",
+        "no_download",
+        "no_extraction",
+        "no_auto_promotion",
+        "live_metadata_derived_review_only"
+      ],
+      "match_reasons": [
+        "bounded_live_metadata_pilot",
+        "review_required"
+      ],
+      "object_type": "metadata_candidate",
+      "review_required": true,
+      "rights_label": "rights_not_cleared",
+      "risk_label": "review_required",
+      "schema_version": "result_card_view_model.v0",
+      "snippet": "Live-metadata candidate remains review-only; no raw response or artifact claim is included.",
+      "source_family": "internet_archive_metadata",
+      "source_label": "Internet Archive metadata",
+      "status": "candidate",
+      "title": "Redacted live IA metadata summary for QuickTime 7 Windows XP offline installer",
+      "url": "/candidate/live_metadata_pilot_legacy_software_q06_08",
+      "view_model_id": "result_card:4c0b71aae1348a24"
+    },
+    {
+      "accepted_truth": false,
+      "action_posture": {
+        "accepted_truth": false,
+        "allowed_actions": [
+          "inspect",
+          "view_source",
+          "view_provenance",
+          "read"
+        ],
+        "blocked_actions": [
+          "download",
+          "install_handoff",
+          "execute",
+          "extract",
+          "promote"
+        ],
+        "downloads_enabled": false,
+        "extraction_enabled": false,
+        "public_mutation_enabled": false,
+        "review_required": true,
+        "schema_version": "snapshot_review_only_action_posture.v0"
+      },
+      "compatibility_label": "not_verified_download",
+      "confidence_label": "source_lead_preview",
+      "created_at": "2026-06-01T00:00:00Z",
+      "domain": "live_metadata_review",
+      "evidence_summary": {
+        "evidence_count": 4,
+        "evidence_refs": [
+          "live_metadata_request_plan:d863f1df03bf6e31",
+          "live_metadata_source_observation:0899b4ead04957a5",
+          "scout_run:d3f8f5c8cb2de7bf",
+          "snapshot_live_metadata_candidate:c86c49bff1d0b810"
+        ],
+        "summary": "reviewed metadata record preview only; not a verified artifact"
+      },
+      "limitations": [
+        "snapshot_refresh_is_projection_only",
+        "review_previews_remain_preview_only",
+        "local_apply_required_before_reviewed_mutation",
+        "live_metadata_candidates_remain_candidates_until_applied",
+        "raw_live_responses_excluded",
+        "no_verified_download_claim",
+        "no_malware_clean_claim",
+        "no_rights_clearance_claim",
+        "no_site_dist_write",
+        "no_public_index_mutation",
+        "no_deployment_or_launch_claim"
+      ],
+      "local_apply_required": true,
+      "malware_clean_claim_created": false,
+      "match_reasons": [
+        "live_metadata_review",
+        "preview_only",
+        "local_apply_required"
+      ],
+      "object_type": "reviewed_metadata_record_preview",
+      "review_required": true,
+      "rights_clearance_claim_created": false,
+      "rights_label": "rights_not_cleared",
+      "risk_label": "not_artifact_verified",
+      "schema_version": "result_card_view_model.v0",
+      "snippet": "Review preview only. Local apply is required before any reviewed-record mutation.",
+      "source_family": "internet_archive_metadata",
+      "source_label": "Internet Archive metadata review preview",
+      "status": "source_lead",
+      "title": "Redacted live IA metadata summary for Windows 7-compatible portable utilities, not Windows 7 ISO",
+      "url": "/source/reviewed_metadata_record_preview:c86c49bff1d0b810",
+      "verified_download_claim_created": false,
+      "view_model_id": "result_card:5cd1138909fa2a01"
+    },
+    {
+      "accepted_truth": false,
+      "action_posture": {
+        "accepted_truth": false,
+        "allowed_actions": [
+          "inspect",
+          "view_source",
+          "view_provenance",
+          "read"
+        ],
+        "blocked_actions": [
+          "download",
+          "install_handoff",
+          "execute",
+          "extract",
+          "promote"
+        ],
+        "downloads_enabled": false,
+        "extraction_enabled": false,
+        "public_mutation_enabled": false,
+        "review_required": true,
+        "schema_version": "snapshot_review_only_action_posture.v0"
+      },
+      "compatibility_label": "not_verified_download",
+      "confidence_label": "source_lead_preview",
+      "created_at": "2026-06-01T00:00:00Z",
+      "domain": "live_metadata_review",
+      "evidence_summary": {
+        "evidence_count": 4,
+        "evidence_refs": [
+          "live_metadata_request_plan:2ee1238a44c933bb",
+          "live_metadata_source_observation:efc74d7dbc7eff8b",
+          "scout_run:79fc980867d066b2",
+          "snapshot_live_metadata_candidate:59dce857242c0a22"
+        ],
+        "summary": "reviewed source lead preview only; not a verified downloadable artifact"
+      },
+      "limitations": [
+        "snapshot_refresh_is_projection_only",
+        "review_previews_remain_preview_only",
+        "local_apply_required_before_reviewed_mutation",
+        "live_metadata_candidates_remain_candidates_until_applied",
+        "raw_live_responses_excluded",
+        "no_verified_download_claim",
+        "no_malware_clean_claim",
+        "no_rights_clearance_claim",
+        "no_site_dist_write",
+        "no_public_index_mutation",
+        "no_deployment_or_launch_claim"
+      ],
+      "local_apply_required": true,
+      "malware_clean_claim_created": false,
+      "match_reasons": [
+        "live_metadata_review",
+        "preview_only",
+        "local_apply_required"
+      ],
+      "object_type": "reviewed_source_lead_preview",
+      "review_required": true,
+      "rights_clearance_claim_created": false,
+      "rights_label": "rights_not_cleared",
+      "risk_label": "not_artifact_verified",
+      "schema_version": "result_card_view_model.v0",
+      "snippet": "Review preview only. Local apply is required before any reviewed-record mutation.",
+      "source_family": "internet_archive_metadata",
+      "source_label": "Internet Archive metadata review preview",
+      "status": "source_lead",
+      "title": "Redacted live IA metadata summary for New York 1993 D-Theater HD demo tape original source",
+      "url": "/source/reviewed_source_lead_preview:59dce857242c0a22",
+      "verified_download_claim_created": false,
+      "view_model_id": "result_card:aa9665c41cc0dd5b"
+    },
+    {
+      "accepted_truth": false,
+      "action_posture": {
+        "accepted_truth": false,
+        "allowed_actions": [
+          "inspect",
+          "view_source",
+          "view_provenance",
+          "read"
+        ],
+        "blocked_actions": [
+          "download",
+          "install_handoff",
+          "execute",
+          "extract",
+          "promote"
+        ],
+        "downloads_enabled": false,
+        "extraction_enabled": false,
+        "public_mutation_enabled": false,
+        "review_required": true,
+        "schema_version": "snapshot_review_only_action_posture.v0"
+      },
+      "compatibility_label": "not_verified_download",
+      "confidence_label": "source_lead_preview",
+      "created_at": "2026-06-01T00:00:00Z",
+      "domain": "live_metadata_review",
+      "evidence_summary": {
+        "evidence_count": 4,
+        "evidence_refs": [
+          "live_metadata_request_plan:3ecc6325324f5b4c",
+          "live_metadata_source_observation:f9a237e73d2ddb6d",
+          "scout_run:d94052665c697ec8",
+          "snapshot_live_metadata_candidate:baafb31b350bb2cd"
+        ],
+        "summary": "reviewed source lead preview only; not a verified downloadable artifact"
+      },
+      "limitations": [
+        "snapshot_refresh_is_projection_only",
+        "review_previews_remain_preview_only",
+        "local_apply_required_before_reviewed_mutation",
+        "live_metadata_candidates_remain_candidates_until_applied",
+        "raw_live_responses_excluded",
+        "no_verified_download_claim",
+        "no_malware_clean_claim",
+        "no_rights_clearance_claim",
+        "no_site_dist_write",
+        "no_public_index_mutation",
+        "no_deployment_or_launch_claim"
+      ],
+      "local_apply_required": true,
+      "malware_clean_claim_created": false,
+      "match_reasons": [
+        "live_metadata_review",
+        "preview_only",
+        "local_apply_required"
+      ],
+      "object_type": "reviewed_source_lead_preview",
+      "review_required": true,
+      "rights_clearance_claim_created": false,
+      "rights_label": "rights_not_cleared",
+      "risk_label": "not_artifact_verified",
+      "schema_version": "result_card_view_model.v0",
+      "snippet": "Review preview only. Local apply is required before any reviewed-record mutation.",
+      "source_family": "internet_archive_metadata",
+      "source_label": "Internet Archive metadata review preview",
+      "status": "source_lead",
+      "title": "Redacted live IA metadata summary for DirectX SDK June 2010 offline installer",
+      "url": "/source/reviewed_source_lead_preview:baafb31b350bb2cd",
+      "verified_download_claim_created": false,
+      "view_model_id": "result_card:a05938fbd63f5187"
+    }
+  ],
+  "review_preview_applied": false,
+  "review_previews_visible_as_source_leads": true,
+  "rights_clearance_claim_created": false,
+  "schema_version": "snapshot_public_search_view_model_projection.v0",
+  "snapshot_refresh_id": "snapshot_refresh_02",
+  "status_counts": {
+    "absence": 2,
+    "candidate": 8,
+    "known_need": 28,
+    "near_miss": 0,
+    "source_lead": 3,
+    "verified": 1
+  },
+  "verified_download_claim_created": false
+}

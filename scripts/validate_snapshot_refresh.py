@@ -17,7 +17,9 @@ if str(REPO_ROOT) not in sys.path:
 
 from runtime.snapshots import (  # noqa: E402
     build_snapshot_refresh_01_inventory_packets,
+    build_snapshot_refresh_02_inventory_packets,
     build_snapshot_refresh_inventory_packets,
+    run_snapshot_refresh_02,
     run_snapshot_refresh_01,
     run_snapshot_refresh,
 )
@@ -28,6 +30,9 @@ REQUIRED_CONTRACTS = [
     "contracts/snapshot/snapshot_refresh_result.v0.json",
     "contracts/snapshot/snapshot_candidate_section.v0.json",
     "contracts/snapshot/snapshot_live_metadata_candidate_section.v0.json",
+    "contracts/snapshot/snapshot_live_metadata_review_section.v0.json",
+    "contracts/snapshot/snapshot_reviewed_metadata_preview_section.v0.json",
+    "contracts/snapshot/snapshot_reviewed_source_lead_preview_section.v0.json",
     "contracts/snapshot/snapshot_review_queue_section.v0.json",
     "contracts/snapshot/snapshot_need_absence_section.v0.json",
     "contracts/snapshot/snapshot_seed_batch_summary.v0.json",
@@ -38,6 +43,8 @@ REQUIRED_POLICIES = [
     "control/policies/snapshot_refresh_reviewed_record_policy.json",
     "control/policies/snapshot_refresh_candidate_policy.json",
     "control/policies/snapshot_refresh_live_metadata_policy.json",
+    "control/policies/snapshot_refresh_live_metadata_review_policy.json",
+    "control/policies/snapshot_refresh_review_preview_policy.json",
     "control/policies/snapshot_refresh_need_absence_policy.json",
     "control/policies/snapshot_refresh_relay_policy.json",
     "control/policies/snapshot_refresh_non_claim_policy.json",
@@ -63,6 +70,19 @@ REQUIRED_MATRICES = [
     "control/inventory/snapshot_refresh_01_public_search_view_model_matrix.json",
     "control/inventory/snapshot_refresh_01_public_alpha_reassess_matrix.json",
     "control/inventory/snapshot_refresh_01_boundary_report.json",
+    "control/inventory/snapshot_refresh_02_input_state.json",
+    "control/inventory/snapshot_refresh_02_source_matrix.json",
+    "control/inventory/snapshot_refresh_02_reviewed_record_matrix.json",
+    "control/inventory/snapshot_refresh_02_candidate_matrix.json",
+    "control/inventory/snapshot_refresh_02_live_metadata_candidate_matrix.json",
+    "control/inventory/snapshot_refresh_02_live_metadata_review_matrix.json",
+    "control/inventory/snapshot_refresh_02_reviewed_preview_matrix.json",
+    "control/inventory/snapshot_refresh_02_need_absence_matrix.json",
+    "control/inventory/snapshot_refresh_02_review_queue_matrix.json",
+    "control/inventory/snapshot_refresh_02_relay_projection_matrix.json",
+    "control/inventory/snapshot_refresh_02_public_search_view_model_matrix.json",
+    "control/inventory/snapshot_refresh_02_public_alpha_reassess_matrix.json",
+    "control/inventory/snapshot_refresh_02_boundary_report.json",
 ]
 REQUIRED_EXAMPLES = [
     "examples/snapshots/refresh/snapshot_refresh_plan.json",
@@ -87,10 +107,26 @@ REQUIRED_EXAMPLES = [
     "examples/snapshots/refresh/live_metadata/public_search_view_model_projection.json",
     "examples/snapshots/refresh/live_metadata/public_alpha_reassess_input.json",
     "examples/snapshots/refresh/live_metadata/boundary_report.json",
+    "examples/snapshots/refresh/live_metadata_review/snapshot_refresh_plan.json",
+    "examples/snapshots/refresh/live_metadata_review/reviewed_record_section.json",
+    "examples/snapshots/refresh/live_metadata_review/candidate_section_frontier_media.json",
+    "examples/snapshots/refresh/live_metadata_review/candidate_section_legacy_software.json",
+    "examples/snapshots/refresh/live_metadata_review/live_metadata_candidate_section.json",
+    "examples/snapshots/refresh/live_metadata_review/live_metadata_review_section.json",
+    "examples/snapshots/refresh/live_metadata_review/reviewed_metadata_preview_section.json",
+    "examples/snapshots/refresh/live_metadata_review/reviewed_source_lead_preview_section.json",
+    "examples/snapshots/refresh/live_metadata_review/review_queue_section.json",
+    "examples/snapshots/refresh/live_metadata_review/need_absence_section.json",
+    "examples/snapshots/refresh/live_metadata_review/refreshed_relay_projection.json",
+    "examples/snapshots/refresh/live_metadata_review/public_search_view_model_projection.json",
+    "examples/snapshots/refresh/live_metadata_review/public_alpha_reassess_input.json",
+    "examples/snapshots/refresh/live_metadata_review/boundary_report.json",
     "examples/relay/refresh/refreshed_relay_projection.json",
     "examples/relay/refresh/live_metadata_refreshed_relay_projection.json",
+    "examples/relay/refresh/live_metadata_review_refreshed_relay_projection.json",
     "examples/public_alpha/reassess/snapshot_refresh_reassess_input.json",
     "examples/public_alpha/reassess/live_metadata/snapshot_refresh_01_reassess_input.json",
+    "examples/public_alpha/reassess/live_metadata/snapshot_refresh_02_reassess_input.json",
 ]
 REQUIRED_DOCS = [
     "docs/architecture/SNAPSHOT_REFRESH.md",
@@ -107,6 +143,15 @@ REQUIRED_DOCS = [
     "docs/operations/SNAPSHOT_REFRESH_01_RUNBOOK.md",
     "docs/operations/POST_SNAPSHOT_REFRESH_01_PLAN.md",
     "docs/reference/SNAPSHOT_LIVE_METADATA_SECTION.md",
+    "docs/architecture/SNAPSHOT_REFRESH_02.md",
+    "docs/architecture/SNAPSHOT_LIVE_METADATA_REVIEW_HANDOFFS.md",
+    "docs/architecture/REVIEWED_METADATA_PREVIEW_SNAPSHOT_SECTION.md",
+    "docs/architecture/REVIEWED_SOURCE_LEAD_PREVIEW_SNAPSHOT_SECTION.md",
+    "docs/operations/SNAPSHOT_REFRESH_02_RUNBOOK.md",
+    "docs/operations/POST_SNAPSHOT_REFRESH_02_PLAN.md",
+    "docs/reference/SNAPSHOT_LIVE_METADATA_REVIEW_SECTION.md",
+    "docs/reference/SNAPSHOT_REVIEWED_METADATA_PREVIEW_SECTION.md",
+    "docs/reference/SNAPSHOT_REVIEWED_SOURCE_LEAD_PREVIEW_SECTION.md",
 ]
 REQUIRED_CLI = [
     "scripts/eureka_snapshot_refresh.py",
@@ -114,6 +159,10 @@ REQUIRED_CLI = [
 ]
 REQUIRED_TRUE = [
     "snapshot_refresh_is_projection",
+    "review_previews_are_not_truth",
+    "reviewed_metadata_previews_require_local_apply",
+    "reviewed_source_lead_previews_require_local_apply",
+    "live_metadata_candidates_remain_candidates_until_applied",
     "live_metadata_candidates_remain_candidates",
     "candidates_remain_candidates",
     "seed_outputs_are_not_truth",
@@ -133,6 +182,9 @@ REQUIRED_FALSE = [
     "extraction_enabled",
     "model_provider_enabled",
     "raw_live_response_included",
+    "verified_download_claim_allowed",
+    "malware_clean_claim_allowed",
+    "rights_clearance_claim_allowed",
 ]
 
 
@@ -161,7 +213,7 @@ def validate() -> dict[str, Any]:
     failures = [name for name, passed in checks.items() if not passed]
     return {
         "schema_version": "snapshot_refresh_validation.v0",
-        "task": "SNAPSHOT-REFRESH-00+01",
+        "task": "SNAPSHOT-REFRESH-00+01+02",
         "status": "pass" if not failures else "fail",
         "checks": checks,
         "failures": failures,
@@ -185,6 +237,8 @@ def _runtime_checks() -> dict[str, bool]:
     inventory = build_snapshot_refresh_inventory_packets(result)
     live_result = run_snapshot_refresh_01(from_live_metadata_pilot_examples=True)
     live_inventory = build_snapshot_refresh_01_inventory_packets(live_result)
+    review_result = run_snapshot_refresh_02(from_live_metadata_review_examples=True)
+    review_inventory = build_snapshot_refresh_02_inventory_packets(review_result)
     candidate_sections = list(result.get("candidate_sections") or [])
     live_section = live_result["live_metadata_candidate_section"]
     live_cards = live_result["public_search_view_model_projection"]["result_cards"]
@@ -259,6 +313,70 @@ def _runtime_checks() -> dict[str, bool]:
                 "deployment_performed",
             )
         ),
+        "live_metadata_review_refresh_example_builds": review_result["fixture_snapshot_refresh_passed"] is True,
+        "live_metadata_review_section_exists": review_result["live_metadata_review_section"]["review_decision_count"] == 8,
+        "reviewed_metadata_preview_section_exists": (
+            review_result["reviewed_metadata_preview_section"]["preview_count"] == 1
+            and review_result["reviewed_metadata_preview_section"]["accepted_truth"] is False
+            and review_result["reviewed_metadata_preview_section"]["local_apply_required"] is True
+        ),
+        "reviewed_source_lead_preview_section_exists": (
+            review_result["reviewed_source_lead_preview_section"]["source_lead_preview_count"] == 2
+            and review_result["reviewed_source_lead_preview_section"]["accepted_truth"] is False
+            and review_result["reviewed_source_lead_preview_section"]["local_apply_required"] is True
+        ),
+        "preview_counts_match_review_result": (
+            review_result["reviewed_metadata_record_preview_count"] == 1
+            and review_result["reviewed_source_lead_preview_count"] == 2
+            and review_result["useful_lead_count"] == 1
+            and review_result["needs_more_evidence_count"] == 2
+            and review_result["rejected_or_duplicate_count"] == 2
+        ),
+        "review_previews_not_claimed_as_artifacts": all(
+            preview.get("accepted_truth") is False
+            and preview.get("verified_download_claim_created") is False
+            and preview.get("malware_clean_claim_created") is False
+            and preview.get("rights_clearance_claim_created") is False
+            for section in (
+                review_result["reviewed_metadata_preview_section"],
+                review_result["reviewed_source_lead_preview_section"],
+            )
+            for preview in section.get("previews", [])
+        ),
+        "live_metadata_review_public_search_projection_exists": (
+            review_result["public_search_view_model_projection"]["read_only"] is True
+            and review_result["public_search_view_model_projection"]["status_counts"]["source_lead"] == 3
+            and all(
+                card.get("status") != "verified"
+                for card in review_result["public_search_view_model_projection"].get("result_cards", [])
+            )
+        ),
+        "live_metadata_review_inventory_packets_build": {
+            "snapshot_refresh_02_live_metadata_review_matrix.json",
+            "snapshot_refresh_02_reviewed_preview_matrix.json",
+            "snapshot_refresh_02_public_search_view_model_matrix.json",
+        }.issubset(set(review_inventory)),
+        "live_metadata_review_no_boundaries_crossed": all(
+            review_result.get(key) is False
+            for key in (
+                "accepted_truth_created",
+                "candidate_promoted_to_reviewed",
+                "live_metadata_candidate_promoted",
+                "review_preview_applied",
+                "raw_live_response_included",
+                "verified_download_claim_created",
+                "malware_clean_claim_created",
+                "rights_clearance_claim_created",
+                "reviewed_index_mutated",
+                "master_index_mutated",
+                "public_index_mutated",
+                "site_dist_written",
+                "download_performed",
+                "extraction_executed",
+                "model_provider_used",
+                "deployment_performed",
+            )
+        ),
     }
 
 
@@ -275,6 +393,7 @@ def _prior_results_present() -> bool:
         "control/inventory/seed_batch_frontier_media_result.json",
         "control/inventory/seed_batch_legacy_software_result.json",
         "control/inventory/live_metadata_pilot_result.json",
+        "control/inventory/live_metadata_review_result.json",
         "control/inventory/review_batch_result.json",
         "control/inventory/scout_runtime_result.json",
         "control/inventory/candidate_index_result.json",

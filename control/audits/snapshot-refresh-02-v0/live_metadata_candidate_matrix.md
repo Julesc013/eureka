@@ -1,0 +1,14 @@
+# Live Metadata Candidate Matrix
+
+```json
+{
+  "accepted_truth": false,
+  "candidate_count": 8,
+  "public_search_status": "candidate",
+  "raw_response_included": false,
+  "review_required": true,
+  "schema_version": "snapshot_refresh_02_live_metadata_candidate_matrix.v0",
+  "section_id": "snapshot_live_metadata_candidate_section:7c3eba6cf2eb16bd",
+  "task": "SNAPSHOT-REFRESH-02"
+}
+```

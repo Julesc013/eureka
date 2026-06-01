@@ -1,0 +1,14 @@
+{
+  "deployment_performed": false,
+  "planned_after": [
+    "LOCAL-APPLY-LIVE-METADATA-PREVIEWS-00",
+    "SEED-BATCH-MANUALS-SCANS-00",
+    "SEED-BATCH-DRIVER-SUPPORT-00",
+    "DEV-TO-MAIN-PROMOTION-REVIEW-06"
+  ],
+  "public_launch_readiness_claimed": false,
+  "recommended_next_task": "PUBLIC-ALPHA-REASSESS-02 - Reassess alpha after live metadata candidate review snapshot",
+  "schema_version": "snapshot_refresh_02_next_task_decision.v0",
+  "status": "pass",
+  "task": "SNAPSHOT-REFRESH-02"
+}

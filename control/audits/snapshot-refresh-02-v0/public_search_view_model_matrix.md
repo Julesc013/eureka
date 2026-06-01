@@ -1,0 +1,21 @@
+# Public Search View Model Matrix
+
+```json
+{
+  "candidate_verified_separation_visible": true,
+  "public_search_view_model_refs": [
+    "snapshot_public_search_view_model_projection:2ab037cc55842dd9"
+  ],
+  "result_card_count": 11,
+  "schema_version": "snapshot_refresh_02_public_search_view_model_matrix.v0",
+  "status_counts": {
+    "absence": 2,
+    "candidate": 8,
+    "known_need": 28,
+    "near_miss": 0,
+    "source_lead": 3,
+    "verified": 1
+  },
+  "task": "SNAPSHOT-REFRESH-02"
+}
+```

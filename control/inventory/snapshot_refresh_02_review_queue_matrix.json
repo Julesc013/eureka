@@ -1,0 +1,19 @@
+{
+  "live_metadata_review_decision_refs": [
+    "live_metadata_review_decision:3202e52c2d2f6709",
+    "live_metadata_review_decision:7cb17133402b514c",
+    "live_metadata_review_decision:807aac75d83b7dd7",
+    "live_metadata_review_decision:7004f91a214c99e1",
+    "live_metadata_review_decision:78e5a82ebdf0e669",
+    "live_metadata_review_decision:5eec7bfc4bea0bd8",
+    "live_metadata_review_decision:569435d12625b240",
+    "live_metadata_review_decision:99673282b0907485"
+  ],
+  "operator_context_required": true,
+  "review_queue_candidate_count": 36,
+  "review_queue_section_refs": [
+    "snapshot_review_queue_section:668973ea324c781f"
+  ],
+  "schema_version": "snapshot_refresh_02_review_queue_matrix.v0",
+  "task": "SNAPSHOT-REFRESH-02"
+}

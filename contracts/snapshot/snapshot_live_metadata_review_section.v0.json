@@ -1,0 +1,52 @@
+{
+  "$id": "https://eureka.local/contracts/snapshot_live_metadata_review_section.v0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Snapshot Live Metadata Review Section",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "section_id",
+    "snapshot_refresh_id",
+    "live_metadata_review_ref",
+    "source_family",
+    "review_decision_refs",
+    "candidate_refs",
+    "review_decision_count",
+    "decisions",
+    "accepted_truth",
+    "review_preview_applied",
+    "raw_response_included",
+    "verified_download_claim_created",
+    "malware_clean_claim_created",
+    "rights_clearance_claim_created",
+    "limitations",
+    "created_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "snapshot_live_metadata_review_section.v0"
+    },
+    "source_family": {
+      "const": "internet_archive_metadata"
+    },
+    "accepted_truth": {
+      "const": false
+    },
+    "review_preview_applied": {
+      "const": false
+    },
+    "raw_response_included": {
+      "const": false
+    },
+    "verified_download_claim_created": {
+      "const": false
+    },
+    "malware_clean_claim_created": {
+      "const": false
+    },
+    "rights_clearance_claim_created": {
+      "const": false
+    }
+  }
+}

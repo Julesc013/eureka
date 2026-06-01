@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (7358 chars, 1840 approximate tokens)
+- `.aide/context/latest-task-packet.md` (5044 chars, 1261 approximate tokens)
 
 ## Context Packet Reference
 
@@ -33,31 +33,31 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Changed Files Summary
 
+- allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/REVIEW-LIVE-METADATA-CANDIDATES-00/README.md` (M; matches active task allowed path)
+- allowed: `.aide/queue/SNAPSHOT-REFRESH-02/README.md` (M; matches active task allowed path)
 - allowed: `.aide/queue/index.yaml` (M; matches active task allowed path)
-- allowed: `contracts/candidates/reviewed_metadata_record.v0.json` (??; matches active task allowed path)
-- allowed: `contracts/candidates/reviewed_source_lead.v0.json` (??; matches active task allowed path)
-- allowed: `contracts/review/live_metadata_candidate_review_packet.v0.json` (??; matches active task allowed path)
-- allowed: `contracts/review/live_metadata_evidence_sufficiency.v0.json` (??; matches active task allowed path)
-- allowed: `contracts/review/live_metadata_local_apply_handoff.v0.json` (??; matches active task allowed path)
-- allowed: `contracts/review/live_metadata_promotion_preview.v0.json` (??; matches active task allowed path)
-- allowed: `contracts/review/live_metadata_review_boundary_report.v0.json` (??; matches active task allowed path)
-- allowed: `contracts/review/live_metadata_review_decision.v0.json` (??; matches active task allowed path)
-- allowed: `contracts/review/live_metadata_snapshot_refresh_handoff.v0.json` (??; matches active task allowed path)
-- allowed: `control/audits/review-live-metadata-candidates-00-v0` (??; matches active task allowed path)
-- allowed: `control/inventory/live_metadata_candidate_review_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/live_metadata_evidence_sufficiency_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/live_metadata_local_apply_handoff_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/live_metadata_promotion_preview_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/live_metadata_public_alpha_reassess_handoff_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/live_metadata_review_boundary_report.json` (??; matches active task allowed path)
-- allowed: `control/inventory/live_metadata_review_decision_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/live_metadata_review_failure_repair_log.json` (??; matches active task allowed path)
-- allowed: `control/inventory/live_metadata_review_next_task_decision.json` (??; matches active task allowed path)
-- allowed: `control/inventory/live_metadata_review_result.json` (??; matches active task allowed path)
-- allowed: `control/inventory/live_metadata_review_smoke_result.json` (??; matches active task allowed path)
-- additional changed paths omitted from compact packet: 37; see task evidence changed-files report
+- allowed: `contracts/snapshot/snapshot_live_metadata_review_section.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/snapshot/snapshot_reviewed_metadata_preview_section.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/snapshot/snapshot_reviewed_source_lead_preview_section.v0.json` (??; matches active task allowed path)
+- allowed: `control/audits/snapshot-refresh-02-v0` (??; matches active task allowed path)
+- allowed: `control/inventory/snapshot_refresh_02_boundary_report.json` (??; matches active task allowed path)
+- allowed: `control/inventory/snapshot_refresh_02_candidate_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/snapshot_refresh_02_failure_repair_log.json` (??; matches active task allowed path)
+- allowed: `control/inventory/snapshot_refresh_02_input_state.json` (??; matches active task allowed path)
+- allowed: `control/inventory/snapshot_refresh_02_live_metadata_candidate_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/snapshot_refresh_02_live_metadata_review_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/snapshot_refresh_02_need_absence_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/snapshot_refresh_02_next_task_decision.json` (??; matches active task allowed path)
+- allowed: `control/inventory/snapshot_refresh_02_public_alpha_reassess_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/snapshot_refresh_02_public_search_view_model_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/snapshot_refresh_02_relay_projection_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/snapshot_refresh_02_result.json` (??; matches active task allowed path)
+- allowed: `control/inventory/snapshot_refresh_02_review_queue_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/snapshot_refresh_02_reviewed_preview_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/snapshot_refresh_02_reviewed_record_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/snapshot_refresh_02_smoke_result.json` (??; matches active task allowed path)
+- additional changed paths omitted from compact packet: 32; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -67,8 +67,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 6961
-- approx_tokens: 1741
+- chars: 6994
+- approx_tokens: 1749
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

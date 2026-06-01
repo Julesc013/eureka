@@ -1,0 +1,25 @@
+# Live Metadata Review Matrix
+
+```json
+{
+  "accepted_truth": false,
+  "needs_more_evidence_count": 2,
+  "rejected_or_duplicate_count": 2,
+  "review_decision_count": 8,
+  "review_decision_refs": [
+    "live_metadata_review_decision:3202e52c2d2f6709",
+    "live_metadata_review_decision:7cb17133402b514c",
+    "live_metadata_review_decision:807aac75d83b7dd7",
+    "live_metadata_review_decision:7004f91a214c99e1",
+    "live_metadata_review_decision:78e5a82ebdf0e669",
+    "live_metadata_review_decision:5eec7bfc4bea0bd8",
+    "live_metadata_review_decision:569435d12625b240",
+    "live_metadata_review_decision:99673282b0907485"
+  ],
+  "review_preview_applied": false,
+  "schema_version": "snapshot_refresh_02_live_metadata_review_matrix.v0",
+  "section_id": "snapshot_live_metadata_review_section:05b9c50ea1b928f5",
+  "task": "SNAPSHOT-REFRESH-02",
+  "useful_lead_count": 1
+}
+```

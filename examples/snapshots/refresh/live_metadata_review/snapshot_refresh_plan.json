@@ -1,0 +1,119 @@
+{
+  "accepted_truth_created": false,
+  "candidate_section_refs": [
+    "snapshot_candidate_section:56c4d9a3d13637f2",
+    "snapshot_candidate_section:1b6ca80b65db4576"
+  ],
+  "created_at": "2026-06-01T00:00:00Z",
+  "limitations": [
+    "snapshot_refresh_is_projection_only",
+    "review_previews_remain_preview_only",
+    "local_apply_required_before_reviewed_mutation",
+    "live_metadata_candidates_remain_candidates_until_applied",
+    "raw_live_responses_excluded",
+    "no_verified_download_claim",
+    "no_malware_clean_claim",
+    "no_rights_clearance_claim",
+    "no_site_dist_write",
+    "no_public_index_mutation",
+    "no_deployment_or_launch_claim"
+  ],
+  "live_metadata_candidate_section_refs": [
+    "snapshot_live_metadata_candidate_section:b94c6e3e2a7e2fc5"
+  ],
+  "live_metadata_pilot_ref": "control/inventory/live_metadata_pilot_result.json",
+  "live_metadata_review_ref": "control/inventory/live_metadata_review_result.json",
+  "live_metadata_review_section_refs": [
+    "snapshot_live_metadata_review_section:2ab037cc55842dd9"
+  ],
+  "live_metadata_source_family": "internet_archive_metadata",
+  "local_apply_required_before_reviewed_mutation": true,
+  "need_absence_section_refs": [
+    "snapshot_need_absence_section:2ab037cc55842dd9"
+  ],
+  "public_alpha_reassess_refs": [
+    "public_alpha_reassess:2ab037cc55842dd9"
+  ],
+  "public_index_mutated": false,
+  "public_search_view_model_refs": [
+    "snapshot_public_search_view_model_projection:2ab037cc55842dd9"
+  ],
+  "raw_live_response_included": false,
+  "record_type": "snapshot_refresh_plan",
+  "refresh_mode": "live_metadata_review_projection_only",
+  "relay_projection_refs": [
+    "snapshot_refresh_relay_projection:2ab037cc55842dd9"
+  ],
+  "review_counts": {
+    "live_metadata_candidates_reviewed": 8,
+    "needs_more_evidence_count": 2,
+    "rejected_or_duplicate_count": 2,
+    "reviewed_metadata_record_preview_count": 1,
+    "reviewed_source_lead_preview_count": 2,
+    "useful_lead_count": 1
+  },
+  "review_preview_applied": false,
+  "review_queue_section_refs": [
+    "snapshot_review_queue_section:2ab037cc55842dd9"
+  ],
+  "reviewed_index_mutated": false,
+  "reviewed_metadata_preview_section_refs": [
+    "snapshot_reviewed_metadata_preview_section:2ab037cc55842dd9"
+  ],
+  "reviewed_record_refs": [
+    "reviewed-sampleproject-001"
+  ],
+  "reviewed_source_lead_preview_section_refs": [
+    "snapshot_reviewed_source_lead_preview_section:2ab037cc55842dd9"
+  ],
+  "schema_version": "snapshot_refresh_plan.v0",
+  "snapshot_refresh_id": "snapshot_refresh_02",
+  "source_batches": [
+    {
+      "accepted_truth": false,
+      "accepted_truth_created": false,
+      "batch_id": "seed_batch_frontier_media_00",
+      "candidate_count": 12,
+      "domain_id": "frontier_resolution_media",
+      "domain_key": "frontier_media",
+      "fixture_derived": true,
+      "public_alpha_reassess_refs": [
+        "public_alpha_reassess_input:efa88f81027a122d"
+      ],
+      "public_index_mutated": false,
+      "query_count": 12,
+      "review_batch_refs": [
+        "review_batch:2ec562a70fa95f36"
+      ],
+      "review_required": true,
+      "reviewed_index_mutated": false,
+      "schema_version": "snapshot_seed_batch_summary_item.v0",
+      "snapshot_refresh_handoff_refs": [
+        "batch_snapshot_refresh_handoff:b09870cfc0795e2b"
+      ]
+    },
+    {
+      "accepted_truth": false,
+      "accepted_truth_created": false,
+      "batch_id": "seed_batch_legacy_software_00",
+      "candidate_count": 16,
+      "domain_id": "legacy_software",
+      "domain_key": "legacy_software",
+      "fixture_derived": true,
+      "public_alpha_reassess_refs": [
+        "public_alpha_reassess_input:73fcfb03da74dc6f"
+      ],
+      "public_index_mutated": false,
+      "query_count": 16,
+      "review_batch_refs": [
+        "review_batch:d731b2afdb62ed84"
+      ],
+      "review_required": true,
+      "reviewed_index_mutated": false,
+      "schema_version": "snapshot_seed_batch_summary_item.v0",
+      "snapshot_refresh_handoff_refs": [
+        "batch_snapshot_refresh_handoff:6f0f668aee63e3bc"
+      ]
+    }
+  ]
+}
