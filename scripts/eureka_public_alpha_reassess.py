@@ -14,7 +14,11 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.public_alpha import run_public_alpha_reassess, run_public_alpha_reassess_01  # noqa: E402
+from runtime.public_alpha import (  # noqa: E402
+    run_public_alpha_reassess,
+    run_public_alpha_reassess_01,
+    run_public_alpha_reassess_02,
+)
 
 
 def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout) -> int:
@@ -29,10 +33,20 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout) -> int:
         action="store_true",
         help="Use committed live metadata snapshot refresh examples.",
     )
+    parser.add_argument(
+        "--from-live-metadata-review-refresh-examples",
+        action="store_true",
+        help="Use committed live metadata review snapshot refresh examples.",
+    )
     parser.add_argument("--write-examples", action="store_true", help="Write public-safe reassessment examples.")
     parser.add_argument("--json", action="store_true", help="Emit JSON. This is the default shape.")
     args = parser.parse_args(argv)
-    if args.from_live_metadata_refresh_examples:
+    if args.from_live_metadata_review_refresh_examples:
+        result = run_public_alpha_reassess_02(
+            from_live_metadata_review_refresh_examples=True,
+            write_examples=args.write_examples,
+        )
+    elif args.from_live_metadata_refresh_examples:
         result = run_public_alpha_reassess_01(
             from_live_metadata_refresh_examples=True,
             write_examples=args.write_examples,
@@ -43,7 +57,7 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout) -> int:
             write_examples=args.write_examples,
         )
     else:
-        parser.error("--from-snapshot-refresh-examples or --from-live-metadata-refresh-examples is required")
+        parser.error("--from-snapshot-refresh-examples, --from-live-metadata-refresh-examples, or --from-live-metadata-review-refresh-examples is required")
     print(json.dumps(result, indent=2, sort_keys=True), file=stdout)
     return 0 if result["status"] == "pass" else 1
 

@@ -1,0 +1,50 @@
+# Review Preview Matrix
+
+```json
+{
+  "accepted_truth_created": false,
+  "candidate_promoted_to_reviewed": false,
+  "created_at": "2026-06-01T00:00:00Z",
+  "deployment_performed": false,
+  "download_performed": false,
+  "extraction_executed": false,
+  "live_metadata_candidate_promoted": false,
+  "live_metadata_review_ref": "control/inventory/live_metadata_review_result.json",
+  "live_source_call_performed": false,
+  "local_apply_required": true,
+  "malware_clean_claim_created": false,
+  "master_index_mutated": false,
+  "model_provider_used": false,
+  "needs_local_apply_of_review_previews": true,
+  "needs_public_alpha_reassess_after_apply": true,
+  "needs_snapshot_refresh_after_apply": true,
+  "preview_refs": [
+    "reviewed_metadata_record_preview:c86c49bff1d0b810",
+    "reviewed_source_lead_preview:59dce857242c0a22",
+    "reviewed_source_lead_preview:baafb31b350bb2cd"
+  ],
+  "production_readiness_claimed": false,
+  "prohibited_claims_absent": true,
+  "public_index_mutated": false,
+  "public_launch_performed": false,
+  "public_launch_readiness_claimed": false,
+  "public_live_source_fanout_enabled": false,
+  "public_mutation_enabled": false,
+  "raw_live_response_included": false,
+  "reassess_id": "public_alpha_reassess_02",
+  "review_preview_applied": false,
+  "review_preview_count": 3,
+  "review_previews_applied": false,
+  "review_previews_counted_as_reviewed_records": false,
+  "review_previews_improve_readiness": true,
+  "review_previews_launch_sufficient": false,
+  "reviewed_index_mutated": false,
+  "reviewed_metadata_record_preview_count": 1,
+  "reviewed_source_lead_preview_count": 2,
+  "rights_clearance_claim_created": false,
+  "schema_version": "public_alpha_review_preview_reassess.v0",
+  "site_dist_written": false,
+  "source_probe_executed": false,
+  "verified_download_claim_created": false
+}
+```

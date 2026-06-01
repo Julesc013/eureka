@@ -33,3 +33,16 @@ does not create reviewed truth.
 - live metadata review needs
 
 Live metadata candidates are counted as candidates, not reviewed records.
+
+`PUBLIC-ALPHA-REASSESS-02` adds:
+
+- reviewed metadata record preview count
+- reviewed source lead preview count
+- useful lead count
+- needs-more-evidence count
+- rejected-or-duplicate count
+- preview-to-reviewed ratio
+- queries with review preview
+- local-apply need
+
+Review previews are counted separately from reviewed records.

@@ -1,4 +1,4 @@
-current_recommended_task: PUBLIC-ALPHA-REASSESS-02 - Reassess alpha after live metadata candidate review snapshot
+current_recommended_task: LOCAL-APPLY-LIVE-METADATA-PREVIEWS-00 - Apply eligible live metadata review previews through local apply gate
 completed:
   - SOURCE-ACTION-KERNEL-00
   - SOURCE-WAVE-00
@@ -29,9 +29,12 @@ completed:
   - PUBLIC-ALPHA-REASSESS-01
   - REVIEW-LIVE-METADATA-CANDIDATES-00
   - SNAPSHOT-REFRESH-02
+  - PUBLIC-ALPHA-REASSESS-02
 blocked: []
 planned:
-  - PUBLIC-ALPHA-REASSESS-02
+  - LOCAL-APPLY-LIVE-METADATA-PREVIEWS-00
+  - SNAPSHOT-REFRESH-03
+  - PUBLIC-ALPHA-REASSESS-03
   - SEED-BATCH-MANUALS-SCANS-00
   - SEED-BATCH-DRIVER-SUPPORT-00
   - PUBLIC-SEARCH-UX-MVP-00

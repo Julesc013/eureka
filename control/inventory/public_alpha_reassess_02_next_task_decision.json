@@ -1,0 +1,15 @@
+{
+  "demo_mode_recommended": true,
+  "launch_recommended": false,
+  "planned_after": [
+    "SNAPSHOT-REFRESH-03",
+    "PUBLIC-ALPHA-REASSESS-03",
+    "SEED-BATCH-MANUALS-SCANS-00",
+    "SEED-BATCH-DRIVER-SUPPORT-00"
+  ],
+  "rationale": "Preview-only records do not count as reviewed records; local apply is the next gate.",
+  "recommended_next_task": "LOCAL-APPLY-LIVE-METADATA-PREVIEWS-00 - Apply eligible live metadata review previews through local apply gate",
+  "schema_version": "public_alpha_reassess_02_next_task_decision.v0",
+  "status": "pass",
+  "task": "PUBLIC-ALPHA-REASSESS-02"
+}

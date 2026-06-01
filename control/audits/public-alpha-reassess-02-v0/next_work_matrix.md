@@ -1,0 +1,60 @@
+# Next Work Matrix
+
+```json
+{
+  "accepted_truth_created": false,
+  "candidate_promoted_to_reviewed": false,
+  "created_at": "2026-06-01T00:00:00Z",
+  "deployment_performed": false,
+  "download_performed": false,
+  "extraction_executed": false,
+  "live_metadata_candidate_promoted": false,
+  "live_source_call_performed": false,
+  "malware_clean_claim_created": false,
+  "master_index_mutated": false,
+  "model_provider_used": false,
+  "needs_local_apply_of_review_previews": true,
+  "needs_more_reviewed_records": true,
+  "needs_more_seed_batches": true,
+  "needs_public_alpha_reassess_after_apply": true,
+  "needs_snapshot_refresh_after_apply": true,
+  "production_readiness_claimed": false,
+  "public_index_mutated": false,
+  "public_launch_performed": false,
+  "public_launch_readiness_claimed": false,
+  "public_live_source_fanout_enabled": false,
+  "public_mutation_enabled": false,
+  "raw_live_response_included": false,
+  "reassess_id": "public_alpha_reassess_02",
+  "recommendations": [
+    {
+      "priority": 1,
+      "reason": "Apply eligible reviewed metadata/source-lead previews through the explicit local apply gate.",
+      "task": "LOCAL-APPLY-LIVE-METADATA-PREVIEWS-00"
+    },
+    {
+      "priority": 2,
+      "reason": "Refresh snapshots after any local apply produces reviewed records or source leads.",
+      "task": "SNAPSHOT-REFRESH-03"
+    },
+    {
+      "priority": 3,
+      "reason": "Reassess launch usefulness only after post-apply snapshots are refreshed.",
+      "task": "PUBLIC-ALPHA-REASSESS-03"
+    },
+    {
+      "priority": 4,
+      "reason": "Continue corpus growth in another high-value domain.",
+      "task": "SEED-BATCH-MANUALS-SCANS-00"
+    }
+  ],
+  "recommended_next_task": "LOCAL-APPLY-LIVE-METADATA-PREVIEWS-00 - Apply eligible live metadata review previews through local apply gate",
+  "review_preview_applied": false,
+  "reviewed_index_mutated": false,
+  "rights_clearance_claim_created": false,
+  "schema_version": "public_alpha_next_work_recommendation.v0",
+  "site_dist_written": false,
+  "source_probe_executed": false,
+  "verified_download_claim_created": false
+}
+```

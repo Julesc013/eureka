@@ -23,6 +23,17 @@ Current v1 live-metadata snapshot:
 - live-metadata candidates: 8
 - total candidates: 36
 
+Current v2 live-metadata-review snapshot:
+
+- reviewed records: 1
+- reviewed metadata record previews: 1
+- reviewed source lead previews: 2
+- useful leads: 1
+- needs more evidence: 2
+- rejected or duplicate: 2
+
 This means the refreshed snapshot is more useful for internal demonstration and
 operator review, but it is still not launch-sufficient as a public search
-engine.
+engine. Review previews improve readiness but do not count as reviewed records
+until an explicit local apply gate applies them and later snapshots are
+refreshed.

@@ -1,0 +1,151 @@
+{
+  "absence_summary_count": 2,
+  "accepted_truth_created": false,
+  "blockers": [
+    {
+      "blocker_id": "reviewed_record_count_below_threshold",
+      "evidence": "Reviewed records 1 < threshold 25.",
+      "launch_blocking": true,
+      "public_explanation": "Reviewed records 1 < threshold 25.",
+      "schema_version": "public_alpha_launch_blocker.v0",
+      "severity": "launch_blocking"
+    },
+    {
+      "blocker_id": "insufficient_domain_coverage",
+      "evidence": "Reviewed domains 1 < threshold 3.",
+      "launch_blocking": true,
+      "public_explanation": "Reviewed domains 1 < threshold 3.",
+      "schema_version": "public_alpha_launch_blocker.v0",
+      "severity": "launch_blocking"
+    },
+    {
+      "blocker_id": "candidate_heavy_review_light_snapshot",
+      "evidence": "Candidate/reviewed ratio is 36.0; candidates are not accepted truth.",
+      "launch_blocking": true,
+      "public_explanation": "Candidate/reviewed ratio is 36.0; candidates are not accepted truth.",
+      "schema_version": "public_alpha_launch_blocker.v0",
+      "severity": "launch_blocking"
+    },
+    {
+      "blocker_id": "review_previews_not_applied",
+      "evidence": "Review previews present: 3; local apply has not run.",
+      "launch_blocking": true,
+      "public_explanation": "Review previews present: 3; local apply has not run.",
+      "schema_version": "public_alpha_launch_blocker.v0",
+      "severity": "launch_blocking"
+    },
+    {
+      "blocker_id": "live_metadata_candidates_not_reviewed_or_applied",
+      "evidence": "Live metadata review produced previews and follow-up decisions, but no reviewed index mutation has occurred.",
+      "launch_blocking": true,
+      "public_explanation": "Live metadata review produced previews and follow-up decisions, but no reviewed index mutation has occurred.",
+      "schema_version": "public_alpha_launch_blocker.v0",
+      "severity": "launch_blocking"
+    },
+    {
+      "blocker_id": "no_public_launch_approval",
+      "evidence": "No explicit future manual approval exists for a public launch.",
+      "launch_blocking": true,
+      "public_explanation": "No explicit future manual approval exists for a public launch.",
+      "schema_version": "public_alpha_launch_blocker.v0",
+      "severity": "launch_blocking"
+    },
+    {
+      "blocker_id": "public_launch_track_deferred",
+      "evidence": "Public alpha launch remains deferred for discovery coverage.",
+      "launch_blocking": true,
+      "public_explanation": "Public alpha launch remains deferred for discovery coverage.",
+      "schema_version": "public_alpha_launch_blocker.v0",
+      "severity": "launch_blocking"
+    },
+    {
+      "blocker_id": "no_local_apply_of_review_previews",
+      "evidence": "Eligible review previews have not passed the local apply gate.",
+      "launch_blocking": true,
+      "public_explanation": "Eligible review previews have not passed the local apply gate.",
+      "schema_version": "public_alpha_launch_blocker.v0",
+      "severity": "launch_blocking"
+    },
+    {
+      "blocker_id": "no_snapshot_refresh_after_local_apply",
+      "evidence": "No post-apply snapshot refresh exists.",
+      "launch_blocking": true,
+      "public_explanation": "No post-apply snapshot refresh exists.",
+      "schema_version": "public_alpha_launch_blocker.v0",
+      "severity": "launch_blocking"
+    },
+    {
+      "blocker_id": "no_snapshot_publication_rehearsal_after_reviewed_promotions",
+      "evidence": "No publication rehearsal has run after reviewed promotions from live metadata.",
+      "launch_blocking": true,
+      "public_explanation": "No publication rehearsal has run after reviewed promotions from live metadata.",
+      "schema_version": "public_alpha_launch_blocker.v0",
+      "severity": "launch_blocking"
+    }
+  ],
+  "candidate_promoted_to_reviewed": false,
+  "created_at": "2026-06-01T00:00:00Z",
+  "decision": "remain_deferred",
+  "demo_mode_recommended": true,
+  "deployment_performed": false,
+  "download_performed": false,
+  "extraction_executed": false,
+  "fixture_candidate_count": 28,
+  "internal_review_recommended": true,
+  "known_need_count": 28,
+  "launch_recommended": false,
+  "live_metadata_candidate_count": 8,
+  "live_metadata_candidate_promoted": false,
+  "live_metadata_review_ref": "control/inventory/live_metadata_review_result.json",
+  "live_source_call_performed": false,
+  "malware_clean_claim_created": false,
+  "master_index_mutated": false,
+  "model_provider_used": false,
+  "needs_local_apply_of_review_previews": true,
+  "needs_more_evidence_count": 2,
+  "needs_more_reviewed_records": true,
+  "needs_more_seed_batches": true,
+  "needs_public_alpha_reassess_after_apply": true,
+  "needs_snapshot_refresh_after_apply": true,
+  "next_work": "LOCAL-APPLY-LIVE-METADATA-PREVIEWS-00 - Apply eligible live metadata review previews through local apply gate",
+  "production_readiness_claimed": false,
+  "public_alpha_launch_recommended": false,
+  "public_index_mutated": false,
+  "public_launch_performed": false,
+  "public_launch_readiness_claimed": false,
+  "public_live_source_fanout_enabled": false,
+  "public_mutation_enabled": false,
+  "public_search_view_model_status": "available",
+  "query_coverage": {
+    "queries_with_candidate_result": 36,
+    "queries_with_need_or_absence": 28,
+    "queries_with_review_preview": 3,
+    "queries_with_reviewed_result": 0,
+    "query_count": 36
+  },
+  "raw_live_response_included": false,
+  "reassess_id": "public_alpha_reassess_02",
+  "rejected_or_duplicate_count": 2,
+  "review_preview_applied": false,
+  "reviewed_index_mutated": false,
+  "reviewed_metadata_record_preview_count": 1,
+  "reviewed_record_count": 1,
+  "reviewed_source_lead_preview_count": 2,
+  "rights_clearance_claim_created": false,
+  "route_smoke_status": "pass",
+  "schema_version": "public_alpha_reassess_decision.v0",
+  "site_dist_written": false,
+  "snapshot_refresh_ref": "snapshot_refresh_02",
+  "source_probe_executed": false,
+  "total_candidate_count": 36,
+  "useful_lead_count": 1,
+  "usefulness_score": 0.389,
+  "verified_download_claim_created": false,
+  "warnings": [
+    "route correctness is not product usefulness",
+    "review previews improve readiness but are not reviewed records",
+    "candidate-rich snapshots remain internal review material",
+    "preview-only snapshots are still not launch sufficient",
+    "current reviewed corpus is too thin for public search expectations"
+  ]
+}

@@ -14,7 +14,11 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.public_alpha import run_public_alpha_reassess, run_public_alpha_reassess_01  # noqa: E402
+from runtime.public_alpha import (  # noqa: E402
+    run_public_alpha_reassess,
+    run_public_alpha_reassess_01,
+    run_public_alpha_reassess_02,
+)
 
 
 def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout) -> int:
@@ -25,9 +29,18 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout) -> int:
         action="store_true",
         help="Read generated PUBLIC-ALPHA-REASSESS-01 live metadata examples.",
     )
+    parser.add_argument(
+        "--from-live-metadata-review-examples",
+        action="store_true",
+        help="Read generated PUBLIC-ALPHA-REASSESS-02 live metadata review examples.",
+    )
     parser.add_argument("--json", action="store_true", help="Emit JSON. This is the default shape.")
     args = parser.parse_args(argv)
-    if args.from_live_metadata_examples:
+    if args.from_live_metadata_review_examples:
+        path = REPO_ROOT / "examples" / "public_alpha" / "reassess" / "live_metadata_review" / "public_alpha_reassess_02_result.json"
+        result = json.loads(path.read_text(encoding="utf-8")) if path.exists() else run_public_alpha_reassess_02(from_live_metadata_review_refresh_examples=True)
+        report = _report_02(result)
+    elif args.from_live_metadata_examples:
         path = REPO_ROOT / "examples" / "public_alpha" / "reassess" / "live_metadata" / "public_alpha_reassess_01_result.json"
         result = json.loads(path.read_text(encoding="utf-8")) if path.exists() else run_public_alpha_reassess_01(from_live_metadata_refresh_examples=True)
         report = _report_01(result)
@@ -36,7 +49,7 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout) -> int:
         result = json.loads(path.read_text(encoding="utf-8")) if path.exists() else run_public_alpha_reassess(from_snapshot_refresh_examples=True)
         report = _report(result)
     else:
-        parser.error("--from-examples or --from-live-metadata-examples is required")
+        parser.error("--from-examples, --from-live-metadata-examples, or --from-live-metadata-review-examples is required")
     print(json.dumps(report, indent=2, sort_keys=True), file=stdout)
     return 0 if report["status"] == "pass" else 1
 
@@ -82,6 +95,37 @@ def _report_01(result: dict[str, Any]) -> dict[str, Any]:
         "needs_live_candidate_review": result.get("needs_live_candidate_review"),
         "needs_snapshot_refresh_after_review": result.get("needs_snapshot_refresh_after_review"),
         "recommended_next_task": result.get("recommended_next_task", "REVIEW-LIVE-METADATA-CANDIDATES-00 - Review live metadata candidates for possible local promotion"),
+        "deployment_performed": False,
+        "public_launch_performed": False,
+        "production_readiness_claimed": False,
+        "public_launch_readiness_claimed": False,
+    }
+
+
+def _report_02(result: dict[str, Any]) -> dict[str, Any]:
+    return {
+        "schema_version": "public_alpha_reassess_02_report.v0",
+        "task": "PUBLIC-ALPHA-REASSESS-02",
+        "status": result.get("status", "pass"),
+        "reviewed_record_count": result.get("reviewed_record_count"),
+        "fixture_candidate_count": result.get("fixture_candidate_count"),
+        "live_metadata_candidate_count": result.get("live_metadata_candidate_count"),
+        "total_candidate_count": result.get("total_candidate_count"),
+        "reviewed_metadata_record_preview_count": result.get("reviewed_metadata_record_preview_count"),
+        "reviewed_source_lead_preview_count": result.get("reviewed_source_lead_preview_count"),
+        "useful_lead_count": result.get("useful_lead_count"),
+        "needs_more_evidence_count": result.get("needs_more_evidence_count"),
+        "rejected_or_duplicate_count": result.get("rejected_or_duplicate_count"),
+        "known_need_count": result.get("known_need_count"),
+        "absence_summary_count": result.get("absence_summary_count"),
+        "launch_recommended": result.get("launch_recommended"),
+        "demo_mode_recommended": result.get("demo_mode_recommended"),
+        "internal_review_recommended": result.get("internal_review_recommended"),
+        "needs_more_reviewed_records": result.get("needs_more_reviewed_records"),
+        "needs_local_apply_of_review_previews": result.get("needs_local_apply_of_review_previews"),
+        "needs_snapshot_refresh_after_apply": result.get("needs_snapshot_refresh_after_apply"),
+        "needs_public_alpha_reassess_after_apply": result.get("needs_public_alpha_reassess_after_apply"),
+        "recommended_next_task": result.get("recommended_next_task", "LOCAL-APPLY-LIVE-METADATA-PREVIEWS-00 - Apply eligible live metadata review previews through local apply gate"),
         "deployment_performed": False,
         "public_launch_performed": False,
         "production_readiness_claimed": False,

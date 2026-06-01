@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (5044 chars, 1261 approximate tokens)
+- `.aide/context/latest-task-packet.md` (4849 chars, 1213 approximate tokens)
 
 ## Context Packet Reference
 
@@ -33,31 +33,31 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Changed Files Summary
 
-- allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/SNAPSHOT-REFRESH-02/README.md` (M; matches active task allowed path)
+- allowed: `.aide/queue/LOCAL-APPLY-LIVE-METADATA-PREVIEWS-00` (??; matches active task allowed path)
+- allowed: `.aide/queue/PUBLIC-ALPHA-REASSESS-02/README.md` (M; matches active task allowed path)
 - allowed: `.aide/queue/index.yaml` (M; matches active task allowed path)
-- allowed: `contracts/snapshot/snapshot_live_metadata_review_section.v0.json` (??; matches active task allowed path)
-- allowed: `contracts/snapshot/snapshot_reviewed_metadata_preview_section.v0.json` (??; matches active task allowed path)
-- allowed: `contracts/snapshot/snapshot_reviewed_source_lead_preview_section.v0.json` (??; matches active task allowed path)
-- allowed: `control/audits/snapshot-refresh-02-v0` (??; matches active task allowed path)
-- allowed: `control/inventory/snapshot_refresh_02_boundary_report.json` (??; matches active task allowed path)
-- allowed: `control/inventory/snapshot_refresh_02_candidate_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/snapshot_refresh_02_failure_repair_log.json` (??; matches active task allowed path)
-- allowed: `control/inventory/snapshot_refresh_02_input_state.json` (??; matches active task allowed path)
-- allowed: `control/inventory/snapshot_refresh_02_live_metadata_candidate_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/snapshot_refresh_02_live_metadata_review_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/snapshot_refresh_02_need_absence_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/snapshot_refresh_02_next_task_decision.json` (??; matches active task allowed path)
-- allowed: `control/inventory/snapshot_refresh_02_public_alpha_reassess_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/snapshot_refresh_02_public_search_view_model_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/snapshot_refresh_02_relay_projection_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/snapshot_refresh_02_result.json` (??; matches active task allowed path)
-- allowed: `control/inventory/snapshot_refresh_02_review_queue_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/snapshot_refresh_02_reviewed_preview_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/snapshot_refresh_02_reviewed_record_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/snapshot_refresh_02_smoke_result.json` (??; matches active task allowed path)
-- additional changed paths omitted from compact packet: 32; see task evidence changed-files report
+- allowed: `contracts/publication/public_alpha_review_preview_reassess.v0.json` (??; matches active task allowed path)
+- allowed: `control/audits/public-alpha-reassess-02-v0` (??; matches active task allowed path)
+- allowed: `control/inventory/public_alpha_reassess_02_boundary_report.json` (??; matches active task allowed path)
+- allowed: `control/inventory/public_alpha_reassess_02_candidate_usefulness_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/public_alpha_reassess_02_failure_repair_log.json` (??; matches active task allowed path)
+- allowed: `control/inventory/public_alpha_reassess_02_input_state.json` (??; matches active task allowed path)
+- allowed: `control/inventory/public_alpha_reassess_02_launch_blocker_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/public_alpha_reassess_02_live_metadata_candidate_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/public_alpha_reassess_02_need_absence_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/public_alpha_reassess_02_next_task_decision.json` (??; matches active task allowed path)
+- allowed: `control/inventory/public_alpha_reassess_02_next_work_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/public_alpha_reassess_02_public_search_view_model_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/public_alpha_reassess_02_query_coverage_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/public_alpha_reassess_02_result.json` (??; matches active task allowed path)
+- allowed: `control/inventory/public_alpha_reassess_02_review_preview_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/public_alpha_reassess_02_reviewed_record_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/public_alpha_reassess_02_route_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/public_alpha_reassess_02_smoke_result.json` (??; matches active task allowed path)
+- allowed: `control/inventory/public_alpha_reassess_02_snapshot_metrics.json` (??; matches active task allowed path)
+- allowed: `control/inventory/public_alpha_reassess_02_validation_matrix.json` (??; matches active task allowed path)
+- additional changed paths omitted from compact packet: 23; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -67,8 +67,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 6994
-- approx_tokens: 1749
+- chars: 7069
+- approx_tokens: 1768
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

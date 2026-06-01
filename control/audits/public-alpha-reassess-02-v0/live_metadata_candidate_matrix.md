@@ -1,0 +1,57 @@
+# Live Metadata Candidate Matrix
+
+```json
+{
+  "accepted_truth": false,
+  "accepted_truth_created": false,
+  "candidate_count": 8,
+  "candidate_promoted_to_reviewed": false,
+  "candidate_refs": [
+    "live_metadata_pilot_frontier_media_q01_01",
+    "live_metadata_pilot_frontier_media_q03_02",
+    "live_metadata_pilot_frontier_media_q05_03",
+    "live_metadata_pilot_frontier_media_q06_04",
+    "live_metadata_pilot_legacy_software_q01_05",
+    "live_metadata_pilot_legacy_software_q02_06",
+    "live_metadata_pilot_legacy_software_q03_07",
+    "live_metadata_pilot_legacy_software_q06_08"
+  ],
+  "created_at": "2026-06-01T00:00:00Z",
+  "deployment_performed": false,
+  "domains": [
+    "driver_support_media",
+    "frontier_resolution_media",
+    "legacy_software"
+  ],
+  "download_performed": false,
+  "extraction_executed": false,
+  "live_metadata_candidate_promoted": false,
+  "live_metadata_review_ref": "control/inventory/live_metadata_review_result.json",
+  "live_source_call_performed": false,
+  "malware_clean_claim_created": false,
+  "master_index_mutated": false,
+  "model_provider_used": false,
+  "needs_local_apply_of_review_previews": true,
+  "production_readiness_claimed": false,
+  "public_index_mutated": false,
+  "public_launch_performed": false,
+  "public_launch_readiness_claimed": false,
+  "public_live_source_fanout_enabled": false,
+  "public_mutation_enabled": false,
+  "raw_live_response_included": false,
+  "raw_response_included": false,
+  "reassess_id": "public_alpha_reassess_02",
+  "review_only_candidate_count": 8,
+  "review_preview_applied": false,
+  "review_required": true,
+  "reviewed_index_mutated": false,
+  "rights_clearance_claim_created": false,
+  "schema_version": "public_alpha_live_metadata_reassess.v0",
+  "site_dist_written": false,
+  "source_family": "internet_archive_metadata",
+  "source_probe_executed": false,
+  "useful_for_internal_review": true,
+  "useful_for_public_launch": false,
+  "verified_download_claim_created": false
+}
+```
