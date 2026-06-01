@@ -1,0 +1,6 @@
+{
+  "repairs": [],
+  "schema_version": "local_apply_live_metadata_failure_repair_log.v0",
+  "status": "no_failures_recorded",
+  "task": "LOCAL-APPLY-LIVE-METADATA-PREVIEWS-00"
+}

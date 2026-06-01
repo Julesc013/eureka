@@ -1,6 +1,6 @@
 # LOCAL-APPLY-LIVE-METADATA-PREVIEWS-00
 
-Status: planned
+Status: PASS
 
 Apply eligible live metadata review previews through the explicit local apply
 gate.
@@ -19,3 +19,20 @@ Boundary:
 - no public launch or deployment
 - no verified-download, malware-clean, or rights-clearance claims
 - no public/master index mutation without governed apply evidence
+
+Result:
+
+- eligible previews: 3
+- reviewed metadata records created in temp proof: 1
+- reviewed source leads created in temp proof: 2
+- useful leads not applied: 1
+- needs more evidence not applied: 2
+- rejected or duplicate not applied: 2
+- operator instance mutated: false
+- committed instance state: false
+
+Next recommended task:
+
+```text
+SNAPSHOT-REFRESH-03
+```

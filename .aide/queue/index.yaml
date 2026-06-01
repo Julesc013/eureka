@@ -1,4 +1,4 @@
-current_recommended_task: LOCAL-APPLY-LIVE-METADATA-PREVIEWS-00 - Apply eligible live metadata review previews through local apply gate
+current_recommended_task: SNAPSHOT-REFRESH-03 - Refresh snapshots after local apply of live metadata previews
 completed:
   - SOURCE-ACTION-KERNEL-00
   - SOURCE-WAVE-00
@@ -30,9 +30,9 @@ completed:
   - REVIEW-LIVE-METADATA-CANDIDATES-00
   - SNAPSHOT-REFRESH-02
   - PUBLIC-ALPHA-REASSESS-02
+  - LOCAL-APPLY-LIVE-METADATA-PREVIEWS-00
 blocked: []
 planned:
-  - LOCAL-APPLY-LIVE-METADATA-PREVIEWS-00
   - SNAPSHOT-REFRESH-03
   - PUBLIC-ALPHA-REASSESS-03
   - SEED-BATCH-MANUALS-SCANS-00

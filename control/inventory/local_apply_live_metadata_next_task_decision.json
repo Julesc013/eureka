@@ -1,0 +1,13 @@
+{
+  "planned_after": [
+    "PUBLIC-ALPHA-REASSESS-03",
+    "SEED-BATCH-MANUALS-SCANS-00",
+    "SEED-BATCH-DRIVER-SUPPORT-00",
+    "DEV-TO-MAIN-PROMOTION-REVIEW-06"
+  ],
+  "rationale": "Eligible previews were applied only to a temp explicit store; snapshot refresh is the next packaging gate.",
+  "recommended_next_task": "SNAPSHOT-REFRESH-03 - Refresh snapshots after local apply of live metadata previews",
+  "schema_version": "local_apply_live_metadata_next_task_decision.v0",
+  "status": "pass",
+  "task": "LOCAL-APPLY-LIVE-METADATA-PREVIEWS-00"
+}

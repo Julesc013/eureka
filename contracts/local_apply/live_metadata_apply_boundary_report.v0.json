@@ -1,0 +1,34 @@
+{
+  "schema_version": "json_schema.v0",
+  "contract_id": "live_metadata_apply_boundary_report.v0",
+  "record_type": "contract",
+  "required_fields": [
+    "schema_version",
+    "task",
+    "boundary_report_id",
+    "result_status",
+    "temp_instance_apply_passed",
+    "operator_instance_mutated",
+    "committed_instance_state",
+    "public_index_mutated",
+    "master_index_mutated",
+    "verified_download_claim_created",
+    "malware_clean_claim_created",
+    "rights_clearance_claim_created",
+    "artifact_verified_claim_created",
+    "download_performed",
+    "extraction_executed",
+    "model_provider_used",
+    "deployment_performed"
+  ],
+  "field_constraints": {
+    "operator_instance_mutated": false,
+    "committed_instance_state": false,
+    "public_index_mutated": false,
+    "master_index_mutated": false,
+    "download_performed": false,
+    "extraction_executed": false,
+    "model_provider_used": false,
+    "deployment_performed": false
+  }
+}

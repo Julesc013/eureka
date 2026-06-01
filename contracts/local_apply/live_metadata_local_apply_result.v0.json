@@ -1,0 +1,31 @@
+{
+  "schema_version": "json_schema.v0",
+  "contract_id": "live_metadata_local_apply_result.v0",
+  "record_type": "contract",
+  "required_fields": [
+    "schema_version",
+    "task",
+    "status",
+    "eligible_preview_count",
+    "reviewed_metadata_records_created",
+    "reviewed_source_leads_created",
+    "reviewed_record_delta_count",
+    "temp_instance_apply_passed",
+    "rollback_plan_created",
+    "operator_instance_mutated",
+    "committed_instance_state",
+    "public_index_mutated",
+    "master_index_mutated",
+    "recommended_next_task"
+  ],
+  "field_constraints": {
+    "operator_instance_mutated": false,
+    "committed_instance_state": false,
+    "public_index_mutated": false,
+    "master_index_mutated": false,
+    "verified_download_claim_created": false,
+    "malware_clean_claim_created": false,
+    "rights_clearance_claim_created": false,
+    "artifact_verified_claim_created": false
+  }
+}

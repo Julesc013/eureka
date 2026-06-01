@@ -1,0 +1,28 @@
+{
+  "schema_version": "json_schema.v0",
+  "contract_id": "live_metadata_local_apply_validation.v0",
+  "record_type": "contract",
+  "required_fields": [
+    "schema_version",
+    "task",
+    "plan_id",
+    "status",
+    "apply_plan_valid",
+    "eligible_preview_count",
+    "errors",
+    "warnings",
+    "temp_instance_required",
+    "operator_instance_apply_allowed"
+  ],
+  "field_constraints": {
+    "status": [
+      "pass",
+      "fail"
+    ],
+    "temp_instance_required": true,
+    "operator_instance_apply_allowed": false,
+    "operator_instance_mutated": false,
+    "public_index_mutated": false,
+    "master_index_mutated": false
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "schema_version": "json_schema.v0",
+  "contract_id": "live_metadata_apply_rollback_plan.v0",
+  "record_type": "contract",
+  "required_fields": [
+    "schema_version",
+    "task",
+    "rollback_plan_id",
+    "plan_id",
+    "temp_instance_locator",
+    "rollback_scope",
+    "records_to_remove",
+    "rollback_plan_created",
+    "operator_instance_mutated",
+    "created_at"
+  ],
+  "field_constraints": {
+    "temp_instance_locator": "system_temp_explicit_instance",
+    "rollback_plan_created": true,
+    "operator_instance_mutated": false,
+    "committed_instance_state": false
+  }
+}

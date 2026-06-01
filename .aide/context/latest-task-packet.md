@@ -2,20 +2,21 @@
 
 ## PHASE
 
-PUBLIC-ALPHA-REASSESS-02 - reassess alpha after live metadata candidate review snapshot
+LOCAL-APPLY-LIVE-METADATA-PREVIEWS-00 - apply eligible live metadata review previews through local apply gate
 
 ## GOAL
 
-Assess whether the read-only public alpha should launch, remain deferred, or
-move to local apply after `SNAPSHOT-REFRESH-02` exposed live metadata review
-previews.
+Apply eligible live metadata review previews through a temp-only local apply
+gate so they become limited reviewed metadata/source-lead records in proof,
+without mutating operator, public, or master indexes.
 
 ## WHY
 
-The snapshot now contains useful review outcomes: one reviewed metadata record
-preview, two reviewed source lead previews, one useful lead, two needs-more-
-evidence decisions, and two rejected or duplicate decisions. These improve
-internal review usefulness, but previews are not applied reviewed records.
+`PUBLIC-ALPHA-REASSESS-02` found the public alpha still deferred because
+reviewed records remain too low and reviewed previews do not count as reviewed
+records until a local apply gate runs. This task proves eligible previews can be
+converted into limited local reviewed metadata/source-lead records while
+preserving all artifact, safety, rights, and public launch boundaries.
 
 ## CONTEXT_REFS
 
@@ -25,61 +26,75 @@ internal review usefulness, but previews are not applied reviewed records.
 - `.aide/context/test-map.json`
 - `.aide/context/context-index.json`
 - `.aide/context/latest-context-packet.md`
+- `control/inventory/public_alpha_reassess_02_result.json`
 - `control/inventory/snapshot_refresh_02_result.json`
 - `control/inventory/live_metadata_review_result.json`
+- `examples/review/live_metadata/`
 - `examples/snapshots/refresh/live_metadata_review/`
-- `examples/public_alpha/reassess/live_metadata_review/`
 
 ## CURRENT_STATE
 
-- reviewed records: 1
-- fixture candidates: 28
-- live metadata candidates: 8
 - reviewed metadata record previews: 1
 - reviewed source lead previews: 2
 - useful leads: 1
 - needs more evidence: 2
 - rejected or duplicate: 2
-- launch recommended: false
-- demo mode recommended: true
-- internal review recommended: true
-- local apply of review previews needed: true
+- reviewed previews applied before task: false
+- public launch recommended: false
+- local apply needed: true
 
 ## ALLOWED_PATHS
 
-- `.aide/queue/PUBLIC-ALPHA-REASSESS-02/**`
 - `.aide/queue/LOCAL-APPLY-LIVE-METADATA-PREVIEWS-00/**`
+- `.aide/queue/SNAPSHOT-REFRESH-03/**`
 - `.aide/queue/index.yaml`
 - `.aide/context/latest-task-packet.md`
 - `.aide/context/latest-review-packet.md`
-- `contracts/publication/**`
-- `runtime/public_alpha/**`
-- `scripts/eureka_public_alpha_reassess.py`
-- `scripts/eureka_public_alpha_reassess_report.py`
-- `scripts/eureka_public_alpha_route_smoke.py`
-- `scripts/validate_public_alpha_reassess.py`
-- `tests/runtime/test_public_alpha_reassess*.py`
-- `tests/operations/test_public_alpha_reassess_scripts.py`
-- `tests/scripts/test_validate_public_alpha_reassess.py`
+- `contracts/local_apply/**`
+- `contracts/review/**`
+- `runtime/local_apply/**`
+- `runtime/review/live_metadata/**`
+- `scripts/eureka_local_apply_live_metadata_previews.py`
+- `scripts/eureka_local_apply_live_metadata_report.py`
+- `scripts/eureka_local_apply_preview_validate.py`
+- `scripts/validate_local_apply_live_metadata_previews.py`
+- `tests/runtime/test_local_apply_live_metadata_previews.py`
+- `tests/runtime/test_live_metadata_apply_plan.py`
+- `tests/runtime/test_live_metadata_apply_validation.py`
+- `tests/runtime/test_live_metadata_apply_temp_instance.py`
+- `tests/runtime/test_live_metadata_reviewed_record_projection.py`
+- `tests/runtime/test_live_metadata_apply_boundaries.py`
+- `tests/operations/test_local_apply_live_metadata_scripts.py`
+- `tests/scripts/test_validate_local_apply_live_metadata_previews.py`
+- `examples/local_apply/live_metadata/**`
+- `examples/review/live_metadata/**`
+- `examples/snapshots/refresh/live_metadata_review/**`
 - `examples/public_alpha/reassess/live_metadata_review/**`
-- `control/policies/public_alpha_reassess*.json`
+- `control/policies/local_apply_live_metadata_previews_policy.json`
+- `control/policies/live_metadata_apply_validation_policy.json`
+- `control/policies/live_metadata_reviewed_record_policy.json`
+- `control/policies/live_metadata_source_lead_policy.json`
+- `control/policies/live_metadata_apply_non_claim_policy.json`
+- `control/policies/live_metadata_operator_instance_apply_policy.json`
+- `control/policies/live_metadata_apply_rollback_policy.json`
 - `control/policies/generated_artifact_policy.json`
-- `control/inventory/public_alpha_reassess_02*.json`
-- `docs/architecture/PUBLIC_ALPHA_REASSESS_02.md`
-- `docs/operations/PUBLIC_ALPHA_REASSESS_02_RUNBOOK.md`
-- `docs/operations/PUBLIC_ALPHA_USEFULNESS_THRESHOLDS.md`
-- `docs/operations/POST_PUBLIC_ALPHA_REASSESS_02_PLAN.md`
-- `docs/reference/PUBLIC_ALPHA_REASSESS_DECISION.md`
-- `docs/reference/PUBLIC_ALPHA_USEFULNESS_METRICS.md`
-- `docs/reference/PUBLIC_ALPHA_REVIEW_PREVIEW_REASSESSMENT.md`
-- `control/audits/public-alpha-reassess-02-v0/**`
+- `control/inventory/local_apply_live_metadata*.json`
+- `docs/architecture/LOCAL_APPLY_LIVE_METADATA_PREVIEWS.md`
+- `docs/architecture/LIVE_METADATA_REVIEWED_RECORD_MODEL.md`
+- `docs/architecture/LIVE_METADATA_SOURCE_LEAD_MODEL.md`
+- `docs/operations/LOCAL_APPLY_LIVE_METADATA_PREVIEWS_RUNBOOK.md`
+- `docs/operations/POST_LOCAL_APPLY_LIVE_METADATA_PLAN.md`
+- `docs/reference/LIVE_METADATA_LOCAL_APPLY_PLAN.md`
+- `docs/reference/LIVE_METADATA_REVIEWED_RECORD.md`
+- `docs/reference/LIVE_METADATA_SOURCE_LEAD.md`
+- `control/audits/local-apply-live-metadata-previews-00-v0/**`
 
 ## FORBIDDEN_PATHS
 
 - `eureka-instance/**`
 - `instances/**`
+- `../instances/**`
 - `.aide.local/**`
-- `../eureka-test-runs/**`
 - `secrets/**`
 - `.env`
 - raw live source responses
@@ -96,40 +111,40 @@ internal review usefulness, but previews are not applied reviewed records.
 
 - No deployment or publication.
 - No public launch or production readiness claim.
-- No local apply execution.
-- No reviewed, master, or public index mutation.
-- No accepted truth creation.
+- No new live source calls.
 - No download, extraction, execution, install, emulation, or model behavior.
-- No live source calls.
-- No verified-download, malware-clean, or rights-clearance claim.
+- No operator instance, public, or master index mutation.
+- No verified-download, malware-clean, rights-clearance, or artifact-verified claim.
 - No full unittest discovery inside AI.
 
 ## IMPLEMENTATION
 
-- Add `runtime/public_alpha/reassess_02.py`.
-- Extend public alpha reassess CLI/report/validator support.
-- Add review-preview reassess contract and policy.
-- Generate examples, inventory, and audit evidence for `PUBLIC-ALPHA-REASSESS-02`.
-- Add focused tests for review-preview metrics and boundaries.
+- Add a temp-only live metadata local-apply runtime under `runtime/local_apply/`.
+- Add contracts, policies, CLI, examples, inventory evidence, docs, and audit pack.
+- Prove one reviewed metadata record and two reviewed source leads in a temp explicit store.
+- Preserve useful lead, needs-more-evidence, and rejected/duplicate states as non-applied.
 
 ## VALIDATION
 
 - `git diff --check`
-- `python scripts/validate_public_alpha_reassess.py`
-- related snapshot, review, live metadata, public search, seed, and source validators
-- focused public-alpha reassess unittest modules
+- `python scripts/validate_local_apply_live_metadata_previews.py`
+- related public alpha, snapshot, review, live metadata, public search, review batch, candidate index, source action, architecture, and generated-artifact validators
+- focused local-apply live metadata unittest modules
 - AIDE Lite doctor, validate, test, selftest, verify, review-pack, and commit check
 
 Full unittest discovery is not run by policy.
 
 ## ACCEPTANCE
 
-- Launch remains recommended false.
-- Review previews do not count as reviewed records.
-- Local apply is the next recommended task.
-- No deployment, public launch, site/dist write, live source call, download,
-  extraction, model call, mutation, accepted truth, malware-clean,
-  rights-clearance, or public launch readiness claim.
+- eligible preview count: 3
+- reviewed metadata records created in temp proof: 1
+- reviewed source leads created in temp proof: 2
+- reviewed record delta count: 3
+- operator instance mutated: false
+- committed instance state: false
+- public/master index mutated: false
+- verified-download, malware-clean, rights-clearance, artifact-verified claims: false
+- next recommended task: `SNAPSHOT-REFRESH-03`
 
 ## TOKEN_ESTIMATE
 
@@ -137,11 +152,11 @@ medium
 
 ## OUTPUT_SCHEMA
 
-Final report uses the user-requested `PUBLIC_ALPHA_REASSESS_02` format with
+Final report uses the user-requested `LOCAL_APPLY_LIVE_METADATA` format with
 validation and boundary summaries.
 
 ## EVIDENCE
 
-- `examples/public_alpha/reassess/live_metadata_review/`
-- `control/inventory/public_alpha_reassess_02_result.json`
-- `control/audits/public-alpha-reassess-02-v0/`
+- `control/inventory/local_apply_live_metadata_result.json`
+- `examples/local_apply/live_metadata/`
+- `control/audits/local-apply-live-metadata-previews-00-v0/`

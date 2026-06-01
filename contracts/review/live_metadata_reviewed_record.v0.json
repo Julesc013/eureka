@@ -1,0 +1,32 @@
+{
+  "schema_version": "json_schema.v0",
+  "contract_id": "live_metadata_reviewed_record.v0",
+  "record_type": "contract",
+  "required_fields": [
+    "schema_version",
+    "record_type",
+    "source_family",
+    "source_locator",
+    "title",
+    "reviewed_claim_scope",
+    "evidence_refs",
+    "live_metadata_review_ref",
+    "limitations",
+    "prohibited_claims",
+    "verified_download_claim",
+    "malware_clean_claim",
+    "rights_clearance_claim",
+    "artifact_verified",
+    "reviewed_at",
+    "reviewed_by_policy"
+  ],
+  "field_constraints": {
+    "record_type": "reviewed_metadata_record",
+    "source_family": "internet_archive_metadata",
+    "reviewed_claim_scope": "metadata_record_only",
+    "verified_download_claim": false,
+    "malware_clean_claim": false,
+    "rights_clearance_claim": false,
+    "artifact_verified": false
+  }
+}

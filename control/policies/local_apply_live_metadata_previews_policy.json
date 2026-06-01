@@ -1,0 +1,28 @@
+{
+  "schema_version": "local_apply_live_metadata_previews_policy.v0",
+  "task": "LOCAL-APPLY-LIVE-METADATA-PREVIEWS-00",
+  "eligible_preview_kinds": [
+    "reviewed_metadata_record_preview",
+    "reviewed_source_lead_preview"
+  ],
+  "useful_leads_not_auto_applied": true,
+  "needs_more_evidence_not_applied": true,
+  "rejected_or_duplicate_not_applied": true,
+  "local_apply_required": true,
+  "default_apply_target": "temp_explicit_instance",
+  "operator_instance_apply_requires_explicit_approval": true,
+  "public_apply_enabled": false,
+  "public_mutation_enabled": false,
+  "reviewed_record_scope_limited_to_metadata_or_source_lead": true,
+  "verified_download_claim_allowed": false,
+  "malware_clean_claim_allowed": false,
+  "rights_clearance_claim_allowed": false,
+  "artifact_verification_claim_allowed": false,
+  "downloads_enabled": false,
+  "extraction_enabled": false,
+  "model_provider_enabled": false,
+  "public_index_mutation_enabled": false,
+  "master_index_mutation_enabled": false,
+  "deployment_enabled": false,
+  "rollback_plan_required": true
+}
