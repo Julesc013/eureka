@@ -1,0 +1,26 @@
+{
+  "schema_version": "contract_schema.v0",
+  "contract_id": "live_metadata_snapshot_refresh_handoff.v0",
+  "record_type": "review_contract",
+  "purpose": "Handoff-only packet for a later snapshot refresh after live metadata review.",
+  "required_fields": [
+    "schema_version",
+    "record_type",
+    "handoff_id",
+    "promotion_preview_refs",
+    "review_decision_refs",
+    "decision_counts",
+    "snapshot_refresh_handoff_only",
+    "snapshot_refresh_executed",
+    "requires_separate_snapshot_refresh_gate",
+    "accepted_truth",
+    "created_at"
+  ],
+  "boundary_defaults": {
+    "snapshot_refresh_handoff_only": true,
+    "snapshot_refresh_executed": false,
+    "accepted_truth": false,
+    "public_index_mutated": false,
+    "master_index_mutated": false
+  }
+}

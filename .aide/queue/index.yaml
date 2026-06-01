@@ -1,4 +1,4 @@
-current_recommended_task: REVIEW-LIVE-METADATA-CANDIDATES-00 - Review live metadata candidates for possible local promotion
+current_recommended_task: SNAPSHOT-REFRESH-02 - Refresh snapshots after live metadata candidate review
 completed:
   - SOURCE-ACTION-KERNEL-00
   - SOURCE-WAVE-00
@@ -27,9 +27,9 @@ completed:
   - LIVE-METADATA-PILOT-BATCH-00
   - SNAPSHOT-REFRESH-01
   - PUBLIC-ALPHA-REASSESS-01
+  - REVIEW-LIVE-METADATA-CANDIDATES-00
 blocked: []
 planned:
-  - REVIEW-LIVE-METADATA-CANDIDATES-00
   - SNAPSHOT-REFRESH-02
   - PUBLIC-ALPHA-REASSESS-02
   - SEED-BATCH-MANUALS-SCANS-00

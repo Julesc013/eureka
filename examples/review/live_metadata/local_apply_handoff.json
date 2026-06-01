@@ -1,0 +1,42 @@
+{
+  "accepted_truth": false,
+  "accepted_truth_created": false,
+  "created_at": "2026-06-01T00:00:00Z",
+  "deployment_performed": false,
+  "download_performed": false,
+  "extraction_executed": false,
+  "handoff_id": "live_metadata_local_apply_handoff:7984855bae5a7738",
+  "handoff_status": "handoff_ready",
+  "live_source_call_performed": false,
+  "local_apply_executed": false,
+  "local_apply_handoff_only": true,
+  "malware_clean_claim_created": false,
+  "master_index_mutated": false,
+  "model_provider_used": false,
+  "new_live_source_calls_performed": false,
+  "operator_instance_mutated": false,
+  "production_readiness_claimed": false,
+  "promotion_preview_refs": [
+    "live_metadata_promotion_preview:39c760eac314c213",
+    "live_metadata_promotion_preview:49937fd66d58c73f",
+    "live_metadata_promotion_preview:5aa29569c397630b"
+  ],
+  "public_index_mutated": false,
+  "public_launch_readiness_claimed": false,
+  "public_mutation_enabled": false,
+  "raw_live_response_committed": false,
+  "record_type": "live_metadata_local_apply_handoff",
+  "requires_separate_local_apply_gate": true,
+  "reviewed_index_mutated": false,
+  "reviewed_metadata_record_preview_refs": [
+    "reviewed_metadata_record_preview:c86c49bff1d0b810"
+  ],
+  "reviewed_source_lead_preview_refs": [
+    "reviewed_source_lead_preview:59dce857242c0a22",
+    "reviewed_source_lead_preview:baafb31b350bb2cd"
+  ],
+  "rights_clearance_claim_created": false,
+  "schema_version": "live_metadata_local_apply_handoff.v0",
+  "site_dist_written": false,
+  "verified_download_claim_created": false
+}

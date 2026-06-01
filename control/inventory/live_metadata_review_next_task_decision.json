@@ -1,0 +1,16 @@
+{
+  "live_metadata_candidates_reviewed": 8,
+  "needs_more_evidence_count": 2,
+  "planned_after": [
+    "PUBLIC-ALPHA-REASSESS-02",
+    "SEED-BATCH-MANUALS-SCANS-00",
+    "SEED-BATCH-DRIVER-SUPPORT-00"
+  ],
+  "recommended_next_task": "SNAPSHOT-REFRESH-02 - Refresh snapshots after live metadata candidate review",
+  "rejected_or_duplicate_count": 2,
+  "reviewed_metadata_record_preview_count": 1,
+  "reviewed_source_lead_preview_count": 2,
+  "schema_version": "live_metadata_review_next_task_decision.v0",
+  "task": "REVIEW-LIVE-METADATA-CANDIDATES-00",
+  "useful_lead_count": 1
+}

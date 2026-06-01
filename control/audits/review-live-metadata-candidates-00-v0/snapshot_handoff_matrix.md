@@ -1,0 +1,57 @@
+# Snapshot Handoff Matrix
+
+```json
+{
+  "accepted_truth": false,
+  "accepted_truth_created": false,
+  "created_at": "2026-06-01T00:00:00Z",
+  "decision_counts": {
+    "live_metadata_candidates_reviewed": 8,
+    "needs_more_evidence_count": 2,
+    "rejected_or_duplicate_count": 2,
+    "reviewed_metadata_record_preview_count": 1,
+    "reviewed_source_lead_preview_count": 2,
+    "useful_lead_count": 1
+  },
+  "deployment_performed": false,
+  "download_performed": false,
+  "extraction_executed": false,
+  "handoff_id": "live_metadata_snapshot_refresh_handoff:a9aea00f74ada862",
+  "live_source_call_performed": false,
+  "malware_clean_claim_created": false,
+  "master_index_mutated": false,
+  "model_provider_used": false,
+  "new_live_source_calls_performed": false,
+  "operator_instance_mutated": false,
+  "production_readiness_claimed": false,
+  "promotion_preview_refs": [
+    "live_metadata_promotion_preview:39c760eac314c213",
+    "live_metadata_promotion_preview:49937fd66d58c73f",
+    "live_metadata_promotion_preview:5aa29569c397630b"
+  ],
+  "public_index_mutated": false,
+  "public_launch_readiness_claimed": false,
+  "public_mutation_enabled": false,
+  "raw_live_response_committed": false,
+  "recommended_next_task": "SNAPSHOT-REFRESH-02 - Refresh snapshots after live metadata candidate review",
+  "record_type": "live_metadata_snapshot_refresh_handoff",
+  "requires_separate_snapshot_refresh_gate": true,
+  "review_decision_refs": [
+    "live_metadata_review_decision:3202e52c2d2f6709",
+    "live_metadata_review_decision:569435d12625b240",
+    "live_metadata_review_decision:5eec7bfc4bea0bd8",
+    "live_metadata_review_decision:7004f91a214c99e1",
+    "live_metadata_review_decision:78e5a82ebdf0e669",
+    "live_metadata_review_decision:7cb17133402b514c",
+    "live_metadata_review_decision:807aac75d83b7dd7",
+    "live_metadata_review_decision:99673282b0907485"
+  ],
+  "reviewed_index_mutated": false,
+  "rights_clearance_claim_created": false,
+  "schema_version": "live_metadata_snapshot_refresh_handoff.v0",
+  "site_dist_written": false,
+  "snapshot_refresh_executed": false,
+  "snapshot_refresh_handoff_only": true,
+  "verified_download_claim_created": false
+}
+```

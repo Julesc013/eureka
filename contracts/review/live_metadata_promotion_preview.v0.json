@@ -1,0 +1,34 @@
+{
+  "schema_version": "contract_schema.v0",
+  "contract_id": "live_metadata_promotion_preview.v0",
+  "record_type": "review_contract",
+  "purpose": "Preview-only promotion packet for reviewed metadata records or reviewed source leads.",
+  "required_fields": [
+    "schema_version",
+    "record_type",
+    "preview_id",
+    "candidate_id",
+    "source_family",
+    "decision_id",
+    "allowed_promotion_kind",
+    "promotion_preview_is_not_promotion",
+    "local_apply_required",
+    "snapshot_refresh_required",
+    "accepted_truth",
+    "reviewed_artifact_claim",
+    "download_claim",
+    "extraction_claim",
+    "malware_clean_claim",
+    "rights_clearance_claim",
+    "created_at"
+  ],
+  "boundary_defaults": {
+    "promotion_preview_is_not_promotion": true,
+    "accepted_truth": false,
+    "reviewed_artifact_claim": false,
+    "download_claim": false,
+    "extraction_claim": false,
+    "malware_clean_claim": false,
+    "rights_clearance_claim": false
+  }
+}

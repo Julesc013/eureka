@@ -1,0 +1,26 @@
+{
+  "schema_version": "contract_schema.v0",
+  "contract_id": "live_metadata_candidate_review_packet.v0",
+  "record_type": "review_contract",
+  "purpose": "Packet of redacted live metadata candidates for operator review.",
+  "required_fields": [
+    "schema_version",
+    "record_type",
+    "review_packet_id",
+    "candidate_refs",
+    "candidates",
+    "source_family",
+    "metadata_only_review",
+    "prohibited_claims",
+    "accepted_truth",
+    "created_at"
+  ],
+  "boundary_defaults": {
+    "source_family": "internet_archive_metadata",
+    "metadata_only_review": true,
+    "accepted_truth": false,
+    "raw_live_response_committed": false,
+    "download_performed": false,
+    "extraction_executed": false
+  }
+}

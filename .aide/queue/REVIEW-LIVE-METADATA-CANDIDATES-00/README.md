@@ -1,6 +1,6 @@
 # REVIEW-LIVE-METADATA-CANDIDATES-00
 
-Recommended next task.
+Status: completed.
 
 Goal:
 
@@ -13,3 +13,13 @@ Expected follow-ups:
 - `SNAPSHOT-REFRESH-02`
 - `PUBLIC-ALPHA-REASSESS-02`
 
+Result summary:
+
+- candidates reviewed: 8
+- reviewed metadata record previews: 1
+- reviewed source lead previews: 2
+- useful leads: 1
+- needs more evidence: 2
+- duplicates/rejections: 2
+- accepted truth created: false
+- reviewed/master/public index mutation: false

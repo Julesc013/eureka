@@ -2,18 +2,15 @@
 
 ## PHASE
 
-PUBLIC-ALPHA-REASSESS-01 - reassess alpha after live metadata snapshot refresh
+REVIEW-LIVE-METADATA-CANDIDATES-00 - review live metadata candidates for possible local promotion
 
 ## GOAL
 
-Produce an evidence-based public-alpha product decision after the live metadata
-pilot and `SNAPSHOT-REFRESH-01`.
+Review the 8 redacted Internet Archive metadata candidates from the bounded live metadata pilot and produce conservative promotion previews only where metadata evidence supports a limited reviewed metadata record or reviewed source lead.
 
 ## WHY
 
-The snapshot is more useful for internal demo and review because it now includes
-live-metadata-derived candidates, but the public search corpus still has only
-one reviewed record. The reassessment must keep that distinction explicit.
+The public alpha remains reviewed-record poor. Live metadata produced real source-backed candidates, but metadata is evidence, not truth. This task creates review decisions and handoffs without claiming verified downloads, safety, rights clearance, or public launch readiness.
 
 ## CONTEXT_REFS
 
@@ -23,111 +20,109 @@ one reviewed record. The reassessment must keep that distinction explicit.
 - `.aide/context/context-index.json`
 - `.aide/context/latest-context-packet.md`
 - `.aide/reports/eureka-aide-lite-operating-handoff.md`
+- `control/inventory/public_alpha_reassess_01_result.json`
 - `control/inventory/snapshot_refresh_01_result.json`
 - `control/inventory/live_metadata_pilot_result.json`
-- `control/inventory/public_alpha_reassess_result.json`
-- `control/inventory/public_search_ux_model_result.json`
+- `examples/snapshots/refresh/live_metadata/live_metadata_candidate_section.json`
 
 ## CURRENT_STATE
 
-- reviewed records: 1
-- fixture candidates: 28
-- live metadata candidates: 8
-- total candidates: 36
-- known needs: 28
-- bounded absences: 2
+- live metadata candidates reviewed: 8
+- reviewed metadata record previews: 1
+- reviewed source lead previews: 2
+- useful leads: 1
+- needs more evidence: 2
+- duplicate/rejected decisions: 2
 - public launch track: deferred for discovery coverage
 
 ## ALLOWED_PATHS
 
-- `.aide/queue/PUBLIC-ALPHA-REASSESS-01/**`
 - `.aide/queue/REVIEW-LIVE-METADATA-CANDIDATES-00/**`
 - `.aide/queue/SNAPSHOT-REFRESH-02/**`
 - `.aide/queue/PUBLIC-ALPHA-REASSESS-02/**`
-- `.aide/queue/SEED-BATCH-MANUALS-SCANS-00/**`
-- `.aide/queue/SEED-BATCH-DRIVER-SUPPORT-00/**`
 - `.aide/queue/index.yaml`
 - `.aide/context/latest-task-packet.md`
 - `.aide/context/latest-review-packet.md`
 - `.aide/reports/eureka-repo-health.json`
 - `.aide/reports/eureka-repo-health.md`
-- `contracts/publication/**`
+- `contracts/review/**`
+- `contracts/candidates/**`
 - `contracts/snapshot/**`
 - `contracts/relay/**`
-- `contracts/capabilities/**`
-- `contracts/seed_batches/**`
-- `contracts/candidates/**`
 - `contracts/scout/**`
 - `contracts/discovery/**`
-- `contracts/review/**`
+- `contracts/source/action/**`
 - `contracts/search/query_plan/**`
 - `contracts/view/models/public_search/**`
-- `contracts/view_models/**`
 - `contracts/projections/**`
-- `runtime/public_alpha/**`
-- `runtime/gateway/**`
+- `contracts/local_apply/**`
+- `runtime/review/live_metadata/**`
+- `runtime/review/batch/**`
+- `runtime/review/queue/**`
+- `runtime/candidate_index/**`
+- `runtime/candidate_store/**`
+- `runtime/candidates/**`
 - `runtime/snapshots/**`
 - `runtime/relay/**`
-- `runtime/capabilities/**`
-- `runtime/seed_batches/**`
-- `runtime/candidate_index/**`
 - `runtime/scout/**`
-- `runtime/review/batch/**`
+- `runtime/discovery/**`
+- `runtime/source/action/**`
+- `runtime/local_apply/**`
 - `runtime/local_eval/**`
 - `runtime/local_service/**`
 - `runtime/local_workbench/**`
+- `runtime/gateway/**`
+- `runtime/public_alpha/**`
 - `surfaces/api/**`
 - `surfaces/web/**`
 - `surfaces/web/workbench/**`
 - `surfaces/files/**`
 - `surfaces/text/**`
 - `surfaces/lite/**`
-- `scripts/eureka_public_alpha_reassess.py`
-- `scripts/eureka_public_alpha_reassess_report.py`
-- `scripts/eureka_public_alpha_route_smoke.py`
-- `scripts/validate_public_alpha_reassess.py`
-- `scripts/validate_snapshot_refresh.py`
-- `scripts/validate_live_metadata_pilot_batch.py`
-- `scripts/validate_public_search_ux_model.py`
-- `scripts/validate_seed_batch_frontier_media.py`
-- `scripts/validate_seed_batch_legacy_software.py`
-- `scripts/validate_review_batch.py`
-- `scripts/validate_candidate_index_runtime.py`
-- `scripts/validate_public_alpha_readonly.py`
-- `scripts/eureka_test_select.py`
-- `tests/runtime/test_public_alpha_reassess.py`
-- `tests/runtime/test_public_alpha_reassess_metrics.py`
-- `tests/runtime/test_public_alpha_reassess_routes.py`
-- `tests/runtime/test_public_alpha_reassess_decision.py`
-- `tests/runtime/test_public_alpha_reassess_live_metadata.py`
-- `tests/runtime/test_public_alpha_reassess_public_search_view_models.py`
-- `tests/runtime/test_public_alpha_reassess_boundaries.py`
-- `tests/operations/test_public_alpha_reassess_scripts.py`
-- `tests/scripts/test_validate_public_alpha_reassess.py`
-- `examples/public_alpha/reassess/**`
-- `examples/snapshots/refresh/**`
-- `examples/snapshots/refresh/live_metadata/**`
-- `examples/relay/refresh/**`
-- `examples/seed_batches/frontier_media/**`
-- `examples/seed_batches/legacy_software/**`
+- `scripts/eureka_review_live_metadata_candidates.py`
+- `scripts/eureka_live_metadata_review_report.py`
+- `scripts/eureka_live_metadata_promotion_preview.py`
+- `scripts/eureka_live_metadata_local_apply_handoff.py`
+- `scripts/validate_review_live_metadata_candidates.py`
+- `tests/runtime/test_review_live_metadata_candidates.py`
+- `tests/runtime/test_live_metadata_evidence_sufficiency.py`
+- `tests/runtime/test_live_metadata_review_decisions.py`
+- `tests/runtime/test_live_metadata_promotion_preview.py`
+- `tests/runtime/test_live_metadata_local_apply_handoff.py`
+- `tests/runtime/test_live_metadata_snapshot_handoff.py`
+- `tests/runtime/test_live_metadata_review_boundaries.py`
+- `tests/operations/test_review_live_metadata_candidates_scripts.py`
+- `tests/scripts/test_validate_review_live_metadata_candidates.py`
+- `examples/review/live_metadata/**`
+- `examples/candidates/live_metadata/**`
 - `examples/live_metadata_pilot/**`
-- `examples/view_models/public_search/**`
-- `control/policies/public_alpha_reassess_policy.json`
-- `control/policies/public_alpha_reassess_threshold_policy.json`
-- `control/policies/public_alpha_reassess_route_smoke_policy.json`
-- `control/policies/public_alpha_reassess_live_metadata_policy.json`
-- `control/policies/public_alpha_reassess_non_claim_policy.json`
-- `control/policies/public_alpha_reassess_next_work_policy.json`
+- `examples/snapshots/refresh/live_metadata/**`
+- `examples/public_alpha/reassess/live_metadata/**`
+- `examples/local_apply/live_metadata/**`
+- `control/policies/review_live_metadata_candidates_policy.json`
+- `control/policies/live_metadata_evidence_sufficiency_policy.json`
+- `control/policies/live_metadata_promotion_preview_policy.json`
+- `control/policies/live_metadata_review_non_claim_policy.json`
+- `control/policies/live_metadata_local_apply_handoff_policy.json`
+- `control/policies/live_metadata_snapshot_handoff_policy.json`
 - `control/policies/generated_artifact_policy.json`
-- `control/inventory/public_alpha_reassess_01_*.json`
-- `docs/architecture/PUBLIC_ALPHA_REASSESS_01.md`
-- `docs/operations/PUBLIC_ALPHA_REASSESS_01_RUNBOOK.md`
-- `docs/operations/PUBLIC_ALPHA_USEFULNESS_THRESHOLDS.md`
-- `docs/operations/POST_PUBLIC_ALPHA_REASSESS_01_PLAN.md`
-- `docs/reference/PUBLIC_ALPHA_REASSESS_DECISION.md`
-- `docs/reference/PUBLIC_ALPHA_USEFULNESS_METRICS.md`
-- `docs/reference/PUBLIC_ALPHA_LIVE_METADATA_REASSESSMENT.md`
-- `control/audits/public-alpha-reassess-01-v0/**`
+- `control/inventory/live_metadata_*review*.json`
+- `control/inventory/live_metadata_candidate_review_matrix.json`
+- `control/inventory/live_metadata_evidence_sufficiency_matrix.json`
+- `control/inventory/live_metadata_promotion_preview_matrix.json`
+- `control/inventory/live_metadata_local_apply_handoff_matrix.json`
+- `control/inventory/live_metadata_snapshot_handoff_matrix.json`
+- `control/inventory/live_metadata_public_alpha_reassess_handoff_matrix.json`
+- `control/inventory/review_live_metadata_candidates_input_state.json`
+- `docs/architecture/REVIEW_LIVE_METADATA_CANDIDATES.md`
+- `docs/architecture/LIVE_METADATA_EVIDENCE_SUFFICIENCY.md`
+- `docs/architecture/LIVE_METADATA_PROMOTION_PREVIEW.md`
+- `docs/operations/REVIEW_LIVE_METADATA_CANDIDATES_RUNBOOK.md`
+- `docs/operations/POST_REVIEW_LIVE_METADATA_PLAN.md`
+- `docs/reference/LIVE_METADATA_REVIEW_DECISION.md`
+- `docs/reference/REVIEWED_METADATA_RECORD.md`
+- `docs/reference/REVIEWED_SOURCE_LEAD.md`
+- `control/audits/review-live-metadata-candidates-00-v0/**`
 
 ## FORBIDDEN_PATHS
 
@@ -149,51 +144,41 @@ one reviewed record. The reassessment must keep that distinction explicit.
 
 ## NON_GOALS
 
+- No new live source calls.
 - No deployment or publication.
 - No public launch or production readiness claim.
-- No live source calls.
-- No downloads, extraction, model calls, execution, or install behavior.
+- No download, extraction, execution, install, emulation, or model behavior.
 - No reviewed, master, or public index mutation.
-- No candidate promotion or accepted truth creation.
-- No raw live response commit.
+- No accepted truth creation.
+- No verified download, malware-clean, or rights-clearance claim.
 - No full unittest discovery inside AI.
 
 ## IMPLEMENTATION
 
-- Add live metadata reassessment contracts and policy.
-- Build v1 runtime metrics, blocker, decision, boundary, and next-work packets.
-- Generate public-safe examples, inventory packets, and audit evidence.
-- Validate public search view-model coverage and route/API smoke from examples.
-- Keep live metadata candidates review-only and launch recommendation false.
+- Add live metadata review contracts, policies, runtime, CLIs, examples, inventory, audit pack, docs, and focused tests.
+- Produce per-candidate evidence sufficiency, decisions, promotion previews, local apply handoff, snapshot refresh handoff, and public alpha reassess handoff.
+- Keep all preview/application work separate from mutation gates.
 
 ## VALIDATION
 
 - `git diff --check`
-- `python scripts/validate_public_alpha_reassess.py`
-- `python scripts/validate_snapshot_refresh.py`
-- `python scripts/validate_live_metadata_pilot_batch.py`
-- `python scripts/validate_public_search_ux_model.py`
-- seed, review, SCOUT, candidate, planner, relay, public-readonly, source validators
-- focused public alpha reassess unittest modules
+- `python scripts/validate_review_live_metadata_candidates.py`
+- existing public alpha, snapshot refresh, live metadata pilot, review batch, SCOUT, candidate index, query planner, source validators
+- focused live metadata review unittest modules
 - AIDE Lite doctor, validate, test, selftest, verify, review-pack, and commit check
 
 Full unittest discovery is not run by policy.
 
 ## ACCEPTANCE
 
-- Counts are recorded: 1 reviewed, 28 fixture candidates, 8 live metadata
-  candidates, 28 needs, 2 absences.
-- Launch remains not recommended.
-- Internal demo/review is recommended.
-- Live candidate review and a later snapshot refresh are recommended.
-- Boundary reports keep all mutation, deployment, extraction, download, model,
-  live-source, and readiness flags false.
-- Focused validators and tests pass.
+- 8 live metadata candidates reviewed.
+- Preview counts are recorded from deterministic review output.
+- No raw responses, live calls, downloads, extraction, model calls, mutation, accepted truth, malware-clean, rights-clearance, or public launch claim.
+- Next recommended task is `SNAPSHOT-REFRESH-02`.
 
 ## OUTPUT_SCHEMA
 
-Final report uses the user-requested PUBLIC_ALPHA_REASSESS_01 format with
-validation and boundary summaries.
+Final report uses the user-requested LIVE_METADATA_REVIEW format with validation and boundary summaries.
 
 ## TOKEN_ESTIMATE
 
@@ -201,6 +186,6 @@ medium
 
 ## EVIDENCE
 
-- `examples/public_alpha/reassess/live_metadata/`
-- `control/inventory/public_alpha_reassess_01_result.json`
-- `control/audits/public-alpha-reassess-01-v0/`
+- `examples/review/live_metadata/`
+- `control/inventory/live_metadata_review_result.json`
+- `control/audits/review-live-metadata-candidates-00-v0/`

@@ -1,0 +1,23 @@
+{
+  "schema_version": "live_metadata_local_apply_handoff_policy.v0",
+  "task": "REVIEW-LIVE-METADATA-CANDIDATES-00",
+  "metadata_only_review": true,
+  "raw_live_response_required": false,
+  "raw_live_response_commit_allowed": false,
+  "reviewed_metadata_record_allowed": true,
+  "reviewed_source_lead_allowed": true,
+  "verified_download_claim_allowed": false,
+  "malware_clean_claim_allowed": false,
+  "rights_clearance_claim_allowed": false,
+  "automatic_promotion_enabled": false,
+  "local_apply_required_for_any_reviewed_record": true,
+  "local_apply_handoff_only": true,
+  "reviewed_index_mutation_enabled_by_default": false,
+  "public_index_mutation_enabled": false,
+  "master_index_mutation_enabled": false,
+  "downloads_enabled": false,
+  "extraction_enabled": false,
+  "model_provider_enabled": false,
+  "deployment_enabled": false,
+  "new_live_source_calls_enabled": false
+}

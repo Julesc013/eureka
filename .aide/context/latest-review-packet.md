@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (7190 chars, 1798 approximate tokens)
+- `.aide/context/latest-task-packet.md` (7358 chars, 1840 approximate tokens)
 
 ## Context Packet Reference
 
@@ -33,31 +33,31 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Changed Files Summary
 
-- allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/PUBLIC-ALPHA-REASSESS-01/README.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/PUBLIC-ALPHA-REASSESS-02` (??; matches active task allowed path)
-- allowed: `.aide/queue/REVIEW-LIVE-METADATA-CANDIDATES-00` (??; matches active task allowed path)
-- allowed: `.aide/queue/SNAPSHOT-REFRESH-02` (??; matches active task allowed path)
+- allowed: `.aide/queue/REVIEW-LIVE-METADATA-CANDIDATES-00/README.md` (M; matches active task allowed path)
 - allowed: `.aide/queue/index.yaml` (M; matches active task allowed path)
-- allowed: `contracts/publication/public_alpha_live_metadata_reassess.v0.json` (??; matches active task allowed path)
-- allowed: `contracts/publication/public_alpha_next_work_recommendation.v0.json` (M; matches active task allowed path)
-- allowed: `contracts/publication/public_alpha_reassess.v0.json` (M; matches active task allowed path)
-- allowed: `contracts/publication/public_alpha_reassess_decision.v0.json` (M; matches active task allowed path)
-- allowed: `contracts/publication/public_alpha_usefulness_metrics.v0.json` (M; matches active task allowed path)
-- allowed: `control/audits/public-alpha-reassess-01-v0` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_reassess_01_boundary_report.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_reassess_01_candidate_usefulness_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_reassess_01_failure_repair_log.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_reassess_01_input_state.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_reassess_01_launch_blocker_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_reassess_01_live_metadata_candidate_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_reassess_01_need_absence_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_reassess_01_next_task_decision.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_reassess_01_next_work_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_reassess_01_public_search_view_model_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_reassess_01_query_coverage_matrix.json` (??; matches active task allowed path)
-- additional changed paths omitted from compact packet: 39; see task evidence changed-files report
+- allowed: `contracts/candidates/reviewed_metadata_record.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/candidates/reviewed_source_lead.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/review/live_metadata_candidate_review_packet.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/review/live_metadata_evidence_sufficiency.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/review/live_metadata_local_apply_handoff.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/review/live_metadata_promotion_preview.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/review/live_metadata_review_boundary_report.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/review/live_metadata_review_decision.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/review/live_metadata_snapshot_refresh_handoff.v0.json` (??; matches active task allowed path)
+- allowed: `control/audits/review-live-metadata-candidates-00-v0` (??; matches active task allowed path)
+- allowed: `control/inventory/live_metadata_candidate_review_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/live_metadata_evidence_sufficiency_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/live_metadata_local_apply_handoff_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/live_metadata_promotion_preview_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/live_metadata_public_alpha_reassess_handoff_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/live_metadata_review_boundary_report.json` (??; matches active task allowed path)
+- allowed: `control/inventory/live_metadata_review_decision_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/live_metadata_review_failure_repair_log.json` (??; matches active task allowed path)
+- allowed: `control/inventory/live_metadata_review_next_task_decision.json` (??; matches active task allowed path)
+- allowed: `control/inventory/live_metadata_review_result.json` (??; matches active task allowed path)
+- allowed: `control/inventory/live_metadata_review_smoke_result.json` (??; matches active task allowed path)
+- additional changed paths omitted from compact packet: 37; see task evidence changed-files report
 
 ## Validation Summary
 

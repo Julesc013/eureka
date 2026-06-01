@@ -1,0 +1,30 @@
+{
+  "accepted_truth_created": false,
+  "commands": [
+    "python scripts/eureka_review_live_metadata_candidates.py --from-live-metadata-examples --json",
+    "python scripts/eureka_live_metadata_promotion_preview.py --from-live-metadata-examples --json",
+    "python scripts/eureka_live_metadata_local_apply_handoff.py --from-live-metadata-examples --json",
+    "python scripts/eureka_live_metadata_review_report.py --from-examples --json"
+  ],
+  "deployment_performed": false,
+  "download_performed": false,
+  "extraction_executed": false,
+  "live_source_call_performed": false,
+  "malware_clean_claim_created": false,
+  "master_index_mutated": false,
+  "model_provider_used": false,
+  "new_live_source_calls_performed": false,
+  "operator_instance_mutated": false,
+  "production_readiness_claimed": false,
+  "public_index_mutated": false,
+  "public_launch_readiness_claimed": false,
+  "public_mutation_enabled": false,
+  "raw_live_response_committed": false,
+  "reviewed_index_mutated": false,
+  "rights_clearance_claim_created": false,
+  "schema_version": "live_metadata_review_smoke_result.v0",
+  "site_dist_written": false,
+  "status": "pass",
+  "task": "REVIEW-LIVE-METADATA-CANDIDATES-00",
+  "verified_download_claim_created": false
+}
