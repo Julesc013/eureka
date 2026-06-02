@@ -1,0 +1,48 @@
+{
+  "$id": "https://eureka.local/contracts/snapshot_public_route_section.v0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Snapshot Public Route Section",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "section_id",
+    "ux_mvp_ref",
+    "routes",
+    "route_count",
+    "all_routes_get",
+    "all_routes_no_js",
+    "all_routes_read_only",
+    "mutation_enabled",
+    "live_source_fanout_enabled",
+    "download_enabled",
+    "extraction_enabled",
+    "created_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "snapshot_public_route_section.v0"
+    },
+    "all_routes_get": {
+      "const": true
+    },
+    "all_routes_no_js": {
+      "const": true
+    },
+    "all_routes_read_only": {
+      "const": true
+    },
+    "mutation_enabled": {
+      "const": false
+    },
+    "live_source_fanout_enabled": {
+      "const": false
+    },
+    "download_enabled": {
+      "const": false
+    },
+    "extraction_enabled": {
+      "const": false
+    }
+  }
+}

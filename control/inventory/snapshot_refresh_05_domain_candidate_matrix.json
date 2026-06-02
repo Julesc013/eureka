@@ -1,0 +1,31 @@
+{
+  "domains": [
+    {
+      "candidate_count": 12,
+      "domain_id": null,
+      "domain_key": "frontier_media",
+      "review_only": true
+    },
+    {
+      "candidate_count": 16,
+      "domain_id": null,
+      "domain_key": "legacy_software",
+      "review_only": true
+    },
+    {
+      "candidate_count": 16,
+      "domain_id": "manuals_docs_scans",
+      "domain_key": "manuals_scans",
+      "review_only": true
+    },
+    {
+      "candidate_count": 16,
+      "domain_id": "driver_support_media",
+      "domain_key": "driver_support",
+      "review_only": true
+    }
+  ],
+  "schema_version": "snapshot_refresh_05_domain_candidate_matrix.v0",
+  "task": "SNAPSHOT-REFRESH-05",
+  "total_candidate_count": 68
+}

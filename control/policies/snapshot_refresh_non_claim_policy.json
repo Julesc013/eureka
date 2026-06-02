@@ -1,6 +1,6 @@
 {
   "schema_version": "snapshot_refresh_non_claim_policy.v0",
-  "task": "SNAPSHOT-REFRESH-00+01+02+03",
+  "task": "SNAPSHOT-REFRESH-00+01+02+03+04+05",
   "snapshot_refresh_is_projection": true,
   "seed_batch_candidates_remain_candidates": true,
   "manuals_scans_candidates_are_not_downloaded_documents": true,
@@ -9,6 +9,12 @@
   "driver_support_candidates_are_not_driver_downloads": true,
   "driver_support_candidates_are_not_safe_installers": true,
   "driver_support_candidates_are_not_compatibility_guarantees": true,
+  "public_ux_projection_is_read_only": true,
+  "public_search_ux_does_not_own_search_behavior": true,
+  "no_js_public_search_required": true,
+  "candidate_verified_distinction_required": true,
+  "limited_reviewed_record_distinction_required": true,
+  "no_results_need_projection_required": true,
   "live_metadata_candidates_remain_candidates": true,
   "candidates_remain_candidates": true,
   "seed_outputs_are_not_truth": true,
@@ -19,7 +25,9 @@
   "no_master_index_mutation": true,
   "no_public_index_mutation": true,
   "no_public_mutation": true,
+  "no_public_live_source_fanout": true,
   "no_deployment": true,
+  "no_site_dist_write": true,
   "no_public_launch_claim": true,
   "no_production_claim": true,
   "review_previews_are_not_truth": true,
@@ -43,5 +51,7 @@
   "ocr_enabled": false,
   "extraction_enabled": false,
   "install_execution_enabled": false,
-  "model_provider_enabled": false
+  "model_provider_enabled": false,
+  "public_mutation_enabled": false,
+  "public_live_source_fanout_enabled": false
 }

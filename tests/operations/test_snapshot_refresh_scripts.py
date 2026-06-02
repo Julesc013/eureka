@@ -99,6 +99,25 @@ class SnapshotRefreshScriptTests(unittest.TestCase):
         self.assertIn('"driver_support_candidate_count": 16', completed.stdout)
         self.assertIn('"total_candidate_count": 68', completed.stdout)
 
+    def test_public_search_ux_report_script(self) -> None:
+        completed = subprocess.run(
+            [
+                sys.executable,
+                str(REPO_ROOT / "scripts/eureka_snapshot_refresh_report.py"),
+                "--from-public-search-ux-examples",
+                "--json",
+            ],
+            cwd=REPO_ROOT,
+            capture_output=True,
+            text=True,
+            check=False,
+        )
+
+        self.assertEqual(0, completed.returncode, msg=completed.stderr)
+        self.assertIn('"task": "SNAPSHOT-REFRESH-05"', completed.stdout)
+        self.assertIn('"public_ux_routes_count": 8', completed.stdout)
+        self.assertIn('"result_card_states_count": 8', completed.stdout)
+
 
 if __name__ == "__main__":
     unittest.main()

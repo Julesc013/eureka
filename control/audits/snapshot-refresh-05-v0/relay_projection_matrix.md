@@ -1,0 +1,24 @@
+# Relay Projection Matrix
+
+```json
+{
+  "mutation_enabled": false,
+  "read_only": true,
+  "relay_projection_refs": [
+    "snapshot_refresh_relay_projection:d24224059df1e83e"
+  ],
+  "schema_version": "snapshot_refresh_05_relay_projection_matrix.v0",
+  "sections": {
+    "existing_reviewed_records": 1,
+    "no_results_sections": 1,
+    "public_ux_pages": 9,
+    "public_ux_routes": 8,
+    "result_card_states": 8,
+    "result_cards": 87,
+    "total_candidate_count": 68,
+    "total_limited_reviewed_record_projection_count": 4
+  },
+  "site_dist_written": false,
+  "task": "SNAPSHOT-REFRESH-05"
+}
+```

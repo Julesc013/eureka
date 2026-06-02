@@ -1,0 +1,31 @@
+{
+  "$id": "https://eureka.local/contracts/snapshot_text_projection_section.v0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Snapshot Text Projection Section",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "section_id",
+    "ux_mvp_ref",
+    "text_projection_ref",
+    "text_projection_available",
+    "classic_html_examples_available",
+    "public_read_only",
+    "created_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "snapshot_text_projection_section.v0"
+    },
+    "text_projection_available": {
+      "const": true
+    },
+    "classic_html_examples_available": {
+      "const": true
+    },
+    "public_read_only": {
+      "const": true
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "$id": "https://eureka.local/contracts/snapshot_no_results_section.v0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Snapshot No Results Section",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "section_id",
+    "ux_mvp_ref",
+    "no_results",
+    "no_results_sections_count",
+    "known_need_count",
+    "absence_count",
+    "known_need_projection_visible",
+    "public_mutation_enabled",
+    "live_source_fanout_enabled",
+    "created_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "snapshot_no_results_section.v0"
+    },
+    "public_mutation_enabled": {
+      "const": false
+    },
+    "live_source_fanout_enabled": {
+      "const": false
+    }
+  }
+}

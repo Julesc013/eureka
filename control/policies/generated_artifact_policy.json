@@ -221,6 +221,12 @@
       "policy": "Task-local PUBLIC-SEARCH-UX-MVP-00 audit evidence records no-JS public search UX validation; it is not deployment or public index state."
     },
     {
+      "path": "control/audits/snapshot-refresh-05-v0",
+      "artifact_class": "audit_generated",
+      "allow_task_local_drift": true,
+      "policy": "Task-local SNAPSHOT-REFRESH-05 audit evidence records read-only public search UX projection validation; it is not deployment, public index, or site/dist state."
+    },
+    {
       "path": "control/audits",
       "artifact_class": "audit_generated",
       "policy": "Audit generated outputs are evidence, not product runtime state."

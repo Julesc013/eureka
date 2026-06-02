@@ -1,0 +1,55 @@
+{
+  "$id": "https://eureka.local/contracts/snapshot_result_card_section.v0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Snapshot Result Card Section",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "section_id",
+    "ux_mvp_ref",
+    "snapshot_refresh_04_ref",
+    "cards",
+    "result_card_count",
+    "supported_statuses",
+    "result_card_states_count",
+    "candidate_verified_distinction_passed",
+    "limited_reviewed_record_distinction_passed",
+    "candidate_cards_accepted_truth",
+    "limited_records_are_not_verified_artifacts",
+    "public_read_only",
+    "mutation_enabled",
+    "download_enabled",
+    "extraction_enabled",
+    "created_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "snapshot_result_card_section.v0"
+    },
+    "candidate_verified_distinction_passed": {
+      "const": true
+    },
+    "limited_reviewed_record_distinction_passed": {
+      "const": true
+    },
+    "candidate_cards_accepted_truth": {
+      "const": false
+    },
+    "limited_records_are_not_verified_artifacts": {
+      "const": true
+    },
+    "public_read_only": {
+      "const": true
+    },
+    "mutation_enabled": {
+      "const": false
+    },
+    "download_enabled": {
+      "const": false
+    },
+    "extraction_enabled": {
+      "const": false
+    }
+  }
+}

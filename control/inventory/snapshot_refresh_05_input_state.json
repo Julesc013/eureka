@@ -1,0 +1,43 @@
+{
+  "accepted_truth_created": false,
+  "artifact_verified_claim_created": false,
+  "branch": "dev",
+  "candidate_promoted_to_reviewed": false,
+  "compatibility_guarantee_created": false,
+  "created_at": "2026-06-03T00:00:00Z",
+  "deployment_performed": false,
+  "download_performed": false,
+  "equivalent_filename_mappings": {
+    "public_alpha_readonly_result": "control/inventory/public_alpha_readonly_00_result.json"
+  },
+  "extraction_executed": false,
+  "file_fetch_performed": false,
+  "input_results": {
+    "public_alpha_readonly": "control/inventory/public_alpha_readonly_00_result.json",
+    "public_search_ux_model": "control/inventory/public_search_ux_model_result.json",
+    "public_search_ux_mvp": "control/inventory/public_search_ux_mvp_result.json",
+    "snapshot_refresh_04": "control/inventory/snapshot_refresh_04_result.json",
+    "snapshot_relay": "control/inventory/snapshot_relay_result.json"
+  },
+  "install_execution_enabled": false,
+  "malware_clean_claim_created": false,
+  "master_index_mutated": false,
+  "model_provider_used": false,
+  "ocr_performed": false,
+  "ocr_quality_claim_created": false,
+  "operator_instance_mutated": false,
+  "production_readiness_claimed": false,
+  "public_index_mutated": false,
+  "public_launch_performed": false,
+  "public_launch_readiness_claimed": false,
+  "public_live_source_fanout_enabled": false,
+  "public_mutation_enabled": false,
+  "public_search_ux_integrated": true,
+  "reviewed_index_mutated": false,
+  "rights_clearance_claim_created": false,
+  "scan_completeness_claim_created": false,
+  "schema_version": "snapshot_refresh_05_input_state.v0",
+  "site_dist_written": false,
+  "task": "SNAPSHOT-REFRESH-05",
+  "verified_download_claim_created": false
+}
