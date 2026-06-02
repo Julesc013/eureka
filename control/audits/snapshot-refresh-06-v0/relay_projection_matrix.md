@@ -1,0 +1,24 @@
+# Relay Projection Matrix
+
+```json
+{
+  "mutation_enabled": false,
+  "read_only": true,
+  "relay_projection_refs": [
+    "snapshot_refresh_relay_projection:cc8ed412fcfa5cde"
+  ],
+  "schema_version": "snapshot_refresh_06_relay_projection_matrix.v0",
+  "sections": {
+    "limited_reviewed_metadata_records": 5,
+    "limited_reviewed_source_leads": 6,
+    "remaining_candidates": 60,
+    "result_card_states": 8,
+    "result_cards": 90,
+    "reviewed_bounded_absences": 2,
+    "reviewed_known_needs": 2,
+    "total_limited_reviewed_record_projection_count": 12
+  },
+  "site_dist_written": false,
+  "task": "SNAPSHOT-REFRESH-06"
+}
+```

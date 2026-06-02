@@ -118,6 +118,25 @@ class SnapshotRefreshScriptTests(unittest.TestCase):
         self.assertIn('"public_ux_routes_count": 8', completed.stdout)
         self.assertIn('"result_card_states_count": 8', completed.stdout)
 
+    def test_review_batch_apply_report_script(self) -> None:
+        completed = subprocess.run(
+            [
+                sys.executable,
+                str(REPO_ROOT / "scripts/eureka_snapshot_refresh_report.py"),
+                "--from-review-batch-apply-examples",
+                "--json",
+            ],
+            cwd=REPO_ROOT,
+            capture_output=True,
+            text=True,
+            check=False,
+        )
+
+        self.assertEqual(0, completed.returncode, msg=completed.stderr)
+        self.assertIn('"task": "SNAPSHOT-REFRESH-06"', completed.stdout)
+        self.assertIn('"total_limited_reviewed_record_projection_count": 12', completed.stdout)
+        self.assertIn('"candidate_count_after_apply": 60', completed.stdout)
+
 
 if __name__ == "__main__":
     unittest.main()

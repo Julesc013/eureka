@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (5662 chars, 1416 approximate tokens)
+- `.aide/context/latest-task-packet.md` (5668 chars, 1417 approximate tokens)
 
 ## Context Packet Reference
 
@@ -33,31 +33,31 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Changed Files Summary
 
-- unknown: `.aide/context/latest-review-packet.md` (M; does not match active task allowed paths)
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/REVIEW-BATCH-APPLY-NEXT-00/README.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/SNAPSHOT-REFRESH-06` (??; matches active task allowed path)
+- allowed: `.aide/queue/PUBLIC-ALPHA-REASSESS-06` (??; matches active task allowed path)
+- allowed: `.aide/queue/SNAPSHOT-REFRESH-06/README.md` (M; matches active task allowed path)
 - allowed: `.aide/queue/index.yaml` (M; matches active task allowed path)
-- allowed: `contracts/local_apply/review_batch_apply_boundary_report.v0.json` (??; matches active task allowed path)
-- allowed: `contracts/local_apply/review_batch_apply_decision.v0.json` (??; matches active task allowed path)
-- allowed: `contracts/local_apply/review_batch_apply_eligibility.v0.json` (??; matches active task allowed path)
-- allowed: `contracts/local_apply/review_batch_apply_plan.v0.json` (??; matches active task allowed path)
-- allowed: `contracts/local_apply/review_batch_apply_result.v0.json` (??; matches active task allowed path)
-- allowed: `contracts/local_apply/review_batch_apply_rollback_plan.v0.json` (??; matches active task allowed path)
-- allowed: `contracts/review/limited_reviewed_metadata_record.v0.json` (??; matches active task allowed path)
-- allowed: `contracts/review/limited_reviewed_source_lead.v0.json` (??; matches active task allowed path)
-- allowed: `contracts/review/reviewed_bounded_absence.v0.json` (??; matches active task allowed path)
-- allowed: `contracts/review/reviewed_known_need.v0.json` (??; matches active task allowed path)
-- allowed: `control/audits/review-batch-apply-next-00-v0` (??; matches active task allowed path)
-- allowed: `control/inventory/review_batch_apply_next_absence_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/review_batch_apply_next_apply_plan_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/review_batch_apply_next_boundary_report.json` (??; matches active task allowed path)
-- allowed: `control/inventory/review_batch_apply_next_candidate_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/review_batch_apply_next_decision_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/review_batch_apply_next_eligibility_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/review_batch_apply_next_evidence_sufficiency_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/review_batch_apply_next_failure_repair_log.json` (??; matches active task allowed path)
-- additional changed paths omitted from compact packet: 46; see task evidence changed-files report
+- allowed: `contracts/snapshot/snapshot_limited_reviewed_metadata_section.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/snapshot/snapshot_limited_reviewed_source_lead_section.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/snapshot/snapshot_non_applied_candidate_section.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/snapshot/snapshot_review_batch_apply_section.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/snapshot/snapshot_reviewed_bounded_absence_section.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/snapshot/snapshot_reviewed_known_need_section.v0.json` (??; matches active task allowed path)
+- allowed: `control/audits/snapshot-refresh-06-v0` (??; matches active task allowed path)
+- allowed: `control/inventory/snapshot_refresh_06_boundary_report.json` (??; matches active task allowed path)
+- allowed: `control/inventory/snapshot_refresh_06_candidate_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/snapshot_refresh_06_domain_candidate_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/snapshot_refresh_06_failure_repair_log.json` (??; matches active task allowed path)
+- allowed: `control/inventory/snapshot_refresh_06_input_state.json` (??; matches active task allowed path)
+- allowed: `control/inventory/snapshot_refresh_06_limited_reviewed_metadata_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/snapshot_refresh_06_limited_reviewed_source_lead_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/snapshot_refresh_06_next_task_decision.json` (??; matches active task allowed path)
+- allowed: `control/inventory/snapshot_refresh_06_no_results_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/snapshot_refresh_06_non_applied_candidate_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/snapshot_refresh_06_public_alpha_reassess_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/snapshot_refresh_06_public_route_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/snapshot_refresh_06_public_search_ux_matrix.json` (??; matches active task allowed path)
+- additional changed paths omitted from compact packet: 42; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -67,8 +67,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 6906
-- approx_tokens: 1727
+- chars: 7024
+- approx_tokens: 1756
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

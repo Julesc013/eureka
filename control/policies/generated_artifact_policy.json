@@ -239,6 +239,12 @@
       "policy": "Task-local REVIEW-BATCH-APPLY-NEXT-00 audit evidence records temp-only review batch apply validation; it is not operator instance, public index, or product runtime state."
     },
     {
+      "path": "control/audits/snapshot-refresh-06-v0",
+      "artifact_class": "audit_generated",
+      "allow_task_local_drift": true,
+      "policy": "Task-local SNAPSHOT-REFRESH-06 audit evidence records review-batch apply snapshot projection validation; it is not deployment, public index, or site/dist state."
+    },
+    {
       "path": "control/audits",
       "artifact_class": "audit_generated",
       "policy": "Audit generated outputs are evidence, not product runtime state."

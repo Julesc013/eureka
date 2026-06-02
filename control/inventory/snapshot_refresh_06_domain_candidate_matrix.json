@@ -1,0 +1,37 @@
+{
+  "candidate_count_after_apply": 60,
+  "domains": [
+    {
+      "candidate_count": 10,
+      "domain_id": null,
+      "domain_key": "frontier_media",
+      "review_only": true
+    },
+    {
+      "candidate_count": 14,
+      "domain_id": null,
+      "domain_key": "legacy_software",
+      "review_only": true
+    },
+    {
+      "candidate_count": 14,
+      "domain_id": "manuals_docs_scans",
+      "domain_key": "manuals_scans",
+      "review_only": true
+    },
+    {
+      "candidate_count": 14,
+      "domain_id": "driver_support_media",
+      "domain_key": "driver_support",
+      "review_only": true
+    },
+    {
+      "candidate_count": 8,
+      "domain_id": "live_metadata_candidates",
+      "domain_key": "live_metadata",
+      "review_only": true
+    }
+  ],
+  "schema_version": "snapshot_refresh_06_domain_candidate_matrix.v0",
+  "task": "SNAPSHOT-REFRESH-06"
+}

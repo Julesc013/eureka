@@ -106,6 +106,23 @@ from runtime.snapshots.refresh_05 import (
     write_snapshot_refresh_05_examples,
     write_snapshot_refresh_05_inventory_and_audit,
 )
+from runtime.snapshots.refresh_06 import (
+    build_limited_reviewed_metadata_section,
+    build_limited_reviewed_source_lead_section,
+    build_non_applied_candidate_section,
+    build_review_batch_apply_section,
+    build_reviewed_bounded_absence_section,
+    build_reviewed_known_need_section,
+    build_snapshot_refresh_06_boundary_report,
+    build_snapshot_refresh_06_inventory_packets,
+    build_snapshot_refresh_06_plan,
+    load_review_batch_apply_handoff,
+    load_snapshot_refresh_05_handoff,
+    run_snapshot_refresh_06,
+    validate_snapshot_refresh_06_result,
+    write_snapshot_refresh_06_examples,
+    write_snapshot_refresh_06_inventory_and_audit,
+)
 
 __all__ = [
     "build_snapshot_envelope",
@@ -197,4 +214,19 @@ __all__ = [
     "validate_snapshot_refresh_05_result",
     "write_snapshot_refresh_05_examples",
     "write_snapshot_refresh_05_inventory_and_audit",
+    "build_limited_reviewed_metadata_section",
+    "build_limited_reviewed_source_lead_section",
+    "build_non_applied_candidate_section",
+    "build_review_batch_apply_section",
+    "build_reviewed_bounded_absence_section",
+    "build_reviewed_known_need_section",
+    "build_snapshot_refresh_06_boundary_report",
+    "build_snapshot_refresh_06_inventory_packets",
+    "build_snapshot_refresh_06_plan",
+    "load_review_batch_apply_handoff",
+    "load_snapshot_refresh_05_handoff",
+    "run_snapshot_refresh_06",
+    "validate_snapshot_refresh_06_result",
+    "write_snapshot_refresh_06_examples",
+    "write_snapshot_refresh_06_inventory_and_audit",
 ]

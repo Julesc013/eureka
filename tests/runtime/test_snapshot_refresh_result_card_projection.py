@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import unittest
 
-from runtime.snapshots import run_snapshot_refresh_05
+from runtime.snapshots import run_snapshot_refresh_05, run_snapshot_refresh_06
 
 
 class SnapshotRefreshResultCardProjectionTests(unittest.TestCase):
@@ -27,6 +27,17 @@ class SnapshotRefreshResultCardProjectionTests(unittest.TestCase):
             self.assertFalse(card["verified_download_claim"])
             self.assertFalse(card["malware_clean_claim"])
             self.assertFalse(card["rights_clearance_claim"])
+
+    def test_review_batch_apply_cards_reflect_new_limited_states(self) -> None:
+        result = run_snapshot_refresh_06(from_review_batch_apply_examples=True)
+        section = result["result_card_section"]
+
+        self.assertEqual(8, section["result_card_states_count"])
+        self.assertEqual(60, section["candidate_count_after_apply"])
+        self.assertTrue(section["limited_reviewed_record_distinction_passed"])
+        self.assertTrue(section["reviewed_needs_are_not_resolved_objects"])
+        self.assertTrue(section["reviewed_absences_are_bounded_not_universal"])
+        self.assertEqual(60, len([card for card in section["cards"] if card["status"] == "candidate"]))
 
 
 if __name__ == "__main__":

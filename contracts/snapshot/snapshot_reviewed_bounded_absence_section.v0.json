@@ -1,0 +1,26 @@
+{
+  "$id": "https://eureka.local/contracts/snapshot_reviewed_bounded_absence_section.v0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Snapshot Reviewed Bounded Absence Section",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "section_id",
+    "snapshot_refresh_id",
+    "review_batch_apply_ref",
+    "reviewed_bounded_absence_count",
+    "record_refs",
+    "records",
+    "reviewed_bounded_absences_are_bounded_not_universal",
+    "created_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "snapshot_reviewed_bounded_absence_section.v0"
+    },
+    "reviewed_bounded_absences_are_bounded_not_universal": {
+      "const": true
+    }
+  }
+}

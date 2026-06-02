@@ -2,75 +2,76 @@
 
 ## PHASE
 
-REVIEW-BATCH-APPLY-NEXT-00 - apply next eligible review batches to grow reviewed corpus
+SNAPSHOT-REFRESH-06 - refresh snapshots after review batch apply
 
 ## GOAL
 
-Apply the next conservative set of eligible review-batch outputs through a temp
-explicit local-apply proof, producing limited reviewed records, reviewed known
-needs, and reviewed bounded absences without public/master/operator mutation or
-artifact/download/safety/rights claims.
+Project the temp-only `REVIEW-BATCH-APPLY-NEXT-00` outputs into snapshot, relay,
+public-search, and public-alpha reassessment handoffs without creating artifact,
+download, safety, compatibility, OCR, rights, public index, deployment, or launch
+claims.
 
 ## WHY
 
-Public alpha remains launch-deferred because reviewed corpus depth is still too
-low. Candidate discovery and the no-JS public search UX are now useful enough
-that the next product improvement is governed reviewed-corpus growth.
+The reviewed-corpus loop produced limited reviewed metadata/source-lead records,
+reviewed known needs, and reviewed bounded absences. Snapshot refresh packages
+that evidence so the next product decision can reassess alpha usefulness without
+treating limited records as verified artifacts.
 
 ## CURRENT_STATE
 
 - branch: `dev`
-- latest prior commit: `54be6850 feat(task): reassess alpha after UX MVP`
+- latest prior commit: `614f5232 feat(review): apply next review batch`
 - public launch: deferred
-- public alpha reassess 05: pass
-- candidate count: 68
-- limited reviewed projection count before this task: 4
-- public search UX MVP: implemented, no-JS, read-only
-- recommended task before this packet: `REVIEW-BATCH-APPLY-NEXT-00`
+- snapshot refresh 05: pass
+- review batch apply next: pass
+- previous limited reviewed projection count: 4
+- previous candidate count: 68
 
 ## CONTEXT_REFS
 
 - `AGENTS.md`
 - `.aide/reports/eureka-aide-lite-operating-handoff.md`
-- `.aide/context/repo-map.json`
-- `.aide/context/test-map.json`
-- `.aide/context/context-index.json`
-- `.aide/context/latest-context-packet.md`
-- `control/inventory/public_alpha_reassess_05_result.json`
+- `control/inventory/review_batch_apply_next_result.json`
 - `control/inventory/snapshot_refresh_05_result.json`
 - `control/inventory/public_search_ux_mvp_result.json`
-- `examples/seed_batches/*/review_batch_packet.json`
-- `examples/review/live_metadata/review_packet.json`
-- `runtime/local_apply/review_batch_apply_next.py`
-- `scripts/validate_review_batch_apply_next.py`
+- `examples/review_batch/apply_next/`
+- `runtime/snapshots/refresh_06.py`
+- `scripts/validate_snapshot_refresh.py`
 
 ## ALLOWED_PATHS
 
+- `contracts/snapshot/**`
+- `contracts/relay/**`
 - `contracts/review/**`
-- `contracts/local_apply/**`
-- `runtime/local_apply/**`
-- `runtime/review/batch/**`
-- `scripts/eureka_review_batch_apply_next.py`
-- `scripts/eureka_review_batch_apply_report.py`
-- `scripts/eureka_review_batch_apply_validate.py`
-- `scripts/validate_review_batch_apply_next.py`
-- `tests/runtime/test_review_batch_apply*.py`
-- `tests/operations/test_review_batch_apply_next_scripts.py`
-- `tests/scripts/test_validate_review_batch_apply_next.py`
-- `examples/review_batch/apply_next/**`
-- `examples/local_apply/review_batch/**`
-- `control/policies/review_batch_apply*.json`
+- `contracts/view/models/public_search/**`
+- `runtime/snapshots/**`
+- `runtime/relay/**`
+- `runtime/public_search/**`
+- `scripts/eureka_snapshot_refresh.py`
+- `scripts/eureka_snapshot_refresh_report.py`
+- `scripts/validate_snapshot_refresh.py`
+- `tests/runtime/test_snapshot_refresh*.py`
+- `tests/operations/test_snapshot_refresh_scripts.py`
+- `tests/scripts/test_validate_snapshot_refresh.py`
+- `examples/snapshots/refresh/review_batch_apply/**`
+- `examples/relay/refresh/review_batch_apply_refreshed_relay_projection.json`
+- `examples/public_alpha/reassess/review_batch_apply/**`
+- `control/policies/snapshot_refresh*.json`
 - `control/policies/generated_artifact_policy.json`
-- `control/inventory/review_batch_apply_next*.json`
-- `control/audits/review-batch-apply-next-00-v0/**`
-- `docs/architecture/REVIEW_BATCH_APPLY*.md`
-- `docs/architecture/LIMITED_REVIEWED_RECORD_MODEL.md`
-- `docs/operations/REVIEW_BATCH_APPLY_NEXT_RUNBOOK.md`
-- `docs/operations/POST_REVIEW_BATCH_APPLY_NEXT_PLAN.md`
-- `docs/reference/REVIEW_BATCH_APPLY*.md`
-- `docs/reference/LIMITED_REVIEWED_RECORD.md`
-- `.aide/queue/REVIEW-BATCH-APPLY-NEXT-00/**`
+- `control/inventory/snapshot_refresh_06*.json`
+- `control/audits/snapshot-refresh-06-v0/**`
+- `docs/architecture/SNAPSHOT_REFRESH_06.md`
+- `docs/architecture/SNAPSHOT_REVIEW_BATCH_APPLY_PROJECTION.md`
+- `docs/architecture/SNAPSHOT_LIMITED_REVIEWED_RECORDS.md`
+- `docs/architecture/SNAPSHOT_REVIEWED_NEEDS_ABSENCES.md`
+- `docs/operations/SNAPSHOT_REFRESH_06_RUNBOOK.md`
+- `docs/operations/POST_SNAPSHOT_REFRESH_06_PLAN.md`
+- `docs/reference/SNAPSHOT_REVIEW_BATCH_APPLY_SECTION.md`
+- `docs/reference/SNAPSHOT_LIMITED_REVIEWED_RECORD_SECTION.md`
+- `docs/reference/SNAPSHOT_REVIEWED_NEED_ABSENCE_SECTION.md`
 - `.aide/queue/SNAPSHOT-REFRESH-06/**`
+- `.aide/queue/PUBLIC-ALPHA-REASSESS-06/**`
 - `.aide/queue/index.yaml`
 - `.aide/context/latest-task-packet.md`
 - `.aide/context/latest-review-packet.md`
@@ -107,21 +108,21 @@ that the next product improvement is governed reviewed-corpus growth.
 
 ## IMPLEMENTATION
 
-- Add review-batch apply contracts and policies.
+- Add snapshot refresh 06 contracts and policies.
 - Add runtime and CLI over deterministic examples only.
-- Apply 8 candidate-derived limited reviewed records in temp proof.
-- Apply 2 reviewed known needs and 2 reviewed bounded absences in temp proof.
-- Produce non-applied candidate report for the remaining 60 candidates.
-- Produce snapshot and public-alpha handoffs.
-- Produce inventory and audit evidence.
+- Project 4 new limited metadata records and 4 new source leads.
+- Project 2 reviewed known needs and 2 reviewed bounded absences.
+- Project 60 remaining review-only candidates.
+- Produce result-card, no-results, relay, public-alpha handoff, inventory, and
+  audit evidence.
 
 ## VALIDATION
 
 - `git diff --check`
-- `python scripts/validate_review_batch_apply_next.py`
-- existing public-alpha, snapshot, UX MVP, review-batch, candidate-index, SCOUT,
-  query-planner, architecture, and generated-artifact validators
-- focused `tests.runtime.test_review_batch_apply*`
+- `python scripts/validate_snapshot_refresh.py`
+- existing review-batch apply, public-alpha, UX MVP/model, readonly, relay,
+  architecture, and generated-artifact validators
+- focused `tests.runtime.test_snapshot_refresh*` modules for refresh 06
 - focused operations/script validator tests
 - AIDE doctor/validate/test/selftest/verify/review-pack/commit check
 
@@ -129,26 +130,24 @@ Full unittest discovery is not run by policy.
 
 ## ACCEPTANCE
 
-- `total_candidates_considered`: 68
-- `eligible_apply_count`: 12
-- `limited_reviewed_metadata_records_created`: 4
-- `limited_reviewed_source_leads_created`: 4
-- `reviewed_known_needs_created`: 2
-- `reviewed_bounded_absences_created`: 2
-- `reviewed_record_delta_count`: 8
-- `non_applied_count`: 60
-- temp instance apply passes
-- rollback plan exists
-- public launch remains deferred
+- `previous_total_limited_reviewed_record_projection_count`: 4
+- `new_limited_reviewed_metadata_records`: 4
+- `new_limited_reviewed_source_leads`: 4
+- `new_reviewed_record_delta_count`: 8
+- `total_limited_reviewed_record_projection_count`: 12
+- `reviewed_known_need_count`: 2
+- `reviewed_bounded_absence_count`: 2
+- `previous_total_candidate_count`: 68
+- `candidate_count_after_apply`: 60
 - all boundary flags remain false
 
 ## EVIDENCE
 
-- `control/inventory/review_batch_apply_next_result.json`
-- `control/inventory/review_batch_apply_next_validation_matrix.json`
-- `control/audits/review-batch-apply-next-00-v0/`
-- `examples/review_batch/apply_next/`
-- `.aide/queue/REVIEW-BATCH-APPLY-NEXT-00/README.md`
+- `control/inventory/snapshot_refresh_06_result.json`
+- `control/inventory/snapshot_refresh_06_validation_matrix.json`
+- `control/audits/snapshot-refresh-06-v0/`
+- `examples/snapshots/refresh/review_batch_apply/`
+- `.aide/queue/SNAPSHOT-REFRESH-06/README.md`
 
 ## OUTPUT_SCHEMA
 
@@ -156,7 +155,7 @@ Final response follows the task prompt shape:
 
 - `STATUS`
 - `SUMMARY`
-- `REVIEW_BATCH_APPLY_NEXT`
+- `SNAPSHOT_REFRESH_06`
 - `VALIDATION`
 - `BOUNDARIES`
 - `NEXT_TASK`
@@ -164,10 +163,10 @@ Final response follows the task prompt shape:
 ## TOKEN_ESTIMATE
 
 - method: compact manual task packet
-- approx_tokens: under 1600
+- approx_tokens: under 1800
 - budget_status: PASS
 - full_discovery: NOT_RUN_BY_POLICY
 
 ## NEXT
 
-`SNAPSHOT-REFRESH-06 - Refresh snapshots after review batch apply`
+`PUBLIC-ALPHA-REASSESS-06 - Reassess alpha after review batch apply snapshot refresh`

@@ -21,6 +21,7 @@ from runtime.snapshots import (  # noqa: E402
     run_snapshot_refresh_03,
     run_snapshot_refresh_04,
     run_snapshot_refresh_05,
+    run_snapshot_refresh_06,
 )
 
 
@@ -52,9 +53,21 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout) -> int:
         action="store_true",
         help="Read generated SNAPSHOT-REFRESH-05 public search UX projection examples.",
     )
+    parser.add_argument(
+        "--from-review-batch-apply-examples",
+        action="store_true",
+        help="Read generated SNAPSHOT-REFRESH-06 review-batch apply projection examples.",
+    )
     parser.add_argument("--json", action="store_true", help="Emit JSON. This is the default shape.")
     args = parser.parse_args(argv)
-    if args.from_public_search_ux_examples:
+    if args.from_review_batch_apply_examples:
+        path = REPO_ROOT / "examples" / "snapshots" / "refresh" / "review_batch_apply" / "snapshot_refresh_06_result.json"
+        if path.exists():
+            result = json.loads(path.read_text(encoding="utf-8"))
+        else:
+            result = run_snapshot_refresh_06(from_review_batch_apply_examples=True)
+        report = _report_06(result)
+    elif args.from_public_search_ux_examples:
         path = REPO_ROOT / "examples" / "snapshots" / "refresh" / "public_search_ux_mvp" / "snapshot_refresh_05_result.json"
         if path.exists():
             result = json.loads(path.read_text(encoding="utf-8"))
@@ -97,7 +110,7 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout) -> int:
             result = run_snapshot_refresh(from_seed_examples=True)
         report = _report(result)
     else:
-        parser.error("--from-examples, --from-live-metadata-examples, --from-live-metadata-review-examples, --from-local-apply-live-metadata-examples, --from-manuals-driver-examples, or --from-public-search-ux-examples is required")
+        parser.error("--from-examples, --from-live-metadata-examples, --from-live-metadata-review-examples, --from-local-apply-live-metadata-examples, --from-manuals-driver-examples, --from-public-search-ux-examples, or --from-review-batch-apply-examples is required")
     print(json.dumps(report, indent=2, sort_keys=True), file=stdout)
     return 0 if report["status"] == "pass" else 1
 
@@ -293,6 +306,43 @@ def _report_05(result: dict[str, Any]) -> dict[str, Any]:
         "result_card_states_count": result.get("result_card_states_count"),
         "no_js_required": bool(result.get("no_js_required")),
         "public_projection_read_only": bool(result.get("public_projection_read_only")),
+        "deployment_performed": False,
+        "public_launch_performed": False,
+        "production_readiness_claimed": False,
+        "public_launch_readiness_claimed": False,
+        "site_dist_written": False,
+        "public_mutation_enabled": False,
+        "public_live_source_fanout_enabled": False,
+        "download_performed": False,
+        "file_fetch_performed": False,
+        "ocr_performed": False,
+        "extraction_executed": False,
+        "model_provider_used": False,
+    }
+
+
+def _report_06(result: dict[str, Any]) -> dict[str, Any]:
+    return {
+        "schema_version": "snapshot_refresh_06_report.v0",
+        "task": "SNAPSHOT-REFRESH-06",
+        "status": "pass" if result.get("fixture_snapshot_refresh_passed") else result.get("status", "partial"),
+        "snapshot_refresh_id": result.get("snapshot_refresh_id"),
+        "review_batch_apply_integrated": bool(result.get("review_batch_apply_integrated")),
+        "previous_total_limited_reviewed_record_projection_count": result.get(
+            "previous_total_limited_reviewed_record_projection_count"
+        ),
+        "new_limited_reviewed_metadata_records": result.get("new_limited_reviewed_metadata_records"),
+        "new_limited_reviewed_source_leads": result.get("new_limited_reviewed_source_leads"),
+        "new_reviewed_record_delta_count": result.get("new_reviewed_record_delta_count"),
+        "total_limited_reviewed_record_projection_count": result.get(
+            "total_limited_reviewed_record_projection_count"
+        ),
+        "reviewed_known_need_count": result.get("reviewed_known_need_count"),
+        "reviewed_bounded_absence_count": result.get("reviewed_bounded_absence_count"),
+        "previous_total_candidate_count": result.get("previous_total_candidate_count"),
+        "candidate_count_after_apply": result.get("candidate_count_after_apply"),
+        "public_ux_routes_count": result.get("public_ux_routes_count"),
+        "result_card_states_count": result.get("result_card_states_count"),
         "deployment_performed": False,
         "public_launch_performed": False,
         "production_readiness_claimed": False,

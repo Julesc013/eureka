@@ -1,0 +1,28 @@
+{
+  "candidate_count_after_apply": 60,
+  "candidate_verified_distinction_passed": true,
+  "limited_reviewed_record_distinction_passed": true,
+  "observed_statuses": [
+    "absence",
+    "candidate",
+    "known_need",
+    "reviewed_metadata_record",
+    "reviewed_source_lead",
+    "verified"
+  ],
+  "result_card_count": 90,
+  "result_card_states_count": 8,
+  "schema_version": "snapshot_refresh_06_result_card_matrix.v0",
+  "section_id": "snapshot_result_card_section:cc8ed412fcfa5cde",
+  "supported_statuses": [
+    "verified",
+    "reviewed_metadata_record",
+    "reviewed_source_lead",
+    "candidate",
+    "near_miss",
+    "known_need",
+    "absence",
+    "source_lead"
+  ],
+  "task": "SNAPSHOT-REFRESH-06"
+}

@@ -1,0 +1,26 @@
+{
+  "$id": "https://eureka.local/contracts/snapshot_non_applied_candidate_section.v0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Snapshot Non Applied Candidate Section",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "section_id",
+    "snapshot_refresh_id",
+    "review_batch_apply_ref",
+    "candidate_count",
+    "non_applied_count",
+    "candidates",
+    "non_applied_candidates_remain_candidates",
+    "created_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "snapshot_non_applied_candidate_section.v0"
+    },
+    "non_applied_candidates_remain_candidates": {
+      "const": true
+    }
+  }
+}

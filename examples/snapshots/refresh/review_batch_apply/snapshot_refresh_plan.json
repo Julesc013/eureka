@@ -1,0 +1,94 @@
+{
+  "accepted_truth_created": false,
+  "applied_candidate_refs": [
+    "seed_driver_support_driver_support_q01_candidate",
+    "seed_driver_support_driver_support_q03_candidate",
+    "seed_frontier_media_frontier_media_q01_candidate",
+    "seed_frontier_media_frontier_media_q02_candidate",
+    "seed_legacy_software_legacy_software_q01_candidate",
+    "seed_legacy_software_legacy_software_q02_candidate",
+    "seed_manuals_scans_manuals_scans_q01_candidate",
+    "seed_manuals_scans_manuals_scans_q07_candidate"
+  ],
+  "artifact_verified_claim_created": false,
+  "candidate_promoted_to_reviewed": false,
+  "compatibility_guarantee_claim_created": false,
+  "created_at": "2026-06-03T00:00:00Z",
+  "deployment_performed": false,
+  "download_performed": false,
+  "extraction_executed": false,
+  "file_fetch_performed": false,
+  "install_execution_enabled": false,
+  "limitations": [
+    "snapshot_refresh_is_projection_only",
+    "review_batch_apply_outputs_are_limited_records",
+    "limited_reviewed_records_are_not_verified_artifacts",
+    "reviewed_known_needs_are_not_resolved_objects",
+    "reviewed_bounded_absences_are_bounded_not_universal",
+    "non_applied_candidates_remain_candidates",
+    "temp_apply_did_not_mutate_operator_instance",
+    "no_verified_download_claim",
+    "no_malware_clean_claim",
+    "no_compatibility_guarantee",
+    "no_rights_clearance_claim",
+    "no_scan_completeness_or_ocr_quality_claim",
+    "no_site_dist_write",
+    "no_public_index_mutation",
+    "no_deployment_or_launch_claim"
+  ],
+  "limited_reviewed_metadata_section_refs": [
+    "snapshot_limited_reviewed_metadata_section:cc8ed412fcfa5cde"
+  ],
+  "limited_reviewed_source_lead_section_refs": [
+    "snapshot_limited_reviewed_source_lead_section:cc8ed412fcfa5cde"
+  ],
+  "malware_clean_claim_created": false,
+  "master_index_mutated": false,
+  "model_provider_used": false,
+  "no_results_section_refs": [
+    "snapshot_no_results_section:cc8ed412fcfa5cde"
+  ],
+  "non_applied_candidate_section_refs": [
+    "snapshot_non_applied_candidate_section:cc8ed412fcfa5cde"
+  ],
+  "ocr_performed": false,
+  "ocr_quality_claim_created": false,
+  "operator_instance_mutated": false,
+  "previous_total_limited_reviewed_record_projection_count": 4,
+  "production_readiness_claimed": false,
+  "public_alpha_reassess_refs": [
+    "public_alpha_reassess:cc8ed412fcfa5cde"
+  ],
+  "public_index_mutated": false,
+  "public_launch_performed": false,
+  "public_launch_readiness_claimed": false,
+  "public_live_source_fanout_enabled": false,
+  "public_mutation_enabled": false,
+  "record_type": "snapshot_refresh_plan",
+  "refresh_mode": "review_batch_apply_projection_only",
+  "relay_projection_refs": [
+    "snapshot_refresh_relay_projection:cc8ed412fcfa5cde"
+  ],
+  "result_card_section_refs": [
+    "snapshot_result_card_section:cc8ed412fcfa5cde"
+  ],
+  "review_batch_apply_outputs_project_as_limited_records": true,
+  "review_batch_apply_ref": "control/inventory/review_batch_apply_next_result.json",
+  "review_batch_apply_section_refs": [
+    "snapshot_review_batch_apply_section:cc8ed412fcfa5cde"
+  ],
+  "reviewed_bounded_absence_section_refs": [
+    "snapshot_reviewed_bounded_absence_section:cc8ed412fcfa5cde"
+  ],
+  "reviewed_index_mutated": false,
+  "reviewed_known_need_section_refs": [
+    "snapshot_reviewed_known_need_section:cc8ed412fcfa5cde"
+  ],
+  "rights_clearance_claim_created": false,
+  "scan_completeness_claim_created": false,
+  "schema_version": "snapshot_refresh_plan.v0",
+  "site_dist_written": false,
+  "snapshot_refresh_05_ref": "control/inventory/snapshot_refresh_05_result.json",
+  "snapshot_refresh_id": "snapshot_refresh_06",
+  "verified_download_claim_created": false
+}

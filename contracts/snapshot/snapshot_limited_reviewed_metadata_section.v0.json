@@ -1,0 +1,41 @@
+{
+  "$id": "https://eureka.local/contracts/snapshot_limited_reviewed_metadata_section.v0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Snapshot Limited Reviewed Metadata Section",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "section_id",
+    "snapshot_refresh_id",
+    "review_batch_apply_ref",
+    "previous_record_count",
+    "new_record_count",
+    "limited_reviewed_metadata_record_count",
+    "record_refs",
+    "records",
+    "limited_claim_scope",
+    "artifact_verified",
+    "verified_download_claim",
+    "malware_clean_claim",
+    "rights_clearance_claim",
+    "created_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "snapshot_limited_reviewed_metadata_section.v0"
+    },
+    "artifact_verified": {
+      "const": false
+    },
+    "verified_download_claim": {
+      "const": false
+    },
+    "malware_clean_claim": {
+      "const": false
+    },
+    "rights_clearance_claim": {
+      "const": false
+    }
+  }
+}
