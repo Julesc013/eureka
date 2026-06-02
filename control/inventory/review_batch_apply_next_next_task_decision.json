@@ -1,0 +1,13 @@
+{
+  "planned_after": [
+    "PUBLIC-ALPHA-REASSESS-06",
+    "INDEXLESS-LIVE-SEARCH-FALLBACK-00",
+    "SEARCH-USEFULNESS-EVAL-00",
+    "DEV-TO-MAIN-PROMOTION-REVIEW-06"
+  ],
+  "rationale": "Review-batch apply grew limited reviewed records only in temp proof; snapshot refresh is the next projection gate.",
+  "recommended_next_task": "SNAPSHOT-REFRESH-06 - Refresh snapshots after review batch apply",
+  "schema_version": "review_batch_apply_next_next_task_decision.v0",
+  "status": "pass",
+  "task": "REVIEW-BATCH-APPLY-NEXT-00"
+}

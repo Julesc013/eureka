@@ -1,4 +1,4 @@
-current_recommended_task: REVIEW-BATCH-APPLY-NEXT-00 - Apply next eligible review batches to grow reviewed corpus
+current_recommended_task: SNAPSHOT-REFRESH-06 - Refresh snapshots after review batch apply
 completed:
   - SOURCE-ACTION-KERNEL-00
   - SOURCE-WAVE-00
@@ -40,11 +40,13 @@ completed:
   - PUBLIC-SEARCH-UX-MVP-00
   - SNAPSHOT-REFRESH-05
   - PUBLIC-ALPHA-REASSESS-05
+  - REVIEW-BATCH-APPLY-NEXT-00
 blocked: []
 planned:
-  - REVIEW-BATCH-APPLY-NEXT-00
   - SNAPSHOT-REFRESH-06
   - PUBLIC-ALPHA-REASSESS-06
+  - INDEXLESS-LIVE-SEARCH-FALLBACK-00
+  - SEARCH-USEFULNESS-EVAL-00
   - DEV-TO-MAIN-PROMOTION-REVIEW-06
 waiting: []
 status_options:

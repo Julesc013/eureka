@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (5049 chars, 1263 approximate tokens)
+- `.aide/context/latest-task-packet.md` (5662 chars, 1416 approximate tokens)
 
 ## Context Packet Reference
 
@@ -33,31 +33,31 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Changed Files Summary
 
+- unknown: `.aide/context/latest-review-packet.md` (M; does not match active task allowed paths)
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/PUBLIC-ALPHA-REASSESS-05/README.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/REVIEW-BATCH-APPLY-NEXT-00` (??; matches active task allowed path)
+- allowed: `.aide/queue/REVIEW-BATCH-APPLY-NEXT-00/README.md` (M; matches active task allowed path)
+- allowed: `.aide/queue/SNAPSHOT-REFRESH-06` (??; matches active task allowed path)
 - allowed: `.aide/queue/index.yaml` (M; matches active task allowed path)
-- allowed: `contracts/publication/public_alpha_ux_mvp_reassess.v0.json` (??; matches active task allowed path)
-- allowed: `control/audits/public-alpha-reassess-05-v0` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_reassess_05_boundary_report.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_reassess_05_candidate_usefulness_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_reassess_05_domain_coverage_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_reassess_05_failure_repair_log.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_reassess_05_input_state.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_reassess_05_launch_blocker_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_reassess_05_limited_reviewed_record_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_reassess_05_next_task_decision.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_reassess_05_next_work_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_reassess_05_public_search_ux_mvp_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_reassess_05_public_search_view_model_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_reassess_05_query_coverage_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_reassess_05_result.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_reassess_05_route_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_reassess_05_smoke_result.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_reassess_05_snapshot_metrics.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_reassess_05_validation_matrix.json` (??; matches active task allowed path)
-- allowed: `control/policies/generated_artifact_policy.json` (M; matches active task allowed path)
-- additional changed paths omitted from compact packet: 32; see task evidence changed-files report
+- allowed: `contracts/local_apply/review_batch_apply_boundary_report.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/local_apply/review_batch_apply_decision.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/local_apply/review_batch_apply_eligibility.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/local_apply/review_batch_apply_plan.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/local_apply/review_batch_apply_result.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/local_apply/review_batch_apply_rollback_plan.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/review/limited_reviewed_metadata_record.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/review/limited_reviewed_source_lead.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/review/reviewed_bounded_absence.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/review/reviewed_known_need.v0.json` (??; matches active task allowed path)
+- allowed: `control/audits/review-batch-apply-next-00-v0` (??; matches active task allowed path)
+- allowed: `control/inventory/review_batch_apply_next_absence_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/review_batch_apply_next_apply_plan_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/review_batch_apply_next_boundary_report.json` (??; matches active task allowed path)
+- allowed: `control/inventory/review_batch_apply_next_candidate_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/review_batch_apply_next_decision_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/review_batch_apply_next_eligibility_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/review_batch_apply_next_evidence_sufficiency_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/review_batch_apply_next_failure_repair_log.json` (??; matches active task allowed path)
+- additional changed paths omitted from compact packet: 46; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -67,8 +67,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 7035
-- approx_tokens: 1759
+- chars: 6906
+- approx_tokens: 1727
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

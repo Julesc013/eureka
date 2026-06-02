@@ -233,6 +233,12 @@
       "policy": "Task-local PUBLIC-ALPHA-REASSESS-05 audit evidence records product-readiness reassessment after the public search UX MVP projection refresh; it is not deployment, public index, or site/dist state."
     },
     {
+      "path": "control/audits/review-batch-apply-next-00-v0",
+      "artifact_class": "audit_generated",
+      "allow_task_local_drift": true,
+      "policy": "Task-local REVIEW-BATCH-APPLY-NEXT-00 audit evidence records temp-only review batch apply validation; it is not operator instance, public index, or product runtime state."
+    },
+    {
       "path": "control/audits",
       "artifact_class": "audit_generated",
       "policy": "Audit generated outputs are evidence, not product runtime state."

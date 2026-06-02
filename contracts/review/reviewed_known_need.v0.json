@@ -1,0 +1,22 @@
+{
+  "schema_version": "json_schema.v0",
+  "contract_id": "reviewed_known_need.v0",
+  "record_type": "contract",
+  "required_fields": [
+    "schema_version",
+    "record_type",
+    "need_id",
+    "need_kind",
+    "candidate_refs",
+    "summary",
+    "reviewed_claim_scope",
+    "reviewed_at",
+    "accepted_truth",
+    "limitations"
+  ],
+  "field_constraints": {
+    "record_type": "reviewed_known_need",
+    "reviewed_claim_scope": "known_need_only",
+    "accepted_truth": false
+  }
+}

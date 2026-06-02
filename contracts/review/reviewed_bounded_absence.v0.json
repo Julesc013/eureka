@@ -1,0 +1,21 @@
+{
+  "schema_version": "json_schema.v0",
+  "contract_id": "reviewed_bounded_absence.v0",
+  "record_type": "contract",
+  "required_fields": [
+    "schema_version",
+    "record_type",
+    "absence_id",
+    "absence_kind",
+    "summary",
+    "reviewed_claim_scope",
+    "reviewed_at",
+    "accepted_truth",
+    "limitations"
+  ],
+  "field_constraints": {
+    "record_type": "reviewed_bounded_absence",
+    "reviewed_claim_scope": "bounded_absence_only",
+    "accepted_truth": false
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "schema_version": "json_schema.v0",
+  "contract_id": "review_batch_apply_decision.v0",
+  "record_type": "contract",
+  "required_fields": [
+    "schema_version",
+    "task",
+    "candidate_id",
+    "decision",
+    "record_kind",
+    "allowed",
+    "reason",
+    "created_at"
+  ],
+  "field_constraints": {
+    "allowed_decisions": [
+      "apply_limited_reviewed_metadata_record",
+      "apply_limited_reviewed_source_lead",
+      "not_applied"
+    ],
+    "artifact_verified_claim_created": false,
+    "verified_download_claim_created": false,
+    "public_index_mutated": false
+  }
+}

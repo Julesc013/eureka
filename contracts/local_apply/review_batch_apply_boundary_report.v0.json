@@ -1,0 +1,22 @@
+{
+  "schema_version": "json_schema.v0",
+  "contract_id": "review_batch_apply_boundary_report.v0",
+  "record_type": "contract",
+  "required_fields": [
+    "schema_version",
+    "task",
+    "plan_id",
+    "default_apply_target",
+    "reviewed_artifact_record_creation_enabled",
+    "limited_reviewed_records_only",
+    "created_at"
+  ],
+  "field_constraints": {
+    "default_apply_target": "temp_explicit_instance",
+    "reviewed_artifact_record_creation_enabled": false,
+    "limited_reviewed_records_only": true,
+    "operator_instance_mutated": false,
+    "public_index_mutated": false,
+    "deployment_performed": false
+  }
+}

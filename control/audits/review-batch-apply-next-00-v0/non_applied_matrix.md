@@ -1,0 +1,555 @@
+# Non Applied Matrix
+
+```json
+{
+  "candidates": [
+    {
+      "accepted_truth": false,
+      "candidate_id": "live_metadata_pilot_frontier_media_q01_01",
+      "domain_id": "live_metadata_candidates",
+      "not_applied_reason": "sufficient deterministic metadata for limited local apply",
+      "review_required": true,
+      "source_family": "internet_archive_metadata",
+      "title": "Redacted live IA metadata summary for New York 1993 D-Theater HD demo tape original source"
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "live_metadata_pilot_frontier_media_q03_02",
+      "domain_id": "live_metadata_candidates",
+      "not_applied_reason": "not enough deterministic reviewed evidence for this apply gate",
+      "review_required": true,
+      "source_family": "internet_archive_metadata",
+      "title": "Redacted live IA metadata summary for JVC D-Theater New York HD demo"
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "live_metadata_pilot_frontier_media_q05_03",
+      "domain_id": "live_metadata_candidates",
+      "not_applied_reason": "not enough deterministic reviewed evidence for this apply gate",
+      "review_required": true,
+      "source_family": "internet_archive_metadata",
+      "title": "Redacted live IA metadata summary for Hi-Vision MUSE New York 1993 HDTV demo"
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "live_metadata_pilot_frontier_media_q06_04",
+      "domain_id": "live_metadata_candidates",
+      "not_applied_reason": "not enough deterministic reviewed evidence for this apply gate",
+      "review_required": true,
+      "source_family": "internet_archive_metadata",
+      "title": "Redacted live IA metadata summary for early HDTV New York 1993 demo footage"
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "live_metadata_pilot_legacy_software_q01_05",
+      "domain_id": "live_metadata_candidates",
+      "not_applied_reason": "sufficient deterministic metadata for limited local apply",
+      "review_required": true,
+      "source_family": "internet_archive_metadata",
+      "title": "Redacted live IA metadata summary for Windows 7-compatible portable utilities, not Windows 7 ISO"
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "live_metadata_pilot_legacy_software_q02_06",
+      "domain_id": "live_metadata_candidates",
+      "not_applied_reason": "sufficient deterministic metadata for limited local apply",
+      "review_required": true,
+      "source_family": "internet_archive_metadata",
+      "title": "Redacted live IA metadata summary for DirectX SDK June 2010 offline installer"
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "live_metadata_pilot_legacy_software_q03_07",
+      "domain_id": "live_metadata_candidates",
+      "not_applied_reason": "not enough deterministic reviewed evidence for this apply gate",
+      "review_required": true,
+      "source_family": "internet_archive_metadata",
+      "title": "Redacted live IA metadata summary for StyleWriter 2500 Mac OS 8 driver"
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "live_metadata_pilot_legacy_software_q06_08",
+      "domain_id": "live_metadata_candidates",
+      "not_applied_reason": "not enough deterministic reviewed evidence for this apply gate",
+      "review_required": true,
+      "source_family": "internet_archive_metadata",
+      "title": "Redacted live IA metadata summary for QuickTime 7 Windows XP offline installer"
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "seed_driver_support_driver_support_q02_candidate",
+      "domain_id": "driver_support_media",
+      "not_applied_reason": "not enough deterministic reviewed evidence for this apply gate",
+      "review_required": true,
+      "source_family": "internet_archive_metadata",
+      "title": "StyleWriter 2500 driver support disk fixture metadata lead"
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "seed_driver_support_driver_support_q04_candidate",
+      "domain_id": "driver_support_media",
+      "not_applied_reason": "not enough deterministic reviewed evidence for this apply gate",
+      "review_required": true,
+      "source_family": "internet_archive_metadata",
+      "title": "Sound Blaster Live Windows 98 driver support CD fixture metadata lead"
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "seed_driver_support_driver_support_q05_candidate",
+      "domain_id": "driver_support_media",
+      "not_applied_reason": "not enough deterministic reviewed evidence for this apply gate",
+      "review_required": true,
+      "source_family": "internet_archive_metadata",
+      "title": "Creative Audigy Windows XP driver CD fixture metadata lead"
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "seed_driver_support_driver_support_q06_candidate",
+      "domain_id": "driver_support_media",
+      "not_applied_reason": "not enough deterministic reviewed evidence for this apply gate",
+      "review_required": true,
+      "source_family": "wayback_cdx_metadata",
+      "title": "Microsoft IntelliPoint Windows 7 driver offline installer fixture metadata lead"
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "seed_driver_support_driver_support_q07_candidate",
+      "domain_id": "driver_support_media",
+      "not_applied_reason": "not enough deterministic reviewed evidence for this apply gate",
+      "review_required": true,
+      "source_family": "manual_source_pack",
+      "title": "USB mass storage driver Windows 98 SE fixture metadata lead"
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "seed_driver_support_driver_support_q08_candidate",
+      "domain_id": "driver_support_media",
+      "not_applied_reason": "not enough deterministic reviewed evidence for this apply gate",
+      "review_required": true,
+      "source_family": "internet_archive_metadata",
+      "title": "3Com 3C905 Windows 98 driver disk fixture metadata lead"
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "seed_driver_support_driver_support_q09_candidate",
+      "domain_id": "driver_support_media",
+      "not_applied_reason": "not enough deterministic reviewed evidence for this apply gate",
+      "review_required": true,
+      "source_family": "vendor_support_url_metadata",
+      "title": "Realtek AC97 Windows XP driver fixture metadata lead"
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "seed_driver_support_driver_support_q10_candidate",
+      "domain_id": "driver_support_media",
+      "not_applied_reason": "not enough deterministic reviewed evidence for this apply gate",
+      "review_required": true,
+      "source_family": "vendor_support_url_metadata",
+      "title": "Intel 945GM Windows XP graphics driver fixture metadata lead"
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "seed_driver_support_driver_support_q11_candidate",
+      "domain_id": "driver_support_media",
+      "not_applied_reason": "not enough deterministic reviewed evidence for this apply gate",
+      "review_required": true,
+      "source_family": "wayback_cdx_metadata",
+      "title": "ATI Rage 128 Windows 98 driver fixture metadata lead"
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "seed_driver_support_driver_support_q12_candidate",
+      "domain_id": "driver_support_media",
+      "not_applied_reason": "not enough deterministic reviewed evidence for this apply gate",
+      "review_required": true,
+      "source_family": "vendor_support_url_metadata",
+      "title": "NVIDIA GeForce FX Windows XP driver fixture metadata lead"
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "seed_driver_support_driver_support_q13_candidate",
+      "domain_id": "driver_support_media",
+      "not_applied_reason": "not enough deterministic reviewed evidence for this apply gate",
+      "review_required": true,
+      "source_family": "manual_source_pack",
+      "title": "HP LaserJet 4 Windows 98 driver fixture metadata lead"
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "seed_driver_support_driver_support_q14_candidate",
+      "domain_id": "driver_support_media",
+      "not_applied_reason": "not enough deterministic reviewed evidence for this apply gate",
+      "review_required": true,
+      "source_family": "internet_archive_metadata",
+      "title": "Epson scanner Windows 2000 driver CD fixture metadata lead"
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "seed_driver_support_driver_support_q15_candidate",
+      "domain_id": "driver_support_media",
+      "not_applied_reason": "not enough deterministic reviewed evidence for this apply gate",
+      "review_required": true,
+      "source_family": "vendor_support_url_metadata",
+      "title": "Canon CanoScan Windows XP driver fixture metadata lead"
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "seed_driver_support_driver_support_q16_candidate",
+      "domain_id": "driver_support_media",
+      "not_applied_reason": "not enough deterministic reviewed evidence for this apply gate",
+      "review_required": true,
+      "source_family": "internet_archive_metadata",
+      "title": "legacy motherboard chipset driver support CD fixture metadata lead"
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "seed_frontier_media_frontier_media_q03_candidate",
+      "domain_id": "frontier_resolution_media",
+      "not_applied_reason": "not enough deterministic reviewed evidence for this apply gate",
+      "review_required": true,
+      "source_family": "internet_archive_metadata",
+      "title": "JVC D-Theater New York HD demo fixture metadata lead"
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "seed_frontier_media_frontier_media_q04_candidate",
+      "domain_id": "frontier_resolution_media",
+      "not_applied_reason": "not enough deterministic reviewed evidence for this apply gate",
+      "review_required": true,
+      "source_family": "internet_archive_metadata",
+      "title": "D-Theater D-VHS city footage 1993 fixture metadata lead"
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "seed_frontier_media_frontier_media_q05_candidate",
+      "domain_id": "frontier_resolution_media",
+      "not_applied_reason": "not enough deterministic reviewed evidence for this apply gate",
+      "review_required": true,
+      "source_family": "internet_archive_metadata",
+      "title": "Hi-Vision MUSE New York 1993 HDTV demo fixture metadata lead"
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "seed_frontier_media_frontier_media_q06_candidate",
+      "domain_id": "frontier_resolution_media",
+      "not_applied_reason": "not enough deterministic reviewed evidence for this apply gate",
+      "review_required": true,
+      "source_family": "internet_archive_metadata",
+      "title": "early HDTV New York 1993 demo footage fixture metadata lead"
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "seed_frontier_media_frontier_media_q07_candidate",
+      "domain_id": "frontier_resolution_media",
+      "not_applied_reason": "not enough deterministic reviewed evidence for this apply gate",
+      "review_required": true,
+      "source_family": "internet_archive_metadata",
+      "title": "D-Theater demo tape JVC city fixture metadata lead"
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "seed_frontier_media_frontier_media_q08_candidate",
+      "domain_id": "frontier_resolution_media",
+      "not_applied_reason": "not enough deterministic reviewed evidence for this apply gate",
+      "review_required": true,
+      "source_family": "internet_archive_metadata",
+      "title": "HDVS Hi-Vision demo New York footage fixture metadata lead"
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "seed_frontier_media_frontier_media_q09_candidate",
+      "domain_id": "frontier_resolution_media",
+      "not_applied_reason": "not enough deterministic reviewed evidence for this apply gate",
+      "review_required": true,
+      "source_family": "internet_archive_metadata",
+      "title": "Japanese HDTV demonstration tape New York fixture metadata lead"
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "seed_frontier_media_frontier_media_q10_candidate",
+      "domain_id": "frontier_resolution_media",
+      "not_applied_reason": "not enough deterministic reviewed evidence for this apply gate",
+      "review_required": true,
+      "source_family": "internet_archive_metadata",
+      "title": "MUSE LaserDisc New York HD demo fixture metadata lead"
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "seed_frontier_media_frontier_media_q11_candidate",
+      "domain_id": "frontier_resolution_media",
+      "not_applied_reason": "not enough deterministic reviewed evidence for this apply gate",
+      "review_required": true,
+      "source_family": "internet_archive_metadata",
+      "title": "D-VHS demo tape urban footage fixture metadata lead"
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "seed_frontier_media_frontier_media_q12_candidate",
+      "domain_id": "frontier_resolution_media",
+      "not_applied_reason": "not enough deterministic reviewed evidence for this apply gate",
+      "review_required": true,
+      "source_family": "internet_archive_metadata",
+      "title": "early high definition city footage archival source fixture metadata lead"
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "seed_legacy_software_legacy_software_q03_candidate",
+      "domain_id": "driver_support_media",
+      "not_applied_reason": "not enough deterministic reviewed evidence for this apply gate",
+      "review_required": true,
+      "source_family": "manual_source_pack",
+      "title": "StyleWriter 2500 Mac OS 8 driver fixture metadata lead"
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "seed_legacy_software_legacy_software_q04_candidate",
+      "domain_id": "legacy_software",
+      "not_applied_reason": "not enough deterministic reviewed evidence for this apply gate",
+      "review_required": true,
+      "source_family": "manual_source_pack",
+      "title": "Windows 98 registry repair utility fixture metadata lead"
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "seed_legacy_software_legacy_software_q05_candidate",
+      "domain_id": "driver_support_media",
+      "not_applied_reason": "not enough deterministic reviewed evidence for this apply gate",
+      "review_required": true,
+      "source_family": "internet_archive_metadata",
+      "title": "Sound Blaster Live Windows 98 driver support CD fixture metadata lead"
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "seed_legacy_software_legacy_software_q06_candidate",
+      "domain_id": "legacy_software",
+      "not_applied_reason": "not enough deterministic reviewed evidence for this apply gate",
+      "review_required": true,
+      "source_family": "internet_archive_metadata",
+      "title": "QuickTime 7 Windows XP offline installer fixture metadata lead"
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "seed_legacy_software_legacy_software_q07_candidate",
+      "domain_id": "legacy_software",
+      "not_applied_reason": "not enough deterministic reviewed evidence for this apply gate",
+      "review_required": true,
+      "source_family": "internet_archive_metadata",
+      "title": "Winamp 5.666 full installer fixture metadata lead"
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "seed_legacy_software_legacy_software_q08_candidate",
+      "domain_id": "legacy_software",
+      "not_applied_reason": "not enough deterministic reviewed evidence for this apply gate",
+      "review_required": true,
+      "source_family": "package_registry_metadata",
+      "title": "Visual C++ 2010 redistributable offline installer Windows 7 fixture metadata lead"
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "seed_legacy_software_legacy_software_q09_candidate",
+      "domain_id": "legacy_software",
+      "not_applied_reason": "not enough deterministic reviewed evidence for this apply gate",
+      "review_required": true,
+      "source_family": "github_releases_metadata",
+      "title": "old 7-Zip Windows 2000 compatible release fixture metadata lead"
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "seed_legacy_software_legacy_software_q10_candidate",
+      "domain_id": "legacy_software",
+      "not_applied_reason": "not enough deterministic reviewed evidence for this apply gate",
+      "review_required": true,
+      "source_family": "internet_archive_metadata",
+      "title": "IrfanView old Windows XP compatible installer fixture metadata lead"
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "seed_legacy_software_legacy_software_q11_candidate",
+      "domain_id": "legacy_software",
+      "not_applied_reason": "not enough deterministic reviewed evidence for this apply gate",
+      "review_required": true,
+      "source_family": "internet_archive_metadata",
+      "title": "Java 6 offline installer Windows XP fixture metadata lead"
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "seed_legacy_software_legacy_software_q12_candidate",
+      "domain_id": "driver_support_media",
+      "not_applied_reason": "not enough deterministic reviewed evidence for this apply gate",
+      "review_required": true,
+      "source_family": "wayback_cdx_metadata",
+      "title": "Microsoft IntelliPoint Windows 7 driver offline installer fixture metadata lead"
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "seed_legacy_software_legacy_software_q13_candidate",
+      "domain_id": "legacy_software",
+      "not_applied_reason": "not enough deterministic reviewed evidence for this apply gate",
+      "review_required": true,
+      "source_family": "wayback_cdx_metadata",
+      "title": "PowerToys for Windows XP fixture metadata lead"
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "seed_legacy_software_legacy_software_q14_candidate",
+      "domain_id": "legacy_software",
+      "not_applied_reason": "not enough deterministic reviewed evidence for this apply gate",
+      "review_required": true,
+      "source_family": "package_registry_metadata",
+      "title": "Windows 7 compatible file recovery utility portable fixture metadata lead"
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "seed_legacy_software_legacy_software_q15_candidate",
+      "domain_id": "legacy_software",
+      "not_applied_reason": "not enough deterministic reviewed evidence for this apply gate",
+      "review_required": true,
+      "source_family": "software_heritage_metadata",
+      "title": "legacy FTP client Windows 98 installer fixture metadata lead"
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "seed_legacy_software_legacy_software_q16_candidate",
+      "domain_id": "legacy_software",
+      "not_applied_reason": "not enough deterministic reviewed evidence for this apply gate",
+      "review_required": true,
+      "source_family": "software_heritage_metadata",
+      "title": "old PDF reader Windows 2000 compatible installer fixture metadata lead"
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "seed_manuals_scans_manuals_scans_q02_candidate",
+      "domain_id": "manuals_docs_scans",
+      "not_applied_reason": "not enough deterministic reviewed evidence for this apply gate",
+      "review_required": true,
+      "source_family": "manual_source_pack",
+      "title": "JVC D-Theater user guide fixture metadata lead"
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "seed_manuals_scans_manuals_scans_q03_candidate",
+      "domain_id": "manuals_docs_scans",
+      "not_applied_reason": "not enough deterministic reviewed evidence for this apply gate",
+      "review_required": true,
+      "source_family": "internet_archive_metadata",
+      "title": "D-VHS service manual fixture metadata lead"
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "seed_manuals_scans_manuals_scans_q04_candidate",
+      "domain_id": "manuals_docs_scans",
+      "not_applied_reason": "not enough deterministic reviewed evidence for this apply gate",
+      "review_required": true,
+      "source_family": "wikidata_metadata",
+      "title": "MUSE Hi-Vision technical manual fixture metadata lead"
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "seed_manuals_scans_manuals_scans_q05_candidate",
+      "domain_id": "manuals_docs_scans",
+      "not_applied_reason": "not enough deterministic reviewed evidence for this apply gate",
+      "review_required": true,
+      "source_family": "manual_source_pack",
+      "title": "Sony HDVS equipment manual fixture metadata lead"
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "seed_manuals_scans_manuals_scans_q06_candidate",
+      "domain_id": "manuals_docs_scans",
+      "not_applied_reason": "not enough deterministic reviewed evidence for this apply gate",
+      "review_required": true,
+      "source_family": "wayback_cdx_metadata",
+      "title": "early HDTV demonstration manual fixture metadata lead"
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "seed_manuals_scans_manuals_scans_q08_candidate",
+      "domain_id": "manuals_docs_scans",
+      "not_applied_reason": "not enough deterministic reviewed evidence for this apply gate",
+      "review_required": true,
+      "source_family": "manual_source_pack",
+      "title": "StyleWriter 2500 service manual fixture metadata lead"
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "seed_manuals_scans_manuals_scans_q09_candidate",
+      "domain_id": "manuals_docs_scans",
+      "not_applied_reason": "not enough deterministic reviewed evidence for this apply gate",
+      "review_required": true,
+      "source_family": "wayback_cdx_metadata",
+      "title": "Mac OS 8 printer setup manual StyleWriter fixture metadata lead"
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "seed_manuals_scans_manuals_scans_q10_candidate",
+      "domain_id": "manuals_docs_scans",
+      "not_applied_reason": "not enough deterministic reviewed evidence for this apply gate",
+      "review_required": true,
+      "source_family": "manual_source_pack",
+      "title": "DirectX SDK June 2010 documentation fixture metadata lead"
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "seed_manuals_scans_manuals_scans_q11_candidate",
+      "domain_id": "manuals_docs_scans",
+      "not_applied_reason": "not enough deterministic reviewed evidence for this apply gate",
+      "review_required": true,
+      "source_family": "open_library_metadata",
+      "title": "Windows 7 compatibility guide portable software fixture metadata lead"
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "seed_manuals_scans_manuals_scans_q12_candidate",
+      "domain_id": "manuals_docs_scans",
+      "not_applied_reason": "not enough deterministic reviewed evidence for this apply gate",
+      "review_required": true,
+      "source_family": "internet_archive_metadata",
+      "title": "Sound Blaster Live user manual Windows 98 fixture metadata lead"
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "seed_manuals_scans_manuals_scans_q13_candidate",
+      "domain_id": "manuals_docs_scans",
+      "not_applied_reason": "not enough deterministic reviewed evidence for this apply gate",
+      "review_required": true,
+      "source_family": "wayback_cdx_metadata",
+      "title": "QuickTime 7 deployment guide Windows XP fixture metadata lead"
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "seed_manuals_scans_manuals_scans_q14_candidate",
+      "domain_id": "manuals_docs_scans",
+      "not_applied_reason": "not enough deterministic reviewed evidence for this apply gate",
+      "review_required": true,
+      "source_family": "manual_source_pack",
+      "title": "Visual C++ 2010 redistributable documentation fixture metadata lead"
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "seed_manuals_scans_manuals_scans_q15_candidate",
+      "domain_id": "manuals_docs_scans",
+      "not_applied_reason": "not enough deterministic reviewed evidence for this apply gate",
+      "review_required": true,
+      "source_family": "open_library_metadata",
+      "title": "Apple printer driver installation manual fixture metadata lead"
+    },
+    {
+      "accepted_truth": false,
+      "candidate_id": "seed_manuals_scans_manuals_scans_q16_candidate",
+      "domain_id": "manuals_docs_scans",
+      "not_applied_reason": "not enough deterministic reviewed evidence for this apply gate",
+      "review_required": true,
+      "source_family": "manual_source_pack",
+      "title": "legacy software installation notes scanned manual fixture metadata lead"
+    }
+  ],
+  "non_applied_count": 60,
+  "not_applied_reasons": [
+    "not enough deterministic reviewed evidence for this apply gate",
+    "sufficient deterministic metadata for limited local apply"
+  ],
+  "schema_version": "review_batch_apply_next_non_applied_matrix.v0",
+  "task": "REVIEW-BATCH-APPLY-NEXT-00"
+}
+```

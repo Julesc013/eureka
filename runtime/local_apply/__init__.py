@@ -14,6 +14,23 @@ from runtime.local_apply.live_metadata_previews import (
     select_eligible_live_metadata_previews,
     validate_live_metadata_apply_plan,
 )
+from runtime.local_apply.review_batch_apply_next import (
+    apply_review_batch_to_temp_instance,
+    assess_review_batch_evidence_sufficiency,
+    build_limited_reviewed_metadata_record,
+    build_limited_reviewed_source_lead,
+    build_review_batch_apply_plan,
+    build_review_batch_apply_rollback_plan,
+    build_review_batch_public_alpha_reassess_handoff,
+    build_review_batch_snapshot_refresh_handoff,
+    build_reviewed_bounded_absence,
+    build_reviewed_known_need,
+    collect_candidate_review_outputs,
+    evaluate_review_batch_apply_eligibility,
+    load_review_batch_apply_inputs,
+    run_review_batch_apply_next,
+    validate_review_batch_apply_plan,
+)
 
 __all__ = [
     "build_live_metadata_apply_boundary_report",
@@ -28,4 +45,19 @@ __all__ = [
     "run_local_apply_live_metadata_previews",
     "select_eligible_live_metadata_previews",
     "validate_live_metadata_apply_plan",
+    "apply_review_batch_to_temp_instance",
+    "assess_review_batch_evidence_sufficiency",
+    "build_limited_reviewed_metadata_record",
+    "build_limited_reviewed_source_lead",
+    "build_review_batch_apply_plan",
+    "build_review_batch_apply_rollback_plan",
+    "build_review_batch_public_alpha_reassess_handoff",
+    "build_review_batch_snapshot_refresh_handoff",
+    "build_reviewed_bounded_absence",
+    "build_reviewed_known_need",
+    "collect_candidate_review_outputs",
+    "evaluate_review_batch_apply_eligibility",
+    "load_review_batch_apply_inputs",
+    "run_review_batch_apply_next",
+    "validate_review_batch_apply_plan",
 ]

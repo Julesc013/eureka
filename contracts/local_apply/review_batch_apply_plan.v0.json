@@ -1,0 +1,37 @@
+{
+  "schema_version": "json_schema.v0",
+  "contract_id": "review_batch_apply_plan.v0",
+  "record_type": "contract",
+  "required_fields": [
+    "schema_version",
+    "task",
+    "plan_id",
+    "apply_target",
+    "eligible_apply_count",
+    "candidate_items",
+    "known_need_items",
+    "absence_items",
+    "local_apply_required",
+    "rollback_plan_required",
+    "prohibited_claims",
+    "created_at"
+  ],
+  "field_constraints": {
+    "apply_target": "temp_explicit_instance",
+    "operator_instance_apply_requested": false,
+    "local_apply_required": true,
+    "rollback_plan_required": true,
+    "reviewed_artifact_record_creation_enabled": false,
+    "public_index_mutated": false,
+    "master_index_mutated": false
+  },
+  "non_claims": [
+    "artifact_verified",
+    "verified_download",
+    "malware_clean",
+    "rights_cleared",
+    "compatibility_guaranteed",
+    "scan_complete",
+    "ocr_quality_verified"
+  ]
+}

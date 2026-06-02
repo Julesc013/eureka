@@ -1,9 +1,17 @@
 # REVIEW-BATCH-APPLY-NEXT-00
 
-Planned next task: apply the next eligible review batches to grow the reviewed
-corpus after the public search UX MVP reassessment.
+Status: pass pending final commit.
 
-This task should remain bounded by existing local apply/review gates. It should
-not deploy, publish, mutate public/master indexes, fetch files, download
-artifacts, run extraction/OCR, execute installers, call model providers, or
-claim public launch readiness.
+This queue item applies the next conservative review-batch outputs through a
+temp explicit local-apply proof.
+
+Evidence:
+
+- `control/inventory/review_batch_apply_next_result.json`
+- `control/inventory/review_batch_apply_next_validation_matrix.json`
+- `control/audits/review-batch-apply-next-00-v0/`
+- `examples/review_batch/apply_next/`
+
+Next task:
+
+`SNAPSHOT-REFRESH-06 - Refresh snapshots after review batch apply`

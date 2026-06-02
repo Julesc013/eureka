@@ -1,0 +1,33 @@
+{
+  "schema_version": "json_schema.v0",
+  "contract_id": "review_batch_apply_eligibility.v0",
+  "record_type": "contract",
+  "required_fields": [
+    "schema_version",
+    "task",
+    "candidate_id",
+    "title",
+    "domain_id",
+    "source_family",
+    "confidence_label",
+    "review_batch_ref",
+    "evidence_sufficiency_score",
+    "eligible",
+    "decision",
+    "record_kind",
+    "reason",
+    "limitations",
+    "prohibited_claims",
+    "created_at"
+  ],
+  "field_constraints": {
+    "eligible_record_kinds": [
+      "limited_reviewed_metadata_record",
+      "limited_reviewed_source_lead",
+      "reviewed_known_need",
+      "reviewed_bounded_absence"
+    ],
+    "accepted_truth_created": false,
+    "public_index_mutated": false
+  }
+}

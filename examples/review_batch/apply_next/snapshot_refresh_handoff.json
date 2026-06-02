@@ -1,0 +1,57 @@
+{
+  "accepted_truth_created": false,
+  "artifact_verified_claim_created": false,
+  "committed_instance_state": false,
+  "compatibility_guarantee_claim_created": false,
+  "created_at": "2026-06-03T00:00:00Z",
+  "deployment_performed": false,
+  "download_performed": false,
+  "extraction_executed": false,
+  "file_fetch_performed": false,
+  "handoff_id": "review_batch_apply_snapshot_handoff:8f0bc1c630c22d84",
+  "install_execution_enabled": false,
+  "limited_reviewed_metadata_record_refs": [
+    "limited_reviewed_metadata_record:bdb15f785b5adc26",
+    "limited_reviewed_metadata_record:3f05c77bdc89efc9",
+    "limited_reviewed_metadata_record:a71ad1cf967baebb",
+    "limited_reviewed_metadata_record:1c5379aee19f3393"
+  ],
+  "limited_reviewed_source_lead_refs": [
+    "limited_reviewed_source_lead:a094e3f2c397e298",
+    "limited_reviewed_source_lead:8bcc7e4388321269",
+    "limited_reviewed_source_lead:61a5c2b21483033b",
+    "limited_reviewed_source_lead:7d45ee248a5b176d"
+  ],
+  "live_source_call_performed": false,
+  "malware_clean_claim_created": false,
+  "master_index_mutated": false,
+  "model_provider_used": false,
+  "ocr_performed": false,
+  "ocr_quality_claim_created": false,
+  "operator_instance_mutated": false,
+  "production_readiness_claimed": false,
+  "public_index_mutated": false,
+  "public_launch_readiness_claimed": false,
+  "public_live_source_fanout_enabled": false,
+  "public_mutation_enabled": false,
+  "recommended_next_task": "SNAPSHOT-REFRESH-06 - Refresh snapshots after review batch apply",
+  "reviewed_bounded_absence_refs": [
+    "reviewed_bounded_absence:469a6510b280d37d",
+    "reviewed_bounded_absence:6464384e8f214ec9"
+  ],
+  "reviewed_index_mutated": false,
+  "reviewed_known_need_refs": [
+    "reviewed_known_need:e7917e528e70a94f",
+    "reviewed_known_need:e62b7763b8dcb400"
+  ],
+  "reviewed_record_delta_count": 8,
+  "rights_clearance_claim_created": false,
+  "scan_completeness_claim_created": false,
+  "schema_version": "review_batch_apply_snapshot_refresh_handoff.v0",
+  "site_dist_written": false,
+  "snapshot_refresh_executed": false,
+  "snapshot_refresh_handoff_only": true,
+  "source_probe_executed": false,
+  "task": "REVIEW-BATCH-APPLY-NEXT-00",
+  "verified_download_claim_created": false
+}

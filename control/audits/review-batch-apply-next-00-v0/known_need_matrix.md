@@ -1,0 +1,101 @@
+# Known Need Matrix
+
+```json
+{
+  "count": 2,
+  "records": [
+    {
+      "accepted_truth": false,
+      "accepted_truth_created": false,
+      "artifact_verified_claim_created": false,
+      "candidate_refs": [
+        "seed_manuals_scans_manuals_scans_q01_candidate"
+      ],
+      "committed_instance_state": false,
+      "compatibility_guarantee_claim_created": false,
+      "deployment_performed": false,
+      "download_performed": false,
+      "extraction_executed": false,
+      "file_fetch_performed": false,
+      "install_execution_enabled": false,
+      "limitations": [
+        "need remains unresolved",
+        "reviewed need is not object truth"
+      ],
+      "live_source_call_performed": false,
+      "malware_clean_claim_created": false,
+      "master_index_mutated": false,
+      "model_provider_used": false,
+      "need_id": "manuals_scans_known_need:693cc3c2e8bc56b5",
+      "need_kind": "document_identity_review",
+      "ocr_performed": false,
+      "ocr_quality_claim_created": false,
+      "operator_instance_mutated": false,
+      "production_readiness_claimed": false,
+      "public_index_mutated": false,
+      "public_launch_readiness_claimed": false,
+      "public_live_source_fanout_enabled": false,
+      "public_mutation_enabled": false,
+      "record_id": "reviewed_known_need:e7917e528e70a94f",
+      "record_type": "reviewed_known_need",
+      "reviewed_at": "2026-06-03T00:00:00Z",
+      "reviewed_claim_scope": "known_need_only",
+      "reviewed_index_mutated": false,
+      "rights_clearance_claim_created": false,
+      "scan_completeness_claim_created": false,
+      "schema_version": "reviewed_known_need.v0",
+      "site_dist_written": false,
+      "source_probe_executed": false,
+      "summary": "Operator must verify document identity, model/version fit, rights posture, scan completeness, and OCR quality before promotion.",
+      "verified_download_claim_created": false
+    },
+    {
+      "accepted_truth": false,
+      "accepted_truth_created": false,
+      "artifact_verified_claim_created": false,
+      "candidate_refs": [
+        "seed_driver_support_driver_support_q01_candidate"
+      ],
+      "committed_instance_state": false,
+      "compatibility_guarantee_claim_created": false,
+      "deployment_performed": false,
+      "download_performed": false,
+      "extraction_executed": false,
+      "file_fetch_performed": false,
+      "install_execution_enabled": false,
+      "limitations": [
+        "need remains unresolved",
+        "reviewed need is not object truth"
+      ],
+      "live_source_call_performed": false,
+      "malware_clean_claim_created": false,
+      "master_index_mutated": false,
+      "model_provider_used": false,
+      "need_id": "driver_support_known_need:2aa7d706861b5d8a",
+      "need_kind": "driver_support_review",
+      "ocr_performed": false,
+      "ocr_quality_claim_created": false,
+      "operator_instance_mutated": false,
+      "production_readiness_claimed": false,
+      "public_index_mutated": false,
+      "public_launch_readiness_claimed": false,
+      "public_live_source_fanout_enabled": false,
+      "public_mutation_enabled": false,
+      "record_id": "reviewed_known_need:e62b7763b8dcb400",
+      "record_type": "reviewed_known_need",
+      "reviewed_at": "2026-06-03T00:00:00Z",
+      "reviewed_claim_scope": "known_need_only",
+      "reviewed_index_mutated": false,
+      "rights_clearance_claim_created": false,
+      "scan_completeness_claim_created": false,
+      "schema_version": "reviewed_known_need.v0",
+      "site_dist_written": false,
+      "source_probe_executed": false,
+      "summary": "Operator must verify driver identity, hardware model, OS version, architecture, provenance, safety posture, compatibility evidence, and rights posture before promotion.",
+      "verified_download_claim_created": false
+    }
+  ],
+  "schema_version": "review_batch_apply_next_known_need_matrix.v0",
+  "task": "REVIEW-BATCH-APPLY-NEXT-00"
+}
+```
