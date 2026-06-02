@@ -1,4 +1,4 @@
-current_recommended_task: PUBLIC-ALPHA-REASSESS-04 - Reassess alpha after manuals/scans and driver/support snapshot refresh
+current_recommended_task: PUBLIC-SEARCH-UX-MVP-00 - Implement minimal no-JS public search UX over view models
 completed:
   - SOURCE-ACTION-KERNEL-00
   - SOURCE-WAVE-00
@@ -36,9 +36,9 @@ completed:
   - SEED-BATCH-MANUALS-SCANS-00
   - SEED-BATCH-DRIVER-SUPPORT-00
   - SNAPSHOT-REFRESH-04
+  - PUBLIC-ALPHA-REASSESS-04
 blocked: []
 planned:
-  - PUBLIC-ALPHA-REASSESS-04
   - PUBLIC-SEARCH-UX-MVP-00
   - PUBLIC-SEARCH-UX-GATE-00
 waiting: []

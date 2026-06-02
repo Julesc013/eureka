@@ -1,0 +1,15 @@
+{
+  "demo_mode_recommended": true,
+  "launch_recommended": false,
+  "planned_after": [
+    "SNAPSHOT-REFRESH-05",
+    "PUBLIC-ALPHA-REASSESS-05",
+    "REVIEW-BATCH-APPLY-NEXT-00",
+    "DEV-TO-MAIN-PROMOTION-REVIEW-06"
+  ],
+  "rationale": "Four domains and 68 candidates need a legible public UX before another launch discussion.",
+  "recommended_next_task": "PUBLIC-SEARCH-UX-MVP-00 - Implement minimal no-JS public search UX over view models",
+  "schema_version": "public_alpha_reassess_04_next_task_decision.v0",
+  "status": "pass",
+  "task": "PUBLIC-ALPHA-REASSESS-04"
+}

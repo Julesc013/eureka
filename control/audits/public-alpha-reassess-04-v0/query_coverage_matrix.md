@@ -1,0 +1,77 @@
+# Query Coverage Matrix
+
+```json
+{
+  "accepted_truth_created": false,
+  "launch_sufficient": false,
+  "queries_with_candidate_result": 68,
+  "queries_with_limited_reviewed_result": 4,
+  "queries_with_need_or_absence": 60,
+  "query_count": 68,
+  "reassess_id": "public_alpha_reassess_04",
+  "rows": [
+    {
+      "batch_id": "seed_batch_frontier_media_00",
+      "candidate_source": "fixture_seed_batch",
+      "coverage_note": "Seed queries have candidate/need coverage, not reviewed artifact coverage.",
+      "domain_id": "frontier_resolution_media",
+      "domain_key": "frontier_media",
+      "queries_with_candidate_result": 12,
+      "queries_with_limited_reviewed_result": 0,
+      "queries_with_need_or_absence": 12,
+      "query_count": 12
+    },
+    {
+      "batch_id": "seed_batch_legacy_software_00",
+      "candidate_source": "fixture_seed_batch",
+      "coverage_note": "Seed queries have candidate/need coverage, not reviewed artifact coverage.",
+      "domain_id": "legacy_software",
+      "domain_key": "legacy_software",
+      "queries_with_candidate_result": 16,
+      "queries_with_limited_reviewed_result": 0,
+      "queries_with_need_or_absence": 16,
+      "query_count": 16
+    },
+    {
+      "batch_id": "seed_batch_manuals_scans_00",
+      "candidate_source": "fixture_seed_batch",
+      "coverage_note": "Seed queries have candidate/need coverage, not reviewed artifact coverage.",
+      "domain_id": "manuals_docs_scans",
+      "domain_key": "manuals_scans",
+      "queries_with_candidate_result": 16,
+      "queries_with_limited_reviewed_result": 0,
+      "queries_with_need_or_absence": 16,
+      "query_count": 16
+    },
+    {
+      "batch_id": "seed_batch_driver_support_00",
+      "candidate_source": "fixture_seed_batch",
+      "coverage_note": "Seed queries have candidate/need coverage, not reviewed artifact coverage.",
+      "domain_id": "driver_support_media",
+      "domain_key": "driver_support",
+      "queries_with_candidate_result": 16,
+      "queries_with_limited_reviewed_result": 0,
+      "queries_with_need_or_absence": 16,
+      "query_count": 16
+    },
+    {
+      "batch_id": "live_metadata_local_apply",
+      "candidate_source": "redacted_live_metadata_local_apply",
+      "coverage_note": "Local apply created limited metadata/source-lead records, not verified artifacts.",
+      "domain_id": "live_metadata_local_apply",
+      "domain_key": "local_apply_live_metadata",
+      "queries_with_candidate_result": 8,
+      "queries_with_limited_reviewed_result": 4,
+      "queries_with_need_or_absence": 0,
+      "query_count": 8
+    }
+  ],
+  "schema_version": "public_alpha_reassess_query_coverage_matrix.v0",
+  "seed_batches": [
+    "seed_batch_frontier_media_00",
+    "seed_batch_legacy_software_00",
+    "seed_batch_manuals_scans_00",
+    "seed_batch_driver_support_00"
+  ]
+}
+```

@@ -1,0 +1,60 @@
+{
+  "artifact_verified_claim_created": false,
+  "compatibility_guarantee_created": false,
+  "created_at": "2026-06-02T00:00:00Z",
+  "deployment_performed": false,
+  "download_performed": false,
+  "extraction_executed": false,
+  "file_fetch_performed": false,
+  "install_execution_enabled": false,
+  "live_source_call_performed": false,
+  "malware_clean_claim_created": false,
+  "master_index_mutated": false,
+  "model_provider_used": false,
+  "needs_more_reviewed_artifact_records": true,
+  "needs_more_reviewed_records": true,
+  "needs_public_alpha_reassess_after_ux": true,
+  "needs_public_search_ux_mvp": true,
+  "needs_review_batch_apply_next": true,
+  "needs_snapshot_refresh_after_ux": true,
+  "ocr_performed": false,
+  "ocr_quality_claim_created": false,
+  "operator_instance_mutated": false,
+  "production_readiness_claimed": false,
+  "public_index_mutated": false,
+  "public_launch_performed": false,
+  "public_launch_readiness_claimed": false,
+  "public_live_source_fanout_enabled": false,
+  "public_mutation_enabled": false,
+  "reassess_id": "public_alpha_reassess_04",
+  "recommendations": [
+    {
+      "priority": 1,
+      "reason": "Four domains and 68 candidates now need a legible no-JS public search surface before launch discussion resumes.",
+      "task": "PUBLIC-SEARCH-UX-MVP-00"
+    },
+    {
+      "priority": 2,
+      "reason": "Refresh projections after UX MVP examples are available.",
+      "task": "SNAPSHOT-REFRESH-05"
+    },
+    {
+      "priority": 3,
+      "reason": "Reassess launch posture only after the UX MVP refresh.",
+      "task": "PUBLIC-ALPHA-REASSESS-05"
+    },
+    {
+      "priority": 4,
+      "reason": "Continue growing reviewed records after UX legibility work starts.",
+      "task": "REVIEW-BATCH-APPLY-NEXT-00"
+    }
+  ],
+  "recommended_next_task": "PUBLIC-SEARCH-UX-MVP-00 - Implement minimal no-JS public search UX over view models",
+  "reviewed_index_mutated": false,
+  "rights_clearance_claim_created": false,
+  "scan_completeness_claim_created": false,
+  "schema_version": "public_alpha_next_work_recommendation.v0",
+  "site_dist_written": false,
+  "source_probe_executed": false,
+  "verified_download_claim_created": false
+}

@@ -142,6 +142,44 @@ class PublicAlphaReassessScriptTests(unittest.TestCase):
         self.assertIn('"task": "PUBLIC-ALPHA-REASSESS-03"', completed.stdout)
         self.assertIn('"launch_recommended": false', completed.stdout)
 
+    def test_manuals_driver_reassess_script_runs(self) -> None:
+        completed = subprocess.run(
+            [
+                sys.executable,
+                str(REPO_ROOT / "scripts" / "eureka_public_alpha_reassess.py"),
+                "--from-manuals-driver-snapshot-examples",
+                "--json",
+            ],
+            cwd=REPO_ROOT,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            text=True,
+            check=False,
+        )
+
+        self.assertEqual(0, completed.returncode, completed.stderr)
+        self.assertIn('"candidate_count": 68', completed.stdout)
+        self.assertIn('"needs_public_search_ux_mvp": true', completed.stdout)
+
+    def test_manuals_driver_report_script_runs(self) -> None:
+        completed = subprocess.run(
+            [
+                sys.executable,
+                str(REPO_ROOT / "scripts" / "eureka_public_alpha_reassess_report.py"),
+                "--from-manuals-driver-examples",
+                "--json",
+            ],
+            cwd=REPO_ROOT,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            text=True,
+            check=False,
+        )
+
+        self.assertEqual(0, completed.returncode, completed.stderr)
+        self.assertIn('"task": "PUBLIC-ALPHA-REASSESS-04"', completed.stdout)
+        self.assertIn('"public_search_ux_mvp_implemented": false', completed.stdout)
+
 
 if __name__ == "__main__":
     unittest.main()

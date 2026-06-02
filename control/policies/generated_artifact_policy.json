@@ -209,6 +209,12 @@
       "policy": "Task-local SNAPSHOT-REFRESH-04 audit evidence records manuals/scans and driver/support snapshot projection validation; it is not operator instance or public runtime state."
     },
     {
+      "path": "control/audits/public-alpha-reassess-04-v0",
+      "artifact_class": "audit_generated",
+      "allow_task_local_drift": true,
+      "policy": "Task-local PUBLIC-ALPHA-REASSESS-04 audit evidence records product-readiness reassessment after new seed domains; it is not product runtime state."
+    },
+    {
       "path": "control/audits",
       "artifact_class": "audit_generated",
       "policy": "Audit generated outputs are evidence, not product runtime state."

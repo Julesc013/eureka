@@ -19,6 +19,7 @@ from runtime.public_alpha import (  # noqa: E402
     run_public_alpha_reassess_01,
     run_public_alpha_reassess_02,
     run_public_alpha_reassess_03,
+    run_public_alpha_reassess_04,
 )
 
 
@@ -44,10 +45,20 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout) -> int:
         action="store_true",
         help="Use committed local-apply live metadata snapshot refresh examples.",
     )
+    parser.add_argument(
+        "--from-manuals-driver-snapshot-examples",
+        action="store_true",
+        help="Use committed manuals/scans and driver/support snapshot refresh examples.",
+    )
     parser.add_argument("--write-examples", action="store_true", help="Write public-safe reassessment examples.")
     parser.add_argument("--json", action="store_true", help="Emit JSON. This is the default shape.")
     args = parser.parse_args(argv)
-    if args.from_local_apply_live_metadata_refresh_examples:
+    if args.from_manuals_driver_snapshot_examples:
+        result = run_public_alpha_reassess_04(
+            from_manuals_driver_snapshot_examples=True,
+            write_examples=args.write_examples,
+        )
+    elif args.from_local_apply_live_metadata_refresh_examples:
         result = run_public_alpha_reassess_03(
             from_local_apply_live_metadata_refresh_examples=True,
             write_examples=args.write_examples,
@@ -68,7 +79,7 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout) -> int:
             write_examples=args.write_examples,
         )
     else:
-        parser.error("--from-snapshot-refresh-examples, --from-live-metadata-refresh-examples, --from-live-metadata-review-refresh-examples, or --from-local-apply-live-metadata-refresh-examples is required")
+        parser.error("--from-snapshot-refresh-examples, --from-live-metadata-refresh-examples, --from-live-metadata-review-refresh-examples, --from-local-apply-live-metadata-refresh-examples, or --from-manuals-driver-snapshot-examples is required")
     print(json.dumps(result, indent=2, sort_keys=True), file=stdout)
     return 0 if result["status"] == "pass" else 1
 

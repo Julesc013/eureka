@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "eureka.contracts.publication.public_alpha_ux_readiness_reassess.v0",
+  "title": "Public Alpha UX Readiness Reassess",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "reassess_id",
+    "ux_mvp_status",
+    "public_search_ux_mvp_implemented",
+    "public_search_view_models_available",
+    "public_search_view_models_are_not_full_public_ux",
+    "needs_public_search_ux_mvp",
+    "launch_sufficient"
+  ],
+  "properties": {
+    "schema_version": { "const": "public_alpha_ux_readiness_reassess.v0" },
+    "reassess_id": { "type": "string" },
+    "ux_mvp_status": { "type": "string" },
+    "public_search_ux_mvp_implemented": { "const": false },
+    "public_search_view_models_available": { "type": "boolean" },
+    "public_search_view_models_are_not_full_public_ux": { "const": true },
+    "no_js_public_search_pages_implemented": { "const": false },
+    "candidate_vs_reviewed_distinction_ready_for_public": { "const": false },
+    "needs_public_search_ux_mvp": { "const": true },
+    "needs_snapshot_refresh_after_ux": { "type": "boolean" },
+    "needs_public_alpha_reassess_after_ux": { "type": "boolean" },
+    "launch_sufficient": { "const": false },
+    "deployment_performed": { "const": false },
+    "public_launch_performed": { "const": false },
+    "production_readiness_claimed": { "const": false },
+    "public_launch_readiness_claimed": { "const": false }
+  },
+  "additionalProperties": true
+}

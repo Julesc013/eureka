@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "eureka.contracts.publication.public_alpha_domain_coverage_reassess.v0",
+  "title": "Public Alpha Domain Coverage Reassess",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "reassess_id",
+    "snapshot_refresh_ref",
+    "domains_represented",
+    "domain_count",
+    "domain_coverage_threshold",
+    "four_domains_represented",
+    "domain_breadth_improved",
+    "domain_coverage_launch_sufficient"
+  ],
+  "properties": {
+    "schema_version": { "const": "public_alpha_domain_coverage_reassess.v0" },
+    "reassess_id": { "type": "string" },
+    "snapshot_refresh_ref": { "type": "string" },
+    "domains_represented": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 0,
+      "uniqueItems": true
+    },
+    "domain_count": { "type": "integer", "minimum": 0 },
+    "domain_coverage_threshold": { "type": "integer", "minimum": 0 },
+    "four_domains_represented": { "type": "boolean" },
+    "domain_breadth_improved": { "type": "boolean" },
+    "domain_coverage_launch_sufficient": { "type": "boolean" },
+    "reason": { "type": "string" },
+    "deployment_performed": { "const": false },
+    "public_launch_performed": { "const": false },
+    "production_readiness_claimed": { "const": false },
+    "public_launch_readiness_claimed": { "const": false }
+  },
+  "additionalProperties": true
+}

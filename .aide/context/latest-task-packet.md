@@ -2,22 +2,19 @@
 
 ## PHASE
 
-SNAPSHOT-REFRESH-04 - refresh snapshots after manuals/scans and driver/support batches
+PUBLIC-ALPHA-REASSESS-04 - reassess alpha after manuals/scans and driver/support snapshot refresh
 
 ## GOAL
 
-Project the manuals/scans and driver/support seed-batch outputs into the
-snapshot, relay, public search view-model, and public-alpha reassessment input
-lanes while preserving all review-only and non-claim boundaries.
+Record the product-readiness decision after `SNAPSHOT-REFRESH-04` projected the
+manuals/scans and driver/support seed domains into the snapshot layer.
 
 ## WHY
 
-`PUBLIC-ALPHA-REASSESS-03` kept public launch deferred and asked for safer
-third-domain corpus growth. Manuals/scans and driver/support seed batches are
-now complete, so snapshot packaging must make those new candidates visible
-without converting metadata candidates into reviewed truth, fetched documents,
-driver downloads, OCR text, compatibility guarantees, safety claims, or rights
-clearance.
+The project now has four represented discovery domains and 68 candidates, but
+public launch remains deferred. This task keeps that decision honest by
+separating internal review usefulness from public launch readiness and routing
+next work to a minimal public search UX MVP.
 
 ## CONTEXT_REFS
 
@@ -27,52 +24,52 @@ clearance.
 - `.aide/context/test-map.json`
 - `.aide/context/context-index.json`
 - `.aide/context/latest-context-packet.md`
-- `control/inventory/public_alpha_reassess_03_result.json`
-- `control/inventory/snapshot_refresh_03_result.json`
-- `control/inventory/seed_batch_manuals_scans_result.json`
-- `control/inventory/seed_batch_driver_support_result.json`
-- `runtime/snapshots/refresh_04.py`
-- `scripts/validate_snapshot_refresh.py`
+- `control/inventory/snapshot_refresh_04_result.json`
+- `control/inventory/public_alpha_reassess_04_result.json`
+- `runtime/public_alpha/reassess_04.py`
+- `scripts/validate_public_alpha_reassess.py`
 
 ## CURRENT_STATE
 
 - branch: `dev`
-- latest prior commit: `0373fdbd feat(seed): add driver support discovery batch`
-- public alpha launch recommended: false
-- limited reviewed projection count remains 4
+- latest prior commit: `429ded1e feat(snapshot): refresh after new seed domains`
+- existing reviewed records: 1
+- reviewed metadata records: 1
+- reviewed source leads: 2
+- total limited reviewed projection count: 4
 - manuals/scans candidates: 16
 - driver/support candidates: 16
-- expected total candidates after live metadata: 68
+- total candidates: 68
+- represented domains: `frontier_resolution_media`, `legacy_software`,
+  `manuals_docs_scans`, `driver_support_media`
+- public search view models: available
+- public search UX MVP: not implemented
 
 ## ALLOWED_PATHS
 
-- `.aide/queue/SNAPSHOT-REFRESH-04/**`
 - `.aide/queue/PUBLIC-ALPHA-REASSESS-04/**`
+- `.aide/queue/PUBLIC-SEARCH-UX-MVP-00/**`
 - `.aide/queue/index.yaml`
 - `.aide/context/latest-task-packet.md`
-- `contracts/snapshot/**`
-- `runtime/snapshots/**`
-- `runtime/relay/**`
-- `scripts/eureka_snapshot_refresh.py`
-- `scripts/eureka_snapshot_refresh_report.py`
-- `scripts/validate_snapshot_refresh.py`
-- `tests/runtime/test_snapshot_refresh*.py`
-- `tests/operations/test_snapshot_refresh_scripts.py`
-- `tests/scripts/test_validate_snapshot_refresh.py`
-- `examples/snapshots/refresh/manuals_scans_driver_support/**`
-- `examples/relay/refresh/**`
+- `contracts/publication/**`
+- `runtime/public_alpha/**`
+- `scripts/eureka_public_alpha_reassess.py`
+- `scripts/eureka_public_alpha_reassess_report.py`
+- `scripts/eureka_public_alpha_route_smoke.py`
+- `scripts/validate_public_alpha_reassess.py`
+- `tests/runtime/test_public_alpha_reassess*.py`
+- `tests/operations/test_public_alpha_reassess_scripts.py`
+- `tests/scripts/test_validate_public_alpha_reassess.py`
 - `examples/public_alpha/reassess/manuals_scans_driver_support/**`
-- `control/policies/snapshot_refresh*.json`
+- `control/policies/public_alpha_reassess*.json`
 - `control/policies/generated_artifact_policy.json`
-- `control/inventory/snapshot_refresh_04*.json`
-- `control/audits/snapshot-refresh-04-v0/**`
-- `docs/architecture/SNAPSHOT_REFRESH_04.md`
-- `docs/architecture/SNAPSHOT_MANUALS_SCANS_SECTION.md`
-- `docs/architecture/SNAPSHOT_DRIVER_SUPPORT_SECTION.md`
-- `docs/operations/SNAPSHOT_REFRESH_04_RUNBOOK.md`
-- `docs/operations/POST_SNAPSHOT_REFRESH_04_PLAN.md`
-- `docs/reference/SNAPSHOT_MANUALS_SCANS_SECTION.md`
-- `docs/reference/SNAPSHOT_DRIVER_SUPPORT_SECTION.md`
+- `control/inventory/public_alpha_reassess_04*.json`
+- `control/audits/public-alpha-reassess-04-v0/**`
+- `docs/architecture/PUBLIC_ALPHA_REASSESS_04.md`
+- `docs/operations/PUBLIC_ALPHA_REASSESS_04_RUNBOOK.md`
+- `docs/operations/POST_PUBLIC_ALPHA_REASSESS_04_PLAN.md`
+- `docs/reference/PUBLIC_ALPHA_DOMAIN_COVERAGE_REASSESSMENT.md`
+- `docs/reference/PUBLIC_ALPHA_UX_READINESS_REASSESSMENT.md`
 
 ## FORBIDDEN_PATHS
 
@@ -97,7 +94,7 @@ clearance.
 - No deployment, publication, public launch, or readiness claim.
 - No accepted truth, automatic candidate acceptance, or reviewed/master/public index mutation.
 - No operator instance mutation.
-- No live source calls, downloads, file fetches, OCR, extraction, install or execution.
+- No live source calls, downloads, file fetches, OCR, extraction, install, or execution.
 - No model/provider calls, raw live responses, or public live source fanout.
 - No verified-download, malware-clean, compatibility, scan-completeness,
   OCR-quality, or rights-clearance claims.
@@ -105,42 +102,41 @@ clearance.
 
 ## IMPLEMENTATION
 
-- Add `runtime/snapshots/refresh_04.py`.
-- Extend snapshot refresh CLI and report CLI with `--from-manuals-driver-examples`.
-- Add manuals/scans and driver/support snapshot contracts, policies, examples,
+- Add `runtime/public_alpha/reassess_04.py`.
+- Extend public-alpha reassess CLI and report CLI for manuals/driver examples.
+- Add domain coverage and UX readiness contracts, policies, examples,
   inventory, audit evidence, docs, validator checks, and focused tests.
-- Keep new seed outputs as metadata-only, review-required candidate sections.
-- Route next work to `PUBLIC-ALPHA-REASSESS-04`.
+- Keep launch deferred and route next work to `PUBLIC-SEARCH-UX-MVP-00`.
 
 ## VALIDATION
 
 - `git diff --check`
-- `python scripts/validate_snapshot_refresh.py`
-- seed-batch, public-alpha, local-apply, review-batch, SCOUT, candidate-index,
+- `python scripts/validate_public_alpha_reassess.py`
+- snapshot, seed-batch, local-apply, review-batch, SCOUT, candidate-index,
   query-planner, public-search UX, public-alpha readonly, source-action,
   architecture, generated-artifact validators
-- focused snapshot refresh unittest modules
+- focused public-alpha reassess unittest modules
 - AIDE Lite doctor, validate, test, selftest, verify, review-pack, and commit check
 
 Full unittest discovery is not run by policy.
 
 ## ACCEPTANCE
 
-- manuals/scans candidates projected: 16
-- driver/support candidates projected: 16
-- additional seed candidates projected: 32
-- total candidate count projected: 68
-- limited reviewed projection count remains 4
-- no download, file fetch, OCR, extraction, install, model, site/dist, deployment,
-  mutation, launch, readiness, safety, compatibility, scan-completeness,
-  OCR-quality, or rights-clearance claim
-- next recommended task: `PUBLIC-ALPHA-REASSESS-04`
+- public launch recommended: false
+- demo mode recommended: true
+- internal review recommended: true
+- total limited reviewed projection count: 4
+- total candidate count: 68
+- represented domain count: 4
+- public search view models available: true
+- public search UX MVP implemented: false
+- next recommended task: `PUBLIC-SEARCH-UX-MVP-00`
 
 ## EVIDENCE
 
-- `control/inventory/snapshot_refresh_04_result.json`
-- `examples/snapshots/refresh/manuals_scans_driver_support/`
-- `control/audits/snapshot-refresh-04-v0/`
+- `control/inventory/public_alpha_reassess_04_result.json`
+- `examples/public_alpha/reassess/manuals_scans_driver_support/`
+- `control/audits/public-alpha-reassess-04-v0/`
 
 ## TOKEN_ESTIMATE
 
@@ -148,5 +144,5 @@ medium
 
 ## OUTPUT_SCHEMA
 
-Final report uses `STATUS`, `SUMMARY`, `SNAPSHOT_REFRESH_04`, `VALIDATION`,
-`BOUNDARIES`, and `NEXT_TASK`.
+Final report uses `STATUS`, `SUMMARY`, `PUBLIC_ALPHA_REASSESS_04`,
+`VALIDATION`, `BOUNDARIES`, and `NEXT_TASK`.
