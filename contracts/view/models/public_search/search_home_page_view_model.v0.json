@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/view/models/public_search/search_home_page_view_model.v0.json",
+  "title": "SearchHomePageViewModel",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "view_model",
+    "page_kind",
+    "canonical_route",
+    "search_first",
+    "search_form",
+    "capability_profile",
+    "read_only",
+    "no_js_required"
+  ],
+  "properties": {
+    "schema_version": { "const": "search_home_page_view_model.v0" },
+    "view_model": { "const": "SearchHomePageViewModel" },
+    "page_kind": { "const": "home" },
+    "canonical_route": { "const": "/" },
+    "search_first": { "const": true },
+    "search_form": { "type": "object" },
+    "capability_profile": { "type": "object" },
+    "read_only": { "const": true },
+    "no_js_required": { "const": true },
+    "public_mutation_enabled": { "const": false },
+    "public_live_source_fanout_enabled": { "const": false }
+  },
+  "additionalProperties": true
+}

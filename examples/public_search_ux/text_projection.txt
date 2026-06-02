@@ -1,0 +1,39 @@
+Eureka Public Alpha - Search results for D-Theater New York
+Read-only. No downloads. No public mutation. No launch claim.
+[Candidate] New York 1993 D-Theater HD demo tape original source fixture metadata lead -> /candidate/seed_frontier_media_frontier_media_q01_candidate
+  Seed-batch metadata candidate remains review-only.
+[Candidate] New York 1993 D-VHS HDTV demo tape fixture metadata lead -> /candidate/seed_frontier_media_frontier_media_q02_candidate
+  Seed-batch metadata candidate remains review-only.
+[Candidate] JVC D-Theater New York HD demo fixture metadata lead -> /candidate/seed_frontier_media_frontier_media_q03_candidate
+  Seed-batch metadata candidate remains review-only.
+[Candidate] D-Theater D-VHS city footage 1993 fixture metadata lead -> /candidate/seed_frontier_media_frontier_media_q04_candidate
+  Seed-batch metadata candidate remains review-only.
+[Candidate] Hi-Vision MUSE New York 1993 HDTV demo fixture metadata lead -> /candidate/seed_frontier_media_frontier_media_q05_candidate
+  Seed-batch metadata candidate remains review-only.
+[Candidate] early HDTV New York 1993 demo footage fixture metadata lead -> /candidate/seed_frontier_media_frontier_media_q06_candidate
+  Seed-batch metadata candidate remains review-only.
+[Candidate] D-Theater demo tape JVC city fixture metadata lead -> /candidate/seed_frontier_media_frontier_media_q07_candidate
+  Seed-batch metadata candidate remains review-only.
+[Candidate] HDVS Hi-Vision demo New York footage fixture metadata lead -> /candidate/seed_frontier_media_frontier_media_q08_candidate
+  Seed-batch metadata candidate remains review-only.
+[Candidate] Japanese HDTV demonstration tape New York fixture metadata lead -> /candidate/seed_frontier_media_frontier_media_q09_candidate
+  Seed-batch metadata candidate remains review-only.
+[Candidate] MUSE LaserDisc New York HD demo fixture metadata lead -> /candidate/seed_frontier_media_frontier_media_q10_candidate
+  Seed-batch metadata candidate remains review-only.
+[Candidate] JVC D-VHS D-Theater manual fixture metadata lead -> /candidate/seed_manuals_scans_manuals_scans_q01_candidate
+  Manuals/scans metadata candidate. No document fetch, OCR, scan completeness, or rights claim is included.
+[Candidate] JVC D-Theater user guide fixture metadata lead -> /candidate/seed_manuals_scans_manuals_scans_q02_candidate
+  Manuals/scans metadata candidate. No document fetch, OCR, scan completeness, or rights claim is included.
+[Candidate] Redacted live IA metadata summary for New York 1993 D-Theater HD demo tape original source -> /candidate/live_metadata_pilot_frontier_media_q01_01
+  Seed-batch metadata candidate remains review-only.
+[Candidate] Redacted live IA metadata summary for JVC D-Theater New York HD demo -> /candidate/live_metadata_pilot_frontier_media_q03_02
+  Seed-batch metadata candidate remains review-only.
+[Candidate] Redacted live IA metadata summary for Hi-Vision MUSE New York 1993 HDTV demo -> /candidate/live_metadata_pilot_frontier_media_q05_03
+  Seed-batch metadata candidate remains review-only.
+[Candidate] Redacted live IA metadata summary for early HDTV New York 1993 demo footage -> /candidate/live_metadata_pilot_frontier_media_q06_04
+  Seed-batch metadata candidate remains review-only.
+[Reviewed source lead] Redacted live IA metadata summary for New York 1993 D-Theater HD demo tape original source -> /source/reviewed_source_lead:be997026927f3db6
+  Limited reviewed metadata/source-lead record. It is not a verified downloadable artifact.
+[Near miss] Near miss: New York 1993 D-Theater HD demo tape original source fixture metadata lead -> /candidate/seed_frontier_media_frontier_media_q01_candidate
+  Seed-batch metadata candidate remains review-only.
+No reviewed result yet. Known needs and next actions are available on the HTML page.

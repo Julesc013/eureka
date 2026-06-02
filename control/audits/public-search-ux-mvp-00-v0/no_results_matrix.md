@@ -1,0 +1,732 @@
+# No Results Matrix
+
+```json
+{
+  "no_results": {
+    "accepted_truth": false,
+    "accepted_truth_created": false,
+    "bounded_absences": [
+      {
+        "accepted_truth": false,
+        "action_posture": {
+          "allowed_actions": [
+            "view_need",
+            "view_evidence",
+            "refine_query"
+          ],
+          "blocked_actions": [
+            "download",
+            "execute",
+            "extract",
+            "fetch_file",
+            "install_handoff",
+            "live_source_fanout",
+            "mutate_public_index",
+            "ocr",
+            "promote_public"
+          ],
+          "downloads_enabled": false,
+          "extraction_enabled": false,
+          "file_fetches_enabled": false,
+          "install_execution_enabled": false,
+          "model_provider_enabled": false,
+          "ocr_enabled": false,
+          "public_live_source_fanout_enabled": false,
+          "public_mutation_enabled": false,
+          "review_required": true,
+          "schema_version": "public_search_action_posture_view_model.v0"
+        },
+        "artifact_verified": false,
+        "compatibility_guarantee": false,
+        "compatibility_label": "not_applicable",
+        "confidence_label": "bounded_absence",
+        "created_at": "2026-06-02T00:00:00Z",
+        "domain": "bounded_absence",
+        "domain_id": "bounded_absence",
+        "evidence_summary": {
+          "evidence_count": 1,
+          "evidence_refs": [
+            "seed_absence:ca7d7272ff295051"
+          ],
+          "summary": "Bounded absence in the current snapshot only."
+        },
+        "href": "/evidence/seed_absence%3Aca7d7272ff295051",
+        "limitations": [
+          "absence_scope_is_current_snapshot",
+          "not_global_absence"
+        ],
+        "malware_clean_claim": false,
+        "match_reasons": [
+          "bounded_absence_statement",
+          "current_snapshot_scope"
+        ],
+        "object_type": "reviewed_truth_not_created",
+        "review_required": true,
+        "rights_clearance_claim": false,
+        "rights_label": "not_applicable",
+        "risk_label": "scope_limited",
+        "schema_version": "result_card_view_model.v0",
+        "snippet": "Fixture candidates exist, but reviewed truth and public index records are intentionally absent.",
+        "source_family": "snapshot_need_absence_section",
+        "source_label": "Snapshot absence",
+        "status": "absence",
+        "status_label": "Absence",
+        "title": "Absence: Fixture candidates exist, but reviewed truth and public index records are intentionally absent.",
+        "url": "/evidence/seed_absence%3Aca7d7272ff295051",
+        "verified_download_claim": false,
+        "view_model_id": "absence:2b12d825191ab1af"
+      },
+      {
+        "accepted_truth": false,
+        "action_posture": {
+          "allowed_actions": [
+            "view_need",
+            "view_evidence",
+            "refine_query"
+          ],
+          "blocked_actions": [
+            "download",
+            "execute",
+            "extract",
+            "fetch_file",
+            "install_handoff",
+            "live_source_fanout",
+            "mutate_public_index",
+            "ocr",
+            "promote_public"
+          ],
+          "downloads_enabled": false,
+          "extraction_enabled": false,
+          "file_fetches_enabled": false,
+          "install_execution_enabled": false,
+          "model_provider_enabled": false,
+          "ocr_enabled": false,
+          "public_live_source_fanout_enabled": false,
+          "public_mutation_enabled": false,
+          "review_required": true,
+          "schema_version": "public_search_action_posture_view_model.v0"
+        },
+        "artifact_verified": false,
+        "compatibility_guarantee": false,
+        "compatibility_label": "not_applicable",
+        "confidence_label": "bounded_absence",
+        "created_at": "2026-06-02T00:00:00Z",
+        "domain": "bounded_absence",
+        "domain_id": "bounded_absence",
+        "evidence_summary": {
+          "evidence_count": 1,
+          "evidence_refs": [
+            "legacy_seed_absence:6f9f2ff169454b4e"
+          ],
+          "summary": "Bounded absence in the current snapshot only."
+        },
+        "href": "/evidence/legacy_seed_absence%3A6f9f2ff169454b4e",
+        "limitations": [
+          "absence_scope_is_current_snapshot",
+          "not_global_absence"
+        ],
+        "malware_clean_claim": false,
+        "match_reasons": [
+          "bounded_absence_statement",
+          "current_snapshot_scope"
+        ],
+        "object_type": "download_install_execute_absent",
+        "review_required": true,
+        "rights_clearance_claim": false,
+        "rights_label": "not_applicable",
+        "risk_label": "scope_limited",
+        "schema_version": "result_card_view_model.v0",
+        "snippet": "Fixture candidates exist, but download, install, execute, reviewed truth, and public index records are intentionally absent.",
+        "source_family": "snapshot_need_absence_section",
+        "source_label": "Snapshot absence",
+        "status": "absence",
+        "status_label": "Absence",
+        "title": "Absence: Fixture candidates exist, but download, install, execute, reviewed truth, and public index records are intentionally absent.",
+        "url": "/evidence/legacy_seed_absence%3A6f9f2ff169454b4e",
+        "verified_download_claim": false,
+        "view_model_id": "absence:77f256ad917ed167"
+      }
+    ],
+    "canonical_route": "/search",
+    "compatibility_guarantee_created": false,
+    "coverage": {
+      "not_searched": [
+        "live_web",
+        "operator_instances",
+        "public_uploads"
+      ],
+      "searched": [
+        "snapshot_public_search_view_model_projection",
+        "known_needs",
+        "bounded_absences"
+      ]
+    },
+    "created_at": "2026-06-02T00:00:00Z",
+    "deployment_performed": false,
+    "download_performed": false,
+    "extraction_executed": false,
+    "file_fetch_performed": false,
+    "headline": "No reviewed result yet",
+    "install_execution_enabled": false,
+    "known_needs": [
+      {
+        "accepted_truth": false,
+        "action_posture": {
+          "allowed_actions": [
+            "view_need",
+            "view_evidence",
+            "refine_query"
+          ],
+          "blocked_actions": [
+            "download",
+            "execute",
+            "extract",
+            "fetch_file",
+            "install_handoff",
+            "live_source_fanout",
+            "mutate_public_index",
+            "ocr",
+            "promote_public"
+          ],
+          "downloads_enabled": false,
+          "extraction_enabled": false,
+          "file_fetches_enabled": false,
+          "install_execution_enabled": false,
+          "model_provider_enabled": false,
+          "ocr_enabled": false,
+          "public_live_source_fanout_enabled": false,
+          "public_mutation_enabled": false,
+          "review_required": true,
+          "schema_version": "public_search_action_posture_view_model.v0"
+        },
+        "artifact_verified": false,
+        "compatibility_guarantee": false,
+        "compatibility_label": "not_applicable",
+        "confidence_label": "need",
+        "created_at": "2026-06-02T00:00:00Z",
+        "domain": "discovery_need",
+        "domain_id": "discovery_need",
+        "evidence_summary": {
+          "evidence_count": 1,
+          "evidence_refs": [
+            "seed_frontier_media_frontier_media_q01_candidate"
+          ],
+          "summary": "Need is linked to review-only candidates."
+        },
+        "href": "/need/seed_known_need%3Abf3d2dd91c7ecb1d",
+        "limitations": [
+          "need_not_result",
+          "review_required"
+        ],
+        "malware_clean_claim": false,
+        "match_reasons": [
+          "known_need_ref",
+          "review_required"
+        ],
+        "object_type": "provenance_review",
+        "review_required": true,
+        "rights_clearance_claim": false,
+        "rights_label": "not_applicable",
+        "risk_label": "unresolved",
+        "schema_version": "result_card_view_model.v0",
+        "snippet": "Operator must verify source identity, format, rights, and provenance before promotion.",
+        "source_family": "snapshot_need_absence_section",
+        "source_label": "Snapshot needs",
+        "status": "known_need",
+        "status_label": "Known need",
+        "title": "Known need: Operator must verify source identity, format, rights, and provenance before promotion.",
+        "url": "/need/seed_known_need%3Abf3d2dd91c7ecb1d",
+        "verified_download_claim": false,
+        "view_model_id": "known_need:bf3553a6cbed8b31"
+      },
+      {
+        "accepted_truth": false,
+        "action_posture": {
+          "allowed_actions": [
+            "view_need",
+            "view_evidence",
+            "refine_query"
+          ],
+          "blocked_actions": [
+            "download",
+            "execute",
+            "extract",
+            "fetch_file",
+            "install_handoff",
+            "live_source_fanout",
+            "mutate_public_index",
+            "ocr",
+            "promote_public"
+          ],
+          "downloads_enabled": false,
+          "extraction_enabled": false,
+          "file_fetches_enabled": false,
+          "install_execution_enabled": false,
+          "model_provider_enabled": false,
+          "ocr_enabled": false,
+          "public_live_source_fanout_enabled": false,
+          "public_mutation_enabled": false,
+          "review_required": true,
+          "schema_version": "public_search_action_posture_view_model.v0"
+        },
+        "artifact_verified": false,
+        "compatibility_guarantee": false,
+        "compatibility_label": "not_applicable",
+        "confidence_label": "need",
+        "created_at": "2026-06-02T00:00:00Z",
+        "domain": "discovery_need",
+        "domain_id": "discovery_need",
+        "evidence_summary": {
+          "evidence_count": 1,
+          "evidence_refs": [
+            "seed_frontier_media_frontier_media_q02_candidate"
+          ],
+          "summary": "Need is linked to review-only candidates."
+        },
+        "href": "/need/seed_known_need%3Aa56648741d5d7a3f",
+        "limitations": [
+          "need_not_result",
+          "review_required"
+        ],
+        "malware_clean_claim": false,
+        "match_reasons": [
+          "known_need_ref",
+          "review_required"
+        ],
+        "object_type": "provenance_review",
+        "review_required": true,
+        "rights_clearance_claim": false,
+        "rights_label": "not_applicable",
+        "risk_label": "unresolved",
+        "schema_version": "result_card_view_model.v0",
+        "snippet": "Operator must verify source identity, format, rights, and provenance before promotion.",
+        "source_family": "snapshot_need_absence_section",
+        "source_label": "Snapshot needs",
+        "status": "known_need",
+        "status_label": "Known need",
+        "title": "Known need: Operator must verify source identity, format, rights, and provenance before promotion.",
+        "url": "/need/seed_known_need%3Aa56648741d5d7a3f",
+        "verified_download_claim": false,
+        "view_model_id": "known_need:e075011e2b2769b1"
+      },
+      {
+        "accepted_truth": false,
+        "action_posture": {
+          "allowed_actions": [
+            "view_need",
+            "view_evidence",
+            "refine_query"
+          ],
+          "blocked_actions": [
+            "download",
+            "execute",
+            "extract",
+            "fetch_file",
+            "install_handoff",
+            "live_source_fanout",
+            "mutate_public_index",
+            "ocr",
+            "promote_public"
+          ],
+          "downloads_enabled": false,
+          "extraction_enabled": false,
+          "file_fetches_enabled": false,
+          "install_execution_enabled": false,
+          "model_provider_enabled": false,
+          "ocr_enabled": false,
+          "public_live_source_fanout_enabled": false,
+          "public_mutation_enabled": false,
+          "review_required": true,
+          "schema_version": "public_search_action_posture_view_model.v0"
+        },
+        "artifact_verified": false,
+        "compatibility_guarantee": false,
+        "compatibility_label": "not_applicable",
+        "confidence_label": "need",
+        "created_at": "2026-06-02T00:00:00Z",
+        "domain": "discovery_need",
+        "domain_id": "discovery_need",
+        "evidence_summary": {
+          "evidence_count": 1,
+          "evidence_refs": [
+            "seed_frontier_media_frontier_media_q03_candidate"
+          ],
+          "summary": "Need is linked to review-only candidates."
+        },
+        "href": "/need/seed_known_need%3Af05334a9e028baba",
+        "limitations": [
+          "need_not_result",
+          "review_required"
+        ],
+        "malware_clean_claim": false,
+        "match_reasons": [
+          "known_need_ref",
+          "review_required"
+        ],
+        "object_type": "provenance_review",
+        "review_required": true,
+        "rights_clearance_claim": false,
+        "rights_label": "not_applicable",
+        "risk_label": "unresolved",
+        "schema_version": "result_card_view_model.v0",
+        "snippet": "Operator must verify source identity, format, rights, and provenance before promotion.",
+        "source_family": "snapshot_need_absence_section",
+        "source_label": "Snapshot needs",
+        "status": "known_need",
+        "status_label": "Known need",
+        "title": "Known need: Operator must verify source identity, format, rights, and provenance before promotion.",
+        "url": "/need/seed_known_need%3Af05334a9e028baba",
+        "verified_download_claim": false,
+        "view_model_id": "known_need:a3d981c68a262035"
+      }
+    ],
+    "live_source_call_performed": false,
+    "malware_clean_claim_created": false,
+    "master_index_mutated": false,
+    "model_provider_used": false,
+    "near_matches": [
+      {
+        "accepted_truth": false,
+        "action_posture": {
+          "allowed_actions": [
+            "inspect",
+            "view_source",
+            "view_provenance",
+            "read"
+          ],
+          "blocked_actions": [
+            "download",
+            "execute",
+            "extract",
+            "fetch_file",
+            "install_handoff",
+            "live_source_fanout",
+            "mutate_public_index",
+            "ocr",
+            "promote_public"
+          ],
+          "downloads_enabled": false,
+          "extraction_enabled": false,
+          "file_fetches_enabled": false,
+          "install_execution_enabled": false,
+          "model_provider_enabled": false,
+          "ocr_enabled": false,
+          "public_live_source_fanout_enabled": false,
+          "public_mutation_enabled": false,
+          "review_required": true,
+          "schema_version": "public_search_action_posture_view_model.v0"
+        },
+        "artifact_verified": false,
+        "compatibility_guarantee": false,
+        "compatibility_label": "unreviewed",
+        "confidence_label": "candidate",
+        "created_at": "2026-06-02T00:00:00Z",
+        "domain": "frontier_resolution_media",
+        "domain_id": "frontier_resolution_media",
+        "evidence_summary": {
+          "evidence_count": 0,
+          "evidence_refs": [],
+          "summary": "Public-safe view-model summary only."
+        },
+        "file_fetch_performed": false,
+        "href": "/candidate/seed_frontier_media_frontier_media_q01_candidate",
+        "install_execution_enabled": false,
+        "limitations": [
+          "candidate_not_verified",
+          "fixture_derived",
+          "review_required"
+        ],
+        "malware_clean_claim": false,
+        "match_reasons": [
+          "candidate",
+          "seed_batch_candidate"
+        ],
+        "object_type": "seed_batch_candidate",
+        "ocr_performed": false,
+        "review_required": true,
+        "rights_clearance_claim": false,
+        "rights_label": "rights_not_cleared",
+        "risk_label": "review_required",
+        "schema_version": "result_card_view_model.v0",
+        "snippet": "Seed-batch metadata candidate remains review-only.",
+        "source_family": "internet_archive_metadata",
+        "source_label": "Internet Archive metadata",
+        "status": "candidate",
+        "status_label": "Candidate",
+        "title": "New York 1993 D-Theater HD demo tape original source fixture metadata lead",
+        "url": "/candidate/seed_frontier_media_frontier_media_q01_candidate",
+        "verified_download_claim": false,
+        "view_model_id": "result_card:1f3ebf06314ac35f"
+      },
+      {
+        "accepted_truth": false,
+        "action_posture": {
+          "allowed_actions": [
+            "inspect",
+            "view_source",
+            "view_provenance",
+            "read"
+          ],
+          "blocked_actions": [
+            "download",
+            "execute",
+            "extract",
+            "fetch_file",
+            "install_handoff",
+            "live_source_fanout",
+            "mutate_public_index",
+            "ocr",
+            "promote_public"
+          ],
+          "downloads_enabled": false,
+          "extraction_enabled": false,
+          "file_fetches_enabled": false,
+          "install_execution_enabled": false,
+          "model_provider_enabled": false,
+          "ocr_enabled": false,
+          "public_live_source_fanout_enabled": false,
+          "public_mutation_enabled": false,
+          "review_required": true,
+          "schema_version": "public_search_action_posture_view_model.v0"
+        },
+        "artifact_verified": false,
+        "compatibility_guarantee": false,
+        "compatibility_label": "unreviewed",
+        "confidence_label": "candidate",
+        "created_at": "2026-06-02T00:00:00Z",
+        "domain": "frontier_resolution_media",
+        "domain_id": "frontier_resolution_media",
+        "evidence_summary": {
+          "evidence_count": 0,
+          "evidence_refs": [],
+          "summary": "Public-safe view-model summary only."
+        },
+        "file_fetch_performed": false,
+        "href": "/candidate/seed_frontier_media_frontier_media_q02_candidate",
+        "install_execution_enabled": false,
+        "limitations": [
+          "candidate_not_verified",
+          "fixture_derived",
+          "review_required"
+        ],
+        "malware_clean_claim": false,
+        "match_reasons": [
+          "candidate",
+          "seed_batch_candidate"
+        ],
+        "object_type": "seed_batch_candidate",
+        "ocr_performed": false,
+        "review_required": true,
+        "rights_clearance_claim": false,
+        "rights_label": "rights_not_cleared",
+        "risk_label": "review_required",
+        "schema_version": "result_card_view_model.v0",
+        "snippet": "Seed-batch metadata candidate remains review-only.",
+        "source_family": "internet_archive_metadata",
+        "source_label": "Internet Archive metadata",
+        "status": "candidate",
+        "status_label": "Candidate",
+        "title": "New York 1993 D-VHS HDTV demo tape fixture metadata lead",
+        "url": "/candidate/seed_frontier_media_frontier_media_q02_candidate",
+        "verified_download_claim": false,
+        "view_model_id": "result_card:90883259157905fa"
+      },
+      {
+        "accepted_truth": false,
+        "action_posture": {
+          "allowed_actions": [
+            "inspect",
+            "view_source",
+            "view_provenance",
+            "read"
+          ],
+          "blocked_actions": [
+            "download",
+            "execute",
+            "extract",
+            "fetch_file",
+            "install_handoff",
+            "live_source_fanout",
+            "mutate_public_index",
+            "ocr",
+            "promote_public"
+          ],
+          "downloads_enabled": false,
+          "extraction_enabled": false,
+          "file_fetches_enabled": false,
+          "install_execution_enabled": false,
+          "model_provider_enabled": false,
+          "ocr_enabled": false,
+          "public_live_source_fanout_enabled": false,
+          "public_mutation_enabled": false,
+          "review_required": true,
+          "schema_version": "public_search_action_posture_view_model.v0"
+        },
+        "artifact_verified": false,
+        "compatibility_guarantee": false,
+        "compatibility_label": "unreviewed",
+        "confidence_label": "candidate",
+        "created_at": "2026-06-02T00:00:00Z",
+        "domain": "frontier_resolution_media",
+        "domain_id": "frontier_resolution_media",
+        "evidence_summary": {
+          "evidence_count": 0,
+          "evidence_refs": [],
+          "summary": "Public-safe view-model summary only."
+        },
+        "file_fetch_performed": false,
+        "href": "/candidate/seed_frontier_media_frontier_media_q03_candidate",
+        "install_execution_enabled": false,
+        "limitations": [
+          "candidate_not_verified",
+          "fixture_derived",
+          "review_required"
+        ],
+        "malware_clean_claim": false,
+        "match_reasons": [
+          "candidate",
+          "seed_batch_candidate"
+        ],
+        "object_type": "seed_batch_candidate",
+        "ocr_performed": false,
+        "review_required": true,
+        "rights_clearance_claim": false,
+        "rights_label": "rights_not_cleared",
+        "risk_label": "review_required",
+        "schema_version": "result_card_view_model.v0",
+        "snippet": "Seed-batch metadata candidate remains review-only.",
+        "source_family": "internet_archive_metadata",
+        "source_label": "Internet Archive metadata",
+        "status": "candidate",
+        "status_label": "Candidate",
+        "title": "JVC D-Theater New York HD demo fixture metadata lead",
+        "url": "/candidate/seed_frontier_media_frontier_media_q03_candidate",
+        "verified_download_claim": false,
+        "view_model_id": "result_card:11d1283e41d62b39"
+      },
+      {
+        "accepted_truth": false,
+        "action_posture": {
+          "allowed_actions": [
+            "inspect",
+            "view_source",
+            "view_provenance",
+            "read"
+          ],
+          "blocked_actions": [
+            "download",
+            "execute",
+            "extract",
+            "fetch_file",
+            "install_handoff",
+            "live_source_fanout",
+            "mutate_public_index",
+            "ocr",
+            "promote_public"
+          ],
+          "downloads_enabled": false,
+          "extraction_enabled": false,
+          "file_fetches_enabled": false,
+          "install_execution_enabled": false,
+          "model_provider_enabled": false,
+          "ocr_enabled": false,
+          "public_live_source_fanout_enabled": false,
+          "public_mutation_enabled": false,
+          "review_required": true,
+          "schema_version": "public_search_action_posture_view_model.v0"
+        },
+        "artifact_verified": false,
+        "compatibility_guarantee": false,
+        "compatibility_label": "unreviewed",
+        "confidence_label": "candidate",
+        "created_at": "2026-06-02T00:00:00Z",
+        "domain": "frontier_resolution_media",
+        "domain_id": "frontier_resolution_media",
+        "evidence_summary": {
+          "evidence_count": 0,
+          "evidence_refs": [],
+          "summary": "Public-safe view-model summary only."
+        },
+        "file_fetch_performed": false,
+        "href": "/candidate/seed_frontier_media_frontier_media_q04_candidate",
+        "install_execution_enabled": false,
+        "limitations": [
+          "candidate_not_verified",
+          "fixture_derived",
+          "review_required"
+        ],
+        "malware_clean_claim": false,
+        "match_reasons": [
+          "candidate",
+          "seed_batch_candidate"
+        ],
+        "object_type": "seed_batch_candidate",
+        "ocr_performed": false,
+        "review_required": true,
+        "rights_clearance_claim": false,
+        "rights_label": "rights_not_cleared",
+        "risk_label": "review_required",
+        "schema_version": "result_card_view_model.v0",
+        "snippet": "Seed-batch metadata candidate remains review-only.",
+        "source_family": "internet_archive_metadata",
+        "source_label": "Internet Archive metadata",
+        "status": "candidate",
+        "status_label": "Candidate",
+        "title": "D-Theater D-VHS city footage 1993 fixture metadata lead",
+        "url": "/candidate/seed_frontier_media_frontier_media_q04_candidate",
+        "verified_download_claim": false,
+        "view_model_id": "result_card:e4c13e77ea081413"
+      }
+    ],
+    "next_actions": [
+      {
+        "enabled": true,
+        "href": "/search?q=nonexistent+artefact",
+        "label": "Inspect candidates"
+      },
+      {
+        "enabled": true,
+        "href": "/need/seed_known_need%3Abf3d2dd91c7ecb1d",
+        "label": "View known need"
+      },
+      {
+        "enabled": true,
+        "href": "/status",
+        "label": "View source coverage"
+      },
+      {
+        "disabled_reason": "future public mutation gate required",
+        "enabled": false,
+        "href": "",
+        "label": "Submit evidence"
+      }
+    ],
+    "ocr_performed": false,
+    "ocr_quality_claim_created": false,
+    "page_kind": "no_results",
+    "production_readiness_claimed": false,
+    "public_index_mutated": false,
+    "public_launch_performed": false,
+    "public_launch_readiness_claimed": false,
+    "public_live_source_fanout_enabled": false,
+    "public_mutation_enabled": false,
+    "query": {
+      "normalized_query": "nonexistent artefact",
+      "raw_query": "nonexistent artefact"
+    },
+    "review_required": true,
+    "reviewed_index_mutated": false,
+    "rights_clearance_claim_created": false,
+    "scan_completeness_claim_created": false,
+    "schema_version": "no_results_need_view_model.v0",
+    "site_dist_written": false,
+    "source_probe_executed": false,
+    "verified_download_claim_created": false,
+    "view_model": "NoResultsNeedViewModel"
+  },
+  "no_results_page_must_show_need_or_next_actions": true,
+  "public_mutation_enabled": false,
+  "schema_version": "public_search_ux_mvp_no_results_matrix.v0",
+  "task": "PUBLIC-SEARCH-UX-MVP-00"
+}
+```

@@ -1,0 +1,19 @@
+{
+  "schema_version": "public_search_non_claim_policy.v0",
+  "task": "PUBLIC-SEARCH-UX-MVP-00",
+  "deployment_performed": false,
+  "public_launch_performed": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "verified_download_claim_allowed": false,
+  "malware_clean_claim_allowed": false,
+  "rights_clearance_claim_allowed": false,
+  "compatibility_guarantee_allowed": false,
+  "scan_completeness_claim_allowed": false,
+  "ocr_quality_claim_allowed": false,
+  "downloads_enabled": false,
+  "file_fetches_enabled": false,
+  "ocr_enabled": false,
+  "extraction_enabled": false,
+  "model_provider_enabled": false
+}

@@ -1,0 +1,40 @@
+# Boundary Report
+
+```json
+{
+  "accepted_truth_created": false,
+  "candidate_verified_distinction_passed": true,
+  "compatibility_guarantee_created": false,
+  "created_at": "2026-06-02T00:00:00Z",
+  "deployment_performed": false,
+  "download_performed": false,
+  "extraction_executed": false,
+  "file_fetch_performed": false,
+  "get_form_required": true,
+  "install_execution_enabled": false,
+  "limited_reviewed_record_distinction_passed": true,
+  "live_source_call_performed": false,
+  "malware_clean_claim_created": false,
+  "master_index_mutated": false,
+  "model_provider_used": false,
+  "no_js_required": true,
+  "ocr_performed": false,
+  "ocr_quality_claim_created": false,
+  "production_readiness_claimed": false,
+  "public_index_mutated": false,
+  "public_launch_performed": false,
+  "public_launch_readiness_claimed": false,
+  "public_launch_remains_separate": true,
+  "public_live_source_fanout_enabled": false,
+  "public_mutation_enabled": false,
+  "public_projection_read_only": true,
+  "reviewed_index_mutated": false,
+  "rights_clearance_claim_created": false,
+  "scan_completeness_claim_created": false,
+  "schema_version": "public_search_ux_mvp_boundary_report.v0",
+  "site_dist_written": false,
+  "source_probe_executed": false,
+  "task": "PUBLIC-SEARCH-UX-MVP-00",
+  "verified_download_claim_created": false
+}
+```

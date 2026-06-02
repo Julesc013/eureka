@@ -7,9 +7,12 @@
     "schema_version",
     "view_model_id",
     "title",
+    "href",
     "url",
     "status",
+    "status_label",
     "object_type",
+    "domain_id",
     "domain",
     "source_family",
     "source_label",
@@ -29,11 +32,23 @@
     "schema_version": { "const": "result_card_view_model.v0" },
     "view_model_id": { "type": "string" },
     "title": { "type": "string" },
+    "href": { "type": "string" },
     "url": { "type": "string" },
     "status": {
-      "enum": ["verified", "candidate", "near_miss", "known_need", "absence", "source_lead"]
+      "enum": [
+        "verified",
+        "reviewed_metadata_record",
+        "reviewed_source_lead",
+        "candidate",
+        "near_miss",
+        "known_need",
+        "absence",
+        "source_lead"
+      ]
     },
+    "status_label": { "type": "string" },
     "object_type": { "type": "string" },
+    "domain_id": { "type": "string" },
     "domain": { "type": "string" },
     "source_family": { "type": "string" },
     "source_label": { "type": "string" },
@@ -47,6 +62,10 @@
     "action_posture": { "type": "object" },
     "review_required": { "type": "boolean" },
     "accepted_truth": { "type": "boolean" },
+    "verified_download_claim": { "const": false },
+    "malware_clean_claim": { "const": false },
+    "rights_clearance_claim": { "const": false },
+    "compatibility_guarantee": { "const": false },
     "limitations": { "type": "array", "items": { "type": "string" } }
   },
   "additionalProperties": true

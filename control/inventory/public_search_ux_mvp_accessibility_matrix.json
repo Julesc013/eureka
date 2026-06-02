@@ -1,0 +1,12 @@
+{
+  "candidate_verified_distinction_not_color_only": true,
+  "focusable_links_have_visible_labels": true,
+  "forms_use_get": true,
+  "headings_are_semantic": true,
+  "no_js_path_works": true,
+  "schema_version": "public_search_ux_mvp_accessibility_matrix.v0",
+  "search_input_has_label": true,
+  "status_badges_have_text": true,
+  "task": "PUBLIC-SEARCH-UX-MVP-00",
+  "text_projection_works": true
+}

@@ -1,4 +1,4 @@
-current_recommended_task: PUBLIC-SEARCH-UX-MVP-00 - Implement minimal no-JS public search UX over view models
+current_recommended_task: SNAPSHOT-REFRESH-05 - Refresh public projections after UX MVP
 completed:
   - SOURCE-ACTION-KERNEL-00
   - SOURCE-WAVE-00
@@ -37,9 +37,11 @@ completed:
   - SEED-BATCH-DRIVER-SUPPORT-00
   - SNAPSHOT-REFRESH-04
   - PUBLIC-ALPHA-REASSESS-04
+  - PUBLIC-SEARCH-UX-MVP-00
 blocked: []
 planned:
-  - PUBLIC-SEARCH-UX-MVP-00
+  - SNAPSHOT-REFRESH-05
+  - PUBLIC-ALPHA-REASSESS-05
   - PUBLIC-SEARCH-UX-GATE-00
 waiting: []
 status_options:

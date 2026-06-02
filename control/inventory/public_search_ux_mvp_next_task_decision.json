@@ -1,0 +1,11 @@
+{
+  "planned_after": [
+    "PUBLIC-ALPHA-REASSESS-05",
+    "REVIEW-BATCH-APPLY-NEXT-00",
+    "DEV-TO-MAIN-PROMOTION-REVIEW-06"
+  ],
+  "recommended_next_task": "SNAPSHOT-REFRESH-05 - Refresh public projections after UX MVP",
+  "schema_version": "public_search_ux_mvp_next_task_decision.v0",
+  "status": "pass",
+  "task": "PUBLIC-SEARCH-UX-MVP-00"
+}

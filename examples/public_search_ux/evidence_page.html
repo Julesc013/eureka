@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SampleProject 1.0 reviewed local record</title>
+  <style>:root{color-scheme:light;--ink:#172026;--muted:#5f6972;--line:#cfd8dc;--panel:#f7f9fa;--verified:#0a6847;--candidate:#7a4b00;--need:#6542a4;--absence:#4d5963}*{box-sizing:border-box}body{font-family:system-ui,-apple-system,Segoe UI,sans-serif;margin:0;color:var(--ink);line-height:1.45;background:#fff}.site-header{display:flex;justify-content:space-between;gap:1rem;align-items:center;padding:1rem 1.25rem;border-bottom:1px solid var(--line)}.brand{font-weight:700;color:var(--ink);text-decoration:none}nav a{margin-left:1rem;color:#124f79}main{max-width:980px;margin:auto;padding:1.25rem}.search-panel{background:var(--panel);border-bottom:1px solid var(--line);padding:1.25rem}.search-form{display:flex;gap:.5rem;align-items:end;flex-wrap:wrap}.search-form label{font-weight:700;width:100%}.search-form input{min-width:18rem;max-width:100%;padding:.55rem;border:1px solid #7d8b94}.search-form button,.button{padding:.55rem .8rem;border:1px solid #1b5d7d;background:#1b5d7d;color:#fff;text-decoration:none}.result-list{padding-left:0;list-style:none}.result-card{border:1px solid var(--line);border-left-width:.45rem;padding:1rem;margin:.75rem 0}.status-verified{border-left-color:var(--verified)}.status-candidate,.status-near_miss{border-left-color:var(--candidate)}.status-reviewed_metadata_record,.status-reviewed_source_lead,.status-source_lead{border-left-color:#0b5c78}.status-known_need{border-left-color:var(--need)}.status-absence{border-left-color:var(--absence)}.badge{display:inline-block;border:1px solid var(--line);padding:.15rem .4rem;margin:.1rem .2rem .1rem 0;font-size:.88rem;font-weight:700;background:#fff}.badge-verified{border-color:var(--verified);color:var(--verified)}.badge-candidate,.badge-near_miss{border-color:var(--candidate);color:var(--candidate)}.badge-disabled{color:var(--muted)}dl{display:grid;grid-template-columns:minmax(8rem,13rem) 1fr;gap:.25rem .75rem}dt{font-weight:700}footer{border-top:1px solid var(--line);padding:1rem 1.25rem;color:var(--muted)}a:focus,button:focus,input:focus{outline:3px solid #111;outline-offset:2px}@media(max-width:640px){dl{display:block}.search-form input{min-width:0;width:100%}}</style>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/">Eureka</a>
+    <nav aria-label="Public alpha">
+      <a href="/search">Search</a>
+      <a href="/status">Status</a>
+    </nav>
+  </header>
+  <main>
+    <section>
+      <h1>SampleProject 1.0 reviewed local record</h1>
+      <ol class="result-list">
+        <li class="result-card status-verified">
+          <h3><a href="/object/sampleproject">SampleProject 1.0 reviewed local record</a></h3>
+          <p class="snippet">Reviewed local record. This is the only verified card in the current public-alpha projection.</p>
+          <p class="badges">
+            <span class="badge badge-verified">Verified</span>
+            <span class="badge badge-note">no download</span>
+            <span class="badge badge-note">no safety claim</span>
+            <span class="badge badge-note">no rights claim</span>
+            <span class="badge badge-note">action posture visible</span>
+          </p>
+          <dl>
+            <dt>Domain</dt><dd>legacy_software</dd>
+            <dt>Source</dt><dd>Reviewed local snapshot</dd>
+            <dt>Confidence</dt><dd>reviewed</dd>
+            <dt>Risk</dt><dd>read_only</dd>
+            <dt>Rights</dt><dd>rights_not_cleared_for_download</dd>
+            <dt>Compatibility</dt><dd>partial</dd>
+          </dl>
+        </li>
+      </ol>
+    </section>
+  </main>
+  <footer>
+    <p>Read-only public alpha. No downloads, live source fanout, OCR, installs, public mutation, or launch claim.</p>
+  </footer>
+</body>
+</html>

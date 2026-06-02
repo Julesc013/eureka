@@ -1,0 +1,17 @@
+{
+  "schema_version": "public_search_projection_policy.v0",
+  "task": "PUBLIC-SEARCH-UX-MVP-00",
+  "projection_only": true,
+  "public_projection_read_only": true,
+  "view_models_own_result_semantics": true,
+  "html_renderer_must_not_invent_truth": true,
+  "snapshot_refresh_after_ux_required": true,
+  "public_alpha_reassess_after_ux_required": true,
+  "site_dist_written": false,
+  "data_public_index_mutated": false,
+  "reviewed_index_mutated": false,
+  "master_index_mutated": false,
+  "public_index_mutated": false,
+  "public_mutation_enabled": false,
+  "public_live_source_fanout_enabled": false
+}

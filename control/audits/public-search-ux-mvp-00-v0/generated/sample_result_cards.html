@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Result cards</title>
+  <style>:root{color-scheme:light;--ink:#172026;--muted:#5f6972;--line:#cfd8dc;--panel:#f7f9fa;--verified:#0a6847;--candidate:#7a4b00;--need:#6542a4;--absence:#4d5963}*{box-sizing:border-box}body{font-family:system-ui,-apple-system,Segoe UI,sans-serif;margin:0;color:var(--ink);line-height:1.45;background:#fff}.site-header{display:flex;justify-content:space-between;gap:1rem;align-items:center;padding:1rem 1.25rem;border-bottom:1px solid var(--line)}.brand{font-weight:700;color:var(--ink);text-decoration:none}nav a{margin-left:1rem;color:#124f79}main{max-width:980px;margin:auto;padding:1.25rem}.search-panel{background:var(--panel);border-bottom:1px solid var(--line);padding:1.25rem}.search-form{display:flex;gap:.5rem;align-items:end;flex-wrap:wrap}.search-form label{font-weight:700;width:100%}.search-form input{min-width:18rem;max-width:100%;padding:.55rem;border:1px solid #7d8b94}.search-form button,.button{padding:.55rem .8rem;border:1px solid #1b5d7d;background:#1b5d7d;color:#fff;text-decoration:none}.result-list{padding-left:0;list-style:none}.result-card{border:1px solid var(--line);border-left-width:.45rem;padding:1rem;margin:.75rem 0}.status-verified{border-left-color:var(--verified)}.status-candidate,.status-near_miss{border-left-color:var(--candidate)}.status-reviewed_metadata_record,.status-reviewed_source_lead,.status-source_lead{border-left-color:#0b5c78}.status-known_need{border-left-color:var(--need)}.status-absence{border-left-color:var(--absence)}.badge{display:inline-block;border:1px solid var(--line);padding:.15rem .4rem;margin:.1rem .2rem .1rem 0;font-size:.88rem;font-weight:700;background:#fff}.badge-verified{border-color:var(--verified);color:var(--verified)}.badge-candidate,.badge-near_miss{border-color:var(--candidate);color:var(--candidate)}.badge-disabled{color:var(--muted)}dl{display:grid;grid-template-columns:minmax(8rem,13rem) 1fr;gap:.25rem .75rem}dt{font-weight:700}footer{border-top:1px solid var(--line);padding:1rem 1.25rem;color:var(--muted)}a:focus,button:focus,input:focus{outline:3px solid #111;outline-offset:2px}@media(max-width:640px){dl{display:block}.search-form input{min-width:0;width:100%}}</style>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/">Eureka</a>
+    <nav aria-label="Public alpha">
+      <a href="/search">Search</a>
+      <a href="/status">Status</a>
+    </nav>
+  </header>
+  <main>
+    <section class="search-panel" aria-labelledby="search-heading">
+      <h1 id="search-heading">Search Eureka</h1>
+      <form method="get" action="/search" class="search-form">
+        <label for="q">Search public alpha</label>
+        <input id="q" name="q" type="search" value="all" autocomplete="off">
+        <button type="submit">Search</button>
+      </form>
+    </section>
+    <section>
+      <h2>Results</h2>
+      <ol class="result-list">
+        <li class="result-card status-verified">
+          <h3><a href="/object/sampleproject">SampleProject 1.0 reviewed local record</a></h3>
+          <p class="snippet">Reviewed local record. This is the only verified card in the current public-alpha projection.</p>
+          <p class="badges">
+            <span class="badge badge-verified">Verified</span>
+            <span class="badge badge-note">no download</span>
+            <span class="badge badge-note">no safety claim</span>
+            <span class="badge badge-note">no rights claim</span>
+            <span class="badge badge-note">action posture visible</span>
+          </p>
+          <dl>
+            <dt>Domain</dt><dd>legacy_software</dd>
+            <dt>Source</dt><dd>Reviewed local snapshot</dd>
+            <dt>Confidence</dt><dd>reviewed</dd>
+            <dt>Risk</dt><dd>read_only</dd>
+            <dt>Rights</dt><dd>rights_not_cleared_for_download</dd>
+            <dt>Compatibility</dt><dd>partial</dd>
+          </dl>
+        </li>
+        <li class="result-card status-candidate">
+          <h3><a href="/candidate/seed_frontier_media_frontier_media_q01_candidate">New York 1993 D-Theater HD demo tape original source fixture metadata lead</a></h3>
+          <p class="snippet">Seed-batch metadata candidate remains review-only.</p>
+          <p class="badges">
+            <span class="badge badge-candidate">Candidate</span>
+            <span class="badge badge-note">review required</span>
+            <span class="badge badge-note">no download</span>
+            <span class="badge badge-note">no safety claim</span>
+            <span class="badge badge-note">no rights claim</span>
+            <span class="badge badge-note">action posture visible</span>
+          </p>
+          <dl>
+            <dt>Domain</dt><dd>frontier_resolution_media</dd>
+            <dt>Source</dt><dd>Internet Archive metadata</dd>
+            <dt>Confidence</dt><dd>candidate</dd>
+            <dt>Risk</dt><dd>review_required</dd>
+            <dt>Rights</dt><dd>rights_not_cleared</dd>
+            <dt>Compatibility</dt><dd>unreviewed</dd>
+          </dl>
+        </li>
+        <li class="result-card status-candidate">
+          <h3><a href="/candidate/seed_frontier_media_frontier_media_q02_candidate">New York 1993 D-VHS HDTV demo tape fixture metadata lead</a></h3>
+          <p class="snippet">Seed-batch metadata candidate remains review-only.</p>
+          <p class="badges">
+            <span class="badge badge-candidate">Candidate</span>
+            <span class="badge badge-note">review required</span>
+            <span class="badge badge-note">no download</span>
+            <span class="badge badge-note">no safety claim</span>
+            <span class="badge badge-note">no rights claim</span>
+            <span class="badge badge-note">action posture visible</span>
+          </p>
+          <dl>
+            <dt>Domain</dt><dd>frontier_resolution_media</dd>
+            <dt>Source</dt><dd>Internet Archive metadata</dd>
+            <dt>Confidence</dt><dd>candidate</dd>
+            <dt>Risk</dt><dd>review_required</dd>
+            <dt>Rights</dt><dd>rights_not_cleared</dd>
+            <dt>Compatibility</dt><dd>unreviewed</dd>
+          </dl>
+        </li>
+        <li class="result-card status-candidate">
+          <h3><a href="/candidate/seed_frontier_media_frontier_media_q03_candidate">JVC D-Theater New York HD demo fixture metadata lead</a></h3>
+          <p class="snippet">Seed-batch metadata candidate remains review-only.</p>
+          <p class="badges">
+            <span class="badge badge-candidate">Candidate</span>
+            <span class="badge badge-note">review required</span>
+            <span class="badge badge-note">no download</span>
+            <span class="badge badge-note">no safety claim</span>
+            <span class="badge badge-note">no rights claim</span>
+            <span class="badge badge-note">action posture visible</span>
+          </p>
+          <dl>
+            <dt>Domain</dt><dd>frontier_resolution_media</dd>
+            <dt>Source</dt><dd>Internet Archive metadata</dd>
+            <dt>Confidence</dt><dd>candidate</dd>
+            <dt>Risk</dt><dd>review_required</dd>
+            <dt>Rights</dt><dd>rights_not_cleared</dd>
+            <dt>Compatibility</dt><dd>unreviewed</dd>
+          </dl>
+        </li>
+        <li class="result-card status-candidate">
+          <h3><a href="/candidate/seed_frontier_media_frontier_media_q04_candidate">D-Theater D-VHS city footage 1993 fixture metadata lead</a></h3>
+          <p class="snippet">Seed-batch metadata candidate remains review-only.</p>
+          <p class="badges">
+            <span class="badge badge-candidate">Candidate</span>
+            <span class="badge badge-note">review required</span>
+            <span class="badge badge-note">no download</span>
+            <span class="badge badge-note">no safety claim</span>
+            <span class="badge badge-note">no rights claim</span>
+            <span class="badge badge-note">action posture visible</span>
+          </p>
+          <dl>
+            <dt>Domain</dt><dd>frontier_resolution_media</dd>
+            <dt>Source</dt><dd>Internet Archive metadata</dd>
+            <dt>Confidence</dt><dd>candidate</dd>
+            <dt>Risk</dt><dd>review_required</dd>
+            <dt>Rights</dt><dd>rights_not_cleared</dd>
+            <dt>Compatibility</dt><dd>unreviewed</dd>
+          </dl>
+        </li>
+        <li class="result-card status-candidate">
+          <h3><a href="/candidate/seed_frontier_media_frontier_media_q05_candidate">Hi-Vision MUSE New York 1993 HDTV demo fixture metadata lead</a></h3>
+          <p class="snippet">Seed-batch metadata candidate remains review-only.</p>
+          <p class="badges">
+            <span class="badge badge-candidate">Candidate</span>
+            <span class="badge badge-note">review required</span>
+            <span class="badge badge-note">no download</span>
+            <span class="badge badge-note">no safety claim</span>
+            <span class="badge badge-note">no rights claim</span>
+            <span class="badge badge-note">action posture visible</span>
+          </p>
+          <dl>
+            <dt>Domain</dt><dd>frontier_resolution_media</dd>
+            <dt>Source</dt><dd>Internet Archive metadata</dd>
+            <dt>Confidence</dt><dd>candidate</dd>
+            <dt>Risk</dt><dd>review_required</dd>
+            <dt>Rights</dt><dd>rights_not_cleared</dd>
+            <dt>Compatibility</dt><dd>unreviewed</dd>
+          </dl>
+        </li>
+        <li class="result-card status-candidate">
+          <h3><a href="/candidate/seed_frontier_media_frontier_media_q06_candidate">early HDTV New York 1993 demo footage fixture metadata lead</a></h3>
+          <p class="snippet">Seed-batch metadata candidate remains review-only.</p>
+          <p class="badges">
+            <span class="badge badge-candidate">Candidate</span>
+            <span class="badge badge-note">review required</span>
+            <span class="badge badge-note">no download</span>
+            <span class="badge badge-note">no safety claim</span>
+            <span class="badge badge-note">no rights claim</span>
+            <span class="badge badge-note">action posture visible</span>
+          </p>
+          <dl>
+            <dt>Domain</dt><dd>frontier_resolution_media</dd>
+            <dt>Source</dt><dd>Internet Archive metadata</dd>
+            <dt>Confidence</dt><dd>candidate</dd>
+            <dt>Risk</dt><dd>review_required</dd>
+            <dt>Rights</dt><dd>rights_not_cleared</dd>
+            <dt>Compatibility</dt><dd>unreviewed</dd>
+          </dl>
+        </li>
+        <li class="result-card status-candidate">
+          <h3><a href="/candidate/seed_frontier_media_frontier_media_q07_candidate">D-Theater demo tape JVC city fixture metadata lead</a></h3>
+          <p class="snippet">Seed-batch metadata candidate remains review-only.</p>
+          <p class="badges">
+            <span class="badge badge-candidate">Candidate</span>
+            <span class="badge badge-note">review required</span>
+            <span class="badge badge-note">no download</span>
+            <span class="badge badge-note">no safety claim</span>
+            <span class="badge badge-note">no rights claim</span>
+            <span class="badge badge-note">action posture visible</span>
+          </p>
+          <dl>
+            <dt>Domain</dt><dd>frontier_resolution_media</dd>
+            <dt>Source</dt><dd>Internet Archive metadata</dd>
+            <dt>Confidence</dt><dd>candidate</dd>
+            <dt>Risk</dt><dd>review_required</dd>
+            <dt>Rights</dt><dd>rights_not_cleared</dd>
+            <dt>Compatibility</dt><dd>unreviewed</dd>
+          </dl>
+        </li>
+        <li class="result-card status-candidate">
+          <h3><a href="/candidate/seed_frontier_media_frontier_media_q08_candidate">HDVS Hi-Vision demo New York footage fixture metadata lead</a></h3>
+          <p class="snippet">Seed-batch metadata candidate remains review-only.</p>
+          <p class="badges">
+            <span class="badge badge-candidate">Candidate</span>
+            <span class="badge badge-note">review required</span>
+            <span class="badge badge-note">no download</span>
+            <span class="badge badge-note">no safety claim</span>
+            <span class="badge badge-note">no rights claim</span>
+            <span class="badge badge-note">action posture visible</span>
+          </p>
+          <dl>
+            <dt>Domain</dt><dd>frontier_resolution_media</dd>
+            <dt>Source</dt><dd>Internet Archive metadata</dd>
+            <dt>Confidence</dt><dd>candidate</dd>
+            <dt>Risk</dt><dd>review_required</dd>
+            <dt>Rights</dt><dd>rights_not_cleared</dd>
+            <dt>Compatibility</dt><dd>unreviewed</dd>
+          </dl>
+        </li>
+        <li class="result-card status-candidate">
+          <h3><a href="/candidate/seed_frontier_media_frontier_media_q09_candidate">Japanese HDTV demonstration tape New York fixture metadata lead</a></h3>
+          <p class="snippet">Seed-batch metadata candidate remains review-only.</p>
+          <p class="badges">
+            <span class="badge badge-candidate">Candidate</span>
+            <span class="badge badge-note">review required</span>
+            <span class="badge badge-note">no download</span>
+            <span class="badge badge-note">no safety claim</span>
+            <span class="badge badge-note">no rights claim</span>
+            <span class="badge badge-note">action posture visible</span>
+          </p>
+          <dl>
+            <dt>Domain</dt><dd>frontier_resolution_media</dd>
+            <dt>Source</dt><dd>Internet Archive metadata</dd>
+            <dt>Confidence</dt><dd>candidate</dd>
+            <dt>Risk</dt><dd>review_required</dd>
+            <dt>Rights</dt><dd>rights_not_cleared</dd>
+            <dt>Compatibility</dt><dd>unreviewed</dd>
+          </dl>
+        </li>
+        <li class="result-card status-candidate">
+          <h3><a href="/candidate/seed_frontier_media_frontier_media_q10_candidate">MUSE LaserDisc New York HD demo fixture metadata lead</a></h3>
+          <p class="snippet">Seed-batch metadata candidate remains review-only.</p>
+          <p class="badges">
+            <span class="badge badge-candidate">Candidate</span>
+            <span class="badge badge-note">review required</span>
+            <span class="badge badge-note">no download</span>
+            <span class="badge badge-note">no safety claim</span>
+            <span class="badge badge-note">no rights claim</span>
+            <span class="badge badge-note">action posture visible</span>
+          </p>
+          <dl>
+            <dt>Domain</dt><dd>frontier_resolution_media</dd>
+            <dt>Source</dt><dd>Internet Archive metadata</dd>
+            <dt>Confidence</dt><dd>candidate</dd>
+            <dt>Risk</dt><dd>review_required</dd>
+            <dt>Rights</dt><dd>rights_not_cleared</dd>
+            <dt>Compatibility</dt><dd>unreviewed</dd>
+          </dl>
+        </li>
+        <li class="result-card status-candidate">
+          <h3><a href="/candidate/seed_frontier_media_frontier_media_q11_candidate">D-VHS demo tape urban footage fixture metadata lead</a></h3>
+          <p class="snippet">Seed-batch metadata candidate remains review-only.</p>
+          <p class="badges">
+            <span class="badge badge-candidate">Candidate</span>
+            <span class="badge badge-note">review required</span>
+            <span class="badge badge-note">no download</span>
+            <span class="badge badge-note">no safety claim</span>
+            <span class="badge badge-note">no rights claim</span>
+            <span class="badge badge-note">action posture visible</span>
+          </p>
+          <dl>
+            <dt>Domain</dt><dd>frontier_resolution_media</dd>
+            <dt>Source</dt><dd>Internet Archive metadata</dd>
+            <dt>Confidence</dt><dd>candidate</dd>
+            <dt>Risk</dt><dd>review_required</dd>
+            <dt>Rights</dt><dd>rights_not_cleared</dd>
+            <dt>Compatibility</dt><dd>unreviewed</dd>
+          </dl>
+        </li>
+      </ol>
+    </section>
+  </main>
+  <footer>
+    <p>Read-only public alpha. No downloads, live source fanout, OCR, installs, public mutation, or launch claim.</p>
+  </footer>
+</body>
+</html>

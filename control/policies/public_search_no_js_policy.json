@@ -1,0 +1,15 @@
+{
+  "schema_version": "public_search_no_js_policy.v0",
+  "task": "PUBLIC-SEARCH-UX-MVP-00",
+  "javascript_required": false,
+  "script_tags_allowed": false,
+  "get_form_required": true,
+  "query_param": "q",
+  "progressive_enhancement_allowed_future": true,
+  "public_live_source_fanout_enabled": false,
+  "public_mutation_enabled": false,
+  "downloads_enabled": false,
+  "file_fetches_enabled": false,
+  "ocr_enabled": false,
+  "model_provider_enabled": false
+}

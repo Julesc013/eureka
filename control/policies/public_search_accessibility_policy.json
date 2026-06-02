@@ -1,0 +1,12 @@
+{
+  "schema_version": "public_search_accessibility_policy.v0",
+  "task": "PUBLIC-SEARCH-UX-MVP-00",
+  "semantic_html_required": true,
+  "labeled_search_input_required": true,
+  "visible_focus_required": true,
+  "status_not_color_only": true,
+  "text_projection_required": true,
+  "keyboard_path_required": true,
+  "no_js_required": true,
+  "public_mutation_enabled": false
+}

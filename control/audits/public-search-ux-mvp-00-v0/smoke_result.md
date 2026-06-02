@@ -1,0 +1,37 @@
+# Smoke Result
+
+```json
+{
+  "accepted_truth_created": false,
+  "compatibility_guarantee_created": false,
+  "deployment_performed": false,
+  "download_performed": false,
+  "extraction_executed": false,
+  "file_fetch_performed": false,
+  "home_page_added": true,
+  "install_execution_enabled": false,
+  "live_source_call_performed": false,
+  "malware_clean_claim_created": false,
+  "master_index_mutated": false,
+  "model_provider_used": false,
+  "ocr_performed": false,
+  "ocr_quality_claim_created": false,
+  "production_readiness_claimed": false,
+  "public_index_mutated": false,
+  "public_launch_performed": false,
+  "public_launch_readiness_claimed": false,
+  "public_live_source_fanout_enabled": false,
+  "public_mutation_enabled": false,
+  "reviewed_index_mutated": false,
+  "rights_clearance_claim_created": false,
+  "scan_completeness_claim_created": false,
+  "schema_version": "public_search_ux_mvp_smoke_result.v0",
+  "search_results_page_added": true,
+  "site_dist_written": false,
+  "source_probe_executed": false,
+  "status": "pass",
+  "task": "PUBLIC-SEARCH-UX-MVP-00",
+  "ux_smoke_passed": true,
+  "verified_download_claim_created": false
+}
+```

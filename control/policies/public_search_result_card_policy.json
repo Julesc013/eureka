@@ -1,0 +1,17 @@
+{
+  "schema_version": "public_search_result_card_policy.v0",
+  "task": "PUBLIC-SEARCH-UX-MVP-00",
+  "candidate_verified_distinction_required": true,
+  "limited_reviewed_metadata_records_distinct_from_verified_artifacts": true,
+  "limited_reviewed_source_leads_distinct_from_verified_artifacts": true,
+  "status_badge_text_required": true,
+  "review_required_label_required_for_candidates": true,
+  "action_posture_visible": true,
+  "verified_download_claim_allowed": false,
+  "malware_clean_claim_allowed": false,
+  "rights_clearance_claim_allowed": false,
+  "compatibility_guarantee_allowed": false,
+  "public_mutation_enabled": false,
+  "downloads_enabled": false,
+  "extraction_enabled": false
+}

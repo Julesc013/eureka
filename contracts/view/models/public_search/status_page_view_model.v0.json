@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/view/models/public_search/status_page_view_model.v0.json",
+  "title": "StatusPageViewModel",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "view_model",
+    "page_kind",
+    "canonical_route",
+    "launch_recommended",
+    "public_launch_performed",
+    "status_counts",
+    "capability_profile",
+    "read_only",
+    "no_js_required"
+  ],
+  "properties": {
+    "schema_version": { "const": "status_page_view_model.v0" },
+    "view_model": { "const": "StatusPageViewModel" },
+    "page_kind": { "const": "status" },
+    "canonical_route": { "const": "/status" },
+    "launch_recommended": { "const": false },
+    "public_launch_performed": { "const": false },
+    "status_counts": { "type": "object" },
+    "capability_profile": { "type": "object" },
+    "read_only": { "const": true },
+    "no_js_required": { "const": true },
+    "deployment_performed": { "const": false },
+    "public_mutation_enabled": { "const": false },
+    "public_live_source_fanout_enabled": { "const": false }
+  },
+  "additionalProperties": true
+}

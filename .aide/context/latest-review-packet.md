@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (5072 chars, 1268 approximate tokens)
+- `.aide/context/latest-task-packet.md` (4736 chars, 1184 approximate tokens)
 
 ## Context Packet Reference
 
@@ -34,30 +34,30 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 ## Changed Files Summary
 
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/PUBLIC-ALPHA-REASSESS-04/README.md` (M; matches active task allowed path)
+- allowed: `.aide/queue/PUBLIC-SEARCH-UX-MVP-00/README.md` (M; matches active task allowed path)
+- allowed: `.aide/queue/SNAPSHOT-REFRESH-05` (??; matches active task allowed path)
 - allowed: `.aide/queue/index.yaml` (M; matches active task allowed path)
-- allowed: `contracts/publication/public_alpha_domain_coverage_reassess.v0.json` (??; matches active task allowed path)
-- allowed: `contracts/publication/public_alpha_ux_readiness_reassess.v0.json` (??; matches active task allowed path)
-- allowed: `control/audits/public-alpha-reassess-04-v0` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_reassess_04_boundary_report.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_reassess_04_candidate_usefulness_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_reassess_04_domain_coverage_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_reassess_04_failure_repair_log.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_reassess_04_input_state.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_reassess_04_launch_blocker_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_reassess_04_limited_reviewed_record_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_reassess_04_need_absence_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_reassess_04_next_task_decision.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_reassess_04_next_work_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_reassess_04_public_search_view_model_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_reassess_04_query_coverage_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_reassess_04_result.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_reassess_04_reviewed_record_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_reassess_04_route_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_reassess_04_smoke_result.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_reassess_04_snapshot_metrics.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_reassess_04_ux_readiness_matrix.json` (??; matches active task allowed path)
-- additional changed paths omitted from compact packet: 34; see task evidence changed-files report
+- allowed: `contracts/view/models/public_search/result_card_view_model.v0.json` (M; matches active task allowed path)
+- allowed: `contracts/view/models/public_search/search_home_page_view_model.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/view/models/public_search/status_page_view_model.v0.json` (??; matches active task allowed path)
+- allowed: `control/audits/public-search-ux-mvp-00-v0` (??; matches active task allowed path)
+- allowed: `control/inventory/public_search_ux_mvp_accessibility_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/public_search_ux_mvp_boundary_report.json` (??; matches active task allowed path)
+- allowed: `control/inventory/public_search_ux_mvp_failure_repair_log.json` (??; matches active task allowed path)
+- allowed: `control/inventory/public_search_ux_mvp_input_state.json` (??; matches active task allowed path)
+- allowed: `control/inventory/public_search_ux_mvp_next_task_decision.json` (??; matches active task allowed path)
+- allowed: `control/inventory/public_search_ux_mvp_no_results_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/public_search_ux_mvp_page_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/public_search_ux_mvp_projection_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/public_search_ux_mvp_result.json` (??; matches active task allowed path)
+- allowed: `control/inventory/public_search_ux_mvp_result_card_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/public_search_ux_mvp_route_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/public_search_ux_mvp_smoke_result.json` (??; matches active task allowed path)
+- allowed: `control/inventory/public_search_ux_mvp_status_badge_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/public_search_ux_mvp_validation_matrix.json` (??; matches active task allowed path)
+- allowed: `control/policies/generated_artifact_policy.json` (M; matches active task allowed path)
+- allowed: `control/policies/public_search_accessibility_policy.json` (??; matches active task allowed path)
+- additional changed paths omitted from compact packet: 29; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -67,8 +67,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 7088
-- approx_tokens: 1772
+- chars: 6917
+- approx_tokens: 1730
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

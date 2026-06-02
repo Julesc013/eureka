@@ -1,0 +1,22 @@
+{
+  "schema_version": "public_search_ux_mvp_policy.v0",
+  "task": "PUBLIC-SEARCH-UX-MVP-00",
+  "public_search_is_read_only": true,
+  "render_from_public_search_view_models": true,
+  "no_js_required": true,
+  "get_form_required": true,
+  "search_first_home": true,
+  "public_alpha_reassess_is_separate": true,
+  "snapshot_refresh_after_ux_required": true,
+  "public_mutation_enabled": false,
+  "public_live_source_fanout_enabled": false,
+  "downloads_enabled": false,
+  "file_fetches_enabled": false,
+  "ocr_enabled": false,
+  "extraction_enabled": false,
+  "install_execution_enabled": false,
+  "model_provider_enabled": false,
+  "deployment_enabled": false,
+  "public_launch_claim_allowed": false,
+  "production_claim_allowed": false
+}

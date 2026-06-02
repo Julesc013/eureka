@@ -1,0 +1,73 @@
+# Page Matrix
+
+```json
+{
+  "pages": [
+    {
+      "canonical_route": "/",
+      "no_js_required": true,
+      "page_kind": "home",
+      "read_only": true,
+      "view_model": "SearchHomePageViewModel"
+    },
+    {
+      "canonical_route": "/search",
+      "no_js_required": true,
+      "page_kind": "search",
+      "read_only": true,
+      "view_model": "SearchResultsPageViewModel"
+    },
+    {
+      "canonical_route": "/search",
+      "no_js_required": true,
+      "page_kind": "no_results",
+      "read_only": true,
+      "view_model": "SearchResultsPageViewModel"
+    },
+    {
+      "canonical_route": "/object/sampleproject",
+      "no_js_required": true,
+      "page_kind": "object",
+      "read_only": true,
+      "view_model": "ObjectPageViewModel"
+    },
+    {
+      "canonical_route": "/candidate/seed_frontier_media_frontier_media_q01_candidate",
+      "no_js_required": true,
+      "page_kind": "candidate",
+      "read_only": true,
+      "view_model": "CandidatePageViewModel"
+    },
+    {
+      "canonical_route": "/need/seed_known_need%3Abf3d2dd91c7ecb1d",
+      "no_js_required": true,
+      "page_kind": "need",
+      "read_only": true,
+      "view_model": "NeedPageViewModel"
+    },
+    {
+      "canonical_route": "/source/reviewed_source_lead:be997026927f3db6",
+      "no_js_required": true,
+      "page_kind": "source",
+      "read_only": true,
+      "view_model": "SourcePageViewModel"
+    },
+    {
+      "canonical_route": "/evidence/sampleproject",
+      "no_js_required": true,
+      "page_kind": "evidence",
+      "read_only": true,
+      "view_model": "EvidencePageViewModel"
+    },
+    {
+      "canonical_route": "/status",
+      "no_js_required": true,
+      "page_kind": "status",
+      "read_only": true,
+      "view_model": "StatusPageViewModel"
+    }
+  ],
+  "schema_version": "public_search_ux_mvp_page_matrix.v0",
+  "task": "PUBLIC-SEARCH-UX-MVP-00"
+}
+```

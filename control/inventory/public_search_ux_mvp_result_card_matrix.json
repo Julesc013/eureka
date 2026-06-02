@@ -1,0 +1,38 @@
+{
+  "candidate_verified_distinction_passed": true,
+  "limited_reviewed_record_distinction_passed": true,
+  "required_fields": [
+    "title",
+    "href",
+    "status",
+    "status_label",
+    "object_type",
+    "domain_id",
+    "source_family",
+    "source_label",
+    "snippet",
+    "match_reasons",
+    "evidence_summary",
+    "confidence_label",
+    "risk_label",
+    "rights_label",
+    "compatibility_label",
+    "action_posture",
+    "review_required",
+    "accepted_truth",
+    "limitations"
+  ],
+  "result_card_count": 87,
+  "schema_version": "public_search_ux_mvp_result_card_matrix.v0",
+  "statuses": [
+    "verified",
+    "reviewed_metadata_record",
+    "reviewed_source_lead",
+    "candidate",
+    "near_miss",
+    "known_need",
+    "absence",
+    "source_lead"
+  ],
+  "task": "PUBLIC-SEARCH-UX-MVP-00"
+}
