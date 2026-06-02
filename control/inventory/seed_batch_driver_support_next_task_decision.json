@@ -1,0 +1,6 @@
+{
+  "rationale": "Manuals/scans and driver/support discovery are candidate-rich and require snapshot projection before reassessment.",
+  "recommended_next_task": "SNAPSHOT-REFRESH-04 - Refresh snapshots after manuals/scans and driver/support batches",
+  "schema_version": "seed_batch_driver_support_next_task_decision.v0",
+  "task": "SEED-BATCH-DRIVER-SUPPORT-00"
+}

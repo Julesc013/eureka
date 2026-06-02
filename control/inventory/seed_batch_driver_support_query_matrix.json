@@ -1,0 +1,619 @@
+{
+  "accepted_truth_created": false,
+  "public_index_mutated": false,
+  "queries": [
+    {
+      "accepted_truth": false,
+      "batch_id": "seed_batch_driver_support_00",
+      "domain_id": "driver_support_media",
+      "expected_candidate_kinds": [
+        "source_metadata_candidate",
+        "support_media_lead",
+        "source_lead",
+        "review_seed"
+      ],
+      "expected_source_families": [
+        "internet_archive_metadata",
+        "wayback_cdx_metadata",
+        "manual_source_pack",
+        "vendor_support_url_metadata",
+        "github_releases_metadata"
+      ],
+      "intent": "find_driver_support_media",
+      "known_uncertainties": [
+        "printer model",
+        "Mac OS 8 compatibility",
+        "driver package identity"
+      ],
+      "promoted_terms": [
+        "StyleWriter 2500",
+        "Mac OS 8",
+        "driver"
+      ],
+      "query_id": "driver_support_q01",
+      "raw_query": "StyleWriter 2500 Mac OS 8 driver",
+      "review_priority": 1,
+      "review_required": true,
+      "schema_version": "seed_batch_query.v0",
+      "suppressions": [
+        "fake_driver_updater",
+        "wrong_hardware_model",
+        "wrong_os_version"
+      ]
+    },
+    {
+      "accepted_truth": false,
+      "batch_id": "seed_batch_driver_support_00",
+      "domain_id": "driver_support_media",
+      "expected_candidate_kinds": [
+        "source_metadata_candidate",
+        "support_media_lead",
+        "source_lead",
+        "review_seed"
+      ],
+      "expected_source_families": [
+        "internet_archive_metadata",
+        "wayback_cdx_metadata",
+        "manual_source_pack",
+        "vendor_support_url_metadata",
+        "github_releases_metadata"
+      ],
+      "intent": "find_support_disk",
+      "known_uncertainties": [
+        "support disk identity",
+        "disk completeness"
+      ],
+      "promoted_terms": [
+        "StyleWriter 2500",
+        "driver support disk"
+      ],
+      "query_id": "driver_support_q02",
+      "raw_query": "StyleWriter 2500 driver support disk",
+      "review_priority": 1,
+      "review_required": true,
+      "schema_version": "seed_batch_query.v0",
+      "suppressions": [
+        "wrong_hardware_model",
+        "web_installer_when_offline_requested",
+        "low_metadata_match"
+      ]
+    },
+    {
+      "accepted_truth": false,
+      "batch_id": "seed_batch_driver_support_00",
+      "domain_id": "driver_support_media",
+      "expected_candidate_kinds": [
+        "source_metadata_candidate",
+        "support_media_lead",
+        "source_lead",
+        "review_seed"
+      ],
+      "expected_source_families": [
+        "internet_archive_metadata",
+        "wayback_cdx_metadata",
+        "manual_source_pack",
+        "vendor_support_url_metadata",
+        "github_releases_metadata"
+      ],
+      "intent": "find_printer_driver",
+      "known_uncertainties": [
+        "vendor provenance",
+        "driver version"
+      ],
+      "promoted_terms": [
+        "Apple",
+        "StyleWriter 2500",
+        "printer driver",
+        "Mac OS 8"
+      ],
+      "query_id": "driver_support_q03",
+      "raw_query": "Apple StyleWriter 2500 printer driver Mac OS 8",
+      "review_priority": 1,
+      "review_required": true,
+      "schema_version": "seed_batch_query.v0",
+      "suppressions": [
+        "wrong_vendor",
+        "wrong_hardware_model",
+        "wrong_os_version"
+      ]
+    },
+    {
+      "accepted_truth": false,
+      "batch_id": "seed_batch_driver_support_00",
+      "domain_id": "driver_support_media",
+      "expected_candidate_kinds": [
+        "source_metadata_candidate",
+        "support_media_lead",
+        "source_lead",
+        "review_seed"
+      ],
+      "expected_source_families": [
+        "internet_archive_metadata",
+        "wayback_cdx_metadata",
+        "manual_source_pack",
+        "vendor_support_url_metadata",
+        "github_releases_metadata"
+      ],
+      "intent": "find_support_cd",
+      "known_uncertainties": [
+        "hardware revision",
+        "support CD identity"
+      ],
+      "promoted_terms": [
+        "Sound Blaster Live",
+        "Windows 98",
+        "driver support CD"
+      ],
+      "query_id": "driver_support_q04",
+      "raw_query": "Sound Blaster Live Windows 98 driver support CD",
+      "review_priority": 1,
+      "review_required": true,
+      "schema_version": "seed_batch_query.v0",
+      "suppressions": [
+        "fake_driver_updater",
+        "wrong_hardware_model",
+        "web_installer_when_offline_requested"
+      ]
+    },
+    {
+      "accepted_truth": false,
+      "batch_id": "seed_batch_driver_support_00",
+      "domain_id": "driver_support_media",
+      "expected_candidate_kinds": [
+        "source_metadata_candidate",
+        "support_media_lead",
+        "source_lead",
+        "review_seed"
+      ],
+      "expected_source_families": [
+        "internet_archive_metadata",
+        "wayback_cdx_metadata",
+        "manual_source_pack",
+        "vendor_support_url_metadata",
+        "github_releases_metadata"
+      ],
+      "intent": "find_support_cd",
+      "known_uncertainties": [
+        "Audigy model",
+        "driver CD version"
+      ],
+      "promoted_terms": [
+        "Creative Audigy",
+        "Windows XP",
+        "driver CD"
+      ],
+      "query_id": "driver_support_q05",
+      "raw_query": "Creative Audigy Windows XP driver CD",
+      "review_priority": 1,
+      "review_required": true,
+      "schema_version": "seed_batch_query.v0",
+      "suppressions": [
+        "wrong_hardware_model",
+        "wrong_os_version",
+        "web_installer_when_offline_requested"
+      ]
+    },
+    {
+      "accepted_truth": false,
+      "batch_id": "seed_batch_driver_support_00",
+      "domain_id": "driver_support_media",
+      "expected_candidate_kinds": [
+        "source_metadata_candidate",
+        "support_media_lead",
+        "source_lead",
+        "review_seed"
+      ],
+      "expected_source_families": [
+        "internet_archive_metadata",
+        "wayback_cdx_metadata",
+        "manual_source_pack",
+        "vendor_support_url_metadata",
+        "github_releases_metadata"
+      ],
+      "intent": "find_driver_installer_metadata",
+      "known_uncertainties": [
+        "device family",
+        "offline installer identity"
+      ],
+      "promoted_terms": [
+        "Microsoft IntelliPoint",
+        "Windows 7",
+        "driver",
+        "offline installer"
+      ],
+      "query_id": "driver_support_q06",
+      "raw_query": "Microsoft IntelliPoint Windows 7 driver offline installer",
+      "review_priority": 2,
+      "review_required": true,
+      "schema_version": "seed_batch_query.v0",
+      "suppressions": [
+        "wrong_os_version",
+        "web_installer_when_offline_requested",
+        "executable_download_when_metadata_only"
+      ]
+    },
+    {
+      "accepted_truth": false,
+      "batch_id": "seed_batch_driver_support_00",
+      "domain_id": "driver_support_media",
+      "expected_candidate_kinds": [
+        "source_metadata_candidate",
+        "support_media_lead",
+        "source_lead",
+        "review_seed"
+      ],
+      "expected_source_families": [
+        "internet_archive_metadata",
+        "wayback_cdx_metadata",
+        "manual_source_pack",
+        "vendor_support_url_metadata",
+        "github_releases_metadata"
+      ],
+      "intent": "find_driver_metadata",
+      "known_uncertainties": [
+        "OS edition",
+        "package provenance"
+      ],
+      "promoted_terms": [
+        "USB mass storage",
+        "Windows 98 SE",
+        "driver"
+      ],
+      "query_id": "driver_support_q07",
+      "raw_query": "USB mass storage driver Windows 98 SE",
+      "review_priority": 2,
+      "review_required": true,
+      "schema_version": "seed_batch_query.v0",
+      "suppressions": [
+        "wrong_os_version",
+        "wrong_architecture",
+        "unsupported_repack"
+      ]
+    },
+    {
+      "accepted_truth": false,
+      "batch_id": "seed_batch_driver_support_00",
+      "domain_id": "driver_support_media",
+      "expected_candidate_kinds": [
+        "source_metadata_candidate",
+        "support_media_lead",
+        "source_lead",
+        "review_seed"
+      ],
+      "expected_source_families": [
+        "internet_archive_metadata",
+        "wayback_cdx_metadata",
+        "manual_source_pack",
+        "vendor_support_url_metadata",
+        "github_releases_metadata"
+      ],
+      "intent": "find_driver_disk",
+      "known_uncertainties": [
+        "NIC revision",
+        "disk image provenance"
+      ],
+      "promoted_terms": [
+        "3Com 3C905",
+        "Windows 98",
+        "driver disk"
+      ],
+      "query_id": "driver_support_q08",
+      "raw_query": "3Com 3C905 Windows 98 driver disk",
+      "review_priority": 2,
+      "review_required": true,
+      "schema_version": "seed_batch_query.v0",
+      "suppressions": [
+        "wrong_hardware_model",
+        "wrong_vendor",
+        "torrent_only"
+      ]
+    },
+    {
+      "accepted_truth": false,
+      "batch_id": "seed_batch_driver_support_00",
+      "domain_id": "driver_support_media",
+      "expected_candidate_kinds": [
+        "source_metadata_candidate",
+        "support_media_lead",
+        "source_lead",
+        "review_seed"
+      ],
+      "expected_source_families": [
+        "internet_archive_metadata",
+        "wayback_cdx_metadata",
+        "manual_source_pack",
+        "vendor_support_url_metadata",
+        "github_releases_metadata"
+      ],
+      "intent": "find_audio_driver_metadata",
+      "known_uncertainties": [
+        "codec revision",
+        "driver version"
+      ],
+      "promoted_terms": [
+        "Realtek AC97",
+        "Windows XP",
+        "driver"
+      ],
+      "query_id": "driver_support_q09",
+      "raw_query": "Realtek AC97 Windows XP driver",
+      "review_priority": 2,
+      "review_required": true,
+      "schema_version": "seed_batch_query.v0",
+      "suppressions": [
+        "wrong_hardware_model",
+        "wrong_os_version",
+        "unrelated_modern_driver"
+      ]
+    },
+    {
+      "accepted_truth": false,
+      "batch_id": "seed_batch_driver_support_00",
+      "domain_id": "driver_support_media",
+      "expected_candidate_kinds": [
+        "source_metadata_candidate",
+        "support_media_lead",
+        "source_lead",
+        "review_seed"
+      ],
+      "expected_source_families": [
+        "internet_archive_metadata",
+        "wayback_cdx_metadata",
+        "manual_source_pack",
+        "vendor_support_url_metadata",
+        "github_releases_metadata"
+      ],
+      "intent": "find_graphics_driver_metadata",
+      "known_uncertainties": [
+        "chipset/graphics package identity",
+        "architecture"
+      ],
+      "promoted_terms": [
+        "Intel 945GM",
+        "Windows XP",
+        "graphics driver"
+      ],
+      "query_id": "driver_support_q10",
+      "raw_query": "Intel 945GM Windows XP graphics driver",
+      "review_priority": 2,
+      "review_required": true,
+      "schema_version": "seed_batch_query.v0",
+      "suppressions": [
+        "wrong_hardware_model",
+        "wrong_os_version",
+        "wrong_architecture"
+      ]
+    },
+    {
+      "accepted_truth": false,
+      "batch_id": "seed_batch_driver_support_00",
+      "domain_id": "driver_support_media",
+      "expected_candidate_kinds": [
+        "source_metadata_candidate",
+        "support_media_lead",
+        "source_lead",
+        "review_seed"
+      ],
+      "expected_source_families": [
+        "internet_archive_metadata",
+        "wayback_cdx_metadata",
+        "manual_source_pack",
+        "vendor_support_url_metadata",
+        "github_releases_metadata"
+      ],
+      "intent": "find_graphics_driver_metadata",
+      "known_uncertainties": [
+        "card model",
+        "driver package version"
+      ],
+      "promoted_terms": [
+        "ATI Rage 128",
+        "Windows 98",
+        "driver"
+      ],
+      "query_id": "driver_support_q11",
+      "raw_query": "ATI Rage 128 Windows 98 driver",
+      "review_priority": 2,
+      "review_required": true,
+      "schema_version": "seed_batch_query.v0",
+      "suppressions": [
+        "wrong_hardware_model",
+        "wrong_vendor",
+        "wrong_os_version"
+      ]
+    },
+    {
+      "accepted_truth": false,
+      "batch_id": "seed_batch_driver_support_00",
+      "domain_id": "driver_support_media",
+      "expected_candidate_kinds": [
+        "source_metadata_candidate",
+        "support_media_lead",
+        "source_lead",
+        "review_seed"
+      ],
+      "expected_source_families": [
+        "internet_archive_metadata",
+        "wayback_cdx_metadata",
+        "manual_source_pack",
+        "vendor_support_url_metadata",
+        "github_releases_metadata"
+      ],
+      "intent": "find_graphics_driver_metadata",
+      "known_uncertainties": [
+        "GPU family",
+        "driver branch"
+      ],
+      "promoted_terms": [
+        "NVIDIA GeForce FX",
+        "Windows XP",
+        "driver"
+      ],
+      "query_id": "driver_support_q12",
+      "raw_query": "NVIDIA GeForce FX Windows XP driver",
+      "review_priority": 2,
+      "review_required": true,
+      "schema_version": "seed_batch_query.v0",
+      "suppressions": [
+        "wrong_hardware_model",
+        "wrong_os_version",
+        "unrelated_modern_driver"
+      ]
+    },
+    {
+      "accepted_truth": false,
+      "batch_id": "seed_batch_driver_support_00",
+      "domain_id": "driver_support_media",
+      "expected_candidate_kinds": [
+        "source_metadata_candidate",
+        "support_media_lead",
+        "source_lead",
+        "review_seed"
+      ],
+      "expected_source_families": [
+        "internet_archive_metadata",
+        "wayback_cdx_metadata",
+        "manual_source_pack",
+        "vendor_support_url_metadata",
+        "github_releases_metadata"
+      ],
+      "intent": "find_printer_driver",
+      "known_uncertainties": [
+        "printer variant",
+        "driver package identity"
+      ],
+      "promoted_terms": [
+        "HP LaserJet 4",
+        "Windows 98",
+        "driver"
+      ],
+      "query_id": "driver_support_q13",
+      "raw_query": "HP LaserJet 4 Windows 98 driver",
+      "review_priority": 2,
+      "review_required": true,
+      "schema_version": "seed_batch_query.v0",
+      "suppressions": [
+        "wrong_vendor",
+        "wrong_hardware_model",
+        "wrong_os_version"
+      ]
+    },
+    {
+      "accepted_truth": false,
+      "batch_id": "seed_batch_driver_support_00",
+      "domain_id": "driver_support_media",
+      "expected_candidate_kinds": [
+        "source_metadata_candidate",
+        "support_media_lead",
+        "source_lead",
+        "review_seed"
+      ],
+      "expected_source_families": [
+        "internet_archive_metadata",
+        "wayback_cdx_metadata",
+        "manual_source_pack",
+        "vendor_support_url_metadata",
+        "github_releases_metadata"
+      ],
+      "intent": "find_scanner_driver_cd",
+      "known_uncertainties": [
+        "scanner model",
+        "support CD completeness"
+      ],
+      "promoted_terms": [
+        "Epson scanner",
+        "Windows 2000",
+        "driver CD"
+      ],
+      "query_id": "driver_support_q14",
+      "raw_query": "Epson scanner Windows 2000 driver CD",
+      "review_priority": 2,
+      "review_required": true,
+      "schema_version": "seed_batch_query.v0",
+      "suppressions": [
+        "wrong_hardware_model",
+        "wrong_os_version",
+        "web_installer_when_offline_requested"
+      ]
+    },
+    {
+      "accepted_truth": false,
+      "batch_id": "seed_batch_driver_support_00",
+      "domain_id": "driver_support_media",
+      "expected_candidate_kinds": [
+        "source_metadata_candidate",
+        "support_media_lead",
+        "source_lead",
+        "review_seed"
+      ],
+      "expected_source_families": [
+        "internet_archive_metadata",
+        "wayback_cdx_metadata",
+        "manual_source_pack",
+        "vendor_support_url_metadata",
+        "github_releases_metadata"
+      ],
+      "intent": "find_scanner_driver_metadata",
+      "known_uncertainties": [
+        "CanoScan model",
+        "driver version"
+      ],
+      "promoted_terms": [
+        "Canon CanoScan",
+        "Windows XP",
+        "driver"
+      ],
+      "query_id": "driver_support_q15",
+      "raw_query": "Canon CanoScan Windows XP driver",
+      "review_priority": 2,
+      "review_required": true,
+      "schema_version": "seed_batch_query.v0",
+      "suppressions": [
+        "wrong_hardware_model",
+        "wrong_vendor",
+        "wrong_os_version"
+      ]
+    },
+    {
+      "accepted_truth": false,
+      "batch_id": "seed_batch_driver_support_00",
+      "domain_id": "driver_support_media",
+      "expected_candidate_kinds": [
+        "source_metadata_candidate",
+        "support_media_lead",
+        "source_lead",
+        "review_seed"
+      ],
+      "expected_source_families": [
+        "internet_archive_metadata",
+        "wayback_cdx_metadata",
+        "manual_source_pack",
+        "vendor_support_url_metadata",
+        "github_releases_metadata"
+      ],
+      "intent": "find_support_cd",
+      "known_uncertainties": [
+        "motherboard/chipset identity",
+        "support CD provenance"
+      ],
+      "promoted_terms": [
+        "legacy motherboard",
+        "chipset driver",
+        "support CD"
+      ],
+      "query_id": "driver_support_q16",
+      "raw_query": "legacy motherboard chipset driver support CD",
+      "review_priority": 3,
+      "review_required": true,
+      "schema_version": "seed_batch_query.v0",
+      "suppressions": [
+        "wrong_hardware_model",
+        "web_installer_when_offline_requested",
+        "unsupported_repack"
+      ]
+    }
+  ],
+  "reviewed_index_mutated": false,
+  "schema_version": "seed_batch_driver_support_query_matrix.v0",
+  "task": "SEED-BATCH-DRIVER-SUPPORT-00"
+}

@@ -1,0 +1,26 @@
+# Review Matrix
+
+- accepted_truth: false
+- accepted_truth_created: false
+- compatibility_guarantee_created: false
+- cracks_keygens_serials_supported: false
+- deployment_performed: false
+- download_performed: false
+- driver_updater_spam_supported: false
+- extraction_executed: false
+- file_fetch_performed: false
+- install_execution_enabled: false
+- malware_clean_claim_created: false
+- master_index_mutated: false
+- model_provider_used: false
+- operator_instance_mutated: false
+- production_readiness_claimed: false
+- public_index_mutated: false
+- public_launch_readiness_claimed: false
+- public_mutation_enabled: false
+- raw_live_response_committed: false
+- review_required: true
+- reviewed_index_mutated: false
+- rights_clearance_claim_created: false
+- schema_version: seed_batch_driver_support_review_matrix.v0
+- task: SEED-BATCH-DRIVER-SUPPORT-00

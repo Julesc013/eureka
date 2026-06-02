@@ -1,0 +1,8 @@
+{
+  "manuals_scans_seed_batch_exists": true,
+  "prior_latest_commit": "4f51968a feat(seed): add manuals scans discovery batch",
+  "public_alpha_launch_deferred": true,
+  "schema_version": "seed_batch_driver_support_input_state.v0",
+  "target_domain": "driver_support_media",
+  "task": "SEED-BATCH-DRIVER-SUPPORT-00"
+}

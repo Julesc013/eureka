@@ -1,0 +1,52 @@
+{
+  "accepted_truth_created": false,
+  "arbitrary_web_crawling_enabled": false,
+  "public_index_mutated": false,
+  "reviewed_index_mutated": false,
+  "schema_version": "seed_batch_driver_support_source_plan_matrix.v0",
+  "source_families": [
+    {
+      "bounded": true,
+      "downloads_enabled": false,
+      "execution_mode": "fixture_metadata_candidates_by_default",
+      "file_fetches_enabled": false,
+      "metadata_only": true,
+      "source_family": "internet_archive_metadata",
+      "status": "allowed"
+    },
+    {
+      "capture_availability_only": true,
+      "downloads_enabled": false,
+      "file_fetches_enabled": false,
+      "live_call_by_default": false,
+      "source_family": "wayback_cdx_metadata",
+      "status": "fixture"
+    },
+    {
+      "downloads_enabled": false,
+      "file_fetches_enabled": false,
+      "fixture_source_pack_replay": true,
+      "live_call_by_default": false,
+      "source_family": "manual_source_pack",
+      "status": "allowed"
+    },
+    {
+      "descriptor_allowed": true,
+      "downloads_enabled": false,
+      "file_fetches_enabled": false,
+      "live_call_by_default": false,
+      "source_family": "vendor_support_url_metadata",
+      "status": "fixture"
+    },
+    {
+      "asset_download_enabled": false,
+      "descriptor_only": true,
+      "downloads_enabled": false,
+      "file_fetches_enabled": false,
+      "source_family": "github_releases_metadata",
+      "status": "fixture"
+    }
+  ],
+  "source_plan_count": 80,
+  "task": "SEED-BATCH-DRIVER-SUPPORT-00"
+}

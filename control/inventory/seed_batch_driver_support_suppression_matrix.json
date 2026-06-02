@@ -1,0 +1,284 @@
+{
+  "schema_version": "seed_batch_driver_support_suppression_matrix.v0",
+  "suppressions": [
+    {
+      "accepted_truth": false,
+      "action_posture": "block_or_review_only",
+      "applies_to_queries": [
+        "*"
+      ],
+      "batch_id": "seed_batch_driver_support_00",
+      "public_explanation": "Generic updater pages are suppressed.",
+      "reason": "SEO driver-updater pages are not trusted support-media evidence.",
+      "review_override_allowed": false,
+      "schema_version": "seed_batch_suppression.v0",
+      "suppression_id": "fake_driver_updater"
+    },
+    {
+      "accepted_truth": false,
+      "action_posture": "block_or_review_only",
+      "applies_to_queries": [
+        "*"
+      ],
+      "batch_id": "seed_batch_driver_support_00",
+      "public_explanation": "Driver updater tools are not support-media candidates.",
+      "reason": "Driver booster/updater utilities are outside this metadata-only lane.",
+      "review_override_allowed": false,
+      "schema_version": "seed_batch_suppression.v0",
+      "suppression_id": "driver_booster_or_updater_tool"
+    },
+    {
+      "accepted_truth": false,
+      "action_posture": "block_or_review_only",
+      "applies_to_queries": [
+        "*"
+      ],
+      "batch_id": "seed_batch_driver_support_00",
+      "public_explanation": "Crack-related results are blocked.",
+      "reason": "Crack-related results are unsupported and unsafe.",
+      "review_override_allowed": false,
+      "schema_version": "seed_batch_suppression.v0",
+      "suppression_id": "crack"
+    },
+    {
+      "accepted_truth": false,
+      "action_posture": "block_or_review_only",
+      "applies_to_queries": [
+        "*"
+      ],
+      "batch_id": "seed_batch_driver_support_00",
+      "public_explanation": "Keygen results are blocked.",
+      "reason": "Keygen-related results are unsupported and unsafe.",
+      "review_override_allowed": false,
+      "schema_version": "seed_batch_suppression.v0",
+      "suppression_id": "keygen"
+    },
+    {
+      "accepted_truth": false,
+      "action_posture": "block_or_review_only",
+      "applies_to_queries": [
+        "*"
+      ],
+      "batch_id": "seed_batch_driver_support_00",
+      "public_explanation": "Serial-number results are blocked.",
+      "reason": "Serial-number-seeking results are unsupported.",
+      "review_override_allowed": false,
+      "schema_version": "seed_batch_suppression.v0",
+      "suppression_id": "serial"
+    },
+    {
+      "accepted_truth": false,
+      "action_posture": "block_or_review_only",
+      "applies_to_queries": [
+        "*"
+      ],
+      "batch_id": "seed_batch_driver_support_00",
+      "public_explanation": "Warez results are blocked.",
+      "reason": "Warez distribution results are unsupported.",
+      "review_override_allowed": false,
+      "schema_version": "seed_batch_suppression.v0",
+      "suppression_id": "warez"
+    },
+    {
+      "accepted_truth": false,
+      "action_posture": "block_or_review_only",
+      "applies_to_queries": [
+        "*"
+      ],
+      "batch_id": "seed_batch_driver_support_00",
+      "public_explanation": "Torrent-only leads are suppressed.",
+      "reason": "Torrent-only records are not controlled metadata leads.",
+      "review_override_allowed": false,
+      "schema_version": "seed_batch_suppression.v0",
+      "suppression_id": "torrent_only"
+    },
+    {
+      "accepted_truth": false,
+      "action_posture": "block_or_review_only",
+      "applies_to_queries": [
+        "*"
+      ],
+      "batch_id": "seed_batch_driver_support_00",
+      "public_explanation": "Suspicious software leads are suppressed.",
+      "reason": "Suspicious driver metadata needs blocking or stronger review.",
+      "review_override_allowed": false,
+      "schema_version": "seed_batch_suppression.v0",
+      "suppression_id": "malware_suspicious"
+    },
+    {
+      "accepted_truth": false,
+      "action_posture": "block_or_review_only",
+      "applies_to_queries": [
+        "*"
+      ],
+      "batch_id": "seed_batch_driver_support_00",
+      "public_explanation": "Executable downloads are blocked.",
+      "reason": "Metadata-only review cannot expose executable download actions.",
+      "review_override_allowed": false,
+      "schema_version": "seed_batch_suppression.v0",
+      "suppression_id": "executable_download_when_metadata_only"
+    },
+    {
+      "accepted_truth": false,
+      "action_posture": "block_or_review_only",
+      "applies_to_queries": [
+        "*"
+      ],
+      "batch_id": "seed_batch_driver_support_00",
+      "public_explanation": "Wrong-model results are suppressed.",
+      "reason": "Hardware model mismatch can make a driver harmful or useless.",
+      "review_override_allowed": false,
+      "schema_version": "seed_batch_suppression.v0",
+      "suppression_id": "wrong_hardware_model"
+    },
+    {
+      "accepted_truth": false,
+      "action_posture": "block_or_review_only",
+      "applies_to_queries": [
+        "*"
+      ],
+      "batch_id": "seed_batch_driver_support_00",
+      "public_explanation": "Wrong-OS results are suppressed.",
+      "reason": "Driver OS-version mismatch must not be presented as compatible.",
+      "review_override_allowed": false,
+      "schema_version": "seed_batch_suppression.v0",
+      "suppression_id": "wrong_os_version"
+    },
+    {
+      "accepted_truth": false,
+      "action_posture": "block_or_review_only",
+      "applies_to_queries": [
+        "*"
+      ],
+      "batch_id": "seed_batch_driver_support_00",
+      "public_explanation": "Wrong-architecture results are suppressed.",
+      "reason": "x86/x64 or architecture mismatch needs review before promotion.",
+      "review_override_allowed": false,
+      "schema_version": "seed_batch_suppression.v0",
+      "suppression_id": "wrong_architecture"
+    },
+    {
+      "accepted_truth": false,
+      "action_posture": "block_or_review_only",
+      "applies_to_queries": [
+        "*"
+      ],
+      "batch_id": "seed_batch_driver_support_00",
+      "public_explanation": "Wrong-vendor results are suppressed.",
+      "reason": "Vendor mismatch is not a useful driver/support lead.",
+      "review_override_allowed": false,
+      "schema_version": "seed_batch_suppression.v0",
+      "suppression_id": "wrong_vendor"
+    },
+    {
+      "accepted_truth": false,
+      "action_posture": "block_or_review_only",
+      "applies_to_queries": [
+        "*"
+      ],
+      "batch_id": "seed_batch_driver_support_00",
+      "public_explanation": "Unrelated modern driver results are suppressed.",
+      "reason": "Modern drivers frequently do not support legacy target systems.",
+      "review_override_allowed": false,
+      "schema_version": "seed_batch_suppression.v0",
+      "suppression_id": "unrelated_modern_driver"
+    },
+    {
+      "accepted_truth": false,
+      "action_posture": "block_or_review_only",
+      "applies_to_queries": [
+        "driver_support_q02",
+        "driver_support_q04",
+        "driver_support_q05",
+        "driver_support_q06",
+        "driver_support_q14",
+        "driver_support_q16"
+      ],
+      "batch_id": "seed_batch_driver_support_00",
+      "public_explanation": "Web installer stubs are suppressed.",
+      "reason": "Offline/support-media queries should not be satisfied by web stubs.",
+      "review_override_allowed": false,
+      "schema_version": "seed_batch_suppression.v0",
+      "suppression_id": "web_installer_when_offline_requested"
+    },
+    {
+      "accepted_truth": false,
+      "action_posture": "block_or_review_only",
+      "applies_to_queries": [
+        "*"
+      ],
+      "batch_id": "seed_batch_driver_support_00",
+      "public_explanation": "Unsupported repacks are suppressed.",
+      "reason": "Repacked driver bundles are not review-safe without stronger provenance.",
+      "review_override_allowed": false,
+      "schema_version": "seed_batch_suppression.v0",
+      "suppression_id": "unsupported_repack"
+    },
+    {
+      "accepted_truth": false,
+      "action_posture": "block_or_review_only",
+      "applies_to_queries": [
+        "*"
+      ],
+      "batch_id": "seed_batch_driver_support_00",
+      "public_explanation": "Generic search results need more evidence.",
+      "reason": "Generic search hits are not sufficient review evidence.",
+      "review_override_allowed": false,
+      "schema_version": "seed_batch_suppression.v0",
+      "suppression_id": "generic_search_result"
+    },
+    {
+      "accepted_truth": false,
+      "action_posture": "block_or_review_only",
+      "applies_to_queries": [
+        "*"
+      ],
+      "batch_id": "seed_batch_driver_support_00",
+      "public_explanation": "Source-only mentions need more evidence.",
+      "reason": "A source-only mention is not a driver/support-media candidate by itself.",
+      "review_override_allowed": false,
+      "schema_version": "seed_batch_suppression.v0",
+      "suppression_id": "source_only_mention"
+    },
+    {
+      "accepted_truth": false,
+      "action_posture": "block_or_review_only",
+      "applies_to_queries": [
+        "*"
+      ],
+      "batch_id": "seed_batch_driver_support_00",
+      "public_explanation": "Duplicate leads are clustered.",
+      "reason": "Duplicate metadata should collapse into review clusters.",
+      "review_override_allowed": false,
+      "schema_version": "seed_batch_suppression.v0",
+      "suppression_id": "duplicate"
+    },
+    {
+      "accepted_truth": false,
+      "action_posture": "block_or_review_only",
+      "applies_to_queries": [
+        "*"
+      ],
+      "batch_id": "seed_batch_driver_support_00",
+      "public_explanation": "Low-confidence metadata matches need review.",
+      "reason": "Weak title-only matches need stronger metadata before promotion.",
+      "review_override_allowed": false,
+      "schema_version": "seed_batch_suppression.v0",
+      "suppression_id": "low_metadata_match"
+    },
+    {
+      "accepted_truth": false,
+      "action_posture": "block_or_review_only",
+      "applies_to_queries": [
+        "*"
+      ],
+      "batch_id": "seed_batch_driver_support_00",
+      "public_explanation": "Unsafe or blocked leads are not promoted.",
+      "reason": "Unsafe or blocked driver-search results cannot be promoted.",
+      "review_override_allowed": false,
+      "schema_version": "seed_batch_suppression.v0",
+      "suppression_id": "unsafe_or_blocked"
+    }
+  ],
+  "task": "SEED-BATCH-DRIVER-SUPPORT-00"
+}

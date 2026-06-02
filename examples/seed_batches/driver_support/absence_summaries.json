@@ -1,0 +1,18 @@
+[
+  {
+    "absence_id": "driver_support_absence:b117bffb13df1717",
+    "absence_kind": "reviewed_truth_not_created",
+    "accepted_truth": false,
+    "review_required": true,
+    "schema_version": "seed_batch_absence_summary.v0",
+    "summary": "Fixture candidates exist, but reviewed truth and public index records are intentionally absent."
+  },
+  {
+    "absence_id": "driver_support_absence:ad79e67d91487074",
+    "absence_kind": "driver_safety_not_verified",
+    "accepted_truth": false,
+    "review_required": true,
+    "schema_version": "seed_batch_absence_summary.v0",
+    "summary": "No download, file fetch, extraction, install, execution, malware review, compatibility test, or rights review was performed."
+  }
+]

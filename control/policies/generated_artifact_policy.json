@@ -125,6 +125,12 @@
       "policy": "Task-local SEED-BATCH-MANUALS-SCANS-00 audit evidence records metadata-only manuals/scans seed-batch validation; it is not product runtime state."
     },
     {
+      "path": "control/audits/seed-batch-driver-support-00-v0",
+      "artifact_class": "audit_generated",
+      "allow_task_local_drift": true,
+      "policy": "Task-local SEED-BATCH-DRIVER-SUPPORT-00 audit evidence records metadata-only driver/support seed-batch validation; it is not product runtime state."
+    },
+    {
       "path": "control/audits/snapshot-refresh-00-v0",
       "artifact_class": "audit_generated",
       "allow_task_local_drift": true,

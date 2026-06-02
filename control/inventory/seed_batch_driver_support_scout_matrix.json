@@ -1,0 +1,96 @@
+{
+  "accepted_truth": false,
+  "accepted_truth_created": false,
+  "batch_id": "seed_batch_driver_support_00",
+  "compatibility_guarantee_created": false,
+  "cracks_keygens_serials_supported": false,
+  "deployment_performed": false,
+  "download_performed": false,
+  "driver_updater_spam_supported": false,
+  "extraction_executed": false,
+  "file_fetch_performed": false,
+  "install_execution_enabled": false,
+  "malware_clean_claim_created": false,
+  "master_index_mutated": false,
+  "model_provider_used": false,
+  "operator_instance_mutated": false,
+  "production_readiness_claimed": false,
+  "public_index_mutated": false,
+  "public_launch_readiness_claimed": false,
+  "public_mutation_enabled": false,
+  "raw_live_response_committed": false,
+  "related_path_count": 914,
+  "relation_count": 914,
+  "review_required": true,
+  "reviewed_index_mutated": false,
+  "rights_clearance_claim_created": false,
+  "run_count": 16,
+  "sample_runs": [
+    {
+      "accepted_truth": false,
+      "candidate_refs": [
+        "seed_driver_support_driver_support_q01_candidate",
+        "seed_driver_support_driver_support_q02_candidate",
+        "seed_driver_support_driver_support_q03_candidate",
+        "seed_driver_support_driver_support_q04_candidate",
+        "seed_driver_support_driver_support_q05_candidate",
+        "seed_driver_support_driver_support_q06_candidate"
+      ],
+      "relation_count": 52,
+      "review_required": true,
+      "scout_run_id": "scout_run:3a37f15a34f122f4",
+      "seed_candidate_id": "seed_driver_support_driver_support_q01_candidate"
+    },
+    {
+      "accepted_truth": false,
+      "candidate_refs": [
+        "seed_driver_support_driver_support_q01_candidate",
+        "seed_driver_support_driver_support_q02_candidate",
+        "seed_driver_support_driver_support_q03_candidate",
+        "seed_driver_support_driver_support_q04_candidate",
+        "seed_driver_support_driver_support_q05_candidate",
+        "seed_driver_support_driver_support_q06_candidate"
+      ],
+      "relation_count": 69,
+      "review_required": true,
+      "scout_run_id": "scout_run:9ee11203c84bad22",
+      "seed_candidate_id": "seed_driver_support_driver_support_q02_candidate"
+    },
+    {
+      "accepted_truth": false,
+      "candidate_refs": [
+        "seed_driver_support_driver_support_q01_candidate",
+        "seed_driver_support_driver_support_q02_candidate",
+        "seed_driver_support_driver_support_q03_candidate",
+        "seed_driver_support_driver_support_q04_candidate",
+        "seed_driver_support_driver_support_q05_candidate",
+        "seed_driver_support_driver_support_q06_candidate"
+      ],
+      "relation_count": 53,
+      "review_required": true,
+      "scout_run_id": "scout_run:b7460cffa9715238",
+      "seed_candidate_id": "seed_driver_support_driver_support_q03_candidate"
+    }
+  ],
+  "schema_version": "seed_batch_scout_trails_summary.v0",
+  "scout_refs": [
+    "scout_run:3a37f15a34f122f4",
+    "scout_run:9ee11203c84bad22",
+    "scout_run:b7460cffa9715238",
+    "scout_run:ec4e619bdea4d0c0",
+    "scout_run:236ce62e8a044fe6",
+    "scout_run:09154fc1a9b61169",
+    "scout_run:51eb7d580897e6d8",
+    "scout_run:5b02024e84ffeb72",
+    "scout_run:b4b5d19accf28b73",
+    "scout_run:f0c1618442b6c552",
+    "scout_run:225a400b75968468",
+    "scout_run:1cb48c3132a617d9",
+    "scout_run:d56bbaa80327447f",
+    "scout_run:3bdf2223ac33858a",
+    "scout_run:2dd7886423711975",
+    "scout_run:cfd5212c090fb966"
+  ],
+  "task": "SEED-BATCH-DRIVER-SUPPORT-00",
+  "workunit_seed_count": 70
+}

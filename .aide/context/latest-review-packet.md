@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (5563 chars, 1391 approximate tokens)
+- `.aide/context/latest-task-packet.md` (5497 chars, 1375 approximate tokens)
 
 ## Context Packet Reference
 
@@ -33,30 +33,30 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Changed Files Summary
 
-- allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/SEED-BATCH-MANUALS-SCANS-00/README.md` (M; matches active task allowed path)
+- allowed: `.aide/queue/SEED-BATCH-DRIVER-SUPPORT-00/README.md` (M; matches active task allowed path)
 - allowed: `.aide/queue/index.yaml` (M; matches active task allowed path)
-- allowed: `control/audits/seed-batch-manuals-scans-00-v0` (??; matches active task allowed path)
-- allowed: `control/inventory/seed_batch_manuals_scans_boundary_report.json` (??; matches active task allowed path)
-- allowed: `control/inventory/seed_batch_manuals_scans_candidate_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/seed_batch_manuals_scans_failure_repair_log.json` (??; matches active task allowed path)
-- allowed: `control/inventory/seed_batch_manuals_scans_input_state.json` (??; matches active task allowed path)
-- allowed: `control/inventory/seed_batch_manuals_scans_need_absence_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/seed_batch_manuals_scans_next_task_decision.json` (??; matches active task allowed path)
-- allowed: `control/inventory/seed_batch_manuals_scans_public_alpha_reassess_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/seed_batch_manuals_scans_query_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/seed_batch_manuals_scans_result.json` (??; matches active task allowed path)
-- allowed: `control/inventory/seed_batch_manuals_scans_review_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/seed_batch_manuals_scans_scout_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/seed_batch_manuals_scans_smoke_result.json` (??; matches active task allowed path)
-- allowed: `control/inventory/seed_batch_manuals_scans_snapshot_handoff_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/seed_batch_manuals_scans_source_plan_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/seed_batch_manuals_scans_suppression_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/seed_batch_manuals_scans_validation_matrix.json` (??; matches active task allowed path)
+- allowed: `control/audits/seed-batch-driver-support-00-v0` (??; matches active task allowed path)
+- allowed: `control/inventory/seed_batch_driver_support_boundary_report.json` (??; matches active task allowed path)
+- allowed: `control/inventory/seed_batch_driver_support_candidate_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/seed_batch_driver_support_failure_repair_log.json` (??; matches active task allowed path)
+- allowed: `control/inventory/seed_batch_driver_support_input_state.json` (??; matches active task allowed path)
+- allowed: `control/inventory/seed_batch_driver_support_need_absence_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/seed_batch_driver_support_next_task_decision.json` (??; matches active task allowed path)
+- allowed: `control/inventory/seed_batch_driver_support_public_alpha_reassess_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/seed_batch_driver_support_query_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/seed_batch_driver_support_result.json` (??; matches active task allowed path)
+- allowed: `control/inventory/seed_batch_driver_support_review_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/seed_batch_driver_support_scout_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/seed_batch_driver_support_smoke_result.json` (??; matches active task allowed path)
+- allowed: `control/inventory/seed_batch_driver_support_snapshot_handoff_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/seed_batch_driver_support_source_plan_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/seed_batch_driver_support_suppression_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/seed_batch_driver_support_validation_matrix.json` (??; matches active task allowed path)
 - allowed: `control/policies/generated_artifact_policy.json` (M; matches active task allowed path)
-- allowed: `control/policies/seed_batch_manuals_scans_candidate_policy.json` (??; matches active task allowed path)
-- allowed: `control/policies/seed_batch_manuals_scans_live_metadata_policy.json` (??; matches active task allowed path)
+- allowed: `control/policies/seed_batch_driver_candidate_policy.json` (??; matches active task allowed path)
+- allowed: `control/policies/seed_batch_driver_live_metadata_policy.json` (??; matches active task allowed path)
+- allowed: `control/policies/seed_batch_driver_non_claim_policy.json` (??; matches active task allowed path)
 - additional changed paths omitted from compact packet: 31; see task evidence changed-files report
 
 ## Validation Summary
@@ -67,8 +67,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 6999
-- approx_tokens: 1750
+- chars: 7023
+- approx_tokens: 1756
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

@@ -15,6 +15,7 @@ if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
 from runtime.seed_batches import (  # noqa: E402
+    run_seed_batch_driver_support,
     run_seed_batch_frontier_media,
     run_seed_batch_legacy_software,
     run_seed_batch_manuals_scans,
@@ -26,7 +27,7 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout) -> int:
     parser.add_argument("--from-examples", action="store_true", help="Read generated fixture examples.")
     parser.add_argument(
         "--domain",
-        choices=("frontier_media", "legacy_software", "manuals_scans"),
+        choices=("frontier_media", "legacy_software", "manuals_scans", "driver_support", "driver_support_media"),
         default="frontier_media",
         help="Seed-batch example domain.",
     )
@@ -34,12 +35,15 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout) -> int:
     args = parser.parse_args(argv)
     if not args.from_examples:
         parser.error("--from-examples is required")
-    example_result = REPO_ROOT / "examples" / "seed_batches" / args.domain / "seed_batch_result.json"
+    example_domain = "driver_support" if args.domain == "driver_support_media" else args.domain
+    example_result = REPO_ROOT / "examples" / "seed_batches" / example_domain / "seed_batch_result.json"
     if example_result.exists():
         result = _load_example_result(example_result)
-    elif args.domain == "manuals_scans":
+    elif example_domain == "driver_support":
+        result = run_seed_batch_driver_support(fixture=True)
+    elif example_domain == "manuals_scans":
         result = run_seed_batch_manuals_scans(fixture=True)
-    elif args.domain == "legacy_software":
+    elif example_domain == "legacy_software":
         result = run_seed_batch_legacy_software(fixture=True)
     else:
         result = run_seed_batch_frontier_media(fixture=True)
@@ -47,13 +51,14 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout) -> int:
         "frontier_media": "SEED-BATCH-FRONTIER-MEDIA-00",
         "legacy_software": "SEED-BATCH-LEGACY-SOFTWARE-00",
         "manuals_scans": "SEED-BATCH-MANUALS-SCANS-00",
-    }[args.domain]
+        "driver_support": "SEED-BATCH-DRIVER-SUPPORT-00",
+    }[example_domain]
     report = {
         "schema_version": "seed_batch_report.v0",
         "task": task,
         "status": "pass" if result.get("fixture_seed_batch_passed") else "partial",
         "batch_id": result.get("batch_id"),
-        "domain": args.domain,
+        "domain": "driver_support_media" if example_domain == "driver_support" else args.domain,
         "query_count": result.get("query_count"),
         "candidate_count": result.get("candidate_count"),
         "review_batch_refs": result.get("review_batch_refs", []),
@@ -72,8 +77,10 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout) -> int:
         "model_provider_used": False,
         "deployment_performed": False,
         "cracks_keygens_serials_supported": False,
-        "malware_clean_claims_created": False,
+        "driver_updater_spam_supported": False,
+        "malware_clean_claim_created": False,
         "rights_clearance_claim_created": False,
+        "compatibility_guarantee_created": False,
         "scan_completeness_claim_created": False,
         "ocr_quality_claim_created": False,
     }

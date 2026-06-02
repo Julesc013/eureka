@@ -1,0 +1,194 @@
+[
+  {
+    "accepted_truth": false,
+    "candidate_refs": [
+      "seed_driver_support_driver_support_q01_candidate"
+    ],
+    "need_id": "driver_support_known_need:2aa7d706861b5d8a",
+    "need_kind": "driver_support_review",
+    "query_id": "driver_support_q01",
+    "review_required": true,
+    "schema_version": "seed_batch_known_need.v0",
+    "summary": "Operator must verify driver identity, hardware model, OS version, architecture, provenance, safety posture, compatibility evidence, and rights posture before promotion."
+  },
+  {
+    "accepted_truth": false,
+    "candidate_refs": [
+      "seed_driver_support_driver_support_q02_candidate"
+    ],
+    "need_id": "driver_support_known_need:a35b619562b87450",
+    "need_kind": "driver_support_review",
+    "query_id": "driver_support_q02",
+    "review_required": true,
+    "schema_version": "seed_batch_known_need.v0",
+    "summary": "Operator must verify driver identity, hardware model, OS version, architecture, provenance, safety posture, compatibility evidence, and rights posture before promotion."
+  },
+  {
+    "accepted_truth": false,
+    "candidate_refs": [
+      "seed_driver_support_driver_support_q03_candidate"
+    ],
+    "need_id": "driver_support_known_need:c7c7a6de8efb13a5",
+    "need_kind": "driver_support_review",
+    "query_id": "driver_support_q03",
+    "review_required": true,
+    "schema_version": "seed_batch_known_need.v0",
+    "summary": "Operator must verify driver identity, hardware model, OS version, architecture, provenance, safety posture, compatibility evidence, and rights posture before promotion."
+  },
+  {
+    "accepted_truth": false,
+    "candidate_refs": [
+      "seed_driver_support_driver_support_q04_candidate"
+    ],
+    "need_id": "driver_support_known_need:70d986979c5a5274",
+    "need_kind": "driver_support_review",
+    "query_id": "driver_support_q04",
+    "review_required": true,
+    "schema_version": "seed_batch_known_need.v0",
+    "summary": "Operator must verify driver identity, hardware model, OS version, architecture, provenance, safety posture, compatibility evidence, and rights posture before promotion."
+  },
+  {
+    "accepted_truth": false,
+    "candidate_refs": [
+      "seed_driver_support_driver_support_q05_candidate"
+    ],
+    "need_id": "driver_support_known_need:cc98df0058c257ff",
+    "need_kind": "driver_support_review",
+    "query_id": "driver_support_q05",
+    "review_required": true,
+    "schema_version": "seed_batch_known_need.v0",
+    "summary": "Operator must verify driver identity, hardware model, OS version, architecture, provenance, safety posture, compatibility evidence, and rights posture before promotion."
+  },
+  {
+    "accepted_truth": false,
+    "candidate_refs": [
+      "seed_driver_support_driver_support_q06_candidate"
+    ],
+    "need_id": "driver_support_known_need:4ec2f3d308d4da51",
+    "need_kind": "driver_support_review",
+    "query_id": "driver_support_q06",
+    "review_required": true,
+    "schema_version": "seed_batch_known_need.v0",
+    "summary": "Operator must verify driver identity, hardware model, OS version, architecture, provenance, safety posture, compatibility evidence, and rights posture before promotion."
+  },
+  {
+    "accepted_truth": false,
+    "candidate_refs": [
+      "seed_driver_support_driver_support_q07_candidate"
+    ],
+    "need_id": "driver_support_known_need:e560c0b40874bb82",
+    "need_kind": "driver_support_review",
+    "query_id": "driver_support_q07",
+    "review_required": true,
+    "schema_version": "seed_batch_known_need.v0",
+    "summary": "Operator must verify driver identity, hardware model, OS version, architecture, provenance, safety posture, compatibility evidence, and rights posture before promotion."
+  },
+  {
+    "accepted_truth": false,
+    "candidate_refs": [
+      "seed_driver_support_driver_support_q08_candidate"
+    ],
+    "need_id": "driver_support_known_need:61ec5b74aa0936b2",
+    "need_kind": "driver_support_review",
+    "query_id": "driver_support_q08",
+    "review_required": true,
+    "schema_version": "seed_batch_known_need.v0",
+    "summary": "Operator must verify driver identity, hardware model, OS version, architecture, provenance, safety posture, compatibility evidence, and rights posture before promotion."
+  },
+  {
+    "accepted_truth": false,
+    "candidate_refs": [
+      "seed_driver_support_driver_support_q09_candidate"
+    ],
+    "need_id": "driver_support_known_need:da851be882f697f8",
+    "need_kind": "driver_support_review",
+    "query_id": "driver_support_q09",
+    "review_required": true,
+    "schema_version": "seed_batch_known_need.v0",
+    "summary": "Operator must verify driver identity, hardware model, OS version, architecture, provenance, safety posture, compatibility evidence, and rights posture before promotion."
+  },
+  {
+    "accepted_truth": false,
+    "candidate_refs": [
+      "seed_driver_support_driver_support_q10_candidate"
+    ],
+    "need_id": "driver_support_known_need:cee2efe03ce956a9",
+    "need_kind": "driver_support_review",
+    "query_id": "driver_support_q10",
+    "review_required": true,
+    "schema_version": "seed_batch_known_need.v0",
+    "summary": "Operator must verify driver identity, hardware model, OS version, architecture, provenance, safety posture, compatibility evidence, and rights posture before promotion."
+  },
+  {
+    "accepted_truth": false,
+    "candidate_refs": [
+      "seed_driver_support_driver_support_q11_candidate"
+    ],
+    "need_id": "driver_support_known_need:2b747a9a5d1fd3d6",
+    "need_kind": "driver_support_review",
+    "query_id": "driver_support_q11",
+    "review_required": true,
+    "schema_version": "seed_batch_known_need.v0",
+    "summary": "Operator must verify driver identity, hardware model, OS version, architecture, provenance, safety posture, compatibility evidence, and rights posture before promotion."
+  },
+  {
+    "accepted_truth": false,
+    "candidate_refs": [
+      "seed_driver_support_driver_support_q12_candidate"
+    ],
+    "need_id": "driver_support_known_need:f706faf39266676b",
+    "need_kind": "driver_support_review",
+    "query_id": "driver_support_q12",
+    "review_required": true,
+    "schema_version": "seed_batch_known_need.v0",
+    "summary": "Operator must verify driver identity, hardware model, OS version, architecture, provenance, safety posture, compatibility evidence, and rights posture before promotion."
+  },
+  {
+    "accepted_truth": false,
+    "candidate_refs": [
+      "seed_driver_support_driver_support_q13_candidate"
+    ],
+    "need_id": "driver_support_known_need:dfa3917a38027d84",
+    "need_kind": "driver_support_review",
+    "query_id": "driver_support_q13",
+    "review_required": true,
+    "schema_version": "seed_batch_known_need.v0",
+    "summary": "Operator must verify driver identity, hardware model, OS version, architecture, provenance, safety posture, compatibility evidence, and rights posture before promotion."
+  },
+  {
+    "accepted_truth": false,
+    "candidate_refs": [
+      "seed_driver_support_driver_support_q14_candidate"
+    ],
+    "need_id": "driver_support_known_need:9ceac7f49d2a350c",
+    "need_kind": "driver_support_review",
+    "query_id": "driver_support_q14",
+    "review_required": true,
+    "schema_version": "seed_batch_known_need.v0",
+    "summary": "Operator must verify driver identity, hardware model, OS version, architecture, provenance, safety posture, compatibility evidence, and rights posture before promotion."
+  },
+  {
+    "accepted_truth": false,
+    "candidate_refs": [
+      "seed_driver_support_driver_support_q15_candidate"
+    ],
+    "need_id": "driver_support_known_need:bea5f250429b0aca",
+    "need_kind": "driver_support_review",
+    "query_id": "driver_support_q15",
+    "review_required": true,
+    "schema_version": "seed_batch_known_need.v0",
+    "summary": "Operator must verify driver identity, hardware model, OS version, architecture, provenance, safety posture, compatibility evidence, and rights posture before promotion."
+  },
+  {
+    "accepted_truth": false,
+    "candidate_refs": [
+      "seed_driver_support_driver_support_q16_candidate"
+    ],
+    "need_id": "driver_support_known_need:b6ef83008ff889bc",
+    "need_kind": "driver_support_review",
+    "query_id": "driver_support_q16",
+    "review_required": true,
+    "schema_version": "seed_batch_known_need.v0",
+    "summary": "Operator must verify driver identity, hardware model, OS version, architecture, provenance, safety posture, compatibility evidence, and rights posture before promotion."
+  }
+]

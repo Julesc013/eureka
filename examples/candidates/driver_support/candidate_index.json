@@ -1,0 +1,1521 @@
+{
+  "accepted_truth": false,
+  "accepted_truth_created": false,
+  "batch_id": "seed_batch_driver_support_00",
+  "candidate_count": 16,
+  "candidate_refs": [
+    "seed_driver_support_driver_support_q01_candidate",
+    "seed_driver_support_driver_support_q02_candidate",
+    "seed_driver_support_driver_support_q03_candidate",
+    "seed_driver_support_driver_support_q04_candidate",
+    "seed_driver_support_driver_support_q05_candidate",
+    "seed_driver_support_driver_support_q06_candidate",
+    "seed_driver_support_driver_support_q07_candidate",
+    "seed_driver_support_driver_support_q08_candidate",
+    "seed_driver_support_driver_support_q09_candidate",
+    "seed_driver_support_driver_support_q10_candidate",
+    "seed_driver_support_driver_support_q11_candidate",
+    "seed_driver_support_driver_support_q12_candidate",
+    "seed_driver_support_driver_support_q13_candidate",
+    "seed_driver_support_driver_support_q14_candidate",
+    "seed_driver_support_driver_support_q15_candidate",
+    "seed_driver_support_driver_support_q16_candidate"
+  ],
+  "candidates": [
+    {
+      "accepted_truth": false,
+      "action_posture": {
+        "accepted_truth": false,
+        "allowed_actions": [
+          "inspect",
+          "view_source",
+          "view_provenance",
+          "read"
+        ],
+        "blocked_actions": [
+          "download",
+          "install_handoff",
+          "execute",
+          "upload",
+          "extract",
+          "promote"
+        ],
+        "future_gated_actions": [
+          "create_review_handoff",
+          "update_candidate_state"
+        ],
+        "public_mutation_enabled": false
+      },
+      "applied_suppressions": [
+        "fake_driver_updater",
+        "wrong_hardware_model",
+        "wrong_os_version"
+      ],
+      "candidate_id": "seed_driver_support_driver_support_q01_candidate",
+      "candidate_kind": "source_metadata_candidate",
+      "confidence_label": "medium",
+      "created_at": "2026-05-30T00:00:00Z",
+      "dedupe_key": "388423cf895b8ad8900d62e9",
+      "description": "Fixture-derived metadata candidate for driver/support-media discovery.",
+      "domain_id": "driver_support_media",
+      "evidence_candidate_refs": [],
+      "fingerprint": {
+        "candidate_id": "seed_driver_support_driver_support_q01_candidate",
+        "checksum_hint": "",
+        "collision_notes": [],
+        "dedupe_key": "388423cf895b8ad8900d62e9",
+        "domain_id": "driver_support_media",
+        "fingerprint_id": "candidate-fingerprint:388423cf895b8ad8900d62e9",
+        "normalized_title": "stylewriter 2500 mac os driver fixture metadata lead",
+        "object_hint": "stylewriter 2500 mac os driver fixture metadata lead",
+        "platform_hint": "mac os 8",
+        "schema_version": "candidate_fingerprint.v0",
+        "source_family": "manual_source_pack",
+        "source_locator": "{\"descriptor_ref\":\"fixture://manual_source_pack/seed_driver_support_01_stylewriter_2500_mac_os_8_driver\",\"locator_kind\":\"fixture_metadata_descriptor\"}",
+        "version_hint": ""
+      },
+      "limitations": [
+        "fixture_derived",
+        "candidate_not_reviewed_truth",
+        "review_required_for_promotion",
+        "metadata_only",
+        "no_download",
+        "no_file_fetch",
+        "no_extraction",
+        "no_install",
+        "no_execute",
+        "no_malware_clean_claim",
+        "no_compatibility_guarantee",
+        "no_rights_clearance_claim",
+        "no_auto_promotion"
+      ],
+      "match_reasons": [
+        "fixture_driver_support_seed",
+        "manual_source_pack_candidate",
+        "requires_operator_review"
+      ],
+      "matched_query": "StyleWriter 2500 Mac OS 8 driver",
+      "query_plan_ref": "driver_support_query_plan:c5ca3a8386827965",
+      "review_state": "needs_review",
+      "reviewed_record_ref": null,
+      "schema_version": "candidate_record.v0",
+      "source_action_ref": "driver_support_source_action:3ada4fdbb9595998",
+      "source_family": "manual_source_pack",
+      "source_locator": {
+        "descriptor_ref": "fixture://manual_source_pack/seed_driver_support_01_stylewriter_2500_mac_os_8_driver",
+        "locator_kind": "fixture_metadata_descriptor"
+      },
+      "source_observation_ref": "driver_support_source_observation:0c39f55641095d60",
+      "suppressions": [
+        "fake_driver_updater",
+        "wrong_hardware_model",
+        "wrong_os_version"
+      ],
+      "title": "StyleWriter 2500 Mac OS 8 driver fixture metadata lead",
+      "updated_at": "2026-05-30T00:00:00Z"
+    },
+    {
+      "accepted_truth": false,
+      "action_posture": {
+        "accepted_truth": false,
+        "allowed_actions": [
+          "inspect",
+          "view_source",
+          "view_provenance",
+          "read"
+        ],
+        "blocked_actions": [
+          "download",
+          "install_handoff",
+          "execute",
+          "upload",
+          "extract",
+          "promote"
+        ],
+        "future_gated_actions": [
+          "create_review_handoff",
+          "update_candidate_state"
+        ],
+        "public_mutation_enabled": false
+      },
+      "applied_suppressions": [
+        "wrong_hardware_model",
+        "web_installer_when_offline_requested",
+        "low_metadata_match"
+      ],
+      "candidate_id": "seed_driver_support_driver_support_q02_candidate",
+      "candidate_kind": "source_metadata_candidate",
+      "confidence_label": "medium",
+      "created_at": "2026-05-30T00:00:00Z",
+      "dedupe_key": "8a056795b8a340eff6afac0d",
+      "description": "Fixture-derived metadata candidate for driver/support-media discovery.",
+      "domain_id": "driver_support_media",
+      "evidence_candidate_refs": [],
+      "fingerprint": {
+        "candidate_id": "seed_driver_support_driver_support_q02_candidate",
+        "checksum_hint": "",
+        "collision_notes": [],
+        "dedupe_key": "8a056795b8a340eff6afac0d",
+        "domain_id": "driver_support_media",
+        "fingerprint_id": "candidate-fingerprint:8a056795b8a340eff6afac0d",
+        "normalized_title": "stylewriter 2500 driver support disk fixture metadata lead",
+        "object_hint": "stylewriter 2500 driver support disk fixture metadata lead",
+        "platform_hint": "",
+        "schema_version": "candidate_fingerprint.v0",
+        "source_family": "internet_archive_metadata",
+        "source_locator": "https://archive.org/details/seed_driver_support_02_stylewriter_2500_driver_support_disk",
+        "version_hint": ""
+      },
+      "limitations": [
+        "fixture_derived",
+        "candidate_not_reviewed_truth",
+        "review_required_for_promotion",
+        "metadata_only",
+        "no_download",
+        "no_file_fetch",
+        "no_extraction",
+        "no_install",
+        "no_execute",
+        "no_malware_clean_claim",
+        "no_compatibility_guarantee",
+        "no_rights_clearance_claim",
+        "no_auto_promotion"
+      ],
+      "match_reasons": [
+        "fixture_driver_support_seed",
+        "internet_archive_metadata_candidate",
+        "requires_operator_review"
+      ],
+      "matched_query": "StyleWriter 2500 driver support disk",
+      "query_plan_ref": "driver_support_query_plan:fbdc7d7148387a35",
+      "review_state": "needs_review",
+      "reviewed_record_ref": null,
+      "schema_version": "candidate_record.v0",
+      "source_action_ref": "driver_support_source_action:333865b99589c648",
+      "source_family": "internet_archive_metadata",
+      "source_locator": {
+        "locator_kind": "archive_org_details_page",
+        "url": "https://archive.org/details/seed_driver_support_02_stylewriter_2500_driver_support_disk"
+      },
+      "source_observation_ref": "driver_support_source_observation:acdd06e681fa166e",
+      "suppressions": [
+        "wrong_hardware_model",
+        "web_installer_when_offline_requested",
+        "low_metadata_match"
+      ],
+      "title": "StyleWriter 2500 driver support disk fixture metadata lead",
+      "updated_at": "2026-05-30T00:00:00Z"
+    },
+    {
+      "accepted_truth": false,
+      "action_posture": {
+        "accepted_truth": false,
+        "allowed_actions": [
+          "inspect",
+          "view_source",
+          "view_provenance",
+          "read"
+        ],
+        "blocked_actions": [
+          "download",
+          "install_handoff",
+          "execute",
+          "upload",
+          "extract",
+          "promote"
+        ],
+        "future_gated_actions": [
+          "create_review_handoff",
+          "update_candidate_state"
+        ],
+        "public_mutation_enabled": false
+      },
+      "applied_suppressions": [
+        "wrong_hardware_model",
+        "wrong_os_version",
+        "wrong_vendor"
+      ],
+      "candidate_id": "seed_driver_support_driver_support_q03_candidate",
+      "candidate_kind": "source_metadata_candidate",
+      "confidence_label": "medium",
+      "created_at": "2026-05-30T00:00:00Z",
+      "dedupe_key": "61710535e395657ba62731bb",
+      "description": "Fixture-derived metadata candidate for driver/support-media discovery.",
+      "domain_id": "driver_support_media",
+      "evidence_candidate_refs": [],
+      "fingerprint": {
+        "candidate_id": "seed_driver_support_driver_support_q03_candidate",
+        "checksum_hint": "",
+        "collision_notes": [],
+        "dedupe_key": "61710535e395657ba62731bb",
+        "domain_id": "driver_support_media",
+        "fingerprint_id": "candidate-fingerprint:61710535e395657ba62731bb",
+        "normalized_title": "apple stylewriter 2500 printer driver mac os fixture metadata lead",
+        "object_hint": "apple stylewriter 2500 printer driver mac os fixture metadata lead",
+        "platform_hint": "mac os 8",
+        "schema_version": "candidate_fingerprint.v0",
+        "source_family": "vendor_support_url_metadata",
+        "source_locator": "{\"descriptor_ref\":\"fixture://vendor_support_url_metadata/seed_driver_support_03_apple_stylewriter_2500_printer_driver_mac_os_8\",\"locator_kind\":\"fixture_metadata_descriptor\"}",
+        "version_hint": ""
+      },
+      "limitations": [
+        "fixture_derived",
+        "candidate_not_reviewed_truth",
+        "review_required_for_promotion",
+        "metadata_only",
+        "no_download",
+        "no_file_fetch",
+        "no_extraction",
+        "no_install",
+        "no_execute",
+        "no_malware_clean_claim",
+        "no_compatibility_guarantee",
+        "no_rights_clearance_claim",
+        "no_auto_promotion"
+      ],
+      "match_reasons": [
+        "fixture_driver_support_seed",
+        "vendor_support_url_metadata_candidate",
+        "requires_operator_review"
+      ],
+      "matched_query": "Apple StyleWriter 2500 printer driver Mac OS 8",
+      "query_plan_ref": "driver_support_query_plan:cbf8770bd81e921b",
+      "review_state": "needs_review",
+      "reviewed_record_ref": null,
+      "schema_version": "candidate_record.v0",
+      "source_action_ref": "driver_support_source_action:dcc71022e7fe7f16",
+      "source_family": "vendor_support_url_metadata",
+      "source_locator": {
+        "descriptor_ref": "fixture://vendor_support_url_metadata/seed_driver_support_03_apple_stylewriter_2500_printer_driver_mac_os_8",
+        "locator_kind": "fixture_metadata_descriptor"
+      },
+      "source_observation_ref": "driver_support_source_observation:310fbf19c95cad82",
+      "suppressions": [
+        "wrong_vendor",
+        "wrong_hardware_model",
+        "wrong_os_version"
+      ],
+      "title": "Apple StyleWriter 2500 printer driver Mac OS 8 fixture metadata lead",
+      "updated_at": "2026-05-30T00:00:00Z"
+    },
+    {
+      "accepted_truth": false,
+      "action_posture": {
+        "accepted_truth": false,
+        "allowed_actions": [
+          "inspect",
+          "view_source",
+          "view_provenance",
+          "read"
+        ],
+        "blocked_actions": [
+          "download",
+          "install_handoff",
+          "execute",
+          "upload",
+          "extract",
+          "promote"
+        ],
+        "future_gated_actions": [
+          "create_review_handoff",
+          "update_candidate_state"
+        ],
+        "public_mutation_enabled": false
+      },
+      "applied_suppressions": [
+        "fake_driver_updater",
+        "wrong_hardware_model",
+        "web_installer_when_offline_requested"
+      ],
+      "candidate_id": "seed_driver_support_driver_support_q04_candidate",
+      "candidate_kind": "source_metadata_candidate",
+      "confidence_label": "medium",
+      "created_at": "2026-05-30T00:00:00Z",
+      "dedupe_key": "04734f813cad55b3aceaef6d",
+      "description": "Fixture-derived metadata candidate for driver/support-media discovery.",
+      "domain_id": "driver_support_media",
+      "evidence_candidate_refs": [],
+      "fingerprint": {
+        "candidate_id": "seed_driver_support_driver_support_q04_candidate",
+        "checksum_hint": "",
+        "collision_notes": [],
+        "dedupe_key": "04734f813cad55b3aceaef6d",
+        "domain_id": "driver_support_media",
+        "fingerprint_id": "candidate-fingerprint:04734f813cad55b3aceaef6d",
+        "normalized_title": "sound blaster live windows 98 driver support cd fixture metadata lead",
+        "object_hint": "sound blaster live windows 98 driver support cd fixture metadata lead",
+        "platform_hint": "",
+        "schema_version": "candidate_fingerprint.v0",
+        "source_family": "internet_archive_metadata",
+        "source_locator": "https://archive.org/details/seed_driver_support_04_sound_blaster_live_windows_98_driver_support_cd",
+        "version_hint": ""
+      },
+      "limitations": [
+        "fixture_derived",
+        "candidate_not_reviewed_truth",
+        "review_required_for_promotion",
+        "metadata_only",
+        "no_download",
+        "no_file_fetch",
+        "no_extraction",
+        "no_install",
+        "no_execute",
+        "no_malware_clean_claim",
+        "no_compatibility_guarantee",
+        "no_rights_clearance_claim",
+        "no_auto_promotion"
+      ],
+      "match_reasons": [
+        "fixture_driver_support_seed",
+        "internet_archive_metadata_candidate",
+        "requires_operator_review"
+      ],
+      "matched_query": "Sound Blaster Live Windows 98 driver support CD",
+      "query_plan_ref": "driver_support_query_plan:1691247fece4cd3b",
+      "review_state": "needs_review",
+      "reviewed_record_ref": null,
+      "schema_version": "candidate_record.v0",
+      "source_action_ref": "driver_support_source_action:b3d63460ce1a0af8",
+      "source_family": "internet_archive_metadata",
+      "source_locator": {
+        "locator_kind": "archive_org_details_page",
+        "url": "https://archive.org/details/seed_driver_support_04_sound_blaster_live_windows_98_driver_support_cd"
+      },
+      "source_observation_ref": "driver_support_source_observation:e2d80a3bbdb56f6f",
+      "suppressions": [
+        "fake_driver_updater",
+        "wrong_hardware_model",
+        "web_installer_when_offline_requested"
+      ],
+      "title": "Sound Blaster Live Windows 98 driver support CD fixture metadata lead",
+      "updated_at": "2026-05-30T00:00:00Z"
+    },
+    {
+      "accepted_truth": false,
+      "action_posture": {
+        "accepted_truth": false,
+        "allowed_actions": [
+          "inspect",
+          "view_source",
+          "view_provenance",
+          "read"
+        ],
+        "blocked_actions": [
+          "download",
+          "install_handoff",
+          "execute",
+          "upload",
+          "extract",
+          "promote"
+        ],
+        "future_gated_actions": [
+          "create_review_handoff",
+          "update_candidate_state"
+        ],
+        "public_mutation_enabled": false
+      },
+      "applied_suppressions": [
+        "wrong_hardware_model",
+        "wrong_os_version",
+        "web_installer_when_offline_requested"
+      ],
+      "candidate_id": "seed_driver_support_driver_support_q05_candidate",
+      "candidate_kind": "source_metadata_candidate",
+      "confidence_label": "medium",
+      "created_at": "2026-05-30T00:00:00Z",
+      "dedupe_key": "42c898410b7240383ed93e88",
+      "description": "Fixture-derived metadata candidate for driver/support-media discovery.",
+      "domain_id": "driver_support_media",
+      "evidence_candidate_refs": [],
+      "fingerprint": {
+        "candidate_id": "seed_driver_support_driver_support_q05_candidate",
+        "checksum_hint": "",
+        "collision_notes": [],
+        "dedupe_key": "42c898410b7240383ed93e88",
+        "domain_id": "driver_support_media",
+        "fingerprint_id": "candidate-fingerprint:42c898410b7240383ed93e88",
+        "normalized_title": "creative audigy windows xp driver cd fixture metadata lead",
+        "object_hint": "creative audigy windows xp driver cd fixture metadata lead",
+        "platform_hint": "windows xp",
+        "schema_version": "candidate_fingerprint.v0",
+        "source_family": "internet_archive_metadata",
+        "source_locator": "https://archive.org/details/seed_driver_support_05_creative_audigy_windows_xp_driver_cd",
+        "version_hint": ""
+      },
+      "limitations": [
+        "fixture_derived",
+        "candidate_not_reviewed_truth",
+        "review_required_for_promotion",
+        "metadata_only",
+        "no_download",
+        "no_file_fetch",
+        "no_extraction",
+        "no_install",
+        "no_execute",
+        "no_malware_clean_claim",
+        "no_compatibility_guarantee",
+        "no_rights_clearance_claim",
+        "no_auto_promotion"
+      ],
+      "match_reasons": [
+        "fixture_driver_support_seed",
+        "internet_archive_metadata_candidate",
+        "requires_operator_review"
+      ],
+      "matched_query": "Creative Audigy Windows XP driver CD",
+      "query_plan_ref": "driver_support_query_plan:f5b604a56ab9cf94",
+      "review_state": "needs_review",
+      "reviewed_record_ref": null,
+      "schema_version": "candidate_record.v0",
+      "source_action_ref": "driver_support_source_action:531fef8599e652d4",
+      "source_family": "internet_archive_metadata",
+      "source_locator": {
+        "locator_kind": "archive_org_details_page",
+        "url": "https://archive.org/details/seed_driver_support_05_creative_audigy_windows_xp_driver_cd"
+      },
+      "source_observation_ref": "driver_support_source_observation:68c619cbf9d482ae",
+      "suppressions": [
+        "wrong_hardware_model",
+        "wrong_os_version",
+        "web_installer_when_offline_requested"
+      ],
+      "title": "Creative Audigy Windows XP driver CD fixture metadata lead",
+      "updated_at": "2026-05-30T00:00:00Z"
+    },
+    {
+      "accepted_truth": false,
+      "action_posture": {
+        "accepted_truth": false,
+        "allowed_actions": [
+          "inspect",
+          "view_source",
+          "view_provenance",
+          "read"
+        ],
+        "blocked_actions": [
+          "download",
+          "install_handoff",
+          "execute",
+          "upload",
+          "extract",
+          "promote"
+        ],
+        "future_gated_actions": [
+          "create_review_handoff",
+          "update_candidate_state"
+        ],
+        "public_mutation_enabled": false
+      },
+      "applied_suppressions": [
+        "executable_download_when_metadata_only",
+        "wrong_os_version",
+        "web_installer_when_offline_requested"
+      ],
+      "candidate_id": "seed_driver_support_driver_support_q06_candidate",
+      "candidate_kind": "source_metadata_candidate",
+      "confidence_label": "medium",
+      "created_at": "2026-05-30T00:00:00Z",
+      "dedupe_key": "22569bb87a526a31435c5342",
+      "description": "Fixture-derived metadata candidate for driver/support-media discovery.",
+      "domain_id": "driver_support_media",
+      "evidence_candidate_refs": [],
+      "fingerprint": {
+        "candidate_id": "seed_driver_support_driver_support_q06_candidate",
+        "checksum_hint": "",
+        "collision_notes": [],
+        "dedupe_key": "22569bb87a526a31435c5342",
+        "domain_id": "driver_support_media",
+        "fingerprint_id": "candidate-fingerprint:22569bb87a526a31435c5342",
+        "normalized_title": "microsoft intellipoint windows driver offline installer fixture metadata lead",
+        "object_hint": "microsoft intellipoint windows driver offline installer fixture metadata lead",
+        "platform_hint": "windows 7",
+        "schema_version": "candidate_fingerprint.v0",
+        "source_family": "wayback_cdx_metadata",
+        "source_locator": "{\"descriptor_ref\":\"fixture://wayback_cdx_metadata/seed_driver_support_06_microsoft_intellipoint_windows_7_driver_offline_installer\",\"locator_kind\":\"fixture_metadata_descriptor\"}",
+        "version_hint": ""
+      },
+      "limitations": [
+        "fixture_derived",
+        "candidate_not_reviewed_truth",
+        "review_required_for_promotion",
+        "metadata_only",
+        "no_download",
+        "no_file_fetch",
+        "no_extraction",
+        "no_install",
+        "no_execute",
+        "no_malware_clean_claim",
+        "no_compatibility_guarantee",
+        "no_rights_clearance_claim",
+        "no_auto_promotion"
+      ],
+      "match_reasons": [
+        "fixture_driver_support_seed",
+        "wayback_cdx_metadata_candidate",
+        "requires_operator_review"
+      ],
+      "matched_query": "Microsoft IntelliPoint Windows 7 driver offline installer",
+      "query_plan_ref": "driver_support_query_plan:f09b7d795a6c85e7",
+      "review_state": "needs_review",
+      "reviewed_record_ref": null,
+      "schema_version": "candidate_record.v0",
+      "source_action_ref": "driver_support_source_action:19ee31ab914a2e1b",
+      "source_family": "wayback_cdx_metadata",
+      "source_locator": {
+        "descriptor_ref": "fixture://wayback_cdx_metadata/seed_driver_support_06_microsoft_intellipoint_windows_7_driver_offline_installer",
+        "locator_kind": "fixture_metadata_descriptor"
+      },
+      "source_observation_ref": "driver_support_source_observation:354b7437031bc479",
+      "suppressions": [
+        "wrong_os_version",
+        "web_installer_when_offline_requested",
+        "executable_download_when_metadata_only"
+      ],
+      "title": "Microsoft IntelliPoint Windows 7 driver offline installer fixture metadata lead",
+      "updated_at": "2026-05-30T00:00:00Z"
+    },
+    {
+      "accepted_truth": false,
+      "action_posture": {
+        "accepted_truth": false,
+        "allowed_actions": [
+          "inspect",
+          "view_source",
+          "view_provenance",
+          "read"
+        ],
+        "blocked_actions": [
+          "download",
+          "install_handoff",
+          "execute",
+          "upload",
+          "extract",
+          "promote"
+        ],
+        "future_gated_actions": [
+          "create_review_handoff",
+          "update_candidate_state"
+        ],
+        "public_mutation_enabled": false
+      },
+      "applied_suppressions": [
+        "wrong_os_version",
+        "wrong_architecture",
+        "unsupported_repack"
+      ],
+      "candidate_id": "seed_driver_support_driver_support_q07_candidate",
+      "candidate_kind": "source_metadata_candidate",
+      "confidence_label": "medium",
+      "created_at": "2026-05-30T00:00:00Z",
+      "dedupe_key": "4e97280753aa3e60e960bd49",
+      "description": "Fixture-derived metadata candidate for driver/support-media discovery.",
+      "domain_id": "driver_support_media",
+      "evidence_candidate_refs": [],
+      "fingerprint": {
+        "candidate_id": "seed_driver_support_driver_support_q07_candidate",
+        "checksum_hint": "",
+        "collision_notes": [],
+        "dedupe_key": "4e97280753aa3e60e960bd49",
+        "domain_id": "driver_support_media",
+        "fingerprint_id": "candidate-fingerprint:4e97280753aa3e60e960bd49",
+        "normalized_title": "usb mass storage driver windows 98 se fixture metadata lead",
+        "object_hint": "usb mass storage driver windows 98 se fixture metadata lead",
+        "platform_hint": "",
+        "schema_version": "candidate_fingerprint.v0",
+        "source_family": "manual_source_pack",
+        "source_locator": "{\"descriptor_ref\":\"fixture://manual_source_pack/seed_driver_support_07_usb_mass_storage_driver_windows_98_se\",\"locator_kind\":\"fixture_metadata_descriptor\"}",
+        "version_hint": ""
+      },
+      "limitations": [
+        "fixture_derived",
+        "candidate_not_reviewed_truth",
+        "review_required_for_promotion",
+        "metadata_only",
+        "no_download",
+        "no_file_fetch",
+        "no_extraction",
+        "no_install",
+        "no_execute",
+        "no_malware_clean_claim",
+        "no_compatibility_guarantee",
+        "no_rights_clearance_claim",
+        "no_auto_promotion"
+      ],
+      "match_reasons": [
+        "fixture_driver_support_seed",
+        "manual_source_pack_candidate",
+        "requires_operator_review"
+      ],
+      "matched_query": "USB mass storage driver Windows 98 SE",
+      "query_plan_ref": "driver_support_query_plan:d8f2a2fab5be7d22",
+      "review_state": "needs_review",
+      "reviewed_record_ref": null,
+      "schema_version": "candidate_record.v0",
+      "source_action_ref": "driver_support_source_action:04ac4aefb29c5e8e",
+      "source_family": "manual_source_pack",
+      "source_locator": {
+        "descriptor_ref": "fixture://manual_source_pack/seed_driver_support_07_usb_mass_storage_driver_windows_98_se",
+        "locator_kind": "fixture_metadata_descriptor"
+      },
+      "source_observation_ref": "driver_support_source_observation:e9f485472e8bcbd3",
+      "suppressions": [
+        "wrong_os_version",
+        "wrong_architecture",
+        "unsupported_repack"
+      ],
+      "title": "USB mass storage driver Windows 98 SE fixture metadata lead",
+      "updated_at": "2026-05-30T00:00:00Z"
+    },
+    {
+      "accepted_truth": false,
+      "action_posture": {
+        "accepted_truth": false,
+        "allowed_actions": [
+          "inspect",
+          "view_source",
+          "view_provenance",
+          "read"
+        ],
+        "blocked_actions": [
+          "download",
+          "install_handoff",
+          "execute",
+          "upload",
+          "extract",
+          "promote"
+        ],
+        "future_gated_actions": [
+          "create_review_handoff",
+          "update_candidate_state"
+        ],
+        "public_mutation_enabled": false
+      },
+      "applied_suppressions": [
+        "torrent_only",
+        "wrong_hardware_model",
+        "wrong_vendor"
+      ],
+      "candidate_id": "seed_driver_support_driver_support_q08_candidate",
+      "candidate_kind": "source_metadata_candidate",
+      "confidence_label": "medium",
+      "created_at": "2026-05-30T00:00:00Z",
+      "dedupe_key": "2a0835382d8eaba33b532064",
+      "description": "Fixture-derived metadata candidate for driver/support-media discovery.",
+      "domain_id": "driver_support_media",
+      "evidence_candidate_refs": [],
+      "fingerprint": {
+        "candidate_id": "seed_driver_support_driver_support_q08_candidate",
+        "checksum_hint": "",
+        "collision_notes": [],
+        "dedupe_key": "2a0835382d8eaba33b532064",
+        "domain_id": "driver_support_media",
+        "fingerprint_id": "candidate-fingerprint:2a0835382d8eaba33b532064",
+        "normalized_title": "3com 3c905 windows 98 driver disk fixture metadata lead",
+        "object_hint": "3com 3c905 windows 98 driver disk fixture metadata lead",
+        "platform_hint": "",
+        "schema_version": "candidate_fingerprint.v0",
+        "source_family": "internet_archive_metadata",
+        "source_locator": "https://archive.org/details/seed_driver_support_08_3com_3c905_windows_98_driver_disk",
+        "version_hint": ""
+      },
+      "limitations": [
+        "fixture_derived",
+        "candidate_not_reviewed_truth",
+        "review_required_for_promotion",
+        "metadata_only",
+        "no_download",
+        "no_file_fetch",
+        "no_extraction",
+        "no_install",
+        "no_execute",
+        "no_malware_clean_claim",
+        "no_compatibility_guarantee",
+        "no_rights_clearance_claim",
+        "no_auto_promotion"
+      ],
+      "match_reasons": [
+        "fixture_driver_support_seed",
+        "internet_archive_metadata_candidate",
+        "requires_operator_review"
+      ],
+      "matched_query": "3Com 3C905 Windows 98 driver disk",
+      "query_plan_ref": "driver_support_query_plan:c9e77bf2dfa23fc8",
+      "review_state": "needs_review",
+      "reviewed_record_ref": null,
+      "schema_version": "candidate_record.v0",
+      "source_action_ref": "driver_support_source_action:ea8255df9ccb68e2",
+      "source_family": "internet_archive_metadata",
+      "source_locator": {
+        "locator_kind": "archive_org_details_page",
+        "url": "https://archive.org/details/seed_driver_support_08_3com_3c905_windows_98_driver_disk"
+      },
+      "source_observation_ref": "driver_support_source_observation:9f842c4144fb8040",
+      "suppressions": [
+        "wrong_hardware_model",
+        "wrong_vendor",
+        "torrent_only"
+      ],
+      "title": "3Com 3C905 Windows 98 driver disk fixture metadata lead",
+      "updated_at": "2026-05-30T00:00:00Z"
+    },
+    {
+      "accepted_truth": false,
+      "action_posture": {
+        "accepted_truth": false,
+        "allowed_actions": [
+          "inspect",
+          "view_source",
+          "view_provenance",
+          "read"
+        ],
+        "blocked_actions": [
+          "download",
+          "install_handoff",
+          "execute",
+          "upload",
+          "extract",
+          "promote"
+        ],
+        "future_gated_actions": [
+          "create_review_handoff",
+          "update_candidate_state"
+        ],
+        "public_mutation_enabled": false
+      },
+      "applied_suppressions": [
+        "wrong_hardware_model",
+        "wrong_os_version",
+        "unrelated_modern_driver"
+      ],
+      "candidate_id": "seed_driver_support_driver_support_q09_candidate",
+      "candidate_kind": "source_metadata_candidate",
+      "confidence_label": "medium",
+      "created_at": "2026-05-30T00:00:00Z",
+      "dedupe_key": "05837132c6fc90371af0cbd4",
+      "description": "Fixture-derived metadata candidate for driver/support-media discovery.",
+      "domain_id": "driver_support_media",
+      "evidence_candidate_refs": [],
+      "fingerprint": {
+        "candidate_id": "seed_driver_support_driver_support_q09_candidate",
+        "checksum_hint": "",
+        "collision_notes": [],
+        "dedupe_key": "05837132c6fc90371af0cbd4",
+        "domain_id": "driver_support_media",
+        "fingerprint_id": "candidate-fingerprint:05837132c6fc90371af0cbd4",
+        "normalized_title": "realtek ac97 windows xp driver fixture metadata lead",
+        "object_hint": "realtek ac97 windows xp driver fixture metadata lead",
+        "platform_hint": "windows xp",
+        "schema_version": "candidate_fingerprint.v0",
+        "source_family": "vendor_support_url_metadata",
+        "source_locator": "{\"descriptor_ref\":\"fixture://vendor_support_url_metadata/seed_driver_support_09_realtek_ac97_windows_xp_driver\",\"locator_kind\":\"fixture_metadata_descriptor\"}",
+        "version_hint": ""
+      },
+      "limitations": [
+        "fixture_derived",
+        "candidate_not_reviewed_truth",
+        "review_required_for_promotion",
+        "metadata_only",
+        "no_download",
+        "no_file_fetch",
+        "no_extraction",
+        "no_install",
+        "no_execute",
+        "no_malware_clean_claim",
+        "no_compatibility_guarantee",
+        "no_rights_clearance_claim",
+        "no_auto_promotion"
+      ],
+      "match_reasons": [
+        "fixture_driver_support_seed",
+        "vendor_support_url_metadata_candidate",
+        "requires_operator_review"
+      ],
+      "matched_query": "Realtek AC97 Windows XP driver",
+      "query_plan_ref": "driver_support_query_plan:61b6ab80c8b2a49d",
+      "review_state": "needs_review",
+      "reviewed_record_ref": null,
+      "schema_version": "candidate_record.v0",
+      "source_action_ref": "driver_support_source_action:970ee4d51469fa65",
+      "source_family": "vendor_support_url_metadata",
+      "source_locator": {
+        "descriptor_ref": "fixture://vendor_support_url_metadata/seed_driver_support_09_realtek_ac97_windows_xp_driver",
+        "locator_kind": "fixture_metadata_descriptor"
+      },
+      "source_observation_ref": "driver_support_source_observation:dcc6cc764403008d",
+      "suppressions": [
+        "wrong_hardware_model",
+        "wrong_os_version",
+        "unrelated_modern_driver"
+      ],
+      "title": "Realtek AC97 Windows XP driver fixture metadata lead",
+      "updated_at": "2026-05-30T00:00:00Z"
+    },
+    {
+      "accepted_truth": false,
+      "action_posture": {
+        "accepted_truth": false,
+        "allowed_actions": [
+          "inspect",
+          "view_source",
+          "view_provenance",
+          "read"
+        ],
+        "blocked_actions": [
+          "download",
+          "install_handoff",
+          "execute",
+          "upload",
+          "extract",
+          "promote"
+        ],
+        "future_gated_actions": [
+          "create_review_handoff",
+          "update_candidate_state"
+        ],
+        "public_mutation_enabled": false
+      },
+      "applied_suppressions": [
+        "wrong_hardware_model",
+        "wrong_os_version",
+        "wrong_architecture"
+      ],
+      "candidate_id": "seed_driver_support_driver_support_q10_candidate",
+      "candidate_kind": "source_metadata_candidate",
+      "confidence_label": "medium",
+      "created_at": "2026-05-30T00:00:00Z",
+      "dedupe_key": "ecf7576ad4c14b50c8cef42b",
+      "description": "Fixture-derived metadata candidate for driver/support-media discovery.",
+      "domain_id": "driver_support_media",
+      "evidence_candidate_refs": [],
+      "fingerprint": {
+        "candidate_id": "seed_driver_support_driver_support_q10_candidate",
+        "checksum_hint": "",
+        "collision_notes": [],
+        "dedupe_key": "ecf7576ad4c14b50c8cef42b",
+        "domain_id": "driver_support_media",
+        "fingerprint_id": "candidate-fingerprint:ecf7576ad4c14b50c8cef42b",
+        "normalized_title": "intel 945gm windows xp graphics driver fixture metadata lead",
+        "object_hint": "intel 945gm windows xp graphics driver fixture metadata lead",
+        "platform_hint": "windows xp",
+        "schema_version": "candidate_fingerprint.v0",
+        "source_family": "vendor_support_url_metadata",
+        "source_locator": "{\"descriptor_ref\":\"fixture://vendor_support_url_metadata/seed_driver_support_10_intel_945gm_windows_xp_graphics_driver\",\"locator_kind\":\"fixture_metadata_descriptor\"}",
+        "version_hint": ""
+      },
+      "limitations": [
+        "fixture_derived",
+        "candidate_not_reviewed_truth",
+        "review_required_for_promotion",
+        "metadata_only",
+        "no_download",
+        "no_file_fetch",
+        "no_extraction",
+        "no_install",
+        "no_execute",
+        "no_malware_clean_claim",
+        "no_compatibility_guarantee",
+        "no_rights_clearance_claim",
+        "no_auto_promotion"
+      ],
+      "match_reasons": [
+        "fixture_driver_support_seed",
+        "vendor_support_url_metadata_candidate",
+        "requires_operator_review"
+      ],
+      "matched_query": "Intel 945GM Windows XP graphics driver",
+      "query_plan_ref": "driver_support_query_plan:b8b6319c0be3d7f3",
+      "review_state": "needs_review",
+      "reviewed_record_ref": null,
+      "schema_version": "candidate_record.v0",
+      "source_action_ref": "driver_support_source_action:a19acad5a102326f",
+      "source_family": "vendor_support_url_metadata",
+      "source_locator": {
+        "descriptor_ref": "fixture://vendor_support_url_metadata/seed_driver_support_10_intel_945gm_windows_xp_graphics_driver",
+        "locator_kind": "fixture_metadata_descriptor"
+      },
+      "source_observation_ref": "driver_support_source_observation:0b1ff5f533d2d9bd",
+      "suppressions": [
+        "wrong_hardware_model",
+        "wrong_os_version",
+        "wrong_architecture"
+      ],
+      "title": "Intel 945GM Windows XP graphics driver fixture metadata lead",
+      "updated_at": "2026-05-30T00:00:00Z"
+    },
+    {
+      "accepted_truth": false,
+      "action_posture": {
+        "accepted_truth": false,
+        "allowed_actions": [
+          "inspect",
+          "view_source",
+          "view_provenance",
+          "read"
+        ],
+        "blocked_actions": [
+          "download",
+          "install_handoff",
+          "execute",
+          "upload",
+          "extract",
+          "promote"
+        ],
+        "future_gated_actions": [
+          "create_review_handoff",
+          "update_candidate_state"
+        ],
+        "public_mutation_enabled": false
+      },
+      "applied_suppressions": [
+        "wrong_hardware_model",
+        "wrong_os_version",
+        "wrong_vendor"
+      ],
+      "candidate_id": "seed_driver_support_driver_support_q11_candidate",
+      "candidate_kind": "source_metadata_candidate",
+      "confidence_label": "medium",
+      "created_at": "2026-05-30T00:00:00Z",
+      "dedupe_key": "0f048b3a9151c2e0eb83acd4",
+      "description": "Fixture-derived metadata candidate for driver/support-media discovery.",
+      "domain_id": "driver_support_media",
+      "evidence_candidate_refs": [],
+      "fingerprint": {
+        "candidate_id": "seed_driver_support_driver_support_q11_candidate",
+        "checksum_hint": "",
+        "collision_notes": [],
+        "dedupe_key": "0f048b3a9151c2e0eb83acd4",
+        "domain_id": "driver_support_media",
+        "fingerprint_id": "candidate-fingerprint:0f048b3a9151c2e0eb83acd4",
+        "normalized_title": "ati rage 128 windows 98 driver fixture metadata lead",
+        "object_hint": "ati rage 128 windows 98 driver fixture metadata lead",
+        "platform_hint": "",
+        "schema_version": "candidate_fingerprint.v0",
+        "source_family": "wayback_cdx_metadata",
+        "source_locator": "{\"descriptor_ref\":\"fixture://wayback_cdx_metadata/seed_driver_support_11_ati_rage_128_windows_98_driver\",\"locator_kind\":\"fixture_metadata_descriptor\"}",
+        "version_hint": ""
+      },
+      "limitations": [
+        "fixture_derived",
+        "candidate_not_reviewed_truth",
+        "review_required_for_promotion",
+        "metadata_only",
+        "no_download",
+        "no_file_fetch",
+        "no_extraction",
+        "no_install",
+        "no_execute",
+        "no_malware_clean_claim",
+        "no_compatibility_guarantee",
+        "no_rights_clearance_claim",
+        "no_auto_promotion"
+      ],
+      "match_reasons": [
+        "fixture_driver_support_seed",
+        "wayback_cdx_metadata_candidate",
+        "requires_operator_review"
+      ],
+      "matched_query": "ATI Rage 128 Windows 98 driver",
+      "query_plan_ref": "driver_support_query_plan:df3d2d61e6390c10",
+      "review_state": "needs_review",
+      "reviewed_record_ref": null,
+      "schema_version": "candidate_record.v0",
+      "source_action_ref": "driver_support_source_action:1b85ccd470371046",
+      "source_family": "wayback_cdx_metadata",
+      "source_locator": {
+        "descriptor_ref": "fixture://wayback_cdx_metadata/seed_driver_support_11_ati_rage_128_windows_98_driver",
+        "locator_kind": "fixture_metadata_descriptor"
+      },
+      "source_observation_ref": "driver_support_source_observation:55b2c175f749dc9c",
+      "suppressions": [
+        "wrong_hardware_model",
+        "wrong_vendor",
+        "wrong_os_version"
+      ],
+      "title": "ATI Rage 128 Windows 98 driver fixture metadata lead",
+      "updated_at": "2026-05-30T00:00:00Z"
+    },
+    {
+      "accepted_truth": false,
+      "action_posture": {
+        "accepted_truth": false,
+        "allowed_actions": [
+          "inspect",
+          "view_source",
+          "view_provenance",
+          "read"
+        ],
+        "blocked_actions": [
+          "download",
+          "install_handoff",
+          "execute",
+          "upload",
+          "extract",
+          "promote"
+        ],
+        "future_gated_actions": [
+          "create_review_handoff",
+          "update_candidate_state"
+        ],
+        "public_mutation_enabled": false
+      },
+      "applied_suppressions": [
+        "wrong_hardware_model",
+        "wrong_os_version",
+        "unrelated_modern_driver"
+      ],
+      "candidate_id": "seed_driver_support_driver_support_q12_candidate",
+      "candidate_kind": "source_metadata_candidate",
+      "confidence_label": "medium",
+      "created_at": "2026-05-30T00:00:00Z",
+      "dedupe_key": "1868a7bbdc05fe616c08b453",
+      "description": "Fixture-derived metadata candidate for driver/support-media discovery.",
+      "domain_id": "driver_support_media",
+      "evidence_candidate_refs": [],
+      "fingerprint": {
+        "candidate_id": "seed_driver_support_driver_support_q12_candidate",
+        "checksum_hint": "",
+        "collision_notes": [],
+        "dedupe_key": "1868a7bbdc05fe616c08b453",
+        "domain_id": "driver_support_media",
+        "fingerprint_id": "candidate-fingerprint:1868a7bbdc05fe616c08b453",
+        "normalized_title": "nvidia geforce fx windows xp driver fixture metadata lead",
+        "object_hint": "nvidia geforce fx windows xp driver fixture metadata lead",
+        "platform_hint": "windows xp",
+        "schema_version": "candidate_fingerprint.v0",
+        "source_family": "vendor_support_url_metadata",
+        "source_locator": "{\"descriptor_ref\":\"fixture://vendor_support_url_metadata/seed_driver_support_12_nvidia_geforce_fx_windows_xp_driver\",\"locator_kind\":\"fixture_metadata_descriptor\"}",
+        "version_hint": ""
+      },
+      "limitations": [
+        "fixture_derived",
+        "candidate_not_reviewed_truth",
+        "review_required_for_promotion",
+        "metadata_only",
+        "no_download",
+        "no_file_fetch",
+        "no_extraction",
+        "no_install",
+        "no_execute",
+        "no_malware_clean_claim",
+        "no_compatibility_guarantee",
+        "no_rights_clearance_claim",
+        "no_auto_promotion"
+      ],
+      "match_reasons": [
+        "fixture_driver_support_seed",
+        "vendor_support_url_metadata_candidate",
+        "requires_operator_review"
+      ],
+      "matched_query": "NVIDIA GeForce FX Windows XP driver",
+      "query_plan_ref": "driver_support_query_plan:2e5f1cabbece1737",
+      "review_state": "needs_review",
+      "reviewed_record_ref": null,
+      "schema_version": "candidate_record.v0",
+      "source_action_ref": "driver_support_source_action:7857826d9c10c450",
+      "source_family": "vendor_support_url_metadata",
+      "source_locator": {
+        "descriptor_ref": "fixture://vendor_support_url_metadata/seed_driver_support_12_nvidia_geforce_fx_windows_xp_driver",
+        "locator_kind": "fixture_metadata_descriptor"
+      },
+      "source_observation_ref": "driver_support_source_observation:7d5814de6840f664",
+      "suppressions": [
+        "wrong_hardware_model",
+        "wrong_os_version",
+        "unrelated_modern_driver"
+      ],
+      "title": "NVIDIA GeForce FX Windows XP driver fixture metadata lead",
+      "updated_at": "2026-05-30T00:00:00Z"
+    },
+    {
+      "accepted_truth": false,
+      "action_posture": {
+        "accepted_truth": false,
+        "allowed_actions": [
+          "inspect",
+          "view_source",
+          "view_provenance",
+          "read"
+        ],
+        "blocked_actions": [
+          "download",
+          "install_handoff",
+          "execute",
+          "upload",
+          "extract",
+          "promote"
+        ],
+        "future_gated_actions": [
+          "create_review_handoff",
+          "update_candidate_state"
+        ],
+        "public_mutation_enabled": false
+      },
+      "applied_suppressions": [
+        "wrong_hardware_model",
+        "wrong_os_version",
+        "wrong_vendor"
+      ],
+      "candidate_id": "seed_driver_support_driver_support_q13_candidate",
+      "candidate_kind": "source_metadata_candidate",
+      "confidence_label": "low",
+      "created_at": "2026-05-30T00:00:00Z",
+      "dedupe_key": "df6619db5c6edff6cc20e39e",
+      "description": "Fixture-derived metadata candidate for driver/support-media discovery.",
+      "domain_id": "driver_support_media",
+      "evidence_candidate_refs": [],
+      "fingerprint": {
+        "candidate_id": "seed_driver_support_driver_support_q13_candidate",
+        "checksum_hint": "",
+        "collision_notes": [],
+        "dedupe_key": "df6619db5c6edff6cc20e39e",
+        "domain_id": "driver_support_media",
+        "fingerprint_id": "candidate-fingerprint:df6619db5c6edff6cc20e39e",
+        "normalized_title": "hp laserjet windows 98 driver fixture metadata lead",
+        "object_hint": "hp laserjet windows 98 driver fixture metadata lead",
+        "platform_hint": "",
+        "schema_version": "candidate_fingerprint.v0",
+        "source_family": "manual_source_pack",
+        "source_locator": "{\"descriptor_ref\":\"fixture://manual_source_pack/seed_driver_support_13_hp_laserjet_4_windows_98_driver\",\"locator_kind\":\"fixture_metadata_descriptor\"}",
+        "version_hint": ""
+      },
+      "limitations": [
+        "fixture_derived",
+        "candidate_not_reviewed_truth",
+        "review_required_for_promotion",
+        "metadata_only",
+        "no_download",
+        "no_file_fetch",
+        "no_extraction",
+        "no_install",
+        "no_execute",
+        "no_malware_clean_claim",
+        "no_compatibility_guarantee",
+        "no_rights_clearance_claim",
+        "no_auto_promotion"
+      ],
+      "match_reasons": [
+        "fixture_driver_support_seed",
+        "manual_source_pack_candidate",
+        "requires_operator_review"
+      ],
+      "matched_query": "HP LaserJet 4 Windows 98 driver",
+      "query_plan_ref": "driver_support_query_plan:8e2c56bcbff1256f",
+      "review_state": "needs_review",
+      "reviewed_record_ref": null,
+      "schema_version": "candidate_record.v0",
+      "source_action_ref": "driver_support_source_action:ad5ab7baff0fbeec",
+      "source_family": "manual_source_pack",
+      "source_locator": {
+        "descriptor_ref": "fixture://manual_source_pack/seed_driver_support_13_hp_laserjet_4_windows_98_driver",
+        "locator_kind": "fixture_metadata_descriptor"
+      },
+      "source_observation_ref": "driver_support_source_observation:1397bdeb119d39a9",
+      "suppressions": [
+        "wrong_vendor",
+        "wrong_hardware_model",
+        "wrong_os_version"
+      ],
+      "title": "HP LaserJet 4 Windows 98 driver fixture metadata lead",
+      "updated_at": "2026-05-30T00:00:00Z"
+    },
+    {
+      "accepted_truth": false,
+      "action_posture": {
+        "accepted_truth": false,
+        "allowed_actions": [
+          "inspect",
+          "view_source",
+          "view_provenance",
+          "read"
+        ],
+        "blocked_actions": [
+          "download",
+          "install_handoff",
+          "execute",
+          "upload",
+          "extract",
+          "promote"
+        ],
+        "future_gated_actions": [
+          "create_review_handoff",
+          "update_candidate_state"
+        ],
+        "public_mutation_enabled": false
+      },
+      "applied_suppressions": [
+        "wrong_hardware_model",
+        "wrong_os_version",
+        "web_installer_when_offline_requested"
+      ],
+      "candidate_id": "seed_driver_support_driver_support_q14_candidate",
+      "candidate_kind": "source_metadata_candidate",
+      "confidence_label": "low",
+      "created_at": "2026-05-30T00:00:00Z",
+      "dedupe_key": "089fd887286a4fb50961262a",
+      "description": "Fixture-derived metadata candidate for driver/support-media discovery.",
+      "domain_id": "driver_support_media",
+      "evidence_candidate_refs": [],
+      "fingerprint": {
+        "candidate_id": "seed_driver_support_driver_support_q14_candidate",
+        "checksum_hint": "",
+        "collision_notes": [],
+        "dedupe_key": "089fd887286a4fb50961262a",
+        "domain_id": "driver_support_media",
+        "fingerprint_id": "candidate-fingerprint:089fd887286a4fb50961262a",
+        "normalized_title": "epson scanner windows 2000 driver cd fixture metadata lead",
+        "object_hint": "epson scanner windows 2000 driver cd fixture metadata lead",
+        "platform_hint": "",
+        "schema_version": "candidate_fingerprint.v0",
+        "source_family": "internet_archive_metadata",
+        "source_locator": "https://archive.org/details/seed_driver_support_14_epson_scanner_windows_2000_driver_cd",
+        "version_hint": "2000"
+      },
+      "limitations": [
+        "fixture_derived",
+        "candidate_not_reviewed_truth",
+        "review_required_for_promotion",
+        "metadata_only",
+        "no_download",
+        "no_file_fetch",
+        "no_extraction",
+        "no_install",
+        "no_execute",
+        "no_malware_clean_claim",
+        "no_compatibility_guarantee",
+        "no_rights_clearance_claim",
+        "no_auto_promotion"
+      ],
+      "match_reasons": [
+        "fixture_driver_support_seed",
+        "internet_archive_metadata_candidate",
+        "requires_operator_review"
+      ],
+      "matched_query": "Epson scanner Windows 2000 driver CD",
+      "query_plan_ref": "driver_support_query_plan:bd632fb5fe9fdd97",
+      "review_state": "needs_review",
+      "reviewed_record_ref": null,
+      "schema_version": "candidate_record.v0",
+      "source_action_ref": "driver_support_source_action:85ffa394a470dca2",
+      "source_family": "internet_archive_metadata",
+      "source_locator": {
+        "locator_kind": "archive_org_details_page",
+        "url": "https://archive.org/details/seed_driver_support_14_epson_scanner_windows_2000_driver_cd"
+      },
+      "source_observation_ref": "driver_support_source_observation:5fc9d412b6f6e173",
+      "suppressions": [
+        "wrong_hardware_model",
+        "wrong_os_version",
+        "web_installer_when_offline_requested"
+      ],
+      "title": "Epson scanner Windows 2000 driver CD fixture metadata lead",
+      "updated_at": "2026-05-30T00:00:00Z"
+    },
+    {
+      "accepted_truth": false,
+      "action_posture": {
+        "accepted_truth": false,
+        "allowed_actions": [
+          "inspect",
+          "view_source",
+          "view_provenance",
+          "read"
+        ],
+        "blocked_actions": [
+          "download",
+          "install_handoff",
+          "execute",
+          "upload",
+          "extract",
+          "promote"
+        ],
+        "future_gated_actions": [
+          "create_review_handoff",
+          "update_candidate_state"
+        ],
+        "public_mutation_enabled": false
+      },
+      "applied_suppressions": [
+        "wrong_hardware_model",
+        "wrong_os_version",
+        "wrong_vendor"
+      ],
+      "candidate_id": "seed_driver_support_driver_support_q15_candidate",
+      "candidate_kind": "source_metadata_candidate",
+      "confidence_label": "low",
+      "created_at": "2026-05-30T00:00:00Z",
+      "dedupe_key": "e6746ae4d5db5360eb3c8dbd",
+      "description": "Fixture-derived metadata candidate for driver/support-media discovery.",
+      "domain_id": "driver_support_media",
+      "evidence_candidate_refs": [],
+      "fingerprint": {
+        "candidate_id": "seed_driver_support_driver_support_q15_candidate",
+        "checksum_hint": "",
+        "collision_notes": [],
+        "dedupe_key": "e6746ae4d5db5360eb3c8dbd",
+        "domain_id": "driver_support_media",
+        "fingerprint_id": "candidate-fingerprint:e6746ae4d5db5360eb3c8dbd",
+        "normalized_title": "canon canoscan windows xp driver fixture metadata lead",
+        "object_hint": "canon canoscan windows xp driver fixture metadata lead",
+        "platform_hint": "windows xp",
+        "schema_version": "candidate_fingerprint.v0",
+        "source_family": "vendor_support_url_metadata",
+        "source_locator": "{\"descriptor_ref\":\"fixture://vendor_support_url_metadata/seed_driver_support_15_canon_canoscan_windows_xp_driver\",\"locator_kind\":\"fixture_metadata_descriptor\"}",
+        "version_hint": ""
+      },
+      "limitations": [
+        "fixture_derived",
+        "candidate_not_reviewed_truth",
+        "review_required_for_promotion",
+        "metadata_only",
+        "no_download",
+        "no_file_fetch",
+        "no_extraction",
+        "no_install",
+        "no_execute",
+        "no_malware_clean_claim",
+        "no_compatibility_guarantee",
+        "no_rights_clearance_claim",
+        "no_auto_promotion"
+      ],
+      "match_reasons": [
+        "fixture_driver_support_seed",
+        "vendor_support_url_metadata_candidate",
+        "requires_operator_review"
+      ],
+      "matched_query": "Canon CanoScan Windows XP driver",
+      "query_plan_ref": "driver_support_query_plan:d8448df1c8c2a2e6",
+      "review_state": "needs_review",
+      "reviewed_record_ref": null,
+      "schema_version": "candidate_record.v0",
+      "source_action_ref": "driver_support_source_action:4367773ec43755fe",
+      "source_family": "vendor_support_url_metadata",
+      "source_locator": {
+        "descriptor_ref": "fixture://vendor_support_url_metadata/seed_driver_support_15_canon_canoscan_windows_xp_driver",
+        "locator_kind": "fixture_metadata_descriptor"
+      },
+      "source_observation_ref": "driver_support_source_observation:c817976bdece6aa7",
+      "suppressions": [
+        "wrong_hardware_model",
+        "wrong_vendor",
+        "wrong_os_version"
+      ],
+      "title": "Canon CanoScan Windows XP driver fixture metadata lead",
+      "updated_at": "2026-05-30T00:00:00Z"
+    },
+    {
+      "accepted_truth": false,
+      "action_posture": {
+        "accepted_truth": false,
+        "allowed_actions": [
+          "inspect",
+          "view_source",
+          "view_provenance",
+          "read"
+        ],
+        "blocked_actions": [
+          "download",
+          "install_handoff",
+          "execute",
+          "upload",
+          "extract",
+          "promote"
+        ],
+        "future_gated_actions": [
+          "create_review_handoff",
+          "update_candidate_state"
+        ],
+        "public_mutation_enabled": false
+      },
+      "applied_suppressions": [
+        "wrong_hardware_model",
+        "web_installer_when_offline_requested",
+        "unsupported_repack"
+      ],
+      "candidate_id": "seed_driver_support_driver_support_q16_candidate",
+      "candidate_kind": "source_metadata_candidate",
+      "confidence_label": "low",
+      "created_at": "2026-05-30T00:00:00Z",
+      "dedupe_key": "42c4d55c663f43f4d63163ac",
+      "description": "Fixture-derived metadata candidate for driver/support-media discovery.",
+      "domain_id": "driver_support_media",
+      "evidence_candidate_refs": [],
+      "fingerprint": {
+        "candidate_id": "seed_driver_support_driver_support_q16_candidate",
+        "checksum_hint": "",
+        "collision_notes": [],
+        "dedupe_key": "42c4d55c663f43f4d63163ac",
+        "domain_id": "driver_support_media",
+        "fingerprint_id": "candidate-fingerprint:42c4d55c663f43f4d63163ac",
+        "normalized_title": "legacy motherboard chipset driver support cd fixture metadata lead",
+        "object_hint": "legacy motherboard chipset driver support cd fixture metadata lead",
+        "platform_hint": "",
+        "schema_version": "candidate_fingerprint.v0",
+        "source_family": "internet_archive_metadata",
+        "source_locator": "https://archive.org/details/seed_driver_support_16_legacy_motherboard_chipset_driver_support_cd",
+        "version_hint": ""
+      },
+      "limitations": [
+        "fixture_derived",
+        "candidate_not_reviewed_truth",
+        "review_required_for_promotion",
+        "metadata_only",
+        "no_download",
+        "no_file_fetch",
+        "no_extraction",
+        "no_install",
+        "no_execute",
+        "no_malware_clean_claim",
+        "no_compatibility_guarantee",
+        "no_rights_clearance_claim",
+        "no_auto_promotion"
+      ],
+      "match_reasons": [
+        "fixture_driver_support_seed",
+        "internet_archive_metadata_candidate",
+        "requires_operator_review"
+      ],
+      "matched_query": "legacy motherboard chipset driver support CD",
+      "query_plan_ref": "driver_support_query_plan:fd8c1707317fba1f",
+      "review_state": "needs_review",
+      "reviewed_record_ref": null,
+      "schema_version": "candidate_record.v0",
+      "source_action_ref": "driver_support_source_action:6c1b9b862bc53b11",
+      "source_family": "internet_archive_metadata",
+      "source_locator": {
+        "locator_kind": "archive_org_details_page",
+        "url": "https://archive.org/details/seed_driver_support_16_legacy_motherboard_chipset_driver_support_cd"
+      },
+      "source_observation_ref": "driver_support_source_observation:3e002fb577512f17",
+      "suppressions": [
+        "wrong_hardware_model",
+        "web_installer_when_offline_requested",
+        "unsupported_repack"
+      ],
+      "title": "legacy motherboard chipset driver support CD fixture metadata lead",
+      "updated_at": "2026-05-30T00:00:00Z"
+    }
+  ],
+  "compatibility_guarantee_created": false,
+  "cracks_keygens_serials_supported": false,
+  "created_at": "2026-06-02T00:00:00Z",
+  "deployment_performed": false,
+  "download_performed": false,
+  "driver_updater_spam_supported": false,
+  "extraction_executed": false,
+  "file_fetch_performed": false,
+  "install_execution_enabled": false,
+  "malware_clean_claim_created": false,
+  "master_index_mutated": false,
+  "model_provider_used": false,
+  "operator_instance_mutated": false,
+  "production_readiness_claimed": false,
+  "public_index_mutated": false,
+  "public_launch_readiness_claimed": false,
+  "public_mutation_enabled": false,
+  "raw_live_response_committed": false,
+  "review_required": true,
+  "reviewed_index_mutated": false,
+  "rights_clearance_claim_created": false,
+  "schema_version": "seed_batch_candidate_index.v0",
+  "store_mode": "seed_batch_fixture"
+}
