@@ -2,19 +2,22 @@
 
 ## PHASE
 
-SEED-BATCH-DRIVER-SUPPORT-00 - add driver and support-media discovery batch
+SNAPSHOT-REFRESH-04 - refresh snapshots after manuals/scans and driver/support batches
 
 ## GOAL
 
-Add `driver_support_media` as a repeatable discovery seed batch using the
-existing query planner, candidate index, SCOUT, review batch, snapshot handoff,
-public-alpha reassess, and public search UX model lanes.
+Project the manuals/scans and driver/support seed-batch outputs into the
+snapshot, relay, public search view-model, and public-alpha reassessment input
+lanes while preserving all review-only and non-claim boundaries.
 
 ## WHY
 
-`PUBLIC-ALPHA-REASSESS-03` kept public launch deferred. Manuals/scans is now
-complete, and the next needed discovery domain is driver/support media. This
-domain is useful but higher risk, so it remains metadata-only and review-only.
+`PUBLIC-ALPHA-REASSESS-03` kept public launch deferred and asked for safer
+third-domain corpus growth. Manuals/scans and driver/support seed batches are
+now complete, so snapshot packaging must make those new candidates visible
+without converting metadata candidates into reviewed truth, fetched documents,
+driver downloads, OCR text, compatibility guarantees, safety claims, or rights
+clearance.
 
 ## CONTEXT_REFS
 
@@ -25,63 +28,51 @@ domain is useful but higher risk, so it remains metadata-only and review-only.
 - `.aide/context/context-index.json`
 - `.aide/context/latest-context-packet.md`
 - `control/inventory/public_alpha_reassess_03_result.json`
+- `control/inventory/snapshot_refresh_03_result.json`
 - `control/inventory/seed_batch_manuals_scans_result.json`
-- `runtime/seed_batches/manuals_scans.py`
-- `runtime/seed_batches/driver_support.py`
-- `scripts/validate_seed_batch_manuals_scans.py`
-- `scripts/validate_seed_batch_driver_support.py`
+- `control/inventory/seed_batch_driver_support_result.json`
+- `runtime/snapshots/refresh_04.py`
+- `scripts/validate_snapshot_refresh.py`
 
 ## CURRENT_STATE
 
-- `dev == origin/dev` at task start.
-- latest prior commit: `4f51968a feat(seed): add manuals scans discovery batch`
+- branch: `dev`
+- latest prior commit: `0373fdbd feat(seed): add driver support discovery batch`
 - public alpha launch recommended: false
-- current limited reviewed projection count: 4
-- target domain: `driver_support_media`
+- limited reviewed projection count remains 4
+- manuals/scans candidates: 16
+- driver/support candidates: 16
+- expected total candidates after live metadata: 68
 
 ## ALLOWED_PATHS
 
-- `.aide/queue/SEED-BATCH-DRIVER-SUPPORT-00/**`
 - `.aide/queue/SNAPSHOT-REFRESH-04/**`
 - `.aide/queue/PUBLIC-ALPHA-REASSESS-04/**`
 - `.aide/queue/index.yaml`
 - `.aide/context/latest-task-packet.md`
-- `.aide/context/latest-review-packet.md`
-- `.aide/reports/eureka-repo-health.json`
-- `.aide/reports/eureka-repo-health.md`
-- `contracts/seed_batches/**`
-- `contracts/candidates/**`
-- `contracts/scout/**`
-- `contracts/review/**`
-- `contracts/search/query_plan/**`
-- `runtime/seed_batches/**`
-- `runtime/candidate_index/**`
-- `runtime/candidate_store/**`
-- `runtime/scout/**`
-- `runtime/review/batch/**`
-- `runtime/public_alpha/**`
-- `scripts/eureka_seed_batch_driver_support.py`
-- `scripts/eureka_seed_batch_run.py`
-- `scripts/eureka_seed_batch_report.py`
-- `scripts/validate_seed_batch_driver_support.py`
-- `tests/runtime/test_*driver_support*.py`
-- `tests/operations/test_seed_batch_driver_support_scripts.py`
-- `tests/scripts/test_validate_seed_batch_driver_support.py`
-- `examples/seed_batches/driver_support/**`
-- `examples/query_plans/driver_support/**`
-- `examples/candidates/driver_support/**`
-- `examples/scout/driver_support/**`
-- `examples/review_batch/driver_support/**`
-- `examples/public_alpha/driver_support/**`
-- `control/policies/seed_batch_driver*.json`
+- `contracts/snapshot/**`
+- `runtime/snapshots/**`
+- `runtime/relay/**`
+- `scripts/eureka_snapshot_refresh.py`
+- `scripts/eureka_snapshot_refresh_report.py`
+- `scripts/validate_snapshot_refresh.py`
+- `tests/runtime/test_snapshot_refresh*.py`
+- `tests/operations/test_snapshot_refresh_scripts.py`
+- `tests/scripts/test_validate_snapshot_refresh.py`
+- `examples/snapshots/refresh/manuals_scans_driver_support/**`
+- `examples/relay/refresh/**`
+- `examples/public_alpha/reassess/manuals_scans_driver_support/**`
+- `control/policies/snapshot_refresh*.json`
 - `control/policies/generated_artifact_policy.json`
-- `control/inventory/seed_batch_driver_support*.json`
-- `docs/architecture/SEED_BATCH_DRIVER_SUPPORT.md`
-- `docs/operations/SEED_BATCH_DRIVER_SUPPORT_RUNBOOK.md`
-- `docs/operations/POST_SEED_BATCH_DRIVER_SUPPORT_PLAN.md`
-- `docs/reference/DRIVER_SUPPORT_QUERY_SET.md`
-- `docs/reference/DRIVER_SUPPORT_SUPPRESSIONS.md`
-- `control/audits/seed-batch-driver-support-00-v0/**`
+- `control/inventory/snapshot_refresh_04*.json`
+- `control/audits/snapshot-refresh-04-v0/**`
+- `docs/architecture/SNAPSHOT_REFRESH_04.md`
+- `docs/architecture/SNAPSHOT_MANUALS_SCANS_SECTION.md`
+- `docs/architecture/SNAPSHOT_DRIVER_SUPPORT_SECTION.md`
+- `docs/operations/SNAPSHOT_REFRESH_04_RUNBOOK.md`
+- `docs/operations/POST_SNAPSHOT_REFRESH_04_PLAN.md`
+- `docs/reference/SNAPSHOT_MANUALS_SCANS_SECTION.md`
+- `docs/reference/SNAPSHOT_DRIVER_SUPPORT_SECTION.md`
 
 ## FORBIDDEN_PATHS
 
@@ -104,51 +95,52 @@ domain is useful but higher risk, so it remains metadata-only and review-only.
 ## NON_GOALS
 
 - No deployment, publication, public launch, or readiness claim.
-- No accepted truth, reviewed/master/public index mutation, or operator instance mutation.
-- No live source calls, downloads, file fetches, extraction, install/execution,
-  model/provider calls, or raw live responses.
-- No malware-clean, compatibility, rights-clearance, crack/keygen/serial, or
-  driver-updater support claims.
+- No accepted truth, automatic candidate acceptance, or reviewed/master/public index mutation.
+- No operator instance mutation.
+- No live source calls, downloads, file fetches, OCR, extraction, install or execution.
+- No model/provider calls, raw live responses, or public live source fanout.
+- No verified-download, malware-clean, compatibility, scan-completeness,
+  OCR-quality, or rights-clearance claims.
 - No full unittest discovery inside AI.
 
 ## IMPLEMENTATION
 
-- Add `runtime/seed_batches/driver_support.py`.
-- Add dedicated and generic CLI support.
-- Add driver/support policies, docs, examples, inventory, audit evidence,
-  validator, and focused tests.
-- Keep all outputs metadata-only, review-required, candidate-only, and
-  public-alpha reassess input only.
+- Add `runtime/snapshots/refresh_04.py`.
+- Extend snapshot refresh CLI and report CLI with `--from-manuals-driver-examples`.
+- Add manuals/scans and driver/support snapshot contracts, policies, examples,
+  inventory, audit evidence, docs, validator checks, and focused tests.
+- Keep new seed outputs as metadata-only, review-required candidate sections.
+- Route next work to `PUBLIC-ALPHA-REASSESS-04`.
 
 ## VALIDATION
 
 - `git diff --check`
-- `python scripts/validate_seed_batch_driver_support.py`
-- related seed-batch, public-alpha, snapshot, review-batch, SCOUT,
-  candidate-index, query-planner, public-search UX, public-alpha readonly,
-  source-action, architecture, and generated-artifact validators
-- focused driver/support unittest modules
+- `python scripts/validate_snapshot_refresh.py`
+- seed-batch, public-alpha, local-apply, review-batch, SCOUT, candidate-index,
+  query-planner, public-search UX, public-alpha readonly, source-action,
+  architecture, generated-artifact validators
+- focused snapshot refresh unittest modules
 - AIDE Lite doctor, validate, test, selftest, verify, review-pack, and commit check
 
 Full unittest discovery is not run by policy.
 
 ## ACCEPTANCE
 
-- fixture seed batch passes
-- 16 required driver/support queries are present
-- required suppressions are present
-- source families are bounded metadata/descriptor/source-pack only
-- candidate index, SCOUT, review, snapshot handoff, public-alpha input, docs,
-  inventory, and audit evidence exist
-- no downloads, file fetches, extraction, install/execution, source calls,
-  mutation, readiness, safety, compatibility, or rights-clearance claims
-- next recommended task: `SNAPSHOT-REFRESH-04`
+- manuals/scans candidates projected: 16
+- driver/support candidates projected: 16
+- additional seed candidates projected: 32
+- total candidate count projected: 68
+- limited reviewed projection count remains 4
+- no download, file fetch, OCR, extraction, install, model, site/dist, deployment,
+  mutation, launch, readiness, safety, compatibility, scan-completeness,
+  OCR-quality, or rights-clearance claim
+- next recommended task: `PUBLIC-ALPHA-REASSESS-04`
 
 ## EVIDENCE
 
-- `control/inventory/seed_batch_driver_support_result.json`
-- `examples/seed_batches/driver_support/`
-- `control/audits/seed-batch-driver-support-00-v0/`
+- `control/inventory/snapshot_refresh_04_result.json`
+- `examples/snapshots/refresh/manuals_scans_driver_support/`
+- `control/audits/snapshot-refresh-04-v0/`
 
 ## TOKEN_ESTIMATE
 
@@ -156,5 +148,5 @@ medium
 
 ## OUTPUT_SCHEMA
 
-Final report uses `STATUS`, `SUMMARY`, `SEED_BATCH_DRIVER_SUPPORT`,
-`VALIDATION`, `BOUNDARIES`, and `NEXT_TASK`.
+Final report uses `STATUS`, `SUMMARY`, `SNAPSHOT_REFRESH_04`, `VALIDATION`,
+`BOUNDARIES`, and `NEXT_TASK`.

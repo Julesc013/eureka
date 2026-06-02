@@ -1,0 +1,7 @@
+{
+  "absence_count": 6,
+  "bounded_absence_statements": true,
+  "known_need_count": 60,
+  "schema_version": "snapshot_refresh_04_need_absence_matrix.v0",
+  "task": "SNAPSHOT-REFRESH-04"
+}

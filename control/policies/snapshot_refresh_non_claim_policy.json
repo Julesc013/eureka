@@ -2,6 +2,13 @@
   "schema_version": "snapshot_refresh_non_claim_policy.v0",
   "task": "SNAPSHOT-REFRESH-00+01+02+03",
   "snapshot_refresh_is_projection": true,
+  "seed_batch_candidates_remain_candidates": true,
+  "manuals_scans_candidates_are_not_downloaded_documents": true,
+  "manuals_scans_candidates_are_not_ocr_text": true,
+  "manuals_scans_candidates_are_not_rights_cleared": true,
+  "driver_support_candidates_are_not_driver_downloads": true,
+  "driver_support_candidates_are_not_safe_installers": true,
+  "driver_support_candidates_are_not_compatibility_guarantees": true,
   "live_metadata_candidates_remain_candidates": true,
   "candidates_remain_candidates": true,
   "seed_outputs_are_not_truth": true,
@@ -32,6 +39,9 @@
   "malware_clean_claim_allowed": false,
   "rights_clearance_claim_allowed": false,
   "downloads_enabled": false,
+  "file_fetches_enabled": false,
+  "ocr_enabled": false,
   "extraction_enabled": false,
+  "install_execution_enabled": false,
   "model_provider_enabled": false
 }

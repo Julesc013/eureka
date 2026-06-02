@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (5497 chars, 1375 approximate tokens)
+- `.aide/context/latest-task-packet.md` (5393 chars, 1349 approximate tokens)
 
 ## Context Packet Reference
 
@@ -34,30 +34,30 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 ## Changed Files Summary
 
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/SEED-BATCH-DRIVER-SUPPORT-00/README.md` (M; matches active task allowed path)
+- allowed: `.aide/queue/SNAPSHOT-REFRESH-04/README.md` (M; matches active task allowed path)
 - allowed: `.aide/queue/index.yaml` (M; matches active task allowed path)
-- allowed: `control/audits/seed-batch-driver-support-00-v0` (??; matches active task allowed path)
-- allowed: `control/inventory/seed_batch_driver_support_boundary_report.json` (??; matches active task allowed path)
-- allowed: `control/inventory/seed_batch_driver_support_candidate_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/seed_batch_driver_support_failure_repair_log.json` (??; matches active task allowed path)
-- allowed: `control/inventory/seed_batch_driver_support_input_state.json` (??; matches active task allowed path)
-- allowed: `control/inventory/seed_batch_driver_support_need_absence_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/seed_batch_driver_support_next_task_decision.json` (??; matches active task allowed path)
-- allowed: `control/inventory/seed_batch_driver_support_public_alpha_reassess_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/seed_batch_driver_support_query_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/seed_batch_driver_support_result.json` (??; matches active task allowed path)
-- allowed: `control/inventory/seed_batch_driver_support_review_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/seed_batch_driver_support_scout_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/seed_batch_driver_support_smoke_result.json` (??; matches active task allowed path)
-- allowed: `control/inventory/seed_batch_driver_support_snapshot_handoff_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/seed_batch_driver_support_source_plan_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/seed_batch_driver_support_suppression_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/seed_batch_driver_support_validation_matrix.json` (??; matches active task allowed path)
-- allowed: `control/policies/generated_artifact_policy.json` (M; matches active task allowed path)
-- allowed: `control/policies/seed_batch_driver_candidate_policy.json` (??; matches active task allowed path)
-- allowed: `control/policies/seed_batch_driver_live_metadata_policy.json` (??; matches active task allowed path)
-- allowed: `control/policies/seed_batch_driver_non_claim_policy.json` (??; matches active task allowed path)
-- additional changed paths omitted from compact packet: 31; see task evidence changed-files report
+- allowed: `contracts/snapshot/snapshot_driver_support_candidate_section.v0.json` (??; matches active task allowed path)
+- allowed: `contracts/snapshot/snapshot_manuals_scans_candidate_section.v0.json` (??; matches active task allowed path)
+- allowed: `control/audits/snapshot-refresh-04-v0` (??; matches active task allowed path)
+- allowed: `control/inventory/snapshot_refresh_04_boundary_report.json` (??; matches active task allowed path)
+- allowed: `control/inventory/snapshot_refresh_04_candidate_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/snapshot_refresh_04_driver_support_candidate_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/snapshot_refresh_04_failure_repair_log.json` (??; matches active task allowed path)
+- allowed: `control/inventory/snapshot_refresh_04_input_state.json` (??; matches active task allowed path)
+- allowed: `control/inventory/snapshot_refresh_04_live_metadata_candidate_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/snapshot_refresh_04_local_apply_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/snapshot_refresh_04_manuals_scans_candidate_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/snapshot_refresh_04_need_absence_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/snapshot_refresh_04_next_task_decision.json` (??; matches active task allowed path)
+- allowed: `control/inventory/snapshot_refresh_04_public_alpha_reassess_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/snapshot_refresh_04_public_search_view_model_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/snapshot_refresh_04_relay_projection_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/snapshot_refresh_04_result.json` (??; matches active task allowed path)
+- allowed: `control/inventory/snapshot_refresh_04_review_queue_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/snapshot_refresh_04_reviewed_metadata_record_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/snapshot_refresh_04_reviewed_record_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/snapshot_refresh_04_reviewed_source_lead_matrix.json` (??; matches active task allowed path)
+- additional changed paths omitted from compact packet: 28; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -67,8 +67,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 7023
-- approx_tokens: 1756
+- chars: 7049
+- approx_tokens: 1763
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

@@ -1,0 +1,183 @@
+{
+  "accepted_truth_created": false,
+  "artifact_verified_claim_created": false,
+  "candidate_promoted_to_reviewed": false,
+  "candidate_section_refs": [
+    "snapshot_candidate_section:ba5ac5325176b6d6",
+    "snapshot_candidate_section:82a6180edb2d8ef0",
+    "snapshot_candidate_section:2981e5833d28e30c",
+    "snapshot_candidate_section:0fa19ac510483cdc"
+  ],
+  "compatibility_guarantee_created": false,
+  "created_at": "2026-06-02T00:00:00Z",
+  "deployment_performed": false,
+  "download_performed": false,
+  "driver_support_candidate_section_refs": [
+    "snapshot_driver_support_candidate_section:a7002d9dc8f2518d"
+  ],
+  "driver_support_candidates_are_metadata_only": true,
+  "driver_support_ref": "control/inventory/seed_batch_driver_support_result.json",
+  "extraction_executed": false,
+  "file_fetch_performed": false,
+  "install_execution_enabled": false,
+  "limitations": [
+    "snapshot_refresh_is_projection_only",
+    "seed_batch_candidates_remain_candidates",
+    "manuals_scans_candidates_are_not_downloaded_documents_or_ocr_text",
+    "driver_support_candidates_are_not_safe_or_compatible_driver_packages",
+    "metadata_source_lead_records_are_not_verified_artifacts",
+    "raw_live_responses_excluded",
+    "no_verified_download_claim",
+    "no_malware_clean_claim",
+    "no_compatibility_guarantee",
+    "no_rights_clearance_claim",
+    "no_site_dist_write",
+    "no_public_index_mutation",
+    "no_deployment_or_launch_claim"
+  ],
+  "local_apply_ref": "control/inventory/local_apply_live_metadata_result.json",
+  "malware_clean_claim_created": false,
+  "manuals_scans_candidate_section_refs": [
+    "snapshot_manuals_scans_candidate_section:a7002d9dc8f2518d"
+  ],
+  "manuals_scans_candidates_are_metadata_only": true,
+  "manuals_scans_ref": "control/inventory/seed_batch_manuals_scans_result.json",
+  "master_index_mutated": false,
+  "model_provider_used": false,
+  "need_absence_section_refs": [
+    "snapshot_need_absence_section:a7002d9dc8f2518d"
+  ],
+  "ocr_performed": false,
+  "ocr_quality_claim_created": false,
+  "operator_instance_mutated": false,
+  "production_readiness_claimed": false,
+  "public_alpha_reassess_refs": [
+    "public_alpha_reassess:a7002d9dc8f2518d"
+  ],
+  "public_index_mutated": false,
+  "public_launch_readiness_claimed": false,
+  "public_search_view_model_refs": [
+    "snapshot_public_search_view_model_projection:a7002d9dc8f2518d"
+  ],
+  "record_type": "snapshot_refresh_plan",
+  "refresh_mode": "manuals_scans_driver_support_projection_only",
+  "relay_projection_refs": [
+    "snapshot_refresh_relay_projection:a7002d9dc8f2518d"
+  ],
+  "review_queue_section_refs": [
+    "snapshot_review_queue_section:a7002d9dc8f2518d"
+  ],
+  "reviewed_index_mutated": false,
+  "reviewed_metadata_record_refs": [
+    "reviewed_metadata_record:6f1765a8357c0e38"
+  ],
+  "reviewed_record_refs": [
+    "reviewed-sampleproject-001"
+  ],
+  "reviewed_source_lead_refs": [
+    "reviewed_source_lead:be997026927f3db6",
+    "reviewed_source_lead:dfe70f3ad254ba07"
+  ],
+  "rights_clearance_claim_created": false,
+  "scan_completeness_claim_created": false,
+  "schema_version": "snapshot_refresh_plan.v0",
+  "seed_batch_candidates_remain_candidates": true,
+  "site_dist_written": false,
+  "snapshot_refresh_03_ref": "control/inventory/snapshot_refresh_03_result.json",
+  "snapshot_refresh_id": "snapshot_refresh_04",
+  "source_batches": [
+    {
+      "accepted_truth": false,
+      "accepted_truth_created": false,
+      "batch_id": "seed_batch_frontier_media_00",
+      "candidate_count": 12,
+      "domain_id": "frontier_resolution_media",
+      "domain_key": "frontier_media",
+      "fixture_derived": true,
+      "public_alpha_reassess_refs": [
+        "public_alpha_reassess_input:efa88f81027a122d"
+      ],
+      "public_index_mutated": false,
+      "query_count": 12,
+      "review_batch_refs": [
+        "review_batch:2ec562a70fa95f36"
+      ],
+      "review_required": true,
+      "reviewed_index_mutated": false,
+      "schema_version": "snapshot_seed_batch_summary_item.v0",
+      "snapshot_refresh_handoff_refs": [
+        "batch_snapshot_refresh_handoff:b09870cfc0795e2b"
+      ]
+    },
+    {
+      "accepted_truth": false,
+      "accepted_truth_created": false,
+      "batch_id": "seed_batch_legacy_software_00",
+      "candidate_count": 16,
+      "domain_id": "legacy_software",
+      "domain_key": "legacy_software",
+      "fixture_derived": true,
+      "public_alpha_reassess_refs": [
+        "public_alpha_reassess_input:73fcfb03da74dc6f"
+      ],
+      "public_index_mutated": false,
+      "query_count": 16,
+      "review_batch_refs": [
+        "review_batch:d731b2afdb62ed84"
+      ],
+      "review_required": true,
+      "reviewed_index_mutated": false,
+      "schema_version": "snapshot_seed_batch_summary_item.v0",
+      "snapshot_refresh_handoff_refs": [
+        "batch_snapshot_refresh_handoff:6f0f668aee63e3bc"
+      ]
+    },
+    {
+      "accepted_truth": false,
+      "accepted_truth_created": false,
+      "batch_id": "seed_batch_manuals_scans_00",
+      "candidate_count": 16,
+      "domain_id": "manuals_docs_scans",
+      "domain_key": "manuals_scans",
+      "fixture_derived": true,
+      "public_alpha_reassess_refs": [
+        "public_alpha_reassess_input:4402c0855add6cc9"
+      ],
+      "public_index_mutated": false,
+      "query_count": 16,
+      "review_batch_refs": [
+        "review_batch:a1aadfe9fee7a5eb"
+      ],
+      "review_required": true,
+      "reviewed_index_mutated": false,
+      "schema_version": "snapshot_seed_batch_summary_item.v0",
+      "snapshot_refresh_handoff_refs": [
+        "batch_snapshot_refresh_handoff:3ee78251349cb8eb"
+      ]
+    },
+    {
+      "accepted_truth": false,
+      "accepted_truth_created": false,
+      "batch_id": "seed_batch_driver_support_00",
+      "candidate_count": 16,
+      "domain_id": "driver_support_media",
+      "domain_key": "driver_support",
+      "fixture_derived": true,
+      "public_alpha_reassess_refs": [
+        "public_alpha_reassess_input:f6e4ed9764884983"
+      ],
+      "public_index_mutated": false,
+      "query_count": 16,
+      "review_batch_refs": [
+        "review_batch:49ab2fbaab95c5f3"
+      ],
+      "review_required": true,
+      "reviewed_index_mutated": false,
+      "schema_version": "snapshot_seed_batch_summary_item.v0",
+      "snapshot_refresh_handoff_refs": [
+        "batch_snapshot_refresh_handoff:ef0bafa55e9b8b59"
+      ]
+    }
+  ],
+  "verified_download_claim_created": false
+}

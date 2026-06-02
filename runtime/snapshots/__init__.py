@@ -77,6 +77,19 @@ from runtime.snapshots.refresh_03 import (
     write_snapshot_refresh_03_examples,
     write_snapshot_refresh_03_inventory_and_audit,
 )
+from runtime.snapshots.refresh_04 import (
+    build_driver_support_candidate_section,
+    build_manuals_scans_candidate_section,
+    build_snapshot_refresh_04_boundary_report,
+    build_snapshot_refresh_04_inventory_packets,
+    build_snapshot_refresh_04_plan,
+    load_driver_support_handoff,
+    load_manuals_scans_handoff,
+    run_snapshot_refresh_04,
+    validate_snapshot_refresh_04_result,
+    write_snapshot_refresh_04_examples,
+    write_snapshot_refresh_04_inventory_and_audit,
+)
 
 __all__ = [
     "build_snapshot_envelope",
@@ -143,4 +156,15 @@ __all__ = [
     "validate_snapshot_refresh_03_result",
     "write_snapshot_refresh_03_examples",
     "write_snapshot_refresh_03_inventory_and_audit",
+    "build_driver_support_candidate_section",
+    "build_manuals_scans_candidate_section",
+    "build_snapshot_refresh_04_boundary_report",
+    "build_snapshot_refresh_04_inventory_packets",
+    "build_snapshot_refresh_04_plan",
+    "load_driver_support_handoff",
+    "load_manuals_scans_handoff",
+    "run_snapshot_refresh_04",
+    "validate_snapshot_refresh_04_result",
+    "write_snapshot_refresh_04_examples",
+    "write_snapshot_refresh_04_inventory_and_audit",
 ]

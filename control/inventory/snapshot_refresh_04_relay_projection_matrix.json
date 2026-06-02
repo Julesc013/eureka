@@ -1,0 +1,24 @@
+{
+  "mutation_enabled": false,
+  "read_only": true,
+  "relay_projection_refs": [
+    "snapshot_refresh_relay_projection:a7002d9dc8f2518d"
+  ],
+  "schema_version": "snapshot_refresh_04_relay_projection_matrix.v0",
+  "sections": {
+    "absence_summaries": 6,
+    "candidate_sections": 4,
+    "driver_support_candidates": 16,
+    "existing_reviewed_records": 1,
+    "fixture_candidates": 60,
+    "known_needs": 60,
+    "live_metadata_candidates": 8,
+    "manuals_scans_candidates": 16,
+    "reviewed_metadata_records_from_local_apply": 1,
+    "reviewed_source_leads_from_local_apply": 2,
+    "total_candidate_count": 68,
+    "total_limited_reviewed_record_projection_count": 4
+  },
+  "site_dist_written": false,
+  "task": "SNAPSHOT-REFRESH-04"
+}

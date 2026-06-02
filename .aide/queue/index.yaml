@@ -1,4 +1,4 @@
-current_recommended_task: SNAPSHOT-REFRESH-04 - Refresh snapshots after manuals/scans and driver/support batches
+current_recommended_task: PUBLIC-ALPHA-REASSESS-04 - Reassess alpha after manuals/scans and driver/support snapshot refresh
 completed:
   - SOURCE-ACTION-KERNEL-00
   - SOURCE-WAVE-00
@@ -35,9 +35,9 @@ completed:
   - PUBLIC-ALPHA-REASSESS-03
   - SEED-BATCH-MANUALS-SCANS-00
   - SEED-BATCH-DRIVER-SUPPORT-00
+  - SNAPSHOT-REFRESH-04
 blocked: []
 planned:
-  - SNAPSHOT-REFRESH-04
   - PUBLIC-ALPHA-REASSESS-04
   - PUBLIC-SEARCH-UX-MVP-00
   - PUBLIC-SEARCH-UX-GATE-00

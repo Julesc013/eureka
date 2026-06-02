@@ -19,6 +19,7 @@ from runtime.snapshots import (  # noqa: E402
     run_snapshot_refresh_01,
     run_snapshot_refresh_02,
     run_snapshot_refresh_03,
+    run_snapshot_refresh_04,
 )
 
 
@@ -40,10 +41,20 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout) -> int:
         action="store_true",
         help="Use committed local-apply live metadata handoffs.",
     )
+    parser.add_argument(
+        "--from-manuals-driver-examples",
+        action="store_true",
+        help="Use committed manuals/scans and driver/support seed-batch handoffs.",
+    )
     parser.add_argument("--write-examples", action="store_true", help="Write public-safe snapshot refresh examples.")
     parser.add_argument("--json", action="store_true", help="Emit JSON. This is the default shape.")
     args = parser.parse_args(argv)
-    if args.from_local_apply_live_metadata_examples:
+    if args.from_manuals_driver_examples:
+        result = run_snapshot_refresh_04(
+            from_manuals_driver_examples=True,
+            write_examples=args.write_examples,
+        )
+    elif args.from_local_apply_live_metadata_examples:
         result = run_snapshot_refresh_03(
             from_local_apply_live_metadata_examples=True,
             write_examples=args.write_examples,
@@ -61,7 +72,7 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout) -> int:
     elif args.from_seed_examples:
         result = run_snapshot_refresh(from_seed_examples=True, write_examples=args.write_examples)
     else:
-        parser.error("--from-seed-examples, --from-live-metadata-pilot-examples, --from-live-metadata-review-examples, or --from-local-apply-live-metadata-examples is required")
+        parser.error("--from-seed-examples, --from-live-metadata-pilot-examples, --from-live-metadata-review-examples, --from-local-apply-live-metadata-examples, or --from-manuals-driver-examples is required")
     print(json.dumps(result, indent=2, sort_keys=True), file=stdout)
     return 0 if result["status"] == "pass" else 1
 

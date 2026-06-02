@@ -1,0 +1,51 @@
+{
+  "$id": "https://eureka.local/contracts/snapshot_manuals_scans_candidate_section.v0.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Snapshot Manuals Scans Candidate Section",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "section_id",
+    "domain_id",
+    "candidate_count",
+    "candidate_refs",
+    "download_performed",
+    "file_fetch_performed",
+    "ocr_performed",
+    "rights_clearance_claim_created",
+    "scan_completeness_claim_created",
+    "ocr_quality_claim_created",
+    "accepted_truth",
+    "limitations"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "snapshot_manuals_scans_candidate_section.v0"
+    },
+    "domain_id": {
+      "const": "manuals_docs_scans"
+    },
+    "download_performed": {
+      "const": false
+    },
+    "file_fetch_performed": {
+      "const": false
+    },
+    "ocr_performed": {
+      "const": false
+    },
+    "rights_clearance_claim_created": {
+      "const": false
+    },
+    "scan_completeness_claim_created": {
+      "const": false
+    },
+    "ocr_quality_claim_created": {
+      "const": false
+    },
+    "accepted_truth": {
+      "const": false
+    }
+  }
+}

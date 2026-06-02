@@ -19,7 +19,9 @@ from runtime.snapshots import (  # noqa: E402
     build_snapshot_refresh_01_inventory_packets,
     build_snapshot_refresh_02_inventory_packets,
     build_snapshot_refresh_03_inventory_packets,
+    build_snapshot_refresh_04_inventory_packets,
     build_snapshot_refresh_inventory_packets,
+    run_snapshot_refresh_04,
     run_snapshot_refresh_03,
     run_snapshot_refresh_02,
     run_snapshot_refresh_01,
@@ -34,6 +36,8 @@ REQUIRED_CONTRACTS = [
     "contracts/snapshot/snapshot_reviewed_metadata_record_section.v0.json",
     "contracts/snapshot/snapshot_reviewed_source_lead_section.v0.json",
     "contracts/snapshot/snapshot_candidate_section.v0.json",
+    "contracts/snapshot/snapshot_manuals_scans_candidate_section.v0.json",
+    "contracts/snapshot/snapshot_driver_support_candidate_section.v0.json",
     "contracts/snapshot/snapshot_live_metadata_candidate_section.v0.json",
     "contracts/snapshot/snapshot_live_metadata_review_section.v0.json",
     "contracts/snapshot/snapshot_local_apply_section.v0.json",
@@ -48,6 +52,8 @@ REQUIRED_POLICIES = [
     "control/policies/snapshot_refresh_policy.json",
     "control/policies/snapshot_refresh_reviewed_record_policy.json",
     "control/policies/snapshot_refresh_candidate_policy.json",
+    "control/policies/snapshot_refresh_manuals_scans_policy.json",
+    "control/policies/snapshot_refresh_driver_support_policy.json",
     "control/policies/snapshot_refresh_live_metadata_policy.json",
     "control/policies/snapshot_refresh_live_metadata_review_policy.json",
     "control/policies/snapshot_refresh_review_preview_policy.json",
@@ -112,6 +118,27 @@ REQUIRED_MATRICES = [
     "control/inventory/snapshot_refresh_03_result.json",
     "control/inventory/snapshot_refresh_03_next_task_decision.json",
     "control/inventory/snapshot_refresh_03_failure_repair_log.json",
+    "control/inventory/snapshot_refresh_04_input_state.json",
+    "control/inventory/snapshot_refresh_04_source_matrix.json",
+    "control/inventory/snapshot_refresh_04_reviewed_record_matrix.json",
+    "control/inventory/snapshot_refresh_04_reviewed_metadata_record_matrix.json",
+    "control/inventory/snapshot_refresh_04_reviewed_source_lead_matrix.json",
+    "control/inventory/snapshot_refresh_04_candidate_matrix.json",
+    "control/inventory/snapshot_refresh_04_manuals_scans_candidate_matrix.json",
+    "control/inventory/snapshot_refresh_04_driver_support_candidate_matrix.json",
+    "control/inventory/snapshot_refresh_04_live_metadata_candidate_matrix.json",
+    "control/inventory/snapshot_refresh_04_local_apply_matrix.json",
+    "control/inventory/snapshot_refresh_04_need_absence_matrix.json",
+    "control/inventory/snapshot_refresh_04_review_queue_matrix.json",
+    "control/inventory/snapshot_refresh_04_relay_projection_matrix.json",
+    "control/inventory/snapshot_refresh_04_public_search_view_model_matrix.json",
+    "control/inventory/snapshot_refresh_04_public_alpha_reassess_matrix.json",
+    "control/inventory/snapshot_refresh_04_boundary_report.json",
+    "control/inventory/snapshot_refresh_04_smoke_result.json",
+    "control/inventory/snapshot_refresh_04_validation_matrix.json",
+    "control/inventory/snapshot_refresh_04_result.json",
+    "control/inventory/snapshot_refresh_04_next_task_decision.json",
+    "control/inventory/snapshot_refresh_04_failure_repair_log.json",
 ]
 REQUIRED_EXAMPLES = [
     "examples/snapshots/refresh/snapshot_refresh_plan.json",
@@ -164,14 +191,31 @@ REQUIRED_EXAMPLES = [
     "examples/snapshots/refresh/local_apply_live_metadata/public_search_view_model_projection.json",
     "examples/snapshots/refresh/local_apply_live_metadata/public_alpha_reassess_input.json",
     "examples/snapshots/refresh/local_apply_live_metadata/boundary_report.json",
+    "examples/snapshots/refresh/manuals_scans_driver_support/snapshot_refresh_plan.json",
+    "examples/snapshots/refresh/manuals_scans_driver_support/existing_reviewed_record_section.json",
+    "examples/snapshots/refresh/manuals_scans_driver_support/reviewed_metadata_record_section.json",
+    "examples/snapshots/refresh/manuals_scans_driver_support/reviewed_source_lead_section.json",
+    "examples/snapshots/refresh/manuals_scans_driver_support/candidate_section_frontier_media.json",
+    "examples/snapshots/refresh/manuals_scans_driver_support/candidate_section_legacy_software.json",
+    "examples/snapshots/refresh/manuals_scans_driver_support/candidate_section_manuals_scans.json",
+    "examples/snapshots/refresh/manuals_scans_driver_support/candidate_section_driver_support.json",
+    "examples/snapshots/refresh/manuals_scans_driver_support/live_metadata_candidate_section.json",
+    "examples/snapshots/refresh/manuals_scans_driver_support/review_queue_section.json",
+    "examples/snapshots/refresh/manuals_scans_driver_support/need_absence_section.json",
+    "examples/snapshots/refresh/manuals_scans_driver_support/refreshed_relay_projection.json",
+    "examples/snapshots/refresh/manuals_scans_driver_support/public_search_view_model_projection.json",
+    "examples/snapshots/refresh/manuals_scans_driver_support/public_alpha_reassess_input.json",
+    "examples/snapshots/refresh/manuals_scans_driver_support/boundary_report.json",
     "examples/relay/refresh/refreshed_relay_projection.json",
     "examples/relay/refresh/live_metadata_refreshed_relay_projection.json",
     "examples/relay/refresh/live_metadata_review_refreshed_relay_projection.json",
     "examples/relay/refresh/local_apply_live_metadata_refreshed_relay_projection.json",
+    "examples/relay/refresh/manuals_scans_driver_support_refreshed_relay_projection.json",
     "examples/public_alpha/reassess/snapshot_refresh_reassess_input.json",
     "examples/public_alpha/reassess/live_metadata/snapshot_refresh_01_reassess_input.json",
     "examples/public_alpha/reassess/live_metadata/snapshot_refresh_02_reassess_input.json",
     "examples/public_alpha/reassess/local_apply_live_metadata/snapshot_refresh_03_reassess_input.json",
+    "examples/public_alpha/reassess/manuals_scans_driver_support/snapshot_refresh_04_reassess_input.json",
 ]
 REQUIRED_DOCS = [
     "docs/architecture/SNAPSHOT_REFRESH.md",
@@ -206,6 +250,13 @@ REQUIRED_DOCS = [
     "docs/reference/SNAPSHOT_REVIEWED_METADATA_RECORD_SECTION.md",
     "docs/reference/SNAPSHOT_REVIEWED_SOURCE_LEAD_SECTION.md",
     "docs/reference/SNAPSHOT_LOCAL_APPLY_SECTION.md",
+    "docs/architecture/SNAPSHOT_REFRESH_04.md",
+    "docs/architecture/SNAPSHOT_MANUALS_SCANS_SECTION.md",
+    "docs/architecture/SNAPSHOT_DRIVER_SUPPORT_SECTION.md",
+    "docs/operations/SNAPSHOT_REFRESH_04_RUNBOOK.md",
+    "docs/operations/POST_SNAPSHOT_REFRESH_04_PLAN.md",
+    "docs/reference/SNAPSHOT_MANUALS_SCANS_SECTION.md",
+    "docs/reference/SNAPSHOT_DRIVER_SUPPORT_SECTION.md",
 ]
 REQUIRED_CLI = [
     "scripts/eureka_snapshot_refresh.py",
@@ -213,6 +264,13 @@ REQUIRED_CLI = [
 ]
 REQUIRED_TRUE = [
     "snapshot_refresh_is_projection",
+    "seed_batch_candidates_remain_candidates",
+    "manuals_scans_candidates_are_not_downloaded_documents",
+    "manuals_scans_candidates_are_not_ocr_text",
+    "manuals_scans_candidates_are_not_rights_cleared",
+    "driver_support_candidates_are_not_driver_downloads",
+    "driver_support_candidates_are_not_safe_installers",
+    "driver_support_candidates_are_not_compatibility_guarantees",
     "review_previews_are_not_truth",
     "reviewed_metadata_previews_require_local_apply",
     "reviewed_source_lead_previews_require_local_apply",
@@ -241,7 +299,10 @@ REQUIRED_TRUE = [
 ]
 REQUIRED_FALSE = [
     "downloads_enabled",
+    "file_fetches_enabled",
+    "ocr_enabled",
     "extraction_enabled",
+    "install_execution_enabled",
     "model_provider_enabled",
     "raw_live_response_included",
     "verified_download_claim_allowed",
@@ -275,7 +336,7 @@ def validate() -> dict[str, Any]:
     failures = [name for name, passed in checks.items() if not passed]
     return {
         "schema_version": "snapshot_refresh_validation.v0",
-        "task": "SNAPSHOT-REFRESH-00+01+02+03",
+        "task": "SNAPSHOT-REFRESH-00+01+02+03+04",
         "status": "pass" if not failures else "fail",
         "checks": checks,
         "failures": failures,
@@ -286,7 +347,10 @@ def validate() -> dict[str, Any]:
         "public_index_mutated": False,
         "site_dist_written": False,
         "download_performed": False,
+        "file_fetch_performed": False,
+        "ocr_performed": False,
         "extraction_executed": False,
+        "install_execution_enabled": False,
         "model_provider_used": False,
         "deployment_performed": False,
         "production_readiness_claimed": False,
@@ -303,9 +367,15 @@ def _runtime_checks() -> dict[str, bool]:
     review_inventory = build_snapshot_refresh_02_inventory_packets(review_result)
     local_apply_result = run_snapshot_refresh_03(from_local_apply_live_metadata_examples=True)
     local_apply_inventory = build_snapshot_refresh_03_inventory_packets(local_apply_result)
+    manuals_driver_result = run_snapshot_refresh_04(from_manuals_driver_examples=True)
+    manuals_driver_inventory = build_snapshot_refresh_04_inventory_packets(manuals_driver_result)
     candidate_sections = list(result.get("candidate_sections") or [])
     live_section = live_result["live_metadata_candidate_section"]
     live_cards = live_result["public_search_view_model_projection"]["result_cards"]
+    manuals_section = manuals_driver_result["manuals_scans_candidate_section"]
+    driver_section = manuals_driver_result["driver_support_candidate_section"]
+    manuals_driver_projection = manuals_driver_result["public_search_view_model_projection"]
+    manuals_driver_cards = manuals_driver_projection["result_cards"]
     boundary = result["boundary_report"]
     return {
         "snapshot_refresh_example_builds": result["fixture_snapshot_refresh_passed"] is True,
@@ -508,6 +578,98 @@ def _runtime_checks() -> dict[str, bool]:
                 "deployment_performed",
             )
         ),
+        "manuals_driver_refresh_example_builds": manuals_driver_result["fixture_snapshot_refresh_passed"] is True,
+        "manuals_scans_candidate_section_exists": (
+            manuals_section["candidate_count"] == 16
+            and manuals_section["accepted_truth"] is False
+            and manuals_section["download_performed"] is False
+            and manuals_section["file_fetch_performed"] is False
+            and manuals_section["ocr_performed"] is False
+            and manuals_section["rights_clearance_claim_created"] is False
+            and manuals_section["scan_completeness_claim_created"] is False
+            and manuals_section["ocr_quality_claim_created"] is False
+        ),
+        "driver_support_candidate_section_exists": (
+            driver_section["candidate_count"] == 16
+            and driver_section["accepted_truth"] is False
+            and driver_section["download_performed"] is False
+            and driver_section["file_fetch_performed"] is False
+            and driver_section["install_execution_enabled"] is False
+            and driver_section["malware_clean_claim_created"] is False
+            and driver_section["compatibility_guarantee_created"] is False
+            and driver_section["rights_clearance_claim_created"] is False
+        ),
+        "manuals_driver_counts_match_seed_results": (
+            manuals_driver_result["existing_reviewed_record_count"] == 1
+            and manuals_driver_result["reviewed_metadata_record_count"] == 1
+            and manuals_driver_result["reviewed_source_lead_count"] == 2
+            and manuals_driver_result["total_limited_reviewed_record_projection_count"] == 4
+            and manuals_driver_result["manuals_scans_candidate_count"] == 16
+            and manuals_driver_result["driver_support_candidate_count"] == 16
+            and manuals_driver_result["additional_seed_candidate_count"] == 32
+            and manuals_driver_result["fixture_candidate_count"] == 60
+            and manuals_driver_result["live_metadata_candidate_count"] == 8
+            and manuals_driver_result["total_candidate_count"] == 68
+        ),
+        "manuals_driver_candidates_review_only": all(
+            section.get("accepted_truth") is False
+            and section.get("candidate_promoted_to_reviewed") is False
+            and all(
+                candidate.get("accepted_truth") is False
+                and candidate.get("reviewed_record_ref") is None
+                and candidate.get("public_search_status") == "candidate"
+                for candidate in section.get("candidates", [])
+            )
+            for section in manuals_driver_result.get("candidate_sections", [])
+        ),
+        "manuals_driver_public_search_projection_exists": (
+            manuals_driver_projection["read_only"] is True
+            and manuals_driver_projection["status_counts"]["candidate"] == 68
+            and manuals_driver_projection["manuals_scans_cards_remain_candidates"] is True
+            and manuals_driver_projection["driver_support_cards_remain_candidates"] is True
+            and all(
+                card.get("status") == "candidate"
+                and card.get("accepted_truth") is False
+                and card.get("artifact_verified") is False
+                and card.get("verified_download_claim") is False
+                for card in manuals_driver_cards
+                if card.get("object_type") in {"manuals_scans_candidate", "driver_support_candidate"}
+            )
+        ),
+        "manuals_driver_inventory_packets_build": {
+            "snapshot_refresh_04_manuals_scans_candidate_matrix.json",
+            "snapshot_refresh_04_driver_support_candidate_matrix.json",
+            "snapshot_refresh_04_public_search_view_model_matrix.json",
+            "snapshot_refresh_04_result.json",
+        }.issubset(set(manuals_driver_inventory)),
+        "manuals_driver_refresh_no_boundaries_crossed": all(
+            manuals_driver_result.get(key) is False
+            for key in (
+                "accepted_truth_created",
+                "candidate_promoted_to_reviewed",
+                "artifact_verified_claim_created",
+                "verified_download_claim_created",
+                "malware_clean_claim_created",
+                "compatibility_guarantee_created",
+                "rights_clearance_claim_created",
+                "scan_completeness_claim_created",
+                "ocr_quality_claim_created",
+                "file_fetch_performed",
+                "ocr_performed",
+                "install_execution_enabled",
+                "operator_instance_mutated",
+                "reviewed_index_mutated",
+                "master_index_mutated",
+                "public_index_mutated",
+                "site_dist_written",
+                "download_performed",
+                "extraction_executed",
+                "model_provider_used",
+                "deployment_performed",
+                "production_readiness_claimed",
+                "public_launch_readiness_claimed",
+            )
+        ),
     }
 
 
@@ -523,9 +685,12 @@ def _prior_results_present() -> bool:
     required = [
         "control/inventory/seed_batch_frontier_media_result.json",
         "control/inventory/seed_batch_legacy_software_result.json",
+        "control/inventory/seed_batch_manuals_scans_result.json",
+        "control/inventory/seed_batch_driver_support_result.json",
         "control/inventory/live_metadata_pilot_result.json",
         "control/inventory/live_metadata_review_result.json",
         "control/inventory/local_apply_live_metadata_result.json",
+        "control/inventory/snapshot_refresh_03_result.json",
         "control/inventory/review_batch_result.json",
         "control/inventory/scout_runtime_result.json",
         "control/inventory/candidate_index_result.json",
@@ -544,12 +709,38 @@ def _prior_results_present() -> bool:
     for path in (
         "control/inventory/seed_batch_frontier_media_result.json",
         "control/inventory/seed_batch_legacy_software_result.json",
+        "control/inventory/seed_batch_manuals_scans_result.json",
+        "control/inventory/seed_batch_driver_support_result.json",
         "control/inventory/live_metadata_pilot_result.json",
     ):
         payload = _load_json(path)
         if any(
             payload.get(key) is not False
             for key in ("accepted_truth_created", "reviewed_index_mutated", "master_index_mutated", "public_index_mutated")
+        ):
+            return False
+        if path.endswith("seed_batch_manuals_scans_result.json") and any(
+            payload.get(key) is not False
+            for key in (
+                "download_performed",
+                "file_fetch_performed",
+                "ocr_performed",
+                "rights_clearance_claim_created",
+                "scan_completeness_claim_created",
+                "ocr_quality_claim_created",
+            )
+        ):
+            return False
+        if path.endswith("seed_batch_driver_support_result.json") and any(
+            payload.get(key) is not False
+            for key in (
+                "download_performed",
+                "file_fetch_performed",
+                "install_execution_enabled",
+                "malware_clean_claim_created",
+                "compatibility_guarantee_created",
+                "rights_clearance_claim_created",
+            )
         ):
             return False
     return True

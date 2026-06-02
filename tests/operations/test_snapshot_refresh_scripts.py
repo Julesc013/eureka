@@ -79,6 +79,26 @@ class SnapshotRefreshScriptTests(unittest.TestCase):
         self.assertIn('"reviewed_metadata_record_count": 1', completed.stdout)
         self.assertIn('"reviewed_source_lead_count": 2', completed.stdout)
 
+    def test_manuals_driver_report_script(self) -> None:
+        completed = subprocess.run(
+            [
+                sys.executable,
+                str(REPO_ROOT / "scripts/eureka_snapshot_refresh_report.py"),
+                "--from-manuals-driver-examples",
+                "--json",
+            ],
+            cwd=REPO_ROOT,
+            capture_output=True,
+            text=True,
+            check=False,
+        )
+
+        self.assertEqual(0, completed.returncode, msg=completed.stderr)
+        self.assertIn('"task": "SNAPSHOT-REFRESH-04"', completed.stdout)
+        self.assertIn('"manuals_scans_candidate_count": 16', completed.stdout)
+        self.assertIn('"driver_support_candidate_count": 16', completed.stdout)
+        self.assertIn('"total_candidate_count": 68', completed.stdout)
+
 
 if __name__ == "__main__":
     unittest.main()

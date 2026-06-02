@@ -1,0 +1,64 @@
+{
+  "accepted_truth_created": false,
+  "candidates_included_as_truth": false,
+  "created_at": "2026-06-02T00:00:00Z",
+  "limitations": [
+    "existing reviewed fixture records only"
+  ],
+  "limited_reviewed_record_projection": false,
+  "public_index_mutated": false,
+  "record_type": "snapshot_reviewed_record_section",
+  "reviewed_index_mutated": false,
+  "reviewed_record_count": 1,
+  "reviewed_record_refs": [
+    "reviewed-sampleproject-001"
+  ],
+  "reviewed_records": [
+    {
+      "action_posture": "view_cite_export_only",
+      "created_at": "2026-06-02T00:00:00Z",
+      "domain_id": "legacy_software",
+      "evidence_summary_refs": [
+        "evidence-summary-sampleproject-001"
+      ],
+      "limitations": [
+        "fixture reviewed record for snapshot relay validation"
+      ],
+      "non_claims": [
+        "not_public_truth",
+        "not_production_deployment",
+        "not_public_launch",
+        "not_live_source_action",
+        "not_store_mutation",
+        "not_download_or_extraction"
+      ],
+      "object_id": "sampleproject",
+      "private_fields_removed": true,
+      "public_safe": true,
+      "public_safe_fields": [
+        "record_id",
+        "object_id",
+        "title",
+        "domain_id",
+        "result_kind"
+      ],
+      "record_id": "reviewed-sampleproject-001",
+      "record_type": "snapshot_record",
+      "result_kind": "reviewed_object_record",
+      "reviewed_only": true,
+      "reviewed_status": "reviewed_local",
+      "schema_version": "snapshot_record.v0",
+      "snapshot_id": "snapshot_record_snapshot_d312d1309b739568",
+      "source_context": "fixture_reviewed_record",
+      "source_summary_refs": [
+        "source-summary-sampleproject-001"
+      ],
+      "title": "SampleProject 1.0 reviewed local record"
+    }
+  ],
+  "schema_version": "snapshot_reviewed_record_section.v0",
+  "section_id": "snapshot_reviewed_record_section:c2e32ad904f4e32d",
+  "section_role": "existing_reviewed_records",
+  "snapshot_refresh_id": "snapshot_refresh_04",
+  "source": "existing_reviewed_records"
+}
