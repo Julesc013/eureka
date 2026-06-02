@@ -20,6 +20,7 @@ from runtime.public_alpha import (  # noqa: E402
     run_public_alpha_reassess_02,
     run_public_alpha_reassess_03,
     run_public_alpha_reassess_04,
+    run_public_alpha_reassess_05,
 )
 
 
@@ -46,9 +47,18 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout) -> int:
         action="store_true",
         help="Read generated PUBLIC-ALPHA-REASSESS-04 manuals/scans and driver/support examples.",
     )
+    parser.add_argument(
+        "--from-public-search-ux-examples",
+        action="store_true",
+        help="Read generated PUBLIC-ALPHA-REASSESS-05 public search UX MVP reassessment examples.",
+    )
     parser.add_argument("--json", action="store_true", help="Emit JSON. This is the default shape.")
     args = parser.parse_args(argv)
-    if args.from_manuals_driver_examples:
+    if args.from_public_search_ux_examples:
+        path = REPO_ROOT / "examples" / "public_alpha" / "reassess" / "public_search_ux_mvp" / "public_alpha_reassess_05_result.json"
+        result = json.loads(path.read_text(encoding="utf-8")) if path.exists() else run_public_alpha_reassess_05(from_public_search_ux_projection_examples=True)
+        report = _report_05(result)
+    elif args.from_manuals_driver_examples:
         path = REPO_ROOT / "examples" / "public_alpha" / "reassess" / "manuals_scans_driver_support" / "public_alpha_reassess_04_result.json"
         result = json.loads(path.read_text(encoding="utf-8")) if path.exists() else run_public_alpha_reassess_04(from_manuals_driver_snapshot_examples=True)
         report = _report_04(result)
@@ -69,7 +79,7 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout) -> int:
         result = json.loads(path.read_text(encoding="utf-8")) if path.exists() else run_public_alpha_reassess(from_snapshot_refresh_examples=True)
         report = _report(result)
     else:
-        parser.error("--from-examples, --from-live-metadata-examples, --from-live-metadata-review-examples, --from-local-apply-live-metadata-examples, or --from-manuals-driver-examples is required")
+        parser.error("--from-examples, --from-live-metadata-examples, --from-live-metadata-review-examples, --from-local-apply-live-metadata-examples, --from-manuals-driver-examples, or --from-public-search-ux-examples is required")
     print(json.dumps(report, indent=2, sort_keys=True), file=stdout)
     return 0 if report["status"] == "pass" else 1
 
@@ -211,6 +221,52 @@ def _report_04(result: dict[str, Any]) -> dict[str, Any]:
         "needs_public_alpha_reassess_after_ux": result.get("needs_public_alpha_reassess_after_ux"),
         "needs_review_batch_apply_next": result.get("needs_review_batch_apply_next"),
         "recommended_next_task": result.get("recommended_next_task", "PUBLIC-SEARCH-UX-MVP-00 - Implement minimal no-JS public search UX over view models"),
+        "deployment_performed": False,
+        "public_launch_performed": False,
+        "production_readiness_claimed": False,
+        "public_launch_readiness_claimed": False,
+        "site_dist_written": False,
+        "public_mutation_enabled": False,
+        "public_live_source_fanout_enabled": False,
+        "download_performed": False,
+        "file_fetch_performed": False,
+        "ocr_performed": False,
+        "extraction_executed": False,
+        "install_execution_enabled": False,
+        "model_provider_used": False,
+    }
+
+
+def _report_05(result: dict[str, Any]) -> dict[str, Any]:
+    return {
+        "schema_version": "public_alpha_reassess_05_report.v0",
+        "task": "PUBLIC-ALPHA-REASSESS-05",
+        "status": result.get("status", "pass"),
+        "existing_reviewed_record_count": result.get("existing_reviewed_record_count"),
+        "reviewed_metadata_record_count": result.get("reviewed_metadata_record_count"),
+        "reviewed_source_lead_count": result.get("reviewed_source_lead_count"),
+        "total_limited_reviewed_record_projection_count": result.get("total_limited_reviewed_record_projection_count"),
+        "candidate_count": result.get("candidate_count"),
+        "domain_count": result.get("domain_count"),
+        "public_ux_routes_count": result.get("public_ux_routes_count"),
+        "result_card_states_count": result.get("result_card_states_count"),
+        "public_search_ux_mvp_implemented": result.get("public_search_ux_mvp_implemented"),
+        "public_search_ux_mvp_verified": result.get("public_search_ux_mvp_verified"),
+        "no_js_required": result.get("no_js_required"),
+        "public_projection_read_only": result.get("public_projection_read_only"),
+        "launch_recommended": result.get("launch_recommended"),
+        "demo_mode_recommended": result.get("demo_mode_recommended"),
+        "internal_review_recommended": result.get("internal_review_recommended"),
+        "needs_more_reviewed_records": result.get("needs_more_reviewed_records"),
+        "needs_more_reviewed_artifact_records": result.get("needs_more_reviewed_artifact_records"),
+        "needs_review_batch_apply_next": result.get("needs_review_batch_apply_next"),
+        "needs_external_full_discovery": result.get("needs_external_full_discovery"),
+        "needs_main_promotion_before_launch": result.get("needs_main_promotion_before_launch"),
+        "needs_public_alpha_launch_approval": result.get("needs_public_alpha_launch_approval"),
+        "recommended_next_task": result.get(
+            "recommended_next_task",
+            "REVIEW-BATCH-APPLY-NEXT-00 - Apply next eligible review batches to grow reviewed corpus",
+        ),
         "deployment_performed": False,
         "public_launch_performed": False,
         "production_readiness_claimed": False,

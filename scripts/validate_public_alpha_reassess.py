@@ -20,12 +20,14 @@ from runtime.public_alpha import (  # noqa: E402
     build_public_alpha_reassess_02_inventory_packets,
     build_public_alpha_reassess_03_inventory_packets,
     build_public_alpha_reassess_04_inventory_packets,
+    build_public_alpha_reassess_05_inventory_packets,
     build_public_alpha_reassess_inventory_packets,
     run_public_alpha_reassess,
     run_public_alpha_reassess_01,
     run_public_alpha_reassess_02,
     run_public_alpha_reassess_03,
     run_public_alpha_reassess_04,
+    run_public_alpha_reassess_05,
     smoke_public_alpha_routes_from_examples,
 )
 
@@ -41,6 +43,7 @@ REQUIRED_CONTRACTS = [
     "contracts/publication/public_alpha_limited_reviewed_record_reassess.v0.json",
     "contracts/publication/public_alpha_domain_coverage_reassess.v0.json",
     "contracts/publication/public_alpha_ux_readiness_reassess.v0.json",
+    "contracts/publication/public_alpha_ux_mvp_reassess.v0.json",
     "contracts/publication/public_alpha_reassess_boundary_report.v0.json",
 ]
 REQUIRED_POLICIES = [
@@ -52,6 +55,8 @@ REQUIRED_POLICIES = [
     "control/policies/public_alpha_reassess_limited_reviewed_record_policy.json",
     "control/policies/public_alpha_reassess_domain_coverage_policy.json",
     "control/policies/public_alpha_reassess_ux_policy.json",
+    "control/policies/public_alpha_reassess_full_discovery_policy.json",
+    "control/policies/public_alpha_reassess_promotion_policy.json",
     "control/policies/public_alpha_reassess_non_claim_policy.json",
     "control/policies/public_alpha_reassess_next_work_policy.json",
 ]
@@ -142,6 +147,23 @@ REQUIRED_MATRICES = [
     "control/inventory/public_alpha_reassess_04_result.json",
     "control/inventory/public_alpha_reassess_04_next_task_decision.json",
     "control/inventory/public_alpha_reassess_04_failure_repair_log.json",
+    "control/inventory/public_alpha_reassess_05_input_state.json",
+    "control/inventory/public_alpha_reassess_05_snapshot_metrics.json",
+    "control/inventory/public_alpha_reassess_05_query_coverage_matrix.json",
+    "control/inventory/public_alpha_reassess_05_route_matrix.json",
+    "control/inventory/public_alpha_reassess_05_domain_coverage_matrix.json",
+    "control/inventory/public_alpha_reassess_05_candidate_usefulness_matrix.json",
+    "control/inventory/public_alpha_reassess_05_limited_reviewed_record_matrix.json",
+    "control/inventory/public_alpha_reassess_05_public_search_view_model_matrix.json",
+    "control/inventory/public_alpha_reassess_05_public_search_ux_mvp_matrix.json",
+    "control/inventory/public_alpha_reassess_05_launch_blocker_matrix.json",
+    "control/inventory/public_alpha_reassess_05_next_work_matrix.json",
+    "control/inventory/public_alpha_reassess_05_boundary_report.json",
+    "control/inventory/public_alpha_reassess_05_smoke_result.json",
+    "control/inventory/public_alpha_reassess_05_validation_matrix.json",
+    "control/inventory/public_alpha_reassess_05_result.json",
+    "control/inventory/public_alpha_reassess_05_next_task_decision.json",
+    "control/inventory/public_alpha_reassess_05_failure_repair_log.json",
 ]
 REQUIRED_EXAMPLES = [
     "examples/public_alpha/reassess/public_alpha_reassess_metrics.json",
@@ -197,6 +219,19 @@ REQUIRED_EXAMPLES = [
     "examples/public_alpha/reassess/manuals_scans_driver_support/public_alpha_reassess_decision.json",
     "examples/public_alpha/reassess/manuals_scans_driver_support/public_alpha_boundary_report.json",
     "examples/public_alpha/reassess/manuals_scans_driver_support/public_alpha_reassess_04_result.json",
+    "examples/public_alpha/reassess/public_search_ux_mvp/public_alpha_reassess_metrics.json",
+    "examples/public_alpha/reassess/public_search_ux_mvp/public_alpha_route_smoke.json",
+    "examples/public_alpha/reassess/public_search_ux_mvp/public_alpha_query_coverage.json",
+    "examples/public_alpha/reassess/public_search_ux_mvp/public_alpha_domain_coverage.json",
+    "examples/public_alpha/reassess/public_search_ux_mvp/public_alpha_candidate_usefulness.json",
+    "examples/public_alpha/reassess/public_search_ux_mvp/public_alpha_limited_reviewed_records.json",
+    "examples/public_alpha/reassess/public_search_ux_mvp/public_alpha_public_search_view_models.json",
+    "examples/public_alpha/reassess/public_search_ux_mvp/public_alpha_public_search_ux_mvp.json",
+    "examples/public_alpha/reassess/public_search_ux_mvp/public_alpha_launch_blockers.json",
+    "examples/public_alpha/reassess/public_search_ux_mvp/public_alpha_next_work.json",
+    "examples/public_alpha/reassess/public_search_ux_mvp/public_alpha_reassess_decision.json",
+    "examples/public_alpha/reassess/public_search_ux_mvp/public_alpha_boundary_report.json",
+    "examples/public_alpha/reassess/public_search_ux_mvp/public_alpha_reassess_05_result.json",
 ]
 REQUIRED_DOCS = [
     "docs/architecture/PUBLIC_ALPHA_REASSESS.md",
@@ -204,17 +239,20 @@ REQUIRED_DOCS = [
     "docs/architecture/PUBLIC_ALPHA_REASSESS_02.md",
     "docs/architecture/PUBLIC_ALPHA_REASSESS_03.md",
     "docs/architecture/PUBLIC_ALPHA_REASSESS_04.md",
+    "docs/architecture/PUBLIC_ALPHA_REASSESS_05.md",
     "docs/operations/PUBLIC_ALPHA_REASSESS_RUNBOOK.md",
     "docs/operations/PUBLIC_ALPHA_REASSESS_01_RUNBOOK.md",
     "docs/operations/PUBLIC_ALPHA_REASSESS_02_RUNBOOK.md",
     "docs/operations/PUBLIC_ALPHA_REASSESS_03_RUNBOOK.md",
     "docs/operations/PUBLIC_ALPHA_REASSESS_04_RUNBOOK.md",
+    "docs/operations/PUBLIC_ALPHA_REASSESS_05_RUNBOOK.md",
     "docs/operations/PUBLIC_ALPHA_USEFULNESS_THRESHOLDS.md",
     "docs/operations/POST_PUBLIC_ALPHA_REASSESS_PLAN.md",
     "docs/operations/POST_PUBLIC_ALPHA_REASSESS_01_PLAN.md",
     "docs/operations/POST_PUBLIC_ALPHA_REASSESS_02_PLAN.md",
     "docs/operations/POST_PUBLIC_ALPHA_REASSESS_03_PLAN.md",
     "docs/operations/POST_PUBLIC_ALPHA_REASSESS_04_PLAN.md",
+    "docs/operations/POST_PUBLIC_ALPHA_REASSESS_05_PLAN.md",
     "docs/reference/PUBLIC_ALPHA_REASSESS_DECISION.md",
     "docs/reference/PUBLIC_ALPHA_USEFULNESS_METRICS.md",
     "docs/reference/PUBLIC_ALPHA_LIVE_METADATA_REASSESSMENT.md",
@@ -222,6 +260,7 @@ REQUIRED_DOCS = [
     "docs/reference/PUBLIC_ALPHA_LIMITED_REVIEWED_RECORD_REASSESSMENT.md",
     "docs/reference/PUBLIC_ALPHA_DOMAIN_COVERAGE_REASSESSMENT.md",
     "docs/reference/PUBLIC_ALPHA_UX_READINESS_REASSESSMENT.md",
+    "docs/reference/PUBLIC_ALPHA_UX_MVP_REASSESSMENT.md",
 ]
 REQUIRED_CLI = [
     "scripts/eureka_public_alpha_reassess.py",
@@ -243,6 +282,9 @@ REQUIRED_TRUE = [
     "public_alpha_min_ux_mvp_required",
     "public_search_view_models_are_not_full_public_ux",
     "public_search_ux_mvp_required_before_launch",
+    "public_search_ux_mvp_improves_readiness_but_is_not_launch_sufficient",
+    "external_full_discovery_required_before_main_promotion",
+    "main_promotion_required_before_launch",
     "needs_and_absences_are_useful_but_not_launch_sufficient",
 ]
 REQUIRED_FALSE = [
@@ -283,12 +325,14 @@ def validate() -> dict[str, Any]:
         "review_preview_metrics_included": _review_preview_metrics_included(),
         "limited_reviewed_record_metrics_included": _limited_reviewed_record_metrics_included(),
         "manuals_driver_metrics_included": _manuals_driver_metrics_included(),
+        "public_search_ux_mvp_reassess_metrics_included": _public_search_ux_mvp_reassess_metrics_included(),
         "public_search_view_model_examples_exist": _paths_exist(
             [
                 "examples/public_alpha/reassess/live_metadata/public_alpha_public_search_view_models.json",
                 "examples/public_alpha/reassess/live_metadata_review/public_alpha_public_search_view_models.json",
                 "examples/public_alpha/reassess/local_apply_live_metadata/public_alpha_public_search_view_models.json",
                 "examples/public_alpha/reassess/manuals_scans_driver_support/public_alpha_public_search_view_models.json",
+                "examples/public_alpha/reassess/public_search_ux_mvp/public_alpha_public_search_view_models.json",
                 "examples/view_models/public_search/search_page_view_model.json",
             ]
         ),
@@ -297,7 +341,7 @@ def validate() -> dict[str, Any]:
     failures = [name for name, passed in checks.items() if not passed]
     return {
         "schema_version": "public_alpha_reassess_validation.v0",
-        "task": "PUBLIC-ALPHA-REASSESS-00+01+02+03+04",
+        "task": "PUBLIC-ALPHA-REASSESS-00+01+02+03+04+05",
         "status": "pass" if not failures else "fail",
         "checks": checks,
         "failures": failures,
@@ -320,24 +364,28 @@ def _runtime_checks() -> dict[str, bool]:
     result_02 = run_public_alpha_reassess_02(from_live_metadata_review_refresh_examples=True)
     result_03 = run_public_alpha_reassess_03(from_local_apply_live_metadata_refresh_examples=True)
     result_04 = run_public_alpha_reassess_04(from_manuals_driver_snapshot_examples=True)
+    result_05 = run_public_alpha_reassess_05(from_public_search_ux_projection_examples=True)
     route_smoke = smoke_public_alpha_routes_from_examples()
     inventory = build_public_alpha_reassess_inventory_packets(result)
     inventory_01 = build_public_alpha_reassess_01_inventory_packets(result_01)
     inventory_02 = build_public_alpha_reassess_02_inventory_packets(result_02)
     inventory_03 = build_public_alpha_reassess_03_inventory_packets(result_03)
     inventory_04 = build_public_alpha_reassess_04_inventory_packets(result_04)
+    inventory_05 = build_public_alpha_reassess_05_inventory_packets(result_05)
     return {
         "reassessment_example_builds": result["status"] == "pass",
         "live_metadata_reassessment_example_builds": result_01["status"] == "pass",
         "review_preview_reassessment_example_builds": result_02["status"] == "pass",
         "limited_reviewed_record_reassessment_example_builds": result_03["status"] == "pass",
         "manuals_driver_reassessment_example_builds": result_04["status"] == "pass",
+        "public_search_ux_mvp_reassessment_example_builds": result_05["status"] == "pass",
         "route_smoke_example_builds": route_smoke["route_smoke_status"] == "pass",
         "decision_exists": result["decision"]["decision"] == "remain_deferred",
         "live_metadata_decision_exists": result_01["decision"]["decision"] == "remain_deferred",
         "review_preview_decision_exists": result_02["decision"]["decision"] == "remain_deferred",
         "limited_reviewed_record_decision_exists": result_03["decision"]["decision"] == "remain_deferred",
         "manuals_driver_decision_exists": result_04["decision"]["decision"] == "remain_deferred",
+        "public_search_ux_mvp_decision_exists": result_05["decision"]["decision"] == "remain_deferred",
         "current_evidence_counts_recorded": (
             result["reviewed_record_count"] == 1
             and result["candidate_count"] == 28
@@ -387,20 +435,33 @@ def _runtime_checks() -> dict[str, bool]:
             and result_04["driver_support_candidate_count"] == 16
             and result_04["domain_count"] == 4
         ),
+        "public_search_ux_mvp_evidence_counts_recorded": (
+            result_05["existing_reviewed_record_count"] == 1
+            and result_05["reviewed_metadata_record_count"] == 1
+            and result_05["reviewed_source_lead_count"] == 2
+            and result_05["total_limited_reviewed_record_projection_count"] == 4
+            and result_05["candidate_count"] == 68
+            and result_05["domain_count"] == 4
+            and result_05["public_ux_routes_count"] == 8
+            and result_05["result_card_states_count"] == 8
+        ),
         "launch_false_when_thresholds_unmet": result["launch_recommended"] is False,
         "live_metadata_launch_false_when_thresholds_unmet": result_01["launch_recommended"] is False,
         "review_preview_launch_false_when_thresholds_unmet": result_02["launch_recommended"] is False,
         "limited_reviewed_record_launch_false_when_thresholds_unmet": result_03["launch_recommended"] is False,
         "manuals_driver_launch_false_when_thresholds_unmet": result_04["launch_recommended"] is False,
+        "public_search_ux_mvp_launch_false_when_thresholds_unmet": result_05["launch_recommended"] is False,
         "demo_mode_recommended": result["demo_mode_recommended"] is True,
         "live_metadata_demo_mode_recommended": result_01["demo_mode_recommended"] is True,
         "review_preview_demo_mode_recommended": result_02["demo_mode_recommended"] is True,
         "limited_reviewed_record_demo_mode_recommended": result_03["demo_mode_recommended"] is True,
         "manuals_driver_demo_mode_recommended": result_04["demo_mode_recommended"] is True,
+        "public_search_ux_mvp_demo_mode_recommended": result_05["demo_mode_recommended"] is True,
         "internal_review_recommended": result_01["internal_review_recommended"] is True,
         "review_preview_internal_review_recommended": result_02["internal_review_recommended"] is True,
         "limited_reviewed_record_internal_review_recommended": result_03["internal_review_recommended"] is True,
         "manuals_driver_internal_review_recommended": result_04["internal_review_recommended"] is True,
+        "public_search_ux_mvp_internal_review_recommended": result_05["internal_review_recommended"] is True,
         "needs_live_candidate_review": result_01["needs_live_candidate_review"] is True,
         "needs_snapshot_refresh_after_review": result_01["needs_snapshot_refresh_after_review"] is True,
         "needs_local_apply_of_review_previews": result_02["needs_local_apply_of_review_previews"] is True,
@@ -413,6 +474,16 @@ def _runtime_checks() -> dict[str, bool]:
         "needs_snapshot_refresh_after_ux": result_04["needs_snapshot_refresh_after_ux"] is True,
         "needs_public_alpha_reassess_after_ux": result_04["needs_public_alpha_reassess_after_ux"] is True,
         "needs_review_batch_apply_next": result_04["needs_review_batch_apply_next"] is True,
+        "public_search_ux_mvp_verified_but_not_launch_sufficient": (
+            result_05["public_search_ux_mvp_verified"] is True
+            and result_05["public_search_ux_mvp"]["public_search_ux_mvp_launch_sufficient"] is False
+            and result_05["no_js_required"] is True
+            and result_05["public_projection_read_only"] is True
+        ),
+        "needs_review_batch_apply_next_after_ux_mvp": result_05["needs_review_batch_apply_next"] is True,
+        "needs_external_full_discovery_after_ux_mvp": result_05["needs_external_full_discovery"] is True,
+        "needs_main_promotion_before_launch_after_ux_mvp": result_05["needs_main_promotion_before_launch"] is True,
+        "needs_public_alpha_launch_approval_after_ux_mvp": result_05["needs_public_alpha_launch_approval"] is True,
         "live_metadata_candidates_not_counted_as_reviewed": (
             result_01["live_metadata_candidate_usefulness"]["review_only_candidate_count"] == 8
             and result_01["candidate_usefulness"]["live_metadata_candidates_counted_as_reviewed"] is False
@@ -437,6 +508,13 @@ def _runtime_checks() -> dict[str, bool]:
             and result_04["limited_reviewed_record_usefulness"]["verified_download_claim"] is False
             and result_04["limited_reviewed_record_usefulness"]["malware_clean_claim"] is False
             and result_04["limited_reviewed_record_usefulness"]["rights_clearance_claim"] is False
+        ),
+        "public_search_ux_mvp_limited_reviewed_records_not_verified_artifacts": (
+            result_05["limited_reviewed_record_usefulness"]["limited_reviewed_records_are_verified_artifacts"] is False
+            and result_05["limited_reviewed_record_usefulness"]["artifact_verified"] is False
+            and result_05["limited_reviewed_record_usefulness"]["verified_download_claim"] is False
+            and result_05["limited_reviewed_record_usefulness"]["malware_clean_claim"] is False
+            and result_05["limited_reviewed_record_usefulness"]["rights_clearance_claim"] is False
         ),
         "manuals_driver_domain_coverage_metrics_included": (
             result_04["domain_coverage"]["four_domains_represented"] is True
@@ -472,6 +550,13 @@ def _runtime_checks() -> dict[str, bool]:
             and result_04["public_search_view_models"]["driver_support_candidate_cards"] == 16
             and result_04["public_search_view_models"]["public_search_view_models_are_not_full_public_ux"] is True
         ),
+        "public_search_ux_mvp_view_models_assessed": (
+            result_05["public_search_view_models"]["public_search_view_models_available"] is True
+            and result_05["public_search_view_models"]["result_card_states_count"] == 8
+            and result_05["public_search_view_models"]["candidate_verified_distinction_passed"] is True
+            and result_05["public_search_view_models"]["limited_reviewed_record_distinction_passed"] is True
+            and result_05["public_search_view_models"]["candidate_like_cards_not_accepted_truth"] is True
+        ),
         "inventory_packets_build": {
             "public_alpha_reassess_result.json",
             "public_alpha_reassess_boundary_report.json",
@@ -501,6 +586,12 @@ def _runtime_checks() -> dict[str, bool]:
             "public_alpha_reassess_04_ux_readiness_matrix.json",
             "public_alpha_reassess_04_public_search_view_model_matrix.json",
         }.issubset(set(inventory_04)),
+        "public_search_ux_mvp_inventory_packets_build": {
+            "public_alpha_reassess_05_result.json",
+            "public_alpha_reassess_05_route_matrix.json",
+            "public_alpha_reassess_05_public_search_ux_mvp_matrix.json",
+            "public_alpha_reassess_05_public_search_view_model_matrix.json",
+        }.issubset(set(inventory_05)),
         "no_deployment_or_launch": all(
             result.get(key) is False for key in ("deployment_performed", "public_launch_performed")
         )
@@ -509,6 +600,9 @@ def _runtime_checks() -> dict[str, bool]:
         and all(result_03.get(key) is False for key in ("deployment_performed", "public_launch_performed")),
         "manuals_driver_no_deployment_or_launch": all(
             result_04.get(key) is False for key in ("deployment_performed", "public_launch_performed")
+        ),
+        "public_search_ux_mvp_no_deployment_or_launch": all(
+            result_05.get(key) is False for key in ("deployment_performed", "public_launch_performed")
         ),
         "no_readiness_claims": all(
             result.get(key) is False
@@ -530,6 +624,10 @@ def _runtime_checks() -> dict[str, bool]:
             result_04.get(key) is False
             for key in ("production_readiness_claimed", "public_launch_readiness_claimed")
         ),
+        "public_search_ux_mvp_no_readiness_claims": all(
+            result_05.get(key) is False
+            for key in ("production_readiness_claimed", "public_launch_readiness_claimed")
+        ),
         "no_mutation_or_site_dist": all(
             result.get(key) is False
             for key in ("site_dist_written", "public_mutation_enabled", "public_live_source_fanout_enabled")
@@ -548,6 +646,10 @@ def _runtime_checks() -> dict[str, bool]:
         ),
         "manuals_driver_no_mutation_or_site_dist": all(
             result_04.get(key) is False
+            for key in ("site_dist_written", "public_mutation_enabled", "public_live_source_fanout_enabled")
+        ),
+        "public_search_ux_mvp_no_mutation_or_site_dist": all(
+            result_05.get(key) is False
             for key in ("site_dist_written", "public_mutation_enabled", "public_live_source_fanout_enabled")
         ),
         "no_download_extract_model": all(
@@ -577,11 +679,23 @@ def _runtime_checks() -> dict[str, bool]:
                 "model_provider_used",
             )
         ),
+        "public_search_ux_mvp_no_download_fetch_ocr_extract_model": all(
+            result_05.get(key) is False
+            for key in (
+                "download_performed",
+                "file_fetch_performed",
+                "ocr_performed",
+                "extraction_executed",
+                "install_execution_enabled",
+                "model_provider_used",
+            )
+        ),
         "no_live_source_calls": (
             result_01.get("live_source_call_performed") is False
             and result_02.get("live_source_call_performed") is False
             and result_03.get("live_source_call_performed") is False
             and result_04.get("live_source_call_performed") is False
+            and result_05.get("live_source_call_performed") is False
         ),
     }
 
@@ -596,6 +710,8 @@ def _load_json(path: str) -> Any:
 
 def _prior_results_present() -> bool:
     required = [
+        "control/inventory/snapshot_refresh_05_result.json",
+        "control/inventory/public_search_ux_mvp_result.json",
         "control/inventory/snapshot_refresh_04_result.json",
         "control/inventory/seed_batch_manuals_scans_result.json",
         "control/inventory/seed_batch_driver_support_result.json",
@@ -627,6 +743,8 @@ def _prior_results_present() -> bool:
         if payload.get("status") not in {"pass", "pass_with_warnings", "deferred", "validated"}:
             return False
     launch_defer = _load_json("control/inventory/public_alpha_launch_defer_result.json")
+    snapshot_05 = _load_json("control/inventory/snapshot_refresh_05_result.json")
+    public_search_ux_mvp = _load_json("control/inventory/public_search_ux_mvp_result.json")
     snapshot_04 = _load_json("control/inventory/snapshot_refresh_04_result.json")
     manuals_scans = _load_json("control/inventory/seed_batch_manuals_scans_result.json")
     driver_support = _load_json("control/inventory/seed_batch_driver_support_result.json")
@@ -638,6 +756,29 @@ def _prior_results_present() -> bool:
     live_pilot = _load_json("control/inventory/live_metadata_pilot_result.json")
     return (
         launch_defer.get("public_launch_performed") is False
+        and snapshot_05.get("public_search_ux_integrated") is True
+        and snapshot_05.get("total_limited_reviewed_record_projection_count") == 4
+        and snapshot_05.get("total_candidate_count") == 68
+        and snapshot_05.get("public_ux_routes_count") == 8
+        and snapshot_05.get("result_card_states_count") == 8
+        and snapshot_05.get("no_js_required") is True
+        and snapshot_05.get("public_projection_read_only") is True
+        and snapshot_05.get("site_dist_written") is False
+        and snapshot_05.get("deployment_performed") is False
+        and snapshot_05.get("public_launch_performed") is False
+        and snapshot_05.get("public_mutation_enabled") is False
+        and snapshot_05.get("public_live_source_fanout_enabled") is False
+        and snapshot_05.get("download_performed") is False
+        and snapshot_05.get("extraction_executed") is False
+        and snapshot_05.get("model_provider_used") is False
+        and public_search_ux_mvp.get("ux_smoke_passed") is True
+        and public_search_ux_mvp.get("no_js_search_form_passed") is True
+        and public_search_ux_mvp.get("candidate_verified_distinction_passed") is True
+        and public_search_ux_mvp.get("limited_reviewed_record_distinction_passed") is True
+        and public_search_ux_mvp.get("public_projection_read_only") is True
+        and public_search_ux_mvp.get("site_dist_written") is False
+        and public_search_ux_mvp.get("deployment_performed") is False
+        and public_search_ux_mvp.get("public_launch_performed") is False
         and snapshot_04.get("total_limited_reviewed_record_projection_count") == 4
         and snapshot_04.get("manuals_scans_candidate_count") == 16
         and snapshot_04.get("driver_support_candidate_count") == 16
@@ -789,6 +930,45 @@ def _manuals_driver_metrics_included() -> bool:
         and payload.get("needs_public_alpha_reassess_after_ux") is True
         and payload.get("deployment_performed") is False
         and payload.get("public_launch_performed") is False
+        and payload.get("download_performed") is False
+        and payload.get("file_fetch_performed") is False
+        and payload.get("ocr_performed") is False
+        and payload.get("extraction_executed") is False
+        and payload.get("install_execution_enabled") is False
+        and payload.get("model_provider_used") is False
+    )
+
+
+def _public_search_ux_mvp_reassess_metrics_included() -> bool:
+    path = "control/inventory/public_alpha_reassess_05_result.json"
+    if not (REPO_ROOT / path).exists():
+        return False
+    payload = _load_json(path)
+    return (
+        payload.get("existing_reviewed_record_count") == 1
+        and payload.get("reviewed_metadata_record_count") == 1
+        and payload.get("reviewed_source_lead_count") == 2
+        and payload.get("total_limited_reviewed_record_projection_count") == 4
+        and payload.get("candidate_count") == 68
+        and payload.get("domain_count") == 4
+        and payload.get("public_ux_routes_count") == 8
+        and payload.get("result_card_states_count") == 8
+        and payload.get("public_search_ux_mvp_implemented") is True
+        and payload.get("public_search_ux_mvp_verified") is True
+        and payload.get("no_js_required") is True
+        and payload.get("public_projection_read_only") is True
+        and payload.get("launch_recommended") is False
+        and payload.get("needs_more_reviewed_records") is True
+        and payload.get("needs_more_reviewed_artifact_records") is True
+        and payload.get("needs_review_batch_apply_next") is True
+        and payload.get("needs_external_full_discovery") is True
+        and payload.get("needs_main_promotion_before_launch") is True
+        and payload.get("needs_public_alpha_launch_approval") is True
+        and payload.get("deployment_performed") is False
+        and payload.get("public_launch_performed") is False
+        and payload.get("site_dist_written") is False
+        and payload.get("public_mutation_enabled") is False
+        and payload.get("public_live_source_fanout_enabled") is False
         and payload.get("download_performed") is False
         and payload.get("file_fetch_performed") is False
         and payload.get("ocr_performed") is False

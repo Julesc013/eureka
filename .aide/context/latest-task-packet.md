@@ -2,72 +2,65 @@
 
 ## PHASE
 
-SNAPSHOT-REFRESH-05 - refresh public projections after UX MVP
+PUBLIC-ALPHA-REASSESS-05 - reassess alpha after public search UX projection refresh
 
 ## GOAL
 
-Package the current four-domain snapshot plus the public search UX MVP into a
-read-only snapshot/relay/public-alpha reassessment projection set.
+Reassess the read-only public alpha after `SNAPSHOT-REFRESH-05` projected the
+public search UX MVP into snapshot, relay, and public-alpha reassessment inputs.
 
 ## WHY
 
-`PUBLIC-SEARCH-UX-MVP-00` added a no-JS public search UX over existing public
-search view models. The snapshot layer now needs a projection refresh so the UX
-routes, result cards, no-results state, and text/classic examples are visible to
-the next product-readiness reassessment.
+The no-JS public search UX MVP is now present in public-safe examples. The
+product decision needs to record that usefulness improved, while preserving the
+launch boundary because the reviewed corpus is still small and no external full
+discovery, main promotion, or launch approval has occurred.
 
 ## CONTEXT_REFS
 
 - `AGENTS.md`
 - `.aide/reports/eureka-aide-lite-operating-handoff.md`
 - `control/inventory/public_search_ux_mvp_result.json`
-- `control/inventory/snapshot_refresh_04_result.json`
-- `examples/public_search_ux/`
-- `runtime/public_search/ux_mvp.py`
-- `runtime/snapshots/refresh_05.py`
-- `scripts/validate_snapshot_refresh.py`
+- `control/inventory/snapshot_refresh_05_result.json`
+- `runtime/public_alpha/reassess_05.py`
+- `scripts/validate_public_alpha_reassess.py`
+- `examples/public_alpha/reassess/public_search_ux_mvp/`
 
 ## CURRENT_STATE
 
 - branch: `dev`
-- latest prior commit: `ebc7b02b feat(public): add search UX MVP`
+- latest prior commit: `9f643c97 feat(snapshot): refresh public search UX projections`
 - public launch: deferred
-- represented domains: 4
-- total candidates after seed domains: 68
 - total limited reviewed projection count: 4
-- public search UX MVP: implemented as read-only examples, not deployed
+- total candidate count: 68
+- public UX routes: 8
+- result-card states: 8
+- public search UX MVP: implemented and verified in read-only examples
 
 ## ALLOWED_PATHS
 
-- `.aide/queue/SNAPSHOT-REFRESH-05/**`
 - `.aide/queue/PUBLIC-ALPHA-REASSESS-05/**`
+- `.aide/queue/REVIEW-BATCH-APPLY-NEXT-00/**`
 - `.aide/queue/index.yaml`
 - `.aide/context/latest-task-packet.md`
-- `contracts/snapshot/**`
-- `runtime/snapshots/**`
-- `runtime/relay/**`
+- `contracts/publication/**`
 - `runtime/public_alpha/**`
-- `scripts/eureka_snapshot_refresh.py`
-- `scripts/eureka_snapshot_refresh_report.py`
-- `scripts/validate_snapshot_refresh.py`
-- `tests/runtime/test_snapshot_refresh*.py`
-- `tests/operations/test_snapshot_refresh_scripts.py`
-- `tests/scripts/test_validate_snapshot_refresh.py`
-- `examples/snapshots/refresh/public_search_ux_mvp/**`
-- `examples/relay/refresh/public_search_ux_mvp_refreshed_relay_projection.json`
+- `scripts/eureka_public_alpha_reassess.py`
+- `scripts/eureka_public_alpha_reassess_report.py`
+- `scripts/eureka_public_alpha_route_smoke.py`
+- `scripts/validate_public_alpha_reassess.py`
+- `tests/runtime/test_public_alpha_reassess*.py`
+- `tests/operations/test_public_alpha_reassess_scripts.py`
+- `tests/scripts/test_validate_public_alpha_reassess.py`
 - `examples/public_alpha/reassess/public_search_ux_mvp/**`
-- `control/policies/snapshot_refresh*.json`
+- `control/policies/public_alpha_reassess*.json`
 - `control/policies/generated_artifact_policy.json`
-- `control/inventory/snapshot_refresh_05*.json`
-- `control/audits/snapshot-refresh-05-v0/**`
-- `docs/architecture/SNAPSHOT_REFRESH_05.md`
-- `docs/architecture/SNAPSHOT_PUBLIC_SEARCH_UX_PROJECTION.md`
-- `docs/architecture/SNAPSHOT_RESULT_CARD_PROJECTION.md`
-- `docs/operations/SNAPSHOT_REFRESH_05_RUNBOOK.md`
-- `docs/operations/POST_SNAPSHOT_REFRESH_05_PLAN.md`
-- `docs/reference/SNAPSHOT_PUBLIC_SEARCH_UX_SECTION.md`
-- `docs/reference/SNAPSHOT_RESULT_CARD_SECTION.md`
-- `docs/reference/SNAPSHOT_NO_RESULTS_SECTION.md`
+- `control/inventory/public_alpha_reassess_05*.json`
+- `control/audits/public-alpha-reassess-05-v0/**`
+- `docs/architecture/PUBLIC_ALPHA_REASSESS_05.md`
+- `docs/operations/PUBLIC_ALPHA_REASSESS_05_RUNBOOK.md`
+- `docs/operations/POST_PUBLIC_ALPHA_REASSESS_05_PLAN.md`
+- `docs/reference/PUBLIC_ALPHA_UX_MVP_REASSESSMENT.md`
 
 ## FORBIDDEN_PATHS
 
@@ -99,45 +92,46 @@ the next product-readiness reassessment.
 
 ## IMPLEMENTATION
 
-- Add snapshot refresh 05 runtime over refresh 04 plus public search UX MVP handoff.
-- Add public UX, route, result-card, no-results, text, relay, and reassess projection sections.
-- Extend snapshot refresh CLI/report/validator support.
-- Generate examples, inventory, audit pack, docs, and focused tests.
+- Add public alpha reassess 05 runtime over snapshot refresh 05 plus UX MVP evidence.
+- Add UX MVP reassessment contract and explicit full-discovery/promotion policies.
+- Generate metrics, route, domain, candidate, UX MVP, blocker, next-work, boundary, inventory, and audit evidence.
+- Extend public alpha reassess CLI, report CLI, validator, docs, and focused tests.
 
 ## VALIDATION
 
 - `git diff --check`
-- `python scripts/validate_snapshot_refresh.py`
-- public search UX MVP, public search UX model, public alpha reassess, seed batch,
+- `python scripts/validate_public_alpha_reassess.py`
+- snapshot refresh, public search UX MVP, public search UX model, seed batch,
   public-alpha read-only, snapshot relay, architecture, and generated-artifact validators
-- focused snapshot refresh 05 unittest modules
+- focused public alpha reassess unittest modules
 - AIDE Lite doctor, validate, test, selftest, verify, review-pack, and commit check
 
 Full unittest discovery is not run by policy.
 
 ## ACCEPTANCE
 
-- public search UX integrated into snapshot refresh 05
-- 8 public UX routes and 8 result-card states projected
-- public projection remains no-JS and read-only
-- total limited reviewed projection count remains 4
-- total candidate count remains 68
-- no site/dist write, deployment, public launch, or readiness claim
+- UX MVP is verified and improves internal demo/review usefulness.
+- `launch_recommended` remains false.
+- `needs_review_batch_apply_next`, `needs_external_full_discovery`,
+  `needs_main_promotion_before_launch`, and
+  `needs_public_alpha_launch_approval` are true.
+- No site/dist write, deployment, public launch, mutation, live call, download,
+  file fetch, OCR, extraction, model/provider use, or readiness claim.
 
 ## EVIDENCE
 
-- `control/inventory/snapshot_refresh_05_result.json`
-- `control/inventory/snapshot_refresh_05_validation_matrix.json`
-- `control/audits/snapshot-refresh-05-v0/`
-- `examples/snapshots/refresh/public_search_ux_mvp/`
+- `control/inventory/public_alpha_reassess_05_result.json`
+- `control/inventory/public_alpha_reassess_05_validation_matrix.json`
+- `control/audits/public-alpha-reassess-05-v0/`
+- `examples/public_alpha/reassess/public_search_ux_mvp/`
 
 ## OUTPUT_SCHEMA
 
-Final result shape follows `snapshot_refresh_05_result.v0` and reports the
-projection counts, validation status, boundary flags, and recommended next task.
+Final result shape follows `public_alpha_reassess_05_result.v0` and reports the
+UX MVP evidence, blocker register, boundary flags, and recommended next task.
 
 ## TOKEN_ESTIMATE
 
-- latest task packet: under 1600 tokens
+- latest task packet: under 2000 tokens
 - latest context packet: use `.aide/context/latest-context-packet.md`
 - full discovery: not run by policy

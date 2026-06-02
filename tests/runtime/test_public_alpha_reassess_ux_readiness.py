@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import unittest
 
-from runtime.public_alpha import run_public_alpha_reassess_04
+from runtime.public_alpha import run_public_alpha_reassess_04, run_public_alpha_reassess_05
 
 
 class PublicAlphaReassessUxReadinessTests(unittest.TestCase):
@@ -45,6 +45,24 @@ class PublicAlphaReassessUxReadinessTests(unittest.TestCase):
             "ocr_quality_claim_created",
         ):
             self.assertFalse(result["boundary_report"][key], key)
+
+    def test_public_search_ux_mvp_verified_but_not_launch_sufficient(self) -> None:
+        result = run_public_alpha_reassess_05(from_public_search_ux_projection_examples=True)
+
+        self.assertTrue(result["public_search_ux_mvp_implemented"])
+        self.assertTrue(result["public_search_ux_mvp_verified"])
+        self.assertTrue(result["no_js_required"])
+        self.assertTrue(result["public_projection_read_only"])
+        self.assertEqual(8, result["public_ux_routes_count"])
+        self.assertEqual(8, result["result_card_states_count"])
+        self.assertFalse(result["launch_recommended"])
+        self.assertTrue(result["demo_mode_recommended"])
+        self.assertTrue(result["internal_review_recommended"])
+        self.assertTrue(result["needs_review_batch_apply_next"])
+        self.assertTrue(result["needs_external_full_discovery"])
+        self.assertTrue(result["needs_main_promotion_before_launch"])
+        self.assertTrue(result["needs_public_alpha_launch_approval"])
+        self.assertIn("REVIEW-BATCH-APPLY-NEXT-00", result["recommended_next_task"])
 
 
 if __name__ == "__main__":

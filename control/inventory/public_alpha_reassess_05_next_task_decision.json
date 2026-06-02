@@ -1,0 +1,14 @@
+{
+  "demo_mode_recommended": true,
+  "launch_recommended": false,
+  "planned_after": [
+    "SNAPSHOT-REFRESH-06",
+    "PUBLIC-ALPHA-REASSESS-06",
+    "DEV-TO-MAIN-PROMOTION-REVIEW-06"
+  ],
+  "rationale": "UX MVP is present; reviewed corpus size is now the bottleneck.",
+  "recommended_next_task": "REVIEW-BATCH-APPLY-NEXT-00 - Apply next eligible review batches to grow reviewed corpus",
+  "schema_version": "public_alpha_reassess_05_next_task_decision.v0",
+  "status": "pass",
+  "task": "PUBLIC-ALPHA-REASSESS-05"
+}

@@ -180,6 +180,44 @@ class PublicAlphaReassessScriptTests(unittest.TestCase):
         self.assertIn('"task": "PUBLIC-ALPHA-REASSESS-04"', completed.stdout)
         self.assertIn('"public_search_ux_mvp_implemented": false', completed.stdout)
 
+    def test_public_search_ux_mvp_reassess_script_runs(self) -> None:
+        completed = subprocess.run(
+            [
+                sys.executable,
+                str(REPO_ROOT / "scripts" / "eureka_public_alpha_reassess.py"),
+                "--from-public-search-ux-projection-examples",
+                "--json",
+            ],
+            cwd=REPO_ROOT,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            text=True,
+            check=False,
+        )
+
+        self.assertEqual(0, completed.returncode, completed.stderr)
+        self.assertIn('"public_search_ux_mvp_verified": true', completed.stdout)
+        self.assertIn('"needs_review_batch_apply_next": true', completed.stdout)
+
+    def test_public_search_ux_mvp_report_script_runs(self) -> None:
+        completed = subprocess.run(
+            [
+                sys.executable,
+                str(REPO_ROOT / "scripts" / "eureka_public_alpha_reassess_report.py"),
+                "--from-public-search-ux-examples",
+                "--json",
+            ],
+            cwd=REPO_ROOT,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            text=True,
+            check=False,
+        )
+
+        self.assertEqual(0, completed.returncode, completed.stderr)
+        self.assertIn('"task": "PUBLIC-ALPHA-REASSESS-05"', completed.stdout)
+        self.assertIn('"public_search_ux_mvp_verified": true', completed.stdout)
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (5069 chars, 1268 approximate tokens)
+- `.aide/context/latest-task-packet.md` (5049 chars, 1263 approximate tokens)
 
 ## Context Packet Reference
 
@@ -34,29 +34,29 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 ## Changed Files Summary
 
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/PUBLIC-ALPHA-REASSESS-05` (??; matches active task allowed path)
-- allowed: `.aide/queue/SNAPSHOT-REFRESH-05/README.md` (M; matches active task allowed path)
+- allowed: `.aide/queue/PUBLIC-ALPHA-REASSESS-05/README.md` (M; matches active task allowed path)
+- allowed: `.aide/queue/REVIEW-BATCH-APPLY-NEXT-00` (??; matches active task allowed path)
 - allowed: `.aide/queue/index.yaml` (M; matches active task allowed path)
-- allowed: `contracts/snapshot/snapshot_no_results_section.v0.json` (??; matches active task allowed path)
-- allowed: `contracts/snapshot/snapshot_public_route_section.v0.json` (??; matches active task allowed path)
-- allowed: `contracts/snapshot/snapshot_public_search_ux_section.v0.json` (??; matches active task allowed path)
-- allowed: `contracts/snapshot/snapshot_result_card_section.v0.json` (??; matches active task allowed path)
-- allowed: `contracts/snapshot/snapshot_text_projection_section.v0.json` (??; matches active task allowed path)
-- allowed: `control/audits/snapshot-refresh-05-v0` (??; matches active task allowed path)
-- allowed: `control/inventory/snapshot_refresh_05_boundary_report.json` (??; matches active task allowed path)
-- allowed: `control/inventory/snapshot_refresh_05_candidate_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/snapshot_refresh_05_domain_candidate_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/snapshot_refresh_05_failure_repair_log.json` (??; matches active task allowed path)
-- allowed: `control/inventory/snapshot_refresh_05_input_state.json` (??; matches active task allowed path)
-- allowed: `control/inventory/snapshot_refresh_05_next_task_decision.json` (??; matches active task allowed path)
-- allowed: `control/inventory/snapshot_refresh_05_no_results_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/snapshot_refresh_05_public_alpha_reassess_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/snapshot_refresh_05_public_route_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/snapshot_refresh_05_public_search_ux_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/snapshot_refresh_05_relay_projection_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/snapshot_refresh_05_result.json` (??; matches active task allowed path)
-- allowed: `control/inventory/snapshot_refresh_05_result_card_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/snapshot_refresh_05_reviewed_record_matrix.json` (??; matches active task allowed path)
+- allowed: `contracts/publication/public_alpha_ux_mvp_reassess.v0.json` (??; matches active task allowed path)
+- allowed: `control/audits/public-alpha-reassess-05-v0` (??; matches active task allowed path)
+- allowed: `control/inventory/public_alpha_reassess_05_boundary_report.json` (??; matches active task allowed path)
+- allowed: `control/inventory/public_alpha_reassess_05_candidate_usefulness_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/public_alpha_reassess_05_domain_coverage_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/public_alpha_reassess_05_failure_repair_log.json` (??; matches active task allowed path)
+- allowed: `control/inventory/public_alpha_reassess_05_input_state.json` (??; matches active task allowed path)
+- allowed: `control/inventory/public_alpha_reassess_05_launch_blocker_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/public_alpha_reassess_05_limited_reviewed_record_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/public_alpha_reassess_05_next_task_decision.json` (??; matches active task allowed path)
+- allowed: `control/inventory/public_alpha_reassess_05_next_work_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/public_alpha_reassess_05_public_search_ux_mvp_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/public_alpha_reassess_05_public_search_view_model_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/public_alpha_reassess_05_query_coverage_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/public_alpha_reassess_05_result.json` (??; matches active task allowed path)
+- allowed: `control/inventory/public_alpha_reassess_05_route_matrix.json` (??; matches active task allowed path)
+- allowed: `control/inventory/public_alpha_reassess_05_smoke_result.json` (??; matches active task allowed path)
+- allowed: `control/inventory/public_alpha_reassess_05_snapshot_metrics.json` (??; matches active task allowed path)
+- allowed: `control/inventory/public_alpha_reassess_05_validation_matrix.json` (??; matches active task allowed path)
+- allowed: `control/policies/generated_artifact_policy.json` (M; matches active task allowed path)
 - additional changed paths omitted from compact packet: 32; see task evidence changed-files report
 
 ## Validation Summary
@@ -67,8 +67,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 6926
-- approx_tokens: 1732
+- chars: 7035
+- approx_tokens: 1759
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:
