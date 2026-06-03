@@ -2,11 +2,11 @@
 
 ## PHASE
 
-UNSPECIFIED - INDEXLESS-LIVE-SEARCH-FALLBACK-00-PREFLIGHT
+UNSPECIFIED - INDEXLESS-LIVE-SEARCH-FALLBACK-00
 
 ## GOAL
 
-INDEXLESS-LIVE-SEARCH-FALLBACK-00-PREFLIGHT
+INDEXLESS-LIVE-SEARCH-FALLBACK-00
 
 ## WHY
 
@@ -139,8 +139,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4806
-- approx_tokens: 1202
+- chars: 4786
+- approx_tokens: 1197
 - budget_status: PASS
 - warnings:
   - none

@@ -74,6 +74,12 @@ def _coerce_runs(value: Any, field_name: str) -> list[dict[str, Any]]:
                 absence_report,
                 f"{field_name}[{index}].absence_report",
             )
+        fallback_summary = item.get("fallback_summary")
+        if fallback_summary is not None:
+            run["fallback_summary"] = _coerce_json_object(
+                fallback_summary,
+                f"{field_name}[{index}].fallback_summary",
+            )
         runs.append(run)
     return runs
 

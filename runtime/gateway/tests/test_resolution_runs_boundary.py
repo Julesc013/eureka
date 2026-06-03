@@ -3,12 +3,14 @@ from __future__ import annotations
 import tempfile
 import unittest
 
+from runtime.engine.interfaces.public import ResolutionRunRecord
 from runtime.gateway import build_demo_resolution_runs_public_api
 from runtime.gateway.public_api import (
     DeterministicSearchRunRequest,
     ExactResolutionRunRequest,
     PlannedSearchRunRequest,
     ResolutionRunReadRequest,
+    ResolutionRunsPublicApi,
 )
 
 
@@ -88,6 +90,79 @@ class ResolutionRunsPublicApiTestCase(unittest.TestCase):
         self.assertEqual(run["run_kind"], "planned_search")
         self.assertEqual(run["resolution_task"]["task_kind"], "find_latest_compatible_release")
         self.assertEqual(run["resolution_task"]["constraints"]["product_hint"], "Firefox")
+
+    def test_fallback_summary_projects_without_operator_actions(self) -> None:
+        service = FakeFallbackRunService()
+        public_api = ResolutionRunsPublicApi(service)
+
+        response = public_api.start_deterministic_search_run(
+            DeterministicSearchRunRequest.from_parts("missing"),
+        )
+
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(service.search_requests, ["missing"])
+        fallback = response.body["runs"][0]["fallback_summary"]
+        self.assertEqual(fallback["status"], "candidate")
+        self.assertEqual(fallback["public_action_posture"]["allowed"], ["view", "inspect_evidence"])
+        serialized = str(fallback)
+        self.assertNotIn("review_candidate", serialized)
+        self.assertNotIn("promote", serialized)
+        self.assertNotIn("reject", serialized)
+        self.assertNotIn("rebuild_index", serialized)
+
+
+class FakeFallbackRunService:
+    def __init__(self) -> None:
+        self.search_requests: list[str] = []
+
+    def run_exact_resolution(self, request: ExactResolutionRunRequest) -> ResolutionRunRecord:
+        raise AssertionError("fallback projection test should not run exact resolution")
+
+    def run_deterministic_search(self, request: DeterministicSearchRunRequest) -> ResolutionRunRecord:
+        self.search_requests.append(request.query)
+        return ResolutionRunRecord(
+            run_id="run-deterministic-search-0001",
+            run_kind="deterministic_search",
+            requested_value=request.query,
+            status="completed",
+            started_at="2026-04-24T00:00:00+00:00",
+            completed_at="2026-04-24T00:00:00+00:00",
+            checked_source_ids=(),
+            checked_source_families=(),
+            fallback_summary={
+                "schema_version": "eureka.resolution_run.indexless_fallback.v0",
+                "mode": "indexless_live_search_fallback",
+                "status": "candidate",
+                "candidate_count": 1,
+                "candidates": [
+                    {
+                        "candidate_id": "ia-meta-candidate:test",
+                        "status": "candidate",
+                        "verified": False,
+                        "accepted_truth": False,
+                        "public_actions": ["view", "inspect_evidence"],
+                    }
+                ],
+                "accepted_truth": False,
+                "verified": False,
+                "reviewed_record_created": False,
+                "reviewed_index_mutated": False,
+                "public_action_posture": {
+                    "allowed": ["view", "inspect_evidence"],
+                    "operator_actions_exposed": False,
+                    "unsafe_actions_enabled": False,
+                },
+            },
+        )
+
+    def run_planned_search(self, request: PlannedSearchRunRequest) -> ResolutionRunRecord:
+        raise AssertionError("fallback projection test should not run planned search")
+
+    def get_run(self, run_id: str) -> ResolutionRunRecord:
+        raise AssertionError("fallback projection test should not read runs")
+
+    def list_runs(self) -> tuple[ResolutionRunRecord, ...]:
+        return ()
 
 
 if __name__ == "__main__":

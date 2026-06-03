@@ -6,12 +6,13 @@ from runtime.engine.resolution_runs.resolution_run import (
     resolution_run_to_dict,
 )
 from runtime.engine.resolution_runs.run_store import LocalResolutionRunStore
-from runtime.engine.resolution_runs.service import LocalResolutionRunService
+from runtime.engine.resolution_runs.service import LocalResolutionRunService, ResolutionRunFallbackPolicy
 
 __all__ = [
     "LocalResolutionRunService",
     "LocalResolutionRunStore",
     "ResolutionRunNotFoundError",
+    "ResolutionRunFallbackPolicy",
     "resolution_run_from_dict",
     "resolution_run_to_dict",
 ]

@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from typing import Any
+from typing import Any, Mapping
 
 from runtime.engine.interfaces.public.absence import AbsenceReport
 from runtime.engine.interfaces.public.query_plan import ResolutionTask
@@ -113,6 +113,7 @@ class ResolutionRunRecord:
     resolution_task: ResolutionTask | None = None
     result_summary: ResolutionRunResultSummary | None = None
     absence_report: AbsenceReport | None = None
+    fallback_summary: Mapping[str, Any] | None = None
     notices: tuple[Notice, ...] = ()
     created_by_slice: str = "resolution_runs_v0"
 
@@ -136,4 +137,23 @@ class ResolutionRunRecord:
             payload["result_summary"] = self.result_summary.to_dict()
         if self.absence_report is not None:
             payload["absence_report"] = self.absence_report.to_dict()
+        if self.fallback_summary is not None:
+            payload["fallback_summary"] = _clone_json_like(self.fallback_summary, "fallback_summary")
         return payload
+
+
+def _clone_json_like(value: Any, field_name: str) -> Any:
+    if isinstance(value, Mapping):
+        payload: dict[str, Any] = {}
+        for key, item in value.items():
+            if not isinstance(key, str) or not key:
+                raise ValueError(f"{field_name} keys must be non-empty strings.")
+            payload[key] = _clone_json_like(item, f"{field_name}.{key}")
+        return payload
+    if isinstance(value, tuple):
+        return [_clone_json_like(item, f"{field_name}[]") for item in value]
+    if isinstance(value, list):
+        return [_clone_json_like(item, f"{field_name}[]") for item in value]
+    if isinstance(value, (str, int, float, bool)) or value is None:
+        return value
+    raise ValueError(f"{field_name} must contain only JSON-compatible values.")

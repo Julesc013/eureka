@@ -67,6 +67,24 @@ class LocalResolutionRunStoreTestCase(unittest.TestCase):
                         ),
                     ),
                 ),
+                fallback_summary={
+                    "schema_version": "eureka.resolution_run.indexless_fallback.v0",
+                    "mode": "indexless_live_search_fallback",
+                    "status": "candidate",
+                    "candidate_count": 1,
+                    "candidates": [
+                        {
+                            "candidate_id": "ia-meta-candidate:test",
+                            "status": "candidate",
+                            "verified": False,
+                            "accepted_truth": False,
+                        }
+                    ],
+                    "accepted_truth": False,
+                    "verified": False,
+                    "reviewed_record_created": False,
+                    "reviewed_index_mutated": False,
+                },
                 notices=(Notice(code="demo_notice", severity="info", message="Stored for test."),),
             )
 
@@ -82,8 +100,11 @@ class LocalResolutionRunStoreTestCase(unittest.TestCase):
         self.assertEqual(loaded.run_id, run.run_id)
         self.assertEqual(loaded.resolution_task.task_kind if loaded.resolution_task else "", "browse_software")
         self.assertEqual(loaded.result_summary.result_count if loaded.result_summary else 0, 1)
+        self.assertEqual(loaded.fallback_summary["status"] if loaded.fallback_summary else "", "candidate")
+        self.assertFalse(loaded.fallback_summary["verified"] if loaded.fallback_summary else True)
         self.assertEqual(len(listed), 1)
         self.assertEqual(raw_record["record_kind"], "eureka.resolution_run")
+        self.assertEqual(raw_record["fallback_summary"]["status"], "candidate")
         self.assertEqual(raw_index["run_ids"], [run_id])
 
     def test_unknown_run_id_raises_structured_not_found(self) -> None:

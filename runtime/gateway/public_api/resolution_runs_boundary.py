@@ -110,7 +110,7 @@ def resolution_run_not_found_envelope(run_id: str) -> dict[str, Any]:
 
 
 def resolution_run_to_public_entry(run: ResolutionRunRecord) -> dict[str, Any]:
-    return {
+    entry = {
         "run_id": run.run_id,
         "run_kind": run.run_kind,
         "requested_value": run.requested_value,
@@ -126,3 +126,6 @@ def resolution_run_to_public_entry(run: ResolutionRunRecord) -> dict[str, Any]:
         "notices": [notice.to_dict() for notice in run.notices],
         "created_by_slice": run.created_by_slice,
     }
+    if run.fallback_summary is not None:
+        entry["fallback_summary"] = run.to_dict()["fallback_summary"]
+    return entry

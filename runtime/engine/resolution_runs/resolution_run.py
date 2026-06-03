@@ -79,6 +79,11 @@ def resolution_run_from_dict(
             "absence_report",
             source_path,
         ),
+        fallback_summary=_coerce_json_object(
+            raw_record.get("fallback_summary"),
+            "fallback_summary",
+            source_path,
+        ),
         notices=_coerce_notices(raw_record.get("notices"), "notices", source_path),
         created_by_slice=_require_string(
             raw_record.get("created_by_slice"),
@@ -98,6 +103,39 @@ def _coerce_resolution_task(
     if not isinstance(value, Mapping):
         raise MalformedResolutionRunRecordError(source_path, f"Field '{field_name}' must be an object.")
     return resolution_task_from_dict(value, source_path=source_path)
+
+
+def _coerce_json_object(
+    value: Any,
+    field_name: str,
+    source_path: Path,
+) -> dict[str, Any] | None:
+    if value is None:
+        return None
+    if not isinstance(value, Mapping):
+        raise MalformedResolutionRunRecordError(source_path, f"Field '{field_name}' must be an object.")
+    return _clone_json_like(value, field_name, source_path)
+
+
+def _clone_json_like(value: Any, field_name: str, source_path: Path) -> Any:
+    if isinstance(value, Mapping):
+        payload: dict[str, Any] = {}
+        for key, item in value.items():
+            if not isinstance(key, str) or not key:
+                raise MalformedResolutionRunRecordError(
+                    source_path,
+                    f"Field '{field_name}' keys must be non-empty strings.",
+                )
+            payload[key] = _clone_json_like(item, f"{field_name}.{key}", source_path)
+        return payload
+    if isinstance(value, list):
+        return [_clone_json_like(item, f"{field_name}[]", source_path) for item in value]
+    if isinstance(value, (str, int, float, bool)) or value is None:
+        return value
+    raise MalformedResolutionRunRecordError(
+        source_path,
+        f"Field '{field_name}' must contain only JSON-compatible values.",
+    )
 
 
 def _coerce_checked_sources(
