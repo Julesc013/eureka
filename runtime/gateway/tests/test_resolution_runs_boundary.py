@@ -12,6 +12,10 @@ from runtime.gateway.public_api import (
     ResolutionRunReadRequest,
     ResolutionRunsPublicApi,
 )
+from runtime.local.service.workbench_run_review_projection import (
+    PUBLIC_DISALLOWED_ACTIONS,
+    public_surface_operator_action_audit,
+)
 
 
 KNOWN_TARGET_REF = "fixture:software/synthetic-demo-app@1.0.0"
@@ -105,10 +109,11 @@ class ResolutionRunsPublicApiTestCase(unittest.TestCase):
         self.assertEqual(fallback["status"], "candidate")
         self.assertEqual(fallback["public_action_posture"]["allowed"], ["view", "inspect_evidence"])
         serialized = str(fallback)
-        self.assertNotIn("review_candidate", serialized)
-        self.assertNotIn("promote", serialized)
-        self.assertNotIn("reject", serialized)
-        self.assertNotIn("rebuild_index", serialized)
+        for action in PUBLIC_DISALLOWED_ACTIONS:
+            self.assertNotIn(action, serialized)
+        audit = public_surface_operator_action_audit(response.body)
+        self.assertEqual(audit["status"], "pass")
+        self.assertFalse(audit["operator_actions_exposed_publicly"])
 
 
 class FakeFallbackRunService:

@@ -2,11 +2,11 @@
 
 ## PHASE
 
-UNSPECIFIED - REVIEW-LEDGER-00
+UNSPECIFIED - WORKBENCH-RUN-REVIEW-PROJECTION-00
 
 ## GOAL
 
-REVIEW-LEDGER-00
+WORKBENCH-RUN-REVIEW-PROJECTION-00
 
 ## WHY
 
@@ -139,8 +139,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4752
-- approx_tokens: 1188
+- chars: 4788
+- approx_tokens: 1197
 - budget_status: PASS
 - warnings:
   - none
