@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/semantic/navigation.v0.json",
+  "title": "EurekaSemanticNavigationV0",
+  "description": "Canonical navigation item contract for route-stable surfaces.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "navigation_id",
+    "route_ref",
+    "label",
+    "entity_ref",
+    "route_identity_changes_allowed"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "navigation.v0"
+    },
+    "navigation_id": {
+      "type": "string"
+    },
+    "route_ref": {
+      "type": "string"
+    },
+    "label": {
+      "type": "string"
+    },
+    "entity_ref": {
+      "type": "string"
+    },
+    "route_identity_changes_allowed": {
+      "type": "boolean",
+      "const": false
+    }
+  },
+  "x-tsis_contract": true
+}

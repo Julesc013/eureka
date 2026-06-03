@@ -1,0 +1,51 @@
+{
+  "schema_version": "tsis_00_surface_kernel_matrix.v0",
+  "task": "TSIS-00",
+  "implementation_phase": "doctrine_and_contracts_only",
+  "planned_runtime_root": "runtime/surface",
+  "planned_renderer_root": "runtime/surface/renderers",
+  "runtime_implementation_added": false,
+  "renderer_implementation_added": false,
+  "planned_surface_kernel_modules": [
+    "kernel.py",
+    "route_resolver.py",
+    "capability_negotiator.py",
+    "view_model_loader.py",
+    "renderer_dispatch.py",
+    "cache_key.py",
+    "output_policy.py",
+    "fallback.py"
+  ],
+  "forbidden_top_level_roots": [
+    "renderers",
+    "skins",
+    "services",
+    "apps",
+    "data",
+    "infra"
+  ],
+  "future_projection_flow": [
+    "request",
+    "route_resolution",
+    "canonical_view_model_ref",
+    "capability_negotiation",
+    "renderer_dispatch",
+    "cache_key",
+    "surface_projection"
+  ],
+  "pure_projection_boundaries": {
+    "runtime_behavior_changed": false,
+    "renderer_mutated_truth": false,
+    "renderer_called_sources": false,
+    "renderer_changed_policy": false,
+    "public_index_mutated": false,
+    "master_index_mutated": false,
+    "download_performed": false,
+    "file_fetch_performed": false,
+    "ocr_performed": false,
+    "extraction_executed": false,
+    "model_provider_used": false,
+    "deployment_performed": false,
+    "public_launch_performed": false
+  }
+}

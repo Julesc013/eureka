@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/route/route_model.v0.json",
+  "title": "EurekaRouteModelV0",
+  "description": "Route identity model used by TSIS view and representation negotiation.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "route_id",
+    "route_pattern",
+    "view_contract_ref",
+    "entity_kind",
+    "route_identity_changes_allowed"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "route_model.v0"
+    },
+    "route_id": {
+      "type": "string"
+    },
+    "route_pattern": {
+      "type": "string"
+    },
+    "view_contract_ref": {
+      "type": "string"
+    },
+    "entity_kind": {
+      "type": "string"
+    },
+    "route_identity_changes_allowed": {
+      "type": "boolean",
+      "const": false
+    }
+  },
+  "x-tsis_contract": true
+}

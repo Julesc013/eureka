@@ -1,0 +1,52 @@
+{
+  "schema_version": "representation_profile_registry.v0",
+  "task": "TSIS-00",
+  "unknown_profile_fallback_required": true,
+  "profile_selection_may_change_route_identity": false,
+  "profiles": [
+    {
+      "profile_id": "json",
+      "client_family": "api"
+    },
+    {
+      "profile_id": "text",
+      "client_family": "plain_text"
+    },
+    {
+      "profile_id": "terminal",
+      "client_family": "terminal"
+    },
+    {
+      "profile_id": "html2",
+      "client_family": "legacy_web"
+    },
+    {
+      "profile_id": "html32",
+      "client_family": "legacy_web"
+    },
+    {
+      "profile_id": "html4_classic",
+      "client_family": "classic_web"
+    },
+    {
+      "profile_id": "classic_search",
+      "client_family": "classic_web"
+    },
+    {
+      "profile_id": "lite",
+      "client_family": "low_bandwidth_web"
+    },
+    {
+      "profile_id": "rich",
+      "client_family": "modern_web"
+    },
+    {
+      "profile_id": "native_card",
+      "client_family": "native"
+    },
+    {
+      "profile_id": "agent_context",
+      "client_family": "agent"
+    }
+  ]
+}

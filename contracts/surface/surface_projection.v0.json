@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/surface/surface_projection.v0.json",
+  "title": "EurekaSurfaceProjectionV0",
+  "description": "Surface Kernel projection envelope. It records route resolution, representation selection, renderer dispatch, and non-mutation boundaries.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "route",
+    "representation",
+    "renderer_id",
+    "skin_id",
+    "cache_key",
+    "view_model_ref",
+    "boundary_flags"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "surface_projection.v0"
+    },
+    "route": {
+      "type": "object"
+    },
+    "representation": {
+      "type": "object"
+    },
+    "renderer_id": {
+      "type": "string"
+    },
+    "skin_id": {
+      "type": "string"
+    },
+    "cache_key": {
+      "type": "string"
+    },
+    "view_model_ref": {
+      "type": "string"
+    },
+    "boundary_flags": {
+      "type": "object"
+    }
+  },
+  "x-tsis_contract": true,
+  "x-projection_only": true
+}

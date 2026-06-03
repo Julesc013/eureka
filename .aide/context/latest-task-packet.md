@@ -2,114 +2,116 @@
 
 ## PHASE
 
-PUBLIC-ALPHA-REASSESS-06 - reassess alpha after review batch apply snapshot refresh
+TSIS-00 - Temporal Semantic Interface System foundation
 
 ## GOAL
 
-Reassess public-alpha launch/defer posture after `SNAPSHOT-REFRESH-06` projected
-review-batch apply outputs into snapshot, relay, public-search, and public-alpha
-handoffs.
+Establish Eureka's Temporal Semantic Interface System foundation while
+preserving the closed root model from the latest operator correction.
 
 ## IMPLEMENTATION
 
-- Extend the public-alpha reassess runtime with a deterministic
-  `PUBLIC-ALPHA-REASSESS-06` examples path.
-- Project snapshot-refresh-06 and review-batch-apply evidence into metrics,
-  launch blockers, resilience gaps, next-work recommendations, examples,
-  inventory files, and an audit pack.
-- Preserve all non-launch and non-mutation boundaries while routing follow-up
-  work to indexless live search fallback and search usefulness evaluation.
+- Add canonical semantic contracts for entities, actions, status, badges,
+  navigation, and affordances.
+- Add renderer, skin, compatibility-budget, fallback, cache-key, action, route,
+  surface, and policy contracts under existing contract roots.
+- Add canonical view-model contract stubs for search, result cards, object,
+  need, candidate, source, evidence, and status pages.
+- Add semantic and representation registries.
+- Document future `runtime/surface` Surface Kernel placement without
+  implementing runtime behavior in TSIS-00.
+- Add docs, tests, validation, and audit evidence.
+- Keep `INDEXLESS-LIVE-SEARCH-FALLBACK-00` as the next product task.
 
 ## WHY
 
-The reviewed corpus grew from 4 to 12 limited reviewed projections. That is
-materially more useful for internal demo and review, but it is still below the
-25-record launch threshold and lacks resilience/search-usefulness gates.
+Eureka needs one semantic product language with many negotiated
+representations. The latest operator correction says yes to TSIS and no to new
+top-level renderers, skins, services, apps, data, or infra roots.
 
 ## CURRENT_STATE
 
 - branch: `dev`
-- latest prior commit: `47425906 feat(snapshot): refresh after review batch apply`
+- latest prior commit: `b2a0e264 feat(task): reassess alpha after review apply`
 - public launch: deferred
-- snapshot refresh 06: pass
-- review batch apply next: pass
-- public search UX MVP: pass
+- next product task before TSIS correction: `INDEXLESS-LIVE-SEARCH-FALLBACK-00`
 
 ## ACCEPTANCE
 
-- previous limited reviewed projection count: 4
-- new reviewed record delta count: 8
-- total limited reviewed projection count: 12
-- reviewed known need count: 2
-- reviewed bounded absence count: 2
-- candidate count after apply: 60
-- domain count: 4
-- public UX route count: 8
-- result-card states count: 8
-- launch recommended: false
-- reviewed corpus growth confirmed: true
-- indexless live fallback implemented: false
-- search usefulness eval implemented: false
+- semantic contracts added
+- representation supporting contracts added
+- view contract stubs added
+- semantic/affordance/representation registries added
+- action/route/surface/policy supporting contracts added
+- future Surface Kernel runtime placement documented under the existing
+  runtime surface namespace
+- future renderer implementation placement documented under the future Surface
+  Kernel namespace
+- no new top-level renderer, app, service, data, or infra roots
+- TSIS validator passes
+- focused contract and validator tests pass
+- no runtime behavior changes
+- no deployment, launch, index mutation, source call, download, OCR,
+  extraction, or model call
 
 ## OUTPUT_SCHEMA
 
-- `schema_version: public_alpha_reassess_06_result.v0`
-- `task: PUBLIC-ALPHA-REASSESS-06`
+- `schema_version: tsis_00_result.v0`
+- `task: TSIS-00`
 - `status: pass|pass_with_warnings|partial|blocked|fail`
-- counts for limited reviewed projections, reviewed known needs, reviewed
-  bounded absences, candidates, domains, routes, and result-card states
-- launch/defer decision flags
-- next-work recommendation
-- boundary flags with deployment, launch, mutation, download, extraction,
-  model, and readiness claims set false
+- contract/runtime/docs/tests/examples booleans
+- contract/docs/tests booleans
+- closed-root boundary booleans
+- no-runtime-behavior boundary booleans
+- next task recommendation
 
 ## CONTEXT_REFS
 
 - `AGENTS.md`
 - `.aide/reports/eureka-aide-lite-operating-handoff.md`
-- `control/inventory/snapshot_refresh_06_result.json`
-- `control/inventory/review_batch_apply_next_result.json`
-- `control/inventory/public_search_ux_mvp_result.json`
-- `examples/public_alpha/reassess/review_batch_apply/`
-- `runtime/public_alpha/reassess_06.py`
-- `scripts/validate_public_alpha_reassess.py`
+- `control/inventory/public_alpha_reassess_06_result.json`
+- `control/inventory/tsis_00_result.json`
+- `docs/architecture/TEMPORAL_SEMANTIC_INTERFACE_SYSTEM.md`
+- `scripts/validate_temporal_semantic_interface_system.py`
 
 ## ALLOWED_PATHS
 
-- `contracts/publication/**`
-- `runtime/public_alpha/**`
-- `runtime/gateway/**`
-- `runtime/snapshots/**`
-- `runtime/relay/**`
-- `runtime/public_search/**`
-- `scripts/eureka_public_alpha_reassess.py`
-- `scripts/eureka_public_alpha_reassess_report.py`
-- `scripts/eureka_public_alpha_route_smoke.py`
-- `scripts/validate_public_alpha_reassess.py`
-- `tests/runtime/test_public_alpha_reassess*.py`
-- `tests/operations/test_public_alpha_reassess_scripts.py`
-- `tests/scripts/test_validate_public_alpha_reassess.py`
-- `examples/public_alpha/reassess/review_batch_apply/**`
-- `control/policies/public_alpha_reassess*.json`
+- `contracts/semantic/**`
+- `contracts/representation/**`
+- `contracts/action/**`
+- `contracts/route/**`
+- `contracts/surface/**`
+- `contracts/policy/**`
+- `contracts/view/**`
+- `scripts/validate_temporal_semantic_interface_system.py`
+- `tests/contracts/test_temporal_semantic_interface_contracts.py`
+- `tests/scripts/test_validate_temporal_semantic_interface_system.py`
+- `control/policies/temporal_semantic_interface_policy.json`
+- `control/policies/surface_kernel_policy.json`
 - `control/policies/generated_artifact_policy.json`
-- `control/inventory/public_alpha_reassess_06*.json`
-- `control/audits/public-alpha-reassess-06-v0/**`
-- `docs/architecture/PUBLIC_ALPHA_REASSESS_06.md`
-- `docs/operations/PUBLIC_ALPHA_REASSESS_06_RUNBOOK.md`
-- `docs/operations/POST_PUBLIC_ALPHA_REASSESS_06_PLAN.md`
-- `docs/operations/PUBLIC_ALPHA_USEFULNESS_THRESHOLDS.md`
-- `docs/reference/PUBLIC_ALPHA_REASSESS_DECISION.md`
-- `docs/reference/PUBLIC_ALPHA_USEFULNESS_METRICS.md`
-- `docs/reference/PUBLIC_ALPHA_REVIEW_BATCH_APPLY_REASSESSMENT.md`
-- `docs/reference/PUBLIC_ALPHA_RESILIENCE_GAP_REASSESSMENT.md`
-- `.aide/queue/PUBLIC-ALPHA-REASSESS-06/**`
-- `.aide/queue/INDEXLESS-LIVE-SEARCH-FALLBACK-00/**`
+- `control/inventory/semantic_status_registry.json`
+- `control/inventory/semantic_affordance_registry.json`
+- `control/inventory/representation_profile_registry.json`
+- `control/inventory/tsis_00*.json`
+- `control/audits/tsis-00-v0/**`
+- `docs/architecture/TEMPORAL_SEMANTIC_INTERFACE_SYSTEM.md`
+- `docs/architecture/SURFACE_KERNEL.md`
+- `docs/architecture/RENDERER_POLICY.md`
+- `docs/reference/TEMPORAL_SEMANTIC_INTERFACE_CONTRACTS.md`
+- `docs/operations/TSIS_00_RUNBOOK.md`
+- `.aide/queue/TSIS-00/**`
 - `.aide/queue/index.yaml`
 - `.aide/context/latest-task-packet.md`
 - `.aide/context/latest-review-packet.md`
 
 ## FORBIDDEN_PATHS
 
+- top-level renderers root
+- top-level skins root
+- top-level services root
+- top-level apps root
+- top-level data root
+- top-level infra root
 - `eureka-instance/**`
 - `instances/**`
 - `../instances/**`
@@ -124,50 +126,45 @@ materially more useful for internal demo and review, but it is still below the
 - `data/public_index/**`
 - `runtime/extraction/**`
 - `runtime/search_quality/**`
-- `native/**`
-- `crates/**`
 
 ## NON_GOALS
 
 - No deployment, publishing, public launch, or readiness claim.
 - No reviewed/master/public index mutation.
-- No operator instance mutation.
 - No accepted truth or artifact verification claim.
-- No verified download, malware-clean, compatibility, rights-clearance,
-  scan-completeness, or OCR-quality claim.
+- No TSIS runtime implementation in this phase.
 - No live source calls, file fetches, OCR, extraction, execution, install,
-  model/provider calls, source probes, broad crawler, or full unittest discovery.
+  model/provider calls, source probes, broad crawler, or full unittest
+  discovery.
+- No top-level renderer, app, service, data, or infra root creation.
 
 ## VALIDATION
 
 - `git diff --check`
-- `python scripts/validate_public_alpha_reassess.py`
-- `python scripts/validate_snapshot_refresh.py`
-- `python scripts/validate_review_batch_apply_next.py`
-- `python scripts/validate_public_search_ux_mvp.py`
-- `python scripts/validate_public_search_ux_model.py`
-- `python scripts/validate_public_alpha_readonly.py`
-- `python scripts/validate_snapshot_relay.py`
+- `python scripts/validate_temporal_semantic_interface_system.py`
+- `python scripts/validate_representation_contracts.py`
+- `python scripts/validate_semantic_renderer_parity.py`
+- `python scripts/validate_renderer_parity_harness.py`
+- `python -m unittest tests.contracts.test_temporal_semantic_interface_contracts`
+- `python -m unittest tests.scripts.test_validate_temporal_semantic_interface_system`
 - `python scripts/check_architecture_boundaries.py`
 - `python scripts/check_generated_artifact_cleanliness.py --check --json`
-- focused public-alpha reassess unittest modules
 - AIDE doctor/validate/test/selftest/verify/review-pack/commit check
 
 Full unittest discovery is not run by policy.
 
 ## TOKEN_ESTIMATE
 
-- expected_input_tokens: 1500
-- expected_output_tokens: 1800
-- expected_evidence_tokens: 2200
+- expected_input_tokens: 2200
+- expected_output_tokens: 2200
+- expected_evidence_tokens: 2600
 
 ## EVIDENCE
 
-- `control/inventory/public_alpha_reassess_06_result.json`
-- `control/inventory/public_alpha_reassess_06_validation_matrix.json`
-- `control/audits/public-alpha-reassess-06-v0/`
-- `examples/public_alpha/reassess/review_batch_apply/`
-- `.aide/queue/PUBLIC-ALPHA-REASSESS-06/README.md`
+- `control/inventory/tsis_00_result.json`
+- `control/inventory/tsis_00_validation_matrix.json`
+- `control/audits/tsis-00-v0/`
+- `.aide/queue/TSIS-00/README.md`
 
 ## NEXT
 

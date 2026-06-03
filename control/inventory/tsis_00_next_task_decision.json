@@ -1,0 +1,11 @@
+{
+  "schema_version": "tsis_00_next_task_decision.v0",
+  "task": "TSIS-00",
+  "recommended_next_task": "INDEXLESS-LIVE-SEARCH-FALLBACK-00 - Add live metadata fallback when indexes are unavailable",
+  "rationale": [
+    "TSIS-00 establishes semantic/surface projection law without replacing the public-alpha resilience backlog.",
+    "PUBLIC-ALPHA-REASSESS-06 still identifies indexless live search fallback as the next product resilience task."
+  ],
+  "public_launch_recommended": false,
+  "deployment_performed": false
+}

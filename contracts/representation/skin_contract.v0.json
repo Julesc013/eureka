@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/representation/skin_contract.v0.json",
+  "title": "EurekaSkinContractV0",
+  "description": "Skin contract. Skins are authored presentation payloads; they never own product truth.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "skin_id",
+    "supported_profiles",
+    "owns_semantics",
+    "can_hide_required_status",
+    "asset_root"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "skin_contract.v0"
+    },
+    "skin_id": {
+      "type": "string"
+    },
+    "supported_profiles": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "owns_semantics": {
+      "type": "boolean",
+      "const": false
+    },
+    "can_hide_required_status": {
+      "type": "boolean",
+      "const": false
+    },
+    "asset_root": {
+      "type": "string"
+    }
+  },
+  "x-tsis_contract": true
+}

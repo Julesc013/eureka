@@ -191,6 +191,7 @@
     }
   },
   "x-contract_id": "eureka_representation_profile_v0",
+  "x-tsis_contract": true,
   "x-status": "contract_only",
   "x-product_runtime_changed": false,
   "x-public_routes_changed": false,

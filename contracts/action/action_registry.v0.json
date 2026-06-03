@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/action/action_registry.v0.json",
+  "title": "EurekaActionRegistryV0",
+  "description": "Canonical TSIS action registry. Renderers expose registered actions; they do not invent policy or truth.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "actions",
+    "renderer_may_register_actions",
+    "renderer_may_change_policy"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "action_registry.v0"
+    },
+    "actions": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "renderer_may_register_actions": {
+      "type": "boolean",
+      "const": false
+    },
+    "renderer_may_change_policy": {
+      "type": "boolean",
+      "const": false
+    }
+  },
+  "x-tsis_contract": true
+}

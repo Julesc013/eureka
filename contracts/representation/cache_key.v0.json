@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/representation/cache_key.v0.json",
+  "title": "EurekaRepresentationCacheKeyV0",
+  "description": "Stable representation cache-key contract for TSIS projections.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "route_ref",
+    "entity_ref",
+    "representation_profile_id",
+    "skin_id",
+    "language",
+    "vary_fields",
+    "semantic_identity_hash"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "cache_key.v0"
+    },
+    "route_ref": {
+      "type": "string"
+    },
+    "entity_ref": {
+      "type": "string"
+    },
+    "representation_profile_id": {
+      "type": "string"
+    },
+    "skin_id": {
+      "type": "string"
+    },
+    "language": {
+      "type": "string"
+    },
+    "vary_fields": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "semantic_identity_hash": {
+      "type": "string"
+    }
+  },
+  "x-tsis_contract": true
+}

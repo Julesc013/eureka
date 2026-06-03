@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/representation/fallback_rule.v0.json",
+  "title": "EurekaFallbackRuleV0",
+  "description": "Representation fallback rule. Fallback can degrade presentation but must preserve route identity and semantic status.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "from_profile_id",
+    "to_profile_id",
+    "reason",
+    "presentation_degradation_allowed",
+    "semantic_degradation_allowed",
+    "route_identity_change_allowed"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "fallback_rule.v0"
+    },
+    "from_profile_id": {
+      "type": "string"
+    },
+    "to_profile_id": {
+      "type": "string"
+    },
+    "reason": {
+      "type": "string"
+    },
+    "presentation_degradation_allowed": {
+      "type": "boolean"
+    },
+    "semantic_degradation_allowed": {
+      "type": "boolean",
+      "const": false
+    },
+    "route_identity_change_allowed": {
+      "type": "boolean",
+      "const": false
+    }
+  },
+  "x-tsis_contract": true
+}

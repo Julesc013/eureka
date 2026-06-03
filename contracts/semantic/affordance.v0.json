@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/semantic/affordance.v0.json",
+  "title": "EurekaSemanticAffordanceV0",
+  "description": "Canonical action affordance exposed by a view model.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "affordance_id",
+    "label",
+    "action_ref",
+    "enabled",
+    "policy_reason",
+    "renderer_may_change_enabled_state"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "affordance.v0"
+    },
+    "affordance_id": {
+      "type": "string"
+    },
+    "label": {
+      "type": "string"
+    },
+    "action_ref": {
+      "type": "string"
+    },
+    "enabled": {
+      "type": "boolean"
+    },
+    "policy_reason": {
+      "type": "string"
+    },
+    "renderer_may_change_enabled_state": {
+      "type": "boolean",
+      "const": false
+    }
+  },
+  "x-tsis_contract": true
+}

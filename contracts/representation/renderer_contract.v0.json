@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/representation/renderer_contract.v0.json",
+  "title": "EurekaRendererContractV0",
+  "description": "Renderer contract for TSIS. Renderers are pure projections from canonical view models plus profile, skin, and policy context.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "renderer_id",
+    "input_contracts",
+    "output_profiles",
+    "side_effects_allowed",
+    "source_calls_allowed",
+    "policy_decisions_allowed",
+    "truth_mutation_allowed",
+    "max_output_kb",
+    "test_fixtures_required"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "renderer_contract.v0"
+    },
+    "renderer_id": {
+      "type": "string"
+    },
+    "input_contracts": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "output_profiles": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "side_effects_allowed": {
+      "type": "boolean",
+      "const": false
+    },
+    "source_calls_allowed": {
+      "type": "boolean",
+      "const": false
+    },
+    "policy_decisions_allowed": {
+      "type": "boolean",
+      "const": false
+    },
+    "truth_mutation_allowed": {
+      "type": "boolean",
+      "const": false
+    },
+    "max_output_kb": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "test_fixtures_required": {
+      "type": "boolean",
+      "const": true
+    }
+  },
+  "x-tsis_contract": true
+}

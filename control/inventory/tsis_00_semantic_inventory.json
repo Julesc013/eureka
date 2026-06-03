@@ -1,0 +1,78 @@
+{
+  "schema_version": "tsis_00_semantic_inventory.v0",
+  "task": "TSIS-00",
+  "semantic_contract_refs": [
+    "contracts/semantic/entity.v0.json",
+    "contracts/semantic/status.v0.json",
+    "contracts/semantic/affordance.v0.json",
+    "contracts/semantic/badge.v0.json",
+    "contracts/semantic/navigation.v0.json",
+    "contracts/semantic/relationship.v0.json"
+  ],
+  "representation_contract_refs": [
+    "contracts/representation/representation_profile.v0.json",
+    "contracts/representation/renderer_contract.v0.json",
+    "contracts/representation/skin_contract.v0.json",
+    "contracts/representation/compatibility_budget.v0.json",
+    "contracts/representation/fallback_rule.v0.json",
+    "contracts/representation/cache_key.v0.json"
+  ],
+  "view_contract_stub_refs": [
+    "contracts/view/search_page/search_page.v0.json",
+    "contracts/view/result_card/result_card.v0.json",
+    "contracts/view/object_page/object_page.v0.json",
+    "contracts/view/need_page/need_page.v0.json",
+    "contracts/view/candidate_page/candidate_page.v0.json",
+    "contracts/view/source_page/source_page.v0.json",
+    "contracts/view/evidence_page/evidence_page.v0.json",
+    "contracts/view/status_page/status_page.v0.json"
+  ],
+  "registry_refs": [
+    "control/inventory/semantic_status_registry.json",
+    "control/inventory/semantic_affordance_registry.json",
+    "control/inventory/representation_profile_registry.json"
+  ],
+  "canonical_entities": [
+    "search",
+    "object",
+    "need",
+    "candidate",
+    "source",
+    "pack",
+    "task",
+    "evidence",
+    "review",
+    "compare",
+    "account",
+    "status"
+  ],
+  "canonical_status_vocabulary": [
+    "verified",
+    "candidate",
+    "need",
+    "near_miss",
+    "mention_only",
+    "policy_blocked",
+    "private_local",
+    "superseded",
+    "rejected",
+    "unknown"
+  ],
+  "canonical_affordances": [
+    "open",
+    "inspect",
+    "compare",
+    "cite",
+    "download_manifest",
+    "review_candidate",
+    "promote",
+    "reject",
+    "report_risk",
+    "preserve"
+  ],
+  "machine_status_synonyms_allowed": false,
+  "color_only_status_allowed": false,
+  "renderer_fact_invention_allowed": false,
+  "renderer_policy_decision_allowed": false,
+  "route_identity_changes_allowed": false
+}

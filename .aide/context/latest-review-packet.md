@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (6118 chars, 1530 approximate tokens)
+- `.aide/context/latest-task-packet.md` (5843 chars, 1461 approximate tokens)
 
 ## Context Packet Reference
 
@@ -33,31 +33,31 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Changed Files Summary
 
+- allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/INDEXLESS-LIVE-SEARCH-FALLBACK-00` (??; matches active task allowed path)
-- allowed: `.aide/queue/PUBLIC-ALPHA-REASSESS-06/README.md` (M; matches active task allowed path)
+- allowed: `.aide/queue/TSIS-00/README.md` (A; matches active task allowed path)
 - allowed: `.aide/queue/index.yaml` (M; matches active task allowed path)
-- allowed: `contracts/publication/public_alpha_resilience_gap_reassess.v0.json` (??; matches active task allowed path)
-- allowed: `contracts/publication/public_alpha_review_batch_apply_reassess.v0.json` (??; matches active task allowed path)
-- allowed: `control/audits/public-alpha-reassess-06-v0` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_reassess_06_boundary_report.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_reassess_06_candidate_usefulness_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_reassess_06_domain_coverage_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_reassess_06_failure_repair_log.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_reassess_06_input_state.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_reassess_06_launch_blocker_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_reassess_06_limited_reviewed_record_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_reassess_06_next_task_decision.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_reassess_06_next_work_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_reassess_06_public_search_ux_mvp_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_reassess_06_public_search_view_model_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_reassess_06_query_coverage_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_reassess_06_resilience_gap_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_reassess_06_result.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_reassess_06_review_batch_apply_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_reassess_06_route_matrix.json` (??; matches active task allowed path)
-- allowed: `control/inventory/public_alpha_reassess_06_smoke_result.json` (??; matches active task allowed path)
-- additional changed paths omitted from compact packet: 44; see task evidence changed-files report
+- allowed: `contracts/action/action_registry.v0.json` (A; matches active task allowed path)
+- allowed: `contracts/policy/surface_kernel_policy.v0.json` (A; matches active task allowed path)
+- allowed: `contracts/representation/cache_key.v0.json` (A; matches active task allowed path)
+- allowed: `contracts/representation/compatibility_budget.v0.json` (A; matches active task allowed path)
+- allowed: `contracts/representation/fallback_rule.v0.json` (A; matches active task allowed path)
+- allowed: `contracts/representation/renderer_contract.v0.json` (A; matches active task allowed path)
+- allowed: `contracts/representation/representation_profile.v0.json` (M; matches active task allowed path)
+- allowed: `contracts/representation/skin_contract.v0.json` (A; matches active task allowed path)
+- allowed: `contracts/route/route_model.v0.json` (A; matches active task allowed path)
+- allowed: `contracts/semantic/affordance.v0.json` (A; matches active task allowed path)
+- allowed: `contracts/semantic/badge.v0.json` (A; matches active task allowed path)
+- allowed: `contracts/semantic/entity.v0.json` (A; matches active task allowed path)
+- allowed: `contracts/semantic/navigation.v0.json` (A; matches active task allowed path)
+- allowed: `contracts/semantic/relationship.v0.json` (A; matches active task allowed path)
+- allowed: `contracts/semantic/status.v0.json` (A; matches active task allowed path)
+- allowed: `contracts/surface/surface_projection.v0.json` (A; matches active task allowed path)
+- allowed: `contracts/view/candidate_page/candidate_page.v0.json` (A; matches active task allowed path)
+- allowed: `contracts/view/evidence_page/evidence_page.v0.json` (A; matches active task allowed path)
+- allowed: `contracts/view/need_page/need_page.v0.json` (A; matches active task allowed path)
+- allowed: `contracts/view/object_page/object_page.v0.json` (A; matches active task allowed path)
+- additional changed paths omitted from compact packet: 28; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -67,8 +67,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 7087
-- approx_tokens: 1772
+- chars: 6572
+- approx_tokens: 1643
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

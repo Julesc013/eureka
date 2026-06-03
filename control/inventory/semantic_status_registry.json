@@ -1,0 +1,58 @@
+{
+  "schema_version": "semantic_status_registry.v0",
+  "task": "TSIS-00",
+  "machine_status_synonyms_allowed": false,
+  "color_only_status_allowed": false,
+  "statuses": [
+    {
+      "status_id": "verified",
+      "truth_posture": "reviewed_truth",
+      "public_label": "Verified"
+    },
+    {
+      "status_id": "candidate",
+      "truth_posture": "candidate_evidence",
+      "public_label": "Candidate"
+    },
+    {
+      "status_id": "need",
+      "truth_posture": "known_need",
+      "public_label": "Need"
+    },
+    {
+      "status_id": "near_miss",
+      "truth_posture": "nonmatch_context",
+      "public_label": "Near miss"
+    },
+    {
+      "status_id": "mention_only",
+      "truth_posture": "source_mention",
+      "public_label": "Mention only"
+    },
+    {
+      "status_id": "policy_blocked",
+      "truth_posture": "blocked_by_policy",
+      "public_label": "Policy blocked"
+    },
+    {
+      "status_id": "private_local",
+      "truth_posture": "local_only",
+      "public_label": "Private local"
+    },
+    {
+      "status_id": "superseded",
+      "truth_posture": "superseded_record",
+      "public_label": "Superseded"
+    },
+    {
+      "status_id": "rejected",
+      "truth_posture": "review_rejected",
+      "public_label": "Rejected"
+    },
+    {
+      "status_id": "unknown",
+      "truth_posture": "unknown",
+      "public_label": "Unknown"
+    }
+  ]
+}

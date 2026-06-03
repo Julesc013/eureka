@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/semantic/status.v0.json",
+  "title": "EurekaSemanticStatusV0",
+  "description": "Canonical machine status vocabulary for TSIS surfaces.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "status_id",
+    "label",
+    "meaning",
+    "truth_posture",
+    "public_display_required",
+    "color_only_allowed"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "status.v0"
+    },
+    "status_id": {
+      "type": "string"
+    },
+    "label": {
+      "type": "string"
+    },
+    "meaning": {
+      "type": "string"
+    },
+    "truth_posture": {
+      "type": "string"
+    },
+    "public_display_required": {
+      "type": "boolean",
+      "const": true
+    },
+    "color_only_allowed": {
+      "type": "boolean",
+      "const": false
+    }
+  },
+  "x-tsis_contract": true
+}

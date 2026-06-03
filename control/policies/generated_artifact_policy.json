@@ -251,6 +251,12 @@
       "policy": "Task-local PUBLIC-ALPHA-REASSESS-06 audit evidence records product-readiness reassessment after review-batch apply snapshot refresh; it is not deployment, public index, or site/dist state."
     },
     {
+      "path": "control/audits/tsis-00-v0",
+      "artifact_class": "audit_generated",
+      "allow_task_local_drift": true,
+      "policy": "Task-local TSIS-00 audit evidence records Temporal Semantic Interface System foundation validation; it is not deployment, public index, or site/dist state."
+    },
+    {
       "path": "control/audits",
       "artifact_class": "audit_generated",
       "policy": "Audit generated outputs are evidence, not product runtime state."

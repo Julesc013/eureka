@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/policy/surface_kernel_policy.v0.json",
+  "title": "EurekaSurfaceKernelPolicyV0",
+  "description": "Contract for Surface Kernel policy packets.",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "policy_id",
+    "surface_kernel_is_projection_only",
+    "renderers_are_pure",
+    "capability_negotiation_preserves_identity"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "tsis_policy.v0"
+    },
+    "policy_id": {
+      "type": "string"
+    },
+    "surface_kernel_is_projection_only": {
+      "type": "boolean",
+      "const": true
+    },
+    "renderers_are_pure": {
+      "type": "boolean",
+      "const": true
+    },
+    "capability_negotiation_preserves_identity": {
+      "type": "boolean",
+      "const": true
+    }
+  },
+  "x-tsis_contract": true
+}

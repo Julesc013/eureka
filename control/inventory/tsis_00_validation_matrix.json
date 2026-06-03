@@ -1,0 +1,32 @@
+{
+  "schema_version": "tsis_00_validation_matrix.v0",
+  "task": "TSIS-00",
+  "checks": {
+    "temporal_semantic_interface_system": "PASS",
+    "representation_contracts": "PASS",
+    "semantic_renderer_parity": "PASS",
+    "renderer_parity_harness": "PASS",
+    "contract_unittests": "PASS",
+    "full_discovery": "NOT_RUN_BY_POLICY"
+  },
+  "boundaries": {
+    "new_top_level_roots_added": false,
+    "runtime_behavior_changed": false,
+    "surface_kernel_runtime_added": false,
+    "renderer_implementation_added": false,
+    "renderer_mutated_truth": false,
+    "renderer_called_sources": false,
+    "renderer_changed_policy": false,
+    "public_index_mutated": false,
+    "master_index_mutated": false,
+    "download_performed": false,
+    "file_fetch_performed": false,
+    "ocr_performed": false,
+    "extraction_executed": false,
+    "model_provider_used": false,
+    "deployment_performed": false,
+    "public_launch_performed": false,
+    "production_readiness_claimed": false,
+    "public_launch_readiness_claimed": false
+  }
+}

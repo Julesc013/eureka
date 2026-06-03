@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/semantic/badge.v0.json",
+  "title": "EurekaSemanticBadgeV0",
+  "description": "Semantic badge contract. Badges summarize state without replacing status text.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "badge_id",
+    "status_ref",
+    "label",
+    "meaning",
+    "text_required"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "badge.v0"
+    },
+    "badge_id": {
+      "type": "string"
+    },
+    "status_ref": {
+      "type": "string"
+    },
+    "label": {
+      "type": "string"
+    },
+    "meaning": {
+      "type": "string"
+    },
+    "text_required": {
+      "type": "boolean",
+      "const": true
+    }
+  },
+  "x-tsis_contract": true
+}

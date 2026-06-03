@@ -1,0 +1,47 @@
+{
+  "schema_version": "semantic_affordance_registry.v0",
+  "task": "TSIS-00",
+  "renderer_policy_decision_allowed": false,
+  "affordances": [
+    {
+      "affordance_id": "open",
+      "action_posture": "read_only"
+    },
+    {
+      "affordance_id": "inspect",
+      "action_posture": "read_only"
+    },
+    {
+      "affordance_id": "compare",
+      "action_posture": "read_only"
+    },
+    {
+      "affordance_id": "cite",
+      "action_posture": "read_only"
+    },
+    {
+      "affordance_id": "download_manifest",
+      "action_posture": "manifest_only"
+    },
+    {
+      "affordance_id": "review_candidate",
+      "action_posture": "review_gate"
+    },
+    {
+      "affordance_id": "promote",
+      "action_posture": "explicit_gate"
+    },
+    {
+      "affordance_id": "reject",
+      "action_posture": "explicit_gate"
+    },
+    {
+      "affordance_id": "report_risk",
+      "action_posture": "report_only"
+    },
+    {
+      "affordance_id": "preserve",
+      "action_posture": "explicit_gate"
+    }
+  ]
+}

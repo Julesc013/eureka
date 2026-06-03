@@ -1,0 +1,42 @@
+{
+  "schema_version": "tsis_policy.v0",
+  "policy_id": "temporal_semantic_interface_policy",
+  "task": "TSIS-00",
+  "one_semantic_product_language": true,
+  "one_object_model": true,
+  "one_route_model": true,
+  "one_evidence_model": true,
+  "one_action_model": true,
+  "one_resolution_run_model": true,
+  "many_representations": true,
+  "contracts_own_meaning": true,
+  "runtime_owns_kernels": true,
+  "tsis_00_runtime_implementation_enabled": false,
+  "surfaces_own_product_projections": true,
+  "renderers_are_pure": true,
+  "capability_negotiation_preserves_identity": true,
+  "unknown_fields_are_forward_compatible": true,
+  "no_new_top_level_roots": true,
+  "planned_renderer_root": "runtime/surface/renderers",
+  "skin_roots": [
+    "site/assets/skins",
+    "examples/skins"
+  ],
+  "service_root": "runtime",
+  "app_root": "surfaces",
+  "deployment_enabled": false,
+  "public_launch_enabled": false,
+  "source_calls_enabled": false,
+  "downloads_enabled": false,
+  "file_fetches_enabled": false,
+  "ocr_enabled": false,
+  "extraction_enabled": false,
+  "model_provider_enabled": false,
+  "site_dist_write_enabled": false,
+  "public_index_mutation_enabled": false,
+  "master_index_mutation_enabled": false,
+  "notes": [
+    "TSIS-00 is semantic law and contract foundation, not runtime implementation or deployment.",
+    "No top-level renderers, skins, services, apps, data, or infra roots are introduced."
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/semantic/entity.v0.json",
+  "title": "EurekaSemanticEntityV0",
+  "description": "Canonical TSIS entity contract. Entities carry product meaning; surfaces only project them.",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "entity_id",
+    "entity_kind",
+    "canonical_status",
+    "canonical_route",
+    "evidence_refs",
+    "available_affordances",
+    "limitations"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "entity.v0"
+    },
+    "entity_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "entity_kind": {
+      "type": "string",
+      "enum": [
+        "search",
+        "object",
+        "need",
+        "candidate",
+        "source",
+        "pack",
+        "task",
+        "evidence",
+        "review",
+        "compare",
+        "account",
+        "status"
+      ]
+    },
+    "canonical_status": {
+      "type": "string"
+    },
+    "canonical_route": {
+      "type": "string"
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "available_affordances": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "x-tsis_contract": true,
+  "x-renderers_may_invent_facts": false,
+  "x-route_identity_changes_allowed": false
+}

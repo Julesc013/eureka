@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/representation/compatibility_budget.v0.json",
+  "title": "EurekaCompatibilityBudgetV0",
+  "description": "Per-representation compatibility budget. Budgets prevent old-client profiles from receiving oversized or capability-incompatible payloads.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "profile_id",
+    "max_page_weight_kb",
+    "javascript_allowed",
+    "css_required",
+    "unicode_policy",
+    "unknown_field_policy"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "compatibility_budget.v0"
+    },
+    "profile_id": {
+      "type": "string"
+    },
+    "max_page_weight_kb": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "javascript_allowed": {
+      "type": "boolean"
+    },
+    "css_required": {
+      "type": "boolean"
+    },
+    "unicode_policy": {
+      "type": "string"
+    },
+    "unknown_field_policy": {
+      "type": "string",
+      "enum": [
+        "ignore_unknown_fields",
+        "show_unknown_as_text",
+        "link_unknown_without_interpreting"
+      ]
+    }
+  },
+  "x-tsis_contract": true
+}

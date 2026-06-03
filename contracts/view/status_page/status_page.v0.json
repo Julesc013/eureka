@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/view/status_page/status_page.v0.json",
+  "title": "EurekaStatusPageViewV0",
+  "description": "TSIS status page view-model contract stub.",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "view_model_id",
+    "canonical_route",
+    "semantic_entities",
+    "result_states",
+    "available_affordances",
+    "evidence_summary",
+    "limitations"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "status_page.v0"
+    },
+    "view_model_id": {
+      "type": "string"
+    },
+    "canonical_route": {
+      "type": "string"
+    },
+    "semantic_entities": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "result_states": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "available_affordances": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "evidence_summary": {
+      "type": "object"
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "x-tsis_contract": true
+}
