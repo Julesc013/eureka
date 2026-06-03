@@ -1,0 +1,11 @@
+{
+  "schema_version": "reviewed_record.v0.proposed",
+  "status": "planning_only",
+  "required_fields": [
+    "record_id", "title", "object_type", "status", "review_event_ref",
+    "evidence_refs", "source_observation_refs", "risk_rights_posture",
+    "public_visibility", "known_gaps"
+  ],
+  "allowed_statuses": ["verified", "near_miss", "policy_blocked", "superseded"]
+}
+

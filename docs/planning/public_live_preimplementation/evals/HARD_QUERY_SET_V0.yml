@@ -1,0 +1,40 @@
+schema_version: hard_query_set_v0
+status: planning_only
+queries:
+  - id: windows_7_apps
+    query: "Windows 7 apps"
+    expected_answer_shape: "curated compatible software candidates and reviewed examples"
+    allowed_source_families: ["reviewed_local", "internet_archive_metadata"]
+    minimum_evidence: "reviewed record or source observation with compatibility hints"
+    ambiguity: "apps may mean utilities, games, or support software"
+  - id: driver_for_win98
+    query: "driver for Win98"
+    expected_answer_shape: "device-specific driver candidates, needs if device missing"
+    allowed_source_families: ["reviewed_local", "internet_archive_metadata", "vendor_metadata"]
+    minimum_evidence: "device/platform/source evidence"
+    ambiguity: "query lacks hardware model"
+  - id: old_blue_ftp_client_xp
+    query: "old blue FTP client for XP"
+    expected_answer_shape: "candidate software identities and near misses"
+    allowed_source_families: ["reviewed_local", "internet_archive_metadata"]
+    minimum_evidence: "name/version/platform/source hint"
+    ambiguity: "color clue may be weak memory"
+  - id: sound_blaster_ct1740_manual
+    query: "manual for Sound Blaster CT1740"
+    expected_answer_shape: "manual/document candidates and reviewed docs"
+    allowed_source_families: ["reviewed_local", "internet_archive_metadata", "manual_source_pack"]
+    minimum_evidence: "model identifier and document source observation"
+    ambiguity: "manual may be bundled in broader scan"
+  - id: firefox_before_xp_support_ended
+    query: "latest Firefox before XP support ended"
+    expected_answer_shape: "reviewed version answer with compatibility evidence"
+    allowed_source_families: ["reviewed_local", "internet_archive_metadata", "web_archive_metadata"]
+    minimum_evidence: "version, date, support note source"
+    ambiguity: "ESR versus regular release"
+  - id: ray_tracing_1994_magazine
+    query: "article about ray tracing in a 1994 magazine"
+    expected_answer_shape: "article/source scan candidate with issue and page clues"
+    allowed_source_families: ["reviewed_local", "internet_archive_metadata", "article_scan_fixture"]
+    minimum_evidence: "magazine issue and article mention"
+    ambiguity: "many magazines and article titles possible"
+

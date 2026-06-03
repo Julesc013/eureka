@@ -2,170 +2,146 @@
 
 ## PHASE
 
-TSIS-00 - Temporal Semantic Interface System foundation
+UNSPECIFIED - EUREKA-PUBLIC-LIVE-PREIMPLEMENTATION-MEGA-00
 
 ## GOAL
 
-Establish Eureka's Temporal Semantic Interface System foundation while
-preserving the closed root model from the latest operator correction.
-
-## IMPLEMENTATION
-
-- Add canonical semantic contracts for entities, actions, status, badges,
-  navigation, and affordances.
-- Add renderer, skin, compatibility-budget, fallback, cache-key, action, route,
-  surface, and policy contracts under existing contract roots.
-- Add canonical view-model contract stubs for search, result cards, object,
-  need, candidate, source, evidence, and status pages.
-- Add semantic and representation registries.
-- Document future `runtime/surface` Surface Kernel placement without
-  implementing runtime behavior in TSIS-00.
-- Add docs, tests, validation, and audit evidence.
-- Keep `INDEXLESS-LIVE-SEARCH-FALLBACK-00` as the next product task.
+EUREKA-PUBLIC-LIVE-PREIMPLEMENTATION-MEGA-00
 
 ## WHY
 
-Eureka needs one semantic product language with many negotiated
-representations. The latest operator correction says yes to TSIS and no to new
-top-level renderers, skins, services, apps, data, or infra roots.
-
-## CURRENT_STATE
-
-- branch: `dev`
-- latest prior commit: `b2a0e264 feat(task): reassess alpha after review apply`
-- public launch: deferred
-- next product task before TSIS correction: `INDEXLESS-LIVE-SEARCH-FALLBACK-00`
-
-## ACCEPTANCE
-
-- semantic contracts added
-- representation supporting contracts added
-- view contract stubs added
-- semantic/affordance/representation registries added
-- action/route/surface/policy supporting contracts added
-- future Surface Kernel runtime placement documented under the existing
-  runtime surface namespace
-- future renderer implementation placement documented under the future Surface
-  Kernel namespace
-- no new top-level renderer, app, service, data, or infra roots
-- TSIS validator passes
-- focused contract and validator tests pass
-- no runtime behavior changes
-- no deployment, launch, index mutation, source call, download, OCR,
-  extraction, or model call
-
-## OUTPUT_SCHEMA
-
-- `schema_version: tsis_00_result.v0`
-- `task: TSIS-00`
-- `status: pass|pass_with_warnings|partial|blocked|fail`
-- contract/runtime/docs/tests/examples booleans
-- contract/docs/tests booleans
-- closed-root boundary booleans
-- no-runtime-behavior boundary booleans
-- next task recommendation
+Continue AIDE token survival by using repo-local context refs, compact objectives, deterministic validation, and evidence packets instead of long chat history.
 
 ## CONTEXT_REFS
 
 - `AGENTS.md`
-- `.aide/reports/eureka-aide-lite-operating-handoff.md`
-- `control/inventory/public_alpha_reassess_06_result.json`
-- `control/inventory/tsis_00_result.json`
-- `docs/architecture/TEMPORAL_SEMANTIC_INTERFACE_SYSTEM.md`
-- `scripts/validate_temporal_semantic_interface_system.py`
+- `.aide/queue/index.yaml`
+- `.aide/memory/project-state.md`
+- `.aide/memory/decisions.md`
+- `.aide/memory/open-risks.md`
+- `.aide/context/repo-snapshot.json` (present)
+- `.aide/context/repo-map.json` (present)
+- `.aide/context/repo-map.md` (present)
+- `.aide/context/test-map.json` (present)
+- `.aide/context/context-index.json` (present)
+- `.aide/context/latest-context-packet.md` (present)
+- `.aide/repo/latest-repo-intelligence.md` (present)
+- `.aide/repo/file-inventory.json` (present)
+- `.aide/reports/file-quality-summary.md` (present)
+- `.aide/reports/file-quality-ledger.json` (present)
+- `.aide/refactors/latest-refactor-readiness.md` (present)
+- `.aide/refactors/latest-refactor-plan.example.json` (present)
+- `.aide/routing/latest-route-decision.json` (present)
+- `.aide/routing/latest-route-decision.md` (present)
+- `.aide/cache/latest-cache-keys.json` (present)
+- `.aide/cache/latest-cache-keys.md` (present)
+- `.aide/prompts/compact-task.md`
+- `.aide/policies/token-budget.yaml`
+- `.aide/policies/cache.yaml`
+- `.aide/policies/local-state.yaml`
 
 ## ALLOWED_PATHS
 
-- `contracts/semantic/**`
-- `contracts/representation/**`
-- `contracts/action/**`
-- `contracts/route/**`
-- `contracts/surface/**`
-- `contracts/policy/**`
-- `contracts/view/**`
-- `scripts/validate_temporal_semantic_interface_system.py`
-- `tests/contracts/test_temporal_semantic_interface_contracts.py`
-- `tests/scripts/test_validate_temporal_semantic_interface_system.py`
-- `control/policies/temporal_semantic_interface_policy.json`
-- `control/policies/surface_kernel_policy.json`
-- `control/policies/generated_artifact_policy.json`
-- `control/inventory/semantic_status_registry.json`
-- `control/inventory/semantic_affordance_registry.json`
-- `control/inventory/representation_profile_registry.json`
-- `control/inventory/tsis_00*.json`
-- `control/audits/tsis-00-v0/**`
-- `docs/architecture/TEMPORAL_SEMANTIC_INTERFACE_SYSTEM.md`
-- `docs/architecture/SURFACE_KERNEL.md`
-- `docs/architecture/RENDERER_POLICY.md`
-- `docs/reference/TEMPORAL_SEMANTIC_INTERFACE_CONTRACTS.md`
-- `docs/operations/TSIS_00_RUNBOOK.md`
-- `.aide/queue/TSIS-00/**`
-- `.aide/queue/index.yaml`
-- `.aide/context/latest-task-packet.md`
-- `.aide/context/latest-review-packet.md`
+- `.aide/**`
+- `AGENTS.md`
+- `docs/operations/**`
+- `docs/reference/**`
+- `control/inventory/**`
+- `control/audits/**`
+- `control/policies/**`
+- `scripts/local_queue_progress.py`
+- `scripts/validate_*.py`
+- `scripts/check_*.py`
+- `tests/operations/**`
+- `tests/aide/**`
 
 ## FORBIDDEN_PATHS
 
-- top-level renderers root
-- top-level skins root
-- top-level services root
-- top-level apps root
-- top-level data root
-- top-level infra root
-- `eureka-instance/**`
-- `instances/**`
-- `../instances/**`
-- `.aide.local/**`
-- `../eureka-test-runs/**`
-- `secrets/**`
+- `.git/**`
 - `.env`
-- raw live source responses
-- raw full-discovery stdout/stderr logs
-- `site/dist/**`
-- `site/dist/data/public_index/**`
-- `data/public_index/**`
-- `runtime/extraction/**`
-- `runtime/search_quality/**`
+- `secrets/**`
+- `.aide.local/**`
+- `.local/**`
+- `.cache/**`
+- `eureka-instance/**`
+- `runtime/**`
+- `contracts/**`
+- `surfaces/**`
+- `site/**`
+- `native/**`
+- `crates/**`
+- `examples/**`
+- `evals/**`
+- `tests/**` unless this is an AIDE/control-plane test repair
+- `scripts/**` unless this is an AIDE validator/check repair
+- raw provider credentials, API keys, local caches, raw prompt logs, raw responses, and source AIDE repository state
 
-## NON_GOALS
+## IMPLEMENTATION
 
-- No deployment, publishing, public launch, or readiness claim.
-- No reviewed/master/public index mutation.
-- No accepted truth or artifact verification claim.
-- No TSIS runtime implementation in this phase.
-- No live source calls, file fetches, OCR, extraction, execution, install,
-  model/provider calls, source probes, broad crawler, or full unittest
-  discovery.
-- No top-level renderer, app, service, data, or infra root creation.
+- Read the queue packet and relevant repo refs first.
+- Keep changes inside the allowed paths.
+- Make the smallest coherent diff that satisfies acceptance.
+- Preserve generated/manual boundaries.
+- Do not inline whole source files unless exact contents are required.
+- Use exact refs such as `path#Lstart-Lend` when file details are load-bearing.
 
 ## VALIDATION
 
-- `git diff --check`
-- `python scripts/validate_temporal_semantic_interface_system.py`
-- `python scripts/validate_representation_contracts.py`
-- `python scripts/validate_semantic_renderer_parity.py`
-- `python scripts/validate_renderer_parity_harness.py`
-- `python -m unittest tests.contracts.test_temporal_semantic_interface_contracts`
-- `python -m unittest tests.scripts.test_validate_temporal_semantic_interface_system`
+- `py -3 .aide/scripts/aide_lite.py doctor`
+- `py -3 .aide/scripts/aide_lite.py validate`
+- `py -3 .aide/scripts/aide_lite.py snapshot`
+- `py -3 .aide/scripts/aide_lite.py index`
+- `py -3 .aide/scripts/aide_lite.py context`
+- `py -3 .aide/scripts/aide_lite.py pack --task "AIDE-EVAL-GREEN-01"`
+- `py -3 .aide/scripts/aide_lite.py test`
+- `py -3 .aide/scripts/aide_lite.py selftest`
+- `py -3 .aide/scripts/aide_lite.py verify`
+- `py -3 .aide/scripts/aide_lite.py review-pack`
+- `py -3 .aide/scripts/aide_lite.py eval run`
 - `python scripts/check_architecture_boundaries.py`
 - `python scripts/check_generated_artifact_cleanliness.py --check --json`
-- AIDE doctor/validate/test/selftest/verify/review-pack/commit check
+- `python -m unittest discover -s tests -t .`
+- `git diff --check`
 
-Full unittest discovery is not run by policy.
+## COMMITS
 
-## TOKEN_ESTIMATE
-
-- expected_input_tokens: 2200
-- expected_output_tokens: 2200
-- expected_evidence_tokens: 2600
+- Commit coherent subdeliverables with verbose bodies.
+- Stop at review gates.
 
 ## EVIDENCE
 
-- `control/inventory/tsis_00_result.json`
-- `control/inventory/tsis_00_validation_matrix.json`
-- `control/audits/tsis-00-v0/`
-- `.aide/queue/TSIS-00/README.md`
+- changed files
+- validation commands and results
+- verifier result
+- review packet path and result when review-pack is available
+- advisory route decision path and result when Q17 routing is available
+- compact packet size and budget status
+- unresolved risks and deferrals
 
-## NEXT
+## NON_GOALS
 
-`INDEXLESS-LIVE-SEARCH-FALLBACK-00 - Add live metadata fallback when indexes are unavailable`
+- No Eureka product behavior change.
+- No source probes, extraction, model/provider calls, deployment, production-readiness claim, public-launch claim, main promotion, force-push, history rewrite, SYN implementation, or F0 implementation.
+- No Gateway, provider calls, live model routing, local model setup, exact tokenizer, provider billing ledger, Runtime, Service, Commander, Mobile, MCP/A2A, UI, host/app implementation, or autonomous loop unless a future reviewed queue item explicitly authorizes it.
+
+## ACCEPTANCE
+
+- Task-specific acceptance criteria are met.
+- Validation is run and recorded.
+- Evidence is written.
+- No secrets, raw prompt logs, local caches, or `.aide.local` contents are committed.
+
+## OUTPUT_SCHEMA
+
+Return a compact final report with `STATUS`, `SUMMARY`, `COMMITS`, `CHANGED_FILES`, `VALIDATION`, route/verifier/token results, `RISKS`, and `NEXT`.
+Include the verifier result when Q12 verifier behavior is available.
+
+## TOKEN_ESTIMATE
+
+- method: chars / 4, rounded up
+- chars: 4808
+- approx_tokens: 1202
+- budget_status: PASS
+- warnings:
+  - none
+- formal ledger: `.aide/reports/token-ledger.jsonl`

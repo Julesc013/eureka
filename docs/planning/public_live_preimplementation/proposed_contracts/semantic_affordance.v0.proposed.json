@@ -1,0 +1,18 @@
+{
+  "schema_version": "semantic_affordance.v0.proposed",
+  "status": "planning_only",
+  "affordances": [
+    {"id": "view", "class": "public_alpha_allowed"},
+    {"id": "inspect_evidence", "class": "public_alpha_allowed"},
+    {"id": "compare", "class": "public_alpha_allowed"},
+    {"id": "cite", "class": "public_alpha_allowed"},
+    {"id": "export_manifest", "class": "public_alpha_allowed_if_safe"},
+    {"id": "watch_need", "class": "future_gated"},
+    {"id": "report_issue", "class": "public_alpha_allowed_external_only"},
+    {"id": "review_candidate", "class": "operator_only"},
+    {"id": "promote", "class": "operator_only"},
+    {"id": "reject", "class": "operator_only"},
+    {"id": "rebuild_index", "class": "operator_only"}
+  ]
+}
+

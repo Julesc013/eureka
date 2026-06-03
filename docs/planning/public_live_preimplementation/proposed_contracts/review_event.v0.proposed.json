@@ -1,0 +1,13 @@
+{
+  "schema_version": "review_event.v0.proposed",
+  "status": "planning_only",
+  "required_fields": [
+    "review_event_id", "target_id", "decision", "actor", "decided_at",
+    "evidence_refs", "rationale", "resulting_status", "audit_posture"
+  ],
+  "decisions": [
+    "promote", "reject", "supersede", "mark_near_miss", "mark_need",
+    "mark_policy_blocked", "request_more_evidence"
+  ]
+}
+

@@ -1,0 +1,14 @@
+{
+  "schema_version": "source_observation.v0.proposed",
+  "status": "planning_only",
+  "required_fields": [
+    "observation_id", "source_family", "observed_at", "observation_kind",
+    "source_reference", "normalized_summary", "evidence_posture",
+    "policy_posture", "public_visibility"
+  ],
+  "invariants": [
+    "observation_is_not_truth",
+    "observation_cannot_write_reviewed_record"
+  ]
+}
+

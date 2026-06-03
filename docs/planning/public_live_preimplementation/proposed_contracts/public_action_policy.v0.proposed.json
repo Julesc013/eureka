@@ -1,0 +1,18 @@
+{
+  "schema_version": "public_action_policy.v0.proposed",
+  "status": "planning_only",
+  "default_posture": "deny_unless_allowed",
+  "allowed_public_alpha": ["view", "inspect_evidence", "compare", "cite"],
+  "allowed_public_alpha_conditional": ["export_manifest", "report_issue"],
+  "operator_only": ["review_candidate", "promote", "reject", "rebuild_index"],
+  "unsafe_for_v1": [
+    "download",
+    "install",
+    "launch_emulator",
+    "run_extraction",
+    "submit_direct_evidence",
+    "crawl_source",
+    "arbitrary_live_lookup"
+  ]
+}
+

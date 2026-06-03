@@ -1,0 +1,17 @@
+{
+  "schema_version": "route_model.v0.proposed",
+  "status": "planning_only",
+  "public_routes": [
+    "/", "/search", "/object/{id}", "/candidate/{id}", "/need/{id}",
+    "/source/{id}", "/evidence/{id}", "/status", "/about", "/method"
+  ],
+  "operator_routes": [
+    "/run/{id}", "/workunit/{id}", "/review/{id}", "/index-build/{id}"
+  ],
+  "rules": {
+    "public_routes_read_only": true,
+    "operator_routes_private": true,
+    "route_resolves_to_view_model": true
+  }
+}
+

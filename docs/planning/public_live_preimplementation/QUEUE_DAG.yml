@@ -1,0 +1,56 @@
+schema_version: public_live_preimplementation_queue_dag.v0
+authority: docs/planning/public_live_preimplementation
+status: planning_only
+nodes:
+  AUTHORITY-LOCK-00:
+    depends_on: []
+    current_posture: satisfied_for_planning
+  PUBLIC-SCOPE-V1-00:
+    depends_on: [AUTHORITY-LOCK-00]
+    current_posture: partially_satisfied_existing_docs
+  SEMANTIC-CORE-CONTRACTS-00:
+    depends_on: [PUBLIC-SCOPE-V1-00]
+    current_posture: mostly_satisfied_by_TSIS_00_needs_gap_audit
+  RESOLVER-SPINE-00:
+    depends_on: [SEMANTIC-CORE-CONTRACTS-00]
+    current_posture: partially_satisfied_existing_runtime_needs_gap_audit
+  INDEXLESS-LIVE-SEARCH-FALLBACK-00:
+    depends_on: [RESOLVER-SPINE-00]
+    current_posture: current_recommended_product_task
+  REVIEW-LEDGER-00:
+    depends_on: [RESOLVER-SPINE-00]
+    current_posture: partially_satisfied_existing_review_paths
+  WORKBENCH-RUN-REVIEW-PROJECTION-00:
+    depends_on: [RESOLVER-SPINE-00, REVIEW-LEDGER-00]
+    current_posture: partially_satisfied_existing_workbench
+  SURFACE-KERNEL-00:
+    depends_on: [SEMANTIC-CORE-CONTRACTS-00, PUBLIC-SCOPE-V1-00]
+    current_posture: contract_foundation_exists_runtime_deferred
+  BASELINE-RENDERERS-00:
+    depends_on: [SURFACE-KERNEL-00]
+    current_posture: partially_satisfied_snapshot_and_public_renderers
+  HARD-QUERY-EVAL-00:
+    depends_on: [PUBLIC-SCOPE-V1-00, SEMANTIC-CORE-CONTRACTS-00]
+    current_posture: eval_structure_exists_needs_current_run
+  REVIEWED-SEED-CORPUS-00:
+    depends_on: [HARD-QUERY-EVAL-00, REVIEW-LEDGER-00]
+    current_posture: below_recent_thresholds
+  PUBLIC-ALPHA-READINESS-00:
+    depends_on: [REVIEWED-SEED-CORPUS-00, BASELINE-RENDERERS-00, OPS-HARDENING-00]
+    current_posture: deferred_until_usefulness_and_fallback
+  PUBLIC-ALPHA-LAUNCH-00:
+    depends_on: [PUBLIC-ALPHA-READINESS-00]
+    current_posture: deferred_manual_approval_required
+  OPS-HARDENING-00:
+    depends_on: [PUBLIC-SCOPE-V1-00]
+    current_posture: partially_satisfied_existing_runbooks
+  PUBLIC-BETA-00:
+    depends_on: [PUBLIC-ALPHA-LAUNCH-00, OPS-HARDENING-00]
+    current_posture: future
+  PUBLIC-1.0-00:
+    depends_on: [PUBLIC-BETA-00]
+    current_posture: future
+recommended_start:
+  - INDEXLESS-LIVE-SEARCH-FALLBACK-00-PREFLIGHT
+  - INDEXLESS-LIVE-SEARCH-FALLBACK-00
+

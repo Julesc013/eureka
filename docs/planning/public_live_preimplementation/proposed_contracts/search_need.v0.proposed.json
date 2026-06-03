@@ -1,0 +1,10 @@
+{
+  "schema_version": "search_need.v0.proposed",
+  "status": "planning_only",
+  "required_fields": [
+    "need_id", "query", "need_reason", "missing_information",
+    "allowed_source_families", "created_from_run", "public_visibility"
+  ],
+  "allowed_statuses": ["need", "policy_blocked", "unknown"]
+}
+

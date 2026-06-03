@@ -1,0 +1,11 @@
+{
+  "schema_version": "representation_profile.v0.proposed",
+  "status": "planning_only",
+  "profiles": [
+    {"id": "json_v0", "fallback": "text_v0"},
+    {"id": "text_v0", "fallback": null},
+    {"id": "html_basic_v0", "fallback": "text_v0"},
+    {"id": "snapshot_v0", "fallback": "json_v0"}
+  ]
+}
+

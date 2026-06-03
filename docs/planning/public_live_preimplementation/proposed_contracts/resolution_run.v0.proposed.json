@@ -1,0 +1,18 @@
+{
+  "schema_version": "resolution_run.v0.proposed",
+  "status": "planning_only",
+  "required_fields": [
+    "run_id", "query", "state", "policy_context", "created_at",
+    "events", "work_units", "outputs"
+  ],
+  "states": [
+    "created", "local_lookup", "needs_fallback", "work_units_created",
+    "observations_received", "candidates_created", "review_pending",
+    "completed", "blocked", "failed"
+  ],
+  "invariants": [
+    "fallback_enters_through_run",
+    "reviewed_truth_not_created_by_run"
+  ]
+}
+

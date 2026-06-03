@@ -1,0 +1,15 @@
+{
+  "schema_version": "fallback_rule.v0.proposed",
+  "status": "planning_only",
+  "search_degradation": [
+    "reviewed_local_result", "reviewed_near_match",
+    "candidate_from_reviewed_source_observation",
+    "candidate_from_fallback_observation", "known_need", "known_absence",
+    "policy_blocked", "unavailable"
+  ],
+  "representation_degradation": [
+    "rich_html", "basic_html", "classic_html", "text", "json_manifest",
+    "static_snapshot"
+  ]
+}
+

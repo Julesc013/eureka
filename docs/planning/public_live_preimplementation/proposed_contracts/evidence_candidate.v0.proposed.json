@@ -1,0 +1,11 @@
+{
+  "schema_version": "evidence_candidate.v0.proposed",
+  "status": "planning_only",
+  "required_fields": [
+    "candidate_id", "run_id", "status", "title", "object_type",
+    "source_observation_refs", "evidence_summary", "risk_rights_posture",
+    "review_requirement"
+  ],
+  "allowed_statuses": ["candidate", "near_miss", "mention_only", "policy_blocked"]
+}
+

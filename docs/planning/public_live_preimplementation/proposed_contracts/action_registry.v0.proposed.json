@@ -1,0 +1,26 @@
+{
+  "schema_version": "action_registry.v0.proposed",
+  "status": "planning_only",
+  "actions": [
+    {"id": "view", "side_effect": "none"},
+    {"id": "inspect_evidence", "side_effect": "none"},
+    {"id": "compare", "side_effect": "none"},
+    {"id": "cite", "side_effect": "none"},
+    {"id": "export_manifest", "side_effect": "read_export"},
+    {"id": "report_issue", "side_effect": "external_non_mutating"},
+    {"id": "review_candidate", "side_effect": "review_ledger_write"},
+    {"id": "promote", "side_effect": "review_ledger_write"},
+    {"id": "reject", "side_effect": "review_ledger_write"},
+    {"id": "rebuild_index", "side_effect": "index_rebuild"}
+  ],
+  "forbidden_public_alpha": [
+    "download",
+    "install",
+    "launch_emulator",
+    "run_extraction",
+    "crawl_source",
+    "promote_candidate",
+    "modify_records"
+  ]
+}
+

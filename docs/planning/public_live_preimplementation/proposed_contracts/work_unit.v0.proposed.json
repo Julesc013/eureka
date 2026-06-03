@@ -1,0 +1,11 @@
+{
+  "schema_version": "work_unit.v0.proposed",
+  "status": "planning_only",
+  "required_fields": [
+    "work_unit_id", "run_id", "kind", "source_family", "budget",
+    "policy_decision", "state"
+  ],
+  "states": ["created", "allowed", "blocked", "running", "completed", "failed"],
+  "output_types": ["source_observation", "search_need", "policy_block"]
+}
+

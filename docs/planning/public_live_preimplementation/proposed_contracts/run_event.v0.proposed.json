@@ -1,0 +1,15 @@
+{
+  "schema_version": "run_event.v0.proposed",
+  "status": "planning_only",
+  "required_fields": [
+    "event_id", "run_id", "event_type", "created_at", "actor",
+    "payload", "public_visibility"
+  ],
+  "event_types": [
+    "run_created", "local_lookup_attempted", "local_lookup_insufficient",
+    "fallback_requested", "policy_evaluated", "work_unit_created",
+    "source_observation_received", "candidate_created", "need_created",
+    "run_blocked", "run_completed"
+  ]
+}
+

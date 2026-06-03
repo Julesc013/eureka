@@ -1,0 +1,11 @@
+{
+  "schema_version": "renderer_contract.v0.proposed",
+  "status": "planning_only",
+  "input": ["view_model", "representation_profile", "skin", "policy_context"],
+  "output": "representation",
+  "forbidden": [
+    "query_sources", "mutate_records", "promote_candidates", "infer_facts",
+    "change_policy", "hide_status", "expose_forbidden_actions"
+  ]
+}
+

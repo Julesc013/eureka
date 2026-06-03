@@ -1,0 +1,11 @@
+{
+  "schema_version": "compatibility_budget.v0.proposed",
+  "status": "planning_only",
+  "budgets": {
+    "json_v0": {"paginated": true, "versioned": true},
+    "text_v0": {"max_decoration": "none", "requires_status_text": true},
+    "html_basic_v0": {"javascript_required": false, "requires_status_text": true},
+    "snapshot_v0": {"deterministic": true, "requires_manifest": true}
+  }
+}
+

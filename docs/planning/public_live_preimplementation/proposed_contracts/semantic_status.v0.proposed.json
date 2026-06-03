@@ -1,0 +1,17 @@
+{
+  "schema_version": "semantic_status.v0.proposed",
+  "status": "planning_only",
+  "statuses": [
+    {"id": "verified", "public": true, "truth_posture": "reviewed"},
+    {"id": "candidate", "public": true, "truth_posture": "unreviewed"},
+    {"id": "need", "public": true, "truth_posture": "missing"},
+    {"id": "near_miss", "public": true, "truth_posture": "not_exact"},
+    {"id": "mention_only", "public": true, "truth_posture": "weak_evidence"},
+    {"id": "policy_blocked", "public": true, "truth_posture": "blocked"},
+    {"id": "private_local", "public": false, "truth_posture": "private"},
+    {"id": "superseded", "public": true, "truth_posture": "historical"},
+    {"id": "rejected", "public": true, "truth_posture": "rejected"},
+    {"id": "unknown", "public": true, "truth_posture": "fallback"}
+  ]
+}
+
