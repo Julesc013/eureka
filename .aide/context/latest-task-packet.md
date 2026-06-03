@@ -2,11 +2,11 @@
 
 ## PHASE
 
-UNSPECIFIED - EUREKA-PUBLIC-LIVE-PREIMPLEMENTATION-MEGA-00
+UNSPECIFIED - INDEXLESS-LIVE-SEARCH-FALLBACK-00-PREFLIGHT
 
 ## GOAL
 
-EUREKA-PUBLIC-LIVE-PREIMPLEMENTATION-MEGA-00
+INDEXLESS-LIVE-SEARCH-FALLBACK-00-PREFLIGHT
 
 ## WHY
 
@@ -139,7 +139,7 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4808
+- chars: 4806
 - approx_tokens: 1202
 - budget_status: PASS
 - warnings:
