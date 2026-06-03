@@ -1,0 +1,573 @@
+{
+  "generated_at": "2026-06-03",
+  "zip_count": 7,
+  "loose_supplemental_markdown_count": 2,
+  "manifest": [
+    {
+      "filename": "eureka_codex_prompt_plan_archive__archive_package.zip",
+      "sha256": "b3cdfc8f2010f77aab6dc8ebf3d7f616e803bb955d8552b1c97f90a1de2c7db9",
+      "size_bytes": 31292,
+      "chat_label": "eureka_codex_prompt_plan_archive",
+      "apparent_chat_topic": "Codex prompt plan and production roadmap",
+      "date_if_known": "2026-05-31",
+      "files_inside_count": 7,
+      "files_inside": [
+        {
+          "filename": "eureka_codex_prompt_plan_archive__human_archive_report.md",
+          "size_bytes": 45850,
+          "compressed_size_bytes": 14573,
+          "kind": "human_archive_report",
+          "sha256": "c1cf958db5cd82cc4c44ab60dbb43216758083122abbcf901312b667a8678afc"
+        },
+        {
+          "filename": "eureka_codex_prompt_plan_archive__current_state_summary.md",
+          "size_bytes": 5717,
+          "compressed_size_bytes": 2359,
+          "kind": "current_state_summary",
+          "sha256": "34614074e24a6716cf5254c5ca96f5bd7ba50d0fdd2e6f81c524e6b62dd2b962"
+        },
+        {
+          "filename": "eureka_codex_prompt_plan_archive__source_blocks_for_future_book.md",
+          "size_bytes": 8084,
+          "compressed_size_bytes": 3067,
+          "kind": "source_blocks_for_future_book",
+          "sha256": "fcead0ec72a2356f60b5f956c7a5461a380a5ca7348721624e56ee0516a3cb98"
+        },
+        {
+          "filename": "eureka_codex_prompt_plan_archive__decisions_open_questions_next_steps.md",
+          "size_bytes": 8282,
+          "compressed_size_bytes": 3125,
+          "kind": "decisions_open_questions_next_steps",
+          "sha256": "d719a40ce17c63efb6935febb5770e5c686c61824e98f3ddd7cd8f4cb62676f6"
+        },
+        {
+          "filename": "eureka_codex_prompt_plan_archive__artifacts_and_prompts.md",
+          "size_bytes": 29762,
+          "compressed_size_bytes": 3351,
+          "kind": "artifacts_and_prompts",
+          "sha256": "3c36034c7d2d45146f2f38737b99dbb5076839d985105c4d06cf40ce36994609"
+        },
+        {
+          "filename": "eureka_codex_prompt_plan_archive__aggregation_packet.md",
+          "size_bytes": 4450,
+          "compressed_size_bytes": 1976,
+          "kind": "aggregation_packet",
+          "sha256": "8c33249aeffe73b9050a2102fa3bd626701fdc8125ceb0549655f55b0d54c753"
+        },
+        {
+          "filename": "eureka_codex_prompt_plan_archive__quality_audit.md",
+          "size_bytes": 3009,
+          "compressed_size_bytes": 1455,
+          "kind": "quality_audit",
+          "sha256": "06660b33889af6d780a3c8bcd23dfd73bb974f0704ae9cce970cd34ba28cafef"
+        }
+      ],
+      "contains_human_report": true,
+      "contains_source_blocks": true,
+      "contains_reader_briefs": false,
+      "contains_machine_registers": true,
+      "contains_duplicated_earlier_packages": false,
+      "nested_packages": [],
+      "human_readable_primary_files": [
+        "eureka_codex_prompt_plan_archive__human_archive_report.md",
+        "eureka_codex_prompt_plan_archive__current_state_summary.md",
+        "eureka_codex_prompt_plan_archive__source_blocks_for_future_book.md",
+        "eureka_codex_prompt_plan_archive__decisions_open_questions_next_steps.md"
+      ],
+      "demoted_reference_files": [
+        "eureka_codex_prompt_plan_archive__artifacts_and_prompts.md",
+        "eureka_codex_prompt_plan_archive__aggregation_packet.md",
+        "eureka_codex_prompt_plan_archive__quality_audit.md"
+      ],
+      "extraction_confidence": "high"
+    },
+    {
+      "filename": "eureka_hunt_ia_syn_archive__archive_package.zip",
+      "sha256": "ca8b1393401fbf872aa85bb84c7c73bdf0c12b5e321ef8ebed6de8dca489191e",
+      "size_bytes": 31784,
+      "chat_label": "eureka_hunt_ia_syn_archive",
+      "apparent_chat_topic": "HUNT, Internet Archive, SYN, and artefact-resolution planning",
+      "date_if_known": "2026-05-31",
+      "files_inside_count": 7,
+      "files_inside": [
+        {
+          "filename": "eureka_hunt_ia_syn_archive__human_archive_report.md",
+          "size_bytes": 42756,
+          "compressed_size_bytes": 14214,
+          "kind": "human_archive_report",
+          "sha256": "1f978d559355d0af9f00f56bed80a0bd7ab0201048734caed965f608b7561348"
+        },
+        {
+          "filename": "eureka_hunt_ia_syn_archive__current_state_summary.md",
+          "size_bytes": 6030,
+          "compressed_size_bytes": 2600,
+          "kind": "current_state_summary",
+          "sha256": "9f7226674e8fdc377f97d8306f04b2ce466e825011cd9078425b12b14776f803"
+        },
+        {
+          "filename": "eureka_hunt_ia_syn_archive__source_blocks_for_future_book.md",
+          "size_bytes": 9557,
+          "compressed_size_bytes": 3625,
+          "kind": "source_blocks_for_future_book",
+          "sha256": "e6be00e38967b456817bd144fdcb5de46a437becd29aa3152c55de80c6fbd9c4"
+        },
+        {
+          "filename": "eureka_hunt_ia_syn_archive__decisions_open_questions_next_steps.md",
+          "size_bytes": 8851,
+          "compressed_size_bytes": 3451,
+          "kind": "decisions_open_questions_next_steps",
+          "sha256": "9e084debbf04f74a057ee84d511d322a68ab829e08163a02b3c6de299cbbf3df"
+        },
+        {
+          "filename": "eureka_hunt_ia_syn_archive__artifacts_and_prompts.md",
+          "size_bytes": 7557,
+          "compressed_size_bytes": 2909,
+          "kind": "artifacts_and_prompts",
+          "sha256": "5038fd098ad8b5842e91c3252fcfed480e55fd7f7a333dd379dc7f659623e876"
+        },
+        {
+          "filename": "eureka_hunt_ia_syn_archive__aggregation_packet.md",
+          "size_bytes": 4708,
+          "compressed_size_bytes": 2102,
+          "kind": "aggregation_packet",
+          "sha256": "7d0595e123b4f8442c54a3769daa08e34cdb399d79f3574c3cbfbf1e0144f90c"
+        },
+        {
+          "filename": "eureka_hunt_ia_syn_archive__quality_audit.md",
+          "size_bytes": 3347,
+          "compressed_size_bytes": 1581,
+          "kind": "quality_audit",
+          "sha256": "715eb6a4c2f87b71fbc5920bcc1bd24323995fe48b24d4cc919805fdd5c838f8"
+        }
+      ],
+      "contains_human_report": true,
+      "contains_source_blocks": true,
+      "contains_reader_briefs": false,
+      "contains_machine_registers": true,
+      "contains_duplicated_earlier_packages": false,
+      "nested_packages": [],
+      "human_readable_primary_files": [
+        "eureka_hunt_ia_syn_archive__human_archive_report.md",
+        "eureka_hunt_ia_syn_archive__current_state_summary.md",
+        "eureka_hunt_ia_syn_archive__source_blocks_for_future_book.md",
+        "eureka_hunt_ia_syn_archive__decisions_open_questions_next_steps.md"
+      ],
+      "demoted_reference_files": [
+        "eureka_hunt_ia_syn_archive__artifacts_and_prompts.md",
+        "eureka_hunt_ia_syn_archive__aggregation_packet.md",
+        "eureka_hunt_ia_syn_archive__quality_audit.md"
+      ],
+      "extraction_confidence": "high"
+    },
+    {
+      "filename": "eureka_planning_archive__archive_package.zip",
+      "sha256": "53089ca2e17b8d0cff59401afbd91d2a28934e12ca81ee2cf60a041f7c7c0164",
+      "size_bytes": 34591,
+      "chat_label": "eureka_planning_archive",
+      "apparent_chat_topic": "Planning, AIDE control, local appliance, and Search Hunt workbench",
+      "date_if_known": "2026-05-31",
+      "files_inside_count": 7,
+      "files_inside": [
+        {
+          "filename": "eureka_planning_archive__human_archive_report.md",
+          "size_bytes": 55661,
+          "compressed_size_bytes": 18422,
+          "kind": "human_archive_report",
+          "sha256": "0ebb79913b30f2da7b4fc1b8e394aec78d228a8e2a11e671950854a6c9748788"
+        },
+        {
+          "filename": "eureka_planning_archive__current_state_summary.md",
+          "size_bytes": 5889,
+          "compressed_size_bytes": 2564,
+          "kind": "current_state_summary",
+          "sha256": "79f5bec8cf53cdf430aeede9d599989a985e67dc8805e06db6a5adfc6279fd96"
+        },
+        {
+          "filename": "eureka_planning_archive__source_blocks_for_future_book.md",
+          "size_bytes": 7337,
+          "compressed_size_bytes": 2871,
+          "kind": "source_blocks_for_future_book",
+          "sha256": "741e1df04aa839e270e95f9a98bc0aaa4fb9bb44149bcd36c8142b8bf221f550"
+        },
+        {
+          "filename": "eureka_planning_archive__decisions_open_questions_next_steps.md",
+          "size_bytes": 7898,
+          "compressed_size_bytes": 3079,
+          "kind": "decisions_open_questions_next_steps",
+          "sha256": "a91cdbee7730a9b40f0fc3b47d7dc1be5e2c5dcd60955606491b00237b3fd670"
+        },
+        {
+          "filename": "eureka_planning_archive__artifacts_and_prompts.md",
+          "size_bytes": 6796,
+          "compressed_size_bytes": 2661,
+          "kind": "artifacts_and_prompts",
+          "sha256": "70bc42da5ec35330a99d4730ffa8f1a7ab71a5227a3ad113663b6d5564ffdd7e"
+        },
+        {
+          "filename": "eureka_planning_archive__aggregation_packet.md",
+          "size_bytes": 4607,
+          "compressed_size_bytes": 2038,
+          "kind": "aggregation_packet",
+          "sha256": "1212ea64d15d370f59b8ba8f72d0271395c2c4c34ff88bcbfefe35add7be10a9"
+        },
+        {
+          "filename": "eureka_planning_archive__quality_audit.md",
+          "size_bytes": 3785,
+          "compressed_size_bytes": 1696,
+          "kind": "quality_audit",
+          "sha256": "55aecff4119761fab88c4ce31cb2af35f413ddefc884f85758a0ff25e75bdfb3"
+        }
+      ],
+      "contains_human_report": true,
+      "contains_source_blocks": true,
+      "contains_reader_briefs": false,
+      "contains_machine_registers": true,
+      "contains_duplicated_earlier_packages": false,
+      "nested_packages": [],
+      "human_readable_primary_files": [
+        "eureka_planning_archive__human_archive_report.md",
+        "eureka_planning_archive__current_state_summary.md",
+        "eureka_planning_archive__source_blocks_for_future_book.md",
+        "eureka_planning_archive__decisions_open_questions_next_steps.md"
+      ],
+      "demoted_reference_files": [
+        "eureka_planning_archive__artifacts_and_prompts.md",
+        "eureka_planning_archive__aggregation_packet.md",
+        "eureka_planning_archive__quality_audit.md"
+      ],
+      "extraction_confidence": "high"
+    },
+    {
+      "filename": "eureka_search_corpus_growth__archive_package.zip",
+      "sha256": "f987f2d7359f5bdfd95af3a99216dd0f781d18a2ac7866ed52109d4cd2944b53",
+      "size_bytes": 26293,
+      "chat_label": "eureka_search_corpus_growth",
+      "apparent_chat_topic": "Search engine corpus growth, public UX, and resilient search planning",
+      "date_if_known": null,
+      "files_inside_count": 7,
+      "files_inside": [
+        {
+          "filename": "eureka_search_corpus_growth__human_archive_report.md",
+          "size_bytes": 43113,
+          "compressed_size_bytes": 13844,
+          "kind": "human_archive_report",
+          "sha256": "bb3078332bda0e6c7d5b86e5246e1ac027c302a07ee4b3bb8f512662a718c5d7"
+        },
+        {
+          "filename": "eureka_search_corpus_growth__current_state_summary.md",
+          "size_bytes": 4408,
+          "compressed_size_bytes": 1919,
+          "kind": "current_state_summary",
+          "sha256": "eb1d00cca6825693b7e6a450c2495b5c46ec149b2d19b5f1c53ed007330e11e6"
+        },
+        {
+          "filename": "eureka_search_corpus_growth__source_blocks_for_future_book.md",
+          "size_bytes": 5150,
+          "compressed_size_bytes": 1960,
+          "kind": "source_blocks_for_future_book",
+          "sha256": "6f0f1209ef541064c9ef8021e6719b1dacb754f9defe4f1d5e302e2e48f39ecb"
+        },
+        {
+          "filename": "eureka_search_corpus_growth__decisions_open_questions_next_steps.md",
+          "size_bytes": 6184,
+          "compressed_size_bytes": 2431,
+          "kind": "decisions_open_questions_next_steps",
+          "sha256": "79f21e531cf9edd706afa55f2be7f79bda42e44184360cc3415de8ced156ff78"
+        },
+        {
+          "filename": "eureka_search_corpus_growth__artifacts_and_prompts.md",
+          "size_bytes": 3748,
+          "compressed_size_bytes": 1696,
+          "kind": "artifacts_and_prompts",
+          "sha256": "4045364acd78abf23cfbe38b88a5fdd8f444779ed4507575ffc04c3dfc864a12"
+        },
+        {
+          "filename": "eureka_search_corpus_growth__aggregation_packet.md",
+          "size_bytes": 3959,
+          "compressed_size_bytes": 1784,
+          "kind": "aggregation_packet",
+          "sha256": "2d6110025caa43957b6cb9b38ff466872d3c6192840ea9247d6c291ed704efca"
+        },
+        {
+          "filename": "eureka_search_corpus_growth__quality_audit.md",
+          "size_bytes": 2850,
+          "compressed_size_bytes": 1343,
+          "kind": "quality_audit",
+          "sha256": "851985c7bed6fa52d59dc4f0c638f5bd0209e5cd4ae7ced342bfc9e90a8d147f"
+        }
+      ],
+      "contains_human_report": true,
+      "contains_source_blocks": true,
+      "contains_reader_briefs": false,
+      "contains_machine_registers": true,
+      "contains_duplicated_earlier_packages": false,
+      "nested_packages": [],
+      "human_readable_primary_files": [
+        "eureka_search_corpus_growth__human_archive_report.md",
+        "eureka_search_corpus_growth__current_state_summary.md",
+        "eureka_search_corpus_growth__source_blocks_for_future_book.md",
+        "eureka_search_corpus_growth__decisions_open_questions_next_steps.md"
+      ],
+      "demoted_reference_files": [
+        "eureka_search_corpus_growth__artifacts_and_prompts.md",
+        "eureka_search_corpus_growth__aggregation_packet.md",
+        "eureka_search_corpus_growth__quality_audit.md"
+      ],
+      "extraction_confidence": "high"
+    },
+    {
+      "filename": "eureka_track_convergence__archive_package.zip",
+      "sha256": "0e255a3427fdcc0b9b9c55069558f6918971c3e477b0788efc3c59c11bf48634",
+      "size_bytes": 36831,
+      "chat_label": "eureka_track_convergence",
+      "apparent_chat_topic": "Track convergence and post-P107 planning",
+      "date_if_known": "2026-05-31",
+      "files_inside_count": 7,
+      "files_inside": [
+        {
+          "filename": "eureka_track_convergence__human_archive_report.md",
+          "size_bytes": 62576,
+          "compressed_size_bytes": 18425,
+          "kind": "human_archive_report",
+          "sha256": "88a9a6c7c5c90e9e20e4d2caab0a63eb5c253eaae52de2f3824696a06d133590"
+        },
+        {
+          "filename": "eureka_track_convergence__current_state_summary.md",
+          "size_bytes": 7579,
+          "compressed_size_bytes": 3045,
+          "kind": "current_state_summary",
+          "sha256": "059f15e1614e0160eecbd02c52d82ff194dac2a28314fb77e9d2652266a35024"
+        },
+        {
+          "filename": "eureka_track_convergence__source_blocks_for_future_book.md",
+          "size_bytes": 8451,
+          "compressed_size_bytes": 3153,
+          "kind": "source_blocks_for_future_book",
+          "sha256": "08a3b052935fec007e46dfec1ada43b646273c00aa70b02bd0cc1a56d268447c"
+        },
+        {
+          "filename": "eureka_track_convergence__decisions_open_questions_next_steps.md",
+          "size_bytes": 9486,
+          "compressed_size_bytes": 3297,
+          "kind": "decisions_open_questions_next_steps",
+          "sha256": "2829103e2578f8f666e7f43a9d7bf0e07a25dae00bdf20149f1507a3fc1d7e6b"
+        },
+        {
+          "filename": "eureka_track_convergence__artifacts_and_prompts.md",
+          "size_bytes": 9944,
+          "compressed_size_bytes": 3696,
+          "kind": "artifacts_and_prompts",
+          "sha256": "eb436ed38ea3d95095c74009423119e037de653b9ba72d58010f878af98d9125"
+        },
+        {
+          "filename": "eureka_track_convergence__aggregation_packet.md",
+          "size_bytes": 5249,
+          "compressed_size_bytes": 2102,
+          "kind": "aggregation_packet",
+          "sha256": "c1e2fe196770b03c513f2abae59fdb062dcfa7559071d0126eac6326da37184a"
+        },
+        {
+          "filename": "eureka_track_convergence__quality_audit.md",
+          "size_bytes": 4146,
+          "compressed_size_bytes": 1839,
+          "kind": "quality_audit",
+          "sha256": "54a0f7864bf249733e29021ff78567ce32c609e4ae07b366fd3c235a48bb79d0"
+        }
+      ],
+      "contains_human_report": true,
+      "contains_source_blocks": true,
+      "contains_reader_briefs": false,
+      "contains_machine_registers": true,
+      "contains_duplicated_earlier_packages": false,
+      "nested_packages": [],
+      "human_readable_primary_files": [
+        "eureka_track_convergence__human_archive_report.md",
+        "eureka_track_convergence__current_state_summary.md",
+        "eureka_track_convergence__source_blocks_for_future_book.md",
+        "eureka_track_convergence__decisions_open_questions_next_steps.md"
+      ],
+      "demoted_reference_files": [
+        "eureka_track_convergence__artifacts_and_prompts.md",
+        "eureka_track_convergence__aggregation_packet.md",
+        "eureka_track_convergence__quality_audit.md"
+      ],
+      "extraction_confidence": "high"
+    },
+    {
+      "filename": "eureka_workbench_ia_pilot__archive_package.zip",
+      "sha256": "fb44fbc3d537d773a146a7f96819f6074bce79306ea768ee43592e990e346853",
+      "size_bytes": 35329,
+      "chat_label": "eureka_workbench_ia_pilot",
+      "apparent_chat_topic": "Workbench and Internet Archive metadata pilot",
+      "date_if_known": "2026-05-31",
+      "files_inside_count": 7,
+      "files_inside": [
+        {
+          "filename": "eureka_workbench_ia_pilot__human_archive_report.md",
+          "size_bytes": 57097,
+          "compressed_size_bytes": 18449,
+          "kind": "human_archive_report",
+          "sha256": "a442722a8f584f39b202bac578a3a12f850af2021956964a33eae56d532b0060"
+        },
+        {
+          "filename": "eureka_workbench_ia_pilot__current_state_summary.md",
+          "size_bytes": 6007,
+          "compressed_size_bytes": 2665,
+          "kind": "current_state_summary",
+          "sha256": "3e0cc28da0a8d6554c12750c497890d9e2e43d56f5eb0480b5447a9e2d98adf1"
+        },
+        {
+          "filename": "eureka_workbench_ia_pilot__source_blocks_for_future_book.md",
+          "size_bytes": 7252,
+          "compressed_size_bytes": 2849,
+          "kind": "source_blocks_for_future_book",
+          "sha256": "47012bb912e60a1540347d8f69aa9a7ad98f88eb81461c80c33f72c41cb8afcd"
+        },
+        {
+          "filename": "eureka_workbench_ia_pilot__decisions_open_questions_next_steps.md",
+          "size_bytes": 7727,
+          "compressed_size_bytes": 3047,
+          "kind": "decisions_open_questions_next_steps",
+          "sha256": "5f1373f7bb6fe5c66a45caf381ca4af448600bf8a1551630a008fe59839c5de8"
+        },
+        {
+          "filename": "eureka_workbench_ia_pilot__artifacts_and_prompts.md",
+          "size_bytes": 6480,
+          "compressed_size_bytes": 2802,
+          "kind": "artifacts_and_prompts",
+          "sha256": "5ce267a7faad7f94f3663e529fad1d8b01cb78af7d74de5e1674456fa7fdc099"
+        },
+        {
+          "filename": "eureka_workbench_ia_pilot__aggregation_packet.md",
+          "size_bytes": 5359,
+          "compressed_size_bytes": 2350,
+          "kind": "aggregation_packet",
+          "sha256": "bda1f8f41c9cff89b8f1e4914c6dca532d874e5166b331d3fa54251627c15568"
+        },
+        {
+          "filename": "eureka_workbench_ia_pilot__quality_audit.md",
+          "size_bytes": 4066,
+          "compressed_size_bytes": 1879,
+          "kind": "quality_audit",
+          "sha256": "9b7242e8035034cab7cb247aa10ba8deab26663a61ef8ca4e5c4e91d5d392e08"
+        }
+      ],
+      "contains_human_report": true,
+      "contains_source_blocks": true,
+      "contains_reader_briefs": false,
+      "contains_machine_registers": true,
+      "contains_duplicated_earlier_packages": false,
+      "nested_packages": [],
+      "human_readable_primary_files": [
+        "eureka_workbench_ia_pilot__human_archive_report.md",
+        "eureka_workbench_ia_pilot__current_state_summary.md",
+        "eureka_workbench_ia_pilot__source_blocks_for_future_book.md",
+        "eureka_workbench_ia_pilot__decisions_open_questions_next_steps.md"
+      ],
+      "demoted_reference_files": [
+        "eureka_workbench_ia_pilot__artifacts_and_prompts.md",
+        "eureka_workbench_ia_pilot__aggregation_packet.md",
+        "eureka_workbench_ia_pilot__quality_audit.md"
+      ],
+      "extraction_confidence": "high"
+    },
+    {
+      "filename": "eureka_workbench_ia_plan__archive_package.zip",
+      "sha256": "6b79cb172fb1055c7747d9c43db7e48eebe8cecf6196f021b129f1253cb78b24",
+      "size_bytes": 32458,
+      "chat_label": "eureka_workbench_ia_plan",
+      "apparent_chat_topic": "Workbench, IA connector, and production path",
+      "date_if_known": "2026-05-19",
+      "files_inside_count": 7,
+      "files_inside": [
+        {
+          "filename": "eureka_workbench_ia_plan__human_archive_report.md",
+          "size_bytes": 47422,
+          "compressed_size_bytes": 15721,
+          "kind": "human_archive_report",
+          "sha256": "197825688598e95f9e9c91766e97d1c1c3ef0836e695410ce04410c3f8bb40f4"
+        },
+        {
+          "filename": "eureka_workbench_ia_plan__current_state_summary.md",
+          "size_bytes": 6016,
+          "compressed_size_bytes": 2618,
+          "kind": "current_state_summary",
+          "sha256": "b123a9608a8ad1524ad1c0e2a9b7c8f798cb6fe36c51c48eb98fc571a95568d2"
+        },
+        {
+          "filename": "eureka_workbench_ia_plan__source_blocks_for_future_book.md",
+          "size_bytes": 7835,
+          "compressed_size_bytes": 3106,
+          "kind": "source_blocks_for_future_book",
+          "sha256": "87533c1af60892a50e35c6f1f72ed04499e94c9b702152afc0c10d600e0b0eda"
+        },
+        {
+          "filename": "eureka_workbench_ia_plan__decisions_open_questions_next_steps.md",
+          "size_bytes": 8355,
+          "compressed_size_bytes": 3378,
+          "kind": "decisions_open_questions_next_steps",
+          "sha256": "1cba57b79faa6de38d7805981b3a8e851b26dc5c1ab8f24dabce1b270a822beb"
+        },
+        {
+          "filename": "eureka_workbench_ia_plan__artifacts_and_prompts.md",
+          "size_bytes": 6992,
+          "compressed_size_bytes": 2665,
+          "kind": "artifacts_and_prompts",
+          "sha256": "8ca5549f2bf7f507b25f94b8dd516c3464c2790496f782702d7e10ecfc6a9f79"
+        },
+        {
+          "filename": "eureka_workbench_ia_plan__aggregation_packet.md",
+          "size_bytes": 4538,
+          "compressed_size_bytes": 2114,
+          "kind": "aggregation_packet",
+          "sha256": "b4661e008a627b4869d0447d10e1d9f3adc4e3cdf5ff0cf2c34f7def9a9fc001"
+        },
+        {
+          "filename": "eureka_workbench_ia_plan__quality_audit.md",
+          "size_bytes": 3232,
+          "compressed_size_bytes": 1582,
+          "kind": "quality_audit",
+          "sha256": "27dfeb68858a60c0815949a64fe5ee92de2492f9338d6a6dda3ad31254846982"
+        }
+      ],
+      "contains_human_report": true,
+      "contains_source_blocks": true,
+      "contains_reader_briefs": false,
+      "contains_machine_registers": true,
+      "contains_duplicated_earlier_packages": false,
+      "nested_packages": [],
+      "human_readable_primary_files": [
+        "eureka_workbench_ia_plan__human_archive_report.md",
+        "eureka_workbench_ia_plan__current_state_summary.md",
+        "eureka_workbench_ia_plan__source_blocks_for_future_book.md",
+        "eureka_workbench_ia_plan__decisions_open_questions_next_steps.md"
+      ],
+      "demoted_reference_files": [
+        "eureka_workbench_ia_plan__artifacts_and_prompts.md",
+        "eureka_workbench_ia_plan__aggregation_packet.md",
+        "eureka_workbench_ia_plan__quality_audit.md"
+      ],
+      "extraction_confidence": "high"
+    }
+  ],
+  "loose_supplemental_sources": [
+    {
+      "filename": "Pasted markdown.md",
+      "sha256": "c128cf213596193f253fda262818f0b28e369b73698d838c21bf0de4e0f88ef0",
+      "size_bytes": 15651,
+      "chat_label": "loose_supplemental_markdown",
+      "apparent_chat_topic": "Temporal Semantic Interface System and repository structure",
+      "date_if_known": "2026-06-03",
+      "source_role": "supplemental_advisory_not_counted_as_zip"
+    },
+    {
+      "filename": "Pasted markdown (2).md",
+      "sha256": "7ccf0d12edfb8292d92a3b5c43afb0e8b9280a176a44e350fdb7ba4c81b30425",
+      "size_bytes": 25531,
+      "chat_label": "loose_supplemental_markdown",
+      "apparent_chat_topic": "Temporal Semantic Interface System and repository structure",
+      "date_if_known": "2026-06-03",
+      "source_role": "supplemental_advisory_not_counted_as_zip"
+    }
+  ]
+}
