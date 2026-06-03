@@ -2,11 +2,11 @@
 
 ## PHASE
 
-UNSPECIFIED - INDEXLESS-LIVE-SEARCH-FALLBACK-00
+UNSPECIFIED - REVIEW-LEDGER-00
 
 ## GOAL
 
-INDEXLESS-LIVE-SEARCH-FALLBACK-00
+REVIEW-LEDGER-00
 
 ## WHY
 
@@ -139,8 +139,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4786
-- approx_tokens: 1197
+- chars: 4752
+- approx_tokens: 1188
 - budget_status: PASS
 - warnings:
   - none
