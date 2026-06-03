@@ -1,10 +1,29 @@
 # PUBLIC-ALPHA-REASSESS-06
 
-Planned next task after `SNAPSHOT-REFRESH-06`.
+Status: complete.
 
-Goal: reassess public-alpha launch/defer status after the review-batch apply
-snapshot refresh projects 12 total limited reviewed records, 2 reviewed known
-needs, 2 reviewed bounded absences, and 60 remaining candidates.
+Result: public alpha usefulness improved after review-batch apply snapshot
+refresh, but launch remains deferred.
 
-Expected posture: product usefulness improved, public launch still deferred
-until an explicit future approval gate and stronger reviewed corpus evidence.
+Key evidence:
+
+- previous limited reviewed projection count: 4
+- new reviewed record delta count: 8
+- total limited reviewed projection count: 12
+- reviewed known needs: 2
+- reviewed bounded absences: 2
+- candidate count after apply: 60
+- public UX routes: 8
+- result-card states: 8
+
+Decision:
+
+- launch recommended: false
+- demo mode recommended: true
+- internal review recommended: true
+- reviewed corpus growth confirmed: true
+- next task: `INDEXLESS-LIVE-SEARCH-FALLBACK-00`
+
+Boundary: no deployment, public launch, site/dist write, public mutation, live
+source fanout, download, file fetch, OCR, extraction, model call, or readiness
+claim.

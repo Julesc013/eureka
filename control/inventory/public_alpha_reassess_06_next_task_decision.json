@@ -1,0 +1,14 @@
+{
+  "demo_mode_recommended": true,
+  "launch_recommended": false,
+  "planned_after": [
+    "SEARCH-USEFULNESS-EVAL-00",
+    "REVIEWED-ARTIFACT-RECORD-GATE-00",
+    "DEV-TO-MAIN-PROMOTION-REVIEW-06"
+  ],
+  "rationale": "Reviewed-corpus growth and UX MVP are present; degraded-mode search resilience is the next missing reliability gate.",
+  "recommended_next_task": "INDEXLESS-LIVE-SEARCH-FALLBACK-00 - Add live metadata fallback when indexes are unavailable",
+  "schema_version": "public_alpha_reassess_06_next_task_decision.v0",
+  "status": "pass",
+  "task": "PUBLIC-ALPHA-REASSESS-06"
+}

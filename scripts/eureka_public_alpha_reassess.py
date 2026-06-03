@@ -21,6 +21,7 @@ from runtime.public_alpha import (  # noqa: E402
     run_public_alpha_reassess_03,
     run_public_alpha_reassess_04,
     run_public_alpha_reassess_05,
+    run_public_alpha_reassess_06,
 )
 
 
@@ -56,10 +57,20 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout) -> int:
         action="store_true",
         help="Use committed public search UX projection refresh examples.",
     )
+    parser.add_argument(
+        "--from-review-batch-apply-refresh-examples",
+        action="store_true",
+        help="Use committed review-batch apply snapshot refresh examples.",
+    )
     parser.add_argument("--write-examples", action="store_true", help="Write public-safe reassessment examples.")
     parser.add_argument("--json", action="store_true", help="Emit JSON. This is the default shape.")
     args = parser.parse_args(argv)
-    if args.from_public_search_ux_projection_examples:
+    if args.from_review_batch_apply_refresh_examples:
+        result = run_public_alpha_reassess_06(
+            from_review_batch_apply_refresh_examples=True,
+            write_examples=args.write_examples,
+        )
+    elif args.from_public_search_ux_projection_examples:
         result = run_public_alpha_reassess_05(
             from_public_search_ux_projection_examples=True,
             write_examples=args.write_examples,
@@ -90,7 +101,7 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout) -> int:
             write_examples=args.write_examples,
         )
     else:
-        parser.error("--from-snapshot-refresh-examples, --from-live-metadata-refresh-examples, --from-live-metadata-review-refresh-examples, --from-local-apply-live-metadata-refresh-examples, --from-manuals-driver-snapshot-examples, or --from-public-search-ux-projection-examples is required")
+        parser.error("--from-snapshot-refresh-examples, --from-live-metadata-refresh-examples, --from-live-metadata-review-refresh-examples, --from-local-apply-live-metadata-refresh-examples, --from-manuals-driver-snapshot-examples, --from-public-search-ux-projection-examples, or --from-review-batch-apply-refresh-examples is required")
     print(json.dumps(result, indent=2, sort_keys=True), file=stdout)
     return 0 if result["status"] == "pass" else 1
 

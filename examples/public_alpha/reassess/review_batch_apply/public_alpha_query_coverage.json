@@ -1,0 +1,50 @@
+{
+  "accepted_truth_created": false,
+  "launch_sufficient": false,
+  "queries_with_candidate_result": 60,
+  "queries_with_limited_reviewed_result": 12,
+  "queries_with_need_or_absence": 4,
+  "query_count": 72,
+  "reassess_id": "public_alpha_reassess_06",
+  "rows": [
+    {
+      "coverage_note": "Domain is represented, but limited reviewed records are not verified artifacts.",
+      "domain_id": "frontier_resolution_media",
+      "queries_with_candidate_result": 15,
+      "queries_with_limited_reviewed_result": 3,
+      "queries_with_need_or_absence": 0,
+      "query_count": 15
+    },
+    {
+      "coverage_note": "Domain is represented, but limited reviewed records are not verified artifacts.",
+      "domain_id": "legacy_software",
+      "queries_with_candidate_result": 15,
+      "queries_with_limited_reviewed_result": 3,
+      "queries_with_need_or_absence": 0,
+      "query_count": 15
+    },
+    {
+      "coverage_note": "Domain is represented, but limited reviewed records are not verified artifacts.",
+      "domain_id": "manuals_docs_scans",
+      "queries_with_candidate_result": 15,
+      "queries_with_limited_reviewed_result": 2,
+      "queries_with_need_or_absence": 1,
+      "query_count": 15
+    },
+    {
+      "coverage_note": "Domain is represented, but limited reviewed records are not verified artifacts.",
+      "domain_id": "driver_support_media",
+      "queries_with_candidate_result": 15,
+      "queries_with_limited_reviewed_result": 2,
+      "queries_with_need_or_absence": 1,
+      "query_count": 15
+    }
+  ],
+  "schema_version": "public_alpha_reassess_query_coverage_matrix.v0",
+  "seed_batches": [
+    "seed_batch_frontier_media_00",
+    "seed_batch_legacy_software_00",
+    "seed_batch_manuals_scans_00",
+    "seed_batch_driver_support_00"
+  ]
+}

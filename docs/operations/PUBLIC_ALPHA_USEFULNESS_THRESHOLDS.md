@@ -50,3 +50,20 @@ Current v3 local-apply snapshot:
 This improves internal demo and review value, but four limited reviewed
 metadata/source-lead projections are still below the 25-record threshold and do
 not count as verified artifacts.
+
+Current v6 review-batch-apply snapshot:
+
+- previous limited reviewed projections: 4
+- new reviewed record delta: 8
+- total limited reviewed projections: 12
+- reviewed known needs: 2
+- reviewed bounded absences: 2
+- candidates remaining after apply: 60
+- public UX routes: 8
+- result-card states: 8
+
+This is a material usefulness improvement, but 12 limited reviewed projections
+remain below the 25-record launch threshold. Limited reviewed metadata/source-
+lead records count toward usefulness, not artifact verification. Indexless
+fallback, search usefulness evaluation, external full discovery, main promotion,
+publication rehearsal, and manual launch approval remain separate gates.

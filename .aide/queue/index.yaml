@@ -1,4 +1,4 @@
-current_recommended_task: PUBLIC-ALPHA-REASSESS-06 - Reassess alpha after review batch apply snapshot refresh
+current_recommended_task: INDEXLESS-LIVE-SEARCH-FALLBACK-00 - Add live metadata fallback when indexes are unavailable
 completed:
   - SOURCE-ACTION-KERNEL-00
   - SOURCE-WAVE-00
@@ -42,11 +42,12 @@ completed:
   - PUBLIC-ALPHA-REASSESS-05
   - REVIEW-BATCH-APPLY-NEXT-00
   - SNAPSHOT-REFRESH-06
+  - PUBLIC-ALPHA-REASSESS-06
 blocked: []
 planned:
-  - PUBLIC-ALPHA-REASSESS-06
   - INDEXLESS-LIVE-SEARCH-FALLBACK-00
   - SEARCH-USEFULNESS-EVAL-00
+  - REVIEWED-ARTIFACT-RECORD-GATE-00
   - DEV-TO-MAIN-PROMOTION-REVIEW-06
 waiting: []
 status_options:

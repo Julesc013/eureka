@@ -79,3 +79,23 @@ needs_seed_batch_driver_support: true
 
 Limited reviewed metadata/source-lead records improve usefulness, but they are
 not verified downloadable artifacts and do not authorize public launch.
+
+For `PUBLIC-ALPHA-REASSESS-06`, the decision records review-batch apply growth:
+
+```text
+decision: remain_deferred
+launch_recommended: false
+demo_mode_recommended: true
+internal_review_recommended: true
+reviewed_corpus_growth_confirmed: true
+needs_more_reviewed_records: true
+needs_reviewed_artifact_record_gate: true
+needs_indexless_live_search_fallback: true
+needs_search_usefulness_eval: true
+needs_external_full_discovery: true
+needs_main_promotion_before_launch: true
+needs_public_alpha_launch_approval: true
+```
+
+The total limited reviewed projection count is 12, still below the 25-record
+threshold. The decision remains a reassessment, not launch approval.

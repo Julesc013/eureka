@@ -61,3 +61,17 @@ Review previews are counted separately from reviewed records.
 Limited reviewed metadata/source-lead records are counted for internal
 usefulness, but not as verified artifacts, malware-clean files, rights-cleared
 records, or public launch readiness.
+
+`PUBLIC-ALPHA-REASSESS-06` adds:
+
+- previous limited reviewed projection count
+- new reviewed record delta count
+- total limited reviewed projection count after review-batch apply
+- reviewed known need count
+- reviewed bounded absence count
+- candidate count after apply
+- public search UX MVP status
+- resilience gap status
+- indexless fallback and search-usefulness-eval missing flags
+
+These metrics confirm reviewed-corpus growth while preserving launch blockers.
