@@ -2,11 +2,11 @@
 
 ## PHASE
 
-UNSPECIFIED - WORKBENCH-RUN-REVIEW-PROJECTION-00
+UNSPECIFIED - SURFACE-KERNEL-00
 
 ## GOAL
 
-WORKBENCH-RUN-REVIEW-PROJECTION-00
+SURFACE-KERNEL-00
 
 ## WHY
 
@@ -139,8 +139,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4788
-- approx_tokens: 1197
+- chars: 4754
+- approx_tokens: 1189
 - budget_status: PASS
 - warnings:
   - none
