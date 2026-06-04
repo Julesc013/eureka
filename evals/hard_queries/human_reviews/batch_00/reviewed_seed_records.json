@@ -1,0 +1,50 @@
+{
+  "schema_version": "human_reviewed_seed_records.v0",
+  "task_id": "HUMAN-REVIEW-BATCH-00",
+  "reviewed_seed_records": [
+    {
+      "reviewed_seed_record_id": "reviewed_seed_hq_windows_7_firefox_115_support_fact",
+      "title": "Firefox 115 ESR Windows 7 support fact",
+      "summary": "Reviewed narrow fact: the captured Mozilla support reference identifies Firefox 115 ESR as a Windows 7-supported Firefox line.",
+      "object_type": "software_compatibility_fact",
+      "canonical_status": "verified",
+      "hard_query_id": "hq_windows_7_apps",
+      "platform_or_time_hints": ["Windows 7", "Firefox 115 ESR"],
+      "review_event_id": "hre_hq_windows_7_firefox_115_promote",
+      "review_decision_id": "hrd_hq_windows_7_firefox_115_promote",
+      "evidence_refs": ["manual_observation_batch_00:obs_hq_windows_7_firefox_115_candidate", "source_reference:src_mozilla_win7_firefox_115"],
+      "source_observation_refs": ["manual_source_observation:obs_hq_windows_7_firefox_115_candidate"],
+      "risk_rights_posture": "metadata_fact_only_no_artifact_rights_claim",
+      "compatibility_posture": "reviewed_source_supported_compatibility_fact",
+      "known_gaps": ["not_a_general_windows_7_app_catalog", "artifact_package_identity_not_reviewed", "rights_and_security_not_reviewed"],
+      "public_visibility_posture": "public_verified_fact_allowed_read_only",
+      "accepted_truth": true,
+      "reviewed_record_created": true,
+      "reviewed_index_mutated": false,
+      "public_index_mutated": false,
+      "master_index_mutated": false
+    },
+    {
+      "reviewed_seed_record_id": "reviewed_seed_hq_firefox_xp_52_9_support_fact",
+      "title": "Firefox 52.9.0 ESR Windows XP final-support fact",
+      "summary": "Reviewed narrow fact: the captured Mozilla support reference identifies Firefox 52.9.0 ESR as the last supported release for Windows XP and Vista.",
+      "object_type": "version_history_fact",
+      "canonical_status": "verified",
+      "hard_query_id": "hq_firefox_last_xp",
+      "platform_or_time_hints": ["Windows XP", "Firefox 52.9.0 ESR"],
+      "review_event_id": "hre_hq_firefox_xp_52_9_promote",
+      "review_decision_id": "hrd_hq_firefox_xp_52_9_promote",
+      "evidence_refs": ["manual_observation_batch_00:obs_hq_firefox_xp_52_9_candidate", "source_reference:src_mozilla_xp_firefox_52_9"],
+      "source_observation_refs": ["manual_source_observation:obs_hq_firefox_xp_52_9_candidate"],
+      "risk_rights_posture": "metadata_fact_only_no_artifact_rights_claim",
+      "compatibility_posture": "reviewed_source_supported_support_window_fact",
+      "known_gaps": ["artifact_package_identity_not_reviewed", "language_or_architecture_variant_not_reviewed", "rights_and_security_not_reviewed"],
+      "public_visibility_posture": "public_verified_fact_allowed_read_only",
+      "accepted_truth": true,
+      "reviewed_record_created": true,
+      "reviewed_index_mutated": false,
+      "public_index_mutated": false,
+      "master_index_mutated": false
+    }
+  ]
+}

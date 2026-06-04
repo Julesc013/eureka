@@ -1,0 +1,84 @@
+{
+  "schema_version": "human_review_events.v0",
+  "task_id": "HUMAN-REVIEW-BATCH-00",
+  "review_events": [
+    {
+      "review_event_id": "hre_hq_windows_7_firefox_115_promote",
+      "review_decision_id": "hrd_hq_windows_7_firefox_115_promote",
+      "review_item_id": "reviewable_obs_hq_windows_7_firefox_115_candidate",
+      "manual_observation_id": "obs_hq_windows_7_firefox_115_candidate",
+      "event_kind": "decision_recorded",
+      "actor_id": "human_review_batch_00_operator",
+      "created_at": "2026-06-04T00:00:00Z",
+      "event_payload": {"decision": "promote", "resulting_status": "verified", "reviewed_record_id": "reviewed_seed_hq_windows_7_firefox_115_support_fact"},
+      "reviewed_index_mutated": false,
+      "public_index_mutated": false,
+      "master_index_mutated": false
+    },
+    {
+      "review_event_id": "hre_hq_driver_win98_mark_need",
+      "review_decision_id": "hrd_hq_driver_win98_mark_need",
+      "review_item_id": "followup_obs_hq_driver_win98_missing_scope_need",
+      "manual_observation_id": "obs_hq_driver_win98_missing_scope_need",
+      "event_kind": "decision_recorded",
+      "actor_id": "human_review_batch_00_operator",
+      "created_at": "2026-06-04T00:00:00Z",
+      "event_payload": {"decision": "mark_need", "resulting_status": "need", "reviewed_record_id": null},
+      "reviewed_index_mutated": false,
+      "public_index_mutated": false,
+      "master_index_mutated": false
+    },
+    {
+      "review_event_id": "hre_hq_blue_ftp_flashfxp_mark_near_miss",
+      "review_decision_id": "hrd_hq_blue_ftp_flashfxp_mark_near_miss",
+      "review_item_id": "reviewable_obs_hq_blue_ftp_flashfxp_near_miss",
+      "manual_observation_id": "obs_hq_blue_ftp_flashfxp_near_miss",
+      "event_kind": "decision_recorded",
+      "actor_id": "human_review_batch_00_operator",
+      "created_at": "2026-06-04T00:00:00Z",
+      "event_payload": {"decision": "mark_near_miss", "resulting_status": "near_miss", "reviewed_record_id": null},
+      "reviewed_index_mutated": false,
+      "public_index_mutated": false,
+      "master_index_mutated": false
+    },
+    {
+      "review_event_id": "hre_hq_sound_blaster_ct1740_request_more_evidence",
+      "review_decision_id": "hrd_hq_sound_blaster_ct1740_request_more_evidence",
+      "review_item_id": "reviewable_obs_hq_sound_blaster_ct1740_manual_unavailable",
+      "manual_observation_id": "obs_hq_sound_blaster_ct1740_manual_unavailable",
+      "event_kind": "decision_recorded",
+      "actor_id": "human_review_batch_00_operator",
+      "created_at": "2026-06-04T00:00:00Z",
+      "event_payload": {"decision": "request_more_evidence", "resulting_status": "need", "reviewed_record_id": null},
+      "reviewed_index_mutated": false,
+      "public_index_mutated": false,
+      "master_index_mutated": false
+    },
+    {
+      "review_event_id": "hre_hq_firefox_xp_52_9_promote",
+      "review_decision_id": "hrd_hq_firefox_xp_52_9_promote",
+      "review_item_id": "reviewable_obs_hq_firefox_xp_52_9_candidate",
+      "manual_observation_id": "obs_hq_firefox_xp_52_9_candidate",
+      "event_kind": "decision_recorded",
+      "actor_id": "human_review_batch_00_operator",
+      "created_at": "2026-06-04T00:00:00Z",
+      "event_payload": {"decision": "promote", "resulting_status": "verified", "reviewed_record_id": "reviewed_seed_hq_firefox_xp_52_9_support_fact"},
+      "reviewed_index_mutated": false,
+      "public_index_mutated": false,
+      "master_index_mutated": false
+    },
+    {
+      "review_event_id": "hre_hq_ray_tracing_byte_request_more_evidence",
+      "review_decision_id": "hrd_hq_ray_tracing_byte_request_more_evidence",
+      "review_item_id": "reviewable_obs_hq_ray_tracing_byte_parallel_course_candidate",
+      "manual_observation_id": "obs_hq_ray_tracing_byte_parallel_course_candidate",
+      "event_kind": "decision_recorded",
+      "actor_id": "human_review_batch_00_operator",
+      "created_at": "2026-06-04T00:00:00Z",
+      "event_payload": {"decision": "request_more_evidence", "resulting_status": "need", "reviewed_record_id": null},
+      "reviewed_index_mutated": false,
+      "public_index_mutated": false,
+      "master_index_mutated": false
+    }
+  ]
+}
