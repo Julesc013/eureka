@@ -1,0 +1,49 @@
+{
+  "schema_version": "hard_query_public_alpha_corpus_readiness.v0",
+  "status": "FAIL_INSUFFICIENT_REVIEWED_CORPUS",
+  "required_target": {
+    "hard_queries": 50,
+    "reviewed_records": 200,
+    "candidates_needs_near_misses_or_absences": 500,
+    "evidence_summary_per_reviewed_record": true
+  },
+  "current": {
+    "hard_query_seed_map_coverage": "6/6 required hard queries mapped",
+    "hard_queries_mapped": 6,
+    "reviewed_count": 0,
+    "candidate_count": 2,
+    "need_count": 1,
+    "near_miss_count": 1,
+    "policy_blocked_count": 1,
+    "unavailable_count": 1,
+    "unknown_count": 0,
+    "non_reviewed_useful_count": 6
+  },
+  "minimum_gap_to_alpha": {
+    "hard_queries": 44,
+    "reviewed_records": 200,
+    "candidates_needs_near_misses_or_absences": 494
+  },
+  "alpha_corpus_gate": "FAIL_INSUFFICIENT_REVIEWED_CORPUS",
+  "manual_observation_required": true,
+  "external_full_discovery_required": false,
+  "recommended_next_batch_size": {
+    "manual_observations": 6,
+    "review_candidates": 6,
+    "reviewed_seed_records": 25,
+    "candidate_need_near_miss_items": 50
+  },
+  "recommended_next_task": "MANUAL-OBSERVATION-BATCH-00",
+  "truth_boundary": {
+    "synthetic_fixtures_count_as_evidence": false,
+    "fallback_output_counted_as_verified": false,
+    "candidate_counted_as_reviewed": false,
+    "need_counted_as_reviewed": false,
+    "near_miss_counted_as_reviewed": false,
+    "review_backlog_items_are_review_decisions": false,
+    "live_source_calls_performed": false,
+    "reviewed_index_mutated": false,
+    "public_index_mutated": false,
+    "master_index_mutated": false
+  }
+}

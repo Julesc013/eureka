@@ -2,11 +2,11 @@
 
 ## PHASE
 
-UNSPECIFIED - HARD-QUERY-EVAL-00
+UNSPECIFIED - REVIEWED-SEED-CORPUS-00
 
 ## GOAL
 
-HARD-QUERY-EVAL-00
+REVIEWED-SEED-CORPUS-00
 
 ## WHY
 
@@ -139,8 +139,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4756
-- approx_tokens: 1189
+- chars: 4766
+- approx_tokens: 1192
 - budget_status: PASS
 - warnings:
   - none

@@ -1,0 +1,85 @@
+{
+  "schema_version": "hard_query_review_backlog.v0",
+  "status": "readiness_backlog_only",
+  "review_decisions_created": false,
+  "backlog_items": [
+    {
+      "backlog_item_id": "backlog_seed_hq_windows_7_apps_candidate",
+      "seed_item_id": "seed_hq_windows_7_apps_candidate",
+      "hard_query_id": "hq_windows_7_apps",
+      "current_status": "candidate",
+      "desired_review_decision": "promote",
+      "required_evidence": ["review-event-backed compatibility evidence", "artifact identity evidence", "source observation summary"],
+      "required_source_observation": "public-safe metadata observation for Windows 7-compatible utility artifact",
+      "required_human_check": "confirm this is an application/utility artifact, not operating-system media",
+      "risk_or_rights_question": "rights and acquisition posture unknown",
+      "blocked_by": ["review_event_missing", "artifact_not_verified"],
+      "suggested_next_task": "MANUAL-OBSERVATION-BATCH-00"
+    },
+    {
+      "backlog_item_id": "backlog_seed_hq_driver_win98_need",
+      "seed_item_id": "seed_hq_driver_win98_need",
+      "hard_query_id": "hq_driver_win98",
+      "current_status": "need",
+      "desired_review_decision": "request_more_evidence",
+      "required_evidence": ["hardware vendor", "device model", "Windows 98 edition or architecture clue"],
+      "required_source_observation": "device-specific driver/support source observation",
+      "required_human_check": "identify target hardware before evaluating driver candidates",
+      "risk_or_rights_question": "driver safety and rights posture unknown",
+      "blocked_by": ["hardware_identity_missing", "source_observation_missing"],
+      "suggested_next_task": "MANUAL-OBSERVATION-BATCH-00"
+    },
+    {
+      "backlog_item_id": "backlog_seed_hq_blue_ftp_client_xp_near_miss",
+      "seed_item_id": "seed_hq_blue_ftp_client_xp_near_miss",
+      "hard_query_id": "hq_blue_ftp_client_xp",
+      "current_status": "near_miss",
+      "desired_review_decision": "mark_near_miss",
+      "required_evidence": ["candidate FTP-client identity", "Windows XP compatibility clue", "visual clue support or mismatch"],
+      "required_source_observation": "public-safe metadata or documentation observation for likely XP FTP client",
+      "required_human_check": "verify whether blue clue matches product icon, UI, or memory only",
+      "risk_or_rights_question": "candidate acquisition posture unknown",
+      "blocked_by": ["visual_identity_evidence_missing", "source_observation_missing"],
+      "suggested_next_task": "MANUAL-OBSERVATION-BATCH-00"
+    },
+    {
+      "backlog_item_id": "backlog_seed_hq_sound_blaster_ct1740_manual_candidate",
+      "seed_item_id": "seed_hq_sound_blaster_ct1740_manual_candidate",
+      "hard_query_id": "hq_sound_blaster_ct1740_manual",
+      "current_status": "candidate",
+      "desired_review_decision": "request_more_evidence",
+      "required_evidence": ["CT1740 model identifier", "manual/document identity", "source observation summary"],
+      "required_source_observation": "manual/document metadata observation for CT1740 or related-model near miss",
+      "required_human_check": "confirm document is for CT1740 or mark related model as near_miss",
+      "risk_or_rights_question": "scan rights and completeness unknown",
+      "blocked_by": ["source_observation_missing", "document_identity_unverified"],
+      "suggested_next_task": "MANUAL-OBSERVATION-BATCH-00"
+    },
+    {
+      "backlog_item_id": "backlog_seed_hq_firefox_last_xp_policy_blocked",
+      "seed_item_id": "seed_hq_firefox_last_xp_policy_blocked",
+      "hard_query_id": "hq_firefox_last_xp",
+      "current_status": "policy_blocked",
+      "desired_review_decision": "request_more_evidence",
+      "required_evidence": ["version number", "release date", "XP support-window source", "ESR versus regular-release distinction"],
+      "required_source_observation": "public-safe release/support source observation",
+      "required_human_check": "confirm support-window semantics before public version certainty",
+      "risk_or_rights_question": "public acquisition and support posture require caution",
+      "blocked_by": ["reviewed_support_window_evidence_missing"],
+      "suggested_next_task": "MANUAL-OBSERVATION-BATCH-00"
+    },
+    {
+      "backlog_item_id": "backlog_seed_hq_ray_tracing_1994_magazine_unavailable",
+      "seed_item_id": "seed_hq_ray_tracing_1994_magazine_unavailable",
+      "hard_query_id": "hq_ray_tracing_1994_magazine",
+      "current_status": "unavailable",
+      "desired_review_decision": "request_more_evidence",
+      "required_evidence": ["publication title", "issue/date", "article title or page range", "OCR/source observation if available"],
+      "required_source_observation": "article/issue/page observation or scoped source gap observation",
+      "required_human_check": "identify whether the query can narrow to a publication or article candidate",
+      "risk_or_rights_question": "scan rights, page access, and OCR quality unknown",
+      "blocked_by": ["publication_title_missing", "article_scan_source_observation_missing"],
+      "suggested_next_task": "MANUAL-OBSERVATION-BATCH-00"
+    }
+  ]
+}
