@@ -7,7 +7,7 @@ from typing import Any, Callable, Mapping
 
 from runtime.surface.cache_key import build_surface_cache_key
 from runtime.surface.capabilities import negotiate_surface_profile
-from runtime.surface.dispatch import RendererCallable, dispatch_surface_renderer
+from runtime.surface.dispatch import RendererCallable, dispatch_surface_renderer, effective_surface_renderer_id
 from runtime.surface.fallback import safe_degraded_view
 from runtime.surface.output_policy import OPERATOR_POSTURE, apply_surface_output_policy
 from runtime.surface.routes import resolve_surface_route
@@ -61,12 +61,17 @@ class SurfaceKernel:
             policy_posture=request.policy_posture,
         )
         entity_id = request.entity_id or str(policy_view.get("entity_id") or route.route_id)
+        effective_renderer = effective_surface_renderer_id(
+            capability.representation_profile,
+            renderer_id=request.renderer_id,
+            renderer=request.renderer,
+        )
         cache = build_surface_cache_key(
             route=route.route_id,
             entity_id=entity_id,
             view_model_version=str(policy_view.get("view_model_version") or "surface_view_model.v0"),
             representation_profile=capability.representation_profile,
-            renderer_id=request.renderer_id,
+            renderer_id=effective_renderer,
             skin_id=request.skin_id,
             language=request.language,
             visibility_posture=request.visibility_posture,
@@ -76,7 +81,7 @@ class SurfaceKernel:
         renderer_result = dispatch_surface_renderer(
             policy_view,
             representation_profile=capability.representation_profile,
-            renderer_id=request.renderer_id,
+            renderer_id=effective_renderer,
             renderer=request.renderer,
         )
         return {

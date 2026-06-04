@@ -2,11 +2,11 @@
 
 ## PHASE
 
-UNSPECIFIED - SURFACE-KERNEL-00
+UNSPECIFIED - BASELINE-RENDERERS-00
 
 ## GOAL
 
-SURFACE-KERNEL-00
+BASELINE-RENDERERS-00
 
 ## WHY
 
@@ -139,8 +139,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4754
-- approx_tokens: 1189
+- chars: 4762
+- approx_tokens: 1191
 - budget_status: PASS
 - warnings:
   - none
