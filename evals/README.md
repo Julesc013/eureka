@@ -6,6 +6,7 @@ over time rather than component-local correctness.
 Current families:
 
 - `archive_resolution/`: hard software-resolution benchmark tasks.
+- `hard_queries/`: deterministic SurfaceKernel/rendering usefulness fixtures for messy public-alpha queries.
 - `search_usefulness/`: broad query pack and manual external-baseline status.
 - `system/`: system-level evaluation sets.
 - `replay/`: replayable scenarios and regression-oriented runs.

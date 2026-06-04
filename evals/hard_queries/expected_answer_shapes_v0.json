@@ -1,0 +1,42 @@
+{
+  "schema_version": "hard_query_expected_answer_shapes_v0",
+  "status": "fixture_eval_only",
+  "shapes": [
+    {
+      "query_id": "hq_windows_7_apps",
+      "useful_units": ["software artifact", "compatible installer", "portable package", "scoped compatibility need"],
+      "must_include": ["public status", "Windows 7 scope", "candidate or need state", "uncertainty or evidence summary"],
+      "must_not_include": ["generic operating system media as direct answer", "operator-only action", "verified claim without review"]
+    },
+    {
+      "query_id": "hq_driver_win98",
+      "useful_units": ["device-specific driver candidate", "hardware identification need", "near miss with platform mismatch"],
+      "must_include": ["public status", "Win98 scope", "missing vendor/model explanation", "safe next action"],
+      "must_not_include": ["fabricated hardware model", "download/install action", "global absence claim"]
+    },
+    {
+      "query_id": "hq_blue_ftp_client_xp",
+      "useful_units": ["candidate application identity", "near miss with missing visual evidence", "need for screenshot/name clue"],
+      "must_include": ["public status", "Windows XP scope", "vague clue handling", "uncertainty summary"],
+      "must_not_include": ["modern FTP client as equivalent", "blue-only match as verified", "operator-only action"]
+    },
+    {
+      "query_id": "hq_sound_blaster_ct1740_manual",
+      "useful_units": ["manual artifact", "exact hardware-page candidate", "documentation source need"],
+      "must_include": ["public status", "CT1740 model scope", "manual/document type", "source or uncertainty summary"],
+      "must_not_include": ["related model as exact match without label", "file fetching action", "reviewed record claim"]
+    },
+    {
+      "query_id": "hq_firefox_last_xp",
+      "useful_units": ["candidate version/support answer", "need for support-window evidence", "policy_blocked degraded result"],
+      "must_include": ["public status", "XP support-window ambiguity", "version evidence requirement", "blocked or uncertainty reason"],
+      "must_not_include": ["modern Firefox as equivalent", "install action", "verified version claim without review"]
+    },
+    {
+      "query_id": "hq_ray_tracing_1994_magazine",
+      "useful_units": ["article candidate", "issue/page need", "scoped unavailable article-scan state"],
+      "must_include": ["public status", "1994 and magazine scope", "publication/page uncertainty", "source/capability limit"],
+      "must_not_include": ["broad magazine collection as direct answer", "OCR/download action", "exhaustive absence claim"]
+    }
+  ]
+}

@@ -2,11 +2,11 @@
 
 ## PHASE
 
-UNSPECIFIED - BASELINE-RENDERERS-00
+UNSPECIFIED - HARD-QUERY-EVAL-00
 
 ## GOAL
 
-BASELINE-RENDERERS-00
+HARD-QUERY-EVAL-00
 
 ## WHY
 
@@ -139,8 +139,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4762
-- approx_tokens: 1191
+- chars: 4756
+- approx_tokens: 1189
 - budget_status: PASS
 - warnings:
   - none

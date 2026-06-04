@@ -1,0 +1,24 @@
+{
+  "schema_version": "hard_query_usefulness_scorecard_v0",
+  "status": "fixture_eval_only",
+  "scale": {
+    "0": "fail, misleading, or missing",
+    "1": "weak but safe",
+    "2": "adequate for internal eval",
+    "3": "public-alpha useful"
+  },
+  "dimensions": [
+    {"dimension": "status_honesty", "pass_gate": 3},
+    {"dimension": "smallest_useful_unit", "pass_gate": 2},
+    {"dimension": "evidence_or_uncertainty_explanation", "pass_gate": 2},
+    {"dimension": "candidate_need_or_absence_quality", "pass_gate": 2},
+    {"dimension": "result_reason_quality", "pass_gate": 2},
+    {"dimension": "public_action_policy_compliance", "pass_gate": 3},
+    {"dimension": "renderer_profile_coverage", "pass_gate": 2},
+    {"dimension": "surface_consistency", "pass_gate": 2},
+    {"dimension": "no_truth_boundary_bypass", "pass_gate": 3},
+    {"dimension": "no_live_source_fanout", "pass_gate": 3}
+  ],
+  "renderer_profiles_required": ["json_v0", "text_v0", "html_basic_v0", "snapshot_v0"],
+  "public_forbidden_actions": ["review_candidate", "promote", "reject", "supersede", "request_more_evidence", "rebuild_index", "freeze_review", "download", "install", "launch_emulator", "run_extraction", "submit_direct_evidence", "crawl_source", "arbitrary_live_lookup"]
+}
