@@ -1,0 +1,17 @@
+{
+  "schema_version": "human_review_record_materialization_backlog.v0",
+  "task_id": "HUMAN-REVIEW-BATCH-01",
+  "record_materialization_backlog": [
+    {"backlog_item_id": "backlog_b01_firefox_115_support_source_link", "review_decision_id": "hrd_b01_hq_windows_7_firefox_115_supersede", "reason": "duplicate_fact_link_to_existing_record", "reviewed_seed_record_created": false, "next_required_action": "link_supporting_source_to_existing_reviewed_seed_record"},
+    {"backlog_item_id": "backlog_b01_smartftp_version_build_evidence", "review_decision_id": "hrd_b01_hq_windows_7_smartftp_request_more_evidence", "reason": "stable_version_build_source_missing", "reviewed_seed_record_created": false, "next_required_action": "collect_stable_smartftp_version_build_source"},
+    {"backlog_item_id": "backlog_b01_driver_win98_hardware_details", "review_decision_id": "hrd_b01_hq_driver_win98_mark_need", "reason": "user_hardware_identity_missing", "reviewed_seed_record_created": false, "next_required_action": "collect_user_hardware_details"},
+    {"backlog_item_id": "backlog_b01_flashfxp_visual_identity", "review_decision_id": "hrd_b01_hq_blue_ftp_flashfxp_mark_near_miss", "reason": "visual_identity_evidence_missing", "reviewed_seed_record_created": false, "next_required_action": "collect_visual_identity_evidence"},
+    {"backlog_item_id": "backlog_b01_coreftp_platform_visual_scope", "review_decision_id": "hrd_b01_hq_blue_ftp_coreftp_request_more_evidence", "reason": "xp_and_visual_scope_missing", "reviewed_seed_record_created": false, "next_required_action": "collect_coreftp_xp_and_visual_identity_evidence"},
+    {"backlog_item_id": "backlog_b01_ct1740_primary_manual", "review_decision_id": "hrd_b01_hq_sound_blaster_ct1740_request_more_evidence", "reason": "primary_ct1740_manual_source_missing", "reviewed_seed_record_created": false, "next_required_action": "collect_ct1740_manual_source_or_related_near_miss"},
+    {"backlog_item_id": "backlog_b01_sound_blaster_16_exact_fit", "review_decision_id": "hrd_b01_hq_sound_blaster_16_manual_mark_near_miss", "reason": "exact_ct1740_operation_manual_fit_unproved", "reviewed_seed_record_created": false, "next_required_action": "collect_exact_ct1740_manual_evidence"},
+    {"backlog_item_id": "backlog_b01_firefox_52_requirements_source_link", "review_decision_id": "hrd_b01_hq_firefox_xp_52_9_requirements_supersede", "reason": "duplicate_fact_link_to_existing_record", "reviewed_seed_record_created": false, "next_required_action": "link_supporting_source_to_existing_reviewed_seed_record"},
+    {"backlog_item_id": "backlog_b01_firefox_xp_support_article_source_link", "review_decision_id": "hrd_b01_hq_firefox_xp_support_article_supersede", "reason": "duplicate_fact_link_to_existing_record", "reviewed_seed_record_created": false, "next_required_action": "link_supporting_source_to_existing_reviewed_seed_record"},
+    {"backlog_item_id": "backlog_b01_parallel_course_primary_issue", "review_decision_id": "hrd_b01_hq_ray_tracing_parallel_course_request_more_evidence", "reason": "primary_issue_page_metadata_missing", "reviewed_seed_record_created": false, "next_required_action": "collect_primary_issue_or_page_metadata"},
+    {"backlog_item_id": "backlog_b01_radiance_byte_disambiguation", "review_decision_id": "hrd_b01_hq_ray_tracing_radiance_mark_near_miss", "reason": "related_1994_ray_tracing_source_not_requested_byte_article", "reviewed_seed_record_created": false, "next_required_action": "collect_byte_issue_or_article_metadata"}
+  ]
+}

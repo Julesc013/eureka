@@ -1,0 +1,20 @@
+{
+  "schema_version": "human_review_renderer_expected_outputs.v0",
+  "task_id": "HUMAN-REVIEW-BATCH-01",
+  "renderer_profiles": ["json_v0", "text_v0", "html_basic_v0", "snapshot_v0"],
+  "expected_status_by_decision": {
+    "hrd_b01_hq_windows_7_firefox_115_supersede": "superseded",
+    "hrd_b01_hq_windows_7_7zip_promote": "verified",
+    "hrd_b01_hq_windows_7_smartftp_request_more_evidence": "need",
+    "hrd_b01_hq_driver_win98_mark_need": "need",
+    "hrd_b01_hq_blue_ftp_flashfxp_mark_near_miss": "near_miss",
+    "hrd_b01_hq_blue_ftp_coreftp_request_more_evidence": "need",
+    "hrd_b01_hq_sound_blaster_ct1740_request_more_evidence": "need",
+    "hrd_b01_hq_sound_blaster_16_manual_mark_near_miss": "near_miss",
+    "hrd_b01_hq_firefox_xp_52_9_requirements_supersede": "superseded",
+    "hrd_b01_hq_firefox_xp_support_article_supersede": "superseded",
+    "hrd_b01_hq_ray_tracing_parallel_course_request_more_evidence": "need",
+    "hrd_b01_hq_ray_tracing_radiance_mark_near_miss": "near_miss"
+  },
+  "forbidden_public_action_terms": ["review_candidate", "promote", "reject", "request_more_evidence", "download", "install", "rebuild_index", "crawl_source", "arbitrary_live_lookup"]
+}

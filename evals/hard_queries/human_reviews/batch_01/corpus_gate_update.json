@@ -1,0 +1,70 @@
+{
+  "schema_version": "human_review_corpus_gate_update.v0",
+  "task_id": "HUMAN-REVIEW-BATCH-01",
+  "public_alpha_corpus_gate": "FAIL_INSUFFICIENT_REVIEWED_CORPUS",
+  "batch_counts": {
+    "reviewed_count": 1,
+    "review_decision_backed_count": 12,
+    "candidate_count": 0,
+    "need_count": 5,
+    "near_miss_count": 3,
+    "superseded_count": 3,
+    "mention_only_count": 0,
+    "policy_blocked_count": 0,
+    "unavailable_count": 0,
+    "unknown_count": 0,
+    "request_more_evidence_count": 4,
+    "blocked_for_user_details_count": 1,
+    "hard_queries_total": 6,
+    "hard_queries_with_review_decision": 6,
+    "hard_queries_with_promoted_or_reviewed_item": 1,
+    "hard_queries_still_needing_observation": 4
+  },
+  "cumulative_counts_after_batch": {
+    "reviewed_count": 3,
+    "review_decision_backed_count": 18,
+    "candidate_count": 0,
+    "need_count": 5,
+    "near_miss_count": 3,
+    "superseded_count": 3,
+    "mention_only_count": 0,
+    "policy_blocked_count": 0,
+    "unavailable_count": 0,
+    "unknown_count": 0,
+    "request_more_evidence_count": 4,
+    "blocked_for_user_details_count": 1,
+    "hard_queries_total": 6,
+    "hard_queries_with_review_decision": 6,
+    "hard_queries_with_promoted_or_reviewed_item": 2,
+    "hard_queries_still_needing_observation": 4
+  },
+  "minimum_public_alpha_targets": {
+    "hard_queries": 50,
+    "reviewed_records": 200,
+    "candidates_needs_near_misses_or_absences": 500
+  },
+  "minimum_gap_to_alpha": {
+    "hard_queries": 44,
+    "reviewed_records": 197,
+    "candidates_needs_near_misses_or_absences": 489
+  },
+  "reason_gate_passed_or_failed": "Batch 01 created one new reviewed seed record and recorded twelve review decisions, but the reviewed corpus remains far below public alpha breadth and reviewed-record thresholds.",
+  "recommended_next_task": "REVIEWED-CORPUS-SEED-BATCH-02",
+  "secondary_followup": "USER-HARDWARE-DETAILS-00",
+  "truth_boundary": {
+    "synthetic_eval_fixture_used_as_evidence": false,
+    "ai_model_output_counted_as_truth": false,
+    "source_observation_self_promoted": false,
+    "candidate_self_promoted": false,
+    "fallback_summary_self_promoted": false,
+    "reviewable_item_self_promoted": false,
+    "reviewed_index_mutated": false,
+    "public_index_mutated": false,
+    "master_index_mutated": false,
+    "product_runtime_live_source_calls_performed": false,
+    "downloads_performed": false,
+    "file_fetches_performed": false,
+    "wayback_replay_performed": false
+  },
+  "full_discovery_required": false
+}

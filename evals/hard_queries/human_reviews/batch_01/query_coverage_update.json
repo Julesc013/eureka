@@ -1,0 +1,88 @@
+{
+  "schema_version": "human_review_query_coverage_update.v0",
+  "task_id": "HUMAN-REVIEW-BATCH-01",
+  "query_coverage": [
+    {
+      "hard_query_id": "hq_windows_7_apps",
+      "query_text": "Windows 7 apps",
+      "best_current_status": "verified",
+      "reviewed_record_count": 2,
+      "batch_review_decision_ids": [
+        "hrd_b01_hq_windows_7_firefox_115_supersede",
+        "hrd_b01_hq_windows_7_7zip_promote",
+        "hrd_b01_hq_windows_7_smartftp_request_more_evidence"
+      ],
+      "new_reviewed_seed_record_ids": ["reviewed_seed_b01_hq_windows_7_7zip_support_fact"],
+      "coverage_note": "A second narrow Windows 7 compatibility fact is reviewed for 7-Zip; Firefox 115 remains linked to the existing reviewed seed record.",
+      "next_required_action": "collect_more_reviewable_windows_7_software_facts",
+      "public_alpha_readiness": "not_ready"
+    },
+    {
+      "hard_query_id": "hq_driver_win98",
+      "query_text": "driver for Win98",
+      "best_current_status": "need",
+      "reviewed_record_count": 0,
+      "batch_review_decision_ids": ["hrd_b01_hq_driver_win98_mark_need"],
+      "new_reviewed_seed_record_ids": [],
+      "coverage_note": "The query remains blocked until hardware vendor, model, device ID or chipset, bus/interface, and exact Windows 98 version are known.",
+      "next_required_action": "collect_user_hardware_details",
+      "public_alpha_readiness": "not_ready"
+    },
+    {
+      "hard_query_id": "hq_blue_ftp_client_xp",
+      "query_text": "old blue FTP client for XP",
+      "best_current_status": "near_miss",
+      "reviewed_record_count": 0,
+      "batch_review_decision_ids": [
+        "hrd_b01_hq_blue_ftp_flashfxp_mark_near_miss",
+        "hrd_b01_hq_blue_ftp_coreftp_request_more_evidence"
+      ],
+      "new_reviewed_seed_record_ids": [],
+      "coverage_note": "FlashFXP remains a near miss; Core FTP remains a source lead needing XP and visual-identity evidence.",
+      "next_required_action": "collect_visual_identity_and_platform_evidence",
+      "public_alpha_readiness": "not_ready"
+    },
+    {
+      "hard_query_id": "hq_sound_blaster_ct1740_manual",
+      "query_text": "manual for Sound Blaster CT1740",
+      "best_current_status": "near_miss",
+      "reviewed_record_count": 0,
+      "batch_review_decision_ids": [
+        "hrd_b01_hq_sound_blaster_ct1740_request_more_evidence",
+        "hrd_b01_hq_sound_blaster_16_manual_mark_near_miss"
+      ],
+      "new_reviewed_seed_record_ids": [],
+      "coverage_note": "A related Sound Blaster 16 manual is a near miss; exact CT1740 operation-manual evidence remains missing.",
+      "next_required_action": "collect_exact_ct1740_manual_evidence",
+      "public_alpha_readiness": "not_ready"
+    },
+    {
+      "hard_query_id": "hq_firefox_last_xp",
+      "query_text": "latest Firefox before XP support ended",
+      "best_current_status": "verified",
+      "reviewed_record_count": 1,
+      "batch_review_decision_ids": [
+        "hrd_b01_hq_firefox_xp_52_9_requirements_supersede",
+        "hrd_b01_hq_firefox_xp_support_article_supersede"
+      ],
+      "new_reviewed_seed_record_ids": [],
+      "coverage_note": "Both Batch 01 Mozilla observations support the existing reviewed Firefox 52.9.0 ESR XP/Vista final-support fact.",
+      "next_required_action": "link_supporting_sources_to_existing_reviewed_seed_record",
+      "public_alpha_readiness": "not_ready"
+    },
+    {
+      "hard_query_id": "hq_ray_tracing_1994_magazine",
+      "query_text": "article about ray tracing in a 1994 magazine",
+      "best_current_status": "need",
+      "reviewed_record_count": 0,
+      "batch_review_decision_ids": [
+        "hrd_b01_hq_ray_tracing_parallel_course_request_more_evidence",
+        "hrd_b01_hq_ray_tracing_radiance_mark_near_miss"
+      ],
+      "new_reviewed_seed_record_ids": [],
+      "coverage_note": "Parallel Course remains a Byte article source lead needing primary issue metadata; RADIANCE is a related near miss.",
+      "next_required_action": "collect_primary_byte_issue_or_page_metadata",
+      "public_alpha_readiness": "not_ready"
+    }
+  ]
+}

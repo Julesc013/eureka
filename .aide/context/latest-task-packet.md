@@ -2,11 +2,11 @@
 
 ## PHASE
 
-UNSPECIFIED - MANUAL-OBSERVATION-BATCH-01
+UNSPECIFIED - HUMAN-REVIEW-BATCH-01
 
 ## GOAL
 
-MANUAL-OBSERVATION-BATCH-01
+HUMAN-REVIEW-BATCH-01
 
 ## WHY
 
@@ -139,8 +139,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4774
-- approx_tokens: 1194
+- chars: 4762
+- approx_tokens: 1191
 - budget_status: PASS
 - warnings:
   - none
