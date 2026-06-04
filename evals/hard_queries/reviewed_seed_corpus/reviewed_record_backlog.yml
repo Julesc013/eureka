@@ -1,0 +1,3 @@
+schema_version: reviewed_corpus_family_reviewed_record_backlog.v0
+current_batch: batch_01
+source: evals/hard_queries/reviewed_seed_corpus/batch_01/reviewed_record_backlog.yml

@@ -1,0 +1,23 @@
+schema_version: reviewed_corpus_reviewed_record_backlog.v0
+task_id: REVIEWED-CORPUS-SEED-BATCH-01
+items:
+  - backlog_item_id: backlog_hq_driver_win98_after_user_details
+    hard_query_id: hq_driver_win98
+    current_status: need
+    reviewed_seed_record_created: false
+    next_required_action: collect_user_hardware_details
+  - backlog_item_id: backlog_hq_blue_ftp_after_visual_identity
+    hard_query_id: hq_blue_ftp_client_xp
+    current_status: near_miss
+    reviewed_seed_record_created: false
+    next_required_action: collect_visual_identity_evidence
+  - backlog_item_id: backlog_hq_sound_blaster_ct1740_after_manual_source
+    hard_query_id: hq_sound_blaster_ct1740_manual
+    current_status: need
+    reviewed_seed_record_created: false
+    next_required_action: collect_ct1740_manual_source_or_related_near_miss
+  - backlog_item_id: backlog_hq_ray_tracing_after_primary_issue
+    hard_query_id: hq_ray_tracing_1994_magazine
+    current_status: need
+    reviewed_seed_record_created: false
+    next_required_action: collect_primary_issue_or_page_metadata

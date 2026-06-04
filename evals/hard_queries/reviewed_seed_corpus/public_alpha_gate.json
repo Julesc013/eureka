@@ -1,0 +1,19 @@
+{
+  "schema_version": "reviewed_corpus_family_public_alpha_gate.v0",
+  "current_batch": "batch_01",
+  "public_alpha_corpus_gate": "FAIL_INSUFFICIENT_REVIEWED_CORPUS",
+  "counts": {
+    "reviewed_count": 2,
+    "review_decision_backed_count": 6,
+    "need_count": 3,
+    "near_miss_count": 1,
+    "hard_queries_total": 6
+  },
+  "minimum_public_alpha_targets": {
+    "hard_queries": 50,
+    "reviewed_records": 200,
+    "candidates_needs_near_misses_or_absences": 500
+  },
+  "recommended_next_task": "MANUAL-OBSERVATION-BATCH-01",
+  "secondary_followup": "USER-HARDWARE-DETAILS-00"
+}

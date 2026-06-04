@@ -1,0 +1,19 @@
+schema_version: reviewed_corpus_manual_followups.v0
+task_id: REVIEWED-CORPUS-SEED-BATCH-01
+items:
+  - followup_id: followup_hq_windows_7_apps_catalog
+    hard_query_id: hq_windows_7_apps
+    reason: current_reviewed_record_is_a_narrow_firefox_fact_only
+    next_required_action: collect_more_reviewable_windows_7_software_facts
+  - followup_id: followup_hq_blue_ftp_visual_identity
+    hard_query_id: hq_blue_ftp_client_xp
+    reason: near_miss_lacks_blue_visual_identity_evidence
+    next_required_action: collect_visual_identity_evidence
+  - followup_id: followup_hq_sound_blaster_ct1740_manual
+    hard_query_id: hq_sound_blaster_ct1740_manual
+    reason: primary_or_related_manual_source_missing
+    next_required_action: collect_ct1740_manual_source_or_related_near_miss
+  - followup_id: followup_hq_ray_tracing_primary_issue
+    hard_query_id: hq_ray_tracing_1994_magazine
+    reason: primary_issue_page_or_publication_metadata_missing
+    next_required_action: collect_primary_issue_or_page_metadata

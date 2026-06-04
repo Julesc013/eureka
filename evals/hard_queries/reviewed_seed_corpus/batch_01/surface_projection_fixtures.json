@@ -1,0 +1,60 @@
+{
+  "schema_version": "reviewed_corpus_surface_projection_fixtures.v0",
+  "task_id": "REVIEWED-CORPUS-SEED-BATCH-01",
+  "fixtures": [
+    {
+      "fixture_id": "surface_fixture_rcsb01_hq_windows_7_apps_verified",
+      "outcome_id": "rcsb01_hq_windows_7_apps_verified",
+      "hard_query_id": "hq_windows_7_apps",
+      "expected_status": "verified",
+      "renderer_profiles_expected": ["json_v0", "text_v0", "html_basic_v0", "snapshot_v0"],
+      "public_actions": ["view", "inspect_evidence", "cite"],
+      "reviewed_seed_record_id": "reviewed_seed_hq_windows_7_firefox_115_support_fact"
+    },
+    {
+      "fixture_id": "surface_fixture_rcsb01_hq_driver_win98_need",
+      "outcome_id": "rcsb01_hq_driver_win98_need",
+      "hard_query_id": "hq_driver_win98",
+      "expected_status": "need",
+      "renderer_profiles_expected": ["json_v0", "text_v0", "html_basic_v0", "snapshot_v0"],
+      "public_actions": ["view", "inspect_evidence", "cite"],
+      "reviewed_seed_record_id": null
+    },
+    {
+      "fixture_id": "surface_fixture_rcsb01_hq_blue_ftp_client_xp_near_miss",
+      "outcome_id": "rcsb01_hq_blue_ftp_client_xp_near_miss",
+      "hard_query_id": "hq_blue_ftp_client_xp",
+      "expected_status": "near_miss",
+      "renderer_profiles_expected": ["json_v0", "text_v0", "html_basic_v0", "snapshot_v0"],
+      "public_actions": ["view", "inspect_evidence", "cite"],
+      "reviewed_seed_record_id": null
+    },
+    {
+      "fixture_id": "surface_fixture_rcsb01_hq_sound_blaster_ct1740_manual_need",
+      "outcome_id": "rcsb01_hq_sound_blaster_ct1740_manual_need",
+      "hard_query_id": "hq_sound_blaster_ct1740_manual",
+      "expected_status": "need",
+      "renderer_profiles_expected": ["json_v0", "text_v0", "html_basic_v0", "snapshot_v0"],
+      "public_actions": ["view", "inspect_evidence", "cite"],
+      "reviewed_seed_record_id": null
+    },
+    {
+      "fixture_id": "surface_fixture_rcsb01_hq_firefox_last_xp_verified",
+      "outcome_id": "rcsb01_hq_firefox_last_xp_verified",
+      "hard_query_id": "hq_firefox_last_xp",
+      "expected_status": "verified",
+      "renderer_profiles_expected": ["json_v0", "text_v0", "html_basic_v0", "snapshot_v0"],
+      "public_actions": ["view", "inspect_evidence", "cite"],
+      "reviewed_seed_record_id": "reviewed_seed_hq_firefox_xp_52_9_support_fact"
+    },
+    {
+      "fixture_id": "surface_fixture_rcsb01_hq_ray_tracing_1994_magazine_need",
+      "outcome_id": "rcsb01_hq_ray_tracing_1994_magazine_need",
+      "hard_query_id": "hq_ray_tracing_1994_magazine",
+      "expected_status": "need",
+      "renderer_profiles_expected": ["json_v0", "text_v0", "html_basic_v0", "snapshot_v0"],
+      "public_actions": ["view", "inspect_evidence", "cite"],
+      "reviewed_seed_record_id": null
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "schema_version": "reviewed_corpus_renderer_expected_outputs.v0",
+  "task_id": "REVIEWED-CORPUS-SEED-BATCH-01",
+  "renderer_profiles": ["json_v0", "text_v0", "html_basic_v0", "snapshot_v0"],
+  "expected_status_by_query": {
+    "hq_windows_7_apps": "verified",
+    "hq_driver_win98": "need",
+    "hq_blue_ftp_client_xp": "near_miss",
+    "hq_sound_blaster_ct1740_manual": "need",
+    "hq_firefox_last_xp": "verified",
+    "hq_ray_tracing_1994_magazine": "need"
+  },
+  "required_public_action_subset": ["view", "inspect_evidence", "cite"],
+  "forbidden_public_action_terms": [
+    "review_candidate",
+    "promote",
+    "reject",
+    "request_more_evidence",
+    "rebuild_index",
+    "download",
+    "install",
+    "launch_emulator",
+    "crawl_source",
+    "arbitrary_live_lookup"
+  ],
+  "html_escape_case": {
+    "outcome_id": "rcsb01_hq_blue_ftp_client_xp_near_miss",
+    "must_escape": ["<client>", "\"Blue\""]
+  },
+  "snapshot_expectation": "deterministic_for_same_input"
+}

@@ -1,0 +1,57 @@
+{
+  "schema_version": "reviewed_corpus_seed_batch_manifest.v0",
+  "task_id": "REVIEWED-CORPUS-SEED-BATCH-01",
+  "batch_id": "batch_01",
+  "created_at": "2026-06-04T00:00:00Z",
+  "source_batches": [
+    "evals/hard_queries/manual_observations/batch_00",
+    "evals/hard_queries/human_reviews/batch_00",
+    "evals/hard_queries/seed_corpus"
+  ],
+  "required_outputs": [
+    "README.md",
+    "batch_manifest.json",
+    "reviewed_seed_records.json",
+    "review_decision_backed_outcomes.json",
+    "query_coverage.json",
+    "public_alpha_gate.json",
+    "evidence_gap_queue.yml",
+    "reviewed_record_backlog.yml",
+    "manual_followups.yml",
+    "blocked_for_user_details.yml",
+    "surface_projection_fixtures.json",
+    "renderer_expected_outputs.json",
+    "truth_boundary_report.md"
+  ],
+  "counts": {
+    "reviewed_count": 2,
+    "review_decision_backed_count": 6,
+    "candidate_count": 0,
+    "need_count": 3,
+    "near_miss_count": 1,
+    "policy_blocked_count": 0,
+    "unavailable_count": 0,
+    "unknown_count": 0,
+    "request_more_evidence_count": 2,
+    "blocked_for_user_details_count": 1,
+    "hard_queries_total": 6
+  },
+  "public_alpha_corpus_gate": "FAIL_INSUFFICIENT_REVIEWED_CORPUS",
+  "recommended_next_task": "MANUAL-OBSERVATION-BATCH-01",
+  "secondary_followup": "USER-HARDWARE-DETAILS-00",
+  "truth_boundary": {
+    "synthetic_eval_fixture_used_as_evidence": false,
+    "ai_model_output_counted_as_truth": false,
+    "source_observation_self_promoted": false,
+    "candidate_self_promoted": false,
+    "fallback_summary_self_promoted": false,
+    "reviewable_item_self_promoted": false,
+    "reviewed_index_mutated": false,
+    "public_index_mutated": false,
+    "master_index_mutated": false,
+    "product_runtime_live_source_calls_performed": false,
+    "downloads_performed": false,
+    "file_fetches_performed": false,
+    "wayback_replay_performed": false
+  }
+}

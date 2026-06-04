@@ -1,0 +1,33 @@
+schema_version: reviewed_corpus_evidence_gap_queue.v0
+task_id: REVIEWED-CORPUS-SEED-BATCH-01
+items:
+  - gap_id: gap_hq_windows_7_apps_broader_catalog
+    hard_query_id: hq_windows_7_apps
+    current_status: verified
+    blocker: broader_windows_7_application_catalog_missing
+    next_required_action: collect_more_reviewable_windows_7_software_facts
+  - gap_id: gap_hq_driver_win98_user_hardware
+    hard_query_id: hq_driver_win98
+    current_status: need
+    blocker: hardware_vendor_model_chipset_and_windows_98_edition_missing
+    next_required_action: collect_user_hardware_details
+  - gap_id: gap_hq_blue_ftp_visual_identity
+    hard_query_id: hq_blue_ftp_client_xp
+    current_status: near_miss
+    blocker: visual_identity_evidence_missing
+    next_required_action: collect_visual_identity_evidence
+  - gap_id: gap_hq_sound_blaster_ct1740_manual_source
+    hard_query_id: hq_sound_blaster_ct1740_manual
+    current_status: need
+    blocker: primary_ct1740_manual_or_related_near_miss_source_missing
+    next_required_action: collect_ct1740_manual_source_or_related_near_miss
+  - gap_id: gap_hq_firefox_last_xp_package_identity
+    hard_query_id: hq_firefox_last_xp
+    current_status: verified
+    blocker: package_identity_language_architecture_rights_and_security_not_reviewed
+    next_required_action: collect_package_identity_and_variant_evidence_later
+  - gap_id: gap_hq_ray_tracing_primary_issue
+    hard_query_id: hq_ray_tracing_1994_magazine
+    current_status: need
+    blocker: primary_issue_page_or_publication_metadata_missing
+    next_required_action: collect_primary_issue_or_page_metadata

@@ -1,0 +1,11 @@
+{
+  "schema_version": "reviewed_corpus_seed_index.v0",
+  "current_batch": "batch_01",
+  "current_batch_path": "evals/hard_queries/reviewed_seed_corpus/batch_01",
+  "public_alpha_corpus_gate": "FAIL_INSUFFICIENT_REVIEWED_CORPUS",
+  "reviewed_count": 2,
+  "review_decision_backed_count": 6,
+  "hard_queries_total": 6,
+  "recommended_next_task": "MANUAL-OBSERVATION-BATCH-01",
+  "secondary_followup": "USER-HARDWARE-DETAILS-00"
+}

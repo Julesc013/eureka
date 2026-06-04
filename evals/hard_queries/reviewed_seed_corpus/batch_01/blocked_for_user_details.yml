@@ -1,0 +1,14 @@
+schema_version: reviewed_corpus_blocked_for_user_details.v0
+task_id: REVIEWED-CORPUS-SEED-BATCH-01
+items:
+  - blocked_item_id: blocked_hq_driver_win98_user_hardware
+    hard_query_id: hq_driver_win98
+    query_text: driver for Win98
+    current_status: need
+    needed_user_details:
+      - hardware_vendor
+      - device_model
+      - chipset_or_bus
+      - architecture
+      - windows_98_edition
+    next_required_action: collect_user_hardware_details
