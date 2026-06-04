@@ -1,0 +1,7 @@
+schema_version: manual_observation_promote_candidate_items_batch_01.v0
+task_id: MANUAL-OBSERVATION-BATCH-01
+items:
+  - review_b01_hq_windows_7_firefox_115_system_requirements
+  - review_b01_hq_windows_7_7zip_official_candidate
+  - review_b01_hq_firefox_xp_52_9_system_requirements
+  - review_b01_hq_firefox_xp_support_article

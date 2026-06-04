@@ -1,0 +1,37 @@
+schema_version: manual_observation_review_backlog_batch_01.v0
+task_id: MANUAL-OBSERVATION-BATCH-01
+review_decisions_created: false
+items:
+  - review_item_id: review_b01_hq_windows_7_firefox_115_system_requirements
+    proposed_decision: promote
+    query_id: hq_windows_7_apps
+  - review_item_id: review_b01_hq_windows_7_7zip_official_candidate
+    proposed_decision: promote
+    query_id: hq_windows_7_apps
+  - review_item_id: review_b01_hq_windows_7_smartftp_requirements_candidate
+    proposed_decision: request_more_evidence
+    query_id: hq_windows_7_apps
+  - review_item_id: review_b01_hq_blue_ftp_flashfxp_xp_near_miss
+    proposed_decision: mark_near_miss
+    query_id: hq_blue_ftp_client_xp
+  - review_item_id: review_b01_hq_blue_ftp_coreftp_needs_visual_and_xp_scope
+    proposed_decision: request_more_evidence
+    query_id: hq_blue_ftp_client_xp
+  - review_item_id: review_b01_hq_sound_blaster_ct1740_dosdays_missing_manual
+    proposed_decision: request_more_evidence
+    query_id: hq_sound_blaster_ct1740_manual
+  - review_item_id: review_b01_hq_sound_blaster_16_getting_started_near_miss
+    proposed_decision: mark_near_miss
+    query_id: hq_sound_blaster_ct1740_manual
+  - review_item_id: review_b01_hq_firefox_xp_52_9_system_requirements
+    proposed_decision: promote
+    query_id: hq_firefox_last_xp
+  - review_item_id: review_b01_hq_firefox_xp_support_article
+    proposed_decision: promote
+    query_id: hq_firefox_last_xp
+  - review_item_id: review_b01_hq_ray_tracing_parallel_course_author_candidate
+    proposed_decision: request_more_evidence
+    query_id: hq_ray_tracing_1994_magazine
+  - review_item_id: review_b01_hq_ray_tracing_radiance_near_miss
+    proposed_decision: mark_near_miss
+    query_id: hq_ray_tracing_1994_magazine

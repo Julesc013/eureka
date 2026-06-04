@@ -1,0 +1,6 @@
+schema_version: manual_observation_mark_near_miss_items_batch_01.v0
+task_id: MANUAL-OBSERVATION-BATCH-01
+items:
+  - review_b01_hq_blue_ftp_flashfxp_xp_near_miss
+  - review_b01_hq_sound_blaster_16_getting_started_near_miss
+  - review_b01_hq_ray_tracing_radiance_near_miss

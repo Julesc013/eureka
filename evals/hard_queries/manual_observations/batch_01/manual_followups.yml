@@ -1,0 +1,27 @@
+schema_version: manual_observation_batch_01_manual_followups.v0
+task_id: MANUAL-OBSERVATION-BATCH-01
+items:
+  - followup_id: followup_b01_hq_windows_7_broader_catalog
+    query_id: hq_windows_7_apps
+    reason: broaden_beyond_firefox_7zip_and_smartftp
+    next_required_action: collect_more_reviewable_windows_7_software_facts
+  - followup_id: followup_b01_hq_driver_win98_user_hardware
+    query_id: hq_driver_win98
+    reason: hardware_identity_missing
+    next_required_action: collect_user_hardware_details
+  - followup_id: followup_b01_hq_blue_ftp_visual_identity
+    query_id: hq_blue_ftp_client_xp
+    reason: blue_visual_identity_unresolved
+    next_required_action: collect_visual_identity_evidence
+  - followup_id: followup_b01_hq_sound_blaster_ct1740_primary_manual
+    query_id: hq_sound_blaster_ct1740_manual
+    reason: exact_ct1740_operation_manual_not_found
+    next_required_action: collect_primary_manual_or_catalog_evidence
+  - followup_id: followup_b01_hq_firefox_xp_package_identity
+    query_id: hq_firefox_last_xp
+    reason: package_identity_and_variant_unreviewed
+    next_required_action: collect_package_identity_and_variant_evidence_later
+  - followup_id: followup_b01_hq_ray_tracing_primary_issue
+    query_id: hq_ray_tracing_1994_magazine
+    reason: primary_byte_issue_page_metadata_missing
+    next_required_action: collect_primary_issue_or_page_metadata

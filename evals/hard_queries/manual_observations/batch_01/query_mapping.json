@@ -1,0 +1,98 @@
+{
+  "schema_version": "manual_observation_query_mapping_batch_01.v0",
+  "task_id": "MANUAL-OBSERVATION-BATCH-01",
+  "query_maps": [
+    {
+      "query_id": "hq_windows_7_apps",
+      "query_text": "Windows 7 apps",
+      "observation_ids": [
+        "obs_b01_hq_windows_7_firefox_115_system_requirements",
+        "obs_b01_hq_windows_7_7zip_official_candidate",
+        "obs_b01_hq_windows_7_smartftp_requirements_candidate"
+      ],
+      "best_current_status": "candidate",
+      "reviewable_item_ids": [
+        "review_b01_hq_windows_7_firefox_115_system_requirements",
+        "review_b01_hq_windows_7_7zip_official_candidate",
+        "review_b01_hq_windows_7_smartftp_requirements_candidate"
+      ],
+      "manual_followup_item_ids": ["followup_b01_hq_windows_7_broader_catalog"],
+      "blocked_for_user_details": false,
+      "public_alpha_readiness": "not_ready"
+    },
+    {
+      "query_id": "hq_driver_win98",
+      "query_text": "driver for Win98",
+      "observation_ids": ["obs_b01_hq_driver_win98_user_hardware_blocker"],
+      "best_current_status": "need",
+      "reviewable_item_ids": [],
+      "manual_followup_item_ids": ["followup_b01_hq_driver_win98_user_hardware"],
+      "blocked_for_user_details": true,
+      "public_alpha_readiness": "not_ready"
+    },
+    {
+      "query_id": "hq_blue_ftp_client_xp",
+      "query_text": "old blue FTP client for XP",
+      "observation_ids": [
+        "obs_b01_hq_blue_ftp_flashfxp_xp_near_miss",
+        "obs_b01_hq_blue_ftp_coreftp_needs_visual_and_xp_scope"
+      ],
+      "best_current_status": "near_miss",
+      "reviewable_item_ids": [
+        "review_b01_hq_blue_ftp_flashfxp_xp_near_miss",
+        "review_b01_hq_blue_ftp_coreftp_needs_visual_and_xp_scope"
+      ],
+      "manual_followup_item_ids": ["followup_b01_hq_blue_ftp_visual_identity"],
+      "blocked_for_user_details": false,
+      "public_alpha_readiness": "not_ready"
+    },
+    {
+      "query_id": "hq_sound_blaster_ct1740_manual",
+      "query_text": "manual for Sound Blaster CT1740",
+      "observation_ids": [
+        "obs_b01_hq_sound_blaster_ct1740_dosdays_missing_manual",
+        "obs_b01_hq_sound_blaster_16_getting_started_near_miss"
+      ],
+      "best_current_status": "near_miss",
+      "reviewable_item_ids": [
+        "review_b01_hq_sound_blaster_ct1740_dosdays_missing_manual",
+        "review_b01_hq_sound_blaster_16_getting_started_near_miss"
+      ],
+      "manual_followup_item_ids": ["followup_b01_hq_sound_blaster_ct1740_primary_manual"],
+      "blocked_for_user_details": false,
+      "public_alpha_readiness": "not_ready"
+    },
+    {
+      "query_id": "hq_firefox_last_xp",
+      "query_text": "latest Firefox before XP support ended",
+      "observation_ids": [
+        "obs_b01_hq_firefox_xp_52_9_system_requirements",
+        "obs_b01_hq_firefox_xp_support_article"
+      ],
+      "best_current_status": "candidate",
+      "reviewable_item_ids": [
+        "review_b01_hq_firefox_xp_52_9_system_requirements",
+        "review_b01_hq_firefox_xp_support_article"
+      ],
+      "manual_followup_item_ids": ["followup_b01_hq_firefox_xp_package_identity"],
+      "blocked_for_user_details": false,
+      "public_alpha_readiness": "not_ready"
+    },
+    {
+      "query_id": "hq_ray_tracing_1994_magazine",
+      "query_text": "article about ray tracing in a 1994 magazine",
+      "observation_ids": [
+        "obs_b01_hq_ray_tracing_parallel_course_author_candidate",
+        "obs_b01_hq_ray_tracing_radiance_near_miss"
+      ],
+      "best_current_status": "candidate",
+      "reviewable_item_ids": [
+        "review_b01_hq_ray_tracing_parallel_course_author_candidate",
+        "review_b01_hq_ray_tracing_radiance_near_miss"
+      ],
+      "manual_followup_item_ids": ["followup_b01_hq_ray_tracing_primary_issue"],
+      "blocked_for_user_details": false,
+      "public_alpha_readiness": "not_ready"
+    }
+  ]
+}

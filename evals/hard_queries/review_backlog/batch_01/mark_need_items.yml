@@ -1,0 +1,4 @@
+schema_version: manual_observation_mark_need_items_batch_01.v0
+task_id: MANUAL-OBSERVATION-BATCH-01
+items:
+  - nonreviewable_b01_hq_driver_win98_user_hardware

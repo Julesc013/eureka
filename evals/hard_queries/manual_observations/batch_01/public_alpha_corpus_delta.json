@@ -1,0 +1,45 @@
+{
+  "schema_version": "manual_observation_public_alpha_delta_batch_01.v0",
+  "task_id": "MANUAL-OBSERVATION-BATCH-01",
+  "public_alpha_corpus_gate": "FAIL_INSUFFICIENT_REVIEWED_CORPUS",
+  "counts": {
+    "reviewed_count": 0,
+    "candidate_count": 6,
+    "need_count": 2,
+    "near_miss_count": 3,
+    "mention_only_count": 0,
+    "policy_blocked_count": 0,
+    "unavailable_count": 1,
+    "unknown_count": 0,
+    "blocked_for_user_details_count": 1,
+    "observations_created": 12,
+    "reviewable_items_created": 11,
+    "manual_followup_items": 6
+  },
+  "cumulative_counts_after_batch": {
+    "reviewed_count": 2,
+    "review_decision_backed_count": 6,
+    "candidate_count": 6,
+    "need_count": 2,
+    "near_miss_count": 3,
+    "policy_blocked_count": 0,
+    "unavailable_count": 1,
+    "blocked_for_user_details_count": 1
+  },
+  "reason_gate_passed_or_failed": "Manual observations expanded reviewable material but created no reviewed truth; public alpha still lacks reviewed corpus breadth.",
+  "recommended_next_task": "HUMAN-REVIEW-BATCH-01",
+  "secondary_followup": "USER-HARDWARE-DETAILS-00",
+  "truth_boundary": {
+    "reviewed_records_created": false,
+    "review_events_created": false,
+    "reviewed_index_mutated": false,
+    "public_index_mutated": false,
+    "master_index_mutated": false,
+    "product_runtime_live_source_calls_performed": false,
+    "downloads_performed": false,
+    "file_fetches_performed": false,
+    "wayback_replay_performed": false,
+    "synthetic_eval_fixtures_used_as_evidence": false
+  },
+  "full_discovery_required": false
+}

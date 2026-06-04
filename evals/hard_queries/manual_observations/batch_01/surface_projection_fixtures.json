@@ -1,0 +1,18 @@
+{
+  "schema_version": "manual_observation_surface_projection_fixtures_batch_01.v0",
+  "task_id": "MANUAL-OBSERVATION-BATCH-01",
+  "fixtures": [
+    {"observation_id": "obs_b01_hq_windows_7_firefox_115_system_requirements", "expected_status": "candidate", "renderer_profiles_expected": ["json_v0", "text_v0", "html_basic_v0", "snapshot_v0"]},
+    {"observation_id": "obs_b01_hq_windows_7_7zip_official_candidate", "expected_status": "candidate", "renderer_profiles_expected": ["json_v0", "text_v0", "html_basic_v0", "snapshot_v0"]},
+    {"observation_id": "obs_b01_hq_windows_7_smartftp_requirements_candidate", "expected_status": "candidate", "renderer_profiles_expected": ["json_v0", "text_v0", "html_basic_v0", "snapshot_v0"]},
+    {"observation_id": "obs_b01_hq_driver_win98_user_hardware_blocker", "expected_status": "need", "renderer_profiles_expected": ["json_v0", "text_v0", "html_basic_v0", "snapshot_v0"]},
+    {"observation_id": "obs_b01_hq_blue_ftp_flashfxp_xp_near_miss", "expected_status": "near_miss", "renderer_profiles_expected": ["json_v0", "text_v0", "html_basic_v0", "snapshot_v0"]},
+    {"observation_id": "obs_b01_hq_blue_ftp_coreftp_needs_visual_and_xp_scope", "expected_status": "need", "renderer_profiles_expected": ["json_v0", "text_v0", "html_basic_v0", "snapshot_v0"]},
+    {"observation_id": "obs_b01_hq_sound_blaster_ct1740_dosdays_missing_manual", "expected_status": "unavailable", "renderer_profiles_expected": ["json_v0", "text_v0", "html_basic_v0", "snapshot_v0"]},
+    {"observation_id": "obs_b01_hq_sound_blaster_16_getting_started_near_miss", "expected_status": "near_miss", "renderer_profiles_expected": ["json_v0", "text_v0", "html_basic_v0", "snapshot_v0"]},
+    {"observation_id": "obs_b01_hq_firefox_xp_52_9_system_requirements", "expected_status": "candidate", "renderer_profiles_expected": ["json_v0", "text_v0", "html_basic_v0", "snapshot_v0"]},
+    {"observation_id": "obs_b01_hq_firefox_xp_support_article", "expected_status": "candidate", "renderer_profiles_expected": ["json_v0", "text_v0", "html_basic_v0", "snapshot_v0"]},
+    {"observation_id": "obs_b01_hq_ray_tracing_parallel_course_author_candidate", "expected_status": "candidate", "renderer_profiles_expected": ["json_v0", "text_v0", "html_basic_v0", "snapshot_v0"]},
+    {"observation_id": "obs_b01_hq_ray_tracing_radiance_near_miss", "expected_status": "near_miss", "renderer_profiles_expected": ["json_v0", "text_v0", "html_basic_v0", "snapshot_v0"]}
+  ]
+}

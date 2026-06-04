@@ -1,0 +1,27 @@
+schema_version: manual_observation_batch_01_evidence_gap_queue.v0
+task_id: MANUAL-OBSERVATION-BATCH-01
+items:
+  - gap_id: gap_b01_hq_windows_7_package_safety
+    query_id: hq_windows_7_apps
+    current_status: candidate
+    blocker: package_identity_rights_and_security_not_reviewed
+  - gap_id: gap_b01_hq_driver_win98_user_hardware
+    query_id: hq_driver_win98
+    current_status: need
+    blocker: hardware_identity_missing
+  - gap_id: gap_b01_hq_blue_ftp_visual_identity
+    query_id: hq_blue_ftp_client_xp
+    current_status: near_miss
+    blocker: blue_visual_identity_evidence_missing
+  - gap_id: gap_b01_hq_sound_blaster_ct1740_primary_manual
+    query_id: hq_sound_blaster_ct1740_manual
+    current_status: near_miss
+    blocker: exact_ct1740_operation_manual_missing
+  - gap_id: gap_b01_hq_firefox_xp_package_identity
+    query_id: hq_firefox_last_xp
+    current_status: candidate
+    blocker: package_identity_language_architecture_rights_and_security_unreviewed
+  - gap_id: gap_b01_hq_ray_tracing_primary_byte_issue
+    query_id: hq_ray_tracing_1994_magazine
+    current_status: candidate
+    blocker: primary_byte_issue_page_metadata_missing

@@ -1,0 +1,8 @@
+schema_version: manual_observation_blocked_items_batch_01.v0
+task_id: MANUAL-OBSERVATION-BATCH-01
+items:
+  - blocked_item_id: blocked_b01_hq_driver_win98_user_hardware
+    query_id: hq_driver_win98
+    reason: insufficient_hardware_identity
+    safe_next_action: collect_user_hardware_details
+    forbidden_action: recommend_a_specific_driver

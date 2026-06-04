@@ -1,0 +1,19 @@
+{
+  "schema_version": "manual_observation_validation_summary_batch_01.v0",
+  "task_id": "MANUAL-OBSERVATION-BATCH-01",
+  "status": "PASS_WITH_WARNINGS",
+  "warning": "Public alpha corpus gate remains FAIL_INSUFFICIENT_REVIEWED_CORPUS.",
+  "observations_created": 12,
+  "reviewable_items_created": 11,
+  "non_reviewable_items_created": 1,
+  "blocked_for_user_details_items": 1,
+  "reviewed_records_created": false,
+  "review_events_created": false,
+  "product_runtime_live_source_calls_performed": false,
+  "downloads_performed": false,
+  "file_fetches_performed": false,
+  "wayback_replay_performed": false,
+  "full_discovery_required": false,
+  "recommended_next_task": "HUMAN-REVIEW-BATCH-01",
+  "secondary_followup": "USER-HARDWARE-DETAILS-00"
+}

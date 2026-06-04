@@ -1,0 +1,20 @@
+schema_version: manual_observation_batch_01_blocked_for_user_details.v0
+task_id: MANUAL-OBSERVATION-BATCH-01
+items:
+  - blocked_item_id: blocked_b01_hq_driver_win98_user_hardware
+    query_id: hq_driver_win98
+    observation_id: obs_b01_hq_driver_win98_user_hardware_blocker
+    status: need
+    reason: insufficient_hardware_identity
+    required_details:
+      - hardware_vendor
+      - hardware_model
+      - device_id_or_chipset
+      - bus_or_interface
+      - operating_system_exact_version
+      - architecture
+      - machine_or_board_model
+      - known_existing_driver_media
+      - source_context
+    safe_next_action: ask_for_hardware_details_or_collect_device_identifiers
+    forbidden_action: recommend_a_specific_driver

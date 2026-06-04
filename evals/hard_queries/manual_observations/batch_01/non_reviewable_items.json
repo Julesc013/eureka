@@ -1,0 +1,16 @@
+{
+  "schema_version": "manual_observation_non_reviewable_items_batch_01.v0",
+  "task_id": "MANUAL-OBSERVATION-BATCH-01",
+  "non_reviewable_items": [
+    {
+      "non_reviewable_item_id": "nonreviewable_b01_hq_driver_win98_user_hardware",
+      "observation_id": "obs_b01_hq_driver_win98_user_hardware_blocker",
+      "query_id": "hq_driver_win98",
+      "manual_followup_reason": "The query lacks hardware vendor, model, device ID or chipset, bus/interface, architecture, and exact Windows 98 version.",
+      "reviewability": "blocked_for_user_details",
+      "reviewable_now": false,
+      "safe_next_action": "ask_for_hardware_details_or_collect_device_identifiers",
+      "forbidden_action": "recommend_a_specific_driver"
+    }
+  ]
+}

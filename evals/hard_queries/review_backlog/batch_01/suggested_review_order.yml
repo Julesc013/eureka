@@ -1,0 +1,14 @@
+schema_version: manual_observation_suggested_review_order_batch_01.v0
+task_id: MANUAL-OBSERVATION-BATCH-01
+order:
+  - review_b01_hq_firefox_xp_support_article
+  - review_b01_hq_firefox_xp_52_9_system_requirements
+  - review_b01_hq_windows_7_firefox_115_system_requirements
+  - review_b01_hq_windows_7_7zip_official_candidate
+  - review_b01_hq_blue_ftp_flashfxp_xp_near_miss
+  - review_b01_hq_sound_blaster_16_getting_started_near_miss
+  - review_b01_hq_ray_tracing_radiance_near_miss
+  - review_b01_hq_windows_7_smartftp_requirements_candidate
+  - review_b01_hq_blue_ftp_coreftp_needs_visual_and_xp_scope
+  - review_b01_hq_sound_blaster_ct1740_dosdays_missing_manual
+  - review_b01_hq_ray_tracing_parallel_course_author_candidate

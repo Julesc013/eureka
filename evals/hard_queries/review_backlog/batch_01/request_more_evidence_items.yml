@@ -1,0 +1,7 @@
+schema_version: manual_observation_request_more_evidence_items_batch_01.v0
+task_id: MANUAL-OBSERVATION-BATCH-01
+items:
+  - review_b01_hq_windows_7_smartftp_requirements_candidate
+  - review_b01_hq_blue_ftp_coreftp_needs_visual_and_xp_scope
+  - review_b01_hq_sound_blaster_ct1740_dosdays_missing_manual
+  - review_b01_hq_ray_tracing_parallel_course_author_candidate

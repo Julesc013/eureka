@@ -1,0 +1,66 @@
+schema_version: manual_observation_sources_batch_01.v0
+task_id: MANUAL-OBSERVATION-BATCH-01
+source_policy:
+  metadata_only: true
+  downloads_performed: false
+  file_fetches_performed: false
+  wayback_replay_performed: false
+  unbounded_crawling_performed: false
+  product_runtime_live_source_calls_performed: false
+  manual_web_reference_collection_performed: true
+sources:
+  - source_id: src_b01_firefox_115_system_requirements
+    source_title: Firefox ESR 115.0esr System Requirements
+    source_url: https://www.firefox.com/en-US/firefox/115.0esr/system-requirements/?redirect_source=mozilla-org
+    source_quality: official
+    observation_ids: [obs_b01_hq_windows_7_firefox_115_system_requirements]
+  - source_id: src_b01_7zip_official
+    source_title: 7-Zip official home page
+    source_url: https://7-zip.org/
+    source_quality: official
+    observation_ids: [obs_b01_hq_windows_7_7zip_official_candidate]
+  - source_id: src_b01_smartftp_requirements
+    source_title: SmartFTP System Requirements
+    source_url: https://www.smartftp.com/en-us/support/kb/7
+    source_quality: official
+    observation_ids: [obs_b01_hq_windows_7_smartftp_requirements_candidate]
+  - source_id: src_b01_flashfxp_requirements
+    source_title: FlashFXP System Requirements
+    source_url: https://www.flashfxp.com/webhelp/Topics/system-requirements.htm
+    source_quality: official
+    observation_ids: [obs_b01_hq_blue_ftp_flashfxp_xp_near_miss]
+  - source_id: src_b01_coreftp_home
+    source_title: Core FTP official home page
+    source_url: https://www.coreftp.com/
+    source_quality: official
+    observation_ids: [obs_b01_hq_blue_ftp_coreftp_needs_visual_and_xp_scope]
+  - source_id: src_b01_dosdays_ct1740
+    source_title: DOS Days Sound Blaster 16 CT1740 page
+    source_url: https://www.dosdays.co.uk/topics/Manufacturers/creative/ct1740.php
+    source_quality: reputable_secondary
+    observation_ids: [obs_b01_hq_sound_blaster_ct1740_dosdays_missing_manual]
+  - source_id: src_b01_manualslib_sound_blaster_16
+    source_title: Creative Structures Sound Blaster 16 Getting Started
+    source_url: https://www.manualslib.com/manual/1834637/Creative-Structures-Sound-Blaster-16.html
+    source_quality: community_reference
+    observation_ids: [obs_b01_hq_sound_blaster_16_getting_started_near_miss]
+  - source_id: src_b01_firefox_52_system_requirements
+    source_title: Firefox ESR 52.9.0 System Requirements
+    source_url: https://www.mozilla.org/firefox/52.9.0/system-requirements/
+    source_quality: official
+    observation_ids: [obs_b01_hq_firefox_xp_52_9_system_requirements]
+  - source_id: src_b01_firefox_xp_support_article
+    source_title: Firefox has ended support for Windows XP and Vista
+    source_url: https://support.mozilla.org/en-US/kb/end-support-windows-xp-and-vista
+    source_quality: official
+    observation_ids: [obs_b01_hq_firefox_xp_support_article]
+  - source_id: src_b01_parallel_course_author_page
+    source_title: Parallel Course (July 1994)
+    source_url: https://sites.google.com/site/dicknewsite/home/computing/byte-articles/parallel-course-1994
+    source_quality: reputable_secondary
+    observation_ids: [obs_b01_hq_ray_tracing_parallel_course_author_candidate]
+  - source_id: src_b01_radiance_paper_page
+    source_title: The RADIANCE Lighting Simulation and Rendering System
+    source_url: https://radsite.lbl.gov/radiance/papers/sg94.1/paper.html
+    source_quality: primary
+    observation_ids: [obs_b01_hq_ray_tracing_radiance_near_miss]
