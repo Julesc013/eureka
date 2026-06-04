@@ -1,0 +1,53 @@
+{
+  "schema_version": "manual_observation_review_backlog_batch.v0",
+  "task_id": "MANUAL-OBSERVATION-BATCH-00",
+  "review_ledger_decisions_created": false,
+  "review_event_records_created": false,
+  "items": [
+    {
+      "backlog_item_id": "reviewable_obs_hq_windows_7_firefox_115_candidate",
+      "source_file": "evals/hard_queries/manual_observations/batch_00/reviewable_items.json",
+      "observation_id": "obs_hq_windows_7_firefox_115_candidate",
+      "query_id": "hq_windows_7_apps",
+      "status": "candidate",
+      "recommended_review_decision": "request_more_evidence",
+      "priority": 70
+    },
+    {
+      "backlog_item_id": "reviewable_obs_hq_blue_ftp_flashfxp_near_miss",
+      "source_file": "evals/hard_queries/manual_observations/batch_00/reviewable_items.json",
+      "observation_id": "obs_hq_blue_ftp_flashfxp_near_miss",
+      "query_id": "hq_blue_ftp_client_xp",
+      "status": "near_miss",
+      "recommended_review_decision": "mark_near_miss",
+      "priority": 80
+    },
+    {
+      "backlog_item_id": "reviewable_obs_hq_sound_blaster_ct1740_manual_unavailable",
+      "source_file": "evals/hard_queries/manual_observations/batch_00/reviewable_items.json",
+      "observation_id": "obs_hq_sound_blaster_ct1740_manual_unavailable",
+      "query_id": "hq_sound_blaster_ct1740_manual",
+      "status": "unavailable",
+      "recommended_review_decision": "request_more_evidence",
+      "priority": 75
+    },
+    {
+      "backlog_item_id": "reviewable_obs_hq_firefox_xp_52_9_candidate",
+      "source_file": "evals/hard_queries/manual_observations/batch_00/reviewable_items.json",
+      "observation_id": "obs_hq_firefox_xp_52_9_candidate",
+      "query_id": "hq_firefox_last_xp",
+      "status": "candidate",
+      "recommended_review_decision": "promote",
+      "priority": 95
+    },
+    {
+      "backlog_item_id": "reviewable_obs_hq_ray_tracing_byte_parallel_course_candidate",
+      "source_file": "evals/hard_queries/manual_observations/batch_00/reviewable_items.json",
+      "observation_id": "obs_hq_ray_tracing_byte_parallel_course_candidate",
+      "query_id": "hq_ray_tracing_1994_magazine",
+      "status": "candidate",
+      "recommended_review_decision": "request_more_evidence",
+      "priority": 80
+    }
+  ]
+}

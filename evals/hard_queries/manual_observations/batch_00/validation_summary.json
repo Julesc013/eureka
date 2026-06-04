@@ -1,0 +1,16 @@
+{
+  "schema_version": "manual_observation_batch_validation_summary.v0",
+  "task_id": "MANUAL-OBSERVATION-BATCH-00",
+  "status": "PASS_WITH_WARNINGS",
+  "warnings": [
+    "public alpha corpus gate remains FAIL_INSUFFICIENT_REVIEWED_CORPUS",
+    "no review ledger decisions were created",
+    "driver for Win98 remains non-reviewable until hardware identity is supplied"
+  ],
+  "focused_validation_expected": [
+    "tests.evals.test_manual_observation_batch",
+    "tests.evals.test_manual_observation_review_backlog",
+    "tests.runtime.test_surface_manual_observation_projection"
+  ],
+  "full_discovery_required": false
+}

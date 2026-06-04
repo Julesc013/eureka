@@ -1,0 +1,37 @@
+{
+  "schema_version": "manual_observation_corpus_gate_status.v0",
+  "task_id": "MANUAL-OBSERVATION-BATCH-00",
+  "public_alpha_corpus_gate": "FAIL_INSUFFICIENT_REVIEWED_CORPUS",
+  "counts": {
+    "reviewed_count": 0,
+    "candidate_count": 3,
+    "need_count": 1,
+    "near_miss_count": 1,
+    "mention_only_count": 0,
+    "policy_blocked_count": 0,
+    "unavailable_count": 1,
+    "unknown_count": 0,
+    "review_queue_items": 5,
+    "manual_followup_items": 1,
+    "hard_queries_with_any_observation": 6,
+    "hard_queries_with_reviewable_item": 5,
+    "hard_queries_with_reviewed_record": 0
+  },
+  "truth_boundary": {
+    "source_observation_self_promoted": false,
+    "candidate_self_promoted": false,
+    "synthetic_eval_fixture_used_as_evidence": false,
+    "ai_model_output_counted_as_truth": false,
+    "review_events_created": false,
+    "reviewed_records_created": false,
+    "reviewed_index_mutated": false,
+    "public_index_mutated": false,
+    "master_index_mutated": false,
+    "product_runtime_live_source_calls_performed": false,
+    "downloads_performed": false,
+    "file_fetches_performed": false,
+    "wayback_replay_performed": false
+  },
+  "recommended_next_task": "HUMAN-REVIEW-BATCH-00",
+  "gate_rationale": "Five reviewable source-observation handoffs exist, but reviewed count remains zero."
+}

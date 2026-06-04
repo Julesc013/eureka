@@ -1,0 +1,60 @@
+{
+  "schema_version": "manual_observation_query_mapping.v0",
+  "task_id": "MANUAL-OBSERVATION-BATCH-00",
+  "query_maps": [
+    {
+      "query_id": "hq_windows_7_apps",
+      "query_text": "Windows 7 apps",
+      "observation_ids": ["obs_hq_windows_7_firefox_115_candidate"],
+      "best_current_status": "candidate",
+      "reviewable_item_ids": ["reviewable_obs_hq_windows_7_firefox_115_candidate"],
+      "manual_followup_item_ids": [],
+      "reviewed_record_count": 0
+    },
+    {
+      "query_id": "hq_driver_win98",
+      "query_text": "driver for Win98",
+      "observation_ids": ["obs_hq_driver_win98_missing_scope_need"],
+      "best_current_status": "need",
+      "reviewable_item_ids": [],
+      "manual_followup_item_ids": ["followup_obs_hq_driver_win98_missing_scope_need"],
+      "reviewed_record_count": 0
+    },
+    {
+      "query_id": "hq_blue_ftp_client_xp",
+      "query_text": "old blue FTP client for XP",
+      "observation_ids": ["obs_hq_blue_ftp_flashfxp_near_miss"],
+      "best_current_status": "near_miss",
+      "reviewable_item_ids": ["reviewable_obs_hq_blue_ftp_flashfxp_near_miss"],
+      "manual_followup_item_ids": [],
+      "reviewed_record_count": 0
+    },
+    {
+      "query_id": "hq_sound_blaster_ct1740_manual",
+      "query_text": "manual for Sound Blaster CT1740",
+      "observation_ids": ["obs_hq_sound_blaster_ct1740_manual_unavailable"],
+      "best_current_status": "unavailable",
+      "reviewable_item_ids": ["reviewable_obs_hq_sound_blaster_ct1740_manual_unavailable"],
+      "manual_followup_item_ids": [],
+      "reviewed_record_count": 0
+    },
+    {
+      "query_id": "hq_firefox_last_xp",
+      "query_text": "latest Firefox before XP support ended",
+      "observation_ids": ["obs_hq_firefox_xp_52_9_candidate"],
+      "best_current_status": "candidate",
+      "reviewable_item_ids": ["reviewable_obs_hq_firefox_xp_52_9_candidate"],
+      "manual_followup_item_ids": [],
+      "reviewed_record_count": 0
+    },
+    {
+      "query_id": "hq_ray_tracing_1994_magazine",
+      "query_text": "article about ray tracing in a 1994 magazine",
+      "observation_ids": ["obs_hq_ray_tracing_byte_parallel_course_candidate"],
+      "best_current_status": "candidate",
+      "reviewable_item_ids": ["reviewable_obs_hq_ray_tracing_byte_parallel_course_candidate"],
+      "manual_followup_item_ids": [],
+      "reviewed_record_count": 0
+    }
+  ]
+}

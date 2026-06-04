@@ -1,0 +1,15 @@
+{
+  "schema_version": "manual_observation_followup_needed_batch.v0",
+  "task_id": "MANUAL-OBSERVATION-BATCH-00",
+  "items": [
+    {
+      "followup_item_id": "followup_obs_hq_driver_win98_missing_scope_need",
+      "observation_id": "obs_hq_driver_win98_missing_scope_need",
+      "query_id": "hq_driver_win98",
+      "status": "need",
+      "reason": "The query needs hardware identity before a source observation can be reviewable.",
+      "required_inputs": ["hardware_vendor", "device_model", "driver_family_or_chipset", "windows_98_edition"],
+      "recommended_next_task": "USER-SOURCE-COLLECTION-00"
+    }
+  ]
+}

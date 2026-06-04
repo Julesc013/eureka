@@ -1,0 +1,38 @@
+{
+  "schema_version": "manual_observation_public_safe_examples.v0",
+  "task_id": "MANUAL-OBSERVATION-BATCH-00",
+  "examples": [
+    {
+      "query_id": "hq_firefox_last_xp",
+      "title": "Firefox 52.9.0 ESR Windows XP last-supported candidate",
+      "status": "candidate",
+      "summary": "Mozilla support provides a reviewable source reference, but the item is not verified until review.",
+      "allowed_public_actions": ["view", "inspect_evidence", "cite"],
+      "reviewed": false
+    },
+    {
+      "query_id": "hq_driver_win98",
+      "title": "Need hardware identity for Windows 98 driver query",
+      "status": "need",
+      "summary": "Vendor, model, chipset, and OS edition are required before a useful driver candidate exists.",
+      "allowed_public_actions": ["view", "inspect_evidence", "cite"],
+      "reviewed": false
+    },
+    {
+      "query_id": "hq_blue_ftp_client_xp",
+      "title": "Old Blue FTP client near miss",
+      "status": "near_miss",
+      "summary": "FlashFXP matches FTP client and Windows XP clues, but not the blue visual memory clue.",
+      "allowed_public_actions": ["view", "inspect_evidence", "cite"],
+      "reviewed": false
+    },
+    {
+      "query_id": "hq_sound_blaster_ct1740_manual",
+      "title": "Sound Blaster 16 CT1740 operation manual unavailable observation",
+      "status": "unavailable",
+      "summary": "Observed reference identifies CT1740 but marks the operation manual missing.",
+      "allowed_public_actions": ["view", "inspect_evidence", "cite"],
+      "reviewed": false
+    }
+  ]
+}

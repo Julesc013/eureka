@@ -1,0 +1,75 @@
+{
+  "schema_version": "manual_observation_source_references.v0",
+  "task_id": "MANUAL-OBSERVATION-BATCH-00",
+  "source_policy": {
+    "metadata_only": true,
+    "downloads_performed": false,
+    "file_fetches_performed": false,
+    "wayback_replay_performed": false,
+    "unbounded_crawling_performed": false,
+    "product_runtime_live_source_calls_performed": false,
+    "manual_web_reference_collection_performed": true
+  },
+  "source_references": [
+    {
+      "source_reference_id": "src_mozilla_win7_firefox_115",
+      "source_family": "mozilla_support",
+      "title": "Firefox support for Windows 7, 8 and 8.1",
+      "uri": "https://support.mozilla.org/en-US/kb/firefox-users-windows-7-8-and-81-moving-extended-support?entrypoint=mozilla.org-whatsnew115",
+      "locator": "lines 112-122",
+      "access_posture": "public_web_page_metadata",
+      "rights_posture": "public_support_page_no_reuse_grant_assumed",
+      "risk_posture": "metadata_support_only"
+    },
+    {
+      "source_reference_id": "src_missing_win98_driver_scope",
+      "source_family": "missing_query_scope",
+      "title": "No source selected for unspecified Windows 98 driver query",
+      "uri": "",
+      "locator": "query lacks vendor, device model, architecture, and OS edition",
+      "access_posture": "not_observed_missing_query_scope",
+      "rights_posture": "not_applicable",
+      "risk_posture": "manual_followup_required"
+    },
+    {
+      "source_reference_id": "src_flashfxp_home_and_requirements",
+      "source_family": "flashfxp_public_docs",
+      "title": "FlashFXP public product and system requirements pages",
+      "uri": "https://www.flashfxp.com/ ; https://www.flashfxp.com/webhelp/Topics/system-requirements.htm",
+      "locator": "home page lines 22-36; requirements page lines 35-43",
+      "access_posture": "public_web_page_metadata",
+      "rights_posture": "public_product_documentation_no_reuse_grant_assumed",
+      "risk_posture": "metadata_support_only_visual_clue_unverified"
+    },
+    {
+      "source_reference_id": "src_dosdays_ct1740_missing_manual",
+      "source_family": "dosdays_hardware_reference",
+      "title": "DOS Days Creative Labs Sound Blaster 16 CT1740 page",
+      "uri": "https://www.dosdays.co.uk/topics/Manufacturers/creative/ct1740.php",
+      "locator": "lines 11-36 and 64-71",
+      "access_posture": "public_web_page_metadata",
+      "rights_posture": "public_reference_page_no_reuse_grant_assumed",
+      "risk_posture": "metadata_support_only_manual_marked_missing"
+    },
+    {
+      "source_reference_id": "src_mozilla_xp_firefox_52_9",
+      "source_family": "mozilla_support",
+      "title": "Firefox has ended support for Windows XP and Vista",
+      "uri": "https://support.mozilla.org/en-US/kb/end-support-windows-xp-and-vista",
+      "locator": "lines 114-124",
+      "access_posture": "public_web_page_metadata",
+      "rights_posture": "public_support_page_no_reuse_grant_assumed",
+      "risk_posture": "metadata_support_only"
+    },
+    {
+      "source_reference_id": "src_byte_parallel_course_1994",
+      "source_family": "author_article_mirror",
+      "title": "Parallel Course (July 1994)",
+      "uri": "https://sites.google.com/site/dicknewsite/home/computing/byte-articles/parallel-course-1994",
+      "locator": "lines 450-477",
+      "access_posture": "public_author_page_metadata",
+      "rights_posture": "article_mirror_no_reuse_grant_assumed",
+      "risk_posture": "metadata_support_only_original_publication_needs_review"
+    }
+  ]
+}

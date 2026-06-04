@@ -1,0 +1,22 @@
+{
+  "schema_version": "manual_observation_blocked_or_unavailable_batch.v0",
+  "task_id": "MANUAL-OBSERVATION-BATCH-00",
+  "items": [
+    {
+      "item_id": "blocked_obs_hq_driver_win98_missing_scope_need",
+      "observation_id": "obs_hq_driver_win98_missing_scope_need",
+      "query_id": "hq_driver_win98",
+      "status": "need",
+      "blocker": "hardware_identity_missing",
+      "public_posture": "public_need_allowed_read_only"
+    },
+    {
+      "item_id": "unavailable_obs_hq_sound_blaster_ct1740_manual_unavailable",
+      "observation_id": "obs_hq_sound_blaster_ct1740_manual_unavailable",
+      "query_id": "hq_sound_blaster_ct1740_manual",
+      "status": "unavailable",
+      "blocker": "manual_source_missing_on_observed_reference",
+      "public_posture": "public_unavailable_allowed_read_only"
+    }
+  ]
+}
