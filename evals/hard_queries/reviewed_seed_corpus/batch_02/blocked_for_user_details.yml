@@ -1,0 +1,23 @@
+schema_version: reviewed_corpus_blocked_for_user_details.v1
+task_id: REVIEWED-CORPUS-SEED-BATCH-02
+blocked_items:
+  - blocked_id: blocked_b02_hq_driver_win98_user_hardware
+    hard_query_id: hq_driver_win98
+    query_text: driver for Win98
+    public_status: need
+    reason: A driver cannot be safely selected without hardware identity.
+    required_user_details:
+      - hardware_vendor
+      - hardware_model
+      - device_id_or_chipset
+      - bus_or_interface
+      - exact_windows_version
+      - architecture
+      - machine_or_board_model
+      - known_source_or_media_context
+    unsafe_without_details:
+      - recommending a random driver
+      - treating metadata leads as verified driver compatibility
+      - downloading or fetching driver files
+      - replaying archived installers
+    recommended_next_task: USER-HARDWARE-DETAILS-00

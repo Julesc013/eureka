@@ -1,0 +1,47 @@
+{
+  "schema_version": "reviewed_corpus_cumulative_counts.v1",
+  "task_id": "REVIEWED-CORPUS-SEED-BATCH-02",
+  "batch_02_added_counts": {
+    "reviewed_count": 1,
+    "review_decision_backed_count": 12,
+    "candidate_count": 0,
+    "need_count": 5,
+    "near_miss_count": 3,
+    "mention_only_count": 0,
+    "policy_blocked_count": 0,
+    "unavailable_count": 0,
+    "superseded_count": 3,
+    "request_more_evidence_count": 4,
+    "blocked_for_user_details_count": 1,
+    "unknown_count": 0
+  },
+  "cumulative_counts": {
+    "reviewed_count": 3,
+    "review_decision_backed_count": 18,
+    "candidate_count": 0,
+    "need_count": 5,
+    "near_miss_count": 3,
+    "mention_only_count": 0,
+    "policy_blocked_count": 0,
+    "unavailable_count": 0,
+    "superseded_count": 3,
+    "request_more_evidence_count": 4,
+    "blocked_for_user_details_count": 1,
+    "unknown_count": 0,
+    "hard_queries_total": 6,
+    "hard_queries_with_review_decision": 6,
+    "hard_queries_with_promoted_or_reviewed_item": 2,
+    "hard_queries_still_needing_observation": 4
+  },
+  "public_alpha_gate_counts": {
+    "reviewed_count": 3,
+    "review_decision_backed_count": 18,
+    "candidate_count": 0,
+    "need_count": 5,
+    "near_miss_count": 3,
+    "policy_blocked_count": 0,
+    "unavailable_count": 0,
+    "superseded_count": 3,
+    "blocked_for_user_details_count": 1
+  }
+}

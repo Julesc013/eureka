@@ -1,0 +1,23 @@
+{
+  "schema_version": "reviewed_corpus_next_validation_pivot.v1",
+  "task_id": "REVIEWED-CORPUS-SEED-BATCH-02",
+  "root_structure_frozen": true,
+  "public_alpha_blocked": true,
+  "dev_to_main_blocked": true,
+  "source_snapshot_closeout_needed": true,
+  "source_snapshot_closeout_task": "SOURCE-SNAPSHOT-BASELINE-CLOSEOUT-01",
+  "next_primary_task": "SOURCE-SNAPSHOT-BASELINE-CLOSEOUT-01",
+  "secondary_followup": "USER-HARDWARE-DETAILS-00",
+  "public_alpha_corpus_gate": "FAIL_INSUFFICIENT_REVIEWED_CORPUS",
+  "full_discovery_inside_ai": false,
+  "external_full_discovery_needed": true,
+  "full_discovery_handoff_expected": true,
+  "directory_work_status": "frozen_good_enough",
+  "public_launch_recommended": false,
+  "dev_to_main_promotion_recommended": false,
+  "notes": [
+    "Batch 02 closes the current review/corpus loop without claiming public-alpha readiness.",
+    "Source/snapshot validation closeout is the next highest-value gate.",
+    "Old runtime compatibility paths remain shim-only; no implementation was added there."
+  ]
+}

@@ -1,0 +1,64 @@
+schema_version: reviewed_corpus_evidence_gap_queue.v1
+task_id: REVIEWED-CORPUS-SEED-BATCH-02
+public_alpha_corpus_gate: FAIL_INSUFFICIENT_REVIEWED_CORPUS
+gaps:
+  - gap_id: gap_b02_windows_7_smartftp_version_build
+    hard_query_id: hq_windows_7_apps
+    status: need
+    priority: medium
+    reason: SmartFTP requires version/build support evidence before it can become a reviewed seed record.
+    next_action: collect official version-specific Windows 7 support evidence.
+  - gap_id: gap_b02_windows_7_broader_catalog
+    hard_query_id: hq_windows_7_apps
+    status: need
+    priority: high
+    reason: Two reviewed Windows 7 software facts are useful but not enough breadth for public alpha.
+    next_action: collect additional reviewable Windows 7 software support facts.
+  - gap_id: gap_b02_win98_hardware_identity
+    hard_query_id: hq_driver_win98
+    status: blocked_for_user_details
+    priority: high
+    reason: A safe Windows 98 driver answer requires vendor, model, device ID or chipset, bus/interface, exact Windows version, and architecture.
+    next_action: run USER-HARDWARE-DETAILS-00 before attempting any driver-specific resolution.
+  - gap_id: gap_b02_blue_ftp_visual_identity
+    hard_query_id: hq_blue_ftp_client_xp
+    status: need
+    priority: medium
+    reason: The query asks for an old blue FTP client; visual identity evidence is still missing.
+    next_action: collect source screenshots, manuals, or primary product pages that establish the visual clue.
+  - gap_id: gap_b02_coreftp_xp_scope
+    hard_query_id: hq_blue_ftp_client_xp
+    status: need
+    priority: medium
+    reason: Core FTP remains a candidate lead without enough XP-era platform and visual evidence.
+    next_action: collect dated XP compatibility and visual identity references.
+  - gap_id: gap_b02_ct1740_primary_manual
+    hard_query_id: hq_sound_blaster_ct1740_manual
+    status: need
+    priority: high
+    reason: The exact CT1740 manual remains unverified.
+    next_action: collect a primary or well-corroborated CT1740 manual listing.
+  - gap_id: gap_b02_sound_blaster_16_exact_fit
+    hard_query_id: hq_sound_blaster_ct1740_manual
+    status: near_miss
+    priority: medium
+    reason: A related Sound Blaster 16 manual is useful context but does not establish exact CT1740 coverage.
+    next_action: determine whether the related manual explicitly covers CT1740 hardware.
+  - gap_id: gap_b02_firefox_xp_package_identity
+    hard_query_id: hq_firefox_last_xp
+    status: need
+    priority: low
+    reason: Firefox XP support fact is reviewed, but package-level artifact evidence is intentionally deferred.
+    next_action: collect package identity evidence only after source/snapshot validation closeout.
+  - gap_id: gap_b02_ray_tracing_byte_primary_issue
+    hard_query_id: hq_ray_tracing_1994_magazine
+    status: need
+    priority: high
+    reason: The Byte July 1994 article lead still needs primary issue/page metadata.
+    next_action: collect issue table-of-contents or primary bibliographic evidence.
+  - gap_id: gap_b02_radiance_disambiguation
+    hard_query_id: hq_ray_tracing_1994_magazine
+    status: near_miss
+    priority: medium
+    reason: The RADIANCE paper is relevant ray-tracing material but is not the requested 1994 magazine article.
+    next_action: keep as near miss while searching for the article-specific source.

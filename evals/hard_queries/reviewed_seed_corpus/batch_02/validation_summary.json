@@ -1,0 +1,60 @@
+{
+  "schema_version": "reviewed_corpus_batch_02_validation_summary.v1",
+  "task_id": "REVIEWED-CORPUS-SEED-BATCH-02",
+  "status": "PASS_WITH_WARNINGS",
+  "validation_commands": [
+    {
+      "command": "git diff --check",
+      "result": "pass_with_line_ending_warning"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py doctor",
+      "result": "pass"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py validate",
+      "result": "pass"
+    },
+    {
+      "command": "python scripts/check_architecture_boundaries.py",
+      "result": "pass"
+    },
+    {
+      "command": "python scripts/check_generated_artifact_cleanliness.py --check --json",
+      "result": "pass"
+    },
+    {
+      "command": "py -3 scripts/eureka_test_select.py --changed --failed-first --json",
+      "result": "pass_selected_lanes_l0_l1"
+    },
+    {
+      "command": "focused batch 02 unittest lane",
+      "result": "pass_24_tests"
+    },
+    {
+      "command": "python scripts/validate_test_lane_policy.py",
+      "result": "pass"
+    },
+    {
+      "command": "python -m unittest tests.operations.test_test_lane_policy",
+      "result": "pass_1_test"
+    },
+    {
+      "command": "python -m unittest tests.scripts.test_eureka_test_select",
+      "result": "pass_3_tests"
+    },
+    {
+      "command": "python -m unittest tests.scripts.test_validate_test_lane_policy",
+      "result": "pass_2_tests"
+    }
+  ],
+  "full_discovery_inside_ai": false,
+  "external_full_discovery_needed": true,
+  "public_alpha_corpus_gate": "FAIL_INSUFFICIENT_REVIEWED_CORPUS",
+  "next_primary_task": "SOURCE-SNAPSHOT-BASELINE-CLOSEOUT-01",
+  "warnings": [
+    "public alpha corpus gate remains FAIL_INSUFFICIENT_REVIEWED_CORPUS",
+    "full unittest discovery remains deferred to external source/snapshot closeout validation",
+    "git diff --check reported the expected Windows LF-to-CRLF checkout warning for .aide/context/latest-task-packet.md"
+  ]
+}

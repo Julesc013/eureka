@@ -1,0 +1,39 @@
+{
+  "schema_version": "reviewed_corpus_supersession_map.v1",
+  "task_id": "REVIEWED-CORPUS-SEED-BATCH-02",
+  "supersessions": [
+    {
+      "supersession_id": "sup_b01_firefox_115_system_requirements",
+      "source_review_decision_id": "hrd_b01_hq_windows_7_firefox_115_supersede",
+      "source_review_event_id": "hre_b01_hq_windows_7_firefox_115_supersede",
+      "source_manual_observation_id": "obs_b01_hq_windows_7_firefox_115_system_requirements",
+      "source_ref_ids": ["src_b01_firefox_115_system_requirements"],
+      "target_reviewed_seed_record_id": "reviewed_seed_hq_windows_7_firefox_115_support_fact",
+      "reason": "Duplicate/supporting Mozilla source reference for an already reviewed Firefox 115 ESR Windows 7 support fact.",
+      "counts_as_new_reviewed_record": false,
+      "public_projection_status": "superseded"
+    },
+    {
+      "supersession_id": "sup_b01_firefox_52_system_requirements",
+      "source_review_decision_id": "hrd_b01_hq_firefox_xp_52_9_requirements_supersede",
+      "source_review_event_id": "hre_b01_hq_firefox_xp_52_9_requirements_supersede",
+      "source_manual_observation_id": "obs_b01_hq_firefox_xp_52_9_system_requirements",
+      "source_ref_ids": ["src_b01_firefox_52_system_requirements"],
+      "target_reviewed_seed_record_id": "reviewed_seed_hq_firefox_xp_52_9_support_fact",
+      "reason": "Duplicate/supporting Mozilla system requirements reference for an already reviewed Firefox 52.9.0 ESR XP support fact.",
+      "counts_as_new_reviewed_record": false,
+      "public_projection_status": "superseded"
+    },
+    {
+      "supersession_id": "sup_b01_firefox_xp_support_article",
+      "source_review_decision_id": "hrd_b01_hq_firefox_xp_support_article_supersede",
+      "source_review_event_id": "hre_b01_hq_firefox_xp_support_article_supersede",
+      "source_manual_observation_id": "obs_b01_hq_firefox_xp_support_article",
+      "source_ref_ids": ["src_b01_firefox_xp_support_article"],
+      "target_reviewed_seed_record_id": "reviewed_seed_hq_firefox_xp_52_9_support_fact",
+      "reason": "Duplicate/supporting Mozilla support article reference for the already reviewed Firefox XP support fact.",
+      "counts_as_new_reviewed_record": false,
+      "public_projection_status": "superseded"
+    }
+  ]
+}

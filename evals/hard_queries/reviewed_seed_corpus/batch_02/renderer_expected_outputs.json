@@ -1,0 +1,42 @@
+{
+  "schema_version": "reviewed_corpus_renderer_expected_outputs.v1",
+  "task_id": "REVIEWED-CORPUS-SEED-BATCH-02",
+  "renderer_profiles": ["json_v0", "text_v0", "html_basic_v0", "snapshot_v0"],
+  "expected_status_by_outcome": {
+    "rcsb02_hq_windows_7_firefox_115_superseded": "superseded",
+    "rcsb02_hq_windows_7_7zip_verified": "verified",
+    "rcsb02_hq_windows_7_smartftp_need": "need",
+    "rcsb02_hq_driver_win98_need": "need",
+    "rcsb02_hq_blue_ftp_flashfxp_near_miss": "near_miss",
+    "rcsb02_hq_blue_ftp_coreftp_need": "need",
+    "rcsb02_hq_sound_blaster_ct1740_need": "need",
+    "rcsb02_hq_sound_blaster_16_manual_near_miss": "near_miss",
+    "rcsb02_hq_firefox_xp_52_9_requirements_superseded": "superseded",
+    "rcsb02_hq_firefox_xp_support_article_superseded": "superseded",
+    "rcsb02_hq_ray_tracing_parallel_course_need": "need",
+    "rcsb02_hq_ray_tracing_radiance_near_miss": "near_miss"
+  },
+  "expected_public_action_posture": "public_actions_subset_only",
+  "expected_operator_action_posture": "operator_private_projection_may_retain_review_actions",
+  "forbidden_public_action_ids": [
+    "review_candidate",
+    "promote",
+    "reject",
+    "request_more_evidence",
+    "rebuild_index",
+    "download",
+    "install",
+    "launch_emulator",
+    "crawl_source",
+    "arbitrary_live_lookup"
+  ],
+  "truth_boundary_expectations": {
+    "renderers_create_truth": false,
+    "renderers_call_source_providers": false,
+    "renderers_mutate_reviewed_index": false,
+    "renderers_mutate_public_index": false,
+    "renderers_mutate_master_index": false,
+    "html_escapes_unsafe_text": true,
+    "snapshot_output_deterministic": true
+  }
+}

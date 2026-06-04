@@ -1,0 +1,33 @@
+schema_version: reviewed_corpus_manual_followups.v1
+task_id: REVIEWED-CORPUS-SEED-BATCH-02
+followups:
+  - followup_id: followup_b02_windows_7_more_reviewable_apps
+    hard_query_id: hq_windows_7_apps
+    owner: future_manual_observation_batch
+    action: collect additional dated official Windows 7 application support references.
+    blocked_by_user_details: false
+  - followup_id: followup_b02_collect_win98_hardware_details
+    hard_query_id: hq_driver_win98
+    owner: user_detail_collection
+    action: collect hardware vendor, model, device ID or chipset, bus/interface, exact Windows version, architecture, board/machine model, and source/media context.
+    blocked_by_user_details: true
+  - followup_id: followup_b02_collect_blue_ftp_visual_identity
+    hard_query_id: hq_blue_ftp_client_xp
+    owner: future_manual_observation_batch
+    action: collect visual identity evidence and dated XP compatibility evidence for likely FTP clients.
+    blocked_by_user_details: false
+  - followup_id: followup_b02_collect_exact_ct1740_manual
+    hard_query_id: hq_sound_blaster_ct1740_manual
+    owner: future_manual_observation_batch
+    action: collect exact CT1740 manual source references and distinguish related Sound Blaster 16 manuals.
+    blocked_by_user_details: false
+  - followup_id: followup_b02_link_firefox_supporting_sources
+    hard_query_id: hq_firefox_last_xp
+    owner: future_review_batch
+    action: keep duplicate Mozilla supporting references linked as supporting evidence without creating duplicate reviewed records.
+    blocked_by_user_details: false
+  - followup_id: followup_b02_collect_byte_issue_metadata
+    hard_query_id: hq_ray_tracing_1994_magazine
+    owner: future_manual_observation_batch
+    action: collect primary Byte July 1994 issue/page metadata for the ray-tracing article lead.
+    blocked_by_user_details: false

@@ -1,0 +1,29 @@
+schema_version: reviewed_record_backlog.v1
+task_id: REVIEWED-CORPUS-SEED-BATCH-02
+public_alpha_corpus_gate: FAIL_INSUFFICIENT_REVIEWED_CORPUS
+backlog:
+  - backlog_id: backlog_b02_windows_7_smartftp_support
+    hard_query_id: hq_windows_7_apps
+    current_status: need
+    blocker: version-specific support evidence is insufficient.
+    desired_review_outcome: promote only if official dated evidence establishes Windows 7 support.
+  - backlog_id: backlog_b02_blue_ftp_visual_candidate
+    hard_query_id: hq_blue_ftp_client_xp
+    current_status: near_miss
+    blocker: product identity depends on an unresolved visual clue.
+    desired_review_outcome: promote only after visual identity and XP-era support evidence converge.
+  - backlog_id: backlog_b02_ct1740_exact_manual
+    hard_query_id: hq_sound_blaster_ct1740_manual
+    current_status: need
+    blocker: exact CT1740 manual source is missing.
+    desired_review_outcome: promote only after exact manual evidence is observed.
+  - backlog_id: backlog_b02_ray_tracing_byte_article
+    hard_query_id: hq_ray_tracing_1994_magazine
+    current_status: need
+    blocker: primary issue/page metadata for the article is missing.
+    desired_review_outcome: promote only after source-backed article identity is established.
+  - backlog_id: backlog_b02_firefox_xp_package_identity
+    hard_query_id: hq_firefox_last_xp
+    current_status: verified_with_artifact_gap
+    blocker: package-level artifact identity is outside this consolidation batch.
+    desired_review_outcome: preserve existing reviewed fact and defer artifact-level review.
