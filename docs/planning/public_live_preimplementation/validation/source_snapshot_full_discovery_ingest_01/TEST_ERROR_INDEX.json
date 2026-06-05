@@ -1,0 +1,15 @@
+{
+  "schema_version": "source_snapshot_full_discovery_error_index.v0",
+  "run_id": "source_snapshot_baseline_closeout_01",
+  "summary_path": "../eureka-test-runs/source_snapshot_baseline_closeout_01/full_unittest_summary.json",
+  "unittest_errors": 1,
+  "errors": [
+    {
+      "test": "test_validator_strict_passes_after_reconcile (tests.scripts.test_validate_repo_structure_canon.RepoStructureCanonValidatorScriptTest.test_validator_strict_passes_after_reconcile)",
+      "family_id": "unittest-bb58d69e1df56823",
+      "exception_type": "subprocess.CalledProcessError",
+      "taxonomy": "architecture_boundary_drift",
+      "message": "scripts/validate_repo_structure_canon.py --strict --json returned non-zero"
+    }
+  ]
+}

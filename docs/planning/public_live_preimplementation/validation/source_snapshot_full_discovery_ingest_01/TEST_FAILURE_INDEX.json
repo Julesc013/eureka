@@ -1,0 +1,95 @@
+{
+  "schema_version": "source_snapshot_full_discovery_failure_index.v0",
+  "run_id": "source_snapshot_baseline_closeout_01",
+  "summary_path": "../eureka-test-runs/source_snapshot_baseline_closeout_01/full_unittest_summary.json",
+  "failed_test_label_count": 47,
+  "unittest_failures": 45,
+  "unittest_errors": 1,
+  "families": {
+    "queue_handoff_drift": {
+      "failed_test_labels": 39,
+      "representative_tests": [
+        "tests.operations.test_search_hunt_scripts",
+        "tests.operations.test_local_instance_bootstrap",
+        "tests.operations.test_dev_to_main_promotion_03",
+        "tests.operations.test_clean_machine_smoke"
+      ]
+    },
+    "architecture_boundary_drift": {
+      "failed_test_labels": 4,
+      "representative_tests": [
+        "tests.operations.test_legacy_runtime_leakage_remediation",
+        "tests.operations.test_runtime_architecture_leakage",
+        "tests.scripts.test_validate_repo_structure_canon"
+      ]
+    },
+    "source_snapshot_baseline_drift": {
+      "failed_test_labels": 2,
+      "representative_tests": [
+        "tests.operations.test_local_worker_scripts",
+        "tests.runtime.test_source_observation_validation"
+      ]
+    },
+    "generated_artifact_drift": {
+      "failed_test_labels": 1,
+      "representative_tests": [
+        "refusing forbidden output root: site/dist"
+      ]
+    },
+    "contract_schema_drift": {
+      "failed_test_labels": 1,
+      "representative_tests": [
+        "tests.scripts.test_validate_temporal_semantic_interface_system"
+      ]
+    }
+  },
+  "failed_tests": [
+    "refusing forbidden output root: site/dist",
+    "test_cli_json_passes (tests.scripts.test_validate_temporal_semantic_interface_system.ValidateTemporalSemanticInterfaceSystemTest.test_cli_json_passes)",
+    "test_continuation_validator_passes (tests.operations.test_hunt_remediation_continue.HuntRemediationContinueTests.test_continuation_validator_passes)",
+    "test_defer_validator_passes (tests.operations.test_public_alpha_launch_defer.PublicAlphaLaunchDeferTests.test_defer_validator_passes)",
+    "test_defer_validator_script_passes_json_mode (tests.operations.test_public_alpha_launch_defer.PublicAlphaLaunchDeferTests.test_defer_validator_script_passes_json_mode)",
+    "test_next_task_is_hunt_01_or_completed_post_hunt_task (tests.operations.test_search_hunt_track.SearchHuntTrackTests.test_next_task_is_hunt_01_or_completed_post_hunt_task)",
+    "test_page_hardening_validator_passes (tests.operations.test_local_workbench_page_hardening_scripts.LocalWorkbenchPageHardeningScriptTests.test_page_hardening_validator_passes)",
+    "test_queue_points_to_local_02 (tests.operations.test_local_instance_policy.LocalInstancePolicyTests.test_queue_points_to_local_02)",
+    "test_queue_points_to_local_track_successor (tests.operations.test_local_appliance_track.LocalApplianceTrackTests.test_queue_points_to_local_track_successor)",
+    "test_remediation_validator_passes (tests.operations.test_hunt_remediation.HuntRemediationTests.test_remediation_validator_passes)",
+    "test_script_entrypoint_passes (tests.operations.test_hunt_remediation.HuntRemediationTests.test_script_entrypoint_passes)",
+    "test_script_entrypoint_passes (tests.operations.test_hunt_remediation_continue.HuntRemediationContinueTests.test_script_entrypoint_passes)",
+    "test_validator_demo_and_cli_pass (tests.operations.test_ai_escalation_scripts.AIEscalationScriptsTests.test_validator_demo_and_cli_pass)",
+    "test_validator_demo_and_cli_pass (tests.operations.test_hunt_replay_scripts.HuntReplayScriptsTests.test_validator_demo_and_cli_pass)",
+    "test_validator_demo_and_schema_cli_pass (tests.operations.test_agent_research_scripts.AgentResearchScriptsTests.test_validator_demo_and_schema_cli_pass)",
+    "test_validator_json_records_canon_and_resolved_debt (tests.scripts.test_validate_repo_structure_canon.RepoStructureCanonValidatorScriptTest.test_validator_json_records_canon_and_resolved_debt)",
+    "test_validator_passes (tests.operations.test_background_hunt_runner_scripts.BackgroundHuntRunnerScriptTests.test_validator_passes)",
+    "test_validator_passes (tests.operations.test_dev_to_main_promotion_03.DevToMainPromotion03Tests.test_validator_passes)",
+    "test_validator_passes (tests.operations.test_dev_to_main_promotion_04.DevToMainPromotion04Tests.test_validator_passes)",
+    "test_validator_passes (tests.operations.test_local_appliance_track.LocalApplianceTrackTests.test_validator_passes)",
+    "test_validator_passes (tests.operations.test_local_auto_test_scripts.LocalAutoTestScriptTests.test_validator_passes)",
+    "test_validator_passes (tests.operations.test_local_http_service_scripts.LocalHTTPServiceScriptTests.test_validator_passes)",
+    "test_validator_passes (tests.operations.test_local_lan_policy_scripts.LocalLanPolicyScriptTests.test_validator_passes)",
+    "test_validator_passes (tests.operations.test_local_lan_smoke_scripts.LocalLanSmokeScriptTests.test_validator_passes)",
+    "test_validator_passes (tests.operations.test_local_review_rebuild_smoke.LocalReviewRebuildSmokeTests.test_validator_passes)",
+    "test_validator_passes (tests.operations.test_local_runtime_composition_scripts.LocalRuntimeCompositionScriptTests.test_validator_passes)",
+    "test_validator_passes (tests.operations.test_local_workbench_scripts.LocalWorkbenchScriptTests.test_validator_passes)",
+    "test_validator_passes (tests.operations.test_local_worker_scripts.LocalWorkerScriptTests.test_validator_passes)",
+    "test_validator_passes (tests.operations.test_need_to_workunit_scripts.NeedToWorkUnitScriptTests.test_validator_passes)",
+    "test_validator_passes (tests.operations.test_search_hunt_command_scripts.SearchHuntCommandScriptTests.test_validator_passes)",
+    "test_validator_passes (tests.operations.test_search_hunt_exhaustion_scripts.SearchHuntExhaustionScriptTests.test_validator_passes)",
+    "test_validator_passes (tests.operations.test_search_hunt_scripts.SearchHuntScriptTests.test_validator_passes)",
+    "test_validator_passes (tests.operations.test_search_hunt_ui_scripts.SearchHuntUiScriptTests.test_validator_passes)",
+    "test_validator_passes (tests.operations.test_search_need_scripts.SearchNeedScriptTests.test_validator_passes)",
+    "test_validator_passes (tests.operations.test_workunit_queue_scripts.WorkUnitQueueScriptTests.test_validator_passes)",
+    "test_validator_passes (tests.scripts.test_validate_temporal_semantic_interface_system.ValidateTemporalSemanticInterfaceSystemTest.test_validator_passes)",
+    "test_validator_passes_current_repo (tests.operations.test_legacy_runtime_leakage_remediation.LegacyRuntimeLeakageRemediationTests.test_validator_passes_current_repo)",
+    "test_validator_passes_current_repo_or_reports_only_known_allowlisted (tests.operations.test_runtime_architecture_leakage.RuntimeArchitectureLeakageTests.test_validator_passes_current_repo_or_reports_only_known_allowlisted)",
+    "test_validator_passes_focused_tests (tests.operations.test_local_instance_bootstrap.LocalInstanceBootstrapTests.test_validator_passes_focused_tests)",
+    "test_validator_passes_focused_tests (tests.operations.test_local_instance_migration_guard.LocalInstanceMigrationGuardTests.test_validator_passes_focused_tests)",
+    "test_validator_passes_or_warns_for_current_repo (tests.runtime.test_source_observation_validation.SourceObservationValidationTests.test_validator_passes_or_warns_for_current_repo)",
+    "test_validator_passes_with_disposed_warnings (tests.operations.test_search_hunt_track.SearchHuntTrackTests.test_validator_passes_with_disposed_warnings)",
+    "test_validator_passes_with_known_warning (tests.operations.test_clean_machine_smoke.CleanMachineSmokeScriptTests.test_validator_passes_with_known_warning)",
+    "test_validator_script_json_passes (tests.scripts.test_validate_dev_to_main_promotion_03.ValidateDevToMainPromotion03ScriptTests.test_validator_script_json_passes)",
+    "test_validator_script_json_passes (tests.scripts.test_validate_dev_to_main_promotion_04.ValidateDevToMainPromotion04ScriptTests.test_validator_script_json_passes)",
+    "test_validator_script_passes_with_disposed_warnings (tests.operations.test_search_hunt_closeout.SearchHuntCloseoutTests.test_validator_script_passes_with_disposed_warnings)",
+    "test_validator_strict_passes_after_reconcile (tests.scripts.test_validate_repo_structure_canon.RepoStructureCanonValidatorScriptTest.test_validator_strict_passes_after_reconcile)"
+  ]
+}
