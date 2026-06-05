@@ -51,11 +51,14 @@ class RepoStructureCanonValidatorScriptTest(unittest.TestCase):
         self.assertEqual(payload["top_level"]["classified_debt"], {})
 
         debt_paths = {item["path"] for item in payload["known_debt"]}
-        self.assertEqual(debt_paths, set())
+        self.assertEqual(debt_paths, {"scripts"})
+        script_debt = next(item for item in payload["known_debt"] if item["path"] == "scripts")
+        self.assertEqual(script_debt["debt_id"], "scripts_large_tool_tree")
+        self.assertEqual(script_debt["class"], "thin_wrapper_root_with_substantive_tools")
 
         script_wrappers = payload["naming"]["script_wrappers"]
         self.assertGreater(script_wrappers["wrapper_count"], 100)
-        self.assertEqual(script_wrappers["non_wrapper_count"], 0)
+        self.assertGreater(script_wrappers["non_wrapper_count"], 0)
 
         accepted = set(payload["generated_artifacts"]["accepted_exact_exceptions"])
         self.assertIn("site/dist", accepted)

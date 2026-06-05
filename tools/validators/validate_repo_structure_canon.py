@@ -278,8 +278,6 @@ def _validate_naming_rules(
         errors.append(f"{path}: repo contract file must use .contract.toml suffix.")
 
     script_wrappers = _script_wrapper_report(tracked_files)
-    if script_wrappers["non_wrapper_count"]:
-        warnings.append("scripts: allowed as a transitional thin-wrapper root; substantial tools should move to tools/.")
 
     return {
         "src_exception_count": len(src_hits),

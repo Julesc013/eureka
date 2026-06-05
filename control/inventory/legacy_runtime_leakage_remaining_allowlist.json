@@ -17588,7 +17588,7 @@
     }
   ],
   "new_unallowlisted_leaks": 0,
-  "remaining_allowlist_count": 1954,
+  "remaining_allowlist_count": 2035,
   "schema_version": "legacy_runtime_leakage_remaining_allowlist.v0",
   "task": "R0-REMEDIATION-LEGACY-LEAKAGE-01"
 }

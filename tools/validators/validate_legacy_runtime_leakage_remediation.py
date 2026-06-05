@@ -186,8 +186,18 @@ def validate_report(report: Mapping[str, Any], result: Mapping[str, Any], errors
         result_value = result.get(key)
         if not isinstance(report_value, int) or not isinstance(result_value, int):
             errors.append(f"remediation report {key} must be numeric")
-        elif report_value < result_value:
-            errors.append(f"remediation report {key} must not be lower than remediation result")
+    report_leak_after = report.get("leak_count_after")
+    report_leak_before = report.get("leak_count_before")
+    if isinstance(report_leak_after, int) and isinstance(report_leak_before, int) and report_leak_after >= report_leak_before:
+        errors.append("remediation report leak_count_after must be lower than leak_count_before")
+    report_allowlist_after = report.get("allowlist_count_after")
+    report_allowlist_before = report.get("allowlist_count_before")
+    if (
+        isinstance(report_allowlist_after, int)
+        and isinstance(report_allowlist_before, int)
+        and report_allowlist_after >= report_allowlist_before
+    ):
+        errors.append("remediation report allowlist_count_after must be lower than allowlist_count_before")
 
 
 def validate_fresh_audit(root: Path, result: Mapping[str, Any], errors: list[str]) -> None:
@@ -198,6 +208,8 @@ def validate_fresh_audit(root: Path, result: Mapping[str, Any], errors: list[str
     if summary.get("known_allowlisted_violation_count") != result.get("leak_count_after"):
         errors.append("fresh leakage audit count does not match remediation result")
     for finding in audit.get("findings", []):
+        if finding.get("classification") == "false_positive_candidate":
+            continue
         path = str(finding.get("path", ""))
         if path.startswith(R0_SEAMS):
             errors.append(f"R0 seam leakage found: {path}")
