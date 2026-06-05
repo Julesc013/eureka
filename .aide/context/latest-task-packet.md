@@ -2,11 +2,11 @@
 
 ## PHASE
 
-UNSPECIFIED - REVIEWED-CORPUS-SEED-BATCH-02
+UNSPECIFIED - SOURCE-SNAPSHOT-BASELINE-CLOSEOUT-01
 
 ## GOAL
 
-REVIEWED-CORPUS-SEED-BATCH-02
+SOURCE-SNAPSHOT-BASELINE-CLOSEOUT-01
 
 ## WHY
 
@@ -139,8 +139,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4778
-- approx_tokens: 1195
+- chars: 4792
+- approx_tokens: 1198
 - budget_status: PASS
 - warnings:
   - none

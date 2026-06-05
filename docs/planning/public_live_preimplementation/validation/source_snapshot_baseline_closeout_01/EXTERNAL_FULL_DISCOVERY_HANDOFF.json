@@ -1,0 +1,74 @@
+{
+  "schema_version": "external_full_discovery_handoff.v0",
+  "task_id": "SOURCE-SNAPSHOT-BASELINE-CLOSEOUT-01",
+  "task": "SOURCE-SNAPSHOT-BASELINE-CLOSEOUT-01",
+  "branch": "dev",
+  "head": "current_checked_out_head_at_operator_run_time",
+  "observed_batch_02_base_head": "3868150d89830256655a8c7d8ff3b1b7f3bebd82",
+  "head_semantics": "The observed batch 02 base head is recorded for provenance. The external summary must match the operator's current checked-out dev HEAD at run time, including this docs-only closeout commit or any explicit continuation commit.",
+  "repo_root": "D:/Projects/Eureka/eureka",
+  "created_at": "2026-06-05T11:18:53.7310649+10:00",
+  "ai_policy": {
+    "full_discovery_inside_ai": false,
+    "reason": "Repo policy reserves full unittest discovery for external harness, CI, promotion, nightly, or manual operator lanes."
+  },
+  "command": "python scripts/run_full_unittest_discovery.py --out ../eureka-test-runs/source_snapshot_baseline_closeout_01",
+  "commands_to_run_externally": [
+    "git status --short --branch",
+    "python scripts/run_full_unittest_discovery.py --out ../eureka-test-runs/source_snapshot_baseline_closeout_01",
+    "python scripts/check_architecture_boundaries.py",
+    "python scripts/check_generated_artifact_cleanliness.py --check --json",
+    "py -3 .aide/scripts/aide_lite.py doctor",
+    "py -3 .aide/scripts/aide_lite.py validate"
+  ],
+  "suggested_output_dir": "../eureka-test-runs/source_snapshot_baseline_closeout_01",
+  "run_outside_ai": true,
+  "expected_duration_class": "very_long",
+  "expected_artifacts": [
+    "../eureka-test-runs/source_snapshot_baseline_closeout_01/full_unittest_summary.json",
+    "../eureka-test-runs/source_snapshot_baseline_closeout_01/failure_families.json",
+    "../eureka-test-runs/source_snapshot_baseline_closeout_01/failed_tests.txt",
+    "../eureka-test-runs/source_snapshot_baseline_closeout_01/status.json",
+    "../eureka-test-runs/source_snapshot_baseline_closeout_01/environment.json",
+    "../eureka-test-runs/source_snapshot_baseline_closeout_01/paths_touched.txt"
+  ],
+  "paste_back": [
+    "../eureka-test-runs/source_snapshot_baseline_closeout_01/full_unittest_summary.json",
+    "../eureka-test-runs/source_snapshot_baseline_closeout_01/failure_families.json",
+    "../eureka-test-runs/source_snapshot_baseline_closeout_01/failed_tests.txt",
+    "git status --short --branch"
+  ],
+  "do_not_paste": [
+    "../eureka-test-runs/source_snapshot_baseline_closeout_01/full_unittest_stdout.txt",
+    "../eureka-test-runs/source_snapshot_baseline_closeout_01/full_unittest_stderr.txt"
+  ],
+  "summary_schema": {
+    "schema_version": "full_unittest_summary.v0",
+    "required": [
+      "schema_version",
+      "command",
+      "exit_code",
+      "status",
+      "git",
+      "counts",
+      "failed_tests",
+      "failed_modules",
+      "failure_families",
+      "generated_by"
+    ],
+    "must_match": {
+      "git.branch": "dev",
+      "git.working_tree_clean": true
+    },
+    "must_match_runtime_head": "git rev-parse HEAD from the operator checkout used for EXTERNAL-FULL-DISCOVERY-RUN-01"
+  },
+  "do_not_commit": [
+    ".aide.local/**",
+    "../eureka-test-runs/**/full_unittest_stdout.txt",
+    "../eureka-test-runs/**/full_unittest_stderr.txt"
+  ],
+  "focused_validation_status": "pass",
+  "reason_required": "No external full-discovery summary matching the current post-closeout HEAD exists.",
+  "resume_instructions": "Resume with EXTERNAL-FULL-DISCOVERY-RUN-01. If the returned summary is green and current to HEAD, reassess release gates. If it is red, select the highest-impact current failure-family repair task.",
+  "waiting_status": "WAITING_FOR_EXTERNAL_FULL_DISCOVERY"
+}
