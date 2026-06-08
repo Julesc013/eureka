@@ -1,0 +1,53 @@
+schema_version: artifact_evidence_gap_queue.v0
+task_id: REVIEWED-ARTIFACT-RECORD-GATE-00
+gaps:
+  - gap_id: gap_artifact_windows_7_package_identity
+    query_id: hq_windows_7_apps
+    required_level: artifact_level_3_artifact_identity_evidence
+    missing:
+      - exact artifact name/version/build
+      - package or release identity
+      - source/publisher context
+    next_task: MANUAL-ARTIFACT-OBSERVATION-BATCH-00
+  - gap_id: gap_artifact_win98_hardware_identity
+    query_id: hq_driver_win98
+    required_level: artifact_level_0_mention_only
+    missing:
+      - hardware vendor
+      - hardware model
+      - chipset or device ID
+      - bus/interface
+      - exact Windows version and architecture
+    next_task: USER-HARDWARE-DETAILS-00
+  - gap_id: gap_artifact_blue_ftp_visual_identity
+    query_id: hq_blue_ftp_client_xp
+    required_level: artifact_level_3_artifact_identity_evidence
+    missing:
+      - visual clue corroboration
+      - exact XP-era version/build
+      - source listing that names the target artifact
+    next_task: MANUAL-ARTIFACT-OBSERVATION-BATCH-00
+  - gap_id: gap_artifact_ct1740_exact_manual
+    query_id: hq_sound_blaster_ct1740_manual
+    required_level: artifact_level_3_artifact_identity_evidence
+    missing:
+      - exact CT1740 manual identity
+      - authoritative source listing or compatibility statement
+      - manual edition/date if available
+    next_task: MANUAL-ARTIFACT-OBSERVATION-BATCH-00
+  - gap_id: gap_artifact_firefox_xp_package_identity
+    query_id: hq_firefox_last_xp
+    required_level: artifact_level_3_artifact_identity_evidence
+    missing:
+      - exact Firefox 52.9.0 ESR package identity
+      - language/architecture variant posture
+      - acquisition source posture
+    next_task: MANUAL-ARTIFACT-OBSERVATION-BATCH-00
+  - gap_id: gap_artifact_ray_tracing_magazine_identity
+    query_id: hq_ray_tracing_1994_magazine
+    required_level: artifact_level_3_artifact_identity_evidence
+    missing:
+      - primary magazine issue metadata
+      - article title/page/author corroboration
+      - source listing for the requested article
+    next_task: MANUAL-ARTIFACT-OBSERVATION-BATCH-00

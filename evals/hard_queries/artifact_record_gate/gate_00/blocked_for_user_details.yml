@@ -1,0 +1,17 @@
+schema_version: artifact_gate_user_detail_blocks.v0
+task_id: REVIEWED-ARTIFACT-RECORD-GATE-00
+blocked:
+  - block_id: block_artifact_win98_driver_hardware_identity
+    query_id: hq_driver_win98
+    query_text: driver for Win98
+    reason: Driver evidence cannot be safely collected or reviewed without hardware identity.
+    required_user_details:
+      - hardware_vendor
+      - hardware_model
+      - device_id_or_chipset
+      - bus_or_interface
+      - exact_windows_version
+      - architecture
+      - machine_or_board_model_if_known
+      - known_source_or_media_context_if_known
+    next_task: USER-HARDWARE-DETAILS-00

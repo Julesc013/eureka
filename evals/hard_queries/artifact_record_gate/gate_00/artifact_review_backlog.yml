@@ -1,0 +1,27 @@
+schema_version: artifact_review_backlog.v0
+task_id: REVIEWED-ARTIFACT-RECORD-GATE-00
+backlog:
+  - backlog_id: backlog_artifact_windows_7_7zip_identity
+    query_id: hq_windows_7_apps
+    current_record: reviewed_seed_b01_hq_windows_7_7zip_support_fact
+    current_level: artifact_level_1_metadata_or_source_lead
+    needed_level: artifact_level_3_artifact_identity_evidence
+    review_posture: collect_before_review
+  - backlog_id: backlog_artifact_firefox_xp_52_9_identity
+    query_id: hq_firefox_last_xp
+    current_record: reviewed_seed_hq_firefox_xp_52_9_support_fact
+    current_level: artifact_level_1_metadata_or_source_lead
+    needed_level: artifact_level_3_artifact_identity_evidence
+    review_posture: collect_before_review
+  - backlog_id: backlog_artifact_ct1740_exact_manual
+    query_id: hq_sound_blaster_ct1740_manual
+    current_record: rcsb02_hq_sound_blaster_16_manual_near_miss
+    current_level: artifact_level_2_source_observed_artifact_listing
+    needed_level: artifact_level_3_artifact_identity_evidence
+    review_posture: collect_exact_target_before_review
+  - backlog_id: backlog_artifact_ray_tracing_magazine_article
+    query_id: hq_ray_tracing_1994_magazine
+    current_record: rcsb02_hq_ray_tracing_radiance_near_miss
+    current_level: artifact_level_2_source_observed_artifact_listing
+    needed_level: artifact_level_3_artifact_identity_evidence
+    review_posture: collect_exact_target_before_review

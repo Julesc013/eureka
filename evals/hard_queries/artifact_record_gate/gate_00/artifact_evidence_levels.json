@@ -1,0 +1,61 @@
+{
+  "schema_version": "artifact_evidence_levels.v0",
+  "levels": [
+    {
+      "level_id": "artifact_level_0_mention_only",
+      "rank": 0,
+      "meaning": "A source mentions the object, topic, title, model, product, or article.",
+      "reviewed_artifact_record_claim_allowed": false,
+      "verified_artifact_claim_allowed": false,
+      "public_claim_allowed": ["no_public_claim", "metadata_lead"]
+    },
+    {
+      "level_id": "artifact_level_1_metadata_or_source_lead",
+      "rank": 1,
+      "meaning": "A metadata page, support page, catalog entry, manual index, article reference, or source lead exists.",
+      "reviewed_artifact_record_claim_allowed": false,
+      "verified_artifact_claim_allowed": false,
+      "public_claim_allowed": ["support_fact", "metadata_lead", "source_lead"]
+    },
+    {
+      "level_id": "artifact_level_2_source_observed_artifact_listing",
+      "rank": 2,
+      "meaning": "A source explicitly lists a specific artifact-like item, version, manual, article, driver, release, or file/package entry.",
+      "reviewed_artifact_record_claim_allowed": false,
+      "verified_artifact_claim_allowed": false,
+      "public_claim_allowed": ["artifact_lead", "source_lead"]
+    },
+    {
+      "level_id": "artifact_level_3_artifact_identity_evidence",
+      "rank": 3,
+      "meaning": "Evidence supports a specific artifact identity: title/name, version/date, platform/hardware context, publisher/source, and object type.",
+      "reviewed_artifact_record_claim_allowed": true,
+      "verified_artifact_claim_allowed": false,
+      "public_claim_allowed": ["reviewed_artifact_record", "artifact_lead"]
+    },
+    {
+      "level_id": "artifact_level_4_artifact_integrity_evidence",
+      "rank": 4,
+      "meaning": "Evidence includes integrity-bearing details such as hash, size, original filename, media identifier, package manifest, catalog number, or independent listing that materially constrains identity.",
+      "reviewed_artifact_record_claim_allowed": true,
+      "verified_artifact_claim_allowed": false,
+      "public_claim_allowed": ["reviewed_artifact_record"]
+    },
+    {
+      "level_id": "artifact_level_5_verified_acquisition_or_reproducibility_path",
+      "rank": 5,
+      "meaning": "Evidence supports a reproducible acquisition path and required safety/rights/posture disclaimers.",
+      "reviewed_artifact_record_claim_allowed": true,
+      "verified_artifact_claim_allowed": true,
+      "public_claim_allowed": ["verified_artifact", "reviewed_artifact_record"]
+    }
+  ],
+  "truth_boundary": {
+    "metadata_is_artifact_truth": false,
+    "source_observation_self_promotes": false,
+    "review_event_alone_proves_artifact": false,
+    "verified_artifact_implies_malware_safety": false,
+    "verified_artifact_implies_rights_clearance": false
+  }
+}
+

@@ -1,0 +1,28 @@
+{
+  "schema_version": "artifact_record_definition.v0",
+  "gate_id": "reviewed_artifact_record_gate_00",
+  "reviewed_artifact_record_minimum_level": "artifact_level_3_artifact_identity_evidence",
+  "verified_artifact_minimum_level": "artifact_level_5_verified_acquisition_or_reproducibility_path",
+  "review_event_required": true,
+  "review_event_sufficient_without_artifact_evidence": false,
+  "qualifying_requirements": [
+    "review decision/event exists",
+    "artifact evidence level is artifact_level_3_or_higher",
+    "public posture does not claim malware safety, rights clearance, download availability, installability, or emulator readiness without a separate gate"
+  ],
+  "non_qualifying_records": [
+    "reviewed support fact",
+    "reviewed metadata lead",
+    "reviewed source lead",
+    "candidate",
+    "need",
+    "near_miss",
+    "superseded duplicate support link",
+    "synthetic eval fixture"
+  ],
+  "public_alpha_thresholds_proposed_not_canon": {
+    "minimum_public_alpha_reviewed_artifact_records": 25,
+    "minimum_hard_query_artifact_coverage": "4/6 hard queries with level 2+ reviewed outcome and 2/6 with level 3+ reviewed outcome"
+  }
+}
+

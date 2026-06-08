@@ -1,0 +1,23 @@
+{
+  "schema_version": "artifact_gate_source_reference_index.v0",
+  "source_task": "REVIEWED-CORPUS-SEED-BATCH-02",
+  "source_references": [
+    {"source_ref_id": "src_mozilla_win7_firefox_115", "query_ids": ["hq_windows_7_apps"], "artifact_claim_limit": "support_fact_only", "runtime_live_source_call_performed": false},
+    {"source_ref_id": "src_missing_win98_driver_scope", "query_ids": ["hq_driver_win98"], "artifact_claim_limit": "blocked_user_details", "runtime_live_source_call_performed": false},
+    {"source_ref_id": "src_flashfxp_home_and_requirements", "query_ids": ["hq_blue_ftp_client_xp"], "artifact_claim_limit": "near_miss_only", "runtime_live_source_call_performed": false},
+    {"source_ref_id": "src_dosdays_ct1740_missing_manual", "query_ids": ["hq_sound_blaster_ct1740_manual"], "artifact_claim_limit": "lead_only", "runtime_live_source_call_performed": false},
+    {"source_ref_id": "src_mozilla_xp_firefox_52_9", "query_ids": ["hq_firefox_last_xp"], "artifact_claim_limit": "support_fact_only", "runtime_live_source_call_performed": false},
+    {"source_ref_id": "src_byte_parallel_course_1994", "query_ids": ["hq_ray_tracing_1994_magazine"], "artifact_claim_limit": "lead_only", "runtime_live_source_call_performed": false},
+    {"source_ref_id": "src_b01_firefox_115_system_requirements", "query_ids": ["hq_windows_7_apps"], "artifact_claim_limit": "support_fact_only", "runtime_live_source_call_performed": false},
+    {"source_ref_id": "src_b01_7zip_official", "query_ids": ["hq_windows_7_apps"], "artifact_claim_limit": "support_fact_only", "runtime_live_source_call_performed": false},
+    {"source_ref_id": "src_b01_smartftp_requirements", "query_ids": ["hq_windows_7_apps"], "artifact_claim_limit": "lead_only", "runtime_live_source_call_performed": false},
+    {"source_ref_id": "src_b01_flashfxp_requirements", "query_ids": ["hq_blue_ftp_client_xp"], "artifact_claim_limit": "near_miss_only", "runtime_live_source_call_performed": false},
+    {"source_ref_id": "src_b01_coreftp_home", "query_ids": ["hq_blue_ftp_client_xp"], "artifact_claim_limit": "lead_only", "runtime_live_source_call_performed": false},
+    {"source_ref_id": "src_b01_dosdays_ct1740", "query_ids": ["hq_sound_blaster_ct1740_manual"], "artifact_claim_limit": "lead_only", "runtime_live_source_call_performed": false},
+    {"source_ref_id": "src_b01_manualslib_sound_blaster_16", "query_ids": ["hq_sound_blaster_ct1740_manual"], "artifact_claim_limit": "near_miss_only", "runtime_live_source_call_performed": false},
+    {"source_ref_id": "src_b01_firefox_52_system_requirements", "query_ids": ["hq_firefox_last_xp"], "artifact_claim_limit": "support_fact_only", "runtime_live_source_call_performed": false},
+    {"source_ref_id": "src_b01_firefox_xp_support_article", "query_ids": ["hq_firefox_last_xp"], "artifact_claim_limit": "support_fact_only", "runtime_live_source_call_performed": false},
+    {"source_ref_id": "src_b01_parallel_course_author_page", "query_ids": ["hq_ray_tracing_1994_magazine"], "artifact_claim_limit": "lead_only", "runtime_live_source_call_performed": false},
+    {"source_ref_id": "src_b01_radiance_paper_page", "query_ids": ["hq_ray_tracing_1994_magazine"], "artifact_claim_limit": "near_miss_only", "runtime_live_source_call_performed": false}
+  ]
+}

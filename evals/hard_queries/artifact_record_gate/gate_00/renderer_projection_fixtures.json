@@ -1,0 +1,49 @@
+{
+  "schema_version": "artifact_gate_renderer_projection_fixtures.v0",
+  "fixtures": [
+    {
+      "fixture_id": "artifact_gate_reviewed_support_fact",
+      "source_record_id": "reviewed_seed_b01_hq_windows_7_7zip_support_fact",
+      "canonical_status": "verified",
+      "artifact_evidence_level": "artifact_level_1_metadata_or_source_lead",
+      "qualifies_as_reviewed_artifact_record": false,
+      "qualifies_as_verified_artifact": false,
+      "public_label": "Reviewed support fact",
+      "required_disclaimer": "This is not a reviewed artifact record or verified artifact.",
+      "public_actions": ["view", "inspect_evidence", "cite"]
+    },
+    {
+      "fixture_id": "artifact_gate_need",
+      "source_record_id": "rcsb02_hq_windows_7_smartftp_need",
+      "canonical_status": "need",
+      "artifact_evidence_level": "artifact_level_1_metadata_or_source_lead",
+      "qualifies_as_reviewed_artifact_record": false,
+      "qualifies_as_verified_artifact": false,
+      "public_label": "Evidence needed",
+      "required_disclaimer": "A source lead exists, but artifact identity evidence is missing.",
+      "public_actions": ["view", "inspect_evidence", "cite"]
+    },
+    {
+      "fixture_id": "artifact_gate_near_miss",
+      "source_record_id": "rcsb02_hq_sound_blaster_16_manual_near_miss",
+      "canonical_status": "near_miss",
+      "artifact_evidence_level": "artifact_level_2_source_observed_artifact_listing",
+      "qualifies_as_reviewed_artifact_record": false,
+      "qualifies_as_verified_artifact": false,
+      "public_label": "Near miss artifact lead",
+      "required_disclaimer": "Related listing only; exact target artifact is unproved.",
+      "public_actions": ["view", "inspect_evidence", "compare", "cite"]
+    },
+    {
+      "fixture_id": "artifact_gate_blocked_for_user_details",
+      "source_record_id": "rcsb02_hq_driver_win98_need",
+      "canonical_status": "need",
+      "artifact_evidence_level": "artifact_level_0_mention_only",
+      "qualifies_as_reviewed_artifact_record": false,
+      "qualifies_as_verified_artifact": false,
+      "public_label": "Blocked for user details",
+      "required_disclaimer": "Hardware identity is required before any driver artifact can be reviewed.",
+      "public_actions": ["view", "inspect_evidence"]
+    }
+  ]
+}

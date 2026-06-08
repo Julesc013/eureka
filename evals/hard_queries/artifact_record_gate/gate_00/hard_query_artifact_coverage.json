@@ -1,0 +1,86 @@
+{
+  "schema_version": "hard_query_artifact_coverage.v0",
+  "gate_id": "reviewed_artifact_record_gate_00",
+  "artifact_level_2_or_higher_reviewed_outcome_coverage": "2/6",
+  "artifact_level_3_or_higher_reviewed_outcome_coverage": "0/6",
+  "hard_query_coverage": [
+    {
+      "query_id": "hq_windows_7_apps",
+      "query_text": "Windows 7 apps",
+      "highest_artifact_evidence_level": "artifact_level_1_metadata_or_source_lead",
+      "reviewed_artifact_record_count": 0,
+      "verified_artifact_count": 0,
+      "reviewed_support_fact_count": 2,
+      "artifact_lead_count": 0,
+      "blocked_for_user_details": false,
+      "public_alpha_artifact_readiness": "not_ready",
+      "reason": "Reviewed support facts exist for platform support, but no package identity, integrity, acquisition, safety, or rights evidence is reviewed.",
+      "next_action": "collect package-identity evidence for one Windows 7 compatible artifact"
+    },
+    {
+      "query_id": "hq_driver_win98",
+      "query_text": "driver for Win98",
+      "highest_artifact_evidence_level": "artifact_level_0_mention_only",
+      "reviewed_artifact_record_count": 0,
+      "verified_artifact_count": 0,
+      "reviewed_support_fact_count": 0,
+      "artifact_lead_count": 0,
+      "blocked_for_user_details": true,
+      "public_alpha_artifact_readiness": "blocked_for_user_details",
+      "reason": "A driver request cannot be resolved safely without hardware vendor, model, chipset or device ID, bus, exact Windows version, and architecture.",
+      "next_action": "collect user hardware identity before any driver evidence task"
+    },
+    {
+      "query_id": "hq_blue_ftp_client_xp",
+      "query_text": "old blue FTP client for XP",
+      "highest_artifact_evidence_level": "artifact_level_1_metadata_or_source_lead",
+      "reviewed_artifact_record_count": 0,
+      "verified_artifact_count": 0,
+      "reviewed_support_fact_count": 0,
+      "artifact_lead_count": 0,
+      "blocked_for_user_details": false,
+      "public_alpha_artifact_readiness": "not_ready",
+      "reason": "Source leads and near misses exist, but the visual clue and exact XP-era artifact identity remain unresolved.",
+      "next_action": "collect visual identity and XP-version evidence"
+    },
+    {
+      "query_id": "hq_sound_blaster_ct1740_manual",
+      "query_text": "manual for Sound Blaster CT1740",
+      "highest_artifact_evidence_level": "artifact_level_2_source_observed_artifact_listing",
+      "reviewed_artifact_record_count": 0,
+      "verified_artifact_count": 0,
+      "reviewed_support_fact_count": 0,
+      "artifact_lead_count": 1,
+      "blocked_for_user_details": false,
+      "public_alpha_artifact_readiness": "not_ready",
+      "reason": "A related Sound Blaster 16 manual listing is a useful artifact lead, but exact CT1740 fit and manual identity are unreviewed.",
+      "next_action": "collect exact CT1740 manual source or authoritative compatibility evidence"
+    },
+    {
+      "query_id": "hq_firefox_last_xp",
+      "query_text": "latest Firefox before XP support ended",
+      "highest_artifact_evidence_level": "artifact_level_1_metadata_or_source_lead",
+      "reviewed_artifact_record_count": 0,
+      "verified_artifact_count": 0,
+      "reviewed_support_fact_count": 1,
+      "artifact_lead_count": 0,
+      "blocked_for_user_details": false,
+      "public_alpha_artifact_readiness": "not_ready",
+      "reason": "Reviewed support facts establish the support-window lead, but no exact Firefox package identity or acquisition evidence is reviewed.",
+      "next_action": "collect Firefox 52.9.0 ESR package identity evidence"
+    },
+    {
+      "query_id": "hq_ray_tracing_1994_magazine",
+      "query_text": "article about ray tracing in a 1994 magazine",
+      "highest_artifact_evidence_level": "artifact_level_2_source_observed_artifact_listing",
+      "reviewed_artifact_record_count": 0,
+      "verified_artifact_count": 0,
+      "reviewed_support_fact_count": 0,
+      "artifact_lead_count": 1,
+      "blocked_for_user_details": false,
+      "public_alpha_artifact_readiness": "not_ready",
+      "reason": "A related 1994 ray-tracing lead exists, but the requested magazine issue/article identity is not reviewed.",
+      "next_action": "collect primary issue, page, title, and publisher metadata"
+    }
+  ]
+}
