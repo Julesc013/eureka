@@ -1,0 +1,22 @@
+schema_version: artifact_observation_user_detail_blocks.v0
+task_id: MANUAL-ARTIFACT-OBSERVATION-BATCH-00
+blocked:
+  - block_id: block_b00_win98_driver_hardware_identity
+    query_id: hq_driver_win98
+    query_text: driver for Win98
+    unsafe_to_recommend_random_driver: true
+    required_user_details:
+      - hardware_vendor
+      - hardware_model
+      - device_id_or_chipset
+      - bus_or_interface
+      - exact_windows_version
+      - architecture
+      - machine_or_board_model_if_known
+      - known_source_or_media_context_if_known
+    forbidden_actions:
+      - recommend_a_specific_driver
+      - download_driver
+      - install_driver
+      - claim_driver_safety
+    next_task: USER-HARDWARE-DETAILS-00

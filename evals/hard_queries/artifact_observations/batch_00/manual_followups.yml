@@ -1,0 +1,18 @@
+schema_version: artifact_observation_manual_followups.v0
+task_id: MANUAL-ARTIFACT-OBSERVATION-BATCH-00
+followups:
+  - followup_id: followup_b00_windows_7_package_identity
+    query_id: hq_windows_7_apps
+    recommended_action: collect package identity evidence for 7-Zip or Firefox ESR 115 without downloading binaries
+  - followup_id: followup_b00_blue_ftp_visual_identity
+    query_id: hq_blue_ftp_client_xp
+    recommended_action: collect visual identity evidence for the remembered blue FTP client
+  - followup_id: followup_b00_ct1740_exact_manual
+    query_id: hq_sound_blaster_ct1740_manual
+    recommended_action: collect exact CT1740 manual title/catalog evidence
+  - followup_id: followup_b00_firefox_xp_binary_identity
+    query_id: hq_firefox_last_xp
+    recommended_action: collect non-downloaded package identity metadata for Firefox 52.9.0 ESR
+  - followup_id: followup_b00_ray_tracing_primary_issue
+    query_id: hq_ray_tracing_1994_magazine
+    recommended_action: collect primary BYTE issue/page metadata for Parallel Course

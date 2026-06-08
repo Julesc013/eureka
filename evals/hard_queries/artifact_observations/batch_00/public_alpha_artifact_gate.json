@@ -1,0 +1,25 @@
+{
+  "schema_version": "public_alpha_artifact_gate_after_manual_artifact_observation_batch_00.v0",
+  "gate_id": "public_alpha_artifact_gate_after_manual_artifact_observation_batch_00",
+  "status": "FAIL_INSUFFICIENT_REVIEWED_ARTIFACT_RECORDS",
+  "reviewed_artifact_record_count": 0,
+  "verified_artifact_count": 0,
+  "manual_artifact_observation_count": 11,
+  "reviewable_artifact_item_count": 10,
+  "artifact_level_counts": {
+    "artifact_level_0_mention_only": 1,
+    "artifact_level_1_metadata_or_source_lead": 1,
+    "artifact_level_2_source_observed_artifact_listing": 4,
+    "artifact_level_3_artifact_identity_evidence": 5,
+    "artifact_level_4_artifact_integrity_evidence": 0,
+    "artifact_level_5_verified_acquisition_or_reproducibility_path": 0
+  },
+  "public_alpha_blocked": true,
+  "dev_to_main_blocked": true,
+  "next_recommended_task": "HUMAN-ARTIFACT-REVIEW-BATCH-00",
+  "notes": [
+    "Observation batch improves review backlog but creates no reviewed artifact records.",
+    "No level 4 or level 5 evidence exists.",
+    "Windows 98 driver query remains blocked for user hardware details."
+  ]
+}

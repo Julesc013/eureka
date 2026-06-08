@@ -1,0 +1,11 @@
+{
+  "schema_version": "artifact_observation_surface_projection_fixtures_batch_00.v0",
+  "task_id": "MANUAL-ARTIFACT-OBSERVATION-BATCH-00",
+  "fixtures": [
+    {"observation_id": "artifact_obs_b00_hq_windows_7_7zip_app_identity", "expected_status": "candidate", "expected_artifact_level": "artifact_level_3_artifact_identity_evidence", "renderer_profiles_expected": ["json_v0", "text_v0", "html_basic_v0", "snapshot_v0"]},
+    {"observation_id": "artifact_obs_b00_hq_driver_win98_hardware_blocker", "expected_status": "need", "expected_artifact_level": "artifact_level_0_mention_only", "renderer_profiles_expected": ["json_v0", "text_v0", "html_basic_v0", "snapshot_v0"]},
+    {"observation_id": "artifact_obs_b00_hq_blue_ftp_flashfxp_xp_near_miss", "expected_status": "near_miss", "expected_artifact_level": "artifact_level_3_artifact_identity_evidence", "renderer_profiles_expected": ["json_v0", "text_v0", "html_basic_v0", "snapshot_v0"]},
+    {"observation_id": "artifact_obs_b00_hq_ct1740_dosdays_manual_absence_lead", "expected_status": "unavailable", "expected_artifact_level": "artifact_level_1_metadata_or_source_lead", "renderer_profiles_expected": ["json_v0", "text_v0", "html_basic_v0", "snapshot_v0"]},
+    {"observation_id": "artifact_obs_b00_hq_firefox_xp_52_9_esr_identity", "expected_status": "candidate", "expected_artifact_level": "artifact_level_3_artifact_identity_evidence", "renderer_profiles_expected": ["json_v0", "text_v0", "html_basic_v0", "snapshot_v0"]}
+  ]
+}

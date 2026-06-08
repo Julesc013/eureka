@@ -1,4 +1,4 @@
-current_recommended_task: MANUAL-ARTIFACT-OBSERVATION-BATCH-00 - Collect artifact identity evidence for reviewed artifact gate
+current_recommended_task: HUMAN-ARTIFACT-REVIEW-BATCH-00 - Review manual artifact observations without creating false artifact truth
 completed:
   - SOURCE-ACTION-KERNEL-00
   - SOURCE-WAVE-00
@@ -68,9 +68,9 @@ completed:
   - SOURCE-SNAPSHOT-FULL-DISCOVERY-INGEST-02
   - SOURCE-SNAPSHOT-RELEASE-GATE-CLOSEOUT-02
   - REVIEWED-ARTIFACT-RECORD-GATE-00
+  - MANUAL-ARTIFACT-OBSERVATION-BATCH-00
 blocked: []
 planned:
-  - MANUAL-ARTIFACT-OBSERVATION-BATCH-00
   - HUMAN-ARTIFACT-REVIEW-BATCH-00
   - REVIEWED-ARTIFACT-RECORD-GATE-01
   - EXTERNAL-FULL-DISCOVERY-RERUN-03

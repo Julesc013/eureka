@@ -1,0 +1,20 @@
+{
+  "schema_version": "artifact_observation_renderer_expected_outputs_batch_00.v0",
+  "task_id": "MANUAL-ARTIFACT-OBSERVATION-BATCH-00",
+  "renderer_profiles": ["json_v0", "text_v0", "html_basic_v0", "snapshot_v0"],
+  "expected_status_by_observation": {
+    "artifact_obs_b00_hq_windows_7_7zip_app_identity": "candidate",
+    "artifact_obs_b00_hq_windows_7_firefox_115_esr_identity": "candidate",
+    "artifact_obs_b00_hq_windows_7_smartftp_requirements_lead": "candidate",
+    "artifact_obs_b00_hq_driver_win98_hardware_blocker": "need",
+    "artifact_obs_b00_hq_blue_ftp_flashfxp_xp_near_miss": "near_miss",
+    "artifact_obs_b00_hq_blue_ftp_coreftp_windows_client_lead": "need",
+    "artifact_obs_b00_hq_ct1740_dosdays_manual_absence_lead": "unavailable",
+    "artifact_obs_b00_hq_ct1740_sound_blaster_16_manual_near_miss": "near_miss",
+    "artifact_obs_b00_hq_firefox_xp_52_9_esr_identity": "candidate",
+    "artifact_obs_b00_hq_ray_tracing_parallel_course_article_identity": "candidate",
+    "artifact_obs_b00_hq_ray_tracing_radiance_paper_near_miss": "near_miss"
+  },
+  "forbidden_public_action_terms": ["review_candidate", "promote", "reject", "request_more_evidence", "download", "install", "rebuild_index", "crawl_source", "arbitrary_live_lookup"],
+  "snapshot_expectation": "deterministic_for_same_input"
+}

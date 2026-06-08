@@ -1,0 +1,573 @@
+{
+  "schema_version": "manual_artifact_observation_batch_00.v0",
+  "task_id": "MANUAL-ARTIFACT-OBSERVATION-BATCH-00",
+  "batch_recorded_date": "2026-06-09",
+  "source_basis": "manual references already present in repo eval and review backlog files",
+  "batch_truth_boundary": {
+    "reviewed_artifact_records_created": false,
+    "verified_artifacts_created": false,
+    "review_events_created": false,
+    "reviewed_index_mutated": false,
+    "public_index_mutated": false,
+    "master_index_mutated": false,
+    "runtime_source_calls_performed": false,
+    "downloads_performed": false,
+    "file_fetches_performed": false,
+    "wayback_replay_performed": false,
+    "rights_clearance_claimed": false,
+    "malware_safety_claimed": false,
+    "synthetic_eval_fixtures_used_as_evidence": false
+  },
+  "observations": [
+    {
+      "observation_id": "artifact_obs_b00_hq_windows_7_7zip_app_identity",
+      "query_id": "hq_windows_7_apps",
+      "query_text": "Windows 7 apps",
+      "artifact_subject": "7-Zip application Windows 7 compatibility lead",
+      "observation_kind": "manual_artifact_observation",
+      "artifact_level": "artifact_level_3_artifact_identity_evidence",
+      "status": "candidate",
+      "source_refs": [
+        {
+          "source_id": "src_b00_7zip_official_home",
+          "url": "https://7-zip.org/",
+          "title": "7-Zip official home page",
+          "source_type": "official_project_site",
+          "manual_reference_only": true,
+          "accessed_or_recorded_date": "2026-06-05"
+        }
+      ],
+      "observed_claims": [
+        {
+          "claim": "Official project-page reference supports 7-Zip as a Windows application lead compatible with Windows 7.",
+          "claim_type": "application_homepage",
+          "confidence": "high",
+          "review_required": true
+        }
+      ],
+      "artifact_identity_fields": {
+        "name": "7-Zip",
+        "version": "unspecified",
+        "platform": "Windows 7",
+        "publisher_or_author": "7-Zip project",
+        "date_or_period": "current source lead, not a versioned release record",
+        "object_type": "software_application",
+        "source_family": "manual_reference"
+      },
+      "missing_for_reviewed_artifact_record": ["exact_version_or_build", "package_identity", "integrity_evidence", "download_or_acquisition_path_not_checked", "rights_posture_not_cleared"],
+      "rights_risk_posture": {
+        "rights_clearance_claimed": false,
+        "malware_safety_claimed": false,
+        "download_offered": false,
+        "risk_notes": ["Official project metadata only; no installer or binary was fetched."]
+      },
+      "review_recommendation": "review_candidate",
+      "public_projection_status": "candidate",
+      "manual_reference_only": true,
+      "runtime_source_call_performed": false,
+      "reviewed_artifact_record_created": false,
+      "verified_artifact_created": false,
+      "notes": "Reviewable as artifact identity lead, not as verified package evidence."
+    },
+    {
+      "observation_id": "artifact_obs_b00_hq_windows_7_firefox_115_esr_identity",
+      "query_id": "hq_windows_7_apps",
+      "query_text": "Windows 7 apps",
+      "artifact_subject": "Firefox 115.0esr Windows 7 application identity lead",
+      "observation_kind": "manual_artifact_observation",
+      "artifact_level": "artifact_level_3_artifact_identity_evidence",
+      "status": "candidate",
+      "source_refs": [
+        {
+          "source_id": "src_b00_firefox_115_requirements",
+          "url": "https://www.firefox.com/en-US/firefox/115.0esr/system-requirements/?redirect_source=mozilla-org",
+          "title": "Firefox ESR 115.0esr system requirements",
+          "source_type": "publisher_requirements_page",
+          "manual_reference_only": true,
+          "accessed_or_recorded_date": "2026-06-05"
+        }
+      ],
+      "observed_claims": [
+        {
+          "claim": "Mozilla requirements reference identifies Firefox 115.0esr and a Windows 7 support context.",
+          "claim_type": "version_endpoint",
+          "confidence": "high",
+          "review_required": true
+        }
+      ],
+      "artifact_identity_fields": {
+        "name": "Firefox ESR",
+        "version": "115.0esr",
+        "platform": "Windows 7",
+        "publisher_or_author": "Mozilla",
+        "date_or_period": "ESR 115 line",
+        "object_type": "software_application",
+        "source_family": "manual_reference"
+      },
+      "missing_for_reviewed_artifact_record": ["exact_binary_package_identity", "language_or_architecture_variant", "integrity_evidence", "download_or_acquisition_path_not_checked"],
+      "rights_risk_posture": {
+        "rights_clearance_claimed": false,
+        "malware_safety_claimed": false,
+        "download_offered": false,
+        "risk_notes": ["Requirements-page observation only; not a browser package verification."]
+      },
+      "review_recommendation": "review_candidate",
+      "public_projection_status": "candidate",
+      "manual_reference_only": true,
+      "runtime_source_call_performed": false,
+      "reviewed_artifact_record_created": false,
+      "verified_artifact_created": false,
+      "notes": "Adds artifact identity shape over the existing support fact."
+    },
+    {
+      "observation_id": "artifact_obs_b00_hq_windows_7_smartftp_requirements_lead",
+      "query_id": "hq_windows_7_apps",
+      "query_text": "Windows 7 apps",
+      "artifact_subject": "SmartFTP Windows 7 SP1 requirements lead",
+      "observation_kind": "manual_artifact_observation",
+      "artifact_level": "artifact_level_2_source_observed_artifact_listing",
+      "status": "candidate",
+      "source_refs": [
+        {
+          "source_id": "src_b00_smartftp_requirements",
+          "url": "https://www.smartftp.com/en-us/support/kb/7",
+          "title": "SmartFTP system requirements",
+          "source_type": "vendor_requirements_page",
+          "manual_reference_only": true,
+          "accessed_or_recorded_date": "2026-06-05"
+        }
+      ],
+      "observed_claims": [
+        {
+          "claim": "Vendor requirements reference supports a SmartFTP Windows 7 SP1 artifact lead.",
+          "claim_type": "requirements_page",
+          "confidence": "medium",
+          "review_required": true
+        }
+      ],
+      "artifact_identity_fields": {
+        "name": "SmartFTP",
+        "version": "unspecified current/versioned fit not reviewed",
+        "platform": "Windows 7 SP1",
+        "publisher_or_author": "SmartFTP",
+        "date_or_period": "not established",
+        "object_type": "software_application",
+        "source_family": "manual_reference"
+      },
+      "missing_for_reviewed_artifact_record": ["stable_version_or_build", "artifact_identity_date", "integrity_evidence", "license_and_safety_not_reviewed"],
+      "rights_risk_posture": {
+        "rights_clearance_claimed": false,
+        "malware_safety_claimed": false,
+        "download_offered": false,
+        "risk_notes": ["Requirements metadata only."]
+      },
+      "review_recommendation": "request_more_evidence",
+      "public_projection_status": "candidate",
+      "manual_reference_only": true,
+      "runtime_source_call_performed": false,
+      "reviewed_artifact_record_created": false,
+      "verified_artifact_created": false,
+      "notes": "Useful lead, but version/build fit still needs artifact review."
+    },
+    {
+      "observation_id": "artifact_obs_b00_hq_driver_win98_hardware_blocker",
+      "query_id": "hq_driver_win98",
+      "query_text": "driver for Win98",
+      "artifact_subject": "Unspecified Windows 98 driver request",
+      "observation_kind": "manual_artifact_observation",
+      "artifact_level": "artifact_level_0_mention_only",
+      "status": "need",
+      "source_refs": [],
+      "observed_claims": [
+        {
+          "claim": "The query lacks hardware identity, so no driver artifact can be selected safely.",
+          "claim_type": "blocked_for_user_details",
+          "confidence": "high",
+          "review_required": false
+        }
+      ],
+      "artifact_identity_fields": {
+        "name": "unknown Windows 98 driver",
+        "version": "unknown",
+        "platform": "Windows 98",
+        "publisher_or_author": "unknown",
+        "date_or_period": "unknown",
+        "object_type": "driver",
+        "source_family": "manual_reference"
+      },
+      "missing_for_reviewed_artifact_record": ["hardware_vendor", "hardware_model", "device_id_or_chipset", "bus_or_interface", "exact_windows_version", "architecture"],
+      "rights_risk_posture": {
+        "rights_clearance_claimed": false,
+        "malware_safety_claimed": false,
+        "download_offered": false,
+        "risk_notes": ["Unsafe to recommend a random driver."]
+      },
+      "review_recommendation": "blocked_for_user_details",
+      "public_projection_status": "need",
+      "manual_reference_only": true,
+      "runtime_source_call_performed": false,
+      "reviewed_artifact_record_created": false,
+      "verified_artifact_created": false,
+      "unsafe_to_recommend_random_driver": true,
+      "notes": "This remains a user-detail blocker, not an artifact observation candidate."
+    },
+    {
+      "observation_id": "artifact_obs_b00_hq_blue_ftp_flashfxp_xp_near_miss",
+      "query_id": "hq_blue_ftp_client_xp",
+      "query_text": "old blue FTP client for XP",
+      "artifact_subject": "FlashFXP Windows XP FTP-client near miss",
+      "observation_kind": "manual_artifact_observation",
+      "artifact_level": "artifact_level_3_artifact_identity_evidence",
+      "status": "near_miss",
+      "source_refs": [
+        {
+          "source_id": "src_b00_flashfxp_requirements",
+          "url": "https://www.flashfxp.com/webhelp/Topics/system-requirements.htm",
+          "title": "FlashFXP system requirements",
+          "source_type": "vendor_requirements_page",
+          "manual_reference_only": true,
+          "accessed_or_recorded_date": "2026-06-05"
+        }
+      ],
+      "observed_claims": [
+        {
+          "claim": "FlashFXP is an XP-era FTP-client identity lead, but the blue visual clue remains unproved.",
+          "claim_type": "artifact_identity_hint",
+          "confidence": "medium",
+          "review_required": true
+        }
+      ],
+      "artifact_identity_fields": {
+        "name": "FlashFXP",
+        "version": "unspecified",
+        "platform": "Windows XP",
+        "publisher_or_author": "FlashFXP",
+        "date_or_period": "XP-era compatibility source",
+        "object_type": "ftp_client_application",
+        "source_family": "manual_reference"
+      },
+      "missing_for_reviewed_artifact_record": ["blue_visual_identity_evidence", "exact_version_for_xp", "integrity_evidence", "download_or_acquisition_path_not_checked"],
+      "rights_risk_posture": {
+        "rights_clearance_claimed": false,
+        "malware_safety_claimed": false,
+        "download_offered": false,
+        "risk_notes": ["Requirements metadata only; not a visual-identity proof."]
+      },
+      "review_recommendation": "mark_near_miss",
+      "public_projection_status": "near_miss",
+      "manual_reference_only": true,
+      "runtime_source_call_performed": false,
+      "reviewed_artifact_record_created": false,
+      "verified_artifact_created": false,
+      "notes": "Reviewable near miss, not a confirmed answer to the remembered blue-client query."
+    },
+    {
+      "observation_id": "artifact_obs_b00_hq_blue_ftp_coreftp_windows_client_lead",
+      "query_id": "hq_blue_ftp_client_xp",
+      "query_text": "old blue FTP client for XP",
+      "artifact_subject": "Core FTP Windows FTP-client source lead",
+      "observation_kind": "manual_artifact_observation",
+      "artifact_level": "artifact_level_2_source_observed_artifact_listing",
+      "status": "need",
+      "source_refs": [
+        {
+          "source_id": "src_b00_coreftp_home",
+          "url": "https://www.coreftp.com/",
+          "title": "Core FTP official home page",
+          "source_type": "vendor_product_page",
+          "manual_reference_only": true,
+          "accessed_or_recorded_date": "2026-06-05"
+        }
+      ],
+      "observed_claims": [
+        {
+          "claim": "Core FTP is a Windows FTP-client source lead, but XP and blue visual identity remain unobserved.",
+          "claim_type": "application_homepage",
+          "confidence": "medium",
+          "review_required": true
+        }
+      ],
+      "artifact_identity_fields": {
+        "name": "Core FTP",
+        "version": "unspecified",
+        "platform": "Windows, XP fit unreviewed",
+        "publisher_or_author": "Core FTP",
+        "date_or_period": "not established",
+        "object_type": "ftp_client_application",
+        "source_family": "manual_reference"
+      },
+      "missing_for_reviewed_artifact_record": ["windows_xp_support_evidence", "blue_visual_identity_evidence", "exact_version_or_build", "integrity_evidence"],
+      "rights_risk_posture": {
+        "rights_clearance_claimed": false,
+        "malware_safety_claimed": false,
+        "download_offered": false,
+        "risk_notes": ["Product-home metadata only."]
+      },
+      "review_recommendation": "request_more_evidence",
+      "public_projection_status": "need",
+      "manual_reference_only": true,
+      "runtime_source_call_performed": false,
+      "reviewed_artifact_record_created": false,
+      "verified_artifact_created": false,
+      "notes": "Useful for follow-up only."
+    },
+    {
+      "observation_id": "artifact_obs_b00_hq_ct1740_dosdays_manual_absence_lead",
+      "query_id": "hq_sound_blaster_ct1740_manual",
+      "query_text": "manual for Sound Blaster CT1740",
+      "artifact_subject": "Sound Blaster CT1740 operation manual absence lead",
+      "observation_kind": "manual_artifact_observation",
+      "artifact_level": "artifact_level_1_metadata_or_source_lead",
+      "status": "unavailable",
+      "source_refs": [
+        {
+          "source_id": "src_b00_dosdays_ct1740",
+          "url": "https://www.dosdays.co.uk/topics/Manufacturers/creative/ct1740.php",
+          "title": "DOS Days Sound Blaster 16 CT1740 page",
+          "source_type": "reputable_secondary_hardware_reference",
+          "manual_reference_only": true,
+          "accessed_or_recorded_date": "2026-06-05"
+        }
+      ],
+      "observed_claims": [
+        {
+          "claim": "Hardware reference identifies CT1740 but does not provide the operation manual.",
+          "claim_type": "manual_listing",
+          "confidence": "medium",
+          "review_required": true
+        }
+      ],
+      "artifact_identity_fields": {
+        "name": "Sound Blaster CT1740 operation manual",
+        "version": "unknown",
+        "platform": "Sound Blaster CT1740 hardware",
+        "publisher_or_author": "Creative Labs, not directly observed for manual",
+        "date_or_period": "unknown",
+        "object_type": "manual",
+        "source_family": "manual_reference"
+      },
+      "missing_for_reviewed_artifact_record": ["exact_manual_source", "manual_title_or_edition", "publisher_or_catalog_metadata", "global_absence_not_established"],
+      "rights_risk_posture": {
+        "rights_clearance_claimed": false,
+        "malware_safety_claimed": false,
+        "download_offered": false,
+        "risk_notes": ["Reference-page metadata only; no manual file was fetched."]
+      },
+      "review_recommendation": "request_more_evidence",
+      "public_projection_status": "unavailable",
+      "manual_reference_only": true,
+      "runtime_source_call_performed": false,
+      "reviewed_artifact_record_created": false,
+      "verified_artifact_created": false,
+      "notes": "Scoped unavailable lead, not a global absence proof."
+    },
+    {
+      "observation_id": "artifact_obs_b00_hq_ct1740_sound_blaster_16_manual_near_miss",
+      "query_id": "hq_sound_blaster_ct1740_manual",
+      "query_text": "manual for Sound Blaster CT1740",
+      "artifact_subject": "Sound Blaster 16 Getting Started manual near miss",
+      "observation_kind": "manual_artifact_observation",
+      "artifact_level": "artifact_level_2_source_observed_artifact_listing",
+      "status": "near_miss",
+      "source_refs": [
+        {
+          "source_id": "src_b00_manualslib_sound_blaster_16",
+          "url": "https://www.manualslib.com/manual/1834637/Creative-Structures-Sound-Blaster-16.html",
+          "title": "Sound Blaster 16 Getting Started manual listing",
+          "source_type": "manual_index_page",
+          "manual_reference_only": true,
+          "accessed_or_recorded_date": "2026-06-05"
+        }
+      ],
+      "observed_claims": [
+        {
+          "claim": "A related Sound Blaster 16 manual listing exists, but exact CT1740 operation-manual fit is unproved.",
+          "claim_type": "manual_listing",
+          "confidence": "medium",
+          "review_required": true
+        }
+      ],
+      "artifact_identity_fields": {
+        "name": "Sound Blaster 16 Getting Started manual",
+        "version": "unspecified",
+        "platform": "Sound Blaster 16 family, exact CT1740 fit unreviewed",
+        "publisher_or_author": "Creative Structures listing label",
+        "date_or_period": "not established",
+        "object_type": "manual",
+        "source_family": "manual_reference"
+      },
+      "missing_for_reviewed_artifact_record": ["exact_ct1740_fit", "operation_manual_identity", "publisher_or_catalog_metadata", "rights_posture_not_cleared"],
+      "rights_risk_posture": {
+        "rights_clearance_claimed": false,
+        "malware_safety_claimed": false,
+        "download_offered": false,
+        "risk_notes": ["Index-page observation only; no manual file was downloaded."]
+      },
+      "review_recommendation": "mark_near_miss",
+      "public_projection_status": "near_miss",
+      "manual_reference_only": true,
+      "runtime_source_call_performed": false,
+      "reviewed_artifact_record_created": false,
+      "verified_artifact_created": false,
+      "notes": "Level-2 artifact lead for a related manual, not the requested CT1740 artifact."
+    },
+    {
+      "observation_id": "artifact_obs_b00_hq_firefox_xp_52_9_esr_identity",
+      "query_id": "hq_firefox_last_xp",
+      "query_text": "latest Firefox before XP support ended",
+      "artifact_subject": "Firefox 52.9.0 ESR Windows XP final-support identity lead",
+      "observation_kind": "manual_artifact_observation",
+      "artifact_level": "artifact_level_3_artifact_identity_evidence",
+      "status": "candidate",
+      "source_refs": [
+        {
+          "source_id": "src_b00_firefox_52_9_requirements",
+          "url": "https://www.mozilla.org/firefox/52.9.0/system-requirements/",
+          "title": "Firefox ESR 52.9.0 system requirements",
+          "source_type": "publisher_requirements_page",
+          "manual_reference_only": true,
+          "accessed_or_recorded_date": "2026-06-05"
+        },
+        {
+          "source_id": "src_b00_firefox_xp_support_article",
+          "url": "https://support.mozilla.org/en-US/kb/end-support-windows-xp-and-vista",
+          "title": "Firefox has ended support for Windows XP and Vista",
+          "source_type": "publisher_support_page",
+          "manual_reference_only": true,
+          "accessed_or_recorded_date": "2026-06-05"
+        }
+      ],
+      "observed_claims": [
+        {
+          "claim": "Mozilla references identify Firefox 52.9.0 ESR as the final supported XP/Vista release family.",
+          "claim_type": "version_endpoint",
+          "confidence": "high",
+          "review_required": true
+        }
+      ],
+      "artifact_identity_fields": {
+        "name": "Firefox ESR",
+        "version": "52.9.0",
+        "platform": "Windows XP/Vista",
+        "publisher_or_author": "Mozilla",
+        "date_or_period": "final XP/Vista support endpoint",
+        "object_type": "software_application",
+        "source_family": "manual_reference"
+      },
+      "missing_for_reviewed_artifact_record": ["exact_binary_package_identity", "language_or_architecture_variant", "integrity_evidence", "download_or_acquisition_path_not_checked"],
+      "rights_risk_posture": {
+        "rights_clearance_claimed": false,
+        "malware_safety_claimed": false,
+        "download_offered": false,
+        "risk_notes": ["Publisher support and requirements pages only; no binary was fetched."]
+      },
+      "review_recommendation": "review_candidate",
+      "public_projection_status": "candidate",
+      "manual_reference_only": true,
+      "runtime_source_call_performed": false,
+      "reviewed_artifact_record_created": false,
+      "verified_artifact_created": false,
+      "notes": "Strong artifact identity observation, still not a verified artifact."
+    },
+    {
+      "observation_id": "artifact_obs_b00_hq_ray_tracing_parallel_course_article_identity",
+      "query_id": "hq_ray_tracing_1994_magazine",
+      "query_text": "article about ray tracing in a 1994 magazine",
+      "artifact_subject": "Parallel Course July 1994 BYTE article lead",
+      "observation_kind": "manual_artifact_observation",
+      "artifact_level": "artifact_level_3_artifact_identity_evidence",
+      "status": "candidate",
+      "source_refs": [
+        {
+          "source_id": "src_b00_parallel_course_author_page",
+          "url": "https://sites.google.com/site/dicknewsite/home/computing/byte-articles/parallel-course-1994",
+          "title": "Parallel Course (July 1994)",
+          "source_type": "author_article_page",
+          "manual_reference_only": true,
+          "accessed_or_recorded_date": "2026-06-05"
+        }
+      ],
+      "observed_claims": [
+        {
+          "claim": "Author-page reference identifies a July 1994 BYTE article about a ray-tracing program.",
+          "claim_type": "article_listing",
+          "confidence": "medium",
+          "review_required": true
+        }
+      ],
+      "artifact_identity_fields": {
+        "name": "Parallel Course",
+        "version": "article, not software version",
+        "platform": "BYTE magazine article context",
+        "publisher_or_author": "Dick Pountain / BYTE attribution",
+        "date_or_period": "July 1994",
+        "object_type": "article",
+        "source_family": "manual_reference"
+      },
+      "missing_for_reviewed_artifact_record": ["primary_issue_metadata", "page_range", "publisher_catalog_evidence", "scan_or_file_not_checked"],
+      "rights_risk_posture": {
+        "rights_clearance_claimed": false,
+        "malware_safety_claimed": false,
+        "download_offered": false,
+        "risk_notes": ["Author-page reference only; no magazine scan or file was fetched."]
+      },
+      "review_recommendation": "review_candidate",
+      "public_projection_status": "candidate",
+      "manual_reference_only": true,
+      "runtime_source_call_performed": false,
+      "reviewed_artifact_record_created": false,
+      "verified_artifact_created": false,
+      "notes": "Reviewable article identity lead, still needs primary issue corroboration."
+    },
+    {
+      "observation_id": "artifact_obs_b00_hq_ray_tracing_radiance_paper_near_miss",
+      "query_id": "hq_ray_tracing_1994_magazine",
+      "query_text": "article about ray tracing in a 1994 magazine",
+      "artifact_subject": "RADIANCE July 1994 ray-tracing paper near miss",
+      "observation_kind": "manual_artifact_observation",
+      "artifact_level": "artifact_level_2_source_observed_artifact_listing",
+      "status": "near_miss",
+      "source_refs": [
+        {
+          "source_id": "src_b00_radiance_paper_page",
+          "url": "https://radsite.lbl.gov/radiance/papers/sg94.1/paper.html",
+          "title": "The RADIANCE Lighting Simulation and Rendering System",
+          "source_type": "research_paper_page",
+          "manual_reference_only": true,
+          "accessed_or_recorded_date": "2026-06-05"
+        }
+      ],
+      "observed_claims": [
+        {
+          "claim": "RADIANCE is a July 1994 ray-tracing-related publication lead, but not the requested BYTE magazine article.",
+          "claim_type": "article_listing",
+          "confidence": "medium",
+          "review_required": true
+        }
+      ],
+      "artifact_identity_fields": {
+        "name": "The RADIANCE Lighting Simulation and Rendering System",
+        "version": "article/paper, not software version",
+        "platform": "Computer Graphics/SIGGRAPH context, not BYTE",
+        "publisher_or_author": "RADIANCE paper authors/source page",
+        "date_or_period": "July 1994",
+        "object_type": "article_or_paper",
+        "source_family": "manual_reference"
+      },
+      "missing_for_reviewed_artifact_record": ["not_requested_magazine", "not_byte_article", "primary_target_identity_missing"],
+      "rights_risk_posture": {
+        "rights_clearance_claimed": false,
+        "malware_safety_claimed": false,
+        "download_offered": false,
+        "risk_notes": ["Citation/page observation only; no PDF or file was fetched."]
+      },
+      "review_recommendation": "mark_near_miss",
+      "public_projection_status": "near_miss",
+      "manual_reference_only": true,
+      "runtime_source_call_performed": false,
+      "reviewed_artifact_record_created": false,
+      "verified_artifact_created": false,
+      "notes": "Near miss useful for disambiguation."
+    }
+  ]
+}

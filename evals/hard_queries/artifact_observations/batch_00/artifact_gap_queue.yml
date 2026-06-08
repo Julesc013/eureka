@@ -1,0 +1,38 @@
+schema_version: artifact_gap_queue.v0
+task_id: MANUAL-ARTIFACT-OBSERVATION-BATCH-00
+gaps:
+  - gap_id: gap_b00_package_identity_windows_apps
+    query_id: hq_windows_7_apps
+    missing:
+      - exact package identity
+      - version/build evidence where relevant
+      - integrity evidence
+  - gap_id: gap_b00_win98_hardware_identity
+    query_id: hq_driver_win98
+    missing:
+      - hardware vendor
+      - hardware model
+      - device ID or chipset
+      - bus or interface
+      - exact Windows version and architecture
+  - gap_id: gap_b00_blue_ftp_visual_identity
+    query_id: hq_blue_ftp_client_xp
+    missing:
+      - visual clue corroboration
+      - exact XP-era version/build
+  - gap_id: gap_b00_ct1740_exact_manual
+    query_id: hq_sound_blaster_ct1740_manual
+    missing:
+      - exact CT1740 manual title
+      - publisher or catalog evidence
+  - gap_id: gap_b00_firefox_xp_binary_identity
+    query_id: hq_firefox_last_xp
+    missing:
+      - binary package identity
+      - language and architecture variant posture
+  - gap_id: gap_b00_ray_tracing_primary_issue
+    query_id: hq_ray_tracing_1994_magazine
+    missing:
+      - primary issue metadata
+      - page range
+      - publisher catalog evidence

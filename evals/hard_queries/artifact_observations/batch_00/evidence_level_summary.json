@@ -1,0 +1,24 @@
+{
+  "schema_version": "artifact_observation_evidence_level_summary.v0",
+  "task_id": "MANUAL-ARTIFACT-OBSERVATION-BATCH-00",
+  "artifact_level_counts": {
+    "artifact_level_0_mention_only": 1,
+    "artifact_level_1_metadata_or_source_lead": 1,
+    "artifact_level_2_source_observed_artifact_listing": 4,
+    "artifact_level_3_artifact_identity_evidence": 5,
+    "artifact_level_4_artifact_integrity_evidence": 0,
+    "artifact_level_5_verified_acquisition_or_reproducibility_path": 0
+  },
+  "status_counts": {
+    "candidate": 5,
+    "need": 2,
+    "near_miss": 3,
+    "unavailable": 1,
+    "unknown": 0
+  },
+  "manual_artifact_observation_count": 11,
+  "reviewable_artifact_item_count": 10,
+  "blocked_for_user_details_count": 1,
+  "reviewed_artifact_record_count": 0,
+  "verified_artifact_count": 0
+}
