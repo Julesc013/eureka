@@ -1,4 +1,4 @@
-current_recommended_task: GENERATED-ARTIFACT-DRIFT-REPAIR-01 - Repair generated artifact drift from external discovery ingest
+current_recommended_task: CONTRACT-SCHEMA-DRIFT-REPAIR-01 - Repair contract/schema drift from external discovery ingest
 completed:
   - SOURCE-ACTION-KERNEL-00
   - SOURCE-WAVE-00
@@ -62,9 +62,9 @@ completed:
   - ARCHITECTURE-BOUNDARY-DRIFT-REPAIR-01
   - QUEUE-HANDOFF-DRIFT-REPAIR-01
   - SOURCE-SNAPSHOT-BASELINE-DRIFT-REPAIR-01
+  - GENERATED-ARTIFACT-DRIFT-REPAIR-01
 blocked: []
 planned:
-  - GENERATED-ARTIFACT-DRIFT-REPAIR-01
   - CONTRACT-SCHEMA-DRIFT-REPAIR-01
   - SOURCE-SNAPSHOT-FAILURE-REPAIR-01
   - EXTERNAL-FULL-DISCOVERY-RERUN-02

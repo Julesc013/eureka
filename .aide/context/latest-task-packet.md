@@ -2,11 +2,11 @@
 
 ## PHASE
 
-UNSPECIFIED - SOURCE-SNAPSHOT-BASELINE-DRIFT-REPAIR-01
+UNSPECIFIED - GENERATED-ARTIFACT-DRIFT-REPAIR-01
 
 ## GOAL
 
-SOURCE-SNAPSHOT-BASELINE-DRIFT-REPAIR-01
+GENERATED-ARTIFACT-DRIFT-REPAIR-01
 
 ## WHY
 
@@ -139,8 +139,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4800
-- approx_tokens: 1200
+- chars: 4788
+- approx_tokens: 1197
 - budget_status: PASS
 - warnings:
   - none

@@ -79,6 +79,24 @@ class SummarizeUnittestLogTests(unittest.TestCase):
         self.assertEqual(summary["failure_families"][0]["exception_type"], "ValueError")
         self.assertIn("<n>", summary["failure_families"][0]["normalized_message"])
 
+    def test_plain_validator_error_output_is_not_unittest_failure(self) -> None:
+        output = """....ERROR: refusing forbidden output root: site/dist
+H10 games emulation source summary
+status: invalid
+ERROR: refusing forbidden output root: runtime
+.
+----------------------------------------------------------------------
+Ran 5 tests in 0.001s
+
+OK
+"""
+        with tempfile.TemporaryDirectory() as tmp:
+            summary = summarize_fixture(Path(tmp), stdout=output, stderr="", exit_code=0)
+
+        self.assertEqual(summary["status"], "pass")
+        self.assertEqual(summary["failed_tests"], [])
+        self.assertEqual(summary["failure_families"], [])
+
     def test_summary_writer_outputs_json(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             out = Path(tmp) / "summary.json"

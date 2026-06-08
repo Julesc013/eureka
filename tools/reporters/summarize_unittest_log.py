@@ -163,7 +163,7 @@ def extract_failure_blocks(text: str) -> list[dict[str, str]]:
     header_re = re.compile(r"^(FAIL|ERROR):\s+(.+)$")
     while index < len(lines):
         match = header_re.match(lines[index])
-        if not match:
+        if not match or not _has_unittest_separator(lines, index):
             index += 1
             continue
         kind = match.group(1).lower()
@@ -188,6 +188,13 @@ def extract_failure_blocks(text: str) -> list[dict[str, str]]:
             }
         )
     return blocks
+
+
+def _has_unittest_separator(lines: Sequence[str], index: int) -> bool:
+    if index <= 0:
+        return False
+    previous = lines[index - 1].strip()
+    return previous.startswith("=" * 20)
 
 
 def exception_from_block(block_text: str) -> tuple[str, str]:
