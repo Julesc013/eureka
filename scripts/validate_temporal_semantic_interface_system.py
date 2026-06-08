@@ -73,6 +73,10 @@ FORBIDDEN_RUNTIME_PHASE_FILES = [
     "runtime/surface/fallback.py",
     "scripts/eureka_surface_kernel.py",
 ]
+SURFACE_RUNTIME_PHASE_TASKS = {
+    "SURFACE-KERNEL-00",
+    "BASELINE-RENDERERS-00",
+}
 
 FORBIDDEN_TRUE_BOUNDARIES = {
     "new_top_level_roots_added",
@@ -157,7 +161,8 @@ def validate_temporal_semantic_interface_system(repo_root: Path = REPO_ROOT) -> 
     result = _load_json(root / "control/inventory/tsis_00_result.json", errors)
     boundary_flags = _boundary_flags(result if isinstance(result, Mapping) else {})
     _validate_boundaries(boundary_flags, errors)
-    _validate_runtime_not_added(root, errors)
+    phase_state = _surface_runtime_phase_state(root)
+    _validate_runtime_not_added(root, errors, phase_state)
 
     return {
         "schema_version": "tsis_00_validation.v0",
@@ -171,6 +176,7 @@ def validate_temporal_semantic_interface_system(repo_root: Path = REPO_ROOT) -> 
         "surface_kernel_runtime_added": False,
         "surface_kernel_cli_added": False,
         **boundary_flags,
+        **phase_state,
         "errors": sorted(errors),
     }
 
@@ -268,10 +274,58 @@ def _validate_boundaries(boundary_flags: Mapping[str, bool], errors: list[str]) 
             errors.append(f"boundary flag {field} must be false")
 
 
-def _validate_runtime_not_added(root: Path, errors: list[str]) -> None:
+def _validate_runtime_not_added(
+    root: Path,
+    errors: list[str],
+    phase_state: Mapping[str, Any] | None = None,
+) -> None:
+    phase = phase_state or _surface_runtime_phase_state(root)
+    surface_phase_completed = phase.get("surface_runtime_phase_completed") is True
     for relative in FORBIDDEN_RUNTIME_PHASE_FILES:
-        if (root / relative).exists():
-            errors.append(f"TSIS-00 must not add runtime phase file: {relative}")
+        if not (root / relative).exists():
+            continue
+        if relative.startswith("runtime/surface/") and surface_phase_completed:
+            continue
+        errors.append(f"TSIS-00 must not add runtime phase file: {relative}")
+
+
+def _surface_runtime_phase_state(root: Path) -> dict[str, Any]:
+    completed_tasks = _completed_queue_tasks(root)
+    completed_surface_tasks = sorted(SURFACE_RUNTIME_PHASE_TASKS & completed_tasks)
+    runtime_phase_files_present = [
+        relative
+        for relative in FORBIDDEN_RUNTIME_PHASE_FILES
+        if relative.startswith("runtime/surface/") and (root / relative).exists()
+    ]
+    return {
+        "surface_runtime_phase_completed": bool(completed_surface_tasks),
+        "surface_runtime_completed_tasks": completed_surface_tasks,
+        "runtime_phase_files_present": runtime_phase_files_present,
+        "runtime_phase_file_count": len(runtime_phase_files_present),
+    }
+
+
+def _completed_queue_tasks(root: Path) -> set[str]:
+    queue_path = root / ".aide/queue/index.yaml"
+    try:
+        lines = queue_path.read_text(encoding="utf-8").splitlines()
+    except FileNotFoundError:
+        return set()
+
+    completed: set[str] = set()
+    in_completed = False
+    for raw_line in lines:
+        stripped = raw_line.strip()
+        if not stripped:
+            continue
+        if not raw_line.startswith((" ", "\t")) and stripped.endswith(":"):
+            in_completed = stripped == "completed:"
+            continue
+        if in_completed and stripped.startswith("- "):
+            task_id = stripped[2:].split()[0]
+            if task_id:
+                completed.add(task_id)
+    return completed
 
 
 def _boundary_flags(result: Mapping[str, Any]) -> dict[str, bool]:

@@ -1,4 +1,4 @@
-current_recommended_task: CONTRACT-SCHEMA-DRIFT-REPAIR-01 - Repair contract/schema drift from external discovery ingest
+current_recommended_task: EXTERNAL-FULL-DISCOVERY-RERUN-02 - Rerun external full discovery after focused repair families
 completed:
   - SOURCE-ACTION-KERNEL-00
   - SOURCE-WAVE-00
@@ -63,10 +63,9 @@ completed:
   - QUEUE-HANDOFF-DRIFT-REPAIR-01
   - SOURCE-SNAPSHOT-BASELINE-DRIFT-REPAIR-01
   - GENERATED-ARTIFACT-DRIFT-REPAIR-01
+  - CONTRACT-SCHEMA-DRIFT-REPAIR-01
 blocked: []
 planned:
-  - CONTRACT-SCHEMA-DRIFT-REPAIR-01
-  - SOURCE-SNAPSHOT-FAILURE-REPAIR-01
   - EXTERNAL-FULL-DISCOVERY-RERUN-02
 waiting: []
 status_options:

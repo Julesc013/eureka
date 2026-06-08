@@ -2,11 +2,11 @@
 
 ## PHASE
 
-UNSPECIFIED - GENERATED-ARTIFACT-DRIFT-REPAIR-01
+UNSPECIFIED - CONTRACT-SCHEMA-DRIFT-REPAIR-01
 
 ## GOAL
 
-GENERATED-ARTIFACT-DRIFT-REPAIR-01
+CONTRACT-SCHEMA-DRIFT-REPAIR-01
 
 ## WHY
 
@@ -139,8 +139,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4788
-- approx_tokens: 1197
+- chars: 4782
+- approx_tokens: 1196
 - budget_status: PASS
 - warnings:
   - none

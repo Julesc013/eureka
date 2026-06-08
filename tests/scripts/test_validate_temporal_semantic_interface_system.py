@@ -3,6 +3,7 @@ from __future__ import annotations
 import copy
 import json
 from pathlib import Path
+import tempfile
 import unittest
 
 from scripts import validate_temporal_semantic_interface_system as validator
@@ -24,6 +25,8 @@ class ValidateTemporalSemanticInterfaceSystemTest(unittest.TestCase):
         self.assertEqual(report["representation_contract_count"], 6)
         self.assertEqual(report["view_contract_count"], 8)
         self.assertFalse(report["surface_kernel_runtime_added"])
+        self.assertTrue(report["surface_runtime_phase_completed"])
+        self.assertIn("SURFACE-KERNEL-00", report["surface_runtime_completed_tasks"])
         self.assertFalse(report["runtime_behavior_changed"])
         self.assertFalse(report["deployment_performed"])
 
@@ -58,11 +61,37 @@ class ValidateTemporalSemanticInterfaceSystemTest(unittest.TestCase):
         self.assertTrue(any("machine_status_synonyms_allowed" in error for error in errors))
 
     def test_runtime_phase_file_would_fail_tsis_00(self) -> None:
-        errors: list[str] = []
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            surface_file = root / "runtime/surface/kernel.py"
+            surface_file.parent.mkdir(parents=True)
+            surface_file.write_text("# later phase file\n", encoding="utf-8")
+            errors: list[str] = []
 
-        validator._validate_runtime_not_added(REPO_ROOT / "tests/fixtures/does-not-exist", errors)
+            validator._validate_runtime_not_added(root, errors)
+
+        self.assertEqual(
+            errors,
+            ["TSIS-00 must not add runtime phase file: runtime/surface/kernel.py"],
+        )
+
+    def test_runtime_surface_phase_allows_surface_files_after_completion(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            surface_file = root / "runtime/surface/kernel.py"
+            surface_file.parent.mkdir(parents=True)
+            surface_file.write_text("# later phase file\n", encoding="utf-8")
+            queue = root / ".aide/queue/index.yaml"
+            queue.parent.mkdir(parents=True)
+            queue.write_text("completed:\n  - SURFACE-KERNEL-00\n", encoding="utf-8")
+            errors: list[str] = []
+
+            state = validator._surface_runtime_phase_state(root)
+            validator._validate_runtime_not_added(root, errors, state)
 
         self.assertEqual(errors, [])
+        self.assertTrue(state["surface_runtime_phase_completed"])
+        self.assertEqual(state["surface_runtime_completed_tasks"], ["SURFACE-KERNEL-00"])
 
     def test_cli_json_passes(self) -> None:
         from io import StringIO
