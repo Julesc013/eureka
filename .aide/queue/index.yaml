@@ -1,4 +1,4 @@
-current_recommended_task: EXTERNAL-FULL-DISCOVERY-RERUN-02 - Rerun external full discovery after focused repair families
+current_recommended_task: REVIEWED-ARTIFACT-RECORD-GATE-00 - Assess reviewed artifact readiness after green full discovery
 completed:
   - SOURCE-ACTION-KERNEL-00
   - SOURCE-WAVE-00
@@ -64,9 +64,14 @@ completed:
   - SOURCE-SNAPSHOT-BASELINE-DRIFT-REPAIR-01
   - GENERATED-ARTIFACT-DRIFT-REPAIR-01
   - CONTRACT-SCHEMA-DRIFT-REPAIR-01
+  - EXTERNAL-FULL-DISCOVERY-RERUN-02
+  - SOURCE-SNAPSHOT-FULL-DISCOVERY-INGEST-02
+  - SOURCE-SNAPSHOT-RELEASE-GATE-CLOSEOUT-02
 blocked: []
 planned:
-  - EXTERNAL-FULL-DISCOVERY-RERUN-02
+  - REVIEWED-ARTIFACT-RECORD-GATE-00
+  - PUBLIC-ALPHA-READINESS-00
+  - DEV-TO-MAIN-PROMOTION-PREFLIGHT-07
 waiting: []
 status_options:
   - pass

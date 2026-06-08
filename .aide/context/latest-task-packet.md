@@ -2,11 +2,11 @@
 
 ## PHASE
 
-UNSPECIFIED - CONTRACT-SCHEMA-DRIFT-REPAIR-01
+UNSPECIFIED - FULL-DISCOVERY-GREEN-LOOP-02
 
 ## GOAL
 
-CONTRACT-SCHEMA-DRIFT-REPAIR-01
+FULL-DISCOVERY-GREEN-LOOP-02
 
 ## WHY
 
@@ -139,8 +139,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4782
-- approx_tokens: 1196
+- chars: 4776
+- approx_tokens: 1194
 - budget_status: PASS
 - warnings:
   - none
