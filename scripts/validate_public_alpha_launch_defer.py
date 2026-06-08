@@ -33,6 +33,37 @@ NEXT_QUEUE = [
     "SNAPSHOT-REFRESH-00",
     "PUBLIC-ALPHA-REASSESS-00",
 ]
+POST_DEFER_QUEUE_PREFIXES = (
+    "ACTIVE-DISCOVERY-AND-CANDIDATE-INTAKE-",
+    "QUERY-TO-SOURCE-ACTION-PLANNER-",
+    "CANDIDATE-INDEX-RUNTIME-",
+    "SCOUT-RUNTIME-",
+    "REVIEW-BATCH-",
+    "SEED-BATCH-",
+    "SNAPSHOT-REFRESH-",
+    "PUBLIC-ALPHA-REASSESS-",
+    "PUBLIC-SEARCH-UX-",
+    "LIVE-METADATA-PILOT-BATCH-",
+    "REVIEW-LIVE-METADATA-CANDIDATES-",
+    "LOCAL-APPLY-LIVE-METADATA-PREVIEWS-",
+    "TSIS-",
+    "INDEXLESS-LIVE-SEARCH-FALLBACK-",
+    "REVIEW-LEDGER-",
+    "WORKBENCH-RUN-REVIEW-PROJECTION-",
+    "SURFACE-KERNEL-",
+    "BASELINE-RENDERERS-",
+    "HARD-QUERY-EVAL-",
+    "REVIEWED-SEED-CORPUS-",
+    "MANUAL-OBSERVATION-BATCH-",
+    "HUMAN-REVIEW-BATCH-",
+    "REVIEWED-CORPUS-SEED-BATCH-",
+    "SOURCE-SNAPSHOT-",
+    "ARCHITECTURE-BOUNDARY-DRIFT-REPAIR-",
+    "QUEUE-HANDOFF-DRIFT-REPAIR-",
+    "GENERATED-ARTIFACT-DRIFT-REPAIR-",
+    "CONTRACT-SCHEMA-DRIFT-REPAIR-",
+    "EXTERNAL-FULL-DISCOVERY-",
+)
 
 FALSE_FIELDS = [
     "deployment_performed",
@@ -209,11 +240,21 @@ def _validate_queue(root: Path, errors: list[str]) -> None:
         errors.append("missing .aide/queue/index.yaml")
         return
     text = queue.read_text(encoding="utf-8")
-    if "current_recommended_task: ACTIVE-DISCOVERY-AND-CANDIDATE-INTAKE-00" not in text:
-        errors.append("queue current recommended task must be active discovery")
-    for item in NEXT_QUEUE:
-        if f"  - {item}" not in text:
-            errors.append(f"queue missing planned task: {item}")
+    current = _current_task_id(text)
+    if current != "ACTIVE-DISCOVERY-AND-CANDIDATE-INTAKE-00" and not current.startswith(POST_DEFER_QUEUE_PREFIXES):
+        errors.append("queue current recommended task must be active discovery or a later blocked repair/readiness task")
+    if current == "ACTIVE-DISCOVERY-AND-CANDIDATE-INTAKE-00":
+        for item in NEXT_QUEUE:
+            if f"  - {item}" not in text:
+                errors.append(f"queue missing planned task: {item}")
+
+
+def _current_task_id(queue_text: str) -> str:
+    for line in queue_text.splitlines():
+        stripped = line.strip()
+        if stripped.startswith("current_recommended_task:"):
+            return stripped.split(":", 1)[1].strip().split()[0]
+    return ""
 
 
 def _validate_no_approval_file(root: Path, errors: list[str]) -> None:

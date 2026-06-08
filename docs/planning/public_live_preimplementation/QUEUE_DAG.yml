@@ -16,25 +16,25 @@ nodes:
     current_posture: partially_satisfied_existing_runtime_needs_gap_audit
   INDEXLESS-LIVE-SEARCH-FALLBACK-00:
     depends_on: [RESOLVER-SPINE-00]
-    current_posture: current_recommended_product_task
+    current_posture: completed_governed_engine_run_mode
   REVIEW-LEDGER-00:
     depends_on: [RESOLVER-SPINE-00]
-    current_posture: partially_satisfied_existing_review_paths
+    current_posture: completed_review_audit_boundary
   WORKBENCH-RUN-REVIEW-PROJECTION-00:
     depends_on: [RESOLVER-SPINE-00, REVIEW-LEDGER-00]
-    current_posture: partially_satisfied_existing_workbench
+    current_posture: completed_private_operator_projection
   SURFACE-KERNEL-00:
     depends_on: [SEMANTIC-CORE-CONTRACTS-00, PUBLIC-SCOPE-V1-00]
-    current_posture: contract_foundation_exists_runtime_deferred
+    current_posture: completed_policy_filtered_projection_boundary
   BASELINE-RENDERERS-00:
     depends_on: [SURFACE-KERNEL-00]
-    current_posture: partially_satisfied_snapshot_and_public_renderers
+    current_posture: completed_baseline_representations
   HARD-QUERY-EVAL-00:
     depends_on: [PUBLIC-SCOPE-V1-00, SEMANTIC-CORE-CONTRACTS-00]
-    current_posture: eval_structure_exists_needs_current_run
+    current_posture: completed_deterministic_eval_layer
   REVIEWED-SEED-CORPUS-00:
     depends_on: [HARD-QUERY-EVAL-00, REVIEW-LEDGER-00]
-    current_posture: below_recent_thresholds
+    current_posture: consolidated_through_reviewed_corpus_seed_batch_02_below_threshold
   PUBLIC-ALPHA-READINESS-00:
     depends_on: [REVIEWED-SEED-CORPUS-00, BASELINE-RENDERERS-00, OPS-HARDENING-00]
     current_posture: deferred_until_usefulness_and_fallback
@@ -51,6 +51,5 @@ nodes:
     depends_on: [PUBLIC-BETA-00]
     current_posture: future
 recommended_start:
-  - INDEXLESS-LIVE-SEARCH-FALLBACK-00-PREFLIGHT
-  - INDEXLESS-LIVE-SEARCH-FALLBACK-00
-
+  - QUEUE-HANDOFF-DRIFT-REPAIR-01
+  - SOURCE-SNAPSHOT-BASELINE-DRIFT-REPAIR-01

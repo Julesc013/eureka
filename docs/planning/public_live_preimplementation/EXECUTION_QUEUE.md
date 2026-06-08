@@ -3,13 +3,24 @@
 This queue preserves the mega-prompt dependency order but reconciles it with
 current repo authority.
 
-## Immediate Queue
+## Current Repair Queue
 
-1. `INDEXLESS-LIVE-SEARCH-FALLBACK-00-PREFLIGHT`
-2. `INDEXLESS-LIVE-SEARCH-FALLBACK-00`
-3. `SEARCH-USEFULNESS-EVAL-00`
-4. `REVIEWED-ARTIFACT-RECORD-GATE-00`
-5. `PUBLIC-ALPHA-READINESS-RECHECK-00`
+The original public-live implementation queue has advanced. Current posture:
+
+1. `INDEXLESS-LIVE-SEARCH-FALLBACK-00-PREFLIGHT` through `REVIEWED-CORPUS-SEED-BATCH-02`: completed or consolidated.
+2. `SOURCE-SNAPSHOT-BASELINE-CLOSEOUT-01`: completed with external full-discovery handoff.
+3. `SOURCE-SNAPSHOT-FULL-DISCOVERY-INGEST-01`: completed; external discovery was current and red.
+4. `ARCHITECTURE-BOUNDARY-DRIFT-REPAIR-01`: completed for the focused architecture-boundary labels.
+5. `QUEUE-HANDOFF-DRIFT-REPAIR-01`: current repair task.
+
+After this repair, remaining residual families should drive the next task:
+
+```text
+SOURCE-SNAPSHOT-BASELINE-DRIFT-REPAIR-01
+GENERATED-ARTIFACT-DRIFT-REPAIR-01
+CONTRACT-SCHEMA-DRIFT-REPAIR-01
+SOURCE-SNAPSHOT-FAILURE-REPAIR-01
+```
 
 ## Reconciled Mega Queue
 
@@ -24,21 +35,25 @@ audit unless existing contracts fail fallback needs.
 `RESOLVER-SPINE-00`: partially satisfied by existing runtime paths; use as an
 alignment task, not a greenfield rewrite.
 
-`INDEXLESS-LIVE-SEARCH-FALLBACK-00`: current recommended implementation task.
+`INDEXLESS-LIVE-SEARCH-FALLBACK-00`: completed as governed fallback behind the
+engine run seam.
 
-`REVIEW-LEDGER-00`: audit and reinforce review/promotion invariants.
+`REVIEW-LEDGER-00`: completed as the review/audit truth boundary for
+candidates and needs.
 
-`WORKBENCH-RUN-REVIEW-PROJECTION-00`: extend only if fallback evidence cannot
-be inspected through existing Workbench projections.
+`WORKBENCH-RUN-REVIEW-PROJECTION-00`: completed as the private/operator
+projection over runs, fallback output, review items, ledger decisions, and
+audit events.
 
-`SURFACE-KERNEL-00` and `BASELINE-RENDERERS-00`: continue after fallback output
-requires cross-render parity beyond current public/snapshot renderers.
+`SURFACE-KERNEL-00` and `BASELINE-RENDERERS-00`: completed as projection and
+baseline representation layers over policy-filtered view models.
 
-`HARD-QUERY-EVAL-00` and `REVIEWED-SEED-CORPUS-00`: required before any renewed
-public launch approval.
+`HARD-QUERY-EVAL-00` and `REVIEWED-SEED-CORPUS-00`: completed as evaluation and
+seed-corpus readiness layers. Corpus work remains below public-alpha threshold
+after `REVIEWED-CORPUS-SEED-BATCH-02`.
 
 `PUBLIC-ALPHA-READINESS-00` and `PUBLIC-ALPHA-LAUNCH-00`: remain blocked by
-manual approval and usefulness/corpus gates.
+full-discovery, source/snapshot, reviewed-corpus, reviewed-artifact, readiness,
+rehearsal, and manual approval gates.
 
 `OPS-HARDENING-00`, `PUBLIC-BETA-00`, `PUBLIC-1.0-00`: future gates.
-

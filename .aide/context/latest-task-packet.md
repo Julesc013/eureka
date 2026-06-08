@@ -2,11 +2,11 @@
 
 ## PHASE
 
-UNSPECIFIED - SOURCE-SNAPSHOT-BASELINE-CLOSEOUT-01
+UNSPECIFIED - QUEUE-HANDOFF-DRIFT-REPAIR-01
 
 ## GOAL
 
-SOURCE-SNAPSHOT-BASELINE-CLOSEOUT-01
+QUEUE-HANDOFF-DRIFT-REPAIR-01
 
 ## WHY
 
@@ -139,8 +139,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4792
-- approx_tokens: 1198
+- chars: 4778
+- approx_tokens: 1195
 - budget_status: PASS
 - warnings:
   - none

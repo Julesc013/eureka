@@ -22,10 +22,10 @@ lanes, not current product claims.
 
 ## Current Status
 
-The public alpha read-only baseline has been promoted to `main`. A subsequent
-launch-candidate gate has passed on `dev` and recommends
-`PUBLIC-ALPHA-DEPLOY-DRY-RUN-00` as the next task. A launch candidate is not a
-launch, and a deploy dry run is not a public launch.
+The public alpha read-only baseline has been promoted to `main`, but current
+`dev` is in validation repair. External full discovery is red, architecture
+boundary drift has been repaired, and queue-handoff drift is the current repair
+task. Public alpha launch and `dev -> main` promotion remain blocked.
 
 Current bounded facts:
 
@@ -309,17 +309,17 @@ Reference:
 
 Current next sequence:
 
-1. `PUBLIC-ALPHA-DEPLOY-DRY-RUN-00`
-2. `PUBLIC-ALPHA-LAUNCH-00`
-3. `PUBLIC-DEMAND-SIGNAL-00`
-4. `PUBLIC-SOURCE-REQUEST-QUEUE-00`
-5. live metadata pilots
-6. `NATIVE-SNAPSHOT-CLIENT-00`
-7. `ACTION-MANIFEST-00`
+1. `QUEUE-HANDOFF-DRIFT-REPAIR-01`
+2. `SOURCE-SNAPSHOT-BASELINE-DRIFT-REPAIR-01`
+3. `GENERATED-ARTIFACT-DRIFT-REPAIR-01`
+4. `CONTRACT-SCHEMA-DRIFT-REPAIR-01`
+5. `SOURCE-SNAPSHOT-FAILURE-REPAIR-01`
+6. `EXTERNAL-FULL-DISCOVERY-RERUN-02`
+7. reviewed-artifact/corpus readiness repair, if discovery is green
 
-The just-recorded `PUBLIC-ALPHA-LAUNCH-CANDIDATE-00` gate is not launch.
-`PUBLIC-ALPHA-DEPLOY-DRY-RUN-00` is not public launch. Launch requires explicit
-manual approval.
+Public alpha remains blocked. `dev -> main` promotion remains blocked. Launch
+requires green or formally waived validation gates, corpus/artifact readiness,
+rehearsal evidence, and explicit manual approval.
 
 ## Repository Layout
 
