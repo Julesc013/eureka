@@ -5,10 +5,7 @@ from __future__ import annotations
 import hashlib
 import json
 from functools import lru_cache
-import os
 import ssl
-import subprocess
-import sys
 import time
 import urllib.error
 import urllib.parse
@@ -118,17 +115,6 @@ class IALiveTransport:
         except urllib.error.URLError as exc:
             elapsed_ms = int((time.monotonic() - started) * 1000)
             redacted_error = _redact_transport_error(exc)
-            if redacted_error == "ssl_certificate_verify_failed":
-                fallback = _windows_powershell_get_json(
-                    url=url,
-                    endpoint_class=endpoint_class,
-                    client_label=client_label,
-                    contact=contact,
-                    timeout_seconds=timeout_seconds,
-                    started=started,
-                )
-                if fallback is not None:
-                    return fallback
             return IALiveTransportResponse(
                 url=url,
                 endpoint_class=endpoint_class,
@@ -209,83 +195,6 @@ def _redact_transport_error(exc: urllib.error.URLError) -> str:
     if "timed out" in lowered or "timeout" in lowered:
         return "timeout"
     return "transport_error"
-
-
-def _windows_powershell_get_json(
-    *,
-    url: str,
-    endpoint_class: str,
-    client_label: str,
-    contact: str,
-    timeout_seconds: int,
-    started: float,
-) -> IALiveTransportResponse | None:
-    if sys.platform != "win32":
-        return None
-    env = dict(os.environ)
-    env["EUREKA_IA_URL"] = url
-    env["EUREKA_IA_USER_AGENT"] = client_label
-    env["EUREKA_IA_CONTACT"] = contact
-    script = r"""
-$ErrorActionPreference = 'Stop'
-$headers = @{
-  'Accept' = 'application/json'
-  'User-Agent' = $env:EUREKA_IA_USER_AGENT
-  'X-Eureka-Contact' = $env:EUREKA_IA_CONTACT
-}
-$response = Invoke-WebRequest -Uri $env:EUREKA_IA_URL -Headers $headers -UseBasicParsing -TimeoutSec %TIMEOUT%
-$safeHeaders = @{}
-foreach ($name in @('Content-Type', 'Retry-After')) {
-  if ($response.Headers[$name]) {
-    $safeHeaders[$name.ToLowerInvariant()] = [string]$response.Headers[$name]
-  }
-}
-[Console]::OutputEncoding = [System.Text.UTF8Encoding]::new()
-[Console]::Out.Write((@{
-  status_code = [int]$response.StatusCode
-  body_text = [string]$response.Content
-  safe_headers = $safeHeaders
-} | ConvertTo-Json -Compress -Depth 4))
-""".replace("%TIMEOUT%", str(max(1, int(timeout_seconds))))
-    try:
-        completed = subprocess.run(
-            ["powershell", "-NoProfile", "-NonInteractive", "-Command", script],
-            cwd=os.getcwd(),
-            env=env,
-            capture_output=True,
-            text=True,
-            timeout=max(1, timeout_seconds + 2),
-        )
-    except (OSError, subprocess.TimeoutExpired):
-        return None
-    elapsed_ms = int((time.monotonic() - started) * 1000)
-    if completed.returncode != 0:
-        return None
-    try:
-        payload = json.loads(completed.stdout)
-    except json.JSONDecodeError:
-        return None
-    if not isinstance(payload, dict):
-        return None
-    body_text = str(payload.get("body_text") or "")
-    body_bytes = body_text.encode("utf-8", errors="replace")
-    status_code = int(payload.get("status_code") or 0)
-    safe_headers = payload.get("safe_headers")
-    safe_headers = safe_headers if isinstance(safe_headers, Mapping) else {}
-    retry_after = _parse_retry_after(str(safe_headers.get("retry-after") or ""))
-    return IALiveTransportResponse(
-        url=url,
-        endpoint_class=endpoint_class,
-        status_code=status_code,
-        elapsed_ms=elapsed_ms,
-        response_byte_count=len(body_bytes),
-        content_sha256=hashlib.sha256(body_bytes).hexdigest(),
-        safe_headers={str(key).lower(): str(value) for key, value in safe_headers.items()},
-        body_text=body_text,
-        rate_limited=status_code == 429,
-        retry_after_seconds=retry_after,
-    )
-
 
 @lru_cache(maxsize=1)
 def _https_context() -> ssl.SSLContext:

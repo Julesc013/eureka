@@ -136,6 +136,24 @@ class IALiveTransportTests(unittest.TestCase):
             response.metadata()["url"],
         )
 
+    def test_tls_failure_degrades_without_alternate_shell_path(self):
+        import urllib.error
+
+        transport = IALiveTransport(policy())
+        error = urllib.error.URLError("certificate verify failed")
+        with patch("urllib.request.urlopen", side_effect=error):
+            response = transport.get_json(
+                url="https://archive.org/advancedsearch.php?q=sampleproject",
+                endpoint_class="metadata_search_small",
+                client_label="EurekaLocalPilot/0.1 (metadata-only; contact: local-operator)",
+                contact="local-operator",
+                timeout_seconds=10,
+                kill_switch_enabled=True,
+            )
+        self.assertEqual(0, response.status_code)
+        self.assertEqual("ssl_certificate_verify_failed", response.transport_error)
+        self.assertEqual("", response.body_text)
+
 
 if __name__ == "__main__":
     unittest.main()
