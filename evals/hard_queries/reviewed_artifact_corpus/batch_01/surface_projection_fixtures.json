@@ -1,0 +1,12 @@
+{
+  "schema_version": "reviewed_artifact_corpus_surface_projection_fixtures_batch_01.v0",
+  "task_id": "REVIEWED-ARTIFACT-CORPUS-BATCH-01",
+  "fixtures": [
+    {"fixture_id": "fixture_b01_reviewed_artifact_record", "kind": "reviewed_artifact_record", "record_id": "reviewed_artifact_b00_firefox_115_esr_windows7_identity", "expected_status": "verified", "expected_artifact_claim_status": "reviewed_artifact_record", "expected_verified_artifact": false, "renderer_profiles_expected": ["json_v0", "text_v0", "html_basic_v0", "snapshot_v0"], "public_actions": ["view", "inspect_evidence", "cite"]},
+    {"fixture_id": "fixture_b01_artifact_lead_request_more_evidence", "kind": "outcome", "outcome_id": "artifact_corpus_b01_7zip_need", "expected_status": "need", "expected_artifact_claim_status": "artifact_lead", "expected_verified_artifact": false, "renderer_profiles_expected": ["json_v0", "text_v0", "html_basic_v0", "snapshot_v0"], "public_actions": ["view", "inspect_evidence", "cite"]},
+    {"fixture_id": "fixture_b01_near_miss", "kind": "outcome", "outcome_id": "artifact_corpus_b01_flashfxp_near_miss", "expected_status": "near_miss", "expected_artifact_claim_status": "artifact_lead", "expected_verified_artifact": false, "renderer_profiles_expected": ["json_v0", "text_v0", "html_basic_v0", "snapshot_v0"], "public_actions": ["view", "inspect_evidence", "cite"]},
+    {"fixture_id": "fixture_b01_need", "kind": "outcome", "outcome_id": "artifact_corpus_b01_coreftp_need", "expected_status": "need", "expected_artifact_claim_status": "source_lead", "expected_verified_artifact": false, "renderer_profiles_expected": ["json_v0", "text_v0", "html_basic_v0", "snapshot_v0"], "public_actions": ["view", "inspect_evidence", "cite"]},
+    {"fixture_id": "fixture_b01_blocked_for_user_details", "kind": "blocked_for_user_details", "query_id": "hq_driver_win98", "expected_status": "need", "expected_artifact_claim_status": "blocked_for_user_details", "expected_verified_artifact": false, "renderer_profiles_expected": ["json_v0", "text_v0", "html_basic_v0", "snapshot_v0"], "public_actions": ["view", "inspect_evidence", "cite"]}
+  ]
+}
+

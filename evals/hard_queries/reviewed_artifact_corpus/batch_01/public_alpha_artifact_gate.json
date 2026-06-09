@@ -1,0 +1,25 @@
+{
+  "schema_version": "reviewed_artifact_corpus_public_alpha_artifact_gate_batch_01.v0",
+  "gate_id": "public_alpha_artifact_gate",
+  "status": "FAIL_INSUFFICIENT_REVIEWED_ARTIFACT_RECORDS",
+  "reviewed_artifact_record_count": 2,
+  "verified_artifact_count": 0,
+  "threshold_reviewed_artifact_records": 25,
+  "threshold_verified_artifacts": null,
+  "reviewed_artifact_record_gap": 23,
+  "hard_query_reviewed_artifact_coverage": "2/6",
+  "hard_query_verified_artifact_coverage": "0/6",
+  "blocking_reasons": [
+    "reviewed artifact records remain below threshold",
+    "verified artifacts remain zero",
+    "Windows 98 driver query remains blocked pending hardware identity",
+    "several non-promoted artifact leads require exact package, primary publication, visual identity, or integrity evidence"
+  ],
+  "public_alpha_blocked": true,
+  "dev_to_main_promotion_blocked": true,
+  "source_snapshot_release_gate": "stale_after_current_commit",
+  "full_discovery_evidence_posture": "stale_after_current_commit",
+  "current_head": "b7253dc3964ef8ac7ef6235965bdd2728e7d6690",
+  "next_recommended_task": "ARTIFACT-EVIDENCE-GAP-BATCH-00"
+}
+

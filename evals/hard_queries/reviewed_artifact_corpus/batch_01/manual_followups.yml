@@ -1,0 +1,10 @@
+schema_version: reviewed_artifact_corpus_manual_followups_batch_01.v0
+task_id: REVIEWED-ARTIFACT-CORPUS-BATCH-01
+followups:
+  - task_id: ARTIFACT-EVIDENCE-GAP-BATCH-00
+    purpose: Collect primary evidence for non-promoted artifact leads and verification gaps.
+  - task_id: MANUAL-ARTIFACT-OBSERVATION-BATCH-01
+    purpose: Add new manual artifact observations only after gap triage identifies target sources.
+  - task_id: USER-HARDWARE-DETAILS-00
+    purpose: Collect hardware identity for the Windows 98 driver query.
+

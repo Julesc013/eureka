@@ -1,0 +1,16 @@
+{
+  "schema_version": "reviewed_artifact_corpus_renderer_expected_outputs_batch_01.v0",
+  "task_id": "REVIEWED-ARTIFACT-CORPUS-BATCH-01",
+  "renderer_profiles": ["json_v0", "text_v0", "html_basic_v0", "snapshot_v0"],
+  "expected_status_by_fixture": {
+    "fixture_b01_reviewed_artifact_record": "verified",
+    "fixture_b01_artifact_lead_request_more_evidence": "need",
+    "fixture_b01_near_miss": "near_miss",
+    "fixture_b01_need": "need",
+    "fixture_b01_blocked_for_user_details": "need"
+  },
+  "forbidden_public_action_terms": ["review_candidate", "promote", "reject", "request_more_evidence", "download", "install", "rebuild_index", "crawl_source", "arbitrary_live_lookup"],
+  "snapshot_expectation": "deterministic_for_same_input",
+  "html_expectation": "unsafe_text_escaped"
+}
+

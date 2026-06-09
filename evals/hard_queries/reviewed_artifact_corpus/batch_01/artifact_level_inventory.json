@@ -1,0 +1,29 @@
+{
+  "schema_version": "reviewed_artifact_corpus_level_inventory_batch_01.v0",
+  "task_id": "REVIEWED-ARTIFACT-CORPUS-BATCH-01",
+  "input_observation_level_counts": {
+    "artifact_level_0_mention_only": 1,
+    "artifact_level_1_metadata_or_source_lead": 1,
+    "artifact_level_2_source_observed_artifact_listing": 4,
+    "artifact_level_3_artifact_identity_evidence": 5,
+    "artifact_level_4_artifact_integrity_evidence": 0,
+    "artifact_level_5_verified_acquisition_or_reproducibility_path": 0
+  },
+  "reviewed_artifact_record_level_counts": {
+    "artifact_level_3_artifact_identity_evidence": 2
+  },
+  "non_promoted_level_counts": {
+    "artifact_level_1_metadata_or_source_lead": 1,
+    "artifact_level_2_source_observed_artifact_listing": 4,
+    "artifact_level_3_artifact_identity_evidence": 3
+  },
+  "blocked_for_user_details_level_counts": {
+    "artifact_level_0_mention_only": 1
+  },
+  "verified_artifact_level_counts": {
+    "artifact_level_4_artifact_integrity_evidence": 0,
+    "artifact_level_5_verified_acquisition_or_reproducibility_path": 0
+  },
+  "inflation_prevented": true
+}
+

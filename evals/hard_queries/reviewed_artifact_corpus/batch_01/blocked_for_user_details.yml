@@ -1,0 +1,18 @@
+schema_version: reviewed_artifact_corpus_blocked_for_user_details_batch_01.v0
+task_id: REVIEWED-ARTIFACT-CORPUS-BATCH-01
+blocked_items:
+  - blocker_id: block_b01_win98_driver_hardware_identity
+    query_id: hq_driver_win98
+    status: blocked_for_user_details
+    reason: A Windows 98 driver recommendation is unsafe without exact hardware identity.
+    required_user_details:
+      - hardware_vendor
+      - hardware_model
+      - device_id_or_chipset
+      - bus_or_interface
+      - exact_windows_version
+      - architecture
+      - machine_or_board_model
+      - known_source_or_media_context
+    next_task_hint: USER-HARDWARE-DETAILS-00
+

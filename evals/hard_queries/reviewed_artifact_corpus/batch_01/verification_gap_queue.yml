@@ -1,0 +1,12 @@
+schema_version: reviewed_artifact_corpus_verification_gap_queue_batch_01.v0
+task_id: REVIEWED-ARTIFACT-CORPUS-BATCH-01
+verification_gaps:
+  - gap_id: verify_b01_firefox_115
+    artifact_record_id: reviewed_artifact_b00_firefox_115_esr_windows7_identity
+    verified_artifact: false
+    needed: [exact_binary_package_identity, size_or_hash, acquisition_path, independent_integrity_evidence]
+  - gap_id: verify_b01_firefox_52_9
+    artifact_record_id: reviewed_artifact_b00_firefox_52_9_esr_xp_identity
+    verified_artifact: false
+    needed: [exact_binary_package_identity, size_or_hash, acquisition_path, independent_integrity_evidence]
+

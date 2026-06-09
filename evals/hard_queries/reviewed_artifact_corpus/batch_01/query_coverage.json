@@ -1,0 +1,15 @@
+{
+  "schema_version": "reviewed_artifact_corpus_query_coverage_batch_01.v0",
+  "task_id": "REVIEWED-ARTIFACT-CORPUS-BATCH-01",
+  "query_coverage": [
+    {"query_id": "hq_windows_7_apps", "reviewed_artifact_record_count": 1, "verified_artifact_count": 0, "non_promoted_lead_count": 2, "best_artifact_status": "reviewed_artifact_record", "public_alpha_ready": false, "next_action": "collect exact package and integrity evidence for reviewed and candidate software identities"},
+    {"query_id": "hq_driver_win98", "reviewed_artifact_record_count": 0, "verified_artifact_count": 0, "non_promoted_lead_count": 0, "best_artifact_status": "blocked_for_user_details", "public_alpha_ready": false, "next_action": "run USER-HARDWARE-DETAILS-00 before any driver artifact recommendation"},
+    {"query_id": "hq_blue_ftp_client_xp", "reviewed_artifact_record_count": 0, "verified_artifact_count": 0, "non_promoted_lead_count": 2, "best_artifact_status": "near_miss", "public_alpha_ready": false, "next_action": "collect XP support and blue visual identity evidence"},
+    {"query_id": "hq_sound_blaster_ct1740_manual", "reviewed_artifact_record_count": 0, "verified_artifact_count": 0, "non_promoted_lead_count": 2, "best_artifact_status": "near_miss", "public_alpha_ready": false, "next_action": "collect exact CT1740 manual source or publisher/catalog evidence"},
+    {"query_id": "hq_firefox_last_xp", "reviewed_artifact_record_count": 1, "verified_artifact_count": 0, "non_promoted_lead_count": 0, "best_artifact_status": "reviewed_artifact_record", "public_alpha_ready": false, "next_action": "collect exact package and integrity evidence for Firefox 52.9.0 ESR"},
+    {"query_id": "hq_ray_tracing_1994_magazine", "reviewed_artifact_record_count": 0, "verified_artifact_count": 0, "non_promoted_lead_count": 2, "best_artifact_status": "need", "public_alpha_ready": false, "next_action": "collect primary issue/page metadata for the requested article"}
+  ],
+  "hard_query_reviewed_artifact_coverage": "2/6",
+  "hard_query_verified_artifact_coverage": "0/6"
+}
+

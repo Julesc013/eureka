@@ -1,0 +1,29 @@
+schema_version: reviewed_artifact_corpus_evidence_gap_queue_batch_01.v0
+task_id: REVIEWED-ARTIFACT-CORPUS-BATCH-01
+gaps:
+  - gap_id: gap_b01_7zip_exact_package_identity
+    query_id: hq_windows_7_apps
+    source_observation_id: artifact_obs_b00_hq_windows_7_7zip_app_identity
+    needed: [exact_version_or_build, package_identity, integrity_evidence]
+    next_task_hint: ARTIFACT-EVIDENCE-GAP-BATCH-00
+  - gap_id: gap_b01_smartftp_identity_date
+    query_id: hq_windows_7_apps
+    source_observation_id: artifact_obs_b00_hq_windows_7_smartftp_requirements_lead
+    needed: [stable_version_build, artifact_identity_date]
+  - gap_id: gap_b01_blue_ftp_visual_identity
+    query_id: hq_blue_ftp_client_xp
+    source_observation_id: artifact_obs_b00_hq_blue_ftp_flashfxp_xp_near_miss
+    needed: [blue_visual_identity_evidence, exact_xp_era_version]
+  - gap_id: gap_b01_coreftp_xp_support
+    query_id: hq_blue_ftp_client_xp
+    source_observation_id: artifact_obs_b00_hq_blue_ftp_coreftp_windows_client_lead
+    needed: [windows_xp_support_evidence, blue_visual_identity_evidence]
+  - gap_id: gap_b01_ct1740_exact_manual
+    query_id: hq_sound_blaster_ct1740_manual
+    source_observation_id: artifact_obs_b00_hq_ct1740_sound_blaster_16_manual_near_miss
+    needed: [exact_ct1740_fit, operation_manual_identity]
+  - gap_id: gap_b01_parallel_course_primary_issue
+    query_id: hq_ray_tracing_1994_magazine
+    source_observation_id: artifact_obs_b00_hq_ray_tracing_parallel_course_article_identity
+    needed: [primary_issue_metadata, page_range, publisher_catalog_evidence]
+

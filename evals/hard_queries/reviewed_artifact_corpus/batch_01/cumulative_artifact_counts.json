@@ -1,0 +1,16 @@
+{
+  "schema_version": "reviewed_artifact_corpus_counts_batch_01.v0",
+  "task_id": "REVIEWED-ARTIFACT-CORPUS-BATCH-01",
+  "reviewed_artifact_record_count": 2,
+  "verified_artifact_count": 0,
+  "non_promoted_artifact_lead_count": 8,
+  "need_count": 4,
+  "unavailable_count": 1,
+  "near_miss_count": 3,
+  "request_more_evidence_count": 5,
+  "blocked_for_user_details_count": 1,
+  "reviewed_support_fact_count": 3,
+  "metadata_or_source_lead_count": 12,
+  "public_alpha_artifact_gate": "FAIL_INSUFFICIENT_REVIEWED_ARTIFACT_RECORDS"
+}
+
