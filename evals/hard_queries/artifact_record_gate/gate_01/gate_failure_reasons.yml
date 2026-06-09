@@ -1,0 +1,17 @@
+schema_version: artifact_gate_failure_reasons.v1
+gate_id: reviewed_artifact_record_gate_01
+status: FAIL_INSUFFICIENT_REVIEWED_ARTIFACT_RECORDS
+reasons:
+  - reason_id: insufficient_reviewed_artifact_record_count
+    current: 2
+    required: 25
+  - reason_id: no_verified_artifacts
+    current: 0
+    note: Verified artifacts are not required everywhere, but zero verified artifacts remains a public-alpha risk.
+  - reason_id: win98_driver_blocked_for_user_details
+    query_id: hq_driver_win98
+  - reason_id: remaining_hard_query_needs_and_near_misses
+    affected_queries:
+      - hq_blue_ftp_client_xp
+      - hq_sound_blaster_ct1740_manual
+      - hq_ray_tracing_1994_magazine

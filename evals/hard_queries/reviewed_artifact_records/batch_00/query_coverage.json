@@ -1,0 +1,14 @@
+{
+  "schema_version": "reviewed_artifact_query_coverage_batch_00.v0",
+  "task_id": "HUMAN-ARTIFACT-REVIEW-BATCH-00",
+  "query_coverage": [
+    {"query_id": "hq_windows_7_apps", "reviewed_artifact_record_count": 1, "verified_artifact_count": 0, "best_status": "reviewed_artifact_record", "public_alpha_ready": false},
+    {"query_id": "hq_driver_win98", "reviewed_artifact_record_count": 0, "verified_artifact_count": 0, "best_status": "blocked_for_user_details", "public_alpha_ready": false},
+    {"query_id": "hq_blue_ftp_client_xp", "reviewed_artifact_record_count": 0, "verified_artifact_count": 0, "best_status": "near_miss", "public_alpha_ready": false},
+    {"query_id": "hq_sound_blaster_ct1740_manual", "reviewed_artifact_record_count": 0, "verified_artifact_count": 0, "best_status": "near_miss", "public_alpha_ready": false},
+    {"query_id": "hq_firefox_last_xp", "reviewed_artifact_record_count": 1, "verified_artifact_count": 0, "best_status": "reviewed_artifact_record", "public_alpha_ready": false},
+    {"query_id": "hq_ray_tracing_1994_magazine", "reviewed_artifact_record_count": 0, "verified_artifact_count": 0, "best_status": "need", "public_alpha_ready": false}
+  ],
+  "hard_query_reviewed_artifact_coverage": "2/6",
+  "hard_query_verified_artifact_coverage": "0/6"
+}

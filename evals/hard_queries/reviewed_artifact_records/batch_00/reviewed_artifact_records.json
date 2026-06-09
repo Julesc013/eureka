@@ -1,0 +1,64 @@
+{
+  "schema_version": "reviewed_artifact_records_batch_00.v0",
+  "task_id": "HUMAN-ARTIFACT-REVIEW-BATCH-00",
+  "reviewed_artifact_records": [
+    {
+      "reviewed_artifact_record_id": "reviewed_artifact_b00_firefox_115_esr_windows7_identity",
+      "source_review_id": "artifact_review_decision_b00_firefox_115_promote",
+      "source_review_event_id": "artifact_review_event_b00_firefox_115_promote",
+      "source_observation_id": "artifact_obs_b00_hq_windows_7_firefox_115_esr_identity",
+      "query_id": "hq_windows_7_apps",
+      "artifact_level": "artifact_level_3_artifact_identity_evidence",
+      "canonical_status": "verified",
+      "artifact_claim_status": "reviewed_artifact_record",
+      "verified_artifact": false,
+      "artifact_identity": {
+        "name": "Firefox ESR",
+        "version": "115.0esr",
+        "platform": "Windows 7",
+        "publisher_or_author": "Mozilla",
+        "object_type": "software_application"
+      },
+      "source_refs": ["src_b00_firefox_115_requirements"],
+      "evidence_refs": ["manual_artifact_observation_batch_00:artifact_obs_b00_hq_windows_7_firefox_115_esr_identity"],
+      "public_claim": "Reviewed artifact record with source-observed identity evidence for Firefox 115.0esr and Windows 7 support context.",
+      "must_not_claim": ["verified artifact", "download available", "safe to install", "rights cleared", "malware safe"],
+      "missing_for_verified_artifact": ["exact binary package identity", "language or architecture variant", "integrity evidence", "acquisition path"],
+      "rights_clearance_claimed": false,
+      "malware_safety_claimed": false,
+      "download_offered": false,
+      "reviewed_index_mutated": false,
+      "public_index_mutated": false,
+      "master_index_mutated": false
+    },
+    {
+      "reviewed_artifact_record_id": "reviewed_artifact_b00_firefox_52_9_esr_xp_identity",
+      "source_review_id": "artifact_review_decision_b00_firefox_xp_52_9_promote",
+      "source_review_event_id": "artifact_review_event_b00_firefox_xp_52_9_promote",
+      "source_observation_id": "artifact_obs_b00_hq_firefox_xp_52_9_esr_identity",
+      "query_id": "hq_firefox_last_xp",
+      "artifact_level": "artifact_level_3_artifact_identity_evidence",
+      "canonical_status": "verified",
+      "artifact_claim_status": "reviewed_artifact_record",
+      "verified_artifact": false,
+      "artifact_identity": {
+        "name": "Firefox ESR",
+        "version": "52.9.0",
+        "platform": "Windows XP/Vista",
+        "publisher_or_author": "Mozilla",
+        "object_type": "software_application"
+      },
+      "source_refs": ["src_b00_firefox_52_9_requirements", "src_b00_firefox_xp_support_article"],
+      "evidence_refs": ["manual_artifact_observation_batch_00:artifact_obs_b00_hq_firefox_xp_52_9_esr_identity"],
+      "public_claim": "Reviewed artifact record with source-observed identity evidence for Firefox 52.9.0 ESR as the final XP/Vista support endpoint.",
+      "must_not_claim": ["verified artifact", "download available", "safe to install", "rights cleared", "malware safe"],
+      "missing_for_verified_artifact": ["exact binary package identity", "language or architecture variant", "integrity evidence", "acquisition path"],
+      "rights_clearance_claimed": false,
+      "malware_safety_claimed": false,
+      "download_offered": false,
+      "reviewed_index_mutated": false,
+      "public_index_mutated": false,
+      "master_index_mutated": false
+    }
+  ]
+}

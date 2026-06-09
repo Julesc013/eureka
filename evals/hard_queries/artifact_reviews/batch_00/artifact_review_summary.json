@@ -1,0 +1,22 @@
+{
+  "schema_version": "human_artifact_review_summary_batch_00.v0",
+  "task_id": "HUMAN-ARTIFACT-REVIEW-BATCH-00",
+  "artifact_observations_reviewed": 10,
+  "reviewable_items_reviewed": 10,
+  "decision_counts": {
+    "promote": 2,
+    "reject": 0,
+    "supersede": 0,
+    "mark_near_miss": 3,
+    "mark_need": 0,
+    "mark_policy_blocked": 0,
+    "request_more_evidence": 5,
+    "blocked_for_user_details": 1
+  },
+  "reviewed_artifact_record_count": 2,
+  "verified_artifact_count": 0,
+  "public_alpha_artifact_gate": "FAIL_INSUFFICIENT_REVIEWED_ARTIFACT_RECORDS",
+  "public_alpha_blocked": true,
+  "dev_to_main_blocked": true,
+  "external_full_discovery_currentness": "green_at_prior_head_but_stale_after_this_commit"
+}

@@ -1,0 +1,13 @@
+{
+  "schema_version": "artifact_record_counts_batch_00.v0",
+  "task_id": "HUMAN-ARTIFACT-REVIEW-BATCH-00",
+  "reviewed_artifact_record_count": 2,
+  "verified_artifact_count": 0,
+  "non_promoted_artifact_lead_count": 8,
+  "need_count": 5,
+  "near_miss_count": 3,
+  "blocked_for_user_details_count": 1,
+  "reviewed_support_fact_count": 3,
+  "metadata_or_source_lead_count": 12,
+  "public_alpha_artifact_gate": "FAIL_INSUFFICIENT_REVIEWED_ARTIFACT_RECORDS"
+}

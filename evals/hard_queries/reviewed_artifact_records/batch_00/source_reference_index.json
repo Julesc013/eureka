@@ -1,0 +1,9 @@
+{
+  "schema_version": "reviewed_artifact_source_reference_index_batch_00.v0",
+  "task_id": "HUMAN-ARTIFACT-REVIEW-BATCH-00",
+  "source_references": [
+    {"source_id": "src_b00_firefox_115_requirements", "supports_reviewed_artifact_record_id": "reviewed_artifact_b00_firefox_115_esr_windows7_identity", "source_posture": "manual_reference_only", "runtime_source_call_performed": false, "download_performed": false, "file_fetch_performed": false, "wayback_replay_performed": false},
+    {"source_id": "src_b00_firefox_52_9_requirements", "supports_reviewed_artifact_record_id": "reviewed_artifact_b00_firefox_52_9_esr_xp_identity", "source_posture": "manual_reference_only", "runtime_source_call_performed": false, "download_performed": false, "file_fetch_performed": false, "wayback_replay_performed": false},
+    {"source_id": "src_b00_firefox_xp_support_article", "supports_reviewed_artifact_record_id": "reviewed_artifact_b00_firefox_52_9_esr_xp_identity", "source_posture": "manual_reference_only", "runtime_source_call_performed": false, "download_performed": false, "file_fetch_performed": false, "wayback_replay_performed": false}
+  ]
+}

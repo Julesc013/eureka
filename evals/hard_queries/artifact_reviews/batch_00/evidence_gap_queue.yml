@@ -1,0 +1,35 @@
+schema_version: human_artifact_review_evidence_gap_queue.v0
+task_id: HUMAN-ARTIFACT-REVIEW-BATCH-00
+gaps:
+  - gap_id: gap_har_b00_7zip_package_identity
+    query_id: hq_windows_7_apps
+    source_observation_id: artifact_obs_b00_hq_windows_7_7zip_app_identity
+    missing:
+      - exact version or build
+      - package identity
+      - integrity evidence
+  - gap_id: gap_har_b00_smartftp_identity_date
+    query_id: hq_windows_7_apps
+    source_observation_id: artifact_obs_b00_hq_windows_7_smartftp_requirements_lead
+    missing:
+      - stable version or build
+      - artifact identity date
+  - gap_id: gap_har_b00_blue_ftp_visual_identity
+    query_id: hq_blue_ftp_client_xp
+    source_observation_id: artifact_obs_b00_hq_blue_ftp_flashfxp_xp_near_miss
+    missing:
+      - blue visual identity evidence
+      - exact XP-era version
+  - gap_id: gap_har_b00_ct1740_exact_manual
+    query_id: hq_sound_blaster_ct1740_manual
+    source_observation_id: artifact_obs_b00_hq_ct1740_sound_blaster_16_manual_near_miss
+    missing:
+      - exact CT1740 fit
+      - operation manual identity
+  - gap_id: gap_har_b00_parallel_course_primary_issue
+    query_id: hq_ray_tracing_1994_magazine
+    source_observation_id: artifact_obs_b00_hq_ray_tracing_parallel_course_article_identity
+    missing:
+      - primary issue metadata
+      - page range
+      - publisher catalog evidence

@@ -1,0 +1,27 @@
+{
+  "schema_version": "public_alpha_artifact_gate.v1",
+  "gate_id": "reviewed_artifact_record_gate_01",
+  "status": "FAIL_INSUFFICIENT_REVIEWED_ARTIFACT_RECORDS",
+  "public_alpha_blocked": true,
+  "dev_to_main_promotion_blocked": true,
+  "source_snapshot_release_gate_after_this_task": "green_at_prior_head_but_stale_after_this_commit",
+  "reviewed_artifact_record_count": 2,
+  "verified_artifact_count": 0,
+  "reviewed_support_fact_count": 3,
+  "metadata_or_source_lead_count": 12,
+  "artifact_lead_count": 8,
+  "need_count": 5,
+  "near_miss_count": 3,
+  "blocked_for_user_details_count": 1,
+  "minimum_public_alpha_reviewed_artifact_records": 25,
+  "reviewed_artifact_record_gap": 23,
+  "hard_query_reviewed_artifact_coverage": "2/6",
+  "hard_query_verified_artifact_coverage": "0/6",
+  "blocking_reasons": [
+    "reviewed artifact records remain below public-alpha threshold",
+    "verified artifact count remains zero",
+    "Windows 98 driver query lacks hardware identity",
+    "manual/article/FTP queries retain near_miss or request_more_evidence outcomes"
+  ],
+  "next_recommended_task": "REVIEWED-ARTIFACT-CORPUS-BATCH-01"
+}

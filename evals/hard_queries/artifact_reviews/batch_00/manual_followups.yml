@@ -1,0 +1,12 @@
+schema_version: human_artifact_review_manual_followups.v0
+task_id: HUMAN-ARTIFACT-REVIEW-BATCH-00
+followups:
+  - followup_id: followup_har_b00_firefox_identity_integrity
+    reviewed_artifact_record_ids:
+      - reviewed_artifact_b00_firefox_115_esr_windows7_identity
+      - reviewed_artifact_b00_firefox_52_9_esr_xp_identity
+    recommended_action: collect non-downloaded package identity and integrity metadata if a future verified-artifact gate requires it
+  - followup_id: followup_har_b00_more_level3_artifacts
+    recommended_action: collect more level3 artifact identity evidence; public alpha threshold remains far above current count
+  - followup_id: followup_har_b00_win98_hardware_details
+    recommended_action: request hardware identity before any Windows 98 driver artifact review

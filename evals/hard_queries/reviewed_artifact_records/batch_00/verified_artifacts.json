@@ -1,0 +1,7 @@
+{
+  "schema_version": "verified_artifacts_batch_00.v0",
+  "task_id": "HUMAN-ARTIFACT-REVIEW-BATCH-00",
+  "verified_artifacts": [],
+  "verified_artifact_count": 0,
+  "reason": "No level 4 integrity evidence or level 5 acquisition/reproducibility evidence exists in this batch."
+}

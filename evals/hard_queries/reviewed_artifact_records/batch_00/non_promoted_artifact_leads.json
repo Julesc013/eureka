@@ -1,0 +1,14 @@
+{
+  "schema_version": "non_promoted_artifact_leads_batch_00.v0",
+  "task_id": "HUMAN-ARTIFACT-REVIEW-BATCH-00",
+  "non_promoted_artifact_leads": [
+    {"artifact_observation_id": "artifact_obs_b00_hq_windows_7_7zip_app_identity", "query_id": "hq_windows_7_apps", "decision": "request_more_evidence", "status": "need", "artifact_level": "artifact_level_3_artifact_identity_evidence", "reason": "Exact version/build and package identity are missing."},
+    {"artifact_observation_id": "artifact_obs_b00_hq_windows_7_smartftp_requirements_lead", "query_id": "hq_windows_7_apps", "decision": "request_more_evidence", "status": "need", "artifact_level": "artifact_level_2_source_observed_artifact_listing", "reason": "Stable version/build and identity date are missing."},
+    {"artifact_observation_id": "artifact_obs_b00_hq_blue_ftp_flashfxp_xp_near_miss", "query_id": "hq_blue_ftp_client_xp", "decision": "mark_near_miss", "status": "near_miss", "artifact_level": "artifact_level_3_artifact_identity_evidence", "reason": "Blue visual identity is unproved."},
+    {"artifact_observation_id": "artifact_obs_b00_hq_blue_ftp_coreftp_windows_client_lead", "query_id": "hq_blue_ftp_client_xp", "decision": "request_more_evidence", "status": "need", "artifact_level": "artifact_level_2_source_observed_artifact_listing", "reason": "XP support and visual identity are missing."},
+    {"artifact_observation_id": "artifact_obs_b00_hq_ct1740_dosdays_manual_absence_lead", "query_id": "hq_sound_blaster_ct1740_manual", "decision": "request_more_evidence", "status": "unavailable", "artifact_level": "artifact_level_1_metadata_or_source_lead", "reason": "Exact manual artifact and global absence are not established."},
+    {"artifact_observation_id": "artifact_obs_b00_hq_ct1740_sound_blaster_16_manual_near_miss", "query_id": "hq_sound_blaster_ct1740_manual", "decision": "mark_near_miss", "status": "near_miss", "artifact_level": "artifact_level_2_source_observed_artifact_listing", "reason": "Related manual listing, not exact CT1740 manual identity."},
+    {"artifact_observation_id": "artifact_obs_b00_hq_ray_tracing_parallel_course_article_identity", "query_id": "hq_ray_tracing_1994_magazine", "decision": "request_more_evidence", "status": "need", "artifact_level": "artifact_level_3_artifact_identity_evidence", "reason": "Primary issue/page metadata is missing."},
+    {"artifact_observation_id": "artifact_obs_b00_hq_ray_tracing_radiance_paper_near_miss", "query_id": "hq_ray_tracing_1994_magazine", "decision": "mark_near_miss", "status": "near_miss", "artifact_level": "artifact_level_2_source_observed_artifact_listing", "reason": "Relevant 1994 ray-tracing material, not the requested magazine article."}
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "schema_version": "artifact_gate_delta.v0",
+  "from_gate": "reviewed_artifact_record_gate_00",
+  "to_gate": "reviewed_artifact_record_gate_01",
+  "delta": {
+    "reviewed_artifact_record_count": 2,
+    "verified_artifact_count": 0,
+    "hard_query_reviewed_artifact_coverage": "+2/6",
+    "hard_query_verified_artifact_coverage": "+0/6"
+  },
+  "unchanged_blockers": [
+    "public alpha remains blocked",
+    "verified artifacts remain zero",
+    "Windows 98 driver remains blocked for hardware identity"
+  ]
+}

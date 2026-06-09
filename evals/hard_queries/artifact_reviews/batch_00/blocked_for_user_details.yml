@@ -1,0 +1,19 @@
+schema_version: human_artifact_review_user_detail_blocks.v0
+task_id: HUMAN-ARTIFACT-REVIEW-BATCH-00
+blocked:
+  - block_id: block_har_b00_win98_driver_hardware_identity
+    query_id: hq_driver_win98
+    reason: No driver artifact can be reviewed without hardware identity.
+    required_user_details:
+      - hardware_vendor
+      - hardware_model
+      - device_id_or_chipset
+      - bus_or_interface
+      - exact_windows_version
+      - architecture
+    forbidden_actions:
+      - recommend_a_specific_driver
+      - claim_driver_safety
+      - download_driver
+      - install_driver
+    next_task: USER-HARDWARE-DETAILS-00
