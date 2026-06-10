@@ -1,0 +1,67 @@
+{
+  "schema_version": "artifact_evidence_collection_handoff_targets.v0",
+  "task_id": "ARTIFACT-EVIDENCE-COLLECTION-HANDOFF-00",
+  "source_task_id": "HUMAN-ARTIFACT-REVIEW-BATCH-02",
+  "collection_mode": "external_manual_evidence_collection",
+  "targets": [
+    {
+      "target_id": "collect_b02_ct1740_exact_manual_fit",
+      "priority": "P0",
+      "source_decision_id": "artifact_review_decision_b02_ct1740_request_more_evidence",
+      "needed": ["exact_ct1740_fit", "manual_title", "manual_edition", "page_or_scope_evidence"],
+      "forbidden_claims": ["verified artifact", "download available", "rights cleared"]
+    },
+    {
+      "target_id": "collect_b02_blue_ftp_visual_identity",
+      "priority": "P0",
+      "source_decision_id": "artifact_review_decision_b02_blue_ftp_near_miss",
+      "needed": ["blue_visual_identity_evidence", "product_or_version_identity", "xp_era_support_context"],
+      "forbidden_claims": ["requested blue client confirmed without visual evidence", "download available", "safe to install"]
+    },
+    {
+      "target_id": "collect_b02_firefox_5290_exact_variant_hash",
+      "priority": "P0",
+      "source_decision_id": "artifact_review_decision_b02_firefox_5290_request_more_evidence",
+      "needed": ["exact_windows_package_variant", "checksum_reference", "signature_reference_if_available"],
+      "forbidden_claims": ["verified artifact", "safe to install", "malware safe"]
+    },
+    {
+      "target_id": "collect_b02_firefox_115_exact_variant_hash",
+      "priority": "P1",
+      "source_decision_id": "artifact_review_decision_b02_firefox_115_request_more_evidence",
+      "needed": ["exact_windows_package_variant", "checksum_reference", "signature_reference_if_available"],
+      "forbidden_claims": ["verified artifact", "safe to install", "malware safe"]
+    },
+    {
+      "target_id": "collect_b02_7zip_2601_integrity",
+      "priority": "P1",
+      "source_decision_id": "artifact_review_decision_b02_7zip_2601_request_more_evidence",
+      "needed": ["package_identity", "checksum_or_signature_reference", "integrity_source_context"],
+      "forbidden_claims": ["verified artifact", "safe to install", "malware safe"]
+    },
+    {
+      "target_id": "collect_b02_parallel_course_page_scope",
+      "priority": "P1",
+      "source_decision_id": "artifact_review_decision_b02_parallel_course_request_more_evidence",
+      "needed": ["byte_issue_identity", "article_page_range", "primary_scan_index_or_authoritative_page_scope"],
+      "forbidden_claims": ["full article text verified", "scan available", "rights cleared"]
+    }
+  ],
+  "user_detail_targets": [
+    {
+      "target_id": "collect_win98_driver_hardware_identity",
+      "blocker_task": "USER-HARDWARE-DETAILS-00",
+      "needed": [
+        "hardware_vendor",
+        "hardware_model",
+        "device_id_or_chipset",
+        "bus_or_interface",
+        "exact_windows_version",
+        "architecture",
+        "machine_or_board_model",
+        "known_driver_media_or_source_context"
+      ],
+      "forbidden_action": "recommend_a_specific_driver"
+    }
+  ]
+}

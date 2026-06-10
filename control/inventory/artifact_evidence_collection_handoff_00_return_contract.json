@@ -1,0 +1,37 @@
+{
+  "schema_version": "artifact_evidence_collection_handoff_return_contract.v0",
+  "task_id": "ARTIFACT-EVIDENCE-COLLECTION-HANDOFF-00",
+  "preferred_external_output_root": "../eureka-evidence-runs/artifact_evidence_collection_00/",
+  "compact_summary_path": "../eureka-evidence-runs/artifact_evidence_collection_00/artifact_evidence_collection_summary.json",
+  "raw_artifacts_committed_to_repo": false,
+  "required_top_level_fields": [
+    "schema_version",
+    "run_id",
+    "collected_at",
+    "collector",
+    "target_results",
+    "raw_artifacts_retained_outside_repo",
+    "downloads_performed",
+    "executables_fetched",
+    "install_or_execution_performed",
+    "rights_clearance_claimed",
+    "malware_safety_claimed",
+    "resume_recommended_task"
+  ],
+  "target_result_required_fields": [
+    "target_id",
+    "status",
+    "source_refs",
+    "observed_fields",
+    "remaining_gaps",
+    "recommended_review_action"
+  ],
+  "allowed_target_statuses": [
+    "evidence_collected",
+    "partially_collected",
+    "blocked",
+    "not_found",
+    "deferred"
+  ],
+  "resume_recommended_task": "MANUAL-ARTIFACT-OBSERVATION-BATCH-03"
+}

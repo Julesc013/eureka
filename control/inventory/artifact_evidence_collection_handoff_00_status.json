@@ -1,0 +1,17 @@
+{
+  "schema_version": "artifact_evidence_collection_handoff_status.v0",
+  "task_id": "ARTIFACT-EVIDENCE-COLLECTION-HANDOFF-00",
+  "status": "WAITING_FOR_EXTERNAL_ARTIFACT_EVIDENCE",
+  "collection_targets": 6,
+  "user_detail_blockers": 1,
+  "reviewed_artifact_record_count": 4,
+  "minimum_public_alpha_reviewed_artifact_records": 25,
+  "reviewed_artifact_record_gap": 21,
+  "verified_artifact_count": 0,
+  "public_alpha_status": "blocked",
+  "dev_to_main_promotion_status": "blocked",
+  "new_reviewed_artifact_records_created": 0,
+  "new_verified_artifacts_created": 0,
+  "source_probes_performed_in_ai_session": false,
+  "downloads_performed_in_ai_session": false
+}
