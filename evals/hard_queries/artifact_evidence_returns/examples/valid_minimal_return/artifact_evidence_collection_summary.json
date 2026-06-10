@@ -1,0 +1,56 @@
+{
+  "schema_version": "artifact_evidence_collection_return.v0",
+  "run_id": "valid_minimal_return_fixture",
+  "collected_at": "2026-06-11T00:00:00Z",
+  "collector": "fixture",
+  "target_results": [
+    {
+      "target_id": "collect_b02_7zip_2601_integrity",
+      "status": "evidence_collected",
+      "artifact_evidence_level": "level4_artifact_integrity_evidence",
+      "source_refs": [
+        "src_fixture_7zip_release"
+      ],
+      "observed_fields": {
+        "artifact_name": "7-Zip",
+        "artifact_version": "26.01",
+        "publisher_or_source": "fixture source reference",
+        "checksum_or_signature": "fixture checksum reference observed",
+        "artifact_evidence_level": "level4_artifact_integrity_evidence"
+      },
+      "remaining_gaps": [
+        "human review required before any reviewed artifact record",
+        "operator verification policy not satisfied by fixture"
+      ],
+      "recommended_review_action": "promote_to_review_candidate",
+      "truth_boundary": {
+        "reviewed_artifact_record_created": false,
+        "verified_artifact_created": false,
+        "rights_clearance_claimed": false,
+        "malware_safety_claimed": false,
+        "download_or_execution_performed": false
+      }
+    },
+    {
+      "target_id": "collect_win98_driver_hardware_identity",
+      "status": "blocked",
+      "source_refs": [],
+      "observed_fields": {},
+      "remaining_gaps": [
+        "hardware vendor",
+        "hardware model",
+        "chipset",
+        "device id",
+        "exact Windows 98 edition"
+      ],
+      "recommended_review_action": "mark_blocked_for_user_details"
+    }
+  ],
+  "raw_artifacts_retained_outside_repo": false,
+  "downloads_performed": false,
+  "executables_fetched": false,
+  "install_or_execution_performed": false,
+  "rights_clearance_claimed": false,
+  "malware_safety_claimed": false,
+  "resume_recommended_task": "MANUAL-ARTIFACT-OBSERVATION-BATCH-03"
+}

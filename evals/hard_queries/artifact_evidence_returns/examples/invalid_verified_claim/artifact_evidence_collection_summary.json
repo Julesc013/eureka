@@ -1,0 +1,39 @@
+{
+  "schema_version": "artifact_evidence_collection_return.v0",
+  "run_id": "invalid_verified_claim_fixture",
+  "collected_at": "2026-06-11T00:00:00Z",
+  "collector": "fixture",
+  "target_results": [
+    {
+      "target_id": "collect_b02_firefox_5290_exact_variant_hash",
+      "status": "evidence_collected",
+      "artifact_evidence_level": "level4_artifact_integrity_evidence",
+      "source_refs": [
+        "src_fixture_firefox_release"
+      ],
+      "observed_fields": {
+        "artifact_name": "Firefox ESR",
+        "artifact_version": "52.9.0",
+        "artifact_evidence_level": "level4_artifact_integrity_evidence"
+      },
+      "remaining_gaps": [
+        "human review required"
+      ],
+      "recommended_review_action": "promote_to_review_candidate",
+      "truth_boundary": {
+        "reviewed_artifact_record_created": false,
+        "verified_artifact_created": true,
+        "rights_clearance_claimed": false,
+        "malware_safety_claimed": false,
+        "download_or_execution_performed": false
+      }
+    }
+  ],
+  "raw_artifacts_retained_outside_repo": false,
+  "downloads_performed": false,
+  "executables_fetched": false,
+  "install_or_execution_performed": false,
+  "rights_clearance_claimed": false,
+  "malware_safety_claimed": false,
+  "resume_recommended_task": "MANUAL-ARTIFACT-OBSERVATION-BATCH-03"
+}

@@ -1,0 +1,31 @@
+{
+  "schema_version": "artifact_evidence_collection_return.v0",
+  "run_id": "invalid_driver_missing_hardware_fixture",
+  "collected_at": "2026-06-11T00:00:00Z",
+  "collector": "fixture",
+  "target_results": [
+    {
+      "target_id": "collect_win98_driver_hardware_identity",
+      "status": "evidence_collected",
+      "artifact_evidence_level": "level2_source_observed_artifact_listing",
+      "source_refs": [
+        "src_fixture_driver_listing"
+      ],
+      "observed_fields": {
+        "artifact_name": "generic Windows 98 driver lead",
+        "artifact_evidence_level": "level2_source_observed_artifact_listing"
+      },
+      "remaining_gaps": [
+        "hardware identity missing"
+      ],
+      "recommended_review_action": "promote_to_review_candidate"
+    }
+  ],
+  "raw_artifacts_retained_outside_repo": false,
+  "downloads_performed": false,
+  "executables_fetched": false,
+  "install_or_execution_performed": false,
+  "rights_clearance_claimed": false,
+  "malware_safety_claimed": false,
+  "resume_recommended_task": "MANUAL-ARTIFACT-OBSERVATION-BATCH-03"
+}
