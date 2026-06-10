@@ -1,0 +1,170 @@
+{
+  "schema_version": "artifact_evidence_gap_prioritizer_batch_02.v0",
+  "task_id": "EUREKA-HIGH-PRODUCTIVITY-LONG-TURN-CONTROLLER-01",
+  "source_inputs": [
+    "docs/reference/artifact_evidence_gap_batch_01/gap_retarget_report.md",
+    "docs/reference/artifact_evidence_collection_handoff_00/collection_targets.md",
+    "docs/reference/artifact_evidence_collection_handoff_00/return_contract.md",
+    "docs/reference/user_hardware_details_00/README.md"
+  ],
+  "public_alpha_artifact_gate": {
+    "status": "FAIL_INSUFFICIENT_REVIEWED_ARTIFACT_RECORDS",
+    "reviewed_artifact_record_count": 4,
+    "minimum_public_alpha_reviewed_artifact_records": 25,
+    "reviewed_artifact_record_gap": 21,
+    "verified_artifact_count": 0,
+    "public_alpha_blocked": true,
+    "dev_to_main_promotion_blocked": true
+  },
+  "collection_contract": {
+    "mode": "external_manual_evidence_collection",
+    "expected_return_file": "../eureka-evidence-runs/artifact_evidence_collection_00/artifact_evidence_collection_summary.json",
+    "validator_command": "python scripts/validate_artifact_evidence_return.py --json --strict",
+    "resume_after_valid_return": "MANUAL-ARTIFACT-OBSERVATION-BATCH-03",
+    "ai_session_runtime_source_calls_allowed": false,
+    "downloads_allowed": false,
+    "executables_fetched_allowed": false,
+    "install_or_execution_allowed": false,
+    "rights_clearance_claim_allowed": false,
+    "malware_safety_claim_allowed": false
+  },
+  "prioritization_policy": {
+    "primary_sort": "existing_gap_priority_then_review_record_gap_impact",
+    "secondary_sort": "manual_packet_clarity",
+    "driver_targets_require_user_hardware_details": true,
+    "valid_return_creates_truth": false
+  },
+  "prioritized_targets": [
+    {
+      "rank": 1,
+      "target_id": "collect_b02_ct1740_exact_manual_fit",
+      "priority": "P0",
+      "query_id": "hq_sound_blaster_ct1740_manual",
+      "status": "collection_ready",
+      "desired_evidence": [
+        "exact CT1740 model fit",
+        "manual title",
+        "edition",
+        "page or scope evidence"
+      ],
+      "reviewed_record_gap_impact": "candidate_input_only",
+      "recommended_review_action": "promote_to_review_candidate",
+      "download_allowed": false
+    },
+    {
+      "rank": 2,
+      "target_id": "collect_b02_blue_ftp_visual_identity",
+      "priority": "P0",
+      "query_id": "hq_blue_ftp_client_xp",
+      "status": "collection_ready",
+      "desired_evidence": [
+        "blue UI or visual identity evidence",
+        "product and version identity",
+        "XP-era support context"
+      ],
+      "reviewed_record_gap_impact": "candidate_input_only",
+      "recommended_review_action": "promote_to_review_candidate",
+      "download_allowed": false
+    },
+    {
+      "rank": 3,
+      "target_id": "collect_b02_firefox_5290_exact_variant_hash",
+      "priority": "P0",
+      "query_id": "hq_firefox_last_xp",
+      "status": "collection_ready",
+      "desired_evidence": [
+        "exact Firefox 52.9.0esr Windows package variant",
+        "checksum reference",
+        "signature reference if available"
+      ],
+      "reviewed_record_gap_impact": "candidate_input_only",
+      "recommended_review_action": "promote_to_review_candidate",
+      "download_allowed": false
+    },
+    {
+      "rank": 4,
+      "target_id": "collect_b02_firefox_115_exact_variant_hash",
+      "priority": "P1",
+      "query_id": "hq_windows_7_apps",
+      "status": "collection_ready",
+      "desired_evidence": [
+        "exact Firefox 115 ESR Windows package variant",
+        "checksum reference",
+        "signature reference if available"
+      ],
+      "reviewed_record_gap_impact": "candidate_input_only",
+      "recommended_review_action": "promote_to_review_candidate",
+      "download_allowed": false
+    },
+    {
+      "rank": 5,
+      "target_id": "collect_b02_7zip_2601_integrity",
+      "priority": "P1",
+      "query_id": "hq_windows_7_apps",
+      "status": "collection_ready",
+      "desired_evidence": [
+        "7-Zip 26.01 package identity",
+        "checksum or signature reference",
+        "integrity-source context"
+      ],
+      "reviewed_record_gap_impact": "candidate_input_only",
+      "recommended_review_action": "promote_to_review_candidate",
+      "download_allowed": false
+    },
+    {
+      "rank": 6,
+      "target_id": "collect_b02_parallel_course_page_scope",
+      "priority": "P1",
+      "query_id": "hq_ray_tracing_1994_magazine",
+      "status": "collection_ready",
+      "desired_evidence": [
+        "BYTE issue identity",
+        "article page range",
+        "primary scan index or authoritative page-scope evidence"
+      ],
+      "reviewed_record_gap_impact": "candidate_input_only",
+      "recommended_review_action": "promote_to_review_candidate",
+      "download_allowed": false
+    },
+    {
+      "rank": 99,
+      "target_id": "collect_win98_driver_hardware_identity",
+      "priority": "BLOCKED",
+      "query_id": "hq_driver_win98",
+      "status": "blocked_for_user_details",
+      "desired_evidence": [
+        "hardware vendor",
+        "hardware model",
+        "device ID or chipset",
+        "bus or interface",
+        "exact Windows version",
+        "architecture",
+        "machine or board model",
+        "known driver media or source context"
+      ],
+      "reviewed_record_gap_impact": "blocked_until_user_details_return",
+      "recommended_review_action": "mark_blocked_for_user_details",
+      "download_allowed": false
+    }
+  ],
+  "counts": {
+    "collection_ready_target_count": 6,
+    "blocked_for_user_details_target_count": 1,
+    "p0_count": 3,
+    "p1_count": 3,
+    "download_allowed_count": 0
+  },
+  "truth_boundary": {
+    "reviewed_artifact_records_created": false,
+    "verified_artifacts_created": false,
+    "public_alpha_ready": false,
+    "public_alpha_launched": false,
+    "dev_to_main_promoted": false,
+    "runtime_source_calls_performed": false,
+    "downloads_performed": false,
+    "install_or_execution_performed": false,
+    "rights_clearance_claimed": false,
+    "malware_safety_claimed": false
+  }
+}
+

@@ -1,0 +1,93 @@
+{
+  "schema_version": "public_alpha_blocker_dashboard_00.v0",
+  "task_id": "EUREKA-HIGH-PRODUCTIVITY-LONG-TURN-CONTROLLER-01",
+  "generated_at": "2026-06-11",
+  "status": "BLOCKED",
+  "public_alpha_blocked": true,
+  "dev_to_main_promotion_blocked": true,
+  "source_inputs": [
+    "docs/reference/artifact_evidence_gap_batch_01/gate_status.md",
+    "docs/reference/artifact_evidence_collection_handoff_00/blocked_and_waiting.md",
+    "docs/reference/user_hardware_details_00/VALIDATION_REPORT.md",
+    "docs/reference/validation/external_full_discovery_rerun_05/README.md"
+  ],
+  "gate_counts": {
+    "reviewed_artifact_record_count": 4,
+    "minimum_public_alpha_reviewed_artifact_records": 25,
+    "reviewed_artifact_record_gap": 21,
+    "verified_artifact_count": 0,
+    "hard_query_reviewed_artifact_coverage": "3/6",
+    "hard_query_verified_artifact_coverage": "0/6"
+  },
+  "waiting_statuses": [
+    "WAITING_FOR_EXTERNAL_ARTIFACT_EVIDENCE",
+    "WAITING_FOR_USER_HARDWARE_DETAILS",
+    "WAITING_FOR_EXTERNAL_FULL_DISCOVERY"
+  ],
+  "blockers": [
+    {
+      "blocker_id": "insufficient_reviewed_artifact_records",
+      "status": "blocked",
+      "current": 4,
+      "required": 25,
+      "gap": 21,
+      "next_unblocking_action": "validate external artifact evidence return, then resume MANUAL-ARTIFACT-OBSERVATION-BATCH-03"
+    },
+    {
+      "blocker_id": "no_verified_artifacts",
+      "status": "blocked",
+      "current": 0,
+      "required": "no verified claim may be made from source-reference metadata alone",
+      "next_unblocking_action": "collect integrity/acquisition evidence without download or safety claims"
+    },
+    {
+      "blocker_id": "external_artifact_evidence_absent",
+      "status": "waiting",
+      "current": "no compact return present at the default validator path",
+      "required": "../eureka-evidence-runs/artifact_evidence_collection_00/artifact_evidence_collection_summary.json",
+      "next_unblocking_action": "run python scripts/validate_artifact_evidence_return.py --json --strict after return exists"
+    },
+    {
+      "blocker_id": "win98_driver_hardware_details_absent",
+      "status": "waiting",
+      "current": "driver target remains blocked for user details",
+      "required": "hardware vendor, hardware model, chipset or device ID, bus or interface, exact Windows version",
+      "next_unblocking_action": "return and validate USER-HARDWARE-DETAILS-00 before any driver recommendation"
+    },
+    {
+      "blocker_id": "full_discovery_stale_for_current_dev",
+      "status": "waiting_external_full_discovery",
+      "current": "external full discovery handoff exists; compact rerun 05 result has not returned",
+      "required": "SOURCE-SNAPSHOT-FULL-DISCOVERY-INGEST-05 compact artifacts",
+      "next_unblocking_action": "run external full discovery outside the AI session and ingest compact summary only"
+    }
+  ],
+  "allowed_next_actions": [
+    "validate_artifact_evidence_return",
+    "manual_artifact_observation_after_valid_return",
+    "user_hardware_details_return_validation",
+    "external_full_discovery_ingest_after_compact_return"
+  ],
+  "forbidden_actions_now": [
+    "public_alpha_launch",
+    "dev_to_main_promotion",
+    "verified_artifact_claim",
+    "driver_recommendation_without_user_hardware_details",
+    "download_install_or_execution",
+    "rights_clearance_claim",
+    "malware_safety_claim"
+  ],
+  "truth_boundary": {
+    "external_artifact_evidence_ingested": false,
+    "reviewed_artifact_records_created": false,
+    "verified_artifacts_created": false,
+    "public_alpha_ready": false,
+    "public_alpha_launched": false,
+    "dev_to_main_promoted": false,
+    "downloads_performed": false,
+    "install_or_execution_performed": false,
+    "rights_clearance_claimed": false,
+    "malware_safety_claimed": false
+  }
+}
+
