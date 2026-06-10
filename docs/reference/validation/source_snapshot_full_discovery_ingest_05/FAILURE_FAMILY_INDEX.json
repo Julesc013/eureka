@@ -1,0 +1,73 @@
+{
+  "schema_version": "source_snapshot_full_discovery_failure_family_index_05.v0",
+  "task_id": "SOURCE-SNAPSHOT-FULL-DISCOVERY-INGEST-05",
+  "run_id": "source_snapshot_full_discovery_rerun_05",
+  "status": "fail",
+  "total_failures": 39,
+  "total_errors": 0,
+  "raw_external_failure_family_count": 24,
+  "families": [
+    {
+      "family_id": "historical_queue_validator_drift",
+      "test_labels": [
+        "tests.operations.test_search_hunt_*",
+        "tests.operations.test_hunt_*",
+        "tests.operations.test_need_to_workunit_scripts",
+        "tests.operations.test_workunit_queue_scripts",
+        "tests.operations.test_agent_research_scripts",
+        "tests.operations.test_ai_escalation_scripts"
+      ],
+      "failure_count": 17,
+      "error_count": 0,
+      "representative_message": "queue validators expect HUNT or adjacent successors while current queue is WAITING_FOR_EXTERNAL_ARTIFACT_EVIDENCE",
+      "likely_root_cause": "historical operation validators assert old queue successor state instead of accepting completed historical tracks under the current artifact-evidence wait gate",
+      "recommended_next_repair_task": "HISTORICAL-QUEUE-VALIDATOR-DRIFT-REPAIR-05",
+      "risk": "Full discovery remains red even though focused current-lane checks pass."
+    },
+    {
+      "family_id": "historical_local_queue_validator_drift",
+      "test_labels": [
+        "tests.operations.test_local_*",
+        "tests.operations.test_clean_machine_smoke"
+      ],
+      "failure_count": 16,
+      "error_count": 0,
+      "representative_message": "LOCAL validators expect LOCAL successor queue entries while current queue is WAITING_FOR_EXTERNAL_ARTIFACT_EVIDENCE",
+      "likely_root_cause": "historical LOCAL track validators are coupled to prior queue currentness rather than current completed-track semantics",
+      "recommended_next_repair_task": "HISTORICAL-QUEUE-VALIDATOR-DRIFT-REPAIR-05",
+      "risk": "Old local-appliance validation expectations block full-discovery green status."
+    },
+    {
+      "family_id": "historical_dev_to_main_promotion_validator_drift",
+      "test_labels": [
+        "tests.operations.test_dev_to_main_promotion_03",
+        "tests.operations.test_dev_to_main_promotion_04",
+        "tests.scripts.test_validate_dev_to_main_promotion_03",
+        "tests.scripts.test_validate_dev_to_main_promotion_04"
+      ],
+      "failure_count": 4,
+      "error_count": 0,
+      "representative_message": "post-promotion origin/main and origin/dev must match: 0 80",
+      "likely_root_cause": "old promotion validators assert historical branch parity that is false for the current blocked dev branch",
+      "recommended_next_repair_task": "HISTORICAL-QUEUE-VALIDATOR-DRIFT-REPAIR-05",
+      "risk": "Promotion-related historical tests can be misread as approval or current promotion failure; dev-to-main remains blocked."
+    },
+    {
+      "family_id": "public_alpha_defer_queue_validator_drift",
+      "test_labels": [
+        "tests.operations.test_public_alpha_launch_defer"
+      ],
+      "failure_count": 2,
+      "error_count": 0,
+      "representative_message": "queue current recommended task must be active discovery or a later blocked repair/readiness task",
+      "likely_root_cause": "launch-defer validator does not recognize the current external artifact evidence wait posture",
+      "recommended_next_repair_task": "HISTORICAL-QUEUE-VALIDATOR-DRIFT-REPAIR-05",
+      "risk": "Public alpha remains blocked and must not be advanced from this result."
+    }
+  ],
+  "next_task_priority": [
+    "HISTORICAL-QUEUE-VALIDATOR-DRIFT-REPAIR-05",
+    "EXTERNAL-FULL-DISCOVERY-RERUN-06"
+  ]
+}
+

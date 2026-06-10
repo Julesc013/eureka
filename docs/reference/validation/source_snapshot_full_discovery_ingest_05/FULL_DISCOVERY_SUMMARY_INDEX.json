@@ -1,0 +1,37 @@
+{
+  "task_id": "SOURCE-SNAPSHOT-FULL-DISCOVERY-INGEST-05",
+  "run_id": "source_snapshot_full_discovery_rerun_05",
+  "terminal": true,
+  "status": "fail",
+  "exit_code": 1,
+  "current_to_head": true,
+  "current_head": "9200df49f084cf313cccf821bf56f0194376f202",
+  "summary_head": "9200df49f084cf313cccf821bf56f0194376f202",
+  "summary_branch": "dev",
+  "summary_working_tree_clean": true,
+  "command": "python -m unittest discover -s tests -t .",
+  "tests_run": 5643,
+  "failures": 39,
+  "errors": 0,
+  "skipped": 0,
+  "duration_seconds": 2866.304682,
+  "external_artifacts": {
+    "status": "../eureka-test-runs/source_snapshot_full_discovery_rerun_05/status.json",
+    "summary": "../eureka-test-runs/source_snapshot_full_discovery_rerun_05/full_unittest_summary.json",
+    "failure_families": "../eureka-test-runs/source_snapshot_full_discovery_rerun_05/failure_families.json",
+    "failed_tests": "../eureka-test-runs/source_snapshot_full_discovery_rerun_05/failed_tests.txt",
+    "environment": "../eureka-test-runs/source_snapshot_full_discovery_rerun_05/environment.json"
+  },
+  "failed_module_count": 34,
+  "raw_external_failure_family_count": 24,
+  "classified_failure_family_count": 4,
+  "source_snapshot_release_gate": "blocked_current_full_discovery_failed",
+  "public_alpha_gate": "blocked",
+  "dev_to_main_gate": "blocked",
+  "reviewed_artifact_gate": "blocked_4_of_25",
+  "verified_artifact_gate": "blocked_0",
+  "external_artifact_evidence_gate": "waiting_for_external_artifact_evidence",
+  "hardware_details_gate": "waiting_for_user_hardware_details",
+  "next_task": "HISTORICAL-QUEUE-VALIDATOR-DRIFT-REPAIR-05"
+}
+
