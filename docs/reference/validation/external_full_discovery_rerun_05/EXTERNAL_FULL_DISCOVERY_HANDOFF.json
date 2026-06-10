@@ -3,10 +3,11 @@
   "task_id": "EXTERNAL-FULL-DISCOVERY-RERUN-05",
   "task": "EXTERNAL-FULL-DISCOVERY-RERUN-05",
   "branch": "dev",
-  "head": "4f2b18863d7b5df2bf2f0b242f6aafa06933ae98",
+  "head": "current_checked_out_head_at_operator_run_time",
+  "handoff_base_head": "4f2b18863d7b5df2bf2f0b242f6aafa06933ae98",
   "prior_green_run_id": "source_snapshot_full_discovery_rerun_04",
   "prior_green_head": "c7ae8623a21d44e4bcb20d48e1565505adc6fb50",
-  "head_semantics": "The returned full discovery summary must match this handoff head or a later explicitly accepted continuation head.",
+  "head_semantics": "The handoff base head records the controller state before this handoff commit. The returned full discovery summary must match the operator's current checked-out dev HEAD at run time, including this handoff commit or any later explicitly accepted continuation commit.",
   "repo_root": "D:/Projects/Eureka/eureka",
   "created_at": "2026-06-10",
   "ai_policy": {
@@ -57,9 +58,9 @@
     ],
     "must_match": {
       "git.branch": "dev",
-      "git.head": "4f2b18863d7b5df2bf2f0b242f6aafa06933ae98",
       "git.working_tree_clean": true
-    }
+    },
+    "must_match_runtime_head": "git rev-parse HEAD from the operator checkout used for source_snapshot_full_discovery_rerun_05"
   },
   "do_not_commit": [
     ".aide.local/**",

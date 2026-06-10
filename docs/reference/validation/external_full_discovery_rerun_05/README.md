@@ -8,12 +8,16 @@ This handoff exists because docs/control commits were made after the latest
 green full-discovery ingest. The prior green run remains useful historical
 evidence, but it is stale for the current `dev` HEAD.
 
-## Current Head To Validate
+## Handoff Base Head
 
 ```text
 branch: dev
-head: 4f2b18863d7b5df2bf2f0b242f6aafa06933ae98
+handoff_base_head: 4f2b18863d7b5df2bf2f0b242f6aafa06933ae98
 ```
+
+The external summary must match the operator's current checked-out `dev` HEAD
+at run time. This handoff commit and any later explicit continuation commits
+will naturally advance `HEAD`.
 
 ## Prior Green Evidence
 

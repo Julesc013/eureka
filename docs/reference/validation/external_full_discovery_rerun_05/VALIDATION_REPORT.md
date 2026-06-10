@@ -7,7 +7,10 @@ Status: `PASS_WITH_WARNINGS`
 ## Scope
 
 Created an external full-discovery handoff for current `dev` after docs/control
-commits advanced HEAD beyond the latest green full-discovery ingest.
+commits advanced HEAD beyond the latest green full-discovery ingest. The
+handoff records the controller pre-handoff head for provenance and requires the
+returned summary to match the operator's current checked-out `dev` HEAD at run
+time.
 
 ## Boundary Checks
 

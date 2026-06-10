@@ -13,11 +13,12 @@ git status --short --branch
 git rev-parse HEAD
 ```
 
-Expected head for this handoff:
+Handoff base head:
 
 ```text
 4f2b18863d7b5df2bf2f0b242f6aafa06933ae98
 ```
 
-If the operator intentionally runs from a later continuation head, record that
-head in the returned summary and treat this handoff head as stale provenance.
+The external summary must match the operator's current checked-out `dev` HEAD
+at run time. This handoff commit and any later explicit continuation commits
+will naturally advance `HEAD`.
