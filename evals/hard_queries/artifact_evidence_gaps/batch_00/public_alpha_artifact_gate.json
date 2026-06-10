@@ -1,0 +1,18 @@
+{
+  "schema_version": "artifact_evidence_gap_public_alpha_gate_batch_00.v0",
+  "gate_id": "public_alpha_artifact_gate",
+  "status": "FAIL_INSUFFICIENT_REVIEWED_ARTIFACT_RECORDS",
+  "reviewed_artifact_record_count": 2,
+  "verified_artifact_count": 0,
+  "threshold_reviewed_artifact_records": 25,
+  "reviewed_artifact_record_gap": 23,
+  "evidence_gap_triage_complete": true,
+  "new_reviewed_artifact_records_created": 0,
+  "new_verified_artifacts_created": 0,
+  "public_alpha_blocked": true,
+  "dev_to_main_promotion_blocked": true,
+  "full_discovery_evidence_posture": "stale_after_current_commit",
+  "current_head": "619b398dda1f0961e2935381430684b9c922aa10",
+  "next_recommended_task": "MANUAL-ARTIFACT-OBSERVATION-BATCH-01"
+}
+

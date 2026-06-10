@@ -2,11 +2,11 @@
 
 ## PHASE
 
-UNSPECIFIED - REVIEWED-ARTIFACT-CORPUS-BATCH-01
+UNSPECIFIED - ARTIFACT-EVIDENCE-GAP-BATCH-00
 
 ## GOAL
 
-REVIEWED-ARTIFACT-CORPUS-BATCH-01
+ARTIFACT-EVIDENCE-GAP-BATCH-00
 
 ## WHY
 
@@ -139,8 +139,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4786
-- approx_tokens: 1197
+- chars: 4780
+- approx_tokens: 1195
 - budget_status: PASS
 - warnings:
   - none

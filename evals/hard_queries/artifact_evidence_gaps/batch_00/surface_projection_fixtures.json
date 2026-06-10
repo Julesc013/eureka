@@ -1,0 +1,10 @@
+{
+  "schema_version": "artifact_evidence_gap_surface_projection_fixtures_batch_00.v0",
+  "task_id": "ARTIFACT-EVIDENCE-GAP-BATCH-00",
+  "fixtures": [
+    {"fixture_id": "fixture_gap_b00_7zip", "kind": "evidence_gap", "gap_id": "gap_b01_7zip_exact_package_identity", "expected_status": "need", "expected_verified_artifact": false, "renderer_profiles_expected": ["json_v0", "text_v0", "html_basic_v0", "snapshot_v0"], "public_actions": ["view", "inspect_evidence", "cite"]},
+    {"fixture_id": "fixture_gap_b00_firefox_115_verify", "kind": "verification_gap", "gap_id": "verify_b01_firefox_115", "expected_status": "need", "expected_verified_artifact": false, "renderer_profiles_expected": ["json_v0", "text_v0", "html_basic_v0", "snapshot_v0"], "public_actions": ["view", "inspect_evidence", "cite"]},
+    {"fixture_id": "fixture_gap_b00_win98_blocked", "kind": "blocked_for_user_details", "gap_id": "block_b00_win98_driver_hardware_identity", "expected_status": "need", "expected_verified_artifact": false, "renderer_profiles_expected": ["json_v0", "text_v0", "html_basic_v0", "snapshot_v0"], "public_actions": ["view", "inspect_evidence", "cite"]}
+  ]
+}
+

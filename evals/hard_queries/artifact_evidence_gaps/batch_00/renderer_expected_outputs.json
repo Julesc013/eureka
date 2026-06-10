@@ -1,0 +1,13 @@
+{
+  "schema_version": "artifact_evidence_gap_renderer_expected_outputs_batch_00.v0",
+  "task_id": "ARTIFACT-EVIDENCE-GAP-BATCH-00",
+  "renderer_profiles": ["json_v0", "text_v0", "html_basic_v0", "snapshot_v0"],
+  "expected_status_by_fixture": {
+    "fixture_gap_b00_7zip": "need",
+    "fixture_gap_b00_firefox_115_verify": "need",
+    "fixture_gap_b00_win98_blocked": "need"
+  },
+  "forbidden_public_action_terms": ["review_candidate", "promote", "reject", "download", "install", "rebuild_index", "crawl_source", "arbitrary_live_lookup"],
+  "snapshot_expectation": "deterministic_for_same_input"
+}
+

@@ -1,0 +1,23 @@
+{
+  "schema_version": "artifact_evidence_gap_triage_batch_00.v0",
+  "task_id": "ARTIFACT-EVIDENCE-GAP-BATCH-00",
+  "source_task_id": "REVIEWED-ARTIFACT-CORPUS-BATCH-01",
+  "evidence_gaps": [
+    {"gap_id": "gap_b01_7zip_exact_package_identity", "query_id": "hq_windows_7_apps", "priority": "P0", "triage_status": "ready_for_manual_observation", "needed": ["exact_version_or_build", "package_identity", "integrity_evidence"], "collection_target": "official 7-Zip release/version evidence", "potential_to_increase_reviewed_artifact_count": true, "runtime_source_call_allowed": false, "download_allowed": false, "next_task_hint": "MANUAL-ARTIFACT-OBSERVATION-BATCH-01"},
+    {"gap_id": "gap_b01_parallel_course_primary_issue", "query_id": "hq_ray_tracing_1994_magazine", "priority": "P0", "triage_status": "ready_for_manual_observation", "needed": ["primary_issue_metadata", "page_range", "publisher_catalog_evidence"], "collection_target": "primary BYTE issue/page or catalog evidence", "potential_to_increase_reviewed_artifact_count": true, "runtime_source_call_allowed": false, "download_allowed": false, "next_task_hint": "MANUAL-ARTIFACT-OBSERVATION-BATCH-01"},
+    {"gap_id": "gap_b01_ct1740_exact_manual", "query_id": "hq_sound_blaster_ct1740_manual", "priority": "P1", "triage_status": "ready_for_manual_observation", "needed": ["exact_ct1740_fit", "operation_manual_identity"], "collection_target": "Creative CT1740 manual identity evidence", "potential_to_increase_reviewed_artifact_count": true, "runtime_source_call_allowed": false, "download_allowed": false, "next_task_hint": "MANUAL-ARTIFACT-OBSERVATION-BATCH-01"},
+    {"gap_id": "gap_b01_blue_ftp_visual_identity", "query_id": "hq_blue_ftp_client_xp", "priority": "P1", "triage_status": "ready_for_manual_observation", "needed": ["blue_visual_identity_evidence", "exact_xp_era_version"], "collection_target": "XP-era FTP client visual identity evidence", "potential_to_increase_reviewed_artifact_count": false, "runtime_source_call_allowed": false, "download_allowed": false, "next_task_hint": "MANUAL-ARTIFACT-OBSERVATION-BATCH-01"},
+    {"gap_id": "gap_b01_coreftp_xp_support", "query_id": "hq_blue_ftp_client_xp", "priority": "P2", "triage_status": "ready_for_manual_observation", "needed": ["windows_xp_support_evidence", "blue_visual_identity_evidence"], "collection_target": "Core FTP XP support and visual identity evidence", "potential_to_increase_reviewed_artifact_count": false, "runtime_source_call_allowed": false, "download_allowed": false, "next_task_hint": "MANUAL-ARTIFACT-OBSERVATION-BATCH-01"},
+    {"gap_id": "gap_b01_smartftp_identity_date", "query_id": "hq_windows_7_apps", "priority": "P2", "triage_status": "ready_for_manual_observation", "needed": ["stable_version_build", "artifact_identity_date"], "collection_target": "SmartFTP version/build identity evidence", "potential_to_increase_reviewed_artifact_count": false, "runtime_source_call_allowed": false, "download_allowed": false, "next_task_hint": "MANUAL-ARTIFACT-OBSERVATION-BATCH-01"}
+  ],
+  "triage_counts": {
+    "total_evidence_gaps": 6,
+    "p0_count": 2,
+    "p1_count": 2,
+    "p2_count": 2,
+    "ready_for_manual_observation_count": 6,
+    "runtime_source_calls_allowed_count": 0,
+    "downloads_allowed_count": 0
+  }
+}
+

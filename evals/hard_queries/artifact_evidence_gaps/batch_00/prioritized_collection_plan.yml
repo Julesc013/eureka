@@ -1,0 +1,22 @@
+schema_version: artifact_evidence_gap_collection_plan_batch_00.v0
+task_id: ARTIFACT-EVIDENCE-GAP-BATCH-00
+collection_mode: manual_reference_packet_only
+runtime_source_calls_allowed: false
+downloads_allowed: false
+priorities:
+  - priority: P0
+    gap_ids:
+      - gap_b01_7zip_exact_package_identity
+      - gap_b01_parallel_course_primary_issue
+    next_task_hint: MANUAL-ARTIFACT-OBSERVATION-BATCH-01
+  - priority: P1
+    gap_ids:
+      - gap_b01_ct1740_exact_manual
+      - gap_b01_blue_ftp_visual_identity
+      - verify_b01_firefox_115
+      - verify_b01_firefox_52_9
+  - priority: P2
+    gap_ids:
+      - gap_b01_coreftp_xp_support
+      - gap_b01_smartftp_identity_date
+

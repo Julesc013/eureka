@@ -1,4 +1,4 @@
-current_recommended_task: ARTIFACT-EVIDENCE-GAP-BATCH-00 - Triage reviewed artifact corpus evidence and verification gaps
+current_recommended_task: MANUAL-ARTIFACT-OBSERVATION-BATCH-01 - Collect manual observation packets for prioritized artifact evidence gaps
 completed:
   - SOURCE-ACTION-KERNEL-00
   - SOURCE-WAVE-00
@@ -71,9 +71,9 @@ completed:
   - MANUAL-ARTIFACT-OBSERVATION-BATCH-00
   - HUMAN-ARTIFACT-REVIEW-BATCH-00
   - REVIEWED-ARTIFACT-CORPUS-BATCH-01
+  - ARTIFACT-EVIDENCE-GAP-BATCH-00
 blocked: []
 planned:
-  - ARTIFACT-EVIDENCE-GAP-BATCH-00
   - MANUAL-ARTIFACT-OBSERVATION-BATCH-01
   - HUMAN-ARTIFACT-REVIEW-BATCH-01
   - REVIEWED-ARTIFACT-RECORD-GATE-02

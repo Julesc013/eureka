@@ -1,0 +1,15 @@
+{
+  "schema_version": "artifact_verification_gap_triage_batch_00.v0",
+  "task_id": "ARTIFACT-EVIDENCE-GAP-BATCH-00",
+  "verification_gaps": [
+    {"gap_id": "verify_b01_firefox_115", "artifact_record_id": "reviewed_artifact_b00_firefox_115_esr_windows7_identity", "priority": "P1", "verified_artifact": false, "triage_status": "requires_integrity_and_acquisition_evidence", "needed": ["exact_binary_package_identity", "size_or_hash", "acquisition_path", "independent_integrity_evidence"], "runtime_source_call_allowed": false, "download_allowed": false, "safety_claim_allowed": false, "rights_clearance_claim_allowed": false},
+    {"gap_id": "verify_b01_firefox_52_9", "artifact_record_id": "reviewed_artifact_b00_firefox_52_9_esr_xp_identity", "priority": "P1", "verified_artifact": false, "triage_status": "requires_integrity_and_acquisition_evidence", "needed": ["exact_binary_package_identity", "size_or_hash", "acquisition_path", "independent_integrity_evidence"], "runtime_source_call_allowed": false, "download_allowed": false, "safety_claim_allowed": false, "rights_clearance_claim_allowed": false}
+  ],
+  "triage_counts": {
+    "total_verification_gaps": 2,
+    "verified_artifacts_created": 0,
+    "runtime_source_calls_allowed_count": 0,
+    "downloads_allowed_count": 0
+  }
+}
+

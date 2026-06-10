@@ -1,0 +1,50 @@
+# Validation Report
+
+Task: `ARTIFACT-EVIDENCE-GAP-BATCH-00`
+
+Status:
+
+```text
+PASS_WITH_WARNINGS
+```
+
+Validation commands:
+
+```text
+git diff --check
+py -3 .aide/scripts/aide_lite.py doctor
+py -3 .aide/scripts/aide_lite.py validate
+python scripts/check_architecture_boundaries.py
+python scripts/check_generated_artifact_cleanliness.py --check --json
+py -3 scripts/eureka_test_select.py --changed --failed-first --json
+python -m unittest tests.evals.test_artifact_evidence_gap_batch_00 tests.evals.test_artifact_evidence_gap_gate tests.runtime.test_surface_artifact_evidence_gap_projection
+python scripts/validate_test_lane_policy.py
+python -m unittest tests.operations.test_test_lane_policy
+python -m unittest tests.scripts.test_eureka_test_select
+python -m unittest tests.scripts.test_validate_test_lane_policy
+```
+
+Results:
+
+```text
+git diff --check: PASS with LF-to-CRLF working-copy warnings for AIDE files
+AIDE doctor: PASS
+AIDE validate: PASS
+architecture boundaries: PASS, 921 Python files checked
+generated artifact cleanliness: pass
+changed/failed-first selector: L0_static_preflight and L1_focused_unit selected; full discovery deferred
+focused artifact evidence gap tests: PASS, 12 tests
+test lane policy validation: valid, error_count 0
+tests.operations.test_test_lane_policy: PASS, 1 test
+tests.scripts.test_eureka_test_select: PASS, 3 tests
+tests.scripts.test_validate_test_lane_policy: PASS, 2 tests
+```
+
+Warnings:
+
+```text
+Full unittest discovery was not run inside the AI session.
+External full-discovery evidence remains stale after this docs/eval commit.
+Public alpha remains blocked.
+dev -> main promotion remains blocked.
+```

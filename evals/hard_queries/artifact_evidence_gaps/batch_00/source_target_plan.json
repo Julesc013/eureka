@@ -1,0 +1,16 @@
+{
+  "schema_version": "artifact_evidence_source_target_plan_batch_00.v0",
+  "task_id": "ARTIFACT-EVIDENCE-GAP-BATCH-00",
+  "allowed_collection_mode": "manual_reference_packet_only",
+  "runtime_source_calls_allowed": false,
+  "downloads_allowed": false,
+  "targets": [
+    {"target_id": "target_b00_7zip_release_identity", "gap_id": "gap_b01_7zip_exact_package_identity", "source_family": "official_project_site_or_release_history", "desired_evidence": ["exact_version_or_build", "package_identity", "integrity_evidence"], "safe_next_task": "MANUAL-ARTIFACT-OBSERVATION-BATCH-01"},
+    {"target_id": "target_b00_byte_parallel_course", "gap_id": "gap_b01_parallel_course_primary_issue", "source_family": "publisher_catalog_or_issue_index", "desired_evidence": ["primary_issue_metadata", "page_range", "publisher_catalog_evidence"], "safe_next_task": "MANUAL-ARTIFACT-OBSERVATION-BATCH-01"},
+    {"target_id": "target_b00_ct1740_manual_identity", "gap_id": "gap_b01_ct1740_exact_manual", "source_family": "publisher_manual_catalog_or_reputable_manual_index", "desired_evidence": ["exact_ct1740_fit", "operation_manual_identity"], "safe_next_task": "MANUAL-ARTIFACT-OBSERVATION-BATCH-01"},
+    {"target_id": "target_b00_blue_ftp_visual_identity", "gap_id": "gap_b01_blue_ftp_visual_identity", "source_family": "vendor_docs_or_screenshot_reference", "desired_evidence": ["blue_visual_identity_evidence", "exact_xp_era_version"], "safe_next_task": "MANUAL-ARTIFACT-OBSERVATION-BATCH-01"},
+    {"target_id": "target_b00_firefox_115_integrity", "gap_id": "verify_b01_firefox_115", "source_family": "publisher_release_metadata_or_checksum_reference", "desired_evidence": ["exact_binary_package_identity", "size_or_hash"], "safe_next_task": "MANUAL-ARTIFACT-OBSERVATION-BATCH-01"},
+    {"target_id": "target_b00_firefox_52_9_integrity", "gap_id": "verify_b01_firefox_52_9", "source_family": "publisher_release_metadata_or_checksum_reference", "desired_evidence": ["exact_binary_package_identity", "size_or_hash"], "safe_next_task": "MANUAL-ARTIFACT-OBSERVATION-BATCH-01"}
+  ]
+}
+
