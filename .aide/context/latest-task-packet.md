@@ -2,11 +2,11 @@
 
 ## PHASE
 
-UNSPECIFIED - ARTIFACT-EVIDENCE-COLLECTION-HANDOFF-00
+UNSPECIFIED - AI-LONG-TURN-OPERATING-PROTOCOL-00
 
 ## GOAL
 
-ARTIFACT-EVIDENCE-COLLECTION-HANDOFF-00
+AI-LONG-TURN-OPERATING-PROTOCOL-00
 
 ## WHY
 
@@ -139,8 +139,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4798
-- approx_tokens: 1200
+- chars: 4788
+- approx_tokens: 1197
 - budget_status: PASS
 - warnings:
   - none
