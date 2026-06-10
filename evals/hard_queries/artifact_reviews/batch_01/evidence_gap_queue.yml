@@ -1,0 +1,15 @@
+schema_version: human_artifact_review_batch_01_evidence_gap_queue.v0
+task_id: HUMAN-ARTIFACT-REVIEW-BATCH-01
+gaps:
+  - gap_id: gap_b01_firefox_115_exact_variant_hash
+    query_id: hq_windows_7_apps
+    source_review_id: artifact_review_decision_b01_firefox_115_request_more_evidence
+    next_action: select exact Firefox 115 Windows variant and checksum reference without fetching binary payloads
+  - gap_id: gap_b01_ct1740_exact_manual_fit
+    query_id: hq_sound_blaster_ct1740_manual
+    source_review_id: artifact_review_decision_b01_ct1740_request_more_evidence
+    next_action: verify whether the Sound Blaster 16 manual listing explicitly satisfies CT1740
+  - gap_id: gap_b01_firefox_5290_exact_hash
+    query_id: hq_firefox_last_xp
+    source_review_id: artifact_review_decision_b01_firefox_5290_request_more_evidence
+    next_action: select exact Firefox 52.9.0esr Windows package and checksum reference without fetching binary payloads

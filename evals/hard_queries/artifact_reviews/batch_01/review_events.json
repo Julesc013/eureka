@@ -1,0 +1,12 @@
+{
+  "schema_version": "human_artifact_review_events_batch_01.v0",
+  "task_id": "HUMAN-ARTIFACT-REVIEW-BATCH-01",
+  "review_events": [
+    {"review_event_id": "artifact_review_event_b01_7zip_2601_promote", "review_id": "artifact_review_decision_b01_7zip_2601_promote", "event_type": "artifact_review_decision", "decision": "promote", "created_reviewed_artifact_record": true, "created_verified_artifact": false, "reviewed_index_mutated": false, "public_index_mutated": false, "master_index_mutated": false},
+    {"review_event_id": "artifact_review_event_b01_firefox_115_request_more_evidence", "review_id": "artifact_review_decision_b01_firefox_115_request_more_evidence", "event_type": "artifact_review_decision", "decision": "request_more_evidence", "created_reviewed_artifact_record": false, "created_verified_artifact": false, "reviewed_index_mutated": false, "public_index_mutated": false, "master_index_mutated": false},
+    {"review_event_id": "artifact_review_event_b01_flashfxp_near_miss", "review_id": "artifact_review_decision_b01_flashfxp_near_miss", "event_type": "artifact_review_decision", "decision": "mark_near_miss", "created_reviewed_artifact_record": false, "created_verified_artifact": false, "reviewed_index_mutated": false, "public_index_mutated": false, "master_index_mutated": false},
+    {"review_event_id": "artifact_review_event_b01_ct1740_request_more_evidence", "review_id": "artifact_review_decision_b01_ct1740_request_more_evidence", "event_type": "artifact_review_decision", "decision": "request_more_evidence", "created_reviewed_artifact_record": false, "created_verified_artifact": false, "reviewed_index_mutated": false, "public_index_mutated": false, "master_index_mutated": false},
+    {"review_event_id": "artifact_review_event_b01_firefox_5290_request_more_evidence", "review_id": "artifact_review_decision_b01_firefox_5290_request_more_evidence", "event_type": "artifact_review_decision", "decision": "request_more_evidence", "created_reviewed_artifact_record": false, "created_verified_artifact": false, "reviewed_index_mutated": false, "public_index_mutated": false, "master_index_mutated": false},
+    {"review_event_id": "artifact_review_event_b01_parallel_course_promote", "review_id": "artifact_review_decision_b01_parallel_course_promote", "event_type": "artifact_review_decision", "decision": "promote", "created_reviewed_artifact_record": true, "created_verified_artifact": false, "reviewed_index_mutated": false, "public_index_mutated": false, "master_index_mutated": false}
+  ]
+}

@@ -2,11 +2,11 @@
 
 ## PHASE
 
-UNSPECIFIED - HUMAN-ARTIFACT-REVIEW-BATCH-01
+UNSPECIFIED - REVIEWED-ARTIFACT-RECORD-GATE-02
 
 ## GOAL
 
-HUMAN-ARTIFACT-REVIEW-BATCH-01
+REVIEWED-ARTIFACT-RECORD-GATE-02
 
 ## WHY
 
@@ -139,8 +139,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4780
-- approx_tokens: 1195
+- chars: 4784
+- approx_tokens: 1196
 - budget_status: PASS
 - warnings:
   - none

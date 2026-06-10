@@ -1,4 +1,4 @@
-current_recommended_task: HUMAN-ARTIFACT-REVIEW-BATCH-01 - Review manual artifact observation batch one
+current_recommended_task: REVIEWED-ARTIFACT-RECORD-GATE-02 - Reassess artifact gate after human artifact review batch one
 completed:
   - SOURCE-ACTION-KERNEL-00
   - SOURCE-WAVE-00
@@ -73,9 +73,9 @@ completed:
   - REVIEWED-ARTIFACT-CORPUS-BATCH-01
   - ARTIFACT-EVIDENCE-GAP-BATCH-00
   - MANUAL-ARTIFACT-OBSERVATION-BATCH-01
+  - HUMAN-ARTIFACT-REVIEW-BATCH-01
 blocked: []
 planned:
-  - HUMAN-ARTIFACT-REVIEW-BATCH-01
   - REVIEWED-ARTIFACT-RECORD-GATE-02
   - EXTERNAL-FULL-DISCOVERY-RERUN-03
   - PUBLIC-ALPHA-READINESS-00

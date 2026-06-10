@@ -1,0 +1,9 @@
+schema_version: human_artifact_review_batch_01_manual_followups.v0
+task_id: HUMAN-ARTIFACT-REVIEW-BATCH-01
+followups:
+  - followup_id: followup_b01_reviewed_artifact_gate
+    next_task: REVIEWED-ARTIFACT-RECORD-GATE-02
+    reason: Reassess reviewed artifact counts after two new review-event-backed records.
+  - followup_id: followup_b01_user_hardware_details
+    next_task: USER-HARDWARE-DETAILS-00
+    reason: Windows 98 driver query remains blocked without hardware identity.

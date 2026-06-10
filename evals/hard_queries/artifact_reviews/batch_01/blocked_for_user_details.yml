@@ -1,0 +1,14 @@
+schema_version: human_artifact_review_batch_01_blocked_for_user_details.v0
+task_id: HUMAN-ARTIFACT-REVIEW-BATCH-01
+blocked_items:
+  - query_id: hq_driver_win98
+    blocker_task: USER-HARDWARE-DETAILS-00
+    status: need
+    required_details:
+      - hardware_vendor
+      - hardware_model
+      - device_id_or_chipset
+      - bus_or_interface
+      - exact_windows_version
+      - architecture
+    reason: Windows 98 driver review remains unsafe without hardware identity.
