@@ -1,0 +1,48 @@
+{
+  "schema_version": "artifact_verification_gap_batch_01.v0",
+  "task_id": "ARTIFACT-EVIDENCE-GAP-BATCH-01",
+  "verification_gaps": [
+    {
+      "gap_id": "verify_b02_firefox_5290_exact_variant_hash",
+      "artifact_record_id": "reviewed_artifact_b00_firefox_52_9_esr_xp_identity",
+      "priority": "P0",
+      "verified_artifact": false,
+      "triage_status": "requires_exact_variant_checksum_reference",
+      "needed": ["exact_windows_package_variant", "checksum_reference", "signature_reference_if_available"],
+      "runtime_source_call_allowed": false,
+      "download_allowed": false,
+      "safety_claim_allowed": false,
+      "rights_clearance_claim_allowed": false
+    },
+    {
+      "gap_id": "verify_b02_firefox_115_exact_variant_hash",
+      "artifact_record_id": "reviewed_artifact_b00_firefox_115_esr_windows7_identity",
+      "priority": "P1",
+      "verified_artifact": false,
+      "triage_status": "requires_exact_variant_checksum_reference",
+      "needed": ["exact_windows_package_variant", "checksum_reference", "signature_reference_if_available"],
+      "runtime_source_call_allowed": false,
+      "download_allowed": false,
+      "safety_claim_allowed": false,
+      "rights_clearance_claim_allowed": false
+    },
+    {
+      "gap_id": "verify_b02_7zip_2601_integrity_evidence",
+      "artifact_record_id": "reviewed_artifact_b01_7zip_2601_windows_identity",
+      "priority": "P1",
+      "verified_artifact": false,
+      "triage_status": "requires_integrity_reference_without_binary_fetch",
+      "needed": ["checksum_or_signature_reference", "package_identity", "integrity_source_context"],
+      "runtime_source_call_allowed": false,
+      "download_allowed": false,
+      "safety_claim_allowed": false,
+      "rights_clearance_claim_allowed": false
+    }
+  ],
+  "triage_counts": {
+    "total_verification_gaps": 3,
+    "verified_artifacts_created": 0,
+    "runtime_source_calls_allowed_count": 0,
+    "downloads_allowed_count": 0
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "schema_version": "artifact_evidence_gap_batch_01_blocked_for_user_details.v0",
+  "task_id": "ARTIFACT-EVIDENCE-GAP-BATCH-01",
+  "blocked_items": [
+    {
+      "blocker_id": "block_b02_win98_driver_hardware_identity",
+      "query_id": "hq_driver_win98",
+      "blocker_task": "USER-HARDWARE-DETAILS-00",
+      "status": "blocked_for_user_details",
+      "reason": "Windows 98 driver review remains unsafe without hardware identity.",
+      "required_user_details": [
+        "hardware_vendor",
+        "hardware_model",
+        "device_id_or_chipset",
+        "bus_or_interface",
+        "exact_windows_version",
+        "architecture",
+        "machine_or_board_model",
+        "known_driver_media_or_source_context"
+      ],
+      "forbidden_action": "recommend_a_specific_driver"
+    }
+  ]
+}

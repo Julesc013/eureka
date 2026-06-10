@@ -1,0 +1,88 @@
+{
+  "schema_version": "artifact_evidence_gap_batch_01_plan.v0",
+  "task_id": "ARTIFACT-EVIDENCE-GAP-BATCH-01",
+  "source_task_ids": [
+    "HUMAN-ARTIFACT-REVIEW-BATCH-01",
+    "REVIEWED-ARTIFACT-RECORD-GATE-02",
+    "SOURCE-SNAPSHOT-FULL-DISCOVERY-INGEST-04"
+  ],
+  "collection_mode": "manual_reference_packet_only",
+  "runtime_source_calls_allowed": false,
+  "downloads_allowed": false,
+  "file_fetches_allowed": false,
+  "wayback_replay_allowed": false,
+  "evidence_gaps": [
+    {
+      "gap_id": "gap_b02_ct1740_exact_manual_fit",
+      "query_id": "hq_sound_blaster_ct1740_manual",
+      "priority": "P0",
+      "triage_status": "ready_for_manual_observation",
+      "source_review_id": "artifact_review_decision_b01_ct1740_request_more_evidence",
+      "needed": ["exact_ct1740_fit", "manual_edition_or_page_scope", "rights_risk_note"],
+      "collection_target": "Creative CT1740 manual fit and edition evidence",
+      "potential_to_increase_reviewed_artifact_count": true
+    },
+    {
+      "gap_id": "gap_b02_blue_ftp_visual_identity",
+      "query_id": "hq_blue_ftp_client_xp",
+      "priority": "P0",
+      "triage_status": "ready_for_manual_observation",
+      "source_review_id": "artifact_review_decision_b01_flashfxp_near_miss",
+      "needed": ["blue_visual_identity_evidence", "exact_xp_era_version", "package_identity"],
+      "collection_target": "XP-era FTP client visual identity evidence",
+      "potential_to_increase_reviewed_artifact_count": true
+    },
+    {
+      "gap_id": "gap_b02_firefox_5290_exact_variant_hash",
+      "query_id": "hq_firefox_last_xp",
+      "priority": "P0",
+      "triage_status": "ready_for_manual_observation",
+      "source_review_id": "artifact_review_decision_b01_firefox_5290_request_more_evidence",
+      "needed": ["exact_windows_package_variant", "checksum_reference", "signature_reference_if_available"],
+      "collection_target": "Firefox 52.9.0esr Windows package checksum reference",
+      "potential_to_increase_reviewed_artifact_count": false,
+      "potential_to_reduce_verified_artifact_risk": true
+    },
+    {
+      "gap_id": "gap_b02_firefox_115_exact_variant_hash",
+      "query_id": "hq_windows_7_apps",
+      "priority": "P1",
+      "triage_status": "ready_for_manual_observation",
+      "source_review_id": "artifact_review_decision_b01_firefox_115_request_more_evidence",
+      "needed": ["exact_windows_package_variant", "checksum_reference", "signature_reference_if_available"],
+      "collection_target": "Firefox 115 ESR Windows package checksum reference",
+      "potential_to_increase_reviewed_artifact_count": false,
+      "potential_to_reduce_verified_artifact_risk": true
+    },
+    {
+      "gap_id": "gap_b02_7zip_2601_integrity_evidence",
+      "query_id": "hq_windows_7_apps",
+      "priority": "P1",
+      "triage_status": "ready_for_manual_observation",
+      "source_review_id": "artifact_review_decision_b01_7zip_2601_promote",
+      "needed": ["package_identity", "checksum_or_signature_reference", "integrity_source_context"],
+      "collection_target": "7-Zip 26.01 Windows package integrity evidence",
+      "potential_to_increase_reviewed_artifact_count": false,
+      "potential_to_reduce_verified_artifact_risk": true
+    },
+    {
+      "gap_id": "gap_b02_parallel_course_primary_scan_page_range",
+      "query_id": "hq_ray_tracing_1994_magazine",
+      "priority": "P1",
+      "triage_status": "ready_for_manual_observation",
+      "source_review_id": "artifact_review_decision_b01_parallel_course_promote",
+      "needed": ["primary_issue_or_scan_index", "page_range", "rights_risk_note"],
+      "collection_target": "BYTE 1994 Parallel Course article page-scope evidence",
+      "potential_to_increase_reviewed_artifact_count": false
+    }
+  ],
+  "triage_counts": {
+    "total_evidence_gaps": 6,
+    "p0_count": 3,
+    "p1_count": 3,
+    "ready_for_manual_observation_count": 6,
+    "runtime_source_calls_allowed_count": 0,
+    "downloads_allowed_count": 0
+  },
+  "next_recommended_task": "MANUAL-ARTIFACT-OBSERVATION-BATCH-02"
+}

@@ -1,0 +1,22 @@
+{
+  "schema_version": "artifact_evidence_gap_batch_01_next_task_decision.v0",
+  "task_id": "ARTIFACT-EVIDENCE-GAP-BATCH-01",
+  "status": "PASS_WITH_WARNINGS",
+  "recommended_next_task": "MANUAL-ARTIFACT-OBSERVATION-BATCH-02",
+  "recommended_next_task_reason": "Batch 01 identifies six collection-ready manual reference packet targets after review batch 01 and gate 02.",
+  "follow_on_tasks": [
+    "HUMAN-ARTIFACT-REVIEW-BATCH-02",
+    "REVIEWED-ARTIFACT-CORPUS-BATCH-02",
+    "REVIEWED-ARTIFACT-RECORD-GATE-03"
+  ],
+  "blocked_tasks": [
+    "PUBLIC-ALPHA-READINESS-00",
+    "DEV-TO-MAIN-PROMOTION-PREFLIGHT-07",
+    "PUBLIC-ALPHA-LAUNCH-00"
+  ],
+  "public_alpha_status": "blocked",
+  "dev_to_main_promotion_status": "blocked",
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "promotion_readiness_claimed": false
+}

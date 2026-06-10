@@ -1,0 +1,18 @@
+{
+  "schema_version": "artifact_evidence_gap_batch_01_gate_status.v0",
+  "task_id": "ARTIFACT-EVIDENCE-GAP-BATCH-01",
+  "status": "PASS_WITH_WARNINGS",
+  "public_alpha_artifact_gate": "FAIL_INSUFFICIENT_REVIEWED_ARTIFACT_RECORDS",
+  "reviewed_artifact_record_count": 4,
+  "minimum_public_alpha_reviewed_artifact_records": 25,
+  "reviewed_artifact_record_gap": 21,
+  "verified_artifact_count": 0,
+  "hard_query_reviewed_artifact_coverage": "3/6",
+  "hard_query_verified_artifact_coverage": "0/6",
+  "new_reviewed_artifact_records_created": 0,
+  "new_verified_artifacts_created": 0,
+  "public_alpha_blocked": true,
+  "dev_to_main_promotion_blocked": true,
+  "source_snapshot_full_discovery_posture": "green_for_validated_pre_ingest_run_head_from_rerun_04",
+  "next_recommended_task": "MANUAL-ARTIFACT-OBSERVATION-BATCH-02"
+}
