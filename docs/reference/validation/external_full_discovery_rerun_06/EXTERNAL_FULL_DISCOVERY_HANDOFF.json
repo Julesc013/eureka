@@ -1,0 +1,74 @@
+{
+  "schema_version": "external_full_discovery_handoff.v0",
+  "task_id": "EXTERNAL-FULL-DISCOVERY-RERUN-06",
+  "task": "EXTERNAL-FULL-DISCOVERY-RERUN-06",
+  "branch": "dev",
+  "head": "current_checked_out_head_at_operator_run_time",
+  "handoff_base_head": "5ca75056c6907fd5606603c7e5f9d1ffa0e9d1a5",
+  "prior_failed_run_id": "source_snapshot_full_discovery_rerun_05",
+  "prior_failed_head": "5ca75056c6907fd5606603c7e5f9d1ffa0e9d1a5",
+  "head_semantics": "The handoff base head records the controller state before the repair and handoff commit. The returned full discovery summary must match the operator's current checked-out dev HEAD at run time, including this repair and handoff commit or any later explicitly accepted continuation commit.",
+  "repo_root": "D:/Projects/Eureka/eureka",
+  "created_at": "2026-06-11",
+  "ai_policy": {
+    "full_discovery_inside_ai": false,
+    "reason": "Repo policy reserves full unittest discovery for external harness, CI, promotion, nightly, or manual operator lanes."
+  },
+  "command": "python scripts/run_full_unittest_discovery.py --out ../eureka-test-runs/source_snapshot_full_discovery_rerun_06",
+  "commands_to_run_externally": [
+    "git status --short --branch",
+    "git rev-parse HEAD",
+    "python scripts/run_full_unittest_discovery.py --out ../eureka-test-runs/source_snapshot_full_discovery_rerun_06"
+  ],
+  "suggested_output_dir": "../eureka-test-runs/source_snapshot_full_discovery_rerun_06",
+  "run_outside_ai": true,
+  "expected_duration_class": "very_long",
+  "expected_artifacts": [
+    "../eureka-test-runs/source_snapshot_full_discovery_rerun_06/status.json",
+    "../eureka-test-runs/source_snapshot_full_discovery_rerun_06/full_unittest_summary.json",
+    "../eureka-test-runs/source_snapshot_full_discovery_rerun_06/failure_families.json",
+    "../eureka-test-runs/source_snapshot_full_discovery_rerun_06/failed_tests.txt",
+    "../eureka-test-runs/source_snapshot_full_discovery_rerun_06/environment.json",
+    "../eureka-test-runs/source_snapshot_full_discovery_rerun_06/paths_touched.txt"
+  ],
+  "paste_back": [
+    "../eureka-test-runs/source_snapshot_full_discovery_rerun_06/full_unittest_summary.json",
+    "../eureka-test-runs/source_snapshot_full_discovery_rerun_06/failure_families.json",
+    "../eureka-test-runs/source_snapshot_full_discovery_rerun_06/failed_tests.txt",
+    "git status --short --branch",
+    "git rev-parse HEAD"
+  ],
+  "do_not_paste": [
+    "../eureka-test-runs/source_snapshot_full_discovery_rerun_06/full_unittest_stdout.txt",
+    "../eureka-test-runs/source_snapshot_full_discovery_rerun_06/full_unittest_stderr.txt"
+  ],
+  "summary_schema": {
+    "schema_version": "full_unittest_summary.v0",
+    "required": [
+      "schema_version",
+      "command",
+      "exit_code",
+      "status",
+      "git",
+      "counts",
+      "failed_tests",
+      "failed_modules",
+      "failure_families",
+      "generated_by"
+    ],
+    "must_match": {
+      "git.branch": "dev",
+      "git.working_tree_clean": true
+    },
+    "must_match_runtime_head": "git rev-parse HEAD from the operator checkout used for source_snapshot_full_discovery_rerun_06"
+  },
+  "do_not_commit": [
+    ".aide.local/**",
+    "../eureka-test-runs/**/full_unittest_stdout.txt",
+    "../eureka-test-runs/**/full_unittest_stderr.txt"
+  ],
+  "reason_required": "Current dev HEAD will include the historical queue validator drift repair after source_snapshot_full_discovery_rerun_05.",
+  "resume_instructions": "Resume with SOURCE-SNAPSHOT-FULL-DISCOVERY-INGEST-06 after compact artifacts return.",
+  "waiting_status": "WAITING_FOR_EXTERNAL_FULL_DISCOVERY"
+}
+

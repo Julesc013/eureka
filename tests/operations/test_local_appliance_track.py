@@ -41,6 +41,9 @@ class LocalApplianceTrackTests(unittest.TestCase):
     def test_queue_helper_accepts_historical_validator_repair_successor(self) -> None:
         self.assertTrue(is_later_control_or_handoff("HISTORICAL-QUEUE-VALIDATOR-DRIFT-REPAIR-03"))
 
+    def test_queue_helper_accepts_external_artifact_wait_state(self) -> None:
+        self.assertTrue(is_later_control_or_handoff("WAITING_FOR_EXTERNAL_ARTIFACT_EVIDENCE"))
+
     def test_f0_deferred_until_local_14(self) -> None:
         payload = load_json("control/inventory/f0_deferral_for_local_appliance.json")
         self.assertEqual("LOCAL-14", payload["deferred_until"])

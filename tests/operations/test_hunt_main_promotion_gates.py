@@ -100,6 +100,23 @@ class HuntMainPromotionGateTests(unittest.TestCase):
             self.assertEqual("HISTORICAL-QUEUE-VALIDATOR-DRIFT-REPAIR-03", current_recommended_task_id(root))
             self.assertTrue(post_hunt_current_allowed(root))
 
+    def test_post_hunt_queue_accepts_external_artifact_wait_state(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            queue = root / ".aide/queue/index.yaml"
+            queue.parent.mkdir(parents=True)
+            queue.write_text(
+                "current_recommended_task: WAITING_FOR_EXTERNAL_ARTIFACT_EVIDENCE - External evidence required\n"
+                "completed:\n"
+                "  - SOURCE-ACTION-KERNEL-00\n"
+                "  - SOURCE-WAVE-00\n"
+                "  - SNAPSHOT-RELAY-00\n"
+                "  - CI-FULL-DISCOVERY-HARNESS-00\n",
+                encoding="utf-8",
+            )
+            self.assertEqual("WAITING_FOR_EXTERNAL_ARTIFACT_EVIDENCE", current_recommended_task_id(root))
+            self.assertTrue(post_hunt_current_allowed(root))
+
 
 if __name__ == "__main__":
     unittest.main()
