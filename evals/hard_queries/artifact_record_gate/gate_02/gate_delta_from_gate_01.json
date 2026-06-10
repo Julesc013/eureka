@@ -1,0 +1,26 @@
+{
+  "schema_version": "artifact_gate_delta.v0",
+  "from_gate": "reviewed_artifact_record_gate_01",
+  "to_gate": "reviewed_artifact_record_gate_02",
+  "delta": {
+    "reviewed_artifact_record_count": 2,
+    "verified_artifact_count": 0,
+    "reviewed_artifact_record_gap": -2,
+    "hard_query_reviewed_artifact_coverage": "+1/6",
+    "hard_query_verified_artifact_coverage": "+0/6"
+  },
+  "current_totals": {
+    "reviewed_artifact_record_count": 4,
+    "verified_artifact_count": 0,
+    "reviewed_artifact_record_gap": 21,
+    "hard_query_reviewed_artifact_coverage": "3/6",
+    "hard_query_verified_artifact_coverage": "0/6"
+  },
+  "unchanged_blockers": [
+    "public alpha remains blocked",
+    "dev to main promotion remains blocked",
+    "verified artifacts remain zero",
+    "Windows 98 driver remains blocked for hardware identity",
+    "source/snapshot release evidence is stale after eval/docs commits"
+  ]
+}

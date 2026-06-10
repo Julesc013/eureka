@@ -1,0 +1,25 @@
+schema_version: artifact_gate_failure_reasons.v1
+gate_id: reviewed_artifact_record_gate_02
+status: FAIL_INSUFFICIENT_REVIEWED_ARTIFACT_RECORDS
+reasons:
+  - reason_id: insufficient_reviewed_artifact_record_count
+    current: 4
+    required: 25
+    remaining_gap: 21
+  - reason_id: no_verified_artifacts
+    current: 0
+    note: Verified artifacts are not required everywhere, but zero verified artifacts remains a public-alpha risk.
+  - reason_id: win98_driver_blocked_for_user_details
+    query_id: hq_driver_win98
+    required_user_details:
+      - hardware_vendor
+      - hardware_model
+      - device_id_or_chipset
+      - bus_or_interface
+  - reason_id: remaining_hard_query_needs_and_near_misses
+    affected_queries:
+      - hq_blue_ftp_client_xp
+      - hq_sound_blaster_ct1740_manual
+      - hq_latest_firefox_before_xp_support_ended
+  - reason_id: full_discovery_stale_after_gate_commit
+    note: The previous green external full-discovery evidence predates later docs/eval commits.
