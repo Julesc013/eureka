@@ -1,0 +1,413 @@
+{
+  "schema_version": "manual_artifact_observation_batch_01.v0",
+  "task_id": "MANUAL-ARTIFACT-OBSERVATION-BATCH-01",
+  "batch_recorded_date": "2026-06-10",
+  "source_basis": "manual reference packet collected from prioritized artifact evidence gaps; no runtime provider calls, downloads, file fetches, or Wayback replay",
+  "batch_truth_boundary": {
+    "reviewed_artifact_records_created": false,
+    "verified_artifacts_created": false,
+    "review_events_created": false,
+    "reviewed_index_mutated": false,
+    "public_index_mutated": false,
+    "master_index_mutated": false,
+    "runtime_source_calls_performed": false,
+    "downloads_performed": false,
+    "file_fetches_performed": false,
+    "wayback_replay_performed": false,
+    "rights_clearance_claimed": false,
+    "malware_safety_claimed": false,
+    "synthetic_eval_fixtures_used_as_evidence": false
+  },
+  "observations": [
+    {
+      "observation_id": "artifact_obs_b01_hq_windows_7_7zip_2601_package_identity",
+      "query_id": "hq_windows_7_apps",
+      "query_text": "Windows 7 apps",
+      "artifact_subject": "7-Zip 26.01 Windows package identity lead",
+      "observation_kind": "manual_artifact_observation",
+      "artifact_level": "artifact_level_3_artifact_identity_evidence",
+      "status": "candidate",
+      "source_refs": [
+        {
+          "source_id": "src_b01_7zip_home_windows_support",
+          "url": "https://www.7-zip.org/",
+          "title": "7-Zip official home page",
+          "source_type": "official_project_site",
+          "manual_reference_only": true,
+          "accessed_or_recorded_date": "2026-06-10"
+        },
+        {
+          "source_id": "src_b01_7zip_release_2601",
+          "url": "https://www.7-zip.org/download.html",
+          "title": "7-Zip download page",
+          "source_type": "official_release_index",
+          "manual_reference_only": true,
+          "accessed_or_recorded_date": "2026-06-10"
+        }
+      ],
+      "observed_claims": [
+        {
+          "claim": "Official 7-Zip pages identify 7-Zip 26.01 Windows packages and a broad Windows support posture including Windows 7.",
+          "claim_type": "official_package_identity",
+          "confidence": "high",
+          "review_required": true
+        }
+      ],
+      "artifact_identity_fields": {
+        "name": "7-Zip",
+        "version": "26.01",
+        "platform": "Windows, including Windows 7 support context",
+        "publisher_or_author": "Igor Pavlov / 7-Zip project",
+        "date_or_period": "2026-04-27 release line",
+        "object_type": "software_application",
+        "source_family": "manual_reference"
+      },
+      "missing_for_reviewed_artifact_record": ["integrity_evidence", "package_hash_not_checked", "download_or_acquisition_path_not_checked", "rights_posture_not_cleared"],
+      "rights_risk_posture": {
+        "rights_clearance_claimed": false,
+        "malware_safety_claimed": false,
+        "download_offered": false,
+        "risk_notes": ["Official page metadata only; no installer or archive was fetched."]
+      },
+      "review_recommendation": "review_candidate",
+      "public_projection_status": "candidate",
+      "manual_reference_only": true,
+      "runtime_source_call_performed": false,
+      "reviewed_artifact_record_created": false,
+      "verified_artifact_created": false,
+      "notes": "Improves package identity beyond the batch-00 unversioned 7-Zip lead, but still not a verified artifact."
+    },
+    {
+      "observation_id": "artifact_obs_b01_hq_windows_7_firefox_115_release_integrity_lead",
+      "query_id": "hq_windows_7_apps",
+      "query_text": "Windows 7 apps",
+      "artifact_subject": "Firefox 115.0esr release directory integrity lead",
+      "observation_kind": "manual_artifact_observation",
+      "artifact_level": "artifact_level_4_artifact_integrity_evidence",
+      "status": "candidate",
+      "source_refs": [
+        {
+          "source_id": "src_b01_firefox_115_release_index",
+          "url": "https://ftp.mozilla.org/pub/firefox/releases/115.0esr/",
+          "title": "Mozilla Firefox 115.0esr release directory",
+          "source_type": "publisher_release_index",
+          "manual_reference_only": true,
+          "accessed_or_recorded_date": "2026-06-10"
+        }
+      ],
+      "observed_claims": [
+        {
+          "claim": "Mozilla release directory exposes Windows release folders plus checksum summary files for Firefox 115.0esr.",
+          "claim_type": "publisher_release_integrity_lead",
+          "confidence": "high",
+          "review_required": true
+        }
+      ],
+      "artifact_identity_fields": {
+        "name": "Firefox ESR",
+        "version": "115.0esr",
+        "platform": "Windows 7 support context from prior reviewed lead",
+        "publisher_or_author": "Mozilla",
+        "date_or_period": "ESR 115 release directory",
+        "object_type": "software_application",
+        "source_family": "manual_reference"
+      },
+      "missing_for_reviewed_artifact_record": ["exact_language_or_architecture_variant", "specific_hash_not_selected", "download_or_acquisition_path_not_checked", "rights_posture_not_cleared"],
+      "rights_risk_posture": {
+        "rights_clearance_claimed": false,
+        "malware_safety_claimed": false,
+        "download_offered": false,
+        "risk_notes": ["Checksum index was observed only as metadata; no checksum file or binary was fetched."]
+      },
+      "review_recommendation": "request_more_evidence",
+      "public_projection_status": "candidate",
+      "manual_reference_only": true,
+      "runtime_source_call_performed": false,
+      "reviewed_artifact_record_created": false,
+      "verified_artifact_created": false,
+      "notes": "Level-4 integrity lead for a future artifact review, not itself a verified artifact."
+    },
+    {
+      "observation_id": "artifact_obs_b01_hq_blue_ftp_flashfxp_xp_compatibility_near_miss",
+      "query_id": "hq_blue_ftp_client_xp",
+      "query_text": "old blue FTP client for XP",
+      "artifact_subject": "FlashFXP 4.1.8 XP compatibility near miss",
+      "observation_kind": "manual_artifact_observation",
+      "artifact_level": "artifact_level_3_artifact_identity_evidence",
+      "status": "near_miss",
+      "source_refs": [
+        {
+          "source_id": "src_b01_flashfxp_history_41",
+          "url": "https://www.flashfxp.com/history-41",
+          "title": "FlashFXP v4.1 version history",
+          "source_type": "vendor_version_history_page",
+          "manual_reference_only": true,
+          "accessed_or_recorded_date": "2026-06-10"
+        },
+        {
+          "source_id": "src_b01_coreftp_windows_versions",
+          "url": "https://www.coreftp.com/download.html",
+          "title": "Core FTP download page",
+          "source_type": "vendor_release_index",
+          "manual_reference_only": true,
+          "accessed_or_recorded_date": "2026-06-10"
+        }
+      ],
+      "observed_claims": [
+        {
+          "claim": "FlashFXP version history provides an XP compatibility lead; Core FTP provides a Windows FTP-client comparison lead, but the remembered blue visual identity is still unproved.",
+          "claim_type": "ftp_client_identity_near_miss",
+          "confidence": "medium",
+          "review_required": true
+        }
+      ],
+      "artifact_identity_fields": {
+        "name": "FlashFXP",
+        "version": "4.1.8.1701 compatibility lead",
+        "platform": "Windows XP",
+        "publisher_or_author": "FlashFXP / OpenSight source context",
+        "date_or_period": "2012 version-history lead",
+        "object_type": "ftp_client_application",
+        "source_family": "manual_reference"
+      },
+      "missing_for_reviewed_artifact_record": ["blue_visual_identity_evidence", "exact_package_identity", "integrity_evidence", "download_or_acquisition_path_not_checked"],
+      "rights_risk_posture": {
+        "rights_clearance_claimed": false,
+        "malware_safety_claimed": false,
+        "download_offered": false,
+        "risk_notes": ["Version-history and comparison metadata only; no installer was fetched."]
+      },
+      "review_recommendation": "mark_near_miss",
+      "public_projection_status": "near_miss",
+      "manual_reference_only": true,
+      "runtime_source_call_performed": false,
+      "reviewed_artifact_record_created": false,
+      "verified_artifact_created": false,
+      "notes": "Useful disambiguation lead; not enough to answer the blue-client memory as exact artifact truth."
+    },
+    {
+      "observation_id": "artifact_obs_b01_hq_ct1740_sound_blaster_16_manual_identity",
+      "query_id": "hq_sound_blaster_ct1740_manual",
+      "query_text": "manual for Sound Blaster CT1740",
+      "artifact_subject": "Creative Labs Sound Blaster 16 manual identity lead",
+      "observation_kind": "manual_artifact_observation",
+      "artifact_level": "artifact_level_3_artifact_identity_evidence",
+      "status": "candidate",
+      "source_refs": [
+        {
+          "source_id": "src_b01_phils_ct1740_card_page",
+          "url": "https://www.philscomputerlab.com/ct1740.html",
+          "title": "Phil's Computer Lab CT1740 page",
+          "source_type": "reputable_secondary_hardware_reference",
+          "manual_reference_only": true,
+          "accessed_or_recorded_date": "2026-06-10"
+        },
+        {
+          "source_id": "src_b01_ia_sound_blaster_16_manual",
+          "url": "https://archive.org/details/creativelabssoundblaster16manual",
+          "title": "Creative Labs Sound Blaster 16 manual listing",
+          "source_type": "manual_archive_metadata_page",
+          "manual_reference_only": true,
+          "accessed_or_recorded_date": "2026-06-10"
+        }
+      ],
+      "observed_claims": [
+        {
+          "claim": "Secondary CT1740 hardware page and Archive.org manual metadata together support a Sound Blaster 16 manual identity lead, while exact CT1740 manual fit still needs review.",
+          "claim_type": "manual_identity_lead",
+          "confidence": "medium",
+          "review_required": true
+        }
+      ],
+      "artifact_identity_fields": {
+        "name": "Creative Labs Sound Blaster 16 manual",
+        "version": "1995 manual metadata lead",
+        "platform": "Sound Blaster 16 family; CT1740 fit needs review",
+        "publisher_or_author": "Creative Labs",
+        "date_or_period": "1995 listing metadata",
+        "object_type": "manual",
+        "source_family": "manual_reference"
+      },
+      "missing_for_reviewed_artifact_record": ["exact_ct1740_fit", "manual_edition_or_page_scope", "integrity_evidence", "rights_posture_not_cleared"],
+      "rights_risk_posture": {
+        "rights_clearance_claimed": false,
+        "malware_safety_claimed": false,
+        "download_offered": false,
+        "risk_notes": ["Archive listing metadata only; no PDF, scan, or file was fetched."]
+      },
+      "review_recommendation": "review_candidate",
+      "public_projection_status": "candidate",
+      "manual_reference_only": true,
+      "runtime_source_call_performed": false,
+      "reviewed_artifact_record_created": false,
+      "verified_artifact_created": false,
+      "notes": "Stronger than the prior absence lead, but still bounded to review input."
+    },
+    {
+      "observation_id": "artifact_obs_b01_hq_firefox_xp_5290esr_release_integrity_lead",
+      "query_id": "hq_firefox_last_xp",
+      "query_text": "latest Firefox before XP support ended",
+      "artifact_subject": "Firefox 52.9.0 ESR Windows package integrity lead",
+      "observation_kind": "manual_artifact_observation",
+      "artifact_level": "artifact_level_4_artifact_integrity_evidence",
+      "status": "candidate",
+      "source_refs": [
+        {
+          "source_id": "src_b01_firefox_5290esr_release_index",
+          "url": "https://ftp.mozilla.org/pub/firefox/releases/52.9.0esr/",
+          "title": "Mozilla Firefox 52.9.0esr release directory",
+          "source_type": "publisher_release_index",
+          "manual_reference_only": true,
+          "accessed_or_recorded_date": "2026-06-10"
+        },
+        {
+          "source_id": "src_b01_firefox_5290esr_win32_en_us_index",
+          "url": "https://ftp.mozilla.org/pub/firefox/releases/52.9.0esr/win32/en-US/",
+          "title": "Mozilla Firefox 52.9.0esr win32 en-US directory",
+          "source_type": "publisher_release_index",
+          "manual_reference_only": true,
+          "accessed_or_recorded_date": "2026-06-10"
+        },
+        {
+          "source_id": "src_b01_firefox_5290esr_release_notes",
+          "url": "https://www.firefox.com/en-US/firefox/52.9.0/releasenotes/",
+          "title": "Firefox ESR 52.9.0 release notes",
+          "source_type": "publisher_release_notes",
+          "manual_reference_only": true,
+          "accessed_or_recorded_date": "2026-06-10"
+        }
+      ],
+      "observed_claims": [
+        {
+          "claim": "Mozilla release notes identify Firefox ESR 52.9.0 and release date, and Mozilla release directories expose Windows package and checksum metadata.",
+          "claim_type": "publisher_release_integrity_lead",
+          "confidence": "high",
+          "review_required": true
+        }
+      ],
+      "artifact_identity_fields": {
+        "name": "Firefox ESR",
+        "version": "52.9.0esr",
+        "platform": "Windows XP final-support context",
+        "publisher_or_author": "Mozilla",
+        "date_or_period": "2018-06-26 release notes / release directory",
+        "object_type": "software_application",
+        "source_family": "manual_reference"
+      },
+      "missing_for_reviewed_artifact_record": ["specific_hash_not_selected", "signature_not_verified", "download_or_acquisition_path_not_checked", "rights_posture_not_cleared"],
+      "rights_risk_posture": {
+        "rights_clearance_claimed": false,
+        "malware_safety_claimed": false,
+        "download_offered": false,
+        "risk_notes": ["Directory and release-note metadata only; no checksum file or binary was fetched."]
+      },
+      "review_recommendation": "review_candidate",
+      "public_projection_status": "candidate",
+      "manual_reference_only": true,
+      "runtime_source_call_performed": false,
+      "reviewed_artifact_record_created": false,
+      "verified_artifact_created": false,
+      "notes": "Strong review input for the XP Firefox query, still no verified artifact claim."
+    },
+    {
+      "observation_id": "artifact_obs_b01_hq_ray_tracing_parallel_course_byte_toc_identity",
+      "query_id": "hq_ray_tracing_1994_magazine",
+      "query_text": "article about ray tracing in a 1994 magazine",
+      "artifact_subject": "Parallel Course BYTE July 1994 article identity lead",
+      "observation_kind": "manual_artifact_observation",
+      "artifact_level": "artifact_level_3_artifact_identity_evidence",
+      "status": "candidate",
+      "source_refs": [
+        {
+          "source_id": "src_b01_parallel_course_author_page",
+          "url": "https://sites.google.com/site/dicknewsite/home/computing/byte-articles/parallel-course-1994",
+          "title": "Dick Pountain Parallel Course page",
+          "source_type": "author_article_page",
+          "manual_reference_only": true,
+          "accessed_or_recorded_date": "2026-06-10"
+        },
+        {
+          "source_id": "src_b01_byte_1994_toc_utah",
+          "url": "https://ftp.math.utah.edu/pub/tex/bib/toc/byte1990.html",
+          "title": "BYTE 1990s table of contents index",
+          "source_type": "bibliographic_toc_index",
+          "manual_reference_only": true,
+          "accessed_or_recorded_date": "2026-06-10"
+        }
+      ],
+      "observed_claims": [
+        {
+          "claim": "Author page and BYTE table-of-contents index corroborate a July 1994 BYTE article titled Parallel Course with ray-tracing context.",
+          "claim_type": "article_identity_lead",
+          "confidence": "medium",
+          "review_required": true
+        }
+      ],
+      "artifact_identity_fields": {
+        "name": "Parallel Course",
+        "version": "article, not software version",
+        "platform": "BYTE July 1994 article context",
+        "publisher_or_author": "Dick Pountain / BYTE attribution",
+        "date_or_period": "July 1994",
+        "object_type": "article",
+        "source_family": "manual_reference"
+      },
+      "missing_for_reviewed_artifact_record": ["primary_scan_or_issue_not_checked", "page_range_discrepancy_review", "rights_posture_not_cleared"],
+      "rights_risk_posture": {
+        "rights_clearance_claimed": false,
+        "malware_safety_claimed": false,
+        "download_offered": false,
+        "risk_notes": ["Bibliographic and author-page references only; no magazine file or scan was fetched."]
+      },
+      "review_recommendation": "review_candidate",
+      "public_projection_status": "candidate",
+      "manual_reference_only": true,
+      "runtime_source_call_performed": false,
+      "reviewed_artifact_record_created": false,
+      "verified_artifact_created": false,
+      "notes": "Candidate can be reviewed for article identity; page-number mismatch remains an explicit review point."
+    },
+    {
+      "observation_id": "artifact_obs_b01_hq_driver_win98_hardware_identity_blocker",
+      "query_id": "hq_driver_win98",
+      "query_text": "driver for Win98",
+      "artifact_subject": "Unspecified Windows 98 driver request",
+      "observation_kind": "manual_artifact_observation",
+      "artifact_level": "artifact_level_0_mention_only",
+      "status": "need",
+      "source_refs": [],
+      "observed_claims": [
+        {
+          "claim": "The Windows 98 driver query is still blocked because hardware identity is absent.",
+          "claim_type": "blocked_for_user_details",
+          "confidence": "high",
+          "review_required": false
+        }
+      ],
+      "artifact_identity_fields": {
+        "name": "unknown Windows 98 driver",
+        "version": "unknown",
+        "platform": "Windows 98",
+        "publisher_or_author": "unknown",
+        "date_or_period": "unknown",
+        "object_type": "driver",
+        "source_family": "manual_reference"
+      },
+      "missing_for_reviewed_artifact_record": ["hardware_vendor", "hardware_model", "device_id_or_chipset", "bus_or_interface", "exact_windows_version", "architecture"],
+      "rights_risk_posture": {
+        "rights_clearance_claimed": false,
+        "malware_safety_claimed": false,
+        "download_offered": false,
+        "risk_notes": ["Unsafe to recommend a random Windows 98 driver without device identity."]
+      },
+      "review_recommendation": "blocked_for_user_details",
+      "public_projection_status": "need",
+      "manual_reference_only": true,
+      "runtime_source_call_performed": false,
+      "reviewed_artifact_record_created": false,
+      "verified_artifact_created": false,
+      "unsafe_to_recommend_random_driver": true,
+      "notes": "Kept as a need until USER-HARDWARE-DETAILS-00 supplies hardware identity."
+    }
+  ]
+}

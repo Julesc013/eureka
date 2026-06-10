@@ -1,0 +1,21 @@
+{
+  "schema_version": "manual_artifact_observation_batch_01_renderer_expected_outputs.v0",
+  "task_id": "MANUAL-ARTIFACT-OBSERVATION-BATCH-01",
+  "renderer_profiles": ["json_v0", "text_v0", "html_basic_v0", "snapshot_v0"],
+  "expected_status_by_observation": {
+    "artifact_obs_b01_hq_windows_7_7zip_2601_package_identity": "candidate",
+    "artifact_obs_b01_hq_windows_7_firefox_115_release_integrity_lead": "candidate",
+    "artifact_obs_b01_hq_blue_ftp_flashfxp_xp_compatibility_near_miss": "near_miss",
+    "artifact_obs_b01_hq_ct1740_sound_blaster_16_manual_identity": "candidate",
+    "artifact_obs_b01_hq_firefox_xp_5290esr_release_integrity_lead": "candidate",
+    "artifact_obs_b01_hq_ray_tracing_parallel_course_byte_toc_identity": "candidate",
+    "artifact_obs_b01_hq_driver_win98_hardware_identity_blocker": "need"
+  },
+  "renderer_policy": {
+    "must_escape_html": true,
+    "must_not_call_sources": true,
+    "must_not_mutate_indexes": true,
+    "must_not_create_verified_state": true,
+    "must_preserve_candidate_need_near_miss_statuses": true
+  }
+}

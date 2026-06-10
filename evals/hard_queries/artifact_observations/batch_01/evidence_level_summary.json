@@ -1,0 +1,29 @@
+{
+  "schema_version": "manual_artifact_observation_batch_01_evidence_level_summary.v0",
+  "task_id": "MANUAL-ARTIFACT-OBSERVATION-BATCH-01",
+  "manual_artifact_observation_count": 7,
+  "reviewable_artifact_item_count": 6,
+  "reviewed_artifact_record_count": 0,
+  "verified_artifact_count": 0,
+  "artifact_level_counts": {
+    "artifact_level_0_mention_only": 1,
+    "artifact_level_1_metadata_or_source_lead": 0,
+    "artifact_level_2_source_observed_artifact_listing": 0,
+    "artifact_level_3_artifact_identity_evidence": 4,
+    "artifact_level_4_artifact_integrity_evidence": 2,
+    "artifact_level_5_verified_acquisition_or_reproducibility_path": 0
+  },
+  "status_counts": {
+    "candidate": 5,
+    "need": 1,
+    "near_miss": 1,
+    "unavailable": 0,
+    "unknown": 0
+  },
+  "truth_boundary": {
+    "review_events_created": false,
+    "reviewed_artifact_records_created": false,
+    "verified_artifacts_created": false,
+    "runtime_source_calls_performed": false
+  }
+}

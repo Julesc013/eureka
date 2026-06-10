@@ -1,0 +1,29 @@
+{
+  "schema_version": "public_alpha_artifact_gate_after_manual_artifact_observation_batch_01.v0",
+  "gate_id": "public_alpha_artifact_gate_after_manual_artifact_observation_batch_01",
+  "status": "FAIL_INSUFFICIENT_REVIEWED_ARTIFACT_RECORDS",
+  "threshold_reviewed_artifact_records": 25,
+  "reviewed_artifact_record_count": 2,
+  "verified_artifact_count": 0,
+  "new_reviewed_artifact_record_count": 0,
+  "new_verified_artifact_count": 0,
+  "manual_artifact_observation_count": 7,
+  "reviewable_artifact_item_count": 6,
+  "artifact_level_counts": {
+    "artifact_level_0_mention_only": 1,
+    "artifact_level_1_metadata_or_source_lead": 0,
+    "artifact_level_2_source_observed_artifact_listing": 0,
+    "artifact_level_3_artifact_identity_evidence": 4,
+    "artifact_level_4_artifact_integrity_evidence": 2,
+    "artifact_level_5_verified_acquisition_or_reproducibility_path": 0
+  },
+  "public_alpha_blocked": true,
+  "dev_to_main_blocked": true,
+  "source_snapshot_release_gate": "stale_after_docs_eval_commit",
+  "next_recommended_task": "HUMAN-ARTIFACT-REVIEW-BATCH-01",
+  "notes": [
+    "Batch 01 creates reviewable artifact observations but no review decisions.",
+    "Reviewed artifact record count remains below the public-alpha threshold.",
+    "Windows 98 driver query remains blocked for user hardware details."
+  ]
+}

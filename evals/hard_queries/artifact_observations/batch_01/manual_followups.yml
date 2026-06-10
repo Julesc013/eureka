@@ -1,0 +1,23 @@
+schema_version: manual_artifact_observation_batch_01_followups.v0
+task_id: MANUAL-ARTIFACT-OBSERVATION-BATCH-01
+followups:
+  - followup_id: followup_b01_7zip_hash_selection
+    query_id: hq_windows_7_apps
+    priority: P0
+    needed: select exact package variant and integrity reference without downloading binaries
+  - followup_id: followup_b01_firefox_5290_hash_review
+    query_id: hq_firefox_last_xp
+    priority: P0
+    needed: select exact Windows/language variant and checksum reference without fetching binary payloads
+  - followup_id: followup_b01_ct1740_exact_fit
+    query_id: hq_sound_blaster_ct1740_manual
+    priority: P1
+    needed: review whether the Sound Blaster 16 manual listing specifically satisfies CT1740
+  - followup_id: followup_b01_parallel_course_page_range
+    query_id: hq_ray_tracing_1994_magazine
+    priority: P1
+    needed: reconcile article page range and primary issue metadata
+  - followup_id: followup_b01_blue_visual_identity
+    query_id: hq_blue_ftp_client_xp
+    priority: P2
+    needed: collect visual identity evidence for the remembered blue FTP client

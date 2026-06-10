@@ -1,0 +1,54 @@
+{
+  "schema_version": "manual_artifact_observation_batch_01_query_mapping.v0",
+  "task_id": "MANUAL-ARTIFACT-OBSERVATION-BATCH-01",
+  "query_maps": [
+    {
+      "query_id": "hq_windows_7_apps",
+      "observation_ids": [
+        "artifact_obs_b01_hq_windows_7_7zip_2601_package_identity",
+        "artifact_obs_b01_hq_windows_7_firefox_115_release_integrity_lead"
+      ],
+      "reviewable_item_ids": [
+        "artifact_review_b01_hq_windows_7_7zip_2601_package_identity",
+        "artifact_review_b01_hq_windows_7_firefox_115_release_integrity_lead"
+      ],
+      "public_alpha_artifact_readiness": "not_ready",
+      "notes": "Adds one package-identity lead and one integrity lead; neither is reviewed truth."
+    },
+    {
+      "query_id": "hq_driver_win98",
+      "observation_ids": ["artifact_obs_b01_hq_driver_win98_hardware_identity_blocker"],
+      "reviewable_item_ids": [],
+      "public_alpha_artifact_readiness": "blocked_for_user_details",
+      "notes": "Hardware identity is still required before any driver artifact can be selected."
+    },
+    {
+      "query_id": "hq_blue_ftp_client_xp",
+      "observation_ids": ["artifact_obs_b01_hq_blue_ftp_flashfxp_xp_compatibility_near_miss"],
+      "reviewable_item_ids": ["artifact_review_b01_hq_blue_ftp_flashfxp_xp_compatibility_near_miss"],
+      "public_alpha_artifact_readiness": "not_ready",
+      "notes": "XP compatibility is useful, but blue visual identity is still unproved."
+    },
+    {
+      "query_id": "hq_sound_blaster_ct1740_manual",
+      "observation_ids": ["artifact_obs_b01_hq_ct1740_sound_blaster_16_manual_identity"],
+      "reviewable_item_ids": ["artifact_review_b01_hq_ct1740_sound_blaster_16_manual_identity"],
+      "public_alpha_artifact_readiness": "not_ready",
+      "notes": "Manual identity lead is stronger, but exact CT1740 fit still needs review."
+    },
+    {
+      "query_id": "hq_firefox_last_xp",
+      "observation_ids": ["artifact_obs_b01_hq_firefox_xp_5290esr_release_integrity_lead"],
+      "reviewable_item_ids": ["artifact_review_b01_hq_firefox_xp_5290esr_release_integrity_lead"],
+      "public_alpha_artifact_readiness": "not_ready",
+      "notes": "Strong review input with package and checksum-index metadata; no verification performed."
+    },
+    {
+      "query_id": "hq_ray_tracing_1994_magazine",
+      "observation_ids": ["artifact_obs_b01_hq_ray_tracing_parallel_course_byte_toc_identity"],
+      "reviewable_item_ids": ["artifact_review_b01_hq_ray_tracing_parallel_course_byte_toc_identity"],
+      "public_alpha_artifact_readiness": "not_ready",
+      "notes": "Article identity is corroborated by manual references; primary scan and page review remain open."
+    }
+  ]
+}
