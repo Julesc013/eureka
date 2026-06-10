@@ -1,0 +1,85 @@
+{
+  "schema_version": "manual_artifact_observation_batch_02_packets.v0",
+  "task_id": "MANUAL-ARTIFACT-OBSERVATION-BATCH-02",
+  "source_task_id": "ARTIFACT-EVIDENCE-GAP-BATCH-01",
+  "packet_mode": "manual_reference_packet_only",
+  "runtime_source_calls_performed": false,
+  "downloads_performed": false,
+  "file_fetches_performed": false,
+  "wayback_replay_performed": false,
+  "new_source_references_created": 0,
+  "packets": [
+    {
+      "packet_id": "artifact_obs_b02_ct1740_exact_manual_fit_packet",
+      "source_gap_id": "gap_b02_ct1740_exact_manual_fit",
+      "query_id": "hq_sound_blaster_ct1740_manual",
+      "status": "candidate",
+      "carried_source_refs": ["src_b01_phils_ct1740_card_page", "src_b01_ia_sound_blaster_16_manual"],
+      "review_focus": ["exact_ct1740_fit", "manual_edition_or_page_scope", "rights_risk_note"],
+      "review_recommendation": "review_candidate",
+      "reviewed_artifact_record_created": false,
+      "verified_artifact_created": false
+    },
+    {
+      "packet_id": "artifact_obs_b02_blue_ftp_visual_identity_packet",
+      "source_gap_id": "gap_b02_blue_ftp_visual_identity",
+      "query_id": "hq_blue_ftp_client_xp",
+      "status": "near_miss_or_candidate",
+      "carried_source_refs": ["src_b01_flashfxp_history_41", "src_b01_coreftp_windows_versions"],
+      "review_focus": ["blue_visual_identity_evidence", "exact_xp_era_version", "package_identity"],
+      "review_recommendation": "review_near_miss_or_candidate",
+      "reviewed_artifact_record_created": false,
+      "verified_artifact_created": false
+    },
+    {
+      "packet_id": "artifact_obs_b02_firefox_5290_hash_packet",
+      "source_gap_id": "gap_b02_firefox_5290_exact_variant_hash",
+      "query_id": "hq_firefox_last_xp",
+      "status": "candidate",
+      "carried_source_refs": ["src_b01_firefox_5290esr_release_index", "src_b01_firefox_5290esr_win32_en_us_index", "src_b01_firefox_5290esr_release_notes"],
+      "review_focus": ["exact_windows_package_variant", "checksum_reference", "signature_reference_if_available"],
+      "review_recommendation": "request_more_evidence_review",
+      "reviewed_artifact_record_created": false,
+      "verified_artifact_created": false
+    },
+    {
+      "packet_id": "artifact_obs_b02_firefox_115_hash_packet",
+      "source_gap_id": "gap_b02_firefox_115_exact_variant_hash",
+      "query_id": "hq_windows_7_apps",
+      "status": "candidate",
+      "carried_source_refs": ["src_b01_firefox_115_release_index"],
+      "review_focus": ["exact_windows_package_variant", "checksum_reference", "signature_reference_if_available"],
+      "review_recommendation": "request_more_evidence_review",
+      "reviewed_artifact_record_created": false,
+      "verified_artifact_created": false
+    },
+    {
+      "packet_id": "artifact_obs_b02_7zip_2601_integrity_packet",
+      "source_gap_id": "gap_b02_7zip_2601_integrity_evidence",
+      "query_id": "hq_windows_7_apps",
+      "status": "candidate",
+      "carried_source_refs": ["src_b01_7zip_release_2601", "src_b01_7zip_home_windows_support"],
+      "review_focus": ["package_identity", "checksum_or_signature_reference", "integrity_source_context"],
+      "review_recommendation": "request_more_evidence_review",
+      "reviewed_artifact_record_created": false,
+      "verified_artifact_created": false
+    },
+    {
+      "packet_id": "artifact_obs_b02_parallel_course_page_scope_packet",
+      "source_gap_id": "gap_b02_parallel_course_primary_scan_page_range",
+      "query_id": "hq_ray_tracing_1994_magazine",
+      "status": "candidate",
+      "carried_source_refs": ["src_b01_parallel_course_author_page", "src_b01_byte_1994_toc_utah"],
+      "review_focus": ["primary_issue_or_scan_index", "page_range", "rights_risk_note"],
+      "review_recommendation": "request_more_evidence_review",
+      "reviewed_artifact_record_created": false,
+      "verified_artifact_created": false
+    }
+  ],
+  "counts": {
+    "manual_reference_packets": 6,
+    "reviewable_artifact_items": 6,
+    "new_reviewed_artifact_records": 0,
+    "new_verified_artifacts": 0
+  }
+}

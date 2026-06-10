@@ -1,0 +1,21 @@
+{
+  "schema_version": "manual_artifact_observation_batch_02_next_task_decision.v0",
+  "task_id": "MANUAL-ARTIFACT-OBSERVATION-BATCH-02",
+  "status": "PASS_WITH_WARNINGS",
+  "recommended_next_task": "HUMAN-ARTIFACT-REVIEW-BATCH-02",
+  "recommended_next_task_reason": "Batch 02 created six reviewable no-call manual reference packets that require explicit human artifact review.",
+  "follow_on_tasks": [
+    "REVIEWED-ARTIFACT-CORPUS-BATCH-02",
+    "REVIEWED-ARTIFACT-RECORD-GATE-03"
+  ],
+  "blocked_tasks": [
+    "PUBLIC-ALPHA-READINESS-00",
+    "DEV-TO-MAIN-PROMOTION-PREFLIGHT-07",
+    "PUBLIC-ALPHA-LAUNCH-00"
+  ],
+  "public_alpha_status": "blocked",
+  "dev_to_main_promotion_status": "blocked",
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "promotion_readiness_claimed": false
+}

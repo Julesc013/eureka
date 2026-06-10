@@ -1,0 +1,26 @@
+{
+  "schema_version": "manual_artifact_observation_batch_02_source_refs.v0",
+  "task_id": "MANUAL-ARTIFACT-OBSERVATION-BATCH-02",
+  "source_reference_mode": "carryforward_only",
+  "source_task_id": "MANUAL-ARTIFACT-OBSERVATION-BATCH-01",
+  "new_source_references_created": 0,
+  "runtime_source_calls_performed": false,
+  "downloads_performed": false,
+  "file_fetches_performed": false,
+  "wayback_replay_performed": false,
+  "carried_source_ref_count": 12,
+  "carried_source_refs": [
+    "src_b01_7zip_home_windows_support",
+    "src_b01_7zip_release_2601",
+    "src_b01_firefox_115_release_index",
+    "src_b01_flashfxp_history_41",
+    "src_b01_coreftp_windows_versions",
+    "src_b01_phils_ct1740_card_page",
+    "src_b01_ia_sound_blaster_16_manual",
+    "src_b01_firefox_5290esr_release_index",
+    "src_b01_firefox_5290esr_win32_en_us_index",
+    "src_b01_firefox_5290esr_release_notes",
+    "src_b01_parallel_course_author_page",
+    "src_b01_byte_1994_toc_utah"
+  ]
+}

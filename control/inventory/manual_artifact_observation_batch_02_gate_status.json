@@ -1,0 +1,18 @@
+{
+  "schema_version": "manual_artifact_observation_batch_02_gate_status.v0",
+  "task_id": "MANUAL-ARTIFACT-OBSERVATION-BATCH-02",
+  "status": "PASS_WITH_WARNINGS",
+  "public_alpha_artifact_gate": "FAIL_INSUFFICIENT_REVIEWED_ARTIFACT_RECORDS",
+  "manual_reference_packets": 6,
+  "reviewable_artifact_items": 6,
+  "new_review_decisions": 0,
+  "new_reviewed_artifact_records": 0,
+  "new_verified_artifacts": 0,
+  "cumulative_reviewed_artifact_records": 4,
+  "minimum_public_alpha_reviewed_artifact_records": 25,
+  "reviewed_artifact_record_gap": 21,
+  "verified_artifact_count": 0,
+  "public_alpha_blocked": true,
+  "dev_to_main_promotion_blocked": true,
+  "next_recommended_task": "HUMAN-ARTIFACT-REVIEW-BATCH-02"
+}

@@ -1,0 +1,51 @@
+{
+  "schema_version": "manual_artifact_observation_batch_02_review_queue.v0",
+  "task_id": "MANUAL-ARTIFACT-OBSERVATION-BATCH-02",
+  "review_ledger_decisions_created": false,
+  "review_events_created": false,
+  "review_queue": [
+    {
+      "review_item_id": "artifact_review_b02_ct1740_exact_manual_fit",
+      "source_packet_ids": ["artifact_obs_b02_ct1740_exact_manual_fit_packet"],
+      "query_id": "hq_sound_blaster_ct1740_manual",
+      "proposed_review_focus": "exact CT1740 manual fit and edition",
+      "reviewed_artifact_record_created": false
+    },
+    {
+      "review_item_id": "artifact_review_b02_blue_ftp_visual_identity",
+      "source_packet_ids": ["artifact_obs_b02_blue_ftp_visual_identity_packet"],
+      "query_id": "hq_blue_ftp_client_xp",
+      "proposed_review_focus": "blue FTP-client visual identity and XP-era package identity",
+      "reviewed_artifact_record_created": false
+    },
+    {
+      "review_item_id": "artifact_review_b02_firefox_5290_exact_variant_hash",
+      "source_packet_ids": ["artifact_obs_b02_firefox_5290_hash_packet"],
+      "query_id": "hq_firefox_last_xp",
+      "proposed_review_focus": "Firefox 52.9.0esr Windows variant and checksum metadata",
+      "reviewed_artifact_record_created": false
+    },
+    {
+      "review_item_id": "artifact_review_b02_firefox_115_exact_variant_hash",
+      "source_packet_ids": ["artifact_obs_b02_firefox_115_hash_packet"],
+      "query_id": "hq_windows_7_apps",
+      "proposed_review_focus": "Firefox 115 ESR Windows variant and checksum metadata",
+      "reviewed_artifact_record_created": false
+    },
+    {
+      "review_item_id": "artifact_review_b02_7zip_2601_integrity_evidence",
+      "source_packet_ids": ["artifact_obs_b02_7zip_2601_integrity_packet"],
+      "query_id": "hq_windows_7_apps",
+      "proposed_review_focus": "7-Zip 26.01 package integrity evidence",
+      "reviewed_artifact_record_created": false
+    },
+    {
+      "review_item_id": "artifact_review_b02_parallel_course_page_scope",
+      "source_packet_ids": ["artifact_obs_b02_parallel_course_page_scope_packet"],
+      "query_id": "hq_ray_tracing_1994_magazine",
+      "proposed_review_focus": "BYTE Parallel Course page range and primary issue scope",
+      "reviewed_artifact_record_created": false
+    }
+  ],
+  "next_recommended_task": "HUMAN-ARTIFACT-REVIEW-BATCH-02"
+}
