@@ -1,0 +1,12 @@
+{
+  "schema_version": "human_artifact_review_batch_02_outcomes.v0",
+  "task_id": "HUMAN-ARTIFACT-REVIEW-BATCH-02",
+  "outcomes": [
+    {"outcome_id": "artifact_review_outcome_b02_ct1740", "decision": "request_more_evidence", "outcome_status": "need", "artifact_claim_status": "artifact_lead", "reviewed_artifact_record_created": false, "verified_artifact_created": false, "known_gaps": ["exact_ct1740_fit", "manual_edition_or_page_scope"]},
+    {"outcome_id": "artifact_review_outcome_b02_blue_ftp", "decision": "mark_near_miss", "outcome_status": "near_miss", "artifact_claim_status": "artifact_lead", "reviewed_artifact_record_created": false, "verified_artifact_created": false, "known_gaps": ["blue_visual_identity_evidence", "package_identity"]},
+    {"outcome_id": "artifact_review_outcome_b02_firefox_5290", "decision": "request_more_evidence", "outcome_status": "need", "artifact_claim_status": "artifact_lead", "reviewed_artifact_record_created": false, "verified_artifact_created": false, "known_gaps": ["exact_windows_package_variant", "checksum_reference"]},
+    {"outcome_id": "artifact_review_outcome_b02_firefox_115", "decision": "request_more_evidence", "outcome_status": "need", "artifact_claim_status": "artifact_lead", "reviewed_artifact_record_created": false, "verified_artifact_created": false, "known_gaps": ["exact_windows_package_variant", "checksum_reference"]},
+    {"outcome_id": "artifact_review_outcome_b02_7zip_2601", "decision": "request_more_evidence", "outcome_status": "need", "artifact_claim_status": "reviewed_artifact_record_extension_lead", "reviewed_artifact_record_created": false, "verified_artifact_created": false, "known_gaps": ["checksum_or_signature_reference", "acquisition_path_not_checked"]},
+    {"outcome_id": "artifact_review_outcome_b02_parallel_course", "decision": "request_more_evidence", "outcome_status": "need", "artifact_claim_status": "reviewed_artifact_record_extension_lead", "reviewed_artifact_record_created": false, "verified_artifact_created": false, "known_gaps": ["primary_issue_or_scan_index", "page_range"]}
+  ]
+}

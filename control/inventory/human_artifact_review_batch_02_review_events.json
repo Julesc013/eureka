@@ -1,0 +1,15 @@
+{
+  "schema_version": "human_artifact_review_batch_02_review_events.v0",
+  "task_id": "HUMAN-ARTIFACT-REVIEW-BATCH-02",
+  "review_events": [
+    {"event_id": "artifact_review_event_b02_ct1740_request_more_evidence", "decision_id": "artifact_review_decision_b02_ct1740_request_more_evidence", "decision": "request_more_evidence"},
+    {"event_id": "artifact_review_event_b02_blue_ftp_near_miss", "decision_id": "artifact_review_decision_b02_blue_ftp_near_miss", "decision": "mark_near_miss"},
+    {"event_id": "artifact_review_event_b02_firefox_5290_request_more_evidence", "decision_id": "artifact_review_decision_b02_firefox_5290_request_more_evidence", "decision": "request_more_evidence"},
+    {"event_id": "artifact_review_event_b02_firefox_115_request_more_evidence", "decision_id": "artifact_review_decision_b02_firefox_115_request_more_evidence", "decision": "request_more_evidence"},
+    {"event_id": "artifact_review_event_b02_7zip_2601_request_more_evidence", "decision_id": "artifact_review_decision_b02_7zip_2601_request_more_evidence", "decision": "request_more_evidence"},
+    {"event_id": "artifact_review_event_b02_parallel_course_request_more_evidence", "decision_id": "artifact_review_decision_b02_parallel_course_request_more_evidence", "decision": "request_more_evidence"}
+  ],
+  "review_event_count": 6,
+  "reviewed_artifact_records_created": 0,
+  "verified_artifacts_created": 0
+}

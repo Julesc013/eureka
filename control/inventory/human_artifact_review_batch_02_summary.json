@@ -1,0 +1,20 @@
+{
+  "schema_version": "human_artifact_review_batch_02_summary.v0",
+  "task_id": "HUMAN-ARTIFACT-REVIEW-BATCH-02",
+  "source_task_id": "MANUAL-ARTIFACT-OBSERVATION-BATCH-02",
+  "reviewable_items_reviewed": 6,
+  "review_decisions": 6,
+  "review_events": 6,
+  "decision_counts": {
+    "promote": 0,
+    "request_more_evidence": 5,
+    "mark_near_miss": 1
+  },
+  "new_reviewed_artifact_record_count": 0,
+  "cumulative_reviewed_artifact_record_count": 4,
+  "verified_artifact_count": 0,
+  "public_alpha_artifact_gate": "FAIL_INSUFFICIENT_REVIEWED_ARTIFACT_RECORDS",
+  "public_alpha_blocked": true,
+  "dev_to_main_promotion_blocked": true,
+  "next_recommended_task": "ARTIFACT-EVIDENCE-COLLECTION-HANDOFF-00"
+}

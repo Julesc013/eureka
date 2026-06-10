@@ -1,0 +1,18 @@
+{
+  "schema_version": "human_artifact_review_batch_02_next_task_decision.v0",
+  "task_id": "HUMAN-ARTIFACT-REVIEW-BATCH-02",
+  "status": "PASS_WITH_WARNINGS",
+  "recommended_next_task": "ARTIFACT-EVIDENCE-COLLECTION-HANDOFF-00",
+  "recommended_next_task_reason": "No-call review over carried references produced no promotions; further progress requires explicit manual/source evidence collection or user hardware details.",
+  "secondary_blocker_task": "USER-HARDWARE-DETAILS-00",
+  "blocked_tasks": [
+    "PUBLIC-ALPHA-READINESS-00",
+    "DEV-TO-MAIN-PROMOTION-PREFLIGHT-07",
+    "PUBLIC-ALPHA-LAUNCH-00"
+  ],
+  "public_alpha_status": "blocked",
+  "dev_to_main_promotion_status": "blocked",
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "promotion_readiness_claimed": false
+}

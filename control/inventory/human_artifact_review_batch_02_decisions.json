@@ -1,0 +1,91 @@
+{
+  "schema_version": "human_artifact_review_batch_02_decisions.v0",
+  "task_id": "HUMAN-ARTIFACT-REVIEW-BATCH-02",
+  "source_task_id": "MANUAL-ARTIFACT-OBSERVATION-BATCH-02",
+  "review_decisions": [
+    {
+      "review_id": "artifact_review_decision_b02_ct1740_request_more_evidence",
+      "source_review_item_id": "artifact_review_b02_ct1740_exact_manual_fit",
+      "source_packet_id": "artifact_obs_b02_ct1740_exact_manual_fit_packet",
+      "query_id": "hq_sound_blaster_ct1740_manual",
+      "review_decision": "request_more_evidence",
+      "rationale": "The packet carries useful CT1740 and Sound Blaster 16 manual references, but exact CT1740 manual fit and edition remain unresolved.",
+      "known_gaps": ["exact_ct1740_fit", "manual_edition_or_page_scope", "rights_risk_note"],
+      "verified_artifact_created": false,
+      "reviewed_artifact_record_created": false,
+      "reviewed_index_mutated": false,
+      "public_index_mutated": false,
+      "master_index_mutated": false
+    },
+    {
+      "review_id": "artifact_review_decision_b02_blue_ftp_near_miss",
+      "source_review_item_id": "artifact_review_b02_blue_ftp_visual_identity",
+      "source_packet_id": "artifact_obs_b02_blue_ftp_visual_identity_packet",
+      "query_id": "hq_blue_ftp_client_xp",
+      "review_decision": "mark_near_miss",
+      "rationale": "The carried FlashFXP/Core FTP references remain useful XP-era FTP-client leads, but blue visual identity remains unproved.",
+      "known_gaps": ["blue_visual_identity_evidence", "exact_xp_era_version", "package_identity"],
+      "verified_artifact_created": false,
+      "reviewed_artifact_record_created": false,
+      "reviewed_index_mutated": false,
+      "public_index_mutated": false,
+      "master_index_mutated": false
+    },
+    {
+      "review_id": "artifact_review_decision_b02_firefox_5290_request_more_evidence",
+      "source_review_item_id": "artifact_review_b02_firefox_5290_exact_variant_hash",
+      "source_packet_id": "artifact_obs_b02_firefox_5290_hash_packet",
+      "query_id": "hq_firefox_last_xp",
+      "review_decision": "request_more_evidence",
+      "rationale": "The packet preserves Mozilla release-directory leads, but exact Windows package variant and checksum reference were not selected.",
+      "known_gaps": ["exact_windows_package_variant", "checksum_reference", "signature_reference_if_available"],
+      "verified_artifact_created": false,
+      "reviewed_artifact_record_created": false,
+      "reviewed_index_mutated": false,
+      "public_index_mutated": false,
+      "master_index_mutated": false
+    },
+    {
+      "review_id": "artifact_review_decision_b02_firefox_115_request_more_evidence",
+      "source_review_item_id": "artifact_review_b02_firefox_115_exact_variant_hash",
+      "source_packet_id": "artifact_obs_b02_firefox_115_hash_packet",
+      "query_id": "hq_windows_7_apps",
+      "review_decision": "request_more_evidence",
+      "rationale": "The packet preserves Mozilla release-directory leads, but exact Windows package variant and checksum reference were not selected.",
+      "known_gaps": ["exact_windows_package_variant", "checksum_reference", "signature_reference_if_available"],
+      "verified_artifact_created": false,
+      "reviewed_artifact_record_created": false,
+      "reviewed_index_mutated": false,
+      "public_index_mutated": false,
+      "master_index_mutated": false
+    },
+    {
+      "review_id": "artifact_review_decision_b02_7zip_2601_request_more_evidence",
+      "source_review_item_id": "artifact_review_b02_7zip_2601_integrity_evidence",
+      "source_packet_id": "artifact_obs_b02_7zip_2601_integrity_packet",
+      "query_id": "hq_windows_7_apps",
+      "review_decision": "request_more_evidence",
+      "rationale": "The existing 7-Zip 26.01 reviewed identity record remains useful, but the batch did not add checksum, signature, acquisition, or safety evidence.",
+      "known_gaps": ["checksum_or_signature_reference", "integrity_source_context", "acquisition_path_not_checked"],
+      "verified_artifact_created": false,
+      "reviewed_artifact_record_created": false,
+      "reviewed_index_mutated": false,
+      "public_index_mutated": false,
+      "master_index_mutated": false
+    },
+    {
+      "review_id": "artifact_review_decision_b02_parallel_course_request_more_evidence",
+      "source_review_item_id": "artifact_review_b02_parallel_course_page_scope",
+      "source_packet_id": "artifact_obs_b02_parallel_course_page_scope_packet",
+      "query_id": "hq_ray_tracing_1994_magazine",
+      "review_decision": "request_more_evidence",
+      "rationale": "The existing Parallel Course reviewed article identity remains useful, but this packet did not add primary scan, issue, page range, or rights evidence.",
+      "known_gaps": ["primary_issue_or_scan_index", "page_range", "rights_risk_note"],
+      "verified_artifact_created": false,
+      "reviewed_artifact_record_created": false,
+      "reviewed_index_mutated": false,
+      "public_index_mutated": false,
+      "master_index_mutated": false
+    }
+  ]
+}
