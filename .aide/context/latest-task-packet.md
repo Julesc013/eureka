@@ -2,11 +2,11 @@
 
 ## PHASE
 
-UNSPECIFIED - EXTERNAL-FULL-DISCOVERY-RERUN-04
+UNSPECIFIED - SOURCE-SNAPSHOT-FULL-DISCOVERY-INGEST-04
 
 ## GOAL
 
-EXTERNAL-FULL-DISCOVERY-RERUN-04
+SOURCE-SNAPSHOT-FULL-DISCOVERY-INGEST-04
 
 ## WHY
 
@@ -139,8 +139,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4784
-- approx_tokens: 1196
+- chars: 4800
+- approx_tokens: 1200
 - budget_status: PASS
 - warnings:
   - none

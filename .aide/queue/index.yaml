@@ -1,4 +1,4 @@
-current_recommended_task: EXTERNAL-FULL-DISCOVERY-RERUN-04 - Rerun current full discovery after historical queue validator repair
+current_recommended_task: ARTIFACT-EVIDENCE-GAP-BATCH-01 - Target reviewed artifact evidence gaps after green rerun 04
 completed:
   - SOURCE-ACTION-KERNEL-00
   - SOURCE-WAVE-00
@@ -78,10 +78,11 @@ completed:
   - EXTERNAL-FULL-DISCOVERY-RERUN-03
   - SOURCE-SNAPSHOT-FULL-DISCOVERY-INGEST-03
   - HISTORICAL-QUEUE-VALIDATOR-DRIFT-REPAIR-03
-blocked: []
-planned:
   - EXTERNAL-FULL-DISCOVERY-RERUN-04
   - SOURCE-SNAPSHOT-FULL-DISCOVERY-INGEST-04
+blocked: []
+planned:
+  - ARTIFACT-EVIDENCE-GAP-BATCH-01
   - PUBLIC-ALPHA-READINESS-00
   - DEV-TO-MAIN-PROMOTION-PREFLIGHT-07
 waiting: []

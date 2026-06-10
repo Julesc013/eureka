@@ -1,0 +1,24 @@
+{
+  "schema_version": "source_snapshot_full_discovery_ingest_next_task_decision.v0",
+  "task": "SOURCE-SNAPSHOT-FULL-DISCOVERY-INGEST-04",
+  "status": "pass",
+  "source_snapshot_full_discovery_gate": "green_for_validated_run_head",
+  "public_alpha_status": "blocked",
+  "dev_to_main_promotion_status": "blocked",
+  "current_blockers": [
+    "reviewed artifact records remain 4 of 25",
+    "verified artifact count remains 0",
+    "public alpha readiness has not passed",
+    "dev -> main promotion preflight has not run"
+  ],
+  "recommended_next_task": "ARTIFACT-EVIDENCE-GAP-BATCH-01",
+  "recommended_next_task_reason": "Full discovery is green for the validated pre-ingest run head, so the limiting blocker is artifact-level evidence growth rather than source/snapshot validation.",
+  "not_next": [
+    "PUBLIC-ALPHA-READINESS-00",
+    "DEV-TO-MAIN-PROMOTION-PREFLIGHT-07",
+    "PUBLIC-ALPHA-LAUNCH-00"
+  ],
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "promotion_readiness_claimed": false
+}
