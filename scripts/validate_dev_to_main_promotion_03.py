@@ -369,6 +369,20 @@ def current_branch_state(root: Path) -> dict[str, str]:
     }
 
 
+POST_PROMOTION_SUCCESSOR_PREFIXES = (
+    "ARTIFACT-EVIDENCE-GAP-BATCH-",
+    "EXTERNAL-FULL-DISCOVERY-RERUN-",
+    "HISTORICAL-QUEUE-VALIDATOR-DRIFT-REPAIR-",
+    "HUMAN-ARTIFACT-REVIEW-BATCH-",
+    "MANUAL-ARTIFACT-OBSERVATION-BATCH-",
+    "PUBLIC-ALPHA-READINESS-",
+    "REVIEWED-ARTIFACT-CORPUS-BATCH-",
+    "REVIEWED-ARTIFACT-RECORD-GATE-",
+    "SOURCE-SNAPSHOT-FULL-DISCOVERY-INGEST-",
+    "SOURCE-SNAPSHOT-RELEASE-GATE-CLOSEOUT-",
+)
+
+
 def post_promotion_successor_state(root: Path) -> bool:
     queue = root / ".aide" / "queue" / "index.yaml"
     if not queue.is_file():
@@ -412,7 +426,7 @@ def post_promotion_successor_state(root: Path) -> bool:
         "CONTRACT-SCHEMA-DRIFT-REPAIR-01",
         "SOURCE-SNAPSHOT-FAILURE-REPAIR-01",
         "EXTERNAL-FULL-DISCOVERY-RERUN-02",
-    }
+    } or any(current.startswith(prefix) for prefix in POST_PROMOTION_SUCCESSOR_PREFIXES)
 
 
 def require_file(root: Path, rel: str, errors: list[str]) -> None:

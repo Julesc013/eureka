@@ -14,6 +14,7 @@ try:
     from local_queue_progress import (
         current_recommended_task,
         latest_packet_current_or_advanced,
+        is_later_control_or_handoff,
         queue_current_or_advanced,
         queue_task_available,
         queue_task_completed,
@@ -22,6 +23,7 @@ except ModuleNotFoundError:  # pragma: no cover - supports package-style imports
     from scripts.local_queue_progress import (
         current_recommended_task,
         latest_packet_current_or_advanced,
+        is_later_control_or_handoff,
         queue_current_or_advanced,
         queue_task_available,
         queue_task_completed,
@@ -439,6 +441,8 @@ def validate_health(root: Path, errors: list[str]) -> None:
 def local_track_handoff_queue(queue_current: str | None) -> bool:
     if not queue_current:
         return False
+    if is_later_control_or_handoff(queue_current):
+        return True
     if queue_current.startswith("AIDE-"):
         return True
     handoff_tasks = {
@@ -499,6 +503,7 @@ def local_track_handoff_queue(queue_current: str | None) -> bool:
         "CONTRACT-SCHEMA-DRIFT-REPAIR-01",
         "SOURCE-SNAPSHOT-FAILURE-REPAIR-01",
         "EXTERNAL-FULL-DISCOVERY-RERUN-02",
+        "HISTORICAL-QUEUE-VALIDATOR-DRIFT-REPAIR-03",
     }
     return any(queue_current == task or queue_current.startswith(f"{task} ") for task in handoff_tasks)
 
@@ -533,10 +538,16 @@ def latest_packet_is_later_control_or_handoff(packet_text: str) -> bool:
         "MANUAL-OBSERVATION-BATCH-",
         "HUMAN-REVIEW-BATCH-",
         "REVIEWED-CORPUS-SEED-BATCH-",
+        "REVIEWED-ARTIFACT-RECORD-GATE-",
+        "MANUAL-ARTIFACT-OBSERVATION-BATCH-",
+        "HUMAN-ARTIFACT-REVIEW-BATCH-",
+        "REVIEWED-ARTIFACT-CORPUS-BATCH-",
+        "ARTIFACT-EVIDENCE-GAP-BATCH-",
         "ARCHITECTURE-BOUNDARY-DRIFT-REPAIR-",
         "QUEUE-HANDOFF-DRIFT-REPAIR-",
         "GENERATED-ARTIFACT-DRIFT-REPAIR-",
         "CONTRACT-SCHEMA-DRIFT-REPAIR-",
+        "HISTORICAL-QUEUE-VALIDATOR-DRIFT-REPAIR-",
         "EXTERNAL-FULL-DISCOVERY-",
     )
     return any(marker in packet_text for marker in markers)

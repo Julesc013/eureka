@@ -82,6 +82,24 @@ class HuntMainPromotionGateTests(unittest.TestCase):
             self.assertEqual("SOURCE-SNAPSHOT-BASELINE-CLOSEOUT-01", current_recommended_task_id(root))
             self.assertTrue(post_hunt_current_allowed(root))
 
+    def test_post_hunt_queue_accepts_later_validator_repair_state(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            queue = root / ".aide/queue/index.yaml"
+            queue.parent.mkdir(parents=True)
+            queue.write_text(
+                "current_recommended_task: HISTORICAL-QUEUE-VALIDATOR-DRIFT-REPAIR-03 - Repair stale validator expectations\n"
+                "completed:\n"
+                "  - HUNT-12\n"
+                "  - SOURCE-ACTION-KERNEL-00\n"
+                "  - SOURCE-WAVE-00\n"
+                "  - SNAPSHOT-RELAY-00\n"
+                "  - CI-FULL-DISCOVERY-HARNESS-00\n",
+                encoding="utf-8",
+            )
+            self.assertEqual("HISTORICAL-QUEUE-VALIDATOR-DRIFT-REPAIR-03", current_recommended_task_id(root))
+            self.assertTrue(post_hunt_current_allowed(root))
+
 
 if __name__ == "__main__":
     unittest.main()

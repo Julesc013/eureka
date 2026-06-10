@@ -38,6 +38,9 @@ class LocalApplianceTrackTests(unittest.TestCase):
             self.assertIn("id: LOCAL-01", text)
             self.assertIn("status: completed", text)
 
+    def test_queue_helper_accepts_historical_validator_repair_successor(self) -> None:
+        self.assertTrue(is_later_control_or_handoff("HISTORICAL-QUEUE-VALIDATOR-DRIFT-REPAIR-03"))
+
     def test_f0_deferred_until_local_14(self) -> None:
         payload = load_json("control/inventory/f0_deferral_for_local_appliance.json")
         self.assertEqual("LOCAL-14", payload["deferred_until"])
