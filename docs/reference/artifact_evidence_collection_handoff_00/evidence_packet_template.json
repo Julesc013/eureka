@@ -1,0 +1,31 @@
+{
+  "schema_version": "artifact_evidence_packet_template.v0",
+  "template_only": true,
+  "target_id": "<collection_target_id>",
+  "status": "deferred",
+  "artifact_evidence_level": "level0_mention_only",
+  "source_refs": [],
+  "observed_fields": {
+    "artifact_name": null,
+    "artifact_version": null,
+    "publisher_or_source": null,
+    "platform_or_compatibility": null,
+    "package_or_member_name": null,
+    "checksum_or_signature": null,
+    "page_or_scope": null,
+    "observed_url_or_locator": null,
+    "observed_date": null
+  },
+  "remaining_gaps": [
+    "replace with unresolved identity, source, integrity, acquisition, or user-detail gaps"
+  ],
+  "recommended_review_action": "request_more_evidence",
+  "collector_notes": "Template only. Do not include raw private paths, secrets, binaries, screenshots, raw HTML dumps, or unverifiable claims.",
+  "truth_boundary": {
+    "reviewed_artifact_record_created": false,
+    "verified_artifact_created": false,
+    "rights_clearance_claimed": false,
+    "malware_safety_claimed": false,
+    "download_or_execution_performed": false
+  }
+}

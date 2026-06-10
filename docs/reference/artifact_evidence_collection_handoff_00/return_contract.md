@@ -49,3 +49,18 @@ Resume task after a valid compact return:
 ```text
 MANUAL-ARTIFACT-OBSERVATION-BATCH-03
 ```
+
+## Additive Template Files
+
+The following files clarify the return shape without changing the contract:
+
+- `evidence_packet_template.json`
+- `source_reference_template.json`
+- `artifact_identity_evidence_checklist.md`
+- `artifact_integrity_evidence_checklist.md`
+- `acquisition_evidence_checklist.md`
+- `prohibited_claims.md`
+- `example_return_packet.json`
+
+If a future collector has already started against the original contract, keep
+this file stable and use the templates as optional field guidance.

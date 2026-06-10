@@ -45,3 +45,55 @@ Full unittest discovery was not run inside the AI session. The changed-path sele
 | reviewed/public/master index mutated | no |
 | public alpha launched | no |
 | `dev -> main` promoted | no |
+
+## Controller Addendum
+
+Task: `EUREKA-LONG-TURN-ARTIFACT-EVIDENCE-AND-VALIDATION-CONTROLLER-00`
+
+Scope: additive artifact evidence return scaffolding for
+`ARTIFACT-EVIDENCE-COLLECTION-HANDOFF-00`.
+
+Status: `PASS_WITH_WARNINGS`
+
+### Evidence Return Status
+
+The compact external return was not present at:
+
+```text
+../eureka-evidence-runs/artifact_evidence_collection_00/artifact_evidence_collection_summary.json
+```
+
+No external artifact evidence was ingested. No review decisions, reviewed
+artifact records, verified artifacts, index mutations, public-alpha launch, or
+`dev -> main` promotion were created by this scaffolding update.
+
+### Added Or Updated Files
+
+- `README.md`
+- `return_contract.md`
+- `evidence_packet_template.json`
+- `source_reference_template.json`
+- `artifact_identity_evidence_checklist.md`
+- `artifact_integrity_evidence_checklist.md`
+- `acquisition_evidence_checklist.md`
+- `prohibited_claims.md`
+- `example_return_packet.json`
+
+### Validation Run
+
+| Command | Result |
+|---|---|
+| `python -m json.tool docs/reference/artifact_evidence_collection_handoff_00/evidence_packet_template.json` | PASS |
+| `python -m json.tool docs/reference/artifact_evidence_collection_handoff_00/source_reference_template.json` | PASS |
+| `python -m json.tool docs/reference/artifact_evidence_collection_handoff_00/example_return_packet.json` | PASS |
+| `git diff --check` | PASS with line-ending normalization warnings only |
+| `py -3 .aide/scripts/aide_lite.py doctor` | PASS |
+| `py -3 .aide/scripts/aide_lite.py validate` | PASS |
+| `python scripts/check_architecture_boundaries.py` | PASS; 921 Python files checked |
+| `python scripts/check_generated_artifact_cleanliness.py --check --json` | PASS; status `pass` |
+| `py -3 scripts/eureka_test_select.py --changed --failed-first --json` | PASS; selected L0 static preflight only |
+
+### Focused Tests
+
+No focused subsystem tests were selected. Full discovery was not selected and
+was not run inside the AI session.

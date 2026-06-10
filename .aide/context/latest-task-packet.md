@@ -2,11 +2,11 @@
 
 ## PHASE
 
-UNSPECIFIED - AI-LONG-TURN-OPERATING-PROTOCOL-00
+UNSPECIFIED - EUREKA-LONG-TURN-ARTIFACT-EVIDENCE-AND-VALIDATION-CONTROLLER-00
 
 ## GOAL
 
-AI-LONG-TURN-OPERATING-PROTOCOL-00
+EUREKA-LONG-TURN-ARTIFACT-EVIDENCE-AND-VALIDATION-CONTROLLER-00
 
 ## WHY
 
@@ -139,8 +139,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4788
-- approx_tokens: 1197
+- chars: 4846
+- approx_tokens: 1212
 - budget_status: PASS
 - warnings:
   - none

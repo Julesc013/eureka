@@ -1,0 +1,20 @@
+{
+  "schema_version": "artifact_source_reference_template.v0",
+  "template_only": true,
+  "source_ref_id": "<stable_source_ref_id>",
+  "source_family": "<source_family>",
+  "source_title": "<title observed by collector>",
+  "publisher_or_owner": "<publisher, vendor, archive, or repository owner>",
+  "locator": "<url, citation, catalog id, or offline source label>",
+  "access_context": "manual_observation",
+  "observed_at": "<ISO-8601 timestamp>",
+  "observed_by": "<collector id or role>",
+  "observed_fields": [
+    "<field names supported by this source reference>"
+  ],
+  "limitations": [
+    "record missing authentication, access, rights, safety, or identity limitations here"
+  ],
+  "raw_artifact_retained_outside_repo": false,
+  "repo_safe_excerpt_available": false
+}

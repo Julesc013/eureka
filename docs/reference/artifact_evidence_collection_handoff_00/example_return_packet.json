@@ -1,0 +1,26 @@
+{
+  "schema_version": "artifact_evidence_collection_return.v0",
+  "example_only": true,
+  "run_id": "example-not-a-real-run",
+  "collected_at": "2026-06-10T00:00:00Z",
+  "collector": "example-collector",
+  "target_results": [
+    {
+      "target_id": "example_target_id",
+      "status": "deferred",
+      "source_refs": [],
+      "observed_fields": {},
+      "remaining_gaps": [
+        "replace with concrete unresolved gaps from the external/manual collection"
+      ],
+      "recommended_review_action": "request_more_evidence"
+    }
+  ],
+  "raw_artifacts_retained_outside_repo": false,
+  "downloads_performed": false,
+  "executables_fetched": false,
+  "install_or_execution_performed": false,
+  "rights_clearance_claimed": false,
+  "malware_safety_claimed": false,
+  "resume_recommended_task": "MANUAL-ARTIFACT-OBSERVATION-BATCH-03"
+}
