@@ -1,0 +1,56 @@
+{
+  "schema_version": "user_hardware_details_return.v0",
+  "task_id": "USER-HARDWARE-DETAILS-00",
+  "query_id": "hq_driver_win98",
+  "submitted_at": null,
+  "submitted_by": "user",
+  "device_identity": {
+    "hardware_vendor": null,
+    "hardware_model": null,
+    "chipset": null,
+    "board_revision": null,
+    "fcc_id_or_label": null,
+    "product_label_text": null
+  },
+  "device_ids": {
+    "pci_vendor_device_id": null,
+    "isa_pnp_id": null,
+    "usb_vid_pid": null,
+    "pcmcia_cardbus_id": null,
+    "other_device_id": null,
+    "observed_from": null
+  },
+  "machine_context": {
+    "machine_vendor": null,
+    "machine_model": null,
+    "motherboard_vendor": null,
+    "motherboard_model": null,
+    "bios": null,
+    "bus_or_interface": null
+  },
+  "windows_context": {
+    "windows_version": null,
+    "windows_98_edition": null,
+    "language_or_region": null,
+    "architecture": null,
+    "service_pack_or_update_pack": null
+  },
+  "source_or_media_context": {
+    "existing_driver_media": null,
+    "media_label": null,
+    "candidate_source_url_or_citation": null,
+    "previously_tried_driver": null,
+    "observed_error_messages": null
+  },
+  "attachments_or_observations": [],
+  "redactions_applied": [],
+  "truth_boundary": {
+    "driver_recommended": false,
+    "reviewed_artifact_record_created": false,
+    "verified_artifact_created": false,
+    "download_or_execution_performed": false,
+    "rights_clearance_claimed": false,
+    "malware_safety_claimed": false
+  },
+  "recommended_next_action": "review_hardware_details"
+}
