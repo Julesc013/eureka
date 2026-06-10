@@ -40,6 +40,7 @@ the exact hardware identity, bus/interface, and operating-system variant.
 - [Device id capture guide](DEVICE_ID_CAPTURE_GUIDE.md)
 - [Safe driver review rules](SAFE_DRIVER_REVIEW_RULES.md)
 - [Return template](RETURN_TEMPLATE.json)
+- [Validator usage](VALIDATOR_USAGE.md)
 - [Validation report](VALIDATION_REPORT.md)
 
 ## Resume Rule
