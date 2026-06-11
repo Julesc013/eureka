@@ -2,11 +2,11 @@
 
 ## PHASE
 
-UNSPECIFIED - EUREKA-HIGH-PRODUCTIVITY-LONG-TURN-CONTROLLER-01
+UNSPECIFIED - SOURCE-SNAPSHOT-FULL-DISCOVERY-INGEST-07-AND-IA-METADATA-PRODUCT-PIVOT
 
 ## GOAL
 
-EUREKA-HIGH-PRODUCTIVITY-LONG-TURN-CONTROLLER-01
+SOURCE-SNAPSHOT-FULL-DISCOVERY-INGEST-07-AND-IA-METADATA-PRODUCT-PIVOT
 
 ## WHY
 
@@ -139,8 +139,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4816
-- approx_tokens: 1204
+- chars: 4860
+- approx_tokens: 1215
 - budget_status: PASS
 - warnings:
   - none

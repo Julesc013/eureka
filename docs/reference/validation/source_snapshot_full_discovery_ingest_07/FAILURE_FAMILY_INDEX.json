@@ -1,0 +1,8 @@
+{
+  "task_id": "SOURCE-SNAPSHOT-FULL-DISCOVERY-INGEST-07",
+  "run_id": "source_snapshot_full_discovery_rerun_07",
+  "failure_families": [],
+  "failure_family_count": 0,
+  "repair_applied": false,
+  "next_repair_task": null
+}
