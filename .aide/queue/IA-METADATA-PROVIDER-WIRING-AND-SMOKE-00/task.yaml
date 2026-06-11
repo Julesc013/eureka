@@ -1,0 +1,26 @@
+id: IA-METADATA-PROVIDER-WIRING-AND-SMOKE-00
+title: Wire bounded IA metadata provider fallback smoke
+status: authorized
+purpose: Prove one fixture-backed Internet Archive metadata provider path through the governed resolution-run fallback seam without creating artifact evidence or public truth.
+allowed_scope_summary: Narrow queue authorization, existing fallback/provider seam preflight, fixture-backed IA metadata provider smoke, SurfaceKernel projection, baseline renderer fixtures, focused tests, report package, and external full-discovery rerun handoff.
+gate:
+  - SOURCE-SNAPSHOT-FULL-DISCOVERY-INGEST-07 completed with rerun 07 terminal pass.
+  - LOCAL-E2E-SEARCH-DEMO-00 already completed.
+  - External artifact evidence remains absent and waiting.
+  - USER_HARDWARE_DETAILS remains blocked/waiting.
+  - Public alpha remains blocked.
+  - dev -> main promotion remains blocked.
+  - IA metadata output is source-observation, candidate, need, near_miss, policy_blocked, request_more_evidence, or unavailable only.
+  - IA metadata output is not reviewed artifact evidence.
+  - IA metadata output is not verified artifact evidence.
+  - No downloads, file fetching, Wayback replay, extraction, rights-clearance claim, malware/safety claim, reviewed/public/master index mutation, or public route direct provider call.
+proof_level_required: L1
+recommended_after: SOURCE-SNAPSHOT-FULL-DISCOVERY-INGEST-07
+recommended_next: SOURCE-SNAPSHOT-FULL-DISCOVERY-INGEST-08
+result:
+  status: authorized_for_current_turn
+  queue_authorization: IA-METADATA-PROVIDER-WIRING-AUTHORIZATION-00
+  external_artifact_evidence_status: WAITING_FOR_EXTERNAL_ARTIFACT_EVIDENCE
+  user_hardware_details_status: WAITING_FOR_USER_HARDWARE_DETAILS
+  public_alpha_status: blocked
+  dev_to_main_status: blocked

@@ -2,11 +2,11 @@
 
 ## PHASE
 
-UNSPECIFIED - SOURCE-SNAPSHOT-FULL-DISCOVERY-INGEST-07-AND-IA-METADATA-PRODUCT-PIVOT
+UNSPECIFIED - IA-METADATA-PROVIDER-WIRING-AND-SMOKE-00
 
 ## GOAL
 
-SOURCE-SNAPSHOT-FULL-DISCOVERY-INGEST-07-AND-IA-METADATA-PRODUCT-PIVOT
+IA-METADATA-PROVIDER-WIRING-AND-SMOKE-00
 
 ## WHY
 
@@ -139,8 +139,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4860
-- approx_tokens: 1215
+- chars: 4800
+- approx_tokens: 1200
 - budget_status: PASS
 - warnings:
   - none
