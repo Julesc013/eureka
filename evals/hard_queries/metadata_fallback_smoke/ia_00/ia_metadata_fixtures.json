@@ -1,0 +1,55 @@
+{
+  "schema_version": "ia_metadata_fallback_fixtures.v0",
+  "task_id": "IA-METADATA-PROVIDER-WIRING-AND-SMOKE-00",
+  "metadata_only": true,
+  "live_network_required": false,
+  "cases": [
+    {
+      "case_id": "candidate_sound_blaster_manual",
+      "query_text": "manual for Sound Blaster CT1740",
+      "fixture_mode": "candidate",
+      "docs": [
+        {
+          "identifier": "sound_blaster_ct1740_manual_fixture",
+          "title": "Sound Blaster <CT1740> \"manual\" metadata candidate",
+          "mediatype": "texts",
+          "collection": ["eureka_fixture_manuals"],
+          "creator": "Fixture metadata lab",
+          "date": "1993",
+          "description": "Metadata-only candidate for a Sound Blaster CT1740 manual. Review is required before any artifact claim."
+        }
+      ]
+    },
+    {
+      "case_id": "need_ray_tracing_magazine",
+      "query_text": "article about ray tracing in a 1994 magazine",
+      "fixture_mode": "empty",
+      "docs": []
+    },
+    {
+      "case_id": "near_miss_blue_ftp_client",
+      "query_text": "old blue FTP client for XP",
+      "fixture_mode": "near_miss",
+      "near_miss_reason": "IA metadata fixture has FTP-client-like clues but no reviewed identity match."
+    },
+    {
+      "case_id": "unavailable_firefox_malformed",
+      "query_text": "latest Firefox before XP support ended",
+      "fixture_mode": "malformed",
+      "docs": []
+    },
+    {
+      "case_id": "policy_blocked_disabled",
+      "query_text": "manual for Sound Blaster CT1740",
+      "fixture_mode": "candidate",
+      "docs": [
+        {
+          "identifier": "policy_blocked_should_not_be_called",
+          "title": "Should not be called",
+          "mediatype": "texts",
+          "description": "This row proves fallback-disabled policy prevents provider access."
+        }
+      ]
+    }
+  ]
+}

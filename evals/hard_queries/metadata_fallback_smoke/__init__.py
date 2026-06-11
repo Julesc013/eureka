@@ -1,0 +1,2 @@
+"""Metadata fallback smoke fixtures."""
+

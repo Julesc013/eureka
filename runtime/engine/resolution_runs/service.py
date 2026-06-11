@@ -431,6 +431,19 @@ class LocalResolutionRunService(ResolutionRunService):
             )
 
         source_status = _string_or_default(source_result.get("status"), "unknown")
+        if source_status == "near_miss":
+            return _fallback_summary(
+                search_query,
+                status="near_miss",
+                trigger=trigger,
+                policy=policy,
+                source_id=observed_source_id,
+                source_family=observed_source_family,
+                reason_codes=("fallback_near_miss",),
+                failure_reason=_string_or_default(source_result.get("failure_reason"), "fallback_near_miss"),
+                source_observation=source_observation,
+                needs=(_fallback_need(search_query, reason_code="fallback_near_miss"),),
+            )
         if source_status != "succeeded":
             return _fallback_summary(
                 search_query,

@@ -1,0 +1,41 @@
+{
+  "schema_version": "ia_metadata_fallback_expected_outputs.v0",
+  "task_id": "IA-METADATA-PROVIDER-WIRING-AND-SMOKE-00",
+  "expected": {
+    "candidate_sound_blaster_manual": {
+      "status": "candidate",
+      "reason_codes": ["fallback_candidates_available"],
+      "candidate_count": 1,
+      "need_count": 0,
+      "provider_called": true
+    },
+    "need_ray_tracing_magazine": {
+      "status": "need",
+      "reason_codes": ["fallback_no_candidates"],
+      "candidate_count": 0,
+      "need_count": 1,
+      "provider_called": true
+    },
+    "near_miss_blue_ftp_client": {
+      "status": "near_miss",
+      "reason_codes": ["fallback_near_miss"],
+      "candidate_count": 0,
+      "need_count": 1,
+      "provider_called": true
+    },
+    "unavailable_firefox_malformed": {
+      "status": "unavailable",
+      "reason_codes": ["source_failed"],
+      "candidate_count": 0,
+      "need_count": 0,
+      "provider_called": true
+    },
+    "policy_blocked_disabled": {
+      "status": "policy_blocked",
+      "reason_codes": ["fallback_disabled"],
+      "candidate_count": 0,
+      "need_count": 0,
+      "provider_called": false
+    }
+  }
+}

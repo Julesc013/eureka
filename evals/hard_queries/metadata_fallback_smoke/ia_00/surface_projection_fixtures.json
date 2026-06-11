@@ -1,0 +1,18 @@
+{
+  "schema_version": "ia_metadata_surface_projection_fixtures.v0",
+  "task_id": "IA-METADATA-PROVIDER-WIRING-AND-SMOKE-00",
+  "profiles": ["json_v0", "text_v0", "html_basic_v0", "snapshot_v0"],
+  "expected_statuses": {
+    "candidate_sound_blaster_manual": "candidate",
+    "need_ray_tracing_magazine": "need",
+    "near_miss_blue_ftp_client": "near_miss",
+    "unavailable_firefox_malformed": "unavailable",
+    "policy_blocked_disabled": "policy_blocked"
+  },
+  "public_surface_requirements": {
+    "operator_actions_stripped": true,
+    "renderer_may_call_sources": false,
+    "reviewed_artifact_count_unchanged": 4,
+    "verified_artifact_count_unchanged": 0
+  }
+}

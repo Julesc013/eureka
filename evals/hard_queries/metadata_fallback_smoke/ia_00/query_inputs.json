@@ -1,0 +1,31 @@
+{
+  "schema_version": "ia_metadata_fallback_query_inputs.v0",
+  "task_id": "IA-METADATA-PROVIDER-WIRING-AND-SMOKE-00",
+  "queries": [
+    {
+      "case_id": "candidate_sound_blaster_manual",
+      "query_text": "manual for Sound Blaster CT1740",
+      "expected_status": "candidate"
+    },
+    {
+      "case_id": "need_ray_tracing_magazine",
+      "query_text": "article about ray tracing in a 1994 magazine",
+      "expected_status": "need"
+    },
+    {
+      "case_id": "near_miss_blue_ftp_client",
+      "query_text": "old blue FTP client for XP",
+      "expected_status": "near_miss"
+    },
+    {
+      "case_id": "unavailable_firefox_malformed",
+      "query_text": "latest Firefox before XP support ended",
+      "expected_status": "unavailable"
+    },
+    {
+      "case_id": "policy_blocked_disabled",
+      "query_text": "manual for Sound Blaster CT1740",
+      "expected_status": "policy_blocked"
+    }
+  ]
+}

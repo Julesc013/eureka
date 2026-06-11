@@ -1,0 +1,12 @@
+{
+  "schema_version": "ia_metadata_renderer_expected_outputs.v0",
+  "task_id": "IA-METADATA-PROVIDER-WIRING-AND-SMOKE-00",
+  "profiles": ["json_v0", "text_v0", "html_basic_v0", "snapshot_v0"],
+  "assertions": {
+    "status_visible": true,
+    "html_escapes_unsafe_text": true,
+    "snapshot_deterministic": true,
+    "renderer_does_not_call_provider": true,
+    "renderer_does_not_mutate_indexes": true
+  }
+}
