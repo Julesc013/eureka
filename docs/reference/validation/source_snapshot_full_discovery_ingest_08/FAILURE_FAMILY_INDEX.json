@@ -1,0 +1,39 @@
+{
+  "schema_version": "failure_family_index.v0",
+  "task_id": "SOURCE-SNAPSHOT-FULL-DISCOVERY-INGEST-08",
+  "run_id": "source_snapshot_full_discovery_rerun_08",
+  "raw_failure_family_count": 12,
+  "failed_test_count": 23,
+  "families": [
+    {
+      "family_id": "historical_queue_validator_drift",
+      "test_count": 17,
+      "error_count": 0,
+      "representative_message": "queue index/latest task packet must point to historical HUNT successor or mark historical HUNT task completed",
+      "likely_root_cause": "Historical HUNT validators still assert older queue successor/current-task allowlists after the queue advanced to IA-METADATA-PROVIDER-WIRING-AND-SMOKE-00.",
+      "recommended_next_repair_task": "HISTORICAL-QUEUE-VALIDATOR-DRIFT-REPAIR-08",
+      "risk": "medium"
+    },
+    {
+      "family_id": "historical_dev_to_main_promotion_validator_drift",
+      "test_count": 4,
+      "error_count": 0,
+      "representative_message": "post-promotion origin/main and origin/dev must match",
+      "likely_root_cause": "Historical dev-to-main promotion validators still run against current branch divergence and old promotion assumptions even though dev-to-main promotion is blocked.",
+      "recommended_next_repair_task": "HISTORICAL-QUEUE-VALIDATOR-DRIFT-REPAIR-08",
+      "risk": "medium"
+    },
+    {
+      "family_id": "public_alpha_defer_queue_validator_drift",
+      "test_count": 2,
+      "error_count": 0,
+      "representative_message": "queue current recommended task must be active discovery or a later blocked repair/readiness task",
+      "likely_root_cause": "The public-alpha defer validator allowlist has not been updated for the IA metadata provider smoke queue successor.",
+      "recommended_next_repair_task": "HISTORICAL-QUEUE-VALIDATOR-DRIFT-REPAIR-08",
+      "risk": "medium"
+    }
+  ],
+  "same_turn_repair_applied": false,
+  "same_turn_repair_rejected_reason": "Failures span multiple historical validator surfaces and 12 raw unittest families."
+}
+
