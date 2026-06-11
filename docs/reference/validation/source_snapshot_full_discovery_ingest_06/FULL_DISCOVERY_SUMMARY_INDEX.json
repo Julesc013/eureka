@@ -1,0 +1,37 @@
+{
+  "task_id": "SOURCE-SNAPSHOT-FULL-DISCOVERY-INGEST-06",
+  "run_id": "source_snapshot_full_discovery_rerun_06",
+  "terminal": true,
+  "status": "pass",
+  "exit_code": 0,
+  "current_to_head": true,
+  "current_head": "56052beff785f661d50537b3a9b9c527cbad08b2",
+  "summary_head": "56052beff785f661d50537b3a9b9c527cbad08b2",
+  "summary_branch": "dev",
+  "summary_working_tree_clean": true,
+  "command": "python -m unittest discover -s tests -t .",
+  "tests_run": 5645,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "duration_seconds": 2773.933532,
+  "external_artifacts": {
+    "status": "../eureka-test-runs/source_snapshot_full_discovery_rerun_06/status.json",
+    "summary": "../eureka-test-runs/source_snapshot_full_discovery_rerun_06/full_unittest_summary.json",
+    "failure_families": "../eureka-test-runs/source_snapshot_full_discovery_rerun_06/failure_families.json",
+    "failed_tests": "../eureka-test-runs/source_snapshot_full_discovery_rerun_06/failed_tests.txt",
+    "environment": "../eureka-test-runs/source_snapshot_full_discovery_rerun_06/environment.json"
+  },
+  "failed_module_count": 0,
+  "raw_external_failure_family_count": 0,
+  "classified_failure_family_count": 0,
+  "source_snapshot_release_gate": "green_current",
+  "public_alpha_gate": "blocked",
+  "dev_to_main_gate": "blocked",
+  "reviewed_artifact_gate": "blocked_4_of_25",
+  "verified_artifact_gate": "blocked_0",
+  "external_artifact_evidence_gate": "waiting_for_external_artifact_evidence",
+  "hardware_details_gate": "waiting_for_user_hardware_details",
+  "next_task": "LOCAL-E2E-SEARCH-DEMO-00"
+}
+
