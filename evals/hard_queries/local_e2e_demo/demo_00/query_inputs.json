@@ -1,0 +1,66 @@
+{
+  "queries": [
+    {
+      "expected_status": "candidate",
+      "query_id": "hq_windows_7_apps",
+      "query_text": "Windows 7 apps",
+      "reason_codes": [
+        "fallback_candidates_available",
+        "compatibility_scope_visible"
+      ],
+      "status_concept": "candidate"
+    },
+    {
+      "expected_status": "need",
+      "query_id": "hq_driver_win98",
+      "query_text": "driver for Win98",
+      "reason_codes": [
+        "hardware_identifier_missing",
+        "source_scope_not_enough"
+      ],
+      "status_concept": "blocked_for_user_details"
+    },
+    {
+      "expected_status": "near_miss",
+      "query_id": "hq_blue_ftp_client_xp",
+      "query_text": "old blue FTP client for XP",
+      "reason_codes": [
+        "visual_clue_uncertain",
+        "platform_scope_visible"
+      ],
+      "status_concept": "near_miss"
+    },
+    {
+      "expected_status": "candidate",
+      "query_id": "hq_sound_blaster_ct1740_manual",
+      "query_text": "manual for Sound Blaster CT1740",
+      "reason_codes": [
+        "manual_candidate_available",
+        "model_identifier_visible"
+      ],
+      "status_concept": "candidate"
+    },
+    {
+      "expected_status": "policy_blocked",
+      "query_id": "hq_firefox_last_xp",
+      "query_text": "latest Firefox before XP support ended",
+      "reason_codes": [
+        "support_window_evidence_required",
+        "public_acquisition_action_blocked"
+      ],
+      "status_concept": "policy_blocked"
+    },
+    {
+      "expected_status": "unavailable",
+      "query_id": "hq_ray_tracing_1994_magazine",
+      "query_text": "article about ray tracing in a 1994 magazine",
+      "reason_codes": [
+        "publication_title_missing",
+        "article_scan_capability_gap"
+      ],
+      "status_concept": "unavailable"
+    }
+  ],
+  "schema_version": "local_e2e_query_inputs.v0",
+  "task_id": "LOCAL-E2E-SEARCH-DEMO-00"
+}

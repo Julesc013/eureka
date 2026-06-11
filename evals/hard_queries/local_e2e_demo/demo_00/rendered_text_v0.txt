@@ -1,0 +1,75 @@
+LOCAL-E2E-SEARCH-DEMO-00
+Profile: text_v0
+Artifact gate: FAIL_INSUFFICIENT_REVIEWED_ARTIFACT_RECORDS
+Reviewed artifacts: 4/25
+Verified artifacts: 0
+
+Query: Windows 7 apps
+Expected status: candidate
+Status concept: candidate
+Resolution run run-hq_windows_7_apps
+Status: candidate
+Summary: Fallback returned candidate
+Fallback status: candidate
+Reasons: fallback_candidates_available, compatibility_scope_visible
+Candidates: Candidate Windows 7 utility package [candidate]
+Actions: view, inspect_evidence, cite
+Notes: public projection filters operator-only actions
+
+Query: driver for Win98
+Expected status: need
+Status concept: blocked_for_user_details
+Resolution run run-hq_driver_win98
+Status: need
+Summary: Fallback returned need
+Fallback status: need
+Reasons: hardware_identifier_missing, source_scope_not_enough
+Needs: Need vendor and device model before driver candidate can be useful [need]
+Actions: view, inspect_evidence, cite
+Notes: public projection filters operator-only actions
+
+Query: old blue FTP client for XP
+Expected status: near_miss
+Status concept: near_miss
+Resolution run run-hq_blue_ftp_client_xp
+Status: near_miss
+Summary: Fallback returned near_miss
+Fallback status: near_miss
+Reasons: visual_clue_uncertain, platform_scope_visible
+Candidates: Plausible XP FTP <client>; "blue" visual clue not supported [candidate]
+Actions: view, inspect_evidence, cite
+Notes: public projection filters operator-only actions
+
+Query: manual for Sound Blaster CT1740
+Expected status: candidate
+Status concept: candidate
+Resolution run run-hq_sound_blaster_ct1740_manual
+Status: candidate
+Summary: Fallback returned candidate
+Fallback status: candidate
+Reasons: manual_candidate_available, model_identifier_visible
+Candidates: Candidate CT1740 manual document [candidate]
+Actions: view, inspect_evidence, cite
+Notes: public projection filters operator-only actions
+
+Query: latest Firefox before XP support ended
+Expected status: policy_blocked
+Status concept: policy_blocked
+Resolution run run-hq_firefox_last_xp
+Status: policy_blocked
+Summary: Fallback returned policy_blocked
+Fallback status: policy_blocked
+Reasons: support_window_evidence_required, public_acquisition_action_blocked
+Actions: view, inspect_evidence, cite
+Notes: public projection filters operator-only actions
+
+Query: article about ray tracing in a 1994 magazine
+Expected status: unavailable
+Status concept: unavailable
+Resolution run run-hq_ray_tracing_1994_magazine
+Status: unavailable
+Summary: Fallback returned unavailable
+Fallback status: unavailable
+Reasons: publication_title_missing, article_scan_capability_gap
+Actions: view, inspect_evidence, cite
+Notes: public projection filters operator-only actions

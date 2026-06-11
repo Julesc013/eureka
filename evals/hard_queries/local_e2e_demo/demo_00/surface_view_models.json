@@ -1,0 +1,2495 @@
+{
+  "artifact_gate": {
+    "dev_to_main_promotion_blocked": true,
+    "external_artifact_evidence": "absent",
+    "hardware_details": "absent",
+    "minimum_public_alpha_reviewed_artifact_records": 25,
+    "public_alpha_blocked": true,
+    "reviewed_artifact_record_count": 4,
+    "reviewed_artifact_record_gap": 21,
+    "schema_version": "local_e2e_artifact_gate_snapshot.v0",
+    "source_path": "evals/hard_queries/artifact_record_gate/gate_02/public_alpha_artifact_gate.json",
+    "status": "FAIL_INSUFFICIENT_REVIEWED_ARTIFACT_RECORDS",
+    "verified_artifact_count": 0
+  },
+  "schema_version": "local_e2e_surface_view_models.v0",
+  "task_id": "LOCAL-E2E-SEARCH-DEMO-00",
+  "view_models": {
+    "hq_blue_ftp_client_xp": {
+      "html_basic_v0": {
+        "actions": [
+          {
+            "action_id": "view",
+            "classification": "read_only"
+          },
+          {
+            "action_id": "inspect_evidence",
+            "classification": "read_only"
+          },
+          {
+            "action_id": "cite",
+            "classification": "read_only"
+          }
+        ],
+        "canonical_status": "near_miss",
+        "entity_id": "run-hq_blue_ftp_client_xp",
+        "master_index_mutated": false,
+        "payload": {
+          "absence_report": null,
+          "fallback_summary": {
+            "accepted_truth": false,
+            "candidate_count": 1,
+            "candidates": [
+              {
+                "accepted_truth": false,
+                "candidate_id": "hq-near-miss-blue-ftp-xp",
+                "canonical_status": "candidate",
+                "public_actions": [
+                  {
+                    "action_id": "view",
+                    "classification": "read_only"
+                  },
+                  {
+                    "action_id": "inspect_evidence",
+                    "classification": "read_only"
+                  },
+                  {
+                    "action_id": "cite",
+                    "classification": "read_only"
+                  }
+                ],
+                "status": "near_miss",
+                "summary": "Synthetic fixture keeps the blue clue uncertain instead of promoting identity.",
+                "title": "Plausible XP FTP <client>; \"blue\" visual clue not supported",
+                "verified": false
+              }
+            ],
+            "canonical_status": "near_miss",
+            "evidence_summary": "Synthetic fixture keeps the blue clue uncertain instead of promoting identity.",
+            "fallback_enabled": true,
+            "live_source_calls": false,
+            "master_index_mutated": false,
+            "mode": "hard_query_eval_fixture",
+            "need_count": 0,
+            "needs": [],
+            "policy_notes": [],
+            "public_action_posture": {
+              "allowed": [
+                "view",
+                "inspect_evidence",
+                "cite"
+              ],
+              "blocked_reason": "public output keeps unsafe actions unavailable"
+            },
+            "public_index_mutated": false,
+            "query": "old blue FTP client for XP",
+            "reason_codes": [
+              "visual_clue_uncertain",
+              "platform_scope_visible"
+            ],
+            "reviewed_index_mutated": false,
+            "reviewed_record_created": false,
+            "schema_version": "eureka.resolution_run.indexless_fallback.v0",
+            "source_allowlisted": true,
+            "source_family": "eval_fixture",
+            "source_id": "synthetic_hard_query_fixture",
+            "status": "near_miss",
+            "title": "Old \"Blue\" FTP <client> near miss",
+            "trigger": "synthetic_hard_query_fixture",
+            "verified": false
+          },
+          "result_summary": null,
+          "run": {
+            "checked_source_families": [],
+            "checked_source_ids": [],
+            "requested_value": "old blue FTP client for XP",
+            "run_id": "run-hq_blue_ftp_client_xp",
+            "run_kind": "hard_query_fixture_eval",
+            "status": "completed"
+          }
+        },
+        "policy_notes": [
+          "public projection filters operator-only actions"
+        ],
+        "policy_posture": "public_read_only",
+        "public_index_mutated": false,
+        "renderer_may_call_sources": false,
+        "renderer_may_change_policy": false,
+        "renderer_may_create_records": false,
+        "reviewed_index_mutated": false,
+        "reviewed_record_created": false,
+        "route_id": "resolution_run",
+        "schema_version": "surface_view_model.v0",
+        "summary": "Fallback returned near_miss",
+        "title": "Resolution run run-hq_blue_ftp_client_xp",
+        "verified": false,
+        "view_family": "resolution_run",
+        "view_model_version": "surface_view_model.v0",
+        "visibility_posture": "public"
+      },
+      "json_v0": {
+        "actions": [
+          {
+            "action_id": "view",
+            "classification": "read_only"
+          },
+          {
+            "action_id": "inspect_evidence",
+            "classification": "read_only"
+          },
+          {
+            "action_id": "cite",
+            "classification": "read_only"
+          }
+        ],
+        "canonical_status": "near_miss",
+        "entity_id": "run-hq_blue_ftp_client_xp",
+        "master_index_mutated": false,
+        "payload": {
+          "absence_report": null,
+          "fallback_summary": {
+            "accepted_truth": false,
+            "candidate_count": 1,
+            "candidates": [
+              {
+                "accepted_truth": false,
+                "candidate_id": "hq-near-miss-blue-ftp-xp",
+                "canonical_status": "candidate",
+                "public_actions": [
+                  {
+                    "action_id": "view",
+                    "classification": "read_only"
+                  },
+                  {
+                    "action_id": "inspect_evidence",
+                    "classification": "read_only"
+                  },
+                  {
+                    "action_id": "cite",
+                    "classification": "read_only"
+                  }
+                ],
+                "status": "near_miss",
+                "summary": "Synthetic fixture keeps the blue clue uncertain instead of promoting identity.",
+                "title": "Plausible XP FTP <client>; \"blue\" visual clue not supported",
+                "verified": false
+              }
+            ],
+            "canonical_status": "near_miss",
+            "evidence_summary": "Synthetic fixture keeps the blue clue uncertain instead of promoting identity.",
+            "fallback_enabled": true,
+            "live_source_calls": false,
+            "master_index_mutated": false,
+            "mode": "hard_query_eval_fixture",
+            "need_count": 0,
+            "needs": [],
+            "policy_notes": [],
+            "public_action_posture": {
+              "allowed": [
+                "view",
+                "inspect_evidence",
+                "cite"
+              ],
+              "blocked_reason": "public output keeps unsafe actions unavailable"
+            },
+            "public_index_mutated": false,
+            "query": "old blue FTP client for XP",
+            "reason_codes": [
+              "visual_clue_uncertain",
+              "platform_scope_visible"
+            ],
+            "reviewed_index_mutated": false,
+            "reviewed_record_created": false,
+            "schema_version": "eureka.resolution_run.indexless_fallback.v0",
+            "source_allowlisted": true,
+            "source_family": "eval_fixture",
+            "source_id": "synthetic_hard_query_fixture",
+            "status": "near_miss",
+            "title": "Old \"Blue\" FTP <client> near miss",
+            "trigger": "synthetic_hard_query_fixture",
+            "verified": false
+          },
+          "result_summary": null,
+          "run": {
+            "checked_source_families": [],
+            "checked_source_ids": [],
+            "requested_value": "old blue FTP client for XP",
+            "run_id": "run-hq_blue_ftp_client_xp",
+            "run_kind": "hard_query_fixture_eval",
+            "status": "completed"
+          }
+        },
+        "policy_notes": [
+          "public projection filters operator-only actions"
+        ],
+        "policy_posture": "public_read_only",
+        "public_index_mutated": false,
+        "renderer_may_call_sources": false,
+        "renderer_may_change_policy": false,
+        "renderer_may_create_records": false,
+        "reviewed_index_mutated": false,
+        "reviewed_record_created": false,
+        "route_id": "resolution_run",
+        "schema_version": "surface_view_model.v0",
+        "summary": "Fallback returned near_miss",
+        "title": "Resolution run run-hq_blue_ftp_client_xp",
+        "verified": false,
+        "view_family": "resolution_run",
+        "view_model_version": "surface_view_model.v0",
+        "visibility_posture": "public"
+      },
+      "snapshot_v0": {
+        "actions": [
+          {
+            "action_id": "view",
+            "classification": "read_only"
+          },
+          {
+            "action_id": "inspect_evidence",
+            "classification": "read_only"
+          },
+          {
+            "action_id": "cite",
+            "classification": "read_only"
+          }
+        ],
+        "canonical_status": "near_miss",
+        "entity_id": "run-hq_blue_ftp_client_xp",
+        "master_index_mutated": false,
+        "payload": {
+          "absence_report": null,
+          "fallback_summary": {
+            "accepted_truth": false,
+            "candidate_count": 1,
+            "candidates": [
+              {
+                "accepted_truth": false,
+                "candidate_id": "hq-near-miss-blue-ftp-xp",
+                "canonical_status": "candidate",
+                "public_actions": [
+                  {
+                    "action_id": "view",
+                    "classification": "read_only"
+                  },
+                  {
+                    "action_id": "inspect_evidence",
+                    "classification": "read_only"
+                  },
+                  {
+                    "action_id": "cite",
+                    "classification": "read_only"
+                  }
+                ],
+                "status": "near_miss",
+                "summary": "Synthetic fixture keeps the blue clue uncertain instead of promoting identity.",
+                "title": "Plausible XP FTP <client>; \"blue\" visual clue not supported",
+                "verified": false
+              }
+            ],
+            "canonical_status": "near_miss",
+            "evidence_summary": "Synthetic fixture keeps the blue clue uncertain instead of promoting identity.",
+            "fallback_enabled": true,
+            "live_source_calls": false,
+            "master_index_mutated": false,
+            "mode": "hard_query_eval_fixture",
+            "need_count": 0,
+            "needs": [],
+            "policy_notes": [],
+            "public_action_posture": {
+              "allowed": [
+                "view",
+                "inspect_evidence",
+                "cite"
+              ],
+              "blocked_reason": "public output keeps unsafe actions unavailable"
+            },
+            "public_index_mutated": false,
+            "query": "old blue FTP client for XP",
+            "reason_codes": [
+              "visual_clue_uncertain",
+              "platform_scope_visible"
+            ],
+            "reviewed_index_mutated": false,
+            "reviewed_record_created": false,
+            "schema_version": "eureka.resolution_run.indexless_fallback.v0",
+            "source_allowlisted": true,
+            "source_family": "eval_fixture",
+            "source_id": "synthetic_hard_query_fixture",
+            "status": "near_miss",
+            "title": "Old \"Blue\" FTP <client> near miss",
+            "trigger": "synthetic_hard_query_fixture",
+            "verified": false
+          },
+          "result_summary": null,
+          "run": {
+            "checked_source_families": [],
+            "checked_source_ids": [],
+            "requested_value": "old blue FTP client for XP",
+            "run_id": "run-hq_blue_ftp_client_xp",
+            "run_kind": "hard_query_fixture_eval",
+            "status": "completed"
+          }
+        },
+        "policy_notes": [
+          "public projection filters operator-only actions"
+        ],
+        "policy_posture": "public_read_only",
+        "public_index_mutated": false,
+        "renderer_may_call_sources": false,
+        "renderer_may_change_policy": false,
+        "renderer_may_create_records": false,
+        "reviewed_index_mutated": false,
+        "reviewed_record_created": false,
+        "route_id": "resolution_run",
+        "schema_version": "surface_view_model.v0",
+        "summary": "Fallback returned near_miss",
+        "title": "Resolution run run-hq_blue_ftp_client_xp",
+        "verified": false,
+        "view_family": "resolution_run",
+        "view_model_version": "surface_view_model.v0",
+        "visibility_posture": "public"
+      },
+      "text_v0": {
+        "actions": [
+          {
+            "action_id": "view",
+            "classification": "read_only"
+          },
+          {
+            "action_id": "inspect_evidence",
+            "classification": "read_only"
+          },
+          {
+            "action_id": "cite",
+            "classification": "read_only"
+          }
+        ],
+        "canonical_status": "near_miss",
+        "entity_id": "run-hq_blue_ftp_client_xp",
+        "master_index_mutated": false,
+        "payload": {
+          "absence_report": null,
+          "fallback_summary": {
+            "accepted_truth": false,
+            "candidate_count": 1,
+            "candidates": [
+              {
+                "accepted_truth": false,
+                "candidate_id": "hq-near-miss-blue-ftp-xp",
+                "canonical_status": "candidate",
+                "public_actions": [
+                  {
+                    "action_id": "view",
+                    "classification": "read_only"
+                  },
+                  {
+                    "action_id": "inspect_evidence",
+                    "classification": "read_only"
+                  },
+                  {
+                    "action_id": "cite",
+                    "classification": "read_only"
+                  }
+                ],
+                "status": "near_miss",
+                "summary": "Synthetic fixture keeps the blue clue uncertain instead of promoting identity.",
+                "title": "Plausible XP FTP <client>; \"blue\" visual clue not supported",
+                "verified": false
+              }
+            ],
+            "canonical_status": "near_miss",
+            "evidence_summary": "Synthetic fixture keeps the blue clue uncertain instead of promoting identity.",
+            "fallback_enabled": true,
+            "live_source_calls": false,
+            "master_index_mutated": false,
+            "mode": "hard_query_eval_fixture",
+            "need_count": 0,
+            "needs": [],
+            "policy_notes": [],
+            "public_action_posture": {
+              "allowed": [
+                "view",
+                "inspect_evidence",
+                "cite"
+              ],
+              "blocked_reason": "public output keeps unsafe actions unavailable"
+            },
+            "public_index_mutated": false,
+            "query": "old blue FTP client for XP",
+            "reason_codes": [
+              "visual_clue_uncertain",
+              "platform_scope_visible"
+            ],
+            "reviewed_index_mutated": false,
+            "reviewed_record_created": false,
+            "schema_version": "eureka.resolution_run.indexless_fallback.v0",
+            "source_allowlisted": true,
+            "source_family": "eval_fixture",
+            "source_id": "synthetic_hard_query_fixture",
+            "status": "near_miss",
+            "title": "Old \"Blue\" FTP <client> near miss",
+            "trigger": "synthetic_hard_query_fixture",
+            "verified": false
+          },
+          "result_summary": null,
+          "run": {
+            "checked_source_families": [],
+            "checked_source_ids": [],
+            "requested_value": "old blue FTP client for XP",
+            "run_id": "run-hq_blue_ftp_client_xp",
+            "run_kind": "hard_query_fixture_eval",
+            "status": "completed"
+          }
+        },
+        "policy_notes": [
+          "public projection filters operator-only actions"
+        ],
+        "policy_posture": "public_read_only",
+        "public_index_mutated": false,
+        "renderer_may_call_sources": false,
+        "renderer_may_change_policy": false,
+        "renderer_may_create_records": false,
+        "reviewed_index_mutated": false,
+        "reviewed_record_created": false,
+        "route_id": "resolution_run",
+        "schema_version": "surface_view_model.v0",
+        "summary": "Fallback returned near_miss",
+        "title": "Resolution run run-hq_blue_ftp_client_xp",
+        "verified": false,
+        "view_family": "resolution_run",
+        "view_model_version": "surface_view_model.v0",
+        "visibility_posture": "public"
+      }
+    },
+    "hq_driver_win98": {
+      "html_basic_v0": {
+        "actions": [
+          {
+            "action_id": "view",
+            "classification": "read_only"
+          },
+          {
+            "action_id": "inspect_evidence",
+            "classification": "read_only"
+          },
+          {
+            "action_id": "cite",
+            "classification": "read_only"
+          }
+        ],
+        "canonical_status": "need",
+        "entity_id": "run-hq_driver_win98",
+        "master_index_mutated": false,
+        "payload": {
+          "absence_report": null,
+          "fallback_summary": {
+            "accepted_truth": false,
+            "candidate_count": 0,
+            "candidates": [],
+            "canonical_status": "need",
+            "evidence_summary": "Synthetic fixture records ambiguity around missing hardware identity.",
+            "fallback_enabled": true,
+            "live_source_calls": false,
+            "master_index_mutated": false,
+            "mode": "hard_query_eval_fixture",
+            "need_count": 1,
+            "needs": [
+              {
+                "accepted_truth": false,
+                "canonical_status": "need",
+                "need_id": "hq-need-driver-win98-hardware",
+                "public_actions": [
+                  {
+                    "action_id": "view",
+                    "classification": "read_only"
+                  },
+                  {
+                    "action_id": "inspect_evidence",
+                    "classification": "read_only"
+                  }
+                ],
+                "status": "need",
+                "summary": "Synthetic fixture records ambiguity around missing hardware identity.",
+                "title": "Need vendor and device model before driver candidate can be useful",
+                "verified": false
+              }
+            ],
+            "policy_notes": [],
+            "public_action_posture": {
+              "allowed": [
+                "view",
+                "inspect_evidence",
+                "cite"
+              ],
+              "blocked_reason": "public output keeps unsafe actions unavailable"
+            },
+            "public_index_mutated": false,
+            "query": "driver for Win98",
+            "reason_codes": [
+              "hardware_identifier_missing",
+              "source_scope_not_enough"
+            ],
+            "reviewed_index_mutated": false,
+            "reviewed_record_created": false,
+            "schema_version": "eureka.resolution_run.indexless_fallback.v0",
+            "source_allowlisted": true,
+            "source_family": "eval_fixture",
+            "source_id": "synthetic_hard_query_fixture",
+            "status": "need",
+            "title": "Hardware model needed for Win98 driver search",
+            "trigger": "synthetic_hard_query_fixture",
+            "verified": false
+          },
+          "result_summary": null,
+          "run": {
+            "checked_source_families": [],
+            "checked_source_ids": [],
+            "requested_value": "driver for Win98",
+            "run_id": "run-hq_driver_win98",
+            "run_kind": "hard_query_fixture_eval",
+            "status": "completed"
+          }
+        },
+        "policy_notes": [
+          "public projection filters operator-only actions"
+        ],
+        "policy_posture": "public_read_only",
+        "public_index_mutated": false,
+        "renderer_may_call_sources": false,
+        "renderer_may_change_policy": false,
+        "renderer_may_create_records": false,
+        "reviewed_index_mutated": false,
+        "reviewed_record_created": false,
+        "route_id": "resolution_run",
+        "schema_version": "surface_view_model.v0",
+        "summary": "Fallback returned need",
+        "title": "Resolution run run-hq_driver_win98",
+        "verified": false,
+        "view_family": "resolution_run",
+        "view_model_version": "surface_view_model.v0",
+        "visibility_posture": "public"
+      },
+      "json_v0": {
+        "actions": [
+          {
+            "action_id": "view",
+            "classification": "read_only"
+          },
+          {
+            "action_id": "inspect_evidence",
+            "classification": "read_only"
+          },
+          {
+            "action_id": "cite",
+            "classification": "read_only"
+          }
+        ],
+        "canonical_status": "need",
+        "entity_id": "run-hq_driver_win98",
+        "master_index_mutated": false,
+        "payload": {
+          "absence_report": null,
+          "fallback_summary": {
+            "accepted_truth": false,
+            "candidate_count": 0,
+            "candidates": [],
+            "canonical_status": "need",
+            "evidence_summary": "Synthetic fixture records ambiguity around missing hardware identity.",
+            "fallback_enabled": true,
+            "live_source_calls": false,
+            "master_index_mutated": false,
+            "mode": "hard_query_eval_fixture",
+            "need_count": 1,
+            "needs": [
+              {
+                "accepted_truth": false,
+                "canonical_status": "need",
+                "need_id": "hq-need-driver-win98-hardware",
+                "public_actions": [
+                  {
+                    "action_id": "view",
+                    "classification": "read_only"
+                  },
+                  {
+                    "action_id": "inspect_evidence",
+                    "classification": "read_only"
+                  }
+                ],
+                "status": "need",
+                "summary": "Synthetic fixture records ambiguity around missing hardware identity.",
+                "title": "Need vendor and device model before driver candidate can be useful",
+                "verified": false
+              }
+            ],
+            "policy_notes": [],
+            "public_action_posture": {
+              "allowed": [
+                "view",
+                "inspect_evidence",
+                "cite"
+              ],
+              "blocked_reason": "public output keeps unsafe actions unavailable"
+            },
+            "public_index_mutated": false,
+            "query": "driver for Win98",
+            "reason_codes": [
+              "hardware_identifier_missing",
+              "source_scope_not_enough"
+            ],
+            "reviewed_index_mutated": false,
+            "reviewed_record_created": false,
+            "schema_version": "eureka.resolution_run.indexless_fallback.v0",
+            "source_allowlisted": true,
+            "source_family": "eval_fixture",
+            "source_id": "synthetic_hard_query_fixture",
+            "status": "need",
+            "title": "Hardware model needed for Win98 driver search",
+            "trigger": "synthetic_hard_query_fixture",
+            "verified": false
+          },
+          "result_summary": null,
+          "run": {
+            "checked_source_families": [],
+            "checked_source_ids": [],
+            "requested_value": "driver for Win98",
+            "run_id": "run-hq_driver_win98",
+            "run_kind": "hard_query_fixture_eval",
+            "status": "completed"
+          }
+        },
+        "policy_notes": [
+          "public projection filters operator-only actions"
+        ],
+        "policy_posture": "public_read_only",
+        "public_index_mutated": false,
+        "renderer_may_call_sources": false,
+        "renderer_may_change_policy": false,
+        "renderer_may_create_records": false,
+        "reviewed_index_mutated": false,
+        "reviewed_record_created": false,
+        "route_id": "resolution_run",
+        "schema_version": "surface_view_model.v0",
+        "summary": "Fallback returned need",
+        "title": "Resolution run run-hq_driver_win98",
+        "verified": false,
+        "view_family": "resolution_run",
+        "view_model_version": "surface_view_model.v0",
+        "visibility_posture": "public"
+      },
+      "snapshot_v0": {
+        "actions": [
+          {
+            "action_id": "view",
+            "classification": "read_only"
+          },
+          {
+            "action_id": "inspect_evidence",
+            "classification": "read_only"
+          },
+          {
+            "action_id": "cite",
+            "classification": "read_only"
+          }
+        ],
+        "canonical_status": "need",
+        "entity_id": "run-hq_driver_win98",
+        "master_index_mutated": false,
+        "payload": {
+          "absence_report": null,
+          "fallback_summary": {
+            "accepted_truth": false,
+            "candidate_count": 0,
+            "candidates": [],
+            "canonical_status": "need",
+            "evidence_summary": "Synthetic fixture records ambiguity around missing hardware identity.",
+            "fallback_enabled": true,
+            "live_source_calls": false,
+            "master_index_mutated": false,
+            "mode": "hard_query_eval_fixture",
+            "need_count": 1,
+            "needs": [
+              {
+                "accepted_truth": false,
+                "canonical_status": "need",
+                "need_id": "hq-need-driver-win98-hardware",
+                "public_actions": [
+                  {
+                    "action_id": "view",
+                    "classification": "read_only"
+                  },
+                  {
+                    "action_id": "inspect_evidence",
+                    "classification": "read_only"
+                  }
+                ],
+                "status": "need",
+                "summary": "Synthetic fixture records ambiguity around missing hardware identity.",
+                "title": "Need vendor and device model before driver candidate can be useful",
+                "verified": false
+              }
+            ],
+            "policy_notes": [],
+            "public_action_posture": {
+              "allowed": [
+                "view",
+                "inspect_evidence",
+                "cite"
+              ],
+              "blocked_reason": "public output keeps unsafe actions unavailable"
+            },
+            "public_index_mutated": false,
+            "query": "driver for Win98",
+            "reason_codes": [
+              "hardware_identifier_missing",
+              "source_scope_not_enough"
+            ],
+            "reviewed_index_mutated": false,
+            "reviewed_record_created": false,
+            "schema_version": "eureka.resolution_run.indexless_fallback.v0",
+            "source_allowlisted": true,
+            "source_family": "eval_fixture",
+            "source_id": "synthetic_hard_query_fixture",
+            "status": "need",
+            "title": "Hardware model needed for Win98 driver search",
+            "trigger": "synthetic_hard_query_fixture",
+            "verified": false
+          },
+          "result_summary": null,
+          "run": {
+            "checked_source_families": [],
+            "checked_source_ids": [],
+            "requested_value": "driver for Win98",
+            "run_id": "run-hq_driver_win98",
+            "run_kind": "hard_query_fixture_eval",
+            "status": "completed"
+          }
+        },
+        "policy_notes": [
+          "public projection filters operator-only actions"
+        ],
+        "policy_posture": "public_read_only",
+        "public_index_mutated": false,
+        "renderer_may_call_sources": false,
+        "renderer_may_change_policy": false,
+        "renderer_may_create_records": false,
+        "reviewed_index_mutated": false,
+        "reviewed_record_created": false,
+        "route_id": "resolution_run",
+        "schema_version": "surface_view_model.v0",
+        "summary": "Fallback returned need",
+        "title": "Resolution run run-hq_driver_win98",
+        "verified": false,
+        "view_family": "resolution_run",
+        "view_model_version": "surface_view_model.v0",
+        "visibility_posture": "public"
+      },
+      "text_v0": {
+        "actions": [
+          {
+            "action_id": "view",
+            "classification": "read_only"
+          },
+          {
+            "action_id": "inspect_evidence",
+            "classification": "read_only"
+          },
+          {
+            "action_id": "cite",
+            "classification": "read_only"
+          }
+        ],
+        "canonical_status": "need",
+        "entity_id": "run-hq_driver_win98",
+        "master_index_mutated": false,
+        "payload": {
+          "absence_report": null,
+          "fallback_summary": {
+            "accepted_truth": false,
+            "candidate_count": 0,
+            "candidates": [],
+            "canonical_status": "need",
+            "evidence_summary": "Synthetic fixture records ambiguity around missing hardware identity.",
+            "fallback_enabled": true,
+            "live_source_calls": false,
+            "master_index_mutated": false,
+            "mode": "hard_query_eval_fixture",
+            "need_count": 1,
+            "needs": [
+              {
+                "accepted_truth": false,
+                "canonical_status": "need",
+                "need_id": "hq-need-driver-win98-hardware",
+                "public_actions": [
+                  {
+                    "action_id": "view",
+                    "classification": "read_only"
+                  },
+                  {
+                    "action_id": "inspect_evidence",
+                    "classification": "read_only"
+                  }
+                ],
+                "status": "need",
+                "summary": "Synthetic fixture records ambiguity around missing hardware identity.",
+                "title": "Need vendor and device model before driver candidate can be useful",
+                "verified": false
+              }
+            ],
+            "policy_notes": [],
+            "public_action_posture": {
+              "allowed": [
+                "view",
+                "inspect_evidence",
+                "cite"
+              ],
+              "blocked_reason": "public output keeps unsafe actions unavailable"
+            },
+            "public_index_mutated": false,
+            "query": "driver for Win98",
+            "reason_codes": [
+              "hardware_identifier_missing",
+              "source_scope_not_enough"
+            ],
+            "reviewed_index_mutated": false,
+            "reviewed_record_created": false,
+            "schema_version": "eureka.resolution_run.indexless_fallback.v0",
+            "source_allowlisted": true,
+            "source_family": "eval_fixture",
+            "source_id": "synthetic_hard_query_fixture",
+            "status": "need",
+            "title": "Hardware model needed for Win98 driver search",
+            "trigger": "synthetic_hard_query_fixture",
+            "verified": false
+          },
+          "result_summary": null,
+          "run": {
+            "checked_source_families": [],
+            "checked_source_ids": [],
+            "requested_value": "driver for Win98",
+            "run_id": "run-hq_driver_win98",
+            "run_kind": "hard_query_fixture_eval",
+            "status": "completed"
+          }
+        },
+        "policy_notes": [
+          "public projection filters operator-only actions"
+        ],
+        "policy_posture": "public_read_only",
+        "public_index_mutated": false,
+        "renderer_may_call_sources": false,
+        "renderer_may_change_policy": false,
+        "renderer_may_create_records": false,
+        "reviewed_index_mutated": false,
+        "reviewed_record_created": false,
+        "route_id": "resolution_run",
+        "schema_version": "surface_view_model.v0",
+        "summary": "Fallback returned need",
+        "title": "Resolution run run-hq_driver_win98",
+        "verified": false,
+        "view_family": "resolution_run",
+        "view_model_version": "surface_view_model.v0",
+        "visibility_posture": "public"
+      }
+    },
+    "hq_firefox_last_xp": {
+      "html_basic_v0": {
+        "actions": [
+          {
+            "action_id": "view",
+            "classification": "read_only"
+          },
+          {
+            "action_id": "inspect_evidence",
+            "classification": "read_only"
+          },
+          {
+            "action_id": "cite",
+            "classification": "read_only"
+          }
+        ],
+        "canonical_status": "policy_blocked",
+        "entity_id": "run-hq_firefox_last_xp",
+        "master_index_mutated": false,
+        "payload": {
+          "absence_report": null,
+          "fallback_summary": {
+            "accepted_truth": false,
+            "candidate_count": 0,
+            "candidates": [],
+            "canonical_status": "policy_blocked",
+            "evidence_summary": "Synthetic fixture represents a blocked/degraded public state only.",
+            "fallback_enabled": true,
+            "live_source_calls": false,
+            "master_index_mutated": false,
+            "mode": "hard_query_eval_fixture",
+            "need_count": 0,
+            "needs": [],
+            "policy_block_reason": "Fixture blocks public acquisition/version certainty until reviewed evidence exists.",
+            "policy_notes": [],
+            "public_action_posture": {
+              "allowed": [
+                "view",
+                "inspect_evidence",
+                "cite"
+              ],
+              "blocked_reason": "public output keeps unsafe actions unavailable"
+            },
+            "public_index_mutated": false,
+            "query": "latest Firefox before XP support ended",
+            "reason_codes": [
+              "support_window_evidence_required",
+              "public_acquisition_action_blocked"
+            ],
+            "reviewed_index_mutated": false,
+            "reviewed_record_created": false,
+            "schema_version": "eureka.resolution_run.indexless_fallback.v0",
+            "source_allowlisted": true,
+            "source_family": "eval_fixture",
+            "source_id": "synthetic_hard_query_fixture",
+            "status": "policy_blocked",
+            "title": "Firefox XP support answer requires reviewed evidence",
+            "trigger": "synthetic_hard_query_fixture",
+            "verified": false
+          },
+          "result_summary": null,
+          "run": {
+            "checked_source_families": [],
+            "checked_source_ids": [],
+            "requested_value": "latest Firefox before XP support ended",
+            "run_id": "run-hq_firefox_last_xp",
+            "run_kind": "hard_query_fixture_eval",
+            "status": "completed"
+          }
+        },
+        "policy_notes": [
+          "public projection filters operator-only actions"
+        ],
+        "policy_posture": "public_read_only",
+        "public_index_mutated": false,
+        "renderer_may_call_sources": false,
+        "renderer_may_change_policy": false,
+        "renderer_may_create_records": false,
+        "reviewed_index_mutated": false,
+        "reviewed_record_created": false,
+        "route_id": "resolution_run",
+        "schema_version": "surface_view_model.v0",
+        "summary": "Fallback returned policy_blocked",
+        "title": "Resolution run run-hq_firefox_last_xp",
+        "verified": false,
+        "view_family": "resolution_run",
+        "view_model_version": "surface_view_model.v0",
+        "visibility_posture": "public"
+      },
+      "json_v0": {
+        "actions": [
+          {
+            "action_id": "view",
+            "classification": "read_only"
+          },
+          {
+            "action_id": "inspect_evidence",
+            "classification": "read_only"
+          },
+          {
+            "action_id": "cite",
+            "classification": "read_only"
+          }
+        ],
+        "canonical_status": "policy_blocked",
+        "entity_id": "run-hq_firefox_last_xp",
+        "master_index_mutated": false,
+        "payload": {
+          "absence_report": null,
+          "fallback_summary": {
+            "accepted_truth": false,
+            "candidate_count": 0,
+            "candidates": [],
+            "canonical_status": "policy_blocked",
+            "evidence_summary": "Synthetic fixture represents a blocked/degraded public state only.",
+            "fallback_enabled": true,
+            "live_source_calls": false,
+            "master_index_mutated": false,
+            "mode": "hard_query_eval_fixture",
+            "need_count": 0,
+            "needs": [],
+            "policy_block_reason": "Fixture blocks public acquisition/version certainty until reviewed evidence exists.",
+            "policy_notes": [],
+            "public_action_posture": {
+              "allowed": [
+                "view",
+                "inspect_evidence",
+                "cite"
+              ],
+              "blocked_reason": "public output keeps unsafe actions unavailable"
+            },
+            "public_index_mutated": false,
+            "query": "latest Firefox before XP support ended",
+            "reason_codes": [
+              "support_window_evidence_required",
+              "public_acquisition_action_blocked"
+            ],
+            "reviewed_index_mutated": false,
+            "reviewed_record_created": false,
+            "schema_version": "eureka.resolution_run.indexless_fallback.v0",
+            "source_allowlisted": true,
+            "source_family": "eval_fixture",
+            "source_id": "synthetic_hard_query_fixture",
+            "status": "policy_blocked",
+            "title": "Firefox XP support answer requires reviewed evidence",
+            "trigger": "synthetic_hard_query_fixture",
+            "verified": false
+          },
+          "result_summary": null,
+          "run": {
+            "checked_source_families": [],
+            "checked_source_ids": [],
+            "requested_value": "latest Firefox before XP support ended",
+            "run_id": "run-hq_firefox_last_xp",
+            "run_kind": "hard_query_fixture_eval",
+            "status": "completed"
+          }
+        },
+        "policy_notes": [
+          "public projection filters operator-only actions"
+        ],
+        "policy_posture": "public_read_only",
+        "public_index_mutated": false,
+        "renderer_may_call_sources": false,
+        "renderer_may_change_policy": false,
+        "renderer_may_create_records": false,
+        "reviewed_index_mutated": false,
+        "reviewed_record_created": false,
+        "route_id": "resolution_run",
+        "schema_version": "surface_view_model.v0",
+        "summary": "Fallback returned policy_blocked",
+        "title": "Resolution run run-hq_firefox_last_xp",
+        "verified": false,
+        "view_family": "resolution_run",
+        "view_model_version": "surface_view_model.v0",
+        "visibility_posture": "public"
+      },
+      "snapshot_v0": {
+        "actions": [
+          {
+            "action_id": "view",
+            "classification": "read_only"
+          },
+          {
+            "action_id": "inspect_evidence",
+            "classification": "read_only"
+          },
+          {
+            "action_id": "cite",
+            "classification": "read_only"
+          }
+        ],
+        "canonical_status": "policy_blocked",
+        "entity_id": "run-hq_firefox_last_xp",
+        "master_index_mutated": false,
+        "payload": {
+          "absence_report": null,
+          "fallback_summary": {
+            "accepted_truth": false,
+            "candidate_count": 0,
+            "candidates": [],
+            "canonical_status": "policy_blocked",
+            "evidence_summary": "Synthetic fixture represents a blocked/degraded public state only.",
+            "fallback_enabled": true,
+            "live_source_calls": false,
+            "master_index_mutated": false,
+            "mode": "hard_query_eval_fixture",
+            "need_count": 0,
+            "needs": [],
+            "policy_block_reason": "Fixture blocks public acquisition/version certainty until reviewed evidence exists.",
+            "policy_notes": [],
+            "public_action_posture": {
+              "allowed": [
+                "view",
+                "inspect_evidence",
+                "cite"
+              ],
+              "blocked_reason": "public output keeps unsafe actions unavailable"
+            },
+            "public_index_mutated": false,
+            "query": "latest Firefox before XP support ended",
+            "reason_codes": [
+              "support_window_evidence_required",
+              "public_acquisition_action_blocked"
+            ],
+            "reviewed_index_mutated": false,
+            "reviewed_record_created": false,
+            "schema_version": "eureka.resolution_run.indexless_fallback.v0",
+            "source_allowlisted": true,
+            "source_family": "eval_fixture",
+            "source_id": "synthetic_hard_query_fixture",
+            "status": "policy_blocked",
+            "title": "Firefox XP support answer requires reviewed evidence",
+            "trigger": "synthetic_hard_query_fixture",
+            "verified": false
+          },
+          "result_summary": null,
+          "run": {
+            "checked_source_families": [],
+            "checked_source_ids": [],
+            "requested_value": "latest Firefox before XP support ended",
+            "run_id": "run-hq_firefox_last_xp",
+            "run_kind": "hard_query_fixture_eval",
+            "status": "completed"
+          }
+        },
+        "policy_notes": [
+          "public projection filters operator-only actions"
+        ],
+        "policy_posture": "public_read_only",
+        "public_index_mutated": false,
+        "renderer_may_call_sources": false,
+        "renderer_may_change_policy": false,
+        "renderer_may_create_records": false,
+        "reviewed_index_mutated": false,
+        "reviewed_record_created": false,
+        "route_id": "resolution_run",
+        "schema_version": "surface_view_model.v0",
+        "summary": "Fallback returned policy_blocked",
+        "title": "Resolution run run-hq_firefox_last_xp",
+        "verified": false,
+        "view_family": "resolution_run",
+        "view_model_version": "surface_view_model.v0",
+        "visibility_posture": "public"
+      },
+      "text_v0": {
+        "actions": [
+          {
+            "action_id": "view",
+            "classification": "read_only"
+          },
+          {
+            "action_id": "inspect_evidence",
+            "classification": "read_only"
+          },
+          {
+            "action_id": "cite",
+            "classification": "read_only"
+          }
+        ],
+        "canonical_status": "policy_blocked",
+        "entity_id": "run-hq_firefox_last_xp",
+        "master_index_mutated": false,
+        "payload": {
+          "absence_report": null,
+          "fallback_summary": {
+            "accepted_truth": false,
+            "candidate_count": 0,
+            "candidates": [],
+            "canonical_status": "policy_blocked",
+            "evidence_summary": "Synthetic fixture represents a blocked/degraded public state only.",
+            "fallback_enabled": true,
+            "live_source_calls": false,
+            "master_index_mutated": false,
+            "mode": "hard_query_eval_fixture",
+            "need_count": 0,
+            "needs": [],
+            "policy_block_reason": "Fixture blocks public acquisition/version certainty until reviewed evidence exists.",
+            "policy_notes": [],
+            "public_action_posture": {
+              "allowed": [
+                "view",
+                "inspect_evidence",
+                "cite"
+              ],
+              "blocked_reason": "public output keeps unsafe actions unavailable"
+            },
+            "public_index_mutated": false,
+            "query": "latest Firefox before XP support ended",
+            "reason_codes": [
+              "support_window_evidence_required",
+              "public_acquisition_action_blocked"
+            ],
+            "reviewed_index_mutated": false,
+            "reviewed_record_created": false,
+            "schema_version": "eureka.resolution_run.indexless_fallback.v0",
+            "source_allowlisted": true,
+            "source_family": "eval_fixture",
+            "source_id": "synthetic_hard_query_fixture",
+            "status": "policy_blocked",
+            "title": "Firefox XP support answer requires reviewed evidence",
+            "trigger": "synthetic_hard_query_fixture",
+            "verified": false
+          },
+          "result_summary": null,
+          "run": {
+            "checked_source_families": [],
+            "checked_source_ids": [],
+            "requested_value": "latest Firefox before XP support ended",
+            "run_id": "run-hq_firefox_last_xp",
+            "run_kind": "hard_query_fixture_eval",
+            "status": "completed"
+          }
+        },
+        "policy_notes": [
+          "public projection filters operator-only actions"
+        ],
+        "policy_posture": "public_read_only",
+        "public_index_mutated": false,
+        "renderer_may_call_sources": false,
+        "renderer_may_change_policy": false,
+        "renderer_may_create_records": false,
+        "reviewed_index_mutated": false,
+        "reviewed_record_created": false,
+        "route_id": "resolution_run",
+        "schema_version": "surface_view_model.v0",
+        "summary": "Fallback returned policy_blocked",
+        "title": "Resolution run run-hq_firefox_last_xp",
+        "verified": false,
+        "view_family": "resolution_run",
+        "view_model_version": "surface_view_model.v0",
+        "visibility_posture": "public"
+      }
+    },
+    "hq_ray_tracing_1994_magazine": {
+      "html_basic_v0": {
+        "actions": [
+          {
+            "action_id": "view",
+            "classification": "read_only"
+          },
+          {
+            "action_id": "inspect_evidence",
+            "classification": "read_only"
+          },
+          {
+            "action_id": "cite",
+            "classification": "read_only"
+          }
+        ],
+        "canonical_status": "unavailable",
+        "entity_id": "run-hq_ray_tracing_1994_magazine",
+        "master_index_mutated": false,
+        "payload": {
+          "absence_report": null,
+          "fallback_summary": {
+            "accepted_truth": false,
+            "candidate_count": 0,
+            "candidates": [],
+            "canonical_status": "unavailable",
+            "evidence_summary": "Synthetic fixture exposes capability/source limits without claiming absence.",
+            "fallback_enabled": true,
+            "live_source_calls": false,
+            "master_index_mutated": false,
+            "mode": "hard_query_eval_fixture",
+            "need_count": 0,
+            "needs": [],
+            "policy_notes": [],
+            "public_action_posture": {
+              "allowed": [
+                "view",
+                "inspect_evidence",
+                "cite"
+              ],
+              "blocked_reason": "public output keeps unsafe actions unavailable"
+            },
+            "public_index_mutated": false,
+            "query": "article about ray tracing in a 1994 magazine",
+            "reason_codes": [
+              "publication_title_missing",
+              "article_scan_capability_gap"
+            ],
+            "reviewed_index_mutated": false,
+            "reviewed_record_created": false,
+            "schema_version": "eureka.resolution_run.indexless_fallback.v0",
+            "source_allowlisted": true,
+            "source_family": "eval_fixture",
+            "source_id": "synthetic_hard_query_fixture",
+            "status": "unavailable",
+            "title": "Article scan scope unavailable",
+            "trigger": "synthetic_hard_query_fixture",
+            "unavailable_reason": "Fixture cannot identify article, issue, or page without more scope.",
+            "verified": false
+          },
+          "result_summary": null,
+          "run": {
+            "checked_source_families": [],
+            "checked_source_ids": [],
+            "requested_value": "article about ray tracing in a 1994 magazine",
+            "run_id": "run-hq_ray_tracing_1994_magazine",
+            "run_kind": "hard_query_fixture_eval",
+            "status": "completed"
+          }
+        },
+        "policy_notes": [
+          "public projection filters operator-only actions"
+        ],
+        "policy_posture": "public_read_only",
+        "public_index_mutated": false,
+        "renderer_may_call_sources": false,
+        "renderer_may_change_policy": false,
+        "renderer_may_create_records": false,
+        "reviewed_index_mutated": false,
+        "reviewed_record_created": false,
+        "route_id": "resolution_run",
+        "schema_version": "surface_view_model.v0",
+        "summary": "Fallback returned unavailable",
+        "title": "Resolution run run-hq_ray_tracing_1994_magazine",
+        "verified": false,
+        "view_family": "resolution_run",
+        "view_model_version": "surface_view_model.v0",
+        "visibility_posture": "public"
+      },
+      "json_v0": {
+        "actions": [
+          {
+            "action_id": "view",
+            "classification": "read_only"
+          },
+          {
+            "action_id": "inspect_evidence",
+            "classification": "read_only"
+          },
+          {
+            "action_id": "cite",
+            "classification": "read_only"
+          }
+        ],
+        "canonical_status": "unavailable",
+        "entity_id": "run-hq_ray_tracing_1994_magazine",
+        "master_index_mutated": false,
+        "payload": {
+          "absence_report": null,
+          "fallback_summary": {
+            "accepted_truth": false,
+            "candidate_count": 0,
+            "candidates": [],
+            "canonical_status": "unavailable",
+            "evidence_summary": "Synthetic fixture exposes capability/source limits without claiming absence.",
+            "fallback_enabled": true,
+            "live_source_calls": false,
+            "master_index_mutated": false,
+            "mode": "hard_query_eval_fixture",
+            "need_count": 0,
+            "needs": [],
+            "policy_notes": [],
+            "public_action_posture": {
+              "allowed": [
+                "view",
+                "inspect_evidence",
+                "cite"
+              ],
+              "blocked_reason": "public output keeps unsafe actions unavailable"
+            },
+            "public_index_mutated": false,
+            "query": "article about ray tracing in a 1994 magazine",
+            "reason_codes": [
+              "publication_title_missing",
+              "article_scan_capability_gap"
+            ],
+            "reviewed_index_mutated": false,
+            "reviewed_record_created": false,
+            "schema_version": "eureka.resolution_run.indexless_fallback.v0",
+            "source_allowlisted": true,
+            "source_family": "eval_fixture",
+            "source_id": "synthetic_hard_query_fixture",
+            "status": "unavailable",
+            "title": "Article scan scope unavailable",
+            "trigger": "synthetic_hard_query_fixture",
+            "unavailable_reason": "Fixture cannot identify article, issue, or page without more scope.",
+            "verified": false
+          },
+          "result_summary": null,
+          "run": {
+            "checked_source_families": [],
+            "checked_source_ids": [],
+            "requested_value": "article about ray tracing in a 1994 magazine",
+            "run_id": "run-hq_ray_tracing_1994_magazine",
+            "run_kind": "hard_query_fixture_eval",
+            "status": "completed"
+          }
+        },
+        "policy_notes": [
+          "public projection filters operator-only actions"
+        ],
+        "policy_posture": "public_read_only",
+        "public_index_mutated": false,
+        "renderer_may_call_sources": false,
+        "renderer_may_change_policy": false,
+        "renderer_may_create_records": false,
+        "reviewed_index_mutated": false,
+        "reviewed_record_created": false,
+        "route_id": "resolution_run",
+        "schema_version": "surface_view_model.v0",
+        "summary": "Fallback returned unavailable",
+        "title": "Resolution run run-hq_ray_tracing_1994_magazine",
+        "verified": false,
+        "view_family": "resolution_run",
+        "view_model_version": "surface_view_model.v0",
+        "visibility_posture": "public"
+      },
+      "snapshot_v0": {
+        "actions": [
+          {
+            "action_id": "view",
+            "classification": "read_only"
+          },
+          {
+            "action_id": "inspect_evidence",
+            "classification": "read_only"
+          },
+          {
+            "action_id": "cite",
+            "classification": "read_only"
+          }
+        ],
+        "canonical_status": "unavailable",
+        "entity_id": "run-hq_ray_tracing_1994_magazine",
+        "master_index_mutated": false,
+        "payload": {
+          "absence_report": null,
+          "fallback_summary": {
+            "accepted_truth": false,
+            "candidate_count": 0,
+            "candidates": [],
+            "canonical_status": "unavailable",
+            "evidence_summary": "Synthetic fixture exposes capability/source limits without claiming absence.",
+            "fallback_enabled": true,
+            "live_source_calls": false,
+            "master_index_mutated": false,
+            "mode": "hard_query_eval_fixture",
+            "need_count": 0,
+            "needs": [],
+            "policy_notes": [],
+            "public_action_posture": {
+              "allowed": [
+                "view",
+                "inspect_evidence",
+                "cite"
+              ],
+              "blocked_reason": "public output keeps unsafe actions unavailable"
+            },
+            "public_index_mutated": false,
+            "query": "article about ray tracing in a 1994 magazine",
+            "reason_codes": [
+              "publication_title_missing",
+              "article_scan_capability_gap"
+            ],
+            "reviewed_index_mutated": false,
+            "reviewed_record_created": false,
+            "schema_version": "eureka.resolution_run.indexless_fallback.v0",
+            "source_allowlisted": true,
+            "source_family": "eval_fixture",
+            "source_id": "synthetic_hard_query_fixture",
+            "status": "unavailable",
+            "title": "Article scan scope unavailable",
+            "trigger": "synthetic_hard_query_fixture",
+            "unavailable_reason": "Fixture cannot identify article, issue, or page without more scope.",
+            "verified": false
+          },
+          "result_summary": null,
+          "run": {
+            "checked_source_families": [],
+            "checked_source_ids": [],
+            "requested_value": "article about ray tracing in a 1994 magazine",
+            "run_id": "run-hq_ray_tracing_1994_magazine",
+            "run_kind": "hard_query_fixture_eval",
+            "status": "completed"
+          }
+        },
+        "policy_notes": [
+          "public projection filters operator-only actions"
+        ],
+        "policy_posture": "public_read_only",
+        "public_index_mutated": false,
+        "renderer_may_call_sources": false,
+        "renderer_may_change_policy": false,
+        "renderer_may_create_records": false,
+        "reviewed_index_mutated": false,
+        "reviewed_record_created": false,
+        "route_id": "resolution_run",
+        "schema_version": "surface_view_model.v0",
+        "summary": "Fallback returned unavailable",
+        "title": "Resolution run run-hq_ray_tracing_1994_magazine",
+        "verified": false,
+        "view_family": "resolution_run",
+        "view_model_version": "surface_view_model.v0",
+        "visibility_posture": "public"
+      },
+      "text_v0": {
+        "actions": [
+          {
+            "action_id": "view",
+            "classification": "read_only"
+          },
+          {
+            "action_id": "inspect_evidence",
+            "classification": "read_only"
+          },
+          {
+            "action_id": "cite",
+            "classification": "read_only"
+          }
+        ],
+        "canonical_status": "unavailable",
+        "entity_id": "run-hq_ray_tracing_1994_magazine",
+        "master_index_mutated": false,
+        "payload": {
+          "absence_report": null,
+          "fallback_summary": {
+            "accepted_truth": false,
+            "candidate_count": 0,
+            "candidates": [],
+            "canonical_status": "unavailable",
+            "evidence_summary": "Synthetic fixture exposes capability/source limits without claiming absence.",
+            "fallback_enabled": true,
+            "live_source_calls": false,
+            "master_index_mutated": false,
+            "mode": "hard_query_eval_fixture",
+            "need_count": 0,
+            "needs": [],
+            "policy_notes": [],
+            "public_action_posture": {
+              "allowed": [
+                "view",
+                "inspect_evidence",
+                "cite"
+              ],
+              "blocked_reason": "public output keeps unsafe actions unavailable"
+            },
+            "public_index_mutated": false,
+            "query": "article about ray tracing in a 1994 magazine",
+            "reason_codes": [
+              "publication_title_missing",
+              "article_scan_capability_gap"
+            ],
+            "reviewed_index_mutated": false,
+            "reviewed_record_created": false,
+            "schema_version": "eureka.resolution_run.indexless_fallback.v0",
+            "source_allowlisted": true,
+            "source_family": "eval_fixture",
+            "source_id": "synthetic_hard_query_fixture",
+            "status": "unavailable",
+            "title": "Article scan scope unavailable",
+            "trigger": "synthetic_hard_query_fixture",
+            "unavailable_reason": "Fixture cannot identify article, issue, or page without more scope.",
+            "verified": false
+          },
+          "result_summary": null,
+          "run": {
+            "checked_source_families": [],
+            "checked_source_ids": [],
+            "requested_value": "article about ray tracing in a 1994 magazine",
+            "run_id": "run-hq_ray_tracing_1994_magazine",
+            "run_kind": "hard_query_fixture_eval",
+            "status": "completed"
+          }
+        },
+        "policy_notes": [
+          "public projection filters operator-only actions"
+        ],
+        "policy_posture": "public_read_only",
+        "public_index_mutated": false,
+        "renderer_may_call_sources": false,
+        "renderer_may_change_policy": false,
+        "renderer_may_create_records": false,
+        "reviewed_index_mutated": false,
+        "reviewed_record_created": false,
+        "route_id": "resolution_run",
+        "schema_version": "surface_view_model.v0",
+        "summary": "Fallback returned unavailable",
+        "title": "Resolution run run-hq_ray_tracing_1994_magazine",
+        "verified": false,
+        "view_family": "resolution_run",
+        "view_model_version": "surface_view_model.v0",
+        "visibility_posture": "public"
+      }
+    },
+    "hq_sound_blaster_ct1740_manual": {
+      "html_basic_v0": {
+        "actions": [
+          {
+            "action_id": "view",
+            "classification": "read_only"
+          },
+          {
+            "action_id": "inspect_evidence",
+            "classification": "read_only"
+          },
+          {
+            "action_id": "cite",
+            "classification": "read_only"
+          }
+        ],
+        "canonical_status": "candidate",
+        "entity_id": "run-hq_sound_blaster_ct1740_manual",
+        "master_index_mutated": false,
+        "payload": {
+          "absence_report": null,
+          "fallback_summary": {
+            "accepted_truth": false,
+            "candidate_count": 1,
+            "candidates": [
+              {
+                "accepted_truth": false,
+                "candidate_id": "hq-candidate-ct1740-manual",
+                "canonical_status": "candidate",
+                "public_actions": [
+                  {
+                    "action_id": "view",
+                    "classification": "read_only"
+                  },
+                  {
+                    "action_id": "inspect_evidence",
+                    "classification": "read_only"
+                  },
+                  {
+                    "action_id": "cite",
+                    "classification": "read_only"
+                  }
+                ],
+                "status": "candidate",
+                "summary": "Synthetic source observation includes CT1740 model text and document type.",
+                "title": "Candidate CT1740 manual document",
+                "verified": false
+              }
+            ],
+            "canonical_status": "candidate",
+            "evidence_summary": "Synthetic source observation includes CT1740 model text and document type.",
+            "fallback_enabled": true,
+            "live_source_calls": false,
+            "master_index_mutated": false,
+            "mode": "hard_query_eval_fixture",
+            "need_count": 0,
+            "needs": [],
+            "policy_notes": [],
+            "public_action_posture": {
+              "allowed": [
+                "view",
+                "inspect_evidence",
+                "cite"
+              ],
+              "blocked_reason": "public output keeps unsafe actions unavailable"
+            },
+            "public_index_mutated": false,
+            "query": "manual for Sound Blaster CT1740",
+            "reason_codes": [
+              "manual_candidate_available",
+              "model_identifier_visible"
+            ],
+            "reviewed_index_mutated": false,
+            "reviewed_record_created": false,
+            "schema_version": "eureka.resolution_run.indexless_fallback.v0",
+            "source_allowlisted": true,
+            "source_family": "eval_fixture",
+            "source_id": "synthetic_hard_query_fixture",
+            "status": "candidate",
+            "title": "Sound Blaster CT1740 manual candidate",
+            "trigger": "synthetic_hard_query_fixture",
+            "verified": false
+          },
+          "result_summary": null,
+          "run": {
+            "checked_source_families": [],
+            "checked_source_ids": [],
+            "requested_value": "manual for Sound Blaster CT1740",
+            "run_id": "run-hq_sound_blaster_ct1740_manual",
+            "run_kind": "hard_query_fixture_eval",
+            "status": "completed"
+          }
+        },
+        "policy_notes": [
+          "public projection filters operator-only actions"
+        ],
+        "policy_posture": "public_read_only",
+        "public_index_mutated": false,
+        "renderer_may_call_sources": false,
+        "renderer_may_change_policy": false,
+        "renderer_may_create_records": false,
+        "reviewed_index_mutated": false,
+        "reviewed_record_created": false,
+        "route_id": "resolution_run",
+        "schema_version": "surface_view_model.v0",
+        "summary": "Fallback returned candidate",
+        "title": "Resolution run run-hq_sound_blaster_ct1740_manual",
+        "verified": false,
+        "view_family": "resolution_run",
+        "view_model_version": "surface_view_model.v0",
+        "visibility_posture": "public"
+      },
+      "json_v0": {
+        "actions": [
+          {
+            "action_id": "view",
+            "classification": "read_only"
+          },
+          {
+            "action_id": "inspect_evidence",
+            "classification": "read_only"
+          },
+          {
+            "action_id": "cite",
+            "classification": "read_only"
+          }
+        ],
+        "canonical_status": "candidate",
+        "entity_id": "run-hq_sound_blaster_ct1740_manual",
+        "master_index_mutated": false,
+        "payload": {
+          "absence_report": null,
+          "fallback_summary": {
+            "accepted_truth": false,
+            "candidate_count": 1,
+            "candidates": [
+              {
+                "accepted_truth": false,
+                "candidate_id": "hq-candidate-ct1740-manual",
+                "canonical_status": "candidate",
+                "public_actions": [
+                  {
+                    "action_id": "view",
+                    "classification": "read_only"
+                  },
+                  {
+                    "action_id": "inspect_evidence",
+                    "classification": "read_only"
+                  },
+                  {
+                    "action_id": "cite",
+                    "classification": "read_only"
+                  }
+                ],
+                "status": "candidate",
+                "summary": "Synthetic source observation includes CT1740 model text and document type.",
+                "title": "Candidate CT1740 manual document",
+                "verified": false
+              }
+            ],
+            "canonical_status": "candidate",
+            "evidence_summary": "Synthetic source observation includes CT1740 model text and document type.",
+            "fallback_enabled": true,
+            "live_source_calls": false,
+            "master_index_mutated": false,
+            "mode": "hard_query_eval_fixture",
+            "need_count": 0,
+            "needs": [],
+            "policy_notes": [],
+            "public_action_posture": {
+              "allowed": [
+                "view",
+                "inspect_evidence",
+                "cite"
+              ],
+              "blocked_reason": "public output keeps unsafe actions unavailable"
+            },
+            "public_index_mutated": false,
+            "query": "manual for Sound Blaster CT1740",
+            "reason_codes": [
+              "manual_candidate_available",
+              "model_identifier_visible"
+            ],
+            "reviewed_index_mutated": false,
+            "reviewed_record_created": false,
+            "schema_version": "eureka.resolution_run.indexless_fallback.v0",
+            "source_allowlisted": true,
+            "source_family": "eval_fixture",
+            "source_id": "synthetic_hard_query_fixture",
+            "status": "candidate",
+            "title": "Sound Blaster CT1740 manual candidate",
+            "trigger": "synthetic_hard_query_fixture",
+            "verified": false
+          },
+          "result_summary": null,
+          "run": {
+            "checked_source_families": [],
+            "checked_source_ids": [],
+            "requested_value": "manual for Sound Blaster CT1740",
+            "run_id": "run-hq_sound_blaster_ct1740_manual",
+            "run_kind": "hard_query_fixture_eval",
+            "status": "completed"
+          }
+        },
+        "policy_notes": [
+          "public projection filters operator-only actions"
+        ],
+        "policy_posture": "public_read_only",
+        "public_index_mutated": false,
+        "renderer_may_call_sources": false,
+        "renderer_may_change_policy": false,
+        "renderer_may_create_records": false,
+        "reviewed_index_mutated": false,
+        "reviewed_record_created": false,
+        "route_id": "resolution_run",
+        "schema_version": "surface_view_model.v0",
+        "summary": "Fallback returned candidate",
+        "title": "Resolution run run-hq_sound_blaster_ct1740_manual",
+        "verified": false,
+        "view_family": "resolution_run",
+        "view_model_version": "surface_view_model.v0",
+        "visibility_posture": "public"
+      },
+      "snapshot_v0": {
+        "actions": [
+          {
+            "action_id": "view",
+            "classification": "read_only"
+          },
+          {
+            "action_id": "inspect_evidence",
+            "classification": "read_only"
+          },
+          {
+            "action_id": "cite",
+            "classification": "read_only"
+          }
+        ],
+        "canonical_status": "candidate",
+        "entity_id": "run-hq_sound_blaster_ct1740_manual",
+        "master_index_mutated": false,
+        "payload": {
+          "absence_report": null,
+          "fallback_summary": {
+            "accepted_truth": false,
+            "candidate_count": 1,
+            "candidates": [
+              {
+                "accepted_truth": false,
+                "candidate_id": "hq-candidate-ct1740-manual",
+                "canonical_status": "candidate",
+                "public_actions": [
+                  {
+                    "action_id": "view",
+                    "classification": "read_only"
+                  },
+                  {
+                    "action_id": "inspect_evidence",
+                    "classification": "read_only"
+                  },
+                  {
+                    "action_id": "cite",
+                    "classification": "read_only"
+                  }
+                ],
+                "status": "candidate",
+                "summary": "Synthetic source observation includes CT1740 model text and document type.",
+                "title": "Candidate CT1740 manual document",
+                "verified": false
+              }
+            ],
+            "canonical_status": "candidate",
+            "evidence_summary": "Synthetic source observation includes CT1740 model text and document type.",
+            "fallback_enabled": true,
+            "live_source_calls": false,
+            "master_index_mutated": false,
+            "mode": "hard_query_eval_fixture",
+            "need_count": 0,
+            "needs": [],
+            "policy_notes": [],
+            "public_action_posture": {
+              "allowed": [
+                "view",
+                "inspect_evidence",
+                "cite"
+              ],
+              "blocked_reason": "public output keeps unsafe actions unavailable"
+            },
+            "public_index_mutated": false,
+            "query": "manual for Sound Blaster CT1740",
+            "reason_codes": [
+              "manual_candidate_available",
+              "model_identifier_visible"
+            ],
+            "reviewed_index_mutated": false,
+            "reviewed_record_created": false,
+            "schema_version": "eureka.resolution_run.indexless_fallback.v0",
+            "source_allowlisted": true,
+            "source_family": "eval_fixture",
+            "source_id": "synthetic_hard_query_fixture",
+            "status": "candidate",
+            "title": "Sound Blaster CT1740 manual candidate",
+            "trigger": "synthetic_hard_query_fixture",
+            "verified": false
+          },
+          "result_summary": null,
+          "run": {
+            "checked_source_families": [],
+            "checked_source_ids": [],
+            "requested_value": "manual for Sound Blaster CT1740",
+            "run_id": "run-hq_sound_blaster_ct1740_manual",
+            "run_kind": "hard_query_fixture_eval",
+            "status": "completed"
+          }
+        },
+        "policy_notes": [
+          "public projection filters operator-only actions"
+        ],
+        "policy_posture": "public_read_only",
+        "public_index_mutated": false,
+        "renderer_may_call_sources": false,
+        "renderer_may_change_policy": false,
+        "renderer_may_create_records": false,
+        "reviewed_index_mutated": false,
+        "reviewed_record_created": false,
+        "route_id": "resolution_run",
+        "schema_version": "surface_view_model.v0",
+        "summary": "Fallback returned candidate",
+        "title": "Resolution run run-hq_sound_blaster_ct1740_manual",
+        "verified": false,
+        "view_family": "resolution_run",
+        "view_model_version": "surface_view_model.v0",
+        "visibility_posture": "public"
+      },
+      "text_v0": {
+        "actions": [
+          {
+            "action_id": "view",
+            "classification": "read_only"
+          },
+          {
+            "action_id": "inspect_evidence",
+            "classification": "read_only"
+          },
+          {
+            "action_id": "cite",
+            "classification": "read_only"
+          }
+        ],
+        "canonical_status": "candidate",
+        "entity_id": "run-hq_sound_blaster_ct1740_manual",
+        "master_index_mutated": false,
+        "payload": {
+          "absence_report": null,
+          "fallback_summary": {
+            "accepted_truth": false,
+            "candidate_count": 1,
+            "candidates": [
+              {
+                "accepted_truth": false,
+                "candidate_id": "hq-candidate-ct1740-manual",
+                "canonical_status": "candidate",
+                "public_actions": [
+                  {
+                    "action_id": "view",
+                    "classification": "read_only"
+                  },
+                  {
+                    "action_id": "inspect_evidence",
+                    "classification": "read_only"
+                  },
+                  {
+                    "action_id": "cite",
+                    "classification": "read_only"
+                  }
+                ],
+                "status": "candidate",
+                "summary": "Synthetic source observation includes CT1740 model text and document type.",
+                "title": "Candidate CT1740 manual document",
+                "verified": false
+              }
+            ],
+            "canonical_status": "candidate",
+            "evidence_summary": "Synthetic source observation includes CT1740 model text and document type.",
+            "fallback_enabled": true,
+            "live_source_calls": false,
+            "master_index_mutated": false,
+            "mode": "hard_query_eval_fixture",
+            "need_count": 0,
+            "needs": [],
+            "policy_notes": [],
+            "public_action_posture": {
+              "allowed": [
+                "view",
+                "inspect_evidence",
+                "cite"
+              ],
+              "blocked_reason": "public output keeps unsafe actions unavailable"
+            },
+            "public_index_mutated": false,
+            "query": "manual for Sound Blaster CT1740",
+            "reason_codes": [
+              "manual_candidate_available",
+              "model_identifier_visible"
+            ],
+            "reviewed_index_mutated": false,
+            "reviewed_record_created": false,
+            "schema_version": "eureka.resolution_run.indexless_fallback.v0",
+            "source_allowlisted": true,
+            "source_family": "eval_fixture",
+            "source_id": "synthetic_hard_query_fixture",
+            "status": "candidate",
+            "title": "Sound Blaster CT1740 manual candidate",
+            "trigger": "synthetic_hard_query_fixture",
+            "verified": false
+          },
+          "result_summary": null,
+          "run": {
+            "checked_source_families": [],
+            "checked_source_ids": [],
+            "requested_value": "manual for Sound Blaster CT1740",
+            "run_id": "run-hq_sound_blaster_ct1740_manual",
+            "run_kind": "hard_query_fixture_eval",
+            "status": "completed"
+          }
+        },
+        "policy_notes": [
+          "public projection filters operator-only actions"
+        ],
+        "policy_posture": "public_read_only",
+        "public_index_mutated": false,
+        "renderer_may_call_sources": false,
+        "renderer_may_change_policy": false,
+        "renderer_may_create_records": false,
+        "reviewed_index_mutated": false,
+        "reviewed_record_created": false,
+        "route_id": "resolution_run",
+        "schema_version": "surface_view_model.v0",
+        "summary": "Fallback returned candidate",
+        "title": "Resolution run run-hq_sound_blaster_ct1740_manual",
+        "verified": false,
+        "view_family": "resolution_run",
+        "view_model_version": "surface_view_model.v0",
+        "visibility_posture": "public"
+      }
+    },
+    "hq_windows_7_apps": {
+      "html_basic_v0": {
+        "actions": [
+          {
+            "action_id": "view",
+            "classification": "read_only"
+          },
+          {
+            "action_id": "inspect_evidence",
+            "classification": "read_only"
+          },
+          {
+            "action_id": "cite",
+            "classification": "read_only"
+          }
+        ],
+        "canonical_status": "candidate",
+        "entity_id": "run-hq_windows_7_apps",
+        "master_index_mutated": false,
+        "payload": {
+          "absence_report": null,
+          "fallback_summary": {
+            "accepted_truth": false,
+            "candidate_count": 1,
+            "candidates": [
+              {
+                "accepted_truth": false,
+                "candidate_id": "hq-candidate-windows-7-apps",
+                "canonical_status": "candidate",
+                "public_actions": [
+                  {
+                    "action_id": "view",
+                    "classification": "read_only"
+                  },
+                  {
+                    "action_id": "inspect_evidence",
+                    "classification": "read_only"
+                  },
+                  {
+                    "action_id": "cite",
+                    "classification": "read_only"
+                  }
+                ],
+                "status": "candidate",
+                "summary": "Synthetic source observation has Windows 7 compatibility hints.",
+                "title": "Candidate Windows 7 utility package",
+                "verified": false
+              }
+            ],
+            "canonical_status": "candidate",
+            "evidence_summary": "Synthetic source observation has Windows 7 compatibility hints.",
+            "fallback_enabled": true,
+            "live_source_calls": false,
+            "master_index_mutated": false,
+            "mode": "hard_query_eval_fixture",
+            "need_count": 0,
+            "needs": [],
+            "policy_notes": [],
+            "public_action_posture": {
+              "allowed": [
+                "view",
+                "inspect_evidence",
+                "cite"
+              ],
+              "blocked_reason": "public output keeps unsafe actions unavailable"
+            },
+            "public_index_mutated": false,
+            "query": "Windows 7 apps",
+            "reason_codes": [
+              "fallback_candidates_available",
+              "compatibility_scope_visible"
+            ],
+            "reviewed_index_mutated": false,
+            "reviewed_record_created": false,
+            "schema_version": "eureka.resolution_run.indexless_fallback.v0",
+            "source_allowlisted": true,
+            "source_family": "eval_fixture",
+            "source_id": "synthetic_hard_query_fixture",
+            "status": "candidate",
+            "title": "Windows 7 compatible utility candidate",
+            "trigger": "synthetic_hard_query_fixture",
+            "verified": false
+          },
+          "result_summary": null,
+          "run": {
+            "checked_source_families": [],
+            "checked_source_ids": [],
+            "requested_value": "Windows 7 apps",
+            "run_id": "run-hq_windows_7_apps",
+            "run_kind": "hard_query_fixture_eval",
+            "status": "completed"
+          }
+        },
+        "policy_notes": [
+          "public projection filters operator-only actions"
+        ],
+        "policy_posture": "public_read_only",
+        "public_index_mutated": false,
+        "renderer_may_call_sources": false,
+        "renderer_may_change_policy": false,
+        "renderer_may_create_records": false,
+        "reviewed_index_mutated": false,
+        "reviewed_record_created": false,
+        "route_id": "resolution_run",
+        "schema_version": "surface_view_model.v0",
+        "summary": "Fallback returned candidate",
+        "title": "Resolution run run-hq_windows_7_apps",
+        "verified": false,
+        "view_family": "resolution_run",
+        "view_model_version": "surface_view_model.v0",
+        "visibility_posture": "public"
+      },
+      "json_v0": {
+        "actions": [
+          {
+            "action_id": "view",
+            "classification": "read_only"
+          },
+          {
+            "action_id": "inspect_evidence",
+            "classification": "read_only"
+          },
+          {
+            "action_id": "cite",
+            "classification": "read_only"
+          }
+        ],
+        "canonical_status": "candidate",
+        "entity_id": "run-hq_windows_7_apps",
+        "master_index_mutated": false,
+        "payload": {
+          "absence_report": null,
+          "fallback_summary": {
+            "accepted_truth": false,
+            "candidate_count": 1,
+            "candidates": [
+              {
+                "accepted_truth": false,
+                "candidate_id": "hq-candidate-windows-7-apps",
+                "canonical_status": "candidate",
+                "public_actions": [
+                  {
+                    "action_id": "view",
+                    "classification": "read_only"
+                  },
+                  {
+                    "action_id": "inspect_evidence",
+                    "classification": "read_only"
+                  },
+                  {
+                    "action_id": "cite",
+                    "classification": "read_only"
+                  }
+                ],
+                "status": "candidate",
+                "summary": "Synthetic source observation has Windows 7 compatibility hints.",
+                "title": "Candidate Windows 7 utility package",
+                "verified": false
+              }
+            ],
+            "canonical_status": "candidate",
+            "evidence_summary": "Synthetic source observation has Windows 7 compatibility hints.",
+            "fallback_enabled": true,
+            "live_source_calls": false,
+            "master_index_mutated": false,
+            "mode": "hard_query_eval_fixture",
+            "need_count": 0,
+            "needs": [],
+            "policy_notes": [],
+            "public_action_posture": {
+              "allowed": [
+                "view",
+                "inspect_evidence",
+                "cite"
+              ],
+              "blocked_reason": "public output keeps unsafe actions unavailable"
+            },
+            "public_index_mutated": false,
+            "query": "Windows 7 apps",
+            "reason_codes": [
+              "fallback_candidates_available",
+              "compatibility_scope_visible"
+            ],
+            "reviewed_index_mutated": false,
+            "reviewed_record_created": false,
+            "schema_version": "eureka.resolution_run.indexless_fallback.v0",
+            "source_allowlisted": true,
+            "source_family": "eval_fixture",
+            "source_id": "synthetic_hard_query_fixture",
+            "status": "candidate",
+            "title": "Windows 7 compatible utility candidate",
+            "trigger": "synthetic_hard_query_fixture",
+            "verified": false
+          },
+          "result_summary": null,
+          "run": {
+            "checked_source_families": [],
+            "checked_source_ids": [],
+            "requested_value": "Windows 7 apps",
+            "run_id": "run-hq_windows_7_apps",
+            "run_kind": "hard_query_fixture_eval",
+            "status": "completed"
+          }
+        },
+        "policy_notes": [
+          "public projection filters operator-only actions"
+        ],
+        "policy_posture": "public_read_only",
+        "public_index_mutated": false,
+        "renderer_may_call_sources": false,
+        "renderer_may_change_policy": false,
+        "renderer_may_create_records": false,
+        "reviewed_index_mutated": false,
+        "reviewed_record_created": false,
+        "route_id": "resolution_run",
+        "schema_version": "surface_view_model.v0",
+        "summary": "Fallback returned candidate",
+        "title": "Resolution run run-hq_windows_7_apps",
+        "verified": false,
+        "view_family": "resolution_run",
+        "view_model_version": "surface_view_model.v0",
+        "visibility_posture": "public"
+      },
+      "snapshot_v0": {
+        "actions": [
+          {
+            "action_id": "view",
+            "classification": "read_only"
+          },
+          {
+            "action_id": "inspect_evidence",
+            "classification": "read_only"
+          },
+          {
+            "action_id": "cite",
+            "classification": "read_only"
+          }
+        ],
+        "canonical_status": "candidate",
+        "entity_id": "run-hq_windows_7_apps",
+        "master_index_mutated": false,
+        "payload": {
+          "absence_report": null,
+          "fallback_summary": {
+            "accepted_truth": false,
+            "candidate_count": 1,
+            "candidates": [
+              {
+                "accepted_truth": false,
+                "candidate_id": "hq-candidate-windows-7-apps",
+                "canonical_status": "candidate",
+                "public_actions": [
+                  {
+                    "action_id": "view",
+                    "classification": "read_only"
+                  },
+                  {
+                    "action_id": "inspect_evidence",
+                    "classification": "read_only"
+                  },
+                  {
+                    "action_id": "cite",
+                    "classification": "read_only"
+                  }
+                ],
+                "status": "candidate",
+                "summary": "Synthetic source observation has Windows 7 compatibility hints.",
+                "title": "Candidate Windows 7 utility package",
+                "verified": false
+              }
+            ],
+            "canonical_status": "candidate",
+            "evidence_summary": "Synthetic source observation has Windows 7 compatibility hints.",
+            "fallback_enabled": true,
+            "live_source_calls": false,
+            "master_index_mutated": false,
+            "mode": "hard_query_eval_fixture",
+            "need_count": 0,
+            "needs": [],
+            "policy_notes": [],
+            "public_action_posture": {
+              "allowed": [
+                "view",
+                "inspect_evidence",
+                "cite"
+              ],
+              "blocked_reason": "public output keeps unsafe actions unavailable"
+            },
+            "public_index_mutated": false,
+            "query": "Windows 7 apps",
+            "reason_codes": [
+              "fallback_candidates_available",
+              "compatibility_scope_visible"
+            ],
+            "reviewed_index_mutated": false,
+            "reviewed_record_created": false,
+            "schema_version": "eureka.resolution_run.indexless_fallback.v0",
+            "source_allowlisted": true,
+            "source_family": "eval_fixture",
+            "source_id": "synthetic_hard_query_fixture",
+            "status": "candidate",
+            "title": "Windows 7 compatible utility candidate",
+            "trigger": "synthetic_hard_query_fixture",
+            "verified": false
+          },
+          "result_summary": null,
+          "run": {
+            "checked_source_families": [],
+            "checked_source_ids": [],
+            "requested_value": "Windows 7 apps",
+            "run_id": "run-hq_windows_7_apps",
+            "run_kind": "hard_query_fixture_eval",
+            "status": "completed"
+          }
+        },
+        "policy_notes": [
+          "public projection filters operator-only actions"
+        ],
+        "policy_posture": "public_read_only",
+        "public_index_mutated": false,
+        "renderer_may_call_sources": false,
+        "renderer_may_change_policy": false,
+        "renderer_may_create_records": false,
+        "reviewed_index_mutated": false,
+        "reviewed_record_created": false,
+        "route_id": "resolution_run",
+        "schema_version": "surface_view_model.v0",
+        "summary": "Fallback returned candidate",
+        "title": "Resolution run run-hq_windows_7_apps",
+        "verified": false,
+        "view_family": "resolution_run",
+        "view_model_version": "surface_view_model.v0",
+        "visibility_posture": "public"
+      },
+      "text_v0": {
+        "actions": [
+          {
+            "action_id": "view",
+            "classification": "read_only"
+          },
+          {
+            "action_id": "inspect_evidence",
+            "classification": "read_only"
+          },
+          {
+            "action_id": "cite",
+            "classification": "read_only"
+          }
+        ],
+        "canonical_status": "candidate",
+        "entity_id": "run-hq_windows_7_apps",
+        "master_index_mutated": false,
+        "payload": {
+          "absence_report": null,
+          "fallback_summary": {
+            "accepted_truth": false,
+            "candidate_count": 1,
+            "candidates": [
+              {
+                "accepted_truth": false,
+                "candidate_id": "hq-candidate-windows-7-apps",
+                "canonical_status": "candidate",
+                "public_actions": [
+                  {
+                    "action_id": "view",
+                    "classification": "read_only"
+                  },
+                  {
+                    "action_id": "inspect_evidence",
+                    "classification": "read_only"
+                  },
+                  {
+                    "action_id": "cite",
+                    "classification": "read_only"
+                  }
+                ],
+                "status": "candidate",
+                "summary": "Synthetic source observation has Windows 7 compatibility hints.",
+                "title": "Candidate Windows 7 utility package",
+                "verified": false
+              }
+            ],
+            "canonical_status": "candidate",
+            "evidence_summary": "Synthetic source observation has Windows 7 compatibility hints.",
+            "fallback_enabled": true,
+            "live_source_calls": false,
+            "master_index_mutated": false,
+            "mode": "hard_query_eval_fixture",
+            "need_count": 0,
+            "needs": [],
+            "policy_notes": [],
+            "public_action_posture": {
+              "allowed": [
+                "view",
+                "inspect_evidence",
+                "cite"
+              ],
+              "blocked_reason": "public output keeps unsafe actions unavailable"
+            },
+            "public_index_mutated": false,
+            "query": "Windows 7 apps",
+            "reason_codes": [
+              "fallback_candidates_available",
+              "compatibility_scope_visible"
+            ],
+            "reviewed_index_mutated": false,
+            "reviewed_record_created": false,
+            "schema_version": "eureka.resolution_run.indexless_fallback.v0",
+            "source_allowlisted": true,
+            "source_family": "eval_fixture",
+            "source_id": "synthetic_hard_query_fixture",
+            "status": "candidate",
+            "title": "Windows 7 compatible utility candidate",
+            "trigger": "synthetic_hard_query_fixture",
+            "verified": false
+          },
+          "result_summary": null,
+          "run": {
+            "checked_source_families": [],
+            "checked_source_ids": [],
+            "requested_value": "Windows 7 apps",
+            "run_id": "run-hq_windows_7_apps",
+            "run_kind": "hard_query_fixture_eval",
+            "status": "completed"
+          }
+        },
+        "policy_notes": [
+          "public projection filters operator-only actions"
+        ],
+        "policy_posture": "public_read_only",
+        "public_index_mutated": false,
+        "renderer_may_call_sources": false,
+        "renderer_may_change_policy": false,
+        "renderer_may_create_records": false,
+        "reviewed_index_mutated": false,
+        "reviewed_record_created": false,
+        "route_id": "resolution_run",
+        "schema_version": "surface_view_model.v0",
+        "summary": "Fallback returned candidate",
+        "title": "Resolution run run-hq_windows_7_apps",
+        "verified": false,
+        "view_family": "resolution_run",
+        "view_model_version": "surface_view_model.v0",
+        "visibility_posture": "public"
+      }
+    }
+  }
+}

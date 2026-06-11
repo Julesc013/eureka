@@ -1,0 +1,398 @@
+{
+  "artifact_gate": {
+    "dev_to_main_promotion_blocked": true,
+    "external_artifact_evidence": "absent",
+    "hardware_details": "absent",
+    "minimum_public_alpha_reviewed_artifact_records": 25,
+    "public_alpha_blocked": true,
+    "reviewed_artifact_record_count": 4,
+    "reviewed_artifact_record_gap": 21,
+    "schema_version": "local_e2e_artifact_gate_snapshot.v0",
+    "source_path": "evals/hard_queries/artifact_record_gate/gate_02/public_alpha_artifact_gate.json",
+    "status": "FAIL_INSUFFICIENT_REVIEWED_ARTIFACT_RECORDS",
+    "verified_artifact_count": 0
+  },
+  "downloads_performed": false,
+  "fixture_disclaimer": "Synthetic hard-query fixtures are evaluation pressure only. They are not evidence. They are not reviewed records. They do not promote corpus truth.",
+  "live_source_calls": false,
+  "master_index_mutated": false,
+  "profile": "snapshot_v0",
+  "public_index_mutated": false,
+  "queries": [
+    {
+      "expected_status": "candidate",
+      "query_id": "hq_windows_7_apps",
+      "query_text": "Windows 7 apps",
+      "renderer_flags": {
+        "renderer_called_source_provider": false,
+        "renderer_created_verified_state": false,
+        "renderer_mutated_master_index": false,
+        "renderer_mutated_public_index": false,
+        "renderer_mutated_reviewed_index": false
+      },
+      "renderer_output": {
+        "content": {
+          "actions": [
+            "cite",
+            "inspect_evidence",
+            "view"
+          ],
+          "canonical_status": "candidate",
+          "content_digest": "85cdba1e0744fae82dc3bf3e",
+          "entity_id": "run-hq_windows_7_apps",
+          "fallback_status": "candidate",
+          "policy_notes": [
+            "public projection filters operator-only actions"
+          ],
+          "route_id": "resolution_run",
+          "schema_version": "surface_snapshot_v0",
+          "summary": "Fallback returned candidate",
+          "title": "Resolution run run-hq_windows_7_apps",
+          "view_family": "resolution_run",
+          "view_model_version": "surface_view_model.v0"
+        },
+        "content_format": "snapshot",
+        "media_type": "application/vnd.eureka.surface.snapshot+json",
+        "representation_profile": "snapshot_v0",
+        "schema_version": "surface_renderer_output.v0"
+      },
+      "status_concept": "candidate",
+      "surface_flags": {
+        "surface_kernel_called_source_provider": false,
+        "surface_kernel_mutated_master_index": false,
+        "surface_kernel_mutated_public_index": false,
+        "surface_kernel_mutated_reviewed_index": false
+      },
+      "truth_boundary": {
+        "accepted_truth": false,
+        "blocked_for_user_details_is_not_failed_search": true,
+        "candidate_is_not_reviewed_truth": true,
+        "fixture_is_evidence": false,
+        "fixture_reviewed_record_created": false,
+        "near_miss_is_not_reviewed_truth": true,
+        "need_is_not_reviewed_truth": true,
+        "reviewed_artifact_record_count": 4,
+        "reviewed_artifact_record_created": false,
+        "reviewed_artifact_record_is_not_verified_artifact": true,
+        "reviewed_support_fact_is_not_reviewed_artifact_record": true,
+        "unavailable_is_not_absence": true,
+        "verified": false,
+        "verified_artifact_count": 0,
+        "verified_artifact_created": false
+      }
+    },
+    {
+      "expected_status": "need",
+      "query_id": "hq_driver_win98",
+      "query_text": "driver for Win98",
+      "renderer_flags": {
+        "renderer_called_source_provider": false,
+        "renderer_created_verified_state": false,
+        "renderer_mutated_master_index": false,
+        "renderer_mutated_public_index": false,
+        "renderer_mutated_reviewed_index": false
+      },
+      "renderer_output": {
+        "content": {
+          "actions": [
+            "cite",
+            "inspect_evidence",
+            "view"
+          ],
+          "canonical_status": "need",
+          "content_digest": "02ed15a0b7ad9215354dfc24",
+          "entity_id": "run-hq_driver_win98",
+          "fallback_status": "need",
+          "policy_notes": [
+            "public projection filters operator-only actions"
+          ],
+          "route_id": "resolution_run",
+          "schema_version": "surface_snapshot_v0",
+          "summary": "Fallback returned need",
+          "title": "Resolution run run-hq_driver_win98",
+          "view_family": "resolution_run",
+          "view_model_version": "surface_view_model.v0"
+        },
+        "content_format": "snapshot",
+        "media_type": "application/vnd.eureka.surface.snapshot+json",
+        "representation_profile": "snapshot_v0",
+        "schema_version": "surface_renderer_output.v0"
+      },
+      "status_concept": "blocked_for_user_details",
+      "surface_flags": {
+        "surface_kernel_called_source_provider": false,
+        "surface_kernel_mutated_master_index": false,
+        "surface_kernel_mutated_public_index": false,
+        "surface_kernel_mutated_reviewed_index": false
+      },
+      "truth_boundary": {
+        "accepted_truth": false,
+        "blocked_for_user_details_is_not_failed_search": true,
+        "candidate_is_not_reviewed_truth": true,
+        "fixture_is_evidence": false,
+        "fixture_reviewed_record_created": false,
+        "near_miss_is_not_reviewed_truth": true,
+        "need_is_not_reviewed_truth": true,
+        "reviewed_artifact_record_count": 4,
+        "reviewed_artifact_record_created": false,
+        "reviewed_artifact_record_is_not_verified_artifact": true,
+        "reviewed_support_fact_is_not_reviewed_artifact_record": true,
+        "unavailable_is_not_absence": true,
+        "verified": false,
+        "verified_artifact_count": 0,
+        "verified_artifact_created": false
+      }
+    },
+    {
+      "expected_status": "near_miss",
+      "query_id": "hq_blue_ftp_client_xp",
+      "query_text": "old blue FTP client for XP",
+      "renderer_flags": {
+        "renderer_called_source_provider": false,
+        "renderer_created_verified_state": false,
+        "renderer_mutated_master_index": false,
+        "renderer_mutated_public_index": false,
+        "renderer_mutated_reviewed_index": false
+      },
+      "renderer_output": {
+        "content": {
+          "actions": [
+            "cite",
+            "inspect_evidence",
+            "view"
+          ],
+          "canonical_status": "near_miss",
+          "content_digest": "70b746564b69c5624a39e10b",
+          "entity_id": "run-hq_blue_ftp_client_xp",
+          "fallback_status": "near_miss",
+          "policy_notes": [
+            "public projection filters operator-only actions"
+          ],
+          "route_id": "resolution_run",
+          "schema_version": "surface_snapshot_v0",
+          "summary": "Fallback returned near_miss",
+          "title": "Resolution run run-hq_blue_ftp_client_xp",
+          "view_family": "resolution_run",
+          "view_model_version": "surface_view_model.v0"
+        },
+        "content_format": "snapshot",
+        "media_type": "application/vnd.eureka.surface.snapshot+json",
+        "representation_profile": "snapshot_v0",
+        "schema_version": "surface_renderer_output.v0"
+      },
+      "status_concept": "near_miss",
+      "surface_flags": {
+        "surface_kernel_called_source_provider": false,
+        "surface_kernel_mutated_master_index": false,
+        "surface_kernel_mutated_public_index": false,
+        "surface_kernel_mutated_reviewed_index": false
+      },
+      "truth_boundary": {
+        "accepted_truth": false,
+        "blocked_for_user_details_is_not_failed_search": true,
+        "candidate_is_not_reviewed_truth": true,
+        "fixture_is_evidence": false,
+        "fixture_reviewed_record_created": false,
+        "near_miss_is_not_reviewed_truth": true,
+        "need_is_not_reviewed_truth": true,
+        "reviewed_artifact_record_count": 4,
+        "reviewed_artifact_record_created": false,
+        "reviewed_artifact_record_is_not_verified_artifact": true,
+        "reviewed_support_fact_is_not_reviewed_artifact_record": true,
+        "unavailable_is_not_absence": true,
+        "verified": false,
+        "verified_artifact_count": 0,
+        "verified_artifact_created": false
+      }
+    },
+    {
+      "expected_status": "candidate",
+      "query_id": "hq_sound_blaster_ct1740_manual",
+      "query_text": "manual for Sound Blaster CT1740",
+      "renderer_flags": {
+        "renderer_called_source_provider": false,
+        "renderer_created_verified_state": false,
+        "renderer_mutated_master_index": false,
+        "renderer_mutated_public_index": false,
+        "renderer_mutated_reviewed_index": false
+      },
+      "renderer_output": {
+        "content": {
+          "actions": [
+            "cite",
+            "inspect_evidence",
+            "view"
+          ],
+          "canonical_status": "candidate",
+          "content_digest": "0c335655b9f5621f09b961d6",
+          "entity_id": "run-hq_sound_blaster_ct1740_manual",
+          "fallback_status": "candidate",
+          "policy_notes": [
+            "public projection filters operator-only actions"
+          ],
+          "route_id": "resolution_run",
+          "schema_version": "surface_snapshot_v0",
+          "summary": "Fallback returned candidate",
+          "title": "Resolution run run-hq_sound_blaster_ct1740_manual",
+          "view_family": "resolution_run",
+          "view_model_version": "surface_view_model.v0"
+        },
+        "content_format": "snapshot",
+        "media_type": "application/vnd.eureka.surface.snapshot+json",
+        "representation_profile": "snapshot_v0",
+        "schema_version": "surface_renderer_output.v0"
+      },
+      "status_concept": "candidate",
+      "surface_flags": {
+        "surface_kernel_called_source_provider": false,
+        "surface_kernel_mutated_master_index": false,
+        "surface_kernel_mutated_public_index": false,
+        "surface_kernel_mutated_reviewed_index": false
+      },
+      "truth_boundary": {
+        "accepted_truth": false,
+        "blocked_for_user_details_is_not_failed_search": true,
+        "candidate_is_not_reviewed_truth": true,
+        "fixture_is_evidence": false,
+        "fixture_reviewed_record_created": false,
+        "near_miss_is_not_reviewed_truth": true,
+        "need_is_not_reviewed_truth": true,
+        "reviewed_artifact_record_count": 4,
+        "reviewed_artifact_record_created": false,
+        "reviewed_artifact_record_is_not_verified_artifact": true,
+        "reviewed_support_fact_is_not_reviewed_artifact_record": true,
+        "unavailable_is_not_absence": true,
+        "verified": false,
+        "verified_artifact_count": 0,
+        "verified_artifact_created": false
+      }
+    },
+    {
+      "expected_status": "policy_blocked",
+      "query_id": "hq_firefox_last_xp",
+      "query_text": "latest Firefox before XP support ended",
+      "renderer_flags": {
+        "renderer_called_source_provider": false,
+        "renderer_created_verified_state": false,
+        "renderer_mutated_master_index": false,
+        "renderer_mutated_public_index": false,
+        "renderer_mutated_reviewed_index": false
+      },
+      "renderer_output": {
+        "content": {
+          "actions": [
+            "cite",
+            "inspect_evidence",
+            "view"
+          ],
+          "canonical_status": "policy_blocked",
+          "content_digest": "4af3f3f179fab44cec31d797",
+          "entity_id": "run-hq_firefox_last_xp",
+          "fallback_status": "policy_blocked",
+          "policy_notes": [
+            "public projection filters operator-only actions"
+          ],
+          "route_id": "resolution_run",
+          "schema_version": "surface_snapshot_v0",
+          "summary": "Fallback returned policy_blocked",
+          "title": "Resolution run run-hq_firefox_last_xp",
+          "view_family": "resolution_run",
+          "view_model_version": "surface_view_model.v0"
+        },
+        "content_format": "snapshot",
+        "media_type": "application/vnd.eureka.surface.snapshot+json",
+        "representation_profile": "snapshot_v0",
+        "schema_version": "surface_renderer_output.v0"
+      },
+      "status_concept": "policy_blocked",
+      "surface_flags": {
+        "surface_kernel_called_source_provider": false,
+        "surface_kernel_mutated_master_index": false,
+        "surface_kernel_mutated_public_index": false,
+        "surface_kernel_mutated_reviewed_index": false
+      },
+      "truth_boundary": {
+        "accepted_truth": false,
+        "blocked_for_user_details_is_not_failed_search": true,
+        "candidate_is_not_reviewed_truth": true,
+        "fixture_is_evidence": false,
+        "fixture_reviewed_record_created": false,
+        "near_miss_is_not_reviewed_truth": true,
+        "need_is_not_reviewed_truth": true,
+        "reviewed_artifact_record_count": 4,
+        "reviewed_artifact_record_created": false,
+        "reviewed_artifact_record_is_not_verified_artifact": true,
+        "reviewed_support_fact_is_not_reviewed_artifact_record": true,
+        "unavailable_is_not_absence": true,
+        "verified": false,
+        "verified_artifact_count": 0,
+        "verified_artifact_created": false
+      }
+    },
+    {
+      "expected_status": "unavailable",
+      "query_id": "hq_ray_tracing_1994_magazine",
+      "query_text": "article about ray tracing in a 1994 magazine",
+      "renderer_flags": {
+        "renderer_called_source_provider": false,
+        "renderer_created_verified_state": false,
+        "renderer_mutated_master_index": false,
+        "renderer_mutated_public_index": false,
+        "renderer_mutated_reviewed_index": false
+      },
+      "renderer_output": {
+        "content": {
+          "actions": [
+            "cite",
+            "inspect_evidence",
+            "view"
+          ],
+          "canonical_status": "unavailable",
+          "content_digest": "1c8ef52ad4a8465f81a31e03",
+          "entity_id": "run-hq_ray_tracing_1994_magazine",
+          "fallback_status": "unavailable",
+          "policy_notes": [
+            "public projection filters operator-only actions"
+          ],
+          "route_id": "resolution_run",
+          "schema_version": "surface_snapshot_v0",
+          "summary": "Fallback returned unavailable",
+          "title": "Resolution run run-hq_ray_tracing_1994_magazine",
+          "view_family": "resolution_run",
+          "view_model_version": "surface_view_model.v0"
+        },
+        "content_format": "snapshot",
+        "media_type": "application/vnd.eureka.surface.snapshot+json",
+        "representation_profile": "snapshot_v0",
+        "schema_version": "surface_renderer_output.v0"
+      },
+      "status_concept": "unavailable",
+      "surface_flags": {
+        "surface_kernel_called_source_provider": false,
+        "surface_kernel_mutated_master_index": false,
+        "surface_kernel_mutated_public_index": false,
+        "surface_kernel_mutated_reviewed_index": false
+      },
+      "truth_boundary": {
+        "accepted_truth": false,
+        "blocked_for_user_details_is_not_failed_search": true,
+        "candidate_is_not_reviewed_truth": true,
+        "fixture_is_evidence": false,
+        "fixture_reviewed_record_created": false,
+        "near_miss_is_not_reviewed_truth": true,
+        "need_is_not_reviewed_truth": true,
+        "reviewed_artifact_record_count": 4,
+        "reviewed_artifact_record_created": false,
+        "reviewed_artifact_record_is_not_verified_artifact": true,
+        "reviewed_support_fact_is_not_reviewed_artifact_record": true,
+        "unavailable_is_not_absence": true,
+        "verified": false,
+        "verified_artifact_count": 0,
+        "verified_artifact_created": false
+      }
+    }
+  ],
+  "reviewed_index_mutated": false,
+  "schema_version": "local_e2e_search_demo_profile_output.v0",
+  "task_id": "LOCAL-E2E-SEARCH-DEMO-00"
+}

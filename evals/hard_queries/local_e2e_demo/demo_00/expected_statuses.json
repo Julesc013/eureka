@@ -1,0 +1,36 @@
+{
+  "schema_version": "local_e2e_expected_statuses.v0",
+  "statuses": {
+    "hq_blue_ftp_client_xp": {
+      "expected_status": "near_miss",
+      "query_text": "old blue FTP client for XP",
+      "status_concept": "near_miss"
+    },
+    "hq_driver_win98": {
+      "expected_status": "need",
+      "query_text": "driver for Win98",
+      "status_concept": "blocked_for_user_details"
+    },
+    "hq_firefox_last_xp": {
+      "expected_status": "policy_blocked",
+      "query_text": "latest Firefox before XP support ended",
+      "status_concept": "policy_blocked"
+    },
+    "hq_ray_tracing_1994_magazine": {
+      "expected_status": "unavailable",
+      "query_text": "article about ray tracing in a 1994 magazine",
+      "status_concept": "unavailable"
+    },
+    "hq_sound_blaster_ct1740_manual": {
+      "expected_status": "candidate",
+      "query_text": "manual for Sound Blaster CT1740",
+      "status_concept": "candidate"
+    },
+    "hq_windows_7_apps": {
+      "expected_status": "candidate",
+      "query_text": "Windows 7 apps",
+      "status_concept": "candidate"
+    }
+  },
+  "task_id": "LOCAL-E2E-SEARCH-DEMO-00"
+}
