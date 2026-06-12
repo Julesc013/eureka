@@ -1,0 +1,46 @@
+{
+  "schema_version": "ia_metadata_fallback_demo_fixtures.v0",
+  "task_id": "LOCAL-METADATA-FALLBACK-E2E-DEMO-00",
+  "metadata_only": true,
+  "live_network_required": false,
+  "cases": [
+    {
+      "case_id": "candidate_windows_7_apps_scope",
+      "query_text": "Windows 7 apps",
+      "fixture_mode": "candidate",
+      "docs": [
+        {
+          "identifier": "windows_7_apps_broad_fixture",
+          "title": "Windows 7 application compatibility metadata candidate",
+          "mediatype": "texts",
+          "collection": ["eureka_fixture_metadata"],
+          "creator": "Fixture metadata lab",
+          "date": "2010",
+          "description": "Broad metadata-only lead for Windows 7 application compatibility. It is useful for scoping, not a verified app recommendation."
+        }
+      ]
+    },
+    {
+      "case_id": "candidate_firefox_xp_support_window",
+      "query_text": "latest Firefox before XP support ended",
+      "fixture_mode": "candidate",
+      "docs": [
+        {
+          "identifier": "firefox_xp_support_window_fixture",
+          "title": "Firefox Windows XP support-window metadata candidate",
+          "mediatype": "texts",
+          "collection": ["eureka_fixture_metadata"],
+          "creator": "Fixture metadata lab",
+          "date": "2018",
+          "description": "Metadata-only lead about the Firefox support window for Windows XP. It does not assert a final compatible version without review."
+        }
+      ]
+    },
+    {
+      "case_id": "need_ray_tracing_1994_article_scope",
+      "query_text": "article about ray tracing in a 1994 magazine",
+      "fixture_mode": "empty",
+      "docs": []
+    }
+  ]
+}
