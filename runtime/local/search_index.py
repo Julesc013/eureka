@@ -58,26 +58,34 @@ class IndexSearchState:
     document_count: int
     results: tuple[dict[str, Any], ...]
     errors: tuple[str, ...] = ()
+    reviewed_record_count: int = 0
+    artifact_verified_count: int = 0
 
 
-def build_local_demo_index() -> dict[str, Any]:
+def build_local_demo_index(*, reviewed_records_path: str | Path | None = None) -> dict[str, Any]:
     """Build a deterministic local-demo search index from committed fixtures."""
 
+    reviewed_documents = _documents_from_reviewed_records(reviewed_records_path)
     documents = _sorted_documents(
         [
             *_documents_from_hard_query_fixtures(),
             *_documents_from_ia_demo_fixtures(),
+            *reviewed_documents,
         ]
     )
-    source_manifest = _source_manifest()
+    source_manifest = _source_manifest(reviewed_records_path)
     metadata_without_digest = {
         "index_schema_version": INDEX_SCHEMA_VERSION,
         "source": LOCAL_DEMO_SOURCE,
         "source_manifest": source_manifest,
         "source_digest": "",
+        "reviewed_records_source": str(reviewed_records_path or ""),
         "document_count": len(documents),
         "status_counts": _counts(document.get("status") for document in documents),
         "source_family_counts": _counts(document.get("source_family") for document in documents),
+        "reviewed_record_count": sum(1 for document in documents if document.get("record_state") == "reviewed"),
+        "review_state_counts": _counts(document.get("review_state") for document in documents if document.get("review_state")),
+        "artifact_verified_count": sum(1 for document in documents if document.get("artifact_verified") is True),
         "deterministic_build": True,
     }
     digest = _stable_digest({"metadata": metadata_without_digest, "documents": documents})
@@ -120,6 +128,15 @@ def validate_index(index: Mapping[str, Any]) -> list[str]:
     source_family_counts = _counts(document.get("source_family") for document in documents if isinstance(document, Mapping))
     if dict(index.get("source_family_counts") or {}) != source_family_counts:
         errors.append("source_family_counts must match documents")
+    reviewed_record_count = sum(1 for document in documents if isinstance(document, Mapping) and document.get("record_state") == "reviewed")
+    if int(index.get("reviewed_record_count") or 0) != reviewed_record_count:
+        errors.append("reviewed_record_count must match documents")
+    review_state_counts = _counts(document.get("review_state") for document in documents if isinstance(document, Mapping) and document.get("review_state"))
+    if dict(index.get("review_state_counts") or {}) != review_state_counts:
+        errors.append("review_state_counts must match documents")
+    artifact_verified_count = sum(1 for document in documents if isinstance(document, Mapping) and document.get("artifact_verified") is True)
+    if int(index.get("artifact_verified_count") or 0) != artifact_verified_count:
+        errors.append("artifact_verified_count must match documents")
 
     seen_ids: set[str] = set()
     for position, document in enumerate(documents):
@@ -139,6 +156,8 @@ def validate_index(index: Mapping[str, Any]) -> list[str]:
             errors.append(f"{doc_id or position}: non-reviewed document cannot be verified")
         if document.get("accepted_truth") is True and status != "verified":
             errors.append(f"{doc_id or position}: non-reviewed document cannot be accepted truth")
+        if document.get("artifact_verified") is True and document.get("accepted_truth") is not True:
+            errors.append(f"{doc_id or position}: artifact_verified requires accepted truth")
         if status != "verified" and not str(document.get("non_verified_reason") or ""):
             errors.append(f"{doc_id or position}: non_verified_reason is required")
         if not str(document.get("normalized_search_text") or ""):
@@ -156,6 +175,10 @@ def stats_payload(index: Mapping[str, Any]) -> dict[str, Any]:
         "document_count": int(index.get("document_count") or 0),
         "status_counts": dict(index.get("status_counts") or {}),
         "source_family_counts": dict(index.get("source_family_counts") or {}),
+        "reviewed_records_source": str(index.get("reviewed_records_source") or ""),
+        "reviewed_record_count": int(index.get("reviewed_record_count") or 0),
+        "review_state_counts": dict(index.get("review_state_counts") or {}),
+        "artifact_verified_count": int(index.get("artifact_verified_count") or 0),
         "deterministic_build": bool(index.get("deterministic_build")),
     }
 
@@ -200,6 +223,8 @@ def search_index_path(path: str | Path, query: str, *, limit: int) -> IndexSearc
         path=index_path,
         document_count=len(documents),
         results=matches,
+        reviewed_record_count=int(index.get("reviewed_record_count") or 0),
+        artifact_verified_count=int(index.get("artifact_verified_count") or 0),
     )
 
 
@@ -212,6 +237,8 @@ def index_file_status(index_mode: str, index_path: str) -> dict[str, Any]:
             "index_loaded": False,
             "index_path": str(index_path),
             "index_document_count": 0,
+            "reviewed_record_count": 0,
+            "artifact_verified_count": 0,
             "index_errors": [],
         }
     state = search_index_path(index_path, "", limit=1)
@@ -221,6 +248,8 @@ def index_file_status(index_mode: str, index_path: str) -> dict[str, Any]:
         "index_loaded": state.loaded,
         "index_path": state.path,
         "index_document_count": state.document_count,
+        "reviewed_record_count": state.reviewed_record_count,
+        "artifact_verified_count": state.artifact_verified_count,
         "index_errors": list(state.errors),
     }
 
@@ -239,6 +268,11 @@ def document_to_result_card(document: Mapping[str, Any]) -> dict[str, Any]:
         "verified": bool(document.get("verified") is True),
         "accepted_truth": bool(document.get("accepted_truth") is True),
         "review_required": bool(document.get("review_required") is True),
+        "record_state": str(document.get("record_state") or ""),
+        "review_state": str(document.get("review_state") or ""),
+        "reviewed_record_id": str(document.get("reviewed_record_id") or ""),
+        "review_event_id": str(document.get("review_event_id") or ""),
+        "artifact_verified": bool(document.get("artifact_verified") is True),
         "provenance": dict(document.get("provenance") or {}),
         "index_document_id": str(document.get("id") or ""),
     }
@@ -376,6 +410,97 @@ def _documents_from_ia_demo_fixtures() -> list[dict[str, Any]]:
     return documents
 
 
+def _documents_from_reviewed_records(path: str | Path | None) -> list[dict[str, Any]]:
+    if path is None or str(path or "") == "":
+        return []
+    source = Path(path)
+    if not source.is_file():
+        raise ValueError(f"reviewed records file not found: {source}")
+    documents: list[dict[str, Any]] = []
+    for line_number, line in enumerate(source.read_text(encoding="utf-8").splitlines(), start=1):
+        if not line.strip():
+            continue
+        try:
+            record = json.loads(line)
+        except json.JSONDecodeError as exc:
+            raise ValueError(f"{source}:{line_number}: invalid reviewed-record JSONL row: {exc.msg}") from exc
+        if not isinstance(record, Mapping):
+            raise ValueError(f"{source}:{line_number}: reviewed-record row must be an object")
+        errors = _validate_reviewed_record(record)
+        if errors:
+            raise ValueError(f"{source}:{line_number}: " + "; ".join(errors))
+        documents.append(_document_from_reviewed_record(record, source))
+    return documents
+
+
+def _document_from_reviewed_record(record: Mapping[str, Any], source: Path) -> dict[str, Any]:
+    record_id = str(record.get("reviewed_record_id") or "")
+    title = str(record.get("title") or record_id)
+    summary = str(record.get("summary") or "Local reviewed source lead.")
+    status = str(record.get("status") or "candidate")
+    evidence_hints = _string_list(record.get("evidence_hints"))
+    source_hints = _string_list(record.get("source_hints"))
+    query_hints = _string_list(record.get("query_hints")) or [
+        title,
+        summary,
+        str(record.get("source_candidate_id") or ""),
+        str(record.get("review_reason") or ""),
+    ]
+    matched_queries = _string_list(record.get("matched_queries")) or query_hints
+    return _index_document(
+        doc_id=record_id,
+        title=title,
+        summary=summary,
+        query_hints=query_hints,
+        matched_queries=matched_queries,
+        status=status,
+        category="local_reviewed_record",
+        source_family=str(record.get("source_family") or "local_review"),
+        source_hints=source_hints,
+        evidence_hints=evidence_hints,
+        missing_information=_string_list(record.get("missing_information")),
+        safe_next_action=str(
+            record.get("safe_next_action")
+            or "use this local reviewed source lead as search context; artifact verification remains deferred"
+        ),
+        non_verified_reason=str(record.get("non_verified_reason") or "local reviewed metadata/source lead is not a verified artifact"),
+        provenance={
+            **dict(record.get("provenance") or {}),
+            "source_ref": str(source).replace("\\", "/"),
+        },
+        extra_fields={
+            "record_state": str(record.get("record_state") or "reviewed"),
+            "review_state": str(record.get("review_state") or "accepted"),
+            "reviewed_record_id": record_id,
+            "review_event_id": str(record.get("source_review_event_id") or ""),
+            "source_candidate_id": str(record.get("source_candidate_id") or ""),
+            "artifact_verified": bool(record.get("artifact_verified") is True),
+            "accepted_truth": bool(record.get("accepted_truth") is True),
+            "verified": bool(record.get("accepted_truth") is True),
+            "review_required": False,
+            "reviewer": str(record.get("reviewer") or ""),
+            "review_reason": str(record.get("review_reason") or ""),
+            "reviewed_at": str(record.get("reviewed_at") or ""),
+        },
+    )
+
+
+def _validate_reviewed_record(record: Mapping[str, Any]) -> list[str]:
+    errors: list[str] = []
+    for key in ("reviewed_record_id", "source_candidate_id", "source_review_event_id", "title", "review_state"):
+        if not str(record.get(key) or "").strip():
+            errors.append(f"{key} is required")
+    if str(record.get("review_state") or "") != "accepted":
+        errors.append("review_state must be accepted")
+    if bool(record.get("artifact_verified") is True):
+        errors.append("artifact_verified must remain false for local reviewed metadata/source leads")
+    if bool(record.get("accepted_truth") is True):
+        errors.append("accepted_truth must remain false for local reviewed metadata/source leads")
+    if not _string_list(record.get("evidence_hints")):
+        errors.append("evidence_hints are required")
+    return errors
+
+
 def _index_document(
     *,
     doc_id: str,
@@ -392,12 +517,13 @@ def _index_document(
     safe_next_action: str,
     non_verified_reason: str,
     provenance: Mapping[str, Any],
+    extra_fields: Mapping[str, Any] | None = None,
 ) -> dict[str, Any]:
     searchable_text = _normalize_search_text(
         " ".join([title, summary, status, category, source_family, *query_hints, *evidence_hints])
     )
     verified = status == "verified"
-    return {
+    document = {
         "schema_version": INDEX_DOCUMENT_SCHEMA_VERSION,
         "id": doc_id,
         "title": title,
@@ -427,12 +553,14 @@ def _index_document(
             "truth_promotion_performed": False,
         },
     }
+    document.update(dict(extra_fields or {}))
+    return document
 
 
 def _search_documents(documents: Sequence[Any], query: str, limit: int) -> list[dict[str, Any]]:
     query_text = _normalize_search_text(query)
     query_tokens = _query_tokens(query)
-    scored: list[tuple[int, int, str, dict[str, Any]]] = []
+    scored: list[tuple[int, int, int, str, dict[str, Any]]] = []
     for item in documents:
         if not isinstance(item, Mapping):
             continue
@@ -441,9 +569,17 @@ def _search_documents(documents: Sequence[Any], query: str, limit: int) -> list[
             continue
         document = dict(item)
         document["index_score"] = score
-        scored.append((score, _status_rank(str(document.get("status") or "unknown")), str(document.get("id") or ""), document))
-    scored.sort(key=lambda item: (-item[0], item[1], item[2]))
-    return [document for _score, _rank, _doc_id, document in scored[:limit]]
+        scored.append(
+            (
+                score,
+                _review_rank(document),
+                _status_rank(str(document.get("status") or "unknown")),
+                str(document.get("id") or ""),
+                document,
+            )
+        )
+    scored.sort(key=lambda item: (-item[0], item[1], item[2], item[3]))
+    return [document for _score, _review_rank_value, _status_rank_value, _doc_id, document in scored[:limit]]
 
 
 def _document_score(document: Mapping[str, Any], query_text: str, query_tokens: Sequence[str]) -> int:
@@ -477,16 +613,23 @@ def _sorted_documents(documents: Sequence[Mapping[str, Any]]) -> list[dict[str, 
     return sorted((dict(document) for document in documents), key=lambda item: str(item.get("id") or ""))
 
 
-def _source_manifest() -> list[dict[str, str]]:
+def _source_manifest(reviewed_records_path: str | Path | None = None) -> list[dict[str, str]]:
     paths = [HARD_QUERY_FIXTURE_PATH, LOCAL_METADATA_FIXTURE_PATH]
+    if reviewed_records_path:
+        paths.append(Path(reviewed_records_path))
     manifest = []
     for path in paths:
-        if not path.is_file():
+        resolved = path if path.is_absolute() else REPO_ROOT / path
+        if not resolved.is_file():
             continue
+        try:
+            display_path = str(resolved.relative_to(REPO_ROOT)).replace("\\", "/")
+        except ValueError:
+            display_path = str(resolved).replace("\\", "/")
         manifest.append(
             {
-                "path": str(path.relative_to(REPO_ROOT)).replace("\\", "/"),
-                "sha256": hashlib.sha256(path.read_bytes()).hexdigest(),
+                "path": display_path,
+                "sha256": hashlib.sha256(resolved.read_bytes()).hexdigest(),
             }
         )
     return sorted(manifest, key=lambda item: item["path"])
@@ -558,3 +701,9 @@ def _status_rank(status: str) -> int:
         "unknown": 6,
     }
     return order.get(status, 6)
+
+
+def _review_rank(document: Mapping[str, Any]) -> int:
+    if document.get("record_state") == "reviewed" and document.get("review_state") == "accepted":
+        return 0
+    return 1

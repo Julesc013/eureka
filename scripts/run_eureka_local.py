@@ -215,6 +215,8 @@ def _home_html(options: LocalSearchOptions) -> str:
             f"<p>Index loaded: {str(index_status['index_loaded']).lower()}</p>",
             f"<p>Index path: {index_status['index_path']}</p>",
             f"<p>Indexed documents: {index_status['index_document_count']}</p>",
+            f"<p>Reviewed records: {index_status.get('reviewed_record_count', 0)}</p>",
+            f"<p>Artifact verified count: {index_status.get('artifact_verified_count', 0)}</p>",
             f"<p>Live metadata enabled: {str(options.metadata_fallback == 'ia_live' and options.allow_live_metadata).lower()}</p>",
             "<p>Read-only local fallback demo. Metadata fallback is non-verified and no downloads, file fetching, Wayback replay, public fanout, or public mutation are enabled.</p>",
             "<ul>",

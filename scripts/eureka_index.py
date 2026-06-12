@@ -32,6 +32,7 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr:
 
     build_parser = subparsers.add_parser("build", help="Build a deterministic local search index.")
     build_parser.add_argument("--source", choices=(LOCAL_DEMO_SOURCE,), default=LOCAL_DEMO_SOURCE)
+    build_parser.add_argument("--reviewed-records", default="", help="Optional local reviewed-record JSONL input.")
     build_parser.add_argument("--out", default=DEFAULT_INDEX_PATH)
     build_parser.add_argument("--print-json", action="store_true", help="Print the built index JSON instead of a summary.")
 
@@ -45,7 +46,11 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr:
 
     args = parser.parse_args(argv)
     if args.command == "build":
-        index = build_local_demo_index()
+        try:
+            index = build_local_demo_index(reviewed_records_path=args.reviewed_records or None)
+        except ValueError as exc:
+            print(f"Index build failed: {exc}", file=stderr)
+            return 1
         errors = validate_index(index)
         if errors:
             print("Index build produced invalid output:", file=stderr)
@@ -63,6 +68,9 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr:
             print(f"document_count: {stats['document_count']}", file=stdout)
             print(f"status_counts: {json.dumps(stats['status_counts'], sort_keys=True)}", file=stdout)
             print(f"source_family_counts: {json.dumps(stats['source_family_counts'], sort_keys=True)}", file=stdout)
+            print(f"reviewed_record_count: {stats['reviewed_record_count']}", file=stdout)
+            print(f"review_state_counts: {json.dumps(stats['review_state_counts'], sort_keys=True)}", file=stdout)
+            print(f"artifact_verified_count: {stats['artifact_verified_count']}", file=stdout)
         return 0
 
     if args.command == "stats":
@@ -82,6 +90,9 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr:
             print(f"document_count: {stats['document_count']}", file=stdout)
             print(f"status_counts: {json.dumps(stats['status_counts'], sort_keys=True)}", file=stdout)
             print(f"source_family_counts: {json.dumps(stats['source_family_counts'], sort_keys=True)}", file=stdout)
+            print(f"reviewed_record_count: {stats['reviewed_record_count']}", file=stdout)
+            print(f"review_state_counts: {json.dumps(stats['review_state_counts'], sort_keys=True)}", file=stdout)
+            print(f"artifact_verified_count: {stats['artifact_verified_count']}", file=stdout)
         return 0
 
     if args.command == "validate":

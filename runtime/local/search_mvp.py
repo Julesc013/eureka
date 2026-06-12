@@ -45,8 +45,8 @@ from runtime.surface import SurfaceKernel, SurfaceRequest
 
 
 SCHEMA_VERSION = "eureka.local_search_response.v0"
-TASK_ID = "LOCAL-SEARCH-INDEX-BUILDER-00"
-DATA_VERSION = "local-search-index-builder-v0"
+TASK_ID = "REVIEWED-RECORD-MATERIALIZATION-00"
+DATA_VERSION = "reviewed-record-materialization-v0"
 REPO_ROOT = Path(__file__).resolve().parents[2]
 DEMO_FIXTURE_PATH = REPO_ROOT / "evals" / "hard_queries" / "local_metadata_fallback_demo" / "ia_metadata_fixtures.json"
 SUPPORTED_METADATA_FALLBACKS = ("none", "ia_fixture", "ia_live")
@@ -192,6 +192,8 @@ class LocalSearchService:
             "index_loaded": any(bool(response.get("index_loaded")) for response in responses),
             "index_path": opts.index_path,
             "index_document_count": max((int(response.get("index_document_count") or 0) for response in responses), default=0),
+            "reviewed_record_count": max((int(response.get("reviewed_record_count") or 0) for response in responses), default=0),
+            "artifact_verified_count": max((int(response.get("artifact_verified_count") or 0) for response in responses), default=0),
             "index_results_used": any(bool(response.get("index_results_used")) for response in responses),
             "index_result_count": sum(int(response.get("index_result_count") or 0) for response in responses),
             "live_metadata_enabled": opts.metadata_fallback == "ia_live" and opts.allow_live_metadata,
@@ -321,6 +323,8 @@ def render_search_text(response: Mapping[str, Any]) -> str:
             f"index path: {response.get('index_path')}",
             f"index results used: {str(response.get('index_results_used')).lower()}",
             f"index result count: {response.get('index_result_count')} of {response.get('index_document_count')} indexed document(s)",
+            f"reviewed record count: {response.get('reviewed_record_count', 0)}",
+            f"artifact verified count: {response.get('artifact_verified_count', 0)}",
             f"live metadata enabled: {str(response.get('live_metadata_enabled')).lower()}",
             f"network used: {str(response.get('network_used')).lower()}",
             _status_summary_line(response.get("status_summary")),
@@ -744,6 +748,8 @@ def _single_text_lines(response: Mapping[str, Any]) -> list[str]:
         f"Index path: {response.get('index_path')}",
         f"Index results used: {str(response.get('index_results_used')).lower()}",
         f"Index result count: {response.get('index_result_count')} of {response.get('index_document_count')} indexed document(s)",
+        f"Reviewed record count: {response.get('reviewed_record_count', 0)}",
+        f"Artifact verified count: {response.get('artifact_verified_count', 0)}",
         f"Live metadata enabled: {str(response.get('live_metadata_enabled')).lower()}",
         f"Network used: {str(response.get('network_used')).lower()}",
         f"Timeout seconds: {response.get('timeout_seconds')}",
@@ -773,6 +779,17 @@ def _single_text_lines(response: Mapping[str, Any]) -> list[str]:
             non_verified = str(card.get("non_verified_reason") or "")
             if non_verified:
                 lines.append(f"     non-verified: {non_verified}")
+            review_state = str(card.get("review_state") or "")
+            if review_state:
+                lines.append(f"     review state: {review_state}")
+            reviewed_record_id = str(card.get("reviewed_record_id") or "")
+            if reviewed_record_id:
+                lines.append(f"     reviewed record: {reviewed_record_id}")
+            review_event_id = str(card.get("review_event_id") or "")
+            if review_event_id:
+                lines.append(f"     review event: {review_event_id}")
+            if "artifact_verified" in card:
+                lines.append(f"     artifact verified: {str(card.get('artifact_verified')).lower()}")
             missing = ", ".join(card.get("missing") or [])
             if missing:
                 lines.append(f"     missing: {missing}")
@@ -795,6 +812,10 @@ def _html_search_section(response: Mapping[str, Any]) -> str:
         evidence_hints = ", ".join(card.get("evidence_hints") or [])
         missing = ", ".join(card.get("missing") or [])
         non_verified = str(card.get("non_verified_reason") or "")
+        review_state = str(card.get("review_state") or "")
+        reviewed_record_id = str(card.get("reviewed_record_id") or "")
+        review_event_id = str(card.get("review_event_id") or "")
+        artifact_verified = str(card.get("artifact_verified")).lower() if "artifact_verified" in card else "not applicable"
         card_html.extend(
             [
                 f'<article class="card status-{_e(status)}">',
@@ -804,6 +825,10 @@ def _html_search_section(response: Mapping[str, Any]) -> str:
                 f"<p><strong>Source hints:</strong> {_e(source_hints or 'none')}</p>",
                 f"<p><strong>Evidence hints:</strong> {_e(evidence_hints or 'none')}</p>",
                 f"<p><strong>Non-verified:</strong> {_e(non_verified or 'not applicable')}</p>",
+                f"<p><strong>Review state:</strong> {_e(review_state or 'unreviewed')}</p>",
+                f"<p><strong>Reviewed record:</strong> {_e(reviewed_record_id or 'none')}</p>",
+                f"<p><strong>Review event:</strong> {_e(review_event_id or 'none')}</p>",
+                f"<p><strong>Artifact verified:</strong> {_e(artifact_verified)}</p>",
                 f"<p><strong>Missing:</strong> {_e(missing or 'no extra missing-detail hint available')}</p>",
                 f"<p><strong>Safe next action:</strong> {_e(str(card.get('safe_next_action') or ''))}</p>",
                 "</article>",
@@ -825,6 +850,8 @@ def _html_search_section(response: Mapping[str, Any]) -> str:
             f"<p><strong>Index path:</strong> {_e(str(response.get('index_path') or ''))}</p>",
             f"<p><strong>Index results used:</strong> {_e(str(response.get('index_results_used')).lower())}</p>",
             f"<p><strong>Index result count:</strong> {_e(str(response.get('index_result_count') or 0))} of {_e(str(response.get('index_document_count') or 0))} indexed document(s)</p>",
+            f"<p><strong>Reviewed record count:</strong> {_e(str(response.get('reviewed_record_count') or 0))}</p>",
+            f"<p><strong>Artifact verified count:</strong> {_e(str(response.get('artifact_verified_count') or 0))}</p>",
             f"<p><strong>Live metadata enabled:</strong> {_e(str(response.get('live_metadata_enabled')).lower())}</p>",
             f"<p><strong>Network used:</strong> {_e(str(response.get('network_used')).lower())}</p>",
             f"<p><strong>Timeout seconds:</strong> {_e(str(response.get('timeout_seconds') or 0))}</p>",
@@ -1008,6 +1035,8 @@ def _index_response_fields(index_state: IndexSearchState, *, results_used: bool)
         "index_loaded": index_state.loaded,
         "index_path": index_state.path,
         "index_document_count": index_state.document_count,
+        "reviewed_record_count": index_state.reviewed_record_count,
+        "artifact_verified_count": index_state.artifact_verified_count,
         "index_results_used": bool(results_used and index_state.results),
         "index_result_count": len(index_state.results) if results_used else 0,
         "index_errors": list(index_state.errors),

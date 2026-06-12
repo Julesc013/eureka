@@ -4,7 +4,9 @@ This runbook covers `EUREKA-USABLE-LOCAL-SEARCH-MVP-00-P0`, the local-only
 developer search slice and the `LOCAL-METADATA-FALLBACK-E2E-DEMO-00`
 fixture-backed fallback demo. It also covers `IA-METADATA-LIVE-OPTIN-00`, the
 developer-only live IA metadata opt-in, and `LOCAL-SEARCH-INDEX-BUILDER-00`,
-the deterministic local index builder.
+the deterministic local index builder. It also covers
+`REVIEWED-RECORD-MATERIALIZATION-00`, the local generated review loop that
+proves review can change search.
 
 ## CLI
 
@@ -100,6 +102,57 @@ Troubleshooting local index:
   indexed match; refine the query or enable a governed metadata fallback.
 - If results look stale, rebuild the local index after fixture or reviewed-data
   changes.
+
+## Local Review Materialization
+
+Build the base local index, list the deterministic candidate, accept it into
+local generated review artifacts, rebuild a reviewed index, and search it:
+
+```powershell
+python scripts/eureka_index.py build --source local_demo --out .eureka/local_search_index.json
+
+python scripts/eureka_review.py candidates --index .eureka/local_search_index.json --query "manual for Sound Blaster CT1740"
+
+python scripts/eureka_review.py accept --index .eureka/local_search_index.json --query "manual for Sound Blaster CT1740" --ledger .eureka/local_review_ledger.jsonl --records .eureka/local_reviewed_records.jsonl --reviewer local_demo --reason "P0 local review materialization demo"
+
+python scripts/eureka_review.py stats --ledger .eureka/local_review_ledger.jsonl --records .eureka/local_reviewed_records.jsonl
+
+python scripts/eureka_index.py build --source local_demo --reviewed-records .eureka/local_reviewed_records.jsonl --out .eureka/local_search_index.reviewed.json
+
+python scripts/eureka_search.py "manual for Sound Blaster CT1740" --format text --index local --index-path .eureka/local_search_index.reviewed.json --metadata-fallback none
+
+python scripts/run_eureka_local.py --smoke --index local --index-path .eureka/local_search_index.reviewed.json --metadata-fallback none
+```
+
+The ledger and reviewed-record files under `.eureka/` are local generated
+developer artifacts. They are useful for proving the loop from indexed candidate
+to accepted local reviewed source lead, but they are not production review
+state and are not public alpha data.
+
+A local reviewed metadata/source-lead record is distinct from a verified
+artifact. The materialized record uses `review_state=accepted` and
+`record_state=reviewed`, while `artifact_verified`, `accepted_truth`, public
+index mutation, and master index mutation remain false. Search reads reviewed
+records only through the rebuilt local index; search requests do not mutate the
+review ledger, reviewed records, local index, public index, or master index.
+
+After rebuilding with `--reviewed-records`, `/api/status` reports
+`reviewed_record_count` and `artifact_verified_count`. `/api/search` and
+`/search` show the accepted local review state, the reviewed record id, the
+review event id, source/evidence hints, and `artifact_verified: false`.
+
+Troubleshooting local review materialization:
+
+- If `candidates` returns no candidate, rebuild the base local index or refine
+  the query.
+- If `accept` fails with `candidate not found`, omit `--candidate-id` or copy an
+  id from the `candidates` output.
+- If reviewed-index build fails, validate the JSONL records and ensure each
+  record has review ids, evidence hints, and `artifact_verified=false`.
+- If search does not show the reviewed state, rebuild
+  `.eureka/local_search_index.reviewed.json` with `--reviewed-records`.
+- If generated files are missing, rerun the `accept` command; repeated accepts
+  for the same candidate, reviewer, and decision are idempotent.
 
 ## Fixture Metadata Fallback Demo
 
@@ -209,9 +262,10 @@ mutation, public-index mutation, or a new search architecture.
 
 The fallback and live opt-in demos still defer persistent metadata cache,
 advanced IA ranking, downloads, file fetching, Wayback replay, extraction,
-review materialization from ReviewLedger, production index service, advanced
+ReviewLedger production materialization, production index service, advanced
 ranking, live IA indexing, background refresh, Workbench operator routes,
-public alpha behavior, deployment packaging, public live fanout, and
+public alpha behavior, deployment packaging, public live fanout,
+official artifact gate updates, verified artifact evidence promotion, and
 object/candidate/need/source/evidence detail routes.
 
 ## Troubleshooting
