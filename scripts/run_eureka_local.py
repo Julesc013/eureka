@@ -29,6 +29,19 @@ from runtime.local.search_mvp import (
     render_search_json,
     status_payload,
 )
+from runtime.local.public_alpha_mvp import (
+    PublicAlphaService,
+    public_alpha_disabled_payload,
+    public_alpha_error,
+    render_public_about,
+    render_public_disabled,
+    render_public_home,
+    render_public_json,
+    render_public_method,
+    render_public_record,
+    render_public_search,
+    render_public_status,
+)
 from runtime.local.search_index import DEFAULT_INDEX_PATH, SUPPORTED_INDEX_MODES, index_file_status
 from runtime.local.workbench_mvp import (
     DEFAULT_REVIEW_LEDGER_PATH,
@@ -62,6 +75,7 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr:
     parser.add_argument("--index", choices=SUPPORTED_INDEX_MODES, default="none")
     parser.add_argument("--index-path", default=DEFAULT_INDEX_PATH)
     parser.add_argument("--limit", type=int, default=10)
+    parser.add_argument("--public-alpha", action="store_true")
     parser.add_argument("--enable-workbench", action="store_true")
     parser.add_argument("--workbench-token", default="")
     parser.add_argument("--workbench-ledger", default=DEFAULT_REVIEW_LEDGER_PATH)
@@ -90,11 +104,20 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr:
         rebuild_index=bool(args.workbench_rebuild_index),
     )
     service = LocalSearchService()
+    public_alpha = PublicAlphaService(search_service=service, search_options=options) if args.public_alpha else None
     workbench = WorkbenchService(
         search_service=service,
         search_options=options,
         workbench_options=workbench_options,
     )
+    if args.public_alpha:
+        public_alpha_error_message = _public_alpha_startup_error(args.host, options, args.enable_workbench)
+        if public_alpha_error_message:
+            print(public_alpha_error_message, file=stderr)
+            return 2
+        if args.smoke:
+            print(render_public_json(public_alpha.smoke() if public_alpha is not None else {}), end="", file=stdout)
+            return 0
     if args.metadata_fallback == "ia_live" and not args.allow_live_metadata:
         if args.smoke:
             response = service.search_many(HARD_QUERY_SMOKE_SET, options)
@@ -131,10 +154,12 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr:
         print(render_search_json(response), end="", file=stdout)
         return 0
 
-    handler = _handler_for(service, options, workbench)
+    handler = _handler_for(service, options, workbench, public_alpha)
     with LocalSearchHTTPServer((args.host, int(args.port)), handler) as httpd:
         base_url = f"http://{args.host}:{httpd.server_address[1]}"
         print(f"Eureka local search MVP listening on {base_url}", file=stdout, flush=True)
+        if public_alpha is not None:
+            print(f"Eureka public-alpha read-only mode enabled at {base_url}/", file=stdout, flush=True)
         if workbench_options.enabled:
             print(f"Eureka local Workbench enabled at {base_url}/workbench", file=stdout, flush=True)
         try:
@@ -148,6 +173,7 @@ def _handler_for(
     service: LocalSearchService,
     options: LocalSearchOptions,
     workbench: WorkbenchService | None = None,
+    public_alpha: PublicAlphaService | None = None,
 ) -> type[BaseHTTPRequestHandler]:
     class Handler(BaseHTTPRequestHandler):
         server_version = "EurekaLocalSearchMVP/0"
@@ -155,6 +181,9 @@ def _handler_for(
         def do_GET(self) -> None:  # noqa: N802 - stdlib HTTP API
             parsed = urlparse(self.path)
             params = parse_qs(parsed.query)
+            if public_alpha is not None:
+                self._handle_public_alpha_get(parsed.path, params)
+                return
             if parsed.path.startswith("/workbench"):
                 self._handle_workbench_get(parsed.path, params)
                 return
@@ -205,6 +234,9 @@ def _handler_for(
 
         def do_POST(self) -> None:  # noqa: N802 - stdlib HTTP API
             parsed = urlparse(self.path)
+            if public_alpha is not None:
+                self._send_json(404, public_alpha_error(parsed.path, "Public-alpha routes are read-only.", status="disabled"))
+                return
             if parsed.path.startswith("/workbench"):
                 self._handle_workbench_post(parsed.path, parse_qs(parsed.query))
                 return
@@ -237,6 +269,51 @@ def _handler_for(
             self.send_header("Content-Length", str(len(body)))
             self.end_headers()
             self.wfile.write(body)
+
+        def _handle_public_alpha_get(self, path: str, params: Mapping[str, Sequence[str]]) -> None:
+            if public_alpha is None:
+                self._send_json(404, public_alpha_error(path, "Public-alpha mode is not enabled.", status="disabled"))
+                return
+            if path.startswith("/workbench"):
+                payload = public_alpha_disabled_payload(path)
+                if "/api/" in path:
+                    self._send_json(404, payload)
+                else:
+                    self._send_html(404, render_public_disabled(payload))
+                return
+            if path == "/":
+                self._send_html(200, render_public_home(public_alpha.status()))
+                return
+            if path == "/health":
+                self._send_json(200, health_payload())
+                return
+            if path == "/status":
+                self._send_html(200, render_public_status(public_alpha.status()))
+                return
+            if path == "/api/status":
+                self._send_json(200, public_alpha.status())
+                return
+            if path == "/about":
+                self._send_html(200, render_public_about())
+                return
+            if path == "/method":
+                self._send_html(200, render_public_method())
+                return
+            if path == "/api/search":
+                query = _first(params, "q") or _first(params, "query")
+                self._send_json(200, public_alpha.search(query))
+                return
+            if path == "/search":
+                query = _first(params, "q") or _first(params, "query")
+                self._send_html(200, render_public_search(public_alpha.search(query)))
+                return
+            if path.startswith("/record/"):
+                record_id = path.removeprefix("/record/")
+                payload = public_alpha.record(record_id)
+                status_code = 200 if payload.get("status") != "not_found" else 404
+                self._send_html(status_code, render_public_record(payload))
+                return
+            self._send_json(404, public_alpha_error(path, "Public route not found.", status="not_found"))
 
         def _handle_workbench_get(self, path: str, params: Mapping[str, Sequence[str]]) -> None:
             if workbench is None or not workbench.options.enabled:
@@ -376,6 +453,25 @@ def _first(params: Mapping[str, Sequence[str]], key: str) -> str:
 def _is_loopback_host(host: str) -> bool:
     normalized = str(host or "").strip().casefold()
     return normalized in {"localhost", "::1"} or normalized.startswith("127.")
+
+
+def _public_alpha_startup_error(host: str, options: LocalSearchOptions, enable_workbench: bool) -> str:
+    if not _is_loopback_host(host):
+        return "public-alpha local server mode requires a loopback host such as 127.0.0.1 or localhost."
+    if options.index != "local":
+        return "public-alpha mode requires --index local."
+    if options.metadata_fallback != "none":
+        return "public-alpha mode requires --metadata-fallback none; fallback/live metadata is not exposed."
+    if options.allow_live_metadata:
+        return "public-alpha mode refuses --allow-live-metadata; live metadata is not exposed."
+    if enable_workbench:
+        return "public-alpha mode refuses --enable-workbench; Workbench is not public."
+    index_status = index_file_status(options.index, options.index_path)
+    if not index_status.get("index_loaded"):
+        errors = ", ".join(index_status.get("index_errors") or [])
+        suffix = f": {errors}" if errors else ""
+        return f"public-alpha mode requires a valid local index{suffix}."
+    return ""
 
 
 def _workbench_authorized(workbench: WorkbenchService, query_or_body_token: str, header_token: str) -> bool:

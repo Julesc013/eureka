@@ -6,7 +6,8 @@ fixture-backed fallback demo. It also covers `IA-METADATA-LIVE-OPTIN-00`, the
 developer-only live IA metadata opt-in, `LOCAL-SEARCH-INDEX-BUILDER-00`, the
 deterministic local index builder, `REVIEWED-RECORD-MATERIALIZATION-00`, the
 local generated review loop that proves review can change search, and
-`WORKBENCH-OPERATOR-ROUTES-00`, the local/private Workbench P0.
+`WORKBENCH-OPERATOR-ROUTES-00`, the local/private Workbench P0, and
+`PUBLIC-READONLY-WEB-ALPHA-00`, the local public-alpha read-only surface.
 
 ## CLI
 
@@ -223,6 +224,81 @@ Troubleshooting local Workbench:
 - If startup fails on `0.0.0.0`, restart on `127.0.0.1` or `localhost`.
 - If rebuild fails, inspect the local reviewed-record JSONL file and rerun the
   base index build.
+
+## Public Read-Only Web Alpha Mode
+
+Public-alpha mode is a local public-style read-only surface over a reviewed
+local index. It is not an internet deployment, staging rollout, public launch,
+or public mutation path.
+
+Build a reviewed local index:
+
+```powershell
+python scripts/eureka_index.py build --source local_demo --out .eureka/local_search_index.json
+
+python scripts/eureka_review.py accept --index .eureka/local_search_index.json --query "manual for Sound Blaster CT1740" --ledger .eureka/local_review_ledger.jsonl --records .eureka/local_reviewed_records.jsonl --reviewer local_demo --reason "Public alpha local reviewed seed"
+
+python scripts/eureka_index.py build --source local_demo --reviewed-records .eureka/local_reviewed_records.jsonl --out .eureka/local_search_index.reviewed.json
+```
+
+Run the public-alpha smoke and local server:
+
+```powershell
+python scripts/run_eureka_local.py --smoke --public-alpha --index local --index-path .eureka/local_search_index.reviewed.json --metadata-fallback none
+
+python scripts/run_eureka_local.py --host 127.0.0.1 --port 8765 --public-alpha --index local --index-path .eureka/local_search_index.reviewed.json --metadata-fallback none
+```
+
+Public routes:
+
+- `http://127.0.0.1:8765/`
+- `http://127.0.0.1:8765/health`
+- `http://127.0.0.1:8765/status`
+- `http://127.0.0.1:8765/api/status`
+- `http://127.0.0.1:8765/about`
+- `http://127.0.0.1:8765/method`
+- `http://127.0.0.1:8765/search?q=manual%20for%20Sound%20Blaster%20CT1740`
+- `http://127.0.0.1:8765/api/search?q=manual%20for%20Sound%20Blaster%20CT1740`
+- `http://127.0.0.1:8765/record/<id>`
+
+Public-alpha mode requires `--index local`, a valid `--index-path`, and
+`--metadata-fallback none`. It refuses `ia_live`, `--allow-live-metadata`,
+`--enable-workbench`, and non-loopback hosts such as `0.0.0.0`. `/api/status`
+reports `read_only=true`, `public_live_fanout=false`,
+`live_metadata_enabled=false`, and `workbench_exposed=false` without exposing
+local generated paths or tokens.
+
+Public search pages show reviewed, candidate, need, near_miss,
+policy_blocked, unavailable, and unknown states when present in the local
+index. The Sound Blaster query should show the reviewed/local accepted result
+first after the reviewed index is rebuilt. Use the `record_url` from
+`/api/search` or the `View record` link from `/search` to verify
+`/record/{id}`. Record pages show title, status, review state,
+`artifact_verified`, evidence/source hints, missing information, safe next
+action, and a public-safe provenance summary.
+
+Public routes expose only safe read actions. They do not expose Workbench
+links, review actions, accept/reject/promote controls, index rebuild controls,
+live metadata calls, downloads, file fetching, Wayback replay, extraction,
+install/emulation behavior, marketplace behavior, or public contribution
+intake. Public-alpha search is read-only and does not mutate reviewed records,
+review ledgers, local indexes, public indexes, master indexes, source fixtures,
+gate counts, canon, release state, or queue/current.
+
+Troubleshooting public alpha:
+
+- If startup says a valid local index is required, build the reviewed index and
+  validate it with `python scripts/eureka_index.py validate --index <path>`.
+- If startup refuses `ia_live` or `--allow-live-metadata`, rerun with
+  `--metadata-fallback none`; public-alpha mode does not expose live metadata.
+- If startup refuses `--enable-workbench`, restart without Workbench; public
+  alpha and Workbench are intentionally separate modes.
+- If startup refuses `0.0.0.0`, use `127.0.0.1` or `localhost`; deployment is a
+  later task.
+- If the Sound Blaster result is not reviewed first, rebuild the index with
+  `--reviewed-records .eureka/local_reviewed_records.jsonl`.
+- If `/record/{id}` returns 404, copy a current `record_url` from
+  `/api/search` after rebuilding the reviewed index.
 
 ## Fixture Metadata Fallback Demo
 
