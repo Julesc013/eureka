@@ -18,9 +18,12 @@ if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
 from runtime.local.search_mvp import (
+    DEFAULT_METADATA_BUDGET,
+    DEFAULT_METADATA_TIMEOUT_SECONDS,
     HARD_QUERY_SMOKE_SET,
     LocalSearchOptions,
     LocalSearchService,
+    SUPPORTED_METADATA_FALLBACKS,
     health_payload,
     render_search_html,
     render_search_json,
@@ -36,13 +39,37 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--host", default="127.0.0.1")
     parser.add_argument("--port", type=int, default=8765)
-    parser.add_argument("--metadata-fallback", choices=("none", "ia_fixture"), default="none")
+    parser.add_argument("--metadata-fallback", choices=SUPPORTED_METADATA_FALLBACKS, default="none")
+    parser.add_argument("--allow-live-metadata", action="store_true")
+    parser.add_argument("--metadata-timeout", type=int, default=DEFAULT_METADATA_TIMEOUT_SECONDS)
+    parser.add_argument("--metadata-budget", type=int, default=DEFAULT_METADATA_BUDGET)
     parser.add_argument("--limit", type=int, default=10)
     parser.add_argument("--smoke", action="store_true", help="Run hard-query smoke searches and exit.")
     args = parser.parse_args(argv)
 
-    options = LocalSearchOptions(metadata_fallback=args.metadata_fallback, limit=args.limit)
+    options = LocalSearchOptions(
+        metadata_fallback=args.metadata_fallback,
+        limit=args.limit,
+        allow_live_metadata=args.allow_live_metadata,
+        metadata_timeout_seconds=args.metadata_timeout,
+        metadata_budget=args.metadata_budget,
+    )
     service = LocalSearchService()
+    if args.metadata_fallback == "ia_live" and not args.allow_live_metadata:
+        if args.smoke:
+            response = service.search_many(HARD_QUERY_SMOKE_SET, options)
+            print(render_search_json(response), end="", file=stdout)
+        print(
+            "ia_live requires --allow-live-metadata; no live metadata request was performed.",
+            file=stderr,
+        )
+        return 2
+    if args.metadata_fallback == "ia_live" and args.allow_live_metadata and not _is_loopback_host(args.host):
+        print(
+            "ia_live local server mode requires a loopback host such as 127.0.0.1 or localhost.",
+            file=stderr,
+        )
+        return 2
     if args.smoke:
         response = service.search_many(HARD_QUERY_SMOKE_SET, options)
         print(render_search_json(response), end="", file=stdout)
@@ -67,13 +94,21 @@ def _handler_for(service: LocalSearchService, options: LocalSearchOptions) -> ty
             parsed = urlparse(self.path)
             params = parse_qs(parsed.query)
             if parsed.path == "/":
-                self._send_html(200, _home_html(options.metadata_fallback))
+                self._send_html(200, _home_html(options))
                 return
             if parsed.path == "/health":
                 self._send_json(200, health_payload())
                 return
             if parsed.path == "/api/status":
-                self._send_json(200, status_payload(options.metadata_fallback))
+                self._send_json(
+                    200,
+                    status_payload(
+                        options.metadata_fallback,
+                        allow_live_metadata=options.allow_live_metadata,
+                        metadata_timeout_seconds=options.metadata_timeout_seconds,
+                        metadata_budget=options.metadata_budget,
+                    ),
+                )
                 return
             if parsed.path == "/api/search":
                 self._send_json(200, _search_payload(service, params, options))
@@ -125,12 +160,15 @@ def _search_payload(
     request_options = options
     if limit_raw:
         try:
-            request_options = LocalSearchOptions(
-                metadata_fallback=options.metadata_fallback,
-                limit=int(limit_raw),
-                show_evidence=options.show_evidence,
-                show_debug=options.show_debug,
-            )
+                request_options = LocalSearchOptions(
+                    metadata_fallback=options.metadata_fallback,
+                    limit=int(limit_raw),
+                    show_evidence=options.show_evidence,
+                    show_debug=options.show_debug,
+                    allow_live_metadata=options.allow_live_metadata,
+                    metadata_timeout_seconds=options.metadata_timeout_seconds,
+                    metadata_budget=options.metadata_budget,
+                )
         except ValueError:
             request_options = options
     return service.search(query, request_options)
@@ -143,7 +181,12 @@ def _first(params: Mapping[str, Sequence[str]], key: str) -> str:
     return str(values[0])
 
 
-def _home_html(metadata_fallback: str) -> str:
+def _is_loopback_host(host: str) -> bool:
+    normalized = str(host or "").strip().casefold()
+    return normalized in {"localhost", "::1"} or normalized.startswith("127.")
+
+
+def _home_html(options: LocalSearchOptions) -> str:
     return "\n".join(
         [
             "<!doctype html>",
@@ -157,8 +200,9 @@ def _home_html(metadata_fallback: str) -> str:
             '<input id="q" name="q">',
             '<button type="submit">Search</button>',
             "</form>",
-            f"<p>Metadata fallback: {metadata_fallback}</p>",
-            "<p>Read-only local fallback demo. Fixture fallback is non-verified and no live network, downloads, or public mutation are enabled.</p>",
+            f"<p>Metadata fallback: {options.metadata_fallback}</p>",
+            f"<p>Live metadata enabled: {str(options.metadata_fallback == 'ia_live' and options.allow_live_metadata).lower()}</p>",
+            "<p>Read-only local fallback demo. Metadata fallback is non-verified and no downloads, file fetching, Wayback replay, public fanout, or public mutation are enabled.</p>",
             "<ul>",
             '<li><a href="/health">Health</a></li>',
             '<li><a href="/api/status">API status</a></li>',
