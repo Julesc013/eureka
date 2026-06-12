@@ -117,6 +117,85 @@ class HuntMainPromotionGateTests(unittest.TestCase):
             self.assertEqual("WAITING_FOR_EXTERNAL_ARTIFACT_EVIDENCE", current_recommended_task_id(root))
             self.assertTrue(post_hunt_current_allowed(root))
 
+    def test_post_hunt_queue_accepts_ia_metadata_provider_smoke_state(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            queue = root / ".aide/queue/index.yaml"
+            queue.parent.mkdir(parents=True)
+            queue.write_text(
+                "current_recommended_task: IA-METADATA-PROVIDER-WIRING-AND-SMOKE-00 - Bounded IA metadata provider smoke\n"
+                "completed:\n"
+                "  - SOURCE-ACTION-KERNEL-00\n"
+                "  - SOURCE-WAVE-00\n"
+                "  - SNAPSHOT-RELAY-00\n"
+                "  - CI-FULL-DISCOVERY-HARNESS-00\n",
+                encoding="utf-8",
+            )
+            self.assertEqual("IA-METADATA-PROVIDER-WIRING-AND-SMOKE-00", current_recommended_task_id(root))
+            self.assertTrue(post_hunt_current_allowed(root))
+
+    def test_post_hunt_queue_accepts_current_repair_and_rerun_chain(self):
+        for task_id in (
+            "HISTORICAL-QUEUE-VALIDATOR-DRIFT-REPAIR-08",
+            "EXTERNAL-FULL-DISCOVERY-RERUN-09",
+            "SOURCE-SNAPSHOT-FULL-DISCOVERY-INGEST-09",
+            "WAITING_FOR_USER_HARDWARE_DETAILS",
+        ):
+            with self.subTest(task_id=task_id), tempfile.TemporaryDirectory() as tmp:
+                root = Path(tmp)
+                queue = root / ".aide/queue/index.yaml"
+                queue.parent.mkdir(parents=True)
+                queue.write_text(
+                    f"current_recommended_task: {task_id} - governed successor\n"
+                    "completed:\n"
+                    "  - SOURCE-ACTION-KERNEL-00\n"
+                    "  - SOURCE-WAVE-00\n"
+                    "  - SNAPSHOT-RELAY-00\n"
+                    "  - CI-FULL-DISCOVERY-HARNESS-00\n",
+                    encoding="utf-8",
+                )
+                self.assertEqual(task_id, current_recommended_task_id(root))
+                self.assertTrue(post_hunt_current_allowed(root))
+
+    def test_post_hunt_queue_rejects_launch_readiness_and_promotion_without_gate(self):
+        for task_id in (
+            "PUBLIC-ALPHA-LAUNCH-00",
+            "PUBLIC-ALPHA-READINESS-00",
+            "DEV-TO-MAIN-PROMOTION-REVIEW-05",
+        ):
+            with self.subTest(task_id=task_id), tempfile.TemporaryDirectory() as tmp:
+                root = Path(tmp)
+                queue = root / ".aide/queue/index.yaml"
+                queue.parent.mkdir(parents=True)
+                queue.write_text(
+                    f"current_recommended_task: {task_id} - gated task\n"
+                    "completed:\n"
+                    "  - SOURCE-ACTION-KERNEL-00\n"
+                    "  - SOURCE-WAVE-00\n"
+                    "  - SNAPSHOT-RELAY-00\n"
+                    "  - CI-FULL-DISCOVERY-HARNESS-00\n",
+                    encoding="utf-8",
+                )
+                self.assertEqual(task_id, current_recommended_task_id(root))
+                self.assertFalse(post_hunt_current_allowed(root))
+
+    def test_post_hunt_queue_rejects_arbitrary_future_task(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            queue = root / ".aide/queue/index.yaml"
+            queue.parent.mkdir(parents=True)
+            queue.write_text(
+                "current_recommended_task: FUTURE-RANDOM-LAUNCH-00 - not authorized\n"
+                "completed:\n"
+                "  - SOURCE-ACTION-KERNEL-00\n"
+                "  - SOURCE-WAVE-00\n"
+                "  - SNAPSHOT-RELAY-00\n"
+                "  - CI-FULL-DISCOVERY-HARNESS-00\n",
+                encoding="utf-8",
+            )
+            self.assertEqual("FUTURE-RANDOM-LAUNCH-00", current_recommended_task_id(root))
+            self.assertFalse(post_hunt_current_allowed(root))
+
 
 if __name__ == "__main__":
     unittest.main()

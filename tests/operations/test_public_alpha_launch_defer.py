@@ -4,6 +4,7 @@ import json
 from pathlib import Path
 import unittest
 
+from scripts import validate_public_alpha_launch_defer as defer_validator
 from scripts.validate_public_alpha_launch_defer import validate_public_alpha_launch_defer
 
 
@@ -46,6 +47,21 @@ class PublicAlphaLaunchDeferTests(unittest.TestCase):
         payload = json.loads(completed.stdout)
         self.assertEqual(payload["status"], "pass")
         self.assertEqual(payload["recommended_next_task"], "ACTIVE-DISCOVERY-AND-CANDIDATE-INTAKE-00")
+
+    def test_defer_successor_allowlist_accepts_metadata_smoke_and_repair_chain(self) -> None:
+        for task_id in (
+            "IA-METADATA-PROVIDER-WIRING-AND-SMOKE-00",
+            "HISTORICAL-QUEUE-VALIDATOR-DRIFT-REPAIR-08",
+            "EXTERNAL-FULL-DISCOVERY-RERUN-09",
+            "SOURCE-SNAPSHOT-FULL-DISCOVERY-INGEST-09",
+            "WAITING_FOR_EXTERNAL_ARTIFACT_EVIDENCE",
+            "WAITING_FOR_USER_HARDWARE_DETAILS",
+        ):
+            with self.subTest(task_id=task_id):
+                self.assertTrue(task_id.startswith(defer_validator.POST_DEFER_QUEUE_PREFIXES))
+
+    def test_defer_successor_allowlist_rejects_public_launch(self) -> None:
+        self.assertFalse("PUBLIC-ALPHA-LAUNCH-00".startswith(defer_validator.POST_DEFER_QUEUE_PREFIXES))
 
 
 if __name__ == "__main__":

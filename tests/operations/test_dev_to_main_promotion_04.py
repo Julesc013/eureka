@@ -3,6 +3,7 @@ from __future__ import annotations
 import importlib.util
 import json
 from pathlib import Path
+import tempfile
 import unittest
 
 
@@ -54,6 +55,36 @@ class DevToMainPromotion04Tests(unittest.TestCase):
         result = load_validator().validate(REPO_ROOT)
 
         self.assertEqual(result["status"], "pass", result["errors"])
+
+    def test_post_promotion_successor_accepts_metadata_smoke_not_new_promotion(self) -> None:
+        module = load_validator()
+        for task_id in (
+            "IA-METADATA-PROVIDER-WIRING-AND-SMOKE-00",
+            "HISTORICAL-QUEUE-VALIDATOR-DRIFT-REPAIR-08",
+            "EXTERNAL-FULL-DISCOVERY-RERUN-09",
+            "SOURCE-SNAPSHOT-FULL-DISCOVERY-INGEST-09",
+            "WAITING_FOR_EXTERNAL_ARTIFACT_EVIDENCE",
+            "WAITING_FOR_USER_HARDWARE_DETAILS",
+        ):
+            with self.subTest(task_id=task_id), tempfile.TemporaryDirectory() as tmp:
+                root = Path(tmp)
+                queue = root / ".aide/queue/index.yaml"
+                queue.parent.mkdir(parents=True)
+                queue.write_text(f"current_recommended_task: {task_id} - governed successor\n", encoding="utf-8")
+                self.assertTrue(module.post_promotion_successor_state(root))
+
+        for task_id in (
+            "DEV-TO-MAIN-PROMOTION-REVIEW-05",
+            "DEV-TO-MAIN-PROMOTION-REVIEW-99",
+            "PUBLIC-ALPHA-READINESS-00",
+            "PUBLIC-ALPHA-LAUNCH-00",
+        ):
+            with self.subTest(rejected_task_id=task_id), tempfile.TemporaryDirectory() as tmp:
+                root = Path(tmp)
+                queue = root / ".aide/queue/index.yaml"
+                queue.parent.mkdir(parents=True)
+                queue.write_text(f"current_recommended_task: {task_id} - gated task\n", encoding="utf-8")
+                self.assertFalse(module.post_promotion_successor_state(root))
 
 
 if __name__ == "__main__":
