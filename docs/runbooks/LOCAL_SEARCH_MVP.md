@@ -3,10 +3,10 @@
 This runbook covers `EUREKA-USABLE-LOCAL-SEARCH-MVP-00-P0`, the local-only
 developer search slice and the `LOCAL-METADATA-FALLBACK-E2E-DEMO-00`
 fixture-backed fallback demo. It also covers `IA-METADATA-LIVE-OPTIN-00`, the
-developer-only live IA metadata opt-in, and `LOCAL-SEARCH-INDEX-BUILDER-00`,
-the deterministic local index builder. It also covers
-`REVIEWED-RECORD-MATERIALIZATION-00`, the local generated review loop that
-proves review can change search.
+developer-only live IA metadata opt-in, `LOCAL-SEARCH-INDEX-BUILDER-00`, the
+deterministic local index builder, `REVIEWED-RECORD-MATERIALIZATION-00`, the
+local generated review loop that proves review can change search, and
+`WORKBENCH-OPERATOR-ROUTES-00`, the local/private Workbench P0.
 
 ## CLI
 
@@ -153,6 +153,76 @@ Troubleshooting local review materialization:
   `.eureka/local_search_index.reviewed.json` with `--reviewed-records`.
 - If generated files are missing, rerun the `accept` command; repeated accepts
   for the same candidate, reviewer, and decision are idempotent.
+
+## Local Workbench Operator Routes
+
+The local Workbench P0 wraps the same local index, review materialization, and
+search service used by the CLI. It is disabled by default, token-gated when
+enabled, and must run on a loopback host.
+
+Build a local index and start the server with Workbench enabled:
+
+```powershell
+python scripts/eureka_index.py build --source local_demo --out .eureka/local_search_index.json
+
+python scripts/run_eureka_local.py --host 127.0.0.1 --port 8765 --index local --index-path .eureka/local_search_index.json --metadata-fallback none --enable-workbench --workbench-token local-dev-token
+```
+
+The smoke command is:
+
+```powershell
+python scripts/run_eureka_local.py --smoke --index local --index-path .eureka/local_search_index.json --metadata-fallback none --enable-workbench --workbench-token local-dev-token
+```
+
+Useful local Workbench routes:
+
+```text
+http://127.0.0.1:8765/workbench?token=local-dev-token
+http://127.0.0.1:8765/workbench/status?token=local-dev-token
+http://127.0.0.1:8765/workbench/candidates?q=manual%20for%20Sound%20Blaster%20CT1740&token=local-dev-token
+http://127.0.0.1:8765/workbench/review?q=manual%20for%20Sound%20Blaster%20CT1740&token=local-dev-token
+http://127.0.0.1:8765/workbench/api/status?token=local-dev-token
+http://127.0.0.1:8765/workbench/api/candidates?q=manual%20for%20Sound%20Blaster%20CT1740&token=local-dev-token
+```
+
+Accept a candidate through the JSON API:
+
+```powershell
+$body = @{
+  query = "manual for Sound Blaster CT1740"
+  reason = "Workbench P0 local accept demo"
+} | ConvertTo-Json
+
+Invoke-RestMethod -Method Post -Uri http://127.0.0.1:8765/workbench/api/review/accept -Headers @{ "X-Eureka-Workbench-Token" = "local-dev-token" } -ContentType "application/json" -Body $body
+```
+
+After accept, the Workbench writes only the configured local generated ledger
+and reviewed-record files, then rebuilds the configured local generated index.
+Normal search should now show the reviewed/local accepted result first:
+
+```text
+http://127.0.0.1:8765/api/search?q=manual%20for%20Sound%20Blaster%20CT1740
+http://127.0.0.1:8765/search?q=manual%20for%20Sound%20Blaster%20CT1740
+```
+
+The Workbench P0 token is a local development guard, not production
+authentication. Do not bind Workbench to `0.0.0.0`; the server refuses
+non-loopback hosts when Workbench is enabled. Workbench materialization keeps
+`artifact_verified=false` and does not mutate canon, release state,
+queue/current, source fixtures, official reviewed records, public indexes,
+master indexes, or artifact gate counts.
+
+Troubleshooting local Workbench:
+
+- If `/workbench` says disabled, restart with `--enable-workbench`.
+- If a route returns unauthorized, pass the token as `?token=...` for local
+  HTML routes or `X-Eureka-Workbench-Token` for API requests.
+- If candidates are missing, rebuild the local index or refine the query.
+- If normal search looks stale, confirm the accept response reports
+  `index_rebuilt=true` and that the server is using the same `--index-path`.
+- If startup fails on `0.0.0.0`, restart on `127.0.0.1` or `localhost`.
+- If rebuild fails, inspect the local reviewed-record JSONL file and rerun the
+  base index build.
 
 ## Fixture Metadata Fallback Demo
 
