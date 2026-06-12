@@ -29,6 +29,7 @@ from runtime.local.search_mvp import (
     render_search_json,
     status_payload,
 )
+from runtime.local.search_index import DEFAULT_INDEX_PATH, SUPPORTED_INDEX_MODES, index_file_status
 
 
 class LocalSearchHTTPServer(socketserver.TCPServer):
@@ -43,6 +44,8 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr:
     parser.add_argument("--allow-live-metadata", action="store_true")
     parser.add_argument("--metadata-timeout", type=int, default=DEFAULT_METADATA_TIMEOUT_SECONDS)
     parser.add_argument("--metadata-budget", type=int, default=DEFAULT_METADATA_BUDGET)
+    parser.add_argument("--index", choices=SUPPORTED_INDEX_MODES, default="none")
+    parser.add_argument("--index-path", default=DEFAULT_INDEX_PATH)
     parser.add_argument("--limit", type=int, default=10)
     parser.add_argument("--smoke", action="store_true", help="Run hard-query smoke searches and exit.")
     args = parser.parse_args(argv)
@@ -53,6 +56,8 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr:
         allow_live_metadata=args.allow_live_metadata,
         metadata_timeout_seconds=args.metadata_timeout,
         metadata_budget=args.metadata_budget,
+        index=args.index,
+        index_path=args.index_path,
     )
     service = LocalSearchService()
     if args.metadata_fallback == "ia_live" and not args.allow_live_metadata:
@@ -107,6 +112,8 @@ def _handler_for(service: LocalSearchService, options: LocalSearchOptions) -> ty
                         allow_live_metadata=options.allow_live_metadata,
                         metadata_timeout_seconds=options.metadata_timeout_seconds,
                         metadata_budget=options.metadata_budget,
+                        index=options.index,
+                        index_path=options.index_path,
                     ),
                 )
                 return
@@ -160,15 +167,17 @@ def _search_payload(
     request_options = options
     if limit_raw:
         try:
-                request_options = LocalSearchOptions(
-                    metadata_fallback=options.metadata_fallback,
-                    limit=int(limit_raw),
-                    show_evidence=options.show_evidence,
-                    show_debug=options.show_debug,
-                    allow_live_metadata=options.allow_live_metadata,
-                    metadata_timeout_seconds=options.metadata_timeout_seconds,
-                    metadata_budget=options.metadata_budget,
-                )
+            request_options = LocalSearchOptions(
+                metadata_fallback=options.metadata_fallback,
+                limit=int(limit_raw),
+                show_evidence=options.show_evidence,
+                show_debug=options.show_debug,
+                allow_live_metadata=options.allow_live_metadata,
+                metadata_timeout_seconds=options.metadata_timeout_seconds,
+                metadata_budget=options.metadata_budget,
+                index=options.index,
+                index_path=options.index_path,
+            )
         except ValueError:
             request_options = options
     return service.search(query, request_options)
@@ -187,6 +196,7 @@ def _is_loopback_host(host: str) -> bool:
 
 
 def _home_html(options: LocalSearchOptions) -> str:
+    index_status = index_file_status(options.index, options.index_path)
     return "\n".join(
         [
             "<!doctype html>",
@@ -201,6 +211,10 @@ def _home_html(options: LocalSearchOptions) -> str:
             '<button type="submit">Search</button>',
             "</form>",
             f"<p>Metadata fallback: {options.metadata_fallback}</p>",
+            f"<p>Index mode: {index_status['index_mode']}</p>",
+            f"<p>Index loaded: {str(index_status['index_loaded']).lower()}</p>",
+            f"<p>Index path: {index_status['index_path']}</p>",
+            f"<p>Indexed documents: {index_status['index_document_count']}</p>",
             f"<p>Live metadata enabled: {str(options.metadata_fallback == 'ia_live' and options.allow_live_metadata).lower()}</p>",
             "<p>Read-only local fallback demo. Metadata fallback is non-verified and no downloads, file fetching, Wayback replay, public fanout, or public mutation are enabled.</p>",
             "<ul>",

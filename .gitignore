@@ -44,6 +44,7 @@ native/win/winforms/src/Eureka/obj/
 .eureka-cache/
 .eureka-staging/
 .eureka-reports/
+.eureka/
 
 # Local Appliance explicit instance roots (created by scripts/eureka_init_instance.py)
 /eureka-instance/

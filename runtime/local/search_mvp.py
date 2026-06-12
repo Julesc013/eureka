@@ -31,14 +31,22 @@ from runtime.engine.resolution_runs import (
     LocalResolutionRunStore,
     ResolutionRunFallbackPolicy,
 )
+from runtime.local.search_index import (
+    DEFAULT_INDEX_PATH,
+    SUPPORTED_INDEX_MODES,
+    IndexSearchState,
+    document_to_result_card,
+    index_file_status,
+    search_index_path,
+)
 from runtime.source.observation.archive_org_public_metadata import ArchiveOrgMetadataCandidateProvider
 from runtime.source.registry import load_source_registry
 from runtime.surface import SurfaceKernel, SurfaceRequest
 
 
 SCHEMA_VERSION = "eureka.local_search_response.v0"
-TASK_ID = "IA-METADATA-LIVE-OPTIN-00"
-DATA_VERSION = "ia-metadata-live-optin-v0"
+TASK_ID = "LOCAL-SEARCH-INDEX-BUILDER-00"
+DATA_VERSION = "local-search-index-builder-v0"
 REPO_ROOT = Path(__file__).resolve().parents[2]
 DEMO_FIXTURE_PATH = REPO_ROOT / "evals" / "hard_queries" / "local_metadata_fallback_demo" / "ia_metadata_fixtures.json"
 SUPPORTED_METADATA_FALLBACKS = ("none", "ia_fixture", "ia_live")
@@ -80,6 +88,8 @@ class LocalSearchOptions:
     allow_live_metadata: bool = False
     metadata_timeout_seconds: int = DEFAULT_METADATA_TIMEOUT_SECONDS
     metadata_budget: int = DEFAULT_METADATA_BUDGET
+    index: str = "none"
+    index_path: str = DEFAULT_INDEX_PATH
 
 
 class MetadataFallbackProvider(Protocol):
@@ -109,12 +119,25 @@ class LocalSearchService:
         if not normalized_query:
             return _empty_query_response(opts)
 
+        index_state = _search_index_state(opts, normalized_query)
         hard_fixture = _hard_fixture_for_query(normalized_query)
         ia_fixture_case = _ia_fixture_case_for_query(normalized_query, self._fixture_payload)
         provider_call_count = 0
         source_path = "local_resolution_run"
         if opts.metadata_fallback == "ia_live" and not opts.allow_live_metadata:
             return _blocked_live_metadata_response(normalized_query, opts)
+        if opts.index == "local" and index_state.loaded and index_state.results:
+            return _response_from_index(
+                query=normalized_query,
+                options=opts,
+                index_state=index_state,
+            )
+        if opts.index == "local" and opts.metadata_fallback == "none":
+            return _index_miss_response(
+                query=normalized_query,
+                options=opts,
+                index_state=index_state,
+            )
         if opts.metadata_fallback == "ia_live":
             provider = self._live_provider(opts)
             run = self._run_resolution_search(normalized_query, opts, provider)
@@ -150,6 +173,7 @@ class LocalSearchService:
             provider_call_count=provider_call_count,
             view_model=view_model,
             projections=projections,
+            index_state=index_state,
         )
         return response
 
@@ -163,6 +187,13 @@ class LocalSearchService:
             "fallback_mode": _fallback_mode(opts.metadata_fallback, "batch"),
             "fallback_used": any(bool(response.get("fallback_used")) for response in responses),
             "provider_family": _batch_provider_family(opts.metadata_fallback),
+            "index_mode": opts.index,
+            "index_enabled": opts.index == "local",
+            "index_loaded": any(bool(response.get("index_loaded")) for response in responses),
+            "index_path": opts.index_path,
+            "index_document_count": max((int(response.get("index_document_count") or 0) for response in responses), default=0),
+            "index_results_used": any(bool(response.get("index_results_used")) for response in responses),
+            "index_result_count": sum(int(response.get("index_result_count") or 0) for response in responses),
             "live_metadata_enabled": opts.metadata_fallback == "ia_live" and opts.allow_live_metadata,
             "network_default": False,
             "network_used": any(bool(response.get("network_used")) for response in responses),
@@ -285,6 +316,11 @@ def render_search_text(response: Mapping[str, Any]) -> str:
             f"fallback mode: {response.get('fallback_mode')}",
             f"fallback used: {str(response.get('fallback_used')).lower()}",
             f"provider family: {response.get('provider_family')}",
+            f"index mode: {response.get('index_mode')}",
+            f"index loaded: {str(response.get('index_loaded')).lower()}",
+            f"index path: {response.get('index_path')}",
+            f"index results used: {str(response.get('index_results_used')).lower()}",
+            f"index result count: {response.get('index_result_count')} of {response.get('index_document_count')} indexed document(s)",
             f"live metadata enabled: {str(response.get('live_metadata_enabled')).lower()}",
             f"network used: {str(response.get('network_used')).lower()}",
             _status_summary_line(response.get("status_summary")),
@@ -342,9 +378,12 @@ def status_payload(
     allow_live_metadata: bool = False,
     metadata_timeout_seconds: int = DEFAULT_METADATA_TIMEOUT_SECONDS,
     metadata_budget: int = DEFAULT_METADATA_BUDGET,
+    index: str = "none",
+    index_path: str = DEFAULT_INDEX_PATH,
 ) -> dict[str, Any]:
     fallback = _normalize_metadata_fallback(metadata_fallback)
     live_enabled = fallback == "ia_live" and bool(allow_live_metadata)
+    index_status = index_file_status(_normalize_index(index), str(index_path or DEFAULT_INDEX_PATH))
     return {
         "schema_version": "eureka.local_search_status.v0",
         "task_id": TASK_ID,
@@ -355,6 +394,8 @@ def status_payload(
         "metadata_fallback": fallback,
         "fallback_mode": _fallback_mode(fallback, _status_source_path(fallback, live_enabled)),
         "provider_family": _batch_provider_family(fallback),
+        **index_status,
+        "index_modes": list(SUPPORTED_INDEX_MODES),
         "live_metadata_enabled": live_enabled,
         "network_default": False,
         "network_used": False,
@@ -389,6 +430,131 @@ def health_payload() -> dict[str, Any]:
     }
 
 
+def _response_from_index(
+    *,
+    query: str,
+    options: LocalSearchOptions,
+    index_state: IndexSearchState,
+) -> dict[str, Any]:
+    cards = [document_to_result_card(document) for document in index_state.results]
+    status = str(cards[0].get("status") if cards else "unknown")
+    source_hints = sorted({hint for card in cards for hint in _strings(card.get("source_hints") or [])})
+    evidence_hints = [hint for card in cards for hint in _strings(card.get("evidence_hints") or [])]
+    missing = sorted({item for card in cards for item in _strings(card.get("missing") or [])})
+    return {
+        "schema_version": SCHEMA_VERSION,
+        "task_id": TASK_ID,
+        "query": {"raw": query, "normalized": query},
+        "normalized_query": query,
+        "status": status,
+        "status_concept": "indexed_result",
+        "status_summary": _status_summary(status, cards),
+        "result_count": len(cards),
+        "results": cards,
+        "missing": missing,
+        "safe_next_action": str(cards[0].get("safe_next_action") if cards else "refine the query"),
+        "metadata_fallback": options.metadata_fallback,
+        "fallback_mode": "none",
+        "fallback_used": False,
+        "metadata_fallback_used": False,
+        "provider_family": "none",
+        **_index_response_fields(index_state, results_used=True),
+        "live_metadata_enabled": options.metadata_fallback == "ia_live" and options.allow_live_metadata,
+        "network_default": False,
+        "network_used": False,
+        "timeout_seconds": options.metadata_timeout_seconds,
+        "budget": {"max_requests": options.metadata_budget, "candidate_limit": max(1, min(options.limit, 25))},
+        "budget_used": 0,
+        "public_live_fanout": False,
+        "non_verified_reason": str(cards[0].get("non_verified_reason") if cards else "indexed result is not accepted truth"),
+        "source_path": "local_search_index",
+        "run_id": "",
+        "run": {},
+        "fallback_summary": None,
+        "source_observations": [],
+        "evidence_hints": evidence_hints[:3] if not options.show_evidence else evidence_hints,
+        "source_hints": source_hints,
+        "renderer_outputs": {},
+        "fixture_backed": True,
+        "provider_call_count": 0,
+        "canonical_statuses": list(CANONICAL_STATUSES),
+        "no_mutation": _no_mutation_indicator(),
+        **_truth_boundary_flags(),
+    }
+
+
+def _index_miss_response(
+    *,
+    query: str,
+    options: LocalSearchOptions,
+    index_state: IndexSearchState,
+) -> dict[str, Any]:
+    status = "need" if index_state.loaded else "unavailable"
+    missing = ["indexed result or enabled metadata fallback"]
+    if not index_state.loaded:
+        missing.append("valid local search index")
+    errors = list(index_state.errors)
+    summary = (
+        "Local index did not contain a sufficient result and metadata fallback is disabled."
+        if index_state.loaded
+        else "Local index was unavailable or invalid and metadata fallback is disabled."
+    )
+    card = {
+        "result_id": "local-index-miss",
+        "status": status,
+        "title": "Local index search need",
+        "summary": summary,
+        "source_hints": ["local_search_index"],
+        "evidence_hints": errors or ["reason: local_index_no_results"],
+        "missing": missing,
+        "safe_next_action": "build or refresh the local index, refine the query, or enable governed metadata fallback",
+        "non_verified_reason": "no indexed reviewed truth was created",
+        "verified": False,
+        "accepted_truth": False,
+        "review_required": False,
+    }
+    return {
+        "schema_version": SCHEMA_VERSION,
+        "task_id": TASK_ID,
+        "query": {"raw": query, "normalized": query},
+        "normalized_query": query,
+        "status": status,
+        "status_concept": "local_index_miss",
+        "status_summary": _status_summary(status, [card]),
+        "result_count": 1,
+        "results": [card],
+        "missing": missing,
+        "safe_next_action": str(card["safe_next_action"]),
+        "metadata_fallback": options.metadata_fallback,
+        "fallback_mode": "none",
+        "fallback_used": False,
+        "metadata_fallback_used": False,
+        "provider_family": "none",
+        **_index_response_fields(index_state, results_used=False),
+        "live_metadata_enabled": False,
+        "network_default": False,
+        "network_used": False,
+        "timeout_seconds": options.metadata_timeout_seconds,
+        "budget": {"max_requests": options.metadata_budget, "candidate_limit": max(1, min(options.limit, 25))},
+        "budget_used": 0,
+        "public_live_fanout": False,
+        "non_verified_reason": str(card["non_verified_reason"]),
+        "source_path": "local_search_index",
+        "run_id": "",
+        "run": {},
+        "fallback_summary": None,
+        "source_observations": [],
+        "evidence_hints": list(card["evidence_hints"]),
+        "source_hints": list(card["source_hints"]),
+        "renderer_outputs": {},
+        "fixture_backed": False,
+        "provider_call_count": 0,
+        "canonical_statuses": list(CANONICAL_STATUSES),
+        "no_mutation": _no_mutation_indicator(),
+        **_truth_boundary_flags(),
+    }
+
+
 def _response_from_projection(
     *,
     query: str,
@@ -399,6 +565,7 @@ def _response_from_projection(
     provider_call_count: int,
     view_model: Mapping[str, Any],
     projections: Mapping[str, Any],
+    index_state: IndexSearchState,
 ) -> dict[str, Any]:
     fallback = _mapping(view_model.get("payload", {}).get("fallback_summary") if isinstance(view_model.get("payload"), Mapping) else None)
     status = str(view_model.get("canonical_status") or "unknown")
@@ -426,6 +593,7 @@ def _response_from_projection(
         "fallback_used": fallback_used,
         "metadata_fallback_used": fallback_used,
         "provider_family": provider_family,
+        **_index_response_fields(index_state, results_used=False),
         "live_metadata_enabled": options.metadata_fallback == "ia_live" and options.allow_live_metadata,
         "network_default": False,
         "network_used": network_used,
@@ -571,6 +739,11 @@ def _single_text_lines(response: Mapping[str, Any]) -> list[str]:
         f"Fallback mode: {response.get('fallback_mode')}",
         f"Fallback used: {str(response.get('fallback_used', response.get('metadata_fallback_used'))).lower()}",
         f"Provider family: {response.get('provider_family')}",
+        f"Index mode: {response.get('index_mode')}",
+        f"Index loaded: {str(response.get('index_loaded')).lower()}",
+        f"Index path: {response.get('index_path')}",
+        f"Index results used: {str(response.get('index_results_used')).lower()}",
+        f"Index result count: {response.get('index_result_count')} of {response.get('index_document_count')} indexed document(s)",
         f"Live metadata enabled: {str(response.get('live_metadata_enabled')).lower()}",
         f"Network used: {str(response.get('network_used')).lower()}",
         f"Timeout seconds: {response.get('timeout_seconds')}",
@@ -647,6 +820,11 @@ def _html_search_section(response: Mapping[str, Any]) -> str:
             f"<p><strong>Fallback mode:</strong> {_e(str(response.get('fallback_mode') or response.get('metadata_fallback') or 'none'))}</p>",
             f"<p><strong>Fallback used:</strong> {_e(str(response.get('fallback_used', response.get('metadata_fallback_used'))).lower())}</p>",
             f"<p><strong>Provider family:</strong> {_e(str(response.get('provider_family') or 'none'))}</p>",
+            f"<p><strong>Index mode:</strong> {_e(str(response.get('index_mode') or 'none'))}</p>",
+            f"<p><strong>Index loaded:</strong> {_e(str(response.get('index_loaded')).lower())}</p>",
+            f"<p><strong>Index path:</strong> {_e(str(response.get('index_path') or ''))}</p>",
+            f"<p><strong>Index results used:</strong> {_e(str(response.get('index_results_used')).lower())}</p>",
+            f"<p><strong>Index result count:</strong> {_e(str(response.get('index_result_count') or 0))} of {_e(str(response.get('index_document_count') or 0))} indexed document(s)</p>",
             f"<p><strong>Live metadata enabled:</strong> {_e(str(response.get('live_metadata_enabled')).lower())}</p>",
             f"<p><strong>Network used:</strong> {_e(str(response.get('network_used')).lower())}</p>",
             f"<p><strong>Timeout seconds:</strong> {_e(str(response.get('timeout_seconds') or 0))}</p>",
@@ -787,6 +965,8 @@ def _normalize_options(options: LocalSearchOptions | None) -> LocalSearchOptions
         allow_live_metadata=bool(options.allow_live_metadata),
         metadata_timeout_seconds=max(1, min(int(options.metadata_timeout_seconds), 30)),
         metadata_budget=max(0, min(int(options.metadata_budget), 5)),
+        index=_normalize_index(options.index),
+        index_path=str(options.index_path or DEFAULT_INDEX_PATH),
     )
 
 
@@ -795,6 +975,43 @@ def _normalize_metadata_fallback(value: str) -> str:
     if normalized not in SUPPORTED_METADATA_FALLBACKS:
         raise ValueError(f"unsupported metadata fallback: {value}")
     return normalized
+
+
+def _normalize_index(value: str) -> str:
+    normalized = str(value or "none").strip()
+    if normalized not in SUPPORTED_INDEX_MODES:
+        raise ValueError(f"unsupported index mode: {value}")
+    return normalized
+
+
+def _search_index_state(options: LocalSearchOptions, query: str) -> IndexSearchState:
+    if options.index != "local":
+        return _disabled_index_state(options)
+    return search_index_path(options.index_path, query, limit=options.limit)
+
+
+def _disabled_index_state(options: LocalSearchOptions) -> IndexSearchState:
+    return IndexSearchState(
+        enabled=options.index == "local",
+        loaded=False,
+        path=str(options.index_path or DEFAULT_INDEX_PATH),
+        document_count=0,
+        results=(),
+        errors=(),
+    )
+
+
+def _index_response_fields(index_state: IndexSearchState, *, results_used: bool) -> dict[str, Any]:
+    return {
+        "index_mode": "local" if index_state.enabled else "none",
+        "index_enabled": index_state.enabled,
+        "index_loaded": index_state.loaded,
+        "index_path": index_state.path,
+        "index_document_count": index_state.document_count,
+        "index_results_used": bool(results_used and index_state.results),
+        "index_result_count": len(index_state.results) if results_used else 0,
+        "index_errors": list(index_state.errors),
+    }
 
 
 def _empty_query_response(options: LocalSearchOptions) -> dict[str, Any]:
@@ -815,6 +1032,7 @@ def _empty_query_response(options: LocalSearchOptions) -> dict[str, Any]:
         "fallback_used": False,
         "metadata_fallback_used": False,
         "provider_family": "none",
+        **_index_response_fields(_disabled_index_state(options), results_used=False),
         "live_metadata_enabled": options.metadata_fallback == "ia_live" and options.allow_live_metadata,
         "network_default": False,
         "network_used": False,
@@ -942,6 +1160,7 @@ def _blocked_live_metadata_response(query: str, options: LocalSearchOptions) -> 
         "fallback_used": False,
         "metadata_fallback_used": False,
         "provider_family": "ia_live",
+        **_index_response_fields(_disabled_index_state(options), results_used=False),
         "live_metadata_enabled": False,
         "network_default": False,
         "network_used": False,

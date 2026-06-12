@@ -3,7 +3,8 @@
 This runbook covers `EUREKA-USABLE-LOCAL-SEARCH-MVP-00-P0`, the local-only
 developer search slice and the `LOCAL-METADATA-FALLBACK-E2E-DEMO-00`
 fixture-backed fallback demo. It also covers `IA-METADATA-LIVE-OPTIN-00`, the
-developer-only live IA metadata opt-in.
+developer-only live IA metadata opt-in, and `LOCAL-SEARCH-INDEX-BUILDER-00`,
+the deterministic local index builder.
 
 ## CLI
 
@@ -21,6 +22,8 @@ Useful flags:
 - `--allow-live-metadata`
 - `--metadata-timeout SECONDS`
 - `--metadata-budget N`
+- `--index none|local`
+- `--index-path PATH`
 - `--limit N`
 - `--show-evidence`
 - `--show-debug`
@@ -48,6 +51,55 @@ Routes:
 - `ia_live`: use the governed Internet Archive metadata provider only when
   `--allow-live-metadata` is also present. Without that flag, Eureka fails
   closed with `policy_blocked` and performs no live request.
+
+## Local Search Index
+
+Build a deterministic local demo index:
+
+```powershell
+python scripts/eureka_index.py build --source local_demo --out .eureka/local_search_index.json
+python scripts/eureka_index.py stats --index .eureka/local_search_index.json
+python scripts/eureka_index.py validate --index .eureka/local_search_index.json
+```
+
+Search through the built index without metadata fallback:
+
+```powershell
+python scripts/eureka_search.py "manual for Sound Blaster CT1740" --format text --index local --index-path .eureka/local_search_index.json --metadata-fallback none
+python scripts/eureka_search.py "driver for Win98" --format text --index local --index-path .eureka/local_search_index.json --metadata-fallback none
+python scripts/run_eureka_local.py --smoke --index local --index-path .eureka/local_search_index.json --metadata-fallback none
+python scripts/run_eureka_local.py --host 127.0.0.1 --port 8765 --index local --index-path .eureka/local_search_index.json --metadata-fallback none
+```
+
+The generated `.eureka/local_search_index.json` file is a local developer
+artifact and is ignored by git. The `local_demo` source uses committed local
+fixtures and hard-query demo data only. Index building performs no live network
+calls, downloads, file fetching, Wayback replay, extraction, review
+materialization, or public mutation.
+
+Indexed fixture-derived records remain non-verified candidates, needs, near
+misses, policy blocks, or unavailable states unless an existing reviewed source
+already marked them as verified. The index improves local search behavior; it
+does not create reviewed truth. Search requests read the index first when
+`--index local` is enabled. If the index is missing or insufficient and
+`--metadata-fallback none` is set, Eureka returns an honest need/unavailable
+state. If `ia_fixture` or explicit `ia_live --allow-live-metadata` is enabled,
+the governed fallback path can run after an index miss.
+
+`/api/status` reports index mode, loaded state, path, document count, metadata
+fallback mode, live metadata posture, and read-only/no-mutation flags. Search
+responses report whether indexed results were used and how many documents were
+loaded.
+
+Troubleshooting local index:
+
+- If validation fails, rebuild the index from `local_demo`.
+- If search reports `index_loaded: false`, check `--index-path` and run
+  `python scripts/eureka_index.py validate --index <path>`.
+- If an indexed query returns `need`, the local demo corpus has no sufficient
+  indexed match; refine the query or enable a governed metadata fallback.
+- If results look stale, rebuild the local index after fixture or reviewed-data
+  changes.
 
 ## Fixture Metadata Fallback Demo
 
@@ -152,13 +204,14 @@ Troubleshooting live opt-in:
 ## P0 Non-Goals
 
 P0 does not add detail routes, Workbench routes, deployment packaging, public
-alpha launch behavior, live IA metadata, downloads, installs, emulation,
-reviewed-record mutation, public-index mutation, or a new search architecture.
+alpha launch behavior, downloads, installs, emulation, reviewed-record
+mutation, public-index mutation, or a new search architecture.
 
 The fallback and live opt-in demos still defer persistent metadata cache,
 advanced IA ranking, downloads, file fetching, Wayback replay, extraction,
-index building, review materialization, Workbench operator routes, public alpha
-behavior, deployment packaging, public live fanout, and
+review materialization from ReviewLedger, production index service, advanced
+ranking, live IA indexing, background refresh, Workbench operator routes,
+public alpha behavior, deployment packaging, public live fanout, and
 object/candidate/need/source/evidence detail routes.
 
 ## Troubleshooting

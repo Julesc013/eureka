@@ -24,6 +24,7 @@ from runtime.local.search_mvp import (
     render_search_json,
     render_search_text,
 )
+from runtime.local.search_index import DEFAULT_INDEX_PATH, SUPPORTED_INDEX_MODES
 
 
 def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr: TextIO = sys.stderr) -> int:
@@ -35,6 +36,8 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr:
     parser.add_argument("--allow-live-metadata", action="store_true")
     parser.add_argument("--metadata-timeout", type=int, default=DEFAULT_METADATA_TIMEOUT_SECONDS)
     parser.add_argument("--metadata-budget", type=int, default=DEFAULT_METADATA_BUDGET)
+    parser.add_argument("--index", choices=SUPPORTED_INDEX_MODES, default="none")
+    parser.add_argument("--index-path", default=DEFAULT_INDEX_PATH)
     parser.add_argument("--limit", type=int, default=10)
     parser.add_argument("--show-evidence", action="store_true")
     parser.add_argument("--show-debug", action="store_true")
@@ -52,6 +55,8 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr:
         allow_live_metadata=args.allow_live_metadata,
         metadata_timeout_seconds=args.metadata_timeout,
         metadata_budget=args.metadata_budget,
+        index=args.index,
+        index_path=args.index_path,
     )
     service = LocalSearchService()
     response = service.search_many(HARD_QUERY_SMOKE_SET, options) if args.all else service.search(query, options)
