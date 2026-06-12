@@ -1,0 +1,9 @@
+{
+  "run_id": "source_snapshot_full_discovery_rerun_09",
+  "status": "pass",
+  "failure_families": [],
+  "classified_failure_families": [],
+  "repair_recommended": false,
+  "next_repair_task": null
+}
+
