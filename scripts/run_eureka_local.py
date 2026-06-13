@@ -43,6 +43,9 @@ from runtime.local.public_alpha_mvp import (
     render_public_status,
 )
 from runtime.local.search_index import DEFAULT_INDEX_PATH, SUPPORTED_INDEX_MODES, index_file_status
+from runtime.local.staging_mvp import bundle_id as staging_bundle_id
+from runtime.local.staging_mvp import public_index_path as staging_public_index_path
+from runtime.local.staging_mvp import validate_bundle as validate_staging_bundle
 from runtime.local.workbench_mvp import (
     DEFAULT_REVIEW_LEDGER_PATH,
     DEFAULT_REVIEWED_RECORDS_PATH,
@@ -76,6 +79,7 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr:
     parser.add_argument("--index-path", default=DEFAULT_INDEX_PATH)
     parser.add_argument("--limit", type=int, default=10)
     parser.add_argument("--public-alpha", action="store_true")
+    parser.add_argument("--staging-bundle", default="")
     parser.add_argument("--enable-workbench", action="store_true")
     parser.add_argument("--workbench-token", default="")
     parser.add_argument("--workbench-ledger", default=DEFAULT_REVIEW_LEDGER_PATH)
@@ -85,6 +89,19 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr:
     parser.add_argument("--no-workbench-rebuild-index", dest="workbench_rebuild_index", action="store_false")
     parser.add_argument("--smoke", action="store_true", help="Run hard-query smoke searches and exit.")
     args = parser.parse_args(argv)
+
+    staging_bundle = str(args.staging_bundle or "")
+    staging_id = ""
+    if staging_bundle:
+        staging_error = _staging_bundle_startup_error(args.host, args.metadata_fallback, args.allow_live_metadata, args.enable_workbench, staging_bundle)
+        if staging_error:
+            print(staging_error, file=stderr)
+            return 2
+        args.public_alpha = True
+        args.index = "local"
+        args.index_path = str(staging_public_index_path(staging_bundle))
+        args.metadata_fallback = "none"
+        staging_id = staging_bundle_id(staging_bundle)
 
     options = LocalSearchOptions(
         metadata_fallback=args.metadata_fallback,
@@ -104,7 +121,16 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr:
         rebuild_index=bool(args.workbench_rebuild_index),
     )
     service = LocalSearchService()
-    public_alpha = PublicAlphaService(search_service=service, search_options=options) if args.public_alpha else None
+    public_alpha = (
+        PublicAlphaService(
+            search_service=service,
+            search_options=options,
+            deployment_source="staging_bundle" if staging_bundle else "local_index",
+            bundle_id=staging_id,
+        )
+        if args.public_alpha
+        else None
+    )
     workbench = WorkbenchService(
         search_service=service,
         search_options=options,
@@ -160,6 +186,8 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr:
         print(f"Eureka local search MVP listening on {base_url}", file=stdout, flush=True)
         if public_alpha is not None:
             print(f"Eureka public-alpha read-only mode enabled at {base_url}/", file=stdout, flush=True)
+        if staging_bundle:
+            print(f"Eureka staging bundle mode enabled: {staging_id}", file=stdout, flush=True)
         if workbench_options.enabled:
             print(f"Eureka local Workbench enabled at {base_url}/workbench", file=stdout, flush=True)
         try:
@@ -471,6 +499,27 @@ def _public_alpha_startup_error(host: str, options: LocalSearchOptions, enable_w
         errors = ", ".join(index_status.get("index_errors") or [])
         suffix = f": {errors}" if errors else ""
         return f"public-alpha mode requires a valid local index{suffix}."
+    return ""
+
+
+def _staging_bundle_startup_error(
+    host: str,
+    metadata_fallback: str,
+    allow_live_metadata: bool,
+    enable_workbench: bool,
+    bundle: str,
+) -> str:
+    if not _is_loopback_host(host):
+        return "staging bundle local server mode requires a loopback host such as 127.0.0.1 or localhost."
+    if metadata_fallback != "none":
+        return "staging bundle mode requires --metadata-fallback none; live/fallback metadata is not exposed."
+    if allow_live_metadata:
+        return "staging bundle mode refuses --allow-live-metadata; live metadata is not exposed."
+    if enable_workbench:
+        return "staging bundle mode refuses --enable-workbench; Workbench is not public."
+    errors = validate_staging_bundle(bundle)
+    if errors:
+        return "staging bundle validation failed: " + "; ".join(errors)
     return ""
 
 

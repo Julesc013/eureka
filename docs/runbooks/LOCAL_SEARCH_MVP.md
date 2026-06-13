@@ -8,6 +8,8 @@ deterministic local index builder, `REVIEWED-RECORD-MATERIALIZATION-00`, the
 local generated review loop that proves review can change search, and
 `WORKBENCH-OPERATOR-ROUTES-00`, the local/private Workbench P0, and
 `PUBLIC-READONLY-WEB-ALPHA-00`, the local public-alpha read-only surface.
+For packaging that public-alpha surface into a local staging bundle, see
+[Local To Staging Deployment Rehearsal](LOCAL_TO_STAGING_DEPLOYMENT.md).
 
 ## CLI
 

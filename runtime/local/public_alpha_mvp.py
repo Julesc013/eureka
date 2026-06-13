@@ -42,9 +42,18 @@ FORBIDDEN_PUBLIC_TEXT = (
 class PublicAlphaService:
     """Read-only public-safe adapter over LocalSearchService and local index docs."""
 
-    def __init__(self, *, search_service: LocalSearchService, search_options: LocalSearchOptions) -> None:
+    def __init__(
+        self,
+        *,
+        search_service: LocalSearchService,
+        search_options: LocalSearchOptions,
+        deployment_source: str = "local_index",
+        bundle_id: str = "",
+    ) -> None:
         self._search_service = search_service
         self._search_options = _public_options(search_options)
+        self._deployment_source = _safe_text(deployment_source or "local_index")
+        self._bundle_id = _safe_text(bundle_id)
 
     @property
     def search_options(self) -> LocalSearchOptions:
@@ -57,6 +66,9 @@ class PublicAlphaService:
             "task_id": TASK_ID,
             "status": "pass" if status.get("index_loaded") else "unavailable",
             "public_alpha_mode": True,
+            "deployment_source": self._deployment_source,
+            "staging_bundle_loaded": self._deployment_source == "staging_bundle",
+            "bundle_id": self._bundle_id,
             "deployment_status": "local_only_not_launched",
             "read_only": True,
             "index_loaded": bool(status.get("index_loaded")),
@@ -93,6 +105,9 @@ class PublicAlphaService:
             "schema_version": "eureka.public_alpha_search_response.v0",
             "task_id": TASK_ID,
             "public_alpha_mode": True,
+            "deployment_source": self._deployment_source,
+            "staging_bundle_loaded": self._deployment_source == "staging_bundle",
+            "bundle_id": self._bundle_id,
             "read_only": True,
             "query": _public_query(response.get("query"), query),
             "normalized_query": str(response.get("normalized_query") or query or ""),
@@ -134,6 +149,9 @@ class PublicAlphaService:
                     "task_id": TASK_ID,
                     "status": "pass",
                     "public_alpha_mode": True,
+                    "deployment_source": self._deployment_source,
+                    "staging_bundle_loaded": self._deployment_source == "staging_bundle",
+                    "bundle_id": self._bundle_id,
                     "read_only": True,
                     "record": {
                         **card,
@@ -153,6 +171,9 @@ class PublicAlphaService:
             "task_id": TASK_ID,
             "status": "pass",
             "public_alpha_mode": True,
+            "deployment_source": self._deployment_source,
+            "staging_bundle_loaded": self._deployment_source == "staging_bundle",
+            "bundle_id": self._bundle_id,
             "read_only": True,
             "query_count": len(searches),
             "status_summary": _aggregate_status_summary(searches),
