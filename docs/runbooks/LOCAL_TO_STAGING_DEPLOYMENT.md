@@ -89,6 +89,15 @@ python scripts/eureka_public_alpha_rehearsal.py status --report .eureka/rehearsa
 See `docs/runbooks/PUBLIC_ALPHA_REHEARSAL.md` for the route probes, mutation
 checks, fail-closed checks, report fields, and explicit launch blockers.
 
+Then run the launch-blocker closeout audit when you need the machine-checkable
+gate that separates local readiness from public launch readiness:
+
+```powershell
+python scripts/eureka_public_alpha_launch_gate.py audit --bundle .eureka/staging/public-alpha --rehearsal-report .eureka/rehearsals/public-alpha/latest/rehearsal_report.json --out .eureka/launch/public-alpha/latest
+```
+
+See `docs/runbooks/PUBLIC_ALPHA_LAUNCH_BLOCKER_CLOSEOUT.md`.
+
 ## Run Server From Bundle
 
 ```powershell

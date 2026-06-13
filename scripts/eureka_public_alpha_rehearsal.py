@@ -12,6 +12,7 @@ import shutil
 import sys
 import tempfile
 import threading
+import time
 from typing import Any, Mapping, Sequence, TextIO
 from urllib.parse import quote
 
@@ -499,25 +500,44 @@ def _restart_probe(bundle: Path, *, host: str, port: int) -> dict[str, Any]:
 
 
 def _probe(host: str, port: int, method: str, path: str, *, payload: Mapping[str, Any] | None = None) -> dict[str, Any]:
-    conn = http.client.HTTPConnection(host, port, timeout=8)
-    try:
-        body = None
-        headers = {}
-        if payload is not None:
-            body = json.dumps(payload)
-            headers["Content-Type"] = "application/json"
-        conn.request(method, path, body=body, headers=headers)
-        response = conn.getresponse()
-        text = response.read().decode("utf-8", errors="replace")
-        return {
-            "method": method,
-            "path": path,
-            "status_code": response.status,
-            "content_type": response.getheader("Content-Type") or "",
-            "body": text,
-        }
-    finally:
-        conn.close()
+    for attempt in range(2):
+        conn = http.client.HTTPConnection(host, port, timeout=8)
+        try:
+            body = None
+            headers = {}
+            if payload is not None:
+                body = json.dumps(payload)
+                headers["Content-Type"] = "application/json"
+            conn.request(method, path, body=body, headers=headers)
+            response = conn.getresponse()
+            text = response.read().decode("utf-8", errors="replace")
+            return {
+                "method": method,
+                "path": path,
+                "status_code": response.status,
+                "content_type": response.getheader("Content-Type") or "",
+                "body": text,
+            }
+        except OSError as exc:
+            if attempt == 0:
+                time.sleep(0.05)
+                continue
+            return {
+                "method": method,
+                "path": path,
+                "status_code": 0,
+                "content_type": "",
+                "body": f"probe failed: {type(exc).__name__}",
+            }
+        finally:
+            conn.close()
+    return {
+        "method": method,
+        "path": path,
+        "status_code": 0,
+        "content_type": "",
+        "body": "probe failed",
+    }
 
 
 def _route_summary(item: Mapping[str, Any]) -> dict[str, Any]:

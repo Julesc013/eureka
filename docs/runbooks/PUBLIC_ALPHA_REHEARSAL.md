@@ -50,6 +50,18 @@ python scripts/eureka_public_alpha_rehearsal.py validate-report --report .eureka
 python scripts/eureka_public_alpha_rehearsal.py status --report .eureka/rehearsals/public-alpha/latest/rehearsal_report.json
 ```
 
+After the rehearsal report is valid, run the launch-blocker closeout audit when
+you need a machine-checkable launch gate:
+
+```powershell
+python scripts/eureka_public_alpha_launch_gate.py audit --bundle .eureka/staging/public-alpha --rehearsal-report .eureka/rehearsals/public-alpha/latest/rehearsal_report.json --out .eureka/launch/public-alpha/latest
+python scripts/eureka_public_alpha_launch_gate.py validate-report --report .eureka/launch/public-alpha/latest/launch_gate_report.json
+python scripts/eureka_public_alpha_launch_gate.py status --report .eureka/launch/public-alpha/latest/launch_gate_report.json
+```
+
+See `docs/runbooks/PUBLIC_ALPHA_LAUNCH_BLOCKER_CLOSEOUT.md` for blocker
+categories, `--fail-on-blocked`, and future evidence inputs.
+
 The JSON report includes:
 
 - bundle id and digests;
