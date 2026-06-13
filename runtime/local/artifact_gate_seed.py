@@ -18,14 +18,18 @@ from runtime.local.search_index import load_index, validate_index
 
 TASK_ID = "REVIEWED-ARTIFACT-GATE-SEED-00"
 MANUAL_BATCH_TASK_ID = "MANUAL-ARTIFACT-EVIDENCE-BATCH-01"
+SOURCE_COLLECTION_TASK_ID = "ARTIFACT-EVIDENCE-SOURCE-COLLECTION-00"
 ARTIFACT_GATE_SCHEMA_VERSION = "eureka.reviewed_artifact_gate_seed.v0"
 MANUAL_BATCH_SCHEMA_VERSION = "eureka.manual_artifact_evidence_batch.v0"
+SOURCE_COLLECTION_SCHEMA_VERSION = "eureka.artifact_evidence_source_collection.v0"
+SOURCE_OBSERVATION_SCHEMA_VERSION = "eureka.artifact_source_observation.v0"
 CANDIDATE_SCHEMA_VERSION = "eureka.artifact_gate_candidate.v0"
 EVIDENCE_PACKET_SCHEMA_VERSION = "eureka.artifact_gate_evidence_packet.v0"
 REVIEWED_ARTIFACT_RECORD_SCHEMA_VERSION = "eureka.reviewed_artifact_gate_record.v0"
 DEFAULT_GATE_TARGET = 25
 DEFAULT_GATE_DIR = ".eureka/artifact-gate/public-alpha-seed"
 DEFAULT_MANUAL_BATCH_DIR = ".eureka/artifact-gate/manual-batch-01"
+DEFAULT_SOURCE_COLLECTION_DIR = ".eureka/artifact-gate/source-collection-01"
 DEFAULT_CANDIDATES_FILE = "candidates.jsonl"
 DEFAULT_EVIDENCE_TEMPLATE_FILE = "evidence_template.jsonl"
 DEFAULT_EVIDENCE_PACKETS_FILE = "evidence_packets.jsonl"
@@ -38,6 +42,15 @@ MANUAL_BATCH_TEMPLATE_FILE = "manual_evidence_template.jsonl"
 MANUAL_BATCH_EVIDENCE_FILE = "manual_evidence_packets.jsonl"
 MANUAL_BATCH_VALIDATION_REPORT_FILE = "evidence_validation_report.json"
 MANUAL_BATCH_REPORT_MD = "MANUAL_BATCH_REPORT.md"
+SOURCE_COLLECTION_MANIFEST_FILE = "collection_manifest.json"
+SOURCE_COLLECTION_CANDIDATE_PLAN_FILE = "source_candidate_plan.jsonl"
+SOURCE_COLLECTION_TEMPLATE_FILE = "source_observation_template.jsonl"
+SOURCE_COLLECTION_URL_LIST_TEMPLATE_FILE = "source_url_list_template.jsonl"
+SOURCE_COLLECTION_OBSERVATIONS_FILE = "source_observations.jsonl"
+SOURCE_COLLECTION_VALIDATION_REPORT_FILE = "source_validation_report.json"
+SOURCE_COLLECTION_EVIDENCE_FILE = "manual_evidence_packets.jsonl"
+SOURCE_COLLECTION_REPORT_FILE = "source_collection_report.json"
+SOURCE_COLLECTION_REPORT_MD = "SOURCE_COLLECTION_REPORT.md"
 _INSUFFICIENT_VERIFICATION_SCOPES = {"", "source_lead_only", "metadata_only", "none", "artifact_identity_candidate"}
 _APPROVED_ARTIFACT_AUTHORITIES = {
     "primary_official_source",
@@ -63,6 +76,26 @@ _FIXTURE_MARKERS = (
     "local_review_materialization",
     "local_reviewed_record",
 )
+_SOURCE_AUTHORITY_TO_PACKET_AUTHORITY = {
+    "primary": "primary_official_source",
+    "official": "official_source",
+    "primary_official_source": "primary_official_source",
+    "official_source": "official_source",
+    "reputable_secondary": "independent_reputable_corroboration",
+    "stable_catalog": "independent_reputable_corroboration",
+    "stable_catalog_page": "independent_reputable_corroboration",
+    "existing_repo_authority": "existing_repo_authority",
+}
+_SOURCE_TYPES_INSUFFICIENT_FOR_VERIFIED = {
+    "archive_metadata_page",
+    "ia_metadata",
+    "ia_metadata_page",
+    "local_fixture",
+    "repo_record",
+    "unknown",
+}
+_PRIVATE_SOURCE_MARKERS = ("file:", "\\", "c:\\", "d:\\", "users\\", ".eureka", ".aide", "local_review", "local_search_index")
+_SECRET_MARKERS = ("token=", "api_key", "apikey", "password", "secret", "authorization:")
 
 
 def list_artifact_gate_candidates(index_path: str | Path) -> dict[str, Any]:
@@ -709,6 +742,384 @@ def manual_batch_status(batch_dir: str | Path) -> dict[str, Any]:
     }
 
 
+def create_source_collection_plan(
+    gate_dir: str | Path,
+    manual_batch_dir: str | Path,
+    collection_dir: str | Path,
+    *,
+    target_records: int = 5,
+) -> dict[str, Any]:
+    gate_path = Path(gate_dir)
+    batch_path = Path(manual_batch_dir)
+    collection_path = Path(collection_dir)
+    collection_path.mkdir(parents=True, exist_ok=True)
+
+    gate_candidates = read_jsonl(gate_path / DEFAULT_CANDIDATES_FILE)
+    manual_plan_path = batch_path / MANUAL_BATCH_CANDIDATE_PLAN_FILE
+    manual_plan = read_jsonl(manual_plan_path) if manual_plan_path.is_file() else []
+    target = max(1, int(target_records))
+
+    manual_selected_ids = {
+        str(item.get("candidate_id") or "")
+        for item in manual_plan
+        if item.get("manual_batch_selected") is True and item.get("artifact_gate_excluded") is not True
+    }
+    selectable = [dict(item) for item in sorted(gate_candidates, key=_candidate_sort_key) if item.get("artifact_gate_excluded") is not True]
+    if manual_selected_ids:
+        preferred = [item for item in selectable if str(item.get("candidate_id") or "") in manual_selected_ids]
+        remaining = [item for item in selectable if str(item.get("candidate_id") or "") not in manual_selected_ids]
+        selectable = [*preferred, *remaining]
+    selected_ids = {str(item.get("candidate_id") or "") for item in selectable[:target]}
+
+    plan_rows = []
+    for position, candidate in enumerate(sorted((dict(item) for item in gate_candidates), key=_candidate_sort_key), start=1):
+        candidate_id = str(candidate.get("candidate_id") or "")
+        selected = candidate_id in selected_ids
+        excluded = candidate.get("artifact_gate_excluded") is True
+        plan_rows.append(
+            {
+                **candidate,
+                "collection_id": _collection_id(collection_path),
+                "manual_batch_id": _batch_id(batch_path),
+                "plan_position": position,
+                "source_collection_selected": selected,
+                "source_collection_target": selected and not excluded,
+                "source_collection_reason": (
+                    "selected for bounded source observation"
+                    if selected
+                    else str(candidate.get("gate_exclusion_reason") or "not selected for this bounded source collection")
+                ),
+                "expected_source_types": _expected_source_types(candidate),
+                "source_collection_instructions": [
+                    "record page, catalog, support, release-note, manual-page, or publication metadata only",
+                    "do not download files, fetch binaries, or use Wayback replay",
+                    "artifact_verified true requires explicit gate criteria and reviewer rationale",
+                ],
+            }
+        )
+
+    source_gate_report = gate_path / DEFAULT_GATE_REPORT_FILE
+    manifest = {
+        "schema_version": SOURCE_COLLECTION_SCHEMA_VERSION,
+        "task_id": SOURCE_COLLECTION_TASK_ID,
+        "collection_id": _collection_id(collection_path),
+        "status": "pass",
+        "gate_dir": str(gate_path),
+        "manual_batch_dir": str(batch_path),
+        "manual_batch_id": _batch_id(batch_path),
+        "collection_dir": str(collection_path),
+        "source_gate_report": str(source_gate_report),
+        "source_gate_report_digest": _path_sha256(source_gate_report),
+        "candidate_count": len(plan_rows),
+        "selected_candidate_count": len(selected_ids),
+        "excluded_candidate_count": sum(1 for item in plan_rows if item.get("artifact_gate_excluded") is True),
+        "target_records": target,
+        "gate_target_reviewed_artifacts": DEFAULT_GATE_TARGET,
+        "truth_promotion_performed": False,
+        "downloads_performed": False,
+        "file_fetch_performed": False,
+        "wayback_replay_performed": False,
+        "live_network_used": False,
+        "generated_at": "1970-01-01T00:00:00Z",
+    }
+    write_json(collection_path / SOURCE_COLLECTION_MANIFEST_FILE, manifest)
+    write_jsonl(collection_path / SOURCE_COLLECTION_CANDIDATE_PLAN_FILE, plan_rows)
+    write_jsonl(collection_path / SOURCE_COLLECTION_URL_LIST_TEMPLATE_FILE, _source_url_list_templates(plan_rows))
+    return manifest
+
+
+def write_source_observation_template(collection_dir: str | Path, out_path: str | Path | None = None) -> dict[str, Any]:
+    collection_path = Path(collection_dir)
+    plan_rows = read_jsonl(collection_path / SOURCE_COLLECTION_CANDIDATE_PLAN_FILE)
+    selected = [row for row in plan_rows if row.get("source_collection_selected") is True and row.get("artifact_gate_excluded") is not True]
+    templates = [_source_observation_template_from_candidate(candidate, collection_id=_collection_id(collection_path)) for candidate in selected]
+    destination = Path(out_path) if out_path else collection_path / SOURCE_COLLECTION_TEMPLATE_FILE
+    write_jsonl(destination, templates)
+    return {
+        "schema_version": SOURCE_COLLECTION_SCHEMA_VERSION,
+        "task_id": SOURCE_COLLECTION_TASK_ID,
+        "status": "pass",
+        "collection_id": _collection_id(collection_path),
+        "collection_dir": str(collection_path),
+        "out": str(destination),
+        "template_count": len(templates),
+    }
+
+
+def ingest_source_observations(collection_dir: str | Path, observations_path: str | Path) -> dict[str, Any]:
+    collection_path = Path(collection_dir)
+    observations = read_jsonl(observations_path)
+    destination = collection_path / SOURCE_COLLECTION_OBSERVATIONS_FILE
+    write_jsonl(destination, observations)
+    report = validate_source_collection(collection_path)
+    return {
+        "schema_version": SOURCE_COLLECTION_SCHEMA_VERSION,
+        "task_id": SOURCE_COLLECTION_TASK_ID,
+        "status": "pass" if report["invalid_observation_count"] == 0 else "fail",
+        "collection_id": _collection_id(collection_path),
+        "collection_dir": str(collection_path),
+        "observations": str(observations_path),
+        "out": str(destination),
+        "observation_count": len(observations),
+        "valid_observation_count": report["valid_observation_count"],
+        "invalid_observation_count": report["invalid_observation_count"],
+        "errors": report["errors"],
+    }
+
+
+def validate_source_collection(collection_dir: str | Path) -> dict[str, Any]:
+    collection_path = Path(collection_dir)
+    errors: list[str] = []
+    warnings: list[str] = []
+    observations_path = collection_path / SOURCE_COLLECTION_OBSERVATIONS_FILE
+    if not observations_path.is_file():
+        warnings.append(f"missing source observations: {observations_path}")
+        observations: list[dict[str, Any]] = []
+    else:
+        observations = read_jsonl(observations_path)
+
+    plan_rows = _source_plan_rows(collection_path)
+    candidate_by_id = {str(item.get("candidate_id") or ""): dict(item) for item in plan_rows}
+    diagnostics = []
+    valid_count = 0
+    invalid_count = 0
+    for index, observation in enumerate(observations, start=1):
+        observation_errors = validate_source_observation(observation, candidate_by_id=candidate_by_id)
+        diagnostics.append(
+            {
+                "observation_index": index,
+                "source_observation_id": str(observation.get("source_observation_id") or ""),
+                "candidate_id": str(observation.get("candidate_id") or ""),
+                "status": "valid" if not observation_errors else "invalid",
+                "errors": observation_errors,
+                "proposed_artifact_verified": bool(observation.get("proposed_artifact_verified") is True),
+                "proposed_gate_eligible": bool(observation.get("proposed_gate_eligible") is True),
+            }
+        )
+        if observation_errors:
+            invalid_count += 1
+            errors.extend(f"observation[{index}]: {error}" for error in observation_errors)
+        else:
+            valid_count += 1
+
+    report = {
+        "schema_version": SOURCE_COLLECTION_SCHEMA_VERSION,
+        "task_id": SOURCE_COLLECTION_TASK_ID,
+        "status": "fail" if invalid_count else ("pass_with_warnings" if warnings else "pass"),
+        "collection_id": _collection_id(collection_path),
+        "collection_dir": str(collection_path),
+        "observation_count": len(observations),
+        "valid_observation_count": valid_count,
+        "invalid_observation_count": invalid_count,
+        "proposed_artifact_verified_count": sum(1 for item in observations if item.get("proposed_artifact_verified") is True),
+        "proposed_gate_eligible_count": sum(1 for item in observations if item.get("proposed_gate_eligible") is True),
+        "source_authority_counts": _counts(item.get("source_authority") for item in observations),
+        "source_type_counts": _counts(item.get("source_type") for item in observations),
+        "diagnostics": diagnostics,
+        "errors": errors,
+        "warnings": warnings,
+        "truth_promotion_performed": False,
+        "downloads_performed": False,
+        "file_fetch_performed": False,
+        "wayback_replay_performed": False,
+        "live_network_used": any(item.get("live_network_used") is True for item in observations),
+    }
+    write_json(collection_path / SOURCE_COLLECTION_VALIDATION_REPORT_FILE, report)
+    return report
+
+
+def validate_source_observation(
+    observation: Mapping[str, Any],
+    *,
+    candidate_by_id: Mapping[str, Mapping[str, Any]] | None = None,
+) -> list[str]:
+    errors: list[str] = []
+    candidate_id = str(observation.get("candidate_id") or "").strip()
+    artifact_title = str(observation.get("artifact_title") or "").strip()
+    source_identifier = str(observation.get("source_url") or observation.get("source_identifier") or "").strip()
+    source_authority = str(observation.get("source_authority") or "").strip().casefold()
+    source_type = str(observation.get("source_type") or "").strip().casefold()
+    access_method = str(observation.get("access_method") or "").strip().casefold()
+    proposed_verified = observation.get("proposed_artifact_verified") is True
+    proposed_gate = observation.get("proposed_gate_eligible") is True
+    proposed_scope = str(observation.get("proposed_verification_scope") or "").strip().casefold()
+
+    if not candidate_id:
+        errors.append("candidate_id is required")
+    if not str(observation.get("source_observation_id") or "").strip():
+        errors.append("source_observation_id is required")
+    if not artifact_title:
+        errors.append("artifact_title is required")
+    if not source_identifier:
+        errors.append("source_url or source_identifier is required")
+    if not str(observation.get("observer") or "").strip():
+        errors.append("observer is required")
+    if not _string_list(observation.get("observed_artifact_fields")):
+        errors.append("observed_artifact_fields are required")
+    if observation.get("downloaded_file") is True:
+        errors.append("downloaded_file must be false")
+    if observation.get("fetched_binary") is True:
+        errors.append("fetched_binary must be false")
+    if observation.get("file_fetch_performed") is True:
+        errors.append("file_fetch_performed must be false")
+    if observation.get("wayback_replay_used") is True:
+        errors.append("wayback_replay_used must be false")
+    if observation.get("no_download_performed") is not True:
+        errors.append("no_download_performed must be true")
+    if _looks_private_source_identifier(source_identifier):
+        errors.append("source identifier must be public-safe and must not be a local/private path")
+    if _contains_secret_marker(observation):
+        errors.append("source observation must not contain tokens, secrets, passwords, or authorization markers")
+
+    candidate = dict(candidate_by_id.get(candidate_id) or {}) if candidate_by_id else {}
+    if candidate.get("artifact_gate_excluded") is True:
+        errors.append(f"candidate is excluded from artifact gate work: {candidate.get('gate_exclusion_reason')}")
+    text = _normalize(" ".join([artifact_title, str(observation.get("platform_or_context") or ""), json.dumps(observation.get("artifact_identity_fields") or {}, sort_keys=True)]))
+    if "windows 7 apps" in text or artifact_title.casefold().strip() in {"windows 7 apps", "windows 7 app"}:
+        errors.append("broad category cannot be source-observed as a concrete artifact")
+    if "driver" in text and not _driver_hardware_fields(observation):
+        errors.append("driver observation requires hardware identity fields")
+
+    if proposed_verified and not proposed_gate:
+        errors.append("proposed_artifact_verified true requires proposed_gate_eligible true")
+    if proposed_gate and not str(observation.get("reviewer") or "").strip():
+        errors.append("proposed gate eligibility requires reviewer")
+    if proposed_gate and not str(observation.get("review_rationale") or "").strip():
+        errors.append("proposed gate eligibility requires review_rationale")
+    if proposed_verified:
+        if proposed_scope in _INSUFFICIENT_VERIFICATION_SCOPES:
+            errors.append("proposed artifact verification requires artifact_identity_metadata scope")
+        if source_authority in {"", "unknown"}:
+            errors.append("source_authority=unknown cannot propose artifact_verified")
+        if source_type in _SOURCE_TYPES_INSUFFICIENT_FOR_VERIFIED:
+            errors.append(f"source_type={source_type or 'unknown'} cannot by itself propose artifact_verified")
+        if access_method in {"local_fixture", "repo_record"}:
+            errors.append("local_fixture or repo_record observations cannot propose artifact_verified")
+        if source_authority in {"archive_metadata", "archive_metadata_fixture", "hard_query_fixture", "local_reviewed_source_lead"}:
+            errors.append("archive metadata, fixture, or local reviewed source lead cannot by itself propose artifact_verified")
+    return _dedupe(errors)
+
+
+def source_observations_to_evidence(collection_dir: str | Path, out_path: str | Path | None = None) -> dict[str, Any]:
+    collection_path = Path(collection_dir)
+    validation = validate_source_collection(collection_path)
+    plan_rows = _source_plan_rows(collection_path)
+    candidate_by_id = {str(item.get("candidate_id") or ""): dict(item) for item in plan_rows}
+    observations = read_jsonl(collection_path / SOURCE_COLLECTION_OBSERVATIONS_FILE) if (collection_path / SOURCE_COLLECTION_OBSERVATIONS_FILE).is_file() else []
+    valid_ids = {
+        str(item.get("source_observation_id") or "")
+        for item in validation.get("diagnostics") or []
+        if isinstance(item, Mapping) and item.get("status") == "valid"
+    }
+    valid_observations = [
+        dict(item)
+        for item in observations
+        if str(item.get("source_observation_id") or "") in valid_ids
+    ]
+    grouped: dict[str, list[dict[str, Any]]] = {}
+    for observation in valid_observations:
+        grouped.setdefault(str(observation.get("candidate_id") or ""), []).append(observation)
+
+    packets = []
+    for candidate_id in sorted(grouped):
+        candidate = candidate_by_id.get(candidate_id)
+        if not candidate:
+            continue
+        packets.append(_manual_packet_from_source_observations(candidate, grouped[candidate_id], collection_path=collection_path))
+
+    destination = Path(out_path) if out_path else collection_path / SOURCE_COLLECTION_EVIDENCE_FILE
+    write_jsonl(destination, packets)
+    status = "pass" if packets and not validation.get("errors") else "pass_with_warnings"
+    return {
+        "schema_version": SOURCE_COLLECTION_SCHEMA_VERSION,
+        "task_id": SOURCE_COLLECTION_TASK_ID,
+        "status": status,
+        "collection_id": _collection_id(collection_path),
+        "collection_dir": str(collection_path),
+        "out": str(destination),
+        "source_observation_count": len(observations),
+        "valid_observation_count": len(valid_observations),
+        "evidence_packet_count": len(packets),
+        "artifact_verified_packet_count": sum(1 for packet in packets if packet.get("artifact_verified") is True),
+        "gate_eligible_packet_count": sum(1 for packet in packets if packet.get("gate_eligible") is True),
+        "errors": list(validation.get("errors") or []),
+        "warnings": list(validation.get("warnings") or []),
+    }
+
+
+def write_source_collection_report(collection_dir: str | Path, out_path: str | Path | None = None) -> dict[str, Any]:
+    collection_path = Path(collection_dir)
+    validation = validate_source_collection(collection_path)
+    plan_rows = _source_plan_rows(collection_path)
+    evidence_path = collection_path / SOURCE_COLLECTION_EVIDENCE_FILE
+    packets = read_jsonl(evidence_path) if evidence_path.is_file() else []
+    report = _source_collection_report(collection_path, plan_rows=plan_rows, packets=packets, validation=validation)
+    destination = Path(out_path) if out_path else collection_path / SOURCE_COLLECTION_REPORT_FILE
+    write_json(destination, report)
+    write_json(collection_path / SOURCE_COLLECTION_REPORT_FILE, report)
+    (collection_path / SOURCE_COLLECTION_REPORT_MD).write_text(render_source_collection_markdown(report), encoding="utf-8")
+    return report
+
+
+def source_collection_status(collection_dir: str | Path) -> dict[str, Any]:
+    collection_path = Path(collection_dir)
+    report_path = collection_path / SOURCE_COLLECTION_REPORT_FILE
+    validation_path = collection_path / SOURCE_COLLECTION_VALIDATION_REPORT_FILE
+    report = json.loads(report_path.read_text(encoding="utf-8")) if report_path.is_file() else {}
+    validation = json.loads(validation_path.read_text(encoding="utf-8")) if validation_path.is_file() else validate_source_collection(collection_path)
+    return {
+        "schema_version": SOURCE_COLLECTION_SCHEMA_VERSION,
+        "task_id": SOURCE_COLLECTION_TASK_ID,
+        "status": "pass" if report_path.is_file() else "pass_with_warnings",
+        "collection_id": _collection_id(collection_path),
+        "collection_dir": str(collection_path),
+        "report_status": report.get("status", "PASS_WITH_WARNINGS"),
+        "collection_status": report.get("collection_status", "blocked"),
+        "candidate_count": report.get("candidate_count", 0),
+        "selected_candidate_count": report.get("selected_candidate_count", 0),
+        "observation_count": validation.get("observation_count", report.get("observation_count", 0)),
+        "valid_observation_count": validation.get("valid_observation_count", report.get("valid_observation_count", 0)),
+        "invalid_observation_count": validation.get("invalid_observation_count", report.get("invalid_observation_count", 0)),
+        "evidence_packet_count": report.get("evidence_packet_count", 0),
+        "artifact_verified_packet_count": report.get("artifact_verified_packet_count", 0),
+        "gate_eligible_packet_count": report.get("gate_eligible_packet_count", 0),
+        "blockers": report.get("blockers", []),
+        "warnings": [*list(report.get("warnings") or []), *list(validation.get("warnings") or [])],
+        "next_recommended_task": report.get("next_recommended_task", "SOURCE-OBSERVATION-BATCH-01"),
+    }
+
+
+def render_source_collection_status(payload: Mapping[str, Any]) -> str:
+    lines = [
+        f"collection status: {payload.get('status')}",
+        f"report status: {payload.get('report_status')}",
+        f"collection gate status: {payload.get('collection_status')}",
+        f"collection id: {payload.get('collection_id')}",
+        f"candidate count: {payload.get('candidate_count')}",
+        f"selected candidates: {payload.get('selected_candidate_count')}",
+        f"observations: {payload.get('observation_count')}",
+        f"valid observations: {payload.get('valid_observation_count')}",
+        f"invalid observations: {payload.get('invalid_observation_count')}",
+        f"evidence packets: {payload.get('evidence_packet_count')}",
+        f"artifact verified packets: {payload.get('artifact_verified_packet_count')}",
+        f"gate eligible packets: {payload.get('gate_eligible_packet_count')}",
+        f"next recommended task: {payload.get('next_recommended_task')}",
+        "blockers:",
+    ]
+    blockers = [item for item in payload.get("blockers") or [] if isinstance(item, Mapping)]
+    if blockers:
+        for blocker in blockers:
+            lines.append(f"- {blocker.get('id')}: {blocker.get('message')}")
+    else:
+        lines.append("- none")
+    warnings = payload.get("warnings") or []
+    if warnings:
+        lines.append("warnings:")
+        for warning in warnings:
+            lines.append(f"- {warning}")
+    return "\n".join(lines) + "\n"
+
+
 def render_gate_markdown(report: Mapping[str, Any]) -> str:
     blockers = [item for item in report.get("blockers") or [] if isinstance(item, Mapping)]
     lines = [
@@ -1150,7 +1561,7 @@ def _manual_batch_report(
         "next_recommended_task": (
             "MANUAL-ARTIFACT-EVIDENCE-BATCH-02"
             if artifact_verified_count > 0 and gate_count < DEFAULT_GATE_TARGET
-            else "ARTIFACT-EVIDENCE-SOURCE-COLLECTION-00"
+            else "SOURCE-OBSERVATION-BATCH-01"
         ),
     }
 
@@ -1190,6 +1601,383 @@ def render_manual_batch_markdown(report: Mapping[str, Any]) -> str:
     if not report.get("validation_errors") and not report.get("validation_warnings"):
         lines.append("- no validation errors")
     return "\n".join(lines).rstrip() + "\n"
+
+
+def render_source_collection_markdown(report: Mapping[str, Any]) -> str:
+    blockers = [item for item in report.get("blockers") or [] if isinstance(item, Mapping)]
+    lines = [
+        "# Artifact Evidence Source Collection Report",
+        "",
+        "## Summary",
+        "",
+        f"- Status: {report.get('status')}",
+        f"- Collection status: {report.get('collection_status')}",
+        f"- Collection: {report.get('collection_id')}",
+        f"- Selected candidates: {report.get('selected_candidate_count')}",
+        f"- Source observations: {report.get('observation_count')}",
+        f"- Valid observations: {report.get('valid_observation_count')}",
+        f"- Invalid observations: {report.get('invalid_observation_count')}",
+        f"- Source-derived evidence packets: {report.get('evidence_packet_count')}",
+        f"- Artifact verified packets: {report.get('artifact_verified_packet_count')}",
+        f"- Gate eligible packets: {report.get('gate_eligible_packet_count')}",
+        f"- Next recommended task: {report.get('next_recommended_task')}",
+        "",
+        "Source observations are evidence inputs only. They do not imply binary safety, download safety, execution safety, or rights clearance.",
+        "",
+        "## Blockers",
+        "",
+    ]
+    if blockers:
+        for blocker in blockers:
+            lines.append(f"- {blocker.get('id')}: {blocker.get('message')}")
+    else:
+        lines.append("- none")
+    lines.extend(["", "## Validation", ""])
+    for error in report.get("validation_errors") or []:
+        lines.append(f"- error: {error}")
+    for warning in report.get("validation_warnings") or []:
+        lines.append(f"- warning: {warning}")
+    if not report.get("validation_errors") and not report.get("validation_warnings"):
+        lines.append("- no validation errors")
+    return "\n".join(lines).rstrip() + "\n"
+
+
+def _source_collection_report(
+    collection_path: Path,
+    *,
+    plan_rows: Sequence[Mapping[str, Any]],
+    packets: Sequence[Mapping[str, Any]],
+    validation: Mapping[str, Any],
+) -> dict[str, Any]:
+    artifact_verified_count = sum(1 for packet in packets if packet.get("artifact_verified") is True)
+    gate_eligible_count = sum(1 for packet in packets if packet.get("gate_eligible") is True)
+    valid_count = int(validation.get("valid_observation_count") or 0)
+    invalid_count = int(validation.get("invalid_observation_count") or 0)
+    blockers = []
+    if valid_count == 0:
+        blockers.append(
+            {
+                "id": "source_observations_missing",
+                "status": "blocked",
+                "message": "no valid source observations have been supplied",
+            }
+        )
+    if invalid_count:
+        blockers.append(
+            {
+                "id": "source_observations_invalid",
+                "status": "blocked",
+                "message": f"{invalid_count} source observation(s) failed validation",
+            }
+        )
+    if not packets:
+        blockers.append(
+            {
+                "id": "source_derived_evidence_missing",
+                "status": "blocked",
+                "message": "no source-derived manual evidence packets were created",
+            }
+        )
+    if artifact_verified_count == 0:
+        blockers.append(
+            {
+                "id": "artifact_verified_count_zero",
+                "status": "blocked",
+                "message": "no artifact-verified source-derived evidence packets exist",
+            }
+        )
+    warnings = [
+        "source collection artifacts are generated operational artifacts",
+        "fixture and IA metadata observations cannot verify artifacts by themselves",
+        "artifact identity verification does not imply binary, download, execution, or rights safety",
+    ]
+    if valid_count == 0:
+        warnings.append("fill source_observations.jsonl before expecting evidence packets")
+    if invalid_count:
+        warnings.append("invalid source observations were rejected and not converted")
+    collection_status = "ready_for_manual_ingest" if packets else "blocked"
+    status = "PASS" if not blockers else "PASS_WITH_WARNINGS"
+    manifest = _source_collection_manifest(collection_path)
+    return {
+        "schema_version": SOURCE_COLLECTION_SCHEMA_VERSION,
+        "task_id": SOURCE_COLLECTION_TASK_ID,
+        "status": status,
+        "collection_status": collection_status,
+        "collection_id": _collection_id(collection_path),
+        "collection_dir": str(collection_path),
+        "manual_batch_dir": str(manifest.get("manual_batch_dir") or ""),
+        "manual_batch_id": str(manifest.get("manual_batch_id") or ""),
+        "candidate_count": len(plan_rows),
+        "selected_candidate_count": sum(1 for item in plan_rows if item.get("source_collection_selected") is True),
+        "excluded_candidate_count": sum(1 for item in plan_rows if item.get("artifact_gate_excluded") is True),
+        "observation_count": int(validation.get("observation_count") or 0),
+        "valid_observation_count": valid_count,
+        "invalid_observation_count": invalid_count,
+        "evidence_packet_count": len(packets),
+        "artifact_verified_packet_count": artifact_verified_count,
+        "gate_eligible_packet_count": gate_eligible_count,
+        "source_authority_counts": _counts(packet.get("source_authority") for packet in packets),
+        "verification_scope_counts": _counts(packet.get("verification_scope") for packet in packets),
+        "validation_errors": list(validation.get("errors") or []),
+        "validation_warnings": list(validation.get("warnings") or []),
+        "blockers": blockers,
+        "warnings": warnings,
+        "truth_promotion_performed": False,
+        "verified_artifact_truth_created": artifact_verified_count > 0,
+        "downloads_performed": False,
+        "file_fetch_performed": False,
+        "wayback_replay_performed": False,
+        "live_network_used": bool(validation.get("live_network_used") is True),
+        "public_index_mutated": False,
+        "master_index_mutated": False,
+        "official_gate_counts_mutated": False,
+        "generated_at": "1970-01-01T00:00:00Z",
+        "next_recommended_task": (
+            "MANUAL-ARTIFACT-EVIDENCE-BATCH-02"
+            if artifact_verified_count > 0
+            else "SOURCE-OBSERVATION-BATCH-01"
+        ),
+    }
+
+
+def _source_plan_rows(collection_path: Path) -> list[dict[str, Any]]:
+    plan_path = collection_path / SOURCE_COLLECTION_CANDIDATE_PLAN_FILE
+    return read_jsonl(plan_path) if plan_path.is_file() else []
+
+
+def _source_collection_manifest(collection_path: Path) -> dict[str, Any]:
+    manifest_path = collection_path / SOURCE_COLLECTION_MANIFEST_FILE
+    if not manifest_path.is_file():
+        return {}
+    return json.loads(manifest_path.read_text(encoding="utf-8"))
+
+
+def _source_observation_template_from_candidate(candidate: Mapping[str, Any], *, collection_id: str) -> dict[str, Any]:
+    candidate_id = str(candidate.get("candidate_id") or "")
+    return {
+        "schema_version": SOURCE_OBSERVATION_SCHEMA_VERSION,
+        "source_observation_id": _stable_id("source-observation-packet", collection_id, candidate_id),
+        "collection_id": collection_id,
+        "candidate_id": candidate_id,
+        "artifact_title": str(candidate.get("title") or ""),
+        "artifact_type": str(candidate.get("artifact_type") or "unknown"),
+        "artifact_identity_fields": {
+            "title": str(candidate.get("title") or ""),
+            "source_index_document_id": str(candidate.get("source_index_document_id") or ""),
+            "reviewed_record_id": str(candidate.get("reviewed_record_id") or ""),
+            "platform_or_context": str(candidate.get("platform_or_context") or ""),
+        },
+        "platform_or_context": str(candidate.get("platform_or_context") or ""),
+        "source_id": "",
+        "source_url": "",
+        "source_identifier": "",
+        "source_title": "",
+        "publisher_or_source_name": "",
+        "source_type": "",
+        "source_authority": "",
+        "observed_artifact_fields": [],
+        "observation_notes": "",
+        "short_evidence_summary": "",
+        "access_method": "manual_page_observation",
+        "observed_at": "",
+        "collected_at": "",
+        "observer": "",
+        "reviewer": "",
+        "review_rationale": "",
+        "live_network_used": False,
+        "no_download_performed": True,
+        "downloaded_file": False,
+        "fetched_binary": False,
+        "wayback_replay_used": False,
+        "file_fetch_performed": False,
+        "proposed_verification_scope": "source_lead_only",
+        "proposed_artifact_verified": False,
+        "proposed_gate_eligible": False,
+        "confidence": "",
+        "limitations": [],
+        "instructions": [
+            "use short field extraction or paraphrase only",
+            "do not download binaries, fetch files, or use Wayback replay",
+            "set proposed_artifact_verified true only when explicit gate criteria are met",
+        ],
+    }
+
+
+def _source_url_list_templates(plan_rows: Sequence[Mapping[str, Any]]) -> list[dict[str, Any]]:
+    rows = []
+    for candidate in plan_rows:
+        if candidate.get("source_collection_selected") is not True or candidate.get("artifact_gate_excluded") is True:
+            continue
+        rows.append(
+            {
+                "collection_id": str(candidate.get("collection_id") or ""),
+                "candidate_id": str(candidate.get("candidate_id") or ""),
+                "artifact_title": str(candidate.get("title") or ""),
+                "source_url": "",
+                "source_identifier": "",
+                "source_type": "",
+                "source_authority": "",
+                "notes": "Optional explicit URL list for a future bounded observation pass; no crawling or downloads.",
+            }
+        )
+    return rows
+
+
+def _manual_packet_from_source_observations(
+    candidate: Mapping[str, Any],
+    observations: Sequence[Mapping[str, Any]],
+    *,
+    collection_path: Path,
+) -> dict[str, Any]:
+    manifest = _source_collection_manifest(collection_path)
+    packet = _evidence_packet_from_candidate(candidate, template=False)
+    packet_observations = [_source_observation_for_evidence(observation) for observation in observations]
+    authority = _packet_source_authority(observations)
+    proposed_verified = any(item.get("proposed_artifact_verified") is True for item in observations)
+    proposed_gate = any(item.get("proposed_gate_eligible") is True for item in observations)
+    verification_scope = _packet_verification_scope(observations, proposed_verified=proposed_verified)
+    artifact_verified = bool(
+        proposed_verified
+        and proposed_gate
+        and authority in _APPROVED_ARTIFACT_AUTHORITIES
+        and verification_scope not in _INSUFFICIENT_VERIFICATION_SCOPES
+    )
+    evidence_urls = _dedupe(str(item.get("source_url") or "") for item in observations if str(item.get("source_url") or "").strip())
+    source_identifiers = _dedupe(
+        str(item.get("source_identifier") or item.get("source_id") or "")
+        for item in observations
+        if str(item.get("source_identifier") or item.get("source_id") or "").strip()
+    )
+    observed_fields = _dedupe(
+        field
+        for observation in observations
+        for field in _string_list(observation.get("observed_artifact_fields"))
+    )
+    reviewer = _first_text(*(item.get("reviewer") for item in observations), *(item.get("observer") for item in observations))
+    rationale = _first_text(
+        *(item.get("review_rationale") for item in observations),
+        *(item.get("short_evidence_summary") for item in observations),
+        default="Source observation recorded as a non-verified source lead.",
+    )
+    packet.update(
+        {
+            "evidence_packet_id": _stable_id("source-derived-evidence", _collection_id(collection_path), candidate.get("candidate_id"), packet_observations),
+            "batch_id": str(manifest.get("manual_batch_id") or ""),
+            "source_observations": packet_observations,
+            "evidence_urls": evidence_urls,
+            "source_identifiers": source_identifiers,
+            "evidence_type": "source_collection_observation",
+            "source_authority": authority,
+            "observed_fields": observed_fields,
+            "reviewer": reviewer,
+            "review_rationale": rationale,
+            "collected_at": _first_text(*(item.get("collected_at") for item in observations), *(item.get("observed_at") for item in observations), default="1970-01-01T00:00:00Z"),
+            "no_download_performed": True,
+            "file_fetch_performed": False,
+            "binary_verified": False,
+            "download_safe": False,
+            "execution_safe": False,
+            "rights_cleared": False,
+            "verification_scope": verification_scope,
+            "artifact_verified": artifact_verified,
+            "gate_eligible": artifact_verified,
+            "gate_exclusion_reason": "" if artifact_verified else "source_observation_insufficient_for_artifact_verification",
+            "non_verified_reason": "" if artifact_verified else "source observation is a source lead or artifact identity candidate, not verified artifact evidence",
+            "live_network_used": any(item.get("live_network_used") is True for item in observations),
+            "provenance": {
+                **dict(packet.get("provenance") or {}),
+                "source": "artifact_evidence_source_collection",
+                "source_collection_id": _collection_id(collection_path),
+                "source_collection_dir": str(collection_path),
+            },
+        }
+    )
+    if not artifact_verified:
+        packet["verification_scope"] = verification_scope or "artifact_identity_candidate"
+    return packet
+
+
+def _source_observation_for_evidence(observation: Mapping[str, Any]) -> dict[str, Any]:
+    return {
+        "source_id": str(observation.get("source_id") or observation.get("source_observation_id") or ""),
+        "source_observation_id": str(observation.get("source_observation_id") or ""),
+        "source_url": str(observation.get("source_url") or ""),
+        "source_identifier": str(observation.get("source_identifier") or ""),
+        "source_title": str(observation.get("source_title") or ""),
+        "publisher_or_source_name": str(observation.get("publisher_or_source_name") or ""),
+        "source_type": str(observation.get("source_type") or ""),
+        "source_authority": str(observation.get("source_authority") or ""),
+        "observed_artifact_fields": _string_list(observation.get("observed_artifact_fields")),
+        "observation_notes": str(observation.get("observation_notes") or ""),
+        "short_evidence_summary": str(observation.get("short_evidence_summary") or ""),
+        "access_method": str(observation.get("access_method") or "manual_page_observation"),
+        "live_network_used": bool(observation.get("live_network_used") is True),
+        "downloaded_file": False,
+        "fetched_binary": False,
+        "file_fetch_performed": False,
+        "wayback_replay_used": False,
+    }
+
+
+def _packet_source_authority(observations: Sequence[Mapping[str, Any]]) -> str:
+    authorities = {str(item.get("source_authority") or "").strip().casefold() for item in observations}
+    source_types = {str(item.get("source_type") or "").strip().casefold() for item in observations}
+    mapped = [_SOURCE_AUTHORITY_TO_PACKET_AUTHORITY.get(item) for item in authorities]
+    mapped = [item for item in mapped if item]
+    if "primary_official_source" in mapped:
+        return "primary_official_source"
+    if "official_source" in mapped:
+        return "official_source"
+    if ("archive_metadata" in authorities or "archive_metadata_page" in source_types) and len(observations) >= 2:
+        if authorities & {"reputable_secondary", "stable_catalog", "primary", "official"}:
+            return "stable_archive_plus_independent_corroboration"
+    if "independent_reputable_corroboration" in mapped and len(observations) >= 2:
+        return "independent_reputable_corroboration"
+    return mapped[0] if mapped else str(next(iter(authorities), "") or "source_collection_observation")
+
+
+def _packet_verification_scope(observations: Sequence[Mapping[str, Any]], *, proposed_verified: bool) -> str:
+    scopes = [str(item.get("proposed_verification_scope") or "").strip() for item in observations if str(item.get("proposed_verification_scope") or "").strip()]
+    if proposed_verified and any(scope.casefold() == "artifact_identity_metadata" for scope in scopes):
+        return "artifact_identity_metadata"
+    return scopes[0] if scopes else "artifact_identity_candidate"
+
+
+def _expected_source_types(candidate: Mapping[str, Any]) -> list[str]:
+    artifact_type = str(candidate.get("artifact_type") or "").casefold()
+    if artifact_type == "manual":
+        return ["official_support_page", "manual_page", "stable_catalog_page"]
+    if artifact_type == "software":
+        return ["official_release_notes", "official_support_page", "stable_catalog_page", "reputable_secondary_reference"]
+    if artifact_type == "article":
+        return ["publication_record", "stable_catalog_page", "reputable_secondary_reference"]
+    return ["official_support_page", "stable_catalog_page", "reputable_secondary_reference"]
+
+
+def _driver_hardware_fields(observation: Mapping[str, Any]) -> bool:
+    identity = observation.get("artifact_identity_fields") if isinstance(observation.get("artifact_identity_fields"), Mapping) else {}
+    text = _normalize(json.dumps(identity, sort_keys=True, ensure_ascii=True) + " " + str(observation.get("platform_or_context") or ""))
+    return any(marker in text for marker in ("ct", "pci", "isa", "model", "hardware", "device", "sound blaster", "win98"))
+
+
+def _looks_private_source_identifier(value: str) -> bool:
+    normalized = value.strip().casefold()
+    if not normalized:
+        return False
+    return any(marker in normalized for marker in _PRIVATE_SOURCE_MARKERS)
+
+
+def _contains_secret_marker(value: Any) -> bool:
+    text = json.dumps(value, sort_keys=True, ensure_ascii=True).casefold()
+    return any(marker in text for marker in _SECRET_MARKERS)
+
+
+def _first_text(*values: Any, default: str = "") -> str:
+    for value in values:
+        text = str(value or "").strip()
+        if text:
+            return text
+    return default
 
 
 def _source_observations(document: Mapping[str, Any]) -> list[dict[str, Any]]:
@@ -1300,6 +2088,8 @@ def _evidence_source_is_fixture_only(packet: Mapping[str, Any]) -> bool:
         access_methods = {str(item.get("access_method") or "").strip().casefold() for item in observations}
         if access_methods and access_methods <= {"local_fixture", "repo_record", ""}:
             return True
+        if source_authority in _APPROVED_ARTIFACT_AUTHORITIES:
+            return False
     source_text = json.dumps(
         {
             "source_authority": packet.get("source_authority"),
@@ -1335,6 +2125,10 @@ def _dedupe(values: Sequence[str]) -> list[str]:
 
 def _batch_id(batch_path: str | Path) -> str:
     return f"manual-batch:{Path(batch_path).name}"
+
+
+def _collection_id(collection_path: str | Path) -> str:
+    return f"source-collection:{Path(collection_path).name}"
 
 
 def _stable_id(prefix: str, *parts: Any) -> str:

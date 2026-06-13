@@ -126,6 +126,11 @@ Invalid packets are rejected. Common errors include missing reviewer, missing
 rationale, missing source identity, fixture-only `artifact_verified=true`, and
 insufficient verification scope.
 
+To create manual evidence packets from bounded source observations, use
+`docs/runbooks/ARTIFACT_EVIDENCE_SOURCE_COLLECTION.md`. Source collection
+produces `manual_evidence_packets.jsonl` for this manual batch workflow; it
+does not weaken the evidence criteria.
+
 ## Review And Report
 
 ```powershell

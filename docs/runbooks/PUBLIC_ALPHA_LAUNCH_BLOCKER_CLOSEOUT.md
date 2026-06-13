@@ -127,6 +127,12 @@ For filled manual evidence batches, see
 also be supplied with `--artifact-gate-report`; launch remains blocked unless
 the gate target and all other launch blockers are actually cleared.
 
+For bounded source observation packets that feed manual evidence batches, see
+`docs/runbooks/ARTIFACT_EVIDENCE_SOURCE_COLLECTION.md`. Source collection
+reports are operational evidence; the launch gate should consume the resulting
+manual batch artifact gate report, not treat source leads as public launch
+approval.
+
 ## Local Readiness Vs Launch Readiness
 
 Local readiness means the staging bundle and rehearsal passed local read-only

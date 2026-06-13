@@ -129,6 +129,9 @@ is absent.
 To continue into filled manual evidence packets, use
 `docs/runbooks/MANUAL_ARTIFACT_EVIDENCE_BATCH.md`.
 
+To plan bounded source observations that can feed manual evidence packets, use
+`docs/runbooks/ARTIFACT_EVIDENCE_SOURCE_COLLECTION.md`.
+
 ## Safety Guarantees
 
 This workflow:

@@ -1,0 +1,232 @@
+# Artifact Evidence Source Collection
+
+This runbook covers `ARTIFACT-EVIDENCE-SOURCE-COLLECTION-00`: the first bounded
+source-observation bridge into the reviewed-artifact gate workflow.
+
+It does not crawl the web, download binaries, fetch files, replay Wayback,
+promote fixture or IA metadata into verified artifact truth, complete the
+25-record gate by itself, deploy, or launch public alpha.
+
+## Prerequisites
+
+Start from a valid reviewed-artifact seed and manual evidence batch:
+
+```powershell
+python scripts/eureka_artifact_gate.py validate --gate .eureka/artifact-gate/public-alpha-seed
+
+python scripts/eureka_artifact_gate.py manual-status --batch .eureka/artifact-gate/manual-batch-01
+```
+
+If either artifact is missing, run:
+
+- `docs/runbooks/REVIEWED_ARTIFACT_GATE_SEED.md`
+- `docs/runbooks/MANUAL_ARTIFACT_EVIDENCE_BATCH.md`
+
+Generated `.eureka` files are local ignored artifacts. Do not commit them.
+
+## Source Plan
+
+```powershell
+python scripts/eureka_artifact_gate.py source-plan --gate .eureka/artifact-gate/public-alpha-seed --manual-batch .eureka/artifact-gate/manual-batch-01 --out .eureka/artifact-gate/source-collection-01 --target-records 5
+```
+
+This writes:
+
+```text
+.eureka/artifact-gate/source-collection-01/collection_manifest.json
+.eureka/artifact-gate/source-collection-01/source_candidate_plan.jsonl
+.eureka/artifact-gate/source-collection-01/source_url_list_template.jsonl
+```
+
+The plan prefers concrete manual-batch candidates. Broad `Windows 7 apps`,
+under-specified `driver for Win98`, unavailable records, and policy-blocked
+records remain excluded until they become specific, safe artifact identities.
+
+## Source Observation Template
+
+```powershell
+python scripts/eureka_artifact_gate.py source-template --collection .eureka/artifact-gate/source-collection-01 --out .eureka/artifact-gate/source-collection-01/source_observation_template.jsonl
+```
+
+Fill a separate `source_observations.jsonl` from the template. Required fields
+include:
+
+- `source_observation_id`
+- `collection_id`
+- `candidate_id`
+- `artifact_title`
+- `artifact_type`
+- `artifact_identity_fields`
+- `platform_or_context`
+- `source_id`
+- `source_url` or `source_identifier`
+- `source_type`
+- `source_authority`
+- `observed_artifact_fields`
+- `short_evidence_summary`
+- `access_method`
+- `observed_at` or `collected_at`
+- `observer`
+- `no_download_performed=true`
+- `downloaded_file=false`
+- `fetched_binary=false`
+- `file_fetch_performed=false`
+- `wayback_replay_used=false`
+- `proposed_verification_scope`
+- `proposed_artifact_verified`
+- `proposed_gate_eligible`
+- `limitations`
+
+Keep excerpts short. Prefer field extraction and paraphrase over quotation.
+
+## Acceptable Source Types
+
+Useful source observations can come from:
+
+- official support pages;
+- official release notes;
+- manual pages;
+- stable catalog pages;
+- archive metadata pages as source leads;
+- publication records;
+- reputable secondary references.
+
+`artifact_verified=true` should be proposed only for explicit artifact identity
+evidence, such as primary/official source metadata, or a stable archive/catalog
+source with independent reputable corroboration.
+
+## Unacceptable Source Types
+
+These may be source leads, but must not verify artifacts by themselves:
+
+- local fixtures;
+- IA metadata alone;
+- local demo reviewed records;
+- broad category pages;
+- unknown authority pages;
+- source hints with no observer and rationale;
+- private local paths;
+- files, binaries, downloads, Wayback replay, installers, emulators, or
+  marketplace actions.
+
+Source observation does not imply `binary_verified`, `download_safe`,
+`execution_safe`, `rights_cleared`, or malware safety. Those fields stay false
+unless a separate approved process proves them.
+
+## Ingest And Validate
+
+When source observations are available:
+
+```powershell
+python scripts/eureka_artifact_gate.py source-ingest --collection .eureka/artifact-gate/source-collection-01 --observations .eureka/artifact-gate/source-collection-01/source_observations.jsonl
+
+python scripts/eureka_artifact_gate.py source-validate --collection .eureka/artifact-gate/source-collection-01
+```
+
+If `source_observations.jsonl` is absent, validation reports a blocked warning
+and creates no evidence packets.
+
+Validation rejects missing observer, missing source identifier, missing observed
+fields, downloaded files, fetched binaries, Wayback replay, local fixture
+verified claims, IA-metadata-only verified claims, broad records, and driver
+records without hardware details.
+
+## Convert To Manual Evidence
+
+```powershell
+python scripts/eureka_artifact_gate.py source-to-evidence --collection .eureka/artifact-gate/source-collection-01 --out .eureka/artifact-gate/source-collection-01/manual_evidence_packets.jsonl
+
+python scripts/eureka_artifact_gate.py source-report --collection .eureka/artifact-gate/source-collection-01 --out .eureka/artifact-gate/source-collection-01/source_collection_report.json
+
+python scripts/eureka_artifact_gate.py source-status --collection .eureka/artifact-gate/source-collection-01
+```
+
+The collection writes:
+
+```text
+.eureka/artifact-gate/source-collection-01/source_observations.jsonl
+.eureka/artifact-gate/source-collection-01/source_validation_report.json
+.eureka/artifact-gate/source-collection-01/manual_evidence_packets.jsonl
+.eureka/artifact-gate/source-collection-01/source_collection_report.json
+.eureka/artifact-gate/source-collection-01/SOURCE_COLLECTION_REPORT.md
+```
+
+Valid non-verified observations become manual evidence packets with
+`artifact_verified=false` and `gate_eligible=false`. Only observations that pass
+the explicit criteria can produce `artifact_verified=true`.
+
+## Feed Manual Batch
+
+Use source-derived packets as input to the existing manual batch:
+
+```powershell
+python scripts/eureka_artifact_gate.py manual-ingest --batch .eureka/artifact-gate/manual-batch-01 --evidence .eureka/artifact-gate/source-collection-01/manual_evidence_packets.jsonl
+
+python scripts/eureka_artifact_gate.py manual-validate --batch .eureka/artifact-gate/manual-batch-01
+
+python scripts/eureka_artifact_gate.py manual-review --batch .eureka/artifact-gate/manual-batch-01 --reviewer source_collection_01 --out .eureka/artifact-gate/manual-batch-01/reviewed_artifact_records.jsonl
+
+python scripts/eureka_artifact_gate.py manual-report --batch .eureka/artifact-gate/manual-batch-01 --out .eureka/artifact-gate/manual-batch-01/artifact_gate_report.json
+
+python scripts/eureka_artifact_gate.py manual-status --batch .eureka/artifact-gate/manual-batch-01
+```
+
+Manual review materializes only valid, artifact-verified, gate-eligible packets.
+Below 25 reviewed artifacts, the gate remains blocked.
+
+## Launch Gate
+
+```powershell
+python scripts/eureka_public_alpha_launch_gate.py audit --bundle .eureka/staging/public-alpha --rehearsal-report .eureka/rehearsals/public-alpha/latest/rehearsal_report.json --artifact-gate-report .eureka/artifact-gate/manual-batch-01/artifact_gate_report.json --out .eureka/launch/public-alpha/latest
+
+python scripts/eureka_public_alpha_launch_gate.py validate-report --report .eureka/launch/public-alpha/latest/launch_gate_report.json
+
+python scripts/eureka_public_alpha_launch_gate.py status --report .eureka/launch/public-alpha/latest/launch_gate_report.json
+```
+
+The launch gate consumes the updated manual batch report. It must remain blocked
+unless the reviewed-artifact target and all deployment, release, approval, and
+safety gates are genuinely satisfied.
+
+## Expected No-Observation Result
+
+If no source observations are supplied, expect `PASS_WITH_WARNINGS`:
+
+```text
+valid_observation_count=0
+evidence_packet_count=0
+artifact_verified_packet_count=0
+reviewed_artifact_gate_count=0/25
+launch_status=BLOCKED
+```
+
+This is a useful handoff state, not a failure.
+
+## Troubleshooting
+
+- No eligible targets: inspect `source_candidate_plan.jsonl`; broad or
+  under-specified records may need narrower artifact identity.
+- Missing source identifier: fill `source_url` or `source_identifier`.
+- `downloaded_file=true`: reject the observation; this workflow is metadata
+  and page-observation only.
+- Broad query: split it into concrete artifact identities before source work.
+- Win98 driver missing hardware: add vendor, model, chipset, or device identity
+  before artifact-gate work.
+- Invalid observations: rerun `source-validate` and fix observer, source
+  authority, observed fields, or unsafe flags.
+- No evidence packets: supply valid observations or treat the collection as a
+  source-observation handoff.
+- Launch gate still blocked: expected until artifact evidence, deployment,
+  release, and approval blockers clear.
+
+## Deferred
+
+Completing the full 25-reviewed-artifact gate, official artifact gate
+promotion, verified artifact evidence promotion beyond genuinely supported
+packets, broad/live evidence harvesting as default behavior, downloads, file
+fetching, Wayback replay, extraction, install/emulation behavior, marketplace
+behavior, external staging host provisioning, production hosting, TLS/domain
+setup, production auth, public Workbench, public mutation, public contribution
+intake, production review store, production index service, live IA indexing,
+public live source fanout, release promotion, full discovery execution, and
+public launch are deferred.

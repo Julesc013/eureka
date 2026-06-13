@@ -19,22 +19,31 @@ from runtime.local.artifact_gate_seed import (
     DEFAULT_GATE_DIR,
     DEFAULT_GATE_REPORT_FILE,
     DEFAULT_MANUAL_BATCH_DIR,
+    DEFAULT_SOURCE_COLLECTION_DIR,
     create_manual_batch_plan,
+    create_source_collection_plan,
     evidence_templates_from_candidates,
     export_launch_report,
     gate_status,
     ingest_manual_evidence,
+    ingest_source_observations,
     list_artifact_gate_candidates,
     manual_batch_status,
     read_jsonl,
+    render_source_collection_status,
     render_status,
     review_manual_batch,
     seed_artifact_gate,
+    source_collection_status,
+    source_observations_to_evidence,
     validate_manual_batch,
     validate_evidence_packet,
     validate_gate,
+    validate_source_collection,
     write_manual_batch_report,
     write_manual_evidence_template,
+    write_source_collection_report,
+    write_source_observation_template,
     write_jsonl,
 )
 
@@ -110,6 +119,41 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr:
     manual_status_parser = subparsers.add_parser("manual-status", help="Print manual evidence batch status.")
     manual_status_parser.add_argument("--batch", required=True)
     manual_status_parser.add_argument("--json", action="store_true")
+
+    source_plan_parser = subparsers.add_parser("source-plan", help="Create a bounded artifact evidence source collection plan.")
+    source_plan_parser.add_argument("--gate", required=True)
+    source_plan_parser.add_argument("--manual-batch", required=True)
+    source_plan_parser.add_argument("--out", default=DEFAULT_SOURCE_COLLECTION_DIR)
+    source_plan_parser.add_argument("--target-records", type=int, default=5)
+    source_plan_parser.add_argument("--json", action="store_true")
+
+    source_template_parser = subparsers.add_parser("source-template", help="Write source observation templates for a collection.")
+    source_template_parser.add_argument("--collection", required=True)
+    source_template_parser.add_argument("--out", required=True)
+    source_template_parser.add_argument("--json", action="store_true")
+
+    source_ingest_parser = subparsers.add_parser("source-ingest", help="Ingest source observation packets into a collection.")
+    source_ingest_parser.add_argument("--collection", required=True)
+    source_ingest_parser.add_argument("--observations", required=True)
+    source_ingest_parser.add_argument("--json", action="store_true")
+
+    source_validate_parser = subparsers.add_parser("source-validate", help="Validate a source observation collection.")
+    source_validate_parser.add_argument("--collection", required=True)
+    source_validate_parser.add_argument("--json", action="store_true")
+
+    source_to_evidence_parser = subparsers.add_parser("source-to-evidence", help="Convert valid source observations to manual evidence packets.")
+    source_to_evidence_parser.add_argument("--collection", required=True)
+    source_to_evidence_parser.add_argument("--out", required=True)
+    source_to_evidence_parser.add_argument("--json", action="store_true")
+
+    source_report_parser = subparsers.add_parser("source-report", help="Write a source collection report.")
+    source_report_parser.add_argument("--collection", required=True)
+    source_report_parser.add_argument("--out", required=True)
+    source_report_parser.add_argument("--json", action="store_true")
+
+    source_status_parser = subparsers.add_parser("source-status", help="Print source collection status.")
+    source_status_parser.add_argument("--collection", required=True)
+    source_status_parser.add_argument("--json", action="store_true")
 
     args = parser.parse_args(argv)
     try:
@@ -199,6 +243,38 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr:
                 return _emit(payload, True, stdout)
             print(render_manual_batch_status(payload), end="", file=stdout)
             return 0
+
+        if args.command == "source-plan":
+            payload = create_source_collection_plan(args.gate, args.manual_batch, args.out, target_records=args.target_records)
+            return _emit(payload, args.json, stdout)
+
+        if args.command == "source-template":
+            payload = write_source_observation_template(args.collection, args.out)
+            return _emit(payload, args.json, stdout)
+
+        if args.command == "source-ingest":
+            payload = ingest_source_observations(args.collection, args.observations)
+            return _emit(payload, args.json, stdout, stderr=stderr, failed=payload.get("status") == "fail")
+
+        if args.command == "source-validate":
+            payload = validate_source_collection(args.collection)
+            failed = payload.get("status") == "fail"
+            return _emit(payload, args.json, stdout, stderr=stderr, failed=failed)
+
+        if args.command == "source-to-evidence":
+            payload = source_observations_to_evidence(args.collection, args.out)
+            return _emit(payload, args.json, stdout)
+
+        if args.command == "source-report":
+            payload = write_source_collection_report(args.collection, args.out)
+            return _emit(_source_report_summary(args.out, payload), args.json, stdout)
+
+        if args.command == "source-status":
+            payload = source_collection_status(args.collection)
+            if args.json:
+                return _emit(payload, True, stdout)
+            print(render_source_collection_status(payload), end="", file=stdout)
+            return 0
     except (OSError, ValueError, json.JSONDecodeError) as exc:
         payload = {
             "status": "fail",
@@ -263,6 +339,24 @@ def _manual_report_summary(out: str, report: Mapping[str, Any]) -> dict[str, Any
         "invalid_evidence_packet_count": report.get("invalid_evidence_packet_count"),
         "reviewed_artifact_gate_count": report.get("reviewed_artifact_gate_count"),
         "artifact_verified_count": report.get("artifact_verified_count"),
+        "next_recommended_task": report.get("next_recommended_task"),
+    }
+
+
+def _source_report_summary(out: str, report: Mapping[str, Any]) -> dict[str, Any]:
+    return {
+        "status": report.get("status"),
+        "collection_status": report.get("collection_status"),
+        "out": out,
+        "collection_id": report.get("collection_id"),
+        "candidate_count": report.get("candidate_count"),
+        "selected_candidate_count": report.get("selected_candidate_count"),
+        "observation_count": report.get("observation_count"),
+        "valid_observation_count": report.get("valid_observation_count"),
+        "invalid_observation_count": report.get("invalid_observation_count"),
+        "evidence_packet_count": report.get("evidence_packet_count"),
+        "artifact_verified_packet_count": report.get("artifact_verified_packet_count"),
+        "gate_eligible_packet_count": report.get("gate_eligible_packet_count"),
         "next_recommended_task": report.get("next_recommended_task"),
     }
 
