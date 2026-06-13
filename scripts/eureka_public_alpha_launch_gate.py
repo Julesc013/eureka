@@ -359,7 +359,7 @@ def audit_launch_gate(
         "blocker_categories": blocker_categories,
         "blockers": blockers,
         "warnings": warnings,
-        "next_recommended_task": _next_task(blocker_categories),
+        "next_recommended_task": _next_task(blocker_categories, official_gate=official_gate),
         "generated_at": "not_recorded_deterministic_local_launch_gate",
         "evidence_sources": _evidence_sources(bundle_path, rehearsal_path, optional_sources, git_state),
         "optional_inputs": _optional_input_summary(opts, optional_sources),
@@ -634,7 +634,13 @@ def _add_safety_blockers(add_blocker: Any, local_safety: Mapping[str, Any]) -> N
 
 def _official_artifact_gate(source: Mapping[str, Any] | None) -> dict[str, Any]:
     if not source or not source.get("present"):
-        return {"status": "unknown", "count": 0, "target": 0, "evidence": "artifact gate report not provided"}
+        return {
+            "status": "unknown",
+            "count": 0,
+            "target": 0,
+            "evidence": "artifact gate report not provided",
+            "next_recommended_task": "",
+        }
     payload = source.get("payload") if isinstance(source.get("payload"), Mapping) else {}
     count = int(
         payload.get("official_reviewed_artifact_count")
@@ -656,7 +662,13 @@ def _official_artifact_gate(source: Mapping[str, Any] | None) -> dict[str, Any]:
         status = "fail"
     if status == "unknown" and target and count >= target:
         status = "pass"
-    return {"status": status, "count": count, "target": target, "evidence": str(source.get("path") or "artifact gate report")}
+    return {
+        "status": status,
+        "count": count,
+        "target": target,
+        "evidence": str(source.get("path") or "artifact gate report"),
+        "next_recommended_task": str(payload.get("next_recommended_task") or ""),
+    }
 
 
 def _generic_report_status(source: Mapping[str, Any] | None, *, default: str) -> dict[str, str]:
@@ -729,10 +741,14 @@ def _launch_status(blockers: Sequence[Mapping[str, Any]]) -> str:
     return "BLOCKED"
 
 
-def _next_task(blocker_categories: Mapping[str, Sequence[str]]) -> str:
+def _next_task(blocker_categories: Mapping[str, Sequence[str]], *, official_gate: Mapping[str, Any] | None = None) -> str:
     unknown = set(blocker_categories.get("unknown_authority_blockers") or [])
     if "artifact_gate_authority_unknown" in unknown:
         return "REVIEWED-ARTIFACT-GATE-SEED-00"
+    if blocker_categories.get("corpus_evidence_blockers") and official_gate:
+        recommended = str(official_gate.get("next_recommended_task") or "")
+        if recommended:
+            return recommended
     if blocker_categories.get("corpus_evidence_blockers") or unknown:
         return "MANUAL-ARTIFACT-EVIDENCE-BATCH-01"
     if blocker_categories.get("deployment_blockers"):

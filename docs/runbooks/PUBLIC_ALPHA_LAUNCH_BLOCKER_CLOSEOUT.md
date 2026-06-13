@@ -122,6 +122,11 @@ For the local reviewed-artifact gate seed workflow, see
 `artifact_gate_report.json` can be supplied with `--artifact-gate-report`; the
 report is still blocker evidence, not verified artifact promotion.
 
+For filled manual evidence batches, see
+`docs/runbooks/MANUAL_ARTIFACT_EVIDENCE_BATCH.md`. Manual batch reports can
+also be supplied with `--artifact-gate-report`; launch remains blocked unless
+the gate target and all other launch blockers are actually cleared.
+
 ## Local Readiness Vs Launch Readiness
 
 Local readiness means the staging bundle and rehearsal passed local read-only

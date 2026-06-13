@@ -126,6 +126,9 @@ it does not clear the launch gate. The launch gate remains blocked while the
 official reviewed-artifact count is below target and verified artifact evidence
 is absent.
 
+To continue into filled manual evidence packets, use
+`docs/runbooks/MANUAL_ARTIFACT_EVIDENCE_BATCH.md`.
+
 ## Safety Guarantees
 
 This workflow:

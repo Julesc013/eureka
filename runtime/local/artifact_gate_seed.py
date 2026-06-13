@@ -17,18 +17,35 @@ from runtime.local.search_index import load_index, validate_index
 
 
 TASK_ID = "REVIEWED-ARTIFACT-GATE-SEED-00"
+MANUAL_BATCH_TASK_ID = "MANUAL-ARTIFACT-EVIDENCE-BATCH-01"
 ARTIFACT_GATE_SCHEMA_VERSION = "eureka.reviewed_artifact_gate_seed.v0"
+MANUAL_BATCH_SCHEMA_VERSION = "eureka.manual_artifact_evidence_batch.v0"
 CANDIDATE_SCHEMA_VERSION = "eureka.artifact_gate_candidate.v0"
 EVIDENCE_PACKET_SCHEMA_VERSION = "eureka.artifact_gate_evidence_packet.v0"
 REVIEWED_ARTIFACT_RECORD_SCHEMA_VERSION = "eureka.reviewed_artifact_gate_record.v0"
 DEFAULT_GATE_TARGET = 25
 DEFAULT_GATE_DIR = ".eureka/artifact-gate/public-alpha-seed"
+DEFAULT_MANUAL_BATCH_DIR = ".eureka/artifact-gate/manual-batch-01"
 DEFAULT_CANDIDATES_FILE = "candidates.jsonl"
 DEFAULT_EVIDENCE_TEMPLATE_FILE = "evidence_template.jsonl"
 DEFAULT_EVIDENCE_PACKETS_FILE = "evidence_packets.jsonl"
 DEFAULT_REVIEWED_ARTIFACT_RECORDS_FILE = "reviewed_artifact_records.jsonl"
 DEFAULT_GATE_REPORT_FILE = "artifact_gate_report.json"
 DEFAULT_GATE_REPORT_MD = "ARTIFACT_GATE_REPORT.md"
+MANUAL_BATCH_MANIFEST_FILE = "batch_manifest.json"
+MANUAL_BATCH_CANDIDATE_PLAN_FILE = "candidate_plan.jsonl"
+MANUAL_BATCH_TEMPLATE_FILE = "manual_evidence_template.jsonl"
+MANUAL_BATCH_EVIDENCE_FILE = "manual_evidence_packets.jsonl"
+MANUAL_BATCH_VALIDATION_REPORT_FILE = "evidence_validation_report.json"
+MANUAL_BATCH_REPORT_MD = "MANUAL_BATCH_REPORT.md"
+_INSUFFICIENT_VERIFICATION_SCOPES = {"", "source_lead_only", "metadata_only", "none", "artifact_identity_candidate"}
+_APPROVED_ARTIFACT_AUTHORITIES = {
+    "primary_official_source",
+    "official_source",
+    "stable_archive_plus_independent_corroboration",
+    "independent_reputable_corroboration",
+    "existing_repo_authority",
+}
 
 _HARD_QUERY_ORDER = (
     "manual for sound blaster ct1740",
@@ -369,7 +386,7 @@ def validate_evidence_packet(packet: Mapping[str, Any]) -> list[str]:
             errors.append("artifact_verified evidence requires gate_eligible true")
         if str(packet.get("verification_scope") or "") in {"", "source_lead_only", "metadata_only", "none"}:
             errors.append("artifact_verified evidence requires stronger verification_scope")
-        if _is_fixture_only(packet):
+        if _evidence_source_is_fixture_only(packet):
             errors.append("fixture-only or metadata-only evidence cannot be artifact_verified")
     return errors
 
@@ -411,6 +428,285 @@ def export_launch_report(gate_dir: str | Path, out_path: str | Path) -> dict[str
     destination = Path(out_path)
     write_json(destination, report)
     return report
+
+
+def create_manual_batch_plan(gate_dir: str | Path, batch_dir: str | Path, *, target_records: int = 5) -> dict[str, Any]:
+    gate_path = Path(gate_dir)
+    batch_path = Path(batch_dir)
+    batch_path.mkdir(parents=True, exist_ok=True)
+    candidates = read_jsonl(gate_path / DEFAULT_CANDIDATES_FILE)
+    seed_report = json.loads((gate_path / DEFAULT_GATE_REPORT_FILE).read_text(encoding="utf-8"))
+    target = max(1, int(target_records))
+    selectable = [dict(item) for item in candidates if item.get("artifact_gate_excluded") is not True]
+    selected_ids = {str(item.get("candidate_id") or "") for item in selectable[:target]}
+    plan_rows = []
+    for position, candidate in enumerate(sorted((dict(item) for item in candidates), key=_candidate_sort_key), start=1):
+        candidate_id = str(candidate.get("candidate_id") or "")
+        selected = candidate_id in selected_ids
+        plan_rows.append(
+            {
+                **candidate,
+                "batch_id": _batch_id(batch_path),
+                "plan_position": position,
+                "manual_batch_selected": selected,
+                "manual_batch_target": selected and candidate.get("artifact_gate_excluded") is not True,
+                "manual_evidence_required": True,
+                "manual_batch_reason": (
+                    "selected for bounded manual evidence collection"
+                    if selected
+                    else str(candidate.get("gate_exclusion_reason") or "not selected for this bounded batch")
+                ),
+            }
+        )
+    manifest = {
+        "schema_version": MANUAL_BATCH_SCHEMA_VERSION,
+        "task_id": MANUAL_BATCH_TASK_ID,
+        "batch_id": _batch_id(batch_path),
+        "status": "pass",
+        "gate_dir": str(gate_path),
+        "batch_dir": str(batch_path),
+        "source_gate_report": str(gate_path / DEFAULT_GATE_REPORT_FILE),
+        "source_gate_report_digest": _path_sha256(gate_path / DEFAULT_GATE_REPORT_FILE),
+        "candidate_count": len(plan_rows),
+        "selected_candidate_count": len(selected_ids),
+        "excluded_candidate_count": sum(1 for item in plan_rows if item.get("artifact_gate_excluded") is True),
+        "target_records": target,
+        "gate_target_reviewed_artifacts": DEFAULT_GATE_TARGET,
+        "source_gate_status": seed_report.get("gate_status"),
+        "source_artifact_verified_count": seed_report.get("artifact_verified_count"),
+        "truth_promotion_performed": False,
+        "downloads_performed": False,
+        "file_fetch_performed": False,
+        "live_network_used": False,
+        "generated_at": "1970-01-01T00:00:00Z",
+    }
+    write_json(batch_path / MANUAL_BATCH_MANIFEST_FILE, manifest)
+    write_jsonl(batch_path / MANUAL_BATCH_CANDIDATE_PLAN_FILE, plan_rows)
+    return manifest
+
+
+def write_manual_evidence_template(batch_dir: str | Path, out_path: str | Path | None = None) -> dict[str, Any]:
+    batch_path = Path(batch_dir)
+    rows = read_jsonl(batch_path / MANUAL_BATCH_CANDIDATE_PLAN_FILE)
+    selected = [row for row in rows if row.get("manual_batch_selected") is True and row.get("artifact_gate_excluded") is not True]
+    templates = [_manual_template_from_candidate(candidate, batch_id=_batch_id(batch_path)) for candidate in selected]
+    destination = Path(out_path) if out_path else batch_path / MANUAL_BATCH_TEMPLATE_FILE
+    write_jsonl(destination, templates)
+    return {
+        "schema_version": MANUAL_BATCH_SCHEMA_VERSION,
+        "task_id": MANUAL_BATCH_TASK_ID,
+        "status": "pass",
+        "batch_id": _batch_id(batch_path),
+        "batch_dir": str(batch_path),
+        "out": str(destination),
+        "template_count": len(templates),
+    }
+
+
+def ingest_manual_evidence(batch_dir: str | Path, evidence_path: str | Path) -> dict[str, Any]:
+    batch_path = Path(batch_dir)
+    packets = read_jsonl(evidence_path)
+    destination = batch_path / MANUAL_BATCH_EVIDENCE_FILE
+    write_jsonl(destination, packets)
+    report = validate_manual_batch(batch_path)
+    return {
+        "schema_version": MANUAL_BATCH_SCHEMA_VERSION,
+        "task_id": MANUAL_BATCH_TASK_ID,
+        "status": "pass" if report["invalid_evidence_packet_count"] == 0 else "fail",
+        "batch_id": _batch_id(batch_path),
+        "batch_dir": str(batch_path),
+        "evidence": str(evidence_path),
+        "out": str(destination),
+        "evidence_packet_count": len(packets),
+        "valid_evidence_packet_count": report["valid_evidence_packet_count"],
+        "invalid_evidence_packet_count": report["invalid_evidence_packet_count"],
+        "errors": report["errors"],
+    }
+
+
+def validate_manual_batch(batch_dir: str | Path) -> dict[str, Any]:
+    batch_path = Path(batch_dir)
+    errors: list[str] = []
+    warnings: list[str] = []
+    evidence_path = batch_path / MANUAL_BATCH_EVIDENCE_FILE
+    if not evidence_path.is_file():
+        warnings.append(f"missing evidence packets: {evidence_path}")
+        packets: list[dict[str, Any]] = []
+    else:
+        packets = read_jsonl(evidence_path)
+    diagnostics = []
+    valid_count = 0
+    invalid_count = 0
+    for index, packet in enumerate(packets, start=1):
+        packet_errors = validate_manual_evidence_packet(packet)
+        diagnostics.append(
+            {
+                "packet_index": index,
+                "evidence_packet_id": str(packet.get("evidence_packet_id") or ""),
+                "candidate_id": str(packet.get("candidate_id") or ""),
+                "status": "valid" if not packet_errors else "invalid",
+                "errors": packet_errors,
+                "artifact_verified": bool(packet.get("artifact_verified") is True),
+                "gate_eligible": bool(packet.get("gate_eligible") is True),
+            }
+        )
+        if packet_errors:
+            invalid_count += 1
+            errors.extend(f"packet[{index}]: {error}" for error in packet_errors)
+        else:
+            valid_count += 1
+    report = {
+        "schema_version": MANUAL_BATCH_SCHEMA_VERSION,
+        "task_id": MANUAL_BATCH_TASK_ID,
+        "status": "fail" if invalid_count else ("pass_with_warnings" if warnings else "pass"),
+        "batch_id": _batch_id(batch_path),
+        "batch_dir": str(batch_path),
+        "evidence_packet_count": len(packets),
+        "valid_evidence_packet_count": valid_count,
+        "invalid_evidence_packet_count": invalid_count,
+        "artifact_verified_packet_count": sum(1 for packet in packets if packet.get("artifact_verified") is True),
+        "gate_eligible_packet_count": sum(1 for packet in packets if packet.get("gate_eligible") is True),
+        "diagnostics": diagnostics,
+        "errors": errors,
+        "warnings": warnings,
+        "truth_promotion_performed": False,
+        "downloads_performed": False,
+        "file_fetch_performed": False,
+        "live_network_used": any(packet.get("live_network_used") is True for packet in packets),
+    }
+    write_json(batch_path / MANUAL_BATCH_VALIDATION_REPORT_FILE, report)
+    return report
+
+
+def validate_manual_evidence_packet(packet: Mapping[str, Any]) -> list[str]:
+    errors = validate_evidence_packet(packet)
+    required_text = (
+        "batch_id",
+        "artifact_type",
+        "platform_or_context",
+        "evidence_type",
+        "source_authority",
+        "verification_scope",
+    )
+    for key in required_text:
+        if not str(packet.get(key) or "").strip():
+            errors.append(f"{key} is required")
+    if not str(packet.get("collected_at") or packet.get("observed_at") or "").strip():
+        errors.append("collected_at or observed_at is required")
+    if not _string_list(packet.get("observed_fields")):
+        errors.append("observed_fields are required")
+    if not (_string_list(packet.get("evidence_urls")) or _string_list(packet.get("source_identifiers")) or _object_list(packet.get("source_observations"))):
+        errors.append("evidence_urls, source_identifiers, or source_observations are required")
+    for index, observation in enumerate(_object_list(packet.get("source_observations")), start=1):
+        if not str(observation.get("source_id") or observation.get("observation_id") or "").strip():
+            errors.append(f"source_observations[{index}].source_id is required")
+        if not str(observation.get("source_url") or observation.get("source_identifier") or observation.get("value") or "").strip():
+            errors.append(f"source_observations[{index}] must include source_url or source_identifier")
+        if observation.get("downloaded_file") is True or observation.get("fetched_binary") is True:
+            errors.append(f"source_observations[{index}] cannot download or fetch binaries")
+        if str(observation.get("access_method") or "").strip().casefold() in {"local_fixture", "repo_record"} and packet.get("artifact_verified") is True:
+            errors.append(f"source_observations[{index}] fixture/repo observations cannot verify artifacts")
+    if packet.get("rights_cleared") is True:
+        errors.append("rights_cleared cannot be true in this manual batch workflow")
+    if packet.get("artifact_verified") is True:
+        errors.extend(_manual_artifact_verified_errors(packet))
+    elif packet.get("gate_eligible") is True:
+        errors.append("gate_eligible true requires artifact_verified true")
+    return _dedupe(errors)
+
+
+def review_manual_batch(batch_dir: str | Path, *, reviewer: str, out_path: str | Path | None = None) -> dict[str, Any]:
+    batch_path = Path(batch_dir)
+    validation = validate_manual_batch(batch_path)
+    packets = _manual_packets(batch_path)
+    diagnostics = {
+        str(item.get("evidence_packet_id") or ""): dict(item)
+        for item in validation.get("diagnostics") or []
+        if isinstance(item, Mapping)
+    }
+    records = []
+    rejected = []
+    for packet in packets:
+        packet_id = str(packet.get("evidence_packet_id") or "")
+        diagnostic = diagnostics.get(packet_id, {})
+        if diagnostic.get("status") == "valid" and packet.get("artifact_verified") is True and packet.get("gate_eligible") is True:
+            records.append(_reviewed_record_from_manual_packet(packet, reviewer=reviewer))
+        else:
+            rejected.append(
+                {
+                    "evidence_packet_id": packet_id,
+                    "candidate_id": str(packet.get("candidate_id") or ""),
+                    "status": "rejected" if diagnostic.get("status") == "invalid" else "non_eligible",
+                    "errors": list(diagnostic.get("errors") or []),
+                    "gate_exclusion_reason": str(packet.get("gate_exclusion_reason") or "insufficient_artifact_evidence"),
+                    "artifact_verified": bool(packet.get("artifact_verified") is True),
+                    "gate_eligible": bool(packet.get("gate_eligible") is True),
+                }
+            )
+    destination = Path(out_path) if out_path else batch_path / DEFAULT_REVIEWED_ARTIFACT_RECORDS_FILE
+    write_jsonl(destination, records)
+    review_report = {
+        "schema_version": MANUAL_BATCH_SCHEMA_VERSION,
+        "task_id": MANUAL_BATCH_TASK_ID,
+        "status": "pass" if not validation.get("errors") else "pass_with_warnings",
+        "batch_id": _batch_id(batch_path),
+        "batch_dir": str(batch_path),
+        "reviewer": reviewer,
+        "out": str(destination),
+        "reviewed_artifact_record_count": len(records),
+        "rejected_or_non_eligible_count": len(rejected),
+        "rejected_or_non_eligible": rejected,
+        "artifact_verified_count": sum(1 for record in records if record.get("artifact_verified") is True),
+        "binary_verified_count": sum(1 for record in records if record.get("binary_verified") is True),
+        "download_safe_count": sum(1 for record in records if record.get("download_safe") is True),
+        "execution_safe_count": sum(1 for record in records if record.get("execution_safe") is True),
+        "truth_promotion_performed": False,
+    }
+    write_json(batch_path / "manual_review_report.json", review_report)
+    return review_report
+
+
+def write_manual_batch_report(batch_dir: str | Path, out_path: str | Path | None = None) -> dict[str, Any]:
+    batch_path = Path(batch_dir)
+    validation = validate_manual_batch(batch_path)
+    candidate_plan = read_jsonl(batch_path / MANUAL_BATCH_CANDIDATE_PLAN_FILE) if (batch_path / MANUAL_BATCH_CANDIDATE_PLAN_FILE).is_file() else []
+    packets = _manual_packets(batch_path)
+    records_path = batch_path / DEFAULT_REVIEWED_ARTIFACT_RECORDS_FILE
+    records = read_jsonl(records_path) if records_path.is_file() else []
+    report = _manual_batch_report(batch_path, candidate_plan=candidate_plan, packets=packets, records=records, validation=validation)
+    destination = Path(out_path) if out_path else batch_path / DEFAULT_GATE_REPORT_FILE
+    write_json(destination, report)
+    write_json(batch_path / DEFAULT_GATE_REPORT_FILE, report)
+    (batch_path / DEFAULT_GATE_REPORT_MD).write_text(render_gate_markdown(report), encoding="utf-8")
+    (batch_path / MANUAL_BATCH_REPORT_MD).write_text(render_manual_batch_markdown(report), encoding="utf-8")
+    return report
+
+
+def manual_batch_status(batch_dir: str | Path) -> dict[str, Any]:
+    batch_path = Path(batch_dir)
+    report_path = batch_path / DEFAULT_GATE_REPORT_FILE
+    validation_path = batch_path / MANUAL_BATCH_VALIDATION_REPORT_FILE
+    report = json.loads(report_path.read_text(encoding="utf-8")) if report_path.is_file() else {}
+    validation = json.loads(validation_path.read_text(encoding="utf-8")) if validation_path.is_file() else validate_manual_batch(batch_path)
+    return {
+        "schema_version": MANUAL_BATCH_SCHEMA_VERSION,
+        "task_id": MANUAL_BATCH_TASK_ID,
+        "status": "pass" if report_path.is_file() else "pass_with_warnings",
+        "batch_id": _batch_id(batch_path),
+        "batch_dir": str(batch_path),
+        "gate_status": report.get("gate_status", "blocked"),
+        "report_status": report.get("status", "PASS_WITH_WARNINGS"),
+        "candidate_count": report.get("candidate_count", 0),
+        "evidence_packet_count": validation.get("evidence_packet_count", report.get("evidence_packet_count", 0)),
+        "valid_evidence_packet_count": validation.get("valid_evidence_packet_count", report.get("valid_evidence_packet_count", 0)),
+        "invalid_evidence_packet_count": validation.get("invalid_evidence_packet_count", report.get("invalid_evidence_packet_count", 0)),
+        "reviewed_artifact_gate_count": report.get("reviewed_artifact_gate_count", 0),
+        "gate_target_reviewed_artifacts": report.get("gate_target_reviewed_artifacts", DEFAULT_GATE_TARGET),
+        "artifact_verified_count": report.get("artifact_verified_count", 0),
+        "blockers": report.get("blockers", []),
+        "warnings": [*list(report.get("warnings") or []), *list(validation.get("warnings") or [])],
+        "next_recommended_task": report.get("next_recommended_task", "ARTIFACT-EVIDENCE-SOURCE-COLLECTION-00"),
+    }
 
 
 def render_gate_markdown(report: Mapping[str, Any]) -> str:
@@ -642,6 +938,260 @@ def _evidence_packet_from_candidate(candidate: Mapping[str, Any], *, template: b
     }
 
 
+def _manual_template_from_candidate(candidate: Mapping[str, Any], *, batch_id: str) -> dict[str, Any]:
+    packet = _evidence_packet_from_candidate(candidate, template=True)
+    packet.update(
+        {
+            "batch_id": batch_id,
+            "collected_at": "",
+            "observed_at": "",
+            "source_identifiers": [],
+            "source_observations": [
+                {
+                    **observation,
+                    "source_id": str(observation.get("observation_id") or ""),
+                    "source_identifier": str(observation.get("value") or ""),
+                    "source_title": "",
+                    "publisher_or_source_name": "",
+                    "observed_artifact_fields": [],
+                    "authority_classification": "",
+                    "observation_notes": "",
+                    "access_method": "manual_page_observation",
+                    "live_network_used": False,
+                    "downloaded_file": False,
+                    "fetched_binary": False,
+                }
+                for observation in _object_list(packet.get("source_observations"))
+            ],
+            "verification_scope": "artifact_identity_candidate",
+            "source_authority": "",
+            "gate_exclusion_reason": "manual_evidence_not_collected",
+            "manual_instructions": [
+                "record only page/catalog/release/support metadata observations",
+                "do not download binaries or fetch files",
+                "set artifact_verified true only when explicit gate criteria are met",
+            ],
+        }
+    )
+    return packet
+
+
+def _manual_packets(batch_path: Path) -> list[dict[str, Any]]:
+    evidence_path = batch_path / MANUAL_BATCH_EVIDENCE_FILE
+    return read_jsonl(evidence_path) if evidence_path.is_file() else []
+
+
+def _manual_artifact_verified_errors(packet: Mapping[str, Any]) -> list[str]:
+    errors: list[str] = []
+    authority = str(packet.get("source_authority") or "").strip().casefold()
+    scope = str(packet.get("verification_scope") or "").strip().casefold()
+    observations = _object_list(packet.get("source_observations"))
+    if scope in _INSUFFICIENT_VERIFICATION_SCOPES:
+        errors.append("artifact_verified evidence requires verification_scope such as artifact_identity_metadata")
+    if authority not in _APPROVED_ARTIFACT_AUTHORITIES:
+        errors.append("artifact_verified evidence requires an approved source_authority")
+    if not observations:
+        errors.append("artifact_verified evidence requires source_observations")
+    if _evidence_source_is_fixture_only(packet):
+        errors.append("fixture-only or metadata-only evidence cannot be artifact_verified")
+    external_observations = []
+    for observation in observations:
+        access_method = str(observation.get("access_method") or "").strip().casefold()
+        if access_method not in {"local_fixture", "repo_record"}:
+            external_observations.append(observation)
+    if not external_observations:
+        errors.append("artifact_verified evidence requires at least one stable external observation")
+    if authority in {"stable_archive_plus_independent_corroboration", "independent_reputable_corroboration"} and len(external_observations) < 2:
+        errors.append("corroborated source_authority requires at least two external observations")
+    return errors
+
+
+def _reviewed_record_from_manual_packet(packet: Mapping[str, Any], *, reviewer: str) -> dict[str, Any]:
+    packet_id = str(packet.get("evidence_packet_id") or "")
+    return {
+        "schema_version": REVIEWED_ARTIFACT_RECORD_SCHEMA_VERSION,
+        "reviewed_artifact_record_id": _stable_id("reviewed-artifact-gate-record", packet_id),
+        "source_candidate_id": str(packet.get("candidate_id") or ""),
+        "source_index_document_id": str(packet.get("source_index_document_id") or ""),
+        "source_evidence_packet_id": packet_id,
+        "batch_id": str(packet.get("batch_id") or ""),
+        "title": str(packet.get("artifact_title") or ""),
+        "artifact_type": str(packet.get("artifact_type") or ""),
+        "platform_or_context": str(packet.get("platform_or_context") or ""),
+        "artifact_identity_fields": dict(packet.get("artifact_identity_fields") or {}),
+        "status": "verified",
+        "review_state": "accepted_artifact_identity",
+        "artifact_verified": True,
+        "accepted_truth": False,
+        "gate_eligible": True,
+        "gate_exclusion_reason": "",
+        "verification_scope": str(packet.get("verification_scope") or "artifact_identity_metadata"),
+        "source_authority": str(packet.get("source_authority") or ""),
+        "evidence_type": str(packet.get("evidence_type") or ""),
+        "reviewer": str(reviewer or packet.get("reviewer") or ""),
+        "review_rationale": str(packet.get("review_rationale") or ""),
+        "source_observations": _object_list(packet.get("source_observations")),
+        "evidence_urls": _string_list(packet.get("evidence_urls")),
+        "source_identifiers": _string_list(packet.get("source_identifiers")),
+        "observed_fields": _string_list(packet.get("observed_fields")),
+        "binary_verified": False,
+        "download_safe": False,
+        "execution_safe": False,
+        "rights_cleared": False,
+        "no_download_performed": True,
+        "file_fetch_performed": False,
+        "live_network_used": bool(packet.get("live_network_used") is True),
+        "provenance": {
+            "source": "manual_artifact_evidence_batch",
+            "source_kind": "manual_artifact_evidence",
+            "source_evidence_packet_id": packet_id,
+            "source_candidate_id": str(packet.get("candidate_id") or ""),
+        },
+        "non_verified_reason": "",
+    }
+
+
+def _manual_batch_report(
+    batch_path: Path,
+    *,
+    candidate_plan: Sequence[Mapping[str, Any]],
+    packets: Sequence[Mapping[str, Any]],
+    records: Sequence[Mapping[str, Any]],
+    validation: Mapping[str, Any],
+) -> dict[str, Any]:
+    artifact_verified_count = sum(1 for record in records if record.get("artifact_verified") is True)
+    gate_eligible_count = sum(1 for record in records if record.get("gate_eligible") is True)
+    gate_count = sum(1 for record in records if record.get("artifact_verified") is True and record.get("gate_eligible") is True)
+    invalid_count = int(validation.get("invalid_evidence_packet_count") or 0)
+    blockers = []
+    if gate_count < DEFAULT_GATE_TARGET:
+        blockers.append(
+            {
+                "id": "reviewed_artifact_gate_count_below_target",
+                "status": "blocked",
+                "message": f"reviewed artifact gate count is {gate_count}/{DEFAULT_GATE_TARGET}",
+            }
+        )
+    if not packets:
+        blockers.append(
+            {
+                "id": "manual_evidence_packets_missing",
+                "status": "blocked",
+                "message": "manual evidence packets have not been supplied",
+            }
+        )
+    if invalid_count:
+        blockers.append(
+            {
+                "id": "manual_evidence_packets_invalid",
+                "status": "blocked",
+                "message": f"{invalid_count} manual evidence packet(s) failed validation",
+            }
+        )
+    if artifact_verified_count == 0:
+        blockers.append(
+            {
+                "id": "artifact_verified_count_zero",
+                "status": "blocked",
+                "message": "no artifact-verified manual evidence records were materialized",
+            }
+        )
+    status = "PASS" if not blockers else "PASS_WITH_WARNINGS"
+    gate_status = "pass" if gate_count >= DEFAULT_GATE_TARGET else "blocked"
+    warnings = [
+        "manual evidence batch artifacts are generated operational artifacts",
+        "artifact_verified does not imply binary, download, execution, or rights safety",
+    ]
+    if not packets:
+        warnings.append("no manual evidence packets were supplied; report is a blocked template/report")
+    if invalid_count:
+        warnings.append("invalid manual evidence packets were rejected and not materialized")
+    return {
+        "schema_version": MANUAL_BATCH_SCHEMA_VERSION,
+        "task_id": MANUAL_BATCH_TASK_ID,
+        "status": status,
+        "gate_status": gate_status,
+        "batch_id": _batch_id(batch_path),
+        "batch_dir": str(batch_path),
+        "candidate_count": len(candidate_plan),
+        "selected_candidate_count": sum(1 for item in candidate_plan if item.get("manual_batch_selected") is True),
+        "evidence_packet_count": len(packets),
+        "valid_evidence_packet_count": int(validation.get("valid_evidence_packet_count") or 0),
+        "invalid_evidence_packet_count": invalid_count,
+        "reviewed_artifact_gate_count": gate_count,
+        "official_reviewed_artifact_count": gate_count,
+        "artifact_verified_count": artifact_verified_count,
+        "gate_eligible_count": gate_eligible_count,
+        "gate_target_reviewed_artifacts": DEFAULT_GATE_TARGET,
+        "official_reviewed_artifact_gate_target": DEFAULT_GATE_TARGET,
+        "reviewed_artifact_record_count": len(records),
+        "verification_scope_counts": _counts(record.get("verification_scope") for record in records),
+        "source_authority_counts": _counts(packet.get("source_authority") for packet in packets),
+        "exclusion_counts": _counts(
+            [
+                *(packet.get("gate_exclusion_reason") for packet in packets if packet.get("gate_eligible") is not True),
+                *(item.get("gate_exclusion_reason") for item in candidate_plan if item.get("artifact_gate_excluded") is True),
+            ]
+        ),
+        "validation_errors": list(validation.get("errors") or []),
+        "validation_warnings": list(validation.get("warnings") or []),
+        "blockers": blockers,
+        "warnings": warnings,
+        "truth_promotion_performed": False,
+        "verified_artifact_truth_created": artifact_verified_count > 0,
+        "downloads_performed": False,
+        "file_fetch_performed": False,
+        "wayback_replay_performed": False,
+        "live_network_used": any(packet.get("live_network_used") is True for packet in packets),
+        "public_index_mutated": False,
+        "master_index_mutated": False,
+        "official_gate_counts_mutated": False,
+        "generated_at": "1970-01-01T00:00:00Z",
+        "next_recommended_task": (
+            "MANUAL-ARTIFACT-EVIDENCE-BATCH-02"
+            if artifact_verified_count > 0 and gate_count < DEFAULT_GATE_TARGET
+            else "ARTIFACT-EVIDENCE-SOURCE-COLLECTION-00"
+        ),
+    }
+
+
+def render_manual_batch_markdown(report: Mapping[str, Any]) -> str:
+    blockers = [item for item in report.get("blockers") or [] if isinstance(item, Mapping)]
+    lines = [
+        "# Manual Artifact Evidence Batch Report",
+        "",
+        "## Summary",
+        "",
+        f"- Status: {report.get('status')}",
+        f"- Gate status: {report.get('gate_status')}",
+        f"- Batch: {report.get('batch_id')}",
+        f"- Evidence packets: {report.get('evidence_packet_count')}",
+        f"- Valid packets: {report.get('valid_evidence_packet_count')}",
+        f"- Invalid packets: {report.get('invalid_evidence_packet_count')}",
+        f"- Reviewed artifact gate count: {report.get('reviewed_artifact_gate_count')}/{report.get('gate_target_reviewed_artifacts')}",
+        f"- Artifact verified count: {report.get('artifact_verified_count')}",
+        f"- Next recommended task: {report.get('next_recommended_task')}",
+        "",
+        "Artifact identity verification does not imply binary safety, download safety, execution safety, or rights clearance.",
+        "",
+        "## Blockers",
+        "",
+    ]
+    if blockers:
+        for blocker in blockers:
+            lines.append(f"- {blocker.get('id')}: {blocker.get('message')}")
+    else:
+        lines.append("- none")
+    lines.extend(["", "## Validation", ""])
+    for error in report.get("validation_errors") or []:
+        lines.append(f"- error: {error}")
+    for warning in report.get("validation_warnings") or []:
+        lines.append(f"- warning: {warning}")
+    if not report.get("validation_errors") and not report.get("validation_warnings"):
+        lines.append("- no validation errors")
+    return "\n".join(lines).rstrip() + "\n"
+
+
 def _source_observations(document: Mapping[str, Any]) -> list[dict[str, Any]]:
     source_hints = _string_list(document.get("source_hints"))
     evidence_hints = _string_list(document.get("evidence_hints"))
@@ -738,6 +1288,30 @@ def _is_fixture_only(packet: Mapping[str, Any]) -> bool:
     }
 
 
+def _evidence_source_is_fixture_only(packet: Mapping[str, Any]) -> bool:
+    source_authority = str(packet.get("source_authority") or "").strip().casefold()
+    evidence_type = str(packet.get("evidence_type") or "").strip().casefold()
+    if source_authority in {"archive_metadata_fixture", "hard_query_fixture", "local_reviewed_source_lead"}:
+        return True
+    if evidence_type in {"source_metadata_lead", "local_fixture", "repo_record"} and source_authority not in _APPROVED_ARTIFACT_AUTHORITIES:
+        return True
+    observations = _object_list(packet.get("source_observations"))
+    if observations:
+        access_methods = {str(item.get("access_method") or "").strip().casefold() for item in observations}
+        if access_methods and access_methods <= {"local_fixture", "repo_record", ""}:
+            return True
+    source_text = json.dumps(
+        {
+            "source_authority": packet.get("source_authority"),
+            "evidence_type": packet.get("evidence_type"),
+            "source_hints": packet.get("source_hints"),
+        },
+        sort_keys=True,
+        ensure_ascii=True,
+    ).casefold()
+    return any(marker in source_text for marker in _FIXTURE_MARKERS)
+
+
 def _int_report_field(report: Mapping[str, Any], key: str, default: int) -> int:
     value = report.get(key)
     if value is None:
@@ -746,6 +1320,21 @@ def _int_report_field(report: Mapping[str, Any], key: str, default: int) -> int:
         return int(value)
     except (TypeError, ValueError):
         return default
+
+
+def _dedupe(values: Sequence[str]) -> list[str]:
+    seen: set[str] = set()
+    result: list[str] = []
+    for value in values:
+        if value in seen:
+            continue
+        seen.add(value)
+        result.append(value)
+    return result
+
+
+def _batch_id(batch_path: str | Path) -> str:
+    return f"manual-batch:{Path(batch_path).name}"
 
 
 def _stable_id(prefix: str, *parts: Any) -> str:
