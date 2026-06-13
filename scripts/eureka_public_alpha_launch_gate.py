@@ -636,8 +636,21 @@ def _official_artifact_gate(source: Mapping[str, Any] | None) -> dict[str, Any]:
     if not source or not source.get("present"):
         return {"status": "unknown", "count": 0, "target": 0, "evidence": "artifact gate report not provided"}
     payload = source.get("payload") if isinstance(source.get("payload"), Mapping) else {}
-    count = int(payload.get("official_reviewed_artifact_count") or payload.get("reviewed_artifact_count") or payload.get("artifact_verified_count") or 0)
-    target = int(payload.get("official_reviewed_artifact_gate_target") or payload.get("target") or payload.get("gate_target") or 0)
+    count = int(
+        payload.get("official_reviewed_artifact_count")
+        or payload.get("reviewed_artifact_gate_count")
+        or payload.get("reviewed_artifact_count")
+        or payload.get("artifact_verified_count")
+        or 0
+    )
+    target = int(
+        payload.get("official_reviewed_artifact_gate_target")
+        or payload.get("gate_target_reviewed_artifacts")
+        or payload.get("minimum_public_alpha_reviewed_artifact_records")
+        or payload.get("target")
+        or payload.get("gate_target")
+        or 0
+    )
     status = _status_from_payload(payload)
     if status == "pass" and target and count < target:
         status = "fail"
@@ -717,8 +730,11 @@ def _launch_status(blockers: Sequence[Mapping[str, Any]]) -> str:
 
 
 def _next_task(blocker_categories: Mapping[str, Sequence[str]]) -> str:
-    if blocker_categories.get("corpus_evidence_blockers") or blocker_categories.get("unknown_authority_blockers"):
+    unknown = set(blocker_categories.get("unknown_authority_blockers") or [])
+    if "artifact_gate_authority_unknown" in unknown:
         return "REVIEWED-ARTIFACT-GATE-SEED-00"
+    if blocker_categories.get("corpus_evidence_blockers") or unknown:
+        return "MANUAL-ARTIFACT-EVIDENCE-BATCH-01"
     if blocker_categories.get("deployment_blockers"):
         return "EXTERNAL-STAGING-HOST-PROVISION-00"
     if blocker_categories.get("local_rehearsal_blockers") or blocker_categories.get("safety_blockers"):

@@ -117,6 +117,11 @@ The command reads provided files locally. It does not perform external network
 checks, deploy services, promote evidence, update gate counts, or approve a
 launch.
 
+For the local reviewed-artifact gate seed workflow, see
+`docs/runbooks/REVIEWED_ARTIFACT_GATE_SEED.md`. Its generated
+`artifact_gate_report.json` can be supplied with `--artifact-gate-report`; the
+report is still blocker evidence, not verified artifact promotion.
+
 ## Local Readiness Vs Launch Readiness
 
 Local readiness means the staging bundle and rehearsal passed local read-only
