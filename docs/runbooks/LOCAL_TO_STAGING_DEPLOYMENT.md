@@ -75,6 +75,20 @@ It verifies `read_only=true`, live metadata disabled, public live fanout
 disabled, Workbench routes disabled, no local path/token leakage in public
 responses, and no mutation of the bundle index.
 
+## Public Alpha Rehearsal Report
+
+After package/validate/smoke, run the repeatable rehearsal command when you need
+a JSON and Markdown proof artifact:
+
+```powershell
+python scripts/eureka_public_alpha_rehearsal.py run --bundle .eureka/staging/public-alpha --host 127.0.0.1 --port 8765 --out .eureka/rehearsals/public-alpha/latest
+python scripts/eureka_public_alpha_rehearsal.py validate-report --report .eureka/rehearsals/public-alpha/latest/rehearsal_report.json
+python scripts/eureka_public_alpha_rehearsal.py status --report .eureka/rehearsals/public-alpha/latest/rehearsal_report.json
+```
+
+See `docs/runbooks/PUBLIC_ALPHA_REHEARSAL.md` for the route probes, mutation
+checks, fail-closed checks, report fields, and explicit launch blockers.
+
 ## Run Server From Bundle
 
 ```powershell
