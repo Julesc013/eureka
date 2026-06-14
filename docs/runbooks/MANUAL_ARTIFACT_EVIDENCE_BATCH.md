@@ -131,6 +131,13 @@ To create manual evidence packets from bounded source observations, use
 produces `manual_evidence_packets.jsonl` for this manual batch workflow; it
 does not weaken the evidence criteria.
 
+The first concrete source-observation pass is documented there as
+`SOURCE-OBSERVATION-BATCH-01`. It produces source-derived manual packets from
+official Firefox ESR 52.9.0 pages plus a non-verified CT1740 source lead, then
+feeds those packets back into this manual batch. The expected current result is
+one reviewed artifact record out of the 25-record public-alpha gate target, so
+launch remains blocked.
+
 ## Review And Report
 
 ```powershell

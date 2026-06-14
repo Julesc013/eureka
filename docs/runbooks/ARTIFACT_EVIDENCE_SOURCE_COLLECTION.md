@@ -202,6 +202,81 @@ launch_status=BLOCKED
 
 This is a useful handoff state, not a failure.
 
+## Source Observation Batch 01
+
+`SOURCE-OBSERVATION-BATCH-01` is the first bounded batch that adds real page
+observations to the source collection path. It keeps the same no-download,
+no-file-fetch, no-Wayback, no-launch posture.
+
+Create the batch scaffold:
+
+```powershell
+python scripts/eureka_artifact_gate.py source-plan --gate .eureka/artifact-gate/public-alpha-seed --manual-batch .eureka/artifact-gate/manual-batch-01 --out .eureka/artifact-gate/source-observation-batch-01 --target-records 5
+
+python scripts/eureka_artifact_gate.py source-template --collection .eureka/artifact-gate/source-observation-batch-01 --out .eureka/artifact-gate/source-observation-batch-01/source_observation_template.jsonl
+```
+
+Fill these generated files:
+
+```text
+.eureka/artifact-gate/source-observation-batch-01/source_url_list.jsonl
+.eureka/artifact-gate/source-observation-batch-01/source_observations.jsonl
+```
+
+Batch 01 observes at most three pages:
+
+- Firefox ESR 52.9.0 system requirements, as an official support page.
+- Firefox ESR 52.9.0 release notes, as official release notes.
+- Phil's Computer Lab CT1740 page, as a reputable secondary source lead.
+
+The Firefox observations can propose `artifact_verified=true` for artifact
+identity metadata only. The CT1740 observation remains
+`artifact_verified=false` because it is a secondary hardware source lead, not a
+verified manual artifact. None of these observations imply binary, download,
+execution, rights, or malware safety.
+
+Run the batch:
+
+```powershell
+python scripts/eureka_artifact_gate.py source-ingest --collection .eureka/artifact-gate/source-observation-batch-01 --observations .eureka/artifact-gate/source-observation-batch-01/source_observations.jsonl
+
+python scripts/eureka_artifact_gate.py source-validate --collection .eureka/artifact-gate/source-observation-batch-01
+
+python scripts/eureka_artifact_gate.py source-to-evidence --collection .eureka/artifact-gate/source-observation-batch-01 --out .eureka/artifact-gate/source-observation-batch-01/manual_evidence_packets.jsonl
+
+python scripts/eureka_artifact_gate.py source-report --collection .eureka/artifact-gate/source-observation-batch-01 --out .eureka/artifact-gate/source-observation-batch-01/source_collection_report.json
+
+python scripts/eureka_artifact_gate.py source-status --collection .eureka/artifact-gate/source-observation-batch-01
+```
+
+Feed the generated manual packets into the manual batch:
+
+```powershell
+python scripts/eureka_artifact_gate.py manual-ingest --batch .eureka/artifact-gate/manual-batch-01 --evidence .eureka/artifact-gate/source-observation-batch-01/manual_evidence_packets.jsonl
+
+python scripts/eureka_artifact_gate.py manual-validate --batch .eureka/artifact-gate/manual-batch-01
+
+python scripts/eureka_artifact_gate.py manual-review --batch .eureka/artifact-gate/manual-batch-01 --reviewer source_observation_batch_01 --out .eureka/artifact-gate/manual-batch-01/reviewed_artifact_records.jsonl
+
+python scripts/eureka_artifact_gate.py manual-report --batch .eureka/artifact-gate/manual-batch-01 --out .eureka/artifact-gate/manual-batch-01/artifact_gate_report.json
+
+python scripts/eureka_artifact_gate.py manual-status --batch .eureka/artifact-gate/manual-batch-01
+```
+
+Expected current Batch 01 result:
+
+```text
+source observations: 3 valid / 0 invalid
+source evidence packets: 2
+artifact verified packets: 1
+reviewed artifact gate count: 1/25
+launch status: BLOCKED
+```
+
+This closes the first real observation loop, but it does not complete the
+reviewed-artifact gate or authorize public launch. Continue with another
+source-observation batch when more artifact evidence is needed.
+
 ## Troubleshooting
 
 - No eligible targets: inspect `source_candidate_plan.jsonl`; broad or

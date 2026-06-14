@@ -1832,6 +1832,7 @@ def _manual_packet_from_source_observations(
     manifest = _source_collection_manifest(collection_path)
     packet = _evidence_packet_from_candidate(candidate, template=False)
     packet_observations = [_source_observation_for_evidence(observation) for observation in observations]
+    observation_identity = _merged_observation_identity(observations)
     authority = _packet_source_authority(observations)
     proposed_verified = any(item.get("proposed_artifact_verified") is True for item in observations)
     proposed_gate = any(item.get("proposed_gate_eligible") is True for item in observations)
@@ -1863,6 +1864,10 @@ def _manual_packet_from_source_observations(
         {
             "evidence_packet_id": _stable_id("source-derived-evidence", _collection_id(collection_path), candidate.get("candidate_id"), packet_observations),
             "batch_id": str(manifest.get("manual_batch_id") or ""),
+            "artifact_title": _first_text(*(item.get("artifact_title") for item in observations), default=str(packet.get("artifact_title") or "")),
+            "artifact_type": _first_text(*(item.get("artifact_type") for item in observations), default=str(packet.get("artifact_type") or "")),
+            "artifact_identity_fields": {**dict(packet.get("artifact_identity_fields") or {}), **observation_identity},
+            "platform_or_context": _first_text(*(item.get("platform_or_context") for item in observations), default=str(packet.get("platform_or_context") or "")),
             "source_observations": packet_observations,
             "evidence_urls": evidence_urls,
             "source_identifiers": source_identifiers,
@@ -1895,6 +1900,21 @@ def _manual_packet_from_source_observations(
     if not artifact_verified:
         packet["verification_scope"] = verification_scope or "artifact_identity_candidate"
     return packet
+
+
+def _merged_observation_identity(observations: Sequence[Mapping[str, Any]]) -> dict[str, Any]:
+    merged: dict[str, Any] = {}
+    for observation in observations:
+        identity = observation.get("artifact_identity_fields")
+        if isinstance(identity, Mapping):
+            for key, value in identity.items():
+                if str(value or "").strip():
+                    merged[str(key)] = value
+        for key in ("artifact_title", "artifact_type", "platform_or_context"):
+            value = observation.get(key)
+            if str(value or "").strip():
+                merged[key] = value
+    return merged
 
 
 def _source_observation_for_evidence(observation: Mapping[str, Any]) -> dict[str, Any]:
