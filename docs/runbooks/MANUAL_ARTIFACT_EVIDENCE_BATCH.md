@@ -184,6 +184,14 @@ duplicates, then adds source-derived packets for `Notepad++ v8.6 for Windows`,
 07 is fourteen manual evidence packets, thirteen reviewed artifact records, and
 a still-blocked 13/25 public-alpha artifact gate.
 
+`SOURCE-OBSERVATION-BATCH-08` continues the curated path after Batch 07
+identities are counted. It keeps the thirteen earlier reviewed identities as
+duplicates, then adds source-derived packets for `Wireshark 4.2.3 for Windows`,
+`SumatraPDF 3.5.2 for Windows`, `Thunderbird 115.10.1 for Windows`, `IrfanView
+4.67 for Windows`, and `Paint.NET 5.0.13 for Windows`. The expected current
+result after Batch 08 is nineteen manual evidence packets, eighteen reviewed
+artifact records, and a still-blocked 18/25 public-alpha artifact gate.
+
 ## Review And Report
 
 ```powershell

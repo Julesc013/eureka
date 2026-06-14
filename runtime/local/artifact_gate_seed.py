@@ -100,6 +100,8 @@ _SOURCE_COLLECTION_CURATABLE_EXCLUSION_REASONS = {
 _SOURCE_COLLECTION_CURATED_BATCH_SIZE = 2
 _SOURCE_COLLECTION_CURATED_HIGH_THROUGHPUT_BATCH_SIZE = 4
 _SOURCE_COLLECTION_CURATED_HIGH_THROUGHPUT_MIN_GATE_COUNT = 9
+_SOURCE_COLLECTION_CURATED_VERY_HIGH_THROUGHPUT_BATCH_SIZE = 5
+_SOURCE_COLLECTION_CURATED_VERY_HIGH_THROUGHPUT_MIN_GATE_COUNT = 13
 _CURATED_SOURCE_COLLECTION_TARGETS: tuple[dict[str, Any], ...] = (
     {
         "artifact_gate_candidate_reason": "curated concrete Windows utility target for source observation after local candidates are exhausted",
@@ -528,6 +530,223 @@ _CURATED_SOURCE_COLLECTION_TARGETS: tuple[dict[str, Any], ...] = (
         "status": "candidate",
         "summary": "Concrete Apache OpenOffice 4.1.15 Windows office suite identity selected from broad Windows app scope.",
         "title": "Apache OpenOffice 4.1.15 for Windows",
+        "verification_scope": "source_lead_only",
+    },
+    {
+        "artifact_gate_candidate_reason": "curated concrete Windows network analyzer target for very-high-throughput source observation",
+        "artifact_gate_excluded": False,
+        "artifact_type": "software",
+        "artifact_verified": False,
+        "candidate_id": "artifact-gate-curated:wireshark-4-2-3-windows",
+        "evidence_hints": [
+            "Official Wireshark pages identify 4.2.3, release date, Windows installer availability, and release notes.",
+            "Curated for Batch 08 evidence collection after thirteen earlier concrete identities are counted.",
+        ],
+        "gate_eligible": False,
+        "gate_exclusion_reason": "curated_concrete_source_target",
+        "matched_queries": ["Windows 7 apps"],
+        "missing_information": ["bounded source observation and manual review before truth promotion"],
+        "no_download_performed": True,
+        "non_verified_reason": "curated source target is not reviewed truth until evidence is collected",
+        "platform_or_context": "Windows network protocol analyzer",
+        "provenance": {
+            "source": "curated_source_collection_target",
+            "source_kind": "source_observation_batch_08_curation",
+            "source_ref": "SOURCE-OBSERVATION-BATCH-08",
+        },
+        "query_hints": [
+            "Wireshark 4.2.3",
+            "Windows network analyzer",
+            "official Wireshark release news and notes",
+        ],
+        "record_state": "",
+        "review_state": "unreviewed",
+        "safe_next_action": "observe official release/news metadata only; do not download installers or archives",
+        "schema_version": CANDIDATE_SCHEMA_VERSION,
+        "source_authority": "curated_target",
+        "source_family": "curated_source_target",
+        "source_hints": [
+            "https://www.wireshark.org/news/20240214.html",
+            "https://www.wireshark.org/docs/relnotes/wireshark-4.2.3.html",
+        ],
+        "source_index_document_id": "curated-source-target:wireshark-4-2-3-windows",
+        "source_observations": [],
+        "status": "candidate",
+        "summary": "Concrete Wireshark 4.2.3 Windows network analyzer identity selected from broad Windows app scope.",
+        "title": "Wireshark 4.2.3 for Windows",
+        "verification_scope": "source_lead_only",
+    },
+    {
+        "artifact_gate_candidate_reason": "curated concrete Windows document viewer target for very-high-throughput source observation",
+        "artifact_gate_excluded": False,
+        "artifact_type": "software",
+        "artifact_verified": False,
+        "candidate_id": "artifact-gate-curated:sumatrapdf-3-5-2-windows",
+        "evidence_hints": [
+            "Official SumatraPDF pages identify 3.5.2, release date, and Windows reader context.",
+            "Curated for Batch 08 evidence collection after thirteen earlier concrete identities are counted.",
+        ],
+        "gate_eligible": False,
+        "gate_exclusion_reason": "curated_concrete_source_target",
+        "matched_queries": ["Windows 7 apps"],
+        "missing_information": ["bounded source observation and manual review before truth promotion"],
+        "no_download_performed": True,
+        "non_verified_reason": "curated source target is not reviewed truth until evidence is collected",
+        "platform_or_context": "Windows document viewer",
+        "provenance": {
+            "source": "curated_source_collection_target",
+            "source_kind": "source_observation_batch_08_curation",
+            "source_ref": "SOURCE-OBSERVATION-BATCH-08",
+        },
+        "query_hints": [
+            "SumatraPDF 3.5.2",
+            "Windows PDF reader",
+            "official SumatraPDF version history",
+        ],
+        "record_state": "",
+        "review_state": "unreviewed",
+        "safe_next_action": "observe official version-history metadata only; do not download installers or archives",
+        "schema_version": CANDIDATE_SCHEMA_VERSION,
+        "source_authority": "curated_target",
+        "source_family": "curated_source_target",
+        "source_hints": [
+            "https://www.sumatrapdfreader.org/docs/Version-history",
+            "https://www.sumatrapdfreader.org/free-pdf-reader",
+        ],
+        "source_index_document_id": "curated-source-target:sumatrapdf-3-5-2-windows",
+        "source_observations": [],
+        "status": "candidate",
+        "summary": "Concrete SumatraPDF 3.5.2 Windows document viewer identity selected from broad Windows app scope.",
+        "title": "SumatraPDF 3.5.2 for Windows",
+        "verification_scope": "source_lead_only",
+    },
+    {
+        "artifact_gate_candidate_reason": "curated concrete Windows mail client target for very-high-throughput source observation",
+        "artifact_gate_excluded": False,
+        "artifact_type": "software",
+        "artifact_verified": False,
+        "candidate_id": "artifact-gate-curated:thunderbird-115-10-1-windows",
+        "evidence_hints": [
+            "Official Thunderbird release notes identify 115.10.1, release date, and Windows system requirements.",
+            "Curated for Batch 08 evidence collection after thirteen earlier concrete identities are counted.",
+        ],
+        "gate_eligible": False,
+        "gate_exclusion_reason": "curated_concrete_source_target",
+        "matched_queries": ["Windows 7 apps"],
+        "missing_information": ["bounded source observation and manual review before truth promotion"],
+        "no_download_performed": True,
+        "non_verified_reason": "curated source target is not reviewed truth until evidence is collected",
+        "platform_or_context": "Windows desktop mail client",
+        "provenance": {
+            "source": "curated_source_collection_target",
+            "source_kind": "source_observation_batch_08_curation",
+            "source_ref": "SOURCE-OBSERVATION-BATCH-08",
+        },
+        "query_hints": [
+            "Thunderbird 115.10.1",
+            "Windows desktop email client",
+            "official Thunderbird release notes",
+        ],
+        "record_state": "",
+        "review_state": "unreviewed",
+        "safe_next_action": "observe official release-note metadata only; do not download installers or archives",
+        "schema_version": CANDIDATE_SCHEMA_VERSION,
+        "source_authority": "curated_target",
+        "source_family": "curated_source_target",
+        "source_hints": ["https://www.thunderbird.net/en-US/thunderbird/115.10.1/releasenotes/"],
+        "source_index_document_id": "curated-source-target:thunderbird-115-10-1-windows",
+        "source_observations": [],
+        "status": "candidate",
+        "summary": "Concrete Thunderbird 115.10.1 Windows desktop mail client identity selected from broad Windows app scope.",
+        "title": "Thunderbird 115.10.1 for Windows",
+        "verification_scope": "source_lead_only",
+    },
+    {
+        "artifact_gate_candidate_reason": "curated concrete Windows image viewer target for very-high-throughput source observation",
+        "artifact_gate_excluded": False,
+        "artifact_type": "software",
+        "artifact_verified": False,
+        "candidate_id": "artifact-gate-curated:irfanview-4-67-windows",
+        "evidence_hints": [
+            "Official IrfanView history identifies version 4.67, release date, and Windows viewer context.",
+            "Curated for Batch 08 evidence collection after thirteen earlier concrete identities are counted.",
+        ],
+        "gate_eligible": False,
+        "gate_exclusion_reason": "curated_concrete_source_target",
+        "matched_queries": ["Windows 7 apps"],
+        "missing_information": ["bounded source observation and manual review before truth promotion"],
+        "no_download_performed": True,
+        "non_verified_reason": "curated source target is not reviewed truth until evidence is collected",
+        "platform_or_context": "Windows image viewer",
+        "provenance": {
+            "source": "curated_source_collection_target",
+            "source_kind": "source_observation_batch_08_curation",
+            "source_ref": "SOURCE-OBSERVATION-BATCH-08",
+        },
+        "query_hints": [
+            "IrfanView 4.67",
+            "Windows image viewer",
+            "official IrfanView history of changes",
+        ],
+        "record_state": "",
+        "review_state": "unreviewed",
+        "safe_next_action": "observe official change-history metadata only; do not download installers or archives",
+        "schema_version": CANDIDATE_SCHEMA_VERSION,
+        "source_authority": "curated_target",
+        "source_family": "curated_source_target",
+        "source_hints": [
+            "https://www.irfanview.com/history_old.htm",
+            "https://www.irfanview.com/64bit.htm",
+        ],
+        "source_index_document_id": "curated-source-target:irfanview-4-67-windows",
+        "source_observations": [],
+        "status": "candidate",
+        "summary": "Concrete IrfanView 4.67 Windows image viewer identity selected from broad Windows app scope.",
+        "title": "IrfanView 4.67 for Windows",
+        "verification_scope": "source_lead_only",
+    },
+    {
+        "artifact_gate_candidate_reason": "curated concrete Windows image editor target for very-high-throughput source observation",
+        "artifact_gate_excluded": False,
+        "artifact_type": "software",
+        "artifact_verified": False,
+        "candidate_id": "artifact-gate-curated:paint-net-5-0-13-windows",
+        "evidence_hints": [
+            "Official Paint.NET roadmap and release post identify 5.0.13, release date, and desktop release context.",
+            "Curated for Batch 08 evidence collection after thirteen earlier concrete identities are counted.",
+        ],
+        "gate_eligible": False,
+        "gate_exclusion_reason": "curated_concrete_source_target",
+        "matched_queries": ["Windows 7 apps"],
+        "missing_information": ["bounded source observation and manual review before truth promotion"],
+        "no_download_performed": True,
+        "non_verified_reason": "curated source target is not reviewed truth until evidence is collected",
+        "platform_or_context": "Windows image editor",
+        "provenance": {
+            "source": "curated_source_collection_target",
+            "source_kind": "source_observation_batch_08_curation",
+            "source_ref": "SOURCE-OBSERVATION-BATCH-08",
+        },
+        "query_hints": [
+            "Paint.NET 5.0.13",
+            "Windows image editor",
+            "official Paint.NET roadmap and release post",
+        ],
+        "record_state": "",
+        "review_state": "unreviewed",
+        "safe_next_action": "observe official roadmap/release-post metadata only; do not download installers or archives",
+        "schema_version": CANDIDATE_SCHEMA_VERSION,
+        "source_authority": "curated_target",
+        "source_family": "curated_source_target",
+        "source_hints": [
+            "https://paint.net/roadmap.html",
+            "https://forums.getpaint.net/topic/125401-paintnet-5013-is-now-available/",
+        ],
+        "source_index_document_id": "curated-source-target:paint-net-5-0-13-windows",
+        "source_observations": [],
+        "status": "candidate",
+        "summary": "Concrete Paint.NET 5.0.13 Windows image editor identity selected from broad Windows app scope.",
+        "title": "Paint.NET 5.0.13 for Windows",
         "verification_scope": "source_lead_only",
     },
 )
@@ -1255,9 +1474,13 @@ def create_source_collection_plan(
             if record.get("artifact_verified") is True and record.get("gate_eligible") is True
         )
         curated_batch_size = (
-            _SOURCE_COLLECTION_CURATED_HIGH_THROUGHPUT_BATCH_SIZE
-            if reviewed_gate_count >= _SOURCE_COLLECTION_CURATED_HIGH_THROUGHPUT_MIN_GATE_COUNT
-            else _SOURCE_COLLECTION_CURATED_BATCH_SIZE
+            _SOURCE_COLLECTION_CURATED_VERY_HIGH_THROUGHPUT_BATCH_SIZE
+            if reviewed_gate_count >= _SOURCE_COLLECTION_CURATED_VERY_HIGH_THROUGHPUT_MIN_GATE_COUNT
+            else (
+                _SOURCE_COLLECTION_CURATED_HIGH_THROUGHPUT_BATCH_SIZE
+                if reviewed_gate_count >= _SOURCE_COLLECTION_CURATED_HIGH_THROUGHPUT_MIN_GATE_COUNT
+                else _SOURCE_COLLECTION_CURATED_BATCH_SIZE
+            )
         )
         selection_limit = min(target, curated_batch_size)
     else:
