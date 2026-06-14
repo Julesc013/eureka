@@ -153,6 +153,14 @@ already counted identities. The expected current result after Batch 03 is four
 manual evidence packets, three reviewed artifact records, and a still-blocked
 3/25 public-alpha artifact gate.
 
+`SOURCE-OBSERVATION-BATCH-04` avoids squeezing the remaining broad or vague
+hard-query candidates. After de-duplicating Firefox ESR 52.9.0, Sound Blaster
+manual/User's Guide, and `Mike Miller's Many Hats`, source planning can use a
+small curated target list. The current Batch 04 adds source-derived packets for
+`7-Zip 19.00 for Windows` and `WinSCP 5.21.8`. The expected current result
+after Batch 04 is six manual evidence packets, five reviewed artifact records,
+and a still-blocked 5/25 public-alpha artifact gate.
+
 ## Review And Report
 
 ```powershell

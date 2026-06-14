@@ -97,6 +97,90 @@ _SOURCE_TYPES_INSUFFICIENT_FOR_VERIFIED = {
 _SOURCE_COLLECTION_CURATABLE_EXCLUSION_REASONS = {
     "needs_more_identity_or_source_evidence",
 }
+_CURATED_SOURCE_COLLECTION_TARGETS: tuple[dict[str, Any], ...] = (
+    {
+        "artifact_gate_candidate_reason": "curated concrete Windows utility target for source observation after local candidates are exhausted",
+        "artifact_gate_excluded": False,
+        "artifact_type": "software",
+        "artifact_verified": False,
+        "candidate_id": "artifact-gate-curated:7zip-19-00-windows",
+        "evidence_hints": [
+            "Official 7-Zip pages identify version 19.00 as a Windows release.",
+            "Curated because the broad Windows 7 apps candidates are not concrete artifact identities.",
+        ],
+        "gate_eligible": False,
+        "gate_exclusion_reason": "curated_concrete_source_target",
+        "matched_queries": ["Windows 7 apps"],
+        "missing_information": ["bounded source observation and manual review before truth promotion"],
+        "no_download_performed": True,
+        "non_verified_reason": "curated source target is not reviewed truth until evidence is collected",
+        "platform_or_context": "Windows 7 / Windows desktop utility",
+        "provenance": {
+            "source": "curated_source_collection_target",
+            "source_kind": "source_observation_batch_04_curation",
+            "source_ref": "SOURCE-OBSERVATION-BATCH-04",
+        },
+        "query_hints": [
+            "7-Zip 19.00 for Windows",
+            "Windows 7 compatible archive utility",
+            "official 7-Zip release/download page",
+        ],
+        "record_state": "",
+        "review_state": "unreviewed",
+        "safe_next_action": "observe official/catalog metadata pages only; do not download installers or archives",
+        "schema_version": CANDIDATE_SCHEMA_VERSION,
+        "source_authority": "curated_target",
+        "source_family": "curated_source_target",
+        "source_hints": ["https://www.7-zip.org/", "https://www.7-zip.org/download.html"],
+        "source_index_document_id": "curated-source-target:7zip-19-00-windows",
+        "source_observations": [],
+        "status": "candidate",
+        "summary": "Concrete 7-Zip 19.00 for Windows identity selected from a broad Windows 7 app scope.",
+        "title": "7-Zip 19.00 for Windows",
+        "verification_scope": "source_lead_only",
+    },
+    {
+        "artifact_gate_candidate_reason": "curated concrete FTP/SFTP client target after the blue FTP clue remains ambiguous",
+        "artifact_gate_excluded": False,
+        "artifact_type": "software",
+        "artifact_verified": False,
+        "candidate_id": "artifact-gate-curated:winscp-5-21-8",
+        "evidence_hints": [
+            "WinSCP 5.21.8 has stable release-history and catalog metadata.",
+            "Curated as a concrete FTP/SFTP client artifact, not as proof of the vague blue visual clue.",
+        ],
+        "gate_eligible": False,
+        "gate_exclusion_reason": "curated_concrete_source_target",
+        "matched_queries": ["old blue FTP client for XP"],
+        "missing_information": ["bounded source observation and manual review before truth promotion"],
+        "no_download_performed": True,
+        "non_verified_reason": "curated source target is not reviewed truth until evidence is collected",
+        "platform_or_context": "Windows FTP/SFTP client",
+        "provenance": {
+            "source": "curated_source_collection_target",
+            "source_kind": "source_observation_batch_04_curation",
+            "source_ref": "SOURCE-OBSERVATION-BATCH-04",
+        },
+        "query_hints": [
+            "WinSCP 5.21.8",
+            "FTP and SFTP client for Windows",
+            "official WinSCP version history",
+        ],
+        "record_state": "",
+        "review_state": "unreviewed",
+        "safe_next_action": "observe release-history/catalog metadata only; do not download installer or portable archives",
+        "schema_version": CANDIDATE_SCHEMA_VERSION,
+        "source_authority": "curated_target",
+        "source_family": "curated_source_target",
+        "source_hints": ["https://winscp.net/eng/docs/history_old", "https://sourceforge.net/projects/winscp/files/WinSCP/5.21.8/"],
+        "source_index_document_id": "curated-source-target:winscp-5-21-8",
+        "source_observations": [],
+        "status": "candidate",
+        "summary": "Concrete WinSCP 5.21.8 FTP/SFTP client identity selected after the local blue FTP clue stayed ambiguous.",
+        "title": "WinSCP 5.21.8",
+        "verification_scope": "source_lead_only",
+    },
+)
 _PRIVATE_SOURCE_MARKERS = ("file:", "\\", "c:\\", "d:\\", "users\\", ".eureka", ".aide", "local_review", "local_search_index")
 _SECRET_MARKERS = ("token=", "api_key", "apikey", "password", "secret", "authorization:")
 
@@ -803,12 +887,13 @@ def create_source_collection_plan(
             }
         )
         annotated_candidates.append(candidate)
-    selectable = [
-        dict(item)
-        for item in annotated_candidates
-        if item.get("source_collection_duplicate") is not True
-        and (item.get("artifact_gate_excluded") is not True or item.get("source_collection_curation_target") is True)
-    ]
+    selectable = _source_collection_selectable_candidates(annotated_candidates)
+    curated_candidate_count = 0
+    if not selectable:
+        curated = _curated_source_collection_candidates(reviewed_records)
+        curated_candidate_count = len(curated)
+        annotated_candidates = [*annotated_candidates, *curated]
+        selectable = _source_collection_selectable_candidates(annotated_candidates)
     if manual_selected_ids:
         preferred = [item for item in selectable if str(item.get("candidate_id") or "") in manual_selected_ids]
         remaining = [item for item in selectable if str(item.get("candidate_id") or "") not in manual_selected_ids]
@@ -863,6 +948,7 @@ def create_source_collection_plan(
         "source_gate_report_digest": _path_sha256(source_gate_report),
         "candidate_count": len(plan_rows),
         "selected_candidate_count": sum(1 for item in plan_rows if item.get("source_collection_target") is True),
+        "curated_candidate_count": curated_candidate_count,
         "duplicate_candidate_count": sum(1 for item in plan_rows if item.get("source_collection_duplicate") is True),
         "excluded_candidate_count": sum(1 for item in plan_rows if item.get("artifact_gate_excluded") is True),
         "target_records": target,
@@ -1562,6 +1648,9 @@ def _source_collection_duplicate_info(candidate: Mapping[str, Any], reviewed_rec
             return _duplicate_info(record_id, record_title, "candidate_id already counted")
         if source_index_document_id and source_index_document_id == str(record.get("source_index_document_id") or ""):
             return _duplicate_info(record_id, record_title, "source index document already counted")
+        if record_title and _normalize(str(candidate.get("title") or "")) == _normalize(record_title):
+            if str(candidate.get("artifact_type") or "").strip().casefold() == str(record.get("artifact_type") or "").strip().casefold():
+                return _duplicate_info(record_id, record_title, "artifact title and type already counted")
         if "firefox" in candidate_text and "firefox" in record_text:
             return _duplicate_info(record_id, record_title, "Firefox artifact identity already counted")
         candidate_is_sound_blaster_manual = (
@@ -1577,6 +1666,35 @@ def _source_collection_duplicate_info(candidate: Mapping[str, Any], reviewed_rec
         "duplicate_identity": "",
         "duplicate_reason": "",
     }
+
+
+def _source_collection_selectable_candidates(candidates: Sequence[Mapping[str, Any]]) -> list[dict[str, Any]]:
+    return [
+        dict(item)
+        for item in candidates
+        if item.get("source_collection_duplicate") is not True
+        and (item.get("artifact_gate_excluded") is not True or item.get("source_collection_curation_target") is True)
+    ]
+
+
+def _curated_source_collection_candidates(reviewed_records: Sequence[Mapping[str, Any]]) -> list[dict[str, Any]]:
+    curated: list[dict[str, Any]] = []
+    for position, template in enumerate(_CURATED_SOURCE_COLLECTION_TARGETS, start=1):
+        candidate = dict(template)
+        duplicate = _source_collection_duplicate_info(candidate, reviewed_records)
+        candidate.update(
+            {
+                "curated_source_collection_target": True,
+                "source_collection_duplicate": duplicate["is_duplicate"],
+                "source_collection_duplicate_of": duplicate["duplicate_of"],
+                "source_collection_duplicate_identity": duplicate["duplicate_identity"],
+                "source_collection_duplicate_reason": duplicate["duplicate_reason"],
+                "source_collection_curation_target": duplicate["is_duplicate"] is not True,
+                "curated_source_collection_position": position,
+            }
+        )
+        curated.append(candidate)
+    return curated
 
 
 def _duplicate_info(record_id: str, title: str, reason: str) -> dict[str, Any]:
