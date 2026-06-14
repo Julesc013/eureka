@@ -172,7 +172,7 @@ class SourceObservationBatch04Tests(unittest.TestCase):
         self.assertEqual(plan.code, 0, plan.stderr)
         plan_payload = json.loads(plan.stdout)
         self.assertEqual(plan_payload["selected_candidate_count"], 2)
-        self.assertEqual(plan_payload["curated_candidate_count"], 6)
+        self.assertEqual(plan_payload["curated_candidate_count"], 10)
         self.assertGreaterEqual(plan_payload["duplicate_candidate_count"], 5)
         self.assertEqual(template.code, 0, template.stderr)
         self.assertEqual(json.loads(template.stdout)["template_count"], 2)

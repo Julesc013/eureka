@@ -98,6 +98,8 @@ _SOURCE_COLLECTION_CURATABLE_EXCLUSION_REASONS = {
     "needs_more_identity_or_source_evidence",
 }
 _SOURCE_COLLECTION_CURATED_BATCH_SIZE = 2
+_SOURCE_COLLECTION_CURATED_HIGH_THROUGHPUT_BATCH_SIZE = 4
+_SOURCE_COLLECTION_CURATED_HIGH_THROUGHPUT_MIN_GATE_COUNT = 9
 _CURATED_SOURCE_COLLECTION_TARGETS: tuple[dict[str, Any], ...] = (
     {
         "artifact_gate_candidate_reason": "curated concrete Windows utility target for source observation after local candidates are exhausted",
@@ -356,6 +358,176 @@ _CURATED_SOURCE_COLLECTION_TARGETS: tuple[dict[str, Any], ...] = (
         "status": "candidate",
         "summary": "Concrete GIMP 2.10.38 Windows image editor identity selected from broad Windows app scope.",
         "title": "GIMP 2.10.38 for Windows",
+        "verification_scope": "source_lead_only",
+    },
+    {
+        "artifact_gate_candidate_reason": "curated concrete Windows text editor target for higher-throughput source observation",
+        "artifact_gate_excluded": False,
+        "artifact_type": "software",
+        "artifact_verified": False,
+        "candidate_id": "artifact-gate-curated:notepad-plus-plus-8-6-windows",
+        "evidence_hints": [
+            "Official Notepad++ page identifies v8.6, release date, Windows package context, and release notes.",
+            "Curated for Batch 07 higher-throughput evidence collection after earlier concrete identities are counted.",
+        ],
+        "gate_eligible": False,
+        "gate_exclusion_reason": "curated_concrete_source_target",
+        "matched_queries": ["Windows 7 apps"],
+        "missing_information": ["bounded source observation and manual review before truth promotion"],
+        "no_download_performed": True,
+        "non_verified_reason": "curated source target is not reviewed truth until evidence is collected",
+        "platform_or_context": "Windows text editor",
+        "provenance": {
+            "source": "curated_source_collection_target",
+            "source_kind": "source_observation_batch_07_curation",
+            "source_ref": "SOURCE-OBSERVATION-BATCH-07",
+        },
+        "query_hints": [
+            "Notepad++ v8.6",
+            "Windows text editor",
+            "official Notepad++ release/download page",
+        ],
+        "record_state": "",
+        "review_state": "unreviewed",
+        "safe_next_action": "observe official release/download metadata only; do not download installers or archives",
+        "schema_version": CANDIDATE_SCHEMA_VERSION,
+        "source_authority": "curated_target",
+        "source_family": "curated_source_target",
+        "source_hints": ["https://notepad-plus-plus.org/downloads/v8.6/"],
+        "source_index_document_id": "curated-source-target:notepad-plus-plus-8-6-windows",
+        "source_observations": [],
+        "status": "candidate",
+        "summary": "Concrete Notepad++ v8.6 Windows text editor identity selected from broad Windows app scope.",
+        "title": "Notepad++ v8.6 for Windows",
+        "verification_scope": "source_lead_only",
+    },
+    {
+        "artifact_gate_candidate_reason": "curated concrete Windows vector editor target for higher-throughput source observation",
+        "artifact_gate_excluded": False,
+        "artifact_type": "software",
+        "artifact_verified": False,
+        "candidate_id": "artifact-gate-curated:inkscape-1-3-2-windows",
+        "evidence_hints": [
+            "Official Inkscape release notes identify Inkscape 1.3.2, release date, and Windows-specific context.",
+            "Curated for Batch 07 higher-throughput evidence collection after earlier concrete identities are counted.",
+        ],
+        "gate_eligible": False,
+        "gate_exclusion_reason": "curated_concrete_source_target",
+        "matched_queries": ["Windows 7 apps"],
+        "missing_information": ["bounded source observation and manual review before truth promotion"],
+        "no_download_performed": True,
+        "non_verified_reason": "curated source target is not reviewed truth until evidence is collected",
+        "platform_or_context": "Windows vector graphics editor",
+        "provenance": {
+            "source": "curated_source_collection_target",
+            "source_kind": "source_observation_batch_07_curation",
+            "source_ref": "SOURCE-OBSERVATION-BATCH-07",
+        },
+        "query_hints": [
+            "Inkscape 1.3.2",
+            "Windows vector graphics editor",
+            "official Inkscape release notes",
+        ],
+        "record_state": "",
+        "review_state": "unreviewed",
+        "safe_next_action": "observe official release-note metadata only; do not download installers or archives",
+        "schema_version": CANDIDATE_SCHEMA_VERSION,
+        "source_authority": "curated_target",
+        "source_family": "curated_source_target",
+        "source_hints": [
+            "https://wiki.inkscape.org/wiki/Release_notes/1.3.2",
+            "https://wiki.inkscape.org/wiki/index.php/Release_notes/1.3",
+        ],
+        "source_index_document_id": "curated-source-target:inkscape-1-3-2-windows",
+        "source_observations": [],
+        "status": "candidate",
+        "summary": "Concrete Inkscape 1.3.2 Windows vector graphics editor identity selected from broad Windows app scope.",
+        "title": "Inkscape 1.3.2 for Windows",
+        "verification_scope": "source_lead_only",
+    },
+    {
+        "artifact_gate_candidate_reason": "curated concrete Windows office suite target for higher-throughput source observation",
+        "artifact_gate_excluded": False,
+        "artifact_type": "software",
+        "artifact_verified": False,
+        "candidate_id": "artifact-gate-curated:libreoffice-7-6-7-windows",
+        "evidence_hints": [
+            "The Document Foundation blog identifies LibreOffice 7.6.7 Community, release date, and Windows availability.",
+            "Curated for Batch 07 higher-throughput evidence collection after earlier concrete identities are counted.",
+        ],
+        "gate_eligible": False,
+        "gate_exclusion_reason": "curated_concrete_source_target",
+        "matched_queries": ["Windows 7 apps"],
+        "missing_information": ["bounded source observation and manual review before truth promotion"],
+        "no_download_performed": True,
+        "non_verified_reason": "curated source target is not reviewed truth until evidence is collected",
+        "platform_or_context": "Windows office suite",
+        "provenance": {
+            "source": "curated_source_collection_target",
+            "source_kind": "source_observation_batch_07_curation",
+            "source_ref": "SOURCE-OBSERVATION-BATCH-07",
+        },
+        "query_hints": [
+            "LibreOffice 7.6.7 Community",
+            "Windows office suite",
+            "The Document Foundation release blog",
+        ],
+        "record_state": "",
+        "review_state": "unreviewed",
+        "safe_next_action": "observe official release/blog metadata only; do not download installers or archives",
+        "schema_version": CANDIDATE_SCHEMA_VERSION,
+        "source_authority": "curated_target",
+        "source_family": "curated_source_target",
+        "source_hints": ["https://blog.documentfoundation.org/blog/2024/05/10/libreoffice-7-6-7/"],
+        "source_index_document_id": "curated-source-target:libreoffice-7-6-7-windows",
+        "source_observations": [],
+        "status": "candidate",
+        "summary": "Concrete LibreOffice 7.6.7 Community Windows office suite identity selected from broad Windows app scope.",
+        "title": "LibreOffice 7.6.7 Community for Windows",
+        "verification_scope": "source_lead_only",
+    },
+    {
+        "artifact_gate_candidate_reason": "curated concrete Windows office suite target for higher-throughput source observation",
+        "artifact_gate_excluded": False,
+        "artifact_type": "software",
+        "artifact_verified": False,
+        "candidate_id": "artifact-gate-curated:apache-openoffice-4-1-15-windows",
+        "evidence_hints": [
+            "Official Apache OpenOffice pages identify 4.1.15, release date, Windows availability, and release notes.",
+            "Curated for Batch 07 higher-throughput evidence collection after earlier concrete identities are counted.",
+        ],
+        "gate_eligible": False,
+        "gate_exclusion_reason": "curated_concrete_source_target",
+        "matched_queries": ["Windows 7 apps"],
+        "missing_information": ["bounded source observation and manual review before truth promotion"],
+        "no_download_performed": True,
+        "non_verified_reason": "curated source target is not reviewed truth until evidence is collected",
+        "platform_or_context": "Windows office suite",
+        "provenance": {
+            "source": "curated_source_collection_target",
+            "source_kind": "source_observation_batch_07_curation",
+            "source_ref": "SOURCE-OBSERVATION-BATCH-07",
+        },
+        "query_hints": [
+            "Apache OpenOffice 4.1.15",
+            "Windows office suite",
+            "official Apache OpenOffice announcement and release notes",
+        ],
+        "record_state": "",
+        "review_state": "unreviewed",
+        "safe_next_action": "observe official release/blog metadata only; do not download installers or archives",
+        "schema_version": CANDIDATE_SCHEMA_VERSION,
+        "source_authority": "curated_target",
+        "source_family": "curated_source_target",
+        "source_hints": [
+            "https://openoffice.apache.org/blog/announcing-apache-openoffice-4-1-15.html",
+            "https://cwiki.apache.org/confluence/display/OOOUSERS/AOO%2B4.1.15%2BRelease%2BNotes",
+        ],
+        "source_index_document_id": "curated-source-target:apache-openoffice-4-1-15-windows",
+        "source_observations": [],
+        "status": "candidate",
+        "summary": "Concrete Apache OpenOffice 4.1.15 Windows office suite identity selected from broad Windows app scope.",
+        "title": "Apache OpenOffice 4.1.15 for Windows",
         "verification_scope": "source_lead_only",
     },
 )
@@ -1076,7 +1248,20 @@ def create_source_collection_plan(
         preferred = [item for item in selectable if str(item.get("candidate_id") or "") in manual_selected_ids]
         remaining = [item for item in selectable if str(item.get("candidate_id") or "") not in manual_selected_ids]
         selectable = [*preferred, *remaining]
-    selection_limit = min(target, _SOURCE_COLLECTION_CURATED_BATCH_SIZE) if curated_candidate_count else target
+    if curated_candidate_count:
+        reviewed_gate_count = sum(
+            1
+            for record in reviewed_records
+            if record.get("artifact_verified") is True and record.get("gate_eligible") is True
+        )
+        curated_batch_size = (
+            _SOURCE_COLLECTION_CURATED_HIGH_THROUGHPUT_BATCH_SIZE
+            if reviewed_gate_count >= _SOURCE_COLLECTION_CURATED_HIGH_THROUGHPUT_MIN_GATE_COUNT
+            else _SOURCE_COLLECTION_CURATED_BATCH_SIZE
+        )
+        selection_limit = min(target, curated_batch_size)
+    else:
+        selection_limit = target
     selected_ids = {str(item.get("candidate_id") or "") for item in selectable[:selection_limit]}
 
     plan_rows = []

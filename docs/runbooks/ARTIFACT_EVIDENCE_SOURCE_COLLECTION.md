@@ -813,6 +813,134 @@ identity metadata. They do not imply binary verification, download safety,
 execution safety, rights clearance, marketplace safety, or public launch
 readiness.
 
+## Source Observation Batch 07
+
+`SOURCE-OBSERVATION-BATCH-07` continues the curated-target path after Batch 06.
+It treats the earlier counted identities as duplicates:
+
+```text
+Firefox ESR 52.9.0
+Creative Labs Sound Blaster 16 manual / User's Guide
+Mike Miller's Many Hats
+7-Zip 19.00 for Windows
+WinSCP 5.21.8
+PuTTY 0.78 for Windows
+Audacity 3.2.5 for Windows
+VLC 3.0.20 Vetinari
+GIMP 2.10.38 for Windows
+```
+
+After those identities are excluded from the next source target pass, the
+current curated targets are:
+
+```text
+Notepad++ v8.6 for Windows
+Inkscape 1.3.2 for Windows
+LibreOffice 7.6.7 Community for Windows
+Apache OpenOffice 4.1.15 for Windows
+```
+
+Prerequisite status checks:
+
+```powershell
+python scripts/eureka_artifact_gate.py source-status --collection .eureka/artifact-gate/source-observation-batch-01
+
+python scripts/eureka_artifact_gate.py source-status --collection .eureka/artifact-gate/source-observation-batch-02
+
+python scripts/eureka_artifact_gate.py source-status --collection .eureka/artifact-gate/source-observation-batch-03
+
+python scripts/eureka_artifact_gate.py source-status --collection .eureka/artifact-gate/source-observation-batch-04
+
+python scripts/eureka_artifact_gate.py source-status --collection .eureka/artifact-gate/source-observation-batch-05
+
+python scripts/eureka_artifact_gate.py source-status --collection .eureka/artifact-gate/source-observation-batch-06
+
+python scripts/eureka_artifact_gate.py manual-status --batch .eureka/artifact-gate/manual-batch-01
+```
+
+Create the batch scaffold:
+
+```powershell
+python scripts/eureka_artifact_gate.py source-plan --gate .eureka/artifact-gate/public-alpha-seed --manual-batch .eureka/artifact-gate/manual-batch-01 --out .eureka/artifact-gate/source-observation-batch-07 --target-records 5
+
+python scripts/eureka_artifact_gate.py source-template --collection .eureka/artifact-gate/source-observation-batch-07 --out .eureka/artifact-gate/source-observation-batch-07/source_observation_template.jsonl
+```
+
+Fill:
+
+```text
+.eureka/artifact-gate/source-observation-batch-07/source_url_list.jsonl
+.eureka/artifact-gate/source-observation-batch-07/source_observations.jsonl
+```
+
+Useful page observations for these targets include:
+
+- the official Notepad++ v8.6 release page;
+- the official Inkscape 1.3.2 release notes page;
+- the official Inkscape 1.3 release notes page as Windows-platform
+  corroboration;
+- the official Document Foundation LibreOffice 7.6.7 Community announcement;
+- the official Apache OpenOffice 4.1.15 announcement;
+- the official Apache OpenOffice 4.1.15 release notes page as platform
+  corroboration.
+
+Observe page metadata only. Do not open direct installer, standalone binary,
+source archive, package, or download-file links. Do not use Wayback, hidden
+member extraction, install/emulation behavior, marketplace actions, or any live
+download/file-fetch behavior.
+
+Run the source batch:
+
+```powershell
+python scripts/eureka_artifact_gate.py source-ingest --collection .eureka/artifact-gate/source-observation-batch-07 --observations .eureka/artifact-gate/source-observation-batch-07/source_observations.jsonl
+
+python scripts/eureka_artifact_gate.py source-validate --collection .eureka/artifact-gate/source-observation-batch-07
+
+python scripts/eureka_artifact_gate.py source-to-evidence --collection .eureka/artifact-gate/source-observation-batch-07 --out .eureka/artifact-gate/source-observation-batch-07/manual_evidence_packets.jsonl
+
+python scripts/eureka_artifact_gate.py source-report --collection .eureka/artifact-gate/source-observation-batch-07 --out .eureka/artifact-gate/source-observation-batch-07/source_collection_report.json
+
+python scripts/eureka_artifact_gate.py source-status --collection .eureka/artifact-gate/source-observation-batch-07
+```
+
+Preserve prior batches with a cumulative generated handoff:
+
+```powershell
+Get-Content .eureka\artifact-gate\source-observation-batch-01\manual_evidence_packets.jsonl, .eureka\artifact-gate\source-observation-batch-02\manual_evidence_packets.jsonl, .eureka\artifact-gate\source-observation-batch-03\manual_evidence_packets.jsonl, .eureka\artifact-gate\source-observation-batch-04\manual_evidence_packets.jsonl, .eureka\artifact-gate\source-observation-batch-05\manual_evidence_packets.jsonl, .eureka\artifact-gate\source-observation-batch-06\manual_evidence_packets.jsonl, .eureka\artifact-gate\source-observation-batch-07\manual_evidence_packets.jsonl | Set-Content -Encoding UTF8 .eureka\artifact-gate\source-observation-batch-07\manual_evidence_packets.cumulative.jsonl
+```
+
+Then refresh the manual and launch gates:
+
+```powershell
+python scripts/eureka_artifact_gate.py manual-ingest --batch .eureka/artifact-gate/manual-batch-01 --evidence .eureka/artifact-gate/source-observation-batch-07/manual_evidence_packets.cumulative.jsonl
+
+python scripts/eureka_artifact_gate.py manual-validate --batch .eureka/artifact-gate/manual-batch-01
+
+python scripts/eureka_artifact_gate.py manual-review --batch .eureka/artifact-gate/manual-batch-01 --reviewer source_observation_batch_07 --out .eureka/artifact-gate/manual-batch-01/reviewed_artifact_records.jsonl
+
+python scripts/eureka_artifact_gate.py manual-report --batch .eureka/artifact-gate/manual-batch-01 --out .eureka/artifact-gate/manual-batch-01/artifact_gate_report.json
+
+python scripts/eureka_artifact_gate.py manual-status --batch .eureka/artifact-gate/manual-batch-01
+
+python scripts/eureka_public_alpha_launch_gate.py audit --bundle .eureka/staging/public-alpha --rehearsal-report .eureka/rehearsals/public-alpha/latest/rehearsal_report.json --artifact-gate-report .eureka/artifact-gate/manual-batch-01/artifact_gate_report.json --out .eureka/launch/public-alpha/latest
+```
+
+Expected current Batch 07 result:
+
+```text
+source observations: 6 valid / 0 invalid
+source evidence packets: 4
+artifact verified packets: 4
+cumulative manual evidence packets: 14
+reviewed artifact gate count: 13/25
+launch status: BLOCKED
+```
+
+The Batch 07 observations can propose `artifact_verified=true` only for artifact
+identity metadata. They do not imply binary verification, download safety,
+execution safety, rights clearance, marketplace safety, or public launch
+readiness.
+
 ## Troubleshooting
 
 - No eligible targets: inspect `source_candidate_plan.jsonl`; broad or
@@ -832,9 +960,11 @@ readiness.
 - Duplicate identity: Firefox ESR 52.9.0, Sound Blaster 16 manual/User's
   Guide, `Mike Miller's Many Hats`, `7-Zip 19.00 for Windows`, `WinSCP 5.21.8`,
   `PuTTY 0.78 for Windows`, `Audacity 3.2.5 for Windows`, `VLC 3.0.20
-  Vetinari`, and `GIMP 2.10.38 for Windows` must not be counted again after
-  their respective batches. Treat new pages for those identities as
-  corroboration only.
+  Vetinari`, `GIMP 2.10.38 for Windows`, `Notepad++ v8.6 for Windows`,
+  `Inkscape 1.3.2 for Windows`, `LibreOffice 7.6.7 Community for Windows`, and
+  `Apache OpenOffice 4.1.15 for Windows` must not be counted again after their
+  respective batches. Treat new pages for those identities as corroboration
+  only.
 
 ## Deferred
 

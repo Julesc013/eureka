@@ -176,6 +176,14 @@ duplicates, then adds source-derived packets for `VLC 3.0.20 Vetinari` and
 manual evidence packets, nine reviewed artifact records, and a still-blocked
 9/25 public-alpha artifact gate.
 
+`SOURCE-OBSERVATION-BATCH-07` continues the curated path after Batch 06
+identities are counted. It keeps the nine earlier reviewed identities as
+duplicates, then adds source-derived packets for `Notepad++ v8.6 for Windows`,
+`Inkscape 1.3.2 for Windows`, `LibreOffice 7.6.7 Community for Windows`, and
+`Apache OpenOffice 4.1.15 for Windows`. The expected current result after Batch
+07 is fourteen manual evidence packets, thirteen reviewed artifact records, and
+a still-blocked 13/25 public-alpha artifact gate.
+
 ## Review And Report
 
 ```powershell
