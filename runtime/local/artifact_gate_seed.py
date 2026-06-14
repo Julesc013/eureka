@@ -94,6 +94,9 @@ _SOURCE_TYPES_INSUFFICIENT_FOR_VERIFIED = {
     "repo_record",
     "unknown",
 }
+_SOURCE_COLLECTION_CURATABLE_EXCLUSION_REASONS = {
+    "needs_more_identity_or_source_evidence",
+}
 _PRIVATE_SOURCE_MARKERS = ("file:", "\\", "c:\\", "d:\\", "users\\", ".eureka", ".aide", "local_review", "local_search_index")
 _SECRET_MARKERS = ("token=", "api_key", "apikey", "password", "secret", "authorization:")
 
@@ -776,6 +779,8 @@ def create_source_collection_plan(
     gate_candidates = read_jsonl(gate_path / DEFAULT_CANDIDATES_FILE)
     manual_plan_path = batch_path / MANUAL_BATCH_CANDIDATE_PLAN_FILE
     manual_plan = read_jsonl(manual_plan_path) if manual_plan_path.is_file() else []
+    reviewed_records_path = batch_path / DEFAULT_REVIEWED_ARTIFACT_RECORDS_FILE
+    reviewed_records = read_jsonl(reviewed_records_path) if reviewed_records_path.is_file() else []
     target = max(1, int(target_records))
 
     manual_selected_ids = {
@@ -783,7 +788,27 @@ def create_source_collection_plan(
         for item in manual_plan
         if item.get("manual_batch_selected") is True and item.get("artifact_gate_excluded") is not True
     }
-    selectable = [dict(item) for item in sorted(gate_candidates, key=_candidate_sort_key) if item.get("artifact_gate_excluded") is not True]
+    annotated_candidates = []
+    for item in sorted(gate_candidates, key=_candidate_sort_key):
+        candidate = dict(item)
+        duplicate = _source_collection_duplicate_info(candidate, reviewed_records)
+        curation_target = _source_collection_curation_target(candidate, duplicate)
+        candidate.update(
+            {
+                "source_collection_duplicate": duplicate["is_duplicate"],
+                "source_collection_duplicate_of": duplicate["duplicate_of"],
+                "source_collection_duplicate_identity": duplicate["duplicate_identity"],
+                "source_collection_duplicate_reason": duplicate["duplicate_reason"],
+                "source_collection_curation_target": curation_target,
+            }
+        )
+        annotated_candidates.append(candidate)
+    selectable = [
+        dict(item)
+        for item in annotated_candidates
+        if item.get("source_collection_duplicate") is not True
+        and (item.get("artifact_gate_excluded") is not True or item.get("source_collection_curation_target") is True)
+    ]
     if manual_selected_ids:
         preferred = [item for item in selectable if str(item.get("candidate_id") or "") in manual_selected_ids]
         remaining = [item for item in selectable if str(item.get("candidate_id") or "") not in manual_selected_ids]
@@ -791,10 +816,21 @@ def create_source_collection_plan(
     selected_ids = {str(item.get("candidate_id") or "") for item in selectable[:target]}
 
     plan_rows = []
-    for position, candidate in enumerate(sorted((dict(item) for item in gate_candidates), key=_candidate_sort_key), start=1):
+    for position, candidate in enumerate(annotated_candidates, start=1):
         candidate_id = str(candidate.get("candidate_id") or "")
         selected = candidate_id in selected_ids
         excluded = candidate.get("artifact_gate_excluded") is True
+        duplicate = candidate.get("source_collection_duplicate") is True
+        curation_target = candidate.get("source_collection_curation_target") is True
+        source_target = selected and not duplicate and (not excluded or curation_target)
+        if duplicate:
+            reason = str(candidate.get("source_collection_duplicate_reason") or "duplicate artifact identity already counted")
+        elif source_target and curation_target:
+            reason = "selected for bounded source observation to resolve missing identity/source evidence"
+        elif source_target:
+            reason = "selected for bounded source observation"
+        else:
+            reason = str(candidate.get("gate_exclusion_reason") or "not selected for this bounded source collection")
         plan_rows.append(
             {
                 **candidate,
@@ -802,12 +838,8 @@ def create_source_collection_plan(
                 "manual_batch_id": _batch_id(batch_path),
                 "plan_position": position,
                 "source_collection_selected": selected,
-                "source_collection_target": selected and not excluded,
-                "source_collection_reason": (
-                    "selected for bounded source observation"
-                    if selected
-                    else str(candidate.get("gate_exclusion_reason") or "not selected for this bounded source collection")
-                ),
+                "source_collection_target": source_target,
+                "source_collection_reason": reason,
                 "expected_source_types": _expected_source_types(candidate),
                 "source_collection_instructions": [
                     "record page, catalog, support, release-note, manual-page, or publication metadata only",
@@ -830,7 +862,8 @@ def create_source_collection_plan(
         "source_gate_report": str(source_gate_report),
         "source_gate_report_digest": _path_sha256(source_gate_report),
         "candidate_count": len(plan_rows),
-        "selected_candidate_count": len(selected_ids),
+        "selected_candidate_count": sum(1 for item in plan_rows if item.get("source_collection_target") is True),
+        "duplicate_candidate_count": sum(1 for item in plan_rows if item.get("source_collection_duplicate") is True),
         "excluded_candidate_count": sum(1 for item in plan_rows if item.get("artifact_gate_excluded") is True),
         "target_records": target,
         "gate_target_reviewed_artifacts": DEFAULT_GATE_TARGET,
@@ -850,7 +883,7 @@ def create_source_collection_plan(
 def write_source_observation_template(collection_dir: str | Path, out_path: str | Path | None = None) -> dict[str, Any]:
     collection_path = Path(collection_dir)
     plan_rows = read_jsonl(collection_path / SOURCE_COLLECTION_CANDIDATE_PLAN_FILE)
-    selected = [row for row in plan_rows if row.get("source_collection_selected") is True and row.get("artifact_gate_excluded") is not True]
+    selected = [row for row in plan_rows if row.get("source_collection_target") is True]
     templates = [_source_observation_template_from_candidate(candidate, collection_id=_collection_id(collection_path)) for candidate in selected]
     destination = Path(out_path) if out_path else collection_path / SOURCE_COLLECTION_TEMPLATE_FILE
     write_jsonl(destination, templates)
@@ -991,7 +1024,7 @@ def validate_source_observation(
         errors.append("source observation must not contain tokens, secrets, passwords, or authorization markers")
 
     candidate = dict(candidate_by_id.get(candidate_id) or {}) if candidate_by_id else {}
-    if candidate.get("artifact_gate_excluded") is True:
+    if candidate.get("artifact_gate_excluded") is True and candidate.get("source_collection_curation_target") is not True:
         errors.append(f"candidate is excluded from artifact gate work: {candidate.get('gate_exclusion_reason')}")
     text = _normalize(" ".join([artifact_title, str(observation.get("platform_or_context") or ""), json.dumps(observation.get("artifact_identity_fields") or {}, sort_keys=True)]))
     if "windows 7 apps" in text or artifact_title.casefold().strip() in {"windows 7 apps", "windows 7 app"}:
@@ -1495,6 +1528,91 @@ def _manual_packet_identity_key(packet: Mapping[str, Any]) -> str:
     return "|".join(_normalize(part) for part in parts if str(part or "").strip())
 
 
+def _source_collection_duplicate_info(candidate: Mapping[str, Any], reviewed_records: Sequence[Mapping[str, Any]]) -> dict[str, Any]:
+    candidate_id = str(candidate.get("candidate_id") or "")
+    source_index_document_id = str(candidate.get("source_index_document_id") or "")
+    candidate_text = _normalize(
+        " ".join(
+            [
+                str(candidate.get("title") or ""),
+                str(candidate.get("artifact_type") or ""),
+                str(candidate.get("platform_or_context") or ""),
+                " ".join(_string_list(candidate.get("matched_queries"))),
+                " ".join(_string_list(candidate.get("query_hints"))),
+                source_index_document_id,
+            ]
+        )
+    )
+    for record in reviewed_records:
+        record_id = str(record.get("reviewed_artifact_record_id") or "")
+        record_title = str(record.get("title") or "")
+        record_text = _normalize(
+            " ".join(
+                [
+                    record_title,
+                    str(record.get("artifact_type") or ""),
+                    str(record.get("platform_or_context") or ""),
+                    str(record.get("source_candidate_id") or ""),
+                    str(record.get("source_index_document_id") or ""),
+                    str(record.get("dedupe_identity_key") or ""),
+                ]
+            )
+        )
+        if candidate_id and candidate_id == str(record.get("source_candidate_id") or ""):
+            return _duplicate_info(record_id, record_title, "candidate_id already counted")
+        if source_index_document_id and source_index_document_id == str(record.get("source_index_document_id") or ""):
+            return _duplicate_info(record_id, record_title, "source index document already counted")
+        if "firefox" in candidate_text and "firefox" in record_text:
+            return _duplicate_info(record_id, record_title, "Firefox artifact identity already counted")
+        candidate_is_sound_blaster_manual = (
+            str(candidate.get("artifact_type") or "").strip().casefold() == "manual"
+            and ("ct1740" in candidate_text or "sound blaster" in candidate_text)
+        )
+        record_is_sound_blaster_manual = "manual" in record_text and ("ct1740" in record_text or "sound blaster" in record_text)
+        if candidate_is_sound_blaster_manual and record_is_sound_blaster_manual:
+            return _duplicate_info(record_id, record_title, "Sound Blaster manual artifact identity already counted")
+    return {
+        "is_duplicate": False,
+        "duplicate_of": "",
+        "duplicate_identity": "",
+        "duplicate_reason": "",
+    }
+
+
+def _duplicate_info(record_id: str, title: str, reason: str) -> dict[str, Any]:
+    return {
+        "is_duplicate": True,
+        "duplicate_of": record_id,
+        "duplicate_identity": title,
+        "duplicate_reason": reason,
+    }
+
+
+def _source_collection_curation_target(candidate: Mapping[str, Any], duplicate: Mapping[str, Any]) -> bool:
+    if duplicate.get("is_duplicate") is True:
+        return False
+    reason = str(candidate.get("gate_exclusion_reason") or "").strip().casefold()
+    if reason not in _SOURCE_COLLECTION_CURATABLE_EXCLUSION_REASONS:
+        return False
+    text = _normalize(" ".join([str(candidate.get("title") or ""), " ".join(_string_list(candidate.get("matched_queries")))]))
+    if "windows 7 apps" in text or "driver for win98" in text:
+        return False
+    return True
+
+
+def _expected_source_fields(candidate: Mapping[str, Any]) -> list[str]:
+    artifact_type = str(candidate.get("artifact_type") or "").strip().casefold()
+    if artifact_type == "article":
+        return ["article_title", "publication_title", "issue_or_date", "volume_or_issue", "page_range", "publisher_or_record_id"]
+    if artifact_type == "software":
+        return ["product", "version", "publisher", "release_date", "platform_or_context"]
+    if artifact_type == "driver":
+        return ["vendor", "device_model", "driver_package", "supported_os", "source_record_id"]
+    if artifact_type == "manual":
+        return ["manual_title", "publisher", "publication_date", "model_or_product", "source_record_id"]
+    return ["title", "artifact_type", "platform_or_context", "source_record_id"]
+
+
 def _manual_batch_report(
     batch_path: Path,
     *,
@@ -1839,7 +1957,7 @@ def _source_observation_template_from_candidate(candidate: Mapping[str, Any], *,
 def _source_url_list_templates(plan_rows: Sequence[Mapping[str, Any]]) -> list[dict[str, Any]]:
     rows = []
     for candidate in plan_rows:
-        if candidate.get("source_collection_selected") is not True or candidate.get("artifact_gate_excluded") is True:
+        if candidate.get("source_collection_target") is not True:
             continue
         rows.append(
             {
@@ -1850,6 +1968,11 @@ def _source_url_list_templates(plan_rows: Sequence[Mapping[str, Any]]) -> list[d
                 "source_identifier": "",
                 "source_type": "",
                 "source_authority": "",
+                "expected_observed_fields": _expected_source_fields(candidate),
+                "why_this_source_may_help": str(candidate.get("source_collection_reason") or "bounded source observation target"),
+                "allowed_access_method": "bounded_page_observation",
+                "forbidden_actions": ["download binaries", "fetch files", "replay Wayback", "install or emulate", "marketplace action"],
+                "duplicate_check_note": str(candidate.get("source_collection_duplicate_reason") or "not currently counted as a reviewed artifact identity"),
                 "notes": "Optional explicit URL list for a future bounded observation pass; no crawling or downloads.",
             }
         )

@@ -365,6 +365,112 @@ verification scope. A repeated Firefox ESR 52.9.0 evidence packet should be
 reported as `duplicate_artifact_identity`, not counted as another reviewed
 artifact.
 
+## Source Observation Batch 03
+
+`SOURCE-OBSERVATION-BATCH-03` continues bounded evidence intake and strengthens
+target de-duplication. Source planning should not target already counted
+Firefox ESR 52.9.0 or Sound Blaster 16 manual/User's Guide identities as new
+gate records.
+
+Prerequisite status checks:
+
+```powershell
+python scripts/eureka_artifact_gate.py source-status --collection .eureka/artifact-gate/source-observation-batch-01
+
+python scripts/eureka_artifact_gate.py source-status --collection .eureka/artifact-gate/source-observation-batch-02
+
+python scripts/eureka_artifact_gate.py manual-status --batch .eureka/artifact-gate/manual-batch-01
+```
+
+Create the batch scaffold:
+
+```powershell
+python scripts/eureka_artifact_gate.py source-plan --gate .eureka/artifact-gate/public-alpha-seed --manual-batch .eureka/artifact-gate/manual-batch-01 --out .eureka/artifact-gate/source-observation-batch-03 --target-records 5
+
+python scripts/eureka_artifact_gate.py source-template --collection .eureka/artifact-gate/source-observation-batch-03 --out .eureka/artifact-gate/source-observation-batch-03/source_observation_template.jsonl
+```
+
+Fill:
+
+```text
+.eureka/artifact-gate/source-observation-batch-03/source_url_list.jsonl
+.eureka/artifact-gate/source-observation-batch-03/source_observations.jsonl
+```
+
+Batch 03 can target the ray-tracing article need only after it is narrowed to a
+concrete article identity. The current bounded target is:
+
+```text
+Mike Miller's Many Hats
+IEEE Computer Graphics and Applications
+Vol. 14, No. 1, January 1994, pages 4-6
+DOI 10.1109/MCG.1994.10003
+```
+
+Useful source observations for this target include:
+
+- the IEEE Computer Society publication record, as primary publication
+  metadata;
+- Ray Tracing News Vol. 7 No. 1, as independent ray-tracing context and
+  bibliographic corroboration;
+- a reputable FAQ/catalog/bibliographic source as secondary corroboration.
+
+Do not use article PDFs, downloads, file fetches, Wayback replay, hidden
+member extraction, marketplace actions, or long copied text.
+
+Run the source batch:
+
+```powershell
+python scripts/eureka_artifact_gate.py source-ingest --collection .eureka/artifact-gate/source-observation-batch-03 --observations .eureka/artifact-gate/source-observation-batch-03/source_observations.jsonl
+
+python scripts/eureka_artifact_gate.py source-validate --collection .eureka/artifact-gate/source-observation-batch-03
+
+python scripts/eureka_artifact_gate.py source-to-evidence --collection .eureka/artifact-gate/source-observation-batch-03 --out .eureka/artifact-gate/source-observation-batch-03/manual_evidence_packets.jsonl
+
+python scripts/eureka_artifact_gate.py source-report --collection .eureka/artifact-gate/source-observation-batch-03 --out .eureka/artifact-gate/source-observation-batch-03/source_collection_report.json
+
+python scripts/eureka_artifact_gate.py source-status --collection .eureka/artifact-gate/source-observation-batch-03
+```
+
+Preserve prior batches with a cumulative generated handoff:
+
+```powershell
+Get-Content .eureka\artifact-gate\source-observation-batch-01\manual_evidence_packets.jsonl, .eureka\artifact-gate\source-observation-batch-02\manual_evidence_packets.jsonl, .eureka\artifact-gate\source-observation-batch-03\manual_evidence_packets.jsonl | Set-Content -Encoding UTF8 .eureka\artifact-gate\source-observation-batch-03\manual_evidence_packets.cumulative.jsonl
+```
+
+Then refresh the manual and launch gates:
+
+```powershell
+python scripts/eureka_artifact_gate.py manual-ingest --batch .eureka/artifact-gate/manual-batch-01 --evidence .eureka/artifact-gate/source-observation-batch-03/manual_evidence_packets.cumulative.jsonl
+
+python scripts/eureka_artifact_gate.py manual-validate --batch .eureka/artifact-gate/manual-batch-01
+
+python scripts/eureka_artifact_gate.py manual-review --batch .eureka/artifact-gate/manual-batch-01 --reviewer source_observation_batch_03 --out .eureka/artifact-gate/manual-batch-01/reviewed_artifact_records.jsonl
+
+python scripts/eureka_artifact_gate.py manual-report --batch .eureka/artifact-gate/manual-batch-01 --out .eureka/artifact-gate/manual-batch-01/artifact_gate_report.json
+
+python scripts/eureka_public_alpha_launch_gate.py audit --bundle .eureka/staging/public-alpha --rehearsal-report .eureka/rehearsals/public-alpha/latest/rehearsal_report.json --artifact-gate-report .eureka/artifact-gate/manual-batch-01/artifact_gate_report.json --out .eureka/launch/public-alpha/latest
+```
+
+Expected current Batch 03 result:
+
+```text
+source observations: 3 valid / 0 invalid
+source evidence packets: 1
+artifact verified packets: 1
+cumulative manual evidence packets: 4
+reviewed artifact gate count: 3/25
+launch status: BLOCKED
+```
+
+Expected alternate outcomes:
+
+- New gate-eligible artifact: manual count may increase by one unique identity.
+- Corroboration-only evidence: record as `artifact_verified=false` or duplicate
+  corroboration; do not increment the gate.
+- No valid observations: keep the source URL list/template as a handoff and
+  report `PASS_WITH_WARNINGS`.
+
 ## Troubleshooting
 
 - No eligible targets: inspect `source_candidate_plan.jsonl`; broad or
@@ -381,6 +487,9 @@ artifact.
   source-observation handoff.
 - Launch gate still blocked: expected until artifact evidence, deployment,
   release, and approval blockers clear.
+- Duplicate identity: Firefox ESR 52.9.0 and Sound Blaster 16 manual/User's
+  Guide must not be counted again. Treat new pages for those identities as
+  corroboration only.
 
 ## Deferred
 

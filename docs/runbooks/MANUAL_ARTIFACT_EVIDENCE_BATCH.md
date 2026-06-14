@@ -146,6 +146,13 @@ manual evidence packets, two reviewed artifact records, and a still-blocked
 a duplicate Firefox ESR 52.9.0 packet, are rejected as
 `duplicate_artifact_identity` instead of increasing the gate count.
 
+`SOURCE-OBSERVATION-BATCH-03` adds a concrete article identity for `Mike
+Miller's Many Hats` in IEEE Computer Graphics and Applications, while source
+planning marks Firefox ESR 52.9.0 and Sound Blaster manual/User's Guide as
+already counted identities. The expected current result after Batch 03 is four
+manual evidence packets, three reviewed artifact records, and a still-blocked
+3/25 public-alpha artifact gate.
+
 ## Review And Report
 
 ```powershell
