@@ -97,6 +97,7 @@ _SOURCE_TYPES_INSUFFICIENT_FOR_VERIFIED = {
 _SOURCE_COLLECTION_CURATABLE_EXCLUSION_REASONS = {
     "needs_more_identity_or_source_evidence",
 }
+_SOURCE_COLLECTION_CURATED_BATCH_SIZE = 2
 _CURATED_SOURCE_COLLECTION_TARGETS: tuple[dict[str, Any], ...] = (
     {
         "artifact_gate_candidate_reason": "curated concrete Windows utility target for source observation after local candidates are exhausted",
@@ -178,6 +179,94 @@ _CURATED_SOURCE_COLLECTION_TARGETS: tuple[dict[str, Any], ...] = (
         "status": "candidate",
         "summary": "Concrete WinSCP 5.21.8 FTP/SFTP client identity selected after the local blue FTP clue stayed ambiguous.",
         "title": "WinSCP 5.21.8",
+        "verification_scope": "source_lead_only",
+    },
+    {
+        "artifact_gate_candidate_reason": "curated concrete Windows SSH/Telnet client target after the blue FTP clue remains ambiguous",
+        "artifact_gate_excluded": False,
+        "artifact_type": "software",
+        "artifact_verified": False,
+        "candidate_id": "artifact-gate-curated:putty-0-78-windows",
+        "evidence_hints": [
+            "Official PuTTY pages identify release 0.78, release date, and Windows SSH/Telnet client context.",
+            "Curated as concrete XP-era/network-client-adjacent software, not as proof of the vague blue visual clue.",
+        ],
+        "gate_eligible": False,
+        "gate_exclusion_reason": "curated_concrete_source_target",
+        "matched_queries": ["old blue FTP client for XP"],
+        "missing_information": ["bounded source observation and manual review before truth promotion"],
+        "no_download_performed": True,
+        "non_verified_reason": "curated source target is not reviewed truth until evidence is collected",
+        "platform_or_context": "Windows SSH/Telnet client",
+        "provenance": {
+            "source": "curated_source_collection_target",
+            "source_kind": "source_observation_batch_05_curation",
+            "source_ref": "SOURCE-OBSERVATION-BATCH-05",
+        },
+        "query_hints": [
+            "PuTTY 0.78",
+            "SSH and Telnet client for Windows",
+            "official PuTTY release and change-log pages",
+        ],
+        "record_state": "",
+        "review_state": "unreviewed",
+        "safe_next_action": "observe official release/product metadata only; do not download installers or standalone binaries",
+        "schema_version": CANDIDATE_SCHEMA_VERSION,
+        "source_authority": "curated_target",
+        "source_family": "curated_source_target",
+        "source_hints": [
+            "https://www.chiark.greenend.org.uk/~sgtatham/putty/releases/0.78.html",
+            "https://www.chiark.greenend.org.uk/~sgtatham/putty/changes.html",
+        ],
+        "source_index_document_id": "curated-source-target:putty-0-78-windows",
+        "source_observations": [],
+        "status": "candidate",
+        "summary": "Concrete PuTTY 0.78 Windows SSH/Telnet client identity selected after the local blue FTP clue stayed ambiguous.",
+        "title": "PuTTY 0.78 for Windows",
+        "verification_scope": "source_lead_only",
+    },
+    {
+        "artifact_gate_candidate_reason": "curated concrete Windows audio editor target after broad Windows app candidates remain unusable",
+        "artifact_gate_excluded": False,
+        "artifact_type": "software",
+        "artifact_verified": False,
+        "candidate_id": "artifact-gate-curated:audacity-3-2-5-windows",
+        "evidence_hints": [
+            "Official Audacity support pages identify version 3.2.5, release date, and Windows support context.",
+            "Curated because the broad Windows 7 apps candidates are not concrete artifact identities.",
+        ],
+        "gate_eligible": False,
+        "gate_exclusion_reason": "curated_concrete_source_target",
+        "matched_queries": ["Windows 7 apps"],
+        "missing_information": ["bounded source observation and manual review before truth promotion"],
+        "no_download_performed": True,
+        "non_verified_reason": "curated source target is not reviewed truth until evidence is collected",
+        "platform_or_context": "Windows audio editor",
+        "provenance": {
+            "source": "curated_source_collection_target",
+            "source_kind": "source_observation_batch_05_curation",
+            "source_ref": "SOURCE-OBSERVATION-BATCH-05",
+        },
+        "query_hints": [
+            "Audacity 3.2.5",
+            "Windows audio editor",
+            "official Audacity changelog/support page",
+        ],
+        "record_state": "",
+        "review_state": "unreviewed",
+        "safe_next_action": "observe official changelog/support metadata only; do not download installers or archives",
+        "schema_version": CANDIDATE_SCHEMA_VERSION,
+        "source_authority": "curated_target",
+        "source_family": "curated_source_target",
+        "source_hints": [
+            "https://support.audacityteam.org/additional-resources/changelog/older-versions/audacity-3.2/audacity-3.2.5",
+            "https://support.audacityteam.org/additional-resources/changelog/older-versions/audacity-3.2",
+        ],
+        "source_index_document_id": "curated-source-target:audacity-3-2-5-windows",
+        "source_observations": [],
+        "status": "candidate",
+        "summary": "Concrete Audacity 3.2.5 Windows audio editor identity selected from broad Windows app scope.",
+        "title": "Audacity 3.2.5 for Windows",
         "verification_scope": "source_lead_only",
     },
 )
@@ -898,7 +987,8 @@ def create_source_collection_plan(
         preferred = [item for item in selectable if str(item.get("candidate_id") or "") in manual_selected_ids]
         remaining = [item for item in selectable if str(item.get("candidate_id") or "") not in manual_selected_ids]
         selectable = [*preferred, *remaining]
-    selected_ids = {str(item.get("candidate_id") or "") for item in selectable[:target]}
+    selection_limit = min(target, _SOURCE_COLLECTION_CURATED_BATCH_SIZE) if curated_candidate_count else target
+    selected_ids = {str(item.get("candidate_id") or "") for item in selectable[:selection_limit]}
 
     plan_rows = []
     for position, candidate in enumerate(annotated_candidates, start=1):
@@ -952,6 +1042,7 @@ def create_source_collection_plan(
         "duplicate_candidate_count": sum(1 for item in plan_rows if item.get("source_collection_duplicate") is True),
         "excluded_candidate_count": sum(1 for item in plan_rows if item.get("artifact_gate_excluded") is True),
         "target_records": target,
+        "selection_limit": selection_limit,
         "gate_target_reviewed_artifacts": DEFAULT_GATE_TARGET,
         "truth_promotion_performed": False,
         "downloads_performed": False,

@@ -161,6 +161,14 @@ small curated target list. The current Batch 04 adds source-derived packets for
 after Batch 04 is six manual evidence packets, five reviewed artifact records,
 and a still-blocked 5/25 public-alpha artifact gate.
 
+`SOURCE-OBSERVATION-BATCH-05` continues that curated path after Batch 04
+identities are counted. It keeps Firefox ESR 52.9.0, Sound Blaster manual/User's
+Guide, `Mike Miller's Many Hats`, `7-Zip 19.00 for Windows`, and `WinSCP 5.21.8`
+as duplicate identities, then adds source-derived packets for `PuTTY 0.78 for
+Windows` and `Audacity 3.2.5 for Windows`. The expected current result after
+Batch 05 is eight manual evidence packets, seven reviewed artifact records, and
+a still-blocked 7/25 public-alpha artifact gate.
+
 ## Review And Report
 
 ```powershell
