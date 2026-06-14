@@ -169,6 +169,13 @@ Windows` and `Audacity 3.2.5 for Windows`. The expected current result after
 Batch 05 is eight manual evidence packets, seven reviewed artifact records, and
 a still-blocked 7/25 public-alpha artifact gate.
 
+`SOURCE-OBSERVATION-BATCH-06` continues the curated path after Batch 05
+identities are counted. It keeps the seven earlier reviewed identities as
+duplicates, then adds source-derived packets for `VLC 3.0.20 Vetinari` and
+`GIMP 2.10.38 for Windows`. The expected current result after Batch 06 is ten
+manual evidence packets, nine reviewed artifact records, and a still-blocked
+9/25 public-alpha artifact gate.
+
 ## Review And Report
 
 ```powershell

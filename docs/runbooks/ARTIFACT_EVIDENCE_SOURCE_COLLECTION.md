@@ -694,6 +694,125 @@ identity metadata. They do not imply binary verification, download safety,
 execution safety, rights clearance, marketplace safety, or public launch
 readiness.
 
+## Source Observation Batch 06
+
+`SOURCE-OBSERVATION-BATCH-06` continues the curated-target path after Batch 05.
+It treats the earlier counted identities as duplicates:
+
+```text
+Firefox ESR 52.9.0
+Creative Labs Sound Blaster 16 manual / User's Guide
+Mike Miller's Many Hats
+7-Zip 19.00 for Windows
+WinSCP 5.21.8
+PuTTY 0.78 for Windows
+Audacity 3.2.5 for Windows
+```
+
+After those identities are excluded from the next source target pass, the
+current curated targets are:
+
+```text
+VLC 3.0.20 Vetinari
+GIMP 2.10.38 for Windows
+```
+
+Prerequisite status checks:
+
+```powershell
+python scripts/eureka_artifact_gate.py source-status --collection .eureka/artifact-gate/source-observation-batch-01
+
+python scripts/eureka_artifact_gate.py source-status --collection .eureka/artifact-gate/source-observation-batch-02
+
+python scripts/eureka_artifact_gate.py source-status --collection .eureka/artifact-gate/source-observation-batch-03
+
+python scripts/eureka_artifact_gate.py source-status --collection .eureka/artifact-gate/source-observation-batch-04
+
+python scripts/eureka_artifact_gate.py source-status --collection .eureka/artifact-gate/source-observation-batch-05
+
+python scripts/eureka_artifact_gate.py manual-status --batch .eureka/artifact-gate/manual-batch-01
+```
+
+Create the batch scaffold:
+
+```powershell
+python scripts/eureka_artifact_gate.py source-plan --gate .eureka/artifact-gate/public-alpha-seed --manual-batch .eureka/artifact-gate/manual-batch-01 --out .eureka/artifact-gate/source-observation-batch-06 --target-records 5
+
+python scripts/eureka_artifact_gate.py source-template --collection .eureka/artifact-gate/source-observation-batch-06 --out .eureka/artifact-gate/source-observation-batch-06/source_observation_template.jsonl
+```
+
+Fill:
+
+```text
+.eureka/artifact-gate/source-observation-batch-06/source_url_list.jsonl
+.eureka/artifact-gate/source-observation-batch-06/source_observations.jsonl
+```
+
+Useful page observations for these targets include:
+
+- the official VideoLAN VLC 3.0.20 release page;
+- the official VideoLAN VLC 3.0.x changelog/NEWS page as corroboration;
+- the official VideoLAN Security Bulletin VLC 3.0.20 page as corroboration;
+- the official GIMP 2.10.38 release page;
+- the official GIMP downloads page as source-tarball/hash corroboration.
+
+Observe page metadata only. Do not open direct installer, standalone binary,
+source archive, package, or download-file links. Do not use Wayback, hidden
+member extraction, install/emulation behavior, marketplace actions, or any live
+download/file-fetch behavior.
+
+Run the source batch:
+
+```powershell
+python scripts/eureka_artifact_gate.py source-ingest --collection .eureka/artifact-gate/source-observation-batch-06 --observations .eureka/artifact-gate/source-observation-batch-06/source_observations.jsonl
+
+python scripts/eureka_artifact_gate.py source-validate --collection .eureka/artifact-gate/source-observation-batch-06
+
+python scripts/eureka_artifact_gate.py source-to-evidence --collection .eureka/artifact-gate/source-observation-batch-06 --out .eureka/artifact-gate/source-observation-batch-06/manual_evidence_packets.jsonl
+
+python scripts/eureka_artifact_gate.py source-report --collection .eureka/artifact-gate/source-observation-batch-06 --out .eureka/artifact-gate/source-observation-batch-06/source_collection_report.json
+
+python scripts/eureka_artifact_gate.py source-status --collection .eureka/artifact-gate/source-observation-batch-06
+```
+
+Preserve prior batches with a cumulative generated handoff:
+
+```powershell
+Get-Content .eureka\artifact-gate\source-observation-batch-01\manual_evidence_packets.jsonl, .eureka\artifact-gate\source-observation-batch-02\manual_evidence_packets.jsonl, .eureka\artifact-gate\source-observation-batch-03\manual_evidence_packets.jsonl, .eureka\artifact-gate\source-observation-batch-04\manual_evidence_packets.jsonl, .eureka\artifact-gate\source-observation-batch-05\manual_evidence_packets.jsonl, .eureka\artifact-gate\source-observation-batch-06\manual_evidence_packets.jsonl | Set-Content -Encoding UTF8 .eureka\artifact-gate\source-observation-batch-06\manual_evidence_packets.cumulative.jsonl
+```
+
+Then refresh the manual and launch gates:
+
+```powershell
+python scripts/eureka_artifact_gate.py manual-ingest --batch .eureka/artifact-gate/manual-batch-01 --evidence .eureka/artifact-gate/source-observation-batch-06/manual_evidence_packets.cumulative.jsonl
+
+python scripts/eureka_artifact_gate.py manual-validate --batch .eureka/artifact-gate/manual-batch-01
+
+python scripts/eureka_artifact_gate.py manual-review --batch .eureka/artifact-gate/manual-batch-01 --reviewer source_observation_batch_06 --out .eureka/artifact-gate/manual-batch-01/reviewed_artifact_records.jsonl
+
+python scripts/eureka_artifact_gate.py manual-report --batch .eureka/artifact-gate/manual-batch-01 --out .eureka/artifact-gate/manual-batch-01/artifact_gate_report.json
+
+python scripts/eureka_artifact_gate.py manual-status --batch .eureka/artifact-gate/manual-batch-01
+
+python scripts/eureka_public_alpha_launch_gate.py audit --bundle .eureka/staging/public-alpha --rehearsal-report .eureka/rehearsals/public-alpha/latest/rehearsal_report.json --artifact-gate-report .eureka/artifact-gate/manual-batch-01/artifact_gate_report.json --out .eureka/launch/public-alpha/latest
+```
+
+Expected current Batch 06 result:
+
+```text
+source observations: 5 valid / 0 invalid
+source evidence packets: 2
+artifact verified packets: 2
+cumulative manual evidence packets: 10
+reviewed artifact gate count: 9/25
+launch status: BLOCKED
+```
+
+The Batch 06 observations can propose `artifact_verified=true` only for artifact
+identity metadata. They do not imply binary verification, download safety,
+execution safety, rights clearance, marketplace safety, or public launch
+readiness.
+
 ## Troubleshooting
 
 - No eligible targets: inspect `source_candidate_plan.jsonl`; broad or
@@ -711,8 +830,11 @@ readiness.
 - Launch gate still blocked: expected until artifact evidence, deployment,
   release, and approval blockers clear.
 - Duplicate identity: Firefox ESR 52.9.0, Sound Blaster 16 manual/User's
-  Guide, and `Mike Miller's Many Hats` must not be counted again. Treat new
-  pages for those identities as corroboration only.
+  Guide, `Mike Miller's Many Hats`, `7-Zip 19.00 for Windows`, `WinSCP 5.21.8`,
+  `PuTTY 0.78 for Windows`, `Audacity 3.2.5 for Windows`, `VLC 3.0.20
+  Vetinari`, and `GIMP 2.10.38 for Windows` must not be counted again after
+  their respective batches. Treat new pages for those identities as
+  corroboration only.
 
 ## Deferred
 
