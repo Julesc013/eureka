@@ -277,6 +277,94 @@ This closes the first real observation loop, but it does not complete the
 reviewed-artifact gate or authorize public launch. Continue with another
 source-observation batch when more artifact evidence is needed.
 
+## Source Observation Batch 02
+
+`SOURCE-OBSERVATION-BATCH-02` extends the same lane with a new bounded source
+observation batch. It preserves Batch 01 evidence, avoids re-counting Firefox
+ESR 52.9.0, and adds one corroborated Sound Blaster manual identity packet.
+
+Create the batch scaffold:
+
+```powershell
+python scripts/eureka_artifact_gate.py source-plan --gate .eureka/artifact-gate/public-alpha-seed --manual-batch .eureka/artifact-gate/manual-batch-01 --out .eureka/artifact-gate/source-observation-batch-02 --target-records 5
+
+python scripts/eureka_artifact_gate.py source-template --collection .eureka/artifact-gate/source-observation-batch-02 --out .eureka/artifact-gate/source-observation-batch-02/source_observation_template.jsonl
+```
+
+Fill these generated files:
+
+```text
+.eureka/artifact-gate/source-observation-batch-02/source_url_list.jsonl
+.eureka/artifact-gate/source-observation-batch-02/source_observations.jsonl
+```
+
+Batch 02 records bounded page/catalog observations for the Sound Blaster manual
+candidate:
+
+- Internet Archive metadata for `Creative Labs Sound Blaster 16 manual`, as an
+  archive metadata source lead.
+- A stable catalog record for `Sound Blaster 16 User's Guide`, as independent
+  corroborating artifact identity metadata.
+- DOSDays CT1740 hardware context, as a reputable secondary platform/context
+  source lead.
+
+Archive metadata alone must remain `artifact_verified=false`. The verified
+Batch 02 packet is allowed only because the archive/source lead is corroborated
+by independent catalog metadata and hardware context. None of these observations
+imply binary, download, execution, rights, marketplace, or malware safety.
+
+Run the source batch:
+
+```powershell
+python scripts/eureka_artifact_gate.py source-ingest --collection .eureka/artifact-gate/source-observation-batch-02 --observations .eureka/artifact-gate/source-observation-batch-02/source_observations.jsonl
+
+python scripts/eureka_artifact_gate.py source-validate --collection .eureka/artifact-gate/source-observation-batch-02
+
+python scripts/eureka_artifact_gate.py source-to-evidence --collection .eureka/artifact-gate/source-observation-batch-02 --out .eureka/artifact-gate/source-observation-batch-02/manual_evidence_packets.jsonl
+
+python scripts/eureka_artifact_gate.py source-report --collection .eureka/artifact-gate/source-observation-batch-02 --out .eureka/artifact-gate/source-observation-batch-02/source_collection_report.json
+
+python scripts/eureka_artifact_gate.py source-status --collection .eureka/artifact-gate/source-observation-batch-02
+```
+
+Preserve Batch 01 when feeding Batch 02 into the active manual batch. Because
+`manual-ingest` replaces the active manual evidence file with the supplied file,
+build a cumulative generated handoff:
+
+```powershell
+Get-Content .eureka\artifact-gate\source-observation-batch-01\manual_evidence_packets.jsonl, .eureka\artifact-gate\source-observation-batch-02\manual_evidence_packets.jsonl | Set-Content -Encoding UTF8 .eureka\artifact-gate\source-observation-batch-02\manual_evidence_packets.cumulative.jsonl
+```
+
+Then refresh the manual gate:
+
+```powershell
+python scripts/eureka_artifact_gate.py manual-ingest --batch .eureka/artifact-gate/manual-batch-01 --evidence .eureka/artifact-gate/source-observation-batch-02/manual_evidence_packets.cumulative.jsonl
+
+python scripts/eureka_artifact_gate.py manual-validate --batch .eureka/artifact-gate/manual-batch-01
+
+python scripts/eureka_artifact_gate.py manual-review --batch .eureka/artifact-gate/manual-batch-01 --reviewer source_observation_batch_02 --out .eureka/artifact-gate/manual-batch-01/reviewed_artifact_records.jsonl
+
+python scripts/eureka_artifact_gate.py manual-report --batch .eureka/artifact-gate/manual-batch-01 --out .eureka/artifact-gate/manual-batch-01/artifact_gate_report.json
+
+python scripts/eureka_artifact_gate.py manual-status --batch .eureka/artifact-gate/manual-batch-01
+```
+
+Expected current Batch 02 result:
+
+```text
+source observations: 3 valid / 0 invalid
+source evidence packets: 1
+artifact verified packets: 1
+cumulative manual evidence packets: 3
+reviewed artifact gate count: 2/25
+launch status: BLOCKED
+```
+
+Manual review deduplicates verified artifact identities by artifact identity and
+verification scope. A repeated Firefox ESR 52.9.0 evidence packet should be
+reported as `duplicate_artifact_identity`, not counted as another reviewed
+artifact.
+
 ## Troubleshooting
 
 - No eligible targets: inspect `source_candidate_plan.jsonl`; broad or

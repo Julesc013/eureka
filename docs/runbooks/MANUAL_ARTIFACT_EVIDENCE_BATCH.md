@@ -138,6 +138,14 @@ feeds those packets back into this manual batch. The expected current result is
 one reviewed artifact record out of the 25-record public-alpha gate target, so
 launch remains blocked.
 
+`SOURCE-OBSERVATION-BATCH-02` adds a corroborated Sound Blaster 16 manual
+identity packet while preserving Batch 01 evidence through a cumulative
+generated handoff file. The expected current result after Batch 02 is three
+manual evidence packets, two reviewed artifact records, and a still-blocked
+2/25 public-alpha artifact gate. Repeated verified artifact identities, such as
+a duplicate Firefox ESR 52.9.0 packet, are rejected as
+`duplicate_artifact_identity` instead of increasing the gate count.
+
 ## Review And Report
 
 ```powershell
@@ -189,6 +197,9 @@ target and all deployment, release, approval, and safety gates are truly clear.
 - Invalid evidence packets: rerun `manual-validate` and fix reviewer,
   rationale, source identity, source authority, or verification scope.
 - Inconsistent counts: rerun `manual-review`, then `manual-report`.
+- Duplicate artifact identity: keep the first reviewed record and inspect the
+  duplicate packet's `artifact_identity_fields`; duplicates do not increase the
+  reviewed-artifact gate count.
 - Launch gate still blocked: expected until gate count, verified evidence,
   deployment, release, and approval blockers are resolved.
 

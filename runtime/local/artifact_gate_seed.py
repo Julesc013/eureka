@@ -659,11 +659,30 @@ def review_manual_batch(batch_dir: str | Path, *, reviewer: str, out_path: str |
     }
     records = []
     rejected = []
+    seen_identity_keys: dict[str, str] = {}
     for packet in packets:
         packet_id = str(packet.get("evidence_packet_id") or "")
         diagnostic = diagnostics.get(packet_id, {})
         if diagnostic.get("status") == "valid" and packet.get("artifact_verified") is True and packet.get("gate_eligible") is True:
-            records.append(_reviewed_record_from_manual_packet(packet, reviewer=reviewer))
+            identity_key = _manual_packet_identity_key(packet)
+            duplicate_of = seen_identity_keys.get(identity_key)
+            if duplicate_of:
+                rejected.append(
+                    {
+                        "evidence_packet_id": packet_id,
+                        "candidate_id": str(packet.get("candidate_id") or ""),
+                        "status": "duplicate",
+                        "errors": ["duplicate artifact identity already counted in this manual batch"],
+                        "gate_exclusion_reason": "duplicate_artifact_identity",
+                        "artifact_verified": True,
+                        "gate_eligible": False,
+                        "duplicate_of": duplicate_of,
+                    }
+                )
+                continue
+            record = _reviewed_record_from_manual_packet(packet, reviewer=reviewer)
+            records.append(record)
+            seen_identity_keys[identity_key] = str(record.get("reviewed_artifact_record_id") or packet_id)
         else:
             rejected.append(
                 {
@@ -1425,6 +1444,7 @@ def _reviewed_record_from_manual_packet(packet: Mapping[str, Any], *, reviewer: 
         "source_candidate_id": str(packet.get("candidate_id") or ""),
         "source_index_document_id": str(packet.get("source_index_document_id") or ""),
         "source_evidence_packet_id": packet_id,
+        "dedupe_identity_key": _manual_packet_identity_key(packet),
         "batch_id": str(packet.get("batch_id") or ""),
         "title": str(packet.get("artifact_title") or ""),
         "artifact_type": str(packet.get("artifact_type") or ""),
@@ -1460,6 +1480,19 @@ def _reviewed_record_from_manual_packet(packet: Mapping[str, Any], *, reviewer: 
         },
         "non_verified_reason": "",
     }
+
+
+def _manual_packet_identity_key(packet: Mapping[str, Any]) -> str:
+    identity = packet.get("artifact_identity_fields") if isinstance(packet.get("artifact_identity_fields"), Mapping) else {}
+    title = _first_text(identity.get("title"), identity.get("artifact_title"), packet.get("artifact_title"), packet.get("title"))
+    artifact_type = _first_text(identity.get("artifact_type"), packet.get("artifact_type"))
+    platform = _first_text(identity.get("platform_or_context"), packet.get("platform_or_context"))
+    scope = _first_text(packet.get("verification_scope"), default="artifact_identity_metadata")
+    product = _first_text(identity.get("product"))
+    version = _first_text(identity.get("version"))
+    release_date = _first_text(identity.get("release_date"))
+    parts = [title, artifact_type, platform, product, version, release_date, scope]
+    return "|".join(_normalize(part) for part in parts if str(part or "").strip())
 
 
 def _manual_batch_report(
@@ -1927,6 +1960,7 @@ def _source_observation_for_evidence(observation: Mapping[str, Any]) -> dict[str
         "publisher_or_source_name": str(observation.get("publisher_or_source_name") or ""),
         "source_type": str(observation.get("source_type") or ""),
         "source_authority": str(observation.get("source_authority") or ""),
+        "duplicate_check_result": str(observation.get("duplicate_check_result") or ""),
         "observed_artifact_fields": _string_list(observation.get("observed_artifact_fields")),
         "observation_notes": str(observation.get("observation_notes") or ""),
         "short_evidence_summary": str(observation.get("short_evidence_summary") or ""),
