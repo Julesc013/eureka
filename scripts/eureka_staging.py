@@ -64,6 +64,7 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr:
 
     package_parser = subparsers.add_parser("package", help="Create a public-safe staging bundle.")
     package_parser.add_argument("--index", required=True, help="Reviewed local index to package.")
+    package_parser.add_argument("--corpus-gate-closeout", default="", help="Optional public-safe corpus gate closeout directory.")
     package_parser.add_argument("--out", default=DEFAULT_BUNDLE_PATH, help="Output bundle directory.")
     package_parser.add_argument("--json", action="store_true")
 
@@ -85,7 +86,7 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr:
     args = parser.parse_args(argv)
     if args.command == "package":
         try:
-            status = package_bundle(args.index, args.out)
+            status = package_bundle(args.index, args.out, corpus_gate_closeout=args.corpus_gate_closeout or None)
         except (OSError, json.JSONDecodeError, ValueError) as exc:
             print(f"Staging package failed: {exc}", file=stderr)
             return 1
@@ -297,6 +298,13 @@ def _print_status(status: Mapping[str, Any], stdout: TextIO) -> None:
     print(f"status_counts: {json.dumps(status.get('status_counts') or {}, sort_keys=True)}", file=stdout)
     print(f"reviewed_record_count: {status.get('reviewed_record_count')}", file=stdout)
     print(f"artifact_verified_count: {status.get('artifact_verified_count')}", file=stdout)
+    print(f"corpus_gate_status: {status.get('corpus_gate_status')}", file=stdout)
+    print(f"reviewed_artifact_gate_count: {status.get('reviewed_artifact_gate_count')}", file=stdout)
+    print(f"public_artifact_identity_record_count: {status.get('public_artifact_identity_record_count')}", file=stdout)
+    print(f"binary_verified_count: {status.get('binary_verified_count')}", file=stdout)
+    print(f"download_safe_count: {status.get('download_safe_count')}", file=stdout)
+    print(f"execution_safe_count: {status.get('execution_safe_count')}", file=stdout)
+    print(f"rights_cleared_count: {status.get('rights_cleared_count')}", file=stdout)
     print(f"read_only: {str(status.get('read_only')).lower()}", file=stdout)
     print(f"live_metadata_enabled: {str(status.get('live_metadata_enabled')).lower()}", file=stdout)
     print(f"workbench_exposed: {str(status.get('workbench_exposed')).lower()}", file=stdout)

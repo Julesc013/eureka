@@ -71,12 +71,11 @@ PUBLIC_RESPONSE_FORBIDDEN_MARKERS = (
     "emulate_url",
     "live metadata request",
 )
-LAUNCH_BLOCKERS = (
+BASE_LAUNCH_BLOCKERS = (
     "no real external staging host is configured",
     "production hosting is not configured",
     "TLS/domain setup is not configured",
     "production auth is not configured",
-    "official reviewed-artifact gate is not completed",
     "verified artifact evidence has not been promoted",
     "public launch approval is not recorded",
     "full discovery and release promotion checks were not run in this local rehearsal",
@@ -159,6 +158,7 @@ def run_rehearsal(bundle: str | Path, *, host: str, port: int, out: str | Path, 
     manifest = _read_json(bundle_path / MANIFEST_FILE) if (bundle_path / MANIFEST_FILE).is_file() else {}
     public_index = _read_json(bundle_path / PUBLIC_INDEX_FILE) if (bundle_path / PUBLIC_INDEX_FILE).is_file() else {}
     status = bundle_status(bundle_path)
+    launch_blockers = _launch_blockers(status)
     before_hashes = _artifact_hashes(bundle_path)
 
     routes: list[dict[str, Any]] = []
@@ -217,7 +217,7 @@ def run_rehearsal(bundle: str | Path, *, host: str, port: int, out: str | Path, 
         "restart_probe_passed": restart_probe.get("status") == "pass",
         "restart_probe": restart_probe,
     }
-    if LAUNCH_BLOCKERS:
+    if launch_blockers:
         warnings.append("local rehearsal passed only as local proof; actual public launch remains blocked")
 
     report_status = "FAIL" if local_failures else ("PASS_WITH_WARNINGS" if warnings or LAUNCH_BLOCKERS else "PASS")
@@ -233,6 +233,15 @@ def run_rehearsal(bundle: str | Path, *, host: str, port: int, out: str | Path, 
         "status_counts": dict(status.get("status_counts") or manifest.get("status_counts") or {}),
         "reviewed_record_count": int(status.get("reviewed_record_count") or manifest.get("reviewed_record_count") or 0),
         "artifact_verified_count": int(status.get("artifact_verified_count") or manifest.get("artifact_verified_count") or 0),
+        "corpus_gate_status": str(status.get("corpus_gate_status") or manifest.get("corpus_gate_status") or "not_packaged"),
+        "reviewed_artifact_gate_count": int(status.get("reviewed_artifact_gate_count") or manifest.get("reviewed_artifact_gate_count") or 0),
+        "public_artifact_identity_record_count": int(status.get("public_artifact_identity_record_count") or manifest.get("public_artifact_identity_record_count") or 0),
+        "verification_scope_counts": dict(status.get("verification_scope_counts") or manifest.get("verification_scope_counts") or {}),
+        "artifact_identity_metadata_only": bool(status.get("artifact_identity_metadata_only") is True or manifest.get("artifact_identity_metadata_only") is True),
+        "binary_verified_count": int(status.get("binary_verified_count") or manifest.get("binary_verified_count") or 0),
+        "download_safe_count": int(status.get("download_safe_count") or manifest.get("download_safe_count") or 0),
+        "execution_safe_count": int(status.get("execution_safe_count") or manifest.get("execution_safe_count") or 0),
+        "rights_cleared_count": int(status.get("rights_cleared_count") or manifest.get("rights_cleared_count") or 0),
         "server_host": host,
         "server_port": actual_port,
         "public_alpha_mode": bool(api_status.get("public_alpha_mode") is True) if api_status else bool(status.get("public_alpha_mode") is True),
@@ -250,7 +259,7 @@ def run_rehearsal(bundle: str | Path, *, host: str, port: int, out: str | Path, 
         "search_checks": search_checks,
         "record_checks": record_checks,
         "rollback_or_restart_check": rollback_or_restart_check,
-        "launch_blockers": list(LAUNCH_BLOCKERS),
+        "launch_blockers": launch_blockers,
         "warnings": warnings,
         "local_rehearsal_failures": _dedupe(local_failures),
         "report_output": str(out),
@@ -354,6 +363,12 @@ def render_status(report: Mapping[str, Any]) -> str:
             f"status_counts: {json.dumps(report.get('status_counts') or {}, sort_keys=True)}",
             f"reviewed_record_count: {report.get('reviewed_record_count')}",
             f"artifact_verified_count: {report.get('artifact_verified_count')}",
+            f"corpus_gate_status: {report.get('corpus_gate_status')}",
+            f"reviewed_artifact_gate_count: {report.get('reviewed_artifact_gate_count')}",
+            f"binary_verified_count: {report.get('binary_verified_count')}",
+            f"download_safe_count: {report.get('download_safe_count')}",
+            f"execution_safe_count: {report.get('execution_safe_count')}",
+            f"rights_cleared_count: {report.get('rights_cleared_count')}",
             f"read_only: {str(report.get('read_only')).lower()}",
             f"live_metadata_enabled: {str(report.get('live_metadata_enabled')).lower()}",
             f"workbench_exposed: {str(report.get('workbench_exposed')).lower()}",
@@ -380,6 +395,13 @@ def render_markdown_report(report: Mapping[str, Any]) -> str:
             f"- Documents: {report.get('document_count')}",
             f"- Reviewed records: {report.get('reviewed_record_count')}",
             f"- Artifact verified count: {report.get('artifact_verified_count')}",
+            f"- Corpus gate status: {report.get('corpus_gate_status')}",
+            f"- Reviewed artifact gate count: {report.get('reviewed_artifact_gate_count')}",
+            f"- Artifact identity metadata only: {str(report.get('artifact_identity_metadata_only')).lower()}",
+            f"- Binary verified count: {report.get('binary_verified_count')}",
+            f"- Download safe count: {report.get('download_safe_count')}",
+            f"- Execution safe count: {report.get('execution_safe_count')}",
+            f"- Rights cleared count: {report.get('rights_cleared_count')}",
             f"- Public routes probed: {route_count}",
             f"- Blocked routes probed: {blocked_count}",
             f"- Read only: {str(report.get('read_only')).lower()}",
@@ -406,6 +428,13 @@ def render_markdown_report(report: Mapping[str, Any]) -> str:
     )
 
 
+def _launch_blockers(status: Mapping[str, Any]) -> list[str]:
+    blockers = list(BASE_LAUNCH_BLOCKERS)
+    if str(status.get("corpus_gate_status") or "") != "pass" or int(status.get("artifact_verified_count") or 0) < 25:
+        blockers.insert(4, "official reviewed-artifact gate is not completed")
+    return blockers
+
+
 def _run_route_probe(bundle: Path, *, host: str, port: int, query: str) -> dict[str, Any]:
     options = LocalSearchOptions(index="local", index_path=str(public_index_path(bundle)), metadata_fallback="none")
     service = LocalSearchService()
@@ -414,6 +443,7 @@ def _run_route_probe(bundle: Path, *, host: str, port: int, query: str) -> dict[
         search_options=options,
         deployment_source="staging_bundle",
         bundle_id=bundle_id(bundle),
+        bundle_status_payload=bundle_status(bundle),
     )
     httpd = LocalSearchHTTPServer((host, int(port)), _handler_for(service, options, None, public_alpha))
     thread = threading.Thread(target=httpd.serve_forever, daemon=True)
@@ -480,6 +510,7 @@ def _restart_probe(bundle: Path, *, host: str, port: int) -> dict[str, Any]:
         search_options=options,
         deployment_source="staging_bundle",
         bundle_id=bundle_id(bundle),
+        bundle_status_payload=bundle_status(bundle),
     )
     httpd = LocalSearchHTTPServer((host, int(port)), _handler_for(service, options, None, public_alpha))
     thread = threading.Thread(target=httpd.serve_forever, daemon=True)

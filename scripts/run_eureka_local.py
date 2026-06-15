@@ -44,6 +44,7 @@ from runtime.local.public_alpha_mvp import (
 )
 from runtime.local.search_index import DEFAULT_INDEX_PATH, SUPPORTED_INDEX_MODES, index_file_status
 from runtime.local.staging_mvp import bundle_id as staging_bundle_id
+from runtime.local.staging_mvp import bundle_status as staging_bundle_status
 from runtime.local.staging_mvp import public_index_path as staging_public_index_path
 from runtime.local.staging_mvp import validate_bundle as validate_staging_bundle
 from runtime.local.workbench_mvp import (
@@ -92,6 +93,7 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr:
 
     staging_bundle = str(args.staging_bundle or "")
     staging_id = ""
+    staging_status_payload: dict[str, Any] = {}
     if staging_bundle:
         staging_error = _staging_bundle_startup_error(args.host, args.metadata_fallback, args.allow_live_metadata, args.enable_workbench, staging_bundle)
         if staging_error:
@@ -102,6 +104,7 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr:
         args.index_path = str(staging_public_index_path(staging_bundle))
         args.metadata_fallback = "none"
         staging_id = staging_bundle_id(staging_bundle)
+        staging_status_payload = staging_bundle_status(staging_bundle)
 
     options = LocalSearchOptions(
         metadata_fallback=args.metadata_fallback,
@@ -127,6 +130,7 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr:
             search_options=options,
             deployment_source="staging_bundle" if staging_bundle else "local_index",
             bundle_id=staging_id,
+            bundle_status_payload=staging_status_payload,
         )
         if args.public_alpha
         else None

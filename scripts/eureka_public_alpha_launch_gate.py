@@ -16,6 +16,8 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
+from runtime.local.corpus_gate_closeout import CLOSEOUT_JSON as CORPUS_CLOSEOUT_FILE
+from runtime.local.corpus_gate_closeout import PUBLIC_ARTIFACT_RECORDS_JSONL, PUBLIC_EVIDENCE_SUMMARY_JSONL
 from runtime.local.staging_mvp import MANIFEST_FILE, PUBLIC_INDEX_FILE, RUNTIME_CONFIG_FILE, bundle_status, validate_bundle
 from scripts.eureka_public_alpha_rehearsal import validate_report as validate_rehearsal_report
 
@@ -67,6 +69,7 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr:
     audit_parser.add_argument("--approval-file", default="")
     audit_parser.add_argument("--full-discovery-report", default="")
     audit_parser.add_argument("--artifact-gate-report", default="")
+    audit_parser.add_argument("--corpus-gate-closeout", default="")
     audit_parser.add_argument("--verified-evidence-report", default="")
     audit_parser.add_argument("--release-check-report", default="")
     audit_parser.add_argument("--production-auth-posture", choices=("approved", "missing", "unknown"), default="missing")
@@ -87,6 +90,7 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr:
             "approval_file": args.approval_file,
             "full_discovery_report": args.full_discovery_report,
             "artifact_gate_report": args.artifact_gate_report,
+            "corpus_gate_closeout": args.corpus_gate_closeout,
             "verified_evidence_report": args.verified_evidence_report,
             "release_check_report": args.release_check_report,
             "production_auth_posture": args.production_auth_posture,
@@ -167,7 +171,10 @@ def audit_launch_gate(
 
     optional_sources = _optional_sources(opts)
     official_gate = _official_artifact_gate(optional_sources.get("artifact_gate_report"))
+    corpus_gate = _corpus_gate_closeout(optional_sources.get("corpus_gate_closeout"))
     verified_evidence = _generic_report_status(optional_sources.get("verified_evidence_report"), default="unknown")
+    if corpus_gate["status"] == "pass":
+        verified_evidence = {"status": "pass", "evidence": corpus_gate["evidence"]}
     full_discovery = _generic_report_status(optional_sources.get("full_discovery_report"), default="not_run")
     release_promotion = _generic_report_status(optional_sources.get("release_check_report"), default="not_run")
     approval = _approval_status(optional_sources.get("approval_file"))
@@ -222,7 +229,14 @@ def audit_launch_gate(
             "staging bundle reports artifact_verified_count=0",
             evidence="staging bundle manifest",
         )
-    if int(staging_status.get("reviewed_record_count") or manifest.get("reviewed_record_count") or 0) > 0:
+    if corpus_gate["status"] == "pass" and artifact_verified_count != int(corpus_gate.get("artifact_verified_count") or 0):
+        add_blocker(
+            "corpus_evidence_blockers",
+            "staging_corpus_count_mismatch",
+            "staging bundle artifact count does not match corpus gate closeout",
+            evidence=corpus_gate["evidence"],
+        )
+    if corpus_gate["status"] != "pass" and int(staging_status.get("reviewed_record_count") or manifest.get("reviewed_record_count") or 0) > 0:
         add_blocker(
             "corpus_evidence_blockers",
             "local_demo_reviewed_records_not_official_gate",
@@ -237,7 +251,7 @@ def audit_launch_gate(
             evidence=official_gate["evidence"],
             status=official_gate["status"],
         )
-    if verified_evidence["status"] != "pass":
+    if verified_evidence["status"] != "pass" and corpus_gate["status"] != "pass":
         add_blocker(
             "corpus_evidence_blockers",
             "verified_artifact_evidence_not_promoted",
@@ -295,7 +309,7 @@ def audit_launch_gate(
             evidence=official_gate["evidence"],
             status="unknown",
         )
-    if verified_evidence["status"] == "unknown":
+    if verified_evidence["status"] == "unknown" and corpus_gate["status"] != "pass":
         add_blocker(
             "unknown_authority_blockers",
             "verified_evidence_authority_unknown",
@@ -340,6 +354,16 @@ def audit_launch_gate(
         "status_counts": dict(staging_status.get("status_counts") or manifest.get("status_counts") or {}),
         "local_reviewed_record_count": int(staging_status.get("reviewed_record_count") or manifest.get("reviewed_record_count") or 0),
         "artifact_verified_count": artifact_verified_count,
+        "corpus_gate_closeout_status": corpus_gate["status"],
+        "corpus_gate_closeout_digest": corpus_gate["digest"],
+        "reviewed_artifact_gate_count": corpus_gate["reviewed_artifact_gate_count"],
+        "public_artifact_identity_record_count": corpus_gate["public_artifact_identity_record_count"],
+        "public_artifact_evidence_summary_count": corpus_gate["public_artifact_evidence_summary_count"],
+        "verification_scope_counts": corpus_gate["verification_scope_counts"],
+        "binary_verified_count": corpus_gate["binary_verified_count"],
+        "download_safe_count": corpus_gate["download_safe_count"],
+        "execution_safe_count": corpus_gate["execution_safe_count"],
+        "rights_cleared_count": corpus_gate["rights_cleared_count"],
         "official_reviewed_artifact_count": official_gate["count"],
         "official_reviewed_artifact_gate_target": official_gate["target"],
         "official_reviewed_artifact_gate_status": official_gate["status"],
@@ -417,6 +441,16 @@ def validate_launch_gate_report(report_path: str | Path) -> list[str]:
         "status_counts",
         "local_reviewed_record_count",
         "artifact_verified_count",
+        "corpus_gate_closeout_status",
+        "corpus_gate_closeout_digest",
+        "reviewed_artifact_gate_count",
+        "public_artifact_identity_record_count",
+        "public_artifact_evidence_summary_count",
+        "verification_scope_counts",
+        "binary_verified_count",
+        "download_safe_count",
+        "execution_safe_count",
+        "rights_cleared_count",
         "official_reviewed_artifact_count",
         "official_reviewed_artifact_gate_target",
         "official_reviewed_artifact_gate_status",
@@ -457,6 +491,8 @@ def validate_launch_gate_report(report_path: str | Path) -> list[str]:
         errors.append("local_rehearsal_status must be GREEN, RED, or UNKNOWN")
     if report.get("public_readonly_status") not in {"pass", "fail", "unknown"}:
         errors.append("public_readonly_status must be pass, fail, or unknown")
+    if report.get("corpus_gate_closeout_status") not in {"pass", "fail", "blocked", "unknown", "missing"}:
+        errors.append("corpus_gate_closeout_status must be pass, fail, blocked, unknown, or missing")
     if report.get("workbench_exposure_status") not in {"not_exposed", "exposed", "unknown"}:
         errors.append("workbench_exposure_status must be not_exposed, exposed, or unknown")
     if report.get("live_metadata_exposure_status") not in {"not_exposed", "exposed", "unknown"}:
@@ -477,6 +513,9 @@ def validate_launch_gate_report(report_path: str | Path) -> list[str]:
         errors.append("non-READY launch_status requires blockers")
     if report.get("artifact_verified_count") == 0 and report.get("launch_status") == "READY":
         errors.append("artifact_verified_count=0 cannot be launch READY")
+    for key in ("binary_verified_count", "download_safe_count", "execution_safe_count", "rights_cleared_count"):
+        if int(report.get(key) or 0) != 0:
+            errors.append(f"{key} must remain 0")
     mutation = report.get("mutation_checks") if isinstance(report.get("mutation_checks"), Mapping) else {}
     for key in ("bundle_mutated", "rehearsal_report_mutated", "local_review_artifacts_mutated", "any_input_mutated"):
         if mutation.get(key) is not False:
@@ -497,6 +536,9 @@ def render_status(report: Mapping[str, Any]) -> str:
         f"report status: {report.get('status')}",
         f"blocker count: {len(report.get('blockers') or [])}",
         f"next recommended task: {report.get('next_recommended_task')}",
+        f"corpus gate closeout: {report.get('corpus_gate_closeout_status')}",
+        f"artifact verified count: {report.get('artifact_verified_count')}",
+        f"reviewed artifact gate count: {report.get('reviewed_artifact_gate_count')}",
         "blockers by category:",
     ]
     categories = report.get("blocker_categories") if isinstance(report.get("blocker_categories"), Mapping) else {}
@@ -555,6 +597,13 @@ def render_markdown_report(report: Mapping[str, Any]) -> str:
             f"- Workbench exposure: {report.get('workbench_exposure_status')}",
             f"- Live metadata exposure: {report.get('live_metadata_exposure_status')}",
             f"- Artifact verified count: {report.get('artifact_verified_count')}",
+            f"- Corpus gate closeout: {report.get('corpus_gate_closeout_status')}",
+            f"- Reviewed artifact gate count: {report.get('reviewed_artifact_gate_count')}",
+            f"- Public artifact identity records: {report.get('public_artifact_identity_record_count')}",
+            f"- Binary verified count: {report.get('binary_verified_count')}",
+            f"- Download safe count: {report.get('download_safe_count')}",
+            f"- Execution safe count: {report.get('execution_safe_count')}",
+            f"- Rights cleared count: {report.get('rights_cleared_count')}",
             "",
             "## Recommended Next Task",
             "",
@@ -671,6 +720,42 @@ def _official_artifact_gate(source: Mapping[str, Any] | None) -> dict[str, Any]:
     }
 
 
+def _corpus_gate_closeout(source: Mapping[str, Any] | None) -> dict[str, Any]:
+    if not source or not source.get("present"):
+        return {
+            "status": "missing",
+            "digest": "",
+            "reviewed_artifact_gate_count": 0,
+            "artifact_verified_count": 0,
+            "public_artifact_identity_record_count": 0,
+            "public_artifact_evidence_summary_count": 0,
+            "verification_scope_counts": {},
+            "binary_verified_count": 0,
+            "download_safe_count": 0,
+            "execution_safe_count": 0,
+            "rights_cleared_count": 0,
+            "evidence": "corpus gate closeout not provided",
+        }
+    payload = source.get("payload") if isinstance(source.get("payload"), Mapping) else {}
+    status = str(payload.get("corpus_gate_status") or _status_from_payload(payload)).strip().casefold()
+    if status not in {"pass", "fail", "blocked"}:
+        status = "unknown"
+    return {
+        "status": status,
+        "digest": _file_sha256(Path(str(source.get("path") or ""))) if source.get("present") else "",
+        "reviewed_artifact_gate_count": int(payload.get("reviewed_artifact_gate_count") or 0),
+        "artifact_verified_count": int(payload.get("artifact_verified_count") or 0),
+        "public_artifact_identity_record_count": int(payload.get("public_artifact_identity_record_count") or 0),
+        "public_artifact_evidence_summary_count": int(payload.get("public_artifact_evidence_summary_count") or 0),
+        "verification_scope_counts": dict(payload.get("verification_scope_counts") or {}),
+        "binary_verified_count": int(payload.get("binary_verified_count") or 0),
+        "download_safe_count": int(payload.get("download_safe_count") or 0),
+        "execution_safe_count": int(payload.get("execution_safe_count") or 0),
+        "rights_cleared_count": int(payload.get("rights_cleared_count") or 0),
+        "evidence": str(source.get("path") or "corpus gate closeout"),
+    }
+
+
 def _generic_report_status(source: Mapping[str, Any] | None, *, default: str) -> dict[str, str]:
     if not source or not source.get("present"):
         return {"status": default, "evidence": "report not provided"}
@@ -697,7 +782,7 @@ def _approval_status(source: Mapping[str, Any] | None) -> dict[str, str]:
 
 def _optional_sources(options: Mapping[str, Any]) -> dict[str, dict[str, Any]]:
     result = {}
-    for key in ("approval_file", "full_discovery_report", "artifact_gate_report", "verified_evidence_report", "release_check_report"):
+    for key in ("approval_file", "full_discovery_report", "artifact_gate_report", "corpus_gate_closeout", "verified_evidence_report", "release_check_report"):
         raw = str(options.get(key) or "")
         if not raw:
             result[key] = {"path": "", "present": False, "payload": {}, "read_error": ""}
@@ -825,6 +910,9 @@ def _artifact_hashes(bundle: Path, rehearsal_report: Path) -> dict[str, dict[str
         "bundle_manifest": bundle / MANIFEST_FILE,
         "bundle_public_index": bundle / PUBLIC_INDEX_FILE,
         "bundle_runtime_config": bundle / RUNTIME_CONFIG_FILE,
+        "bundle_corpus_gate_closeout": bundle / CORPUS_CLOSEOUT_FILE,
+        "bundle_public_artifact_identity_records": bundle / PUBLIC_ARTIFACT_RECORDS_JSONL,
+        "bundle_public_artifact_evidence_summary": bundle / PUBLIC_EVIDENCE_SUMMARY_JSONL,
         "rehearsal_report": rehearsal_report,
     }
     for raw in LOCAL_REVIEW_ARTIFACTS:
@@ -850,9 +938,17 @@ def _mutation_checks(before: Mapping[str, Mapping[str, Any]], after: Mapping[str
             "present_after": bool(after_item.get("present")),
             "mutated": before_item.get("sha256") != after_item.get("sha256"),
         }
-    bundle_mutated = any(per_artifact.get(name, {}).get("mutated") for name in ("bundle_manifest", "bundle_public_index", "bundle_runtime_config"))
+    bundle_file_names = {
+        "bundle_manifest",
+        "bundle_public_index",
+        "bundle_runtime_config",
+        "bundle_corpus_gate_closeout",
+        "bundle_public_artifact_identity_records",
+        "bundle_public_artifact_evidence_summary",
+    }
+    bundle_mutated = any(per_artifact.get(name, {}).get("mutated") for name in bundle_file_names)
     rehearsal_mutated = bool(per_artifact.get("rehearsal_report", {}).get("mutated"))
-    local_review_mutated = any(item.get("mutated") for name, item in per_artifact.items() if name not in {"bundle_manifest", "bundle_public_index", "bundle_runtime_config", "rehearsal_report"})
+    local_review_mutated = any(item.get("mutated") for name, item in per_artifact.items() if name not in {*bundle_file_names, "rehearsal_report"})
     return {
         "per_artifact": per_artifact,
         "bundle_mutated": bundle_mutated,

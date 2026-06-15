@@ -202,6 +202,11 @@ evidence packets, twenty-five reviewed artifact records, and a passed 25/25
 public-alpha corpus gate. Public launch still remains blocked until
 non-corpus gates are closed.
 
+After Batch 09, use `docs/runbooks/PUBLIC_ALPHA_CORPUS_GATE_CLOSEOUT.md` to
+export the 25 public-safe artifact identity records, package them into the
+public-alpha staging bundle, and update the launch-gate audit without claiming
+binary/download/execution/rights safety or public launch readiness.
+
 ## Review And Report
 
 ```powershell
@@ -231,16 +236,16 @@ Expected current result without real evidence is `PASS_WITH_WARNINGS`,
 Feed the manual batch report into the public-alpha launch gate:
 
 ```powershell
-python scripts/eureka_public_alpha_launch_gate.py audit --bundle .eureka/staging/public-alpha --rehearsal-report .eureka/rehearsals/public-alpha/latest/rehearsal_report.json --artifact-gate-report .eureka/artifact-gate/manual-batch-01/artifact_gate_report.json --out .eureka/launch/public-alpha/latest
+python scripts/eureka_public_alpha_launch_gate.py audit --bundle .eureka/staging/public-alpha --rehearsal-report .eureka/rehearsals/public-alpha/latest/rehearsal_report.json --artifact-gate-report .eureka/artifact-gate/manual-batch-01/artifact_gate_report.json --corpus-gate-closeout .eureka/corpus-gate/public-alpha/latest/corpus_gate_closeout.json --out .eureka/launch/public-alpha/latest
 
 python scripts/eureka_public_alpha_launch_gate.py validate-report --report .eureka/launch/public-alpha/latest/launch_gate_report.json
 
 python scripts/eureka_public_alpha_launch_gate.py status --report .eureka/launch/public-alpha/latest/launch_gate_report.json
 ```
 
-The launch gate can consume the manual batch report and remove unknown
-artifact-gate authority. It must still remain blocked unless the artifact gate
-target and all deployment, release, approval, and safety gates are truly clear.
+The launch gate can consume the manual batch report and corpus closeout to
+remove corpus count blockers. It must still remain blocked unless deployment,
+release, approval, and safety gates are truly clear.
 
 ## Troubleshooting
 

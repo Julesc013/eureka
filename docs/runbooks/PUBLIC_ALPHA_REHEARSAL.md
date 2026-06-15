@@ -16,12 +16,16 @@ python scripts/eureka_review.py accept --index .eureka/local_search_index.json -
 
 python scripts/eureka_index.py build --source local_demo --reviewed-records .eureka/local_reviewed_records.jsonl --out .eureka/local_search_index.reviewed.json
 
-python scripts/eureka_staging.py package --index .eureka/local_search_index.reviewed.json --out .eureka/staging/public-alpha
+python scripts/eureka_public_alpha_corpus_gate.py closeout --artifact-gate-report .eureka/artifact-gate/manual-batch-01/artifact_gate_report.json --manual-batch .eureka/artifact-gate/manual-batch-01 --out .eureka/corpus-gate/public-alpha/latest
+
+python scripts/eureka_staging.py package --index .eureka/local_search_index.reviewed.json --corpus-gate-closeout .eureka/corpus-gate/public-alpha/latest --out .eureka/staging/public-alpha
 
 python scripts/eureka_staging.py validate --bundle .eureka/staging/public-alpha
 ```
 
 Generated `.eureka` files are local artifacts. Do not commit them.
+If the manual artifact gate is not yet 25/25, omit the corpus closeout step and
+expect corpus blockers to remain.
 
 ## Run The Rehearsal
 
@@ -54,13 +58,15 @@ After the rehearsal report is valid, run the launch-blocker closeout audit when
 you need a machine-checkable launch gate:
 
 ```powershell
-python scripts/eureka_public_alpha_launch_gate.py audit --bundle .eureka/staging/public-alpha --rehearsal-report .eureka/rehearsals/public-alpha/latest/rehearsal_report.json --out .eureka/launch/public-alpha/latest
+python scripts/eureka_public_alpha_launch_gate.py audit --bundle .eureka/staging/public-alpha --rehearsal-report .eureka/rehearsals/public-alpha/latest/rehearsal_report.json --artifact-gate-report .eureka/artifact-gate/manual-batch-01/artifact_gate_report.json --corpus-gate-closeout .eureka/corpus-gate/public-alpha/latest/corpus_gate_closeout.json --out .eureka/launch/public-alpha/latest
 python scripts/eureka_public_alpha_launch_gate.py validate-report --report .eureka/launch/public-alpha/latest/launch_gate_report.json
 python scripts/eureka_public_alpha_launch_gate.py status --report .eureka/launch/public-alpha/latest/launch_gate_report.json
 ```
 
 See `docs/runbooks/PUBLIC_ALPHA_LAUNCH_BLOCKER_CLOSEOUT.md` for blocker
 categories, `--fail-on-blocked`, and future evidence inputs.
+See `docs/runbooks/PUBLIC_ALPHA_CORPUS_GATE_CLOSEOUT.md` for the public-safe
+artifact identity export that makes staging and launch-gate corpus counts agree.
 
 The JSON report includes:
 

@@ -177,16 +177,18 @@ Below 25 reviewed artifacts, the gate remains blocked.
 ## Launch Gate
 
 ```powershell
-python scripts/eureka_public_alpha_launch_gate.py audit --bundle .eureka/staging/public-alpha --rehearsal-report .eureka/rehearsals/public-alpha/latest/rehearsal_report.json --artifact-gate-report .eureka/artifact-gate/manual-batch-01/artifact_gate_report.json --out .eureka/launch/public-alpha/latest
+python scripts/eureka_public_alpha_launch_gate.py audit --bundle .eureka/staging/public-alpha --rehearsal-report .eureka/rehearsals/public-alpha/latest/rehearsal_report.json --artifact-gate-report .eureka/artifact-gate/manual-batch-01/artifact_gate_report.json --corpus-gate-closeout .eureka/corpus-gate/public-alpha/latest/corpus_gate_closeout.json --out .eureka/launch/public-alpha/latest
 
 python scripts/eureka_public_alpha_launch_gate.py validate-report --report .eureka/launch/public-alpha/latest/launch_gate_report.json
 
 python scripts/eureka_public_alpha_launch_gate.py status --report .eureka/launch/public-alpha/latest/launch_gate_report.json
 ```
 
-The launch gate consumes the updated manual batch report. It must remain blocked
-unless the reviewed-artifact target and all deployment, release, approval, and
-safety gates are genuinely satisfied.
+The launch gate consumes the updated manual batch report and, after Batch 09,
+the public-alpha corpus gate closeout. Use
+`docs/runbooks/PUBLIC_ALPHA_CORPUS_GATE_CLOSEOUT.md` to create that closeout
+and rebuild staging. Launch must remain blocked unless deployment, release,
+approval, and safety gates are genuinely satisfied.
 
 ## Expected No-Observation Result
 

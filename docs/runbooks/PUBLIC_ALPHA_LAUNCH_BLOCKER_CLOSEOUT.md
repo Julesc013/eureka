@@ -16,10 +16,15 @@ python scripts/eureka_review.py accept --index .eureka/local_search_index.json -
 
 python scripts/eureka_index.py build --source local_demo --reviewed-records .eureka/local_reviewed_records.jsonl --out .eureka/local_search_index.reviewed.json
 
-python scripts/eureka_staging.py package --index .eureka/local_search_index.reviewed.json --out .eureka/staging/public-alpha
+python scripts/eureka_public_alpha_corpus_gate.py closeout --artifact-gate-report .eureka/artifact-gate/manual-batch-01/artifact_gate_report.json --manual-batch .eureka/artifact-gate/manual-batch-01 --out .eureka/corpus-gate/public-alpha/latest
+
+python scripts/eureka_staging.py package --index .eureka/local_search_index.reviewed.json --corpus-gate-closeout .eureka/corpus-gate/public-alpha/latest --out .eureka/staging/public-alpha
 
 python scripts/eureka_staging.py validate --bundle .eureka/staging/public-alpha
 ```
+
+If the corpus gate is not yet 25/25, omit the corpus closeout command and
+expect corpus/evidence blockers to remain.
 
 Run and validate the local rehearsal:
 
@@ -34,7 +39,7 @@ Generated `.eureka` files are local ignored artifacts. Do not commit them.
 ## Audit
 
 ```powershell
-python scripts/eureka_public_alpha_launch_gate.py audit --bundle .eureka/staging/public-alpha --rehearsal-report .eureka/rehearsals/public-alpha/latest/rehearsal_report.json --out .eureka/launch/public-alpha/latest
+python scripts/eureka_public_alpha_launch_gate.py audit --bundle .eureka/staging/public-alpha --rehearsal-report .eureka/rehearsals/public-alpha/latest/rehearsal_report.json --artifact-gate-report .eureka/artifact-gate/manual-batch-01/artifact_gate_report.json --corpus-gate-closeout .eureka/corpus-gate/public-alpha/latest/corpus_gate_closeout.json --out .eureka/launch/public-alpha/latest
 ```
 
 The audit reads the staging bundle and rehearsal report, checks public-alpha
@@ -84,16 +89,16 @@ The report groups blockers into:
 - `approval_blockers`
 - `unknown_authority_blockers`
 
-Current blockers without a supplied artifact gate report include missing
-official artifact gate evidence, missing verified artifact evidence promotion,
-`artifact_verified_count=0`, missing external staging host, missing production
-hosting, missing TLS/domain, missing production auth or approved no-auth
-posture, missing full discovery/release promotion checks, and missing public
-launch approval. After `SOURCE-OBSERVATION-BATCH-09`, the generated manual batch
-artifact gate report may show `25/25` and resolve the reviewed-artifact count
-blocker when passed with `--artifact-gate-report`; launch still remains blocked
-until verified-evidence promotion, deployment, release-process, approval, and
-unknown-authority blockers are cleared.
+Current blockers without a supplied artifact gate report and corpus closeout
+include missing official artifact gate evidence, missing verified artifact
+evidence promotion, `artifact_verified_count=0`, missing external staging host,
+missing production hosting, missing TLS/domain, missing production auth or
+approved no-auth posture, missing full discovery/release promotion checks, and
+missing public launch approval. After `SOURCE-OBSERVATION-BATCH-09`, use
+`docs/runbooks/PUBLIC_ALPHA_CORPUS_GATE_CLOSEOUT.md` to create the public-safe
+closeout and rebuild staging. That resolves the corpus count/staging mismatch
+blockers, but launch still remains blocked until deployment, release-process,
+auth, and approval blockers are cleared.
 
 Local demo reviewed records do not satisfy the official reviewed-artifact gate.
 Fixture, fallback, live metadata, and rehearsal outputs are not verified
@@ -139,6 +144,10 @@ manual batch artifact gate report, not treat source leads as public launch
 approval. `SOURCE-OBSERVATION-BATCH-09` is the first expected local batch that
 can close the reviewed-artifact count at `25/25`; it is still not a public
 launch approval.
+
+For packaging the 25/25 artifact identity metadata into the public-alpha
+staging/rehearsal path, see
+`docs/runbooks/PUBLIC_ALPHA_CORPUS_GATE_CLOSEOUT.md`.
 
 ## Local Readiness Vs Launch Readiness
 

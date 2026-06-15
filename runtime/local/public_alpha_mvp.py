@@ -49,11 +49,13 @@ class PublicAlphaService:
         search_options: LocalSearchOptions,
         deployment_source: str = "local_index",
         bundle_id: str = "",
+        bundle_status_payload: Mapping[str, Any] | None = None,
     ) -> None:
         self._search_service = search_service
         self._search_options = _public_options(search_options)
         self._deployment_source = _safe_text(deployment_source or "local_index")
         self._bundle_id = _safe_text(bundle_id)
+        self._bundle_status_payload = dict(bundle_status_payload or {})
 
     @property
     def search_options(self) -> LocalSearchOptions:
@@ -61,6 +63,7 @@ class PublicAlphaService:
 
     def status(self) -> dict[str, Any]:
         status = index_file_status(self._search_options.index, self._search_options.index_path)
+        corpus = self._corpus_status(status)
         return {
             "schema_version": "eureka.public_alpha_status.v0",
             "task_id": TASK_ID,
@@ -74,7 +77,18 @@ class PublicAlphaService:
             "index_loaded": bool(status.get("index_loaded")),
             "index_document_count": int(status.get("index_document_count") or 0),
             "reviewed_record_count": int(status.get("reviewed_record_count") or 0),
-            "artifact_verified_count": int(status.get("artifact_verified_count") or 0),
+            "public_search_index_artifact_verified_count": int(status.get("artifact_verified_count") or 0),
+            "artifact_verified_count": corpus["artifact_verified_count"],
+            "corpus_gate_status": corpus["corpus_gate_status"],
+            "reviewed_artifact_gate_count": corpus["reviewed_artifact_gate_count"],
+            "public_artifact_identity_record_count": corpus["public_artifact_identity_record_count"],
+            "public_artifact_evidence_summary_count": corpus["public_artifact_evidence_summary_count"],
+            "verification_scope_counts": corpus["verification_scope_counts"],
+            "artifact_identity_metadata_only": corpus["artifact_identity_metadata_only"],
+            "binary_verified_count": corpus["binary_verified_count"],
+            "download_safe_count": corpus["download_safe_count"],
+            "execution_safe_count": corpus["execution_safe_count"],
+            "rights_cleared_count": corpus["rights_cleared_count"],
             "metadata_fallback": "none",
             "fallback_mode": "none",
             "live_metadata_enabled": False,
@@ -96,6 +110,24 @@ class PublicAlphaService:
             "safe_public_actions": ["view_record"],
             "unsafe_actions_exposed": False,
             "no_mutation": _public_no_mutation(),
+        }
+
+    def _corpus_status(self, index_status: Mapping[str, Any]) -> dict[str, Any]:
+        bundle = self._bundle_status_payload
+        corpus_packaged = bool(bundle.get("corpus_gate_status") and bundle.get("corpus_gate_status") != "not_packaged")
+        artifact_verified_count = int(bundle.get("artifact_verified_count") or 0) if corpus_packaged else int(index_status.get("artifact_verified_count") or 0)
+        return {
+            "corpus_gate_status": _safe_text(bundle.get("corpus_gate_status") or "not_packaged"),
+            "reviewed_artifact_gate_count": int(bundle.get("reviewed_artifact_gate_count") or 0),
+            "artifact_verified_count": artifact_verified_count,
+            "public_artifact_identity_record_count": int(bundle.get("public_artifact_identity_record_count") or 0),
+            "public_artifact_evidence_summary_count": int(bundle.get("public_artifact_evidence_summary_count") or 0),
+            "verification_scope_counts": dict(bundle.get("verification_scope_counts") or {}),
+            "artifact_identity_metadata_only": bool(bundle.get("artifact_identity_metadata_only") is True),
+            "binary_verified_count": int(bundle.get("binary_verified_count") or 0),
+            "download_safe_count": int(bundle.get("download_safe_count") or 0),
+            "execution_safe_count": int(bundle.get("execution_safe_count") or 0),
+            "rights_cleared_count": int(bundle.get("rights_cleared_count") or 0),
         }
 
     def search(self, query: str) -> dict[str, Any]:
@@ -426,6 +458,13 @@ def _status_block(status: Mapping[str, Any]) -> str:
             f"<p><strong>Index documents:</strong> {_e(str(status.get('index_document_count') or 0))}</p>",
             f"<p><strong>Reviewed records:</strong> {_e(str(status.get('reviewed_record_count') or 0))}</p>",
             f"<p><strong>Artifact verified count:</strong> {_e(str(status.get('artifact_verified_count') or 0))}</p>",
+            f"<p><strong>Corpus gate:</strong> {_e(str(status.get('corpus_gate_status') or 'not_packaged'))}</p>",
+            f"<p><strong>Reviewed artifact gate:</strong> {_e(str(status.get('reviewed_artifact_gate_count') or 0))}</p>",
+            f"<p><strong>Artifact identity metadata only:</strong> {_e(str(status.get('artifact_identity_metadata_only')).lower())}</p>",
+            f"<p><strong>Binary verified:</strong> {_e(str(status.get('binary_verified_count') or 0))}</p>",
+            f"<p><strong>Download safe:</strong> {_e(str(status.get('download_safe_count') or 0))}</p>",
+            f"<p><strong>Execution safe:</strong> {_e(str(status.get('execution_safe_count') or 0))}</p>",
+            f"<p><strong>Rights cleared:</strong> {_e(str(status.get('rights_cleared_count') or 0))}</p>",
             f"<p><strong>Metadata fallback:</strong> {_e(str(status.get('metadata_fallback') or 'none'))}</p>",
             f"<p><strong>Live metadata enabled:</strong> {_e(str(status.get('live_metadata_enabled')).lower())}</p>",
             f"<p><strong>Public live fanout:</strong> {_e(str(status.get('public_live_fanout')).lower())}</p>",

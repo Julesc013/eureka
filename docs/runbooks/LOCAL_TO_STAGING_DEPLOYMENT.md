@@ -39,6 +39,18 @@ index. It does not include the raw review ledger, raw reviewed-record JSONL,
 Workbench tokens/config, live metadata config, secrets, absolute local paths,
 or private generated artifacts.
 
+After the manual artifact gate reaches 25/25, package the public-safe corpus
+gate closeout into the bundle:
+
+```powershell
+python scripts/eureka_public_alpha_corpus_gate.py closeout --artifact-gate-report .eureka/artifact-gate/manual-batch-01/artifact_gate_report.json --manual-batch .eureka/artifact-gate/manual-batch-01 --out .eureka/corpus-gate/public-alpha/latest
+
+python scripts/eureka_staging.py package --index .eureka/local_search_index.reviewed.json --corpus-gate-closeout .eureka/corpus-gate/public-alpha/latest --out .eureka/staging/public-alpha
+```
+
+This adds public-safe artifact identity and evidence summary files to the
+bundle. See `docs/runbooks/PUBLIC_ALPHA_CORPUS_GATE_CLOSEOUT.md`.
+
 ## Validate And Inspect
 
 ```powershell

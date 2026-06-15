@@ -11,6 +11,12 @@ import re
 import subprocess
 from typing import Any
 
+from runtime.local.corpus_gate_closeout import (
+    CLOSEOUT_JSON as CORPUS_CLOSEOUT_FILE,
+    PUBLIC_ARTIFACT_RECORDS_JSONL,
+    PUBLIC_EVIDENCE_SUMMARY_JSONL,
+    validate_closeout,
+)
 from runtime.local.search_index import load_index, render_index_json, stats_payload, validate_index
 
 
@@ -20,7 +26,9 @@ RUNTIME_CONFIG_SCHEMA_VERSION = "eureka.local_staging_public_runtime_config.v0"
 PUBLIC_INDEX_FILE = "public_search_index.json"
 MANIFEST_FILE = "manifest.json"
 RUNTIME_CONFIG_FILE = "public_runtime_config.json"
-ALLOWED_BUNDLE_FILES = frozenset({MANIFEST_FILE, PUBLIC_INDEX_FILE, RUNTIME_CONFIG_FILE})
+REQUIRED_BUNDLE_FILES = frozenset({MANIFEST_FILE, PUBLIC_INDEX_FILE, RUNTIME_CONFIG_FILE})
+CORPUS_BUNDLE_FILES = frozenset({CORPUS_CLOSEOUT_FILE, PUBLIC_ARTIFACT_RECORDS_JSONL, PUBLIC_EVIDENCE_SUMMARY_JSONL})
+ALLOWED_BUNDLE_FILES = REQUIRED_BUNDLE_FILES | CORPUS_BUNDLE_FILES
 SAFE_ACTIONS = ("view_record",)
 FORBIDDEN_BUNDLE_MARKERS = (
     ".eureka",
@@ -39,9 +47,10 @@ FORBIDDEN_BUNDLE_MARKERS = (
 _WINDOWS_ABSOLUTE_PATH = re.compile(r"\b[A-Za-z]:[\\/]")
 
 
-def package_bundle(index_path: str | Path, out_dir: str | Path) -> dict[str, Any]:
+def package_bundle(index_path: str | Path, out_dir: str | Path, corpus_gate_closeout: str | Path | None = None) -> dict[str, Any]:
     source_path = Path(index_path)
     output = Path(out_dir)
+    corpus_path = Path(corpus_gate_closeout) if corpus_gate_closeout else None
     source_index = load_index(source_path)
     source_errors = validate_index(source_index)
     if source_errors:
@@ -59,6 +68,7 @@ def package_bundle(index_path: str | Path, out_dir: str | Path) -> dict[str, Any
     public_index_digest = _sha256_text(public_index_json)
     runtime_config_digest = _sha256_text(runtime_config_json)
     stats = stats_payload(public_index)
+    corpus_payload = _corpus_payload(corpus_path) if corpus_path else _empty_corpus_payload()
     manifest = {
         "bundle_schema_version": BUNDLE_SCHEMA_VERSION,
         "task_id": TASK_ID,
@@ -69,7 +79,18 @@ def package_bundle(index_path: str | Path, out_dir: str | Path) -> dict[str, Any
         "document_count": stats["document_count"],
         "status_counts": stats["status_counts"],
         "reviewed_record_count": stats["reviewed_record_count"],
-        "artifact_verified_count": stats["artifact_verified_count"],
+        "public_search_index_artifact_verified_count": stats["artifact_verified_count"],
+        "artifact_verified_count": corpus_payload["artifact_verified_count"] if corpus_path else stats["artifact_verified_count"],
+        "corpus_gate_status": corpus_payload["corpus_gate_status"],
+        "reviewed_artifact_gate_count": corpus_payload["reviewed_artifact_gate_count"],
+        "public_artifact_identity_record_count": corpus_payload["public_artifact_identity_record_count"],
+        "public_artifact_evidence_summary_count": corpus_payload["public_artifact_evidence_summary_count"],
+        "verification_scope_counts": corpus_payload["verification_scope_counts"],
+        "binary_verified_count": corpus_payload["binary_verified_count"],
+        "download_safe_count": corpus_payload["download_safe_count"],
+        "execution_safe_count": corpus_payload["execution_safe_count"],
+        "rights_cleared_count": corpus_payload["rights_cleared_count"],
+        "artifact_identity_metadata_only": bool(corpus_path),
         "public_alpha_mode": True,
         "read_only": True,
         "live_metadata_enabled": False,
@@ -93,6 +114,21 @@ def package_bundle(index_path: str | Path, out_dir: str | Path) -> dict[str, Any
             "runtime_config": RUNTIME_CONFIG_FILE,
         },
     }
+    if corpus_path:
+        manifest.update(
+            {
+                "corpus_gate_closeout_digest": corpus_payload["corpus_gate_closeout_digest"],
+                "public_artifact_identity_records_digest": corpus_payload["public_artifact_identity_records_digest"],
+                "public_artifact_evidence_summary_digest": corpus_payload["public_artifact_evidence_summary_digest"],
+            }
+        )
+        manifest["files"].update(
+            {
+                "corpus_gate_closeout": CORPUS_CLOSEOUT_FILE,
+                "public_artifact_identity_records": PUBLIC_ARTIFACT_RECORDS_JSONL,
+                "public_artifact_evidence_summary": PUBLIC_EVIDENCE_SUMMARY_JSONL,
+            }
+        )
     manifest_json = _stable_json(manifest)
 
     bundle_payload = {
@@ -100,6 +136,10 @@ def package_bundle(index_path: str | Path, out_dir: str | Path) -> dict[str, Any
         PUBLIC_INDEX_FILE: public_index_json,
         RUNTIME_CONFIG_FILE: runtime_config_json,
     }
+    if corpus_path:
+        bundle_payload[CORPUS_CLOSEOUT_FILE] = corpus_payload["corpus_gate_closeout_body"]
+        bundle_payload[PUBLIC_ARTIFACT_RECORDS_JSONL] = corpus_payload["public_artifact_identity_records_body"]
+        bundle_payload[PUBLIC_EVIDENCE_SUMMARY_JSONL] = corpus_payload["public_artifact_evidence_summary_body"]
     leakage_errors = []
     for name, body in bundle_payload.items():
         leakage_errors.extend(_leakage_errors(name, body))
@@ -107,12 +147,12 @@ def package_bundle(index_path: str | Path, out_dir: str | Path) -> dict[str, Any
         raise ValueError("public staging bundle would leak private content: " + "; ".join(leakage_errors))
 
     output.mkdir(parents=True, exist_ok=True)
+    expected_files = REQUIRED_BUNDLE_FILES | (CORPUS_BUNDLE_FILES if corpus_path else frozenset())
     for stale in output.iterdir():
-        if stale.is_file() and stale.name not in ALLOWED_BUNDLE_FILES:
+        if stale.is_file() and stale.name not in expected_files:
             stale.unlink()
-    (output / MANIFEST_FILE).write_bytes(manifest_json.encode("utf-8"))
-    (output / PUBLIC_INDEX_FILE).write_bytes(public_index_json.encode("utf-8"))
-    (output / RUNTIME_CONFIG_FILE).write_bytes(runtime_config_json.encode("utf-8"))
+    for name, body in bundle_payload.items():
+        (output / name).write_bytes(body.encode("utf-8"))
     return bundle_status(output)
 
 
@@ -123,7 +163,7 @@ def validate_bundle(bundle_dir: str | Path) -> list[str]:
         return [f"bundle directory not found: {bundle}"]
 
     present_files = {path.name for path in bundle.iterdir() if path.is_file()}
-    missing = sorted(ALLOWED_BUNDLE_FILES - present_files)
+    missing = sorted(REQUIRED_BUNDLE_FILES - present_files)
     extra = sorted(present_files - ALLOWED_BUNDLE_FILES)
     errors.extend(f"missing required bundle file: {name}" for name in missing)
     errors.extend(f"unexpected private or unsupported bundle file: {name}" for name in extra)
@@ -138,11 +178,18 @@ def validate_bundle(bundle_dir: str | Path) -> list[str]:
     if not isinstance(manifest, Mapping) or not isinstance(public_index, Mapping) or not isinstance(runtime_config, Mapping):
         return errors + ["bundle JSON roots must be objects"]
 
-    errors.extend(_validate_manifest(manifest, public_index, runtime_config, bundle))
+    corpus_present = bool(present_files & CORPUS_BUNDLE_FILES)
+    if corpus_present and not CORPUS_BUNDLE_FILES <= present_files:
+        missing_corpus = sorted(CORPUS_BUNDLE_FILES - present_files)
+        errors.extend(f"missing corpus closeout bundle file: {name}" for name in missing_corpus)
+    corpus_closeout = _read_json(bundle / CORPUS_CLOSEOUT_FILE, errors, "corpus gate closeout") if CORPUS_CLOSEOUT_FILE in present_files else {}
+    corpus_records = _read_jsonl(bundle / PUBLIC_ARTIFACT_RECORDS_JSONL, errors, "public artifact identity records") if PUBLIC_ARTIFACT_RECORDS_JSONL in present_files else []
+    corpus_summaries = _read_jsonl(bundle / PUBLIC_EVIDENCE_SUMMARY_JSONL, errors, "public artifact evidence summary") if PUBLIC_EVIDENCE_SUMMARY_JSONL in present_files else []
+    errors.extend(_validate_manifest(manifest, public_index, runtime_config, bundle, corpus_closeout, corpus_records, corpus_summaries))
     errors.extend(_validate_runtime_config(runtime_config))
     errors.extend(_validate_public_index(public_index))
 
-    for name in ALLOWED_BUNDLE_FILES:
+    for name in present_files & ALLOWED_BUNDLE_FILES:
         errors.extend(_leakage_errors(name, (bundle / name).read_text(encoding="utf-8")))
     return errors
 
@@ -167,9 +214,23 @@ def bundle_status(bundle_dir: str | Path) -> dict[str, Any]:
         "status_counts": {},
         "reviewed_record_count": 0,
         "artifact_verified_count": 0,
+        "public_search_index_artifact_verified_count": 0,
+        "corpus_gate_status": "not_packaged",
+        "reviewed_artifact_gate_count": 0,
+        "public_artifact_identity_record_count": 0,
+        "public_artifact_evidence_summary_count": 0,
+        "verification_scope_counts": {},
+        "binary_verified_count": 0,
+        "download_safe_count": 0,
+        "execution_safe_count": 0,
+        "rights_cleared_count": 0,
+        "artifact_identity_metadata_only": False,
+        "corpus_gate_closeout_digest": "",
+        "public_artifact_identity_records_digest": "",
+        "public_artifact_evidence_summary_digest": "",
         "public_index_digest": "",
         "runtime_config_digest": "",
-        "files": sorted(ALLOWED_BUNDLE_FILES),
+        "files": sorted(REQUIRED_BUNDLE_FILES),
         "validation_errors": errors,
     }
     manifest_path = bundle / MANIFEST_FILE
@@ -194,8 +255,23 @@ def bundle_status(bundle_dir: str | Path) -> dict[str, Any]:
                     "status_counts": dict(manifest.get("status_counts") or {}),
                     "reviewed_record_count": int(manifest.get("reviewed_record_count") or 0),
                     "artifact_verified_count": int(manifest.get("artifact_verified_count") or 0),
+                    "public_search_index_artifact_verified_count": int(manifest.get("public_search_index_artifact_verified_count") or 0),
+                    "corpus_gate_status": str(manifest.get("corpus_gate_status") or "not_packaged"),
+                    "reviewed_artifact_gate_count": int(manifest.get("reviewed_artifact_gate_count") or 0),
+                    "public_artifact_identity_record_count": int(manifest.get("public_artifact_identity_record_count") or 0),
+                    "public_artifact_evidence_summary_count": int(manifest.get("public_artifact_evidence_summary_count") or 0),
+                    "verification_scope_counts": dict(manifest.get("verification_scope_counts") or {}),
+                    "binary_verified_count": int(manifest.get("binary_verified_count") or 0),
+                    "download_safe_count": int(manifest.get("download_safe_count") or 0),
+                    "execution_safe_count": int(manifest.get("execution_safe_count") or 0),
+                    "rights_cleared_count": int(manifest.get("rights_cleared_count") or 0),
+                    "artifact_identity_metadata_only": bool(manifest.get("artifact_identity_metadata_only") is True),
+                    "corpus_gate_closeout_digest": str(manifest.get("corpus_gate_closeout_digest") or ""),
+                    "public_artifact_identity_records_digest": str(manifest.get("public_artifact_identity_records_digest") or ""),
+                    "public_artifact_evidence_summary_digest": str(manifest.get("public_artifact_evidence_summary_digest") or ""),
                     "public_index_digest": str(manifest.get("public_index_digest") or ""),
                     "runtime_config_digest": str(manifest.get("runtime_config_digest") or ""),
+                    "files": sorted((manifest.get("files") or {}).values()) if isinstance(manifest.get("files"), Mapping) else sorted(REQUIRED_BUNDLE_FILES),
                 }
             )
     return payload
@@ -271,6 +347,14 @@ def render_status_text(status: Mapping[str, Any]) -> str:
             f"status_counts: {json.dumps(status.get('status_counts') or {}, sort_keys=True)}",
             f"reviewed_record_count: {status.get('reviewed_record_count')}",
             f"artifact_verified_count: {status.get('artifact_verified_count')}",
+            f"corpus_gate_status: {status.get('corpus_gate_status')}",
+            f"reviewed_artifact_gate_count: {status.get('reviewed_artifact_gate_count')}",
+            f"public_artifact_identity_record_count: {status.get('public_artifact_identity_record_count')}",
+            f"verification_scope_counts: {json.dumps(status.get('verification_scope_counts') or {}, sort_keys=True)}",
+            f"binary_verified_count: {status.get('binary_verified_count')}",
+            f"download_safe_count: {status.get('download_safe_count')}",
+            f"execution_safe_count: {status.get('execution_safe_count')}",
+            f"rights_cleared_count: {status.get('rights_cleared_count')}",
             f"read_only: {str(status.get('read_only')).lower()}",
             f"live_metadata_enabled: {str(status.get('live_metadata_enabled')).lower()}",
             f"workbench_exposed: {str(status.get('workbench_exposed')).lower()}",
@@ -334,7 +418,15 @@ def _sanitize_text(value: Any) -> str:
     return "/".join(parts)
 
 
-def _validate_manifest(manifest: Mapping[str, Any], public_index: Mapping[str, Any], runtime_config: Mapping[str, Any], bundle: Path) -> list[str]:
+def _validate_manifest(
+    manifest: Mapping[str, Any],
+    public_index: Mapping[str, Any],
+    runtime_config: Mapping[str, Any],
+    bundle: Path,
+    corpus_closeout: Mapping[str, Any],
+    corpus_records: Sequence[Mapping[str, Any]],
+    corpus_summaries: Sequence[Mapping[str, Any]],
+) -> list[str]:
     errors: list[str] = []
     expected_bools = {
         "public_alpha_mode": True,
@@ -367,14 +459,79 @@ def _validate_manifest(manifest: Mapping[str, Any], public_index: Mapping[str, A
         errors.append("manifest.status_counts must match public index")
     if int(manifest.get("reviewed_record_count") or 0) != stats["reviewed_record_count"]:
         errors.append("manifest.reviewed_record_count must match public index")
-    if int(manifest.get("artifact_verified_count") or 0) != stats["artifact_verified_count"]:
-        errors.append("manifest.artifact_verified_count must match public index")
+    if int(manifest.get("public_search_index_artifact_verified_count") or 0) != stats["artifact_verified_count"]:
+        errors.append("manifest.public_search_index_artifact_verified_count must match public index")
+    corpus_packaged = bool(corpus_closeout)
+    if not corpus_packaged:
+        if int(manifest.get("artifact_verified_count") or 0) != stats["artifact_verified_count"]:
+            errors.append("manifest.artifact_verified_count must match public index when no corpus closeout is packaged")
+        if str(manifest.get("corpus_gate_status") or "not_packaged") != "not_packaged":
+            errors.append("manifest.corpus_gate_status must be not_packaged when no corpus closeout is packaged")
+    else:
+        errors.extend(_validate_corpus_manifest(manifest, corpus_closeout, corpus_records, corpus_summaries, bundle))
     if str(manifest.get("public_index_digest") or "") != _file_sha256(bundle / PUBLIC_INDEX_FILE):
         errors.append("manifest.public_index_digest must match public_search_index.json")
     if str(manifest.get("runtime_config_digest") or "") != _file_sha256(bundle / RUNTIME_CONFIG_FILE):
         errors.append("manifest.runtime_config_digest must match public_runtime_config.json")
     if runtime_config.get("metadata_fallback") != "none":
         errors.append("runtime config metadata_fallback must be none")
+    return errors
+
+
+def _validate_corpus_manifest(
+    manifest: Mapping[str, Any],
+    corpus_closeout: Mapping[str, Any],
+    corpus_records: Sequence[Mapping[str, Any]],
+    corpus_summaries: Sequence[Mapping[str, Any]],
+    bundle: Path,
+) -> list[str]:
+    errors: list[str] = []
+    if corpus_closeout.get("corpus_gate_status") != "pass":
+        errors.append("corpus_gate_closeout.corpus_gate_status must be pass")
+    comparisons = (
+        "corpus_gate_status",
+        "reviewed_artifact_gate_count",
+        "artifact_verified_count",
+        "public_artifact_identity_record_count",
+        "public_artifact_evidence_summary_count",
+        "binary_verified_count",
+        "download_safe_count",
+        "execution_safe_count",
+        "rights_cleared_count",
+    )
+    for key in comparisons:
+        if manifest.get(key) != corpus_closeout.get(key):
+            errors.append(f"manifest.{key} must match corpus gate closeout")
+    if dict(manifest.get("verification_scope_counts") or {}) != dict(corpus_closeout.get("verification_scope_counts") or {}):
+        errors.append("manifest.verification_scope_counts must match corpus gate closeout")
+    if int(manifest.get("artifact_verified_count") or 0) != len(corpus_records):
+        errors.append("manifest.artifact_verified_count must match public artifact identity records")
+    if int(manifest.get("public_artifact_evidence_summary_count") or 0) != len(corpus_summaries):
+        errors.append("manifest.public_artifact_evidence_summary_count must match public evidence summaries")
+    if int(manifest.get("binary_verified_count") or 0) != 0:
+        errors.append("manifest.binary_verified_count must remain 0")
+    if int(manifest.get("download_safe_count") or 0) != 0:
+        errors.append("manifest.download_safe_count must remain 0")
+    if int(manifest.get("execution_safe_count") or 0) != 0:
+        errors.append("manifest.execution_safe_count must remain 0")
+    if int(manifest.get("rights_cleared_count") or 0) != 0:
+        errors.append("manifest.rights_cleared_count must remain 0")
+    if manifest.get("artifact_identity_metadata_only") is not True:
+        errors.append("manifest.artifact_identity_metadata_only must be true with corpus closeout")
+    if str(manifest.get("corpus_gate_closeout_digest") or "") != _file_sha256(bundle / CORPUS_CLOSEOUT_FILE):
+        errors.append("manifest.corpus_gate_closeout_digest must match corpus_gate_closeout.json")
+    if str(manifest.get("public_artifact_identity_records_digest") or "") != _file_sha256(bundle / PUBLIC_ARTIFACT_RECORDS_JSONL):
+        errors.append("manifest.public_artifact_identity_records_digest must match public_artifact_identity_records.jsonl")
+    if str(manifest.get("public_artifact_evidence_summary_digest") or "") != _file_sha256(bundle / PUBLIC_EVIDENCE_SUMMARY_JSONL):
+        errors.append("manifest.public_artifact_evidence_summary_digest must match public_artifact_evidence_summary.jsonl")
+    for index, record in enumerate(corpus_records, start=1):
+        for key in ("binary_verified", "download_safe", "execution_safe", "rights_cleared"):
+            if record.get(key) is True:
+                errors.append(f"public artifact identity record[{index}].{key} cannot be true")
+    for index, summary in enumerate(corpus_summaries, start=1):
+        for key in ("binary_verified", "download_safe", "execution_safe", "rights_cleared"):
+            if summary.get(key) is True:
+                errors.append(f"public evidence summary[{index}].{key} cannot be true")
     return errors
 
 
@@ -406,6 +563,52 @@ def _validate_public_index(index: Mapping[str, Any]) -> list[str]:
     return errors
 
 
+def _corpus_payload(corpus_path: Path) -> dict[str, Any]:
+    errors = validate_closeout(corpus_path)
+    if errors:
+        raise ValueError("corpus gate closeout is invalid: " + "; ".join(errors))
+    closeout_path = corpus_path / CORPUS_CLOSEOUT_FILE
+    records_path = corpus_path / PUBLIC_ARTIFACT_RECORDS_JSONL
+    summaries_path = corpus_path / PUBLIC_EVIDENCE_SUMMARY_JSONL
+    closeout = json.loads(closeout_path.read_text(encoding="utf-8"))
+    records_body = records_path.read_text(encoding="utf-8")
+    summaries_body = summaries_path.read_text(encoding="utf-8")
+    closeout_body = _stable_json(closeout)
+    return {
+        "corpus_gate_status": str(closeout.get("corpus_gate_status") or "unknown"),
+        "reviewed_artifact_gate_count": int(closeout.get("reviewed_artifact_gate_count") or 0),
+        "artifact_verified_count": int(closeout.get("artifact_verified_count") or 0),
+        "public_artifact_identity_record_count": int(closeout.get("public_artifact_identity_record_count") or 0),
+        "public_artifact_evidence_summary_count": int(closeout.get("public_artifact_evidence_summary_count") or 0),
+        "verification_scope_counts": dict(closeout.get("verification_scope_counts") or {}),
+        "binary_verified_count": int(closeout.get("binary_verified_count") or 0),
+        "download_safe_count": int(closeout.get("download_safe_count") or 0),
+        "execution_safe_count": int(closeout.get("execution_safe_count") or 0),
+        "rights_cleared_count": int(closeout.get("rights_cleared_count") or 0),
+        "corpus_gate_closeout_digest": _sha256_text(closeout_body),
+        "public_artifact_identity_records_digest": _sha256_text(records_body),
+        "public_artifact_evidence_summary_digest": _sha256_text(summaries_body),
+        "corpus_gate_closeout_body": closeout_body,
+        "public_artifact_identity_records_body": records_body,
+        "public_artifact_evidence_summary_body": summaries_body,
+    }
+
+
+def _empty_corpus_payload() -> dict[str, Any]:
+    return {
+        "corpus_gate_status": "not_packaged",
+        "reviewed_artifact_gate_count": 0,
+        "artifact_verified_count": 0,
+        "public_artifact_identity_record_count": 0,
+        "public_artifact_evidence_summary_count": 0,
+        "verification_scope_counts": {},
+        "binary_verified_count": 0,
+        "download_safe_count": 0,
+        "execution_safe_count": 0,
+        "rights_cleared_count": 0,
+    }
+
+
 def _read_json(path: Path, errors: list[str], label: str) -> Any:
     try:
         return json.loads(path.read_text(encoding="utf-8"))
@@ -414,6 +617,24 @@ def _read_json(path: Path, errors: list[str], label: str) -> Any:
     except json.JSONDecodeError as exc:
         errors.append(f"{label} is invalid JSON: {exc.msg}")
     return {}
+
+
+def _read_jsonl(path: Path, errors: list[str], label: str) -> list[dict[str, Any]]:
+    rows: list[dict[str, Any]] = []
+    try:
+        for line in path.read_text(encoding="utf-8").splitlines():
+            if not line.strip():
+                continue
+            loaded = json.loads(line)
+            if isinstance(loaded, dict):
+                rows.append(loaded)
+            else:
+                errors.append(f"{label} contains a non-object JSONL row")
+    except OSError as exc:
+        errors.append(f"{label} could not be read: {type(exc).__name__}")
+    except json.JSONDecodeError as exc:
+        errors.append(f"{label} is invalid JSONL: {exc.msg}")
+    return rows
 
 
 def _leakage_errors(name: str, body: str) -> list[str]:
