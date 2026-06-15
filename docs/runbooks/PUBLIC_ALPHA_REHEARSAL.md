@@ -67,6 +67,8 @@ See `docs/runbooks/PUBLIC_ALPHA_LAUNCH_BLOCKER_CLOSEOUT.md` for blocker
 categories, `--fail-on-blocked`, and future evidence inputs.
 See `docs/runbooks/PUBLIC_ALPHA_CORPUS_GATE_CLOSEOUT.md` for the public-safe
 artifact identity export that makes staging and launch-gate corpus counts agree.
+See `docs/runbooks/EXTERNAL_STAGING_HOST_PROVISION.md` for the next external
+staging plan/package/dry-run path once local rehearsal remains green.
 
 The JSON report includes:
 

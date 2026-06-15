@@ -110,6 +110,10 @@ python scripts/eureka_public_alpha_launch_gate.py audit --bundle .eureka/staging
 
 See `docs/runbooks/PUBLIC_ALPHA_LAUNCH_BLOCKER_CLOSEOUT.md`.
 
+To prepare a transfer package or dry-run an authorized external staging path,
+see `docs/runbooks/EXTERNAL_STAGING_HOST_PROVISION.md`. External staging is
+still not public launch or production hosting.
+
 ## Run Server From Bundle
 
 ```powershell

@@ -149,6 +149,11 @@ For packaging the 25/25 artifact identity metadata into the public-alpha
 staging/rehearsal path, see
 `docs/runbooks/PUBLIC_ALPHA_CORPUS_GATE_CLOSEOUT.md`.
 
+For the external staging blocker, see
+`docs/runbooks/EXTERNAL_STAGING_HOST_PROVISION.md`. A dry-run report keeps the
+blocker open; only an authorized deployment plus passing external smoke probes
+can resolve it.
+
 ## Local Readiness Vs Launch Readiness
 
 Local readiness means the staging bundle and rehearsal passed local read-only

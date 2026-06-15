@@ -121,6 +121,11 @@ Expected result:
   production hosting, TLS/domain, production auth or approved no-auth posture,
   full discovery/release promotion checks, and public launch approval.
 
+When the corpus blocker is resolved, use
+`docs/runbooks/EXTERNAL_STAGING_HOST_PROVISION.md` to prepare the first
+external staging path. If no authorized host is configured, that workflow should
+produce a dry-run report and keep the external staging blocker open.
+
 ## Troubleshooting
 
 - Count below 25: rerun manual batch review/report/status and fix evidence

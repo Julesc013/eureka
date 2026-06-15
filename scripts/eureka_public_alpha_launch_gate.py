@@ -70,6 +70,7 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr:
     audit_parser.add_argument("--full-discovery-report", default="")
     audit_parser.add_argument("--artifact-gate-report", default="")
     audit_parser.add_argument("--corpus-gate-closeout", default="")
+    audit_parser.add_argument("--external-staging-report", default="")
     audit_parser.add_argument("--verified-evidence-report", default="")
     audit_parser.add_argument("--release-check-report", default="")
     audit_parser.add_argument("--production-auth-posture", choices=("approved", "missing", "unknown"), default="missing")
@@ -91,6 +92,7 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr:
             "full_discovery_report": args.full_discovery_report,
             "artifact_gate_report": args.artifact_gate_report,
             "corpus_gate_closeout": args.corpus_gate_closeout,
+            "external_staging_report": args.external_staging_report,
             "verified_evidence_report": args.verified_evidence_report,
             "release_check_report": args.release_check_report,
             "production_auth_posture": args.production_auth_posture,
@@ -172,6 +174,7 @@ def audit_launch_gate(
     optional_sources = _optional_sources(opts)
     official_gate = _official_artifact_gate(optional_sources.get("artifact_gate_report"))
     corpus_gate = _corpus_gate_closeout(optional_sources.get("corpus_gate_closeout"))
+    external_staging = _external_staging_report(optional_sources.get("external_staging_report"))
     verified_evidence = _generic_report_status(optional_sources.get("verified_evidence_report"), default="unknown")
     if corpus_gate["status"] == "pass":
         verified_evidence = {"status": "pass", "evidence": corpus_gate["evidence"]}
@@ -179,7 +182,7 @@ def audit_launch_gate(
     release_promotion = _generic_report_status(optional_sources.get("release_check_report"), default="not_run")
     approval = _approval_status(optional_sources.get("approval_file"))
 
-    external_staging_host_status = "configured" if _has_value(opts.get("external_staging_url")) else "missing"
+    external_staging_host_status = _external_staging_host_status(opts, external_staging)
     production_hosting_status = "configured" if _has_value(opts.get("public_url")) else "missing"
     tls_domain_status = _tls_status(str(opts.get("public_url") or ""))
     production_auth_status = _production_auth_status(opts)
@@ -261,7 +264,13 @@ def audit_launch_gate(
         )
 
     if external_staging_host_status != "configured":
-        add_blocker("deployment_blockers", "external_staging_host_missing", "external staging host is missing", evidence="--external-staging-url not provided")
+        add_blocker(
+            "deployment_blockers",
+            "external_staging_host_missing",
+            "external staging host is missing",
+            evidence=external_staging["evidence"],
+            status=external_staging["status"],
+        )
     if production_hosting_status != "configured":
         add_blocker("deployment_blockers", "production_hosting_missing", "production hosting is missing", evidence="--public-url not provided")
     if tls_domain_status != "configured":
@@ -371,6 +380,10 @@ def audit_launch_gate(
         "full_discovery_status": full_discovery["status"],
         "release_promotion_status": release_promotion["status"],
         "external_staging_host_status": external_staging_host_status,
+        "external_staging_report_status": external_staging["status"],
+        "external_staging_deployment_status": external_staging["deployment_status"],
+        "external_staging_smoke_status": external_staging["smoke_status"],
+        "external_staging_report_digest": external_staging["digest"],
         "production_hosting_status": production_hosting_status,
         "tls_domain_status": tls_domain_status,
         "production_auth_or_noauth_posture_status": production_auth_status,
@@ -383,7 +396,7 @@ def audit_launch_gate(
         "blocker_categories": blocker_categories,
         "blockers": blockers,
         "warnings": warnings,
-        "next_recommended_task": _next_task(blocker_categories, official_gate=official_gate),
+        "next_recommended_task": _next_task(blocker_categories, official_gate=official_gate, external_staging=external_staging),
         "generated_at": "not_recorded_deterministic_local_launch_gate",
         "evidence_sources": _evidence_sources(bundle_path, rehearsal_path, optional_sources, git_state),
         "optional_inputs": _optional_input_summary(opts, optional_sources),
@@ -458,6 +471,10 @@ def validate_launch_gate_report(report_path: str | Path) -> list[str]:
         "full_discovery_status",
         "release_promotion_status",
         "external_staging_host_status",
+        "external_staging_report_status",
+        "external_staging_deployment_status",
+        "external_staging_smoke_status",
+        "external_staging_report_digest",
         "production_hosting_status",
         "tls_domain_status",
         "production_auth_or_noauth_posture_status",
@@ -493,6 +510,8 @@ def validate_launch_gate_report(report_path: str | Path) -> list[str]:
         errors.append("public_readonly_status must be pass, fail, or unknown")
     if report.get("corpus_gate_closeout_status") not in {"pass", "fail", "blocked", "unknown", "missing"}:
         errors.append("corpus_gate_closeout_status must be pass, fail, blocked, unknown, or missing")
+    if report.get("external_staging_report_status") not in {"pass", "fail", "blocked", "unknown", "missing", "not_configured", "dry_run"}:
+        errors.append("external_staging_report_status must be a known external staging status")
     if report.get("workbench_exposure_status") not in {"not_exposed", "exposed", "unknown"}:
         errors.append("workbench_exposure_status must be not_exposed, exposed, or unknown")
     if report.get("live_metadata_exposure_status") not in {"not_exposed", "exposed", "unknown"}:
@@ -537,6 +556,7 @@ def render_status(report: Mapping[str, Any]) -> str:
         f"blocker count: {len(report.get('blockers') or [])}",
         f"next recommended task: {report.get('next_recommended_task')}",
         f"corpus gate closeout: {report.get('corpus_gate_closeout_status')}",
+        f"external staging: {report.get('external_staging_report_status')} ({report.get('external_staging_deployment_status')}/{report.get('external_staging_smoke_status')})",
         f"artifact verified count: {report.get('artifact_verified_count')}",
         f"reviewed artifact gate count: {report.get('reviewed_artifact_gate_count')}",
         "blockers by category:",
@@ -563,6 +583,7 @@ def render_markdown_report(report: Mapping[str, Any]) -> str:
         f"- Launch status: {report.get('launch_status')}",
         f"- Blockers: {len(blockers)}",
         f"- Next recommended task: {report.get('next_recommended_task')}",
+        f"- External staging: {report.get('external_staging_report_status')} ({report.get('external_staging_deployment_status')}/{report.get('external_staging_smoke_status')})",
         "",
         "Local rehearsal passing is not public launch approval. This report only audits the local bundle, rehearsal, and supplied gate evidence.",
         "",
@@ -600,6 +621,9 @@ def render_markdown_report(report: Mapping[str, Any]) -> str:
             f"- Corpus gate closeout: {report.get('corpus_gate_closeout_status')}",
             f"- Reviewed artifact gate count: {report.get('reviewed_artifact_gate_count')}",
             f"- Public artifact identity records: {report.get('public_artifact_identity_record_count')}",
+            f"- External staging report: {report.get('external_staging_report_status')}",
+            f"- External staging deployment: {report.get('external_staging_deployment_status')}",
+            f"- External staging smoke: {report.get('external_staging_smoke_status')}",
             f"- Binary verified count: {report.get('binary_verified_count')}",
             f"- Download safe count: {report.get('download_safe_count')}",
             f"- Execution safe count: {report.get('execution_safe_count')}",
@@ -756,6 +780,44 @@ def _corpus_gate_closeout(source: Mapping[str, Any] | None) -> dict[str, Any]:
     }
 
 
+def _external_staging_report(source: Mapping[str, Any] | None) -> dict[str, Any]:
+    if not source or not source.get("present"):
+        return {
+            "status": "missing",
+            "deployment_status": "not_configured",
+            "smoke_status": "not_run",
+            "digest": "",
+            "evidence": "external staging report not provided",
+        }
+    payload = source.get("payload") if isinstance(source.get("payload"), Mapping) else {}
+    deployment_status = str(payload.get("deployment_status") or "not_configured")
+    smoke_status = str(payload.get("smoke_status") or "not_run")
+    report_status = _status_from_payload(payload)
+    if deployment_status == "deployed" and smoke_status == "pass" and report_status in {"pass", "unknown"}:
+        status = "pass"
+    elif deployment_status in {"dry_run_pass", "not_configured"} or smoke_status in {"blocked", "not_run"}:
+        status = "dry_run" if deployment_status == "dry_run_pass" else "not_configured"
+    elif report_status == "fail" or deployment_status == "failed" or smoke_status == "fail":
+        status = "fail"
+    else:
+        status = "unknown"
+    return {
+        "status": status,
+        "deployment_status": deployment_status,
+        "smoke_status": smoke_status,
+        "digest": _file_sha256(Path(str(source.get("path") or ""))) if source.get("present") else "",
+        "evidence": str(source.get("path") or "external staging report"),
+    }
+
+
+def _external_staging_host_status(options: Mapping[str, Any], external_staging: Mapping[str, Any]) -> str:
+    if external_staging.get("status") == "pass":
+        return "configured"
+    if _has_value(options.get("external_staging_url")):
+        return "configured"
+    return "missing"
+
+
 def _generic_report_status(source: Mapping[str, Any] | None, *, default: str) -> dict[str, str]:
     if not source or not source.get("present"):
         return {"status": default, "evidence": "report not provided"}
@@ -782,7 +844,7 @@ def _approval_status(source: Mapping[str, Any] | None) -> dict[str, str]:
 
 def _optional_sources(options: Mapping[str, Any]) -> dict[str, dict[str, Any]]:
     result = {}
-    for key in ("approval_file", "full_discovery_report", "artifact_gate_report", "corpus_gate_closeout", "verified_evidence_report", "release_check_report"):
+    for key in ("approval_file", "full_discovery_report", "artifact_gate_report", "corpus_gate_closeout", "external_staging_report", "verified_evidence_report", "release_check_report"):
         raw = str(options.get(key) or "")
         if not raw:
             result[key] = {"path": "", "present": False, "payload": {}, "read_error": ""}
@@ -826,7 +888,12 @@ def _launch_status(blockers: Sequence[Mapping[str, Any]]) -> str:
     return "BLOCKED"
 
 
-def _next_task(blocker_categories: Mapping[str, Sequence[str]], *, official_gate: Mapping[str, Any] | None = None) -> str:
+def _next_task(
+    blocker_categories: Mapping[str, Sequence[str]],
+    *,
+    official_gate: Mapping[str, Any] | None = None,
+    external_staging: Mapping[str, Any] | None = None,
+) -> str:
     unknown = set(blocker_categories.get("unknown_authority_blockers") or [])
     if "artifact_gate_authority_unknown" in unknown:
         return "REVIEWED-ARTIFACT-GATE-SEED-00"
@@ -837,6 +904,9 @@ def _next_task(blocker_categories: Mapping[str, Sequence[str]], *, official_gate
     if blocker_categories.get("corpus_evidence_blockers") or unknown:
         return "MANUAL-ARTIFACT-EVIDENCE-BATCH-01"
     if blocker_categories.get("deployment_blockers"):
+        external_status = str((external_staging or {}).get("status") or "")
+        if external_status in {"dry_run", "not_configured"}:
+            return "EXTERNAL-STAGING-HOST-PROVISION-00-CONFIG"
         return "EXTERNAL-STAGING-HOST-PROVISION-00"
     if blocker_categories.get("local_rehearsal_blockers") or blocker_categories.get("safety_blockers"):
         return "PUBLIC-ALPHA-LAUNCH-BLOCKER-CLOSEOUT-00-FIX"
