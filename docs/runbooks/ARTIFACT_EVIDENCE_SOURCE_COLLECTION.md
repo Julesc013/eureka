@@ -1079,6 +1079,122 @@ for artifact identity metadata. They do not imply binary verification, download
 safety, execution safety, rights clearance, marketplace safety, or public launch
 readiness.
 
+## Source Observation Batch 09
+
+`SOURCE-OBSERVATION-BATCH-09` is the gate-closing source observation batch. It
+continues to treat all eighteen previously counted identities as duplicates and
+selects only new concrete curated artifacts when the local manual gate is already
+at `18/25`.
+
+The Batch 09 curated targets are:
+
+```text
+qBittorrent 4.6.4 for Windows
+FileZilla Pro 3.67.0 for Windows
+OBS Studio 30.1 for Windows
+HandBrake 1.7.3 for Windows
+WinMerge 2.16.40 for Windows
+calibre 7.8.0 for Windows
+Python 3.12.3 for Windows
+```
+
+Prerequisite status checks:
+
+```powershell
+python scripts/eureka_artifact_gate.py source-status --collection .eureka/artifact-gate/source-observation-batch-01
+
+python scripts/eureka_artifact_gate.py source-status --collection .eureka/artifact-gate/source-observation-batch-02
+
+python scripts/eureka_artifact_gate.py source-status --collection .eureka/artifact-gate/source-observation-batch-03
+
+python scripts/eureka_artifact_gate.py source-status --collection .eureka/artifact-gate/source-observation-batch-04
+
+python scripts/eureka_artifact_gate.py source-status --collection .eureka/artifact-gate/source-observation-batch-05
+
+python scripts/eureka_artifact_gate.py source-status --collection .eureka/artifact-gate/source-observation-batch-06
+
+python scripts/eureka_artifact_gate.py source-status --collection .eureka/artifact-gate/source-observation-batch-07
+
+python scripts/eureka_artifact_gate.py source-status --collection .eureka/artifact-gate/source-observation-batch-08
+
+python scripts/eureka_artifact_gate.py manual-status --batch .eureka/artifact-gate/manual-batch-01
+```
+
+Create the batch scaffold:
+
+```powershell
+python scripts/eureka_artifact_gate.py source-plan --gate .eureka/artifact-gate/public-alpha-seed --manual-batch .eureka/artifact-gate/manual-batch-01 --out .eureka/artifact-gate/source-observation-batch-09 --target-records 7
+
+python scripts/eureka_artifact_gate.py source-template --collection .eureka/artifact-gate/source-observation-batch-09 --out .eureka/artifact-gate/source-observation-batch-09/source_observation_template.jsonl
+```
+
+Fill:
+
+```text
+.eureka/artifact-gate/source-observation-batch-09/source_url_list.jsonl
+.eureka/artifact-gate/source-observation-batch-09/source_observations.jsonl
+```
+
+Useful bounded page observations for this batch include official release notes,
+release tags, product pages, and project file-list pages for the seven targets
+above. Treat official pages as identity metadata evidence when they identify the
+product, version, release date, and platform/context. Treat archive-style file
+list pages as corroboration unless paired with approved primary evidence.
+
+Run the source batch:
+
+```powershell
+python scripts/eureka_artifact_gate.py source-ingest --collection .eureka/artifact-gate/source-observation-batch-09 --observations .eureka/artifact-gate/source-observation-batch-09/source_observations.jsonl
+
+python scripts/eureka_artifact_gate.py source-validate --collection .eureka/artifact-gate/source-observation-batch-09
+
+python scripts/eureka_artifact_gate.py source-to-evidence --collection .eureka/artifact-gate/source-observation-batch-09 --out .eureka/artifact-gate/source-observation-batch-09/manual_evidence_packets.jsonl
+
+python scripts/eureka_artifact_gate.py source-report --collection .eureka/artifact-gate/source-observation-batch-09 --out .eureka/artifact-gate/source-observation-batch-09/source_collection_report.json
+
+python scripts/eureka_artifact_gate.py source-status --collection .eureka/artifact-gate/source-observation-batch-09
+```
+
+Preserve prior batches with a cumulative generated handoff:
+
+```powershell
+Get-Content .eureka\artifact-gate\source-observation-batch-01\manual_evidence_packets.jsonl, .eureka\artifact-gate\source-observation-batch-02\manual_evidence_packets.jsonl, .eureka\artifact-gate\source-observation-batch-03\manual_evidence_packets.jsonl, .eureka\artifact-gate\source-observation-batch-04\manual_evidence_packets.jsonl, .eureka\artifact-gate\source-observation-batch-05\manual_evidence_packets.jsonl, .eureka\artifact-gate\source-observation-batch-06\manual_evidence_packets.jsonl, .eureka\artifact-gate\source-observation-batch-07\manual_evidence_packets.jsonl, .eureka\artifact-gate\source-observation-batch-08\manual_evidence_packets.jsonl, .eureka\artifact-gate\source-observation-batch-09\manual_evidence_packets.jsonl | Set-Content -Encoding UTF8 .eureka\artifact-gate\source-observation-batch-09\manual_evidence_packets.cumulative.jsonl
+```
+
+Then refresh the manual and launch gates:
+
+```powershell
+python scripts/eureka_artifact_gate.py manual-ingest --batch .eureka/artifact-gate/manual-batch-01 --evidence .eureka/artifact-gate/source-observation-batch-09/manual_evidence_packets.cumulative.jsonl
+
+python scripts/eureka_artifact_gate.py manual-validate --batch .eureka/artifact-gate/manual-batch-01
+
+python scripts/eureka_artifact_gate.py manual-review --batch .eureka/artifact-gate/manual-batch-01 --reviewer source_observation_batch_09 --out .eureka/artifact-gate/manual-batch-01/reviewed_artifact_records.jsonl
+
+python scripts/eureka_artifact_gate.py manual-report --batch .eureka/artifact-gate/manual-batch-01 --out .eureka/artifact-gate/manual-batch-01/artifact_gate_report.json
+
+python scripts/eureka_artifact_gate.py manual-status --batch .eureka/artifact-gate/manual-batch-01
+
+python scripts/eureka_public_alpha_launch_gate.py audit --bundle .eureka/staging/public-alpha --rehearsal-report .eureka/rehearsals/public-alpha/latest/rehearsal_report.json --artifact-gate-report .eureka/artifact-gate/manual-batch-01/artifact_gate_report.json --out .eureka/launch/public-alpha/latest
+```
+
+Expected Batch 09 result when all seven observations validate:
+
+```text
+source observations: 12 valid / 0 invalid
+source evidence packets: 7
+artifact verified packets: 7
+cumulative manual evidence packets: 26
+reviewed artifact gate count: 25/25
+manual gate status: PASS
+launch status: BLOCKED
+```
+
+Even at `25/25`, public launch is still blocked until non-corpus gates are
+closed. The launch gate should consume the updated manual report and resolve the
+official reviewed-artifact count blocker, while preserving deployment, release,
+approval, verified-evidence-promotion, and unknown-authority blockers as
+appropriate.
+
 ## Troubleshooting
 
 - No eligible targets: inspect `source_candidate_plan.jsonl`; broad or
@@ -1103,17 +1219,21 @@ readiness.
   `Apache OpenOffice 4.1.15 for Windows`, `Wireshark 4.2.3 for Windows`,
   `SumatraPDF 3.5.2 for Windows`, `Thunderbird 115.10.1 for Windows`,
   `IrfanView 4.67 for Windows`, and `Paint.NET 5.0.13 for Windows` must not be
-  counted again after their respective batches. Treat new pages for those
-  identities as corroboration only.
+  counted again after their respective batches. After Batch 09, `qBittorrent
+  4.6.4 for Windows`, `FileZilla Pro 3.67.0 for Windows`, `OBS Studio 30.1 for
+  Windows`, `HandBrake 1.7.3 for Windows`, `WinMerge 2.16.40 for Windows`,
+  `calibre 7.8.0 for Windows`, and `Python 3.12.3 for Windows` are also
+  duplicate identities. Treat new pages for counted identities as corroboration
+  only.
 
 ## Deferred
 
-Completing the full 25-reviewed-artifact gate, official artifact gate
-promotion, verified artifact evidence promotion beyond genuinely supported
-packets, broad/live evidence harvesting as default behavior, downloads, file
-fetching, Wayback replay, extraction, install/emulation behavior, marketplace
-behavior, external staging host provisioning, production hosting, TLS/domain
-setup, production auth, public Workbench, public mutation, public contribution
-intake, production review store, production index service, live IA indexing,
-public live source fanout, release promotion, full discovery execution, and
-public launch are deferred.
+Official artifact gate promotion beyond the local generated manual report,
+verified artifact evidence promotion beyond genuinely supported packets,
+broad/live evidence harvesting as default behavior, downloads, file fetching,
+Wayback replay, extraction, install/emulation behavior, marketplace behavior,
+external staging host provisioning, production hosting, TLS/domain setup,
+production auth, public Workbench, public mutation, public contribution intake,
+production review store, production index service, live IA indexing, public live
+source fanout, release promotion, full discovery execution, and public launch
+are deferred.

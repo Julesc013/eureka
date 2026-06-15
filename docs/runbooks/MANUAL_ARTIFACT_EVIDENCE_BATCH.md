@@ -192,6 +192,16 @@ duplicates, then adds source-derived packets for `Wireshark 4.2.3 for Windows`,
 result after Batch 08 is nineteen manual evidence packets, eighteen reviewed
 artifact records, and a still-blocked 18/25 public-alpha artifact gate.
 
+`SOURCE-OBSERVATION-BATCH-09` is the gate-closing curated batch. It keeps the
+eighteen earlier reviewed identities as duplicates, then adds source-derived
+packets for `qBittorrent 4.6.4 for Windows`, `FileZilla Pro 3.67.0 for
+Windows`, `OBS Studio 30.1 for Windows`, `HandBrake 1.7.3 for Windows`,
+`WinMerge 2.16.40 for Windows`, `calibre 7.8.0 for Windows`, and `Python 3.12.3
+for Windows`. The expected current result after Batch 09 is twenty-six manual
+evidence packets, twenty-five reviewed artifact records, and a passed 25/25
+public-alpha corpus gate. Public launch still remains blocked until
+non-corpus gates are closed.
+
 ## Review And Report
 
 ```powershell

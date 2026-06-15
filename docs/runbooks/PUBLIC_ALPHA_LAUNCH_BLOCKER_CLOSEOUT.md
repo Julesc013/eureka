@@ -84,11 +84,16 @@ The report groups blockers into:
 - `approval_blockers`
 - `unknown_authority_blockers`
 
-Current expected blockers include missing official artifact gate evidence,
-missing verified artifact evidence promotion, `artifact_verified_count=0`,
-missing external staging host, missing production hosting, missing TLS/domain,
-missing production auth or approved no-auth posture, missing full
-discovery/release promotion checks, and missing public launch approval.
+Current blockers without a supplied artifact gate report include missing
+official artifact gate evidence, missing verified artifact evidence promotion,
+`artifact_verified_count=0`, missing external staging host, missing production
+hosting, missing TLS/domain, missing production auth or approved no-auth
+posture, missing full discovery/release promotion checks, and missing public
+launch approval. After `SOURCE-OBSERVATION-BATCH-09`, the generated manual batch
+artifact gate report may show `25/25` and resolve the reviewed-artifact count
+blocker when passed with `--artifact-gate-report`; launch still remains blocked
+until verified-evidence promotion, deployment, release-process, approval, and
+unknown-authority blockers are cleared.
 
 Local demo reviewed records do not satisfy the official reviewed-artifact gate.
 Fixture, fallback, live metadata, and rehearsal outputs are not verified
@@ -131,7 +136,9 @@ For bounded source observation packets that feed manual evidence batches, see
 `docs/runbooks/ARTIFACT_EVIDENCE_SOURCE_COLLECTION.md`. Source collection
 reports are operational evidence; the launch gate should consume the resulting
 manual batch artifact gate report, not treat source leads as public launch
-approval.
+approval. `SOURCE-OBSERVATION-BATCH-09` is the first expected local batch that
+can close the reviewed-artifact count at `25/25`; it is still not a public
+launch approval.
 
 ## Local Readiness Vs Launch Readiness
 
@@ -163,9 +170,9 @@ or unknown.
 External staging host provisioning, production hosting, TLS/domain setup,
 production auth implementation, public Workbench, public mutation, public
 contribution intake, official artifact gate updates, verified artifact evidence
-promotion, 25-reviewed-record gate completion, production review store,
-production index service, live IA indexing, public live fanout, downloads, file
-fetching, Wayback replay, extraction, install/emulation behavior, marketplace
-behavior, rich UI redesign, detail route systems beyond `/record/{id}`,
-queue/current mutation, full discovery execution, release promotion, and actual
-public launch are deferred.
+promotion, official/public gate promotion beyond the local generated Batch 09
+manual report, production review store, production index service, live IA
+indexing, public live fanout, downloads, file fetching, Wayback replay,
+extraction, install/emulation behavior, marketplace behavior, rich UI redesign,
+detail route systems beyond `/record/{id}`, queue/current mutation, full
+discovery execution, release promotion, and actual public launch are deferred.
