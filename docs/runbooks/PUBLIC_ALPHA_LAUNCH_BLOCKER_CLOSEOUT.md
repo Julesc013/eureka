@@ -156,6 +156,12 @@ can resolve it. Configured apply requires an ignored local config or
 environment configuration and explicit confirmation; missing config should be
 reported as a blocker, not silently downgraded.
 
+For the local release-check lane that consumes corpus closeout, staging,
+rehearsal, external staging, and launch-gate reports, see
+`docs/runbooks/PUBLIC_ALPHA_RELEASE_CHECKS.md`. Supplying its
+`release_check_report.json` lets the launch gate distinguish green local
+release checks from unresolved public launch blockers.
+
 ## Local Readiness Vs Launch Readiness
 
 Local readiness means the staging bundle and rehearsal passed local read-only

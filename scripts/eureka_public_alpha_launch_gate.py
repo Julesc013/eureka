@@ -175,11 +175,20 @@ def audit_launch_gate(
     official_gate = _official_artifact_gate(optional_sources.get("artifact_gate_report"))
     corpus_gate = _corpus_gate_closeout(optional_sources.get("corpus_gate_closeout"))
     external_staging = _external_staging_report(optional_sources.get("external_staging_report"))
+    release_check = _release_check_report(optional_sources.get("release_check_report"))
     verified_evidence = _generic_report_status(optional_sources.get("verified_evidence_report"), default="unknown")
     if corpus_gate["status"] == "pass":
         verified_evidence = {"status": "pass", "evidence": corpus_gate["evidence"]}
     full_discovery = _generic_report_status(optional_sources.get("full_discovery_report"), default="not_run")
-    release_promotion = _generic_report_status(optional_sources.get("release_check_report"), default="not_run")
+    if not optional_sources.get("full_discovery_report", {}).get("present") and release_check["status"] != "missing":
+        full_discovery = {
+            "status": release_check["full_discovery_status"],
+            "evidence": release_check["evidence"],
+        }
+    release_promotion = {
+        "status": release_check["release_promotion_status"],
+        "evidence": release_check["evidence"],
+    }
     approval = _approval_status(optional_sources.get("approval_file"))
 
     external_staging_host_status = _external_staging_host_status(opts, external_staging)
@@ -379,6 +388,9 @@ def audit_launch_gate(
         "verified_artifact_evidence_status": verified_evidence["status"],
         "full_discovery_status": full_discovery["status"],
         "release_promotion_status": release_promotion["status"],
+        "release_check_report_status": release_check["status"],
+        "release_check_release_status": release_check["release_status"],
+        "release_check_report_digest": release_check["digest"],
         "external_staging_host_status": external_staging_host_status,
         "external_staging_report_status": external_staging["status"],
         "external_staging_deployment_status": external_staging["deployment_status"],
@@ -512,6 +524,10 @@ def validate_launch_gate_report(report_path: str | Path) -> list[str]:
         errors.append("corpus_gate_closeout_status must be pass, fail, blocked, unknown, or missing")
     if report.get("external_staging_report_status") not in {"pass", "fail", "blocked", "unknown", "missing", "not_configured", "dry_run", "confirmation_required"}:
         errors.append("external_staging_report_status must be a known external staging status")
+    if "release_check_report_status" in report and report.get("release_check_report_status") not in {"pass", "pass_with_warnings", "fail", "missing", "unknown"}:
+        errors.append("release_check_report_status must be a known release-check status")
+    if "release_check_release_status" in report and report.get("release_check_release_status") not in {"blocked", "local_release_checks_green", "ready_for_external_staging", "ready_for_release_promotion", "ready_for_launch_approval", "ready", "missing", "unknown"}:
+        errors.append("release_check_release_status must be a known release status")
     if report.get("workbench_exposure_status") not in {"not_exposed", "exposed", "unknown"}:
         errors.append("workbench_exposure_status must be not_exposed, exposed, or unknown")
     if report.get("live_metadata_exposure_status") not in {"not_exposed", "exposed", "unknown"}:
@@ -557,6 +573,7 @@ def render_status(report: Mapping[str, Any]) -> str:
         f"next recommended task: {report.get('next_recommended_task')}",
         f"corpus gate closeout: {report.get('corpus_gate_closeout_status')}",
         f"external staging: {report.get('external_staging_report_status')} ({report.get('external_staging_deployment_status')}/{report.get('external_staging_smoke_status')})",
+        f"release checks: {report.get('release_check_report_status')} ({report.get('release_check_release_status')})",
         f"artifact verified count: {report.get('artifact_verified_count')}",
         f"reviewed artifact gate count: {report.get('reviewed_artifact_gate_count')}",
         "blockers by category:",
@@ -584,6 +601,7 @@ def render_markdown_report(report: Mapping[str, Any]) -> str:
         f"- Blockers: {len(blockers)}",
         f"- Next recommended task: {report.get('next_recommended_task')}",
         f"- External staging: {report.get('external_staging_report_status')} ({report.get('external_staging_deployment_status')}/{report.get('external_staging_smoke_status')})",
+        f"- Release checks: {report.get('release_check_report_status')} ({report.get('release_check_release_status')})",
         "",
         "Local rehearsal passing is not public launch approval. This report only audits the local bundle, rehearsal, and supplied gate evidence.",
         "",
@@ -624,6 +642,8 @@ def render_markdown_report(report: Mapping[str, Any]) -> str:
             f"- External staging report: {report.get('external_staging_report_status')}",
             f"- External staging deployment: {report.get('external_staging_deployment_status')}",
             f"- External staging smoke: {report.get('external_staging_smoke_status')}",
+            f"- Release-check report: {report.get('release_check_report_status')}",
+            f"- Release-check status: {report.get('release_check_release_status')}",
             f"- Binary verified count: {report.get('binary_verified_count')}",
             f"- Download safe count: {report.get('download_safe_count')}",
             f"- Execution safe count: {report.get('execution_safe_count')}",
@@ -816,6 +836,40 @@ def _external_staging_report(source: Mapping[str, Any] | None) -> dict[str, Any]
     }
 
 
+def _release_check_report(source: Mapping[str, Any] | None) -> dict[str, str]:
+    if not source or not source.get("present"):
+        return {
+            "status": "missing",
+            "release_status": "missing",
+            "full_discovery_status": "not_run",
+            "release_promotion_status": "not_run",
+            "digest": "",
+            "evidence": "release-check report not provided",
+        }
+    payload = source.get("payload") if isinstance(source.get("payload"), Mapping) else {}
+    raw_status = str(payload.get("status") or "").strip()
+    if raw_status == "PASS":
+        status = "pass"
+    elif raw_status == "PASS_WITH_WARNINGS":
+        status = "pass_with_warnings"
+    elif raw_status == "FAIL":
+        status = "fail"
+    else:
+        status = "unknown"
+    release_status = str(payload.get("release_status") or "unknown")
+    full_discovery = str(payload.get("full_discovery_status") or "not_run")
+    release_promotion = str(payload.get("release_promotion_status") or "not_run")
+    digest = _file_sha256(Path(str(source.get("path") or ""))) if source.get("present") else ""
+    return {
+        "status": status,
+        "release_status": release_status,
+        "full_discovery_status": full_discovery if full_discovery in {"pass", "fail", "not_run", "missing", "unknown"} else "unknown",
+        "release_promotion_status": release_promotion if release_promotion in {"pass", "fail", "not_run", "missing", "unknown"} else "unknown",
+        "digest": digest,
+        "evidence": str(source.get("path") or "release-check report"),
+    }
+
+
 def _external_staging_host_status(options: Mapping[str, Any], external_staging: Mapping[str, Any]) -> str:
     if external_staging.get("status") == "pass":
         return "configured"
@@ -978,6 +1032,8 @@ def _not_checked(report: Mapping[str, Any]) -> list[str]:
         items.append("production hosting was not checked because no public URL was provided")
     if report.get("full_discovery_status") != "pass":
         items.append("full discovery/release promotion evidence was not supplied as passing")
+    if report.get("release_check_report_status") in {"missing", "unknown"}:
+        items.append("release-check report was not supplied or could not be interpreted")
     if report.get("official_reviewed_artifact_gate_status") != "pass":
         items.append("official reviewed-artifact gate evidence was not supplied as passing")
     if report.get("public_launch_approval_status") != "approved":

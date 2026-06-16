@@ -128,6 +128,11 @@ produce a validated config/template status, dry-run report, and keep the
 external staging blocker open. Apply requires an ignored local config or
 environment configuration plus explicit confirmation.
 
+After corpus closeout, staging, rehearsal, external staging, and launch-gate
+reports exist, use `docs/runbooks/PUBLIC_ALPHA_RELEASE_CHECKS.md` to run the
+machine-checkable release-check gate. That report keeps launch blocked unless
+deployment, release, auth, and approval gates are genuinely cleared.
+
 ## Troubleshooting
 
 - Count below 25: rerun manual batch review/report/status and fix evidence

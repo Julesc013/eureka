@@ -233,6 +233,10 @@ deployment or transfer-complete external staging state plus passing smoke
 probes. Dry-run-only, missing-config, confirmation-required, blocked-smoke, or
 manual-start-required-without-smoke reports keep the blocker open.
 
+After producing the external staging report, run
+`docs/runbooks/PUBLIC_ALPHA_RELEASE_CHECKS.md` to validate the full local
+release-check lane and feed its report back into the launch gate.
+
 ## Safety Guarantees
 
 External staging must keep:

@@ -70,6 +70,9 @@ artifact identity export that makes staging and launch-gate corpus counts agree.
 See `docs/runbooks/EXTERNAL_STAGING_HOST_PROVISION.md` for the next external
 staging plan/package/config/dry-run path once local rehearsal remains green.
 Configured external apply remains explicit and confirmation-gated.
+See `docs/runbooks/PUBLIC_ALPHA_RELEASE_CHECKS.md` for the release-check gate
+that consumes the rehearsal, corpus, staging, external staging, and launch-gate
+reports before any launch decision.
 
 The JSON report includes:
 
