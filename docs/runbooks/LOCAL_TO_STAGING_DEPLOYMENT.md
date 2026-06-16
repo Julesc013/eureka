@@ -106,6 +106,11 @@ separate local-machine staging report, see
 `docs/runbooks/LOCAL_MACHINE_STAGING_PROVISION.md`. That path is not external
 staging and does not expose the service to the internet.
 
+If the current computer is also the chosen hosting path, use
+`docs/runbooks/LOCAL_MACHINE_PUBLIC_EXPOSURE_PLAN.md` after local-machine
+staging. That creates the no-exposure plan and launch-gate input before any
+future tunnel, reverse proxy, LAN, or public-port task.
+
 Then run the launch-blocker closeout audit when you need the machine-checkable
 gate that separates local readiness from public launch readiness:
 

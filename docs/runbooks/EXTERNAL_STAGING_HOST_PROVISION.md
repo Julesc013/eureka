@@ -83,6 +83,11 @@ python scripts/eureka_external_staging.py config-status --config .eureka/externa
 If the local file is absent, both commands report `missing_config`. That is the
 expected posture until an authorized host is available.
 
+If the user chooses to use the current computer as the hosting path instead of
+an external SSH host, leave this external-staging apply path deferred and use
+`docs/runbooks/LOCAL_MACHINE_PUBLIC_EXPOSURE_PLAN.md`. That plan records
+`external_staging_deferred=true` without pretending an external host exists.
+
 Supported environment variables:
 
 ```text

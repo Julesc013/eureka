@@ -72,6 +72,7 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr:
     audit_parser.add_argument("--corpus-gate-closeout", default="")
     audit_parser.add_argument("--external-staging-report", default="")
     audit_parser.add_argument("--local-machine-staging-report", default="")
+    audit_parser.add_argument("--local-machine-public-exposure-report", default="")
     audit_parser.add_argument("--verified-evidence-report", default="")
     audit_parser.add_argument("--release-check-report", default="")
     audit_parser.add_argument("--production-auth-posture", choices=("approved", "missing", "unknown"), default="missing")
@@ -95,6 +96,7 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr:
             "corpus_gate_closeout": args.corpus_gate_closeout,
             "external_staging_report": args.external_staging_report,
             "local_machine_staging_report": args.local_machine_staging_report,
+            "local_machine_public_exposure_report": args.local_machine_public_exposure_report,
             "verified_evidence_report": args.verified_evidence_report,
             "release_check_report": args.release_check_report,
             "production_auth_posture": args.production_auth_posture,
@@ -178,6 +180,7 @@ def audit_launch_gate(
     corpus_gate = _corpus_gate_closeout(optional_sources.get("corpus_gate_closeout"))
     external_staging = _external_staging_report(optional_sources.get("external_staging_report"))
     local_machine_staging = _local_machine_staging_report(optional_sources.get("local_machine_staging_report"))
+    local_machine_exposure = _local_machine_public_exposure_report(optional_sources.get("local_machine_public_exposure_report"))
     release_check = _release_check_report(optional_sources.get("release_check_report"))
     verified_evidence = _generic_report_status(optional_sources.get("verified_evidence_report"), default="unknown")
     if corpus_gate["status"] == "pass":
@@ -194,10 +197,10 @@ def audit_launch_gate(
     }
     approval = _approval_status(optional_sources.get("approval_file"))
 
-    external_staging_host_status = _external_staging_host_status(opts, external_staging)
+    external_staging_host_status = _external_staging_host_status(opts, external_staging, local_machine_exposure)
     production_hosting_status = "configured" if _has_value(opts.get("public_url")) else "missing"
-    tls_domain_status = _tls_status(str(opts.get("public_url") or ""))
-    production_auth_status = _production_auth_status(opts)
+    tls_domain_status = _exposure_tls_domain_status(local_machine_exposure, str(opts.get("public_url") or ""))
+    production_auth_status = _exposure_auth_status(local_machine_exposure, opts)
 
     blocker_categories = {category: [] for category in BLOCKER_CATEGORIES}
     blockers: list[dict[str, Any]] = []
@@ -251,6 +254,22 @@ def audit_launch_gate(
             evidence=local_machine_staging["evidence"],
             status="failed",
         )
+    if local_machine_exposure["provided"] and local_machine_exposure["status"] != "pass":
+        add_blocker(
+            "safety_blockers",
+            "local_machine_public_exposure_plan_not_passed",
+            "local-machine public exposure report is not passed",
+            evidence=local_machine_exposure["evidence"],
+            status=local_machine_exposure["status"],
+        )
+    if local_machine_exposure["public_exposure_enabled"] is True:
+        add_blocker(
+            "safety_blockers",
+            "local_machine_public_exposure_enabled",
+            "local-machine public exposure report claims public exposure is enabled",
+            evidence=local_machine_exposure["evidence"],
+            status="failed",
+        )
 
     artifact_verified_count = int(staging_status.get("artifact_verified_count") or manifest.get("artifact_verified_count") or 0)
     if artifact_verified_count <= 0:
@@ -291,7 +310,7 @@ def audit_launch_gate(
             status=verified_evidence["status"],
         )
 
-    if external_staging_host_status != "configured":
+    if external_staging_host_status not in {"configured", "deferred"}:
         add_blocker(
             "deployment_blockers",
             "external_staging_host_missing",
@@ -299,6 +318,8 @@ def audit_launch_gate(
             evidence=external_staging["evidence"],
             status=external_staging["status"],
         )
+    if local_machine_exposure["status"] == "pass":
+        _add_local_machine_exposure_blockers(add_blocker, local_machine_exposure)
     if production_hosting_status != "configured":
         add_blocker("deployment_blockers", "production_hosting_missing", "production hosting is missing", evidence="--public-url not provided")
     if tls_domain_status != "configured":
@@ -419,6 +440,15 @@ def audit_launch_gate(
         "local_machine_staging_report_status": local_machine_staging["report_status"],
         "local_machine_staging_report_digest": local_machine_staging["digest"],
         "local_machine_public_exposure": local_machine_staging["public_exposure"],
+        "local_machine_public_exposure_status": local_machine_exposure["status"],
+        "local_machine_public_exposure_report_status": local_machine_exposure["report_status"],
+        "local_machine_public_exposure_report_digest": local_machine_exposure["digest"],
+        "selected_hosting_path": local_machine_exposure["selected_hosting_path"],
+        "exposure_mode": local_machine_exposure["exposure_mode"],
+        "public_exposure_enabled": local_machine_exposure["public_exposure_enabled"],
+        "external_staging_deferred": local_machine_exposure["external_staging_deferred"],
+        "public_readiness_status": local_machine_exposure["public_readiness_status"],
+        "ops_posture_status": local_machine_exposure["ops_posture_status"],
         "production_hosting_status": production_hosting_status,
         "tls_domain_status": tls_domain_status,
         "production_auth_or_noauth_posture_status": production_auth_status,
@@ -436,6 +466,7 @@ def audit_launch_gate(
             official_gate=official_gate,
             external_staging=external_staging,
             local_machine_staging=local_machine_staging,
+            local_machine_exposure=local_machine_exposure,
         ),
         "generated_at": "not_recorded_deterministic_local_launch_gate",
         "evidence_sources": _evidence_sources(bundle_path, rehearsal_path, optional_sources, git_state),
@@ -518,7 +549,6 @@ def validate_launch_gate_report(report_path: str | Path) -> list[str]:
         "local_machine_staging_status",
         "local_machine_staging_report_status",
         "local_machine_staging_report_digest",
-        "local_machine_public_exposure",
         "production_hosting_status",
         "tls_domain_status",
         "production_auth_or_noauth_posture_status",
@@ -564,6 +594,14 @@ def validate_launch_gate_report(report_path: str | Path) -> list[str]:
         errors.append("local_machine_staging_status pass requires report digest")
     if report.get("local_machine_public_exposure") is True:
         errors.append("local_machine_public_exposure must remain false")
+    if "local_machine_public_exposure_status" in report and report.get("local_machine_public_exposure_status") not in {"pass", "fail", "missing", "not_provided", "unknown"}:
+        errors.append("local_machine_public_exposure_status must be a known local-machine public exposure status")
+    if "local_machine_public_exposure_report_status" in report and report.get("local_machine_public_exposure_report_status") not in {"PASS", "PASS_WITH_WARNINGS", "FAIL", "missing", "not_provided", "unknown"}:
+        errors.append("local_machine_public_exposure_report_status must be a known local-machine public exposure report status")
+    if report.get("public_exposure_enabled") is True:
+        errors.append("public_exposure_enabled must remain false")
+    if report.get("external_staging_host_status") not in {"configured", "missing", "deferred"}:
+        errors.append("external_staging_host_status must be configured, missing, or deferred")
     if "release_check_report_status" in report and report.get("release_check_report_status") not in {"pass", "pass_with_warnings", "fail", "missing", "unknown"}:
         errors.append("release_check_report_status must be a known release-check status")
     if "release_check_release_status" in report and report.get("release_check_release_status") not in {"blocked", "local_release_checks_green", "ready_for_external_staging", "ready_for_release_promotion", "ready_for_launch_approval", "ready", "missing", "unknown"}:
@@ -614,6 +652,7 @@ def render_status(report: Mapping[str, Any]) -> str:
         f"corpus gate closeout: {report.get('corpus_gate_closeout_status')}",
         f"external staging: {report.get('external_staging_report_status')} ({report.get('external_staging_deployment_status')}/{report.get('external_staging_smoke_status')})",
         f"local-machine staging: {report.get('local_machine_staging_status')} ({report.get('local_machine_staging_report_status')})",
+        f"local-machine public exposure: {report.get('local_machine_public_exposure_status')} ({report.get('exposure_mode')})",
         f"release checks: {report.get('release_check_report_status')} ({report.get('release_check_release_status')})",
         f"artifact verified count: {report.get('artifact_verified_count')}",
         f"reviewed artifact gate count: {report.get('reviewed_artifact_gate_count')}",
@@ -643,6 +682,7 @@ def render_markdown_report(report: Mapping[str, Any]) -> str:
         f"- Next recommended task: {report.get('next_recommended_task')}",
         f"- External staging: {report.get('external_staging_report_status')} ({report.get('external_staging_deployment_status')}/{report.get('external_staging_smoke_status')})",
         f"- Local-machine staging: {report.get('local_machine_staging_status')} ({report.get('local_machine_staging_report_status')})",
+        f"- Local-machine public exposure: {report.get('local_machine_public_exposure_status')} ({report.get('exposure_mode')})",
         f"- Release checks: {report.get('release_check_report_status')} ({report.get('release_check_release_status')})",
         "",
         "Local rehearsal passing is not public launch approval. This report only audits the local bundle, rehearsal, and supplied gate evidence.",
@@ -686,6 +726,10 @@ def render_markdown_report(report: Mapping[str, Any]) -> str:
             f"- External staging smoke: {report.get('external_staging_smoke_status')}",
             f"- Local-machine staging: {report.get('local_machine_staging_status')}",
             f"- Local-machine public exposure: {str(report.get('local_machine_public_exposure')).lower()}",
+            f"- Local-machine exposure plan: {report.get('local_machine_public_exposure_status')} ({report.get('exposure_mode')})",
+            f"- Public exposure enabled: {str(report.get('public_exposure_enabled')).lower()}",
+            f"- External SSH staging deferred: {str(report.get('external_staging_deferred')).lower()}",
+            f"- Ops posture: {report.get('ops_posture_status')}",
             f"- Release-check report: {report.get('release_check_report_status')}",
             f"- Release-check status: {report.get('release_check_release_status')}",
             f"- Binary verified count: {report.get('binary_verified_count')}",
@@ -919,6 +963,63 @@ def _local_machine_staging_report(source: Mapping[str, Any] | None) -> dict[str,
     }
 
 
+def _local_machine_public_exposure_report(source: Mapping[str, Any] | None) -> dict[str, Any]:
+    if not source or not source.get("path"):
+        return {
+            "provided": False,
+            "status": "not_provided",
+            "report_status": "not_provided",
+            "digest": "",
+            "selected_hosting_path": "",
+            "exposure_mode": "",
+            "public_exposure_enabled": False,
+            "external_staging_deferred": False,
+            "public_readiness_status": "unknown",
+            "ops_posture_status": "unknown",
+            "blockers": [],
+            "evidence": "local-machine public exposure report not provided",
+        }
+    if not source.get("present"):
+        return {
+            "provided": True,
+            "status": "missing",
+            "report_status": "missing",
+            "digest": "",
+            "selected_hosting_path": "",
+            "exposure_mode": "",
+            "public_exposure_enabled": False,
+            "external_staging_deferred": False,
+            "public_readiness_status": "unknown",
+            "ops_posture_status": "unknown",
+            "blockers": [],
+            "evidence": str(source.get("path") or "local-machine public exposure report"),
+        }
+    payload = source.get("payload") if isinstance(source.get("payload"), Mapping) else {}
+    report_status = str(payload.get("status") or "unknown")
+    selected = str(payload.get("selected_hosting_path") or "")
+    exposure_enabled = bool(payload.get("public_exposure_enabled") is True)
+    if report_status in {"PASS", "PASS_WITH_WARNINGS"} and selected == "local_machine" and not exposure_enabled:
+        status = "pass"
+    elif report_status == "FAIL" or exposure_enabled:
+        status = "fail"
+    else:
+        status = "unknown"
+    return {
+        "provided": True,
+        "status": status,
+        "report_status": report_status,
+        "digest": _file_sha256(Path(str(source.get("path") or ""))) if source.get("present") else "",
+        "selected_hosting_path": selected,
+        "exposure_mode": str(payload.get("exposure_mode") or ""),
+        "public_exposure_enabled": exposure_enabled,
+        "external_staging_deferred": bool(payload.get("external_staging_deferred") is True),
+        "public_readiness_status": str(payload.get("public_readiness_status") or "unknown"),
+        "ops_posture_status": str(payload.get("ops_posture_status") or "unknown"),
+        "blockers": [item for item in payload.get("blockers") or [] if isinstance(item, Mapping)],
+        "evidence": str(source.get("path") or "local-machine public exposure report"),
+    }
+
+
 def _release_check_report(source: Mapping[str, Any] | None) -> dict[str, str]:
     if not source or not source.get("present"):
         return {
@@ -953,12 +1054,54 @@ def _release_check_report(source: Mapping[str, Any] | None) -> dict[str, str]:
     }
 
 
-def _external_staging_host_status(options: Mapping[str, Any], external_staging: Mapping[str, Any]) -> str:
+def _external_staging_host_status(options: Mapping[str, Any], external_staging: Mapping[str, Any], local_machine_exposure: Mapping[str, Any] | None = None) -> str:
+    if (
+        local_machine_exposure
+        and local_machine_exposure.get("selected_hosting_path") == "local_machine"
+        and local_machine_exposure.get("external_staging_deferred") is True
+        and local_machine_exposure.get("status") == "pass"
+    ):
+        return "deferred"
     if external_staging.get("status") == "pass":
         return "configured"
     if _has_value(options.get("external_staging_url")):
         return "configured"
     return "missing"
+
+
+def _exposure_tls_domain_status(local_machine_exposure: Mapping[str, Any], public_url: str) -> str:
+    if local_machine_exposure.get("status") == "pass":
+        return "configured" if local_machine_exposure.get("public_readiness_status") == "ready" else "missing"
+    return _tls_status(public_url)
+
+
+def _exposure_auth_status(local_machine_exposure: Mapping[str, Any], options: Mapping[str, Any]) -> str:
+    if local_machine_exposure.get("status") == "pass":
+        return "approved" if local_machine_exposure.get("public_readiness_status") == "ready" else "missing"
+    return _production_auth_status(options)
+
+
+def _add_local_machine_exposure_blockers(add_blocker: Any, local_machine_exposure: Mapping[str, Any]) -> None:
+    handled_elsewhere = {
+        "tls_domain_missing",
+        "production_auth_or_noauth_posture_missing",
+        "full_discovery_not_passed",
+        "release_promotion_not_passed",
+        "public_launch_approval_missing",
+    }
+    for blocker in local_machine_exposure.get("blockers") or []:
+        if not isinstance(blocker, Mapping):
+            continue
+        blocker_id = str(blocker.get("id") or "")
+        if blocker_id in handled_elsewhere:
+            continue
+        add_blocker(
+            str(blocker.get("category") or "deployment_blockers"),
+            blocker_id,
+            str(blocker.get("message") or blocker_id.replace("_", " ")),
+            evidence=local_machine_exposure["evidence"],
+            status=str(blocker.get("status") or "blocked"),
+        )
 
 
 def _generic_report_status(source: Mapping[str, Any] | None, *, default: str) -> dict[str, str]:
@@ -987,7 +1130,7 @@ def _approval_status(source: Mapping[str, Any] | None) -> dict[str, str]:
 
 def _optional_sources(options: Mapping[str, Any]) -> dict[str, dict[str, Any]]:
     result = {}
-    for key in ("approval_file", "full_discovery_report", "artifact_gate_report", "corpus_gate_closeout", "external_staging_report", "local_machine_staging_report", "verified_evidence_report", "release_check_report"):
+    for key in ("approval_file", "full_discovery_report", "artifact_gate_report", "corpus_gate_closeout", "external_staging_report", "local_machine_staging_report", "local_machine_public_exposure_report", "verified_evidence_report", "release_check_report"):
         raw = str(options.get(key) or "")
         if not raw:
             result[key] = {"path": "", "present": False, "payload": {}, "read_error": ""}
@@ -1037,6 +1180,7 @@ def _next_task(
     official_gate: Mapping[str, Any] | None = None,
     external_staging: Mapping[str, Any] | None = None,
     local_machine_staging: Mapping[str, Any] | None = None,
+    local_machine_exposure: Mapping[str, Any] | None = None,
 ) -> str:
     unknown = set(blocker_categories.get("unknown_authority_blockers") or [])
     if "artifact_gate_authority_unknown" in unknown:
@@ -1048,6 +1192,10 @@ def _next_task(
     if blocker_categories.get("corpus_evidence_blockers") or unknown:
         return "MANUAL-ARTIFACT-EVIDENCE-BATCH-01"
     if blocker_categories.get("deployment_blockers"):
+        if str((local_machine_exposure or {}).get("status") or "") == "pass":
+            if str((local_machine_exposure or {}).get("ops_posture_status") or "") != "pass":
+                return "PUBLIC-ALPHA-OPS-POSTURE-00"
+            return "LOCAL-MACHINE-PUBLIC-TUNNEL-PLAN-00"
         if str((local_machine_staging or {}).get("status") or "") == "pass":
             return "LOCAL-MACHINE-PUBLIC-EXPOSURE-PLAN-00"
         external_status = str((external_staging or {}).get("status") or "")
@@ -1116,6 +1264,8 @@ def _not_checked(report: Mapping[str, Any]) -> list[str]:
         items.append("external staging host was not checked because no URL was provided")
     if report.get("local_machine_staging_status") in {"missing", "not_provided", "unknown"}:
         items.append("local-machine staging report was not supplied or could not be interpreted")
+    if report.get("local_machine_public_exposure_status") in {"missing", "not_provided", "unknown"}:
+        items.append("local-machine public exposure report was not supplied or could not be interpreted")
     if report.get("production_hosting_status") != "configured":
         items.append("production hosting was not checked because no public URL was provided")
     if report.get("full_discovery_status") != "pass":

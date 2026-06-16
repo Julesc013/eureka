@@ -135,6 +135,14 @@ python scripts/eureka_public_alpha_launch_gate.py status --report .eureka/launch
 The launch gate may record `local_machine_staging_status=pass`, but it must not
 mark launch ready from loopback hosting alone.
 
+## Public Exposure Planning
+
+After local-machine staging is green, use
+`docs/runbooks/LOCAL_MACHINE_PUBLIC_EXPOSURE_PLAN.md` to record that the current
+computer is the selected hosting path while public exposure remains disabled.
+That report lets release checks and the launch gate defer the external SSH host
+path without claiming public launch readiness.
+
 ## What Remains Blocked
 
 Local-machine staging does not clear:

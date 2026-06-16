@@ -54,6 +54,17 @@ Expected current status is `PASS_WITH_WARNINGS` with
 `launch_status=BLOCKED`: local rehearsal is green, but public launch gates are
 not cleared.
 
+If the current computer is the chosen hosting path, pass the local-machine
+staging and public-exposure reports:
+
+```powershell
+python scripts/eureka_public_alpha_launch_gate.py audit --bundle .eureka/staging/public-alpha --rehearsal-report .eureka/rehearsals/public-alpha/latest/rehearsal_report.json --artifact-gate-report .eureka/artifact-gate/manual-batch-01/artifact_gate_report.json --corpus-gate-closeout .eureka/corpus-gate/public-alpha/latest/corpus_gate_closeout.json --external-staging-report .eureka/external-staging/public-alpha/latest/external_staging_report.json --local-machine-staging-report .eureka/local-machine-staging/public-alpha/latest/local_machine_staging_report.json --local-machine-public-exposure-report .eureka/local-machine-public-exposure/public-alpha/latest/local_machine_public_exposure_report.json --release-check-report .eureka/release-checks/public-alpha/latest/release_check_report.json --out .eureka/launch/public-alpha/latest
+```
+
+See `docs/runbooks/LOCAL_MACHINE_PUBLIC_EXPOSURE_PLAN.md`. A valid exposure
+report can mark the external SSH host path as deferred for local-machine
+hosting, but it must keep public exposure disabled and launch blocked.
+
 ## Validate And Inspect
 
 ```powershell

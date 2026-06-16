@@ -11,6 +11,7 @@ from typing import Any
 
 from runtime.local.corpus_gate_closeout import DEFAULT_GATE_TARGET
 from runtime.local.external_staging_mvp import validate_report as validate_external_staging_report
+from runtime.local.local_machine_public_exposure import validate_report as validate_local_machine_public_exposure_report
 from runtime.local.local_machine_staging_mvp import validate_report as validate_local_machine_staging_report
 from runtime.local.staging_mvp import bundle_status, validate_bundle
 from scripts.eureka_public_alpha_launch_gate import validate_launch_gate_report
@@ -64,6 +65,7 @@ FOCUSED_TEST_COMMAND = (
     "tests.e2e.test_external_staging_host_provision",
     "tests.e2e.test_external_staging_host_config",
     "tests.e2e.test_local_machine_staging_provision",
+    "tests.e2e.test_local_machine_public_exposure_plan",
 )
 
 CommandRunner = Callable[[Sequence[str]], Mapping[str, Any]]
@@ -78,6 +80,7 @@ def run_release_checks(
     launch_gate_report: str | Path,
     out_dir: str | Path,
     local_machine_staging_report: str | Path | None = None,
+    local_machine_public_exposure_report: str | Path | None = None,
     full_discovery_report: str | Path | None = None,
     release_promotion_report: str | Path | None = None,
     run_tests: bool = True,
@@ -91,6 +94,7 @@ def run_release_checks(
     rehearsal_path = Path(rehearsal_report)
     external_path = Path(external_staging_report)
     local_machine_path = Path(local_machine_staging_report) if local_machine_staging_report else None
+    exposure_path = Path(local_machine_public_exposure_report) if local_machine_public_exposure_report else None
     launch_path = Path(launch_gate_report)
 
     commands = _release_commands(
@@ -99,6 +103,7 @@ def run_release_checks(
         rehearsal_path=rehearsal_path,
         external_path=external_path,
         local_machine_path=local_machine_path,
+        exposure_path=exposure_path,
         launch_path=launch_path,
         run_tests=run_tests,
     )
@@ -110,6 +115,7 @@ def run_release_checks(
     rehearsal = _read_json_for_audit(rehearsal_path)
     external = _read_json_for_audit(external_path)
     local_machine = _read_json_for_audit(local_machine_path) if local_machine_path else {}
+    exposure = _read_json_for_audit(exposure_path) if exposure_path else {}
     launch = _read_json_for_audit(launch_path)
     staging = bundle_status(bundle_path)
     full_discovery = _optional_gate_status(full_discovery_report, default="not_run")
@@ -129,7 +135,22 @@ def run_release_checks(
         add_blocker("git_blockers", "origin_dev_not_synced", "local HEAD does not match origin/dev", status="failed", evidence="git rev-parse HEAD/origin/dev")
 
     _add_command_blockers(add_blocker, command_results)
-    _add_input_blockers(add_blocker, bundle_path, corpus_path, rehearsal_path, external_path, local_machine_path, launch_path, staging, rehearsal, external, local_machine, launch)
+    _add_input_blockers(
+        add_blocker,
+        bundle_path,
+        corpus_path,
+        rehearsal_path,
+        external_path,
+        local_machine_path,
+        exposure_path,
+        launch_path,
+        staging,
+        rehearsal,
+        external,
+        local_machine,
+        exposure,
+        launch,
+    )
     _add_launch_blockers(add_blocker, launch)
 
     if full_discovery["status"] != "pass":
@@ -144,6 +165,8 @@ def run_release_checks(
         warnings.append("local release checks passed but launch remains blocked by unresolved gates")
     if _local_machine_staging_status(local_machine) == "pass":
         warnings.append("local-machine staging passed but does not satisfy external/public hosting")
+    if _local_machine_public_exposure_status(exposure) == "pass" and exposure.get("external_staging_deferred") is True:
+        warnings.append("external SSH staging is deferred by the local-machine public exposure plan")
     if external.get("smoke_status") in {"blocked", "not_run"}:
         warnings.append("external staging smoke has not passed")
     if full_discovery["status"] != "pass":
@@ -177,6 +200,15 @@ def run_release_checks(
         "local_machine_staging_status": _local_machine_staging_status(local_machine),
         "local_machine_staging_report_status": str(local_machine.get("status") or ("not_provided" if not local_machine_path else "missing")),
         "local_machine_staging_report_digest": _file_sha256(local_machine_path) if local_machine_path else "",
+        "local_machine_public_exposure_status": _local_machine_public_exposure_status(exposure),
+        "local_machine_public_exposure_report_status": str(exposure.get("status") or ("not_provided" if not exposure_path else "missing")),
+        "local_machine_public_exposure_report_digest": _file_sha256(exposure_path) if exposure_path else "",
+        "selected_hosting_path": str(exposure.get("selected_hosting_path") or ""),
+        "exposure_mode": str(exposure.get("exposure_mode") or ""),
+        "public_exposure_enabled": bool(exposure.get("public_exposure_enabled") is True),
+        "external_staging_deferred": bool(exposure.get("external_staging_deferred") is True),
+        "public_readiness_status": str(exposure.get("public_readiness_status") or "unknown"),
+        "ops_posture_status": str(exposure.get("ops_posture_status") or "unknown"),
         "full_discovery_status": full_discovery["status"],
         "full_discovery_report_digest": full_discovery["digest"],
         "release_promotion_status": release_promotion["status"],
@@ -197,6 +229,8 @@ def run_release_checks(
             blocker_categories,
             external_status=_external_staging_status(external),
             local_machine_status=_local_machine_staging_status(local_machine),
+            exposure_status=_local_machine_public_exposure_status(exposure),
+            ops_posture_status=str(exposure.get("ops_posture_status") or "unknown"),
         ),
         "generated_at": "not_recorded_deterministic_public_alpha_release_checks",
     }
@@ -229,6 +263,15 @@ def validate_release_check_report(report: str | Path) -> list[str]:
         "local_machine_staging_status",
         "local_machine_staging_report_status",
         "local_machine_staging_report_digest",
+        "local_machine_public_exposure_status",
+        "local_machine_public_exposure_report_status",
+        "local_machine_public_exposure_report_digest",
+        "selected_hosting_path",
+        "exposure_mode",
+        "public_exposure_enabled",
+        "external_staging_deferred",
+        "public_readiness_status",
+        "ops_posture_status",
         "full_discovery_status",
         "release_promotion_status",
         "aide_doctor_status",
@@ -256,6 +299,12 @@ def validate_release_check_report(report: str | Path) -> list[str]:
         errors.append("local_machine_staging_status is not recognized")
     if payload.get("local_machine_staging_report_status") not in {"PASS", "PASS_WITH_WARNINGS", "FAIL", "missing", "not_provided", "unknown"}:
         errors.append("local_machine_staging_report_status is not recognized")
+    if payload.get("local_machine_public_exposure_status") not in {"pass", "fail", "unknown", "missing", "not_provided"}:
+        errors.append("local_machine_public_exposure_status is not recognized")
+    if payload.get("local_machine_public_exposure_report_status") not in {"PASS", "PASS_WITH_WARNINGS", "FAIL", "missing", "not_provided", "unknown"}:
+        errors.append("local_machine_public_exposure_report_status is not recognized")
+    if payload.get("public_exposure_enabled") is True:
+        errors.append("release-check report must not claim public exposure is enabled")
     if payload.get("status") == "PASS":
         for key in ("git_clean", "generated_artifacts_clean"):
             if payload.get(key) is not True:
@@ -273,6 +322,8 @@ def validate_release_check_report(report: str | Path) -> list[str]:
         errors.append("report claims external staging pass while external report is dry-run only")
     if payload.get("local_machine_staging_status") == "pass" and not payload.get("local_machine_staging_report_digest"):
         errors.append("report claims local-machine staging passed without report evidence")
+    if payload.get("local_machine_public_exposure_status") == "pass" and not payload.get("local_machine_public_exposure_report_digest"):
+        errors.append("report claims local-machine public exposure planning passed without report evidence")
     if payload.get("public_launch_approval_status") == "approved":
         errors.append("release-check report must not claim public launch approval")
     for key in SAFETY_ZERO_FIELDS:
@@ -282,7 +333,7 @@ def validate_release_check_report(report: str | Path) -> list[str]:
         errors.append("missing blocker for full discovery status")
     if payload.get("release_promotion_status") != "pass" and not _has_blocker(payload, "release_promotion_not_passed"):
         errors.append("missing blocker for release promotion status")
-    if payload.get("external_staging_status") != "pass" and not _has_category_blocker(payload, "external_staging_blockers"):
+    if payload.get("external_staging_status") != "pass" and payload.get("external_staging_deferred") is not True and not _has_category_blocker(payload, "external_staging_blockers"):
         errors.append("missing blocker for external staging status")
     errors.extend(_payload_secret_errors("release_check_report", payload))
     return _dedupe(errors)
@@ -310,6 +361,7 @@ def render_status(report: Mapping[str, Any]) -> str:
             f"rehearsal_status: {report.get('rehearsal_status')}",
             f"external_staging_status: {report.get('external_staging_status')} ({report.get('external_staging_deployment_status')}/{report.get('external_staging_smoke_status')})",
             f"local_machine_staging_status: {report.get('local_machine_staging_status')} ({report.get('local_machine_staging_report_status')})",
+            f"local_machine_public_exposure_status: {report.get('local_machine_public_exposure_status')} ({report.get('exposure_mode')})",
             f"full_discovery_status: {report.get('full_discovery_status')}",
             f"release_promotion_status: {report.get('release_promotion_status')}",
             f"focused_test_status: {report.get('focused_test_status')}",
@@ -337,6 +389,7 @@ def render_release_markdown(report: Mapping[str, Any]) -> str:
             f"- Rehearsal: {report.get('rehearsal_status')}",
             f"- External staging: {report.get('external_staging_status')} ({report.get('external_staging_deployment_status')}/{report.get('external_staging_smoke_status')})",
             f"- Local-machine staging: {report.get('local_machine_staging_status')} ({report.get('local_machine_staging_report_status')})",
+            f"- Local-machine public exposure: {report.get('local_machine_public_exposure_status')} ({report.get('exposure_mode')})",
             f"- Full discovery: {report.get('full_discovery_status')}",
             f"- Release promotion: {report.get('release_promotion_status')}",
             "",
@@ -361,6 +414,7 @@ def _release_commands(
     rehearsal_path: Path,
     external_path: Path,
     local_machine_path: Path | None,
+    exposure_path: Path | None,
     launch_path: Path,
     run_tests: bool,
 ) -> list[tuple[str, ...]]:
@@ -383,6 +437,8 @@ def _release_commands(
     ]
     if local_machine_path is not None:
         commands.insert(7, ("python", "scripts/eureka_local_machine_staging.py", "validate-report", "--report", str(local_machine_path)))
+    if exposure_path is not None:
+        commands.insert(8, ("python", "scripts/eureka_local_machine_public_exposure.py", "validate-report", "--report", str(exposure_path)))
     if run_tests:
         commands.append(FOCUSED_TEST_COMMAND)
     return commands
@@ -431,6 +487,8 @@ def _command_id(command: Sequence[str]) -> str:
         return "external_staging_validate"
     if "eureka_local_machine_staging.py" in text:
         return "local_machine_staging_validate"
+    if "eureka_local_machine_public_exposure.py" in text:
+        return "local_machine_public_exposure_validate"
     if "eureka_public_alpha_launch_gate.py" in text:
         return "launch_gate_validate"
     if "check_architecture_boundaries.py" in text:
@@ -473,7 +531,7 @@ def _git_state_from_results(results: Sequence[Mapping[str, Any]]) -> dict[str, A
 
 
 def _add_command_blockers(add_blocker: Callable[..., None], command_results: Sequence[Mapping[str, Any]]) -> None:
-    local_ids = {"corpus_gate_validate", "staging_validate", "rehearsal_validate", "external_staging_validate", "local_machine_staging_validate", "launch_gate_validate", "focused_tests"}
+    local_ids = {"corpus_gate_validate", "staging_validate", "rehearsal_validate", "external_staging_validate", "local_machine_staging_validate", "local_machine_public_exposure_validate", "launch_gate_validate", "focused_tests"}
     safety_ids = {"architecture_boundaries", "generated_artifact_cleanliness", "git_diff_check", "git_diff_cached_check", "aide_doctor", "aide_validate"}
     for item in command_results:
         if item.get("status") == "pass":
@@ -490,11 +548,13 @@ def _add_input_blockers(
     rehearsal_path: Path,
     external_path: Path,
     local_machine_path: Path | None,
+    exposure_path: Path | None,
     launch_path: Path,
     staging: Mapping[str, Any],
     rehearsal: Mapping[str, Any],
     external: Mapping[str, Any],
     local_machine: Mapping[str, Any],
+    exposure: Mapping[str, Any],
     launch: Mapping[str, Any],
 ) -> None:
     required_paths: list[tuple[str, Path]] = [
@@ -506,6 +566,8 @@ def _add_input_blockers(
     ]
     if local_machine_path is not None:
         required_paths.append(("local-machine staging report", local_machine_path))
+    if exposure_path is not None:
+        required_paths.append(("local-machine public exposure report", exposure_path))
     for label, path in required_paths:
         if not path.exists():
             add_blocker("local_release_blockers", f"{_slug(label)}_missing", f"{label} is missing", status="failed", evidence=str(path))
@@ -518,7 +580,8 @@ def _add_input_blockers(
     for key in SAFETY_ZERO_FIELDS:
         if int(staging.get(key) or 0) != 0:
             add_blocker("safety_blockers", f"{key}_nonzero", f"{key} must remain 0", status="failed", evidence=str(bundle_path))
-    if _external_staging_status(external) != "pass":
+    exposure_defers_external = exposure_path is not None and _local_machine_public_exposure_status(exposure) == "pass" and exposure.get("external_staging_deferred") is True
+    if _external_staging_status(external) != "pass" and not exposure_defers_external:
         add_blocker(
             "external_staging_blockers",
             "external_staging_not_smoked",
@@ -534,6 +597,18 @@ def _add_input_blockers(
             status=_local_machine_staging_status(local_machine),
             evidence=str(local_machine_path),
         )
+    if exposure_path is not None:
+        exposure_status = _local_machine_public_exposure_status(exposure)
+        if exposure_status != "pass":
+            add_blocker(
+                "local_release_blockers",
+                "local_machine_public_exposure_plan_not_passed",
+                "local-machine public exposure report is not passed",
+                status=exposure_status,
+                evidence=str(exposure_path),
+            )
+        else:
+            _add_exposure_blockers(add_blocker, exposure)
     if launch.get("launch_status") == "READY":
         add_blocker("approval_blockers", "launch_gate_claims_ready", "launch gate unexpectedly claims READY", status="failed", evidence=str(launch_path))
 
@@ -546,6 +621,23 @@ def _add_launch_blockers(add_blocker: Callable[..., None], launch: Mapping[str, 
         for blocker_id in blocker_ids if isinstance(blocker_ids, Sequence) and not isinstance(blocker_ids, str) else []:
             message = str(blocker_id).replace("_", " ")
             add_blocker(str(category), str(blocker_id), message, evidence="launch_gate_report")
+
+
+def _add_exposure_blockers(add_blocker: Callable[..., None], exposure: Mapping[str, Any]) -> None:
+    for item in exposure.get("blockers") or []:
+        if not isinstance(item, Mapping):
+            continue
+        blocker_id = str(item.get("id") or "")
+        if blocker_id in {"full_discovery_not_passed", "release_promotion_not_passed", "public_launch_approval_missing"}:
+            continue
+        category = str(item.get("category") or "deployment_blockers")
+        add_blocker(
+            category,
+            blocker_id,
+            str(item.get("message") or blocker_id.replace("_", " ")),
+            status=str(item.get("status") or "blocked"),
+            evidence="local_machine_public_exposure_report",
+        )
 
 
 def _optional_gate_status(path: str | Path | None, *, default: str) -> dict[str, str]:
@@ -608,6 +700,17 @@ def _local_machine_staging_status(report: Mapping[str, Any]) -> str:
     return "unknown"
 
 
+def _local_machine_public_exposure_status(report: Mapping[str, Any]) -> str:
+    if not report:
+        return "not_provided"
+    if report.get("status") in {"PASS", "PASS_WITH_WARNINGS"} and report.get("selected_hosting_path") == "local_machine" and report.get("public_exposure_enabled") is False:
+        errors = validate_local_machine_public_exposure_report(report)
+        return "pass" if not errors else "fail"
+    if report.get("status") == "FAIL" or report.get("public_exposure_enabled") is True:
+        return "fail"
+    return "unknown"
+
+
 def _release_status(*, status: str, blockers: Sequence[Mapping[str, str]]) -> str:
     if status == "FAIL":
         return "blocked"
@@ -623,7 +726,16 @@ def _release_status(*, status: str, blockers: Sequence[Mapping[str, str]]) -> st
     return "blocked"
 
 
-def _next_recommended_task(blocker_categories: Mapping[str, Sequence[str]], *, external_status: str, local_machine_status: str = "not_provided") -> str:
+def _next_recommended_task(
+    blocker_categories: Mapping[str, Sequence[str]],
+    *,
+    external_status: str,
+    local_machine_status: str = "not_provided",
+    exposure_status: str = "not_provided",
+    ops_posture_status: str = "unknown",
+) -> str:
+    if exposure_status == "pass" and ops_posture_status != "pass":
+        return "PUBLIC-ALPHA-OPS-POSTURE-00"
     if blocker_categories.get("external_staging_blockers") and external_status in {"dry_run", "missing_config", "blocked", "confirmation_required"}:
         if local_machine_status == "pass":
             return "LOCAL-MACHINE-PUBLIC-EXPOSURE-PLAN-00"

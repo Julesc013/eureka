@@ -73,6 +73,9 @@ Configured external apply remains explicit and confirmation-gated.
 See `docs/runbooks/LOCAL_MACHINE_STAGING_PROVISION.md` when the current
 computer should be treated as the loopback staging host and reported separately
 from external staging.
+See `docs/runbooks/LOCAL_MACHINE_PUBLIC_EXPOSURE_PLAN.md` when the current
+computer is the chosen public-alpha hosting path but exposure must remain off
+until a later implementation and approval task.
 See `docs/runbooks/PUBLIC_ALPHA_RELEASE_CHECKS.md` for the release-check gate
 that consumes the rehearsal, corpus, staging, external staging, and launch-gate
 reports before any launch decision.

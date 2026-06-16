@@ -73,6 +73,17 @@ See `docs/runbooks/LOCAL_MACHINE_STAGING_PROVISION.md`. Local-machine staging is
 loopback evidence only; it does not clear external staging or production
 hosting.
 
+If the current computer is the chosen hosting path, generate and pass the
+local-machine public exposure report:
+
+```powershell
+python scripts/eureka_public_alpha_release_checks.py run --bundle .eureka/staging/public-alpha --corpus-gate-closeout .eureka/corpus-gate/public-alpha/latest/corpus_gate_closeout.json --rehearsal-report .eureka/rehearsals/public-alpha/latest/rehearsal_report.json --external-staging-report .eureka/external-staging/public-alpha/latest/external_staging_report.json --local-machine-staging-report .eureka/local-machine-staging/public-alpha/latest/local_machine_staging_report.json --local-machine-public-exposure-report .eureka/local-machine-public-exposure/public-alpha/latest/local_machine_public_exposure_report.json --launch-gate-report .eureka/launch/public-alpha/latest/launch_gate_report.json --out .eureka/release-checks/public-alpha/latest
+```
+
+See `docs/runbooks/LOCAL_MACHINE_PUBLIC_EXPOSURE_PLAN.md`. The exposure report
+can defer the external SSH host path for local-machine hosting, but it keeps
+public exposure disabled and launch blocked.
+
 The command writes:
 
 ```text
@@ -121,7 +132,7 @@ The nonzero exit is expected until blockers are cleared.
 Feed the release-check report back into the launch gate:
 
 ```powershell
-python scripts/eureka_public_alpha_launch_gate.py audit --bundle .eureka/staging/public-alpha --rehearsal-report .eureka/rehearsals/public-alpha/latest/rehearsal_report.json --artifact-gate-report .eureka/artifact-gate/manual-batch-01/artifact_gate_report.json --corpus-gate-closeout .eureka/corpus-gate/public-alpha/latest/corpus_gate_closeout.json --external-staging-report .eureka/external-staging/public-alpha/latest/external_staging_report.json --local-machine-staging-report .eureka/local-machine-staging/public-alpha/latest/local_machine_staging_report.json --release-check-report .eureka/release-checks/public-alpha/latest/release_check_report.json --out .eureka/launch/public-alpha/latest
+python scripts/eureka_public_alpha_launch_gate.py audit --bundle .eureka/staging/public-alpha --rehearsal-report .eureka/rehearsals/public-alpha/latest/rehearsal_report.json --artifact-gate-report .eureka/artifact-gate/manual-batch-01/artifact_gate_report.json --corpus-gate-closeout .eureka/corpus-gate/public-alpha/latest/corpus_gate_closeout.json --external-staging-report .eureka/external-staging/public-alpha/latest/external_staging_report.json --local-machine-staging-report .eureka/local-machine-staging/public-alpha/latest/local_machine_staging_report.json --local-machine-public-exposure-report .eureka/local-machine-public-exposure/public-alpha/latest/local_machine_public_exposure_report.json --release-check-report .eureka/release-checks/public-alpha/latest/release_check_report.json --out .eureka/launch/public-alpha/latest
 
 python scripts/eureka_public_alpha_launch_gate.py validate-report --report .eureka/launch/public-alpha/latest/launch_gate_report.json
 
