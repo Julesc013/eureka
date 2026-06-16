@@ -30,6 +30,7 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr:
     run_parser.add_argument("--corpus-gate-closeout", required=True)
     run_parser.add_argument("--rehearsal-report", required=True)
     run_parser.add_argument("--external-staging-report", required=True)
+    run_parser.add_argument("--local-machine-staging-report", default="")
     run_parser.add_argument("--launch-gate-report", required=True)
     run_parser.add_argument("--out", default=DEFAULT_OUT)
     run_parser.add_argument("--full-discovery-report", default="")
@@ -57,6 +58,7 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr:
             corpus_gate_closeout=args.corpus_gate_closeout,
             rehearsal_report=args.rehearsal_report,
             external_staging_report=args.external_staging_report,
+            local_machine_staging_report=args.local_machine_staging_report or None,
             launch_gate_report=args.launch_gate_report,
             out_dir=args.out,
             full_discovery_report=args.full_discovery_report or None,

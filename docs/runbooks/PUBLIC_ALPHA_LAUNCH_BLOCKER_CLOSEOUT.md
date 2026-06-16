@@ -156,6 +156,12 @@ can resolve it. Configured apply requires an ignored local config or
 environment configuration and explicit confirmation; missing config should be
 reported as a blocker, not silently downgraded.
 
+If the current computer is being used as the loopback staging host, see
+`docs/runbooks/LOCAL_MACHINE_STAGING_PROVISION.md` and pass
+`--local-machine-staging-report`. A passing local-machine report is useful
+operational evidence, but it does not satisfy external staging, production
+hosting, TLS/domain, production auth, release promotion, or launch approval.
+
 For the local release-check lane that consumes corpus closeout, staging,
 rehearsal, external staging, and launch-gate reports, see
 `docs/runbooks/PUBLIC_ALPHA_RELEASE_CHECKS.md`. Supplying its

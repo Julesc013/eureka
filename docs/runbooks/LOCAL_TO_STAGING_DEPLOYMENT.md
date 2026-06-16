@@ -101,6 +101,11 @@ python scripts/eureka_public_alpha_rehearsal.py status --report .eureka/rehearsa
 See `docs/runbooks/PUBLIC_ALPHA_REHEARSAL.md` for the route probes, mutation
 checks, fail-closed checks, report fields, and explicit launch blockers.
 
+If you want to use the current computer as the loopback staging host and emit a
+separate local-machine staging report, see
+`docs/runbooks/LOCAL_MACHINE_STAGING_PROVISION.md`. That path is not external
+staging and does not expose the service to the internet.
+
 Then run the launch-blocker closeout audit when you need the machine-checkable
 gate that separates local readiness from public launch readiness:
 
