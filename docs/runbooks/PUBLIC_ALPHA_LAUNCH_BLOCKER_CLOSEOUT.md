@@ -152,7 +152,9 @@ staging/rehearsal path, see
 For the external staging blocker, see
 `docs/runbooks/EXTERNAL_STAGING_HOST_PROVISION.md`. A dry-run report keeps the
 blocker open; only an authorized deployment plus passing external smoke probes
-can resolve it.
+can resolve it. Configured apply requires an ignored local config or
+environment configuration and explicit confirmation; missing config should be
+reported as a blocker, not silently downgraded.
 
 ## Local Readiness Vs Launch Readiness
 

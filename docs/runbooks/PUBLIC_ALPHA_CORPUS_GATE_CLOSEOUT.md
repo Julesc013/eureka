@@ -124,7 +124,9 @@ Expected result:
 When the corpus blocker is resolved, use
 `docs/runbooks/EXTERNAL_STAGING_HOST_PROVISION.md` to prepare the first
 external staging path. If no authorized host is configured, that workflow should
-produce a dry-run report and keep the external staging blocker open.
+produce a validated config/template status, dry-run report, and keep the
+external staging blocker open. Apply requires an ignored local config or
+environment configuration plus explicit confirmation.
 
 ## Troubleshooting
 

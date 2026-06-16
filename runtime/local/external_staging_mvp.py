@@ -9,8 +9,9 @@ import json
 import os
 from pathlib import Path
 import shutil
+import subprocess
 from typing import Any
-from urllib.parse import urljoin
+from urllib.parse import urljoin, urlparse
 
 from runtime.local.staging_mvp import (
     MANIFEST_FILE,
@@ -21,11 +22,14 @@ from runtime.local.staging_mvp import (
 )
 
 
-TASK_ID = "EXTERNAL-STAGING-HOST-PROVISION-00"
+TASK_ID = "EXTERNAL-STAGING-HOST-PROVISION-00-CONFIG"
+CONFIG_SCHEMA_VERSION = 1
 PLAN_SCHEMA_VERSION = "eureka.external_staging_plan.v0"
 REPORT_SCHEMA_VERSION = "eureka.external_staging_report.v0"
 DEPLOYMENT_MANIFEST_SCHEMA_VERSION = "eureka.external_staging_deployment_manifest.v0"
 
+LOCAL_CONFIG_JSON = "external_staging_config.local.json"
+LOCAL_CONFIG_EXAMPLE_JSON = "external_staging_config.local.example.json"
 PLAN_JSON = "external_staging_plan.json"
 REPORT_JSON = "external_staging_report.json"
 REPORT_MD = "EXTERNAL_STAGING_REPORT.md"
@@ -39,6 +43,7 @@ DEFAULT_OUT = ".eureka/external-staging/public-alpha/latest"
 DEFAULT_BIND_HOST = "127.0.0.1"
 DEFAULT_SERVICE_PORT = 8765
 DEFAULT_QUERY = "manual for Sound Blaster CT1740"
+CONFIRM_APPLY_ENV = "EUREKA_STAGING_CONFIRM_APPLY"
 
 SECRET_MARKERS = (
     "local-dev-token",
@@ -87,39 +92,202 @@ SAFETY_FALSE_FIELDS = (
     "execution_safe_count",
     "rights_cleared_count",
 )
+CONFIG_SAFETY_FALSE_FIELDS = (
+    "live_metadata_enabled",
+    "public_live_fanout",
+    "workbench_enabled",
+    "workbench_exposed",
+    "mutation_enabled",
+    "downloads_enabled",
+)
+
+ENV_FIELDS = (
+    "HOST",
+    "USER",
+    "SSH_KEY",
+    "SSH_PORT",
+    "REMOTE_DIR",
+    "BASE_URL",
+    "SERVICE_PORT",
+    "BIND_HOST",
+    "EXPOSURE_APPROVED",
+)
+
+
+def init_config_template(out: str | Path) -> dict[str, Any]:
+    payload = {
+        "config_schema_version": CONFIG_SCHEMA_VERSION,
+        "host": "",
+        "user": "",
+        "ssh_port": 22,
+        "ssh_key_path": "",
+        "remote_dir": "",
+        "base_url": "",
+        "service_port": DEFAULT_SERVICE_PORT,
+        "bind_host": DEFAULT_BIND_HOST,
+        "exposure_approved": False,
+        "deployment_mode": "ssh",
+        "public_alpha_mode": True,
+        "read_only": True,
+        "live_metadata_enabled": False,
+        "workbench_enabled": False,
+        "public_live_fanout": False,
+        "mutation_enabled": False,
+        "downloads_enabled": False,
+        "notes": "Local ignored example. Fill this in as external_staging_config.local.json; do not commit credentials.",
+    }
+    Path(out).parent.mkdir(parents=True, exist_ok=True)
+    _write_json(out, payload)
+    return payload
+
+
+def config_status(
+    config: str | Path | None = None,
+    *,
+    env: Mapping[str, str] | None = None,
+) -> dict[str, Any]:
+    source = env if env is not None else os.environ
+    if config:
+        config_path = Path(config)
+        if not config_path.is_file():
+            return _config_result(
+                status="missing_config",
+                source="local_config",
+                errors=[],
+                warnings=[f"config file is missing: {config_path}"],
+            )
+        try:
+            payload = _read_json(config_path)
+        except (OSError, json.JSONDecodeError) as exc:
+            return _config_result(status="fail", source="local_config", errors=[f"config could not be read: {type(exc).__name__}"])
+        errors, warnings = _validate_config_payload(payload, require_apply_fields=True)
+        return _config_result(status="pass" if not errors else "fail", source="local_config", payload=payload, errors=errors, warnings=warnings)
+    env_payload = _config_payload_from_env(source)
+    if not _has_env_config(source):
+        return _config_result(status="missing_config", source="none", errors=[], warnings=["no local config file or EUREKA_STAGING_* environment configuration found"])
+    errors, warnings = _validate_config_payload(env_payload, require_apply_fields=True)
+    return _config_result(status="pass" if not errors else "fail", source="env", payload=env_payload, errors=errors, warnings=warnings)
+
+
+def render_config_status(payload: Mapping[str, Any]) -> str:
+    return "\n".join(
+        [
+            f"status: {payload.get('status')}",
+            f"config_source: {payload.get('config_source')}",
+            f"host_configured: {str(payload.get('host_configured')).lower()}",
+            f"user_configured: {str(payload.get('user_configured')).lower()}",
+            f"remote_dir_configured: {str(payload.get('remote_dir_configured')).lower()}",
+            f"base_url_configured: {str(payload.get('base_url_configured')).lower()}",
+            f"ssh_key_configured: {str(payload.get('ssh_key_configured')).lower()}",
+            f"bind_host: {payload.get('bind_host') or DEFAULT_BIND_HOST}",
+            f"service_port: {payload.get('service_port') or DEFAULT_SERVICE_PORT}",
+            f"exposure_approved: {str(payload.get('exposure_approved')).lower()}",
+            f"public_alpha_mode: {str(payload.get('public_alpha_mode')).lower()}",
+            f"read_only: {str(payload.get('read_only')).lower()}",
+            f"workbench_enabled: {str(payload.get('workbench_enabled')).lower()}",
+            f"live_metadata_enabled: {str(payload.get('live_metadata_enabled')).lower()}",
+            f"mutation_enabled: {str(payload.get('mutation_enabled')).lower()}",
+            f"downloads_enabled: {str(payload.get('downloads_enabled')).lower()}",
+            f"errors: {json.dumps(payload.get('errors') or [])}",
+            f"warnings: {json.dumps(payload.get('warnings') or [])}",
+        ]
+    ) + "\n"
 
 
 def read_external_config(
     env: Mapping[str, str] | None = None,
     *,
     overrides: Mapping[str, Any] | None = None,
+    config_path: str | Path | None = None,
 ) -> dict[str, Any]:
     source = env if env is not None else os.environ
+    file_config: dict[str, Any] = {}
+    config_source = "none"
+    config_state = "missing_config"
+    config_errors: list[str] = []
+    config_warnings: list[str] = []
+    raw_config_path = str(config_path or "")
+
+    if config_path:
+        path = Path(config_path)
+        if path.is_file():
+            file_config = _read_json(path)
+            config_errors, config_warnings = _validate_config_payload(file_config, require_apply_fields=True)
+            config_source = "local_config"
+            config_state = "pass" if not config_errors else "fail"
+        else:
+            config_source = "local_config"
+            config_state = "missing_config"
+            config_warnings.append(f"config file is missing: {path}")
+    elif _has_env_config(source):
+        file_config = _config_payload_from_env(source)
+        config_errors, config_warnings = _validate_config_payload(file_config, require_apply_fields=True)
+        config_source = "env"
+        config_state = "pass" if not config_errors else "fail"
+
     opts = dict(overrides or {})
 
-    def get(name: str, default: str = "") -> str:
+    def get(name: str, default: Any = "") -> str:
         value = opts.get(name)
         if value is None or str(value) == "":
-            value = source.get(f"EUREKA_STAGING_{name.upper()}", default)
+            if name == "ssh_key":
+                value = file_config.get("ssh_key_path", file_config.get("ssh_key", ""))
+            else:
+                value = file_config.get(name, "")
+        if value is None or str(value) == "":
+            env_name = "SSH_KEY" if name == "ssh_key" else name.upper()
+            value = source.get(f"EUREKA_STAGING_{env_name}", default)
         return str(value or "").strip()
+
+    def get_bool(name: str, default: bool = False) -> bool:
+        value = opts.get(name)
+        if value is None or str(value) == "":
+            value = file_config.get(name)
+        if value is None or str(value) == "":
+            value = source.get(f"EUREKA_STAGING_{name.upper()}", str(default).lower())
+        return _truthy(value)
 
     bind_host = get("bind_host", DEFAULT_BIND_HOST) or DEFAULT_BIND_HOST
     service_port = _int(get("service_port", str(DEFAULT_SERVICE_PORT)), DEFAULT_SERVICE_PORT)
-    exposure = _truthy(get("exposure_approved", "false"))
+    exposure = get_bool("exposure_approved", False)
+    deployment_mode = get("deployment_mode", str(file_config.get("deployment_mode") or ""))
+    if not deployment_mode:
+        deployment_mode = "ssh" if get("host") or get("user") or get("remote_dir") else "manual"
+    host = get("host")
+    user = get("user")
+    ssh_key_path = get("ssh_key")
+    remote_dir = get("remote_dir")
+    base_url = get("base_url")
     return {
-        "host": get("host"),
-        "user": get("user"),
-        "ssh_key_configured": bool(get("ssh_key")),
+        "config_source": config_source,
+        "config_status": config_state,
+        "config_path": raw_config_path,
+        "config_errors": config_errors,
+        "config_warnings": config_warnings,
+        "deployment_mode": deployment_mode,
+        "host": host,
+        "user": user,
+        "ssh_key_path": ssh_key_path,
+        "ssh_key_configured": bool(ssh_key_path),
+        "ssh_key_readable": bool(Path(ssh_key_path).is_file()) if ssh_key_path else False,
         "ssh_port": _int(get("ssh_port", "22"), 22),
-        "remote_dir": get("remote_dir"),
-        "base_url": get("base_url"),
+        "remote_dir": remote_dir,
+        "base_url": base_url,
         "service_port": service_port,
         "bind_host": bind_host,
         "exposure_approved": exposure,
-        "host_configured": bool(get("host")),
-        "user_configured": bool(get("user")),
-        "remote_dir_configured": bool(get("remote_dir")),
-        "base_url_configured": bool(get("base_url")),
+        "host_configured": bool(host),
+        "user_configured": bool(user),
+        "remote_dir_configured": bool(remote_dir),
+        "base_url_configured": bool(base_url),
+        "public_alpha_mode": _config_bool(file_config, "public_alpha_mode", True),
+        "read_only": _config_bool(file_config, "read_only", True),
+        "live_metadata_enabled": _config_bool(file_config, "live_metadata_enabled", False),
+        "workbench_enabled": _config_bool(file_config, "workbench_enabled", False),
+        "workbench_exposed": _config_bool(file_config, "workbench_exposed", False),
+        "public_live_fanout": _config_bool(file_config, "public_live_fanout", False),
+        "mutation_enabled": _config_bool(file_config, "mutation_enabled", False),
+        "downloads_enabled": _config_bool(file_config, "downloads_enabled", False),
         "secret_fields_redacted": True,
     }
 
@@ -138,11 +306,21 @@ def create_plan(
     out_path = Path(out_dir)
     out_path.mkdir(parents=True, exist_ok=True)
     cfg = dict(config or read_external_config())
-    deployment_mode = "ssh" if cfg.get("host_configured") and cfg.get("user_configured") and cfg.get("remote_dir_configured") else "manual"
+    if cfg.get("config_status") == "fail":
+        raise ValueError("external staging config is invalid: " + "; ".join(str(item) for item in cfg.get("config_errors") or []))
+    deployment_mode = str(cfg.get("deployment_mode") or "")
+    if deployment_mode not in {"ssh", "manual"}:
+        deployment_mode = "ssh" if cfg.get("host_configured") and cfg.get("user_configured") and cfg.get("remote_dir_configured") else "manual"
+    if cfg.get("config_status") == "missing_config" and not any(cfg.get(key) for key in ("host_configured", "user_configured", "remote_dir_configured", "base_url_configured")):
+        deployment_mode = "manual"
     plan = {
         "schema_version": PLAN_SCHEMA_VERSION,
         "task_id": TASK_ID,
         "plan_schema_version": PLAN_SCHEMA_VERSION,
+        "config_source": str(cfg.get("config_source") or "none"),
+        "config_status": str(cfg.get("config_status") or "missing_config"),
+        "config_path": _safe_local_config_path(str(cfg.get("config_path") or "")),
+        "config_warnings": [str(item) for item in cfg.get("config_warnings") or []],
         "staging_bundle_path": str(bundle_path),
         "staging_bundle_id": str(status.get("bundle_id") or ""),
         "bundle_manifest_digest": _file_sha256(bundle_path / MANIFEST_FILE),
@@ -168,6 +346,7 @@ def create_plan(
         "base_url_configured": bool(cfg.get("base_url_configured")),
         "remote_dir_configured": bool(cfg.get("remote_dir_configured")),
         "ssh_key_configured": bool(cfg.get("ssh_key_configured")),
+        "ssh_key_readable": bool(cfg.get("ssh_key_readable")),
         "ssh_port": int(cfg.get("ssh_port") or 22),
         "bind_host": str(cfg.get("bind_host") or DEFAULT_BIND_HOST),
         "service_port": int(cfg.get("service_port") or DEFAULT_SERVICE_PORT),
@@ -192,6 +371,8 @@ def validate_plan(plan: str | Path) -> list[str]:
     required = (
         "task_id",
         "plan_schema_version",
+        "config_source",
+        "config_status",
         "staging_bundle_id",
         "bundle_manifest_digest",
         "public_index_digest",
@@ -208,6 +389,7 @@ def validate_plan(plan: str | Path) -> list[str]:
         "downloads_enabled",
         "deployment_mode",
         "host_configured",
+        "user_configured",
         "base_url_configured",
         "remote_dir_configured",
         "bind_host",
@@ -220,6 +402,12 @@ def validate_plan(plan: str | Path) -> list[str]:
             errors.append(f"missing required field: {key}")
     if payload.get("task_id") != TASK_ID:
         errors.append(f"task_id must be {TASK_ID}")
+    if payload.get("config_source") not in {"none", "env", "local_config"}:
+        errors.append("config_source must be none, env, or local_config")
+    if payload.get("config_status") not in {"pass", "missing_config"}:
+        errors.append("config_status must be pass or missing_config")
+    if payload.get("deployment_mode") not in {"manual", "ssh"}:
+        errors.append("deployment_mode must be manual or ssh")
     for key in ("read_only", "public_alpha_mode", "secret_fields_redacted"):
         if payload.get(key) is not True:
             errors.append(f"{key} must be true")
@@ -235,6 +423,12 @@ def validate_plan(plan: str | Path) -> list[str]:
         errors.append("artifact_verified_count must be at least 25")
     if str(payload.get("bind_host") or "") not in {"127.0.0.1", "localhost", "::1"} and payload.get("exposure_approved") is not True:
         errors.append("non-loopback bind_host requires exposure_approved true")
+    if payload.get("base_url") and not _base_url_allowed(str(payload.get("base_url") or ""), exposure_approved=bool(payload.get("exposure_approved") is True)):
+        errors.append("non-local base_url requires exposure_approved true")
+    if payload.get("deployment_mode") == "ssh" and payload.get("config_status") == "pass":
+        for key in ("host_configured", "user_configured", "remote_dir_configured"):
+            if payload.get(key) is not True:
+                errors.append(f"{key} must be true for ssh deployment mode")
     errors.extend(_payload_secret_errors("external_staging_plan", payload))
     return _dedupe(errors)
 
@@ -331,7 +525,14 @@ def package_leakage_errors(package_dir: str | Path) -> list[str]:
     return _dedupe(errors)
 
 
-def deploy_from_plan(*, plan: str | Path, apply: bool = False) -> dict[str, Any]:
+def deploy_from_plan(
+    *,
+    plan: str | Path,
+    apply: bool = False,
+    confirm_apply: bool = False,
+    env: Mapping[str, str] | None = None,
+    transfer_runner: Callable[[Mapping[str, Any], Mapping[str, Any], Path], Mapping[str, Any]] | None = None,
+) -> dict[str, Any]:
     plan_path = Path(plan)
     errors = validate_plan(plan_path)
     if errors:
@@ -341,14 +542,48 @@ def deploy_from_plan(*, plan: str | Path, apply: bool = False) -> dict[str, Any]
         return _write_report_near_plan(plan_path, report)
     payload = _read_json(plan_path)
     if apply:
-        missing = _missing_apply_config(payload)
+        confirmation = bool(confirm_apply or _truthy((env or os.environ).get(CONFIRM_APPLY_ENV, "")))
+        if not confirmation:
+            report = _base_report(payload, deployment_status="confirmation_required", smoke_status="not_run")
+            report["apply_confirmation"] = False
+            report["blockers"].append("explicit deploy --apply confirmation is required")
+            report["warnings"].append("deploy --apply refused before contacting any host")
+            return _write_report_near_plan(plan_path, report)
+        apply_config = _apply_config_for_plan(payload, env=env)
+        config_errors = apply_config.get("config_errors") or []
+        if config_errors:
+            report = _base_report(payload, deployment_status="missing_config", smoke_status="not_run")
+            report["apply_confirmation"] = True
+            report["blockers"].extend(str(item) for item in config_errors)
+            report["warnings"].append("deploy --apply refused because external staging configuration is invalid")
+            return _write_report_near_plan(plan_path, report)
+        missing = _missing_apply_config(payload, apply_config)
         if missing:
-            report = _base_report(payload, deployment_status="not_configured", smoke_status="not_run")
+            report = _base_report(payload, deployment_status="missing_config", smoke_status="not_run")
+            report["apply_confirmation"] = True
             report["blockers"].extend(missing)
             report["warnings"].append("deploy --apply refused because external staging configuration is incomplete")
             return _write_report_near_plan(plan_path, report)
-        report = _base_report(payload, deployment_status="deployed", smoke_status="not_run")
-        report["warnings"].append("deployment marked from configured plan; transport execution is intentionally minimal in this P0 tool")
+        package_dir = plan_path.parent / "package"
+        if not package_dir.is_dir():
+            report = _base_report(payload, deployment_status="failed", smoke_status="not_run")
+            report["apply_confirmation"] = True
+            report["blockers"].append(f"deployment package is missing: {package_dir}")
+            return _write_report_near_plan(plan_path, report)
+        runner = transfer_runner or _ssh_transfer_package
+        transfer = dict(runner(payload, apply_config, package_dir))
+        if transfer.get("status") == "pass":
+            deployment_status = str(transfer.get("deployment_status") or "transfer_complete_manual_start_required")
+            report = _base_report(payload, deployment_status=deployment_status, smoke_status="not_run")
+            report["apply_confirmation"] = True
+            report["remote_start_status"] = str(transfer.get("remote_start_status") or "manual_required")
+            report["warnings"].extend(str(item) for item in transfer.get("warnings") or [])
+        else:
+            report = _base_report(payload, deployment_status="failed", smoke_status="not_run")
+            report["apply_confirmation"] = True
+            report["remote_start_status"] = str(transfer.get("remote_start_status") or "not_started")
+            report["blockers"].extend(str(item) for item in transfer.get("errors") or ["external staging transfer failed"])
+            report["warnings"].extend(str(item) for item in transfer.get("warnings") or [])
         return _write_report_near_plan(plan_path, report)
     report = _base_report(payload, deployment_status="dry_run_pass", smoke_status="not_run")
     report["warnings"].append("dry run only; no external host was contacted")
@@ -375,6 +610,7 @@ def smoke_from_plan(
     base_url = str(payload.get("base_url") or "").rstrip("/")
     if not base_url:
         report = _base_report(payload, deployment_status=deployment_status, smoke_status="blocked")
+        _carry_deployment_fields(report, previous)
         report["warnings"].append("external staging smoke could not run without EUREKA_STAGING_BASE_URL or --base-url")
         return _write_report_near_plan(plan_path, report)
 
@@ -388,6 +624,7 @@ def smoke_from_plan(
     status_payload = _status_payload(route_results)
     failures = _smoke_failures(route_results, blocked_results, status_payload)
     report = _base_report(payload, deployment_status=deployment_status, smoke_status="pass" if not failures else "fail")
+    _carry_deployment_fields(report, previous)
     report["route_probe_results"] = route_results
     report["blocked_route_probe_results"] = blocked_results
     report["blockers"].extend(failures)
@@ -407,6 +644,8 @@ def validate_report(report: str | Path) -> list[str]:
         "status",
         "deployment_status",
         "smoke_status",
+        "config_source",
+        "config_status",
         "staging_bundle_id",
         "bundle_manifest_digest",
         "corpus_gate_status",
@@ -414,9 +653,14 @@ def validate_report(report: str | Path) -> list[str]:
         "artifact_verified_count",
         "public_artifact_identity_record_count",
         "host_configured",
+        "user_configured",
         "base_url_configured",
+        "bind_host",
+        "service_port",
         "exposure_approved",
         "remote_dir_configured",
+        "apply_confirmation",
+        "remote_start_status",
         "route_probe_results",
         "blocked_route_probe_results",
         "safety_checks",
@@ -433,8 +677,20 @@ def validate_report(report: str | Path) -> list[str]:
         errors.append(f"task_id must be {TASK_ID}")
     if payload.get("status") not in {"PASS", "PASS_WITH_WARNINGS", "FAIL"}:
         errors.append("status must be PASS, PASS_WITH_WARNINGS, or FAIL")
-    if payload.get("deployment_status") == "deployed" and payload.get("host_configured") is not True:
+    if payload.get("deployment_status") not in {"missing_config", "not_configured", "config_validated", "dry_run_pass", "confirmation_required", "deployed", "transfer_complete_manual_start_required", "failed"}:
+        errors.append("deployment_status must be a known external staging deployment status")
+    if payload.get("smoke_status") not in {"not_run", "blocked", "pass", "fail"}:
+        errors.append("smoke_status must be not_run, blocked, pass, or fail")
+    if payload.get("config_source") not in {"none", "env", "local_config"}:
+        errors.append("config_source must be none, env, or local_config")
+    if payload.get("config_status") not in {"pass", "missing_config"}:
+        errors.append("config_status must be pass or missing_config")
+    if payload.get("deployment_status") in {"deployed", "transfer_complete_manual_start_required"} and payload.get("host_configured") is not True:
         errors.append("report claims deployed without host_configured true")
+    if payload.get("deployment_status") in {"deployed", "transfer_complete_manual_start_required"} and payload.get("apply_confirmation") is not True:
+        errors.append("report claims deployment without apply confirmation")
+    if payload.get("smoke_status") == "pass" and not payload.get("base_url_configured"):
+        errors.append("report claims smoke pass without base_url_configured true")
     if payload.get("smoke_status") == "pass" and not payload.get("route_probe_results"):
         errors.append("report claims smoke pass without route probes")
     safety = payload.get("safety_checks") if isinstance(payload.get("safety_checks"), Mapping) else {}
@@ -458,11 +714,19 @@ def render_status(report: Mapping[str, Any]) -> str:
             f"status: {report.get('status')}",
             f"deployment_status: {report.get('deployment_status')}",
             f"smoke_status: {report.get('smoke_status')}",
+            f"config_source: {report.get('config_source')}",
+            f"config_status: {report.get('config_status')}",
             f"staging_bundle_id: {report.get('staging_bundle_id')}",
             f"host_configured: {str(report.get('host_configured')).lower()}",
+            f"user_configured: {str(report.get('user_configured')).lower()}",
             f"base_url_configured: {str(report.get('base_url_configured')).lower()}",
             f"remote_dir_configured: {str(report.get('remote_dir_configured')).lower()}",
+            f"ssh_key_configured: {str(report.get('ssh_key_configured')).lower()}",
             f"exposure_approved: {str(report.get('exposure_approved')).lower()}",
+            f"bind_host: {report.get('bind_host')}",
+            f"service_port: {report.get('service_port')}",
+            f"apply_confirmation: {str(report.get('apply_confirmation')).lower()}",
+            f"remote_start_status: {report.get('remote_start_status')}",
             f"corpus_gate_status: {report.get('corpus_gate_status')}",
             f"artifact_verified_count: {report.get('artifact_verified_count')}",
             f"read_only: {str((report.get('safety_checks') or {}).get('read_only')).lower()}",
@@ -483,9 +747,16 @@ def render_report_markdown(report: Mapping[str, Any]) -> str:
             f"- Status: {report.get('status')}",
             f"- Deployment status: {report.get('deployment_status')}",
             f"- Smoke status: {report.get('smoke_status')}",
+            f"- Config source: {report.get('config_source')}",
+            f"- Config status: {report.get('config_status')}",
             f"- Staging bundle: {report.get('staging_bundle_id')}",
             f"- Host configured: {report.get('host_configured')}",
+            f"- User configured: {report.get('user_configured')}",
+            f"- Remote dir configured: {report.get('remote_dir_configured')}",
             f"- Base URL configured: {report.get('base_url_configured')}",
+            f"- Exposure approved: {report.get('exposure_approved')}",
+            f"- Apply confirmation: {report.get('apply_confirmation')}",
+            f"- Remote start status: {report.get('remote_start_status')}",
             f"- Corpus gate status: {report.get('corpus_gate_status')}",
             f"- Artifact verified count: {report.get('artifact_verified_count')}",
             "",
@@ -508,8 +779,10 @@ def render_report_markdown(report: Mapping[str, Any]) -> str:
 
 def _base_report(plan: Mapping[str, Any], *, deployment_status: str, smoke_status: str) -> dict[str, Any]:
     blockers: list[str] = []
-    if deployment_status in {"not_configured", "dry_run_pass"} and not plan.get("host_configured"):
+    if deployment_status in {"missing_config", "not_configured", "dry_run_pass"} and not plan.get("host_configured"):
         blockers.append("external staging host is not configured")
+    if deployment_status == "confirmation_required":
+        blockers.append("explicit apply confirmation is required")
     if smoke_status == "blocked" and not plan.get("base_url_configured"):
         blockers.append("staging base URL is not configured")
     safety = {
@@ -526,7 +799,12 @@ def _base_report(plan: Mapping[str, Any], *, deployment_status: str, smoke_statu
         "rights_cleared_count": int(plan.get("rights_cleared_count") or 0),
     }
     status = "PASS"
-    if deployment_status in {"not_configured", "dry_run_pass"} or smoke_status in {"not_run", "blocked"} or blockers:
+    if (
+        deployment_status in {"missing_config", "not_configured", "dry_run_pass", "confirmation_required"}
+        or smoke_status in {"not_run", "blocked"}
+        or (deployment_status == "transfer_complete_manual_start_required" and smoke_status != "pass")
+        or blockers
+    ):
         status = "PASS_WITH_WARNINGS"
     if deployment_status == "failed" or smoke_status == "fail":
         status = "FAIL"
@@ -536,6 +814,8 @@ def _base_report(plan: Mapping[str, Any], *, deployment_status: str, smoke_statu
         "status": status,
         "deployment_status": deployment_status,
         "smoke_status": smoke_status,
+        "config_source": str(plan.get("config_source") or "none"),
+        "config_status": str(plan.get("config_status") or "missing_config"),
         "staging_bundle_id": str(plan.get("staging_bundle_id") or ""),
         "bundle_manifest_digest": str(plan.get("bundle_manifest_digest") or ""),
         "corpus_gate_status": str(plan.get("corpus_gate_status") or ""),
@@ -551,6 +831,11 @@ def _base_report(plan: Mapping[str, Any], *, deployment_status: str, smoke_statu
         "base_url_configured": bool(plan.get("base_url_configured") is True),
         "exposure_approved": bool(plan.get("exposure_approved") is True),
         "remote_dir_configured": bool(plan.get("remote_dir_configured") is True),
+        "ssh_key_configured": bool(plan.get("ssh_key_configured") is True),
+        "bind_host": str(plan.get("bind_host") or DEFAULT_BIND_HOST),
+        "service_port": int(plan.get("service_port") or DEFAULT_SERVICE_PORT),
+        "apply_confirmation": False,
+        "remote_start_status": "not_started",
         "route_probe_results": [],
         "blocked_route_probe_results": [],
         "safety_checks": safety,
@@ -565,7 +850,7 @@ def _base_report(plan: Mapping[str, Any], *, deployment_status: str, smoke_statu
         },
         "warnings": [],
         "blockers": blockers,
-        "next_recommended_task": "EXTERNAL-STAGING-HOST-PROVISION-00-CONFIG" if not plan.get("host_configured") else "PUBLIC-ALPHA-RELEASE-CHECKS-00",
+        "next_recommended_task": "PUBLIC-ALPHA-RELEASE-CHECKS-00" if not plan.get("host_configured") else "EXTERNAL-STAGING-HOST-PROVISION-00-APPLY",
         "generated_at": "not_recorded_deterministic_external_staging_report",
     }
 
@@ -581,19 +866,73 @@ def _write_report_near_plan(plan_path: Path, report: Mapping[str, Any]) -> dict[
     return payload
 
 
+def _carry_deployment_fields(report: dict[str, Any], previous: Mapping[str, Any]) -> None:
+    if "apply_confirmation" in previous:
+        report["apply_confirmation"] = bool(previous.get("apply_confirmation") is True)
+    if previous.get("remote_start_status"):
+        report["remote_start_status"] = str(previous.get("remote_start_status"))
+
+
 def _report_path_for_plan(plan_path: Path) -> Path:
     return plan_path.parent / REPORT_JSON
 
 
-def _missing_apply_config(plan: Mapping[str, Any]) -> list[str]:
+def _missing_apply_config(plan: Mapping[str, Any], config: Mapping[str, Any]) -> list[str]:
     missing = []
-    if plan.get("host_configured") is not True:
+    if config.get("deployment_mode") == "ssh" and config.get("host_configured") is not True:
         missing.append("host is not configured")
-    if plan.get("user_configured") is not True:
+    if config.get("deployment_mode") == "ssh" and config.get("user_configured") is not True:
         missing.append("user is not configured")
-    if plan.get("remote_dir_configured") is not True:
+    if config.get("deployment_mode") == "ssh" and config.get("remote_dir_configured") is not True:
         missing.append("remote dir is not configured")
+    if not _base_url_allowed(str(config.get("base_url") or ""), exposure_approved=bool(config.get("exposure_approved") is True)):
+        missing.append("non-local base URL requires exposure_approved true")
+    bind_host = str(config.get("bind_host") or DEFAULT_BIND_HOST)
+    if bind_host not in {"127.0.0.1", "localhost", "::1"} and config.get("exposure_approved") is not True:
+        missing.append("non-loopback bind_host requires exposure_approved true")
+    if plan.get("config_status") == "missing_config" and config.get("config_source") == "none":
+        missing.append("authorized external staging config is missing")
     return missing
+
+
+def _apply_config_for_plan(plan: Mapping[str, Any], *, env: Mapping[str, str] | None = None) -> dict[str, Any]:
+    config_path = str(plan.get("config_path") or "")
+    if config_path:
+        return read_external_config(env=env, config_path=config_path)
+    return read_external_config(env=env)
+
+
+def _ssh_transfer_package(plan: Mapping[str, Any], config: Mapping[str, Any], package_dir: Path) -> dict[str, Any]:
+    ssh = shutil.which("ssh")
+    scp = shutil.which("scp")
+    if not ssh or not scp:
+        return {"status": "fail", "errors": ["ssh and scp executables are required for apply"], "warnings": []}
+    host = str(config.get("host") or "")
+    user = str(config.get("user") or "")
+    remote_dir = str(config.get("remote_dir") or "")
+    port = str(int(config.get("ssh_port") or 22))
+    key = str(config.get("ssh_key_path") or "")
+    target = f"{user}@{host}"
+    ssh_base = [ssh, "-p", port, "-o", "BatchMode=yes", "-o", "ConnectTimeout=10"]
+    scp_base = [scp, "-P", port, "-o", "BatchMode=yes", "-o", "ConnectTimeout=10"]
+    if key:
+        ssh_base.extend(["-i", key])
+        scp_base.extend(["-i", key])
+    mkdir_cmd = [*ssh_base, target, "mkdir", "-p", remote_dir]
+    mkdir = subprocess.run(mkdir_cmd, capture_output=True, text=True, timeout=30, check=False)
+    if mkdir.returncode != 0:
+        return {"status": "fail", "errors": [f"remote directory creation failed: {_redact_process_error(mkdir.stderr or mkdir.stdout)}"], "warnings": []}
+    transfer_items = [str(path) for path in sorted(package_dir.iterdir())]
+    scp_cmd = [*scp_base, "-r", *transfer_items, f"{target}:{remote_dir}/"]
+    transfer = subprocess.run(scp_cmd, capture_output=True, text=True, timeout=120, check=False)
+    if transfer.returncode != 0:
+        return {"status": "fail", "errors": [f"package transfer failed: {_redact_process_error(transfer.stderr or transfer.stdout)}"], "warnings": []}
+    return {
+        "status": "pass",
+        "deployment_status": "transfer_complete_manual_start_required",
+        "remote_start_status": "manual_required",
+        "warnings": ["package transfer completed; starting the remote read-only server remains a manual operator action"],
+    }
 
 
 def _status_payload(route_results: Sequence[Mapping[str, Any]]) -> dict[str, Any]:
@@ -668,6 +1007,149 @@ def _payload_secret_errors(label: str, value: Any) -> list[str]:
         if marker.casefold() in lowered:
             errors.append(f"{label} contains forbidden secret marker {marker}")
     return errors
+
+
+def _config_result(
+    *,
+    status: str,
+    source: str,
+    payload: Mapping[str, Any] | None = None,
+    errors: Sequence[str] | None = None,
+    warnings: Sequence[str] | None = None,
+) -> dict[str, Any]:
+    cfg = dict(payload or {})
+    return {
+        "schema_version": "eureka.external_staging_config_status.v0",
+        "status": status,
+        "config_source": source,
+        "host_configured": bool(str(cfg.get("host") or "").strip()),
+        "user_configured": bool(str(cfg.get("user") or "").strip()),
+        "remote_dir_configured": bool(str(cfg.get("remote_dir") or "").strip()),
+        "base_url_configured": bool(str(cfg.get("base_url") or "").strip()),
+        "ssh_key_configured": bool(str(cfg.get("ssh_key_path") or cfg.get("ssh_key") or "").strip()),
+        "bind_host": str(cfg.get("bind_host") or DEFAULT_BIND_HOST),
+        "service_port": _int(cfg.get("service_port"), DEFAULT_SERVICE_PORT),
+        "exposure_approved": _config_bool(cfg, "exposure_approved", False),
+        "deployment_mode": str(cfg.get("deployment_mode") or "ssh"),
+        "public_alpha_mode": _config_bool(cfg, "public_alpha_mode", True),
+        "read_only": _config_bool(cfg, "read_only", True),
+        "live_metadata_enabled": _config_bool(cfg, "live_metadata_enabled", False),
+        "workbench_enabled": _config_bool(cfg, "workbench_enabled", False),
+        "public_live_fanout": _config_bool(cfg, "public_live_fanout", False),
+        "mutation_enabled": _config_bool(cfg, "mutation_enabled", False),
+        "downloads_enabled": _config_bool(cfg, "downloads_enabled", False),
+        "secret_fields_redacted": True,
+        "errors": list(errors or []),
+        "warnings": list(warnings or []),
+    }
+
+
+def _validate_config_payload(payload: Mapping[str, Any], *, require_apply_fields: bool) -> tuple[list[str], list[str]]:
+    errors: list[str] = []
+    warnings: list[str] = []
+    if int(payload.get("config_schema_version") or 0) != CONFIG_SCHEMA_VERSION:
+        errors.append(f"config_schema_version must be {CONFIG_SCHEMA_VERSION}")
+    deployment_mode = str(payload.get("deployment_mode") or "ssh")
+    if deployment_mode not in {"ssh", "manual"}:
+        errors.append("deployment_mode must be ssh or manual")
+    if payload.get("public_alpha_mode") is not True:
+        errors.append("public_alpha_mode must be true")
+    if payload.get("read_only") is not True:
+        errors.append("read_only must be true")
+    for key in CONFIG_SAFETY_FALSE_FIELDS:
+        if payload.get(key, False) is True:
+            errors.append(f"{key} must be false")
+    bind_host = str(payload.get("bind_host") or DEFAULT_BIND_HOST)
+    exposure = _config_bool(payload, "exposure_approved", False)
+    if bind_host not in {"127.0.0.1", "localhost", "::1"} and not exposure:
+        errors.append("non-loopback bind_host requires exposure_approved true")
+    base_url = str(payload.get("base_url") or "")
+    if base_url and not _base_url_allowed(base_url, exposure_approved=exposure):
+        errors.append("non-local base_url requires exposure_approved true")
+    if require_apply_fields and deployment_mode == "ssh":
+        for key in ("host", "user", "remote_dir"):
+            if not str(payload.get(key) or "").strip():
+                errors.append(f"{key} is required for ssh deployment mode")
+    ssh_key = str(payload.get("ssh_key_path") or payload.get("ssh_key") or "").strip()
+    if ssh_key and not Path(ssh_key).is_file():
+        errors.append("ssh_key_path is configured but unreadable")
+    if not base_url:
+        warnings.append("base_url is missing; smoke will remain blocked")
+    errors.extend(_payload_secret_errors("external_staging_config_reportable_fields", _redacted_config_for_scan(payload)))
+    return _dedupe(errors), _dedupe(warnings)
+
+
+def _redacted_config_for_scan(payload: Mapping[str, Any]) -> dict[str, Any]:
+    redacted = dict(payload)
+    if redacted.get("ssh_key_path") or redacted.get("ssh_key"):
+        redacted["ssh_key_path"] = "configured:redacted"
+        redacted.pop("ssh_key", None)
+    return redacted
+
+
+def _config_payload_from_env(env: Mapping[str, str]) -> dict[str, Any]:
+    return {
+        "config_schema_version": CONFIG_SCHEMA_VERSION,
+        "host": env.get("EUREKA_STAGING_HOST", ""),
+        "user": env.get("EUREKA_STAGING_USER", ""),
+        "ssh_port": _int(env.get("EUREKA_STAGING_SSH_PORT", "22"), 22),
+        "ssh_key_path": env.get("EUREKA_STAGING_SSH_KEY", ""),
+        "remote_dir": env.get("EUREKA_STAGING_REMOTE_DIR", ""),
+        "base_url": env.get("EUREKA_STAGING_BASE_URL", ""),
+        "service_port": _int(env.get("EUREKA_STAGING_SERVICE_PORT", str(DEFAULT_SERVICE_PORT)), DEFAULT_SERVICE_PORT),
+        "bind_host": env.get("EUREKA_STAGING_BIND_HOST", DEFAULT_BIND_HOST),
+        "exposure_approved": _truthy(env.get("EUREKA_STAGING_EXPOSURE_APPROVED", "")),
+        "deployment_mode": "ssh",
+        "public_alpha_mode": True,
+        "read_only": True,
+        "live_metadata_enabled": False,
+        "workbench_enabled": False,
+        "public_live_fanout": False,
+        "mutation_enabled": False,
+        "downloads_enabled": False,
+    }
+
+
+def _has_env_config(env: Mapping[str, str]) -> bool:
+    return any(str(env.get(f"EUREKA_STAGING_{field}") or "").strip() for field in ENV_FIELDS)
+
+
+def _config_bool(payload: Mapping[str, Any], key: str, default: bool) -> bool:
+    if key not in payload:
+        return default
+    value = payload.get(key)
+    if isinstance(value, bool):
+        return value
+    return _truthy(value)
+
+
+def _safe_local_config_path(value: str) -> str:
+    text = str(value or "").strip()
+    if not text:
+        return ""
+    if any(marker.casefold() in text.casefold() for marker in SECRET_MARKERS):
+        return ""
+    return text
+
+
+def _base_url_allowed(value: str, *, exposure_approved: bool) -> bool:
+    text = str(value or "").strip()
+    if not text:
+        return True
+    parsed = urlparse(text)
+    if parsed.scheme not in {"http", "https"}:
+        return False
+    host = (parsed.hostname or "").casefold()
+    if host in {"localhost", "127.0.0.1", "::1"}:
+        return True
+    return bool(exposure_approved)
+
+
+def _redact_process_error(value: str) -> str:
+    text = value.strip().replace("\r", " ").replace("\n", " ")
+    for marker in SECRET_MARKERS:
+        text = text.replace(marker, "[redacted]")
+    return text[:400]
 
 
 def _presence_redaction(value: Any) -> str:

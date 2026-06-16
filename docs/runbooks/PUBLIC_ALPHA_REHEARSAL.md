@@ -68,7 +68,8 @@ categories, `--fail-on-blocked`, and future evidence inputs.
 See `docs/runbooks/PUBLIC_ALPHA_CORPUS_GATE_CLOSEOUT.md` for the public-safe
 artifact identity export that makes staging and launch-gate corpus counts agree.
 See `docs/runbooks/EXTERNAL_STAGING_HOST_PROVISION.md` for the next external
-staging plan/package/dry-run path once local rehearsal remains green.
+staging plan/package/config/dry-run path once local rehearsal remains green.
+Configured external apply remains explicit and confirmation-gated.
 
 The JSON report includes:
 

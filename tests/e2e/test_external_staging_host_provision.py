@@ -9,8 +9,10 @@ import tempfile
 import unittest
 
 from runtime.local.external_staging_mvp import (
+    LOCAL_CONFIG_JSON,
     PLAN_JSON,
     REPORT_JSON,
+    deploy_from_plan,
     package_leakage_errors,
     smoke_from_plan,
 )
@@ -49,7 +51,7 @@ class ExternalStagingHostProvisionTests(unittest.TestCase):
         self.assertEqual(report["smoke_status"], "blocked")
         self.assertIn("external staging host is not configured", report["blockers"])
         self.assertIn("staging base URL is not configured", report["blockers"])
-        self.assertIn("EXTERNAL-STAGING-HOST-PROVISION-00-CONFIG", status.stdout)
+        self.assertIn("PUBLIC-ALPHA-RELEASE-CHECKS-00", status.stdout)
 
     def test_validate_plan_rejects_secret_marker(self) -> None:
         with _ExternalStagingDemo() as demo:
@@ -84,17 +86,27 @@ class ExternalStagingHostProvisionTests(unittest.TestCase):
             report = _load_json(demo.report_path)
 
         self.assertEqual(result.code, 1)
-        self.assertEqual(report["deployment_status"], "not_configured")
-        self.assertIn("host is not configured", report["blockers"])
+        self.assertEqual(report["deployment_status"], "confirmation_required")
+        self.assertIn("explicit apply confirmation is required", report["blockers"])
+
+        with _ExternalStagingDemo() as demo:
+            _write_plan(demo)
+            result = _run_external_main("deploy", "--plan", str(demo.plan_path), "--apply", "--confirm-apply")
+            report = _load_json(demo.report_path)
+
+        self.assertEqual(result.code, 1)
+        self.assertEqual(report["deployment_status"], "missing_config")
+        self.assertIn("authorized external staging config is missing", report["blockers"])
 
     def test_smoke_with_mocked_routes_can_pass_without_network(self) -> None:
         with _ExternalStagingDemo(configured=True) as demo:
             _write_plan(demo, configured=True)
-            _run_external_main("deploy", "--plan", str(demo.plan_path), "--apply")
+            _run_external_main("package", "--bundle", str(demo.bundle_path), "--plan", str(demo.plan_path), "--out", str(demo.package_path))
+            deploy_from_plan(plan=demo.plan_path, apply=True, confirm_apply=True, transfer_runner=_fake_transfer)
             report = smoke_from_plan(plan=demo.plan_path, probe=_fake_probe)
             errors = _run_external_main("validate-report", "--report", str(demo.report_path))
 
-        self.assertEqual(report["deployment_status"], "deployed")
+        self.assertEqual(report["deployment_status"], "transfer_complete_manual_start_required")
         self.assertEqual(report["smoke_status"], "pass")
         self.assertEqual(errors.code, 0, errors.stderr)
         self.assertFalse(report["safety_checks"]["workbench_exposed"])
@@ -138,7 +150,8 @@ class ExternalStagingHostProvisionTests(unittest.TestCase):
     def test_launch_gate_resolves_external_staging_blocker_only_for_deployed_and_smoked_report(self) -> None:
         with _ExternalStagingDemo(configured=True) as demo:
             _write_plan(demo, configured=True)
-            _run_external_main("deploy", "--plan", str(demo.plan_path), "--apply")
+            _run_external_main("package", "--bundle", str(demo.bundle_path), "--plan", str(demo.plan_path), "--out", str(demo.package_path))
+            deploy_from_plan(plan=demo.plan_path, apply=True, confirm_apply=True, transfer_runner=_fake_transfer)
             smoke_from_plan(plan=demo.plan_path, probe=_fake_probe)
             _write_rehearsal(demo)
             result = _run_launch_gate(demo)
@@ -187,6 +200,7 @@ class _ExternalStagingDemo:
         self.plan_path = self.external_path / PLAN_JSON
         self.report_path = self.external_path / REPORT_JSON
         self.package_path = self.external_path / "package"
+        self.config_path = self.external_path / LOCAL_CONFIG_JSON
         self.launch_gate_path = self.root / "launch-gate-external"
         self.launch_gate_report_path = self.launch_gate_path / "launch_gate_report.json"
         return self
@@ -198,20 +212,8 @@ class _ExternalStagingDemo:
 def _write_plan(demo: _ExternalStagingDemo, *, configured: bool = False) -> None:
     args = ["plan", "--bundle", str(demo.bundle_path), "--out", str(demo.external_path)]
     if configured:
-        args.extend(
-            [
-                "--host",
-                "staging.example.invalid",
-                "--user",
-                "deploy",
-                "--remote-dir",
-                "/srv/eureka-public-alpha",
-                "--base-url",
-                "http://staging.example.invalid:8765",
-                "--service-port",
-                "8765",
-            ]
-        )
+        _write_valid_config(demo)
+        args.extend(["--config", str(demo.config_path)])
     result = _run_external_main(*args)
     if result.code != 0:
         raise AssertionError(result.stderr or result.stdout)
@@ -275,6 +277,41 @@ def _fake_probe(method: str, url: str) -> dict[str, object]:
         }
         return {"method": method, "url": url, "status_code": 200, "body": json.dumps(body)}
     return {"method": method, "url": url, "status_code": 200, "body": "ok"}
+
+
+def _fake_transfer(plan: object, config: object, package_dir: Path) -> dict[str, object]:
+    return {
+        "status": "pass",
+        "deployment_status": "transfer_complete_manual_start_required",
+        "remote_start_status": "manual_required",
+        "warnings": ["fake transfer used by test"],
+    }
+
+
+def _write_valid_config(demo: _ExternalStagingDemo) -> None:
+    _write_json(
+        demo.config_path,
+        {
+            "config_schema_version": 1,
+            "host": "staging.example.invalid",
+            "user": "deploy",
+            "ssh_port": 22,
+            "ssh_key_path": "",
+            "remote_dir": "/srv/eureka-public-alpha",
+            "base_url": "http://127.0.0.1:8765",
+            "service_port": 8765,
+            "bind_host": "127.0.0.1",
+            "exposure_approved": False,
+            "deployment_mode": "ssh",
+            "public_alpha_mode": True,
+            "read_only": True,
+            "live_metadata_enabled": False,
+            "workbench_enabled": False,
+            "public_live_fanout": False,
+            "mutation_enabled": False,
+            "downloads_enabled": False,
+        },
+    )
 
 
 def _run_external_main(*args: str) -> "_Result":

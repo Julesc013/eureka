@@ -16,12 +16,16 @@ if str(REPO_ROOT) not in sys.path:
 
 from runtime.local.external_staging_mvp import (
     DEFAULT_OUT,
+    LOCAL_CONFIG_EXAMPLE_JSON,
     PLAN_JSON,
     REPORT_JSON,
+    config_status,
     create_plan,
     deploy_from_plan,
+    init_config_template,
     package_for_transfer,
     read_external_config,
+    render_config_status,
     render_status,
     smoke_from_plan,
     validate_plan,
@@ -33,9 +37,22 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr:
     parser = argparse.ArgumentParser(description=__doc__)
     subparsers = parser.add_subparsers(dest="command", required=True)
 
+    init_config_parser = subparsers.add_parser("init-config", help="Write a redacted local external staging config template.")
+    init_config_parser.add_argument("--out", default=str(Path(DEFAULT_OUT) / LOCAL_CONFIG_EXAMPLE_JSON))
+    init_config_parser.add_argument("--json", action="store_true")
+
+    validate_config_parser = subparsers.add_parser("validate-config", help="Validate a local external staging config.")
+    validate_config_parser.add_argument("--config", required=True)
+    validate_config_parser.add_argument("--json", action="store_true")
+
+    config_status_parser = subparsers.add_parser("config-status", help="Print redacted external staging config status.")
+    config_status_parser.add_argument("--config", required=True)
+    config_status_parser.add_argument("--json", action="store_true")
+
     plan_parser = subparsers.add_parser("plan", help="Create an external staging deployment plan.")
     plan_parser.add_argument("--bundle", required=True)
     plan_parser.add_argument("--out", default=DEFAULT_OUT)
+    plan_parser.add_argument("--config", default="")
     _add_config_args(plan_parser)
     plan_parser.add_argument("--json", action="store_true")
 
@@ -54,6 +71,7 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr:
     mode = deploy_parser.add_mutually_exclusive_group(required=True)
     mode.add_argument("--dry-run", action="store_true")
     mode.add_argument("--apply", action="store_true")
+    deploy_parser.add_argument("--confirm-apply", action="store_true")
     deploy_parser.add_argument("--json", action="store_true")
 
     smoke_parser = subparsers.add_parser("smoke", help="Probe external staging routes when a base URL is configured.")
@@ -69,9 +87,43 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr:
     status_parser.add_argument("--json", action="store_true")
 
     args = parser.parse_args(argv)
+    if args.command == "init-config":
+        try:
+            payload = init_config_template(args.out)
+        except OSError as exc:
+            print(f"External staging config template failed: {exc}", file=stderr)
+            return 1
+        if args.json:
+            print(json.dumps(payload, indent=2, sort_keys=True, ensure_ascii=True), file=stdout)
+        else:
+            print(f"External staging config template: {args.out}", file=stdout)
+            print("status: template_written", file=stdout)
+        return 0
+
+    if args.command == "validate-config":
+        payload = config_status(args.config)
+        if args.json:
+            print(json.dumps(payload, indent=2, sort_keys=True, ensure_ascii=True), file=stdout)
+        elif payload.get("status") == "fail":
+            print(f"External staging config validation failed: {args.config}", file=stderr)
+            for error in payload.get("errors") or []:
+                print(f"- {error}", file=stderr)
+        else:
+            print(f"External staging config validation status: {args.config}", file=stdout)
+            print(render_config_status(payload), end="", file=stdout)
+        return 1 if payload.get("status") == "fail" else 0
+
+    if args.command == "config-status":
+        payload = config_status(args.config)
+        if args.json:
+            print(json.dumps(payload, indent=2, sort_keys=True, ensure_ascii=True), file=stdout)
+        else:
+            print(render_config_status(payload), end="", file=stdout)
+        return 1 if payload.get("status") == "fail" else 0
+
     if args.command == "plan":
         try:
-            config = read_external_config(overrides=_config_overrides(args))
+            config = read_external_config(config_path=args.config or None, overrides=_config_overrides(args))
             payload = create_plan(bundle=args.bundle, out_dir=args.out, config=config)
         except (OSError, ValueError, json.JSONDecodeError) as exc:
             print(f"External staging plan failed: {exc}", file=stderr)
@@ -113,13 +165,13 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr:
         return 0 if payload.get("status") == "pass" else 1
 
     if args.command == "deploy":
-        payload = deploy_from_plan(plan=args.plan, apply=bool(args.apply))
+        payload = deploy_from_plan(plan=args.plan, apply=bool(args.apply), confirm_apply=bool(args.confirm_apply))
         if args.json:
             print(json.dumps(payload, indent=2, sort_keys=True, ensure_ascii=True), file=stdout)
         else:
             print(f"External staging report: {Path(args.plan).parent / REPORT_JSON}", file=stdout)
             print(render_status(payload), end="", file=stdout)
-        if args.apply and payload.get("deployment_status") != "deployed":
+        if args.apply and payload.get("deployment_status") not in {"deployed", "transfer_complete_manual_start_required"}:
             return 1
         return 0 if payload.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
 

@@ -510,7 +510,7 @@ def validate_launch_gate_report(report_path: str | Path) -> list[str]:
         errors.append("public_readonly_status must be pass, fail, or unknown")
     if report.get("corpus_gate_closeout_status") not in {"pass", "fail", "blocked", "unknown", "missing"}:
         errors.append("corpus_gate_closeout_status must be pass, fail, blocked, unknown, or missing")
-    if report.get("external_staging_report_status") not in {"pass", "fail", "blocked", "unknown", "missing", "not_configured", "dry_run"}:
+    if report.get("external_staging_report_status") not in {"pass", "fail", "blocked", "unknown", "missing", "not_configured", "dry_run", "confirmation_required"}:
         errors.append("external_staging_report_status must be a known external staging status")
     if report.get("workbench_exposure_status") not in {"not_exposed", "exposed", "unknown"}:
         errors.append("workbench_exposure_status must be not_exposed, exposed, or unknown")
@@ -793,9 +793,15 @@ def _external_staging_report(source: Mapping[str, Any] | None) -> dict[str, Any]
     deployment_status = str(payload.get("deployment_status") or "not_configured")
     smoke_status = str(payload.get("smoke_status") or "not_run")
     report_status = _status_from_payload(payload)
-    if deployment_status == "deployed" and smoke_status == "pass" and report_status in {"pass", "unknown"}:
+    if deployment_status in {"deployed", "transfer_complete_manual_start_required"} and smoke_status == "pass" and report_status in {"pass", "unknown"}:
         status = "pass"
-    elif deployment_status in {"dry_run_pass", "not_configured"} or smoke_status in {"blocked", "not_run"}:
+    elif deployment_status == "confirmation_required":
+        status = "confirmation_required"
+    elif deployment_status == "transfer_complete_manual_start_required" and smoke_status in {"blocked", "not_run"}:
+        status = "blocked"
+    elif deployment_status in {"missing_config", "not_configured"}:
+        status = "not_configured"
+    elif deployment_status == "dry_run_pass" or smoke_status in {"blocked", "not_run"}:
         status = "dry_run" if deployment_status == "dry_run_pass" else "not_configured"
     elif report_status == "fail" or deployment_status == "failed" or smoke_status == "fail":
         status = "fail"
@@ -905,6 +911,10 @@ def _next_task(
         return "MANUAL-ARTIFACT-EVIDENCE-BATCH-01"
     if blocker_categories.get("deployment_blockers"):
         external_status = str((external_staging or {}).get("status") or "")
+        if external_status == "confirmation_required":
+            return "EXTERNAL-STAGING-HOST-PROVISION-00-APPLY"
+        if external_status == "blocked":
+            return "EXTERNAL-STAGING-HOST-PROVISION-00-APPLY"
         if external_status in {"dry_run", "not_configured"}:
             return "EXTERNAL-STAGING-HOST-PROVISION-00-CONFIG"
         return "EXTERNAL-STAGING-HOST-PROVISION-00"
