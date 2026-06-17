@@ -6,7 +6,7 @@ Short identifier: `LicenseRef-Eureka-RSVL-0.1`
 
 Status: source-available, restricted, non-open-source, non-commercial, no redistribution, no public service hosting, personal/local evaluation only.
 
-Copyright (c) 2026 Jules Carbon. All Rights Reserved.
+Copyright (c) 2026 Jules Carboni. All Rights Reserved.
 
 This license governs the Eureka repository and the Repository Content defined
 below. By viewing, downloading, forking, cloning, executing, or otherwise using
@@ -15,7 +15,7 @@ use the Repository Content.
 
 ## 1. Definitions
 
-**Author** means Jules Carbon, the repository owner, or any successor rights
+**Author** means Jules Carboni, the repository owner, or any successor rights
 holder authorized to license Eureka.
 
 **You** means any person or entity that accesses, views, downloads, forks,
