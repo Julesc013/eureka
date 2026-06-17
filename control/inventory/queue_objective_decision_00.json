@@ -1,0 +1,108 @@
+{
+  "schema_version": "queue_objective_decision.v0",
+  "task": "QUEUE-OBJECTIVE-DECISION-00",
+  "status": "decision_recorded",
+  "created_at": "2026-06-17",
+  "head_at_start": "a4e301d724ebf1ee72b4c31b4a4f8efadc8fa3c0",
+  "source_of_truth_checked": [
+    ".aide/context/latest-task-packet.md",
+    ".aide/queue/index.yaml",
+    "control/inventory/structure_guardrail_closeout_00.json",
+    "docs/operations/STRUCTURE_GUARDRAIL_CLOSEOUT.md"
+  ],
+  "current_queue": {
+    "recommended_task": "IA-METADATA-PROVIDER-WIRING-AND-SMOKE-00",
+    "waiting_states": [
+      "WAITING_FOR_EXTERNAL_ARTIFACT_EVIDENCE",
+      "WAITING_FOR_USER_HARDWARE_DETAILS"
+    ],
+    "queue_state_mutated": false
+  },
+  "operator_objective": {
+    "objective_id": "public_alpha_launch_track",
+    "description": "Prioritize closure of public-alpha launch blockers over provider expansion.",
+    "next_task": "PUBLIC-ALPHA-OPS-POSTURE-00",
+    "reason": "Public exposure must not proceed until ops posture, auth/no-auth posture, rate limits, logging, monitoring, restart, rollback, privacy, and report/takedown handling are explicit."
+  },
+  "decision": {
+    "type": "objective_selection_without_queue_mutation",
+    "selected_next_task": "PUBLIC-ALPHA-OPS-POSTURE-00",
+    "deferred_task": "IA-METADATA-PROVIDER-WIRING-AND-SMOKE-00",
+    "defer_until": "A release, launch, or operator gate explicitly requires IA metadata provider wiring before public alpha, or the queue is explicitly updated to resume provider work.",
+    "queue_override_claimed": false,
+    "launch_track_selected": true
+  },
+  "immediate_launch_sequence": [
+    "PUBLIC-ALPHA-OPS-POSTURE-00",
+    "LOCAL-MACHINE-PUBLIC-TUNNEL-PLAN-00",
+    "LOCAL-MACHINE-PUBLIC-TUNNEL-00",
+    "PUBLIC-ALPHA-FULL-DISCOVERY-RELEASE-CHECK-00",
+    "PUBLIC-ALPHA-LAUNCH-GATE-FINAL-00",
+    "PUBLIC-ALPHA-LAUNCH-APPROVAL-00",
+    "PUBLIC-ALPHA-LAUNCH-00",
+    "PUBLIC-ALPHA-POST-LAUNCH-MONITORING-00"
+  ],
+  "required_boundaries": {
+    "public_alpha_scope": "read-only public search over reviewed or staged data",
+    "workbench_public": "disabled",
+    "public_mutation": "disabled",
+    "live_metadata_public": "disabled",
+    "downloads": "disabled",
+    "model_provider_calls": "disabled",
+    "production_readiness_claim": "forbidden",
+    "public_launch_claim": "forbidden_until_manual_approval"
+  },
+  "allowed_next_artifact_paths": [
+    "docs/operations/**",
+    "control/inventory/**",
+    "control/policies/**",
+    "control/audits/**",
+    "scripts/check_*.py",
+    "scripts/validate_*.py",
+    "tests/operations/**"
+  ],
+  "forbidden_next_actions_without_future_approval": [
+    "mutate .aide/queue/current state",
+    "change runtime behavior",
+    "enable public exposure",
+    "enable source probes or live public fanout",
+    "run model/provider calls",
+    "run full discovery inside an AI session",
+    "claim production readiness",
+    "claim public launch readiness",
+    "promote dev to main"
+  ],
+  "validation": {
+    "status": "pass",
+    "full_discovery_required": false,
+    "selected_lanes": [
+      "L0_static_preflight",
+      "L1_focused_unit"
+    ],
+    "commands_passed": [
+      "python -m json.tool control/inventory/queue_objective_decision_00.json",
+      "python scripts/eureka_test_select.py --changed --failed-first --json",
+      "git diff --check",
+      "python scripts/check_architecture_boundaries.py",
+      "python scripts/check_generated_artifact_cleanliness.py --check --json",
+      "python scripts/validate_test_lane_policy.py",
+      "python -m unittest tests.operations.test_test_impact_map",
+      "python -m unittest tests.operations.test_test_failure_ledger",
+      "py -3 .aide/scripts/aide_lite.py doctor",
+      "py -3 .aide/scripts/aide_lite.py validate"
+    ],
+    "notes": [
+      "Full discovery was not selected for this docs/control decision lane.",
+      "The decision does not mutate .aide/queue/index.yaml."
+    ]
+  },
+  "non_claims": [
+    "no queue mutation",
+    "no product behavior change",
+    "no provider expansion",
+    "no public exposure",
+    "no deployment",
+    "no public launch",
+    "no release promotion"
+  ]
+}
