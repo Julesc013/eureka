@@ -1,0 +1,103 @@
+{
+  "schema_version": "eureka.public_docs_closeout_report.v0",
+  "generated_date": "2026-06-17",
+  "docs_commits": [
+    {
+      "hash": "83c44fa6",
+      "subject": "docs(readme): create public project front door",
+      "summary": "Root README rewritten as a stable public front door."
+    },
+    {
+      "hash": "1f4d0579",
+      "subject": "docs(index): add public documentation navigation",
+      "summary": "docs/README.md expanded, docs/STATUS.md created, CONTRIBUTING.md status pointer added."
+    },
+    {
+      "hash": "b09498b7",
+      "subject": "test(docs): guard public docs links",
+      "summary": "Public docs link, section, command-reference, and overclaim tests added."
+    }
+  ],
+  "files_changed_by_docs_task": [
+    "README.md",
+    "docs/README.md",
+    "docs/STATUS.md",
+    "CONTRIBUTING.md",
+    "tests/docs/test_public_docs.py"
+  ],
+  "public_docs_outcome": {
+    "readme_public_front_door_created": true,
+    "docs_status_created": true,
+    "docs_readme_navigation_updated": true,
+    "contributing_adjusted": true,
+    "docs_tests_added": true,
+    "public_overclaim_guardrails_added": true
+  },
+  "claims_preserved": [
+    "not deployed",
+    "not publicly launched",
+    "does not claim production readiness",
+    "public alpha remains read-only and gated",
+    "live source fanout disabled",
+    "public mutation disabled",
+    "downloads/uploads/executable actions disabled or gated",
+    "model/provider calls disabled"
+  ],
+  "validation": [
+    {
+      "command": "python -m unittest tests.docs.test_public_docs -v",
+      "status": "PASS",
+      "summary": "4 tests passed"
+    },
+    {
+      "command": "python scripts/check_architecture_boundaries.py",
+      "status": "PASS",
+      "summary": "no architecture-boundary violations"
+    },
+    {
+      "command": "git diff --check",
+      "status": "PASS",
+      "summary": "no whitespace errors"
+    },
+    {
+      "command": "python scripts/check_generated_artifact_cleanliness.py --check --json",
+      "status": "PASS",
+      "summary": "status pass"
+    },
+    {
+      "command": "python scripts/validate_public_alpha_readonly.py",
+      "status": "PASS",
+      "summary": "valid"
+    },
+    {
+      "command": "python scripts/validate_snapshot_relay.py",
+      "status": "PASS",
+      "summary": "pass"
+    },
+    {
+      "command": "python scripts/validate_public_alpha_hosting_readiness.py",
+      "status": "PASS",
+      "summary": "valid"
+    },
+    {
+      "command": "python scripts/validate_public_alpha_launch_candidate.py",
+      "status": "PASS",
+      "summary": "pass"
+    },
+    {
+      "command": "python scripts/public_alpha_smoke.py --json",
+      "status": "PASS",
+      "summary": "18 of 18 checks passed"
+    }
+  ],
+  "non_claims": {
+    "full_unittest_discovery_passed": false,
+    "full_unittest_discovery_note": "The prior exact command timed out after the 120 second command bound and is not claimed.",
+    "aide_run_for_docs_task": false,
+    "aide_note": "AIDE was skipped because the docs task did not run it and this is a remote-sync/docs closeout audit.",
+    "public_launch_approved": false,
+    "public_exposure_enabled": false
+  },
+  "remote_sync_recommendation_includes_docs_commits": true,
+  "remote_sync_status_after_fetch": "origin/dev matched HEAD before audit artifacts were created"
+}

@@ -1,0 +1,210 @@
+{
+  "schema_version": "eureka.remote_sync_audit_state.v0",
+  "task_id": "REMOTE-SYNC-AUDIT-AND-PUSH-PLAN-00",
+  "generated_date": "2026-06-17",
+  "branch": "dev",
+  "head": "b09498b74176b8058106638a37878127d32dd9ec",
+  "origin_dev": "b09498b74176b8058106638a37878127d32dd9ec",
+  "worktree_status_short": "",
+  "worktree_clean_before_audit_artifacts": true,
+  "reported_initial_state": {
+    "source": "operator prompt",
+    "reported_ahead_count": 4,
+    "reported_commits": [
+      "910907f6",
+      "83c44fa6",
+      "1f4d0579",
+      "b09498b7"
+    ]
+  },
+  "live_state_after_fetch": {
+    "git_fetch_origin": "pass",
+    "origin_dev_ahead_count": 0,
+    "local_head_ahead_count": 0,
+    "origin_dev_matches_head": true,
+    "origin_dev_dotdot_head_log_empty": true,
+    "origin_dev_triple_dot_head_diff_empty": true
+  },
+  "discrepancy": "The prompt reported dev ahead of origin/dev by four commits, but after git fetch origin the live repository reported origin/dev...HEAD as 0 0 and origin/dev matched HEAD. The four reported commits are present in the local and remote history.",
+  "start_guard": {
+    "command": "python scripts/check_git_task_state.py --mode start-task --task-id REMOTE-SYNC-AUDIT-AND-PUSH-PLAN-00",
+    "status": "WARN",
+    "warnings": [
+      "branch name does not include task ID"
+    ],
+    "blocking_failures": []
+  },
+  "queue_observation": {
+    "queue_index_read": true,
+    "queue_current_toml_present": false,
+    "current_recommended_task": "IA-METADATA-PROVIDER-WIRING-AND-SMOKE-00 - Bounded IA metadata provider smoke; external artifact evidence and hardware details remain waiting",
+    "queue_mutated": false
+  },
+  "ahead_commits_live": [],
+  "audited_reported_commits": [
+    {
+      "hash": "910907f63e00ee62b3c0363066f7f0042146509e",
+      "subject": "feat(operations): record public tunnel operator choice",
+      "touched_paths": [
+        "control/audits/public_alpha/LOCAL_MACHINE_PUBLIC_TUNNEL_OPERATOR_CHOICE_BUILD_REPORT.json",
+        "control/audits/public_alpha/LOCAL_MACHINE_PUBLIC_TUNNEL_OPERATOR_CHOICE_BUILD_REPORT.md",
+        "control/audits/public_alpha/LOCAL_MACHINE_PUBLIC_TUNNEL_OPERATOR_CHOICE_REPORT.json",
+        "control/audits/public_alpha/LOCAL_MACHINE_PUBLIC_TUNNEL_OPERATOR_CHOICE_REPORT.md",
+        "control/audits/public_alpha/LOCAL_MACHINE_PUBLIC_TUNNEL_OPERATOR_CHOICE_STATE.json",
+        "control/audits/public_alpha/LOCAL_MACHINE_PUBLIC_TUNNEL_OPERATOR_CHOICE_STATE.md",
+        "docs/runbooks/LOCAL_MACHINE_PUBLIC_TUNNEL_OPERATOR_CHOICE.md",
+        "runtime/local/local_machine_public_exposure.py",
+        "scripts/eureka_local_machine_public_exposure.py",
+        "tests/operations/test_local_machine_public_tunnel_operator_choice.py"
+      ],
+      "classification": [
+        "ops_launch_track",
+        "runtime_product",
+        "generated_artifact",
+        "safe_to_push_candidate",
+        "requires_operator_review"
+      ],
+      "launch_track_relevant": true,
+      "docs_only": false,
+      "safe_to_push": true,
+      "risk_notes": [
+        "Touches runtime/local and the exposure CLI but records operator-choice planning/reporting only.",
+        "The commit does not start a server, tunnel, proxy, DNS change, firewall/router change, launch approval, or public exposure.",
+        "Provider name and public URL remain OPERATOR_REQUIRED, so future operator input is still required."
+      ],
+      "unknowns": [
+        "Real tunnel/proxy provider is not selected.",
+        "Real HTTPS public URL is not selected.",
+        "Actual exposure rehearsal has not run."
+      ]
+    },
+    {
+      "hash": "83c44fa6eb2f78eaa1bd1c309a6eda291ace0330",
+      "subject": "docs(readme): create public project front door",
+      "touched_paths": [
+        "README.md"
+      ],
+      "classification": [
+        "docs_public_front_door",
+        "safe_to_push_candidate"
+      ],
+      "launch_track_relevant": true,
+      "docs_only": true,
+      "safe_to_push": true,
+      "risk_notes": [
+        "Public-facing docs rewrite only.",
+        "Preserves no-production, no-public-launch, no-live-fanout, no-public-mutation, and no-full-discovery claims."
+      ],
+      "unknowns": []
+    },
+    {
+      "hash": "1f4d05798c7aab44e2b5aa9b5b80ccf72f3b127c",
+      "subject": "docs(index): add public documentation navigation",
+      "touched_paths": [
+        "CONTRIBUTING.md",
+        "docs/README.md",
+        "docs/STATUS.md"
+      ],
+      "classification": [
+        "docs_navigation",
+        "safe_to_push_candidate"
+      ],
+      "launch_track_relevant": true,
+      "docs_only": true,
+      "safe_to_push": true,
+      "risk_notes": [
+        "Documentation index and status layer only.",
+        "Moves volatile posture out of the public README without hiding maturity limits."
+      ],
+      "unknowns": []
+    },
+    {
+      "hash": "b09498b74176b8058106638a37878127d32dd9ec",
+      "subject": "test(docs): guard public docs links",
+      "touched_paths": [
+        "tests/docs/test_public_docs.py"
+      ],
+      "classification": [
+        "docs_test_guardrail",
+        "safe_to_push_candidate"
+      ],
+      "launch_track_relevant": true,
+      "docs_only": false,
+      "safe_to_push": true,
+      "risk_notes": [
+        "Adds lightweight docs unittest coverage only.",
+        "Does not change runtime, public-alpha routing, exposure, launch gates, or queue state."
+      ],
+      "unknowns": []
+    }
+  ],
+  "focused_validation": [
+    {
+      "command": "python -m unittest tests.docs.test_public_docs -v",
+      "status": "PASS",
+      "summary": "4 tests passed"
+    },
+    {
+      "command": "python scripts/check_architecture_boundaries.py",
+      "status": "PASS",
+      "summary": "934 Python files checked; no architecture-boundary violations"
+    },
+    {
+      "command": "git diff --check",
+      "status": "PASS",
+      "summary": "no whitespace errors"
+    },
+    {
+      "command": "python scripts/check_generated_artifact_cleanliness.py --check --json",
+      "status": "PASS",
+      "summary": "status pass; no generated drift"
+    },
+    {
+      "command": "python scripts/validate_public_alpha_readonly.py",
+      "status": "PASS",
+      "summary": "public alpha read-only validation valid"
+    },
+    {
+      "command": "python scripts/validate_snapshot_relay.py",
+      "status": "PASS",
+      "summary": "snapshot relay validation pass"
+    },
+    {
+      "command": "python scripts/validate_public_alpha_hosting_readiness.py",
+      "status": "PASS",
+      "summary": "public alpha hosting readiness validation valid"
+    },
+    {
+      "command": "python scripts/validate_public_alpha_launch_candidate.py",
+      "status": "PASS",
+      "summary": "public alpha launch candidate validation pass"
+    },
+    {
+      "command": "python scripts/public_alpha_smoke.py --json",
+      "status": "PASS",
+      "summary": "18 of 18 smoke checks passed"
+    }
+  ],
+  "skipped_validation": [
+    {
+      "command": "python -m unittest discover -s tests -t .",
+      "status": "NOT_CLAIMED",
+      "reason": "The previous docs run exceeded the 120 second command bound; full discovery is a promotion/nightly/manual lane."
+    },
+    {
+      "command": "AIDE validation",
+      "status": "SKIPPED",
+      "reason": "This is a remote-sync/docs closeout audit and the previous docs task deliberately did not run AIDE."
+    }
+  ],
+  "safety_confirmation": {
+    "public_exposure_enabled": false,
+    "tunnel_or_proxy_started": false,
+    "workbench_exposed": false,
+    "public_mutation_enabled": false,
+    "downloads_or_uploads_enabled": false,
+    "live_metadata_enabled": false,
+    "launch_approval_created": false,
+    "queue_mutated": false
+  }
+}
