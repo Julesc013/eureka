@@ -47,6 +47,9 @@ CONVENTIONAL_ROOT_FILES = (
     "CODE_OF_CONDUCT.md",
     "CONTRIBUTING.md",
     "Dockerfile",
+    "LICENSE-SUMMARY.md",
+    "LICENSE.md",
+    "NOTICE.md",
     "README.md",
     "SECURITY.md",
 )

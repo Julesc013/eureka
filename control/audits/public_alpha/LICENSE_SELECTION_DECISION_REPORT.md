@@ -46,6 +46,8 @@ future hosted-service plans.
 - `docs/README.md`
 - `docs/STATUS.md`
 - `tests/docs/test_public_docs.py`
+- `tools/validators/check_architecture_boundaries.py`
+- `tests/architecture/test_check_architecture_boundaries.py`
 
 ## Key Terms
 
@@ -76,7 +78,10 @@ future hosted-service plans.
 - `python -m json.tool control/audits/public_alpha/LICENSE_SELECTION_DECISION_REPORT.json`: PASS
 - `python -m unittest tests.docs.test_public_docs -v`: PASS, 5 tests
 - `git diff --check`: PASS
-- `python scripts/check_architecture_boundaries.py`: PASS
+- `python scripts/check_architecture_boundaries.py`: PASS after adding
+  `LICENSE.md`, `LICENSE-SUMMARY.md`, and `NOTICE.md` to the conventional root
+  file allowlist
+- `python -m unittest tests.architecture.test_check_architecture_boundaries -v`: PASS
 - `python scripts/check_generated_artifact_cleanliness.py --check --json`: WARN before commit because the new audit report files were uncommitted `audit_generated` artifacts
 - `python scripts/validate_public_alpha_readonly.py`: PASS
 - `python scripts/validate_snapshot_relay.py`: PASS

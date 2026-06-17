@@ -28,7 +28,9 @@
     "docs/operations/LICENSE_SELECTION_REQUIRED.md",
     "docs/README.md",
     "docs/STATUS.md",
-    "tests/docs/test_public_docs.py"
+    "tests/docs/test_public_docs.py",
+    "tools/validators/check_architecture_boundaries.py",
+    "tests/architecture/test_check_architecture_boundaries.py"
   ],
   "key_terms": {
     "viewing_and_study": true,
@@ -73,7 +75,12 @@
     {
       "command": "python scripts/check_architecture_boundaries.py",
       "result": "PASS",
-      "notes": "Checked 934 Python files; no architecture-boundary violations."
+      "notes": "Checked 934 Python files after adding LICENSE.md, LICENSE-SUMMARY.md, and NOTICE.md to the conventional root file allowlist."
+    },
+    {
+      "command": "python -m unittest tests.architecture.test_check_architecture_boundaries -v",
+      "result": "PASS",
+      "notes": "Architecture boundary checker tests include conventional license and notice root files."
     },
     {
       "command": "python scripts/check_generated_artifact_cleanliness.py --check --json",

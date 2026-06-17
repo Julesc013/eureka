@@ -97,6 +97,19 @@ class ArchitectureBoundaryCheckerTestCase(unittest.TestCase):
         self.assertEqual(result.violations, ())
         self.assertIn(".aide.local.example", result.root_model.active_roots)
 
+    def test_license_and_notice_root_files_are_conventional(self) -> None:
+        with temporary_repo(
+            {
+                "LICENSE.md": "custom license\n",
+                "LICENSE-SUMMARY.md": "summary\n",
+                "NOTICE.md": "notice\n",
+            }
+        ) as root:
+            result = run_boundary_check(root)
+
+        self.assertEqual(result.violations, ())
+        self.assertEqual(result.root_model.unexpected_top_level_entries, ())
+
     def test_checker_emits_json_when_requested(self) -> None:
         with temporary_repo(
             {
