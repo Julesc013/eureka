@@ -24,6 +24,7 @@ Use this boundary when navigating the repo:
 | System boundaries | [Architecture](ARCHITECTURE.md) |
 | Staged next work | [Roadmap](ROADMAP.md) |
 | Repo layout | [Repo Layout](REPO_LAYOUT.md) |
+| License posture | [Root license](../LICENSE.md) |
 
 ## Vision And Doctrine
 
@@ -135,6 +136,9 @@ oracle until future gates say otherwise.
 - [Contributing](../CONTRIBUTING.md)
 - [Security](../SECURITY.md)
 - [Code of Conduct](../CODE_OF_CONDUCT.md)
+- [License](../LICENSE.md)
+- [License Summary](../LICENSE-SUMMARY.md)
+- [Notice](../NOTICE.md)
 - [Agent Instructions](../AGENTS.md)
 - [Scripts](../scripts/README.md)
 - [Tools](../tools/README.md)
@@ -148,3 +152,6 @@ readiness, broad corpus coverage, or AI authority without evidence.
 Do not use docs prose to bypass gates. Eureka currently remains a local-first
 Python reference prototype with read-only public-alpha foundations. It has not
 launched publicly and does not claim production readiness.
+
+Eureka is source-available under a custom restricted license. It is not
+open-source software.

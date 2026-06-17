@@ -1,0 +1,118 @@
+{
+  "schema_version": "eureka.license_selection_decision_report.v0",
+  "task_id": "LICENSE-SELECTION-DECISION-00",
+  "generated_at": "2026-06-17T15:20:35Z",
+  "status": "PASS_WITH_WARNINGS",
+  "selected_license": "Eureka Temporal Object Resolver - Restricted Source Viewing License",
+  "version": "0.1",
+  "short_identifier": "LicenseRef-Eureka-RSVL-0.1",
+  "classification": [
+    "source-available",
+    "restricted",
+    "non-open-source",
+    "non-commercial",
+    "no redistribution",
+    "no public service hosting",
+    "personal/local evaluation only"
+  ],
+  "files_added": [
+    "LICENSE.md",
+    "LICENSE-SUMMARY.md",
+    "NOTICE.md",
+    "docs/planning/LICENSE_SELECTION_DECISION.md"
+  ],
+  "files_updated": [
+    "README.md",
+    "CONTRIBUTING.md",
+    "SECURITY.md",
+    "docs/operations/LICENSE_SELECTION_REQUIRED.md",
+    "docs/README.md",
+    "docs/STATUS.md",
+    "tests/docs/test_public_docs.py"
+  ],
+  "key_terms": {
+    "viewing_and_study": true,
+    "private_personal_execution": true,
+    "limited_public_doc_quotation": true,
+    "github_pr_workflow_exception": true,
+    "contribution_exception": true,
+    "no_redistribution": true,
+    "no_commercial_use": true,
+    "no_public_service_hosting": true,
+    "no_incorporation": true,
+    "no_model_training_reuse": true,
+    "third_party_materials_disclaimer": true,
+    "future_separate_terms_clause": true
+  },
+  "public_posture": {
+    "open_source_claimed": false,
+    "production_readiness_claimed": false,
+    "public_launch_claimed": false,
+    "public_hosting_authorized": false,
+    "commercial_use_authorized": false
+  },
+  "design_sources": [
+    "https://raw.githubusercontent.com/Julesc013/dominium/main/LICENSE.md",
+    "https://opensource.org/osd",
+    "https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository"
+  ],
+  "validation": [
+    {
+      "command": "python -m json.tool control/audits/public_alpha/LICENSE_SELECTION_DECISION_REPORT.json",
+      "result": "PASS"
+    },
+    {
+      "command": "python -m unittest tests.docs.test_public_docs -v",
+      "result": "PASS",
+      "notes": "Ran 5 docs guardrail tests."
+    },
+    {
+      "command": "git diff --check",
+      "result": "PASS"
+    },
+    {
+      "command": "python scripts/check_architecture_boundaries.py",
+      "result": "PASS",
+      "notes": "Checked 934 Python files; no architecture-boundary violations."
+    },
+    {
+      "command": "python scripts/check_generated_artifact_cleanliness.py --check --json",
+      "result": "WARN_PRE_COMMIT_DRIFT",
+      "notes": "Failed before commit only because the new license decision audit report files were uncommitted audit_generated artifacts."
+    },
+    {
+      "command": "python scripts/validate_public_alpha_readonly.py",
+      "result": "PASS"
+    },
+    {
+      "command": "python scripts/validate_snapshot_relay.py",
+      "result": "PASS"
+    },
+    {
+      "command": "python scripts/validate_public_alpha_hosting_readiness.py",
+      "result": "PASS"
+    },
+    {
+      "command": "python scripts/validate_public_alpha_launch_candidate.py",
+      "result": "PASS"
+    },
+    {
+      "command": "python scripts/public_alpha_smoke.py --json",
+      "result": "PASS",
+      "notes": "18 checks passed; 0 failed."
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py doctor",
+      "result": "PASS"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py validate",
+      "result": "PASS"
+    }
+  ],
+  "warnings": [
+    "This is a custom restrictive license and should be reviewed by qualified counsel for high-stakes legal reliance.",
+    "Full unittest discovery was not run and is not claimed.",
+    "Generated-artifact cleanliness must be rerun after commit."
+  ]
+}

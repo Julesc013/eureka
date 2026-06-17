@@ -22,6 +22,7 @@ production readiness.
 | Volatile development state | this page, bootstrap status, roadmap, runbooks, and audit evidence |
 | Queue/operator detail | kept outside the public README unless it changes public posture |
 | Product truth | accepted contracts, runtime behavior, reviewed records, and accepted architecture docs |
+| License | restricted source-available; not open-source |
 
 ## Implemented Or Present
 
@@ -67,6 +68,7 @@ Eureka does not currently claim:
 - native client readiness
 - live public source fanout
 - AI authority or autonomous truth acceptance
+- open-source licensing
 
 ## Validation Posture
 

@@ -65,6 +65,20 @@ native distribution, and action-layer work all require explicit review gates.
 
 ## Licensing
 
-No root `LICENSE` file is currently present. Do not assume open-source license
-terms until the repository owner or authorized legal decision-maker selects one.
-See [License Selection Required](docs/operations/LICENSE_SELECTION_REQUIRED.md).
+Eureka is source-available under the custom restricted license in
+[LICENSE.md](LICENSE.md). It is not open-source software.
+
+Issues, comments, bug reports, documentation suggestions, security reports, and
+pull requests are allowed only through the official repository workflow. By
+submitting a contribution, you grant the Author the contribution rights
+described in [LICENSE.md](LICENSE.md), including rights to use, modify,
+distribute, sublicense, relicense, and incorporate the contribution into Eureka
+or related projects under current or future terms.
+
+GitHub-created forks are allowed only for review, issue discussion, and pull
+request submission. They do not authorize independent distributions, competing
+forks, packages, binaries, mirrors, hosted services, public APIs, datasets,
+benchmarks, or derivative projects.
+
+See [License Summary](LICENSE-SUMMARY.md), [Notice](NOTICE.md), and
+[License Posture](docs/operations/LICENSE_SELECTION_REQUIRED.md).

@@ -49,6 +49,7 @@ Current branch details move faster than a public README. Use
 | Live source fanout | Disabled unless a future reviewed task enables it | [Source Policy Gates](docs/operations/SOURCE_POLICY_GATES.md) |
 | Public mutation | Disabled; review and promotion gates protect accepted records | [Master Index Review Queue](docs/reference/MASTER_INDEX_REVIEW_QUEUE_CONTRACT.md) |
 | Production readiness | Not claimed | [Security](SECURITY.md) |
+| License | Restricted source-available, not open-source | [License](LICENSE.md) |
 | Full discovery | Promotion/nightly/manual lane; use harness or CI artifacts | [Test and Eval Lanes](docs/operations/TEST_AND_EVAL_LANES.md) |
 
 ## What Eureka Is And Is Not
@@ -303,10 +304,15 @@ readiness claims, and use validators that match the changed paths.
 
 ## License
 
-No root `LICENSE` file is currently present, and licensing is not finalized.
-Until a license is selected by the repository owner or an authorized legal
-decision-maker, do not assume permission to copy, redistribute, package,
-publish, or commercialize the code beyond permissions granted by the repository
-owner and applicable platform terms.
+Eureka is source-available under a custom restricted source-viewing license:
+[Eureka Temporal Object Resolver - Restricted Source Viewing License](LICENSE.md).
 
-See [License Selection Required](docs/operations/LICENSE_SELECTION_REQUIRED.md).
+Eureka is **not open-source software**. The license permits viewing, private
+study, private local evaluation, limited public-doc quotation, and contribution
+submission through the official repository workflow. It prohibits
+redistribution, public or competing forks, packages, binaries, hosted services,
+commercial/professional/institutional use, incorporation into other projects,
+and machine-learning/model-training reuse without written permission.
+
+Read the [license summary](LICENSE-SUMMARY.md), [notice](NOTICE.md), and
+[license posture note](docs/operations/LICENSE_SELECTION_REQUIRED.md).

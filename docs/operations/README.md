@@ -14,6 +14,7 @@ records, not as proof that a capability has launched.
 - [Local Apply Gate Runbook](LOCAL_APPLY_GATE_RUNBOOK.md)
 - [Source Action Kernel Runbook](SOURCE_ACTION_KERNEL_RUNBOOK.md)
 - [Snapshot Relay Runbook](SNAPSHOT_RELAY_RUNBOOK.md)
+- [License Posture](LICENSE_SELECTION_REQUIRED.md)
 
 ## Current Operating Posture
 

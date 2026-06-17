@@ -96,6 +96,34 @@ class PublicDocsTests(unittest.TestCase):
             with self.subTest(claim=claim):
                 self.assertIn(claim, readme)
 
+    def test_license_posture_is_restricted_and_not_open_source(self) -> None:
+        readme = _read("README.md").lower()
+        license_text = _read("LICENSE.md").lower()
+        summary = _read("LICENSE-SUMMARY.md").lower()
+
+        required_readme_claims = [
+            "source-available",
+            "not open-source software",
+            "restricted source-viewing license",
+        ]
+        for claim in required_readme_claims:
+            with self.subTest(claim=claim):
+                self.assertIn(claim, readme)
+
+        required_license_claims = [
+            "licenseref-eureka-rsvl-0.1",
+            "non-open-source",
+            "no redistribution",
+            "no public service hosting",
+            "contribution exception",
+            "third-party materials",
+        ]
+        for claim in required_license_claims:
+            with self.subTest(claim=claim):
+                self.assertIn(claim, license_text)
+
+        self.assertIn("not the license", summary)
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -40,5 +40,14 @@ The following remain disabled or unimplemented:
 This policy must be updated before any hosted public service, live-source
 capability, public mutation path, or user-account feature is enabled.
 
+## License Boundary
+
+The repository is source-available under a custom restricted license, not an
+open-source license. Security review and issue reporting are allowed through the
+official repository workflow, but the license does not authorize public
+services, public forks, redistribution, model training, extraction services,
+public Workbench exposure, live source fanout, downloads, uploads, or
+commercial/professional/institutional use.
+
 This file is a concise pre-product policy, not a complete vulnerability
 disclosure, incident response, privacy, takedown, backup, or operations policy.

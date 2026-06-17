@@ -1,27 +1,47 @@
-# License Selection Required
+# License Posture
 
-Eureka does not currently have a selected repository license.
+Eureka now has a selected repository license:
 
-The repository README records the current posture: no license file is present
-and licensing is not finalized. P51 does not select an open-source license,
-because no authoritative prior repo decision names one.
+```text
+Eureka Temporal Object Resolver - Restricted Source Viewing License
+Version 0.1
+LicenseRef-Eureka-RSVL-0.1
+```
 
-Until a license is selected by the repository owner or an authorized legal
-decision-maker, contributors and operators should treat the repository as not
-open-source licensed. Do not assume permission to copy, redistribute, fork for
-public reuse, package, publish, or commercialize the code beyond permissions
-granted by the repository owner and applicable platform terms.
+The binding license is [../../LICENSE.md](../../LICENSE.md). The plain-language
+summary is [../../LICENSE-SUMMARY.md](../../LICENSE-SUMMARY.md). The repository
+notice is [../../NOTICE.md](../../NOTICE.md).
 
-The future license decision should answer:
+## Current Classification
 
-- Which license applies to source code.
-- Which terms apply to documentation, examples, fixtures, generated static
-  artifacts, audit packs, and schemas.
-- Whether outside-reference notices or separate fixture/source terms are required.
-- Whether generated artifacts should carry the same license as source.
-- Whether contribution terms need a developer certificate of origin, contributor
-  license agreement, or simpler pull request attestation.
+- source-available
+- restricted
+- non-open-source
+- non-commercial
+- no redistribution
+- no public service hosting
+- personal/local evaluation only
 
-Do not add a root `LICENSE` file that resembles an OSI or other standardized
-license until that license is explicitly selected. A misleading placeholder
-would be worse than no license file.
+## Practical Meaning
+
+The license permits viewing, private study, private local execution for
+personal evaluation, limited public-doc quotation, and contribution submission
+through the official repository workflow.
+
+It does not permit redistribution, public or competing forks, packages,
+binaries, mirrors, hosted services, public APIs, extraction services,
+commercial/professional/institutional use, incorporation into other projects,
+or model-training reuse without written permission.
+
+## Open-Source Non-Claim
+
+Do not describe Eureka as open source unless the repository owner or authorized
+legal decision-maker later selects an OSI-compatible license. The current
+license intentionally restricts redistribution, derivative distribution,
+commercial use, and public services.
+
+## Future License Work
+
+Future tasks may still add separate written terms for public alpha use, hosted
+service use, commercial licensing, individual components, documentation, or
+third-party notices. Those future terms are not implied by the current license.
