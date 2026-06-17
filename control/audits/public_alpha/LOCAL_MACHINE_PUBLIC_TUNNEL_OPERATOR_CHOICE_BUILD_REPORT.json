@@ -1,0 +1,146 @@
+{
+  "schema_version": "eureka.local_machine_public_tunnel_operator_choice_build_report.v0",
+  "task_id": "LOCAL-MACHINE-PUBLIC-TUNNEL-OPERATOR-CHOICE-00",
+  "status": "PASS_WITH_WARNINGS",
+  "branch": "dev",
+  "head_at_task_start": "8ca08ffa5ce9f1ba7c811e81d2dd4a68c6456d5d",
+  "worktree_at_task_start": "clean",
+  "origin_dev_at_task_start": {
+    "ahead": 0,
+    "behind": 0,
+    "remote_sync_required_before_task": false
+  },
+  "current_queue_recommendation": "IA-METADATA-PROVIDER-WIRING-AND-SMOKE-00",
+  "selected_launch_track_task": "LOCAL-MACHINE-PUBLIC-TUNNEL-OPERATOR-CHOICE-00",
+  "selected_exposure_mode": "reverse_tunnel",
+  "selected_provider_class": "provider_managed_https_tunnel",
+  "selected_provider_name": "OPERATOR_REQUIRED",
+  "selected_public_url": "OPERATOR_REQUIRED",
+  "public_url_status": "operator_required",
+  "provider_https_status": "operator_required",
+  "tls_domain_status": "operator_required",
+  "ops_posture_status": "READY_FOR_EXPOSURE_PLAN",
+  "exposure_plan_status": "READY_FOR_OPERATOR_URL",
+  "operator_choice_status": "BLOCKED_ON_OPERATOR_PROVIDER_URL",
+  "remote_sync_status_at_choice_generation": "synced",
+  "remote_sync_required_at_choice_generation": false,
+  "commands_added_or_confirmed": [
+    "python scripts/eureka_local_machine_public_exposure.py choose --plan .eureka/public-alpha/exposure/latest/exposure_plan.json --ops-posture .eureka/ops/public-alpha/latest/ops_posture.json --mode reverse_tunnel --provider-class provider_managed_https_tunnel --provider-name OPERATOR_REQUIRED --public-url OPERATOR_REQUIRED --out .eureka/public-alpha/exposure/operator-choice/latest",
+    "python scripts/eureka_local_machine_public_exposure.py validate-choice --choice .eureka/public-alpha/exposure/operator-choice/latest/operator_choice.json --strict",
+    "python scripts/eureka_local_machine_public_exposure.py choice-status --choice .eureka/public-alpha/exposure/operator-choice/latest/operator_choice.json",
+    "python scripts/eureka_local_machine_public_exposure.py choice-report --choice .eureka/public-alpha/exposure/operator-choice/latest/operator_choice.json"
+  ],
+  "artifacts_generated": [
+    ".eureka/public-alpha/exposure/operator-choice/latest/operator_choice.json",
+    ".eureka/public-alpha/exposure/operator-choice/latest/OPERATOR_CHOICE_REPORT.md",
+    "control/audits/public_alpha/LOCAL_MACHINE_PUBLIC_TUNNEL_OPERATOR_CHOICE_STATE.json",
+    "control/audits/public_alpha/LOCAL_MACHINE_PUBLIC_TUNNEL_OPERATOR_CHOICE_STATE.md",
+    "control/audits/public_alpha/LOCAL_MACHINE_PUBLIC_TUNNEL_OPERATOR_CHOICE_REPORT.json",
+    "control/audits/public_alpha/LOCAL_MACHINE_PUBLIC_TUNNEL_OPERATOR_CHOICE_REPORT.md",
+    "control/audits/public_alpha/LOCAL_MACHINE_PUBLIC_TUNNEL_OPERATOR_CHOICE_BUILD_REPORT.json",
+    "control/audits/public_alpha/LOCAL_MACHINE_PUBLIC_TUNNEL_OPERATOR_CHOICE_BUILD_REPORT.md"
+  ],
+  "validation_run": [
+    {
+      "command": "python scripts/eureka_public_alpha_ops_posture.py validate --plan .eureka/ops/public-alpha/latest/ops_posture.json --strict",
+      "result": "PASS",
+      "summary": "ops posture remains READY_FOR_EXPOSURE_PLAN"
+    },
+    {
+      "command": "python scripts/eureka_local_machine_public_exposure.py validate --plan .eureka/public-alpha/exposure/latest/exposure_plan.json --strict",
+      "result": "PASS",
+      "summary": "exposure plan remains READY_FOR_OPERATOR_URL"
+    },
+    {
+      "command": "python scripts/eureka_local_machine_public_exposure.py choose --plan .eureka/public-alpha/exposure/latest/exposure_plan.json --ops-posture .eureka/ops/public-alpha/latest/ops_posture.json --mode reverse_tunnel --provider-class provider_managed_https_tunnel --provider-name OPERATOR_REQUIRED --public-url OPERATOR_REQUIRED --out .eureka/public-alpha/exposure/operator-choice/latest",
+      "result": "PASS",
+      "summary": "operator-choice artifact generated with status BLOCKED_ON_OPERATOR_PROVIDER_URL"
+    },
+    {
+      "command": "python scripts/eureka_local_machine_public_exposure.py validate-choice --choice .eureka/public-alpha/exposure/operator-choice/latest/operator_choice.json --strict",
+      "result": "PASS",
+      "summary": "safe blocked operator-choice artifact validates"
+    },
+    {
+      "command": "python scripts/eureka_local_machine_public_exposure.py choice-status --choice .eureka/public-alpha/exposure/operator-choice/latest/operator_choice.json",
+      "result": "PASS",
+      "summary": "status reports BLOCKED_ON_OPERATOR_PROVIDER_URL and seven blockers"
+    },
+    {
+      "command": "python scripts/eureka_local_machine_public_exposure.py choice-report --choice .eureka/public-alpha/exposure/operator-choice/latest/operator_choice.json",
+      "result": "PASS",
+      "summary": "operator-choice Markdown report renders"
+    },
+    {
+      "command": "python -m unittest tests.operations.test_local_machine_public_tunnel_operator_choice",
+      "result": "PASS",
+      "summary": "11 focused operator-choice tests passed"
+    },
+    {
+      "command": "python scripts/check_architecture_boundaries.py",
+      "result": "PASS",
+      "summary": "root model and architecture boundaries passed"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py doctor",
+      "result": "PASS",
+      "summary": "AIDE Lite doctor passed"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py validate",
+      "result": "PASS",
+      "summary": "AIDE Lite validate passed"
+    },
+    {
+      "command": "python scripts/check_generated_artifact_cleanliness.py --check --json",
+      "result": "EXPECTED_PRECOMMIT_FAIL",
+      "summary": "new tracked control/audits/public_alpha operator-choice reports were flagged as generated drift before commit; rerun after commit is required"
+    }
+  ],
+  "validation_skipped": [
+    {
+      "check": "full unittest discovery",
+      "reason": "full discovery is a promotion/nightly/manual gate and was not selected for this operator-choice task"
+    },
+    {
+      "check": "actual server/tunnel/proxy smoke",
+      "reason": "this task is plan and operator-choice only; public exposure and server startup are explicitly forbidden"
+    }
+  ],
+  "remaining_launch_blockers": [
+    "operator must choose a real tunnel/proxy provider",
+    "operator must supply a real HTTPS public URL",
+    "provider HTTPS/TLS posture must be validated",
+    "staged record ID is needed for future /record route smoke",
+    "actual tunnel/proxy rehearsal has not run",
+    "full discovery launch report is missing",
+    "release promotion report is missing",
+    "manual public launch approval is missing",
+    "final public launch has not happened"
+  ],
+  "no_public_exposure_confirmation": {
+    "public_exposure_enabled": false,
+    "tunnel_started": false,
+    "server_started": false,
+    "dns_modified": false,
+    "firewall_or_router_modified": false,
+    "launch_claimed": false,
+    "production_readiness_claimed": false
+  },
+  "protected_path_impact": {
+    "canon": "not touched",
+    "contracts": "not touched",
+    "runtime_product_behavior": "not changed; only exposure-planning runtime was extended",
+    "aide_queue": "not touched",
+    "release": "not touched",
+    "archive_zips": "not touched",
+    "public_network_exposure": "not enabled"
+  },
+  "warnings": [
+    "provider_name and public_url remain OPERATOR_REQUIRED",
+    "operator-choice status is intentionally blocked on operator provider URL",
+    "generated-artifact cleanliness flagged new tracked audit files before commit and must be rerun after commit",
+    "after this task is committed, local dev is expected to be ahead of origin/dev until pushed"
+  ],
+  "recommended_next_task": "LOCAL-MACHINE-PUBLIC-TUNNEL-OPERATOR-INPUT-00"
+}

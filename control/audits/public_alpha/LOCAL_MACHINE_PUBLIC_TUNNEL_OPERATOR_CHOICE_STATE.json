@@ -1,0 +1,70 @@
+{
+  "schema_version": "eureka.local_machine_public_tunnel_operator_choice_state.v0",
+  "task_id": "LOCAL-MACHINE-PUBLIC-TUNNEL-OPERATOR-CHOICE-00",
+  "generated_at": "2026-06-17T00:00:00Z",
+  "branch": "dev",
+  "head": "8ca08ffa5ce9f1ba7c811e81d2dd4a68c6456d5d",
+  "worktree_status": "dirty during LOCAL-MACHINE-PUBLIC-TUNNEL-OPERATOR-CHOICE-00 implementation; start guard reported clean before edits",
+  "origin_dev": {
+    "ahead": 0,
+    "behind": 0,
+    "local_dev_ahead_of_origin_dev": false,
+    "remote_sync_required_before_exposure": false,
+    "post_commit_note": "After this task is committed, local dev is expected to be ahead of origin/dev by this commit until it is pushed."
+  },
+  "current_queue_recommendation": "IA-METADATA-PROVIDER-WIRING-AND-SMOKE-00",
+  "selected_launch_track_task": "LOCAL-MACHINE-PUBLIC-TUNNEL-OPERATOR-CHOICE-00",
+  "ops_posture_artifact_path": ".eureka/ops/public-alpha/latest/ops_posture.json",
+  "ops_posture_status": "READY_FOR_EXPOSURE_PLAN",
+  "exposure_plan_artifact_path": ".eureka/public-alpha/exposure/latest/exposure_plan.json",
+  "exposure_plan_status": "READY_FOR_OPERATOR_URL",
+  "selected_exposure_mode": "reverse_tunnel",
+  "selected_provider_class": "provider_managed_https_tunnel",
+  "selected_provider_name": "OPERATOR_REQUIRED",
+  "selected_public_url": "OPERATOR_REQUIRED",
+  "tls_provider_https_posture": "operator_required",
+  "auth_noauth_posture": "public_no_auth",
+  "public_workbench_exposed": false,
+  "public_mutation_enabled": false,
+  "live_metadata_enabled": false,
+  "downloads_enabled": false,
+  "uploads_enabled": false,
+  "local_bind_host": "127.0.0.1",
+  "local_bind_port": 8765,
+  "local_public_alpha_server_command": "python scripts/run_eureka_local.py --host 127.0.0.1 --port 8765 --public-alpha --staging-bundle .eureka/staging/public-alpha",
+  "future_tunnel_command_template": "<selected-tunnel-provider> tunnel --url http://127.0.0.1:8765",
+  "rollback_command_template": [
+    "disable or pause the tunnel/proxy public route",
+    "stop any tunnel/proxy process",
+    "stop the local public-alpha server",
+    "restart only on 127.0.0.1"
+  ],
+  "emergency_disable_template": [
+    "disable the selected provider public URL or tunnel route",
+    "terminate the tunnel/proxy process",
+    "terminate the local public-alpha server process",
+    "verify /health is no longer publicly reachable"
+  ],
+  "route_smoke_list": [
+    "/",
+    "/health",
+    "/status",
+    "/api/status",
+    "/about",
+    "/method",
+    "/search?q=old%20blue%20FTP%20client%20for%20XP",
+    "/api/search?q=manual%20for%20Sound%20Blaster%20CT1740",
+    "/record/{staged-record-id}"
+  ],
+  "remaining_blockers": [
+    "operator provider name or public URL is required",
+    "provider HTTPS/TLS posture is unresolved",
+    "staged record ID is needed for future /record route smoke",
+    "actual tunnel/proxy rehearsal has not run",
+    "full discovery launch report is missing",
+    "release promotion report is missing",
+    "manual public launch approval is missing"
+  ],
+  "status": "BLOCKED_ON_OPERATOR_PROVIDER_URL",
+  "recommended_next_task": "LOCAL-MACHINE-PUBLIC-TUNNEL-OPERATOR-INPUT-00"
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": "eureka.local_machine_public_tunnel_operator_choice_report.v0",
+  "task_id": "LOCAL-MACHINE-PUBLIC-TUNNEL-OPERATOR-CHOICE-00",
+  "status": "PASS_WITH_WARNINGS",
+  "selected_exposure_mode": "reverse_tunnel",
+  "provider_class": "provider_managed_https_tunnel",
+  "provider_name": "OPERATOR_REQUIRED",
+  "public_url": "OPERATOR_REQUIRED",
+  "public_url_status": "operator_required",
+  "provider_https_status": "operator_required",
+  "remote_sync_status": "synced",
+  "remote_sync_required": false,
+  "ops_posture_status": "READY_FOR_EXPOSURE_PLAN",
+  "exposure_plan_status": "READY_FOR_OPERATOR_URL",
+  "operator_choice_artifact": ".eureka/public-alpha/exposure/operator-choice/latest/operator_choice.json",
+  "operator_choice_report": ".eureka/public-alpha/exposure/operator-choice/latest/OPERATOR_CHOICE_REPORT.md",
+  "safety_posture": {
+    "public_read_only": true,
+    "public_exposure_enabled": false,
+    "tunnel_started": false,
+    "public_mutation_enabled": false,
+    "public_workbench_exposed": false,
+    "live_metadata_enabled": false,
+    "downloads_enabled": false,
+    "uploads_enabled": false,
+    "production_readiness_claimed": false,
+    "launch_approval_present": false
+  },
+  "remaining_blockers": [
+    "operator provider name or public URL is required",
+    "provider HTTPS/TLS posture is unresolved",
+    "staged record ID is needed for future /record route smoke",
+    "actual tunnel/proxy rehearsal has not run",
+    "full discovery launch report is missing",
+    "release promotion report is missing",
+    "manual public launch approval is missing"
+  ],
+  "recommended_next_task": "LOCAL-MACHINE-PUBLIC-TUNNEL-OPERATOR-INPUT-00"
+}

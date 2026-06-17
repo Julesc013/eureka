@@ -24,17 +24,23 @@ from runtime.local.public_alpha_ops_posture import validate_ops_posture as valid
 
 TASK_ID = "LOCAL-MACHINE-PUBLIC-EXPOSURE-PLAN-00"
 TUNNEL_PLAN_TASK_ID = "LOCAL-MACHINE-PUBLIC-TUNNEL-PLAN-00"
+OPERATOR_CHOICE_TASK_ID = "LOCAL-MACHINE-PUBLIC-TUNNEL-OPERATOR-CHOICE-00"
 PLAN_SCHEMA_VERSION = "eureka.local_machine_public_exposure_plan.v0"
 REPORT_SCHEMA_VERSION = "eureka.local_machine_public_exposure_report.v0"
 TUNNEL_PLAN_SCHEMA_VERSION = "eureka.local_machine_public_tunnel_plan.v0"
 TUNNEL_PLAN_VALIDATION_SCHEMA_VERSION = "eureka.local_machine_public_tunnel_plan_validation.v0"
+OPERATOR_CHOICE_SCHEMA_VERSION = "eureka.local_machine_public_tunnel_operator_choice.v0"
+OPERATOR_CHOICE_VALIDATION_SCHEMA_VERSION = "eureka.local_machine_public_tunnel_operator_choice_validation.v0"
 DEFAULT_OUT = ".eureka/local-machine-public-exposure/public-alpha/latest"
 DEFAULT_TUNNEL_OUT = ".eureka/public-alpha/exposure/latest"
+DEFAULT_OPERATOR_CHOICE_OUT = ".eureka/public-alpha/exposure/operator-choice/latest"
 PLAN_JSON = "local_machine_public_exposure_plan.json"
 REPORT_JSON = "local_machine_public_exposure_report.json"
 REPORT_MD = "LOCAL_MACHINE_PUBLIC_EXPOSURE_REPORT.md"
 TUNNEL_PLAN_JSON = "exposure_plan.json"
 TUNNEL_REPORT_MD = "EXPOSURE_PLAN_REPORT.md"
+OPERATOR_CHOICE_JSON = "operator_choice.json"
+OPERATOR_CHOICE_REPORT_MD = "OPERATOR_CHOICE_REPORT.md"
 EXPOSURE_MODES = (
     "none",
     "loopback_only",
@@ -56,7 +62,34 @@ TUNNEL_PLAN_STATUSES = (
     "READY_FOR_APPROVAL",
     "READY",
 )
+OPERATOR_CHOICE_STATUSES = (
+    "BLOCKED_ON_REMOTE_SYNC",
+    "BLOCKED_ON_OPERATOR_PROVIDER_URL",
+    "BLOCKED_ON_PROVIDER_HTTPS",
+    "BLOCKED_ON_STAGING_RECORD_ID",
+    "READY_FOR_TUNNEL_REHEARSAL",
+    "READY_FOR_RELEASE_CHECK",
+    "BLOCKED_UNSAFE",
+    "READY",
+)
+PROVIDER_CLASSES = (
+    "provider_managed_https_tunnel",
+    "self_managed_reverse_proxy",
+    "private_lan_rehearsal",
+    "router_port_forward_risky",
+    "direct_public_ip_risky",
+)
+KNOWN_PROVIDER_NAMES = (
+    "OPERATOR_REQUIRED",
+    "cloudflare_tunnel",
+    "tailscale_funnel",
+    "ngrok",
+    "caddy_reverse_proxy",
+    "nginx_reverse_proxy",
+    "other",
+)
 RISKY_EXPOSURE_MODES = {"router_port_forward", "direct_public_ip"}
+RISKY_PROVIDER_CLASSES = {"router_port_forward_risky", "direct_public_ip_risky"}
 TUNNEL_ROUTE_ALLOWLIST = (
     "/",
     "/health",
@@ -368,6 +401,263 @@ def render_tunnel_markdown_report(plan: Mapping[str, Any]) -> str:
             f"Next recommended task: `{validation.get('next_recommended_task')}`",
             "",
             "This is a plan-only artifact. It does not start a server, start a tunnel, start a reverse proxy, modify DNS/firewall/router state, enable public exposure, approve launch, or claim production readiness.",
+            "",
+        ]
+    )
+
+
+def build_operator_choice(
+    *,
+    exposure_plan: str | Path | Mapping[str, Any] | None,
+    ops_posture: str | Path | Mapping[str, Any] | None,
+    out_dir: str | Path = DEFAULT_OPERATOR_CHOICE_OUT,
+    selected_exposure_mode: str = "reverse_tunnel",
+    provider_class: str = "provider_managed_https_tunnel",
+    provider_name: str = "OPERATOR_REQUIRED",
+    provider_url: str = "",
+    public_url: str = "OPERATOR_REQUIRED",
+    local_bind_host: str = "",
+    local_bind_port: int | None = None,
+    staging_bundle: str = "",
+    staged_record_id: str = "",
+    operator: str = "",
+    approve_risky_mode: bool = False,
+    confirm_remote_synced: bool = False,
+    generated_at: str | None = None,
+    branch: str | None = None,
+    head: str | None = None,
+    worktree_status: str | None = None,
+    remote_ahead: int | None = None,
+    remote_behind: int | None = None,
+) -> dict[str, Any]:
+    """Build an explicit operator-choice artifact without exposing anything."""
+
+    plan_path, plan_payload, plan_validation = _operator_exposure_plan_inputs(exposure_plan)
+    ops_path, ops_payload, ops_validation, ops_compat = _public_alpha_ops_inputs(ops_posture)
+    remote = _remote_sync_snapshot(
+        branch=branch,
+        head=head,
+        worktree_status=worktree_status,
+        ahead=remote_ahead,
+        behind=remote_behind,
+        confirm_remote_synced=confirm_remote_synced,
+    )
+    generated = generated_at or datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
+    mode = selected_exposure_mode or str(plan_payload.get("exposure_mode") or "reverse_tunnel")
+    provider_kind = provider_class if provider_class in PROVIDER_CLASSES else "provider_managed_https_tunnel"
+    provider = provider_name or "OPERATOR_REQUIRED"
+    public = public_url or "OPERATOR_REQUIRED"
+    bind_host = local_bind_host or str(plan_payload.get("bind_host") or "127.0.0.1")
+    bind_port = int(local_bind_port or plan_payload.get("bind_port") or 8765)
+    release_gate_inputs = plan_payload.get("release_gate_inputs")
+    planned_bundle = ""
+    if isinstance(release_gate_inputs, Mapping):
+        planned_bundle = str(release_gate_inputs.get("expected_bundle") or "")
+    bundle = staging_bundle or planned_bundle or ".eureka/staging/public-alpha"
+    server_command = str(
+        plan_payload.get("local_server_command")
+        or (
+            "python scripts/run_eureka_local.py "
+            f"--host {bind_host} --port {bind_port} --public-alpha --staging-bundle {bundle}"
+        )
+    )
+    tunnel_template = _operator_tunnel_command_template(mode, provider_kind, provider, bind_host, bind_port, public)
+    choice: dict[str, Any] = {
+        "schema_version": OPERATOR_CHOICE_SCHEMA_VERSION,
+        "task_id": OPERATOR_CHOICE_TASK_ID,
+        "generated_at": generated,
+        "branch": remote["branch"],
+        "head": remote["head"],
+        "worktree_status": remote["worktree_status"],
+        "operator": operator or "local-operator",
+        "selected_exposure_mode": mode,
+        "provider_class": provider_kind,
+        "provider_name": provider,
+        "provider_url": provider_url,
+        "public_url": public,
+        "public_url_status": _operator_public_url_status(public),
+        "provider_https_status": _operator_provider_https_status(public, provider_kind),
+        "tls_domain_status": _operator_provider_https_status(public, provider_kind),
+        "local_bind_host": bind_host,
+        "local_bind_port": bind_port,
+        "local_public_alpha_server_command": server_command,
+        "tunnel_command_template": tunnel_template,
+        "tunnel_start_allowed_now": False,
+        "tunnel_started": False,
+        "public_exposure_enabled": False,
+        "route_allowlist": list(plan_payload.get("route_allowlist") or TUNNEL_ROUTE_ALLOWLIST),
+        "route_denylist": list(plan_payload.get("route_denylist") or TUNNEL_ROUTE_DENYLIST),
+        "forbidden_public_routes": list(
+            plan_payload.get("forbidden_public_routes")
+            or plan_payload.get("route_denylist")
+            or TUNNEL_ROUTE_DENYLIST
+        ),
+        "route_smoke_list": _operator_route_smokes(staged_record_id),
+        "rollback_steps": list(plan_payload.get("rollback_steps") or []),
+        "emergency_disable_steps": list(plan_payload.get("emergency_disable_steps") or []),
+        "monitoring_steps": list(plan_payload.get("monitoring_steps") or []),
+        "rate_limit_posture": str(ops_compat.get("rate_limit_posture") or "missing"),
+        "logging_posture": str(ops_compat.get("logging_posture") or "missing"),
+        "report_takedown_posture": str(ops_compat.get("takedown_or_report_issue_posture") or "missing"),
+        "ops_posture_path": str(ops_path) if ops_path else "",
+        "ops_posture_digest": _file_sha256(ops_path) if ops_path else "",
+        "ops_posture_status": str(ops_validation.get("plan_status") or ("missing" if ops_posture else "not_provided")),
+        "ops_posture_validation_errors": list(ops_validation.get("errors") or []),
+        "ops_posture_blockers": list(ops_validation.get("ops_blockers") or []),
+        "exposure_plan_path": str(plan_path) if plan_path else "",
+        "exposure_plan_digest": _file_sha256(plan_path) if plan_path else "",
+        "exposure_plan_status": str(plan_validation.get("plan_status") or ("missing" if exposure_plan else "not_provided")),
+        "exposure_plan_validation_errors": list(plan_validation.get("errors") or []),
+        "staging_bundle_path": bundle,
+        "staged_record_id": staged_record_id,
+        "staged_record_id_status": "present" if staged_record_id else "missing",
+        "remote_sync_status": remote["remote_sync_status"],
+        "remote_sync_required": bool(remote["remote_sync_required"]),
+        "remote_ahead": int(remote["ahead"]),
+        "remote_behind": int(remote["behind"]),
+        "remote_sync_confirmed_by_operator": bool(confirm_remote_synced),
+        "safety_flags": _operator_safety_flags(ops_payload),
+        "launch_approval_present": False,
+        "production_readiness_claimed": False,
+        "risky_mode_approved": bool(approve_risky_mode),
+        "blockers": [],
+        "status": "BLOCKED_ON_OPERATOR_PROVIDER_URL",
+        "recommended_next_task": "LOCAL-MACHINE-PUBLIC-TUNNEL-OPERATOR-INPUT-00",
+    }
+    _refresh_operator_choice_status_fields(choice)
+    return choice
+
+
+def write_operator_choice(choice: Mapping[str, Any], out_dir: str | Path) -> Path:
+    output = Path(out_dir)
+    output.mkdir(parents=True, exist_ok=True)
+    path = output / OPERATOR_CHOICE_JSON
+    _write_json(path, choice)
+    (output / OPERATOR_CHOICE_REPORT_MD).write_text(render_operator_choice_markdown_report(choice), encoding="utf-8")
+    return path
+
+
+def validate_operator_choice(choice: str | Path | Mapping[str, Any]) -> dict[str, Any]:
+    try:
+        payload = _load_payload(choice)
+    except (OSError, json.JSONDecodeError) as exc:
+        return {
+            "schema_version": OPERATOR_CHOICE_VALIDATION_SCHEMA_VERSION,
+            "status": "fail",
+            "choice_status": "BLOCKED_UNSAFE",
+            "safe": False,
+            "errors": [f"choice could not be read: {type(exc).__name__}"],
+            "blockers": [],
+            "recommended_next_task": "LOCAL-MACHINE-PUBLIC-TUNNEL-OPERATOR-CHOICE-00",
+        }
+    errors = _operator_choice_safety_errors(payload)
+    blockers = _operator_choice_blockers(payload, errors)
+    choice_status = _operator_choice_status_for(errors, blockers, payload)
+    return {
+        "schema_version": OPERATOR_CHOICE_VALIDATION_SCHEMA_VERSION,
+        "status": "pass" if not errors else "fail",
+        "choice_status": choice_status,
+        "safe": not errors,
+        "errors": errors,
+        "blockers": blockers,
+        "recommended_next_task": _next_operator_choice_task(choice_status, blockers),
+    }
+
+
+def render_operator_choice_status(choice: Mapping[str, Any]) -> str:
+    validation = validate_operator_choice(choice)
+    blockers = validation.get("blockers") or []
+    return "\n".join(
+        [
+            f"status: {validation.get('choice_status')}",
+            f"safe: {str(validation.get('safe')).lower()}",
+            f"selected_exposure_mode: {choice.get('selected_exposure_mode')}",
+            f"provider_class: {choice.get('provider_class')}",
+            f"provider_name: {choice.get('provider_name')}",
+            f"public_url_status: {choice.get('public_url_status')}",
+            f"provider_https_status: {choice.get('provider_https_status')}",
+            f"remote_sync_status: {choice.get('remote_sync_status')}",
+            f"remote_sync_required: {str(choice.get('remote_sync_required')).lower()}",
+            f"local_bind: {choice.get('local_bind_host')}:{choice.get('local_bind_port')}",
+            f"staged_record_id_status: {choice.get('staged_record_id_status')}",
+            f"public_exposure_enabled: {str(choice.get('public_exposure_enabled')).lower()}",
+            f"tunnel_started: {str(choice.get('tunnel_started')).lower()}",
+            f"blockers: {len(blockers)}",
+            f"next_recommended_task: {validation.get('recommended_next_task')}",
+            (
+                "blocker_ids: "
+                + ", ".join(str(item.get("id")) for item in blockers if isinstance(item, Mapping))
+                if blockers
+                else "blocker_ids: none"
+            ),
+        ]
+    ) + "\n"
+
+
+def render_operator_choice_markdown_report(choice: Mapping[str, Any]) -> str:
+    validation = validate_operator_choice(choice)
+    blockers = [
+        f"- [{item.get('category')}] {item.get('id')}: {item.get('message')}"
+        for item in validation.get("blockers") or []
+        if isinstance(item, Mapping)
+    ] or ["- none"]
+    errors = [f"- {item}" for item in validation.get("errors") or []] or ["- none"]
+    return "\n".join(
+        [
+            "# Local-Machine Public Tunnel Operator Choice",
+            "",
+            f"- Task: {OPERATOR_CHOICE_TASK_ID}",
+            f"- Status: {validation.get('choice_status')}",
+            f"- Exposure mode: {choice.get('selected_exposure_mode')}",
+            f"- Provider class: {choice.get('provider_class')}",
+            f"- Provider name: {choice.get('provider_name')}",
+            f"- Public URL: {choice.get('public_url')}",
+            f"- Public URL status: {choice.get('public_url_status')}",
+            f"- TLS/provider HTTPS: {choice.get('provider_https_status')}",
+            f"- Remote sync: {choice.get('remote_sync_status')}",
+            f"- Local bind: {choice.get('local_bind_host')}:{choice.get('local_bind_port')}",
+            f"- Public exposure enabled: {str(choice.get('public_exposure_enabled')).lower()}",
+            f"- Tunnel started: {str(choice.get('tunnel_started')).lower()}",
+            "",
+            "## Local Server Command",
+            "",
+            "```powershell",
+            str(choice.get("local_public_alpha_server_command") or ""),
+            "```",
+            "",
+            "## Future Tunnel Template",
+            "",
+            "```powershell",
+            str(choice.get("tunnel_command_template") or ""),
+            "```",
+            "",
+            "## Route Allowlist",
+            "",
+            *[f"- `{route}`" for route in choice.get("route_allowlist") or []],
+            "",
+            "## Route Denylist",
+            "",
+            *[f"- `{route}`" for route in choice.get("route_denylist") or []],
+            "",
+            "## Rollback",
+            "",
+            *[f"- {step}" for step in choice.get("rollback_steps") or []],
+            "",
+            "## Emergency Disable",
+            "",
+            *[f"- {step}" for step in choice.get("emergency_disable_steps") or []],
+            "",
+            "## Validation Errors",
+            "",
+            *errors,
+            "",
+            "## Blockers",
+            "",
+            *blockers,
+            "",
+            f"Next recommended task: `{validation.get('recommended_next_task')}`",
+            "",
+            "This is an operator-choice artifact only. It does not start a server, start a tunnel, start a reverse proxy, modify DNS/firewall/router state, enable public exposure, approve launch, or claim production readiness.",
             "",
         ]
     )
@@ -1060,6 +1350,14 @@ def _has_required_steps(payload: Mapping[str, Any], key: str, minimum: int) -> b
     return len([item for item in values if item]) >= minimum
 
 
+def _meaningful(value: Any) -> bool:
+    text = str(value or "").strip()
+    lowered = text.casefold()
+    if not text:
+        return False
+    return not any(marker in lowered for marker in ("missing", "unresolved", "todo", "tbd"))
+
+
 def _tunnel_plan_blockers(payload: Mapping[str, Any], errors: Sequence[str]) -> list[dict[str, str]]:
     blockers: list[dict[str, str]] = []
     for error in errors:
@@ -1120,6 +1418,270 @@ def _dedupe_blockers(blockers: Sequence[Mapping[str, str]]) -> list[dict[str, st
             seen.add(blocker_id)
             result.append(dict(blocker))
     return result
+
+
+def _operator_exposure_plan_inputs(source: str | Path | Mapping[str, Any] | None) -> tuple[Path | None, dict[str, Any], dict[str, Any]]:
+    if source is None or source == "":
+        return None, {}, {"errors": ["exposure plan is missing"], "plan_status": "BLOCKED"}
+    path = None if isinstance(source, Mapping) else Path(source)
+    payload = dict(source) if isinstance(source, Mapping) else _read_json(path)  # type: ignore[arg-type]
+    if not payload:
+        return path, {}, {"errors": ["exposure plan is missing"], "plan_status": "BLOCKED"}
+    validation = validate_tunnel_plan(payload)
+    return path, payload, validation
+
+
+def _refresh_operator_choice_status_fields(choice: dict[str, Any]) -> None:
+    validation = validate_operator_choice(choice)
+    choice["blockers"] = validation["blockers"]
+    choice["status"] = validation["choice_status"]
+    choice["recommended_next_task"] = validation["recommended_next_task"]
+
+
+def _operator_tunnel_command_template(
+    mode: str,
+    provider_class: str,
+    provider_name: str,
+    bind_host: str,
+    bind_port: int,
+    public_url: str,
+) -> str:
+    origin = f"http://{bind_host}:{bind_port}"
+    if provider_name == "OPERATOR_REQUIRED":
+        return f"<selected-tunnel-provider> tunnel --url {origin}"
+    if provider_class == "self_managed_reverse_proxy":
+        return f"{provider_name} route {public_url or '<public-url>'} -> {origin}"
+    if provider_class == "private_lan_rehearsal":
+        return f"LAN-only rehearsal to {origin}; no public URL activation"
+    if provider_class in RISKY_PROVIDER_CLASSES or mode in RISKY_EXPOSURE_MODES:
+        return f"{provider_name} is risky for public alpha; no start command without explicit approval"
+    return f"{provider_name} tunnel --url {origin}"
+
+
+def _operator_public_url_status(public_url: str) -> str:
+    value = str(public_url or "").strip()
+    if not value or value == "OPERATOR_REQUIRED":
+        return "operator_required"
+    if "<" in value or ">" in value:
+        return "placeholder"
+    return "planned"
+
+
+def _operator_provider_https_status(public_url: str, provider_class: str) -> str:
+    value = str(public_url or "").strip()
+    if provider_class == "private_lan_rehearsal":
+        return "not_public_lan_only"
+    if not value or value == "OPERATOR_REQUIRED":
+        return "operator_required"
+    if value.startswith("https://") and "<" not in value and ">" not in value:
+        return "planned"
+    return "missing"
+
+
+def _operator_route_smokes(staged_record_id: str) -> list[str]:
+    record = f"/record/{staged_record_id}" if staged_record_id else "/record/{staged-record-id}"
+    return [
+        "/",
+        "/health",
+        "/status",
+        "/api/status",
+        "/about",
+        "/method",
+        "/search?q=old%20blue%20FTP%20client%20for%20XP",
+        "/api/search?q=manual%20for%20Sound%20Blaster%20CT1740",
+        record,
+    ]
+
+
+def _operator_safety_flags(ops_payload: Mapping[str, Any]) -> dict[str, Any]:
+    return {
+        "public_read_only": bool(ops_payload.get("public_read_only") is True),
+        "public_mutation_enabled": bool(ops_payload.get("public_mutation_enabled") is True),
+        "public_workbench_exposed": bool(ops_payload.get("public_workbench_exposed") is True),
+        "live_metadata_enabled": bool(ops_payload.get("live_metadata_enabled") is True),
+        "downloads_enabled": bool(ops_payload.get("downloads_enabled") is True),
+        "uploads_enabled": bool(ops_payload.get("uploads_enabled") is True),
+        "model_provider_truth_enabled": bool(ops_payload.get("model_provider_calls_enabled") is True),
+        "production_readiness_claimed": bool(ops_payload.get("production_readiness_claimed") is True),
+        "launch_approval_present": bool(ops_payload.get("launch_approval_present") is True),
+    }
+
+
+def _remote_sync_snapshot(
+    *,
+    branch: str | None,
+    head: str | None,
+    worktree_status: str | None,
+    ahead: int | None,
+    behind: int | None,
+    confirm_remote_synced: bool,
+) -> dict[str, Any]:
+    repo_branch = branch if branch is not None else _git_stdout("git", "branch", "--show-current") or "unknown"
+    repo_head = head if head is not None else _git_stdout("git", "rev-parse", "HEAD") or "unknown"
+    repo_status = worktree_status if worktree_status is not None else _git_stdout("git", "status", "--short", "--branch") or "unknown"
+    remote_ahead = ahead
+    remote_behind = behind
+    if remote_ahead is None or remote_behind is None:
+        counts = _git_stdout("git", "rev-list", "--left-right", "--count", "HEAD...origin/dev")
+        pieces = counts.split()
+        if len(pieces) == 2 and all(piece.lstrip("-").isdigit() for piece in pieces):
+            remote_ahead = int(pieces[0])
+            remote_behind = int(pieces[1])
+        else:
+            remote_ahead = 0
+            remote_behind = 0
+    required = int(remote_ahead or 0) > 0 and not confirm_remote_synced
+    if confirm_remote_synced:
+        status = "operator_confirmed_synced"
+    elif required:
+        status = "REMOTE_SYNC_REQUIRED"
+    elif int(remote_behind or 0) > 0:
+        status = "remote_ahead_of_local"
+    else:
+        status = "synced"
+    return {
+        "branch": repo_branch,
+        "head": repo_head,
+        "worktree_status": repo_status,
+        "ahead": int(remote_ahead or 0),
+        "behind": int(remote_behind or 0),
+        "remote_sync_required": required,
+        "remote_sync_status": status,
+    }
+
+
+def _operator_choice_safety_errors(payload: Mapping[str, Any]) -> list[str]:
+    errors: list[str] = []
+    if payload.get("schema_version") != OPERATOR_CHOICE_SCHEMA_VERSION:
+        errors.append(f"schema_version must be {OPERATOR_CHOICE_SCHEMA_VERSION}")
+    if payload.get("task_id") != OPERATOR_CHOICE_TASK_ID:
+        errors.append(f"task_id must be {OPERATOR_CHOICE_TASK_ID}")
+    if payload.get("selected_exposure_mode") not in EXPOSURE_MODES:
+        errors.append("selected_exposure_mode is not recognized")
+    if payload.get("provider_class") not in PROVIDER_CLASSES:
+        errors.append("provider_class is not recognized")
+    if payload.get("public_exposure_enabled") is not False:
+        errors.append("public_exposure_enabled must remain false")
+    if payload.get("tunnel_started") is not False:
+        errors.append("tunnel_started must remain false")
+    if payload.get("tunnel_start_allowed_now") is not False:
+        errors.append("tunnel_start_allowed_now must remain false")
+    if payload.get("production_readiness_claimed") is not False:
+        errors.append("production_readiness_claimed must remain false")
+    if payload.get("launch_approval_present") is not False:
+        errors.append("launch approval must not be implied")
+    if payload.get("ops_posture_validation_errors"):
+        errors.append("ops posture is invalid")
+    if payload.get("ops_posture_blockers"):
+        errors.append("ops posture has unresolved blockers")
+    if not payload.get("ops_posture_path"):
+        errors.append("ops posture is missing")
+    if payload.get("exposure_plan_validation_errors"):
+        errors.append("exposure plan is invalid")
+    if not payload.get("exposure_plan_path"):
+        errors.append("exposure plan is missing")
+    mode = str(payload.get("selected_exposure_mode") or "")
+    provider_class = str(payload.get("provider_class") or "")
+    if (mode in RISKY_EXPOSURE_MODES or provider_class in RISKY_PROVIDER_CLASSES) and payload.get("risky_mode_approved") is not True:
+        errors.append(f"{mode or provider_class} requires explicit risky-mode approval")
+    flags = payload.get("safety_flags") if isinstance(payload.get("safety_flags"), Mapping) else {}
+    if flags.get("public_read_only") is not True:
+        errors.append("public_read_only must be true")
+    expectations = {
+        "public_mutation_enabled": False,
+        "public_workbench_exposed": False,
+        "live_metadata_enabled": False,
+        "downloads_enabled": False,
+        "uploads_enabled": False,
+        "model_provider_truth_enabled": False,
+        "production_readiness_claimed": False,
+    }
+    for key, expected in expectations.items():
+        if flags.get(key) is not expected:
+            errors.append(f"safety_flags.{key} must be false")
+    if not _meaningful(payload.get("local_bind_host")):
+        errors.append("local bind host is missing")
+    if not int(payload.get("local_bind_port") or 0):
+        errors.append("local bind port is missing")
+    if not _meaningful(payload.get("local_public_alpha_server_command")):
+        errors.append("local public-alpha server command is missing")
+    if not _has_required_steps(payload, "rollback_steps", 2):
+        errors.append("rollback steps are missing")
+    if not _has_required_steps(payload, "emergency_disable_steps", 2):
+        errors.append("emergency disable steps are missing")
+    errors.extend(_operator_route_errors(payload))
+    errors.extend(_secret_errors(payload))
+    return _dedupe(errors)
+
+
+def _operator_route_errors(payload: Mapping[str, Any]) -> list[str]:
+    errors: list[str] = []
+    allowlist = {str(item) for item in payload.get("route_allowlist") or []}
+    denylist = {str(item) for item in payload.get("route_denylist") or []}
+    for route in ("/", "/health", "/status", "/api/status", "/search", "/api/search", "/record/"):
+        if route not in allowlist:
+            errors.append(f"route allowlist missing: {route}")
+    for route in ("/workbench", "/review", "/admin", "/api/review", "/api/promote", "/api/mutate", "/api/source/live", "/download", "/upload", "/debug"):
+        if route not in denylist:
+            errors.append(f"route denylist missing: {route}")
+    return errors
+
+
+def _operator_choice_blockers(payload: Mapping[str, Any], errors: Sequence[str]) -> list[dict[str, str]]:
+    blockers: list[dict[str, str]] = []
+    for error in errors:
+        blockers.append(_blocker("safety_blockers", _slug(error), error, status="failed"))
+    if payload.get("remote_sync_required") is True:
+        blockers.append(_blocker("remote_sync_blockers", "REMOTE_SYNC_REQUIRED", "local dev is ahead of origin/dev and must be pushed before exposure rehearsal"))
+    if str(payload.get("provider_name") or "") == "OPERATOR_REQUIRED" or payload.get("public_url_status") in {"operator_required", "placeholder"}:
+        blockers.append(_blocker("operator_blockers", "BLOCKED_ON_OPERATOR_PROVIDER_URL", "operator provider name or public URL is required"))
+    if payload.get("provider_https_status") in {"operator_required", "missing"}:
+        blockers.append(_blocker("operator_blockers", "BLOCKED_ON_PROVIDER_HTTPS", "provider HTTPS/TLS posture is unresolved"))
+    if payload.get("staged_record_id_status") != "present":
+        blockers.append(_blocker("operator_blockers", "BLOCKED_ON_STAGING_RECORD_ID", "staged record ID is needed for future /record route smoke"))
+    blockers.append(_blocker("rehearsal_blockers", "tunnel_rehearsal_not_run", "actual tunnel/proxy rehearsal has not run"))
+    blockers.append(_blocker("release_process_blockers", "full_discovery_report_missing", "full discovery launch report is missing"))
+    blockers.append(_blocker("release_process_blockers", "release_promotion_report_missing", "release promotion report is missing"))
+    blockers.append(_blocker("approval_blockers", "public_launch_approval_missing", "manual public launch approval is missing"))
+    return _dedupe_blockers(blockers)
+
+
+def _operator_choice_status_for(errors: Sequence[str], blockers: Sequence[Mapping[str, str]], payload: Mapping[str, Any]) -> str:
+    if errors:
+        return "BLOCKED_UNSAFE"
+    ids = {str(item.get("id") or "") for item in blockers}
+    if "REMOTE_SYNC_REQUIRED" in ids:
+        return "BLOCKED_ON_REMOTE_SYNC"
+    if "BLOCKED_ON_OPERATOR_PROVIDER_URL" in ids:
+        return "BLOCKED_ON_OPERATOR_PROVIDER_URL"
+    if "BLOCKED_ON_PROVIDER_HTTPS" in ids:
+        return "BLOCKED_ON_PROVIDER_HTTPS"
+    if "BLOCKED_ON_STAGING_RECORD_ID" in ids:
+        return "BLOCKED_ON_STAGING_RECORD_ID"
+    if "tunnel_rehearsal_not_run" in ids:
+        return "READY_FOR_TUNNEL_REHEARSAL"
+    if "full_discovery_report_missing" in ids or "release_promotion_report_missing" in ids:
+        return "READY_FOR_RELEASE_CHECK"
+    if payload.get("launch_approval_present") is True and not blockers:
+        return "READY"
+    return "READY_FOR_TUNNEL_REHEARSAL"
+
+
+def _next_operator_choice_task(status: str, blockers: Sequence[Mapping[str, str]]) -> str:
+    ids = {str(item.get("id") or "") for item in blockers}
+    if status == "BLOCKED_UNSAFE":
+        return "LOCAL-MACHINE-PUBLIC-TUNNEL-OPERATOR-CHOICE-00"
+    if "REMOTE_SYNC_REQUIRED" in ids:
+        return "REMOTE-SYNC-BEFORE-PUBLIC-EXPOSURE-00"
+    if "BLOCKED_ON_OPERATOR_PROVIDER_URL" in ids or "BLOCKED_ON_PROVIDER_HTTPS" in ids:
+        return "LOCAL-MACHINE-PUBLIC-TUNNEL-OPERATOR-INPUT-00"
+    if "BLOCKED_ON_STAGING_RECORD_ID" in ids:
+        return "LOCAL-MACHINE-PUBLIC-TUNNEL-OPERATOR-INPUT-00"
+    if "tunnel_rehearsal_not_run" in ids:
+        return "LOCAL-MACHINE-PUBLIC-TUNNEL-00"
+    if "full_discovery_report_missing" in ids or "release_promotion_report_missing" in ids:
+        return "PUBLIC-ALPHA-FULL-DISCOVERY-RELEASE-CHECK-00"
+    return "PUBLIC-ALPHA-LAUNCH-APPROVAL-00"
 
 
 def _load_payload(value: str | Path | Mapping[str, Any]) -> dict[str, Any]:

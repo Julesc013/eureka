@@ -16,23 +16,31 @@ if str(REPO_ROOT) not in sys.path:
 
 from runtime.local.local_machine_public_exposure import AUTH_POSTURES
 from runtime.local.local_machine_public_exposure import DEFAULT_OUT
+from runtime.local.local_machine_public_exposure import DEFAULT_OPERATOR_CHOICE_OUT
 from runtime.local.local_machine_public_exposure import DEFAULT_TUNNEL_OUT
 from runtime.local.local_machine_public_exposure import EXPOSURE_MODES
 from runtime.local.local_machine_public_exposure import OPS_POSTURES
+from runtime.local.local_machine_public_exposure import OPERATOR_CHOICE_JSON
+from runtime.local.local_machine_public_exposure import PROVIDER_CLASSES
 from runtime.local.local_machine_public_exposure import PLAN_JSON
 from runtime.local.local_machine_public_exposure import REPORT_JSON
 from runtime.local.local_machine_public_exposure import TLS_STATUSES
 from runtime.local.local_machine_public_exposure import TUNNEL_PLAN_JSON
+from runtime.local.local_machine_public_exposure import build_operator_choice
 from runtime.local.local_machine_public_exposure import build_plan
 from runtime.local.local_machine_public_exposure import build_report
 from runtime.local.local_machine_public_exposure import build_tunnel_plan
 from runtime.local.local_machine_public_exposure import load_json
+from runtime.local.local_machine_public_exposure import render_operator_choice_markdown_report
+from runtime.local.local_machine_public_exposure import render_operator_choice_status
 from runtime.local.local_machine_public_exposure import render_plan_status
 from runtime.local.local_machine_public_exposure import render_tunnel_markdown_report
 from runtime.local.local_machine_public_exposure import render_tunnel_plan_status
+from runtime.local.local_machine_public_exposure import validate_operator_choice
 from runtime.local.local_machine_public_exposure import validate_plan
 from runtime.local.local_machine_public_exposure import validate_report
 from runtime.local.local_machine_public_exposure import validate_tunnel_plan
+from runtime.local.local_machine_public_exposure import write_operator_choice
 from runtime.local.local_machine_public_exposure import write_plan
 from runtime.local.local_machine_public_exposure import write_report
 from runtime.local.local_machine_public_exposure import write_tunnel_plan
@@ -68,6 +76,38 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr:
     validate_parser.add_argument("--plan", required=True)
     validate_parser.add_argument("--json", action="store_true")
     validate_parser.add_argument("--strict", action="store_true")
+
+    choose_parser = subparsers.add_parser("choose", help="Write an operator-choice artifact for future tunnel rehearsal.")
+    choose_parser.add_argument("--plan", required=True)
+    choose_parser.add_argument("--ops-posture", required=True)
+    choose_parser.add_argument("--mode", choices=EXPOSURE_MODES, default="reverse_tunnel")
+    choose_parser.add_argument("--provider-class", choices=PROVIDER_CLASSES, default="provider_managed_https_tunnel")
+    choose_parser.add_argument("--provider-name", default="OPERATOR_REQUIRED")
+    choose_parser.add_argument("--provider-url", default="")
+    choose_parser.add_argument("--public-url", default="OPERATOR_REQUIRED")
+    choose_parser.add_argument("--local-bind-host", default="")
+    choose_parser.add_argument("--local-bind-port", type=int, default=0)
+    choose_parser.add_argument("--staging-bundle", default="")
+    choose_parser.add_argument("--staged-record-id", default="")
+    choose_parser.add_argument("--operator", default="")
+    choose_parser.add_argument("--approve-risky-mode", action="store_true")
+    choose_parser.add_argument("--confirm-remote-synced", action="store_true")
+    choose_parser.add_argument("--out", default=DEFAULT_OPERATOR_CHOICE_OUT)
+    choose_parser.add_argument("--json", action="store_true")
+
+    validate_choice_parser = subparsers.add_parser("validate-choice", help="Validate an operator-choice artifact.")
+    validate_choice_parser.add_argument("--choice", required=True)
+    validate_choice_parser.add_argument("--json", action="store_true")
+    validate_choice_parser.add_argument("--strict", action="store_true")
+
+    choice_status_parser = subparsers.add_parser("choice-status", help="Print operator-choice status.")
+    choice_status_parser.add_argument("--choice", required=True)
+    choice_status_parser.add_argument("--json", action="store_true")
+
+    choice_report_parser = subparsers.add_parser("choice-report", help="Render an operator-choice report.")
+    choice_report_parser.add_argument("--choice", required=True)
+    choice_report_parser.add_argument("--out", default="")
+    choice_report_parser.add_argument("--json", action="store_true")
 
     validate_plan_parser = subparsers.add_parser("validate-plan", help="Validate a local-machine public exposure plan.")
     validate_plan_parser.add_argument("--plan", required=True)
@@ -166,6 +206,91 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr:
             if strict_blocked:
                 print("strict validation found blocked tunnel plan", file=stderr)
         return 1 if validation.get("errors") or strict_blocked else 0
+
+    if args.command == "choose":
+        choice = build_operator_choice(
+            exposure_plan=args.plan,
+            ops_posture=args.ops_posture,
+            out_dir=args.out,
+            selected_exposure_mode=args.mode,
+            provider_class=args.provider_class,
+            provider_name=args.provider_name,
+            provider_url=args.provider_url,
+            public_url=args.public_url,
+            local_bind_host=args.local_bind_host,
+            local_bind_port=args.local_bind_port or None,
+            staging_bundle=args.staging_bundle,
+            staged_record_id=args.staged_record_id,
+            operator=args.operator,
+            approve_risky_mode=args.approve_risky_mode,
+            confirm_remote_synced=args.confirm_remote_synced,
+        )
+        choice_path = write_operator_choice(choice, args.out)
+        if args.json:
+            print(json.dumps(choice, indent=2, sort_keys=True, ensure_ascii=True), file=stdout)
+        else:
+            print(f"Local-machine public tunnel operator choice: {choice_path}", file=stdout)
+            print(f"status: {choice.get('status')}", file=stdout)
+            print(f"selected_exposure_mode: {choice.get('selected_exposure_mode')}", file=stdout)
+            print(f"provider_class: {choice.get('provider_class')}", file=stdout)
+            print(f"provider_name: {choice.get('provider_name')}", file=stdout)
+            print(f"public_url_status: {choice.get('public_url_status')}", file=stdout)
+            print(f"remote_sync_status: {choice.get('remote_sync_status')}", file=stdout)
+            print(f"public_exposure_enabled: {str(choice.get('public_exposure_enabled')).lower()}", file=stdout)
+            print(f"blockers: {len(choice.get('blockers') or [])}", file=stdout)
+            print(f"next_recommended_task: {choice.get('recommended_next_task')}", file=stdout)
+        return 0
+
+    if args.command == "validate-choice":
+        try:
+            choice = load_json(args.choice)
+        except (OSError, json.JSONDecodeError) as exc:
+            print(f"Could not read operator choice: {type(exc).__name__}", file=stderr)
+            return 1
+        validation = validate_operator_choice(choice)
+        if args.json:
+            print(json.dumps(validation, indent=2, sort_keys=True, ensure_ascii=True), file=stdout)
+        elif validation.get("errors"):
+            print(f"Operator choice validation failed: {args.choice}", file=stderr)
+            for error in validation.get("errors") or []:
+                print(f"- {error}", file=stderr)
+        else:
+            print(f"Operator choice validation passed: {args.choice}", file=stdout)
+            print(f"status: {validation.get('choice_status')}", file=stdout)
+            print(f"blockers: {len(validation.get('blockers') or [])}", file=stdout)
+            print(f"next_recommended_task: {validation.get('recommended_next_task')}", file=stdout)
+        return 1 if validation.get("errors") else 0
+
+    if args.command == "choice-status":
+        try:
+            choice = load_json(args.choice)
+        except (OSError, json.JSONDecodeError) as exc:
+            print(f"Could not read operator choice: {type(exc).__name__}", file=stderr)
+            return 1
+        if args.json:
+            print(json.dumps(choice, indent=2, sort_keys=True, ensure_ascii=True), file=stdout)
+        else:
+            print(render_operator_choice_status(choice), end="", file=stdout)
+        return 0
+
+    if args.command == "choice-report":
+        try:
+            choice = load_json(args.choice)
+        except (OSError, json.JSONDecodeError) as exc:
+            print(f"Could not read operator choice: {type(exc).__name__}", file=stderr)
+            return 1
+        markdown = render_operator_choice_markdown_report(choice)
+        if args.json:
+            print(json.dumps({"report": markdown}, indent=2, sort_keys=True, ensure_ascii=True), file=stdout)
+        elif args.out:
+            output = Path(args.out)
+            output.mkdir(parents=True, exist_ok=True)
+            path = output / "OPERATOR_CHOICE_REPORT.md"
+            path.write_text(markdown, encoding="utf-8")
+            print(f"Operator choice report: {path}", file=stdout)
+        else:
+            print(markdown, end="", file=stdout)
+        return 0
 
     if args.command == "validate-plan":
         errors = validate_plan(args.plan)
