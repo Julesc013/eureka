@@ -1,0 +1,130 @@
+{
+  "schema_version": "eureka.source_wave.ia_source_observation_cache_delta_report.v0",
+  "task_id": "IA-SOURCE-OBSERVATION-CACHE-DELTA-00",
+  "status": "PASS_WITH_WARNINGS",
+  "branch": "dev",
+  "head_at_delta_build": "fc2c62446343820904ea16dcaa1754f536ed7198",
+  "origin_dev_at_delta_build": "fc2c62446343820904ea16dcaa1754f536ed7198",
+  "origin_dev_sync_at_delta_build": "0 0",
+  "worktree_at_delta_build": "clean except current task files",
+  "input_smoke_report": "control/audits/source_wave/ia_metadata_provider_wiring_and_smoke_v0/ia_metadata_provider_smoke_report.json",
+  "input_smoke_report_hash": "sha256:811bbecf07120e6a410ca122020f63296e59b50faa8a0363fb4df743459bf906",
+  "source_observations_written": 56,
+  "observation_id_pattern": "source-observation:ia_metadata:<short_hash>",
+  "query_count": 7,
+  "workunit_count": 70,
+  "provider_modes_represented": [
+    "fixture",
+    "live"
+  ],
+  "policy_gate_status": "PASS",
+  "unsafe_record_count": 0,
+  "redacted_error_count": 0,
+  "generated_cache_delta_path": ".eureka/source-wave/ia-metadata/source-observation-cache/latest/",
+  "generated_manifest_path": ".eureka/source-wave/ia-metadata/source-observation-cache/latest/source_observation_delta_manifest.json",
+  "generated_observation_file": ".eureka/source-wave/ia-metadata/source-observation-cache/latest/source_observations.jsonl",
+  "generated_observation_file_hash": "sha256:8a0bf5bd51a8e04fa03a7b477f1b792da397530dd3b48f2f2c17c46f2bc3612f",
+  "delta_id": "source-observation-delta:ia_metadata:441fe581c6a78a797365",
+  "previous_delta_id": null,
+  "previous_delta_path": null,
+  "diff_status": "first_run_no_previous_delta",
+  "reviewed_master_mutation": false,
+  "public_index_mutation": false,
+  "candidate_index_mutation": false,
+  "evidence_ledger_mutation": false,
+  "public_fanout": false,
+  "downloads_file_fetch": false,
+  "wayback_replay": false,
+  "rights_safety_claims": false,
+  "public_alpha_posture_unchanged": true,
+  "license_posture": "restricted_source_available",
+  "license_posture_unchanged": true,
+  "network_during_delta_build": false,
+  "provider_calls_during_delta_build": false,
+  "generated_eureka_output_ignored": true,
+  "generated_eureka_output_committed": false,
+  "full_unittest_discovery_claimed": false,
+  "branch_name_warning": "check_git_task_state warns that dev does not include the task ID; all other guard checks passed",
+  "current_source_index_path": [
+    "IA-METADATA-PROVIDER-WIRING-AND-SMOKE-00",
+    "IA-SOURCE-OBSERVATION-CACHE-DELTA-00",
+    "IA-CANDIDATE-INDEX-REFRESH-00",
+    "IA-EVIDENCE-LEDGER-SUMMARY-00",
+    "REVIEW-IA-CANDIDATES-BATCH-00"
+  ],
+  "validation": [
+    {
+      "command": "python scripts/eureka_source_observation_cache.py build-delta --source ia_metadata --smoke-report control/audits/source_wave/ia_metadata_provider_wiring_and_smoke_v0/ia_metadata_provider_smoke_report.json --out .eureka/source-wave/ia-metadata/source-observation-cache/latest",
+      "status": "PASS_WITH_WARNINGS",
+      "summary": "56 source observations written; first-run/no-previous-delta"
+    },
+    {
+      "command": "python scripts/eureka_source_observation_cache.py validate --delta .eureka/source-wave/ia-metadata/source-observation-cache/latest/source_observation_delta_manifest.json --strict",
+      "status": "PASS"
+    },
+    {
+      "command": "python scripts/eureka_source_observation_cache.py status --delta .eureka/source-wave/ia-metadata/source-observation-cache/latest/source_observation_delta_manifest.json",
+      "status": "PASS"
+    },
+    {
+      "command": "python -m unittest tests.operations.test_ia_source_observation_cache_delta",
+      "status": "PASS",
+      "summary": "14 tests passed"
+    },
+    {
+      "command": "python -m unittest tests.operations.test_ia_metadata_smoke_scripts -v",
+      "status": "PASS",
+      "summary": "3 tests passed"
+    },
+    {
+      "command": "python scripts/check_architecture_boundaries.py",
+      "status": "PASS"
+    },
+    {
+      "command": "python scripts/validate_public_alpha_readonly.py",
+      "status": "PASS"
+    },
+    {
+      "command": "python scripts/validate_snapshot_relay.py",
+      "status": "PASS"
+    },
+    {
+      "command": "git diff --check",
+      "status": "PASS"
+    },
+    {
+      "command": "python scripts/eureka_test_select.py --changed --failed-first --json",
+      "status": "PASS",
+      "summary": "selected static preflight, repo-tooling focused tests, and impact smoke; full discovery not required"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py validate",
+      "status": "PASS"
+    },
+    {
+      "command": "python scripts/validate_test_lane_policy.py",
+      "status": "PASS"
+    },
+    {
+      "command": "python -m unittest tests.scripts.test_eureka_test_select",
+      "status": "PASS",
+      "summary": "3 tests passed"
+    },
+    {
+      "command": "python -m unittest tests.operations.test_test_lane_policy",
+      "status": "PASS",
+      "summary": "1 test passed"
+    },
+    {
+      "command": "python -m unittest tests.scripts.test_validate_test_lane_policy",
+      "status": "PASS",
+      "summary": "2 tests passed"
+    }
+  ],
+  "remaining_blockers": [
+    "WAITING_FOR_EXTERNAL_ARTIFACT_EVIDENCE",
+    "WAITING_FOR_USER_HARDWARE_DETAILS",
+    "Public launch remains paused pending separate operator decisions."
+  ],
+  "recommended_next_task": "IA-CANDIDATE-INDEX-REFRESH-00"
+}
