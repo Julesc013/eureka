@@ -2,7 +2,7 @@
   "schema_version": "eureka.dev_to_main_promotion_build_report.v0",
   "task_id": "DEV-TO-MAIN-PROMOTION-READINESS-AND-SYNC-00",
   "generated_at": "2026-06-17T15:09:54Z",
-  "status": "PENDING_POST_PROMOTION_VERIFICATION",
+  "status": "PASS_WITH_WARNINGS",
   "branch_before": "dev",
   "dev_commit_before_reports": "f523e3eccafcf2ccf02493d93e9ebee5ebcb3f78",
   "main_commit_before": "339b61d14d01e923fd87931523d849e4f26cf2ec",
@@ -11,11 +11,15 @@
     "origin_dev_only": 131,
     "diverged": false
   },
-  "promotion_occurred": false,
-  "merge_or_push_command_used": "",
-  "main_commit_after": "",
-  "dev_commit_after": "",
-  "branch_compare_after": null,
+  "promotion_occurred": true,
+  "merge_or_push_command_used": "git push origin dev; git push origin dev:main",
+  "main_commit_after": "a9f2a8c760a4603702d4d82ef77c9cd0cdb9c7dd",
+  "dev_commit_after": "a9f2a8c760a4603702d4d82ef77c9cd0cdb9c7dd",
+  "branch_compare_after": {
+    "origin_main_only": 0,
+    "origin_dev_only": 0,
+    "equal": true
+  },
   "validations_run": [
     "python -m unittest tests.docs.test_public_docs -v",
     "python scripts/check_architecture_boundaries.py",
@@ -37,6 +41,26 @@
   "validations_skipped": [
     "full unittest discovery"
   ],
+  "post_promotion_verification": {
+    "git_fetch_origin": "PASS",
+    "origin_main_origin_dev_count": "0 0",
+    "origin_main": "a9f2a8c760a4603702d4d82ef77c9cd0cdb9c7dd",
+    "origin_dev": "a9f2a8c760a4603702d4d82ef77c9cd0cdb9c7dd",
+    "worktree": "clean",
+    "docs_tests": "PASS",
+    "architecture_boundaries": "PASS",
+    "diff_check": "PASS",
+    "generated_artifact_cleanliness": "PASS",
+    "public_alpha_readonly": "PASS",
+    "snapshot_relay": "PASS",
+    "hosting_readiness": "PASS",
+    "launch_candidate": "PASS",
+    "public_alpha_smoke": "PASS",
+    "ops_posture_validate": "PASS",
+    "exposure_plan_validate": "PASS",
+    "operator_choice_validate": "PASS"
+  },
+  "report_sync_note": "This file was updated after the initial fast-forward promotion. The final response records the final branch equality after this report update is committed and synced as well.",
   "public_posture": {
     "public_hosted_service_launched": false,
     "production_readiness_claimed": false,

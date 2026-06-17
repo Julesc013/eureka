@@ -3,12 +3,14 @@
   "task_id": "DEV-TO-MAIN-PROMOTION-READINESS-AND-SYNC-00",
   "generated_at": "2026-06-17T15:09:54Z",
   "selected_decision": "PROMOTE_DEV_TO_MAIN",
-  "promotion_performed_at_decision_write": false,
+  "promotion_performed_at_decision_write": true,
   "promotion_method": "direct_fast_forward_branch_sync",
-  "commands_to_execute": [
+  "commands_executed": [
     "git push origin dev",
     "git push origin dev:main"
   ],
+  "promoted_commit": "a9f2a8c760a4603702d4d82ef77c9cd0cdb9c7dd",
+  "post_promotion_origin_main_origin_dev": "0 0",
   "rationale": "origin/main has no unique commits, origin/dev is ahead by 131 commits, focused validators passed, public docs preserve non-claims, and current public-alpha posture remains read-only and not launched.",
   "gates": {
     "worktree_clean": true,

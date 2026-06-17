@@ -2,7 +2,7 @@
 
 Task: `DEV-TO-MAIN-PROMOTION-READINESS-AND-SYNC-00`
 
-Status: `PENDING_POST_PROMOTION_VERIFICATION`
+Status: `PASS_WITH_WARNINGS`
 
 ## Branch Before
 
@@ -28,8 +28,22 @@ git push origin dev
 git push origin dev:main
 ```
 
-This report is written before the push so it can be included in the promoted
-baseline. Post-promotion verification updates the final task result.
+The fast-forward promotion was performed with:
+
+```powershell
+git push origin dev
+git push origin dev:main
+```
+
+Initial promoted commit:
+
+```text
+a9f2a8c760a4603702d4d82ef77c9cd0cdb9c7dd
+```
+
+This file was updated after the initial fast-forward promotion. The final task
+response records the final branch equality after this report update is committed
+and synced as well.
 
 ## Validation Before Promotion
 
@@ -86,3 +100,37 @@ No license was selected by this task.
 ```text
 LOCAL-MACHINE-PUBLIC-TUNNEL-PROVIDER-DECISION-00
 ```
+
+## Post-Promotion Verification
+
+```powershell
+git fetch origin
+git rev-list --left-right --count origin/main...origin/dev
+git rev-parse origin/main
+git rev-parse origin/dev
+git status --short --branch
+```
+
+Result: `PASS`
+
+- `origin/main...origin/dev`: `0 0`
+- `origin/main`: `a9f2a8c760a4603702d4d82ef77c9cd0cdb9c7dd`
+- `origin/dev`: `a9f2a8c760a4603702d4d82ef77c9cd0cdb9c7dd`
+- Worktree: clean
+
+Re-run validation:
+
+- `python -m unittest tests.docs.test_public_docs -v`: PASS
+- `python scripts/check_architecture_boundaries.py`: PASS
+- `git diff --check`: PASS
+- `python scripts/check_generated_artifact_cleanliness.py --check --json`: PASS
+- `python scripts/validate_public_alpha_readonly.py`: PASS
+- `python scripts/validate_snapshot_relay.py`: PASS
+- `python scripts/validate_public_alpha_hosting_readiness.py`: PASS
+- `python scripts/validate_public_alpha_launch_candidate.py`: PASS
+- `python scripts/public_alpha_smoke.py --json`: PASS
+- `python scripts/eureka_public_alpha_ops_posture.py validate --plan .eureka/ops/public-alpha/latest/ops_posture.json --strict`: PASS
+- `python scripts/eureka_local_machine_public_exposure.py validate --plan .eureka/public-alpha/exposure/latest/exposure_plan.json --strict`: PASS
+- `python scripts/eureka_local_machine_public_exposure.py validate-choice --choice .eureka/public-alpha/exposure/operator-choice/latest/operator_choice.json --strict`: PASS
+
+Full unittest discovery was not run and is not claimed.

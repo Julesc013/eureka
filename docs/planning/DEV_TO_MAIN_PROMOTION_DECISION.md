@@ -33,12 +33,14 @@ create launch approval.
 
 ## Promotion Status
 
-- Promotion performed when this decision was written: pending
+- Promotion performed: yes
 - Promotion may proceed: yes
-- Expected final branch relationship: `origin/main` equals `origin/dev`
+- Method: direct fast-forward branch sync
+- Promoted commit:
+  `a9f2a8c760a4603702d4d82ef77c9cd0cdb9c7dd`
+- Post-promotion `origin/main...origin/dev`: `0 0`
 
-The final build report records the post-promotion verification after the branch
-sync completes.
+The final build report records the post-promotion verification.
 
 ## Remaining Blockers After Promotion
 
