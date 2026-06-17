@@ -5,8 +5,9 @@ import ast
 from dataclasses import dataclass
 import json
 from pathlib import Path
+import subprocess
 import sys
-from typing import Iterable, Sequence, TextIO
+from typing import Iterable, Mapping, Sequence, TextIO
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
@@ -15,6 +16,58 @@ GATEWAY_PUBLIC_API_PREFIX = "runtime.gateway.public_api"
 CONNECTORS_PREFIX = "runtime.connectors"
 ENGINE_PREFIX = "runtime.engine"
 SURFACES_PREFIX = "surfaces"
+ALLOWED_ACTIVE_TOP_LEVEL_ROOTS = (
+    ".aide",
+    ".github",
+    "archive",
+    "contracts",
+    "control",
+    "crates",
+    "docs",
+    "evals",
+    "examples",
+    "external",
+    "native",
+    "release",
+    "runtime",
+    "scripts",
+    "site",
+    "snapshots",
+    "surfaces",
+    "tests",
+    "tools",
+)
+CLASSIFIED_TOP_LEVEL_EXCEPTIONS = {
+    ".aide.local.example": "control_plane_local_state_template",
+}
+CONVENTIONAL_ROOT_FILES = (
+    ".dockerignore",
+    ".gitignore",
+    "AGENTS.md",
+    "CODE_OF_CONDUCT.md",
+    "CONTRIBUTING.md",
+    "Dockerfile",
+    "README.md",
+    "SECURITY.md",
+)
+FORBIDDEN_ACTIVE_TOP_LEVEL_ROOTS = (
+    "apps",
+    "common",
+    "data",
+    "engine",
+    "experimental",
+    "helpers",
+    "infra",
+    "misc",
+    "modules",
+    "plugins",
+    "renderers",
+    "services",
+    "skins",
+    "temp",
+    "tmp",
+    "utils",
+)
 
 
 @dataclass(frozen=True)
@@ -46,15 +99,40 @@ class BoundaryViolation:
 
 
 @dataclass(frozen=True)
+class RootModelCheck:
+    source: str
+    active_roots: tuple[str, ...]
+    allowed_roots: tuple[str, ...]
+    classified_exceptions: Mapping[str, str]
+    conventional_root_files: tuple[str, ...]
+    unexpected_top_level_entries: tuple[str, ...]
+    forbidden_active_roots: tuple[str, ...]
+
+    def to_dict(self) -> dict[str, object]:
+        return {
+            "source": self.source,
+            "active_roots": list(self.active_roots),
+            "allowed_roots": list(self.allowed_roots),
+            "classified_exceptions": dict(self.classified_exceptions),
+            "conventional_root_files": list(self.conventional_root_files),
+            "unexpected_top_level_entries": list(self.unexpected_top_level_entries),
+            "forbidden_active_roots": list(self.forbidden_active_roots),
+            "status": "pass" if not self.unexpected_top_level_entries else "fail",
+        }
+
+
+@dataclass(frozen=True)
 class BoundaryCheckResult:
     root: str
     checked_files: int
+    root_model: RootModelCheck
     violations: tuple[BoundaryViolation, ...]
 
     def to_dict(self) -> dict[str, object]:
         return {
             "root": self.root,
             "checked_files": self.checked_files,
+            "root_model": self.root_model.to_dict(),
             "violation_count": len(self.violations),
             "violations": [violation.to_dict() for violation in self.violations],
         }
@@ -88,7 +166,8 @@ def main(argv: Sequence[str] | None = None, *, stdout: TextIO | None = None) -> 
 
 def run_boundary_check(root: Path) -> BoundaryCheckResult:
     normalized_root = root.resolve()
-    violations: list[BoundaryViolation] = []
+    root_model, root_violations = check_root_model(normalized_root)
+    violations: list[BoundaryViolation] = list(root_violations)
     checked_files = 0
 
     for file_path in iter_python_files(normalized_root):
@@ -125,6 +204,7 @@ def run_boundary_check(root: Path) -> BoundaryCheckResult:
     return BoundaryCheckResult(
         root=str(normalized_root),
         checked_files=checked_files,
+        root_model=root_model,
         violations=tuple(violations),
     )
 
@@ -132,6 +212,12 @@ def run_boundary_check(root: Path) -> BoundaryCheckResult:
 def render_text_report(result: BoundaryCheckResult) -> str:
     lines = [
         f"Checked {result.checked_files} Python files under {result.root}",
+        (
+            "Root model: "
+            f"{result.root_model.to_dict()['status']} "
+            f"({len(result.root_model.active_roots)} active/classified top-level dirs; "
+            f"{len(result.root_model.unexpected_top_level_entries)} unexpected)"
+        ),
     ]
     if not result.violations:
         lines.append("No architecture-boundary violations found.")
@@ -145,6 +231,110 @@ def render_text_report(result: BoundaryCheckResult) -> str:
         )
         lines.append(f"  {violation.message}")
     return "\n".join(lines) + "\n"
+
+
+def check_root_model(root: Path) -> tuple[RootModelCheck, tuple[BoundaryViolation, ...]]:
+    top_level, source = top_level_entries(root)
+    allowed = set(ALLOWED_ACTIVE_TOP_LEVEL_ROOTS)
+    exceptions = set(CLASSIFIED_TOP_LEVEL_EXCEPTIONS)
+    conventional_files = set(CONVENTIONAL_ROOT_FILES)
+    forbidden = set(FORBIDDEN_ACTIVE_TOP_LEVEL_ROOTS)
+    unexpected: list[str] = []
+    forbidden_present: list[str] = []
+    violations: list[BoundaryViolation] = []
+
+    for name, kind in sorted(top_level.items()):
+        if kind == "file":
+            if name in conventional_files:
+                continue
+            unexpected.append(name)
+            violations.append(
+                BoundaryViolation(
+                    rule_id="unexpected_top_level_file",
+                    source_file=name,
+                    source_module="(repo_root)",
+                    imported_module=name,
+                    line=1,
+                    message="Top-level files must be conventional root files or moved under an accepted root.",
+                )
+            )
+            continue
+
+        if name in allowed or name in exceptions:
+            continue
+
+        unexpected.append(name)
+        if name in forbidden:
+            forbidden_present.append(name)
+            rule_id = "forbidden_top_level_root"
+            message = (
+                "This active top-level root is forbidden by the frozen Eureka root model; "
+                "place the concept under an existing canonical root instead."
+            )
+        else:
+            rule_id = "unexpected_top_level_root"
+            message = "Top-level roots must be accepted by the Eureka root model or explicitly classified."
+        violations.append(
+            BoundaryViolation(
+                rule_id=rule_id,
+                source_file=name,
+                source_module="(repo_root)",
+                imported_module=name,
+                line=1,
+                message=message,
+            )
+        )
+
+    root_model = RootModelCheck(
+        source=source,
+        active_roots=tuple(sorted(name for name, kind in top_level.items() if kind == "dir")),
+        allowed_roots=tuple(sorted(ALLOWED_ACTIVE_TOP_LEVEL_ROOTS)),
+        classified_exceptions=dict(CLASSIFIED_TOP_LEVEL_EXCEPTIONS),
+        conventional_root_files=tuple(sorted(name for name, kind in top_level.items() if kind == "file")),
+        unexpected_top_level_entries=tuple(sorted(unexpected)),
+        forbidden_active_roots=tuple(sorted(forbidden_present)),
+    )
+    return root_model, tuple(violations)
+
+
+def top_level_entries(root: Path) -> tuple[dict[str, str], str]:
+    tracked_files = git_ls_files(root)
+    if tracked_files is not None:
+        return top_level_entries_from_paths(tracked_files), "git_ls_files"
+
+    entries: dict[str, str] = {}
+    try:
+        children = sorted(root.iterdir(), key=lambda path: path.name)
+    except OSError:
+        return entries, "filesystem"
+    for child in children:
+        if child.name == ".git":
+            continue
+        entries[child.name] = "dir" if child.is_dir() else "file"
+    return entries, "filesystem"
+
+
+def git_ls_files(root: Path) -> list[str] | None:
+    completed = subprocess.run(
+        ["git", "ls-files"],
+        cwd=root,
+        text=True,
+        capture_output=True,
+        check=False,
+    )
+    if completed.returncode != 0:
+        return None
+    return [line.strip().replace("\\", "/") for line in completed.stdout.splitlines() if line.strip()]
+
+
+def top_level_entries_from_paths(paths: Sequence[str]) -> dict[str, str]:
+    entries: dict[str, str] = {}
+    for path in paths:
+        parts = path.split("/")
+        name = parts[0]
+        kind = "dir" if len(parts) > 1 else "file"
+        entries[name] = "dir" if entries.get(name) == "dir" or kind == "dir" else kind
+    return entries
 
 
 def iter_python_files(root: Path) -> Iterable[Path]:

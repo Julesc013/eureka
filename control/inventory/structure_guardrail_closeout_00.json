@@ -1,0 +1,158 @@
+{
+  "schema_version": "structure_guardrail_closeout.v0",
+  "task": "STRUCTURE-GUARDRAIL-CLOSEOUT-00",
+  "status": "pass",
+  "head_at_start": "cfa7fc96b491e0b0e696f952e0eaa28fe879725a",
+  "files_moved": false,
+  "directories_renamed": false,
+  "runtime_behavior_changed": false,
+  "public_launch_claimed": false,
+  "production_readiness_claimed": false,
+  "queue_state_mutated": false,
+  "accepted_active_roots": [
+    ".aide",
+    ".github",
+    "archive",
+    "contracts",
+    "control",
+    "crates",
+    "docs",
+    "evals",
+    "examples",
+    "external",
+    "native",
+    "release",
+    "runtime",
+    "scripts",
+    "site",
+    "snapshots",
+    "surfaces",
+    "tests",
+    "tools"
+  ],
+  "classified_top_level_exceptions": {
+    ".aide.local.example": "control_plane_local_state_template"
+  },
+  "forbidden_active_top_level_roots": [
+    "apps",
+    "common",
+    "data",
+    "engine",
+    "experimental",
+    "helpers",
+    "infra",
+    "misc",
+    "modules",
+    "plugins",
+    "renderers",
+    "services",
+    "skins",
+    "temp",
+    "tmp",
+    "utils"
+  ],
+  "concept_placement": {
+    "renderer": [
+      "runtime/surface/renderers"
+    ],
+    "skin": [
+      "site/assets/skins",
+      "examples/skins",
+      "contracts/representation"
+    ],
+    "source_family": [
+      "runtime/connectors",
+      "contracts/source/families"
+    ],
+    "public_page": [
+      "surfaces/web",
+      "site/pages",
+      "contracts/view"
+    ],
+    "api_response": [
+      "contracts/api",
+      "surfaces/api",
+      "runtime/gateway"
+    ],
+    "policy": [
+      "contracts/policy",
+      "control/policies"
+    ],
+    "deployment_or_ops": [
+      "release",
+      "docs/operations",
+      "control/inventory/hosting",
+      "external"
+    ],
+    "plugin_family": [
+      "specific contract and runtime family",
+      "not a generic plugins root"
+    ]
+  },
+  "authority_boundaries": {
+    ".aide": "repo-operating metadata only; not product truth",
+    "control/audits": "evidence and audit material only; not runtime truth",
+    "contracts": "accepted machine-readable product authority",
+    "runtime": "Python reference runtime behavior",
+    "accepted_architecture_docs": "human-governed architecture authority"
+  },
+  "invariants": [
+    "renderers do not invent facts",
+    "renderers do not decide policy",
+    "renderers expose required status, evidence, and action posture",
+    "old-browser, text, file, and lite renderers preserve route identity",
+    "source adapters do not own review or promotion",
+    "surfaces do not import engine internals outside allowed gateway/interface boundaries",
+    "shim paths cannot receive new implementation unless a future task explicitly reclassifies them",
+    "generated outputs are governed artifacts or ignored local state"
+  ],
+  "guardrail_commands": [
+    "python scripts/check_architecture_boundaries.py",
+    "python scripts/validate_repo_structure_canon.py --strict --json",
+    "python scripts/check_generated_artifact_cleanliness.py --check --json"
+  ],
+  "validation": {
+    "full_discovery_required": false,
+    "selected_lanes": [
+      "L0_static_preflight",
+      "L1_focused_unit"
+    ],
+    "commands_passed": [
+      "python -m unittest tests.architecture.test_check_architecture_boundaries",
+      "python scripts/check_architecture_boundaries.py --json",
+      "python scripts/validate_repo_structure_canon.py --strict --json",
+      "python scripts/check_generated_artifact_cleanliness.py --check --json",
+      "git diff --check",
+      "py -3 .aide/scripts/aide_lite.py doctor",
+      "py -3 .aide/scripts/aide_lite.py validate",
+      "python -m unittest tests.operations.test_repo_structure_canon",
+      "python scripts/eureka_test_select.py --changed --failed-first --json",
+      "python scripts/validate_test_lane_policy.py",
+      "python -m unittest tests.operations.test_test_impact_map",
+      "python -m unittest tests.operations.test_test_failure_ledger",
+      "python -m unittest tests.operations.test_test_lane_policy",
+      "python -m unittest tests.scripts.test_eureka_test_select",
+      "python -m unittest tests.scripts.test_validate_test_lane_policy"
+    ],
+    "notes": [
+      "Full discovery was not selected for this per-edit validation lane.",
+      "git diff --check passed with Git line-ending normalization warnings on touched Python files."
+    ]
+  },
+  "next_task_decision": {
+    "current_queue_recommended_task": "IA-METADATA-PROVIDER-WIRING-AND-SMOKE-00",
+    "launch_track_recommended_task": "PUBLIC-ALPHA-OPS-POSTURE-00",
+    "operator_requested_task_this_turn": "STRUCTURE-GUARDRAIL-CLOSEOUT-00",
+    "decision_status": "mismatch_recorded_no_queue_mutation",
+    "queue_override_claimed": false
+  },
+  "non_claims": [
+    "no broad restructuring",
+    "no directory moves",
+    "no root renames",
+    "no product behavior change",
+    "no provider/source expansion",
+    "no public launch",
+    "no release promotion"
+  ]
+}
