@@ -1,0 +1,32 @@
+{
+  "schema_version": "eureka.queue_objective_decision.public_alpha.v0",
+  "decision_id": "QUEUE-OBJECTIVE-DECISION-00",
+  "related_task_id": "PUBLIC-ALPHA-OPS-POSTURE-00",
+  "current_queue_recommendation": "IA-METADATA-PROVIDER-WIRING-AND-SMOKE-00",
+  "launch_track_objective": "narrow read-only public-alpha launch",
+  "selected_next_task": "PUBLIC-ALPHA-OPS-POSTURE-00",
+  "deferred_task": "IA-METADATA-PROVIDER-WIRING-AND-SMOKE-00",
+  "rationale": [
+    "Public-alpha launch is currently blocked by operations posture, public exposure, release checks, and manual approval.",
+    "Provider expansion is useful but is not the next launch-track blocker.",
+    "The public alpha must remain read-only and must not enable live source fanout."
+  ],
+  "conditions_to_resume_provider_work": [
+    "A concrete release or launch gate requires provider wiring before public alpha.",
+    "The operator changes the objective away from launch-track closeout.",
+    "Post-launch corpus/source growth becomes the next approved track."
+  ],
+  "protected_non_goals": [
+    "no public launch",
+    "no public exposure",
+    "no public Workbench exposure",
+    "no public mutation",
+    "no live metadata fanout",
+    "no downloads",
+    "no uploads",
+    "no production-readiness claim",
+    "no AI or provider output promoted as product truth"
+  ],
+  "aide_queue_mutated": false,
+  "public_launch_remains_blocked_until_launch_gate_and_manual_approval": true
+}

@@ -1,0 +1,152 @@
+{
+  "schema_version": "eureka.public_alpha_ops_posture_build_report.v0",
+  "task_id": "PUBLIC-ALPHA-OPS-POSTURE-00",
+  "status": "PASS_WITH_WARNINGS",
+  "branch": "dev",
+  "head": "f91fd5d00f92d18710cac480439311f6bf8fb3f8",
+  "files_changed": [
+    "control/audits/public_alpha/CURRENT_LAUNCH_TRACK_STATE.json",
+    "control/audits/public_alpha/CURRENT_LAUNCH_TRACK_STATE.md",
+    "control/audits/public_alpha/PUBLIC_ALPHA_OPS_POSTURE_BUILD_REPORT.json",
+    "control/audits/public_alpha/PUBLIC_ALPHA_OPS_POSTURE_BUILD_REPORT.md",
+    "control/audits/public_alpha/QUEUE_OBJECTIVE_DECISION_PUBLIC_ALPHA.json",
+    "docs/planning/QUEUE_OBJECTIVE_DECISION_PUBLIC_ALPHA.md",
+    "docs/runbooks/PUBLIC_ALPHA_OPS_POSTURE.md",
+    "runtime/local/local_machine_public_exposure.py",
+    "runtime/local/public_alpha_ops_posture.py",
+    "scripts/eureka_local_machine_public_exposure.py",
+    "scripts/eureka_public_alpha_ops_posture.py",
+    "tests/operations/test_public_alpha_ops_posture.py"
+  ],
+  "commands_added": [
+    "python scripts/eureka_public_alpha_ops_posture.py plan --out .eureka/ops/public-alpha/latest",
+    "python scripts/eureka_public_alpha_ops_posture.py validate --plan .eureka/ops/public-alpha/latest/ops_posture.json",
+    "python scripts/eureka_public_alpha_ops_posture.py status --plan .eureka/ops/public-alpha/latest/ops_posture.json",
+    "python scripts/eureka_public_alpha_ops_posture.py report --plan .eureka/ops/public-alpha/latest/ops_posture.json"
+  ],
+  "artifacts_generated": [
+    ".eureka/ops/public-alpha/latest/ops_posture.json",
+    ".eureka/ops/public-alpha/latest/OPS_POSTURE_REPORT.md",
+    ".eureka/local-machine-public-exposure/public-alpha/ops-posture-smoke/local_machine_public_exposure_plan.json"
+  ],
+  "ops_posture_summary": {
+    "public_read_only": true,
+    "public_mutation_enabled": false,
+    "public_workbench_exposed": false,
+    "live_metadata_enabled": false,
+    "downloads_enabled": false,
+    "uploads_enabled": false,
+    "auth_noauth_posture": "public_no_auth",
+    "rate_limits": "configured",
+    "logging": "configured",
+    "monitoring": "configured",
+    "rollback": "configured",
+    "report_takedown": "configured",
+    "current_status": "READY_FOR_EXPOSURE_PLAN"
+  },
+  "remaining_blockers": [
+    "public exposure is not configured",
+    "public URL is not selected",
+    "TLS/domain or provider HTTPS is not validated",
+    "full discovery report is missing for launch",
+    "release promotion report is missing",
+    "manual public launch approval is missing"
+  ],
+  "validation_run": [
+    {
+      "command": "python scripts/eureka_public_alpha_ops_posture.py plan --out .eureka/ops/public-alpha/latest",
+      "status": "PASS"
+    },
+    {
+      "command": "python scripts/eureka_public_alpha_ops_posture.py validate --plan .eureka/ops/public-alpha/latest/ops_posture.json",
+      "status": "PASS"
+    },
+    {
+      "command": "python scripts/eureka_public_alpha_ops_posture.py status --plan .eureka/ops/public-alpha/latest/ops_posture.json",
+      "status": "PASS"
+    },
+    {
+      "command": "python scripts/eureka_local_machine_public_exposure.py plan --local-machine-staging-report .eureka/local-machine-staging/public-alpha/latest/local_machine_staging_report.json --release-check-report .eureka/release-checks/public-alpha/latest/release_check_report.json --launch-gate-report .eureka/launch/public-alpha/latest/launch_gate_report.json --exposure-mode reverse_tunnel --ops-posture .eureka/ops/public-alpha/latest/ops_posture.json --out .eureka/local-machine-public-exposure/public-alpha/ops-posture-smoke",
+      "status": "PASS"
+    },
+    {
+      "command": "python scripts/eureka_local_machine_public_exposure.py validate-plan --plan .eureka/local-machine-public-exposure/public-alpha/ops-posture-smoke/local_machine_public_exposure_plan.json",
+      "status": "PASS"
+    },
+    {
+      "command": "python -m pytest tests/operations/test_public_alpha_ops_posture.py",
+      "status": "SKIPPED_UNAVAILABLE",
+      "reason": "pytest is not installed in this local environment"
+    },
+    {
+      "command": "python -m unittest tests.operations.test_public_alpha_ops_posture",
+      "status": "PASS",
+      "details": "8 tests"
+    },
+    {
+      "command": "git diff --check",
+      "status": "PASS"
+    },
+    {
+      "command": "python scripts/check_architecture_boundaries.py",
+      "status": "PASS"
+    },
+    {
+      "command": "python scripts/check_generated_artifact_cleanliness.py --check --json",
+      "status": "PRE_COMMIT_WARNING",
+      "reason": "new requested control/audits/public_alpha artifacts are uncommitted audit-generated drift; rerun after commit required"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py doctor",
+      "status": "PASS"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py validate",
+      "status": "PASS"
+    },
+    {
+      "command": "python scripts/eureka_test_select.py --changed --failed-first --json",
+      "status": "PASS",
+      "details": "full discovery not selected"
+    },
+    {
+      "command": "python scripts/validate_test_lane_policy.py",
+      "status": "PASS"
+    },
+    {
+      "command": "python -m unittest tests.scripts.test_eureka_test_select",
+      "status": "PASS",
+      "details": "3 tests"
+    },
+    {
+      "command": "python -m unittest tests.operations.test_test_lane_policy",
+      "status": "PASS",
+      "details": "1 test"
+    },
+    {
+      "command": "python -m unittest tests.scripts.test_validate_test_lane_policy",
+      "status": "PASS",
+      "details": "2 tests"
+    }
+  ],
+  "validation_skipped": [
+    {
+      "command": "python scripts/run_full_unittest_discovery.py",
+      "reason": "full discovery is a promotion/nightly/manual gate and was not selected for this task"
+    }
+  ],
+  "protected_paths": {
+    "docs_canon": "not touched",
+    "contracts": "not touched",
+    "runtime_product_search_behavior": "not touched",
+    ".aide_queue": "not touched",
+    "release_artifacts": "not touched",
+    "archive_zips": "not touched",
+    "public_network_exposure": "not enabled"
+  },
+  "public_exposure_enabled": false,
+  "launch_approved": false,
+  "new_top_level_roots_created": false,
+  "broad_refactor_performed": false,
+  "recommended_next_task": "LOCAL-MACHINE-PUBLIC-TUNNEL-PLAN-00"
+}

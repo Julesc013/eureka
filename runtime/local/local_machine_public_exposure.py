@@ -16,6 +16,8 @@ from urllib.parse import urlparse
 
 from runtime.local.corpus_gate_closeout import DEFAULT_GATE_TARGET
 from runtime.local.local_machine_staging_mvp import validate_report as validate_local_machine_staging_report
+from runtime.local.public_alpha_ops_posture import compatibility_fields as public_alpha_ops_compatibility_fields
+from runtime.local.public_alpha_ops_posture import validate_ops_posture as validate_public_alpha_ops_posture
 
 
 TASK_ID = "LOCAL-MACHINE-PUBLIC-EXPOSURE-PLAN-00"
@@ -115,6 +117,7 @@ def build_plan(
     tls_status: str = "missing",
     production_auth_posture: str = "missing",
     rate_limit_posture: str = "missing",
+    ops_posture: str | Path | Mapping[str, Any] | None = None,
     operator_approval_file: str | Path | None = None,
     allow_public_exposure_plan: bool = False,
 ) -> dict[str, Any]:
@@ -133,6 +136,12 @@ def build_plan(
     proposed_public = public_base_url if mode in {"lan_only", "reverse_tunnel", "reverse_proxy", "router_port_forward", "direct_public_ip"} else ""
     domain_status = _domain_status(domain, proposed_public)
     approval_status = _approval_file_status(operator_approval_file)
+    ops_path, ops_payload, ops_validation, ops_compat = _public_alpha_ops_inputs(ops_posture)
+    if not ops_validation.get("errors") and not ops_validation.get("ops_blockers"):
+        production_auth_posture = str(ops_compat.get("production_auth_or_noauth_posture") or production_auth_posture)
+        rate_limit_posture = str(ops_compat.get("rate_limit_posture") or rate_limit_posture)
+        if ops_compat.get("operator_approval_file_status") == "present":
+            approval_status = "present"
 
     base_plan: dict[str, Any] = {
         "schema_version": PLAN_SCHEMA_VERSION,
@@ -156,14 +165,19 @@ def build_plan(
         "production_auth_or_noauth_posture": production_auth_posture,
         "operator_approval_file_status": approval_status,
         "rate_limit_posture": rate_limit_posture,
-        "logging_posture": "missing",
-        "monitoring_posture": "missing",
-        "restart_posture": "missing",
-        "rollback_posture": "missing",
-        "firewall_posture": "missing",
-        "router_or_tunnel_posture": "missing",
-        "privacy_posture": "missing",
-        "takedown_or_report_issue_posture": "missing",
+        "logging_posture": str(ops_compat.get("logging_posture") or "missing"),
+        "monitoring_posture": str(ops_compat.get("monitoring_posture") or "missing"),
+        "restart_posture": str(ops_compat.get("restart_posture") or "missing"),
+        "rollback_posture": str(ops_compat.get("rollback_posture") or "missing"),
+        "firewall_posture": str(ops_compat.get("firewall_posture") or "missing"),
+        "router_or_tunnel_posture": str(ops_compat.get("router_or_tunnel_posture") or "missing"),
+        "privacy_posture": str(ops_compat.get("privacy_posture") or "missing"),
+        "takedown_or_report_issue_posture": str(ops_compat.get("takedown_or_report_issue_posture") or "missing"),
+        "public_alpha_ops_posture_path": str(ops_path) if ops_path else "",
+        "public_alpha_ops_posture_digest": _file_sha256(ops_path) if ops_path else "",
+        "public_alpha_ops_posture_status": str(ops_validation.get("plan_status") or ("not_provided" if not ops_posture else "missing")),
+        "public_alpha_ops_posture_validation_errors": list(ops_validation.get("errors") or []),
+        "public_alpha_ops_posture_ops_blockers": list(ops_validation.get("ops_blockers") or []),
         "public_workbench_exposed": False,
         "public_mutation_enabled": False,
         "live_metadata_enabled": False,
@@ -577,6 +591,21 @@ def _approval_file_status(path: str | Path | None) -> str:
     if not path:
         return "not_provided"
     return "present" if Path(path).is_file() else "missing"
+
+
+def _public_alpha_ops_inputs(
+    source: str | Path | Mapping[str, Any] | None,
+) -> tuple[Path | None, dict[str, Any], dict[str, Any], dict[str, Any]]:
+    if source is None or source == "":
+        return None, {}, {}, {}
+    path = None if isinstance(source, Mapping) else Path(source)
+    payload = dict(source) if isinstance(source, Mapping) else _read_json(path)  # type: ignore[arg-type]
+    if not payload:
+        return path, {}, {"errors": ["public-alpha ops posture missing"], "ops_blockers": []}, {}
+    validation = validate_public_alpha_ops_posture(payload)
+    if validation.get("errors") or validation.get("ops_blockers"):
+        return path, payload, validation, {}
+    return path, payload, validation, public_alpha_ops_compatibility_fields(payload)
 
 
 def _load_payload(value: str | Path | Mapping[str, Any]) -> dict[str, Any]:

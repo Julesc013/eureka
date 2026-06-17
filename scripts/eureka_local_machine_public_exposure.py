@@ -46,6 +46,7 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr:
     plan_parser.add_argument("--tls-status", choices=TLS_STATUSES, default="missing")
     plan_parser.add_argument("--production-auth-posture", choices=AUTH_POSTURES, default="missing")
     plan_parser.add_argument("--rate-limit-posture", choices=OPS_POSTURES, default="missing")
+    plan_parser.add_argument("--ops-posture", default="")
     plan_parser.add_argument("--operator-approval-file", default="")
     plan_parser.add_argument("--allow-public-exposure-plan", action="store_true")
     plan_parser.add_argument("--json", action="store_true")
@@ -80,6 +81,7 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr:
             tls_status=args.tls_status,
             production_auth_posture=args.production_auth_posture,
             rate_limit_posture=args.rate_limit_posture,
+            ops_posture=args.ops_posture or None,
             operator_approval_file=args.operator_approval_file or None,
             allow_public_exposure_plan=args.allow_public_exposure_plan,
         )
