@@ -1,0 +1,147 @@
+{
+  "schema_version": "eureka.source_wave.ia_candidate_index_refresh_report.v0",
+  "generated_at": "2026-06-18T05:12:48.8251922+10:00",
+  "task_id": "IA-CANDIDATE-INDEX-REFRESH-00",
+  "status": "PASS_WITH_WARNINGS",
+  "branch": "dev",
+  "head_at_delta_build": "c34ba152d4d740cbca9295068828e2398c4749ea",
+  "origin_dev_at_delta_build": "c34ba152d4d740cbca9295068828e2398c4749ea",
+  "origin_dev_sync_at_delta_build": "0 0",
+  "worktree_at_delta_build": "clean except current task files",
+  "input_source_observation_delta": ".eureka/source-wave/ia-metadata/source-observation-cache/latest/source_observation_delta_manifest.json",
+  "input_source_observation_delta_hash": "sha256:ae231580c7696b1631fe1fabe310567a18bb3eeadbcf306ef455e6c100dd86e4",
+  "input_source_observation_delta_id": "source-observation-delta:ia_metadata:441fe581c6a78a797365",
+  "source_observations_consumed": 56,
+  "provisional_candidates_written": 56,
+  "candidate_id_pattern": "candidate:ia_metadata:<short_hash>",
+  "deduplicated_candidate_count": 56,
+  "query_count": 7,
+  "provider_modes_represented": [
+    "fixture",
+    "live"
+  ],
+  "policy_gate_status": "PASS",
+  "policy_ids": [
+    "ia_metadata_smoke_policy.v0"
+  ],
+  "unsafe_record_count": 0,
+  "redacted_error_count": 0,
+  "generated_candidate_index_delta_path": ".eureka/source-wave/ia-metadata/candidate-index/latest/",
+  "generated_manifest_path": ".eureka/source-wave/ia-metadata/candidate-index/latest/candidate_index_delta_manifest.json",
+  "generated_candidate_file": ".eureka/source-wave/ia-metadata/candidate-index/latest/candidate_index_delta.jsonl",
+  "generated_candidate_file_hash": "sha256:baacb66438dabeaa361066e88749eb99280bcfda67d56960b5a4969bb36a4fa7",
+  "delta_id": "candidate-index-delta:ia_metadata:11980e2eb75d314cde37",
+  "previous_delta_id": null,
+  "previous_delta_path": null,
+  "diff_status": "first_run_no_previous_delta",
+  "reviewed_master_mutation": false,
+  "public_index_mutation": false,
+  "candidate_index_store_mutation": false,
+  "evidence_ledger_mutation": false,
+  "review_promotion_mutation": false,
+  "public_fanout": false,
+  "downloads_file_fetch": false,
+  "wayback_replay": false,
+  "rights_safety_claims": false,
+  "public_alpha_posture_unchanged": true,
+  "license_posture": "restricted_source_available",
+  "license_posture_unchanged": true,
+  "network_during_refresh": false,
+  "provider_calls_during_refresh": false,
+  "generated_eureka_output_ignored": true,
+  "generated_eureka_output_committed": false,
+  "full_unittest_discovery_claimed": false,
+  "branch_name_warning": "check_git_task_state warns that dev does not include the task ID; all other guard checks passed",
+  "current_source_index_path": [
+    "IA-METADATA-PROVIDER-WIRING-AND-SMOKE-00",
+    "IA-SOURCE-OBSERVATION-CACHE-DELTA-00",
+    "IA-CANDIDATE-INDEX-REFRESH-00",
+    "IA-EVIDENCE-LEDGER-SUMMARY-00",
+    "REVIEW-IA-CANDIDATES-BATCH-00"
+  ],
+  "validation": [
+    {
+      "command": "python scripts/check_git_task_state.py --mode start-task --task-id IA-CANDIDATE-INDEX-REFRESH-00",
+      "status": "WARN",
+      "summary": "branch name does not include task ID; all other guard checks passed"
+    },
+    {
+      "command": "python scripts/eureka_candidate_index_refresh.py build-delta --source ia_metadata --source-observation-delta .eureka/source-wave/ia-metadata/source-observation-cache/latest/source_observation_delta_manifest.json --out .eureka/source-wave/ia-metadata/candidate-index/latest",
+      "status": "PASS_WITH_WARNINGS",
+      "summary": "56 provisional candidates written; first-run/no-previous-delta"
+    },
+    {
+      "command": "python scripts/eureka_candidate_index_refresh.py validate --delta .eureka/source-wave/ia-metadata/candidate-index/latest/candidate_index_delta_manifest.json --strict",
+      "status": "PASS"
+    },
+    {
+      "command": "python scripts/eureka_candidate_index_refresh.py status --delta .eureka/source-wave/ia-metadata/candidate-index/latest/candidate_index_delta_manifest.json",
+      "status": "PASS"
+    },
+    {
+      "command": "python -m unittest tests.operations.test_ia_candidate_index_refresh",
+      "status": "PASS",
+      "summary": "15 tests passed"
+    },
+    {
+      "command": "python -m unittest tests.operations.test_ia_source_observation_cache_delta -v",
+      "status": "PASS",
+      "summary": "14 tests passed"
+    },
+    {
+      "command": "python scripts/check_architecture_boundaries.py",
+      "status": "PASS"
+    },
+    {
+      "command": "python scripts/validate_public_alpha_readonly.py",
+      "status": "PASS"
+    },
+    {
+      "command": "python scripts/validate_snapshot_relay.py",
+      "status": "PASS"
+    },
+    {
+      "command": "git diff --check",
+      "status": "PASS"
+    },
+    {
+      "command": "python scripts/eureka_test_select.py --changed --failed-first --json",
+      "status": "PASS",
+      "summary": "selected static preflight, repo-tooling focused tests, and impact smoke; full discovery not required"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py validate",
+      "status": "PASS"
+    },
+    {
+      "command": "python scripts/validate_test_lane_policy.py",
+      "status": "PASS"
+    },
+    {
+      "command": "python -m unittest tests.scripts.test_eureka_test_select",
+      "status": "PASS",
+      "summary": "3 tests passed"
+    },
+    {
+      "command": "python -m unittest tests.operations.test_test_lane_policy",
+      "status": "PASS",
+      "summary": "1 test passed"
+    },
+    {
+      "command": "python -m unittest tests.scripts.test_validate_test_lane_policy",
+      "status": "PASS",
+      "summary": "2 tests passed"
+    }
+  ],
+  "post_commit_checks_required": [
+    "python scripts/check_generated_artifact_cleanliness.py --check --json",
+    "python scripts/check_git_task_state.py --mode start-task --task-id IA-CANDIDATE-INDEX-REFRESH-00",
+    "py -3 .aide/scripts/aide_lite.py commit check --latest"
+  ],
+  "remaining_blockers": [
+    "WAITING_FOR_EXTERNAL_ARTIFACT_EVIDENCE",
+    "WAITING_FOR_USER_HARDWARE_DETAILS",
+    "Public launch remains paused pending separate operator decisions."
+  ],
+  "recommended_next_task": "IA-EVIDENCE-LEDGER-SUMMARY-00"
+}
