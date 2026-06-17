@@ -1,0 +1,53 @@
+{
+  "schema_version": "eureka.local_machine_public_tunnel_plan_report.v0",
+  "task_id": "LOCAL-MACHINE-PUBLIC-TUNNEL-PLAN-00",
+  "status": "PASS_WITH_WARNINGS",
+  "selected_exposure_mode": "reverse_tunnel",
+  "public_url_status": "missing",
+  "provider_https_status": "missing",
+  "ops_posture_path": ".eureka/ops/public-alpha/latest/ops_posture.json",
+  "ops_posture_status": "READY_FOR_EXPOSURE_PLAN",
+  "safety_posture": {
+    "public_read_only": true,
+    "public_exposure_enabled": false,
+    "public_mutation_enabled": false,
+    "public_workbench_exposed": false,
+    "live_metadata_enabled": false,
+    "downloads_enabled": false,
+    "uploads_enabled": false,
+    "model_provider_truth_enabled": false,
+    "production_readiness_claimed": false,
+    "launch_approval_present": false
+  },
+  "no_public_exposure_proof": {
+    "server_started_by_this_task": false,
+    "tunnel_started": false,
+    "proxy_started": false,
+    "dns_modified": false,
+    "firewall_or_router_modified": false,
+    "public_exposure_enabled": false
+  },
+  "planned_commands": {
+    "generate_plan": "python scripts/eureka_local_machine_public_exposure.py plan --mode reverse_tunnel --ops-posture .eureka/ops/public-alpha/latest/ops_posture.json --out .eureka/public-alpha/exposure/latest",
+    "validate_plan": "python scripts/eureka_local_machine_public_exposure.py validate --plan .eureka/public-alpha/exposure/latest/exposure_plan.json --strict",
+    "status": "python scripts/eureka_local_machine_public_exposure.py status --plan .eureka/public-alpha/exposure/latest/exposure_plan.json",
+    "local_server_template": "python scripts/run_eureka_local.py --host 127.0.0.1 --port 8765 --public-alpha --staging-bundle .eureka/staging/public-alpha",
+    "future_tunnel_placeholder": "<selected-tunnel-provider> tunnel --url http://127.0.0.1:8765"
+  },
+  "rollback_steps": [
+    "disable or pause the tunnel/proxy public route",
+    "stop any tunnel/proxy process",
+    "stop the local public-alpha server",
+    "restart only on 127.0.0.1"
+  ],
+  "remaining_blockers": [
+    "operator public URL/provider choice is missing",
+    "provider HTTPS/TLS posture is missing",
+    "known staged record ID is needed for future /record smoke",
+    "tunnel/proxy rehearsal has not run",
+    "full discovery launch report is missing",
+    "release promotion report is missing",
+    "manual public launch approval is missing"
+  ],
+  "next_recommended_task": "LOCAL-MACHINE-PUBLIC-TUNNEL-OPERATOR-CHOICE-00"
+}

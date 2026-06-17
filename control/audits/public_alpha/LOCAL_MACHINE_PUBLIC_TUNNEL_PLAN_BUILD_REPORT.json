@@ -1,0 +1,139 @@
+{
+  "schema_version": "eureka.local_machine_public_tunnel_plan_build_report.v0",
+  "task_id": "LOCAL-MACHINE-PUBLIC-TUNNEL-PLAN-00",
+  "status": "PASS_WITH_WARNINGS",
+  "branch": "dev",
+  "head": "484a1001fbb7b6ea4293c1787a71bffdb97c9de6",
+  "worktree": "dirty during implementation; clean before task edits",
+  "origin_dev": {
+    "ahead": 0,
+    "behind": 0,
+    "local_branch_ahead_of_origin_dev": false,
+    "post_commit_note": "After committing this task, local dev is expected to be ahead of origin/dev by this commit until it is pushed."
+  },
+  "selected_exposure_mode": "reverse_tunnel",
+  "public_url_status": "missing",
+  "ops_posture_status": "READY_FOR_EXPOSURE_PLAN",
+  "commands_added_or_confirmed": [
+    "python scripts/eureka_local_machine_public_exposure.py plan --mode reverse_tunnel --ops-posture .eureka/ops/public-alpha/latest/ops_posture.json --out .eureka/public-alpha/exposure/latest",
+    "python scripts/eureka_local_machine_public_exposure.py validate --plan .eureka/public-alpha/exposure/latest/exposure_plan.json --strict",
+    "python scripts/eureka_local_machine_public_exposure.py status --plan .eureka/public-alpha/exposure/latest/exposure_plan.json",
+    "python scripts/eureka_local_machine_public_exposure.py report --plan .eureka/public-alpha/exposure/latest/exposure_plan.json"
+  ],
+  "artifacts_generated": [
+    ".eureka/public-alpha/exposure/latest/exposure_plan.json",
+    ".eureka/public-alpha/exposure/latest/EXPOSURE_PLAN_REPORT.md"
+  ],
+  "validation_run": [
+    {
+      "command": "python scripts/eureka_public_alpha_ops_posture.py validate --plan .eureka/ops/public-alpha/latest/ops_posture.json --strict",
+      "status": "PASS"
+    },
+    {
+      "command": "python scripts/eureka_local_machine_public_exposure.py plan --mode reverse_tunnel --ops-posture .eureka/ops/public-alpha/latest/ops_posture.json --out .eureka/public-alpha/exposure/latest",
+      "status": "PASS"
+    },
+    {
+      "command": "python scripts/eureka_local_machine_public_exposure.py validate --plan .eureka/public-alpha/exposure/latest/exposure_plan.json --strict",
+      "status": "PASS"
+    },
+    {
+      "command": "python scripts/eureka_local_machine_public_exposure.py status --plan .eureka/public-alpha/exposure/latest/exposure_plan.json",
+      "status": "PASS"
+    },
+    {
+      "command": "python -m unittest tests.operations.test_local_machine_public_tunnel_plan",
+      "status": "PASS",
+      "details": "10 tests"
+    },
+    {
+      "command": "python -m unittest tests.e2e.test_local_machine_public_exposure_plan",
+      "status": "PASS",
+      "details": "6 tests"
+    },
+    {
+      "command": "git diff --check",
+      "status": "PASS"
+    },
+    {
+      "command": "python scripts/check_architecture_boundaries.py",
+      "status": "PASS"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py doctor",
+      "status": "PASS"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py validate",
+      "status": "PASS"
+    },
+    {
+      "command": "python scripts/eureka_test_select.py --changed --failed-first --json",
+      "status": "PASS",
+      "details": "full discovery not selected"
+    },
+    {
+      "command": "python scripts/validate_test_lane_policy.py",
+      "status": "PASS"
+    },
+    {
+      "command": "python -m unittest tests.scripts.test_eureka_test_select",
+      "status": "PASS",
+      "details": "3 tests"
+    },
+    {
+      "command": "python -m unittest tests.operations.test_test_lane_policy",
+      "status": "PASS",
+      "details": "1 test"
+    },
+    {
+      "command": "python -m unittest tests.scripts.test_validate_test_lane_policy",
+      "status": "PASS",
+      "details": "2 tests"
+    },
+    {
+      "command": "python -m pytest tests/operations/test_local_machine_public_tunnel_plan.py",
+      "status": "SKIPPED_UNAVAILABLE",
+      "reason": "pytest is not installed in this local environment"
+    },
+    {
+      "command": "python scripts/check_generated_artifact_cleanliness.py --check --json",
+      "status": "PRE_COMMIT_WARNING",
+      "reason": "new requested control/audits/public_alpha artifacts are uncommitted audit-generated drift; rerun after commit required"
+    }
+  ],
+  "validation_skipped": [
+    {
+      "command": "python scripts/run_full_unittest_discovery.py",
+      "reason": "full discovery is a promotion/nightly/manual gate and was not selected for this task"
+    }
+  ],
+  "remaining_launch_blockers": [
+    "operator public URL/provider choice is missing",
+    "provider HTTPS/TLS posture is missing",
+    "known staged record ID is needed for future /record smoke",
+    "tunnel/proxy rehearsal has not run",
+    "full discovery launch report is missing",
+    "release promotion report is missing",
+    "manual public launch approval is missing"
+  ],
+  "no_public_exposure_confirmation": {
+    "public_exposure_enabled": false,
+    "server_started": false,
+    "tunnel_started": false,
+    "proxy_started": false,
+    "dns_modified": false,
+    "firewall_or_router_modified": false,
+    "launch_claimed": false
+  },
+  "protected_path_impact": {
+    "docs_canon": "not touched",
+    "contracts": "not touched",
+    "runtime_search_behavior": "not touched",
+    ".aide_queue": "not touched",
+    "release_artifacts": "not touched",
+    "archive_zips": "not touched",
+    "public_network_exposure": "not enabled"
+  },
+  "recommended_next_task": "LOCAL-MACHINE-PUBLIC-TUNNEL-OPERATOR-CHOICE-00"
+}

@@ -1,0 +1,58 @@
+{
+  "schema_version": "eureka.local_machine_public_tunnel_plan_state.v0",
+  "task_id": "LOCAL-MACHINE-PUBLIC-TUNNEL-PLAN-00",
+  "generated_at": "2026-06-17T00:00:00Z",
+  "branch": "dev",
+  "head": "484a1001fbb7b6ea4293c1787a71bffdb97c9de6",
+  "worktree_status": "dirty during LOCAL-MACHINE-PUBLIC-TUNNEL-PLAN-00 implementation; start guard reported clean before edits",
+  "origin_dev": {
+    "ahead": 0,
+    "behind": 0,
+    "local_branch_ahead_of_origin_dev": false,
+    "post_commit_note": "After committing this task, local dev is expected to be ahead of origin/dev until the commit is pushed."
+  },
+  "current_queue_recommendation": "IA-METADATA-PROVIDER-WIRING-AND-SMOKE-00",
+  "selected_launch_track_task": "LOCAL-MACHINE-PUBLIC-TUNNEL-PLAN-00",
+  "ops_posture_artifact_path": ".eureka/ops/public-alpha/latest/ops_posture.json",
+  "ops_posture_status": "READY_FOR_EXPOSURE_PLAN",
+  "selected_exposure_mode": "reverse_tunnel",
+  "public_url": "",
+  "public_url_status": "missing",
+  "tls_provider_https_status": "missing",
+  "auth_noauth_posture": "public_no_auth",
+  "public_workbench_exposed": false,
+  "public_mutation_enabled": false,
+  "live_metadata_enabled": false,
+  "downloads_enabled": false,
+  "uploads_enabled": false,
+  "public_exposure_enabled": false,
+  "local_server_public_alpha_command_candidate": "python scripts/run_eureka_local.py --host 127.0.0.1 --port 8765 --public-alpha --staging-bundle .eureka/staging/public-alpha",
+  "planned_exposure_command_placeholder": "<selected-tunnel-provider> tunnel --url http://127.0.0.1:8765",
+  "rollback_command_placeholders": [
+    "disable or pause the tunnel/proxy public route",
+    "stop any tunnel/proxy process",
+    "stop the local public-alpha server",
+    "restart only on 127.0.0.1"
+  ],
+  "route_smoke_list": [
+    "/",
+    "/health",
+    "/status",
+    "/api/status",
+    "/about",
+    "/method",
+    "/search?q=old%20blue%20FTP%20client%20for%20XP",
+    "/api/search?q=manual%20for%20Sound%20Blaster%20CT1740",
+    "/record/{known-id-or-fixture-id}"
+  ],
+  "remaining_blockers": [
+    "operator public URL/provider choice is missing",
+    "provider HTTPS/TLS posture is missing",
+    "known staged record ID is needed for future /record smoke",
+    "tunnel/proxy rehearsal has not run",
+    "full discovery launch report is missing",
+    "release promotion report is missing",
+    "manual public launch approval is missing"
+  ],
+  "next_recommended_task": "LOCAL-MACHINE-PUBLIC-TUNNEL-OPERATOR-CHOICE-00"
+}

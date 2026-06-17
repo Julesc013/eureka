@@ -16,19 +16,26 @@ if str(REPO_ROOT) not in sys.path:
 
 from runtime.local.local_machine_public_exposure import AUTH_POSTURES
 from runtime.local.local_machine_public_exposure import DEFAULT_OUT
+from runtime.local.local_machine_public_exposure import DEFAULT_TUNNEL_OUT
 from runtime.local.local_machine_public_exposure import EXPOSURE_MODES
 from runtime.local.local_machine_public_exposure import OPS_POSTURES
 from runtime.local.local_machine_public_exposure import PLAN_JSON
 from runtime.local.local_machine_public_exposure import REPORT_JSON
 from runtime.local.local_machine_public_exposure import TLS_STATUSES
+from runtime.local.local_machine_public_exposure import TUNNEL_PLAN_JSON
 from runtime.local.local_machine_public_exposure import build_plan
 from runtime.local.local_machine_public_exposure import build_report
+from runtime.local.local_machine_public_exposure import build_tunnel_plan
 from runtime.local.local_machine_public_exposure import load_json
 from runtime.local.local_machine_public_exposure import render_plan_status
+from runtime.local.local_machine_public_exposure import render_tunnel_markdown_report
+from runtime.local.local_machine_public_exposure import render_tunnel_plan_status
 from runtime.local.local_machine_public_exposure import validate_plan
 from runtime.local.local_machine_public_exposure import validate_report
+from runtime.local.local_machine_public_exposure import validate_tunnel_plan
 from runtime.local.local_machine_public_exposure import write_plan
 from runtime.local.local_machine_public_exposure import write_report
+from runtime.local.local_machine_public_exposure import write_tunnel_plan
 
 
 def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr: TextIO = sys.stderr) -> int:
@@ -36,12 +43,18 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr:
     subparsers = parser.add_subparsers(dest="command", required=True)
 
     plan_parser = subparsers.add_parser("plan", help="Write a local-machine public exposure plan.")
-    plan_parser.add_argument("--local-machine-staging-report", required=True)
-    plan_parser.add_argument("--release-check-report", required=True)
-    plan_parser.add_argument("--launch-gate-report", required=True)
-    plan_parser.add_argument("--out", default=DEFAULT_OUT)
-    plan_parser.add_argument("--exposure-mode", choices=EXPOSURE_MODES, default="loopback_only")
+    plan_parser.add_argument("--local-machine-staging-report", default="")
+    plan_parser.add_argument("--release-check-report", default="")
+    plan_parser.add_argument("--launch-gate-report", default="")
+    plan_parser.add_argument("--out", default="")
+    plan_parser.add_argument("--mode", "--exposure-mode", dest="mode", choices=EXPOSURE_MODES, default=None)
     plan_parser.add_argument("--public-base-url", default="")
+    plan_parser.add_argument("--public-url", default="")
+    plan_parser.add_argument("--bind-host", default="127.0.0.1")
+    plan_parser.add_argument("--bind-port", type=int, default=8765)
+    plan_parser.add_argument("--operator", default="")
+    plan_parser.add_argument("--approve-risky-mode", action="store_true")
+    plan_parser.add_argument("--staging-bundle", default=".eureka/staging/public-alpha")
     plan_parser.add_argument("--domain", default="")
     plan_parser.add_argument("--tls-status", choices=TLS_STATUSES, default="missing")
     plan_parser.add_argument("--production-auth-posture", choices=AUTH_POSTURES, default="missing")
@@ -50,6 +63,11 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr:
     plan_parser.add_argument("--operator-approval-file", default="")
     plan_parser.add_argument("--allow-public-exposure-plan", action="store_true")
     plan_parser.add_argument("--json", action="store_true")
+
+    validate_parser = subparsers.add_parser("validate", help="Validate a public tunnel exposure plan.")
+    validate_parser.add_argument("--plan", required=True)
+    validate_parser.add_argument("--json", action="store_true")
+    validate_parser.add_argument("--strict", action="store_true")
 
     validate_plan_parser = subparsers.add_parser("validate-plan", help="Validate a local-machine public exposure plan.")
     validate_plan_parser.add_argument("--plan", required=True)
@@ -61,7 +79,7 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr:
 
     report_parser = subparsers.add_parser("report", help="Write a public exposure report from a plan.")
     report_parser.add_argument("--plan", required=True)
-    report_parser.add_argument("--out", default=DEFAULT_OUT)
+    report_parser.add_argument("--out", default="")
     report_parser.add_argument("--json", action="store_true")
 
     validate_report_parser = subparsers.add_parser("validate-report", help="Validate a public exposure report.")
@@ -70,32 +88,84 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr:
 
     args = parser.parse_args(argv)
     if args.command == "plan":
-        plan = build_plan(
-            local_machine_staging_report=args.local_machine_staging_report,
-            release_check_report=args.release_check_report,
-            launch_gate_report=args.launch_gate_report,
-            out_dir=args.out,
-            exposure_mode=args.exposure_mode,
-            public_base_url=args.public_base_url,
-            domain=args.domain,
-            tls_status=args.tls_status,
-            production_auth_posture=args.production_auth_posture,
-            rate_limit_posture=args.rate_limit_posture,
-            ops_posture=args.ops_posture or None,
-            operator_approval_file=args.operator_approval_file or None,
-            allow_public_exposure_plan=args.allow_public_exposure_plan,
-        )
-        plan_path = write_plan(plan, args.out)
+        legacy_mode = bool(args.local_machine_staging_report or args.release_check_report or args.launch_gate_report)
+        if legacy_mode:
+            missing = [
+                name
+                for name, value in (
+                    ("--local-machine-staging-report", args.local_machine_staging_report),
+                    ("--release-check-report", args.release_check_report),
+                    ("--launch-gate-report", args.launch_gate_report),
+                )
+                if not value
+            ]
+            if missing:
+                print(f"legacy exposure plan mode missing required args: {', '.join(missing)}", file=stderr)
+                return 2
+            out_dir = args.out or DEFAULT_OUT
+            plan = build_plan(
+                local_machine_staging_report=args.local_machine_staging_report,
+                release_check_report=args.release_check_report,
+                launch_gate_report=args.launch_gate_report,
+                out_dir=out_dir,
+                exposure_mode=args.mode or "loopback_only",
+                public_base_url=args.public_base_url or args.public_url,
+                domain=args.domain,
+                tls_status=args.tls_status,
+                production_auth_posture=args.production_auth_posture,
+                rate_limit_posture=args.rate_limit_posture,
+                ops_posture=args.ops_posture or None,
+                operator_approval_file=args.operator_approval_file or None,
+                allow_public_exposure_plan=args.allow_public_exposure_plan,
+            )
+            plan_path = write_plan(plan, out_dir)
+        else:
+            out_dir = args.out or DEFAULT_TUNNEL_OUT
+            plan = build_tunnel_plan(
+                ops_posture=args.ops_posture or None,
+                out_dir=out_dir,
+                exposure_mode=args.mode or "reverse_tunnel",
+                public_url=args.public_url or args.public_base_url,
+                bind_host=args.bind_host,
+                bind_port=args.bind_port,
+                operator=args.operator,
+                approve_risky_mode=args.approve_risky_mode,
+                staging_bundle=args.staging_bundle,
+            )
+            plan_path = write_tunnel_plan(plan, out_dir)
         if args.json:
             print(json.dumps(plan, indent=2, sort_keys=True, ensure_ascii=True), file=stdout)
         else:
             print(f"Local-machine public exposure plan: {plan_path}", file=stdout)
-            print(f"selected_hosting_path: {plan.get('selected_hosting_path')}", file=stdout)
+            print(f"status: {plan.get('status')}", file=stdout)
             print(f"exposure_mode: {plan.get('exposure_mode')}", file=stdout)
             print(f"public_exposure_enabled: {str(plan.get('public_exposure_enabled')).lower()}", file=stdout)
-            print(f"remaining_blockers: {len(plan.get('remaining_blockers') or [])}", file=stdout)
+            print(f"blockers: {len(plan.get('blockers') or plan.get('remaining_blockers') or [])}", file=stdout)
             print(f"next_recommended_task: {plan.get('next_recommended_task')}", file=stdout)
         return 0
+
+    if args.command == "validate":
+        try:
+            plan = load_json(args.plan)
+        except (OSError, json.JSONDecodeError) as exc:
+            print(f"Could not read public tunnel exposure plan: {type(exc).__name__}", file=stderr)
+            return 1
+        validation = validate_tunnel_plan(plan)
+        strict_blocked = args.strict and validation.get("plan_status") == "BLOCKED"
+        if args.json:
+            print(json.dumps(validation, indent=2, sort_keys=True, ensure_ascii=True), file=stdout)
+        elif validation.get("errors"):
+            print(f"Public tunnel exposure plan validation failed: {args.plan}", file=stderr)
+            for error in validation.get("errors") or []:
+                print(f"- {error}", file=stderr)
+        else:
+            print(f"Public tunnel exposure plan validation passed: {args.plan}", file=stdout)
+            print(f"status: {validation.get('plan_status')}", file=stdout)
+            print(f"blockers: {len(validation.get('blockers') or [])}", file=stdout)
+            print(f"next_recommended_task: {validation.get('next_recommended_task')}", file=stdout)
+            if strict_blocked:
+                print("strict validation found blocked tunnel plan", file=stderr)
+        return 1 if validation.get("errors") or strict_blocked else 0
 
     if args.command == "validate-plan":
         errors = validate_plan(args.plan)
@@ -123,19 +193,35 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr:
             return 1
         if args.json:
             print(json.dumps(plan, indent=2, sort_keys=True, ensure_ascii=True), file=stdout)
+        elif plan.get("schema_version") == "eureka.local_machine_public_tunnel_plan.v0":
+            print(render_tunnel_plan_status(plan), end="", file=stdout)
         else:
             print(render_plan_status(plan), end="", file=stdout)
         return 0
 
     if args.command == "report":
-        report = build_report(args.plan)
-        report_path = write_report(report, args.out)
+        plan = load_json(args.plan)
+        if plan.get("schema_version") == "eureka.local_machine_public_tunnel_plan.v0":
+            report = plan
+            out_dir = args.out or str(Path(args.plan).parent)
+            output = Path(out_dir)
+            output.mkdir(parents=True, exist_ok=True)
+            report_path = output / "EXPOSURE_PLAN_REPORT.md"
+            report_path.write_text(render_tunnel_markdown_report(plan), encoding="utf-8")
+        else:
+            out_dir = args.out or DEFAULT_OUT
+            report = build_report(args.plan)
+            report_path = write_report(report, out_dir)
         if args.json:
             print(json.dumps(report, indent=2, sort_keys=True, ensure_ascii=True), file=stdout)
         else:
             print(f"Local-machine public exposure report: {report_path}", file=stdout)
             print(f"status: {report.get('status')}", file=stdout)
-            print(f"public_readiness_status: {report.get('public_readiness_status')}", file=stdout)
+            if report.get("schema_version") == "eureka.local_machine_public_tunnel_plan.v0":
+                print(f"public_url_status: {report.get('public_url_status')}", file=stdout)
+                print(f"provider_https_status: {report.get('provider_https_status')}", file=stdout)
+            else:
+                print(f"public_readiness_status: {report.get('public_readiness_status')}", file=stdout)
             print(f"blockers: {len(report.get('blockers') or [])}", file=stdout)
             print(f"next_recommended_task: {report.get('next_recommended_task')}", file=stdout)
         if report.get("status") == "FAIL":
