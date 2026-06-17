@@ -1,0 +1,72 @@
+{
+  "schema_version": "eureka.public_alpha_operator_input_state.v0",
+  "task_id": "LOCAL-MACHINE-PUBLIC-TUNNEL-OPERATOR-INPUT-00",
+  "generated_at": "2026-06-17T14:20:04Z",
+  "branch": "dev",
+  "head": "4d882a8add09aea79e11b979ab97414610a71a97",
+  "worktree_status_at_start": "clean",
+  "origin_dev": {
+    "ahead": 0,
+    "behind": 0,
+    "status": "synced"
+  },
+  "operator_choice": {
+    "path": ".eureka/public-alpha/exposure/operator-choice/latest/operator_choice.json",
+    "report_path": ".eureka/public-alpha/exposure/operator-choice/latest/OPERATOR_CHOICE_REPORT.md",
+    "tracked": false,
+    "status": "BLOCKED_ON_OPERATOR_PROVIDER_URL",
+    "selected_exposure_mode": "reverse_tunnel",
+    "provider_class": "provider_managed_https_tunnel",
+    "provider_name": "OPERATOR_REQUIRED",
+    "public_url": "OPERATOR_REQUIRED",
+    "public_url_status": "operator_required",
+    "provider_https_status": "operator_required",
+    "staged_record_id": "local-reviewed-record:1792f5ba3d54774c",
+    "staged_record_id_status": "present",
+    "remote_sync_status": "synced",
+    "remote_sync_required": false,
+    "public_exposure_enabled": false,
+    "tunnel_started": false,
+    "tunnel_start_allowed_now": false,
+    "safe": true
+  },
+  "staging_bundle": {
+    "path": ".eureka/staging/public-alpha",
+    "manifest_bundle_id": "public-alpha:dcd53cb7a1e2dbe6",
+    "manifest_status": "pass",
+    "manifest_read_only": true,
+    "manifest_public_mutation_enabled": false,
+    "manifest_live_metadata_enabled": false,
+    "manifest_downloads_enabled": false,
+    "manifest_workbench_exposed": false,
+    "selected_record_source": "first accepted reviewed public index document id",
+    "selected_record_id": "local-reviewed-record:1792f5ba3d54774c"
+  },
+  "blockers": [
+    "BLOCKED_ON_OPERATOR_PROVIDER_URL",
+    "BLOCKED_ON_PROVIDER_HTTPS",
+    "tunnel_rehearsal_not_run",
+    "full_discovery_report_missing",
+    "release_promotion_report_missing",
+    "public_launch_approval_missing"
+  ],
+  "safety_confirmation": {
+    "public_exposure_enabled": false,
+    "tunnel_or_proxy_started": false,
+    "dns_firewall_router_changed": false,
+    "workbench_exposed": false,
+    "public_mutation_enabled": false,
+    "downloads_uploads_enabled": false,
+    "live_metadata_enabled": false,
+    "launch_approval_created": false,
+    "queue_mutated": false
+  },
+  "aide": {
+    "run": false,
+    "reason": "AIDE skipped because this is a remote-sync/docs closeout follow-on operator-input audit using existing operator-choice machinery, and the previous docs task did not run AIDE."
+  },
+  "full_discovery": {
+    "run": false,
+    "claim": "full discovery not claimed"
+  }
+}

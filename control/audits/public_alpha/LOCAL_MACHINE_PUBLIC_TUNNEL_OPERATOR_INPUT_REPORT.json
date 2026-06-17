@@ -1,0 +1,57 @@
+{
+  "schema_version": "eureka.public_alpha_operator_input_report.v0",
+  "task_id": "LOCAL-MACHINE-PUBLIC-TUNNEL-OPERATOR-INPUT-00",
+  "generated_at": "2026-06-17T14:20:04Z",
+  "status": "PASS_WITH_WARNINGS",
+  "selected_recommendation": "BLOCKED_ON_OPERATOR_PROVIDER_URL",
+  "rationale": "Remote sync is clean and the existing operator-choice machinery produced a safe blocked choice, but no real provider name or HTTPS public URL was supplied.",
+  "operator_choice": {
+    "generated": true,
+    "path": ".eureka/public-alpha/exposure/operator-choice/latest/operator_choice.json",
+    "report_path": ".eureka/public-alpha/exposure/operator-choice/latest/OPERATOR_CHOICE_REPORT.md",
+    "status": "BLOCKED_ON_OPERATOR_PROVIDER_URL",
+    "safe": true,
+    "provider_name": "OPERATOR_REQUIRED",
+    "public_url": "OPERATOR_REQUIRED",
+    "provider_https_status": "operator_required",
+    "selected_exposure_mode": "reverse_tunnel",
+    "provider_class": "provider_managed_https_tunnel",
+    "staged_record_id": "local-reviewed-record:1792f5ba3d54774c",
+    "remote_sync_status": "synced"
+  },
+  "operator_input": {
+    "provider_supplied": false,
+    "public_url_supplied": false,
+    "https_validated": false,
+    "staged_record_id_supplied_from_existing_bundle": true
+  },
+  "push_or_remote_sync": {
+    "push_performed": false,
+    "reason": "This task is not a remote-sync push task; origin/dev already matched HEAD at task start."
+  },
+  "unblocked": {
+    "local_machine_public_tunnel_operator_choice": false,
+    "local_machine_public_tunnel_rehearsal": false,
+    "reason": "Provider name, HTTPS public URL, and provider HTTPS posture remain operator-required."
+  },
+  "recommended_next_task": "LOCAL-MACHINE-PUBLIC-TUNNEL-PROVIDER-DECISION-00",
+  "remaining_blockers": [
+    "real provider name missing",
+    "real HTTPS public URL missing",
+    "provider HTTPS/TLS posture unvalidated",
+    "actual tunnel/proxy rehearsal not run",
+    "full discovery launch report missing",
+    "release promotion report missing",
+    "manual public launch approval missing"
+  ],
+  "safety_confirmation": {
+    "public_exposure_enabled": false,
+    "tunnel_or_proxy_started": false,
+    "public_mutation_enabled": false,
+    "workbench_exposed": false,
+    "live_metadata_enabled": false,
+    "downloads_uploads_enabled": false,
+    "launch_approval_created": false,
+    "queue_mutated": false
+  }
+}

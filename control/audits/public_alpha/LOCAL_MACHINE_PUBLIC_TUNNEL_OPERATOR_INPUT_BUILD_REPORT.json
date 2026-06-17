@@ -1,0 +1,108 @@
+{
+  "schema_version": "eureka.public_alpha_operator_input_build_report.v0",
+  "task_id": "LOCAL-MACHINE-PUBLIC-TUNNEL-OPERATOR-INPUT-00",
+  "generated_at": "2026-06-17T14:20:04Z",
+  "status": "PASS_WITH_WARNINGS",
+  "summary": "Operator input audit artifacts were prepared after regenerating the ignored .eureka operator-choice artifact with OPERATOR_REQUIRED provider fields. Focused validation passed, with generated-artifact cleanliness expected to fail before commit because the new audit files were still uncommitted.",
+  "commands_run": [
+    {
+      "command": "python scripts/check_git_task_state.py --mode start-task --task-id LOCAL-MACHINE-PUBLIC-TUNNEL-OPERATOR-INPUT-00",
+      "result": "WARN",
+      "notes": "Only task_id_branch_name_match warned; branch dev and upstream origin/dev were usable."
+    },
+    {
+      "command": "git fetch origin; git status --short; git branch --show-current; git rev-parse HEAD; git rev-list --left-right --count origin/dev...HEAD",
+      "result": "PASS",
+      "notes": "Branch dev, HEAD 4d882a8add09aea79e11b979ab97414610a71a97, origin/dev...HEAD 0 0, clean short status."
+    },
+    {
+      "command": "python scripts/eureka_public_alpha_ops_posture.py validate --plan .eureka/ops/public-alpha/latest/ops_posture.json --strict",
+      "result": "PASS",
+      "notes": "Status READY_FOR_EXPOSURE_PLAN; launch blockers remain."
+    },
+    {
+      "command": "python scripts/eureka_local_machine_public_exposure.py validate --plan .eureka/public-alpha/exposure/latest/exposure_plan.json --strict",
+      "result": "PASS",
+      "notes": "Status READY_FOR_OPERATOR_URL; seven blockers remain."
+    },
+    {
+      "command": "python scripts/eureka_local_machine_public_exposure.py choose --plan .eureka/public-alpha/exposure/latest/exposure_plan.json --ops-posture .eureka/ops/public-alpha/latest/ops_posture.json --mode reverse_tunnel --provider-class provider_managed_https_tunnel --provider-name OPERATOR_REQUIRED --public-url OPERATOR_REQUIRED --staged-record-id local-reviewed-record:1792f5ba3d54774c --out .eureka/public-alpha/exposure/operator-choice/latest",
+      "result": "PASS",
+      "notes": "Generated ignored operator_choice.json with status BLOCKED_ON_OPERATOR_PROVIDER_URL."
+    },
+    {
+      "command": "python scripts/eureka_local_machine_public_exposure.py validate-choice --choice .eureka/public-alpha/exposure/operator-choice/latest/operator_choice.json --strict",
+      "result": "PASS",
+      "notes": "Choice validation passed; safe blocked state."
+    },
+    {
+      "command": "python scripts/eureka_local_machine_public_exposure.py choice-status --choice .eureka/public-alpha/exposure/operator-choice/latest/operator_choice.json",
+      "result": "PASS",
+      "notes": "Safe true; remote synced; staged record present; provider URL still operator-required."
+    },
+    {
+      "command": "python -m json.tool control/audits/public_alpha/LOCAL_MACHINE_PUBLIC_TUNNEL_OPERATOR_INPUT_STATE.json; python -m json.tool control/audits/public_alpha/LOCAL_MACHINE_PUBLIC_TUNNEL_OPERATOR_INPUT_REPORT.json; python -m json.tool control/audits/public_alpha/LOCAL_MACHINE_PUBLIC_TUNNEL_OPERATOR_INPUT_BUILD_REPORT.json",
+      "result": "PASS",
+      "notes": "Tracked JSON audit artifacts are syntactically valid."
+    },
+    {
+      "command": "python -m unittest tests.operations.test_local_machine_public_tunnel_operator_choice",
+      "result": "PASS",
+      "notes": "Ran 11 tests; OK."
+    },
+    {
+      "command": "git diff --check",
+      "result": "PASS",
+      "notes": "No whitespace errors."
+    },
+    {
+      "command": "python scripts/check_architecture_boundaries.py",
+      "result": "PASS",
+      "notes": "Checked 934 Python files; no architecture-boundary violations."
+    },
+    {
+      "command": "python scripts/check_generated_artifact_cleanliness.py --check --json",
+      "result": "WARN_PRE_COMMIT_DRIFT",
+      "notes": "Failed before commit only because the newly added audit_generated files were uncommitted; rerun after commit is required."
+    },
+    {
+      "command": "python scripts/validate_public_alpha_readonly.py",
+      "result": "PASS",
+      "notes": "public alpha read-only validation: valid."
+    },
+    {
+      "command": "python scripts/public_alpha_smoke.py --json",
+      "result": "PASS",
+      "notes": "18 checks passed; 0 failed."
+    },
+    {
+      "command": "python scripts/validate_snapshot_relay.py",
+      "result": "PASS",
+      "notes": "snapshot relay validation: pass."
+    },
+    {
+      "command": "python scripts/validate_public_alpha_hosting_readiness.py",
+      "result": "PASS",
+      "notes": "public alpha hosting readiness validation: valid."
+    },
+    {
+      "command": "python scripts/validate_public_alpha_launch_candidate.py",
+      "result": "PASS",
+      "notes": "public alpha launch candidate validation: pass."
+    }
+  ],
+  "validation_pending": [],
+  "warnings": [
+    "Provider name and public URL remain OPERATOR_REQUIRED.",
+    "Provider HTTPS/TLS posture remains unvalidated.",
+    "Generated-artifact cleanliness must be rerun after commit because it intentionally flags uncommitted audit_generated files."
+  ],
+  "aide": {
+    "run": false,
+    "reason": "Skipped by task scope; this is a remote-sync/docs closeout follow-on operator-input audit using existing operator-choice machinery."
+  },
+  "full_discovery": {
+    "run": false,
+    "claim": "full discovery not claimed"
+  }
+}
