@@ -1,4 +1,4 @@
-current_recommended_task: IA-METADATA-PROVIDER-WIRING-AND-SMOKE-00 - Bounded IA metadata provider smoke; external artifact evidence and hardware details remain waiting
+current_recommended_task: IA-SOURCE-OBSERVATION-CACHE-DELTA-00 - Materialize IA metadata smoke source-observation cache delta; public exposure remains paused; external artifact evidence and hardware details remain waiting
 completed:
   - SOURCE-ACTION-KERNEL-00
   - SOURCE-WAVE-00
@@ -84,6 +84,7 @@ completed:
   - MANUAL-ARTIFACT-OBSERVATION-BATCH-02
   - HUMAN-ARTIFACT-REVIEW-BATCH-02
   - ARTIFACT-EVIDENCE-COLLECTION-HANDOFF-00
+  - IA-METADATA-PROVIDER-WIRING-AND-SMOKE-00
 blocked: []
 planned:
   - USER-HARDWARE-DETAILS-00

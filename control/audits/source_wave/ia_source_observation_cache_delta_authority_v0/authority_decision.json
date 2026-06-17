@@ -1,0 +1,119 @@
+{
+  "schema_version": "eureka.source_wave.authority_decision.v0",
+  "generated_at": "2026-06-18T03:45:46.5364723+10:00",
+  "task_id": "IA-SOURCE-OBSERVATION-CACHE-DELTA-AUTHORITY-00",
+  "status": "PASS_WITH_WARNINGS",
+  "branch": "dev",
+  "head_before": "1860ffaa5099ce5eeebac592d7cfa544a5aa5a9e",
+  "origin_dev_before": "1860ffaa5099ce5eeebac592d7cfa544a5aa5a9e",
+  "origin_dev_sync_before": "0 0",
+  "worktree_before": "clean",
+  "previous_recommended_task": "IA-METADATA-PROVIDER-WIRING-AND-SMOKE-00",
+  "new_recommended_task": "IA-SOURCE-OBSERVATION-CACHE-DELTA-00",
+  "reason_for_advancing_queue": "IA metadata smoke implementation and audit evidence are complete, while repo-local authority still pointed at the closed smoke task.",
+  "path_blocker_fixed": true,
+  "allowed_implementation_paths_for_next_task": [
+    "runtime/local/**",
+    "scripts/eureka_source_observation_cache.py",
+    "tools/generators/**",
+    "tests/operations/**",
+    "tests/runtime/**",
+    "docs/operations/**",
+    "control/audits/source_wave/**",
+    ".eureka/source-wave/ia-metadata/source-observation-cache/**",
+    "contracts/source/**"
+  ],
+  "protected_paths": [
+    "docs/canon/**",
+    "public exposure/tunnel/hosting/launch code",
+    "Workbench runtime unless separately authorized",
+    "source/provider expansion beyond the IA metadata smoke path",
+    "release/**",
+    "archive/**",
+    "existing archive zips",
+    "LICENSE.md",
+    "LICENSE-SUMMARY.md",
+    "NOTICE.md",
+    ".aide/queue/** except final status reporting if repo convention requires it"
+  ],
+  "public_exposure_paused": true,
+  "license_posture": "unchanged",
+  "reviewed_master_mutation_forbidden": true,
+  "runtime_cache_implementation_performed": false,
+  "downloads_file_fetch": false,
+  "wayback_replay": false,
+  "public_mutation": false,
+  "public_index_mutation": false,
+  "validation": [
+    {
+      "command": "git fetch origin",
+      "status": "PASS"
+    },
+    {
+      "command": "git status --short --branch",
+      "status": "PASS",
+      "summary": "clean and synced before authority edits"
+    },
+    {
+      "command": "git rev-list --left-right --count origin/dev...HEAD",
+      "status": "PASS",
+      "summary": "0 0 before authority edits"
+    },
+    {
+      "command": "python scripts/check_git_task_state.py --mode start-task --task-id IA-SOURCE-OBSERVATION-CACHE-DELTA-AUTHORITY-00",
+      "status": "WARN",
+      "summary": "branch name does not include task ID; all other guard checks passed"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py pack --task \"IA-SOURCE-OBSERVATION-CACHE-DELTA-00\"",
+      "status": "PASS",
+      "summary": "packet generated, then manually narrowed to match task YAML authority"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py doctor",
+      "status": "PASS"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py validate",
+      "status": "PASS"
+    },
+    {
+      "command": "python -m unittest tests.operations.test_ia_metadata_smoke_scripts -v",
+      "status": "PASS",
+      "summary": "3 tests passed"
+    },
+    {
+      "command": "python scripts/check_architecture_boundaries.py",
+      "status": "PASS"
+    },
+    {
+      "command": "python scripts/validate_public_alpha_readonly.py",
+      "status": "PASS"
+    },
+    {
+      "command": "python scripts/validate_snapshot_relay.py",
+      "status": "PASS"
+    },
+    {
+      "command": "git diff --check",
+      "status": "PASS"
+    },
+    {
+      "command": "python scripts/eureka_test_select.py --changed --failed-first --json",
+      "status": "PASS",
+      "summary": "selected static preflight only; full discovery not required"
+    }
+  ],
+  "full_unittest_discovery_claimed": false,
+  "post_commit_checks_required": [
+    "python scripts/check_generated_artifact_cleanliness.py --check --json",
+    "python scripts/check_git_task_state.py --mode start-task --task-id IA-SOURCE-OBSERVATION-CACHE-DELTA-00",
+    "py -3 .aide/scripts/aide_lite.py commit check --latest"
+  ],
+  "remaining_blockers": [
+    "WAITING_FOR_EXTERNAL_ARTIFACT_EVIDENCE",
+    "WAITING_FOR_USER_HARDWARE_DETAILS",
+    "Public launch remains paused pending separate operator decisions."
+  ],
+  "recommended_next_task": "IA-SOURCE-OBSERVATION-CACHE-DELTA-00"
+}

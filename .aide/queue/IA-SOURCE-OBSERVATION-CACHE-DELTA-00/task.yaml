@@ -1,0 +1,63 @@
+schema_version: aide.task.v0
+id: IA-SOURCE-OBSERVATION-CACHE-DELTA-00
+title: Materialize IA metadata smoke source-observation cache delta
+status: authorized
+task_class: source_wave_local_index_delta
+recommended_after: IA-METADATA-PROVIDER-WIRING-AND-SMOKE-00
+recommended_next: IA-CANDIDATE-INDEX-REFRESH-00
+purpose: Materialize the completed IA metadata smoke output into a governed local source-observation cache delta that can be replayed, audited, diffed, and later consumed by candidate-index, evidence, review, snapshot, and local autonomous foundry tasks.
+authority_note: This task is authorized for the next implementation turn only after IA-SOURCE-OBSERVATION-CACHE-DELTA-AUTHORITY-00 advances queue authority. Public exposure remains paused.
+allowed_scope:
+  - runtime/local/**
+  - scripts/eureka_source_observation_cache.py
+  - tools/generators/**
+  - tests/operations/**
+  - tests/runtime/**
+  - docs/operations/**
+  - control/audits/source_wave/**
+  - .eureka/source-wave/ia-metadata/source-observation-cache/**
+  - contracts/source/**
+forbidden_scope:
+  - docs/canon/**
+  - runtime/connectors/**
+  - runtime/gateway/**
+  - surfaces/**
+  - site/**
+  - native/**
+  - crates/**
+  - examples/**
+  - evals/**
+  - release/**
+  - archive/**
+  - LICENSE.md
+  - LICENSE-SUMMARY.md
+  - NOTICE.md
+  - Workbench runtime unless an explicitly reviewed follow-up authorizes it
+  - public exposure, tunnel, hosting, or launch code
+  - source/provider expansion beyond the IA metadata smoke path
+  - .aide/queue/** except final status reporting if repo convention requires it
+boundaries:
+  public_launch: false
+  public_exposure: false
+  public_workbench_exposure: false
+  downloads: false
+  file_fetch: false
+  wayback_replay: false
+  broad_ia_crawling: false
+  live_provider_call_during_delta_build: false
+  reviewed_master_mutation: false
+  public_index_mutation: false
+  license_posture_changed: false
+  production_readiness_claimed: false
+  rights_clearance_claimed: false
+  malware_or_binary_safety_claimed: false
+evidence_inputs:
+  smoke_report: control/audits/source_wave/ia_metadata_provider_wiring_and_smoke_v0/ia_metadata_provider_smoke_report.json
+  smoke_closeout: control/audits/source_wave/ia_metadata_provider_wiring_and_smoke_v0/authority_closeout.json
+acceptance:
+  - Build a local source-observation cache delta from the IA metadata smoke report without network access.
+  - Validate strict safety flags for no downloads, no file fetch, no Wayback replay, no public fanout, no reviewed/master mutation, and no public-index mutation.
+  - Produce generated local delta outputs only under the governed .eureka source-wave path if repo ignore policy permits generated artifacts.
+  - Produce tracked audit summary under control/audits/source_wave/.
+  - Do not mutate reviewed/master truth, public indexes, public exposure posture, or license posture.
+proof_level_required: L1

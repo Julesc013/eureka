@@ -2,11 +2,19 @@
 
 ## PHASE
 
-UNSPECIFIED - IA-METADATA-PROVIDER-WIRING-AND-SMOKE-00
+SOURCE_WAVE - IA-SOURCE-OBSERVATION-CACHE-DELTA-00
 
 ## GOAL
 
-IA-METADATA-PROVIDER-WIRING-AND-SMOKE-00
+Materialize the completed IA metadata smoke output into a governed local
+source-observation cache delta that can be replayed, audited, diffed, and later
+used by evidence, candidate-index, review, snapshot, and local autonomous
+foundry tasks.
+
+This is not public launch, public exposure, broad Archive.org crawling, a
+downloader, Wayback replay, live public source fanout, reviewed/master-index
+mutation, public-index mutation, or source/provider expansion beyond the IA
+metadata smoke path.
 
 ## WHY
 
@@ -16,6 +24,9 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 - `AGENTS.md`
 - `.aide/queue/index.yaml`
+- `.aide/queue/IA-SOURCE-OBSERVATION-CACHE-DELTA-00/task.yaml`
+- `control/audits/source_wave/ia_metadata_provider_wiring_and_smoke_v0/authority_closeout.json`
+- `control/audits/source_wave/ia_metadata_provider_wiring_and_smoke_v0/ia_metadata_provider_smoke_report.json`
 - `.aide/memory/project-state.md`
 - `.aide/memory/decisions.md`
 - `.aide/memory/open-risks.md`
@@ -42,18 +53,15 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 ## ALLOWED_PATHS
 
-- `.aide/**`
-- `AGENTS.md`
 - `docs/operations/**`
-- `docs/reference/**`
-- `control/inventory/**`
-- `control/audits/**`
-- `control/policies/**`
-- `scripts/local_queue_progress.py`
-- `scripts/validate_*.py`
-- `scripts/check_*.py`
+- `runtime/local/**`
+- `scripts/eureka_source_observation_cache.py`
+- `tools/generators/**`
 - `tests/operations/**`
-- `tests/aide/**`
+- `tests/runtime/**`
+- `control/audits/source_wave/**`
+- `.eureka/source-wave/ia-metadata/source-observation-cache/**`
+- `contracts/source/**` only for a narrow source-observation cache schema
 
 ## FORBIDDEN_PATHS
 
@@ -64,17 +72,25 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 - `.local/**`
 - `.cache/**`
 - `eureka-instance/**`
-- `runtime/**`
-- `contracts/**`
+- `.aide/queue/**` except final status reporting if repo convention requires it
+- `docs/canon/**`
+- `runtime/connectors/**`
+- `runtime/gateway/**`
 - `surfaces/**`
 - `site/**`
 - `native/**`
 - `crates/**`
 - `examples/**`
 - `evals/**`
-- `tests/**` unless this is an AIDE/control-plane test repair
-- `scripts/**` unless this is an AIDE validator/check repair
-- raw provider credentials, API keys, local caches, raw prompt logs, raw responses, and source AIDE repository state
+- `release/**`
+- `archive/**`
+- `LICENSE.md`
+- `LICENSE-SUMMARY.md`
+- `NOTICE.md`
+- Workbench runtime unless an explicitly reviewed follow-up authorizes it
+- public exposure, tunnel, hosting, or launch code
+- source/provider expansion beyond the IA metadata smoke path
+- raw provider credentials, API keys, local caches, raw prompt logs, raw responses, downloaded files, payload bytes, and source AIDE repository state
 
 ## IMPLEMENTATION
 
@@ -87,20 +103,16 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 ## VALIDATION
 
-- `py -3 .aide/scripts/aide_lite.py doctor`
 - `py -3 .aide/scripts/aide_lite.py validate`
-- `py -3 .aide/scripts/aide_lite.py snapshot`
-- `py -3 .aide/scripts/aide_lite.py index`
-- `py -3 .aide/scripts/aide_lite.py context`
-- `py -3 .aide/scripts/aide_lite.py pack --task "AIDE-EVAL-GREEN-01"`
-- `py -3 .aide/scripts/aide_lite.py test`
-- `py -3 .aide/scripts/aide_lite.py selftest`
-- `py -3 .aide/scripts/aide_lite.py verify`
-- `py -3 .aide/scripts/aide_lite.py review-pack`
-- `py -3 .aide/scripts/aide_lite.py eval run`
+- `python scripts/eureka_source_observation_cache.py build-delta --source ia_metadata --smoke-report control/audits/source_wave/ia_metadata_provider_wiring_and_smoke_v0/ia_metadata_provider_smoke_report.json --out .eureka/source-wave/ia-metadata/source-observation-cache/latest`
+- `python scripts/eureka_source_observation_cache.py validate --delta .eureka/source-wave/ia-metadata/source-observation-cache/latest/source_observation_delta_manifest.json --strict`
+- `python scripts/eureka_source_observation_cache.py status --delta .eureka/source-wave/ia-metadata/source-observation-cache/latest/source_observation_delta_manifest.json`
+- `python -m unittest tests.operations.test_ia_source_observation_cache_delta`
 - `python scripts/check_architecture_boundaries.py`
 - `python scripts/check_generated_artifact_cleanliness.py --check --json`
-- `python -m unittest discover -s tests -t .`
+- `python scripts/validate_public_alpha_readonly.py`
+- `python scripts/validate_snapshot_relay.py`
+- `python scripts/eureka_test_select.py --changed --failed-first --json` if available and relevant
 - `git diff --check`
 
 ## COMMITS
@@ -120,16 +132,19 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 ## NON_GOALS
 
-- No Eureka product behavior change.
-- No source probes, extraction, model/provider calls, deployment, production-readiness claim, public-launch claim, main promotion, force-push, history rewrite, SYN implementation, or F0 implementation.
-- No Gateway, provider calls, live model routing, local model setup, exact tokenizer, provider billing ledger, Runtime, Service, Commander, Mobile, MCP/A2A, UI, host/app implementation, or autonomous loop unless a future reviewed queue item explicitly authorizes it.
+- No public launch, public exposure, tunnel/provider work, deployment, production-readiness claim, public-launch claim, main promotion, force-push, or history rewrite.
+- No downloads, file fetches, Wayback replay, broad IA crawling, live provider call during cache-delta build, or public live source fanout.
+- No reviewed/master truth mutation, public-index mutation, rights clearance claim, malware/binary safety claim, or license posture change.
+- No source/provider expansion beyond the completed IA metadata smoke path.
 
 ## ACCEPTANCE
 
-- Task-specific acceptance criteria are met.
-- Validation is run and recorded.
-- Evidence is written.
-- No secrets, raw prompt logs, local caches, or `.aide.local` contents are committed.
+- Source observation cache delta builds from the completed IA smoke report.
+- Strict delta validation passes and status command reports deterministic counts.
+- Tracked audit summary exists under `control/audits/source_wave/`.
+- No network, downloads, file fetch, Wayback replay, public fanout, reviewed/master mutation, or public-index mutation occurs.
+- Validation is run and recorded; full unittest discovery is not claimed unless separately authorized.
+- No secrets, raw prompt logs, local caches, downloaded payloads, or `.aide.local` contents are committed.
 
 ## OUTPUT_SCHEMA
 
@@ -139,8 +154,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4800
-- approx_tokens: 1200
+- chars: 6655
+- approx_tokens: 1664
 - budget_status: PASS
 - warnings:
   - none

@@ -1,0 +1,28 @@
+{
+  "schema_version": "eureka.source_wave.authority_closeout.v0",
+  "generated_at": "2026-06-18T03:45:46.5364723+10:00",
+  "task_closed": "IA-METADATA-PROVIDER-WIRING-AND-SMOKE-00",
+  "implementation_commit": "4c1fba15",
+  "audit_readme_commit": "1860ffaa",
+  "input_smoke_report": "control/audits/source_wave/ia_metadata_provider_wiring_and_smoke_v0/ia_metadata_provider_smoke_report.json",
+  "input_smoke_report_hash": "sha256:811bbecf07120e6a410ca122020f63296e59b50faa8a0363fb4df743459bf906",
+  "source_observations_preview_count": 56,
+  "evidence_summaries_preview_count": 420,
+  "provisional_candidate_preview_count": 210,
+  "review_preview_count": 210,
+  "candidate_index_delta": "dry_run_only",
+  "reviewed_master_mutation": false,
+  "public_fanout": false,
+  "downloads_file_fetch": false,
+  "wayback_replay": false,
+  "license_posture": "unchanged",
+  "public_alpha_posture": "unchanged",
+  "validation_evidence_available": true,
+  "count_discrepancies": [],
+  "next_recommended_task": "IA-SOURCE-OBSERVATION-CACHE-DELTA-00",
+  "notes": [
+    "Source observations and metadata previews are not reviewed truth.",
+    "Public exposure remains paused.",
+    "No cache delta implementation is included in this closeout."
+  ]
+}

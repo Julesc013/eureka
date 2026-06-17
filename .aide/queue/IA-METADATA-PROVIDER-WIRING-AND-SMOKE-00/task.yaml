@@ -1,6 +1,6 @@
 id: IA-METADATA-PROVIDER-WIRING-AND-SMOKE-00
 title: Wire bounded IA metadata provider fallback smoke
-status: authorized
+status: completed
 purpose: Prove one fixture-backed Internet Archive metadata provider path through the governed resolution-run fallback seam without creating artifact evidence or public truth.
 allowed_scope_summary: Narrow queue authorization, existing fallback/provider seam preflight, fixture-backed IA metadata provider smoke, SurfaceKernel projection, baseline renderer fixtures, focused tests, report package, and external full-discovery rerun handoff.
 gate:
@@ -16,10 +16,25 @@ gate:
   - No downloads, file fetching, Wayback replay, extraction, rights-clearance claim, malware/safety claim, reviewed/public/master index mutation, or public route direct provider call.
 proof_level_required: L1
 recommended_after: SOURCE-SNAPSHOT-FULL-DISCOVERY-INGEST-07
-recommended_next: SOURCE-SNAPSHOT-FULL-DISCOVERY-INGEST-08
+recommended_next: IA-SOURCE-OBSERVATION-CACHE-DELTA-00
 result:
-  status: authorized_for_current_turn
+  status: pass
   queue_authorization: IA-METADATA-PROVIDER-WIRING-AUTHORIZATION-00
+  implementation_commit: 4c1fba15
+  audit_readme_commit: 1860ffaa
+  authority_closeout: control/audits/source_wave/ia_metadata_provider_wiring_and_smoke_v0/authority_closeout.json
+  source_observations_preview_count: 56
+  evidence_summaries_preview_count: 420
+  provisional_candidates_preview_count: 210
+  review_previews_count: 210
+  candidate_index_delta: dry_run_only
+  reviewed_master_mutation: false
+  public_fanout: false
+  downloads_file_fetch: false
+  wayback_replay: false
+  license_posture: unchanged
+  public_alpha_posture: unchanged
+  next_recommended_task: IA-SOURCE-OBSERVATION-CACHE-DELTA-00
   external_artifact_evidence_status: WAITING_FOR_EXTERNAL_ARTIFACT_EVIDENCE
   user_hardware_details_status: WAITING_FOR_USER_HARDWARE_DETAILS
   public_alpha_status: blocked
