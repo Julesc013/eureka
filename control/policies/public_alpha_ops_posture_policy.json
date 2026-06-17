@@ -1,0 +1,118 @@
+{
+  "schema_version": "public_alpha_ops_posture_policy.v0",
+  "policy_id": "public_alpha_ops_posture_policy",
+  "task": "PUBLIC-ALPHA-OPS-POSTURE-00",
+  "status": "active",
+  "scope": "read_only_public_alpha",
+  "public_mode": {
+    "approved_default": "readonly_noauth_after_manual_launch_approval",
+    "accounts_enabled": false,
+    "public_operator_auth_enabled": false,
+    "public_workbench_enabled": false,
+    "public_mutation_enabled": false,
+    "manual_launch_approval_required": true
+  },
+  "rate_limit_posture": {
+    "required": true,
+    "enforcement_location": "public_edge_or_tunnel_provider",
+    "per_ip_limits_required": true,
+    "burst_limits_required": true,
+    "write_rate_limits_required": false,
+    "recommended_initial_limits": {
+      "requests_per_minute_per_ip": 60,
+      "search_requests_per_minute_per_ip": 20,
+      "burst_requests_per_10_seconds_per_ip": 20
+    },
+    "launch_blocked_without_configured_limits": true
+  },
+  "logging_posture": {
+    "raw_query_logging_allowed": false,
+    "operator_token_logging_allowed": false,
+    "private_path_logging_allowed": false,
+    "access_log_allowed": true,
+    "access_log_minimization_required": true,
+    "aggregate_counts_allowed": true,
+    "retention": "short_window_or_provider_default_until_operator_sets_explicit_retention",
+    "redaction_required": true
+  },
+  "privacy_posture": {
+    "accounts_required": false,
+    "public_telemetry_enabled": false,
+    "raw_public_query_retention_allowed": false,
+    "private_data_collection_allowed": false,
+    "location_collection_allowed": false,
+    "browser_state_collection_allowed": false,
+    "privacy_notice_required_before_public_exposure": true
+  },
+  "monitoring_posture": {
+    "health_route_required": true,
+    "status_route_required": true,
+    "manual_smoke_required": true,
+    "uptime_sla_claimed": false,
+    "first_monitoring_window_hours": 72,
+    "minimum_checks": [
+      "/health",
+      "/status",
+      "/api/status",
+      "/search?q=manual%20for%20Sound%20Blaster%20CT1740",
+      "/record/{id}"
+    ]
+  },
+  "restart_posture": {
+    "strategy": "manual_restart_for_alpha",
+    "process_supervisor_required_before_production_claim": true,
+    "public_alpha_can_run_without_uptime_sla": true,
+    "restart_runbook_required": true
+  },
+  "rollback_posture": {
+    "strategy": "disable_public_edge_then_stop_local_public_alpha_server",
+    "one_command_disable_required_for_tunnel_or_proxy": true,
+    "rollback_rehearsal_required_before_launch": true,
+    "data_mutation_rollback_required": false,
+    "reason": "Public alpha is read-only and must not mutate public or master truth."
+  },
+  "exposure_posture": {
+    "recommended_public_method": "reverse_tunnel",
+    "accepted_alternative": "reverse_proxy",
+    "lan_only_allowed_for_lan_test": true,
+    "router_port_forward_discouraged": true,
+    "direct_public_ip_discouraged": true,
+    "tls_or_provider_https_required": true,
+    "public_base_url_required": true,
+    "firewall_review_required": true
+  },
+  "reporting_posture": {
+    "report_issue_or_takedown_channel_required": true,
+    "operator_must_select_channel_before_public_exposure": true,
+    "public_status_wording_required": true,
+    "default_wording": "Read-only public alpha. No downloads, no public mutation, no live source fanout, no production-readiness claim."
+  },
+  "disabled_capabilities": {
+    "downloads": true,
+    "uploads": true,
+    "install_or_emulation": true,
+    "public_live_source_fanout": true,
+    "live_metadata_by_default": true,
+    "model_provider_calls": true,
+    "public_workbench": true,
+    "public_review_or_promotion": true,
+    "public_contribution_mutation": true
+  },
+  "launch_blockers_remaining": [
+    "report_issue_or_takedown_channel_not_selected",
+    "public_exposure_not_configured",
+    "public_base_url_not_selected",
+    "tls_or_provider_https_not_validated",
+    "rate_limits_not_configured_at_edge",
+    "rollback_not_rehearsed_with_selected_exposure_method",
+    "full_discovery_not_current_for_launch",
+    "release_promotion_not_complete",
+    "manual_launch_approval_missing"
+  ],
+  "non_claims": [
+    "This policy does not expose Eureka publicly.",
+    "This policy does not configure a tunnel, reverse proxy, firewall, DNS, TLS, or hosting provider.",
+    "This policy does not run full discovery or release promotion.",
+    "This policy does not claim public launch readiness or production readiness."
+  ]
+}

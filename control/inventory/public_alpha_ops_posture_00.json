@@ -1,0 +1,108 @@
+{
+  "schema_version": "public_alpha_ops_posture.v0",
+  "task": "PUBLIC-ALPHA-OPS-POSTURE-00",
+  "status": "pass_with_warnings",
+  "created_at": "2026-06-17",
+  "head_at_start": "51fb88e41f8667f90b00ed38780cd65e71848eba",
+  "policy": "control/policies/public_alpha_ops_posture_policy.json",
+  "runbook": "docs/operations/PUBLIC_ALPHA_OPS_POSTURE.md",
+  "source_of_truth_checked": [
+    ".aide/context/latest-task-packet.md",
+    ".aide/queue/index.yaml",
+    "docs/runbooks/LOCAL_MACHINE_PUBLIC_EXPOSURE_PLAN.md",
+    "docs/reference/PUBLIC_ALPHA_LAUNCH_GATES.md",
+    "control/policies/public_alpha_observability_policy.json",
+    "control/policies/public_alpha_rate_limit_policy.json",
+    "control/policies/public_alpha_security_policy.json",
+    "control/policies/public_alpha_public_safety_policy.json",
+    "control/policies/public_alpha_manual_approval_policy.json",
+    "control/policies/public_alpha_rollback_rehearsal_policy.json"
+  ],
+  "public_alpha_ops_posture": {
+    "mode": "read_only_public_noauth_after_manual_launch_approval",
+    "workbench_public": false,
+    "public_mutation": false,
+    "downloads": false,
+    "public_live_source_fanout": false,
+    "live_metadata_default": false,
+    "model_provider_calls": false,
+    "production_sla_claimed": false
+  },
+  "decisions": {
+    "auth_or_noauth": "readonly_noauth_selected_for_public_routes_after_manual_launch_approval",
+    "rate_limits": "required_at_public_edge_or_tunnel_provider",
+    "logging": "minimal_redacted_operational_logs_only",
+    "privacy": "no_accounts_no_private_data_no_raw_query_retention_in_committed_artifacts",
+    "monitoring": "health_status_search_record_smoke_for_first_72_hours",
+    "restart": "manual_restart_allowed_for_alpha_no_sla",
+    "rollback": "disable_public_edge_or_tunnel_then_stop_local_server",
+    "report_or_takedown": "operator_channel_required_before_public_exposure"
+  },
+  "recommended_initial_rate_limits": {
+    "requests_per_minute_per_ip": 60,
+    "search_requests_per_minute_per_ip": 20,
+    "burst_requests_per_10_seconds_per_ip": 20
+  },
+  "gate_effect": {
+    "ops_posture_defined": true,
+    "ops_posture_gate_clear": false,
+    "reason_not_clear": [
+      "report_issue_or_takedown_channel_not_selected",
+      "public_exposure_method_not_selected",
+      "public_url_not_selected",
+      "tls_or_provider_https_not_validated",
+      "rate_limits_not_configured_at_selected_edge",
+      "rollback_not_rehearsed_with_selected_exposure_method",
+      "local_machine_public_exposure_report_not_updated_to_consume_this_posture"
+    ],
+    "public_exposure_remains_blocked": true,
+    "public_launch_remains_blocked": true
+  },
+  "next_recommended_task": "LOCAL-MACHINE-PUBLIC-TUNNEL-PLAN-00",
+  "next_task_acceptance_focus": [
+    "select reverse_tunnel or reverse_proxy",
+    "select public report/takedown channel",
+    "select public base URL or planned provider URL",
+    "define TLS/provider HTTPS posture",
+    "define edge rate-limit mechanism",
+    "define disable/rollback command",
+    "decide whether authorized script/runtime wiring is needed for local-machine exposure reports to consume ops posture"
+  ],
+  "validation": {
+    "status": "pass",
+    "full_discovery_required": false,
+    "selected_lanes": [
+      "L0_static_preflight",
+      "L1_focused_unit"
+    ],
+    "commands_passed": [
+      "python -m json.tool control/policies/public_alpha_ops_posture_policy.json",
+      "python -m json.tool control/inventory/public_alpha_ops_posture_00.json",
+      "python scripts/eureka_test_select.py --changed --failed-first --json",
+      "git diff --check",
+      "python scripts/check_architecture_boundaries.py",
+      "python scripts/check_generated_artifact_cleanliness.py --check --json",
+      "python scripts/validate_test_lane_policy.py",
+      "python -m unittest tests.operations.test_test_lane_policy",
+      "python -m unittest tests.operations.test_test_impact_map",
+      "python -m unittest tests.operations.test_test_failure_ledger",
+      "py -3 .aide/scripts/aide_lite.py doctor",
+      "py -3 .aide/scripts/aide_lite.py validate"
+    ],
+    "notes": [
+      "Full discovery was not selected for this docs/control posture lane.",
+      "This task defines ops posture but does not configure public exposure or clear launch gates."
+    ]
+  },
+  "non_claims": [
+    "no public exposure",
+    "no tunnel or reverse proxy configured",
+    "no DNS or TLS configured",
+    "no deployment",
+    "no public launch",
+    "no production readiness",
+    "no release promotion",
+    "no full discovery execution",
+    "no runtime behavior change"
+  ]
+}
