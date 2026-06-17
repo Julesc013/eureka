@@ -1,0 +1,72 @@
+schema_version: aide.task.v0
+id: IA-CANDIDATE-INDEX-REFRESH-00
+title: Refresh IA candidate-index delta from source-observation cache
+status: authorized
+task_class: source_wave_local_index_delta
+recommended_after: IA-SOURCE-OBSERVATION-CACHE-DELTA-00
+recommended_next: IA-EVIDENCE-LEDGER-SUMMARY-00
+purpose: Consume the governed IA source-observation cache delta and produce a local candidate-index delta or dry-run preview for later evidence, review, snapshot, and autonomous foundry tasks.
+authority_note: This task is authorized for the next implementation turn only after IA-CANDIDATE-INDEX-REFRESH-AUTHORITY-00 advances queue authority. Public exposure remains paused.
+allowed_scope:
+  - runtime/local/**
+  - scripts/eureka_candidate_index_refresh.py
+  - scripts/eureka_index.py
+  - tools/generators/**
+  - tests/operations/**
+  - tests/runtime/**
+  - docs/operations/**
+  - control/audits/source_wave/**
+  - .eureka/source-wave/ia-metadata/candidate-index/**
+  - contracts/source/**
+  - contracts/index/**
+forbidden_scope:
+  - docs/canon/**
+  - runtime/connectors/**
+  - runtime/gateway/**
+  - surfaces/**
+  - site/**
+  - native/**
+  - crates/**
+  - examples/**
+  - evals/**
+  - release/**
+  - archive/**
+  - LICENSE.md
+  - LICENSE-SUMMARY.md
+  - NOTICE.md
+  - Workbench runtime unless an explicitly reviewed follow-up authorizes it
+  - public exposure, tunnel, hosting, or launch code
+  - source/provider expansion beyond the existing IA source-observation cache delta
+  - reviewed/master index mutation paths
+  - public-index mutation paths
+  - .aide/queue/** except final status reporting if repo convention requires it
+boundaries:
+  public_launch: false
+  public_exposure: false
+  public_workbench_exposure: false
+  downloads: false
+  file_fetch: false
+  wayback_replay: false
+  broad_ia_crawling: false
+  provider_or_network_call_during_candidate_refresh: false
+  reviewed_master_mutation: false
+  public_index_mutation: false
+  evidence_ledger_materialization: false
+  candidate_index_delta_or_dry_run_only: true
+  review_remains_truth_boundary: true
+  license_posture_changed: false
+  production_readiness_claimed: false
+  rights_clearance_claimed: false
+  malware_or_binary_safety_claimed: false
+evidence_inputs:
+  source_observation_cache_report: control/audits/source_wave/ia_source_observation_cache_delta_v0/source_observation_cache_delta_report.json
+  source_observation_cache_closeout: control/audits/source_wave/ia_source_observation_cache_delta_v0/authority_closeout.json
+  source_observation_delta_manifest: .eureka/source-wave/ia-metadata/source-observation-cache/latest/source_observation_delta_manifest.json
+acceptance:
+  - Consume the governed IA source-observation cache delta without network or provider calls.
+  - Produce a candidate-index delta or dry-run preview under the governed .eureka source-wave path if repo ignore policy permits generated artifacts.
+  - Produce tracked audit summary under control/audits/source_wave/.
+  - Keep candidate records provisional and unreviewed; do not mutate reviewed/master truth.
+  - Do not mutate public indexes, evidence ledger state, public exposure posture, or license posture.
+  - Enforce no downloads, no file fetch, no Wayback replay, no public fanout, no reviewed/master mutation, and no public-index mutation.
+proof_level_required: L1

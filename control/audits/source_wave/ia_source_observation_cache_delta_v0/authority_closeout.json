@@ -1,0 +1,40 @@
+{
+  "schema_version": "eureka.source_wave.source_observation_cache_delta_authority_closeout.v0",
+  "generated_at": "2026-06-18T04:45:15.3062624+10:00",
+  "task_closed": "IA-SOURCE-OBSERVATION-CACHE-DELTA-00",
+  "status": "PASS_WITH_WARNINGS",
+  "implementation_commit": "92b9353e84e1f8723c1b5d00b4c3f1168e9af06d",
+  "current_head_at_authority_closeout": "99818b8fb5ac25f9bccba989e00115ef7af82393",
+  "input_smoke_report": "control/audits/source_wave/ia_metadata_provider_wiring_and_smoke_v0/ia_metadata_provider_smoke_report.json",
+  "input_smoke_report_hash": "sha256:811bbecf07120e6a410ca122020f63296e59b50faa8a0363fb4df743459bf906",
+  "generated_cache_delta_path": ".eureka/source-wave/ia-metadata/source-observation-cache/latest/",
+  "generated_manifest_path": ".eureka/source-wave/ia-metadata/source-observation-cache/latest/source_observation_delta_manifest.json",
+  "delta_id": "source-observation-delta:ia_metadata:441fe581c6a78a797365",
+  "observations_written": 56,
+  "query_count": 7,
+  "workunit_count": 70,
+  "provider_modes": [
+    "fixture",
+    "live"
+  ],
+  "previous_delta": "none / first_run_no_previous_delta",
+  "unsafe_record_count": 0,
+  "redacted_error_count": 0,
+  "reviewed_master_mutation": false,
+  "public_index_mutation": false,
+  "candidate_index_mutation": false,
+  "evidence_ledger_mutation": false,
+  "public_fanout": false,
+  "downloads_file_fetch": false,
+  "wayback_replay": false,
+  "license_posture": "unchanged",
+  "public_alpha_posture": "unchanged",
+  "validation_evidence_available": true,
+  "count_discrepancies": [],
+  "next_recommended_task": "IA-CANDIDATE-INDEX-REFRESH-00",
+  "notes": [
+    "Source observations are not reviewed truth.",
+    "Candidate-index refresh is not implemented by this closeout.",
+    "Public exposure remains paused."
+  ]
+}

@@ -1,12 +1,12 @@
 schema_version: aide.task.v0
 id: IA-SOURCE-OBSERVATION-CACHE-DELTA-00
 title: Materialize IA metadata smoke source-observation cache delta
-status: authorized
+status: completed
 task_class: source_wave_local_index_delta
 recommended_after: IA-METADATA-PROVIDER-WIRING-AND-SMOKE-00
 recommended_next: IA-CANDIDATE-INDEX-REFRESH-00
 purpose: Materialize the completed IA metadata smoke output into a governed local source-observation cache delta that can be replayed, audited, diffed, and later consumed by candidate-index, evidence, review, snapshot, and local autonomous foundry tasks.
-authority_note: This task is authorized for the next implementation turn only after IA-SOURCE-OBSERVATION-CACHE-DELTA-AUTHORITY-00 advances queue authority. Public exposure remains paused.
+authority_note: This task was authorized by IA-SOURCE-OBSERVATION-CACHE-DELTA-AUTHORITY-00 and completed with a governed local source-observation cache delta. Public exposure remains paused.
 allowed_scope:
   - runtime/local/**
   - scripts/eureka_source_observation_cache.py
@@ -61,3 +61,30 @@ acceptance:
   - Produce tracked audit summary under control/audits/source_wave/.
   - Do not mutate reviewed/master truth, public indexes, public exposure posture, or license posture.
 proof_level_required: L1
+result:
+  status: pass_with_warnings
+  implementation_commit: 92b9353e84e1f8723c1b5d00b4c3f1168e9af06d
+  current_head_after_main_sync: 99818b8fb5ac25f9bccba989e00115ef7af82393
+  audit_report: control/audits/source_wave/ia_source_observation_cache_delta_v0/source_observation_cache_delta_report.json
+  authority_closeout: control/audits/source_wave/ia_source_observation_cache_delta_v0/authority_closeout.json
+  source_observations_written: 56
+  query_count: 7
+  provider_modes_represented:
+    - fixture
+    - live
+  input_smoke_report_hash: sha256:811bbecf07120e6a410ca122020f63296e59b50faa8a0363fb4df743459bf906
+  previous_delta: first_run_no_previous_delta
+  unsafe_record_count: 0
+  redacted_error_count: 0
+  reviewed_master_mutation: false
+  public_index_mutation: false
+  candidate_index_mutation: false
+  evidence_ledger_mutation: false
+  public_fanout: false
+  downloads_file_fetch: false
+  wayback_replay: false
+  license_posture: unchanged
+  public_alpha_posture: unchanged
+  next_recommended_task: IA-CANDIDATE-INDEX-REFRESH-00
+  external_artifact_evidence_status: WAITING_FOR_EXTERNAL_ARTIFACT_EVIDENCE
+  user_hardware_details_status: WAITING_FOR_USER_HARDWARE_DETAILS
