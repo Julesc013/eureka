@@ -7,8 +7,8 @@ auditability, boundary clarity, and honest maturity labels.
 
 ## Before Opening A Change
 
-- Read [README.md](README.md), [AGENTS.md](AGENTS.md), and the relevant docs
-  under [docs/](docs/README.md).
+- Read [README.md](README.md), [docs/STATUS.md](docs/STATUS.md),
+  [AGENTS.md](AGENTS.md), and the relevant docs under [docs/](docs/README.md).
 - Keep changes narrowly scoped to the affected control, contract, runtime, or
   surface boundary.
 - Use governed contracts and packet shapes rather than hidden coupling.
