@@ -1,0 +1,63 @@
+{
+  "schema_version": "eureka.dev_to_main_promotion_build_report.v0",
+  "task_id": "DEV-TO-MAIN-PROMOTION-READINESS-AND-SYNC-00",
+  "generated_at": "2026-06-17T15:09:54Z",
+  "status": "PENDING_POST_PROMOTION_VERIFICATION",
+  "branch_before": "dev",
+  "dev_commit_before_reports": "f523e3eccafcf2ccf02493d93e9ebee5ebcb3f78",
+  "main_commit_before": "339b61d14d01e923fd87931523d849e4f26cf2ec",
+  "branch_compare_before": {
+    "origin_main_only": 0,
+    "origin_dev_only": 131,
+    "diverged": false
+  },
+  "promotion_occurred": false,
+  "merge_or_push_command_used": "",
+  "main_commit_after": "",
+  "dev_commit_after": "",
+  "branch_compare_after": null,
+  "validations_run": [
+    "python -m unittest tests.docs.test_public_docs -v",
+    "python scripts/check_architecture_boundaries.py",
+    "git diff --check",
+    "python scripts/check_generated_artifact_cleanliness.py --check --json",
+    "python scripts/validate_public_alpha_readonly.py",
+    "python scripts/validate_snapshot_relay.py",
+    "python scripts/validate_public_alpha_hosting_readiness.py",
+    "python scripts/validate_public_alpha_launch_candidate.py",
+    "python scripts/public_alpha_smoke.py --json",
+    "python scripts/eureka_public_alpha_ops_posture.py validate --plan .eureka/ops/public-alpha/latest/ops_posture.json --strict",
+    "python scripts/eureka_local_machine_public_exposure.py validate --plan .eureka/public-alpha/exposure/latest/exposure_plan.json --strict",
+    "python scripts/eureka_local_machine_public_exposure.py validate-choice --choice .eureka/public-alpha/exposure/operator-choice/latest/operator_choice.json --strict",
+    "python scripts/eureka_search.py \"Windows 7 apps\" --format json --limit 2",
+    "python scripts/run_eureka_local.py --host 127.0.0.1 --port 8765 --public-alpha --staging-bundle .eureka/staging/public-alpha --smoke",
+    "py -3 .aide/scripts/aide_lite.py doctor",
+    "py -3 .aide/scripts/aide_lite.py validate"
+  ],
+  "validations_skipped": [
+    "full unittest discovery"
+  ],
+  "public_posture": {
+    "public_hosted_service_launched": false,
+    "production_readiness_claimed": false,
+    "public_exposure_enabled": false,
+    "public_live_source_fanout_enabled": false,
+    "public_mutation_enabled": false,
+    "public_workbench_exposed": false,
+    "downloads_uploads_enabled": false,
+    "live_metadata_public_mode_enabled": false,
+    "launch_approval_present": false
+  },
+  "license_posture": "LICENSE_UNRESOLVED",
+  "remaining_blockers": [
+    "provider/public URL decision",
+    "HTTPS/TLS posture",
+    "actual tunnel/proxy rehearsal",
+    "full discovery not claimed",
+    "release promotion report",
+    "manual launch approval",
+    "final public launch",
+    "LICENSE_UNRESOLVED"
+  ],
+  "next_recommended_task": "LOCAL-MACHINE-PUBLIC-TUNNEL-PROVIDER-DECISION-00"
+}

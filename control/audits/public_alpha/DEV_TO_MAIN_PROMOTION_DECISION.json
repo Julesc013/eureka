@@ -1,0 +1,36 @@
+{
+  "schema_version": "eureka.dev_to_main_promotion_decision.v0",
+  "task_id": "DEV-TO-MAIN-PROMOTION-READINESS-AND-SYNC-00",
+  "generated_at": "2026-06-17T15:09:54Z",
+  "selected_decision": "PROMOTE_DEV_TO_MAIN",
+  "promotion_performed_at_decision_write": false,
+  "promotion_method": "direct_fast_forward_branch_sync",
+  "commands_to_execute": [
+    "git push origin dev",
+    "git push origin dev:main"
+  ],
+  "rationale": "origin/main has no unique commits, origin/dev is ahead by 131 commits, focused validators passed, public docs preserve non-claims, and current public-alpha posture remains read-only and not launched.",
+  "gates": {
+    "worktree_clean": true,
+    "origin_dev_current": true,
+    "main_only_commits_absent": true,
+    "unsafe_divergence_absent": true,
+    "focused_validations_passed": true,
+    "public_docs_honest": true,
+    "generated_artifact_cleanliness_passed": true,
+    "public_exposure_claimed": false,
+    "unsafe_runtime_source_provider_change_detected": false,
+    "license_status_explicit": true
+  },
+  "expected_final_branch_relationship": "origin/main equals origin/dev",
+  "remaining_blockers": [
+    "provider/public URL decision",
+    "HTTPS/TLS posture",
+    "actual tunnel/proxy rehearsal",
+    "full discovery not claimed",
+    "release promotion report",
+    "manual launch approval",
+    "final public launch",
+    "LICENSE_UNRESOLVED"
+  ]
+}

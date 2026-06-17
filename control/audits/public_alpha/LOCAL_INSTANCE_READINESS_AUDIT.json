@@ -1,0 +1,111 @@
+{
+  "schema_version": "eureka.local_instance_readiness_audit.v0",
+  "task_id": "DEV-TO-MAIN-PROMOTION-READINESS-AND-SYNC-00",
+  "generated_at": "2026-06-17T15:09:54Z",
+  "status": "PASS_WITH_WARNINGS",
+  "fully_functional_local_instance_status": "PASS_WITH_WARNINGS",
+  "commands": [
+    {
+      "command": "python scripts/eureka_search.py --help",
+      "result": "PASS",
+      "notes": "CLI/local search command exists."
+    },
+    {
+      "command": "python scripts/eureka_search.py \"Windows 7 apps\" --format json --limit 2",
+      "result": "PASS",
+      "notes": "Fixture-backed local search returned candidate JSON with no network, mutation, provider call, live metadata, or public live fanout."
+    },
+    {
+      "command": "python scripts/run_eureka_local.py --help",
+      "result": "PASS",
+      "notes": "Local public-alpha server command exists and supports --public-alpha, --staging-bundle, and --smoke."
+    },
+    {
+      "command": "python scripts/run_eureka_local.py --host 127.0.0.1 --port 8765 --public-alpha --staging-bundle .eureka/staging/public-alpha --smoke",
+      "result": "PASS",
+      "notes": "Local public-alpha staging-bundle smoke exited cleanly without leaving a server running; read_only true, public_mutation false, live_metadata false, workbench_exposed false."
+    },
+    {
+      "command": "python scripts/validate_public_alpha_readonly.py",
+      "result": "PASS",
+      "notes": "public alpha read-only validation: valid."
+    },
+    {
+      "command": "python scripts/validate_snapshot_relay.py",
+      "result": "PASS",
+      "notes": "snapshot relay validation: pass."
+    },
+    {
+      "command": "python scripts/validate_public_alpha_hosting_readiness.py",
+      "result": "PASS",
+      "notes": "public alpha hosting readiness validation: valid."
+    },
+    {
+      "command": "python scripts/validate_public_alpha_launch_candidate.py",
+      "result": "PASS",
+      "notes": "public alpha launch candidate validation: pass."
+    },
+    {
+      "command": "python scripts/public_alpha_smoke.py --json",
+      "result": "PASS",
+      "notes": "18 checks passed; 0 failed."
+    },
+    {
+      "command": "python -m unittest tests.docs.test_public_docs -v",
+      "result": "PASS",
+      "notes": "4 docs guardrail tests passed."
+    },
+    {
+      "command": "python scripts/check_architecture_boundaries.py",
+      "result": "PASS",
+      "notes": "Checked 934 Python files; no architecture-boundary violations."
+    },
+    {
+      "command": "python scripts/check_generated_artifact_cleanliness.py --check --json",
+      "result": "PASS",
+      "notes": "No generated drift before promotion reports were added."
+    },
+    {
+      "command": "python scripts/eureka_public_alpha_ops_posture.py validate --plan .eureka/ops/public-alpha/latest/ops_posture.json --strict",
+      "result": "PASS",
+      "notes": "READY_FOR_EXPOSURE_PLAN; launch blockers remain."
+    },
+    {
+      "command": "python scripts/eureka_local_machine_public_exposure.py validate --plan .eureka/public-alpha/exposure/latest/exposure_plan.json --strict",
+      "result": "PASS",
+      "notes": "READY_FOR_OPERATOR_URL; blockers remain."
+    },
+    {
+      "command": "python scripts/eureka_local_machine_public_exposure.py validate-choice --choice .eureka/public-alpha/exposure/operator-choice/latest/operator_choice.json --strict",
+      "result": "PASS",
+      "notes": "BLOCKED_ON_OPERATOR_PROVIDER_URL; safe blocked state."
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py doctor",
+      "result": "PASS",
+      "notes": "AIDE Lite doctor passed."
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py validate",
+      "result": "PASS",
+      "notes": "AIDE Lite validate passed."
+    }
+  ],
+  "known_routes_or_commands": [
+    "python scripts/eureka_search.py \"Windows 7 apps\" --format json --limit 2",
+    "python scripts/run_eureka_local.py --host 127.0.0.1 --port 8765 --public-alpha --staging-bundle .eureka/staging/public-alpha --smoke",
+    "/api/status",
+    "/api/search?q=synthetic",
+    "/api/v1/status",
+    "/api/v1/search?q=windows+7+apps",
+    "/record/{id}"
+  ],
+  "known_remaining_local_gaps": [
+    "Provider/public URL decision is missing.",
+    "Provider HTTPS/TLS posture is unvalidated.",
+    "Actual tunnel/proxy rehearsal has not run.",
+    "Full discovery is not claimed in this task.",
+    "License remains unresolved for open-source reuse posture."
+  ],
+  "full_discovery_status": "not_claimed"
+}

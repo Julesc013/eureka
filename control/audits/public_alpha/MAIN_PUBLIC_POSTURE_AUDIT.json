@@ -1,0 +1,46 @@
+{
+  "schema_version": "eureka.main_public_posture_audit.v0",
+  "task_id": "DEV-TO-MAIN-PROMOTION-READINESS-AND-SYNC-00",
+  "generated_at": "2026-06-17T15:09:54Z",
+  "status": "PASS_WITH_WARNINGS",
+  "license_posture": "LICENSE_UNRESOLVED",
+  "checks": {
+    "readme_local_first_reference_backend": "pass",
+    "readme_not_deployed_not_publicly_launched_not_production_ready": "pass",
+    "docs_status_carries_volatile_current_state": "pass",
+    "docs_readme_routes_readers_by_purpose": "pass",
+    "contributing_points_to_status": "pass",
+    "public_alpha_read_only": "pass",
+    "public_live_source_fanout_disabled": "pass",
+    "public_mutation_disabled": "pass",
+    "workbench_not_public_mutation_ui": "pass",
+    "downloads_uploads_install_emulation_marketplace_not_claimed": "pass",
+    "ai_model_provider_authority_not_claimed": "pass",
+    "full_discovery_not_claimed_for_this_task": "pass",
+    "launch_candidate_dry_run_not_launch": "pass",
+    "provider_public_url_tunnel_unresolved": "pass",
+    "license_status_explicit": "pass"
+  },
+  "public_posture": {
+    "launched": false,
+    "production_readiness_claimed": false,
+    "public_exposure_enabled": false,
+    "public_mutation_enabled": false,
+    "workbench_public": false,
+    "live_metadata_public_mode": false,
+    "downloads_uploads_enabled": false,
+    "ai_model_authority_claimed": false,
+    "license": "LICENSE_UNRESOLVED"
+  },
+  "evidence": {
+    "readme": "README states Eureka is a local-first Python reference backend/prototype, not deployed, not publicly launched, and not production-ready.",
+    "status": "docs/STATUS.md says Eureka has not been deployed, has not launched publicly, and does not claim production readiness.",
+    "license": "No root LICENSE file is present; README and CONTRIBUTING warn not to assume open-source license terms.",
+    "operator_choice": "Generated operator-choice artifact remains BLOCKED_ON_OPERATOR_PROVIDER_URL."
+  },
+  "warnings": [
+    "LICENSE_UNRESOLVED",
+    "Provider/public URL and HTTPS posture remain unresolved.",
+    "Full discovery is not claimed in this task."
+  ]
+}
