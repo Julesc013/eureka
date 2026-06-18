@@ -1,0 +1,226 @@
+{
+  "schema_version": "eureka.source_wave.review_ia_candidates_batch_authority_decision.v0",
+  "generated_at": "2026-06-18T15:26:17.1475525+10:00",
+  "task_id": "REVIEW-IA-CANDIDATES-BATCH-AUTHORITY-00",
+  "status": "PASS_WITH_WARNINGS",
+  "branch": "dev",
+  "head_before": "c9d9a1f77b2cd8f805f75612612555f2009bf600",
+  "origin_dev_before": "c9d9a1f77b2cd8f805f75612612555f2009bf600",
+  "origin_dev_sync_before": "0 0",
+  "worktree_before": "clean",
+  "previous_recommended_task": "IA-EVIDENCE-LEDGER-SUMMARY-00",
+  "new_recommended_task": "REVIEW-IA-CANDIDATES-BATCH-00",
+  "evidence_summary_task_closed": true,
+  "evidence_summary_closeout": "control/audits/source_wave/ia_evidence_ledger_summary_v0/authority_closeout.json",
+  "review_task_packet": ".aide/queue/REVIEW-IA-CANDIDATES-BATCH-00/task.yaml",
+  "reason_for_advancing_queue": "IA evidence-summary delta is complete and the automated source/evidence pipeline has reached the human review boundary.",
+  "path_blocker_fixed": true,
+  "review_stage_invariant": "Automation may prepare review items and templates, but human/operator review remains required for substantive decisions.",
+  "automation_permissions": [
+    "load candidate and evidence-summary deltas",
+    "construct deterministic review items",
+    "rank or group items for operator convenience",
+    "validate provenance, missing fields, orphan refs, and unsupported claims",
+    "produce review batch packet",
+    "produce blank decision templates"
+  ],
+  "operator_only_decisions": [
+    "promote",
+    "reject",
+    "supersede",
+    "mark_near_miss",
+    "mark_need",
+    "mark_policy_blocked",
+    "request_more_evidence"
+  ],
+  "prepare_mode": {
+    "allowed": true,
+    "autonomous": true,
+    "review_decisions_written": false,
+    "truth_changes": false
+  },
+  "record_decisions_mode": {
+    "allowed": true,
+    "requires_explicit_operator_decision_file": true,
+    "requires_actor": true,
+    "requires_item_level_decisions": true,
+    "requires_reference_or_rationale": true,
+    "promotion_requires_local_only_confirmed": true,
+    "review_ledger_decisions_only": true,
+    "reviewed_record_creation": false,
+    "index_rebuild": false,
+    "public_projection": false
+  },
+  "supported_decisions": [
+    "promote",
+    "reject",
+    "supersede",
+    "mark_near_miss",
+    "mark_need",
+    "mark_policy_blocked",
+    "request_more_evidence"
+  ],
+  "operator_decision_input_shape": {
+    "schema_version": "eureka.ia_candidate_review_decisions.v0",
+    "batch_id": "...",
+    "actor": "operator-name",
+    "generated_at": "...",
+    "decisions": [
+      {
+        "review_item_id": "...",
+        "candidate_id": "...",
+        "decision": "promote|reject|supersede|mark_near_miss|mark_need|mark_policy_blocked|request_more_evidence",
+        "reason": "...",
+        "evidence_refs": [
+          "..."
+        ],
+        "source_observation_refs": [
+          "..."
+        ],
+        "absence_refs": [],
+        "fallback_refs": [],
+        "supersedes_review_item_id": null,
+        "local_only_confirmed": false
+      }
+    ]
+  },
+  "operator_decision_rules": {
+    "actor_mandatory": true,
+    "item_decision_explicit": true,
+    "reason_required_for": [
+      "reject",
+      "supersede",
+      "mark_policy_blocked",
+      "request_more_evidence"
+    ],
+    "supersede_requires_supersedes_review_item_id": true,
+    "reference_or_rationale_required": true,
+    "promote_requires_local_only_confirmed": true,
+    "missing_decisions": "pending_not_inferred",
+    "subset_decision_files_allowed": true
+  },
+  "allowed_implementation_paths_for_next_task": [
+    "runtime/local/**",
+    "runtime/review/**",
+    "scripts/eureka_ia_candidate_review.py",
+    "scripts/eureka_review.py if using existing review wrapper behavior",
+    "tools/generators/**",
+    "tests/operations/**",
+    "tests/runtime/**",
+    "docs/operations/**",
+    "control/audits/source_wave/**",
+    ".eureka/source-wave/ia-metadata/review-batch/**",
+    "contracts/review/** only if using existing review shapes",
+    "contracts/evidence/** only if using existing evidence shapes"
+  ],
+  "protected_paths": [
+    "reviewed-record materialization paths unless separately authorized",
+    "reviewed/master-index refresh paths",
+    "public-index paths",
+    "snapshot/public projection paths",
+    "source/provider expansion",
+    "public exposure/launch code",
+    "Workbench runtime unless separately authorized",
+    "release/**",
+    "archive/**",
+    "LICENSE.md",
+    "LICENSE-SUMMARY.md",
+    "NOTICE.md"
+  ],
+  "public_exposure_paused": true,
+  "license_posture": "unchanged",
+  "reviewed_master_mutation_forbidden": true,
+  "public_index_mutation_forbidden": true,
+  "review_implementation_performed": false,
+  "automatic_decisions": false,
+  "automatic_promotion": false,
+  "reviewed_record_creation": false,
+  "reviewed_master_mutation": false,
+  "public_index_mutation": false,
+  "network_provider_calls": false,
+  "downloads_file_fetch": false,
+  "wayback_replay": false,
+  "validation": [
+    {
+      "command": "git fetch origin",
+      "status": "PASS"
+    },
+    {
+      "command": "git status --short --branch",
+      "status": "PASS",
+      "summary": "clean and synced before authority edits"
+    },
+    {
+      "command": "git rev-list --left-right --count origin/dev...HEAD",
+      "status": "PASS",
+      "summary": "0 0 before authority edits"
+    },
+    {
+      "command": "python scripts/check_git_task_state.py --mode start-task --task-id REVIEW-IA-CANDIDATES-BATCH-AUTHORITY-00",
+      "status": "WARN",
+      "summary": "branch name does not include task ID before edits; all other guard checks passed"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py pack --task \"REVIEW-IA-CANDIDATES-BATCH-00\"",
+      "status": "PASS_WITH_MANUAL_NARROWING",
+      "summary": "pack wrote a generic AIDE/control packet, then latest-task-packet.md was manually narrowed to match review task authority"
+    },
+    {
+      "command": "python scripts/check_git_task_state.py --mode start-task --task-id REVIEW-IA-CANDIDATES-BATCH-00",
+      "status": "PENDING_POST_COMMIT_RERUN",
+      "summary": "pre-commit run found the current authority diff dirty; queue recommendation and packet exist"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py doctor",
+      "status": "PASS"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py validate",
+      "status": "PASS_WITH_WARNINGS",
+      "summary": "latest task packet over target token count, but validation passed"
+    },
+    {
+      "command": "python -m unittest tests.operations.test_ia_evidence_ledger_summary -v",
+      "status": "PASS",
+      "summary": "21 tests passed"
+    },
+    {
+      "command": "python -m unittest tests.runtime.test_review_ledger -v",
+      "status": "PASS",
+      "summary": "6 tests passed"
+    },
+    {
+      "command": "python scripts/check_architecture_boundaries.py",
+      "status": "PASS"
+    },
+    {
+      "command": "python scripts/check_generated_artifact_cleanliness.py --check --json",
+      "status": "PENDING_POST_COMMIT_RERUN",
+      "summary": "pre-commit run failed only because new control/audits authority files were uncommitted"
+    },
+    {
+      "command": "python scripts/validate_public_alpha_readonly.py",
+      "status": "PASS"
+    },
+    {
+      "command": "python scripts/validate_snapshot_relay.py",
+      "status": "PASS"
+    },
+    {
+      "command": "python scripts/eureka_test_select.py --changed --failed-first --json",
+      "status": "PASS",
+      "summary": "selected static preflight only; full discovery not required"
+    },
+    {
+      "command": "git diff --check",
+      "status": "PASS"
+    }
+  ],
+  "full_unittest_discovery_claimed": false,
+  "remaining_blockers": [
+    "WAITING_FOR_EXTERNAL_ARTIFACT_EVIDENCE",
+    "WAITING_FOR_USER_HARDWARE_DETAILS",
+    "Public launch remains paused pending separate operator decisions."
+  ],
+  "recommended_next_task": "REVIEW-IA-CANDIDATES-BATCH-00"
+}

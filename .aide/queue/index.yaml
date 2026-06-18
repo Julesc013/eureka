@@ -1,4 +1,4 @@
-current_recommended_task: IA-EVIDENCE-LEDGER-SUMMARY-00 - Summarize IA source-observation and candidate-index refs into a governed evidence ledger delta; public exposure remains paused; external artifact evidence and hardware details remain waiting
+current_recommended_task: REVIEW-IA-CANDIDATES-BATCH-00 - Prepare governed IA candidate/evidence review batch material; operator decisions are explicit and review-ledger-only; reviewed records, index rebuilds, public exposure, external artifact evidence, and hardware details remain gated
 completed:
   - SOURCE-ACTION-KERNEL-00
   - SOURCE-WAVE-00
@@ -87,6 +87,7 @@ completed:
   - IA-METADATA-PROVIDER-WIRING-AND-SMOKE-00
   - IA-SOURCE-OBSERVATION-CACHE-DELTA-00
   - IA-CANDIDATE-INDEX-REFRESH-00
+  - IA-EVIDENCE-LEDGER-SUMMARY-00
 blocked: []
 planned:
   - USER-HARDWARE-DETAILS-00

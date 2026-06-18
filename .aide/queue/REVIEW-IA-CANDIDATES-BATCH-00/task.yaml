@@ -1,0 +1,143 @@
+schema_version: aide.task.v0
+id: REVIEW-IA-CANDIDATES-BATCH-00
+title: Prepare and optionally record explicit IA candidate review batch decisions
+status: authorized
+task_class: source_wave_human_review_gate
+recommended_after: IA-EVIDENCE-LEDGER-SUMMARY-00
+recommended_next: REVIEWED-INDEX-REFRESH-FROM-IA-00
+purpose: Prepare deterministic review-batch material from IA candidate and evidence-summary deltas, and record review-ledger decisions only when an explicit operator decision file is supplied.
+authority_note: This task is authorized for the next implementation turn only after REVIEW-IA-CANDIDATES-BATCH-AUTHORITY-00 advances queue authority. Automation may assemble, rank, validate, and template review items, but must not choose review outcomes or create reviewed records.
+allowed_scope:
+  - runtime/local/**
+  - runtime/review/**
+  - scripts/eureka_ia_candidate_review.py
+  - scripts/eureka_review.py
+  - tools/generators/**
+  - tests/operations/**
+  - tests/runtime/**
+  - docs/operations/**
+  - control/audits/source_wave/**
+  - .eureka/source-wave/ia-metadata/review-batch/**
+  - contracts/review/**
+  - contracts/evidence/**
+forbidden_scope:
+  - docs/canon/**
+  - runtime/connectors/**
+  - runtime/gateway/**
+  - surfaces/**
+  - site/**
+  - native/**
+  - crates/**
+  - examples/**
+  - evals/**
+  - release/**
+  - archive/**
+  - LICENSE.md
+  - LICENSE-SUMMARY.md
+  - NOTICE.md
+  - public exposure, tunnel, hosting, or launch code
+  - source/provider expansion beyond existing IA source-observation, candidate, and evidence deltas
+  - reviewed-record materialization paths unless a separate future task authorizes them
+  - reviewed/master index refresh paths
+  - public-index mutation paths
+  - snapshot/public projection paths
+  - Workbench runtime unless a future separately authorized task exposes review batch material there
+  - .aide/queue/** except final status reporting if repo convention requires it
+boundaries:
+  public_launch: false
+  public_exposure: false
+  public_workbench_exposure: false
+  downloads: false
+  file_fetch: false
+  wayback_replay: false
+  broad_ia_crawling: false
+  provider_or_network_call_during_review_batch: false
+  automatic_review_decisions: false
+  ai_model_decisions_accepted: false
+  automatic_promotion: false
+  reviewed_record_creation: false
+  reviewed_master_mutation: false
+  public_index_mutation: false
+  candidate_index_store_mutation: false
+  evidence_ledger_store_mutation: false
+  reviewed_index_rebuild: false
+  snapshot_refresh: false
+  review_ledger_decisions_only_when_operator_input_supplied: true
+  review_remains_truth_boundary: true
+  license_posture_changed: false
+  production_readiness_claimed: false
+  rights_clearance_claimed: false
+  malware_or_binary_safety_claimed: false
+evidence_inputs:
+  source_observation_cache_report: control/audits/source_wave/ia_source_observation_cache_delta_v0/source_observation_cache_delta_report.json
+  candidate_index_refresh_report: control/audits/source_wave/ia_candidate_index_refresh_v0/candidate_index_refresh_report.json
+  evidence_ledger_summary_report: control/audits/source_wave/ia_evidence_ledger_summary_v0/evidence_ledger_summary_report.json
+  evidence_ledger_summary_closeout: control/audits/source_wave/ia_evidence_ledger_summary_v0/authority_closeout.json
+  source_observation_delta_manifest: .eureka/source-wave/ia-metadata/source-observation-cache/latest/source_observation_delta_manifest.json
+  candidate_index_delta_manifest: .eureka/source-wave/ia-metadata/candidate-index/latest/candidate_index_delta_manifest.json
+  evidence_summary_delta_manifest: .eureka/source-wave/ia-metadata/evidence-ledger/latest/evidence_summary_delta_manifest.json
+modes:
+  prepare:
+    allowed: true
+    behavior:
+      - load candidate and evidence-summary deltas
+      - construct deterministic review items
+      - rank or group items for operator convenience only
+      - validate provenance, missing fields, orphan refs, and unsupported claims
+      - produce review batch packet and blank decision templates
+      - write no review-ledger decisions
+      - make no truth changes
+  record_decisions:
+    allowed: true
+    requires_explicit_operator_decision_file: true
+    behavior:
+      - require named actor
+      - require explicit decision per reviewed item included in the decision file
+      - require evidence refs, source-observation refs, absence refs, fallback refs, or written rationale
+      - require local-only confirmation for promotion
+      - record review-ledger decisions/events only
+      - create no reviewed records
+      - rebuild no indexes
+      - make no public projection
+review_decisions:
+  supported:
+    - promote
+    - reject
+    - supersede
+    - mark_near_miss
+    - mark_need
+    - mark_policy_blocked
+    - request_more_evidence
+  forbidden:
+    - automatically generated decision outcomes
+    - implicit promotion from candidate or evidence confidence
+    - AI/model decisions treated as operator decisions
+    - bulk promote all without explicit item-level review
+    - decisions with missing actor
+    - decisions with missing citations and rationale
+    - promotion without local_only_confirmed true
+    - reviewed record creation
+    - reviewed/master/public index mutation
+operator_decision_input:
+  schema_version: eureka.ia_candidate_review_decisions.v0
+  actor_required: true
+  item_level_decisions_required_for_items_being_recorded: true
+  subset_decision_files_allowed: true
+  missing_decision_posture: pending_not_inferred
+  promote_requires_local_only_confirmed: true
+  rationale_or_reference_required: true
+  reason_required_for:
+    - reject
+    - supersede
+    - mark_policy_blocked
+    - request_more_evidence
+  supersede_requires_supersedes_review_item_id: true
+acceptance:
+  - Prepare deterministic review items from the governed IA candidate and evidence-summary deltas without network or provider calls.
+  - Produce review-batch packet and blank operator decision template under the governed .eureka source-wave path if repo ignore policy permits generated artifacts.
+  - Do not choose promote, reject, supersede, near-miss, need, policy-blocked, or request-more-evidence outcomes automatically.
+  - Record review-ledger decisions only when an explicit operator decision input file is supplied.
+  - Require actor, item-level decision, references or rationale, and local-only confirmation for promotion.
+  - Create no reviewed records, rebuild no indexes, mutate no public indexes, and publish no snapshots.
+  - Produce tracked audit summary under control/audits/source_wave/.
+proof_level_required: L1

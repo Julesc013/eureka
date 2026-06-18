@@ -1,7 +1,7 @@
 schema_version: aide.task.v0
 id: IA-EVIDENCE-LEDGER-SUMMARY-00
 title: Summarize IA evidence ledger delta from source observations and candidates
-status: authorized
+status: completed
 task_class: source_wave_local_evidence_delta
 recommended_after: IA-CANDIDATE-INDEX-REFRESH-00
 recommended_next: REVIEW-IA-CANDIDATES-BATCH-00
@@ -75,3 +75,49 @@ acceptance:
   - Do not mutate reviewed/master truth, public indexes, candidate-index stores, review/promotion state, public exposure posture, or license posture.
   - Enforce no downloads, no file fetch, no Wayback replay, no public fanout, no reviewed/master mutation, no public-index mutation, and no candidate-index store mutation.
 proof_level_required: L1
+result:
+  status: pass_with_warnings
+  implementation_commit: c9d9a1f77b2cd8f805f75612612555f2009bf600
+  audit_report: control/audits/source_wave/ia_evidence_ledger_summary_v0/evidence_ledger_summary_report.json
+  authority_closeout: control/audits/source_wave/ia_evidence_ledger_summary_v0/authority_closeout.json
+  source_observations_consumed: 56
+  candidates_consumed: 56
+  evidence_summaries_written: 344
+  deduplicated_evidence_summaries: 344
+  evidence_type_counts:
+    absence clue: 8
+    date/time clue: 32
+    near-miss clue: 32
+    object-type clue: 56
+    platform clue: 16
+    provenance clue: 56
+    representation/member clue: 32
+    source-location clue: 56
+    title/name clue: 56
+  support_posture_counts:
+    candidate_support: 192
+    insufficient: 40
+    metadata_mention: 112
+  contradiction_count: 0
+  absence_near_miss_count: 40
+  insufficient_support_count: 40
+  source_unavailable_count: 0
+  orphan_candidate_ref_count: 0
+  orphan_source_observation_ref_count: 0
+  unsafe_record_count: 0
+  redacted_error_count: 0
+  reviewed_master_mutation: false
+  public_index_mutation: false
+  candidate_index_store_mutation: false
+  evidence_ledger_store_mutation: false
+  review_promotion_mutation: false
+  accepted_truth_created: false
+  network_provider_call_during_build: false
+  public_fanout: false
+  downloads_file_fetch: false
+  wayback_replay: false
+  license_posture: unchanged
+  public_alpha_posture: unchanged
+  next_recommended_task: REVIEW-IA-CANDIDATES-BATCH-00
+  external_artifact_evidence_status: WAITING_FOR_EXTERNAL_ARTIFACT_EVIDENCE
+  user_hardware_details_status: WAITING_FOR_USER_HARDWARE_DETAILS
