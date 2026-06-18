@@ -1,0 +1,92 @@
+{
+  "schema_version": "eureka.source_wave.review_ia_candidates_batch_report.v0",
+  "task_id": "REVIEW-IA-CANDIDATES-BATCH-00",
+  "status": "PASS_WITH_WARNINGS",
+  "branch": "dev",
+  "head": "a60a6b49cea29e15d4c322b4c388142ec9ad8f4c",
+  "origin_dev_sync": "0 0",
+  "worktree_status_at_start": "clean",
+  "license_posture": "restricted_source_available",
+  "public_exposure": "paused",
+  "input_source_observation_delta": ".eureka/source-wave/ia-metadata/source-observation-cache/latest/source_observation_delta_manifest.json",
+  "input_source_observation_delta_hash": "sha256:ae231580c7696b1631fe1fabe310567a18bb3eeadbcf306ef455e6c100dd86e4",
+  "input_candidate_index_delta": ".eureka/source-wave/ia-metadata/candidate-index/latest/candidate_index_delta_manifest.json",
+  "input_candidate_index_delta_hash": "sha256:78c9fd2f46fcbc48d658f2bd5d3c61304856c23a9748129e281c7ce4b5cd70c8",
+  "input_evidence_summary_delta": ".eureka/source-wave/ia-metadata/evidence-ledger/latest/evidence_summary_delta_manifest.json",
+  "input_evidence_summary_delta_hash": "sha256:d0ca0d667bd2c7aaeea8c4c9cffc7eb232c66292b20a5d887abcef5d008ca570",
+  "batch_id": "review-batch:ia_metadata:4cb823d17388bdf2ec3a",
+  "observations_consumed": 56,
+  "candidates_consumed": 56,
+  "evidence_summaries_consumed": 344,
+  "review_items_prepared": 56,
+  "pending_review_items": 56,
+  "review_group_counts": {
+    "absence_or_near_miss": 40,
+    "evidence_rich_pending_review": 16
+  },
+  "attention_band_counts": {
+    "high_attention": 8,
+    "medium_attention": 32,
+    "standard_attention": 16
+  },
+  "missing_field_counts": {
+    "missing_platform_or_date_hint": 8,
+    "missing_representation_member_hint": 24
+  },
+  "provider_modes": [
+    "fixture",
+    "live"
+  ],
+  "item_provider_modes": [
+    "fixture"
+  ],
+  "contradiction_count": 0,
+  "insufficient_support_item_count": 40,
+  "absence_near_miss_item_count": 40,
+  "live_derived_item_count": 0,
+  "fixture_derived_item_count": 56,
+  "review_items_file": ".eureka/source-wave/ia-metadata/review-batch/latest/review_items.jsonl",
+  "review_items_file_hash": "sha256:b429c768a4a1179c12af5e5bee00200c4408bbcffe05fced9380f9aa65080864",
+  "batch_manifest": ".eureka/source-wave/ia-metadata/review-batch/latest/review_batch_manifest.json",
+  "operator_review_packet": ".eureka/source-wave/ia-metadata/review-batch/latest/OPERATOR_REVIEW_PACKET.md",
+  "decision_template": ".eureka/source-wave/ia-metadata/review-batch/latest/operator_decision_template.json",
+  "decision_template_file_hash": "sha256:8e7520104c736dd955e80ffbff927b9203076df6af3d0de5720ace49687ab548",
+  "previous_batch": null,
+  "diff_status": "first_run_no_previous_batch",
+  "decisions_supplied": false,
+  "decisions_recorded": 0,
+  "review_ledger_events_written": 0,
+  "decision_outcome_counts": {
+    "promote": 0,
+    "reject": 0,
+    "supersede": 0,
+    "mark_near_miss": 0,
+    "mark_need": 0,
+    "mark_policy_blocked": 0,
+    "request_more_evidence": 0,
+    "undecided": 56
+  },
+  "automatic_decisions": false,
+  "automatic_promotion": false,
+  "reviewed_records_created": false,
+  "reviewed_master_mutation": false,
+  "public_index_mutation": false,
+  "candidate_index_store_mutation": false,
+  "evidence_ledger_store_mutation": false,
+  "reviewed_index_rebuild": false,
+  "snapshot_refresh": false,
+  "accepted_truth_created": false,
+  "network_provider_calls": false,
+  "downloads_file_fetch": false,
+  "wayback_replay": false,
+  "public_fanout": false,
+  "public_mutation": false,
+  "rights_safety_claims": false,
+  "production_readiness_claim": false,
+  "public_exposure_unchanged": true,
+  "license_posture_unchanged": true,
+  "remaining_blockers": [
+    "WAITING_FOR_OPERATOR_REVIEW_DECISIONS"
+  ],
+  "recommended_next_action": "Fill and validate the generated operator decision template, then rerun record-decisions for an explicitly reviewed subset."
+}
