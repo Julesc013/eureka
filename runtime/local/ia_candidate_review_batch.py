@@ -39,6 +39,22 @@ REPORT_FILE_NAME = "REVIEW_BATCH_REPORT.md"
 OPERATOR_PACKET_FILE_NAME = "OPERATOR_REVIEW_PACKET.md"
 DECISION_TEMPLATE_FILE_NAME = "operator_decision_template.json"
 DECISION_GUIDE_FILE_NAME = "OPERATOR_DECISION_GUIDE.md"
+TRANCHE_REVIEW_ITEMS_FILE_NAME = "tranche_review_items.jsonl"
+TRANCHE_MANIFEST_FILE_NAME = "tranche_manifest.json"
+TRANCHE_OPERATOR_PACKET_FILE_NAME = "OPERATOR_REVIEW_TRANCHE.md"
+TRANCHE_DECISION_TEMPLATE_FILE_NAME = "operator_decision_template.json"
+TRANCHE_DECISION_GUIDE_FILE_NAME = "OPERATOR_DECISION_GUIDE.md"
+TRANCHE_DECISION_SCHEMA_VERSION = "eureka.ia_candidate_review_decisions.v0"
+SUPPORTED_TRANCHE_SELECTION_POLICIES = {"balanced_evidence_rich_v0"}
+TRANCHE_ALLOWED_DECISIONS = (
+    "reject",
+    "supersede",
+    "mark_near_miss",
+    "mark_need",
+    "mark_policy_blocked",
+    "request_more_evidence",
+)
+TRANCHE_PROMOTION_BLOCKERS = ("fixture_only_provenance", "independent_external_evidence_missing")
 
 ALLOWED_REVIEW_GROUPS = {
     "evidence_rich_pending_review",
@@ -194,6 +210,418 @@ REASON_REQUIRED_DECISIONS = {"reject", "supersede", "mark_policy_blocked", "requ
 
 class IACandidateReviewBatchError(ValueError):
     """Raised when IA candidate review batch preparation violates policy."""
+
+
+def prepare_tranche(
+    *,
+    batch_manifest_path: str | Path,
+    group: str,
+    limit: int,
+    selection_policy: str,
+    tranche_id: str,
+    out_dir: str | Path,
+) -> dict[str, Any]:
+    if selection_policy not in SUPPORTED_TRANCHE_SELECTION_POLICIES:
+        raise IACandidateReviewBatchError(f"unsupported tranche selection policy: {selection_policy}")
+    if group not in ALLOWED_REVIEW_GROUPS:
+        raise IACandidateReviewBatchError(f"unsupported review group: {group}")
+    if limit <= 0:
+        raise IACandidateReviewBatchError("limit must be positive")
+    batch_path = Path(batch_manifest_path)
+    batch_manifest = load_review_batch_manifest(batch_path)
+    batch_errors = validate_batch_path(batch_path, strict=True)
+    if batch_errors["status"] != "PASS":
+        raise IACandidateReviewBatchError("; ".join(str(error) for error in batch_errors.get("errors", [])))
+    parent_items = load_review_items(batch_path, batch_manifest)
+    selected = select_tranche_review_items(
+        parent_items,
+        group=group,
+        limit=limit,
+        selection_policy=selection_policy,
+    )
+    if len(selected) != limit:
+        raise IACandidateReviewBatchError(f"selected {len(selected)} tranche items, expected {limit}")
+    tranche_items = [_tranche_item(item) for item in selected]
+    errors = _tranche_item_errors(tranche_items)
+    if errors:
+        raise IACandidateReviewBatchError("; ".join(errors))
+
+    output = Path(out_dir)
+    output.mkdir(parents=True, exist_ok=True)
+    items_path = output / TRANCHE_REVIEW_ITEMS_FILE_NAME
+    manifest_path = output / TRANCHE_MANIFEST_FILE_NAME
+    packet_path = output / TRANCHE_OPERATOR_PACKET_FILE_NAME
+    template_path = output / TRANCHE_DECISION_TEMPLATE_FILE_NAME
+    guide_path = output / TRANCHE_DECISION_GUIDE_FILE_NAME
+
+    decision_template = build_tranche_decision_template(
+        batch_manifest=batch_manifest,
+        tranche_id=tranche_id,
+        tranche_items=tranche_items,
+    )
+    _write_jsonl(items_path, tranche_items)
+    _write_json(template_path, decision_template)
+    items_hash = _file_hash(items_path)
+    template_hash = _file_hash(template_path)
+    manifest = build_tranche_manifest(
+        batch_manifest=batch_manifest,
+        batch_manifest_path=batch_path,
+        tranche_id=tranche_id,
+        selection_policy=selection_policy,
+        requested_count=limit,
+        tranche_items=tranche_items,
+        items_hash=items_hash,
+        template_hash=template_hash,
+    )
+    manifest_errors = validate_tranche_manifest(manifest, tranche_items=tranche_items, strict=False)
+    if manifest_errors:
+        raise IACandidateReviewBatchError("; ".join(manifest_errors))
+    _write_json(manifest_path, manifest)
+    packet_path.write_text(render_operator_tranche_packet(manifest, tranche_items=tranche_items), encoding="utf-8", newline="\n")
+    guide_path.write_text(render_tranche_decision_guide(manifest), encoding="utf-8", newline="\n")
+    return {
+        "schema_version": "eureka.ia_candidate_review_tranche_prepare_result.v0",
+        "status": "PASS_WITH_WARNINGS",
+        "tranche_id": tranche_id,
+        "source_batch_id": manifest.get("source_batch_id"),
+        "manifest": manifest,
+        "manifest_path": _safe_path_label(manifest_path),
+        "tranche_items_path": _safe_path_label(items_path),
+        "operator_packet_path": _safe_path_label(packet_path),
+        "decision_template_path": _safe_path_label(template_path),
+        "decision_guide_path": _safe_path_label(guide_path),
+        "selected_count": len(tranche_items),
+        "pending_review_count": len(tranche_items),
+        "decisions_recorded": 0,
+        "review_ledger_events_written": 0,
+        "network_used": False,
+        "provider_calls": False,
+        "automatic_decisions": False,
+        "automatic_promotion": False,
+        "reviewed_records_created": False,
+        "reviewed_master_mutation": False,
+        "public_index_mutation": False,
+    }
+
+
+def select_tranche_review_items(
+    review_items: Sequence[Mapping[str, Any]],
+    *,
+    group: str,
+    limit: int,
+    selection_policy: str,
+) -> list[dict[str, Any]]:
+    if selection_policy != "balanced_evidence_rich_v0":
+        raise IACandidateReviewBatchError(f"unsupported tranche selection policy: {selection_policy}")
+    candidates = [
+        dict(item)
+        for item in review_items
+        if str(item.get("review_group") or "") == group
+        and int(item.get("contradiction_count") or 0) == 0
+        and not _text_list(item.get("source_unavailable_flags"))
+        and _text_list(item.get("candidate_id"))
+        and _text_list(item.get("source_observation_refs"))
+        and _text_list(item.get("evidence_summary_refs"))
+        and _scan_unsafe_content(item, "$") == []
+    ]
+    buckets: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    for item in candidates:
+        buckets[_primary_query(item)].append(item)
+    for query in buckets:
+        buckets[query].sort(key=lambda item: (-_tranche_preference_score(item), str(item.get("review_item_id") or "")))
+    selected: list[dict[str, Any]] = []
+    per_query = Counter()
+    max_per_query = 2
+    query_order = sorted(buckets)
+    while len(selected) < limit and any(buckets.values()):
+        made_progress = False
+        for query in query_order:
+            if len(selected) >= limit:
+                break
+            if not buckets[query]:
+                continue
+            if per_query[query] >= max_per_query:
+                continue
+            selected.append(buckets[query].pop(0))
+            per_query[query] += 1
+            made_progress = True
+        if not made_progress:
+            max_per_query += 1
+    return selected
+
+
+def build_tranche_manifest(
+    *,
+    batch_manifest: Mapping[str, Any],
+    batch_manifest_path: Path,
+    tranche_id: str,
+    selection_policy: str,
+    requested_count: int,
+    tranche_items: Sequence[Mapping[str, Any]],
+    items_hash: str,
+    template_hash: str,
+) -> dict[str, Any]:
+    query_seed_counts = Counter(_primary_query(item) for item in tranche_items)
+    review_group_counts = Counter(str(item.get("review_group") or "unknown") for item in tranche_items)
+    attention_band_counts = Counter(str(item.get("review_attention_band") or "unknown") for item in tranche_items)
+    evidence_type_counts: Counter[str] = Counter()
+    support_posture_counts: Counter[str] = Counter()
+    missing_field_counts: Counter[str] = Counter()
+    for item in tranche_items:
+        evidence_type_counts.update(dict(item.get("evidence_type_counts", {}) or {}))
+        support_posture_counts.update(dict(item.get("support_posture_counts", {}) or {}))
+        missing_field_counts.update(_text_list(item.get("missing_field_flags")))
+    selected_ids = [str(item.get("review_item_id") or "") for item in tranche_items]
+    return {
+        "schema_version": "eureka.ia_candidate_review_tranche.v0",
+        "tranche_id": tranche_id,
+        "source_batch_id": str(batch_manifest.get("batch_id") or ""),
+        "source_batch_manifest": _safe_path_label(batch_manifest_path),
+        "source_batch_manifest_hash": f"sha256:{_file_hash(batch_manifest_path)}",
+        "selection_policy": selection_policy,
+        "generated_at": str(batch_manifest.get("generated_at") or ""),
+        "requested_count": requested_count,
+        "selected_count": len(tranche_items),
+        "selected_review_item_ids": selected_ids,
+        "query_seed_counts": dict(sorted(query_seed_counts.items())),
+        "review_group_counts": dict(sorted(review_group_counts.items())),
+        "attention_band_counts": dict(sorted(attention_band_counts.items())),
+        "evidence_type_counts": dict(sorted(evidence_type_counts.items())),
+        "support_posture_counts": dict(sorted(support_posture_counts.items())),
+        "missing_field_counts": dict(sorted(missing_field_counts.items())),
+        "fixture_derived_count": sum(1 for item in tranche_items if "fixture" in _text_list(item.get("provider_modes"))),
+        "live_derived_count": sum(1 for item in tranche_items if "live" in _text_list(item.get("provider_modes"))),
+        "promotion_eligible_count": sum(1 for item in tranche_items if item.get("promotion_eligible") is True),
+        "promotion_blocked_count": sum(1 for item in tranche_items if item.get("promotion_eligible") is False),
+        "decisions_supplied": False,
+        "decisions_recorded": 0,
+        "review_ledger_events_written": 0,
+        "reviewed_records_created": False,
+        "reviewed_master_mutation": False,
+        "public_index_mutation": False,
+        "candidate_index_store_mutation": False,
+        "evidence_ledger_store_mutation": False,
+        "reviewed_index_rebuild": False,
+        "snapshot_refresh": False,
+        "network_provider_calls": False,
+        "automatic_decisions": False,
+        "automatic_promotion": False,
+        "tranche_items_file": TRANCHE_REVIEW_ITEMS_FILE_NAME,
+        "tranche_items_file_hash": f"sha256:{items_hash}",
+        "decision_template_file": TRANCHE_DECISION_TEMPLATE_FILE_NAME,
+        "decision_template_file_hash": f"sha256:{template_hash}",
+        "validation_status": "PASS_WITH_WARNINGS",
+        "blockers": [
+            "WAITING_FOR_OPERATOR_REVIEW_DECISIONS",
+            "PROMOTION_BLOCKED_FIXTURE_ONLY_PROVENANCE",
+        ],
+        "recommended_next_action": "operator_decisions_required",
+    }
+
+
+def build_tranche_decision_template(
+    *,
+    batch_manifest: Mapping[str, Any],
+    tranche_id: str,
+    tranche_items: Sequence[Mapping[str, Any]],
+) -> dict[str, Any]:
+    return {
+        "schema_version": TRANCHE_DECISION_SCHEMA_VERSION,
+        "batch_id": batch_manifest.get("batch_id"),
+        "tranche_id": tranche_id,
+        "actor": "OPERATOR_REQUIRED",
+        "generated_at": str(batch_manifest.get("generated_at") or ""),
+        "decisions": [
+            {
+                "review_item_id": item.get("review_item_id"),
+                "candidate_id": item.get("candidate_id"),
+                "decision": None,
+                "reason": None,
+                "evidence_refs": _text_list(item.get("evidence_summary_refs")),
+                "source_observation_refs": _text_list(item.get("source_observation_refs")),
+                "absence_refs": [],
+                "fallback_refs": [],
+                "supersedes_review_item_id": None,
+                "local_only_confirmed": False,
+                "promotion_eligible": False,
+                "promotion_blockers": list(TRANCHE_PROMOTION_BLOCKERS),
+            }
+            for item in sorted(tranche_items, key=lambda value: str(value.get("review_item_id") or ""))
+        ],
+    }
+
+
+def load_tranche_manifest(path: str | Path) -> dict[str, Any]:
+    source = Path(path)
+    if not source.is_file():
+        raise IACandidateReviewBatchError(f"tranche manifest not found: {source}")
+    try:
+        payload = json.loads(source.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as exc:
+        raise IACandidateReviewBatchError(f"invalid tranche manifest JSON: {exc.msg}") from exc
+    if not isinstance(payload, Mapping):
+        raise IACandidateReviewBatchError("tranche manifest must be a JSON object")
+    return dict(payload)
+
+
+def load_tranche_items(tranche_manifest_path: str | Path, manifest: Mapping[str, Any] | None = None) -> list[dict[str, Any]]:
+    manifest_path = Path(tranche_manifest_path)
+    active_manifest = dict(manifest or load_tranche_manifest(manifest_path))
+    items_path = _resolve_manifest_ref(manifest_path.parent, str(active_manifest.get("tranche_items_file") or TRANCHE_REVIEW_ITEMS_FILE_NAME))
+    rows = _read_jsonl(items_path, "tranche review items")
+    errors = _tranche_item_errors(rows)
+    if errors:
+        raise IACandidateReviewBatchError("; ".join(errors))
+    return rows
+
+
+def validate_tranche_path(path: str | Path, *, strict: bool = False) -> dict[str, Any]:
+    manifest_path = Path(path)
+    try:
+        manifest = load_tranche_manifest(manifest_path)
+        items = load_tranche_items(manifest_path, manifest)
+        errors = validate_tranche_manifest(manifest, tranche_items=items, strict=strict)
+        if strict:
+            items_hash = f"sha256:{_file_hash(_resolve_manifest_ref(manifest_path.parent, str(manifest.get('tranche_items_file') or TRANCHE_REVIEW_ITEMS_FILE_NAME)))}"
+            if manifest.get("tranche_items_file_hash") != items_hash:
+                errors.append("tranche_items_file_hash does not match tranche items file")
+            template_path = _resolve_manifest_ref(manifest_path.parent, str(manifest.get("decision_template_file") or TRANCHE_DECISION_TEMPLATE_FILE_NAME))
+            template_hash = f"sha256:{_file_hash(template_path)}"
+            if manifest.get("decision_template_file_hash") != template_hash:
+                errors.append("decision_template_file_hash does not match decision template file")
+            template = _load_json_object(template_path, "tranche decision template")
+            errors.extend(_tranche_template_errors(template, manifest=manifest, items=items))
+        return {
+            "schema_version": "eureka.ia_candidate_review_tranche_validation.v0",
+            "status": "PASS" if not errors else "FAIL",
+            "errors": sorted(dict.fromkeys(errors)),
+            "tranche_id": manifest.get("tranche_id"),
+            "source_batch_id": manifest.get("source_batch_id"),
+            "selected_count": manifest.get("selected_count"),
+            "promotion_eligible_count": manifest.get("promotion_eligible_count"),
+            "promotion_blocked_count": manifest.get("promotion_blocked_count"),
+            "decisions_supplied": manifest.get("decisions_supplied"),
+            "decisions_recorded": manifest.get("decisions_recorded"),
+            "network_provider_calls": manifest.get("network_provider_calls"),
+        }
+    except IACandidateReviewBatchError as exc:
+        return {
+            "schema_version": "eureka.ia_candidate_review_tranche_validation.v0",
+            "status": "FAIL",
+            "errors": [str(exc)],
+        }
+
+
+def validate_tranche_manifest(
+    manifest: Mapping[str, Any],
+    *,
+    tranche_items: Sequence[Mapping[str, Any]] | None = None,
+    strict: bool = False,
+) -> list[str]:
+    required = {
+        "tranche_id",
+        "source_batch_id",
+        "selection_policy",
+        "generated_at",
+        "requested_count",
+        "selected_count",
+        "selected_review_item_ids",
+        "query_seed_counts",
+        "review_group_counts",
+        "attention_band_counts",
+        "evidence_type_counts",
+        "support_posture_counts",
+        "missing_field_counts",
+        "fixture_derived_count",
+        "live_derived_count",
+        "promotion_eligible_count",
+        "promotion_blocked_count",
+        "decisions_supplied",
+        "decisions_recorded",
+        "review_ledger_events_written",
+        "reviewed_records_created",
+        "reviewed_master_mutation",
+        "public_index_mutation",
+        "network_provider_calls",
+        "validation_status",
+        "blockers",
+        "recommended_next_action",
+    }
+    errors: list[str] = []
+    missing = sorted(required - set(manifest))
+    if missing:
+        errors.append(f"tranche manifest missing required fields: {', '.join(missing)}")
+    if manifest.get("selection_policy") not in SUPPORTED_TRANCHE_SELECTION_POLICIES:
+        errors.append("selection_policy is not supported")
+    if not isinstance(manifest.get("requested_count"), int) or int(manifest.get("requested_count") or 0) <= 0:
+        errors.append("requested_count must be positive")
+    if manifest.get("selected_count") != manifest.get("requested_count"):
+        errors.append("selected_count must equal requested_count")
+    if manifest.get("fixture_derived_count") != manifest.get("selected_count"):
+        errors.append("fixture_derived_count must equal selected_count for Tranche 01")
+    if manifest.get("live_derived_count") != 0:
+        errors.append("live_derived_count must be 0 for Tranche 01")
+    if manifest.get("promotion_eligible_count") != 0:
+        errors.append("promotion_eligible_count must be 0")
+    if manifest.get("promotion_blocked_count") != manifest.get("selected_count"):
+        errors.append("promotion_blocked_count must equal selected_count")
+    for key in (
+        "decisions_supplied",
+        "reviewed_records_created",
+        "reviewed_master_mutation",
+        "public_index_mutation",
+        "candidate_index_store_mutation",
+        "evidence_ledger_store_mutation",
+        "reviewed_index_rebuild",
+        "snapshot_refresh",
+        "network_provider_calls",
+        "automatic_decisions",
+        "automatic_promotion",
+    ):
+        if manifest.get(key) is not False:
+            errors.append(f"{key} must be false")
+    for key in ("decisions_recorded", "review_ledger_events_written"):
+        if manifest.get(key) != 0:
+            errors.append(f"{key} must be 0")
+    if manifest.get("recommended_next_action") != "operator_decisions_required":
+        errors.append("recommended_next_action must be operator_decisions_required")
+    if "WAITING_FOR_OPERATOR_REVIEW_DECISIONS" not in _text_list(manifest.get("blockers")):
+        errors.append("tranche manifest must include WAITING_FOR_OPERATOR_REVIEW_DECISIONS")
+    if tranche_items is not None:
+        errors.extend(_tranche_item_errors(tranche_items))
+        if manifest.get("selected_count") != len(tranche_items):
+            errors.append("selected_count does not match tranche items")
+        selected_ids = [str(item.get("review_item_id") or "") for item in tranche_items]
+        if manifest.get("selected_review_item_ids") != selected_ids:
+            errors.append("selected_review_item_ids do not match tranche item order")
+        if strict and len(selected_ids) != len(set(selected_ids)):
+            errors.append("selected review item ids must be unique")
+    return sorted(dict.fromkeys(errors))
+
+
+def status_for_tranche(path: str | Path) -> dict[str, Any]:
+    manifest = load_tranche_manifest(path)
+    return {
+        "schema_version": "eureka.ia_candidate_review_tranche_status.v0",
+        "status": manifest.get("validation_status"),
+        "tranche_id": manifest.get("tranche_id"),
+        "source_batch_id": manifest.get("source_batch_id"),
+        "selection_policy": manifest.get("selection_policy"),
+        "requested_count": manifest.get("requested_count"),
+        "selected_count": manifest.get("selected_count"),
+        "query_seed_counts": manifest.get("query_seed_counts", {}),
+        "review_group_counts": manifest.get("review_group_counts", {}),
+        "attention_band_counts": manifest.get("attention_band_counts", {}),
+        "fixture_derived_count": manifest.get("fixture_derived_count"),
+        "live_derived_count": manifest.get("live_derived_count"),
+        "promotion_eligible_count": manifest.get("promotion_eligible_count"),
+        "promotion_blocked_count": manifest.get("promotion_blocked_count"),
+        "decisions_supplied": manifest.get("decisions_supplied"),
+        "decisions_recorded": manifest.get("decisions_recorded"),
+        "network_provider_calls": manifest.get("network_provider_calls"),
+        "blockers": manifest.get("blockers", []),
+        "recommended_next_action": manifest.get("recommended_next_action"),
+    }
 
 
 def build_review_batch(
@@ -941,6 +1369,104 @@ def validate_decision_file(
     }
 
 
+def validate_tranche_decision_file(
+    *,
+    tranche_manifest_path: str | Path,
+    decision_file_path: str | Path,
+    strict: bool = False,
+) -> dict[str, Any]:
+    errors: list[str] = []
+    manifest = load_tranche_manifest(tranche_manifest_path)
+    tranche_items = load_tranche_items(tranche_manifest_path, manifest)
+    items_by_id = {str(item.get("review_item_id") or ""): item for item in tranche_items}
+    decision_path = Path(decision_file_path)
+    decisions_payload = _load_json_object(decision_path, "operator tranche decision file")
+
+    if decisions_payload.get("schema_version") != TRANCHE_DECISION_SCHEMA_VERSION:
+        errors.append(f"schema_version must be {TRANCHE_DECISION_SCHEMA_VERSION}")
+    if str(decisions_payload.get("batch_id") or "") != str(manifest.get("source_batch_id") or ""):
+        errors.append("decision file batch_id does not match tranche source batch")
+    if str(decisions_payload.get("tranche_id") or "") != str(manifest.get("tranche_id") or ""):
+        errors.append("decision file tranche_id does not match tranche manifest")
+    actor = str(decisions_payload.get("actor") or "").strip()
+    if not actor or actor == "OPERATOR_REQUIRED":
+        errors.append("actor is required")
+    if _looks_like_generated_actor(actor):
+        errors.append("actor must be an explicit human/operator, not AI/model/generated output")
+    if any(key in decisions_payload for key in ("bulk_decision", "decision_for_all", "auto_decision", "inferred_decisions")):
+        errors.append("bulk or inferred decision fields are not allowed")
+
+    decisions = decisions_payload.get("decisions")
+    if not isinstance(decisions, list):
+        errors.append("decisions must be a list")
+        decisions = []
+    seen: set[str] = set()
+    accepted_count = 0
+    for index, entry in enumerate(decisions):
+        if not isinstance(entry, Mapping):
+            errors.append(f"decisions[{index}] must be an object")
+            continue
+        review_item_id = str(entry.get("review_item_id") or "").strip()
+        candidate_id = str(entry.get("candidate_id") or "").strip()
+        decision = str(entry.get("decision") or "").strip()
+        if not review_item_id:
+            errors.append(f"decisions[{index}].review_item_id is required")
+            continue
+        if review_item_id in seen:
+            errors.append(f"duplicate review item decision: {review_item_id}")
+        seen.add(review_item_id)
+        item = items_by_id.get(review_item_id)
+        if item is None:
+            errors.append(f"unknown review item id for tranche: {review_item_id}")
+            continue
+        if candidate_id != str(item.get("candidate_id") or ""):
+            errors.append(f"candidate_id does not match tranche review item: {review_item_id}")
+        if decision == "promote":
+            errors.append(f"promote is not allowed for this tranche: {review_item_id}")
+            continue
+        if decision not in TRANCHE_ALLOWED_DECISIONS:
+            errors.append(f"unsupported tranche decision for {review_item_id}: {decision or '<missing>'}")
+            continue
+        if decision in REASON_REQUIRED_DECISIONS and not str(entry.get("reason") or "").strip():
+            errors.append(f"reason is required for {decision}: {review_item_id}")
+        if decision == "supersede":
+            supersedes = str(entry.get("supersedes_review_item_id") or "").strip()
+            if not supersedes:
+                errors.append(f"supersede requires supersedes_review_item_id: {review_item_id}")
+            elif supersedes not in items_by_id:
+                errors.append(f"supersedes_review_item_id is outside this tranche: {supersedes}")
+            elif supersedes == review_item_id:
+                errors.append(f"supersede target must differ from review item: {review_item_id}")
+        if entry.get("promotion_eligible") is not False:
+            errors.append(f"promotion_eligible must be false for this tranche: {review_item_id}")
+        blockers = _text_list(entry.get("promotion_blockers"))
+        for blocker in TRANCHE_PROMOTION_BLOCKERS:
+            if blocker not in blockers:
+                errors.append(f"promotion_blockers must include {blocker}: {review_item_id}")
+        if not _has_reference_or_rationale(entry):
+            errors.append(f"decision requires refs or rationale: {review_item_id}")
+        accepted_count += 1
+
+    status = "PASS" if not errors else "FAIL"
+    return {
+        "schema_version": "eureka.ia_candidate_review_tranche_decision_validation.v0",
+        "status": status,
+        "errors": sorted(dict.fromkeys(errors)),
+        "tranche_id": manifest.get("tranche_id"),
+        "source_batch_id": manifest.get("source_batch_id"),
+        "decision_file": _safe_path_label(decision_path),
+        "decision_file_hash": f"sha256:{_file_hash(decision_path)}" if decision_path.is_file() else None,
+        "actor": actor if actor and actor != "OPERATOR_REQUIRED" else None,
+        "decisions_supplied": bool(decisions),
+        "decisions_validated": accepted_count if status == "PASS" else 0,
+        "decision_count": len(decisions),
+        "omitted_pending_count": max(0, len(tranche_items) - len(seen)),
+        "subset_decision_file": len(seen) < len(tranche_items),
+        "promotion_allowed": False,
+        "strict": bool(strict),
+    }
+
+
 def record_decisions(
     *,
     batch_manifest_path: str | Path,
@@ -1139,6 +1665,61 @@ def render_operator_review_packet(
     return "\n".join(lines)
 
 
+def render_operator_tranche_packet(
+    manifest: Mapping[str, Any],
+    *,
+    tranche_items: Sequence[Mapping[str, Any]],
+) -> str:
+    lines = [
+        "# Operator Review Tranche 01 - IA Candidates",
+        "",
+        "Decision pending - no outcome inferred.",
+        "",
+        "## Overview",
+        "",
+        f"- tranche id: `{manifest.get('tranche_id')}`",
+        f"- source batch id: `{manifest.get('source_batch_id')}`",
+        f"- selection policy: `{manifest.get('selection_policy')}`",
+        f"- selected items: {manifest.get('selected_count')}",
+        f"- query seed counts: `{json.dumps(manifest.get('query_seed_counts', {}), sort_keys=True)}`",
+        f"- attention bands: `{json.dumps(manifest.get('attention_band_counts', {}), sort_keys=True)}`",
+        f"- fixture-derived items: {manifest.get('fixture_derived_count')}",
+        f"- live-derived items: {manifest.get('live_derived_count')}",
+        f"- promotion eligible: {manifest.get('promotion_eligible_count')}",
+        f"- promotion blocked: {manifest.get('promotion_blocked_count')}",
+        "- automatic decisions: false",
+        "- automatic promotion: false",
+        "",
+    ]
+    for index, item in enumerate(tranche_items, start=1):
+        lines.extend(
+            [
+                f"## {index}. {item.get('review_item_id')}",
+                "",
+                f"- candidate id: `{item.get('candidate_id')}`",
+                f"- originating query: {_display(_text_list(item.get('query_seed_refs')))}",
+                f"- title/name hints: {_display(_text_list(item.get('title_name_hints')))}",
+                f"- object-type hints: {_display(_text_list(item.get('object_type_hints')))}",
+                f"- platform/date/version hints: {_display(_text_list(item.get('platform_hints')) + _text_list(item.get('date_version_hints')))}",
+                f"- representation/member hints: {_display(_text_list(item.get('representation_member_hints')))}",
+                f"- source locator summary: {_locator_summary(item)}",
+                f"- provider modes: {_display(_text_list(item.get('provider_modes')))}",
+                f"- evidence type counts: `{json.dumps(item.get('evidence_type_counts', {}), sort_keys=True)}`",
+                f"- support-posture counts: `{json.dumps(item.get('support_posture_counts', {}), sort_keys=True)}`",
+                f"- missing fields: {_display(_text_list(item.get('missing_field_flags')))}",
+                f"- ambiguity flags: {_display(_text_list(item.get('ambiguity_flags')))}",
+                f"- attention band: `{item.get('review_attention_band')}`",
+                f"- source-observation refs: {_display(_text_list(item.get('source_observation_refs')))}",
+                f"- evidence-summary refs: {_display(_text_list(item.get('evidence_summary_refs')))}",
+                f"- promotion eligible: {str(item.get('promotion_eligible')).lower()}",
+                f"- promotion blockers: {_display(_text_list(item.get('promotion_blockers')))}",
+                "- Decision pending - no outcome inferred.",
+                "",
+            ]
+        )
+    return "\n".join(lines)
+
+
 def render_decision_guide(manifest: Mapping[str, Any]) -> str:
     decisions = ", ".join(REVIEW_LEDGER_DECISIONS)
     return (
@@ -1159,6 +1740,28 @@ def render_decision_guide(manifest: Mapping[str, Any]) -> str:
     )
 
 
+def render_tranche_decision_guide(manifest: Mapping[str, Any]) -> str:
+    return (
+        "# Operator Decision Guide - Tranche 01\n\n"
+        "Fill only explicitly reviewed items. Omitted items remain pending.\n\n"
+        "Allowed Tranche 01 decisions:\n\n"
+        "- reject\n"
+        "- supersede\n"
+        "- mark_near_miss\n"
+        "- mark_need\n"
+        "- mark_policy_blocked\n"
+        "- request_more_evidence\n\n"
+        "Promotion is blocked for this tranche because all selected items are fixture-derived and independent external evidence is missing.\n\n"
+        "Rules:\n\n"
+        "- actor is required and must identify the local operator\n"
+        "- no decision may be preselected by automation\n"
+        "- promote is not allowed for Tranche 01\n"
+        "- each included item needs evidence refs, source-observation refs, absence refs, fallback refs, or rationale\n"
+        "- review-ledger decisions do not create reviewed records or rebuild indexes\n\n"
+        f"Tranche id: `{manifest.get('tranche_id')}`\n"
+    )
+
+
 def validate_decision_payload_for_template(payload: Mapping[str, Any]) -> list[str]:
     """Public helper for tests that need template-level validation semantics."""
 
@@ -1169,6 +1772,16 @@ def validate_decision_payload_for_template(payload: Mapping[str, Any]) -> list[s
         if isinstance(entry, Mapping) and entry.get("decision") is None:
             errors.append(f"decisions[{index}].decision is required")
     return errors
+
+
+def _tranche_item(item: Mapping[str, Any]) -> dict[str, Any]:
+    payload = dict(item)
+    payload["tranche_status"] = "pending_operator_decision"
+    payload["promotion_eligible"] = False
+    payload["promotion_blockers"] = list(TRANCHE_PROMOTION_BLOCKERS)
+    payload["allowed_decisions"] = list(TRANCHE_ALLOWED_DECISIONS)
+    payload["operator_statement"] = "Decision pending - no outcome inferred"
+    return payload
 
 
 def _review_queue_item(item: Mapping[str, Any]) -> ReviewItemRecord:
@@ -1205,6 +1818,94 @@ def _review_queue_item(item: Mapping[str, Any]) -> ReviewItemRecord:
         created_at=now,
         updated_at=now,
     )
+
+
+def _tranche_item_errors(items: Sequence[Mapping[str, Any]]) -> list[str]:
+    errors: list[str] = []
+    ids: list[str] = []
+    for index, item in enumerate(items):
+        ids.append(str(item.get("review_item_id") or ""))
+        if item.get("review_group") != "evidence_rich_pending_review":
+            errors.append(f"tranche_items[{index}].review_group must be evidence_rich_pending_review")
+        if item.get("decision") is not None:
+            errors.append(f"tranche_items[{index}].decision must be null")
+        if item.get("decision_actor") is not None:
+            errors.append(f"tranche_items[{index}].decision_actor must be null")
+        if item.get("review_status") != "pending":
+            errors.append(f"tranche_items[{index}].review_status must be pending")
+        if not _text_list(item.get("candidate_id")):
+            errors.append(f"tranche_items[{index}].candidate_id is required")
+        if not _text_list(item.get("source_observation_refs")):
+            errors.append(f"tranche_items[{index}].source_observation_refs are required")
+        if not _text_list(item.get("evidence_summary_refs")):
+            errors.append(f"tranche_items[{index}].evidence_summary_refs are required")
+        if item.get("promotion_eligible") is not False:
+            errors.append(f"tranche_items[{index}].promotion_eligible must be false")
+        blockers = _text_list(item.get("promotion_blockers"))
+        for blocker in TRANCHE_PROMOTION_BLOCKERS:
+            if blocker not in blockers:
+                errors.append(f"tranche_items[{index}].promotion_blockers must include {blocker}")
+        if tuple(_text_list(item.get("allowed_decisions"))) != TRANCHE_ALLOWED_DECISIONS:
+            errors.append(f"tranche_items[{index}].allowed_decisions must match Tranche 01 allowed decisions")
+        if "fixture" not in _text_list(item.get("provider_modes")):
+            errors.append(f"tranche_items[{index}] must be fixture-derived")
+        if "live" in _text_list(item.get("provider_modes")):
+            errors.append(f"tranche_items[{index}] must not be live-derived")
+        if int(item.get("contradiction_count") or 0) != 0:
+            errors.append(f"tranche_items[{index}].contradiction_count must be 0")
+        if _text_list(item.get("source_unavailable_flags")):
+            errors.append(f"tranche_items[{index}].source_unavailable_flags must be empty")
+        errors.extend(f"tranche_items[{index}].{error}" for error in _scan_unsafe_content(item, "$"))
+    if len(ids) != len(set(ids)):
+        errors.append("tranche review item ids must be unique")
+    return sorted(dict.fromkeys(errors))
+
+
+def _tranche_template_errors(
+    template: Mapping[str, Any],
+    *,
+    manifest: Mapping[str, Any],
+    items: Sequence[Mapping[str, Any]],
+) -> list[str]:
+    errors: list[str] = []
+    if template.get("schema_version") != TRANCHE_DECISION_SCHEMA_VERSION:
+        errors.append(f"tranche decision template schema_version must be {TRANCHE_DECISION_SCHEMA_VERSION}")
+    if template.get("batch_id") != manifest.get("source_batch_id"):
+        errors.append("tranche decision template batch_id does not match source batch")
+    if template.get("tranche_id") != manifest.get("tranche_id"):
+        errors.append("tranche decision template tranche_id does not match tranche manifest")
+    if template.get("actor") != "OPERATOR_REQUIRED":
+        errors.append("tranche decision template actor must be OPERATOR_REQUIRED")
+    decisions = template.get("decisions")
+    if not isinstance(decisions, list):
+        errors.append("tranche decision template decisions must be a list")
+        return errors
+    item_ids = {str(item.get("review_item_id") or "") for item in items}
+    candidate_by_item = {str(item.get("review_item_id") or ""): str(item.get("candidate_id") or "") for item in items}
+    if len(decisions) != len(items):
+        errors.append("tranche decision template decision count must match selected items")
+    for index, decision in enumerate(decisions):
+        if not isinstance(decision, Mapping):
+            errors.append(f"tranche decision template decisions[{index}] must be an object")
+            continue
+        review_item_id = str(decision.get("review_item_id") or "")
+        if review_item_id not in item_ids:
+            errors.append(f"tranche decision template has unknown review item: {review_item_id}")
+        if str(decision.get("candidate_id") or "") != candidate_by_item.get(review_item_id):
+            errors.append(f"tranche decision template candidate mismatch: {review_item_id}")
+        if decision.get("decision") is not None:
+            errors.append(f"tranche decision template decision must be null: {review_item_id}")
+        if decision.get("reason") is not None:
+            errors.append(f"tranche decision template reason must be null: {review_item_id}")
+        if decision.get("local_only_confirmed") is not False:
+            errors.append(f"tranche decision template local_only_confirmed must be false: {review_item_id}")
+        if decision.get("promotion_eligible") is not False:
+            errors.append(f"tranche decision template promotion_eligible must be false: {review_item_id}")
+        blockers = _text_list(decision.get("promotion_blockers"))
+        for blocker in TRANCHE_PROMOTION_BLOCKERS:
+            if blocker not in blockers:
+                errors.append(f"tranche decision template promotion blockers missing {blocker}: {review_item_id}")
+    return sorted(dict.fromkeys(errors))
 
 
 def _input_errors(
@@ -1551,6 +2252,38 @@ def _review_group(
     if set(support_posture_counts) <= {"metadata_mention"}:
         return "metadata_only"
     return "evidence_rich_pending_review"
+
+
+def _primary_query(item: Mapping[str, Any]) -> str:
+    refs = _text_list(item.get("query_seed_refs"))
+    return refs[0] if refs else "unknown_query"
+
+
+def _tranche_preference_score(item: Mapping[str, Any]) -> int:
+    score = 0
+    if _text_list(item.get("title_name_hints")):
+        score += 3
+    if _text_list(item.get("object_type_hints")):
+        score += 3
+    if _text_list(item.get("platform_hints")) or _text_list(item.get("date_version_hints")):
+        score += 2
+    if _text_list(item.get("representation_member_hints")):
+        score += 2
+    if item.get("source_locator_hints"):
+        score += 2
+    score += int(item.get("candidate_support_count") or 0) * 2
+    score -= int(item.get("insufficient_support_count") or 0) * 2
+    score -= len(_text_list(item.get("missing_field_flags")))
+    return score
+
+
+def _locator_summary(item: Mapping[str, Any]) -> str:
+    labels = []
+    for locator in item.get("source_locator_hints", []) or []:
+        if not isinstance(locator, Mapping):
+            continue
+        labels.append(str(locator.get("label") or locator.get("value_hash") or locator.get("kind") or ""))
+    return _display(labels)
 
 
 def _orphan_ref_count(rows: Sequence[Mapping[str, Any]], key: str, allowed: set[str]) -> int:

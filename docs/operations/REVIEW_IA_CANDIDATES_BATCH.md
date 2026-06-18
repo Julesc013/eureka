@@ -84,6 +84,72 @@ Each item includes candidate refs, source-observation refs, evidence-summary
 refs, query refs, group, attention band, missing fields, and the explicit
 statement that no outcome was inferred.
 
+## Tranche 01
+
+Use a small tranche when the full batch is too large for one operator pass.
+Tranche 01 selects eight evidence-rich pending items with deterministic
+query-balanced ordering.
+
+```powershell
+python scripts/eureka_ia_candidate_review.py prepare-tranche `
+  --batch .eureka/source-wave/ia-metadata/review-batch/latest/review_batch_manifest.json `
+  --group evidence_rich_pending_review `
+  --limit 8 `
+  --selection-policy balanced_evidence_rich_v0 `
+  --tranche-id tranche-01 `
+  --out .eureka/source-wave/ia-metadata/review-batch/tranches/01
+```
+
+```powershell
+python scripts/eureka_ia_candidate_review.py validate-tranche `
+  --tranche .eureka/source-wave/ia-metadata/review-batch/tranches/01/tranche_manifest.json `
+  --strict
+```
+
+```powershell
+python scripts/eureka_ia_candidate_review.py tranche-status `
+  --tranche .eureka/source-wave/ia-metadata/review-batch/tranches/01/tranche_manifest.json
+```
+
+Generated tranche artifacts live under:
+
+```text
+.eureka/source-wave/ia-metadata/review-batch/tranches/01/
+  tranche_review_items.jsonl
+  tranche_manifest.json
+  OPERATOR_REVIEW_TRANCHE.md
+  operator_decision_template.json
+  OPERATOR_DECISION_GUIDE.md
+```
+
+Because the current Tranche 01 items are fixture-derived, every selected item is
+promotion-ineligible and includes:
+
+```text
+fixture_only_provenance
+independent_external_evidence_missing
+```
+
+Allowed Tranche 01 decisions:
+
+- `reject`
+- `supersede`
+- `mark_near_miss`
+- `mark_need`
+- `mark_policy_blocked`
+- `request_more_evidence`
+
+`promote` is not allowed for Tranche 01.
+
+Validate a filled tranche decision file before any ledger write:
+
+```powershell
+python scripts/eureka_ia_candidate_review.py validate-tranche-decisions `
+  --tranche .eureka/source-wave/ia-metadata/review-batch/tranches/01/tranche_manifest.json `
+  --decisions <explicit-operator-decision-file> `
+  --strict
+```
+
 ## Filling Decisions
 
 Copy the generated template shape into an operator-authored decision file and

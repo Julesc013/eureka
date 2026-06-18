@@ -19,9 +19,12 @@ from runtime.local.ia_candidate_review_batch import (
     REVIEW_ITEMS_FILE_NAME,
     IACandidateReviewBatchError,
     build_review_batch,
+    prepare_tranche,
     record_decisions,
     validate_batch_path,
     validate_decision_file,
+    validate_tranche_decision_file,
+    validate_tranche_path,
 )
 from runtime.local.source_observation_cache import MANIFEST_FILE_NAME as SOURCE_OBSERVATION_MANIFEST_FILE_NAME
 from runtime.local.source_observation_cache import build_delta as build_source_observation_delta
@@ -373,6 +376,170 @@ class ReviewIACandidatesBatchTests(unittest.TestCase):
         self.assertIn("review_items_prepared: 56", build.stdout)
         self.assertIn("status: PASS", validate.stdout)
 
+    def test_prepare_tranche_selects_deterministic_balanced_evidence_rich_items(self) -> None:
+        with tempfile.TemporaryDirectory(prefix="eureka-ia-review-batch-") as tmp:
+            batch = _build_batch(Path(tmp))
+            tranche = Path(tmp) / "tranche-01"
+            prepare_tranche(
+                batch_manifest_path=batch / MANIFEST_FILE_NAME,
+                group="evidence_rich_pending_review",
+                limit=8,
+                selection_policy="balanced_evidence_rich_v0",
+                tranche_id="tranche-01",
+                out_dir=tranche,
+            )
+            first_manifest = json.loads((tranche / "tranche_manifest.json").read_text(encoding="utf-8"))
+            first_rows = _read_jsonl(tranche / "tranche_review_items.jsonl")
+            prepare_tranche(
+                batch_manifest_path=batch / MANIFEST_FILE_NAME,
+                group="evidence_rich_pending_review",
+                limit=8,
+                selection_policy="balanced_evidence_rich_v0",
+                tranche_id="tranche-01",
+                out_dir=tranche,
+            )
+            second_manifest = json.loads((tranche / "tranche_manifest.json").read_text(encoding="utf-8"))
+
+        self.assertEqual(first_manifest, second_manifest)
+        self.assertEqual(8, first_manifest["selected_count"])
+        self.assertEqual(
+            {"DirectX SDK June 2010 offline installer": 4, "old blue FTP client for XP": 4},
+            first_manifest["query_seed_counts"],
+        )
+        self.assertEqual({"evidence_rich_pending_review": 8}, first_manifest["review_group_counts"])
+        self.assertTrue(all(row["review_group"] == "evidence_rich_pending_review" for row in first_rows))
+
+    def test_tranche_items_are_fixture_only_and_promotion_ineligible(self) -> None:
+        with tempfile.TemporaryDirectory(prefix="eureka-ia-review-batch-") as tmp:
+            batch = _build_batch(Path(tmp))
+            tranche = _build_tranche(Path(tmp), batch)
+            manifest = json.loads((tranche / "tranche_manifest.json").read_text(encoding="utf-8"))
+            rows = _read_jsonl(tranche / "tranche_review_items.jsonl")
+
+        self.assertEqual(8, manifest["fixture_derived_count"])
+        self.assertEqual(0, manifest["live_derived_count"])
+        self.assertEqual(0, manifest["promotion_eligible_count"])
+        self.assertEqual(8, manifest["promotion_blocked_count"])
+        self.assertTrue(all(row["provider_modes"] == ["fixture"] for row in rows))
+        self.assertTrue(all(row["promotion_eligible"] is False for row in rows))
+        self.assertTrue(all("fixture_only_provenance" in row["promotion_blockers"] for row in rows))
+        self.assertTrue(all("independent_external_evidence_missing" in row["promotion_blockers"] for row in rows))
+
+    def test_tranche_template_is_blank_and_promote_is_rejected(self) -> None:
+        with tempfile.TemporaryDirectory(prefix="eureka-ia-review-batch-") as tmp:
+            batch = _build_batch(Path(tmp))
+            tranche = _build_tranche(Path(tmp), batch)
+            template_path = tranche / "operator_decision_template.json"
+            template = json.loads(template_path.read_text(encoding="utf-8"))
+            original_actor = template["actor"]
+            blank_validation = validate_tranche_decision_file(
+                tranche_manifest_path=tranche / "tranche_manifest.json",
+                decision_file_path=template_path,
+                strict=True,
+            )
+            decision_path = Path(tmp) / "promote.json"
+            template["actor"] = "operator:jules"
+            template["decisions"] = [template["decisions"][0]]
+            template["decisions"][0]["decision"] = "promote"
+            template["decisions"][0]["local_only_confirmed"] = True
+            template["decisions"][0]["reason"] = "operator inspected item"
+            _write_json(decision_path, template)
+            promote_validation = validate_tranche_decision_file(
+                tranche_manifest_path=tranche / "tranche_manifest.json",
+                decision_file_path=decision_path,
+                strict=True,
+            )
+
+        self.assertEqual("OPERATOR_REQUIRED", original_actor)
+        self.assertEqual("FAIL", blank_validation["status"])
+        self.assertTrue(any("actor is required" in error for error in blank_validation["errors"]))
+        self.assertEqual("FAIL", promote_validation["status"])
+        self.assertTrue(any("promote is not allowed" in error for error in promote_validation["errors"]))
+
+    def test_tranche_validation_and_cli_round_trip(self) -> None:
+        with tempfile.TemporaryDirectory(prefix="eureka-ia-review-batch-") as tmp:
+            batch = _build_batch(Path(tmp))
+            tranche = Path(tmp) / "tranche-01"
+            prepare = subprocess.run(
+                [
+                    sys.executable,
+                    "scripts/eureka_ia_candidate_review.py",
+                    "prepare-tranche",
+                    "--batch",
+                    str(batch / MANIFEST_FILE_NAME),
+                    "--group",
+                    "evidence_rich_pending_review",
+                    "--limit",
+                    "8",
+                    "--selection-policy",
+                    "balanced_evidence_rich_v0",
+                    "--tranche-id",
+                    "tranche-01",
+                    "--out",
+                    str(tranche),
+                ],
+                cwd=ROOT,
+                text=True,
+                capture_output=True,
+                check=True,
+            )
+            validate = subprocess.run(
+                [
+                    sys.executable,
+                    "scripts/eureka_ia_candidate_review.py",
+                    "validate-tranche",
+                    "--tranche",
+                    str(tranche / "tranche_manifest.json"),
+                    "--strict",
+                ],
+                cwd=ROOT,
+                text=True,
+                capture_output=True,
+                check=True,
+            )
+            status = subprocess.run(
+                [
+                    sys.executable,
+                    "scripts/eureka_ia_candidate_review.py",
+                    "tranche-status",
+                    "--tranche",
+                    str(tranche / "tranche_manifest.json"),
+                ],
+                cwd=ROOT,
+                text=True,
+                capture_output=True,
+                check=True,
+            )
+            validation = validate_tranche_path(tranche / "tranche_manifest.json", strict=True)
+
+        self.assertIn("selected_count: 8", prepare.stdout)
+        self.assertIn("status: PASS", validate.stdout)
+        self.assertIn("promotion_eligible_count: 0", status.stdout)
+        self.assertEqual("PASS", validation["status"], validation)
+
+    def test_prepare_tranche_makes_no_network_or_ledger_or_index_mutation(self) -> None:
+        def fail_socket(*_args: object, **_kwargs: object) -> socket.socket:
+            raise AssertionError("network socket should not be opened")
+
+        with tempfile.TemporaryDirectory(prefix="eureka-ia-review-batch-") as tmp:
+            batch = _build_batch(Path(tmp))
+            with mock.patch("socket.socket", side_effect=fail_socket):
+                result = prepare_tranche(
+                    batch_manifest_path=batch / MANIFEST_FILE_NAME,
+                    group="evidence_rich_pending_review",
+                    limit=8,
+                    selection_policy="balanced_evidence_rich_v0",
+                    tranche_id="tranche-01",
+                    out_dir=Path(tmp) / "tranche-01",
+                )
+
+        manifest = result["manifest"]
+        self.assertFalse((Path(tmp) / "tranche-01" / "review_ledger.sqlite").exists())
+        self.assertFalse(manifest["reviewed_records_created"])
+        self.assertFalse(manifest["reviewed_master_mutation"])
+        self.assertFalse(manifest["public_index_mutation"])
+        self.assertFalse(manifest["network_provider_calls"])
+
 
 def _build_inputs(tmp: Path) -> tuple[Path, Path, Path]:
     source_dir = tmp / "source-observation-delta"
@@ -399,6 +566,19 @@ def _build_batch(tmp: Path) -> Path:
         source_observation_delta_path=source_delta,
         candidate_index_delta_path=candidate_delta,
         evidence_summary_delta_path=evidence_delta,
+        out_dir=out,
+    )
+    return out
+
+
+def _build_tranche(tmp: Path, batch: Path) -> Path:
+    out = tmp / "tranche-01"
+    prepare_tranche(
+        batch_manifest_path=batch / MANIFEST_FILE_NAME,
+        group="evidence_rich_pending_review",
+        limit=8,
+        selection_policy="balanced_evidence_rich_v0",
+        tranche_id="tranche-01",
         out_dir=out,
     )
     return out

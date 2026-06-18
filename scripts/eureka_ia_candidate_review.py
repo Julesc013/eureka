@@ -18,11 +18,15 @@ from runtime.local.ia_candidate_review_batch import (  # noqa: E402
     IACandidateReviewBatchError,
     build_review_batch,
     load_review_batch_manifest,
+    prepare_tranche,
     record_decisions,
     render_markdown_summary,
     status_for_batch,
+    status_for_tranche,
     validate_batch_path,
     validate_decision_file,
+    validate_tranche_decision_file,
+    validate_tranche_path,
 )
 
 
@@ -49,6 +53,33 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr:
 
     report_parser = subparsers.add_parser("report", help="Render the review batch Markdown report.")
     report_parser.add_argument("--batch", required=True)
+
+    tranche_parser = subparsers.add_parser("prepare-tranche", help="Prepare a deterministic operator review tranche.")
+    tranche_parser.add_argument("--batch", required=True)
+    tranche_parser.add_argument("--group", required=True)
+    tranche_parser.add_argument("--limit", required=True, type=int)
+    tranche_parser.add_argument("--selection-policy", required=True)
+    tranche_parser.add_argument("--tranche-id", required=True)
+    tranche_parser.add_argument("--out", required=True)
+    tranche_parser.add_argument("--json", action="store_true")
+
+    validate_tranche_parser = subparsers.add_parser("validate-tranche", help="Validate a review tranche manifest.")
+    validate_tranche_parser.add_argument("--tranche", required=True)
+    validate_tranche_parser.add_argument("--strict", action="store_true")
+    validate_tranche_parser.add_argument("--json", action="store_true")
+
+    tranche_status_parser = subparsers.add_parser("tranche-status", help="Print review tranche status.")
+    tranche_status_parser.add_argument("--tranche", required=True)
+    tranche_status_parser.add_argument("--json", action="store_true")
+
+    validate_tranche_decisions_parser = subparsers.add_parser(
+        "validate-tranche-decisions",
+        help="Validate an explicit operator decision file for a review tranche.",
+    )
+    validate_tranche_decisions_parser.add_argument("--tranche", required=True)
+    validate_tranche_decisions_parser.add_argument("--decisions", required=True)
+    validate_tranche_decisions_parser.add_argument("--strict", action="store_true")
+    validate_tranche_decisions_parser.add_argument("--json", action="store_true")
 
     validate_decisions_parser = subparsers.add_parser(
         "validate-decisions",
@@ -116,6 +147,67 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr:
             manifest = load_review_batch_manifest(args.batch)
             print(render_markdown_summary(manifest), end="", file=stdout)
             return 0
+        if args.command == "prepare-tranche":
+            payload = prepare_tranche(
+                batch_manifest_path=args.batch,
+                group=args.group,
+                limit=args.limit,
+                selection_policy=args.selection_policy,
+                tranche_id=args.tranche_id,
+                out_dir=args.out,
+            )
+            if args.json:
+                print(json.dumps(payload, indent=2, sort_keys=True, ensure_ascii=True), file=stdout)
+            else:
+                manifest = dict(payload["manifest"])
+                print(f"status: {payload['status']}", file=stdout)
+                print(f"tranche_id: {payload.get('tranche_id')}", file=stdout)
+                print(f"source_batch_id: {payload.get('source_batch_id')}", file=stdout)
+                print(f"selected_count: {payload.get('selected_count')}", file=stdout)
+                print(f"promotion_eligible_count: {manifest.get('promotion_eligible_count')}", file=stdout)
+                print(f"promotion_blocked_count: {manifest.get('promotion_blocked_count')}", file=stdout)
+                print(f"manifest: {payload['manifest_path']}", file=stdout)
+                print(f"operator_review_tranche: {payload['operator_packet_path']}", file=stdout)
+                print(f"decision_template: {payload['decision_template_path']}", file=stdout)
+            return 0
+        if args.command == "validate-tranche":
+            payload = validate_tranche_path(args.tranche, strict=args.strict)
+            if args.json:
+                print(json.dumps(payload, indent=2, sort_keys=True, ensure_ascii=True), file=stdout)
+            elif payload["status"] == "PASS":
+                print(f"status: {payload['status']}", file=stdout)
+                print(f"tranche_id: {payload.get('tranche_id')}", file=stdout)
+                print(f"selected_count: {payload.get('selected_count')}", file=stdout)
+            else:
+                print(f"status: {payload['status']}", file=stderr)
+                for error in payload.get("errors", []):
+                    print(f"error: {error}", file=stderr)
+            return 0 if payload["status"] == "PASS" else 1
+        if args.command == "tranche-status":
+            payload = status_for_tranche(args.tranche)
+            if args.json:
+                print(json.dumps(payload, indent=2, sort_keys=True, ensure_ascii=True), file=stdout)
+            else:
+                _print_tranche_status(payload, stdout)
+            return 0
+        if args.command == "validate-tranche-decisions":
+            payload = validate_tranche_decision_file(
+                tranche_manifest_path=args.tranche,
+                decision_file_path=args.decisions,
+                strict=args.strict,
+            )
+            if args.json:
+                print(json.dumps(payload, indent=2, sort_keys=True, ensure_ascii=True), file=stdout)
+            elif payload["status"] == "PASS":
+                print(f"status: {payload['status']}", file=stdout)
+                print(f"tranche_id: {payload.get('tranche_id')}", file=stdout)
+                print(f"decisions_validated: {payload.get('decisions_validated')}", file=stdout)
+                print(f"omitted_pending: {payload.get('omitted_pending_count')}", file=stdout)
+            else:
+                print(f"status: {payload['status']}", file=stderr)
+                for error in payload.get("errors", []):
+                    print(f"error: {error}", file=stderr)
+            return 0 if payload["status"] == "PASS" else 1
         if args.command == "validate-decisions":
             payload = validate_decision_file(
                 batch_manifest_path=args.batch,
@@ -183,6 +275,27 @@ def _print_status(payload: Mapping[str, Any], stdout: TextIO) -> None:
     print(f"reviewed_record_creation: {str(payload.get('reviewed_record_creation')).lower()}", file=stdout)
     print(f"reviewed_master_mutation: {str(payload.get('reviewed_master_mutation')).lower()}", file=stdout)
     print(f"public_index_mutation: {str(payload.get('public_index_mutation')).lower()}", file=stdout)
+    print(f"recommended_next_action: {payload.get('recommended_next_action')}", file=stdout)
+    print(f"blockers: {json.dumps(payload.get('blockers', []), sort_keys=True)}", file=stdout)
+
+
+def _print_tranche_status(payload: Mapping[str, Any], stdout: TextIO) -> None:
+    print(f"status: {payload.get('status')}", file=stdout)
+    print(f"tranche_id: {payload.get('tranche_id')}", file=stdout)
+    print(f"source_batch_id: {payload.get('source_batch_id')}", file=stdout)
+    print(f"selection_policy: {payload.get('selection_policy')}", file=stdout)
+    print(f"requested_count: {payload.get('requested_count')}", file=stdout)
+    print(f"selected_count: {payload.get('selected_count')}", file=stdout)
+    print(f"query_seed_counts: {json.dumps(payload.get('query_seed_counts', {}), sort_keys=True)}", file=stdout)
+    print(f"review_group_counts: {json.dumps(payload.get('review_group_counts', {}), sort_keys=True)}", file=stdout)
+    print(f"attention_band_counts: {json.dumps(payload.get('attention_band_counts', {}), sort_keys=True)}", file=stdout)
+    print(f"fixture_derived_count: {payload.get('fixture_derived_count')}", file=stdout)
+    print(f"live_derived_count: {payload.get('live_derived_count')}", file=stdout)
+    print(f"promotion_eligible_count: {payload.get('promotion_eligible_count')}", file=stdout)
+    print(f"promotion_blocked_count: {payload.get('promotion_blocked_count')}", file=stdout)
+    print(f"decisions_supplied: {str(payload.get('decisions_supplied')).lower()}", file=stdout)
+    print(f"decisions_recorded: {payload.get('decisions_recorded')}", file=stdout)
+    print(f"network_provider_calls: {str(payload.get('network_provider_calls')).lower()}", file=stdout)
     print(f"recommended_next_action: {payload.get('recommended_next_action')}", file=stdout)
     print(f"blockers: {json.dumps(payload.get('blockers', []), sort_keys=True)}", file=stdout)
 
