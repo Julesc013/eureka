@@ -1,0 +1,42 @@
+{
+  "schema_version": "eureka.source_wave.ia_candidate_index_refresh_authority_closeout.v0",
+  "generated_at": "2026-06-18T14:11:36.7427095+10:00",
+  "task_closed": "IA-CANDIDATE-INDEX-REFRESH-00",
+  "status": "PASS_WITH_WARNINGS",
+  "implementation_commit": "9a597fc2498172143b0a05c32f09cc4aeeaf9c27",
+  "current_head_at_authority_closeout": "9a597fc2498172143b0a05c32f09cc4aeeaf9c27",
+  "input_source_observation_delta": ".eureka/source-wave/ia-metadata/source-observation-cache/latest/source_observation_delta_manifest.json",
+  "input_source_observation_delta_hash": "sha256:ae231580c7696b1631fe1fabe310567a18bb3eeadbcf306ef455e6c100dd86e4",
+  "generated_candidate_index_delta_path": ".eureka/source-wave/ia-metadata/candidate-index/latest/",
+  "generated_manifest_path": ".eureka/source-wave/ia-metadata/candidate-index/latest/candidate_index_delta_manifest.json",
+  "delta_id": "candidate-index-delta:ia_metadata:11980e2eb75d314cde37",
+  "source_observations_consumed": 56,
+  "candidates_written": 56,
+  "deduplicated_candidate_count": 56,
+  "query_count": 7,
+  "provider_modes": [
+    "fixture",
+    "live"
+  ],
+  "previous_candidate_delta": "none / first_run_no_previous_delta",
+  "unsafe_record_count": 0,
+  "redacted_error_count": 0,
+  "reviewed_master_mutation": false,
+  "public_index_mutation": false,
+  "candidate_index_store_mutation": false,
+  "evidence_ledger_mutation": false,
+  "review_promotion_mutation": false,
+  "public_fanout": false,
+  "downloads_file_fetch": false,
+  "wayback_replay": false,
+  "license_posture": "unchanged",
+  "public_alpha_posture": "unchanged",
+  "validation_evidence_available": true,
+  "count_discrepancies": [],
+  "next_recommended_task": "IA-EVIDENCE-LEDGER-SUMMARY-00",
+  "notes": [
+    "Candidates remain provisional and unreviewed.",
+    "Evidence-ledger summary is not implemented by this closeout.",
+    "Public exposure remains paused."
+  ]
+}

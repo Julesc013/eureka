@@ -1,0 +1,128 @@
+{
+  "schema_version": "eureka.source_wave.ia_evidence_ledger_summary_authority_decision.v0",
+  "generated_at": "2026-06-18T14:11:36.7427095+10:00",
+  "task_id": "IA-EVIDENCE-LEDGER-SUMMARY-AUTHORITY-00",
+  "status": "PASS_WITH_WARNINGS",
+  "branch": "dev",
+  "head_before": "9a597fc2498172143b0a05c32f09cc4aeeaf9c27",
+  "origin_dev_before": "9a597fc2498172143b0a05c32f09cc4aeeaf9c27",
+  "origin_dev_sync_before": "0 0",
+  "worktree_before": "clean",
+  "previous_recommended_task": "IA-CANDIDATE-INDEX-REFRESH-00",
+  "new_recommended_task": "IA-EVIDENCE-LEDGER-SUMMARY-00",
+  "reason_for_advancing_queue": "IA candidate-index refresh implementation and audit evidence are complete, while repo-local authority still pointed at the closed candidate-index task.",
+  "path_blocker_fixed": true,
+  "allowed_implementation_paths_for_next_task": [
+    "runtime/local/**",
+    "scripts/eureka_evidence_ledger_summary.py",
+    "scripts/eureka_index.py if the repo already uses it for local source-index summaries",
+    "tools/generators/**",
+    "tests/operations/**",
+    "tests/runtime/**",
+    "docs/operations/**",
+    "control/audits/source_wave/**",
+    ".eureka/source-wave/ia-metadata/evidence-ledger/**",
+    "contracts/source/** only for a narrow source/candidate/evidence bridge schema",
+    "contracts/evidence/** only if an existing repo convention supports narrow evidence contracts"
+  ],
+  "protected_paths": [
+    "docs/canon/**",
+    "public exposure/tunnel/hosting/launch code",
+    "Workbench runtime unless separately authorized",
+    "source/provider expansion beyond the existing IA source-observation and candidate deltas",
+    "reviewed/master index mutation paths",
+    "public-index mutation paths",
+    "candidate-index store mutation paths",
+    "review/promotion mutation paths",
+    "release/**",
+    "archive/**",
+    "existing archive zips",
+    "LICENSE.md",
+    "LICENSE-SUMMARY.md",
+    "NOTICE.md",
+    ".aide/queue/** except final status reporting if repo convention requires it"
+  ],
+  "public_exposure_paused": true,
+  "license_posture": "unchanged",
+  "reviewed_master_mutation_forbidden": true,
+  "public_index_mutation_forbidden": true,
+  "candidate_index_store_mutation_forbidden": true,
+  "evidence_ledger_implementation_performed": false,
+  "downloads_file_fetch": false,
+  "wayback_replay": false,
+  "public_mutation": false,
+  "review_promotion": false,
+  "validation": [
+    {
+      "command": "git fetch origin",
+      "status": "PASS"
+    },
+    {
+      "command": "git status --short --branch",
+      "status": "PASS",
+      "summary": "clean and synced before authority edits"
+    },
+    {
+      "command": "git rev-list --left-right --count origin/dev...HEAD",
+      "status": "PASS",
+      "summary": "0 0 before authority edits"
+    },
+    {
+      "command": "python scripts/check_git_task_state.py --mode start-task --task-id IA-EVIDENCE-LEDGER-SUMMARY-00",
+      "status": "WARN",
+      "summary": "branch name does not include task ID before edits; all other guard checks passed"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py pack --task \"IA-EVIDENCE-LEDGER-SUMMARY-00\"",
+      "status": "PASS_WITH_MANUAL_NARROWING",
+      "summary": "pack wrote a generic AIDE/control packet, then latest-task-packet.md was manually narrowed to match task YAML authority"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py validate",
+      "status": "PASS"
+    },
+    {
+      "command": "python -m unittest tests.operations.test_ia_candidate_index_refresh -v",
+      "status": "PASS",
+      "summary": "15 tests passed"
+    },
+    {
+      "command": "python scripts/check_architecture_boundaries.py",
+      "status": "PASS"
+    },
+    {
+      "command": "python scripts/check_generated_artifact_cleanliness.py --check --json",
+      "status": "PENDING_POST_COMMIT_RERUN",
+      "summary": "pre-commit run failed only because new control/audits authority files were uncommitted"
+    },
+    {
+      "command": "python scripts/validate_public_alpha_readonly.py",
+      "status": "PASS"
+    },
+    {
+      "command": "python scripts/validate_snapshot_relay.py",
+      "status": "PASS"
+    },
+    {
+      "command": "git diff --check",
+      "status": "PASS"
+    },
+    {
+      "command": "python scripts/eureka_test_select.py --changed --failed-first --json",
+      "status": "PASS",
+      "summary": "selected static preflight only; full discovery not required"
+    }
+  ],
+  "full_unittest_discovery_claimed": false,
+  "post_commit_checks_required": [
+    "python scripts/check_generated_artifact_cleanliness.py --check --json",
+    "python scripts/check_git_task_state.py --mode start-task --task-id IA-EVIDENCE-LEDGER-SUMMARY-00",
+    "py -3 .aide/scripts/aide_lite.py commit check --latest"
+  ],
+  "remaining_blockers": [
+    "WAITING_FOR_EXTERNAL_ARTIFACT_EVIDENCE",
+    "WAITING_FOR_USER_HARDWARE_DETAILS",
+    "Public launch remains paused pending separate operator decisions."
+  ],
+  "recommended_next_task": "IA-EVIDENCE-LEDGER-SUMMARY-00"
+}

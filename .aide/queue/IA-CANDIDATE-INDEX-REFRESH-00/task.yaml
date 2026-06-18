@@ -1,12 +1,12 @@
 schema_version: aide.task.v0
 id: IA-CANDIDATE-INDEX-REFRESH-00
 title: Refresh IA candidate-index delta from source-observation cache
-status: authorized
+status: completed
 task_class: source_wave_local_index_delta
 recommended_after: IA-SOURCE-OBSERVATION-CACHE-DELTA-00
 recommended_next: IA-EVIDENCE-LEDGER-SUMMARY-00
 purpose: Consume the governed IA source-observation cache delta and produce a local candidate-index delta or dry-run preview for later evidence, review, snapshot, and autonomous foundry tasks.
-authority_note: This task is authorized for the next implementation turn only after IA-CANDIDATE-INDEX-REFRESH-AUTHORITY-00 advances queue authority. Public exposure remains paused.
+authority_note: This task was authorized by IA-CANDIDATE-INDEX-REFRESH-AUTHORITY-00 and completed with a governed local candidate-index delta. Public exposure remains paused.
 allowed_scope:
   - runtime/local/**
   - scripts/eureka_candidate_index_refresh.py
@@ -70,3 +70,32 @@ acceptance:
   - Do not mutate public indexes, evidence ledger state, public exposure posture, or license posture.
   - Enforce no downloads, no file fetch, no Wayback replay, no public fanout, no reviewed/master mutation, and no public-index mutation.
 proof_level_required: L1
+result:
+  status: pass_with_warnings
+  implementation_commit: 9a597fc2498172143b0a05c32f09cc4aeeaf9c27
+  audit_report: control/audits/source_wave/ia_candidate_index_refresh_v0/candidate_index_refresh_report.json
+  authority_closeout: control/audits/source_wave/ia_candidate_index_refresh_v0/authority_closeout.json
+  source_observations_consumed: 56
+  candidates_written: 56
+  deduplicated_candidate_count: 56
+  query_count: 7
+  provider_modes_represented:
+    - fixture
+    - live
+  input_source_observation_delta_hash: sha256:ae231580c7696b1631fe1fabe310567a18bb3eeadbcf306ef455e6c100dd86e4
+  previous_candidate_delta: first_run_no_previous_delta
+  unsafe_record_count: 0
+  redacted_error_count: 0
+  reviewed_master_mutation: false
+  public_index_mutation: false
+  candidate_index_store_mutation: false
+  evidence_ledger_mutation: false
+  review_promotion_mutation: false
+  public_fanout: false
+  downloads_file_fetch: false
+  wayback_replay: false
+  license_posture: unchanged
+  public_alpha_posture: unchanged
+  next_recommended_task: IA-EVIDENCE-LEDGER-SUMMARY-00
+  external_artifact_evidence_status: WAITING_FOR_EXTERNAL_ARTIFACT_EVIDENCE
+  user_hardware_details_status: WAITING_FOR_USER_HARDWARE_DETAILS

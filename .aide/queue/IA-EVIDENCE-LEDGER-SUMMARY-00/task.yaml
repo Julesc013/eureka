@@ -1,0 +1,77 @@
+schema_version: aide.task.v0
+id: IA-EVIDENCE-LEDGER-SUMMARY-00
+title: Summarize IA evidence ledger delta from source observations and candidates
+status: authorized
+task_class: source_wave_local_evidence_delta
+recommended_after: IA-CANDIDATE-INDEX-REFRESH-00
+recommended_next: REVIEW-IA-CANDIDATES-BATCH-00
+purpose: Consume the governed IA source-observation cache delta and candidate-index delta to produce a local evidence-summary ledger delta for later review, reviewed-index, snapshot, and autonomous foundry tasks.
+authority_note: This task is authorized for the next implementation turn only after IA-EVIDENCE-LEDGER-SUMMARY-AUTHORITY-00 advances queue authority. Public exposure remains paused.
+allowed_scope:
+  - runtime/local/**
+  - scripts/eureka_evidence_ledger_summary.py
+  - scripts/eureka_index.py
+  - tools/generators/**
+  - tests/operations/**
+  - tests/runtime/**
+  - docs/operations/**
+  - control/audits/source_wave/**
+  - .eureka/source-wave/ia-metadata/evidence-ledger/**
+  - contracts/source/**
+  - contracts/evidence/**
+forbidden_scope:
+  - docs/canon/**
+  - runtime/connectors/**
+  - runtime/gateway/**
+  - surfaces/**
+  - site/**
+  - native/**
+  - crates/**
+  - examples/**
+  - evals/**
+  - release/**
+  - archive/**
+  - LICENSE.md
+  - LICENSE-SUMMARY.md
+  - NOTICE.md
+  - Workbench runtime unless an explicitly reviewed follow-up authorizes it
+  - public exposure, tunnel, hosting, or launch code
+  - source/provider expansion beyond the existing IA source-observation and candidate deltas
+  - reviewed/master index mutation paths
+  - public-index mutation paths
+  - candidate-index store mutation paths
+  - review/promotion mutation paths
+  - .aide/queue/** except final status reporting if repo convention requires it
+boundaries:
+  public_launch: false
+  public_exposure: false
+  public_workbench_exposure: false
+  downloads: false
+  file_fetch: false
+  wayback_replay: false
+  broad_ia_crawling: false
+  provider_or_network_call_during_evidence_summary: false
+  reviewed_master_mutation: false
+  public_index_mutation: false
+  candidate_index_store_mutation: false
+  review_promotion_mutation: false
+  evidence_summary_delta_only: true
+  review_remains_truth_boundary: true
+  license_posture_changed: false
+  production_readiness_claimed: false
+  rights_clearance_claimed: false
+  malware_or_binary_safety_claimed: false
+evidence_inputs:
+  source_observation_cache_report: control/audits/source_wave/ia_source_observation_cache_delta_v0/source_observation_cache_delta_report.json
+  source_observation_delta_manifest: .eureka/source-wave/ia-metadata/source-observation-cache/latest/source_observation_delta_manifest.json
+  candidate_index_refresh_report: control/audits/source_wave/ia_candidate_index_refresh_v0/candidate_index_refresh_report.json
+  candidate_index_refresh_closeout: control/audits/source_wave/ia_candidate_index_refresh_v0/authority_closeout.json
+  candidate_index_delta_manifest: .eureka/source-wave/ia-metadata/candidate-index/latest/candidate_index_delta_manifest.json
+acceptance:
+  - Consume the governed IA source-observation cache delta and candidate-index delta without network or provider calls.
+  - Produce evidence-summary ledger/delta material only under the governed .eureka source-wave path if repo ignore policy permits generated artifacts.
+  - Produce tracked audit summary under control/audits/source_wave/.
+  - Keep evidence summaries as support material, not reviewed truth or accepted artifact records.
+  - Do not mutate reviewed/master truth, public indexes, candidate-index stores, review/promotion state, public exposure posture, or license posture.
+  - Enforce no downloads, no file fetch, no Wayback replay, no public fanout, no reviewed/master mutation, no public-index mutation, and no candidate-index store mutation.
+proof_level_required: L1
