@@ -1,0 +1,177 @@
+{
+  "schema_version": "eureka.source_foundry_preview_checkpoint.v0",
+  "task_id": "SOURCE-FOUNDRY-PREVIEW-V0-CHECKPOINT-00",
+  "status": "WAITING_FOR_EXTERNAL_FULL_DISCOVERY",
+  "generated_at": "2026-06-18T21:36:09+10:00",
+  "branch": "dev",
+  "checkpoint_source_head": "ad68a79fec18d602024395921b5f5b93e70d8d3f",
+  "origin_dev": "ad68a79fec18d602024395921b5f5b93e70d8d3f",
+  "origin_main": "3b770ab9a9f6a99572f66c3ab2b89fb4e6fddf31",
+  "origin_dev_sync_before_edits": "0 0",
+  "origin_main_to_origin_dev": "0 12",
+  "origin_main_is_ancestor_of_origin_dev": true,
+  "worktree_before_edits": "clean",
+  "license_posture": "restricted_source_available",
+  "public_exposure": "paused",
+  "milestone": "Source Foundry Preview v0 - pending operator review",
+  "milestone_chain": [
+    "IA metadata",
+    "source observations",
+    "candidates",
+    "evidence summaries",
+    "review batch",
+    "8-item operator tranche"
+  ],
+  "source_observations": 56,
+  "provisional_candidates": 56,
+  "evidence_summaries": 344,
+  "review_items_prepared": 56,
+  "pending_review_items": 56,
+  "tranche_01_items": 8,
+  "tranche_01_fixture_derived_items": 8,
+  "tranche_01_live_derived_items": 0,
+  "tranche_01_promotion_eligible": 0,
+  "tranche_01_promotion_blocked": 8,
+  "tranche_01_decisions_supplied": false,
+  "tranche_01_decisions_recorded": 0,
+  "review_batch_manifest": ".eureka/source-wave/ia-metadata/review-batch/latest/review_batch_manifest.json",
+  "review_batch_manifest_hash": "sha256:1e50393bdd41bbff4c8f88b276509d5da4b4c272109254bc9801f88e572713a8",
+  "tranche_manifest": ".eureka/source-wave/ia-metadata/review-batch/tranches/01/tranche_manifest.json",
+  "tranche_manifest_hash": "sha256:0b48e346f6bbf880320ba8499b07013800500adadc8809a686c6eb5e629a5303",
+  "automatic_decisions": false,
+  "automatic_promotion": false,
+  "review_ledger_events_written": 0,
+  "reviewed_records_created": false,
+  "accepted_truth_created": false,
+  "reviewed_master_mutation": false,
+  "public_index_mutation": false,
+  "candidate_index_store_mutation": false,
+  "evidence_ledger_store_mutation": false,
+  "reviewed_index_rebuild": false,
+  "snapshot_refresh": false,
+  "network_provider_calls": false,
+  "downloads_file_fetch": false,
+  "wayback_replay": false,
+  "public_fanout": false,
+  "public_mutation": false,
+  "public_workbench_exposure": false,
+  "production_readiness_claim": false,
+  "reviewed_ia_truth_claim": false,
+  "full_discovery_run_inside_ai": false,
+  "full_discovery_status": "not_started_for_current_checkpoint",
+  "external_full_discovery_run_id": "source_foundry_preview_v0_checkpoint_00",
+  "external_full_discovery_handoff": "control/audits/source_wave/source_foundry_preview_v0_checkpoint_00/external_full_discovery_handoff.json",
+  "main_promotion_prepared": true,
+  "main_promotion_performed": false,
+  "main_promotion_blocker": "WAITING_FOR_EXTERNAL_FULL_DISCOVERY",
+  "validation": [
+    {
+      "command": "git fetch origin",
+      "status": "PASS"
+    },
+    {
+      "command": "git status --short --branch",
+      "status": "PASS",
+      "summary": "## dev...origin/dev"
+    },
+    {
+      "command": "git rev-list --left-right --count origin/dev...HEAD",
+      "status": "PASS",
+      "summary": "0 0"
+    },
+    {
+      "command": "python scripts/check_git_task_state.py --mode start-task --task-id SOURCE-FOUNDRY-PREVIEW-V0-CHECKPOINT-00",
+      "status": "WARN",
+      "summary": "branch dev does not include the task ID; all material guard checks passed"
+    },
+    {
+      "command": "git rev-list --left-right --count origin/main...origin/dev",
+      "status": "PASS",
+      "summary": "0 12"
+    },
+    {
+      "command": "git merge-base --is-ancestor origin/main origin/dev",
+      "status": "PASS",
+      "summary": "origin/main is ancestor of origin/dev"
+    },
+    {
+      "command": "python scripts/eureka_ia_candidate_review.py validate-batch --batch .eureka/source-wave/ia-metadata/review-batch/latest/review_batch_manifest.json --strict",
+      "status": "PASS"
+    },
+    {
+      "command": "python scripts/eureka_ia_candidate_review.py validate-tranche --tranche .eureka/source-wave/ia-metadata/review-batch/tranches/01/tranche_manifest.json --strict",
+      "status": "PASS"
+    },
+    {
+      "command": "python scripts/eureka_ia_candidate_review.py tranche-status --tranche .eureka/source-wave/ia-metadata/review-batch/tranches/01/tranche_manifest.json",
+      "status": "PASS_WITH_WARNINGS",
+      "summary": "WAITING_FOR_OPERATOR_REVIEW_DECISIONS; PROMOTION_BLOCKED_FIXTURE_ONLY_PROVENANCE"
+    },
+    {
+      "command": "python -m unittest tests.operations.test_review_ia_candidates_batch -v",
+      "status": "PASS",
+      "summary": "22 tests passed"
+    },
+    {
+      "command": "python -m unittest tests.runtime.test_review_ledger -v",
+      "status": "PASS",
+      "summary": "6 tests passed"
+    },
+    {
+      "command": "python -m unittest tests.runtime.test_review_queue_store -v",
+      "status": "PASS",
+      "summary": "18 tests passed"
+    },
+    {
+      "command": "python scripts/check_architecture_boundaries.py",
+      "status": "PASS"
+    },
+    {
+      "command": "python scripts/check_generated_artifact_cleanliness.py --check --json",
+      "status": "PASS"
+    },
+    {
+      "command": "python scripts/validate_public_alpha_readonly.py",
+      "status": "PASS"
+    },
+    {
+      "command": "python scripts/validate_snapshot_relay.py",
+      "status": "PASS"
+    },
+    {
+      "command": "python scripts/eureka_test_select.py --changed --failed-first --json",
+      "status": "PASS",
+      "summary": "selected L0 static preflight; full discovery deferred to external harness before promotion"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py doctor",
+      "status": "PASS"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py validate",
+      "status": "PASS_WITH_WARNINGS",
+      "summary": "compact task packet over target; validation otherwise passed"
+    },
+    {
+      "command": "python scripts/check_full_discovery.py --run-id source_foundry_preview_v0_checkpoint_00 --json",
+      "status": "WAITING",
+      "summary": "no status.json or full_unittest_summary.json found; external handoff prepared"
+    },
+    {
+      "command": "git diff --check",
+      "status": "PASS"
+    }
+  ],
+  "remaining_blockers": [
+    "WAITING_FOR_EXTERNAL_FULL_DISCOVERY",
+    "WAITING_FOR_OPERATOR_REVIEW_DECISIONS",
+    "PROMOTION_BLOCKED_FIXTURE_ONLY_PROVENANCE"
+  ],
+  "recommended_next_actions": [
+    "Run external full discovery from the handoff.",
+    "Return compact full discovery artifacts.",
+    "Ingest the compact result.",
+    "If green, perform fast-forward dev-to-main promotion while preserving pending-review/no-reviewed-truth/no-public-exposure language.",
+    "Collect explicit operator decisions separately before review-ledger recording."
+  ]
+}

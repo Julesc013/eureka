@@ -1,0 +1,98 @@
+{
+  "schema_version": "external_full_discovery_handoff.v0",
+  "task_id": "SOURCE-FOUNDRY-PREVIEW-V0-CHECKPOINT-00",
+  "task": "SOURCE-FOUNDRY-PREVIEW-V0-CHECKPOINT-00",
+  "status": "WAITING_FOR_EXTERNAL_FULL_DISCOVERY",
+  "branch": "dev",
+  "checkpoint_source_head": "ad68a79fec18d602024395921b5f5b93e70d8d3f",
+  "origin_dev_at_handoff": "ad68a79fec18d602024395921b5f5b93e70d8d3f",
+  "origin_main_at_handoff": "3b770ab9a9f6a99572f66c3ab2b89fb4e6fddf31",
+  "head_semantics": "The returned full discovery summary must match the operator's current checked-out dev HEAD at run time, including this checkpoint commit or any later explicitly accepted continuation commit.",
+  "repo_root": "D:/Projects/Eureka/eureka",
+  "created_at": "2026-06-18T21:36:09+10:00",
+  "milestone": "Source Foundry Preview v0 - pending operator review",
+  "milestone_chain": [
+    "IA metadata",
+    "source observations",
+    "candidates",
+    "evidence summaries",
+    "review batch",
+    "8-item operator tranche"
+  ],
+  "ai_policy": {
+    "full_discovery_inside_ai": false,
+    "reason": "Repo policy reserves full unittest discovery for external harness, CI, promotion, nightly, or manual operator lanes."
+  },
+  "run_id": "source_foundry_preview_v0_checkpoint_00",
+  "command": "python scripts/run_full_unittest_discovery.py --run-id source_foundry_preview_v0_checkpoint_00 --out ../eureka-test-runs/source_foundry_preview_v0_checkpoint_00 --quiet",
+  "status_command": "python scripts/check_full_discovery.py --run-id source_foundry_preview_v0_checkpoint_00 --json",
+  "underlying_command": "python -m unittest discover -s tests -t .",
+  "commands_to_run_externally": [
+    "git status --short --branch",
+    "git rev-parse HEAD",
+    "python scripts/run_full_unittest_discovery.py --run-id source_foundry_preview_v0_checkpoint_00 --out ../eureka-test-runs/source_foundry_preview_v0_checkpoint_00 --quiet",
+    "python scripts/check_full_discovery.py --run-id source_foundry_preview_v0_checkpoint_00 --json"
+  ],
+  "suggested_output_dir": "../eureka-test-runs/source_foundry_preview_v0_checkpoint_00",
+  "run_outside_ai": true,
+  "expected_duration_class": "very_long",
+  "expected_artifacts": [
+    "../eureka-test-runs/source_foundry_preview_v0_checkpoint_00/status.json",
+    "../eureka-test-runs/source_foundry_preview_v0_checkpoint_00/full_unittest_summary.json",
+    "../eureka-test-runs/source_foundry_preview_v0_checkpoint_00/failure_families.json",
+    "../eureka-test-runs/source_foundry_preview_v0_checkpoint_00/failed_tests.txt",
+    "../eureka-test-runs/source_foundry_preview_v0_checkpoint_00/environment.json",
+    "../eureka-test-runs/source_foundry_preview_v0_checkpoint_00/paths_touched.txt"
+  ],
+  "paste_back": [
+    "../eureka-test-runs/source_foundry_preview_v0_checkpoint_00/full_unittest_summary.json",
+    "../eureka-test-runs/source_foundry_preview_v0_checkpoint_00/failure_families.json",
+    "../eureka-test-runs/source_foundry_preview_v0_checkpoint_00/failed_tests.txt",
+    "git status --short --branch",
+    "git rev-parse HEAD"
+  ],
+  "do_not_paste": [
+    "../eureka-test-runs/source_foundry_preview_v0_checkpoint_00/full_unittest_stdout.txt",
+    "../eureka-test-runs/source_foundry_preview_v0_checkpoint_00/full_unittest_stderr.txt"
+  ],
+  "summary_schema": {
+    "schema_version": "full_unittest_summary.v0",
+    "required": [
+      "schema_version",
+      "command",
+      "exit_code",
+      "status",
+      "git",
+      "counts",
+      "failed_tests",
+      "failed_modules",
+      "failure_families",
+      "generated_by"
+    ],
+    "must_match": {
+      "git.branch": "dev",
+      "git.working_tree_clean": true
+    },
+    "must_match_runtime_head": "git rev-parse HEAD from the operator checkout used for source_foundry_preview_v0_checkpoint_00"
+  },
+  "checkpoint_invariants": {
+    "no_reviewed_ia_truth": true,
+    "operator_review_pending": true,
+    "review_decisions_recorded": false,
+    "review_ledger_events_written": 0,
+    "reviewed_records_created": false,
+    "reviewed_master_mutation": false,
+    "public_index_mutation": false,
+    "snapshot_refresh": false,
+    "public_exposure": "paused",
+    "license_posture": "restricted_source_available"
+  },
+  "do_not_commit": [
+    ".aide.local/**",
+    "../eureka-test-runs/**/full_unittest_stdout.txt",
+    "../eureka-test-runs/**/full_unittest_stderr.txt"
+  ],
+  "reason_required": "Source Foundry Preview v0 is promotion-adjacent and dev is ahead of main; full discovery must run externally before dev-to-main promotion.",
+  "resume_instructions": "Resume SOURCE-FOUNDRY-PREVIEW-V0-CHECKPOINT-00 after compact external artifacts return. If green, ingest and then prepare or perform fast-forward dev-to-main promotion with pending-review/no-truth/no-public-exposure language.",
+  "waiting_status": "WAITING_FOR_EXTERNAL_FULL_DISCOVERY"
+}
