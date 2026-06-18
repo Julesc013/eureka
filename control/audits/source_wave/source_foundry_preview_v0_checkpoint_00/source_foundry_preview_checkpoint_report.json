@@ -1,7 +1,7 @@
 {
   "schema_version": "eureka.source_foundry_preview_checkpoint.v0",
   "task_id": "SOURCE-FOUNDRY-PREVIEW-V0-CHECKPOINT-00",
-  "status": "WAITING_FOR_EXTERNAL_FULL_DISCOVERY",
+  "status": "BLOCKED_BY_EXTERNAL_FULL_DISCOVERY_FAILURE",
   "generated_at": "2026-06-18T21:36:09+10:00",
   "branch": "dev",
   "checkpoint_source_head": "ad68a79fec18d602024395921b5f5b93e70d8d3f",
@@ -58,12 +58,19 @@
   "production_readiness_claim": false,
   "reviewed_ia_truth_claim": false,
   "full_discovery_run_inside_ai": false,
-  "full_discovery_status": "not_started_for_current_checkpoint",
+  "full_discovery_status": "fail",
+  "full_discovery_tests_run": 5792,
+  "full_discovery_failures": 43,
+  "full_discovery_errors": 7,
+  "full_discovery_failed_tests": 50,
+  "full_discovery_failed_modules": 40,
+  "full_discovery_failure_families": 31,
+  "full_discovery_result": "control/audits/source_wave/source_foundry_preview_v0_checkpoint_00/full_discovery_result.json",
   "external_full_discovery_run_id": "source_foundry_preview_v0_checkpoint_00",
   "external_full_discovery_handoff": "control/audits/source_wave/source_foundry_preview_v0_checkpoint_00/external_full_discovery_handoff.json",
   "main_promotion_prepared": true,
   "main_promotion_performed": false,
-  "main_promotion_blocker": "WAITING_FOR_EXTERNAL_FULL_DISCOVERY",
+  "main_promotion_blocker": "EXTERNAL_FULL_DISCOVERY_FAILED",
   "validation": [
     {
       "command": "git fetch origin",
@@ -154,8 +161,8 @@
     },
     {
       "command": "python scripts/check_full_discovery.py --run-id source_foundry_preview_v0_checkpoint_00 --json",
-      "status": "WAITING",
-      "summary": "no status.json or full_unittest_summary.json found; external handoff prepared"
+      "status": "FAIL",
+      "summary": "5792 tests run; 43 failures; 7 errors; 31 failure families"
     },
     {
       "command": "git diff --check",
@@ -163,15 +170,15 @@
     }
   ],
   "remaining_blockers": [
-    "WAITING_FOR_EXTERNAL_FULL_DISCOVERY",
+    "EXTERNAL_FULL_DISCOVERY_FAILED",
     "WAITING_FOR_OPERATOR_REVIEW_DECISIONS",
     "PROMOTION_BLOCKED_FIXTURE_ONLY_PROVENANCE"
   ],
   "recommended_next_actions": [
-    "Run external full discovery from the handoff.",
-    "Return compact full discovery artifacts.",
-    "Ingest the compact result.",
-    "If green, perform fast-forward dev-to-main promotion while preserving pending-review/no-reviewed-truth/no-public-exposure language.",
+    "Triage full-discovery validator drift.",
+    "Decide whether historical queue-state validators need repair, retirement, scope gating, or promotion-gate reclassification.",
+    "Rerun external full discovery after repair or policy update.",
+    "Only if green, perform fast-forward dev-to-main promotion while preserving pending-review/no-reviewed-truth/no-public-exposure language.",
     "Collect explicit operator decisions separately before review-ledger recording."
   ]
 }

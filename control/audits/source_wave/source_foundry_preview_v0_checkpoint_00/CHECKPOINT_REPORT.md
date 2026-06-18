@@ -2,7 +2,7 @@
 
 Task: `SOURCE-FOUNDRY-PREVIEW-V0-CHECKPOINT-00`
 
-Status: `WAITING_FOR_EXTERNAL_FULL_DISCOVERY`
+Status: `BLOCKED_BY_EXTERNAL_FULL_DISCOVERY_FAILURE`
 
 Generated: `2026-06-18T21:36:09+10:00`
 
@@ -107,8 +107,18 @@ Not run:
 
 - `python -m unittest discover -s tests -t .`
 
-Full unittest discovery is deferred to the external handoff in
-`external_full_discovery_handoff.json`.
+External full discovery returned red for run id
+`source_foundry_preview_v0_checkpoint_00`:
+
+- tests run: 5792
+- failures: 43
+- errors: 7
+- failed tests: 50
+- failed modules: 40
+- failure families: 31
+
+The compact result is recorded in `FULL_DISCOVERY_RESULT.md` and
+`full_discovery_result.json`.
 
 ## Dev To Main
 
@@ -116,14 +126,15 @@ Future `dev -> main` promotion is structurally fast-forwardable because
 `origin/main` is an ancestor of `origin/dev`.
 
 Promotion was not performed in this checkpoint because external full discovery
-has not yet returned for the current checkpoint head. Promotion remains blocked
-until that compact result is green and ingested.
+returned red. Promotion remains blocked until a repair or policy update produces
+a green compact full-discovery result for the current promotion candidate.
 
 ## Next
 
-1. Run external full discovery outside this AI session.
-2. Return compact artifacts only.
-3. Ingest the compact result.
+1. Triage the external full-discovery failure families.
+2. Decide whether historical queue-state validators should be repaired,
+   reclassified, or excluded from the promotion gate.
+3. Rerun external full discovery after the repair/policy lane.
 4. If green, prepare or perform fast-forward `dev -> main` promotion with a
    report that states:
    - pending operator review
