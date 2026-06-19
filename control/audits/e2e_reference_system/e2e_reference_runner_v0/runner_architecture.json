@@ -1,0 +1,11 @@
+{
+  "schema_version": "eureka.e2e_reference_runner_architecture.v0",
+  "canonical_owner": "runtime/resolution_run",
+  "runner_class": "runtime.resolution_run.runner.E2EReferenceRunner",
+  "compatibility_facade": "runtime.resolution_run.run_kernel.run_resolution_dry_run",
+  "ports_module": "runtime/resolution_run/ports.py",
+  "bundle_store": "runtime.resolution_run.runner.LocalRunBundleStore",
+  "duplicate_orchestration": false,
+  "workbench_projection_only": true,
+  "live_provider_imports_in_core_runner": false
+}

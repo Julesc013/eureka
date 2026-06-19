@@ -1,0 +1,17 @@
+{
+  "schema_version": "eureka.e2e_reference_runner_port_matrix.v0",
+  "ports": [
+    "RunnerClock",
+    "RunIdFactory",
+    "RunStore",
+    "RunEventStore",
+    "WorkUnitScheduler",
+    "WorkUnitExecutor",
+    "RunPolicyEvaluator",
+    "RunProjector",
+    "RunBundleWriter",
+    "ReplayReader"
+  ],
+  "module": "runtime/resolution_run/ports.py",
+  "provider_specific_imports_in_core": false
+}

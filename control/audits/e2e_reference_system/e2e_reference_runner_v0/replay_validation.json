@@ -1,0 +1,15 @@
+{
+  "schema_version": "eureka.e2e_reference_replay_validation.v0",
+  "strict_statuses": [
+    "replay_verified",
+    "replay_corrupt",
+    "replay_diverged",
+    "replay_unsupported_version"
+  ],
+  "implemented_statuses": ["replay_verified", "replay_corrupt", "replay_verified_with_unknown_inert_events"],
+  "validates_event_hash_chain": true,
+  "validates_file_hashes": true,
+  "provider_network_calls": false,
+  "review_or_index_mutation": false,
+  "accepted_truth_created": false
+}

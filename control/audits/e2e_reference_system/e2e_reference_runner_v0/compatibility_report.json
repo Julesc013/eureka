@@ -1,0 +1,9 @@
+{
+  "schema_version": "eureka.e2e_reference_runner_compatibility_report.v0",
+  "run_resolution_dry_run_retained": true,
+  "legacy_cli_retained": true,
+  "workbench_uses_compatibility_facade": true,
+  "ia_dry_run_planning_retained": true,
+  "existing_tests_retained": true,
+  "compatibility_breaks": []
+}

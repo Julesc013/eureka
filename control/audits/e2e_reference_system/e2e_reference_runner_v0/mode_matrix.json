@@ -1,0 +1,24 @@
+{
+  "schema_version": "eureka.e2e_reference_mode_matrix.v0",
+  "modes": {
+    "synthetic": {
+      "implemented": true,
+      "enabled": true,
+      "network_provider_calls": false,
+      "accepted_truth": false
+    },
+    "replay": {
+      "implemented": true,
+      "enabled": true,
+      "network_provider_calls": false,
+      "accepted_truth": false
+    },
+    "live-shadow": {
+      "implemented": true,
+      "enabled": false,
+      "policy_blocked": true,
+      "network_provider_calls": false
+    }
+  },
+  "dry_run_mapping": "synthetic mode plus IA dry-run scheduler adapter"
+}

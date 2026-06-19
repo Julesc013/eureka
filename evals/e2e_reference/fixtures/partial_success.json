@@ -1,0 +1,17 @@
+{
+  "schema_version": "eureka.e2e_reference.synthetic_fixture.v0",
+  "fixture_id": "partial_success",
+  "description": "One WorkUnit returns a partial result and a partial-failure posture.",
+  "workunits": [
+    {
+      "workunit_id": "synthetic-workunit-partial",
+      "workunit_type": "synthetic_metadata_probe",
+      "attempts": [
+        {
+          "status": "partial_success",
+          "result_count": 1
+        }
+      ]
+    }
+  ]
+}

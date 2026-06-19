@@ -1,0 +1,21 @@
+{
+  "schema_version": "eureka.e2e_reference.synthetic_fixture.v0",
+  "fixture_id": "retry_then_success",
+  "description": "One WorkUnit has a retryable failure and then succeeds.",
+  "workunits": [
+    {
+      "workunit_id": "synthetic-workunit-retry",
+      "workunit_type": "synthetic_metadata_probe",
+      "attempts": [
+        {
+          "status": "retryable_failure",
+          "reason": "synthetic_retry"
+        },
+        {
+          "status": "succeeded",
+          "result_count": 1
+        }
+      ]
+    }
+  ]
+}

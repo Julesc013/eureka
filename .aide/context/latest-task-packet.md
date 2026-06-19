@@ -2,11 +2,11 @@
 
 ## PHASE
 
-UNSPECIFIED - E2E-REFERENCE-RUNNER-00
+UNSPECIFIED - E2E-PREVIEW-INDEX-00
 
 ## GOAL
 
-E2E-REFERENCE-RUNNER-00
+E2E-PREVIEW-INDEX-00
 
 ## WHY
 
@@ -139,8 +139,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4766
-- approx_tokens: 1192
+- chars: 4760
+- approx_tokens: 1190
 - budget_status: PASS
 - warnings:
   - none

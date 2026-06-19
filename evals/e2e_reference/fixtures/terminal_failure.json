@@ -1,0 +1,17 @@
+{
+  "schema_version": "eureka.e2e_reference.synthetic_fixture.v0",
+  "fixture_id": "terminal_failure",
+  "description": "One WorkUnit fails terminally without creating truth.",
+  "workunits": [
+    {
+      "workunit_id": "synthetic-workunit-fail",
+      "workunit_type": "synthetic_metadata_probe",
+      "attempts": [
+        {
+          "status": "terminal_failure",
+          "reason": "synthetic_terminal_failure"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "schema_version": "eureka.e2e_reference_run_bundle_format.v0",
+  "generated_root": ".eureka/e2e-reference/runs/<run-id>/",
+  "required_files": [
+    "run_manifest.json",
+    "run_state.json",
+    "events.jsonl",
+    "workunits.jsonl",
+    "result.json",
+    "boundary_report.json",
+    "lane_snapshot.json"
+  ],
+  "optional_files": ["replay_report.json", "bundle_validation_report.json"],
+  "manifest_paths_relative": true,
+  "file_hashes": "sha256",
+  "path_traversal_rejected": true,
+  "atomic_writes": true,
+  "committed_generated_output": false
+}

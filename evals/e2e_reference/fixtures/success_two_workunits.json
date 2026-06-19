@@ -1,0 +1,27 @@
+{
+  "schema_version": "eureka.e2e_reference.synthetic_fixture.v0",
+  "fixture_id": "success_two_workunits",
+  "description": "Two deterministic WorkUnits succeed without provider access.",
+  "workunits": [
+    {
+      "workunit_id": "synthetic-workunit-001",
+      "workunit_type": "synthetic_metadata_probe",
+      "attempts": [
+        {
+          "status": "succeeded",
+          "result_count": 1
+        }
+      ]
+    },
+    {
+      "workunit_id": "synthetic-workunit-002",
+      "workunit_type": "synthetic_metadata_probe",
+      "attempts": [
+        {
+          "status": "succeeded",
+          "result_count": 1
+        }
+      ]
+    }
+  ]
+}

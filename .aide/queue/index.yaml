@@ -1,4 +1,4 @@
-current_recommended_task: E2E-REFERENCE-RUNNER-00 - Build the shared local E2E runner for replay and synthetic modes; live-shadow remains disabled without separate provider approval
+current_recommended_task: E2E-PREVIEW-INDEX-00 - Build the status-aware preview index over reviewed, candidate, need, near-miss, absence, blocked, unavailable, and unknown states without mutating reviewed truth
 completed:
   - SOURCE-ACTION-KERNEL-00
   - SOURCE-WAVE-00
@@ -91,9 +91,9 @@ completed:
   - HUMAN-LAST-E2E-REFERENCE-BUILD-00
   - E2E-REFERENCE-SYSTEM-TRACK-00
   - E2E-REFERENCE-CONTRACT-00
+  - E2E-REFERENCE-RUNNER-00
 blocked: []
 planned:
-  - E2E-REFERENCE-RUNNER-00
   - E2E-PREVIEW-INDEX-00
   - E2E-HUNT-EXPLORATION-UI-00
   - SYNTHETIC-TRUTH-PATH-E2E-00

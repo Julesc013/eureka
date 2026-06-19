@@ -8,6 +8,18 @@ python scripts/eureka_resolution_run.py --query sampleproject --projection publi
 python scripts/eureka_resolution_run.py --query sampleproject --projection native_desktop_read_only --json
 ```
 
+Smoke the E2E reference runner facade:
+
+```text
+python scripts/eureka_resolution_run.py run --mode synthetic --query "old blue FTP client for XP" --out .eureka/e2e-reference/runs
+python scripts/eureka_resolution_run.py validate --run-dir .eureka/e2e-reference/runs/<run-id> --strict
+python scripts/eureka_resolution_run.py replay --run-dir .eureka/e2e-reference/runs/<run-id> --strict
+python scripts/eureka_resolution_run.py run --mode live-shadow --query "old blue FTP client for XP"
+```
+
+The live-shadow command is expected to fail closed with a policy-blocked result
+and no provider/network call.
+
 Validate the foundation:
 
 ```text

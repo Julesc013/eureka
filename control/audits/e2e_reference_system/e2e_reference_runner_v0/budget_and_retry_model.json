@@ -1,0 +1,16 @@
+{
+  "schema_version": "eureka.e2e_reference_budget_and_retry_model.v0",
+  "budget_fields": [
+    "max_workunits",
+    "max_attempts_per_workunit",
+    "max_events",
+    "max_elapsed_seconds",
+    "max_result_records_per_workunit",
+    "failure_policy"
+  ],
+  "retryable_failure_supported": true,
+  "terminal_failure_supported": true,
+  "partial_success_supported": true,
+  "timeout_uses_sleep": false,
+  "budget_exhaustion_implies_absence": false
+}

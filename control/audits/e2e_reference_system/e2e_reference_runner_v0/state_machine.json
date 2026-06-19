@@ -1,0 +1,14 @@
+{
+  "schema_version": "eureka.e2e_reference_runner_state_machine.v0",
+  "states": ["created", "planned", "running", "paused", "completed", "failed", "cancelled", "policy_blocked"],
+  "terminal_states": ["completed", "failed", "cancelled", "policy_blocked"],
+  "commands": ["create", "plan", "start", "step", "pause", "resume", "cancel", "run_to_completion", "replay"],
+  "forbidden_transitions": [
+    "resume_non_paused",
+    "pause_terminal",
+    "execute_cancelled",
+    "replay_provider_call",
+    "live_shadow_without_approval",
+    "runner_to_reviewed_truth"
+  ]
+}

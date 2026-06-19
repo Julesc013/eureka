@@ -1,20 +1,27 @@
 schema_version: aide.task.v0
 id: E2E-REFERENCE-RUNNER-00
 title: Build the local E2E reference runner
-status: planned
+status: completed
 task_class: e2e_reference_child
 parent_track: E2E-REFERENCE-SYSTEM-TRACK-00
 predecessor: E2E-REFERENCE-CONTRACT-00
 successor: E2E-PREVIEW-INDEX-00
 purpose: Build one orchestration path for replay, synthetic, and disabled-by-default live-shadow modes.
 allowed_scope:
+  - .aide/queue/E2E-REFERENCE-RUNNER-00/task.yaml
+  - .aide/queue/index.yaml
+  - .aide/context/latest-task-packet.md
   - runtime/engine/**
+  - runtime/resolution_run/**
   - runtime/local/**
   - contracts/**
   - scripts/**
+  - tools/generators/eureka_resolution_run.py
   - tests/runtime/**
   - tests/e2e/**
+  - tests/operations/test_resolution_run_scripts.py
   - evals/**
+  - docs/architecture/**
   - docs/operations/**
   - control/audits/e2e_reference_system/**
 forbidden_scope:

@@ -1,0 +1,13 @@
+{
+  "schema_version": "eureka.e2e_reference_runner_boundary_report.v0",
+  "real_review_decision": false,
+  "reviewed_records": false,
+  "reviewed_master_mutation": false,
+  "public_index_mutation": false,
+  "snapshot_publication": false,
+  "provider_network_calls": false,
+  "downloads_file_fetch": false,
+  "public_exposure": "paused",
+  "license_posture": "unchanged",
+  "live_shadow_policy_blocked": true
+}

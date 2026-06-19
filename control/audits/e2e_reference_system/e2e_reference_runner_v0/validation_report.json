@@ -1,0 +1,77 @@
+{
+  "schema_version": "eureka.e2e_reference_runner_validation_report.v0",
+  "task_id": "E2E-REFERENCE-RUNNER-00",
+  "status": "PASS_WITH_WARNINGS",
+  "full_discovery_claimed": false,
+  "runtime_files_changed": true,
+  "checks": [
+    {
+      "command": "python -m py_compile runtime/resolution_run/runner.py runtime/resolution_run/event_log.py runtime/resolution_run/ports.py runtime/resolution_run/run_kernel.py tools/generators/eureka_resolution_run.py",
+      "result": "pass"
+    },
+    {
+      "command": "python -m unittest tests.runtime.test_resolution_run_kernel tests.runtime.test_resolution_run_projection tests.operations.test_resolution_run_scripts tests.runtime.test_e2e_reference_runner tests.e2e.test_e2e_reference_runner -v",
+      "result": "pass",
+      "tests": 20
+    },
+    {
+      "command": "python -m unittest tests.e2e.test_workbench_operator_routes tests.operations.test_ia_source_observation_cache_delta tests.operations.test_ia_candidate_index_refresh tests.operations.test_ia_evidence_ledger_summary tests.operations.test_review_ia_candidates_batch tests.runtime.test_review_ledger tests.runtime.test_review_queue_store -v",
+      "result": "pass",
+      "tests": 104
+    },
+    {
+      "command": "python scripts/eureka_resolution_run.py run --mode synthetic --query \"old blue FTP client for XP\" --out .eureka/e2e-reference/runs --json; validate; replay",
+      "result": "pass"
+    },
+    {
+      "command": "python scripts/eureka_resolution_run.py run --mode live-shadow --query \"old blue FTP client for XP\" --json",
+      "result": "policy_blocked_exit_2"
+    },
+    {
+      "command": "python scripts/check_architecture_boundaries.py",
+      "result": "pass"
+    },
+    {
+      "command": "python scripts/validate_runtime_architecture_leakage.py --json",
+      "result": "pass"
+    },
+    {
+      "command": "python scripts/validate_public_alpha_readonly.py",
+      "result": "pass"
+    },
+    {
+      "command": "python scripts/validate_snapshot_relay.py",
+      "result": "pass"
+    },
+    {
+      "command": "python scripts/eureka_test_select.py --changed --failed-first --json",
+      "result": "pass"
+    },
+    {
+      "command": "python scripts/validate_test_lane_policy.py",
+      "result": "pass"
+    },
+    {
+      "command": "python -m unittest tests.operations.test_test_lane_policy tests.scripts.test_eureka_test_select tests.scripts.test_validate_test_lane_policy -v",
+      "result": "pass",
+      "tests": 6
+    },
+    {
+      "command": "git diff --check",
+      "result": "pass"
+    }
+  ],
+  "warnings": [
+    "Full unittest discovery was not run; it remains a promotion/manual gate.",
+    "Generated artifact cleanliness failed before commit because the new runner audit packet was intentionally untracked and should pass after commit."
+  ],
+  "review_decisions_changed": false,
+  "reviewed_records_created": false,
+  "reviewed_master_mutation": false,
+  "public_index_mutation": false,
+  "provider_network_calls": false,
+  "downloads_or_file_fetches": false,
+  "public_exposure": "paused",
+  "license_posture": "unchanged",
+  "recommended_next_task": "E2E-PREVIEW-INDEX-00"
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": "eureka.e2e_reference_existing_runner_seams.v0",
+  "task_id": "E2E-REFERENCE-RUNNER-00",
+  "canonical_orchestration_owner": "runtime/resolution_run",
+  "seams": [
+    {
+      "path": "runtime/resolution_run/run_kernel.py",
+      "role": "compatibility facade and legacy dry-run API",
+      "disposition": "extend"
+    },
+    {
+      "path": "runtime/resolution_run/runner.py",
+      "role": "E2E runner lifecycle, modes, bundle, replay",
+      "disposition": "new extension of canonical seam"
+    },
+    {
+      "path": "runtime/resolution_run/event_log.py",
+      "role": "append-only event log with hash chain",
+      "disposition": "extend"
+    },
+    {
+      "path": "runtime/resolution_run/workunit_scheduler.py",
+      "role": "IA dry-run scheduling adapter",
+      "disposition": "retain as compatibility adapter"
+    },
+    {
+      "path": "runtime/local/service/workbench_live_run.py",
+      "role": "Workbench projection over runner compatibility facade",
+      "disposition": "retain projection only"
+    },
+    {
+      "path": "tools/generators/eureka_resolution_run.py",
+      "role": "CLI wrapper over runner and replay validation",
+      "disposition": "extend"
+    }
+  ],
+  "duplicated_orchestration_created": false,
+  "runtime_product_truth_changed": false
+}

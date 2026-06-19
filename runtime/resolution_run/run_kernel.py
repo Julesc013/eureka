@@ -4,12 +4,10 @@ from __future__ import annotations
 
 from typing import Any, Mapping
 
-from .command_handler import handle_run_command
 from .event_log import InMemoryRunEventLog
-from .lane_projector import build_run_lane_snapshot
 from .policy_gate import DEFAULT_RUN_POLICY, evaluate_run_policy
 from .run_store import FIXED_CREATED_AT, InMemoryRunStore, stable_id
-from .workunit_scheduler import schedule_ia_hunt_workunits
+from .runner import run_e2e_reference_run
 
 
 BLOCKED_ACTIONS = (
@@ -63,46 +61,16 @@ def run_resolution_dry_run(
     include_ia_hunt: bool = True,
     policy: Mapping[str, Any] | None = None,
 ) -> dict[str, Any]:
-    """Run the foundation orchestration proof in dry-run mode."""
-    store = InMemoryRunStore()
-    event_log = InMemoryRunEventLog()
-    created = create_resolution_run(
+    """Run the foundation orchestration proof through the E2E reference runner."""
+    result = run_e2e_reference_run(
         query,
+        mode="synthetic",
         projection_profile=projection_profile,
-        policy=policy,
-        store=store,
-        event_log=event_log,
+        include_ia_hunt=include_ia_hunt,
+        scheduler_kind="ia_dry_run",
     )
-    run = dict(created["run"])
-    run = handle_run_command(run, {"command_type": "start"}, event_log, policy)
-    workunit_schedule = schedule_ia_hunt_workunits(query, policy or DEFAULT_RUN_POLICY) if include_ia_hunt else {}
-    if workunit_schedule:
-        event_log.append(run["run_id"], "workunits_scheduled", {"workunit_count": workunit_schedule["workunit_count"]})
-    lane_snapshot = build_run_lane_snapshot(
-        run,
-        workunit_schedule,
-        projection_profile=projection_profile,
-        run_ia_dry_run=include_ia_hunt,
-    )
-    run["active_lanes"] = [str(lane.get("lane_kind", "")) for lane in lane_snapshot["lane_page"].get("lanes", []) if lane.get("visible")]
-    run["state"] = "completed"
-    run["state_history"] = list(run.get("state_history", [])) + [
-        {"state": "completed", "at": FIXED_CREATED_AT, "reason": "dry-run orchestration completed"}
-    ]
-    store.update(run)
-    event_log.append(run["run_id"], "lane_snapshot_built", {"snapshot_id": lane_snapshot["snapshot_id"]})
-    coverage_report = build_run_coverage_report(run, workunit_schedule, lane_snapshot)
-    event_log.append(run["run_id"], "coverage_report_built", {"coverage_report_id": coverage_report["coverage_report_id"]})
-    return {
-        "schema_version": "resolution_run_kernel_result.v0",
-        "run": run,
-        "events": event_log.list_events(run["run_id"]),
-        "workunit_schedule": workunit_schedule,
-        "lane_snapshot": lane_snapshot,
-        "coverage_report": coverage_report,
-        "blocked_actions": list(BLOCKED_ACTIONS),
-        "boundaries": _boundary_report(),
-    }
+    result["blocked_actions"] = list(BLOCKED_ACTIONS)
+    return result
 
 
 def build_run_coverage_report(
