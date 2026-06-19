@@ -1,0 +1,101 @@
+schema_version: aide.task.v0
+id: SOURCE-FOUNDRY-RUNTIME-LEAKAGE-REPAIR-00
+title: Repair Source Foundry runtime architecture leakage
+status: authorized
+task_class: runtime_architecture_boundary_repair
+recommended_after: SOURCE-FOUNDRY-PREVIEW-V0-FULL-DISCOVERY-DRIFT-REPAIR-01
+recommended_next: SOURCE-FOUNDRY-PREVIEW-V0-HISTORICAL-VALIDATOR-DRIFT-REPAIR-02
+purpose: Clear current runtime architecture leakage gate findings by classifying and repairing static naming/control-vocabulary leakage without changing product behavior or broad-allowlisting architecture debt.
+authority_note: This is a parallel runtime naming-boundary repair. It must not advance the live source-wave product queue, create reviewed truth, mutate indexes, expose public services, call providers, run full discovery, or promote dev to main.
+allowed_scope:
+  - .aide/queue/SOURCE-FOUNDRY-RUNTIME-LEAKAGE-REPAIR-00/**
+  - .aide/context/**
+  - runtime/local/**
+  - runtime/local/__init__.py
+  - scripts/**
+  - tools/auditors/audit_runtime_architecture_leakage.py
+  - tools/validators/validate_runtime_architecture_leakage.py
+  - control/policies/runtime_architecture_leakage_policy.json
+  - control/policies/runtime_architecture_leakage_allowlist.json
+  - control/inventory/runtime_architecture_leakage_*.json
+  - control/audits/r0-02-runtime-architecture-leakage-gate-v0/**
+  - control/audits/validation/source_foundry_runtime_leakage_repair_00/**
+  - docs/architecture/RUNTIME_NAMING_BOUNDARY.md
+  - docs/operations/R0_RUNTIME_LEAKAGE_GATE.md
+  - tests/operations/**
+  - tests/runtime/**
+  - tests/e2e/**
+  - tests/scripts/**
+forbidden_scope:
+  - runtime/connectors/**
+  - runtime/gateway/**
+  - contracts/**
+  - surfaces/**
+  - site/**
+  - native/**
+  - crates/**
+  - source/provider implementations
+  - reviewed-record materialization paths
+  - reviewed/master index stores
+  - public-index stores
+  - review decisions and review stores
+  - snapshots/public projections
+  - Workbench public exposure paths
+  - release/**
+  - archive/**
+  - LICENSE.md
+  - LICENSE-SUMMARY.md
+  - NOTICE.md
+  - README.md
+  - .aide/queue/index.yaml
+  - public exposure, tunnel, hosting, or launch code except import-only changes caused by an authorized runtime/local rename
+boundaries:
+  full_discovery_inside_ai_session: false
+  external_full_discovery_handoff: false
+  dev_to_main_promotion: false
+  product_feature_behavior_change: false
+  review_decision_change: false
+  reviewed_record_creation: false
+  reviewed_master_mutation: false
+  public_index_mutation: false
+  candidate_index_store_mutation: false
+  evidence_ledger_store_mutation: false
+  review_store_mutation: false
+  reviewed_index_rebuild: false
+  snapshot_refresh: false
+  network_or_provider_calls: false
+  downloads_or_file_fetch: false
+  wayback_replay: false
+  public_launch: false
+  public_exposure: false
+  production_readiness_claim: false
+  license_posture_changed: false
+  force_push: false
+  blanket_allowlist: false
+  wildcard_runtime_allowlist: false
+  permanent_allowlist_entries: false
+required_outputs:
+  - control/audits/validation/source_foundry_runtime_leakage_repair_00/README.md
+  - control/audits/validation/source_foundry_runtime_leakage_repair_00/BASELINE_SCAN.md
+  - control/audits/validation/source_foundry_runtime_leakage_repair_00/baseline_scan.json
+  - control/audits/validation/source_foundry_runtime_leakage_repair_00/FINDING_DISPOSITION_MATRIX.md
+  - control/audits/validation/source_foundry_runtime_leakage_repair_00/finding_disposition_matrix.json
+  - control/audits/validation/source_foundry_runtime_leakage_repair_00/RENAME_AND_DEPENDENCY_MAP.md
+  - control/audits/validation/source_foundry_runtime_leakage_repair_00/rename_and_dependency_map.json
+  - control/audits/validation/source_foundry_runtime_leakage_repair_00/ALLOWLIST_CHANGE_REPORT.md
+  - control/audits/validation/source_foundry_runtime_leakage_repair_00/allowlist_change_report.json
+  - control/audits/validation/source_foundry_runtime_leakage_repair_00/BEHAVIOUR_PARITY_REPORT.md
+  - control/audits/validation/source_foundry_runtime_leakage_repair_00/behaviour_parity_report.json
+  - control/audits/validation/source_foundry_runtime_leakage_repair_00/FINAL_SCAN.md
+  - control/audits/validation/source_foundry_runtime_leakage_repair_00/final_scan.json
+  - control/audits/validation/source_foundry_runtime_leakage_repair_00/REPAIR_REPORT.md
+  - control/audits/validation/source_foundry_runtime_leakage_repair_00/repair_report.json
+acceptance:
+  - Create and validate baseline finding matrix before runtime edits.
+  - Prefer domain renames over temporary allowlisting.
+  - Use exact temporary allowlist entries only when compatibility debt cannot be removed in this task.
+  - Do not wildcard allow runtime paths or permanently exempt new findings.
+  - Final audit check and validator must report zero new unallowlisted findings.
+  - Behaviour parity and focused tests must pass for changed modules.
+  - Preserve public/truth/index/provider boundaries.
+proof_level_required: L2
