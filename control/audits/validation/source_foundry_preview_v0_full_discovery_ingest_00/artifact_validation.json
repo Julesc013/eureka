@@ -1,0 +1,69 @@
+{
+  "schema_version": "source_foundry_full_discovery_artifact_validation.v0",
+  "task_id": "SOURCE-FOUNDRY-PREVIEW-V0-FULL-DISCOVERY-INGEST-00",
+  "generated_at": "2026-06-19T08:14:01Z",
+  "status": "PASS",
+  "run_id": "source_foundry_preview_v0_post_historical_repair_02",
+  "handoff_path": "docs/reference/validation/source_foundry_preview_v0_post_historical_repair_02/EXTERNAL_FULL_DISCOVERY_HANDOFF.json",
+  "output_directory": "../eureka-test-runs/source_foundry_preview_v0_post_historical_repair_02",
+  "expected_test_count": 5793,
+  "actual_test_count": 5793,
+  "test_count_status": "matches_expected",
+  "exit_code": 0,
+  "failures": 0,
+  "errors": 0,
+  "failed_tests_empty": true,
+  "failure_families_empty": true,
+  "tested_commit": "bad6bf6d954cc4f497079e97cab946b11dde404d",
+  "repair_commit": "1ceeed045b7fb8afa24485545525aeeaadb64507",
+  "repair_commit_is_ancestor": true,
+  "tested_commit_descendant_note": "The tested commit is the post-repair handoff commit containing docs/reference/validation/source_foundry_preview_v0_post_historical_repair_02 only.",
+  "artifacts": {
+    "full_unittest_summary": {
+      "path": "../eureka-test-runs/source_foundry_preview_v0_post_historical_repair_02/full_unittest_summary.json",
+      "present": true,
+      "bytes": 9122,
+      "sha256": "c7474aed72fb8ba598a167020099843b28ed464d74c7cd762ccd3d109a0430be"
+    },
+    "failed_tests": {
+      "path": "../eureka-test-runs/source_foundry_preview_v0_post_historical_repair_02/failed_tests.txt",
+      "present": true,
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "failure_families": {
+      "path": "../eureka-test-runs/source_foundry_preview_v0_post_historical_repair_02/failure_families.json",
+      "present": true,
+      "bytes": 79,
+      "sha256": "19e8eb933d7f1f0d84e1bede9590bc18b7ca87d779db49c832b3a2a973a5076b"
+    },
+    "environment": {
+      "path": "../eureka-test-runs/source_foundry_preview_v0_post_historical_repair_02/environment.json",
+      "present": true,
+      "bytes": 865,
+      "sha256": "a2e9634a6150a82ab99b4af7241416aac2219fc5eb88bce15701b923a190326d"
+    },
+    "status": {
+      "path": "../eureka-test-runs/source_foundry_preview_v0_post_historical_repair_02/status.json",
+      "present": true,
+      "bytes": 1106,
+      "sha256": "16a3e9da635875edb7d8e4e9bcaca84c74b97734103de7f86f6b510669a5008b"
+    },
+    "stdout": {
+      "path": "../eureka-test-runs/source_foundry_preview_v0_post_historical_repair_02/full_unittest_stdout.txt",
+      "present": true,
+      "bytes": 132994,
+      "sha256": "56ec8f116f6dd79c29bcee7bd822d55c8d1ad630e5860a0c9fa34409e44584b4"
+    },
+    "stderr": {
+      "path": "../eureka-test-runs/source_foundry_preview_v0_post_historical_repair_02/full_unittest_stderr.txt",
+      "present": true,
+      "bytes": 6064,
+      "sha256": "d1f816bfc35a3b09b8a001fd4faff2c94a424e236ebdaeeb1175509f749d0692"
+    }
+  },
+  "not_copied_from_older_run": true,
+  "prior_run_ids_overwritten": false,
+  "artifact_validation": "PASS"
+}
+

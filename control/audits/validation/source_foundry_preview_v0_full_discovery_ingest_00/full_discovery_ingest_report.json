@@ -1,0 +1,83 @@
+{
+  "schema_version": "source_foundry_full_discovery_ingest_report.v0",
+  "task_id": "SOURCE-FOUNDRY-PREVIEW-V0-FULL-DISCOVERY-INGEST-00",
+  "generated_at": "2026-06-19T08:14:01Z",
+  "status": "PASS",
+  "run_id": "source_foundry_preview_v0_post_historical_repair_02",
+  "tested_commit": "bad6bf6d954cc4f497079e97cab946b11dde404d",
+  "current_dev_commit": "bad6bf6d954cc4f497079e97cab946b11dde404d",
+  "origin_dev_commit": "bad6bf6d954cc4f497079e97cab946b11dde404d",
+  "origin_main_commit": "3b770ab9a9f6a99572f66c3ab2b89fb4e6fddf31",
+  "repair_commit": "1ceeed045b7fb8afa24485545525aeeaadb64507",
+  "repair_commit_is_ancestor": true,
+  "docs_only_descendant_from_repair_commit": true,
+  "expected_test_count": 5793,
+  "actual_test_count": 5793,
+  "exit_code": 0,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "duration_seconds": 3016.383891,
+  "started_at": "2026-06-19T07:01:08Z",
+  "finished_at": "2026-06-19T07:51:24Z",
+  "artifact_hashes": {
+    "full_unittest_summary_json": "sha256:c7474aed72fb8ba598a167020099843b28ed464d74c7cd762ccd3d109a0430be",
+    "failed_tests_txt": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "failure_families_json": "sha256:19e8eb933d7f1f0d84e1bede9590bc18b7ca87d779db49c832b3a2a973a5076b",
+    "environment_json": "sha256:a2e9634a6150a82ab99b4af7241416aac2219fc5eb88bce15701b923a190326d",
+    "status_json": "sha256:16a3e9da635875edb7d8e4e9bcaca84c74b97734103de7f86f6b510669a5008b",
+    "stdout_txt": "sha256:56ec8f116f6dd79c29bcee7bd822d55c8d1ad630e5860a0c9fa34409e44584b4",
+    "stderr_txt": "sha256:d1f816bfc35a3b09b8a001fd4faff2c94a424e236ebdaeeb1175509f749d0692"
+  },
+  "previous_red_run_comparison": {
+    "run_id": "source_foundry_preview_v0_checkpoint_00",
+    "tests_run": 5792,
+    "failures": 43,
+    "errors": 7,
+    "exit_code": 1,
+    "status": "fail"
+  },
+  "count_drift_explanation": "Expected drift from 5792 to 5793 is documented in the handoff; one repository-layout validator regression test was added.",
+  "runtime_leakage_gate_posture": {
+    "repair_status": "PASS",
+    "new_unallowlisted_violations": 0,
+    "runtime_modules_imported": false,
+    "network_calls_made": false,
+    "model_provider_calls_made": false
+  },
+  "historical_validator_repair_posture": {
+    "status": "READY_FOR_EXTERNAL_FULL_DISCOVERY_RERUN",
+    "targeted_lanes_green": true,
+    "external_full_discovery_rerun_justified": true
+  },
+  "public_truth_index_safety_posture": {
+    "reviewed_ia_truth_created": false,
+    "reviewed_records_created": false,
+    "reviewed_master_mutation": false,
+    "public_index_mutation": false,
+    "candidate_index_store_mutation": false,
+    "evidence_ledger_store_mutation": false,
+    "review_decisions_changed": false,
+    "snapshot_publication": false,
+    "public_exposure": "paused",
+    "public_launch": false,
+    "production_readiness_claim": false,
+    "license_posture": "unchanged"
+  },
+  "focused_guardrails": {
+    "check_architecture_boundaries": "PASS",
+    "check_generated_artifact_cleanliness_before_audit_packet": "PASS",
+    "validate_runtime_architecture_leakage": "PASS",
+    "validate_public_alpha_readonly": "PASS",
+    "validate_snapshot_relay": "PASS",
+    "git_diff_check_before_audit_packet": "PASS"
+  },
+  "promotion_readiness": {
+    "ready_for_promotion_preflight": true,
+    "promotion_performed": false,
+    "main_promotion_blocked_until_separate_task": true,
+    "required_claim": "Source Foundry Preview v0 is functional and validated; IA candidates remain unreviewed or evidence-requested; no reviewed IA truth has been created; public exposure remains paused."
+  },
+  "recommended_next_task": "DEV-TO-MAIN-SOURCE-FOUNDRY-PREVIEW-V0-00"
+}
+
