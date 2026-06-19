@@ -75,6 +75,7 @@ The runtime leakage blocker is green, but repeated full-discovery failures still
 - `tools/generators/hunt_queue_progress.py`
 - `tools/generators/local_queue_progress.py`
 - `tools/validators/validate_ia_readiness_polish.py`
+- `tools/validators/validate_local_appliance_track.py`
 - `tools/validators/validate_repository_layout.py`
 - `contracts/repo/root_allowlist.contract.toml`
 - `control/inventory/tests/**`
