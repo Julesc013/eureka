@@ -1,0 +1,69 @@
+schema_version: aide.task.v0
+id: HUMAN-LAST-E2E-REFERENCE-BUILD-00
+title: Record human-last E2E reference-system operating decision
+status: recorded
+task_class: operating_decision
+recommended_after: DEV-TO-MAIN-SOURCE-FOUNDRY-PREVIEW-V0-00
+recommended_next: E2E-REFERENCE-SYSTEM-TRACK-00
+purpose: Record the operating decision to pause routine human review of real candidates while Eureka builds one coherent local end-to-end reference system.
+authority_note: This is a docs/control decision task. It must not change product runtime behavior, mutate review/index stores, expose public services, authorize new live providers, or alter the live source-wave product queue.
+allowed_scope:
+  - .aide/queue/HUMAN-LAST-E2E-REFERENCE-BUILD-00/**
+  - docs/planning/HUMAN_LAST_E2E_REFERENCE_BUILD.md
+  - docs/operations/HUMAN_LAST_E2E_REFERENCE_BUILD.md
+  - control/audits/human-last-e2e-reference-build-00-v0/**
+forbidden_scope:
+  - runtime/**
+  - contracts/**
+  - scripts/**
+  - tests/**
+  - surfaces/**
+  - site/**
+  - native/**
+  - crates/**
+  - source/provider implementations
+  - review stores and decisions
+  - reviewed-record materialization paths
+  - reviewed/master index stores
+  - public-index stores
+  - snapshots/public projections
+  - public exposure, tunnel, hosting, or launch implementation
+  - release/**
+  - archive/**
+  - LICENSE.md
+  - LICENSE-SUMMARY.md
+  - NOTICE.md
+  - README.md
+  - .aide/queue/index.yaml
+boundaries:
+  live_queue_recommendation_changed: false
+  runtime_product_behavior_change: false
+  real_review_decisions: false
+  reviewed_record_creation: false
+  reviewed_master_mutation: false
+  public_index_mutation: false
+  candidate_index_store_mutation: false
+  evidence_ledger_store_mutation: false
+  reviewed_index_rebuild: false
+  snapshot_publication: false
+  new_live_provider_approval: false
+  network_or_provider_calls: false
+  downloads_or_file_fetch: false
+  wayback_replay: false
+  public_launch: false
+  public_exposure: false
+  license_posture_changed: false
+decision:
+  operating_model: human_last_e2e_reference_build
+  routine_human_candidate_review: deferred_until_coherent_local_reference_experience
+  product_level_human_calibration: allowed_at_major_milestones
+  synthetic_truth_mechanics: allowed_in_isolated_namespace
+  real_discovery_truth_posture: provisional_until_explicit_human_review
+  current_ia_review_batch_posture: frozen_prepared_evidence_linked_partial_request_more_evidence
+acceptance:
+  - Record the operating decision in docs/planning and a tracked audit packet.
+  - Freeze the current IA review batch as prepared, evidence-linked, partially dispositioned, not promoted, not discarded, and available for later acceptance testing.
+  - Preserve hard gates for new live-provider access, real Review Ledger decisions, reviewed-record materialization, master/public-index mutation, downloads/execution, public exposure, and license changes.
+  - Recommend E2E-REFERENCE-SYSTEM-TRACK-00 as the next task.
+proof_level_required: L1
+

@@ -1,0 +1,82 @@
+{
+  "schema_version": "human_last_e2e_reference_build_decision.v0",
+  "task_id": "HUMAN-LAST-E2E-REFERENCE-BUILD-00",
+  "generated_at": "2026-06-19T11:22:32Z",
+  "status": "PASS",
+  "decision": "adopt_human_last_e2e_reference_system_strategy",
+  "strategic_transition": {
+    "from": "building_and_validating_isolated_source_evidence_machinery",
+    "to": "assembling_one_coherent_local_eureka_reference_system"
+  },
+  "source_foundry_preview_v0": {
+    "promotion_status": "promoted_to_main",
+    "promotion_commit": "13997f25075ce892e59f7ac12a11280816d47570",
+    "external_full_discovery_tests": 5793,
+    "external_full_discovery_failures": 0,
+    "external_full_discovery_errors": 0,
+    "promotion_wording": "Source Foundry Preview v0 is functional and validated. IA candidates remain unreviewed or evidence-requested. No reviewed IA truth has been created. Public exposure remains paused."
+  },
+  "operating_model": {
+    "routine_human_candidate_review": "deferred_until_coherent_local_reference_experience",
+    "human_product_calibration": "allowed_at_major_milestones",
+    "real_discoveries": "provisional_until_explicit_human_review",
+    "synthetic_truth_path": "allowed_in_isolated_namespace",
+    "public_exposure": "deferred"
+  },
+  "current_ia_batch_posture": {
+    "prepared_candidates": 56,
+    "request_more_evidence_decisions": 8,
+    "parent_batch_pending": 48,
+    "promoted_candidates": 0,
+    "reviewed_records": 0,
+    "reviewed_master_mutation": false,
+    "public_index_mutation": false,
+    "posture": "prepared_evidence_linked_partially_dispositioned_not_promoted_not_discarded_available_for_later_acceptance_testing"
+  },
+  "six_planes": [
+    "Discovery",
+    "Evidence",
+    "Preview",
+    "Truth",
+    "Distribution",
+    "Control and Observability"
+  ],
+  "automation_allowed": [
+    "contract_consolidation",
+    "run_orchestration",
+    "deterministic_replay",
+    "synthetic_fixtures",
+    "preview_index_generation",
+    "workbench_projection",
+    "cli_api_web_integration",
+    "fault_injection",
+    "portable_packaging",
+    "evaluation_harnesses",
+    "rollback_and_recovery_tests",
+    "isolated_synthetic_truth_mechanics"
+  ],
+  "hard_gates_retained": [
+    "new_live_provider_or_network_approval",
+    "real_review_ledger_decisions",
+    "reviewed_record_materialization",
+    "reviewed_master_index_mutation",
+    "public_index_mutation",
+    "downloads_or_execution",
+    "public_exposure",
+    "license_changes"
+  ],
+  "safety": {
+    "runtime_behavior_changed": false,
+    "review_decisions_changed": false,
+    "reviewed_records_created": false,
+    "reviewed_master_mutation": false,
+    "public_index_mutation": false,
+    "snapshot_publication": false,
+    "network_provider_calls": false,
+    "downloads_file_fetch": false,
+    "public_exposure": "paused",
+    "license_posture": "unchanged"
+  },
+  "recommended_next_task": "E2E-REFERENCE-SYSTEM-TRACK-00"
+}
+
