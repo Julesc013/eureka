@@ -2,76 +2,77 @@
 
 ## PHASE
 
-runtime-architecture-boundary-repair - SOURCE-FOUNDRY-RUNTIME-LEAKAGE-REPAIR-00
+historical-validator-drift-repair - SOURCE-FOUNDRY-PREVIEW-V0-HISTORICAL-VALIDATOR-DRIFT-REPAIR-02
 
 ## GOAL
 
-Clear the current runtime architecture leakage gate by classifying and repairing
-new unallowlisted production-path vocabulary findings without changing product
-semantics, weakening public/truth boundaries, or bulk-allowlisting architecture
-debt.
+Repair the remaining evidence-backed historical queue, validator, fixture, and obsolete-test drift that blocks a fresh Source Foundry Preview v0 external full-discovery rerun.
 
 ## WHY
 
-The Source Foundry full-discovery drift repair found a material static
-runtime-naming gate failure: 52 new unallowlisted production-path findings. The
-previous validation-drift packet protected runtime paths, so this dedicated
-parallel repair authority is required before historical validator drift repair
-or another external full-discovery rerun.
+The runtime leakage blocker is green, but repeated full-discovery failures still include stale historical queue and validator expectations. This task updates only validated historical checks and prepares one external rerun handoff after targeted lanes are green.
 
 ## CONTEXT_REFS
 
 - `AGENTS.md`
-- `docs/architecture/RUNTIME_NAMING_BOUNDARY.md`
-- `docs/operations/R0_RUNTIME_LEAKAGE_GATE.md`
-- `control/policies/runtime_architecture_leakage_policy.json`
-- `control/policies/runtime_architecture_leakage_allowlist.json`
-- `control/audits/validation/source_foundry_preview_v0_drift_repair_01/UNKNOWN_GROUP_INVESTIGATION.md`
-- `.aide/queue/SOURCE-FOUNDRY-RUNTIME-LEAKAGE-REPAIR-00/task.yaml`
 - `.aide/queue/index.yaml`
-- `.aide/memory/project-state.md`
-- `.aide/memory/decisions.md`
-- `.aide/memory/open-risks.md`
-- `.aide/context/repo-snapshot.json` (present)
-- `.aide/context/repo-map.json` (present)
-- `.aide/context/repo-map.md` (present)
-- `.aide/context/test-map.json` (present)
-- `.aide/context/context-index.json` (present)
-- `.aide/context/latest-context-packet.md` (present)
-- `.aide/repo/latest-repo-intelligence.md` (present)
-- `.aide/repo/file-inventory.json` (present)
-- `.aide/reports/file-quality-summary.md` (present)
-- `.aide/reports/file-quality-ledger.json` (present)
-- `.aide/refactors/latest-refactor-readiness.md` (present)
-- `.aide/refactors/latest-refactor-plan.example.json` (present)
-- `.aide/routing/latest-route-decision.json` (present)
-- `.aide/routing/latest-route-decision.md` (present)
-- `.aide/cache/latest-cache-keys.json` (present)
-- `.aide/cache/latest-cache-keys.md` (present)
-- `.aide/prompts/compact-task.md`
-- `.aide/policies/token-budget.yaml`
-- `.aide/policies/cache.yaml`
-- `.aide/policies/local-state.yaml`
+- `.aide/queue/SOURCE-FOUNDRY-PREVIEW-V0-HISTORICAL-VALIDATOR-DRIFT-REPAIR-02/task.yaml`
+- `control/audits/validation/source_foundry_preview_v0_drift_triage/failure_inventory.json`
+- `control/audits/validation/source_foundry_preview_v0_drift_triage/root_cause_groups.json`
+- `control/audits/validation/source_foundry_preview_v0_drift_repair_01/UNRESOLVED_ITEMS.md`
+- `control/audits/validation/source_foundry_runtime_leakage_repair_00/repair_report.json`
+- `docs/operations/TEST_AND_EVAL_LANES.md`
 
 ## ALLOWED_PATHS
 
-- `.aide/queue/SOURCE-FOUNDRY-RUNTIME-LEAKAGE-REPAIR-00/**`
+- `.aide/queue/SOURCE-FOUNDRY-PREVIEW-V0-HISTORICAL-VALIDATOR-DRIFT-REPAIR-02/**`
 - `.aide/context/**`
-- `runtime/local/**`
-- `runtime/local/__init__.py`
-- `scripts/**`
-- `tools/auditors/audit_runtime_architecture_leakage.py`
-- `tools/validators/validate_runtime_architecture_leakage.py`
-- `control/policies/**`
-- `control/inventory/runtime_architecture_leakage_*.json`
-- `control/audits/r0-02-runtime-architecture-leakage-gate-v0/**`
-- `control/audits/validation/source_foundry_runtime_leakage_repair_00/**`
-- `docs/architecture/RUNTIME_NAMING_BOUNDARY.md`
-- `docs/operations/R0_RUNTIME_LEAKAGE_GATE.md`
+- `control/audits/validation/source_foundry_preview_v0_historical_drift_repair_02/**`
+- `docs/reference/validation/source_foundry_preview_v0_post_historical_repair_02/**`
+- `docs/operations/TEST_AND_EVAL_LANES.md`
 - `tests/operations/**`
-- `tests/runtime/**`
-- `tests/e2e/**`
 - `tests/scripts/**`
+- `scripts/validate_search_hunt_track.py`
+- `scripts/validate_search_hunt_runtime.py`
+- `scripts/validate_search_hunt_ui.py`
+- `scripts/validate_search_hunt_commands.py`
+- `scripts/validate_search_hunt_exhaustion.py`
+- `scripts/validate_search_need_runtime.py`
+- `scripts/validate_hunt_to_search_need.py`
+- `scripts/validate_hunt_to_workunits.py`
+- `scripts/validate_background_hunt_runner.py`
+- `scripts/validate_hunt_remediation.py`
+- `scripts/validate_hunt_remediation_continue.py`
+- `scripts/validate_hunt_replay.py`
+- `scripts/validate_agent_research_task_contract.py`
+- `scripts/validate_ai_escalation_gate.py`
+- `scripts/validate_local_appliance_track.py`
+- `scripts/validate_local_instance_bootstrap.py`
+- `scripts/validate_local_instance_migration_guard.py`
+- `scripts/validate_local_http_service.py`
+- `scripts/validate_local_runtime_composition.py`
+- `scripts/validate_local_html_workbench.py`
+- `scripts/validate_local_lan_safety_gate.py`
+- `scripts/validate_local_lan_smoke.py`
+- `scripts/validate_clean_machine_bootstrap.py`
+- `scripts/validate_workunit_queue.py`
+- `scripts/validate_local_worker_runner.py`
+- `scripts/validate_local_review_rebuild.py`
+- `scripts/validate_local_quarantine_staging_model.py`
+- `scripts/validate_dev_to_main_promotion_03.py`
+- `scripts/validate_dev_to_main_promotion_04.py`
+- `scripts/validate_public_alpha_launch_defer.py`
+- `scripts/validate_ia_readiness_polish.py`
+- `scripts/validate_repo_structure_canon.py`
+- `scripts/validate_repository_layout.py`
+- `scripts/validate_runtime_architecture_leakage.py`
+- `scripts/check_full_discovery.py`
+- `scripts/eureka_test_select.py`
+- `scripts/check_architecture_boundaries.py`
+- `scripts/check_generated_artifact_cleanliness.py`
+- `scripts/validate_public_alpha_readonly.py`
+- `scripts/validate_snapshot_relay.py`
+- `control/inventory/tests/**`
 
 ## FORBIDDEN_PATHS
 
@@ -81,16 +82,18 @@ or another external full-discovery rerun.
 - `.aide.local/**`
 - `.local/**`
 - `.cache/**`
-- `eureka-instance/**`
+- `runtime/**`
 - `contracts/**`
 - `surfaces/**`
 - `site/**`
 - `native/**`
 - `crates/**`
-- `runtime/connectors/**`
-- `runtime/gateway/**`
-- `examples/**`
-- `evals/**`
+- `source/provider implementations`
+- `review stores and decisions`
+- `reviewed-record materialization paths`
+- `reviewed/master/public index stores`
+- `snapshots/public projections`
+- `Workbench runtime`
 - `release/**`
 - `archive/**`
 - `LICENSE.md`
@@ -98,78 +101,79 @@ or another external full-discovery rerun.
 - `NOTICE.md`
 - `README.md`
 - `.aide/queue/index.yaml`
-- reviewed-record materialization paths
-- reviewed/master/public index stores
-- review decisions and review stores
-- snapshots/public projections
-- public exposure, tunnel, hosting, or launch code except import-only changes caused by an authorized runtime/local rename
-- raw provider credentials, API keys, local caches, raw prompt logs, raw responses, and source AIDE repository state
+- public exposure, tunnel, hosting, or launch implementation
 
 ## IMPLEMENTATION
 
-- Capture a fresh leakage baseline and disposition every new finding.
-- Prefer domain vocabulary renames over allowlist changes.
-- Use `git mv` for authorized runtime/local module renames.
-- Preserve product behavior, CLI commands, review/truth boundaries, and public exposure posture.
-- Use exact temporary allowlist entries only as a last resort, with owner, replacement, expiry, and no wildcards.
-- Do not run full unittest discovery inside the AI session.
+- Reproduce targeted lanes against current HEAD before patching.
+- Repair only failures that still reproduce.
+- Use explicit, narrow successor semantics requiring historical completion plus validated evidence.
+- Reject fabricated or unrelated successor states.
+- Replace obsolete staging absence assertions with safety assertions.
+- Do not run full unittest discovery inside this AI session.
 
 ## VALIDATION
 
-- `py -3 .aide/scripts/aide_lite.py doctor`
-- `py -3 .aide/scripts/aide_lite.py validate`
-- `python scripts/audit_runtime_architecture_leakage.py --check --json`
 - `python scripts/validate_runtime_architecture_leakage.py --json`
 - `python -m unittest tests.operations.test_legacy_runtime_leakage_remediation tests.operations.test_runtime_architecture_leakage -v`
+- `python scripts/validate_local_worker_runner.py --json`
+- `python -m unittest tests.operations.test_local_worker_scripts -v`
+- HUNT targeted lane
+- LOCAL targeted lane
+- dev-to-main promotion validator lane
+- repo-layout/canon lane
+- `python scripts/validate_public_alpha_launch_defer.py --json`
+- `python scripts/validate_ia_readiness_polish.py --json`
+- `python -m unittest tests.operations.test_local_quarantine_staging_model -v`
 - `python scripts/check_architecture_boundaries.py`
 - `python scripts/check_generated_artifact_cleanliness.py --check --json`
 - `python scripts/validate_public_alpha_readonly.py`
 - `python scripts/validate_snapshot_relay.py`
-- focused tests selected by changed runtime modules
 - `python scripts/eureka_test_select.py --changed --failed-first --json`
 - `git diff --check`
+- `py -3 .aide/scripts/aide_lite.py doctor`
+- `py -3 .aide/scripts/aide_lite.py validate`
+- `py -3 .aide/scripts/aide_lite.py commit check --latest`
 
-## COMMITS
+## NON_GOALS
 
-- Commit coherent subdeliverables with verbose bodies.
-- Stop at review gates.
+- No full discovery inside AI.
+- No runtime product behavior change.
+- No queue-index change.
+- No dev-to-main promotion.
+- No public exposure, launch, production readiness, provider/network calls, downloads, Wayback replay, or license change.
+- No reviewed records, reviewed/master mutation, public-index mutation, snapshot refresh, or review decision changes.
+- No blanket skips, broad xfails, or arbitrary future queue acceptance.
+
+## ACCEPTANCE
+
+- Dedicated authority packet exists and `.aide/queue/index.yaml` is unchanged.
+- Refreshed baseline records old failures that now pass and failures still requiring repair.
+- Targeted historical lanes are green.
+- Runtime leakage remains green.
+- External full-discovery handoff is created only if targeted lanes are green.
+- Main promotion remains blocked until the external rerun returns failures 0 and errors 0.
 
 ## EVIDENCE
 
 - changed files
-- validation commands and results
-- verifier result
-- review packet path and result when review-pack is available
-- advisory route decision path and result when Q17 routing is available
-- compact packet size and budget status
-- unresolved risks and deferrals
-
-## NON_GOALS
-
-- No product feature behavior change.
-- No review decision changes, reviewed records, reviewed/master mutation, public-index mutation, review-store mutation, or snapshot refresh.
-- No source probes, downloads, file fetches, Wayback replay, provider/network/model calls, deployment, public exposure, public launch, production-readiness claim, main promotion, force-push, or license change.
-- No blanket allowlist, wildcard runtime allowlist, permanent allowlist entries, or ignored failing tests.
-
-## ACCEPTANCE
-
-- Leakage baseline and finding disposition matrix are recorded.
-- Final leakage audit has zero new unallowlisted findings.
-- Runtime leakage validator and targeted tests pass, or the task stops with an explicit larger-refactor blocker.
-- Behaviour parity is documented for changed modules.
-- Public/truth/index/provider boundaries remain unchanged.
-- No secrets, raw prompt logs, local caches, or `.aide.local` contents are committed.
+- refreshed baseline JSON and Markdown
+- successor semantics report
+- targeted validation matrix
+- unresolved items report
+- external full-discovery handoff only if targeted lanes are green
+- compact command outputs and exit statuses
+- no queue-index, runtime, truth, public exposure, or license changes
 
 ## OUTPUT_SCHEMA
 
-Return a compact final report with `STATUS`, `SUMMARY`, `COMMITS`, `CHANGED_FILES`, `VALIDATION`, route/verifier/token results, `RISKS`, and `NEXT`.
-Include the verifier result when Q12 verifier behavior is available.
+Return the task-specific final report from the prompt with status, repo state, refreshed baseline, successor semantics, historical repairs, validation, safety, external rerun handoff, commits, blockers, and next action.
 
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4800
-- approx_tokens: 1200
+- chars: 6600
+- approx_tokens: 1650
 - budget_status: PASS
 - warnings:
   - none

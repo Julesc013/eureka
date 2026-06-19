@@ -1,0 +1,128 @@
+schema_version: aide.task.v0
+id: SOURCE-FOUNDRY-PREVIEW-V0-HISTORICAL-VALIDATOR-DRIFT-REPAIR-02
+title: Repair Source Foundry Preview v0 historical validator drift
+status: authorized
+task_class: historical_validation_drift_repair
+recommended_after: SOURCE-FOUNDRY-RUNTIME-LEAKAGE-REPAIR-00
+recommended_next: SOURCE-FOUNDRY-PREVIEW-V0-POST-HISTORICAL-REPAIR-FULL-DISCOVERY-00
+purpose: Repair remaining evidence-backed historical queue, validator, fixture, and obsolete-test drift so a single fresh external full-discovery rerun can be handed off when targeted lanes are green.
+authority_note: This is a parallel validation lane. It must not advance the live source-wave product queue, mutate product truth/index stores, expose public services, promote dev to main, run full discovery inside the AI session, or change runtime product behavior.
+allowed_scope:
+  - .aide/queue/SOURCE-FOUNDRY-PREVIEW-V0-HISTORICAL-VALIDATOR-DRIFT-REPAIR-02/**
+  - .aide/context/**
+  - control/audits/validation/source_foundry_preview_v0_historical_drift_repair_02/**
+  - docs/reference/validation/source_foundry_preview_v0_post_historical_repair_02/**
+  - docs/operations/TEST_AND_EVAL_LANES.md
+  - tests/operations/**
+  - tests/scripts/**
+  - scripts/validate_search_hunt_track.py
+  - scripts/validate_search_hunt_runtime.py
+  - scripts/validate_search_hunt_ui.py
+  - scripts/validate_search_hunt_commands.py
+  - scripts/validate_search_hunt_exhaustion.py
+  - scripts/validate_search_need_runtime.py
+  - scripts/validate_hunt_to_search_need.py
+  - scripts/validate_hunt_to_workunits.py
+  - scripts/validate_background_hunt_runner.py
+  - scripts/validate_hunt_remediation.py
+  - scripts/validate_hunt_remediation_continue.py
+  - scripts/validate_hunt_replay.py
+  - scripts/validate_agent_research_task_contract.py
+  - scripts/validate_ai_escalation_gate.py
+  - scripts/validate_local_appliance_track.py
+  - scripts/validate_local_instance_bootstrap.py
+  - scripts/validate_local_instance_migration_guard.py
+  - scripts/validate_local_http_service.py
+  - scripts/validate_local_runtime_composition.py
+  - scripts/validate_local_html_workbench.py
+  - scripts/validate_local_lan_safety_gate.py
+  - scripts/validate_local_lan_smoke.py
+  - scripts/validate_clean_machine_bootstrap.py
+  - scripts/validate_workunit_queue.py
+  - scripts/validate_local_worker_runner.py
+  - scripts/validate_local_review_rebuild.py
+  - scripts/validate_local_quarantine_staging_model.py
+  - scripts/validate_dev_to_main_promotion_03.py
+  - scripts/validate_dev_to_main_promotion_04.py
+  - scripts/validate_public_alpha_launch_defer.py
+  - scripts/validate_ia_readiness_polish.py
+  - scripts/validate_repo_structure_canon.py
+  - scripts/validate_repository_layout.py
+  - scripts/validate_runtime_architecture_leakage.py
+  - scripts/check_full_discovery.py
+  - scripts/eureka_test_select.py
+  - scripts/check_architecture_boundaries.py
+  - scripts/check_generated_artifact_cleanliness.py
+  - scripts/validate_public_alpha_readonly.py
+  - scripts/validate_snapshot_relay.py
+  - control/inventory/tests/**
+forbidden_scope:
+  - runtime/**
+  - contracts/**
+  - surfaces/**
+  - site/**
+  - native/**
+  - crates/**
+  - runtime/connectors/**
+  - runtime/gateway/**
+  - source/provider implementations
+  - review stores and decisions
+  - reviewed-record materialization paths
+  - reviewed/master index stores
+  - public-index stores
+  - snapshots/public projections
+  - Workbench runtime
+  - release/**
+  - archive/**
+  - LICENSE.md
+  - LICENSE-SUMMARY.md
+  - NOTICE.md
+  - README.md
+  - .aide/queue/index.yaml
+  - public exposure, tunnel, hosting, or launch implementation
+boundaries:
+  full_discovery_inside_ai_session: false
+  unchanged_external_full_discovery_rerun: false
+  external_full_discovery_handoff_before_targeted_green: false
+  dev_to_main_promotion: false
+  live_source_or_provider_calls: false
+  runtime_product_behavior_change: false
+  blanket_test_skips: false
+  broad_xfail: false
+  delete_failing_tests_because_they_fail: false
+  arbitrary_future_queue_states_accepted: false
+  public_safety_assertions_weakened: false
+  truth_boundary_assertions_weakened: false
+  reviewed_record_creation: false
+  reviewed_master_mutation: false
+  public_index_mutation: false
+  candidate_index_store_mutation: false
+  evidence_ledger_store_mutation: false
+  reviewed_index_rebuild: false
+  snapshot_refresh: false
+  network_or_provider_calls: false
+  downloads_or_file_fetch: false
+  wayback_replay: false
+  public_launch: false
+  public_exposure: false
+  license_posture_changed: false
+required_groups:
+  - local_worker_validator_unknown_or_slow
+  - hunt_historical_queue_expectation_drift
+  - local_historical_queue_expectation_drift
+  - dev_to_main_promotion_state_expectations
+  - repo_layout_canon_historical_validator_drift
+  - public_alpha_defer_queue_expectation_drift
+  - ia_historical_lane_expectation_drift
+  - local_quarantine_staging_obsolete_no_staging_assertion
+  - source_snapshot_full_discovery_validator_drift
+acceptance:
+  - Reproduce targeted lanes against current HEAD before patching stale expectations.
+  - Repair only failures that still reproduce.
+  - Use explicit successor semantics that require completed historical tasks and validated evidence.
+  - Reject fabricated or unrelated successor states in tests.
+  - Preserve public launch, mutation, source/provider, truth, review, and promotion gates.
+  - Keep runtime leakage green after the historical repairs.
+  - Prepare one unique external full-discovery handoff only if every targeted lane is green.
+  - Keep dev-to-main promotion blocked until the future returned external rerun is green.
+proof_level_required: L1
