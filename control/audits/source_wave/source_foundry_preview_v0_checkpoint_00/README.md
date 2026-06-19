@@ -36,6 +36,8 @@ Run id: `source_foundry_preview_v0_checkpoint_00`
 
 Status: `fail`
 
+- latest run head: `f16d828714614c5ac7f84ab3e85aebc06cbf7a5d`
+- latest run started: `2026-06-18T22:37:12Z`
 - tests run: 5792
 - failures: 43
 - errors: 7
@@ -43,7 +45,8 @@ Status: `fail`
 - failed modules: 40
 - failure families: 31
 
-The compact result is recorded in `FULL_DISCOVERY_RESULT.md` and
+The compact result has now failed twice with the same substantive counts. The
+latest compact result is recorded in `FULL_DISCOVERY_RESULT.md` and
 `full_discovery_result.json`. `dev -> main` promotion remains blocked.
 
 ## Handoff

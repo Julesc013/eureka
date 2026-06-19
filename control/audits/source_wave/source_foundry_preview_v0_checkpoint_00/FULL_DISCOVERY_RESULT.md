@@ -9,11 +9,16 @@ Status: `fail`
 Generated from compact artifacts returned by the external full-discovery
 harness. Raw unittest logs are not committed.
 
+This run id was executed twice. The latest rerun included the first red-result
+ingest commit and still failed with the same substantive counts.
+
 ## Summary
 
 - command: `python -m unittest discover -s tests -t .`
 - git branch: `dev`
-- git head: `670a573276d220d8136942de38eed4e0115749a5`
+- git head: `f16d828714614c5ac7f84ab3e85aebc06cbf7a5d`
+- started at: `2026-06-18T22:37:12Z`
+- updated at: `2026-06-18T23:34:55Z`
 - working tree clean during run: true
 - tests run: 5792
 - failures: 43
@@ -21,14 +26,21 @@ harness. Raw unittest logs are not committed.
 - failed tests: 50
 - failed modules: 40
 - failure families: 31
-- elapsed seconds: 3244.023
+- elapsed seconds: 3463.646
 - exit code: 1
 
 ## Compact Artifact Hashes
 
-- `full_unittest_summary.json`: `sha256:964241ab75e74ec1b48dbd0a45bb9c81e2c5ead7feac49bda04def8709772a0c`
-- `failure_families.json`: `sha256:e2f85171bc67c6c8283a2ed00a42c8d38d41e2b8516921e0ed2917566b8c682e`
+- `full_unittest_summary.json`: `sha256:1c71e574f19881997d664148b32d86ed2667074b57a78ac50c1b5f91e3775d68`
+- `failure_families.json`: `sha256:3baff71afc0c163eb49b9a275f1ad619f6f4df0d2ac83a96d78c1a8e154261e5`
 - `failed_tests.txt`: `sha256:38638a1be321b938be5cb51ed0c743cb8b740e200f366017074b68e92277e8d6`
+
+## Prior Red Result
+
+The first run for the same run id used head
+`670a573276d220d8136942de38eed4e0115749a5d` and also returned 5792 tests, 43
+failures, and 7 errors. Its summary hash was
+`sha256:964241ab75e74ec1b48dbd0a45bb9c81e2c5ead7feac49bda04def8709772a0c`.
 
 ## Triage
 
