@@ -18,9 +18,9 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.local.public_alpha_mvp import PublicAlphaService
-from runtime.local.search_mvp import LocalSearchOptions, LocalSearchService
-from runtime.local.staging_mvp import (
+from runtime.local.public_alpha_service import PublicAlphaService
+from runtime.local.local_search import LocalSearchOptions, LocalSearchService
+from runtime.local.staging_package import (
     MANIFEST_FILE,
     PUBLIC_INDEX_FILE,
     RUNTIME_CONFIG_FILE,

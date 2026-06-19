@@ -1,4 +1,4 @@
-"""Local/private Workbench adapter for the local search MVP."""
+"""Local/private Workbench adapter for the local search service."""
 
 from __future__ import annotations
 
@@ -16,7 +16,7 @@ from runtime.local.review_materialization import (
     review_stats,
 )
 from runtime.local.search_index import build_local_demo_index, index_file_status, validate_index, write_index
-from runtime.local.search_mvp import LocalSearchOptions, LocalSearchService
+from runtime.local.local_search import LocalSearchOptions, LocalSearchService
 
 
 TASK_ID = "WORKBENCH-OPERATOR-ROUTES-00"

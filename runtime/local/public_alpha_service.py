@@ -1,4 +1,4 @@
-"""Local public-alpha read-only surface over the local search MVP."""
+"""Local public-alpha read-only surface over the local search service."""
 
 from __future__ import annotations
 
@@ -14,7 +14,7 @@ from runtime.local.search_index import (
     load_index,
     validate_index,
 )
-from runtime.local.search_mvp import HARD_QUERY_SMOKE_SET, LocalSearchOptions, LocalSearchService
+from runtime.local.local_search import HARD_QUERY_SMOKE_SET, LocalSearchOptions, LocalSearchService
 
 
 TASK_ID = "PUBLIC-READONLY-WEB-ALPHA-00"

@@ -14,7 +14,7 @@ from pathlib import Path
 from typing import Any
 
 from runtime.local.corpus_gate_closeout import DEFAULT_GATE_TARGET
-from runtime.local.staging_mvp import MANIFEST_FILE, bundle_status, validate_bundle
+from runtime.local.staging_package import MANIFEST_FILE, bundle_status, validate_bundle
 from scripts.eureka_public_alpha_rehearsal import run_rehearsal
 
 

@@ -1,4 +1,4 @@
-"""Local review materialization helpers for the local search MVP."""
+"""Local review materialization helpers for the local search service."""
 
 from __future__ import annotations
 

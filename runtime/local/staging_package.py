@@ -1,4 +1,4 @@
-"""Local staging bundle helpers for the public-alpha MVP."""
+"""Local staging package helpers for the public-alpha read-only service."""
 
 from __future__ import annotations
 
@@ -21,16 +21,16 @@ from runtime.local.search_index import load_index, render_index_json, stats_payl
 
 
 TASK_ID = "LOCAL-TO-STAGING-DEPLOYMENT-00"
-BUNDLE_SCHEMA_VERSION = "eureka.local_staging_public_alpha_bundle.v0"
+STAGING_PACKAGE_SCHEMA_VERSION = "eureka.local_staging_public_alpha_bundle.v0"
 RUNTIME_CONFIG_SCHEMA_VERSION = "eureka.local_staging_public_runtime_config.v0"
 PUBLIC_INDEX_FILE = "public_search_index.json"
 MANIFEST_FILE = "manifest.json"
 RUNTIME_CONFIG_FILE = "public_runtime_config.json"
-REQUIRED_BUNDLE_FILES = frozenset({MANIFEST_FILE, PUBLIC_INDEX_FILE, RUNTIME_CONFIG_FILE})
-CORPUS_BUNDLE_FILES = frozenset({CORPUS_CLOSEOUT_FILE, PUBLIC_ARTIFACT_RECORDS_JSONL, PUBLIC_EVIDENCE_SUMMARY_JSONL})
-ALLOWED_BUNDLE_FILES = REQUIRED_BUNDLE_FILES | CORPUS_BUNDLE_FILES
+REQUIRED_PACKAGE_FILES = frozenset({MANIFEST_FILE, PUBLIC_INDEX_FILE, RUNTIME_CONFIG_FILE})
+CORPUS_PACKAGE_FILES = frozenset({CORPUS_CLOSEOUT_FILE, PUBLIC_ARTIFACT_RECORDS_JSONL, PUBLIC_EVIDENCE_SUMMARY_JSONL})
+ALLOWED_PACKAGE_FILES = REQUIRED_PACKAGE_FILES | CORPUS_PACKAGE_FILES
 SAFE_ACTIONS = ("view_record",)
-FORBIDDEN_BUNDLE_MARKERS = (
+FORBIDDEN_PACKAGE_MARKERS = (
     ".eureka",
     "local_review_ledger",
     "local_reviewed_records",
@@ -70,7 +70,7 @@ def package_bundle(index_path: str | Path, out_dir: str | Path, corpus_gate_clos
     stats = stats_payload(public_index)
     corpus_payload = _corpus_payload(corpus_path) if corpus_path else _empty_corpus_payload()
     manifest = {
-        "bundle_schema_version": BUNDLE_SCHEMA_VERSION,
+        "bundle_schema_version": STAGING_PACKAGE_SCHEMA_VERSION,
         "task_id": TASK_ID,
         "bundle_id": f"public-alpha:{public_index_digest[:16]}",
         "source_index_digest": source_index_digest,
@@ -147,7 +147,7 @@ def package_bundle(index_path: str | Path, out_dir: str | Path, corpus_gate_clos
         raise ValueError("public staging bundle would leak private content: " + "; ".join(leakage_errors))
 
     output.mkdir(parents=True, exist_ok=True)
-    expected_files = REQUIRED_BUNDLE_FILES | (CORPUS_BUNDLE_FILES if corpus_path else frozenset())
+    expected_files = REQUIRED_PACKAGE_FILES | (CORPUS_PACKAGE_FILES if corpus_path else frozenset())
     for stale in output.iterdir():
         if stale.is_file() and stale.name not in expected_files:
             stale.unlink()
@@ -163,8 +163,8 @@ def validate_bundle(bundle_dir: str | Path) -> list[str]:
         return [f"bundle directory not found: {bundle}"]
 
     present_files = {path.name for path in bundle.iterdir() if path.is_file()}
-    missing = sorted(REQUIRED_BUNDLE_FILES - present_files)
-    extra = sorted(present_files - ALLOWED_BUNDLE_FILES)
+    missing = sorted(REQUIRED_PACKAGE_FILES - present_files)
+    extra = sorted(present_files - ALLOWED_PACKAGE_FILES)
     errors.extend(f"missing required bundle file: {name}" for name in missing)
     errors.extend(f"unexpected private or unsupported bundle file: {name}" for name in extra)
     if missing:
@@ -178,9 +178,9 @@ def validate_bundle(bundle_dir: str | Path) -> list[str]:
     if not isinstance(manifest, Mapping) or not isinstance(public_index, Mapping) or not isinstance(runtime_config, Mapping):
         return errors + ["bundle JSON roots must be objects"]
 
-    corpus_present = bool(present_files & CORPUS_BUNDLE_FILES)
-    if corpus_present and not CORPUS_BUNDLE_FILES <= present_files:
-        missing_corpus = sorted(CORPUS_BUNDLE_FILES - present_files)
+    corpus_present = bool(present_files & CORPUS_PACKAGE_FILES)
+    if corpus_present and not CORPUS_PACKAGE_FILES <= present_files:
+        missing_corpus = sorted(CORPUS_PACKAGE_FILES - present_files)
         errors.extend(f"missing corpus closeout bundle file: {name}" for name in missing_corpus)
     corpus_closeout = _read_json(bundle / CORPUS_CLOSEOUT_FILE, errors, "corpus gate closeout") if CORPUS_CLOSEOUT_FILE in present_files else {}
     corpus_records = _read_jsonl(bundle / PUBLIC_ARTIFACT_RECORDS_JSONL, errors, "public artifact identity records") if PUBLIC_ARTIFACT_RECORDS_JSONL in present_files else []
@@ -189,7 +189,7 @@ def validate_bundle(bundle_dir: str | Path) -> list[str]:
     errors.extend(_validate_runtime_config(runtime_config))
     errors.extend(_validate_public_index(public_index))
 
-    for name in present_files & ALLOWED_BUNDLE_FILES:
+    for name in present_files & ALLOWED_PACKAGE_FILES:
         errors.extend(_leakage_errors(name, (bundle / name).read_text(encoding="utf-8")))
     return errors
 
@@ -230,7 +230,7 @@ def bundle_status(bundle_dir: str | Path) -> dict[str, Any]:
         "public_artifact_evidence_summary_digest": "",
         "public_index_digest": "",
         "runtime_config_digest": "",
-        "files": sorted(REQUIRED_BUNDLE_FILES),
+        "files": sorted(REQUIRED_PACKAGE_FILES),
         "validation_errors": errors,
     }
     manifest_path = bundle / MANIFEST_FILE
@@ -271,7 +271,7 @@ def bundle_status(bundle_dir: str | Path) -> dict[str, Any]:
                     "public_artifact_evidence_summary_digest": str(manifest.get("public_artifact_evidence_summary_digest") or ""),
                     "public_index_digest": str(manifest.get("public_index_digest") or ""),
                     "runtime_config_digest": str(manifest.get("runtime_config_digest") or ""),
-                    "files": sorted((manifest.get("files") or {}).values()) if isinstance(manifest.get("files"), Mapping) else sorted(REQUIRED_BUNDLE_FILES),
+                    "files": sorted((manifest.get("files") or {}).values()) if isinstance(manifest.get("files"), Mapping) else sorted(REQUIRED_PACKAGE_FILES),
                 }
             )
     return payload
@@ -412,7 +412,7 @@ def _sanitize_value(value: Any, *, drop_urls: bool = False) -> Any:
 def _sanitize_text(value: Any) -> str:
     text = str(value or "")
     text = text.replace("\\", "/")
-    for marker in FORBIDDEN_BUNDLE_MARKERS:
+    for marker in FORBIDDEN_PACKAGE_MARKERS:
         text = text.replace(marker, "[redacted]")
     parts = [part for part in text.split("/") if part not in {"Users", "Jules", "Projects", "Eureka", "eureka"}]
     return "/".join(parts)
@@ -447,8 +447,8 @@ def _validate_manifest(
         "local_paths_included": False,
         "deterministic_package": True,
     }
-    if manifest.get("bundle_schema_version") != BUNDLE_SCHEMA_VERSION:
-        errors.append(f"manifest.bundle_schema_version must be {BUNDLE_SCHEMA_VERSION}")
+    if manifest.get("bundle_schema_version") != STAGING_PACKAGE_SCHEMA_VERSION:
+        errors.append(f"manifest.bundle_schema_version must be {STAGING_PACKAGE_SCHEMA_VERSION}")
     for key, expected in expected_bools.items():
         if bool(manifest.get(key) is True) != expected:
             errors.append(f"manifest.{key} must be {str(expected).lower()}")
@@ -640,7 +640,7 @@ def _read_jsonl(path: Path, errors: list[str], label: str) -> list[dict[str, Any
 def _leakage_errors(name: str, body: str) -> list[str]:
     errors = []
     lowered = body.lower()
-    for marker in FORBIDDEN_BUNDLE_MARKERS:
+    for marker in FORBIDDEN_PACKAGE_MARKERS:
         if marker.lower() in lowered:
             errors.append(f"{name} contains forbidden marker {marker}")
     if _WINDOWS_ABSOLUTE_PATH.search(body):

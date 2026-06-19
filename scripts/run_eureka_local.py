@@ -17,7 +17,7 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.local.search_mvp import (
+from runtime.local.local_search import (
     DEFAULT_METADATA_BUDGET,
     DEFAULT_METADATA_TIMEOUT_SECONDS,
     HARD_QUERY_SMOKE_SET,
@@ -29,7 +29,7 @@ from runtime.local.search_mvp import (
     render_search_json,
     status_payload,
 )
-from runtime.local.public_alpha_mvp import (
+from runtime.local.public_alpha_service import (
     PublicAlphaService,
     public_alpha_disabled_payload,
     public_alpha_error,
@@ -43,11 +43,11 @@ from runtime.local.public_alpha_mvp import (
     render_public_status,
 )
 from runtime.local.search_index import DEFAULT_INDEX_PATH, SUPPORTED_INDEX_MODES, index_file_status
-from runtime.local.staging_mvp import bundle_id as staging_bundle_id
-from runtime.local.staging_mvp import bundle_status as staging_bundle_status
-from runtime.local.staging_mvp import public_index_path as staging_public_index_path
-from runtime.local.staging_mvp import validate_bundle as validate_staging_bundle
-from runtime.local.workbench_mvp import (
+from runtime.local.staging_package import bundle_id as staging_bundle_id
+from runtime.local.staging_package import bundle_status as staging_bundle_status
+from runtime.local.staging_package import public_index_path as staging_public_index_path
+from runtime.local.staging_package import validate_bundle as validate_staging_bundle
+from runtime.local.workbench_service import (
     DEFAULT_REVIEW_LEDGER_PATH,
     DEFAULT_REVIEWED_RECORDS_PATH,
     WorkbenchOptions,

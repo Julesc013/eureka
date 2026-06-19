@@ -8,7 +8,7 @@ from pathlib import Path
 import tempfile
 import unittest
 
-from runtime.local.external_staging_mvp import (
+from runtime.local.external_staging import (
     LOCAL_CONFIG_JSON,
     PLAN_JSON,
     REPORT_JSON,

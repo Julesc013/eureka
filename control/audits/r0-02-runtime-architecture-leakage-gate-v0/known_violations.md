@@ -1,7 +1,20 @@
 # Known Temporary Violations
 
-Known allowlisted violations: 1954
+Known allowlisted violations: 2035
 
+- contracts/ai/ai_provider_manifest.v0.json:156:10 `prompt` -> Replace prompt with operator instruction outside product paths or move the artifact to control/test scope.
+- contracts/ai/ai_provider_manifest.v0.json:163:10 `prompt` -> Replace prompt with operator instruction outside product paths or move the artifact to control/test scope.
+- contracts/ai/ai_provider_manifest.v0.json:313:10 `prompt` -> Replace prompt with operator instruction outside product paths or move the artifact to control/test scope.
+- contracts/ai/ai_provider_manifest.v0.json:321:10 `prompt` -> Replace prompt with operator instruction outside product paths or move the artifact to control/test scope.
+- contracts/ai/ai_provider_manifest.v0.json:463:6 `prompt` -> Replace prompt with operator instruction outside product paths or move the artifact to control/test scope.
+- contracts/ai/ai_task_request.v0.json:5:123 `prompt` -> Replace prompt with operator instruction outside product paths or move the artifact to control/test scope.
+- contracts/ai/README.md:8:10 `prompt` -> Replace prompt with operator instruction outside product paths or move the artifact to control/test scope.
+- contracts/archive/schemas/agent.schema.yaml:0:27 `agent` -> Replace agent with worker or operator outside product paths or move the artifact to control/test scope.
+- contracts/archive/schemas/agent.schema.yaml:2:45 `agent` -> Replace agent with worker or operator outside product paths or move the artifact to control/test scope.
+- contracts/archive/schemas/agent.schema.yaml:4:8 `agent` -> Replace agent with worker or operator outside product paths or move the artifact to control/test scope.
+- contracts/archive/schemas/agent.schema.yaml:11:53 `agent` -> Replace agent with worker or operator outside product paths or move the artifact to control/test scope.
+- contracts/archive/schemas/agent.schema.yaml:14:24 `agent` -> Replace agent with worker or operator outside product paths or move the artifact to control/test scope.
+- contracts/archive/schemas/agent.schema.yaml:17:42 `agent` -> Replace agent with worker or operator outside product paths or move the artifact to control/test scope.
 - contracts/command/actions/acquisition_manifest.v0.json:23:6 `truth_boundary` -> Replace truth_boundary with evidence_acceptance_policy or move the artifact to control/test scope.
 - contracts/command/actions/acquisition_manifest.v0.json:24:6 `product_boundary` -> Replace product_boundary with runtime_capability_boundary or move the artifact to control/test scope.
 - contracts/command/actions/acquisition_manifest.v0.json:30:6 `truth_boundary` -> Replace truth_boundary with evidence_acceptance_policy or move the artifact to control/test scope.
@@ -21,19 +34,6 @@ Known allowlisted violations: 1954
 - contracts/command/actions/preservation_manifest.v0.json:19:6 `truth_boundary` -> Replace truth_boundary with evidence_acceptance_policy or move the artifact to control/test scope.
 - contracts/command/actions/preservation_manifest.v0.json:20:6 `product_boundary` -> Replace product_boundary with runtime_capability_boundary or move the artifact to control/test scope.
 - contracts/command/actions/preservation_manifest.v0.json:25:6 `truth_boundary` -> Replace truth_boundary with evidence_acceptance_policy or move the artifact to control/test scope.
-- contracts/ai/ai_provider_manifest.v0.json:156:10 `prompt` -> Replace prompt with operator instruction outside product paths or move the artifact to control/test scope.
-- contracts/ai/ai_provider_manifest.v0.json:163:10 `prompt` -> Replace prompt with operator instruction outside product paths or move the artifact to control/test scope.
-- contracts/ai/ai_provider_manifest.v0.json:313:10 `prompt` -> Replace prompt with operator instruction outside product paths or move the artifact to control/test scope.
-- contracts/ai/ai_provider_manifest.v0.json:321:10 `prompt` -> Replace prompt with operator instruction outside product paths or move the artifact to control/test scope.
-- contracts/ai/ai_provider_manifest.v0.json:463:6 `prompt` -> Replace prompt with operator instruction outside product paths or move the artifact to control/test scope.
-- contracts/ai/ai_task_request.v0.json:5:123 `prompt` -> Replace prompt with operator instruction outside product paths or move the artifact to control/test scope.
-- contracts/ai/README.md:8:10 `prompt` -> Replace prompt with operator instruction outside product paths or move the artifact to control/test scope.
-- contracts/archive/schemas/agent.schema.yaml:0:27 `agent` -> Replace agent with worker or operator outside product paths or move the artifact to control/test scope.
-- contracts/archive/schemas/agent.schema.yaml:2:45 `agent` -> Replace agent with worker or operator outside product paths or move the artifact to control/test scope.
-- contracts/archive/schemas/agent.schema.yaml:4:8 `agent` -> Replace agent with worker or operator outside product paths or move the artifact to control/test scope.
-- contracts/archive/schemas/agent.schema.yaml:11:53 `agent` -> Replace agent with worker or operator outside product paths or move the artifact to control/test scope.
-- contracts/archive/schemas/agent.schema.yaml:14:24 `agent` -> Replace agent with worker or operator outside product paths or move the artifact to control/test scope.
-- contracts/archive/schemas/agent.schema.yaml:17:42 `agent` -> Replace agent with worker or operator outside product paths or move the artifact to control/test scope.
 - contracts/connectors/connector_policy_evaluation.v0.json:25:6 `truth_boundary` -> Replace truth_boundary with evidence_acceptance_policy or move the artifact to control/test scope.
 - contracts/connectors/connector_policy_evaluation.v0.json:26:6 `product_boundary` -> Replace product_boundary with runtime_capability_boundary or move the artifact to control/test scope.
 - contracts/connectors/connector_scorecard.v0.json:22:6 `quality_delta` -> Replace quality_delta with quality_metric_delta outside product paths or move the artifact to control/test scope.
@@ -202,4 +202,4 @@ Known allowlisted violations: 1954
 - contracts/native/native_project_skeleton.v0.json:24:6 `truth_boundary` -> Replace truth_boundary with evidence_acceptance_policy or move the artifact to control/test scope.
 - contracts/native/native_project_skeleton.v0.json:25:6 `product_boundary` -> Replace product_boundary with runtime_capability_boundary or move the artifact to control/test scope.
 - contracts/native/native_project_skeleton.v0.json:104:6 `truth_boundary` -> Replace truth_boundary with evidence_acceptance_policy or move the artifact to control/test scope.
-- ... 1754 additional allowlisted findings are in the JSON reports.
+- ... 1835 additional allowlisted findings are in the JSON reports.

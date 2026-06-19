@@ -9,7 +9,7 @@ import threading
 import unittest
 from urllib.parse import quote
 
-from runtime.local.search_mvp import LocalSearchOptions, LocalSearchService
+from runtime.local.local_search import LocalSearchOptions, LocalSearchService
 from scripts.run_eureka_local import LocalSearchHTTPServer, _handler_for
 
 

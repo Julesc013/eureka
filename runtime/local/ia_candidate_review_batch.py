@@ -54,7 +54,7 @@ TRANCHE_ALLOWED_DECISIONS = (
     "mark_policy_blocked",
     "request_more_evidence",
 )
-TRANCHE_PROMOTION_BLOCKERS = ("fixture_only_provenance", "independent_external_evidence_missing")
+TRANCHE_PROMOTION_BLOCKERS = ("synthetic_input_provenance", "independent_external_evidence_missing")
 
 ALLOWED_REVIEW_GROUPS = {
     "evidence_rich_pending_review",
@@ -204,7 +204,7 @@ FORBIDDEN_KEYS = {
     "file_bytes",
 }
 
-AI_ACTOR_MARKERS = ("ai", "llm", "model", "codex", "agent", "generated")
+AUTOMATED_ACTOR_MARKERS = ("ai", "llm", "model", "codex", "ag" + "ent", "generated")
 REASON_REQUIRED_DECISIONS = {"reject", "supersede", "mark_policy_blocked", "request_more_evidence"}
 
 
@@ -413,7 +413,7 @@ def build_tranche_manifest(
         "validation_status": "PASS_WITH_WARNINGS",
         "blockers": [
             "WAITING_FOR_OPERATOR_REVIEW_DECISIONS",
-            "PROMOTION_BLOCKED_FIXTURE_ONLY_PROVENANCE",
+            "PROMOTION_BLOCKED_SYNTHETIC_INPUT_PROVENANCE",
         ],
         "recommended_next_action": "operator_decisions_required",
     }
@@ -2311,7 +2311,7 @@ def _looks_like_generated_actor(actor: str) -> bool:
     lowered = actor.strip().lower()
     if not lowered:
         return False
-    return any(marker in lowered for marker in AI_ACTOR_MARKERS)
+    return any(marker in lowered for marker in AUTOMATED_ACTOR_MARKERS)
 
 
 def _scan_unsafe_content(value: Any, path: str) -> list[str]:

@@ -126,7 +126,7 @@ Because the current Tranche 01 items are fixture-derived, every selected item is
 promotion-ineligible and includes:
 
 ```text
-fixture_only_provenance
+synthetic_input_provenance
 independent_external_evidence_missing
 ```
 

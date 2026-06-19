@@ -1,4 +1,4 @@
-"""Local search MVP service over existing resolution and surface primitives."""
+"""Local search service over existing resolution and surface primitives."""
 
 from __future__ import annotations
 
@@ -208,7 +208,7 @@ class LocalSearchService:
             "status_summary": _aggregate_status_summary(responses),
             "queries": responses,
             "no_mutation": _no_mutation_indicator(),
-            **_truth_boundary_flags(live_network_used=any(bool(response.get("network_used")) for response in responses)),
+            **_review_boundary_flags(live_network_used=any(bool(response.get("network_used")) for response in responses)),
         }
 
     def _run_resolution_search(
@@ -313,7 +313,7 @@ def render_search_json(response: Mapping[str, Any]) -> str:
 def render_search_text(response: Mapping[str, Any]) -> str:
     if response.get("schema_version") == "eureka.local_search_batch_response.v0":
         lines = [
-            "Eureka Local Search MVP",
+            "Eureka Local Search",
             f"metadata fallback: {response.get('metadata_fallback')}",
             f"fallback mode: {response.get('fallback_mode')}",
             f"fallback used: {str(response.get('fallback_used')).lower()}",
@@ -341,7 +341,7 @@ def render_search_html(response: Mapping[str, Any]) -> str:
     if response.get("schema_version") == "eureka.local_search_batch_response.v0":
         sections = "\n".join(_html_search_section(item) for item in response.get("queries") or [])
         query_value = ""
-        title = "Eureka Local Search MVP"
+        title = "Eureka Local Search"
     else:
         sections = _html_search_section(response)
         query_value = str(response.get("query", {}).get("raw") if isinstance(response.get("query"), Mapping) else "")
@@ -392,7 +392,7 @@ def status_payload(
         "schema_version": "eureka.local_search_status.v0",
         "task_id": TASK_ID,
         "status": "pass",
-        "service": "local_search_mvp",
+        "service": "local_search_service",
         "routes": ["/", "/health", "/api/status", "/api/search?q=", "/search?q="],
         "commands": ["scripts/eureka_search.py", "scripts/run_eureka_local.py"],
         "metadata_fallback": fallback,
@@ -418,7 +418,7 @@ def status_payload(
         "production_readiness_claimed": False,
         "public_launch_readiness_claimed": False,
         "no_mutation": _no_mutation_indicator(),
-        **_truth_boundary_flags(),
+        **_review_boundary_flags(),
     }
 
 
@@ -426,7 +426,7 @@ def health_payload() -> dict[str, Any]:
     return {
         "schema_version": "eureka.local_search_health.v0",
         "status": "pass",
-        "service": "local_search_mvp",
+        "service": "local_search_service",
         "read_only": True,
         "live_network_enabled": False,
         "downloads_enabled": False,
@@ -483,7 +483,7 @@ def _response_from_index(
         "provider_call_count": 0,
         "canonical_statuses": list(CANONICAL_STATUSES),
         "no_mutation": _no_mutation_indicator(),
-        **_truth_boundary_flags(),
+        **_review_boundary_flags(),
     }
 
 
@@ -555,7 +555,7 @@ def _index_miss_response(
         "provider_call_count": 0,
         "canonical_statuses": list(CANONICAL_STATUSES),
         "no_mutation": _no_mutation_indicator(),
-        **_truth_boundary_flags(),
+        **_review_boundary_flags(),
     }
 
 
@@ -626,7 +626,7 @@ def _response_from_projection(
         "provider_call_count": provider_call_count,
         "canonical_statuses": list(CANONICAL_STATUSES),
         "no_mutation": _no_mutation_indicator(),
-        **_truth_boundary_flags(live_network_used=network_used),
+        **_review_boundary_flags(live_network_used=network_used),
     }
     if options.show_debug:
         response["debug"] = {
@@ -1081,7 +1081,7 @@ def _empty_query_response(options: LocalSearchOptions) -> dict[str, Any]:
         "provider_call_count": 0,
         "canonical_statuses": list(CANONICAL_STATUSES),
         "no_mutation": _no_mutation_indicator(),
-        **_truth_boundary_flags(),
+        **_review_boundary_flags(),
     }
 
 
@@ -1210,11 +1210,11 @@ def _blocked_live_metadata_response(query: str, options: LocalSearchOptions) -> 
         "provider_call_count": 0,
         "canonical_statuses": list(CANONICAL_STATUSES),
         "no_mutation": _no_mutation_indicator(),
-        **_truth_boundary_flags(),
+        **_review_boundary_flags(),
     }
 
 
-def _truth_boundary_flags(*, live_network_used: bool = False) -> dict[str, bool | int]:
+def _review_boundary_flags(*, live_network_used: bool = False) -> dict[str, bool | int]:
     return {
         "accepted_truth_created": False,
         "fallback_created_verified_truth": False,

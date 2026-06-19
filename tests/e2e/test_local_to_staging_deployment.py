@@ -11,11 +11,11 @@ import threading
 import unittest
 from urllib.parse import quote
 
-from runtime.local.public_alpha_mvp import PublicAlphaService
+from runtime.local.public_alpha_service import PublicAlphaService
 from runtime.local.review_materialization import accept_candidate
 from runtime.local.search_index import build_local_demo_index, load_index, validate_index, write_index
-from runtime.local.search_mvp import LocalSearchOptions, LocalSearchService
-from runtime.local.staging_mvp import (
+from runtime.local.local_search import LocalSearchOptions, LocalSearchService
+from runtime.local.staging_package import (
     MANIFEST_FILE,
     PUBLIC_INDEX_FILE,
     RUNTIME_CONFIG_FILE,

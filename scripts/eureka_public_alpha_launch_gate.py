@@ -18,7 +18,7 @@ if str(REPO_ROOT) not in sys.path:
 
 from runtime.local.corpus_gate_closeout import CLOSEOUT_JSON as CORPUS_CLOSEOUT_FILE
 from runtime.local.corpus_gate_closeout import PUBLIC_ARTIFACT_RECORDS_JSONL, PUBLIC_EVIDENCE_SUMMARY_JSONL
-from runtime.local.staging_mvp import MANIFEST_FILE, PUBLIC_INDEX_FILE, RUNTIME_CONFIG_FILE, bundle_status, validate_bundle
+from runtime.local.staging_package import MANIFEST_FILE, PUBLIC_INDEX_FILE, RUNTIME_CONFIG_FILE, bundle_status, validate_bundle
 from scripts.eureka_public_alpha_rehearsal import validate_report as validate_rehearsal_report
 
 

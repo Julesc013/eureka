@@ -14,7 +14,7 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from runtime.local.external_staging_mvp import (
+from runtime.local.external_staging import (
     DEFAULT_OUT,
     LOCAL_CONFIG_EXAMPLE_JSON,
     PLAN_JSON,

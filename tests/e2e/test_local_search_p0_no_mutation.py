@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import unittest
 
-from runtime.local.search_mvp import LocalSearchOptions, LocalSearchService
+from runtime.local.local_search import LocalSearchOptions, LocalSearchService
 
 
 class LocalSearchP0NoMutationTests(unittest.TestCase):

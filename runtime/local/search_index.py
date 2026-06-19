@@ -1,4 +1,4 @@
-"""Deterministic local search index helpers for the Eureka local MVP."""
+"""Deterministic local search index helpers for the Eureka local service."""
 
 from __future__ import annotations
 

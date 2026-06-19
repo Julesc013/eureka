@@ -12,8 +12,8 @@ from urllib.parse import quote
 
 from runtime.local.review_materialization import accept_candidate
 from runtime.local.search_index import build_local_demo_index, write_index
-from runtime.local.search_mvp import LocalSearchOptions, LocalSearchService
-from runtime.local.public_alpha_mvp import PublicAlphaService
+from runtime.local.local_search import LocalSearchOptions, LocalSearchService
+from runtime.local.public_alpha_service import PublicAlphaService
 from scripts.run_eureka_local import LocalSearchHTTPServer, _handler_for, main as run_local_main
 
 

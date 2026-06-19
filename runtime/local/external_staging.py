@@ -13,7 +13,7 @@ import subprocess
 from typing import Any
 from urllib.parse import urljoin, urlparse
 
-from runtime.local.staging_mvp import (
+from runtime.local.staging_package import (
     MANIFEST_FILE,
     PUBLIC_INDEX_FILE,
     RUNTIME_CONFIG_FILE,
@@ -37,7 +37,7 @@ DEPLOYMENT_MANIFEST_JSON = "deployment_manifest.json"
 REMOTE_RUN_COMMAND_TXT = "remote_run_command.txt"
 REMOTE_SMOKE_COMMANDS_TXT = "remote_smoke_commands.txt"
 ROLLBACK_INSTRUCTIONS_TXT = "rollback_instructions.txt"
-BUNDLE_PACKAGE_DIR = "staging_bundle"
+STAGING_PACKAGE_DIR = "staging_bundle"
 
 DEFAULT_OUT = ".eureka/external-staging/public-alpha/latest"
 DEFAULT_BIND_HOST = "127.0.0.1"
@@ -441,7 +441,7 @@ def package_for_transfer(*, bundle: str | Path, out_dir: str | Path, plan: Mappi
     status = bundle_status(bundle_path)
     output = Path(out_dir)
     output.mkdir(parents=True, exist_ok=True)
-    package_bundle_path = output / BUNDLE_PACKAGE_DIR
+    package_bundle_path = output / STAGING_PACKAGE_DIR
     if package_bundle_path.exists():
         shutil.rmtree(package_bundle_path)
     package_bundle_path.mkdir(parents=True)
@@ -498,7 +498,7 @@ def package_for_transfer(*, bundle: str | Path, out_dir: str | Path, plan: Mappi
             REMOTE_RUN_COMMAND_TXT,
             REMOTE_SMOKE_COMMANDS_TXT,
             ROLLBACK_INSTRUCTIONS_TXT,
-            BUNDLE_PACKAGE_DIR,
+            STAGING_PACKAGE_DIR,
         ],
         "leakage_errors": leakage_errors,
     }

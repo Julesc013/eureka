@@ -17,7 +17,7 @@ from runtime.local.search_index import (
     validate_index,
     write_index,
 )
-from runtime.local.search_mvp import LocalSearchOptions, LocalSearchService
+from runtime.local.local_search import LocalSearchOptions, LocalSearchService
 from scripts.run_eureka_local import LocalSearchHTTPServer, _handler_for
 
 

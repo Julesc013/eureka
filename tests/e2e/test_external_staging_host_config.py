@@ -5,7 +5,7 @@ import os
 from pathlib import Path
 import unittest
 
-from runtime.local.external_staging_mvp import (
+from runtime.local.external_staging import (
     CONFIG_SCHEMA_VERSION,
     LOCAL_CONFIG_EXAMPLE_JSON,
     LOCAL_CONFIG_JSON,

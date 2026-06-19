@@ -215,7 +215,7 @@ def build_tunnel_plan(
         "route_denylist": list(TUNNEL_ROUTE_DENYLIST),
         "forbidden_public_routes": list(TUNNEL_ROUTE_DENYLIST),
         "route_smoke_list": list(TUNNEL_ROUTE_SMOKES),
-        "record_route_smoke_status": "BLOCKED_ON_STAGING_BUNDLE_RECORD_ID",
+        "record_route_smoke_status": "BLOCKED_ON_STAGING_PACKAGE_RECORD_ID",
         "safety_flags": _tunnel_safety_flags(ops_payload),
         "public_read_only": bool(ops_payload.get("public_read_only") is True),
         "public_exposure_enabled": False,
@@ -1366,8 +1366,8 @@ def _tunnel_plan_blockers(payload: Mapping[str, Any], errors: Sequence[str]) -> 
         blockers.append(_blocker("operator_blockers", "BLOCKED_ON_PUBLIC_URL", "operator public URL/provider choice is missing"))
     if payload.get("provider_https_status") == "missing":
         blockers.append(_blocker("operator_blockers", "provider_https_status_missing", "TLS/provider HTTPS posture is missing"))
-    if payload.get("record_route_smoke_status") == "BLOCKED_ON_STAGING_BUNDLE_RECORD_ID":
-        blockers.append(_blocker("operator_blockers", "BLOCKED_ON_STAGING_BUNDLE_RECORD_ID", "known staged record id is needed for future /record smoke"))
+    if payload.get("record_route_smoke_status") == "BLOCKED_ON_STAGING_PACKAGE_RECORD_ID":
+        blockers.append(_blocker("operator_blockers", "BLOCKED_ON_STAGING_PACKAGE_RECORD_ID", "known staged record id is needed for future /record smoke"))
     if payload.get("tunnel_started") is not True:
         blockers.append(_blocker("rehearsal_blockers", "tunnel_rehearsal_not_run", "tunnel/proxy rehearsal has not been run"))
     blockers.append(_blocker("release_process_blockers", "full_discovery_report_missing", "full discovery launch report is missing"))

@@ -422,7 +422,7 @@ class ReviewIACandidatesBatchTests(unittest.TestCase):
         self.assertEqual(8, manifest["promotion_blocked_count"])
         self.assertTrue(all(row["provider_modes"] == ["fixture"] for row in rows))
         self.assertTrue(all(row["promotion_eligible"] is False for row in rows))
-        self.assertTrue(all("fixture_only_provenance" in row["promotion_blockers"] for row in rows))
+        self.assertTrue(all("synthetic_input_provenance" in row["promotion_blockers"] for row in rows))
         self.assertTrue(all("independent_external_evidence_missing" in row["promotion_blockers"] for row in rows))
 
     def test_tranche_template_is_blank_and_promote_is_rejected(self) -> None:

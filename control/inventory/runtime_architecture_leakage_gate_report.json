@@ -1,15 +1,15 @@
 {
   "blocker_count": 0,
-  "control_path_count": 12664,
+  "control_path_count": 19498,
   "dev_to_main_should_remain_blocked": true,
   "expired_allowlist_count": 0,
   "f0_should_remain_blocked": true,
   "high_count": 0,
-  "known_allowlisted_violation_count": 1954,
+  "known_allowlisted_violation_count": 2035,
   "low_count": 0,
   "medium_count": 0,
   "new_violation_count": 0,
-  "production_path_count": 1033,
+  "production_path_count": 1654,
   "recommended_next_task": "R0-03 \u2014 Contract taxonomy refactor",
   "scan_scope": [
     "runtime/**",
@@ -24,12 +24,16 @@
   "task": "R0-02",
   "top_paths": [
     {
-      "count": 63,
-      "value": "runtime/connectors/internet_archive/quality_delta.py"
+      "count": 223,
+      "value": "surfaces/web/workbench/local_html/pages.py"
     },
     {
-      "count": 62,
-      "value": "surfaces/web/workbench/local_html/pages.py"
+      "count": 73,
+      "value": "runtime/local/service/routes.py"
+    },
+    {
+      "count": 63,
+      "value": "runtime/connectors/internet_archive/quality_delta.py"
     },
     {
       "count": 54,
@@ -58,10 +62,6 @@
     {
       "count": 47,
       "value": "runtime/extraction/usefulness.py"
-    },
-    {
-      "count": 46,
-      "value": "runtime/local/foundry/candidate_store.py"
     }
   ],
   "top_terms": [
@@ -70,40 +70,40 @@
       "value": "truth_boundary"
     },
     {
+      "count": 675,
+      "value": "H2"
+    },
+    {
       "count": 641,
       "value": "product_boundary"
     },
     {
-      "count": 550,
-      "value": "H2"
-    },
-    {
-      "count": 134,
-      "value": "H1"
-    },
-    {
-      "count": 132,
-      "value": "BUNDLE"
-    },
-    {
-      "count": 81,
-      "value": "review_seed"
-    },
-    {
-      "count": 77,
-      "value": "fixture_only"
-    },
-    {
-      "count": 50,
+      "count": 383,
       "value": "agent"
     },
     {
-      "count": 49,
-      "value": "review_seed_identifier"
+      "count": 195,
+      "value": "H1"
     },
     {
-      "count": 36,
-      "value": "quality_delta"
+      "count": 120,
+      "value": "BUNDLE"
+    },
+    {
+      "count": 107,
+      "value": "fixture_only"
+    },
+    {
+      "count": 86,
+      "value": "review_seed"
+    },
+    {
+      "count": 75,
+      "value": "MVP"
+    },
+    {
+      "count": 68,
+      "value": "H3"
     }
   ]
 }

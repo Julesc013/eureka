@@ -10,10 +10,10 @@ import subprocess
 from typing import Any
 
 from runtime.local.corpus_gate_closeout import DEFAULT_GATE_TARGET
-from runtime.local.external_staging_mvp import validate_report as validate_external_staging_report
+from runtime.local.external_staging import validate_report as validate_external_staging_report
 from runtime.local.local_machine_public_exposure import validate_report as validate_local_machine_public_exposure_report
 from runtime.local.local_machine_staging_mvp import validate_report as validate_local_machine_staging_report
-from runtime.local.staging_mvp import bundle_status, validate_bundle
+from runtime.local.staging_package import bundle_status, validate_bundle
 from scripts.eureka_public_alpha_launch_gate import validate_launch_gate_report
 from scripts.eureka_public_alpha_rehearsal import validate_report as validate_rehearsal_report
 

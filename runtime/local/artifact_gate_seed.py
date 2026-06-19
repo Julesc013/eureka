@@ -1379,7 +1379,7 @@ def validate_evidence_packet(packet: Mapping[str, Any]) -> list[str]:
             errors.append("artifact_verified evidence requires gate_eligible true")
         if str(packet.get("verification_scope") or "") in {"", "source_lead_only", "metadata_only", "none"}:
             errors.append("artifact_verified evidence requires stronger verification_scope")
-        if _evidence_source_is_fixture_only(packet):
+        if _evidence_source_is_non_authoritative_input(packet):
             errors.append("fixture-only or metadata-only evidence cannot be artifact_verified")
     return errors
 
@@ -2437,7 +2437,7 @@ def _manual_artifact_verified_errors(packet: Mapping[str, Any]) -> list[str]:
         errors.append("artifact_verified evidence requires an approved source_authority")
     if not observations:
         errors.append("artifact_verified evidence requires source_observations")
-    if _evidence_source_is_fixture_only(packet):
+    if _evidence_source_is_non_authoritative_input(packet):
         errors.append("fixture-only or metadata-only evidence cannot be artifact_verified")
     external_observations = []
     for observation in observations:
@@ -3258,7 +3258,7 @@ def _candidate_sort_key(candidate: Mapping[str, Any]) -> tuple[int, int, str]:
     return (excluded, order, f"{reviewed_rank}:{candidate.get('source_index_document_id')}")
 
 
-def _is_fixture_only(packet: Mapping[str, Any]) -> bool:
+def _is_non_authoritative_input(packet: Mapping[str, Any]) -> bool:
     text = json.dumps(packet, sort_keys=True, ensure_ascii=True).casefold()
     return any(marker in text for marker in _FIXTURE_MARKERS) or str(packet.get("source_authority") or "") in {
         "archive_metadata_fixture",
@@ -3267,7 +3267,7 @@ def _is_fixture_only(packet: Mapping[str, Any]) -> bool:
     }
 
 
-def _evidence_source_is_fixture_only(packet: Mapping[str, Any]) -> bool:
+def _evidence_source_is_non_authoritative_input(packet: Mapping[str, Any]) -> bool:
     source_authority = str(packet.get("source_authority") or "").strip().casefold()
     evidence_type = str(packet.get("evidence_type") or "").strip().casefold()
     if source_authority in {"archive_metadata_fixture", "hard_query_fixture", "local_reviewed_source_lead"}:

@@ -255,7 +255,7 @@ def build_default_plan(
             "root_structure_accepted": True,
             "new_top_level_roots_created": False,
             "ops_home": ["runtime/local", "scripts", "docs/runbooks", "control/audits", ".eureka/ops"],
-            "aide_control_boundary": "AIDE and control artifacts are guardrails/evidence, not product runtime truth.",
+            "repo_control_boundary": "Repo control artifacts are guardrails/evidence, not product runtime truth.",
         },
         "compatibility": {},
         "blockers": [],
