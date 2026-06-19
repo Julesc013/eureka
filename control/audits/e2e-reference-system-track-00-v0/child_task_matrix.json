@@ -1,0 +1,72 @@
+{
+  "schema_version": "eureka.e2e_reference_child_task_matrix.v0",
+  "parent_track": "E2E-REFERENCE-SYSTEM-TRACK-00",
+  "native_aide_inheritance_available": false,
+  "children": [
+    {
+      "order": 1,
+      "task_id": "E2E-REFERENCE-CONTRACT-00",
+      "status": "planned",
+      "purpose": "Consolidate semantic contracts",
+      "predecessor": "E2E-REFERENCE-SYSTEM-TRACK-00",
+      "successor": "E2E-REFERENCE-RUNNER-00"
+    },
+    {
+      "order": 2,
+      "task_id": "E2E-REFERENCE-RUNNER-00",
+      "status": "planned",
+      "purpose": "Build shared replay synthetic live-shadow runner",
+      "predecessor": "E2E-REFERENCE-CONTRACT-00",
+      "successor": "E2E-PREVIEW-INDEX-00"
+    },
+    {
+      "order": 3,
+      "task_id": "E2E-PREVIEW-INDEX-00",
+      "status": "planned",
+      "purpose": "Build status-aware preview projection",
+      "predecessor": "E2E-REFERENCE-RUNNER-00",
+      "successor": "E2E-HUNT-EXPLORATION-UI-00"
+    },
+    {
+      "order": 4,
+      "task_id": "E2E-HUNT-EXPLORATION-UI-00",
+      "status": "planned",
+      "purpose": "Build private local exploration Workbench",
+      "predecessor": "E2E-PREVIEW-INDEX-00",
+      "successor": "SYNTHETIC-TRUTH-PATH-E2E-00"
+    },
+    {
+      "order": 5,
+      "task_id": "SYNTHETIC-TRUTH-PATH-E2E-00",
+      "status": "planned",
+      "purpose": "Prove isolated synthetic truth mechanics",
+      "predecessor": "E2E-HUNT-EXPLORATION-UI-00",
+      "successor": "AUTONOMOUS-EVAL-ORACLE-00"
+    },
+    {
+      "order": 6,
+      "task_id": "AUTONOMOUS-EVAL-ORACLE-00",
+      "status": "planned",
+      "purpose": "Build E2E evaluation oracle",
+      "predecessor": "SYNTHETIC-TRUTH-PATH-E2E-00",
+      "successor": "PORTABLE-EUREKA-INSTANCE-00"
+    },
+    {
+      "order": 7,
+      "task_id": "PORTABLE-EUREKA-INSTANCE-00",
+      "status": "planned",
+      "purpose": "Build coherent local command surface",
+      "predecessor": "AUTONOMOUS-EVAL-ORACLE-00",
+      "successor": "HUMAN-END-TO-END-ACCEPTANCE-00"
+    },
+    {
+      "order": 8,
+      "task_id": "HUMAN-END-TO-END-ACCEPTANCE-00",
+      "status": "planned",
+      "purpose": "Run human product calibration",
+      "predecessor": "PORTABLE-EUREKA-INSTANCE-00",
+      "successor": "separately_gated"
+    }
+  ]
+}
+

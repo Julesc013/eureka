@@ -1,0 +1,49 @@
+{
+  "schema_version": "eureka.e2e_reference_queue_transition.v0",
+  "task_id": "E2E-REFERENCE-SYSTEM-TRACK-00",
+  "previous_recommended_task": "REVIEW-IA-CANDIDATES-BATCH-00",
+  "new_recommended_task": "E2E-REFERENCE-CONTRACT-00",
+  "completed_or_recorded_added": [
+    "HUMAN-LAST-E2E-REFERENCE-BUILD-00",
+    "E2E-REFERENCE-SYSTEM-TRACK-00"
+  ],
+  "planned_child_tasks_added": [
+    "E2E-REFERENCE-CONTRACT-00",
+    "E2E-REFERENCE-RUNNER-00",
+    "E2E-PREVIEW-INDEX-00",
+    "E2E-HUNT-EXPLORATION-UI-00",
+    "SYNTHETIC-TRUTH-PATH-E2E-00",
+    "AUTONOMOUS-EVAL-ORACLE-00",
+    "PORTABLE-EUREKA-INSTANCE-00",
+    "HUMAN-END-TO-END-ACCEPTANCE-00"
+  ],
+  "waiting_items_preserved": [
+    "WAITING_FOR_EXTERNAL_ARTIFACT_EVIDENCE",
+    "WAITING_FOR_USER_HARDWARE_DETAILS"
+  ],
+  "waiting_items_added": [
+    "WAITING_FOR_COHERENT_E2E_REFERENCE_ACCEPTANCE_BEFORE_REAL_IA_REVIEW"
+  ],
+  "ia_review_task_posture": {
+    "task_id": "REVIEW-IA-CANDIDATES-BATCH-00",
+    "marked_complete": false,
+    "posture": "frozen_waiting_for_coherent_e2e_reference_acceptance",
+    "prepared_candidates": 56,
+    "request_more_evidence_decisions": 8,
+    "pending_parent_batch_items": 48,
+    "promoted_candidates": 0,
+    "reviewed_records": 0
+  },
+  "safety": {
+    "runtime_implementation": false,
+    "real_review_decisions": false,
+    "reviewed_records": 0,
+    "reviewed_master_mutation": false,
+    "public_index_mutation": false,
+    "public_exposure": "paused",
+    "provider_network_calls": false,
+    "downloads_or_execution": false,
+    "license_posture": "unchanged"
+  }
+}
+

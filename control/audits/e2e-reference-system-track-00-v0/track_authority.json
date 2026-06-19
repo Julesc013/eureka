@@ -1,0 +1,114 @@
+{
+  "schema_version": "eureka.e2e_reference_system_track_authority.v0",
+  "task_id": "E2E-REFERENCE-SYSTEM-TRACK-00",
+  "status": "PASS",
+  "generated_at": "2026-06-19T16:36:12Z",
+  "repo_state_at_authoring": {
+    "branch": "dev",
+    "head": "864c1899b8ad67348dac8e0690bf8dba033bd3f6",
+    "origin_dev": "864c1899b8ad67348dac8e0690bf8dba033bd3f6",
+    "origin_main": "13997f25075ce892e59f7ac12a11280816d47570",
+    "origin_main_to_origin_dev_left_right": "0 1",
+    "worktree": "clean"
+  },
+  "source_foundry_preview_v0": {
+    "promoted_to_main": true,
+    "promotion_commit": "13997f25075ce892e59f7ac12a11280816d47570",
+    "external_full_discovery_tests": 5793,
+    "external_full_discovery_failures": 0,
+    "external_full_discovery_errors": 0,
+    "non_claims": [
+      "no_reviewed_ia_truth",
+      "no_public_launch",
+      "no_public_exposure",
+      "no_production_readiness_claim"
+    ]
+  },
+  "human_last_decision": {
+    "task_id": "HUMAN-LAST-E2E-REFERENCE-BUILD-00",
+    "commit": "864c1899b8ad67348dac8e0690bf8dba033bd3f6",
+    "routine_real_candidate_review": "deferred_until_coherent_local_reference_experience",
+    "product_level_calibration": "allowed_at_major_milestones"
+  },
+  "track_purpose": "Authorize deterministic non-truth-changing work toward one coherent local Eureka reference system.",
+  "six_planes": [
+    "Discovery",
+    "Evidence",
+    "Preview",
+    "Truth",
+    "Distribution",
+    "Control and Observability"
+  ],
+  "autonomous_permissions": [
+    "contract_consolidation",
+    "stable_ids_and_hashes",
+    "state_transition_definitions",
+    "recorded_replay",
+    "synthetic_fixtures",
+    "run_orchestration",
+    "workunit_scheduling",
+    "event_logging",
+    "preview_index_generation",
+    "result_lane_assembly",
+    "workbench_projections",
+    "local_cli_api_web_integration",
+    "fault_injection",
+    "deterministic_recovery",
+    "rollback_testing",
+    "isolated_synthetic_truth_mechanics",
+    "evaluation_harnesses",
+    "local_portable_instance_wrappers",
+    "local_only_packaging",
+    "documentation_and_runbooks",
+    "focused_tests_and_external_validation_handoffs"
+  ],
+  "hard_gates": [
+    "new_live_provider_or_network_access",
+    "credentials_or_secrets",
+    "real_review_ledger_decisions",
+    "real_reviewed_record_materialization",
+    "reviewed_master_index_mutation",
+    "public_index_mutation",
+    "public_snapshot_publication",
+    "public_exposure",
+    "public_launch",
+    "downloads_or_file_payload_fetching",
+    "installation_emulation_or_execution",
+    "license_changes",
+    "destructive_data_migration",
+    "native_mobile_distribution",
+    "rust_replacement_of_reference_semantics"
+  ],
+  "child_tasks": [
+    "E2E-REFERENCE-CONTRACT-00",
+    "E2E-REFERENCE-RUNNER-00",
+    "E2E-PREVIEW-INDEX-00",
+    "E2E-HUNT-EXPLORATION-UI-00",
+    "SYNTHETIC-TRUTH-PATH-E2E-00",
+    "AUTONOMOUS-EVAL-ORACLE-00",
+    "PORTABLE-EUREKA-INSTANCE-00",
+    "HUMAN-END-TO-END-ACCEPTANCE-00"
+  ],
+  "ia_batch_frozen_posture": {
+    "prepared_candidates": 56,
+    "request_more_evidence_decisions": 8,
+    "pending_parent_batch_items": 48,
+    "promoted_candidates": 0,
+    "reviewed_records": 0,
+    "posture": "prepared_evidence_linked_partially_dispositioned_not_promoted_not_discarded_retained_for_later_acceptance_testing"
+  },
+  "safety": {
+    "runtime_implementation": false,
+    "real_review_decisions": false,
+    "reviewed_records": 0,
+    "reviewed_master_mutation": false,
+    "public_index_mutation": false,
+    "public_exposure": "paused",
+    "provider_network_calls": false,
+    "downloads_or_execution": false,
+    "license_posture": "unchanged"
+  },
+  "native_aide_inheritance_available": false,
+  "recommended_next_task": "E2E-REFERENCE-CONTRACT-00"
+}
+

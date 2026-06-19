@@ -1,0 +1,77 @@
+{
+  "schema_version": "eureka.e2e_reference_hard_gate_matrix.v0",
+  "parent_track": "E2E-REFERENCE-SYSTEM-TRACK-00",
+  "gates": [
+    {
+      "gate": "new_live_provider_or_network_access",
+      "posture": "separate_authority_required"
+    },
+    {
+      "gate": "credentials_or_secrets",
+      "posture": "separate_authority_required"
+    },
+    {
+      "gate": "real_review_ledger_decisions",
+      "posture": "separate_authority_required"
+    },
+    {
+      "gate": "real_reviewed_record_materialization",
+      "posture": "separate_authority_required"
+    },
+    {
+      "gate": "reviewed_master_index_mutation",
+      "posture": "separate_authority_required"
+    },
+    {
+      "gate": "public_index_mutation",
+      "posture": "separate_authority_required"
+    },
+    {
+      "gate": "public_snapshot_publication",
+      "posture": "separate_authority_required"
+    },
+    {
+      "gate": "public_exposure",
+      "posture": "separate_authority_required"
+    },
+    {
+      "gate": "public_launch",
+      "posture": "separate_authority_required"
+    },
+    {
+      "gate": "downloads_or_file_payload_fetching",
+      "posture": "separate_authority_required"
+    },
+    {
+      "gate": "installation_emulation_or_execution",
+      "posture": "separate_authority_required"
+    },
+    {
+      "gate": "license_changes",
+      "posture": "separate_authority_required"
+    },
+    {
+      "gate": "destructive_data_migration",
+      "posture": "separate_authority_required"
+    },
+    {
+      "gate": "native_mobile_distribution",
+      "posture": "separate_authority_required"
+    },
+    {
+      "gate": "rust_replacement_of_reference_semantics",
+      "posture": "separate_authority_required"
+    }
+  ],
+  "synthetic_truth_exception": {
+    "allowed": true,
+    "namespace": "synthetic_test_only",
+    "isolated_stores_required": true,
+    "real_candidates_allowed": false,
+    "production_review_ledger_allowed": false,
+    "reviewed_master_public_indexes_allowed": false,
+    "rollback_required": true,
+    "outputs_marked_synthetic": true
+  }
+}
+
