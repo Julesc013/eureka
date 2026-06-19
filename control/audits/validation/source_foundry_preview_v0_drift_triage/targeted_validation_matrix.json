@@ -1,0 +1,62 @@
+{
+  "adjacent_safety_tests": [],
+  "full_discovery_rerun_permitted": false,
+  "generated_at": "2026-06-19T02:48:51Z",
+  "regression_risk": "medium-high until runtime leakage and unknown/slow validator groups are resolved",
+  "remaining_failures": 50,
+  "repaired_root_cause_groups": [],
+  "schema_version": "eureka.source_foundry_preview_targeted_validation_matrix.v0",
+  "targeted_checks_run": [
+    {
+      "command": "python scripts/validate_search_hunt_track.py --json",
+      "group": "hunt_historical_queue_expectation_drift",
+      "result": "FAIL"
+    },
+    {
+      "command": "python scripts/validate_local_appliance_track.py --json",
+      "group": "local_historical_queue_expectation_drift",
+      "result": "FAIL"
+    },
+    {
+      "command": "python scripts/validate_dev_to_main_promotion_03.py --json",
+      "group": "dev_to_main_promotion_state_expectations",
+      "result": "FAIL"
+    },
+    {
+      "command": "python scripts/validate_public_alpha_launch_defer.py --json",
+      "group": "public_alpha_defer_queue_expectation_drift",
+      "result": "FAIL"
+    },
+    {
+      "command": "python scripts/validate_ia_readiness_polish.py --json",
+      "group": "ia_historical_lane_expectation_drift",
+      "result": "FAIL"
+    },
+    {
+      "command": "python scripts/validate_repo_structure_canon.py --json",
+      "group": "repo_layout_canon_historical_validator_drift",
+      "result": "FAIL"
+    },
+    {
+      "command": "python scripts/validate_repository_layout.py --json",
+      "group": "repo_layout_canon_historical_validator_drift",
+      "result": "FAIL"
+    },
+    {
+      "command": "python scripts/validate_local_quarantine_staging_model.py --json",
+      "group": "local_quarantine_staging_obsolete_no_staging_assertion",
+      "result": "PASS"
+    },
+    {
+      "command": "python scripts/validate_local_worker_runner.py --json",
+      "group": "local_worker_validator_unknown_or_slow",
+      "result": "TIMEOUT_60S"
+    },
+    {
+      "command": "python -m unittest tests.operations.test_search_hunt_track tests.operations.test_local_appliance_track tests.operations.test_local_quarantine_staging_model tests.operations.test_dev_to_main_promotion_03 tests.scripts.test_validate_repo_structure_canon tests.scripts.test_validate_repository_layout -v",
+      "group": "representative_multigroup_targeted_lane",
+      "notes": "Confirms HUNT/LOCAL queue drift, stale staging assertion, dev-to-main blocked posture, and repo layout/canon validator drift remain red before repairs.",
+      "result": "FAIL_40_TESTS_6_FAILURES_7_ERRORS"
+    }
+  ]
+}

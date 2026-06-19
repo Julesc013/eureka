@@ -1,0 +1,61 @@
+{
+  "counts_match": true,
+  "current_branch": "dev",
+  "current_external_artifacts": {
+    "failed_tests_hash": "sha256:38638a1be321b938be5cb51ed0c743cb8b740e200f366017074b68e92277e8d6",
+    "failed_tests_path": "../eureka-test-runs/source_foundry_preview_v0_checkpoint_00/failed_tests.txt",
+    "failure_families_hash": "sha256:3baff71afc0c163eb49b9a275f1ad619f6f4df0d2ac83a96d78c1a8e154261e5",
+    "failure_families_path": "../eureka-test-runs/source_foundry_preview_v0_checkpoint_00/failure_families.json",
+    "summary_hash": "sha256:1c71e574f19881997d664148b32d86ed2667074b57a78ac50c1b5f91e3775d68",
+    "summary_path": "../eureka-test-runs/source_foundry_preview_v0_checkpoint_00/full_unittest_summary.json"
+  },
+  "current_repo_head": "28f1718a17ca29085607645b5aa8a1102f0fccb3",
+  "deterministic_assessment": "materially similar and likely deterministic on failed-test identity because counts and failed_tests hash match across red ingests",
+  "failed_tests_hash_match": true,
+  "failure_families_hash_match": false,
+  "failure_set_comparison": "ordered failed_tests hash matches; first-run raw failed_tests list is unavailable locally after run-id reuse",
+  "first_run_only_failures": [],
+  "generated_at": "2026-06-19T02:48:51Z",
+  "materially_changed_traces": "not fully comparable because first raw family artifact is unavailable; current family records are inventoried",
+  "missing_artifacts": [
+    "first run raw full_unittest_summary.json",
+    "first run raw failure_families.json",
+    "first run raw stdout/stderr logs"
+  ],
+  "run_1": {
+    "artifact_detail": "committed compact ingest only; raw first-run artifacts were overwritten by reusing the same run id",
+    "errors": 7,
+    "failed_modules": 40,
+    "failed_tests": 50,
+    "failed_tests_hash": "sha256:38638a1be321b938be5cb51ed0c743cb8b740e200f366017074b68e92277e8d6",
+    "failure_families": 31,
+    "failure_families_hash": "sha256:e2f85171bc67c6c8283a2ed00a42c8d38d41e2b8516921e0ed2917566b8c682e",
+    "failures": 43,
+    "head": "670a573276d220d8136942de38eed4e0115749a5",
+    "label": "first_red_ingest_compact",
+    "run_id": "source_foundry_preview_v0_checkpoint_00",
+    "started_at": null,
+    "summary_hash": "sha256:964241ab75e74ec1b48dbd0a45bb9c81e2c5ead7feac49bda04def8709772a0c",
+    "tests_run": 5792,
+    "updated_at": null
+  },
+  "run_2": {
+    "artifact_detail": "current external artifact set available under ../eureka-test-runs/source_foundry_preview_v0_checkpoint_00",
+    "errors": 7,
+    "failed_modules": 40,
+    "failed_tests": 50,
+    "failed_tests_hash": "sha256:38638a1be321b938be5cb51ed0c743cb8b740e200f366017074b68e92277e8d6",
+    "failure_families": 31,
+    "failure_families_hash": "sha256:3baff71afc0c163eb49b9a275f1ad619f6f4df0d2ac83a96d78c1a8e154261e5",
+    "failures": 43,
+    "head": "f16d828714614c5ac7f84ab3e85aebc06cbf7a5d",
+    "label": "second_red_external_artifacts_current",
+    "run_id": "source_foundry_preview_v0_checkpoint_00",
+    "started_at": "2026-06-18T22:37:12Z",
+    "summary_hash": "sha256:1c71e574f19881997d664148b32d86ed2667074b57a78ac50c1b5f91e3775d68",
+    "tests_run": 5792,
+    "updated_at": "2026-06-18T23:34:55Z"
+  },
+  "schema_version": "eureka.source_foundry_preview_drift_run_comparison.v0",
+  "second_run_only_failures": []
+}

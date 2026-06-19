@@ -1,0 +1,48 @@
+{
+  "counts_by_classification": {
+    "historical_queue_expectation_drift": 26,
+    "historical_validator_drift": 20,
+    "obsolete_test_candidate": 1,
+    "unknown_requires_investigation": 3
+  },
+  "external_full_discovery_rerun_justified_now": false,
+  "failure_families_classified": 31,
+  "generated_at": "2026-06-19T02:48:51Z",
+  "main_promotion_posture": "blocked until targeted repairs are green and a later external full-discovery rerun returns failures=0 and errors=0",
+  "new_external_rerun_prepared": false,
+  "public_safety_posture": "unchanged; public exposure remains paused",
+  "reason_not_ready": "No targeted repairs were applied in this triage pass; runtime leakage and local worker groups remain unresolved/unknown; historical validators still fail targeted probes.",
+  "recommended_next_task": "SOURCE-FOUNDRY-PREVIEW-V0-FULL-DISCOVERY-DRIFT-REPAIR-01",
+  "repaired_count": 0,
+  "representative_targeted_unittest_lane": {
+    "command": "python -m unittest tests.operations.test_search_hunt_track tests.operations.test_local_appliance_track tests.operations.test_local_quarantine_staging_model tests.operations.test_dev_to_main_promotion_03 tests.scripts.test_validate_repo_structure_canon tests.scripts.test_validate_repository_layout -v",
+    "errors": 7,
+    "failures": 6,
+    "result": "FAIL",
+    "tests_run": 40
+  },
+  "root_cause_group_count": 9,
+  "root_cause_groups": [
+    "dev_to_main_promotion_state_expectations",
+    "hunt_historical_queue_expectation_drift",
+    "ia_historical_lane_expectation_drift",
+    "local_historical_queue_expectation_drift",
+    "local_quarantine_staging_obsolete_no_staging_assertion",
+    "local_worker_validator_unknown_or_slow",
+    "public_alpha_defer_queue_expectation_drift",
+    "repo_layout_canon_historical_validator_drift",
+    "runtime_leakage_safety_unknown"
+  ],
+  "schema_version": "eureka.source_foundry_preview_drift_triage_report.v0",
+  "status": "BLOCKED_UNKNOWN_FAILURES",
+  "targeted_repairs": [],
+  "tests_now_green_in_targeted_lanes": false,
+  "total_failed_or_error_tests_classified": 50,
+  "truth_index_mutation_posture": "unchanged; no reviewed truth or index mutation authorized",
+  "unresolved_genuine_regressions": [],
+  "unresolved_unknown_groups": [
+    "local_worker_validator_unknown_or_slow",
+    "runtime_leakage_safety_unknown"
+  ],
+  "unresolved_unknown_test_count": 3
+}

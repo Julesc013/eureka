@@ -1,0 +1,208 @@
+{
+  "groups": [
+    {
+      "classification_counts": {
+        "historical_validator_drift": 13
+      },
+      "current_accepted_authority": "current queue: REVIEW-IA-CANDIDATES-BATCH-00; public exposure paused; dev-to-main promotion blocked until green external rerun",
+      "group_id": "dev_to_main_promotion_state_expectations",
+      "historical_expected_authority": "see normalized signature and traceback excerpt",
+      "member_count": 13,
+      "member_tests": [
+        "test_validator_demo_and_schema_cli_pass (tests.operations.test_agent_research_scripts.AgentResearchScriptsTests.test_validator_demo_and_schema_cli_pass)",
+        "test_validator_demo_and_cli_pass (tests.operations.test_ai_escalation_scripts.AIEscalationScriptsTests.test_validator_demo_and_cli_pass)",
+        "test_script_entrypoint_passes (tests.operations.test_hunt_remediation.HuntRemediationTests.test_script_entrypoint_passes)",
+        "test_script_entrypoint_passes (tests.operations.test_hunt_remediation_continue.HuntRemediationContinueTests.test_script_entrypoint_passes)",
+        "test_validator_demo_and_cli_pass (tests.operations.test_hunt_replay_scripts.HuntReplayScriptsTests.test_validator_demo_and_cli_pass)",
+        "test_defer_validator_script_passes_json_mode (tests.operations.test_public_alpha_launch_defer.PublicAlphaLaunchDeferTests.test_defer_validator_script_passes_json_mode)",
+        "test_validator_script_passes_with_disposed_warnings (tests.operations.test_search_hunt_closeout.SearchHuntCloseoutTests.test_validator_script_passes_with_disposed_warnings)",
+        "test_validator_script_json_passes (tests.scripts.test_validate_dev_to_main_promotion_03.ValidateDevToMainPromotion03ScriptTests.test_validator_script_json_passes)",
+        "test_validator_script_json_passes (tests.scripts.test_validate_dev_to_main_promotion_04.ValidateDevToMainPromotion04ScriptTests.test_validator_script_json_passes)",
+        "test_validator_passes (tests.operations.test_dev_to_main_promotion_03.DevToMainPromotion03Tests.test_validator_passes)",
+        "test_validator_passes (tests.operations.test_dev_to_main_promotion_04.DevToMainPromotion04Tests.test_validator_passes)",
+        "test_remediation_validator_passes (tests.operations.test_hunt_remediation.HuntRemediationTests.test_remediation_validator_passes)",
+        "test_continuation_validator_passes (tests.operations.test_hunt_remediation_continue.HuntRemediationContinueTests.test_continuation_validator_passes)"
+      ],
+      "proposed_repair": "update promotion validators to model blocked checkpoint state without weakening promotion gates",
+      "risk_if_changed_incorrectly": "Could hide a real boundary regression if queue or safety validators are broadened without precise successor-state evidence.",
+      "safety_relevance": "medium",
+      "shared_signature": "1 != 0 : {",
+      "targeted_test_command": "python -m unittest tests.operations.test_dev_to_main_promotion_03 tests.operations.test_dev_to_main_promotion_04 tests.scripts.test_validate_dev_to_main_promotion_03 tests.scripts.test_validate_dev_to_main_promotion_04 -v",
+      "why_current_behavior_is_or_is_not_valid": "1 != 0 : {"
+    },
+    {
+      "classification_counts": {
+        "historical_queue_expectation_drift": 9
+      },
+      "current_accepted_authority": "current queue: REVIEW-IA-CANDIDATES-BATCH-00; public exposure paused; dev-to-main promotion blocked until green external rerun",
+      "group_id": "hunt_historical_queue_expectation_drift",
+      "historical_expected_authority": "see normalized signature and traceback excerpt",
+      "member_count": 9,
+      "member_tests": [
+        "test_validator_passes (tests.operations.test_search_hunt_exhaustion_scripts.SearchHuntExhaustionScriptTests.test_validator_passes)",
+        "test_validator_passes (tests.operations.test_need_to_workunit_scripts.NeedToWorkUnitScriptTests.test_validator_passes)",
+        "test_validator_passes (tests.operations.test_search_hunt_ui_scripts.SearchHuntUiScriptTests.test_validator_passes)",
+        "test_validator_passes (tests.operations.test_search_hunt_command_scripts.SearchHuntCommandScriptTests.test_validator_passes)",
+        "test_validator_passes (tests.operations.test_search_hunt_scripts.SearchHuntScriptTests.test_validator_passes)",
+        "test_validator_passes (tests.operations.test_background_hunt_runner_scripts.BackgroundHuntRunnerScriptTests.test_validator_passes)",
+        "test_next_task_is_hunt_01_or_completed_post_hunt_task (tests.operations.test_search_hunt_track.SearchHuntTrackTests.test_next_task_is_hunt_01_or_completed_post_hunt_task)",
+        "test_validator_passes (tests.operations.test_search_need_scripts.SearchNeedScriptTests.test_validator_passes)",
+        "test_validator_passes_with_disposed_warnings (tests.operations.test_search_hunt_track.SearchHuntTrackTests.test_validator_passes_with_disposed_warnings)"
+      ],
+      "proposed_repair": "update historical validator successor handling or move to archival/nightly lane",
+      "risk_if_changed_incorrectly": "Could hide a real boundary regression if queue or safety validators are broadened without precise successor-state evidence.",
+      "safety_relevance": "low",
+      "shared_signature": "0 != 1 : HUNT-04 Search Hunt exhaustion validation",
+      "targeted_test_command": "python -m unittest tests.operations.test_search_hunt_track tests.operations.test_search_hunt_scripts tests.operations.test_search_hunt_ui_scripts tests.operations.test_search_hunt_command_scripts tests.operations.test_search_hunt_exhaustion_scripts tests.operations.test_search_need_scripts tests.operations.test_need_to_workunit_scripts tests.operations.test_background_hunt_runner_scripts -v",
+      "why_current_behavior_is_or_is_not_valid": "0 != 1 : HUNT-04 Search Hunt exhaustion validation"
+    },
+    {
+      "classification_counts": {
+        "historical_queue_expectation_drift": 1
+      },
+      "current_accepted_authority": "current queue: REVIEW-IA-CANDIDATES-BATCH-00; public exposure paused; dev-to-main promotion blocked until green external rerun",
+      "group_id": "ia_historical_lane_expectation_drift",
+      "historical_expected_authority": "see normalized signature and traceback excerpt",
+      "member_count": 1,
+      "member_tests": [
+        "test_validator_passes_current_repo (tests.operations.test_ia_readiness_polish.IAReadinessPolishTest.test_validator_passes_current_repo)"
+      ],
+      "proposed_repair": "update or retire superseded IA-BUNDLE lane assertion",
+      "risk_if_changed_incorrectly": "Could hide a real boundary regression if queue or safety validators are broadened without precise successor-state evidence.",
+      "safety_relevance": "low",
+      "shared_signature": "'invalid' != 'valid'",
+      "targeted_test_command": "python scripts/validate_ia_readiness_polish.py --json",
+      "why_current_behavior_is_or_is_not_valid": "'invalid' != 'valid'"
+    },
+    {
+      "classification_counts": {
+        "historical_queue_expectation_drift": 15
+      },
+      "current_accepted_authority": "current queue: REVIEW-IA-CANDIDATES-BATCH-00; public exposure paused; dev-to-main promotion blocked until green external rerun",
+      "group_id": "local_historical_queue_expectation_drift",
+      "historical_expected_authority": "see normalized signature and traceback excerpt",
+      "member_count": 15,
+      "member_tests": [
+        "test_validator_passes (tests.operations.test_workunit_queue_scripts.WorkUnitQueueScriptTests.test_validator_passes)",
+        "test_validator_passes (tests.operations.test_local_http_service_scripts.LocalHTTPServiceScriptTests.test_validator_passes)",
+        "test_validator_passes (tests.operations.test_local_workbench_scripts.LocalWorkbenchScriptTests.test_validator_passes)",
+        "test_queue_points_to_local_track_successor (tests.operations.test_local_appliance_track.LocalApplianceTrackTests.test_queue_points_to_local_track_successor)",
+        "test_validator_passes_focused_tests (tests.operations.test_local_instance_bootstrap.LocalInstanceBootstrapTests.test_validator_passes_focused_tests)",
+        "test_validator_passes (tests.operations.test_local_appliance_track.LocalApplianceTrackTests.test_validator_passes)",
+        "test_validator_passes (tests.operations.test_local_runtime_composition_scripts.LocalRuntimeCompositionScriptTests.test_validator_passes)",
+        "test_queue_points_to_local_02 (tests.operations.test_local_instance_policy.LocalInstancePolicyTests.test_queue_points_to_local_02)",
+        "test_validator_passes_with_known_warning (tests.operations.test_clean_machine_smoke.CleanMachineSmokeScriptTests.test_validator_passes_with_known_warning)",
+        "test_validator_passes (tests.operations.test_local_auto_test_scripts.LocalAutoTestScriptTests.test_validator_passes)",
+        "test_validator_passes (tests.operations.test_local_lan_policy_scripts.LocalLanPolicyScriptTests.test_validator_passes)",
+        "test_validator_passes (tests.operations.test_local_lan_smoke_scripts.LocalLanSmokeScriptTests.test_validator_passes)",
+        "test_page_hardening_validator_passes (tests.operations.test_local_workbench_page_hardening_scripts.LocalWorkbenchPageHardeningScriptTests.test_page_hardening_validator_passes)",
+        "test_validator_passes_focused_tests (tests.operations.test_local_instance_migration_guard.LocalInstanceMigrationGuardTests.test_validator_passes_focused_tests)",
+        "test_validator_passes (tests.operations.test_local_review_rebuild_smoke.LocalReviewRebuildSmokeTests.test_validator_passes)"
+      ],
+      "proposed_repair": "update historical validator successor handling or move to archival/nightly lane",
+      "risk_if_changed_incorrectly": "Could hide a real boundary regression if queue or safety validators are broadened without precise successor-state evidence.",
+      "safety_relevance": "low",
+      "shared_signature": "0 != 1 : LOCAL-07 workunit queue validation",
+      "targeted_test_command": "python -m unittest tests.operations.test_local_appliance_track tests.operations.test_local_instance_policy tests.operations.test_local_instance_bootstrap tests.operations.test_local_instance_migration_guard tests.operations.test_local_http_service_scripts tests.operations.test_local_runtime_composition_scripts tests.operations.test_local_workbench_scripts tests.operations.test_local_lan_policy_scripts tests.operations.test_local_lan_smoke_scripts tests.operations.test_clean_machine_smoke tests.operations.test_workunit_queue_scripts -v",
+      "why_current_behavior_is_or_is_not_valid": "0 != 1 : LOCAL-07 workunit queue validation"
+    },
+    {
+      "classification_counts": {
+        "obsolete_test_candidate": 1
+      },
+      "current_accepted_authority": "current queue: REVIEW-IA-CANDIDATES-BATCH-00; public exposure paused; dev-to-main promotion blocked until green external rerun",
+      "group_id": "local_quarantine_staging_obsolete_no_staging_assertion",
+      "historical_expected_authority": "see normalized signature and traceback excerpt",
+      "member_count": 1,
+      "member_tests": [
+        "test_no_runtime_staging_tool_added (tests.operations.test_local_quarantine_staging_model.LocalQuarantineStagingModelOperationTestCase.test_no_runtime_staging_tool_added)"
+      ],
+      "proposed_repair": "retire or narrow the stale test assertion",
+      "risk_if_changed_incorrectly": "Could hide a real boundary regression if queue or safety validators are broadened without precise successor-state evidence.",
+      "safety_relevance": "low",
+      "shared_signature": "Lists differ: ['eureka_external_staging.py', 'eureka_loc[39 chars].py'] != []",
+      "targeted_test_command": "python -m unittest tests.operations.test_local_quarantine_staging_model -v",
+      "why_current_behavior_is_or_is_not_valid": "Lists differ: ['eureka_external_staging.py', 'eureka_loc[39 chars].py'] != []"
+    },
+    {
+      "classification_counts": {
+        "unknown_requires_investigation": 1
+      },
+      "current_accepted_authority": "current queue: REVIEW-IA-CANDIDATES-BATCH-00; public exposure paused; dev-to-main promotion blocked until green external rerun",
+      "group_id": "local_worker_validator_unknown_or_slow",
+      "historical_expected_authority": "see normalized signature and traceback excerpt",
+      "member_count": 1,
+      "member_tests": [
+        "test_validator_passes (tests.operations.test_local_worker_scripts.LocalWorkerScriptTests.test_validator_passes)"
+      ],
+      "proposed_repair": "investigate harness/runtime duration before rerun",
+      "risk_if_changed_incorrectly": "Could hide a real boundary regression if queue or safety validators are broadened without precise successor-state evidence.",
+      "safety_relevance": "low",
+      "shared_signature": "'fail' not found in {'pass', 'pass_with_warnings'}",
+      "targeted_test_command": "python scripts/validate_local_worker_runner.py --json",
+      "why_current_behavior_is_or_is_not_valid": "'fail' not found in {'pass', 'pass_with_warnings'}"
+    },
+    {
+      "classification_counts": {
+        "historical_queue_expectation_drift": 1
+      },
+      "current_accepted_authority": "current queue: REVIEW-IA-CANDIDATES-BATCH-00; public exposure paused; dev-to-main promotion blocked until green external rerun",
+      "group_id": "public_alpha_defer_queue_expectation_drift",
+      "historical_expected_authority": "see normalized signature and traceback excerpt",
+      "member_count": 1,
+      "member_tests": [
+        "test_defer_validator_passes (tests.operations.test_public_alpha_launch_defer.PublicAlphaLaunchDeferTests.test_defer_validator_passes)"
+      ],
+      "proposed_repair": "update historical validator successor allowlist with current accepted source-wave chain",
+      "risk_if_changed_incorrectly": "Could hide a real boundary regression if queue or safety validators are broadened without precise successor-state evidence.",
+      "safety_relevance": "medium",
+      "shared_signature": "'invalid' != 'pass'",
+      "targeted_test_command": "python scripts/validate_public_alpha_launch_defer.py --json",
+      "why_current_behavior_is_or_is_not_valid": "'invalid' != 'pass'"
+    },
+    {
+      "classification_counts": {
+        "historical_validator_drift": 7
+      },
+      "current_accepted_authority": "current queue: REVIEW-IA-CANDIDATES-BATCH-00; public exposure paused; dev-to-main promotion blocked until green external rerun",
+      "group_id": "repo_layout_canon_historical_validator_drift",
+      "historical_expected_authority": "see normalized signature and traceback excerpt",
+      "member_count": 7,
+      "member_tests": [
+        "test_validator_plain_passes (tests.scripts.test_validate_repo_structure_canon.RepoStructureCanonValidatorScriptTest.test_validator_plain_passes)",
+        "test_validator_plain_passes (tests.scripts.test_validate_repository_layout.RepositoryLayoutValidatorScriptTest.test_validator_plain_passes)",
+        "test_validator_strict_passes_after_reconcile (tests.scripts.test_validate_repo_structure_canon.RepoStructureCanonValidatorScriptTest.test_validator_strict_passes_after_reconcile)",
+        "test_validator_strict_passes (tests.scripts.test_validate_repository_layout.RepositoryLayoutValidatorScriptTest.test_validator_strict_passes)",
+        "test_validator_json_records_canon_and_resolved_debt (tests.scripts.test_validate_repo_structure_canon.RepoStructureCanonValidatorScriptTest.test_validator_json_records_canon_and_resolved_debt)",
+        "test_validator_rejects_unclassified_src (tests.scripts.test_validate_repo_structure_canon.RepoStructureCanonValidatorScriptTest.test_validator_rejects_unclassified_src)",
+        "test_validator_json_parses (tests.scripts.test_validate_repository_layout.RepositoryLayoutValidatorScriptTest.test_validator_json_parses)"
+      ],
+      "proposed_repair": "repair repo-layout validator expectations with dedicated layout authority",
+      "risk_if_changed_incorrectly": "Could hide a real boundary regression if queue or safety validators are broadened without precise successor-state evidence.",
+      "safety_relevance": "low",
+      "shared_signature": "Command '['<path> '<path> returned non-zero exit status 1.",
+      "targeted_test_command": "python -m unittest tests.scripts.test_validate_repo_structure_canon tests.scripts.test_validate_repository_layout -v",
+      "why_current_behavior_is_or_is_not_valid": "Command '['<path> '<path> returned non-zero exit status 1."
+    },
+    {
+      "classification_counts": {
+        "unknown_requires_investigation": 2
+      },
+      "current_accepted_authority": "current queue: REVIEW-IA-CANDIDATES-BATCH-00; public exposure paused; dev-to-main promotion blocked until green external rerun",
+      "group_id": "runtime_leakage_safety_unknown",
+      "historical_expected_authority": "see normalized signature and traceback excerpt",
+      "member_count": 2,
+      "member_tests": [
+        "test_validator_passes_current_repo (tests.operations.test_legacy_runtime_leakage_remediation.LegacyRuntimeLeakageRemediationTests.test_validator_passes_current_repo)",
+        "test_validator_passes_current_repo_or_reports_only_known_allowlisted (tests.operations.test_runtime_architecture_leakage.RuntimeArchitectureLeakageTests.test_validator_passes_current_repo_or_reports_only_known_allowlisted)"
+      ],
+      "proposed_repair": "investigate before rerun",
+      "risk_if_changed_incorrectly": "Could hide a real boundary regression if queue or safety validators are broadened without precise successor-state evidence.",
+      "safety_relevance": "high",
+      "shared_signature": "0 != 1 : R0 legacy runtime leakage remediation validation",
+      "targeted_test_command": "python scripts/validate_runtime_architecture_leakage.py --json",
+      "why_current_behavior_is_or_is_not_valid": "0 != 1 : R0 legacy runtime leakage remediation validation"
+    }
+  ],
+  "schema_version": "eureka.source_foundry_preview_root_cause_groups.v0"
+}
