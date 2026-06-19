@@ -1,0 +1,58 @@
+schema_version: aide.task.v0
+id: AUTONOMOUS-EVAL-ORACLE-00
+title: Build E2E autonomous evaluation oracle
+status: planned
+task_class: e2e_reference_child
+parent_track: E2E-REFERENCE-SYSTEM-TRACK-00
+predecessor: SYNTHETIC-TRUTH-PATH-E2E-00
+successor: PORTABLE-EUREKA-INSTANCE-00
+purpose: Build reusable E2E evaluations for meaning preservation, authority preservation, honest failure, recovery, cross-render parity, and resource budgets.
+allowed_scope:
+  - evals/**
+  - tests/**
+  - tools/**
+  - scripts/**
+  - contracts/testing/**
+  - control/audits/e2e_reference_system/**
+  - docs/operations/**
+forbidden_scope:
+  - public exposure or launch implementation
+  - real truth mutation
+  - production Review Ledger decisions
+  - reviewed/master/public index stores
+  - live provider requirement
+  - downloads or execution implementation
+inherits_hard_gates_from: E2E-REFERENCE-SYSTEM-TRACK-00
+generated_outputs:
+  - .eureka/e2e-reference/eval/**
+  - control/audits/e2e_reference_system/autonomous_eval_oracle_v0/**
+eval_dimensions:
+  - known-answer queries
+  - paraphrase invariance
+  - constraint preservation
+  - duplicate handling
+  - conflicts
+  - provider outage
+  - rate limiting
+  - malformed metadata
+  - cache corruption
+  - worker restart
+  - partial recovery
+  - event replay
+  - rollback
+  - cross-render parity
+  - privacy leakage
+  - unauthorized writes
+  - latency
+  - memory
+  - disk growth
+acceptance:
+  - Eval results distinguish shape proof from authority proof.
+  - No full-discovery replacement claim.
+  - No public or real truth mutation.
+validation:
+  - python scripts/check_architecture_boundaries.py
+  - python scripts/check_generated_artifact_cleanliness.py --check --json
+  - python scripts/eureka_test_select.py --changed --failed-first --json
+  - git diff --check
+proof_level_required: L2

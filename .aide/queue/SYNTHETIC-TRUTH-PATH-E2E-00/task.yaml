@@ -1,0 +1,59 @@
+schema_version: aide.task.v0
+id: SYNTHETIC-TRUTH-PATH-E2E-00
+title: Prove synthetic truth path end to end
+status: planned
+task_class: e2e_reference_child
+parent_track: E2E-REFERENCE-SYSTEM-TRACK-00
+predecessor: E2E-HUNT-EXPLORATION-UI-00
+successor: AUTONOMOUS-EVAL-ORACLE-00
+purpose: Exercise truth-changing mechanics only in an isolated synthetic namespace with rollback proof.
+synthetic_flow:
+  - synthetic observation
+  - synthetic candidate
+  - predetermined synthetic review decision
+  - isolated Review Ledger
+  - synthetic reviewed record
+  - synthetic index rebuild
+  - changed search result
+  - rollback
+  - prior state restored
+  - test snapshot verified
+allowed_scope:
+  - runtime/review/**
+  - runtime/local/**
+  - runtime/search/**
+  - runtime/index/**
+  - contracts/review/**
+  - contracts/index/**
+  - contracts/snapshot/**
+  - tests/e2e/**
+  - evals/**
+  - docs/operations/**
+  - control/audits/e2e_reference_system/**
+  - .eureka/test/e2e-reference/**
+forbidden_scope:
+  - real IA candidates
+  - production Review Ledger
+  - reviewed/master/public index stores
+  - public snapshots
+  - external providers
+  - public exposure or launch implementation
+  - downloads or execution implementation
+inherits_hard_gates_from: E2E-REFERENCE-SYSTEM-TRACK-00
+generated_outputs:
+  - .eureka/test/e2e-reference/synthetic-truth-path/**
+  - control/audits/e2e_reference_system/synthetic_truth_path_e2e_v0/**
+acceptance:
+  - Synthetic namespace is explicit.
+  - Stores are isolated.
+  - No real candidate is used.
+  - No production Review Ledger is used.
+  - No reviewed/master/public index is touched.
+  - Rollback is proven.
+  - Test snapshot is marked synthetic.
+validation:
+  - python scripts/check_architecture_boundaries.py
+  - python scripts/validate_snapshot_relay.py
+  - python scripts/eureka_test_select.py --changed --failed-first --json
+  - git diff --check
+proof_level_required: L2

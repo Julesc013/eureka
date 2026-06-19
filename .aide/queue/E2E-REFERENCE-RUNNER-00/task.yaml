@@ -1,0 +1,50 @@
+schema_version: aide.task.v0
+id: E2E-REFERENCE-RUNNER-00
+title: Build the local E2E reference runner
+status: planned
+task_class: e2e_reference_child
+parent_track: E2E-REFERENCE-SYSTEM-TRACK-00
+predecessor: E2E-REFERENCE-CONTRACT-00
+successor: E2E-PREVIEW-INDEX-00
+purpose: Build one orchestration path for replay, synthetic, and disabled-by-default live-shadow modes.
+allowed_scope:
+  - runtime/engine/**
+  - runtime/local/**
+  - contracts/**
+  - scripts/**
+  - tests/runtime/**
+  - tests/e2e/**
+  - evals/**
+  - docs/operations/**
+  - control/audits/e2e_reference_system/**
+forbidden_scope:
+  - source/provider expansion or approval
+  - production review stores and decisions
+  - reviewed/master/public index stores
+  - public exposure or launch implementation
+  - downloads or file payload fetches
+  - license files
+inherits_hard_gates_from: E2E-REFERENCE-SYSTEM-TRACK-00
+mode_limits:
+  replay: enabled
+  synthetic: enabled
+  live_shadow: disabled_by_default_requires_separate_provider_approval
+generated_outputs:
+  - .eureka/e2e-reference/runs/**
+  - control/audits/e2e_reference_system/e2e_reference_runner_v0/**
+acceptance:
+  - One run lifecycle.
+  - WorkUnit scheduler.
+  - Budgets and timeouts.
+  - Event log.
+  - Pause resume cancel.
+  - Retry and replay.
+  - Partial failure handling.
+  - Shared ports for all surfaces.
+  - No duplicate CLI web Workbench orchestration logic.
+validation:
+  - python scripts/check_architecture_boundaries.py
+  - python scripts/validate_public_alpha_readonly.py
+  - python scripts/eureka_test_select.py --changed --failed-first --json
+  - git diff --check
+proof_level_required: L2

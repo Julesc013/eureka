@@ -1,0 +1,51 @@
+schema_version: eureka.e2e_reference_track_authority.v0
+track_id: E2E-REFERENCE-SYSTEM-TRACK-00
+status: accepted
+parent_decision: HUMAN-LAST-E2E-REFERENCE-BUILD-00
+recommended_next: E2E-REFERENCE-CONTRACT-00
+native_aide_inheritance_available: false
+inheritance_posture: explicit_child_packets_created
+planes:
+  - Discovery
+  - Evidence
+  - Preview
+  - Truth
+  - Distribution
+  - Control and Observability
+child_tasks:
+  - E2E-REFERENCE-CONTRACT-00
+  - E2E-REFERENCE-RUNNER-00
+  - E2E-PREVIEW-INDEX-00
+  - E2E-HUNT-EXPLORATION-UI-00
+  - SYNTHETIC-TRUTH-PATH-E2E-00
+  - AUTONOMOUS-EVAL-ORACLE-00
+  - PORTABLE-EUREKA-INSTANCE-00
+  - HUMAN-END-TO-END-ACCEPTANCE-00
+hard_gates:
+  - new_live_provider_or_network_access
+  - credentials_or_secrets
+  - real_review_ledger_decisions
+  - real_reviewed_record_materialization
+  - reviewed_master_index_mutation
+  - public_index_mutation
+  - public_snapshot_publication
+  - public_exposure
+  - public_launch
+  - downloads_or_file_payload_fetching
+  - installation_emulation_or_execution
+  - license_changes
+  - destructive_data_migration
+  - native_mobile_distribution
+  - rust_replacement_of_reference_semantics
+synthetic_truth_exception:
+  allowed: true
+  namespace: synthetic_test_only
+  isolated_stores_required: true
+  real_candidates_allowed: false
+  production_review_ledger_allowed: false
+  reviewed_master_public_indexes_allowed: false
+  rollback_required: true
+queue_transition:
+  previous_recommended_task: REVIEW-IA-CANDIDATES-BATCH-00
+  new_recommended_task: E2E-REFERENCE-CONTRACT-00
+  review_batch_waiting_signal: WAITING_FOR_COHERENT_E2E_REFERENCE_ACCEPTANCE_BEFORE_REAL_IA_REVIEW

@@ -1,0 +1,197 @@
+schema_version: aide.task.v0
+id: E2E-REFERENCE-SYSTEM-TRACK-00
+title: Authorize the E2E reference system track
+status: accepted
+task_class: track_authority
+recommended_after: HUMAN-LAST-E2E-REFERENCE-BUILD-00
+recommended_next: E2E-REFERENCE-CONTRACT-00
+purpose: Create track-level authority for deterministic, non-truth-changing work toward one coherent local Eureka reference system.
+authority_note: This control task authorizes child task packets only. It does not implement contracts, runtime, preview indexes, UI, providers, review decisions, reviewed records, indexes, public exposure, downloads, execution, or license changes.
+six_planes:
+  - name: Discovery
+    responsibilities:
+      - QueryIntent
+      - ResolutionRun
+      - Hunt
+      - WorkUnit scheduling
+      - provider ports
+      - budgets and timeouts
+      - pause resume cancel
+      - replay
+      - retry and partial failure
+  - name: Evidence
+    responsibilities:
+      - SourceObservation
+      - EvidenceSummary
+      - provenance
+      - source locators
+      - conflict state
+      - unavailability
+      - absence
+      - near misses
+  - name: Preview
+    responsibilities:
+      - reviewed projections
+      - candidates
+      - near misses
+      - needs
+      - absences
+      - blocked states
+      - unavailable states
+      - unknown states
+      - status-aware search and ranking
+      - why-this-matched explanations
+  - name: Truth
+    responsibilities:
+      - ReviewItem
+      - ReviewDecision
+      - Review Ledger
+      - ReviewedRecord
+      - supersession
+      - accepted local delta
+      - review lineage
+  - name: Distribution
+    responsibilities:
+      - local indexes
+      - snapshots
+      - relay
+      - API
+      - CLI
+      - web
+      - text classic HTML
+      - native projections
+      - agent-context packets
+  - name: Control and Observability
+    responsibilities:
+      - AIDE
+      - queue and task authority
+      - policy
+      - run events
+      - health
+      - metrics
+      - validation
+      - audit
+      - release gates
+      - rollback
+      - incident posture
+cross_plane_invariant: Discovery may propose; Evidence may support; Preview may project; Review may decide; Truth may materialize; Distribution may publish permitted projections; Control may constrain and verify.
+autonomous_scope:
+  - contract consolidation
+  - stable IDs and hashes
+  - state-transition definitions
+  - recorded replay
+  - synthetic fixtures
+  - run orchestration
+  - WorkUnit scheduling
+  - event logging
+  - preview-index generation
+  - result-lane assembly
+  - Workbench projections
+  - local CLI API web integration
+  - fault injection
+  - deterministic recovery
+  - rollback testing
+  - isolated synthetic review index snapshot mechanics
+  - evaluation harnesses
+  - local portable-instance wrappers
+  - local-only packaging
+  - documentation and runbooks
+  - focused tests and external validation handoffs
+hard_gates:
+  - new live-provider or network access
+  - credentials or secrets
+  - real Review Ledger decisions
+  - real reviewed-record materialization
+  - reviewed/master-index mutation
+  - public-index mutation
+  - public snapshot publication
+  - public exposure
+  - public launch
+  - downloads or file payload fetching
+  - installation emulation or execution
+  - license changes
+  - destructive data migration
+  - native/mobile distribution
+  - Rust replacement of reference semantics
+synthetic_truth_exception:
+  allowed: true
+  requirements:
+    - namespace is synthetic test-only
+    - stores are isolated
+    - no real candidate is used
+    - no production Review Ledger is used
+    - no reviewed/master/public index is touched
+    - rollback is mandatory
+    - generated snapshots are test-only
+    - all outputs identify synthetic authority
+child_sequence:
+  - E2E-REFERENCE-CONTRACT-00
+  - E2E-REFERENCE-RUNNER-00
+  - E2E-PREVIEW-INDEX-00
+  - E2E-HUNT-EXPLORATION-UI-00
+  - SYNTHETIC-TRUTH-PATH-E2E-00
+  - AUTONOMOUS-EVAL-ORACLE-00
+  - PORTABLE-EUREKA-INSTANCE-00
+  - HUMAN-END-TO-END-ACCEPTANCE-00
+allowed_scope:
+  - .aide/queue/E2E-REFERENCE-SYSTEM-TRACK-00/**
+  - .aide/queue/E2E-REFERENCE-CONTRACT-00/**
+  - .aide/queue/E2E-REFERENCE-RUNNER-00/**
+  - .aide/queue/E2E-PREVIEW-INDEX-00/**
+  - .aide/queue/E2E-HUNT-EXPLORATION-UI-00/**
+  - .aide/queue/SYNTHETIC-TRUTH-PATH-E2E-00/**
+  - .aide/queue/AUTONOMOUS-EVAL-ORACLE-00/**
+  - .aide/queue/PORTABLE-EUREKA-INSTANCE-00/**
+  - .aide/queue/HUMAN-END-TO-END-ACCEPTANCE-00/**
+  - .aide/queue/index.yaml
+  - .aide/context/**
+  - docs/planning/E2E_REFERENCE_SYSTEM_TRACK.md
+  - docs/operations/E2E_REFERENCE_SYSTEM_TRACK.md
+  - docs/planning/AIDE_TRACK_AUTHORITY_IMPROVEMENTS.md
+  - control/audits/e2e-reference-system-track-00-v0/**
+forbidden_scope:
+  - runtime/**
+  - contracts/**
+  - scripts/**
+  - tests/**
+  - surfaces/**
+  - site/**
+  - native/**
+  - crates/**
+  - source/provider implementations
+  - review stores and decisions
+  - reviewed-record materialization paths
+  - reviewed/master index stores
+  - public-index stores
+  - snapshots/public projections
+  - public exposure tunnel hosting or launch implementation
+  - release/**
+  - archive/**
+  - LICENSE.md
+  - LICENSE-SUMMARY.md
+  - NOTICE.md
+  - README.md
+generated_output_posture:
+  track_audit: control/audits/e2e-reference-system-track-00-v0/
+  child_task_outputs: Each child packet declares generated outputs for its own task.
+  full_discovery: Not run by this authority task.
+queue_transition:
+  previous_recommended_task: REVIEW-IA-CANDIDATES-BATCH-00
+  new_recommended_task: E2E-REFERENCE-CONTRACT-00
+  review_batch_posture: frozen_waiting_for_coherent_e2e_reference_acceptance
+ia_review_packet_posture:
+  prepared_candidates: 56
+  request_more_evidence_decisions: 8
+  pending_parent_batch_items: 48
+  promoted_candidates: 0
+  reviewed_records: 0
+  posture: prepared_evidence_linked_partially_dispositioned_not_promoted_not_discarded_retained_for_later_acceptance_testing
+acceptance:
+  - Track authority packet exists.
+  - All eight approved child packets exist and remain planned.
+  - Queue recommends E2E-REFERENCE-CONTRACT-00.
+  - IA batch is frozen without false completion.
+  - No product runtime implementation occurs.
+  - No real review, reviewed-record, index, public, provider, download, execution, or license boundary changes occur.
+  - AIDE and focused safety validators pass.
+proof_level_required: L1

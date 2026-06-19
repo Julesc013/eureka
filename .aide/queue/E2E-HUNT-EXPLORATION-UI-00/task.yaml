@@ -1,0 +1,54 @@
+schema_version: aide.task.v0
+id: E2E-HUNT-EXPLORATION-UI-00
+title: Build private local Hunt exploration UI
+status: planned
+task_class: e2e_reference_child
+parent_track: E2E-REFERENCE-SYSTEM-TRACK-00
+predecessor: E2E-PREVIEW-INDEX-00
+successor: SYNTHETIC-TRUTH-PATH-E2E-00
+purpose: Create a coherent private/local Workbench exploration experience over the shared E2E runner and preview index.
+allowed_scope:
+  - surfaces/web/**
+  - runtime/surface/**
+  - runtime/local/**
+  - contracts/view/**
+  - contracts/workbench/**
+  - tests/e2e/**
+  - tests/runtime/**
+  - docs/operations/**
+  - control/audits/e2e_reference_system/**
+forbidden_scope:
+  - public Workbench exposure
+  - public launch implementation
+  - real review decisions
+  - production review stores
+  - reviewed/master/public index stores
+  - provider approval changes
+  - downloads or execution implementation
+inherits_hard_gates_from: E2E-REFERENCE-SYSTEM-TRACK-00
+generated_outputs:
+  - .eureka/e2e-reference/workbench/**
+  - control/audits/e2e_reference_system/e2e_hunt_exploration_ui_v0/**
+experience_requirements:
+  - query entry
+  - local results
+  - start Hunt
+  - WorkUnit progress
+  - event timeline
+  - candidate and evidence lanes
+  - absence and near-miss lanes
+  - source failures
+  - pause resume cancel
+  - save and replay
+  - compare runs
+acceptance:
+  - Private local only.
+  - No public Workbench.
+  - No forked product logic.
+  - No truth mutation.
+validation:
+  - python scripts/check_architecture_boundaries.py
+  - python scripts/validate_public_alpha_readonly.py
+  - python scripts/eureka_test_select.py --changed --failed-first --json
+  - git diff --check
+proof_level_required: L2

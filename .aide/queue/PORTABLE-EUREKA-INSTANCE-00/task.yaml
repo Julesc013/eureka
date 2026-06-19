@@ -1,0 +1,53 @@
+schema_version: aide.task.v0
+id: PORTABLE-EUREKA-INSTANCE-00
+title: Build portable local Eureka instance entrypoint
+status: planned
+task_class: e2e_reference_child
+parent_track: E2E-REFERENCE-SYSTEM-TRACK-00
+predecessor: AUTONOMOUS-EVAL-ORACLE-00
+successor: HUMAN-END-TO-END-ACCEPTANCE-00
+purpose: Provide a coherent local command surface over existing capabilities without duplicating runtime logic.
+target_commands:
+  - python scripts/eureka.py bootstrap
+  - python scripts/eureka.py doctor
+  - python scripts/eureka.py test
+  - python scripts/eureka.py serve --mode exploration
+  - python scripts/eureka.py hunt "<query>"
+  - python scripts/eureka.py replay <run-id>
+  - python scripts/eureka.py status
+allowed_scope:
+  - scripts/eureka.py
+  - scripts/**
+  - runtime/local/**
+  - runtime/engine/**
+  - contracts/command/**
+  - contracts/instances/**
+  - tests/scripts/**
+  - tests/e2e/**
+  - docs/operations/**
+  - control/audits/e2e_reference_system/**
+forbidden_scope:
+  - public exposure or launch implementation
+  - new live providers by default
+  - downloads or execution implementation
+  - production review decisions
+  - reviewed/master/public index stores
+  - license files
+inherits_hard_gates_from: E2E-REFERENCE-SYSTEM-TRACK-00
+generated_outputs:
+  - .eureka/e2e-reference/portable-instance/**
+  - control/audits/e2e_reference_system/portable_eureka_instance_v0/**
+acceptance:
+  - Wrap existing commands where practical.
+  - Do not duplicate runtime logic.
+  - Safe defaults.
+  - Loopback only.
+  - No live providers by default.
+  - Clear degraded-mode behavior.
+  - Clear local state and backup paths.
+validation:
+  - python scripts/check_architecture_boundaries.py
+  - python scripts/validate_public_alpha_readonly.py
+  - python scripts/eureka_test_select.py --changed --failed-first --json
+  - git diff --check
+proof_level_required: L2

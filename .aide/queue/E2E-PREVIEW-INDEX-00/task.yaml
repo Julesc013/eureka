@@ -1,0 +1,53 @@
+schema_version: aide.task.v0
+id: E2E-PREVIEW-INDEX-00
+title: Build a status-aware E2E preview index
+status: planned
+task_class: e2e_reference_child
+parent_track: E2E-REFERENCE-SYSTEM-TRACK-00
+predecessor: E2E-REFERENCE-RUNNER-00
+successor: E2E-HUNT-EXPLORATION-UI-00
+purpose: Create one searchable projection across reviewed records, candidates, near misses, needs, absences, blocked states, unavailable states, and unknowns without collapsing authority.
+allowed_scope:
+  - runtime/local/**
+  - runtime/search/**
+  - runtime/index/**
+  - contracts/search/**
+  - contracts/view/**
+  - contracts/index/**
+  - scripts/eureka_index.py
+  - scripts/eureka_search.py
+  - tests/search/**
+  - tests/e2e/**
+  - evals/**
+  - docs/operations/**
+  - control/audits/e2e_reference_system/**
+forbidden_scope:
+  - reviewed/master index mutation paths
+  - public-index mutation paths
+  - production review stores and decisions
+  - source/provider expansion
+  - public exposure or launch implementation
+  - downloads or execution implementation
+inherits_hard_gates_from: E2E-REFERENCE-SYSTEM-TRACK-00
+generated_outputs:
+  - .eureka/e2e-reference/preview-index/**
+  - control/audits/e2e_reference_system/e2e_preview_index_v0/**
+result_requirements:
+  - status
+  - authority
+  - source and evidence links
+  - why it matched
+  - uncertainty
+  - permitted actions
+  - forbidden actions
+acceptance:
+  - Preview refresh is rebuildable and reversible.
+  - Reviewed truth is not mutated.
+  - Public index is not mutated.
+  - Authority distinctions remain visible.
+validation:
+  - python scripts/check_architecture_boundaries.py
+  - python scripts/validate_snapshot_relay.py
+  - python scripts/eureka_test_select.py --changed --failed-first --json
+  - git diff --check
+proof_level_required: L2

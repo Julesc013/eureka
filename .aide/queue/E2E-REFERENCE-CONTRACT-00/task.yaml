@@ -1,0 +1,56 @@
+schema_version: aide.task.v0
+id: E2E-REFERENCE-CONTRACT-00
+title: Consolidate E2E reference-system semantic contracts
+status: planned
+task_class: e2e_reference_child
+parent_track: E2E-REFERENCE-SYSTEM-TRACK-00
+predecessor: E2E-REFERENCE-SYSTEM-TRACK-00
+successor: E2E-REFERENCE-RUNNER-00
+purpose: Inventory and consolidate the shared semantic chain without implementing the runner.
+authority_note: Reuse existing contracts and architecture vocabulary; do not create a parallel reference-system model.
+semantic_chain:
+  - QueryIntent
+  - ResolutionRun
+  - WorkUnit
+  - SourceObservation
+  - EvidenceSummary
+  - Candidate
+  - PreviewRecord
+  - ReviewItem
+  - ReviewDecision
+  - ReviewedRecord
+  - IndexDelta
+  - SnapshotManifest
+allowed_scope:
+  - contracts/**
+  - docs/architecture/**
+  - docs/reference/**
+  - tests/contracts/**
+  - tests/architecture/**
+  - control/audits/e2e_reference_system/**
+forbidden_scope:
+  - runtime/** except narrow contract compatibility shims with explicit justification
+  - surfaces/**
+  - source/provider implementations
+  - review stores and decisions
+  - reviewed/master/public index stores
+  - public exposure or launch implementation
+  - downloads or execution implementation
+  - license files
+inherits_hard_gates_from: E2E-REFERENCE-SYSTEM-TRACK-00
+generated_outputs:
+  - control/audits/e2e_reference_system/e2e_reference_contract_v0/**
+acceptance:
+  - Inventory existing contracts.
+  - Identify duplicates and gaps.
+  - Define authority level for each object.
+  - Define stable identifiers and hashes.
+  - Define permitted state transitions.
+  - Define replay serialization and versioning.
+  - Do not implement the runner.
+validation:
+  - python scripts/check_architecture_boundaries.py
+  - python scripts/check_generated_artifact_cleanliness.py --check --json
+  - python scripts/eureka_test_select.py --changed --failed-first --json
+  - git diff --check
+proof_level_required: L1

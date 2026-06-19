@@ -1,0 +1,47 @@
+schema_version: aide.task.v0
+id: HUMAN-END-TO-END-ACCEPTANCE-00
+title: Run human E2E reference-system acceptance
+status: planned
+task_class: e2e_reference_child
+parent_track: E2E-REFERENCE-SYSTEM-TRACK-00
+predecessor: PORTABLE-EUREKA-INSTANCE-00
+successor: E2E-SECOND-LIVE-PROVIDER-00
+purpose: Present one coherent local product for human calibration and record product feedback without automatically authorizing real truth materialization or public exposure.
+allowed_scope:
+  - docs/operations/**
+  - docs/reference/**
+  - evals/**
+  - tests/e2e/**
+  - control/audits/e2e_reference_system/**
+  - narrow UX fixes only when explicitly approved
+forbidden_scope:
+  - real reviewed-record materialization
+  - reviewed/master/public index mutation
+  - second live provider approval
+  - public exposure or launch implementation
+  - downloads or execution implementation
+  - license files
+inherits_hard_gates_from: E2E-REFERENCE-SYSTEM-TRACK-00
+generated_outputs:
+  - control/audits/e2e_reference_system/human_end_to_end_acceptance_v0/**
+acceptance_activities:
+  - unfamiliar queries
+  - inspect result lanes
+  - start Hunts
+  - pause steer replay
+  - inspect evidence
+  - judge ranking
+  - evaluate terminology
+  - test rollback
+  - review a small real candidate subset
+  - identify next product gaps
+acceptance:
+  - Human calibration is recorded.
+  - No automatic reviewed-record materialization is authorized.
+  - No second provider or public launch is authorized.
+validation:
+  - python scripts/check_architecture_boundaries.py
+  - python scripts/validate_public_alpha_readonly.py
+  - python scripts/eureka_test_select.py --changed --failed-first --json
+  - git diff --check
+proof_level_required: L1
