@@ -1,0 +1,59 @@
+{
+  "allowlist_changes": {
+    "entries_added": [],
+    "entries_removed": [],
+    "entries_renewed": [],
+    "permanent_entries_added": 0,
+    "posture": "no_allowlist_change",
+    "schema_version": "source_foundry_runtime_leakage_allowlist_change_report.v0",
+    "task_id": "SOURCE-FOUNDRY-RUNTIME-LEAKAGE-REPAIR-00",
+    "wildcard_entries_added": 0
+  },
+  "baseline": {
+    "blockers": 36,
+    "findings": 52,
+    "high": 16,
+    "top_paths": {
+      "runtime/local/artifact_gate_seed.py": 4,
+      "runtime/local/external_staging_package.py": 3,
+      "runtime/local/ia_candidate_review_batch.py": 3,
+      "runtime/local/local_machine_public_exposure.py": 3,
+      "runtime/local/local_search.py": 11,
+      "runtime/local/public_alpha_ops_posture.py": 1,
+      "runtime/local/public_alpha_service.py": 1,
+      "runtime/local/review_materialization.py": 1,
+      "runtime/local/search_index.py": 1,
+      "runtime/local/staging_package.py": 23,
+      "runtime/local/workbench_service.py": 1
+    },
+    "top_terms": {
+      "AIDE": 1,
+      "BUNDLE": 28,
+      "MVP": 8,
+      "agent": 1,
+      "fixture_only": 6,
+      "truth_boundary": 8
+    }
+  },
+  "final_gate": {
+    "blocker_count": 0,
+    "expired_allowlist_count": 0,
+    "high_count": 0,
+    "model_provider_calls_made": false,
+    "network_calls_made": false,
+    "new_violations": 0,
+    "runtime_modules_imported": false
+  },
+  "license_posture": "unchanged",
+  "provider_network_calls": false,
+  "public_exposure": "paused",
+  "public_index_mutation": false,
+  "recommended_next_task": "SOURCE-FOUNDRY-PREVIEW-V0-HISTORICAL-VALIDATOR-DRIFT-REPAIR-02",
+  "review_decisions_changed": false,
+  "reviewed_master_mutation": false,
+  "reviewed_records_created": 0,
+  "runtime_repair_commit": "92e63d13fc91f6d82543332682b744df30ef9d8d",
+  "schema_version": "source_foundry_runtime_leakage_repair_report.v0",
+  "status": "PASS",
+  "task_id": "SOURCE-FOUNDRY-RUNTIME-LEAKAGE-REPAIR-00"
+}

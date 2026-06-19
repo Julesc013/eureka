@@ -1,0 +1,5 @@
+{
+  "command": "python scripts/validate_public_alpha_readonly.py",
+  "exit_code": 0,
+  "output": "control/audits/validation/source_foundry_runtime_leakage_repair_00/validate_public_alpha_readonly.json"
+}

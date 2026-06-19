@@ -1,0 +1,10 @@
+{
+  "entries_added": [],
+  "entries_removed": [],
+  "entries_renewed": [],
+  "permanent_entries_added": 0,
+  "posture": "no_allowlist_change",
+  "schema_version": "source_foundry_runtime_leakage_allowlist_change_report.v0",
+  "task_id": "SOURCE-FOUNDRY-RUNTIME-LEAKAGE-REPAIR-00",
+  "wildcard_entries_added": 0
+}

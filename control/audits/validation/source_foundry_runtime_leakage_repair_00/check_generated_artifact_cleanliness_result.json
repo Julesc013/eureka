@@ -1,0 +1,5 @@
+{
+  "command": "python scripts/check_generated_artifact_cleanliness.py --check --json",
+  "exit_code": 1,
+  "output": "control/audits/validation/source_foundry_runtime_leakage_repair_00/check_generated_artifact_cleanliness.json"
+}

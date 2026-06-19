@@ -1,0 +1,5 @@
+{
+  "output": "control/audits/validation/source_foundry_runtime_leakage_repair_00/git_diff_check.out",
+  "exit_code": 0,
+  "command": "git diff --check"
+}

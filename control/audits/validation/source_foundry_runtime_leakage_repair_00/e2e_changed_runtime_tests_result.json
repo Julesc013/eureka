@@ -1,0 +1,5 @@
+{
+  "command": "python -m unittest tests.e2e.test_local_search_server tests.e2e.test_local_search_p0_no_mutation tests.e2e.test_local_search_index_builder tests.e2e.test_local_metadata_fallback_demo tests.e2e.test_ia_metadata_live_optin tests.e2e.test_public_readonly_web_alpha tests.e2e.test_local_to_staging_deployment tests.e2e.test_external_staging_host_config tests.e2e.test_external_staging_host_provision tests.e2e.test_workbench_operator_routes tests.e2e.test_reviewed_record_materialization tests.e2e.test_local_machine_staging_provision -v",
+  "exit_code": 0,
+  "output_capture": "omitted; compact exit-status evidence retained in audit report"
+}

@@ -1,0 +1,5 @@
+{
+  "output_capture": "omitted; compact exit-status evidence retained in audit report",
+  "command": "python -m unittest tests.operations.test_review_ia_candidates_batch tests.operations.test_ia_evidence_ledger_summary tests.operations.test_ia_candidate_index_refresh tests.operations.test_ia_source_observation_cache_delta tests.runtime.test_review_ledger tests.runtime.test_review_queue_store -v",
+  "exit_code": 0
+}

@@ -1,0 +1,6 @@
+{
+  "exit_code": 0,
+  "output": "control/audits/validation/source_foundry_runtime_leakage_repair_00/final_scan.json",
+  "command": "python scripts/audit_runtime_architecture_leakage.py --check --json",
+  "elapsed_seconds": 119.482
+}

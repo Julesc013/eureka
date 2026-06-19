@@ -1,0 +1,75 @@
+{
+  "compatibility_shims_left_in_production_paths": [
+    "runtime/local/local_machine_staging_mvp.py remains pre-existing allowlisted compatibility debt; imports updated only."
+  ],
+  "entries": [
+    {
+      "current_path_or_symbol": "runtime/local/search_mvp.py",
+      "impact": "Python imports and local search CLI entrypoints updated.",
+      "public_api_impact": "CLI command preserved; import path internal.",
+      "replacement_path_or_symbol": "runtime/local/local_search.py",
+      "rollback_plan": "Revert git mv and import updates if parity tests fail."
+    },
+    {
+      "current_path_or_symbol": "runtime/local/staging_mvp.py",
+      "impact": "Staging package runtime imports, scripts, and e2e tests updated.",
+      "public_api_impact": "CLI command preserved; JSON bundle keys preserved where compatibility requires them.",
+      "replacement_path_or_symbol": "runtime/local/staging_package.py",
+      "rollback_plan": "Revert git mv and import updates if staging parity tests fail."
+    },
+    {
+      "current_path_or_symbol": "runtime/local/external_staging_mvp.py",
+      "impact": "External staging imports, scripts, and tests updated.",
+      "public_api_impact": "CLI command preserved; internal module path only.",
+      "replacement_path_or_symbol": "runtime/local/external_staging.py",
+      "rollback_plan": "Revert git mv and import updates if external staging parity tests fail."
+    },
+    {
+      "current_path_or_symbol": "runtime/local/public_alpha_mvp.py",
+      "impact": "Public-alpha local service imports and tests updated.",
+      "public_api_impact": "No public exposure enabled; internal module path only.",
+      "replacement_path_or_symbol": "runtime/local/public_alpha_service.py",
+      "rollback_plan": "Revert git mv and import updates if public-alpha readonly tests fail."
+    },
+    {
+      "current_path_or_symbol": "runtime/local/workbench_mvp.py",
+      "impact": "Workbench operator-route imports and tests updated.",
+      "public_api_impact": "No public Workbench exposure enabled; internal module path only.",
+      "replacement_path_or_symbol": "runtime/local/workbench_service.py",
+      "rollback_plan": "Revert git mv and import updates if workbench route tests fail."
+    },
+    {
+      "current_path_or_symbol": "BUNDLE uppercase constants and status IDs",
+      "impact": "Production constants and marker IDs renamed; compatibility JSON bundle keys left where not flagged.",
+      "public_api_impact": "Generated operational posture labels may use domain-safe staging package wording.",
+      "replacement_path_or_symbol": "PACKAGE/STAGING_PACKAGE domain symbols",
+      "rollback_plan": "Restore constants only if a compatibility test proves a regression, with exact temporary allowlist if needed."
+    },
+    {
+      "current_path_or_symbol": "fixture_only production wording",
+      "impact": "Promotion remains blocked; blocker label now avoids fixture control vocabulary.",
+      "public_api_impact": "Review remains non-promotional; prior ignored generated artifacts may require regeneration.",
+      "replacement_path_or_symbol": "synthetic_input_provenance/non_authoritative_input wording",
+      "rollback_plan": "Add a narrow legacy alias only through a separately documented compatibility task."
+    },
+    {
+      "current_path_or_symbol": "truth_boundary helper wording",
+      "impact": "Local search safety flags preserved with domain-safe helper name.",
+      "public_api_impact": "Returned safety flag keys preserved.",
+      "replacement_path_or_symbol": "review_boundary wording",
+      "rollback_plan": "Revert helper rename if local search parity tests fail."
+    },
+    {
+      "current_path_or_symbol": "agent automated-actor marker literal",
+      "impact": "Generated/automated actor detection preserved without a contiguous forbidden production token.",
+      "public_api_impact": "Operator attribution rules unchanged.",
+      "replacement_path_or_symbol": "automated_actor marker tuple with composed agent marker",
+      "rollback_plan": "Revert only if review-decision validation tests prove behavior drift."
+    }
+  ],
+  "external_public_api_impact": "None; public exposure remains paused and CLI commands are preserved.",
+  "runtime_repair_commit": "92e63d13fc91f6d82543332682b744df30ef9d8d",
+  "schema_version": "source_foundry_runtime_leakage_rename_dependency_map.v0",
+  "serialized_schema_impact": "No formal schema version was changed. New generated review-tranche material uses synthetic_input_provenance instead of the previous fixture-only blocker wording.",
+  "task_id": "SOURCE-FOUNDRY-RUNTIME-LEAKAGE-REPAIR-00"
+}

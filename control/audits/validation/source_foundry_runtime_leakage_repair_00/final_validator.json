@@ -1,0 +1,17 @@
+{
+  "dev_to_main_should_remain_blocked": true,
+  "errors": [],
+  "evidence_ledger_runtime_mutated": false,
+  "f0_should_remain_blocked": true,
+  "master_index_mutated": false,
+  "model_provider_calls_made": false,
+  "network_calls_made": false,
+  "public_index_mutated": false,
+  "recommended_next_task": "R0-03 \u2014 Contract taxonomy refactor",
+  "review_queue_runtime_mutated": false,
+  "runtime_modules_imported": false,
+  "schema_version": "r0_02_validation.v0",
+  "source_cache_runtime_mutated": false,
+  "status": "valid",
+  "task": "R0-02"
+}

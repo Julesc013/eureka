@@ -1,0 +1,5 @@
+{
+  "command": "python -m unittest tests.operations.test_legacy_runtime_leakage_remediation tests.operations.test_runtime_architecture_leakage -v",
+  "exit_code": 0,
+  "output_capture": "omitted; compact exit-status evidence retained in audit report"
+}

@@ -1,0 +1,54 @@
+{
+  "dashboard_snapshot_drift": false,
+  "forbidden_untracked_generated_outputs": [],
+  "generated_drift_paths": [
+    {
+      "artifact_class": "audit_generated",
+      "change_kind": "modified",
+      "path": "control/audits/r0-02-runtime-architecture-leakage-gate-v0/allowlist_summary.md"
+    },
+    {
+      "artifact_class": "audit_generated",
+      "change_kind": "modified",
+      "path": "control/audits/r0-02-runtime-architecture-leakage-gate-v0/generated/sample_leakage_gate_report.json"
+    },
+    {
+      "artifact_class": "audit_generated",
+      "change_kind": "modified",
+      "path": "control/audits/r0-02-runtime-architecture-leakage-gate-v0/generated/sample_leakage_summary.md"
+    },
+    {
+      "artifact_class": "audit_generated",
+      "change_kind": "modified",
+      "path": "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md"
+    },
+    {
+      "artifact_class": "audit_generated",
+      "change_kind": "modified",
+      "path": "control/audits/r0-02-runtime-architecture-leakage-gate-v0/leakage_policy_summary.md"
+    },
+    {
+      "artifact_class": "audit_generated",
+      "change_kind": "modified",
+      "path": "control/audits/r0-02-runtime-architecture-leakage-gate-v0/production_path_scan_summary.md"
+    },
+    {
+      "artifact_class": "audit_generated",
+      "change_kind": "modified",
+      "path": "control/audits/r0-02-runtime-architecture-leakage-gate-v0/r0_02_report.json"
+    },
+    {
+      "artifact_class": "audit_generated",
+      "change_kind": "added",
+      "path": "control/audits/validation/source_foundry_runtime_leakage_repair_00/"
+    }
+  ],
+  "model_provider_used": false,
+  "network_used": false,
+  "public_alpha_evidence_drift": false,
+  "public_search_index_drift": false,
+  "schema_version": "generated_artifact_cleanliness.v0",
+  "site_dist_mutated": false,
+  "status": "fail",
+  "task": "R0-REMEDIATION-GENERATED-ARTIFACT-DRIFT-01"
+}

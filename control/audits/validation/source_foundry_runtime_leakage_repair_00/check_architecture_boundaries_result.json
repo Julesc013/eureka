@@ -1,0 +1,5 @@
+{
+  "command": "python scripts/check_architecture_boundaries.py",
+  "output": "control/audits/validation/source_foundry_runtime_leakage_repair_00/check_architecture_boundaries.json",
+  "exit_code": 0
+}

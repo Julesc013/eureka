@@ -1,0 +1,176 @@
+{
+  "changed_paths": [
+    "control/audits/r0-02-runtime-architecture-leakage-gate-v0/allowlist_summary.md",
+    "control/audits/r0-02-runtime-architecture-leakage-gate-v0/generated/sample_leakage_gate_report.json",
+    "control/audits/r0-02-runtime-architecture-leakage-gate-v0/generated/sample_leakage_summary.md",
+    "control/audits/r0-02-runtime-architecture-leakage-gate-v0/known_violations.md",
+    "control/audits/r0-02-runtime-architecture-leakage-gate-v0/leakage_policy_summary.md",
+    "control/audits/r0-02-runtime-architecture-leakage-gate-v0/production_path_scan_summary.md",
+    "control/audits/r0-02-runtime-architecture-leakage-gate-v0/r0_02_report.json",
+    "control/audits/validation/source_foundry_runtime_leakage_repair_00/audit_check_after_rename.json",
+    "control/audits/validation/source_foundry_runtime_leakage_repair_00/audit_check_after_rename_command_result.json",
+    "control/audits/validation/source_foundry_runtime_leakage_repair_00/baseline_scan.json",
+    "control/audits/validation/source_foundry_runtime_leakage_repair_00/baseline_scan_command_result.json",
+    "control/audits/validation/source_foundry_runtime_leakage_repair_00/check_architecture_boundaries.json",
+    "control/audits/validation/source_foundry_runtime_leakage_repair_00/check_generated_artifact_cleanliness.json",
+    "control/audits/validation/source_foundry_runtime_leakage_repair_00/check_generated_artifact_cleanliness_result.json",
+    "control/audits/validation/source_foundry_runtime_leakage_repair_00/current_scan_after_rename.json",
+    "control/audits/validation/source_foundry_runtime_leakage_repair_00/current_scan_after_rename_command_result.json",
+    "control/audits/validation/source_foundry_runtime_leakage_repair_00/docs_runtime_names_scan.txt",
+    "control/audits/validation/source_foundry_runtime_leakage_repair_00/docs_runtime_names_scan_result.json",
+    "control/audits/validation/source_foundry_runtime_leakage_repair_00/e2e_changed_runtime_tests.err",
+    "control/audits/validation/source_foundry_runtime_leakage_repair_00/e2e_changed_runtime_tests.out",
+    "control/audits/validation/source_foundry_runtime_leakage_repair_00/e2e_changed_runtime_tests_result.json",
+    "control/audits/validation/source_foundry_runtime_leakage_repair_00/eureka_test_select_changed.json",
+    "control/audits/validation/source_foundry_runtime_leakage_repair_00/final_scan.json",
+    "control/audits/validation/source_foundry_runtime_leakage_repair_00/final_scan_result.json",
+    "control/audits/validation/source_foundry_runtime_leakage_repair_00/final_validator.json",
+    "control/audits/validation/source_foundry_runtime_leakage_repair_00/final_validator_result.json",
+    "control/audits/validation/source_foundry_runtime_leakage_repair_00/git_diff_check.out",
+    "control/audits/validation/source_foundry_runtime_leakage_repair_00/ia_source_wave_tests.err",
+    "control/audits/validation/source_foundry_runtime_leakage_repair_00/ia_source_wave_tests.out",
+    "control/audits/validation/source_foundry_runtime_leakage_repair_00/ia_source_wave_tests_rerun.err",
+    "control/audits/validation/source_foundry_runtime_leakage_repair_00/ia_source_wave_tests_rerun.out",
+    "control/audits/validation/source_foundry_runtime_leakage_repair_00/ia_source_wave_tests_rerun_result.json",
+    "control/audits/validation/source_foundry_runtime_leakage_repair_00/ia_source_wave_tests_result.json",
+    "control/audits/validation/source_foundry_runtime_leakage_repair_00/runtime_leakage_tests.err",
+    "control/audits/validation/source_foundry_runtime_leakage_repair_00/runtime_leakage_tests.out",
+    "control/audits/validation/source_foundry_runtime_leakage_repair_00/runtime_leakage_tests_result.json",
+    "control/audits/validation/source_foundry_runtime_leakage_repair_00/validate_public_alpha_readonly.json",
+    "control/audits/validation/source_foundry_runtime_leakage_repair_00/validate_snapshot_relay.json",
+    "control/audits/validation/source_foundry_runtime_leakage_repair_00/validator_after_rename.json",
+    "control/audits/validation/source_foundry_runtime_leakage_repair_00/validator_after_rename_command_result.json",
+    "control/audits/validation/source_foundry_runtime_leakage_repair_00/write_standard_outputs.json",
+    "control/audits/validation/source_foundry_runtime_leakage_repair_00/write_standard_outputs_result.json",
+    "control/inventory/runtime_architecture_leakage_gate_report.json",
+    "docs/operations/REVIEW_IA_CANDIDATES_BATCH.md",
+    "runtime/local/artifact_gate_seed.py",
+    "runtime/local/external_staging.py",
+    "runtime/local/ia_candidate_review_batch.py",
+    "runtime/local/local_machine_public_exposure.py",
+    "runtime/local/local_machine_staging_mvp.py",
+    "runtime/local/local_search.py",
+    "runtime/local/public_alpha_ops_posture.py",
+    "runtime/local/public_alpha_release_checks.py",
+    "runtime/local/public_alpha_service.py",
+    "runtime/local/review_materialization.py",
+    "runtime/local/search_index.py",
+    "runtime/local/staging_package.py",
+    "runtime/local/workbench_service.py",
+    "scripts/eureka_external_staging.py",
+    "scripts/eureka_local_machine_staging.py",
+    "scripts/eureka_public_alpha_launch_gate.py",
+    "scripts/eureka_public_alpha_rehearsal.py",
+    "scripts/eureka_search.py",
+    "scripts/eureka_staging.py",
+    "scripts/run_eureka_local.py",
+    "tests/e2e/test_external_staging_host_config.py",
+    "tests/e2e/test_external_staging_host_provision.py",
+    "tests/e2e/test_ia_metadata_live_optin.py",
+    "tests/e2e/test_local_machine_staging_provision.py",
+    "tests/e2e/test_local_metadata_fallback_demo.py",
+    "tests/e2e/test_local_search_index_builder.py",
+    "tests/e2e/test_local_search_p0_no_mutation.py",
+    "tests/e2e/test_local_search_server.py",
+    "tests/e2e/test_local_to_staging_deployment.py",
+    "tests/e2e/test_public_readonly_web_alpha.py",
+    "tests/e2e/test_reviewed_record_materialization.py",
+    "tests/e2e/test_workbench_operator_routes.py",
+    "tests/operations/test_review_ia_candidates_batch.py"
+  ],
+  "failed_first_commands": [],
+  "full_discovery_deferred_until": [
+    "main_promotion",
+    "release_candidate",
+    "high_risk_runtime_bridge"
+  ],
+  "full_discovery_required": false,
+  "known_failures": [],
+  "matched_impact_patterns": [
+    "scripts/eureka_*.py",
+    "control/inventory/**",
+    "tests/**"
+  ],
+  "mode": "changed+failed_first",
+  "promotion_allowed": true,
+  "schema_version": "test_selection_result.v0",
+  "selected_commands": [
+    {
+      "command": "git diff --check",
+      "lane_id": "L0_static_preflight",
+      "reason": "base preflight",
+      "source": "test_lane_policy"
+    },
+    {
+      "command": "python scripts/check_architecture_boundaries.py",
+      "lane_id": "L0_static_preflight",
+      "reason": "base preflight",
+      "source": "test_lane_policy"
+    },
+    {
+      "command": "python scripts/check_generated_artifact_cleanliness.py --check --json",
+      "lane_id": "L0_static_preflight",
+      "reason": "base preflight",
+      "source": "test_lane_policy"
+    },
+    {
+      "command": "python scripts/validate_test_lane_policy.py",
+      "lane_id": "L1_focused_unit",
+      "reason": "repo_tooling_scripts validator",
+      "source": "scripts/eureka_*.py"
+    },
+    {
+      "command": "python -m unittest tests.scripts.test_eureka_test_select",
+      "lane_id": "L1_focused_unit",
+      "reason": "repo_tooling_scripts focused test",
+      "source": "scripts/eureka_*.py"
+    },
+    {
+      "command": "python scripts/eureka_test_select.py --changed --failed-first --json",
+      "lane_id": "L2_impact_integration",
+      "reason": "repo_tooling_scripts smoke",
+      "source": "scripts/eureka_*.py"
+    },
+    {
+      "command": "python -m unittest tests.operations.test_test_impact_map",
+      "lane_id": "L1_focused_unit",
+      "reason": "control_inventory focused test",
+      "source": "control/inventory/**"
+    },
+    {
+      "command": "python -m unittest tests.operations.test_test_failure_ledger",
+      "lane_id": "L1_focused_unit",
+      "reason": "control_inventory focused test",
+      "source": "control/inventory/**"
+    },
+    {
+      "command": "python -m unittest tests.operations.test_test_lane_policy",
+      "lane_id": "L1_focused_unit",
+      "reason": "tests focused test",
+      "source": "tests/**"
+    },
+    {
+      "command": "python -m unittest tests.scripts.test_validate_test_lane_policy",
+      "lane_id": "L1_focused_unit",
+      "reason": "tests focused test",
+      "source": "tests/**"
+    }
+  ],
+  "selected_lanes": [
+    "L0_static_preflight",
+    "L1_focused_unit",
+    "L2_impact_integration"
+  ],
+  "skip_reasons": [
+    "not selected for per-commit default; run through the artifact harness before promotion/high-risk gates"
+  ],
+  "skipped_commands": [
+    {
+      "command": "python scripts/run_full_unittest_discovery.py",
+      "lane_id": "L3_full_discovery",
+      "reason": "not selected for per-commit default; run through the artifact harness before promotion/high-risk gates"
+    }
+  ],
+  "task": "",
+  "warnings": []
+}

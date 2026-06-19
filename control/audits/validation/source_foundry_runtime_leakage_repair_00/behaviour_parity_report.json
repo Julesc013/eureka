@@ -1,0 +1,93 @@
+{
+  "behavioural_differences": [],
+  "changed_modules": [
+    "runtime/local/local_search.py",
+    "runtime/local/staging_package.py",
+    "runtime/local/external_staging.py",
+    "runtime/local/public_alpha_service.py",
+    "runtime/local/workbench_service.py",
+    "runtime/local/artifact_gate_seed.py",
+    "runtime/local/ia_candidate_review_batch.py",
+    "runtime/local/local_machine_public_exposure.py",
+    "runtime/local/public_alpha_ops_posture.py",
+    "runtime/local/public_alpha_release_checks.py",
+    "runtime/local/review_materialization.py",
+    "runtime/local/search_index.py"
+  ],
+  "cli_compatibility": "preserved for existing scripts/eureka_* and scripts/run_eureka_local.py entrypoints",
+  "data_schema_compatibility": "formal schema versions unchanged; promotion-blocker wording moved to domain-safe synthetic_input_provenance in newly generated review-tranche output",
+  "log_retention": "raw stdout/stderr omitted after compact status capture",
+  "runtime_repair_commit": "92e63d13fc91f6d82543332682b744df30ef9d8d",
+  "schema_version": "source_foundry_runtime_leakage_behaviour_parity_report.v0",
+  "task_id": "SOURCE-FOUNDRY-RUNTIME-LEAKAGE-REPAIR-00",
+  "validation_lanes": [
+    {
+      "command": "python -m unittest tests.operations.test_legacy_runtime_leakage_remediation tests.operations.test_runtime_architecture_leakage -v",
+      "exit_code": 0,
+      "lane": "runtime_leakage_tests",
+      "output_capture": "omitted; compact exit-status evidence retained in audit report"
+    },
+    {
+      "command": "python -m unittest tests.operations.test_review_ia_candidates_batch tests.operations.test_ia_evidence_ledger_summary tests.operations.test_ia_candidate_index_refresh tests.operations.test_ia_source_observation_cache_delta tests.runtime.test_review_ledger tests.runtime.test_review_queue_store -v",
+      "exit_code": 0,
+      "lane": "ia_source_wave_tests",
+      "output_capture": "omitted; compact exit-status evidence retained in audit report"
+    },
+    {
+      "command": "python -m unittest tests.e2e.test_local_search_server tests.e2e.test_local_search_p0_no_mutation tests.e2e.test_local_search_index_builder tests.e2e.test_local_metadata_fallback_demo tests.e2e.test_ia_metadata_live_optin tests.e2e.test_public_readonly_web_alpha tests.e2e.test_local_to_staging_deployment tests.e2e.test_external_staging_host_config tests.e2e.test_external_staging_host_provision tests.e2e.test_workbench_operator_routes tests.e2e.test_reviewed_record_materialization tests.e2e.test_local_machine_staging_provision -v",
+      "exit_code": 0,
+      "lane": "e2e_changed_runtime_tests",
+      "output_capture": "omitted; compact exit-status evidence retained in audit report"
+    },
+    {
+      "command": "python scripts/audit_runtime_architecture_leakage.py --check --json",
+      "elapsed_seconds": 119.482,
+      "exit_code": 0,
+      "lane": "audit_check",
+      "output": "control/audits/validation/source_foundry_runtime_leakage_repair_00/final_scan.json"
+    },
+    {
+      "command": "python scripts/validate_runtime_architecture_leakage.py --json",
+      "elapsed_seconds": 118.799,
+      "exit_code": 0,
+      "lane": "validator",
+      "output": "control/audits/validation/source_foundry_runtime_leakage_repair_00/final_validator.json"
+    },
+    {
+      "command": "python scripts/check_architecture_boundaries.py",
+      "exit_code": 0,
+      "lane": "architecture_boundaries",
+      "output": "control/audits/validation/source_foundry_runtime_leakage_repair_00/check_architecture_boundaries.json"
+    },
+    {
+      "command": "python scripts/check_generated_artifact_cleanliness.py --check --json",
+      "exit_code": 1,
+      "lane": "generated_artifact_cleanliness_precommit",
+      "output": "control/audits/validation/source_foundry_runtime_leakage_repair_00/check_generated_artifact_cleanliness.json"
+    },
+    {
+      "command": "python scripts/validate_public_alpha_readonly.py",
+      "exit_code": 0,
+      "lane": "public_alpha_readonly",
+      "output": "control/audits/validation/source_foundry_runtime_leakage_repair_00/validate_public_alpha_readonly.json"
+    },
+    {
+      "command": "python scripts/validate_snapshot_relay.py",
+      "exit_code": 0,
+      "lane": "snapshot_relay",
+      "output": "control/audits/validation/source_foundry_runtime_leakage_repair_00/validate_snapshot_relay.json"
+    },
+    {
+      "command": "python scripts/eureka_test_select.py --changed --failed-first --json",
+      "exit_code": 0,
+      "lane": "eureka_test_select_changed",
+      "output": "control/audits/validation/source_foundry_runtime_leakage_repair_00/eureka_test_select_changed.json"
+    },
+    {
+      "command": "git diff --check",
+      "exit_code": 0,
+      "lane": "git_diff_check",
+      "output": "control/audits/validation/source_foundry_runtime_leakage_repair_00/git_diff_check.out"
+    }
+  ]
+}
