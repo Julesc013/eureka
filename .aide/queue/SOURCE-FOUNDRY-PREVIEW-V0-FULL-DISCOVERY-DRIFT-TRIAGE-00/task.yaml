@@ -1,0 +1,84 @@
+schema_version: aide.task.v0
+id: SOURCE-FOUNDRY-PREVIEW-V0-FULL-DISCOVERY-DRIFT-TRIAGE-00
+title: Triage Source Foundry Preview v0 full-discovery drift
+status: authorized
+task_class: validation_drift_triage
+recommended_after: SOURCE-FOUNDRY-PREVIEW-V0-CHECKPOINT-00
+recommended_next: SOURCE-FOUNDRY-PREVIEW-V0-FULL-DISCOVERY-RERUN-00
+purpose: Classify repeated external full-discovery failures, repair only evidence-backed validation drift or proven regressions with targeted tests, and prepare a fresh external full-discovery handoff only after targeted lanes are green.
+authority_note: This is a parallel validation authority packet. It does not advance the live source-wave review queue, does not authorize dev-to-main promotion, and does not authorize public exposure, reviewed truth creation, or index mutation.
+allowed_scope:
+  - .aide/queue/SOURCE-FOUNDRY-PREVIEW-V0-FULL-DISCOVERY-DRIFT-TRIAGE-00/**
+  - .aide/context/**
+  - control/audits/validation/source_foundry_preview_v0_drift_triage/**
+  - docs/reference/validation/source_foundry_preview_v0_rerun_after_drift_triage/**
+  - tests/**
+  - scripts/check_full_discovery.py
+  - scripts/eureka_test_select.py
+  - scripts/check_generated_artifact_cleanliness.py
+  - scripts/validate_public_alpha_readonly.py
+  - scripts/validate_snapshot_relay.py
+  - docs/operations/TEST_AND_EVAL_LANES.md
+  - control/inventory/tests/**
+forbidden_scope:
+  - runtime/**
+  - contracts/**
+  - surfaces/**
+  - runtime/connectors/**
+  - runtime/gateway/**
+  - reviewed-record materialization paths
+  - reviewed/master index stores
+  - public-index stores
+  - snapshot/public projection paths
+  - source/provider implementations
+  - Workbench runtime
+  - release/**
+  - archive/**
+  - LICENSE.md
+  - LICENSE-SUMMARY.md
+  - NOTICE.md
+  - README.md
+  - public exposure, tunnel, hosting, or launch code
+boundaries:
+  full_discovery_inside_ai_session: false
+  external_full_discovery_rerun_until_targeted_green: false
+  blanket_test_skips: false
+  xfail_without_issue: false
+  public_safety_assertions_weakened: false
+  truth_or_index_boundary_weakened: false
+  reviewed_record_creation: false
+  reviewed_master_mutation: false
+  public_index_mutation: false
+  candidate_index_store_mutation: false
+  evidence_ledger_store_mutation: false
+  reviewed_index_rebuild: false
+  snapshot_refresh: false
+  network_or_provider_calls: false
+  downloads_or_file_fetch: false
+  wayback_replay: false
+  public_launch: false
+  public_exposure: false
+  license_posture_changed: false
+inputs:
+  current_checkpoint_audit: control/audits/source_wave/source_foundry_preview_v0_checkpoint_00/source_foundry_preview_checkpoint_report.json
+  external_full_discovery_handoff: control/audits/source_wave/source_foundry_preview_v0_checkpoint_00/external_full_discovery_handoff.json
+  failed_run_id: source_foundry_preview_v0_checkpoint_00
+  expected_external_artifact_root: ../eureka-test-runs/source_foundry_preview_v0_checkpoint_00
+required_classifications:
+  - genuine_product_regression
+  - historical_queue_expectation_drift
+  - historical_validator_drift
+  - stale_fixture_or_golden
+  - environment_or_harness_error
+  - test_isolation_or_order_dependency
+  - obsolete_test_candidate
+  - unknown_requires_investigation
+acceptance:
+  - Compare the repeated red full-discovery evidence without running another unchanged full-discovery pass.
+  - Inventory every failed/error test from available compact artifacts and logs.
+  - Classify failures from assertion signatures and current repo authority, not by filename alone.
+  - Repair only evidence-backed drift or proven regressions, with targeted tests for each changed group.
+  - Keep public exposure paused and reviewed truth/index mutation forbidden.
+  - Prepare a new external full-discovery handoff only if targeted lanes are green and no genuine or unknown blocker remains.
+  - Keep dev-to-main promotion blocked until a later returned external rerun is green.
+proof_level_required: L1
