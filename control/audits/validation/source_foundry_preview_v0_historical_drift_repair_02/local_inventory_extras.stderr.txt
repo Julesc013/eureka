@@ -1,0 +1,4 @@
+test_auto_test_and_report_scripts_run (tests.operations.test_local_auto_test_scripts.LocalAutoTestScriptTests.test_auto_test_and_report_scripts_run) ... ok
+test_auto_test_refuses_non_localhost (tests.operations.test_local_auto_test_scripts.LocalAutoTestScriptTests.test_auto_test_refuses_non_localhost) ... ok
+test_validator_passes (tests.operations.test_local_auto_test_scripts.LocalAutoTestScriptTests.test_validator_passes) ... FAIL
+test_page_hardening_validator_passes (tests.operations.test_local_workbench_page_hardening_scripts.LocalWorkbenchPageHardeningScriptTests.test_page_hardening_validator_passes) ... 

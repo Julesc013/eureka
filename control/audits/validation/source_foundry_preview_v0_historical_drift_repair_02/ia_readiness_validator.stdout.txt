@@ -1,0 +1,9 @@
+{
+  "status": "invalid",
+  "task": "IA-BUNDLE-00",
+  "audit_dir": "control/audits/ia-bundle-00-readiness-polish-v0",
+  "errors": [
+    "latest task packet must point the main development lane to IA-BUNDLE-01 or a later IA/H/F/G/I/J0/D/C/E/MVP/H2/H3/H4/H5/H6/H7/H8/H9/H10/H11/H12/H13/H14 task",
+    "latest task packet must preserve HUMAN-OBS-REVIEW-01 as a parallel side-lane"
+  ]
+}

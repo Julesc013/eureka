@@ -1,0 +1,136 @@
+test_ai_source_probe_and_sync_are_disabled (tests.operations.test_search_hunt_track.SearchHuntTrackTests.test_ai_source_probe_and_sync_are_disabled) ... ok
+test_completion_policy_rejects_scaffold_only_implementation (tests.operations.test_search_hunt_track.SearchHuntTrackTests.test_completion_policy_rejects_scaffold_only_implementation) ... ok
+test_f0_is_not_current (tests.operations.test_search_hunt_track.SearchHuntTrackTests.test_f0_is_not_current) ... ok
+test_hunt_track_plan_includes_hunt_00_through_hunt_12 (tests.operations.test_search_hunt_track.SearchHuntTrackTests.test_hunt_track_plan_includes_hunt_00_through_hunt_12) ... ok
+test_local_appliance_and_workunit_dependencies_are_required (tests.operations.test_search_hunt_track.SearchHuntTrackTests.test_local_appliance_and_workunit_dependencies_are_required) ... ok
+test_next_task_is_hunt_01_or_completed_post_hunt_task (tests.operations.test_search_hunt_track.SearchHuntTrackTests.test_next_task_is_hunt_01_or_completed_post_hunt_task) ... FAIL
+test_validator_passes_with_disposed_warnings (tests.operations.test_search_hunt_track.SearchHuntTrackTests.test_validator_passes_with_disposed_warnings) ... FAIL
+test_cli_create_list_show_transition (tests.operations.test_search_hunt_scripts.SearchHuntScriptTests.test_cli_create_list_show_transition) ... ok
+test_cli_requires_instance (tests.operations.test_search_hunt_scripts.SearchHuntScriptTests.test_cli_requires_instance) ... ok
+test_demo_runs_without_side_effects (tests.operations.test_search_hunt_scripts.SearchHuntScriptTests.test_demo_runs_without_side_effects) ... ok
+test_validator_passes (tests.operations.test_search_hunt_scripts.SearchHuntScriptTests.test_validator_passes) ... FAIL
+test_smoke_refuses_non_localhost_url (tests.operations.test_search_hunt_ui_scripts.SearchHuntUiScriptTests.test_smoke_refuses_non_localhost_url) ... ok
+test_smoke_script_passes_against_local_server (tests.operations.test_search_hunt_ui_scripts.SearchHuntUiScriptTests.test_smoke_script_passes_against_local_server) ... ok
+test_validator_passes (tests.operations.test_search_hunt_ui_scripts.SearchHuntUiScriptTests.test_validator_passes) ... FAIL
+test_cli_commands_and_demo_work (tests.operations.test_search_hunt_command_scripts.SearchHuntCommandScriptTests.test_cli_commands_and_demo_work) ... ok
+test_cli_requires_operator_token_for_mutation (tests.operations.test_search_hunt_command_scripts.SearchHuntCommandScriptTests.test_cli_requires_operator_token_for_mutation) ... ok
+test_validator_passes (tests.operations.test_search_hunt_command_scripts.SearchHuntCommandScriptTests.test_validator_passes) ... FAIL
+test_cli_generate_show_and_demo_work (tests.operations.test_search_hunt_exhaustion_scripts.SearchHuntExhaustionScriptTests.test_cli_generate_show_and_demo_work) ... ok
+test_cli_requires_operator_token_for_generation (tests.operations.test_search_hunt_exhaustion_scripts.SearchHuntExhaustionScriptTests.test_cli_requires_operator_token_for_generation) ... ok
+test_validator_passes (tests.operations.test_search_hunt_exhaustion_scripts.SearchHuntExhaustionScriptTests.test_validator_passes) ... FAIL
+test_cli_create_list_show_transition_and_demo_work (tests.operations.test_search_need_scripts.SearchNeedScriptTests.test_cli_create_list_show_transition_and_demo_work) ... ok
+test_cli_requires_operator_token_for_creation (tests.operations.test_search_need_scripts.SearchNeedScriptTests.test_cli_requires_operator_token_for_creation) ... ok
+test_validator_passes (tests.operations.test_search_need_scripts.SearchNeedScriptTests.test_validator_passes) ... FAIL
+test_cli_plan_create_list_and_demo_work (tests.operations.test_need_to_workunit_scripts.NeedToWorkUnitScriptTests.test_cli_plan_create_list_and_demo_work) ... ok
+test_validator_passes (tests.operations.test_need_to_workunit_scripts.NeedToWorkUnitScriptTests.test_validator_passes) ... FAIL
+test_cli_plan_run_summary_and_demo_work (tests.operations.test_background_hunt_runner_scripts.BackgroundHuntRunnerScriptTests.test_cli_plan_run_summary_and_demo_work) ... ok
+test_validator_passes (tests.operations.test_background_hunt_runner_scripts.BackgroundHuntRunnerScriptTests.test_validator_passes) ... FAIL
+
+======================================================================
+FAIL: test_next_task_is_hunt_01_or_completed_post_hunt_task (tests.operations.test_search_hunt_track.SearchHuntTrackTests.test_next_task_is_hunt_01_or_completed_post_hunt_task)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Projects\Eureka\eureka\tests\operations\test_search_hunt_track.py", line 31, in test_next_task_is_hunt_01_or_completed_post_hunt_task
+    self.assertRegex(
+AssertionError: Regex didn't match: 'current_recommended_task: (HUNT-(0[1-9]|1[0-2])|SYN-00|DOMAIN-00|SCOUT-SCHEMA-00|F0-00|G0|HUNT-REMEDIATION|HUNT-TO-MAIN-PROMOTION-REVIEW|DEV-AND-IA-[A-Z0-9-]+|REPO-LAYOUT-[A-Z0-9-]+|IA-HUNT-BRIDGE-00|RESOLUTION-RUN-KERNEL-00|WORKBENCH-LIVE-RUN-01)\\b' not found in 'current_recommended_task: REVIEW-IA-CANDIDATES-BATCH-00 - Prepare governed IA candidate/evidence review batch material; operator decisions are explicit and review-ledger-only; reviewed records, index rebuilds, public exposure, external artifact evidence, and hardware details remain gated\ncompleted:\n  - SOURCE-ACTION-KERNEL-00\n  - SOURCE-WAVE-00\n  - SNAPSHOT-RELAY-00\n  - CI-FULL-DISCOVERY-HARNESS-00\n  - SOURCE-SNAPSHOT-BASELINE-CLOSEOUT-01\n  - DEV-TO-MAIN-PROMOTION-REVIEW-03\n  - PUBLIC-ALPHA-READONLY-00\n  - PUBLIC-ALPHA-HOSTING-READINESS-00\n  - PUBLIC-ALPHA-READONLY-CLOSEOUT-01\n  - DEV-TO-MAIN-PROMOTION-REVIEW-04\n  - PUBLIC-ALPHA-LAUNCH-CANDIDATE-00\n  - PUBLIC-ALPHA-DEPLOY-DRY-RUN-00\n  - DEV-TO-MAIN-PROMOTION-REVIEW-05\n  - PUBLIC-ALPHA-LAUNCH-DEFER-00\n  - ACTIVE-DISCOVERY-AND-CANDIDATE-INTAKE-00\n  - QUERY-TO-SOURCE-ACTION-PLANNER-00\n  - CANDIDATE-INDEX-RUNTIME-00\n  - SCOUT-RUNTIME-00\n  - REVIEW-BATCH-00\n  - SEED-BATCH-FRONTIER-MEDIA-00\n  - SEED-BATCH-LEGACY-SOFTWARE-00\n  - SNAPSHOT-REFRESH-00\n  - PUBLIC-ALPHA-REASSESS-00\n  - PUBLIC-SEARCH-UX-MODEL-00\n  - LIVE-METADATA-PILOT-BATCH-00\n  - SNAPSHOT-REFRESH-01\n  - PUBLIC-ALPHA-REASSESS-01\n  - REVIEW-LIVE-METADATA-CANDIDATES-00\n  - SNAPSHOT-REFRESH-02\n  - PUBLIC-ALPHA-REASSESS-02\n  - LOCAL-APPLY-LIVE-METADATA-PREVIEWS-00\n  - SNAPSHOT-REFRESH-03\n  - PUBLIC-ALPHA-REASSESS-03\n  - SEED-BATCH-MANUALS-SCANS-00\n  - SEED-BATCH-DRIVER-SUPPORT-00\n  - SNAPSHOT-REFRESH-04\n  - PUBLIC-ALPHA-REASSESS-04\n  - PUBLIC-SEARCH-UX-MVP-00\n  - SNAPSHOT-REFRESH-05\n  - PUBLIC-ALPHA-REASSESS-05\n  - REVIEW-BATCH-APPLY-NEXT-00\n  - SNAPSHOT-REFRESH-06\n  - PUBLIC-ALPHA-REASSESS-06\n  - TSIS-00\n  - INDEXLESS-LIVE-SEARCH-FALLBACK-00-PREFLIGHT\n  - INDEXLESS-LIVE-SEARCH-FALLBACK-00\n  - REVIEW-LEDGER-00\n  - WORKBENCH-RUN-REVIEW-PROJECTION-00\n  - SURFACE-KERNEL-00\n  - BASELINE-RENDERERS-00\n  - HARD-QUERY-EVAL-00\n  - REVIEWED-SEED-CORPUS-00\n  - MANUAL-OBSERVATION-BATCH-00\n  - HUMAN-REVIEW-BATCH-00\n  - REVIEWED-CORPUS-SEED-BATCH-01\n  - MANUAL-OBSERVATION-BATCH-01\n  - HUMAN-REVIEW-BATCH-01\n  - REVIEWED-CORPUS-SEED-BATCH-02\n  - SOURCE-SNAPSHOT-FULL-DISCOVERY-INGEST-01\n  - ARCHITECTURE-BOUNDARY-DRIFT-REPAIR-01\n  - QUEUE-HANDOFF-DRIFT-REPAIR-01\n  - SOURCE-SNAPSHOT-BASELINE-DRIFT-REPAIR-01\n  - GENERATED-ARTIFACT-DRIFT-REPAIR-01\n  - CONTRACT-SCHEMA-DRIFT-REPAIR-01\n  - EXTERNAL-FULL-DISCOVERY-RERUN-02\n  - SOURCE-SNAPSHOT-FULL-DISCOVERY-INGEST-02\n  - SOURCE-SNAPSHOT-RELEASE-GATE-CLOSEOUT-02\n  - REVIEWED-ARTIFACT-RECORD-GATE-00\n  - MANUAL-ARTIFACT-OBSERVATION-BATCH-00\n  - HUMAN-ARTIFACT-REVIEW-BATCH-00\n  - REVIEWED-ARTIFACT-CORPUS-BATCH-01\n  - ARTIFACT-EVIDENCE-GAP-BATCH-00\n  - MANUAL-ARTIFACT-OBSERVATION-BATCH-01\n  - HUMAN-ARTIFACT-REVIEW-BATCH-01\n  - REVIEWED-ARTIFACT-RECORD-GATE-02\n  - EXTERNAL-FULL-DISCOVERY-RERUN-03\n  - SOURCE-SNAPSHOT-FULL-DISCOVERY-INGEST-03\n  - HISTORICAL-QUEUE-VALIDATOR-DRIFT-REPAIR-03\n  - EXTERNAL-FULL-DISCOVERY-RERUN-04\n  - SOURCE-SNAPSHOT-FULL-DISCOVERY-INGEST-04\n  - ARTIFACT-EVIDENCE-GAP-BATCH-01\n  - MANUAL-ARTIFACT-OBSERVATION-BATCH-02\n  - HUMAN-ARTIFACT-REVIEW-BATCH-02\n  - ARTIFACT-EVIDENCE-COLLECTION-HANDOFF-00\n  - IA-METADATA-PROVIDER-WIRING-AND-SMOKE-00\n  - IA-SOURCE-OBSERVATION-CACHE-DELTA-00\n  - IA-CANDIDATE-INDEX-REFRESH-00\n  - IA-EVIDENCE-LEDGER-SUMMARY-00\nblocked: []\nplanned:\n  - USER-HARDWARE-DETAILS-00\n  - MANUAL-ARTIFACT-OBSERVATION-BATCH-03\n  - HUMAN-ARTIFACT-REVIEW-BATCH-03\n  - REVIEWED-ARTIFACT-CORPUS-BATCH-02\n  - REVIEWED-ARTIFACT-RECORD-GATE-03\n  - PUBLIC-ALPHA-READINESS-00\n  - DEV-TO-MAIN-PROMOTION-PREFLIGHT-07\nwaiting:\n  - WAITING_FOR_EXTERNAL_ARTIFACT_EVIDENCE\n  - WAITING_FOR_USER_HARDWARE_DETAILS\nstatus_options:\n  - pass\n  - pass_with_warnings\n  - partial\n  - blocked\n  - fail\n  - WAITING_FOR_OPERATOR_LIVE_METADATA_APPROVAL\n  - WAITING_FOR_EXTERNAL_FULL_DISCOVERY\n  - WAITING_FOR_EXTERNAL_ARTIFACT_EVIDENCE\n  - WAITING_FOR_USER_HARDWARE_DETAILS\n'
+
+======================================================================
+FAIL: test_validator_passes_with_disposed_warnings (tests.operations.test_search_hunt_track.SearchHuntTrackTests.test_validator_passes_with_disposed_warnings)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Projects\Eureka\eureka\tests\operations\test_search_hunt_track.py", line 71, in test_validator_passes_with_disposed_warnings
+    self.assertIn(result["status"], {"pass", "pass_with_warnings"}, result)
+AssertionError: 'fail' not found in {'pass_with_warnings', 'pass'} : {'schema_version': 'search_hunt_track_validation.v0', 'task': 'HUNT-00', 'status': 'fail', 'errors': ['queue must point to HUNT-01 or a later HUNT task', 'queue must mark HUNT-00 completed', 'queue must include HUNT-01', 'latest task packet must point to HUNT-01 or a later HUNT task'], 'warnings': ['HUNT-00 carries final baseline warning disposition forward'], 'next_task': 'HUNT-01', 'runtime_modified': False, 'contracts_modified': False, 'source_probe_executed': False, 'model_provider_used': False, 'deployment_performed': False, 'production_readiness_claimed': False, 'public_launch_readiness_claimed': False}
+
+======================================================================
+FAIL: test_validator_passes (tests.operations.test_search_hunt_scripts.SearchHuntScriptTests.test_validator_passes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Projects\Eureka\eureka\tests\operations\test_search_hunt_scripts.py", line 58, in test_validator_passes
+    self.assertEqual(0, completed.returncode, completed.stdout + completed.stderr)
+AssertionError: 0 != 1 : HUNT-01 Search Hunt runtime validation
+status: fail
+ERROR: queue must point to HUNT-02 or a later HUNT task
+ERROR: queue must mark HUNT-01 completed
+ERROR: queue must include HUNT-02
+
+
+======================================================================
+FAIL: test_validator_passes (tests.operations.test_search_hunt_ui_scripts.SearchHuntUiScriptTests.test_validator_passes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Projects\Eureka\eureka\tests\operations\test_search_hunt_ui_scripts.py", line 62, in test_validator_passes
+    self.assertEqual(0, completed.returncode, completed.stdout + completed.stderr)
+AssertionError: 0 != 1 : HUNT-02 Search Hunt UI validation
+status: fail
+ERROR: queue index must point to HUNT-03 or a later HUNT task
+ERROR: queue index must mark HUNT-02 completed
+ERROR: queue index must include HUNT-03
+ERROR: latest task packet must point to HUNT-03 or a later HUNT task
+
+
+======================================================================
+FAIL: test_validator_passes (tests.operations.test_search_hunt_command_scripts.SearchHuntCommandScriptTests.test_validator_passes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Projects\Eureka\eureka\tests\operations\test_search_hunt_command_scripts.py", line 56, in test_validator_passes
+    self.assertEqual(0, completed.returncode, completed.stdout + completed.stderr)
+AssertionError: 0 != 1 : HUNT-03 Search Hunt command validation
+status: fail
+ERROR: queue index must point to HUNT-04 or a later HUNT task
+ERROR: queue index must mark HUNT-03 completed
+ERROR: queue index must include HUNT-04
+ERROR: latest task packet must point to HUNT-04 or a later HUNT task
+
+
+======================================================================
+FAIL: test_validator_passes (tests.operations.test_search_hunt_exhaustion_scripts.SearchHuntExhaustionScriptTests.test_validator_passes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Projects\Eureka\eureka\tests\operations\test_search_hunt_exhaustion_scripts.py", line 54, in test_validator_passes
+    self.assertEqual(0, completed.returncode, completed.stdout + completed.stderr)
+AssertionError: 0 != 1 : HUNT-04 Search Hunt exhaustion validation
+status: fail
+ERROR: queue index must point to HUNT-05 or a later HUNT task
+ERROR: queue index must mark HUNT-04 completed
+ERROR: queue index must include HUNT-05
+ERROR: latest task packet must point to HUNT-05 or a later HUNT task
+
+
+======================================================================
+FAIL: test_validator_passes (tests.operations.test_search_need_scripts.SearchNeedScriptTests.test_validator_passes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Projects\Eureka\eureka\tests\operations\test_search_need_scripts.py", line 59, in test_validator_passes
+    self.assertEqual(0, completed.returncode, completed.stdout + completed.stderr)
+AssertionError: 0 != 1 : HUNT-05 hunt-to-SearchNeed validation
+status: fail
+ERROR: queue does not point to HUNT-06
+
+
+======================================================================
+FAIL: test_validator_passes (tests.operations.test_need_to_workunit_scripts.NeedToWorkUnitScriptTests.test_validator_passes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Projects\Eureka\eureka\tests\operations\test_need_to_workunit_scripts.py", line 52, in test_validator_passes
+    self.assertEqual(0, completed.returncode, completed.stdout + completed.stderr)
+AssertionError: 0 != 1 : HUNT-06 Hunt-to-WorkUnit validation
+status: fail
+ERROR: queue does not point to HUNT-07
+
+
+======================================================================
+FAIL: test_validator_passes (tests.operations.test_background_hunt_runner_scripts.BackgroundHuntRunnerScriptTests.test_validator_passes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Projects\Eureka\eureka\tests\operations\test_background_hunt_runner_scripts.py", line 48, in test_validator_passes
+    self.assertEqual(0, completed.returncode, completed.stdout + completed.stderr)
+AssertionError: 0 != 1 : HUNT-07 background hunt runner validation
+status: fail
+ERROR: queue does not point to HUNT-08
+
+
+----------------------------------------------------------------------
+Ran 27 tests in 40.456s
+
+FAILED (failures=9)

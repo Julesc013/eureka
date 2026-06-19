@@ -206,6 +206,11 @@ def validate_task_packet(root: Path, errors: list[str]) -> None:
         "REPO-LAYOUT-",
         "WORKBENCH-",
         "SEARCH-INTERACTION-",
+        "SOURCE-FOUNDRY-",
+        "IA-SOURCE-OBSERVATION-CACHE-DELTA-",
+        "IA-CANDIDATE-INDEX-REFRESH-",
+        "IA-EVIDENCE-LEDGER-SUMMARY-",
+        "REVIEW-IA-CANDIDATES-",
     )
     advanced_beyond_ia = any(marker in text for marker in allowed_later_track_prefixes)
     if not any(marker in text for marker in allowed_ia_progression_markers) and not advanced_beyond_ia:

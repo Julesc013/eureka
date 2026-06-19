@@ -504,6 +504,10 @@ def local_track_handoff_queue(queue_current: str | None) -> bool:
         "SOURCE-SNAPSHOT-FAILURE-REPAIR-01",
         "EXTERNAL-FULL-DISCOVERY-RERUN-02",
         "HISTORICAL-QUEUE-VALIDATOR-DRIFT-REPAIR-03",
+        "IA-SOURCE-OBSERVATION-CACHE-DELTA-00",
+        "IA-CANDIDATE-INDEX-REFRESH-00",
+        "IA-EVIDENCE-LEDGER-SUMMARY-00",
+        "REVIEW-IA-CANDIDATES-BATCH-00",
     }
     return any(queue_current == task or queue_current.startswith(f"{task} ") for task in handoff_tasks)
 
@@ -548,6 +552,11 @@ def latest_packet_is_later_control_or_handoff(packet_text: str) -> bool:
         "GENERATED-ARTIFACT-DRIFT-REPAIR-",
         "CONTRACT-SCHEMA-DRIFT-REPAIR-",
         "HISTORICAL-QUEUE-VALIDATOR-DRIFT-REPAIR-",
+        "IA-SOURCE-OBSERVATION-CACHE-DELTA-",
+        "IA-CANDIDATE-INDEX-REFRESH-",
+        "IA-EVIDENCE-LEDGER-SUMMARY-",
+        "REVIEW-IA-CANDIDATES-",
+        "SOURCE-FOUNDRY-",
         "EXTERNAL-FULL-DISCOVERY-",
     )
     return any(marker in packet_text for marker in markers)

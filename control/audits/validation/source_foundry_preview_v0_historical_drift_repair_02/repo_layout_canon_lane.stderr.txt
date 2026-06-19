@@ -1,0 +1,89 @@
+test_validator_json_records_canon_and_resolved_debt (tests.scripts.test_validate_repo_structure_canon.RepoStructureCanonValidatorScriptTest.test_validator_json_records_canon_and_resolved_debt) ... ERROR
+test_validator_plain_passes (tests.scripts.test_validate_repo_structure_canon.RepoStructureCanonValidatorScriptTest.test_validator_plain_passes) ... ERROR
+test_validator_rejects_unclassified_src (tests.scripts.test_validate_repo_structure_canon.RepoStructureCanonValidatorScriptTest.test_validator_rejects_unclassified_src) ... ERROR
+test_validator_strict_passes_after_reconcile (tests.scripts.test_validate_repo_structure_canon.RepoStructureCanonValidatorScriptTest.test_validator_strict_passes_after_reconcile) ... ERROR
+test_validator_json_parses (tests.scripts.test_validate_repository_layout.RepositoryLayoutValidatorScriptTest.test_validator_json_parses) ... ERROR
+test_validator_plain_passes (tests.scripts.test_validate_repository_layout.RepositoryLayoutValidatorScriptTest.test_validator_plain_passes) ... ERROR
+test_validator_strict_passes (tests.scripts.test_validate_repository_layout.RepositoryLayoutValidatorScriptTest.test_validator_strict_passes) ... ERROR
+
+======================================================================
+ERROR: test_validator_json_records_canon_and_resolved_debt (tests.scripts.test_validate_repo_structure_canon.RepoStructureCanonValidatorScriptTest.test_validator_json_records_canon_and_resolved_debt)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Projects\Eureka\eureka\tests\scripts\test_validate_repo_structure_canon.py", line 29, in test_validator_json_records_canon_and_resolved_debt
+    completed = subprocess.run(
+                ^^^^^^^^^^^^^^^
+  File "C:\Users\Jules\AppData\Local\Programs\Python\Python311\Lib\subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['C:\\Users\\Jules\\AppData\\Local\\Programs\\Python\\Python311\\python.exe', 'D:\\Projects\\Eureka\\eureka\\scripts\\validate_repo_structure_canon.py', '--json']' returned non-zero exit status 1.
+
+======================================================================
+ERROR: test_validator_plain_passes (tests.scripts.test_validate_repo_structure_canon.RepoStructureCanonValidatorScriptTest.test_validator_plain_passes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Projects\Eureka\eureka\tests\scripts\test_validate_repo_structure_canon.py", line 16, in test_validator_plain_passes
+    completed = subprocess.run(
+                ^^^^^^^^^^^^^^^
+  File "C:\Users\Jules\AppData\Local\Programs\Python\Python311\Lib\subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['C:\\Users\\Jules\\AppData\\Local\\Programs\\Python\\Python311\\python.exe', 'D:\\Projects\\Eureka\\eureka\\scripts\\validate_repo_structure_canon.py']' returned non-zero exit status 1.
+
+======================================================================
+ERROR: test_validator_rejects_unclassified_src (tests.scripts.test_validate_repo_structure_canon.RepoStructureCanonValidatorScriptTest.test_validator_rejects_unclassified_src)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Projects\Eureka\eureka\tests\scripts\test_validate_repo_structure_canon.py", line 83, in test_validator_rejects_unclassified_src
+    completed = subprocess.run(
+                ^^^^^^^^^^^^^^^
+  File "C:\Users\Jules\AppData\Local\Programs\Python\Python311\Lib\subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['C:\\Users\\Jules\\AppData\\Local\\Programs\\Python\\Python311\\python.exe', 'D:\\Projects\\Eureka\\eureka\\scripts\\validate_repo_structure_canon.py', '--json']' returned non-zero exit status 1.
+
+======================================================================
+ERROR: test_validator_strict_passes_after_reconcile (tests.scripts.test_validate_repo_structure_canon.RepoStructureCanonValidatorScriptTest.test_validator_strict_passes_after_reconcile)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Projects\Eureka\eureka\tests\scripts\test_validate_repo_structure_canon.py", line 70, in test_validator_strict_passes_after_reconcile
+    completed = subprocess.run(
+                ^^^^^^^^^^^^^^^
+  File "C:\Users\Jules\AppData\Local\Programs\Python\Python311\Lib\subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['C:\\Users\\Jules\\AppData\\Local\\Programs\\Python\\Python311\\python.exe', 'D:\\Projects\\Eureka\\eureka\\scripts\\validate_repo_structure_canon.py', '--strict', '--json']' returned non-zero exit status 1.
+
+======================================================================
+ERROR: test_validator_json_parses (tests.scripts.test_validate_repository_layout.RepositoryLayoutValidatorScriptTest.test_validator_json_parses)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Projects\Eureka\eureka\tests\scripts\test_validate_repository_layout.py", line 28, in test_validator_json_parses
+    completed = subprocess.run(
+                ^^^^^^^^^^^^^^^
+  File "C:\Users\Jules\AppData\Local\Programs\Python\Python311\Lib\subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['C:\\Users\\Jules\\AppData\\Local\\Programs\\Python\\Python311\\python.exe', 'D:\\Projects\\Eureka\\eureka\\scripts\\validate_repository_layout.py', '--json']' returned non-zero exit status 1.
+
+======================================================================
+ERROR: test_validator_plain_passes (tests.scripts.test_validate_repository_layout.RepositoryLayoutValidatorScriptTest.test_validator_plain_passes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Projects\Eureka\eureka\tests\scripts\test_validate_repository_layout.py", line 16, in test_validator_plain_passes
+    completed = subprocess.run(
+                ^^^^^^^^^^^^^^^
+  File "C:\Users\Jules\AppData\Local\Programs\Python\Python311\Lib\subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['C:\\Users\\Jules\\AppData\\Local\\Programs\\Python\\Python311\\python.exe', 'D:\\Projects\\Eureka\\eureka\\scripts\\validate_repository_layout.py']' returned non-zero exit status 1.
+
+======================================================================
+ERROR: test_validator_strict_passes (tests.scripts.test_validate_repository_layout.RepositoryLayoutValidatorScriptTest.test_validator_strict_passes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Projects\Eureka\eureka\tests\scripts\test_validate_repository_layout.py", line 43, in test_validator_strict_passes
+    completed = subprocess.run(
+                ^^^^^^^^^^^^^^^
+  File "C:\Users\Jules\AppData\Local\Programs\Python\Python311\Lib\subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['C:\\Users\\Jules\\AppData\\Local\\Programs\\Python\\Python311\\python.exe', 'D:\\Projects\\Eureka\\eureka\\scripts\\validate_repository_layout.py', '--strict', '--json']' returned non-zero exit status 1.
+
+----------------------------------------------------------------------
+Ran 7 tests in 9.628s
+
+FAILED (errors=7)

@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import importlib.util
 import json
 from pathlib import Path
 import subprocess
@@ -9,6 +10,15 @@ import unittest
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 SCRIPT = REPO_ROOT / "scripts" / "validate_repository_layout.py"
+
+
+def load_validator():
+    spec = importlib.util.spec_from_file_location("validate_repository_layout", SCRIPT)
+    if spec is None or spec.loader is None:
+        raise ImportError(f"Unable to load {SCRIPT}")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
 
 
 class RepositoryLayoutValidatorScriptTest(unittest.TestCase):
@@ -48,6 +58,17 @@ class RepositoryLayoutValidatorScriptTest(unittest.TestCase):
             text=True,
         )
         self.assertEqual(json.loads(completed.stdout)["status"], "valid")
+
+    def test_outside_material_language_is_not_retired_root_reference(self) -> None:
+        module = load_validator()
+        outside_hyphen = "third" + "-party"
+        outside_underscore = "third" + "_party"
+
+        self.assertTrue(module._is_allowed_legacy_reference_line(f"{outside_hyphen} materials"))
+        self.assertTrue(module._is_allowed_legacy_reference_line(f"{outside_hyphen} notices"))
+        self.assertFalse(module._is_allowed_legacy_reference_line(f"{outside_hyphen} root"))
+        self.assertFalse(module._is_allowed_legacy_reference_line(f"{outside_hyphen}/"))
+        self.assertFalse(module._is_allowed_legacy_reference_line(f"{outside_underscore}/sample"))
 
 
 if __name__ == "__main__":

@@ -1,0 +1,36 @@
+test_connector_runtime_enabled_claim_fails (tests.operations.test_ia_readiness_polish.IAReadinessPolishTest.test_connector_runtime_enabled_claim_fails) ... ok
+test_hosted_download_upload_account_telemetry_claims_fail (tests.operations.test_ia_readiness_polish.IAReadinessPolishTest.test_hosted_download_upload_account_telemetry_claims_fail) ... ok
+test_ia_live_access_approval_claim_fails (tests.operations.test_ia_readiness_polish.IAReadinessPolishTest.test_ia_live_access_approval_claim_fails) ... ok
+test_latest_task_packet_h0_progression_passes (tests.operations.test_ia_readiness_polish.IAReadinessPolishTest.test_latest_task_packet_h0_progression_passes) ... ok
+test_latest_task_packet_h1_progression_passes (tests.operations.test_ia_readiness_polish.IAReadinessPolishTest.test_latest_task_packet_h1_progression_passes) ... ok
+test_latest_task_packet_h2_progression_passes (tests.operations.test_ia_readiness_polish.IAReadinessPolishTest.test_latest_task_packet_h2_progression_passes) ... ok
+test_latest_task_packet_h3_progression_passes (tests.operations.test_ia_readiness_polish.IAReadinessPolishTest.test_latest_task_packet_h3_progression_passes) ... ok
+test_latest_task_packet_h8_progression_passes (tests.operations.test_ia_readiness_polish.IAReadinessPolishTest.test_latest_task_packet_h8_progression_passes) ... ok
+test_latest_task_packet_h9_progression_passes (tests.operations.test_ia_readiness_polish.IAReadinessPolishTest.test_latest_task_packet_h9_progression_passes) ... ok
+test_latest_task_packet_mvp_progression_passes (tests.operations.test_ia_readiness_polish.IAReadinessPolishTest.test_latest_task_packet_mvp_progression_passes) ... ok
+test_latest_task_packet_only_sync_baseline_fails (tests.operations.test_ia_readiness_polish.IAReadinessPolishTest.test_latest_task_packet_only_sync_baseline_fails) ... ok
+test_latest_task_packet_public_alpha_local_progression_passes (tests.operations.test_ia_readiness_polish.IAReadinessPolishTest.test_latest_task_packet_public_alpha_local_progression_passes) ... ok
+test_live_probe_enabled_claim_fails (tests.operations.test_ia_readiness_polish.IAReadinessPolishTest.test_live_probe_enabled_claim_fails) ... ok
+test_master_index_mutation_claim_fails (tests.operations.test_ia_readiness_polish.IAReadinessPolishTest.test_master_index_mutation_claim_fails) ... ok
+test_missing_readiness_checklist_fails (tests.operations.test_ia_readiness_polish.IAReadinessPolishTest.test_missing_readiness_checklist_fails) ... ok
+test_public_index_mutation_claim_fails (tests.operations.test_ia_readiness_polish.IAReadinessPolishTest.test_public_index_mutation_claim_fails) ... ok
+test_validator_does_not_call_network_model_or_provider (tests.operations.test_ia_readiness_polish.IAReadinessPolishTest.test_validator_does_not_call_network_model_or_provider) ... ok
+test_validator_does_not_mutate_files (tests.operations.test_ia_readiness_polish.IAReadinessPolishTest.test_validator_does_not_mutate_files) ... ok
+test_validator_passes_current_repo (tests.operations.test_ia_readiness_polish.IAReadinessPolishTest.test_validator_passes_current_repo) ... FAIL
+
+======================================================================
+FAIL: test_validator_passes_current_repo (tests.operations.test_ia_readiness_polish.IAReadinessPolishTest.test_validator_passes_current_repo)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Projects\Eureka\eureka\tests\operations\test_ia_readiness_polish.py", line 165, in test_validator_passes_current_repo
+    self.assertEqual(result["status"], "valid", result["errors"])
+AssertionError: 'invalid' != 'valid'
+- invalid
+? --
++ valid
+ : ['latest task packet must point the main development lane to IA-BUNDLE-01 or a later IA/H/F/G/I/J0/D/C/E/MVP/H2/H3/H4/H5/H6/H7/H8/H9/H10/H11/H12/H13/H14 task', 'latest task packet must preserve HUMAN-OBS-REVIEW-01 as a parallel side-lane']
+
+----------------------------------------------------------------------
+Ran 19 tests in 0.327s
+
+FAILED (failures=1)

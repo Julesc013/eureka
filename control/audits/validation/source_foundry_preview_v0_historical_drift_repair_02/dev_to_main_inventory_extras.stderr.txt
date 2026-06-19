@@ -1,0 +1,268 @@
+test_validator_demo_and_schema_cli_pass (tests.operations.test_agent_research_scripts.AgentResearchScriptsTests.test_validator_demo_and_schema_cli_pass) ... FAIL
+test_validator_demo_and_cli_pass (tests.operations.test_ai_escalation_scripts.AIEscalationScriptsTests.test_validator_demo_and_cli_pass) ... FAIL
+test_remediation_fails_if_closeout_missing (tests.operations.test_hunt_remediation.HuntRemediationTests.test_remediation_fails_if_closeout_missing) ... ok
+test_remediation_fails_if_forbidden_effects_occurred (tests.operations.test_hunt_remediation.HuntRemediationTests.test_remediation_fails_if_forbidden_effects_occurred) ... ok
+test_remediation_fails_if_full_discovery_fails (tests.operations.test_hunt_remediation.HuntRemediationTests.test_remediation_fails_if_full_discovery_fails) ... ok
+test_remediation_fails_if_hard_blockers_remain (tests.operations.test_hunt_remediation.HuntRemediationTests.test_remediation_fails_if_hard_blockers_remain) ... ok
+test_remediation_validator_passes (tests.operations.test_hunt_remediation.HuntRemediationTests.test_remediation_validator_passes) ... FAIL
+test_script_entrypoint_passes (tests.operations.test_hunt_remediation.HuntRemediationTests.test_script_entrypoint_passes) ... FAIL
+test_continuation_fails_if_full_discovery_fails (tests.operations.test_hunt_remediation_continue.HuntRemediationContinueTests.test_continuation_fails_if_full_discovery_fails) ... ok
+test_continuation_fails_if_hard_blockers_remain (tests.operations.test_hunt_remediation_continue.HuntRemediationContinueTests.test_continuation_fails_if_hard_blockers_remain) ... ok
+test_continuation_fails_if_previous_state_missing (tests.operations.test_hunt_remediation_continue.HuntRemediationContinueTests.test_continuation_fails_if_previous_state_missing) ... ok
+test_continuation_validator_passes (tests.operations.test_hunt_remediation_continue.HuntRemediationContinueTests.test_continuation_validator_passes) ... FAIL
+test_script_entrypoint_passes (tests.operations.test_hunt_remediation_continue.HuntRemediationContinueTests.test_script_entrypoint_passes) ... FAIL
+test_validator_demo_and_cli_pass (tests.operations.test_hunt_replay_scripts.HuntReplayScriptsTests.test_validator_demo_and_cli_pass) ... FAIL
+test_closeout_audit_reports_complete_track (tests.operations.test_search_hunt_closeout.SearchHuntCloseoutTests.test_closeout_audit_reports_complete_track) ... ok
+test_closeout_fails_when_required_hunt_result_missing (tests.operations.test_search_hunt_closeout.SearchHuntCloseoutTests.test_closeout_fails_when_required_hunt_result_missing) ... ok
+test_validator_script_passes_with_disposed_warnings (tests.operations.test_search_hunt_closeout.SearchHuntCloseoutTests.test_validator_script_passes_with_disposed_warnings) ... FAIL
+
+======================================================================
+FAIL: test_validator_demo_and_schema_cli_pass (tests.operations.test_agent_research_scripts.AgentResearchScriptsTests.test_validator_demo_and_schema_cli_pass)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Projects\Eureka\eureka\tests\operations\test_agent_research_scripts.py", line 17, in test_validator_demo_and_schema_cli_pass
+    self.assertEqual(validator.returncode, 0, validator.stderr + validator.stdout)
+AssertionError: 1 != 0 : {
+  "api_routes_added": true,
+  "deployment_performed": false,
+  "draft_from_hunt_passed": true,
+  "draft_from_need_passed": true,
+  "errors": [
+    "queue current_recommended_task must be HUNT-10",
+    "queue must mark HUNT-09 completed"
+  ],
+  "execute_attempt_rejected": true,
+  "execute_route_exists": false,
+  "execution_disabled_boundary_passed": true,
+  "external_network_used": false,
+  "invalid_token_rejected": true,
+  "lan_creation_blocked": true,
+  "master_index_mutated": false,
+  "missing_token_rejected": true,
+  "model_provider_used": false,
+  "production_readiness_claimed": false,
+  "provider_disabled_boundary_passed": true,
+  "public_index_mutated": false,
+  "public_launch_readiness_claimed": false,
+  "report_schema_added": true,
+  "review_mutation_performed": false,
+  "schema_version": "agent_research_task_contract_validation.v0",
+  "source_probe_executed": false,
+  "status": "fail",
+  "task": "HUNT-09",
+  "ui_routes_added": true,
+  "validator_added": true,
+  "warnings": []
+}
+
+
+======================================================================
+FAIL: test_validator_demo_and_cli_pass (tests.operations.test_ai_escalation_scripts.AIEscalationScriptsTests.test_validator_demo_and_cli_pass)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Projects\Eureka\eureka\tests\operations\test_ai_escalation_scripts.py", line 17, in test_validator_demo_and_cli_pass
+    self.assertEqual(validator.returncode, 0, validator.stderr + validator.stdout)
+AssertionError: 1 != 0 : {
+  "api_routes_added": true,
+  "deployment_performed": false,
+  "disabled_gate_created": true,
+  "errors": [
+    "queue current task must be HUNT-12"
+  ],
+  "execute_attempt_rejected": true,
+  "execute_route_exists": false,
+  "execution_disabled_boundary_passed": true,
+  "external_network_used": false,
+  "extraction_executed": false,
+  "forbidden_actions_validated": true,
+  "input_packet_validated": true,
+  "invalid_token_rejected": true,
+  "lan_preflight_blocked": true,
+  "master_index_mutated": false,
+  "missing_token_rejected": true,
+  "model_provider_used": false,
+  "output_classes_validated": true,
+  "preflight_from_hunt_passed": true,
+  "preflight_from_need_passed": true,
+  "production_readiness_claimed": false,
+  "provider_disabled_boundary_passed": true,
+  "public_index_mutated": false,
+  "public_launch_readiness_claimed": false,
+  "review_mutation_performed": false,
+  "schema_version": "ai_escalation_gate_validation.v0",
+  "source_probe_executed": false,
+  "status": "fail",
+  "task": "HUNT-11",
+  "ui_routes_added": true,
+  "validator_added": true,
+  "warnings": []
+}
+
+
+======================================================================
+FAIL: test_remediation_validator_passes (tests.operations.test_hunt_remediation.HuntRemediationTests.test_remediation_validator_passes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Projects\Eureka\eureka\tests\operations\test_hunt_remediation.py", line 13, in test_remediation_validator_passes
+    self.assertEqual(result["status"], "pass", result["errors"])
+AssertionError: 'fail' != 'pass'
+- fail
++ pass
+ : ['queue must recommend SYN-00, DOMAIN-00, gated HUNT-TO-MAIN-PROMOTION-REVIEW, or the dev/IA promotion repair lane', 'queue must mark HUNT-REMEDIATION completed']
+
+======================================================================
+FAIL: test_script_entrypoint_passes (tests.operations.test_hunt_remediation.HuntRemediationTests.test_script_entrypoint_passes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Projects\Eureka\eureka\tests\operations\test_hunt_remediation.py", line 51, in test_script_entrypoint_passes
+    self.assertEqual(completed.returncode, 0, completed.stderr + completed.stdout)
+AssertionError: 1 != 0 : {
+  "deployment_performed": false,
+  "download_install_execute_performed": false,
+  "errors": [
+    "queue must recommend SYN-00, DOMAIN-00, gated HUNT-TO-MAIN-PROMOTION-REVIEW, or the dev/IA promotion repair lane",
+    "queue must mark HUNT-REMEDIATION completed"
+  ],
+  "extraction_executed": false,
+  "master_index_mutated": false,
+  "model_provider_used": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "schema_version": "hunt_remediation_validation.v0",
+  "site_dist_mutated": false,
+  "source_probe_executed": false,
+  "status": "fail",
+  "task": "HUNT-REMEDIATION",
+  "warnings": []
+}
+
+
+======================================================================
+FAIL: test_continuation_validator_passes (tests.operations.test_hunt_remediation_continue.HuntRemediationContinueTests.test_continuation_validator_passes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Projects\Eureka\eureka\tests\operations\test_hunt_remediation_continue.py", line 13, in test_continuation_validator_passes
+    self.assertEqual(result["status"], "pass", result["errors"])
+AssertionError: 'fail' != 'pass'
+- fail
++ pass
+ : ['previous HUNT remediation validator must still pass', 'queue must recommend SYN-00, DOMAIN-00, gated HUNT-TO-MAIN-PROMOTION-REVIEW, or the dev/IA promotion repair lane', 'queue must mark HUNT-REMEDIATION-CONTINUE completed']
+
+======================================================================
+FAIL: test_script_entrypoint_passes (tests.operations.test_hunt_remediation_continue.HuntRemediationContinueTests.test_script_entrypoint_passes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Projects\Eureka\eureka\tests\operations\test_hunt_remediation_continue.py", line 43, in test_script_entrypoint_passes
+    self.assertEqual(completed.returncode, 0, completed.stderr + completed.stdout)
+AssertionError: 1 != 0 : {
+  "deployment_performed": false,
+  "download_install_execute_performed": false,
+  "errors": [
+    "previous HUNT remediation validator must still pass",
+    "queue must recommend SYN-00, DOMAIN-00, gated HUNT-TO-MAIN-PROMOTION-REVIEW, or the dev/IA promotion repair lane",
+    "queue must mark HUNT-REMEDIATION-CONTINUE completed"
+  ],
+  "extraction_executed": false,
+  "master_index_mutated": false,
+  "model_provider_used": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "schema_version": "hunt_remediation_continue_validation.v0",
+  "site_dist_mutated": false,
+  "source_probe_executed": false,
+  "status": "fail",
+  "task": "HUNT-REMEDIATION-CONTINUE",
+  "warnings": []
+}
+
+
+======================================================================
+FAIL: test_validator_demo_and_cli_pass (tests.operations.test_hunt_replay_scripts.HuntReplayScriptsTests.test_validator_demo_and_cli_pass)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Projects\Eureka\eureka\tests\operations\test_hunt_replay_scripts.py", line 20, in test_validator_demo_and_cli_pass
+    self.assertEqual(validator.returncode, 0, validator.stderr + validator.stdout)
+AssertionError: 1 != 0 : {
+  "api_routes_added": true,
+  "blocked_ai_model_remained_blocked": true,
+  "blocked_extraction_remained_blocked": true,
+  "blocked_source_probe_remained_blocked": true,
+  "deployment_performed": false,
+  "download_install_execute_performed": false,
+  "errors": [
+    "queue index must point to HUNT-11"
+  ],
+  "external_network_used": false,
+  "extraction_executed": false,
+  "invalid_token_rejected": true,
+  "lan_replay_run_blocked": true,
+  "master_index_mutated": false,
+  "missing_token_rejected": true,
+  "model_provider_used": false,
+  "plan_only_passed": true,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "replay_diff_present": true,
+  "replay_local_passed": true,
+  "schema_version": "hunt_replay_validation.v0",
+  "site_dist_mutated": false,
+  "source_probe_executed": false,
+  "status": "fail",
+  "task": "HUNT-10",
+  "ui_routes_added": true,
+  "validator_added": true,
+  "verify_existing_passed": true,
+  "warnings": []
+}
+
+
+======================================================================
+FAIL: test_validator_script_passes_with_disposed_warnings (tests.operations.test_search_hunt_closeout.SearchHuntCloseoutTests.test_validator_script_passes_with_disposed_warnings)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Projects\Eureka\eureka\tests\operations\test_search_hunt_closeout.py", line 37, in test_validator_script_passes_with_disposed_warnings
+    self.assertEqual(completed.returncode, 0, completed.stderr + completed.stdout)
+AssertionError: 1 != 0 : {
+  "audit_status": "pass",
+  "deployment_performed": false,
+  "download_install_execute_performed": false,
+  "errors": [
+    "queue current_recommended_task must be SYN-00, DOMAIN-00, gated HUNT-TO-MAIN-PROMOTION-REVIEW, or an accepted post-HUNT Workbench/IA bridge handoff"
+  ],
+  "extraction_executed": false,
+  "f0_can_resume": true,
+  "hard_blockers_remaining": 0,
+  "hunt_track_complete": true,
+  "master_index_mutated": false,
+  "model_provider_used": false,
+  "production_readiness_claimed": false,
+  "public_launch_readiness_claimed": false,
+  "schema_version": "search_hunt_closeout_validation.v0",
+  "site_dist_mutated": false,
+  "source_probe_executed": false,
+  "status": "fail",
+  "syn_can_start": true,
+  "task": "HUNT-12",
+  "warnings": [
+    "python scripts/validate_ai_escalation_gate.py: WARN historical queue-sensitive validator after HUNT closeout",
+    "python scripts/validate_hunt_replay.py: WARN historical queue-sensitive validator after HUNT closeout",
+    "python scripts/validate_agent_research_task_contract.py: WARN historical queue-sensitive validator after HUNT closeout",
+    "python scripts/validate_search_hunt_workbench_integration.py: WARN historical queue-sensitive validator after HUNT closeout",
+    "python scripts/validate_background_hunt_runner.py: WARN historical queue-sensitive validator after HUNT closeout",
+    "python scripts/validate_hunt_to_workunits.py: WARN historical queue-sensitive validator after HUNT closeout",
+    "python scripts/validate_hunt_to_search_need.py: WARN historical queue-sensitive validator after HUNT closeout",
+    "python scripts/validate_search_hunt_exhaustion.py: WARN historical queue-sensitive validator after HUNT closeout",
+    "python scripts/validate_search_hunt_commands.py: WARN historical queue-sensitive validator after HUNT closeout",
+    "python scripts/validate_search_hunt_ui.py: WARN historical queue-sensitive validator after HUNT closeout",
+    "python scripts/validate_search_hunt_runtime.py: WARN historical queue-sensitive validator after HUNT closeout",
+    "python scripts/validate_search_hunt_track.py: WARN historical queue-sensitive validator after HUNT closeout",
+    "python scripts/check_generated_artifact_cleanliness.py --check --json: WARN generated-artifact drift expected before commit"
+  ],
+  "warnings_remaining": 0
+}
+
+
+----------------------------------------------------------------------
+Ran 17 tests in 37.665s
+
+FAILED (failures=8)

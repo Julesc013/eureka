@@ -11,6 +11,9 @@ conventional_root_files = [
   "CODE_OF_CONDUCT.md",
   "CONTRIBUTING.md",
   "Dockerfile",
+  "LICENSE-SUMMARY.md",
+  "LICENSE.md",
+  "NOTICE.md",
   "README.md",
   "SECURITY.md",
 ]

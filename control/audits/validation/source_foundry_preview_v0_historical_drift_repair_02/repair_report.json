@@ -1,0 +1,41 @@
+{
+  "schema_version": "source_foundry_historical_drift_repair_report.v0",
+  "status": "READY_FOR_EXTERNAL_FULL_DISCOVERY_RERUN",
+  "task_id": "SOURCE-FOUNDRY-PREVIEW-V0-HISTORICAL-VALIDATOR-DRIFT-REPAIR-02",
+  "full_discovery_run_inside_ai": false,
+  "main_promotion_performed": false,
+  "live_queue_unchanged": true,
+  "current_product_task": "REVIEW-IA-CANDIDATES-BATCH-00",
+  "repairs": {
+    "hunt_successor_semantics": "repaired",
+    "local_successor_semantics": "repaired",
+    "dev_to_main_successor_semantics": "repaired",
+    "repo_layout_canon": "repaired",
+    "public_alpha_defer": "repaired",
+    "ia_readiness": "repaired",
+    "staging_obsolete_assertion": "repaired"
+  },
+  "classification_totals": {
+    "historical_queue_expectation_drift": 27,
+    "historical_validator_drift": 20,
+    "stale_fixture_or_golden": 0,
+    "environment_or_harness_error": 0,
+    "test_isolation_or_order_dependency": 2,
+    "obsolete_test_candidate": 1,
+    "genuine_product_regression": 0,
+    "unknown_requires_investigation": 0
+  },
+  "targeted_lanes_green": true,
+  "external_full_discovery_rerun_justified": true,
+  "external_run_id": "source_foundry_preview_v0_post_historical_repair_02",
+  "truth_and_public_posture": {
+    "reviewed_records_created": false,
+    "reviewed_master_mutation": false,
+    "public_index_mutation": false,
+    "provider_network_calls": false,
+    "downloads_file_fetch": false,
+    "public_exposure": "paused",
+    "license_posture": "unchanged"
+  },
+  "recommended_next_action": "run the single new external full-discovery rerun"
+}

@@ -1,0 +1,27 @@
+test_audit_pack_exists_and_records_planning_only (tests.operations.test_local_quarantine_staging_model.LocalQuarantineStagingModelOperationTestCase.test_audit_pack_exists_and_records_planning_only) ... ok
+test_docs_record_no_staging_runtime_and_no_impact (tests.operations.test_local_quarantine_staging_model.LocalQuarantineStagingModelOperationTestCase.test_docs_record_no_staging_runtime_and_no_impact) ... ok
+test_gitignore_blocks_future_local_state_roots_without_creating_them (tests.operations.test_local_quarantine_staging_model.LocalQuarantineStagingModelOperationTestCase.test_gitignore_blocks_future_local_state_roots_without_creating_them) ... ok
+test_inventory_files_exist_and_parse (tests.operations.test_local_quarantine_staging_model.LocalQuarantineStagingModelOperationTestCase.test_inventory_files_exist_and_parse) ... ok
+test_no_runtime_staging_tool_added (tests.operations.test_local_quarantine_staging_model.LocalQuarantineStagingModelOperationTestCase.test_no_runtime_staging_tool_added) ... FAIL
+
+======================================================================
+FAIL: test_no_runtime_staging_tool_added (tests.operations.test_local_quarantine_staging_model.LocalQuarantineStagingModelOperationTestCase.test_no_runtime_staging_tool_added)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Projects\Eureka\eureka\tests\operations\test_local_quarantine_staging_model.py", line 104, in test_no_runtime_staging_tool_added
+    self.assertEqual(suspicious_scripts, [])
+AssertionError: Lists differ: ['eureka_external_staging.py', 'eureka_loc[39 chars].py'] != []
+
+First list contains 3 additional elements.
+First extra element 0:
+'eureka_external_staging.py'
+
++ []
+- ['eureka_external_staging.py',
+-  'eureka_local_machine_staging.py',
+-  'eureka_staging.py']
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.004s
+
+FAILED (failures=1)

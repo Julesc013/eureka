@@ -89,19 +89,37 @@ class LocalQuarantineStagingModelOperationTestCase(unittest.TestCase):
                 self.assertIn("public search", text)
                 self.assertIn("master index", text)
 
-    def test_no_runtime_staging_tool_added(self) -> None:
+    def test_governed_staging_tools_remain_local_and_non_mutating(self) -> None:
         self.assertTrue(VALIDATOR.exists())
-        allowed_validators = {
+        allowed_scripts = {
+            "eureka_external_staging.py",
+            "eureka_local_machine_staging.py",
+            "eureka_staging.py",
             "validate_local_quarantine_staging_model.py",
             "validate_local_staging_manifest.py",
             "validate_staging_report_path_contract.py",
         }
-        suspicious_scripts = [
+        staging_scripts = {
             path.name
             for path in (REPO_ROOT / "scripts").glob("*staging*.py")
-            if path.name not in allowed_validators
-        ]
-        self.assertEqual(suspicious_scripts, [])
+        }
+        self.assertTrue(staging_scripts.issubset(allowed_scripts))
+
+        model = json.loads(MODEL.read_text(encoding="utf-8"))
+        report = json.loads(AUDIT_REPORT.read_text(encoding="utf-8"))
+        path_policy = json.loads(PATH_POLICY.read_text(encoding="utf-8"))
+        self.assertFalse(model["staging_runtime_implemented"])
+        self.assertFalse(report["staging_runtime_implemented"])
+        self.assertEqual(model["default_visibility"], "local_private")
+        self.assertEqual(model["default_search_impact"], "none")
+        self.assertEqual(model["default_master_index_impact"], "none")
+        self.assertFalse(model["master_index_policy"]["submission_performed_by_staging"])
+        self.assertFalse(model["staged_pack_inspector"]["creates_staged_state"])
+        self.assertFalse(model["staged_pack_inspector"]["mutates_public_search"])
+        self.assertFalse(model["staged_pack_inspector"]["mutates_local_index"])
+        self.assertFalse(model["staged_pack_inspector"]["mutates_master_index"])
+        self.assertIn("site/dist", path_policy["prohibited_roots"])
+        self.assertIn("runtime", path_policy["prohibited_roots"])
 
 
 if __name__ == "__main__":

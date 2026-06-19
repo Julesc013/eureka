@@ -336,6 +336,16 @@ def _is_historical_allowed(path: Path) -> bool:
 def _is_allowed_legacy_reference_line(line: str) -> bool:
     stripped = line.strip()
     lower = stripped.casefold()
+    if LEGACY_HYPHEN_NAME in lower and any(
+        phrase in lower
+        for phrase in (
+            "third-party material",
+            "third-party notice",
+            "third-party license",
+            "third-party dependency",
+        )
+    ):
+        return True
     if LEGACY_EXTERNAL_ROOT_NAME + "/**" in stripped:
         return True
     if any(word in lower for word in ("forbidden", "prohibited", "must not")):

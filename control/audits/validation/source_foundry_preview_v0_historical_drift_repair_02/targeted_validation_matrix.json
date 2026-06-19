@@ -1,0 +1,31 @@
+{
+  "schema_version": "source_foundry_historical_drift_targeted_validation_matrix.v0",
+  "status": "targeted_lanes_green",
+  "full_discovery_run_inside_ai": false,
+  "local_lane_note": "The full LOCAL aggregate timed out under parallel pressure; split targeted modules passed.",
+  "results": [
+    {"group": "runtime_leakage", "command": "python scripts/validate_runtime_architecture_leakage.py --json", "result": "PASS"},
+    {"group": "runtime_leakage", "command": "python -m unittest tests.operations.test_legacy_runtime_leakage_remediation tests.operations.test_runtime_architecture_leakage -v", "result": "PASS"},
+    {"group": "local_worker", "command": "python scripts/validate_local_worker_runner.py --json", "result": "PASS"},
+    {"group": "local_worker", "command": "python -m unittest tests.operations.test_local_worker_scripts -v", "result": "PASS"},
+    {"group": "hunt", "command": "python -m unittest tests.operations.test_search_hunt_track tests.operations.test_search_hunt_scripts tests.operations.test_search_hunt_ui_scripts tests.operations.test_search_hunt_command_scripts tests.operations.test_search_hunt_exhaustion_scripts tests.operations.test_search_need_scripts tests.operations.test_need_to_workunit_scripts tests.operations.test_background_hunt_runner_scripts -v", "result": "PASS"},
+    {"group": "hunt_extras", "command": "python -m unittest tests.operations.test_agent_research_scripts tests.operations.test_ai_escalation_scripts tests.operations.test_hunt_remediation tests.operations.test_hunt_remediation_continue tests.operations.test_hunt_replay_scripts tests.operations.test_search_hunt_closeout -v", "result": "PASS"},
+    {"group": "local", "command": "python -m unittest tests.operations.test_local_appliance_track tests.operations.test_local_instance_policy tests.operations.test_local_instance_bootstrap -v", "result": "PASS"},
+    {"group": "local", "command": "python -m unittest tests.operations.test_local_instance_migration_guard tests.operations.test_local_http_service_scripts tests.operations.test_local_runtime_composition_scripts -v", "result": "PASS"},
+    {"group": "local", "command": "python -m unittest tests.operations.test_local_workbench_scripts tests.operations.test_local_lan_policy_scripts tests.operations.test_local_lan_smoke_scripts -v", "result": "PASS"},
+    {"group": "local", "command": "python -m unittest tests.operations.test_clean_machine_smoke tests.operations.test_workunit_queue_scripts -v", "result": "PASS"},
+    {"group": "local_extras", "command": "python -m unittest tests.operations.test_local_auto_test_scripts -v", "result": "PASS"},
+    {"group": "local_extras", "command": "python -m unittest tests.operations.test_local_workbench_page_hardening_scripts -v", "result": "PASS"},
+    {"group": "local_extras", "command": "python -m unittest tests.operations.test_local_review_rebuild_smoke -v", "result": "PASS"},
+    {"group": "dev_to_main", "command": "python -m unittest tests.operations.test_dev_to_main_promotion_03 tests.operations.test_dev_to_main_promotion_04 tests.scripts.test_validate_dev_to_main_promotion_03 tests.scripts.test_validate_dev_to_main_promotion_04 -v", "result": "PASS"},
+    {"group": "repo_layout_canon", "command": "python -m unittest tests.scripts.test_validate_repo_structure_canon tests.scripts.test_validate_repository_layout -v", "result": "PASS"},
+    {"group": "public_alpha_defer", "command": "python scripts/validate_public_alpha_launch_defer.py --json", "result": "PASS"},
+    {"group": "public_alpha_defer", "command": "python -m unittest tests.operations.test_public_alpha_launch_defer -v", "result": "PASS"},
+    {"group": "ia_readiness", "command": "python scripts/validate_ia_readiness_polish.py --json", "result": "PASS"},
+    {"group": "staging_assertion", "command": "python -m unittest tests.operations.test_local_quarantine_staging_model -v", "result": "PASS"},
+    {"group": "architecture", "command": "python scripts/check_architecture_boundaries.py", "result": "PASS"},
+    {"group": "public_alpha_readonly", "command": "python scripts/validate_public_alpha_readonly.py", "result": "PASS"},
+    {"group": "snapshot_relay", "command": "python scripts/validate_snapshot_relay.py", "result": "PASS"},
+    {"group": "diff_whitespace", "command": "git diff --check", "result": "PASS"}
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "archive_org_wide_metadata_search_required": true,
+  "deferred_task": "PUBLIC-ALPHA-LAUNCH-00",
+  "deployment_performed": false,
+  "errors": [
+    "queue current recommended task must be active discovery or a later blocked repair/readiness task"
+  ],
+  "public_launch_performed": false,
+  "recommended_next_task": "ACTIVE-DISCOVERY-AND-CANDIDATE-INTAKE-00",
+  "schema_version": "public_alpha_launch_defer_validation.v0",
+  "status": "invalid",
+  "task": "PUBLIC-ALPHA-LAUNCH-DEFER-00"
+}

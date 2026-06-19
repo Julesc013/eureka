@@ -1,0 +1,9 @@
+{
+  "schema_version": "source_foundry_historical_drift_unresolved_items.v0",
+  "status": "none_targeted",
+  "targeted_unknowns_remaining": 0,
+  "genuine_regressions_remaining": 0,
+  "targeted_failures_remaining": 0,
+  "external_full_discovery_remaining": true,
+  "main_promotion_blocked_until_external_green": true
+}

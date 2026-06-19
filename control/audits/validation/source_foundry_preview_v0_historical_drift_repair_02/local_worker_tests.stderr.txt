@@ -1,0 +1,16 @@
+test_validator_passes (tests.operations.test_local_worker_scripts.LocalWorkerScriptTests.test_validator_passes) ... FAIL
+test_worker_runner_cli_and_demo (tests.operations.test_local_worker_scripts.LocalWorkerScriptTests.test_worker_runner_cli_and_demo) ... ok
+test_worker_runner_requires_instance (tests.operations.test_local_worker_scripts.LocalWorkerScriptTests.test_worker_runner_requires_instance) ... ok
+
+======================================================================
+FAIL: test_validator_passes (tests.operations.test_local_worker_scripts.LocalWorkerScriptTests.test_validator_passes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Projects\Eureka\eureka\tests\operations\test_local_worker_scripts.py", line 63, in test_validator_passes
+    self.assertIn(payload["status"], {"pass", "pass_with_warnings"})
+AssertionError: 'fail' not found in {'pass_with_warnings', 'pass'}
+
+----------------------------------------------------------------------
+Ran 3 tests in 123.554s
+
+FAILED (failures=1)
