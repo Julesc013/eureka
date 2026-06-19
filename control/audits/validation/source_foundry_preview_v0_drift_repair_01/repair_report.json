@@ -1,0 +1,37 @@
+{
+  "schema_version": "eureka.source_foundry_preview_drift_repair_report.v0",
+  "generated_at": "2026-06-19T00:00:00Z",
+  "status": "BLOCKED_GENUINE_REGRESSION",
+  "current_head": "7e1a4bcdc38427c65c4bcffdbca541da748a2a08",
+  "origin_dev": "7e1a4bcdc38427c65c4bcffdbca541da748a2a08",
+  "origin_main": "3b770ab9a9f6a99572f66c3ab2b89fb4e6fddf31",
+  "dev_ahead_behind_main": {
+    "behind": 0,
+    "ahead": 19
+  },
+  "unknown_groups_investigated": [
+    "runtime_leakage_safety_unknown",
+    "local_worker_validator_unknown_or_slow"
+  ],
+  "classification_totals_after_this_pass": {
+    "historical_queue_expectation_drift": 27,
+    "historical_validator_drift": 20,
+    "obsolete_test_candidate": 1,
+    "genuine_product_regression": 2,
+    "unknown_requires_investigation": 0
+  },
+  "targeted_repairs_applied": [],
+  "targeted_lanes_green": false,
+  "external_full_discovery_rerun_justified": false,
+  "external_full_discovery_handoff_prepared": false,
+  "main_promotion_posture": "blocked",
+  "public_safety_posture": "unchanged; public exposure remains paused",
+  "truth_index_mutation_posture": "unchanged; no reviewed truth or index mutation authorized",
+  "recommended_next_task": "SOURCE-FOUNDRY-RUNTIME-LEAKAGE-REPAIR-00",
+  "notes": [
+    "Local-worker runtime behavior passed, but its validator still expects old LOCAL-09/LOCAL-10 queue state.",
+    "Runtime leakage repair requires separate authority because runtime product paths are protected in this validation-drift task.",
+    "No full unittest discovery was run inside this session."
+  ]
+}
+

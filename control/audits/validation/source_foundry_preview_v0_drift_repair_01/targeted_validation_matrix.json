@@ -1,0 +1,44 @@
+{
+  "schema_version": "eureka.source_foundry_preview_drift_repair_targeted_validation_matrix.v0",
+  "generated_at": "2026-06-19T00:00:00Z",
+  "lanes": [
+    {
+      "group": "runtime_leakage_safety_unknown",
+      "command": "python scripts/validate_runtime_architecture_leakage.py --json",
+      "result": "fail",
+      "classification": "genuine_product_regression",
+      "next_action": "SOURCE-FOUNDRY-RUNTIME-LEAKAGE-REPAIR-00"
+    },
+    {
+      "group": "runtime_leakage_safety_unknown",
+      "command": "python -m unittest tests.operations.test_legacy_runtime_leakage_remediation tests.operations.test_runtime_architecture_leakage -v",
+      "result": "fail",
+      "tests_run": 29,
+      "failures": 2,
+      "elapsed_seconds": 234.488,
+      "classification": "genuine_product_regression",
+      "next_action": "SOURCE-FOUNDRY-RUNTIME-LEAKAGE-REPAIR-00"
+    },
+    {
+      "group": "local_worker_validator_unknown_or_slow",
+      "command": "python scripts/validate_local_worker_runner.py --json",
+      "result": "fail",
+      "elapsed_seconds": 121.278,
+      "classification": "historical_queue_expectation_drift",
+      "next_action": "repair stale queue successor handling after runtime leakage blocker"
+    },
+    {
+      "group": "local_worker_validator_unknown_or_slow",
+      "command": "python -m unittest tests.operations.test_local_worker_scripts -v",
+      "result": "fail",
+      "tests_run": 3,
+      "failures": 1,
+      "elapsed_seconds": 124.107,
+      "classification": "historical_queue_expectation_drift",
+      "next_action": "repair stale queue successor handling after runtime leakage blocker"
+    }
+  ],
+  "all_targeted_lanes_green": false,
+  "external_rerun_justified": false
+}
+

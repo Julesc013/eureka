@@ -1,0 +1,31 @@
+{
+  "schema_version": "eureka.source_foundry_preview_drift_repair_unresolved_items.v0",
+  "generated_at": "2026-06-19T00:00:00Z",
+  "status": "BLOCKED_GENUINE_REGRESSION",
+  "blockers": [
+    {
+      "id": "runtime_leakage_safety_unknown",
+      "classification": "genuine_product_regression",
+      "reason": "runtime leakage gate reports 52 new unallowlisted production-path findings and targeted runtime leakage tests fail",
+      "required_next_task": "SOURCE-FOUNDRY-RUNTIME-LEAKAGE-REPAIR-00"
+    },
+    {
+      "id": "local_worker_validator_unknown_or_slow",
+      "classification": "historical_queue_expectation_drift",
+      "reason": "validator expects old LOCAL-09/LOCAL-10 queue posture; runtime behavior checks pass",
+      "required_next_task": "repair stale queue successor handling after runtime leakage blocker"
+    }
+  ],
+  "historical_drift_unrepaired": [
+    "hunt_historical_queue_expectation_drift",
+    "local_historical_queue_expectation_drift",
+    "dev_to_main_promotion_state_expectations",
+    "repo_layout_canon_historical_validator_drift",
+    "public_alpha_defer_queue_expectation_drift",
+    "ia_historical_lane_expectation_drift",
+    "local_quarantine_staging_obsolete_no_staging_assertion"
+  ],
+  "external_full_discovery_rerun_allowed": false,
+  "main_promotion_allowed": false
+}
+

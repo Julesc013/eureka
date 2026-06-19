@@ -1,0 +1,81 @@
+{
+  "schema_version": "eureka.source_foundry_preview_drift_repair_unknowns.v0",
+  "generated_at": "2026-06-19T00:00:00Z",
+  "status": "BLOCKED_GENUINE_REGRESSION",
+  "groups": [
+    {
+      "group": "runtime_leakage_safety_unknown",
+      "classification": "genuine_product_regression",
+      "validator_command": "python scripts/validate_runtime_architecture_leakage.py --json",
+      "validator_status": "invalid",
+      "gate_status": "fail",
+      "new_unallowlisted_production_path_findings": 52,
+      "blocker_count": 36,
+      "high_count": 16,
+      "runtime_modules_imported": false,
+      "network_calls_made": false,
+      "model_provider_calls_made": false,
+      "representative_paths": [
+        "runtime/local/staging_mvp.py",
+        "runtime/local/search_mvp.py",
+        "runtime/local/artifact_gate_seed.py",
+        "runtime/local/external_staging_mvp.py",
+        "runtime/local/ia_candidate_review_batch.py",
+        "runtime/local/local_machine_public_exposure.py",
+        "runtime/local/public_alpha_mvp.py",
+        "runtime/local/review_materialization.py",
+        "runtime/local/search_index.py",
+        "runtime/local/workbench_mvp.py"
+      ],
+      "representative_terms": [
+        "BUNDLE",
+        "MVP",
+        "truth_boundary",
+        "fixture_only",
+        "agent",
+        "AIDE"
+      ],
+      "targeted_test_command": "python -m unittest tests.operations.test_legacy_runtime_leakage_remediation tests.operations.test_runtime_architecture_leakage -v",
+      "targeted_test_result": {
+        "exit_code": 1,
+        "tests_run": 29,
+        "failures": 2,
+        "elapsed_seconds": 234.488
+      },
+      "repair": "blocked; runtime product paths are protected by this validation-drift task",
+      "separate_task_required": "SOURCE-FOUNDRY-RUNTIME-LEAKAGE-REPAIR-00"
+    },
+    {
+      "group": "local_worker_validator_unknown_or_slow",
+      "classification": "historical_queue_expectation_drift",
+      "validator_command": "python scripts/validate_local_worker_runner.py --json",
+      "validator_status": "fail",
+      "validator_exit_code": 1,
+      "elapsed_seconds": 121.278,
+      "errors": [
+        "queue index must point to LOCAL-10",
+        "queue index must mark LOCAL-09 completed",
+        "queue index must include queued LOCAL-10",
+        "queue index must keep F0 deferred until LOCAL-14"
+      ],
+      "warnings": [
+        "runtime leakage gate fails with pre-existing findings"
+      ],
+      "runtime_behavior_passed": true,
+      "external_network_used": false,
+      "production_readiness_claimed": false,
+      "public_launch_readiness_claimed": false,
+      "targeted_test_command": "python -m unittest tests.operations.test_local_worker_scripts -v",
+      "targeted_test_result": {
+        "exit_code": 1,
+        "tests_run": 3,
+        "failures": 1,
+        "elapsed_seconds": 124.107
+      },
+      "repair": "deferred; shared historical queue progress helper is not currently authorized by the committed repair packet"
+    }
+  ],
+  "external_full_discovery_rerun_justified": false,
+  "recommended_next_task": "SOURCE-FOUNDRY-RUNTIME-LEAKAGE-REPAIR-00"
+}
+
