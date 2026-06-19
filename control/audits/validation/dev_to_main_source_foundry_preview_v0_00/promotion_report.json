@@ -1,0 +1,61 @@
+{
+  "schema_version": "dev_to_main_source_foundry_preview_v0_promotion_report.v0",
+  "task_id": "DEV-TO-MAIN-SOURCE-FOUNDRY-PREVIEW-V0-00",
+  "generated_at": "2026-06-19T10:47:28Z",
+  "status": "PASS",
+  "milestone": "Source Foundry Preview v0",
+  "promotion_wording": "Source Foundry Preview v0 is functional and validated. IA candidates remain unreviewed or evidence-requested. No reviewed IA truth has been created. Public exposure remains paused.",
+  "promotion_method": "fast_forward_only",
+  "source_branch": "dev",
+  "target_branch": "main",
+  "origin_main_before": "3b770ab9a9f6a99572f66c3ab2b89fb4e6fddf31",
+  "promoted_checkpoint": "f925d18d89dc1ed33c54b170d6d0408b6539f360",
+  "origin_main_after_checkpoint_fast_forward": "f925d18d89dc1ed33c54b170d6d0408b6539f360",
+  "origin_dev_after_checkpoint_fast_forward": "f925d18d89dc1ed33c54b170d6d0408b6539f360",
+  "origin_main_origin_dev_after_checkpoint_fast_forward": "0 0",
+  "promoted_commit_count_before_report_commit": 30,
+  "promoted_changed_path_count_before_report_commit": 226,
+  "validation_evidence": {
+    "external_full_discovery_run_id": "source_foundry_preview_v0_post_historical_repair_02",
+    "external_full_discovery_tested_commit": "bad6bf6d954cc4f497079e97cab946b11dde404d",
+    "external_full_discovery_ingest_commit": "f925d18d89dc1ed33c54b170d6d0408b6539f360",
+    "tests_run": 5793,
+    "failures": 0,
+    "errors": 0,
+    "exit_code": 0,
+    "ingest_report": "control/audits/validation/source_foundry_preview_v0_full_discovery_ingest_00/full_discovery_ingest_report.json"
+  },
+  "focused_guardrails": {
+    "check_git_task_state": "PASS_WITH_BRANCH_NAME_WARNING",
+    "check_full_discovery": "PASS",
+    "check_architecture_boundaries": "PASS",
+    "check_generated_artifact_cleanliness": "PASS",
+    "validate_runtime_architecture_leakage": "PASS",
+    "validate_public_alpha_readonly": "PASS",
+    "validate_snapshot_relay": "PASS",
+    "git_diff_check": "PASS"
+  },
+  "safety": {
+    "reviewed_ia_truth_created": false,
+    "reviewed_records_created": false,
+    "reviewed_master_mutation": false,
+    "public_index_mutation": false,
+    "candidate_index_store_mutation": false,
+    "evidence_ledger_store_mutation": false,
+    "review_decisions_changed": false,
+    "snapshot_publication": false,
+    "public_exposure": "paused",
+    "public_launch": false,
+    "production_readiness_claim": false,
+    "license_posture": "unchanged",
+    "force_push_performed": false,
+    "history_rewrite_performed": false
+  },
+  "audit_packet_posture": {
+    "docs_control_descendant_of_promoted_checkpoint": true,
+    "product_runtime_behavior_changed_by_report": false,
+    "main_sync_for_audit_report_required": true
+  },
+  "recommended_next_task": "HUMAN-LAST-E2E-REFERENCE-BUILD-00"
+}
+
