@@ -72,6 +72,7 @@ The runtime leakage blocker is green, but repeated full-discovery failures still
 - `scripts/check_generated_artifact_cleanliness.py`
 - `scripts/validate_public_alpha_readonly.py`
 - `scripts/validate_snapshot_relay.py`
+- `contracts/repo/root_allowlist.contract.toml`
 - `control/inventory/tests/**`
 
 ## FORBIDDEN_PATHS
@@ -83,7 +84,7 @@ The runtime leakage blocker is green, but repeated full-discovery failures still
 - `.local/**`
 - `.cache/**`
 - `runtime/**`
-- `contracts/**`
+- `contracts/**` except `contracts/repo/root_allowlist.contract.toml`
 - `surfaces/**`
 - `site/**`
 - `native/**`

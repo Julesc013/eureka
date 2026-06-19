@@ -55,10 +55,11 @@ allowed_scope:
   - scripts/check_generated_artifact_cleanliness.py
   - scripts/validate_public_alpha_readonly.py
   - scripts/validate_snapshot_relay.py
+  - contracts/repo/root_allowlist.contract.toml
   - control/inventory/tests/**
 forbidden_scope:
   - runtime/**
-  - contracts/**
+  - contracts/** except contracts/repo/root_allowlist.contract.toml
   - surfaces/**
   - site/**
   - native/**
