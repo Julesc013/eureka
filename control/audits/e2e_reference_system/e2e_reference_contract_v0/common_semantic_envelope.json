@@ -1,0 +1,25 @@
+{
+  "schema_version": "eureka.e2e_reference_common_semantic_envelope.v0",
+  "profile_status": "minimal_profile_not_base_schema",
+  "fields": [
+    "schema_version",
+    "semantic_type",
+    "object_id",
+    "created_at_or_observed_at_or_decided_at",
+    "authority_level",
+    "provenance_or_source_refs",
+    "parent_run_or_workunit_refs",
+    "semantic_hash",
+    "privacy_classification",
+    "synthetic_or_test_only",
+    "extension_versioning_policy"
+  ],
+  "separations": {
+    "immutable_semantic_identity": true,
+    "mutable_lifecycle_state": true,
+    "projection_metadata": true,
+    "control_audit_metadata": true,
+    "aide_queue_ids_in_product_contracts": false
+  }
+}
+

@@ -1,0 +1,21 @@
+{
+  "schema_version": "eureka.e2e_reference_contract_gap_decisions.v0",
+  "decisions": [
+    {"concept": "QueryIntent", "decision": "no_gap_use_existing_plus_profile"},
+    {"concept": "ResolutionRun", "decision": "no_gap_use_existing"},
+    {"concept": "WorkUnit", "decision": "no_gap_use_existing_plus_profile"},
+    {"concept": "SourceObservation", "decision": "no_gap_use_existing"},
+    {"concept": "EvidenceSummary", "decision": "projection_only_gap"},
+    {"concept": "Candidate", "decision": "no_gap_use_existing_plus_profile"},
+    {"concept": "PreviewRecord", "decision": "projection_only_gap"},
+    {"concept": "ReviewItem", "decision": "no_gap_use_existing_plus_profile"},
+    {"concept": "ReviewDecision", "decision": "no_gap_use_existing"},
+    {"concept": "ReviewedRecord", "decision": "no_gap_use_existing_plus_profile"},
+    {"concept": "IndexDelta", "decision": "lifecycle_gap"},
+    {"concept": "SnapshotManifest", "decision": "no_gap_use_existing_plus_profile"}
+  ],
+  "new_formal_contracts_added": [],
+  "runner_blocking_gaps_remaining": [],
+  "requires_future_runtime_evidence": ["PreviewRecord schema need", "IndexDelta shared delta schema need"]
+}
+

@@ -1,0 +1,11 @@
+{
+  "schema_version": "eureka.e2e_reference_id_and_hash_profile.v0",
+  "canonical_hash_algorithm": "sha256",
+  "canonical_serialization": "json_utf8_sorted_keys_no_insignificant_whitespace",
+  "excluded_from_semantic_hash_by_default": ["created_at", "observed_at", "decided_at", "generated_at", "occurred_at"],
+  "namespace_policy": ["synthetic:e2e-reference", "source:<source_family>", "review:local", "snapshot:local"],
+  "legacy_compatibility": "persisted legacy IDs remain resolvable through aliases or reference maps",
+  "synthetic_namespace": "synthetic:e2e-reference",
+  "bulk_migration_in_this_task": false
+}
+

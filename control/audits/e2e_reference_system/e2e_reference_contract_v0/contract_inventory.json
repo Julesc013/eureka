@@ -1,0 +1,167 @@
+{
+  "schema_version": "eureka.e2e_reference_contract_inventory.v0",
+  "task_id": "E2E-REFERENCE-CONTRACT-00",
+  "status": "PASS_WITH_WARNINGS",
+  "prior_taxonomy": {
+    "r0_03a_product_contract_count": 322,
+    "r0_03a_total_contract_count": 686,
+    "r0_03b_1_moves_completed": 278,
+    "product_behavior_changed": false
+  },
+  "concepts": [
+    {
+      "concept": "QueryIntent",
+      "plane": "Discovery",
+      "authority_class": "implementation_only_no_formal_contract",
+      "artifacts": [
+        {"path": "contracts/api/search_request.v0.json", "artifact_type": "public_api_projection"},
+        {"path": "contracts/search/interaction/search_request_packet.v0.json", "artifact_type": "private_api_projection"},
+        {"path": "contracts/search/interaction/compiled_query_packet.v0.json", "artifact_type": "runtime_command_or_state_contract"},
+        {"path": "contracts/domain/domain_query_hint.v0.json", "artifact_type": "connector_or_provider_contract"},
+        {"path": "contracts/search/query_plan/query_to_source_action_plan.v0.json", "artifact_type": "runtime_command_or_state_contract"}
+      ],
+      "disposition": "map_existing_plus_profile"
+    },
+    {
+      "concept": "ResolutionRun",
+      "plane": "Discovery",
+      "authority_class": "core_semantic_contract",
+      "artifacts": [
+        {"path": "contracts/resolution/run/resolution_run.v0.json", "artifact_type": "core_semantic_contract"},
+        {"path": "contracts/resolution/run/run_event.v0.json", "artifact_type": "runtime_command_or_state_contract"},
+        {"path": "contracts/resolution/run/run_command.v0.json", "artifact_type": "runtime_command_or_state_contract"},
+        {"path": "contracts/surface/ui/contracts/resolution/run.ui_contract.yaml", "artifact_type": "ui_or_view_projection"},
+        {"path": "contracts/view/models/ui/resolution_run.view_model.yaml", "artifact_type": "ui_or_view_projection"},
+        {"path": "contracts/search/interaction/resolution_run_packet.v0.json", "artifact_type": "private_api_projection"}
+      ],
+      "disposition": "retain"
+    },
+    {
+      "concept": "WorkUnit",
+      "plane": "Discovery",
+      "authority_class": "runtime_command_or_state_contract",
+      "artifacts": [
+        {"path": "docs/reference/WORKUNIT_CONTRACT.md", "artifact_type": "core_semantic_contract"},
+        {"path": "docs/reference/WORKUNIT_RESULT_CONTRACT.md", "artifact_type": "runtime_command_or_state_contract"},
+        {"path": "contracts/query/workunit_seed.v0.json", "artifact_type": "runtime_command_or_state_contract"},
+        {"path": "contracts/extraction/extraction_workunit_seed.v0.json", "artifact_type": "runtime_command_or_state_contract"},
+        {"path": "docs/architecture/WORKUNIT_MODEL.md", "artifact_type": "architecture_reference"}
+      ],
+      "disposition": "map_existing_plus_profile"
+    },
+    {
+      "concept": "SourceObservation",
+      "plane": "Evidence",
+      "authority_class": "core_semantic_contract",
+      "artifacts": [
+        {"path": "contracts/runtime/source/observation.v0.json", "artifact_type": "core_semantic_contract"},
+        {"path": "contracts/runtime/normalized_observation.v0.json", "artifact_type": "runtime_command_or_state_contract"},
+        {"path": "contracts/source/action/source_observation_envelope.v0.json", "artifact_type": "connector_or_provider_contract"},
+        {"path": "docs/reference/SOURCE_OBSERVATION_RUNTIME.md", "artifact_type": "architecture_reference"}
+      ],
+      "disposition": "retain"
+    },
+    {
+      "concept": "EvidenceSummary",
+      "plane": "Evidence",
+      "authority_class": "public_api_projection",
+      "artifacts": [
+        {"path": "contracts/evidence/ledger/evidence_ledger_record.v0.json", "artifact_type": "core_semantic_contract"},
+        {"path": "contracts/stores/evidence_candidate_record.v0.json", "artifact_type": "persistence_or_store_contract"},
+        {"path": "contracts/stores/evidence_event.v0.json", "artifact_type": "persistence_or_store_contract"},
+        {"path": "contracts/api/evidence_summary.v0.json", "artifact_type": "public_api_projection"},
+        {"path": "contracts/snapshot/snapshot_evidence_summary.v0.json", "artifact_type": "snapshot_or_distribution_contract"}
+      ],
+      "disposition": "map_internal_to_public_projection"
+    },
+    {
+      "concept": "Candidate",
+      "plane": "Preview",
+      "authority_class": "core_semantic_contract",
+      "artifacts": [
+        {"path": "contracts/runtime/evidence_candidate.v0.json", "artifact_type": "runtime_command_or_state_contract"},
+        {"path": "contracts/candidates/candidate_record.v0.json", "artifact_type": "core_semantic_contract"},
+        {"path": "contracts/candidates/candidate_index_record.v0.json", "artifact_type": "persistence_or_store_contract"},
+        {"path": "contracts/identity/near_miss_candidate.v0.json", "artifact_type": "specialized_candidate_contract"},
+        {"path": "contracts/identity/identity_cluster_candidate.v0.json", "artifact_type": "specialized_candidate_contract"},
+        {"path": "contracts/review/candidate_cluster.v0.json", "artifact_type": "review_projection"}
+      ],
+      "disposition": "common_envelope_plus_typed_payloads"
+    },
+    {
+      "concept": "PreviewRecord",
+      "plane": "Preview",
+      "authority_class": "true_contract_gap",
+      "artifacts": [
+        {"path": "contracts/api/search_result_card.v0.json", "artifact_type": "public_api_projection"},
+        {"path": "contracts/view/result_card/result_card.v0.json", "artifact_type": "ui_or_view_projection"},
+        {"path": "contracts/search/interaction/result_lane_packet.v0.json", "artifact_type": "private_api_projection"},
+        {"path": "contracts/snapshot/snapshot_result_card_section.v0.json", "artifact_type": "snapshot_or_distribution_contract"}
+      ],
+      "disposition": "profile_now_schema_later_if_runner_requires"
+    },
+    {
+      "concept": "ReviewItem",
+      "plane": "Truth",
+      "authority_class": "runtime_command_or_state_contract",
+      "artifacts": [
+        {"path": "contracts/runtime/review_item.v0.json", "artifact_type": "runtime_command_or_state_contract"},
+        {"path": "contracts/stores/review_item_record.v0.json", "artifact_type": "persistence_or_store_contract"},
+        {"path": "contracts/stores/review_queue_store.v0.json", "artifact_type": "persistence_or_store_contract"},
+        {"path": "docs/reference/REVIEW_QUEUE_RUNTIME.md", "artifact_type": "architecture_reference"}
+      ],
+      "disposition": "retain_but_not_truth_decision"
+    },
+    {
+      "concept": "ReviewDecision",
+      "plane": "Truth",
+      "authority_class": "persistence_or_store_contract",
+      "artifacts": [
+        {"path": "contracts/stores/review_decision.v0.json", "artifact_type": "persistence_or_store_contract"},
+        {"path": "contracts/stores/review_event.v0.json", "artifact_type": "persistence_or_store_contract"},
+        {"path": "contracts/index/master/review_decision.v0.json", "artifact_type": "future_master_index_projection"},
+        {"path": "docs/reference/REVIEW_BATCH_DECISION.md", "artifact_type": "architecture_reference"}
+      ],
+      "disposition": "retain"
+    },
+    {
+      "concept": "ReviewedRecord",
+      "plane": "Truth",
+      "authority_class": "core_semantic_contract",
+      "artifacts": [
+        {"path": "contracts/review/limited_reviewed_metadata_record.v0.json", "artifact_type": "core_semantic_contract"},
+        {"path": "contracts/review/live_metadata_reviewed_record.v0.json", "artifact_type": "specialized_reviewed_record_contract"},
+        {"path": "contracts/candidates/reviewed_metadata_record.v0.json", "artifact_type": "candidate_review_projection"},
+        {"path": "contracts/index/master/reviewed_public_record_proposal.v0.json", "artifact_type": "public_index_proposal"},
+        {"path": "docs/reference/REVIEWED_METADATA_RECORD.md", "artifact_type": "architecture_reference"}
+      ],
+      "disposition": "retain_with_non_claims"
+    },
+    {
+      "concept": "IndexDelta",
+      "plane": "Distribution",
+      "authority_class": "persistence_or_store_contract",
+      "artifacts": [
+        {"path": "contracts/stores/public_index_rebuild.v0.json", "artifact_type": "persistence_or_store_contract"},
+        {"path": "contracts/index/master/reviewed_public_index_rebuild.v0.json", "artifact_type": "future_master_index_projection"},
+        {"path": "contracts/local_apply/local_apply_result.v0.json", "artifact_type": "runtime_command_or_state_contract"},
+        {"path": "contracts/snapshot/snapshot_refresh_result.v0.json", "artifact_type": "snapshot_or_distribution_contract"}
+      ],
+      "disposition": "profile_delta_semantics"
+    },
+    {
+      "concept": "SnapshotManifest",
+      "plane": "Distribution",
+      "authority_class": "snapshot_or_distribution_contract",
+      "artifacts": [
+        {"path": "contracts/snapshots/snapshot_manifest.v0.json", "artifact_type": "snapshot_or_distribution_contract"},
+        {"path": "contracts/snapshot/snapshot_manifest.v0.json", "artifact_type": "compatibility_alias"},
+        {"path": "contracts/snapshots/snapshot_envelope.v0.json", "artifact_type": "snapshot_or_distribution_contract"},
+        {"path": "contracts/snapshot/snapshot_integrity_manifest.v0.json", "artifact_type": "snapshot_or_distribution_contract"},
+        {"path": "docs/reference/SNAPSHOT_MANIFEST_CONTRACT.md", "artifact_type": "architecture_reference"}
+      ],
+      "disposition": "retain_with_alias"
+    }
+  ]
+}
+

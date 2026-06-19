@@ -1,0 +1,25 @@
+{
+  "schema_version": "eureka.e2e_reference_semantic_authority_matrix.v0",
+  "concepts": [
+    {"concept": "QueryIntent", "owning_plane": "Discovery", "selected_core_authority": "docs/reference/E2E_REFERENCE_CONTRACT_MAP.md#queryintent", "authority_status": "profile_over_existing_projections", "gap_decision": "no_gap_use_existing_plus_profile"},
+    {"concept": "ResolutionRun", "owning_plane": "Discovery", "selected_core_authority": "contracts/resolution/run/resolution_run.v0.json", "authority_status": "formal_contract_exists", "gap_decision": "no_gap_use_existing"},
+    {"concept": "WorkUnit", "owning_plane": "Discovery", "selected_core_authority": "docs/reference/WORKUNIT_CONTRACT.md", "authority_status": "formal_reference_exists", "gap_decision": "no_gap_use_existing_plus_profile"},
+    {"concept": "SourceObservation", "owning_plane": "Evidence", "selected_core_authority": "contracts/runtime/source/observation.v0.json", "authority_status": "formal_contract_exists", "gap_decision": "no_gap_use_existing"},
+    {"concept": "EvidenceSummary", "owning_plane": "Evidence", "selected_core_authority": "contracts/evidence/ledger/evidence_ledger_record.v0.json", "authority_status": "internal_contract_plus_public_projection", "gap_decision": "projection_only_gap"},
+    {"concept": "Candidate", "owning_plane": "Preview", "selected_core_authority": "contracts/candidates/candidate_record.v0.json", "authority_status": "specialized_contracts_common_envelope_profile", "gap_decision": "no_gap_use_existing_plus_profile"},
+    {"concept": "PreviewRecord", "owning_plane": "Preview", "selected_core_authority": "docs/reference/E2E_REFERENCE_CONTRACT_MAP.md#previewrecord", "authority_status": "profile_over_existing_result_projections", "gap_decision": "projection_only_gap"},
+    {"concept": "ReviewItem", "owning_plane": "Truth", "selected_core_authority": "contracts/runtime/review_item.v0.json", "authority_status": "formal_queue_item_contract_exists", "gap_decision": "no_gap_use_existing_plus_profile"},
+    {"concept": "ReviewDecision", "owning_plane": "Truth", "selected_core_authority": "contracts/stores/review_decision.v0.json", "authority_status": "formal_store_contract_exists", "gap_decision": "no_gap_use_existing"},
+    {"concept": "ReviewedRecord", "owning_plane": "Truth", "selected_core_authority": "contracts/review/limited_reviewed_metadata_record.v0.json", "authority_status": "formal_limited_reviewed_metadata_contract_exists", "gap_decision": "no_gap_use_existing_plus_profile"},
+    {"concept": "IndexDelta", "owning_plane": "Distribution", "selected_core_authority": "docs/reference/E2E_REFERENCE_CONTRACT_MAP.md#indexdelta", "authority_status": "profile_over_rebuild_and_apply_contracts", "gap_decision": "lifecycle_gap"},
+    {"concept": "SnapshotManifest", "owning_plane": "Distribution", "selected_core_authority": "contracts/snapshots/snapshot_manifest.v0.json", "authority_status": "formal_distribution_contract_exists", "gap_decision": "no_gap_use_existing_plus_profile"}
+  ],
+  "truth_boundary_implications": {
+    "review_item_is_not_decision": true,
+    "review_decision_is_not_materialization": true,
+    "candidate_is_not_reviewed_record": true,
+    "preview_record_is_not_truth": true,
+    "public_projection_is_not_master_authority": true
+  }
+}
+

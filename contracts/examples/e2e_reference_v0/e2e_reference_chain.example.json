@@ -1,0 +1,238 @@
+{
+  "schema_version": "e2e_reference_chain_example.v0",
+  "example_id": "e2e-reference-example:synthetic:old-blue-ftp-client-xp",
+  "authority": "synthetic_non_authoritative",
+  "namespace": "synthetic:e2e-reference",
+  "public_eligible": false,
+  "accepted_truth_created": false,
+  "reviewed_master_mutation": false,
+  "public_index_mutation": false,
+  "provider_network_calls": false,
+  "contains_real_ia_candidate": false,
+  "objects": [
+    {
+      "semantic_type": "QueryIntent",
+      "object_id": "query-intent:synthetic:old-blue-ftp-client-xp",
+      "created_at": "2026-01-01T00:00:00Z",
+      "semantic_identity": {
+        "semantic_type": "QueryIntent",
+        "namespace": "synthetic:e2e-reference",
+        "query_text": "old blue FTP client for Windows XP",
+        "constraints": ["software", "windows_xp", "ftp_client"],
+        "authority_level": "synthetic_non_authoritative"
+      },
+      "semantic_hash": "sha256:550b6b41a0ce0e0994be28632de34cceaebbe204c8ef42ae13a46a2fac23b745"
+    },
+    {
+      "semantic_type": "ResolutionRun",
+      "object_id": "resolution-run:synthetic:old-blue-ftp-client-xp",
+      "created_at": "2026-01-01T00:00:01Z",
+      "refs": {
+        "query_intent_id": "query-intent:synthetic:old-blue-ftp-client-xp"
+      },
+      "semantic_identity": {
+        "semantic_type": "ResolutionRun",
+        "namespace": "synthetic:e2e-reference",
+        "query_intent_id": "query-intent:synthetic:old-blue-ftp-client-xp",
+        "mode": "replay",
+        "authority_level": "synthetic_non_authoritative"
+      },
+      "semantic_hash": "sha256:e7486cdf593efb615c6bad45a5091167fc2de7646706678a37f581080cbe00e1"
+    },
+    {
+      "semantic_type": "WorkUnit",
+      "object_id": "workunit:synthetic:ia-metadata-probe-001",
+      "created_at": "2026-01-01T00:00:02Z",
+      "refs": {
+        "run_id": "resolution-run:synthetic:old-blue-ftp-client-xp"
+      },
+      "semantic_identity": {
+        "semantic_type": "WorkUnit",
+        "namespace": "synthetic:e2e-reference",
+        "run_id": "resolution-run:synthetic:old-blue-ftp-client-xp",
+        "work_kind": "metadata_probe_replay",
+        "authority_level": "synthetic_non_authoritative"
+      },
+      "semantic_hash": "sha256:e659707737cca5cf6a9117bb7ad8d93766c09a0853dbf2f82b0e2d6303d7159a"
+    },
+    {
+      "semantic_type": "SourceObservation",
+      "object_id": "source-observation:synthetic:ia-metadata-001",
+      "observed_at": "2026-01-01T00:00:03Z",
+      "refs": {
+        "workunit_id": "workunit:synthetic:ia-metadata-probe-001"
+      },
+      "semantic_identity": {
+        "semantic_type": "SourceObservation",
+        "namespace": "synthetic:e2e-reference",
+        "workunit_id": "workunit:synthetic:ia-metadata-probe-001",
+        "source_family": "synthetic_ia_metadata",
+        "authority_level": "synthetic_non_authoritative"
+      },
+      "semantic_hash": "sha256:7e10446c10b7deadfc0955d51c6136ca949283d2a4981dd363443f96aad0e68c"
+    },
+    {
+      "semantic_type": "EvidenceSummary",
+      "object_id": "evidence-summary:synthetic:title-clue-001",
+      "created_at": "2026-01-01T00:00:04Z",
+      "refs": {
+        "source_observation_id": "source-observation:synthetic:ia-metadata-001"
+      },
+      "semantic_identity": {
+        "semantic_type": "EvidenceSummary",
+        "namespace": "synthetic:e2e-reference",
+        "subject_ref": "source-observation:synthetic:ia-metadata-001",
+        "evidence_kind": "title_name_clue",
+        "authority_level": "synthetic_non_authoritative"
+      },
+      "semantic_hash": "sha256:e7ddf8faef8a55ee11c8399fc0b79a89fead8b5405486b737123ed7b57f7562d"
+    },
+    {
+      "semantic_type": "Candidate",
+      "object_id": "candidate:synthetic:ftp-client-001",
+      "created_at": "2026-01-01T00:00:05Z",
+      "status": "provisional",
+      "refs": {
+        "source_observation_refs": ["source-observation:synthetic:ia-metadata-001"],
+        "evidence_refs": ["evidence-summary:synthetic:title-clue-001"]
+      },
+      "semantic_identity": {
+        "semantic_type": "Candidate",
+        "namespace": "synthetic:e2e-reference",
+        "source_observation_refs": ["source-observation:synthetic:ia-metadata-001"],
+        "evidence_refs": ["evidence-summary:synthetic:title-clue-001"],
+        "authority_level": "synthetic_candidate_only"
+      },
+      "semantic_hash": "sha256:c781d0a948451e432a4e39c96245da8f1f9e65d7487d0f9e2b04033ece58d83f"
+    },
+    {
+      "semantic_type": "PreviewRecord",
+      "object_id": "preview-record:synthetic:candidate-ftp-client-001",
+      "created_at": "2026-01-01T00:00:06Z",
+      "status": "candidate",
+      "authority_level": "synthetic_preview",
+      "refs": {
+        "source_ref": "candidate:synthetic:ftp-client-001"
+      },
+      "semantic_identity": {
+        "semantic_type": "PreviewRecord",
+        "namespace": "synthetic:e2e-reference",
+        "source_ref": "candidate:synthetic:ftp-client-001",
+        "status": "candidate",
+        "authority_level": "synthetic_preview"
+      },
+      "semantic_hash": "sha256:40425139d8b0f6c8f83ebabc6d6cd8f12ec825dac5efbc358298fedb8e57bbb8"
+    },
+    {
+      "semantic_type": "ReviewItem",
+      "object_id": "review-item:synthetic:ftp-client-001",
+      "created_at": "2026-01-01T00:00:07Z",
+      "status": "pending",
+      "refs": {
+        "candidate_id": "candidate:synthetic:ftp-client-001"
+      },
+      "semantic_identity": {
+        "semantic_type": "ReviewItem",
+        "namespace": "synthetic:e2e-reference",
+        "candidate_id": "candidate:synthetic:ftp-client-001",
+        "status": "pending",
+        "authority_level": "synthetic_review_queue"
+      },
+      "semantic_hash": "sha256:9f9df65c065b3a2d2bccd03862d0ef9238abfa2cfb07bc605079d38bb117dce1"
+    },
+    {
+      "semantic_type": "ReviewDecision",
+      "object_id": "review-decision:synthetic:promote-001",
+      "decided_at": "2026-01-01T00:00:08Z",
+      "refs": {
+        "review_item_id": "review-item:synthetic:ftp-client-001"
+      },
+      "local_only_confirmed": true,
+      "semantic_identity": {
+        "semantic_type": "ReviewDecision",
+        "namespace": "synthetic:e2e-reference",
+        "review_item_id": "review-item:synthetic:ftp-client-001",
+        "decision": "promote",
+        "local_only_confirmed": true,
+        "authority_level": "synthetic_review_decision"
+      },
+      "semantic_hash": "sha256:81dd19304b4e0bde86e74c2a3c5e036052cde0adb716a94f3c1aab7a7ff6924f"
+    },
+    {
+      "semantic_type": "ReviewedRecord",
+      "object_id": "reviewed-record:synthetic:ftp-client-001",
+      "created_at": "2026-01-01T00:00:09Z",
+      "synthetic_only": true,
+      "refs": {
+        "review_decision_ref": "review-decision:synthetic:promote-001"
+      },
+      "non_claims": ["not_binary_verified", "not_rights_clearance", "not_malware_safety", "not_public_eligible"],
+      "semantic_identity": {
+        "semantic_type": "ReviewedRecord",
+        "namespace": "synthetic:e2e-reference",
+        "review_decision_ref": "review-decision:synthetic:promote-001",
+        "claim_scope": "synthetic_identity_only",
+        "authority_level": "synthetic_reviewed_record"
+      },
+      "semantic_hash": "sha256:a323ab7a26808ecfe5520d99aa16f26a39690133a73e924d68d06c9bce4597c8"
+    },
+    {
+      "semantic_type": "IndexDelta",
+      "object_id": "index-delta:synthetic:preview-to-reviewed-001",
+      "created_at": "2026-01-01T00:00:10Z",
+      "synthetic_only": true,
+      "refs": {
+        "reviewed_record_refs": ["reviewed-record:synthetic:ftp-client-001"]
+      },
+      "semantic_identity": {
+        "semantic_type": "IndexDelta",
+        "namespace": "synthetic:e2e-reference",
+        "reviewed_record_refs": ["reviewed-record:synthetic:ftp-client-001"],
+        "delta_kind": "synthetic_reviewed_index_delta",
+        "authority_level": "synthetic_test_delta"
+      },
+      "semantic_hash": "sha256:fa27c6a537f87d60a3975e53b775b1aa4a04252c2ff8cba90b57317627e7acba"
+    },
+    {
+      "semantic_type": "SnapshotManifest",
+      "object_id": "snapshot-manifest:synthetic:e2e-reference-001",
+      "created_at": "2026-01-01T00:00:11Z",
+      "synthetic_only": true,
+      "refs": {
+        "index_delta_refs": ["index-delta:synthetic:preview-to-reviewed-001"]
+      },
+      "semantic_identity": {
+        "semantic_type": "SnapshotManifest",
+        "namespace": "synthetic:e2e-reference",
+        "index_delta_refs": ["index-delta:synthetic:preview-to-reviewed-001"],
+        "snapshot_kind": "synthetic_test_snapshot",
+        "authority_level": "synthetic_test_snapshot"
+      },
+      "semantic_hash": "sha256:9c31b43f616a708d1e353ce6bef539dab054e82712810db4496d6df43c2b130f"
+    }
+  ],
+  "replay_events": [
+    {
+      "event_id": "replay-event:synthetic:0001",
+      "run_id": "resolution-run:synthetic:old-blue-ftp-client-xp",
+      "sequence": 1,
+      "event_type": "object_recorded",
+      "producer_plane": "Discovery",
+      "payload_ref": "query-intent:synthetic:old-blue-ftp-client-xp",
+      "payload_hash": "sha256:550b6b41a0ce0e0994be28632de34cceaebbe204c8ef42ae13a46a2fac23b745",
+      "previous_event_hash": null,
+      "synthetic_only": true
+    },
+    {
+      "event_id": "replay-event:synthetic:0002",
+      "run_id": "resolution-run:synthetic:old-blue-ftp-client-xp",
+      "sequence": 2,
+      "event_type": "object_recorded",
+      "producer_plane": "Evidence",
+      "payload_ref": "source-observation:synthetic:ia-metadata-001",
+      "payload_hash": "sha256:7e10446c10b7deadfc0955d51c6136ca949283d2a4981dd363443f96aad0e68c",
+      "previous_event_hash": "sha256:synthetic-chain-start",
+      "synthetic_only": true
+    }
+  ]
+}

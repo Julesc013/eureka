@@ -1,0 +1,251 @@
+{
+  "schema_version": "eureka.e2e_reference_contract_index.v0",
+  "task_id": "E2E-REFERENCE-CONTRACT-00",
+  "concepts": [
+    {
+      "concept": "QueryIntent",
+      "owning_plane": "Discovery",
+      "canonical_contract_path": "docs/reference/E2E_REFERENCE_CONTRACT_MAP.md",
+      "supporting_contract_paths": [
+        "contracts/api/search_request.v0.json",
+        "contracts/search/interaction/search_request_packet.v0.json",
+        "contracts/search/interaction/compiled_query_packet.v0.json",
+        "contracts/domain/domain_query_hint.v0.json",
+        "contracts/search/query_plan/query_to_source_action_plan.v0.json"
+      ],
+      "projection_paths": ["contracts/api/search_request.v0.json"],
+      "authority_class": "implementation_only_no_formal_contract",
+      "schema_version": "profile",
+      "id_profile": "e2e_reference_id_and_hash_profile.v0",
+      "lifecycle_profile": "none",
+      "replay_posture": "event_payload_or_run_input",
+      "implementation_evidence": ["runtime read-only inventory only"],
+      "test_evidence": ["tests/contracts/test_e2e_reference_contracts.py"],
+      "gap_status": "no_gap_use_existing_plus_profile"
+    },
+    {
+      "concept": "ResolutionRun",
+      "owning_plane": "Discovery",
+      "canonical_contract_path": "contracts/resolution/run/resolution_run.v0.json",
+      "supporting_contract_paths": [
+        "contracts/resolution/run/run_event.v0.json",
+        "contracts/resolution/run/run_command.v0.json",
+        "contracts/search/interaction/resolution_run_packet.v0.json"
+      ],
+      "projection_paths": [
+        "contracts/surface/ui/contracts/resolution/run.ui_contract.yaml",
+        "contracts/view/models/ui/resolution_run.view_model.yaml"
+      ],
+      "authority_class": "core_semantic_contract",
+      "schema_version": "resolution_run.v0",
+      "id_profile": "run_id",
+      "lifecycle_profile": "ResolutionRun",
+      "replay_posture": "run_event_stream",
+      "implementation_evidence": ["runtime/engine/resolution_runs/**", "runtime/resolution_run/**"],
+      "test_evidence": ["tests/architecture/test_e2e_reference_semantic_chain.py"],
+      "gap_status": "no_gap_use_existing"
+    },
+    {
+      "concept": "WorkUnit",
+      "owning_plane": "Discovery",
+      "canonical_contract_path": "docs/reference/WORKUNIT_CONTRACT.md",
+      "supporting_contract_paths": [
+        "contracts/query/workunit_seed.v0.json",
+        "contracts/extraction/extraction_workunit_seed.v0.json",
+        "docs/reference/WORKUNIT_RESULT_CONTRACT.md"
+      ],
+      "projection_paths": ["docs/reference/HUNT_WORKUNIT_API.md"],
+      "authority_class": "runtime_command_or_state_contract",
+      "schema_version": "profile",
+      "id_profile": "workunit_id",
+      "lifecycle_profile": "WorkUnit",
+      "replay_posture": "workunit_event_payload",
+      "implementation_evidence": ["runtime/worker/workunit_queue/**"],
+      "test_evidence": ["tests/contracts/test_e2e_reference_contracts.py"],
+      "gap_status": "no_gap_use_existing_plus_profile"
+    },
+    {
+      "concept": "SourceObservation",
+      "owning_plane": "Evidence",
+      "canonical_contract_path": "contracts/runtime/source/observation.v0.json",
+      "supporting_contract_paths": [
+        "contracts/runtime/normalized_observation.v0.json",
+        "contracts/source/action/source_observation_envelope.v0.json",
+        "docs/reference/SOURCE_OBSERVATION_RUNTIME.md"
+      ],
+      "projection_paths": [],
+      "authority_class": "core_semantic_contract",
+      "schema_version": "observation.v0",
+      "id_profile": "obs_<16_hex> plus legacy aliases",
+      "lifecycle_profile": "immutable_observation",
+      "replay_posture": "source_observation_event_payload",
+      "implementation_evidence": ["runtime/source/observation/**"],
+      "test_evidence": ["tests/contracts/test_e2e_reference_contracts.py"],
+      "gap_status": "no_gap_use_existing"
+    },
+    {
+      "concept": "EvidenceSummary",
+      "owning_plane": "Evidence",
+      "canonical_contract_path": "contracts/evidence/ledger/evidence_ledger_record.v0.json",
+      "supporting_contract_paths": [
+        "contracts/stores/evidence_candidate_record.v0.json",
+        "contracts/stores/evidence_event.v0.json"
+      ],
+      "projection_paths": [
+        "contracts/api/evidence_summary.v0.json",
+        "contracts/snapshot/snapshot_evidence_summary.v0.json"
+      ],
+      "authority_class": "core_semantic_contract",
+      "schema_version": "evidence_ledger_record.v0",
+      "id_profile": "evidence_ledger_record_id or evidence_id",
+      "lifecycle_profile": "EvidenceSummary",
+      "replay_posture": "evidence_event_payload",
+      "implementation_evidence": ["runtime/local/evidence_ledger_summary.py"],
+      "test_evidence": ["tests/contracts/test_e2e_reference_contracts.py"],
+      "gap_status": "projection_only_gap"
+    },
+    {
+      "concept": "Candidate",
+      "owning_plane": "Preview",
+      "canonical_contract_path": "contracts/candidates/candidate_record.v0.json",
+      "supporting_contract_paths": [
+        "contracts/runtime/evidence_candidate.v0.json",
+        "contracts/candidates/candidate_index_record.v0.json",
+        "contracts/identity/near_miss_candidate.v0.json",
+        "contracts/identity/identity_cluster_candidate.v0.json"
+      ],
+      "projection_paths": [
+        "contracts/view/candidate_page/candidate_page.v0.json",
+        "contracts/api/search_result_card.v0.json"
+      ],
+      "authority_class": "core_semantic_contract",
+      "schema_version": "candidate_record.v0",
+      "id_profile": "candidate:<namespace>:<hash-or-slug>",
+      "lifecycle_profile": "Candidate",
+      "replay_posture": "candidate_event_payload",
+      "implementation_evidence": ["runtime/local/candidate_index_refresh.py"],
+      "test_evidence": ["tests/contracts/test_e2e_reference_contracts.py"],
+      "gap_status": "no_gap_use_existing_plus_profile"
+    },
+    {
+      "concept": "PreviewRecord",
+      "owning_plane": "Preview",
+      "canonical_contract_path": "docs/reference/E2E_REFERENCE_CONTRACT_MAP.md",
+      "supporting_contract_paths": [
+        "contracts/search/interaction/result_lane_packet.v0.json",
+        "contracts/view/result_card/result_card.v0.json"
+      ],
+      "projection_paths": [
+        "contracts/api/search_result_card.v0.json",
+        "contracts/snapshot/snapshot_result_card_section.v0.json"
+      ],
+      "authority_class": "ui_or_view_projection",
+      "schema_version": "profile",
+      "id_profile": "preview-record:<namespace>:<source-ref>",
+      "lifecycle_profile": "derived_from_source",
+      "replay_posture": "projection_event_payload",
+      "implementation_evidence": ["runtime/local/search_index.py"],
+      "test_evidence": ["tests/contracts/test_e2e_reference_contracts.py"],
+      "gap_status": "projection_only_gap"
+    },
+    {
+      "concept": "ReviewItem",
+      "owning_plane": "Truth",
+      "canonical_contract_path": "contracts/runtime/review_item.v0.json",
+      "supporting_contract_paths": [
+        "contracts/stores/review_item_record.v0.json",
+        "contracts/stores/review_queue_store.v0.json",
+        "docs/reference/REVIEW_QUEUE_RUNTIME.md"
+      ],
+      "projection_paths": ["contracts/view/pages/review_page.v0.json"],
+      "authority_class": "runtime_command_or_state_contract",
+      "schema_version": "review_item.v0",
+      "id_profile": "review-item:<namespace>:<hash-or-slug>",
+      "lifecycle_profile": "ReviewItem",
+      "replay_posture": "review_queue_event_payload",
+      "implementation_evidence": ["runtime/review/**"],
+      "test_evidence": ["tests/contracts/test_e2e_reference_contracts.py"],
+      "gap_status": "no_gap_use_existing_plus_profile"
+    },
+    {
+      "concept": "ReviewDecision",
+      "owning_plane": "Truth",
+      "canonical_contract_path": "contracts/stores/review_decision.v0.json",
+      "supporting_contract_paths": [
+        "contracts/stores/review_event.v0.json",
+        "contracts/index/master/review_decision.v0.json"
+      ],
+      "projection_paths": ["docs/reference/REVIEW_BATCH_DECISION.md"],
+      "authority_class": "persistence_or_store_contract",
+      "schema_version": "review_decision.v0",
+      "id_profile": "review-decision:<namespace>:<hash-or-sequence>",
+      "lifecycle_profile": "ReviewDecision",
+      "replay_posture": "review_decision_event_payload",
+      "implementation_evidence": ["runtime/review/ledger.py"],
+      "test_evidence": ["tests/contracts/test_e2e_reference_contracts.py"],
+      "gap_status": "no_gap_use_existing"
+    },
+    {
+      "concept": "ReviewedRecord",
+      "owning_plane": "Truth",
+      "canonical_contract_path": "contracts/review/limited_reviewed_metadata_record.v0.json",
+      "supporting_contract_paths": [
+        "contracts/review/live_metadata_reviewed_record.v0.json",
+        "contracts/candidates/reviewed_metadata_record.v0.json",
+        "contracts/index/master/reviewed_public_record_proposal.v0.json"
+      ],
+      "projection_paths": [
+        "contracts/snapshot/snapshot_reviewed_record_section.v0.json",
+        "contracts/api/search_result_card.v0.json"
+      ],
+      "authority_class": "core_semantic_contract",
+      "schema_version": "limited_reviewed_metadata_record.v0",
+      "id_profile": "reviewed-record:<namespace>:<hash-or-slug>",
+      "lifecycle_profile": "ReviewedRecord",
+      "replay_posture": "materialization_event_payload",
+      "implementation_evidence": ["runtime/local/review_materialization.py"],
+      "test_evidence": ["tests/contracts/test_e2e_reference_contracts.py"],
+      "gap_status": "no_gap_use_existing_plus_profile"
+    },
+    {
+      "concept": "IndexDelta",
+      "owning_plane": "Distribution",
+      "canonical_contract_path": "docs/reference/E2E_REFERENCE_CONTRACT_MAP.md",
+      "supporting_contract_paths": [
+        "contracts/stores/public_index_rebuild.v0.json",
+        "contracts/index/master/reviewed_public_index_rebuild.v0.json",
+        "contracts/local_apply/local_apply_result.v0.json",
+        "contracts/snapshot/snapshot_refresh_result.v0.json"
+      ],
+      "projection_paths": ["contracts/snapshot/snapshot_refresh_result.v0.json"],
+      "authority_class": "persistence_or_store_contract",
+      "schema_version": "profile",
+      "id_profile": "index-delta:<namespace>:<hash-or-sequence>",
+      "lifecycle_profile": "IndexDelta",
+      "replay_posture": "index_delta_event_payload",
+      "implementation_evidence": ["runtime/index/**"],
+      "test_evidence": ["tests/contracts/test_e2e_reference_contracts.py"],
+      "gap_status": "lifecycle_gap"
+    },
+    {
+      "concept": "SnapshotManifest",
+      "owning_plane": "Distribution",
+      "canonical_contract_path": "contracts/snapshots/snapshot_manifest.v0.json",
+      "supporting_contract_paths": [
+        "contracts/snapshot/snapshot_manifest.v0.json",
+        "contracts/snapshots/snapshot_envelope.v0.json",
+        "contracts/snapshot/snapshot_integrity_manifest.v0.json"
+      ],
+      "projection_paths": ["contracts/snapshot/snapshot_text_projection_section.v0.json"],
+      "authority_class": "snapshot_or_distribution_contract",
+      "schema_version": "snapshot_manifest.v0",
+      "id_profile": "snapshot-manifest:<namespace>:<hash-or-sequence>",
+      "lifecycle_profile": "SnapshotManifest",
+      "replay_posture": "snapshot_event_payload",
+      "implementation_evidence": ["runtime/engine/snapshots/**"],
+      "test_evidence": ["tests/contracts/test_e2e_reference_contracts.py"],
+      "gap_status": "no_gap_use_existing_plus_profile"
+    }
+  ]
+}
+

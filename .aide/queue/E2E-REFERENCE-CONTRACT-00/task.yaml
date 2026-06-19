@@ -1,7 +1,7 @@
 schema_version: aide.task.v0
 id: E2E-REFERENCE-CONTRACT-00
 title: Consolidate E2E reference-system semantic contracts
-status: planned
+status: completed
 task_class: e2e_reference_child
 parent_track: E2E-REFERENCE-SYSTEM-TRACK-00
 predecessor: E2E-REFERENCE-SYSTEM-TRACK-00
@@ -22,6 +22,9 @@ semantic_chain:
   - IndexDelta
   - SnapshotManifest
 allowed_scope:
+  - .aide/queue/E2E-REFERENCE-CONTRACT-00/task.yaml
+  - .aide/queue/index.yaml
+  - .aide/context/latest-task-packet.md
   - contracts/**
   - docs/architecture/**
   - docs/reference/**

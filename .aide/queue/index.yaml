@@ -1,4 +1,4 @@
-current_recommended_task: E2E-REFERENCE-CONTRACT-00 - Consolidate E2E reference-system semantic contracts; human-last operating decision keeps real IA review frozen and all truth/public/provider/download gates intact
+current_recommended_task: E2E-REFERENCE-RUNNER-00 - Build the shared local E2E runner for replay and synthetic modes; live-shadow remains disabled without separate provider approval
 completed:
   - SOURCE-ACTION-KERNEL-00
   - SOURCE-WAVE-00
@@ -90,9 +90,9 @@ completed:
   - IA-EVIDENCE-LEDGER-SUMMARY-00
   - HUMAN-LAST-E2E-REFERENCE-BUILD-00
   - E2E-REFERENCE-SYSTEM-TRACK-00
+  - E2E-REFERENCE-CONTRACT-00
 blocked: []
 planned:
-  - E2E-REFERENCE-CONTRACT-00
   - E2E-REFERENCE-RUNNER-00
   - E2E-PREVIEW-INDEX-00
   - E2E-HUNT-EXPLORATION-UI-00

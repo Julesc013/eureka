@@ -1,0 +1,106 @@
+{
+  "schema_version": "eureka.e2e_reference_contract_validation_report.v0",
+  "task_id": "E2E-REFERENCE-CONTRACT-00",
+  "status": "pass_with_warnings",
+  "validation_results": [
+    {
+      "command": "python -m unittest tests.contracts.test_e2e_reference_contracts -v",
+      "status": "pass",
+      "tests": 11
+    },
+    {
+      "command": "python -m unittest tests.architecture.test_e2e_reference_semantic_chain -v",
+      "status": "pass",
+      "tests": 4
+    },
+    {
+      "command": "python scripts/check_architecture_boundaries.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_runtime_architecture_leakage.py --json",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_public_alpha_readonly.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_snapshot_relay.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/eureka_test_select.py --changed --failed-first --json",
+      "status": "pass",
+      "selected_lanes": ["L0_static_preflight", "L1_focused_unit"]
+    },
+    {
+      "command": "python scripts/validate_contract_taxonomy.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_repo_structure_canon.py",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/validate_test_lane_policy.py",
+      "status": "pass"
+    },
+    {
+      "command": "python -m unittest tests.operations.test_contract_taxonomy -v",
+      "status": "pass",
+      "tests": 7
+    },
+    {
+      "command": "python -m unittest tests.operations.test_repo_structure_canon -v",
+      "status": "pass",
+      "tests": 6
+    },
+    {
+      "command": "python -m unittest tests.operations.test_test_lane_policy -v",
+      "status": "pass",
+      "tests": 1
+    },
+    {
+      "command": "python -m unittest tests.scripts.test_eureka_test_select -v",
+      "status": "pass",
+      "tests": 3
+    },
+    {
+      "command": "python -m unittest tests.scripts.test_validate_test_lane_policy -v",
+      "status": "pass",
+      "tests": 2
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py doctor",
+      "status": "pass"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py validate",
+      "status": "pass"
+    },
+    {
+      "command": "git diff --check",
+      "status": "pass"
+    },
+    {
+      "command": "python scripts/check_generated_artifact_cleanliness.py --check --json",
+      "status": "pass",
+      "reason": "Passed after the intentional audit packet was committed."
+    }
+  ],
+  "warnings": [
+    "Full unittest discovery was not run or claimed for this contract-only task.",
+    "PreviewRecord and IndexDelta are profiled for runner use; formal schema consolidation remains future work."
+  ],
+  "runtime_files_modified": false,
+  "store_migrations_performed": false,
+  "reviewed_records_created": false,
+  "reviewed_master_mutation": false,
+  "public_index_mutation": false,
+  "provider_network_calls": false,
+  "public_exposure": "paused",
+  "license_posture": "unchanged",
+  "full_discovery_claimed": false,
+  "recommended_next_task": "E2E-REFERENCE-RUNNER-00"
+}

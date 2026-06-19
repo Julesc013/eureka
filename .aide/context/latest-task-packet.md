@@ -2,11 +2,11 @@
 
 ## PHASE
 
-UNSPECIFIED - E2E-REFERENCE-SYSTEM-TRACK-00
+UNSPECIFIED - E2E-REFERENCE-RUNNER-00
 
 ## GOAL
 
-E2E-REFERENCE-SYSTEM-TRACK-00
+E2E-REFERENCE-RUNNER-00
 
 ## WHY
 
@@ -139,8 +139,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4778
-- approx_tokens: 1195
+- chars: 4766
+- approx_tokens: 1192
 - budget_status: PASS
 - warnings:
   - none

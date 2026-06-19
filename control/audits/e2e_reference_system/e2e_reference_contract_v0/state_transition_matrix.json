@@ -1,0 +1,23 @@
+{
+  "schema_version": "eureka.e2e_reference_state_transition_matrix.v0",
+  "state_machines": {
+    "ResolutionRun": ["created", "planned", "running", "paused", "completed", "failed", "cancelled", "replayed"],
+    "WorkUnit": ["queued", "leased_or_running", "succeeded", "failed", "retryable", "blocked", "cancelled"],
+    "Candidate": ["provisional", "pending_review", "near_miss", "need", "policy_blocked", "rejected", "superseded", "promotion_eligible"],
+    "ReviewItem": ["pending", "decided", "superseded", "blocked"],
+    "ReviewDecision": ["recorded", "superseded_or_amended", "current_valid"],
+    "ReviewedRecord": ["materialized", "active", "superseded", "withdrawn", "invalidated_or_re_review_required"],
+    "PreviewRecord": ["derived_from_source_object"]
+  },
+  "forbidden_transitions": [
+    "SourceObservation -> ReviewedRecord directly",
+    "EvidenceSummary -> ReviewedRecord directly",
+    "Candidate -> ReviewedRecord without explicit ReviewDecision and materialization",
+    "PreviewRecord -> ReviewedRecord",
+    "synthetic object -> production reviewed record",
+    "public projection -> master/store authority",
+    "rejected candidate -> promoted candidate without a new explicit review path",
+    "stale or superseded ReviewDecision -> materialization without current validity"
+  ]
+}
+

@@ -1,0 +1,11 @@
+{
+  "schema_version": "eureka.e2e_reference_versioning_and_compatibility.v0",
+  "breaking_v0_changes_allowed_in_place": false,
+  "breaking_change_requires_new_version": true,
+  "projection_version_independence": true,
+  "store_migrations_in_this_task": false,
+  "deprecation_is_not_deletion": true,
+  "unknown_field_policy": "follow_each_schema_additionalProperties_or_profile_rules",
+  "migration_owner": "future_task_specific_owner"
+}
+
