@@ -1,0 +1,81 @@
+{
+  "accepted_truth_created": false,
+  "actor": "Jules Carboni",
+  "audit_files": {
+    "json": "control/audits/source_wave/review_ia_candidates_tranche_01_v0/tranche_decision_report.json",
+    "readme": "control/audits/source_wave/review_ia_candidates_tranche_01_v0/README.md",
+    "result": "control/audits/source_wave/review_ia_candidates_tranche_01_v0/TRANCHE_DECISION_RESULT.md"
+  },
+  "batch_id": "review-batch:ia_metadata:4cb823d17388bdf2ec3a",
+  "candidate_index_store_mutation": false,
+  "decision_counts": {
+    "request_more_evidence": 8
+  },
+  "decision_file": ".eureka/source-wave/ia-metadata/review-batch/tranches/01/operator_decisions.json",
+  "decision_file_hash": "sha256:c442856f673127f1b32fe94d5dd6b3ac57e4bb01977a1aa97aeaa14ac3d10aab",
+  "decisions_recorded": 8,
+  "decisions_validated": 8,
+  "disposition_posture": "provisional_review_ledger_request",
+  "evidence_ledger_store_mutation": false,
+  "generated_at": "2026-06-19T02:41:41Z",
+  "idempotence_posture": "current ReviewQueueStore rejects duplicate decisions for the same review item in this store",
+  "index_rebuild": false,
+  "ledger_decision_count": 8,
+  "ledger_event_count": 32,
+  "ledger_status_counts": {
+    "needs_more_evidence": 8
+  },
+  "license_posture": "restricted_source_available",
+  "license_unchanged": true,
+  "local_outputs": {
+    "ledger_results": ".eureka/source-wave/ia-metadata/review-batch/tranches/01/recorded/review_ledger_results.jsonl",
+    "manifest": ".eureka/source-wave/ia-metadata/review-batch/tranches/01/recorded/tranche_decision_record_manifest.json",
+    "markdown_report": ".eureka/source-wave/ia-metadata/review-batch/tranches/01/recorded/TRANCHE_DECISION_RECORD_REPORT.md"
+  },
+  "may_be_revisited_after_new_evidence": true,
+  "network_provider_calls": false,
+  "next_recommended_task": "IA-EXTERNAL-EVIDENCE-TRANCHE-01-AUTHORITY-00",
+  "origin_dev_at_record": "9cc8a5fb1ba7ab0b0a88ee2bf9b8e89394400306",
+  "parent_batch_pending_count": 48,
+  "public_exposure": "paused",
+  "public_exposure_unchanged": true,
+  "public_index_mutation": false,
+  "repo_branch": "dev",
+  "repo_head_at_record": "9cc8a5fb1ba7ab0b0a88ee2bf9b8e89394400306",
+  "reversibility_amendment_posture": "append-only local review events may be superseded by later repo-approved review decisions/items; this operation does not delete or overwrite events",
+  "review_item_ids": [
+    "review-item:ia_metadata:0fc612b1b8b821d84691",
+    "review-item:ia_metadata:1d346c3e74aaa8de2f75",
+    "review-item:ia_metadata:390c8c52fc798d8e9809",
+    "review-item:ia_metadata:48e5dbe3f13e2d50013d",
+    "review-item:ia_metadata:56fce3c1b84e620fdde6",
+    "review-item:ia_metadata:58b82a9ef789e602374b",
+    "review-item:ia_metadata:8613aac13034f35b95ed",
+    "review-item:ia_metadata:ce14f6183cc6da1a2f74"
+  ],
+  "review_promotion_mutation": false,
+  "review_store": ".eureka/source-wave/ia-metadata/review-batch/tranches/01/review-store",
+  "review_store_posture": "private_local_generated_sqlite_store_ignored_by_git",
+  "reviewed_index_rebuild": false,
+  "reviewed_master_mutation": false,
+  "reviewed_records_created": false,
+  "schema_version": "eureka.ia_tranche_decision_record_manifest.v0",
+  "snapshot_refresh": false,
+  "sqlite_integrity": {
+    "applied_migrations": [
+      {
+        "applied_at": "2026-06-19T02:40:15Z",
+        "checksum": "ff83c4f1f40ba380b480653c17c6cc3d014e0ccd3ddb0aa220cc4770832c85a9",
+        "id": "001_initial_review_queue_store",
+        "version": "review_queue_store.v0"
+      }
+    ],
+    "missing_tables": [],
+    "schema_version": "review_queue_store.v0",
+    "sqlite_integrity": "ok",
+    "status": "pass"
+  },
+  "status": "PASS",
+  "tranche_id": "tranche-01",
+  "tranche_pending_count": 0
+}
