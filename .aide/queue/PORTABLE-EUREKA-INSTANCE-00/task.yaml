@@ -16,6 +16,9 @@ target_commands:
   - python scripts/eureka.py replay <run-id>
   - python scripts/eureka.py status
 allowed_scope:
+  - .aide/queue/index.yaml
+  - .aide/queue/PORTABLE-EUREKA-INSTANCE-00/**
+  - .aide/context/**
   - scripts/eureka.py
   - scripts/**
   - runtime/local/**
@@ -23,7 +26,9 @@ allowed_scope:
   - contracts/command/**
   - contracts/instances/**
   - tests/scripts/**
+  - tests/runtime/**
   - tests/e2e/**
+  - docs/architecture/**
   - docs/operations/**
   - control/audits/e2e_reference_system/**
 forbidden_scope:
