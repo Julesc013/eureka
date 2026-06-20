@@ -4,6 +4,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 import hashlib
+from pathlib import Path
 import re
 import threading
 import time
@@ -84,6 +85,7 @@ class TransientLeadBuffer:
 class LiveHuntResult:
     response: dict[str, Any]
     persisted_summary: dict[str, Any]
+    events: tuple[dict[str, Any], ...] = ()
 
 
 class LiveSearchService:
@@ -169,8 +171,72 @@ class LiveSearchService:
         max_fetches: int,
         count: int = 10,
         timeout_seconds: int = 10,
+        max_pages: int = 2,
+        max_links_followed: int = 10,
+        preview_index_path: str | Path | None = None,
+        fetcher: Any | None = None,
+        index_store: Any | None = None,
     ) -> LiveHuntResult:
         clean_query = _clean_query(query)
+        if preview_index_path is not None or fetcher is not None or index_store is not None:
+            if clean_query and self.provider_factory(self.provider_name) is None:
+                return self._transient_only_hunt(
+                    clean_query,
+                    run_id=run_id,
+                    max_queries=max_queries,
+                    max_fetches=max_fetches,
+                    count=count,
+                    timeout_seconds=timeout_seconds,
+                )
+            from runtime.index.preview import SQLitePreviewIndexStore
+            from runtime.search.hunt_engine import HuntBudget, HuntEngine
+
+            created_store = None
+            if index_store is None and preview_index_path is not None:
+                created_store = SQLitePreviewIndexStore(preview_index_path)
+                index_store = created_store
+            try:
+                result = HuntEngine(
+                    provider_name=self.provider_name,
+                    provider_factory=self.provider_factory,
+                    fetcher=fetcher,
+                    index_store=index_store,
+                ).run(
+                    clean_query,
+                    run_id=run_id,
+                    budget=HuntBudget(
+                        max_queries=max_queries,
+                        max_provider_requests=max_queries * max(1, int(max_pages or 1)),
+                        max_pages=max_pages,
+                        max_fetches=max_fetches,
+                        max_links_followed=max_links_followed,
+                        count=count,
+                        timeout_seconds=timeout_seconds,
+                    ),
+                )
+                return LiveHuntResult(response=result.response, persisted_summary=result.persisted_summary, events=result.events)
+            finally:
+                if created_store is not None:
+                    created_store.close()
+        return self._transient_only_hunt(
+            clean_query,
+            run_id=run_id,
+            max_queries=max_queries,
+            max_fetches=max_fetches,
+            count=count,
+            timeout_seconds=timeout_seconds,
+        )
+
+    def _transient_only_hunt(
+        self,
+        clean_query: str,
+        *,
+        run_id: str,
+        max_queries: int,
+        max_fetches: int,
+        count: int,
+        timeout_seconds: int,
+    ) -> LiveHuntResult:
         variants = hunt_query_variants(clean_query, max_queries=max_queries) if clean_query else []
         provider = self.provider_factory(self.provider_name) if clean_query else None
         errors: list[dict[str, Any]] = []

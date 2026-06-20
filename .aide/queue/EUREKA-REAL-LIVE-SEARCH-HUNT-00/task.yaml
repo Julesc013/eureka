@@ -114,7 +114,7 @@ milestone_evidence:
   milestone_3: partial
   milestone_4: pass
   milestone_5: pass
-  milestone_6: pending
+  milestone_6: pass
   notes:
     - normal search no longer substitutes hard-query fixtures
     - bootstrap defaults to no demo data
@@ -122,6 +122,7 @@ milestone_evidence:
     - live CLI/server display paths exist but real fetch, durable indexing, and full Hunt remain incomplete
     - safe fetch/extraction and SourceObservation persistence components exist with SSRF, DNS, redirect, robots, MIME, body-size, URL-credential, HTTP-error, per-host budget, and durable-store tests
     - SQLite/FTS operational Preview Index persists independently fetched SourceObservations and restart search/export/rollback proof passes
+    - deterministic Hunt engine paginates provider results, fetches selected leads, follows bounded outbound links, indexes observations, records sanitized events, and supports pause/resume/cancel state
 subdeliverables:
   retention_and_state_hotfix:
     status: pass

@@ -76,6 +76,7 @@ class PortableEurekaInstanceE2ETests(unittest.TestCase):
                 max_fetches: int,
                 count: int,
                 timeout_seconds: int,
+                **_kwargs: object,
             ) -> LiveHuntResult:
                 summary = {
                     "schema_version": "eureka.live_hunt_run.v1",

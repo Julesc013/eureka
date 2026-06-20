@@ -1,7 +1,7 @@
 schema_version: aide.task.v0
 id: EUREKA-REAL-HUNT-ENGINE-01
 title: Build the budgeted real Hunt engine
-status: planned
+status: pass
 task_class: product_runtime_milestone
 parent_track: EUREKA-REAL-LIVE-SEARCH-HUNT-00
 predecessor: EUREKA-PERSISTENT-PREVIEW-INDEX-01
@@ -10,6 +10,18 @@ purpose: >-
   Replace query-expansion-only Hunt with a budgeted loop for provider search,
   lead selection, safe fetch, extraction, dedupe, indexing, progress events,
   pause/resume/cancel, and exhaustion handling.
+evidence:
+  subject: "feat(hunt): build real budgeted discovery engine"
+  notes:
+    - HuntEngine executes deterministic query variants, provider pagination, transient lead dedupe, safe fetch, bounded outbound-link following, SourceObservation creation, and SQLite Preview Index insertion.
+    - Persisted Hunt summaries and events contain aggregate/sanitized data only; provider URLs, snippets, ranks, and raw responses remain out of durable run summaries.
+    - CLI and HTTP live Hunt paths call LiveSearchService, which delegates to HuntEngine when fetch/index paths are provided.
+    - HuntRunStore provides replayable sanitized events plus pause, resume, cancel, and status state.
+    - Provider-not-configured path remains honest and non-mutating.
+validation:
+  - python -m unittest tests.runtime.test_hunt_engine -v
+  - python -m unittest tests.runtime.test_live_search_service tests.runtime.test_hunt_engine tests.runtime.test_sqlite_preview_index_store tests.runtime.test_safe_web_fetcher -v
+  - python -m py_compile runtime/search/hunt_engine.py runtime/search/live_service.py runtime/local/portable_instance.py runtime/local/service/routes.py tests/runtime/test_hunt_engine.py
 non_goals:
   - no agentic planner before deterministic Hunt works
   - no second provider family

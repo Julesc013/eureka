@@ -532,18 +532,20 @@ def _live_hunt_payload(runtime: Any, request_context: LocalRequestContext) -> di
     query = first_param(request_context.params, "q", first_param(request_context.params, "query", "")).strip()
     limit = parse_limit(first_param(request_context.params, "limit", ""), default=10)
     max_queries = parse_limit(first_param(request_context.params, "max_queries", ""), default=5)
+    max_fetches = parse_limit(first_param(request_context.params, "max_fetches", first_param(request_context.params, "max-fetches", "")), default=0)
     provider_name = str(getattr(runtime, "live_search_provider", "brave") or "brave")
     hunt = LiveSearchService(provider_name=provider_name).start_hunt(
         query,
         run_id="http-live-hunt-preview",
         max_queries=max_queries,
-        max_fetches=0,
+        max_fetches=max_fetches,
         count=limit,
         timeout_seconds=10,
+        preview_index_path=getattr(runtime, "eureka_preview_sqlite_path", None) if max_fetches > 0 else None,
     )
     payload = dict(hunt.response)
     payload["schema_version"] = "eureka.live_hunt_response.v0"
-    payload["limitations"] = _service_limitations(runtime) + ["live Hunt currently expands provider queries only"]
+    payload["limitations"] = _service_limitations(runtime) + ["provider SearchLeads are transient; fetched observations remain unreviewed"]
     return payload
 
 

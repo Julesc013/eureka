@@ -972,6 +972,7 @@ def _live_hunt_command(
         max_fetches=max_fetches,
         count=10,
         timeout_seconds=10,
+        preview_index_path=paths.preview_sqlite if max_fetches > 0 else None,
     )
     response_payload = dict(hunt.response)
     errors = response_payload.get("errors") if isinstance(response_payload.get("errors"), list) else []
@@ -992,6 +993,8 @@ def _live_hunt_command(
     run_dir = paths.run_bundles / run_id
     run_dir.mkdir(parents=True, exist_ok=True)
     _write_json(run_dir / "summary.json", hunt.persisted_summary)
+    if hunt.events:
+        _write_jsonl(run_dir / "events.jsonl", hunt.events)
     return _result(
         "hunt",
         str(response_payload.get("status") or "fail"),
@@ -1005,8 +1008,8 @@ def _live_hunt_command(
             "public_index_mutation": False,
             "reviewed_master_mutation": False,
             "warnings": [
-                "Live Hunt currently searches provider query variants only; safe fetch, extraction, and persistence remain later milestones.",
                 "Provider SearchLeads are display-only transient state and are not written to the run summary.",
+                "Fetched/indexed observations remain unreviewed Preview Index records until human review.",
             ],
         },
     )
@@ -1253,6 +1256,7 @@ def _route_registration_check(root: Path) -> dict[str, Any]:
 
 def _configure_runtime_for_portable(runtime: Any, paths: PortablePaths, *, live: bool = False) -> None:
     setattr(runtime, "e2e_explore_preview_index_path", paths.preview_current)
+    setattr(runtime, "eureka_preview_sqlite_path", paths.preview_sqlite)
     setattr(runtime, "e2e_explore_runs_root", paths.run_bundles)
     setattr(runtime, "e2e_explore_default_fixture", "success_two_workunits")
     setattr(runtime, "e2e_explore_include_synthetic", not live)
@@ -1604,6 +1608,10 @@ def _now() -> str:
 
 def _write_json(path: Path, payload: Mapping[str, Any]) -> None:
     _atomic_write_text(path, json.dumps(payload, indent=2, sort_keys=True) + "\n")
+
+
+def _write_jsonl(path: Path, rows: Sequence[Mapping[str, Any]]) -> None:
+    _atomic_write_text(path, "\n".join(json.dumps(dict(item), sort_keys=True) for item in rows) + ("\n" if rows else ""))
 
 
 def _atomic_write_text(path: Path, text: str) -> None:

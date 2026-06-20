@@ -14,7 +14,7 @@ from urllib.request import HTTPRedirectHandler, ProxyHandler, Request as URLRequ
 
 from .dns_guard import DNSGuard
 from .extract_html import ExtractedDocument, extract_document
-from .robots import AllowAllRobotsClient, RobotsDecision
+from .robots import RobotsDecision, RobotsTxtClient
 
 
 HTTPTransport = Callable[[str, Mapping[str, str], int, int], "HTTPTransportResult"]
@@ -230,7 +230,7 @@ class SafeHTTPFetcher:
         self.policy = (policy or FetchPolicy()).bounded()
         self.budget = (budget or FetchBudget()).bounded()
         self.dns_guard = dns_guard or DNSGuard()
-        self.robots_client = robots_client or AllowAllRobotsClient()
+        self.robots_client = robots_client or RobotsTxtClient(_urllib_robot_fetcher)
         self.transport = transport or _urllib_transport
         self.clock = clock or utc_now
         self._global_semaphore = threading.BoundedSemaphore(self.budget.global_concurrency)
@@ -411,6 +411,16 @@ def _urllib_transport(url: str, headers: Mapping[str, str], timeout_seconds: int
         return HTTPTransportResult(int(exc.code), {str(k): str(v) for k, v in exc.headers.items()}, exc.read(max_bytes))
     except URLError as exc:
         raise RuntimeError(str(exc.reason)) from exc
+
+
+def _urllib_robot_fetcher(robots_url: str) -> tuple[int, str]:
+    response = _urllib_transport(
+        robots_url,
+        {"User-Agent": "EurekaBot/0.1 (+https://eureka.local/bot; local-first research fetcher)", "Accept-Encoding": "identity"},
+        5,
+        512 * 1024,
+    )
+    return response.status_code, response.body.decode("utf-8", errors="replace")
 
 
 def utc_now() -> str:
