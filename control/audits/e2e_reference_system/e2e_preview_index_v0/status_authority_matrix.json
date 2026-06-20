@@ -1,0 +1,30 @@
+{
+  "schema_version": "eureka.e2e_preview_status_authority_matrix.v0",
+  "statuses": [
+    "reviewed",
+    "candidate",
+    "near_miss",
+    "need",
+    "absence",
+    "policy_blocked",
+    "unavailable",
+    "unknown",
+    "mention_only",
+    "superseded",
+    "rejected",
+    "private_local"
+  ],
+  "authorities": [
+    "reviewed_record",
+    "candidate_only",
+    "source_observation_only",
+    "evidence_summary_only",
+    "absence_finding",
+    "run_projection",
+    "synthetic_test",
+    "unknown"
+  ],
+  "accepted_truth_authorities": [
+    "reviewed_record"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "schema_version": "eureka.e2e_preview_generation_model.v0",
+  "generation_id_shape": "preview-index-<sha256-prefix>",
+  "deterministic": true,
+  "current_pointer": "current.json",
+  "generation_files": [
+    "preview_records.jsonl",
+    "manifest.json",
+    "source_manifest.json",
+    "stats.json",
+    "validation_report.json"
+  ],
+  "tracked_generated_output": false
+}

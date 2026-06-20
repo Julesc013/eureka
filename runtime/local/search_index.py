@@ -17,7 +17,8 @@ from evals.hard_queries import fixture_cases
 INDEX_SCHEMA_VERSION = "eureka.local_search_index.v0"
 INDEX_DOCUMENT_SCHEMA_VERSION = "eureka.local_search_index_document.v0"
 DEFAULT_INDEX_PATH = ".eureka/local_search_index.json"
-SUPPORTED_INDEX_MODES = ("none", "local")
+DEFAULT_PREVIEW_INDEX_PATH = ".eureka/e2e-reference/preview-index/current.json"
+SUPPORTED_INDEX_MODES = ("none", "local", "preview")
 LOCAL_DEMO_SOURCE = "local_demo"
 CANONICAL_STATUSES = (
     "verified",
@@ -60,6 +61,9 @@ class IndexSearchState:
     errors: tuple[str, ...] = ()
     reviewed_record_count: int = 0
     artifact_verified_count: int = 0
+    mode: str = "local"
+    preview_index_id: str = ""
+    preview_generation_id: str = ""
 
 
 def build_local_demo_index(*, reviewed_records_path: str | Path | None = None) -> dict[str, Any]:
@@ -225,11 +229,60 @@ def search_index_path(path: str | Path, query: str, *, limit: int) -> IndexSearc
         results=matches,
         reviewed_record_count=int(index.get("reviewed_record_count") or 0),
         artifact_verified_count=int(index.get("artifact_verified_count") or 0),
+        mode="local",
+    )
+
+
+def search_preview_index_path(
+    path: str | Path,
+    query: str,
+    *,
+    limit: int,
+    include_synthetic: bool = False,
+) -> IndexSearchState:
+    from runtime.index.preview import PreviewIndexError, preview_stats_payload, search_preview_index
+
+    index_path = str(path)
+    if not Path(path).is_file():
+        return IndexSearchState(
+            enabled=True,
+            loaded=False,
+            path=index_path,
+            document_count=0,
+            results=(),
+            errors=(f"preview index file not found: {index_path}",),
+            mode="preview",
+        )
+    try:
+        payload = search_preview_index(path, query, limit=limit, include_synthetic=include_synthetic)
+        stats = preview_stats_payload(path)
+    except (OSError, json.JSONDecodeError, PreviewIndexError) as exc:
+        return IndexSearchState(
+            enabled=True,
+            loaded=False,
+            path=index_path,
+            document_count=0,
+            results=(),
+            errors=(f"preview index could not be searched: {type(exc).__name__}",),
+            mode="preview",
+        )
+    results = tuple(dict(item) for item in payload.get("results") or [])
+    return IndexSearchState(
+        enabled=True,
+        loaded=True,
+        path=index_path,
+        document_count=int(stats.get("record_count") or len(results)),
+        results=results,
+        reviewed_record_count=int(stats.get("reviewed_count") or 0),
+        artifact_verified_count=sum(1 for item in results if item.get("artifact_verified") is True),
+        mode="preview",
+        preview_index_id=str(payload.get("preview_index_id") or ""),
+        preview_generation_id=str(payload.get("generation_id") or ""),
     )
 
 
 def index_file_status(index_mode: str, index_path: str) -> dict[str, Any]:
-    enabled = index_mode == "local"
+    enabled = index_mode in {"local", "preview"}
     if not enabled:
         return {
             "index_mode": "none",
@@ -239,25 +292,60 @@ def index_file_status(index_mode: str, index_path: str) -> dict[str, Any]:
             "index_document_count": 0,
             "reviewed_record_count": 0,
             "artifact_verified_count": 0,
+            "preview_index_id": "",
+            "preview_generation_id": "",
             "index_errors": [],
         }
+    if index_mode == "preview":
+        try:
+            from runtime.index.preview import preview_stats_payload
+
+            stats = preview_stats_payload(index_path)
+            return {
+                "index_mode": "preview",
+                "index_enabled": True,
+                "index_loaded": True,
+                "index_path": str(index_path),
+                "index_document_count": int(stats.get("record_count") or 0),
+                "reviewed_record_count": int(stats.get("reviewed_count") or 0),
+                "artifact_verified_count": 0,
+                "preview_index_id": str(stats.get("preview_index_id") or ""),
+                "preview_generation_id": str(stats.get("generation_id") or ""),
+                "index_errors": [],
+            }
+        except Exception as exc:
+            return {
+                "index_mode": "preview",
+                "index_enabled": True,
+                "index_loaded": False,
+                "index_path": str(index_path),
+                "index_document_count": 0,
+                "reviewed_record_count": 0,
+                "artifact_verified_count": 0,
+                "preview_index_id": "",
+                "preview_generation_id": "",
+                "index_errors": [f"preview index status failed: {type(exc).__name__}"],
+            }
     state = search_index_path(index_path, "", limit=1)
     return {
-        "index_mode": "local",
+        "index_mode": index_mode,
         "index_enabled": True,
         "index_loaded": state.loaded,
         "index_path": state.path,
         "index_document_count": state.document_count,
         "reviewed_record_count": state.reviewed_record_count,
         "artifact_verified_count": state.artifact_verified_count,
+        "preview_index_id": state.preview_index_id,
+        "preview_generation_id": state.preview_generation_id,
         "index_errors": list(state.errors),
     }
 
 
 def document_to_result_card(document: Mapping[str, Any]) -> dict[str, Any]:
     return {
-        "result_id": str(document.get("id") or "index-result"),
+        "result_id": str(document.get("id") or document.get("preview_record_id") or "index-result"),
         "status": str(document.get("status") or "unknown"),
+        "authority": str(document.get("authority") or ""),
         "title": str(document.get("title") or "Indexed result"),
         "summary": str(document.get("summary") or ""),
         "source_hints": _string_list(document.get("source_hints")),
@@ -274,7 +362,13 @@ def document_to_result_card(document: Mapping[str, Any]) -> dict[str, Any]:
         "review_event_id": str(document.get("review_event_id") or ""),
         "artifact_verified": bool(document.get("artifact_verified") is True),
         "provenance": dict(document.get("provenance") or {}),
-        "index_document_id": str(document.get("id") or ""),
+        "index_document_id": str(document.get("id") or document.get("preview_record_id") or ""),
+        "preview_record_id": str(document.get("preview_record_id") or ""),
+        "why_matched": _string_list(document.get("why_matched")),
+        "why_ranked": _string_list(document.get("why_ranked")),
+        "permitted_actions": _string_list(document.get("permitted_actions")),
+        "forbidden_actions": _string_list(document.get("forbidden_actions")),
+        "synthetic": bool(document.get("synthetic") is True),
     }
 
 

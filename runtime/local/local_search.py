@@ -33,11 +33,13 @@ from runtime.engine.resolution_runs import (
 )
 from runtime.local.search_index import (
     DEFAULT_INDEX_PATH,
+    DEFAULT_PREVIEW_INDEX_PATH,
     SUPPORTED_INDEX_MODES,
     IndexSearchState,
     document_to_result_card,
     index_file_status,
     search_index_path,
+    search_preview_index_path,
 )
 from runtime.source.observation.archive_org_public_metadata import ArchiveOrgMetadataCandidateProvider
 from runtime.source.registry import load_source_registry
@@ -90,6 +92,7 @@ class LocalSearchOptions:
     metadata_budget: int = DEFAULT_METADATA_BUDGET
     index: str = "none"
     index_path: str = DEFAULT_INDEX_PATH
+    include_synthetic_preview: bool = False
 
 
 class MetadataFallbackProvider(Protocol):
@@ -126,13 +129,13 @@ class LocalSearchService:
         source_path = "local_resolution_run"
         if opts.metadata_fallback == "ia_live" and not opts.allow_live_metadata:
             return _blocked_live_metadata_response(normalized_query, opts)
-        if opts.index == "local" and index_state.loaded and index_state.results:
+        if opts.index in {"local", "preview"} and index_state.loaded and index_state.results:
             return _response_from_index(
                 query=normalized_query,
                 options=opts,
                 index_state=index_state,
             )
-        if opts.index == "local" and opts.metadata_fallback == "none":
+        if opts.index in {"local", "preview"} and opts.metadata_fallback == "none":
             return _index_miss_response(
                 query=normalized_query,
                 options=opts,
@@ -442,6 +445,7 @@ def _response_from_index(
 ) -> dict[str, Any]:
     cards = [document_to_result_card(document) for document in index_state.results]
     status = str(cards[0].get("status") if cards else "unknown")
+    source_path = "preview_index" if index_state.mode == "preview" else "local_search_index"
     source_hints = sorted({hint for card in cards for hint in _strings(card.get("source_hints") or [])})
     evidence_hints = [hint for card in cards for hint in _strings(card.get("evidence_hints") or [])]
     missing = sorted({item for card in cards for item in _strings(card.get("missing") or [])})
@@ -471,7 +475,7 @@ def _response_from_index(
         "budget_used": 0,
         "public_live_fanout": False,
         "non_verified_reason": str(cards[0].get("non_verified_reason") if cards else "indexed result is not accepted truth"),
-        "source_path": "local_search_index",
+        "source_path": source_path,
         "run_id": "",
         "run": {},
         "fallback_summary": None,
@@ -479,7 +483,7 @@ def _response_from_index(
         "evidence_hints": evidence_hints[:3] if not options.show_evidence else evidence_hints,
         "source_hints": source_hints,
         "renderer_outputs": {},
-        "fixture_backed": True,
+        "fixture_backed": index_state.mode == "local",
         "provider_call_count": 0,
         "canonical_statuses": list(CANONICAL_STATUSES),
         "no_mutation": _no_mutation_indicator(),
@@ -543,7 +547,7 @@ def _index_miss_response(
         "budget_used": 0,
         "public_live_fanout": False,
         "non_verified_reason": str(card["non_verified_reason"]),
-        "source_path": "local_search_index",
+        "source_path": "preview_index" if index_state.mode == "preview" else "local_search_index",
         "run_id": "",
         "run": {},
         "fallback_summary": None,
@@ -984,6 +988,10 @@ def _ia_fixture_case_for_query(query: str, fixture_payload: Mapping[str, Any]) -
 def _normalize_options(options: LocalSearchOptions | None) -> LocalSearchOptions:
     if options is None:
         return LocalSearchOptions()
+    index_mode = _normalize_index(options.index)
+    index_path = str(options.index_path or DEFAULT_INDEX_PATH)
+    if index_mode == "preview" and index_path == DEFAULT_INDEX_PATH:
+        index_path = DEFAULT_PREVIEW_INDEX_PATH
     return LocalSearchOptions(
         metadata_fallback=_normalize_metadata_fallback(options.metadata_fallback),
         limit=max(1, min(int(options.limit), 25)),
@@ -992,8 +1000,9 @@ def _normalize_options(options: LocalSearchOptions | None) -> LocalSearchOptions
         allow_live_metadata=bool(options.allow_live_metadata),
         metadata_timeout_seconds=max(1, min(int(options.metadata_timeout_seconds), 30)),
         metadata_budget=max(0, min(int(options.metadata_budget), 5)),
-        index=_normalize_index(options.index),
-        index_path=str(options.index_path or DEFAULT_INDEX_PATH),
+        index=index_mode,
+        index_path=index_path,
+        include_synthetic_preview=bool(options.include_synthetic_preview),
     )
 
 
@@ -1012,6 +1021,8 @@ def _normalize_index(value: str) -> str:
 
 
 def _search_index_state(options: LocalSearchOptions, query: str) -> IndexSearchState:
+    if options.index == "preview":
+        return search_preview_index_path(options.index_path, query, limit=options.limit, include_synthetic=options.include_synthetic_preview)
     if options.index != "local":
         return _disabled_index_state(options)
     return search_index_path(options.index_path, query, limit=options.limit)
@@ -1019,18 +1030,19 @@ def _search_index_state(options: LocalSearchOptions, query: str) -> IndexSearchS
 
 def _disabled_index_state(options: LocalSearchOptions) -> IndexSearchState:
     return IndexSearchState(
-        enabled=options.index == "local",
+        enabled=options.index in {"local", "preview"},
         loaded=False,
         path=str(options.index_path or DEFAULT_INDEX_PATH),
         document_count=0,
         results=(),
         errors=(),
+        mode=options.index if options.index in {"local", "preview"} else "none",
     )
 
 
 def _index_response_fields(index_state: IndexSearchState, *, results_used: bool) -> dict[str, Any]:
     return {
-        "index_mode": "local" if index_state.enabled else "none",
+        "index_mode": index_state.mode if index_state.enabled else "none",
         "index_enabled": index_state.enabled,
         "index_loaded": index_state.loaded,
         "index_path": index_state.path,
@@ -1039,6 +1051,8 @@ def _index_response_fields(index_state: IndexSearchState, *, results_used: bool)
         "artifact_verified_count": index_state.artifact_verified_count,
         "index_results_used": bool(results_used and index_state.results),
         "index_result_count": len(index_state.results) if results_used else 0,
+        "preview_index_id": index_state.preview_index_id,
+        "preview_generation_id": index_state.preview_generation_id,
         "index_errors": list(index_state.errors),
     }
 

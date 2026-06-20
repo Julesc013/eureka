@@ -1,4 +1,4 @@
-current_recommended_task: E2E-PREVIEW-INDEX-00 - Build the status-aware preview index over reviewed, candidate, need, near-miss, absence, blocked, unavailable, and unknown states without mutating reviewed truth
+current_recommended_task: E2E-HUNT-EXPLORATION-UI-00 - Build the private local Hunt exploration UI over the shared E2E runner and Preview Index
 completed:
   - SOURCE-ACTION-KERNEL-00
   - SOURCE-WAVE-00
@@ -92,9 +92,9 @@ completed:
   - E2E-REFERENCE-SYSTEM-TRACK-00
   - E2E-REFERENCE-CONTRACT-00
   - E2E-REFERENCE-RUNNER-00
+  - E2E-PREVIEW-INDEX-00
 blocked: []
 planned:
-  - E2E-PREVIEW-INDEX-00
   - E2E-HUNT-EXPLORATION-UI-00
   - SYNTHETIC-TRUTH-PATH-E2E-00
   - AUTONOMOUS-EVAL-ORACLE-00

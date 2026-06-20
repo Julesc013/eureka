@@ -1,0 +1,8 @@
+{
+  "schema_version": "eureka.e2e_preview_record_model_report.v0",
+  "record_schema": "eureka.e2e_preview_record.v0",
+  "contract_path": "contracts/search/preview_record.v0.json",
+  "accepted_truth_authority": "reviewed_record",
+  "candidate_records_are_truth": false,
+  "artifact_verified_requires_accepted_truth": true
+}

@@ -1,0 +1,16 @@
+{
+  "schema_version": "eureka.e2e_preview_search_and_ranking.v0",
+  "search_model": "deterministic_lexical",
+  "default_exclusions": [
+    "synthetic_test",
+    "rejected",
+    "superseded"
+  ],
+  "filters": [
+    "status",
+    "authority",
+    "source_family",
+    "run_id"
+  ],
+  "truth_promotion_from_rank": false
+}

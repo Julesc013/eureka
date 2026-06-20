@@ -1,25 +1,34 @@
 schema_version: aide.task.v0
 id: E2E-PREVIEW-INDEX-00
 title: Build a status-aware E2E preview index
-status: planned
+status: completed
 task_class: e2e_reference_child
 parent_track: E2E-REFERENCE-SYSTEM-TRACK-00
 predecessor: E2E-REFERENCE-RUNNER-00
 successor: E2E-HUNT-EXPLORATION-UI-00
 purpose: Create one searchable projection across reviewed records, candidates, near misses, needs, absences, blocked states, unavailable states, and unknowns without collapsing authority.
 allowed_scope:
+  - .aide/queue/E2E-PREVIEW-INDEX-00/task.yaml
+  - .aide/queue/index.yaml
+  - .aide/context/latest-task-packet.md
   - runtime/local/**
   - runtime/search/**
   - runtime/index/**
+  - runtime/resolution_run/**
+  - contracts/api/**
   - contracts/search/**
   - contracts/view/**
   - contracts/index/**
   - scripts/eureka_index.py
   - scripts/eureka_search.py
+  - tools/**
+  - tests/runtime/**
   - tests/search/**
   - tests/e2e/**
   - evals/**
+  - docs/architecture/**
   - docs/operations/**
+  - docs/reference/**
   - control/audits/e2e_reference_system/**
 forbidden_scope:
   - reviewed/master index mutation paths
@@ -51,3 +60,6 @@ validation:
   - python scripts/eureka_test_select.py --changed --failed-first --json
   - git diff --check
 proof_level_required: L2
+result_status: PASS_WITH_WARNINGS
+completed_at: 2026-06-20
+next_task: E2E-HUNT-EXPLORATION-UI-00

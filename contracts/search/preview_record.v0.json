@@ -1,0 +1,183 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/search/preview_record.v0.json",
+  "title": "EurekaE2EPreviewRecordV0",
+  "description": "Derived searchable preview record. This is not an authoritative store record and cannot create accepted truth.",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "preview_record_id",
+    "semantic_type",
+    "status",
+    "authority",
+    "title",
+    "summary",
+    "normalized_search_text",
+    "why_matched",
+    "why_ranked",
+    "uncertainty",
+    "permitted_actions",
+    "forbidden_actions",
+    "synthetic",
+    "accepted_truth",
+    "artifact_verified",
+    "deterministic_content_hash"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "eureka.e2e_preview_record.v0"
+    },
+    "preview_record_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "semantic_type": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "reviewed",
+        "candidate",
+        "near_miss",
+        "need",
+        "absence",
+        "policy_blocked",
+        "unavailable",
+        "unknown",
+        "mention_only",
+        "superseded",
+        "rejected",
+        "private_local"
+      ]
+    },
+    "authority": {
+      "type": "string",
+      "enum": [
+        "reviewed_record",
+        "candidate_only",
+        "source_observation_only",
+        "evidence_summary_only",
+        "absence_finding",
+        "run_projection",
+        "synthetic_test",
+        "unknown"
+      ]
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "summary": {
+      "type": "string"
+    },
+    "normalized_search_text": {
+      "type": "string"
+    },
+    "matched_query_terms": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "why_matched": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "why_ranked": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "uncertainty": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "missing_information": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "source_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "candidate_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "reviewed_record_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "run_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "workunit_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "review_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "privacy_posture": {
+      "type": "string"
+    },
+    "synthetic": {
+      "type": "boolean"
+    },
+    "accepted_truth": {
+      "type": "boolean"
+    },
+    "artifact_verified": {
+      "type": "boolean"
+    },
+    "review_required": {
+      "type": "boolean"
+    },
+    "permitted_actions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "forbidden_actions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "deterministic_content_hash": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "schema_version": "eureka.e2e_preview_rollback_report.v0",
+  "rollback_scope": "current_pointer_only",
+  "generation_content_mutation": false,
+  "reviewed_record_mutation": false,
+  "reviewed_master_mutation": false,
+  "public_index_mutation": false,
+  "snapshot_publication": false
+}

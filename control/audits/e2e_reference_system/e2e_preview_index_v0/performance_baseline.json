@@ -1,0 +1,6 @@
+{
+  "schema_version": "eureka.e2e_preview_performance_baseline.v0",
+  "performance_claim": "none",
+  "algorithmic_posture": "local_jsonl_linear_scan",
+  "benchmarked_at_scale": false
+}

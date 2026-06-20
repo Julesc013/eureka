@@ -1,0 +1,11 @@
+{
+  "schema_version": "eureka.e2e_preview_input_adapter_matrix.v0",
+  "adapters": {
+    "reviewed_records": "reviewed_record",
+    "candidate_delta": "candidate_only",
+    "evidence_delta": "evidence_summary_or_absence_authority",
+    "source_observation_delta": "source_observation_only",
+    "resolution_run_bundle": "run_projection_or_synthetic_test"
+  },
+  "synthetic_excluded_by_default": true
+}

@@ -1,0 +1,13 @@
+{
+  "schema_version": "eureka.e2e_preview_existing_index_seams.v0",
+  "task_id": "E2E-PREVIEW-INDEX-00",
+  "seams": [
+    "runtime/local/search_index.py",
+    "runtime/local/local_search.py",
+    "scripts/eureka_index.py",
+    "scripts/eureka_search.py",
+    "runtime/resolution_run/**"
+  ],
+  "compatibility_posture": "reuse_existing_index_and_search_surfaces",
+  "local_mode_replaced": false
+}

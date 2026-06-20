@@ -24,7 +24,7 @@ from runtime.local.local_search import (
     render_search_json,
     render_search_text,
 )
-from runtime.local.search_index import DEFAULT_INDEX_PATH, SUPPORTED_INDEX_MODES
+from runtime.local.search_index import DEFAULT_INDEX_PATH, DEFAULT_PREVIEW_INDEX_PATH, SUPPORTED_INDEX_MODES
 
 
 def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr: TextIO = sys.stderr) -> int:
@@ -38,6 +38,7 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr:
     parser.add_argument("--metadata-budget", type=int, default=DEFAULT_METADATA_BUDGET)
     parser.add_argument("--index", choices=SUPPORTED_INDEX_MODES, default="none")
     parser.add_argument("--index-path", default=DEFAULT_INDEX_PATH)
+    parser.add_argument("--include-synthetic-preview", action="store_true")
     parser.add_argument("--limit", type=int, default=10)
     parser.add_argument("--show-evidence", action="store_true")
     parser.add_argument("--show-debug", action="store_true")
@@ -56,7 +57,8 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr:
         metadata_timeout_seconds=args.metadata_timeout,
         metadata_budget=args.metadata_budget,
         index=args.index,
-        index_path=args.index_path,
+        index_path=args.index_path if args.index_path != DEFAULT_INDEX_PATH or args.index != "preview" else DEFAULT_PREVIEW_INDEX_PATH,
+        include_synthetic_preview=args.include_synthetic_preview,
     )
     service = LocalSearchService()
     response = service.search_many(HARD_QUERY_SMOKE_SET, options) if args.all else service.search(query, options)

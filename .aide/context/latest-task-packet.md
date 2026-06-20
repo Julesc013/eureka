@@ -2,11 +2,11 @@
 
 ## PHASE
 
-UNSPECIFIED - E2E-PREVIEW-INDEX-00
+UNSPECIFIED - E2E-HUNT-EXPLORATION-UI-00
 
 ## GOAL
 
-E2E-PREVIEW-INDEX-00
+E2E-HUNT-EXPLORATION-UI-00
 
 ## WHY
 
@@ -139,8 +139,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4760
-- approx_tokens: 1190
+- chars: 4772
+- approx_tokens: 1193
 - budget_status: PASS
 - warnings:
   - none

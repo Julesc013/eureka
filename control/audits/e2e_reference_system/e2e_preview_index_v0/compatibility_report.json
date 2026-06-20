@@ -1,0 +1,7 @@
+{
+  "schema_version": "eureka.e2e_preview_compatibility_report.v0",
+  "local_index_mode_preserved": true,
+  "new_index_mode": "preview",
+  "search_response_shape_extended": true,
+  "breaking_change_claimed": false
+}
