@@ -1,0 +1,45 @@
+{
+  "schema_version": "eureka.portable_command_matrix.v0",
+  "command_count": 7,
+  "commands": {
+    "bootstrap": {
+      "implemented": true,
+      "mutation_scope": "explicit_local_instance",
+      "starts_server": false,
+      "provider_calls": false,
+      "truth_mutation": false
+    },
+    "doctor": {
+      "implemented": true,
+      "mutation_scope": "none",
+      "read_only": true
+    },
+    "test": {
+      "implemented": true,
+      "mutation_scope": "instance_eval_artifacts",
+      "oracle_delegated": true,
+      "full_discovery_claim": false
+    },
+    "hunt": {
+      "implemented": true,
+      "mode": "synthetic",
+      "live_shadow": "blocked",
+      "run_bundle_written": true
+    },
+    "replay": {
+      "implemented": true,
+      "strict_default": true,
+      "provider_calls": false
+    },
+    "serve": {
+      "implemented": true,
+      "mode": "exploration",
+      "loopback_only": true,
+      "canonical_router": true
+    },
+    "status": {
+      "implemented": true,
+      "read_only": true
+    }
+  }
+}

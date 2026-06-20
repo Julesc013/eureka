@@ -1,0 +1,19 @@
+{
+  "schema_version": "eureka.portable_server_model.v0",
+  "route_owner": "runtime.local.service.route_request",
+  "host_default": "127.0.0.1",
+  "port_default": 8765,
+  "loopback_only": true,
+  "lan_enabled": false,
+  "public_alpha_enabled": false,
+  "live_providers_enabled": false,
+  "operator_token_persisted": false,
+  "server_state": "run/eureka-portable-server.json",
+  "server_lock": "run/eureka-portable-server.lock",
+  "smoke_endpoints": [
+    "/health",
+    "/status",
+    "/explore",
+    "/api/v1/explore"
+  ]
+}

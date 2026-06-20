@@ -1,0 +1,15 @@
+{
+  "schema_version": "eureka.portable_instance_profile_audit.v0",
+  "profile_schema_version": "eureka.portable_instance.v0",
+  "profile_path": "config/portable_instance.json",
+  "host_default": "127.0.0.1",
+  "port_default": 8765,
+  "live_providers_enabled": false,
+  "public_exposure_enabled": false,
+  "public_alpha_enabled": false,
+  "downloads_enabled": false,
+  "execution_enabled": false,
+  "telemetry_enabled": false,
+  "account_cloud_sync_enabled": false,
+  "token_or_credential_fields": false
+}

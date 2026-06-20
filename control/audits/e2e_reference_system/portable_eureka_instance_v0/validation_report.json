@@ -1,0 +1,39 @@
+{
+  "schema_version": "eureka.portable_validation_report.v0",
+  "focused_portable_tests": {
+    "command": "python -m unittest tests.scripts.test_eureka_portable_cli tests.runtime.test_portable_eureka_instance tests.e2e.test_portable_eureka_instance tests.e2e.test_portable_eureka_clean_machine -v",
+    "result": "PASS",
+    "tests_run": 15
+  },
+  "local_instance_compatibility": {
+    "command": "python -m unittest tests.operations.test_local_instance_bootstrap tests.operations.test_local_instance_policy tests.operations.test_local_instance_schema_version -v",
+    "result": "PASS",
+    "tests_run": 30
+  },
+  "e2e_core": {
+    "command": "python -m unittest tests.runtime.test_e2e_reference_runner tests.e2e.test_e2e_reference_runner tests.search.test_e2e_preview_index tests.e2e.test_e2e_preview_index tests.e2e.test_e2e_hunt_exploration_ui tests.evals.test_e2e_eval_oracle tests.e2e.test_autonomous_eval_oracle tests.e2e.test_synthetic_truth_path_e2e -v",
+    "result": "PASS",
+    "tests_run": 30
+  },
+  "test_lane_focused": {
+    "command": "python -m unittest tests.operations.test_test_lane_policy tests.scripts.test_eureka_test_select tests.scripts.test_validate_test_lane_policy -v",
+    "result": "PASS",
+    "tests_run": 6
+  },
+  "guardrails": {
+    "architecture_boundaries": "PASS",
+    "runtime_architecture_leakage": "valid",
+    "public_alpha_readonly": "valid",
+    "snapshot_relay": "pass",
+    "test_lane_policy": "valid",
+    "git_diff_check": "PASS",
+    "generated_artifact_cleanliness": "PENDING_UNTIL_COMMIT"
+  },
+  "full_unittest_discovery": "NOT_RUN",
+  "provider_network_calls": false,
+  "model_calls": false,
+  "real_review_decisions": false,
+  "production_truth_mutation": false,
+  "public_exposure": false,
+  "next_task": "HUMAN-END-TO-END-ACCEPTANCE-00"
+}

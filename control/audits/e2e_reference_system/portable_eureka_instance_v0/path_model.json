@@ -1,0 +1,16 @@
+{
+  "schema_version": "eureka.portable_path_model.v0",
+  "resolution_precedence": [
+    "--instance",
+    "EUREKA_INSTANCE",
+    "../instances/default"
+  ],
+  "run_root": "run/e2e-reference/runs",
+  "preview_index_root": "db/e2e-reference/preview-index",
+  "eval_root": "run/e2e-reference/eval",
+  "status_root": "run/e2e-reference/portable-instance",
+  "backup_root": "exports/backups",
+  "hidden_state": false,
+  "repo_root_allowed": false,
+  "path_traversal_allowed": false
+}

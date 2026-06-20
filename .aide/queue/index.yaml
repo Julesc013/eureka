@@ -1,4 +1,4 @@
-current_recommended_task: PORTABLE-EUREKA-INSTANCE-00 - Build portable local Eureka instance entrypoint
+current_recommended_task: HUMAN-END-TO-END-ACCEPTANCE-00 - Conduct coherent local Eureka acceptance
 completed:
   - SOURCE-ACTION-KERNEL-00
   - SOURCE-WAVE-00
@@ -96,9 +96,9 @@ completed:
   - E2E-HUNT-EXPLORATION-UI-00
   - SYNTHETIC-TRUTH-PATH-E2E-00
   - AUTONOMOUS-EVAL-ORACLE-00
+  - PORTABLE-EUREKA-INSTANCE-00
 blocked: []
 planned:
-  - PORTABLE-EUREKA-INSTANCE-00
   - HUMAN-END-TO-END-ACCEPTANCE-00
   - USER-HARDWARE-DETAILS-00
   - MANUAL-ARTIFACT-OBSERVATION-BATCH-03

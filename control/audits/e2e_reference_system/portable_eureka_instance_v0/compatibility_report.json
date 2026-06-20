@@ -1,0 +1,12 @@
+{
+  "schema_version": "eureka.portable_compatibility_report.v0",
+  "specialized_commands_preserved": true,
+  "local_instance_compatibility": true,
+  "runner_compatibility": true,
+  "preview_index_compatibility": true,
+  "exploration_ui_compatibility": true,
+  "oracle_compatibility": true,
+  "synthetic_truth_compatibility": true,
+  "public_alpha_default_changed": false,
+  "live_provider_default_changed": false
+}

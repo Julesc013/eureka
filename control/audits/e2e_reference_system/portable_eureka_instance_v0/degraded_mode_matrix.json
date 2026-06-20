@@ -1,0 +1,14 @@
+{
+  "schema_version": "eureka.portable_degraded_mode_matrix.v0",
+  "missing_instance": "bootstrap_required",
+  "invalid_instance": "instance_validation_failed",
+  "migration_required": "reported_no_auto_migration",
+  "missing_preview_index": "explore_degraded",
+  "invalid_preview_index": "not_searched",
+  "no_run_bundles": "empty_state",
+  "corrupt_run_bundle": "listed_as_corrupt",
+  "invalid_oracle_registry": "test_blocked",
+  "port_in_use": "local_error",
+  "public_or_live_mode_requested": "fail_closed",
+  "fabricates_reviewed_results": false
+}

@@ -1,0 +1,15 @@
+{
+  "schema_version": "eureka.portable_clean_machine_proof.v0",
+  "test": "tests.e2e.test_portable_eureka_clean_machine",
+  "bootstrap": "PASS",
+  "idempotent_bootstrap": "PASS",
+  "doctor": "PASS",
+  "core_oracle": "PASS",
+  "hunt": "PASS",
+  "replay": "PASS",
+  "status": "PASS",
+  "serve_smoke": "PASS",
+  "network_provider_calls": false,
+  "public_exposure": false,
+  "production_truth_created": false
+}

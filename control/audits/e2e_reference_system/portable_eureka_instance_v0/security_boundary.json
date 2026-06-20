@@ -1,0 +1,17 @@
+{
+  "schema_version": "eureka.portable_security_boundary.v0",
+  "loopback_only": true,
+  "public_exposure": false,
+  "public_alpha": false,
+  "lan_enabled": false,
+  "live_providers": false,
+  "downloads": false,
+  "execution": false,
+  "model_calls": false,
+  "real_review_decisions": false,
+  "production_truth_mutation": false,
+  "reviewed_master_mutation": false,
+  "public_index_mutation": false,
+  "operator_token_persisted": false,
+  "license_posture_changed": false
+}

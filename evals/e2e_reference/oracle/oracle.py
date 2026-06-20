@@ -1131,15 +1131,33 @@ def _execution_id(suite_id: str, case_ids: Sequence[str]) -> str:
 
 def _safe_execution_root(out_root: str | Path, execution_id: str) -> Path:
     root = Path(out_root)
-    path = (REPO_ROOT / root / execution_id).resolve() if not root.is_absolute() else (root / execution_id).resolve()
+    base_root = (REPO_ROOT / root).resolve() if not root.is_absolute() else root.resolve()
+    path = (base_root / execution_id).resolve()
     base = (REPO_ROOT / DEFAULT_OUTPUT_ROOT).resolve()
     try:
         path.relative_to(base)
-    except ValueError as exc:
-        raise OracleError(f"oracle output must remain under {DEFAULT_OUTPUT_ROOT}") from exc
+    except ValueError:
+        if _is_instance_eval_root(base_root):
+            try:
+                path.relative_to(base_root)
+            except ValueError as exc:
+                raise OracleError("oracle output escapes the requested instance eval root") from exc
+        else:
+            raise OracleError(f"oracle output must remain under {DEFAULT_OUTPUT_ROOT} or an explicit instance run/e2e-reference/eval root")
     if path.exists():
         raise OracleError(f"oracle execution would overwrite existing run: {execution_id}")
     return path
+
+
+def _is_instance_eval_root(path: Path) -> bool:
+    resolved = path.resolve()
+    try:
+        resolved.relative_to(REPO_ROOT)
+        return False
+    except ValueError:
+        pass
+    parts = tuple(part.casefold() for part in resolved.parts)
+    return len(parts) >= 3 and parts[-3:] == ("run", "e2e-reference", "eval")
 
 
 def _safe_child(root: Path, child: str) -> Path:

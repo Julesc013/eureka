@@ -1,0 +1,79 @@
+{
+  "schema_version": "eureka.portable_existing_command_seams.v0",
+  "task": "PORTABLE-EUREKA-INSTANCE-00",
+  "seams": [
+    {
+      "path": "tools/generators/eureka_init_instance.py",
+      "command": "python scripts/eureka_init_instance.py --instance <path>",
+      "python_callable": "initialize_instance",
+      "role": "local instance initialization",
+      "state_root": "explicit instance",
+      "mutation_posture": "local instance only",
+      "network_posture": "offline",
+      "reusable_directly": true,
+      "wrapper_required": true,
+      "compatibility_requirement": "existing command remains supported",
+      "disposition": "wrapped"
+    },
+    {
+      "path": "runtime/resolution_run/runner.py",
+      "command": "python scripts/eureka_resolution_run.py",
+      "python_callable": "run_e2e_reference_run, replay_run_bundle",
+      "role": "shared runner and replay",
+      "state_root": "instance run/e2e-reference/runs",
+      "mutation_posture": "generated run bundles only",
+      "network_posture": "offline synthetic",
+      "reusable_directly": true,
+      "wrapper_required": true,
+      "compatibility_requirement": "no second runner",
+      "disposition": "wrapped"
+    },
+    {
+      "path": "runtime/index/preview/index.py",
+      "command": "python scripts/eureka_index.py",
+      "python_callable": "build_preview_index, search_preview_index, validate_preview_index",
+      "role": "Preview Index",
+      "state_root": "instance db/e2e-reference/preview-index",
+      "mutation_posture": "preview generation only",
+      "network_posture": "offline",
+      "reusable_directly": true,
+      "wrapper_required": true,
+      "compatibility_requirement": "no second Preview Index",
+      "disposition": "wrapped"
+    },
+    {
+      "path": "runtime/local/service/routes.py",
+      "command": "python scripts/eureka.py serve --mode exploration",
+      "python_callable": "route_request",
+      "role": "local route registry",
+      "state_root": "explicit instance",
+      "mutation_posture": "operator-token-gated route semantics",
+      "network_posture": "loopback only",
+      "reusable_directly": true,
+      "wrapper_required": true,
+      "compatibility_requirement": "no second route registry",
+      "disposition": "wrapped"
+    },
+    {
+      "path": "evals/e2e_reference/oracle/oracle.py",
+      "command": "python scripts/eureka_e2e_eval.py run",
+      "python_callable": "run_oracle",
+      "role": "deterministic autonomous evaluation",
+      "state_root": "instance run/e2e-reference/eval",
+      "mutation_posture": "eval artifacts only",
+      "network_posture": "offline",
+      "reusable_directly": true,
+      "wrapper_required": true,
+      "compatibility_requirement": "no second oracle",
+      "disposition": "wrapped"
+    }
+  ],
+  "conclusions": {
+    "canonical_local_instance_model": true,
+    "canonical_local_service_router": true,
+    "one_runner": true,
+    "one_preview_index": true,
+    "one_oracle": true,
+    "duplicated_command_implementation": false
+  }
+}
