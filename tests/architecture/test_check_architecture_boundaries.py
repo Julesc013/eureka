@@ -110,6 +110,17 @@ class ArchitectureBoundaryCheckerTestCase(unittest.TestCase):
         self.assertEqual(result.violations, ())
         self.assertEqual(result.root_model.unexpected_top_level_entries, ())
 
+    def test_external_full_discovery_handoff_root_file_is_conventional(self) -> None:
+        with temporary_repo(
+            {
+                "external_full_discovery_handoff.json": '{"schema_version": "external_full_discovery_handoff.v0"}\n',
+            }
+        ) as root:
+            result = run_boundary_check(root)
+
+        self.assertEqual(result.violations, ())
+        self.assertEqual(result.root_model.unexpected_top_level_entries, ())
+
     def test_checker_emits_json_when_requested(self) -> None:
         with temporary_repo(
             {
