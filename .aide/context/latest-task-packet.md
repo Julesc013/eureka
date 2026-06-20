@@ -103,6 +103,17 @@ external full-discovery handoff, and a second-pass hardening audit.
 10. `EUREKA-EXTERNAL-FULL-DISCOVERY-HANDOFF-01`
 11. `EUREKA-LIVE-PRODUCT-HARDENING-AUDIT-01`
 
+## EVIDENCE
+
+- `control/inventory/product/capability_state.json`
+- `.aide/queue/index.yaml`
+- `.aide/queue/OPERATOR-LIVE-CANARY-00/task.yaml`
+- `external_full_discovery_handoff.json`
+- `control/audits/e2e_reference_system/live_product_hardening_audit_v1/AUDIT_REPORT.md`
+- `control/audits/e2e_reference_system/live_product_hardening_audit_v1/findings.json`
+- focused Wave 03 runtime, e2e, operations, and architecture tests
+- final guard command outputs from the current Codex session
+
 ## VALIDATION
 
 - Run focused tests after each stage.
@@ -134,3 +145,29 @@ external full-discovery handoff, and a second-pass hardening audit.
 - Deterministic hardening stages pass focused tests.
 - Final queue recommendation remains the operator canary unless a real canary
   has passed.
+
+## OUTPUT_SCHEMA
+
+Final response must include:
+
+- Overall Status
+- Commits
+- Capability State
+- Observability
+- Recovery
+- Performance
+- Foundry UX
+- Provider Registry
+- Portable Bundle
+- Live Canary
+- Human Acceptance
+- Full Discovery
+- Audit
+- Queue State
+- Next Task
+
+## TOKEN_ESTIMATE
+
+- packet_tokens: under 1600
+- expected_final_response_tokens: under 2500
+- risk: medium, because external live and human gates must remain distinct
