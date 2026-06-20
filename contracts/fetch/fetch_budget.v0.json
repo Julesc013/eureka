@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/fetch/fetch_budget.v0.json",
+  "title": "Eureka Fetch Budget v0",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "global_concurrency",
+    "per_host_concurrency",
+    "per_host_request_limit"
+  ],
+  "properties": {
+    "schema_version": {"const": "fetch_budget.v0"},
+    "global_concurrency": {"type": "integer", "minimum": 1},
+    "per_host_concurrency": {"type": "integer", "minimum": 1},
+    "per_host_request_limit": {"type": "integer", "minimum": 1}
+  }
+}

@@ -22,7 +22,10 @@
     "max_redirects": {"type": "integer", "minimum": 0},
     "timeout_seconds": {"type": "integer", "minimum": 1},
     "max_body_bytes": {"type": "integer", "minimum": 1},
-    "allowed_mime_types": {"type": "array", "items": {"type": "string"}},
+    "allowed_mime_types": {
+      "type": "array",
+      "items": {"enum": ["text/html", "text/plain", "application/xhtml+xml"]}
+    },
     "robots_required": {"type": "boolean"},
     "block_non_public_ips": {"const": true}
   }

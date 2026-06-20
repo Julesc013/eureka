@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/fetch/robots_decision.v0.json",
+  "title": "Eureka Robots Decision v0",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["allowed", "status", "robots_url", "matched_rule", "error"],
+  "properties": {
+    "allowed": {"type": "boolean"},
+    "status": {"type": "string"},
+    "robots_url": {"type": "string"},
+    "matched_rule": {"type": "string"},
+    "error": {"type": "string"}
+  }
+}

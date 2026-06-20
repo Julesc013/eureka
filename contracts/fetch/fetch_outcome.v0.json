@@ -4,12 +4,13 @@
   "title": "Eureka Fetch Outcome v0",
   "type": "object",
   "additionalProperties": true,
-  "required": ["schema_version", "status", "request", "policy", "observation", "error"],
+  "required": ["schema_version", "status", "request", "policy", "budget", "observation", "error"],
   "properties": {
     "schema_version": {"const": "fetch_outcome.v0"},
     "status": {"enum": ["fetched", "blocked", "error"]},
     "request": {"$ref": "fetch_request.v0.json"},
     "policy": {"$ref": "fetch_policy.v0.json"},
+    "budget": {"$ref": "fetch_budget.v0.json"},
     "observation": {
       "oneOf": [
         {"$ref": "source_observation.v0.json"},

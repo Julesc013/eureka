@@ -1,6 +1,7 @@
 """Safe web fetching connector for live Search/Hunt observations."""
 
 from .http_fetcher import (
+    FetchBudget,
     FetchError,
     FetchOutcome,
     FetchPolicy,
@@ -9,8 +10,10 @@ from .http_fetcher import (
     SafeHTTPFetcher,
     SourceObservation,
 )
+from .observation_store import JsonlSourceObservationStore, SourceObservationStore
 
 __all__ = [
+    "FetchBudget",
     "FetchError",
     "FetchOutcome",
     "FetchPolicy",
@@ -18,4 +21,6 @@ __all__ = [
     "HTTPTransportResult",
     "SafeHTTPFetcher",
     "SourceObservation",
+    "JsonlSourceObservationStore",
+    "SourceObservationStore",
 ]

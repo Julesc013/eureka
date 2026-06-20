@@ -1,8 +1,10 @@
 from __future__ import annotations
 
+from pathlib import Path
+import tempfile
 import unittest
 
-from runtime.connectors.web import FetchPolicy, FetchRequest, HTTPTransportResult, SafeHTTPFetcher
+from runtime.connectors.web import FetchBudget, FetchPolicy, FetchRequest, HTTPTransportResult, JsonlSourceObservationStore, SafeHTTPFetcher
 from runtime.connectors.web.dns_guard import DNSGuard
 from runtime.connectors.web.robots import AllowAllRobotsClient, RobotsTxtClient
 
@@ -135,6 +137,73 @@ class SafeWebFetcherTests(unittest.TestCase):
 
         self.assertEqual("unsupported_scheme", ftp.error.code if ftp.error else "")
         self.assertEqual("unsupported_port", port.error.code if port.error else "")
+
+    def test_rejects_url_credentials_before_transport(self) -> None:
+        calls: list[str] = []
+        fetcher = SafeHTTPFetcher(
+            dns_guard=DNSGuard(resolver=lambda _host: ("93.184.216.34",)),
+            robots_client=AllowAllRobotsClient(),
+            transport=lambda url, _headers, _timeout, _max_bytes: calls.append(url) or HTTPTransportResult(200, {"Content-Type": "text/plain"}, b"ok"),
+        )
+
+        outcome = fetcher.fetch(FetchRequest("https://user:secret@example.test/manual"))
+
+        self.assertEqual("blocked", outcome.status)
+        self.assertEqual("url_credentials_not_allowed", outcome.error.code if outcome.error else "")
+        self.assertEqual([], calls)
+
+    def test_records_http_error_without_observation(self) -> None:
+        fetcher = SafeHTTPFetcher(
+            dns_guard=DNSGuard(resolver=lambda _host: ("93.184.216.34",)),
+            robots_client=AllowAllRobotsClient(),
+            transport=lambda _url, _headers, _timeout, _max_bytes: HTTPTransportResult(404, {"Content-Type": "text/plain"}, b"missing"),
+        )
+
+        outcome = fetcher.fetch(FetchRequest("https://example.test/missing"))
+
+        self.assertEqual("error", outcome.status)
+        self.assertEqual("http_error", outcome.error.code if outcome.error else "")
+        self.assertIsNone(outcome.observation)
+
+    def test_enforces_per_host_request_budget(self) -> None:
+        fetcher = SafeHTTPFetcher(
+            budget=FetchBudget(per_host_request_limit=1),
+            dns_guard=DNSGuard(resolver=lambda _host: ("93.184.216.34",)),
+            robots_client=AllowAllRobotsClient(),
+            transport=lambda _url, _headers, _timeout, _max_bytes: HTTPTransportResult(200, {"Content-Type": "text/plain"}, b"ok"),
+        )
+
+        first = fetcher.fetch(FetchRequest("https://example.test/one"))
+        second = fetcher.fetch(FetchRequest("https://example.test/two"))
+
+        self.assertEqual("fetched", first.status)
+        self.assertEqual("blocked", second.status)
+        self.assertEqual("per_host_budget_exhausted", second.error.code if second.error else "")
+
+    def test_persists_source_observation_without_provider_payload(self) -> None:
+        body = b"<html><head><title>Saved</title></head><body>Durable observation</body></html>"
+        fetcher = SafeHTTPFetcher(
+            dns_guard=DNSGuard(resolver=lambda _host: ("93.184.216.34",)),
+            robots_client=AllowAllRobotsClient(),
+            transport=lambda _url, _headers, _timeout, _max_bytes: HTTPTransportResult(200, {"Content-Type": "text/html; charset=utf-8"}, body),
+            clock=lambda: "2026-06-21T00:00:00Z",
+        )
+        outcome = fetcher.fetch(FetchRequest("https://example.test/saved", query="saved manual", run_id="run-fetch"))
+        self.assertIsNotNone(outcome.observation)
+
+        with tempfile.TemporaryDirectory() as temp:
+            store = JsonlSourceObservationStore(Path(temp) / "observations")
+            observation_id = store.put(outcome.observation)
+            loaded = store.get(observation_id)
+            records = store.list()
+
+        self.assertIsNotNone(loaded)
+        self.assertEqual(1, len(records))
+        self.assertEqual("https://example.test/saved", loaded["final_url"])
+        self.assertEqual("saved manual", loaded["query"])
+        self.assertFalse(loaded["provider_result_payload_persisted"])
+        self.assertFalse(loaded["retention_policy"]["provider_result_payload_persisted"])
+        self.assertNotIn("provider_rank", repr(loaded))
 
 
 if __name__ == "__main__":

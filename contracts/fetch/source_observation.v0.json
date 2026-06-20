@@ -8,32 +8,54 @@
     "schema_version",
     "observation_id",
     "status",
+    "requested_url",
+    "final_url",
     "canonical_url",
     "retrieved_at",
     "http_status",
     "content_type",
+    "mime",
+    "charset",
     "content_hash",
     "extracted_title",
     "extracted_text",
     "outbound_links",
     "query",
     "run_id",
-    "fetch_policy_result"
+    "fetch_policy_result",
+    "fetch_policy_version",
+    "source_family",
+    "retention_policy"
   ],
   "properties": {
     "schema_version": {"const": "source_observation.v0"},
     "observation_id": {"type": "string"},
     "status": {"const": "unreviewed"},
+    "requested_url": {"type": "string"},
+    "final_url": {"type": "string"},
     "canonical_url": {"type": "string"},
     "retrieved_at": {"type": "string"},
     "http_status": {"type": "integer"},
     "content_type": {"type": "string"},
+    "mime": {"type": "string"},
+    "charset": {"type": "string"},
     "content_hash": {"type": "string"},
+    "title": {"type": "string"},
     "extracted_title": {"type": "string"},
     "extracted_text": {"type": "string"},
     "outbound_links": {"type": "array", "items": {"$ref": "link_edge.v0.json"}},
     "query": {"type": "string"},
     "run_id": {"type": "string"},
-    "fetch_policy_result": {"type": "string"}
+    "fetch_policy_result": {"type": "string"},
+    "fetch_policy_version": {"const": "fetch_policy.v0"},
+    "source_family": {"type": "string"},
+    "retention_policy": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["provider_result_payload_persisted"],
+      "properties": {
+        "provider_result_payload_persisted": {"const": false}
+      }
+    }
   }
 }

@@ -2,27 +2,23 @@
 
 ## PHASE
 
-UNSPECIFIED - EUREKA-REAL-LIVE-SEARCH-HUNT-00
+UNSPECIFIED - EUREKA-LIVE-DISCOVERY-STACK-WAVE-01
 
 ## GOAL
 
-EUREKA-REAL-LIVE-SEARCH-HUNT-00
+EUREKA-LIVE-DISCOVERY-STACK-WAVE-01
 
 ## WHY
 
-Reset the current acceptance path from local-only/demo search to the real product slice: arbitrary live query, immediate transient web leads, deeper Hunt, safe inspection, local Preview Index persistence, restart, and local search. AIDE supports this by protecting secrets, bounding provider calls, selecting focused tests, and verifying no reviewed/public mutation.
+Continue AIDE token survival by using repo-local context refs, compact objectives, deterministic validation, and evidence packets instead of long chat history.
 
 ## CONTEXT_REFS
 
 - `AGENTS.md`
 - `.aide/queue/index.yaml`
-- `.aide/queue/EUREKA-REAL-LIVE-SEARCH-HUNT-00/task.yaml`
 - `.aide/memory/project-state.md`
 - `.aide/memory/decisions.md`
 - `.aide/memory/open-risks.md`
-- `README.md`
-- `docs/STATUS.md`
-- `docs/ROADMAP.md`
 - `.aide/context/repo-snapshot.json` (present)
 - `.aide/context/repo-map.json` (present)
 - `.aide/context/repo-map.md` (present)
@@ -48,26 +44,12 @@ Reset the current acceptance path from local-only/demo search to the real produc
 
 - `.aide/**`
 - `AGENTS.md`
-- `README.md`
-- `docs/STATUS.md`
-- `docs/ROADMAP.md`
 - `docs/operations/**`
 - `docs/reference/**`
 - `control/inventory/**`
 - `control/audits/**`
 - `control/policies/**`
-- `scripts/eureka.py`
-- `runtime/search/**`
-- `runtime/local/**`
-- `runtime/index/**`
-- `runtime/resolution_run/**`
-- `runtime/engine/interfaces/**`
-- `surfaces/web/**`
-- `contracts/**`
-- `tests/e2e/**`
-- `tests/runtime/**`
-- `tests/integration/**`
-- `tests/scripts/**`
+- `scripts/local_queue_progress.py`
 - `scripts/validate_*.py`
 - `scripts/check_*.py`
 - `tests/operations/**`
@@ -82,13 +64,16 @@ Reset the current acceptance path from local-only/demo search to the real produc
 - `.local/**`
 - `.cache/**`
 - `eureka-instance/**`
+- `runtime/**`
+- `contracts/**`
+- `surfaces/**`
 - `site/**`
 - `native/**`
 - `crates/**`
 - `examples/**`
 - `evals/**`
-- `tests/**` outside the allowed test lanes above
-- `scripts/**` outside `scripts/eureka.py` and validator/check repair
+- `tests/**` unless this is an AIDE/control-plane test repair
+- `scripts/**` unless this is an AIDE validator/check repair
 - raw provider credentials, API keys, local caches, raw prompt logs, raw responses, and source AIDE repository state
 
 ## IMPLEMENTATION
@@ -102,16 +87,20 @@ Reset the current acceptance path from local-only/demo search to the real produc
 
 ## VALIDATION
 
-- `python -m unittest tests.runtime.test_live_web_search_provider -v`
-- `python -m unittest tests.runtime.test_live_search_service -v`
-- `python -m unittest tests.e2e.test_portable_eureka_instance -v`
-- `python -m unittest tests.e2e.test_local_search_cli -v`
-- `python -m unittest tests.e2e.test_local_search_server -v`
-- `python -m unittest tests.e2e.test_local_search_preview_index -v`
-- `python -m unittest tests.runtime.test_portable_eureka_instance -v`
+- `py -3 .aide/scripts/aide_lite.py doctor`
+- `py -3 .aide/scripts/aide_lite.py validate`
+- `py -3 .aide/scripts/aide_lite.py snapshot`
+- `py -3 .aide/scripts/aide_lite.py index`
+- `py -3 .aide/scripts/aide_lite.py context`
+- `py -3 .aide/scripts/aide_lite.py pack --task "AIDE-EVAL-GREEN-01"`
+- `py -3 .aide/scripts/aide_lite.py test`
+- `py -3 .aide/scripts/aide_lite.py selftest`
+- `py -3 .aide/scripts/aide_lite.py verify`
+- `py -3 .aide/scripts/aide_lite.py review-pack`
+- `py -3 .aide/scripts/aide_lite.py eval run`
 - `python scripts/check_architecture_boundaries.py`
 - `python scripts/check_generated_artifact_cleanliness.py --check --json`
-- `python scripts/eureka_test_select.py --changed --failed-first --json`
+- `python -m unittest discover -s tests -t .`
 - `git diff --check`
 
 ## COMMITS
@@ -131,19 +120,9 @@ Reset the current acceptance path from local-only/demo search to the real produc
 
 ## NON_GOALS
 
-- No public exposure, tunnel activation, deployment, production-readiness claim, public-launch claim, main promotion, force-push, or history rewrite.
-- No reviewed/master/public truth mutation or review decision recording.
-- No raw provider credential, raw provider response, source AIDE state, prompt log, or local cache commits.
-- No second broad-web provider family, model/agentic planner, downloads, or execution until the deterministic live-search/Hunt path is useful.
-
-## LIVE_NETWORK_AUTHORIZATION
-
-- Bounded local operator opt-in provider calls are authorized only for `--live` command/server modes.
-- First broad-web provider: Brave Search API.
-- Credential env vars: `BRAVE_SEARCH_API_KEY`, compatibility alias `BRAVE_API_KEY`.
-- Provider search results are transient leads; do not persist Brave snippets, ranks, or raw responses under the standard terms.
-- Persisted Hunt summaries must not contain provider URLs, snippets, ranks, raw bodies, or unresolved lead cards.
-- Persist only independently fetched, policy-approved SourceObservations in later milestones.
+- No Eureka product behavior change.
+- No source probes, extraction, model/provider calls, deployment, production-readiness claim, public-launch claim, main promotion, force-push, history rewrite, SYN implementation, or F0 implementation.
+- No Gateway, provider calls, live model routing, local model setup, exact tokenizer, provider billing ledger, Runtime, Service, Commander, Mobile, MCP/A2A, UI, host/app implementation, or autonomous loop unless a future reviewed queue item explicitly authorizes it.
 
 ## ACCEPTANCE
 
@@ -160,8 +139,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4782
-- approx_tokens: 1196
+- chars: 4790
+- approx_tokens: 1198
 - budget_status: PASS
 - warnings:
   - none

@@ -1,7 +1,7 @@
 schema_version: aide.task.v0
 id: EUREKA-SAFE-WEB-FETCH-AND-OBSERVATION-01
 title: Implement safe independent web fetching and SourceObservation handoff
-status: planned
+status: pass
 task_class: product_runtime_milestone
 parent_track: EUREKA-REAL-LIVE-SEARCH-HUNT-00
 predecessor: EUREKA-LIVE-SEARCH-RETENTION-AND-CONSOLIDATION-01
@@ -17,6 +17,19 @@ scope:
   - MIME, size, timeout, and concurrency limits
   - HTML/text extraction
   - SourceObservation handoff and persistence preparation
+evidence:
+  subject: "feat(fetch): add safe independent web observations"
+  notes:
+    - FetchBudget and RobotsDecision contracts are present with existing fetch contracts.
+    - SafeHTTPFetcher rejects URL credentials, non-public network targets, unsafe redirects, unsupported MIME, oversized bodies, HTTP errors, and per-host budget exhaustion.
+    - urllib transport disables ambient proxy handling and disables unsafe automatic redirects.
+    - JsonlSourceObservationStore persists independently fetched SourceObservations by id and deterministic JSONL projection.
+    - Persisted SourceObservations carry requested/final/canonical URLs, MIME/charset, content hash, extracted title/text, outbound links, run/query provenance, selected safe headers, and retention policy.
+    - Provider result payload persistence remains false.
+validation:
+  - python -m unittest tests.runtime.test_safe_web_fetcher -v
+  - Get-ChildItem contracts/fetch -Filter *.json | ForEach-Object { python -m json.tool $_.FullName > $null }
+  - python -m py_compile runtime/connectors/web/http_fetcher.py runtime/connectors/web/observation_store.py tests/runtime/test_safe_web_fetcher.py
 non_goals:
   - no provider result persistence
   - no reviewed/master/public mutation

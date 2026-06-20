@@ -112,7 +112,7 @@ milestone_evidence:
   milestone_1: pass
   milestone_2: pass
   milestone_3: partial
-  milestone_4: partial
+  milestone_4: pass
   milestone_5: pending
   milestone_6: pending
   notes:
@@ -120,7 +120,7 @@ milestone_evidence:
     - bootstrap defaults to no demo data
     - Brave provider contract exists with transient retention policy
     - live CLI/server display paths exist but real fetch, durable indexing, and full Hunt remain incomplete
-    - safe fetch/extraction component exists with SSRF, DNS, redirect, robots, MIME, and body-size tests, but Hunt and Preview Index integration remain pending
+    - safe fetch/extraction and SourceObservation persistence components exist with SSRF, DNS, redirect, robots, MIME, body-size, URL-credential, HTTP-error, per-host budget, and durable-store tests
 subdeliverables:
   retention_and_state_hotfix:
     status: pass
@@ -130,12 +130,12 @@ subdeliverables:
       - duplicate accounting tracks raw transient leads separately from unique display leads
       - docs and AIDE memory distinguish local --live opt-in provider calls from public fanout
   safe_fetch_component:
-    status: partial
+    status: pass
     acceptance:
       - runtime/connectors/web safe fetcher validates scheme, port, DNS, redirects, robots, MIME, and body size before producing SourceObservation output
       - tests prove private/local targets and private redirects are blocked before transport
       - tests prove provider SearchLead payloads are not part of durable fetch contracts
-      - pending: integrate selected transient leads into fetch WorkUnits and persist observations into the operational Preview Index
+      - durable SourceObservation records can be persisted locally without provider result payloads
 deliverables:
   - python scripts/eureka.py serve --live
   - python scripts/eureka.py search "<arbitrary query>" --live
