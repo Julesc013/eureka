@@ -35,9 +35,12 @@ class PortableEurekaCleanMachineTests(unittest.TestCase):
             bootstrap = self.run_cli(instance, "bootstrap")
             self.assertEqual(bootstrap["status"], "pass")
             self.assertTrue(instance.is_dir())
+            self.assertFalse(bootstrap["demo_run"]["created"])
+            self.assertFalse(bootstrap["preview_index"]["created"])
 
-            second_bootstrap = self.run_cli(instance, "bootstrap")
+            second_bootstrap = self.run_cli(instance, "bootstrap", "--with-demo")
             self.assertIn(second_bootstrap["status"], {"pass", "pass_with_warnings"})
+            self.assertTrue(second_bootstrap["demo_run"]["created"])
 
             doctor = self.run_cli(instance, "doctor", "--strict")
             self.assertIn(doctor["status"], {"pass", "pass_with_warnings"})

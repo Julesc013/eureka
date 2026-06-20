@@ -1,0 +1,132 @@
+schema_version: aide.task.v0
+id: EUREKA-REAL-LIVE-SEARCH-HUNT-00
+title: Make Eureka provide real live search and Hunt before acceptance
+status: planned
+task_class: product_vertical_slice
+parent_track: E2E-REFERENCE-SYSTEM-TRACK-00
+supersedes:
+  - EUREKA-REAL-LOCAL-SEARCH-HUNT-00
+predecessor: HUMAN-END-TO-END-ACCEPTANCE-00
+successor: HUMAN-END-TO-END-ACCEPTANCE-00
+purpose: >-
+  Replace the local-only fixture/demo acceptance path with a usable live
+  discovery product path: arbitrary query, immediate live web leads, deeper
+  Hunt, safe inspection, local Preview Index persistence, restart, and local
+  search.
+operator_verdict_source: prompt:2026-06-20-real-live-search-reset
+allowed_scope:
+  - .aide/queue/index.yaml
+  - .aide/queue/EUREKA-REAL-LIVE-SEARCH-HUNT-00/**
+  - .aide/context/**
+  - scripts/eureka.py
+  - runtime/search/**
+  - runtime/local/**
+  - runtime/index/**
+  - runtime/resolution_run/**
+  - runtime/engine/interfaces/**
+  - surfaces/web/**
+  - contracts/**
+  - tests/e2e/**
+  - tests/runtime/**
+  - tests/integration/**
+  - tests/scripts/**
+  - docs/operations/**
+  - docs/reference/**
+  - control/audits/e2e_reference_system/**
+  - control/inventory/**
+forbidden_scope:
+  - raw provider credentials, API keys, local caches, raw prompt logs, raw responses, and source AIDE repository state
+  - public exposure, tunnel activation, deployment, or launch implementation
+  - reviewed/master/public truth mutation
+  - review decision recording
+  - production review stores
+  - downloads or execution outside the safe fetch milestone
+  - second broad-web provider family before the Brave vertical slice is useful
+  - model/agentic planner work before deterministic Hunt works
+live_network_authorization:
+  status: authorized_for_bounded_local_operator_opt_in
+  provider_family: broad_web_search
+  first_provider: brave
+  credential_env:
+    - BRAVE_SEARCH_API_KEY
+    - BRAVE_API_KEY
+  constraints:
+    - provider calls require explicit --live mode or live server mode
+    - never print, persist, commit, or expose provider credentials
+    - enforce request budgets and bounded retry/backoff
+    - do not persist provider-restricted snippets, ranks, or raw responses under standard terms
+    - public exposure remains forbidden
+provider_retention_policy:
+  brave_standard_terms_default:
+    display_results: true
+    transient_cache_ttl: bounded_operational_only
+    persist_urls: false
+    persist_snippets: false
+    persist_rank: false
+    redistribute: false
+    use_for_model_training: false
+  persistent_source: independently_fetched_policy_approved_source_observations
+milestones:
+  - id: 1
+    title: Remove synthetic behavior from normal mode
+    acceptance:
+      - fixture imports removed from production search path
+      - hard-query fixture fallback removed from normal search
+      - bootstrap defaults to no demo data
+      - --with-demo becomes explicit
+      - normal search never silently substitutes fixtures
+  - id: 2
+    title: Broad-web provider contract and Brave adapter
+    acceptance:
+      - provider-neutral search interface exists
+      - Brave adapter reads key from local environment only
+      - Brave results are transient SearchLeads with retention policy
+      - rate-limit headers and HTTP 429 are handled with bounded retry/backoff
+  - id: 3
+    title: Immediate live result display
+    acceptance:
+      - local and live results can be blended
+      - /, /search, /api/search, /hunt, and /api/hunt expose ordinary search/Hunt surfaces in live mode
+      - no review packet language or raw JSON on the normal HTML page
+  - id: 4
+    title: Safe fetch and extraction
+    acceptance:
+      - search API lookup and page fetching are separate components
+      - SSRF, redirect, DNS, robots, MIME, size, timeout, and concurrency limits are enforced
+      - fetch errors are stored honestly
+  - id: 5
+    title: Persistent Preview Index
+    acceptance:
+      - PreviewIndexStore port exists
+      - SQLite/FTS adapter persists policy-approved SourceObservations
+      - restart preserves indexed unreviewed discoveries
+  - id: 6
+    title: Real Hunt
+    acceptance:
+      - deterministic query expansion, pagination, archive variants, outbound-link following, dedupe, budgets, and cancellation work
+      - Hunt summary shows attempted queries, providers, pages fetched, unique results, duplicates, blocked fetches, errors, near misses, and unresolved leads
+deliverables:
+  - python scripts/eureka.py serve --live
+  - python scripts/eureka.py search "<arbitrary query>" --live
+  - python scripts/eureka.py hunt "<arbitrary query>" --live --max-queries 20 --max-fetches 10
+  - python scripts/eureka.py search "<known local query>" --index local
+  - python scripts/eureka.py index stats
+acceptance:
+  - Human acceptance can resume only after all six milestones pass with an unseen human-chosen query.
+  - Live unreviewed results must display without review.
+  - Local private unreviewed indexing must work without canonical promotion.
+  - Fixture data must not appear in normal live/local search unless replay, tests, or explicit demo mode requested it.
+  - Provider failure must be honest and local search must remain usable.
+validation:
+  - fixture-free production path test
+  - provider adapter contract tests
+  - live-provider opt-in canary
+  - immediate-result route test
+  - safe-fetch SSRF suite
+  - robots-policy tests
+  - persistent Preview Index restart test
+  - Hunt budget/cancellation tests
+  - deduplication tests
+  - provider outage test
+  - no reviewed/public mutation test
+proof_level_required: L3

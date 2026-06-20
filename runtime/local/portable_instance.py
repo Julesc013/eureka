@@ -11,6 +11,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from datetime import datetime, timezone
 import argparse
+import hashlib
 import json
 import os
 from pathlib import Path
@@ -57,6 +58,13 @@ from runtime.resolution_run import (
     validate_run_bundle,
 )
 from runtime.resolution_run.errors import ResolutionRunValidationError
+from runtime.search.live_web import (
+    PROVIDER_NOT_CONFIGURED_MESSAGE,
+    WebSearchBudget,
+    WebSearchProviderError,
+    provider_from_environment,
+    provider_status,
+)
 
 
 REPO_ROOT = resolve_repo_root(Path(__file__))
@@ -160,7 +168,14 @@ def build_portable_paths(instance_root: str | Path) -> PortablePaths:
     )
 
 
-def bootstrap_command(*, instance: str | Path | None = None, force: bool = False, dry_run: bool = False, no_demo: bool = False) -> dict[str, Any]:
+def bootstrap_command(
+    *,
+    instance: str | Path | None = None,
+    force: bool = False,
+    dry_run: bool = False,
+    no_demo: bool = False,
+    with_demo: bool = False,
+) -> dict[str, Any]:
     started = _now()
     root = resolve_portable_instance_root(instance)
     paths = build_portable_paths(root)
@@ -194,9 +209,12 @@ def bootstrap_command(*, instance: str | Path | None = None, force: bool = False
     profile_payload = _portable_profile(root, init_result.get("instance_id", ""), created_at, _now())
     _write_json(paths.profile, profile_payload)
 
+    if no_demo and with_demo:
+        raise PortableInstanceError("conflicting_demo_flags", "use either --with-demo or --no-demo, not both", exit_code=2)
+
     demo_result: dict[str, Any] = {"created": False}
     preview_result: dict[str, Any] = {"created": False}
-    if not no_demo:
+    if with_demo:
         demo_result = _create_demo_run(paths)
         preview_result = build_preview_index(out_root=paths.preview_index, runs_root=paths.run_bundles, activate=True)
         validate_preview_index(paths.preview_current, strict=True)
@@ -350,6 +368,83 @@ def test_command(*, instance: str | Path | None = None, suite: str = "core", cas
     )
 
 
+def search_command(
+    query: str,
+    *,
+    instance: str | Path | None = None,
+    mode: str = "local",
+    live: bool = False,
+    index: str = "local",
+    provider: str = "brave",
+    page: int = 0,
+    count: int = 10,
+    freshness: str = "",
+    country: str = "",
+    language: str = "",
+    safe_search: str = "moderate",
+    timeout_seconds: int = 10,
+) -> dict[str, Any]:
+    started = _now()
+    root = resolve_portable_instance_root(instance)
+    paths = build_portable_paths(root)
+    clean_query = str(query or "").strip()
+    if not clean_query:
+        raise PortableInstanceError("query_required", "search query is required", exit_code=2)
+    if len(clean_query) > MAX_QUERY_LENGTH:
+        raise PortableInstanceError("query_too_long", f"search query exceeds {MAX_QUERY_LENGTH} characters", exit_code=2)
+    search_mode = _search_mode(mode, live=live)
+    local = _search_portable_index(paths, clean_query, index=index, limit=count) if search_mode in {"local", "blended"} else _local_index_disabled(index)
+    live_page: dict[str, Any] | None = None
+    live_error: dict[str, Any] | None = None
+    network_used = False
+    if search_mode in {"live", "blended"}:
+        live_page, live_error, network_used = _run_live_search_page(
+            clean_query,
+            provider_name=provider,
+            page=page,
+            count=count,
+            freshness=freshness,
+            country=country,
+            language=language,
+            safe_search=safe_search,
+            timeout_seconds=timeout_seconds,
+        )
+    live_cards = _live_cards(live_page)
+    local_cards = list(local.get("results") or [])
+    result_cards = [*local_cards, *live_cards] if search_mode == "blended" else (live_cards if search_mode == "live" else local_cards)
+    warnings = list(local.get("warnings") or [])
+    if live_error is not None:
+        warnings.append(str(live_error.get("message") or PROVIDER_NOT_CONFIGURED_MESSAGE))
+    status = _search_status(result_cards, live_error=live_error, search_mode=search_mode)
+    return _result(
+        "search",
+        status,
+        root,
+        started_at=started,
+        mutations=False,
+        payload={
+            "query": clean_query,
+            "mode": search_mode,
+            "index_mode": index,
+            "local_index": local,
+            "live": live_page or _live_unavailable(provider, live_error),
+            "result_count": len(result_cards),
+            "results": result_cards,
+            "provider_status": provider_status(provider),
+            "live_error": live_error,
+            "error": str(live_error.get("code")) if status == "fail" and live_error else "",
+            "message": str(live_error.get("message")) if status == "fail" and live_error else "",
+            "warnings": warnings,
+            "network_provider_calls": network_used,
+            "live_results_transient": True,
+            "review_required_for_display": False,
+            "reviewed_master_mutation": False,
+            "public_index_mutation": False,
+            "production_truth_mutation": False,
+        },
+    )
+
+
 def hunt_command(
     query: str,
     *,
@@ -358,6 +453,9 @@ def hunt_command(
     step: bool = False,
     run_to_completion: bool = False,
     fixture: str | None = None,
+    live: bool = False,
+    max_queries: int = 20,
+    max_fetches: int = 0,
 ) -> dict[str, Any]:
     started = _now()
     root = resolve_portable_instance_root(instance)
@@ -368,6 +466,15 @@ def hunt_command(
         raise PortableInstanceError("query_required", "hunt query is required", exit_code=2)
     if len(clean_query) > MAX_QUERY_LENGTH:
         raise PortableInstanceError("query_too_long", f"hunt query exceeds {MAX_QUERY_LENGTH} characters", exit_code=2)
+    if live or mode == "live":
+        return _live_hunt_command(
+            clean_query,
+            root=root,
+            paths=paths,
+            started_at=started,
+            max_queries=max_queries,
+            max_fetches=max_fetches,
+        )
     if mode != "synthetic":
         raise PortableInstanceError("live_mode_forbidden", "portable v0 supports synthetic hunt mode only", exit_code=2)
 
@@ -453,9 +560,10 @@ def serve_command(
     smoke: bool = False,
     json_output: bool = False,
     stdout: TextIO = sys.stdout,
+    live: bool = False,
 ) -> dict[str, Any]:
     started = _now()
-    if mode != DEFAULT_MODE:
+    if mode != DEFAULT_MODE and not live:
         raise PortableInstanceError("unsupported_server_mode", "portable v0 supports --mode exploration only", exit_code=2)
     if host not in {"127.0.0.1", "localhost"}:
         raise PortableInstanceError("non_loopback_bind_forbidden", "portable v0 may bind only to loopback hosts", exit_code=2)
@@ -470,7 +578,7 @@ def serve_command(
     token = operator_token or os.environ.get("EUREKA_OPERATOR_TOKEN") or secrets.token_urlsafe(24)
     generated_token = not (operator_token or os.environ.get("EUREKA_OPERATOR_TOKEN"))
     if smoke:
-        smoke_payload = _serve_smoke(paths, host=host, port=port, mode=mode, token=token)
+        smoke_payload = _serve_smoke(paths, host=host, port=port, mode=mode, token=token, live=live)
         return _result(
             "serve",
             "pass" if smoke_payload["smoke"]["status"] == "pass" else "fail",
@@ -478,24 +586,25 @@ def serve_command(
             started_at=started,
             mutations=True,
             payload={
-                "mode": mode,
+                "mode": "live" if live else mode,
                 "host": host,
                 "port": smoke_payload["port"],
-                "url": f"http://{host}:{smoke_payload['port']}/explore",
+                "url": f"http://{host}:{smoke_payload['port']}/" if live else f"http://{host}:{smoke_payload['port']}/explore",
                 "smoke": smoke_payload["smoke"],
                 "server_state": smoke_payload["server_state"],
                 "operator_token_generated": generated_token,
                 "operator_token_persisted": False,
                 "loopback_only": True,
+                "live_search_enabled": bool(live),
             },
         )
     handle = create_local_http_server(root, host=host, port=port, read_only=False, operator_token=token, bind_lan=False)
-    _configure_runtime_for_portable(handle.runtime, paths)
+    _configure_runtime_for_portable(handle.runtime, paths, live=live)
     actual_port = handle.server_port
-    server_state = _write_server_state(paths, host=host, port=actual_port, mode=mode)
-    url = f"http://{host}:{actual_port}/explore"
+    server_state = _write_server_state(paths, host=host, port=actual_port, mode="live" if live else mode)
+    url = f"http://{host}:{actual_port}/" if live else f"http://{host}:{actual_port}/explore"
     if not json_output:
-        print(f"Eureka local exploration: {url}", file=stdout)
+        print(f"Eureka live search: {url}" if live else f"Eureka local exploration: {url}", file=stdout)
         if generated_token:
             print(f"Operator token for this process only: {token}", file=stdout)
         print("Press Ctrl+C to stop.", file=stdout)
@@ -512,7 +621,7 @@ def serve_command(
         root,
         started_at=started,
         mutations=True,
-        payload={"mode": mode, "host": host, "port": actual_port, "url": url, "stopped": True, "operator_token_persisted": False},
+        payload={"mode": "live" if live else mode, "host": host, "port": actual_port, "url": url, "stopped": True, "operator_token_persisted": False, "live_search_enabled": bool(live)},
     )
 
 
@@ -575,6 +684,28 @@ def status_command(*, instance: str | Path | None = None, include_paths: bool = 
     return _result("status", "pass" if instance_status.get("status") in {"pass", "pass_with_warnings"} else "fail", root, started_at=started, mutations=False, payload=payload)
 
 
+def index_stats_command(*, instance: str | Path | None = None) -> dict[str, Any]:
+    started = _now()
+    root = resolve_portable_instance_root(instance)
+    paths = build_portable_paths(root)
+    preview = _current_preview_status(paths)
+    return _result(
+        "index stats",
+        "pass" if preview.get("status") in {"pass", "absent"} else "fail",
+        root,
+        started_at=started,
+        mutations=False,
+        payload={
+            "index_kind": "preview",
+            "preview_index": preview,
+            "local_private": True,
+            "network_provider_calls": False,
+            "reviewed_master_mutation": False,
+            "public_index_mutation": False,
+        },
+    )
+
+
 def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr: TextIO = sys.stderr) -> int:
     parser = _parser()
     args = parser.parse_args(argv)
@@ -595,19 +726,47 @@ def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr:
 
 def _dispatch(args: argparse.Namespace, *, stdout: TextIO) -> dict[str, Any]:
     if args.command == "bootstrap":
-        return bootstrap_command(instance=args.instance, force=args.force, dry_run=args.dry_run, no_demo=args.no_demo)
+        return bootstrap_command(instance=args.instance, force=args.force, dry_run=args.dry_run, no_demo=args.no_demo, with_demo=args.with_demo)
     if args.command == "doctor":
         return doctor_command(instance=args.instance, strict=args.strict)
     if args.command == "test":
         return test_command(instance=args.instance, suite=args.suite, case=args.case, fail_on_advisory=args.fail_on_advisory)
+    if args.command == "search":
+        return search_command(
+            args.query,
+            instance=args.instance,
+            mode=args.mode,
+            live=args.live,
+            index=args.index,
+            provider=args.provider,
+            page=args.page,
+            count=args.count,
+            freshness=args.freshness,
+            country=args.country,
+            language=args.language,
+            safe_search=args.safe_search,
+            timeout_seconds=args.timeout,
+        )
     if args.command == "hunt":
-        return hunt_command(args.query, instance=args.instance, mode=args.mode, step=args.step, run_to_completion=args.run_to_completion, fixture=args.fixture)
+        return hunt_command(
+            args.query,
+            instance=args.instance,
+            mode=args.mode,
+            step=args.step,
+            run_to_completion=args.run_to_completion,
+            fixture=args.fixture,
+            live=args.live,
+            max_queries=args.max_queries,
+            max_fetches=args.max_fetches,
+        )
     if args.command == "replay":
         return replay_command(instance=args.instance, run_id=args.run_id, strict=args.strict)
     if args.command == "serve":
-        return serve_command(instance=args.instance, mode=args.mode, host=args.host, port=args.port, operator_token=args.operator_token, smoke=args.smoke, json_output=args.json, stdout=stdout)
+        return serve_command(instance=args.instance, mode=args.mode, host=args.host, port=args.port, operator_token=args.operator_token, smoke=args.smoke, json_output=args.json, stdout=stdout, live=args.live)
     if args.command == "status":
         return status_command(instance=args.instance, include_paths=args.paths)
+    if args.command == "index" and args.index_command == "stats":
+        return index_stats_command(instance=args.instance)
     raise PortableInstanceError("unsupported_command", f"unsupported command: {args.command}", exit_code=2)
 
 
@@ -624,7 +783,8 @@ def _parser() -> argparse.ArgumentParser:
     boot = sub.add_parser("bootstrap", parents=[common], help="Initialize or refresh a portable local instance.")
     boot.add_argument("--force", action="store_true", help="Refresh portable metadata without destroying local stores.")
     boot.add_argument("--dry-run", action="store_true", help="Plan initialization without writing files.")
-    boot.add_argument("--no-demo", action="store_true", help="Skip synthetic run and Preview Index demo generation.")
+    boot.add_argument("--no-demo", action="store_true", help="Keep bootstrap fixture-free. This is the default.")
+    boot.add_argument("--with-demo", action="store_true", help="Explicitly create the synthetic demo run and demo-derived Preview Index.")
 
     doc = sub.add_parser("doctor", parents=[common], help="Read-only portable instance diagnostics.")
     doc.add_argument("--strict", action="store_true", help="Report warnings distinctly.")
@@ -634,9 +794,26 @@ def _parser() -> argparse.ArgumentParser:
     test.add_argument("--case", help="Run a single oracle case.")
     test.add_argument("--fail-on-advisory", action="store_true")
 
-    hunt = sub.add_parser("hunt", parents=[common], help="Run a deterministic synthetic Hunt.")
+    search = sub.add_parser("search", parents=[common], help="Search the local Preview Index and optionally live web leads.")
+    search.add_argument("query")
+    search.add_argument("--mode", default="local", choices=["local", "live", "blended", "replay"])
+    search.add_argument("--live", action="store_true", help="Use the configured live web provider.")
+    search.add_argument("--index", default="local", choices=["none", "local", "preview"])
+    search.add_argument("--provider", default="brave")
+    search.add_argument("--page", type=int, default=0)
+    search.add_argument("--count", type=int, default=10)
+    search.add_argument("--freshness", default="")
+    search.add_argument("--country", default="")
+    search.add_argument("--language", default="")
+    search.add_argument("--safe-search", default="moderate", choices=["off", "moderate", "strict"])
+    search.add_argument("--timeout", type=int, default=10)
+
+    hunt = sub.add_parser("hunt", parents=[common], help="Run a deterministic synthetic Hunt or opt-in live Hunt.")
     hunt.add_argument("query")
     hunt.add_argument("--mode", default="synthetic")
+    hunt.add_argument("--live", action="store_true", help="Use transient live web search query variants.")
+    hunt.add_argument("--max-queries", type=int, default=20)
+    hunt.add_argument("--max-fetches", type=int, default=0)
     hunt.add_argument("--step", action="store_true")
     hunt.add_argument("--run-to-completion", action="store_true")
     hunt.add_argument("--fixture")
@@ -651,9 +828,14 @@ def _parser() -> argparse.ArgumentParser:
     serve.add_argument("--port", type=int, default=DEFAULT_PORT)
     serve.add_argument("--operator-token")
     serve.add_argument("--smoke", action="store_true")
+    serve.add_argument("--live", action="store_true", help="Serve the live-search first screen on loopback.")
 
     status = sub.add_parser("status", parents=[common], help="Summarize the portable local instance.")
     status.add_argument("--paths", action="store_true", help="Include local absolute path details.")
+
+    index = sub.add_parser("index", parents=[common], help="Inspect local indexes.")
+    index_sub = index.add_subparsers(dest="index_command", required=True)
+    index_sub.add_parser("stats", parents=[common], help="Show local Preview Index stats.")
     return parser
 
 
@@ -661,6 +843,299 @@ def _ensure_common_defaults(args: argparse.Namespace) -> None:
     for name, value in (("instance", None), ("json", False), ("verbose", False), ("quiet", False)):
         if not hasattr(args, name):
             setattr(args, name, value)
+
+
+def _search_mode(mode: str, *, live: bool) -> str:
+    normalized = str(mode or "").strip().lower()
+    if live and normalized in {"", "local"}:
+        return "blended"
+    if normalized in {"local", "live", "blended", "replay"}:
+        return normalized
+    raise PortableInstanceError("unsupported_search_mode", f"unsupported search mode: {mode}", exit_code=2)
+
+
+def _search_status(
+    result_cards: Sequence[Mapping[str, Any]],
+    *,
+    live_error: Mapping[str, Any] | None,
+    search_mode: str,
+) -> str:
+    if live_error is None:
+        return "pass"
+    if result_cards and search_mode == "blended":
+        return "pass_with_warnings"
+    return "fail"
+
+
+def _search_portable_index(paths: PortablePaths, query: str, *, index: str, limit: int) -> dict[str, Any]:
+    normalized = str(index or "local").strip().lower()
+    if normalized not in {"local", "preview"}:
+        return _local_index_disabled(index)
+    if not paths.preview_current.is_file():
+        return {
+            "status": "absent",
+            "index": normalized,
+            "path": _relative_to_instance(paths.root, paths.preview_current),
+            "result_count": 0,
+            "results": [],
+            "warnings": ["Local Preview Index is absent. Run bootstrap --with-demo for replay data or persist live observations in a later milestone."],
+        }
+    try:
+        payload = search_preview_index(paths.preview_current, query, limit=max(1, min(int(limit or 10), 25)), include_synthetic=False)
+    except Exception as exc:
+        return {
+            "status": "invalid",
+            "index": normalized,
+            "path": _relative_to_instance(paths.root, paths.preview_current),
+            "result_count": 0,
+            "results": [],
+            "warnings": [f"Local Preview Index search failed: {type(exc).__name__}"],
+        }
+    cards = [_preview_result_card(item) for item in payload.get("results") or [] if isinstance(item, Mapping)]
+    return {
+        "status": "pass",
+        "index": normalized,
+        "path": _relative_to_instance(paths.root, paths.preview_current),
+        "preview_index_id": str(payload.get("preview_index_id") or ""),
+        "generation_id": str(payload.get("generation_id") or ""),
+        "result_count": len(cards),
+        "results": cards,
+        "warnings": [],
+    }
+
+
+def _local_index_disabled(index: str) -> dict[str, Any]:
+    return {
+        "status": "disabled",
+        "index": str(index or "none"),
+        "path": "",
+        "result_count": 0,
+        "results": [],
+        "warnings": [],
+    }
+
+
+def _preview_result_card(item: Mapping[str, Any]) -> dict[str, Any]:
+    title = str(item.get("title") or item.get("normalized_title") or item.get("candidate_id") or item.get("preview_record_id") or "Indexed discovery")
+    summary = str(item.get("summary") or item.get("non_verified_reason") or "Local Preview Index record.")
+    return {
+        "state": "INDEXED - UNREVIEWED" if item.get("review_state") != "reviewed" else "REVIEWED",
+        "title": title,
+        "url": str(item.get("url") or ""),
+        "snippet": summary,
+        "provider": str(item.get("source_family") or "local_preview_index"),
+        "retrieved_at": str(item.get("created_at") or item.get("updated_at") or ""),
+        "query": "",
+        "source": "local_preview_index",
+        "review_state": str(item.get("review_state") or "unreviewed"),
+        "result_id": str(item.get("preview_record_id") or item.get("candidate_id") or item.get("id") or ""),
+        "retention_policy": {
+            "persist_urls": True,
+            "persist_snippets": True,
+            "persist_rank": False,
+            "terms_basis": "local_preview_index",
+        },
+    }
+
+
+def _run_live_search_page(
+    query: str,
+    *,
+    provider_name: str,
+    page: int,
+    count: int,
+    freshness: str,
+    country: str,
+    language: str,
+    safe_search: str,
+    timeout_seconds: int,
+    query_variant: str | None = None,
+) -> tuple[dict[str, Any] | None, dict[str, Any] | None, bool]:
+    provider = provider_from_environment(provider_name)
+    if provider is None:
+        return None, {"code": "live_provider_not_configured", "message": PROVIDER_NOT_CONFIGURED_MESSAGE, "provider": provider_name}, False
+    try:
+        page_payload = provider.search(
+            query,
+            page=max(0, int(page or 0)),
+            count=max(1, min(int(count or 10), 20)),
+            freshness=freshness,
+            country=country,
+            language=language,
+            safe_search=safe_search,
+            budget_context=WebSearchBudget(max_provider_requests=1, timeout_seconds=timeout_seconds),
+            query_variant=query_variant,
+        ).to_dict()
+    except WebSearchProviderError as exc:
+        return (
+            None,
+            {
+                "code": "live_provider_request_failed",
+                "message": str(exc),
+                "provider": exc.provider,
+                "status_code": exc.status_code,
+                "rate_limit": dict(exc.rate_limit),
+            },
+            bool(exc.status_code),
+        )
+    return page_payload, None, True
+
+
+def _live_cards(live_page: Mapping[str, Any] | None) -> list[dict[str, Any]]:
+    if not live_page:
+        return []
+    cards = []
+    for lead in live_page.get("results") or []:
+        if not isinstance(lead, Mapping):
+            continue
+        cards.append(
+            {
+                "state": "LIVE - UNREVIEWED",
+                "title": str(lead.get("title") or lead.get("url") or "Live result"),
+                "url": str(lead.get("url") or ""),
+                "snippet": str(lead.get("snippet") or ""),
+                "provider": str(lead.get("provider") or live_page.get("provider") or ""),
+                "provider_rank": int(lead.get("provider_rank") or 0),
+                "retrieved_at": str(lead.get("retrieved_at") or live_page.get("retrieved_at") or ""),
+                "query": str(lead.get("query_variant") or lead.get("query") or live_page.get("query") or ""),
+                "source": "live_web_search",
+                "lead_id": str(lead.get("lead_id") or ""),
+                "retention_policy": dict(lead.get("retention_policy") or {}),
+            }
+        )
+    return cards
+
+
+def _live_unavailable(provider_name: str, live_error: Mapping[str, Any] | None) -> dict[str, Any]:
+    return {
+        "provider": str(provider_name or "brave"),
+        "status": "unavailable" if live_error else "not_requested",
+        "result_count": 0,
+        "results": [],
+        "error": dict(live_error or {}),
+        "raw_response_stored": False,
+    }
+
+
+def _live_hunt_command(
+    query: str,
+    *,
+    root: Path,
+    paths: PortablePaths,
+    started_at: str,
+    max_queries: int,
+    max_fetches: int,
+) -> dict[str, Any]:
+    variants = _hunt_query_variants(query, max_queries=max_queries)
+    provider = provider_from_environment("brave")
+    if provider is None:
+        return _result(
+            "hunt",
+            "fail",
+            root,
+            started_at=started_at,
+            mutations=False,
+            payload={
+                "query": query,
+                "mode": "live",
+                "error": "live_provider_not_configured",
+                "message": PROVIDER_NOT_CONFIGURED_MESSAGE,
+                "queries_attempted": [],
+                "providers_checked": [],
+                "pages_fetched": 0,
+                "new_unique_results": 0,
+                "duplicates_removed": 0,
+                "blocked_fetches": 0,
+                "errors": [PROVIDER_NOT_CONFIGURED_MESSAGE],
+                "near_misses": [],
+                "unresolved_leads": [],
+                "network_provider_calls": False,
+            },
+        )
+    seen_urls: set[str] = set()
+    cards: list[dict[str, Any]] = []
+    errors: list[str] = []
+    attempted: list[str] = []
+    for variant in variants:
+        attempted.append(variant)
+        try:
+            page = provider.search(
+                variant,
+                page=0,
+                count=10,
+                freshness="",
+                country="",
+                language="",
+                safe_search="moderate",
+                budget_context=WebSearchBudget(max_provider_requests=1, timeout_seconds=10, max_retries=0),
+                query_variant=variant,
+            ).to_dict()
+        except WebSearchProviderError as exc:
+            errors.append(f"{variant}: {exc}")
+            continue
+        for card in _live_cards(page):
+            url = str(card.get("url") or "")
+            if not url or url in seen_urls:
+                continue
+            seen_urls.add(url)
+            cards.append(card)
+    run_id = "live-hunt-" + hashlib.sha256(f"{query}\n{started_at}".encode("utf-8")).hexdigest()[:16]
+    run_dir = paths.run_bundles / run_id
+    run_dir.mkdir(parents=True, exist_ok=True)
+    summary = {
+        "schema_version": "eureka.live_hunt_run.v0",
+        "run_id": run_id,
+        "query": query,
+        "mode": "live",
+        "queries_attempted": attempted,
+        "providers_checked": ["brave"],
+        "pages_fetched": 0,
+        "max_fetches": max(0, int(max_fetches or 0)),
+        "new_unique_results": len(cards),
+        "duplicates_removed": max(0, sum(1 for _ in cards) - len(seen_urls)),
+        "blocked_fetches": 0,
+        "errors": errors,
+        "near_misses": [],
+        "unresolved_leads": cards,
+        "provider_results_are_transient": True,
+        "fetch_milestone_complete": False,
+        "persistent_preview_index_update_complete": False,
+    }
+    _write_json(run_dir / "summary.json", summary)
+    return _result(
+        "hunt",
+        "pass_with_warnings" if errors else "pass",
+        root,
+        started_at=started_at,
+        mutations=True,
+        payload={
+            **summary,
+            "run_directory": _relative_to_instance(root, run_dir),
+            "network_provider_calls": True,
+            "review_or_truth_mutation": False,
+            "public_index_mutation": False,
+            "reviewed_master_mutation": False,
+            "warnings": [
+                "Live Hunt currently searches provider query variants only; safe fetch, extraction, and persistence remain later milestones."
+            ],
+        },
+    )
+
+
+def _hunt_query_variants(query: str, *, max_queries: int) -> list[str]:
+    clean = " ".join(str(query or "").split())
+    terms = [term for term in re.split(r"[^A-Za-z0-9]+", clean) if len(term) > 2]
+    variants = [clean]
+    if " " in clean:
+        variants.append(f'"{clean}"')
+    if terms:
+        variants.append(" ".join(terms[:4]))
+    variants.extend([f"{clean} filetype:pdf", f"{clean} filetype:zip", f"{clean} site:archive.org"])
+    unique: list[str] = []
+    for item in variants:
+        if item and item not in unique:
+            unique.append(item)
+    return unique[: max(1, min(int(max_queries or 1), 50))]
 
 
 def _reject_forbidden_instance_root(root: Path) -> None:
@@ -885,25 +1360,27 @@ def _route_registration_check(root: Path) -> dict[str, Any]:
         return {"status": "fail", "error": str(exc)}
 
 
-def _configure_runtime_for_portable(runtime: Any, paths: PortablePaths) -> None:
+def _configure_runtime_for_portable(runtime: Any, paths: PortablePaths, *, live: bool = False) -> None:
     setattr(runtime, "e2e_explore_preview_index_path", paths.preview_current)
     setattr(runtime, "e2e_explore_runs_root", paths.run_bundles)
     setattr(runtime, "e2e_explore_default_fixture", "success_two_workunits")
-    setattr(runtime, "e2e_explore_include_synthetic", True)
+    setattr(runtime, "e2e_explore_include_synthetic", not live)
     setattr(runtime, "public_alpha_enabled", False)
     setattr(runtime, "public_exposure_enabled", False)
-    setattr(runtime, "live_providers_enabled", False)
+    setattr(runtime, "live_providers_enabled", bool(live))
+    setattr(runtime, "live_search_enabled", bool(live))
+    setattr(runtime, "live_search_provider", "brave")
 
 
-def _serve_smoke(paths: PortablePaths, *, host: str, port: int, mode: str, token: str) -> dict[str, Any]:
+def _serve_smoke(paths: PortablePaths, *, host: str, port: int, mode: str, token: str, live: bool = False) -> dict[str, Any]:
     started: queue.Queue[dict[str, Any]] = queue.Queue(maxsize=1)
 
     def _target() -> None:
         handle = None
         try:
             handle = create_local_http_server(paths.root, host=host, port=port, read_only=False, operator_token=token, bind_lan=False)
-            _configure_runtime_for_portable(handle.runtime, paths)
-            state = _write_server_state(paths, host=host, port=handle.server_port, mode=mode)
+            _configure_runtime_for_portable(handle.runtime, paths, live=live)
+            state = _write_server_state(paths, host=host, port=handle.server_port, mode="live" if live else mode)
             started.put({"status": "pass", "handle": handle, "port": handle.server_port, "server_state": state})
             handle.httpd.serve_forever()
         except Exception as exc:  # pragma: no cover - defensive thread boundary
@@ -923,7 +1400,7 @@ def _serve_smoke(paths: PortablePaths, *, host: str, port: int, mode: str, token
         raise PortableInstanceError("server_smoke_start_failed", str(boot.get("error", "server start failed")), exit_code=1)
     handle = boot["handle"]
     try:
-        smoke = _smoke_server(host, int(boot["port"]))
+        smoke = _smoke_server(host, int(boot["port"]), live=live)
     finally:
         handle.shutdown()
         thread.join(timeout=10)
@@ -969,32 +1446,50 @@ def _server_lock_status(paths: PortablePaths) -> dict[str, Any]:
     return {"status": "warning" if state == "stale" else "running", "state": state, "pid": pid, "lock_path": _relative_to_instance(paths.root, paths.server_lock), **extra}
 
 
-def _smoke_server(host: str, port: int) -> dict[str, Any]:
-    endpoints = (
-        {"endpoint": "/health", "statuses": {200}, "contains": ("\"status\"",), "follow_redirects": True},
-        {"endpoint": "/", "statuses": {302}, "location": "/explore", "contains": (), "follow_redirects": False},
-        {
-            "endpoint": "/explore",
-            "statuses": {200},
-            "contains": ("What are you looking for?", "Example Searches", "Searching...", "Blocked Here"),
-            "forbidden": ("json", "audit", "architecture", "preview index", "e2e reference", "workunit", "run_id", "EUREKA-FIRST-RUN"),
-            "follow_redirects": True,
-        },
-        {
-            "endpoint": "/explore?q=old%20blue%20FTP%20client%20for%20XP",
-            "statuses": {200},
-            "contains": ("Results Found", "Start Hunt", "A Hunt is a local investigation"),
-            "forbidden": ("json", "audit", "architecture", "preview index", "e2e reference", "workunit", "run_id", "EUREKA-FIRST-RUN"),
-            "follow_redirects": True,
-        },
-        {
-            "endpoint": "/explore?q=zzzxqvblorp",
-            "statuses": {200},
-            "contains": ("No Local Matches Yet", "Start Hunt", "Blocked Here"),
-            "forbidden": ("json", "audit", "architecture", "preview index", "e2e reference", "workunit", "run_id", "EUREKA-FIRST-RUN"),
-            "follow_redirects": True,
-        },
-    )
+def _smoke_server(host: str, port: int, *, live: bool = False) -> dict[str, Any]:
+    if live:
+        endpoints = (
+            {"endpoint": "/health", "statuses": {200}, "contains": ("\"status\"",), "follow_redirects": True},
+            {
+                "endpoint": "/",
+                "statuses": {200},
+                "contains": ("Eureka", "Search", "Hunt deeper"),
+                "forbidden": ("review packet", "architecture", "workunit"),
+                "follow_redirects": True,
+            },
+            {
+                "endpoint": "/api/search",
+                "statuses": {200},
+                "contains": ("live_web_search_response", "Enter a query"),
+                "follow_redirects": True,
+            },
+        )
+    else:
+        endpoints = (
+            {"endpoint": "/health", "statuses": {200}, "contains": ("\"status\"",), "follow_redirects": True},
+            {"endpoint": "/", "statuses": {302}, "location": "/explore", "contains": (), "follow_redirects": False},
+            {
+                "endpoint": "/explore",
+                "statuses": {200},
+                "contains": ("What are you looking for?", "Example Searches", "Searching...", "Blocked Here"),
+                "forbidden": ("json", "audit", "architecture", "preview index", "e2e reference", "workunit", "run_id", "EUREKA-FIRST-RUN"),
+                "follow_redirects": True,
+            },
+            {
+                "endpoint": "/explore?q=old%20blue%20FTP%20client%20for%20XP",
+                "statuses": {200},
+                "contains": ("Results Found", "Start Hunt", "A Hunt is a local investigation"),
+                "forbidden": ("json", "audit", "architecture", "preview index", "e2e reference", "workunit", "run_id", "EUREKA-FIRST-RUN"),
+                "follow_redirects": True,
+            },
+            {
+                "endpoint": "/explore?q=zzzxqvblorp",
+                "statuses": {200},
+                "contains": ("No Local Matches Yet", "Start Hunt", "Blocked Here"),
+                "forbidden": ("json", "audit", "architecture", "preview index", "e2e reference", "workunit", "run_id", "EUREKA-FIRST-RUN"),
+                "follow_redirects": True,
+            },
+        )
     results = []
     errors = []
     base = f"http://{host}:{port}"
@@ -1127,12 +1622,12 @@ def _result(command: str, status: str, instance_root: Path, *, started_at: str, 
         "started_at": started_at,
         "completed_at": _now(),
         "mutations_performed": bool(mutations),
-        "network_provider_calls": False,
-        "model_provider_calls": False,
+        "network_provider_calls": bool(payload.get("network_provider_calls", False)),
+        "model_provider_calls": bool(payload.get("model_provider_calls", False)),
         "public_exposure": False,
-        "reviewed_master_mutation": False,
-        "public_index_mutation": False,
-        "production_truth_mutation": False,
+        "reviewed_master_mutation": bool(payload.get("reviewed_master_mutation", False)),
+        "public_index_mutation": bool(payload.get("public_index_mutation", False)),
+        "production_truth_mutation": bool(payload.get("production_truth_mutation", False)),
         "warnings": list(payload.get("warnings", [])) if isinstance(payload.get("warnings"), list) else [],
         "limitations": _limitations(),
         }
@@ -1165,7 +1660,15 @@ def _emit_result(payload: Mapping[str, Any], *, json_output: bool, stdout: TextI
     status = str(payload.get("status", "fail"))
     if status in {"pass", "pass_with_warnings"}:
         return 0
-    if str(payload.get("error", "")).endswith("forbidden") or payload.get("error") in {"unsupported_command", "query_required", "query_too_long", "invalid_run_id", "live_mode_forbidden"}:
+    if str(payload.get("error", "")).endswith("forbidden") or payload.get("error") in {
+        "unsupported_command",
+        "query_required",
+        "query_too_long",
+        "invalid_run_id",
+        "live_mode_forbidden",
+        "unsupported_search_mode",
+        "live_provider_not_configured",
+    }:
         return 2
     return 1
 
@@ -1183,6 +1686,24 @@ def _text_summary(payload: Mapping[str, Any]) -> str:
     if payload.get("next_commands"):
         lines.append("next:")
         lines.extend(f"- {item}" for item in payload["next_commands"])
+    if payload.get("results"):
+        lines.append("results:")
+        for index, item in enumerate(payload.get("results") or [], start=1):
+            if not isinstance(item, Mapping):
+                continue
+            state = str(item.get("state") or "")
+            title = str(item.get("title") or item.get("url") or "result")
+            url = str(item.get("url") or "")
+            snippet = str(item.get("snippet") or "")
+            provider = str(item.get("provider") or "")
+            retrieved_at = str(item.get("retrieved_at") or "")
+            lines.append(f"{index}. {state} {title}".rstrip())
+            if url:
+                lines.append(f"   {url}")
+            if snippet:
+                lines.append(f"   {snippet}")
+            if provider or retrieved_at:
+                lines.append(f"   provider: {provider or 'local'} retrieved_at: {retrieved_at or 'n/a'}")
     return "\n".join(lines)
 
 
@@ -1224,8 +1745,9 @@ def _limitations() -> list[str]:
     return [
         "Python source checkout portability only.",
         "Loopback-only exploration service.",
-        "Synthetic Hunts only in portable v0.",
-        "No live providers, downloads, public exposure, or production truth mutation.",
+        "Synthetic replay Hunts remain available only in explicit replay/demo paths.",
+        "Live providers require explicit --live flags and local credentials.",
+        "No downloads, public exposure, or production truth mutation.",
         "Backups are documented filesystem copies in v0.",
     ]
 
@@ -1262,11 +1784,12 @@ def _compact_validation(payload: Mapping[str, Any]) -> dict[str, Any]:
 
 
 def _compact_demo(payload: Mapping[str, Any]) -> dict[str, Any]:
-    return {"created": bool(payload), "run_id": payload.get("run_id", ""), "result_count": payload.get("result_count", 0), "event_count": payload.get("event_count", 0), "synthetic": True if payload else False}
+    created = bool(payload.get("created", bool(payload.get("run_id"))))
+    return {"created": created, "run_id": payload.get("run_id", ""), "result_count": payload.get("result_count", 0), "event_count": payload.get("event_count", 0), "synthetic": created}
 
 
 def _compact_preview(payload: Mapping[str, Any]) -> dict[str, Any]:
-    if not payload:
+    if not payload or payload.get("created") is False:
         return {"created": False}
     return {"created": True, "status": payload.get("status", ""), "generation_id": payload.get("generation_id", ""), "record_count": payload.get("record_count", 0), "current_path": payload.get("current_path", "")}
 

@@ -1,8 +1,12 @@
 """Routes over the local appliance runtime."""
 
+from html import escape
 import json
-from typing import Any
+import re
+from typing import Any, Mapping
 from urllib.parse import quote
+
+from runtime.search.live_web import PROVIDER_NOT_CONFIGURED_MESSAGE, WebSearchBudget, WebSearchProviderError, provider_from_environment, provider_status
 
 from .request_context import LocalRequestContext
 from .responses import DEFAULT_LIMITATIONS, LocalServiceResponse, error_response, html_response, json_response, redirect_response
@@ -26,6 +30,8 @@ def route_request(
     if method != "GET":
         return _mutation_response(runtime, request_context, operator_auth_state)
     if path == "/":
+        if _live_search_enabled(runtime):
+            return _live_search_home_html_response(runtime, request_context)
         return redirect_response("/explore")
     if path == "/status":
         if _wants_json(request_context):
@@ -59,11 +65,29 @@ def route_request(
             return _explore_run_response(runtime, request_context, explore_run_route)
         return _explore_run_html_response(runtime, request_context, explore_run_route)
     if path == "/search":
+        if _live_search_enabled(runtime):
+            if _wants_json(request_context):
+                return _live_search_response(runtime, request_context)
+            return _live_search_html_response(runtime, request_context)
         if _wants_json(request_context):
             return _search_response(runtime, request_context)
         return _search_html_response(runtime, request_context)
-    if path == "/api/v1/search":
+    if path == "/api/search":
+        if _live_search_enabled(runtime):
+            return _live_search_response(runtime, request_context)
         return _search_response(runtime, request_context)
+    if path == "/api/v1/search":
+        if _live_search_enabled(runtime):
+            return _live_search_response(runtime, request_context)
+        return _search_response(runtime, request_context)
+    if path == "/hunt":
+        if _live_search_enabled(runtime):
+            if _wants_json(request_context):
+                return _live_hunt_response(runtime, request_context)
+            return _live_hunt_html_response(runtime, request_context)
+    if path == "/api/hunt":
+        if _live_search_enabled(runtime):
+            return _live_hunt_response(runtime, request_context)
     if path == "/runs":
         if _wants_json(request_context):
             return _workbench_live_run_list_or_create_response(request_context)
@@ -304,11 +328,13 @@ def _status_payload(runtime: Any) -> dict[str, Any]:
             "index_rebuild_enabled": False,
             "operator_gated_review_decisions_enabled": True,
             "operator_gated_rebuild_enabled": True,
+            "live_search_enabled": _live_search_enabled(runtime),
+            "live_provider_configured": bool(provider_status(str(getattr(runtime, "live_search_provider", "brave"))).get("configured")),
         },
         "runtime": runtime_status,
         "public_index": summary,
         "warnings": warnings,
-        "limitations": list(DEFAULT_LIMITATIONS),
+        "limitations": _service_limitations(runtime),
         "production_readiness_claimed": False,
         "public_launch_readiness_claimed": False,
     }
@@ -334,7 +360,7 @@ def _health_response(runtime: Any) -> LocalServiceResponse:
         "lan_read_only": bool(getattr(runtime, "lan_read_only", True)),
         "deployment_performed": False,
         "warnings": list(status.get("warnings", [])) + (_lan_warnings() if lan_enabled else []),
-        "limitations": list(DEFAULT_LIMITATIONS),
+        "limitations": _service_limitations(runtime),
     }
     return json_response(200 if payload["status"] == "pass" else 503, payload)
 
@@ -443,6 +469,28 @@ def _search_response(runtime: Any, request_context: LocalRequestContext) -> Loca
     return json_response(200, payload)
 
 
+def _live_search_response(runtime: Any, request_context: LocalRequestContext) -> LocalServiceResponse:
+    return json_response(200, _live_search_payload(runtime, request_context))
+
+
+def _live_search_home_html_response(runtime: Any, request_context: LocalRequestContext) -> LocalServiceResponse:
+    return _live_search_html_response(runtime, request_context)
+
+
+def _live_search_html_response(runtime: Any, request_context: LocalRequestContext) -> LocalServiceResponse:
+    payload = _live_search_payload(runtime, request_context)
+    return html_response(200, _render_live_search_html(payload), payload)
+
+
+def _live_hunt_response(runtime: Any, request_context: LocalRequestContext) -> LocalServiceResponse:
+    return json_response(200, _live_hunt_payload(runtime, request_context))
+
+
+def _live_hunt_html_response(runtime: Any, request_context: LocalRequestContext) -> LocalServiceResponse:
+    payload = _live_hunt_payload(runtime, request_context)
+    return html_response(200, _render_live_search_html(payload, hunt=True), payload)
+
+
 def _search_html_response(runtime: Any, request_context: LocalRequestContext) -> LocalServiceResponse:
     workbench = _workbench()
     response = _search_response(runtime, request_context)
@@ -457,6 +505,267 @@ def _search_html_response(runtime: Any, request_context: LocalRequestContext) ->
     html = workbench.render_search_page(workbench.build_search_page_view(query, response.payload, live_run=live_run))
     workbench.validate_local_workbench_page(html)
     return html_response(200, html, response.payload)
+
+
+def _live_search_payload(runtime: Any, request_context: LocalRequestContext) -> dict[str, Any]:
+    query = first_param(request_context.params, "q", first_param(request_context.params, "query", "")).strip()
+    limit = parse_limit(first_param(request_context.params, "limit", ""), default=10)
+    provider_name = str(getattr(runtime, "live_search_provider", "brave") or "brave")
+    local = _live_local_preview_results(runtime, query, limit=limit)
+    provider_page: dict[str, Any] | None = None
+    live_error: dict[str, Any] | None = None
+    network_used = False
+    if query:
+        provider = provider_from_environment(provider_name)
+        if provider is None:
+            live_error = {"code": "live_provider_not_configured", "message": PROVIDER_NOT_CONFIGURED_MESSAGE, "provider": provider_name}
+        else:
+            try:
+                provider_page = provider.search(
+                    query,
+                    page=0,
+                    count=limit,
+                    freshness=first_param(request_context.params, "freshness", ""),
+                    country=first_param(request_context.params, "country", ""),
+                    language=first_param(request_context.params, "language", ""),
+                    safe_search=first_param(request_context.params, "safe_search", "moderate"),
+                    budget_context=WebSearchBudget(max_provider_requests=1, timeout_seconds=10),
+                ).to_dict()
+                network_used = True
+            except WebSearchProviderError as exc:
+                live_error = {
+                    "code": "live_provider_request_failed",
+                    "message": str(exc),
+                    "provider": exc.provider,
+                    "status_code": exc.status_code,
+                    "rate_limit": dict(exc.rate_limit),
+                }
+                network_used = bool(exc.status_code)
+    live_cards = _live_route_cards(provider_page)
+    results = [*local["results"], *live_cards]
+    status = "pass" if not live_error else ("pass_with_warnings" if local["results"] else "fail")
+    return {
+        "schema_version": "eureka.live_web_search_response.v0",
+        "status": status if query else "pass",
+        "query": query,
+        "mode": "blended",
+        "result_count": len(results),
+        "results": results,
+        "local_index": local,
+        "live": provider_page
+        or {
+            "provider": provider_name,
+            "status": "unavailable" if live_error else "not_requested",
+            "result_count": 0,
+            "results": [],
+            "error": live_error or {},
+            "raw_response_stored": False,
+        },
+        "provider_status": provider_status(provider_name),
+        "message": "" if query else "Enter a query to search the web and your Eureka index.",
+        "error": live_error or {},
+        "network_provider_calls": network_used,
+        "live_results_transient": True,
+        "review_required_for_display": False,
+        "reviewed_master_mutation": False,
+        "public_index_mutation": False,
+        "limitations": _service_limitations(runtime) + ["live provider results are transient discovery leads"],
+    }
+
+
+def _live_hunt_payload(runtime: Any, request_context: LocalRequestContext) -> dict[str, Any]:
+    query = first_param(request_context.params, "q", first_param(request_context.params, "query", "")).strip()
+    limit = parse_limit(first_param(request_context.params, "limit", ""), default=10)
+    max_queries = parse_limit(first_param(request_context.params, "max_queries", ""), default=5)
+    provider_name = str(getattr(runtime, "live_search_provider", "brave") or "brave")
+    variants = _live_hunt_variants(query, max_queries=max_queries) if query else []
+    provider = provider_from_environment(provider_name) if query else None
+    errors: list[dict[str, Any]] = []
+    cards: list[dict[str, Any]] = []
+    seen_urls: set[str] = set()
+    network_used = False
+    if query and provider is None:
+        errors.append({"code": "live_provider_not_configured", "message": PROVIDER_NOT_CONFIGURED_MESSAGE, "provider": provider_name})
+    elif provider is not None:
+        for variant in variants:
+            try:
+                page = provider.search(
+                    variant,
+                    page=0,
+                    count=limit,
+                    freshness="",
+                    country="",
+                    language="",
+                    safe_search="moderate",
+                    budget_context=WebSearchBudget(max_provider_requests=1, timeout_seconds=10, max_retries=0),
+                    query_variant=variant,
+                ).to_dict()
+                network_used = True
+            except WebSearchProviderError as exc:
+                errors.append({"code": "live_provider_request_failed", "message": str(exc), "provider": exc.provider, "query_variant": variant})
+                continue
+            for card in _live_route_cards(page):
+                url = str(card.get("url") or "")
+                if not url or url in seen_urls:
+                    continue
+                seen_urls.add(url)
+                cards.append(card)
+    return {
+        "schema_version": "eureka.live_hunt_response.v0",
+        "status": "fail" if errors and not cards else "pass",
+        "query": query,
+        "mode": "live",
+        "queries_attempted": variants,
+        "providers_checked": [provider_name] if query else [],
+        "pages_fetched": 0,
+        "new_unique_results": len(cards),
+        "duplicates_removed": 0,
+        "blocked_fetches": 0,
+        "errors": errors,
+        "near_misses": [],
+        "unresolved_leads": cards,
+        "results": cards,
+        "result_count": len(cards),
+        "network_provider_calls": network_used,
+        "fetch_milestone_complete": False,
+        "persistent_preview_index_update_complete": False,
+        "review_required_for_display": False,
+        "reviewed_master_mutation": False,
+        "public_index_mutation": False,
+        "limitations": _service_limitations(runtime) + ["live Hunt currently expands provider queries only"],
+    }
+
+
+def _live_local_preview_results(runtime: Any, query: str, *, limit: int) -> dict[str, Any]:
+    path = getattr(runtime, "e2e_explore_preview_index_path", None)
+    if not query or path is None:
+        return {"status": "not_requested", "result_count": 0, "results": [], "warnings": []}
+    try:
+        payload = _preview_index().search_preview_index(path, query, limit=limit, include_synthetic=False)
+    except Exception:
+        return {"status": "absent_or_unavailable", "result_count": 0, "results": [], "warnings": ["Local Preview Index is unavailable."]}
+    cards = []
+    for item in payload.get("results") or []:
+        if not isinstance(item, dict):
+            continue
+        cards.append(
+            {
+                "state": "INDEXED - UNREVIEWED",
+                "title": str(item.get("title") or item.get("normalized_title") or item.get("candidate_id") or "Indexed discovery"),
+                "url": str(item.get("url") or ""),
+                "snippet": str(item.get("summary") or item.get("non_verified_reason") or "Local Preview Index record."),
+                "provider": str(item.get("source_family") or "local_preview_index"),
+                "retrieved_at": str(item.get("created_at") or ""),
+                "query": query,
+                "source": "local_preview_index",
+                "retention_policy": {"persist_urls": True, "persist_snippets": True, "persist_rank": False, "terms_basis": "local_preview_index"},
+            }
+        )
+    return {"status": "pass", "result_count": len(cards), "results": cards, "warnings": []}
+
+
+def _live_route_cards(provider_page: Mapping[str, Any] | None) -> list[dict[str, Any]]:
+    if not provider_page:
+        return []
+    cards = []
+    for lead in provider_page.get("results") or []:
+        if not isinstance(lead, Mapping):
+            continue
+        cards.append(
+            {
+                "state": "LIVE - UNREVIEWED",
+                "title": str(lead.get("title") or lead.get("url") or "Live result"),
+                "url": str(lead.get("url") or ""),
+                "snippet": str(lead.get("snippet") or ""),
+                "provider": str(lead.get("provider") or provider_page.get("provider") or ""),
+                "provider_rank": int(lead.get("provider_rank") or 0),
+                "retrieved_at": str(lead.get("retrieved_at") or provider_page.get("retrieved_at") or ""),
+                "query": str(lead.get("query_variant") or lead.get("query") or provider_page.get("query") or ""),
+                "source": "live_web_search",
+                "lead_id": str(lead.get("lead_id") or ""),
+                "retention_policy": dict(lead.get("retention_policy") or {}),
+            }
+        )
+    return cards
+
+
+def _render_live_search_html(payload: Mapping[str, Any], *, hunt: bool = False) -> str:
+    query = str(payload.get("query") or "")
+    title = "Eureka"
+    cards = payload.get("results") or []
+    if not cards and query:
+        error = payload.get("error") if isinstance(payload.get("error"), Mapping) else {}
+        if not error and payload.get("errors"):
+            errors = payload.get("errors") if isinstance(payload.get("errors"), list) else []
+            error = errors[0] if errors and isinstance(errors[0], Mapping) else {}
+        message = str(error.get("message") if isinstance(error, Mapping) else "") or "No results yet."
+        result_html = f'<p class="empty">{escape(message)}</p>'
+    elif not cards:
+        result_html = '<p class="empty">Search the web and your Eureka index.</p>'
+    else:
+        result_html = "\n".join(_render_live_card(item) for item in cards if isinstance(item, Mapping))
+    escaped_query = escape(query, quote=True)
+    return "\n".join(
+        [
+            "<!doctype html>",
+            '<html lang="en">',
+            "<head>",
+            '<meta charset="utf-8">',
+            '<meta name="viewport" content="width=device-width, initial-scale=1">',
+            f"<title>{title}</title>",
+            "<style>body{font-family:system-ui,-apple-system,Segoe UI,sans-serif;margin:0;color:#182229;background:#f7f8f8}main{max-width:980px;margin:auto;padding:28px 18px}.search{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:8px;margin:16px 0 22px}.search input{font:inherit;padding:11px;border:1px solid #aeb8bf;border-radius:6px;background:white}.search button,.search a{font:inherit;padding:11px 14px;border-radius:6px;border:1px solid #2d5d78;background:#2d5d78;color:white;text-decoration:none}.search a{background:#fff;color:#2d5d78}.card{background:#fff;border:1px solid #d8dee2;border-radius:8px;padding:14px;margin:10px 0}.state{font-size:12px;font-weight:700;color:#4b5b64}.url{color:#0b5cad;overflow-wrap:anywhere}.meta,.empty{color:#52616b}.snippet{margin:8px 0}</style>",
+            "</head>",
+            "<body>",
+            "<main>",
+            "<h1>Eureka</h1>",
+            '<form class="search" action="/hunt" method="get">' if hunt else '<form class="search" action="/search" method="get">',
+            f'<input name="q" value="{escaped_query}" placeholder="Search the web and your Eureka index..." autofocus>',
+            '<button type="submit">Search</button>' if not hunt else '<button type="submit">Hunt deeper</button>',
+            f'<a href="/hunt?q={quote(query)}">Hunt deeper</a>' if not hunt else f'<a href="/search?q={quote(query)}">Search</a>',
+            "</form>",
+            result_html,
+            "</main>",
+            "</body>",
+            "</html>",
+            "",
+        ]
+    )
+
+
+def _render_live_card(item: Mapping[str, Any]) -> str:
+    title = escape(str(item.get("title") or "Live result"))
+    url = escape(str(item.get("url") or ""))
+    snippet = escape(str(item.get("snippet") or ""))
+    state = escape(str(item.get("state") or "LIVE - UNREVIEWED"))
+    provider = escape(str(item.get("provider") or ""))
+    retrieved_at = escape(str(item.get("retrieved_at") or ""))
+    return "\n".join(
+        [
+            '<article class="card">',
+            f'<div class="state">{state}</div>',
+            f"<h2>{title}</h2>",
+            f'<div class="url">{url}</div>' if url else "",
+            f'<p class="snippet">{snippet}</p>' if snippet else "",
+            f'<p class="meta">Provider: {provider or "local"} | Retrieved: {retrieved_at or "n/a"}</p>',
+            "</article>",
+        ]
+    )
+
+
+def _live_hunt_variants(query: str, *, max_queries: int) -> list[str]:
+    clean = " ".join(str(query or "").split())
+    terms = [term for term in re.split(r"[^A-Za-z0-9]+", clean) if len(term) > 2]
+    variants = [clean]
+    if " " in clean:
+        variants.append(f'"{clean}"')
+    if terms:
+        variants.append(" ".join(terms[:4]))
+    variants.extend([f"{clean} filetype:pdf", f"{clean} filetype:zip", f"{clean} site:archive.org"])
+    unique: list[str] = []
+    for item in variants:
+        if item and item not in unique:
+            unique.append(item)
+    return unique[: max(1, min(int(max_queries or 1), 50))]
 
 
 def _workbench_live_run_list_or_create_response(request_context: LocalRequestContext) -> LocalServiceResponse:
@@ -1782,6 +2091,20 @@ def _wants_json(request_context: LocalRequestContext) -> bool:
     return first_param(request_context.params, "format", "").lower() == "json"
 
 
+def _live_search_enabled(runtime: Any) -> bool:
+    return bool(getattr(runtime, "live_search_enabled", False))
+
+
+def _service_limitations(runtime: Any) -> list[str]:
+    if _live_search_enabled(runtime):
+        return [
+            "local Preview Index plus opt-in live provider search",
+            "loopback-only service",
+            "live provider leads are transient unless later fetched and indexed under policy",
+        ]
+    return list(DEFAULT_LIMITATIONS)
+
+
 def _is_api_path(path: str) -> bool:
     return str(path or "").startswith("/api/v1/")
 
@@ -2150,6 +2473,10 @@ def _workbench() -> Any:
 
 def _workbench_live_run() -> Any:
     return __import__("runtime.local_service.workbench_live_run", fromlist=["create_workbench_resolution_run"])
+
+
+def _preview_index() -> Any:
+    return __import__("runtime.index.preview", fromlist=["search_preview_index"])
 
 
 def _explore() -> Any:

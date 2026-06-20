@@ -6,6 +6,8 @@ import subprocess
 import sys
 import unittest
 
+from runtime.local.local_search import LocalSearchOptions, LocalSearchService
+
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 
@@ -80,6 +82,17 @@ class LocalSearchCLITests(unittest.TestCase):
         self.assertIn("manual for Sound Blaster CT1740", completed.stdout)
         self.assertIn("driver for Win98", completed.stdout)
         self.assertIn("Status summary: verified=", completed.stdout)
+
+    def test_normal_search_does_not_fall_through_to_hard_query_fixture(self) -> None:
+        response = LocalSearchService().search(
+            "old blue FTP client for XP",
+            LocalSearchOptions(metadata_fallback="none", show_evidence=True),
+        )
+
+        self.assertNotEqual("hard_query_fixture", response["source_path"])
+        self.assertFalse(response["fixture_backed"])
+        self.assertFalse(response["fallback_used"])
+        self.assertFalse(response["network_used"])
 
 
 if __name__ == "__main__":

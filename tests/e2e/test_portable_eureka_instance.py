@@ -20,7 +20,7 @@ class PortableEurekaInstanceE2ETests(unittest.TestCase):
     def test_hunt_replay_status_and_serve_smoke(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp) / "portable eureka"
-            bootstrap = bootstrap_command(instance=root)
+            bootstrap = bootstrap_command(instance=root, with_demo=True)
             self.assertEqual(bootstrap["status"], "pass")
 
             hunt = hunt_command("old blue FTP client for XP", instance=root)
@@ -45,6 +45,21 @@ class PortableEurekaInstanceE2ETests(unittest.TestCase):
             self.assertEqual(200, endpoints["/explore"]["status_code"])
             self.assertEqual(200, endpoints["/explore?q=old%20blue%20FTP%20client%20for%20XP"]["status_code"])
             self.assertEqual(200, endpoints["/explore?q=zzzxqvblorp"]["status_code"])
+            self.assertFalse(build_portable_paths(root).server_lock.exists())
+
+    def test_bootstrap_defaults_to_no_demo_and_live_serve_smoke(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp) / "portable"
+            bootstrap = bootstrap_command(instance=root)
+            self.assertEqual(bootstrap["status"], "pass")
+            self.assertFalse(bootstrap["demo_run"]["created"])
+            self.assertFalse(bootstrap["preview_index"]["created"])
+
+            smoke = serve_command(instance=root, port=0, smoke=True, json_output=True, live=True)
+            self.assertEqual(smoke["status"], "pass")
+            endpoints = {item["endpoint"]: item for item in smoke["smoke"]["endpoints"]}
+            self.assertEqual(200, endpoints["/"]["status_code"])
+            self.assertEqual(200, endpoints["/api/search"]["status_code"])
             self.assertFalse(build_portable_paths(root).server_lock.exists())
 
     def test_live_shadow_and_path_traversal_fail_closed(self) -> None:

@@ -48,8 +48,10 @@ class PortableEurekaInstanceRuntimeTests(unittest.TestCase):
     def test_bootstrap_profile_and_status_paths(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp) / "portable"
-            result = bootstrap_command(instance=root, no_demo=True)
+            result = bootstrap_command(instance=root)
             self.assertEqual(result["status"], "pass")
+            self.assertFalse(result["demo_run"]["created"])
+            self.assertFalse(result["preview_index"]["created"])
             paths = build_portable_paths(root)
             self.assertTrue(paths.profile.is_file())
             profile = json.loads(paths.profile.read_text(encoding="utf-8"))

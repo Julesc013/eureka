@@ -10,7 +10,6 @@ import tempfile
 from typing import Any, Callable, Mapping, Protocol, Sequence
 from urllib.parse import quote_plus
 
-from evals.hard_queries import fixture_cases, resolution_run_for_fixture
 from evals.hard_queries.metadata_fallback_smoke.ia_00.loader import load_fixture_payload
 from runtime.connectors.github_releases import GitHubReleasesConnector
 from runtime.connectors.synthetic_software import SyntheticSoftwareConnector
@@ -123,7 +122,6 @@ class LocalSearchService:
             return _empty_query_response(opts)
 
         index_state = _search_index_state(opts, normalized_query)
-        hard_fixture = _hard_fixture_for_query(normalized_query)
         ia_fixture_case = _ia_fixture_case_for_query(normalized_query, self._fixture_payload)
         provider_call_count = 0
         source_path = "local_resolution_run"
@@ -153,10 +151,6 @@ class LocalSearchService:
             provider_call_count = _provider_call_count(provider)
             source_path = "ia_fixture_metadata_fallback"
             status_concept = _status_concept_from_fallback(run.fallback_summary)
-        elif hard_fixture is not None:
-            run = resolution_run_for_fixture(hard_fixture)
-            source_path = "hard_query_fixture"
-            status_concept = STATUS_CONCEPTS.get(str(hard_fixture.get("query_id")), str(hard_fixture.get("expected_status", "unknown")))
         else:
             provider = IAFixtureMetadataProvider(self._fixture_payload) if opts.metadata_fallback == "ia_fixture" else None
             run = self._run_resolution_search(normalized_query, opts, provider)
@@ -968,6 +962,8 @@ def _candidate_from_doc(query: str, doc: Mapping[str, Any]) -> dict[str, Any]:
 
 
 def _hard_fixture_for_query(query: str) -> Mapping[str, Any] | None:
+    from evals.hard_queries import fixture_cases
+
     normalized = _normalize_query(query).casefold()
     for fixture in fixture_cases():
         if _normalize_query(str(fixture.get("query_text") or "")).casefold() == normalized:
