@@ -5,6 +5,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 import hashlib
 import re
+import threading
 import time
 from typing import Any, Callable, Mapping, Protocol
 
@@ -34,39 +35,43 @@ class TransientLeadBuffer:
         self.max_leads = max(1, min(int(max_leads or 500), 10_000))
         self._clock = clock or time.monotonic
         self._entries: dict[str, tuple[float, dict[str, Any]]] = {}
+        self._lock = threading.RLock()
 
     def store_page(self, provider_page: Mapping[str, Any] | None) -> list[str]:
         if not provider_page:
             return []
-        self._expire()
-        stored: list[str] = []
-        for lead in provider_page.get("results") or []:
-            if not isinstance(lead, Mapping):
-                continue
-            lead_id = str(lead.get("lead_id") or "").strip()
-            if not lead_id:
-                continue
-            self._entries[lead_id] = (self._clock() + self.ttl_seconds, dict(lead))
-            stored.append(lead_id)
-        self._trim()
-        return stored
+        with self._lock:
+            self._expire_locked()
+            stored: list[str] = []
+            for lead in provider_page.get("results") or []:
+                if not isinstance(lead, Mapping):
+                    continue
+                lead_id = str(lead.get("lead_id") or "").strip()
+                if not lead_id:
+                    continue
+                self._entries[lead_id] = (self._clock() + self.ttl_seconds, dict(lead))
+                stored.append(lead_id)
+            self._trim_locked()
+            return stored
 
     def get(self, lead_id: str) -> dict[str, Any] | None:
-        self._expire()
-        entry = self._entries.get(str(lead_id or ""))
-        return dict(entry[1]) if entry else None
+        with self._lock:
+            self._expire_locked()
+            entry = self._entries.get(str(lead_id or ""))
+            return dict(entry[1]) if entry else None
 
     def active_count(self) -> int:
-        self._expire()
-        return len(self._entries)
+        with self._lock:
+            self._expire_locked()
+            return len(self._entries)
 
-    def _expire(self) -> None:
+    def _expire_locked(self) -> None:
         now = self._clock()
         expired = [lead_id for lead_id, (expires_at, _lead) in self._entries.items() if expires_at <= now]
         for lead_id in expired:
             self._entries.pop(lead_id, None)
 
-    def _trim(self) -> None:
+    def _trim_locked(self) -> None:
         overflow = len(self._entries) - self.max_leads
         if overflow <= 0:
             return
@@ -326,7 +331,7 @@ class LiveSearchService:
             "transient_lead_count": int(raw_lead_count),
             "unique_transient_lead_count": int(unique_lead_count),
             "new_unique_results": int(unique_lead_count),
-            "duplicates_removed": int(duplicate_count),
+            "duplicates_removed": max(0, int(raw_lead_count) - int(unique_lead_count)),
             "fetch_attempt_count": 0,
             "observation_refs": [],
             "pages_fetched": 0,

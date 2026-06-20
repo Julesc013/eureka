@@ -1,0 +1,50 @@
+schema_version: aide.task.v0
+id: EUREKA-LIVE-SEARCH-RETENTION-AND-CONSOLIDATION-01
+title: Make live leads transient and consolidate live search service
+status: pass
+task_class: product_runtime_hotfix
+parent_track: EUREKA-REAL-LIVE-SEARCH-HUNT-00
+predecessor: EUREKA-REAL-LIVE-SEARCH-HUNT-00
+successor: EUREKA-SAFE-WEB-FETCH-AND-OBSERVATION-01
+purpose: >-
+  Harden the real live-search foundation before provider canaries, page
+  fetching, durable indexing, or deeper Hunt work by preventing durable
+  provider-result persistence and routing CLI/HTTP live behavior through one
+  reusable service.
+operator_verdict_source: prompt:2026-06-21-live-search-retention-chain
+evidence:
+  commit: d2aa6df4
+  subject: "fix(search): keep live Hunt leads transient"
+  notes:
+    - runtime/search/live_service.py owns live provider invocation and Hunt aggregation.
+    - TransientLeadBuffer keeps provider leads in bounded in-memory state only.
+    - Persisted Hunt summaries omit provider URLs, snippets, ranks, raw responses, and unresolved lead cards.
+    - CLI and HTTP live search/Hunt surfaces adapt to LiveSearchService.
+    - Duplicate accounting tracks raw transient leads separately from unique displayed leads.
+    - duplicates_removed is persisted from raw_lead_count - unique_lead_count.
+    - TransientLeadBuffer uses bounded TTL/count limits and locked in-memory access.
+acceptance:
+  provider_restricted_payload_persisted: false
+  provider_raw_response_persisted: false
+  shared_live_service: runtime/search/live_service.py
+  cli_uses_shared_service: true
+  http_uses_shared_service: true
+  no_provider_failure_honest: true
+  public_live_fanout_disabled: true
+  reviewed_public_mutation: false
+validation:
+  - python -m unittest tests.runtime.test_live_web_search_provider -v
+  - python -m unittest tests.runtime.test_live_search_service -v
+  - python -m unittest tests.e2e.test_portable_eureka_instance -v
+  - python -m unittest tests.e2e.test_local_search_cli -v
+  - python -m unittest tests.e2e.test_local_search_server -v
+  - python scripts/check_architecture_boundaries.py
+  - python scripts/check_generated_artifact_cleanliness.py --check --json
+  - python scripts/eureka_test_select.py --changed --failed-first --json
+  - git diff --check
+non_goals:
+  - no public launch
+  - no reviewed/master/public mutation
+  - no independent fetch implementation in this task
+  - no persistent Preview Index implementation in this task
+  - no second provider

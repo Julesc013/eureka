@@ -1,0 +1,16 @@
+schema_version: aide.task.v0
+id: EUREKA-AGENTIC-HUNT-PLANNER-01
+title: Add agentic Hunt planners under typed policy gates
+status: planned
+task_class: future_agentic_milestone
+parent_track: EUREKA-REAL-LIVE-SEARCH-HUNT-00
+predecessor: EUREKA-AUTONOMOUS-INDEX-FOUNDRY-01
+successor: null
+purpose: >-
+  Add agent query-planning and evidence-analysis proposals only after
+  deterministic Hunt is benchmarked. Agents emit typed proposals and do not
+  bypass policy, provenance, indexing, or review.
+non_goals:
+  - no agentic planner before deterministic Hunt works
+  - no accepted truth without review
+  - no public launch

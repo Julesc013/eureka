@@ -1,0 +1,16 @@
+schema_version: aide.task.v0
+id: EUREKA-LIVE-SEARCH-HUNT-UX-01
+title: Make the live Search and Hunt product UI usable
+status: planned
+task_class: product_surface_milestone
+parent_track: EUREKA-REAL-LIVE-SEARCH-HUNT-00
+predecessor: EUREKA-REAL-HUNT-ENGINE-01
+successor: EUREKA-REAL-LIVE-SEARCH-HUNT-ACCEPTANCE-01
+purpose: >-
+  Present search, Hunt progress, result inspection, provenance, and indexing
+  state without task IDs, review-packet language, raw JSON, or architecture
+  exposition on normal product pages.
+non_goals:
+  - no public launch
+  - no renderer expansion outside live Search/Hunt needs
+  - no reviewed/master/public mutation

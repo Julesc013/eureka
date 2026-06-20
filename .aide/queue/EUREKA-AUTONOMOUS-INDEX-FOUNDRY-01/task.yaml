@@ -1,0 +1,16 @@
+schema_version: aide.task.v0
+id: EUREKA-AUTONOMOUS-INDEX-FOUNDRY-01
+title: Add autonomous bounded Preview Index growth after interactive Hunt works
+status: planned
+task_class: future_automation_milestone
+parent_track: EUREKA-REAL-LIVE-SEARCH-HUNT-00
+predecessor: EUREKA-SECOND-PROVIDER-CONFORMANCE-01
+successor: EUREKA-AGENTIC-HUNT-PLANNER-01
+purpose: >-
+  Add scheduled seed generation, stale observation refresh, bounded surveys,
+  source scorecards, clustering, Preview Index generations, and review-batch
+  preparation after interactive Hunt is genuinely useful.
+non_goals:
+  - no reviewed truth creation
+  - no public launch
+  - no unbounded crawling

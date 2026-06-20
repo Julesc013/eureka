@@ -99,6 +99,10 @@ class LiveSearchServiceTests(unittest.TestCase):
         self.assertEqual("https://provider.example/one", hunt.response["results"][0]["url"])
         self.assertEqual(2, hunt.persisted_summary["transient_lead_count"])
         self.assertEqual(1, hunt.persisted_summary["duplicates_removed"])
+        self.assertEqual(
+            hunt.persisted_summary["transient_lead_count"] - hunt.persisted_summary["unique_transient_lead_count"],
+            hunt.persisted_summary["duplicates_removed"],
+        )
         self.assertFalse(hunt.persisted_summary["provider_results_persisted"])
         self.assertFalse(hunt.persisted_summary["provider_raw_response_persisted"])
         self.assertNotIn("results", hunt.persisted_summary)
@@ -107,6 +111,36 @@ class LiveSearchServiceTests(unittest.TestCase):
         self.assertNotIn("https://provider.example/one", persisted)
         self.assertNotIn("Provider snippet", persisted)
         self.assertNotIn("provider_rank", persisted)
+
+    def test_transient_lead_buffer_expires_without_disk_state(self) -> None:
+        now = [100.0]
+
+        def clock() -> float:
+            return now[0]
+
+        buffer = TransientLeadBuffer(ttl_seconds=10, max_leads=2, clock=clock)
+
+        stored = buffer.store_page(
+            {
+                "results": [
+                    {
+                        "lead_id": "lead-one",
+                        "url": "https://provider.example/one",
+                        "snippet": "Provider snippet",
+                        "provider_rank": 1,
+                    }
+                ]
+            }
+        )
+
+        self.assertEqual(["lead-one"], stored)
+        self.assertEqual(1, buffer.active_count())
+        self.assertEqual("https://provider.example/one", buffer.get("lead-one")["url"])
+
+        now[0] = 111.0
+
+        self.assertEqual(0, buffer.active_count())
+        self.assertIsNone(buffer.get("lead-one"))
 
 
 if __name__ == "__main__":

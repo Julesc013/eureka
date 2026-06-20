@@ -1,0 +1,23 @@
+schema_version: aide.task.v0
+id: EUREKA-SAFE-WEB-FETCH-AND-OBSERVATION-01
+title: Implement safe independent web fetching and SourceObservation handoff
+status: planned
+task_class: product_runtime_milestone
+parent_track: EUREKA-REAL-LIVE-SEARCH-HUNT-00
+predecessor: EUREKA-LIVE-SEARCH-RETENTION-AND-CONSOLIDATION-01
+successor: EUREKA-PERSISTENT-PREVIEW-INDEX-01
+purpose: >-
+  Convert selected transient live leads into independently fetched,
+  policy-approved SourceObservations without persisting provider result
+  payloads.
+scope:
+  - SSRF-safe independent HTTP fetching
+  - DNS and redirect revalidation
+  - robots handling
+  - MIME, size, timeout, and concurrency limits
+  - HTML/text extraction
+  - SourceObservation handoff and persistence preparation
+non_goals:
+  - no provider result persistence
+  - no reviewed/master/public mutation
+  - no second provider

@@ -1,0 +1,16 @@
+schema_version: aide.task.v0
+id: EUREKA-PERSISTENT-PREVIEW-INDEX-01
+title: Add durable operational Preview Index persistence
+status: planned
+task_class: product_runtime_milestone
+parent_track: EUREKA-REAL-LIVE-SEARCH-HUNT-00
+predecessor: EUREKA-SAFE-WEB-FETCH-AND-OBSERVATION-01
+successor: EUREKA-REAL-HUNT-ENGINE-01
+purpose: >-
+  Add an operational SQLite/FTS Preview Index for policy-approved
+  SourceObservations while preserving immutable generation/export mechanics for
+  audit, replay, rollback, and distribution.
+non_goals:
+  - no reviewed/master/public mutation
+  - no public launch
+  - no replacement of immutable Preview Index generation exports

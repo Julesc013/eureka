@@ -1,0 +1,16 @@
+schema_version: aide.task.v0
+id: EUREKA-REAL-HUNT-ENGINE-01
+title: Build the budgeted real Hunt engine
+status: planned
+task_class: product_runtime_milestone
+parent_track: EUREKA-REAL-LIVE-SEARCH-HUNT-00
+predecessor: EUREKA-PERSISTENT-PREVIEW-INDEX-01
+successor: EUREKA-LIVE-SEARCH-HUNT-UX-01
+purpose: >-
+  Replace query-expansion-only Hunt with a budgeted loop for provider search,
+  lead selection, safe fetch, extraction, dedupe, indexing, progress events,
+  pause/resume/cancel, and exhaustion handling.
+non_goals:
+  - no agentic planner before deterministic Hunt works
+  - no second provider family
+  - no reviewed/master/public mutation

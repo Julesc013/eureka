@@ -1,0 +1,15 @@
+schema_version: aide.task.v0
+id: EUREKA-SECOND-PROVIDER-CONFORMANCE-01
+title: Add a second provider only after the Brave vertical slice works
+status: planned
+task_class: future_provider_milestone
+parent_track: EUREKA-REAL-LIVE-SEARCH-HUNT-00
+predecessor: EUREKA-REAL-LIVE-SEARCH-HUNT-ACCEPTANCE-01
+successor: EUREKA-AUTONOMOUS-INDEX-FOUNDRY-01
+purpose: >-
+  Add one independent provider family with the same provider contract, budgets,
+  error model, retention manifest, cross-provider dedupe, and partial-failure
+  behavior after the first live Search/Hunt path is useful.
+non_goals:
+  - no second provider before live Search/Hunt acceptance
+  - no public launch

@@ -1,0 +1,17 @@
+schema_version: aide.task.v0
+id: EUREKA-REAL-LIVE-SEARCH-HUNT-ACCEPTANCE-01
+title: Run unseen-query acceptance for real live Search and Hunt
+status: planned
+task_class: acceptance_gate
+parent_track: EUREKA-REAL-LIVE-SEARCH-HUNT-00
+predecessor: EUREKA-LIVE-SEARCH-HUNT-UX-01
+successor: EUREKA-SECOND-PROVIDER-CONFORMANCE-01
+purpose: >-
+  Resume human acceptance only after live results, deeper Hunt, independent
+  fetch, local unreviewed indexing, restart retrieval, honest provider failure,
+  no fixtures, no review obstruction, no provider-result persistence, and no
+  reviewed/public mutation are proven with unseen queries.
+non_goals:
+  - no acceptance before all six parent milestones pass
+  - no public launch
+  - no main promotion
