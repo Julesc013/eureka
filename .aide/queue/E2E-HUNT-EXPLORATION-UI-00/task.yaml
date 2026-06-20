@@ -1,7 +1,7 @@
 schema_version: aide.task.v0
 id: E2E-HUNT-EXPLORATION-UI-00
 title: Build private local Hunt exploration UI
-status: planned
+status: completed
 task_class: e2e_reference_child
 parent_track: E2E-REFERENCE-SYSTEM-TRACK-00
 predecessor: E2E-PREVIEW-INDEX-00

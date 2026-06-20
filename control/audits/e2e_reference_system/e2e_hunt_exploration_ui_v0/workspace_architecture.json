@@ -1,0 +1,11 @@
+{
+  "schema_version": "eureka.e2e_hunt_exploration_workspace_architecture.v0",
+  "projection_module": "runtime/local/e2e_hunt_exploration.py",
+  "route_module": "runtime/local/service/routes.py",
+  "html_module": "surfaces/web/workbench/render_e2e_hunt_exploration.py",
+  "generated_run_root": ".eureka/e2e-reference/runs",
+  "server_rendered": true,
+  "javascript_required": false,
+  "runtime_semantics_owned_by_ui": false
+}
+

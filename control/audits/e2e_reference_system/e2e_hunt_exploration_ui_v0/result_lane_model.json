@@ -1,0 +1,17 @@
+{
+  "schema_version": "eureka.e2e_hunt_exploration_result_lane_model.v0",
+  "lanes": [
+    "reviewed",
+    "candidates",
+    "near_misses",
+    "needs",
+    "absence_or_next_steps",
+    "blocked_or_unavailable",
+    "mentions_and_traces",
+    "unknown"
+  ],
+  "authority_visible": true,
+  "review_required_visible": true,
+  "accepted_truth_collapsed": false
+}
+

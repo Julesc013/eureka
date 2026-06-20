@@ -1,0 +1,21 @@
+{
+  "schema_version": "eureka.audit_packet_index.v0",
+  "task_id": "E2E-HUNT-EXPLORATION-UI-00",
+  "status": "pass",
+  "packet": "control/audits/e2e_reference_system/e2e_hunt_exploration_ui_v0",
+  "reports": [
+    "EXISTING_WORKBENCH_SEAMS.md",
+    "WORKSPACE_ARCHITECTURE.md",
+    "ROUTE_MATRIX.md",
+    "VIEW_MODEL_MATRIX.md",
+    "RESULT_LANE_MODEL.md",
+    "RUN_CONTROL_MODEL.md",
+    "REPLAY_AND_COMPARE.md",
+    "ACCESSIBILITY_REPORT.md",
+    "SECURITY_BOUNDARY.md",
+    "COMPATIBILITY_REPORT.md",
+    "VALIDATION_REPORT.md"
+  ],
+  "reviewed_truth_created": false,
+  "public_exposure": false
+}

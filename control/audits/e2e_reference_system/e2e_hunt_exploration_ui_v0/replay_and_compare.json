@@ -1,0 +1,9 @@
+{
+  "schema_version": "eureka.e2e_hunt_exploration_replay_compare.v0",
+  "replay_function": "runtime.resolution_run.replay_run_bundle",
+  "compare_read_only": true,
+  "replay_writes_generated_report_only": true,
+  "provider_calls": false,
+  "truth_mutation": false
+}
+

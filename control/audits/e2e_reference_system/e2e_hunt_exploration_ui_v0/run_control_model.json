@@ -1,0 +1,10 @@
+{
+  "schema_version": "eureka.e2e_hunt_exploration_run_control_model.v0",
+  "synthetic_runs_complete_synchronously": true,
+  "pause_resume_cancel_on_terminal_runs": "blocked",
+  "step_mode": "reserved_for_future_non_terminal_runner",
+  "replay_enabled": true,
+  "operator_token_required": true,
+  "lan_mutation_enabled": false
+}
+

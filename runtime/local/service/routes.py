@@ -34,6 +34,29 @@ def route_request(
         return _status_response(runtime)
     if path in {"/health", "/api/v1/health"}:
         return _health_response(runtime)
+    if path == "/explore":
+        if _wants_json(request_context):
+            return _explore_workspace_response(runtime, request_context)
+        return _explore_workspace_html_response(runtime, request_context)
+    if path == "/api/v1/explore":
+        return _explore_workspace_response(runtime, request_context)
+    if path == "/explore/runs":
+        if _wants_json(request_context):
+            return _explore_runs_response(runtime, request_context)
+        return _explore_runs_html_response(runtime, request_context)
+    if path == "/api/v1/explore/runs":
+        return _explore_runs_response(runtime, request_context)
+    if path == "/explore/compare":
+        if _wants_json(request_context):
+            return _explore_compare_response(runtime, request_context)
+        return _explore_compare_html_response(runtime, request_context)
+    if path == "/api/v1/explore/compare":
+        return _explore_compare_response(runtime, request_context)
+    explore_run_route = _parse_explore_run_route(path)
+    if explore_run_route:
+        if path.startswith("/api/v1/") or _wants_json(request_context):
+            return _explore_run_response(runtime, request_context, explore_run_route)
+        return _explore_run_html_response(runtime, request_context, explore_run_route)
     if path == "/search":
         if _wants_json(request_context):
             return _search_response(runtime, request_context)
@@ -313,6 +336,80 @@ def _health_response(runtime: Any) -> LocalServiceResponse:
         "limitations": list(DEFAULT_LIMITATIONS),
     }
     return json_response(200 if payload["status"] == "pass" else 503, payload)
+
+
+def _explore_workspace_response(runtime: Any, request_context: LocalRequestContext) -> LocalServiceResponse:
+    query = first_param(request_context.params, "q", first_param(request_context.params, "query", ""))
+    limit = parse_limit(first_param(request_context.params, "limit", ""), default=20)
+    payload = _explore().build_explore_workspace(
+        query,
+        options=_explore().options_from_runtime(runtime),
+        limit=limit,
+        include_synthetic=_truthy(first_param(request_context.params, "include_synthetic", first_param(request_context.params, "include-synthetic", ""))),
+    )
+    return json_response(200, payload)
+
+
+def _explore_workspace_html_response(runtime: Any, request_context: LocalRequestContext) -> LocalServiceResponse:
+    response = _explore_workspace_response(runtime, request_context)
+    html = _explore_html().render_explore_workspace_html(response.payload)
+    _workbench().validate_local_workbench_page(html, allow_operator_mutation_forms=True)
+    return html_response(200, html, response.payload)
+
+
+def _explore_runs_response(runtime: Any, request_context: LocalRequestContext) -> LocalServiceResponse:
+    limit = parse_limit(first_param(request_context.params, "limit", ""), default=50)
+    payload = _explore().list_run_bundles(_explore().options_from_runtime(runtime).runs_root, limit=limit)
+    return json_response(200, payload)
+
+
+def _explore_runs_html_response(runtime: Any, request_context: LocalRequestContext) -> LocalServiceResponse:
+    response = _explore_runs_response(runtime, request_context)
+    html = _explore_html().render_explore_runs_html(response.payload)
+    _workbench().validate_local_workbench_page(html, allow_operator_mutation_forms=True)
+    return html_response(200, html, response.payload)
+
+
+def _explore_run_response(runtime: Any, request_context: LocalRequestContext, run_id: str) -> LocalServiceResponse:
+    try:
+        payload = _explore().load_run_detail(run_id, _explore().options_from_runtime(runtime).runs_root)
+    except FileNotFoundError:
+        return error_response(404, "explore_run_not_found", "E2E explore run bundle was not found", {"run_id": run_id})
+    except Exception as exc:
+        return error_response(400, "explore_run_invalid", str(exc), {"run_id": run_id})
+    return json_response(200, payload)
+
+
+def _explore_run_html_response(runtime: Any, request_context: LocalRequestContext, run_id: str) -> LocalServiceResponse:
+    response = _explore_run_response(runtime, request_context, run_id)
+    if response.status_code != 200:
+        return response
+    html = _explore_html().render_explore_run_html(response.payload)
+    _workbench().validate_local_workbench_page(html, allow_operator_mutation_forms=True)
+    return html_response(200, html, response.payload)
+
+
+def _explore_compare_response(runtime: Any, request_context: LocalRequestContext) -> LocalServiceResponse:
+    left = first_param(request_context.params, "left", "")
+    right = first_param(request_context.params, "right", "")
+    if not left or not right:
+        return json_response(200, _explore().empty_compare_payload(left, right))
+    try:
+        payload = _explore().compare_runs(left, right, runs_root=_explore().options_from_runtime(runtime).runs_root)
+    except FileNotFoundError as exc:
+        return error_response(404, "explore_run_not_found", str(exc), {"left": left, "right": right})
+    except Exception as exc:
+        return error_response(400, "explore_compare_invalid", str(exc), {"left": left, "right": right})
+    return json_response(200, payload)
+
+
+def _explore_compare_html_response(runtime: Any, request_context: LocalRequestContext) -> LocalServiceResponse:
+    response = _explore_compare_response(runtime, request_context)
+    if response.status_code != 200:
+        return response
+    html = _explore_html().render_explore_compare_html(response.payload)
+    _workbench().validate_local_workbench_page(html)
+    return html_response(200, html, response.payload)
 
 
 def _search_response(runtime: Any, request_context: LocalRequestContext) -> LocalServiceResponse:
@@ -1210,6 +1307,9 @@ def _mutation_response(runtime: Any, request_context: LocalRequestContext, opera
             _require_operator_token(request_context, runtime.config, operator_auth_state)
         except _operator_auth_error() as exc:
             return error_response(401, "operator_token_required", str(exc))
+    explore_mutation = _parse_explore_mutation_path(path)
+    if explore_mutation:
+        return _apply_explore_mutation_response(runtime, request_context, explore_mutation[0], explore_mutation[1])
     hunt_mutation = _parse_hunt_mutation_path(path)
     if hunt_mutation:
         if hunt_mutation[1] == "replay-plan":
@@ -1272,6 +1372,26 @@ def _mutation_response(runtime: Any, request_context: LocalRequestContext, opera
     if path == "/rebuild":
         return _apply_rebuild_response(runtime, request_context)
     return error_response(404, "route_not_found", "operator mutation route was not found", {"path": path})
+
+
+def _apply_explore_mutation_response(runtime: Any, request_context: LocalRequestContext, action: str, run_id: str) -> LocalServiceResponse:
+    options = _explore().options_from_runtime(runtime)
+    if action == "start":
+        query = first_param(request_context.body_params, "q", first_param(request_context.body_params, "query", ""))
+        fixture = first_param(request_context.body_params, "fixture", options.default_fixture)
+        try:
+            payload = _explore().start_synthetic_hunt(query, options=options, fixture=fixture)
+        except Exception as exc:
+            return error_response(400, "explore_start_rejected", str(exc), {"query_present": bool(query.strip())})
+        return json_response(200, payload)
+    try:
+        payload = _explore().apply_run_control(run_id, action, runs_root=options.runs_root)
+    except FileNotFoundError:
+        return error_response(404, "explore_run_not_found", "E2E explore run bundle was not found", {"run_id": run_id, "action": action})
+    except Exception as exc:
+        return error_response(400, "explore_command_rejected", str(exc), {"run_id": run_id, "action": action})
+    status_code = 409 if payload.get("status") == "blocked" else 200
+    return json_response(status_code, payload)
 
 
 def _apply_hunt_command_response(runtime: Any, request_context: LocalRequestContext, hunt_id: str, action: str) -> LocalServiceResponse:
@@ -1642,7 +1762,9 @@ def _route_allowed_for_scope(method: str, path: str, client_scope: object) -> bo
 
 def _is_operator_mutation_path(method: str, path: str) -> bool:
     return str(method or "").upper() == "POST" and (
-        _parse_hunt_mutation_path(path) is not None or _parse_need_mutation_path(path) is not None
+        _parse_explore_mutation_path(path) is not None
+        or _parse_hunt_mutation_path(path) is not None
+        or _parse_need_mutation_path(path) is not None
         or (path.startswith("/api/v1/review/") and path.endswith("/decision"))
         or path in {"/api/v1/promotion-preview", "/api/v1/reviewed-index/refresh-preview"}
         or _is_local_apply_api_mutation_path(path)
@@ -1654,6 +1776,29 @@ def _is_local_apply_api_mutation_path(path: str) -> bool:
     if value in {"/api/v1/local-apply/preview", "/api/v1/local-apply/plan"}:
         return True
     return value.startswith("/api/v1/local-apply/") and (value.endswith("/apply") or value.endswith("/rollback"))
+
+
+def _parse_explore_run_route(path: str) -> str | None:
+    parts = [part for part in str(path or "").split("/") if part]
+    if len(parts) == 3 and parts[:2] == ["explore", "run"]:
+        return parts[2]
+    if len(parts) == 5 and parts[:4] == ["api", "v1", "explore", "run"]:
+        return parts[4]
+    return None
+
+
+def _parse_explore_mutation_path(path: str) -> tuple[str, str] | None:
+    parts = [part for part in str(path or "").split("/") if part]
+    actions = {"pause", "resume", "cancel", "step", "advance", "replay"}
+    if parts == ["explore", "run", "start"]:
+        return "start", ""
+    if parts == ["api", "v1", "explore", "run", "start"]:
+        return "start", ""
+    if len(parts) == 4 and parts[:2] == ["explore", "run"] and parts[3] in actions:
+        return parts[3], parts[2]
+    if len(parts) == 6 and parts[:4] == ["api", "v1", "explore", "run"] and parts[5] in actions:
+        return parts[5], parts[4]
+    return None
 
 
 def _parse_hunt_route(path: str) -> tuple[str, str] | None:
@@ -1973,6 +2118,14 @@ def _workbench() -> Any:
 
 def _workbench_live_run() -> Any:
     return __import__("runtime.local_service.workbench_live_run", fromlist=["create_workbench_resolution_run"])
+
+
+def _explore() -> Any:
+    return __import__("runtime.local.e2e_hunt_exploration", fromlist=["build_explore_workspace"])
+
+
+def _explore_html() -> Any:
+    return __import__("surfaces.web.workbench.render_e2e_hunt_exploration", fromlist=["render_explore_workspace_html"])
 
 
 def _workbench_review_promote() -> Any:

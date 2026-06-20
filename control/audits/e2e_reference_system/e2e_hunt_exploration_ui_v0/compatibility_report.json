@@ -1,0 +1,9 @@
+{
+  "schema_version": "eureka.e2e_hunt_exploration_compatibility.v0",
+  "existing_routes_preserved": true,
+  "old_runs_route_changed": false,
+  "explore_runs_reads_durable_bundles": true,
+  "public_alpha_posture_changed": false,
+  "license_posture_changed": false
+}
+

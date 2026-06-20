@@ -1,0 +1,18 @@
+{
+  "schema_version": "eureka.e2e_hunt_exploration_existing_seams.v0",
+  "task_id": "E2E-HUNT-EXPLORATION-UI-00",
+  "existing_routes_preserved": [
+    "/search",
+    "/runs",
+    "/hunts",
+    "/needs",
+    "/review",
+    "/rebuild"
+  ],
+  "shared_runner": "runtime.resolution_run",
+  "shared_preview_index": "runtime.index.preview",
+  "html_surface": "surfaces.web.workbench",
+  "second_runner_created": false,
+  "second_preview_index_created": false
+}
+

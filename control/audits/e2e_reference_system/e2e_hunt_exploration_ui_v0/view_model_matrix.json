@@ -1,0 +1,11 @@
+{
+  "schema_version": "eureka.e2e_hunt_exploration_view_model_matrix.v0",
+  "workspace_sources": [
+    "runtime.index.preview",
+    "runtime.resolution_run durable bundles"
+  ],
+  "process_cache_required": false,
+  "private_paths_rendered": false,
+  "view_model_module": "runtime/local/e2e_hunt_exploration.py"
+}
+

@@ -1,0 +1,80 @@
+{
+  "schema_version": "eureka.e2e_hunt_exploration_validation_report.v0",
+  "status": "PASS",
+  "initial_checks": [
+    {
+      "command": "python -m unittest tests.runtime.test_e2e_hunt_exploration_view_models -v",
+      "result": "PASS"
+    },
+    {
+      "command": "python -m unittest tests.e2e.test_e2e_hunt_exploration_ui -v",
+      "result": "PASS"
+    },
+    {
+      "command": "python -m py_compile runtime/local/e2e_hunt_exploration.py runtime/local/service/routes.py runtime/local/service/validation.py surfaces/web/workbench/render_e2e_hunt_exploration.py tests/runtime/test_e2e_hunt_exploration_view_models.py tests/e2e/test_e2e_hunt_exploration_ui.py",
+      "result": "PASS"
+    }
+  ],
+  "final_checks": [
+    {
+      "command": "python -m unittest tests.runtime.test_e2e_reference_runner tests.e2e.test_e2e_reference_runner tests.search.test_e2e_preview_index tests.e2e.test_e2e_preview_index tests.e2e.test_local_search_preview_index -v",
+      "result": "PASS"
+    },
+    {
+      "command": "python -m unittest tests.operations.test_workbench_live_run_smoke tests.runtime.test_background_hunt_runner_routes tests.runtime.test_hunt_replay_routes tests.runtime.test_search_hunt_command_routes tests.runtime.test_need_workunit_routes -v",
+      "result": "PASS"
+    },
+    {
+      "command": "python scripts/validate_workbench_result_lanes.py",
+      "result": "PASS"
+    },
+    {
+      "command": "python -m unittest tests.runtime.test_workbench_result_lanes tests.runtime.test_workbench_lane_view_models tests.runtime.test_workbench_lane_boundaries -v",
+      "result": "PASS"
+    },
+    {
+      "command": "python scripts/validate_workbench_foundation.py",
+      "result": "PASS"
+    },
+    {
+      "command": "python -m unittest tests.operations.test_workbench_projection_model -v",
+      "result": "PASS"
+    },
+    {
+      "command": "python scripts/validate_test_lane_policy.py",
+      "result": "PASS"
+    },
+    {
+      "command": "python -m unittest tests.operations.test_test_lane_policy tests.scripts.test_eureka_test_select tests.scripts.test_validate_test_lane_policy -v",
+      "result": "PASS"
+    },
+    {
+      "command": "python scripts/check_architecture_boundaries.py",
+      "result": "PASS"
+    },
+    {
+      "command": "python scripts/validate_runtime_architecture_leakage.py --json",
+      "result": "PASS"
+    },
+    {
+      "command": "python scripts/validate_public_alpha_readonly.py",
+      "result": "PASS"
+    },
+    {
+      "command": "python scripts/validate_snapshot_relay.py",
+      "result": "PASS"
+    },
+    {
+      "command": "python scripts/eureka_test_select.py --changed --failed-first --json",
+      "result": "PASS"
+    },
+    {
+      "command": "git diff --check",
+      "result": "PASS"
+    }
+  ],
+  "reviewed_truth_created": false,
+  "reviewed_records_created": 0,
+  "public_exposure": false,
+  "public_index_mutation": false
+}

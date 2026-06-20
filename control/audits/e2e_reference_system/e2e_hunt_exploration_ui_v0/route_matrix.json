@@ -1,0 +1,26 @@
+{
+  "schema_version": "eureka.e2e_hunt_exploration_route_matrix.v0",
+  "get_routes": [
+    "/explore",
+    "/api/v1/explore",
+    "/explore/runs",
+    "/api/v1/explore/runs",
+    "/explore/run/<run-id>",
+    "/api/v1/explore/run/<run-id>",
+    "/explore/compare",
+    "/api/v1/explore/compare"
+  ],
+  "post_routes": [
+    "/explore/run/start",
+    "/api/v1/explore/run/start",
+    "/explore/run/<run-id>/pause",
+    "/explore/run/<run-id>/resume",
+    "/explore/run/<run-id>/cancel",
+    "/explore/run/<run-id>/step",
+    "/explore/run/<run-id>/replay"
+  ],
+  "get_mutation": false,
+  "post_requires_operator_token": true,
+  "lan_allowed": false
+}
+

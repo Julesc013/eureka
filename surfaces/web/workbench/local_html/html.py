@@ -41,6 +41,7 @@ def render_navigation() -> str:
         render_link("/", "Home"),
         render_link("/status", "Status"),
         render_link("/search", "Search"),
+        render_link("/explore", "Explore"),
         render_link("/absence?q=sampleproject", "Absence example"),
         render_link("/hunts", "Search Hunts"),
         render_link("/needs", "SearchNeeds"),

@@ -7,6 +7,12 @@ from surfaces.web.workbench.render_archive_resolution_evals import render_archiv
 from surfaces.web.workbench.render_bundle_inspection import render_bundle_inspection_html
 from surfaces.web.workbench.render_compatibility import render_compatibility_html
 from surfaces.web.workbench.render_comparison import render_comparison_html
+from surfaces.web.workbench.render_e2e_hunt_exploration import (
+    render_explore_compare_html,
+    render_explore_run_html,
+    render_explore_runs_html,
+    render_explore_workspace_html,
+)
 from surfaces.web.workbench.render_handoff import render_handoff_html
 from surfaces.web.workbench.render_local_index import render_local_index_html
 from surfaces.web.workbench.render_resolution_memory import render_resolution_memory_html
@@ -32,6 +38,10 @@ __all__ = [
     "render_compatibility_html",
     "render_comparison_html",
     "render_decomposition_html",
+    "render_explore_compare_html",
+    "render_explore_run_html",
+    "render_explore_runs_html",
+    "render_explore_workspace_html",
     "render_handoff_html",
     "render_local_index_html",
     "render_resolution_memory_html",
