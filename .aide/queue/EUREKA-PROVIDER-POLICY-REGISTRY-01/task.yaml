@@ -1,7 +1,7 @@
 schema_version: aide.task.v0
 id: EUREKA-PROVIDER-POLICY-REGISTRY-01
 title: Govern discovery providers declaratively
-status: planned
+status: pass
 task_class: product_hardening_stage
 parent_track: EUREKA-REAL-LIVE-SEARCH-HUNT-00
 predecessor: EUREKA-FOUNDRY-OPERATOR-CONTROLS-AND-UX-01
@@ -9,4 +9,23 @@ successor: EUREKA-PORTABLE-LOCAL-RELEASE-BUNDLE-01
 purpose: >-
   Move provider capability, retention, execution, and budget policy into a
   governed declarative registry consumed by runtime provider selection.
-
+evidence:
+  implementation:
+    - control/policies/discovery_provider_registry.json
+    - runtime/search/provider_policy.py
+    - runtime/search/providers.py
+  tests:
+    - tests/runtime/test_provider_policy_registry.py
+    - tests/runtime/test_provider_conformance.py
+  notes:
+    - Brave and Internet Archive metadata provider policies are declared with separate authentication, budget, retention, redistribution, training-use, and fetch-handoff posture.
+    - Runtime provider selection and activation validate the registry before use.
+    - Provider status reports sanitized policy metadata and never exposes credential values.
+validation:
+  - python -m unittest tests.runtime.test_provider_policy_registry tests.runtime.test_provider_conformance tests.runtime.test_live_search_service -v
+  - python -m py_compile runtime/search/provider_policy.py runtime/search/providers.py tests/runtime/test_provider_policy_registry.py
+  - python -m json.tool control/policies/discovery_provider_registry.json
+non_goals:
+  - no live IA canary in-session
+  - no public live fanout
+  - no reviewed/public mutation

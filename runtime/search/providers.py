@@ -23,6 +23,7 @@ from .live_web import (
     provider_from_environment as brave_provider_from_environment,
     utc_now,
 )
+from .provider_policy import ProviderPolicyError, ProviderPolicyRegistry, load_provider_policy_registry, normalize_provider_id
 
 
 class DiscoveryProvider(Protocol):
@@ -196,25 +197,34 @@ class InternetArchiveMetadataAdapter:
 
 
 class ProviderRegistry:
-    def __init__(self, *, env: Mapping[str, str] | None = None, ia_candidate_provider: ArchiveOrgMetadataCandidateProvider | None = None) -> None:
+    def __init__(
+        self,
+        *,
+        env: Mapping[str, str] | None = None,
+        ia_candidate_provider: ArchiveOrgMetadataCandidateProvider | None = None,
+        policy_registry: ProviderPolicyRegistry | None = None,
+        policy_path: str | None = None,
+    ) -> None:
         self.env = env
         self.ia_candidate_provider = ia_candidate_provider
+        self.policy_registry = policy_registry or load_provider_policy_registry(policy_path)
 
     def select(self, query: str, requested_provider: str = "brave") -> ProviderSelection:
         requested = str(requested_provider or "brave").strip().casefold()
         if requested in {"brave", "internet_archive_metadata", "ia"}:
             provider_id = "internet_archive_metadata" if requested == "ia" else requested
-            return ProviderSelection(requested_provider=requested_provider, provider_ids=(provider_id,), reason="explicit_provider")
+            return ProviderSelection(requested_provider=requested_provider, provider_ids=self._selectable((provider_id,)), reason="explicit_provider")
         if requested in {"auto", "multi", "blended"}:
             providers = ("brave", "internet_archive_metadata") if _archive_query(query) else ("brave",)
-            return ProviderSelection(requested_provider=requested_provider, provider_ids=providers, reason="deterministic_query_routing")
+            return ProviderSelection(requested_provider=requested_provider, provider_ids=self._selectable(providers), reason="deterministic_query_routing")
         if "," in requested_provider:
             ids = tuple(_normalize_provider_id(item) for item in requested_provider.split(",") if _normalize_provider_id(item))
-            return ProviderSelection(requested_provider=requested_provider, provider_ids=ids or ("brave",), reason="explicit_provider_list")
+            return ProviderSelection(requested_provider=requested_provider, provider_ids=self._selectable(ids or ("brave",)), reason="explicit_provider_list")
         raise WebSearchConfigurationError(f"unsupported live web search provider: {requested_provider}")
 
     def provider(self, provider_id: str) -> WebSearchProvider | None:
         normalized = _normalize_provider_id(provider_id)
+        self._validate_activation(normalized)
         if normalized == "brave":
             return brave_provider_from_environment("brave", env=self.env)
         if normalized == "internet_archive_metadata":
@@ -231,7 +241,22 @@ class ProviderRegistry:
         return MultiProviderSearchProvider(tuple(providers), requested_provider=requested_provider)
 
     def execution_plan(self, query: str, requested_provider: str, budget: ProviderBudget) -> ProviderExecutionPlan:
-        return ProviderExecutionPlan(query=query, selection=self.select(query, requested_provider), budget=budget)
+        selection = self.select(query, requested_provider)
+        for provider_id in selection.provider_ids:
+            self._validate_activation(provider_id, budget=budget)
+        return ProviderExecutionPlan(query=query, selection=selection, budget=budget)
+
+    def _selectable(self, provider_ids: tuple[str, ...]) -> tuple[str, ...]:
+        allowed = self.policy_registry.selectable_provider_ids(provider_ids, mode="local_live")
+        if not allowed:
+            raise WebSearchConfigurationError("no requested live provider is allowed by provider policy")
+        return allowed
+
+    def _validate_activation(self, provider_id: str, *, budget: ProviderBudget | None = None) -> None:
+        try:
+            self.policy_registry.validate_activation(provider_id, mode="local_live", requested_budget=budget, env=self.env)
+        except ProviderPolicyError as exc:
+            raise WebSearchConfigurationError(str(exc)) from exc
 
 
 class MultiProviderSearchProvider:
@@ -377,6 +402,7 @@ def provider_status(provider: str = "brave", *, env: Mapping[str, str] | None = 
         "credential_value_exposed": False,
         "message": "" if any(configured.values()) else PROVIDER_NOT_CONFIGURED_MESSAGE,
         "capability_manifest": manifests,
+        "provider_policy_registry": registry.policy_registry.safe_status(),
         "public_live_fanout": False,
     }
 
@@ -443,10 +469,7 @@ def _canonical_url_key(url: str) -> str:
 
 
 def _normalize_provider_id(provider: str) -> str:
-    value = str(provider or "").strip().casefold()
-    if value == "ia":
-        return "internet_archive_metadata"
-    return value
+    return normalize_provider_id(provider)
 
 
 def _archive_query(query: str) -> bool:

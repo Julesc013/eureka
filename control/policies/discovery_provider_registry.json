@@ -1,0 +1,184 @@
+{
+  "schema_version": "eureka.discovery_provider_registry.v0",
+  "policy_version": 1,
+  "generated_at": "2026-06-21T00:00:00Z",
+  "default_operating_mode": "local_live",
+  "public_live_fanout_enabled": false,
+  "reviewed_truth_mutation_enabled": false,
+  "providers": [
+    {
+      "provider_id": "brave",
+      "provider_kind": "broad_web_search",
+      "adapter": "BraveWebSearchAdapter",
+      "adapter_version": "v0",
+      "enabled_state": "enabled_when_configured",
+      "authentication": {
+        "method": "api_key_env",
+        "required": true,
+        "env_keys": [
+          "BRAVE_SEARCH_API_KEY",
+          "BRAVE_API_KEY"
+        ],
+        "client_side_allowed": false,
+        "credential_persistence_allowed": false
+      },
+      "query_capabilities": {
+        "modes": [
+          "keyword",
+          "phrase",
+          "site",
+          "filetype",
+          "freshness"
+        ],
+        "operators": [
+          "quoted_phrase",
+          "site",
+          "filetype",
+          "exclude"
+        ],
+        "safe_search": true
+      },
+      "pagination": {
+        "model": "offset",
+        "page_min": 0,
+        "page_max": 9,
+        "count_max": 20,
+        "more_results_available": true
+      },
+      "freshness_support": {
+        "supported": true,
+        "filters": [
+          "pd",
+          "pw",
+          "pm",
+          "py",
+          "date_range"
+        ]
+      },
+      "allowed_operating_modes": [
+        "local_live",
+        "live_canary",
+        "deterministic_test",
+        "foundry_explicit"
+      ],
+      "request_budgets": {
+        "default_provider_requests": 3,
+        "hard_max_provider_requests": 25,
+        "hard_max_results_per_request": 20,
+        "hard_max_timeout_seconds": 30,
+        "hard_max_retries": 3
+      },
+      "rate_limits": {
+        "source": "provider_headers",
+        "honor_429": true,
+        "retry_after_required": true
+      },
+      "retention": {
+        "display_results": true,
+        "transient_cache_ttl_seconds": 300,
+        "persist_urls": false,
+        "persist_snippets": false,
+        "persist_rank": false,
+        "persist_raw_response": false,
+        "redistribute": false,
+        "use_for_model_training": false
+      },
+      "persistent_fields_allowed": [],
+      "redistribution": {
+        "allowed": false,
+        "posture": "standard_terms_restricted"
+      },
+      "training_use_prohibited": true,
+      "fetch_handoff_policy": {
+        "allowed": true,
+        "persist_provider_payload": false,
+        "persist_only_independent_source_observation": true
+      },
+      "terms_source_reference": "https://api-dashboard.search.brave.com/documentation/resources/terms-of-service",
+      "last_policy_review": "2026-06-21",
+      "live_canary_state": "waiting_for_operator_live_canary"
+    },
+    {
+      "provider_id": "internet_archive_metadata",
+      "provider_kind": "archive_metadata_search",
+      "adapter": "InternetArchiveMetadataAdapter",
+      "adapter_version": "v0",
+      "enabled_state": "enabled_metadata_only",
+      "authentication": {
+        "method": "none",
+        "required": false,
+        "env_keys": [],
+        "client_side_allowed": false,
+        "credential_persistence_allowed": false
+      },
+      "query_capabilities": {
+        "modes": [
+          "keyword",
+          "phrase",
+          "archive_metadata"
+        ],
+        "operators": [
+          "field_query"
+        ],
+        "safe_search": false
+      },
+      "pagination": {
+        "model": "rows_page",
+        "rows_max": 10,
+        "more_results_available": false
+      },
+      "freshness_support": {
+        "supported": false,
+        "filters": []
+      },
+      "allowed_operating_modes": [
+        "local_live",
+        "live_canary",
+        "deterministic_test",
+        "foundry_explicit"
+      ],
+      "request_budgets": {
+        "default_provider_requests": 1,
+        "hard_max_provider_requests": 2,
+        "hard_max_results_per_request": 10,
+        "hard_max_timeout_seconds": 10,
+        "hard_max_retries": 1
+      },
+      "rate_limits": {
+        "source": "ia_live_probe_policy",
+        "honor_retry_after": true,
+        "metadata_requests_only": true
+      },
+      "retention": {
+        "display_results": true,
+        "transient_cache_ttl_seconds": 600,
+        "persist_urls": true,
+        "persist_snippets": true,
+        "persist_rank": false,
+        "persist_raw_response": false,
+        "redistribute": false,
+        "use_for_model_training": false
+      },
+      "persistent_fields_allowed": [
+        "identifier",
+        "details_url",
+        "title",
+        "summary",
+        "metadata_fields"
+      ],
+      "redistribution": {
+        "allowed": false,
+        "posture": "metadata_candidates_are_unreviewed"
+      },
+      "training_use_prohibited": true,
+      "fetch_handoff_policy": {
+        "allowed": true,
+        "provider_downloads_allowed": false,
+        "safe_fetcher_may_fetch_details_page": true
+      },
+      "terms_source_reference": "control/policies/ia_live_probe_policy.json",
+      "last_policy_review": "2026-06-21",
+      "live_canary_state": "waiting_for_live_acceptance"
+    }
+  ]
+}

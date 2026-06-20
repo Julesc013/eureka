@@ -1,8 +1,8 @@
 {
   "schema_version": "eureka.product_capability_state.v0",
-  "tested_commit": "b06c75f4",
-  "generated_at": "2026-06-20T19:31:51Z",
-  "current_recommended_task": "OPERATOR-LIVE-CANARY-00",
+  "tested_commit": "838570f8",
+  "generated_at": "2026-06-21T00:00:00Z",
+  "current_recommended_task": "EUREKA-PORTABLE-LOCAL-RELEASE-BUNDLE-01",
   "capabilities": {
     "live_search": {
       "implementation_state": "implemented",
@@ -81,12 +81,32 @@
       "public_status": "not_public",
       "evidence_refs": [
         ".aide/queue/EUREKA-SECOND-PROVIDER-CONFORMANCE-01/task.yaml",
+        "control/policies/discovery_provider_registry.json",
+        "runtime/search/provider_policy.py",
         "runtime/search/providers.py",
         "tests/runtime/test_provider_conformance.py"
       ],
       "known_limitations": [
         "Internet Archive metadata live behavior remains bounded and policy-gated.",
         "Provider metadata is unreviewed and must not be treated as truth."
+      ]
+    },
+    "provider_registry": {
+      "implementation_state": "implemented",
+      "activation_state": "runtime_validated",
+      "validation_state": "deterministic_pass",
+      "live_canary_state": "waiting_for_operator_live_canary",
+      "human_acceptance_state": "not_started",
+      "public_status": "public_live_fanout_disabled",
+      "evidence_refs": [
+        ".aide/queue/EUREKA-PROVIDER-POLICY-REGISTRY-01/task.yaml",
+        "control/policies/discovery_provider_registry.json",
+        "runtime/search/provider_policy.py",
+        "tests/runtime/test_provider_policy_registry.py"
+      ],
+      "known_limitations": [
+        "Live IA canary remains gated behind operator live acceptance.",
+        "The registry governs activation and retention policy; provider adapters still implement transport behavior."
       ]
     },
     "foundry": {
