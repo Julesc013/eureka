@@ -1,85 +1,120 @@
 # Roadmap
 
-The roadmap is staged so each step adds evidence and governance before it adds
-public promises. Eureka's current state is a local-first Python reference
-backend with public-alpha read-only foundations and a passed launch-candidate
-gate.
+The roadmap is staged so each step adds real product capability before it adds
+public promises. Eureka's current priority is no longer public-alpha launch
+preparation. The current priority is a local-first live Search/Hunt product
+slice that can pass unseen-query acceptance.
 
 ## Current Gate
 
-`PUBLIC-ALPHA-LAUNCH-CANDIDATE-00` has passed and recommends:
+`EUREKA-REAL-LIVE-SEARCH-HUNT-00` is the active product gate:
 
-1. `PUBLIC-ALPHA-DEPLOY-DRY-RUN-00`
-2. `PUBLIC-ALPHA-LAUNCH-00`
-3. `PUBLIC-DEMAND-SIGNAL-00`
-4. `PUBLIC-SOURCE-REQUEST-QUEUE-00`
-5. live metadata pilots
-6. `NATIVE-SNAPSHOT-CLIENT-00`
-7. `ACTION-MANIFEST-00`
+```text
+arbitrary live query
+-> immediate transient web leads
+-> deeper Hunt
+-> safe page inspection
+-> durable local Preview Index
+-> restart
+-> local search
+```
 
-A launch candidate is not launch. A deploy dry run is not public launch. Launch
-requires explicit manual approval.
+Human acceptance remains blocked until all six live Search/Hunt milestones pass.
+The existing public-alpha launch-candidate work is historical foundation, not
+the current launch priority.
 
 ## Current Workable Baseline
 
-- Local product loop promoted.
+- Local product loop present.
 - Workbench local operator loop present.
-- Public-alpha read-only routes present.
-- Snapshot/relay foundations present.
-- Source Action Kernel and Source Wave foundations present.
-- Full discovery has prior external pass evidence for the promoted baseline.
-- No deployment, public launch, production readiness, public mutation, live
-  source fanout, downloads, uploads, broad extraction, or model/provider calls.
+- CLI, local web, and local HTTP API surfaces present.
+- Provider-neutral live search contract and Brave adapter present.
+- Normal search no longer silently substitutes hard-query fixtures.
+- Portable bootstrap defaults to no demo data.
+- Local `--live` provider calls are experimental, bounded, operator opt-in, and local only.
+- Public-alpha read-only routes and snapshot/relay foundations remain present.
+- No deployment, public launch, production readiness, public mutation, public live fanout, downloads, uploads, broad extraction, model calls, safe fetch, durable live indexing, or real Hunt completion is claimed.
 
 ## Near-Term Sequence
 
-### Deploy Dry Run
+### 1. Retention And State Hotfix
 
-`PUBLIC-ALPHA-DEPLOY-DRY-RUN-00` should rehearse deployment mechanics without
-making public launch claims. It should produce operator evidence, rollback
-evidence, environment checks, and safety validation.
+Keep provider SearchLeads transient. Persist no Brave URLs, snippets, ranks, raw
+responses, or credentials in Hunt summaries or indexes. Route CLI and HTTP
+provider calls through one shared live service. Keep docs and AIDE memory aligned
+with the local `--live` product objective.
 
-### Launch Approval
+### 2. Safe Web Fetching
 
-`PUBLIC-ALPHA-LAUNCH-00` requires explicit manual approval. It must not infer
-approval from the launch candidate or dry run.
+Build an independent fetch pipeline for selected URLs with HTTP/HTTPS-only
+requests, DNS and redirect revalidation, private-network blocking, robots
+enforcement, MIME and size limits, timeouts, and honest fetch errors.
 
-### Demand Signal
+### 3. Durable SQLite/FTS Preview Index
 
-`PUBLIC-DEMAND-SIGNAL-00` should collect public or operator demand signals
-without turning requests into accepted truth or automatic source/index
-mutation.
+Add an operational Preview Index store for independently fetched
+SourceObservations while retaining immutable JSONL generation/export mechanics
+for audit, replay, rollback, and distribution.
 
-### Source Request Queue
+### 4. Real Hunt Engine
 
-`PUBLIC-SOURCE-REQUEST-QUEUE-00` should model source requests as review
-candidates. It must keep public mutation, live fanout, downloads, extraction,
-and source truth acceptance gated.
+Expand Hunt from query variants into a budgeted loop: plan, provider search,
+display transient leads, select fetch frontier, safe fetch, extract, dedupe,
+index, follow links, and stop on budget, exhaustion, pause, or cancellation.
 
-### Live Metadata Pilots
+### 5. Usable Live Product UI
 
-Live metadata pilots may only run behind explicit source policy and operator
-approval. They should start with bounded metadata, not crawling, downloading,
-or extraction.
+Keep normal pages focused on search, Hunt, result inspection, provenance,
+retrieval/indexing state, and useful excerpts. Avoid queue terminology, review
+packet language, raw JSON, and architecture exposition on the normal product
+screen.
 
-### Native Snapshot Client
+### 6. Unseen-Query Acceptance
 
-`NATIVE-SNAPSHOT-CLIENT-00` should consume read-only snapshots/relays. It must
-not become a downloader, installer, marketplace manager, or live source client.
+Acceptance resumes only when an operator-chosen unseen query proves live
+results, deeper Hunt, independent fetch, local unreviewed indexing, restart
+retrieval, honest provider failure, no fixture substitution, no review
+obstruction, no provider-result persistence, and no reviewed/public mutation.
 
-### Action Manifest
+## Later Tracks
 
-`ACTION-MANIFEST-00` should define safe action manifests and review handoffs. It
-must not enable public action execution, install, download, or marketplace
-behavior by default.
+### Second Provider Conformance
 
-## Detailed Roadmaps
+Add one additional provider family only after Brave-backed interactive Search
+and Hunt are genuinely useful. Candidates include Internet Archive metadata,
+Wayback CDX, GitHub Releases, or Software Heritage.
 
-- [Backend Roadmap](roadmap/BACKEND_ROADMAP.md)
-- [Public Alpha](roadmap/PUBLIC_ALPHA.md)
-- [Rust Migration](roadmap/RUST_MIGRATION.md)
-- [Native Apps Later](roadmap/NATIVE_APPS_LATER.md)
-- [Track Execution Plan](roadmap/TRACK_EXECUTION_PLAN.md)
+### Autonomous Index Foundry
+
+After interactive Hunt works, add scheduled seed generation, stale observation
+refresh, bounded surveys, source scorecards, clustering, Preview Index
+generations, and review-batch preparation. The Foundry may update Preview state;
+it may not create reviewed truth.
+
+### Agentic Reasoning Layer
+
+Only after deterministic Hunt is benchmarked, add typed agent proposals for
+query planning, evidence extraction, identity hypotheses, conflict analysis,
+next-probe planning, and safety critique. No agent bypasses policy, provenance,
+or review.
+
+### Review And Canonical Knowledge
+
+Use real Hunts to produce useful PreviewDocuments, then route them through
+ReviewItems, ReviewDecisions, ReviewedRecords, reviewed indexes, signed deltas,
+and snapshots.
+
+### Cooperative Eureka Network
+
+Later, support ContributionPacks, validation, redaction, quarantine, staged
+preview, review, signed deltas, and node synchronization.
+
+### Public Service And Clients
+
+After the local product and corpus prove their value, revisit public read-only
+service, snapshot/relay, desktop, terminal, old-browser, mobile, institutional,
+and agent-context clients. Downloads, installation, emulation, and
+marketplace-like actions remain final gated layers.
 
 ## Roadmap Non-Claims
 

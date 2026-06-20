@@ -2,11 +2,11 @@
 
 from html import escape
 import json
-import re
 from typing import Any, Mapping
 from urllib.parse import quote
 
-from runtime.search.live_web import PROVIDER_NOT_CONFIGURED_MESSAGE, WebSearchBudget, WebSearchProviderError, provider_from_environment, provider_status
+from runtime.search.live_service import LiveSearchService
+from runtime.search.live_web import provider_status
 
 from .request_context import LocalRequestContext
 from .responses import DEFAULT_LIMITATIONS, LocalServiceResponse, error_response, html_response, json_response, redirect_response
@@ -512,65 +512,20 @@ def _live_search_payload(runtime: Any, request_context: LocalRequestContext) -> 
     limit = parse_limit(first_param(request_context.params, "limit", ""), default=10)
     provider_name = str(getattr(runtime, "live_search_provider", "brave") or "brave")
     local = _live_local_preview_results(runtime, query, limit=limit)
-    provider_page: dict[str, Any] | None = None
-    live_error: dict[str, Any] | None = None
-    network_used = False
-    if query:
-        provider = provider_from_environment(provider_name)
-        if provider is None:
-            live_error = {"code": "live_provider_not_configured", "message": PROVIDER_NOT_CONFIGURED_MESSAGE, "provider": provider_name}
-        else:
-            try:
-                provider_page = provider.search(
-                    query,
-                    page=0,
-                    count=limit,
-                    freshness=first_param(request_context.params, "freshness", ""),
-                    country=first_param(request_context.params, "country", ""),
-                    language=first_param(request_context.params, "language", ""),
-                    safe_search=first_param(request_context.params, "safe_search", "moderate"),
-                    budget_context=WebSearchBudget(max_provider_requests=1, timeout_seconds=10),
-                ).to_dict()
-                network_used = True
-            except WebSearchProviderError as exc:
-                live_error = {
-                    "code": "live_provider_request_failed",
-                    "message": str(exc),
-                    "provider": exc.provider,
-                    "status_code": exc.status_code,
-                    "rate_limit": dict(exc.rate_limit),
-                }
-                network_used = bool(exc.status_code)
-    live_cards = _live_route_cards(provider_page)
-    results = [*local["results"], *live_cards]
-    status = "pass" if not live_error else ("pass_with_warnings" if local["results"] else "fail")
-    return {
-        "schema_version": "eureka.live_web_search_response.v0",
-        "status": status if query else "pass",
-        "query": query,
-        "mode": "blended",
-        "result_count": len(results),
-        "results": results,
-        "local_index": local,
-        "live": provider_page
-        or {
-            "provider": provider_name,
-            "status": "unavailable" if live_error else "not_requested",
-            "result_count": 0,
-            "results": [],
-            "error": live_error or {},
-            "raw_response_stored": False,
-        },
-        "provider_status": provider_status(provider_name),
-        "message": "" if query else "Enter a query to search the web and your Eureka index.",
-        "error": live_error or {},
-        "network_provider_calls": network_used,
-        "live_results_transient": True,
-        "review_required_for_display": False,
-        "reviewed_master_mutation": False,
-        "public_index_mutation": False,
-        "limitations": _service_limitations(runtime) + ["live provider results are transient discovery leads"],
-    }
+    payload = LiveSearchService(provider_name=provider_name).search(
+        query,
+        mode="blended",
+        local_results=local,
+        page=0,
+        count=limit,
+        freshness=first_param(request_context.params, "freshness", ""),
+        country=first_param(request_context.params, "country", ""),
+        language=first_param(request_context.params, "language", ""),
+        safe_search=first_param(request_context.params, "safe_search", "moderate"),
+        timeout_seconds=10,
+    )
+    payload["limitations"] = _service_limitations(runtime) + ["live provider results are transient discovery leads"]
+    return payload
 
 
 def _live_hunt_payload(runtime: Any, request_context: LocalRequestContext) -> dict[str, Any]:
@@ -578,62 +533,18 @@ def _live_hunt_payload(runtime: Any, request_context: LocalRequestContext) -> di
     limit = parse_limit(first_param(request_context.params, "limit", ""), default=10)
     max_queries = parse_limit(first_param(request_context.params, "max_queries", ""), default=5)
     provider_name = str(getattr(runtime, "live_search_provider", "brave") or "brave")
-    variants = _live_hunt_variants(query, max_queries=max_queries) if query else []
-    provider = provider_from_environment(provider_name) if query else None
-    errors: list[dict[str, Any]] = []
-    cards: list[dict[str, Any]] = []
-    seen_urls: set[str] = set()
-    network_used = False
-    if query and provider is None:
-        errors.append({"code": "live_provider_not_configured", "message": PROVIDER_NOT_CONFIGURED_MESSAGE, "provider": provider_name})
-    elif provider is not None:
-        for variant in variants:
-            try:
-                page = provider.search(
-                    variant,
-                    page=0,
-                    count=limit,
-                    freshness="",
-                    country="",
-                    language="",
-                    safe_search="moderate",
-                    budget_context=WebSearchBudget(max_provider_requests=1, timeout_seconds=10, max_retries=0),
-                    query_variant=variant,
-                ).to_dict()
-                network_used = True
-            except WebSearchProviderError as exc:
-                errors.append({"code": "live_provider_request_failed", "message": str(exc), "provider": exc.provider, "query_variant": variant})
-                continue
-            for card in _live_route_cards(page):
-                url = str(card.get("url") or "")
-                if not url or url in seen_urls:
-                    continue
-                seen_urls.add(url)
-                cards.append(card)
-    return {
-        "schema_version": "eureka.live_hunt_response.v0",
-        "status": "fail" if errors and not cards else "pass",
-        "query": query,
-        "mode": "live",
-        "queries_attempted": variants,
-        "providers_checked": [provider_name] if query else [],
-        "pages_fetched": 0,
-        "new_unique_results": len(cards),
-        "duplicates_removed": 0,
-        "blocked_fetches": 0,
-        "errors": errors,
-        "near_misses": [],
-        "unresolved_leads": cards,
-        "results": cards,
-        "result_count": len(cards),
-        "network_provider_calls": network_used,
-        "fetch_milestone_complete": False,
-        "persistent_preview_index_update_complete": False,
-        "review_required_for_display": False,
-        "reviewed_master_mutation": False,
-        "public_index_mutation": False,
-        "limitations": _service_limitations(runtime) + ["live Hunt currently expands provider queries only"],
-    }
+    hunt = LiveSearchService(provider_name=provider_name).start_hunt(
+        query,
+        run_id="http-live-hunt-preview",
+        max_queries=max_queries,
+        max_fetches=0,
+        count=limit,
+        timeout_seconds=10,
+    )
+    payload = dict(hunt.response)
+    payload["schema_version"] = "eureka.live_hunt_response.v0"
+    payload["limitations"] = _service_limitations(runtime) + ["live Hunt currently expands provider queries only"]
+    return payload
 
 
 def _live_local_preview_results(runtime: Any, query: str, *, limit: int) -> dict[str, Any]:
@@ -662,31 +573,6 @@ def _live_local_preview_results(runtime: Any, query: str, *, limit: int) -> dict
             }
         )
     return {"status": "pass", "result_count": len(cards), "results": cards, "warnings": []}
-
-
-def _live_route_cards(provider_page: Mapping[str, Any] | None) -> list[dict[str, Any]]:
-    if not provider_page:
-        return []
-    cards = []
-    for lead in provider_page.get("results") or []:
-        if not isinstance(lead, Mapping):
-            continue
-        cards.append(
-            {
-                "state": "LIVE - UNREVIEWED",
-                "title": str(lead.get("title") or lead.get("url") or "Live result"),
-                "url": str(lead.get("url") or ""),
-                "snippet": str(lead.get("snippet") or ""),
-                "provider": str(lead.get("provider") or provider_page.get("provider") or ""),
-                "provider_rank": int(lead.get("provider_rank") or 0),
-                "retrieved_at": str(lead.get("retrieved_at") or provider_page.get("retrieved_at") or ""),
-                "query": str(lead.get("query_variant") or lead.get("query") or provider_page.get("query") or ""),
-                "source": "live_web_search",
-                "lead_id": str(lead.get("lead_id") or ""),
-                "retention_policy": dict(lead.get("retention_policy") or {}),
-            }
-        )
-    return cards
 
 
 def _render_live_search_html(payload: Mapping[str, Any], *, hunt: bool = False) -> str:
@@ -750,22 +636,6 @@ def _render_live_card(item: Mapping[str, Any]) -> str:
             "</article>",
         ]
     )
-
-
-def _live_hunt_variants(query: str, *, max_queries: int) -> list[str]:
-    clean = " ".join(str(query or "").split())
-    terms = [term for term in re.split(r"[^A-Za-z0-9]+", clean) if len(term) > 2]
-    variants = [clean]
-    if " " in clean:
-        variants.append(f'"{clean}"')
-    if terms:
-        variants.append(" ".join(terms[:4]))
-    variants.extend([f"{clean} filetype:pdf", f"{clean} filetype:zip", f"{clean} site:archive.org"])
-    unique: list[str] = []
-    for item in variants:
-        if item and item not in unique:
-            unique.append(item)
-    return unique[: max(1, min(int(max_queries or 1), 50))]
 
 
 def _workbench_live_run_list_or_create_response(request_context: LocalRequestContext) -> LocalServiceResponse:

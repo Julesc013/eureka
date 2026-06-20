@@ -1,10 +1,10 @@
 # Eureka AIDE Open Risks
 
-- This is the first real target-repo import; target adaptation may expose pack assumptions that were invisible inside AIDE.
-- Eureka-specific golden tasks now exist and pass, but they prove deterministic governance readiness rather than arbitrary product implementation quality.
-- No provider routing, Gateway forwarding, model-call enforcement, or autonomous loop is enabled in this pilot.
-- Token measurement uses the approximate `chars / 4` method, not an exact tokenizer or provider billing integration.
-- Imported pack commands may need upstream synchronization after the Eureka-local selftest fallback repair; this target task does not mutate the AIDE source repo.
-- Eureka-local AIDE Lite `test`, `selftest`, and `eval run` pass after target repairs, but broad product automation is still deferred.
-- Final handoff is repo-local and reviewable, but future agents still need to respect the staged queue and avoid treating AIDE metadata as product truth.
-- `EUREKA-CONVERGE-01` promotes Track A as the next execution spine. `TRACK-A-01` should remain contract/docs/audit scoped and must not change runtime behavior.
+- The live product path is still incomplete: safe fetch, extraction, durable SQLite/FTS Preview Indexing, restart retrieval proof, and real budgeted Hunt remain pending.
+- Local `--live` provider calls depend on an operator-provided key and must keep credentials out of Git, chat, logs, summaries, and client-side code.
+- Brave Search Results are provider outputs with restrictive retention terms; accidental persistence of URLs, snippets, ranks, or raw responses would violate the current design boundary and requires focused tests.
+- Public live fanout remains disabled. Local `--live` canaries must not be interpreted as public launch, tunnel/exposure readiness, or production readiness.
+- Current Hunt is still deterministic query expansion and provider search only. It does not fetch, inspect, index, pause/resume/cancel, or persist SourceObservations.
+- The operational Preview Index is still not scaled for large incremental search; SQLite/FTS is required before serious local corpus growth.
+- Documentation and AIDE state should stay subordinate to runtime truth. Avoid duplicating volatile current-state claims beyond README, STATUS, ROADMAP, and the current task packet.
+- Future agents must not request human acceptance until an unseen query proves live results, Hunt expansion, independent fetch, durable local indexing, restart retrieval, honest provider failure, no fixture substitution, no review obstruction, no provider-result persistence, and no reviewed/public mutation.

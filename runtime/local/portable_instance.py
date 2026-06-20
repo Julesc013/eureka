@@ -11,7 +11,6 @@ from __future__ import annotations
 from dataclasses import dataclass
 from datetime import datetime, timezone
 import argparse
-import hashlib
 import json
 import os
 from pathlib import Path
@@ -58,13 +57,8 @@ from runtime.resolution_run import (
     validate_run_bundle,
 )
 from runtime.resolution_run.errors import ResolutionRunValidationError
-from runtime.search.live_web import (
-    PROVIDER_NOT_CONFIGURED_MESSAGE,
-    WebSearchBudget,
-    WebSearchProviderError,
-    provider_from_environment,
-    provider_status,
-)
+from runtime.search.live_service import LiveSearchService, live_hunt_run_id
+from runtime.search.live_web import provider_status
 
 
 REPO_ROOT = resolve_repo_root(Path(__file__))
@@ -301,6 +295,15 @@ def doctor_command(*, instance: str | Path | None = None, strict: bool = False) 
 
     route_check = _route_registration_check(root) if root.exists() and not errors else {"status": "skipped"}
     checks.append({"id": "exploration_routes", **route_check})
+    live_provider_status = provider_status("brave")
+    checks.append(
+        {
+            "id": "live_web_search_provider",
+            "status": "configured" if live_provider_status.get("configured") else "not_configured",
+            "provider": live_provider_status.get("provider"),
+            "credential_value_exposed": False,
+        }
+    )
 
     backup = _backup_status(paths)
     checks.append({"id": "backup_root", **backup})
@@ -325,7 +328,9 @@ def doctor_command(*, instance: str | Path | None = None, strict: bool = False) 
             "warnings": warnings,
             "loopback_only": True,
             "public_exposure": False,
-            "live_providers_enabled": False,
+            "live_provider_status": live_provider_status,
+            "live_provider_configured": bool(live_provider_status.get("configured")),
+            "live_providers_enabled": True,
             "service_start_blocked": bool(errors),
             "recommended_next_command": _recommended_after_doctor(status, root),
         },
@@ -394,28 +399,23 @@ def search_command(
         raise PortableInstanceError("query_too_long", f"search query exceeds {MAX_QUERY_LENGTH} characters", exit_code=2)
     search_mode = _search_mode(mode, live=live)
     local = _search_portable_index(paths, clean_query, index=index, limit=count) if search_mode in {"local", "blended"} else _local_index_disabled(index)
-    live_page: dict[str, Any] | None = None
-    live_error: dict[str, Any] | None = None
-    network_used = False
-    if search_mode in {"live", "blended"}:
-        live_page, live_error, network_used = _run_live_search_page(
-            clean_query,
-            provider_name=provider,
-            page=page,
-            count=count,
-            freshness=freshness,
-            country=country,
-            language=language,
-            safe_search=safe_search,
-            timeout_seconds=timeout_seconds,
-        )
-    live_cards = _live_cards(live_page)
-    local_cards = list(local.get("results") or [])
-    result_cards = [*local_cards, *live_cards] if search_mode == "blended" else (live_cards if search_mode == "live" else local_cards)
+    service_payload = LiveSearchService(provider_name=provider).search(
+        clean_query,
+        mode=search_mode,
+        local_results=local,
+        page=page,
+        count=count,
+        freshness=freshness,
+        country=country,
+        language=language,
+        safe_search=safe_search,
+        timeout_seconds=timeout_seconds,
+    )
     warnings = list(local.get("warnings") or [])
+    live_error = service_payload.get("error") if isinstance(service_payload.get("error"), Mapping) and service_payload.get("error") else None
     if live_error is not None:
-        warnings.append(str(live_error.get("message") or PROVIDER_NOT_CONFIGURED_MESSAGE))
-    status = _search_status(result_cards, live_error=live_error, search_mode=search_mode)
+        warnings.append(str(live_error.get("message") or "Live web search is not configured. Configure a provider or search the local index."))
+    status = str(service_payload.get("status") or "fail")
     return _result(
         "search",
         status,
@@ -426,17 +426,18 @@ def search_command(
             "query": clean_query,
             "mode": search_mode,
             "index_mode": index,
-            "local_index": local,
-            "live": live_page or _live_unavailable(provider, live_error),
-            "result_count": len(result_cards),
-            "results": result_cards,
-            "provider_status": provider_status(provider),
+            "local_index": service_payload.get("local_index", local),
+            "live": service_payload.get("live"),
+            "result_count": int(service_payload.get("result_count") or 0),
+            "results": list(service_payload.get("results") or []),
+            "provider_status": service_payload.get("provider_status", provider_status(provider)),
             "live_error": live_error,
             "error": str(live_error.get("code")) if status == "fail" and live_error else "",
             "message": str(live_error.get("message")) if status == "fail" and live_error else "",
             "warnings": warnings,
-            "network_provider_calls": network_used,
+            "network_provider_calls": bool(service_payload.get("network_provider_calls")),
             "live_results_transient": True,
+            "provider_results_persisted": False,
             "review_required_for_display": False,
             "reviewed_master_mutation": False,
             "public_index_mutation": False,
@@ -652,6 +653,7 @@ def status_command(*, instance: str | Path | None = None, include_paths: bool = 
     oracle = _latest_oracle_status(paths)
     server = _server_lock_status(paths)
     backup = _backup_status(paths)
+    live_provider_status = provider_status("brave")
     payload = {
         "state": "ready" if instance_status.get("status") in {"pass", "pass_with_warnings"} else "degraded",
         "instance": {
@@ -668,6 +670,8 @@ def status_command(*, instance: str | Path | None = None, include_paths: bool = 
         "latest_synthetic_truth_result": {"status": "not_configured_in_portable_v0"},
         "server": server,
         "backup": backup,
+        "live_provider_status": live_provider_status,
+        "live_provider_configured": bool(live_provider_status.get("configured")),
         "provider_network_calls": False,
         "public_exposure": False,
         "review_truth_posture": {
@@ -854,19 +858,6 @@ def _search_mode(mode: str, *, live: bool) -> str:
     raise PortableInstanceError("unsupported_search_mode", f"unsupported search mode: {mode}", exit_code=2)
 
 
-def _search_status(
-    result_cards: Sequence[Mapping[str, Any]],
-    *,
-    live_error: Mapping[str, Any] | None,
-    search_mode: str,
-) -> str:
-    if live_error is None:
-        return "pass"
-    if result_cards and search_mode == "blended":
-        return "pass_with_warnings"
-    return "fail"
-
-
 def _search_portable_index(paths: PortablePaths, query: str, *, index: str, limit: int) -> dict[str, Any]:
     normalized = str(index or "local").strip().lower()
     if normalized not in {"local", "preview"}:
@@ -938,85 +929,6 @@ def _preview_result_card(item: Mapping[str, Any]) -> dict[str, Any]:
     }
 
 
-def _run_live_search_page(
-    query: str,
-    *,
-    provider_name: str,
-    page: int,
-    count: int,
-    freshness: str,
-    country: str,
-    language: str,
-    safe_search: str,
-    timeout_seconds: int,
-    query_variant: str | None = None,
-) -> tuple[dict[str, Any] | None, dict[str, Any] | None, bool]:
-    provider = provider_from_environment(provider_name)
-    if provider is None:
-        return None, {"code": "live_provider_not_configured", "message": PROVIDER_NOT_CONFIGURED_MESSAGE, "provider": provider_name}, False
-    try:
-        page_payload = provider.search(
-            query,
-            page=max(0, int(page or 0)),
-            count=max(1, min(int(count or 10), 20)),
-            freshness=freshness,
-            country=country,
-            language=language,
-            safe_search=safe_search,
-            budget_context=WebSearchBudget(max_provider_requests=1, timeout_seconds=timeout_seconds),
-            query_variant=query_variant,
-        ).to_dict()
-    except WebSearchProviderError as exc:
-        return (
-            None,
-            {
-                "code": "live_provider_request_failed",
-                "message": str(exc),
-                "provider": exc.provider,
-                "status_code": exc.status_code,
-                "rate_limit": dict(exc.rate_limit),
-            },
-            bool(exc.status_code),
-        )
-    return page_payload, None, True
-
-
-def _live_cards(live_page: Mapping[str, Any] | None) -> list[dict[str, Any]]:
-    if not live_page:
-        return []
-    cards = []
-    for lead in live_page.get("results") or []:
-        if not isinstance(lead, Mapping):
-            continue
-        cards.append(
-            {
-                "state": "LIVE - UNREVIEWED",
-                "title": str(lead.get("title") or lead.get("url") or "Live result"),
-                "url": str(lead.get("url") or ""),
-                "snippet": str(lead.get("snippet") or ""),
-                "provider": str(lead.get("provider") or live_page.get("provider") or ""),
-                "provider_rank": int(lead.get("provider_rank") or 0),
-                "retrieved_at": str(lead.get("retrieved_at") or live_page.get("retrieved_at") or ""),
-                "query": str(lead.get("query_variant") or lead.get("query") or live_page.get("query") or ""),
-                "source": "live_web_search",
-                "lead_id": str(lead.get("lead_id") or ""),
-                "retention_policy": dict(lead.get("retention_policy") or {}),
-            }
-        )
-    return cards
-
-
-def _live_unavailable(provider_name: str, live_error: Mapping[str, Any] | None) -> dict[str, Any]:
-    return {
-        "provider": str(provider_name or "brave"),
-        "status": "unavailable" if live_error else "not_requested",
-        "result_count": 0,
-        "results": [],
-        "error": dict(live_error or {}),
-        "raw_response_stored": False,
-    }
-
-
 def _live_hunt_command(
     query: str,
     *,
@@ -1026,9 +938,19 @@ def _live_hunt_command(
     max_queries: int,
     max_fetches: int,
 ) -> dict[str, Any]:
-    variants = _hunt_query_variants(query, max_queries=max_queries)
-    provider = provider_from_environment("brave")
-    if provider is None:
+    run_id = live_hunt_run_id(query, started_at)
+    hunt = LiveSearchService().start_hunt(
+        query,
+        run_id=run_id,
+        max_queries=max_queries,
+        max_fetches=max_fetches,
+        count=10,
+        timeout_seconds=10,
+    )
+    response_payload = dict(hunt.response)
+    errors = response_payload.get("errors") if isinstance(response_payload.get("errors"), list) else []
+    first_error = errors[0] if errors and isinstance(errors[0], Mapping) else {}
+    if response_payload.get("status") == "fail" and not response_payload.get("network_provider_calls") and first_error.get("code") == "live_provider_not_configured":
         return _result(
             "hunt",
             "fail",
@@ -1036,106 +958,32 @@ def _live_hunt_command(
             started_at=started_at,
             mutations=False,
             payload={
-                "query": query,
-                "mode": "live",
+                **response_payload,
                 "error": "live_provider_not_configured",
-                "message": PROVIDER_NOT_CONFIGURED_MESSAGE,
-                "queries_attempted": [],
-                "providers_checked": [],
-                "pages_fetched": 0,
-                "new_unique_results": 0,
-                "duplicates_removed": 0,
-                "blocked_fetches": 0,
-                "errors": [PROVIDER_NOT_CONFIGURED_MESSAGE],
-                "near_misses": [],
-                "unresolved_leads": [],
-                "network_provider_calls": False,
+                "message": str(first_error.get("message") or "Live web search is not configured. Configure a provider or search the local index."),
             },
         )
-    seen_urls: set[str] = set()
-    cards: list[dict[str, Any]] = []
-    errors: list[str] = []
-    attempted: list[str] = []
-    for variant in variants:
-        attempted.append(variant)
-        try:
-            page = provider.search(
-                variant,
-                page=0,
-                count=10,
-                freshness="",
-                country="",
-                language="",
-                safe_search="moderate",
-                budget_context=WebSearchBudget(max_provider_requests=1, timeout_seconds=10, max_retries=0),
-                query_variant=variant,
-            ).to_dict()
-        except WebSearchProviderError as exc:
-            errors.append(f"{variant}: {exc}")
-            continue
-        for card in _live_cards(page):
-            url = str(card.get("url") or "")
-            if not url or url in seen_urls:
-                continue
-            seen_urls.add(url)
-            cards.append(card)
-    run_id = "live-hunt-" + hashlib.sha256(f"{query}\n{started_at}".encode("utf-8")).hexdigest()[:16]
     run_dir = paths.run_bundles / run_id
     run_dir.mkdir(parents=True, exist_ok=True)
-    summary = {
-        "schema_version": "eureka.live_hunt_run.v0",
-        "run_id": run_id,
-        "query": query,
-        "mode": "live",
-        "queries_attempted": attempted,
-        "providers_checked": ["brave"],
-        "pages_fetched": 0,
-        "max_fetches": max(0, int(max_fetches or 0)),
-        "new_unique_results": len(cards),
-        "duplicates_removed": max(0, sum(1 for _ in cards) - len(seen_urls)),
-        "blocked_fetches": 0,
-        "errors": errors,
-        "near_misses": [],
-        "unresolved_leads": cards,
-        "provider_results_are_transient": True,
-        "fetch_milestone_complete": False,
-        "persistent_preview_index_update_complete": False,
-    }
-    _write_json(run_dir / "summary.json", summary)
+    _write_json(run_dir / "summary.json", hunt.persisted_summary)
     return _result(
         "hunt",
-        "pass_with_warnings" if errors else "pass",
+        str(response_payload.get("status") or "fail"),
         root,
         started_at=started_at,
         mutations=True,
         payload={
-            **summary,
+            **response_payload,
             "run_directory": _relative_to_instance(root, run_dir),
-            "network_provider_calls": True,
             "review_or_truth_mutation": False,
             "public_index_mutation": False,
             "reviewed_master_mutation": False,
             "warnings": [
-                "Live Hunt currently searches provider query variants only; safe fetch, extraction, and persistence remain later milestones."
+                "Live Hunt currently searches provider query variants only; safe fetch, extraction, and persistence remain later milestones.",
+                "Provider SearchLeads are display-only transient state and are not written to the run summary.",
             ],
         },
     )
-
-
-def _hunt_query_variants(query: str, *, max_queries: int) -> list[str]:
-    clean = " ".join(str(query or "").split())
-    terms = [term for term in re.split(r"[^A-Za-z0-9]+", clean) if len(term) > 2]
-    variants = [clean]
-    if " " in clean:
-        variants.append(f'"{clean}"')
-    if terms:
-        variants.append(" ".join(terms[:4]))
-    variants.extend([f"{clean} filetype:pdf", f"{clean} filetype:zip", f"{clean} site:archive.org"])
-    unique: list[str] = []
-    for item in variants:
-        if item and item not in unique:
-            unique.append(item)
-    return unique[: max(1, min(int(max_queries or 1), 50))]
 
 
 def _reject_forbidden_instance_root(root: Path) -> None:

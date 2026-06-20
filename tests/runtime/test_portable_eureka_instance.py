@@ -61,6 +61,9 @@ class PortableEurekaInstanceRuntimeTests(unittest.TestCase):
             status = status_command(instance=root, include_paths=True)
             self.assertEqual(status["command"], "status")
             self.assertIn("backup", status)
+            self.assertIn("live_provider_status", status)
+            self.assertFalse(status["live_provider_configured"])
+            self.assertFalse(status["live_provider_status"]["credential_value_exposed"])
 
     def test_stale_server_lock_is_reported(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
@@ -70,6 +73,8 @@ class PortableEurekaInstanceRuntimeTests(unittest.TestCase):
             paths.server_lock.write_text('{"pid": 99999999, "created_at": "now"}\n', encoding="utf-8")
             result = doctor_command(instance=root)
             self.assertTrue(any(item["code"] == "stale_server_lock" for item in result["warnings"]))
+            self.assertIn("live_provider_status", result)
+            self.assertFalse(result["live_provider_configured"])
 
     def test_windows_pid_probe_error_marks_lock_stale(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:

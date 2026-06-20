@@ -6,7 +6,7 @@ task_class: product_vertical_slice
 parent_track: E2E-REFERENCE-SYSTEM-TRACK-00
 supersedes:
   - EUREKA-REAL-LOCAL-SEARCH-HUNT-00
-predecessor: HUMAN-END-TO-END-ACCEPTANCE-00
+predecessor: EUREKA-FIRST-RUN-ACCEPTANCE-UX-00
 successor: HUMAN-END-TO-END-ACCEPTANCE-00
 purpose: >-
   Replace the local-only fixture/demo acceptance path with a usable live
@@ -15,6 +15,9 @@ purpose: >-
   search.
 operator_verdict_source: prompt:2026-06-20-real-live-search-reset
 allowed_scope:
+  - README.md
+  - docs/STATUS.md
+  - docs/ROADMAP.md
   - .aide/queue/index.yaml
   - .aide/queue/EUREKA-REAL-LIVE-SEARCH-HUNT-00/**
   - .aide/context/**
@@ -104,7 +107,27 @@ milestones:
     title: Real Hunt
     acceptance:
       - deterministic query expansion, pagination, archive variants, outbound-link following, dedupe, budgets, and cancellation work
-      - Hunt summary shows attempted queries, providers, pages fetched, unique results, duplicates, blocked fetches, errors, near misses, and unresolved leads
+      - visible Hunt responses show transient unresolved leads while persisted summaries show only attempted queries, providers, pages fetched, unique counts, duplicates, blocked fetches, errors, near misses, and observation refs
+milestone_evidence:
+  milestone_1: pass
+  milestone_2: pass
+  milestone_3: partial
+  milestone_4: pending
+  milestone_5: pending
+  milestone_6: pending
+  notes:
+    - normal search no longer substitutes hard-query fixtures
+    - bootstrap defaults to no demo data
+    - Brave provider contract exists with transient retention policy
+    - live CLI/server display paths exist but real fetch, durable indexing, and full Hunt remain incomplete
+subdeliverables:
+  retention_and_state_hotfix:
+    status: pass
+    acceptance:
+      - no Brave URL, snippet, rank, or raw response is written to Hunt summary artifacts
+      - CLI and HTTP provider calls route through runtime/search/live_service.py
+      - duplicate accounting tracks raw transient leads separately from unique display leads
+      - docs and AIDE memory distinguish local --live opt-in provider calls from public fanout
 deliverables:
   - python scripts/eureka.py serve --live
   - python scripts/eureka.py search "<arbitrary query>" --live

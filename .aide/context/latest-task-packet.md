@@ -16,9 +16,13 @@ Reset the current acceptance path from local-only/demo search to the real produc
 
 - `AGENTS.md`
 - `.aide/queue/index.yaml`
+- `.aide/queue/EUREKA-REAL-LIVE-SEARCH-HUNT-00/task.yaml`
 - `.aide/memory/project-state.md`
 - `.aide/memory/decisions.md`
 - `.aide/memory/open-risks.md`
+- `README.md`
+- `docs/STATUS.md`
+- `docs/ROADMAP.md`
 - `.aide/context/repo-snapshot.json` (present)
 - `.aide/context/repo-map.json` (present)
 - `.aide/context/repo-map.md` (present)
@@ -44,6 +48,9 @@ Reset the current acceptance path from local-only/demo search to the real produc
 
 - `.aide/**`
 - `AGENTS.md`
+- `README.md`
+- `docs/STATUS.md`
+- `docs/ROADMAP.md`
 - `docs/operations/**`
 - `docs/reference/**`
 - `control/inventory/**`
@@ -96,6 +103,7 @@ Reset the current acceptance path from local-only/demo search to the real produc
 ## VALIDATION
 
 - `python -m unittest tests.runtime.test_live_web_search_provider -v`
+- `python -m unittest tests.runtime.test_live_search_service -v`
 - `python -m unittest tests.e2e.test_portable_eureka_instance -v`
 - `python -m unittest tests.e2e.test_local_search_cli -v`
 - `python -m unittest tests.e2e.test_local_search_server -v`
@@ -134,6 +142,7 @@ Reset the current acceptance path from local-only/demo search to the real produc
 - First broad-web provider: Brave Search API.
 - Credential env vars: `BRAVE_SEARCH_API_KEY`, compatibility alias `BRAVE_API_KEY`.
 - Provider search results are transient leads; do not persist Brave snippets, ranks, or raw responses under the standard terms.
+- Persisted Hunt summaries must not contain provider URLs, snippets, ranks, raw bodies, or unresolved lead cards.
 - Persist only independently fetched, policy-approved SourceObservations in later milestones.
 
 ## ACCEPTANCE

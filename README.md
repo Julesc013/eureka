@@ -13,10 +13,12 @@ container. It cares about the smallest useful actionable unit, keeps provenance
 visible, explains what is unknown, and separates candidate evidence from
 accepted truth.
 
-Eureka is currently a local-first Python reference backend and prototype with
-local operator workflows, read-only public-alpha foundations, static/snapshot
-foundations, and governed evals. It is not deployed, not publicly launched, and
-does not claim production readiness.
+Eureka is currently a local-first Python reference backend and prototype. The
+active product task is real live Search/Hunt: arbitrary live query, immediate
+transient web leads, deeper Hunt, safe inspection, durable local Preview Index,
+restart, and local search. The first reset/foundation work exists, but safe
+fetch, durable live indexing, and real Hunt remain incomplete. Eureka is not
+deployed, not publicly launched, and does not claim production readiness.
 
 ## Why Eureka Exists
 
@@ -46,7 +48,7 @@ Current branch details move faster than a public README. Use
 | Local use | Local instance validation, local server, Workbench, CLI/API surfaces | [Local HTTP API](docs/reference/LOCAL_HTTP_API.md) |
 | Public alpha | Read-only, snapshot-backed foundations; not launched | [Public Alpha Launch Gates](docs/reference/PUBLIC_ALPHA_LAUNCH_GATES.md) |
 | Deployment | Not performed; dry-run and launch remain gated | [Roadmap](docs/ROADMAP.md) |
-| Live source fanout | Disabled unless a future reviewed task enables it | [Source Policy Gates](docs/operations/SOURCE_POLICY_GATES.md) |
+| Live source fanout | Local `--live` provider calls are experimental, bounded, and operator opt-in; public fanout is disabled | [Status](docs/STATUS.md) |
 | Public mutation | Disabled; review and promotion gates protect accepted records | [Master Index Review Queue](docs/reference/MASTER_INDEX_REVIEW_QUEUE_CONTRACT.md) |
 | Production readiness | Not claimed | [Security](SECURITY.md) |
 | License | Restricted source-available, not open-source | [License](LICENSE.md) |
@@ -69,9 +71,9 @@ Current branch details move faster than a public README. Use
 
 | Area | Current status | Notes and limitations | Deeper docs |
 | --- | --- | --- | --- |
-| Source inventory and connectors | Source registry, source-family model, governed metadata/source-wave foundations | Not a crawler; live source fanout and downloads are disabled by default | [Source Family Model](docs/architecture/SOURCE_FAMILY_MODEL.md), [Source Wave Runbook](docs/operations/SOURCE_WAVE_RUNBOOK.md) |
+| Source inventory and connectors | Source registry, source-family model, governed metadata/source-wave foundations | Not a crawler; public live fanout and downloads are disabled by default | [Source Family Model](docs/architecture/SOURCE_FAMILY_MODEL.md), [Source Wave Runbook](docs/operations/SOURCE_WAVE_RUNBOOK.md) |
 | Query planning and resolution | Local query planning, resolution runs, lanes, candidates, absence, and review handoffs | Current behavior is bounded by fixtures, local indexes, and accepted runtime slices | [Temporal Object Resolver](docs/architecture/TEMPORAL_OBJECT_RESOLVER.md), [Local Product Loop](docs/architecture/LOCAL_PRODUCT_LOOP.md) |
-| Search and local index | Deterministic/local search foundations and public-search safety work | No broad corpus coverage or production ranking claim | [Search Benchmark Design](docs/evals/SEARCH_BENCHMARK_DESIGN.md), [Test and Eval Lanes](docs/operations/TEST_AND_EVAL_LANES.md) |
+| Search and local index | Local search plus experimental `--live` provider display foundations | Safe fetch, durable live indexing, restart retrieval proof, and production ranking remain incomplete | [Status](docs/STATUS.md), [Test and Eval Lanes](docs/operations/TEST_AND_EVAL_LANES.md) |
 | Evidence and provenance | Evidence summaries, source observations, absence reports, promotion previews, and review gates | Candidates and observations are not accepted truth | [Doctrine](docs/vision/DOCTRINE.md), [Public Alpha Launch Gates](docs/reference/PUBLIC_ALPHA_LAUNCH_GATES.md) |
 | Representations and archive inspection | Representation/access-path summaries plus bounded package-member inspection foundations | Broad extraction, arbitrary local-path access, and executable payload handling remain disabled or gated | [Data Model](docs/architecture/DATA_MODEL.md), [Action Download/Install Policy](docs/reference/ACTION_DOWNLOAD_INSTALL_POLICY.md) |
 | Compatibility and action routing | Compatibility hints, action-plan foundations, local export/store flows, and local apply gates | No install, execute, package-manager, marketplace, or safety guarantee | [Local Apply Gate Runbook](docs/operations/LOCAL_APPLY_GATE_RUNBOOK.md), [Capability Profile](docs/reference/CAPABILITY_PROFILE.md) |
@@ -83,6 +85,32 @@ Current branch details move faster than a public README. Use
 ## Quick Start
 
 These commands are local and do not deploy Eureka.
+
+Create or refresh a local portable instance:
+
+```powershell
+python scripts/eureka.py bootstrap
+python scripts/eureka.py status --json
+```
+
+Search the local index:
+
+```powershell
+python scripts/eureka.py search "manual for Sound Blaster CT1740" --index local
+python scripts/eureka.py index stats
+```
+
+Experimental live provider search is opt-in and requires a local provider key.
+Do not paste or commit the key.
+
+```powershell
+$env:BRAVE_SEARCH_API_KEY="<your-key>"
+python scripts/eureka.py search "an arbitrary unseen query" --live --json
+python scripts/eureka.py serve --live
+```
+
+Live Hunt currently performs provider query expansion only. Safe page fetching,
+extraction, and durable live indexing are later milestones.
 
 Run focused checks:
 
@@ -251,8 +279,10 @@ Current public-alpha constraints:
 - snapshot-backed/read-only route foundations exist
 - public live source fanout is disabled
 - public mutation is disabled
-- downloads, uploads, installer behavior, executable actions, accounts,
-  telemetry, and model/provider calls are disabled
+- downloads, uploads, installer behavior, executable actions, accounts, and
+  telemetry are disabled
+- local `--live` provider calls are experimental and operator opt-in; they are
+  not public fanout, deployment, or launch evidence
 - public open-internet exposure remains gated by deploy dry-run evidence,
   manual approval, hosting evidence, and safety validation
 
@@ -276,18 +306,20 @@ For normal development:
 
 ## Roadmap
 
-Near-term work is staged around evidence rather than promises:
+Near-term work is staged around the live local product path:
 
-- public docs polish and navigation
-- public-alpha deploy dry-run and hosting rehearsal evidence
-- public-alpha launch only after explicit manual approval
-- source/eval/corpus expansion under review gates
-- Rust parity candidates that match Python-oracle outputs before migration
+- keep provider SearchLeads transient and out of persisted Hunt summaries
+- build safe independent page fetching and extraction
+- persist policy-approved SourceObservations in an operational SQLite/FTS Preview Index
+- prove restart and local-search retrieval
+- build real budgeted Hunt with pagination, frontier selection, dedupe, and cancellation
+- resume unseen-query human acceptance only after all six live Search/Hunt milestones pass
 
-Later work may include broader source families, stronger indexing and search,
-worker/streaming improvements, hosted alpha, native app shells, app-store-style
-clients, and safer action manifests. These are planned or gated directions, not
-current capability claims.
+Later work may include second provider families, autonomous index surveying,
+agentic planners under typed policy gates, reviewed knowledge snapshots,
+cooperative network sync, hosted read-only service, native app shells,
+app-store-style clients, and safer action manifests. These are planned or gated
+directions, not current capability claims.
 
 Read [docs/ROADMAP.md](docs/ROADMAP.md) and [docs/roadmap/README.md](docs/roadmap/README.md)
 for details.
