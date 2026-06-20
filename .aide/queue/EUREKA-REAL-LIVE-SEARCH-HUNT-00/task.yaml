@@ -111,7 +111,7 @@ milestones:
 milestone_evidence:
   milestone_1: pass
   milestone_2: pass
-  milestone_3: partial
+  milestone_3: pass
   milestone_4: pass
   milestone_5: pass
   milestone_6: pass
@@ -123,6 +123,7 @@ milestone_evidence:
     - safe fetch/extraction and SourceObservation persistence components exist with SSRF, DNS, redirect, robots, MIME, body-size, URL-credential, HTTP-error, per-host budget, and durable-store tests
     - SQLite/FTS operational Preview Index persists independently fetched SourceObservations and restart search/export/rollback proof passes
     - deterministic Hunt engine paginates provider results, fetches selected leads, follows bounded outbound links, indexes observations, records sanitized events, and supports pause/resume/cancel state
+    - live Search/Hunt UX exposes normal search, Hunt progress, and result inspection without task IDs, review-packet language, or raw JSON on normal pages
 subdeliverables:
   retention_and_state_hotfix:
     status: pass

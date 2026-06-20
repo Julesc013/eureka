@@ -1,7 +1,7 @@
 schema_version: aide.task.v0
 id: EUREKA-LIVE-SEARCH-HUNT-UX-01
 title: Make the live Search and Hunt product UI usable
-status: planned
+status: pass
 task_class: product_surface_milestone
 parent_track: EUREKA-REAL-LIVE-SEARCH-HUNT-00
 predecessor: EUREKA-REAL-HUNT-ENGINE-01
@@ -10,6 +10,18 @@ purpose: >-
   Present search, Hunt progress, result inspection, provenance, and indexing
   state without task IDs, review-packet language, raw JSON, or architecture
   exposition on normal product pages.
+evidence:
+  subject: "feat(web): deliver usable live Search and Hunt UX"
+  notes:
+    - Normal live page shows Eureka, search, Hunt deeper, Local/Live/Indexed filters, legible cards, and no task/review/architecture lead-in.
+    - Hunt page shows progress metrics for queries, providers, fetched pages, new discoveries, duplicates, blocked fetches, and errors.
+    - Indexed SQLite Preview Index results appear in the live search page before immutable fallback and include Inspect links.
+    - /results/{id} and /api/results/{id} expose fetched SourceObservation inspection without raw JSON on the normal HTML page.
+    - UI remains server-rendered with GET forms and no WebSocket requirement.
+validation:
+  - python -m unittest tests.runtime.test_live_search_hunt_ux -v
+  - python -m unittest tests.e2e.test_portable_eureka_instance tests.e2e.test_local_search_server -v
+  - python -m py_compile runtime/local/service/routes.py runtime/index/preview/store.py tests/runtime/test_live_search_hunt_ux.py
 non_goals:
   - no public launch
   - no renderer expansion outside live Search/Hunt needs

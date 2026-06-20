@@ -3,7 +3,7 @@
 from html import escape
 import json
 from typing import Any, Mapping
-from urllib.parse import quote
+from urllib.parse import quote, unquote
 
 from runtime.search.live_service import LiveSearchService
 from runtime.search.live_web import provider_status
@@ -88,6 +88,13 @@ def route_request(
     if path == "/api/hunt":
         if _live_search_enabled(runtime):
             return _live_hunt_response(runtime, request_context)
+    if path.startswith("/results/") and _live_search_enabled(runtime):
+        result_id = unquote(path.removeprefix("/results/"))
+        if _wants_json(request_context):
+            return _live_result_response(runtime, result_id)
+        return _live_result_html_response(runtime, result_id)
+    if path.startswith("/api/results/") and _live_search_enabled(runtime):
+        return _live_result_response(runtime, unquote(path.removeprefix("/api/results/")))
     if path == "/runs":
         if _wants_json(request_context):
             return _workbench_live_run_list_or_create_response(request_context)
@@ -491,6 +498,37 @@ def _live_hunt_html_response(runtime: Any, request_context: LocalRequestContext)
     return html_response(200, _render_live_search_html(payload, hunt=True), payload)
 
 
+def _live_result_response(runtime: Any, result_id: str) -> LocalServiceResponse:
+    from runtime.index.preview import SQLitePreviewIndexStore
+
+    path = getattr(runtime, "eureka_preview_sqlite_path", None)
+    if path is None:
+        return error_response(404, "result_not_found", "Indexed result is not available.", {"result_id": result_id})
+    store = SQLitePreviewIndexStore(path)
+    try:
+        result = store.get(result_id)
+    finally:
+        store.close()
+    if result is None:
+        return error_response(404, "result_not_found", "Indexed result was not found.", {"result_id": result_id})
+    payload = {
+        "schema_version": "eureka.live_result_inspection.v0",
+        "status": "pass",
+        "result": result,
+        "review_required": True,
+        "reviewed_master_mutation": False,
+        "public_index_mutation": False,
+    }
+    return json_response(200, payload)
+
+
+def _live_result_html_response(runtime: Any, result_id: str) -> LocalServiceResponse:
+    response = _live_result_response(runtime, result_id)
+    if response.status_code != 200:
+        return response
+    return html_response(200, _render_live_result_html(response.payload), response.payload)
+
+
 def _search_html_response(runtime: Any, request_context: LocalRequestContext) -> LocalServiceResponse:
     workbench = _workbench()
     response = _search_response(runtime, request_context)
@@ -532,7 +570,7 @@ def _live_hunt_payload(runtime: Any, request_context: LocalRequestContext) -> di
     query = first_param(request_context.params, "q", first_param(request_context.params, "query", "")).strip()
     limit = parse_limit(first_param(request_context.params, "limit", ""), default=10)
     max_queries = parse_limit(first_param(request_context.params, "max_queries", ""), default=5)
-    max_fetches = parse_limit(first_param(request_context.params, "max_fetches", first_param(request_context.params, "max-fetches", "")), default=0)
+    max_fetches = _parse_nonnegative_int(first_param(request_context.params, "max_fetches", first_param(request_context.params, "max-fetches", "")), default=0, maximum=100)
     provider_name = str(getattr(runtime, "live_search_provider", "brave") or "brave")
     hunt = LiveSearchService(provider_name=provider_name).start_hunt(
         query,
@@ -550,6 +588,25 @@ def _live_hunt_payload(runtime: Any, request_context: LocalRequestContext) -> di
 
 
 def _live_local_preview_results(runtime: Any, query: str, *, limit: int) -> dict[str, Any]:
+    sqlite_path = getattr(runtime, "eureka_preview_sqlite_path", None)
+    if query and sqlite_path:
+        try:
+            from runtime.index.preview import SQLitePreviewIndexStore
+
+            store = SQLitePreviewIndexStore(sqlite_path)
+            try:
+                sqlite_payload = store.search(query, limit=limit)
+            finally:
+                store.close()
+            if int(sqlite_payload.get("result_count") or 0) > 0:
+                return {
+                    "status": "pass",
+                    "result_count": int(sqlite_payload.get("result_count") or 0),
+                    "results": [_sqlite_live_card(item) for item in sqlite_payload.get("results") or [] if isinstance(item, Mapping)],
+                    "warnings": [],
+                }
+        except Exception:
+            pass
     path = getattr(runtime, "e2e_explore_preview_index_path", None)
     if not query or path is None:
         return {"status": "not_requested", "result_count": 0, "results": [], "warnings": []}
@@ -577,10 +634,37 @@ def _live_local_preview_results(runtime: Any, query: str, *, limit: int) -> dict
     return {"status": "pass", "result_count": len(cards), "results": cards, "warnings": []}
 
 
+def _sqlite_live_card(item: Mapping[str, Any]) -> dict[str, Any]:
+    return {
+        "state": "INDEXED - UNREVIEWED",
+        "title": str(item.get("title") or "Indexed discovery"),
+        "url": str(item.get("url") or ""),
+        "snippet": str(item.get("snippet") or ""),
+        "provider": str(item.get("source_family") or "local_preview_index"),
+        "retrieved_at": str(item.get("retrieved_at") or ""),
+        "query": str(item.get("query") or ""),
+        "source": "sqlite_preview_index",
+        "result_id": str(item.get("document_id") or ""),
+        "why_matched": list(item.get("why_matched") or []),
+        "retention_policy": {"persist_urls": True, "persist_snippets": True, "persist_rank": False, "terms_basis": "independent_fetch"},
+    }
+
+
+def _parse_nonnegative_int(value: str, *, default: int, maximum: int) -> int:
+    text = str(value or "").strip()
+    if not text:
+        return default
+    try:
+        return max(0, min(int(text), maximum))
+    except ValueError:
+        return default
+
+
 def _render_live_search_html(payload: Mapping[str, Any], *, hunt: bool = False) -> str:
     query = str(payload.get("query") or "")
     title = "Eureka"
     cards = payload.get("results") or []
+    progress_html = _render_hunt_progress(payload) if hunt else ""
     if not cards and query:
         error = payload.get("error") if isinstance(payload.get("error"), Mapping) else {}
         if not error and payload.get("errors"):
@@ -593,6 +677,7 @@ def _render_live_search_html(payload: Mapping[str, Any], *, hunt: bool = False) 
     else:
         result_html = "\n".join(_render_live_card(item) for item in cards if isinstance(item, Mapping))
     escaped_query = escape(query, quote=True)
+    hunt_href = f"/hunt?q={quote(query)}&max_fetches=3" if query else "/hunt"
     return "\n".join(
         [
             "<!doctype html>",
@@ -601,16 +686,18 @@ def _render_live_search_html(payload: Mapping[str, Any], *, hunt: bool = False) 
             '<meta charset="utf-8">',
             '<meta name="viewport" content="width=device-width, initial-scale=1">',
             f"<title>{title}</title>",
-            "<style>body{font-family:system-ui,-apple-system,Segoe UI,sans-serif;margin:0;color:#182229;background:#f7f8f8}main{max-width:980px;margin:auto;padding:28px 18px}.search{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:8px;margin:16px 0 22px}.search input{font:inherit;padding:11px;border:1px solid #aeb8bf;border-radius:6px;background:white}.search button,.search a{font:inherit;padding:11px 14px;border-radius:6px;border:1px solid #2d5d78;background:#2d5d78;color:white;text-decoration:none}.search a{background:#fff;color:#2d5d78}.card{background:#fff;border:1px solid #d8dee2;border-radius:8px;padding:14px;margin:10px 0}.state{font-size:12px;font-weight:700;color:#4b5b64}.url{color:#0b5cad;overflow-wrap:anywhere}.meta,.empty{color:#52616b}.snippet{margin:8px 0}</style>",
+            "<style>body{font-family:system-ui,-apple-system,Segoe UI,sans-serif;margin:0;color:#182229;background:#f7f8f8}main{max-width:1040px;margin:auto;padding:28px 18px}.top{display:flex;justify-content:space-between;gap:12px;align-items:end;flex-wrap:wrap}.search{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:8px;margin:16px 0 12px}.search input{font:inherit;padding:11px;border:1px solid #aeb8bf;border-radius:6px;background:white}.search button,.search a,.inspect{font:inherit;padding:11px 14px;border-radius:6px;border:1px solid #2d5d78;background:#2d5d78;color:white;text-decoration:none}.search a,.inspect{background:#fff;color:#2d5d78}.filters{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 18px}.filters span{border:1px solid #c8d0d5;border-radius:999px;padding:5px 10px;background:white;color:#41515b}.progress{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px;margin:10px 0 18px}.metric{background:#fff;border:1px solid #d8dee2;border-radius:8px;padding:10px}.metric strong{display:block;font-size:20px}.card{background:#fff;border:1px solid #d8dee2;border-radius:8px;padding:14px;margin:10px 0}.card h2{font-size:18px;margin:6px 0}.state{font-size:12px;font-weight:700;color:#4b5b64}.url{color:#0b5cad;overflow-wrap:anywhere}.meta,.empty,.why{color:#52616b}.snippet{margin:8px 0}.actions{margin-top:10px}@media(max-width:640px){.search{grid-template-columns:1fr}.search a,.search button{display:block;text-align:center}}</style>",
             "</head>",
             "<body>",
             "<main>",
-            "<h1>Eureka</h1>",
+            '<div class="top"><h1>Eureka</h1><p class="meta">Local-first live discovery</p></div>',
             '<form class="search" action="/hunt" method="get">' if hunt else '<form class="search" action="/search" method="get">',
             f'<input name="q" value="{escaped_query}" placeholder="Search the web and your Eureka index..." autofocus>',
             '<button type="submit">Search</button>' if not hunt else '<button type="submit">Hunt deeper</button>',
-            f'<a href="/hunt?q={quote(query)}">Hunt deeper</a>' if not hunt else f'<a href="/search?q={quote(query)}">Search</a>',
+            f'<a href="{hunt_href}">Hunt deeper</a>' if not hunt else f'<a href="/search?q={quote(query)}">Search</a>',
             "</form>",
+            '<div class="filters"><span>Local</span><span>Live</span><span>Indexed</span></div>',
+            progress_html,
             result_html,
             "</main>",
             "</body>",
@@ -627,6 +714,8 @@ def _render_live_card(item: Mapping[str, Any]) -> str:
     state = escape(str(item.get("state") or "LIVE - UNREVIEWED"))
     provider = escape(str(item.get("provider") or ""))
     retrieved_at = escape(str(item.get("retrieved_at") or ""))
+    result_id = escape(str(item.get("result_id") or item.get("document_id") or ""))
+    why = ", ".join(str(part) for part in item.get("why_matched") or []) if isinstance(item.get("why_matched"), list) else ""
     return "\n".join(
         [
             '<article class="card">',
@@ -634,8 +723,59 @@ def _render_live_card(item: Mapping[str, Any]) -> str:
             f"<h2>{title}</h2>",
             f'<div class="url">{url}</div>' if url else "",
             f'<p class="snippet">{snippet}</p>' if snippet else "",
+            f'<p class="why">Matched: {escape(why)}</p>' if why else "",
             f'<p class="meta">Provider: {provider or "local"} | Retrieved: {retrieved_at or "n/a"}</p>',
+            f'<p class="actions"><a class="inspect" href="/results/{quote(result_id)}">Inspect</a></p>' if result_id else "",
             "</article>",
+        ]
+    )
+
+
+def _render_hunt_progress(payload: Mapping[str, Any]) -> str:
+    metrics = (
+        ("Queries", len(payload.get("queries_attempted") or [])),
+        ("Providers", len(payload.get("providers_checked") or [])),
+        ("Fetched", int(payload.get("pages_fetched") or 0)),
+        ("New", int(payload.get("documents_indexed") or payload.get("new_unique_results") or 0)),
+        ("Duplicates", int(payload.get("duplicates_removed") or 0)),
+        ("Blocked", int(payload.get("blocked_fetches") or 0)),
+        ("Errors", len(payload.get("errors") or [])),
+    )
+    items = [f'<div class="metric"><strong>{value}</strong><span>{escape(label)}</span></div>' for label, value in metrics]
+    return '<section class="progress" aria-label="Hunt progress">' + "".join(items) + "</section>"
+
+
+def _render_live_result_html(payload: Mapping[str, Any]) -> str:
+    result = payload.get("result") if isinstance(payload.get("result"), Mapping) else {}
+    observation = result.get("observation") if isinstance(result.get("observation"), Mapping) else {}
+    title = escape(str(result.get("title") or observation.get("title") or "Indexed result"))
+    url = escape(str(result.get("url") or observation.get("canonical_url") or ""))
+    text = escape(str(observation.get("extracted_text") or result.get("snippet") or ""))
+    content_hash = escape(str(observation.get("content_hash") or ""))
+    mime = escape(str(observation.get("mime") or observation.get("content_type") or ""))
+    retrieved_at = escape(str(observation.get("retrieved_at") or result.get("retrieved_at") or ""))
+    links = observation.get("outbound_links") if isinstance(observation.get("outbound_links"), list) else []
+    link_items = "".join(f"<li>{escape(str(item.get('target_url') or ''))}</li>" for item in links if isinstance(item, Mapping))
+    return "\n".join(
+        [
+            "<!doctype html>",
+            '<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">',
+            f"<title>{title}</title>",
+            "<style>body{font-family:system-ui,-apple-system,Segoe UI,sans-serif;margin:0;background:#f7f8f8;color:#182229}main{max-width:900px;margin:auto;padding:28px 18px}.panel{background:#fff;border:1px solid #d8dee2;border-radius:8px;padding:16px}.url{color:#0b5cad;overflow-wrap:anywhere}.meta{color:#52616b}pre{white-space:pre-wrap;font:inherit;line-height:1.5}</style>",
+            "</head><body><main>",
+            '<p><a href="/search">Search</a></p>',
+            '<section class="panel">',
+            '<div class="meta">INDEXED - UNREVIEWED</div>',
+            f"<h1>{title}</h1>",
+            f'<p class="url">{url}</p>',
+            f'<p class="meta">Retrieved: {retrieved_at or "n/a"} | MIME: {mime or "n/a"}</p>',
+            f'<p class="meta">Content hash: {content_hash or "n/a"}</p>',
+            f"<pre>{text}</pre>",
+            "<h2>Outbound links</h2>",
+            f"<ul>{link_items}</ul>" if link_items else '<p class="meta">No outbound links retained.</p>',
+            "</section>",
+            "</main></body></html>",
+            "",
         ]
     )
 

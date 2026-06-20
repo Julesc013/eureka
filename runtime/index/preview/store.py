@@ -190,8 +190,20 @@ class SQLitePreviewIndexStore:
         }
 
     def get(self, document_id: str) -> dict[str, Any] | None:
-        row = self.conn.execute("SELECT * FROM preview_document WHERE document_id = ?", (str(document_id or ""),)).fetchone()
-        return _row_to_result(row, "") if row else None
+        row = self.conn.execute(
+            """
+            SELECT d.*, so.payload_json AS observation_json
+            FROM preview_document d
+            JOIN source_observation so ON so.observation_id = d.observation_id
+            WHERE d.document_id = ?
+            """,
+            (str(document_id or ""),),
+        ).fetchone()
+        if not row:
+            return None
+        result = _row_to_result(row, "")
+        result["observation"] = json.loads(str(row["observation_json"] or "{}"))
+        return result
 
     def stats(self) -> dict[str, Any]:
         observation_count = int(self.conn.execute("SELECT COUNT(*) FROM source_observation").fetchone()[0])
