@@ -12,7 +12,8 @@ from typing import Any, Callable, Mapping
 from runtime.connectors.web import FetchRequest, SafeHTTPFetcher
 from runtime.index.preview import SQLitePreviewIndexStore
 
-from .live_web import PROVIDER_NOT_CONFIGURED_MESSAGE, WebSearchBudget, WebSearchProvider, WebSearchProviderError, provider_from_environment
+from .live_web import PROVIDER_NOT_CONFIGURED_MESSAGE, WebSearchBudget, WebSearchProvider, WebSearchProviderError
+from .providers import provider_from_environment
 
 
 ProviderFactory = Callable[[str], WebSearchProvider | None]

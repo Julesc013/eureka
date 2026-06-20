@@ -25,7 +25,8 @@ from runtime.index.preview import SQLitePreviewIndexStore  # noqa: E402
 from runtime.local.portable_instance import bootstrap_command, build_portable_paths, resolve_portable_instance_root  # noqa: E402
 from runtime.search.hunt_engine import HuntBudget, HuntEngine  # noqa: E402
 from runtime.search.live_service import LiveSearchService, live_hunt_run_id  # noqa: E402
-from runtime.search.live_web import SearchLead, SearchResultPage, WebSearchBudget, brave_capability_manifest, provider_status  # noqa: E402
+from runtime.search.live_web import SearchLead, SearchResultPage, WebSearchBudget, brave_capability_manifest  # noqa: E402
+from runtime.search.providers import provider_status  # noqa: E402
 
 
 def main(argv: list[str] | None = None) -> int:

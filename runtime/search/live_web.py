@@ -98,6 +98,16 @@ class ProviderCapabilityManifest:
     redistribute: bool
     use_for_model_training: bool
     notes: tuple[str, ...] = ()
+    provider_kind: str = "broad_web_search"
+    supported_query_modes: tuple[str, ...] = ("keyword", "phrase", "site", "filetype")
+    pagination_model: str = "page"
+    freshness_support: bool = True
+    domain_source_restrictions: tuple[str, ...] = ()
+    rate_limits: Mapping[str, Any] | None = None
+    persistent_fields_allowed: tuple[str, ...] = ()
+    fetch_handoff_allowed: bool = True
+    authentication_requirements: tuple[str, ...] = ()
+    error_categories: tuple[str, ...] = ("configuration", "http", "rate_limit", "timeout", "invalid_response")
 
     def retention_policy(self) -> SearchLeadRetentionPolicy:
         return SearchLeadRetentionPolicy(
@@ -122,6 +132,16 @@ class ProviderCapabilityManifest:
             "redistribute": self.redistribute,
             "use_for_model_training": self.use_for_model_training,
             "notes": list(self.notes),
+            "provider_kind": self.provider_kind,
+            "supported_query_modes": list(self.supported_query_modes),
+            "pagination_model": self.pagination_model,
+            "freshness_support": self.freshness_support,
+            "domain_source_restrictions": list(self.domain_source_restrictions),
+            "rate_limits": dict(self.rate_limits or {}),
+            "persistent_fields_allowed": list(self.persistent_fields_allowed),
+            "fetch_handoff_allowed": self.fetch_handoff_allowed,
+            "authentication_requirements": list(self.authentication_requirements),
+            "error_categories": list(self.error_categories),
         }
 
 

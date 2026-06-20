@@ -59,7 +59,7 @@ from runtime.resolution_run import (
 )
 from runtime.resolution_run.errors import ResolutionRunValidationError
 from runtime.search.live_service import LiveSearchService, live_hunt_run_id
-from runtime.search.live_web import provider_status
+from runtime.search.providers import provider_status
 
 
 REPO_ROOT = resolve_repo_root(Path(__file__))

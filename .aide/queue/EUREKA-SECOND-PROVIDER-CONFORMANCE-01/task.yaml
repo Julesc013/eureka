@@ -1,7 +1,7 @@
 schema_version: aide.task.v0
 id: EUREKA-SECOND-PROVIDER-CONFORMANCE-01
 title: Add a second provider only after the Brave vertical slice works
-status: planned
+status: IMPLEMENTED_WAITING_FOR_LIVE_ACCEPTANCE
 task_class: future_provider_milestone
 parent_track: EUREKA-REAL-LIVE-SEARCH-HUNT-00
 predecessor: EUREKA-REAL-LIVE-SEARCH-HUNT-ACCEPTANCE-01
@@ -10,6 +10,21 @@ purpose: >-
   Add one independent provider family with the same provider contract, budgets,
   error model, retention manifest, cross-provider dedupe, and partial-failure
   behavior after the first live Search/Hunt path is useful.
+evidence:
+  subject: "feat(search): add second-provider conformance"
+  provider_1: brave
+  provider_2: internet_archive_metadata
+  implementation_status: pass
+  live_acceptance_dependency: WAITING_FOR_OPERATOR_LIVE_CANARY
+  notes:
+    - ProviderRegistry, ProviderSelection, ProviderExecutionPlan, ProviderResultEnvelope, and DiscoveryProvider-style request/budget/page contracts exist in runtime/search/providers.py.
+    - Brave remains the broad-web provider; Internet Archive metadata search is metadata-only, does not download payloads, does not create truth, and is bounded by provider budgets.
+    - MultiProviderSearchProvider lets the existing HuntEngine use multiple providers through the same WebSearchProvider-compatible interface.
+    - Tests prove IA metadata normalization, partial-provider failure, both-fail behavior, cross-provider URL dedupe, secret-safe status, and zero reviewed/public mutation.
+validation:
+  - python -m unittest tests.runtime.test_provider_conformance -v
+  - python -m unittest tests.runtime.test_live_web_search_provider tests.runtime.test_live_search_service -v
+  - python -m py_compile runtime/search/providers.py runtime/search/live_web.py runtime/search/live_service.py runtime/search/hunt_engine.py runtime/local/portable_instance.py tests/runtime/test_provider_conformance.py
 non_goals:
   - no second provider before live Search/Hunt acceptance
   - no public launch
