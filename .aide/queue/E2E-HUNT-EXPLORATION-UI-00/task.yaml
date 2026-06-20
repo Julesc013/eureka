@@ -8,6 +8,9 @@ predecessor: E2E-PREVIEW-INDEX-00
 successor: SYNTHETIC-TRUTH-PATH-E2E-00
 purpose: Create a coherent private/local Workbench exploration experience over the shared E2E runner and preview index.
 allowed_scope:
+  - .aide/queue/index.yaml
+  - .aide/queue/E2E-HUNT-EXPLORATION-UI-00/**
+  - .aide/context/**
   - surfaces/web/**
   - runtime/surface/**
   - runtime/local/**
@@ -15,6 +18,7 @@ allowed_scope:
   - contracts/workbench/**
   - tests/e2e/**
   - tests/runtime/**
+  - docs/architecture/**
   - docs/operations/**
   - control/audits/e2e_reference_system/**
 forbidden_scope:
