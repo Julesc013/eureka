@@ -1733,6 +1733,8 @@ def _configure_runtime_for_portable(runtime: Any, paths: PortablePaths, *, live:
     setattr(runtime, "e2e_explore_runs_root", paths.run_bundles)
     setattr(runtime, "eureka_discovery_events_path", paths.discovery_events)
     setattr(runtime, "eureka_capability_state_path", REPO_ROOT / "control" / "inventory" / "product" / "capability_state.json")
+    setattr(runtime, "eureka_foundry_plans_root", _instance_child(paths.root, "run/foundry/plans"))
+    setattr(runtime, "eureka_foundry_runs_root", _instance_child(paths.root, "run/foundry/runs"))
     setattr(runtime, "e2e_explore_default_fixture", "success_two_workunits")
     setattr(runtime, "e2e_explore_include_synthetic", not live)
     setattr(runtime, "public_alpha_enabled", False)

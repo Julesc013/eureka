@@ -1,7 +1,7 @@
 schema_version: aide.task.v0
 id: EUREKA-FOUNDRY-OPERATOR-CONTROLS-AND-UX-01
 title: Add Foundry operator controls and local UX
-status: planned
+status: pass
 task_class: product_hardening_stage
 parent_track: EUREKA-REAL-LIVE-SEARCH-HUNT-00
 predecessor: EUREKA-DISCOVERY-PERFORMANCE-CAPACITY-BASELINE-01
@@ -10,4 +10,19 @@ purpose: >-
   Expose disabled-by-default Foundry planning, explicit run controls,
   pause/resume/cancel, progress, scorecards, observations, and exports through
   local operator-only routes.
-
+evidence:
+  implementation:
+    - runtime/local/service/routes.py
+    - runtime/local/service/validation.py
+    - runtime/local/portable_instance.py
+  tests:
+    - tests/runtime/test_local_service_routes.py
+    - tests/runtime/test_foundry_service.py
+validation:
+  - python -m unittest tests.runtime.test_local_service_routes tests.runtime.test_foundry_service -v
+  - python -m py_compile runtime/local/service/routes.py runtime/local/service/validation.py runtime/local/portable_instance.py tests/runtime/test_local_service_routes.py
+  - python scripts/eureka.py --instance ../instances/wave03-foundry-smoke-2 foundry plan --seed "manual" --max-queries 1 --max-fetches 0 --json
+non_goals:
+  - no Foundry run from GET
+  - no automatic daemon
+  - no reviewed/public mutation

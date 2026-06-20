@@ -75,6 +75,8 @@ def is_operator_mutation_route(path: str) -> bool:
         return True
     if _is_search_need_mutation_route(value):
         return True
+    if _is_foundry_mutation_route(value):
+        return True
     if _is_local_apply_mutation_route(value):
         return True
     return value.startswith("/review/") and value.endswith("/decision")
@@ -159,6 +161,13 @@ def _is_search_need_mutation_route(path: str) -> bool:
             return parts[5] == "preflight"
         return parts[4:] == ["workunits", "plan"]
     return False
+
+
+def _is_foundry_mutation_route(path: str) -> bool:
+    parts = [part for part in str(path or "").split("/") if part]
+    if parts == ["api", "v1", "foundry", "runs"]:
+        return True
+    return len(parts) == 6 and parts[:4] == ["api", "v1", "foundry", "run"] and parts[5] in {"pause", "resume", "cancel"}
 
 
 def _is_search_need_workunit_route(path: str) -> bool:

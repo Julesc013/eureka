@@ -6,6 +6,7 @@ from pathlib import Path
 import unittest
 
 from runtime.local.appliance import close_local_appliance, open_local_appliance
+from runtime.local.operator.auth import build_cli_operator_auth_state
 from runtime.local.service import LocalServiceApp
 from runtime.index.public import PublicIndexStore
 from runtime.search.observability import DiscoveryEventStore
@@ -117,6 +118,45 @@ class LocalServiceRouteTests(unittest.TestCase):
                 self.assertNotIn("provider.example", encoded)
                 self.assertNotIn("restricted", encoded)
                 self.assertFalse(diagnostics.payload["provider_payload_included"])
+            finally:
+                close_local_appliance(runtime)
+
+    def test_foundry_operator_routes_are_local_and_token_gated(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            instance = init_instance(tmp)
+            runtime = open_local_appliance(instance, read_only=True)
+            try:
+                setattr(runtime, "eureka_foundry_plans_root", Path(tmp) / "foundry" / "plans")
+                setattr(runtime, "eureka_foundry_runs_root", Path(tmp) / "foundry" / "runs")
+                setattr(runtime, "eureka_discovery_events_path", Path(tmp) / "events.jsonl")
+                app = LocalServiceApp(runtime, operator_auth_state=build_cli_operator_auth_state("route-token"))
+
+                home = app.handle("GET", "/api/v1/foundry/plan", "seed=manual&max_queries=1&max_fetches=0")
+                self.assertEqual(200, home.status_code)
+                self.assertFalse(home.payload["plan_preview_makes_network_calls"])
+                self.assertFalse(home.payload["run_started"])
+
+                invalid = app.handle("POST", "/api/v1/foundry/runs", body="operator_token=bad&seed=manual")
+                lan = app.handle("POST", "/api/v1/foundry/runs", client_host="192.168.1.20", body="operator_token=route-token&seed=manual")
+                started = app.handle("POST", "/api/v1/foundry/runs", body="operator_token=route-token&seed=manual&max_queries=1&max_fetches=0")
+
+                self.assertEqual(401, invalid.status_code)
+                self.assertEqual(403, lan.status_code)
+                self.assertEqual(200, started.status_code)
+                self.assertEqual("disabled", started.payload["result"]["status"])
+                self.assertFalse(started.payload["network_calls_performed"])
+                run_id = started.payload["result"]["run_id"]
+                status = app.handle("GET", f"/api/v1/foundry/run/{run_id}")
+                pause = app.handle("POST", f"/api/v1/foundry/run/{run_id}/pause", body="operator_token=route-token")
+                resume = app.handle("POST", f"/api/v1/foundry/run/{run_id}/resume", body="operator_token=route-token")
+                cancel = app.handle("POST", f"/api/v1/foundry/run/{run_id}/cancel", body="operator_token=route-token")
+
+                self.assertEqual(200, status.status_code)
+                self.assertEqual(200, pause.status_code)
+                self.assertEqual("paused", pause.payload["status"])
+                self.assertEqual("running", resume.payload["status"])
+                self.assertEqual("cancelled", cancel.payload["status"])
+                self.assertFalse(cancel.payload["public_index_mutation"])
             finally:
                 close_local_appliance(runtime)
 

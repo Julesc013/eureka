@@ -48,6 +48,21 @@ def route_request(
         if _wants_json(request_context) or path.startswith("/api/"):
             return _diagnostics_response(runtime, request_context)
         return _diagnostics_html_response(runtime, request_context)
+    if path in {"/foundry", "/foundry/plan"}:
+        if _wants_json(request_context):
+            return _foundry_plan_response(runtime, request_context) if path.endswith("/plan") else _foundry_home_response(runtime)
+        return _foundry_plan_html_response(runtime, request_context) if path.endswith("/plan") else _foundry_home_html_response(runtime)
+    if path == "/api/v1/foundry/plan":
+        return _foundry_plan_response(runtime, request_context)
+    if path in {"/foundry/runs", "/api/v1/foundry/runs"}:
+        if _wants_json(request_context) or path.startswith("/api/"):
+            return _foundry_runs_response(runtime)
+        return _foundry_runs_html_response(runtime)
+    foundry_run_route = _parse_foundry_run_route(path)
+    if foundry_run_route:
+        if _wants_json(request_context) or path.startswith("/api/"):
+            return _foundry_run_response(runtime, foundry_run_route[0])
+        return _foundry_run_html_response(runtime, foundry_run_route[0])
     if path in {"/health", "/api/v1/health"}:
         return _health_response(runtime)
     if path == "/explore":
@@ -430,6 +445,115 @@ def _diagnostics_html_response(runtime: Any, request_context: LocalRequestContex
     html = _simple_local_page(
         "Discovery Diagnostics",
         f"<p>Redacted local event timeline. Provider payloads and private page text are excluded.</p><table><tr><th>Time</th><th>Event</th><th>Component</th><th>Outcome</th></tr>{rows}</table>",
+    )
+    return html_response(200, html, response.payload)
+
+
+def _foundry_home_response(runtime: Any) -> LocalServiceResponse:
+    payload = {
+        "schema_version": "eureka.foundry_home_response.v0",
+        "status": "pass",
+        "activation_state": "disabled_by_default",
+        "local_only": True,
+        "reviewed_truth_mutation": False,
+        "public_index_mutation": False,
+        "network_calls_only_when_explicitly_started": True,
+        "routes": {
+            "plan": "/foundry/plan",
+            "runs": "/foundry/runs",
+            "api_plan": "/api/v1/foundry/plan",
+            "api_runs": "/api/v1/foundry/runs",
+        },
+        "safety": _foundry_safety(),
+    }
+    return json_response(200, payload)
+
+
+def _foundry_home_html_response(runtime: Any) -> LocalServiceResponse:
+    response = _foundry_home_response(runtime)
+    html = _simple_local_page(
+        "Foundry",
+        "<p>Local-only unreviewed Preview Index growth. No run starts from this page.</p>"
+        '<p><a href="/foundry/plan">Create a bounded plan</a> · <a href="/foundry/runs">View runs</a></p>',
+    )
+    return html_response(200, html, response.payload)
+
+
+def _foundry_plan_response(runtime: Any, request_context: LocalRequestContext) -> LocalServiceResponse:
+    seed = first_param(request_context.params, "seed", first_param(request_context.params, "q", "manual for Sound Blaster CT1740"))
+    provider = first_param(request_context.params, "provider", "brave")
+    max_seeds = _parse_nonnegative_int(first_param(request_context.params, "max_seeds", ""), default=1, maximum=25) or 1
+    max_queries = _parse_nonnegative_int(first_param(request_context.params, "max_queries", ""), default=3, maximum=100) or 1
+    max_fetches = _parse_nonnegative_int(first_param(request_context.params, "max_fetches", ""), default=3, maximum=200)
+    foundry = _foundry()
+    budget = foundry.SurveyBudget(maximum_seeds=max_seeds, maximum_queries=max_queries, maximum_provider_requests=max_queries, maximum_fetches=max_fetches).bounded()
+    plan = foundry.FoundryService(run_root=_foundry_runs_root(runtime)).plan([seed], providers=[provider], budget=budget, network_enabled=False)
+    payload = {
+        "schema_version": "eureka.foundry_plan_preview_response.v0",
+        "status": "pass",
+        "plan": plan.to_dict(),
+        "plan_preview_makes_network_calls": False,
+        "run_started": False,
+        "operator_token_required_to_run": True,
+        "safety": _foundry_safety(),
+    }
+    return json_response(200, payload)
+
+
+def _foundry_plan_html_response(runtime: Any, request_context: LocalRequestContext) -> LocalServiceResponse:
+    response = _foundry_plan_response(runtime, request_context)
+    plan = response.payload.get("plan") if isinstance(response.payload.get("plan"), Mapping) else {}
+    seeds = plan.get("seed_queries") if isinstance(plan.get("seed_queries"), list) else []
+    seed_rows = "".join(f"<li>{escape(str(item.get('query') or ''))}</li>" for item in seeds if isinstance(item, Mapping))
+    html = _simple_local_page(
+        "Foundry Plan",
+        f"<p>Plan ID: {escape(str(plan.get('plan_id') or ''))}</p><ul>{seed_rows}</ul><p>Preview only. Start requires POST and operator authorization.</p>",
+    )
+    return html_response(200, html, response.payload)
+
+
+def _foundry_runs_response(runtime: Any) -> LocalServiceResponse:
+    runs_root = _foundry_runs_root(runtime)
+    runs = []
+    if runs_root.exists():
+        for item in sorted((path for path in runs_root.iterdir() if path.is_dir()), reverse=True):
+            status = _foundry().FoundryRunStore(runs_root, item.name).status()
+            runs.append({"run_id": item.name, "status": status.get("status"), "checkpoint": status.get("checkpoint", {})})
+    payload = {
+        "schema_version": "eureka.foundry_runs_response.v0",
+        "status": "pass",
+        "run_count": len(runs),
+        "runs": runs,
+        "local_only": True,
+        "reviewed_truth_mutation": False,
+        "public_index_mutation": False,
+    }
+    return json_response(200, payload)
+
+
+def _foundry_runs_html_response(runtime: Any) -> LocalServiceResponse:
+    response = _foundry_runs_response(runtime)
+    rows = "".join(
+        f"<tr><td>{escape(str(item.get('run_id') or ''))}</td><td>{escape(str(item.get('status') or ''))}</td></tr>"
+        for item in response.payload.get("runs") or []
+        if isinstance(item, Mapping)
+    )
+    html = _simple_local_page("Foundry Runs", f"<table><tr><th>Run</th><th>Status</th></tr>{rows}</table>")
+    return html_response(200, html, response.payload)
+
+
+def _foundry_run_response(runtime: Any, run_id: str) -> LocalServiceResponse:
+    payload = _foundry().FoundryRunStore(_foundry_runs_root(runtime), run_id).status()
+    payload.update({"run_id": run_id, "local_only": True, "reviewed_truth_mutation": False, "public_index_mutation": False, "safety": _foundry_safety()})
+    return json_response(200, payload)
+
+
+def _foundry_run_html_response(runtime: Any, run_id: str) -> LocalServiceResponse:
+    response = _foundry_run_response(runtime, run_id)
+    payload = response.payload
+    html = _simple_local_page(
+        "Foundry Run",
+        f"<p>Run ID: {escape(run_id)}</p><p>Status: {escape(str(payload.get('status') or ''))}</p><p>Use POST controls with an operator token to pause, resume, or cancel.</p>",
     )
     return html_response(200, html, response.payload)
 
@@ -1734,6 +1858,53 @@ def _rebuild_html_response(runtime: Any) -> LocalServiceResponse:
     return html_response(200, html, response.payload)
 
 
+def _apply_foundry_mutation_response(runtime: Any, request_context: LocalRequestContext, run_id: str, action: str) -> LocalServiceResponse:
+    runs_root = _foundry_runs_root(runtime)
+    plans_root = _foundry_plans_root(runtime)
+    if action == "run":
+        seed = first_param(request_context.body_params, "seed", first_param(request_context.body_params, "q", "manual for Sound Blaster CT1740"))
+        provider = first_param(request_context.body_params, "provider", "brave")
+        max_seeds = _parse_nonnegative_int(first_param(request_context.body_params, "max_seeds", ""), default=1, maximum=25) or 1
+        max_queries = _parse_nonnegative_int(first_param(request_context.body_params, "max_queries", ""), default=3, maximum=100) or 1
+        max_fetches = _parse_nonnegative_int(first_param(request_context.body_params, "max_fetches", ""), default=3, maximum=200)
+        enable_live = _truthy(first_param(request_context.body_params, "enable_live", ""))
+        foundry = _foundry()
+        budget = foundry.SurveyBudget(maximum_seeds=max_seeds, maximum_queries=max_queries, maximum_provider_requests=max_queries, maximum_fetches=max_fetches).bounded()
+        plan = foundry.FoundryService(run_root=runs_root).plan([seed], providers=[provider], budget=budget, network_enabled=enable_live)
+        plans_root.mkdir(parents=True, exist_ok=True)
+        plan_path = plans_root / f"{plan.plan_id.replace(':', '-')}.json"
+        foundry.write_plan(plan_path, plan)
+        result = foundry.FoundryService(run_root=runs_root).run(plan, enable_live=enable_live).payload
+        _event_store(runtime).record("foundry_started", run_id=str(result.get("run_id") or ""), component="foundry", provider=provider, count=len(plan.seed_queries), status="started")
+        _event_store(runtime).record("foundry_completed", run_id=str(result.get("run_id") or ""), component="foundry", provider=provider, count=int(result.get("preview_document_count") or 0), status=str(result.get("status") or ""))
+        return json_response(
+            200,
+            {
+                "schema_version": "eureka.foundry_run_start_response.v0",
+                "status": "pass" if result.get("status") in {"pass", "disabled"} else "fail",
+                "plan_path": str(plan_path),
+                "result": result,
+                "network_calls_performed": bool(enable_live),
+                "operator_authorized": True,
+                "safety": _foundry_safety(),
+            },
+        )
+    store = _foundry().FoundryRunStore(runs_root, run_id)
+    if action == "pause":
+        payload = store.pause()
+        _event_store(runtime).record("hunt_paused", run_id=run_id, component="foundry", status="paused")
+    elif action == "resume":
+        payload = store.resume()
+        _event_store(runtime).record("hunt_resumed", run_id=run_id, component="foundry", status="running")
+    elif action == "cancel":
+        payload = store.cancel()
+        _event_store(runtime).record("hunt_cancelled", run_id=run_id, component="foundry", status="cancelled")
+    else:
+        return error_response(404, "foundry_action_not_found", "Foundry action is not available.", {"action": action})
+    payload.update({"run_id": run_id, "operator_authorized": True, "safety": _foundry_safety(), "reviewed_truth_mutation": False, "public_index_mutation": False})
+    return json_response(200, payload)
+
+
 def _mutation_response(runtime: Any, request_context: LocalRequestContext, operator_auth_state: Any) -> LocalServiceResponse:
     if request_context.client_scope != "loopback":
         return error_response(
@@ -1762,6 +1933,9 @@ def _mutation_response(runtime: Any, request_context: LocalRequestContext, opera
     explore_mutation = _parse_explore_mutation_path(path)
     if explore_mutation:
         return _apply_explore_mutation_response(runtime, request_context, explore_mutation[0], explore_mutation[1])
+    foundry_mutation = _parse_foundry_mutation_path(path)
+    if foundry_mutation:
+        return _apply_foundry_mutation_response(runtime, request_context, foundry_mutation[0], foundry_mutation[1])
     hunt_mutation = _parse_hunt_mutation_path(path)
     if hunt_mutation:
         if hunt_mutation[1] == "replay-plan":
@@ -2243,6 +2417,31 @@ def _event_store(runtime: Any) -> DiscoveryEventStore:
     return DiscoveryEventStore(path)
 
 
+def _foundry_runs_root(runtime: Any) -> Any:
+    path = getattr(runtime, "eureka_foundry_runs_root", None)
+    if path:
+        return path
+    return __import__("pathlib", fromlist=["Path"]).Path(__import__("tempfile").gettempdir()) / "eureka-foundry-runs"
+
+
+def _foundry_plans_root(runtime: Any) -> Any:
+    path = getattr(runtime, "eureka_foundry_plans_root", None)
+    if path:
+        return path
+    return __import__("pathlib", fromlist=["Path"]).Path(__import__("tempfile").gettempdir()) / "eureka-foundry-plans"
+
+
+def _foundry_safety() -> dict[str, Any]:
+    return {
+        "local_only": True,
+        "unreviewed_preview_index_only": True,
+        "reviewed_truth_mutation": False,
+        "public_index_mutation": False,
+        "automatic_startup": False,
+        "network_calls_only_when_explicitly_started": True,
+    }
+
+
 def _simple_local_page(title: str, body: str) -> str:
     return "\n".join(
         [
@@ -2280,6 +2479,7 @@ def _is_operator_mutation_path(method: str, path: str) -> bool:
     return str(method or "").upper() == "POST" and (
         _parse_explore_mutation_path(path) is not None
         or _parse_hunt_mutation_path(path) is not None
+        or _parse_foundry_mutation_path(path) is not None
         or _parse_need_mutation_path(path) is not None
         or (path.startswith("/api/v1/review/") and path.endswith("/decision"))
         or path in {"/api/v1/promotion-preview", "/api/v1/reviewed-index/refresh-preview"}
@@ -2389,6 +2589,24 @@ def _parse_workbench_live_run_route(path: str) -> tuple[str, str] | None:
         return parts[3], "detail"
     if len(parts) == 5 and parts[:3] == ["api", "v1", "resolution-runs"] and parts[4] in {"events", "lanes", "workunits", "commands"}:
         return parts[3], parts[4]
+    return None
+
+
+def _parse_foundry_run_route(path: str) -> tuple[str, str] | None:
+    parts = [part for part in str(path or "").split("/") if part]
+    if len(parts) == 3 and parts[:2] == ["foundry", "run"]:
+        return parts[2], "detail"
+    if len(parts) == 5 and parts[:4] == ["api", "v1", "foundry", "run"]:
+        return parts[4], "detail"
+    return None
+
+
+def _parse_foundry_mutation_path(path: str) -> tuple[str, str] | None:
+    parts = [part for part in str(path or "").split("/") if part]
+    if parts == ["api", "v1", "foundry", "runs"]:
+        return "", "run"
+    if len(parts) == 6 and parts[:4] == ["api", "v1", "foundry", "run"] and parts[5] in {"pause", "resume", "cancel"}:
+        return parts[4], parts[5]
     return None
 
 
@@ -2700,6 +2918,10 @@ def _network() -> Any:
 
 def _search_hunt() -> Any:
     return __import__("runtime.search_hunt", fromlist=["build_hunt_exhaustion_report", "build_background_hunt_plan"])
+
+
+def _foundry() -> Any:
+    return __import__("runtime.search.foundry", fromlist=["FoundryService", "FoundryRunStore", "SurveyBudget", "write_plan"])
 
 
 def _search_need_runtime() -> Any:
