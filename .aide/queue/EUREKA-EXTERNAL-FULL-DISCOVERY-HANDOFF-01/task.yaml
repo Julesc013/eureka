@@ -1,7 +1,7 @@
 schema_version: aide.task.v0
 id: EUREKA-EXTERNAL-FULL-DISCOVERY-HANDOFF-01
 title: Prepare external full discovery handoff
-status: planned
+status: WAITING_FOR_EXTERNAL_FULL_DISCOVERY
 task_class: product_hardening_stage
 parent_track: EUREKA-REAL-LIVE-SEARCH-HUNT-00
 predecessor: EUREKA-HUMAN-ACCEPTANCE-REHEARSAL-01
@@ -9,4 +9,19 @@ successor: EUREKA-LIVE-PRODUCT-HARDENING-AUDIT-01
 purpose: >-
   Write a compact external full unittest discovery handoff and leave full
   discovery to the operator or CI outside the AI session.
-
+evidence:
+  implementation:
+    - external_full_discovery_handoff.json
+  tests:
+    - tests/operations/test_external_full_discovery_handoff_wave03.py
+  notes:
+    - Full unittest discovery was not run in-session.
+    - The handoff directs output to ../eureka-test-runs/live-product-hardening-wave-03 outside the repo.
+    - The operator should return compact summary artifacts only.
+validation:
+  - python -m unittest tests.operations.test_external_full_discovery_handoff_wave03 -v
+  - python -m json.tool external_full_discovery_handoff.json
+non_goals:
+  - no full discovery execution inside AI session
+  - no raw log pasteback
+  - no repo-local full discovery output

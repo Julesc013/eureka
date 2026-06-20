@@ -1,8 +1,8 @@
 {
   "schema_version": "eureka.product_capability_state.v0",
-  "tested_commit": "13422337",
+  "tested_commit": "f5e2a8ec",
   "generated_at": "2026-06-21T00:00:00Z",
-  "current_recommended_task": "EUREKA-EXTERNAL-FULL-DISCOVERY-HANDOFF-01",
+  "current_recommended_task": "EUREKA-LIVE-PRODUCT-HARDENING-AUDIT-01",
   "capabilities": {
     "live_search": {
       "implementation_state": "implemented",
@@ -179,6 +179,23 @@
       "known_limitations": [
         "Automated checks cannot mark human product usefulness accepted.",
         "The decision template is blank until the operator records a verdict."
+      ]
+    },
+    "external_full_discovery": {
+      "implementation_state": "handoff_prepared",
+      "activation_state": "external_operator_or_ci_only",
+      "validation_state": "waiting_for_external_full_discovery",
+      "live_canary_state": "waiting_for_operator_live_canary",
+      "human_acceptance_state": "not_started",
+      "public_status": "not_public",
+      "evidence_refs": [
+        ".aide/queue/EUREKA-EXTERNAL-FULL-DISCOVERY-HANDOFF-01/task.yaml",
+        "external_full_discovery_handoff.json",
+        "tests/operations/test_external_full_discovery_handoff_wave03.py"
+      ],
+      "known_limitations": [
+        "Full unittest discovery was not run in-session.",
+        "Resume only after an operator or CI returns full_unittest_summary.json."
       ]
     },
     "public_service": {
