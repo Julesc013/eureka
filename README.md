@@ -16,9 +16,13 @@ accepted truth.
 Eureka is currently a local-first Python reference backend and prototype. The
 active product task is real live Search/Hunt: arbitrary live query, immediate
 transient web leads, deeper Hunt, safe inspection, durable local Preview Index,
-restart, and local search. The first reset/foundation work exists, but safe
-fetch, durable live indexing, and real Hunt remain incomplete. Eureka is not
-deployed, not publicly launched, and does not claim production readiness.
+restart, and local search. The deterministic implementation foundations are in
+place, including safe fetch, local SQLite/FTS Preview Indexing, Hunt, UX, second
+provider conformance, Foundry v0, and audit evidence. Real live acceptance still
+waits on an operator-run Brave canary, external full discovery, and separate
+human usefulness approval. Eureka is not deployed, not publicly launched, and
+does not claim production readiness. Current volatile capability state is
+summarized in `control/inventory/product/capability_state.json`.
 
 ## Why Eureka Exists
 
@@ -73,7 +77,7 @@ Current branch details move faster than a public README. Use
 | --- | --- | --- | --- |
 | Source inventory and connectors | Source registry, source-family model, governed metadata/source-wave foundations | Not a crawler; public live fanout and downloads are disabled by default | [Source Family Model](docs/architecture/SOURCE_FAMILY_MODEL.md), [Source Wave Runbook](docs/operations/SOURCE_WAVE_RUNBOOK.md) |
 | Query planning and resolution | Local query planning, resolution runs, lanes, candidates, absence, and review handoffs | Current behavior is bounded by fixtures, local indexes, and accepted runtime slices | [Temporal Object Resolver](docs/architecture/TEMPORAL_OBJECT_RESOLVER.md), [Local Product Loop](docs/architecture/LOCAL_PRODUCT_LOOP.md) |
-| Search and local index | Local search plus experimental `--live` provider display foundations | Safe fetch, durable live indexing, restart retrieval proof, and production ranking remain incomplete | [Status](docs/STATUS.md), [Test and Eval Lanes](docs/operations/TEST_AND_EVAL_LANES.md) |
+| Search and local index | Local search plus experimental `--live` provider display, safe fetch, unreviewed SQLite/FTS indexing, restart retrieval harness, and deterministic Hunt foundations | Real provider acceptance and human usefulness remain gated; production ranking is not claimed | [Status](docs/STATUS.md), [Test and Eval Lanes](docs/operations/TEST_AND_EVAL_LANES.md) |
 | Evidence and provenance | Evidence summaries, source observations, absence reports, promotion previews, and review gates | Candidates and observations are not accepted truth | [Doctrine](docs/vision/DOCTRINE.md), [Public Alpha Launch Gates](docs/reference/PUBLIC_ALPHA_LAUNCH_GATES.md) |
 | Representations and archive inspection | Representation/access-path summaries plus bounded package-member inspection foundations | Broad extraction, arbitrary local-path access, and executable payload handling remain disabled or gated | [Data Model](docs/architecture/DATA_MODEL.md), [Action Download/Install Policy](docs/reference/ACTION_DOWNLOAD_INSTALL_POLICY.md) |
 | Compatibility and action routing | Compatibility hints, action-plan foundations, local export/store flows, and local apply gates | No install, execute, package-manager, marketplace, or safety guarantee | [Local Apply Gate Runbook](docs/operations/LOCAL_APPLY_GATE_RUNBOOK.md), [Capability Profile](docs/reference/CAPABILITY_PROFILE.md) |
@@ -109,8 +113,9 @@ python scripts/eureka.py search "an arbitrary unseen query" --live --json
 python scripts/eureka.py serve --live
 ```
 
-Live Hunt currently performs provider query expansion only. Safe page fetching,
-extraction, and durable live indexing are later milestones.
+Live Hunt can run the bounded deterministic fetch/index path when explicitly
+enabled. The real end-to-end canary must still be run by the operator with a
+local Brave key before acceptance is claimed.
 
 Run focused checks:
 

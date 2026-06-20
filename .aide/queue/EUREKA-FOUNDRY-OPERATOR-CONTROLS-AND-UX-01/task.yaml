@@ -1,0 +1,13 @@
+schema_version: aide.task.v0
+id: EUREKA-FOUNDRY-OPERATOR-CONTROLS-AND-UX-01
+title: Add Foundry operator controls and local UX
+status: planned
+task_class: product_hardening_stage
+parent_track: EUREKA-REAL-LIVE-SEARCH-HUNT-00
+predecessor: EUREKA-DISCOVERY-PERFORMANCE-CAPACITY-BASELINE-01
+successor: EUREKA-PROVIDER-POLICY-REGISTRY-01
+purpose: >-
+  Expose disabled-by-default Foundry planning, explicit run controls,
+  pause/resume/cancel, progress, scorecards, observations, and exports through
+  local operator-only routes.
+

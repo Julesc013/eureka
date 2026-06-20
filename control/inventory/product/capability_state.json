@@ -1,0 +1,157 @@
+{
+  "schema_version": "eureka.product_capability_state.v0",
+  "tested_commit": "b06c75f4",
+  "generated_at": "2026-06-20T19:31:51Z",
+  "current_recommended_task": "OPERATOR-LIVE-CANARY-00",
+  "capabilities": {
+    "live_search": {
+      "implementation_state": "implemented",
+      "activation_state": "explicit_local_live_only",
+      "validation_state": "deterministic_pass",
+      "live_canary_state": "waiting_for_operator_live_canary",
+      "human_acceptance_state": "not_started",
+      "public_status": "public_live_fanout_disabled",
+      "evidence_refs": [
+        ".aide/queue/EUREKA-REAL-LIVE-SEARCH-HUNT-ACCEPTANCE-01/task.yaml",
+        "scripts/check_live_search_hunt_acceptance.py",
+        "docs/operations/REAL_LIVE_SEARCH_HUNT_ACCEPTANCE.md"
+      ],
+      "known_limitations": [
+        "Real Brave canary requires a locally configured key.",
+        "Provider SearchLeads remain transient and must not be persisted as provider result payloads."
+      ]
+    },
+    "safe_fetch": {
+      "implementation_state": "implemented",
+      "activation_state": "bounded_selected_urls_only",
+      "validation_state": "deterministic_pass",
+      "live_canary_state": "waiting_for_operator_live_canary",
+      "human_acceptance_state": "not_started",
+      "public_status": "not_public",
+      "evidence_refs": [
+        ".aide/queue/EUREKA-SAFE-WEB-FETCH-AND-OBSERVATION-01/task.yaml",
+        "runtime/connectors/web/http_fetcher.py",
+        "tests/runtime/test_safe_web_fetcher.py"
+      ],
+      "known_limitations": [
+        "No unbounded crawling.",
+        "No JavaScript execution or executable download behavior."
+      ]
+    },
+    "preview_index": {
+      "implementation_state": "implemented",
+      "activation_state": "local_sqlite_fts",
+      "validation_state": "deterministic_pass",
+      "live_canary_state": "waiting_for_operator_live_canary",
+      "human_acceptance_state": "not_started",
+      "public_status": "private_preview_only",
+      "evidence_refs": [
+        ".aide/queue/EUREKA-PERSISTENT-PREVIEW-INDEX-01/task.yaml",
+        "runtime/index/preview/store.py",
+        "tests/runtime/test_sqlite_preview_index_store.py"
+      ],
+      "known_limitations": [
+        "Operational recovery, backup, and performance baselines are Wave 03 hardening work.",
+        "Preview documents remain unreviewed."
+      ]
+    },
+    "hunt": {
+      "implementation_state": "implemented",
+      "activation_state": "explicit_live_or_deterministic_test",
+      "validation_state": "deterministic_pass",
+      "live_canary_state": "waiting_for_operator_live_canary",
+      "human_acceptance_state": "not_started",
+      "public_status": "not_public",
+      "evidence_refs": [
+        ".aide/queue/EUREKA-REAL-HUNT-ENGINE-01/task.yaml",
+        "runtime/search/hunt_engine.py",
+        "tests/runtime/test_hunt_engine.py"
+      ],
+      "known_limitations": [
+        "Deterministic Hunt is not an agentic planner.",
+        "Real usefulness still requires operator live canary and human acceptance."
+      ]
+    },
+    "second_provider": {
+      "implementation_state": "implemented",
+      "activation_state": "live_acceptance_gated",
+      "validation_state": "deterministic_pass",
+      "live_canary_state": "waiting_for_live_acceptance",
+      "human_acceptance_state": "not_started",
+      "public_status": "not_public",
+      "evidence_refs": [
+        ".aide/queue/EUREKA-SECOND-PROVIDER-CONFORMANCE-01/task.yaml",
+        "runtime/search/providers.py",
+        "tests/runtime/test_provider_conformance.py"
+      ],
+      "known_limitations": [
+        "Internet Archive metadata live behavior remains bounded and policy-gated.",
+        "Provider metadata is unreviewed and must not be treated as truth."
+      ]
+    },
+    "foundry": {
+      "implementation_state": "implemented",
+      "activation_state": "disabled_by_default",
+      "validation_state": "deterministic_pass",
+      "live_canary_state": "waiting_for_live_acceptance",
+      "human_acceptance_state": "not_started",
+      "public_status": "not_public",
+      "evidence_refs": [
+        ".aide/queue/EUREKA-AUTONOMOUS-INDEX-FOUNDRY-01/task.yaml",
+        "runtime/search/foundry.py",
+        "tests/runtime/test_foundry_service.py"
+      ],
+      "known_limitations": [
+        "No automatic startup or daemon.",
+        "Explicit local operator command required for network-enabled runs.",
+        "No reviewed truth creation."
+      ]
+    },
+    "human_acceptance": {
+      "implementation_state": "not_started",
+      "activation_state": "blocked_by_operator_live_canary",
+      "validation_state": "waiting",
+      "live_canary_state": "waiting_for_operator_live_canary",
+      "human_acceptance_state": "not_started",
+      "public_status": "not_public",
+      "evidence_refs": [
+        ".aide/queue/HUMAN-END-TO-END-ACCEPTANCE-00/task.yaml"
+      ],
+      "known_limitations": [
+        "Automated checks cannot mark human product usefulness accepted."
+      ]
+    },
+    "public_service": {
+      "implementation_state": "read_only_foundations_present",
+      "activation_state": "disabled",
+      "validation_state": "not_current_priority",
+      "live_canary_state": "not_applicable",
+      "human_acceptance_state": "not_started",
+      "public_status": "not_launched",
+      "evidence_refs": [
+        "docs/reference/PUBLIC_ALPHA_LAUNCH_GATES.md"
+      ],
+      "known_limitations": [
+        "No tunnel, public exposure, deployment, or launch readiness is claimed."
+      ]
+    }
+  },
+  "external_gates": [
+    "operator Brave key and real live Search/Hunt canary",
+    "human end-to-end product acceptance",
+    "external full unittest discovery compact summary"
+  ],
+  "non_claims": [
+    "No public launch.",
+    "No production readiness.",
+    "No human acceptance.",
+    "No public live fanout.",
+    "No reviewed/master/public truth mutation.",
+    "No agentic Hunt Planner implementation."
+  ],
+  "evidence_refs": [
+    ".aide/queue/index.yaml",
+    ".aide/queue/EUREKA-REAL-LIVE-SEARCH-HUNT-00/task.yaml",
+    "control/audits/e2e_reference_system/live_discovery_stack_audit_v1/AUDIT_REPORT.md"
+  ]
+}

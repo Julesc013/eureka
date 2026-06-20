@@ -1,0 +1,12 @@
+schema_version: aide.task.v0
+id: EUREKA-HUMAN-ACCEPTANCE-REHEARSAL-01
+title: Prepare human live-search acceptance rehearsal
+status: planned
+task_class: product_hardening_stage
+parent_track: EUREKA-REAL-LIVE-SEARCH-HUNT-00
+predecessor: EUREKA-OPERATOR-LIVE-CANARY-CLOSEOUT-01
+successor: EUREKA-EXTERNAL-FULL-DISCOVERY-HANDOFF-01
+purpose: >-
+  Prepare a one-page product-facing human acceptance runbook and blank decision
+  artifact without filling in or automating the human verdict.
+

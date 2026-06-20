@@ -19,9 +19,19 @@ arbitrary live query
 -> local search
 ```
 
-The first reset/foundation work is present, but Eureka is not yet a functional
-end-to-end search engine. Safe fetch, extraction, durable live indexing, real
-budgeted Hunt, and unseen-query human acceptance remain incomplete.
+The deterministic reset/foundation work is present: provider-neutral live
+search, transient lead retention, SSRF/robots-aware safe fetch, local SQLite/FTS
+Preview Indexing, restart retrieval harness, real budgeted Hunt foundations,
+live UX foundations, second-provider conformance, disabled-by-default Foundry
+v0, and a live-discovery stack audit. Eureka is still not accepted as a real
+end-to-end search product until an operator-run live Brave canary proves the
+full sequence with real network results and a separate human usefulness verdict
+is recorded.
+
+The volatile capability-state manifest is
+`control/inventory/product/capability_state.json`; README, ROADMAP, STATUS and
+AIDE memory should agree with that manifest instead of becoming independent
+status ledgers.
 
 Eureka has not been deployed, has not launched publicly, and does not claim
 production readiness.
@@ -47,6 +57,11 @@ production readiness.
 | CLI/local web/local HTTP API | Present as local surfaces |
 | Live search provider contract | Provider-neutral contract and Brave adapter present |
 | Local `--live` search display | Experimental, bounded, operator opt-in, local only |
+| Safe fetch and SourceObservation | Implemented for selected bounded URLs with policy gates |
+| SQLite/FTS Preview Index | Implemented for local unreviewed SourceObservations |
+| Deterministic Hunt engine | Implemented, bounded, non-agentic |
+| Second provider | Internet Archive metadata conformance implemented and live-acceptance-gated |
+| Foundry v0 | Implemented, local, disabled by default |
 | Synthetic behavior cleanup | Normal search no longer silently substitutes hard-query fixtures; demo bootstrap is explicit |
 | Public-alpha routes | Read-only foundations present but not the current priority |
 | Snapshot/relay | Read-only snapshot-backed foundation present |
@@ -56,10 +71,12 @@ production readiness.
 
 | Area | Current gate |
 | --- | --- |
-| Human acceptance | Blocked until all six live Search/Hunt milestones pass |
-| Safe page fetching | Incomplete; must enforce DNS, redirect, SSRF, robots, MIME, size, timeout, and concurrency policy |
-| Durable live indexing | Incomplete; must persist independently fetched SourceObservations, not provider Search Results |
-| Real Hunt | Incomplete; current live Hunt is query expansion/provider search only |
+| Operator live canary | Waiting for local Brave key and explicit operator run |
+| Human acceptance | Blocked until the real live canary passes and the operator gives a separate product verdict |
+| Safe page fetching | Implemented deterministically; real live proof remains canary-gated |
+| Durable live indexing | Implemented for independently fetched SourceObservations; real live proof remains canary-gated |
+| Real Hunt | Implemented deterministically; real provider usefulness remains canary/human-gated |
+| Foundry network runs | Disabled by default and gated on explicit local operator commands |
 | Local provider calls | Allowed only through explicit local `--live` modes with operator credentials and budgets |
 | Public live fanout | Disabled |
 | Public alpha launch | Frozen; requires explicit manual approval and current validation evidence after the local product works |
@@ -78,9 +95,9 @@ Eureka does not currently claim:
 - deployed public service
 - public launch
 - production readiness
-- completed live Search/Hunt product
+- completed live Search/Hunt product acceptance
 - safe broad web crawling
-- durable indexing of live web discoveries
+- accepted real live canary evidence without the operator-run canary
 - full Archive.org search
 - broad corpus coverage
 - rights clearance or malware safety

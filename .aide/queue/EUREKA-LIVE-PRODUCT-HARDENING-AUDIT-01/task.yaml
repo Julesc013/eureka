@@ -1,0 +1,13 @@
+schema_version: aide.task.v0
+id: EUREKA-LIVE-PRODUCT-HARDENING-AUDIT-01
+title: Audit the hardened local live product
+status: planned
+task_class: product_hardening_audit
+parent_track: EUREKA-REAL-LIVE-SEARCH-HUNT-00
+predecessor: EUREKA-EXTERNAL-FULL-DISCOVERY-HANDOFF-01
+successor: HUMAN-END-TO-END-ACCEPTANCE-00
+purpose: >-
+  Audit architecture, security, retention, recovery, observability, Foundry
+  controls, provider policy, portability, performance, docs agreement, and
+  public-read-only isolation before human acceptance or agentic preflight.
+

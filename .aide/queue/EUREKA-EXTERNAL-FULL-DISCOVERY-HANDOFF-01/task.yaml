@@ -1,0 +1,12 @@
+schema_version: aide.task.v0
+id: EUREKA-EXTERNAL-FULL-DISCOVERY-HANDOFF-01
+title: Prepare external full discovery handoff
+status: planned
+task_class: product_hardening_stage
+parent_track: EUREKA-REAL-LIVE-SEARCH-HUNT-00
+predecessor: EUREKA-HUMAN-ACCEPTANCE-REHEARSAL-01
+successor: EUREKA-LIVE-PRODUCT-HARDENING-AUDIT-01
+purpose: >-
+  Write a compact external full unittest discovery handoff and leave full
+  discovery to the operator or CI outside the AI session.
+

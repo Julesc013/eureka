@@ -1,0 +1,13 @@
+schema_version: aide.task.v0
+id: EUREKA-PORTABLE-LOCAL-RELEASE-BUNDLE-01
+title: Package local Eureka preview bundle
+status: planned
+task_class: product_hardening_stage
+parent_track: EUREKA-REAL-LIVE-SEARCH-HUNT-00
+predecessor: EUREKA-PROVIDER-POLICY-REGISTRY-01
+successor: EUREKA-OPERATOR-LIVE-CANARY-CLOSEOUT-01
+purpose: >-
+  Provide a reproducible local-only preview bundle manifest, launch helpers,
+  checksums, version output, and clean-instance rehearsal without secrets or
+  private local data.
+

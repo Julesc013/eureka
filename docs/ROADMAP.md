@@ -19,7 +19,10 @@ arbitrary live query
 -> local search
 ```
 
-Human acceptance remains blocked until all six live Search/Hunt milestones pass.
+The six deterministic implementation milestones are present, but automated
+live acceptance is still blocked on `OPERATOR-LIVE-CANARY-00`, and human
+product acceptance remains a separate operator verdict. The current internal
+hardening wave is `EUREKA-LIVE-PRODUCT-HARDENING-AND-ACCEPTANCE-WAVE-03`.
 The existing public-alpha launch-candidate work is historical foundation, not
 the current launch priority.
 
@@ -31,50 +34,45 @@ the current launch priority.
 - Provider-neutral live search contract and Brave adapter present.
 - Normal search no longer silently substitutes hard-query fixtures.
 - Portable bootstrap defaults to no demo data.
+- Safe fetch, local SQLite/FTS Preview Index, deterministic Hunt, live UX,
+  second-provider conformance, disabled Foundry v0, and live-discovery audit
+  foundations are implemented deterministically.
 - Local `--live` provider calls are experimental, bounded, operator opt-in, and local only.
 - Public-alpha read-only routes and snapshot/relay foundations remain present.
-- No deployment, public launch, production readiness, public mutation, public live fanout, downloads, uploads, broad extraction, model calls, safe fetch, durable live indexing, or real Hunt completion is claimed.
+- No deployment, public launch, production readiness, public mutation, public
+  live fanout, downloads, uploads, broad extraction, model calls, accepted live
+  canary, human usefulness approval, or production scale is claimed.
 
 ## Near-Term Sequence
 
-### 1. Retention And State Hotfix
+### 1. Wave 03 Product Hardening
 
-Keep provider SearchLeads transient. Persist no Brave URLs, snippets, ranks, raw
-responses, or credentials in Hunt summaries or indexes. Route CLI and HTTP
-provider calls through one shared live service. Keep docs and AIDE memory aligned
-with the local `--live` product objective.
+Finish safe internal work before the operator canary: capability-state
+reconciliation, observability, diagnostics, recovery, backup, migration,
+performance baselines, Foundry operator controls, declarative provider policy,
+portable local bundle rehearsal, canary closeout, human rehearsal, external full
+discovery handoff, and a hardening audit.
 
-### 2. Safe Web Fetching
+### 2. Operator Live Canary
 
-Build an independent fetch pipeline for selected URLs with HTTP/HTTPS-only
-requests, DNS and redirect revalidation, private-network blocking, robots
-enforcement, MIME and size limits, timeouts, and honest fetch errors.
+Run the bounded real canary with a local Brave key. It must prove real live
+results, Hunt, policy-approved independent fetch, SourceObservation,
+PreviewDocument, restart, local retrieval, no provider-result persistence, and
+no reviewed/public mutation.
 
-### 3. Durable SQLite/FTS Preview Index
+### 3. Human Product Acceptance
 
-Add an operational Preview Index store for independently fetched
-SourceObservations while retaining immutable JSONL generation/export mechanics
-for audit, replay, rollback, and distribution.
+After the live canary passes, the operator tests the actual product with unseen
+queries and records an explicit human verdict. Automation must not fill this in.
 
-### 4. Real Hunt Engine
+### 4. External Full Discovery
 
-Expand Hunt from query variants into a budgeted loop: plan, provider search,
-display transient leads, select fetch frontier, safe fetch, extract, dedupe,
-index, follow links, and stop on budget, exhaustion, pause, or cancellation.
+Full unittest discovery remains an operator/CI lane outside normal AI sessions.
 
-### 5. Usable Live Product UI
+### 5. Agentic Planner Preflight
 
-Keep normal pages focused on search, Hunt, result inspection, provenance,
-retrieval/indexing state, and useful excerpts. Avoid queue terminology, review
-packet language, raw JSON, and architecture exposition on the normal product
-screen.
-
-### 6. Unseen-Query Acceptance
-
-Acceptance resumes only when an operator-chosen unseen query proves live
-results, deeper Hunt, independent fetch, local unreviewed indexing, restart
-retrieval, honest provider failure, no fixture substitution, no review
-obstruction, no provider-result persistence, and no reviewed/public mutation.
+Only after real live canary, human acceptance, external full discovery, and a
+clean hardening audit should an agentic Hunt Planner preflight be recommended.
 
 ## Later Tracks
 

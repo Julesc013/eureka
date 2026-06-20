@@ -6,5 +6,7 @@
 - Keep `PreviewDocument` and Preview Index records unreviewed but immediately useful; review gates only canonical `ReviewedRecord` creation and reviewed/public index mutation.
 - Use `runtime/search/live_service.py` as the shared provider invocation and transient lead orchestration layer for CLI, HTTP, Workbench, and later clients.
 - Keep public fanout and public exposure disabled while allowing bounded local `--live` provider calls under explicit operator opt-in.
-- Preserve immutable Preview Index generation/export mechanics for audit, replay, rollback, and distribution; add SQLite/FTS later for operational interactive search and persistence.
-- Do not start second provider families, agentic planners, public launch, renderer expansion, native/mobile work, or broad AIDE cleanup until the live local product path works.
+- Preserve immutable Preview Index generation/export mechanics for audit, replay, rollback, and distribution; SQLite/FTS is now the operational local Preview Index for unreviewed SourceObservations.
+- Treat Internet Archive metadata as the implemented second provider conformance path, but keep it live-acceptance-gated and unreviewed.
+- Treat Foundry v0 as implemented, local, and disabled by default. It may grow only the unreviewed Preview Index through explicit operator commands and may not create reviewed truth.
+- Do not start agentic planners, public launch, renderer expansion, native/mobile work, or broad AIDE cleanup until the live canary, human acceptance, external full discovery, and hardening audit gates pass.

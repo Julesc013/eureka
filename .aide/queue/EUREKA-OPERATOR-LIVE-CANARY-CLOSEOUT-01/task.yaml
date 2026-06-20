@@ -1,0 +1,13 @@
+schema_version: aide.task.v0
+id: EUREKA-OPERATOR-LIVE-CANARY-CLOSEOUT-01
+title: Close the operator live canary workflow
+status: planned
+task_class: product_hardening_stage
+parent_track: EUREKA-REAL-LIVE-SEARCH-HUNT-00
+predecessor: EUREKA-PORTABLE-LOCAL-RELEASE-BUNDLE-01
+successor: EUREKA-HUMAN-ACCEPTANCE-REHEARSAL-01
+purpose: >-
+  Add safe canary preflight, sanitized aggregate evidence schema, and closeout
+  workflow while keeping the real canary waiting unless a local key is present
+  and the operator runs it.
+

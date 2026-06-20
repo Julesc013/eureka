@@ -1,0 +1,12 @@
+schema_version: aide.task.v0
+id: EUREKA-INDEX-RECOVERY-MIGRATION-AND-BACKUP-01
+title: Add Preview Index recovery, migration, and backup
+status: planned
+task_class: product_hardening_stage
+parent_track: EUREKA-REAL-LIVE-SEARCH-HUNT-00
+predecessor: EUREKA-DISCOVERY-OBSERVABILITY-AND-DIAGNOSTICS-01
+successor: EUREKA-DISCOVERY-PERFORMANCE-CAPACITY-BASELINE-01
+purpose: >-
+  Harden SQLite Preview Index reliability with explicit migrations, integrity
+  checks, backup, restore, and safe rebuild proof.
+

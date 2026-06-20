@@ -1,0 +1,12 @@
+schema_version: aide.task.v0
+id: EUREKA-DISCOVERY-PERFORMANCE-CAPACITY-BASELINE-01
+title: Add local discovery performance and capacity baseline
+status: planned
+task_class: product_hardening_stage
+parent_track: EUREKA-REAL-LIVE-SEARCH-HUNT-00
+predecessor: EUREKA-INDEX-RECOVERY-MIGRATION-AND-BACKUP-01
+successor: EUREKA-FOUNDRY-OPERATOR-CONTROLS-AND-UX-01
+purpose: >-
+  Measure deterministic local Preview Index and Foundry hot paths without
+  making production-scale claims.
+

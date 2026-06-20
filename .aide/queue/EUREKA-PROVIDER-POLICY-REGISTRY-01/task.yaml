@@ -1,0 +1,12 @@
+schema_version: aide.task.v0
+id: EUREKA-PROVIDER-POLICY-REGISTRY-01
+title: Govern discovery providers declaratively
+status: planned
+task_class: product_hardening_stage
+parent_track: EUREKA-REAL-LIVE-SEARCH-HUNT-00
+predecessor: EUREKA-FOUNDRY-OPERATOR-CONTROLS-AND-UX-01
+successor: EUREKA-PORTABLE-LOCAL-RELEASE-BUNDLE-01
+purpose: >-
+  Move provider capability, retention, execution, and budget policy into a
+  governed declarative registry consumed by runtime provider selection.
+

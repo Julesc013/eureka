@@ -1,0 +1,25 @@
+schema_version: aide.task.v0
+id: EUREKA-LIVE-PRODUCT-STATE-RECONCILIATION-01
+title: Reconcile live product capability state
+status: pass
+task_class: product_hardening_stage
+parent_track: EUREKA-REAL-LIVE-SEARCH-HUNT-00
+predecessor: EUREKA-AUTONOMOUS-INDEX-FOUNDRY-01
+successor: EUREKA-DISCOVERY-OBSERVABILITY-AND-DIAGNOSTICS-01
+purpose: >-
+  Regenerate the active task packet for Wave 03, create the hardening task
+  chain, and make docs/AIDE memory agree with a single capability-state
+  manifest while preserving the operator live canary gate.
+acceptance:
+  - latest task packet permits the Wave 03 product paths
+  - queue and task packets agree about OPERATOR-LIVE-CANARY-00 as the external gate
+  - capability-state manifest exists under control/inventory/product
+  - README, STATUS, ROADMAP, and AIDE memory no longer contradict the manifest
+non_goals:
+  - no runtime behavior change in this stage
+  - no live canary acceptance claim
+  - no public launch or agentic planner work
+validation:
+  - python -m json.tool control/inventory/product/capability_state.json
+  - python scripts/check_generated_artifact_cleanliness.py --check --json
+  - git diff --check

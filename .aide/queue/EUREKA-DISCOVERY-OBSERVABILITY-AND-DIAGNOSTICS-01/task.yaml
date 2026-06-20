@@ -1,0 +1,13 @@
+schema_version: aide.task.v0
+id: EUREKA-DISCOVERY-OBSERVABILITY-AND-DIAGNOSTICS-01
+title: Add local discovery observability and diagnostics
+status: planned
+task_class: product_hardening_stage
+parent_track: EUREKA-REAL-LIVE-SEARCH-HUNT-00
+predecessor: EUREKA-LIVE-PRODUCT-STATE-RECONCILIATION-01
+successor: EUREKA-INDEX-RECOVERY-MIGRATION-AND-BACKUP-01
+purpose: >-
+  Make Search, Hunt, Fetch, Preview Index, and Foundry behavior inspectable
+  through redacted local events, metrics, diagnostics commands, and diagnostic
+  export bundles.
+
