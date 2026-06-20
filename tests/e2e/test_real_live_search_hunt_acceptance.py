@@ -9,7 +9,18 @@ import unittest
 class RealLiveSearchHuntAcceptanceTests(unittest.TestCase):
     def test_deterministic_acceptance_harness_passes_without_live_key(self) -> None:
         completed = subprocess.run(
-            [sys.executable, "scripts/check_live_search_hunt_acceptance.py", "--json"],
+            [
+                sys.executable,
+                "scripts/check_live_search_hunt_acceptance.py",
+                "--live-canary",
+                "--query",
+                "unit test unseen query",
+                "--max-queries",
+                "3",
+                "--max-fetches",
+                "3",
+                "--json",
+            ],
             text=True,
             capture_output=True,
             check=False,
@@ -28,6 +39,16 @@ class RealLiveSearchHuntAcceptanceTests(unittest.TestCase):
         self.assertFalse(payload["provider_result_payload_persisted"])
         self.assertFalse(payload["reviewed_master_mutation"])
         self.assertFalse(payload["public_index_mutation"])
+        self.assertIn(payload["live_canary"]["status"], {"waiting", "pass", "fail"})
+        if payload["live_canary"]["status"] == "pass":
+            self.assertEqual("pass", payload["checks"][-1]["status"])
+            self.assertGreaterEqual(payload["live_canary"]["fetch_attempt_count"], 1)
+            self.assertGreaterEqual(payload["live_canary"]["pages_fetched"], 1)
+            self.assertGreaterEqual(payload["live_canary"]["observations_created"], 1)
+            self.assertGreaterEqual(payload["live_canary"]["documents_indexed"], 1)
+            self.assertGreaterEqual(payload["live_canary"]["restart_local_search_hits"], 1)
+        else:
+            self.assertEqual("waiting", payload["checks"][-1]["status"])
 
 
 if __name__ == "__main__":

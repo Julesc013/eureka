@@ -1,7 +1,7 @@
 schema_version: aide.task.v0
 id: EUREKA-REAL-LIVE-SEARCH-HUNT-ACCEPTANCE-01
 title: Run unseen-query acceptance for real live Search and Hunt
-status: WAITING_FOR_OPERATOR_LIVE_CANARY
+status: IMPLEMENTED_WAITING_FOR_OPERATOR_LIVE_CANARY
 task_class: acceptance_gate
 parent_track: EUREKA-REAL-LIVE-SEARCH-HUNT-00
 predecessor: EUREKA-LIVE-SEARCH-HUNT-UX-01
@@ -12,16 +12,18 @@ purpose: >-
   no fixtures, no review obstruction, no provider-result persistence, and no
   reviewed/public mutation are proven with unseen queries.
 evidence:
-  subject: "test(e2e): add real Search and Hunt acceptance"
+  subject: "test(e2e): strengthen real live Hunt canary"
   deterministic_status: pass
   live_canary_status: WAITING_FOR_OPERATOR_LIVE_CANARY
   handoff: docs/reference/live_search_hunt_acceptance_canary_handoff.json
+  runbook: docs/operations/REAL_LIVE_SEARCH_HUNT_ACCEPTANCE.md
   notes:
     - Deterministic acceptance harness proves fixture-free display, safe fetch, SourceObservation creation, SQLite Preview Index insertion, restart retrieval, no-provider honesty, no provider-result payload persistence, and no reviewed/public mutation.
+    - The optional --live-canary path now requires a real provider, real HuntEngine run, SafeHTTPFetcher, SourceObservation creation, SQLite Preview Index insertion, store close/reopen, and restart local-search retrieval.
     - Local environment did not contain BRAVE_SEARCH_API_KEY or BRAVE_API_KEY, so the real Brave canary was not run.
     - This task cannot be marked pass until the operator live canary succeeds.
 validation:
-  - python scripts/check_live_search_hunt_acceptance.py --json
+  - python scripts/check_live_search_hunt_acceptance.py --live-canary --query "unit test unseen query" --max-queries 3 --max-fetches 3 --json
   - python -m unittest tests.e2e.test_real_live_search_hunt_acceptance -v
   - python -m py_compile scripts/check_live_search_hunt_acceptance.py tests/e2e/test_real_live_search_hunt_acceptance.py
 non_goals:

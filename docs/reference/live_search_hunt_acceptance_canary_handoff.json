@@ -5,7 +5,7 @@
   "reason": "BRAVE_SEARCH_API_KEY/BRAVE_API_KEY was not configured in the local environment during deterministic acceptance validation.",
   "deterministic_acceptance": {
     "status": "pass",
-    "command": "python scripts/check_live_search_hunt_acceptance.py --json",
+    "command": "python scripts/check_live_search_hunt_acceptance.py --live-canary --query \"unit test unseen query\" --max-queries 3 --max-fetches 3 --json",
     "proved": [
       "fixture-free normal mode",
       "transient live lead display with a contract fake provider",
@@ -25,11 +25,25 @@
       "BRAVE_API_KEY"
     ],
     "commands": [
-      "python scripts/check_live_search_hunt_acceptance.py --live-canary --json",
+      "python scripts/check_live_search_hunt_acceptance.py --live-canary --query \"<operator unseen query>\" --instance ..\\instances\\live-acceptance --max-queries 3 --max-fetches 3 --keep-instance --json",
       "python scripts/eureka.py search \"<operator unseen query>\" --live --json",
       "python scripts/eureka.py hunt \"<operator unseen query>\" --live --max-queries 20 --max-fetches 10 --json",
       "python scripts/eureka.py search \"<indexed discovery terms>\" --index local --json"
     ],
+    "required_proof": {
+      "live_provider_configured": true,
+      "live_result_count_min": 1,
+      "queries_attempted_min": 1,
+      "transient_lead_count_min": 1,
+      "fetch_attempt_count_min": 1,
+      "pages_fetched_min": 1,
+      "observations_created_min": 1,
+      "documents_indexed_min": 1,
+      "restart_local_search_hits_min": 1,
+      "provider_result_payload_persisted": false,
+      "reviewed_master_mutation": false,
+      "public_index_mutation": false
+    },
     "must_not_report": [
       "credential value",
       "raw provider response",

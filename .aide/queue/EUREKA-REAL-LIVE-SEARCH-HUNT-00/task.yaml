@@ -1,7 +1,7 @@
 schema_version: aide.task.v0
 id: EUREKA-REAL-LIVE-SEARCH-HUNT-00
 title: Make Eureka provide real live search and Hunt before acceptance
-status: planned
+status: PASS_WITH_WARNINGS
 task_class: product_vertical_slice
 parent_track: E2E-REFERENCE-SYSTEM-TRACK-00
 supersedes:
@@ -124,6 +124,22 @@ milestone_evidence:
     - SQLite/FTS operational Preview Index persists independently fetched SourceObservations and restart search/export/rollback proof passes
     - deterministic Hunt engine paginates provider results, fetches selected leads, follows bounded outbound links, indexes observations, records sanitized events, and supports pause/resume/cancel state
     - live Search/Hunt UX exposes normal search, Hunt progress, and result inspection without task IDs, review-packet language, or raw JSON on normal pages
+    - real end-to-end live canary harness is implemented but waiting for a local provider key before this track can close
+acceptance_gate:
+  status: WAITING_FOR_OPERATOR_LIVE_CANARY
+  task: EUREKA-REAL-LIVE-SEARCH-HUNT-ACCEPTANCE-01
+  reason: BRAVE_SEARCH_API_KEY/BRAVE_API_KEY is not configured in the current environment
+  required_proof:
+    - live provider configured
+    - live result count >= 1
+    - Hunt queries attempted >= 1
+    - fetch attempts >= 1
+    - pages fetched >= 1
+    - SourceObservations created >= 1
+    - Preview documents indexed >= 1
+    - SQLite store close/reopen local search hits >= 1
+    - provider payload persisted is false
+    - reviewed/public mutation is false
 subdeliverables:
   retention_and_state_hotfix:
     status: pass
