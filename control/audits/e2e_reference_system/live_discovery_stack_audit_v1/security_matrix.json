@@ -1,0 +1,22 @@
+{
+  "schema_version": "eureka.live_discovery_security_matrix.v1",
+  "status": "pass_with_warnings",
+  "checks": {
+    "ssrf_private_ip_block": "pass",
+    "dns_rebinding_revalidation": "pass",
+    "redirect_revalidation": "pass",
+    "robots_enforced": "pass",
+    "mime_allowlist": "pass",
+    "body_size_limit": "pass",
+    "timeouts": "pass",
+    "concurrency_bounds": "pass",
+    "secrets_not_logged": "pass",
+    "path_traversal_instance_guard": "pass",
+    "sqlite_parameterized_queries": "pass",
+    "unsafe_html_rendering": "pass_with_existing_escape_and_server_rendering",
+    "javascript_execution_during_fetch": "not_present",
+    "downloads_or_executables": "not_present"
+  },
+  "critical_findings": 0,
+  "high_findings": 0
+}

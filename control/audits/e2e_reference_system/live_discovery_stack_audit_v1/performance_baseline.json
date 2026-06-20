@@ -1,0 +1,19 @@
+{
+  "schema_version": "eureka.live_discovery_performance_baseline.v1",
+  "status": "local_deterministic_only",
+  "production_scale_claimed": false,
+  "measurements": {
+    "bootstrap_duration": "not_measured_in_audit",
+    "local_search_latency": "covered_by_sqlite_preview_index_tests",
+    "fts_query_latency": "covered_by_sqlite_preview_index_tests",
+    "time_to_first_live_result": "not_measured_key_missing",
+    "time_to_first_source_observation": "not_measured_key_missing",
+    "hunt_throughput": "covered_by_deterministic_hunt_tests",
+    "foundry_throughput": "covered_by_deterministic_foundry_tests",
+    "sqlite_size_per_observation_document": "not_measured_in_audit"
+  },
+  "notes": [
+    "The baseline is intentionally local and deterministic.",
+    "No production capacity or latency claim is made."
+  ]
+}

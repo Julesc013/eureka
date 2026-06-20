@@ -1,0 +1,28 @@
+schema_version: aide.task.v0
+id: EUREKA-LIVE-DISCOVERY-STACK-AUDIT-01
+title: Audit the live discovery stack after provider and Foundry implementation
+status: PASS_WITH_WARNINGS
+task_class: product_security_architecture_audit
+parent_track: EUREKA-REAL-LIVE-SEARCH-HUNT-00
+predecessor: EUREKA-AUTONOMOUS-INDEX-FOUNDRY-01
+successor: HUMAN-END-TO-END-ACCEPTANCE-00
+purpose: >-
+  Review runtime boundaries, security, retention, reliability, product proof,
+  and local performance posture for the live discovery stack without treating
+  unreviewed discoveries as public or reviewed truth.
+evidence:
+  subject: "audit(search): review live discovery stack"
+  audit_root: control/audits/e2e_reference_system/live_discovery_stack_audit_v1
+  critical_findings: 0
+  high_findings: 0
+  medium_findings: 3
+  notes:
+    - No public exposure, reviewed/master/public truth mutation, or provider payload persistence was found in the audited local stack.
+    - Real Brave end-to-end canary remains waiting for a local provider key.
+    - Foundry live operation remains disabled by default.
+validation:
+  - python scripts/check_live_discovery_stack_audit.py --json
+non_goals:
+  - no public launch
+  - no human product approval claim
+  - no task-9 Agentic Hunt Planner recommendation

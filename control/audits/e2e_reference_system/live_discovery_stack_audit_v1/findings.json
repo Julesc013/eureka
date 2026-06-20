@@ -1,0 +1,54 @@
+{
+  "schema_version": "eureka.live_discovery_stack_findings.v1",
+  "status": "pass_with_warnings",
+  "findings": [
+    {
+      "id": "M-001",
+      "severity": "medium",
+      "title": "Real Brave end-to-end canary is waiting for a local key",
+      "status": "open_external_gate",
+      "blocks_task_9": false
+    },
+    {
+      "id": "M-002",
+      "severity": "medium",
+      "title": "Foundry live runs are implemented but disabled until live acceptance",
+      "status": "intentional_gate",
+      "blocks_task_9": false
+    },
+    {
+      "id": "M-003",
+      "severity": "medium",
+      "title": "IA metadata live canary is not exercised in this local audit",
+      "status": "deferred",
+      "blocks_task_9": false
+    },
+    {
+      "id": "L-001",
+      "severity": "low",
+      "title": "Run-progress UI does not yet expose active Foundry controls",
+      "status": "accepted_v0"
+    },
+    {
+      "id": "L-002",
+      "severity": "low",
+      "title": "Source scorecards are deterministic v0 metrics",
+      "status": "accepted_v0"
+    },
+    {
+      "id": "A-001",
+      "severity": "advisory",
+      "title": "Full unittest discovery remains external",
+      "status": "policy_deferred"
+    },
+    {
+      "id": "A-002",
+      "severity": "advisory",
+      "title": "No production scale claim is made",
+      "status": "noted"
+    }
+  ],
+  "critical_count": 0,
+  "high_count": 0,
+  "medium_count": 3
+}

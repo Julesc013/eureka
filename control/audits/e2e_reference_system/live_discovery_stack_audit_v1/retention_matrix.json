@@ -1,0 +1,16 @@
+{
+  "schema_version": "eureka.live_discovery_retention_matrix.v1",
+  "status": "pass",
+  "provider_result_payload_persisted": false,
+  "api_key_persisted": false,
+  "raw_provider_response_persisted": false,
+  "brave_url_snippet_rank_persisted": false,
+  "persistent_records": [
+    "independently fetched SourceObservation",
+    "PreviewDocument derived from SourceObservation",
+    "provider-permitted metadata where manifest allows it"
+  ],
+  "reviewed_master_mutation": false,
+  "public_index_mutation": false,
+  "public_live_fanout": false
+}
