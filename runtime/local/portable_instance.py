@@ -74,6 +74,7 @@ from runtime.search.observability import (
     export_diagnostic_bundle,
     metrics_from_events,
 )
+from runtime.search.performance import run_capacity_baseline
 from runtime.search.providers import provider_status
 from runtime.search.foundry import FoundryPlan, FoundryRunStore, FoundryService, SurveyBudget, load_plan, write_plan
 
@@ -1050,6 +1051,40 @@ def index_recovery_command(*, instance: str | Path | None = None) -> dict[str, A
     )
 
 
+def benchmark_command(
+    *,
+    instance: str | Path | None = None,
+    sizes: str = "1000,10000",
+    iterations: int = 20,
+    export_generation: bool = True,
+) -> dict[str, Any]:
+    started = _now()
+    root = resolve_portable_instance_root(instance)
+    paths = build_portable_paths(root)
+    selected_sizes = _parse_sizes(sizes)
+    result = run_capacity_baseline(
+        dataset_sizes=selected_sizes,
+        work_root=paths.exports_dir / "benchmarks" / _now().replace(":", "").replace("-", ""),
+        query_iterations=iterations,
+        export_generation=export_generation,
+    )
+    return _result(
+        "benchmark",
+        "pass" if result.get("status") == "pass" else "fail",
+        root,
+        started_at=started,
+        mutations=True,
+        payload={
+            **result,
+            "deterministic_synthetic_dataset": True,
+            "production_scale_claimed": False,
+            "network_provider_calls": False,
+            "reviewed_master_mutation": False,
+            "public_index_mutation": False,
+        },
+    )
+
+
 def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr: TextIO = sys.stderr) -> int:
     parser = _parser()
     args = parser.parse_args(argv)
@@ -1145,6 +1180,8 @@ def _dispatch(args: argparse.Namespace, *, stdout: TextIO) -> dict[str, Any]:
             return backup_command("verify", instance=args.instance, backup=args.backup)
         if args.backup_command == "restore":
             return backup_command("restore", instance=args.instance, backup=args.backup, target=args.target)
+    if args.command == "benchmark":
+        return benchmark_command(instance=args.instance, sizes=args.sizes, iterations=args.iterations, export_generation=not args.no_export)
     raise PortableInstanceError("unsupported_command", f"unsupported command: {args.command}", exit_code=2)
 
 
@@ -1250,6 +1287,11 @@ def _parser() -> argparse.ArgumentParser:
     backup_restore = backup_sub.add_parser("restore", parents=[common], help="Restore a backup into an explicit target instance.")
     backup_restore.add_argument("backup")
     backup_restore.add_argument("--target", required=True)
+
+    benchmark = sub.add_parser("benchmark", parents=[common], help="Run deterministic local discovery capacity baseline.")
+    benchmark.add_argument("--sizes", default="1000,10000", help="Comma-separated synthetic dataset sizes, bounded to 100000.")
+    benchmark.add_argument("--iterations", type=int, default=20)
+    benchmark.add_argument("--no-export", action="store_true", help="Skip immutable generation export timing.")
     return parser
 
 
@@ -2111,6 +2153,19 @@ def _resolve_backup_path(paths: PortablePaths, backup: str | Path) -> Path:
     if str(backup).startswith("backup-"):
         return candidate.resolve()
     return value.resolve()
+
+
+def _parse_sizes(value: str) -> list[int]:
+    sizes: list[int] = []
+    for part in str(value or "").replace(";", ",").split(","):
+        text = part.strip()
+        if not text:
+            continue
+        try:
+            sizes.append(max(1, min(int(text), 100000)))
+        except ValueError:
+            continue
+    return sizes or [1000]
 
 
 def _relative_to_instance(root: Path, path: Path) -> str:

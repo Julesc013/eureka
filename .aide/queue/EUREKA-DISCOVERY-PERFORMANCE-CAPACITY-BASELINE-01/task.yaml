@@ -1,7 +1,7 @@
 schema_version: aide.task.v0
 id: EUREKA-DISCOVERY-PERFORMANCE-CAPACITY-BASELINE-01
 title: Add local discovery performance and capacity baseline
-status: planned
+status: pass
 task_class: product_hardening_stage
 parent_track: EUREKA-REAL-LIVE-SEARCH-HUNT-00
 predecessor: EUREKA-INDEX-RECOVERY-MIGRATION-AND-BACKUP-01
@@ -9,4 +9,17 @@ successor: EUREKA-FOUNDRY-OPERATOR-CONTROLS-AND-UX-01
 purpose: >-
   Measure deterministic local Preview Index and Foundry hot paths without
   making production-scale claims.
-
+evidence:
+  implementation:
+    - runtime/search/performance.py
+    - runtime/local/portable_instance.py
+  tests:
+    - tests/runtime/test_discovery_performance.py
+validation:
+  - python -m unittest tests.runtime.test_discovery_performance -v
+  - python -m py_compile runtime/search/performance.py runtime/local/portable_instance.py tests/runtime/test_discovery_performance.py
+  - python scripts/eureka.py --instance ../instances/wave03-performance-smoke benchmark --sizes 10,25 --iterations 3 --no-export --json
+non_goals:
+  - no production SLO claim
+  - no network benchmarking requirement
+  - no new search server or distributed infrastructure
