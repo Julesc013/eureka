@@ -7,6 +7,7 @@ from urllib.parse import quote, unquote
 
 from runtime.search.live_service import LiveSearchService
 from runtime.search.live_web import provider_status
+from runtime.search.observability import DiscoveryEventStore, TimedOperation, metrics_from_events, stable_hash
 
 from .request_context import LocalRequestContext
 from .responses import DEFAULT_LIMITATIONS, LocalServiceResponse, error_response, html_response, json_response, redirect_response
@@ -39,6 +40,14 @@ def route_request(
         return _status_html_response(runtime)
     if path == "/api/v1/status":
         return _status_response(runtime)
+    if path in {"/metrics", "/api/v1/metrics"}:
+        if _wants_json(request_context) or path.startswith("/api/"):
+            return _metrics_response(runtime)
+        return _metrics_html_response(runtime)
+    if path in {"/diagnostics", "/api/v1/diagnostics"}:
+        if _wants_json(request_context) or path.startswith("/api/"):
+            return _diagnostics_response(runtime, request_context)
+        return _diagnostics_html_response(runtime, request_context)
     if path in {"/health", "/api/v1/health"}:
         return _health_response(runtime)
     if path == "/explore":
@@ -355,6 +364,76 @@ def _status_html_response(runtime: Any) -> LocalServiceResponse:
     return html_response(200, html, payload)
 
 
+def _metrics_response(runtime: Any) -> LocalServiceResponse:
+    events = _discovery_events(runtime)
+    payload = {
+        **metrics_from_events(events),
+        "schema_version": "eureka.discovery_metrics_response.v0",
+        "event_count": len(events),
+        "remote_telemetry": False,
+        "provider_payload_included": False,
+        "credential_value_exposed": False,
+    }
+    return json_response(200, payload)
+
+
+def _metrics_html_response(runtime: Any) -> LocalServiceResponse:
+    response = _metrics_response(runtime)
+    metrics = response.payload
+    rows = [
+        ("Searches", metrics.get("search_count", 0)),
+        ("Provider requests", metrics.get("provider_requests", 0)),
+        ("Fetch attempts", metrics.get("fetch_attempts", 0)),
+        ("Fetch successes", metrics.get("fetch_successes", 0)),
+        ("Observations", metrics.get("observations_created", 0)),
+        ("Preview upserts", metrics.get("preview_index_upserts", 0)),
+        ("Hunts completed", metrics.get("hunt_completed", 0)),
+        ("Foundry completed", metrics.get("foundry_completed", 0)),
+    ]
+    body = "".join(f"<tr><th>{escape(str(label))}</th><td>{escape(str(value))}</td></tr>" for label, value in rows)
+    html = _simple_local_page("Discovery Metrics", f"<table>{body}</table><p>Local metrics only. No remote telemetry.</p>")
+    return html_response(200, html, response.payload)
+
+
+def _diagnostics_response(runtime: Any, request_context: LocalRequestContext) -> LocalServiceResponse:
+    run_id = first_param(request_context.params, "run_id", first_param(request_context.params, "run", ""))
+    events = _discovery_events(runtime, run_id=run_id or None)
+    payload = {
+        "schema_version": "eureka.discovery_diagnostics_response.v0",
+        "status": "pass" if events or not run_id else "pass_with_warnings",
+        "run_id": run_id,
+        "event_count": len(events),
+        "events": events[-100:],
+        "metrics": metrics_from_events(events),
+        "redacted": True,
+        "provider_payload_included": False,
+        "private_content_included": False,
+        "credential_value_exposed": False,
+    }
+    return json_response(200, payload)
+
+
+def _diagnostics_html_response(runtime: Any, request_context: LocalRequestContext) -> LocalServiceResponse:
+    response = _diagnostics_response(runtime, request_context)
+    payload = response.payload
+    events = payload.get("events") if isinstance(payload.get("events"), list) else []
+    rows = "".join(
+        "<tr>"
+        f"<td>{escape(str(item.get('timestamp') or ''))}</td>"
+        f"<td>{escape(str(item.get('event_type') or ''))}</td>"
+        f"<td>{escape(str(item.get('component') or ''))}</td>"
+        f"<td>{escape(str(item.get('policy_outcome') or ''))}</td>"
+        "</tr>"
+        for item in events
+        if isinstance(item, Mapping)
+    )
+    html = _simple_local_page(
+        "Discovery Diagnostics",
+        f"<p>Redacted local event timeline. Provider payloads and private page text are excluded.</p><table><tr><th>Time</th><th>Event</th><th>Component</th><th>Outcome</th></tr>{rows}</table>",
+    )
+    return html_response(200, html, response.payload)
+
+
 def _health_response(runtime: Any) -> LocalServiceResponse:
     status = runtime.status().to_dict()
     lan_enabled = bool(getattr(runtime, "lan_enabled", False))
@@ -549,6 +628,9 @@ def _live_search_payload(runtime: Any, request_context: LocalRequestContext) -> 
     query = first_param(request_context.params, "q", first_param(request_context.params, "query", "")).strip()
     limit = parse_limit(first_param(request_context.params, "limit", ""), default=10)
     provider_name = str(getattr(runtime, "live_search_provider", "brave") or "brave")
+    run_id = "http-search-" + stable_hash(query)
+    timer = TimedOperation.start()
+    _event_store(runtime).record("search_started", run_id=run_id, component="search", query=query, provider=provider_name, count=limit)
     local = _live_local_preview_results(runtime, query, limit=limit)
     payload = LiveSearchService(provider_name=provider_name).search(
         query,
@@ -562,6 +644,18 @@ def _live_search_payload(runtime: Any, request_context: LocalRequestContext) -> 
         safe_search=first_param(request_context.params, "safe_search", "moderate"),
         timeout_seconds=10,
     )
+    _event_store(runtime).record(
+        "search_completed",
+        run_id=run_id,
+        component="search",
+        query=query,
+        provider=provider_name,
+        status=str(payload.get("status") or ""),
+        duration_ms=timer.elapsed_ms(),
+        count=int(payload.get("result_count") or 0),
+        error_category=str((payload.get("error") or {}).get("code") or "") if isinstance(payload.get("error"), Mapping) else "",
+    )
+    payload["run_id"] = run_id
     payload["limitations"] = _service_limitations(runtime) + ["live provider results are transient discovery leads"]
     return payload
 
@@ -572,17 +666,32 @@ def _live_hunt_payload(runtime: Any, request_context: LocalRequestContext) -> di
     max_queries = parse_limit(first_param(request_context.params, "max_queries", ""), default=5)
     max_fetches = _parse_nonnegative_int(first_param(request_context.params, "max_fetches", first_param(request_context.params, "max-fetches", "")), default=0, maximum=100)
     provider_name = str(getattr(runtime, "live_search_provider", "brave") or "brave")
+    run_id = "http-live-hunt-" + stable_hash(query)
+    timer = TimedOperation.start()
+    _event_store(runtime).record("hunt_started", run_id=run_id, component="hunt", query=query, provider=provider_name, count=max_queries)
     hunt = LiveSearchService(provider_name=provider_name).start_hunt(
         query,
-        run_id="http-live-hunt-preview",
+        run_id=run_id,
         max_queries=max_queries,
         max_fetches=max_fetches,
         count=limit,
         timeout_seconds=10,
         preview_index_path=getattr(runtime, "eureka_preview_sqlite_path", None) if max_fetches > 0 else None,
     )
+    for event in hunt.events:
+        _event_store(runtime).append(event)
     payload = dict(hunt.response)
     payload["schema_version"] = "eureka.live_hunt_response.v0"
+    _event_store(runtime).record(
+        "hunt_completed",
+        run_id=run_id,
+        component="hunt",
+        query=query,
+        provider=provider_name,
+        status=str(payload.get("status") or ""),
+        duration_ms=timer.elapsed_ms(),
+        count=int(payload.get("documents_indexed") or payload.get("result_count") or 0),
+    )
     payload["limitations"] = _service_limitations(runtime) + ["provider SearchLeads are transient; fetched observations remain unreviewed"]
     return payload
 
@@ -2115,6 +2224,46 @@ def _service_limitations(runtime: Any) -> list[str]:
             "live provider leads are transient unless later fetched and indexed under policy",
         ]
     return list(DEFAULT_LIMITATIONS)
+
+
+def _discovery_events(runtime: Any, *, run_id: str | None = None) -> list[dict[str, Any]]:
+    path = getattr(runtime, "eureka_discovery_events_path", None)
+    if not path:
+        return []
+    try:
+        return DiscoveryEventStore(path).read(run_id=run_id, limit=5000)
+    except Exception:
+        return []
+
+
+def _event_store(runtime: Any) -> DiscoveryEventStore:
+    path = getattr(runtime, "eureka_discovery_events_path", None)
+    if not path:
+        path = __import__("tempfile").gettempdir() + "/eureka-discovery-events.jsonl"
+    return DiscoveryEventStore(path)
+
+
+def _simple_local_page(title: str, body: str) -> str:
+    return "\n".join(
+        [
+            "<!doctype html>",
+            '<html lang="en">',
+            "<head>",
+            '<meta charset="utf-8">',
+            '<meta name="viewport" content="width=device-width, initial-scale=1">',
+            f"<title>{escape(title)}</title>",
+            "<style>body{font-family:system-ui,-apple-system,Segoe UI,sans-serif;margin:0;background:#f7f8f8;color:#182229}main{max-width:960px;margin:auto;padding:28px 18px}table{border-collapse:collapse;width:100%;background:#fff}th,td{border:1px solid #d8dee2;padding:8px;text-align:left}th{background:#eef2f4}p{color:#52616b}</style>",
+            "</head>",
+            "<body>",
+            "<main>",
+            f"<h1>{escape(title)}</h1>",
+            body,
+            "</main>",
+            "</body>",
+            "</html>",
+            "",
+        ]
+    )
 
 
 def _is_api_path(path: str) -> bool:

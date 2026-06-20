@@ -8,6 +8,7 @@ import unittest
 from runtime.local.appliance import close_local_appliance, open_local_appliance
 from runtime.local.service import LocalServiceApp
 from runtime.index.public import PublicIndexStore
+from runtime.search.observability import DiscoveryEventStore
 from tests.runtime.test_public_index_store import make_record
 
 
@@ -86,10 +87,36 @@ class LocalServiceRouteTests(unittest.TestCase):
             try:
                 root = app.handle("GET", "/")
                 health = app.handle("GET", "/api/v1/health")
-                self.assertEqual(200, root.status_code)
-                self.assertIn("Read-only localhost JSON API", root.body)
+                self.assertEqual(302, root.status_code)
+                self.assertEqual("/explore", root.headers.get("Location"))
                 self.assertEqual(200, health.status_code)
                 self.assertIs(health.payload["localhost_only"], True)
+            finally:
+                close_local_appliance(runtime)
+
+    def test_metrics_and_diagnostics_routes_are_redacted(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            instance = init_instance(tmp)
+            app, runtime = app_for(instance)
+            try:
+                event_path = Path(tmp) / "events.jsonl"
+                setattr(runtime, "eureka_discovery_events_path", event_path)
+                store = DiscoveryEventStore(event_path)
+                store.record("search_started", run_id="r1", query="private operator query", provider="brave")
+                store.append({"event_type": "document_indexed", "run_id": "r1", "url": "https://provider.example/item", "snippet": "restricted"})
+
+                metrics = app.handle("GET", "/api/v1/metrics")
+                diagnostics = app.handle("GET", "/api/v1/diagnostics", "run_id=r1")
+
+                self.assertEqual(200, metrics.status_code)
+                self.assertEqual(1, metrics.payload["search_count"])
+                self.assertEqual(1, metrics.payload["preview_index_upserts"])
+                self.assertEqual(200, diagnostics.status_code)
+                encoded = diagnostics.body
+                self.assertNotIn("private operator query", encoded)
+                self.assertNotIn("provider.example", encoded)
+                self.assertNotIn("restricted", encoded)
+                self.assertFalse(diagnostics.payload["provider_payload_included"])
             finally:
                 close_local_appliance(runtime)
 

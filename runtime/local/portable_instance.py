@@ -59,6 +59,12 @@ from runtime.resolution_run import (
 )
 from runtime.resolution_run.errors import ResolutionRunValidationError
 from runtime.search.live_service import LiveSearchService, live_hunt_run_id
+from runtime.search.observability import (
+    DiscoveryEventStore,
+    TimedOperation,
+    export_diagnostic_bundle,
+    metrics_from_events,
+)
 from runtime.search.providers import provider_status
 from runtime.search.foundry import FoundryPlan, FoundryRunStore, FoundryService, SurveyBudget, load_plan, write_plan
 
@@ -118,6 +124,7 @@ class PortablePaths:
     tmp_root: Path
     logs_dir: Path
     log_file: Path
+    discovery_events: Path
     exports_dir: Path
     backup_root: Path
     server_state: Path
@@ -159,6 +166,7 @@ def build_portable_paths(instance_root: str | Path) -> PortablePaths:
         tmp_root=_instance_child(root, "tmp/e2e-reference"),
         logs_dir=_instance_child(root, "logs"),
         log_file=_instance_child(root, "logs/eureka-portable.log"),
+        discovery_events=_instance_child(root, "logs/discovery-events.jsonl"),
         exports_dir=_instance_child(root, "exports"),
         backup_root=_instance_child(root, "exports/backups"),
         server_state=_instance_child(root, "run/eureka-portable-server.json"),
@@ -394,6 +402,7 @@ def search_command(
     timeout_seconds: int = 10,
 ) -> dict[str, Any]:
     started = _now()
+    timer = TimedOperation.start()
     root = resolve_portable_instance_root(instance)
     paths = build_portable_paths(root)
     clean_query = str(query or "").strip()
@@ -402,6 +411,9 @@ def search_command(
     if len(clean_query) > MAX_QUERY_LENGTH:
         raise PortableInstanceError("query_too_long", f"search query exceeds {MAX_QUERY_LENGTH} characters", exit_code=2)
     search_mode = _search_mode(mode, live=live)
+    run_id = "search-" + live_hunt_run_id(clean_query, started).removeprefix("live-hunt-")
+    events = DiscoveryEventStore(paths.discovery_events)
+    events.record("search_started", run_id=run_id, component="search", query=clean_query, provider=provider, mode=search_mode)
     local = _search_portable_index(paths, clean_query, index=index, limit=count) if search_mode in {"local", "blended"} else _local_index_disabled(index)
     service_payload = LiveSearchService(provider_name=provider).search(
         clean_query,
@@ -420,6 +432,18 @@ def search_command(
     if live_error is not None:
         warnings.append(str(live_error.get("message") or "Live web search is not configured. Configure a provider or search the local index."))
     status = str(service_payload.get("status") or "fail")
+    events.record(
+        "search_completed",
+        run_id=run_id,
+        component="search",
+        query=clean_query,
+        provider=provider,
+        mode=search_mode,
+        status=status,
+        duration_ms=timer.elapsed_ms(),
+        count=int(service_payload.get("result_count") or 0),
+        error_category=str(live_error.get("code") or "") if live_error else "",
+    )
     return _result(
         "search",
         status,
@@ -428,6 +452,7 @@ def search_command(
         mutations=False,
         payload={
             "query": clean_query,
+            "run_id": run_id,
             "mode": search_mode,
             "index_mode": index,
             "local_index": service_payload.get("local_index", local),
@@ -761,13 +786,42 @@ def foundry_command(
         if not plan_path:
             raise PortableInstanceError("foundry_plan_required", "foundry run requires --plan", exit_code=2)
         plan = load_plan(plan_path)
+        effective_run_id = run_id or "foundry-" + plan.plan_id.split(":", 1)[-1]
+        timer = TimedOperation.start()
+        events = DiscoveryEventStore(paths.discovery_events)
+        events.record(
+            "foundry_started",
+            run_id=effective_run_id,
+            component="foundry",
+            count=len(plan.seed_queries),
+            provider=",".join(plan.providers),
+            status="running",
+        )
         store = SQLitePreviewIndexStore(paths.preview_sqlite) if (plan.network_enabled or enable_live) else None
         try:
             service = FoundryService(run_root=runs_root, index_store=store)
-            result = service.run(plan, run_id=run_id or None, enable_live=enable_live).payload
+            result = service.run(plan, run_id=effective_run_id, enable_live=enable_live).payload
         finally:
             if store is not None:
                 store.close()
+        events.record(
+            "foundry_checkpointed",
+            run_id=effective_run_id,
+            component="foundry",
+            count=int(result.get("completed_seed_count") or 0),
+            status=str(result.get("status") or ""),
+        )
+        for breaker in result.get("circuit_breakers") or []:
+            if isinstance(breaker, Mapping):
+                events.record("circuit_breaker_opened", run_id=effective_run_id, component="foundry", provider=str(breaker.get("provider") or ""), status=str(breaker.get("state") or "open"))
+        events.record(
+            "foundry_completed",
+            run_id=effective_run_id,
+            component="foundry",
+            duration_ms=timer.elapsed_ms(),
+            count=int(result.get("preview_document_count") or 0),
+            status=str(result.get("status") or ""),
+        )
         return _result(
             "foundry run",
             "pass" if result.get("status") == "pass" else "pass_with_warnings",
@@ -799,6 +853,99 @@ def foundry_command(
             payload={**payload, "network_provider_calls": False, "reviewed_master_mutation": False, "public_index_mutation": False},
         )
     raise PortableInstanceError("unsupported_foundry_command", f"unsupported foundry command: {action}", exit_code=2)
+
+
+def metrics_command(*, instance: str | Path | None = None) -> dict[str, Any]:
+    started = _now()
+    root = resolve_portable_instance_root(instance)
+    paths = build_portable_paths(root)
+    events = DiscoveryEventStore(paths.discovery_events).read(limit=5000)
+    metrics = metrics_from_events(events)
+    preview_stats: dict[str, Any] = {}
+    if paths.preview_sqlite.exists():
+        store = SQLitePreviewIndexStore(paths.preview_sqlite)
+        try:
+            preview_stats = store.stats()
+        finally:
+            store.close()
+    return _result(
+        "metrics",
+        "pass",
+        root,
+        started_at=started,
+        mutations=False,
+        payload={
+            **metrics,
+            "event_store": _relative_to_instance(root, paths.discovery_events),
+            "event_count": len(events),
+            "preview_index": preview_stats,
+            "remote_telemetry": False,
+            "network_provider_calls": False,
+            "reviewed_master_mutation": False,
+            "public_index_mutation": False,
+        },
+    )
+
+
+def diagnostics_command(
+    run_id: str,
+    *,
+    instance: str | Path | None = None,
+    export: bool = False,
+    out_dir: str | Path | None = None,
+) -> dict[str, Any]:
+    started = _now()
+    root = resolve_portable_instance_root(instance)
+    paths = build_portable_paths(root)
+    clean_run_id = str(run_id or "").strip()
+    if not clean_run_id:
+        raise PortableInstanceError("diagnostics_run_required", "diagnostics requires a run id", exit_code=2)
+    events = DiscoveryEventStore(paths.discovery_events).read(run_id=clean_run_id, limit=5000)
+    summary = _diagnostics_run_summary(paths, clean_run_id)
+    capability_state = _load_json_optional(REPO_ROOT / "control" / "inventory" / "product" / "capability_state.json")
+    provider_statuses = [provider_status("brave"), provider_status("internet_archive_metadata"), provider_status("multi")]
+    if export:
+        target = Path(out_dir) if out_dir else paths.exports_dir / "diagnostics" / clean_run_id
+        result = export_diagnostic_bundle(
+            run_id=clean_run_id,
+            out_dir=target,
+            events=events,
+            capability_state=capability_state,
+            provider_statuses=provider_statuses,
+            run_summary=summary,
+        )
+        return _result(
+            "diagnostics export",
+            "pass",
+            root,
+            started_at=started,
+            mutations=True,
+            payload={**result, "network_provider_calls": False, "reviewed_master_mutation": False, "public_index_mutation": False},
+        )
+    metrics = metrics_from_events(events)
+    return _result(
+        "diagnostics",
+        "pass" if events or summary else "pass_with_warnings",
+        root,
+        started_at=started,
+        mutations=False,
+        payload={
+            "schema_version": "eureka.discovery_diagnostics.v0",
+            "run_id": clean_run_id,
+            "event_count": len(events),
+            "events": events[-100:],
+            "metrics": metrics,
+            "run_summary": summary,
+            "provider_capabilities": provider_statuses,
+            "redacted": True,
+            "provider_payload_included": False,
+            "private_content_included": False,
+            "credential_value_exposed": False,
+            "network_provider_calls": False,
+            "reviewed_master_mutation": False,
+            "public_index_mutation": False,
+        },
+    )
 
 
 def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr: TextIO = sys.stderr) -> int:
@@ -878,6 +1025,13 @@ def _dispatch(args: argparse.Namespace, *, stdout: TextIO) -> dict[str, Any]:
         if args.foundry_command == "run":
             return foundry_command("run", instance=args.instance, plan_path=args.plan, run_id=args.run_id, enable_live=args.enable_live)
         return foundry_command(args.foundry_command, instance=args.instance, run_id=args.run_id)
+    if args.command == "metrics":
+        return metrics_command(instance=args.instance)
+    if args.command == "diagnostics":
+        action = str(args.diagnostics_action or "").strip()
+        if action == "export":
+            return diagnostics_command(args.run_id or "", instance=args.instance, export=True, out_dir=args.out)
+        return diagnostics_command(action or args.run_id or "", instance=args.instance)
     raise PortableInstanceError("unsupported_command", f"unsupported command: {args.command}", exit_code=2)
 
 
@@ -965,6 +1119,13 @@ def _parser() -> argparse.ArgumentParser:
     for action in ("status", "pause", "resume", "cancel", "export"):
         item = foundry_sub.add_parser(action, parents=[common], help=f"Foundry {action}.")
         item.add_argument("run_id")
+
+    sub.add_parser("metrics", parents=[common], help="Show redacted local discovery metrics.")
+
+    diagnostics = sub.add_parser("diagnostics", parents=[common], help="Show or export redacted diagnostics for a run.")
+    diagnostics.add_argument("diagnostics_action", nargs="?", default="")
+    diagnostics.add_argument("run_id", nargs="?", default="")
+    diagnostics.add_argument("--out", default="")
     return parser
 
 
@@ -1086,7 +1247,10 @@ def _live_hunt_command(
     max_queries: int,
     max_fetches: int,
 ) -> dict[str, Any]:
+    timer = TimedOperation.start()
     run_id = live_hunt_run_id(query, started_at)
+    event_store = DiscoveryEventStore(paths.discovery_events)
+    event_store.record("hunt_started", run_id=run_id, component="hunt", query=query, count=max_queries)
     hunt = LiveSearchService().start_hunt(
         query,
         run_id=run_id,
@@ -1097,9 +1261,21 @@ def _live_hunt_command(
         preview_index_path=paths.preview_sqlite if max_fetches > 0 else None,
     )
     response_payload = dict(hunt.response)
+    for event in hunt.events:
+        event_store.append(event)
     errors = response_payload.get("errors") if isinstance(response_payload.get("errors"), list) else []
     first_error = errors[0] if errors and isinstance(errors[0], Mapping) else {}
     if response_payload.get("status") == "fail" and not response_payload.get("network_provider_calls") and first_error.get("code") == "live_provider_not_configured":
+        event_store.record(
+            "hunt_completed",
+            run_id=run_id,
+            component="hunt",
+            query=query,
+            status="fail",
+            duration_ms=timer.elapsed_ms(),
+            count=0,
+            error_category="configuration",
+        )
         return _result(
             "hunt",
             "fail",
@@ -1117,6 +1293,15 @@ def _live_hunt_command(
     _write_json(run_dir / "summary.json", hunt.persisted_summary)
     if hunt.events:
         _write_jsonl(run_dir / "events.jsonl", hunt.events)
+    event_store.record(
+        "hunt_completed",
+        run_id=run_id,
+        component="hunt",
+        query=query,
+        status=str(response_payload.get("status") or "fail"),
+        duration_ms=timer.elapsed_ms(),
+        count=int(response_payload.get("documents_indexed") or response_payload.get("result_count") or 0),
+    )
     return _result(
         "hunt",
         str(response_payload.get("status") or "fail"),
@@ -1380,6 +1565,8 @@ def _configure_runtime_for_portable(runtime: Any, paths: PortablePaths, *, live:
     setattr(runtime, "e2e_explore_preview_index_path", paths.preview_current)
     setattr(runtime, "eureka_preview_sqlite_path", paths.preview_sqlite)
     setattr(runtime, "e2e_explore_runs_root", paths.run_bundles)
+    setattr(runtime, "eureka_discovery_events_path", paths.discovery_events)
+    setattr(runtime, "eureka_capability_state_path", REPO_ROOT / "control" / "inventory" / "product" / "capability_state.json")
     setattr(runtime, "e2e_explore_default_fixture", "success_two_workunits")
     setattr(runtime, "e2e_explore_include_synthetic", not live)
     setattr(runtime, "public_alpha_enabled", False)
@@ -1753,6 +1940,41 @@ def _load_json_optional(path: Path) -> dict[str, Any]:
         return _load_json(path)
     except Exception:
         return {}
+
+
+def _diagnostics_run_summary(paths: PortablePaths, run_id: str) -> dict[str, Any]:
+    safe = {}
+    for root in (paths.run_bundles / run_id, _instance_child(paths.root, "run/foundry/runs") / run_id):
+        summary_path = root / "summary.json"
+        result_path = root / "result.json"
+        payload = _load_json_optional(summary_path) or _load_json_optional(result_path)
+        if payload:
+            safe = {
+                "schema_version": str(payload.get("schema_version") or ""),
+                "status": str(payload.get("status") or payload.get("final_state") or ""),
+                "run_id": str(payload.get("run_id") or run_id),
+                "provider": str(payload.get("provider") or ""),
+                "provider_request_count": int(payload.get("provider_request_count") or payload.get("request_count") or 0),
+                "provider_error_count": int(payload.get("provider_error_count") or 0),
+                "transient_lead_count": int(payload.get("transient_lead_count") or 0),
+                "unique_transient_lead_count": int(payload.get("unique_transient_lead_count") or 0),
+                "duplicates_removed": int(payload.get("duplicates_removed") or 0),
+                "fetch_attempt_count": int(payload.get("fetch_attempt_count") or 0),
+                "pages_fetched": int(payload.get("pages_fetched") or 0),
+                "observations_created": int(payload.get("observations_created") or payload.get("observation_count") or 0),
+                "documents_indexed": int(payload.get("documents_indexed") or payload.get("preview_document_count") or 0),
+                "blocked_fetches": int(payload.get("blocked_fetches") or 0),
+                "errors": [
+                    {key: value for key, value in dict(item).items() if key not in {"url", "snippet", "provider_rank", "raw_response"}}
+                    for item in (payload.get("errors") or [])
+                    if isinstance(item, Mapping)
+                ],
+                "provider_results_persisted": bool(payload.get("provider_results_persisted", False)),
+                "reviewed_master_mutation": bool(payload.get("reviewed_master_mutation", False)),
+                "public_index_mutation": bool(payload.get("public_index_mutation", False)),
+            }
+            break
+    return safe
 
 
 def _relative_to_instance(root: Path, path: Path) -> str:
