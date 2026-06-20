@@ -1,0 +1,42 @@
+{
+  "schema_version": "eureka.live_search_hunt_acceptance_canary_handoff.v0",
+  "status": "WAITING_FOR_OPERATOR_LIVE_CANARY",
+  "task": "EUREKA-REAL-LIVE-SEARCH-HUNT-ACCEPTANCE-01",
+  "reason": "BRAVE_SEARCH_API_KEY/BRAVE_API_KEY was not configured in the local environment during deterministic acceptance validation.",
+  "deterministic_acceptance": {
+    "status": "pass",
+    "command": "python scripts/check_live_search_hunt_acceptance.py --json",
+    "proved": [
+      "fixture-free normal mode",
+      "transient live lead display with a contract fake provider",
+      "independent safe fetch",
+      "SourceObservation creation",
+      "SQLite Preview Index insertion",
+      "restart local retrieval",
+      "honest no-provider failure",
+      "no provider-result payload persistence",
+      "no reviewed/public mutation"
+    ]
+  },
+  "operator_live_canary": {
+    "required": true,
+    "credential_env": [
+      "BRAVE_SEARCH_API_KEY",
+      "BRAVE_API_KEY"
+    ],
+    "commands": [
+      "python scripts/check_live_search_hunt_acceptance.py --live-canary --json",
+      "python scripts/eureka.py search \"<operator unseen query>\" --live --json",
+      "python scripts/eureka.py hunt \"<operator unseen query>\" --live --max-queries 20 --max-fetches 10 --json",
+      "python scripts/eureka.py search \"<indexed discovery terms>\" --index local --json"
+    ],
+    "must_not_report": [
+      "credential value",
+      "raw provider response",
+      "provider result database"
+    ]
+  },
+  "reviewed_master_mutation": false,
+  "public_index_mutation": false,
+  "public_exposure": false
+}

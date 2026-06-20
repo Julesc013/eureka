@@ -1,4 +1,4 @@
-current_recommended_task: EUREKA-REAL-LIVE-SEARCH-HUNT-ACCEPTANCE-01 - Run unseen-query acceptance for real live Search and Hunt
+current_recommended_task: EUREKA-REAL-LIVE-SEARCH-HUNT-ACCEPTANCE-01 - Run operator live canary for real live Search and Hunt
 completed:
   - SOURCE-ACTION-KERNEL-00
   - SOURCE-WAVE-00
@@ -123,6 +123,7 @@ waiting:
   - WAITING_FOR_USER_HARDWARE_DETAILS
   - WAITING_FOR_COHERENT_E2E_REFERENCE_ACCEPTANCE_BEFORE_REAL_IA_REVIEW
   - WAITING_FOR_REAL_LIVE_SEARCH_HUNT_PRODUCT
+  - WAITING_FOR_OPERATOR_LIVE_CANARY
 status_options:
   - pass
   - pass_with_warnings
