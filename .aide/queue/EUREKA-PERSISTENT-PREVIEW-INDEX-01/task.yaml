@@ -1,7 +1,7 @@
 schema_version: aide.task.v0
 id: EUREKA-PERSISTENT-PREVIEW-INDEX-01
 title: Add durable operational Preview Index persistence
-status: planned
+status: pass
 task_class: product_runtime_milestone
 parent_track: EUREKA-REAL-LIVE-SEARCH-HUNT-00
 predecessor: EUREKA-SAFE-WEB-FETCH-AND-OBSERVATION-01
@@ -10,6 +10,19 @@ purpose: >-
   Add an operational SQLite/FTS Preview Index for policy-approved
   SourceObservations while preserving immutable generation/export mechanics for
   audit, replay, rollback, and distribution.
+evidence:
+  subject: "feat(index): add durable SQLite Preview Index"
+  notes:
+    - SQLitePreviewIndexStore provides upsert_observations, search, get, stats, export_generation, and rollback.
+    - SQLite uses WAL, foreign keys, busy timeout, user_version migrations, idempotent observation/document upserts, and canonical URL plus content hash dedupe.
+    - FTS5 is used when available, with LIKE fallback otherwise.
+    - Portable local search checks the operational SQLite Preview Index before immutable generation fallback.
+    - Export writes source-observation deltas into the existing immutable generation builder and validates the resulting manifest.
+    - Restart proof covers fetch, index, close, reopen, local search, generation export, and rollback.
+validation:
+  - python -m unittest tests.runtime.test_sqlite_preview_index_store -v
+  - python -m unittest tests.runtime.test_safe_web_fetcher tests.runtime.test_sqlite_preview_index_store -v
+  - python -m py_compile runtime/index/preview/store.py runtime/local/portable_instance.py tests/runtime/test_sqlite_preview_index_store.py
 non_goals:
   - no reviewed/master/public mutation
   - no public launch

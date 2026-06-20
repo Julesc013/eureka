@@ -34,6 +34,7 @@ from evals.e2e_reference.oracle import (
 )
 from runtime.index.preview import (
     PreviewIndexError,
+    SQLitePreviewIndexStore,
     build_preview_index,
     preview_stats_payload,
     search_preview_index,
@@ -109,6 +110,7 @@ class PortablePaths:
     run_bundles: Path
     preview_index: Path
     preview_current: Path
+    preview_sqlite: Path
     eval_root: Path
     portable_status_dir: Path
     portable_status: Path
@@ -149,6 +151,7 @@ def build_portable_paths(instance_root: str | Path) -> PortablePaths:
         run_bundles=_instance_child(root, "run/e2e-reference/runs"),
         preview_index=_instance_child(root, "db/e2e-reference/preview-index"),
         preview_current=_instance_child(root, "db/e2e-reference/preview-index/current.json"),
+        preview_sqlite=_instance_child(root, "db/preview/preview.sqlite"),
         eval_root=_instance_child(root, "run/e2e-reference/eval"),
         portable_status_dir=_instance_child(root, "run/e2e-reference/portable-instance"),
         portable_status=_instance_child(root, "run/e2e-reference/portable-instance/status.json"),
@@ -862,14 +865,17 @@ def _search_portable_index(paths: PortablePaths, query: str, *, index: str, limi
     normalized = str(index or "local").strip().lower()
     if normalized not in {"local", "preview"}:
         return _local_index_disabled(index)
+    sqlite_payload = _search_sqlite_preview(paths, query, limit=limit)
+    if sqlite_payload.get("status") == "pass" and int(sqlite_payload.get("result_count", 0) or 0) > 0:
+        return sqlite_payload
     if not paths.preview_current.is_file():
         return {
             "status": "absent",
             "index": normalized,
-            "path": _relative_to_instance(paths.root, paths.preview_current),
+            "path": _relative_to_instance(paths.root, paths.preview_sqlite),
             "result_count": 0,
             "results": [],
-            "warnings": ["Local Preview Index is absent. Run bootstrap --with-demo for replay data or persist live observations in a later milestone."],
+            "warnings": ["Local Preview Index is absent. Run bootstrap --with-demo for replay data or persist live observations first."],
         }
     try:
         payload = search_preview_index(paths.preview_current, query, limit=max(1, min(int(limit or 10), 25)), include_synthetic=False)
@@ -903,12 +909,32 @@ def _local_index_disabled(index: str) -> dict[str, Any]:
         "result_count": 0,
         "results": [],
         "warnings": [],
+}
+
+
+def _search_sqlite_preview(paths: PortablePaths, query: str, *, limit: int) -> dict[str, Any]:
+    if not paths.preview_sqlite.is_file():
+        return {"status": "absent", "result_count": 0, "results": [], "warnings": []}
+    store = SQLitePreviewIndexStore(paths.preview_sqlite)
+    try:
+        payload = store.search(query, limit=max(1, min(int(limit or 10), 25)))
+    finally:
+        store.close()
+    cards = [_preview_result_card(item) for item in payload.get("results") or [] if isinstance(item, Mapping)]
+    return {
+        "status": "pass",
+        "index": "sqlite_preview",
+        "path": _relative_to_instance(paths.root, paths.preview_sqlite),
+        "result_count": len(cards),
+        "results": cards,
+        "warnings": [],
+        "fts": bool(payload.get("fts")),
     }
 
 
 def _preview_result_card(item: Mapping[str, Any]) -> dict[str, Any]:
     title = str(item.get("title") or item.get("normalized_title") or item.get("candidate_id") or item.get("preview_record_id") or "Indexed discovery")
-    summary = str(item.get("summary") or item.get("non_verified_reason") or "Local Preview Index record.")
+    summary = str(item.get("snippet") or item.get("summary") or item.get("non_verified_reason") or "Local Preview Index record.")
     return {
         "state": "INDEXED - UNREVIEWED" if item.get("review_state") != "reviewed" else "REVIEWED",
         "title": title,
@@ -919,7 +945,7 @@ def _preview_result_card(item: Mapping[str, Any]) -> dict[str, Any]:
         "query": "",
         "source": "local_preview_index",
         "review_state": str(item.get("review_state") or "unreviewed"),
-        "result_id": str(item.get("preview_record_id") or item.get("candidate_id") or item.get("id") or ""),
+        "result_id": str(item.get("document_id") or item.get("preview_record_id") or item.get("candidate_id") or item.get("id") or ""),
         "retention_policy": {
             "persist_urls": True,
             "persist_snippets": True,
@@ -1107,14 +1133,31 @@ def _write_portable_status(paths: PortablePaths, *, command: str, status: str, p
 
 
 def _current_preview_status(paths: PortablePaths) -> dict[str, Any]:
+    operational = _operational_preview_status(paths)
     if not paths.preview_current.exists():
-        return {"status": "absent", "current_path": _relative_to_instance(paths.root, paths.preview_current), "record_count": 0, "warnings": ["Preview Index has not been bootstrapped yet."]}
+        return {
+            "status": "pass" if operational.get("status") == "pass" else "absent",
+            "current_path": _relative_to_instance(paths.root, paths.preview_current),
+            "record_count": 0,
+            "operational": operational,
+            "warnings": ["Immutable Preview Index has not been bootstrapped yet."] if operational.get("status") != "pass" else [],
+        }
     try:
         validation = validate_preview_index(paths.preview_current, strict=True)
         stats = preview_stats_payload(paths.preview_current)
-        return {"status": "pass" if validation.get("status") == "pass" else "invalid", "validation": validation, **stats}
+        return {"status": "pass" if validation.get("status") == "pass" else "invalid", "validation": validation, "operational": operational, **stats}
     except Exception as exc:
-        return {"status": "invalid", "error": str(exc), "current_path": _relative_to_instance(paths.root, paths.preview_current)}
+        return {"status": "invalid", "error": str(exc), "current_path": _relative_to_instance(paths.root, paths.preview_current), "operational": operational}
+
+
+def _operational_preview_status(paths: PortablePaths) -> dict[str, Any]:
+    if not paths.preview_sqlite.is_file():
+        return {"status": "absent", "path": _relative_to_instance(paths.root, paths.preview_sqlite), "document_count": 0, "observation_count": 0}
+    store = SQLitePreviewIndexStore(paths.preview_sqlite)
+    try:
+        return store.stats()
+    finally:
+        store.close()
 
 
 def _preview_for_query(paths: PortablePaths, query: str) -> dict[str, Any]:

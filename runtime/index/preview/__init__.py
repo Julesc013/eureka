@@ -15,6 +15,7 @@ from .index import (
     search_preview_index,
     validate_preview_index,
 )
+from .store import PreviewIndexStore, SQLitePreviewIndexStore
 
 __all__ = [
     "DEFAULT_PREVIEW_INDEX_ROOT",
@@ -30,4 +31,6 @@ __all__ = [
     "rollback_preview_index",
     "search_preview_index",
     "validate_preview_index",
+    "PreviewIndexStore",
+    "SQLitePreviewIndexStore",
 ]
