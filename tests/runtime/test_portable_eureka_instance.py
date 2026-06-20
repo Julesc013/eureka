@@ -4,7 +4,9 @@ import json
 from pathlib import Path
 import tempfile
 import unittest
+from unittest import mock
 
+from runtime.local import portable_instance as portable_instance_module
 from runtime.local.portable_instance import (
     PortableInstanceError,
     bootstrap_command,
@@ -65,6 +67,19 @@ class PortableEurekaInstanceRuntimeTests(unittest.TestCase):
             paths = build_portable_paths(root)
             paths.server_lock.write_text('{"pid": 99999999, "created_at": "now"}\n', encoding="utf-8")
             result = doctor_command(instance=root)
+            self.assertTrue(any(item["code"] == "stale_server_lock" for item in result["warnings"]))
+
+    def test_windows_pid_probe_error_marks_lock_stale(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp) / "portable"
+            bootstrap_command(instance=root, no_demo=True)
+            paths = build_portable_paths(root)
+            paths.server_lock.write_text('{"pid": 38332, "created_at": "now"}\n', encoding="utf-8")
+            with (
+                mock.patch.object(portable_instance_module.os, "name", "nt"),
+                mock.patch.object(portable_instance_module, "_pid_alive_windows", side_effect=SystemError("invalid pid probe")),
+            ):
+                result = doctor_command(instance=root)
             self.assertTrue(any(item["code"] == "stale_server_lock" for item in result["warnings"]))
 
 
