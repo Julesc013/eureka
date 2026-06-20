@@ -1,12 +1,16 @@
 schema_version: aide.task.v0
 id: HUMAN-END-TO-END-ACCEPTANCE-00
 title: Run human E2E reference-system acceptance
-status: planned
+status: blocked
 task_class: e2e_reference_child
 parent_track: E2E-REFERENCE-SYSTEM-TRACK-00
 predecessor: PORTABLE-EUREKA-INSTANCE-00
 successor: E2E-SECOND-LIVE-PROVIDER-00
 purpose: Present one coherent local product for human calibration and record product feedback without automatically authorizing real truth materialization or public exposure.
+blocked_by: EUREKA-FIRST-RUN-ACCEPTANCE-UX-00
+blocking_verdict: BLOCKED_BY_FIRST_USE_UX
+blocking_reason: The first-use acceptance handoff and product entry experience were not self-explanatory to the operator. This is a product UX failure, not an operator mistake.
+resume_condition: Resume human end-to-end acceptance only after EUREKA-FIRST-RUN-ACCEPTANCE-UX-00 delivers a clear first-run experience and automated clean-start browser smoke test.
 allowed_scope:
   - docs/operations/**
   - docs/reference/**

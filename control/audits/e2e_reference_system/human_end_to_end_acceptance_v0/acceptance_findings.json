@@ -1,0 +1,44 @@
+{
+  "schema_version": "eureka.human_acceptance_findings.v0",
+  "status": "BLOCKED_BY_FIRST_USE_UX",
+  "summary": "First-use product UX blocks meaningful human acceptance.",
+  "product_failure": true,
+  "operator_mistake": false,
+  "findings": [
+    {
+      "severity": "P1",
+      "classification": "core_workflow_blocker",
+      "operator_wording": "what am i supposed to do with this, this is useless and confusing, what can i possibly do with this?",
+      "affected_workflow": "first_use_startup_and_acceptance_handoff",
+      "reproducibility": "reproduced_by_initial_acceptance_attempt",
+      "proposed_task": "EUREKA-FIRST-RUN-ACCEPTANCE-UX-00",
+      "required_authority": "narrow UX repair under E2E reference system track"
+    },
+    {
+      "severity": "P2",
+      "classification": "product_explanation_gap",
+      "operator_wording": "The next human handoff should contain only four product-facing steps.",
+      "affected_workflow": "operator_handoff_and_first_run_guidance",
+      "reproducibility": "applies_to_current_acceptance_packet",
+      "proposed_task": "EUREKA-FIRST-RUN-ACCEPTANCE-UX-00",
+      "required_authority": "narrow UX repair under E2E reference system track"
+    }
+  ],
+  "counts": {
+    "p0_critical": 0,
+    "p1_blocking": 1,
+    "p2_significant": 1,
+    "p3_polish": 1,
+    "future_enhancement": 1
+  },
+  "boundary_findings": {
+    "public_exposure": false,
+    "truth_boundary": false,
+    "reviewed_record_creation": false,
+    "index_mutation": false,
+    "provider_or_network_call": false,
+    "downloads_or_execution": false,
+    "license_change": false
+  },
+  "next_task": "EUREKA-FIRST-RUN-ACCEPTANCE-UX-00"
+}

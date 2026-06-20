@@ -1,0 +1,72 @@
+schema_version: aide.task.v0
+id: EUREKA-FIRST-RUN-ACCEPTANCE-UX-00
+title: Fix Eureka first-run acceptance UX
+status: planned
+task_class: e2e_reference_child_repair
+parent_track: E2E-REFERENCE-SYSTEM-TRACK-00
+predecessor: HUMAN-END-TO-END-ACCEPTANCE-00
+successor: HUMAN-END-TO-END-ACCEPTANCE-00
+purpose: Make the local Eureka exploration experience self-explanatory on first use before resuming human acceptance.
+operator_verdict_source: control/audits/e2e_reference_system/human_end_to_end_acceptance_v0/ACCEPTANCE_DECISION.md
+allowed_scope:
+  - .aide/queue/index.yaml
+  - .aide/queue/EUREKA-FIRST-RUN-ACCEPTANCE-UX-00/**
+  - .aide/queue/HUMAN-END-TO-END-ACCEPTANCE-00/**
+  - .aide/context/**
+  - scripts/eureka.py
+  - runtime/local/**
+  - runtime/local/service/**
+  - surfaces/web/**
+  - tests/e2e/**
+  - tests/runtime/**
+  - tests/scripts/**
+  - docs/operations/**
+  - docs/architecture/**
+  - control/audits/e2e_reference_system/**
+forbidden_scope:
+  - real reviewed-record materialization
+  - reviewed/master/public index mutation
+  - second live provider approval
+  - public exposure or launch implementation
+  - downloads or execution implementation
+  - source/provider expansion
+  - review decision recording
+  - production review stores
+  - license files
+inherits_hard_gates_from: E2E-REFERENCE-SYSTEM-TRACK-00
+trigger:
+  verdict: BLOCKED_BY_FIRST_USE_UX
+  interpretation: Genuine product failure; the first-run product and handoff are not self-explanatory.
+deliverables:
+  - one startup command
+  - "/" redirects to "/explore"
+  - clear search box and plain-language introduction
+  - example searches
+  - obvious loading state
+  - obvious result state
+  - obvious empty state
+  - obvious error state
+  - obvious blocked state
+  - simple Hunt explanation at the moment Hunt becomes relevant
+  - no JSON, audit IDs, internal task names, or architecture vocabulary in normal first-use flow
+  - automated browser smoke test from clean startup
+next_human_handoff:
+  - Open http://127.0.0.1:8765/explore
+  - Search for anything.
+  - Start a Hunt if offered.
+  - Report what was confusing or useful.
+acceptance:
+  - First-run experience is product-facing and self-explanatory.
+  - Clean startup launches one clear local exploration surface.
+  - Normal first-use flow hides internal task/audit/architecture vocabulary.
+  - Automated browser smoke proves "/" and "/explore" from clean startup.
+  - No public exposure, provider calls, review decisions, truth mutation, index mutation, downloads, or execution are introduced.
+validation:
+  - python -m unittest tests.e2e.test_e2e_hunt_exploration_ui -v
+  - automated browser smoke from clean startup
+  - python scripts/check_architecture_boundaries.py
+  - python scripts/validate_public_alpha_readonly.py
+  - python scripts/validate_snapshot_relay.py
+  - python scripts/eureka_test_select.py --changed --failed-first --json
+  - git diff --check
+proof_level_required: L2

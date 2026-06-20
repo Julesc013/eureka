@@ -1,6 +1,6 @@
 # Validation Report
 
-Status: PREPARATION_VALIDATION_PASS_WITH_POSTCOMMIT_CLEANLINESS_REQUIRED
+Status: ACCEPTANCE_BLOCKED_BY_FIRST_USE_UX
 
 ## Completed Preflight
 
@@ -42,3 +42,11 @@ control/audits/e2e_reference_system/human_end_to_end_acceptance_v0/
 This is expected for an intentional new tracked audit packet. Rerun the check after the preparation commit.
 
 Full unittest discovery is not run inside this acceptance preparation task.
+
+## Feedback Ingest
+
+Operator feedback was recorded as `BLOCKED_BY_FIRST_USE_UX`.
+
+This is a genuine first-use product UX failure, not an operator mistake.
+
+No runtime, UI, truth, index, provider, public exposure, download, execution, or license changes were made while recording this decision.

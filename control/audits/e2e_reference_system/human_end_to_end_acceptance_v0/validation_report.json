@@ -1,7 +1,7 @@
 {
   "schema_version": "eureka.human_acceptance_validation.v0",
   "generated_at": "2026-06-20T07:30:00Z",
-  "status": "PREPARATION_VALIDATION_PASS_WITH_POSTCOMMIT_CLEANLINESS_REQUIRED",
+  "status": "ACCEPTANCE_BLOCKED_BY_FIRST_USE_UX",
   "preflight": {
     "git_fetch_origin": "PASS",
     "git_status": "PASS_CLEAN_DEV_SYNCED_WITH_ORIGIN_DEV",
@@ -28,8 +28,10 @@
     "aide_commit_check_latest": "PENDING_UNTIL_COMMIT"
   },
   "full_unittest_discovery": "NOT_RUN",
-  "human_feedback": "PENDING",
-  "acceptance_verdict": "PENDING",
+  "human_feedback": "RECORDED",
+  "acceptance_verdict": "BLOCKED_BY_FIRST_USE_UX",
+  "normalized_acceptance_verdict": "BLOCKED",
+  "recommended_next_task": "EUREKA-FIRST-RUN-ACCEPTANCE-UX-00",
   "public_exposure": false,
   "live_providers_enabled": false,
   "real_review_decisions": false,

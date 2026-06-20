@@ -1,0 +1,17 @@
+{
+  "schema_version": "eureka.human_acceptance_feedback.v0",
+  "actor": "Jules Carboni",
+  "build": "3e2615481ed655835991418d14d6ab17a7f3ccff",
+  "instance": "eureka-e2e-acceptance-v0",
+  "verdict": "BLOCKED_BY_FIRST_USE_UX",
+  "normalized_verdict": "BLOCKED",
+  "verbatim_feedback": [
+    "what am i supposed to do with this, this is useless and confusing, what can i possibly do with this?",
+    "Yes. Record this as a genuine product failure, not an operator mistake.\n\nVerdict: BLOCKED_BY_FIRST_USE_UX\n\nThe next task should be:\n\nEUREKA-FIRST-RUN-ACCEPTANCE-UX-00\n\nIt must deliver:\n\n* one startup command;\n* / redirects to /explore;\n* a clear search box and plain-language introduction;\n* example searches;\n* obvious loading, result, empty, error, and blocked states;\n* a simple explanation of \"Hunt\" at the moment it becomes relevant;\n* no JSON, audit IDs, internal task names, or architecture vocabulary;\n* an automated browser smoke test from clean startup.\n\nThe next human handoff should contain only:\n\n1. Open http://127.0.0.1:8765/explore\n2. Search for anything.\n3. Start a Hunt if offered.\n4. Report what was confusing or useful.\n\nDo not resume human acceptance until that experience is fixed. The acceptance gate worked: it identified that Eureka is not yet self-explanatory on first use."
+  ],
+  "ratings": "not_provided_acceptance_blocked_before_full_evaluation",
+  "operator_interpretation": "genuine_product_failure_not_operator_mistake",
+  "first_use_blocked": true,
+  "public_or_truth_boundary_issue": false,
+  "next_task": "EUREKA-FIRST-RUN-ACCEPTANCE-UX-00"
+}

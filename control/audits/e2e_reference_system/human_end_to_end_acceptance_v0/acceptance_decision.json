@@ -1,0 +1,38 @@
+{
+  "schema_version": "eureka.human_acceptance_decision.v0",
+  "verdict": "BLOCKED_BY_FIRST_USE_UX",
+  "normalized_verdict": "BLOCKED",
+  "actor": "Jules Carboni",
+  "build": "3e2615481ed655835991418d14d6ab17a7f3ccff",
+  "instance": "eureka-e2e-acceptance-v0",
+  "decision": "Human acceptance is blocked until first-use UX is repaired.",
+  "product_failure": true,
+  "operator_mistake": false,
+  "acceptance_complete": false,
+  "human_acceptance_may_resume": false,
+  "resume_after_task": "EUREKA-FIRST-RUN-ACCEPTANCE-UX-00",
+  "product_decision": {
+    "coherent_local_product": "not_accepted",
+    "status_authority_understood": "not_evaluated",
+    "search_hunt_model_accepted": "not_evaluated",
+    "replay_rollback_accepted": "not_evaluated",
+    "terminology_accepted": "not_evaluated",
+    "direction_accepted": "pending_first_run_ux_repair"
+  },
+  "safety": {
+    "reviewed_ia_truth_created": false,
+    "reviewed_records_created": false,
+    "reviewed_master_mutation": false,
+    "public_index_mutation": false,
+    "public_exposure": false,
+    "downloads_or_execution": false,
+    "license_posture_changed": false
+  },
+  "recommended_next_task": "EUREKA-FIRST-RUN-ACCEPTANCE-UX-00",
+  "next_human_handoff": [
+    "Open http://127.0.0.1:8765/explore",
+    "Search for anything.",
+    "Start a Hunt if offered.",
+    "Report what was confusing or useful."
+  ]
+}
