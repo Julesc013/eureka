@@ -1,7 +1,7 @@
 schema_version: aide.task.v0
 id: EUREKA-AUTONOMOUS-INDEX-FOUNDRY-01
 title: Add autonomous bounded Preview Index growth after interactive Hunt works
-status: planned
+status: IMPLEMENTED_DISABLED_WAITING_FOR_LIVE_ACCEPTANCE
 task_class: future_automation_milestone
 parent_track: EUREKA-REAL-LIVE-SEARCH-HUNT-00
 predecessor: EUREKA-SECOND-PROVIDER-CONFORMANCE-01
@@ -10,6 +10,22 @@ purpose: >-
   Add scheduled seed generation, stale observation refresh, bounded surveys,
   source scorecards, clustering, Preview Index generations, and review-batch
   preparation after interactive Hunt is genuinely useful.
+evidence:
+  subject: "feat(foundry): add bounded autonomous index growth"
+  implementation_status: pass
+  activation_state: disabled_by_default
+  live_acceptance_dependency: WAITING_FOR_OPERATOR_LIVE_CANARY
+  notes:
+    - FoundryService, FoundryPlanner, FoundryRunStore, SeedQueue, RefreshQueue, SourceScorecardStore, FoundryCheckpointStore, and ReviewBatchPreparer exist in runtime/search/foundry.py.
+    - CLI commands exist for foundry plan, run, status, pause, resume, cancel, and export.
+    - Plan generation makes no provider/network calls.
+    - Foundry run remains disabled unless an explicit live-enabled plan or command is used.
+    - Deterministic tests prove bounded run, safe fetch, Preview Index insertion, checkpoint, pause/resume/cancel, circuit breaker, source scorecards, conservative clustering, review-batch preparation, immutable generation export, rollback, and zero reviewed/public mutation.
+validation:
+  - python -m unittest tests.runtime.test_foundry_service -v
+  - python -m unittest tests.runtime.test_provider_conformance tests.runtime.test_foundry_service -v
+  - python scripts/eureka.py --instance <temp> foundry plan --seed "manual for Sound Blaster CT1740" --max-seeds 1 --max-queries 1 --max-fetches 1 --json
+  - python -m py_compile runtime/search/foundry.py runtime/local/portable_instance.py tests/runtime/test_foundry_service.py
 non_goals:
   - no reviewed truth creation
   - no public launch

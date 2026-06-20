@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "maximum_bytes": { "minimum": 1, "type": "integer" },
+    "maximum_concurrency": { "minimum": 1, "type": "integer" },
+    "maximum_duration_seconds": { "minimum": 1, "type": "integer" },
+    "maximum_fetches": { "minimum": 0, "type": "integer" },
+    "maximum_provider_requests": { "minimum": 1, "type": "integer" },
+    "maximum_queries": { "minimum": 1, "type": "integer" },
+    "maximum_seeds": { "minimum": 1, "type": "integer" },
+    "per_domain_requests": { "minimum": 1, "type": "integer" },
+    "per_provider_requests": { "minimum": 1, "type": "integer" },
+    "retry_ceiling": { "minimum": 0, "type": "integer" },
+    "schema_version": { "const": "eureka.survey_budget.v0" }
+  },
+  "type": "object"
+}

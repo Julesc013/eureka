@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "network_calls_performed": { "const": false },
+    "network_enabled": { "type": "boolean" },
+    "plan_id": { "type": "string" },
+    "public_index_mutation": { "const": false },
+    "reviewed_master_mutation": { "const": false },
+    "schema_version": { "const": "eureka.foundry_plan.v0" }
+  },
+  "required": ["schema_version", "plan_id", "network_enabled"],
+  "type": "object"
+}

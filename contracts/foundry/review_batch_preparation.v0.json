@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "automatic_review_decision": { "const": false },
+    "review_decision": { "type": ["null", "string"] },
+    "review_items": { "type": "array" },
+    "schema_version": { "const": "eureka.review_batch_preparation.v0" }
+  },
+  "required": ["schema_version", "review_items"],
+  "type": "object"
+}

@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "eligibility": { "type": "string" },
+    "observation_ref": { "type": "string" },
+    "reason": { "type": "string" },
+    "schema_version": { "const": "eureka.refresh_candidate.v0" }
+  },
+  "required": ["observation_ref", "eligibility"],
+  "type": "object"
+}

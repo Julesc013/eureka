@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "provider": { "type": "string" },
+    "schema_version": { "const": "eureka.source_scorecard.v0" }
+  },
+  "required": ["provider"],
+  "type": "object"
+}

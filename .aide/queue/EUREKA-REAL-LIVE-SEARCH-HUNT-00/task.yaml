@@ -126,6 +126,7 @@ milestone_evidence:
     - live Search/Hunt UX exposes normal search, Hunt progress, and result inspection without task IDs, review-packet language, or raw JSON on normal pages
     - real end-to-end live canary harness is implemented but waiting for a local provider key before this track can close
     - second-provider conformance is implemented with Brave plus Internet Archive metadata but remains live-acceptance-gated
+    - Autonomous Index Foundry v0 is implemented but disabled by default and waiting for live acceptance before optional live runs
 acceptance_gate:
   status: WAITING_FOR_OPERATOR_LIVE_CANARY
   task: EUREKA-REAL-LIVE-SEARCH-HUNT-ACCEPTANCE-01

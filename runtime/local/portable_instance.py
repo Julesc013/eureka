@@ -60,6 +60,7 @@ from runtime.resolution_run import (
 from runtime.resolution_run.errors import ResolutionRunValidationError
 from runtime.search.live_service import LiveSearchService, live_hunt_run_id
 from runtime.search.providers import provider_status
+from runtime.search.foundry import FoundryPlan, FoundryRunStore, FoundryService, SurveyBudget, load_plan, write_plan
 
 
 REPO_ROOT = resolve_repo_root(Path(__file__))
@@ -713,6 +714,93 @@ def index_stats_command(*, instance: str | Path | None = None) -> dict[str, Any]
     )
 
 
+def foundry_command(
+    action: str,
+    *,
+    instance: str | Path | None = None,
+    seed: Sequence[str] = (),
+    provider: Sequence[str] = (),
+    plan_path: str = "",
+    run_id: str = "",
+    enable_live: bool = False,
+    max_seeds: int = 1,
+    max_queries: int = 3,
+    max_fetches: int = 3,
+) -> dict[str, Any]:
+    started = _now()
+    root = resolve_portable_instance_root(instance)
+    paths = build_portable_paths(root)
+    foundry_root = _instance_child(root, "run/foundry")
+    plans_root = _instance_child(root, "run/foundry/plans")
+    runs_root = _instance_child(root, "run/foundry/runs")
+    if action == "plan":
+        budget = SurveyBudget(maximum_seeds=max_seeds, maximum_queries=max_queries, maximum_provider_requests=max_queries, maximum_fetches=max_fetches).bounded()
+        plan = FoundryService(run_root=runs_root).plan(
+            list(seed) or ["manual for Sound Blaster CT1740"],
+            providers=tuple(provider) or ("brave",),
+            budget=budget,
+            network_enabled=bool(enable_live),
+        )
+        target = Path(plan_path) if plan_path else plans_root / f"{plan.plan_id.replace(':', '-')}.json"
+        write_plan(target, plan)
+        return _result(
+            "foundry plan",
+            "pass",
+            root,
+            started_at=started,
+            mutations=True,
+            payload={
+                "plan": plan.to_dict(),
+                "plan_path": str(target),
+                "network_provider_calls": False,
+                "reviewed_master_mutation": False,
+                "public_index_mutation": False,
+            },
+        )
+    if action == "run":
+        if not plan_path:
+            raise PortableInstanceError("foundry_plan_required", "foundry run requires --plan", exit_code=2)
+        plan = load_plan(plan_path)
+        store = SQLitePreviewIndexStore(paths.preview_sqlite) if (plan.network_enabled or enable_live) else None
+        try:
+            service = FoundryService(run_root=runs_root, index_store=store)
+            result = service.run(plan, run_id=run_id or None, enable_live=enable_live).payload
+        finally:
+            if store is not None:
+                store.close()
+        return _result(
+            "foundry run",
+            "pass" if result.get("status") == "pass" else "pass_with_warnings",
+            root,
+            started_at=started,
+            mutations=True,
+            payload={**result, "foundry_root": str(foundry_root), "network_provider_calls": bool(plan.network_enabled or enable_live)},
+        )
+    if action in {"status", "pause", "resume", "cancel", "export"}:
+        if not run_id:
+            raise PortableInstanceError("foundry_run_required", f"foundry {action} requires a run id", exit_code=2)
+        run_store = FoundryRunStore(runs_root, run_id)
+        if action == "status":
+            payload = run_store.status()
+        elif action == "pause":
+            payload = run_store.pause()
+        elif action == "resume":
+            payload = run_store.resume()
+        elif action == "cancel":
+            payload = run_store.cancel()
+        else:
+            payload = {"schema_version": "eureka.foundry_export.v0", "status": "pass", "run_id": run_id, "export_root": str(run_store.export_root), "public_publication": False}
+        return _result(
+            f"foundry {action}",
+            "pass",
+            root,
+            started_at=started,
+            mutations=action in {"pause", "resume", "cancel"},
+            payload={**payload, "network_provider_calls": False, "reviewed_master_mutation": False, "public_index_mutation": False},
+        )
+    raise PortableInstanceError("unsupported_foundry_command", f"unsupported foundry command: {action}", exit_code=2)
+
+
 def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr: TextIO = sys.stderr) -> int:
     parser = _parser()
     args = parser.parse_args(argv)
@@ -774,6 +862,22 @@ def _dispatch(args: argparse.Namespace, *, stdout: TextIO) -> dict[str, Any]:
         return status_command(instance=args.instance, include_paths=args.paths)
     if args.command == "index" and args.index_command == "stats":
         return index_stats_command(instance=args.instance)
+    if args.command == "foundry":
+        if args.foundry_command == "plan":
+            return foundry_command(
+                "plan",
+                instance=args.instance,
+                seed=args.seed,
+                provider=args.provider,
+                plan_path=args.out,
+                enable_live=args.enable_live,
+                max_seeds=args.max_seeds,
+                max_queries=args.max_queries,
+                max_fetches=args.max_fetches,
+            )
+        if args.foundry_command == "run":
+            return foundry_command("run", instance=args.instance, plan_path=args.plan, run_id=args.run_id, enable_live=args.enable_live)
+        return foundry_command(args.foundry_command, instance=args.instance, run_id=args.run_id)
     raise PortableInstanceError("unsupported_command", f"unsupported command: {args.command}", exit_code=2)
 
 
@@ -843,6 +947,24 @@ def _parser() -> argparse.ArgumentParser:
     index = sub.add_parser("index", parents=[common], help="Inspect local indexes.")
     index_sub = index.add_subparsers(dest="index_command", required=True)
     index_sub.add_parser("stats", parents=[common], help="Show local Preview Index stats.")
+
+    foundry = sub.add_parser("foundry", parents=[common], help="Plan or explicitly run bounded local Preview Index growth.")
+    foundry_sub = foundry.add_subparsers(dest="foundry_command", required=True)
+    foundry_plan = foundry_sub.add_parser("plan", parents=[common], help="Create a bounded Foundry plan without network calls.")
+    foundry_plan.add_argument("--seed", action="append", default=[])
+    foundry_plan.add_argument("--provider", action="append", default=[])
+    foundry_plan.add_argument("--out", default="")
+    foundry_plan.add_argument("--max-seeds", type=int, default=1)
+    foundry_plan.add_argument("--max-queries", type=int, default=3)
+    foundry_plan.add_argument("--max-fetches", type=int, default=3)
+    foundry_plan.add_argument("--enable-live", action="store_true", help="Record that this plan may be run by an explicit live command.")
+    foundry_run = foundry_sub.add_parser("run", parents=[common], help="Run an explicit Foundry plan.")
+    foundry_run.add_argument("--plan", required=True)
+    foundry_run.add_argument("--run-id", default="")
+    foundry_run.add_argument("--enable-live", action="store_true", help="Allow this explicit command to perform bounded local live discovery.")
+    for action in ("status", "pause", "resume", "cancel", "export"):
+        item = foundry_sub.add_parser(action, parents=[common], help=f"Foundry {action}.")
+        item.add_argument("run_id")
     return parser
 
 
@@ -1553,7 +1675,7 @@ def _emit_result(payload: Mapping[str, Any], *, json_output: bool, stdout: TextI
     else:
         print(_text_summary(payload), file=stdout)
     status = str(payload.get("status", "fail"))
-    if status in {"pass", "pass_with_warnings"}:
+    if status in {"pass", "pass_with_warnings", "disabled"}:
         return 0
     if str(payload.get("error", "")).endswith("forbidden") or payload.get("error") in {
         "unsupported_command",

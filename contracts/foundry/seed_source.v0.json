@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "opt_in": { "type": "boolean" },
+    "path": { "type": "string" },
+    "schema_version": { "const": "eureka.seed_source.v0" },
+    "source_type": { "type": "string" }
+  },
+  "required": ["source_type"],
+  "type": "object"
+}

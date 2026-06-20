@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "interval_seconds": { "minimum": 1, "type": "integer" },
+    "schema_version": { "const": "eureka.refresh_policy.v0" },
+    "use_http_validators": { "type": "boolean" }
+  },
+  "type": "object"
+}

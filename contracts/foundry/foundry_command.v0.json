@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "action": { "enum": ["plan", "run", "status", "pause", "resume", "cancel", "export"] },
+    "plan_path": { "type": "string" },
+    "run_id": { "type": "string" },
+    "schema_version": { "const": "eureka.foundry_command.v0" }
+  },
+  "required": ["schema_version", "action"],
+  "type": "object"
+}

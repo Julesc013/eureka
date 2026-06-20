@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "run_id": { "type": "string" },
+    "schema_version": { "const": "eureka.foundry_checkpoint.v0" },
+    "state": { "type": "string" }
+  },
+  "required": ["schema_version", "run_id", "state"],
+  "type": "object"
+}
