@@ -1,0 +1,11 @@
+{
+  "schema_version": "eureka.synthetic_truth_snapshot_proof.v0",
+  "status": "PASS",
+  "manifest_id": "snapshot_manifest.446bcf17905c.v0",
+  "verification_status": "verified_local",
+  "synthetic_test_only": true,
+  "signature_posture": "unsigned_local",
+  "public_snapshot": false,
+  "index_mutation": false
+}
+

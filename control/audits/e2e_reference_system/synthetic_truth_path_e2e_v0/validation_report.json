@@ -1,0 +1,113 @@
+{
+  "schema_version": "eureka.synthetic_truth_validation_report.v0",
+  "status": "PASS_WITH_WARNINGS",
+  "warnings": [
+    "full_discovery_not_run_by_policy",
+    "snapshot_unsigned_test_only",
+    "review_ledger_decision_id_is_a_per_run_audit_identifier"
+  ],
+  "checks": [
+    {
+      "command": "python -m py_compile runtime/local/synthetic_truth_path.py scripts/eureka_synthetic_truth_path.py",
+      "result": "PASS"
+    },
+    {
+      "command": "python scripts/eureka_synthetic_truth_path.py run --scenario minimal-success --out .eureka/test/e2e-reference/synthetic-truth-path --json",
+      "result": "PASS"
+    },
+    {
+      "command": "python scripts/eureka_synthetic_truth_path.py validate --scenario-dir .eureka/test/e2e-reference/synthetic-truth-path/minimal-success --strict",
+      "result": "PASS"
+    },
+    {
+      "command": "python scripts/eureka_synthetic_truth_path.py status --scenario-dir .eureka/test/e2e-reference/synthetic-truth-path/minimal-success --json",
+      "result": "PASS"
+    },
+    {
+      "command": "python scripts/eureka_synthetic_truth_path.py verify-snapshot --scenario-dir .eureka/test/e2e-reference/synthetic-truth-path/minimal-success",
+      "result": "PASS"
+    },
+    {
+      "command": "python -m unittest tests.runtime.test_synthetic_truth_materialization tests.e2e.test_synthetic_truth_path_e2e tests.operations.test_synthetic_truth_path_scripts -v",
+      "result": "PASS",
+      "tests_run": 9
+    },
+    {
+      "command": "python -m unittest tests.runtime.test_review_ledger tests.runtime.test_review_queue_store tests.e2e.test_reviewed_record_materialization -v",
+      "result": "PASS",
+      "tests_run": 37
+    },
+    {
+      "command": "python -m unittest tests.runtime.test_e2e_reference_runner tests.e2e.test_e2e_reference_runner tests.search.test_e2e_preview_index tests.e2e.test_e2e_preview_index tests.e2e.test_local_search_preview_index -v",
+      "result": "PASS",
+      "tests_run": 21
+    },
+    {
+      "command": "python -m unittest tests.e2e.test_e2e_hunt_exploration_ui tests.runtime.test_e2e_hunt_exploration_view_models -v",
+      "result": "PASS",
+      "tests_run": 4
+    },
+    {
+      "command": "python tools/validators/validate_snapshot_runtime.py",
+      "result": "PASS"
+    },
+    {
+      "command": "python scripts/validate_snapshot_relay.py",
+      "result": "PASS"
+    },
+    {
+      "command": "python scripts/check_architecture_boundaries.py",
+      "result": "PASS"
+    },
+    {
+      "command": "python scripts/validate_public_alpha_readonly.py",
+      "result": "PASS"
+    },
+    {
+      "command": "python scripts/validate_runtime_architecture_leakage.py --json",
+      "result": "PASS"
+    },
+    {
+      "command": "python scripts/validate_test_lane_policy.py",
+      "result": "PASS"
+    },
+    {
+      "command": "python -m unittest tests.scripts.test_eureka_test_select tests.operations.test_test_lane_policy tests.scripts.test_validate_test_lane_policy -v",
+      "result": "PASS",
+      "tests_run": 6
+    },
+    {
+      "command": "python scripts/eureka_test_select.py --changed --failed-first --json",
+      "result": "PASS"
+    },
+    {
+      "command": "git diff --check",
+      "result": "PASS"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py doctor",
+      "result": "PASS"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py validate",
+      "result": "PASS"
+    },
+    {
+      "command": "python scripts/check_generated_artifact_cleanliness.py --check --json",
+      "result": "PASS",
+      "note": "passed after the intentional audit packet was committed"
+    }
+  ],
+  "accepted_synthetic_truth_created": true,
+  "production_truth_created": false,
+  "real_candidate_used": false,
+  "production_review_ledger_mutation": false,
+  "reviewed_master_public_index_mutation": false,
+  "provider_network_calls": false,
+  "public_exposure": false,
+  "downloads_or_execution": false,
+  "license_posture": "unchanged",
+  "queue_previous_recommendation": "SYNTHETIC-TRUTH-PATH-E2E-00",
+  "queue_new_recommendation": "AUTONOMOUS-EVAL-ORACLE-00",
+  "next_task": "AUTONOMOUS-EVAL-ORACLE-00"
+}

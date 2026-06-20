@@ -2,11 +2,11 @@
 
 ## PHASE
 
-UNSPECIFIED - SYNTHETIC-TRUTH-PATH-E2E-00
+UNSPECIFIED - AUTONOMOUS-EVAL-ORACLE-00
 
 ## GOAL
 
-SYNTHETIC-TRUTH-PATH-E2E-00
+AUTONOMOUS-EVAL-ORACLE-00
 
 ## WHY
 
@@ -139,8 +139,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4774
-- approx_tokens: 1194
+- chars: 4770
+- approx_tokens: 1193
 - budget_status: PASS
 - warnings:
   - none

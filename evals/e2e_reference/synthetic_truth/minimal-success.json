@@ -1,0 +1,23 @@
+{
+  "schema_version": "eureka.synthetic_truth_fixture.v0",
+  "scenario": "minimal-success",
+  "namespace": "synthetic:e2e-reference",
+  "query": "Eureka Synthetic Blue FTP Client 1.0 for TestOS",
+  "title": "Eureka Synthetic Blue FTP Client",
+  "summary": "Fictional local-only candidate used to prove synthetic review, materialization, search change, rollback, and snapshot fixity.",
+  "version": "1.0",
+  "platform": "TestOS",
+  "source_family": "synthetic",
+  "proposition": "The fictional Eureka Synthetic Blue FTP Client 1.0 for TestOS is represented by the synthetic local metadata.",
+  "metadata": {
+    "creator": "Eureka synthetic test harness",
+    "identifier": "synthetic-blue-ftp-client-testos-1",
+    "media_type": "metadata-only-test-record"
+  },
+  "limitations": [
+    "fictional test entity",
+    "no provider access",
+    "no file payload",
+    "no production authority"
+  ]
+}

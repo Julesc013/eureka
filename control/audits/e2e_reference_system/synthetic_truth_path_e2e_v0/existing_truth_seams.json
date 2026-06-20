@@ -1,0 +1,54 @@
+{
+  "schema_version": "eureka.synthetic_truth_existing_seams.v0",
+  "status": "PASS",
+  "seams": [
+    {
+      "path": "runtime/resolution_run/**",
+      "role": "synthetic run input",
+      "disposition": "compose"
+    },
+    {
+      "path": "runtime/review/queue/**",
+      "role": "isolated review queue store",
+      "disposition": "compose"
+    },
+    {
+      "path": "runtime/review/ledger.py",
+      "role": "canonical review decision recording",
+      "disposition": "compose"
+    },
+    {
+      "path": "runtime/local/review_materialization.py",
+      "role": "limited local metadata/source-lead materialization",
+      "disposition": "exclude"
+    },
+    {
+      "path": "runtime/local/synthetic_truth_path.py",
+      "role": "isolated synthetic materialization and rollback",
+      "disposition": "isolate"
+    },
+    {
+      "path": "runtime/local/search_index.py",
+      "role": "local lexical search semantics",
+      "disposition": "compose"
+    },
+    {
+      "path": "runtime/index/preview/**",
+      "role": "preview projection",
+      "disposition": "retain_guard"
+    },
+    {
+      "path": "runtime/snapshots/**",
+      "role": "offline snapshot manifest and verification",
+      "disposition": "compose"
+    }
+  ],
+  "required_conclusion": {
+    "review_queue_and_ledger_are_canonical": true,
+    "production_materialization_unchanged": true,
+    "synthetic_materialization_isolated": true,
+    "search_proof_isolated": true,
+    "snapshot_proof_offline": true
+  }
+}
+

@@ -1,7 +1,7 @@
 schema_version: aide.task.v0
 id: SYNTHETIC-TRUTH-PATH-E2E-00
 title: Prove synthetic truth path end to end
-status: planned
+status: completed
 task_class: e2e_reference_child
 parent_track: E2E-REFERENCE-SYSTEM-TRACK-00
 predecessor: E2E-HUNT-EXPLORATION-UI-00

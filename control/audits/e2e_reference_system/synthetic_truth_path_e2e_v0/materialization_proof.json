@@ -1,0 +1,14 @@
+{
+  "schema_version": "eureka.synthetic_truth_materialization_proof.v0",
+  "status": "PASS",
+  "reviewed_record_id": "reviewed-record:synthetic:5ec14f18db8d63ee2bbb",
+  "synthetic": true,
+  "namespace": "synthetic:e2e-reference",
+  "truth_scope": "synthetic_test_only",
+  "accepted_synthetic_truth_created": true,
+  "production_truth_created": false,
+  "artifact_verified": false,
+  "public_eligible": false,
+  "production_eligible": false
+}
+

@@ -1,0 +1,11 @@
+{
+  "schema_version": "eureka.synthetic_truth_determinism_report.v0",
+  "status": "PASS",
+  "stable_semantic_entity_ids": true,
+  "stable_reviewed_record_id": true,
+  "stable_generation_ids": true,
+  "stable_snapshot_manifest_id": true,
+  "ledger_uuid_fields_deterministic": false,
+  "ledger_uuid_posture": "existing append-only ledger IDs remain generated per run"
+}
+

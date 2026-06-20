@@ -1,0 +1,13 @@
+{
+  "schema_version": "eureka.synthetic_acceptance_boundary_report.v0",
+  "status": "PASS",
+  "real_candidate": false,
+  "production_review_ledger_mutation": false,
+  "reviewed_master_mutation": false,
+  "public_index_mutation": false,
+  "public_snapshot_publication": false,
+  "provider_network_calls": false,
+  "downloads_or_execution": false,
+  "public_exposure": false,
+  "license_posture": "unchanged"
+}

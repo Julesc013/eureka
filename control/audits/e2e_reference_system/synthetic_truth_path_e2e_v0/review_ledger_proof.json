@@ -1,0 +1,13 @@
+{
+  "schema_version": "eureka.synthetic_truth_review_ledger_proof.v0",
+  "status": "PASS",
+  "actor": "synthetic:e2e-reference-oracle",
+  "decision": "promote",
+  "local_only_confirmed": true,
+  "decision_count": 1,
+  "event_count": 6,
+  "reviewed_record_created_at_decision_step": false,
+  "production_review_ledger_mutation": false,
+  "decision_id_posture": "canonical ledger ID is generated per run; semantic IDs and hashes remain deterministic"
+}
+

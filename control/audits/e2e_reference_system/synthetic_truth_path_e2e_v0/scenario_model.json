@@ -1,0 +1,14 @@
+{
+  "schema_version": "eureka.synthetic_truth_scenario_model.v0",
+  "scenario_id": "synthetic:e2e-reference:minimal-success",
+  "namespace": "synthetic:e2e-reference",
+  "query": "Eureka Synthetic Blue FTP Client 1.0 for TestOS",
+  "fixture_hash": "sha256:89c18d0b0678f6feee9ae326b7af8acb818886157175b79939e7718629ccd32b",
+  "observation_id": "source-observation:synthetic:34d99758d41edde13e78",
+  "evidence_id": "evidence:synthetic:a660db2fa878535f0ac2",
+  "candidate_id": "candidate:synthetic:b1155aa468497c7c2653",
+  "review_item_id": "review-item:synthetic:f74d21e12e2453384bc1",
+  "real_candidate_used": false,
+  "provider_network_calls": false
+}
+

@@ -1,0 +1,12 @@
+{
+  "schema_version": "eureka.synthetic_truth_search_change_proof.v0",
+  "status": "PASS",
+  "baseline_result": "candidate",
+  "post_review_result": "verified",
+  "rollback_result": "candidate",
+  "ranking_change": "synthetic reviewed document ranks above candidate after materialization",
+  "index_generation_before": "index-generation.baseline.v0",
+  "index_generation_after": "index-generation.reviewed.v0",
+  "ordinary_preview_index_authority_unchanged": true
+}
+

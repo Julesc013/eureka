@@ -1,0 +1,10 @@
+{
+  "schema_version": "eureka.synthetic_truth_rollback_proof.v0",
+  "status": "PASS",
+  "truth_pointer_restored": true,
+  "index_pointer_restored": true,
+  "baseline_result_restored": true,
+  "review_ledger_preserved": true,
+  "immutable_generations_preserved": true
+}
+
