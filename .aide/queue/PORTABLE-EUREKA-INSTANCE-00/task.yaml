@@ -23,6 +23,7 @@ allowed_scope:
   - scripts/**
   - runtime/local/**
   - runtime/engine/**
+  - evals/e2e_reference/oracle/**
   - contracts/command/**
   - contracts/instances/**
   - tests/scripts/**
