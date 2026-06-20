@@ -1,8 +1,8 @@
 {
   "schema_version": "eureka.product_capability_state.v0",
-  "tested_commit": "5ce15b2b",
+  "tested_commit": "13422337",
   "generated_at": "2026-06-21T00:00:00Z",
-  "current_recommended_task": "EUREKA-HUMAN-ACCEPTANCE-REHEARSAL-01",
+  "current_recommended_task": "EUREKA-EXTERNAL-FULL-DISCOVERY-HANDOFF-01",
   "capabilities": {
     "live_search": {
       "implementation_state": "implemented",
@@ -164,17 +164,21 @@
       ]
     },
     "human_acceptance": {
-      "implementation_state": "not_started",
-      "activation_state": "blocked_by_operator_live_canary",
-      "validation_state": "waiting",
+      "implementation_state": "rehearsal_prepared",
+      "activation_state": "blocked_by_operator_live_canary_and_human_verdict",
+      "validation_state": "waiting_for_human_acceptance",
       "live_canary_state": "waiting_for_operator_live_canary",
       "human_acceptance_state": "not_started",
       "public_status": "not_public",
       "evidence_refs": [
-        ".aide/queue/HUMAN-END-TO-END-ACCEPTANCE-00/task.yaml"
+        ".aide/queue/HUMAN-END-TO-END-ACCEPTANCE-00/task.yaml",
+        ".aide/queue/EUREKA-HUMAN-ACCEPTANCE-REHEARSAL-01/task.yaml",
+        "docs/operations/HUMAN_LIVE_SEARCH_ACCEPTANCE_REHEARSAL.md",
+        "control/inventory/product/human_live_search_acceptance_decision_template.json"
       ],
       "known_limitations": [
-        "Automated checks cannot mark human product usefulness accepted."
+        "Automated checks cannot mark human product usefulness accepted.",
+        "The decision template is blank until the operator records a verdict."
       ]
     },
     "public_service": {

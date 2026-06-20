@@ -1,0 +1,54 @@
+{
+  "schema_version": "eureka.human_live_search_acceptance_decision.v0",
+  "status": "blank_operator_required",
+  "operator": "",
+  "session_date": "",
+  "decision": "",
+  "allowed_decisions": [
+    "accepted",
+    "accepted_with_changes",
+    "rejected"
+  ],
+  "preconditions": {
+    "operator_live_canary_passed": false,
+    "external_full_discovery_summary_reviewed": false,
+    "public_exposure_enabled": false
+  },
+  "queries": [
+    {
+      "kind": "ordinary_current_web",
+      "query": "",
+      "useful_live_results": null,
+      "hunt_found_additional_results": null,
+      "fetched_indexed_result_understandable": null,
+      "restart_retrieval_worked": null,
+      "notes": ""
+    },
+    {
+      "kind": "obscure_historical_artifact",
+      "query": "",
+      "useful_live_results": null,
+      "hunt_found_additional_results": null,
+      "fetched_indexed_result_understandable": null,
+      "restart_retrieval_worked": null,
+      "notes": ""
+    },
+    {
+      "kind": "archive_oriented",
+      "query": "",
+      "useful_live_results": null,
+      "hunt_found_additional_results": null,
+      "fetched_indexed_result_understandable": null,
+      "restart_retrieval_worked": null,
+      "notes": ""
+    }
+  ],
+  "observed_defects": [],
+  "usability_notes": "",
+  "ranking_notes": "",
+  "missing_capabilities": [],
+  "would_use_for_real_unknowns": null,
+  "ai_generated_decision": false,
+  "reviewed_master_mutation": false,
+  "public_index_mutation": false
+}

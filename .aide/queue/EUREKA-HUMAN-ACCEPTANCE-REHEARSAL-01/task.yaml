@@ -1,7 +1,7 @@
 schema_version: aide.task.v0
 id: EUREKA-HUMAN-ACCEPTANCE-REHEARSAL-01
 title: Prepare human live-search acceptance rehearsal
-status: planned
+status: WAITING_FOR_HUMAN_ACCEPTANCE
 task_class: product_hardening_stage
 parent_track: EUREKA-REAL-LIVE-SEARCH-HUNT-00
 predecessor: EUREKA-OPERATOR-LIVE-CANARY-CLOSEOUT-01
@@ -9,4 +9,20 @@ successor: EUREKA-EXTERNAL-FULL-DISCOVERY-HANDOFF-01
 purpose: >-
   Prepare a one-page product-facing human acceptance runbook and blank decision
   artifact without filling in or automating the human verdict.
-
+evidence:
+  implementation:
+    - docs/operations/HUMAN_LIVE_SEARCH_ACCEPTANCE_REHEARSAL.md
+    - control/inventory/product/human_live_search_acceptance_decision_template.json
+  tests:
+    - tests/operations/test_human_acceptance_rehearsal.py
+  notes:
+    - The runbook asks the operator to use the product, not inspect task packets or architecture.
+    - The decision artifact is blank and allows only accepted, accepted_with_changes, or rejected.
+    - No human verdict has been supplied.
+validation:
+  - python -m unittest tests.operations.test_human_acceptance_rehearsal -v
+  - python -m json.tool control/inventory/product/human_live_search_acceptance_decision_template.json
+non_goals:
+  - no automated human acceptance
+  - no inferred product approval
+  - no public launch
