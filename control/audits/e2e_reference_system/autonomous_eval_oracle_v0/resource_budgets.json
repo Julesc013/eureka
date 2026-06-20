@@ -1,0 +1,11 @@
+{
+  "schema_version": "eureka.autonomous_eval_oracle_resource_budgets.v0",
+  "budget_file": "evals/e2e_reference/oracle/budgets/local_reference_v0.json",
+  "source_run": ".eureka/e2e-reference/eval/e2e-eval-all-20260620T055522Z-df63f438f8",
+  "generated_files": 251,
+  "generated_bytes": 1137423,
+  "peak_traced_allocation_bytes": 8138008,
+  "hard_cap_failures": 0,
+  "advisory_warnings": 0,
+  "production_performance_claim": false
+}

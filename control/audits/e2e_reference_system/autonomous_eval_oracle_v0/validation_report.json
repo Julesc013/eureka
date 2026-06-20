@@ -1,0 +1,77 @@
+{
+  "schema_version": "eureka.autonomous_eval_oracle_validation_report.v0",
+  "oracle_version": "eureka.autonomous_eval_oracle.v0",
+  "core_run": ".eureka/e2e-reference/eval/e2e-eval-core-20260620T055436Z-1789c10b84",
+  "core_status": "PASS",
+  "all_run": ".eureka/e2e-reference/eval/e2e-eval-all-20260620T055522Z-df63f438f8",
+  "all_status": "PASS",
+  "case_count": 36,
+  "critical_failures": 0,
+  "required_failures": 0,
+  "advisory_warnings": 0,
+  "capability_gaps": 0,
+  "provider_network_calls": false,
+  "model_calls": false,
+  "real_review_decisions": false,
+  "production_truth_mutation": false,
+  "reviewed_master_mutation": false,
+  "public_index_mutation": false,
+  "public_exposure": false,
+  "full_discovery_run": false,
+  "recommended_next_task": "PORTABLE-EUREKA-INSTANCE-00",
+  "final_guardrails": [
+    {
+      "command": "python -m unittest tests.evals.test_e2e_eval_oracle tests.e2e.test_autonomous_eval_oracle tests.operations.test_eureka_e2e_eval_scripts -v",
+      "status": "PASS"
+    },
+    {
+      "command": "python -m unittest tests.evals.test_hard_query_eval runtime.engine.evals.tests.test_search_usefulness_runner -v",
+      "status": "PASS"
+    },
+    {
+      "command": "python -m unittest tests.runtime.test_e2e_reference_runner tests.e2e.test_e2e_reference_runner tests.search.test_e2e_preview_index tests.e2e.test_e2e_preview_index tests.e2e.test_e2e_hunt_exploration_ui tests.runtime.test_synthetic_truth_materialization tests.e2e.test_synthetic_truth_path_e2e -v",
+      "status": "PASS"
+    },
+    {
+      "command": "python tools/validators/validate_snapshot_runtime.py",
+      "status": "PASS"
+    },
+    {
+      "command": "python scripts/check_architecture_boundaries.py",
+      "status": "PASS"
+    },
+    {
+      "command": "python scripts/validate_runtime_architecture_leakage.py --json",
+      "status": "PASS"
+    },
+    {
+      "command": "python scripts/validate_public_alpha_readonly.py",
+      "status": "PASS"
+    },
+    {
+      "command": "python scripts/validate_snapshot_relay.py",
+      "status": "PASS"
+    },
+    {
+      "command": "python scripts/validate_test_lane_policy.py",
+      "status": "PASS"
+    },
+    {
+      "command": "python scripts/eureka_test_select.py --changed --failed-first --json",
+      "status": "PASS"
+    },
+    {
+      "command": "python -m unittest tests.scripts.test_eureka_test_select tests.operations.test_test_lane_policy tests.scripts.test_validate_test_lane_policy -v",
+      "status": "PASS"
+    },
+    {
+      "command": "git diff --check",
+      "status": "PASS"
+    },
+    {
+      "command": "python scripts/check_generated_artifact_cleanliness.py --check --json",
+      "status": "PENDING_POST_COMMIT",
+      "note": "Precommit run reports the new tracked audit packet until it is committed."
+    }
+  ]
+}

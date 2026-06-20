@@ -1,0 +1,48 @@
+{
+  "schema_version": "eureka.autonomous_eval_oracle_existing_seams.v0",
+  "seams": [
+    {
+      "path": "evals/hard_queries/**",
+      "purpose": "known-answer fixture evaluation",
+      "proof_level": "semantic_proof",
+      "disposition": "wrap"
+    },
+    {
+      "path": "runtime/resolution_run/**",
+      "purpose": "E2E runner and replay validation",
+      "proof_level": "recovery_proof",
+      "disposition": "adapt"
+    },
+    {
+      "path": "runtime/index/preview/**",
+      "purpose": "Preview Index build/search/validation",
+      "proof_level": "semantic_proof",
+      "disposition": "adapt"
+    },
+    {
+      "path": "runtime/local/e2e_hunt_exploration.py",
+      "purpose": "exploration projection",
+      "proof_level": "parity_proof",
+      "disposition": "adapt"
+    },
+    {
+      "path": "runtime/local/synthetic_truth_path.py",
+      "purpose": "synthetic truth and rollback proof",
+      "proof_level": "recovery_proof",
+      "disposition": "adapt"
+    },
+    {
+      "path": "runtime/surface/**",
+      "purpose": "cross-render semantic projection",
+      "proof_level": "parity_proof",
+      "disposition": "adapt"
+    },
+    {
+      "path": "runtime/snapshots/**",
+      "purpose": "snapshot verification",
+      "proof_level": "shape_proof",
+      "disposition": "adapt"
+    }
+  ],
+  "conclusion": "Existing hard-query evals remain the primary known-answer source; the oracle composes existing seams and replaces none of their current consumers."
+}

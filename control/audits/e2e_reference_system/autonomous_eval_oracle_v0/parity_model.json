@@ -1,0 +1,18 @@
+{
+  "schema_version": "eureka.autonomous_eval_oracle_parity_model.v0",
+  "profiles": [
+    "json_v0",
+    "text_v0",
+    "html_basic_v0",
+    "snapshot_v0",
+    "exploration_html",
+    "exploration_api"
+  ],
+  "parity_cases": [
+    "parity_hard_query_profiles",
+    "parity_exploration_html_api"
+  ],
+  "byte_equality_required": false,
+  "truth_invention_allowed": false,
+  "all_green": true
+}

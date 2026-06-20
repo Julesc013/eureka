@@ -1,0 +1,10 @@
+{
+  "schema_version": "eureka.autonomous_eval_oracle_baseline_report.v0",
+  "baseline_file": "evals/e2e_reference/oracle/baselines/reference_v0.json",
+  "expected_case_count": 36,
+  "all_suite_status": "PASS",
+  "added_cases": 0,
+  "removed_cases": 0,
+  "regressions": 0,
+  "automatic_bless_command": false
+}

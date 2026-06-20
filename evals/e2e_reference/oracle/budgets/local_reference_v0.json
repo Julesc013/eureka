@@ -1,0 +1,21 @@
+{
+  "schema_version": "eureka.e2e_eval_budgets.v0",
+  "budgets": {
+    "case_default": {
+      "hard_caps": {
+        "max_generated_bytes": 5000000,
+        "max_generated_files": 500
+      },
+      "advisory_latency_ms": 10000,
+      "notes": "Broad local caps intended to catch runaway output without becoming platform-flaky."
+    },
+    "local_reference_v0": {
+      "hard_caps": {
+        "max_generated_bytes": 10000000,
+        "max_generated_files": 800
+      },
+      "advisory_latency_ms": 15000,
+      "notes": "Resource profiles are advisory unless a hard generated-output cap is exceeded."
+    }
+  }
+}

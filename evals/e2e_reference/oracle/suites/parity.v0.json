@@ -1,0 +1,10 @@
+{
+  "schema_version": "eureka.e2e_eval_suite.v0",
+  "suite_id": "parity",
+  "title": "Autonomous E2E oracle parity suite",
+  "case_ids": [
+    "exploration_workspace_packet",
+    "parity_hard_query_profiles",
+    "parity_exploration_html_api"
+  ]
+}

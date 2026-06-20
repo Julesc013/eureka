@@ -1,0 +1,13 @@
+{
+  "schema_version": "eureka.autonomous_eval_oracle_proof_matrix.v0",
+  "proof_level_counts": {
+    "shape_proof": 5,
+    "semantic_proof": 16,
+    "authority_proof": 20,
+    "recovery_proof": 11,
+    "parity_proof": 10,
+    "operational_profile": 6
+  },
+  "source_run": ".eureka/e2e-reference/eval/e2e-eval-all-20260620T055522Z-df63f438f8",
+  "all_proof_levels_covered": true
+}

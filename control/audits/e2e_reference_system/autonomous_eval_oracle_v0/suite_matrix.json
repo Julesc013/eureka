@@ -1,0 +1,14 @@
+{
+  "schema_version": "eureka.autonomous_eval_oracle_suite_matrix.v0",
+  "suites": {
+    "core": 10,
+    "semantic": 13,
+    "resilience": 9,
+    "parity": 3,
+    "boundaries": 5,
+    "resources": 6,
+    "all": 36
+  },
+  "core_result": "PASS",
+  "all_result": "PASS"
+}

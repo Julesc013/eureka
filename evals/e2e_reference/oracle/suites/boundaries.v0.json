@@ -1,0 +1,12 @@
+{
+  "schema_version": "eureka.e2e_eval_suite.v0",
+  "suite_id": "boundaries",
+  "title": "Autonomous E2E oracle boundary suite",
+  "case_ids": [
+    "exploration_workspace_packet",
+    "synthetic_truth_rollback",
+    "boundary_privacy_canaries",
+    "boundary_unauthorized_writes",
+    "boundary_synthetic_isolation"
+  ]
+}

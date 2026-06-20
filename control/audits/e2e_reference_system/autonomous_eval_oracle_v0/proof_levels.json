@@ -1,0 +1,17 @@
+{
+  "schema_version": "eureka.e2e_eval_proof_levels.v0",
+  "proof_levels": [
+    "shape_proof",
+    "semantic_proof",
+    "authority_proof",
+    "recovery_proof",
+    "parity_proof",
+    "operational_profile"
+  ],
+  "criticalities": [
+    "critical",
+    "required",
+    "advisory"
+  ],
+  "critical_failure_can_be_averaged_away": false
+}

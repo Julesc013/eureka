@@ -1,0 +1,15 @@
+{
+  "schema_version": "eureka.autonomous_eval_oracle_fault_model.v0",
+  "fault_cases": [
+    "fault_provider_outage",
+    "fault_rate_limit_retry",
+    "fault_malformed_input",
+    "fault_cache_corruption",
+    "fault_worker_restart_replay",
+    "fault_partial_recovery",
+    "fault_event_replay",
+    "synthetic_truth_rollback"
+  ],
+  "live_provider_calls": false,
+  "all_green": true
+}

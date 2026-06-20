@@ -2,11 +2,11 @@
 
 ## PHASE
 
-UNSPECIFIED - AUTONOMOUS-EVAL-ORACLE-00
+UNSPECIFIED - PORTABLE-EUREKA-INSTANCE-00
 
 ## GOAL
 
-AUTONOMOUS-EVAL-ORACLE-00
+PORTABLE-EUREKA-INSTANCE-00
 
 ## WHY
 
@@ -139,8 +139,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4770
-- approx_tokens: 1193
+- chars: 4774
+- approx_tokens: 1194
 - budget_status: PASS
 - warnings:
   - none

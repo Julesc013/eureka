@@ -1,0 +1,17 @@
+{
+  "schema_version": "eureka.e2e_eval_suite.v0",
+  "suite_id": "core",
+  "title": "Autonomous E2E oracle core suite",
+  "case_ids": [
+    "known_answer_windows_7_apps",
+    "known_answer_blue_ftp_xp",
+    "hard_query_suite_summary",
+    "runner_replay_integrity",
+    "preview_index_candidate_search",
+    "exploration_workspace_packet",
+    "synthetic_truth_rollback",
+    "parity_hard_query_profiles",
+    "boundary_privacy_canaries",
+    "boundary_unauthorized_writes"
+  ]
+}

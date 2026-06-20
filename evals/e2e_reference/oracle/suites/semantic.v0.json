@@ -1,0 +1,20 @@
+{
+  "schema_version": "eureka.e2e_eval_suite.v0",
+  "suite_id": "semantic",
+  "title": "Autonomous E2E oracle semantic suite",
+  "case_ids": [
+    "known_answer_windows_7_apps",
+    "known_answer_win98_driver",
+    "known_answer_blue_ftp_xp",
+    "known_answer_ct1740_manual",
+    "known_answer_firefox_xp",
+    "known_answer_ray_tracing_1994",
+    "metamorphic_equivalent_blue_ftp",
+    "metamorphic_noise_injection",
+    "metamorphic_constraint_addition",
+    "metamorphic_constraint_change",
+    "metamorphic_constraint_removal",
+    "duplicate_identity_preserved",
+    "conflict_preserved_not_resolved"
+  ]
+}

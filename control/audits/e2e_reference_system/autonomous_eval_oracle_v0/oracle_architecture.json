@@ -1,0 +1,19 @@
+{
+  "schema_version": "eureka.autonomous_eval_oracle_architecture.v0",
+  "implementation_root": "evals/e2e_reference/oracle/",
+  "cli": "scripts/eureka_e2e_eval.py",
+  "validator": "tools/validators/validate_e2e_eval_oracle.py",
+  "oracle_version": "eureka.autonomous_eval_oracle.v0",
+  "architecture": [
+    "EvalCase registry",
+    "product adapter",
+    "observed artifacts",
+    "deterministic assertions",
+    "case result",
+    "suite gate",
+    "immutable eval report"
+  ],
+  "model_judge": false,
+  "runtime_engine_created": false,
+  "full_discovery_replacement_claim": false
+}

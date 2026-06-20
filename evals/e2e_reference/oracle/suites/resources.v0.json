@@ -1,0 +1,13 @@
+{
+  "schema_version": "eureka.e2e_eval_suite.v0",
+  "suite_id": "resources",
+  "title": "Autonomous E2E oracle resource profile suite",
+  "case_ids": [
+    "resource_runner",
+    "resource_preview_search",
+    "resource_exploration_packet",
+    "resource_synthetic_truth",
+    "resource_snapshot_verify",
+    "resource_core_suite"
+  ]
+}

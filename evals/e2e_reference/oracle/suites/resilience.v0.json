@@ -1,0 +1,16 @@
+{
+  "schema_version": "eureka.e2e_eval_suite.v0",
+  "suite_id": "resilience",
+  "title": "Autonomous E2E oracle resilience suite",
+  "case_ids": [
+    "runner_replay_integrity",
+    "synthetic_truth_rollback",
+    "fault_provider_outage",
+    "fault_rate_limit_retry",
+    "fault_malformed_input",
+    "fault_cache_corruption",
+    "fault_worker_restart_replay",
+    "fault_partial_recovery",
+    "fault_event_replay"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "schema_version": "eureka.autonomous_eval_oracle_boundary_report.v0",
+  "provider_network_calls": false,
+  "model_calls": false,
+  "real_review_decisions": false,
+  "production_truth_mutation": false,
+  "reviewed_master_mutation": false,
+  "public_index_mutation": false,
+  "public_exposure": false,
+  "downloads_or_execution": false,
+  "privacy_leakage": false,
+  "unauthorized_writes": false,
+  "license_posture": "unchanged"
+}
