@@ -1,0 +1,80 @@
+{
+  "schema_version": "eureka.live_product_hardening_findings.v1",
+  "status": "pass_with_warnings",
+  "audit_id": "live_product_hardening_audit_v1",
+  "critical_count": 0,
+  "high_count": 0,
+  "medium_count": 3,
+  "low_count": 2,
+  "advisory_count": 2,
+  "blocks_agentic_planner": true,
+  "blocks_public_launch": true,
+  "findings": [
+    {
+      "id": "M-001",
+      "severity": "medium",
+      "title": "Operator real live canary has not run in this session",
+      "status": "open_external_gate",
+      "area": "live_acceptance",
+      "impact": "Automated live acceptance cannot be closed until a real provider, Hunt, fetch, SourceObservation, index, restart, and local retrieval proof succeeds.",
+      "required_next_step": "Run OPERATOR-LIVE-CANARY-00 with a local Brave key and sanitized evidence output.",
+      "blocks_agentic_planner": true
+    },
+    {
+      "id": "M-002",
+      "severity": "medium",
+      "title": "Human product acceptance has not started",
+      "status": "open_human_gate",
+      "area": "human_acceptance",
+      "impact": "No operator verdict exists for usefulness, usability, ranking, error clarity, or whether Eureka should be used for real unknowns.",
+      "required_next_step": "Run the human rehearsal after the operator canary passes and record an explicit human verdict.",
+      "blocks_agentic_planner": true
+    },
+    {
+      "id": "M-003",
+      "severity": "medium",
+      "title": "Full unittest discovery is waiting for external execution",
+      "status": "open_external_gate",
+      "area": "validation",
+      "impact": "Promotion-scale unittest evidence is not available inside this AI session by policy.",
+      "required_next_step": "Run the external full-discovery handoff command outside the repo and return compact summary artifacts.",
+      "blocks_agentic_planner": true
+    },
+    {
+      "id": "L-001",
+      "severity": "low",
+      "title": "Portable bundle rehearsal is a local source-checkout rehearsal",
+      "status": "accepted_v0",
+      "area": "portability",
+      "impact": "The bundle proves local manifest, checksums, launchers, bootstrap, backup, and restore, not a third-party clean machine install.",
+      "required_next_step": "Use external CI or an operator clean machine before any release claim."
+    },
+    {
+      "id": "L-002",
+      "severity": "low",
+      "title": "Foundry live operation remains disabled until live acceptance",
+      "status": "intentional_gate",
+      "area": "foundry",
+      "impact": "Foundry deterministic controls are present, but live scheduled growth is not activated before the canary.",
+      "required_next_step": "Keep explicit local operator activation only after live acceptance."
+    },
+    {
+      "id": "A-001",
+      "severity": "advisory",
+      "title": "Performance baseline is deterministic and small in-session",
+      "status": "noted",
+      "area": "performance",
+      "impact": "The baseline captures local hot-path behavior without making a production scale claim.",
+      "required_next_step": "Run larger synthetic sizes on operator hardware when capacity tuning is needed."
+    },
+    {
+      "id": "A-002",
+      "severity": "advisory",
+      "title": "Public service remains out of scope",
+      "status": "noted",
+      "area": "public_service",
+      "impact": "No public launch readiness is claimed; public live fanout and public mutation remain disabled.",
+      "required_next_step": "Return to public-readiness work only after live product acceptance."
+    }
+  ]
+}

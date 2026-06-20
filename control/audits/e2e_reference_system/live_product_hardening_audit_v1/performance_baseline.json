@@ -1,0 +1,64 @@
+{
+  "schema_version": "eureka.live_product_performance_baseline.v1",
+  "status": "pass",
+  "source": "deterministic_synthetic_local_benchmark",
+  "command": "python scripts/eureka.py --instance ../instances/wave03-audit-baseline benchmark --sizes 10,25 --iterations 3 --no-export --json",
+  "captured_at_utc": "2026-06-20T20:08:06Z",
+  "production_scale_claimed": false,
+  "network_provider_calls": false,
+  "model_provider_calls": false,
+  "public_exposure": false,
+  "reviewed_master_mutation": false,
+  "public_index_mutation": false,
+  "dataset_sizes": [
+    10,
+    25
+  ],
+  "datasets": [
+    {
+      "dataset_size": 10,
+      "document_count": 11,
+      "bulk_insert_ms": 36,
+      "incremental_upsert_ms": 32,
+      "fts_query_latency_ms": {
+        "p50": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "exact_title_query_ms": 0,
+      "phrase_query_ms": 1,
+      "faceted_status_query_ms": 0,
+      "database_bytes_per_document": 372.36
+    },
+    {
+      "dataset_size": 25,
+      "document_count": 26,
+      "bulk_insert_ms": 124,
+      "incremental_upsert_ms": 49,
+      "fts_query_latency_ms": {
+        "p50": 0,
+        "p95": 0,
+        "p99": 0
+      },
+      "exact_title_query_ms": 0,
+      "phrase_query_ms": 0,
+      "faceted_status_query_ms": 0,
+      "database_bytes_per_document": 157.54
+    }
+  ],
+  "memory_high_water_bytes": 67361,
+  "total_duration_ms": 1624,
+  "provisional_v0_targets": {
+    "local_fts_p95_ms": 25,
+    "incremental_upsert_ms": 162,
+    "ten_k_document_startup_ms": "measure_on_local_hardware",
+    "backup_target_ms": "measure_with_backup_command",
+    "foundry_checkpoint_target_ms": "measure_with_foundry_stage",
+    "target_type": "provisional_v0_not_production_slo"
+  },
+  "limitations": [
+    "Small in-session benchmark for audit sanity only.",
+    "Larger synthetic sizes should run on operator hardware before capacity tuning.",
+    "Live timing hooks remain waiting for OPERATOR-LIVE-CANARY-00."
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "schema_version": "eureka.live_product_recovery_matrix.v1",
+  "status": "pass",
+  "checks": [
+    {
+      "area": "sqlite_reliability",
+      "status": "pass",
+      "evidence": [
+        "runtime/index/preview/store.py",
+        "runtime/index/preview/recovery.py",
+        "tests/runtime/test_preview_index_recovery.py"
+      ],
+      "covered": [
+        "WAL mode",
+        "foreign keys",
+        "busy timeout",
+        "schema version",
+        "transactions",
+        "integrity check"
+      ]
+    },
+    {
+      "area": "migration",
+      "status": "pass",
+      "evidence": [
+        "runtime/index/preview/recovery.py",
+        ".aide/queue/EUREKA-INDEX-RECOVERY-MIGRATION-AND-BACKUP-01/task.yaml"
+      ],
+      "covered": [
+        "migration preflight",
+        "backup before destructive migration",
+        "migration history",
+        "post-migration validation"
+      ]
+    },
+    {
+      "area": "backup_restore",
+      "status": "pass",
+      "evidence": [
+        "runtime/local/portable_instance.py",
+        "docs/operations/PORTABLE_EUREKA_BACKUP_AND_RECOVERY.md"
+      ],
+      "covered": [
+        "backup create",
+        "backup list",
+        "backup verify",
+        "backup restore to target instance",
+        "secret/provider-payload exclusion"
+      ]
+    },
+    {
+      "area": "corruption_detection",
+      "status": "pass",
+      "evidence": [
+        "tests/runtime/test_preview_index_recovery.py"
+      ],
+      "covered": [
+        "truncated database copy",
+        "invalid migration state",
+        "bad manifest hash",
+        "stale generation pointer"
+      ]
+    },
+    {
+      "area": "rebuild",
+      "status": "pass",
+      "evidence": [
+        "runtime/index/preview/recovery.py"
+      ],
+      "covered": [
+        "rebuild from retained observations",
+        "immutable generation/export material",
+        "safe fail diagnostics"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "schema_version": "eureka.live_product_portability_matrix.v1",
+  "status": "pass_with_warnings",
+  "bundle_implementation": "runtime/local/portable_bundle.py",
+  "documentation": "docs/operations/PORTABLE_LOCAL_PREVIEW_BUNDLE.md",
+  "checks": [
+    {
+      "area": "version",
+      "status": "pass",
+      "evidence": "python scripts/eureka.py --instance <instance> version --json"
+    },
+    {
+      "area": "bundle_create",
+      "status": "pass",
+      "evidence": "python scripts/eureka.py --instance <instance> bundle create --out <bundle> --json"
+    },
+    {
+      "area": "bundle_verify",
+      "status": "pass",
+      "evidence": "python scripts/eureka.py --instance <instance> bundle verify <bundle> --json"
+    },
+    {
+      "area": "bundle_rehearse",
+      "status": "pass",
+      "evidence": "python scripts/eureka.py --instance <instance> bundle rehearse <bundle> --target <target> --json"
+    },
+    {
+      "area": "excluded_private_state",
+      "status": "pass",
+      "excluded": [
+        "API keys",
+        "local instances",
+        "private indexes",
+        "raw observations",
+        "provider result payloads",
+        ".aide.local state",
+        "public deployment state"
+      ]
+    }
+  ],
+  "limitations": [
+    "This is a local source-checkout preview bundle, not a published release artifact.",
+    "External clean-machine validation remains a later operator/CI step."
+  ]
+}

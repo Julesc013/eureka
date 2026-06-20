@@ -1,0 +1,55 @@
+{
+  "schema_version": "eureka.live_product_provider_policy_matrix.v1",
+  "status": "pass_with_warnings",
+  "registry": "control/policies/discovery_provider_registry.json",
+  "runtime_policy_loader": "runtime/search/provider_policy.py",
+  "providers": [
+    {
+      "provider_id": "brave_web_search",
+      "provider_kind": "broad_web_search",
+      "activation_state": "explicit_local_live_only",
+      "authentication": "environment_key",
+      "credential_names": [
+        "BRAVE_SEARCH_API_KEY",
+        "BRAVE_API_KEY"
+      ],
+      "credential_values_persisted": false,
+      "retention": {
+        "persist_urls": false,
+        "persist_snippets": false,
+        "persist_rank": false,
+        "persist_raw_response": false,
+        "fetch_handoff_allowed": true
+      },
+      "validation_state": "deterministic_pass",
+      "live_canary_state": "waiting_for_operator_live_canary"
+    },
+    {
+      "provider_id": "internet_archive_metadata",
+      "provider_kind": "archive_metadata_search",
+      "activation_state": "live_acceptance_gated",
+      "authentication": "none",
+      "credential_values_persisted": false,
+      "retention": {
+        "persist_allowed_metadata_fields": true,
+        "persist_rank": false,
+        "persist_raw_response": false,
+        "payload_downloads": false,
+        "fetch_handoff_allowed": true
+      },
+      "validation_state": "deterministic_pass",
+      "live_canary_state": "waiting_for_live_acceptance"
+    }
+  ],
+  "partial_failure": {
+    "deterministic_conformance": "pass",
+    "brave_succeeds_ia_fails": "covered",
+    "ia_succeeds_brave_fails": "covered",
+    "both_fail": "covered"
+  },
+  "non_claims": [
+    "IA metadata is not reviewed truth.",
+    "Brave provider payload is not durable state.",
+    "No second paid broad-web provider is added."
+  ]
+}

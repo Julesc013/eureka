@@ -1,0 +1,60 @@
+{
+  "schema_version": "eureka.live_product_security_matrix.v1",
+  "status": "pass_with_warnings",
+  "public_exposure_enabled": false,
+  "public_live_fanout_enabled": false,
+  "reviewed_master_mutation": false,
+  "public_index_mutation": false,
+  "provider_result_payload_persisted": false,
+  "model_or_agent_calls": false,
+  "checks": [
+    {
+      "area": "provider_retention",
+      "status": "pass",
+      "evidence": [
+        "control/policies/discovery_provider_registry.json",
+        "runtime/search/provider_policy.py",
+        "runtime/search/canary.py"
+      ],
+      "notes": "Brave URLs, snippets, ranks, raw responses, and credentials are restricted from durable evidence."
+    },
+    {
+      "area": "secret_redaction",
+      "status": "pass",
+      "evidence": [
+        "runtime/search/canary.py",
+        "runtime/search/observability.py",
+        "tests/runtime/test_live_canary_closeout.py",
+        "tests/runtime/test_discovery_observability.py"
+      ],
+      "notes": "Diagnostics and canary evidence use aggregate state and credential variable names only."
+    },
+    {
+      "area": "safe_fetch",
+      "status": "deterministic_pass",
+      "evidence": [
+        "runtime/connectors/web/http_fetcher.py",
+        "tests/runtime/test_safe_web_fetcher.py"
+      ],
+      "notes": "SSRF, redirects, robots, MIME, size, timeout, and no-JavaScript posture are covered by deterministic tests."
+    },
+    {
+      "area": "public_read_only_isolation",
+      "status": "pass",
+      "evidence": [
+        "scripts/validate_public_alpha_readonly.py",
+        "control/inventory/product/capability_state.json"
+      ],
+      "notes": "Wave 03 does not enable public service routes, public fanout, or public mutation."
+    },
+    {
+      "area": "html_and_diagnostics_rendering",
+      "status": "deterministic_pass",
+      "evidence": [
+        "runtime/local/service/routes.py",
+        "tests/runtime/test_local_service_routes.py"
+      ],
+      "notes": "Operator diagnostics are redacted and local-only; raw provider payloads are excluded."
+    }
+  ]
+}
