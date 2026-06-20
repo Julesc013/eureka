@@ -8,13 +8,18 @@ predecessor: SYNTHETIC-TRUTH-PATH-E2E-00
 successor: PORTABLE-EUREKA-INSTANCE-00
 purpose: Build reusable E2E evaluations for meaning preservation, authority preservation, honest failure, recovery, cross-render parity, and resource budgets.
 allowed_scope:
+  - .aide/queue/index.yaml
+  - .aide/queue/AUTONOMOUS-EVAL-ORACLE-00/**
+  - .aide/context/**
   - evals/**
   - tests/**
   - tools/**
   - scripts/**
   - contracts/testing/**
   - control/audits/e2e_reference_system/**
+  - docs/architecture/**
   - docs/operations/**
+  - docs/reference/**
 forbidden_scope:
   - public exposure or launch implementation
   - real truth mutation
