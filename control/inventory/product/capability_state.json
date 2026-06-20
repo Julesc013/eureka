@@ -1,8 +1,8 @@
 {
   "schema_version": "eureka.product_capability_state.v0",
-  "tested_commit": "838570f8",
+  "tested_commit": "a0e99ab0",
   "generated_at": "2026-06-21T00:00:00Z",
-  "current_recommended_task": "EUREKA-PORTABLE-LOCAL-RELEASE-BUNDLE-01",
+  "current_recommended_task": "EUREKA-OPERATOR-LIVE-CANARY-CLOSEOUT-01",
   "capabilities": {
     "live_search": {
       "implementation_state": "implemented",
@@ -107,6 +107,24 @@
       "known_limitations": [
         "Live IA canary remains gated behind operator live acceptance.",
         "The registry governs activation and retention policy; provider adapters still implement transport behavior."
+      ]
+    },
+    "portable_bundle": {
+      "implementation_state": "implemented",
+      "activation_state": "local_source_checkout_bundle",
+      "validation_state": "deterministic_pass",
+      "live_canary_state": "waiting_for_operator_live_canary",
+      "human_acceptance_state": "not_started",
+      "public_status": "not_public",
+      "evidence_refs": [
+        ".aide/queue/EUREKA-PORTABLE-LOCAL-RELEASE-BUNDLE-01/task.yaml",
+        "runtime/local/portable_bundle.py",
+        "docs/operations/PORTABLE_LOCAL_PREVIEW_BUNDLE.md",
+        "tests/runtime/test_portable_bundle.py"
+      ],
+      "known_limitations": [
+        "Bundle output is generated locally by command and is not committed release state.",
+        "Clean-machine proof remains a local clean-instance rehearsal, not external full discovery."
       ]
     },
     "foundry": {

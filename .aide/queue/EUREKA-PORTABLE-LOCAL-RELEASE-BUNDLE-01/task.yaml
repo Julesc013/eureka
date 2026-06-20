@@ -1,7 +1,7 @@
 schema_version: aide.task.v0
 id: EUREKA-PORTABLE-LOCAL-RELEASE-BUNDLE-01
 title: Package local Eureka preview bundle
-status: planned
+status: pass
 task_class: product_hardening_stage
 parent_track: EUREKA-REAL-LIVE-SEARCH-HUNT-00
 predecessor: EUREKA-PROVIDER-POLICY-REGISTRY-01
@@ -10,4 +10,30 @@ purpose: >-
   Provide a reproducible local-only preview bundle manifest, launch helpers,
   checksums, version output, and clean-instance rehearsal without secrets or
   private local data.
-
+evidence:
+  implementation:
+    - runtime/local/portable_bundle.py
+    - runtime/local/portable_instance.py
+    - docs/operations/PORTABLE_LOCAL_PREVIEW_BUNDLE.md
+  commands:
+    - python scripts/eureka.py version
+    - python scripts/eureka.py bundle create
+    - python scripts/eureka.py bundle verify
+    - python scripts/eureka.py bundle rehearse
+  tests:
+    - tests/runtime/test_portable_bundle.py
+  notes:
+    - Bundle artifacts are generated into an operator-selected local directory, not committed release state.
+    - Generated launch helpers call the same Python command surface and require explicit instance paths.
+    - Rehearsal uses a clean local instance, doctor, route registration check, backup, verification, and restore.
+validation:
+  - python -m unittest tests.runtime.test_portable_bundle -v
+  - python -m py_compile runtime/local/portable_bundle.py runtime/local/portable_instance.py tests/runtime/test_portable_bundle.py
+  - python scripts/eureka.py --instance ../instances/wave03-bundle-smoke version --json
+  - python scripts/eureka.py --instance ../instances/wave03-bundle-smoke bundle create --out ../instances/wave03-bundle-smoke/exports/portable-bundles/smoke --json
+  - python scripts/eureka.py --instance ../instances/wave03-bundle-smoke bundle verify ../instances/wave03-bundle-smoke/exports/portable-bundles/smoke --json
+  - python scripts/eureka.py --instance ../instances/wave03-bundle-smoke bundle rehearse ../instances/wave03-bundle-smoke/exports/portable-bundles/smoke --target ../instances/wave03-bundle-smoke-rehearsal --json
+non_goals:
+  - no release directory mutation
+  - no packaged secrets or private instance data
+  - no public exposure

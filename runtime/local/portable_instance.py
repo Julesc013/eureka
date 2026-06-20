@@ -60,6 +60,7 @@ from runtime.local.e2e_hunt_exploration import (
     build_explore_workspace,
 )
 from runtime.local.service.server import create_local_http_server
+from runtime.local.portable_bundle import build_portable_bundle, validate_portable_bundle, version_payload
 from runtime.resolution_run import (
     RunnerBudget,
     replay_run_bundle,
@@ -1085,6 +1086,104 @@ def benchmark_command(
     )
 
 
+def version_command(*, instance: str | Path | None = None) -> dict[str, Any]:
+    started = _now()
+    root = resolve_portable_instance_root(instance)
+    return _result(
+        "version",
+        "pass",
+        root,
+        started_at=started,
+        mutations=False,
+        payload=version_payload(repo_root=REPO_ROOT, instance_schema_version=CURRENT_INSTANCE_SCHEMA_VERSION),
+    )
+
+
+def bundle_command(
+    action: str,
+    *,
+    instance: str | Path | None = None,
+    out_dir: str | Path | None = None,
+    bundle: str | Path | None = None,
+    target: str | Path | None = None,
+) -> dict[str, Any]:
+    started = _now()
+    root = resolve_portable_instance_root(instance)
+    paths = build_portable_paths(root)
+    clean_action = str(action or "").strip().casefold()
+    if clean_action == "create":
+        output = Path(out_dir).expanduser() if out_dir else paths.exports_dir / "portable-bundles" / ("bundle-" + _now().replace(":", "").replace("-", ""))
+        result = build_portable_bundle(repo_root=REPO_ROOT, out_dir=output, instance_schema_version=CURRENT_INSTANCE_SCHEMA_VERSION)
+        return _result(
+            "bundle create",
+            "pass" if result.get("status") == "pass" else "fail",
+            root,
+            started_at=started,
+            mutations=True,
+            payload={**result, "network_provider_calls": False, "reviewed_master_mutation": False, "public_index_mutation": False},
+        )
+    if clean_action == "verify":
+        if not bundle:
+            raise PortableInstanceError("bundle_required", "bundle verify requires a bundle path", exit_code=2)
+        result = validate_portable_bundle(bundle, repo_root=REPO_ROOT)
+        return _result(
+            "bundle verify",
+            "pass" if result.get("status") == "pass" else "fail",
+            root,
+            started_at=started,
+            mutations=False,
+            payload={**result, "network_provider_calls": False, "reviewed_master_mutation": False, "public_index_mutation": False},
+        )
+    if clean_action == "rehearse":
+        if not bundle:
+            raise PortableInstanceError("bundle_required", "bundle rehearse requires a bundle path", exit_code=2)
+        validation = validate_portable_bundle(bundle, repo_root=REPO_ROOT)
+        target_root = Path(target).expanduser() if target else paths.tmp_root / "bundle-rehearsal"
+        restore_target = target_root.with_name(target_root.name + "-restored")
+        _prepare_rehearsal_target(target_root, allowed_parent=paths.tmp_root)
+        _prepare_rehearsal_target(restore_target, allowed_parent=paths.tmp_root)
+        bootstrap = bootstrap_command(instance=target_root, no_demo=True)
+        doctor = doctor_command(instance=target_root)
+        backup = backup_command("create", instance=target_root)
+        backup_path = str(backup.get("backup_path") or "")
+        verify = backup_command("verify", instance=target_root, backup=backup_path)
+        restore = backup_command("restore", instance=target_root, backup=backup_path, target=restore_target)
+        steps = {
+            "bundle_verify": validation,
+            "bootstrap": _compact_step(bootstrap),
+            "doctor": _compact_step(doctor),
+            "route_registration": _step_check(doctor, "exploration_routes"),
+            "backup": _compact_step(backup),
+            "backup_verify": _compact_step(verify),
+            "restore": _compact_step(restore),
+        }
+        ok = validation.get("status") == "pass" and all(_step_ok(item) for item in steps.values())
+        return _result(
+            "bundle rehearse",
+            "pass" if ok else "fail",
+            root,
+            started_at=started,
+            mutations=True,
+            payload={
+                "schema_version": "eureka.local_preview_bundle_rehearsal.v0",
+                "bundle_dir": str(Path(bundle).resolve()),
+                "target_instance": str(target_root.resolve()),
+                "restored_instance": str(restore_target.resolve()),
+                "steps": steps,
+                "clean_instance_rehearsal": True,
+                "server_started": False,
+                "route_registration_checked": True,
+                "network_provider_calls": False,
+                "reviewed_master_mutation": False,
+                "public_index_mutation": False,
+                "public_exposure": False,
+                "provider_result_payload_included": False,
+                "credential_value_exposed": False,
+            },
+        )
+    raise PortableInstanceError("unsupported_bundle_command", f"unsupported bundle command: {action}", exit_code=2)
+
+
 def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr: TextIO = sys.stderr) -> int:
     parser = _parser()
     args = parser.parse_args(argv)
@@ -1182,6 +1281,15 @@ def _dispatch(args: argparse.Namespace, *, stdout: TextIO) -> dict[str, Any]:
             return backup_command("restore", instance=args.instance, backup=args.backup, target=args.target)
     if args.command == "benchmark":
         return benchmark_command(instance=args.instance, sizes=args.sizes, iterations=args.iterations, export_generation=not args.no_export)
+    if args.command == "version":
+        return version_command(instance=args.instance)
+    if args.command == "bundle":
+        if args.bundle_command == "create":
+            return bundle_command("create", instance=args.instance, out_dir=args.out)
+        if args.bundle_command == "verify":
+            return bundle_command("verify", instance=args.instance, bundle=args.bundle)
+        if args.bundle_command == "rehearse":
+            return bundle_command("rehearse", instance=args.instance, bundle=args.bundle, target=args.target)
     raise PortableInstanceError("unsupported_command", f"unsupported command: {args.command}", exit_code=2)
 
 
@@ -1292,6 +1400,18 @@ def _parser() -> argparse.ArgumentParser:
     benchmark.add_argument("--sizes", default="1000,10000", help="Comma-separated synthetic dataset sizes, bounded to 100000.")
     benchmark.add_argument("--iterations", type=int, default=20)
     benchmark.add_argument("--no-export", action="store_true", help="Skip immutable generation export timing.")
+
+    sub.add_parser("version", parents=[common], help="Show local Eureka preview version and schema metadata.")
+
+    bundle = sub.add_parser("bundle", parents=[common], help="Create, verify, or rehearse a local-only preview bundle.")
+    bundle_sub = bundle.add_subparsers(dest="bundle_command", required=True)
+    bundle_create = bundle_sub.add_parser("create", parents=[common], help="Create a local preview bundle manifest and launch helpers.")
+    bundle_create.add_argument("--out", default="")
+    bundle_verify = bundle_sub.add_parser("verify", parents=[common], help="Verify a local preview bundle manifest and checksums.")
+    bundle_verify.add_argument("bundle")
+    bundle_rehearse = bundle_sub.add_parser("rehearse", parents=[common], help="Rehearse bootstrap, doctor, backup, and restore using a clean local instance.")
+    bundle_rehearse.add_argument("bundle")
+    bundle_rehearse.add_argument("--target", default="")
     return parser
 
 
@@ -2168,6 +2288,41 @@ def _parse_sizes(value: str) -> list[int]:
         except ValueError:
             continue
     return sizes or [1000]
+
+
+def _prepare_rehearsal_target(path: Path, *, allowed_parent: Path) -> None:
+    target = path.expanduser().resolve()
+    allowed = allowed_parent.expanduser().resolve()
+    if target.exists():
+        try:
+            target.relative_to(allowed)
+        except ValueError as exc:
+            raise PortableInstanceError("bundle_rehearsal_target_exists", f"refusing to remove existing explicit target outside {allowed}: {target}", exit_code=2) from exc
+        shutil.rmtree(target)
+    target.parent.mkdir(parents=True, exist_ok=True)
+
+
+def _compact_step(payload: Mapping[str, Any]) -> dict[str, Any]:
+    return {
+        "schema_version": str(payload.get("schema_version") or ""),
+        "command": str(payload.get("command") or ""),
+        "status": str(payload.get("status") or ""),
+        "error": str(payload.get("error") or ""),
+        "public_exposure": bool(payload.get("public_exposure", False)),
+        "reviewed_master_mutation": bool(payload.get("reviewed_master_mutation", False)),
+        "public_index_mutation": bool(payload.get("public_index_mutation", False)),
+    }
+
+
+def _step_check(payload: Mapping[str, Any], check_id: str) -> dict[str, Any]:
+    for item in payload.get("checks") or []:
+        if isinstance(item, Mapping) and item.get("id") == check_id:
+            return {"status": str(item.get("status") or ""), "check": check_id}
+    return {"status": "missing", "check": check_id}
+
+
+def _step_ok(payload: Mapping[str, Any]) -> bool:
+    return str(payload.get("status") or "") in {"pass", "pass_with_warnings", "present"}
 
 
 def _relative_to_instance(root: Path, path: Path) -> str:
