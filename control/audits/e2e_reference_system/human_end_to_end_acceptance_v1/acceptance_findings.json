@@ -1,0 +1,44 @@
+{
+  "schema_version": "eureka.human_acceptance_findings.v0",
+  "status": "BLOCKED_BY_NONFUNCTIONAL_SEARCH_HUNT",
+  "summary": "Renewed acceptance failed because Eureka did not provide useful working search or Hunt behavior.",
+  "product_failure": true,
+  "operator_mistake": false,
+  "findings": [
+    {
+      "severity": "P0",
+      "classification": "core_product_functionality_absent",
+      "operator_wording": "This program does fucking nothing? I cant search or hunt or find anything.",
+      "affected_workflow": "local_search_hunt_find_assess_index",
+      "reproducibility": "reported_by_renewed_human_acceptance_attempt",
+      "proposed_task": "EUREKA-REAL-LOCAL-SEARCH-HUNT-00",
+      "required_authority": "product functionality repair under E2E reference system track"
+    },
+    {
+      "severity": "P1",
+      "classification": "synthetic_acceptance_path_not_useful",
+      "operator_wording": "trying to build a fake system to fool me into thinking we've built a search engine",
+      "affected_workflow": "acceptance_search_and_hunt_path",
+      "reproducibility": "reported_by_renewed_human_acceptance_attempt",
+      "proposed_task": "EUREKA-REAL-LOCAL-SEARCH-HUNT-00",
+      "required_authority": "product functionality repair under E2E reference system track"
+    }
+  ],
+  "counts": {
+    "p0_critical": 1,
+    "p1_blocking": 1,
+    "p2_significant": 3,
+    "p3_polish": 0,
+    "future_enhancement": 0
+  },
+  "boundary_findings": {
+    "public_exposure": false,
+    "truth_boundary": false,
+    "reviewed_record_creation": false,
+    "index_mutation": false,
+    "provider_or_network_call": false,
+    "downloads_or_execution": false,
+    "license_change": false
+  },
+  "next_task": "EUREKA-REAL-LOCAL-SEARCH-HUNT-00"
+}

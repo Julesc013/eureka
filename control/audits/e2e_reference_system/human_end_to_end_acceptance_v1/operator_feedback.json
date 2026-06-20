@@ -1,0 +1,17 @@
+{
+  "schema_version": "eureka.human_acceptance_feedback.v0",
+  "actor": "Jules Carboni",
+  "build": "908d70f2be9bbb2a6989e5d41eafb6399de916cd",
+  "instance": "eureka-e2e-acceptance-v0",
+  "verdict": "BLOCKED_BY_NONFUNCTIONAL_SEARCH_HUNT",
+  "normalized_verdict": "BLOCKED",
+  "verbatim_feedback": [
+    "this is a fucking joke right?\nWhat the fuck is there for me to test or approve?\nThis program does fucking nothing?\nI cant search or hunt or find anything, not beacuse the code is broken i assuyme, but presumably because what you have built is literally not desighned to fullfill my wishes...\nIOts like you're tryiung to buil;d a fake system to f0ool e into thinking weve bnuilt a seasrch egnine!\nIm insulted because thjis literally does nothing and looks like dogshit and is full of useless ifnromation and tells me absolutely nothing i want to know and doesnt help me develop or test or assess or search or index 0or do anyhrting,  thjis is entirelky and utterly useless yto me and youve wasted my time"
+  ],
+  "ratings": "rejected_before_acceptance",
+  "operator_interpretation": "genuine_core_product_functionality_failure_not_operator_mistake",
+  "first_use_blocked": false,
+  "core_functionality_blocked": true,
+  "public_or_truth_boundary_issue": false,
+  "next_task": "EUREKA-REAL-LOCAL-SEARCH-HUNT-00"
+}

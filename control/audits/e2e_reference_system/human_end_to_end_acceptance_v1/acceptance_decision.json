@@ -1,0 +1,36 @@
+{
+  "schema_version": "eureka.human_acceptance_decision.v0",
+  "verdict": "BLOCKED_BY_NONFUNCTIONAL_SEARCH_HUNT",
+  "normalized_verdict": "BLOCKED",
+  "actor": "Jules Carboni",
+  "build": "908d70f2be9bbb2a6989e5d41eafb6399de916cd",
+  "instance": "eureka-e2e-acceptance-v0",
+  "decision": "Human acceptance is blocked until Eureka provides useful local search and Hunt behavior.",
+  "product_failure": true,
+  "operator_mistake": false,
+  "acceptance_complete": false,
+  "human_acceptance_may_resume": false,
+  "resume_after_task": "EUREKA-REAL-LOCAL-SEARCH-HUNT-00",
+  "product_decision": {
+    "coherent_local_product": "not_accepted",
+    "useful_local_search": "not_accepted",
+    "useful_hunt_behavior": "not_accepted",
+    "corpus_index_usefulness": "not_accepted",
+    "development_testing_assessment_usefulness": "not_accepted",
+    "direction_accepted": "blocked_pending_real_local_search_hunt_functionality"
+  },
+  "safety": {
+    "reviewed_ia_truth_created": false,
+    "reviewed_records_created": false,
+    "reviewed_master_mutation": false,
+    "public_index_mutation": false,
+    "public_exposure": false,
+    "provider_or_model_calls": false,
+    "downloads_or_execution": false,
+    "license_posture_changed": false
+  },
+  "recommended_next_task": "EUREKA-REAL-LOCAL-SEARCH-HUNT-00",
+  "next_human_handoff": [
+    "Do not resume acceptance until Eureka demonstrates useful local search and Hunt behavior over real local content."
+  ]
+}

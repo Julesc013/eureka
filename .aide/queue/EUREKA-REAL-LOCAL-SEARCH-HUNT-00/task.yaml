@@ -1,0 +1,74 @@
+schema_version: aide.task.v0
+id: EUREKA-REAL-LOCAL-SEARCH-HUNT-00
+title: Make Eureka provide useful local search and Hunt behavior before acceptance
+status: planned
+task_class: e2e_reference_child_repair
+parent_track: E2E-REFERENCE-SYSTEM-TRACK-00
+predecessor: HUMAN-END-TO-END-ACCEPTANCE-00
+successor: HUMAN-END-TO-END-ACCEPTANCE-00
+purpose: Replace the synthetic/demo-only acceptance experience with a genuinely useful local search and Hunt product path that can find, explain, assess, and index real local content before human acceptance resumes.
+operator_verdict_source: control/audits/e2e_reference_system/human_end_to_end_acceptance_v1/ACCEPTANCE_DECISION.md
+allowed_scope:
+  - .aide/queue/index.yaml
+  - .aide/queue/EUREKA-REAL-LOCAL-SEARCH-HUNT-00/**
+  - .aide/queue/HUMAN-END-TO-END-ACCEPTANCE-00/**
+  - .aide/context/**
+  - scripts/eureka.py
+  - runtime/local/**
+  - runtime/index/**
+  - runtime/resolution_run/**
+  - surfaces/web/**
+  - contracts/**
+  - tests/e2e/**
+  - tests/runtime/**
+  - tests/scripts/**
+  - docs/operations/**
+  - docs/reference/**
+  - control/audits/e2e_reference_system/**
+forbidden_scope:
+  - fake acceptance fixtures as the product success path
+  - synthetic-only results presented as useful search
+  - real reviewed-record materialization
+  - reviewed/master/public index mutation
+  - second live provider approval
+  - public exposure or launch implementation
+  - downloads or execution implementation
+  - source/provider expansion without explicit follow-on authority
+  - review decision recording
+  - production review stores
+  - license files
+inherits_hard_gates_from: E2E-REFERENCE-SYSTEM-TRACK-00
+trigger:
+  verdict: BLOCKED_BY_NONFUNCTIONAL_SEARCH_HUNT
+  interpretation: Genuine product failure; after first-run UX repair, the local product still did not provide useful search, Hunt, find, assess, test, or index behavior.
+deliverables:
+  - one startup command that leads to an actually useful local product path
+  - an explicit local searchable corpus or index that is real repo/instance content, not only hard-coded demo fixtures
+  - clear corpus coverage state, including what Eureka can and cannot currently search
+  - search results that return evidence-backed local records for content that exists in the corpus
+  - honest empty results that explain whether the query failed because nothing is indexed, the corpus lacks the target, or the product cannot yet investigate it
+  - Hunt behavior that performs a bounded local investigation over the available local corpus/index, records sources checked, and persists a replayable run
+  - visible source/progress/evidence/near-miss/absence information useful to development and assessment
+  - an indexing or refresh path that lets an operator understand and rebuild the local searchable state
+  - no claim that synthetic truth, preview fixtures, or UI wording alone satisfy acceptance
+  - automated clean-start smoke covering useful search, useful Hunt, empty/unavailable state, and corpus coverage state
+next_human_handoff:
+  - Start Eureka.
+  - Open http://127.0.0.1:8765/explore.
+  - Search for something that should exist in the local corpus.
+  - Start a Hunt and verify what Eureka actually checked.
+  - Report whether the product helped you find, assess, test, or index anything useful.
+acceptance:
+  - Human acceptance can resume only when Eureka demonstrably helps the operator find or assess real local content.
+  - Normal first-use behavior must not depend on fake/synthetic fixtures as the success path.
+  - Search, Hunt, corpus coverage, and failure states must be useful without architecture knowledge.
+  - No public exposure, provider calls, review decisions, truth mutation, index mutation, downloads, or execution are introduced.
+validation:
+  - python -m unittest tests.e2e.test_e2e_hunt_exploration_ui -v
+  - python -m unittest tests.e2e.test_portable_eureka_instance -v
+  - python -m unittest tests.runtime.test_portable_eureka_instance -v
+  - python scripts/check_architecture_boundaries.py
+  - python scripts/validate_public_alpha_readonly.py
+  - python scripts/eureka_test_select.py --changed --failed-first --json
+  - git diff --check
+proof_level_required: L2

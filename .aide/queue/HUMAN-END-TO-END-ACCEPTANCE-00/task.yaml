@@ -1,7 +1,7 @@
 schema_version: aide.task.v0
 id: HUMAN-END-TO-END-ACCEPTANCE-00
 title: Run human E2E reference-system acceptance
-status: planned
+status: blocked
 task_class: e2e_reference_child
 parent_track: E2E-REFERENCE-SYSTEM-TRACK-00
 predecessor: PORTABLE-EUREKA-INSTANCE-00
@@ -11,6 +11,9 @@ previously_blocked_by: EUREKA-FIRST-RUN-ACCEPTANCE-UX-00
 previous_blocking_verdict: BLOCKED_BY_FIRST_USE_UX
 previous_blocking_reason: The first-use acceptance handoff and product entry experience were not self-explanatory to the operator. This is a product UX failure, not an operator mistake.
 resume_condition_satisfied_by: EUREKA-FIRST-RUN-ACCEPTANCE-UX-00
+blocked_by: EUREKA-REAL-LOCAL-SEARCH-HUNT-00
+blocking_verdict: BLOCKED_BY_NONFUNCTIONAL_SEARCH_HUNT
+blocking_reason: The repaired first-run surface still did not provide a useful working search, Hunt, find, assess, test, or index product experience. This is a core product functionality failure, not a UX wording issue.
 allowed_scope:
   - docs/operations/**
   - docs/reference/**

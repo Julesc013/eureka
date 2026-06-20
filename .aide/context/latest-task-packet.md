@@ -2,11 +2,11 @@
 
 ## PHASE
 
-UNSPECIFIED - HUMAN-END-TO-END-ACCEPTANCE-00
+UNSPECIFIED - EUREKA-REAL-LOCAL-SEARCH-HUNT-00
 
 ## GOAL
 
-HUMAN-END-TO-END-ACCEPTANCE-00
+EUREKA-REAL-LOCAL-SEARCH-HUNT-00
 
 ## WHY
 
@@ -139,8 +139,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4780
-- approx_tokens: 1195
+- chars: 4784
+- approx_tokens: 1196
 - budget_status: PASS
 - warnings:
   - none
