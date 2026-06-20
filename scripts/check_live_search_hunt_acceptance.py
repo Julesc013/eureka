@@ -23,6 +23,7 @@ from runtime.connectors.web.dns_guard import DNSGuard  # noqa: E402
 from runtime.connectors.web.robots import AllowAllRobotsClient  # noqa: E402
 from runtime.index.preview import SQLitePreviewIndexStore  # noqa: E402
 from runtime.local.portable_instance import bootstrap_command, build_portable_paths, resolve_portable_instance_root  # noqa: E402
+from runtime.search.canary import sanitize_canary_evidence, write_canary_evidence  # noqa: E402
 from runtime.search.hunt_engine import HuntBudget, HuntEngine  # noqa: E402
 from runtime.search.live_service import LiveSearchService, live_hunt_run_id  # noqa: E402
 from runtime.search.live_web import SearchLead, SearchResultPage, WebSearchBudget, brave_capability_manifest  # noqa: E402
@@ -39,6 +40,8 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--max-fetches", type=int, default=3, help="Maximum real canary fetch attempts.")
     parser.add_argument("--keep-instance", action="store_true", help="Keep a generated temporary instance after the live canary.")
     parser.add_argument("--provider", default="brave", help="Live provider id for the real canary.")
+    parser.add_argument("--evidence-out", default="", help="Write sanitized aggregate canary evidence to this JSON path.")
+    parser.add_argument("--query-label", default="", help="Operator-safe query label for evidence; the raw query is not stored.")
     args = parser.parse_args(argv)
     payload = run_acceptance(
         live_canary=bool(args.live_canary),
@@ -49,6 +52,9 @@ def main(argv: list[str] | None = None) -> int:
         keep_instance=bool(args.keep_instance),
         provider=args.provider,
     )
+    payload["sanitized_evidence"] = sanitize_canary_evidence(payload, query=args.query, query_label=args.query_label)
+    if args.evidence_out:
+        write_canary_evidence(args.evidence_out, payload["sanitized_evidence"])
     if args.json:
         print(json.dumps(payload, indent=2, sort_keys=True))
     else:

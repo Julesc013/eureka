@@ -1184,6 +1184,58 @@ def bundle_command(
     raise PortableInstanceError("unsupported_bundle_command", f"unsupported bundle command: {action}", exit_code=2)
 
 
+def canary_command(
+    action: str,
+    *,
+    instance: str | Path | None = None,
+    provider: str = "brave",
+    max_queries: int = 3,
+    max_fetches: int = 3,
+) -> dict[str, Any]:
+    started = _now()
+    root = resolve_portable_instance_root(instance)
+    paths = build_portable_paths(root)
+    clean_action = str(action or "").strip().casefold()
+    if clean_action != "preflight":
+        raise PortableInstanceError("unsupported_canary_command", f"unsupported canary command: {action}", exit_code=2)
+    live_provider_status = provider_status(provider)
+    instance_validation = validate_local_instance(root) if root.exists() else {"status": "absent", "errors": ["instance root does not exist"], "warnings": []}
+    instance_ready = str(instance_validation.get("status") or "") in {"pass", "pass_with_warnings"}
+    migration = migration_preflight(paths.preview_sqlite)
+    database_ready = instance_ready and str(migration.get("status") or "") in {"pass", "absent"}
+    provider_configured = bool(live_provider_status.get("configured"))
+    payload = {
+        "schema_version": "eureka.operator_live_canary_preflight.v0",
+        "provider": provider,
+        "provider_configured": provider_configured,
+        "credential_env_keys": list(live_provider_status.get("credential_env_keys") or []),
+        "credential_value_exposed": False,
+        "instance_ready": instance_ready,
+        "instance_validation_status": str(instance_validation.get("status") or ""),
+        "database_ready": database_ready,
+        "database_status": str(migration.get("status") or ""),
+        "network_mode": "explicit_local_live_only",
+        "budgets": {
+            "max_queries": max(1, min(int(max_queries or 3), 3)),
+            "max_fetches": max(1, min(int(max_fetches or 3), 5)),
+            "max_provider_requests": 3,
+            "max_duration_seconds": 90,
+            "depth": 0,
+        },
+        "public_exposure": False,
+        "public_live_fanout": False,
+        "reviewed_master_mutation": False,
+        "public_index_mutation": False,
+        "provider_result_payload_persistence": False,
+        "ready_to_run": provider_configured and instance_ready and database_ready,
+        "recommended_command": (
+            f"python scripts/check_live_search_hunt_acceptance.py --live-canary --query <operator-unseen-query> --instance {root} --max-queries 3 --max-fetches 3 --keep-instance --json"
+        ),
+    }
+    status = "pass" if payload["ready_to_run"] else "pass_with_warnings"
+    return _result("canary preflight", status, root, started_at=started, mutations=False, payload=payload)
+
+
 def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr: TextIO = sys.stderr) -> int:
     parser = _parser()
     args = parser.parse_args(argv)
@@ -1290,6 +1342,8 @@ def _dispatch(args: argparse.Namespace, *, stdout: TextIO) -> dict[str, Any]:
             return bundle_command("verify", instance=args.instance, bundle=args.bundle)
         if args.bundle_command == "rehearse":
             return bundle_command("rehearse", instance=args.instance, bundle=args.bundle, target=args.target)
+    if args.command == "canary":
+        return canary_command(args.canary_command, instance=args.instance, provider=args.provider, max_queries=args.max_queries, max_fetches=args.max_fetches)
     raise PortableInstanceError("unsupported_command", f"unsupported command: {args.command}", exit_code=2)
 
 
@@ -1412,6 +1466,13 @@ def _parser() -> argparse.ArgumentParser:
     bundle_rehearse = bundle_sub.add_parser("rehearse", parents=[common], help="Rehearse bootstrap, doctor, backup, and restore using a clean local instance.")
     bundle_rehearse.add_argument("bundle")
     bundle_rehearse.add_argument("--target", default="")
+
+    canary = sub.add_parser("canary", parents=[common], help="Inspect operator live canary readiness without running provider calls.")
+    canary_sub = canary.add_subparsers(dest="canary_command", required=True)
+    canary_preflight = canary_sub.add_parser("preflight", parents=[common], help="Report provider, instance, database, budget, and exposure readiness.")
+    canary_preflight.add_argument("--provider", default="brave")
+    canary_preflight.add_argument("--max-queries", type=int, default=3)
+    canary_preflight.add_argument("--max-fetches", type=int, default=3)
     return parser
 
 

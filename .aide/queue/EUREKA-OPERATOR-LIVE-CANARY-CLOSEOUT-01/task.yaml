@@ -1,7 +1,7 @@
 schema_version: aide.task.v0
 id: EUREKA-OPERATOR-LIVE-CANARY-CLOSEOUT-01
 title: Close the operator live canary workflow
-status: planned
+status: IMPLEMENTED_WAITING_FOR_OPERATOR_LIVE_CANARY
 task_class: product_hardening_stage
 parent_track: EUREKA-REAL-LIVE-SEARCH-HUNT-00
 predecessor: EUREKA-PORTABLE-LOCAL-RELEASE-BUNDLE-01
@@ -10,4 +10,28 @@ purpose: >-
   Add safe canary preflight, sanitized aggregate evidence schema, and closeout
   workflow while keeping the real canary waiting unless a local key is present
   and the operator runs it.
-
+evidence:
+  implementation:
+    - runtime/search/canary.py
+    - runtime/local/portable_instance.py
+    - scripts/check_live_search_hunt_acceptance.py
+    - docs/operations/REAL_LIVE_SEARCH_HUNT_ACCEPTANCE.md
+  commands:
+    - python scripts/eureka.py canary preflight
+    - python scripts/check_live_search_hunt_acceptance.py --live-canary --evidence-out <path>
+  tests:
+    - tests/runtime/test_live_canary_closeout.py
+    - tests/e2e/test_real_live_search_hunt_acceptance.py
+  notes:
+    - Preflight reports provider configured yes/no, instance readiness, database readiness, bounded budgets, local network mode, and public exposure false.
+    - Sanitized evidence stores aggregate counts plus query hash/label only.
+    - The real live canary was not run in-session and remains the operator gate.
+validation:
+  - python -m unittest tests.runtime.test_live_canary_closeout tests.e2e.test_real_live_search_hunt_acceptance -v
+  - python -m py_compile runtime/search/canary.py runtime/local/portable_instance.py scripts/check_live_search_hunt_acceptance.py tests/runtime/test_live_canary_closeout.py tests/e2e/test_real_live_search_hunt_acceptance.py
+  - python scripts/eureka.py --instance ../instances/wave03-canary-smoke canary preflight --json
+  - python scripts/check_live_search_hunt_acceptance.py --live-canary --query "wave03 synthetic no-key query" --instance ../instances/wave03-canary-smoke --max-queries 3 --max-fetches 3 --evidence-out ../instances/wave03-canary-smoke/exports/canary-evidence.json --query-label "wave03-smoke" --json
+non_goals:
+  - no real Brave canary without local operator key and authorization
+  - no human acceptance claim
+  - no provider payload evidence

@@ -39,6 +39,13 @@ class RealLiveSearchHuntAcceptanceTests(unittest.TestCase):
         self.assertFalse(payload["provider_result_payload_persisted"])
         self.assertFalse(payload["reviewed_master_mutation"])
         self.assertFalse(payload["public_index_mutation"])
+        evidence = payload["sanitized_evidence"]
+        self.assertEqual("eureka.operator_live_canary_evidence.v0", evidence["schema_version"])
+        self.assertEqual("pass", evidence["validation_status"])
+        self.assertNotIn("unit test unseen query", repr(evidence))
+        self.assertNotIn("http://", repr(evidence))
+        self.assertNotIn("https://", repr(evidence))
+        self.assertFalse(evidence["provider_result_payload_persisted"])
         self.assertIn(payload["live_canary"]["status"], {"waiting", "pass", "fail"})
         if payload["live_canary"]["status"] == "pass":
             self.assertEqual("pass", payload["checks"][-1]["status"])

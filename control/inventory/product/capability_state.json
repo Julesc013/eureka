@@ -1,8 +1,8 @@
 {
   "schema_version": "eureka.product_capability_state.v0",
-  "tested_commit": "a0e99ab0",
+  "tested_commit": "5ce15b2b",
   "generated_at": "2026-06-21T00:00:00Z",
-  "current_recommended_task": "EUREKA-OPERATOR-LIVE-CANARY-CLOSEOUT-01",
+  "current_recommended_task": "EUREKA-HUMAN-ACCEPTANCE-REHEARSAL-01",
   "capabilities": {
     "live_search": {
       "implementation_state": "implemented",
@@ -125,6 +125,24 @@
       "known_limitations": [
         "Bundle output is generated locally by command and is not committed release state.",
         "Clean-machine proof remains a local clean-instance rehearsal, not external full discovery."
+      ]
+    },
+    "operator_live_canary_closeout": {
+      "implementation_state": "implemented",
+      "activation_state": "waiting_for_operator_live_canary",
+      "validation_state": "deterministic_pass",
+      "live_canary_state": "waiting_for_operator_live_canary",
+      "human_acceptance_state": "not_started",
+      "public_status": "not_public",
+      "evidence_refs": [
+        ".aide/queue/EUREKA-OPERATOR-LIVE-CANARY-CLOSEOUT-01/task.yaml",
+        "runtime/search/canary.py",
+        "scripts/check_live_search_hunt_acceptance.py",
+        "tests/runtime/test_live_canary_closeout.py"
+      ],
+      "known_limitations": [
+        "Preflight and sanitized evidence are implemented, but the real Brave canary has not been run in-session.",
+        "Automated live canary pass remains distinct from human product acceptance."
       ]
     },
     "foundry": {

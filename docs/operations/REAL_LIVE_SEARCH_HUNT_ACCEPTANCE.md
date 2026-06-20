@@ -15,7 +15,13 @@ commits, logs, or evidence artifacts.
    python scripts/eureka.py --instance ..\instances\live-acceptance bootstrap
    ```
 
-3. Run the real end-to-end canary with a genuinely unseen query:
+3. Run preflight. It reports readiness and never prints the key:
+
+   ```powershell
+   python scripts/eureka.py --instance ..\instances\live-acceptance canary preflight --json
+   ```
+
+4. Run the real end-to-end canary with a genuinely unseen query:
 
    ```powershell
    python scripts/check_live_search_hunt_acceptance.py `
@@ -25,22 +31,23 @@ commits, logs, or evidence artifacts.
      --max-queries 3 `
      --max-fetches 3 `
      --keep-instance `
+     --evidence-out ..\instances\live-acceptance\exports\canary-evidence.json `
      --json
    ```
 
-4. Start the product:
+5. Start the product:
 
    ```powershell
    python scripts/eureka.py --instance ..\instances\live-acceptance serve --live
    ```
 
-5. Open the displayed local URL.
+6. Open the displayed local URL.
 
-6. Enter an unseen query.
+7. Enter an unseen query.
 
-7. Use Hunt deeper.
+8. Use Hunt deeper.
 
-8. Verify that at least one fetched and indexed result remains findable after
+9. Verify that at least one fetched and indexed result remains findable after
    restarting Eureka.
 
 Inspect JSON only when troubleshooting. The product acceptance verdict remains
