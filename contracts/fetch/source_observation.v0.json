@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/fetch/source_observation.v0.json",
+  "title": "Eureka Source Observation v0",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "observation_id",
+    "status",
+    "canonical_url",
+    "retrieved_at",
+    "http_status",
+    "content_type",
+    "content_hash",
+    "extracted_title",
+    "extracted_text",
+    "outbound_links",
+    "query",
+    "run_id",
+    "fetch_policy_result"
+  ],
+  "properties": {
+    "schema_version": {"const": "source_observation.v0"},
+    "observation_id": {"type": "string"},
+    "status": {"const": "unreviewed"},
+    "canonical_url": {"type": "string"},
+    "retrieved_at": {"type": "string"},
+    "http_status": {"type": "integer"},
+    "content_type": {"type": "string"},
+    "content_hash": {"type": "string"},
+    "extracted_title": {"type": "string"},
+    "extracted_text": {"type": "string"},
+    "outbound_links": {"type": "array", "items": {"$ref": "link_edge.v0.json"}},
+    "query": {"type": "string"},
+    "run_id": {"type": "string"},
+    "fetch_policy_result": {"type": "string"}
+  }
+}

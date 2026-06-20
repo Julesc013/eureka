@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/fetch/fetch_policy.v0.json",
+  "title": "Eureka Fetch Policy v0",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "allowed_schemes",
+    "allowed_ports",
+    "max_redirects",
+    "timeout_seconds",
+    "max_body_bytes",
+    "allowed_mime_types",
+    "robots_required",
+    "block_non_public_ips"
+  ],
+  "properties": {
+    "schema_version": {"const": "fetch_policy.v0"},
+    "allowed_schemes": {"type": "array", "items": {"enum": ["http", "https"]}},
+    "allowed_ports": {"type": "array", "items": {"type": "integer"}},
+    "max_redirects": {"type": "integer", "minimum": 0},
+    "timeout_seconds": {"type": "integer", "minimum": 1},
+    "max_body_bytes": {"type": "integer", "minimum": 1},
+    "allowed_mime_types": {"type": "array", "items": {"type": "string"}},
+    "robots_required": {"type": "boolean"},
+    "block_non_public_ips": {"const": true}
+  }
+}

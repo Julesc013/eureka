@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/fetch/link_edge.v0.json",
+  "title": "Eureka Link Edge v0",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["schema_version", "source_url", "target_url", "rel", "anchor_text"],
+  "properties": {
+    "schema_version": {"const": "link_edge.v0"},
+    "source_url": {"type": "string"},
+    "target_url": {"type": "string"},
+    "rel": {"type": "string"},
+    "anchor_text": {"type": "string"}
+  }
+}

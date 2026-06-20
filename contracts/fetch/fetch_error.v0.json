@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/fetch/fetch_error.v0.json",
+  "title": "Eureka Fetch Error v0",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["schema_version", "code", "message", "url", "policy_blocked"],
+  "properties": {
+    "schema_version": {"const": "fetch_error.v0"},
+    "code": {"type": "string"},
+    "message": {"type": "string"},
+    "url": {"type": "string"},
+    "policy_blocked": {"type": "boolean"}
+  }
+}

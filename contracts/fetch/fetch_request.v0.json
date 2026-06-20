@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/fetch/fetch_request.v0.json",
+  "title": "Eureka Fetch Request v0",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["schema_version", "url", "method", "query", "run_id", "source"],
+  "properties": {
+    "schema_version": {"const": "fetch_request.v0"},
+    "url": {"type": "string"},
+    "method": {"const": "GET"},
+    "query": {"type": "string"},
+    "run_id": {"type": "string"},
+    "source": {"type": "string"}
+  }
+}

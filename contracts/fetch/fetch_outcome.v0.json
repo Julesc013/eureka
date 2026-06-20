@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://eureka.local/contracts/fetch/fetch_outcome.v0.json",
+  "title": "Eureka Fetch Outcome v0",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["schema_version", "status", "request", "policy", "observation", "error"],
+  "properties": {
+    "schema_version": {"const": "fetch_outcome.v0"},
+    "status": {"enum": ["fetched", "blocked", "error"]},
+    "request": {"$ref": "fetch_request.v0.json"},
+    "policy": {"$ref": "fetch_policy.v0.json"},
+    "observation": {
+      "oneOf": [
+        {"$ref": "source_observation.v0.json"},
+        {"type": "null"}
+      ]
+    },
+    "error": {
+      "oneOf": [
+        {"$ref": "fetch_error.v0.json"},
+        {"type": "null"}
+      ]
+    }
+  }
+}
