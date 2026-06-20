@@ -40,6 +40,15 @@ from runtime.index.preview import (
     search_preview_index,
     validate_preview_index,
 )
+from runtime.index.preview.recovery import (
+    create_backup,
+    list_backups,
+    migration_preflight,
+    rebuild_probe,
+    restore_backup,
+    run_migrations,
+    verify_backup,
+)
 from runtime.local.appliance import (
     resolve_default_instance_root,
     resolve_instance_root,
@@ -948,6 +957,99 @@ def diagnostics_command(
     )
 
 
+def backup_command(
+    action: str,
+    *,
+    instance: str | Path | None = None,
+    backup: str | Path | None = None,
+    target: str | Path | None = None,
+) -> dict[str, Any]:
+    started = _now()
+    root = resolve_portable_instance_root(instance)
+    paths = build_portable_paths(root)
+    if action == "create":
+        _require_initialized(paths)
+        migration = run_migrations(paths.preview_sqlite)
+        result = create_backup(
+            instance_root=root,
+            backup_root=paths.backup_root,
+            sqlite_path=paths.preview_sqlite,
+            run_root=paths.run_bundles,
+            foundry_root=_instance_child(root, "run/foundry/runs"),
+            config_dir=paths.config_dir,
+            generation_root=paths.preview_index,
+        )
+        return _result(
+            "backup create",
+            "pass" if result.get("status") == "pass" and migration.get("status") == "pass" else "fail",
+            root,
+            started_at=started,
+            mutations=True,
+            payload={**result, "migration": migration, "network_provider_calls": False, "reviewed_master_mutation": False, "public_index_mutation": False},
+        )
+    if action == "list":
+        return _result(
+            "backup list",
+            "pass",
+            root,
+            started_at=started,
+            mutations=False,
+            payload={**list_backups(paths.backup_root), "network_provider_calls": False, "reviewed_master_mutation": False, "public_index_mutation": False},
+        )
+    if action == "verify":
+        if not backup:
+            raise PortableInstanceError("backup_required", "backup verify requires a backup path or id", exit_code=2)
+        backup_path = _resolve_backup_path(paths, backup)
+        result = verify_backup(backup_path)
+        return _result(
+            "backup verify",
+            "pass" if result.get("status") == "pass" else "fail",
+            root,
+            started_at=started,
+            mutations=False,
+            payload={**result, "network_provider_calls": False, "reviewed_master_mutation": False, "public_index_mutation": False},
+        )
+    if action == "restore":
+        if not backup or not target:
+            raise PortableInstanceError("backup_restore_args_required", "backup restore requires a backup and --target", exit_code=2)
+        backup_path = _resolve_backup_path(paths, backup)
+        target_root = resolve_portable_instance_root(target)
+        result = restore_backup(backup_path, target_root)
+        return _result(
+            "backup restore",
+            "pass" if result.get("status") == "pass" else "fail",
+            root,
+            started_at=started,
+            mutations=True,
+            payload={**result, "network_provider_calls": False, "reviewed_master_mutation": False, "public_index_mutation": False},
+        )
+    raise PortableInstanceError("unsupported_backup_command", f"unsupported backup command: {action}", exit_code=2)
+
+
+def index_recovery_command(*, instance: str | Path | None = None) -> dict[str, Any]:
+    started = _now()
+    root = resolve_portable_instance_root(instance)
+    paths = build_portable_paths(root)
+    preflight = migration_preflight(paths.preview_sqlite)
+    rebuild = rebuild_probe(paths.preview_sqlite)
+    return _result(
+        "index recovery",
+        "pass" if preflight.get("status") in {"pass", "absent"} and rebuild.get("status") in {"pass", "absent"} else "fail",
+        root,
+        started_at=started,
+        mutations=False,
+        payload={
+            "schema_version": "eureka.preview_index_recovery_status.v0",
+            "migration": preflight,
+            "rebuild": rebuild,
+            "backup": _backup_status(paths),
+            "network_provider_calls": False,
+            "reviewed_master_mutation": False,
+            "public_index_mutation": False,
+        },
+    )
+
+
 def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr: TextIO = sys.stderr) -> int:
     parser = _parser()
     args = parser.parse_args(argv)
@@ -1009,6 +1111,8 @@ def _dispatch(args: argparse.Namespace, *, stdout: TextIO) -> dict[str, Any]:
         return status_command(instance=args.instance, include_paths=args.paths)
     if args.command == "index" and args.index_command == "stats":
         return index_stats_command(instance=args.instance)
+    if args.command == "index" and args.index_command == "recovery":
+        return index_recovery_command(instance=args.instance)
     if args.command == "foundry":
         if args.foundry_command == "plan":
             return foundry_command(
@@ -1032,6 +1136,15 @@ def _dispatch(args: argparse.Namespace, *, stdout: TextIO) -> dict[str, Any]:
         if action == "export":
             return diagnostics_command(args.run_id or "", instance=args.instance, export=True, out_dir=args.out)
         return diagnostics_command(action or args.run_id or "", instance=args.instance)
+    if args.command == "backup":
+        if args.backup_command == "create":
+            return backup_command("create", instance=args.instance)
+        if args.backup_command == "list":
+            return backup_command("list", instance=args.instance)
+        if args.backup_command == "verify":
+            return backup_command("verify", instance=args.instance, backup=args.backup)
+        if args.backup_command == "restore":
+            return backup_command("restore", instance=args.instance, backup=args.backup, target=args.target)
     raise PortableInstanceError("unsupported_command", f"unsupported command: {args.command}", exit_code=2)
 
 
@@ -1101,6 +1214,7 @@ def _parser() -> argparse.ArgumentParser:
     index = sub.add_parser("index", parents=[common], help="Inspect local indexes.")
     index_sub = index.add_subparsers(dest="index_command", required=True)
     index_sub.add_parser("stats", parents=[common], help="Show local Preview Index stats.")
+    index_sub.add_parser("recovery", parents=[common], help="Show Preview Index migration and rebuild status.")
 
     foundry = sub.add_parser("foundry", parents=[common], help="Plan or explicitly run bounded local Preview Index growth.")
     foundry_sub = foundry.add_subparsers(dest="foundry_command", required=True)
@@ -1126,6 +1240,16 @@ def _parser() -> argparse.ArgumentParser:
     diagnostics.add_argument("diagnostics_action", nargs="?", default="")
     diagnostics.add_argument("run_id", nargs="?", default="")
     diagnostics.add_argument("--out", default="")
+
+    backup = sub.add_parser("backup", parents=[common], help="Create, list, verify, or restore local backups.")
+    backup_sub = backup.add_subparsers(dest="backup_command", required=True)
+    backup_sub.add_parser("create", parents=[common], help="Create a local backup excluding secrets and transient caches.")
+    backup_sub.add_parser("list", parents=[common], help="List local backups.")
+    backup_verify = backup_sub.add_parser("verify", parents=[common], help="Verify a backup manifest and checksums.")
+    backup_verify.add_argument("backup")
+    backup_restore = backup_sub.add_parser("restore", parents=[common], help="Restore a backup into an explicit target instance.")
+    backup_restore.add_argument("backup")
+    backup_restore.add_argument("--target", required=True)
     return parser
 
 
@@ -1975,6 +2099,18 @@ def _diagnostics_run_summary(paths: PortablePaths, run_id: str) -> dict[str, Any
             }
             break
     return safe
+
+
+def _resolve_backup_path(paths: PortablePaths, backup: str | Path) -> Path:
+    value = Path(str(backup)).expanduser()
+    if value.exists():
+        return value.resolve()
+    candidate = paths.backup_root / str(backup)
+    if candidate.exists():
+        return candidate.resolve()
+    if str(backup).startswith("backup-"):
+        return candidate.resolve()
+    return value.resolve()
 
 
 def _relative_to_instance(root: Path, path: Path) -> str:

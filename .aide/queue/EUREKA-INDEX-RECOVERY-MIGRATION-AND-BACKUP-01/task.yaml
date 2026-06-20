@@ -1,7 +1,7 @@
 schema_version: aide.task.v0
 id: EUREKA-INDEX-RECOVERY-MIGRATION-AND-BACKUP-01
 title: Add Preview Index recovery, migration, and backup
-status: planned
+status: pass
 task_class: product_hardening_stage
 parent_track: EUREKA-REAL-LIVE-SEARCH-HUNT-00
 predecessor: EUREKA-DISCOVERY-OBSERVABILITY-AND-DIAGNOSTICS-01
@@ -9,4 +9,20 @@ successor: EUREKA-DISCOVERY-PERFORMANCE-CAPACITY-BASELINE-01
 purpose: >-
   Harden SQLite Preview Index reliability with explicit migrations, integrity
   checks, backup, restore, and safe rebuild proof.
-
+evidence:
+  implementation:
+    - runtime/index/preview/recovery.py
+    - runtime/local/portable_instance.py
+  tests:
+    - tests/runtime/test_preview_index_recovery.py
+validation:
+  - python -m unittest tests.runtime.test_preview_index_recovery tests.runtime.test_sqlite_preview_index_store -v
+  - python -m py_compile runtime/index/preview/recovery.py runtime/local/portable_instance.py tests/runtime/test_preview_index_recovery.py
+  - python scripts/eureka.py --instance ../instances/wave03-recovery-smoke-2 index recovery --json
+  - python scripts/eureka.py --instance ../instances/wave03-recovery-smoke-2 backup create --json
+  - python scripts/eureka.py --instance ../instances/wave03-recovery-smoke-2 backup verify <backup> --json
+  - python scripts/eureka.py --instance ../instances/wave03-recovery-smoke-2 backup restore <backup> --target ../instances/wave03-recovery-restore-smoke --json
+non_goals:
+  - no silent database reset
+  - no provider payload or secret backup
+  - no public publication
