@@ -4,7 +4,7 @@ title: Run the real end-to-end live Search/Hunt canary with a local Brave key
 status: WAITING_FOR_OPERATOR_LIVE_CANARY
 task_class: operator_live_gate
 parent_track: EUREKA-REAL-LIVE-SEARCH-HUNT-00
-predecessor: EUREKA-LIVE-DISCOVERY-STACK-AUDIT-01
+predecessor: EUREKA-LIVE-PRODUCT-HARDENING-AUDIT-01
 successor: HUMAN-END-TO-END-ACCEPTANCE-00
 purpose: >-
   Have the local operator supply BRAVE_SEARCH_API_KEY or BRAVE_API_KEY outside

@@ -1,8 +1,8 @@
 {
   "schema_version": "eureka.product_capability_state.v0",
-  "tested_commit": "f5e2a8ec",
-  "generated_at": "2026-06-21T00:00:00Z",
-  "current_recommended_task": "EUREKA-LIVE-PRODUCT-HARDENING-AUDIT-01",
+  "tested_commit": "c3667afb",
+  "generated_at": "2026-06-21T06:09:00Z",
+  "current_recommended_task": "OPERATOR-LIVE-CANARY-00",
   "capabilities": {
     "live_search": {
       "implementation_state": "implemented",
@@ -198,6 +198,25 @@
         "Resume only after an operator or CI returns full_unittest_summary.json."
       ]
     },
+    "live_product_hardening_audit": {
+      "implementation_state": "audit_complete",
+      "activation_state": "deterministic_local_evidence_only",
+      "validation_state": "pass_with_warnings",
+      "live_canary_state": "waiting_for_operator_live_canary",
+      "human_acceptance_state": "not_started",
+      "public_status": "not_public",
+      "evidence_refs": [
+        ".aide/queue/EUREKA-LIVE-PRODUCT-HARDENING-AUDIT-01/task.yaml",
+        "control/audits/e2e_reference_system/live_product_hardening_audit_v1/AUDIT_REPORT.md",
+        "control/audits/e2e_reference_system/live_product_hardening_audit_v1/findings.json",
+        "tests/operations/test_live_product_hardening_audit.py"
+      ],
+      "known_limitations": [
+        "The audit found zero critical and zero high deterministic findings.",
+        "Medium findings are open external gates for live canary, human acceptance, and external full discovery.",
+        "Agentic Hunt Planner work remains blocked."
+      ]
+    },
     "public_service": {
       "implementation_state": "read_only_foundations_present",
       "activation_state": "disabled",
@@ -229,6 +248,7 @@
   "evidence_refs": [
     ".aide/queue/index.yaml",
     ".aide/queue/EUREKA-REAL-LIVE-SEARCH-HUNT-00/task.yaml",
-    "control/audits/e2e_reference_system/live_discovery_stack_audit_v1/AUDIT_REPORT.md"
+    "control/audits/e2e_reference_system/live_discovery_stack_audit_v1/AUDIT_REPORT.md",
+    "control/audits/e2e_reference_system/live_product_hardening_audit_v1/AUDIT_REPORT.md"
   ]
 }
