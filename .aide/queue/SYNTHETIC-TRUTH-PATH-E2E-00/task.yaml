@@ -19,8 +19,13 @@ synthetic_flow:
   - prior state restored
   - test snapshot verified
 allowed_scope:
+  - .aide/queue/index.yaml
+  - .aide/queue/SYNTHETIC-TRUTH-PATH-E2E-00/**
+  - .aide/context/**
+  - scripts/eureka_synthetic_truth_path.py
   - runtime/review/**
   - runtime/local/**
+  - runtime/snapshots/**
   - runtime/search/**
   - runtime/index/**
   - contracts/review/**
@@ -28,6 +33,8 @@ allowed_scope:
   - contracts/snapshot/**
   - tests/e2e/**
   - evals/**
+  - tests/operations/**
+  - docs/architecture/**
   - docs/operations/**
   - control/audits/e2e_reference_system/**
   - .eureka/test/e2e-reference/**
