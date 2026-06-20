@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import re
 from typing import Any, Mapping, Sequence
 from urllib.parse import quote
 
@@ -10,32 +11,40 @@ from surfaces.web.workbench.local_html.html import (
     render_document,
     render_limitations,
     render_link,
+    render_navigation,
     render_notice,
     render_table,
     render_warnings,
 )
 
+EXAMPLE_SEARCHES = (
+    "old blue FTP client for XP",
+    "manual for Sound Blaster CT1740",
+    "latest Firefox before XP support ended",
+    "driver for Win98",
+    "article about ray tracing in a 1994 magazine",
+)
+FIRST_USE_BANNER = "Local only. This page searches Eureka's local demo set and does not contact live services."
+FIRST_USE_NAV = render_navigation((("/explore", "Explore"), ("/status", "Status")))
+
 
 def render_explore_workspace_html(payload: Mapping[str, Any]) -> str:
     query = str(payload.get("query", ""))
     preview = dict(payload.get("preview_index") or {})
-    runs = dict(payload.get("runs") or {})
     controls = dict(payload.get("run_controls") or {})
     body = "\n".join(
         [
-            "<h1>Explore</h1>",
-            render_notice("scope", "Private local exploration over the Preview Index and shared E2E Reference Runner."),
+            "<h1>Eureka</h1>",
+            "<p>Search for old software, manuals, drivers, and historical-computing clues. Eureka shows local matches and says plainly when it cannot answer yet.</p>",
             _query_form(query),
-            _start_form(query, controls.get("start_synthetic_hunt") or {}),
-            _preview_summary(preview),
-            _lanes(payload.get("lanes") or ()),
-            _recent_runs(runs),
-            _boundary_flags(payload),
-            render_warnings(_safe_sequence(payload.get("warnings") or ())),
-            render_limitations(_safe_sequence(payload.get("limitations") or ())),
+            _example_searches(payload.get("example_searches") or EXAMPLE_SEARCHES),
+            _loading_state(),
+            _first_use_search_state(query, preview, payload.get("lanes") or ()),
+            _hunt_panel(query, controls.get("start_synthetic_hunt") or {}),
+            _blocked_state(),
         ]
     )
-    return render_document("Explore - Eureka Local Appliance", body)
+    return render_document("Eureka", body, status_banner=FIRST_USE_BANNER, navigation=FIRST_USE_NAV)
 
 
 def render_explore_runs_html(payload: Mapping[str, Any]) -> str:
@@ -67,44 +76,33 @@ def render_explore_runs_html(payload: Mapping[str, Any]) -> str:
 
 def render_explore_run_html(payload: Mapping[str, Any]) -> str:
     run = dict(payload.get("run") or {})
-    manifest = dict(payload.get("manifest") or {})
-    controls = dict(payload.get("controls") or {})
-    run_id = str(payload.get("run_id") or run.get("run_id") or "")
+    result = dict(payload.get("result") or {})
+    query = str(run.get("query", ""))
+    state = str(run.get("state", ""))
+    result_count = int(result.get("result_count", 0) or 0)
     body = "\n".join(
         [
-            "<h1>Explore Run</h1>",
-            render_notice("scope", "This is a projection of one durable E2E Reference Runner bundle."),
-            _key_values(
-                (
-                    ("run_id", run_id),
-                    ("query", run.get("query", "")),
-                    ("state", run.get("state", "")),
-                    ("mode", manifest.get("mode", "")),
-                    ("events", payload.get("event_count", 0)),
-                    ("workunits", payload.get("workunit_count", 0)),
-                    ("validation", (payload.get("validation") or {}).get("status", "")),
-                )
-            ),
-            "<p>"
-            + " | ".join(
-                (
-                    render_link("/explore", "Explore"),
-                    render_link("/explore/runs", "Runs"),
-                    render_link("/api/v1/explore/run/" + quote(run_id), "Run JSON"),
-                )
-            )
-            + "</p>",
-            _control_forms(run_id, controls),
-            _event_timeline(payload.get("events") or ()),
-            _workunit_table(payload.get("workunits") or ()),
-            _run_lanes(payload.get("lane_snapshot") or {}),
-            _replay_report(payload.get("replay_report")),
-            _boundary_flags(payload),
-            render_warnings(_safe_sequence(payload.get("warnings") or ())),
-            render_limitations(_safe_sequence(payload.get("limitations") or ())),
+            "<h1>Hunt Result</h1>",
+            "<p>A Hunt is a local investigation for one search. It records what Eureka checked and what is still blocked.</p>",
+            _hunt_result_state(query, state, result_count),
+            _blocked_state(),
+            _return_to_search(query),
         ]
     )
-    return render_document("Explore Run - Eureka Local Appliance", body)
+    return render_document("Hunt Result - Eureka", body, status_banner=FIRST_USE_BANNER, navigation=FIRST_USE_NAV)
+
+
+def render_explore_error_html(title: str, message: str, *, query: str = "") -> str:
+    body = "\n".join(
+        [
+            f"<h1>{escape_html(title or 'Eureka needs attention')}</h1>",
+            f"<p>{escape_html(message or 'The local search page could not finish that request.')}</p>",
+            _query_form(query),
+            _example_searches(EXAMPLE_SEARCHES),
+            _blocked_state(),
+        ]
+    )
+    return render_document("Eureka Needs Attention", body, status_banner=FIRST_USE_BANNER, navigation=FIRST_USE_NAV)
 
 
 def render_explore_compare_html(payload: Mapping[str, Any]) -> str:
@@ -143,9 +141,9 @@ def render_explore_compare_html(payload: Mapping[str, Any]) -> str:
 def _query_form(query: str) -> str:
     return (
         '<form action="/explore" method="get">'
-        '<label for="explore-q">Query</label> '
-        f'<input id="explore-q" name="q" type="search" value="{escape_html(query)}"> '
-        '<button type="submit">Search Preview</button>'
+        '<label for="explore-q">What are you looking for?</label> '
+        f'<input id="explore-q" name="q" type="search" value="{escape_html(query)}" placeholder="old blue FTP client for XP"> '
+        '<button type="submit">Search</button>'
         "</form>"
     )
 
@@ -157,13 +155,177 @@ def _start_form(query: str, control: Mapping[str, Any]) -> str:
         [
             '<form action="/explore/run/start" method="post">',
             '<input type="hidden" name="q" value="' + escape_html(query) + '">',
-            '<label for="explore-token">Operator token</label> ',
+            '<label for="explore-token">Start token</label> ',
             '<input id="explore-token" name="operator_token" type="password" autocomplete="off"> ',
-            f'<button type="submit"{disabled}>Start Synthetic Hunt</button>',
+            f'<button type="submit"{disabled}>Start Hunt</button>',
             f"<p>{escape_html(reason)}</p>" if reason else "",
             "</form>",
         ]
     )
+
+
+def _example_searches(examples: Sequence[Any]) -> str:
+    links = []
+    for item in examples:
+        text = str(item)
+        links.append(f"<li>{render_link('/explore?q=' + quote(text), text)}</li>")
+    return '<section aria-labelledby="examples-heading"><h2 id="examples-heading">Example Searches</h2><ul>' + "".join(links) + "</ul></section>"
+
+
+def _loading_state() -> str:
+    return (
+        '<section aria-labelledby="loading-state-heading">'
+        '<h2 id="loading-state-heading">Searching...</h2>'
+        "<p>After you press Search, Eureka checks the local set and returns this page with matches, no matches, or a clear blocked message.</p>"
+        "</section>"
+    )
+
+
+def _first_use_search_state(query: str, preview: Mapping[str, Any], lanes: Sequence[Mapping[str, Any]]) -> str:
+    has_query = bool(str(query or "").strip())
+    warnings = _safe_sequence(preview.get("warnings") or ())
+    status = str(preview.get("status") or "")
+    if status == "degraded" or warnings:
+        return _error_state(warnings or ("The local search set is not ready yet.",))
+    if not has_query:
+        return (
+            '<section aria-labelledby="ready-state-heading">'
+            '<h2 id="ready-state-heading">Ready</h2>'
+            "<p>Type a search or choose an example to see what Eureka already knows locally.</p>"
+            "</section>"
+        )
+    records = _first_use_records(lanes)
+    if not records:
+        return (
+            '<section aria-labelledby="empty-state-heading">'
+            '<h2 id="empty-state-heading">No Local Matches Yet</h2>'
+            "<p>That does not prove the thing is gone or never existed. Try a broader phrase, or start a Hunt so Eureka can make a local investigation record for this search.</p>"
+            "</section>"
+        )
+    cards = "".join(_plain_result_card(record) for record in records)
+    return (
+        '<section aria-labelledby="results-state-heading">'
+        f'<h2 id="results-state-heading">Results Found</h2><p>{escape_html(len(records))} local clue{"s" if len(records) != 1 else ""} matched this search.</p>'
+        + cards
+        + "</section>"
+    )
+
+
+def _hunt_panel(query: str, control: Mapping[str, Any]) -> str:
+    if not str(query or "").strip():
+        return ""
+    return "\n".join(
+        [
+            '<section aria-labelledby="hunt-heading">',
+            '<h2 id="hunt-heading">Need Eureka To Look A Little Harder?</h2>',
+            "<p>A Hunt is a local investigation for this search. It is useful when the result is thin, missing, or blocked. This build keeps the Hunt local and does not contact live services.</p>",
+            _start_form(query, control),
+            "</section>",
+        ]
+    )
+
+
+def _blocked_state() -> str:
+    return (
+        '<section aria-labelledby="blocked-state-heading">'
+        '<h2 id="blocked-state-heading">Blocked Here</h2>'
+        "<ul>"
+        "<li>No public sharing starts from this page.</li>"
+        "<li>No live service call starts from this page.</li>"
+        "<li>No file transfer or program run starts from this page.</li>"
+        "<li>No reviewed answer is created from this page.</li>"
+        "</ul>"
+        "</section>"
+    )
+
+
+def _error_state(messages: Sequence[Any]) -> str:
+    return (
+        '<section aria-labelledby="error-state-heading">'
+        '<h2 id="error-state-heading">Eureka Could Not Search The Local Set</h2>'
+        "<p>Ask the operator to refresh the local instance, then try again.</p>"
+        + _list("What happened", messages)
+        + "</section>"
+    )
+
+
+def _first_use_records(lanes: Sequence[Mapping[str, Any]]) -> list[Mapping[str, Any]]:
+    records: list[Mapping[str, Any]] = []
+    for lane in lanes:
+        records.extend(record for record in lane.get("records") or [] if isinstance(record, Mapping))
+    return records[:8]
+
+
+def _plain_result_card(record: Mapping[str, Any]) -> str:
+    raw_title = str(record.get("title") or "Local clue")
+    title = "Local Hunt clue" if _looks_internal_title(raw_title) else _friendly_text(raw_title)
+    summary = _friendly_text(record.get("summary") or "Eureka found a local clue for this search.")
+    matched = tuple(_friendly_text(item) for item in record.get("why_matched") or ())[:3]
+    missing = tuple(_friendly_text(item) for item in record.get("missing") or ())[:3]
+    return "\n".join(
+        [
+            '<article class="explore-result">',
+            f"<h3>{escape_html(title)}</h3>",
+            f"<p>{escape_html(summary)}</p>",
+            _list("Why this matched", matched),
+            _list("Still missing", missing),
+            "<p>This is a clue, not a final answer.</p>",
+            "</article>",
+        ]
+    )
+
+
+def _hunt_result_state(query: str, state: str, result_count: int) -> str:
+    heading = "Hunt Complete" if state == "completed" else "Hunt State"
+    detail = (
+        f"Eureka finished a local Hunt for '{query}' and found {result_count} result clue{'s' if result_count != 1 else ''}."
+        if state == "completed"
+        else f"Eureka recorded the Hunt state as {state or 'unknown'}."
+    )
+    return (
+        '<section aria-labelledby="hunt-result-state-heading">'
+        f'<h2 id="hunt-result-state-heading">{escape_html(heading)}</h2>'
+        f"<p>{escape_html(detail)}</p>"
+        "<p>The Hunt did not make a final reviewed answer.</p>"
+        "</section>"
+    )
+
+
+def _return_to_search(query: str) -> str:
+    links = [render_link("/explore", "Start another search")]
+    if query:
+        links.insert(0, render_link("/explore?q=" + quote(query), "Return to this search"))
+    return "<p>" + " | ".join(links) + "</p>"
+
+
+def _friendly_text(value: Any) -> str:
+    text = re.sub(r"\b[A-Z][A-Z0-9]+(?:-[A-Z0-9]+)+-\d+\b", "future local work", str(value or ""))
+    replacements = {
+        "fixture metadata": "local demo data",
+        "Preview result": "Local clue",
+        "preview record": "local clue",
+        "accepted truth": "final answer",
+        "synthetic": "demo",
+        "authority": "review state",
+        "ResolutionRun": "local Hunt",
+        "WorkUnits": "local steps",
+        "WorkUnit": "local step",
+        "workunits": "local steps",
+        "workunit": "local step",
+        "demo_result": "local clue",
+        "download": "file transfer",
+        "install": "software setup",
+        "execute": "program run",
+        "upload": "outbound file transfer",
+    }
+    for needle, replacement in replacements.items():
+        text = text.replace(needle, replacement).replace(needle.title(), replacement.title()).replace(needle.upper(), replacement.upper())
+    return text
+
+
+def _looks_internal_title(value: str) -> bool:
+    lowered = str(value or "").lower()
+    return any(marker in lowered for marker in ("workunit", "demo_result", "resolutionrun", "run_manifest", "run_state"))
 
 
 def _compare_form(left: str = "", right: str = "") -> str:

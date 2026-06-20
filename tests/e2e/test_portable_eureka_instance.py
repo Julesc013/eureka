@@ -40,6 +40,11 @@ class PortableEurekaInstanceE2ETests(unittest.TestCase):
             smoke = serve_command(instance=root, port=0, smoke=True, json_output=True)
             self.assertEqual(smoke["status"], "pass")
             self.assertTrue(all(item["ok"] for item in smoke["smoke"]["endpoints"]))
+            endpoints = {item["endpoint"]: item for item in smoke["smoke"]["endpoints"]}
+            self.assertEqual(302, endpoints["/"]["status_code"])
+            self.assertEqual(200, endpoints["/explore"]["status_code"])
+            self.assertEqual(200, endpoints["/explore?q=old%20blue%20FTP%20client%20for%20XP"]["status_code"])
+            self.assertEqual(200, endpoints["/explore?q=zzzxqvblorp"]["status_code"])
             self.assertFalse(build_portable_paths(root).server_lock.exists())
 
     def test_live_shadow_and_path_traversal_fail_closed(self) -> None:

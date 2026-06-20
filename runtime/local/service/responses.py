@@ -1,6 +1,7 @@
 """Response helpers for the read-only local service."""
 
 from dataclasses import dataclass
+from html import escape
 import json
 from typing import Any, Mapping
 
@@ -92,6 +93,41 @@ def html_response(
         body=html,
         headers=_headers(headers),
         payload=_normalize_payload(payload or {"schema_version": "local_http_html_response.v0"}, status_code=status_code),
+    )
+
+
+def redirect_response(location: str, status_code: int = 302) -> LocalServiceResponse:
+    safe_location = str(location or "/")
+    body = "\n".join(
+        [
+            "<!doctype html>",
+            '<html lang="en">',
+            "<head>",
+            '  <meta charset="utf-8">',
+            "  <title>Continue - Eureka</title>",
+            "</head>",
+            "<body>",
+            f'  <main><p>Continue to <a href="{escape(safe_location, quote=True)}">{escape(safe_location)}</a>.</p></main>',
+            "</body>",
+            "</html>",
+        ]
+    )
+    payload = _normalize_payload(
+        {
+            "schema_version": "local_http_redirect_response.v0",
+            "status": "redirect",
+            "location": safe_location,
+            "warnings": [],
+            "limitations": list(DEFAULT_LIMITATIONS),
+        },
+        status_code=status_code,
+    )
+    return LocalServiceResponse(
+        status_code=status_code,
+        content_type="text/html; charset=utf-8",
+        body=body,
+        headers=_headers({"Location": safe_location}),
+        payload=payload,
     )
 
 

@@ -14,8 +14,9 @@ def escape_html(value: Any) -> str:
     return escape("" if value is None else str(value), quote=True)
 
 
-def render_document(title: str, body: str, *, status_banner: str | None = None) -> str:
+def render_document(title: str, body: str, *, status_banner: str | None = None, navigation: str | None = None) -> str:
     banner = status_banner or NON_CLAIM_BANNER
+    rendered_navigation = render_navigation() if navigation is None else navigation
     return "\n".join(
         [
             "<!doctype html>",
@@ -26,7 +27,7 @@ def render_document(title: str, body: str, *, status_banner: str | None = None) 
             f"  <title>{escape_html(title)}</title>",
             "</head>",
             "<body>",
-            f'  <header role="banner"><p class="notice prototype">{escape_html(banner)}</p>{render_navigation()}</header>',
+            f'  <header role="banner"><p class="notice prototype">{escape_html(banner)}</p>{rendered_navigation}</header>',
             "  <main>",
             body,
             "  </main>",
@@ -36,8 +37,8 @@ def render_document(title: str, body: str, *, status_banner: str | None = None) 
     )
 
 
-def render_navigation() -> str:
-    links = (
+def render_navigation(links: Sequence[tuple[str, str]] | None = None) -> str:
+    nav_links = links or (
         render_link("/", "Home"),
         render_link("/status", "Status"),
         render_link("/search", "Search"),
@@ -52,7 +53,8 @@ def render_navigation() -> str:
         render_link("/rebuild", "Rebuild"),
         render_link("/api/v1/status", "JSON status"),
     )
-    return "<nav aria-label=\"Primary\"><ul>" + "".join(f"<li>{item}</li>" for item in links) + "</ul></nav>"
+    rendered = tuple(item if isinstance(item, str) else render_link(item[0], item[1]) for item in nav_links)
+    return "<nav aria-label=\"Primary\"><ul>" + "".join(f"<li>{item}</li>" for item in rendered) + "</ul></nav>"
 
 
 def render_link(href: str, text: str) -> str:

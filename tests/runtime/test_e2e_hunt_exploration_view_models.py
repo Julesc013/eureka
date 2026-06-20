@@ -31,6 +31,7 @@ class E2EHuntExplorationViewModelTests(unittest.TestCase):
         self.assertFalse(workspace["reviewed_record_created"])
         self.assertFalse(workspace["public_index_mutation"])
         self.assertEqual("pass", workspace["preview_index"]["status"])
+        self.assertIn("old blue FTP client for XP", workspace["example_searches"])
         candidates = next(lane for lane in workspace["lanes"] if lane["lane_id"] == "candidates")
         self.assertGreaterEqual(candidates["record_count"], 1)
         self.assertEqual("candidate_only", candidates["records"][0]["authority"])

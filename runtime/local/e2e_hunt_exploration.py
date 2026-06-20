@@ -83,6 +83,13 @@ LIMITATIONS = (
     "Synthetic Hunts use the shared E2E Reference Runner.",
     "Live providers, downloads, review decisions, and index mutations remain gated.",
 )
+EXAMPLE_SEARCHES = (
+    "old blue FTP client for XP",
+    "manual for Sound Blaster CT1740",
+    "latest Firefox before XP support ended",
+    "driver for Win98",
+    "article about ray tracing in a 1994 magazine",
+)
 
 
 @dataclass(frozen=True)
@@ -122,6 +129,7 @@ def build_explore_workspace(
             "runs": runs,
             "run_controls": _workspace_controls(query),
             "routes": _routes(),
+            "example_searches": list(EXAMPLE_SEARCHES),
         }
     )
     payload["warnings"].extend(preview.get("warnings", []))

@@ -1,7 +1,9 @@
 schema_version: aide.task.v0
 id: EUREKA-FIRST-RUN-ACCEPTANCE-UX-00
 title: Fix Eureka first-run acceptance UX
-status: planned
+status: completed
+result: pass
+completed_on: 2026-06-20
 task_class: e2e_reference_child_repair
 parent_track: E2E-REFERENCE-SYSTEM-TRACK-00
 predecessor: HUMAN-END-TO-END-ACCEPTANCE-00

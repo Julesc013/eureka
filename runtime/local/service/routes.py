@@ -2,9 +2,10 @@
 
 import json
 from typing import Any
+from urllib.parse import quote
 
 from .request_context import LocalRequestContext
-from .responses import DEFAULT_LIMITATIONS, LocalServiceResponse, error_response, html_response, json_response
+from .responses import DEFAULT_LIMITATIONS, LocalServiceResponse, error_response, html_response, json_response, redirect_response
 from .validation import first_param, parse_limit
 
 
@@ -25,7 +26,7 @@ def route_request(
     if method != "GET":
         return _mutation_response(runtime, request_context, operator_auth_state)
     if path == "/":
-        return _home_response(runtime)
+        return redirect_response("/explore")
     if path == "/status":
         if _wants_json(request_context):
             return _status_response(runtime)
@@ -341,11 +342,17 @@ def _health_response(runtime: Any) -> LocalServiceResponse:
 def _explore_workspace_response(runtime: Any, request_context: LocalRequestContext) -> LocalServiceResponse:
     query = first_param(request_context.params, "q", first_param(request_context.params, "query", ""))
     limit = parse_limit(first_param(request_context.params, "limit", ""), default=20)
+    include_synthetic_default = bool(getattr(runtime, "e2e_explore_include_synthetic", False))
+    include_synthetic_param = first_param(
+        request_context.params,
+        "include_synthetic",
+        first_param(request_context.params, "include-synthetic", "true" if include_synthetic_default else ""),
+    )
     payload = _explore().build_explore_workspace(
         query,
         options=_explore().options_from_runtime(runtime),
         limit=limit,
-        include_synthetic=_truthy(first_param(request_context.params, "include_synthetic", first_param(request_context.params, "include-synthetic", ""))),
+        include_synthetic=_truthy(include_synthetic_param),
     )
     return json_response(200, payload)
 
@@ -383,7 +390,13 @@ def _explore_run_response(runtime: Any, request_context: LocalRequestContext, ru
 def _explore_run_html_response(runtime: Any, request_context: LocalRequestContext, run_id: str) -> LocalServiceResponse:
     response = _explore_run_response(runtime, request_context, run_id)
     if response.status_code != 200:
-        return response
+        error = dict(response.payload.get("error") or {})
+        html = _explore_html().render_explore_error_html(
+            "Hunt Could Not Open",
+            str(error.get("message") or "The local Hunt record was not found."),
+        )
+        _workbench().validate_local_workbench_page(html, allow_operator_mutation_forms=True)
+        return html_response(response.status_code, html, {"schema_version": "local_http_explore_error_response.v0", "status": "fail"})
     html = _explore_html().render_explore_run_html(response.payload)
     _workbench().validate_local_workbench_page(html, allow_operator_mutation_forms=True)
     return html_response(200, html, response.payload)
@@ -1306,6 +1319,15 @@ def _mutation_response(runtime: Any, request_context: LocalRequestContext, opera
         try:
             _require_operator_token(request_context, runtime.config, operator_auth_state)
         except _operator_auth_error() as exc:
+            if path.startswith("/explore/"):
+                query = first_param(request_context.body_params, "q", first_param(request_context.body_params, "query", ""))
+                html = _explore_html().render_explore_error_html(
+                    "Hunt Could Not Start",
+                    "The local start token was missing or incorrect.",
+                    query=query,
+                )
+                _workbench().validate_local_workbench_page(html, allow_operator_mutation_forms=True)
+                return html_response(401, html, {"schema_version": "local_http_explore_error_response.v0", "status": "fail"})
             return error_response(401, "operator_token_required", str(exc))
     explore_mutation = _parse_explore_mutation_path(path)
     if explore_mutation:
@@ -1382,7 +1404,13 @@ def _apply_explore_mutation_response(runtime: Any, request_context: LocalRequest
         try:
             payload = _explore().start_synthetic_hunt(query, options=options, fixture=fixture)
         except Exception as exc:
+            if not _is_api_path(request_context.path):
+                html = _explore_html().render_explore_error_html("Hunt Could Not Start", str(exc), query=query)
+                _workbench().validate_local_workbench_page(html, allow_operator_mutation_forms=True)
+                return html_response(400, html, {"schema_version": "local_http_explore_error_response.v0", "status": "fail"})
             return error_response(400, "explore_start_rejected", str(exc), {"query_present": bool(query.strip())})
+        if not _is_api_path(request_context.path):
+            return redirect_response("/explore/run/" + quote(str(payload.get("run_id", ""))), status_code=303)
         return json_response(200, payload)
     try:
         payload = _explore().apply_run_control(run_id, action, runs_root=options.runs_root)
@@ -1752,6 +1780,10 @@ def _apply_rebuild_response(runtime: Any, request_context: LocalRequestContext) 
 
 def _wants_json(request_context: LocalRequestContext) -> bool:
     return first_param(request_context.params, "format", "").lower() == "json"
+
+
+def _is_api_path(path: str) -> bool:
+    return str(path or "").startswith("/api/v1/")
 
 
 def _route_allowed_for_scope(method: str, path: str, client_scope: object) -> bool:

@@ -2,11 +2,11 @@
 
 ## PHASE
 
-UNSPECIFIED - EUREKA-FIRST-RUN-ACCEPTANCE-UX-00
+UNSPECIFIED - HUMAN-END-TO-END-ACCEPTANCE-00
 
 ## GOAL
 
-EUREKA-FIRST-RUN-ACCEPTANCE-UX-00
+HUMAN-END-TO-END-ACCEPTANCE-00
 
 ## WHY
 
@@ -139,8 +139,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4786
-- approx_tokens: 1197
+- chars: 4780
+- approx_tokens: 1195
 - budget_status: PASS
 - warnings:
   - none

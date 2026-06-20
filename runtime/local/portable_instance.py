@@ -23,8 +23,8 @@ import tempfile
 import threading
 import time
 from typing import Any, Mapping, Sequence, TextIO
-from urllib.error import URLError
-from urllib.request import Request, urlopen
+from urllib.error import HTTPError, URLError
+from urllib.request import HTTPRedirectHandler, Request, build_opener
 
 from evals.e2e_reference.oracle import (
     OracleError,
@@ -889,6 +889,7 @@ def _configure_runtime_for_portable(runtime: Any, paths: PortablePaths) -> None:
     setattr(runtime, "e2e_explore_preview_index_path", paths.preview_current)
     setattr(runtime, "e2e_explore_runs_root", paths.run_bundles)
     setattr(runtime, "e2e_explore_default_fixture", "success_two_workunits")
+    setattr(runtime, "e2e_explore_include_synthetic", True)
     setattr(runtime, "public_alpha_enabled", False)
     setattr(runtime, "public_exposure_enabled", False)
     setattr(runtime, "live_providers_enabled", False)
@@ -969,27 +970,89 @@ def _server_lock_status(paths: PortablePaths) -> dict[str, Any]:
 
 
 def _smoke_server(host: str, port: int) -> dict[str, Any]:
-    endpoints = ("/health", "/status", "/explore", "/api/v1/explore")
+    endpoints = (
+        {"endpoint": "/health", "statuses": {200}, "contains": ("\"status\"",), "follow_redirects": True},
+        {"endpoint": "/", "statuses": {302}, "location": "/explore", "contains": (), "follow_redirects": False},
+        {
+            "endpoint": "/explore",
+            "statuses": {200},
+            "contains": ("What are you looking for?", "Example Searches", "Searching...", "Blocked Here"),
+            "forbidden": ("json", "audit", "architecture", "preview index", "e2e reference", "workunit", "run_id", "EUREKA-FIRST-RUN"),
+            "follow_redirects": True,
+        },
+        {
+            "endpoint": "/explore?q=old%20blue%20FTP%20client%20for%20XP",
+            "statuses": {200},
+            "contains": ("Results Found", "Start Hunt", "A Hunt is a local investigation"),
+            "forbidden": ("json", "audit", "architecture", "preview index", "e2e reference", "workunit", "run_id", "EUREKA-FIRST-RUN"),
+            "follow_redirects": True,
+        },
+        {
+            "endpoint": "/explore?q=zzzxqvblorp",
+            "statuses": {200},
+            "contains": ("No Local Matches Yet", "Start Hunt", "Blocked Here"),
+            "forbidden": ("json", "audit", "architecture", "preview index", "e2e reference", "workunit", "run_id", "EUREKA-FIRST-RUN"),
+            "follow_redirects": True,
+        },
+    )
     results = []
     errors = []
     base = f"http://{host}:{port}"
     deadline = time.time() + 10
-    for endpoint in endpoints:
+    for check in endpoints:
+        endpoint = str(check["endpoint"])
         last_error = ""
         while time.time() < deadline:
             try:
-                request = Request(base + endpoint, method="GET")
-                with urlopen(request, timeout=2) as response:  # noqa: S310 - bounded loopback smoke only
-                    body = response.read(2048).decode("utf-8", errors="replace")
-                    ok = 200 <= response.status < 300 and bool(body)
-                    results.append({"endpoint": endpoint, "status_code": response.status, "ok": ok, "body_sample": body[:240]})
-                    break
+                probe = _http_get(base + endpoint, follow_redirects=bool(check.get("follow_redirects", True)))
+                ok, failures = _smoke_check(probe, check)
+                results.append({"endpoint": endpoint, "status_code": probe["status_code"], "ok": ok, "failures": failures, "body_sample": probe["body"][:240]})
+                break
             except (OSError, URLError) as exc:
                 last_error = str(exc)
                 time.sleep(0.1)
         else:
             errors.append({"endpoint": endpoint, "error": last_error or "timeout"})
     return {"schema_version": "eureka.portable_server_smoke.v0", "status": "pass" if not errors and all(item["ok"] for item in results) else "fail", "endpoints": results, "errors": errors, "loopback_only": True}
+
+
+def _http_get(url: str, *, follow_redirects: bool) -> dict[str, Any]:
+    request = Request(url, method="GET")
+    opener = build_opener() if follow_redirects else build_opener(_NoRedirectHandler)
+    try:
+        with opener.open(request, timeout=2) as response:  # noqa: S310 - bounded loopback smoke only
+            body = response.read(65536).decode("utf-8", errors="replace")
+            return {"status_code": int(response.status), "headers": dict(response.headers.items()), "body": body}
+    except HTTPError as exc:
+        if 300 <= exc.code < 400 and not follow_redirects:
+            body = exc.read(65536).decode("utf-8", errors="replace")
+            return {"status_code": int(exc.code), "headers": dict(exc.headers.items()), "body": body}
+        raise
+
+
+def _smoke_check(probe: Mapping[str, Any], check: Mapping[str, Any]) -> tuple[bool, list[str]]:
+    failures: list[str] = []
+    status_code = int(probe.get("status_code", 0) or 0)
+    expected_statuses = {int(item) for item in check.get("statuses", {200})}
+    if status_code not in expected_statuses:
+        failures.append(f"expected status {sorted(expected_statuses)}, got {status_code}")
+    headers = {str(key).lower(): str(value) for key, value in dict(probe.get("headers") or {}).items()}
+    if check.get("location") and headers.get("location") != check.get("location"):
+        failures.append(f"expected Location {check.get('location')}, got {headers.get('location', '')}")
+    body = str(probe.get("body") or "")
+    body_lower = body.lower()
+    for needle in check.get("contains", ()):
+        if str(needle).lower() not in body_lower:
+            failures.append(f"missing body text: {needle}")
+    for needle in check.get("forbidden", ()):
+        if str(needle).lower() in body_lower:
+            failures.append(f"forbidden first-use text: {needle}")
+    return not failures, failures
+
+
+class _NoRedirectHandler(HTTPRedirectHandler):
+    def redirect_request(self, req: Any, fp: Any, code: int, msg: str, headers: Any, newurl: str) -> None:
+        return None
 
 
 def _backup_status(paths: PortablePaths) -> dict[str, Any]:
