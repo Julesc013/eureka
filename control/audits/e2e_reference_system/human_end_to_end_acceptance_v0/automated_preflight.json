@@ -1,0 +1,109 @@
+{
+  "schema_version": "eureka.human_acceptance_preflight.v0",
+  "generated_at": "2026-06-20T07:30:00Z",
+  "status": "PASS",
+  "human_acceptance": false,
+  "instance": {
+    "label": "eureka-e2e-acceptance-v0",
+    "root": "D:\\Projects\\Eureka\\instances\\eureka-e2e-acceptance-v0",
+    "root_posture": "explicit_local_private",
+    "inside_repository": false,
+    "instance_id": "eureka-local-524ab24d44b65f47",
+    "schema_version": 1,
+    "store_count": 9
+  },
+  "commands": [
+    {
+      "name": "bootstrap",
+      "command": "python scripts/eureka.py --instance ../instances/eureka-e2e-acceptance-v0 bootstrap --json",
+      "status": "PASS",
+      "preview_index_record_count": 19,
+      "network_provider_calls": false,
+      "public_exposure": false,
+      "production_truth_mutation": false
+    },
+    {
+      "name": "bootstrap_idempotence",
+      "command": "python scripts/eureka.py --instance ../instances/eureka-e2e-acceptance-v0 bootstrap --json",
+      "status": "PASS",
+      "instance_id_stable": true,
+      "preview_index_generation_id": "preview-index-6806f12296e10452e145d4a6"
+    },
+    {
+      "name": "doctor",
+      "command": "python scripts/eureka.py --instance ../instances/eureka-e2e-acceptance-v0 doctor --strict --json",
+      "status": "PASS",
+      "errors": [],
+      "warnings": [],
+      "loopback_only": true,
+      "live_providers_enabled": false
+    },
+    {
+      "name": "core_oracle",
+      "command": "python scripts/eureka.py --instance ../instances/eureka-e2e-acceptance-v0 test --suite core --json",
+      "status": "PASS",
+      "execution_id": "e2e-eval-core-20260620T072934Z-a65a322159",
+      "case_count": 10,
+      "required_failures": 0,
+      "critical_failures": 0,
+      "network_provider_calls": false,
+      "model_calls": false
+    },
+    {
+      "name": "status",
+      "command": "python scripts/eureka.py --instance ../instances/eureka-e2e-acceptance-v0 status --json",
+      "status": "PASS",
+      "state": "ready",
+      "server_state": "stopped",
+      "reviewed_records_created": false
+    },
+    {
+      "name": "serve_smoke",
+      "command": "python scripts/eureka.py --instance ../instances/eureka-e2e-acceptance-v0 serve --mode exploration --host 127.0.0.1 --port 0 --smoke --json",
+      "status": "PASS",
+      "loopback_only": true,
+      "url": "http://127.0.0.1:38003/explore",
+      "endpoints_checked": [
+        "/health",
+        "/status",
+        "/explore",
+        "/api/v1/explore"
+      ],
+      "operator_token_generated": true,
+      "operator_token_persisted": false
+    }
+  ],
+  "preview_index": {
+    "status": "PASS",
+    "generation_id": "preview-index-6806f12296e10452e145d4a6",
+    "record_count": 19,
+    "reviewed_count": 0,
+    "candidate_count": 4,
+    "synthetic_count": 19,
+    "authority_counts": {
+      "synthetic_test": 19
+    },
+    "status_counts": {
+      "absence": 2,
+      "candidate": 4,
+      "near_miss": 1,
+      "need": 2,
+      "policy_blocked": 7,
+      "unknown": 3
+    }
+  },
+  "safety": {
+    "public_exposure": false,
+    "live_providers_enabled": false,
+    "network_provider_calls": false,
+    "model_provider_calls": false,
+    "real_review_decisions": false,
+    "reviewed_records_created": false,
+    "reviewed_master_mutation": false,
+    "public_index_mutation": false,
+    "production_truth_mutation": false,
+    "downloads_or_execution": false,
+    "operator_token_persisted": false
+  },
+  "full_unittest_discovery": "NOT_RUN"
+}

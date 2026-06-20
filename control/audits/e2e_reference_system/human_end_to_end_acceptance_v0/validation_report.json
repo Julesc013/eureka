@@ -1,0 +1,42 @@
+{
+  "schema_version": "eureka.human_acceptance_validation.v0",
+  "generated_at": "2026-06-20T07:30:00Z",
+  "status": "PREPARATION_VALIDATION_PASS_WITH_POSTCOMMIT_CLEANLINESS_REQUIRED",
+  "preflight": {
+    "git_fetch_origin": "PASS",
+    "git_status": "PASS_CLEAN_DEV_SYNCED_WITH_ORIGIN_DEV",
+    "origin_main_to_origin_dev": "0 16",
+    "task_state_guard": "WARN_BRANCH_NAME_ONLY",
+    "bootstrap": "PASS",
+    "bootstrap_idempotence": "PASS",
+    "doctor_strict": "PASS",
+    "core_oracle": "PASS",
+    "status": "PASS",
+    "serve_smoke": "PASS"
+  },
+  "focused_validation": {
+    "portable_acceptance_e2e_tests": "PASS_5_TESTS",
+    "architecture_boundaries": "PASS",
+    "generated_artifact_cleanliness": "EXPECTED_FAIL_BEFORE_COMMIT_NEW_AUDIT_PACKET",
+    "runtime_architecture_leakage": "PASS_VALID",
+    "public_alpha_readonly": "PASS_VALID",
+    "snapshot_relay": "PASS",
+    "eureka_test_select_changed_failed_first": "PASS_L0_STATIC_PREFLIGHT_ONLY",
+    "git_diff_check": "PASS",
+    "aide_doctor": "PASS",
+    "aide_validate": "PASS",
+    "aide_commit_check_latest": "PENDING_UNTIL_COMMIT"
+  },
+  "full_unittest_discovery": "NOT_RUN",
+  "human_feedback": "PENDING",
+  "acceptance_verdict": "PENDING",
+  "public_exposure": false,
+  "live_providers_enabled": false,
+  "real_review_decisions": false,
+  "reviewed_records_created": false,
+  "reviewed_master_mutation": false,
+  "public_index_mutation": false,
+  "production_truth_created": false,
+  "downloads_or_execution": false,
+  "license_posture_changed": false
+}

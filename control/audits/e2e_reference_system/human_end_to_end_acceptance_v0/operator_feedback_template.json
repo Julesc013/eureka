@@ -1,0 +1,49 @@
+{
+  "schema_version": "eureka.human_acceptance_feedback_template.v0",
+  "actor": "",
+  "build": "ae9122c3472ea8369d5e1d88670182d758c8d663",
+  "instance": "eureka-e2e-acceptance-v0",
+  "verdict": "",
+  "allowed_verdicts": [
+    "PASS",
+    "PASS_WITH_FIXES",
+    "BLOCKED",
+    "FAIL"
+  ],
+  "ratings": {
+    "setup_clarity": null,
+    "first_use_clarity": null,
+    "search_usefulness": null,
+    "result_lane_clarity": null,
+    "status_versus_authority_clarity": null,
+    "hunt_workflow": null,
+    "workunit_event_clarity": null,
+    "evidence_provenance_clarity": null,
+    "replay_usefulness": null,
+    "comparison_usefulness": null,
+    "degraded_state_honesty": null,
+    "terminology": null,
+    "overall_coherence": null,
+    "likelihood_of_using_eureka_again": null
+  },
+  "questions": {
+    "first_confusing_thing": "",
+    "most_useful_thing": "",
+    "felt_like_machinery": "",
+    "missing_information": "",
+    "excessive_information": "",
+    "terminology_to_change": "",
+    "hardest_workflow_step": "",
+    "over_authoritative_result": "",
+    "synthetic_content_appeared_real": "",
+    "unsafe_or_unexpected_action": "",
+    "top_three_fixes": [],
+    "what_should_eureka_build_next": ""
+  },
+  "issues": {
+    "p0_critical": [],
+    "p1_blocking": [],
+    "p2_significant": [],
+    "p3_polish": []
+  }
+}

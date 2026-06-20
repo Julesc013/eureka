@@ -1,0 +1,32 @@
+{
+  "schema_version": "eureka.human_acceptance_build.v0",
+  "generated_at": "2026-06-20T07:30:00Z",
+  "status": "WAITING_FOR_HUMAN_ACCEPTANCE",
+  "branch": "dev",
+  "head": "ae9122c3472ea8369d5e1d88670182d758c8d663",
+  "origin_dev": "ae9122c3472ea8369d5e1d88670182d758c8d663",
+  "origin_main": "13997f25075ce892e59f7ac12a11280816d47570",
+  "origin_main_to_origin_dev": {
+    "behind": 0,
+    "ahead": 16
+  },
+  "worktree": "clean_at_preflight",
+  "python": {
+    "version": "3.11.9",
+    "implementation": "CPython",
+    "build": "MSC v.1938 64 bit (AMD64)"
+  },
+  "platform": "Windows-10-10.0.19045-SP0",
+  "instance": {
+    "label": "eureka-e2e-acceptance-v0",
+    "root": "D:\\Projects\\Eureka\\instances\\eureka-e2e-acceptance-v0",
+    "root_posture": "explicit_local_private",
+    "inside_repository": false
+  },
+  "session_invalidation_rule": "Any code change during acceptance invalidates this session and requires rerun on the new commit.",
+  "public_exposure": false,
+  "live_providers_enabled": false,
+  "reviewed_records_created": false,
+  "index_mutation": false,
+  "production_truth_created": false
+}
