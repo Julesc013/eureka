@@ -27,6 +27,7 @@ from runtime.search.canary import sanitize_canary_evidence, write_canary_evidenc
 from runtime.search.hunt_engine import HuntBudget, HuntEngine  # noqa: E402
 from runtime.search.live_service import LiveSearchService, live_hunt_run_id  # noqa: E402
 from runtime.search.live_web import SearchLead, SearchResultPage, WebSearchBudget, brave_capability_manifest  # noqa: E402
+from runtime.search.provider_health import provider_health_check  # noqa: E402
 from runtime.search.providers import provider_status  # noqa: E402
 
 
@@ -77,13 +78,15 @@ def run_acceptance(
     with tempfile.TemporaryDirectory() as temp:
         deterministic = _run_deterministic(Path(temp))
     live_status = provider_status(provider)
+    health = provider_health_check(provider, live_check=False)
     live = {
         "status": "not_run",
         "reason": "live canary requires --live-canary",
         "provider": provider,
-        "live_provider_configured": bool(live_status.get("configured")),
+        "live_provider_configured": bool(health.get("configured")),
+        "provider_health_category": str(health.get("category") or ""),
     }
-    if live_canary and bool(live_status.get("configured")):
+    if live_canary and bool(health.get("configured")):
         live = _run_live_canary(
             query=query,
             instance=instance,
@@ -95,9 +98,10 @@ def run_acceptance(
     elif live_canary:
         live = {
             "status": "waiting",
-            "reason": "BRAVE_SEARCH_API_KEY/BRAVE_API_KEY is not configured",
+            "reason": str(health.get("category") or live_status.get("message") or "provider_not_configured"),
             "provider": provider,
             "live_provider_configured": False,
+            "provider_health_category": str(health.get("category") or ""),
         }
     checks = deterministic["checks"] + [
         {"id": "live_canary", "status": "pass" if live.get("status") == "pass" else "waiting", "details": live},

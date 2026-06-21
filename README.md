@@ -19,7 +19,7 @@ transient web leads, deeper Hunt, safe inspection, durable local Preview Index,
 restart, and local search. The deterministic implementation foundations are in
 place, including safe fetch, local SQLite/FTS Preview Indexing, Hunt, UX, second
 provider conformance, Foundry v0, and audit evidence. Real live acceptance still
-waits on an operator-run Brave canary, external full discovery, and separate
+waits on an operator-run broad-web canary, external full discovery, and separate
 human usefulness approval. Eureka is not deployed, not publicly launched, and
 does not claim production readiness. Current volatile capability state is
 summarized in `control/inventory/product/capability_state.json`.
@@ -105,17 +105,21 @@ python scripts/eureka.py index stats
 ```
 
 Experimental live provider search is opt-in and requires a local provider key.
-Do not paste or commit the key.
+Brave and Mojeek are supported broad-web options; Internet Archive metadata is
+used as a cheap/open vertical source where relevant. Do not paste or commit
+provider keys.
 
 ```powershell
 $env:BRAVE_SEARCH_API_KEY="<your-key>"
+# or
+$env:MOJEEK_SEARCH_API_KEY="<your-key>"
 python scripts/eureka.py search "an arbitrary unseen query" --live --json
 python scripts/eureka.py serve --live
 ```
 
 Live Hunt can run the bounded deterministic fetch/index path when explicitly
 enabled. The real end-to-end canary must still be run by the operator with a
-local Brave key before acceptance is claimed.
+local broad-web provider key before acceptance is claimed.
 
 Run focused checks:
 

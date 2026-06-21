@@ -24,7 +24,7 @@ search, transient lead retention, SSRF/robots-aware safe fetch, local SQLite/FTS
 Preview Indexing, restart retrieval harness, real budgeted Hunt foundations,
 live UX foundations, second-provider conformance, disabled-by-default Foundry
 v0, and a live-discovery stack audit. Eureka is still not accepted as a real
-end-to-end search product until an operator-run live Brave canary proves the
+end-to-end search product until an operator-run live broad-web canary proves the
 full sequence with real network results and a separate human usefulness verdict
 is recorded.
 
@@ -55,11 +55,12 @@ production readiness.
 | Local product loop | Present for local/operator work |
 | Workbench/operator loop | Local cockpit foundation present |
 | CLI/local web/local HTTP API | Present as local surfaces |
-| Live search provider contract | Provider-neutral contract and Brave adapter present |
+| Live search provider contract | Provider-neutral contract with Brave and Mojeek broad-web adapters present |
 | Local `--live` search display | Experimental, bounded, operator opt-in, local only |
 | Safe fetch and SourceObservation | Implemented for selected bounded URLs with policy gates |
 | SQLite/FTS Preview Index | Implemented for local unreviewed SourceObservations |
 | Deterministic Hunt engine | Implemented, bounded, non-agentic |
+| Discovery broker | Planning-only local-first/vertical-first/broad-web fanout implemented; no network calls performed by planning |
 | Second provider | Internet Archive metadata conformance implemented and live-acceptance-gated |
 | Foundry v0 | Implemented, local, disabled by default |
 | Synthetic behavior cleanup | Normal search no longer silently substitutes hard-query fixtures; demo bootstrap is explicit |
@@ -71,7 +72,7 @@ production readiness.
 
 | Area | Current gate |
 | --- | --- |
-| Operator live canary | Waiting for local Brave key and explicit operator run |
+| Operator live canary | Waiting for local Brave or Mojeek key and explicit operator run |
 | Human acceptance | Blocked until the real live canary passes and the operator gives a separate product verdict |
 | Safe page fetching | Implemented deterministically; real live proof remains canary-gated |
 | Durable live indexing | Implemented for independently fetched SourceObservations; real live proof remains canary-gated |

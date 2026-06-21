@@ -29,10 +29,10 @@ class ProviderConformanceTests(unittest.TestCase):
         self.assertFalse(lead.retention_policy.persist_rank)
         self.assertFalse(page.raw_response_stored)
 
-    def test_registry_routes_archive_queries_to_brave_and_ia(self) -> None:
+    def test_registry_routes_archive_queries_to_ia_then_broad_web(self) -> None:
         selection = ProviderRegistry(env={}).select("manual for Sound Blaster CT1740", "auto")
 
-        self.assertEqual(("brave", "internet_archive_metadata"), selection.provider_ids)
+        self.assertEqual(("internet_archive_metadata", "brave", "mojeek"), selection.provider_ids)
 
     def test_multi_provider_partial_failure_and_dedupe(self) -> None:
         provider = MultiProviderSearchProvider((_FailingProvider(), _LeadProvider("internet_archive_metadata", "https://archive.org/details/item")))

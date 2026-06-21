@@ -1,0 +1,42 @@
+schema_version: aide.task.v0
+id: EUREKA-DISCOVERY-BROKER-AND-PROVIDER-FANOUT-01
+title: Add provider health checks and policy-aware discovery fanout planning
+status: PASS
+task_class: focused_product_runtime_repair
+parent_track: EUREKA-REAL-LIVE-SEARCH-HUNT-00
+predecessor: EUREKA-LIVE-PRODUCT-HARDENING-AUDIT-01
+successor: OPERATOR-LIVE-CANARY-00
+purpose: >-
+  Avoid Brave-or-bust live discovery by adding a cheap-first DiscoveryBroker,
+  an active sanitized provider health check, Mojeek broad-web support, and a
+  disabled-by-default SearXNG policy placeholder without changing acceptance,
+  public exposure, or reviewed truth.
+scope:
+  - canary preflight can classify placeholder, missing, unchecked, auth, rate-limit, timeout, and provider-ok states
+  - Mojeek adapter provides a second broad-web provider option when locally configured
+  - DiscoveryBroker plans local index, vertical sources, broad web, and optional self-hosted metasearch in cost-aware order
+  - provider-specific retention policies remain enforced
+  - public live fanout remains disabled
+non_goals:
+  - no public launch or tunnel
+  - no reviewed/master/public truth mutation
+  - no provider-result payload persistence
+  - no raw provider response or credential persistence
+  - no SearXNG public-instance dependency
+  - no Agentic Hunt Planner work
+evidence:
+  runtime:
+    - runtime/search/provider_health.py
+    - runtime/search/discovery_broker.py
+    - runtime/search/live_web.py
+    - runtime/search/providers.py
+  policy:
+    - control/policies/discovery_provider_registry.json
+  tests:
+    - tests/runtime/test_provider_health.py
+    - tests/runtime/test_discovery_broker.py
+    - tests/runtime/test_live_web_search_provider.py
+    - tests/runtime/test_provider_policy_registry.py
+    - tests/runtime/test_provider_conformance.py
+    - tests/runtime/test_live_canary_closeout.py
+next_recommended_task: OPERATOR-LIVE-CANARY-00

@@ -1,20 +1,24 @@
 schema_version: aide.task.v0
 id: OPERATOR-LIVE-CANARY-00
-title: Run the real end-to-end live Search/Hunt canary with a local Brave key
+title: Run the real end-to-end live Search/Hunt canary with a local broad-web provider key
 status: WAITING_FOR_OPERATOR_LIVE_CANARY
 task_class: operator_live_gate
 parent_track: EUREKA-REAL-LIVE-SEARCH-HUNT-00
-predecessor: EUREKA-LIVE-PRODUCT-HARDENING-AUDIT-01
+predecessor: EUREKA-DISCOVERY-BROKER-AND-PROVIDER-FANOUT-01
 successor: HUMAN-END-TO-END-ACCEPTANCE-00
 purpose: >-
-  Have the local operator supply BRAVE_SEARCH_API_KEY or BRAVE_API_KEY outside
-  Git/chat and run the strengthened real canary through live Search, Hunt,
+  Have the local operator supply BRAVE_SEARCH_API_KEY/BRAVE_API_KEY or
+  MOJEEK_SEARCH_API_KEY/MOJEEK_API_KEY outside Git/chat and run the strengthened
+  real canary through live Search, Hunt,
   independent safe fetch, SourceObservation creation, SQLite Preview Index
   insertion, store reopen, and local search retrieval.
 required_command: >-
   python scripts/check_live_search_hunt_acceptance.py --live-canary --query
   "<operator unseen query>" --instance ..\instances\live-acceptance
-  --max-queries 3 --max-fetches 3 --keep-instance --json
+  --provider brave --max-queries 3 --max-fetches 3 --keep-instance --json
+preflight_command: >-
+  python scripts/eureka.py --instance ..\instances\live-acceptance canary
+  preflight --provider brave --live-check --json
 completion_requires:
   - live_provider_configured true
   - live_result_count >= 1

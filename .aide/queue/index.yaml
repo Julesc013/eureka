@@ -1,4 +1,4 @@
-current_recommended_task: OPERATOR-LIVE-CANARY-00 - Run the real end-to-end live Search/Hunt canary with a local Brave key
+current_recommended_task: OPERATOR-LIVE-CANARY-00 - Run the real end-to-end live Search/Hunt canary with a local configured broad-web provider
 completed:
   - SOURCE-ACTION-KERNEL-00
   - SOURCE-WAVE-00
@@ -113,6 +113,7 @@ completed:
   - EUREKA-PORTABLE-LOCAL-RELEASE-BUNDLE-01
   - EUREKA-OPERATOR-LIVE-CANARY-CLOSEOUT-01
   - EUREKA-LIVE-PRODUCT-HARDENING-AUDIT-01
+  - EUREKA-DISCOVERY-BROKER-AND-PROVIDER-FANOUT-01
 blocked:
   - HUMAN-END-TO-END-ACCEPTANCE-00
 planned:

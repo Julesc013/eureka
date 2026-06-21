@@ -99,6 +99,176 @@
       "live_canary_state": "waiting_for_operator_live_canary"
     },
     {
+      "provider_id": "mojeek",
+      "provider_kind": "broad_web_search",
+      "adapter": "MojeekSearchProvider",
+      "adapter_version": "v0",
+      "enabled_state": "enabled_when_configured",
+      "authentication": {
+        "method": "api_key_env",
+        "required": true,
+        "env_keys": [
+          "MOJEEK_SEARCH_API_KEY",
+          "MOJEEK_API_KEY"
+        ],
+        "client_side_allowed": false,
+        "credential_persistence_allowed": false
+      },
+      "query_capabilities": {
+        "modes": [
+          "keyword",
+          "phrase",
+          "site",
+          "freshness"
+        ],
+        "operators": [
+          "quoted_phrase",
+          "site"
+        ],
+        "safe_search": true
+      },
+      "pagination": {
+        "model": "start_offset",
+        "page_min": 0,
+        "page_max": 99,
+        "count_max": 20,
+        "more_results_available": true
+      },
+      "freshness_support": {
+        "supported": true,
+        "filters": [
+          "day",
+          "month",
+          "year"
+        ]
+      },
+      "allowed_operating_modes": [
+        "local_live",
+        "live_canary",
+        "deterministic_test",
+        "foundry_explicit"
+      ],
+      "request_budgets": {
+        "default_provider_requests": 3,
+        "hard_max_provider_requests": 25,
+        "hard_max_results_per_request": 20,
+        "hard_max_timeout_seconds": 30,
+        "hard_max_retries": 3
+      },
+      "rate_limits": {
+        "source": "provider_account_limits",
+        "honor_429": true,
+        "retry_after_required": false
+      },
+      "retention": {
+        "display_results": true,
+        "transient_cache_ttl_seconds": 300,
+        "persist_urls": false,
+        "persist_snippets": false,
+        "persist_rank": false,
+        "persist_raw_response": false,
+        "redistribute": false,
+        "use_for_model_training": false
+      },
+      "persistent_fields_allowed": [],
+      "redistribution": {
+        "allowed": false,
+        "posture": "standard_terms_restricted_until_reviewed"
+      },
+      "training_use_prohibited": true,
+      "fetch_handoff_policy": {
+        "allowed": true,
+        "persist_provider_payload": false,
+        "persist_only_independent_source_observation": true
+      },
+      "terms_source_reference": "https://www.mojeek.com/support/api/search/quickstart.html",
+      "last_policy_review": "2026-06-21",
+      "live_canary_state": "waiting_for_operator_live_canary"
+    },
+    {
+      "provider_id": "searxng",
+      "provider_kind": "self_hosted_metasearch",
+      "adapter": "SearXNGSearchProvider",
+      "adapter_version": "planned",
+      "enabled_state": "disabled_until_self_hosted_configured",
+      "authentication": {
+        "method": "none",
+        "required": false,
+        "env_keys": [],
+        "client_side_allowed": false,
+        "credential_persistence_allowed": false
+      },
+      "query_capabilities": {
+        "modes": [
+          "keyword",
+          "phrase",
+          "site",
+          "category"
+        ],
+        "operators": [
+          "engine_selection",
+          "category_selection"
+        ],
+        "safe_search": true
+      },
+      "pagination": {
+        "model": "page",
+        "page_min": 1,
+        "page_max": 10,
+        "count_max": 10,
+        "more_results_available": true
+      },
+      "freshness_support": {
+        "supported": true,
+        "filters": [
+          "day",
+          "month",
+          "year"
+        ]
+      },
+      "allowed_operating_modes": [
+        "local_live",
+        "deterministic_test",
+        "foundry_explicit"
+      ],
+      "request_budgets": {
+        "default_provider_requests": 3,
+        "hard_max_provider_requests": 10,
+        "hard_max_results_per_request": 10,
+        "hard_max_timeout_seconds": 20,
+        "hard_max_retries": 1
+      },
+      "rate_limits": {
+        "source": "self_hosted_instance_policy",
+        "honor_429": true,
+        "public_instances_not_supported": true
+      },
+      "retention": {
+        "display_results": true,
+        "transient_cache_ttl_seconds": 300,
+        "persist_urls": false,
+        "persist_snippets": false,
+        "persist_rank": false,
+        "persist_raw_response": false,
+        "redistribute": false,
+        "use_for_model_training": false
+      },
+      "persistent_fields_allowed": [],
+      "redistribution": {
+        "allowed": false,
+        "posture": "depends_on_self_hosted_instance_and_underlying_engines"
+      },
+      "training_use_prohibited": true,
+      "fetch_handoff_policy": {
+        "allowed": true,
+        "persist_provider_payload": false,
+        "persist_only_independent_source_observation": true
+      },
+      "terms_source_reference": "https://docs.searxng.org/dev/search_api.html",
+      "last_policy_review": "2026-06-21",
+      "live_canary_state": "disabled_until_self_hosted_configured"
+    },
+    {
       "provider_id": "internet_archive_metadata",
       "provider_kind": "archive_metadata_search",
       "adapter": "InternetArchiveMetadataAdapter",

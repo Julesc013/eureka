@@ -76,6 +76,7 @@ from runtime.search.observability import (
     metrics_from_events,
 )
 from runtime.search.performance import run_capacity_baseline
+from runtime.search.provider_health import provider_health_check
 from runtime.search.providers import provider_status
 from runtime.search.foundry import FoundryPlan, FoundryRunStore, FoundryService, SurveyBudget, load_plan, write_plan
 
@@ -1191,6 +1192,8 @@ def canary_command(
     provider: str = "brave",
     max_queries: int = 3,
     max_fetches: int = 3,
+    live_check: bool = False,
+    live_check_query: str = "",
 ) -> dict[str, Any]:
     started = _now()
     root = resolve_portable_instance_root(instance)
@@ -1199,15 +1202,20 @@ def canary_command(
     if clean_action != "preflight":
         raise PortableInstanceError("unsupported_canary_command", f"unsupported canary command: {action}", exit_code=2)
     live_provider_status = provider_status(provider)
+    health = provider_health_check(provider, live_check=live_check, query=live_check_query or "eureka provider health check")
     instance_validation = validate_local_instance(root) if root.exists() else {"status": "absent", "errors": ["instance root does not exist"], "warnings": []}
     instance_ready = str(instance_validation.get("status") or "") in {"pass", "pass_with_warnings"}
     migration = migration_preflight(paths.preview_sqlite)
     database_ready = instance_ready and str(migration.get("status") or "") in {"pass", "absent"}
-    provider_configured = bool(live_provider_status.get("configured"))
+    provider_configured = bool(health.get("configured"))
+    provider_ready = provider_configured and (not live_check or bool(health.get("auth_verified")))
     payload = {
         "schema_version": "eureka.operator_live_canary_preflight.v0",
         "provider": provider,
         "provider_configured": provider_configured,
+        "provider_auth_verified": bool(health.get("auth_verified")),
+        "provider_health_category": str(health.get("category") or ""),
+        "provider_health": health,
         "credential_env_keys": list(live_provider_status.get("credential_env_keys") or []),
         "credential_value_exposed": False,
         "instance_ready": instance_ready,
@@ -1215,6 +1223,7 @@ def canary_command(
         "database_ready": database_ready,
         "database_status": str(migration.get("status") or ""),
         "network_mode": "explicit_local_live_only",
+        "network_provider_calls": bool(health.get("live_check_performed")),
         "budgets": {
             "max_queries": max(1, min(int(max_queries or 3), 3)),
             "max_fetches": max(1, min(int(max_fetches or 3), 5)),
@@ -1227,9 +1236,9 @@ def canary_command(
         "reviewed_master_mutation": False,
         "public_index_mutation": False,
         "provider_result_payload_persistence": False,
-        "ready_to_run": provider_configured and instance_ready and database_ready,
+        "ready_to_run": provider_ready and instance_ready and database_ready,
         "recommended_command": (
-            f"python scripts/check_live_search_hunt_acceptance.py --live-canary --query <operator-unseen-query> --instance {root} --max-queries 3 --max-fetches 3 --keep-instance --json"
+            f"python scripts/check_live_search_hunt_acceptance.py --live-canary --query <operator-unseen-query> --instance {root} --provider {provider} --max-queries 3 --max-fetches 3 --keep-instance --json"
         ),
     }
     status = "pass" if payload["ready_to_run"] else "pass_with_warnings"
@@ -1343,7 +1352,15 @@ def _dispatch(args: argparse.Namespace, *, stdout: TextIO) -> dict[str, Any]:
         if args.bundle_command == "rehearse":
             return bundle_command("rehearse", instance=args.instance, bundle=args.bundle, target=args.target)
     if args.command == "canary":
-        return canary_command(args.canary_command, instance=args.instance, provider=args.provider, max_queries=args.max_queries, max_fetches=args.max_fetches)
+        return canary_command(
+            args.canary_command,
+            instance=args.instance,
+            provider=args.provider,
+            max_queries=args.max_queries,
+            max_fetches=args.max_fetches,
+            live_check=args.live_check,
+            live_check_query=args.live_check_query,
+        )
     raise PortableInstanceError("unsupported_command", f"unsupported command: {args.command}", exit_code=2)
 
 
@@ -1467,12 +1484,14 @@ def _parser() -> argparse.ArgumentParser:
     bundle_rehearse.add_argument("bundle")
     bundle_rehearse.add_argument("--target", default="")
 
-    canary = sub.add_parser("canary", parents=[common], help="Inspect operator live canary readiness without running provider calls.")
+    canary = sub.add_parser("canary", parents=[common], help="Inspect operator live canary readiness.")
     canary_sub = canary.add_subparsers(dest="canary_command", required=True)
     canary_preflight = canary_sub.add_parser("preflight", parents=[common], help="Report provider, instance, database, budget, and exposure readiness.")
     canary_preflight.add_argument("--provider", default="brave")
     canary_preflight.add_argument("--max-queries", type=int, default=3)
     canary_preflight.add_argument("--max-fetches", type=int, default=3)
+    canary_preflight.add_argument("--live-check", action="store_true", help="Run one bounded provider auth/health request.")
+    canary_preflight.add_argument("--live-check-query", default="eureka provider health check")
     return parser
 
 

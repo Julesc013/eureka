@@ -1,7 +1,7 @@
 {
   "schema_version": "eureka.product_capability_state.v0",
-  "tested_commit": "c3667afb",
-  "generated_at": "2026-06-21T06:09:00Z",
+  "tested_commit": "ecbe533b",
+  "generated_at": "2026-06-21T04:39:12Z",
   "current_recommended_task": "OPERATOR-LIVE-CANARY-00",
   "capabilities": {
     "live_search": {
@@ -17,7 +17,7 @@
         "docs/operations/REAL_LIVE_SEARCH_HUNT_ACCEPTANCE.md"
       ],
       "known_limitations": [
-        "Real Brave canary requires a locally configured key.",
+        "Real broad-web canary requires a locally configured Brave or Mojeek key.",
         "Provider SearchLeads remain transient and must not be persisted as provider result payloads."
       ]
     },
@@ -109,6 +109,26 @@
         "The registry governs activation and retention policy; provider adapters still implement transport behavior."
       ]
     },
+    "discovery_broker": {
+      "implementation_state": "implemented",
+      "activation_state": "planning_only_no_network_calls",
+      "validation_state": "deterministic_pass",
+      "live_canary_state": "waiting_for_operator_live_canary",
+      "human_acceptance_state": "not_started",
+      "public_status": "public_live_fanout_disabled",
+      "evidence_refs": [
+        ".aide/queue/EUREKA-DISCOVERY-BROKER-AND-PROVIDER-FANOUT-01/task.yaml",
+        "runtime/search/discovery_broker.py",
+        "runtime/search/provider_health.py",
+        "tests/runtime/test_discovery_broker.py",
+        "tests/runtime/test_provider_health.py"
+      ],
+      "known_limitations": [
+        "The broker plans provider fanout but does not perform provider calls itself.",
+        "Mojeek requires a local key; SearXNG remains disabled until a self-hosted instance is explicitly configured.",
+        "Human product acceptance remains blocked until the real live canary and manual product test pass."
+      ]
+    },
     "portable_bundle": {
       "implementation_state": "implemented",
       "activation_state": "local_source_checkout_bundle",
@@ -141,7 +161,7 @@
         "tests/runtime/test_live_canary_closeout.py"
       ],
       "known_limitations": [
-        "Preflight and sanitized evidence are implemented, but the real Brave canary has not been run in-session.",
+        "Preflight and sanitized evidence are implemented, but the real broad-web canary has not been run in-session.",
         "Automated live canary pass remains distinct from human product acceptance."
       ]
     },
@@ -233,7 +253,7 @@
     }
   },
   "external_gates": [
-    "operator Brave key and real live Search/Hunt canary",
+    "operator broad-web provider key and real live Search/Hunt canary",
     "human end-to-end product acceptance",
     "external full unittest discovery compact summary"
   ],

@@ -10,19 +10,26 @@ from runtime.search.providers import ProviderBudget, ProviderRegistry, provider_
 
 
 class ProviderPolicyRegistryTests(unittest.TestCase):
-    def test_default_registry_contains_brave_and_ia_retention_policy(self) -> None:
+    def test_default_registry_contains_brave_mojeek_ia_and_disabled_searxng_policy(self) -> None:
         registry = load_provider_policy_registry()
 
         self.assertEqual("eureka.discovery_provider_registry.v0", registry.schema_version)
         self.assertFalse(registry.public_live_fanout_enabled)
         self.assertFalse(registry.reviewed_truth_mutation_enabled)
         brave = registry.provider("brave")
+        mojeek = registry.provider("mojeek")
         ia = registry.provider("ia")
+        searxng = registry.provider("searxng")
         self.assertFalse(brave.retention["persist_urls"])
         self.assertFalse(brave.retention["persist_snippets"])
         self.assertFalse(brave.retention["persist_rank"])
         self.assertFalse(brave.retention["persist_raw_response"])
         self.assertTrue(brave.fetch_handoff_policy["persist_only_independent_source_observation"])
+        self.assertFalse(mojeek.retention["persist_urls"])
+        self.assertFalse(mojeek.retention["persist_snippets"])
+        self.assertFalse(mojeek.retention["persist_rank"])
+        self.assertEqual("enabled_when_configured", mojeek.enabled_state)
+        self.assertTrue(searxng.enabled_state.startswith("disabled"))
         self.assertTrue(ia.retention["persist_urls"])
         self.assertFalse(ia.retention["persist_rank"])
         self.assertFalse(ia.fetch_handoff_policy["provider_downloads_allowed"])
@@ -72,7 +79,7 @@ class ProviderPolicyRegistryTests(unittest.TestCase):
 
         selection = ProviderRegistry(env={}, policy_registry=policy_registry).select("manual for Sound Blaster CT1740", "auto")
 
-        self.assertEqual(("brave",), selection.provider_ids)
+        self.assertEqual(("brave", "mojeek"), selection.provider_ids)
         with self.assertRaises(WebSearchConfigurationError):
             ProviderRegistry(env={}, policy_registry=policy_registry).select("manual", "internet_archive_metadata")
 

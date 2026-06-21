@@ -10,6 +10,7 @@ from runtime.source.observation.archive_org_public_metadata import ArchiveOrgMet
 
 from .live_web import (
     BRAVE_ENV_KEYS,
+    MOJEEK_ENV_KEYS,
     PROVIDER_NOT_CONFIGURED_MESSAGE,
     BraveSearchProvider,
     ProviderCapabilityManifest,
@@ -20,6 +21,8 @@ from .live_web import (
     WebSearchProvider,
     WebSearchProviderError,
     brave_capability_manifest,
+    looks_like_placeholder_secret,
+    mojeek_capability_manifest,
     provider_from_environment as brave_provider_from_environment,
     utc_now,
 )
@@ -211,11 +214,11 @@ class ProviderRegistry:
 
     def select(self, query: str, requested_provider: str = "brave") -> ProviderSelection:
         requested = str(requested_provider or "brave").strip().casefold()
-        if requested in {"brave", "internet_archive_metadata", "ia"}:
+        if requested in {"brave", "mojeek", "internet_archive_metadata", "ia"}:
             provider_id = "internet_archive_metadata" if requested == "ia" else requested
             return ProviderSelection(requested_provider=requested_provider, provider_ids=self._selectable((provider_id,)), reason="explicit_provider")
         if requested in {"auto", "multi", "blended"}:
-            providers = ("brave", "internet_archive_metadata") if _archive_query(query) else ("brave",)
+            providers = ("internet_archive_metadata", "brave", "mojeek") if _archive_query(query) else ("brave", "mojeek")
             return ProviderSelection(requested_provider=requested_provider, provider_ids=self._selectable(providers), reason="deterministic_query_routing")
         if "," in requested_provider:
             ids = tuple(_normalize_provider_id(item) for item in requested_provider.split(",") if _normalize_provider_id(item))
@@ -227,6 +230,8 @@ class ProviderRegistry:
         self._validate_activation(normalized)
         if normalized == "brave":
             return brave_provider_from_environment("brave", env=self.env)
+        if normalized == "mojeek":
+            return brave_provider_from_environment("mojeek", env=self.env)
         if normalized == "internet_archive_metadata":
             return _DiscoveryProviderWebSearchAdapter(InternetArchiveMetadataAdapter(self.ia_candidate_provider))
         raise WebSearchConfigurationError(f"unsupported live web search provider: {provider_id}")
@@ -389,8 +394,18 @@ def provider_status(provider: str = "brave", *, env: Mapping[str, str] | None = 
     for provider_id in selection.provider_ids:
         if provider_id == "brave":
             source = env or __import__("os").environ
-            configured[provider_id] = any(bool(str(source.get(name) or "").strip()) for name in BRAVE_ENV_KEYS)
+            configured[provider_id] = any(
+                bool(str(source.get(name) or "").strip()) and not looks_like_placeholder_secret(str(source.get(name) or "").strip())
+                for name in BRAVE_ENV_KEYS
+            )
             manifests[provider_id] = brave_capability_manifest().to_dict()
+        elif provider_id == "mojeek":
+            source = env or __import__("os").environ
+            configured[provider_id] = any(
+                bool(str(source.get(name) or "").strip()) and not looks_like_placeholder_secret(str(source.get(name) or "").strip())
+                for name in MOJEEK_ENV_KEYS
+            )
+            manifests[provider_id] = mojeek_capability_manifest().to_dict()
         elif provider_id == "internet_archive_metadata":
             configured[provider_id] = True
             manifests[provider_id] = InternetArchiveMetadataAdapter.capability_manifest.to_dict()
@@ -398,7 +413,7 @@ def provider_status(provider: str = "brave", *, env: Mapping[str, str] | None = 
         "provider": provider,
         "configured": any(configured.values()),
         "providers": configured,
-        "credential_env_keys": list(BRAVE_ENV_KEYS) if "brave" in configured else [],
+        "credential_env_keys": _credential_env_keys(configured),
         "credential_value_exposed": False,
         "message": "" if any(configured.values()) else PROVIDER_NOT_CONFIGURED_MESSAGE,
         "capability_manifest": manifests,
@@ -470,6 +485,15 @@ def _canonical_url_key(url: str) -> str:
 
 def _normalize_provider_id(provider: str) -> str:
     return normalize_provider_id(provider)
+
+
+def _credential_env_keys(configured: Mapping[str, bool]) -> list[str]:
+    keys: list[str] = []
+    if "brave" in configured:
+        keys.extend(BRAVE_ENV_KEYS)
+    if "mojeek" in configured:
+        keys.extend(MOJEEK_ENV_KEYS)
+    return keys
 
 
 def _archive_query(query: str) -> bool:

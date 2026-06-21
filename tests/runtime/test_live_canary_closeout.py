@@ -28,6 +28,21 @@ class LiveCanaryCloseoutTests(unittest.TestCase):
             self.assertEqual(5, preflight["budgets"]["max_fetches"])
             self.assertNotIn("secret", repr(preflight).casefold())
 
+    def test_canary_preflight_classifies_placeholder_key(self) -> None:
+        with tempfile.TemporaryDirectory() as temp, patch.dict("os.environ", {"BRAVE_SEARCH_API_KEY": "PASTE_REAL_BRAVE_KEY_HERE"}):
+            instance = Path(temp) / "instance"
+            bootstrap_command(instance=instance, no_demo=True)
+
+            preflight = canary_command("preflight", instance=instance, provider="brave", live_check=True)
+
+            self.assertEqual("pass_with_warnings", preflight["status"])
+            self.assertFalse(preflight["provider_configured"])
+            self.assertFalse(preflight["provider_auth_verified"])
+            self.assertEqual("invalid_key_placeholder", preflight["provider_health_category"])
+            self.assertFalse(preflight["provider_health"]["live_check_performed"])
+            self.assertFalse(preflight["network_provider_calls"])
+            self.assertNotIn("PASTE_REAL_BRAVE_KEY_HERE", repr(preflight))
+
     def test_canary_evidence_is_aggregate_and_url_free(self) -> None:
         payload = {
             "status": "pass_with_warnings",

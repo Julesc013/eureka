@@ -3,10 +3,15 @@
 This runbook is for the local operator. Do not paste provider keys into chat,
 commits, logs, or evidence artifacts.
 
-1. Configure the Brave key locally:
+Use `--provider mojeek` instead of `--provider brave` when using a locally
+configured Mojeek key.
+
+1. Configure one broad-web provider key locally:
 
    ```powershell
    $env:BRAVE_SEARCH_API_KEY="<your-key>"
+   # or
+   $env:MOJEEK_SEARCH_API_KEY="<your-key>"
    ```
 
 2. Bootstrap a local acceptance instance:
@@ -18,7 +23,7 @@ commits, logs, or evidence artifacts.
 3. Run preflight. It reports readiness and never prints the key:
 
    ```powershell
-   python scripts/eureka.py --instance ..\instances\live-acceptance canary preflight --json
+   python scripts/eureka.py --instance ..\instances\live-acceptance canary preflight --provider brave --live-check --json
    ```
 
 4. Run the real end-to-end canary with a genuinely unseen query:
@@ -28,6 +33,7 @@ commits, logs, or evidence artifacts.
      --live-canary `
      --query "<a genuinely unseen query>" `
      --instance ..\instances\live-acceptance `
+     --provider brave `
      --max-queries 3 `
      --max-fetches 3 `
      --keep-instance `

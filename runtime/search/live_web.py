@@ -19,6 +19,8 @@ from urllib.request import Request, urlopen
 PROVIDER_NOT_CONFIGURED_MESSAGE = "Live web search is not configured. Configure a provider or search the local index."
 BRAVE_SEARCH_ENDPOINT = "https://api.search.brave.com/res/v1/web/search"
 BRAVE_ENV_KEYS = ("BRAVE_SEARCH_API_KEY", "BRAVE_API_KEY")
+MOJEEK_SEARCH_ENDPOINT = "https://api.mojeek.com/search"
+MOJEEK_ENV_KEYS = ("MOJEEK_SEARCH_API_KEY", "MOJEEK_API_KEY")
 DEFAULT_USER_AGENT = "Eureka/0 local-live-search"
 
 
@@ -254,6 +256,31 @@ def brave_capability_manifest() -> ProviderCapabilityManifest:
     )
 
 
+def mojeek_capability_manifest() -> ProviderCapabilityManifest:
+    return ProviderCapabilityManifest(
+        provider="mojeek",
+        display_results=True,
+        transient_cache_ttl_seconds=300,
+        persist_urls=False,
+        persist_snippets=False,
+        persist_rank=False,
+        redistribute=False,
+        use_for_model_training=False,
+        notes=(
+            "Mojeek Search API results are treated as transient broad-web leads.",
+            "Persist independently fetched page observations instead of provider snippets or ranks.",
+        ),
+        provider_kind="broad_web_search",
+        supported_query_modes=("keyword", "phrase", "site", "freshness"),
+        pagination_model="start_offset",
+        freshness_support=True,
+        rate_limits={"source": "provider_account_limits"},
+        fetch_handoff_allowed=True,
+        authentication_requirements=MOJEEK_ENV_KEYS,
+        error_categories=("configuration", "http", "provider_auth", "rate_limit", "timeout", "invalid_response"),
+    )
+
+
 class BraveSearchProvider:
     provider_id = "brave"
     capability_manifest = brave_capability_manifest()
@@ -268,7 +295,7 @@ class BraveSearchProvider:
         sleeper: Callable[[float], None] | None = None,
     ) -> None:
         clean_key = str(api_key or "").strip()
-        if not clean_key:
+        if not clean_key or looks_like_placeholder_secret(clean_key):
             raise WebSearchConfigurationError(PROVIDER_NOT_CONFIGURED_MESSAGE)
         self._api_key = clean_key
         self._endpoint = str(endpoint or BRAVE_SEARCH_ENDPOINT)
@@ -416,6 +443,147 @@ class BraveSearchProvider:
         )
 
 
+class MojeekSearchProvider:
+    provider_id = "mojeek"
+    capability_manifest = mojeek_capability_manifest()
+
+    def __init__(
+        self,
+        api_key: str,
+        *,
+        endpoint: str = MOJEEK_SEARCH_ENDPOINT,
+        transport: Transport | None = None,
+        clock: Callable[[], str] | None = None,
+    ) -> None:
+        clean_key = str(api_key or "").strip()
+        if not clean_key or looks_like_placeholder_secret(clean_key):
+            raise WebSearchConfigurationError(PROVIDER_NOT_CONFIGURED_MESSAGE)
+        self._api_key = clean_key
+        self._endpoint = str(endpoint or MOJEEK_SEARCH_ENDPOINT)
+        self._transport = transport or _urllib_transport
+        self._clock = clock or utc_now
+
+    def search(
+        self,
+        query: str,
+        *,
+        page: int,
+        count: int,
+        freshness: str,
+        country: str,
+        language: str,
+        safe_search: str,
+        budget_context: WebSearchBudget,
+        query_variant: str | None = None,
+    ) -> SearchResultPage:
+        clean_query = _clean_text(query)
+        if not clean_query:
+            raise WebSearchProviderError("query is required", provider=self.provider_id)
+        budget = budget_context.bounded()
+        if budget.max_provider_requests < 1:
+            raise WebSearchProviderError("provider request budget is exhausted", provider=self.provider_id)
+        bounded_count = max(1, min(int(count or 10), 20))
+        bounded_page = max(0, min(int(page or 0), 99))
+        params = _mojeek_params(
+            clean_query,
+            api_key=self._api_key,
+            page=bounded_page,
+            count=bounded_count,
+            freshness=freshness,
+            country=country,
+            language=language,
+            safe_search=safe_search,
+        )
+        url = f"{self._endpoint}?{urlencode(params)}"
+        response = self._transport(url, {"Accept": "application/json", "User-Agent": DEFAULT_USER_AGENT}, budget.timeout_seconds)
+        if response.status_code == 429:
+            raise WebSearchRateLimited(
+                "Mojeek Search API rate limit reached",
+                provider=self.provider_id,
+                status_code=response.status_code,
+                rate_limit=_rate_limit_headers(response.headers),
+            )
+        if response.status_code >= 400:
+            raise WebSearchProviderError(
+                f"Mojeek Search API returned HTTP {response.status_code}",
+                provider=self.provider_id,
+                status_code=response.status_code,
+                rate_limit=_rate_limit_headers(response.headers),
+            )
+        payload = _decode_json_response(response.body, provider=self.provider_id)
+        return self._page_from_payload(
+            payload,
+            query=clean_query,
+            query_variant=_clean_text(query_variant) or clean_query,
+            page=bounded_page,
+            count=bounded_count,
+            freshness=str(freshness or ""),
+            retrieved_at=self._clock(),
+            rate_limit=_rate_limit_headers(response.headers),
+        )
+
+    def _page_from_payload(
+        self,
+        payload: Mapping[str, Any],
+        *,
+        query: str,
+        query_variant: str,
+        page: int,
+        count: int,
+        freshness: str,
+        retrieved_at: str,
+        rate_limit: Mapping[str, str],
+    ) -> SearchResultPage:
+        response = payload.get("response") if isinstance(payload.get("response"), Mapping) else {}
+        status = str(response.get("status") or "").strip().upper()
+        if status and status != "OK":
+            raise WebSearchProviderError("Mojeek Search API returned an error status", provider=self.provider_id)
+        rows = response.get("results") if isinstance(response.get("results"), list) else []
+        retention = self.capability_manifest.retention_policy()
+        leads: list[SearchLead] = []
+        for offset, item in enumerate(rows):
+            if not isinstance(item, Mapping):
+                continue
+            url = _clean_text(item.get("url"))
+            if not url:
+                continue
+            rank = page * count + offset + 1
+            title = _plain_text(item.get("title") or url)
+            snippet = _plain_text(item.get("desc") or "")
+            leads.append(
+                SearchLead(
+                    lead_id=_lead_id(self.provider_id, query_variant, page, rank, url),
+                    title=title,
+                    url=url,
+                    snippet=snippet,
+                    provider=self.provider_id,
+                    provider_rank=rank,
+                    retrieved_at=retrieved_at,
+                    query=query,
+                    query_variant=query_variant,
+                    page=page,
+                    freshness=freshness,
+                    retention_policy=retention,
+                )
+            )
+        head = response.get("head") if isinstance(response.get("head"), Mapping) else {}
+        total = int(head.get("results") or 0) if str(head.get("results") or "").isdigit() else 0
+        returned = int(head.get("return") or len(leads) or 0) if str(head.get("return") or len(leads) or 0).isdigit() else len(leads)
+        start = int(head.get("start") or page * count + 1) if str(head.get("start") or page * count + 1).isdigit() else page * count + 1
+        return SearchResultPage(
+            provider=self.provider_id,
+            query=query,
+            query_variant=query_variant,
+            page=page,
+            count=count,
+            retrieved_at=retrieved_at,
+            results=tuple(leads),
+            more_results_available=bool(total and start + returned <= total),
+            rate_limit=rate_limit,
+            raw_response_stored=False,
+        )
+
+
 def provider_from_environment(
     provider: str = "brave",
     *,
@@ -425,25 +593,45 @@ def provider_from_environment(
     sleeper: Callable[[float], None] | None = None,
 ) -> WebSearchProvider | None:
     provider_id = str(provider or "brave").strip().casefold()
-    if provider_id != "brave":
+    if provider_id not in {"brave", "mojeek"}:
         raise WebSearchConfigurationError(f"unsupported live web search provider: {provider}")
     source = env or os.environ
-    api_key = next((str(source.get(name) or "").strip() for name in BRAVE_ENV_KEYS if str(source.get(name) or "").strip()), "")
+    env_keys = BRAVE_ENV_KEYS if provider_id == "brave" else MOJEEK_ENV_KEYS
+    api_key = next(
+        (
+            str(source.get(name) or "").strip()
+            for name in env_keys
+            if str(source.get(name) or "").strip() and not looks_like_placeholder_secret(str(source.get(name) or "").strip())
+        ),
+        "",
+    )
     if not api_key:
         return None
+    if provider_id == "mojeek":
+        return MojeekSearchProvider(api_key, transport=transport, clock=clock)
     return BraveSearchProvider(api_key, transport=transport, clock=clock, sleeper=sleeper)
 
 
 def provider_status(provider: str = "brave", *, env: Mapping[str, str] | None = None) -> dict[str, Any]:
     source = env or os.environ
-    configured = any(bool(str(source.get(name) or "").strip()) for name in BRAVE_ENV_KEYS)
+    provider_id = str(provider or "brave").strip().casefold()
+    env_keys = MOJEEK_ENV_KEYS if provider_id == "mojeek" else BRAVE_ENV_KEYS
+    configured = any(
+        bool(str(source.get(name) or "").strip()) and not looks_like_placeholder_secret(str(source.get(name) or "").strip())
+        for name in env_keys
+    )
+    manifest = {}
+    if provider_id == "brave":
+        manifest = brave_capability_manifest().to_dict()
+    if provider_id == "mojeek":
+        manifest = mojeek_capability_manifest().to_dict()
     return {
         "provider": str(provider or "brave"),
         "configured": configured,
-        "credential_env_keys": list(BRAVE_ENV_KEYS),
+        "credential_env_keys": list(env_keys),
         "credential_value_exposed": False,
         "message": "" if configured else PROVIDER_NOT_CONFIGURED_MESSAGE,
-        "capability_manifest": brave_capability_manifest().to_dict() if str(provider or "brave").casefold() == "brave" else {},
+        "capability_manifest": manifest,
     }
 
 
@@ -493,6 +681,39 @@ def _brave_params(
     clean_language = _clean_text(language).lower()
     if clean_language:
         params["search_lang"] = clean_language[:8]
+    return params
+
+
+def _mojeek_params(
+    query: str,
+    *,
+    api_key: str,
+    page: int,
+    count: int,
+    freshness: str,
+    country: str,
+    language: str,
+    safe_search: str,
+) -> dict[str, str]:
+    params = {
+        "q": query,
+        "api_key": api_key,
+        "s": str(page * count + 1),
+        "t": str(max(1, min(int(count), 20))),
+        "fmt": "json",
+        "safe": "0" if _clean_text(safe_search).casefold() == "off" else "1",
+    }
+    clean_language = _clean_text(language).upper()
+    if clean_language:
+        params["lb"] = clean_language[:2]
+        params["lbb"] = "100"
+    clean_country = _clean_text(country).upper()
+    if clean_country:
+        params["rb"] = clean_country[:2]
+        params["rbb"] = "10"
+    clean_freshness = _clean_text(freshness).casefold()
+    if clean_freshness in {"day", "month", "year"}:
+        params["since"] = clean_freshness
     return params
 
 
@@ -552,3 +773,24 @@ def _plain_text(value: Any) -> str:
 
 def _clean_text(value: Any) -> str:
     return " ".join(str(value or "").replace("\r", " ").replace("\n", " ").split())
+
+
+def looks_like_placeholder_secret(value: str) -> bool:
+    normalized = str(value or "").strip().casefold()
+    if not normalized:
+        return False
+    if normalized.startswith("<") and normalized.endswith(">"):
+        return True
+    placeholders = (
+        "paste_real",
+        "your-key",
+        "your_api_key",
+        "your-api-key",
+        "yourapikey",
+        "replace_me",
+        "changeme",
+        "dummy",
+        "example",
+        "placeholder",
+    )
+    return any(item in normalized for item in placeholders)

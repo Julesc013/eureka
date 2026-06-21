@@ -31,7 +31,7 @@ the current launch priority.
 - Local product loop present.
 - Workbench local operator loop present.
 - CLI, local web, and local HTTP API surfaces present.
-- Provider-neutral live search contract and Brave adapter present.
+- Provider-neutral live search contract plus Brave and Mojeek broad-web adapters present.
 - Normal search no longer silently substitutes hard-query fixtures.
 - Portable bootstrap defaults to no demo data.
 - Safe fetch, local SQLite/FTS Preview Index, deterministic Hunt, live UX,
@@ -50,12 +50,13 @@ the current launch priority.
 Finish safe internal work before the operator canary: capability-state
 reconciliation, observability, diagnostics, recovery, backup, migration,
 performance baselines, Foundry operator controls, declarative provider policy,
+DiscoveryBroker fanout planning,
 portable local bundle rehearsal, canary closeout, human rehearsal, external full
 discovery handoff, and a hardening audit.
 
 ### 2. Operator Live Canary
 
-Run the bounded real canary with a local Brave key. It must prove real live
+Run the bounded real canary with a local configured broad-web provider key. It must prove real live
 results, Hunt, policy-approved independent fetch, SourceObservation,
 PreviewDocument, restart, local retrieval, no provider-result persistence, and
 no reviewed/public mutation.
@@ -78,9 +79,9 @@ clean hardening audit should an agentic Hunt Planner preflight be recommended.
 
 ### Second Provider Conformance
 
-Add one additional provider family only after Brave-backed interactive Search
-and Hunt are genuinely useful. Candidates include Internet Archive metadata,
-Wayback CDX, GitHub Releases, or Software Heritage.
+Expand provider families only after the current brokered Brave/Mojeek plus
+Internet Archive metadata path is genuinely useful. Candidates include Wayback
+CDX, GitHub Releases, package registries, or Software Heritage.
 
 ### Autonomous Index Foundry
 
