@@ -60,7 +60,7 @@ production readiness.
 | Safe fetch and SourceObservation | Implemented for selected bounded URLs with policy gates |
 | SQLite/FTS Preview Index | Implemented for local unreviewed SourceObservations |
 | Deterministic Hunt engine | Implemented, bounded, non-agentic |
-| Discovery broker | Planning-only local-first/vertical-first/broad-web fanout implemented; no network calls performed by planning |
+| Discovery broker | Local-first/vertical-first/broad-web planning plus bounded provider execution, policy-preserving lead fusion, and cost/yield accounting implemented |
 | Second provider | Internet Archive metadata conformance implemented and live-acceptance-gated |
 | Foundry v0 | Implemented, local, disabled by default |
 | Synthetic behavior cleanup | Normal search no longer silently substitutes hard-query fixtures; demo bootstrap is explicit |
@@ -72,7 +72,7 @@ production readiness.
 
 | Area | Current gate |
 | --- | --- |
-| Operator live canary | Waiting for local Brave or Mojeek key and explicit operator run |
+| Discovery broker live canary | Waiting for at least one healthy approved broad-web provider and explicit operator run |
 | Human acceptance | Blocked until the real live canary passes and the operator gives a separate product verdict |
 | Safe page fetching | Implemented deterministically; real live proof remains canary-gated |
 | Durable live indexing | Implemented for independently fetched SourceObservations; real live proof remains canary-gated |

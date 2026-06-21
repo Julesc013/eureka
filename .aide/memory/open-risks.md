@@ -1,8 +1,8 @@
 # Eureka AIDE Open Risks
 
-- The deterministic live product path is implemented, but real live acceptance is still unproven until `OPERATOR-LIVE-CANARY-00` runs with a local Brave key and proves live result, Hunt, independent fetch, SourceObservation, PreviewDocument, restart retrieval, no provider payload persistence, and no reviewed/public mutation.
+- The deterministic live product path is implemented, but real live acceptance is still unproven until `DISCOVERY-BROKER-LIVE-CANARY-00` runs with at least one healthy approved broad-web provider and proves live result, Hunt, independent fetch, SourceObservation, PreviewDocument, restart retrieval, no provider payload persistence, and no reviewed/public mutation.
 - Local `--live` provider calls depend on an operator-provided key and must keep credentials out of Git, chat, logs, summaries, and client-side code.
-- Brave Search Results are provider outputs with restrictive retention terms; accidental persistence of URLs, snippets, ranks, or raw responses would violate the current design boundary and requires focused tests.
+- Restrictive provider Search Results are provider outputs, not durable observations; accidental persistence of disallowed URLs, snippets, ranks, or raw responses would violate the current design boundary and requires focused tests.
 - Public live fanout remains disabled. Local `--live` canaries must not be interpreted as public launch, tunnel/exposure readiness, or production readiness.
 - Second provider and Foundry are implemented but intentionally gated: IA metadata is unreviewed metadata, and Foundry is disabled by default with explicit local operator activation only.
 - Operational recovery, backup, migration, diagnostics, performance baseline, provider policy registry validation, portable release rehearsal, and hardening audit remain Wave 03 work.

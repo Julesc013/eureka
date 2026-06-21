@@ -20,6 +20,8 @@ class ProviderPolicyRegistryTests(unittest.TestCase):
         mojeek = registry.provider("mojeek")
         ia = registry.provider("ia")
         searxng = registry.provider("searxng")
+        google = registry.provider("google_custom_search_json")
+        bing = registry.provider("bing_search_api_direct")
         self.assertFalse(brave.retention["persist_urls"])
         self.assertFalse(brave.retention["persist_snippets"])
         self.assertFalse(brave.retention["persist_rank"])
@@ -33,6 +35,12 @@ class ProviderPolicyRegistryTests(unittest.TestCase):
         self.assertTrue(ia.retention["persist_urls"])
         self.assertFalse(ia.retention["persist_rank"])
         self.assertFalse(ia.fetch_handoff_policy["provider_downloads_allowed"])
+        self.assertEqual("deprecated_for_new_integration", google.enabled_state)
+        self.assertEqual("deprecated_for_new_integration", bing.enabled_state)
+        with self.assertRaises(ProviderPolicyError):
+            registry.validate_activation("google_custom_search_json", mode="local_live")
+        with self.assertRaises(ProviderPolicyError):
+            registry.validate_activation("bing_search_api_direct", mode="local_live")
 
     def test_provider_status_includes_sanitized_policy_without_secret_values(self) -> None:
         status = provider_status("brave", env={"BRAVE_SEARCH_API_KEY": "super-secret-token"})

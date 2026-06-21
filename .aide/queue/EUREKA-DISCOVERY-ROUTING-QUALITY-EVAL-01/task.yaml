@@ -1,0 +1,16 @@
+schema_version: aide.task.v0
+id: EUREKA-DISCOVERY-ROUTING-QUALITY-EVAL-01
+title: Evaluate discovery routing quality from measured yield
+status: planned
+task_class: evaluation
+parent_track: EUREKA-REAL-LIVE-SEARCH-HUNT-00
+predecessor: EUREKA-ACADEMIC-DOCUMENT-PROVIDER-PACK-01
+successor: EUREKA-AGENTIC-HUNT-PLANNER-PREFLIGHT-01
+purpose: >-
+  Tune deterministic provider selection from measured latency, cost, unique
+  yield, fetchability, policy blocks, and new SourceObservation output before
+  any agentic planner work.
+non_goals:
+  - no reinforcement learning
+  - no model planner
+  - no public launch

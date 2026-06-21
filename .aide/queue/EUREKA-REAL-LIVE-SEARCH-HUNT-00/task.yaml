@@ -44,15 +44,17 @@ forbidden_scope:
   - review decision recording
   - production review stores
   - downloads or execution outside the safe fetch milestone
-  - second broad-web provider family before the Brave vertical slice is useful
+  - broad provider-family expansion before the brokered broad-web plus IA path is useful
   - model/agentic planner work before deterministic Hunt works
 live_network_authorization:
   status: authorized_for_bounded_local_operator_opt_in
   provider_family: broad_web_search
-  first_provider: brave
+  first_provider: approved_broad_web_provider
   credential_env:
     - BRAVE_SEARCH_API_KEY
     - BRAVE_API_KEY
+    - MOJEEK_SEARCH_API_KEY
+    - MOJEEK_API_KEY
   constraints:
     - provider calls require explicit --live mode or live server mode
     - never print, persist, commit, or expose provider credentials
@@ -118,20 +120,20 @@ milestone_evidence:
   notes:
     - normal search no longer substitutes hard-query fixtures
     - bootstrap defaults to no demo data
-    - Brave provider contract exists with transient retention policy
+    - broad-web provider contracts exist with provider-specific transient retention policy
     - live CLI/server display paths exist but real fetch, durable indexing, and full Hunt remain incomplete
     - safe fetch/extraction and SourceObservation persistence components exist with SSRF, DNS, redirect, robots, MIME, body-size, URL-credential, HTTP-error, per-host budget, and durable-store tests
     - SQLite/FTS operational Preview Index persists independently fetched SourceObservations and restart search/export/rollback proof passes
     - deterministic Hunt engine paginates provider results, fetches selected leads, follows bounded outbound links, indexes observations, records sanitized events, and supports pause/resume/cancel state
     - live Search/Hunt UX exposes normal search, Hunt progress, and result inspection without task IDs, review-packet language, or raw JSON on normal pages
-    - real end-to-end live canary harness is implemented but waiting for a local provider key before this track can close
-    - second-provider conformance is implemented with Brave plus Internet Archive metadata but remains live-acceptance-gated
+    - real end-to-end live canary harness is implemented but waiting for a healthy approved broad-web provider before this track can close
+    - second-provider conformance is implemented with broad-web plus Internet Archive metadata but remains live-acceptance-gated
     - Autonomous Index Foundry v0 is implemented but disabled by default and waiting for live acceptance before optional live runs
     - live discovery stack audit reports zero critical and zero high findings, with medium findings limited to external live canary and live-activation gates
 acceptance_gate:
-  status: WAITING_FOR_OPERATOR_LIVE_CANARY
+  status: WAITING_FOR_DISCOVERY_BROKER_LIVE_CANARY
   task: EUREKA-REAL-LIVE-SEARCH-HUNT-ACCEPTANCE-01
-  reason: BRAVE_SEARCH_API_KEY/BRAVE_API_KEY is not configured in the current environment
+  reason: no healthy approved broad-web provider is configured in the current environment
   required_proof:
     - live provider configured
     - live result count >= 1

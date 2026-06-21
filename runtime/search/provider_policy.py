@@ -42,17 +42,18 @@ class ProviderPolicy:
     @classmethod
     def from_mapping(cls, payload: Mapping[str, Any]) -> "ProviderPolicy":
         provider_id = _required_string(payload, "provider_id")
+        enabled_state = _required_string(payload, "enabled_state")
         policy = cls(
             provider_id=provider_id,
             provider_kind=_required_string(payload, "provider_kind"),
             adapter=_required_string(payload, "adapter"),
             adapter_version=_required_string(payload, "adapter_version"),
-            enabled_state=_required_string(payload, "enabled_state"),
+            enabled_state=enabled_state,
             authentication=_required_mapping(payload, "authentication"),
             query_capabilities=_required_mapping(payload, "query_capabilities"),
             pagination=_required_mapping(payload, "pagination"),
             freshness_support=_required_mapping(payload, "freshness_support"),
-            allowed_operating_modes=tuple(_required_string_list(payload, "allowed_operating_modes")),
+            allowed_operating_modes=tuple(_required_string_list(payload, "allowed_operating_modes", allow_empty=_non_activatable_state(enabled_state))),
             request_budgets=_required_mapping(payload, "request_budgets"),
             rate_limits=_required_mapping(payload, "rate_limits"),
             retention=_required_mapping(payload, "retention"),
@@ -70,7 +71,7 @@ class ProviderPolicy:
     def validate_manifest(self) -> None:
         if not self.provider_id:
             raise ProviderPolicyError("provider manifest missing provider_id")
-        if self.enabled_state.casefold().startswith("disabled"):
+        if _non_activatable_state(self.enabled_state):
             return
         method = str(self.authentication.get("method") or "").strip()
         if method not in {"api_key_env", "none"}:
@@ -112,7 +113,7 @@ class ProviderPolicy:
         require_credentials: bool = False,
     ) -> None:
         self.validate_manifest()
-        if self.enabled_state.casefold().startswith("disabled"):
+        if _non_activatable_state(self.enabled_state):
             raise ProviderPolicyError(f"{self.provider_id}: provider is disabled by policy")
         clean_mode = str(mode or "").strip()
         if clean_mode not in self.allowed_operating_modes:
@@ -294,11 +295,16 @@ def _required_mapping(payload: Mapping[str, Any], key: str) -> Mapping[str, Any]
     return value
 
 
-def _required_string_list(payload: Mapping[str, Any], key: str) -> list[str]:
+def _required_string_list(payload: Mapping[str, Any], key: str, *, allow_empty: bool = False) -> list[str]:
     value = payload.get(key)
-    if not isinstance(value, list) or not value:
+    if not isinstance(value, list) or (not value and not allow_empty):
         raise ProviderPolicyError(f"provider policy missing list field: {key}")
     result = [str(item).strip() for item in value if str(item).strip()]
-    if not result:
+    if not result and not allow_empty:
         raise ProviderPolicyError(f"provider policy missing list field: {key}")
     return result
+
+
+def _non_activatable_state(enabled_state: str) -> bool:
+    state = str(enabled_state or "").casefold()
+    return state.startswith("disabled") or state == "deprecated_for_new_integration"

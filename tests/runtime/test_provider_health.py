@@ -4,7 +4,7 @@ import unittest
 from unittest.mock import patch
 
 from runtime.search.live_web import SearchLead, SearchResultPage, WebSearchProviderError, brave_capability_manifest
-from runtime.search.provider_health import provider_health_check
+from runtime.search.provider_health import ProviderHealthState, provider_health_check
 
 
 class ProviderHealthTests(unittest.TestCase):
@@ -13,6 +13,7 @@ class ProviderHealthTests(unittest.TestCase):
 
         self.assertFalse(health["configured"])
         self.assertEqual("invalid_key_placeholder", health["category"])
+        self.assertEqual(ProviderHealthState.NOT_CONFIGURED, health["state"])
         self.assertFalse(health["live_check_performed"])
         self.assertFalse(health["credential_value_exposed"])
 
@@ -21,6 +22,7 @@ class ProviderHealthTests(unittest.TestCase):
 
         self.assertFalse(health["configured"])
         self.assertEqual("missing_key", health["category"])
+        self.assertEqual(ProviderHealthState.NOT_CONFIGURED, health["state"])
         self.assertFalse(health["live_check_performed"])
 
     def test_live_check_reports_results_without_payload(self) -> None:
@@ -31,6 +33,7 @@ class ProviderHealthTests(unittest.TestCase):
         self.assertTrue(health["auth_verified"])
         self.assertTrue(health["live_check_performed"])
         self.assertEqual("provider_ok_results_available", health["category"])
+        self.assertEqual(ProviderHealthState.HEALTHY, health["state"])
         self.assertEqual(1, health["result_count"])
         self.assertFalse(health["provider_payload_included"])
         self.assertFalse(health["provider_result_payload_persisted"])
@@ -41,8 +44,18 @@ class ProviderHealthTests(unittest.TestCase):
             health = provider_health_check("brave", env={"BRAVE_SEARCH_API_KEY": "real-looking-token"}, live_check=True)
 
         self.assertEqual("provider_auth", health["category"])
+        self.assertEqual(ProviderHealthState.AUTHENTICATION_FAILED, health["state"])
         self.assertEqual(401, health["http_status"])
         self.assertFalse(health["auth_verified"])
+
+    def test_live_check_maps_rate_limit_and_permission_states(self) -> None:
+        with patch("runtime.search.provider_health.provider_from_environment", return_value=_StatusErrorProvider(403)):
+            permission = provider_health_check("brave", env={"BRAVE_SEARCH_API_KEY": "real-looking-token"}, live_check=True)
+        with patch("runtime.search.provider_health.provider_from_environment", return_value=_StatusErrorProvider(429)):
+            limited = provider_health_check("brave", env={"BRAVE_SEARCH_API_KEY": "real-looking-token"}, live_check=True)
+
+        self.assertEqual(ProviderHealthState.PERMISSION_FAILED, permission["state"])
+        self.assertEqual(ProviderHealthState.RATE_LIMITED, limited["state"])
 
 
 class _HealthProvider:
@@ -89,6 +102,17 @@ class _AuthErrorProvider:
 
     def search(self, _query: str, **_kwargs: object) -> SearchResultPage:
         raise WebSearchProviderError("provider rejected credentials", provider="brave", status_code=401)
+
+
+class _StatusErrorProvider:
+    provider_id = "brave"
+    capability_manifest = brave_capability_manifest()
+
+    def __init__(self, status_code: int) -> None:
+        self.status_code = status_code
+
+    def search(self, _query: str, **_kwargs: object) -> SearchResultPage:
+        raise WebSearchProviderError("provider status", provider="brave", status_code=self.status_code)
 
 
 if __name__ == "__main__":

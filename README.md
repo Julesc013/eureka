@@ -106,13 +106,18 @@ python scripts/eureka.py index stats
 
 Experimental live provider search is opt-in and requires a local provider key.
 Brave and Mojeek are supported broad-web options; Internet Archive metadata is
-used as a cheap/open vertical source where relevant. Do not paste or commit
+used as a cheap/open vertical source where relevant. The default live provider
+mode is `auto`: Eureka searches locally first, chooses relevant vertical
+providers for archive/manual intent, and requires at least one configured
+approved broad-web provider for the real live canary. Do not paste or commit
 provider keys.
 
 ```powershell
 $env:BRAVE_SEARCH_API_KEY="<your-key>"
 # or
 $env:MOJEEK_SEARCH_API_KEY="<your-key>"
+python scripts/eureka.py providers status --json
+python scripts/eureka.py providers check --provider auto --live --json
 python scripts/eureka.py search "an arbitrary unseen query" --live --json
 python scripts/eureka.py serve --live
 ```

@@ -1,0 +1,15 @@
+schema_version: aide.task.v0
+id: EUREKA-ACADEMIC-DOCUMENT-PROVIDER-PACK-01
+title: Add academic and document discovery provider pack
+status: planned
+task_class: provider_conformance
+parent_track: EUREKA-REAL-LIVE-SEARCH-HUNT-00
+predecessor: EUREKA-PACKAGE-REGISTRY-PROVIDER-PACK-01
+successor: EUREKA-DISCOVERY-ROUTING-QUALITY-EVAL-01
+purpose: >-
+  Add bounded Crossref/OpenAlex/Open Library-style metadata discovery for
+  academic and document intents.
+non_goals:
+  - no rights-clearance claims
+  - no paywalled content bypass
+  - no reviewed truth mutation

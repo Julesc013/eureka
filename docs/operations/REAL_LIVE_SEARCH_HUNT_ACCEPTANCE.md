@@ -3,8 +3,9 @@
 This runbook is for the local operator. Do not paste provider keys into chat,
 commits, logs, or evidence artifacts.
 
-Use `--provider mojeek` instead of `--provider brave` when using a locally
-configured Mojeek key.
+The normal canary path uses `--provider auto`. It selects any configured,
+approved broad-web provider. Internet Archive metadata may supplement archive
+queries, but IA alone does not satisfy the general broad-web canary.
 
 1. Configure one broad-web provider key locally:
 
@@ -17,13 +18,13 @@ configured Mojeek key.
 2. Bootstrap a local acceptance instance:
 
    ```powershell
-   python scripts/eureka.py --instance ..\instances\live-acceptance bootstrap
+   python scripts/eureka.py --instance ..\instances\live-acceptance bootstrap --no-demo
    ```
 
 3. Run preflight. It reports readiness and never prints the key:
 
    ```powershell
-   python scripts/eureka.py --instance ..\instances\live-acceptance canary preflight --provider brave --live-check --json
+   python scripts/eureka.py --instance ..\instances\live-acceptance canary preflight --provider auto --live-check --json
    ```
 
 4. Run the real end-to-end canary with a genuinely unseen query:
@@ -33,7 +34,7 @@ configured Mojeek key.
      --live-canary `
      --query "<a genuinely unseen query>" `
      --instance ..\instances\live-acceptance `
-     --provider brave `
+     --provider auto `
      --max-queries 3 `
      --max-fetches 3 `
      --keep-instance `

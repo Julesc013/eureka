@@ -1,6 +1,6 @@
 schema_version: aide.task.v0
 id: EUREKA-SECOND-PROVIDER-CONFORMANCE-01
-title: Add a second provider only after the Brave vertical slice works
+title: Add a second provider only after the brokered broad-web slice works
 status: IMPLEMENTED_WAITING_FOR_LIVE_ACCEPTANCE
 task_class: future_provider_milestone
 parent_track: EUREKA-REAL-LIVE-SEARCH-HUNT-00
@@ -15,10 +15,10 @@ evidence:
   provider_1: brave
   provider_2: internet_archive_metadata
   implementation_status: pass
-  live_acceptance_dependency: WAITING_FOR_OPERATOR_LIVE_CANARY
+  live_acceptance_dependency: WAITING_FOR_DISCOVERY_BROKER_LIVE_CANARY
   notes:
     - ProviderRegistry, ProviderSelection, ProviderExecutionPlan, ProviderResultEnvelope, and DiscoveryProvider-style request/budget/page contracts exist in runtime/search/providers.py.
-    - Brave remains the broad-web provider; Internet Archive metadata search is metadata-only, does not download payloads, does not create truth, and is bounded by provider budgets.
+    - Broad-web providers remain the general-web path; Internet Archive metadata search is metadata-only, does not download payloads, does not create truth, and is bounded by provider budgets.
     - MultiProviderSearchProvider lets the existing HuntEngine use multiple providers through the same WebSearchProvider-compatible interface.
     - Tests prove IA metadata normalization, partial-provider failure, both-fail behavior, cross-provider URL dedupe, secret-safe status, and zero reviewed/public mutation.
 validation:

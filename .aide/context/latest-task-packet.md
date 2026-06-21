@@ -6,13 +6,13 @@ EUREKA-LIVE-PRODUCT-HARDENING-AND-ACCEPTANCE-WAVE-03
 
 ## GOAL
 
-Harden the complete local live-discovery product before the operator live
-canary and human product acceptance, while preserving the `OPERATOR-LIVE-CANARY-00`
-gate.
+Harden the complete local live-discovery product before the provider-neutral
+live canary and human product acceptance, while preserving the
+`DISCOVERY-BROKER-LIVE-CANARY-00` gate.
 
 ## WHY
 
-The live queue now stops correctly at the operator canary. The deterministic
+The live queue now stops correctly at the DiscoveryBroker live canary. The deterministic
 Search/Hunt, safe fetch, Preview Index, UX, second-provider, Foundry, and audit
 foundations are present, but the product still needs observability, recovery,
 performance baselines, operator controls, policy registry validation,
@@ -85,8 +85,9 @@ external full-discovery handoff, and a second-pass hardening audit.
   for network work.
 - Keep provider SearchLeads transient; persist only policy-approved independent
   SourceObservations or provider metadata explicitly allowed by provider policy.
-- If a Brave key is absent, finish deterministic implementation and leave live
-  acceptance in `WAITING_FOR_OPERATOR_LIVE_CANARY`.
+- If no healthy approved broad-web provider is configured, finish deterministic
+  implementation and leave live acceptance in
+  `WAITING_FOR_DISCOVERY_BROKER_LIVE_CANARY`.
 - Do not run full unittest discovery in-session; prepare an external handoff.
 
 ## STAGE_CHAIN
@@ -107,7 +108,7 @@ external full-discovery handoff, and a second-pass hardening audit.
 
 - `control/inventory/product/capability_state.json`
 - `.aide/queue/index.yaml`
-- `.aide/queue/OPERATOR-LIVE-CANARY-00/task.yaml`
+- `.aide/queue/DISCOVERY-BROKER-LIVE-CANARY-00/task.yaml`
 - `external_full_discovery_handoff.json`
 - `control/audits/e2e_reference_system/live_product_hardening_audit_v1/AUDIT_REPORT.md`
 - `control/audits/e2e_reference_system/live_product_hardening_audit_v1/findings.json`

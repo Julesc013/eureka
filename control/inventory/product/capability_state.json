@@ -1,8 +1,8 @@
 {
   "schema_version": "eureka.product_capability_state.v0",
-  "tested_commit": "ecbe533b",
-  "generated_at": "2026-06-21T04:39:12Z",
-  "current_recommended_task": "OPERATOR-LIVE-CANARY-00",
+  "tested_commit": "pending-feat-search-policy-aware-discovery-broker",
+  "generated_at": "2026-06-21T06:03:00Z",
+  "current_recommended_task": "DISCOVERY-BROKER-LIVE-CANARY-00",
   "capabilities": {
     "live_search": {
       "implementation_state": "implemented",
@@ -17,7 +17,7 @@
         "docs/operations/REAL_LIVE_SEARCH_HUNT_ACCEPTANCE.md"
       ],
       "known_limitations": [
-        "Real broad-web canary requires a locally configured Brave or Mojeek key.",
+        "Real broad-web canary requires at least one healthy approved broad-web provider.",
         "Provider SearchLeads remain transient and must not be persisted as provider result payloads."
       ]
     },
@@ -111,12 +111,13 @@
     },
     "discovery_broker": {
       "implementation_state": "implemented",
-      "activation_state": "planning_only_no_network_calls",
+      "activation_state": "provider_neutral_planning_bounded_execution_and_lead_fusion",
       "validation_state": "deterministic_pass",
       "live_canary_state": "waiting_for_operator_live_canary",
       "human_acceptance_state": "not_started",
       "public_status": "public_live_fanout_disabled",
       "evidence_refs": [
+        ".aide/queue/EUREKA-DISCOVERY-BROKER-FOUNDATION-01/task.yaml",
         ".aide/queue/EUREKA-DISCOVERY-BROKER-AND-PROVIDER-FANOUT-01/task.yaml",
         "runtime/search/discovery_broker.py",
         "runtime/search/provider_health.py",
@@ -124,7 +125,7 @@
         "tests/runtime/test_provider_health.py"
       ],
       "known_limitations": [
-        "The broker plans provider fanout but does not perform provider calls itself.",
+        "The broker plans provider fanout, can execute bounded provider stages, and preserves provider-specific retention policy in transient lead fusion.",
         "Mojeek requires a local key; SearXNG remains disabled until a self-hosted instance is explicitly configured.",
         "Human product acceptance remains blocked until the real live canary and manual product test pass."
       ]
@@ -149,9 +150,9 @@
     },
     "operator_live_canary_closeout": {
       "implementation_state": "implemented",
-      "activation_state": "waiting_for_operator_live_canary",
+      "activation_state": "waiting_for_discovery_broker_live_canary",
       "validation_state": "deterministic_pass",
-      "live_canary_state": "waiting_for_operator_live_canary",
+      "live_canary_state": "waiting_for_discovery_broker_live_canary",
       "human_acceptance_state": "not_started",
       "public_status": "not_public",
       "evidence_refs": [
@@ -161,7 +162,7 @@
         "tests/runtime/test_live_canary_closeout.py"
       ],
       "known_limitations": [
-        "Preflight and sanitized evidence are implemented, but the real broad-web canary has not been run in-session.",
+        "Provider-neutral preflight and sanitized evidence are implemented, but the real broad-web canary has not been run in-session.",
         "Automated live canary pass remains distinct from human product acceptance."
       ]
     },
@@ -253,7 +254,7 @@
     }
   },
   "external_gates": [
-    "operator broad-web provider key and real live Search/Hunt canary",
+    "healthy approved broad-web provider and real live Search/Hunt canary",
     "human end-to-end product acceptance",
     "external full unittest discovery compact summary"
   ],

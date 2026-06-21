@@ -5,8 +5,8 @@ import json
 from typing import Any, Mapping
 from urllib.parse import quote, unquote
 
+from runtime.search.discovery_broker import DiscoveryBroker
 from runtime.search.live_service import LiveSearchService
-from runtime.search.live_web import provider_status
 from runtime.search.observability import DiscoveryEventStore, TimedOperation, metrics_from_events, stable_hash
 
 from .request_context import LocalRequestContext
@@ -360,7 +360,8 @@ def _status_payload(runtime: Any) -> dict[str, Any]:
             "operator_gated_review_decisions_enabled": True,
             "operator_gated_rebuild_enabled": True,
             "live_search_enabled": _live_search_enabled(runtime),
-            "live_provider_configured": bool(provider_status(str(getattr(runtime, "live_search_provider", "brave"))).get("configured")),
+            "live_provider_configured": _approved_broad_provider_configured(runtime),
+            "provider_health_checked": False,
         },
         "runtime": runtime_status,
         "public_index": summary,
@@ -377,6 +378,12 @@ def _status_html_response(runtime: Any) -> LocalServiceResponse:
     html = workbench.render_status_page(workbench.build_status_page_view(payload))
     workbench.validate_local_workbench_page(html)
     return html_response(200, html, payload)
+
+
+def _approved_broad_provider_configured(runtime: Any) -> bool:
+    provider_name = str(getattr(runtime, "live_search_provider", "auto") or "auto")
+    health = DiscoveryBroker().check_providers(provider_name, live=False)
+    return any(bool(item.get("approved_broad_web_provider")) and bool(item.get("configured")) for item in health)
 
 
 def _metrics_response(runtime: Any) -> LocalServiceResponse:
@@ -751,7 +758,7 @@ def _search_html_response(runtime: Any, request_context: LocalRequestContext) ->
 def _live_search_payload(runtime: Any, request_context: LocalRequestContext) -> dict[str, Any]:
     query = first_param(request_context.params, "q", first_param(request_context.params, "query", "")).strip()
     limit = parse_limit(first_param(request_context.params, "limit", ""), default=10)
-    provider_name = str(getattr(runtime, "live_search_provider", "brave") or "brave")
+    provider_name = str(getattr(runtime, "live_search_provider", "auto") or "auto")
     run_id = "http-search-" + stable_hash(query)
     timer = TimedOperation.start()
     _event_store(runtime).record("search_started", run_id=run_id, component="search", query=query, provider=provider_name, count=limit)
@@ -789,7 +796,7 @@ def _live_hunt_payload(runtime: Any, request_context: LocalRequestContext) -> di
     limit = parse_limit(first_param(request_context.params, "limit", ""), default=10)
     max_queries = parse_limit(first_param(request_context.params, "max_queries", ""), default=5)
     max_fetches = _parse_nonnegative_int(first_param(request_context.params, "max_fetches", first_param(request_context.params, "max-fetches", "")), default=0, maximum=100)
-    provider_name = str(getattr(runtime, "live_search_provider", "brave") or "brave")
+    provider_name = str(getattr(runtime, "live_search_provider", "auto") or "auto")
     run_id = "http-live-hunt-" + stable_hash(query)
     timer = TimedOperation.start()
     _event_store(runtime).record("hunt_started", run_id=run_id, component="hunt", query=query, provider=provider_name, count=max_queries)
@@ -919,7 +926,7 @@ def _render_live_search_html(payload: Mapping[str, Any], *, hunt: bool = False) 
             '<meta charset="utf-8">',
             '<meta name="viewport" content="width=device-width, initial-scale=1">',
             f"<title>{title}</title>",
-            "<style>body{font-family:system-ui,-apple-system,Segoe UI,sans-serif;margin:0;color:#182229;background:#f7f8f8}main{max-width:1040px;margin:auto;padding:28px 18px}.top{display:flex;justify-content:space-between;gap:12px;align-items:end;flex-wrap:wrap}.search{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:8px;margin:16px 0 12px}.search input{font:inherit;padding:11px;border:1px solid #aeb8bf;border-radius:6px;background:white}.search button,.search a,.inspect{font:inherit;padding:11px 14px;border-radius:6px;border:1px solid #2d5d78;background:#2d5d78;color:white;text-decoration:none}.search a,.inspect{background:#fff;color:#2d5d78}.filters{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 18px}.filters span{border:1px solid #c8d0d5;border-radius:999px;padding:5px 10px;background:white;color:#41515b}.progress{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px;margin:10px 0 18px}.metric{background:#fff;border:1px solid #d8dee2;border-radius:8px;padding:10px}.metric strong{display:block;font-size:20px}.card{background:#fff;border:1px solid #d8dee2;border-radius:8px;padding:14px;margin:10px 0}.card h2{font-size:18px;margin:6px 0}.state{font-size:12px;font-weight:700;color:#4b5b64}.url{color:#0b5cad;overflow-wrap:anywhere}.meta,.empty,.why{color:#52616b}.snippet{margin:8px 0}.actions{margin-top:10px}@media(max-width:640px){.search{grid-template-columns:1fr}.search a,.search button{display:block;text-align:center}}</style>",
+            "<style>body{font-family:system-ui,-apple-system,Segoe UI,sans-serif;margin:0;color:#182229;background:#f7f8f8}main{max-width:1040px;margin:auto;padding:28px 18px}.top{display:flex;justify-content:space-between;gap:12px;align-items:end;flex-wrap:wrap}.search{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:8px;margin:16px 0 12px}.search input{font:inherit;padding:11px;border:1px solid #aeb8bf;border-radius:6px;background:white}.search button,.search a,.inspect{font:inherit;padding:11px 14px;border-radius:6px;border:1px solid #2d5d78;background:#2d5d78;color:white;text-decoration:none}.search a,.inspect{background:#fff;color:#2d5d78}.filters{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 18px}.filters span{border:1px solid #c8d0d5;border-radius:999px;padding:5px 10px;background:white;color:#41515b}.progress{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px;margin:10px 0 18px}.metric{background:#fff;border:1px solid #d8dee2;border-radius:8px;padding:10px}.metric strong{display:block;font-size:20px}.card{background:#fff;border:1px solid #d8dee2;border-radius:8px;padding:14px;margin:10px 0}.result-title{font-size:18px;font-weight:700;margin:6px 0}.state{font-size:12px;font-weight:700;color:#4b5b64}.url{color:#0b5cad;overflow-wrap:anywhere}.meta,.empty,.why{color:#52616b}.snippet{margin:8px 0}.actions{margin-top:10px}@media(max-width:640px){.search{grid-template-columns:1fr}.search a,.search button{display:block;text-align:center}}</style>",
             "</head>",
             "<body>",
             "<main>",
@@ -953,7 +960,7 @@ def _render_live_card(item: Mapping[str, Any]) -> str:
         [
             '<article class="card">',
             f'<div class="state">{state}</div>',
-            f"<h2>{title}</h2>",
+            f"<div class='result-title'>{title}</div>",
             f'<div class="url">{url}</div>' if url else "",
             f'<p class="snippet">{snippet}</p>' if snippet else "",
             f'<p class="why">Matched: {escape(why)}</p>' if why else "",
@@ -1004,7 +1011,7 @@ def _render_live_result_html(payload: Mapping[str, Any]) -> str:
             f'<p class="meta">Retrieved: {retrieved_at or "n/a"} | MIME: {mime or "n/a"}</p>',
             f'<p class="meta">Content hash: {content_hash or "n/a"}</p>',
             f"<pre>{text}</pre>",
-            "<h2>Outbound links</h2>",
+            "<div class='result-title'>Outbound links</div>",
             f"<ul>{link_items}</ul>" if link_items else '<p class="meta">No outbound links retained.</p>',
             "</section>",
             "</main></body></html>",

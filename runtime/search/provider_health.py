@@ -10,12 +10,32 @@ from .live_web import WebSearchBudget, WebSearchProviderError, WebSearchRateLimi
 from .providers import provider_from_environment, provider_status
 
 
+class ProviderHealthState:
+    NOT_CONFIGURED = "not_configured"
+    CONFIGURED_UNCHECKED = "configured_unchecked"
+    HEALTHY = "healthy"
+    HEALTHY_ZERO_RESULTS = "healthy_zero_results"
+    AUTHENTICATION_FAILED = "authentication_failed"
+    PERMISSION_FAILED = "permission_failed"
+    RATE_LIMITED = "rate_limited"
+    QUOTA_EXHAUSTED = "quota_exhausted"
+    TIMEOUT = "timeout"
+    NETWORK_UNREACHABLE = "network_unreachable"
+    INVALID_RESPONSE = "invalid_response"
+    DEGRADED = "degraded"
+    CIRCUIT_OPEN = "circuit_open"
+    DISABLED_BY_POLICY = "disabled_by_policy"
+
+    HEALTHY_STATES = (HEALTHY, HEALTHY_ZERO_RESULTS)
+
+
 @dataclass(frozen=True)
 class ProviderHealth:
     provider: str
     configured: bool
     category: str
     status: str
+    state: str = ProviderHealthState.NOT_CONFIGURED
     auth_verified: bool = False
     live_check_requested: bool = False
     live_check_performed: bool = False
@@ -28,6 +48,7 @@ class ProviderHealth:
             "schema_version": "eureka.provider_health.v0",
             "provider": self.provider,
             "configured": self.configured,
+            "state": self.state,
             "category": self.category,
             "status": self.status,
             "auth_verified": self.auth_verified,
@@ -66,6 +87,7 @@ def provider_health_check(
             configured=False,
             category="invalid_key_placeholder",
             status="fail",
+            state=ProviderHealthState.NOT_CONFIGURED,
             live_check_requested=bool(live_check),
             message="Provider credential looks like a placeholder.",
         ).to_dict()
@@ -75,6 +97,7 @@ def provider_health_check(
             configured=False,
             category="missing_key",
             status="warning",
+            state=ProviderHealthState.NOT_CONFIGURED,
             live_check_requested=bool(live_check),
             message=str(status_payload.get("message") or "Provider credential is not configured."),
         ).to_dict()
@@ -84,6 +107,7 @@ def provider_health_check(
             configured=False,
             category="provider_not_configured",
             status="warning",
+            state=ProviderHealthState.DISABLED_BY_POLICY if "disabled" in str(status_payload.get("error") or "").casefold() else ProviderHealthState.NOT_CONFIGURED,
             live_check_requested=bool(live_check),
             message=str(status_payload.get("error") or status_payload.get("message") or "Provider is not configured."),
         ).to_dict()
@@ -93,6 +117,7 @@ def provider_health_check(
             configured=True,
             category="configured_not_checked",
             status="pass",
+            state=ProviderHealthState.CONFIGURED_UNCHECKED,
             message="Provider is configured; auth was not checked.",
         ).to_dict()
 
@@ -103,6 +128,7 @@ def provider_health_check(
             configured=False,
             category="provider_not_configured",
             status="warning",
+            state=ProviderHealthState.NOT_CONFIGURED,
             live_check_requested=True,
             message="Provider factory did not return a configured provider.",
         ).to_dict()
@@ -127,6 +153,7 @@ def provider_health_check(
             configured=True,
             category="network_timeout",
             status="fail",
+            state=ProviderHealthState.TIMEOUT,
             live_check_requested=True,
             live_check_performed=True,
             message=str(exc) or "Provider health check timed out.",
@@ -137,6 +164,7 @@ def provider_health_check(
             configured=True,
             category="network_error",
             status="fail",
+            state=ProviderHealthState.NETWORK_UNREACHABLE,
             live_check_requested=True,
             live_check_performed=True,
             message=str(exc) or "Provider health check failed at the network layer.",
@@ -147,6 +175,7 @@ def provider_health_check(
         configured=True,
         category="provider_ok_results_available" if result_count else "provider_ok_zero_results",
         status="pass",
+        state=ProviderHealthState.HEALTHY if result_count else ProviderHealthState.HEALTHY_ZERO_RESULTS,
         auth_verified=True,
         live_check_requested=True,
         live_check_performed=True,
@@ -166,13 +195,32 @@ def _provider_error_health(provider: str, exc: WebSearchProviderError, *, catego
             category = "network_timeout"
         else:
             category = "provider_response"
+    state = _state_from_provider_error(category, status_code, str(exc))
     return ProviderHealth(
         provider=provider,
         configured=True,
         category=category,
         status="fail",
+        state=state,
         live_check_requested=True,
         live_check_performed=True,
         http_status=status_code,
         message=str(exc),
     ).to_dict()
+
+
+def _state_from_provider_error(category: str, status_code: int, message: str) -> str:
+    if status_code == 401:
+        return ProviderHealthState.AUTHENTICATION_FAILED
+    if status_code == 403:
+        return ProviderHealthState.PERMISSION_FAILED
+    if status_code == 402:
+        return ProviderHealthState.QUOTA_EXHAUSTED
+    if status_code == 429 or category == "rate_limited":
+        return ProviderHealthState.RATE_LIMITED
+    if status_code == 408 or category == "network_timeout":
+        return ProviderHealthState.TIMEOUT
+    lowered = str(message or "").casefold()
+    if "invalid" in lowered or "json" in lowered or "response" in lowered:
+        return ProviderHealthState.INVALID_RESPONSE
+    return ProviderHealthState.DEGRADED

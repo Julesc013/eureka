@@ -5,7 +5,7 @@ import tempfile
 import unittest
 from unittest.mock import patch
 
-from runtime.local.portable_instance import bootstrap_command, canary_command
+from runtime.local.portable_instance import bootstrap_command, canary_command, providers_command
 from runtime.search.canary import sanitize_canary_evidence, validate_canary_evidence
 
 
@@ -27,6 +27,31 @@ class LiveCanaryCloseoutTests(unittest.TestCase):
             self.assertEqual(3, preflight["budgets"]["max_queries"])
             self.assertEqual(5, preflight["budgets"]["max_fetches"])
             self.assertNotIn("secret", repr(preflight).casefold())
+
+    def test_auto_canary_preflight_requires_configured_broad_provider_not_ia_only(self) -> None:
+        with tempfile.TemporaryDirectory() as temp, patch.dict("os.environ", {"BRAVE_SEARCH_API_KEY": "", "BRAVE_API_KEY": "", "MOJEEK_SEARCH_API_KEY": ""}):
+            instance = Path(temp) / "instance"
+            bootstrap_command(instance=instance, no_demo=True)
+
+            preflight = canary_command("preflight", instance=instance, provider="auto")
+
+            self.assertEqual("pass_with_warnings", preflight["status"])
+            self.assertFalse(preflight["provider_configured"])
+            self.assertEqual("no_healthy_approved_broad_web_provider", preflight["provider_health_category"])
+            self.assertFalse(preflight["public_live_fanout"])
+
+    def test_providers_status_reports_configured_broad_provider_without_secret(self) -> None:
+        with tempfile.TemporaryDirectory() as temp, patch.dict("os.environ", {"BRAVE_SEARCH_API_KEY": "real-looking-token"}):
+            instance = Path(temp) / "instance"
+            bootstrap_command(instance=instance, no_demo=True)
+
+            status = providers_command("status", instance=instance, provider="auto")
+
+            self.assertEqual("pass", status["status"])
+            self.assertGreaterEqual(status["configured_broad_web_provider_count"], 1)
+            self.assertFalse(status["credential_value_exposed"])
+            self.assertFalse(status["provider_result_payload_persisted"])
+            self.assertNotIn("real-looking-token", repr(status))
 
     def test_canary_preflight_classifies_placeholder_key(self) -> None:
         with tempfile.TemporaryDirectory() as temp, patch.dict("os.environ", {"BRAVE_SEARCH_API_KEY": "PASTE_REAL_BRAVE_KEY_HERE"}):

@@ -5,7 +5,7 @@ status: PASS
 task_class: focused_product_runtime_repair
 parent_track: EUREKA-REAL-LIVE-SEARCH-HUNT-00
 predecessor: EUREKA-LIVE-PRODUCT-HARDENING-AUDIT-01
-successor: OPERATOR-LIVE-CANARY-00
+successor: EUREKA-DISCOVERY-BROKER-FOUNDATION-01
 purpose: >-
   Avoid Brave-or-bust live discovery by adding a cheap-first DiscoveryBroker,
   an active sanitized provider health check, Mojeek broad-web support, and a
@@ -39,4 +39,4 @@ evidence:
     - tests/runtime/test_provider_policy_registry.py
     - tests/runtime/test_provider_conformance.py
     - tests/runtime/test_live_canary_closeout.py
-next_recommended_task: OPERATOR-LIVE-CANARY-00
+next_recommended_task: EUREKA-DISCOVERY-BROKER-FOUNDATION-01

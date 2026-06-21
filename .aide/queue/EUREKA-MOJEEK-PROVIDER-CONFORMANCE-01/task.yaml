@@ -1,0 +1,16 @@
+schema_version: aide.task.v0
+id: EUREKA-MOJEEK-PROVIDER-CONFORMANCE-01
+title: Complete Mojeek provider conformance pack
+status: planned
+task_class: provider_conformance
+parent_track: EUREKA-REAL-LIVE-SEARCH-HUNT-00
+predecessor: DISCOVERY-BROKER-LIVE-CANARY-00
+successor: EUREKA-SEARXNG-SELFHOSTED-ADAPTER-01
+purpose: >-
+  Evaluate and harden Mojeek as an independent broad-web provider option with
+  plan-specific retention policy, health checks, budgets, and deterministic
+  conformance tests.
+non_goals:
+  - no public fanout
+  - no provider-result payload persistence beyond allowed plan terms
+  - no reviewed truth mutation

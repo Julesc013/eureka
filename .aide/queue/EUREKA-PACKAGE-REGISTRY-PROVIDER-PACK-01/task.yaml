@@ -1,0 +1,15 @@
+schema_version: aide.task.v0
+id: EUREKA-PACKAGE-REGISTRY-PROVIDER-PACK-01
+title: Add package registry discovery provider pack
+status: planned
+task_class: provider_conformance
+parent_track: EUREKA-REAL-LIVE-SEARCH-HUNT-00
+predecessor: EUREKA-GITHUB-SOFTWARE-HERITAGE-PACK-01
+successor: EUREKA-ACADEMIC-DOCUMENT-PROVIDER-PACK-01
+purpose: >-
+  Add bounded registry discovery for package/dependency intents using explicit
+  provider manifests and retention policy.
+non_goals:
+  - no install/download/execute behavior
+  - no package trust claims
+  - no reviewed truth mutation

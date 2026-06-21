@@ -24,11 +24,11 @@ from runtime.connectors.web.robots import AllowAllRobotsClient  # noqa: E402
 from runtime.index.preview import SQLitePreviewIndexStore  # noqa: E402
 from runtime.local.portable_instance import bootstrap_command, build_portable_paths, resolve_portable_instance_root  # noqa: E402
 from runtime.search.canary import sanitize_canary_evidence, write_canary_evidence  # noqa: E402
+from runtime.search.discovery_broker import DiscoveryBroker  # noqa: E402
 from runtime.search.hunt_engine import HuntBudget, HuntEngine  # noqa: E402
 from runtime.search.live_service import LiveSearchService, live_hunt_run_id  # noqa: E402
 from runtime.search.live_web import SearchLead, SearchResultPage, WebSearchBudget, brave_capability_manifest  # noqa: E402
-from runtime.search.provider_health import provider_health_check  # noqa: E402
-from runtime.search.providers import provider_status  # noqa: E402
+from runtime.search.provider_health import ProviderHealthState  # noqa: E402
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -40,7 +40,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--max-queries", type=int, default=3, help="Maximum real canary query variants.")
     parser.add_argument("--max-fetches", type=int, default=3, help="Maximum real canary fetch attempts.")
     parser.add_argument("--keep-instance", action="store_true", help="Keep a generated temporary instance after the live canary.")
-    parser.add_argument("--provider", default="brave", help="Live provider id for the real canary.")
+    parser.add_argument("--provider", default="auto", help="Live provider id for the real canary; auto selects a configured approved broad-web provider.")
     parser.add_argument("--evidence-out", default="", help="Write sanitized aggregate canary evidence to this JSON path.")
     parser.add_argument("--query-label", default="", help="Operator-safe query label for evidence; the raw query is not stored.")
     args = parser.parse_args(argv)
@@ -73,35 +73,38 @@ def run_acceptance(
     max_queries: int = 3,
     max_fetches: int = 3,
     keep_instance: bool = False,
-    provider: str = "brave",
+    provider: str = "auto",
 ) -> dict[str, Any]:
     with tempfile.TemporaryDirectory() as temp:
         deterministic = _run_deterministic(Path(temp))
-    live_status = provider_status(provider)
-    health = provider_health_check(provider, live_check=False)
+    broker = DiscoveryBroker()
+    health_items = broker.check_providers(provider, live=False)
+    selected_provider = _select_configured_broad_provider(health_items, requested_provider=provider)
     live = {
         "status": "not_run",
         "reason": "live canary requires --live-canary",
         "provider": provider,
-        "live_provider_configured": bool(health.get("configured")),
-        "provider_health_category": str(health.get("category") or ""),
+        "selected_provider": selected_provider,
+        "live_provider_configured": bool(selected_provider),
+        "provider_health": health_items,
     }
-    if live_canary and bool(health.get("configured")):
+    if live_canary and selected_provider:
         live = _run_live_canary(
             query=query,
             instance=instance,
             max_queries=max_queries,
             max_fetches=max_fetches,
             keep_instance=keep_instance,
-            provider=provider,
+            provider=selected_provider,
         )
     elif live_canary:
         live = {
             "status": "waiting",
-            "reason": str(health.get("category") or live_status.get("message") or "provider_not_configured"),
+            "reason": _broad_provider_waiting_reason(health_items),
             "provider": provider,
+            "selected_provider": "",
             "live_provider_configured": False,
-            "provider_health_category": str(health.get("category") or ""),
+            "provider_health": health_items,
         }
     checks = deterministic["checks"] + [
         {"id": "live_canary", "status": "pass" if live.get("status") == "pass" else "waiting", "details": live},
@@ -215,14 +218,18 @@ def _run_live_canary(
         documents_indexed = int(stats.get("document_count") or 0)
         restart_hits = int(local.get("result_count") or 0)
         reason = ""
-        if live_result_count < 1:
+        provider_error_reason = _reason_from_live_search(search)
+        if provider_error_reason:
+            reason = provider_error_reason
+        if not reason and live_result_count < 1:
             reason = "no_live_results"
-        elif fetch_attempt_count < 1 or pages_fetched < 1 or observations_created < 1 or documents_indexed < 1 or restart_hits < 1:
+        elif not reason and (fetch_attempt_count < 1 or pages_fetched < 1 or observations_created < 1 or documents_indexed < 1 or restart_hits < 1):
             reason = "no_policy_approved_fetchable_result"
         return {
             "status": "pass" if not reason else "fail",
             "reason": reason,
             "provider": provider,
+            "selected_provider": provider,
             "live_provider_configured": True,
             "query_supplied": True,
             "instance_root": str(root),
@@ -238,6 +245,58 @@ def _run_live_canary(
             "reviewed_master_mutation": False,
             "public_index_mutation": False,
         }
+
+
+def _select_configured_broad_provider(health_items: list[dict[str, Any]], *, requested_provider: str) -> str:
+    requested = str(requested_provider or "auto").strip().casefold()
+    eligible = [
+        item
+        for item in health_items
+        if bool(item.get("approved_broad_web_provider")) and bool(item.get("configured"))
+    ]
+    if requested not in {"auto", "multi", "blended"}:
+        eligible = [item for item in eligible if str(item.get("provider") or "").casefold() == requested]
+    if not eligible:
+        return ""
+    ready = [
+        item
+        for item in eligible
+        if str(item.get("state") or "") in {ProviderHealthState.HEALTHY, ProviderHealthState.HEALTHY_ZERO_RESULTS, ProviderHealthState.CONFIGURED_UNCHECKED}
+    ]
+    selected = ready[0] if ready else eligible[0]
+    return str(selected.get("provider") or "")
+
+
+def _broad_provider_waiting_reason(health_items: list[dict[str, Any]]) -> str:
+    broad = [item for item in health_items if bool(item.get("approved_broad_web_provider"))]
+    if not broad:
+        return "no_approved_broad_web_provider"
+    configured = [item for item in broad if bool(item.get("configured"))]
+    if not configured:
+        return "no_configured_approved_broad_web_provider"
+    return str(configured[0].get("state") or configured[0].get("category") or "configured_broad_provider_not_ready")
+
+
+def _reason_from_live_search(search: Mapping[str, Any]) -> str:
+    error = search.get("error") if isinstance(search.get("error"), Mapping) else {}
+    if not error:
+        return ""
+    status_code = int(error.get("status_code") or 0)
+    if str(error.get("code") or "") == "live_provider_not_configured":
+        return "no_configured_approved_broad_web_provider"
+    if status_code == 401:
+        return "authentication_failed"
+    if status_code == 403:
+        return "permission_failed"
+    if status_code == 402:
+        return "quota_exhausted"
+    if status_code == 429:
+        return "rate_limited"
+    if status_code == 408:
+        return "timeout"
+    if status_code:
+        return "provider_error"
+    return "network_or_provider_error"
 
 
 def _check(check_id: str, condition: bool, details: Mapping[str, Any] | None = None) -> dict[str, Any]:

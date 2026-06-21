@@ -1,0 +1,15 @@
+schema_version: aide.task.v0
+id: EUREKA-WAYBACK-CDX-PROVIDER-01
+title: Add Wayback CDX provider conformance
+status: planned
+task_class: provider_conformance
+parent_track: EUREKA-REAL-LIVE-SEARCH-HUNT-00
+predecessor: EUREKA-SEARXNG-SELFHOSTED-ADAPTER-01
+successor: EUREKA-GITHUB-SOFTWARE-HERITAGE-PACK-01
+purpose: >-
+  Add a bounded Wayback CDX vertical discovery provider for capture metadata,
+  distinct from arbitrary replay or payload download.
+non_goals:
+  - no Wayback replay without separate authorization
+  - no executable downloads
+  - no reviewed truth mutation

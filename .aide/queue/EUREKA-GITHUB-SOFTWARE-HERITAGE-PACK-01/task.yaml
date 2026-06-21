@@ -1,0 +1,15 @@
+schema_version: aide.task.v0
+id: EUREKA-GITHUB-SOFTWARE-HERITAGE-PACK-01
+title: Add source-code discovery provider pack
+status: planned
+task_class: provider_conformance
+parent_track: EUREKA-REAL-LIVE-SEARCH-HUNT-00
+predecessor: EUREKA-WAYBACK-CDX-PROVIDER-01
+successor: EUREKA-PACKAGE-REGISTRY-PROVIDER-PACK-01
+purpose: >-
+  Add bounded GitHub and Software Heritage source discovery for source-code and
+  release-oriented intents.
+non_goals:
+  - no code execution
+  - no repository cloning by default
+  - no reviewed truth mutation

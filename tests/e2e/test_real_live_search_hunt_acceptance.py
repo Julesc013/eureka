@@ -1,9 +1,13 @@
 from __future__ import annotations
 
 import json
+import os
 import subprocess
 import sys
 import unittest
+from unittest.mock import patch
+
+from scripts import check_live_search_hunt_acceptance as acceptance
 
 
 class RealLiveSearchHuntAcceptanceTests(unittest.TestCase):
@@ -56,6 +60,41 @@ class RealLiveSearchHuntAcceptanceTests(unittest.TestCase):
             self.assertGreaterEqual(payload["live_canary"]["restart_local_search_hits"], 1)
         else:
             self.assertEqual("waiting", payload["checks"][-1]["status"])
+
+    def test_live_canary_auto_can_select_alternative_configured_broad_provider(self) -> None:
+        fake_live = {
+            "status": "pass",
+            "reason": "",
+            "provider": "mojeek",
+            "selected_provider": "mojeek",
+            "live_provider_configured": True,
+            "query_supplied": True,
+            "instance_root": "",
+            "live_result_count": 1,
+            "queries_attempted": 1,
+            "transient_lead_count": 1,
+            "fetch_attempt_count": 1,
+            "pages_fetched": 1,
+            "observations_created": 1,
+            "documents_indexed": 1,
+            "restart_local_search_hits": 1,
+            "provider_result_payload_persisted": False,
+            "reviewed_master_mutation": False,
+            "public_index_mutation": False,
+        }
+        env = {
+            **os.environ,
+            "BRAVE_SEARCH_API_KEY": "",
+            "BRAVE_API_KEY": "",
+            "MOJEEK_SEARCH_API_KEY": "real-looking-mojeek-token",
+        }
+        with patch.dict("os.environ", env, clear=True), patch.object(acceptance, "_run_live_canary", return_value=fake_live) as live:
+            payload = acceptance.run_acceptance(live_canary=True, query="unit test unseen query", provider="auto")
+
+        self.assertEqual("pass", payload["status"])
+        self.assertEqual("pass", payload["checks"][-1]["status"])
+        self.assertEqual("mojeek", live.call_args.kwargs["provider"])
+        self.assertFalse(payload["provider_result_payload_persisted"])
 
 
 if __name__ == "__main__":

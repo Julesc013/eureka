@@ -10,6 +10,7 @@ import threading
 import time
 from typing import Any, Callable, Mapping, Protocol
 
+from .discovery_broker import DiscoveryBroker
 from .live_web import (
     PROVIDER_NOT_CONFIGURED_MESSAGE,
     WebSearchBudget,
@@ -96,10 +97,12 @@ class LiveSearchService:
         provider_name: str = "brave",
         provider_factory: ProviderFactory = provider_from_environment,
         lead_buffer: TransientLeadBuffer | None = None,
+        discovery_broker: DiscoveryBroker | None = None,
     ) -> None:
         self.provider_name = str(provider_name or "brave")
         self.provider_factory = provider_factory
         self.lead_buffer = lead_buffer or TransientLeadBuffer()
+        self.discovery_broker = discovery_broker or DiscoveryBroker()
 
     def search(
         self,
@@ -123,9 +126,11 @@ class LiveSearchService:
         provider_page: dict[str, Any] | None = None
         live_error: dict[str, Any] | None = None
         network_used = False
+        selected_provider = self._active_provider_name(clean_query)
         if clean_query and search_mode in {"live", "blended"}:
             provider_page, live_error, network_used = self._search_provider_page(
                 clean_query,
+                provider_name=selected_provider,
                 page=page,
                 count=count,
                 freshness=freshness,
@@ -138,7 +143,7 @@ class LiveSearchService:
         live_cards = live_display_cards(provider_page)
         local_cards = list(local.get("results") or [])
         results = [*local_cards, *live_cards] if search_mode == "blended" else (live_cards if search_mode == "live" else local_cards)
-        live_unavailable = _live_unavailable(self.provider_name, live_error)
+        live_unavailable = _live_unavailable(selected_provider, live_error)
         status = _search_status(results, live_error=live_error, search_mode=search_mode, query=clean_query)
         return {
             "schema_version": "eureka.live_web_search_response.v0",
@@ -149,7 +154,8 @@ class LiveSearchService:
             "results": results,
             "local_index": local,
             "live": provider_page or live_unavailable,
-            "provider_status": provider_status(self.provider_name),
+            "provider_status": provider_status(selected_provider),
+            "selected_provider": selected_provider,
             "message": "" if clean_query else "Enter a query to search the web and your Eureka index.",
             "error": live_error or {},
             "network_provider_calls": network_used,
@@ -177,10 +183,12 @@ class LiveSearchService:
         index_store: Any | None = None,
     ) -> LiveHuntResult:
         clean_query = _clean_query(query)
+        selected_provider = self._active_provider_name(clean_query)
         if preview_index_path is not None or fetcher is not None or index_store is not None:
-            if clean_query and self.provider_factory(self.provider_name) is None:
+            if clean_query and self.provider_factory(selected_provider) is None:
                 return self._transient_only_hunt(
                     clean_query,
+                    provider_name=selected_provider,
                     run_id=run_id,
                     max_queries=max_queries,
                     max_fetches=max_fetches,
@@ -196,7 +204,7 @@ class LiveSearchService:
                 index_store = created_store
             try:
                 result = HuntEngine(
-                    provider_name=self.provider_name,
+                    provider_name=selected_provider,
                     provider_factory=self.provider_factory,
                     fetcher=fetcher,
                     index_store=index_store,
@@ -219,6 +227,7 @@ class LiveSearchService:
                     created_store.close()
         return self._transient_only_hunt(
             clean_query,
+            provider_name=selected_provider,
             run_id=run_id,
             max_queries=max_queries,
             max_fetches=max_fetches,
@@ -230,6 +239,7 @@ class LiveSearchService:
         self,
         clean_query: str,
         *,
+        provider_name: str,
         run_id: str,
         max_queries: int,
         max_fetches: int,
@@ -237,7 +247,7 @@ class LiveSearchService:
         timeout_seconds: int,
     ) -> LiveHuntResult:
         variants = hunt_query_variants(clean_query, max_queries=max_queries) if clean_query else []
-        provider = self.provider_factory(self.provider_name) if clean_query else None
+        provider = self.provider_factory(provider_name) if clean_query else None
         errors: list[dict[str, Any]] = []
         display_cards: list[dict[str, Any]] = []
         seen_urls: set[str] = set()
@@ -247,7 +257,7 @@ class LiveSearchService:
         duplicate_count = 0
         network_used = False
         if clean_query and provider is None:
-            errors.append({"code": "live_provider_not_configured", "message": PROVIDER_NOT_CONFIGURED_MESSAGE, "provider": self.provider_name})
+            errors.append({"code": "live_provider_not_configured", "message": PROVIDER_NOT_CONFIGURED_MESSAGE, "provider": provider_name})
         elif provider is not None:
             for variant in variants:
                 attempted.append(variant)
@@ -299,6 +309,7 @@ class LiveSearchService:
             duplicate_count=duplicate_count,
             max_fetches=max_fetches,
             errors=errors,
+            provider_name=provider_name,
         )
         response = {
             **summary,
@@ -331,6 +342,7 @@ class LiveSearchService:
         self,
         query: str,
         *,
+        provider_name: str,
         page: int,
         count: int,
         freshness: str,
@@ -340,9 +352,9 @@ class LiveSearchService:
         timeout_seconds: int,
         query_variant: str | None = None,
     ) -> tuple[dict[str, Any] | None, dict[str, Any] | None, bool]:
-        provider = self.provider_factory(self.provider_name)
+        provider = self.provider_factory(provider_name)
         if provider is None:
-            return None, {"code": "live_provider_not_configured", "message": PROVIDER_NOT_CONFIGURED_MESSAGE, "provider": self.provider_name}, False
+            return None, {"code": "live_provider_not_configured", "message": PROVIDER_NOT_CONFIGURED_MESSAGE, "provider": provider_name}, False
         try:
             page_payload = provider.search(
                 query,
@@ -382,7 +394,9 @@ class LiveSearchService:
         duplicate_count: int,
         max_fetches: int,
         errors: list[dict[str, Any]],
+        provider_name: str | None = None,
     ) -> dict[str, Any]:
+        provider_id = str(provider_name or self.provider_name)
         return {
             "schema_version": "eureka.live_hunt_run.v1",
             "run_id": run_id,
@@ -390,8 +404,8 @@ class LiveSearchService:
             "mode": "live",
             "queries_planned": list(variants),
             "queries_attempted": list(attempted),
-            "provider": self.provider_name,
-            "providers_checked": [self.provider_name] if attempted else [],
+            "provider": provider_id,
+            "providers_checked": [provider_id] if attempted else [],
             "request_count": int(request_count),
             "transient_lead_count": int(raw_lead_count),
             "unique_transient_lead_count": int(unique_lead_count),
@@ -412,6 +426,16 @@ class LiveSearchService:
             "fetch_milestone_complete": False,
             "persistent_preview_index_update_complete": False,
         }
+
+    def _active_provider_name(self, query: str) -> str:
+        requested = str(self.provider_name or "brave").strip()
+        if requested.casefold() not in {"auto", "multi", "blended"}:
+            return requested
+        plan = self.discovery_broker.plan(query, requested_provider=requested)
+        provider_ids = plan.provider_ids()
+        if provider_ids:
+            return ",".join(provider_ids)
+        return requested
 
 
 def live_display_cards(provider_page: Mapping[str, Any] | None) -> list[dict[str, Any]]:

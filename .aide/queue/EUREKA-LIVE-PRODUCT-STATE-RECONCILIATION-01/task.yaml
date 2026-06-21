@@ -9,10 +9,10 @@ successor: EUREKA-DISCOVERY-OBSERVABILITY-AND-DIAGNOSTICS-01
 purpose: >-
   Regenerate the active task packet for Wave 03, create the hardening task
   chain, and make docs/AIDE memory agree with a single capability-state
-  manifest while preserving the operator live canary gate.
+  manifest while preserving the provider-neutral live canary gate.
 acceptance:
   - latest task packet permits the Wave 03 product paths
-  - queue and task packets agree about OPERATOR-LIVE-CANARY-00 as the external gate
+  - queue and task packets agree about the live canary as the external gate
   - capability-state manifest exists under control/inventory/product
   - README, STATUS, ROADMAP, and AIDE memory no longer contradict the manifest
 non_goals:

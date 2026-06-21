@@ -1,0 +1,15 @@
+schema_version: aide.task.v0
+id: EUREKA-SEARXNG-SELFHOSTED-ADAPTER-01
+title: Add controlled self-hosted SearXNG adapter
+status: planned
+task_class: provider_conformance
+parent_track: EUREKA-REAL-LIVE-SEARCH-HUNT-00
+predecessor: EUREKA-MOJEEK-PROVIDER-CONFORMANCE-01
+successor: EUREKA-WAYBACK-CDX-PROVIDER-01
+purpose: >-
+  Add SearXNG only as an explicitly configured self-hosted metasearch provider
+  with upstream attribution and provider-specific retention enforcement.
+non_goals:
+  - no dependency on random public instances
+  - no upstream terms bypass
+  - no public fanout

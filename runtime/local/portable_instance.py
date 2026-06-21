@@ -76,6 +76,7 @@ from runtime.search.observability import (
     metrics_from_events,
 )
 from runtime.search.performance import run_capacity_baseline
+from runtime.search.discovery_broker import DiscoveryBroker
 from runtime.search.provider_health import provider_health_check
 from runtime.search.providers import provider_status
 from runtime.search.foundry import FoundryPlan, FoundryRunStore, FoundryService, SurveyBudget, load_plan, write_plan
@@ -404,7 +405,7 @@ def search_command(
     mode: str = "local",
     live: bool = False,
     index: str = "local",
-    provider: str = "brave",
+    provider: str = "auto",
     page: int = 0,
     count: int = 10,
     freshness: str = "",
@@ -1201,8 +1202,33 @@ def canary_command(
     clean_action = str(action or "").strip().casefold()
     if clean_action != "preflight":
         raise PortableInstanceError("unsupported_canary_command", f"unsupported canary command: {action}", exit_code=2)
-    live_provider_status = provider_status(provider)
-    health = provider_health_check(provider, live_check=live_check, query=live_check_query or "eureka provider health check")
+    provider_id = str(provider or "auto").strip()
+    if provider_id.casefold() == "auto":
+        health_items = DiscoveryBroker().check_providers("auto", live=live_check)
+        broad_items = [item for item in health_items if bool(item.get("approved_broad_web_provider"))]
+        ready_items = [item for item in broad_items if str(item.get("state") or "") in {"healthy", "healthy_zero_results"}]
+        configured_items = [item for item in broad_items if bool(item.get("configured"))]
+        health = {
+            "schema_version": "eureka.provider_health_set.v0",
+            "provider": "auto",
+            "providers": health_items,
+            "configured": bool(configured_items),
+            "auth_verified": bool(ready_items),
+            "state": "healthy" if ready_items else ("configured_unchecked" if configured_items and not live_check else "not_configured"),
+            "category": "healthy_broad_web_provider_available" if ready_items else ("configured_not_checked" if configured_items and not live_check else "no_healthy_approved_broad_web_provider"),
+            "live_check_requested": bool(live_check),
+            "live_check_performed": any(bool(item.get("live_check_performed")) for item in health_items),
+            "credential_value_exposed": False,
+            "provider_result_payload_persisted": False,
+            "public_live_fanout": False,
+        }
+        live_provider_status = {
+            "configured": bool(configured_items),
+            "credential_env_keys": sorted({key for item in broad_items for key in item.get("credential_env_keys", [])}),
+        }
+    else:
+        live_provider_status = provider_status(provider_id)
+        health = provider_health_check(provider_id, live_check=live_check, query=live_check_query or "eureka provider health check")
     instance_validation = validate_local_instance(root) if root.exists() else {"status": "absent", "errors": ["instance root does not exist"], "warnings": []}
     instance_ready = str(instance_validation.get("status") or "") in {"pass", "pass_with_warnings"}
     migration = migration_preflight(paths.preview_sqlite)
@@ -1211,7 +1237,7 @@ def canary_command(
     provider_ready = provider_configured and (not live_check or bool(health.get("auth_verified")))
     payload = {
         "schema_version": "eureka.operator_live_canary_preflight.v0",
-        "provider": provider,
+        "provider": provider_id,
         "provider_configured": provider_configured,
         "provider_auth_verified": bool(health.get("auth_verified")),
         "provider_health_category": str(health.get("category") or ""),
@@ -1238,11 +1264,57 @@ def canary_command(
         "provider_result_payload_persistence": False,
         "ready_to_run": provider_ready and instance_ready and database_ready,
         "recommended_command": (
-            f"python scripts/check_live_search_hunt_acceptance.py --live-canary --query <operator-unseen-query> --instance {root} --provider {provider} --max-queries 3 --max-fetches 3 --keep-instance --json"
+            f"python scripts/check_live_search_hunt_acceptance.py --live-canary --query <operator-unseen-query> --instance {root} --provider {provider_id} --max-queries 3 --max-fetches 3 --keep-instance --json"
         ),
     }
     status = "pass" if payload["ready_to_run"] else "pass_with_warnings"
     return _result("canary preflight", status, root, started_at=started, mutations=False, payload=payload)
+
+
+def providers_command(
+    action: str,
+    *,
+    instance: str | Path | None = None,
+    provider: str = "auto",
+    live: bool = False,
+) -> dict[str, Any]:
+    started = _now()
+    root = resolve_portable_instance_root(instance)
+    clean_action = str(action or "").strip().casefold()
+    if clean_action not in {"status", "check"}:
+        raise PortableInstanceError("unsupported_providers_command", f"unsupported providers command: {action}", exit_code=2)
+    live_check = bool(live and clean_action == "check")
+    health = DiscoveryBroker().check_providers(provider, live=live_check)
+    healthy_broad = [
+        item
+        for item in health
+        if bool(item.get("approved_broad_web_provider")) and str(item.get("state") or "") in {"healthy", "healthy_zero_results"}
+    ]
+    configured_broad = [
+        item
+        for item in health
+        if bool(item.get("approved_broad_web_provider")) and bool(item.get("configured"))
+    ]
+    payload = {
+        "schema_version": "eureka.providers_health_response.v0",
+        "action": clean_action,
+        "provider": provider,
+        "live_check_requested": live_check,
+        "providers": health,
+        "provider_count": len(health),
+        "configured_broad_web_provider_count": len(configured_broad),
+        "healthy_broad_web_provider_count": len(healthy_broad),
+        "at_least_one_healthy_approved_broad_web_provider": bool(healthy_broad),
+        "credential_value_exposed": False,
+        "provider_payload_included": False,
+        "provider_result_payload_persisted": False,
+        "network_provider_calls": any(bool(item.get("live_check_performed")) for item in health),
+        "public_live_fanout": False,
+        "reviewed_master_mutation": False,
+        "public_index_mutation": False,
+    }
+    status = "pass" if (not live_check or healthy_broad or str(provider).casefold() not in {"auto", "brave", "mojeek"}) else "pass_with_warnings"
+    return _result(f"providers {clean_action}", status, root, started_at=started, mutations=False, payload=payload)
 
 
 def main(argv: Sequence[str] | None = None, stdout: TextIO = sys.stdout, stderr: TextIO = sys.stderr) -> int:
@@ -1326,6 +1398,8 @@ def _dispatch(args: argparse.Namespace, *, stdout: TextIO) -> dict[str, Any]:
         return foundry_command(args.foundry_command, instance=args.instance, run_id=args.run_id)
     if args.command == "metrics":
         return metrics_command(instance=args.instance)
+    if args.command == "providers":
+        return providers_command(args.providers_command, instance=args.instance, provider=args.provider, live=args.live)
     if args.command == "diagnostics":
         action = str(args.diagnostics_action or "").strip()
         if action == "export":
@@ -1393,7 +1467,7 @@ def _parser() -> argparse.ArgumentParser:
     search.add_argument("--mode", default="local", choices=["local", "live", "blended", "replay"])
     search.add_argument("--live", action="store_true", help="Use the configured live web provider.")
     search.add_argument("--index", default="local", choices=["none", "local", "preview"])
-    search.add_argument("--provider", default="brave")
+    search.add_argument("--provider", default="auto")
     search.add_argument("--page", type=int, default=0)
     search.add_argument("--count", type=int, default=10)
     search.add_argument("--freshness", default="")
@@ -1450,6 +1524,15 @@ def _parser() -> argparse.ArgumentParser:
         item = foundry_sub.add_parser(action, parents=[common], help=f"Foundry {action}.")
         item.add_argument("run_id")
 
+    providers = sub.add_parser("providers", parents=[common], help="Inspect configured discovery providers without exposing credentials.")
+    providers_sub = providers.add_subparsers(dest="providers_command", required=True)
+    providers_status = providers_sub.add_parser("status", parents=[common], help="Show sanitized provider configuration and policy posture.")
+    providers_status.add_argument("--provider", default="auto")
+    providers_status.add_argument("--live", action="store_true", help="Ignored for status; use providers check --live for active checks.")
+    providers_check = providers_sub.add_parser("check", parents=[common], help="Optionally run bounded live provider health checks.")
+    providers_check.add_argument("--provider", default="auto")
+    providers_check.add_argument("--live", action="store_true", help="Run one minimal live health request per configured provider.")
+
     sub.add_parser("metrics", parents=[common], help="Show redacted local discovery metrics.")
 
     diagnostics = sub.add_parser("diagnostics", parents=[common], help="Show or export redacted diagnostics for a run.")
@@ -1487,7 +1570,7 @@ def _parser() -> argparse.ArgumentParser:
     canary = sub.add_parser("canary", parents=[common], help="Inspect operator live canary readiness.")
     canary_sub = canary.add_subparsers(dest="canary_command", required=True)
     canary_preflight = canary_sub.add_parser("preflight", parents=[common], help="Report provider, instance, database, budget, and exposure readiness.")
-    canary_preflight.add_argument("--provider", default="brave")
+    canary_preflight.add_argument("--provider", default="auto")
     canary_preflight.add_argument("--max-queries", type=int, default=3)
     canary_preflight.add_argument("--max-fetches", type=int, default=3)
     canary_preflight.add_argument("--live-check", action="store_true", help="Run one bounded provider auth/health request.")
@@ -1617,7 +1700,7 @@ def _live_hunt_command(
     run_id = live_hunt_run_id(query, started_at)
     event_store = DiscoveryEventStore(paths.discovery_events)
     event_store.record("hunt_started", run_id=run_id, component="hunt", query=query, count=max_queries)
-    hunt = LiveSearchService().start_hunt(
+    hunt = LiveSearchService(provider_name="auto").start_hunt(
         query,
         run_id=run_id,
         max_queries=max_queries,
@@ -1941,7 +2024,7 @@ def _configure_runtime_for_portable(runtime: Any, paths: PortablePaths, *, live:
     setattr(runtime, "public_exposure_enabled", False)
     setattr(runtime, "live_providers_enabled", bool(live))
     setattr(runtime, "live_search_enabled", bool(live))
-    setattr(runtime, "live_search_provider", "brave")
+    setattr(runtime, "live_search_provider", "auto")
 
 
 def _serve_smoke(paths: PortablePaths, *, host: str, port: int, mode: str, token: str, live: bool = False) -> dict[str, Any]:

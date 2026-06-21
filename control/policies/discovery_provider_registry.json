@@ -269,6 +269,153 @@
       "live_canary_state": "disabled_until_self_hosted_configured"
     },
     {
+      "provider_id": "google_custom_search_json",
+      "provider_kind": "broad_web_search_deprecated",
+      "adapter": "None",
+      "adapter_version": "not_planned",
+      "enabled_state": "deprecated_for_new_integration",
+      "authentication": {
+        "method": "api_key_env",
+        "required": true,
+        "env_keys": [
+          "GOOGLE_CUSTOM_SEARCH_API_KEY"
+        ],
+        "client_side_allowed": false,
+        "credential_persistence_allowed": false
+      },
+      "query_capabilities": {
+        "modes": [
+          "keyword",
+          "site"
+        ],
+        "operators": [
+          "site"
+        ],
+        "safe_search": true
+      },
+      "pagination": {
+        "model": "start_index",
+        "page_min": 1,
+        "page_max": 10,
+        "count_max": 10,
+        "more_results_available": true
+      },
+      "freshness_support": {
+        "supported": false,
+        "filters": []
+      },
+      "allowed_operating_modes": [],
+      "request_budgets": {
+        "default_provider_requests": 0,
+        "hard_max_provider_requests": 0,
+        "hard_max_results_per_request": 0,
+        "hard_max_timeout_seconds": 0,
+        "hard_max_retries": 0
+      },
+      "rate_limits": {
+        "source": "deprecated",
+        "closed_to_new_customers": true,
+        "transition_deadline": "2027-01-01"
+      },
+      "retention": {
+        "display_results": false,
+        "transient_cache_ttl_seconds": 0,
+        "persist_urls": false,
+        "persist_snippets": false,
+        "persist_rank": false,
+        "persist_raw_response": false,
+        "redistribute": false,
+        "use_for_model_training": false
+      },
+      "persistent_fields_allowed": [],
+      "redistribution": {
+        "allowed": false,
+        "posture": "deprecated_for_new_integration"
+      },
+      "training_use_prohibited": true,
+      "fetch_handoff_policy": {
+        "allowed": false,
+        "persist_provider_payload": false,
+        "persist_only_independent_source_observation": true
+      },
+      "terms_source_reference": "https://developers.google.com/custom-search/v1/overview",
+      "last_policy_review": "2026-06-21",
+      "live_canary_state": "deprecated_for_new_integration"
+    },
+    {
+      "provider_id": "bing_search_api_direct",
+      "provider_kind": "broad_web_search_deprecated",
+      "adapter": "None",
+      "adapter_version": "not_planned",
+      "enabled_state": "deprecated_for_new_integration",
+      "authentication": {
+        "method": "api_key_env",
+        "required": true,
+        "env_keys": [
+          "BING_SEARCH_API_KEY"
+        ],
+        "client_side_allowed": false,
+        "credential_persistence_allowed": false
+      },
+      "query_capabilities": {
+        "modes": [
+          "keyword",
+          "site"
+        ],
+        "operators": [
+          "site"
+        ],
+        "safe_search": true
+      },
+      "pagination": {
+        "model": "retired",
+        "page_min": 0,
+        "page_max": 0,
+        "count_max": 0,
+        "more_results_available": false
+      },
+      "freshness_support": {
+        "supported": false,
+        "filters": []
+      },
+      "allowed_operating_modes": [],
+      "request_budgets": {
+        "default_provider_requests": 0,
+        "hard_max_provider_requests": 0,
+        "hard_max_results_per_request": 0,
+        "hard_max_timeout_seconds": 0,
+        "hard_max_retries": 0
+      },
+      "rate_limits": {
+        "source": "retired",
+        "retired_on": "2025-08-11"
+      },
+      "retention": {
+        "display_results": false,
+        "transient_cache_ttl_seconds": 0,
+        "persist_urls": false,
+        "persist_snippets": false,
+        "persist_rank": false,
+        "persist_raw_response": false,
+        "redistribute": false,
+        "use_for_model_training": false
+      },
+      "persistent_fields_allowed": [],
+      "redistribution": {
+        "allowed": false,
+        "posture": "retired_api"
+      },
+      "training_use_prohibited": true,
+      "fetch_handoff_policy": {
+        "allowed": false,
+        "persist_provider_payload": false,
+        "persist_only_independent_source_observation": true
+      },
+      "terms_source_reference": "https://learn.microsoft.com/en-us/lifecycle/announcements/bing-search-api-retirement",
+      "last_policy_review": "2026-06-21",
+      "live_canary_state": "deprecated_for_new_integration"
+    },
+    {
       "provider_id": "internet_archive_metadata",
       "provider_kind": "archive_metadata_search",
       "adapter": "InternetArchiveMetadataAdapter",

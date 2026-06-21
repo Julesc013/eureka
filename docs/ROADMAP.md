@@ -19,10 +19,11 @@ arbitrary live query
 -> local search
 ```
 
-The six deterministic implementation milestones are present, but automated
-live acceptance is still blocked on `OPERATOR-LIVE-CANARY-00`, and human
-product acceptance remains a separate operator verdict. The current internal
-hardening wave is `EUREKA-LIVE-PRODUCT-HARDENING-AND-ACCEPTANCE-WAVE-03`.
+The six deterministic implementation milestones are present, and the live gate
+now runs through `DISCOVERY-BROKER-LIVE-CANARY-00`: any healthy approved
+broad-web provider may satisfy the general-web canary. Human product acceptance
+remains a separate operator verdict. The current internal hardening wave is
+`EUREKA-LIVE-PRODUCT-HARDENING-AND-ACCEPTANCE-WAVE-03`.
 The existing public-alpha launch-candidate work is historical foundation, not
 the current launch priority.
 
@@ -32,6 +33,7 @@ the current launch priority.
 - Workbench local operator loop present.
 - CLI, local web, and local HTTP API surfaces present.
 - Provider-neutral live search contract plus Brave and Mojeek broad-web adapters present.
+- DiscoveryBroker foundation present: local first, intent-aware IA/broad-web planning, bounded provider execution, health classification, lead fusion, and cost/yield accounting.
 - Normal search no longer silently substitutes hard-query fixtures.
 - Portable bootstrap defaults to no demo data.
 - Safe fetch, local SQLite/FTS Preview Index, deterministic Hunt, live UX,
@@ -50,13 +52,13 @@ the current launch priority.
 Finish safe internal work before the operator canary: capability-state
 reconciliation, observability, diagnostics, recovery, backup, migration,
 performance baselines, Foundry operator controls, declarative provider policy,
-DiscoveryBroker fanout planning,
+DiscoveryBroker fanout planning and bounded execution,
 portable local bundle rehearsal, canary closeout, human rehearsal, external full
 discovery handoff, and a hardening audit.
 
 ### 2. Operator Live Canary
 
-Run the bounded real canary with a local configured broad-web provider key. It must prove real live
+Run the bounded real canary with at least one healthy approved broad-web provider. It must prove real live
 results, Hunt, policy-approved independent fetch, SourceObservation,
 PreviewDocument, restart, local retrieval, no provider-result persistence, and
 no reviewed/public mutation.
@@ -79,9 +81,10 @@ clean hardening audit should an agentic Hunt Planner preflight be recommended.
 
 ### Second Provider Conformance
 
-Expand provider families only after the current brokered Brave/Mojeek plus
-Internet Archive metadata path is genuinely useful. Candidates include Wayback
-CDX, GitHub Releases, package registries, or Software Heritage.
+Expand provider families only after the current brokered broad-web plus
+Internet Archive metadata path is genuinely useful. Next candidates are Mojeek
+conformance hardening, self-hosted SearXNG, Wayback CDX, GitHub/Software
+Heritage, package registries, and academic/document providers.
 
 ### Autonomous Index Foundry
 

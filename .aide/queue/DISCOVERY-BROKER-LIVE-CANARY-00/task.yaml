@@ -1,0 +1,42 @@
+schema_version: aide.task.v0
+id: DISCOVERY-BROKER-LIVE-CANARY-00
+title: Run the provider-neutral live Search/Hunt canary
+status: WAITING_FOR_DISCOVERY_BROKER_LIVE_CANARY
+task_class: operator_live_gate
+parent_track: EUREKA-REAL-LIVE-SEARCH-HUNT-00
+predecessor: EUREKA-DISCOVERY-BROKER-FOUNDATION-01
+successor: HUMAN-END-TO-END-ACCEPTANCE-00
+purpose: >-
+  Have the local operator configure any approved broad-web provider and run the
+  strengthened real canary through live Search, Hunt, independent safe fetch,
+  SourceObservation creation, SQLite Preview Index insertion, store reopen, and
+  local search retrieval.
+valid_broad_web_providers:
+  - brave
+  - mojeek
+completion_requires:
+  - at least one healthy approved broad_web provider
+  - live_result_count >= 1
+  - queries_attempted >= 1
+  - transient_lead_count >= 1
+  - fetch_attempt_count >= 1
+  - pages_fetched >= 1
+  - observations_created >= 1
+  - documents_indexed >= 1
+  - restart_local_search_hits >= 1
+  - provider_result_payload_persisted false
+  - reviewed_master_mutation false
+  - public_index_mutation false
+preflight_command: >-
+  python scripts/eureka.py --instance ..\instances\live-acceptance canary
+  preflight --provider auto --live-check --json
+required_command: >-
+  python scripts/check_live_search_hunt_acceptance.py --live-canary --query
+  "<operator unseen query>" --instance ..\instances\live-acceptance
+  --provider auto --max-queries 3 --max-fetches 3 --keep-instance --json
+non_goals:
+  - no key committed or pasted
+  - no public exposure
+  - no human product approval claim
+  - no Agentic Hunt Planner work
+next_recommended_task_on_pass: HUMAN-END-TO-END-ACCEPTANCE-00

@@ -1,8 +1,8 @@
 {
   "schema_version": "eureka.live_search_hunt_acceptance_canary_handoff.v0",
-  "status": "WAITING_FOR_OPERATOR_LIVE_CANARY",
+  "status": "WAITING_FOR_DISCOVERY_BROKER_LIVE_CANARY",
   "task": "EUREKA-REAL-LIVE-SEARCH-HUNT-ACCEPTANCE-01",
-  "reason": "BRAVE_SEARCH_API_KEY/BRAVE_API_KEY was not configured in the local environment during deterministic acceptance validation.",
+  "reason": "No healthy approved broad-web provider was configured in the local environment during deterministic acceptance validation.",
   "deterministic_acceptance": {
     "status": "pass",
     "command": "python scripts/check_live_search_hunt_acceptance.py --live-canary --query \"unit test unseen query\" --max-queries 3 --max-fetches 3 --json",
@@ -22,10 +22,12 @@
     "required": true,
     "credential_env": [
       "BRAVE_SEARCH_API_KEY",
-      "BRAVE_API_KEY"
+      "BRAVE_API_KEY",
+      "MOJEEK_SEARCH_API_KEY",
+      "MOJEEK_API_KEY"
     ],
     "commands": [
-      "python scripts/check_live_search_hunt_acceptance.py --live-canary --query \"<operator unseen query>\" --instance ..\\instances\\live-acceptance --max-queries 3 --max-fetches 3 --keep-instance --json",
+      "python scripts/check_live_search_hunt_acceptance.py --live-canary --query \"<operator unseen query>\" --instance ..\\instances\\live-acceptance --provider auto --max-queries 3 --max-fetches 3 --keep-instance --json",
       "python scripts/eureka.py search \"<operator unseen query>\" --live --json",
       "python scripts/eureka.py hunt \"<operator unseen query>\" --live --max-queries 20 --max-fetches 10 --json",
       "python scripts/eureka.py search \"<indexed discovery terms>\" --index local --json"

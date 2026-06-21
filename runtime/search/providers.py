@@ -379,7 +379,7 @@ class _DiscoveryProviderWebSearchAdapter:
 
 def provider_from_environment(provider: str = "brave", *, env: Mapping[str, str] | None = None, **_kwargs: Any) -> WebSearchProvider | None:
     requested = str(provider or "brave").strip().casefold()
-    query_hint = "archive metadata" if requested in {"auto", "multi", "blended"} else ""
+    query_hint = str(_kwargs.get("query") or "")
     return ProviderRegistry(env=env).provider_or_multi(provider, query=query_hint)
 
 

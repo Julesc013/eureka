@@ -1,0 +1,42 @@
+schema_version: aide.task.v0
+id: EUREKA-DISCOVERY-BROKER-FOUNDATION-01
+title: Add policy-aware DiscoveryBroker foundation
+status: PASS
+task_class: focused_product_runtime_repair
+parent_track: EUREKA-REAL-LIVE-SEARCH-HUNT-00
+predecessor: EUREKA-DISCOVERY-BROKER-AND-PROVIDER-FANOUT-01
+successor: DISCOVERY-BROKER-LIVE-CANARY-00
+purpose: >-
+  Replace Brave-specific live gating with provider-neutral planning, active
+  health state classification, progressive fanout, cost/yield accounting, and
+  policy-preserving lead fusion across the existing local, Internet Archive
+  metadata, and broad-web provider paths.
+scope:
+  - DiscoveryBroker plans local-first, vertical-first, and broad-web stages by deterministic intent
+  - DiscoveryBroker can execute bounded provider stages and fuse transient leads without owning fetch, index, or review logic
+  - provider health distinguishes configured credentials from checked/healthy/auth-failed/rate-limited states
+  - CLI provider status/check and canary preflight support provider auto mode
+  - live acceptance requires at least one configured approved broad-web provider, not Brave specifically
+  - Google Custom Search JSON and direct Bing Search API are marked deprecated for new integration
+non_goals:
+  - no public live fanout
+  - no public launch
+  - no reviewed/master/public truth mutation
+  - no provider-result payload persistence
+  - no agentic planner
+  - no broad provider pack expansion
+evidence:
+  runtime:
+    - runtime/search/discovery_broker.py
+    - runtime/search/provider_health.py
+    - runtime/search/live_service.py
+    - runtime/search/providers.py
+    - runtime/local/portable_instance.py
+  policy:
+    - control/policies/discovery_provider_registry.json
+  tests:
+    - tests/runtime/test_discovery_broker.py
+    - tests/runtime/test_provider_health.py
+    - tests/runtime/test_live_canary_closeout.py
+    - tests/e2e/test_real_live_search_hunt_acceptance.py
+next_recommended_task: DISCOVERY-BROKER-LIVE-CANARY-00
