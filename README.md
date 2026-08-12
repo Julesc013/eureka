@@ -1,7 +1,7 @@
 # Eureka
 
 ![coverage](https://badgen.net/static/coverage/%23REF!/2A2A2A)
-![only installable by smelly nerds](https://badgen.net/static/only%20installable%20by%20smelly%20nerds/yes/E43)
+![only installable by nerds](https://badgen.net/static/only%20installable%20by%20nerds/yes/E43)
 
 **Local-first temporal object resolution for hard-to-find digital artifacts.**
 
