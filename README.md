@@ -1,5 +1,8 @@
 # Eureka
 
+![coverage](https://badgen.net/static/coverage/%23REF!/2A2A2A)
+![only installable by smelly nerds](https://badgen.net/static/only%20installable%20by%20smelly%20nerds/yes/E43)
+
 **Local-first temporal object resolution for hard-to-find digital artifacts.**
 
 Eureka helps an operator turn vague needs such as "latest Firefox before XP
